@@ -1,0 +1,10 @@
+version: "3"
+services:
+  apollo-docs:
+    build: .
+    environment:
+      - PORT=80
+    ports: 
+      - "80:80"
+    volumes:
+      - ./projects:/usr/src/app/projects
