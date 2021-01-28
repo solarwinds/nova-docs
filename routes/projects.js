@@ -14,11 +14,12 @@ router.get('/projects', function (req, res, next) {
             name: p,
             hasMaster: getBranchInfo(p, branches, ["master"]).length,
             hasDevelop: getBranchInfo(p, branches, ["develop"]).length,
+            hasMain: getBranchInfo(p, branches, ["main"]).length,
             featureBranches: getBranchInfo(p, branches, ["feature", "UIF-"]),
             releaseBranches: getReleaseBranches(p, branches),
             latestRelease: getLatestRelease(p, branches),
-            otherBranches: getBranchInfo(p, branches, [], ["master", "develop", "feature", "UIF-", "release"]),
-            branches: getBranchInfo(p, branches, [], ["master", "develop"])
+            otherBranches: getBranchInfo(p, branches, [], ["master", "develop", "main", "feature", "UIF-", "release"]),
+            branches: getBranchInfo(p, branches, [], ["master", "develop", "main"])
         });
     });
 

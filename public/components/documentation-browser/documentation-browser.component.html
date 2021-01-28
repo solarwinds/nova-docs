@@ -5,6 +5,7 @@
             <div class="form-group">
                 <xui-button ng-click="$ctrl.open(project, 'master')" ng-if="project.hasMaster" display-style="primary">master</xui-button>
                 <xui-button ng-click="$ctrl.open(project, 'develop')" ng-if="project.hasDevelop">develop</xui-button>
+                <xui-button ng-click="$ctrl.open(project, 'main')" ng-if="project.hasMain">main</xui-button>
                 <xui-button ng-click="$ctrl.open(project, project.latestRelease.name)" ng-if="project.latestRelease !== undefined">last release</xui-button>
             </div>
             <xui-expander heading="Release Branches" ng-if="project.releaseBranches.length > 0">
