@@ -1156,8 +1156,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="159"
-                            class="link-to-prism">src/renderers/bar/bar-renderer.ts:159</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="160"
+                            class="link-to-prism">src/renderers/bar/bar-renderer.ts:160</a></div>
                 </td>
             </tr>
 
@@ -1228,8 +1228,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="149"
-                            class="link-to-prism">src/renderers/bar/bar-renderer.ts:149</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="150"
+                            class="link-to-prism">src/renderers/bar/bar-renderer.ts:150</a></div>
                 </td>
             </tr>
 
@@ -1324,8 +1324,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="128"
-                            class="link-to-prism">src/renderers/bar/bar-renderer.ts:128</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="129"
+                            class="link-to-prism">src/renderers/bar/bar-renderer.ts:129</a></div>
                 </td>
             </tr>
 
@@ -1422,8 +1422,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="144"
-                            class="link-to-prism">src/renderers/bar/bar-renderer.ts:144</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="145"
+                            class="link-to-prism">src/renderers/bar/bar-renderer.ts:145</a></div>
                 </td>
             </tr>
 
@@ -1520,8 +1520,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="163"
-                            class="link-to-prism">src/renderers/bar/bar-renderer.ts:163</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="164"
+                            class="link-to-prism">src/renderers/bar/bar-renderer.ts:164</a></div>
                 </td>
             </tr>
 
@@ -1628,8 +1628,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="135"
-                            class="link-to-prism">src/renderers/bar/bar-renderer.ts:135</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="136"
+                            class="link-to-prism">src/renderers/bar/bar-renderer.ts:136</a></div>
                 </td>
             </tr>
 
@@ -4027,6 +4027,7 @@ export class BarRenderer extends XYRenderer&lt;IRectangleAccessors&gt; {
             // tslint:disable-next-line:max-line-length
             .attr(&quot;class&quot;, (d, i) &#x3D;&gt; &#x60;${BarRenderer.BAR_RECT_CLASS} ${this.config.barClass}${this.config.pointerEvents ? &quot; pointer-events&quot; : &quot;&quot;}&#x60; + getCssClass(d, i))
             .style(&quot;cursor&quot;, this.config.cursor ?? &quot;&quot;)
+            .style(&quot;stroke-width&quot;, this.config?.strokeWidth ?? &quot;&quot;)
             .style(&quot;fill&quot;, (d: any, i: number) &#x3D;&gt; accessors.data.color ? accessors.data.color(d, i, dataSeries.data, dataSeries) :
                 accessors.series.color?.(dataSeries.id, dataSeries))
             .attrs(function() {

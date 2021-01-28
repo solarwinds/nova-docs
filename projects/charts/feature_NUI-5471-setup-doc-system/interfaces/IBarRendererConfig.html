@@ -115,6 +115,10 @@
                                             <span class="modifier">Optional</span>
                                         <a href="#pointerEvents">pointerEvents</a>
                                 </li>
+                                <li>
+                                            <span class="modifier">Optional</span>
+                                        <a href="#strokeWidth">strokeWidth</a>
+                                </li>
                             </ul>
                         </td>
                     </tr>
@@ -360,6 +364,46 @@
                             </tr>
                         </tbody>
                     </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="strokeWidth"></a>
+                                        <span class="name"><b>strokeWidth</b><a href="#strokeWidth"><span class="icon ion-ios-link"></span></a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>strokeWidth:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Set the stroke width in pixels </p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
             </section>
     </div>
 
@@ -444,6 +488,8 @@ export interface IBarRendererConfig extends IRendererConfig {
     cursor?: string;
     /** Enables pointer events on the bars */
     pointerEvents?: boolean;
+    /** Set the stroke width in pixels */
+    strokeWidth?: number;
 }
 
 /** The configuration interface for the area renderer */
