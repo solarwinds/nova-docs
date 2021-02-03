@@ -122,7 +122,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="153" class="link-to-prism">src/lib/types.ts:153</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="161" class="link-to-prism">src/lib/types.ts:161</a></div>
                             </td>
                         </tr>
 
@@ -278,6 +278,14 @@ export interface IPortalEnvironment {
 export interface IDashboard {
     widgets: IWidgets;
     positions: Record&lt;string, GridsterItem&gt;;
+}
+
+export interface IDashboardBelowFoldLazyLoadingConfig {
+    enabled: boolean;
+    configuration?: {
+        // reloads widgets if they were already loaded but then disappeared from the view
+        reloadWidgetsOnScroll: boolean;
+    };
 }
 
 export interface IWidgets {

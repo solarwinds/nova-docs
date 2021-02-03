@@ -125,7 +125,25 @@ pizzagna event bus and passes the result to a component property path specified 
         },
     },
 },
-...</code></pre></div>
+...</code></pre></div><h2 id="below-fold-lazy-loading">Below-fold lazy loading</h2>
+<p>If You want for your widgets to load the data only after they are visible you have to configure the dashboard
+via <code>belowFoldLazyLoadingConfig</code> input. For example:</p>
+<div><pre class="line-numbers"><code class="language-none">public belowFoldLazyLoadingConfig: IDashboardBelowFoldLazyLoadingConfig = {
+    enabled: true,
+};
+&lt;!-- html --&gt;
+&lt;nui-dashboard
+    [(dashboard)]=&quot;dashboard&quot;
+    ...
+    [belowFoldLazyLoadingConfig]=&quot;belowFoldLazyLoadingConfig&quot;
+&gt;&lt;/nui-dashboard&gt;</code></pre></div><p>Also, if you want to load data only widgets that are in the viewport, and remove the widgets from the viewport
+if they were already loaded, put <code>reloadWidgetsOnScroll</code> of <code>configuration</code> part to <code>true</code>.</p>
+<div><pre class="line-numbers"><code class="language-none">public belowFoldLazyLoadingConfig: IDashboardBelowFoldLazyLoadingConfig = {
+    enabled: true,
+    configuration: {
+        reloadWidgetsOnScroll: true,
+    }
+};</code></pre></div>
                    </div><div class="search-results">
     <div class="has-results">
         <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>

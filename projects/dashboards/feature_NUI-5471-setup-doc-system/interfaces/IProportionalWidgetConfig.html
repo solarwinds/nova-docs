@@ -329,6 +329,7 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { IDataField, IDataFieldsConfig } from &quot;@nova-ui/bits&quot;;
+import { IAllAround } from &quot;@nova-ui/charts&quot;;
 import { BehaviorSubject } from &quot;rxjs&quot;;
 
 import { IProportionalDonutContentAggregator } from &quot;../../functions/proportional-aggregators/types&quot;;
@@ -347,6 +348,10 @@ export interface IProportionalWidgetChartTypeConfiguration {
     label: string;
 }
 
+export interface ITickLabelConfig {
+    maxWidth: Partial&lt;IAllAround&lt;number&gt;&gt;;
+}
+
 export interface IProportionalWidgetChartOptions {
     type: ProportionalWidgetChartTypes;
     contentFormatter?: IFormatter;
@@ -354,6 +359,7 @@ export interface IProportionalWidgetChartOptions {
     legendFormatter?: IFormatter;
     chartFormatterComponentType?: string;
     donutContentConfig?: IDonutContentConfig;
+    horizontalBarTickLabelConfig ?: ITickLabelConfig;
 }
 
 export interface IProportionalWidgetConfig {
