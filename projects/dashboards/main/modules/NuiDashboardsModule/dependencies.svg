@@ -28,13 +28,13 @@
 <title>cluster_NuiDashboardsModule_declarations</title>
 <polygon fill="none" stroke="black" points="862,-78 862,-130 6047,-130 6047,-78 862,-78"/>
 </g>
-<g id="clust31" class="cluster">
-<title>cluster_NuiDashboardsModule_imports</title>
-<polygon fill="none" stroke="black" points="258,-78 258,-130 854,-130 854,-78 258,-78"/>
-</g>
 <g id="clust32" class="cluster">
 <title>cluster_NuiDashboardsModule_exports</title>
 <polygon fill="none" stroke="black" points="416,-208 416,-260 5704,-260 5704,-208 416,-208"/>
+</g>
+<g id="clust31" class="cluster">
+<title>cluster_NuiDashboardsModule_imports</title>
+<polygon fill="none" stroke="black" points="258,-78 258,-130 854,-130 854,-78 258,-78"/>
 </g>
 <g id="clust34" class="cluster">
 <title>cluster_NuiDashboardsModule_providers</title>
