@@ -511,7 +511,7 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {AnimationEvent} from &quot;@angular/animations&quot;;
 import {BooleanInput} from &quot;@angular/cdk/coercion&quot;;
-import {CdkStep, CdkStepper, StepContentPositionState, STEPPER_GLOBAL_OPTIONS, StepperOptions} from &quot;@angular/cdk/stepper&quot;;
+import {CdkStep, CdkStepper, StepContentPositionState, StepperOptions, STEPPER_GLOBAL_OPTIONS} from &quot;@angular/cdk/stepper&quot;;
 import {
     AfterContentInit,
     ChangeDetectionStrategy,
@@ -610,15 +610,10 @@ export class WizardDirective extends CdkStepper implements AfterContentInit {
     /** Steps that the stepper holds. */
     @ContentChildren(WizardStepV2Component, {descendants: true}) _steps: QueryList&lt;WizardStepV2Component&gt;;
 
-    /** The list of step components that the stepper is holding. */
-    get steps(): QueryList&lt;WizardStepV2Component&gt; {
-        return this._steps;
-    }
-
     /** The step that is selected. */
     @Input()
     get selected(): WizardStepV2Component {
-        return this.steps.toArray()[this.selectedIndex];
+        return this.steps.toArray()[this.selectedIndex] as WizardStepV2Component;
     }
 
     set selected(step: WizardStepV2Component) {
@@ -628,6 +623,7 @@ export class WizardDirective extends CdkStepper implements AfterContentInit {
     ngAfterContentInit() {
         // Mark the component for change detection whenever the content children query changes
         this._steps.changes.pipe(takeUntil(this._destroyed)).subscribe(() &#x3D;&gt; {
+            this.steps.reset(this._steps as any);
             this._stateChanged();
         });
 

@@ -1058,7 +1058,7 @@ Default value is &#39;compact&#39;.</p>
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="380" class="link-to-prism">src/lib/repeat/repeat.component.ts:380</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="382" class="link-to-prism">src/lib/repeat/repeat.component.ts:382</a></div>
                             </td>
                         </tr>
 
@@ -2256,7 +2256,9 @@ export class RepeatComponent&lt;T extends IRepeatItem &#x3D; any&gt; implements 
 
     /* START - ITEM BEHAVIOUR DECIDERS */
     public isItemDisabled(item: T): boolean {
+        // @ts-ignore
         return item.hasOwnProperty(nameof&lt;IRepeatItem&gt;(&quot;disabled&quot;))
+            // @ts-ignore
             ? item.disabled
             : !!this.itemConfig?.isDisabled?.(item);
     }

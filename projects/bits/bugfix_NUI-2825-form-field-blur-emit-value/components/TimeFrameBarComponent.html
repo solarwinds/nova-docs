@@ -438,9 +438,9 @@
 
                             </p>
                         <p>
-                            <em>Default value : </em><code>{
-        startDatetime: this.minDate,
-        endDatetime: this.maxDate,
+                            <em>Default value : </em><code>&lt;any&gt; {
+        startDatetime: undefined,
+        endDatetime: undefined,
     }</code>
                         </p>
                     </td>
@@ -1394,9 +1394,9 @@ export class TimeFrameBarComponent implements AfterContentInit, OnChanges, OnDes
     @Input() maxDate: Moment;
 
     /** Current time frame value */
-    @Input() timeFrame: ITimeframe &#x3D; {
-        startDatetime: this.minDate,
-        endDatetime: this.maxDate,
+    @Input() timeFrame: ITimeframe &#x3D; &lt;any&gt; {
+        startDatetime: undefined,
+        endDatetime: undefined,
     };
     @Output() timeFrameChange &#x3D; new EventEmitter&lt;ITimeframe&gt;();
 

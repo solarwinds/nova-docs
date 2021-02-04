@@ -175,9 +175,6 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                    <a href="#steps">steps</a>
-                                </li>
-                                <li>
                                     <a href="#selected">selected</a>
                                 </li>
                             </ul>
@@ -231,7 +228,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="109" class="link-to-prism">src/lib/wizard-v2/wizard-step.component.ts:109</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="104" class="link-to-prism">src/lib/wizard-v2/wizard-step.component.ts:104</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -576,39 +573,6 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="steps"></a>
-                        <span class="name"><b>steps</b><a href="#steps"><span class="icon ion-ios-link"></span></a></span>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <span class="accessor"><b>get</b><code>steps()</code></span>
-                    </td>
-                </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="103" class="link-to-prism">src/lib/wizard-v2/wizard-step.component.ts:103</a></div>
-                                </td>
-                            </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-description"><p>The list of step components that the stepper is holding. </p>
-</div>
-
-                                <div class="io-description">
-                                    <b>Returns : </b>    <code><a href="../components/WizardStepV2Component.html" target="_self" >QueryList&lt;WizardStepV2Component&gt;</a></code>
-
-                                </div>
-                        </td>
-                    </tr>
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
                         <a name="selected"></a>
                         <span class="name"><b>selected</b><a href="#selected"><span class="icon ion-ios-link"></span></a></span>
                     </td>
@@ -622,7 +586,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="113" class="link-to-prism">src/lib/wizard-v2/wizard-step.component.ts:113</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="108" class="link-to-prism">src/lib/wizard-v2/wizard-step.component.ts:108</a></div>
                                 </td>
                             </tr>
                     <tr>
@@ -668,7 +632,7 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {AnimationEvent} from &quot;@angular/animations&quot;;
 import {BooleanInput} from &quot;@angular/cdk/coercion&quot;;
-import {CdkStep, CdkStepper, StepContentPositionState, STEPPER_GLOBAL_OPTIONS, StepperOptions} from &quot;@angular/cdk/stepper&quot;;
+import {CdkStep, CdkStepper, StepContentPositionState, StepperOptions, STEPPER_GLOBAL_OPTIONS} from &quot;@angular/cdk/stepper&quot;;
 import {
     AfterContentInit,
     ChangeDetectionStrategy,
@@ -767,15 +731,10 @@ export class WizardDirective extends CdkStepper implements AfterContentInit {
     /** Steps that the stepper holds. */
     @ContentChildren(WizardStepV2Component, {descendants: true}) _steps: QueryList&lt;WizardStepV2Component&gt;;
 
-    /** The list of step components that the stepper is holding. */
-    get steps(): QueryList&lt;WizardStepV2Component&gt; {
-        return this._steps;
-    }
-
     /** The step that is selected. */
     @Input()
     get selected(): WizardStepV2Component {
-        return this.steps.toArray()[this.selectedIndex];
+        return this.steps.toArray()[this.selectedIndex] as WizardStepV2Component;
     }
 
     set selected(step: WizardStepV2Component) {
@@ -785,6 +744,7 @@ export class WizardDirective extends CdkStepper implements AfterContentInit {
     ngAfterContentInit() {
         // Mark the component for change detection whenever the content children query changes
         this._steps.changes.pipe(takeUntil(this._destroyed)).subscribe(() &#x3D;&gt; {
+            this.steps.reset(this._steps as any);
             this._stateChanged();
         });
 

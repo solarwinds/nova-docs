@@ -692,7 +692,9 @@ export class RepeatComponent&lt;T extends IRepeatItem &#x3D; any&gt; implements 
 
     /* START - ITEM BEHAVIOUR DECIDERS */
     public isItemDisabled(item: T): boolean {
+        // @ts-ignore
         return item.hasOwnProperty(nameof&lt;IRepeatItem&gt;(&quot;disabled&quot;))
+            // @ts-ignore
             ? item.disabled
             : !!this.itemConfig?.isDisabled?.(item);
     }
