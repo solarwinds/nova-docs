@@ -80,7 +80,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="101" class="link-to-prism">src/lib/types.ts:101</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="100" class="link-to-prism">src/lib/types.ts:100</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -93,8 +93,7 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ChangeDetectorRef, EventEmitter, InjectionToken, Injector, StaticProvider } from &quot;@angular/core&quot;;
 import { AbstractControl, FormGroup } from &quot;@angular/forms&quot;;
-import { EventBus } from &quot;@nova-ui/bits&quot;;
-import { NuiEvent } from &quot;@nova-ui/bits/services/event-bus.service&quot;;
+import { EventBus, IEvent } from &quot;@nova-ui/bits&quot;;
 import { GridsterItem } from &quot;angular-gridster2&quot;;
 import { Observable } from &quot;rxjs&quot;;
 
@@ -106,11 +105,11 @@ import { IConfiguratorSource } from &quot;./configurator/services/types&quot;;
  */
 export type DeepPartial&lt;T&gt; &#x3D; T extends object ? { [K in keyof T]?: DeepPartial&lt;T[K]&gt; } : T;
 
-export const PIZZAGNA_EVENT_BUS &#x3D; new InjectionToken&lt;EventBus&lt;NuiEvent&gt;&gt;(&quot;PIZZAGNA_EVENT_BUS&quot;);
-export const DASHBOARD_EVENT_BUS &#x3D; new InjectionToken&lt;EventBus&lt;NuiEvent&gt;&gt;(&quot;DASHBOARD_EVENT_BUS&quot;);
-export const DATA_SOURCE &#x3D; new InjectionToken&lt;EventBus&lt;NuiEvent&gt;&gt;(&quot;DATA_SOURCE&quot;);
-export const FORMATTERS_REGISTRY &#x3D; new InjectionToken&lt;EventBus&lt;NuiEvent&gt;&gt;(&quot;FORMATTERS_REGISTRY&quot;);
-export const TEST_REGISTRY &#x3D; new InjectionToken&lt;EventBus&lt;NuiEvent&gt;&gt;(&quot;TEST_REGISTRY&quot;);
+export const PIZZAGNA_EVENT_BUS &#x3D; new InjectionToken&lt;EventBus&lt;IEvent&gt;&gt;(&quot;PIZZAGNA_EVENT_BUS&quot;);
+export const DASHBOARD_EVENT_BUS &#x3D; new InjectionToken&lt;EventBus&lt;IEvent&gt;&gt;(&quot;DASHBOARD_EVENT_BUS&quot;);
+export const DATA_SOURCE &#x3D; new InjectionToken&lt;EventBus&lt;IEvent&gt;&gt;(&quot;DATA_SOURCE&quot;);
+export const FORMATTERS_REGISTRY &#x3D; new InjectionToken&lt;EventBus&lt;IEvent&gt;&gt;(&quot;FORMATTERS_REGISTRY&quot;);
+export const TEST_REGISTRY &#x3D; new InjectionToken&lt;EventBus&lt;IEvent&gt;&gt;(&quot;TEST_REGISTRY&quot;);
 
 export type WidgetUpdateOperation &#x3D; (widget: IWidget, source: IConfiguratorSource) &#x3D;&gt; Observable&lt;IWidget&gt;;
 export type WidgetRemovalOperation &#x3D; (widgetId: string, source: IConfiguratorSource) &#x3D;&gt; Observable&lt;string&gt;;

@@ -1080,11 +1080,11 @@
     SimpleChanges
 } from &quot;@angular/core&quot;;
 import { ControlContainer, FormBuilder, FormGroup, FormGroupDirective, Validators } from &quot;@angular/forms&quot;;
+import { IDataField } from &quot;@nova-ui/bits&quot;;
 import capitalize from &quot;lodash/capitalize&quot;;
 import { Subject } from &quot;rxjs&quot;;
 import { takeUntil, tap } from &quot;rxjs/operators&quot;;
 
-import { IDataField } from &quot;../../../../../../../components/table-widget/types&quot;;
 import { IFormatter, IFormatterConfigurator, IFormatterDefinition } from &quot;../../../../../../../components/types&quot;;
 import { FormatterRegistryService, TableFormatterRegistryService } from &quot;../../../../../../../services/table-formatter-registry.service&quot;;
 import { FORMATTERS_REGISTRY, IHasChangeDetector } from &quot;../../../../../../../types&quot;;
