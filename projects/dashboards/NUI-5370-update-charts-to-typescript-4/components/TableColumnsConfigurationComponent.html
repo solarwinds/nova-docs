@@ -892,7 +892,7 @@
     SimpleChanges,
 } from &quot;@angular/core&quot;;
 import { AbstractControl, FormArray, FormBuilder, FormGroup } from &quot;@angular/forms&quot;;
-import { DialogService, EventBus, IEvent, immutableSet, uuid } from &quot;@nova-ui/bits&quot;;
+import { DialogService, EventBus, IDataField, IEvent, immutableSet, uuid } from &quot;@nova-ui/bits&quot;;
 import get from &quot;lodash/get&quot;;
 import isUndefined from &quot;lodash/isUndefined&quot;;
 import values from &quot;lodash/values&quot;;
@@ -900,7 +900,7 @@ import { Observable, Subject } from &quot;rxjs&quot;;
 import { map } from &quot;rxjs/operators&quot;;
 
 import { IDataSourceOutput } from &quot;../../../../../components/providers/types&quot;;
-import { IDataField, ITableWidgetColumnConfig } from &quot;../../../../../components/table-widget/types&quot;;
+import { ITableWidgetColumnConfig } from &quot;../../../../../components/table-widget/types&quot;;
 import { IFormatterDefinition } from &quot;../../../../../components/types&quot;;
 import { IPizzagnaProperty } from &quot;../../../../../pizzagna/functions/get-pizzagna-property-path&quot;;
 import { PizzagnaService } from &quot;../../../../../pizzagna/services/pizzagna.service&quot;;
