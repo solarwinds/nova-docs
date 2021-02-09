@@ -453,6 +453,11 @@ If this function returns false, the modal is not dismissed.</p>
 export type SeverityLevels &#x3D; &quot;critical&quot; | &quot;warning&quot; | &quot;info&quot;;
 export type ConfirmationDialogButtons &#x3D; &quot;confirm&quot; | &quot;dismiss&quot;;
 
+export enum NuiDialogEvent {
+    EscapeKey &#x3D; &quot;ESC&quot;,
+    BackdropClick &#x3D; &quot;BACKDROP_CLICK&quot;,
+}
+
 export interface IDialogOptions {
     /**
      * Whether a backdrop element should be created for a given modal (true by default).
@@ -527,7 +532,6 @@ export interface IConfirmationDialogOptions extends IDialogOptions {
      */
     setFocus?: ConfirmationDialogButtons;
 }
-
 </code></pre>
     </div>
 </div>

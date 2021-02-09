@@ -268,7 +268,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(formBuilder: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, changeDetector: <a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank">ChangeDetectorRef</a>, formattersRegistryCommon: <a href="../classes/RegistryService.html">FormatterRegistryService</a>, tableFormattersRegistryService: <a href="../injectables/TableFormatterRegistryService.html">TableFormatterRegistryService</a>)</code>
+<code>constructor(formBuilder: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, changeDetector: <a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank">ChangeDetectorRef</a>, formattersRegistryCommon: <a href="../classes/FormatterRegistryService.html">FormatterRegistryService</a>, tableFormattersRegistryService: <a href="../injectables/TableFormatterRegistryService.html">TableFormatterRegistryService</a>)</code>
                     </td>
                 </tr>
                         <tr>
@@ -318,7 +318,7 @@
                                                         <td>formattersRegistryCommon</td>
                                                   
                                                         <td>
-                                                                    <code><a href="../classes/RegistryService.html" target="_self" >FormatterRegistryService</a></code>
+                                                                    <code><a href="../classes/FormatterRegistryService.html" target="_self" >FormatterRegistryService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -1080,11 +1080,11 @@
     SimpleChanges
 } from &quot;@angular/core&quot;;
 import { ControlContainer, FormBuilder, FormGroup, FormGroupDirective, Validators } from &quot;@angular/forms&quot;;
+import { IDataField } from &quot;@nova-ui/bits&quot;;
 import capitalize from &quot;lodash/capitalize&quot;;
 import { Subject } from &quot;rxjs&quot;;
 import { takeUntil, tap } from &quot;rxjs/operators&quot;;
 
-import { IDataField } from &quot;../../../../../../../components/table-widget/types&quot;;
 import { IFormatter, IFormatterConfigurator, IFormatterDefinition } from &quot;../../../../../../../components/types&quot;;
 import { FormatterRegistryService, TableFormatterRegistryService } from &quot;../../../../../../../services/table-formatter-registry.service&quot;;
 import { FORMATTERS_REGISTRY, IHasChangeDetector } from &quot;../../../../../../../types&quot;;
@@ -1283,9 +1283,9 @@ export class PresentationConfigurationComponent implements IHasChangeDetector, O
     }
 
     private subscribeToFormattersRegistry(): void {
-        this.handleFormattersUpdate(this.formattersRegistry.getFormatters());
+        this.handleFormattersUpdate(this.formattersRegistry.getItems());
 
-        this.formattersRegistry.formattersStateChanged$.pipe(
+        this.formattersRegistry.stateChanged$.pipe(
             tap(this.handleFormattersUpdate.bind(this)),
             takeUntil(this.onDestroy$)
         ).subscribe();

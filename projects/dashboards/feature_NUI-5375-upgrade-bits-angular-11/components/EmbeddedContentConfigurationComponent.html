@@ -327,10 +327,9 @@
                         <code>mode</code>
                     </td>
                     <td class="col-md-10">
-                            <p>
-                            <em>Type :</em>    <code><a href="../miscellaneous/enumerations.html#EmbeddedContentMode" target="_self" >EmbeddedContentMode</a></code>
-
-                            </p>
+                        <p>
+                            <em>Default value : </em><code>EmbeddedContentMode.URL</code>
+                        </p>
                     </td>
                 </tr>
                         <tr>
@@ -522,11 +521,11 @@
                             <i>Default value : </i><code>[
         {
             value: EmbeddedContentMode.URL,
-            displayValue: &quot;Show the contents of a specific URL&quot;,
+            displayValue: $localize&#x60;Show the contents of a specific URL&#x60;,
         },
         {
             value: EmbeddedContentMode.HTML,
-            displayValue: &quot;Show the exact HTML I supply below&quot;,
+            displayValue: $localize&#x60;Show the exact HTML I supply below&#x60;,
         },
     ]</code>
                         </td>
@@ -657,7 +656,7 @@ import { IHasChangeDetector, IHasForm } from &quot;../../../../../types&quot;;
 export class EmbeddedContentConfigurationComponent implements OnInit, OnChanges, IHasChangeDetector, IHasForm, OnDestroy {
     public static lateLoadKey &#x3D; &quot;EmbeddedContentConfigurationComponent&quot;;
 
-    @Input() mode: EmbeddedContentMode;
+    @Input() mode &#x3D; EmbeddedContentMode.URL;
     @Input() messageComponent: IInfoMessage;
     @Input() customEmbeddedContent: string;
 
@@ -675,11 +674,11 @@ export class EmbeddedContentConfigurationComponent implements OnInit, OnChanges,
     public modes &#x3D; [
         {
             value: EmbeddedContentMode.URL,
-            displayValue: &quot;Show the contents of a specific URL&quot;,
+            displayValue: $localize&#x60;Show the contents of a specific URL&#x60;,
         },
         {
             value: EmbeddedContentMode.HTML,
-            displayValue: &quot;Show the exact HTML I supply below&quot;,
+            displayValue: $localize&#x60;Show the exact HTML I supply below&#x60;,
         },
     ];
 
