@@ -135,7 +135,7 @@ It needs to be configured with the events that need transmission each way.</p>
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(pizzagnaBus: EventBus<IEvent>, dashboardBus: EventBus<IEvent>, widgetConfigurationService: <a href="../classes/WidgetConfigurationService.html">WidgetConfigurationService</a>, eventRegistry: <a href="../injectables/EventRegistryService.html">EventRegistryService</a>, pizzagnaService: <a href="../injectables/PizzagnaService.html">PizzagnaService</a>)</code>
+<code>constructor(pizzagnaBus: EventBus<IEvent>, dashboardBus: EventBus<IEvent>, widgetConfigurationService: <a href="../injectables/WidgetConfigurationService.html">WidgetConfigurationService</a>, eventRegistry: <a href="../injectables/EventRegistryService.html">EventRegistryService</a>, pizzagnaService: <a href="../injectables/PizzagnaService.html">PizzagnaService</a>)</code>
                     </td>
                 </tr>
                         <tr>
@@ -185,7 +185,7 @@ It needs to be configured with the events that need transmission each way.</p>
                                                         <td>widgetConfigurationService</td>
                                                   
                                                         <td>
-                                                                    <code><a href="../classes/WidgetConfigurationService.html" target="_self" >WidgetConfigurationService</a></code>
+                                                                    <code><a href="../injectables/WidgetConfigurationService.html" target="_self" >WidgetConfigurationService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -611,7 +611,7 @@ import { Subject, Subscription } from &quot;rxjs&quot;;
 import { takeUntil } from &quot;rxjs/operators&quot;;
 
 import { PizzagnaService } from &quot;../pizzagna/services/pizzagna.service&quot;;
-import { DASHBOARD_EVENT_BUS, IConfigurable, IProperties, PIZZAGNA_EVENT_BUS, PizzagnaLayer } from &quot;../types&quot;;
+import { DASHBOARD_EVENT_BUS, IConfigurable, IProperties, PizzagnaLayer, PIZZAGNA_EVENT_BUS } from &quot;../types&quot;;
 
 import { EventRegistryService } from &quot;./event-registry.service&quot;;
 import { WidgetConfigurationService } from &quot;./widget-configuration.service&quot;;
