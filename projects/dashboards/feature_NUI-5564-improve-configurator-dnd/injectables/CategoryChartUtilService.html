@@ -1,0 +1,528 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@nova-ui/dashboards documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">@nova-ui/dashboards documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Injectables</li>
+  <li>CategoryChartUtilService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">API</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/lib/services/category-chart-util.service.ts</code>
+        </p>
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#buildChartSeries">buildChartSeries</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#getChartAttributes">getChartAttributes</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+            <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="buildChartSeries"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Static</span>
+                            buildChartSeries
+                            </b>
+                            <a href="#buildChartSeries"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>buildChartSeries(data: IDataSeries<IAccessors>[], accessors: IAccessors, renderer: Renderer<IAccessors>, scales: Scales)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/lib/services/category-chart-util.service.ts:59</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Combines each of IDataSeries with accessors, renderer and scales provided</p>
+</div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>data</td>
+                                                        <td>
+                                                                    <code>IDataSeries&lt;IAccessors&gt;[]</code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>accessors</td>
+                                                        <td>
+                                                                    <code>IAccessors</code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>renderer</td>
+                                                        <td>
+                                                                    <code>Renderer&lt;IAccessors&gt;</code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>scales</td>
+                                                        <td>
+                                                                    <code>Scales</code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>IChartAssistSeries[]</code>
+
+                            </div>
+                                <div class="io-description">
+                                    <p>resulting set of IChartAssistSeries</p>
+
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getChartAttributes"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Static</span>
+                            getChartAttributes
+                            </b>
+                            <a href="#getChartAttributes"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>getChartAttributes(chartType: <a href="../undefineds/ProportionalWidgetChartTypes.html">ProportionalWidgetChartTypes</a>, colors?: IValueProvider<string>, markers?: IValueProvider<IChartMarker>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="68" class="link-to-prism">src/lib/services/category-chart-util.service.ts:68</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>chartType</td>
+                                                        <td>
+                                                                    <code><a href="../miscellaneous/enumerations.html#ProportionalWidgetChartTypes" target="_self" >ProportionalWidgetChartTypes</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>colors</td>
+                                                        <td>
+                                                                    <code>IValueProvider&lt;string&gt;</code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>markers</td>
+                                                        <td>
+                                                                    <code>IValueProvider&lt;IChartMarker&gt;</code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../interfaces/IChartAttributes.html" target="_self" >IChartAttributes | IChartAttributes</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &quot;@angular/core&quot;;
+import {
+    barAccessors,
+    barGrid,
+    BarRenderer,
+    barScales,
+    BarSeriesHighlightStrategy,
+    ChartAssist,
+    IAccessors,
+    IBarChartConfig,
+    IChartAssistSeries,
+    IChartMarker,
+    IDataSeries,
+    IGrid, IRadialAccessors,
+    IValueProvider,
+    PieRenderer,
+    radial,
+    RadialAccessors,
+    radialGrid,
+    RadialRenderer,
+    radialScales,
+    Renderer,
+    Scales
+} from &quot;@nova-ui/charts&quot;;
+
+import { ProportionalWidgetChartTypes } from &quot;../components/proportional-widget/types&quot;;
+
+type PreprocessorType&lt;T&gt; &#x3D; (this: ChartAssist, series: IChartAssistSeries&lt;T&gt;[]) &#x3D;&gt; IChartAssistSeries&lt;T&gt;[];
+
+export interface IChartAttributes&lt;T &#x3D; IAccessors&gt; {
+    grid: IGrid;
+    accessors: IAccessors;
+    renderer: Renderer&lt;IAccessors&gt;;
+    scales: Scales;
+    preprocessor?: PreprocessorType&lt;T&gt;;
+}
+
+interface IChartTools&lt;T &#x3D; IAccessors&gt; {
+    config?: IBarChartConfig;
+    preprocessor?: PreprocessorType&lt;T&gt;;
+    gridFunction: () &#x3D;&gt; IGrid;
+    rendererFunction: () &#x3D;&gt; Renderer&lt;IAccessors&gt;;
+    accessorFunction: (colors?: IValueProvider&lt;string&gt;, markers?: IValueProvider&lt;IChartMarker&gt;) &#x3D;&gt; IAccessors;
+    scaleFunction: () &#x3D;&gt; Scales;
+}
+
+@Injectable()
+export class CategoryChartUtilService {
+    /**
+     *  Combines each of IDataSeries with accessors, renderer and scales provided
+     *
+     * @param data
+     * @param accessors
+     * @param renderer
+     * @param scales
+     *
+     * @returns resulting set of IChartAssistSeries
+     */
+    public static buildChartSeries(
+        data: IDataSeries&lt;IAccessors&gt;[],
+        accessors: IAccessors,
+        renderer: Renderer&lt;IAccessors&gt;,
+        scales: Scales): IChartAssistSeries&lt;IAccessors&gt;[] {
+        const result &#x3D; (data || []).map(s &#x3D;&gt; ({ ...s, accessors, renderer, scales }));
+        return result;
+    }
+
+    public static getChartAttributes(
+        chartType: ProportionalWidgetChartTypes, colors?: IValueProvider&lt;string&gt;, markers?: IValueProvider&lt;IChartMarker&gt;)
+        : IChartAttributes | IChartAttributes&lt;IRadialAccessors&gt; {
+        const t: IChartTools | IChartTools&lt;IRadialAccessors&gt; &#x3D; CategoryChartUtilService.getChartTools(chartType);
+        const result: IChartAttributes | IChartAttributes&lt;IRadialAccessors&gt; &#x3D; {
+            grid: t.gridFunction(),
+            accessors: t.accessorFunction(colors, markers),
+            renderer: t.rendererFunction(),
+            scales: t.scaleFunction(),
+        };
+
+        if (t.preprocessor) {
+            result.preprocessor &#x3D; t.preprocessor as PreprocessorType&lt;IRadialAccessors&gt;;
+        }
+        return result;
+    }
+
+    private static getChartTools(chartType: ProportionalWidgetChartTypes): IChartTools | IChartTools&lt;IRadialAccessors&gt; {
+        const radialChartAccessors &#x3D; (colors: IValueProvider&lt;string&gt;) &#x3D;&gt; {
+            const accessors &#x3D; new RadialAccessors(colors);
+            accessors.series.color &#x3D; ((seriesId, series) &#x3D;&gt; series.color ?? colors.get(seriesId));
+            return accessors;
+        };
+
+        function barChartAccessors(colors?: IValueProvider&lt;string&gt;, markers?: IValueProvider&lt;IChartMarker&gt;) {
+            // TODO: Refactor to accept config reference from arguments not from outer context
+            // @ts-ignore: TS2683: &#x27;this&#x27; implicitly has type &#x27;any&#x27; because it does not have a type annotation.;
+            // An outer value of &#x27;this&#x27; is shadowed by this container.
+            const accessors &#x3D; barAccessors(this.config, colors, markers);
+            accessors.series.color &#x3D; ((seriesId, series) &#x3D;&gt; series.color ?? colors?.get(seriesId));
+            // TODO: Remove custom accessor after fixing NUI-3688 in charts
+            accessors.data.value &#x3D; (d: any) &#x3D;&gt; Number.isFinite(d) ? d : d.value;
+            return accessors;
+        }
+
+        const chartTools: Record&lt;ProportionalWidgetChartTypes, IChartTools&lt;IRadialAccessors&gt; | IChartTools&gt; &#x3D; {
+            [ProportionalWidgetChartTypes.DonutChart]: {
+                preprocessor: radial,
+                gridFunction: radialGrid,
+                rendererFunction: () &#x3D;&gt; new RadialRenderer(),
+                // TODO: replace with correct type
+                accessorFunction: radialChartAccessors as (colors?: IValueProvider&lt;string&gt;, markers?: IValueProvider&lt;IChartMarker&gt;) &#x3D;&gt; IAccessors,
+                scaleFunction: radialScales,
+            },
+            [ProportionalWidgetChartTypes.PieChart]: {
+                preprocessor: radial,
+                gridFunction: radialGrid,
+                rendererFunction: () &#x3D;&gt; new PieRenderer(),
+                // TODO: replace with correct type
+                accessorFunction: radialChartAccessors as (colors?: IValueProvider&lt;string&gt;, markers?: IValueProvider&lt;IChartMarker&gt;) &#x3D;&gt; IAccessors,
+                scaleFunction: radialScales,
+            },
+            [ProportionalWidgetChartTypes.HorizontalBarChart]: {
+                config: { horizontal: true },
+                gridFunction() {
+                    return barGrid(this.config);
+                },
+                rendererFunction() {
+                    return new BarRenderer({ highlightStrategy: new BarSeriesHighlightStrategy(&quot;y&quot;) });
+                },
+                accessorFunction: barChartAccessors,
+                scaleFunction() {
+                    return barScales(this.config);
+                },
+            },
+            [ProportionalWidgetChartTypes.VerticalBarChart]: {
+                config: { horizontal: false },
+                gridFunction() {
+                    return barGrid(this.config);
+                },
+                rendererFunction() {
+                    return new BarRenderer({ highlightStrategy: new BarSeriesHighlightStrategy(&quot;x&quot;) });
+                },
+                accessorFunction: barChartAccessors,
+                scaleFunction() {
+                    return barScales(this.config);
+                },
+            },
+        };
+
+        return chartTools[chartType];
+    }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'CategoryChartUtilService.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
