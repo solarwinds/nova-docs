@@ -66,8 +66,7 @@
                 <h3>Description</h3>
             </p>
             <p class="comment">
-                <p>TODO: remove in v12
-<example-url>./../examples/index.html#/common/data-source-service/deprecated-client-side</example-url></p>
+                <p><example-url>./../examples/index.html#/common/data-source-service/deprecated-client-side</example-url></p>
 
             </p>
 
@@ -130,7 +129,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/services/data-source/local-filtering-data-source.service.ts:43</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/services/data-source/local-filtering-data-source.service.ts:42</a></div>
                             </td>
                         </tr>
 
@@ -197,7 +196,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="176" class="link-to-prism">src/services/data-source/local-filtering-data-source.service.ts:176</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="175" class="link-to-prism">src/services/data-source/local-filtering-data-source.service.ts:175</a></div>
                             </td>
                         </tr>
 
@@ -281,7 +280,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/services/data-source/local-filtering-data-source.service.ts:57</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/services/data-source/local-filtering-data-source.service.ts:56</a></div>
                             </td>
                         </tr>
 
@@ -352,7 +351,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/services/data-source/local-filtering-data-source.service.ts:49</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/services/data-source/local-filtering-data-source.service.ts:48</a></div>
                             </td>
                         </tr>
 
@@ -427,7 +426,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/services/data-source/local-filtering-data-source.service.ts:53</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/services/data-source/local-filtering-data-source.service.ts:52</a></div>
                             </td>
                         </tr>
 
@@ -511,9 +510,8 @@ interface ComparisonItems {
 }
 
 /**
- * TODO: remove in v12
  * &lt;example-url&gt;./../examples/index.html#/common/data-source-service/deprecated-client-side&lt;/example-url&gt;
- * @deprecated
+ * @deprecated in v11
  */
 @Injectable()
 export class LocalFilteringDataSource&lt;T, F extends INovaFilters &#x3D; INovaFilters&gt; extends DataSourceService&lt;T, F&gt; {
@@ -650,7 +648,7 @@ export class LocalFilteringDataSource&lt;T, F extends INovaFilters &#x3D; INovaF
     }
 
     /**
-     * @deprecated - use filtersChanged instead
+     * @deprecated in v11 - Use filtersChanged instead - Removal: NUI-5796
      */
     protected paginationReset(filters: any, itemsToCompare: any) {
         return this.filtersChanged(filters, itemsToCompare);

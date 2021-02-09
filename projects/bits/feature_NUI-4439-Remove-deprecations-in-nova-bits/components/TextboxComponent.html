@@ -708,7 +708,7 @@ NUI Textbox component.</p>
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="141" class="link-to-prism">src/lib/textbox/textbox.component.ts:141</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="142" class="link-to-prism">src/lib/textbox/textbox.component.ts:142</a></div>
                             </td>
                         </tr>
 
@@ -781,7 +781,7 @@ NUI Textbox component.</p>
                 <tr>
                     <td class="col-md-4">
                             <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>onBlurEventEmit($event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                        <code>onBlurEventEmit()</code>
                     </td>
                 </tr>
 
@@ -797,40 +797,9 @@ NUI Textbox component.</p>
                     <td class="col-md-4">
 
                             <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>$event</td>
-                                                        <td>
-                                                                    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
                                 <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
                             </div>
-                                <div class="io-description">
-                                    
-                                </div>
                     </td>
                 </tr>
             </tbody>
@@ -857,7 +826,7 @@ NUI Textbox component.</p>
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="139" class="link-to-prism">src/lib/textbox/textbox.component.ts:139</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="140" class="link-to-prism">src/lib/textbox/textbox.component.ts:140</a></div>
                             </td>
                         </tr>
 
@@ -999,7 +968,7 @@ NUI Textbox component.</p>
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="147" class="link-to-prism">src/lib/textbox/textbox.component.ts:147</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="148" class="link-to-prism">src/lib/textbox/textbox.component.ts:148</a></div>
                             </td>
                         </tr>
 
@@ -1070,7 +1039,7 @@ NUI Textbox component.</p>
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="151" class="link-to-prism">src/lib/textbox/textbox.component.ts:151</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="152" class="link-to-prism">src/lib/textbox/textbox.component.ts:152</a></div>
                             </td>
                         </tr>
 
@@ -1141,7 +1110,7 @@ NUI Textbox component.</p>
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="155" class="link-to-prism">src/lib/textbox/textbox.component.ts:155</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="156" class="link-to-prism">src/lib/textbox/textbox.component.ts:156</a></div>
                             </td>
                         </tr>
 
@@ -1212,7 +1181,7 @@ NUI Textbox component.</p>
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="143" class="link-to-prism">src/lib/textbox/textbox.component.ts:143</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="144" class="link-to-prism">src/lib/textbox/textbox.component.ts:144</a></div>
                             </td>
                         </tr>
 
@@ -1449,17 +1418,18 @@ export class TextboxComponent implements ControlValueAccessor, NuiFormFieldContr
         this.textboxInput.nativeElement.focus();
     }
 
-    public onBlurEventEmit($event: any) {
-        this.changeValue($event);
+    public onBlurEventEmit() {
         this._onTouched();
         this.blurred.emit(this.value);
     }
+
     public onChangeEvent($event: any) {
         if ($event.target.value !&#x3D;&#x3D; this.value) {
             this.changeValue($event);
             this.textChange.emit(this.value);
         }
     }
+
     onChange(value: any) {}
 
     _onTouched() {}
@@ -1503,9 +1473,9 @@ export class TextboxComponent implements ControlValueAccessor, NuiFormFieldContr
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="nui-textbox"     [class.nui-textbox--disabled]="disabled"     [class.has-error]="isInErrorState">    <div class="has-feedback"         [ngStyle]="{\'width\': customBoxWidth}">        <input *ngIf="!rows || rows <= 1"               class="form-control input-control nui-textbox__input"               value="{{value}}"               [autocomplete]="autocomplete"               [disabled]="disabled"               [attr.name]="name"               [type]="type"               (blur)="onBlurEventEmit($event)"               (input)="onChangeEvent($event)"               [placeholder]="placeholder"               [readonly]="readonly"               [attr.aria-label]="ariaLabel"               #textboxInput/>        <textarea *ngIf="rows > 1"                  class="form-control input-control nui-textbox__input"                  value="{{value}}"                  [rows]="rows"                  [disabled]="disabled"                  [attr.name]="name"                  (blur)="onBlurEventEmit($event)"                  (input)="onChangeEvent($event)"                  [placeholder]="placeholder"                  [readonly]="readonly"                  [attr.aria-label]="ariaLabel"                  #textboxInput></textarea>        <div class="form-control-feedback nui-textbox__busy">            <nui-spinner [show]="isBusy"></nui-spinner>        </div>    </div></div></div>'
-    var COMPONENTS = [{'name': 'BreadcrumbComponent', 'selector': 'nui-breadcrumb'},{'name': 'BusyComponent', 'selector': '[nui-busy]'},{'name': 'ButtonComponent', 'selector': '[nui-button]'},{'name': 'CardComponent', 'selector': 'nui-card'},{'name': 'CardGroupComponent', 'selector': 'nui-card-group'},{'name': 'CheckboxComponent', 'selector': 'nui-checkbox'},{'name': 'CheckboxGroupComponent', 'selector': 'nui-checkbox-group'},{'name': 'ChipsComponent', 'selector': 'nui-chips'},{'name': 'ChipsOverflowComponent', 'selector': 'nui-chips-overflow'},{'name': 'ComboboxV2Component', 'selector': 'nui-combobox-v2'},{'name': 'CustomValidationMessageComponent', 'selector': 'nui-custom-validation-message'},{'name': 'DatePickerComponent', 'selector': 'nui-date-picker'},{'name': 'DateTimePickerComponent', 'selector': 'nui-date-time-picker'},{'name': 'DialogComponent', 'selector': 'nui-dialog-window'},{'name': 'ExpanderComponent', 'selector': 'nui-expander'},{'name': 'FormFieldComponent', 'selector': 'nui-form-field'},{'name': 'IconComponent', 'selector': 'nui-icon'},{'name': 'ImageComponent', 'selector': 'nui-image'},{'name': 'MenuComponent', 'selector': 'nui-menu'},{'name': 'MessageComponent', 'selector': 'nui-message'},{'name': 'OverlayComponent', 'selector': 'nui-overlay'},{'name': 'PaginatorComponent', 'selector': 'nui-paginator'},{'name': 'PanelComponent', 'selector': 'nui-panel'},{'name': 'PopoverComponent', 'selector': 'nui-popover'},{'name': 'PopupComponent', 'selector': 'nui-popup'},{'name': 'PopupDeprecatedComponent', 'selector': 'nui-popup-deprecated'},{'name': 'ProgressComponent', 'selector': 'nui-progress'},{'name': 'QuickPickerComponent', 'selector': 'nui-quick-picker'},{'name': 'RadioGroupComponent', 'selector': 'nui-radio-group'},{'name': 'RepeatComponent', 'selector': 'nui-repeat'},{'name': 'SearchComponent', 'selector': 'nui-search'},{'name': 'SelectV2Component', 'selector': 'nui-select-v2'},{'name': 'SheetComponent', 'selector': 'nui-sheet'},{'name': 'SheetGroupComponent', 'selector': 'nui-sheet-group'},{'name': 'SorterComponent', 'selector': 'nui-sorter'},{'name': 'SpinnerComponent', 'selector': 'nui-spinner'},{'name': 'SwitchComponent', 'selector': 'nui-switch'},{'name': 'TabHeadingGroupComponent', 'selector': 'nui-tab-heading-group'},{'name': 'TableComponent', 'selector': 'nui-table, table[nui-table]'},{'name': 'TextboxComponent', 'selector': 'nui-textbox'},{'name': 'TextboxNumberComponent', 'selector': 'nui-textbox-number'},{'name': 'TimeFrameBarComponent', 'selector': 'nui-time-frame-bar'},{'name': 'TimeFramePickerComponent', 'selector': 'nui-time-frame-picker'},{'name': 'TimePickerComponent', 'selector': 'nui-time-picker'},{'name': 'ToastComponent', 'selector': 'nui-toast-component'},{'name': 'ToolbarComponent', 'selector': 'nui-toolbar'},{'name': 'WizardComponent', 'selector': 'nui-wizard'},{'name': 'WizardFooterComponent', 'selector': 'wizard-footer'},{'name': 'WizardHorizontalComponent', 'selector': 'nui-wizard-horizontal'},{'name': 'WizardStepComponent', 'selector': 'nui-wizard-step'},{'name': 'WizardStepHeaderComponent', 'selector': 'wizard-step-header'},{'name': 'WizardStepV2Component', 'selector': 'nui-wizard-step-v2'},{'name': 'WizardVerticalComponent', 'selector': 'nui-wizard-vertical'}];
-    var DIRECTIVES = [{'name': 'ClickInterceptorDirective', 'selector': '[nuiClickInterceptor]'},{'name': 'DndDropTargetDirective', 'selector': '[cdkDropList][nuiDndDropTarget]'},{'name': 'MarkAsSelectedItemDirective', 'selector': '[nuiMarkAsSelectedItem]'},{'name': 'TableStickyHeaderDirective', 'selector': 'cdk-virtual-scroll-viewport[tableStickyHeader]'},{'name': 'TableVirtualScrollLinearDirective', 'selector': '[tableVirtualScroll]:not([offset])'},{'name': 'TooltipDirective', 'selector': '[nuiTooltip]'},{'name': 'WizardDirective', 'selector': '[nuiWizard]'},{'name': 'WizardStepFooterDirective', 'selector': '[wizardStepFooter]'},{'name': 'WizardStepLabelDirective', 'selector': '[wizardStepLabel]'},{'name': 'WizardStepperNextDirective', 'selector': 'button[nuiWizardNext]'},{'name': 'WizardStepperPreviousDirective', 'selector': 'button[nuiWizardPrevious]'}];
+        var COMPONENT_TEMPLATE = '<div><div class="nui-textbox"     [class.nui-textbox--disabled]="disabled"     [class.has-error]="isInErrorState">    <div class="has-feedback"         [ngStyle]="{\'width\': customBoxWidth}">        <input *ngIf="!rows || rows <= 1"               class="form-control input-control nui-textbox__input"               value="{{value}}"               [autocomplete]="autocomplete"               [disabled]="disabled"               [attr.name]="name"               [type]="type"               (blur)="onBlurEventEmit()"               (input)="onChangeEvent($event)"               [placeholder]="placeholder"               [readonly]="readonly"               [attr.aria-label]="ariaLabel"               #textboxInput/>        <textarea *ngIf="rows > 1"                  class="form-control input-control nui-textbox__input"                  value="{{value}}"                  [rows]="rows"                  [disabled]="disabled"                  [attr.name]="name"                  (blur)="onBlurEventEmit()"                  (input)="onChangeEvent($event)"                  [placeholder]="placeholder"                  [readonly]="readonly"                  [attr.aria-label]="ariaLabel"                  #textboxInput></textarea>        <div class="form-control-feedback nui-textbox__busy">            <nui-spinner [show]="isBusy"></nui-spinner>        </div>    </div></div></div>'
+    var COMPONENTS = [{'name': 'BreadcrumbComponent', 'selector': 'nui-breadcrumb'},{'name': 'BusyComponent', 'selector': '[nui-busy]'},{'name': 'ButtonComponent', 'selector': '[nui-button]'},{'name': 'CardComponent', 'selector': 'nui-card'},{'name': 'CardGroupComponent', 'selector': 'nui-card-group'},{'name': 'CheckboxComponent', 'selector': 'nui-checkbox'},{'name': 'CheckboxGroupComponent', 'selector': 'nui-checkbox-group'},{'name': 'ChipsComponent', 'selector': 'nui-chips'},{'name': 'ChipsOverflowComponent', 'selector': 'nui-chips-overflow'},{'name': 'ComboboxComponent', 'selector': 'nui-combobox'},{'name': 'ComboboxV2Component', 'selector': 'nui-combobox-v2'},{'name': 'CustomValidationMessageComponent', 'selector': 'nui-custom-validation-message'},{'name': 'DatePickerComponent', 'selector': 'nui-date-picker'},{'name': 'DateTimePickerComponent', 'selector': 'nui-date-time-picker'},{'name': 'DialogComponent', 'selector': 'nui-dialog-window'},{'name': 'ExpanderComponent', 'selector': 'nui-expander'},{'name': 'FormFieldComponent', 'selector': 'nui-form-field'},{'name': 'IconComponent', 'selector': 'nui-icon'},{'name': 'ImageComponent', 'selector': 'nui-image'},{'name': 'MenuComponent', 'selector': 'nui-menu'},{'name': 'MessageComponent', 'selector': 'nui-message'},{'name': 'OverlayComponent', 'selector': 'nui-overlay'},{'name': 'PaginatorComponent', 'selector': 'nui-paginator'},{'name': 'PanelComponent', 'selector': 'nui-panel'},{'name': 'PopoverComponent', 'selector': 'nui-popover'},{'name': 'PopupComponent', 'selector': 'nui-popup'},{'name': 'PopupDeprecatedComponent', 'selector': 'nui-popup-deprecated'},{'name': 'ProgressComponent', 'selector': 'nui-progress'},{'name': 'QuickPickerComponent', 'selector': 'nui-quick-picker'},{'name': 'RadioGroupComponent', 'selector': 'nui-radio-group'},{'name': 'RepeatComponent', 'selector': 'nui-repeat'},{'name': 'SearchComponent', 'selector': 'nui-search'},{'name': 'SelectComponent', 'selector': 'nui-select'},{'name': 'SelectV2Component', 'selector': 'nui-select-v2'},{'name': 'SheetComponent', 'selector': 'nui-sheet'},{'name': 'SheetGroupComponent', 'selector': 'nui-sheet-group'},{'name': 'SorterComponent', 'selector': 'nui-sorter'},{'name': 'SpinnerComponent', 'selector': 'nui-spinner'},{'name': 'SwitchComponent', 'selector': 'nui-switch'},{'name': 'TabHeadingGroupComponent', 'selector': 'nui-tab-heading-group'},{'name': 'TableComponent', 'selector': 'nui-table, table[nui-table]'},{'name': 'TextboxComponent', 'selector': 'nui-textbox'},{'name': 'TextboxNumberComponent', 'selector': 'nui-textbox-number'},{'name': 'TimeFrameBarComponent', 'selector': 'nui-time-frame-bar'},{'name': 'TimeFramePickerComponent', 'selector': 'nui-time-frame-picker'},{'name': 'TimePickerComponent', 'selector': 'nui-time-picker'},{'name': 'ToastComponent', 'selector': 'nui-toast-component'},{'name': 'ToolbarComponent', 'selector': 'nui-toolbar'},{'name': 'WizardComponent', 'selector': 'nui-wizard'},{'name': 'WizardFooterComponent', 'selector': 'wizard-footer'},{'name': 'WizardHorizontalComponent', 'selector': 'nui-wizard-horizontal'},{'name': 'WizardStepComponent', 'selector': 'nui-wizard-step'},{'name': 'WizardStepHeaderComponent', 'selector': 'wizard-step-header'},{'name': 'WizardStepV2Component', 'selector': 'nui-wizard-step-v2'},{'name': 'WizardVerticalComponent', 'selector': 'nui-wizard-vertical'}];
+    var DIRECTIVES = [{'name': 'ClickInterceptorDirective', 'selector': '[nuiClickInterceptor]'},{'name': 'DndDropTargetDirective', 'selector': '[cdkDropList][nuiDndDropTarget]'},{'name': 'MarkAsSelectedItemDirective', 'selector': '[nuiMarkAsSelectedItem]'},{'name': 'TableStickyHeaderDirective', 'selector': 'cdk-virtual-scroll-viewport[tableStickyHeader]'},{'name': 'TableVirtualScrollDirective', 'selector': '[tableVirtualScroll]:not([rowCount])'},{'name': 'TableVirtualScrollLinearDirective', 'selector': '[tableVirtualScroll]:not([offset])'},{'name': 'TooltipDirective', 'selector': '[nuiTooltip]'},{'name': 'WizardDirective', 'selector': '[nuiWizard]'},{'name': 'WizardStepFooterDirective', 'selector': '[wizardStepFooter]'},{'name': 'WizardStepLabelDirective', 'selector': '[wizardStepLabel]'},{'name': 'WizardStepperNextDirective', 'selector': 'button[nuiWizardNext]'},{'name': 'WizardStepperPreviousDirective', 'selector': 'button[nuiWizardPrevious]'}];
     var ACTUAL_COMPONENT = {'name': 'TextboxComponent'};
 </script>
 <script src="../js/tree.js"></script>

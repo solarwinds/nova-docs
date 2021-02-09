@@ -125,7 +125,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/common/directives/click-interceptor/click-interceptor.directive.ts:24</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/common/directives/click-interceptor/click-interceptor.directive.ts:25</a></div>
                             </td>
                         </tr>
 
@@ -194,7 +194,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/common/directives/click-interceptor/click-interceptor.directive.ts:21</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/common/directives/click-interceptor/click-interceptor.directive.ts:22</a></div>
                             </td>
                         </tr>
 
@@ -212,6 +212,7 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Directive, HostListener } from &quot;@angular/core&quot;;
 
+import { DOCUMENT_CLICK_EVENT } from &quot;../../../constants/event.constants&quot;;
 import { EventBusService } from &quot;../../../services/event-bus.service&quot;;
 
 /**
@@ -232,7 +233,7 @@ export class ClickInterceptorDirective {
     @HostListener(&quot;click&quot;, [&quot;$event&quot;])
     catchClick(event: MouseEvent) {
         event.stopPropagation();
-        this.eventBusService.getStream({id: &quot;document-click&quot;}).next(event);
+        this.eventBusService.getStream({id: DOCUMENT_CLICK_EVENT}).next(event);
     }
 
     constructor(private eventBusService: EventBusService) { }
