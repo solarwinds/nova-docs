@@ -32,13 +32,13 @@
 <title>cluster_NuiDashboardConfiguratorModule_declarations</title>
 <polygon fill="none" stroke="black" points="388,-78 388,-130 5637,-130 5637,-78 388,-78"/>
 </g>
-<g id="clust28" class="cluster">
-<title>cluster_NuiDashboardConfiguratorModule_exports</title>
-<polygon fill="none" stroke="black" points="812,-208 812,-260 6143,-260 6143,-208 812,-208"/>
-</g>
 <g id="clust27" class="cluster">
 <title>cluster_NuiDashboardConfiguratorModule_imports</title>
 <polygon fill="none" stroke="black" points="16,-78 16,-130 380,-130 380,-78 16,-78"/>
+</g>
+<g id="clust28" class="cluster">
+<title>cluster_NuiDashboardConfiguratorModule_exports</title>
+<polygon fill="none" stroke="black" points="812,-208 812,-260 6143,-260 6143,-208 812,-208"/>
 </g>
 <!-- AddDataPipe -->
 <g id="node1" class="node">
