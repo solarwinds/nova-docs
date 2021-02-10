@@ -28,13 +28,13 @@
 <title>cluster_NuiChartsModule_providers</title>
 <polygon fill="none" stroke="black" points="1947,-78 1947,-130 2351,-130 2351,-78 1947,-78"/>
 </g>
-<g id="clust15" class="cluster">
-<title>cluster_NuiChartsModule_exports</title>
-<polygon fill="none" stroke="black" points="169,-208 169,-260 2133,-260 2133,-208 169,-208"/>
-</g>
 <g id="clust2" class="cluster">
 <title>cluster_NuiChartsModule_declarations</title>
 <polygon fill="none" stroke="black" points="16,-78 16,-130 1939,-130 1939,-78 16,-78"/>
+</g>
+<g id="clust15" class="cluster">
+<title>cluster_NuiChartsModule_exports</title>
+<polygon fill="none" stroke="black" points="169,-208 169,-260 2133,-260 2133,-208 169,-208"/>
 </g>
 <!-- BasicLegendTileComponent -->
 <g id="node1" class="node">
