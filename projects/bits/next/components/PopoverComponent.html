@@ -1889,7 +1889,7 @@ export class PopoverComponent implements OnDestroy, OnInit, OnChanges {
     }
 
     private cleanUp() {
-        this.resizeObserver.disconnect();
+        this.resizeObserver?.disconnect();
         this.popoverModalSubscriptions.forEach(sub &#x3D;&gt; {
             if (sub) {
                 sub.unsubscribe();
