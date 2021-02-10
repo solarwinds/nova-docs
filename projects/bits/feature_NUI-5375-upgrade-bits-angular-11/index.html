@@ -139,14 +139,6 @@ export class OverriddenNuiEnv extends NuiEnvironment {
 <h4 id="typescript-compiler-options">Typescript Compiler Options</h4>
 <p>Information about this can be found <a href="../../README.md#Typescript-Compiler-Options">here</a>.
 <br></p>
-<h4 id="exclude-highlight-js-languages">Exclude highlight.js languages</h4>
-<p>By default Nova requires highlight.js (which normally goes with all of its languages which even Nova does not use). This can result in an excessively large bundle size (adds ~1MB). You can exclude the languages by updating the highlight.js import path inside your tsconfig.json file.</p>
-<div><pre class="line-numbers"><code class="language-none">&quot;compilerOptions&quot;: {
-    &quot;paths&quot;: {
-      &quot;highlight.js&quot;: [&quot;./node_modules/highlight.js/lib/highlight.js&quot;]
-    }
-  },</code></pre></div><br>
-
 <h2 id="schematics">Schematics</h2>
 <p>A <a href="https://angular.io/guide/schematics">schematic</a> is a template-based code generator that supports complex logic. It is a set of instructions for transforming a software project by generating or modifying code. Schematics are part of the Angular ecosystem. 
 Nova Bits offers the following [schematics](<a href="http://apollo-docs.swdev.local/nova-bits/release_nova_v8.x/sdk/api-docs-ng2/additional-documentation/schematics">http://apollo-docs.swdev.local/nova-bits/release_nova_v8.x/sdk/api-docs-ng2/additional-documentation/schematics</a>
