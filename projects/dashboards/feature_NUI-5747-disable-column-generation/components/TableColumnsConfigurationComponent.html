@@ -490,7 +490,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="192" class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor/table-columns-configuration.component.ts:192</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="196" class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor/table-columns-configuration.component.ts:196</a></div>
                             </td>
                         </tr>
 
@@ -530,7 +530,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="147" class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor/table-columns-configuration.component.ts:147</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="151" class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor/table-columns-configuration.component.ts:151</a></div>
                             </td>
                         </tr>
 
@@ -601,7 +601,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="179" class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor/table-columns-configuration.component.ts:179</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="183" class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor/table-columns-configuration.component.ts:183</a></div>
                             </td>
                         </tr>
 
@@ -672,7 +672,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="201" class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor/table-columns-configuration.component.ts:201</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="205" class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor/table-columns-configuration.component.ts:205</a></div>
                             </td>
                         </tr>
 
@@ -712,7 +712,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="205" class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor/table-columns-configuration.component.ts:205</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="209" class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor/table-columns-configuration.component.ts:209</a></div>
                             </td>
                         </tr>
 
@@ -1027,11 +1027,15 @@ export class TableColumnsConfigurationComponent implements OnInit, IHasForm, OnC
             // hackfix for NUI-5712
             this.lastValidDataFields &#x3D; changes.dataFields.currentValue;
 
+            const disableColumnGeneration &#x3D; this.dataSource?.features?.getFeatureConfig(WellKnownDataSourceFeatures.DisableTableColumnGeneration)?.enabled;
+
             const columns &#x3D; this.mergeColumns(changes.dataFields.currentValue, this.columns);
-            if (columns?.length) {
+            if (columns?.length || disableColumnGeneration) {
+                // if disableColumnGeneration is enabled and there are no columns to be kept,
+                // we have to clear the form by updating the column input via the &#x60;onItemsChange&#x60; method
                 this.onItemsChange(columns);
             } else {
-                if (!this.dataSource?.features?.getFeatureConfig(WellKnownDataSourceFeatures.DisableTableColumnGeneration)?.enabled) {
+                if (!disableColumnGeneration) {
                     this.resetColumns(false);
                 }
             }
