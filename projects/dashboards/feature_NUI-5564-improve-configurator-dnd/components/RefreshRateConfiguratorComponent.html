@@ -201,6 +201,9 @@
                                 <a href="#registerOnTouched">registerOnTouched</a>
                             </li>
                             <li>
+                                <a href="#resetUnits">resetUnits</a>
+                            </li>
+                            <li>
                                 <a href="#setDisabledState">setDisabledState</a>
                             </li>
                             <li>
@@ -377,7 +380,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="232" class="link-to-prism">src/lib/configurator/components/widgets/configurator-items/refresher-configuration/refresh-rate-configurator/refresh-rate-configurator.component.ts:232</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="236" class="link-to-prism">src/lib/configurator/components/widgets/configurator-items/refresher-configuration/refresh-rate-configurator/refresh-rate-configurator.component.ts:236</a></div>
                             </td>
                         </tr>
 
@@ -524,7 +527,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="223" class="link-to-prism">src/lib/configurator/components/widgets/configurator-items/refresher-configuration/refresh-rate-configurator/refresh-rate-configurator.component.ts:223</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="227" class="link-to-prism">src/lib/configurator/components/widgets/configurator-items/refresher-configuration/refresh-rate-configurator/refresh-rate-configurator.component.ts:227</a></div>
                             </td>
                         </tr>
 
@@ -564,7 +567,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="204" class="link-to-prism">src/lib/configurator/components/widgets/configurator-items/refresher-configuration/refresh-rate-configurator/refresh-rate-configurator.component.ts:204</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="208" class="link-to-prism">src/lib/configurator/components/widgets/configurator-items/refresher-configuration/refresh-rate-configurator/refresh-rate-configurator.component.ts:208</a></div>
                             </td>
                         </tr>
 
@@ -722,6 +725,44 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
+                        <a name="resetUnits"></a>
+                        <span class="name">
+                            <b>
+                            resetUnits
+                            </b>
+                            <a href="#resetUnits"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>resetUnits()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="133" class="link-to-prism">src/lib/configurator/components/widgets/configurator-items/refresher-configuration/refresh-rate-configurator/refresh-rate-configurator.component.ts:133</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
                         <a name="setDisabledState"></a>
                         <span class="name">
                             <b>
@@ -811,7 +852,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="255" class="link-to-prism">src/lib/configurator/components/widgets/configurator-items/refresher-configuration/refresh-rate-configurator/refresh-rate-configurator.component.ts:255</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="259" class="link-to-prism">src/lib/configurator/components/widgets/configurator-items/refresher-configuration/refresh-rate-configurator/refresh-rate-configurator.component.ts:259</a></div>
                             </td>
                         </tr>
 
@@ -1334,6 +1375,10 @@ export class RefreshRateConfiguratorComponent implements ControlValueAccessor, O
             this.unitControl.enable({emitEvent: false});
         }
         this.cd.markForCheck();
+    }
+
+    resetUnits(): void {
+        this.unitControl.setValue(this.displayedUnitItems[0]);
     }
 
     private generateUnitItems() {

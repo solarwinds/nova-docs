@@ -28,17 +28,17 @@
 <title>cluster_NuiDashboardConfiguratorModule_declarations</title>
 <polygon fill="none" stroke="black" points="1909,-78 1909,-130 7158,-130 7158,-78 1909,-78"/>
 </g>
+<g id="clust27" class="cluster">
+<title>cluster_NuiDashboardConfiguratorModule_imports</title>
+<polygon fill="none" stroke="black" points="1537,-78 1537,-130 1901,-130 1901,-78 1537,-78"/>
+</g>
 <g id="clust28" class="cluster">
 <title>cluster_NuiDashboardConfiguratorModule_exports</title>
 <polygon fill="none" stroke="black" points="963,-208 963,-260 6294,-260 6294,-208 963,-208"/>
 </g>
 <g id="clust30" class="cluster">
 <title>cluster_NuiDashboardConfiguratorModule_providers</title>
-<polygon fill="none" stroke="black" points="388,-78 388,-130 1901,-130 1901,-78 388,-78"/>
-</g>
-<g id="clust27" class="cluster">
-<title>cluster_NuiDashboardConfiguratorModule_imports</title>
-<polygon fill="none" stroke="black" points="16,-78 16,-130 380,-130 380,-78 16,-78"/>
+<polygon fill="none" stroke="black" points="16,-78 16,-130 1529,-130 1529,-78 16,-78"/>
 </g>
 <!-- AddDataPipe -->
 <g id="node1" class="node">
@@ -583,8 +583,8 @@
 <!-- NuiDashboardConfiguratorModule&#45;&gt;WidgetConfiguratorSectionComponent  -->
 <g id="edge47" class="edge">
 <title>NuiDashboardConfiguratorModule&#45;&gt;WidgetConfiguratorSectionComponent </title>
-<path fill="none" stroke="black" stroke-dasharray="5,2" d="M3613.22,-177C3223.31,-177 1899.02,-177 1899.02,-177 1899.02,-177 1899.02,-205.96 1899.02,-205.96"/>
-<polygon fill="black" stroke="black" points="1895.52,-205.96 1899.02,-215.96 1902.52,-205.96 1895.52,-205.96"/>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M3613.24,-177C3223.38,-177 1899.28,-177 1899.28,-177 1899.28,-177 1899.28,-205.96 1899.28,-205.96"/>
+<polygon fill="black" stroke="black" points="1895.78,-205.96 1899.28,-215.96 1902.78,-205.96 1895.78,-205.96"/>
 </g>
 <!-- WidgetConfiguratorSectionHeaderPipe  -->
 <g id="node49" class="node">
@@ -595,8 +595,8 @@
 <!-- NuiDashboardConfiguratorModule&#45;&gt;WidgetConfiguratorSectionHeaderPipe  -->
 <g id="edge48" class="edge">
 <title>NuiDashboardConfiguratorModule&#45;&gt;WidgetConfiguratorSectionHeaderPipe </title>
-<path fill="none" stroke="black" stroke-dasharray="5,2" d="M3613.19,-175C3178.58,-175 1566.13,-175 1566.13,-175 1566.13,-175 1566.13,-205.98 1566.13,-205.98"/>
-<polygon fill="black" stroke="black" points="1562.63,-205.98 1566.13,-215.98 1569.63,-205.98 1562.63,-205.98"/>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M3613.23,-175C3182.58,-175 1596.31,-175 1596.31,-175 1596.31,-175 1596.31,-205.98 1596.31,-205.98"/>
+<polygon fill="black" stroke="black" points="1592.81,-205.98 1596.31,-215.98 1599.81,-205.98 1592.81,-205.98"/>
 </g>
 <!-- WidgetEditorAccordionFormStatePipe  -->
 <g id="node50" class="node">
@@ -607,8 +607,8 @@
 <!-- NuiDashboardConfiguratorModule&#45;&gt;WidgetEditorAccordionFormStatePipe  -->
 <g id="edge49" class="edge">
 <title>NuiDashboardConfiguratorModule&#45;&gt;WidgetEditorAccordionFormStatePipe </title>
-<path fill="none" stroke="black" stroke-dasharray="5,2" d="M3613.32,-174C3145.77,-174 1300.8,-174 1300.8,-174 1300.8,-174 1300.8,-206 1300.8,-206"/>
-<polygon fill="black" stroke="black" points="1297.3,-206 1300.8,-216 1304.3,-206 1297.3,-206"/>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M3613.47,-174C3154,-174 1365.07,-174 1365.07,-174 1365.07,-174 1365.07,-206 1365.07,-206"/>
+<polygon fill="black" stroke="black" points="1361.57,-206 1365.07,-216 1368.57,-206 1361.57,-206"/>
 </g>
 <!-- WidgetEditorComponent  -->
 <g id="node51" class="node">
@@ -619,104 +619,104 @@
 <!-- NuiDashboardConfiguratorModule&#45;&gt;WidgetEditorComponent  -->
 <g id="edge50" class="edge">
 <title>NuiDashboardConfiguratorModule&#45;&gt;WidgetEditorComponent </title>
-<path fill="none" stroke="black" stroke-dasharray="5,2" d="M3613.2,-173C3117.95,-173 1068.91,-173 1068.91,-173 1068.91,-173 1068.91,-205.7 1068.91,-205.7"/>
-<polygon fill="black" stroke="black" points="1065.41,-205.7 1068.91,-215.7 1072.41,-205.7 1065.41,-205.7"/>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M3613.35,-173C3124.62,-173 1122.81,-173 1122.81,-173 1122.81,-173 1122.81,-205.7 1122.81,-205.7"/>
+<polygon fill="black" stroke="black" points="1119.31,-205.7 1122.81,-215.7 1126.31,-205.7 1119.31,-205.7"/>
 </g>
 <!-- NuiDashboardsCommonModule -->
 <g id="node26" class="node">
 <title>NuiDashboardsCommonModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="372.25,-122 369.25,-126 348.25,-126 345.25,-122 173.75,-122 173.75,-86 372.25,-86 372.25,-122"/>
-<text text-anchor="middle" x="273" y="-99.8" font-family="Times,serif" font-size="14.00">NuiDashboardsCommonModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="1893.25,-122 1890.25,-126 1869.25,-126 1866.25,-122 1694.75,-122 1694.75,-86 1893.25,-86 1893.25,-122"/>
+<text text-anchor="middle" x="1794" y="-99.8" font-family="Times,serif" font-size="14.00">NuiDashboardsCommonModule</text>
 </g>
 <!-- NuiDashboardsCommonModule&#45;&gt;NuiDashboardConfiguratorModule -->
 <g id="edge25" class="edge">
 <title>NuiDashboardsCommonModule&#45;&gt;NuiDashboardConfiguratorModule</title>
-<path fill="none" stroke="black" d="M273,-122.03C273,-141.58 273,-170 273,-170 273,-170 3603.06,-170 3603.06,-170"/>
-<polygon fill="black" stroke="black" points="3603.06,-173.5 3613.06,-170 3603.06,-166.5 3603.06,-173.5"/>
+<path fill="none" stroke="black" d="M1794,-122.03C1794,-139.06 1794,-162 1794,-162 1794,-162 3603.36,-162 3603.36,-162"/>
+<polygon fill="black" stroke="black" points="3603.36,-165.5 3613.36,-162 3603.36,-158.5 3603.36,-165.5"/>
 </g>
 <!-- NuiPizzagnaModule -->
 <g id="node27" class="node">
 <title>NuiPizzagnaModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="155.58,-122 152.58,-126 131.58,-126 128.58,-122 24.42,-122 24.42,-86 155.58,-86 155.58,-122"/>
-<text text-anchor="middle" x="90" y="-99.8" font-family="Times,serif" font-size="14.00">NuiPizzagnaModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="1676.58,-122 1673.58,-126 1652.58,-126 1649.58,-122 1545.42,-122 1545.42,-86 1676.58,-86 1676.58,-122"/>
+<text text-anchor="middle" x="1611" y="-99.8" font-family="Times,serif" font-size="14.00">NuiPizzagnaModule</text>
 </g>
 <!-- NuiPizzagnaModule&#45;&gt;NuiDashboardConfiguratorModule -->
 <g id="edge26" class="edge">
 <title>NuiPizzagnaModule&#45;&gt;NuiDashboardConfiguratorModule</title>
-<path fill="none" stroke="black" d="M90,-122.31C90,-142.15 90,-171 90,-171 90,-171 3603.33,-171 3603.33,-171"/>
-<polygon fill="black" stroke="black" points="3603.33,-174.5 3613.33,-171 3603.33,-167.5 3603.33,-174.5"/>
+<path fill="none" stroke="black" d="M1670.68,-122.02C1670.68,-139.37 1670.68,-163 1670.68,-163 1670.68,-163 3603.42,-163 3603.42,-163"/>
+<polygon fill="black" stroke="black" points="3603.42,-166.5 3613.42,-163 3603.42,-159.5 3603.42,-166.5"/>
 </g>
 <!-- ConfiguratorService -->
 <g id="node52" class="node">
 <title>ConfiguratorService</title>
-<ellipse fill="#fdb462" stroke="black" cx="1803" cy="-104" rx="89.75" ry="18"/>
-<text text-anchor="middle" x="1803" y="-99.8" font-family="Times,serif" font-size="14.00">ConfiguratorService</text>
+<ellipse fill="#fdb462" stroke="black" cx="1431" cy="-104" rx="89.75" ry="18"/>
+<text text-anchor="middle" x="1431" y="-99.8" font-family="Times,serif" font-size="14.00">ConfiguratorService</text>
 </g>
 <!-- ConfiguratorService&#45;&gt;NuiDashboardConfiguratorModule -->
 <g id="edge51" class="edge">
 <title>ConfiguratorService&#45;&gt;NuiDashboardConfiguratorModule</title>
-<path fill="none" stroke="black" d="M1803,-122.03C1803,-139.06 1803,-162 1803,-162 1803,-162 3603.17,-162 3603.17,-162"/>
-<polygon fill="black" stroke="black" points="3603.17,-165.5 3613.17,-162 3603.17,-158.5 3603.17,-165.5"/>
+<path fill="none" stroke="black" d="M1463.86,-120.99C1463.86,-139.04 1463.86,-165 1463.86,-165 1463.86,-165 3603.45,-165 3603.45,-165"/>
+<polygon fill="black" stroke="black" points="3603.45,-168.5 3613.45,-165 3603.45,-161.5 3603.45,-168.5"/>
 </g>
 <!-- KpiWidgetColorService -->
 <g id="node53" class="node">
 <title>KpiWidgetColorService</title>
-<ellipse fill="#fdb462" stroke="black" cx="1590" cy="-104" rx="104.79" ry="18"/>
-<text text-anchor="middle" x="1590" y="-99.8" font-family="Times,serif" font-size="14.00">KpiWidgetColorService</text>
+<ellipse fill="#fdb462" stroke="black" cx="1218" cy="-104" rx="104.79" ry="18"/>
+<text text-anchor="middle" x="1218" y="-99.8" font-family="Times,serif" font-size="14.00">KpiWidgetColorService</text>
 </g>
 <!-- KpiWidgetColorService&#45;&gt;NuiDashboardConfiguratorModule -->
 <g id="edge52" class="edge">
 <title>KpiWidgetColorService&#45;&gt;NuiDashboardConfiguratorModule</title>
-<path fill="none" stroke="black" d="M1679.86,-113.48C1679.86,-130.16 1679.86,-163 1679.86,-163 1679.86,-163 3603.19,-163 3603.19,-163"/>
-<polygon fill="black" stroke="black" points="3603.19,-166.5 3613.19,-163 3603.19,-159.5 3603.19,-166.5"/>
+<path fill="none" stroke="black" d="M1236.95,-121.93C1236.95,-140.24 1236.95,-166 1236.95,-166 1236.95,-166 3603.31,-166 3603.31,-166"/>
+<polygon fill="black" stroke="black" points="3603.31,-169.5 3613.31,-166 3603.31,-162.5 3603.31,-169.5"/>
 </g>
 <!-- TimeseriesChartPresetService -->
 <g id="node54" class="node">
 <title>TimeseriesChartPresetService</title>
-<ellipse fill="#fdb462" stroke="black" cx="1340" cy="-104" rx="127.31" ry="18"/>
-<text text-anchor="middle" x="1340" y="-99.8" font-family="Times,serif" font-size="14.00">TimeseriesChartPresetService</text>
+<ellipse fill="#fdb462" stroke="black" cx="968" cy="-104" rx="127.31" ry="18"/>
+<text text-anchor="middle" x="968" y="-99.8" font-family="Times,serif" font-size="14.00">TimeseriesChartPresetService</text>
 </g>
 <!-- TimeseriesChartPresetService&#45;&gt;NuiDashboardConfiguratorModule -->
 <g id="edge53" class="edge">
 <title>TimeseriesChartPresetService&#45;&gt;NuiDashboardConfiguratorModule</title>
-<path fill="none" stroke="black" d="M1437.12,-115.76C1437.12,-133.49 1437.12,-165 1437.12,-165 1437.12,-165 3603.33,-165 3603.33,-165"/>
-<polygon fill="black" stroke="black" points="3603.33,-168.5 3613.33,-165 3603.33,-161.5 3603.33,-168.5"/>
+<path fill="none" stroke="black" d="M1033.44,-119.57C1033.44,-138.23 1033.44,-167 1033.44,-167 1033.44,-167 3603.44,-167 3603.44,-167"/>
+<polygon fill="black" stroke="black" points="3603.44,-170.5 3613.44,-167 3603.44,-163.5 3603.44,-170.5"/>
 </g>
 <!-- WidgetClonerService -->
 <g id="node55" class="node">
 <title>WidgetClonerService</title>
-<ellipse fill="#fdb462" stroke="black" cx="1100" cy="-104" rx="94.9" ry="18"/>
-<text text-anchor="middle" x="1100" y="-99.8" font-family="Times,serif" font-size="14.00">WidgetClonerService</text>
+<ellipse fill="#fdb462" stroke="black" cx="728" cy="-104" rx="94.9" ry="18"/>
+<text text-anchor="middle" x="728" y="-99.8" font-family="Times,serif" font-size="14.00">WidgetClonerService</text>
 </g>
 <!-- WidgetClonerService&#45;&gt;NuiDashboardConfiguratorModule -->
 <g id="edge54" class="edge">
 <title>WidgetClonerService&#45;&gt;NuiDashboardConfiguratorModule</title>
-<path fill="none" stroke="black" d="M1172.85,-115.66C1172.85,-133.62 1172.85,-166 1172.85,-166 1172.85,-166 3603.39,-166 3603.39,-166"/>
-<polygon fill="black" stroke="black" points="3603.39,-169.5 3613.39,-166 3603.39,-162.5 3603.39,-169.5"/>
+<path fill="none" stroke="black" d="M728,-122.11C728,-141.34 728,-169 728,-169 728,-169 3603.07,-169 3603.07,-169"/>
+<polygon fill="black" stroke="black" points="3603.07,-172.5 3613.07,-169 3603.07,-165.5 3603.07,-172.5"/>
 </g>
 <!-- WidgetConfiguratorSectionCoordinatorService -->
 <g id="node56" class="node">
 <title>WidgetConfiguratorSectionCoordinatorService</title>
-<ellipse fill="#fdb462" stroke="black" cx="793" cy="-104" rx="193.86" ry="18"/>
-<text text-anchor="middle" x="793" y="-99.8" font-family="Times,serif" font-size="14.00">WidgetConfiguratorSectionCoordinatorService</text>
+<ellipse fill="#fdb462" stroke="black" cx="421" cy="-104" rx="193.86" ry="18"/>
+<text text-anchor="middle" x="421" y="-99.8" font-family="Times,serif" font-size="14.00">WidgetConfiguratorSectionCoordinatorService</text>
 </g>
 <!-- WidgetConfiguratorSectionCoordinatorService&#45;&gt;NuiDashboardConfiguratorModule -->
 <g id="edge55" class="edge">
 <title>WidgetConfiguratorSectionCoordinatorService&#45;&gt;NuiDashboardConfiguratorModule</title>
-<path fill="none" stroke="black" d="M979.21,-109.37C979.21,-124.61 979.21,-167 979.21,-167 979.21,-167 3603.4,-167 3603.4,-167"/>
-<polygon fill="black" stroke="black" points="3603.4,-170.5 3613.4,-167 3603.4,-163.5 3603.4,-170.5"/>
+<path fill="none" stroke="black" d="M421,-122.03C421,-141.58 421,-170 421,-170 421,-170 3603.04,-170 3603.04,-170"/>
+<polygon fill="black" stroke="black" points="3603.04,-173.5 3613.04,-170 3603.04,-166.5 3603.04,-173.5"/>
 </g>
 <!-- WidgetEditorService -->
 <g id="node57" class="node">
 <title>WidgetEditorService</title>
-<ellipse fill="#fdb462" stroke="black" cx="489" cy="-104" rx="92.61" ry="18"/>
-<text text-anchor="middle" x="489" y="-99.8" font-family="Times,serif" font-size="14.00">WidgetEditorService</text>
+<ellipse fill="#fdb462" stroke="black" cx="117" cy="-104" rx="92.61" ry="18"/>
+<text text-anchor="middle" x="117" y="-99.8" font-family="Times,serif" font-size="14.00">WidgetEditorService</text>
 </g>
 <!-- WidgetEditorService&#45;&gt;NuiDashboardConfiguratorModule -->
 <g id="edge56" class="edge">
 <title>WidgetEditorService&#45;&gt;NuiDashboardConfiguratorModule</title>
-<path fill="none" stroke="black" d="M489,-122.11C489,-141.34 489,-169 489,-169 489,-169 3603.42,-169 3603.42,-169"/>
-<polygon fill="black" stroke="black" points="3603.42,-172.5 3613.42,-169 3603.42,-165.5 3603.42,-172.5"/>
+<path fill="none" stroke="black" d="M117,-122.31C117,-142.15 117,-171 117,-171 117,-171 3603.15,-171 3603.15,-171"/>
+<polygon fill="black" stroke="black" points="3603.15,-174.5 3613.15,-171 3603.15,-167.5 3603.15,-174.5"/>
 </g>
 </g>
 </svg>
