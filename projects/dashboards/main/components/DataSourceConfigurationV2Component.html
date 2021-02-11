@@ -753,7 +753,7 @@ import { take } from &quot;rxjs/operators&quot;;
 
 import { ProviderRegistryService } from &quot;../../../../../services/provider-registry.service&quot;;
 import { IHasChangeDetector, IHasForm, IProperties, IProviderConfiguration, IProviderConfigurationForDisplay, PIZZAGNA_EVENT_BUS } from &quot;../../../../../types&quot;;
-import { DATA_SOURCE_CHANGE, DATA_SOURCE_OUTPUT } from &quot;../../../../types&quot;;
+import { DATA_SOURCE_CHANGE, DATA_SOURCE_CREATED, DATA_SOURCE_OUTPUT } from &quot;../../../../types&quot;;
 
 /**
  * This is a basic implementation of a data source configuration component. In the real world scenario, this component will most likely be replaced by a
@@ -867,6 +867,9 @@ export class DataSourceConfigurationV2Component implements IHasChangeDetector, I
         const provider &#x3D; this.providerRegistryService.getProvider(data.providerId);
         if (provider) {
             const dataSource &#x3D; this.providerRegistryService.getProviderInstance(provider, this.injector);
+
+            this.eventBus.next(DATA_SOURCE_CREATED, { payload: dataSource });
+
             dataSource.outputsSubject
                 .pipe(take(1))
                 .subscribe((result: any) &#x3D;&gt; {
