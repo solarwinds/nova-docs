@@ -24,13 +24,13 @@
 <title>cluster_NuiDashboardsModule</title>
 <polygon fill="none" stroke="black" stroke-dasharray="1,5" points="8,-70 8,-268 6055,-268 6055,-70 8,-70"/>
 </g>
-<g id="clust31" class="cluster">
-<title>cluster_NuiDashboardsModule_imports</title>
-<polygon fill="none" stroke="black" points="5451,-78 5451,-130 6047,-130 6047,-78 5451,-78"/>
-</g>
 <g id="clust34" class="cluster">
 <title>cluster_NuiDashboardsModule_providers</title>
-<polygon fill="none" stroke="black" points="5209,-78 5209,-130 5443,-130 5443,-78 5209,-78"/>
+<polygon fill="none" stroke="black" points="5813,-78 5813,-130 6047,-130 6047,-78 5813,-78"/>
+</g>
+<g id="clust31" class="cluster">
+<title>cluster_NuiDashboardsModule_imports</title>
+<polygon fill="none" stroke="black" points="5209,-78 5209,-130 5805,-130 5805,-78 5209,-78"/>
 </g>
 <g id="clust32" class="cluster">
 <title>cluster_NuiDashboardsModule_exports</title>
@@ -391,8 +391,8 @@
 <!-- NuiDashboardsModule&#45;&gt;DashboardComponent  -->
 <g id="edge32" class="edge">
 <title>NuiDashboardsModule&#45;&gt;DashboardComponent </title>
-<path fill="none" stroke="black" stroke-dasharray="5,2" d="M3046.41,-171C3464.78,-171 5529.4,-171 5529.4,-171 5529.4,-171 5529.4,-205.78 5529.4,-205.78"/>
-<polygon fill="black" stroke="black" points="5525.9,-205.78 5529.4,-215.78 5532.9,-205.78 5525.9,-205.78"/>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M3046.39,-171C3463.47,-171 5516.82,-171 5516.82,-171 5516.82,-171 5516.82,-205.78 5516.82,-205.78"/>
+<polygon fill="black" stroke="black" points="5513.32,-205.78 5516.82,-215.78 5520.32,-205.78 5513.32,-205.78"/>
 </g>
 <!-- DelayedMousePresenceDetectionDirective  -->
 <g id="node34" class="node">
@@ -403,8 +403,8 @@
 <!-- NuiDashboardsModule&#45;&gt;DelayedMousePresenceDetectionDirective  -->
 <g id="edge33" class="edge">
 <title>NuiDashboardsModule&#45;&gt;DelayedMousePresenceDetectionDirective </title>
-<path fill="none" stroke="black" stroke-dasharray="5,2" d="M3046.32,-173C3431.67,-173 5205.17,-173 5205.17,-173 5205.17,-173 5205.17,-205.7 5205.17,-205.7"/>
-<polygon fill="black" stroke="black" points="5201.67,-205.7 5205.17,-215.7 5208.67,-205.7 5201.67,-205.7"/>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M3046.32,-173C3431.68,-173 5205.22,-173 5205.22,-173 5205.22,-173 5205.22,-205.7 5205.22,-205.7"/>
+<polygon fill="black" stroke="black" points="5201.72,-205.7 5205.22,-215.7 5208.72,-205.7 5201.72,-205.7"/>
 </g>
 <!-- EmbeddedContentComponent  -->
 <g id="node35" class="node">
@@ -721,50 +721,50 @@
 <!-- NuiDashboardConfiguratorModule -->
 <g id="node30" class="node">
 <title>NuiDashboardConfiguratorModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="6038.5,-122 6035.5,-126 6014.5,-126 6011.5,-122 5825.5,-122 5825.5,-86 6038.5,-86 6038.5,-122"/>
-<text text-anchor="middle" x="5932" y="-99.8" font-family="Times,serif" font-size="14.00">NuiDashboardConfiguratorModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="5796.5,-122 5793.5,-126 5772.5,-126 5769.5,-122 5583.5,-122 5583.5,-86 5796.5,-86 5796.5,-122"/>
+<text text-anchor="middle" x="5690" y="-99.8" font-family="Times,serif" font-size="14.00">NuiDashboardConfiguratorModule</text>
 </g>
 <!-- NuiDashboardConfiguratorModule&#45;&gt;NuiDashboardsModule -->
 <g id="edge29" class="edge">
 <title>NuiDashboardConfiguratorModule&#45;&gt;NuiDashboardsModule</title>
-<path fill="none" stroke="black" d="M5932,-122.03C5932,-141.58 5932,-170 5932,-170 5932,-170 3056.14,-170 3056.14,-170"/>
-<polygon fill="black" stroke="black" points="3056.14,-166.5 3046.14,-170 3056.14,-173.5 3056.14,-166.5"/>
+<path fill="none" stroke="black" d="M5598.49,-122.11C5598.49,-141.34 5598.49,-169 5598.49,-169 5598.49,-169 3056.31,-169 3056.31,-169"/>
+<polygon fill="black" stroke="black" points="3056.31,-165.5 3046.31,-169 3056.31,-172.5 3056.31,-165.5"/>
 </g>
 <!-- NuiDashboardsCommonModule -->
 <g id="node31" class="node">
 <title>NuiDashboardsCommonModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="5807.25,-122 5804.25,-126 5783.25,-126 5780.25,-122 5608.75,-122 5608.75,-86 5807.25,-86 5807.25,-122"/>
-<text text-anchor="middle" x="5708" y="-99.8" font-family="Times,serif" font-size="14.00">NuiDashboardsCommonModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="5565.25,-122 5562.25,-126 5541.25,-126 5538.25,-122 5366.75,-122 5366.75,-86 5565.25,-86 5565.25,-122"/>
+<text text-anchor="middle" x="5466" y="-99.8" font-family="Times,serif" font-size="14.00">NuiDashboardsCommonModule</text>
 </g>
 <!-- NuiDashboardsCommonModule&#45;&gt;NuiDashboardsModule -->
 <g id="edge30" class="edge">
 <title>NuiDashboardsCommonModule&#45;&gt;NuiDashboardsModule</title>
-<path fill="none" stroke="black" d="M5710.56,-122.11C5710.56,-141.34 5710.56,-169 5710.56,-169 5710.56,-169 3056.22,-169 3056.22,-169"/>
-<polygon fill="black" stroke="black" points="3056.22,-165.5 3046.22,-169 3056.22,-172.5 3056.22,-165.5"/>
+<path fill="none" stroke="black" d="M5408.44,-122.17C5408.44,-141.09 5408.44,-168 5408.44,-168 5408.44,-168 3056.22,-168 3056.22,-168"/>
+<polygon fill="black" stroke="black" points="3056.22,-164.5 3046.22,-168 3056.22,-171.5 3056.22,-164.5"/>
 </g>
 <!-- NuiPizzagnaModule -->
 <g id="node32" class="node">
 <title>NuiPizzagnaModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="5590.58,-122 5587.58,-126 5566.58,-126 5563.58,-122 5459.42,-122 5459.42,-86 5590.58,-86 5590.58,-122"/>
-<text text-anchor="middle" x="5525" y="-99.8" font-family="Times,serif" font-size="14.00">NuiPizzagnaModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="5348.58,-122 5345.58,-126 5324.58,-126 5321.58,-122 5217.42,-122 5217.42,-86 5348.58,-86 5348.58,-122"/>
+<text text-anchor="middle" x="5283" y="-99.8" font-family="Times,serif" font-size="14.00">NuiPizzagnaModule</text>
 </g>
 <!-- NuiPizzagnaModule&#45;&gt;NuiDashboardsModule -->
 <g id="edge31" class="edge">
 <title>NuiPizzagnaModule&#45;&gt;NuiDashboardsModule</title>
-<path fill="none" stroke="black" d="M5463.86,-122.17C5463.86,-141.09 5463.86,-168 5463.86,-168 5463.86,-168 3056.2,-168 3056.2,-168"/>
-<polygon fill="black" stroke="black" points="3056.2,-164.5 3046.2,-168 3056.2,-171.5 3056.2,-164.5"/>
+<path fill="none" stroke="black" d="M5283,-122.27C5283,-140.56 5283,-166 5283,-166 5283,-166 3056.27,-166 3056.27,-166"/>
+<polygon fill="black" stroke="black" points="3056.27,-162.5 3046.27,-166 3056.27,-169.5 3056.27,-162.5"/>
 </g>
 <!-- RefresherSettingsService -->
 <g id="node61" class="node">
 <title>RefresherSettingsService</title>
-<ellipse fill="#fdb462" stroke="black" cx="5326" cy="-104" rx="108.78" ry="18"/>
-<text text-anchor="middle" x="5326" y="-99.8" font-family="Times,serif" font-size="14.00">RefresherSettingsService</text>
+<ellipse fill="#fdb462" stroke="black" cx="5930" cy="-104" rx="108.78" ry="18"/>
+<text text-anchor="middle" x="5930" y="-99.8" font-family="Times,serif" font-size="14.00">RefresherSettingsService</text>
 </g>
 <!-- RefresherSettingsService&#45;&gt;NuiDashboardsModule -->
 <g id="edge60" class="edge">
 <title>RefresherSettingsService&#45;&gt;NuiDashboardsModule</title>
-<path fill="none" stroke="black" d="M5326,-122.27C5326,-140.56 5326,-166 5326,-166 5326,-166 3056.33,-166 3056.33,-166"/>
-<polygon fill="black" stroke="black" points="3056.33,-162.5 3046.33,-166 3056.33,-169.5 3056.33,-162.5"/>
+<path fill="none" stroke="black" d="M5930,-122.03C5930,-141.58 5930,-170 5930,-170 5930,-170 3056.46,-170 3056.46,-170"/>
+<polygon fill="black" stroke="black" points="3056.46,-166.5 3046.46,-170 3056.46,-173.5 3056.46,-166.5"/>
 </g>
 </g>
 </svg>
