@@ -1,0 +1,1667 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@nova-ui/bits documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">@nova-ui/bits documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>ComboboxV2Component</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#example" role="tab" id="example-tab" data-toggle="tab" data-link="example">Overview</a>
+        </li>
+        <li >
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">API</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade " id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/lib/select-v2/combobox-v2/combobox-v2.component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Extends</h3>
+    </p>
+    <p class="comment">
+            <code>BaseSelectV2</code>
+    </p>
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code><a href="https://angular.io/api/core/AfterContentInit" target="_blank" >AfterContentInit</a></code>
+                <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
+                <code><a href="https://angular.io/api/core/OnChanges" target="_blank" >OnChanges</a></code>
+                <code><a href="https://angular.io/api/core/AfterViewInit" target="_blank" >AfterViewInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+            <tr>
+                <td class="col-md-3">changeDetection</td>
+                <td class="col-md-9"><code>ChangeDetectionStrategy.OnPush</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">encapsulation</td>
+                <td class="col-md-9"><code>ViewEncapsulation.None</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">host</td>
+                <td class="col-md-9"><code>{<br>}</code></td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">providers</td>
+                <td class="col-md-9">
+                            <code><a href="../injectables/OptionKeyControlService.html" target="_self" >OptionKeyControlService</a></code>
+                            <code><a href="../injectables/SelectedItemsKeyControlService.html" target="_self" >SelectedItemsKeyControlService</a></code>
+                            <code><a href="../components/ComboboxV2Component.html" target="_self" >{
+    provide: NUI_SELECT_V2_OPTION_PARENT_COMPONENT, useExisting: ComboboxV2Component,
+}</a></code>
+                            <code><a href="../components/ComboboxV2Component.html" target="_self" >{
+    provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() &#x3D;&gt; ComboboxV2Component), multi: true,
+}</a></code>
+                            <code><a href="../classes/NuiFormFieldControl.html" target="_self" >{
+    provide: NuiFormFieldControl, useExisting: forwardRef(() &#x3D;&gt; ComboboxV2Component), multi: true,
+}</a></code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>nui-combobox-v2</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>combobox-v2.component.less</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>combobox-v2.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#clearValueButtonTooltip">clearValueButtonTooltip</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#inputValue">inputValue</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#clearValue">clearValue</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#deselectItem">deselectItem</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#handleInput">handleInput</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#onKeyDown">onKeyDown</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#onMouseUp">onMouseUp</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#selectOption">selectOption</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#selectTextInInput">selectTextInInput</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#toggleDropdown">toggleDropdown</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#writeValue">writeValue</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#displayWith">displayWith</a>
+                            </li>
+                            <li>
+                                <a href="#isRemoveValueEnabled">isRemoveValueEnabled</a>
+                            </li>
+                            <li>
+                                <a href="#isTypeaheadEnabled">isTypeaheadEnabled</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#canCreateOption">canCreateOption</a>
+                            </li>
+                            <li>
+                                <a href="#searchEmpty">searchEmpty</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#selectedItems">selectedItems</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(elRef: <a href="../undefineds/Element.html">ElementRef</a>, optionKeyControlService: <a href="../injectables/OptionKeyControlService.html">OptionKeyControlService<SelectV2OptionComponent></a>, cdRef: <a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank">ChangeDetectorRef</a>, selectedItemsKeyControlService: <a href="../injectables/SelectedItemsKeyControlService.html">SelectedItemsKeyControlService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="91" class="link-to-prism">src/lib/select-v2/combobox-v2/combobox-v2.component.ts:91</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>elRef</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../miscellaneous/typealiases.html#Element" target="_self" >ElementRef</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>optionKeyControlService</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/OptionKeyControlService.html" target="_self" >OptionKeyControlService&lt;SelectV2OptionComponent&gt;</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>cdRef</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank" >ChangeDetectorRef</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>selectedItemsKeyControlService</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/SelectedItemsKeyControlService.html" target="_self" >SelectedItemsKeyControlService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="displayWith"></a>
+                        <code>displayWith</code>
+                    </td>
+                    <td class="col-md-10">
+                        <div><p>Function that maps an Option&#39;s control value to its display value </p>
+</div>
+                            <p>
+                            <em>Type :</em>    <code> | null</code>
+
+                            </p>
+                        <p>
+                            <em>Default value : </em><code>null</code>
+                        </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="68" class="link-to-prism">src/lib/select-v2/combobox-v2/combobox-v2.component.ts:68</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="isRemoveValueEnabled"></a>
+                        <code>isRemoveValueEnabled</code>
+                    </td>
+                    <td class="col-md-10">
+                        <div><p>Whether the control for removing value enabled </p>
+</div>
+                            <p>
+                            <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                            </p>
+                        <p>
+                            <em>Default value : </em><code>true</code>
+                        </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="71" class="link-to-prism">src/lib/select-v2/combobox-v2/combobox-v2.component.ts:71</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="isTypeaheadEnabled"></a>
+                        <code>isTypeaheadEnabled</code>
+                    </td>
+                    <td class="col-md-10">
+                        <div><p>Whether to populate the remainder of the text being typed </p>
+</div>
+                            <p>
+                            <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                            </p>
+                        <p>
+                            <em>Default value : </em><code>true</code>
+                        </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">src/lib/select-v2/combobox-v2/combobox-v2.component.ts:74</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <section>
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="canCreateOption"></a>
+                        <code>canCreateOption</code>
+                    </td>
+                    <td class="col-md-10">
+                        <div><p>Emits event whether the typed text is unique among presented options </p>
+</div>
+                        <em><code>$event</code> Type:</em>    <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="80" class="link-to-prism">src/lib/select-v2/combobox-v2/combobox-v2.component.ts:80</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="searchEmpty"></a>
+                        <code>searchEmpty</code>
+                    </td>
+                    <td class="col-md-10">
+                        <div><p>Emits event whether options are presented after filtering </p>
+</div>
+                        <em><code>$event</code> Type:</em>    <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="77" class="link-to-prism">src/lib/select-v2/combobox-v2/combobox-v2.component.ts:77</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="clearValue"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            clearValue
+                            </b>
+                            <a href="#clearValue"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>clearValue(event?: <a href="https://angular.io/api/router/Event" target="_blank">Event</a>, keepDropdown?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="244" class="link-to-prism">src/lib/select-v2/combobox-v2/combobox-v2.component.ts:244</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Clears up Combobox to the initial value </p>
+</div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>event</td>
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/router/Event" target="_blank" >Event</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>keepDropdown</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="deselectItem"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            deselectItem
+                            </b>
+                            <a href="#deselectItem"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>deselectItem(item: <a href="../undefineds/OptionValueType.html">OptionValueType | number</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="195" class="link-to-prism">src/lib/select-v2/combobox-v2/combobox-v2.component.ts:195</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>item</td>
+                                                        <td>
+                                                                    <code><a href="../miscellaneous/typealiases.html#OptionValueType" target="_self" >OptionValueType | number</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                                <code><p>Deselect using value</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="handleInput"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            handleInput
+                            </b>
+                            <a href="#handleInput"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>handleInput(inputValue: <a href="../undefineds/InputValueTypes.html">InputValueTypes</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="213" class="link-to-prism">src/lib/select-v2/combobox-v2/combobox-v2.component.ts:213</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Handles behavior on Input value change </p>
+</div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>inputValue</td>
+                                                        <td>
+                                                                    <code><a href="../miscellaneous/typealiases.html#InputValueTypes" target="_self" >InputValueTypes</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onKeyDown"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            onKeyDown
+                            </b>
+                            <a href="#onKeyDown"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>onKeyDown(event: KeyboardEvent)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="154" class="link-to-prism">src/lib/select-v2/combobox-v2/combobox-v2.component.ts:154</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Handles behavior on keydown event </p>
+</div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>event</td>
+                                                        <td>
+                                                                    <code>KeyboardEvent</code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onMouseUp"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            onMouseUp
+                            </b>
+                            <a href="#onMouseUp"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>onMouseUp(target: <a href="../undefineds/Element.html">HTMLElement</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="142" class="link-to-prism">src/lib/select-v2/combobox-v2/combobox-v2.component.ts:142</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Handles behavior on mouseup event </p>
+</div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>target</td>
+                                                        <td>
+                                                                    <code><a href="../miscellaneous/typealiases.html#Element" target="_self" >HTMLElement</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectOption"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            selectOption
+                            </b>
+                            <a href="#selectOption"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>selectOption(option: SelectV2OptionComponent)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="173" class="link-to-prism">src/lib/select-v2/combobox-v2/combobox-v2.component.ts:173</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Selects specific option and set its value to the model </p>
+</div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>option</td>
+                                                        <td>
+                                                                    <code>SelectV2OptionComponent</code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectTextInInput"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            selectTextInInput
+                            </b>
+                            <a href="#selectTextInInput"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>selectTextInInput()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="229" class="link-to-prism">src/lib/select-v2/combobox-v2/combobox-v2.component.ts:229</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Selects text in Input </p>
+</div>
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="toggleDropdown"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            toggleDropdown
+                            </b>
+                            <a href="#toggleDropdown"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>toggleDropdown()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="167" class="link-to-prism">src/lib/select-v2/combobox-v2/combobox-v2.component.ts:167</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Toggles dropdown and removes focus from Selected Items </p>
+</div>
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="writeValue"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            writeValue
+                            </b>
+                            <a href="#writeValue"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>writeValue(value: <a href="../undefineds/OptionValueType.html">OptionValueType | OptionValueType[]</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="237" class="link-to-prism">src/lib/select-v2/combobox-v2/combobox-v2.component.ts:237</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Sets value to the model </p>
+</div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>value</td>
+                                                        <td>
+                                                                    <code><a href="../miscellaneous/typealiases.html#OptionValueType" target="_self" >OptionValueType | OptionValueType[]</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="clearValueButtonTooltip"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            clearValueButtonTooltip
+                            </b>
+                            <a href="#clearValueButtonTooltip"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>clearValueButtonTooltip:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="91" class="link-to-prism">src/lib/select-v2/combobox-v2/combobox-v2.component.ts:91</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Text of the Clear Button tooltip </p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="inputValue"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            inputValue
+                            </b>
+                            <a href="#inputValue"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>inputValue:     <code>string | number</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>string | number</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="88" class="link-to-prism">src/lib/select-v2/combobox-v2/combobox-v2.component.ts:88</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Value of the Combobox Input </p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectedItems"></a>
+                        <span class="name"><b>selectedItems</b><a href="#selectedItems"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>selectedItems(elems)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="83" class="link-to-prism">src/lib/select-v2/combobox-v2/combobox-v2.component.ts:83</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Grabs and init keyboard navigation service for the &quot;Selected Items&quot; </p>
+</div>
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>elems</td>
+                                                    
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+    AfterContentInit,
+    AfterViewInit,
+    ChangeDetectionStrategy,
+    ChangeDetectorRef,
+    Component,
+    ContentChildren,
+    ElementRef,
+    EventEmitter,
+    forwardRef,
+    Input,
+    OnChanges,
+    OnDestroy,
+    Output,
+    QueryList,
+    SimpleChanges,
+    ViewEncapsulation,
+} from &quot;@angular/core&quot;;
+import { NG_VALUE_ACCESSOR } from &quot;@angular/forms&quot;;
+import includes from &quot;lodash/includes&quot;;
+import isEqual from &quot;lodash/isEqual&quot;;
+
+import { NuiFormFieldControl } from &quot;../../form-field/public-api&quot;;
+import { IOptionValueObject, OptionValueType } from &quot;../../overlay/types&quot;;
+import { BaseSelectV2 } from &quot;../base-select-v2&quot;;
+import { NUI_SELECT_V2_OPTION_PARENT_COMPONENT } from &quot;../constants&quot;;
+import { MarkAsSelectedItemDirective } from &quot;../mark-as-selected-item.directive&quot;;
+import { OptionKeyControlService } from &quot;../option-key-control.service&quot;;
+import { SelectV2OptionComponent } from &quot;../option/select-v2-option.component&quot;;
+import { SelectedItemsKeyControlService } from &quot;../selected-items-key-control.service&quot;;
+import { InputValueTypes } from &quot;../types&quot;;
+
+// &lt;example-url&gt;./../examples/index.html#/combobox-v2&lt;/example-url&gt;
+
+@Component({
+    selector: &quot;nui-combobox-v2&quot;,
+    templateUrl: &quot;combobox-v2.component.html&quot;,
+    styleUrls: [&quot;combobox-v2.component.less&quot;],
+    providers: [
+        OptionKeyControlService,
+        SelectedItemsKeyControlService,
+        {
+            provide: NUI_SELECT_V2_OPTION_PARENT_COMPONENT,
+            useExisting: ComboboxV2Component,
+        },
+        {
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: forwardRef(() &#x3D;&gt; ComboboxV2Component),
+            multi: true,
+        },
+        {
+            provide: NuiFormFieldControl,
+            useExisting: forwardRef(() &#x3D;&gt; ComboboxV2Component),
+            multi: true,
+        },
+    ],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    encapsulation: ViewEncapsulation.None,
+    host: {
+        class: &quot;nui-combobox-v2&quot;,
+    },
+})
+
+// Will be renamed in scope of the NUI-5797
+export class ComboboxV2Component extends BaseSelectV2 implements AfterContentInit, OnDestroy, OnChanges, AfterViewInit {
+
+    /** Function that maps an Option&#x27;s control value to its display value */
+    @Input() public displayWith: ((value: any) &#x3D;&gt; string) | null &#x3D; null;
+
+    /** Whether the control for removing value enabled */
+    @Input() public isRemoveValueEnabled: boolean &#x3D; true;
+
+    /** Whether to populate the remainder of the text being typed */
+    @Input() public isTypeaheadEnabled: boolean &#x3D; true;
+
+    /** Emits event whether options are presented after filtering */
+    @Output() public searchEmpty &#x3D; new EventEmitter&lt;boolean&gt;(false);
+
+    /** Emits event whether the typed text is unique among presented options */
+    @Output() public canCreateOption &#x3D; new EventEmitter&lt;boolean&gt;(false);
+
+    /** Grabs and init keyboard navigation service for the &quot;Selected Items&quot; */
+    @ContentChildren(MarkAsSelectedItemDirective, {descendants: true}) set selectedItems(elems: QueryList&lt;MarkAsSelectedItemDirective&gt;) {
+        this.selectedItemsKeyControlService.initSelectedItemsKeyManager(elems, this);
+    }
+
+    /** Value of the Combobox Input */
+    public inputValue: string | number;
+
+    /** Text of the Clear Button tooltip */
+    public clearValueButtonTooltip: string;
+
+    constructor(elRef: ElementRef,
+                optionKeyControlService: OptionKeyControlService&lt;SelectV2OptionComponent&gt;,
+                cdRef: ChangeDetectorRef,
+                private selectedItemsKeyControlService: SelectedItemsKeyControlService
+                ) {
+        super(optionKeyControlService, cdRef, elRef);
+    }
+
+    public ngAfterContentInit() {
+        this.clearValueButtonTooltip &#x3D; this.multiselect ? $localize &#x60;Remove all&#x60; : $localize &#x60;Remove&#x60;;
+        // applying changes to content immediately after it was initialized (checked)
+        // causes &quot;Expression has changed after it was checked&quot; error
+        setTimeout(() &#x3D;&gt; {
+            super.ngAfterContentInit();
+
+            if (!this.multiselect) {
+                this.setInputValue(this.getLastSelectedOption()?.value);
+            }
+
+            this.cdRef.markForCheck();
+        });
+
+        // options may be received after value changes, that&#x27;s why
+        // we check &quot;selectedOptions&quot; to be set per &quot;value&quot; again in &quot;handleValueChange&quot;
+        this.optionsChanged().subscribe(() &#x3D;&gt; {
+            this.filterItems(this.inputValue.toString());
+            this.cdRef.markForCheck();
+        });
+    }
+
+    public ngAfterViewInit() {
+        super.ngAfterViewInit();
+        if (!this.multiselect) {
+            this.dropdown.hide$.subscribe(() &#x3D;&gt; {
+                const lastSelectedOption &#x3D; this.getLastSelectedOption();
+                if (lastSelectedOption) {
+                    this.setInputValue(lastSelectedOption.viewValue);
+                    this.filterItems(this.inputValue.toString());
+                    this.cdRef.markForCheck();
+                }
+            });
+        }
+    }
+
+    public ngOnChanges(changes: SimpleChanges) {
+        super.ngOnChanges(changes);
+    }
+
+    /** Handles behavior on mouseup event */
+    public onMouseUp(target: HTMLElement) {
+        this.mouseDown &#x3D; false;
+        if (!this.manualDropdownControl) {
+            if (target !&#x3D;&#x3D; this.inputElement.nativeElement &amp;&amp; !this.dropdown.showing) {
+                this.inputElement.nativeElement.focus();
+                return;
+            }
+            this.toggleDropdown();
+        }
+    }
+
+    /** Handles behavior on keydown event */
+    public onKeyDown(event: KeyboardEvent) {
+        super.onKeyDown(event);
+        this.selectedItemsKeyControlService.onKeydown(event);
+
+        if (this.selectedItemsKeyControlService.isSelectedItemsActive()) {
+            this.optionKeyControlService.resetActiveItem();
+        } else if (this.optionKeyControlService.getActiveItemIndex() &#x3D;&#x3D;&#x3D; -1) {
+            this.optionKeyControlService.setFirstItemActive();
+        }
+
+    }
+
+    /** Toggles dropdown and removes focus from Selected Items */
+    public toggleDropdown() {
+        super.toggleDropdown();
+        this.selectedItemsKeyControlService.deactivateSelectedItems();
+    }
+
+    /** Selects specific option and set its value to the model */
+    public selectOption(option: SelectV2OptionComponent) {
+        if (option.outfiltered || option.isDisabled) {
+            return;
+        }
+
+        super.selectOption(option);
+
+        this.setInputValue(option.value);
+        this.filterItems();
+
+        if (this.multiselect) {
+            this.optionKeyControlService.setFirstItemActive();
+        }
+
+        this.cdRef.markForCheck();
+    }
+
+    /**
+     * @param  {OptionValueType} item   Deselect using value
+     * @param  {number} item            Deselect using index in multiselect values array
+     * Deselects item from Selected Items by index or value
+     */
+    public deselectItem(item: OptionValueType | number) {
+        let option: SelectV2OptionComponent | undefined;
+
+        if (typeof item &#x3D;&#x3D;&#x3D; &quot;number&quot; &amp;&amp; this.multiselect) {
+            const value &#x3D; (this.value as Array&lt;IOptionValueObject&gt;)[item as number];
+            option &#x3D; this.options.find(o &#x3D;&gt; isEqual(o.value, value));
+        } else {
+            option &#x3D; this.options.find(o &#x3D;&gt; isEqual(o.value, item));
+        }
+
+        if (option) {
+            this.removeSelected(option);
+            this.filterItems();
+            this.optionKeyControlService.setFirstItemActive();
+        }
+    }
+
+    /** Handles behavior on Input value change */
+    public handleInput(inputValue: InputValueTypes) {
+        if (!inputValue &amp;&amp; !this.multiselect) {
+            this.clearValue();
+            return;
+        }
+
+        this.filterItems(inputValue.toString());
+
+        if (!this.manualDropdownControl) {
+            this.showDropdown();
+        }
+
+        this.valueChanged.emit(inputValue);
+    }
+
+    /** Selects text in Input */
+    public selectTextInInput(): void {
+        if (!this.isDropdownOpen) {
+            return;
+        }
+        setTimeout(() &#x3D;&gt; this.inputElement.nativeElement.select());
+    }
+
+    /** Sets value to the model */
+    public writeValue(value: OptionValueType | OptionValueType[]): void {
+        super.writeValue(value);
+        this.setInputValue(value);
+        this.cdRef.markForCheck();
+    }
+
+    /** Clears up Combobox to the initial value */
+    public clearValue(event?: Event, keepDropdown?: boolean) {
+        if (!this.isDisabled) {
+            this.selectedOptions &#x3D; [];
+            this.onTouched();
+            this.setInputValue(&quot;&quot;);
+            this.removeSelected();
+            event?.stopPropagation(); // To avoid triggering dropdown open/close
+            this.filterItems();
+            this.optionKeyControlService.setFirstItemActive();
+
+            if (!keepDropdown &amp;&amp; !this.manualDropdownControl) {
+                this.dropdown.hide();
+            }
+        }
+    }
+
+    /*
+     * Calls to ngOnDestroy do not automatically get propagated to base classes.
+     * This can lead to memory leaks.
+     * This is a safe guard for preventing memory leaks in derived classes.
+     */
+    ngOnDestroy() {
+        super.ngOnDestroy();
+    }
+
+    private setInputValue(value: any): void {
+        const inputValueToSet &#x3D; this.multiselect ? &quot;&quot; : value;
+        const toDisplay &#x3D; this.displayWith ? this.displayWith(inputValueToSet) : inputValueToSet;
+        // Simply falling back to an empty string if the display value is falsy does not work properly.
+        // The display value can also be the number zero and shouldn&#x27;t fall back to an empty string.
+        this.inputValue &#x3D; toDisplay || &quot;&quot;;
+        this.valueChanged.emit(this.inputValue);
+    }
+
+    private filterItems(searchValue?: InputValueTypes) {
+        if (this.isTypeaheadEnabled) {
+            let filterValue &#x3D; searchValue?.toString().toLowerCase() || &quot;&quot;;
+
+            if (!this.multiselect) {
+                // if inputValue is the same as selectedOption, search for &quot;&quot; to display all the options
+                filterValue &#x3D; this.getLastSelectedOption()?.viewValue.toLowerCase() &#x3D;&#x3D;&#x3D; filterValue
+                    ? &quot;&quot;
+                    : filterValue;
+            }
+
+            this.options.forEach(option &#x3D;&gt; {
+                const optionName &#x3D; option.viewValue.toLowerCase();
+                option.outfiltered &#x3D; !includes(optionName, filterValue);
+            });
+
+            if (this.multiselect) {
+                this.selectedOptions.forEach(selectedOption &#x3D;&gt; selectedOption.outfiltered &#x3D; true);
+            }
+
+            this.emitSearchResults();
+        }
+    }
+
+    private emitSearchResults(): void {
+        const allOutfiltered &#x3D; !this.options.some((option &#x3D;&gt; !option.outfiltered));
+        this.searchEmpty.emit(allOutfiltered);
+        this.canCreateOption.emit(this.isInputValueUnique());
+    }
+
+    private isInputValueUnique(): boolean {
+        const optionName &#x3D; (option: SelectV2OptionComponent) &#x3D;&gt; option?.viewValue.toLowerCase();
+        const inputValue &#x3D; this.inputValue.toString().toLowerCase();
+
+        return Boolean(this.inputValue &amp;&amp; !this.options.find(option &#x3D;&gt; optionName(option) &#x3D;&#x3D;&#x3D; inputValue));
+    }
+}
+</code></pre>
+    </div>
+
+
+
+
+    <div class="tab-pane fade active in" id="c-example">
+            <iframe class="exampleContainer" src="./../examples/index.html#/combobox-v2">
+                <p>no-iframes</p>
+            </iframe>
+    </div>
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="w-100 d-flex flex-wrap align-items-center pt-2">    <ng-content select="[selectedItems]"></ng-content>    <input class="nui-combobox-v2__input pb-2"        type="text"        [attr.aria-label]="ariaLabel"        [class.has-error]="isInErrorState"        [disabled]="isDisabled"        [(ngModel)]="inputValue"        [placeholder]="placeholder"        (input)="handleInput(input.value)"        (keydown)="onKeyDown($event)"        (click)="selectTextInInput()"        #input /></div><button tabindex="-1"    *ngIf="isRemoveValueEnabled && (selectedOptions[0] || inputValue)"    nui-button    class="nui-combobox-v2__remove-value action"    (click)="clearValue($event);"    [isEmpty]="true"    icon="remove"    type="button"    [nuiTooltip]="clearValueButtonTooltip"    [class.disabled]="isDisabled"    [disabled]="isDisabled"></button><button tabindex="-1"    class="nui-combobox-v2__toggle action"    nui-button    type="button"    [isEmpty]="true"    icon="caret-down"    [class.rotate]="isDropdownOpen"    [class.disabled]="isDisabled"    [disabled]="isDisabled"    (click)="selectTextInInput()"></button><nui-overlay [toggleReference]="elRef.nativeElement"              [viewportMargin]="popupViewportMargin"              [overlayConfig]="overlayConfig">    <ng-content></ng-content></nui-overlay></div>'
+    var COMPONENTS = [{'name': 'BreadcrumbComponent', 'selector': 'nui-breadcrumb'},{'name': 'BusyComponent', 'selector': '[nui-busy]'},{'name': 'ButtonComponent', 'selector': '[nui-button]'},{'name': 'CardComponent', 'selector': 'nui-card'},{'name': 'CardGroupComponent', 'selector': 'nui-card-group'},{'name': 'CheckboxComponent', 'selector': 'nui-checkbox'},{'name': 'CheckboxGroupComponent', 'selector': 'nui-checkbox-group'},{'name': 'ChipsComponent', 'selector': 'nui-chips'},{'name': 'ChipsOverflowComponent', 'selector': 'nui-chips-overflow'},{'name': 'ComboboxComponent', 'selector': 'nui-combobox'},{'name': 'ComboboxV2Component', 'selector': 'nui-combobox-v2'},{'name': 'CustomValidationMessageComponent', 'selector': 'nui-custom-validation-message'},{'name': 'DatePickerComponent', 'selector': 'nui-date-picker'},{'name': 'DateTimePickerComponent', 'selector': 'nui-date-time-picker'},{'name': 'DialogComponent', 'selector': 'nui-dialog-window'},{'name': 'ExpanderComponent', 'selector': 'nui-expander'},{'name': 'FormFieldComponent', 'selector': 'nui-form-field'},{'name': 'IconComponent', 'selector': 'nui-icon'},{'name': 'ImageComponent', 'selector': 'nui-image'},{'name': 'MenuComponent', 'selector': 'nui-menu'},{'name': 'MessageComponent', 'selector': 'nui-message'},{'name': 'OverlayComponent', 'selector': 'nui-overlay'},{'name': 'PaginatorComponent', 'selector': 'nui-paginator'},{'name': 'PanelComponent', 'selector': 'nui-panel'},{'name': 'PopoverComponent', 'selector': 'nui-popover'},{'name': 'PopupComponent', 'selector': 'nui-popup'},{'name': 'PopupDeprecatedComponent', 'selector': 'nui-popup-deprecated'},{'name': 'ProgressComponent', 'selector': 'nui-progress'},{'name': 'QuickPickerComponent', 'selector': 'nui-quick-picker'},{'name': 'RadioGroupComponent', 'selector': 'nui-radio-group'},{'name': 'RepeatComponent', 'selector': 'nui-repeat'},{'name': 'SearchComponent', 'selector': 'nui-search'},{'name': 'SelectComponent', 'selector': 'nui-select'},{'name': 'SelectV2Component', 'selector': 'nui-select-v2'},{'name': 'SheetComponent', 'selector': 'nui-sheet'},{'name': 'SheetGroupComponent', 'selector': 'nui-sheet-group'},{'name': 'SorterComponent', 'selector': 'nui-sorter'},{'name': 'SpinnerComponent', 'selector': 'nui-spinner'},{'name': 'SwitchComponent', 'selector': 'nui-switch'},{'name': 'TabHeadingGroupComponent', 'selector': 'nui-tab-heading-group'},{'name': 'TableComponent', 'selector': 'nui-table, table[nui-table]'},{'name': 'TextboxComponent', 'selector': 'nui-textbox'},{'name': 'TextboxNumberComponent', 'selector': 'nui-textbox-number'},{'name': 'TimeFrameBarComponent', 'selector': 'nui-time-frame-bar'},{'name': 'TimeFramePickerComponent', 'selector': 'nui-time-frame-picker'},{'name': 'TimePickerComponent', 'selector': 'nui-time-picker'},{'name': 'ToastComponent', 'selector': 'nui-toast-component'},{'name': 'ToolbarComponent', 'selector': 'nui-toolbar'},{'name': 'WizardComponent', 'selector': 'nui-wizard'},{'name': 'WizardFooterComponent', 'selector': 'wizard-footer'},{'name': 'WizardHorizontalComponent', 'selector': 'nui-wizard-horizontal'},{'name': 'WizardStepComponent', 'selector': 'nui-wizard-step'},{'name': 'WizardStepHeaderComponent', 'selector': 'wizard-step-header'},{'name': 'WizardStepV2Component', 'selector': 'nui-wizard-step-v2'},{'name': 'WizardVerticalComponent', 'selector': 'nui-wizard-vertical'}];
+    var DIRECTIVES = [{'name': 'ClickInterceptorDirective', 'selector': '[nuiClickInterceptor]'},{'name': 'DndDropTargetDirective', 'selector': '[cdkDropList][nuiDndDropTarget]'},{'name': 'MarkAsSelectedItemDirective', 'selector': '[nuiMarkAsSelectedItem]'},{'name': 'TableStickyHeaderDirective', 'selector': 'cdk-virtual-scroll-viewport[tableStickyHeader]'},{'name': 'TableVirtualScrollDirective', 'selector': '[tableVirtualScroll]:not([rowCount])'},{'name': 'TableVirtualScrollLinearDirective', 'selector': '[tableVirtualScroll]:not([offset])'},{'name': 'TooltipDirective', 'selector': '[nuiTooltip]'},{'name': 'WizardDirective', 'selector': '[nuiWizard]'},{'name': 'WizardStepFooterDirective', 'selector': '[wizardStepFooter]'},{'name': 'WizardStepLabelDirective', 'selector': '[wizardStepLabel]'},{'name': 'WizardStepperNextDirective', 'selector': 'button[nuiWizardNext]'},{'name': 'WizardStepperPreviousDirective', 'selector': 'button[nuiWizardPrevious]'}];
+    var ACTUAL_COMPONENT = {'name': 'ComboboxV2Component'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ComboboxV2Component.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
