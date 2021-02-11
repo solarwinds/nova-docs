@@ -168,10 +168,6 @@ export class TableComponent&lt;T&gt; extends CdkTable&lt;T&gt; implements OnInit
 
     @Output() columnsOrderChange: EventEmitter&lt;Array&lt;any&gt;&gt; &#x3D; new EventEmitter();
     @Output() sortOrderChanged: EventEmitter&lt;ISortedItem&gt; &#x3D; new EventEmitter();
-
-    /** @deprecated Use selectionChanged instead of rowsSelected */
-    @Output() rowsSelected: EventEmitter&lt;ISelection&gt; &#x3D; new EventEmitter();
-    /** Use selectionChanged instead of rowsSelected */
     @Output() selectionChange: EventEmitter&lt;ISelection&gt; &#x3D; new EventEmitter();
 
     public sortDirection: SorterDirection;
@@ -304,7 +300,6 @@ export class TableComponent&lt;T&gt; extends CdkTable&lt;T&gt; implements OnInit
         // if we try to manually trigger change detection in a parent component
         if (this.selectable) {
             this.selectionChangedSubscription &#x3D; this.tableStateHandlerService.selectionChanged.subscribe((selection: ISelection) &#x3D;&gt; {
-                this.rowsSelected.emit(selection); // tslint:disable-line:deprecation
                 this.selectionChange.emit(selection);
             });
 
