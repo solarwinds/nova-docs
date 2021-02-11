@@ -1,0 +1,1334 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@nova-ui/bits documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">@nova-ui/bits documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>PopupDeprecatedComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#example" role="tab" id="example-tab" data-toggle="tab" data-link="example">Overview</a>
+        </li>
+        <li >
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">API</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade " id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/lib/popup/popup.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code><a href="https://angular.io/api/core/AfterContentInit" target="_blank" >AfterContentInit</a></code>
+                <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
+                <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+    <p class="comment">
+        <h3>Example</h3>
+    </p>
+    <div class="io-description">
+    </div>
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+            <tr>
+                <td class="col-md-3">encapsulation</td>
+                <td class="col-md-9"><code>ViewEncapsulation.None</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">host</td>
+                <td class="col-md-9"><code>{<br>}</code></td>
+            </tr>
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>nui-popup-deprecated</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./popup.component.less</code></td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">template</td>
+                <td class="col-md-9"><pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;nui-popup-container&quot; [class.nui-popup--opened]&#x3D;&quot;isOpen&quot; nuiClickInterceptor&gt;
+    &lt;div class&#x3D;&quot;nui-popup__content&quot;&gt;
+        &lt;ng-content&gt;&lt;/ng-content&gt;
+    &lt;/div&gt;
+    &lt;div #popupArea class&#x3D;&quot;nui-popup__area {{contextClass}}&quot;
+        [style.width]&#x3D;&quot;width&quot;
+        [class.nui-popup__area--visible]&#x3D;&quot;visible&quot;
+        [class.nui-popup__area--top]&#x3D;&quot;_directionTop &amp;&amp; !appendToBody&quot;
+        [class.nui-popup__area--right]&#x3D;&quot;_directionRight &amp;&amp; !appendToBody&quot;&gt;
+        &lt;div #popupAreaContainer tabindex&#x3D;&quot;-1&quot; class&#x3D;&quot;nui-popup__area--container&quot;&gt;
+            &lt;ng-content select&#x3D;&quot;[popupAreaContent]&quot;&gt;&lt;/ng-content&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre></td>
+            </tr>
+
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#popupAreaContainer">popupAreaContainer</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#popupAreaContent">popupAreaContent</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#popupToggle">popupToggle</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#visible">visible</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#closePopup">closePopup</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#toggleOpened">toggleOpened</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#appendToBody">appendToBody</a>
+                            </li>
+                            <li>
+                                <a href="#baseElementSelector">baseElementSelector</a>
+                            </li>
+                            <li>
+                                <a href="#contextClass">contextClass</a>
+                            </li>
+                            <li>
+                                <a href="#directionRight">directionRight</a>
+                            </li>
+                            <li>
+                                <a href="#directionTop">directionTop</a>
+                            </li>
+                            <li>
+                                <a href="#isOpen">isOpen</a>
+                            </li>
+                            <li>
+                                <a href="#manualOpenControl">manualOpenControl</a>
+                            </li>
+                            <li>
+                                <a href="#width">width</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#opened">opened</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#popupInstance">popupInstance</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(elementRef: <a href="../undefineds/Element.html">ElementRef</a>, edgeDetector: EdgeDetectionService, changeDetectorRef: <a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank">ChangeDetectorRef</a>, eventBusService: EventBusService, componentFactoryResolver: <a href="https://angular.io/api/core/ComponentFactoryResolver" target="_blank">ComponentFactoryResolver</a>, injector: <a href="https://angular.io/api/core/Injector" target="_blank">Injector</a>, appRef: <a href="https://angular.io/api/core/ApplicationRef" target="_blank">ApplicationRef</a>, logger: LoggerService, popupContainer: <a href="../injectables/PopupContainerService.html">PopupContainerService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="130" class="link-to-prism">src/lib/popup/popup.component.ts:130</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>elementRef</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../miscellaneous/typealiases.html#Element" target="_self" >ElementRef</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>edgeDetector</td>
+                                                  
+                                                        <td>
+                                                                    <code>EdgeDetectionService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>changeDetectorRef</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank" >ChangeDetectorRef</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>eventBusService</td>
+                                                  
+                                                        <td>
+                                                                    <code>EventBusService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>componentFactoryResolver</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/core/ComponentFactoryResolver" target="_blank" >ComponentFactoryResolver</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>injector</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/core/Injector" target="_blank" >Injector</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>appRef</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/core/ApplicationRef" target="_blank" >ApplicationRef</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>logger</td>
+                                                  
+                                                        <td>
+                                                                    <code>LoggerService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>popupContainer</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/PopupContainerService.html" target="_self" >PopupContainerService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="appendToBody"></a>
+                        <code>appendToBody</code>
+                    </td>
+                    <td class="col-md-10">
+                        <div><p>Allows popup box to be attached to document.body</p>
+</div>
+                            <p>
+                            <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                            </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="84" class="link-to-prism">src/lib/popup/popup.component.ts:84</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="baseElementSelector"></a>
+                        <code>baseElementSelector</code>
+                    </td>
+                    <td class="col-md-10">
+                        <div><p>Parent css element class used determining of popup direction to right.</p>
+</div>
+                            <p>
+                            <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                            </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="103" class="link-to-prism">src/lib/popup/popup.component.ts:103</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="contextClass"></a>
+                        <code>contextClass</code>
+                    </td>
+                    <td class="col-md-10">
+                        <div><p>If additional styles should be applied to popup</p>
+</div>
+                            <p>
+                            <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                            </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="79" class="link-to-prism">src/lib/popup/popup.component.ts:79</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="directionRight"></a>
+                        <code>directionRight</code>
+                    </td>
+                    <td class="col-md-10">
+                        <div><p>Parent css element class used determining of popup direction to top.</p>
+</div>
+                            <p>
+                            <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                            </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="98" class="link-to-prism">src/lib/popup/popup.component.ts:98</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="directionTop"></a>
+                        <code>directionTop</code>
+                    </td>
+                    <td class="col-md-10">
+                        <div><p>Defines in which direction popup area will be opened.</p>
+</div>
+                            <p>
+                            <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                            </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="93" class="link-to-prism">src/lib/popup/popup.component.ts:93</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="isOpen"></a>
+                        <code>isOpen</code>
+                    </td>
+                    <td class="col-md-10">
+                        <p>
+                            <em>Default value : </em><code>false</code>
+                        </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="86" class="link-to-prism">src/lib/popup/popup.component.ts:86</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="manualOpenControl"></a>
+                        <code>manualOpenControl</code>
+                    </td>
+                    <td class="col-md-10">
+                            <p>
+                            <em>Type :</em>    <code>Subject&lt;MouseEvent&gt;</code>
+
+                            </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="88" class="link-to-prism">src/lib/popup/popup.component.ts:88</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="width"></a>
+                        <code>width</code>
+                    </td>
+                    <td class="col-md-10">
+                            <p>
+                            <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                            </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="75" class="link-to-prism">src/lib/popup/popup.component.ts:75</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <section>
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="opened"></a>
+                        <code>opened</code>
+                    </td>
+                    <td class="col-md-10">
+                        <em><code>$event</code> Type:</em>    <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="106" class="link-to-prism">src/lib/popup/popup.component.ts:106</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="closePopup"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            closePopup
+                            </b>
+                            <a href="#closePopup"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>closePopup(event?: MouseEvent)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="227" class="link-to-prism">src/lib/popup/popup.component.ts:227</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>event</td>
+                                                        <td>
+                                                                    <code>MouseEvent</code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="toggleOpened"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            toggleOpened
+                            </b>
+                            <a href="#toggleOpened"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>toggleOpened(event: <a href="https://angular.io/api/router/Event" target="_blank">Event</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="179" class="link-to-prism">src/lib/popup/popup.component.ts:179</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>event</td>
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/router/Event" target="_blank" >Event</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="popupAreaContainer"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            popupAreaContainer
+                            </b>
+                            <a href="#popupAreaContainer"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>popupAreaContainer:     <code><a href="../miscellaneous/typealiases.html#Element" target="_self" >ElementRef</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../miscellaneous/typealiases.html#Element" target="_self" >ElementRef</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(&#x27;popupAreaContainer&#x27;)<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="111" class="link-to-prism">src/lib/popup/popup.component.ts:111</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="popupAreaContent"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            popupAreaContent
+                            </b>
+                            <a href="#popupAreaContent"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>popupAreaContent:     <code><a href="../miscellaneous/typealiases.html#Element" target="_self" >ElementRef</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../miscellaneous/typealiases.html#Element" target="_self" >ElementRef</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(&#x27;popupArea&#x27;, {static: undefined})<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="114" class="link-to-prism">src/lib/popup/popup.component.ts:114</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="popupToggle"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            popupToggle
+                            </b>
+                            <a href="#popupToggle"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>popupToggle:     <code>PopupToggleDirective</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>PopupToggleDirective</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ContentChild(PopupToggleDirective)<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="109" class="link-to-prism">src/lib/popup/popup.component.ts:109</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="visible"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            visible
+                            </b>
+                            <a href="#visible"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>visible:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="130" class="link-to-prism">src/lib/popup/popup.component.ts:130</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>switches visibility of popup area</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="popupInstance"></a>
+                        <span class="name"><b>popupInstance</b><a href="#popupInstance"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>popupInstance()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="120" class="link-to-prism">src/lib/popup/popup.component.ts:120</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+    AfterContentInit,
+    ApplicationRef,
+    ChangeDetectorRef,
+    Component,
+    ComponentFactoryResolver,
+    ComponentRef,
+    ContentChild,
+    ElementRef,
+    EmbeddedViewRef,
+    EventEmitter,
+    Injector,
+    Input,
+    OnDestroy,
+    OnInit,
+    Optional,
+    Output,
+    ViewChild,
+    ViewEncapsulation
+} from &quot;@angular/core&quot;;
+import _isUndefined from &quot;lodash/isUndefined&quot;;
+import {Subject, Subscription} from &quot;rxjs&quot;;
+
+import { DOCUMENT_CLICK_EVENT } from &quot;../../constants/event.constants&quot;;
+import { EdgeDetectionService } from &quot;../../services/edge-detection.service&quot;;
+import { EventBusService } from &quot;../../services/event-bus.service&quot;;
+import { LoggerService } from &quot;../../services/log-service&quot;;
+
+import { PopupContainerComponent } from &quot;./popup-container.component&quot;;
+import { PopupContainerService } from &quot;./popup-container.service&quot;;
+import { PopupToggleDirective } from &quot;./popup-toggle.directive&quot;;
+
+// &lt;example-url&gt;./../examples/index.html#/popup&lt;/example-url&gt;
+/**
+ * @deprecated in v11 - Use PopupComponent instead - Removal: NUI-5796
+ */
+/**
+ * __Name :__
+ * NUI Pop-up component.
+ *
+ * __Usage :__
+ * Component represents basic functionality for dropdowns, popups, etc.
+ * May be used directly. Use &quot;nuiPopupToggle&quot; attribute inside any layer of content
+ * to define element that will toggle popover. Use &quot;popupAreaContent&quot; attribute inside
+ * 1st layer of content to define &quot;popup area&quot;. DO NOT USE &quot;opened&quot; WITH &quot;nuiPopupToggle&quot;.
+ * IT IS NEEDED TO CHOOSE ONE.
+ */
+/* tslint:disable:use-host-property-decorator */
+@Component({
+    selector: &quot;nui-popup-deprecated&quot;,
+    host: {
+        &quot;class&quot;: &quot;nui-popup&quot;,
+    },
+    template: &#x60;
+        &lt;div class&#x3D;&quot;nui-popup-container&quot; [class.nui-popup--opened]&#x3D;&quot;isOpen&quot; nuiClickInterceptor&gt;
+            &lt;div class&#x3D;&quot;nui-popup__content&quot;&gt;
+                &lt;ng-content&gt;&lt;/ng-content&gt;
+            &lt;/div&gt;
+            &lt;div #popupArea class&#x3D;&quot;nui-popup__area {{contextClass}}&quot;
+                [style.width]&#x3D;&quot;width&quot;
+                [class.nui-popup__area--visible]&#x3D;&quot;visible&quot;
+                [class.nui-popup__area--top]&#x3D;&quot;_directionTop &amp;&amp; !appendToBody&quot;
+                [class.nui-popup__area--right]&#x3D;&quot;_directionRight &amp;&amp; !appendToBody&quot;&gt;
+                &lt;div #popupAreaContainer tabindex&#x3D;&quot;-1&quot; class&#x3D;&quot;nui-popup__area--container&quot;&gt;
+                    &lt;ng-content select&#x3D;&quot;[popupAreaContent]&quot;&gt;&lt;/ng-content&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &#x60;,
+    styleUrls: [&quot;./popup.component.less&quot;],
+    encapsulation: ViewEncapsulation.None,
+})
+/* tslint:disable:use-host-property-decorator */
+export class PopupDeprecatedComponent implements AfterContentInit, OnDestroy, OnInit {
+    @Input() width: string;
+    /**
+     * If additional styles should be applied to popup
+     */
+    @Input() contextClass: string;
+    /**
+     * Allows popup box to be attached to document.body
+     */
+    @Input()
+    public appendToBody: boolean;
+    @Input()
+    public isOpen &#x3D; false;
+    @Input()
+    public manualOpenControl: Subject&lt;MouseEvent&gt;;
+    /**
+     * Defines in which direction popup area will be opened.
+     */
+    @Input()
+    public directionTop: boolean;
+    /**
+     * Parent css element class used determining of popup direction to top.
+     */
+    @Input()
+    public directionRight: boolean;
+    /**
+     * Parent css element class used determining of popup direction to right.
+     */
+    @Input()
+    public baseElementSelector: string;
+
+    @Output()
+    public opened &#x3D; new EventEmitter&lt;boolean&gt;();
+
+    @ContentChild(PopupToggleDirective)
+    public popupToggle: PopupToggleDirective;
+    @ViewChild(&quot;popupAreaContainer&quot;)
+    public popupAreaContainer: ElementRef;
+
+    @ViewChild(&quot;popupArea&quot;, {static: true})
+    public popupAreaContent: ElementRef;
+
+    private popupSubscriptions: Subscription[] &#x3D; [];
+    private lastEventType: string;
+    private _popupInstance?: ComponentRef&lt;PopupContainerComponent&gt;;
+
+    public get popupInstance(): ComponentRef&lt;PopupContainerComponent&gt; | undefined {
+        return this._popupInstance;
+    }
+    /** @ignore */
+    public _directionRight: boolean;
+    /** @ignore */
+    public _directionTop: boolean;
+    /**
+     * switches visibility of popup area
+     */
+    public visible &#x3D; false;
+
+    constructor(private elementRef: ElementRef,
+                private edgeDetector: EdgeDetectionService,
+                private changeDetectorRef: ChangeDetectorRef,
+                private eventBusService: EventBusService,
+                private componentFactoryResolver: ComponentFactoryResolver,
+                private injector: Injector,
+                private appRef: ApplicationRef,
+                private logger: LoggerService,
+                @Optional() private popupContainer: PopupContainerService) {
+
+                    this.logger.warn(&quot;&lt;nui-popup-deprecated&gt; is deprecated as of Nova v11. Please use &lt;nui-popup&gt; instead.&quot;);
+    }
+    public ngOnInit() {
+        if (this.manualOpenControl) {
+            this.popupSubscriptions.push(
+                this.manualOpenControl.subscribe(event &#x3D;&gt; {
+                    this.toggleOpened(event);
+                })
+            );
+        }
+        this.popupSubscriptions.push(
+            this.eventBusService.getStream({id: DOCUMENT_CLICK_EVENT})
+                .subscribe((event: MouseEvent) &#x3D;&gt; {
+                    if (this.isOpen) {
+                        this.closePopup(event);
+                    }
+                })
+        );
+
+        // This is needed to make the isOpen @Input work.
+        this.visible &#x3D; this.isOpen;
+    }
+
+    public ngAfterContentInit(): void {
+        this.setPopupPosition();
+
+        if (!this.popupToggle) {
+            return;
+        }
+
+        this.popupSubscriptions.push(
+            this.popupToggle.toggle.subscribe((event: Event) &#x3D;&gt; {
+                this.toggleOpened(event);
+            })
+        );
+    }
+
+    public toggleOpened(event: Event): void {
+        this.visible &#x3D; false;
+        let emit &#x3D; true;
+        if (event) {
+            // since click triggers focusin event, we need to prevent popup from closing
+            // when focus on the input is gained via click
+            if (this.lastEventType &#x3D;&#x3D;&#x3D; &quot;focusin&quot; &amp;&amp; event.type &#x3D;&#x3D;&#x3D; &quot;click&quot;) {
+                emit &#x3D; false;
+            }
+
+            // if popup is already closed, prevent it from opening on focusout
+            if (event.type &#x3D;&#x3D;&#x3D; &quot;focusout&quot; &amp;&amp; !this.isOpen) {
+                emit &#x3D; false;
+            }
+
+            this.lastEventType &#x3D; event.type;
+        }
+        if (emit) {
+            this.isOpen &#x3D; !this.isOpen;
+            this.changeDetectorRef.detectChanges();
+            this.changeDetectorRef.detach();
+            if (this.isOpen) {
+                if (!this._popupInstance &amp;&amp; this.appendToBody) {
+                    const popupContainerFactory &#x3D; this.componentFactoryResolver.resolveComponentFactory(PopupContainerComponent);
+                    this._popupInstance &#x3D; popupContainerFactory.create(this.injector, [[this.popupAreaContent.nativeElement]]);
+                    this._popupInstance.instance.hostElement &#x3D; this.popupToggle.host.nativeElement;
+                    this.appRef.attachView(this._popupInstance.hostView);
+                    const hostElement &#x3D; (this._popupInstance.hostView as EmbeddedViewRef&lt;any&gt;).rootNodes[0] as HTMLElement;
+                    if (this.popupContainer?.parent) {
+                        hostElement.setAttribute(&quot;parent&quot;, this.popupContainer.parent.constructor.name);
+                    }
+                    document.body.appendChild(hostElement);
+                } else {
+                    this.setPopupPosition();
+                }
+
+                this.visible &#x3D; true;
+                this.changeDetectorRef.detectChanges();
+                this.changeDetectorRef.detach();
+            // If closed, remove popup instance from DOM if there&#x27;s one
+            } else if (this._popupInstance &amp;&amp; this.appendToBody) {
+                this.deletePopupInstance();
+            }
+
+            this.opened.emit(this.isOpen);
+        }
+    }
+
+    public closePopup(event?: MouseEvent): void {
+        const isToggle &#x3D; this.popupToggle &amp;&amp; event ? (this.popupToggle.host.nativeElement as HTMLElement)
+            .contains(event.target as HTMLElement) : false;
+
+        if (!isToggle) {
+            this.deletePopupInstance();
+            this.isOpen &#x3D; false;
+            this.visible &#x3D; false;
+            this.opened.emit(this.isOpen);
+            this.changeDetectorRef.detectChanges();
+            this.changeDetectorRef.detach();
+        }
+    }
+
+    private setPopupPosition() {
+        let parentEl: HTMLElement | undefined;
+        if (!this.baseElementSelector &amp;&amp; !this.popupToggle) {
+            return;
+        }
+
+        if (this.popupToggle) {
+            parentEl &#x3D; this.popupToggle.host.nativeElement;
+        } else {
+            parentEl &#x3D; document.querySelector&lt;HTMLElement&gt;(this.baseElementSelector) ?? undefined;
+        }
+
+        if (!parentEl) {
+            return;
+        }
+
+        const canBe &#x3D; this.edgeDetector.canBe(&lt;HTMLElement&gt;parentEl, this.popupAreaContent.nativeElement);
+        this._directionTop &#x3D;  _isUndefined(this.directionTop) ? !canBe?.placed.bottom : this.directionTop;
+        this._directionRight &#x3D; _isUndefined(this.directionRight) ? !canBe?.aligned.left : this.directionRight;
+    }
+
+    private deletePopupInstance() {
+        if (this._popupInstance) {
+            this.appRef.detachView(this._popupInstance.hostView);
+            this._popupInstance.destroy();
+            this._popupInstance &#x3D; undefined;
+        }
+    }
+
+    public ngOnDestroy(): void {
+        this.popupSubscriptions.forEach(subscription &#x3D;&gt; subscription.unsubscribe());
+        this.deletePopupInstance();
+    }
+}
+</code></pre>
+    </div>
+
+
+
+
+    <div class="tab-pane fade active in" id="c-example">
+            <iframe class="exampleContainer" src="./../examples/index.html#/popup">
+                <p>no-iframes</p>
+            </iframe>
+    </div>
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="nui-popup-container" [class.nui-popup--opened]="isOpen" nuiClickInterceptor>    <div class="nui-popup__content">        <ng-content></ng-content>    </div>    <div #popupArea class="nui-popup__area {{contextClass}}"        [style.width]="width"        [class.nui-popup__area--visible]="visible"        [class.nui-popup__area--top]="_directionTop && !appendToBody"        [class.nui-popup__area--right]="_directionRight && !appendToBody">        <div #popupAreaContainer tabindex="-1" class="nui-popup__area--container">            <ng-content select="[popupAreaContent]"></ng-content>        </div>    </div></div></div>'
+    var COMPONENTS = [{'name': 'BreadcrumbComponent', 'selector': 'nui-breadcrumb'},{'name': 'BusyComponent', 'selector': '[nui-busy]'},{'name': 'ButtonComponent', 'selector': '[nui-button]'},{'name': 'CardComponent', 'selector': 'nui-card'},{'name': 'CardGroupComponent', 'selector': 'nui-card-group'},{'name': 'CheckboxComponent', 'selector': 'nui-checkbox'},{'name': 'CheckboxGroupComponent', 'selector': 'nui-checkbox-group'},{'name': 'ChipsComponent', 'selector': 'nui-chips'},{'name': 'ChipsOverflowComponent', 'selector': 'nui-chips-overflow'},{'name': 'ComboboxComponent', 'selector': 'nui-combobox'},{'name': 'ComboboxV2Component', 'selector': 'nui-combobox-v2'},{'name': 'CustomValidationMessageComponent', 'selector': 'nui-custom-validation-message'},{'name': 'DatePickerComponent', 'selector': 'nui-date-picker'},{'name': 'DateTimePickerComponent', 'selector': 'nui-date-time-picker'},{'name': 'DialogComponent', 'selector': 'nui-dialog-window'},{'name': 'ExpanderComponent', 'selector': 'nui-expander'},{'name': 'FormFieldComponent', 'selector': 'nui-form-field'},{'name': 'IconComponent', 'selector': 'nui-icon'},{'name': 'ImageComponent', 'selector': 'nui-image'},{'name': 'MenuComponent', 'selector': 'nui-menu'},{'name': 'MessageComponent', 'selector': 'nui-message'},{'name': 'OverlayComponent', 'selector': 'nui-overlay'},{'name': 'PaginatorComponent', 'selector': 'nui-paginator'},{'name': 'PanelComponent', 'selector': 'nui-panel'},{'name': 'PopoverComponent', 'selector': 'nui-popover'},{'name': 'PopupComponent', 'selector': 'nui-popup'},{'name': 'PopupDeprecatedComponent', 'selector': 'nui-popup-deprecated'},{'name': 'ProgressComponent', 'selector': 'nui-progress'},{'name': 'QuickPickerComponent', 'selector': 'nui-quick-picker'},{'name': 'RadioGroupComponent', 'selector': 'nui-radio-group'},{'name': 'RepeatComponent', 'selector': 'nui-repeat'},{'name': 'SearchComponent', 'selector': 'nui-search'},{'name': 'SelectComponent', 'selector': 'nui-select'},{'name': 'SelectV2Component', 'selector': 'nui-select-v2'},{'name': 'SheetComponent', 'selector': 'nui-sheet'},{'name': 'SheetGroupComponent', 'selector': 'nui-sheet-group'},{'name': 'SorterComponent', 'selector': 'nui-sorter'},{'name': 'SpinnerComponent', 'selector': 'nui-spinner'},{'name': 'SwitchComponent', 'selector': 'nui-switch'},{'name': 'TabHeadingGroupComponent', 'selector': 'nui-tab-heading-group'},{'name': 'TableComponent', 'selector': 'nui-table, table[nui-table]'},{'name': 'TextboxComponent', 'selector': 'nui-textbox'},{'name': 'TextboxNumberComponent', 'selector': 'nui-textbox-number'},{'name': 'TimeFrameBarComponent', 'selector': 'nui-time-frame-bar'},{'name': 'TimeFramePickerComponent', 'selector': 'nui-time-frame-picker'},{'name': 'TimePickerComponent', 'selector': 'nui-time-picker'},{'name': 'ToastComponent', 'selector': 'nui-toast-component'},{'name': 'ToolbarComponent', 'selector': 'nui-toolbar'},{'name': 'WizardComponent', 'selector': 'nui-wizard'},{'name': 'WizardFooterComponent', 'selector': 'wizard-footer'},{'name': 'WizardHorizontalComponent', 'selector': 'nui-wizard-horizontal'},{'name': 'WizardStepComponent', 'selector': 'nui-wizard-step'},{'name': 'WizardStepHeaderComponent', 'selector': 'wizard-step-header'},{'name': 'WizardStepV2Component', 'selector': 'nui-wizard-step-v2'},{'name': 'WizardVerticalComponent', 'selector': 'nui-wizard-vertical'}];
+    var DIRECTIVES = [{'name': 'ClickInterceptorDirective', 'selector': '[nuiClickInterceptor]'},{'name': 'DndDropTargetDirective', 'selector': '[cdkDropList][nuiDndDropTarget]'},{'name': 'MarkAsSelectedItemDirective', 'selector': '[nuiMarkAsSelectedItem]'},{'name': 'TableStickyHeaderDirective', 'selector': 'cdk-virtual-scroll-viewport[tableStickyHeader]'},{'name': 'TableVirtualScrollDirective', 'selector': '[tableVirtualScroll]:not([rowCount])'},{'name': 'TableVirtualScrollLinearDirective', 'selector': '[tableVirtualScroll]:not([offset])'},{'name': 'TooltipDirective', 'selector': '[nuiTooltip]'},{'name': 'WizardDirective', 'selector': '[nuiWizard]'},{'name': 'WizardStepFooterDirective', 'selector': '[wizardStepFooter]'},{'name': 'WizardStepLabelDirective', 'selector': '[wizardStepLabel]'},{'name': 'WizardStepperNextDirective', 'selector': 'button[nuiWizardNext]'},{'name': 'WizardStepperPreviousDirective', 'selector': 'button[nuiWizardPrevious]'}];
+    var ACTUAL_COMPONENT = {'name': 'PopupDeprecatedComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'PopupDeprecatedComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

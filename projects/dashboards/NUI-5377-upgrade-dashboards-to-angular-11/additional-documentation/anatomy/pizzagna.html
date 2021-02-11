@@ -1,0 +1,264 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@nova-ui/dashboards documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../../images/favicon.ico">
+	      <link rel="stylesheet" href="../../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../../" class="navbar-brand">@nova-ui/dashboards documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content additional-page">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="the-story-of-pizzagna">The Story of Pizzagna</h2>
+<p>The generic concept we decided to call &#39;Pizzagna&#39; was developed as part of the design process of 
+dashboards, in which we found ourselves trying to solve several problems at once using a single approach. </p>
+<p>Imagine a simple widget implemented using a single component in an Angular way with a configuration 
+defining its type and properties, like this:
+<code>{
+    componentType: &quot;TableWidgetComponent&quot;,
+    properties: {
+        title: &quot;My first table widget!&quot;,
+        description: &quot;Shows a list of things&quot;,
+        dataSource: {
+            type: &quot;someDataSource&quot;,
+            url: &quot;http://example/things/api&quot;
+        },
+        sorting: {
+            sortBy: &quot;column&quot;,
+            direction: &quot;asc&quot;
+        }
+    }
+}</code></p>
+<p>We can immediately identify a few design problems here, especially:</p>
+<ul>
+<li>From the consumer point of view, the widget is a monolith, and some parts are likely duplicated in 
+other widgets.</li>
+<li>The presence of a dataSource is hardwired into the widget.</li>
+<li>Data visualized by the widget is not present here (It could be passed as a separate input, but let&#39;s 
+presume it&#39;s just stored inside the widget as internal state).</li>
+</ul>
+<p>We&#39;ll now try to address all of these issues and see where it takes us. </p>
+<h3 id="configuration-of-separate-components">Configuration of Separate Components</h3>
+<p>First, let&#39;s try to break down the widget into separate components and expose the widget header and body 
+to be configured separately:</p>
+<p><code>{
+    &quot;root&quot;: {
+        // layout component that organizes child nodes into a column or a row
+        componentType: &quot;StackComponent&quot;,
+        properties: {
+            // here we reference other components as &#39;nodes&#39;
+            nodes: [&quot;header&quot;, &quot;table&quot;],
+            // Default stacking direction is &#39;column&#39;.
+            direction: &quot;column&quot;
+        }
+    },
+    &quot;header&quot;: {
+        componentType: &quot;WidgetHeaderComponent&quot;,
+        properties: {
+            // the &#39;title&#39; and &#39;description&#39; fields are now owned by the header
+            title: &quot;My first table widget!&quot;,
+            description: &quot;Shows a list of things&quot;,
+        }
+    },
+    &quot;table&quot;: {
+        componentType: &quot;TableWidgetComponent&quot;,
+        properties: {
+            dataSource: {
+                type: &quot;someDataSource&quot;,
+                url: &quot;http://example/things/api&quot;
+            },
+            sorting: {
+                sortBy: &quot;column&quot;,
+                direction: &quot;asc&quot;
+            }
+        }
+    }
+}</code></p>
+<p>This structure enables the replacement of individual components without affecting the rest, which is a 
+step in the right direction.</p>
+<h3 id="providers">Providers</h3>
+<p>Now let&#39;s address the presence of the hard-coded data source. To generalize the concept of a data source, 
+we figured that it would work best if we could have any number of instantiated injectables we call
+&#39;providers&#39; which can provide any behavior. The idea of a data source definitely fits in this picture, 
+since all it does is expose the ability to be invoked and provide data through an observable output. For 
+the sake of simplicity, let&#39;s ignore some currently irrelevant details and try to configure the table 
+component to instantiate a data source like this:</p>
+<p><code>[
+    ...
+    &quot;table&quot;: {
+        componentType: &quot;TableWidgetComponent&quot;,
+        providers: {
+            dataSource: {
+                // this id references a provider definition that&#39;s registered under this id
+                providerId: &quot;someDataSource&quot;,
+                properties: {
+                    url: &quot;http://example/things/api&quot;
+                }
+            },
+        },
+        properties: {
+            sorting: {
+                sortBy: &quot;column&quot;,
+                direction: &quot;asc&quot;
+            }
+        }
+    }
+]</code></p>
+<h3 id="data">Data</h3>
+<p>The configuration structure now describes how to build the whole widget, but we&#39;ll also need a way to 
+specify the data we want to display. We could of course use a different means for this, but why not be
+consistent and use the same mechanism as before? Let&#39;s extend the component properties to pass the data 
+in and voila - we&#39;re done! </p>
+<p><code>[
+    ...
+    &quot;table&quot;: {
+        componentType: &quot;TableWidgetComponent&quot;,
+        providers: {
+            dataSource: {
+                providerId: &quot;someDataSource&quot;,
+                properties: {
+                    url: &quot;http://example/things/api&quot;
+                }
+            },
+        },
+        properties: {
+            // ---&gt; the data is now being passed through a property as well
+            items: [...],
+            sorting: {
+                sortBy: &quot;column&quot;,
+                direction: &quot;asc&quot;
+            }
+        }
+    }
+]</code></p>
+<h3 id="layers">Layers</h3>
+<p>We&#39;re getting closer to the final idea of building configuration-based UIs. But, there&#39;s one final 
+important step we have to take. Looking at the state of configuration, so far we currently have all of it
+in a single data structure. This makes it difficult to distinguish the different possible origins and 
+purposes of properties.</p>
+<p>Pizzagna can contain any number of layers, but we currently just use 3 layers:</p>
+<ul>
+<li><code>structure</code>: defines the structure of a widget, i.e. what components the widget consists of and their 
+initial setup.</li>
+<li><code>configuration</code>: defines the storable configuration for a widget instance--things such as title, data 
+source, property values, etc.</li>
+<li><code>data</code>: defines the transient state of a widget as it&#39;s displayed in the browser--includes displayed
+data as well as other transient properties that are not intended to be persisted anywhere.</li>
+</ul>
+<h3 id="pizzagna-service">Pizzagna Service</h3>
+<p>There is an important design pattern that needs to be respected at all times--the rule of one-way data flow.
+If you want to display something dynamic in widgets, it has to come through the Pizzagna. 
+Of course, there will be times when the widget components themselves need to initiate changes in the 
+Pizzagna, and in those cases we&#39;ll want to use the 
+<a href="../../injectables/PizzagnaService.html"><code>PizzagnaService</code></a>. In the same way we would use outputs in a 
+regular Angular component to initiate a change, we&#39;ll use the Pizzagna Service to initiate a 
+component-originating change in the Pizzagna.</p>
+<p>First, inject the service into your component:</p>
+<p><code>constructor(private pizzagnaService: PizzagnaService) { }</code></p>
+<p>Then, use it to modify the value:</p>
+<p><code>this.pizzagnaService.setProperty({
+        pizzagnaKey: PizzagnaLayer.Data, // the layer we&#39;re working on 
+        componentId: this.componentId, // the component that&#39;s changing the property
+        propertyPath: [&quot;sorterConfiguration&quot;], // the path to the property in the Pizzagna
+    },
+    value // value to be set
+);</code></p>
+<p>The value will arrive at the target component as a regular input value with <code>ngOnChanges</code> being invoked 
+as well.</p>
+<h3 id="the-name-pizzagna">The Name &quot;Pizzagna&quot;</h3>
+<p>In concrete terms, Pizzagna is the JSON-based configuration described above as well as the
+service that orchestrates changes in configuration and data sources. The (cheeky) name,
+as you might have already guessed, is a combination of &quot;pizza&quot; and &quot;lasagna&quot;, where &quot;lasagna&quot;
+refers to the layer concept and &quot;pizza&quot; refers to the horizontal subdivision into individual 
+components.</p>
+<p>This configuration-driven approach allows us to ensure that the entire state of the dashboard is
+serializable at any time - which makes it trivial for developers to persist that state, and restore
+it as necessary.</p>
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 2;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'additional-page';
+            var COMPODOC_CURRENT_PAGE_URL = 'pizzagna.html';
+       </script>
+
+       <script src="../../js/libs/custom-elements.min.js"></script>
+       <script src="../../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../../js/menu-wc.js" defer></script>
+
+       <script src="../../js/libs/bootstrap-native.js"></script>
+
+       <script src="../../js/libs/es6-shim.min.js"></script>
+       <script src="../../js/libs/EventDispatcher.js"></script>
+       <script src="../../js/libs/promise.min.js"></script>
+       <script src="../../js/libs/zepto.min.js"></script>
+
+       <script src="../../js/compodoc.js"></script>
+
+       <script src="../../js/tabs.js"></script>
+       <script src="../../js/menu.js"></script>
+       <script src="../../js/libs/clipboard.min.js"></script>
+       <script src="../../js/libs/prism.js"></script>
+       <script src="../../js/sourceCode.js"></script>
+          <script src="../../js/search/search.js"></script>
+          <script src="../../js/search/lunr.min.js"></script>
+          <script src="../../js/search/search-lunr.js"></script>
+          <script src="../../js/search/search_index.js"></script>
+       <script src="../../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
