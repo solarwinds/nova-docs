@@ -32,13 +32,13 @@
 <title>cluster_NuiDashboardsModule_imports</title>
 <polygon fill="none" stroke="black" points="258,-78 258,-130 854,-130 854,-78 258,-78"/>
 </g>
-<g id="clust32" class="cluster">
-<title>cluster_NuiDashboardsModule_exports</title>
-<polygon fill="none" stroke="black" points="416,-208 416,-260 5704,-260 5704,-208 416,-208"/>
-</g>
 <g id="clust34" class="cluster">
 <title>cluster_NuiDashboardsModule_providers</title>
 <polygon fill="none" stroke="black" points="16,-78 16,-130 250,-130 250,-78 16,-78"/>
+</g>
+<g id="clust32" class="cluster">
+<title>cluster_NuiDashboardsModule_exports</title>
+<polygon fill="none" stroke="black" points="416,-208 416,-260 5704,-260 5704,-208 416,-208"/>
 </g>
 <!-- DashboardComponent -->
 <g id="node1" class="node">
