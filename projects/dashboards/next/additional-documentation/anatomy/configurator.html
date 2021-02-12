@@ -74,7 +74,7 @@ With every form, we register a converter that hooks up to the form of the relate
 The converter then propagates the form changes to the widget. On initial form load, a converter also
 collects information from the widget itself to populate the form. </p>
 <p>An example of converter configuration might look something like this:</p>
-<div><pre class="line-numbers"><code class="language-none">// this demonstrates a theoretical form piece configuration
+<p><code>// this demonstrates a theoretical form piece configuration
 &quot;someNodeId&quot;: {
     &quot;id&quot;: &quot;someNodeId&quot;,
     componentType: ,
@@ -84,7 +84,8 @@ collects information from the widget itself to populate the form. </p>
             providerId: &quot;AcmeSomethingConverter&quot;,
         },
     },
-},</code></pre></div><p>As you can see it&#39;s just another provider. It can be a generic configured to transfer properties to 
+},</code> </p>
+<p>As you can see it&#39;s just another provider. It can be a generic configured to transfer properties to 
 specific paths or a specialized implementation. Check out the widget types specifications for examples.</p>
 <h2 id="nuiwidgeteditor-directive">nuiWidgetEditor Directive</h2>
 <p>The configurator is an independent entity that can be invoked on its own without any dashboard 

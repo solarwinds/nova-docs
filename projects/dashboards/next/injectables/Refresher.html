@@ -68,6 +68,7 @@
             </p>
 
 
+
             <section>
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
@@ -122,7 +123,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(eventBus: <a href="../interfaces/IWidgetEvent.html">EventBus<IWidgetEvent></a>, ngZone: <a href="https://angular.io/api/core/NgZone" target="_blank">NgZone</a>, refresherSettings: <a href="../injectables/RefresherSettingsService.html">RefresherSettingsService</a>)</code>
+<code>constructor(eventBus: EventBus<IWidgetEvent>, ngZone: <a href="https://angular.io/api/core/NgZone" target="_blank">NgZone</a>, refresherSettings: <a href="../injectables/RefresherSettingsService.html">RefresherSettingsService</a>)</code>
                     </td>
                 </tr>
                         <tr>
@@ -148,7 +149,7 @@
                                                         <td>eventBus</td>
                                                   
                                                         <td>
-                                                                    <code><a href="../interfaces/IWidgetEvent.html" target="_self" >EventBus&lt;IWidgetEvent&gt;</a></code>
+                                                                    <code>EventBus&lt;IWidgetEvent&gt;</code>
                                                         </td>
                                                   
                                                     <td>
@@ -160,7 +161,7 @@
                                                         <td>ngZone</td>
                                                   
                                                         <td>
-                                                                    <code><a href="https://angular.io/api/core/NgZone" target="_blank" >NgZone</a></code>
+                                                                        <code><a href="https://angular.io/api/core/NgZone" target="_blank" >NgZone</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -172,7 +173,7 @@
                                                         <td>refresherSettings</td>
                                                   
                                                         <td>
-                                                                    <code><a href="../injectables/RefresherSettingsService.html" target="_self" >RefresherSettingsService</a></code>
+                                                                        <code><a href="../injectables/RefresherSettingsService.html" target="_self" >RefresherSettingsService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -191,122 +192,123 @@
 
             <section>
     
-        <h3 id="methods">
-            Methods
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="ngOnDestroy"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
                             ngOnDestroy
-                            </b>
-                            <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>ngOnDestroy()</code>
-                    </td>
-                </tr>
+                        </b>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>ngOnDestroy()</code>
+                </td>
+            </tr>
 
 
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/lib/components/providers/refresher.ts:55</a></div>
-                            </td>
-                        </tr>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="55"
+                            class="link-to-prism">src/lib/components/providers/refresher.ts:55</a></div>
+                </td>
+            </tr>
 
 
-                <tr>
-                    <td class="col-md-4">
+            <tr>
+                <td class="col-md-4">
 
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
-                            </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="updateConfiguration"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateConfiguration"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
                             updateConfiguration
-                            </b>
-                            <a href="#updateConfiguration"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>updateConfiguration(properties: <a href="../injectables/Refresher.html">IRefresherProperties</a>)</code>
-                    </td>
-                </tr>
+                        </b>
+                        <a href="#updateConfiguration"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateConfiguration(properties: <a href="../injectables/Refresher.html">IRefresherProperties</a>)</code>
+                </td>
+            </tr>
 
 
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/lib/components/providers/refresher.ts:46</a></div>
-                            </td>
-                        </tr>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="46"
+                            class="link-to-prism">src/lib/components/providers/refresher.ts:46</a></div>
+                </td>
+            </tr>
 
 
-                <tr>
-                    <td class="col-md-4">
+            <tr>
+                <td class="col-md-4">
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>properties</td>
-                                                        <td>
-                                                                    <code><a href="../injectables/Refresher.html" target="_self" >IRefresherProperties</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>properties</td>
+                                    <td>
+                                                <code><a href="../injectables/Refresher.html" target="_self" >IRefresherProperties</a></code>
+                                    </td>
 
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                                    <td>
+                                        No
+                                    </td>
 
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>
-
             <section>
     
         <h3 id="inputs">
@@ -320,16 +322,9 @@
                         <span class="name">
                             <b>
                                 <span class="modifier">Public</span>
-                            destroy$
-                            </b>
+                            destroy$</b>
                             <a href="#destroy$"><span class="icon ion-ios-link"></span></a>
                         </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span><code>destroy$:     <code></code>
-</code>
                     </td>
                 </tr>
                     <tr>
