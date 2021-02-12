@@ -342,6 +342,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="classes/EventBus.html" data-type="entity-link">EventBus</a>
                             </li>
                             <li class="link">
+                                <a href="classes/GaugeRenderingUtils.html" data-type="entity-link">GaugeRenderingUtils</a>
+                            </li>
+                            <li class="link">
                                 <a href="classes/Grid.html" data-type="entity-link">Grid</a>
                             </li>
                             <li class="link">
