@@ -1,0 +1,1630 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@nova-ui/charts documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">@nova-ui/charts documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Injectables</li>
+  <li>ThresholdsService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">API</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/thresholds/thresholds-service.ts</code>
+        </p>
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>This service provides functionality that facilitates the creation of thresholds related visual element on charts.</p>
+
+            </p>
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#SERIES_ID_SUFFIX">SERIES_ID_SUFFIX</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getBackgrounds">getBackgrounds</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getCrossPoint">getCrossPoint</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getCrossPointWithY">getCrossPointWithY</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getSideIndicators">getSideIndicators</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getThresholdLine">getThresholdLine</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getThresholdLines">getThresholdLines</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getThresholdZones">getThresholdZones</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#injectThresholdsData">injectThresholdsData</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(loggerService: LoggerService)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/thresholds/thresholds-service.ts:27</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>loggerService</td>
+                                                  
+                                                        <td>
+                                                                    <code>LoggerService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getBackgrounds"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            getBackgrounds
+                        </b>
+                        <a href="#getBackgrounds"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getBackgrounds(sourceSeries: IDataSeries<ILineAccessors>, zones: IDataSeries<IAreaAccessors>[], scales: <a href="../classes/Scale.html">Scales</a>, colorProvider: <a href="../interfaces/IValueProvider.html">IValueProvider<string></a>, thicknessMap: Record<string | number>, rendererConfig: <a href="../interfaces/IRendererConfig.html">IRendererConfig</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="76"
+                            class="link-to-prism">src/thresholds/thresholds-service.ts:76</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This method creates a background series for TimeInterval or continuous (currently only works with time) scale.
+If the series is continuous it detects intersection of source line data with given threshold zones and generates start / end for status periods.
+Otherwise it will use the start and the end of the band.</p>
+<p>The default value of the rendererConfig parameter is <a href="../miscellaneous/variables.html#THRESHOLDS_MAIN_CHART_RENDERER_CONFIG">THRESHOLDS_MAIN_CHART_RENDERER_CONFIG</a>. For a summary chart, usually a smaller status
+chart positioned below a main chart, use <a href="../miscellaneous/variables.html#THRESHOLDS_SUMMARY_RENDERER_CONFIG">THRESHOLDS_SUMMARY_RENDERER_CONFIG</a>.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>sourceSeries</td>
+                                    <td>
+                                            <code>IDataSeries&lt;ILineAccessors&gt;</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        <p>The data series from which to derive a background visualization</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>zones</td>
+                                    <td>
+                                            <code>IDataSeries&lt;IAreaAccessors&gt;[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        <p>Zones defined as data series with IAreaAccessors</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>scales</td>
+                                    <td>
+                                                <code><a href="../classes/Scale.html" target="_self" >Scales</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        <p>The scales to be used for the background visualization</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>colorProvider</td>
+                                    <td>
+                                                <code><a href="../interfaces/IValueProvider.html" target="_self" >IValueProvider&lt;string&gt;</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        <p>A value provider for the colors to be used for each status</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>thicknessMap</td>
+                                    <td>
+                                            <code>Record&lt;string | number&gt;</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>{}</code>
+                                    </td>
+
+                                    <td>
+                                        <p>Map of status to number specifying a custom height per status for the background visualization.
+If a status is not specified in the map, the default thickness is the full height of the rendering area.</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>rendererConfig</td>
+                                    <td>
+                                                <code><a href="../interfaces/IRendererConfig.html" target="_self" >IRendererConfig</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>cloneDeep(THRESHOLDS_MAIN_CHART_RENDERER_CONFIG)</code>
+                                    </td>
+
+                                    <td>
+                                        <p>The renderer&#39;s configuration</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>IChartAssistSeries&lt;IStatusAccessors&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getCrossPoint"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            getCrossPoint
+                        </b>
+                        <a href="#getCrossPoint"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getCrossPoint(dataFrom: <a href="../interfaces/IPosition.html">IPosition</a>, dataTo: <a href="../interfaces/IPosition.html">IPosition</a>, thresholdFrom: <a href="../interfaces/IPosition.html">IPosition</a>, thresholdTo: <a href="../interfaces/IPosition.html">IPosition</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="295"
+                            class="link-to-prism">src/thresholds/thresholds-service.ts:295</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Calculates the point where the data series line will cross a threshold line using the two closest points for each</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>dataFrom</td>
+                                    <td>
+                                                <code><a href="../interfaces/IPosition.html" target="_self" >IPosition</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Data starting point</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>dataTo</td>
+                                    <td>
+                                                <code><a href="../interfaces/IPosition.html" target="_self" >IPosition</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Data ending point</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>thresholdFrom</td>
+                                    <td>
+                                                <code><a href="../interfaces/IPosition.html" target="_self" >IPosition</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Threshold starting point</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>thresholdTo</td>
+                                    <td>
+                                                <code><a href="../interfaces/IPosition.html" target="_self" >IPosition</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Threshold ending point</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/IPosition.html" target="_self" >IPosition | undefined</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>the position of the cross point or <code>null</code> if lines don&#39;t cross</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getCrossPointWithY"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            getCrossPointWithY
+                        </b>
+                        <a href="#getCrossPointWithY"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getCrossPointWithY(dataFrom: <a href="../interfaces/IPosition.html">IPosition</a>, dataTo: <a href="../interfaces/IPosition.html">IPosition</a>, y: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="363"
+                            class="link-to-prism">src/thresholds/thresholds-service.ts:363</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>dataFrom</td>
+                                    <td>
+                                                <code><a href="../interfaces/IPosition.html" target="_self" >IPosition</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>dataTo</td>
+                                    <td>
+                                                <code><a href="../interfaces/IPosition.html" target="_self" >IPosition</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>y</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getSideIndicators"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            getSideIndicators
+                        </b>
+                        <a href="#getSideIndicators"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getSideIndicators(zones: IDataSeries<IAreaAccessors>[], scales: <a href="../classes/Scale.html">Scales</a>, rendererConfig?: <a href="../interfaces/IRendererConfig.html">IRendererConfig</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="374"
+                            class="link-to-prism">src/thresholds/thresholds-service.ts:374</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Creates side indicator data series for given threshold zones</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>zones</td>
+                                    <td>
+                                            <code>IDataSeries&lt;IAreaAccessors&gt;[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Zones defined as data series with IAreaAccessors</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>scales</td>
+                                    <td>
+                                                <code><a href="../classes/Scale.html" target="_self" >Scales</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The scales to be used for the side indicators</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>rendererConfig</td>
+                                    <td>
+                                                <code><a href="../interfaces/IRendererConfig.html" target="_self" >IRendererConfig</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                    <td>
+                                        <p>Configuration for the renderer. Default is the exported constant &#39;THRESHOLDS_MAIN_CHART_RENDERER_CONFIG&#39;</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>IChartAssistSeries[]</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getThresholdLine"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            getThresholdLine
+                        </b>
+                        <a href="#getThresholdLine"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getThresholdLine(zone: IDataSeries<IAreaAccessors>, valueAccessor: <a href="../undefineds/DataAccessor.html">DataAccessor</a>, zoneBoundary)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="261"
+                            class="link-to-prism">src/thresholds/thresholds-service.ts:261</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Creates a IChartAssistSeries that represents a threshold zone limit defined by given valueAccessor</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>zone</td>
+                                    <td>
+                                            <code>IDataSeries&lt;IAreaAccessors&gt;</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        <p>A zone defined as a data series with IAreaAccessors</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>valueAccessor</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/typealiases.html#DataAccessor" target="_self" >DataAccessor</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        <p>Accessor for the threshold limit</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>zoneBoundary</td>
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>ZoneBoundary.Start</code>
+                                    </td>
+
+                                    <td>
+                                        <p>The zone boundary represented by the line. Default is ZoneBoundary.Start.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>IChartAssistSeries&lt;ILineAccessors&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getThresholdLines"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            getThresholdLines
+                        </b>
+                        <a href="#getThresholdLines"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getThresholdLines(zones: IDataSeries<IAreaAccessors>[])</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="229"
+                            class="link-to-prism">src/thresholds/thresholds-service.ts:229</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Creates data series representing threshold lines on the chart. Solves collision between zones, where multiple zones are using the same limit value.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>zones</td>
+                                    <td>
+                                            <code>IDataSeries&lt;IAreaAccessors&gt;[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Zones defined as data series with IAreaAccessors</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>IChartAssistSeries[]</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getThresholdZones"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            getThresholdZones
+                        </b>
+                        <a href="#getThresholdZones"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getThresholdZones(sourceSeries: IDataSeries<ILineAccessors>, simpleZones: <a href="../interfaces/ISimpleThresholdZone.html">ISimpleThresholdZone[]</a>, colorProvider: <a href="../interfaces/IValueProvider.html">IValueProvider<string></a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="205"
+                            class="link-to-prism">src/thresholds/thresholds-service.ts:205</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Generates threshold zone series from simplified zone definition. Simplified definition provides only two numbers to define the zone interval.
+Creating these series manually is also possible for dynamic threshold limits.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>sourceSeries</td>
+                                    <td>
+                                            <code>IDataSeries&lt;ILineAccessors&gt;</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>source data series from which to derive the zones</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>simpleZones</td>
+                                    <td>
+                                                <code><a href="../interfaces/ISimpleThresholdZone.html" target="_self" >ISimpleThresholdZone[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>a collection of zones that are each defined by a start value and/or an end value. (A missing
+start or end value indicates an infinite zone.)</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>colorProvider</td>
+                                    <td>
+                                                <code><a href="../interfaces/IValueProvider.html" target="_self" >IValueProvider&lt;string&gt;</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>A value provider for the colors to be used for each status</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/IDataSeries.html" target="_self" >IDataSeries[]</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="injectThresholdsData"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            injectThresholdsData
+                        </b>
+                        <a href="#injectThresholdsData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>injectThresholdsData(dataSeries: IDataSeries<ILineAccessors>, zones: IDataSeries<IAreaAccessors>[])</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="40"
+                            class="link-to-prism">src/thresholds/thresholds-service.ts:40</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Calculates the threshold &quot;statuses&quot; - from/to and what zone we&#39;re in. It is the first step that is required before the usage of other methods. Having
+the threshold &quot;statuses&quot; assigned to each data point enables us to access the threshold information not only in other methods for threshold
+calculation, but also in other places, like legend or tooltips.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>dataSeries</td>
+                                    <td>
+                                            <code>IDataSeries&lt;ILineAccessors&gt;</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>source data series that will be enhanced with threshold metadata</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>zones</td>
+                                    <td>
+                                            <code>IDataSeries&lt;IAreaAccessors&gt;[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>zones defined as data series with IAreaAccessors</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="SERIES_ID_SUFFIX"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Static</span>
+                            SERIES_ID_SUFFIX</b>
+                            <a href="#SERIES_ID_SUFFIX"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&quot;__thresholds-background&quot;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/thresholds/thresholds-service.ts:27</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &quot;@angular/core&quot;;
+import { LoggerService } from &quot;@nova-ui/bits&quot;;
+import { Numeric } from &quot;d3-array&quot;;
+import cloneDeep from &quot;lodash/cloneDeep&quot;;
+import sortBy from &quot;lodash/sortBy&quot;;
+import unionWith from &quot;lodash/unionWith&quot;;
+import values from &quot;lodash/values&quot;;
+
+import { isBandScale, Scales } from &quot;../core/common/scales/types&quot;;
+import { DataAccessor, IChartAssistSeries, IDataSeries, IPosition, IRendererConfig, IValueProvider, IZoneCrossPoint } from &quot;../core/common/types&quot;;
+import { AreaAccessors, IAreaAccessors } from &quot;../renderers/area/area-accessors&quot;;
+import { IStatusAccessors } from &quot;../renderers/bar/accessors/status-accessors&quot;;
+import { statusAccessors } from &quot;../renderers/bar/accessors/status-accessors-fn&quot;;
+import { BarRenderer } from &quot;../renderers/bar/bar-renderer&quot;;
+import { THRESHOLDS_MAIN_CHART_RENDERER_CONFIG } from &quot;../renderers/constants&quot;;
+import { ILineAccessors, LineAccessors } from &quot;../renderers/line/line-accessors&quot;;
+import { LineRenderer } from &quot;../renderers/line/line-renderer&quot;;
+import { ISideIndicatorAccessors, SideIndicatorAccessors, SideIndicatorRenderer } from &quot;../renderers/side-indicator-renderer&quot;;
+
+import { ISimpleThresholdZone, ZoneBoundary, ZoneCross } from &quot;./types&quot;;
+
+/**
+ * This service provides functionality that facilitates the creation of thresholds related visual element on charts.
+ */
+@Injectable()
+export class ThresholdsService {
+    public static SERIES_ID_SUFFIX &#x3D; &quot;__thresholds-background&quot;;
+
+    constructor(private loggerService: LoggerService) {
+    }
+
+    /**
+     * Calculates the threshold &quot;statuses&quot; - from/to and what zone we&#x27;re in. It is the first step that is required before the usage of other methods. Having
+     * the threshold &quot;statuses&quot; assigned to each data point enables us to access the threshold information not only in other methods for threshold
+     * calculation, but also in other places, like legend or tooltips.
+     *
+     * @param dataSeries source data series that will be enhanced with threshold metadata
+     * @param zones zones defined as data series with IAreaAccessors
+     */
+    public injectThresholdsData(dataSeries: IDataSeries&lt;ILineAccessors&gt;,
+                                zones: IDataSeries&lt;IAreaAccessors&gt;[]) {
+        const zoneIndexes: Record&lt;string, number&gt; &#x3D; {};
+        zones.forEach(z &#x3D;&gt; z.entered &#x3D; false);
+
+        for (let i &#x3D; 0; i &lt; dataSeries.data.length; i++) {
+            const d &#x3D; dataSeries.data[i];
+            const x: Numeric &#x3D; dataSeries.accessors.data.x(d, i, dataSeries.data, dataSeries);
+            const y: Numeric &#x3D; dataSeries.accessors.data.y(d, i, dataSeries.data, dataSeries);
+
+            d.__thresholds &#x3D; {};
+
+            const zone &#x3D; this.getZoneByXY(zones, zoneIndexes, x, y);
+            if (zone) {
+                zone.entered &#x3D; true;
+                d.__thresholds.status &#x3D; zone.value;
+            }
+        }
+    }
+
+    /**
+     * This method creates a background series for TimeInterval or continuous (currently only works with time) scale.
+     * If the series is continuous it detects intersection of source line data with given threshold zones and generates start / end for status periods.
+     * Otherwise it will use the start and the end of the band.
+     *
+     * The default value of the rendererConfig parameter is {@link THRESHOLDS_MAIN_CHART_RENDERER_CONFIG}. For a summary chart, usually a smaller status
+     * chart positioned below a main chart, use {@link THRESHOLDS_SUMMARY_RENDERER_CONFIG}.
+     *
+     * @param sourceSeries The data series from which to derive a background visualization
+     * @param zones Zones defined as data series with IAreaAccessors
+     * @param scales The scales to be used for the background visualization
+     * @param colorProvider A value provider for the colors to be used for each status
+     * @param thicknessMap Map of status to number specifying a custom height per status for the background visualization.
+     *                     If a status is not specified in the map, the default thickness is the full height of the rendering area.
+     * @param rendererConfig The renderer&#x27;s configuration
+     */
+    public getBackgrounds(sourceSeries: IDataSeries&lt;ILineAccessors&gt;,
+                          zones: IDataSeries&lt;IAreaAccessors&gt;[],
+                          scales: Scales,
+                          colorProvider: IValueProvider&lt;string&gt;,
+                          thicknessMap: Record&lt;string, number&gt; &#x3D; {},
+                          rendererConfig: IRendererConfig &#x3D; cloneDeep(THRESHOLDS_MAIN_CHART_RENDERER_CONFIG)): IChartAssistSeries&lt;IStatusAccessors&gt; {
+        if (sourceSeries.data.length &gt; 0 &amp;&amp; typeof sourceSeries.data[0].__thresholds &#x3D;&#x3D;&#x3D; &quot;undefined&quot;) {
+            this.loggerService.warn(&quot;Thresholds metadata is not defined on provided data series&quot;, sourceSeries);
+        }
+
+        let data: any[];
+        const accessors &#x3D; statusAccessors(colorProvider);
+        accessors.data.thickness &#x3D; (d) &#x3D;&gt; thicknessMap[d.status];
+        if (isBandScale(scales.x)) {
+            data &#x3D; cloneDeep(sourceSeries.data);
+            accessors.data.start &#x3D; sourceSeries.accessors.data.x;
+            accessors.data.end &#x3D; sourceSeries.accessors.data.x;
+            accessors.data.color &#x3D; (d) &#x3D;&gt; (d.__thresholds &amp;&amp; d.__thresholds.status) ?
+                colorProvider.get(d.__thresholds.status) : &quot;transparent&quot;;
+            accessors.data.thickness &#x3D; (d) &#x3D;&gt; thicknessMap[d.__thresholds.status];
+        } else {
+            data &#x3D; this.getBackgroundsDataForContinuousScale(sourceSeries, zones);
+        }
+        return {
+            id: sourceSeries.id + ThresholdsService.SERIES_ID_SUFFIX,
+            data,
+            accessors,
+            scales,
+            renderer: new BarRenderer(rendererConfig),
+            showInLegend: false,
+        };
+    }
+
+    /**
+     * Calculates background data for continuous scale based on intersections between the source data and zone definitions.
+     *
+     * @param sourceSeries source data series from which to derive background data
+     * @param zones zones defined as data series with IAreaAccessors
+     */
+    private getBackgroundsDataForContinuousScale(sourceSeries: IDataSeries&lt;ILineAccessors&gt;, zones: IDataSeries&lt;IAreaAccessors&gt;[]) {
+        const backgroundData: ZoneCross[] &#x3D; [];
+        const breakPoints &#x3D; this.getBreakPoints(sourceSeries, zones);
+
+        const zoneIndexes: Record&lt;string, number&gt; &#x3D; {};
+        for (let i &#x3D; 0; i &lt; breakPoints.length - 1; i++) {
+            const p1 &#x3D; breakPoints[i];
+            const p2 &#x3D; breakPoints[i + 1];
+
+            if (!p1 || !p2) {
+                throw new Error(&quot;p1 or p2 are undefined&quot;);
+            }
+
+            const midPoint: IPosition &#x3D; { x: (p1.x + p2.x) / 2, y: (p1.y + p2.y) / 2 };
+
+            const zone &#x3D; this.getZoneByXY(zones, zoneIndexes, midPoint.x, midPoint.y);
+            if (zone) {
+                const lastBgPoint &#x3D; backgroundData[backgroundData.length - 1];
+                if (lastBgPoint &amp;&amp; lastBgPoint.end?.valueOf() &#x3D;&#x3D;&#x3D; p1.x &amp;&amp; lastBgPoint.status &#x3D;&#x3D;&#x3D; zone.value) {
+                    // Extend previous data point instead of creating a new one
+                    lastBgPoint.end &#x3D; new Date(p2.x);
+                } else {
+                    backgroundData.push({ status: zone.value, start: new Date(p1.x), end: new Date(p2.x) });
+                }
+            }
+        }
+        return backgroundData;
+    }
+
+    /**
+     * Calculate all &quot;interesting&quot; points along the data series that will be important to calculate the threshold status changes
+     *
+     * @param sourceSeries source data series from which to derive the break points
+     * @param zones zones defined as data series with IAreaAccessors
+     */
+    private getBreakPoints(sourceSeries: IDataSeries&lt;ILineAccessors&gt;, zones: IDataSeries&lt;IAreaAccessors&gt;[]): (IZoneCrossPoint | undefined)[] {
+        const sourceAccessors &#x3D; sourceSeries.accessors.data;
+
+        let breakPoints: (IZoneCrossPoint | undefined)[] &#x3D; [];
+
+        for (let i &#x3D; 0; i &lt; sourceSeries.data.length - 1; i++) {
+            // take two subsequent data points
+            const d1 &#x3D; sourceSeries.data[i];
+            const d2 &#x3D; sourceSeries.data[i + 1];
+
+            // calculate their positions
+            const xy1: IZoneCrossPoint &#x3D; {
+                x: sourceAccessors.x(d1, i, sourceSeries.data, sourceSeries).valueOf(),
+                y: sourceAccessors.y(d1, i, sourceSeries.data, sourceSeries).valueOf(),
+            };
+            const xy2: IZoneCrossPoint &#x3D; {
+                x: sourceAccessors.x(d2, i + 1, sourceSeries.data, sourceSeries).valueOf(),
+                y: sourceAccessors.y(d2, i + 1, sourceSeries.data, sourceSeries).valueOf(),
+            };
+
+            // try every zone to see if it&#x27;s limits intersect the line between our two data points
+            for (let j &#x3D; 0; j &lt; zones.length; j++) {
+                const zone &#x3D; zones[j];
+
+                // TODO: so far only works with constant thresholds
+                const zoneStartY &#x3D; zone.accessors.data.start?.(zone.data[0], 0, zone.data, zone);
+                const zoneEndY &#x3D; zone.accessors.data.end?.(zone.data[0], 0, zone.data, zone);
+
+                const zoneCrossPoints: (IZoneCrossPoint | undefined)[] &#x3D; [zoneStartY, zoneEndY]
+                    .map(y &#x3D;&gt; this.getCrossPointWithY(xy1, xy2, y)) // calculate cross points for both limits
+                    .filter(c &#x3D;&gt; c); // take only those that actually intersect
+
+                [xy1, xy2].forEach((xy) &#x3D;&gt; {
+                    if (xy.y &#x3D;&#x3D;&#x3D; zoneStartY || xy.y &#x3D;&#x3D;&#x3D; zoneEndY) {
+                        xy.isZoneEdge &#x3D; true;
+                    }
+                });
+
+                // add all crossPoints, dataPoints, but only those with unique &quot;x&quot; coordinate
+                breakPoints &#x3D; unionWith(breakPoints, zoneCrossPoints, [xy1, xy2], (a, b) &#x3D;&gt; a?.x &#x3D;&#x3D;&#x3D; b?.x &amp;&amp; a?.isZoneEdge &#x3D;&#x3D;&#x3D; b?.isZoneEdge);
+            }
+        }
+
+        return sortBy(breakPoints, &quot;x&quot;);
+    }
+
+    /**
+     * Generates threshold zone series from simplified zone definition. Simplified definition provides only two numbers to define the zone interval.
+     * Creating these series manually is also possible for dynamic threshold limits.
+     *
+     * @param sourceSeries source data series from which to derive the zones
+     * @param simpleZones a collection of zones that are each defined by a start value and/or an end value. (A missing
+     start or end value indicates an infinite zone.)
+     * @param colorProvider A value provider for the colors to be used for each status
+     */
+    public getThresholdZones(sourceSeries: IDataSeries&lt;ILineAccessors&gt;,
+                             simpleZones: ISimpleThresholdZone[],
+                             colorProvider: IValueProvider&lt;string&gt;): IDataSeries&lt;IAreaAccessors&gt;[] {
+        const areaAccessors &#x3D; new AreaAccessors();
+        areaAccessors.data.start &#x3D; (d) &#x3D;&gt; d.start;
+        areaAccessors.data.end &#x3D; (d) &#x3D;&gt; d.end;
+        areaAccessors.series.color &#x3D; (seriesId, series) &#x3D;&gt; colorProvider.get(series.value);
+
+        return simpleZones.map((z, i) &#x3D;&gt; ({
+            id: sourceSeries.id + &quot;__&quot; + z.status + &quot;-&quot; + i,
+            value: z.status,
+            data: [
+                { start: z.start, end: z.end },
+            ],
+            scales: sourceSeries.scales,
+            accessors: areaAccessors,
+        }));
+    }
+
+    /**
+     * Creates data series representing threshold lines on the chart. Solves collision between zones, where multiple zones are using the same limit value.
+     *
+     * @param zones Zones defined as data series with IAreaAccessors
+     */
+    public getThresholdLines(zones: IDataSeries&lt;IAreaAccessors&gt;[]): IChartAssistSeries&lt;ILineAccessors&gt;[] {
+        if (-1 &#x3D;&#x3D;&#x3D; zones.findIndex(z &#x3D;&gt; z.entered)) {
+            return [];
+        }
+
+        // TODO: works only for static thresholds
+        const limits: Record&lt;number, { series: IDataSeries&lt;IAreaAccessors&gt;, accessor: DataAccessor, zoneBoundary: ZoneBoundary }&gt; &#x3D; {};
+
+        function addLimitEntry(accessor: DataAccessor, zone: IDataSeries&lt;IAreaAccessors&gt;, zoneBoundary: ZoneBoundary) {
+            const value &#x3D; accessor(zone.data[0], 0, zone.data, zone);
+            if (typeof value !&#x3D;&#x3D; &quot;undefined&quot; &amp;&amp; typeof limits[value] &#x3D;&#x3D;&#x3D; &quot;undefined&quot;) {
+                limits[value] &#x3D; { series: zone, accessor, zoneBoundary };
+            }
+        }
+
+        for (const z of zones) {
+            if (z.accessors.data.start &amp;&amp; z.accessors.data.end) {
+                addLimitEntry(z.accessors.data.start, z, ZoneBoundary.Start);
+                addLimitEntry(z.accessors.data.end, z, ZoneBoundary.End);
+            }
+        }
+
+        return values(limits).map((limit) &#x3D;&gt; this.getThresholdLine(limit.series, limit.accessor, limit.zoneBoundary));
+    }
+
+    /**
+     * Creates a IChartAssistSeries that represents a threshold zone limit defined by given valueAccessor
+     *
+     * @param zone A zone defined as a data series with IAreaAccessors
+     * @param valueAccessor Accessor for the threshold limit
+     * @param zoneBoundary The zone boundary represented by the line. Default is ZoneBoundary.Start.
+     */
+    public getThresholdLine(zone: IDataSeries&lt;IAreaAccessors&gt;,
+                            valueAccessor: DataAccessor,
+                            zoneBoundary &#x3D; ZoneBoundary.Start): IChartAssistSeries&lt;ILineAccessors&gt; {
+        const accessors &#x3D; new LineAccessors();
+        accessors.data.y &#x3D; valueAccessor;
+        accessors.series.color &#x3D; zone.accessors.series.color;
+        const renderer &#x3D; new LineRenderer({
+            interactive: false,
+            strokeWidth: 1,
+            strokeStyle: LineRenderer.getStrokeStyleDashed(1),
+            stateStyles: cloneDeep(THRESHOLDS_MAIN_CHART_RENDERER_CONFIG.stateStyles),
+            ignoreForDomainCalculation: true,
+        });
+
+        return {
+            id: &#x60;${zone.id}__${zoneBoundary}__threshold-line&#x60;,
+            data: zone.data,
+            value: zone.value,
+            accessors,
+            renderer,
+            scales: zone.scales,
+            showInLegend: false,
+        };
+    }
+
+    /**
+     * Calculates the point where the data series line will cross a threshold line using the two closest points for each
+     *
+     * @param {IPosition} dataFrom Data starting point
+     * @param {IPosition} dataTo Data ending point
+     * @param {IPosition} thresholdFrom Threshold starting point
+     * @param {IPosition} thresholdTo Threshold ending point
+     * @returns {IPosition} the position of the cross point or &#x60;null&#x60; if lines don&#x27;t cross
+     */
+    public getCrossPoint(dataFrom: IPosition, dataTo: IPosition,
+                         thresholdFrom: IPosition, thresholdTo: IPosition): IPosition | undefined {
+        /* Inspired by https://stackoverflow.com/a/1968345 */
+        const dataShift: IPosition &#x3D; {
+            x: dataTo.x - dataFrom.x,
+            y: dataTo.y - dataFrom.y,
+        };
+        const thresholdShift: IPosition &#x3D; {
+            x: thresholdTo.x - thresholdFrom.x,
+            y: thresholdTo.y - thresholdFrom.y,
+        };
+        const s &#x3D; (-dataShift.y * (dataFrom.x - thresholdFrom.x) + dataShift.x * (dataFrom.y - thresholdFrom.y))
+            / (-thresholdShift.x * dataShift.y + dataShift.x * thresholdShift.y);
+        const t &#x3D; (thresholdShift.x * (dataFrom.y - thresholdFrom.y) - thresholdShift.y * (dataFrom.x - thresholdFrom.x))
+            / (-thresholdShift.x * dataShift.y + dataShift.x * thresholdShift.y);
+
+        if (!(s &gt;&#x3D; 0 &amp;&amp; s &lt;&#x3D; 1 &amp;&amp; t &gt;&#x3D; 0 &amp;&amp; t &lt;&#x3D; 1)) {
+            // No cross point detected
+            return undefined;
+        }
+
+        return {
+            x: dataFrom.x + (t * dataShift.x),
+            y: dataFrom.y + (t * dataShift.y),
+        };
+    }
+
+    /**
+     * Find the zone that is relevant for current input data point defined by x, y coordinates.
+     * Keep increasing the index while the next x value of threshold zone is still less than input x
+     *
+     * @param zones Zones defined as data series with IAreaAccessors
+     * @param zoneIndexes provided indexes keep the last used value for searching for the given x coordinate, so it is expected that provided data points
+     * are ordered by x in ascending order.
+     * @param x The x value of the zone
+     * @param y The y value of the zone
+     */
+    private getZoneByXY(zones: IDataSeries&lt;IAreaAccessors&gt;[], zoneIndexes: Record&lt;string, number&gt;, x: Numeric, y: Numeric) {
+        for (const zone of zones) {
+            if (!zoneIndexes[zone.id]) {
+                zoneIndexes[zone.id] &#x3D; 0;
+            }
+
+            const zoneIndex &#x3D; this.moveZoneIndex(zoneIndexes[zone.id], zone, x);
+            zoneIndexes[zone.id] &#x3D; zoneIndex;
+
+            const zoneDataPoint &#x3D; zone.data[zoneIndex];
+
+            const zDataAccessors &#x3D; zone.accessors.data;
+            const start &#x3D; zDataAccessors.start?.(zoneDataPoint, zoneIndex, zone.data, zone);
+            const end &#x3D; zDataAccessors.end?.(zoneDataPoint, zoneIndex, zone.data, zone);
+
+            // TODO: this is not going to work for dynamic thresholds, so still have some work to do here
+            if ((typeof start &#x3D;&#x3D;&#x3D; &quot;undefined&quot; || y &gt;&#x3D; start) &amp;&amp;
+                (typeof end &#x3D;&#x3D;&#x3D; &quot;undefined&quot; || y &lt;&#x3D; end)) {
+                return zone;
+            }
+        }
+        return null;
+    }
+
+    private moveZoneIndex(zoneIndex: number, zone: IDataSeries&lt;IAreaAccessors&gt;, x: Numeric) {
+        while (zoneIndex &lt; zone.data.length - 1 &amp;&amp; zone.accessors.data.x(zone.data[zoneIndex + 1], zoneIndex + 1, zone.data, zone) &lt; x) {
+            zoneIndex++;
+        }
+        return zoneIndex;
+    }
+
+    public getCrossPointWithY(dataFrom: IPosition, dataTo: IPosition, y: number) {
+        return this.getCrossPoint(dataFrom, dataTo, { x: dataFrom.x, y }, { x: dataTo.x, y });
+    }
+
+    /**
+     * Creates side indicator data series for given threshold zones
+     *
+     * @param zones Zones defined as data series with IAreaAccessors
+     * @param scales The scales to be used for the side indicators
+     * @param rendererConfig Configuration for the renderer. Default is the exported constant &#x27;THRESHOLDS_MAIN_CHART_RENDERER_CONFIG&#x27;
+     */
+    public getSideIndicators(zones: IDataSeries&lt;IAreaAccessors&gt;[],
+                             scales: Scales,
+                             rendererConfig?: IRendererConfig): IChartAssistSeries&lt;ISideIndicatorAccessors&gt;[] {
+        const sideIndicators: IChartAssistSeries&lt;ISideIndicatorAccessors&gt;[] &#x3D; [];
+        const renderer &#x3D; new SideIndicatorRenderer(rendererConfig || cloneDeep(THRESHOLDS_MAIN_CHART_RENDERER_CONFIG));
+        const indicatorsActive &#x3D; -1 !&#x3D;&#x3D; zones.findIndex(z &#x3D;&gt; z.entered);
+        for (const z of zones) {
+            const sideIndicatorAccessors &#x3D; new SideIndicatorAccessors();
+            sideIndicatorAccessors.series &#x3D; {
+                start: () &#x3D;&gt; z.accessors.data.start?.(z.data[0], 0, z.data, z),
+                end: () &#x3D;&gt; z.accessors.data.end?.(z.data[0], 0, z.data, z),
+                activeColor: () &#x3D;&gt; z.accessors.series.color?.(z.id, z),
+            };
+
+            const sideIndicator: IChartAssistSeries&lt;ISideIndicatorAccessors&gt; &#x3D; {
+                id: z.id + &quot;__side-indicator&quot;,
+                data: [{ active: indicatorsActive }],
+                accessors: sideIndicatorAccessors,
+                scales,
+                renderer,
+                showInLegend: false,
+            };
+
+            sideIndicators.push(sideIndicator);
+        }
+
+        return sideIndicators;
+    }
+
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'ThresholdsService.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
