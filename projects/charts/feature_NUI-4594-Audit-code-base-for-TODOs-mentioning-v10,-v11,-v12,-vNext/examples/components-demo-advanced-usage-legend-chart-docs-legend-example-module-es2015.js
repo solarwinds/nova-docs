@@ -1,0 +1,711 @@
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["components-demo-advanced-usage-legend-chart-docs-legend-example-module"],{
+
+/***/ "/+md":
+/*!***********************************************************************************************************!*\
+  !*** ./examples/components/demo/advanced-usage/legend/legend-compact/legend-compact.example.component.ts ***!
+  \***********************************************************************************************************/
+/*! exports provided: LegendCompactExampleComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LegendCompactExampleComponent", function() { return LegendCompactExampleComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _raw_loader_legend_compact_example_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./legend-compact.example.component.html */ "aSCB");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @nova-ui/charts */ "gKry");
+
+
+
+
+let LegendCompactExampleComponent = class LegendCompactExampleComponent {
+    constructor() {
+        this.firstSeriesId = "1";
+        this.secondSeriesId = "2";
+        this.colors = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["SequentialColorProvider"](_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["CHART_PALETTE_CS1"]);
+        this.markers = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["SequentialChartMarkerProvider"](_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["CHART_MARKERS"]);
+    }
+};
+LegendCompactExampleComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
+        selector: "nui-legend-compact-example",
+        template: _raw_loader_legend_compact_example_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
+    })
+], LegendCompactExampleComponent);
+
+
+
+/***/ }),
+
+/***/ "/fBC":
+/*!*****************************************************************************************************************************************************!*\
+  !*** ./examples/components/demo/advanced-usage/legend/legend-rich-tile-content-projection/legend-rich-tile-content-projection.example.component.ts ***!
+  \*****************************************************************************************************************************************************/
+/*! exports provided: LegendRichTileContentProjectionExampleComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LegendRichTileContentProjectionExampleComponent", function() { return LegendRichTileContentProjectionExampleComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _raw_loader_legend_rich_tile_content_projection_example_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./legend-rich-tile-content-projection.example.component.html */ "gjCY");
+/* harmony import */ var _legend_rich_tile_content_projection_example_component_less__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./legend-rich-tile-content-projection.example.component.less */ "93rr");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @nova-ui/charts */ "gKry");
+
+
+
+
+
+let LegendRichTileContentProjectionExampleComponent = class LegendRichTileContentProjectionExampleComponent {
+    constructor() {
+        this.firstSeriesId = "1";
+        this.secondSeriesId = "2";
+        this.colors = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["SequentialColorProvider"](_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["CHART_PALETTE_CS1"]);
+        this.markers = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["SequentialChartMarkerProvider"](_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["CHART_MARKERS"]);
+    }
+};
+LegendRichTileContentProjectionExampleComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
+        selector: "nui-legend-rich-tile-content-projection-example",
+        template: _raw_loader_legend_rich_tile_content_projection_example_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
+        styles: [_legend_rich_tile_content_projection_example_component_less__WEBPACK_IMPORTED_MODULE_2__["default"]]
+    })
+], LegendRichTileContentProjectionExampleComponent);
+
+
+
+/***/ }),
+
+/***/ "2yk5":
+/*!*****************************************************************************************************************!*\
+  !*** ./examples/components/demo/advanced-usage/legend/legend-horizontal/legend-horizontal.example.component.ts ***!
+  \*****************************************************************************************************************/
+/*! exports provided: LegendHorizontalExampleComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LegendHorizontalExampleComponent", function() { return LegendHorizontalExampleComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _raw_loader_legend_horizontal_example_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./legend-horizontal.example.component.html */ "TvWw");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @nova-ui/charts */ "gKry");
+
+
+
+
+let LegendHorizontalExampleComponent = class LegendHorizontalExampleComponent {
+    constructor() {
+        this.firstSeriesId = "1";
+        this.secondSeriesId = "2";
+        this.colors = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["SequentialColorProvider"](_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["CHART_PALETTE_CS1"]);
+        this.markers = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["SequentialChartMarkerProvider"](_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["CHART_MARKERS"]);
+    }
+};
+LegendHorizontalExampleComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
+        selector: "nui-legend-horizontal-example",
+        template: _raw_loader_legend_horizontal_example_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
+    })
+], LegendHorizontalExampleComponent);
+
+
+
+/***/ }),
+
+/***/ "3j+N":
+/*!*********************************************************************************************!*\
+  !*** ./examples/components/demo/advanced-usage/legend/legend-test/legend-test.component.ts ***!
+  \*********************************************************************************************/
+/*! exports provided: LegendTestExampleComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LegendTestExampleComponent", function() { return LegendTestExampleComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _raw_loader_legend_test_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./legend-test.component.html */ "pMRv");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @nova-ui/charts */ "gKry");
+
+
+
+
+let LegendTestExampleComponent = class LegendTestExampleComponent {
+    constructor() {
+        this.palette = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["ChartPalette"](_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["CHART_PALETTE_CS1"]);
+        this.markers = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["SequentialChartMarkerProvider"](_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["CHART_MARKERS"]);
+        this.chart = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["Chart"](new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["XYGrid"]());
+        this.chartAssist = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["ChartAssist"](this.chart);
+        this.seriesData = [
+            {
+                seriesId: "1",
+                value: 15.5,
+                unitLabel: "Kbps",
+                descriptionPrimary: "Primary Description 1",
+                descriptionSecondary: "Secondary Description 1",
+                status: "critical",
+            },
+            {
+                seriesId: "2",
+                value: 20.8,
+                unitLabel: "%",
+                descriptionPrimary: "Primary Description 2",
+                descriptionSecondary: "Secondary Description 2",
+                status: "warning",
+            },
+        ];
+        const accessors = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["LineAccessors"]();
+        const renderer = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["LineRenderer"]();
+        this.chartAssist.update(this.seriesData.map(series => ({
+            id: series.seriesId,
+            data: [series.value],
+            accessors,
+            renderer,
+            scales: {},
+        })));
+    }
+};
+LegendTestExampleComponent.ctorParameters = () => [];
+LegendTestExampleComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
+        selector: "nui-legend-test",
+        template: _raw_loader_legend_test_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
+    }),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [])
+], LegendTestExampleComponent);
+
+
+
+/***/ }),
+
+/***/ "3lnh":
+/*!************************************************************************************************************************!*\
+  !*** ./examples/components/demo/advanced-usage/legend sync !./node_modules/raw-loader/dist/cjs.js .*\.(ts|html|less)$ ***!
+  \************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./chart-docs-legend-example.module.ts": "4/br",
+	"./index.ts": "Cj3G",
+	"./legend-active/legend-active.example.component.html": "/O2m",
+	"./legend-active/legend-active.example.component.ts": "Z4eM",
+	"./legend-basic/legend-basic.example.component.html": "P/Ik",
+	"./legend-basic/legend-basic.example.component.ts": "oGOk",
+	"./legend-compact/legend-compact.example.component.html": "aSCB",
+	"./legend-compact/legend-compact.example.component.ts": "UQCh",
+	"./legend-description-content-projection/legend-description-projection.example.component.html": "ZNmB",
+	"./legend-description-content-projection/legend-description-projection.example.component.ts": "ys1o",
+	"./legend-docs/legend-docs.example.component.html": "QBpC",
+	"./legend-docs/legend-docs.example.component.ts": "zIE5",
+	"./legend-horizontal/legend-horizontal.example.component.html": "TvWw",
+	"./legend-horizontal/legend-horizontal.example.component.ts": "6SvY",
+	"./legend-interactive/legend-interactive.example.component.html": "7x2n",
+	"./legend-interactive/legend-interactive.example.component.ts": "+9tC",
+	"./legend-rich-tile-content-projection/legend-rich-tile-content-projection.example.component.html": "gjCY",
+	"./legend-rich-tile-content-projection/legend-rich-tile-content-projection.example.component.less": "swLD",
+	"./legend-rich-tile-content-projection/legend-rich-tile-content-projection.example.component.ts": "Ad9u",
+	"./legend-rich-tile/legend-rich-tile.example.component.html": "ghjL",
+	"./legend-rich-tile/legend-rich-tile.example.component.ts": "ooOc",
+	"./legend-test/legend-test.component.html": "pMRv",
+	"./legend-test/legend-test.component.ts": "akNU",
+	"./legend-text-color/legend-text-color.example.component.html": "qDJM",
+	"./legend-text-color/legend-text-color.example.component.ts": "ne+A",
+	"./legend-visual-test/legend-visual-test.component.html": "fZ1x",
+	"./legend-visual-test/legend-visual-test.component.ts": "cpli"
+};
+
+
+function webpackContext(req) {
+	var id = webpackContextResolve(req);
+	return __webpack_require__(id);
+}
+function webpackContextResolve(req) {
+	if(!__webpack_require__.o(map, req)) {
+		var e = new Error("Cannot find module '" + req + "'");
+		e.code = 'MODULE_NOT_FOUND';
+		throw e;
+	}
+	return map[req];
+}
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = "3lnh";
+
+/***/ }),
+
+/***/ "67ML":
+/*!*******************************************************************************************************************!*\
+  !*** ./examples/components/demo/advanced-usage/legend/legend-interactive/legend-interactive.example.component.ts ***!
+  \*******************************************************************************************************************/
+/*! exports provided: LegendInteractiveExampleComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LegendInteractiveExampleComponent", function() { return LegendInteractiveExampleComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _raw_loader_legend_interactive_example_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./legend-interactive.example.component.html */ "7x2n");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @nova-ui/charts */ "gKry");
+
+
+
+
+let LegendInteractiveExampleComponent = class LegendInteractiveExampleComponent {
+    constructor() {
+        // Set up the chart assist to keep track of the series selection and emphasis states
+        this.chartAssist = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["ChartAssist"](new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["Chart"](new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["XYGrid"]()));
+        this.firstSeriesId = "1";
+        this.secondSeriesId = "2";
+    }
+    ngOnInit() {
+        const accessors = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["LineAccessors"]();
+        const renderer = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["LineRenderer"]();
+        this.chartAssist.update([
+            {
+                id: this.firstSeriesId,
+                data: [],
+                accessors,
+                renderer,
+                scales: {},
+            },
+            {
+                id: this.secondSeriesId,
+                data: [],
+                accessors,
+                renderer,
+                scales: {},
+            },
+        ]);
+    }
+};
+LegendInteractiveExampleComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
+        selector: "nui-legend-interactive-example",
+        template: _raw_loader_legend_interactive_example_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
+    })
+], LegendInteractiveExampleComponent);
+
+
+
+/***/ }),
+
+/***/ "93rr":
+/*!*******************************************************************************************************************************************************!*\
+  !*** ./examples/components/demo/advanced-usage/legend/legend-rich-tile-content-projection/legend-rich-tile-content-projection.example.component.less ***!
+  \*******************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".projected-value,\n.projected-unit-label {\n  max-width: 100%;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.projected-value {\n  font-weight: 600;\n  margin-bottom: -3px;\n}\n.projected-unit-label {\n  font-size: 11px;\n  margin-top: -3px;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImxlZ2VuZC1yaWNoLXRpbGUtY29udGVudC1wcm9qZWN0aW9uLmV4YW1wbGUuY29tcG9uZW50Lmxlc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBRUE7O0VBRUksZUFBQTtFQUNBLGdCQUFBO0VBQ0EsdUJBQUE7QUFESjtBQUlBO0VBQ0ksZ0JBQUE7RUFDQSxtQkFBQTtBQUZKO0FBS0E7RUFDSSxlQUFBO0VBQ0EsZ0JBQUE7QUFISiIsImZpbGUiOiJsZWdlbmQtcmljaC10aWxlLWNvbnRlbnQtcHJvamVjdGlvbi5leGFtcGxlLmNvbXBvbmVudC5sZXNzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCAocmVmZXJlbmNlKSBcIi4uLy4uLy4uLy4uLy4uLy4uL3NyYy9udWktY2hhcnRzLmxlc3NcIjtcblxuLnByb2plY3RlZC12YWx1ZSxcbi5wcm9qZWN0ZWQtdW5pdC1sYWJlbCB7XG4gICAgbWF4LXdpZHRoOiAxMDAlO1xuICAgIG92ZXJmbG93OiBoaWRkZW47XG4gICAgdGV4dC1vdmVyZmxvdzogZWxsaXBzaXM7XG59XG5cbi5wcm9qZWN0ZWQtdmFsdWUge1xuICAgIGZvbnQtd2VpZ2h0OiBAbnVpLWZvbnQtd2VpZ2h0LXNlbWlib2xkO1xuICAgIG1hcmdpbi1ib3R0b206IC1AbnVpLWxlZ2VuZC1zZXJpZXMtY29udGVudC1tYXJnaW47XG59XG5cbi5wcm9qZWN0ZWQtdW5pdC1sYWJlbCB7XG4gICAgZm9udC1zaXplOiBAbnVpLWZvbnQtc2l6ZS1zbWFsbDtcbiAgICBtYXJnaW4tdG9wOiAtQG51aS1sZWdlbmQtc2VyaWVzLWNvbnRlbnQtbWFyZ2luO1xufVxuIl19 */");
+
+/***/ }),
+
+/***/ "BJDE":
+/*!*************************************************************************************************************************************************!*\
+  !*** ./examples/components/demo/advanced-usage/legend/legend-description-content-projection/legend-description-projection.example.component.ts ***!
+  \*************************************************************************************************************************************************/
+/*! exports provided: LegendDescriptionProjectionExampleComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LegendDescriptionProjectionExampleComponent", function() { return LegendDescriptionProjectionExampleComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _raw_loader_legend_description_projection_example_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./legend-description-projection.example.component.html */ "ZNmB");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @nova-ui/charts */ "gKry");
+
+
+
+
+let LegendDescriptionProjectionExampleComponent = class LegendDescriptionProjectionExampleComponent {
+    constructor() {
+        this.firstSeriesId = "1";
+        this.secondSeriesId = "2";
+        this.colors = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["SequentialColorProvider"](_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["CHART_PALETTE_CS1"]);
+        this.markers = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["SequentialChartMarkerProvider"](_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["CHART_MARKERS"]);
+        this.active = false;
+    }
+    toggleActive() {
+        this.active = !this.active;
+    }
+};
+LegendDescriptionProjectionExampleComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
+        selector: "nui-legend-description-projection-example",
+        template: _raw_loader_legend_description_projection_example_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
+    })
+], LegendDescriptionProjectionExampleComponent);
+
+
+
+/***/ }),
+
+/***/ "BhAj":
+/*!*****************************************************************************************************************!*\
+  !*** ./examples/components/demo/advanced-usage/legend/legend-text-color/legend-text-color.example.component.ts ***!
+  \*****************************************************************************************************************/
+/*! exports provided: LegendTextColorExampleComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LegendTextColorExampleComponent", function() { return LegendTextColorExampleComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _raw_loader_legend_text_color_example_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./legend-text-color.example.component.html */ "qDJM");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @nova-ui/charts */ "gKry");
+
+
+
+
+let LegendTextColorExampleComponent = class LegendTextColorExampleComponent {
+    constructor() {
+        this.firstSeriesId = "1";
+        this.secondSeriesId = "2";
+        this.colors = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["SequentialColorProvider"](_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["CHART_PALETTE_CS1"]);
+        this.markers = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["SequentialChartMarkerProvider"](_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["CHART_MARKERS"]);
+    }
+};
+LegendTextColorExampleComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
+        selector: "nui-legend-text-color-example",
+        template: _raw_loader_legend_text_color_example_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
+    })
+], LegendTextColorExampleComponent);
+
+
+
+/***/ }),
+
+/***/ "MBMx":
+/*!*********************************************************************************************************!*\
+  !*** ./examples/components/demo/advanced-usage/legend/legend-active/legend-active.example.component.ts ***!
+  \*********************************************************************************************************/
+/*! exports provided: LegendActiveExampleComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LegendActiveExampleComponent", function() { return LegendActiveExampleComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _raw_loader_legend_active_example_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./legend-active.example.component.html */ "/O2m");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @nova-ui/charts */ "gKry");
+
+
+
+
+let LegendActiveExampleComponent = class LegendActiveExampleComponent {
+    constructor() {
+        this.firstSeriesId = "1";
+        this.secondSeriesId = "2";
+        this.colors = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["SequentialColorProvider"](_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["CHART_PALETTE_CS1"]);
+        this.markers = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["SequentialChartMarkerProvider"](_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["CHART_MARKERS"]);
+    }
+};
+LegendActiveExampleComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
+        selector: "nui-legend-active-example",
+        template: _raw_loader_legend_active_example_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
+    })
+], LegendActiveExampleComponent);
+
+
+
+/***/ }),
+
+/***/ "WDE9":
+/*!***********************************************************************************************************!*\
+  !*** ./examples/components/demo/advanced-usage/legend/legend-visual-test/legend-visual-test.component.ts ***!
+  \***********************************************************************************************************/
+/*! exports provided: LegendVisualTestComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LegendVisualTestComponent", function() { return LegendVisualTestComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _raw_loader_legend_visual_test_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./legend-visual-test.component.html */ "fZ1x");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @nova-ui/charts */ "gKry");
+
+
+
+
+let LegendVisualTestComponent = class LegendVisualTestComponent {
+    constructor() {
+        this.markers = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["SequentialChartMarkerProvider"](_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["CHART_MARKERS"]);
+        this.seriesData = [
+            {
+                seriesId: "1",
+                value: 15.5,
+                unitLabel: "Kbps",
+                descriptionPrimary: "Primary Description 1",
+                descriptionSecondary: "Secondary Description 1",
+            },
+            {
+                seriesId: "2",
+                value: "9999k",
+                unitLabel: "%",
+                descriptionPrimary: "Primary Description 2",
+                descriptionSecondary: "Secondary Description 2",
+            },
+        ];
+        this.tileBackgroundColor = "#1f77b4";
+        this.tileColor = "white";
+        this.renderStates = Object.keys(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["RenderState"]);
+    }
+};
+LegendVisualTestComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
+        selector: "nui-legend-visual-test",
+        template: _raw_loader_legend_visual_test_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
+    })
+], LegendVisualTestComponent);
+
+
+
+/***/ }),
+
+/***/ "YSKE":
+/*!*****************************************************************************************************!*\
+  !*** ./examples/components/demo/advanced-usage/legend/legend-docs/legend-docs.example.component.ts ***!
+  \*****************************************************************************************************/
+/*! exports provided: LegendDocsExampleComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LegendDocsExampleComponent", function() { return LegendDocsExampleComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _raw_loader_legend_docs_example_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./legend-docs.example.component.html */ "QBpC");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
+
+
+
+let LegendDocsExampleComponent = class LegendDocsExampleComponent {
+    constructor() {
+        this.legendHtml = `<nui-legend-series (mouseenter)="chartAssist.emphasizeSeries(seriesId)"
+       [seriesRenderState]="chartAssist.renderStatesIndex[seriesId]?.state"
+       [isSelected]="!chartAssist.isSeriesHidden(seriesId)"
+       (isSelectedChange)="chartAssist.toggleSeries(seriesId, $event)">
+</nui-legend-series>`;
+    }
+};
+LegendDocsExampleComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
+        selector: "nui-legend-docs-example",
+        template: _raw_loader_legend_docs_example_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
+    })
+], LegendDocsExampleComponent);
+
+
+
+/***/ }),
+
+/***/ "Yzl7":
+/*!*******************************************************************************************************!*\
+  !*** ./examples/components/demo/advanced-usage/legend/legend-basic/legend-basic.example.component.ts ***!
+  \*******************************************************************************************************/
+/*! exports provided: LegendBasicExampleComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LegendBasicExampleComponent", function() { return LegendBasicExampleComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _raw_loader_legend_basic_example_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./legend-basic.example.component.html */ "P/Ik");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @nova-ui/charts */ "gKry");
+
+
+
+
+let LegendBasicExampleComponent = class LegendBasicExampleComponent {
+    constructor() {
+        this.firstSeriesId = "1";
+        this.secondSeriesId = "2";
+        this.colors = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["SequentialColorProvider"](_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["CHART_PALETTE_CS1"]);
+        this.markers = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["SequentialChartMarkerProvider"](_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["CHART_MARKERS"]);
+    }
+};
+LegendBasicExampleComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
+        selector: "nui-legend-basic-example",
+        template: _raw_loader_legend_basic_example_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
+    })
+], LegendBasicExampleComponent);
+
+
+
+/***/ }),
+
+/***/ "o7g7":
+/*!********************************************************************************************!*\
+  !*** ./examples/components/demo/advanced-usage/legend/chart-docs-legend-example.module.ts ***!
+  \********************************************************************************************/
+/*! exports provided: ChartDocsLegendExampleModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ChartDocsLegendExampleModule", function() { return ChartDocsLegendExampleModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "tyNb");
+/* harmony import */ var _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @nova-ui/bits */ "Rr1A");
+/* harmony import */ var _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @nova-ui/charts */ "gKry");
+/* harmony import */ var _common_demo_common_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../common/demo-common.module */ "s1Ul");
+/* harmony import */ var _legend_active_legend_active_example_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./legend-active/legend-active.example.component */ "MBMx");
+/* harmony import */ var _legend_basic_legend_basic_example_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./legend-basic/legend-basic.example.component */ "Yzl7");
+/* harmony import */ var _legend_compact_legend_compact_example_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./legend-compact/legend-compact.example.component */ "/+md");
+/* harmony import */ var _legend_description_content_projection_legend_description_projection_example_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./legend-description-content-projection/legend-description-projection.example.component */ "BJDE");
+/* harmony import */ var _legend_docs_legend_docs_example_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./legend-docs/legend-docs.example.component */ "YSKE");
+/* harmony import */ var _legend_horizontal_legend_horizontal_example_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./legend-horizontal/legend-horizontal.example.component */ "2yk5");
+/* harmony import */ var _legend_interactive_legend_interactive_example_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./legend-interactive/legend-interactive.example.component */ "67ML");
+/* harmony import */ var _legend_rich_tile_content_projection_legend_rich_tile_content_projection_example_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./legend-rich-tile-content-projection/legend-rich-tile-content-projection.example.component */ "/fBC");
+/* harmony import */ var _legend_rich_tile_legend_rich_tile_example_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./legend-rich-tile/legend-rich-tile.example.component */ "ps50");
+/* harmony import */ var _legend_test_legend_test_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./legend-test/legend-test.component */ "3j+N");
+/* harmony import */ var _legend_text_color_legend_text_color_example_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./legend-text-color/legend-text-color.example.component */ "BhAj");
+/* harmony import */ var _legend_visual_test_legend_visual_test_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./legend-visual-test/legend-visual-test.component */ "WDE9");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const legendRoutes = [
+    {
+        path: "",
+        component: _legend_docs_legend_docs_example_component__WEBPACK_IMPORTED_MODULE_10__["LegendDocsExampleComponent"],
+        data: {
+            "srlc": {
+                "stage": _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["SrlcStage"].beta,
+            },
+            showThemeSwitcher: true,
+        },
+    },
+    {
+        path: "basic",
+        component: _legend_basic_legend_basic_example_component__WEBPACK_IMPORTED_MODULE_7__["LegendBasicExampleComponent"],
+    },
+    {
+        path: "interactive",
+        component: _legend_interactive_legend_interactive_example_component__WEBPACK_IMPORTED_MODULE_12__["LegendInteractiveExampleComponent"],
+    },
+    {
+        path: "test",
+        component: _legend_test_legend_test_component__WEBPACK_IMPORTED_MODULE_15__["LegendTestExampleComponent"],
+    },
+    {
+        path: "rich-tile-content-projection",
+        component: _legend_rich_tile_content_projection_legend_rich_tile_content_projection_example_component__WEBPACK_IMPORTED_MODULE_13__["LegendRichTileContentProjectionExampleComponent"],
+    },
+    {
+        path: "visual-test",
+        component: _legend_visual_test_legend_visual_test_component__WEBPACK_IMPORTED_MODULE_17__["LegendVisualTestComponent"],
+        data: {
+            "srlc": {
+                "hideIndicator": true,
+            },
+        },
+    },
+];
+let ChartDocsLegendExampleModule = class ChartDocsLegendExampleModule {
+};
+ChartDocsLegendExampleModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        declarations: [
+            _legend_active_legend_active_example_component__WEBPACK_IMPORTED_MODULE_6__["LegendActiveExampleComponent"],
+            _legend_basic_legend_basic_example_component__WEBPACK_IMPORTED_MODULE_7__["LegendBasicExampleComponent"],
+            _legend_compact_legend_compact_example_component__WEBPACK_IMPORTED_MODULE_8__["LegendCompactExampleComponent"],
+            _legend_docs_legend_docs_example_component__WEBPACK_IMPORTED_MODULE_10__["LegendDocsExampleComponent"],
+            _legend_horizontal_legend_horizontal_example_component__WEBPACK_IMPORTED_MODULE_11__["LegendHorizontalExampleComponent"],
+            _legend_interactive_legend_interactive_example_component__WEBPACK_IMPORTED_MODULE_12__["LegendInteractiveExampleComponent"],
+            _legend_rich_tile_legend_rich_tile_example_component__WEBPACK_IMPORTED_MODULE_14__["LegendRichTileExampleComponent"],
+            _legend_test_legend_test_component__WEBPACK_IMPORTED_MODULE_15__["LegendTestExampleComponent"],
+            _legend_text_color_legend_text_color_example_component__WEBPACK_IMPORTED_MODULE_16__["LegendTextColorExampleComponent"],
+            _legend_visual_test_legend_visual_test_component__WEBPACK_IMPORTED_MODULE_17__["LegendVisualTestComponent"],
+            _legend_description_content_projection_legend_description_projection_example_component__WEBPACK_IMPORTED_MODULE_9__["LegendDescriptionProjectionExampleComponent"],
+            _legend_rich_tile_content_projection_legend_rich_tile_content_projection_example_component__WEBPACK_IMPORTED_MODULE_13__["LegendRichTileContentProjectionExampleComponent"],
+        ],
+        imports: [
+            _common_demo_common_module__WEBPACK_IMPORTED_MODULE_5__["DemoCommonModule"],
+            _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["NuiChartsModule"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forChild(legendRoutes),
+            _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["NuiDocsModule"],
+            _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["NuiIconModule"],
+            _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["NuiButtonModule"],
+            _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["NuiMessageModule"],
+        ],
+        providers: [
+            { provide: _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["DEMO_PATH_TOKEN"], useFactory: () => __webpack_require__("3lnh") },
+        ],
+    })
+], ChartDocsLegendExampleModule);
+
+
+
+/***/ }),
+
+/***/ "ps50":
+/*!***************************************************************************************************************!*\
+  !*** ./examples/components/demo/advanced-usage/legend/legend-rich-tile/legend-rich-tile.example.component.ts ***!
+  \***************************************************************************************************************/
+/*! exports provided: LegendRichTileExampleComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LegendRichTileExampleComponent", function() { return LegendRichTileExampleComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _raw_loader_legend_rich_tile_example_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./legend-rich-tile.example.component.html */ "ghjL");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @nova-ui/charts */ "gKry");
+
+
+
+
+let LegendRichTileExampleComponent = class LegendRichTileExampleComponent {
+    constructor() {
+        this.firstSeriesId = "1";
+        this.secondSeriesId = "2";
+        this.colors = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["SequentialColorProvider"](_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["CHART_PALETTE_CS1"]);
+        this.markers = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["SequentialChartMarkerProvider"](_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["CHART_MARKERS"]);
+    }
+};
+LegendRichTileExampleComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
+        selector: "nui-legend-rich-tile-example",
+        template: _raw_loader_legend_rich_tile_example_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
+    })
+], LegendRichTileExampleComponent);
+
+
+
+/***/ })
+
+}]);
+//# sourceMappingURL=components-demo-advanced-usage-legend-chart-docs-legend-example-module-es2015.js.map
