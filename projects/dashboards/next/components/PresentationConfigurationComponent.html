@@ -498,8 +498,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="146"
-                            class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor/column-configuration/presentation-configuration/presentation-configuration.component.ts:146</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="149"
+                            class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor/column-configuration/presentation-configuration/presentation-configuration.component.ts:149</a></div>
                 </td>
             </tr>
 
@@ -539,8 +539,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="138"
-                            class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor/column-configuration/presentation-configuration/presentation-configuration.component.ts:138</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="141"
+                            class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor/column-configuration/presentation-configuration/presentation-configuration.component.ts:141</a></div>
                 </td>
             </tr>
 
@@ -580,8 +580,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="155"
-                            class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor/column-configuration/presentation-configuration/presentation-configuration.component.ts:155</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="158"
+                            class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor/column-configuration/presentation-configuration/presentation-configuration.component.ts:158</a></div>
                 </td>
             </tr>
 
@@ -1092,6 +1092,9 @@ export class PresentationConfigurationComponent implements IHasChangeDetector, O
         public changeDetector: ChangeDetectorRef,
         @Optional() @Inject(FORMATTERS_REGISTRY) private formattersRegistryCommon: FormatterRegistryService,
         // used as a fallback, remove in vNext
+        /**
+         * @deprecated  will be removed in the scope of NUI-5839
+         */
         private tableFormattersRegistryService: TableFormatterRegistryService
     ) {
         this.subscribeToFormattersRegistry();

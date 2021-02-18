@@ -2877,7 +2877,7 @@ class ChartAssist {
     }
     /**
      * @deprecated use resetVisibleSeries instead
-     * TODO: Remove in V10
+     * TODO: Remove in V10 - NUI-5826
      */
     deemphasizeSeries() {
         this.resetVisibleSeries();
@@ -12259,12 +12259,12 @@ class MouseInteractiveArea {
             this.isActive = false;
             this.active.next(false);
         };
-        // Remove in v10
+        // Remove in v10 - NUI-5827
         /** @deprecated - Please use 'onMouseOver' instead */
         this.onMouseEnter = () => {
             this.onMouseOver();
         };
-        // Remove in v10
+        // Remove in v10 - NUI-5827
         /** @deprecated - Please use 'onMouseOut' instead */
         this.onMouseLeave = () => {
             this.onMouseOut();

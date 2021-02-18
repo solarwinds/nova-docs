@@ -4743,7 +4743,7 @@
           }
           /**
            * @deprecated use resetVisibleSeries instead
-           * TODO: Remove in V10
+           * TODO: Remove in V10 - NUI-5826
            */
 
         }, {
@@ -19321,14 +19321,14 @@
           _this45.isActive = false;
 
           _this45.active.next(false);
-        }; // Remove in v10
+        }; // Remove in v10 - NUI-5827
 
         /** @deprecated - Please use 'onMouseOver' instead */
 
 
         this.onMouseEnter = function () {
           _this45.onMouseOver();
-        }; // Remove in v10
+        }; // Remove in v10 - NUI-5827
 
         /** @deprecated - Please use 'onMouseOut' instead */
 

@@ -392,7 +392,7 @@ export class VirtualScrollFeatureAddonService {
             // Note: A special check to keep our server-client-side sorting in place
             filter(range &#x3D;&gt; range.end &gt;&#x3D; (this.widget.vscrollViewport?.getDataLength() ?? 0)),
             tap(range &#x3D;&gt; this.widget.zone.run(() &#x3D;&gt; {
-                // TODO: Remove &quot;page&quot; in V10. Compute page on datasource level.
+                // TODO: Remove &quot;page&quot; in V10. Compute page on datasource level. - NUI-5830
                 // @ts-ignore: Provide a proper interface to DS
                 this.widget.dataSource.page &#x3D; range.end / (range.end - range.start);
                 this.widget.eventBus.getStream(SCROLL_NEXT_PAGE).next();
