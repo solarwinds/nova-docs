@@ -420,7 +420,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="101" class="link-to-prism">src/lib/form-field/form-field.component.ts:101</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="102" class="link-to-prism">src/lib/form-field/form-field.component.ts:102</a></div>
                             </td>
                         </tr>
 
@@ -669,6 +669,7 @@ export class FormFieldComponent implements AfterContentInit, AfterContentChecked
                 );
         }
         if (this.nuiFormControl) {
+            // using setTimeout to prevent &quot;expression changed after it has been checked&quot; error
             setTimeout(() &#x3D;&gt; {
                 this.nuiFormControl.ariaLabel &#x3D; this.caption;
             });
