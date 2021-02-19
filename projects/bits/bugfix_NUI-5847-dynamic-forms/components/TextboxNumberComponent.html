@@ -827,7 +827,7 @@ when clicking the up/down buttons</p>
                     <td class="col-md-4">
 
                             <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
                             </div>
                     </td>
@@ -1111,7 +1111,7 @@ when clicking the up/down buttons</p>
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="258" class="link-to-prism">src/lib/textbox/textbox-number/textbox-number.component.ts:258</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="257" class="link-to-prism">src/lib/textbox/textbox-number/textbox-number.component.ts:257</a></div>
                             </td>
                         </tr>
 
@@ -1182,7 +1182,7 @@ when clicking the up/down buttons</p>
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="250" class="link-to-prism">src/lib/textbox/textbox-number/textbox-number.component.ts:250</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="249" class="link-to-prism">src/lib/textbox/textbox-number/textbox-number.component.ts:249</a></div>
                             </td>
                         </tr>
 
@@ -1888,9 +1888,8 @@ export class TextboxNumberComponent implements ControlValueAccessor, NuiFormFiel
     }
 
     public hasError() {
-        return this.formControl !&#x3D; null
-            &amp;&amp; (this.formControl.touched || this.formControl.dirty)
-            &amp;&amp; !this.formControl.valid;
+        return (this.formControl?.touched || this.formControl?.dirty)
+            &amp;&amp; !this.formControl?.valid;
     }
 
     private nativeValidator(): ValidationErrors | null {
