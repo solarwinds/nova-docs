@@ -6909,11 +6909,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let ChartDonutContentComponent = class ChartDonutContentComponent {
-    ngOnInit() {
-        this.contentPositionUpdateSubscription = this.plugin.contentPositionUpdateSubject.subscribe((contentPosition) => {
-            this.contentPosition = contentPosition;
-        });
-        this.plugin.chart.updateDimensions();
+    ngOnChanges(changes) {
+        var _a;
+        if (changes.plugin) {
+            (_a = this.contentPositionUpdateSubscription) === null || _a === void 0 ? void 0 : _a.unsubscribe();
+            this.contentPositionUpdateSubscription = this.plugin.contentPositionUpdateSubject.subscribe((contentPosition) => {
+                this.contentPosition = contentPosition;
+            });
+            this.plugin.chart.updateDimensions();
+        }
     }
     ngOnDestroy() {
         if (this.contentPositionUpdateSubscription) {
