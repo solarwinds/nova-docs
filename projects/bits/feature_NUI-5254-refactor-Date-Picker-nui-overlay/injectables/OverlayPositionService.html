@@ -1,0 +1,755 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@nova-ui/bits documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">@nova-ui/bits documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Injectables</li>
+  <li>OverlayPositionService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">API</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/lib/overlay/overlay-position.service.ts</code>
+        </p>
+
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#config">config</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getPossiblePositionsForPlacement">getPossiblePositionsForPlacement</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#setOverlayPositionConfig">setOverlayPositionConfig</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#updateOffsetOnPositionChanges">updateOffsetOnPositionChanges</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPossiblePositionsForPlacement"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            getPossiblePositionsForPlacement
+                        </b>
+                        <a href="#getPossiblePositionsForPlacement"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getPossiblePositionsForPlacement(placement: <a href="../undefineds/OverlayPlacement.html">OverlayPlacement</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="108"
+                            class="link-to-prism">src/lib/overlay/overlay-position.service.ts:108</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>placement</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/enumerations.html#OverlayPlacement" target="_self" >OverlayPlacement</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>ConnectedPosition[]</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setOverlayPositionConfig"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            setOverlayPositionConfig
+                        </b>
+                        <a href="#setOverlayPositionConfig"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>setOverlayPositionConfig(config?: <a href="../injectables/OverlayPositionService.html">IOverlayPositionServiceConfig</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">src/lib/overlay/overlay-position.service.ts:32</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>config</td>
+                                    <td>
+                                                <code><a href="../injectables/OverlayPositionService.html" target="_self" >IOverlayPositionServiceConfig</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateOffsetOnPositionChanges"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            updateOffsetOnPositionChanges
+                        </b>
+                        <a href="#updateOffsetOnPositionChanges"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateOffsetOnPositionChanges(positionStrategy: FlexibleConnectedPositionStrategy, getOverlayRef: () => void)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="38"
+                            class="link-to-prism">src/lib/overlay/overlay-position.service.ts:38</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>positionStrategy</td>
+                                    <td>
+                                            <code>FlexibleConnectedPositionStrategy</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>getOverlayRef</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Subscription</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="config"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            config</b>
+                            <a href="#config"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../injectables/OverlayPositionService.html" target="_self" >IOverlayPositionServiceConfig</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/lib/overlay/overlay-position.service.ts:30</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ConnectedOverlayPositionChange, ConnectedPosition, FlexibleConnectedPositionStrategy, OverlayRef } from &quot;@angular/cdk/overlay&quot;;
+import { Injectable } from &quot;@angular/core&quot;;
+import isNil from &quot;lodash/isNil&quot;;
+import { Subscription } from &quot;rxjs&quot;;
+
+import { OVERLAY_ARROW_SIZE } from &quot;./constants&quot;;
+import { IOverlayPositionServiceConfig, OverlayPlacement, OverlayPosition } from &quot;./types&quot;;
+
+enum OverlayPanelClass {
+    overlayCenterTop &#x3D; &quot;overlay-center-top&quot;,
+    overlayTopLeft &#x3D; &quot;overlay-top-left&quot;,
+    overlayTopRight &#x3D; &quot;overlay-top-right&quot;,
+    overlayCenterBottom &#x3D; &quot;overlay-center-bottom&quot;,
+    overlayBottomRight &#x3D; &quot;overlay-bottom-right&quot;,
+    overlayBottomLeft &#x3D; &quot;overlay-bottom-left&quot;,
+    overlayCenterLeft &#x3D; &quot;overlay-center-left&quot;,
+    overlayLeftTop &#x3D; &quot;overlay-left-top&quot;,
+    overlayLeftBottom &#x3D; &quot;overlay-left-bottom&quot;,
+    overlayCenterRight &#x3D; &quot;overlay-center-right&quot;,
+    overlayRightTop &#x3D; &quot;overlay-right-top&quot;,
+    overlayRightBottom &#x3D; &quot;overlay-right-bottom&quot;,
+}
+
+@Injectable()
+export class OverlayPositionService {
+    private overlayPositions: Record&lt;OverlayPosition, ConnectedPosition&gt;;
+
+    private arrowSize: number;
+    private arrowPadding: number;
+    public config: IOverlayPositionServiceConfig;
+
+    public setOverlayPositionConfig(config?: IOverlayPositionServiceConfig) {
+        this.arrowSize &#x3D;  !isNil(config?.arrowSize) ? &lt;number&gt;config?.arrowSize : OVERLAY_ARROW_SIZE;
+        this.arrowPadding &#x3D; !isNil(config?.arrowPadding) ? &lt;number&gt;config?.arrowPadding : 0;
+        this.overlayPositions &#x3D; getOverlayPositions();
+    }
+
+    public updateOffsetOnPositionChanges(positionStrategy: FlexibleConnectedPositionStrategy, getOverlayRef: () &#x3D;&gt; OverlayRef): Subscription {
+        return positionStrategy.positionChanges
+            .subscribe((connectedPosition: ConnectedOverlayPositionChange) &#x3D;&gt; {
+                const overlayRefElement &#x3D; getOverlayRef().overlayElement;
+                const panelClass &#x3D; connectedPosition.connectionPair.panelClass;
+                if (!panelClass) {
+                    return;
+                }
+                this.setOverlayOffset(panelClass, overlayRefElement);
+            });
+    }
+
+    private setOverlayOffset(panelClass: string | string[], overlayRefElement: HTMLElement) {
+        if (Array.isArray(panelClass)) {
+            panelClass &#x3D; this.getOverlayPositionPanelClass(panelClass);
+        }
+
+        if (!panelClass) {
+            return;
+        }
+
+        overlayRefElement.style.marginLeft &#x3D; &quot;&quot;;
+        overlayRefElement.style.marginTop &#x3D; &quot;&quot;;
+        overlayRefElement.style.marginBottom &#x3D; &quot;&quot;;
+        overlayRefElement.style.marginRight &#x3D; &quot;&quot;;
+
+        switch (panelClass) {
+            case OverlayPanelClass.overlayCenterTop:
+                overlayRefElement.style.marginBottom &#x3D; this.arrowSize + &quot;px&quot;;
+                break;
+            case OverlayPanelClass.overlayTopLeft:
+                overlayRefElement.style.marginRight &#x3D; 2 * this.arrowPadding + &quot;px&quot;;
+                overlayRefElement.style.marginBottom &#x3D; this.arrowSize + &quot;px&quot;;
+                break;
+            case OverlayPanelClass.overlayTopRight:
+                overlayRefElement.style.marginLeft &#x3D; 2 * this.arrowPadding + &quot;px&quot;;
+                overlayRefElement.style.marginBottom &#x3D; this.arrowSize + &quot;px&quot;;
+                break;
+            case OverlayPanelClass.overlayCenterBottom:
+                overlayRefElement.style.marginTop &#x3D; this.arrowSize + &quot;px&quot;;
+                break;
+            case OverlayPanelClass.overlayBottomRight:
+                overlayRefElement.style.marginLeft &#x3D; 2 * this.arrowPadding + &quot;px&quot;;
+                overlayRefElement.style.marginTop &#x3D; this.arrowSize + &quot;px&quot;;
+                break;
+            case OverlayPanelClass.overlayBottomLeft:
+                overlayRefElement.style.marginRight &#x3D; 2 * this.arrowPadding + &quot;px&quot;;
+                overlayRefElement.style.marginTop &#x3D; this.arrowSize + &quot;px&quot;;
+                break;
+            case OverlayPanelClass.overlayCenterLeft:
+                overlayRefElement.style.marginRight &#x3D; this.arrowSize + &quot;px&quot;;
+                break;
+            case OverlayPanelClass.overlayLeftTop:
+                overlayRefElement.style.marginRight &#x3D; this.arrowSize + &quot;px&quot;;
+                break;
+            case OverlayPanelClass.overlayLeftBottom:
+                overlayRefElement.style.marginRight &#x3D; this.arrowSize + &quot;px&quot;;
+                break;
+            case OverlayPanelClass.overlayCenterRight:
+                overlayRefElement.style.marginLeft &#x3D; this.arrowSize + &quot;px&quot;;
+                break;
+            case OverlayPanelClass.overlayRightTop:
+                overlayRefElement.style.marginLeft &#x3D; this.arrowSize + &quot;px&quot;;
+                break;
+            case OverlayPanelClass.overlayRightBottom:
+                overlayRefElement.style.marginLeft &#x3D; this.arrowSize + &quot;px&quot;;
+                break;
+        }
+    }
+
+    public getPossiblePositionsForPlacement(placement: OverlayPlacement): ConnectedPosition[] {
+        const possiblePositions: ConnectedPosition[] &#x3D; [];
+
+        // add positions for the requested placement
+        possiblePositions.push(...this.getPositionsForPlacement(placement));
+
+        // add positions for the opposite placement in case the requested placement
+        // would be rendered outside the screen
+        switch (placement) {
+            case OverlayPlacement.Left:
+                possiblePositions.push(
+                    ...this.getPositionsForPlacement(OverlayPlacement.Right),
+                    ...this.getPositionsForPlacement(OverlayPlacement.Top),
+                    ...this.getPositionsForPlacement(OverlayPlacement.Bottom)
+                );
+                break;
+            case OverlayPlacement.Right:
+                possiblePositions.push(
+                    ...this.getPositionsForPlacement(OverlayPlacement.Left),
+                    ...this.getPositionsForPlacement(OverlayPlacement.Top),
+                    ...this.getPositionsForPlacement(OverlayPlacement.Bottom)
+                );
+                break;
+            case OverlayPlacement.Top:
+                possiblePositions.push(
+                    ...this.getPositionsForPlacement(OverlayPlacement.Bottom),
+                    ...this.getPositionsForPlacement(OverlayPlacement.Left),
+                    ...this.getPositionsForPlacement(OverlayPlacement.Right)
+                );
+                break;
+            case OverlayPlacement.Bottom:
+                possiblePositions.push(
+                    ...this.getPositionsForPlacement(OverlayPlacement.Top),
+                    ...this.getPositionsForPlacement(OverlayPlacement.Left),
+                    ...this.getPositionsForPlacement(OverlayPlacement.Right)
+                );
+                break;
+        }
+
+        return possiblePositions;
+    }
+
+    private getOverlayPositionPanelClass(panelClass: string[]): string {
+        let result;
+        for (const panelClassKey in OverlayPanelClass) {
+            if (OverlayPanelClass.hasOwnProperty(panelClassKey)) {
+                result &#x3D; panelClass.find(i &#x3D;&gt; i &#x3D;&#x3D;&#x3D; panelClassKey);
+            }
+        }
+        return result || &quot;&quot;;
+    }
+
+    /**
+     * Returns all possible positions for a placement
+     * Eg: left &#x3D;&gt; [OVERLAY_POSITIONS[centerLeft], OVERLAY_POSITIONS[topLeft], OVERLAY_POSITIONS[bottomLeft]]
+     *
+     * @param placement
+     * @returns ConnectedPosition[]
+     */
+    private getPositionsForPlacement(placement: OverlayPlacement): ConnectedPosition[] {
+        let possiblePositionNames: OverlayPosition[] &#x3D; [];
+        switch (placement) {
+            case OverlayPlacement.Left:
+                possiblePositionNames &#x3D; [
+                    OverlayPosition.centerLeft,
+                    OverlayPosition.leftTop,
+                    OverlayPosition.leftBottom,
+                ];
+                break;
+
+            case OverlayPlacement.Right:
+                possiblePositionNames &#x3D; [
+                    OverlayPosition.centerRight,
+                    OverlayPosition.rightTop,
+                    OverlayPosition.rightBottom,
+                ];
+                break;
+
+            case OverlayPlacement.Top:
+                possiblePositionNames &#x3D; [
+                    OverlayPosition.centerTop,
+                    OverlayPosition.topLeft,
+                    OverlayPosition.topRight,
+                ];
+                break;
+
+            case OverlayPlacement.Bottom:
+                possiblePositionNames &#x3D; [
+                    OverlayPosition.centerBottom,
+                    OverlayPosition.bottomLeft,
+                    OverlayPosition.bottomRight,
+                ];
+                break;
+
+            case OverlayPlacement.Custom:
+                throw new Error(&#x60;Custom position should be handled by user&#x60;);
+        }
+
+        return possiblePositionNames.map((positionName: OverlayPosition) &#x3D;&gt; this.overlayPositions[positionName]);
+    }
+}
+
+export function getOverlayPositions(): Record&lt;OverlayPosition, ConnectedPosition&gt; {
+    return {
+        // TOP
+        [OverlayPosition.centerTop]: {
+            panelClass: &quot;overlay-center-top&quot;,
+            originX: &quot;center&quot;,
+            originY: &quot;top&quot;,
+            overlayX: &quot;center&quot;,
+            overlayY: &quot;bottom&quot;,
+        },
+        [OverlayPosition.topLeft]: {
+            panelClass: &quot;overlay-top-left&quot;,
+            originX: &quot;end&quot;,
+            originY: &quot;top&quot;,
+            overlayX: &quot;end&quot;,
+            overlayY: &quot;bottom&quot;,
+        },
+        [OverlayPosition.topRight]: {
+            panelClass: &quot;overlay-top-right&quot;,
+            originX: &quot;start&quot;,
+            originY: &quot;top&quot;,
+            overlayX: &quot;start&quot;,
+            overlayY: &quot;bottom&quot;,
+        },
+        // BOTTOM
+        [OverlayPosition.centerBottom]: {
+            panelClass: &quot;overlay-center-bottom&quot;,
+            originX: &quot;center&quot;,
+            originY: &quot;bottom&quot;,
+            overlayX: &quot;center&quot;,
+            overlayY: &quot;top&quot;,
+        },
+        [OverlayPosition.bottomRight]: {
+            panelClass: &quot;overlay-bottom-right&quot;,
+            originX: &quot;start&quot;,
+            originY: &quot;bottom&quot;,
+            overlayX: &quot;start&quot;,
+            overlayY: &quot;top&quot;,
+        },
+        [OverlayPosition.bottomLeft]: {
+            panelClass: &quot;overlay-bottom-left&quot;,
+            originX: &quot;end&quot;,
+            originY: &quot;bottom&quot;,
+            overlayX: &quot;end&quot;,
+            overlayY: &quot;top&quot;,
+        },
+        // LEFT
+        [OverlayPosition.centerLeft]: {
+            panelClass: &quot;overlay-center-left&quot;,
+            originX: &quot;start&quot;,
+            originY: &quot;center&quot;,
+            overlayX: &quot;end&quot;,
+            overlayY: &quot;center&quot;,
+        },
+        [OverlayPosition.leftTop]: {
+            panelClass: &quot;overlay-left-top&quot;,
+            originX: &quot;start&quot;,
+            originY: &quot;bottom&quot;,
+            overlayX: &quot;end&quot;,
+            overlayY: &quot;bottom&quot;,
+        },
+        [OverlayPosition.leftBottom]: {
+            panelClass: &quot;overlay-left-bottom&quot;,
+            originX: &quot;start&quot;,
+            originY: &quot;top&quot;,
+            overlayX: &quot;end&quot;,
+            overlayY: &quot;top&quot;,
+        },
+        // RIGHT
+        [OverlayPosition.centerRight]: {
+            panelClass: &quot;overlay-center-right&quot;,
+            originX: &quot;end&quot;,
+            originY: &quot;center&quot;,
+            overlayX: &quot;start&quot;,
+            overlayY: &quot;center&quot;,
+        },
+        [OverlayPosition.rightTop]: {
+            panelClass: &quot;overlay-right-top&quot;,
+            originX: &quot;end&quot;,
+            originY: &quot;bottom&quot;,
+            overlayX: &quot;start&quot;,
+            overlayY: &quot;bottom&quot;,
+        },
+        [OverlayPosition.rightBottom]: {
+            panelClass: &quot;overlay-right-bottom&quot;,
+            originX: &quot;end&quot;,
+            originY: &quot;top&quot;,
+            overlayX: &quot;start&quot;,
+            overlayY: &quot;top&quot;,
+        },
+    };
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'OverlayPositionService.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
