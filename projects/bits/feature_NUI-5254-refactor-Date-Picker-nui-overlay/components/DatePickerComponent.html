@@ -2613,8 +2613,8 @@ export class DatePickerComponent implements OnChanges, OnInit, ControlValueAcces
             // so in case datePicker.value is invalid it will build the calendar from the scratch
             // and not keep its previous state.
 
-            this.overlay.show$.subscribe(_ &#x3D;&gt; this._datePicker.refreshView());
-            this.overlay.hide$.subscribe(_ &#x3D;&gt; {
+            this.overlay.show$.pipe(takeUntil(this.onDestroy$)).subscribe(_ &#x3D;&gt; this._datePicker.refreshView());
+            this.overlay.hide$.pipe(takeUntil(this.onDestroy$)).subscribe(_ &#x3D;&gt; {
                 const currentDateValid &#x3D; moment(this.value).isValid();
                 if (!currentDateValid) {
                     this._datePicker.value &#x3D; undefined;
