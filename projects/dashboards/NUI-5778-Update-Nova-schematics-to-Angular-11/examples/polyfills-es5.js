@@ -7467,8 +7467,8 @@
     /***/
     function NDB(module, exports) {
       /**
-       * @license Angular v11.2.0
-       * (c) 2010-2020 Google LLC. https://angular.io/
+       * @license Angular v11.2.2
+       * (c) 2010-2021 Google LLC. https://angular.io/
        * License: MIT
        */
 

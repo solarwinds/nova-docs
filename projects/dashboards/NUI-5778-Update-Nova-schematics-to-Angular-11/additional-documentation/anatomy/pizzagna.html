@@ -43,6 +43,7 @@
 
 
 
+                   
 
 
 
@@ -51,8 +52,8 @@
 <p>The generic concept we decided to call &#39;Pizzagna&#39; was developed as part of the design process of 
 dashboards, in which we found ourselves trying to solve several problems at once using a single approach. </p>
 <p>Imagine a simple widget implemented using a single component in an Angular way with a configuration 
-defining its type and properties, like this:
-<code>{
+defining its type and properties, like this:</p>
+<div><pre class="line-numbers"><code class="language-none">{
     componentType: &quot;TableWidgetComponent&quot;,
     properties: {
         title: &quot;My first table widget!&quot;,
@@ -66,8 +67,7 @@ defining its type and properties, like this:
             direction: &quot;asc&quot;
         }
     }
-}</code></p>
-<p>We can immediately identify a few design problems here, especially:</p>
+}</code></pre></div><p>We can immediately identify a few design problems here, especially:</p>
 <ul>
 <li>From the consumer point of view, the widget is a monolith, and some parts are likely duplicated in 
 other widgets.</li>
@@ -79,7 +79,7 @@ presume it&#39;s just stored inside the widget as internal state).</li>
 <h3 id="configuration-of-separate-components">Configuration of Separate Components</h3>
 <p>First, let&#39;s try to break down the widget into separate components and expose the widget header and body 
 to be configured separately:</p>
-<p><code>{
+<div><pre class="line-numbers"><code class="language-none">{
     &quot;root&quot;: {
         // layout component that organizes child nodes into a column or a row
         componentType: &quot;StackComponent&quot;,
@@ -111,8 +111,7 @@ to be configured separately:</p>
             }
         }
     }
-}</code></p>
-<p>This structure enables the replacement of individual components without affecting the rest, which is a 
+}</code></pre></div><p>This structure enables the replacement of individual components without affecting the rest, which is a 
 step in the right direction.</p>
 <h3 id="providers">Providers</h3>
 <p>Now let&#39;s address the presence of the hard-coded data source. To generalize the concept of a data source, 
@@ -121,7 +120,7 @@ we figured that it would work best if we could have any number of instantiated i
 since all it does is expose the ability to be invoked and provide data through an observable output. For 
 the sake of simplicity, let&#39;s ignore some currently irrelevant details and try to configure the table 
 component to instantiate a data source like this:</p>
-<p><code>[
+<div><pre class="line-numbers"><code class="language-none">[
     ...
     &quot;table&quot;: {
         componentType: &quot;TableWidgetComponent&quot;,
@@ -141,13 +140,12 @@ component to instantiate a data source like this:</p>
             }
         }
     }
-]</code></p>
-<h3 id="data">Data</h3>
+]</code></pre></div><h3 id="data">Data</h3>
 <p>The configuration structure now describes how to build the whole widget, but we&#39;ll also need a way to 
 specify the data we want to display. We could of course use a different means for this, but why not be
 consistent and use the same mechanism as before? Let&#39;s extend the component properties to pass the data 
 in and voila - we&#39;re done! </p>
-<p><code>[
+<div><pre class="line-numbers"><code class="language-none">[
     ...
     &quot;table&quot;: {
         componentType: &quot;TableWidgetComponent&quot;,
@@ -168,8 +166,7 @@ in and voila - we&#39;re done! </p>
             }
         }
     }
-]</code></p>
-<h3 id="layers">Layers</h3>
+]</code></pre></div><h3 id="layers">Layers</h3>
 <p>We&#39;re getting closer to the final idea of building configuration-based UIs. But, there&#39;s one final 
 important step we have to take. Looking at the state of configuration, so far we currently have all of it
 in a single data structure. This makes it difficult to distinguish the different possible origins and 
@@ -192,16 +189,14 @@ Pizzagna, and in those cases we&#39;ll want to use the
 regular Angular component to initiate a change, we&#39;ll use the Pizzagna Service to initiate a 
 component-originating change in the Pizzagna.</p>
 <p>First, inject the service into your component:</p>
-<p><code>constructor(private pizzagnaService: PizzagnaService) { }</code></p>
-<p>Then, use it to modify the value:</p>
-<p><code>this.pizzagnaService.setProperty({
+<div><pre class="line-numbers"><code class="language-none">constructor(private pizzagnaService: PizzagnaService) { }</code></pre></div><p>Then, use it to modify the value:</p>
+<div><pre class="line-numbers"><code class="language-none">this.pizzagnaService.setProperty({
         pizzagnaKey: PizzagnaLayer.Data, // the layer we&#39;re working on 
         componentId: this.componentId, // the component that&#39;s changing the property
         propertyPath: [&quot;sorterConfiguration&quot;], // the path to the property in the Pizzagna
     },
     value // value to be set
-);</code></p>
-<p>The value will arrive at the target component as a regular input value with <code>ngOnChanges</code> being invoked 
+); </code></pre></div><p>The value will arrive at the target component as a regular input value with <code>ngOnChanges</code> being invoked 
 as well.</p>
 <h3 id="the-name-pizzagna">The Name &quot;Pizzagna&quot;</h3>
 <p>In concrete terms, Pizzagna is the JSON-based configuration described above as well as the
@@ -231,6 +226,7 @@ it as necessary.</p>
             var COMPODOC_CURRENT_PAGE_DEPTH = 2;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'additional-page';
             var COMPODOC_CURRENT_PAGE_URL = 'pizzagna.html';
+            var MAX_SEARCH_RESULTS = 15;
        </script>
 
        <script src="../../js/libs/custom-elements.min.js"></script>

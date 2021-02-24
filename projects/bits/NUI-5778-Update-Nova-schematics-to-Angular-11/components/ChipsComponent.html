@@ -64,17 +64,19 @@
     <p class="comment">
         <p>Control used to list groups of selected options (former ng1 nui-chiclets component).</p>
 <p>  <strong>Usage:</strong></p>
-<p><code>html
- * &lt;nui-chips [autoHide]=&quot;false&quot;
- *            [itemsSource]=&quot;itemsSource&quot;
- *            [title]=&quot;title&quot;
- *            [orientation]=&quot;&#39;vertical&#39;&quot;
- *            [allowRemoveAll]=&quot;false&quot;
- *            [removeAllLinkText]=&quot;clearAllText&quot;
- *            (chipRemoved)=&quot;onRemove($event)&quot;
- *            (removeAll)=&quot;onRemoveAll()&quot;&gt;
- * &lt;/nui-chips&gt;
- *</code></p>
+<p>```html</p>
+<ul>
+<li>&lt;nui-chips [autoHide]=&quot;false&quot;</li>
+<li>[itemsSource]=&quot;itemsSource&quot;</li>
+<li>[title]=&quot;title&quot;</li>
+<li>[orientation]=&quot;&#39;vertical&#39;&quot;</li>
+<li>[allowRemoveAll]=&quot;false&quot;</li>
+<li>[removeAllLinkText]=&quot;clearAllText&quot;</li>
+<li>(chipRemoved)=&quot;onRemove($event)&quot;</li>
+<li>(removeAll)=&quot;onRemoveAll()&quot;&gt;</li>
+<li></nui-chips></li>
+<li>```</li>
+</ul>
 
     </p>
 
@@ -1169,6 +1171,7 @@ export class ChipsComponent implements OnInit, OnDestroy, OnChanges, AfterViewIn
 
 
 
+                   
 
 
 
@@ -1191,6 +1194,7 @@ export class ChipsComponent implements OnInit, OnDestroy, OnChanges, AfterViewIn
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
             var COMPODOC_CURRENT_PAGE_URL = 'ChipsComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>

@@ -35,7 +35,7 @@
 
   function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
-  function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+  function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 
   function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
@@ -681,11 +681,10 @@
       "Em2t"),
           toString = __webpack_require__(
       /*! ./toString */
-      "dt0z");
-      /** Used to match leading and trailing whitespace. */
-
-
-      var reTrimEnd = /\s+$/;
+      "dt0z"),
+          trimmedEndIndex = __webpack_require__(
+      /*! ./_trimmedEndIndex */
+      "TO8r");
       /**
        * Removes trailing whitespace or specified characters from `string`.
        *
@@ -706,11 +705,12 @@
        * // => '-_-abc'
        */
 
+
       function trimEnd(string, chars, guard) {
         string = toString(string);
 
         if (string && (guard || chars === undefined)) {
-          return string.replace(reTrimEnd, '');
+          return string.slice(0, trimmedEndIndex(string) + 1);
         }
 
         if (!string || !(chars = baseToString(chars))) {
@@ -16340,7 +16340,7 @@
           toString = __webpack_require__(
       /*! ./toString */
       "dt0z");
-      /** Used to match leading and trailing whitespace. */
+      /** Used to match leading whitespace. */
 
 
       var reTrimStart = /^\s+/;
@@ -29833,6 +29833,9 @@
       var baseToString = __webpack_require__(
       /*! ./_baseToString */
       "zoYe"),
+          baseTrim = __webpack_require__(
+      /*! ./_baseTrim */
+      "jXQH"),
           castSlice = __webpack_require__(
       /*! ./_castSlice */
       "wy8a"),
@@ -29848,10 +29851,6 @@
           toString = __webpack_require__(
       /*! ./toString */
       "dt0z");
-      /** Used to match leading and trailing whitespace. */
-
-
-      var reTrim = /^\s+|\s+$/g;
       /**
        * Removes leading and trailing whitespace or specified characters from `string`.
        *
@@ -29875,11 +29874,12 @@
        * // => ['foo', 'bar']
        */
 
+
       function trim(string, chars, guard) {
         string = toString(string);
 
         if (string && (guard || chars === undefined)) {
-          return string.replace(reTrim, '');
+          return baseTrim(string);
         }
 
         if (!string || !(chars = baseToString(chars))) {
