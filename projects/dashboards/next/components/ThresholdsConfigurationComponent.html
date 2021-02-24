@@ -224,7 +224,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/lib/configurator/components/widgets/configurator-items/thresholds-configuration/thresholds-configuration.component.ts:44</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/lib/configurator/components/widgets/configurator-items/thresholds-configuration/thresholds-configuration.component.ts:48</a></div>
                             </td>
                         </tr>
 
@@ -440,8 +440,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="103"
-                            class="link-to-prism">src/lib/configurator/components/widgets/configurator-items/thresholds-configuration/thresholds-configuration.component.ts:103</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="107"
+                            class="link-to-prism">src/lib/configurator/components/widgets/configurator-items/thresholds-configuration/thresholds-configuration.component.ts:107</a></div>
                 </td>
             </tr>
 
@@ -515,7 +515,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/lib/configurator/components/widgets/configurator-items/thresholds-configuration/thresholds-configuration.component.ts:46</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/lib/configurator/components/widgets/configurator-items/thresholds-configuration/thresholds-configuration.component.ts:50</a></div>
                             </td>
                         </tr>
 
@@ -543,7 +543,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/lib/configurator/components/widgets/configurator-items/thresholds-configuration/thresholds-configuration.component.ts:42</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/lib/configurator/components/widgets/configurator-items/thresholds-configuration/thresholds-configuration.component.ts:46</a></div>
                             </td>
                         </tr>
 
@@ -604,10 +604,17 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/lib/configurator/components/widgets/configurator-items/thresholds-configuration/thresholds-configuration.component.ts:40</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/lib/configurator/components/widgets/configurator-items/thresholds-configuration/thresholds-configuration.component.ts:44</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>this value is added because of the setTimeout in RadioButtonComponent which will be removed in v10 - NUI-4843.
+when setTimeout is removed this hack can be removed as well</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -696,8 +703,12 @@ export class ThresholdsConfigurationComponent implements OnInit, OnDestroy, OnCh
             displayValue: $localize&#x60;Set custom thresholds for this widget&#x60;,
         },
     ];
-    // this value is added because of the setTimeout in RadioButtonComponent which will be removed in v10 - NUI-4843.
-    // when setTimeout is removed this hack can be removed as well
+
+    /**
+     * this value is added because of the setTimeout in RadioButtonComponent which will be removed in v10 - NUI-4843.
+     * when setTimeout is removed this hack can be removed as well
+     * @deprecated - remove in scope of NUI-4843
+     * */
     public radioButtonGroupValue: boolean;
 
     public form: FormGroup;
