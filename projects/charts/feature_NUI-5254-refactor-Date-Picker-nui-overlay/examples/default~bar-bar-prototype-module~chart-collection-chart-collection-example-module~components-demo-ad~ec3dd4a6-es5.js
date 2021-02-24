@@ -11051,14 +11051,19 @@
         }
 
         _createClass(ChartDonutContentComponent, [{
-          key: "ngOnInit",
-          value: function ngOnInit() {
+          key: "ngOnChanges",
+          value: function ngOnChanges(changes) {
             var _this35 = this;
 
-            this.contentPositionUpdateSubscription = this.plugin.contentPositionUpdateSubject.subscribe(function (contentPosition) {
-              _this35.contentPosition = contentPosition;
-            });
-            this.plugin.chart.updateDimensions();
+            var _a;
+
+            if (changes.plugin) {
+              (_a = this.contentPositionUpdateSubscription) === null || _a === void 0 ? void 0 : _a.unsubscribe();
+              this.contentPositionUpdateSubscription = this.plugin.contentPositionUpdateSubject.subscribe(function (contentPosition) {
+                _this35.contentPosition = contentPosition;
+              });
+              this.plugin.chart.updateDimensions();
+            }
           }
         }, {
           key: "ngOnDestroy",
