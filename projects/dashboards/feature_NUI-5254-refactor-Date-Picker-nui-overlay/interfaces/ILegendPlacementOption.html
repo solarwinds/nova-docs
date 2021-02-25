@@ -327,7 +327,7 @@ export interface IHasComponent&lt;T &#x3D; any&gt; {
 export interface IConfigurable {
     providerKey?: string;
     setComponent?: (component: any, componentId: string) &#x3D;&gt; void;
-    // TODO: BREAKING rename to &#x27;updateProperties&#x27; in v10 - NUI-5828
+    // TODO: BREAKING rename to &#x27;updateProperties&#x27; in v12 - NUI-5828
     updateConfiguration(properties: IProperties): void;
 }
 
@@ -381,6 +381,7 @@ export interface IComparatorsDict extends Partial&lt;Record&lt;ComparatorTypes |
 </div>
 
 
+                   
 
 
 
@@ -403,6 +404,7 @@ export interface IComparatorsDict extends Partial&lt;Record&lt;ComparatorTypes |
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
             var COMPODOC_CURRENT_PAGE_URL = 'ILegendPlacementOption.html';
+            var MAX_SEARCH_RESULTS = 15;
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>

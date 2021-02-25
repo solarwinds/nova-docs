@@ -371,10 +371,8 @@ var baseToString = __webpack_require__(/*! ./_baseToString */ "zoYe"),
     castSlice = __webpack_require__(/*! ./_castSlice */ "wy8a"),
     charsEndIndex = __webpack_require__(/*! ./_charsEndIndex */ "LPhD"),
     stringToArray = __webpack_require__(/*! ./_stringToArray */ "Em2t"),
-    toString = __webpack_require__(/*! ./toString */ "dt0z");
-
-/** Used to match leading and trailing whitespace. */
-var reTrimEnd = /\s+$/;
+    toString = __webpack_require__(/*! ./toString */ "dt0z"),
+    trimmedEndIndex = __webpack_require__(/*! ./_trimmedEndIndex */ "TO8r");
 
 /**
  * Removes trailing whitespace or specified characters from `string`.
@@ -398,7 +396,7 @@ var reTrimEnd = /\s+$/;
 function trimEnd(string, chars, guard) {
   string = toString(string);
   if (string && (guard || chars === undefined)) {
-    return string.replace(reTrimEnd, '');
+    return string.slice(0, trimmedEndIndex(string) + 1);
   }
   if (!string || !(chars = baseToString(chars))) {
     return string;
@@ -10401,7 +10399,7 @@ var baseToString = __webpack_require__(/*! ./_baseToString */ "zoYe"),
     stringToArray = __webpack_require__(/*! ./_stringToArray */ "Em2t"),
     toString = __webpack_require__(/*! ./toString */ "dt0z");
 
-/** Used to match leading and trailing whitespace. */
+/** Used to match leading whitespace. */
 var reTrimStart = /^\s+/;
 
 /**
@@ -19131,14 +19129,12 @@ function linear(t) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseToString = __webpack_require__(/*! ./_baseToString */ "zoYe"),
+    baseTrim = __webpack_require__(/*! ./_baseTrim */ "jXQH"),
     castSlice = __webpack_require__(/*! ./_castSlice */ "wy8a"),
     charsEndIndex = __webpack_require__(/*! ./_charsEndIndex */ "LPhD"),
     charsStartIndex = __webpack_require__(/*! ./_charsStartIndex */ "t4mE"),
     stringToArray = __webpack_require__(/*! ./_stringToArray */ "Em2t"),
     toString = __webpack_require__(/*! ./toString */ "dt0z");
-
-/** Used to match leading and trailing whitespace. */
-var reTrim = /^\s+|\s+$/g;
 
 /**
  * Removes leading and trailing whitespace or specified characters from `string`.
@@ -19165,7 +19161,7 @@ var reTrim = /^\s+|\s+$/g;
 function trim(string, chars, guard) {
   string = toString(string);
   if (string && (guard || chars === undefined)) {
-    return string.replace(reTrim, '');
+    return baseTrim(string);
   }
   if (!string || !(chars = baseToString(chars))) {
     return string;
