@@ -422,7 +422,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/renderers/bar/bar-renderer.ts:48</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/renderers/bar/bar-renderer.ts:49</a></div>
                             </td>
                         </tr>
 
@@ -495,6 +495,7 @@
         barClass: &quot;bar-outline&quot;,
         highlightStrategy: undefined,
         pointerEvents: true,
+        enableMinBarThickness: true,
     }</code>
                         </td>
                     </tr>
@@ -1070,8 +1071,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="51"
-                            class="link-to-prism">src/renderers/bar/bar-renderer.ts:51</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="52"
+                            class="link-to-prism">src/renderers/bar/bar-renderer.ts:52</a></div>
                 </td>
             </tr>
 
@@ -1156,8 +1157,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="160"
-                            class="link-to-prism">src/renderers/bar/bar-renderer.ts:160</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="161"
+                            class="link-to-prism">src/renderers/bar/bar-renderer.ts:161</a></div>
                 </td>
             </tr>
 
@@ -1228,8 +1229,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="150"
-                            class="link-to-prism">src/renderers/bar/bar-renderer.ts:150</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="151"
+                            class="link-to-prism">src/renderers/bar/bar-renderer.ts:151</a></div>
                 </td>
             </tr>
 
@@ -1324,8 +1325,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="129"
-                            class="link-to-prism">src/renderers/bar/bar-renderer.ts:129</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="130"
+                            class="link-to-prism">src/renderers/bar/bar-renderer.ts:130</a></div>
                 </td>
             </tr>
 
@@ -1422,8 +1423,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="145"
-                            class="link-to-prism">src/renderers/bar/bar-renderer.ts:145</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="146"
+                            class="link-to-prism">src/renderers/bar/bar-renderer.ts:146</a></div>
                 </td>
             </tr>
 
@@ -1520,8 +1521,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="164"
-                            class="link-to-prism">src/renderers/bar/bar-renderer.ts:164</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="165"
+                            class="link-to-prism">src/renderers/bar/bar-renderer.ts:165</a></div>
                 </td>
             </tr>
 
@@ -1628,8 +1629,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="136"
-                            class="link-to-prism">src/renderers/bar/bar-renderer.ts:136</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="137"
+                            class="link-to-prism">src/renderers/bar/bar-renderer.ts:137</a></div>
                 </td>
             </tr>
 
@@ -3987,6 +3988,7 @@ export class BarRenderer extends XYRenderer&lt;IRectangleAccessors&gt; {
         barClass: &quot;bar-outline&quot;,
         highlightStrategy: undefined,
         pointerEvents: true,
+        enableMinBarThickness: true,
     };
 
     public readonly barContainerClass &#x3D; &quot;bar-container&quot;;
@@ -4183,7 +4185,9 @@ export class BarRenderer extends XYRenderer&lt;IRectangleAccessors&gt; {
                 thickness -&#x3D; this.config.padding * 2;
             }
 
-            thickness &#x3D; Math.max(thickness, BarRenderer.MIN_BAR_THICKNESS);
+            if (this.config.enableMinBarThickness) {
+                thickness &#x3D; Math.max(thickness, BarRenderer.MIN_BAR_THICKNESS);
+            }
         }
         return {start, thickness};
     }
