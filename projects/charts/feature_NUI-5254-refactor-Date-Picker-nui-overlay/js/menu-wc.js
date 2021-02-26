@@ -712,9 +712,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/ISpark.html" data-type="entity-link">ISpark</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/ISparkChartAssistChart.html" data-type="entity-link">ISparkChartAssistChart</a>
-                            </li>
-                            <li class="link">
                                 <a href="interfaces/IStackMetadata.html" data-type="entity-link">IStackMetadata</a>
                             </li>
                             <li class="link">

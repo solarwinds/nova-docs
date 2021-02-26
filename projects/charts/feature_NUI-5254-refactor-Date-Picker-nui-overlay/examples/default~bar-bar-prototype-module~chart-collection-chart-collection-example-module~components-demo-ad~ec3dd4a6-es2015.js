@@ -1947,23 +1947,11 @@ class SparkChartAssist {
         this.sparks = [];
         /** Used for keeping tabs on the legend's active state */
         this.isLegendActive = false;
-        /**
-         * @deprecated Removal ticket NUI-3327
-         * Please use SparkChartAssist.sparks instead
-         */
-        this.charts = []; // tslint:disable-line:deprecation
         this.highlightedDataPoints = {};
         this.gridConfig = Object(_grid_config_spark_chart_grid_config__WEBPACK_IMPORTED_MODULE_9__["sparkChartGridConfig"])(new _core_grid_config_xy_grid_config__WEBPACK_IMPORTED_MODULE_2__["XYGridConfig"](), false, showTopBorder);
         this.gridConfig.interactionPlugins = false;
         this.lastGridConfig = Object(_grid_config_spark_chart_grid_config__WEBPACK_IMPORTED_MODULE_9__["sparkChartGridConfig"])(new _core_grid_config_xy_grid_config__WEBPACK_IMPORTED_MODULE_2__["XYGridConfig"](), showBottomAxis, showTopBorder);
         this.lastGridConfig.interactionPlugins = false;
-    }
-    /**
-     * @deprecated Removal ticket NUI-3327
-     * Please use SparkChartAssist.sparks[0] instead
-     */
-    get sparkChart() {
-        return this.charts.length > 0 ? this.charts[0] : null; // tslint:disable-line:deprecation
     }
     /**
      * Use this method to update the set of sparks if they all consist of only one series.
@@ -1982,7 +1970,6 @@ class SparkChartAssist {
      */
     updateSparks(sparks) {
         const inputSparks = lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_0___default()(sparks);
-        this.charts = []; // tslint:disable-line:deprecation
         this.sparks = inputSparks.map((spark, index) => {
             const lastSpark = index === inputSparks.length - 1;
             const existingSparkIndex = spark.id ? this.sparks.findIndex(existingSpark => existingSpark.id === spark.id) : -1;
@@ -1994,8 +1981,6 @@ class SparkChartAssist {
                 spark.id = spark.id || _common_utility_service__WEBPACK_IMPORTED_MODULE_8__["UtilityService"].uuid();
             }
             spark.chart.update(spark.chartSeriesSet);
-            // tslint:disable-next-line:deprecation
-            this.charts.push({ chart: spark.chart, chartSeries: spark.chartSeriesSet[0] });
             return spark;
         });
     }
@@ -2872,13 +2857,6 @@ class ChartAssist {
         }
         this.chart.update(seriesSet);
         this.publishRenderStates();
-    }
-    /**
-     * @deprecated use resetVisibleSeries instead
-     * TODO: Remove in V10 - NUI-5826
-     */
-    deemphasizeSeries() {
-        this.resetVisibleSeries();
     }
     isSeriesHidden(seriesId) {
         return this.legendInteractionAssist.isSeriesHidden(seriesId);
@@ -11797,7 +11775,7 @@ const CHART_PALETTE_CS3 = [
     "var(--nui-color-chart-ten-dark)",
 ];
 /** @deprecated
- * Will be removed in v.11
+ * Will be removed in v.12
  * https://jira.solarwinds.com/browse/NUI-4296?jql=text%20~%20%22v11%22
  *
  * Default status color sequence for charts */
@@ -11810,7 +11788,7 @@ const CHART_PALETTE_CS_S = [
     "var(--nui-color-semantic-info)",
 ];
 /** Extended status color sequence for charts
- * It will substitute the default one above in v.11
+ * It will substitute the default one above in v.12
  * https://jira.solarwinds.com/browse/NUI-5367
  */
 const CHART_PALETTE_CS_S_EXTENDED = [
@@ -12261,12 +12239,12 @@ class MouseInteractiveArea {
             this.isActive = false;
             this.active.next(false);
         };
-        // Remove in v10 - NUI-5827
+        // Remove in v12 - NUI-5827
         /** @deprecated - Please use 'onMouseOver' instead */
         this.onMouseEnter = () => {
             this.onMouseOver();
         };
-        // Remove in v10 - NUI-5827
+        // Remove in v12 - NUI-5827
         /** @deprecated - Please use 'onMouseOut' instead */
         this.onMouseLeave = () => {
             this.onMouseOut();
@@ -15421,10 +15399,6 @@ __webpack_require__.r(__webpack_exports__);
 class RadialGrid extends _grid__WEBPACK_IMPORTED_MODULE_0__["Grid"] {
     constructor() {
         super(...arguments);
-        /** @deprecated - Deprecated in favor of adjustRenderingArea - Removal ticket NUI-3273 */
-        this.adjustClipPath = () => {
-            this.adjustRenderingArea();
-        };
         this.adjustRenderingArea = () => {
             const d = this.config().dimension;
             const attrs = {
@@ -20062,10 +20036,6 @@ class LineRenderer extends _xy_renderer__WEBPACK_IMPORTED_MODULE_8__["XYRenderer
         lineCaps.exit().remove();
     }
 }
-/** @Deprecated, use getStrokeStyleDashed */
-LineRenderer.STROKE_STYLE_DASHED = "2,2";
-/** @Deprecated, use getStrokeStyleDotted */
-LineRenderer.STROKE_STYLE_DOTTED = "1,1";
 LineRenderer.UNCLIPPED_DATA_LAYER_NAME = "unclipped-data";
 LineRenderer.LINE_CAP_CLASS_NAME = "nui-chart-line-cap";
 
@@ -23044,7 +23014,6 @@ class BarRenderer extends _xy_renderer__WEBPACK_IMPORTED_MODULE_11__["XYRenderer
         this.config = config;
         this.DEFAULT_CONFIG = {
             transitionDuration: 300,
-            minOrdinalSize: 0,
             padding: 1,
             barClass: "bar-outline",
             highlightStrategy: undefined,

@@ -3263,13 +3263,6 @@
           /** Used for keeping tabs on the legend's active state */
 
           this.isLegendActive = false;
-          /**
-           * @deprecated Removal ticket NUI-3327
-           * Please use SparkChartAssist.sparks instead
-           */
-
-          this.charts = []; // tslint:disable-line:deprecation
-
           this.highlightedDataPoints = {};
           this.gridConfig = Object(_grid_config_spark_chart_grid_config__WEBPACK_IMPORTED_MODULE_9__["sparkChartGridConfig"])(new _core_grid_config_xy_grid_config__WEBPACK_IMPORTED_MODULE_2__["XYGridConfig"](), false, showTopBorder);
           this.gridConfig.interactionPlugins = false;
@@ -3277,24 +3270,14 @@
           this.lastGridConfig.interactionPlugins = false;
         }
         /**
-         * @deprecated Removal ticket NUI-3327
-         * Please use SparkChartAssist.sparks[0] instead
+         * Use this method to update the set of sparks if they all consist of only one series.
+         * If one or more sparks has multiple series use the updateSparks method instead.
+         *
+         * See {@link IChartAssist#update}
          */
 
 
         _createClass(SparkChartAssist, [{
-          key: "sparkChart",
-          get: function get() {
-            return this.charts.length > 0 ? this.charts[0] : null; // tslint:disable-line:deprecation
-          }
-          /**
-           * Use this method to update the set of sparks if they all consist of only one series.
-           * If one or more sparks has multiple series use the updateSparks method instead.
-           *
-           * See {@link IChartAssist#update}
-           */
-
-        }, {
           key: "update",
           value: function update(inputSeriesSet) {
             var sparks = inputSeriesSet.map(function (chartSeries) {
@@ -3317,8 +3300,6 @@
             var _this7 = this;
 
             var inputSparks = lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_0___default()(sparks);
-            this.charts = []; // tslint:disable-line:deprecation
-
             this.sparks = inputSparks.map(function (spark, index) {
               var lastSpark = index === inputSparks.length - 1;
               var existingSparkIndex = spark.id ? _this7.sparks.findIndex(function (existingSpark) {
@@ -3332,13 +3313,7 @@
                 spark.id = spark.id || _common_utility_service__WEBPACK_IMPORTED_MODULE_8__["UtilityService"].uuid();
               }
 
-              spark.chart.update(spark.chartSeriesSet); // tslint:disable-next-line:deprecation
-
-              _this7.charts.push({
-                chart: spark.chart,
-                chartSeries: spark.chartSeriesSet[0]
-              });
-
+              spark.chart.update(spark.chartSeriesSet);
               return spark;
             });
           }
@@ -4740,16 +4715,6 @@
 
             this.chart.update(seriesSet);
             this.publishRenderStates();
-          }
-          /**
-           * @deprecated use resetVisibleSeries instead
-           * TODO: Remove in V10 - NUI-5826
-           */
-
-        }, {
-          key: "deemphasizeSeries",
-          value: function deemphasizeSeries() {
-            this.resetVisibleSeries();
           }
         }, {
           key: "isSeriesHidden",
@@ -18558,14 +18523,14 @@
 
       var CHART_PALETTE_CS3 = ["var(--nui-color-chart-one)", "var(--nui-color-chart-one-light)", "var(--nui-color-chart-one-dark)", "var(--nui-color-chart-two)", "var(--nui-color-chart-two-light)", "var(--nui-color-chart-two-dark)", "var(--nui-color-chart-three)", "var(--nui-color-chart-three-light)", "var(--nui-color-chart-three-dark)", "var(--nui-color-chart-four)", "var(--nui-color-chart-four-light)", "var(--nui-color-chart-four-dark)", "var(--nui-color-chart-five)", "var(--nui-color-chart-five-light)", "var(--nui-color-chart-five-dark)", "var(--nui-color-chart-six)", "var(--nui-color-chart-six-light)", "var(--nui-color-chart-six-dark)", "var(--nui-color-chart-seven)", "var(--nui-color-chart-seven-light)", "var(--nui-color-chart-seven-dark)", "var(--nui-color-chart-eight)", "var(--nui-color-chart-eight-light)", "var(--nui-color-chart-eight-dark)", "var(--nui-color-chart-nine)", "var(--nui-color-chart-nine-light)", "var(--nui-color-chart-nine-dark)", "var(--nui-color-chart-ten)", "var(--nui-color-chart-ten-light)", "var(--nui-color-chart-ten-dark)"];
       /** @deprecated
-       * Will be removed in v.11
+       * Will be removed in v.12
        * https://jira.solarwinds.com/browse/NUI-4296?jql=text%20~%20%22v11%22
        *
        * Default status color sequence for charts */
 
       var CHART_PALETTE_CS_S = ["var(--nui-color-semantic-down)", "var(--nui-color-semantic-critical)", "var(--nui-color-semantic-warning)", "var(--nui-color-semantic-unknown)", "var(--nui-color-semantic-ok)", "var(--nui-color-semantic-info)"];
       /** Extended status color sequence for charts
-       * It will substitute the default one above in v.11
+       * It will substitute the default one above in v.12
        * https://jira.solarwinds.com/browse/NUI-5367
        */
 
@@ -19326,14 +19291,14 @@
           _this45.isActive = false;
 
           _this45.active.next(false);
-        }; // Remove in v10 - NUI-5827
+        }; // Remove in v12 - NUI-5827
 
         /** @deprecated - Please use 'onMouseOver' instead */
 
 
         this.onMouseEnter = function () {
           _this45.onMouseOver();
-        }; // Remove in v10 - NUI-5827
+        }; // Remove in v12 - NUI-5827
 
         /** @deprecated - Please use 'onMouseOut' instead */
 
@@ -24269,11 +24234,6 @@
           _classCallCheck(this, RadialGrid);
 
           _this53 = _super18.apply(this, arguments);
-          /** @deprecated - Deprecated in favor of adjustRenderingArea - Removal ticket NUI-3273 */
-
-          _this53.adjustClipPath = function () {
-            _this53.adjustRenderingArea();
-          };
 
           _this53.adjustRenderingArea = function () {
             var d = _this53.config().dimension;
@@ -31260,13 +31220,7 @@
 
         return LineRenderer;
       }(_xy_renderer__WEBPACK_IMPORTED_MODULE_8__["XYRenderer"]);
-      /** @Deprecated, use getStrokeStyleDashed */
 
-
-      LineRenderer.STROKE_STYLE_DASHED = "2,2";
-      /** @Deprecated, use getStrokeStyleDotted */
-
-      LineRenderer.STROKE_STYLE_DOTTED = "1,1";
       LineRenderer.UNCLIPPED_DATA_LAYER_NAME = "unclipped-data";
       LineRenderer.LINE_CAP_CLASS_NAME = "nui-chart-line-cap";
       /***/
@@ -36167,7 +36121,6 @@
           _this76.config = config;
           _this76.DEFAULT_CONFIG = {
             transitionDuration: 300,
-            minOrdinalSize: 0,
             padding: 1,
             barClass: "bar-outline",
             highlightStrategy: undefined,
