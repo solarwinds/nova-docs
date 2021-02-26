@@ -35,16 +35,25 @@
 <br>
 <br></p>
 <h2 id="prerequisites">Prerequisites</h2>
-<p>Before you begin, make sure your development environment includes Node.js®, an npm package manager and the npm registries set.
-<br></p>
-<h4 id="installing-nodejs">Installing NodeJS</h4>
+<p>Before you begin, make sure your development environment includes the following:</p>
+<ul>
+<li>Node.js®</li>
+<li>A package manager such as <a href="https://www.npmjs.com/get-npm">npm</a></li>
+<li>Angular CLI v11</li>
+<li>Angular CDK v11 as a devDependency<br>
+
+</li>
+</ul>
+<h3 id="installing-nodejs-and-npm">Installing NodeJS and <code>npm</code></h3>
 <p>To check your version, run node -v in a terminal/console window.
-To get Node.js, go to <a href="https://nodejs.org/en/">nodejs.org</a>.</p>
-<h4 id="installing-angular-cli">Installing Angular CLI</h4>
+To get Node.js (which comes with <code>npm</code> out of the box), go to <a href="https://nodejs.org/en/">nodejs.org</a>.</p>
+<h3 id="installing-angular-cli">Installing Angular CLI</h3>
 <p>The Angular CLI is a command-line interface tool that you can use to initialize, develop, scaffold and maintain Angular applications. </p>
 <p>You may want to check first whether it&#39;s already installed by running the following command: </p>
-<div><pre class="line-numbers"><code class="language-none">ng --version</code></pre></div><p>If you want to install it globally, run the following command: </p>
-<div><pre class="line-numbers"><code class="language-none">npm install -g &#64;angular/cli</code></pre></div><br>
+<div><pre class="line-numbers"><code class="language-none">ng --version</code></pre></div><p>If you want to install the latest Angular CLI globally, run the following command: </p>
+<div><pre class="line-numbers"><code class="language-none">npm install -g &#64;angular/cli&#64;^11</code></pre></div><h3 id="installing-angular-cdk">Installing Angular CDK</h3>
+<p>Nova uses Angular CDK as part of its schematics functionality. To install it, you can run the following command:</p>
+<div><pre class="line-numbers"><code class="language-none">npm install &#64;angular/cdk&#64;^11 --save-dev</code></pre></div><br>
 <br>
 
 
