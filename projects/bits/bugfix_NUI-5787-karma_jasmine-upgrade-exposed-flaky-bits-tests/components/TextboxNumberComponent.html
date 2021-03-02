@@ -897,7 +897,7 @@ when clicking the up/down buttons</p>
                 <td class="col-md-4">
 
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
                     </div>
                 </td>
@@ -1154,8 +1154,8 @@ when clicking the up/down buttons</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="244"
-                            class="link-to-prism">src/lib/textbox/textbox-number/textbox-number.component.ts:244</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="243"
+                            class="link-to-prism">src/lib/textbox/textbox-number/textbox-number.component.ts:243</a></div>
                 </td>
             </tr>
 
@@ -1226,8 +1226,8 @@ when clicking the up/down buttons</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="236"
-                            class="link-to-prism">src/lib/textbox/textbox-number/textbox-number.component.ts:236</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="235"
+                            class="link-to-prism">src/lib/textbox/textbox-number/textbox-number.component.ts:235</a></div>
                 </td>
             </tr>
 
@@ -1909,9 +1909,8 @@ export class TextboxNumberComponent implements ControlValueAccessor, NuiFormFiel
     }
 
     public hasError() {
-        return this.formControl !&#x3D; null
-            &amp;&amp; (this.formControl.touched || this.formControl.dirty)
-            &amp;&amp; !this.formControl.valid;
+        return (this.formControl?.touched || this.formControl?.dirty)
+            &amp;&amp; !this.formControl?.valid;
     }
 
     private nativeValidator(): ValidationErrors | null {
@@ -1996,6 +1995,7 @@ export class TextboxNumberComponent implements ControlValueAccessor, NuiFormFiel
 
 
 
+                   
 
 
 
@@ -2018,6 +2018,7 @@ export class TextboxNumberComponent implements ControlValueAccessor, NuiFormFiel
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
             var COMPODOC_CURRENT_PAGE_URL = 'TextboxNumberComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>

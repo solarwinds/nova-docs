@@ -200,6 +200,7 @@ export enum WellKnownPathKey {
 
 export enum WellKnownDataSourceFeatures {
     Interactivity &#x3D; &quot;interactivity&quot;,
+    DisableTableColumnGeneration &#x3D; &quot;disableTableColumnGeneration&quot;,
 }
 
 export interface IProperties extends Record&lt;string, any&gt; {
@@ -277,7 +278,7 @@ export interface IWidgetTypeDefinition {
     configurator?: IPizzagna;
     widget: IPizzagna;
     /**
-     * Paths to various important values in pizzagnas - this should be coupled with respective pizzagnas in v10
+     * Paths to various important values in pizzagnas - this should be coupled with respective pizzagnas in v10 - NUI-5829
      */
     paths?: {
         widget?: Record&lt;string, string&gt;,
@@ -313,7 +314,7 @@ export interface IHasComponent&lt;T &#x3D; any&gt; {
 export interface IConfigurable {
     providerKey?: string;
     setComponent?: (component: any, componentId: string) &#x3D;&gt; void;
-    // TODO: BREAKING rename to &#x27;updateProperties&#x27; in v10
+    // TODO: BREAKING rename to &#x27;updateProperties&#x27; in v12 - NUI-5828
     updateConfiguration(properties: IProperties): void;
 }
 
@@ -367,6 +368,7 @@ export interface IComparatorsDict extends Partial&lt;Record&lt;ComparatorTypes |
 </div>
 
 
+                   
 
 
 
@@ -389,6 +391,7 @@ export interface IComparatorsDict extends Partial&lt;Record&lt;ComparatorTypes |
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
             var COMPODOC_CURRENT_PAGE_URL = 'IWidgetMetadata.html';
+            var MAX_SEARCH_RESULTS = 15;
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>

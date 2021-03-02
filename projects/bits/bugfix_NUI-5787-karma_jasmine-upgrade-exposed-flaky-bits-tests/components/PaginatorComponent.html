@@ -940,8 +940,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="276"
-                            class="link-to-prism">src/lib/paginator/paginator.component.ts:276</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="279"
+                            class="link-to-prism">src/lib/paginator/paginator.component.ts:279</a></div>
                 </td>
             </tr>
 
@@ -983,8 +983,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="283"
-                            class="link-to-prism">src/lib/paginator/paginator.component.ts:283</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="286"
+                            class="link-to-prism">src/lib/paginator/paginator.component.ts:286</a></div>
                 </td>
             </tr>
 
@@ -1026,8 +1026,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="258"
-                            class="link-to-prism">src/lib/paginator/paginator.component.ts:258</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="261"
+                            class="link-to-prism">src/lib/paginator/paginator.component.ts:261</a></div>
                 </td>
             </tr>
 
@@ -1069,8 +1069,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="290"
-                            class="link-to-prism">src/lib/paginator/paginator.component.ts:290</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="293"
+                            class="link-to-prism">src/lib/paginator/paginator.component.ts:293</a></div>
                 </td>
             </tr>
 
@@ -1222,8 +1222,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="297"
-                            class="link-to-prism">src/lib/paginator/paginator.component.ts:297</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="300"
+                            class="link-to-prism">src/lib/paginator/paginator.component.ts:300</a></div>
                 </td>
             </tr>
 
@@ -1308,8 +1308,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="225"
-                            class="link-to-prism">src/lib/paginator/paginator.component.ts:225</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="228"
+                            class="link-to-prism">src/lib/paginator/paginator.component.ts:228</a></div>
                 </td>
             </tr>
 
@@ -1421,8 +1421,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="237"
-                            class="link-to-prism">src/lib/paginator/paginator.component.ts:237</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="240"
+                            class="link-to-prism">src/lib/paginator/paginator.component.ts:240</a></div>
                 </td>
             </tr>
 
@@ -1500,8 +1500,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="268"
-                            class="link-to-prism">src/lib/paginator/paginator.component.ts:268</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="271"
+                            class="link-to-prism">src/lib/paginator/paginator.component.ts:271</a></div>
                 </td>
             </tr>
 
@@ -1809,6 +1809,9 @@ ${this.pageSizeSet[0]}. To set the desired initial page size, include it as part
     }
 
     // TODO: remove in vNext. Needs only for backward compatibility
+    /**
+     * @deprecated - remove in v12. Needs only for backward compatibility - Removal: NUI-5837
+     */
     public onPageSizeChange(value: InputValueTypes): void {
         this.setItemsPerPage({
             oldValue: 0,
@@ -1816,7 +1819,7 @@ ${this.pageSizeSet[0]}. To set the desired initial page size, include it as part
         });
     }
 
-    // TODO: refactor in vNext. Replace ISelectChangedEvent to InputValueTypes
+    // TODO: refactor in vNext. Replace ISelectChangedEvent to InputValueTypes - NUI-5837
     /**
      * Set items per page that should displayed
      * @param changedEvent select change event
@@ -2086,6 +2089,7 @@ ${this.pageSizeSet[0]}. To set the desired initial page size, include it as part
 
 
 
+                   
 
 
 
@@ -2108,6 +2112,7 @@ ${this.pageSizeSet[0]}. To set the desired initial page size, include it as part
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
             var COMPODOC_CURRENT_PAGE_URL = 'PaginatorComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>

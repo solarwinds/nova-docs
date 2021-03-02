@@ -139,7 +139,6 @@
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                    <span class="modifier">Async</span>
                                     <span class="modifier">Abstract</span>
                                 <a href="#getFilteredData">getFilteredData</a>
                             </li>
@@ -777,7 +776,6 @@
                     <span class="name">
                         <b>
                             <span class="modifier">Public</span>
-                            <span class="modifier">Async</span>
                             <span class="modifier">Abstract</span>
                             getFilteredData
                         </b>
@@ -1179,7 +1177,7 @@ export abstract class DataSourceService&lt;T, F extends IFilters &#x3D; IFilters
         delete this._components?.[componentKey];
     }
 
-    public async abstract getFilteredData(filters: F): Promise&lt;IFilteringOutputs&gt;;
+    public abstract getFilteredData(filters: F): Promise&lt;IFilteringOutputs&gt;;
 
     public connect(collectionViewer: CollectionViewer): Observable&lt;T[] | ReadonlyArray&lt;T&gt;&gt; {
         return this.dataSubject.asObservable();
@@ -1294,6 +1292,7 @@ export abstract class DataSourceService&lt;T, F extends IFilters &#x3D; IFilters
 
 
 
+                   
 
 
 
@@ -1316,6 +1315,7 @@ export abstract class DataSourceService&lt;T, F extends IFilters &#x3D; IFilters
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
             var COMPODOC_CURRENT_PAGE_URL = 'DataSourceService.html';
+            var MAX_SEARCH_RESULTS = 15;
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>

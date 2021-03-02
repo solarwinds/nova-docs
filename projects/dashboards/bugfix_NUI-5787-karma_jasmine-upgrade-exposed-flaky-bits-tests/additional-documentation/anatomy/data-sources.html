@@ -43,6 +43,7 @@
 
 
 
+                   
 
 
 
@@ -65,17 +66,20 @@ that will allow Nova to introduce new functionality to the data source so that y
 so that it can sort the data and reflect this set up in the configuration. That will allow some parts of the application working
 with the Features.</p>
 <p>Data Source Features are implemented using <a href="https://ux.solarwinds.io/nova/docs/nova-bits/latest/sdk/api-docs-ng2/interfaces/IDataSourceFeaturesConfiguration.html">IDataSourceFeaturesConfiguration</a> which is used in <a href="https://ux.solarwinds.io/nova/docs/bits/latest/sdk/api-docs-ng2/interfaces/IDataSource.html">IDataSource</a>.</p>
-<p>The example of the features configuration:
-<code>const supportedFeatures: IDataSourceFeatures = {
+<p>The example of the features configuration:</p>
+<div><pre class="line-numbers"><code class="language-none">const supportedFeatures: IDataSourceFeatures = {
     search: { enabled: true },
     pagination: { enabled: true },
-};</code></p>
-<p>It is highly recommended to use <a href="https://ux.solarwinds.io/nova/docs/nova-bits/latest/sdk/api-docs-ng2/classes/DataSourceFeatures.html">DataSourceFeatures</a> for the actual implementation of the Features.</p>
+};</code></pre></div><p>It is highly recommended to use <a href="https://ux.solarwinds.io/nova/docs/nova-bits/latest/sdk/api-docs-ng2/classes/DataSourceFeatures.html">DataSourceFeatures</a> for the actual implementation of the Features.</p>
 <p>You can check the example of GoogleBooks API <a href="../widget-types/table/table-with-search.html">DataSource</a> in the example.</p>
-<p>Currently supported Features by Nova:
-- Search (<a href="../widget-types/table/table-with-search.html">Table Widget</a>)</p>
-<p>Planned support:
-- TBD</p>
+<p>Currently supported Features by Nova:</p>
+<ul>
+<li>Search (<a href="../widget-types/table/table-with-search.html">Table Widget</a>)</li>
+</ul>
+<p>Planned support:</p>
+<ul>
+<li>TBD</li>
+</ul>
 <h2 id="datafields-config">DataFields Config</h2>
 <p>DataFields Config is used for declaring the structure of the data that DataSource operates with.
 For some widgets like Table and Drilldown Data Fields Config is required for correct work of the widget,
@@ -83,35 +87,36 @@ so it&#39;s important to define it. In the case of reusing DataSource for other 
 Data Fields Config.</p>
 <p>DataFieldsConfig is a part of <a href="https://ux.solarwinds.io/nova/docs/nova-bits/latest/sdk/api-docs-ng2/interfaces/IDataSource.html">IDataSource</a>
 interface that data sources usually implement. You can add it this way:</p>
-<!--- TODO: Remove Partial in the vNext -->
+<!--- TODO: Remove Partial in the vNext - NUI-5838 -->
 
-<p>```
-@Injectable()
-export class MyDataSource&lt;T = any&gt; extends ServerSideDataSource<T> implements IDataSource {
+<div><pre class="line-numbers"><code class="language-none">&#64;Injectable()
+export class MyDataSource&lt;T = any&gt; extends ServerSideDataSource&lt;T&gt; implements IDataSource {
     ...
-    public dataFields: Partial<IDataField>[] = [
+    public dataFields: Partial&lt;IDataField&gt;[] = [
         { id: &quot;regionName&quot;, label: &quot;Region name&quot; },
         { id: &quot;subregionName&quot;, label: &quot;Subregion name&quot; },
-    ];</p>
-<div><pre class="line-numbers"><code class="language-none">constructor() {
-    super();
-    (this.dataFieldsConfig.dataFields$ as BehaviorSubject&lt;Partial&lt;IDataField&gt;[]&gt;).next(this.dataFields);
-}
-...</code></pre></div><p>}
-```</p>
-<h2 id="adapters">Adapters</h2>
+    ];
+
+    constructor() {
+        super();
+        (this.dataFieldsConfig.dataFields$ as BehaviorSubject&lt;Partial&lt;IDataField&gt;[]&gt;).next(this.dataFields);
+    }
+    ...
+}</code></pre></div><h2 id="adapters">Adapters</h2>
 <p>An adapter is another specialized type of a provider, whose purpose is to invoke a data source, wait for
 the result, and assign it to the right component. This provider type was introduced for the following
-reasons:
-- To maintain the pure nature of a widget that accepts all data via component inputs thereby respecting
-one-way data binding.
-- To separate responsibilities between the data source, the component that displays the data, and the
-bridge between them.</p>
+reasons:</p>
+<ul>
+<li>To maintain the pure nature of a widget that accepts all data via component inputs thereby respecting
+one-way data binding.</li>
+<li>To separate responsibilities between the data source, the component that displays the data, and the
+bridge between them.</li>
+</ul>
 <p>The basic implementation is called
 <a href="../../miscellaneous/variables.html#NOVA_DATASOURCE_ADAPTER"><code>NOVA_DATASOURCE_ADAPTER</code></a>, and it invokes a
 data source whenever the <a href="../../miscellaneous/variables.html#REFRESH"><code>REFRESH</code></a> event is received on the
-pizzagna event bus and passes the result to a component property path specified in the adapter&#39;s properties.
-<code>...
+pizzagna event bus and passes the result to a component property path specified in the adapter&#39;s properties.</p>
+<div><pre class="line-numbers"><code class="language-none">...
 &quot;providers&quot;: {
     &quot;adapter&quot;: {
         &quot;providerId&quot;: NOVA_DATASOURCE_ADAPTER,
@@ -121,32 +126,25 @@ pizzagna event bus and passes the result to a component property path specified 
         },
     },
 },
-...</code></p>
-<h2 id="below-fold-lazy-loading">Below-fold lazy loading</h2>
+...</code></pre></div><h2 id="below-fold-lazy-loading">Below-fold lazy loading</h2>
 <p>If You want for your widgets to load the data only after they are visible you have to configure the dashboard
-via <code>belowFoldLazyLoadingConfig</code> input. For example:
-```
-public belowFoldLazyLoadingConfig: IDashboardBelowFoldLazyLoadingConfig = {
+via <code>belowFoldLazyLoadingConfig</code> input. For example:</p>
+<div><pre class="line-numbers"><code class="language-none">public belowFoldLazyLoadingConfig: IDashboardBelowFoldLazyLoadingConfig = {
     enabled: true,
-};</p>
-<!-- html -->
-<p>&lt;nui-dashboard
+};
+&lt;!-- html --&gt;
+&lt;nui-dashboard
     [(dashboard)]=&quot;dashboard&quot;
     ...
-    [belowFoldLazyLoadingConfig]=&quot;belowFoldLazyLoadingConfig&quot;</p>
-<blockquote>
-</nui-dashboard>
-```
-</blockquote>
-<p>Also, if you want to load data only widgets that are in the viewport, and remove the widgets from the viewport
-if they were already loaded, put <code>reloadWidgetsOnScroll</code> of <code>configuration</code> part to <code>true</code>.
-<code>public belowFoldLazyLoadingConfig: IDashboardBelowFoldLazyLoadingConfig = {
+    [belowFoldLazyLoadingConfig]=&quot;belowFoldLazyLoadingConfig&quot;
+&gt;&lt;/nui-dashboard&gt;</code></pre></div><p>Also, if you want to load data only widgets that are in the viewport, and remove the widgets from the viewport
+if they were already loaded, put <code>reloadWidgetsOnScroll</code> of <code>configuration</code> part to <code>true</code>.</p>
+<div><pre class="line-numbers"><code class="language-none">public belowFoldLazyLoadingConfig: IDashboardBelowFoldLazyLoadingConfig = {
     enabled: true,
     configuration: {
         reloadWidgetsOnScroll: true,
     }
-};</code></p>
-
+};</code></pre></div>
                    </div><div class="search-results">
     <div class="has-results">
         <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
@@ -165,6 +163,7 @@ if they were already loaded, put <code>reloadWidgetsOnScroll</code> of <code>con
             var COMPODOC_CURRENT_PAGE_DEPTH = 2;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'additional-page';
             var COMPODOC_CURRENT_PAGE_URL = 'data-sources.html';
+            var MAX_SEARCH_RESULTS = 15;
        </script>
 
        <script src="../../js/libs/custom-elements.min.js"></script>

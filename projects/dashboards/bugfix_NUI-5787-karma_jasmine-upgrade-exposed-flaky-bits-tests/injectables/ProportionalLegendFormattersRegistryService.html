@@ -378,17 +378,17 @@ import { IAddFormattersOptions } from &quot;./types&quot;;
 export abstract class FormatterRegistryService&lt;TFormatter extends IFormatterDefinition &#x3D; IFormatterDefinition&gt;
     extends RegistryService&lt;TFormatter&gt; {
 
-    /** @deprecated use &#x27;stateChanged$&#x27; instead */
+    /** @deprecated use &#x27;stateChanged$&#x27; instead - NUI-5852 */
     public formattersStateChanged$: Observable &lt;TFormatter[]&gt; &#x3D; this.stateChanged$;
 
-    /** @deprecated use &#x27;addItems&#x27; instead */
+    /** @deprecated use &#x27;addItems&#x27; instead - NUI-5852 */
     public addFormatters(
         formatters: TFormatter[],
         options: IAddFormattersOptions &#x3D; { overrideExisting: true }): void {
         super.addItems(formatters, options);
     }
 
-    /** @deprecated use &#x27;getItems&#x27; instead */
+    /** @deprecated use &#x27;getItems&#x27; instead - NUI-5852*/
     public getFormatters(): TFormatter[] {
         return super.getItems();
     }
@@ -437,6 +437,7 @@ export class ProportionalLegendFormattersRegistryService extends FormatterRegist
 
 
 
+                   
 
 
 
@@ -459,6 +460,7 @@ export class ProportionalLegendFormattersRegistryService extends FormatterRegist
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
             var COMPODOC_CURRENT_PAGE_URL = 'ProportionalLegendFormattersRegistryService.html';
+            var MAX_SEARCH_RESULTS = 15;
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>

@@ -257,8 +257,6 @@ export interface ILineRendererConfig extends IRendererConfig {
 
 /** The configuration interface for the bar renderer */
 export interface IBarRendererConfig extends IRendererConfig {
-    /** @deprecated This property has no effect on the renderer */
-    minOrdinalSize?: number;
     /** Set the padding on both sides of each bar */
     padding?: number;
     /** Set the class name to apply custom styles to the bars */
@@ -306,6 +304,7 @@ export interface IHighlightStrategy&lt;TA, T &#x3D; Renderer&lt;TA&gt;&gt; {
 </div>
 
 
+                   
 
 
 
@@ -328,6 +327,7 @@ export interface IHighlightStrategy&lt;TA, T &#x3D; Renderer&lt;TA&gt;&gt; {
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
             var COMPODOC_CURRENT_PAGE_URL = 'IRenderSeries.html';
+            var MAX_SEARCH_RESULTS = 15;
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>

@@ -201,54 +201,6 @@
     </table>
 </section>
 
-    <section>
-    <h3 id="constructor">Constructor</h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-<code>constructor(cdRef: <a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank">ChangeDetectorRef</a>)</code>
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="69" class="link-to-prism">src/lib/form-field/form-field.component.ts:69</a></div>
-                            </td>
-                        </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                            <div>
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>cdRef</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank" >ChangeDetectorRef</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-</section>
 
     <section>
     <h3 id="inputs">Inputs</h3>
@@ -500,8 +452,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="103"
-                            class="link-to-prism">src/lib/form-field/form-field.component.ts:103</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="102"
+                            class="link-to-prism">src/lib/form-field/form-field.component.ts:102</a></div>
                 </td>
             </tr>
 
@@ -636,7 +588,7 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
     AfterContentChecked,
-    AfterContentInit, ChangeDetectorRef,
+    AfterContentInit,
     Component,
     ContentChild,
     ContentChildren,
@@ -704,9 +656,6 @@ export class FormFieldComponent implements AfterContentInit, AfterContentChecked
 
     public controlIsOptional: boolean &#x3D; false;
 
-    constructor(private cdRef: ChangeDetectorRef) {
-    }
-
     ngAfterContentChecked() {
         this.controlIsOptional &#x3D; this.showOptionalText &amp;&amp; !this.hasRequiredField(this.control);
     }
@@ -715,7 +664,7 @@ export class FormFieldComponent implements AfterContentInit, AfterContentChecked
         if (this.control) {
             merge(this.control.valueChanges, this.control.statusChanges, extractTouchedChanges(this.control))
                 .subscribe(
-                    (changes: any) &#x3D;&gt; {
+                    () &#x3D;&gt; {
                         this.validationMessages.forEach(message &#x3D;&gt; {
                             if (_isNull(this.control.errors)) {
                                 message.show &#x3D; false;
@@ -731,8 +680,10 @@ export class FormFieldComponent implements AfterContentInit, AfterContentChecked
                 );
         }
         if (this.nuiFormControl) {
-            this.nuiFormControl.ariaLabel &#x3D; this.caption;
-            this.cdRef.detectChanges();
+            // using setTimeout to prevent &quot;expression changed after it has been checked&quot; error
+            setTimeout(() &#x3D;&gt; {
+                this.nuiFormControl.ariaLabel &#x3D; this.caption;
+            });
         }
     }
 
@@ -801,6 +752,7 @@ export class FormFieldComponent implements AfterContentInit, AfterContentChecked
 
 
 
+                   
 
 
 
@@ -823,6 +775,7 @@ export class FormFieldComponent implements AfterContentInit, AfterContentChecked
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
             var COMPODOC_CURRENT_PAGE_URL = 'FormFieldComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>
