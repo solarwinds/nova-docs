@@ -1,0 +1,150 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@nova-ui/dashboards documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../../images/favicon.ico">
+	      <link rel="stylesheet" href="../../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../../" class="navbar-brand">@nova-ui/dashboards documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content additional-page">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1 id="configurator">Configurator</h1>
+<p>The Configurator refers to the form that pops up in the sidebar as you try to edit / create a widget. 
+It&#39;s built around the very same concept as the widgets (i.e. Pizzagna) and is integrally linked to two things:</p>
+<ul>
+<li>the widget <strong><em>type</em></strong> being edited/created</li>
+<li>the <a href="./anatomy/data-sources.html">data source</a> that feeds the widget</li>
+</ul>
+<p>A particular widget type will consist of the same data-configuration across different products/features. For example, 
+a table widget will always require the end-user to identify a set of columns to display, as well as a data type per column. 
+However, different <strong><em>sources</em></strong> of data require that the Configurator be highly customizable. For example, an Orion 
+product may want to expose a SWIS-based data source that allows the end-user to type in a SWQL query. On the other hand, 
+a standalone or AppMan product may wish to expose a list of RESTful endpoints from which the end-user can choose. Consequently, 
+the Configurator is both pluggable and overrideable.</p>
+<h2 id="form-parts">Form Parts</h2>
+<p>The form consists of independent parts that are visualized as accordions with expandable items containing 
+specific form input fields. This structure is common to all the forms, but it&#39;s by no means enforced. 
+Pizzagna is used to define the tree hierarchy of all these pieces, so any customization can be performed
+including extending or replacing the form parts provided by the standard widget type definitions. </p>
+<h2 id="configurator-layout">Configurator Layout</h2>
+<p><img src="https://cp.solarwinds.com/rest/gliffy/1.0/embeddedDiagrams/02455210-f953-4622-98dd-7c4be3ff1330.png" alt="Configurator Layout" class="img-responsive"></p>
+<h2 id="converters">Converters</h2>
+<p>To transform data between the widget and the form, we leverage the concept of providers. Since the job 
+of our providers is more focused than the standard Angular providers, we refer to them as &quot;converters&quot;. 
+With every form, we register a converter that hooks up to the form of the related component. 
+The converter then propagates the form changes to the widget. On initial form load, a converter also
+collects information from the widget itself to populate the form. </p>
+<p>An example of converter configuration might look something like this:</p>
+<div><pre class="line-numbers"><code class="language-none">// this demonstrates a theoretical form piece configuration
+&quot;someNodeId&quot;: {
+    &quot;id&quot;: &quot;someNodeId&quot;,
+    componentType: ,
+    &quot;providers&quot;: {
+        // this is where the converter is assigned
+        &quot;converter&quot;: {
+            providerId: &quot;AcmeSomethingConverter&quot;,
+        },
+    },
+},</code></pre></div><p>As you can see it&#39;s just another provider. It can be a generic configured to transfer properties to 
+specific paths or a specialized implementation. Check out the widget types specifications for examples.</p>
+<h2 id="nuiwidgeteditor-directive">nuiWidgetEditor Directive</h2>
+<p>The configurator is an independent entity that can be invoked on its own without any dashboard 
+dependency. However, there is a clear relationship between them, so that&#39;s where the 
+<a href="../../directives/WidgetEditorDirective.html"><code>nuiWidgetEditor</code></a> directive enters. </p>
+<p>In a world where this directive didn&#39;t exist, we&#39;d have to subscribe to the 
+<a href="../../miscellaneous/variables.html#WIDGET_EDIT"><code>WIDGET_EDIT</code></a> event that is emitted after the widget&#39;s 
+edit menu item is activated and use the widget editor service to open the configurator with the correct 
+settings. Then, we&#39;d have to wait for the form submit result coming from the main widget configuration 
+form, at which point we&#39;d try to persist the widget in our storage. If persistence succeeded, we&#39;d need 
+to close the configurator and update the widget on the dashboard.</p>
+<p>Thankfully, all of this is taken care of by the directive, so if you&#39;re ok with the functionality the 
+directive provides, just place it on the dashboard component in the template and you&#39;re done.</p>
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 2;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'additional-page';
+            var COMPODOC_CURRENT_PAGE_URL = 'configurator.html';
+       </script>
+
+       <script src="../../js/libs/custom-elements.min.js"></script>
+       <script src="../../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../../js/menu-wc.js" defer></script>
+
+       <script src="../../js/libs/bootstrap-native.js"></script>
+
+       <script src="../../js/libs/es6-shim.min.js"></script>
+       <script src="../../js/libs/EventDispatcher.js"></script>
+       <script src="../../js/libs/promise.min.js"></script>
+       <script src="../../js/libs/zepto.min.js"></script>
+
+       <script src="../../js/compodoc.js"></script>
+
+       <script src="../../js/tabs.js"></script>
+       <script src="../../js/menu.js"></script>
+       <script src="../../js/libs/clipboard.min.js"></script>
+       <script src="../../js/libs/prism.js"></script>
+       <script src="../../js/sourceCode.js"></script>
+          <script src="../../js/search/search.js"></script>
+          <script src="../../js/search/lunr.min.js"></script>
+          <script src="../../js/search/search-lunr.js"></script>
+          <script src="../../js/search/search_index.js"></script>
+       <script src="../../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
