@@ -17031,7 +17031,7 @@ class TextboxNumberComponent {
         }
     }
     preventDefaultEventBehavior(event, inputString, regexp) {
-        if (!inputString.match(regexp)) {
+        if (!(inputString === null || inputString === void 0 ? void 0 : inputString.match(regexp))) {
             event.preventDefault();
         }
     }
@@ -22641,8 +22641,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var moment_moment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! moment/moment */ "wd/R");
 /* harmony import */ var moment_moment__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(moment_moment__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _services_timeframe_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./services/timeframe.service */ "UsOw");
-/* harmony import */ var _date_time_picker_date_time_picker_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../date-time-picker/date-time-picker.component */ "/NB1");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "qCKp");
+/* harmony import */ var _services_timeframe_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./services/timeframe.service */ "UsOw");
+/* harmony import */ var _date_time_picker_date_time_picker_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../date-time-picker/date-time-picker.component */ "/NB1");
+
 
 
 
@@ -22657,16 +22659,17 @@ class TimeFramePickerComponent {
         this.changeDetector = changeDetector;
         /** callback to be invoked on model change*/
         this.changed = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        this.onDestroy$ = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
     }
     ngOnChanges(changes) {
         if (changes["startModel"]) {
-            this.model = _services_timeframe_service__WEBPACK_IMPORTED_MODULE_3__["TimeframeService"].cloneTimeFrame(this.startModel);
+            this.model = _services_timeframe_service__WEBPACK_IMPORTED_MODULE_4__["TimeframeService"].cloneTimeFrame(this.startModel);
             this.validateCombination();
         }
     }
     ngOnInit() {
         if (this.startModel) {
-            this.model = _services_timeframe_service__WEBPACK_IMPORTED_MODULE_3__["TimeframeService"].cloneTimeFrame(this.startModel);
+            this.model = _services_timeframe_service__WEBPACK_IMPORTED_MODULE_4__["TimeframeService"].cloneTimeFrame(this.startModel);
             this.validateCombination();
         }
     }
@@ -22734,8 +22737,12 @@ class TimeFramePickerComponent {
         }
         this.changed.emit(this.model);
     }
+    ngOnDestroy() {
+        this.onDestroy$.next();
+        this.onDestroy$.complete();
+    }
 }
-TimeFramePickerComponent.ɵfac = function TimeFramePickerComponent_Factory(t) { return new (t || TimeFramePickerComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_timeframe_service__WEBPACK_IMPORTED_MODULE_3__["TimeframeService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"])); };
+TimeFramePickerComponent.ɵfac = function TimeFramePickerComponent_Factory(t) { return new (t || TimeFramePickerComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_timeframe_service__WEBPACK_IMPORTED_MODULE_4__["TimeframeService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"])); };
 TimeFramePickerComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: TimeFramePickerComponent, selectors: [["nui-time-frame-picker"]], inputs: { minDate: "minDate", maxDate: "maxDate", startModel: "startModel", appendToBody: "appendToBody" }, outputs: { changed: "changed" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵNgOnChangesFeature"]], decls: 10, vars: 8, consts: function () { let i18n_0; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
         const MSG_EXTERNAL_5162686434580248853$$SRC_LIB_TIME_FRAME_PICKER_TIME_FRAME_PICKER_COMPONENT_TS_1 = goog.getMsg("Start");
         i18n_0 = MSG_EXTERNAL_5162686434580248853$$SRC_LIB_TIME_FRAME_PICKER_TIME_FRAME_PICKER_COMPONENT_TS_1;
@@ -22774,7 +22781,7 @@ TimeFramePickerComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵ�
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("minDate", ctx.minDate)("maxDate", ctx.maxDate)("model", ctx.model.startDatetime)("appendToBody", ctx.appendToBody);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("minDate", ctx.minDate)("maxDate", ctx.maxDate)("model", ctx.model.endDatetime)("appendToBody", ctx.appendToBody);
-    } }, directives: [_date_time_picker_date_time_picker_component__WEBPACK_IMPORTED_MODULE_4__["DateTimePickerComponent"]], styles: [".nui-time-frame-picker__date-time {\n  display: flex;\n}\n.nui-time-frame-picker__date-time_start {\n  margin-bottom: 15px;\n}\n.nui-time-frame-picker__date-time_end {\n  padding-bottom: 10px;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRpbWUtZnJhbWUtcGlja2VyLmNvbXBvbmVudC5sZXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUlJO0VBQ0ksYUFBQTtBQUhSO0FBSVE7RUFDSSxtQkFBQTtBQUZaO0FBSVE7RUFDSSxvQkFBQTtBQUZaIiwiZmlsZSI6InRpbWUtZnJhbWUtcGlja2VyLmNvbXBvbmVudC5sZXNzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCAocmVmZXJlbmNlKSBcIi4uLy4uL3N0eWxlcy9udWktZnJhbWV3b3JrLXZhcmlhYmxlcy5sZXNzXCI7XG5AaW1wb3J0IChyZWZlcmVuY2UpIFwiLi4vLi4vc3R5bGVzL21peGlucy5sZXNzXCI7XG5cbiYgLm51aS10aW1lLWZyYW1lLXBpY2tlciB7XG4gICAgJl9fZGF0ZS10aW1lIHtcbiAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgJl9zdGFydCB7XG4gICAgICAgICAgICBtYXJnaW4tYm90dG9tOiBAbnVpLXNwYWNlLW1kO1xuICAgICAgICB9XG4gICAgICAgICZfZW5kIHtcbiAgICAgICAgICAgIHBhZGRpbmctYm90dG9tOiBAbnVpLXNwYWNlLXNtO1xuICAgICAgICB9XG4gICAgfVxufVxuIl19 */"], encapsulation: 2, changeDetection: 0 });
+    } }, directives: [_date_time_picker_date_time_picker_component__WEBPACK_IMPORTED_MODULE_5__["DateTimePickerComponent"]], styles: [".nui-time-frame-picker__date-time {\n  display: flex;\n}\n.nui-time-frame-picker__date-time_start {\n  margin-bottom: 15px;\n}\n.nui-time-frame-picker__date-time_end {\n  padding-bottom: 10px;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRpbWUtZnJhbWUtcGlja2VyLmNvbXBvbmVudC5sZXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUlJO0VBQ0ksYUFBQTtBQUhSO0FBSVE7RUFDSSxtQkFBQTtBQUZaO0FBSVE7RUFDSSxvQkFBQTtBQUZaIiwiZmlsZSI6InRpbWUtZnJhbWUtcGlja2VyLmNvbXBvbmVudC5sZXNzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCAocmVmZXJlbmNlKSBcIi4uLy4uL3N0eWxlcy9udWktZnJhbWV3b3JrLXZhcmlhYmxlcy5sZXNzXCI7XG5AaW1wb3J0IChyZWZlcmVuY2UpIFwiLi4vLi4vc3R5bGVzL21peGlucy5sZXNzXCI7XG5cbiYgLm51aS10aW1lLWZyYW1lLXBpY2tlciB7XG4gICAgJl9fZGF0ZS10aW1lIHtcbiAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgJl9zdGFydCB7XG4gICAgICAgICAgICBtYXJnaW4tYm90dG9tOiBAbnVpLXNwYWNlLW1kO1xuICAgICAgICB9XG4gICAgICAgICZfZW5kIHtcbiAgICAgICAgICAgIHBhZGRpbmctYm90dG9tOiBAbnVpLXNwYWNlLXNtO1xuICAgICAgICB9XG4gICAgfVxufVxuIl19 */"], encapsulation: 2, changeDetection: 0 });
 
 
 /***/ }),
@@ -23941,7 +23948,8 @@ class TimePickerComponent {
         });
     }
     ngOnDestroy() {
-        if (this.overlay.showing) {
+        var _a;
+        if ((_a = this.overlay) === null || _a === void 0 ? void 0 : _a.showing) {
             this.overlay.hide();
         }
         this.onDestroy$.next();
@@ -31451,12 +31459,13 @@ class DatePickerComponent {
         this.momentDateFormat = isCustomFormatValid ? this.dateFormat : _public_api__WEBPACK_IMPORTED_MODULE_15__["datePickerDefaults"].dateFormat;
     }
     ngOnDestroy() {
+        var _a;
         // The following resolves a known 'Error during cleanup of component:' error during unit tests
         // Details: https://github.com/angular/angular/issues/17013
         if (this.calendarChanged) {
             this.calendarChanged.unsubscribe();
         }
-        if (this.overlay.showing) {
+        if ((_a = this.overlay) === null || _a === void 0 ? void 0 : _a.showing) {
             this.overlay.hide();
         }
         this.onDestroy$.next();
