@@ -321,7 +321,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import {Component} from \"@angular/core\";\n\n@Component({\n    selector: \"nui-tooltip-visual-test\",\n    templateUrl: \"./tooltip-visual-test.component.html\",\n})\nexport class TooltipVisualTestComponent {\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import {Component} from \"@angular/core\";\n\n@Component({\n    selector: \"nui-tooltip-visual-test\",\n    templateUrl: \"./tooltip-visual-test.component.html\",\n})\nexport class TooltipVisualTestComponent {\n    tooltipMessage = \"ThisTooltipHasBeenCalledManuallyWithCriticallyLongTooltipMessage\";\n}\n");
 
 /***/ }),
 
@@ -386,7 +386,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\n    <div class=\"row\"><h3>Basic button</h3></div>\n    <div class=\"row\">\n        <button nui-button type=\"button\" id=\"basic-tooltip\" nuiTooltip=\"Default tooltip\">\n            Standard tooltip example\n        </button>\n    </div>\n\n    <div class=\"row\"><h3>Custom position: left, bottom, right</h3></div>\n    <div class=\"row\">\n        <button nui-button\n                id=\"left-tooltip\"\n                nuiTooltip=\"Left-side tooltip\"\n                tooltipPlacement=\"left\"\n                type=\"button\">\n            Tooltip on the left\n        </button>\n        <button nui-button\n                id=\"bottom-tooltip\"\n                nuiTooltip=\"Bottom-placed tooltip\"\n                tooltipPlacement=\"bottom\"\n                type=\"button\">\n            Tooltip on the bottom\n        </button>\n        <button nui-button\n                id=\"right-tooltip\"\n                nuiTooltip=\"Right-side tooltip\"\n                tooltipPlacement=\"right\"\n                type=\"button\">\n            Tooltip on the right\n        </button>\n    </div>\n\n    <div class=\"row\"><h3>Manual Triggering</h3></div>\n    <div class=\"row\">\n        <span #tooltip=\"nuiTooltip\"\n              nuiTooltip=\"This tooltip has been called manually\">\n        </span>\n        <button id=\"manual-tooltip\" nui-button type=\"button\" (click)=\"tooltip.toggle()\">\n            Manually toggle tooltip\n        </button>\n    </div>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\n    <div class=\"row\"><h3>Basic button</h3></div>\n    <div class=\"row\">\n        <button nui-button type=\"button\" id=\"basic-tooltip\" nuiTooltip=\"Default tooltip\">\n            Standard tooltip example\n        </button>\n    </div>\n\n    <div class=\"row\"><h3>Custom position: left, bottom, right</h3></div>\n    <div class=\"row\">\n        <button nui-button\n                id=\"left-tooltip\"\n                nuiTooltip=\"Left-side tooltip\"\n                tooltipPlacement=\"left\"\n                type=\"button\">\n            Tooltip on the left\n        </button>\n        <button nui-button\n                id=\"bottom-tooltip\"\n                nuiTooltip=\"Bottom-placed tooltip\"\n                tooltipPlacement=\"bottom\"\n                type=\"button\">\n            Tooltip on the bottom\n        </button>\n        <button nui-button\n                id=\"right-tooltip\"\n                nuiTooltip=\"Right-side tooltip\"\n                tooltipPlacement=\"right\"\n                type=\"button\">\n            Tooltip on the right\n        </button>\n    </div>\n\n    <div class=\"row\"><h3>Manual Triggering</h3></div>\n    <div class=\"row\">\n        <span #tooltip=\"nuiTooltip\"\n              [nuiTooltip]=\"tooltipMessage\">\n        </span>\n        <button id=\"manual-tooltip\" nui-button type=\"button\" (click)=\"tooltip.toggle()\">\n            Manually toggle tooltip\n        </button>\n    </div>\n</div>\n");
 
 /***/ }),
 
@@ -523,9 +523,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class TooltipVisualTestComponent {
+    constructor() {
+        this.tooltipMessage = "ThisTooltipHasBeenCalledManuallyWithCriticallyLongTooltipMessage";
+    }
 }
 TooltipVisualTestComponent.ɵfac = function TooltipVisualTestComponent_Factory(t) { return new (t || TooltipVisualTestComponent)(); };
-TooltipVisualTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: TooltipVisualTestComponent, selectors: [["nui-tooltip-visual-test"]], decls: 25, vars: 0, consts: [[1, "container"], [1, "row"], ["nui-button", "", "type", "button", "id", "basic-tooltip", "nuiTooltip", "Default tooltip"], ["nui-button", "", "id", "left-tooltip", "nuiTooltip", "Left-side tooltip", "tooltipPlacement", "left", "type", "button"], ["nui-button", "", "id", "bottom-tooltip", "nuiTooltip", "Bottom-placed tooltip", "tooltipPlacement", "bottom", "type", "button"], ["nui-button", "", "id", "right-tooltip", "nuiTooltip", "Right-side tooltip", "tooltipPlacement", "right", "type", "button"], ["nuiTooltip", "This tooltip has been called manually"], ["tooltip", "nuiTooltip"], ["id", "manual-tooltip", "nui-button", "", "type", "button", 3, "click"]], template: function TooltipVisualTestComponent_Template(rf, ctx) { if (rf & 1) {
+TooltipVisualTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: TooltipVisualTestComponent, selectors: [["nui-tooltip-visual-test"]], decls: 25, vars: 1, consts: [[1, "container"], [1, "row"], ["nui-button", "", "type", "button", "id", "basic-tooltip", "nuiTooltip", "Default tooltip"], ["nui-button", "", "id", "left-tooltip", "nuiTooltip", "Left-side tooltip", "tooltipPlacement", "left", "type", "button"], ["nui-button", "", "id", "bottom-tooltip", "nuiTooltip", "Bottom-placed tooltip", "tooltipPlacement", "bottom", "type", "button"], ["nui-button", "", "id", "right-tooltip", "nuiTooltip", "Right-side tooltip", "tooltipPlacement", "right", "type", "button"], [3, "nuiTooltip"], ["tooltip", "nuiTooltip"], ["id", "manual-tooltip", "nui-button", "", "type", "button", 3, "click"]], template: function TooltipVisualTestComponent_Template(rf, ctx) { if (rf & 1) {
         const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
@@ -567,6 +570,9 @@ TooltipVisualTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["�
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](21);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("nuiTooltip", ctx.tooltipMessage);
     } }, directives: [_src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_1__["ButtonComponent"], _src_lib_tooltip_tooltip_directive__WEBPACK_IMPORTED_MODULE_2__["TooltipDirective"]], encapsulation: 2 });
 
 

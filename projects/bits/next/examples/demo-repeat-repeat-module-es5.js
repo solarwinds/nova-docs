@@ -1,6 +1,20 @@
 (function () {
   var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10, _templateObject11, _templateObject12, _templateObject13, _templateObject14, _templateObject15, _templateObject16, _templateObject17, _templateObject18, _templateObject19, _templateObject20, _templateObject21, _templateObject22, _templateObject23, _templateObject24, _templateObject25, _templateObject26, _templateObject27, _templateObject28, _templateObject29, _templateObject30, _templateObject31, _templateObject32, _templateObject33, _templateObject34, _templateObject35, _templateObject36, _templateObject37, _templateObject38, _templateObject39, _templateObject40, _templateObject41, _templateObject42, _templateObject43, _templateObject44, _templateObject45, _templateObject46, _templateObject47, _templateObject48, _templateObject49, _templateObject50, _templateObject51, _templateObject52, _templateObject53, _templateObject54, _templateObject55, _templateObject56, _templateObject57, _templateObject58, _templateObject59, _templateObject60, _templateObject61, _templateObject62, _templateObject63, _templateObject64, _templateObject65, _templateObject66, _templateObject67, _templateObject68, _templateObject69, _templateObject70, _templateObject71, _templateObject72, _templateObject73, _templateObject74;
 
+  function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+  function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+  function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+  function _possibleConstructorReturn(self, call) { if (call && (typeof call === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+  function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+  function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+  function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
   function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
   function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -96,13 +110,7 @@
       /* harmony import */
 
 
-      var _repeat_select_test_repeat_test_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-      /*! ./repeat-select-test/repeat-test.component */
-      "nSOt");
-      /* harmony import */
-
-
-      var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! @angular/core */
       "fXoL");
 
@@ -120,17 +128,22 @@
         component: _index__WEBPACK_IMPORTED_MODULE_3__["RepeatItemExampleComponent"]
       }, {
         path: "repeat-test",
-        component: _repeat_select_test_repeat_test_component__WEBPACK_IMPORTED_MODULE_4__["RepeatTestComponent"]
+        component: _index__WEBPACK_IMPORTED_MODULE_3__["RepeatTestComponent"],
+        data: {
+          "srlc": {
+            "hideIndicator": true
+          }
+        }
       }];
 
       var RepeatModule = function RepeatModule() {
         _classCallCheck(this, RepeatModule);
       };
 
-      RepeatModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineNgModule"]({
+      RepeatModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineNgModule"]({
         type: RepeatModule
       });
-      RepeatModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineInjector"]({
+      RepeatModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjector"]({
         factory: function RepeatModule_Factory(t) {
           return new (t || RepeatModule)();
         },
@@ -140,13 +153,13 @@
             return __webpack_require__("XxfH");
           }
         }],
-        imports: [[_nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiButtonModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiRepeatModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiSwitchModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiMessageModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiDocsModule"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forChild(routes), _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_0__["ScrollingModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiProgressModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiSearchModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiFormFieldModule"]], _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]]
+        imports: [[_nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiButtonModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiRepeatModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiSwitchModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiMessageModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiDocsModule"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forChild(routes), _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_0__["ScrollingModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiProgressModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiSearchModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiFormFieldModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiTabsModule"]], _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]]
       });
 
       (function () {
-        (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵsetNgModuleScope"](RepeatModule, {
-          declarations: [_index__WEBPACK_IMPORTED_MODULE_3__["RepeatExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatItemExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatDisabledMultiSelectionExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatMultiSelectionExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatRadioSelectionModeExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatRadioWithNonRequiredSelectionModeExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatSimpleExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatDragSimpleExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatReorderSimpleExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatDragPreviewExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatSingleSelectionModeExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatSingleWithRequiredSelectionModeExampleComponent"], _repeat_select_test_repeat_test_component__WEBPACK_IMPORTED_MODULE_4__["RepeatTestComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatReorderItemConfigExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatDragHandleExampleComponent"]],
-          imports: [_nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiButtonModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiRepeatModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiSwitchModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiMessageModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiDocsModule"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"], _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_0__["ScrollingModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiProgressModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiSearchModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiFormFieldModule"]],
+        (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵsetNgModuleScope"](RepeatModule, {
+          declarations: [_index__WEBPACK_IMPORTED_MODULE_3__["RepeatExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatItemExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatDisabledMultiSelectionExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatMultiSelectionExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatRadioSelectionModeExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatRadioWithNonRequiredSelectionModeExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatSimpleExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatDragSimpleExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatReorderSimpleExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatDragPreviewExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatSingleSelectionModeExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatSingleWithRequiredSelectionModeExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatTestComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatReorderItemConfigExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatDragHandleExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatVirtualScrollComponent"]],
+          imports: [_nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiButtonModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiRepeatModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiSwitchModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiMessageModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiDocsModule"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"], _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_0__["ScrollingModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiProgressModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiSearchModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiFormFieldModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiTabsModule"]],
           exports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]]
         });
       })();
@@ -428,26 +441,6 @@
     },
 
     /***/
-    "1ag7":
-    /*!*****************************************************************************************************************************!*\
-      !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/repeat/repeat-select-test/repeat-test.component.html ***!
-      \*****************************************************************************************************************************/
-
-    /*! exports provided: default */
-
-    /***/
-    function ag7(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony default export */
-
-
-      __webpack_exports__["default"] = "<nui-repeat-multi-selection-example></nui-repeat-multi-selection-example>\n<nui-repeat-disabled-multi-selection-example></nui-repeat-disabled-multi-selection-example>\n<nui-repeat-single-selection-mode-example></nui-repeat-single-selection-mode-example>\n<button nui-button id=\"add-color\" (click)=\"addNewColor()\">Add color</button>\n<nui-repeat-radio-selection-mode-example [colors]=\"colors\"></nui-repeat-radio-selection-mode-example>\n<nui-repeat-radio-with-non-required-selection-mode-example></nui-repeat-radio-with-non-required-selection-mode-example>\n<nui-repeat-single-with-required-selection-mode-example></nui-repeat-single-with-required-selection-mode-example>\n\n";
-      /***/
-    },
-
-    /***/
     "3JjW":
     /*!******************************************************************************************************************************!*\
       !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/repeat/repeat-item/repeat-item.example.component.html ***!
@@ -544,6 +537,46 @@
 
 
       __webpack_exports__["default"] = "<p>\n    <code>nui-repeat</code> is responsible for repeating the items provided in <code>itemSource</code>.\n</p>\n\n<h2>Required Modules</h2>\n<ul>\n    <li>\n        <code>NuiRepeatModule</code>\n    </li>\n</ul>\n\n<h2>Basic Usage</h2>\n<p>\n    This example demonstrates how easy it is to create a simple list by repeating the items of provided datasource.<br/>\n    Simply pass an array of items to <code>itemsSource</code>, and also don't forget to set the\n    <code>repeatItemTemplateRef</code> with a template to render for each item.\n</p>\n<nui-example-wrapper filenamePrefix=\"repeat-simple\" exampleTitle=\"Basic Usage\">\n    <nui-repeat-simple-example></nui-repeat-simple-example>\n</nui-example-wrapper>\n\n<h2>Dragging</h2>\n<p>To enable the dragging of items in the <code>nui-repeat</code> list, just set the <code>draggable</code> input property to <code>true</code>.</p>\n<nui-example-wrapper filenamePrefix=\"repeat-drag-simple\" exampleTitle=\"Enabling Drag & Drop\">\n    <nui-repeat-drag-simple-example></nui-repeat-drag-simple-example>\n</nui-example-wrapper>\n\n<h2>Reordering</h2>\n<p>\n    To allow list items to be reordered, set the <code>reorderable</code> input property to\n    <code>true</code>. Bind to the <code>itemsReordered</code> output to receive sorting data\n    when an item is dragged to a new spot in the list. The payload for the event is an\n    <code><a href=\"../interfaces/IItemsReorderedEvent.html\" target=\"_blank\">IItemsReorderedEvent</a></code>\n    object.\n</p>\n<nui-message type=\"info\" [allowDismiss]=\"false\">\n    Setting the <code>draggable</code> input to true with the <code>reorderable</code> input set to false\n    will disable reordering and only allow dragging items to <strong>other</strong> containers.\n</nui-message>\n<nui-example-wrapper filenamePrefix=\"repeat-reorder-simple\" exampleTitle=\"Reordering\">\n    <nui-repeat-reorder-simple-example></nui-repeat-reorder-simple-example>\n</nui-example-wrapper>\n\n<h2>Custom Drag Handle</h2>\n<p>In order to customize the handle by which an element can be dragged, you can specify the <code>dragHandleTemplateRef</code>.</p>\n<nui-message type=\"info\" [allowDismiss]=\"false\">\n    Providing the <code>dragHandleTemplateRef</code> template makes declaring the <code>draggable</code> input property optional\n    as it will automatically be set to <code>true</code>.\n</nui-message>\n<nui-example-wrapper filenamePrefix=\"repeat-drag-handle\" exampleTitle=\"Custom Drag Handle\">\n    <nui-repeat-drag-handle-example></nui-repeat-drag-handle-example>\n</nui-example-wrapper>\n\n<h2>Custom Drag Preview</h2>\n<p>\n    Once the user starts dragging an item, the preview DOM element is created as the last child of the body.\n    To have a custom CSS class for that element, you can specify the <code>dragPreviewClass</code> input\n    property. The default value for this input is <code>\"nui-dnd-preview\"</code>.\n</p>\n<p>\n    In order to customize the drag preview template, you can specify the\n    <code>dragPreviewTemplateRef</code> input.\n</p>\n<nui-message type=\"info\" [allowDismiss]=\"false\">\n    Providing the <code>dragPreviewTemplateRef</code> template makes declaring the <code>draggable</code> input property optional\n    as it will automatically be set to <code>true</code>.\n</nui-message>\n<nui-example-wrapper filenamePrefix=\"repeat-drag-preview\" exampleTitle=\"Custom Drag Preview\">\n    <nui-repeat-drag-preview-example></nui-repeat-drag-preview-example>\n</nui-example-wrapper>\n\n<h2>Repeat Item Customization</h2>\n<p>In order to customize the drag and drop behavior of any item in the repeat component you can provide\na configuration object containing callbacks for the provided functionality via the <code>itemConfig</code> input.</p>\n<div>\n    Customization is available via the following properties of <code>IRepeatItemConfig</code>:\n    <ul>\n        <li>\n            <code>{{getItemConfigKey(\"isDraggable\")}}</code> - Provide a callback to decide if the item should be draggable\n        </li>\n        <li>\n            <code>{{getItemConfigKey(\"isDisabled\")}}</code> - Provide a callback to decide if the item should be disabled\n        </li>\n        <li>\n            <code>{{getItemConfigKey(\"trackBy\")}}</code> - Provide a function that defines how to track changes for items in the iterable.\n        </li>\n    </ul>\n</div>\n<nui-message type=\"warning\" [allowDismiss]=\"false\">\n    To be able to provide customized draggable behaviour per item, the main <code>draggable</code> input must be true.\n</nui-message>\n<nui-example-wrapper filenamePrefix=\"repeat-reorder-item-config\" exampleTitle=\"Drag & Drop - Per Item Customization\">\n    <nui-repeat-reorder-config-example></nui-repeat-reorder-config-example>\n</nui-example-wrapper>\n\n<h2>Multiple Selection Mode</h2>\n<p>\n    The <code>selectionMode</code>: <code>multi</code> repeats the items with a checkbox component, and allows the user to select\n    multiple items by clicking the provided checkboxes or by clicking on the row itself.\n</p>\n<nui-example-wrapper filenamePrefix=\"repeat-multi-selection\" exampleTitle=\"Multi selection repeat\">\n    <nui-repeat-multi-selection-example></nui-repeat-multi-selection-example>\n</nui-example-wrapper>\n\n<h2>Multiple Selection Mode with Disabled Items</h2>\n<p>\n    You can easily set the items being repeated to a disabled state. Make sure the <code>itemsSource</code> you provide contains property\n    <code>disabled</code>: <code>true</code> for each disabled item.\n</p>\n<nui-example-wrapper filenamePrefix=\"repeat-disabled-multi-selection\" exampleTitle=\"Disabled items in the repeat\">\n    <nui-repeat-disabled-multi-selection-example></nui-repeat-disabled-multi-selection-example>\n</nui-example-wrapper>\n\n<h2>Single Selection Mode with Item Highlight</h2>\n<p>\n    If you need to highlight clicked item without checkboxes and radio-button, you can just use\n    <code>selectionMode</code>: <code>single</code>\n</p>\n<nui-example-wrapper filenamePrefix=\"repeat-single-selection-mode\" exampleTitle=\"Highlight selected item\">\n    <nui-repeat-single-selection-mode-example></nui-repeat-single-selection-mode-example>\n</nui-example-wrapper>\n\n<h2>Single Selection Mode with Radio Buttons</h2>\n<p>\n    Use the <code>selectionMode</code>: <code>radio</code> mode to add radio buttons for each item and allow to select one of them.\n</p>\n<nui-example-wrapper filenamePrefix=\"repeat-radio-selection-mode\" exampleTitle=\"repeat with radio buttons\">\n    <nui-repeat-radio-selection-mode-example></nui-repeat-radio-selection-mode-example>\n</nui-example-wrapper>\n\n<nui-message type=\"warning\" [allowDismiss]=\"false\">\n    <strong>Pay Attention!</strong> The examples below may allow actions not common for the front-end world. Please\n    agree the use of the following examples with your UI\\UX team.\n</nui-message>\n\n<h2>Non-Required Selection Mode with Radio Buttons</h2>\n<p>\n    This example shows how to make a list with radio buttons that can be either checked on or checked off.\n</p>\n<nui-example-wrapper filenamePrefix=\"repeat-radio-with-non-required-selection-mode\" exampleTitle=\"Radio with Non Required Selection Mode\">\n    <nui-repeat-radio-with-non-required-selection-mode-example></nui-repeat-radio-with-non-required-selection-mode-example>\n</nui-example-wrapper>\n\n<h2>Required Single Selection Mode</h2>\n<p>\n    This example shows the single selection mode list where at least one item is always selected.\n</p>\n<nui-example-wrapper filenamePrefix=\"repeat-single-with-required-selection-mode\" exampleTitle=\"Required Single Selection Mode\">\n    <nui-repeat-single-with-required-selection-mode-example></nui-repeat-single-with-required-selection-mode-example>\n</nui-example-wrapper>\n\n<nui-message [allowDismiss]=\"false\" type=\"info\">\n    Pagination and Virtual Scroll aren't natively part of the <code>nui-repeat</code> component but the <a href=\"../additional-documentation/schematics/list.html\" target=\"_parent\">List Schematic documentation</a> provides examples on how to use them.\n</nui-message>\n";
+      /***/
+    },
+
+    /***/
+    "9JmL":
+    /*!******************************************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/repeat/repeat-virtual-scroll/repeat-virtual-scroll.component.html ***!
+      \******************************************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function JmL(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "<div class=\"d-flex flex-row\">\n    <nui-repeat class=\"app-virtual-scroll-list-repeat\"\n                selectionMode=\"none\"\n                [itemConfig]=\"itemConfig\"\n                [repeatItemTemplateRef]=\"listRepeatItemTemplate\"\n                [selection]=\"filteringState.repeat?.selectedItems\"\n                [itemsSource]=\"listItems$ | async\"\n                [virtualScroll]=\"true\"\n                [itemSize]=\"30\">\n    </nui-repeat>\n</div>\n\n<ng-template #listRepeatItemTemplate let-item=\"item\">\n    <div class=\"container\">\n        <div class=\"row\">\n            <div *ngFor=\"let field of item | keyvalue\" class=\"col-sm\">\n                {{field.value}}\n            </div>\n        </div>\n    </div>\n</ng-template>\n";
+      /***/
+    },
+
+    /***/
+    "A6BW":
+    /*!********************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/repeat/repeat-test/repeat-test.component.ts ***!
+      \********************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function A6BW(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "import { Component } from \"@angular/core\";\n\n@Component({\n    selector: \"nui-repeat-test\",\n    templateUrl: \"./repeat-test.component.html\",\n})\nexport class RepeatTestComponent {\n\n    public colors = [\n        { color: $localize`blue` },\n        { color: $localize`green` },\n        { color: $localize`yellow` },\n        { color: $localize`cyan` },\n        { color: $localize`magenta` },\n        { color: $localize`black` },\n    ];\n\n    public tabs = [\n        {\n            id: \"tab1\",\n            title: \"No Content\",\n        },\n        {\n            id: \"tab2\",\n            title: \"Repeat VScroll\",\n        },\n    ];\n    public currentTabId = this.tabs[0].id;\n\n    private colorIndex: number = 1;\n\n    public addNewColor(): void {\n        this.colors.push(\n            { color: `new color ${this.colorIndex++}` }\n        );\n    }\n\n    // using css display rule instead of *ngIf to test RepeatComponent's IntersectionObserver\n    // (*ngIf would instantiate the test component only when the tab is selected instead of immediately on page load)\n    public getTabDisplayMode = (tabId: string) => this.currentTabId === tabId ? \"block\" : \"none\";\n}\n";
       /***/
     },
 
@@ -726,26 +759,6 @@
     },
 
     /***/
-    "D14v":
-    /*!***************************************************************************************************************************!*\
-      !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/repeat/repeat-select-test/repeat-test.component.ts ***!
-      \***************************************************************************************************************************/
-
-    /*! exports provided: default */
-
-    /***/
-    function D14v(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony default export */
-
-
-      __webpack_exports__["default"] = "import { Component } from \"@angular/core\";\n\n@Component({\n    selector: \"nui-repeat-test\",\n    templateUrl: \"./repeat-test.component.html\",\n})\nexport class RepeatTestComponent {\n\n    public colors = [\n        { color: $localize `blue`},\n        { color: $localize `green`},\n        { color: $localize `yellow`},\n        { color: $localize `cyan`},\n        { color: $localize `magenta`},\n        { color: $localize `black`},\n    ];\n\n    constructor() { }\n\n    private colorIndex: number = 1;\n\n    public addNewColor(): void {\n        this.colors.push(\n            { color: `new color ${this.colorIndex++}` }\n        );\n    }\n}\n";
-      /***/
-    },
-
-    /***/
     "D99s":
     /*!****************************************************************************************************************************!*\
       !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/repeat/repeat-docs/repeat-docs.example.component.ts ***!
@@ -786,6 +799,26 @@
     },
 
     /***/
+    "Ej2c":
+    /*!****************************************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/repeat/repeat-virtual-scroll/repeat-virtual-scroll.component.ts ***!
+      \****************************************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function Ej2c(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, OnDestroy, OnInit, ViewChild } from \"@angular/core\";\nimport {\n    DataSourceService, IFilteringOutputs, INovaFilteringOutputs, IRepeatItemConfig, RepeatComponent, VirtualViewportManager\n} from \"@nova-ui/bits\";\nimport { BehaviorSubject, Subject } from \"rxjs\";\nimport { filter, switchMap, takeUntil, tap } from \"rxjs/operators\";\n\nimport { RESULTS_PER_PAGE } from \"./repeat-virtual-scroll-data\";\nimport { RepeatVirtualScrollDataSource } from \"./repeat-virtual-scroll-data-source\";\nimport { IServer } from \"./types\";\n\n@Component({\n    selector: \"repeat-virtual-scroll\",\n    templateUrl: \"./repeat-virtual-scroll.component.html\",\n    styleUrls: [\"./repeat-virtual-scroll.component.less\"],\n    changeDetection: ChangeDetectionStrategy.OnPush,\n    providers: [\n        VirtualViewportManager,\n        {\n            provide: DataSourceService,\n            useClass: RepeatVirtualScrollDataSource,\n        },\n    ],\n})\nexport class RepeatVirtualScrollComponent implements OnInit, AfterViewInit, OnDestroy {\n    public listItems$ = new BehaviorSubject<IServer[]>([]);\n\n    public filteringState: INovaFilteringOutputs = {};\n    public isBusy = false;\n\n    public totalItems: number = 0;\n\n    public itemConfig: IRepeatItemConfig<IServer> = {\n        trackBy: (index, item) => item?.name,\n    };\n\n    @ViewChild(RepeatComponent) repeat: RepeatComponent;\n\n    private destroy$ = new Subject();\n\n    constructor(\n        @Inject(DataSourceService) private dataSource: RepeatVirtualScrollDataSource<IServer>,\n        private changeDetection: ChangeDetectorRef,\n        private viewportManager: VirtualViewportManager\n    ) { }\n\n    public ngOnInit() {\n        this.dataSource.busy.pipe(\n            tap(val => {\n                this.isBusy = val;\n                this.changeDetection.detectChanges();\n            }),\n            takeUntil(this.destroy$)\n        ).subscribe();\n    }\n\n    public async ngAfterViewInit() {\n        this.dataSource.registerComponent({\n            virtualScroll: { componentInstance: this.viewportManager },\n            repeat: { componentInstance: this.repeat },\n        });\n\n        this.viewportManager\n            // Note: Initializing viewportManager with the repeat's CDK Viewport Ref\n            .setViewport(this.repeat.viewportRef)\n\n            // Note: Initializing the stream with the desired page size, based on which\n            // ViewportManager will perform the observations and will emit\n            // distinct ranges with step equal to provided pageSize\n            .observeNextPage$({ pageSize: RESULTS_PER_PAGE })\n            .pipe(\n                // Since we know the total number of items we can stop the stream when dataset end is reached\n                // Otherwise we can let VirtualViewportManager to stop when last received page range will not match requested range\n                filter(() => {\n                    const items = this.listItems$.getValue();\n                    return !items.length || items.length < this.totalItems;\n                }),\n                tap(() => this.applyFilters(false)),\n                // Note: Using the same stream to subscribe to the outputsSubject and update the items list\n                switchMap(() => this.dataSource.outputsSubject.pipe(\n                    tap((data: IFilteringOutputs) => {\n                        // update the list of items to be rendered\n                        const items = data.repeat?.itemsSource || [];\n                        this.totalItems = data.repeat?.itemsSource.length;\n\n                        // after receiving data we need to append it to our previous fetched results\n                        this.listItems$.next(this.listItems$.getValue().concat(items));\n                        this.changeDetection.detectChanges();\n                    })\n                )\n                ),\n                takeUntil(this.destroy$)\n            ).subscribe();\n    }\n\n    public ngOnDestroy() {\n        this.destroy$.next();\n        this.destroy$.complete();\n    }\n\n    public async applyFilters(resetVirtualScroll: boolean = true) {\n        if (resetVirtualScroll) {\n            // it is important to reset viewportManager to start page\n            // so that the data source performs the search with 1st page\n            this.viewportManager.reset({ emitFirstPage: false });\n        }\n\n        // Every new search request or filter change should\n        // clear the cache in order to correctly display a new set of data\n        const filters = this.dataSource.getFilters();\n        const reset = this.dataSource.computeFiltersChange(filters);\n        if (reset || filters.virtualScroll?.value.start === 0) {\n            this.listItems$.next([]);\n            this.changeDetection.detectChanges();\n        }\n\n        await this.dataSource.applyFilters();\n    }\n}\n";
+      /***/
+    },
+
+    /***/
     "F5ez":
     /*!****************************************************************************************!*\
       !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/repeat/index.ts ***!
@@ -801,7 +834,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "export * from \"./repeat-docs/repeat-docs.example.component\";\nexport * from \"./repeat-simple/repeat-simple.example.component\";\nexport * from \"./repeat-multi-selection/repeat-multi-selection.example.component\";\nexport * from \"./repeat-disabled-multi-selection/repeat-disabled-multi-selection.example.component\";\nexport * from \"./repeat-single-selection-mode/repeat-single-selection-mode.example.component\";\nexport * from \"./repeat-radio-selection-mode/repeat-radio-selection-mode.example.component\";\nexport * from \"./repeat-radio-with-non-required-selection-mode/repeat-radio-with-non-required-selection-mode.example.component\";\nexport * from \"./repeat-single-with-required-selection-mode/repeat-single-with-required-selection-mode.example.component\";\nexport * from \"./repeat-item/repeat-item.example.component\";\nexport * from \"./repeat-reorder-simple/repeat-reorder-simple-example.component\";\nexport * from \"./repeat-drag-simple/repeat-drag-simple.example.component\";\nexport * from \"./repeat-drag-handle/repeat-drag-handle.example.component\";\nexport * from \"./repeat-drag-preview/repeat-drag-preview.example.component\";\nexport * from \"./repeat-reorder-item-config/repeat-reorder-item-config-example.component\";\n";
+      __webpack_exports__["default"] = "export * from \"./repeat-docs/repeat-docs.example.component\";\nexport * from \"./repeat-simple/repeat-simple.example.component\";\nexport * from \"./repeat-multi-selection/repeat-multi-selection.example.component\";\nexport * from \"./repeat-disabled-multi-selection/repeat-disabled-multi-selection.example.component\";\nexport * from \"./repeat-single-selection-mode/repeat-single-selection-mode.example.component\";\nexport * from \"./repeat-radio-selection-mode/repeat-radio-selection-mode.example.component\";\nexport * from \"./repeat-radio-with-non-required-selection-mode/repeat-radio-with-non-required-selection-mode.example.component\";\nexport * from \"./repeat-single-with-required-selection-mode/repeat-single-with-required-selection-mode.example.component\";\nexport * from \"./repeat-item/repeat-item.example.component\";\nexport * from \"./repeat-reorder-simple/repeat-reorder-simple-example.component\";\nexport * from \"./repeat-drag-simple/repeat-drag-simple.example.component\";\nexport * from \"./repeat-drag-handle/repeat-drag-handle.example.component\";\nexport * from \"./repeat-drag-preview/repeat-drag-preview.example.component\";\nexport * from \"./repeat-reorder-item-config/repeat-reorder-item-config-example.component\";\nexport * from \"./repeat-virtual-scroll/repeat-virtual-scroll.component\";\nexport * from \"./repeat-test/repeat-test.component\";\n";
       /***/
     },
 
@@ -1110,7 +1143,7 @@
       !*** ./demo/src/components/demo/repeat/index.ts ***!
       \**************************************************/
 
-    /*! exports provided: RepeatExampleComponent, RepeatSimpleExampleComponent, RepeatMultiSelectionExampleComponent, RepeatDisabledMultiSelectionExampleComponent, RepeatSingleSelectionModeExampleComponent, RepeatRadioSelectionModeExampleComponent, RepeatRadioWithNonRequiredSelectionModeExampleComponent, RepeatSingleWithRequiredSelectionModeExampleComponent, RepeatItemExampleComponent, RepeatReorderSimpleExampleComponent, RepeatDragSimpleExampleComponent, RepeatDragHandleExampleComponent, RepeatDragPreviewExampleComponent, RepeatReorderItemConfigExampleComponent */
+    /*! exports provided: RepeatExampleComponent, RepeatSimpleExampleComponent, RepeatMultiSelectionExampleComponent, RepeatDisabledMultiSelectionExampleComponent, RepeatSingleSelectionModeExampleComponent, RepeatRadioSelectionModeExampleComponent, RepeatRadioWithNonRequiredSelectionModeExampleComponent, RepeatSingleWithRequiredSelectionModeExampleComponent, RepeatItemExampleComponent, RepeatReorderSimpleExampleComponent, RepeatDragSimpleExampleComponent, RepeatDragHandleExampleComponent, RepeatDragPreviewExampleComponent, RepeatReorderItemConfigExampleComponent, RepeatVirtualScrollComponent, RepeatTestComponent */
 
     /***/
     function PDB5(module, __webpack_exports__, __webpack_require__) {
@@ -1284,6 +1317,30 @@
 
       __webpack_require__.d(__webpack_exports__, "RepeatReorderItemConfigExampleComponent", function () {
         return _repeat_reorder_item_config_repeat_reorder_item_config_example_component__WEBPACK_IMPORTED_MODULE_13__["RepeatReorderItemConfigExampleComponent"];
+      });
+      /* harmony import */
+
+
+      var _repeat_virtual_scroll_repeat_virtual_scroll_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
+      /*! ./repeat-virtual-scroll/repeat-virtual-scroll.component */
+      "nOuR");
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "RepeatVirtualScrollComponent", function () {
+        return _repeat_virtual_scroll_repeat_virtual_scroll_component__WEBPACK_IMPORTED_MODULE_14__["RepeatVirtualScrollComponent"];
+      });
+      /* harmony import */
+
+
+      var _repeat_test_repeat_test_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
+      /*! ./repeat-test/repeat-test.component */
+      "pfJu");
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "RepeatTestComponent", function () {
+        return _repeat_test_repeat_test_component__WEBPACK_IMPORTED_MODULE_15__["RepeatTestComponent"];
       });
       /***/
 
@@ -1676,6 +1733,189 @@
 
 
       __webpack_exports__["default"] = "import { Component } from \"@angular/core\";\n\n\n@Component({\n    selector: \"nui-repeat-single-with-required-selection-mode-example\",\n    templateUrl: \"./repeat-single-with-required-selection-mode.example.component.html\",\n})\nexport class RepeatSingleWithRequiredSelectionModeExampleComponent {\n    public colors = [\n        { color: $localize `blue`},\n        { color: $localize `green`},\n        { color: $localize `yellow`},\n        { color: $localize `cyan`},\n        { color: $localize `magenta`},\n        { color: $localize `black`},\n    ];\n\n    public selectedColors = [this.colors[1]];\n    public selectedMode: string = \"singleWithRequiredSelection\";\n\n    constructor() { }\n\n    public onColorSelectionChange(selection: any) {\n        this.selectedColors = selection;\n    }\n}\n";
+      /***/
+    },
+
+    /***/
+    "STWZ":
+    /*!*********************************************************************************************!*\
+      !*** ./demo/src/components/demo/repeat/repeat-virtual-scroll/repeat-virtual-scroll-data.ts ***!
+      \*********************************************************************************************/
+
+    /*! exports provided: RESULTS_PER_PAGE, DATA */
+
+    /***/
+    function STWZ(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "RESULTS_PER_PAGE", function () {
+        return RESULTS_PER_PAGE;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "DATA", function () {
+        return DATA;
+      });
+
+      var RESULTS_PER_PAGE = 20;
+      var DATA = [{
+        "location": "New Jermaine",
+        "name": "TURCO-SVR-ET9695",
+        "status": "Down"
+      }, {
+        "location": "Kyiv",
+        "name": "DAUGH-LT-SED9492",
+        "status": "Active"
+      }, {
+        "location": "Archton",
+        "name": "GLOVE-LT-QUI9554",
+        "status": "Active"
+      }, {
+        "location": "South Levi",
+        "name": "HIRTH-LT-MOLE9968",
+        "status": "Active"
+      }, {
+        "location": "Austin",
+        "name": "KUB-LT-ODIO9015",
+        "status": "Active"
+      }, {
+        "location": "Taylormouth",
+        "name": "MAYER-SVR-DOLO9518",
+        "status": "Down"
+      }, {
+        "location": "Brno",
+        "name": "BORER-LT-OCCA9986",
+        "status": "Active"
+      }, {
+        "location": "North Bert",
+        "name": "ERNSE-SVR-EARU9344",
+        "status": "Down"
+      }, {
+        "location": "Kuhlmanhaven",
+        "name": "HELLE-LT-QUIA9115",
+        "status": "Active"
+      }, {
+        "location": "Austin",
+        "name": "BROWN-SVR-EUM9158",
+        "status": "Active"
+      }, {
+        "location": "East Keatonborough",
+        "name": "VEUM-LT-EXER9236",
+        "status": "Active"
+      }, {
+        "location": "Lake Kailee",
+        "name": "WINDL-LT-QUI9139",
+        "status": "Active"
+      }, {
+        "location": "New Haydenhaven",
+        "name": "ONDRI-SVR-REIC9243",
+        "status": "Down"
+      }, {
+        "location": "Esmeraldaborough",
+        "name": "SHANA-SVR-NEQU9387",
+        "status": "Down"
+      }, {
+        "location": "O'Reillyton",
+        "name": "HERMA-LT-VITA9273",
+        "status": "Down"
+      }, {
+        "location": "Bucharest",
+        "name": "D'AMO-SVR-DOLO9199",
+        "status": "Down"
+      }, {
+        "location": "New Ilafort",
+        "name": "CUMME-SVR-IPSU9949",
+        "status": "Active"
+      }, {
+        "location": "Bucharest",
+        "name": "O'CON-LT-DELE9341",
+        "status": "Active"
+      }, {
+        "location": "Austin",
+        "name": "HESSE-LT-ET9816",
+        "status": "Down"
+      }, {
+        "location": "Declanburgh",
+        "name": "LAKIN-SVR-NON9503",
+        "status": "Active"
+      }, {
+        "location": "Dorrismouth",
+        "name": "ZBONC-SVR-MAXI9692",
+        "status": "Active"
+      }, {
+        "location": "Nitzscheton",
+        "name": "FADEL-SVR-ASSU9183",
+        "status": "Active"
+      }, {
+        "location": "North Arielmouth",
+        "name": "WATSI-LT-QUIA9919",
+        "status": "Down"
+      }, {
+        "location": "Austin",
+        "name": "CONRO-LT-ET9222",
+        "status": "Active"
+      }, {
+        "location": "Kyiv",
+        "name": "HUELS-LT-TEMP9463",
+        "status": "Down"
+      }, {
+        "location": "Gulgowskiside",
+        "name": "ANDER-LT-ET9545",
+        "status": "Down"
+      }, {
+        "location": "West Estashire",
+        "name": "BRAUN-LT-BEAT9513",
+        "status": "Active"
+      }, {
+        "location": "Lailaland",
+        "name": "JASKO-SVR-NATU9644",
+        "status": "Active"
+      }, {
+        "location": "South Luigi",
+        "name": "SIMON-LT-VOLU9900",
+        "status": "Down"
+      }, {
+        "location": "Bogisichtown",
+        "name": "HERMI-SVR-TEMP9404",
+        "status": "Active"
+      }, {
+        "location": "Kyiv",
+        "name": "RATKE-SVR-EST9459",
+        "status": "Active"
+      }, {
+        "location": "Corkeryport",
+        "name": "REICH-LT-ET9322",
+        "status": "Active"
+      }, {
+        "location": "South Katarinaview",
+        "name": "TOWNE-SVR-QUIB9469",
+        "status": "Down"
+      }];
+      /***/
+    },
+
+    /***/
+    "Sm2L":
+    /*!**************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/repeat/repeat-virtual-scroll/types.ts ***!
+      \**************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function Sm2L(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "import { IFilter, INovaFilters } from \"@nova-ui/bits\";\n\n// main server model being received from the backend\nexport interface IServer {\n    location: string;\n    name: string;\n    status: string;\n}\n\n// implement custom filters\nexport interface IServerFilters extends INovaFilters {\n    location?: IFilter<string>;\n    name?: IFilter<string>;\n    status?: IFilter<string>;\n}\n\n// collection of items that we've transformed from the backend API\nexport interface IServersCollection {\n    items: IServer[];\n}\n";
       /***/
     },
 
@@ -2816,6 +3056,26 @@
     },
 
     /***/
+    "Xw8i":
+    /*!***********************************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/repeat/repeat-virtual-scroll/repeat-virtual-scroll-data.ts ***!
+      \***********************************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function Xw8i(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "export const RESULTS_PER_PAGE = 20;\n\nexport const DATA = [\n    { \"location\": \"New Jermaine\", \"name\": \"TURCO-SVR-ET9695\", \"status\": \"Down\" },\n    { \"location\": \"Kyiv\", \"name\": \"DAUGH-LT-SED9492\", \"status\": \"Active\" },\n    { \"location\": \"Archton\", \"name\": \"GLOVE-LT-QUI9554\", \"status\": \"Active\" },\n    { \"location\": \"South Levi\", \"name\": \"HIRTH-LT-MOLE9968\", \"status\": \"Active\" },\n    { \"location\": \"Austin\", \"name\": \"KUB-LT-ODIO9015\", \"status\": \"Active\" },\n    { \"location\": \"Taylormouth\", \"name\": \"MAYER-SVR-DOLO9518\", \"status\": \"Down\" },\n    { \"location\": \"Brno\", \"name\": \"BORER-LT-OCCA9986\", \"status\": \"Active\" },\n    { \"location\": \"North Bert\", \"name\": \"ERNSE-SVR-EARU9344\", \"status\": \"Down\" },\n    { \"location\": \"Kuhlmanhaven\", \"name\": \"HELLE-LT-QUIA9115\", \"status\": \"Active\" },\n    { \"location\": \"Austin\", \"name\": \"BROWN-SVR-EUM9158\", \"status\": \"Active\" },\n    { \"location\": \"East Keatonborough\", \"name\": \"VEUM-LT-EXER9236\", \"status\": \"Active\" },\n    { \"location\": \"Lake Kailee\", \"name\": \"WINDL-LT-QUI9139\", \"status\": \"Active\" },\n    { \"location\": \"New Haydenhaven\", \"name\": \"ONDRI-SVR-REIC9243\", \"status\": \"Down\" },\n    { \"location\": \"Esmeraldaborough\", \"name\": \"SHANA-SVR-NEQU9387\", \"status\": \"Down\" },\n    { \"location\": \"O'Reillyton\", \"name\": \"HERMA-LT-VITA9273\", \"status\": \"Down\" },\n    { \"location\": \"Bucharest\", \"name\": \"D'AMO-SVR-DOLO9199\", \"status\": \"Down\" },\n    { \"location\": \"New Ilafort\", \"name\": \"CUMME-SVR-IPSU9949\", \"status\": \"Active\" },\n    { \"location\": \"Bucharest\", \"name\": \"O'CON-LT-DELE9341\", \"status\": \"Active\" },\n    { \"location\": \"Austin\", \"name\": \"HESSE-LT-ET9816\", \"status\": \"Down\" },\n    { \"location\": \"Declanburgh\", \"name\": \"LAKIN-SVR-NON9503\", \"status\": \"Active\" },\n    { \"location\": \"Dorrismouth\", \"name\": \"ZBONC-SVR-MAXI9692\", \"status\": \"Active\" },\n    { \"location\": \"Nitzscheton\", \"name\": \"FADEL-SVR-ASSU9183\", \"status\": \"Active\" },\n    { \"location\": \"North Arielmouth\", \"name\": \"WATSI-LT-QUIA9919\", \"status\": \"Down\" },\n    { \"location\": \"Austin\", \"name\": \"CONRO-LT-ET9222\", \"status\": \"Active\" },\n    { \"location\": \"Kyiv\", \"name\": \"HUELS-LT-TEMP9463\", \"status\": \"Down\" },\n    { \"location\": \"Gulgowskiside\", \"name\": \"ANDER-LT-ET9545\", \"status\": \"Down\" },\n    { \"location\": \"West Estashire\", \"name\": \"BRAUN-LT-BEAT9513\", \"status\": \"Active\" },\n    { \"location\": \"Lailaland\", \"name\": \"JASKO-SVR-NATU9644\", \"status\": \"Active\" },\n    { \"location\": \"South Luigi\", \"name\": \"SIMON-LT-VOLU9900\", \"status\": \"Down\" },\n    { \"location\": \"Bogisichtown\", \"name\": \"HERMI-SVR-TEMP9404\", \"status\": \"Active\" },\n    { \"location\": \"Kyiv\", \"name\": \"RATKE-SVR-EST9459\", \"status\": \"Active\" },\n    { \"location\": \"Corkeryport\", \"name\": \"REICH-LT-ET9322\", \"status\": \"Active\" },\n    { \"location\": \"South Katarinaview\", \"name\": \"TOWNE-SVR-QUIB9469\", \"status\": \"Down\" },\n];\n";
+      /***/
+    },
+
+    /***/
     "XxfH":
     /*!*********************************************************************************************************!*\
       !*** ./demo/src/components/demo/repeat sync !./node_modules/raw-loader/dist/cjs.js .*\.(ts|html|less)$ ***!
@@ -2850,8 +3110,6 @@
         "./repeat-reorder-item-config/repeat-reorder-item-config-example.component.ts": "6p70",
         "./repeat-reorder-simple/repeat-reorder-simple-example.component.html": "ebJX",
         "./repeat-reorder-simple/repeat-reorder-simple-example.component.ts": "g0JM",
-        "./repeat-select-test/repeat-test.component.html": "1ag7",
-        "./repeat-select-test/repeat-test.component.ts": "D14v",
         "./repeat-simple/repeat-simple.example.component.html": "+l9c",
         "./repeat-simple/repeat-simple.example.component.ts": "MtRR",
         "./repeat-single-selection-mode/repeat-single-selection-mode.example.component.html": "XD94",
@@ -2859,6 +3117,14 @@
         "./repeat-single-selection-mode/repeat-single-selection-mode.example.less": "tB9T",
         "./repeat-single-with-required-selection-mode/repeat-single-with-required-selection-mode.example.component.html": "MMC6",
         "./repeat-single-with-required-selection-mode/repeat-single-with-required-selection-mode.example.component.ts": "Ph0z",
+        "./repeat-test/repeat-test.component.html": "e85M",
+        "./repeat-test/repeat-test.component.ts": "A6BW",
+        "./repeat-virtual-scroll/repeat-virtual-scroll-data-source.ts": "eyrF",
+        "./repeat-virtual-scroll/repeat-virtual-scroll-data.ts": "Xw8i",
+        "./repeat-virtual-scroll/repeat-virtual-scroll.component.html": "9JmL",
+        "./repeat-virtual-scroll/repeat-virtual-scroll.component.less": "fuGm",
+        "./repeat-virtual-scroll/repeat-virtual-scroll.component.ts": "Ej2c",
+        "./repeat-virtual-scroll/types.ts": "Sm2L",
         "./repeat.module.ts": "vUEW"
       };
 
@@ -3143,6 +3409,26 @@
     },
 
     /***/
+    "e85M":
+    /*!**********************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/repeat/repeat-test/repeat-test.component.html ***!
+      \**********************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function e85M(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "<nui-tab-heading-group id=\"repeat-test-tab-group\" (selected)=\"currentTabId = $event;\">\n    <nui-tab-heading *ngFor=\"let tab of tabs\" [tabId]=\"tab.id\" [active]=\"currentTabId === tab.id\">{{tab.title}}</nui-tab-heading>\n</nui-tab-heading-group>\n<div [style.display]=\"getTabDisplayMode(tabs[0].id)\">\n    No content in this tab. See other tab(s) for content.\n</div>\n<div [style.display]=\"getTabDisplayMode(tabs[1].id)\">\n    <repeat-virtual-scroll id=\"repeat-test-vscroll\"></repeat-virtual-scroll>\n</div>\n<hr>\n<nui-repeat-multi-selection-example></nui-repeat-multi-selection-example>\n<nui-repeat-disabled-multi-selection-example></nui-repeat-disabled-multi-selection-example>\n<nui-repeat-single-selection-mode-example></nui-repeat-single-selection-mode-example>\n<button nui-button type=\"button\" id=\"add-color\" (click)=\"addNewColor()\">Add color</button>\n<nui-repeat-radio-selection-mode-example [colors]=\"colors\"></nui-repeat-radio-selection-mode-example>\n<nui-repeat-radio-with-non-required-selection-mode-example></nui-repeat-radio-with-non-required-selection-mode-example>\n<nui-repeat-single-with-required-selection-mode-example></nui-repeat-single-with-required-selection-mode-example>\n";
+      /***/
+    },
+
+    /***/
     "eaW1":
     /*!********************************************************************************************************************************************!*\
       !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/repeat/repeat-drag-simple/repeat-drag-simple.example.component.html ***!
@@ -3179,6 +3465,46 @@
 
 
       __webpack_exports__["default"] = "<div class=\"d-flex\">\n    <nui-switch class=\"p-2\" [(value)]=\"draggable\" i18n>Draggable</nui-switch>\n    <nui-switch class=\"p-2\" [(value)]=\"reorderable\" i18n>Reorderable</nui-switch>\n</div>\n<nui-repeat (itemsReordered)=\"onItemsReordered($event)\"\n            [itemsSource]=\"companies\"\n            [repeatItemTemplateRef]=\"repeatItemTemplate\"\n            [(draggable)]=\"draggable\"\n            [(reorderable)]=\"reorderable\">\n</nui-repeat>\n<div class=\"d-flex m-2\">\n    <div><strong i18n>Event data</strong>:</div>\n    <div class=\"ml-1\">{{droppedEventData ? (droppedEventData | json) : \"N/A\"}}</div>\n</div>\n\n<!-- Content template for each item -->\n<ng-template #repeatItemTemplate let-item=\"item\">\n    {{item}}\n</ng-template>\n";
+      /***/
+    },
+
+    /***/
+    "eyrF":
+    /*!******************************************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/repeat/repeat-virtual-scroll/repeat-virtual-scroll-data-source.ts ***!
+      \******************************************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function eyrF(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "import { Injectable } from \"@angular/core\";\nimport { IDataSource, INovaFilteringOutputs, ServerSideDataSource } from \"@nova-ui/bits\";\nimport { Observable, of } from \"rxjs\";\nimport { map } from \"rxjs/operators\";\n\nimport { DATA } from \"./repeat-virtual-scroll-data\";\nimport { IServerFilters, IServersCollection } from \"./types\";\n\n@Injectable()\nexport class RepeatVirtualScrollDataSource<T> extends ServerSideDataSource<T> implements IDataSource {\n    public async getFilteredData(data: IServersCollection): Promise<INovaFilteringOutputs> {\n        return of(data).pipe(\n            map((response: IServersCollection) => {\n                const itemsSource = response.items;\n\n                return {\n                    repeat: { itemsSource },\n                };\n            })\n        ).toPromise();\n    }\n\n    protected getBackendData(filters: IServerFilters): Observable<IServersCollection> {\n        return of({\n            items: DATA?.map(item => ({\n                name: item.name,\n                location: item.location,\n                status: item.status,\n            })) || [],\n        });\n    }\n}\n";
+      /***/
+    },
+
+    /***/
+    "fuGm":
+    /*!******************************************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/repeat/repeat-virtual-scroll/repeat-virtual-scroll.component.less ***!
+      \******************************************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function fuGm(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "@import (reference) \"nui-framework-variables\";\n\n:host {\n    .app-virtual-scroll-list-repeat {\n        margin: @nui-space-sm @nui-space-md;\n        width: 100%;\n        // it is very important to have a height for virtual scroll\n        height: 300px;\n    }\n}\n";
       /***/
     },
 
@@ -3401,15 +3727,323 @@
     },
 
     /***/
-    "nSOt":
-    /*!*************************************************************************************!*\
-      !*** ./demo/src/components/demo/repeat/repeat-select-test/repeat-test.component.ts ***!
-      \*************************************************************************************/
+    "nOuR":
+    /*!**************************************************************************************************!*\
+      !*** ./demo/src/components/demo/repeat/repeat-virtual-scroll/repeat-virtual-scroll.component.ts ***!
+      \**************************************************************************************************/
+
+    /*! exports provided: RepeatVirtualScrollComponent */
+
+    /***/
+    function nOuR(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "RepeatVirtualScrollComponent", function () {
+        return RepeatVirtualScrollComponent;
+      });
+      /* harmony import */
+
+
+      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! tslib */
+      "mrSG");
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/core */
+      "fXoL");
+      /* harmony import */
+
+
+      var _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! @nova-ui/bits */
+      "b5Xb");
+      /* harmony import */
+
+
+      var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! rxjs */
+      "qCKp");
+      /* harmony import */
+
+
+      var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! rxjs/operators */
+      "kU1M");
+      /* harmony import */
+
+
+      var _repeat_virtual_scroll_data__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! ./repeat-virtual-scroll-data */
+      "STWZ");
+      /* harmony import */
+
+
+      var _repeat_virtual_scroll_data_source__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      /*! ./repeat-virtual-scroll-data-source */
+      "wHrv");
+      /* harmony import */
+
+
+      var _src_lib_repeat_repeat_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      /*! ../../../../../../src/lib/repeat/repeat.component */
+      "v2n/");
+      /* harmony import */
+
+
+      var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      /*! @angular/common */
+      "ofXK");
+
+      function RepeatVirtualScrollComponent_ng_template_3_div_2_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 6);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var field_r4 = ctx.$implicit;
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"](" ", field_r4.value, " ");
+        }
+      }
+
+      function RepeatVirtualScrollComponent_ng_template_3_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 3);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "div", 4);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](2, RepeatVirtualScrollComponent_ng_template_3_div_2_Template, 2, 1, "div", 5);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipe"](3, "keyvalue");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var item_r2 = ctx.item;
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipeBind1"](3, 1, item_r2));
+        }
+      }
+
+      var RepeatVirtualScrollComponent = /*#__PURE__*/function () {
+        function RepeatVirtualScrollComponent(dataSource, changeDetection, viewportManager) {
+          _classCallCheck(this, RepeatVirtualScrollComponent);
+
+          this.dataSource = dataSource;
+          this.changeDetection = changeDetection;
+          this.viewportManager = viewportManager;
+          this.listItems$ = new rxjs__WEBPACK_IMPORTED_MODULE_3__["BehaviorSubject"]([]);
+          this.filteringState = {};
+          this.isBusy = false;
+          this.totalItems = 0;
+          this.itemConfig = {
+            trackBy: function trackBy(index, item) {
+              return item === null || item === void 0 ? void 0 : item.name;
+            }
+          };
+          this.destroy$ = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
+        }
+
+        _createClass(RepeatVirtualScrollComponent, [{
+          key: "ngOnInit",
+          value: function ngOnInit() {
+            var _this = this;
+
+            this.dataSource.busy.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])(function (val) {
+              _this.isBusy = val;
+
+              _this.changeDetection.detectChanges();
+            }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeUntil"])(this.destroy$)).subscribe();
+          }
+        }, {
+          key: "ngAfterViewInit",
+          value: function ngAfterViewInit() {
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+              var _this2 = this;
+
+              return regeneratorRuntime.wrap(function _callee$(_context) {
+                while (1) {
+                  switch (_context.prev = _context.next) {
+                    case 0:
+                      this.dataSource.registerComponent({
+                        virtualScroll: {
+                          componentInstance: this.viewportManager
+                        },
+                        repeat: {
+                          componentInstance: this.repeat
+                        }
+                      });
+                      this.viewportManager // Note: Initializing viewportManager with the repeat's CDK Viewport Ref
+                      .setViewport(this.repeat.viewportRef) // Note: Initializing the stream with the desired page size, based on which
+                      // ViewportManager will perform the observations and will emit
+                      // distinct ranges with step equal to provided pageSize
+                      .observeNextPage$({
+                        pageSize: _repeat_virtual_scroll_data__WEBPACK_IMPORTED_MODULE_5__["RESULTS_PER_PAGE"]
+                      }).pipe( // Since we know the total number of items we can stop the stream when dataset end is reached
+                      // Otherwise we can let VirtualViewportManager to stop when last received page range will not match requested range
+                      Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])(function () {
+                        var items = _this2.listItems$.getValue();
+
+                        return !items.length || items.length < _this2.totalItems;
+                      }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])(function () {
+                        return _this2.applyFilters(false);
+                      }), // Note: Using the same stream to subscribe to the outputsSubject and update the items list
+                      Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["switchMap"])(function () {
+                        return _this2.dataSource.outputsSubject.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])(function (data) {
+                          var _a, _b; // update the list of items to be rendered
+
+
+                          var items = ((_a = data.repeat) === null || _a === void 0 ? void 0 : _a.itemsSource) || [];
+                          _this2.totalItems = (_b = data.repeat) === null || _b === void 0 ? void 0 : _b.itemsSource.length; // after receiving data we need to append it to our previous fetched results
+
+                          _this2.listItems$.next(_this2.listItems$.getValue().concat(items));
+
+                          _this2.changeDetection.detectChanges();
+                        }));
+                      }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeUntil"])(this.destroy$)).subscribe();
+
+                    case 2:
+                    case "end":
+                      return _context.stop();
+                  }
+                }
+              }, _callee, this);
+            }));
+          }
+        }, {
+          key: "ngOnDestroy",
+          value: function ngOnDestroy() {
+            this.destroy$.next();
+            this.destroy$.complete();
+          }
+        }, {
+          key: "applyFilters",
+          value: function applyFilters() {
+            var resetVirtualScroll = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
+
+            var _a;
+
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+              var filters, reset;
+              return regeneratorRuntime.wrap(function _callee2$(_context2) {
+                while (1) {
+                  switch (_context2.prev = _context2.next) {
+                    case 0:
+                      if (resetVirtualScroll) {
+                        // it is important to reset viewportManager to start page
+                        // so that the data source performs the search with 1st page
+                        this.viewportManager.reset({
+                          emitFirstPage: false
+                        });
+                      } // Every new search request or filter change should
+                      // clear the cache in order to correctly display a new set of data
+
+
+                      filters = this.dataSource.getFilters();
+                      reset = this.dataSource.computeFiltersChange(filters);
+
+                      if (reset || ((_a = filters.virtualScroll) === null || _a === void 0 ? void 0 : _a.value.start) === 0) {
+                        this.listItems$.next([]);
+                        this.changeDetection.detectChanges();
+                      }
+
+                      _context2.next = 6;
+                      return this.dataSource.applyFilters();
+
+                    case 6:
+                    case "end":
+                      return _context2.stop();
+                  }
+                }
+              }, _callee2, this);
+            }));
+          }
+        }]);
+
+        return RepeatVirtualScrollComponent;
+      }();
+
+      RepeatVirtualScrollComponent.ɵfac = function RepeatVirtualScrollComponent_Factory(t) {
+        return new (t || RepeatVirtualScrollComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["DataSourceService"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectorRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["VirtualViewportManager"]));
+      };
+
+      RepeatVirtualScrollComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
+        type: RepeatVirtualScrollComponent,
+        selectors: [["repeat-virtual-scroll"]],
+        viewQuery: function RepeatVirtualScrollComponent_Query(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵviewQuery"](_nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["RepeatComponent"], 1);
+          }
+
+          if (rf & 2) {
+            var _t;
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx.repeat = _t.first);
+          }
+        },
+        features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵProvidersFeature"]([_nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["VirtualViewportManager"], {
+          provide: _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["DataSourceService"],
+          useClass: _repeat_virtual_scroll_data_source__WEBPACK_IMPORTED_MODULE_6__["RepeatVirtualScrollDataSource"]
+        }])],
+        decls: 5,
+        vars: 8,
+        consts: [[1, "d-flex", "flex-row"], ["selectionMode", "none", 1, "app-virtual-scroll-list-repeat", 3, "itemConfig", "repeatItemTemplateRef", "selection", "itemsSource", "virtualScroll", "itemSize"], ["listRepeatItemTemplate", ""], [1, "container"], [1, "row"], ["class", "col-sm", 4, "ngFor", "ngForOf"], [1, "col-sm"]],
+        template: function RepeatVirtualScrollComponent_Template(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 0);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](1, "nui-repeat", 1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipe"](2, "async");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](3, RepeatVirtualScrollComponent_ng_template_3_Template, 4, 3, "ng-template", null, 2, _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplateRefExtractor"]);
+          }
+
+          if (rf & 2) {
+            var _r0 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵreference"](4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("itemConfig", ctx.itemConfig)("repeatItemTemplateRef", _r0)("selection", ctx.filteringState.repeat == null ? null : ctx.filteringState.repeat.selectedItems)("itemsSource", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipeBind1"](2, 6, ctx.listItems$))("virtualScroll", true)("itemSize", 30);
+          }
+        },
+        directives: [_src_lib_repeat_repeat_component__WEBPACK_IMPORTED_MODULE_7__["RepeatComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_8__["NgForOf"]],
+        pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_8__["AsyncPipe"], _angular_common__WEBPACK_IMPORTED_MODULE_8__["KeyValuePipe"]],
+        styles: ["[_nghost-%COMP%]   .app-virtual-scroll-list-repeat[_ngcontent-%COMP%] {\n  margin: 10px 15px;\n  width: 100%;\n  height: 300px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJlcGVhdC12aXJ0dWFsLXNjcm9sbC5jb21wb25lbnQubGVzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFFQTtFQUVRLGlCQUFBO0VBQ0EsV0FBQTtFQUVBLGFBQUE7QUFIUiIsImZpbGUiOiJyZXBlYXQtdmlydHVhbC1zY3JvbGwuY29tcG9uZW50Lmxlc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0IChyZWZlcmVuY2UpIFwibnVpLWZyYW1ld29yay12YXJpYWJsZXNcIjtcblxuOmhvc3Qge1xuICAgIC5hcHAtdmlydHVhbC1zY3JvbGwtbGlzdC1yZXBlYXQge1xuICAgICAgICBtYXJnaW46IEBudWktc3BhY2Utc20gQG51aS1zcGFjZS1tZDtcbiAgICAgICAgd2lkdGg6IDEwMCU7XG4gICAgICAgIC8vIGl0IGlzIHZlcnkgaW1wb3J0YW50IHRvIGhhdmUgYSBoZWlnaHQgZm9yIHZpcnR1YWwgc2Nyb2xsXG4gICAgICAgIGhlaWdodDogMzAwcHg7XG4gICAgfVxufVxuIl19 */"],
+        changeDetection: 0
+      });
+      /***/
+    },
+
+    /***/
+    "pfJu":
+    /*!******************************************************************************!*\
+      !*** ./demo/src/components/demo/repeat/repeat-test/repeat-test.component.ts ***!
+      \******************************************************************************/
 
     /*! exports provided: RepeatTestComponent */
 
     /***/
-    function nSOt(module, __webpack_exports__, __webpack_require__) {
+    function pfJu(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -3428,48 +4062,96 @@
       /* harmony import */
 
 
-      var _repeat_multi_selection_repeat_multi_selection_example_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      var _src_lib_tabgroup_tab_heading_group_tab_heading_group_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! ../../../../../../src/lib/tabgroup/tab-heading-group/tab-heading-group.component */
+      "lxVO");
+      /* harmony import */
+
+
+      var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! @angular/common */
+      "ofXK");
+      /* harmony import */
+
+
+      var _repeat_virtual_scroll_repeat_virtual_scroll_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! ../repeat-virtual-scroll/repeat-virtual-scroll.component */
+      "nOuR");
+      /* harmony import */
+
+
+      var _repeat_multi_selection_repeat_multi_selection_example_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! ../repeat-multi-selection/repeat-multi-selection.example.component */
       "Xav+");
       /* harmony import */
 
 
-      var _repeat_disabled_multi_selection_repeat_disabled_multi_selection_example_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      var _repeat_disabled_multi_selection_repeat_disabled_multi_selection_example_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! ../repeat-disabled-multi-selection/repeat-disabled-multi-selection.example.component */
       "PWlR");
       /* harmony import */
 
 
-      var _repeat_single_selection_mode_repeat_single_selection_mode_example_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      var _repeat_single_selection_mode_repeat_single_selection_mode_example_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! ../repeat-single-selection-mode/repeat-single-selection-mode.example.component */
       "umK5");
       /* harmony import */
 
 
-      var _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      var _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! ../../../../../../src/lib/button/button.component */
       "6urz");
       /* harmony import */
 
 
-      var _repeat_radio_selection_mode_repeat_radio_selection_mode_example_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      var _repeat_radio_selection_mode_repeat_radio_selection_mode_example_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! ../repeat-radio-selection-mode/repeat-radio-selection-mode.example.component */
       "1aNH");
       /* harmony import */
 
 
-      var _repeat_radio_with_non_required_selection_mode_repeat_radio_with_non_required_selection_mode_example_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      var _repeat_radio_with_non_required_selection_mode_repeat_radio_with_non_required_selection_mode_example_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
       /*! ../repeat-radio-with-non-required-selection-mode/repeat-radio-with-non-required-selection-mode.example.component */
       "ubTL");
       /* harmony import */
 
 
-      var _repeat_single_with_required_selection_mode_repeat_single_with_required_selection_mode_example_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      var _repeat_single_with_required_selection_mode_repeat_single_with_required_selection_mode_example_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
       /*! ../repeat-single-with-required-selection-mode/repeat-single-with-required-selection-mode.example.component */
       "PEhs");
+      /* harmony import */
+
+
+      var _src_lib_tabgroup_tab_heading_tab_heading_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+      /*! ../../../../../../src/lib/tabgroup/tab-heading/tab-heading.component */
+      "R5hz");
+
+      function RepeatTestComponent_nui_tab_heading_1_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "nui-tab-heading", 5);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var tab_r1 = ctx.$implicit;
+
+          var ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("tabId", tab_r1.id)("active", ctx_r0.currentTabId === tab_r1.id);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](tab_r1.title);
+        }
+      }
 
       var RepeatTestComponent = /*#__PURE__*/function () {
         function RepeatTestComponent() {
+          var _this3 = this;
+
           _classCallCheck(this, RepeatTestComponent);
 
           this.colors = [{
@@ -3485,7 +4167,20 @@
           }, {
             color: $localize(_templateObject53 || (_templateObject53 = _taggedTemplateLiteral(["black"])))
           }];
-          this.colorIndex = 1;
+          this.tabs = [{
+            id: "tab1",
+            title: "No Content"
+          }, {
+            id: "tab2",
+            title: "Repeat VScroll"
+          }];
+          this.currentTabId = this.tabs[0].id;
+          this.colorIndex = 1; // using css display rule instead of *ngIf to test RepeatComponent's IntersectionObserver
+          // (*ngIf would instantiate the test component only when the tab is selected instead of immediately on page load)
+
+          this.getTabDisplayMode = function (tabId) {
+            return _this3.currentTabId === tabId ? "block" : "none";
+          };
         }
 
         _createClass(RepeatTestComponent, [{
@@ -3507,41 +4202,77 @@
       RepeatTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: RepeatTestComponent,
         selectors: [["nui-repeat-test"]],
-        decls: 8,
-        vars: 1,
-        consts: [["nui-button", "", "id", "add-color", 3, "click"], [3, "colors"]],
+        decls: 15,
+        vars: 6,
+        consts: [["id", "repeat-test-tab-group", 3, "selected"], [3, "tabId", "active", 4, "ngFor", "ngForOf"], ["id", "repeat-test-vscroll"], ["nui-button", "", "type", "button", "id", "add-color", 3, "click"], [3, "colors"], [3, "tabId", "active"]],
         template: function RepeatTestComponent_Template(rf, ctx) {
           if (rf & 1) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "nui-repeat-multi-selection-example");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "nui-tab-heading-group", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "nui-repeat-disabled-multi-selection-example");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "nui-repeat-single-selection-mode-example");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "button", 0);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function RepeatTestComponent_Template_button_click_3_listener() {
-              return ctx.addNewColor();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("selected", function RepeatTestComponent_Template_nui_tab_heading_group_selected_0_listener($event) {
+              return ctx.currentTabId = $event;
             });
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "Add color");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, RepeatTestComponent_nui_tab_heading_1_Template, 2, 3, "nui-tab-heading", 1);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](5, "nui-repeat-radio-selection-mode-example", 1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](6, "nui-repeat-radio-with-non-required-selection-mode-example");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, " No content in this tab. See other tab(s) for content.\n");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](7, "nui-repeat-single-with-required-selection-mode-example");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](5, "repeat-virtual-scroll", 2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](6, "hr");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](7, "nui-repeat-multi-selection-example");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](8, "nui-repeat-disabled-multi-selection-example");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](9, "nui-repeat-single-selection-mode-example");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "button", 3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function RepeatTestComponent_Template_button_click_10_listener() {
+              return ctx.addNewColor();
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, "Add color");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](12, "nui-repeat-radio-selection-mode-example", 4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](13, "nui-repeat-radio-with-non-required-selection-mode-example");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](14, "nui-repeat-single-with-required-selection-mode-example");
           }
 
           if (rf & 2) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.tabs);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵstyleProp"]("display", ctx.getTabDisplayMode(ctx.tabs[0].id));
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵstyleProp"]("display", ctx.getTabDisplayMode(ctx.tabs[1].id));
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](8);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("colors", ctx.colors);
           }
         },
-        directives: [_repeat_multi_selection_repeat_multi_selection_example_component__WEBPACK_IMPORTED_MODULE_1__["RepeatMultiSelectionExampleComponent"], _repeat_disabled_multi_selection_repeat_disabled_multi_selection_example_component__WEBPACK_IMPORTED_MODULE_2__["RepeatDisabledMultiSelectionExampleComponent"], _repeat_single_selection_mode_repeat_single_selection_mode_example_component__WEBPACK_IMPORTED_MODULE_3__["RepeatSingleSelectionModeExampleComponent"], _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_4__["ButtonComponent"], _repeat_radio_selection_mode_repeat_radio_selection_mode_example_component__WEBPACK_IMPORTED_MODULE_5__["RepeatRadioSelectionModeExampleComponent"], _repeat_radio_with_non_required_selection_mode_repeat_radio_with_non_required_selection_mode_example_component__WEBPACK_IMPORTED_MODULE_6__["RepeatRadioWithNonRequiredSelectionModeExampleComponent"], _repeat_single_with_required_selection_mode_repeat_single_with_required_selection_mode_example_component__WEBPACK_IMPORTED_MODULE_7__["RepeatSingleWithRequiredSelectionModeExampleComponent"]],
+        directives: [_src_lib_tabgroup_tab_heading_group_tab_heading_group_component__WEBPACK_IMPORTED_MODULE_1__["TabHeadingGroupComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_2__["NgForOf"], _repeat_virtual_scroll_repeat_virtual_scroll_component__WEBPACK_IMPORTED_MODULE_3__["RepeatVirtualScrollComponent"], _repeat_multi_selection_repeat_multi_selection_example_component__WEBPACK_IMPORTED_MODULE_4__["RepeatMultiSelectionExampleComponent"], _repeat_disabled_multi_selection_repeat_disabled_multi_selection_example_component__WEBPACK_IMPORTED_MODULE_5__["RepeatDisabledMultiSelectionExampleComponent"], _repeat_single_selection_mode_repeat_single_selection_mode_example_component__WEBPACK_IMPORTED_MODULE_6__["RepeatSingleSelectionModeExampleComponent"], _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_7__["ButtonComponent"], _repeat_radio_selection_mode_repeat_radio_selection_mode_example_component__WEBPACK_IMPORTED_MODULE_8__["RepeatRadioSelectionModeExampleComponent"], _repeat_radio_with_non_required_selection_mode_repeat_radio_with_non_required_selection_mode_example_component__WEBPACK_IMPORTED_MODULE_9__["RepeatRadioWithNonRequiredSelectionModeExampleComponent"], _repeat_single_with_required_selection_mode_repeat_single_with_required_selection_mode_example_component__WEBPACK_IMPORTED_MODULE_10__["RepeatSingleWithRequiredSelectionModeExampleComponent"], _src_lib_tabgroup_tab_heading_tab_heading_component__WEBPACK_IMPORTED_MODULE_11__["TabHeadingComponent"]],
         encapsulation: 2
       });
       /***/
@@ -3993,8 +4724,132 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import { ScrollingModule } from \"@angular/cdk/scrolling\";\nimport { NgModule } from \"@angular/core\";\nimport { RouterModule } from \"@angular/router\";\nimport {\n    DEMO_PATH_TOKEN,\n    NuiButtonModule,\n    NuiDocsModule,\n    NuiFormFieldModule,\n    NuiMessageModule, NuiProgressModule,\n    NuiRepeatModule,\n    NuiSearchModule,\n    NuiSwitchModule,\n    SrlcStage,\n} from \"@nova-ui/bits\";\n\nimport {\n    RepeatDisabledMultiSelectionExampleComponent,\n    RepeatDragHandleExampleComponent,\n    RepeatDragPreviewExampleComponent,\n    RepeatDragSimpleExampleComponent,\n    RepeatExampleComponent,\n    RepeatItemExampleComponent,\n    RepeatMultiSelectionExampleComponent,\n    RepeatRadioSelectionModeExampleComponent,\n    RepeatRadioWithNonRequiredSelectionModeExampleComponent,\n    RepeatReorderItemConfigExampleComponent,\n    RepeatReorderSimpleExampleComponent,\n    RepeatSimpleExampleComponent,\n    RepeatSingleSelectionModeExampleComponent,\n    RepeatSingleWithRequiredSelectionModeExampleComponent,\n} from \"./index\";\nimport { RepeatTestComponent } from \"./repeat-select-test/repeat-test.component\";\n\nconst routes = [\n    {\n        path: \"\",\n        component: RepeatExampleComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.ga,\n            },\n            showThemeSwitcher: true,\n        },\n    },\n    {\n        path: \"repeat-item\",\n        component: RepeatItemExampleComponent,\n    },\n    {\n        path: \"repeat-test\",\n        component: RepeatTestComponent,\n    },\n];\n\n@NgModule({\n    imports: [\n        NuiButtonModule,\n        NuiRepeatModule,\n        NuiSwitchModule,\n        NuiMessageModule,\n        NuiDocsModule,\n        RouterModule.forChild(routes),\n        ScrollingModule,\n        NuiProgressModule,\n        NuiSearchModule,\n        NuiFormFieldModule,\n    ],\n    declarations: [\n        RepeatExampleComponent,\n        RepeatItemExampleComponent,\n        RepeatDisabledMultiSelectionExampleComponent,\n        RepeatMultiSelectionExampleComponent,\n        RepeatRadioSelectionModeExampleComponent,\n        RepeatRadioWithNonRequiredSelectionModeExampleComponent,\n        RepeatSimpleExampleComponent,\n        RepeatDragSimpleExampleComponent,\n        RepeatReorderSimpleExampleComponent,\n        RepeatDragPreviewExampleComponent,\n        RepeatSingleSelectionModeExampleComponent,\n        RepeatSingleWithRequiredSelectionModeExampleComponent,\n        RepeatTestComponent,\n        RepeatReorderItemConfigExampleComponent,\n        RepeatDragHandleExampleComponent,\n    ],\n    providers: [\n        {\n            provide: DEMO_PATH_TOKEN,\n            useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/),\n        },\n    ],\n    exports: [\n        RouterModule,\n    ],\n})\nexport class RepeatModule {\n}\n";
+      __webpack_exports__["default"] = "import { ScrollingModule } from \"@angular/cdk/scrolling\";\nimport { NgModule } from \"@angular/core\";\nimport { RouterModule } from \"@angular/router\";\nimport {\n    DEMO_PATH_TOKEN,\n    NuiButtonModule,\n    NuiDocsModule,\n    NuiFormFieldModule,\n    NuiMessageModule, NuiProgressModule,\n    NuiRepeatModule,\n    NuiSearchModule,\n    NuiSwitchModule,\n    NuiTabsModule,\n    SrlcStage,\n} from \"@nova-ui/bits\";\n\nimport {\n    RepeatDisabledMultiSelectionExampleComponent,\n    RepeatDragHandleExampleComponent,\n    RepeatDragPreviewExampleComponent,\n    RepeatDragSimpleExampleComponent,\n    RepeatExampleComponent,\n    RepeatItemExampleComponent,\n    RepeatMultiSelectionExampleComponent,\n    RepeatRadioSelectionModeExampleComponent,\n    RepeatRadioWithNonRequiredSelectionModeExampleComponent,\n    RepeatReorderItemConfigExampleComponent,\n    RepeatReorderSimpleExampleComponent,\n    RepeatSimpleExampleComponent,\n    RepeatSingleSelectionModeExampleComponent,\n    RepeatSingleWithRequiredSelectionModeExampleComponent,\n    RepeatTestComponent,\n    RepeatVirtualScrollComponent,\n} from \"./index\";\n\nconst routes = [\n    {\n        path: \"\",\n        component: RepeatExampleComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.ga,\n            },\n            showThemeSwitcher: true,\n        },\n    },\n    {\n        path: \"repeat-item\",\n        component: RepeatItemExampleComponent,\n    },\n    {\n        path: \"repeat-test\",\n        component: RepeatTestComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n];\n\n@NgModule({\n    imports: [\n        NuiButtonModule,\n        NuiRepeatModule,\n        NuiSwitchModule,\n        NuiMessageModule,\n        NuiDocsModule,\n        RouterModule.forChild(routes),\n        ScrollingModule,\n        NuiProgressModule,\n        NuiSearchModule,\n        NuiFormFieldModule,\n        NuiTabsModule,\n    ],\n    declarations: [\n        RepeatExampleComponent,\n        RepeatItemExampleComponent,\n        RepeatDisabledMultiSelectionExampleComponent,\n        RepeatMultiSelectionExampleComponent,\n        RepeatRadioSelectionModeExampleComponent,\n        RepeatRadioWithNonRequiredSelectionModeExampleComponent,\n        RepeatSimpleExampleComponent,\n        RepeatDragSimpleExampleComponent,\n        RepeatReorderSimpleExampleComponent,\n        RepeatDragPreviewExampleComponent,\n        RepeatSingleSelectionModeExampleComponent,\n        RepeatSingleWithRequiredSelectionModeExampleComponent,\n        RepeatTestComponent,\n        RepeatReorderItemConfigExampleComponent,\n        RepeatDragHandleExampleComponent,\n        RepeatVirtualScrollComponent,\n    ],\n    providers: [\n        {\n            provide: DEMO_PATH_TOKEN,\n            useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/),\n        },\n    ],\n    exports: [\n        RouterModule,\n    ],\n})\nexport class RepeatModule {\n}\n";
       /***/
+    },
+
+    /***/
+    "wHrv":
+    /*!****************************************************************************************************!*\
+      !*** ./demo/src/components/demo/repeat/repeat-virtual-scroll/repeat-virtual-scroll-data-source.ts ***!
+      \****************************************************************************************************/
+
+    /*! exports provided: RepeatVirtualScrollDataSource */
+
+    /***/
+    function wHrv(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "RepeatVirtualScrollDataSource", function () {
+        return RepeatVirtualScrollDataSource;
+      });
+      /* harmony import */
+
+
+      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! tslib */
+      "mrSG");
+      /* harmony import */
+
+
+      var _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @nova-ui/bits */
+      "b5Xb");
+      /* harmony import */
+
+
+      var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! rxjs */
+      "qCKp");
+      /* harmony import */
+
+
+      var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! rxjs/operators */
+      "kU1M");
+      /* harmony import */
+
+
+      var _repeat_virtual_scroll_data__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! ./repeat-virtual-scroll-data */
+      "STWZ");
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! @angular/core */
+      "fXoL");
+
+      var RepeatVirtualScrollDataSource = /*#__PURE__*/function (_nova_ui_bits__WEBPAC) {
+        _inherits(RepeatVirtualScrollDataSource, _nova_ui_bits__WEBPAC);
+
+        var _super = _createSuper(RepeatVirtualScrollDataSource);
+
+        function RepeatVirtualScrollDataSource() {
+          _classCallCheck(this, RepeatVirtualScrollDataSource);
+
+          return _super.apply(this, arguments);
+        }
+
+        _createClass(RepeatVirtualScrollDataSource, [{
+          key: "getFilteredData",
+          value: function getFilteredData(data) {
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
+              return regeneratorRuntime.wrap(function _callee3$(_context3) {
+                while (1) {
+                  switch (_context3.prev = _context3.next) {
+                    case 0:
+                      return _context3.abrupt("return", Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["of"])(data).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (response) {
+                        var itemsSource = response.items;
+                        return {
+                          repeat: {
+                            itemsSource: itemsSource
+                          }
+                        };
+                      })).toPromise());
+
+                    case 1:
+                    case "end":
+                      return _context3.stop();
+                  }
+                }
+              }, _callee3);
+            }));
+          }
+        }, {
+          key: "getBackendData",
+          value: function getBackendData(filters) {
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["of"])({
+              items: (_repeat_virtual_scroll_data__WEBPACK_IMPORTED_MODULE_4__["DATA"] === null || _repeat_virtual_scroll_data__WEBPACK_IMPORTED_MODULE_4__["DATA"] === void 0 ? void 0 : _repeat_virtual_scroll_data__WEBPACK_IMPORTED_MODULE_4__["DATA"].map(function (item) {
+                return {
+                  name: item.name,
+                  location: item.location,
+                  status: item.status
+                };
+              })) || []
+            });
+          }
+        }]);
+
+        return RepeatVirtualScrollDataSource;
+      }(_nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["ServerSideDataSource"]);
+
+      RepeatVirtualScrollDataSource.ɵfac = function RepeatVirtualScrollDataSource_Factory(t) {
+        return ɵRepeatVirtualScrollDataSource_BaseFactory(t || RepeatVirtualScrollDataSource);
+      };
+
+      RepeatVirtualScrollDataSource.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineInjectable"]({
+        token: RepeatVirtualScrollDataSource,
+        factory: RepeatVirtualScrollDataSource.ɵfac
+      });
+
+      var ɵRepeatVirtualScrollDataSource_BaseFactory = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetInheritedFactory"](RepeatVirtualScrollDataSource);
+      /***/
+
     },
 
     /***/

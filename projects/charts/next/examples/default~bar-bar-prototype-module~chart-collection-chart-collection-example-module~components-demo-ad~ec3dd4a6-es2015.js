@@ -709,7 +709,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "convert", function() { return convert; });
 /* harmony import */ var lodash_isArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash/isArray */ "Z0cm");
 /* harmony import */ var lodash_isArray__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash_isArray__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../types */ "41FX");
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../constants */ "ttef");
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../types */ "41FX");
+
 
 
 /**
@@ -720,11 +722,11 @@ __webpack_require__.r(__webpack_exports__);
  * @param {number} position Number in the range of [0, 1] that will define the point inside of the band. Where 0 stands for start.
  * @param levels how many levels deep can we go during the conversion
  */
-function convert(scale, value, position = 0.5, levels = Number.MAX_VALUE) {
+function convert(scale, value, position = _constants__WEBPACK_IMPORTED_MODULE_1__["BAND_CENTER"], levels = Number.MAX_VALUE) {
     if (!scale) {
         return 0;
     }
-    if (!Object(_types__WEBPACK_IMPORTED_MODULE_1__["isBandScale"])(scale)) {
+    if (!Object(_types__WEBPACK_IMPORTED_MODULE_2__["isBandScale"])(scale)) {
         return scale.convert(value);
     }
     const bandScale = scale;
@@ -1313,7 +1315,7 @@ __webpack_require__.r(__webpack_exports__);
 /*!********************************************!*\
   !*** ./src/renderers/radial/public-api.ts ***!
   \********************************************/
-/*! exports provided: radialPreprocessor, radial, DEFAULT_RADIAL_RENDERER_CONFIG, RadialRenderer, DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG, RadialGaugeThresholdsRenderer, radialGaugeRendererConfig, GaugeRenderingUtils, PieRenderer, radialGrid, radialScales, RadialAccessors */
+/*! exports provided: radialPreprocessor, radial, DEFAULT_RADIAL_RENDERER_CONFIG, RadialRenderer, DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG, RadialGaugeThresholdsRenderer, radialGaugeRendererConfig, RadialGaugeRenderingUtil, PieRenderer, radialGrid, radialScales, RadialAccessors */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1328,16 +1330,16 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RadialRenderer", function() { return _radial_renderer__WEBPACK_IMPORTED_MODULE_1__["RadialRenderer"]; });
 
-/* harmony import */ var _radial_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./radial-gauge-thresholds-renderer */ "sgdl");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG", function() { return _radial_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_2__["DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG"]; });
+/* harmony import */ var _gauge_radial_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./gauge/radial-gauge-thresholds-renderer */ "CmBv");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG", function() { return _gauge_radial_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_2__["DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RadialGaugeThresholdsRenderer", function() { return _radial_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_2__["RadialGaugeThresholdsRenderer"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RadialGaugeThresholdsRenderer", function() { return _gauge_radial_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_2__["RadialGaugeThresholdsRenderer"]; });
 
-/* harmony import */ var _gauge_renderer_config__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./gauge-renderer-config */ "jC88");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "radialGaugeRendererConfig", function() { return _gauge_renderer_config__WEBPACK_IMPORTED_MODULE_3__["radialGaugeRendererConfig"]; });
+/* harmony import */ var _gauge_radial_gauge_renderer_config__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./gauge/radial-gauge-renderer-config */ "gOPF");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "radialGaugeRendererConfig", function() { return _gauge_radial_gauge_renderer_config__WEBPACK_IMPORTED_MODULE_3__["radialGaugeRendererConfig"]; });
 
-/* harmony import */ var _gauge_rendering_utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./gauge-rendering-utils */ "iwCl");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "GaugeRenderingUtils", function() { return _gauge_rendering_utils__WEBPACK_IMPORTED_MODULE_4__["GaugeRenderingUtils"]; });
+/* harmony import */ var _gauge_radial_gauge_rendering_util__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./gauge/radial-gauge-rendering-util */ "Rtv/");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RadialGaugeRenderingUtil", function() { return _gauge_radial_gauge_rendering_util__WEBPACK_IMPORTED_MODULE_4__["RadialGaugeRenderingUtil"]; });
 
 /* harmony import */ var _pie_renderer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pie-renderer */ "D6XY");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PieRenderer", function() { return _pie_renderer__WEBPACK_IMPORTED_MODULE_5__["PieRenderer"]; });
@@ -1360,6 +1362,151 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+/***/ }),
+
+/***/ "/zD8":
+/*!*********************************************************************!*\
+  !*** ./node_modules/d3-transition/node_modules/d3-color/src/lab.js ***!
+  \*********************************************************************/
+/*! exports provided: gray, default, Lab, lch, hcl, Hcl */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "gray", function() { return gray; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return lab; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Lab", function() { return Lab; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "lch", function() { return lch; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hcl", function() { return hcl; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Hcl", function() { return Hcl; });
+/* harmony import */ var _define_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./define.js */ "V03s");
+/* harmony import */ var _color_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./color.js */ "3lC8");
+/* harmony import */ var _math_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./math.js */ "oV0g");
+
+
+
+
+// https://observablehq.com/@mbostock/lab-and-rgb
+var K = 18,
+    Xn = 0.96422,
+    Yn = 1,
+    Zn = 0.82521,
+    t0 = 4 / 29,
+    t1 = 6 / 29,
+    t2 = 3 * t1 * t1,
+    t3 = t1 * t1 * t1;
+
+function labConvert(o) {
+  if (o instanceof Lab) return new Lab(o.l, o.a, o.b, o.opacity);
+  if (o instanceof Hcl) return hcl2lab(o);
+  if (!(o instanceof _color_js__WEBPACK_IMPORTED_MODULE_1__["Rgb"])) o = Object(_color_js__WEBPACK_IMPORTED_MODULE_1__["rgbConvert"])(o);
+  var r = rgb2lrgb(o.r),
+      g = rgb2lrgb(o.g),
+      b = rgb2lrgb(o.b),
+      y = xyz2lab((0.2225045 * r + 0.7168786 * g + 0.0606169 * b) / Yn), x, z;
+  if (r === g && g === b) x = z = y; else {
+    x = xyz2lab((0.4360747 * r + 0.3850649 * g + 0.1430804 * b) / Xn);
+    z = xyz2lab((0.0139322 * r + 0.0971045 * g + 0.7141733 * b) / Zn);
+  }
+  return new Lab(116 * y - 16, 500 * (x - y), 200 * (y - z), o.opacity);
+}
+
+function gray(l, opacity) {
+  return new Lab(l, 0, 0, opacity == null ? 1 : opacity);
+}
+
+function lab(l, a, b, opacity) {
+  return arguments.length === 1 ? labConvert(l) : new Lab(l, a, b, opacity == null ? 1 : opacity);
+}
+
+function Lab(l, a, b, opacity) {
+  this.l = +l;
+  this.a = +a;
+  this.b = +b;
+  this.opacity = +opacity;
+}
+
+Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["default"])(Lab, lab, Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["extend"])(_color_js__WEBPACK_IMPORTED_MODULE_1__["Color"], {
+  brighter: function(k) {
+    return new Lab(this.l + K * (k == null ? 1 : k), this.a, this.b, this.opacity);
+  },
+  darker: function(k) {
+    return new Lab(this.l - K * (k == null ? 1 : k), this.a, this.b, this.opacity);
+  },
+  rgb: function() {
+    var y = (this.l + 16) / 116,
+        x = isNaN(this.a) ? y : y + this.a / 500,
+        z = isNaN(this.b) ? y : y - this.b / 200;
+    x = Xn * lab2xyz(x);
+    y = Yn * lab2xyz(y);
+    z = Zn * lab2xyz(z);
+    return new _color_js__WEBPACK_IMPORTED_MODULE_1__["Rgb"](
+      lrgb2rgb( 3.1338561 * x - 1.6168667 * y - 0.4906146 * z),
+      lrgb2rgb(-0.9787684 * x + 1.9161415 * y + 0.0334540 * z),
+      lrgb2rgb( 0.0719453 * x - 0.2289914 * y + 1.4052427 * z),
+      this.opacity
+    );
+  }
+}));
+
+function xyz2lab(t) {
+  return t > t3 ? Math.pow(t, 1 / 3) : t / t2 + t0;
+}
+
+function lab2xyz(t) {
+  return t > t1 ? t * t * t : t2 * (t - t0);
+}
+
+function lrgb2rgb(x) {
+  return 255 * (x <= 0.0031308 ? 12.92 * x : 1.055 * Math.pow(x, 1 / 2.4) - 0.055);
+}
+
+function rgb2lrgb(x) {
+  return (x /= 255) <= 0.04045 ? x / 12.92 : Math.pow((x + 0.055) / 1.055, 2.4);
+}
+
+function hclConvert(o) {
+  if (o instanceof Hcl) return new Hcl(o.h, o.c, o.l, o.opacity);
+  if (!(o instanceof Lab)) o = labConvert(o);
+  if (o.a === 0 && o.b === 0) return new Hcl(NaN, 0 < o.l && o.l < 100 ? 0 : NaN, o.l, o.opacity);
+  var h = Math.atan2(o.b, o.a) * _math_js__WEBPACK_IMPORTED_MODULE_2__["rad2deg"];
+  return new Hcl(h < 0 ? h + 360 : h, Math.sqrt(o.a * o.a + o.b * o.b), o.l, o.opacity);
+}
+
+function lch(l, c, h, opacity) {
+  return arguments.length === 1 ? hclConvert(l) : new Hcl(h, c, l, opacity == null ? 1 : opacity);
+}
+
+function hcl(h, c, l, opacity) {
+  return arguments.length === 1 ? hclConvert(h) : new Hcl(h, c, l, opacity == null ? 1 : opacity);
+}
+
+function Hcl(h, c, l, opacity) {
+  this.h = +h;
+  this.c = +c;
+  this.l = +l;
+  this.opacity = +opacity;
+}
+
+function hcl2lab(o) {
+  if (isNaN(o.h)) return new Lab(o.l, 0, 0, o.opacity);
+  var h = o.h * _math_js__WEBPACK_IMPORTED_MODULE_2__["deg2rad"];
+  return new Lab(o.l, Math.cos(h) * o.c, Math.sin(h) * o.c, o.opacity);
+}
+
+Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["default"])(Hcl, hcl, Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["extend"])(_color_js__WEBPACK_IMPORTED_MODULE_1__["Color"], {
+  brighter: function(k) {
+    return new Hcl(this.h, this.c, this.l + K * (k == null ? 1 : k), this.opacity);
+  },
+  darker: function(k) {
+    return new Hcl(this.h, this.c, this.l - K * (k == null ? 1 : k), this.opacity);
+  },
+  rgb: function() {
+    return hcl2lab(this).rgb();
+  }
+}));
 
 
 /***/ }),
@@ -3303,6 +3450,400 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "3lC8":
+/*!***********************************************************************!*\
+  !*** ./node_modules/d3-transition/node_modules/d3-color/src/color.js ***!
+  \***********************************************************************/
+/*! exports provided: Color, darker, brighter, default, rgbConvert, rgb, Rgb, hslConvert, hsl */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Color", function() { return Color; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "darker", function() { return darker; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "brighter", function() { return brighter; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return color; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "rgbConvert", function() { return rgbConvert; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "rgb", function() { return rgb; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Rgb", function() { return Rgb; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hslConvert", function() { return hslConvert; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hsl", function() { return hsl; });
+/* harmony import */ var _define_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./define.js */ "V03s");
+
+
+function Color() {}
+
+var darker = 0.7;
+var brighter = 1 / darker;
+
+var reI = "\\s*([+-]?\\d+)\\s*",
+    reN = "\\s*([+-]?\\d*\\.?\\d+(?:[eE][+-]?\\d+)?)\\s*",
+    reP = "\\s*([+-]?\\d*\\.?\\d+(?:[eE][+-]?\\d+)?)%\\s*",
+    reHex = /^#([0-9a-f]{3,8})$/,
+    reRgbInteger = new RegExp("^rgb\\(" + [reI, reI, reI] + "\\)$"),
+    reRgbPercent = new RegExp("^rgb\\(" + [reP, reP, reP] + "\\)$"),
+    reRgbaInteger = new RegExp("^rgba\\(" + [reI, reI, reI, reN] + "\\)$"),
+    reRgbaPercent = new RegExp("^rgba\\(" + [reP, reP, reP, reN] + "\\)$"),
+    reHslPercent = new RegExp("^hsl\\(" + [reN, reP, reP] + "\\)$"),
+    reHslaPercent = new RegExp("^hsla\\(" + [reN, reP, reP, reN] + "\\)$");
+
+var named = {
+  aliceblue: 0xf0f8ff,
+  antiquewhite: 0xfaebd7,
+  aqua: 0x00ffff,
+  aquamarine: 0x7fffd4,
+  azure: 0xf0ffff,
+  beige: 0xf5f5dc,
+  bisque: 0xffe4c4,
+  black: 0x000000,
+  blanchedalmond: 0xffebcd,
+  blue: 0x0000ff,
+  blueviolet: 0x8a2be2,
+  brown: 0xa52a2a,
+  burlywood: 0xdeb887,
+  cadetblue: 0x5f9ea0,
+  chartreuse: 0x7fff00,
+  chocolate: 0xd2691e,
+  coral: 0xff7f50,
+  cornflowerblue: 0x6495ed,
+  cornsilk: 0xfff8dc,
+  crimson: 0xdc143c,
+  cyan: 0x00ffff,
+  darkblue: 0x00008b,
+  darkcyan: 0x008b8b,
+  darkgoldenrod: 0xb8860b,
+  darkgray: 0xa9a9a9,
+  darkgreen: 0x006400,
+  darkgrey: 0xa9a9a9,
+  darkkhaki: 0xbdb76b,
+  darkmagenta: 0x8b008b,
+  darkolivegreen: 0x556b2f,
+  darkorange: 0xff8c00,
+  darkorchid: 0x9932cc,
+  darkred: 0x8b0000,
+  darksalmon: 0xe9967a,
+  darkseagreen: 0x8fbc8f,
+  darkslateblue: 0x483d8b,
+  darkslategray: 0x2f4f4f,
+  darkslategrey: 0x2f4f4f,
+  darkturquoise: 0x00ced1,
+  darkviolet: 0x9400d3,
+  deeppink: 0xff1493,
+  deepskyblue: 0x00bfff,
+  dimgray: 0x696969,
+  dimgrey: 0x696969,
+  dodgerblue: 0x1e90ff,
+  firebrick: 0xb22222,
+  floralwhite: 0xfffaf0,
+  forestgreen: 0x228b22,
+  fuchsia: 0xff00ff,
+  gainsboro: 0xdcdcdc,
+  ghostwhite: 0xf8f8ff,
+  gold: 0xffd700,
+  goldenrod: 0xdaa520,
+  gray: 0x808080,
+  green: 0x008000,
+  greenyellow: 0xadff2f,
+  grey: 0x808080,
+  honeydew: 0xf0fff0,
+  hotpink: 0xff69b4,
+  indianred: 0xcd5c5c,
+  indigo: 0x4b0082,
+  ivory: 0xfffff0,
+  khaki: 0xf0e68c,
+  lavender: 0xe6e6fa,
+  lavenderblush: 0xfff0f5,
+  lawngreen: 0x7cfc00,
+  lemonchiffon: 0xfffacd,
+  lightblue: 0xadd8e6,
+  lightcoral: 0xf08080,
+  lightcyan: 0xe0ffff,
+  lightgoldenrodyellow: 0xfafad2,
+  lightgray: 0xd3d3d3,
+  lightgreen: 0x90ee90,
+  lightgrey: 0xd3d3d3,
+  lightpink: 0xffb6c1,
+  lightsalmon: 0xffa07a,
+  lightseagreen: 0x20b2aa,
+  lightskyblue: 0x87cefa,
+  lightslategray: 0x778899,
+  lightslategrey: 0x778899,
+  lightsteelblue: 0xb0c4de,
+  lightyellow: 0xffffe0,
+  lime: 0x00ff00,
+  limegreen: 0x32cd32,
+  linen: 0xfaf0e6,
+  magenta: 0xff00ff,
+  maroon: 0x800000,
+  mediumaquamarine: 0x66cdaa,
+  mediumblue: 0x0000cd,
+  mediumorchid: 0xba55d3,
+  mediumpurple: 0x9370db,
+  mediumseagreen: 0x3cb371,
+  mediumslateblue: 0x7b68ee,
+  mediumspringgreen: 0x00fa9a,
+  mediumturquoise: 0x48d1cc,
+  mediumvioletred: 0xc71585,
+  midnightblue: 0x191970,
+  mintcream: 0xf5fffa,
+  mistyrose: 0xffe4e1,
+  moccasin: 0xffe4b5,
+  navajowhite: 0xffdead,
+  navy: 0x000080,
+  oldlace: 0xfdf5e6,
+  olive: 0x808000,
+  olivedrab: 0x6b8e23,
+  orange: 0xffa500,
+  orangered: 0xff4500,
+  orchid: 0xda70d6,
+  palegoldenrod: 0xeee8aa,
+  palegreen: 0x98fb98,
+  paleturquoise: 0xafeeee,
+  palevioletred: 0xdb7093,
+  papayawhip: 0xffefd5,
+  peachpuff: 0xffdab9,
+  peru: 0xcd853f,
+  pink: 0xffc0cb,
+  plum: 0xdda0dd,
+  powderblue: 0xb0e0e6,
+  purple: 0x800080,
+  rebeccapurple: 0x663399,
+  red: 0xff0000,
+  rosybrown: 0xbc8f8f,
+  royalblue: 0x4169e1,
+  saddlebrown: 0x8b4513,
+  salmon: 0xfa8072,
+  sandybrown: 0xf4a460,
+  seagreen: 0x2e8b57,
+  seashell: 0xfff5ee,
+  sienna: 0xa0522d,
+  silver: 0xc0c0c0,
+  skyblue: 0x87ceeb,
+  slateblue: 0x6a5acd,
+  slategray: 0x708090,
+  slategrey: 0x708090,
+  snow: 0xfffafa,
+  springgreen: 0x00ff7f,
+  steelblue: 0x4682b4,
+  tan: 0xd2b48c,
+  teal: 0x008080,
+  thistle: 0xd8bfd8,
+  tomato: 0xff6347,
+  turquoise: 0x40e0d0,
+  violet: 0xee82ee,
+  wheat: 0xf5deb3,
+  white: 0xffffff,
+  whitesmoke: 0xf5f5f5,
+  yellow: 0xffff00,
+  yellowgreen: 0x9acd32
+};
+
+Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["default"])(Color, color, {
+  copy: function(channels) {
+    return Object.assign(new this.constructor, this, channels);
+  },
+  displayable: function() {
+    return this.rgb().displayable();
+  },
+  hex: color_formatHex, // Deprecated! Use color.formatHex.
+  formatHex: color_formatHex,
+  formatHsl: color_formatHsl,
+  formatRgb: color_formatRgb,
+  toString: color_formatRgb
+});
+
+function color_formatHex() {
+  return this.rgb().formatHex();
+}
+
+function color_formatHsl() {
+  return hslConvert(this).formatHsl();
+}
+
+function color_formatRgb() {
+  return this.rgb().formatRgb();
+}
+
+function color(format) {
+  var m, l;
+  format = (format + "").trim().toLowerCase();
+  return (m = reHex.exec(format)) ? (l = m[1].length, m = parseInt(m[1], 16), l === 6 ? rgbn(m) // #ff0000
+      : l === 3 ? new Rgb((m >> 8 & 0xf) | (m >> 4 & 0xf0), (m >> 4 & 0xf) | (m & 0xf0), ((m & 0xf) << 4) | (m & 0xf), 1) // #f00
+      : l === 8 ? rgba(m >> 24 & 0xff, m >> 16 & 0xff, m >> 8 & 0xff, (m & 0xff) / 0xff) // #ff000000
+      : l === 4 ? rgba((m >> 12 & 0xf) | (m >> 8 & 0xf0), (m >> 8 & 0xf) | (m >> 4 & 0xf0), (m >> 4 & 0xf) | (m & 0xf0), (((m & 0xf) << 4) | (m & 0xf)) / 0xff) // #f000
+      : null) // invalid hex
+      : (m = reRgbInteger.exec(format)) ? new Rgb(m[1], m[2], m[3], 1) // rgb(255, 0, 0)
+      : (m = reRgbPercent.exec(format)) ? new Rgb(m[1] * 255 / 100, m[2] * 255 / 100, m[3] * 255 / 100, 1) // rgb(100%, 0%, 0%)
+      : (m = reRgbaInteger.exec(format)) ? rgba(m[1], m[2], m[3], m[4]) // rgba(255, 0, 0, 1)
+      : (m = reRgbaPercent.exec(format)) ? rgba(m[1] * 255 / 100, m[2] * 255 / 100, m[3] * 255 / 100, m[4]) // rgb(100%, 0%, 0%, 1)
+      : (m = reHslPercent.exec(format)) ? hsla(m[1], m[2] / 100, m[3] / 100, 1) // hsl(120, 50%, 50%)
+      : (m = reHslaPercent.exec(format)) ? hsla(m[1], m[2] / 100, m[3] / 100, m[4]) // hsla(120, 50%, 50%, 1)
+      : named.hasOwnProperty(format) ? rgbn(named[format]) // eslint-disable-line no-prototype-builtins
+      : format === "transparent" ? new Rgb(NaN, NaN, NaN, 0)
+      : null;
+}
+
+function rgbn(n) {
+  return new Rgb(n >> 16 & 0xff, n >> 8 & 0xff, n & 0xff, 1);
+}
+
+function rgba(r, g, b, a) {
+  if (a <= 0) r = g = b = NaN;
+  return new Rgb(r, g, b, a);
+}
+
+function rgbConvert(o) {
+  if (!(o instanceof Color)) o = color(o);
+  if (!o) return new Rgb;
+  o = o.rgb();
+  return new Rgb(o.r, o.g, o.b, o.opacity);
+}
+
+function rgb(r, g, b, opacity) {
+  return arguments.length === 1 ? rgbConvert(r) : new Rgb(r, g, b, opacity == null ? 1 : opacity);
+}
+
+function Rgb(r, g, b, opacity) {
+  this.r = +r;
+  this.g = +g;
+  this.b = +b;
+  this.opacity = +opacity;
+}
+
+Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["default"])(Rgb, rgb, Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["extend"])(Color, {
+  brighter: function(k) {
+    k = k == null ? brighter : Math.pow(brighter, k);
+    return new Rgb(this.r * k, this.g * k, this.b * k, this.opacity);
+  },
+  darker: function(k) {
+    k = k == null ? darker : Math.pow(darker, k);
+    return new Rgb(this.r * k, this.g * k, this.b * k, this.opacity);
+  },
+  rgb: function() {
+    return this;
+  },
+  displayable: function() {
+    return (-0.5 <= this.r && this.r < 255.5)
+        && (-0.5 <= this.g && this.g < 255.5)
+        && (-0.5 <= this.b && this.b < 255.5)
+        && (0 <= this.opacity && this.opacity <= 1);
+  },
+  hex: rgb_formatHex, // Deprecated! Use color.formatHex.
+  formatHex: rgb_formatHex,
+  formatRgb: rgb_formatRgb,
+  toString: rgb_formatRgb
+}));
+
+function rgb_formatHex() {
+  return "#" + hex(this.r) + hex(this.g) + hex(this.b);
+}
+
+function rgb_formatRgb() {
+  var a = this.opacity; a = isNaN(a) ? 1 : Math.max(0, Math.min(1, a));
+  return (a === 1 ? "rgb(" : "rgba(")
+      + Math.max(0, Math.min(255, Math.round(this.r) || 0)) + ", "
+      + Math.max(0, Math.min(255, Math.round(this.g) || 0)) + ", "
+      + Math.max(0, Math.min(255, Math.round(this.b) || 0))
+      + (a === 1 ? ")" : ", " + a + ")");
+}
+
+function hex(value) {
+  value = Math.max(0, Math.min(255, Math.round(value) || 0));
+  return (value < 16 ? "0" : "") + value.toString(16);
+}
+
+function hsla(h, s, l, a) {
+  if (a <= 0) h = s = l = NaN;
+  else if (l <= 0 || l >= 1) h = s = NaN;
+  else if (s <= 0) h = NaN;
+  return new Hsl(h, s, l, a);
+}
+
+function hslConvert(o) {
+  if (o instanceof Hsl) return new Hsl(o.h, o.s, o.l, o.opacity);
+  if (!(o instanceof Color)) o = color(o);
+  if (!o) return new Hsl;
+  if (o instanceof Hsl) return o;
+  o = o.rgb();
+  var r = o.r / 255,
+      g = o.g / 255,
+      b = o.b / 255,
+      min = Math.min(r, g, b),
+      max = Math.max(r, g, b),
+      h = NaN,
+      s = max - min,
+      l = (max + min) / 2;
+  if (s) {
+    if (r === max) h = (g - b) / s + (g < b) * 6;
+    else if (g === max) h = (b - r) / s + 2;
+    else h = (r - g) / s + 4;
+    s /= l < 0.5 ? max + min : 2 - max - min;
+    h *= 60;
+  } else {
+    s = l > 0 && l < 1 ? 0 : h;
+  }
+  return new Hsl(h, s, l, o.opacity);
+}
+
+function hsl(h, s, l, opacity) {
+  return arguments.length === 1 ? hslConvert(h) : new Hsl(h, s, l, opacity == null ? 1 : opacity);
+}
+
+function Hsl(h, s, l, opacity) {
+  this.h = +h;
+  this.s = +s;
+  this.l = +l;
+  this.opacity = +opacity;
+}
+
+Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["default"])(Hsl, hsl, Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["extend"])(Color, {
+  brighter: function(k) {
+    k = k == null ? brighter : Math.pow(brighter, k);
+    return new Hsl(this.h, this.s, this.l * k, this.opacity);
+  },
+  darker: function(k) {
+    k = k == null ? darker : Math.pow(darker, k);
+    return new Hsl(this.h, this.s, this.l * k, this.opacity);
+  },
+  rgb: function() {
+    var h = this.h % 360 + (this.h < 0) * 360,
+        s = isNaN(h) || isNaN(this.s) ? 0 : this.s,
+        l = this.l,
+        m2 = l + (l < 0.5 ? l : 1 - l) * s,
+        m1 = 2 * l - m2;
+    return new Rgb(
+      hsl2rgb(h >= 240 ? h - 240 : h + 120, m1, m2),
+      hsl2rgb(h, m1, m2),
+      hsl2rgb(h < 120 ? h + 240 : h - 120, m1, m2),
+      this.opacity
+    );
+  },
+  displayable: function() {
+    return (0 <= this.s && this.s <= 1 || isNaN(this.s))
+        && (0 <= this.l && this.l <= 1)
+        && (0 <= this.opacity && this.opacity <= 1);
+  },
+  formatHsl: function() {
+    var a = this.opacity; a = isNaN(a) ? 1 : Math.max(0, Math.min(1, a));
+    return (a === 1 ? "hsl(" : "hsla(")
+        + (this.h || 0) + ", "
+        + (this.s || 0) * 100 + "%, "
+        + (this.l || 0) * 100 + "%"
+        + (a === 1 ? ")" : ", " + a + ")");
+  }
+}));
+
+/* From FvD 13.37, CSS Color Module Level 3 */
+function hsl2rgb(h, m1, m2) {
+  return (h < 60 ? m1 + (m2 - m1) * h / 60
+      : h < 180 ? m2
+      : h < 240 ? m1 + (m2 - m1) * (240 - h) / 60
+      : m1) * 255;
+}
+
+
+/***/ }),
+
 /***/ "3xmg":
 /*!**********************************************!*\
   !*** ./node_modules/d3-scale/src/ordinal.js ***!
@@ -3404,7 +3945,7 @@ function hasInnerScale(scale) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "rgbBasis", function() { return rgbBasis; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "rgbBasisClosed", function() { return rgbBasisClosed; });
-/* harmony import */ var d3_color__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3-color */ "Ij2O");
+/* harmony import */ var d3_color__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3-color */ "qXv/");
 /* harmony import */ var _basis_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./basis.js */ "yEp2");
 /* harmony import */ var _basisClosed_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./basisClosed.js */ "S83q");
 /* harmony import */ var _color_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./color.js */ "sFV2");
@@ -4221,7 +4762,7 @@ var polyInOut = (function custom(e) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var d3_color__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3-color */ "Ij2O");
+/* harmony import */ var d3_color__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3-color */ "qXv/");
 /* harmony import */ var d3_interpolate__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! d3-interpolate */ "pD2Y");
 
 
@@ -4466,7 +5007,7 @@ function tpmt(x) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var d3_color__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3-color */ "Ij2O");
+/* harmony import */ var d3_color__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3-color */ "qXv/");
 /* harmony import */ var _rgb_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./rgb.js */ "42CK");
 /* harmony import */ var _array_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./array.js */ "ZzDG");
 /* harmony import */ var _date_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./date.js */ "G21l");
@@ -5472,155 +6013,6 @@ __webpack_require__.r(__webpack_exports__);
 
   return new _index_js__WEBPACK_IMPORTED_MODULE_1__["Transition"](subgroups, parents, name, id);
 });
-
-
-/***/ }),
-
-/***/ "7XYI":
-/*!******************************************************************!*\
-  !*** ./src/core/plugins/radial-gauge-threshold-labels-plugin.ts ***!
-  \******************************************************************/
-/*! exports provided: RadialGaugeThresholdLabelsPlugin */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RadialGaugeThresholdLabelsPlugin", function() { return RadialGaugeThresholdLabelsPlugin; });
-/* harmony import */ var d3_shape__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3-shape */ "8d86");
-/* harmony import */ var lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash/defaultsDeep */ "P4Tr");
-/* harmony import */ var lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash/isUndefined */ "TP7S");
-/* harmony import */ var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "qCKp");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "kU1M");
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../constants */ "he5r");
-/* harmony import */ var _renderers_radial_gauge_rendering_utils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../renderers/radial/gauge-rendering-utils */ "iwCl");
-/* harmony import */ var _renderers_radial_radial_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../renderers/radial/radial-gauge-thresholds-renderer */ "sgdl");
-/* harmony import */ var _renderers_types__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../renderers/types */ "AbRU");
-/* harmony import */ var _common_chart_plugin__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../common/chart-plugin */ "e7eq");
-
-
-
-
-
-
-
-
-
-
-/**
- * @ignore
- * A chart plugin that handles the rendering of labels for radial gauge thresholds
- */
-class RadialGaugeThresholdLabelsPlugin extends _common_chart_plugin__WEBPACK_IMPORTED_MODULE_9__["ChartPlugin"] {
-    constructor(config = {}) {
-        super();
-        this.config = config;
-        /** The default plugin configuration */
-        this.DEFAULT_CONFIG = {
-            gridMargin: {
-                top: RadialGaugeThresholdLabelsPlugin.MARGIN_DEFAULT,
-                right: RadialGaugeThresholdLabelsPlugin.MARGIN_DEFAULT,
-                bottom: RadialGaugeThresholdLabelsPlugin.MARGIN_DEFAULT,
-                left: RadialGaugeThresholdLabelsPlugin.MARGIN_DEFAULT,
-            },
-            labelPadding: 5,
-            formatterName: RadialGaugeThresholdLabelsPlugin.FORMATTER_NAME_DEFAULT,
-        };
-        this.destroy$ = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
-        this.config = lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_1___default()(this.config, this.DEFAULT_CONFIG);
-    }
-    initialize() {
-        this.lasagnaLayer = this.chart.getGrid().getLasagna().addLayer({
-            name: RadialGaugeThresholdLabelsPlugin.CONTAINER_CLASS,
-            order: _constants__WEBPACK_IMPORTED_MODULE_5__["STANDARD_RENDER_LAYERS"][_renderers_types__WEBPACK_IMPORTED_MODULE_8__["RenderLayerName"].data].order,
-            clipped: false,
-        });
-        const gridConfig = this.chart.getGrid().config();
-        gridConfig.dimension.margin = this.config.gridMargin;
-        this.chart.getEventBus().getStream(_constants__WEBPACK_IMPORTED_MODULE_5__["INTERACTION_DATA_POINTS_EVENT"]).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeUntil"])(this.destroy$)).subscribe((event) => {
-            const gaugeThresholdLabelsGroup = this.lasagnaLayer.select(`.${RadialGaugeThresholdLabelsPlugin.CONTAINER_CLASS}`);
-            if (!gaugeThresholdLabelsGroup.empty()) {
-                const dataPoints = event.data.dataPoints;
-                const labelOpacity = Object.keys(dataPoints).find((key, index) => dataPoints[key].index === _constants__WEBPACK_IMPORTED_MODULE_5__["DATA_POINT_NOT_FOUND"]) ? 0 : 1;
-                gaugeThresholdLabelsGroup.style("opacity", labelOpacity);
-            }
-        });
-    }
-    updateDimensions() {
-        var _a, _b;
-        const thresholdsSeries = this.chart.getDataManager().chartSeriesSet.find((series) => series.renderer instanceof _renderers_radial_radial_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_7__["RadialGaugeThresholdsRenderer"]);
-        const renderer = thresholdsSeries === null || thresholdsSeries === void 0 ? void 0 : thresholdsSeries.renderer;
-        const labelRadius = (renderer === null || renderer === void 0 ? void 0 : renderer.getOuterRadius((_a = thresholdsSeries === null || thresholdsSeries === void 0 ? void 0 : thresholdsSeries.scales.r.range()) !== null && _a !== void 0 ? _a : [0, 0], 0)) + this.config.labelPadding;
-        if (lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default()(labelRadius)) {
-            throw new Error("Radius is undefined");
-        }
-        const data = thresholdsSeries === null || thresholdsSeries === void 0 ? void 0 : thresholdsSeries.data;
-        if (lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default()(data)) {
-            throw new Error("Gauge threshold series data is undefined");
-        }
-        let gaugeThresholdsLabelsGroup = this.lasagnaLayer.select(`.${RadialGaugeThresholdLabelsPlugin.CONTAINER_CLASS}`);
-        if (gaugeThresholdsLabelsGroup.empty()) {
-            gaugeThresholdsLabelsGroup = this.lasagnaLayer.append("svg:g")
-                .attr("class", RadialGaugeThresholdLabelsPlugin.CONTAINER_CLASS)
-                .style("opacity", 0);
-        }
-        const labelGenerator = Object(d3_shape__WEBPACK_IMPORTED_MODULE_0__["arc"])()
-            .outerRadius(labelRadius)
-            .innerRadius(labelRadius);
-        const formatter = (_b = thresholdsSeries === null || thresholdsSeries === void 0 ? void 0 : thresholdsSeries.scales.r.formatters[this.config.formatterName]) !== null && _b !== void 0 ? _b : (d => d);
-        const labelSelection = gaugeThresholdsLabelsGroup.selectAll(`text.${RadialGaugeThresholdLabelsPlugin.LABEL_CLASS}`)
-            .data(_renderers_radial_gauge_rendering_utils__WEBPACK_IMPORTED_MODULE_6__["GaugeRenderingUtils"].generateThresholdData(data));
-        labelSelection.exit().remove();
-        labelSelection.enter()
-            .append("text")
-            .attr("class", RadialGaugeThresholdLabelsPlugin.LABEL_CLASS)
-            .merge(labelSelection)
-            .attr("transform", (d) => `translate(${labelGenerator.centroid(d)})`)
-            .attr("title", (d, i) => formatter(data[i].value))
-            .style("text-anchor", (d) => this.getTextAnchor(d.startAngle))
-            .style("alignment-baseline", (d) => this.getAlignmentBaseline(d.startAngle))
-            .text((d, i) => formatter(data[i].value));
-    }
-    destroy() {
-        if (this.destroy$) {
-            this.destroy$.next();
-            this.destroy$.complete();
-        }
-    }
-    getTextAnchor(angle) {
-        // pie charts start on the top, so we need to subtract Math.PI / 2 (90 degrees)
-        const cosine = Math.cos(angle - Math.PI / 2);
-        if (cosine > 0.5) {
-            // used for right 120 degrees of chart
-            return "start";
-        }
-        if (cosine < -0.5) {
-            // used for left 120 degrees of chart
-            return "end";
-        }
-        // used for top 60 degrees and bottom 60 degrees of chart
-        return "middle";
-    }
-    getAlignmentBaseline(angle) {
-        // pie charts start on the top, so we need to add Math.PI / 2 (90 degrees)
-        const sine = Math.sin(angle + Math.PI / 2);
-        if (sine > 0.5) {
-            // used for top 120 degrees of chart
-            return "text-after-edge";
-        }
-        if (sine < -0.5) {
-            // used for bottom 120 degrees of chart
-            return "text-before-edge";
-        }
-        // used for left 60 degrees and right 60 degrees of chart
-        return "central";
-    }
-}
-RadialGaugeThresholdLabelsPlugin.CONTAINER_CLASS = "gauge-threshold-labels";
-RadialGaugeThresholdLabelsPlugin.LABEL_CLASS = "threshold-label";
-RadialGaugeThresholdLabelsPlugin.FORMATTER_NAME_DEFAULT = "threshold-label";
-RadialGaugeThresholdLabelsPlugin.MARGIN_DEFAULT = 25;
 
 
 /***/ }),
@@ -7431,6 +7823,7 @@ var RenderLayerName;
 (function (RenderLayerName) {
     RenderLayerName["background"] = "background";
     RenderLayerName["data"] = "data";
+    RenderLayerName["unclippedData"] = "unclipped-data";
     RenderLayerName["foreground"] = "foreground";
 })(RenderLayerName || (RenderLayerName = {}));
 
@@ -7831,6 +8224,83 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "CmBv":
+/*!************************************************************************!*\
+  !*** ./src/renderers/radial/gauge/radial-gauge-thresholds-renderer.ts ***!
+  \************************************************************************/
+/*! exports provided: DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG, RadialGaugeThresholdsRenderer */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG", function() { return DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RadialGaugeThresholdsRenderer", function() { return RadialGaugeThresholdsRenderer; });
+/* harmony import */ var d3_shape__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3-shape */ "8d86");
+/* harmony import */ var lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash/defaultsDeep */ "P4Tr");
+/* harmony import */ var lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash/isUndefined */ "TP7S");
+/* harmony import */ var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../constants */ "s8k4");
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../types */ "AbRU");
+/* harmony import */ var _radial_renderer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../radial-renderer */ "+mSY");
+/* harmony import */ var _radial_gauge_rendering_util__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./radial-gauge-rendering-util */ "Rtv/");
+
+
+
+
+
+
+
+/**
+ * @ignore Default configuration for Radial Gauge Thresholds Renderer
+ */
+const DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG = {};
+/**
+ * @ignore Renderer for drawing threshold level indicators for gauges
+ */
+class RadialGaugeThresholdsRenderer extends _radial_renderer__WEBPACK_IMPORTED_MODULE_5__["RadialRenderer"] {
+    /**
+     * Creates an instance of RadialGaugeThresholdsRenderer.
+     * @param {IRadialGaugeThresholdsRendererConfig} [config]
+     * Renderer configuration object. Defaults to `DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG` constant value.
+     */
+    constructor(config = {}) {
+        super(config);
+        this.config = lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_1___default()(this.config, DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG);
+    }
+    /** See {@link Renderer#draw} */
+    draw(renderSeries, rendererSubject) {
+        const dataContainer = renderSeries.containers[_types__WEBPACK_IMPORTED_MODULE_4__["RenderLayerName"].data];
+        const data = renderSeries.dataSeries.data;
+        this.segmentWidth = this.config.annularWidth || 0;
+        const innerRadius = this.getInnerRadius(renderSeries.scales.r.range(), 0);
+        const markerGenerator = Object(d3_shape__WEBPACK_IMPORTED_MODULE_0__["arc"])()
+            .outerRadius(this.getOuterRadius(renderSeries.scales.r.range(), 0))
+            .innerRadius(innerRadius >= 0 ? innerRadius : 0);
+        const markerSelection = dataContainer.selectAll(`circle.${_constants__WEBPACK_IMPORTED_MODULE_3__["GAUGE_THRESHOLD_MARKER_CLASS"]}`)
+            .data(_radial_gauge_rendering_util__WEBPACK_IMPORTED_MODULE_6__["RadialGaugeRenderingUtil"].generateThresholdData(data));
+        markerSelection.exit().remove();
+        markerSelection.enter()
+            .append("circle")
+            .attr("class", _constants__WEBPACK_IMPORTED_MODULE_3__["GAUGE_THRESHOLD_MARKER_CLASS"])
+            .merge(markerSelection)
+            .attr("cx", d => markerGenerator.centroid(d)[0])
+            .attr("cy", d => markerGenerator.centroid(d)[1])
+            .attr("r", 4)
+            .style("fill", (d, i) => `var(--nui-color-${data[i].hit ? "text-light" : "icon-default"})`)
+            .style("stroke-width", 0);
+    }
+    getInnerRadius(range, index) {
+        if (lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default()(this.segmentWidth)) {
+            throw new Error("Can't compute inner radius");
+        }
+        return range[1] - range[0] - this.segmentWidth;
+    }
+}
+
+
+/***/ }),
+
 /***/ "Cnj1":
 /*!**************************************************!*\
   !*** ./node_modules/d3-selection/src/matcher.js ***!
@@ -7992,7 +8462,7 @@ function attrTween(name, value) {
 /*!*****************************************!*\
   !*** ./src/renderers/bar/public-api.ts ***!
   \*****************************************/
-/*! exports provided: BarRenderer, stackedPreprocessor, stack, barGrid, barScales, BarAccessors, barAccessors, HorizontalBarAccessors, VerticalBarAccessors, StatusAccessors, statusAccessors, BarHighlightStrategy, BarSeriesHighlightStrategy */
+/*! exports provided: BarRenderer, stackedPreprocessor, stack, barGrid, barScales, BarAccessors, barAccessors, HorizontalBarAccessors, VerticalBarAccessors, StatusAccessors, statusAccessors, BarHighlightStrategy, BarSeriesHighlightStrategy, DEFAULT_LINEAR_GAUGE_THRESHOLDS_RENDERER_CONFIG, LinearGaugeThresholdsRenderer */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8029,6 +8499,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BarHighlightStrategy", function() { return _highlight_strategies_public_api__WEBPACK_IMPORTED_MODULE_6__["BarHighlightStrategy"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BarSeriesHighlightStrategy", function() { return _highlight_strategies_public_api__WEBPACK_IMPORTED_MODULE_6__["BarSeriesHighlightStrategy"]; });
+
+/* harmony import */ var _linear_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./linear-gauge-thresholds-renderer */ "LkUO");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DEFAULT_LINEAR_GAUGE_THRESHOLDS_RENDERER_CONFIG", function() { return _linear_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_7__["DEFAULT_LINEAR_GAUGE_THRESHOLDS_RENDERER_CONFIG"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LinearGaugeThresholdsRenderer", function() { return _linear_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_7__["LinearGaugeThresholdsRenderer"]; });
+
 
 
 
@@ -8254,7 +8730,7 @@ class AreaRenderer extends _xy_renderer__WEBPACK_IMPORTED_MODULE_10__["XYRendere
 /*!********************************!*\
   !*** ./src/core/public-api.ts ***!
   \********************************/
-/*! exports provided: ChartPalette, MappedValueProvider, CHART_PALETTE_CS1, CHART_PALETTE_CS2, CHART_PALETTE_CS3, CHART_PALETTE_CS_S, CHART_PALETTE_CS_S_EXTENDED, CHART_MARKERS, ProcessedColorProvider, SequentialChartMarkerProvider, SequentialColorProvider, SequentialValueProvider, TextColorProvider, PathMarker, SvgMarker, defaultColorProvider, defaultPalette, defaultMarkerProvider, getColorValueByName, getAutomaticDomain, getAutomaticDomainWithIncludedInterval, getAutomaticDomainWithTicks, BandScale, PointScale, LinearScale, Scale, TimeScale, isDaylightSavingTime, TimeIntervalScale, datetimeFormatter, EMPTY_CONTINUOUS_DOMAIN, NORMALIZED_DOMAIN, isBandScale, hasInnerScale, NoopScale, convert, invert, ChartPlugin, DataManager, DataSeries, EventBus, InteractionType, Lasagna, MouseInteractiveArea, RenderEngine, Renderer, UtilityService, AxisConfig, BorderConfig, DimensionConfig, linearGaugeGridConfig, GridConfig, AreaGridConfig, BarGridConfig, BarHorizontalGridConfig, BarStatusGridConfig, sparkChartGridConfig, XYGridConfig, XYGrid, borderMidpoint, Grid, RadialGrid, TOOLTIP_POSITION_OFFSET, getVerticalSetup, getHorizontalSetup, ChartTooltipsPlugin, RadialTooltipsPlugin, BarTooltipsPlugin, ZoomPlugin, ChartPopoverPlugin, ChartDonutContentPlugin, MouseInteractiveAreaPlugin, RadialPopoverPlugin, RadialGaugeThresholdLabelsPlugin, RenderEnginePlugin, InteractionLabelPlugin, InteractionLinePlugin, ChartCollection, Chart, ChartAssist, LegendInteractionAssist, SparkChartAssist, ChartAssistEventType, ChartAssistRenderStateData, CssFilterId, GRAYSCALE_FILTER, GRAYSCALE_COLOR_MATRIX */
+/*! exports provided: ChartPalette, MappedValueProvider, CHART_PALETTE_CS1, CHART_PALETTE_CS2, CHART_PALETTE_CS3, CHART_PALETTE_CS_S, CHART_PALETTE_CS_S_EXTENDED, CHART_MARKERS, ProcessedColorProvider, SequentialChartMarkerProvider, SequentialColorProvider, SequentialValueProvider, TextColorProvider, PathMarker, SvgMarker, defaultColorProvider, defaultPalette, defaultMarkerProvider, getColorValueByName, getAutomaticDomain, getAutomaticDomainWithIncludedInterval, getAutomaticDomainWithTicks, BandScale, PointScale, LinearScale, Scale, TimeScale, isDaylightSavingTime, TimeIntervalScale, datetimeFormatter, EMPTY_CONTINUOUS_DOMAIN, NORMALIZED_DOMAIN, isBandScale, hasInnerScale, NoopScale, convert, invert, ChartPlugin, DataManager, DataSeries, EventBus, InteractionType, Lasagna, MouseInteractiveArea, RenderEngine, Renderer, UtilityService, AxisConfig, BorderConfig, DimensionConfig, linearGaugeGridConfig, GridConfig, AreaGridConfig, BarGridConfig, BarHorizontalGridConfig, BarStatusGridConfig, sparkChartGridConfig, XYGridConfig, XYGrid, borderMidpoint, Grid, RadialGrid, ChartDonutContentPlugin, ChartPopoverPlugin, RadialGaugeLabelsPlugin, GAUGE_LABEL_FORMATTER_NAME_DEFAULT, GAUGE_LABELS_CONTAINER_CLASS, GAUGE_THRESHOLD_LABEL_CLASS, InteractionLabelPlugin, InteractionLinePlugin, MouseInteractiveAreaPlugin, RadialPopoverPlugin, RenderEnginePlugin, TOOLTIP_POSITION_OFFSET, getVerticalSetup, getHorizontalSetup, ChartTooltipsPlugin, RadialTooltipsPlugin, BarTooltipsPlugin, ZoomPlugin, ChartCollection, Chart, ChartAssist, LegendInteractionAssist, SparkChartAssist, ChartAssistEventType, ChartAssistRenderStateData, CssFilterId, GRAYSCALE_FILTER, GRAYSCALE_COLOR_MATRIX */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8386,6 +8862,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RadialGrid", function() { return _grid_public_api__WEBPACK_IMPORTED_MODULE_1__["RadialGrid"]; });
 
 /* harmony import */ var _plugins_public_api__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./plugins/public-api */ "JEn9");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ChartDonutContentPlugin", function() { return _plugins_public_api__WEBPACK_IMPORTED_MODULE_2__["ChartDonutContentPlugin"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ChartPopoverPlugin", function() { return _plugins_public_api__WEBPACK_IMPORTED_MODULE_2__["ChartPopoverPlugin"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RadialGaugeLabelsPlugin", function() { return _plugins_public_api__WEBPACK_IMPORTED_MODULE_2__["RadialGaugeLabelsPlugin"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "GAUGE_LABEL_FORMATTER_NAME_DEFAULT", function() { return _plugins_public_api__WEBPACK_IMPORTED_MODULE_2__["GAUGE_LABEL_FORMATTER_NAME_DEFAULT"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "GAUGE_LABELS_CONTAINER_CLASS", function() { return _plugins_public_api__WEBPACK_IMPORTED_MODULE_2__["GAUGE_LABELS_CONTAINER_CLASS"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "GAUGE_THRESHOLD_LABEL_CLASS", function() { return _plugins_public_api__WEBPACK_IMPORTED_MODULE_2__["GAUGE_THRESHOLD_LABEL_CLASS"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "InteractionLabelPlugin", function() { return _plugins_public_api__WEBPACK_IMPORTED_MODULE_2__["InteractionLabelPlugin"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "InteractionLinePlugin", function() { return _plugins_public_api__WEBPACK_IMPORTED_MODULE_2__["InteractionLinePlugin"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MouseInteractiveAreaPlugin", function() { return _plugins_public_api__WEBPACK_IMPORTED_MODULE_2__["MouseInteractiveAreaPlugin"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RadialPopoverPlugin", function() { return _plugins_public_api__WEBPACK_IMPORTED_MODULE_2__["RadialPopoverPlugin"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RenderEnginePlugin", function() { return _plugins_public_api__WEBPACK_IMPORTED_MODULE_2__["RenderEnginePlugin"]; });
+
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TOOLTIP_POSITION_OFFSET", function() { return _plugins_public_api__WEBPACK_IMPORTED_MODULE_2__["TOOLTIP_POSITION_OFFSET"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getVerticalSetup", function() { return _plugins_public_api__WEBPACK_IMPORTED_MODULE_2__["getVerticalSetup"]; });
@@ -8399,22 +8897,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BarTooltipsPlugin", function() { return _plugins_public_api__WEBPACK_IMPORTED_MODULE_2__["BarTooltipsPlugin"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ZoomPlugin", function() { return _plugins_public_api__WEBPACK_IMPORTED_MODULE_2__["ZoomPlugin"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ChartPopoverPlugin", function() { return _plugins_public_api__WEBPACK_IMPORTED_MODULE_2__["ChartPopoverPlugin"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ChartDonutContentPlugin", function() { return _plugins_public_api__WEBPACK_IMPORTED_MODULE_2__["ChartDonutContentPlugin"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MouseInteractiveAreaPlugin", function() { return _plugins_public_api__WEBPACK_IMPORTED_MODULE_2__["MouseInteractiveAreaPlugin"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RadialPopoverPlugin", function() { return _plugins_public_api__WEBPACK_IMPORTED_MODULE_2__["RadialPopoverPlugin"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RadialGaugeThresholdLabelsPlugin", function() { return _plugins_public_api__WEBPACK_IMPORTED_MODULE_2__["RadialGaugeThresholdLabelsPlugin"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RenderEnginePlugin", function() { return _plugins_public_api__WEBPACK_IMPORTED_MODULE_2__["RenderEnginePlugin"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "InteractionLabelPlugin", function() { return _plugins_public_api__WEBPACK_IMPORTED_MODULE_2__["InteractionLabelPlugin"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "InteractionLinePlugin", function() { return _plugins_public_api__WEBPACK_IMPORTED_MODULE_2__["InteractionLinePlugin"]; });
 
 /* harmony import */ var _chart_collection__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./chart-collection */ "vu1W");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ChartCollection", function() { return _chart_collection__WEBPACK_IMPORTED_MODULE_3__["ChartCollection"]; });
@@ -9233,7 +9715,7 @@ function thresholdsSummaryGridConfig(c = new _core_grid_config_xy_grid_config__W
 /*!*********************************!*\
   !*** ./src/gauge/public-api.ts ***!
   \*********************************/
-/*! exports provided: GaugeMode, GAUGE_THICKNESS_DEFAULT, GaugeComponent, GaugeService */
+/*! exports provided: GaugeMode, GAUGE_THICKNESS_DEFAULT, GaugeComponent, GaugeUtil */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9246,8 +9728,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _gauge_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./gauge.component */ "L1pY");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "GaugeComponent", function() { return _gauge_component__WEBPACK_IMPORTED_MODULE_1__["GaugeComponent"]; });
 
-/* harmony import */ var _gauge_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./gauge.service */ "FWrN");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "GaugeService", function() { return _gauge_service__WEBPACK_IMPORTED_MODULE_2__["GaugeService"]; });
+/* harmony import */ var _gauge_util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./gauge-util */ "Hovb");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "GaugeUtil", function() { return _gauge_util__WEBPACK_IMPORTED_MODULE_2__["GaugeUtil"]; });
 
 /* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./types */ "379E");
 /* empty/unused harmony star reexport */
@@ -9538,7 +10020,7 @@ function defaultLocale(definition) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return lab; });
-/* harmony import */ var d3_color__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3-color */ "Ij2O");
+/* harmony import */ var d3_color__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3-color */ "qXv/");
 /* harmony import */ var _color_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./color.js */ "sFV2");
 
 
@@ -9710,185 +10192,6 @@ __webpack_require__.r(__webpack_exports__);
 
   return merged;
 });
-
-
-/***/ }),
-
-/***/ "FWrN":
-/*!************************************!*\
-  !*** ./src/gauge/gauge.service.ts ***!
-  \************************************/
-/*! exports provided: GaugeService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GaugeService", function() { return GaugeService; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash/isUndefined */ "TP7S");
-/* harmony import */ var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _core_common_palette_palettes__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../core/common/palette/palettes */ "Isyg");
-/* harmony import */ var _core_plugins_radial_gauge_threshold_labels_plugin__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../core/plugins/radial-gauge-threshold-labels-plugin */ "7XYI");
-/* harmony import */ var _renderers_bar_accessors_horizontal_bar_accessors__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../renderers/bar/accessors/horizontal-bar-accessors */ "rTqn");
-/* harmony import */ var _renderers_bar_accessors_vertical_bar_accessors__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../renderers/bar/accessors/vertical-bar-accessors */ "mGqK");
-/* harmony import */ var _renderers_bar_bar_renderer__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../renderers/bar/bar-renderer */ "iC++");
-/* harmony import */ var _renderers_bar_bar_scales__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../renderers/bar/bar-scales */ "sMd8");
-/* harmony import */ var _renderers_radial_accessors_radial_accessors__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../renderers/radial/accessors/radial-accessors */ "ZF6T");
-/* harmony import */ var _renderers_radial_gauge_renderer_config__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../renderers/radial/gauge-renderer-config */ "jC88");
-/* harmony import */ var _renderers_radial_radial_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../renderers/radial/radial-gauge-thresholds-renderer */ "sgdl");
-/* harmony import */ var _renderers_radial_radial_renderer__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../renderers/radial/radial-renderer */ "+mSY");
-/* harmony import */ var _renderers_radial_radial_scales__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../renderers/radial/radial-scales */ "ftV1");
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./constants */ "boxq");
-var GaugeService_1;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/**
- * @ignore
- * Convenience service to simplify gauge creation
- */
-let GaugeService = GaugeService_1 = class GaugeService {
-    assembleSeriesSet(value, max, thresholds, mode, valueColorAccessor) {
-        const initialValue = value !== null && value !== void 0 ? value : 0;
-        const initialMax = max !== null && max !== void 0 ? max : 0;
-        const { accessors, scales, renderer } = this.getGaugeAttributes(mode);
-        if (accessors.data) {
-            accessors.data.color = valueColorAccessor || this.createDefaultValueColorAccessor(thresholds);
-        }
-        const chartAssistSeries = [
-            ...this.getGaugeData(initialValue, initialMax).map(s => (Object.assign(Object.assign({}, s), { accessors,
-                scales,
-                renderer }))),
-        ];
-        // TODO: generate threshold series for linear modes
-        if (mode === _constants__WEBPACK_IMPORTED_MODULE_14__["GaugeMode"].Radial) {
-            chartAssistSeries.push(this.generateThresholdSeries(initialValue, initialMax, thresholds, accessors, scales));
-        }
-        return chartAssistSeries;
-    }
-    updateSeriesSet(value, max, thresholds, seriesSet) {
-        const newValue = value !== null && value !== void 0 ? value : 0;
-        const newMax = max !== null && max !== void 0 ? max : 0;
-        const updatedSeriesSet = seriesSet.map(series => {
-            if (series.id === GaugeService_1.QUANTITY_SERIES_ID) {
-                return Object.assign(Object.assign({}, series), { data: [{ category: "gauge", value: newValue }] });
-            }
-            if (series.id === GaugeService_1.REMAINDER_SERIES_ID) {
-                return Object.assign(Object.assign({}, series), { data: [{ category: "gauge", value: newMax - newValue }] });
-            }
-            // threshold level markers
-            return Object.assign(Object.assign({}, series), { data: this.getThresholdMarkerPoints(thresholds, newValue, newMax) });
-        });
-        return updatedSeriesSet;
-    }
-    generateThresholdSeries(value, max, thresholds, accessors, scales) {
-        return {
-            id: GaugeService_1.THRESHOLD_MARKERS_SERIES_ID,
-            data: this.getThresholdMarkerPoints(thresholds, value, max),
-            accessors,
-            scales,
-            renderer: new _renderers_radial_radial_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_11__["RadialGaugeThresholdsRenderer"](),
-            excludeFromArcCalculation: true,
-            preprocess: false,
-        };
-    }
-    setThresholdLabelFormatter(formatter, seriesSet, formatterName = _core_plugins_radial_gauge_threshold_labels_plugin__WEBPACK_IMPORTED_MODULE_4__["RadialGaugeThresholdLabelsPlugin"].FORMATTER_NAME_DEFAULT) {
-        const thresholdsSeries = seriesSet.find((series) => series.renderer instanceof _renderers_radial_radial_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_11__["RadialGaugeThresholdsRenderer"]);
-        if (thresholdsSeries) {
-            thresholdsSeries.scales.r.formatters[formatterName] = formatter;
-        }
-        return seriesSet;
-    }
-    getGaugeAttributes(mode) {
-        const t = this.getGaugeTools(mode);
-        const result = {
-            accessors: t.accessorFunction(),
-            renderer: t.rendererFunction(),
-            scales: t.scaleFunction(),
-        };
-        return result;
-    }
-    getGaugeTools(mode) {
-        const barRendererFunction = () => {
-            const renderer = new _renderers_bar_bar_renderer__WEBPACK_IMPORTED_MODULE_7__["BarRenderer"]();
-            renderer.config.padding = 0;
-            renderer.config.strokeWidth = 0;
-            return renderer;
-        };
-        const chartTools = {
-            [_constants__WEBPACK_IMPORTED_MODULE_14__["GaugeMode"].Radial]: {
-                rendererFunction: () => new _renderers_radial_radial_renderer__WEBPACK_IMPORTED_MODULE_12__["RadialRenderer"](Object(_renderers_radial_gauge_renderer_config__WEBPACK_IMPORTED_MODULE_10__["radialGaugeRendererConfig"])()),
-                accessorFunction: () => new _renderers_radial_accessors_radial_accessors__WEBPACK_IMPORTED_MODULE_9__["RadialAccessors"](),
-                scaleFunction: () => Object(_renderers_radial_radial_scales__WEBPACK_IMPORTED_MODULE_13__["radialScales"])(),
-            },
-            [_constants__WEBPACK_IMPORTED_MODULE_14__["GaugeMode"].Horizontal]: {
-                rendererFunction: barRendererFunction,
-                accessorFunction: () => new _renderers_bar_accessors_horizontal_bar_accessors__WEBPACK_IMPORTED_MODULE_5__["HorizontalBarAccessors"](),
-                scaleFunction: () => Object(_renderers_bar_bar_scales__WEBPACK_IMPORTED_MODULE_8__["barScales"])({ horizontal: true }),
-            },
-            [_constants__WEBPACK_IMPORTED_MODULE_14__["GaugeMode"].Vertical]: {
-                // TODO
-                rendererFunction: barRendererFunction,
-                accessorFunction: () => new _renderers_bar_accessors_vertical_bar_accessors__WEBPACK_IMPORTED_MODULE_6__["VerticalBarAccessors"](),
-                scaleFunction: () => Object(_renderers_bar_bar_scales__WEBPACK_IMPORTED_MODULE_8__["barScales"])(),
-            },
-        };
-        return chartTools[mode];
-    }
-    createDefaultValueColorAccessor(thresholds) {
-        return (data, i, series, dataSeries) => {
-            var _a, _b;
-            if (dataSeries.id === GaugeService_1.REMAINDER_SERIES_ID) {
-                return "var(--nui-color-semantic-unknown-bg-hover)";
-            }
-            else {
-                if (!lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default()((_a = thresholds[1]) === null || _a === void 0 ? void 0 : _a.value) && thresholds[1].value <= data.value) {
-                    return "var(--nui-color-semantic-critical)";
-                }
-                if (!lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default()((_b = thresholds[0]) === null || _b === void 0 ? void 0 : _b.value) && thresholds[0].value <= data.value) {
-                    return "var(--nui-color-semantic-warning)";
-                }
-                return _core_common_palette_palettes__WEBPACK_IMPORTED_MODULE_3__["CHART_PALETTE_CS1"][0];
-            }
-        };
-    }
-    getGaugeData(value, max) {
-        return [
-            // category property is used for unifying the linear-style gauge visualization into a single bar stack
-            { id: GaugeService_1.QUANTITY_SERIES_ID, data: [{ category: "gauge", value }] },
-            { id: GaugeService_1.REMAINDER_SERIES_ID, data: [{ category: "gauge", value: max - value }] },
-        ];
-    }
-    getThresholdMarkerPoints(thresholds, value, max) {
-        const markerValues = thresholds.map(threshold => ({
-            hit: threshold.value <= value,
-            value: threshold.value,
-        }));
-        return [...markerValues, { value: max }];
-    }
-};
-GaugeService.QUANTITY_SERIES_ID = "quantity";
-GaugeService.REMAINDER_SERIES_ID = "remainder";
-GaugeService.THRESHOLD_MARKERS_SERIES_ID = "threshold-markers";
-GaugeService = GaugeService_1 = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
-        providedIn: "root",
-    })
-], GaugeService);
-
 
 
 /***/ }),
@@ -10422,7 +10725,7 @@ module.exports = trimStart;
 /*!*************************************!*\
   !*** ./src/renderers/public-api.ts ***!
   \*************************************/
-/*! exports provided: THRESHOLDS_MAIN_CHART_RENDERER_CONFIG, THRESHOLDS_SUMMARY_RENDERER_CONFIG, DEFAULT_MARKER_INTERACTION_CONFIG, RenderState, RenderLayerName, XYRenderer, SideIndicatorAccessors, SideIndicatorRenderer, XYAccessors, NoopAccessors, RectangleAccessors, NoopRenderer, BarRenderer, stackedPreprocessor, stack, barGrid, barScales, BarAccessors, barAccessors, HorizontalBarAccessors, VerticalBarAccessors, StatusAccessors, statusAccessors, BarHighlightStrategy, BarSeriesHighlightStrategy, radialPreprocessor, radial, DEFAULT_RADIAL_RENDERER_CONFIG, RadialRenderer, DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG, RadialGaugeThresholdsRenderer, radialGaugeRendererConfig, GaugeRenderingUtils, PieRenderer, radialGrid, radialScales, RadialAccessors, calculateMissingData, LineSelectSeriesInteractionStrategy, LineAccessors, LineRenderer, MissingDataLineRendererConfig, areaGrid, AreaAccessors, AreaRenderer, stackedAreaPreprocessor, stackedArea, stackedPercentageAreaPreprocessor, stackedPercentageArea, calculateDomainValueCombinedTotals, applyStackMetadata, stackedAreaAccessors */
+/*! exports provided: THRESHOLDS_MAIN_CHART_RENDERER_CONFIG, THRESHOLDS_SUMMARY_RENDERER_CONFIG, DEFAULT_MARKER_INTERACTION_CONFIG, GAUGE_THRESHOLD_MARKER_CLASS, RenderState, RenderLayerName, XYRenderer, SideIndicatorAccessors, SideIndicatorRenderer, XYAccessors, NoopAccessors, RectangleAccessors, NoopRenderer, BarRenderer, stackedPreprocessor, stack, barGrid, barScales, BarAccessors, barAccessors, HorizontalBarAccessors, VerticalBarAccessors, StatusAccessors, statusAccessors, BarHighlightStrategy, BarSeriesHighlightStrategy, DEFAULT_LINEAR_GAUGE_THRESHOLDS_RENDERER_CONFIG, LinearGaugeThresholdsRenderer, radialPreprocessor, radial, DEFAULT_RADIAL_RENDERER_CONFIG, RadialRenderer, DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG, RadialGaugeThresholdsRenderer, radialGaugeRendererConfig, RadialGaugeRenderingUtil, PieRenderer, radialGrid, radialScales, RadialAccessors, calculateMissingData, LineSelectSeriesInteractionStrategy, LineAccessors, LineRenderer, MissingDataLineRendererConfig, areaGrid, AreaAccessors, AreaRenderer, stackedAreaPreprocessor, stackedArea, stackedPercentageAreaPreprocessor, stackedPercentageArea, calculateDomainValueCombinedTotals, applyStackMetadata, stackedAreaAccessors */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10433,6 +10736,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "THRESHOLDS_SUMMARY_RENDERER_CONFIG", function() { return _constants__WEBPACK_IMPORTED_MODULE_0__["THRESHOLDS_SUMMARY_RENDERER_CONFIG"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DEFAULT_MARKER_INTERACTION_CONFIG", function() { return _constants__WEBPACK_IMPORTED_MODULE_0__["DEFAULT_MARKER_INTERACTION_CONFIG"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "GAUGE_THRESHOLD_MARKER_CLASS", function() { return _constants__WEBPACK_IMPORTED_MODULE_0__["GAUGE_THRESHOLD_MARKER_CLASS"]; });
 
 /* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./types */ "AbRU");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RenderState", function() { return _types__WEBPACK_IMPORTED_MODULE_1__["RenderState"]; });
@@ -10484,6 +10789,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BarSeriesHighlightStrategy", function() { return _bar_public_api__WEBPACK_IMPORTED_MODULE_6__["BarSeriesHighlightStrategy"]; });
 
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DEFAULT_LINEAR_GAUGE_THRESHOLDS_RENDERER_CONFIG", function() { return _bar_public_api__WEBPACK_IMPORTED_MODULE_6__["DEFAULT_LINEAR_GAUGE_THRESHOLDS_RENDERER_CONFIG"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LinearGaugeThresholdsRenderer", function() { return _bar_public_api__WEBPACK_IMPORTED_MODULE_6__["LinearGaugeThresholdsRenderer"]; });
+
 /* harmony import */ var _radial_public_api__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./radial/public-api */ "/yfn");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "radialPreprocessor", function() { return _radial_public_api__WEBPACK_IMPORTED_MODULE_7__["radialPreprocessor"]; });
 
@@ -10499,7 +10808,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "radialGaugeRendererConfig", function() { return _radial_public_api__WEBPACK_IMPORTED_MODULE_7__["radialGaugeRendererConfig"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "GaugeRenderingUtils", function() { return _radial_public_api__WEBPACK_IMPORTED_MODULE_7__["GaugeRenderingUtils"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RadialGaugeRenderingUtil", function() { return _radial_public_api__WEBPACK_IMPORTED_MODULE_7__["RadialGaugeRenderingUtil"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PieRenderer", function() { return _radial_public_api__WEBPACK_IMPORTED_MODULE_7__["PieRenderer"]; });
 
@@ -10858,6 +11167,37 @@ function raise() {
 /* harmony default export */ __webpack_exports__["default"] = (function() {
   return this.each(raise);
 });
+
+
+/***/ }),
+
+/***/ "GXwZ":
+/*!*********************************************!*\
+  !*** ./src/core/plugins/gauge/constants.ts ***!
+  \*********************************************/
+/*! exports provided: GAUGE_LABEL_FORMATTER_NAME_DEFAULT, GAUGE_LABELS_CONTAINER_CLASS, GAUGE_THRESHOLD_LABEL_CLASS */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GAUGE_LABEL_FORMATTER_NAME_DEFAULT", function() { return GAUGE_LABEL_FORMATTER_NAME_DEFAULT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GAUGE_LABELS_CONTAINER_CLASS", function() { return GAUGE_LABELS_CONTAINER_CLASS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GAUGE_THRESHOLD_LABEL_CLASS", function() { return GAUGE_THRESHOLD_LABEL_CLASS; });
+/**
+ * @ignore
+ * Default gauge label formatter name
+ */
+const GAUGE_LABEL_FORMATTER_NAME_DEFAULT = "label";
+/**
+ * @ignore
+ * Gauge labels container class name
+ */
+const GAUGE_LABELS_CONTAINER_CLASS = "gauge-labels";
+/**
+ * @ignore
+ * Gauge threshold label class name
+ */
+const GAUGE_THRESHOLD_LABEL_CLASS = "threshold-label";
 
 
 /***/ }),
@@ -11515,6 +11855,190 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "Hovb":
+/*!*********************************!*\
+  !*** ./src/gauge/gauge-util.ts ***!
+  \*********************************/
+/*! exports provided: GaugeUtil */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GaugeUtil", function() { return GaugeUtil; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash/isUndefined */ "TP7S");
+/* harmony import */ var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _core_common_palette_palettes__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../core/common/palette/palettes */ "Isyg");
+/* harmony import */ var _core_plugins_gauge_constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../core/plugins/gauge/constants */ "GXwZ");
+/* harmony import */ var _renderers_bar_accessors_horizontal_bar_accessors__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../renderers/bar/accessors/horizontal-bar-accessors */ "rTqn");
+/* harmony import */ var _renderers_bar_accessors_vertical_bar_accessors__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../renderers/bar/accessors/vertical-bar-accessors */ "mGqK");
+/* harmony import */ var _renderers_bar_bar_renderer__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../renderers/bar/bar-renderer */ "iC++");
+/* harmony import */ var _renderers_bar_bar_scales__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../renderers/bar/bar-scales */ "sMd8");
+/* harmony import */ var _renderers_bar_linear_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../renderers/bar/linear-gauge-thresholds-renderer */ "LkUO");
+/* harmony import */ var _renderers_radial_accessors_radial_accessors__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../renderers/radial/accessors/radial-accessors */ "ZF6T");
+/* harmony import */ var _renderers_radial_gauge_radial_gauge_renderer_config__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../renderers/radial/gauge/radial-gauge-renderer-config */ "gOPF");
+/* harmony import */ var _renderers_radial_gauge_radial_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../renderers/radial/gauge/radial-gauge-thresholds-renderer */ "CmBv");
+/* harmony import */ var _renderers_radial_radial_renderer__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../renderers/radial/radial-renderer */ "+mSY");
+/* harmony import */ var _renderers_radial_radial_scales__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../renderers/radial/radial-scales */ "ftV1");
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./constants */ "boxq");
+var GaugeUtil_1;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * @ignore
+ * Convenience service to simplify gauge creation
+ */
+let GaugeUtil = GaugeUtil_1 = class GaugeUtil {
+    static assembleSeriesSet(value, max, thresholds, mode, valueColorAccessor) {
+        value = value !== null && value !== void 0 ? value : 0;
+        max = max !== null && max !== void 0 ? max : 0;
+        const { accessors, scales, mainRenderer, thresholdsRenderer } = GaugeUtil_1.getGaugeAttributes(mode);
+        if (accessors.data) {
+            accessors.data.color = valueColorAccessor || GaugeUtil_1.createDefaultValueColorAccessor(thresholds);
+        }
+        const chartAssistSeries = [
+            ...GaugeUtil_1.getGaugeData(value, max).map(s => (Object.assign(Object.assign({}, s), { accessors,
+                scales, renderer: mainRenderer }))),
+        ];
+        chartAssistSeries.push(GaugeUtil_1.generateThresholdSeries(value, max, thresholds, accessors, scales, thresholdsRenderer));
+        return chartAssistSeries;
+    }
+    static updateSeriesSet(value, max, thresholds, seriesSet) {
+        const newValue = value !== null && value !== void 0 ? value : 0;
+        const newMax = max !== null && max !== void 0 ? max : 0;
+        const updatedSeriesSet = seriesSet.map(series => {
+            if (series.id === GaugeUtil_1.QUANTITY_SERIES_ID) {
+                return Object.assign(Object.assign({}, series), { data: [{ category: "gauge", value: newValue }] });
+            }
+            if (series.id === GaugeUtil_1.REMAINDER_SERIES_ID) {
+                return Object.assign(Object.assign({}, series), { data: [{ category: "gauge", value: newMax - newValue }] });
+            }
+            // threshold level markers
+            return Object.assign(Object.assign({}, series), { data: GaugeUtil_1.getThresholdMarkerPoints(thresholds, newValue, newMax) });
+        });
+        return updatedSeriesSet;
+    }
+    static generateThresholdSeries(value, max, thresholds, accessors, scales, thresholdsRenderer) {
+        return {
+            id: GaugeUtil_1.THRESHOLD_MARKERS_SERIES_ID,
+            data: GaugeUtil_1.getThresholdMarkerPoints(thresholds, value, max),
+            accessors,
+            scales,
+            renderer: thresholdsRenderer,
+            excludeFromArcCalculation: true,
+            preprocess: false,
+        };
+    }
+    static setThresholdLabelFormatter(formatter, seriesSet, formatterName = _core_plugins_gauge_constants__WEBPACK_IMPORTED_MODULE_4__["GAUGE_LABEL_FORMATTER_NAME_DEFAULT"]) {
+        const thresholdsSeries = seriesSet.find((series) => series.renderer instanceof _renderers_radial_gauge_radial_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_12__["RadialGaugeThresholdsRenderer"]);
+        if (thresholdsSeries) {
+            thresholdsSeries.scales.r.formatters[formatterName] = formatter;
+        }
+        return seriesSet;
+    }
+    static getGaugeAttributes(mode) {
+        const t = GaugeUtil_1.getGaugeTools(mode);
+        const result = {
+            accessors: t.accessorFunction(),
+            mainRenderer: t.mainRendererFunction(),
+            thresholdsRenderer: t.thresholdsRendererFunction(),
+            scales: t.scaleFunction(),
+        };
+        return result;
+    }
+    static getGaugeTools(mode) {
+        const barRendererFunction = () => {
+            const renderer = new _renderers_bar_bar_renderer__WEBPACK_IMPORTED_MODULE_7__["BarRenderer"]();
+            renderer.config.padding = 0;
+            renderer.config.strokeWidth = 0;
+            renderer.config.enableMinBarThickness = false;
+            return renderer;
+        };
+        const chartTools = {
+            [_constants__WEBPACK_IMPORTED_MODULE_15__["GaugeMode"].Radial]: {
+                mainRendererFunction: () => new _renderers_radial_radial_renderer__WEBPACK_IMPORTED_MODULE_13__["RadialRenderer"](Object(_renderers_radial_gauge_radial_gauge_renderer_config__WEBPACK_IMPORTED_MODULE_11__["radialGaugeRendererConfig"])()),
+                thresholdsRendererFunction: () => new _renderers_radial_gauge_radial_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_12__["RadialGaugeThresholdsRenderer"](),
+                accessorFunction: () => new _renderers_radial_accessors_radial_accessors__WEBPACK_IMPORTED_MODULE_10__["RadialAccessors"](),
+                scaleFunction: () => Object(_renderers_radial_radial_scales__WEBPACK_IMPORTED_MODULE_14__["radialScales"])(),
+            },
+            [_constants__WEBPACK_IMPORTED_MODULE_15__["GaugeMode"].Horizontal]: {
+                mainRendererFunction: barRendererFunction,
+                thresholdsRendererFunction: () => new _renderers_bar_linear_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_9__["LinearGaugeThresholdsRenderer"](),
+                accessorFunction: () => new _renderers_bar_accessors_horizontal_bar_accessors__WEBPACK_IMPORTED_MODULE_5__["HorizontalBarAccessors"](),
+                scaleFunction: () => Object(_renderers_bar_bar_scales__WEBPACK_IMPORTED_MODULE_8__["barScales"])({ horizontal: true }),
+            },
+            [_constants__WEBPACK_IMPORTED_MODULE_15__["GaugeMode"].Vertical]: {
+                mainRendererFunction: barRendererFunction,
+                thresholdsRendererFunction: () => new _renderers_bar_linear_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_9__["LinearGaugeThresholdsRenderer"](),
+                accessorFunction: () => new _renderers_bar_accessors_vertical_bar_accessors__WEBPACK_IMPORTED_MODULE_6__["VerticalBarAccessors"](),
+                scaleFunction: () => Object(_renderers_bar_bar_scales__WEBPACK_IMPORTED_MODULE_8__["barScales"])(),
+            },
+        };
+        return chartTools[mode];
+    }
+    static createDefaultValueColorAccessor(thresholds) {
+        // assigning to variable to prevent "Lambda not supported" error
+        const valueColorAccessor = (data, i, series, dataSeries) => {
+            var _a, _b;
+            if (dataSeries.id === GaugeUtil_1.REMAINDER_SERIES_ID) {
+                return "var(--nui-color-semantic-unknown-bg-hover)";
+            }
+            else {
+                if (!lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default()((_a = thresholds[1]) === null || _a === void 0 ? void 0 : _a.value) && thresholds[1].value <= data.value) {
+                    return "var(--nui-color-semantic-critical)";
+                }
+                if (!lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default()((_b = thresholds[0]) === null || _b === void 0 ? void 0 : _b.value) && thresholds[0].value <= data.value) {
+                    return "var(--nui-color-semantic-warning)";
+                }
+                return _core_common_palette_palettes__WEBPACK_IMPORTED_MODULE_3__["CHART_PALETTE_CS1"][0];
+            }
+        };
+        return valueColorAccessor;
+    }
+    static getGaugeData(value, max) {
+        return [
+            // category property is used for unifying the linear-style gauge visualization into a single bar stack
+            { id: GaugeUtil_1.QUANTITY_SERIES_ID, data: [{ category: "gauge", value }] },
+            { id: GaugeUtil_1.REMAINDER_SERIES_ID, data: [{ category: "gauge", value: max - value }] },
+        ];
+    }
+    static getThresholdMarkerPoints(thresholds, value, max) {
+        const markerValues = thresholds.map(threshold => ({
+            category: "gauge",
+            hit: threshold.value <= value,
+            value: threshold.value,
+        }));
+        return [...markerValues, { category: "gauge", value: max }];
+    }
+};
+GaugeUtil.QUANTITY_SERIES_ID = "quantity";
+GaugeUtil.REMAINDER_SERIES_ID = "remainder";
+GaugeUtil.THRESHOLD_MARKERS_SERIES_ID = "threshold-markers";
+GaugeUtil = GaugeUtil_1 = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: "root",
+    })
+], GaugeUtil);
+
+
+
+/***/ }),
+
 /***/ "Hske":
 /*!************************************************************************!*\
   !*** ./node_modules/d3-scale/node_modules/d3-time-format/src/index.js ***!
@@ -11648,41 +12172,6 @@ ChartTooltipDirective = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])
         _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_1__["ScrollStrategyOptions"],
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ElementRef"]])
 ], ChartTooltipDirective);
-
-
-
-/***/ }),
-
-/***/ "Ij2O":
-/*!************************************************************************!*\
-  !*** ./node_modules/d3-interpolate/node_modules/d3-color/src/index.js ***!
-  \************************************************************************/
-/*! exports provided: color, rgb, hsl, lab, hcl, lch, gray, cubehelix */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _color_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./color.js */ "ozvG");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "color", function() { return _color_js__WEBPACK_IMPORTED_MODULE_0__["default"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "rgb", function() { return _color_js__WEBPACK_IMPORTED_MODULE_0__["rgb"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "hsl", function() { return _color_js__WEBPACK_IMPORTED_MODULE_0__["hsl"]; });
-
-/* harmony import */ var _lab_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./lab.js */ "iIvt");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "lab", function() { return _lab_js__WEBPACK_IMPORTED_MODULE_1__["default"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "hcl", function() { return _lab_js__WEBPACK_IMPORTED_MODULE_1__["hcl"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "lch", function() { return _lab_js__WEBPACK_IMPORTED_MODULE_1__["lch"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "gray", function() { return _lab_js__WEBPACK_IMPORTED_MODULE_1__["gray"]; });
-
-/* harmony import */ var _cubehelix_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./cubehelix.js */ "unCO");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cubehelix", function() { return _cubehelix_js__WEBPACK_IMPORTED_MODULE_2__["default"]; });
-
-
-
 
 
 
@@ -11923,50 +12412,56 @@ module.exports = baseAggregator;
 /*!****************************************!*\
   !*** ./src/core/plugins/public-api.ts ***!
   \****************************************/
-/*! exports provided: TOOLTIP_POSITION_OFFSET, getVerticalSetup, getHorizontalSetup, ChartTooltipsPlugin, RadialTooltipsPlugin, BarTooltipsPlugin, ZoomPlugin, ChartPopoverPlugin, ChartDonutContentPlugin, MouseInteractiveAreaPlugin, RadialPopoverPlugin, RadialGaugeThresholdLabelsPlugin, RenderEnginePlugin, InteractionLabelPlugin, InteractionLinePlugin */
+/*! exports provided: ChartDonutContentPlugin, ChartPopoverPlugin, RadialGaugeLabelsPlugin, GAUGE_LABEL_FORMATTER_NAME_DEFAULT, GAUGE_LABELS_CONTAINER_CLASS, GAUGE_THRESHOLD_LABEL_CLASS, InteractionLabelPlugin, InteractionLinePlugin, MouseInteractiveAreaPlugin, RadialPopoverPlugin, RenderEnginePlugin, TOOLTIP_POSITION_OFFSET, getVerticalSetup, getHorizontalSetup, ChartTooltipsPlugin, RadialTooltipsPlugin, BarTooltipsPlugin, ZoomPlugin */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./types */ "ePe5");
-/* empty/unused harmony star reexport *//* harmony import */ var _tooltips__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./tooltips */ "lmZZ");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TOOLTIP_POSITION_OFFSET", function() { return _tooltips__WEBPACK_IMPORTED_MODULE_1__["TOOLTIP_POSITION_OFFSET"]; });
+/* harmony import */ var _chart_donut_content_plugin__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./chart-donut-content-plugin */ "nsm8");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ChartDonutContentPlugin", function() { return _chart_donut_content_plugin__WEBPACK_IMPORTED_MODULE_0__["ChartDonutContentPlugin"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getVerticalSetup", function() { return _tooltips__WEBPACK_IMPORTED_MODULE_1__["getVerticalSetup"]; });
+/* harmony import */ var _chart_popover_plugin__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./chart-popover-plugin */ "vte5");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ChartPopoverPlugin", function() { return _chart_popover_plugin__WEBPACK_IMPORTED_MODULE_1__["ChartPopoverPlugin"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getHorizontalSetup", function() { return _tooltips__WEBPACK_IMPORTED_MODULE_1__["getHorizontalSetup"]; });
+/* harmony import */ var _gauge_public_api__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./gauge/public-api */ "xibN");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RadialGaugeLabelsPlugin", function() { return _gauge_public_api__WEBPACK_IMPORTED_MODULE_2__["RadialGaugeLabelsPlugin"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ChartTooltipsPlugin", function() { return _tooltips__WEBPACK_IMPORTED_MODULE_1__["ChartTooltipsPlugin"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "GAUGE_LABEL_FORMATTER_NAME_DEFAULT", function() { return _gauge_public_api__WEBPACK_IMPORTED_MODULE_2__["GAUGE_LABEL_FORMATTER_NAME_DEFAULT"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RadialTooltipsPlugin", function() { return _tooltips__WEBPACK_IMPORTED_MODULE_1__["RadialTooltipsPlugin"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "GAUGE_LABELS_CONTAINER_CLASS", function() { return _gauge_public_api__WEBPACK_IMPORTED_MODULE_2__["GAUGE_LABELS_CONTAINER_CLASS"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BarTooltipsPlugin", function() { return _tooltips__WEBPACK_IMPORTED_MODULE_1__["BarTooltipsPlugin"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "GAUGE_THRESHOLD_LABEL_CLASS", function() { return _gauge_public_api__WEBPACK_IMPORTED_MODULE_2__["GAUGE_THRESHOLD_LABEL_CLASS"]; });
 
-/* harmony import */ var _zoom_plugin__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./zoom-plugin */ "Wr1h");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ZoomPlugin", function() { return _zoom_plugin__WEBPACK_IMPORTED_MODULE_2__["ZoomPlugin"]; });
+/* harmony import */ var _interaction_public_api__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./interaction/public-api */ "25H2");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "InteractionLabelPlugin", function() { return _interaction_public_api__WEBPACK_IMPORTED_MODULE_3__["InteractionLabelPlugin"]; });
 
-/* harmony import */ var _chart_popover_plugin__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./chart-popover-plugin */ "vte5");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ChartPopoverPlugin", function() { return _chart_popover_plugin__WEBPACK_IMPORTED_MODULE_3__["ChartPopoverPlugin"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "InteractionLinePlugin", function() { return _interaction_public_api__WEBPACK_IMPORTED_MODULE_3__["InteractionLinePlugin"]; });
 
-/* harmony import */ var _chart_donut_content_plugin__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./chart-donut-content-plugin */ "nsm8");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ChartDonutContentPlugin", function() { return _chart_donut_content_plugin__WEBPACK_IMPORTED_MODULE_4__["ChartDonutContentPlugin"]; });
+/* harmony import */ var _mouse_interactive_area_plugin__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./mouse-interactive-area-plugin */ "/buC");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MouseInteractiveAreaPlugin", function() { return _mouse_interactive_area_plugin__WEBPACK_IMPORTED_MODULE_4__["MouseInteractiveAreaPlugin"]; });
 
-/* harmony import */ var _mouse_interactive_area_plugin__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./mouse-interactive-area-plugin */ "/buC");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MouseInteractiveAreaPlugin", function() { return _mouse_interactive_area_plugin__WEBPACK_IMPORTED_MODULE_5__["MouseInteractiveAreaPlugin"]; });
+/* harmony import */ var _radial_popover_plugin__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./radial-popover-plugin */ "BGQF");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RadialPopoverPlugin", function() { return _radial_popover_plugin__WEBPACK_IMPORTED_MODULE_5__["RadialPopoverPlugin"]; });
 
-/* harmony import */ var _radial_popover_plugin__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./radial-popover-plugin */ "BGQF");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RadialPopoverPlugin", function() { return _radial_popover_plugin__WEBPACK_IMPORTED_MODULE_6__["RadialPopoverPlugin"]; });
+/* harmony import */ var _render_engine_plugin__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./render-engine-plugin */ "VH2C");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RenderEnginePlugin", function() { return _render_engine_plugin__WEBPACK_IMPORTED_MODULE_6__["RenderEnginePlugin"]; });
 
-/* harmony import */ var _radial_gauge_threshold_labels_plugin__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./radial-gauge-threshold-labels-plugin */ "7XYI");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RadialGaugeThresholdLabelsPlugin", function() { return _radial_gauge_threshold_labels_plugin__WEBPACK_IMPORTED_MODULE_7__["RadialGaugeThresholdLabelsPlugin"]; });
+/* harmony import */ var _tooltips__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./tooltips */ "lmZZ");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TOOLTIP_POSITION_OFFSET", function() { return _tooltips__WEBPACK_IMPORTED_MODULE_7__["TOOLTIP_POSITION_OFFSET"]; });
 
-/* harmony import */ var _render_engine_plugin__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./render-engine-plugin */ "VH2C");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RenderEnginePlugin", function() { return _render_engine_plugin__WEBPACK_IMPORTED_MODULE_8__["RenderEnginePlugin"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getVerticalSetup", function() { return _tooltips__WEBPACK_IMPORTED_MODULE_7__["getVerticalSetup"]; });
 
-/* harmony import */ var _interaction_public_api__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./interaction/public-api */ "25H2");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "InteractionLabelPlugin", function() { return _interaction_public_api__WEBPACK_IMPORTED_MODULE_9__["InteractionLabelPlugin"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getHorizontalSetup", function() { return _tooltips__WEBPACK_IMPORTED_MODULE_7__["getHorizontalSetup"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "InteractionLinePlugin", function() { return _interaction_public_api__WEBPACK_IMPORTED_MODULE_9__["InteractionLinePlugin"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ChartTooltipsPlugin", function() { return _tooltips__WEBPACK_IMPORTED_MODULE_7__["ChartTooltipsPlugin"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RadialTooltipsPlugin", function() { return _tooltips__WEBPACK_IMPORTED_MODULE_7__["RadialTooltipsPlugin"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BarTooltipsPlugin", function() { return _tooltips__WEBPACK_IMPORTED_MODULE_7__["BarTooltipsPlugin"]; });
+
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./types */ "ePe5");
+/* empty/unused harmony star reexport *//* harmony import */ var _zoom_plugin__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./zoom-plugin */ "Wr1h");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ZoomPlugin", function() { return _zoom_plugin__WEBPACK_IMPORTED_MODULE_9__["ZoomPlugin"]; });
 
 
 
@@ -12915,7 +13410,7 @@ class SideIndicatorRenderer extends _xy_renderer__WEBPACK_IMPORTED_MODULE_4__["X
     }
     /** See {@link Renderer#draw} */
     draw(renderSeries, rendererSubject) {
-        const target = renderSeries.containers[SideIndicatorRenderer.SIDE_INDICATORS_LAYER];
+        const target = renderSeries.containers[_types__WEBPACK_IMPORTED_MODULE_3__["RenderLayerName"].unclippedData];
         const dataSeries = renderSeries.dataSeries;
         const scales = renderSeries.scales;
         const accessors = renderSeries.dataSeries.accessors;
@@ -12950,14 +13445,12 @@ class SideIndicatorRenderer extends _xy_renderer__WEBPACK_IMPORTED_MODULE_4__["X
     }
     /** See {@link Renderer#getRequiredLayers} */
     getRequiredLayers() {
-        return [{
-                name: SideIndicatorRenderer.SIDE_INDICATORS_LAYER,
-                // order calculated by adding 1 to the data layer order to ensure the unclipped data layer appears just after the data layer in the DOM
-                order: _constants__WEBPACK_IMPORTED_MODULE_1__["STANDARD_RENDER_LAYERS"][_types__WEBPACK_IMPORTED_MODULE_3__["RenderLayerName"].data].order + 1,
-                clipped: false,
-            }];
+        return [
+            _constants__WEBPACK_IMPORTED_MODULE_1__["STANDARD_RENDER_LAYERS"][_types__WEBPACK_IMPORTED_MODULE_3__["RenderLayerName"].unclippedData],
+        ];
     }
 }
+/** @deprecated As of Nova v9, use RenderLayerName.unclippedData enum value instead. Removal: NUI-5753 */
 SideIndicatorRenderer.SIDE_INDICATORS_LAYER = "side-indicators";
 
 
@@ -13046,6 +13539,80 @@ ChartPopoverComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_3__["ChangeDetectorRef"], _angular_core__WEBPACK_IMPORTED_MODULE_3__["ElementRef"]])
 ], ChartPopoverComponent);
 
+
+
+/***/ }),
+
+/***/ "LkUO":
+/*!***************************************************************!*\
+  !*** ./src/renderers/bar/linear-gauge-thresholds-renderer.ts ***!
+  \***************************************************************/
+/*! exports provided: DEFAULT_LINEAR_GAUGE_THRESHOLDS_RENDERER_CONFIG, LinearGaugeThresholdsRenderer */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DEFAULT_LINEAR_GAUGE_THRESHOLDS_RENDERER_CONFIG", function() { return DEFAULT_LINEAR_GAUGE_THRESHOLDS_RENDERER_CONFIG; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LinearGaugeThresholdsRenderer", function() { return LinearGaugeThresholdsRenderer; });
+/* harmony import */ var lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash/cloneDeep */ "BkRI");
+/* harmony import */ var lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash/defaultsDeep */ "P4Tr");
+/* harmony import */ var lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../constants */ "he5r");
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../constants */ "s8k4");
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../types */ "AbRU");
+/* harmony import */ var _bar_renderer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./bar-renderer */ "iC++");
+
+
+
+
+
+
+/**
+ * @ignore Default configuration for Linear Gauge Thresholds Renderer
+ */
+const DEFAULT_LINEAR_GAUGE_THRESHOLDS_RENDERER_CONFIG = {};
+/**
+ * @ignore Renderer for drawing threshold level indicators for gauges
+ */
+class LinearGaugeThresholdsRenderer extends _bar_renderer__WEBPACK_IMPORTED_MODULE_5__["BarRenderer"] {
+    /**
+     * Creates an instance of RadialGaugeThresholdsRenderer.
+     * @param {ILinearGaugeThresholdsRendererConfig} [config]
+     * Renderer configuration object. Defaults to `DEFAULT_LINEAR_GAUGE_THRESHOLDS_RENDERER_CONFIG` constant value.
+     */
+    constructor(config = {}) {
+        super(config);
+        this.config = lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_1___default()(this.config, DEFAULT_LINEAR_GAUGE_THRESHOLDS_RENDERER_CONFIG);
+    }
+    /** See {@link Renderer#draw} */
+    draw(renderSeries, rendererSubject) {
+        const dataContainer = renderSeries.containers[_types__WEBPACK_IMPORTED_MODULE_4__["RenderLayerName"].unclippedData];
+        const dataSeries = renderSeries.dataSeries;
+        const accessors = dataSeries.accessors;
+        const data = lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_0___default()(dataSeries.data);
+        // last value in the thresholds series is the max value of the gauge (needed by RadialGaugeThresholdsRenderer).
+        // removing this value to avoid rendering a marker for it
+        data.pop();
+        const markerSelection = dataContainer.selectAll(`circle.${_constants__WEBPACK_IMPORTED_MODULE_3__["GAUGE_THRESHOLD_MARKER_CLASS"]}`).data(data);
+        markerSelection.exit().remove();
+        markerSelection.enter()
+            .append("circle")
+            .attr("class", _constants__WEBPACK_IMPORTED_MODULE_3__["GAUGE_THRESHOLD_MARKER_CLASS"])
+            .merge(markerSelection)
+            .attr("cx", (d, i) => { var _a, _b; return renderSeries.scales.x.convert((_b = (_a = accessors === null || accessors === void 0 ? void 0 : accessors.data) === null || _a === void 0 ? void 0 : _a.endX) === null || _b === void 0 ? void 0 : _b.call(_a, d, i, dataSeries.data, dataSeries)); })
+            .attr("cy", (d, i) => { var _a, _b; return renderSeries.scales.y.convert((_b = (_a = accessors === null || accessors === void 0 ? void 0 : accessors.data) === null || _a === void 0 ? void 0 : _a.endY) === null || _b === void 0 ? void 0 : _b.call(_a, d, i, dataSeries.data, dataSeries)); })
+            .attr("r", 4)
+            .style("fill", (d, i) => `var(--nui-color-${data[i].hit ? "text-light" : "icon-default"})`)
+            .style("stroke-width", 0);
+    }
+    /** See {@link Renderer#getRequiredLayers} */
+    getRequiredLayers() {
+        return [
+            _constants__WEBPACK_IMPORTED_MODULE_2__["STANDARD_RENDER_LAYERS"][_types__WEBPACK_IMPORTED_MODULE_4__["RenderLayerName"].unclippedData],
+        ];
+    }
+}
 
 
 /***/ }),
@@ -13743,7 +14310,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cubehelixLong", function() { return cubehelixLong; });
-/* harmony import */ var d3_color__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3-color */ "Ij2O");
+/* harmony import */ var d3_color__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3-color */ "qXv/");
 /* harmony import */ var _color_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./color.js */ "sFV2");
 
 
@@ -14017,6 +14584,85 @@ __webpack_require__.r(__webpack_exports__);
     return x;
   };
 });
+
+
+/***/ }),
+
+/***/ "Ov49":
+/*!***************************************************************************!*\
+  !*** ./node_modules/d3-transition/node_modules/d3-color/src/cubehelix.js ***!
+  \***************************************************************************/
+/*! exports provided: default, Cubehelix */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return cubehelix; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Cubehelix", function() { return Cubehelix; });
+/* harmony import */ var _define_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./define.js */ "V03s");
+/* harmony import */ var _color_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./color.js */ "3lC8");
+/* harmony import */ var _math_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./math.js */ "oV0g");
+
+
+
+
+var A = -0.14861,
+    B = +1.78277,
+    C = -0.29227,
+    D = -0.90649,
+    E = +1.97294,
+    ED = E * D,
+    EB = E * B,
+    BC_DA = B * C - D * A;
+
+function cubehelixConvert(o) {
+  if (o instanceof Cubehelix) return new Cubehelix(o.h, o.s, o.l, o.opacity);
+  if (!(o instanceof _color_js__WEBPACK_IMPORTED_MODULE_1__["Rgb"])) o = Object(_color_js__WEBPACK_IMPORTED_MODULE_1__["rgbConvert"])(o);
+  var r = o.r / 255,
+      g = o.g / 255,
+      b = o.b / 255,
+      l = (BC_DA * b + ED * r - EB * g) / (BC_DA + ED - EB),
+      bl = b - l,
+      k = (E * (g - l) - C * bl) / D,
+      s = Math.sqrt(k * k + bl * bl) / (E * l * (1 - l)), // NaN if l=0 or l=1
+      h = s ? Math.atan2(k, bl) * _math_js__WEBPACK_IMPORTED_MODULE_2__["rad2deg"] - 120 : NaN;
+  return new Cubehelix(h < 0 ? h + 360 : h, s, l, o.opacity);
+}
+
+function cubehelix(h, s, l, opacity) {
+  return arguments.length === 1 ? cubehelixConvert(h) : new Cubehelix(h, s, l, opacity == null ? 1 : opacity);
+}
+
+function Cubehelix(h, s, l, opacity) {
+  this.h = +h;
+  this.s = +s;
+  this.l = +l;
+  this.opacity = +opacity;
+}
+
+Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["default"])(Cubehelix, cubehelix, Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["extend"])(_color_js__WEBPACK_IMPORTED_MODULE_1__["Color"], {
+  brighter: function(k) {
+    k = k == null ? _color_js__WEBPACK_IMPORTED_MODULE_1__["brighter"] : Math.pow(_color_js__WEBPACK_IMPORTED_MODULE_1__["brighter"], k);
+    return new Cubehelix(this.h, this.s, this.l * k, this.opacity);
+  },
+  darker: function(k) {
+    k = k == null ? _color_js__WEBPACK_IMPORTED_MODULE_1__["darker"] : Math.pow(_color_js__WEBPACK_IMPORTED_MODULE_1__["darker"], k);
+    return new Cubehelix(this.h, this.s, this.l * k, this.opacity);
+  },
+  rgb: function() {
+    var h = isNaN(this.h) ? 0 : (this.h + 120) * _math_js__WEBPACK_IMPORTED_MODULE_2__["deg2rad"],
+        l = +this.l,
+        a = isNaN(this.s) ? 0 : this.s * l * (1 - l),
+        cosh = Math.cos(h),
+        sinh = Math.sin(h);
+    return new _color_js__WEBPACK_IMPORTED_MODULE_1__["Rgb"](
+      255 * (l + a * (A * cosh + B * sinh)),
+      255 * (l + a * (C * cosh + D * sinh)),
+      255 * (l + a * (E * cosh)),
+      this.opacity
+    );
+  }
+}));
 
 
 /***/ }),
@@ -14814,6 +15460,45 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "axisLeft", function() { return _axis__WEBPACK_IMPORTED_MODULE_0__["axisLeft"]; });
 
 
+
+
+/***/ }),
+
+/***/ "Rtv/":
+/*!*******************************************************************!*\
+  !*** ./src/renderers/radial/gauge/radial-gauge-rendering-util.ts ***!
+  \*******************************************************************/
+/*! exports provided: RadialGaugeRenderingUtil */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RadialGaugeRenderingUtil", function() { return RadialGaugeRenderingUtil; });
+/* harmony import */ var d3_shape__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3-shape */ "8d86");
+
+class RadialGaugeRenderingUtil {
+    static generateThresholdData(data) {
+        const arcData = RadialGaugeRenderingUtil.generateArcData(data);
+        const thresholdsData = [];
+        const pieGenerator = Object(d3_shape__WEBPACK_IMPORTED_MODULE_0__["pie"])().sort(null);
+        const arcsForMarkers = pieGenerator(arcData);
+        arcsForMarkers.forEach((arcDatum, i) => {
+            if (i % 2 === 1) {
+                thresholdsData.push(arcDatum);
+            }
+        });
+        return thresholdsData;
+    }
+    static generateArcData(data) {
+        // arcs with a value of zero serve as the threshold points
+        const arcData = Array(data.length * 2 - 1).fill(0);
+        data.forEach((d, i) => {
+            // arcs with a non-zero value serve as the space between the threshold points
+            arcData[i * 2] = i === 0 ? d.value : d.value - data[i - 1].value;
+        });
+        return arcData;
+    }
+}
 
 
 /***/ }),
@@ -15650,9 +16335,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lodash_isEqual__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_isEqual__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var moment_moment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! moment/moment */ "wd/R");
 /* harmony import */ var moment_moment__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(moment_moment__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _formatters_datetime_formatter__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./formatters/datetime-formatter */ "JLsN");
-/* harmony import */ var _time_scale__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./time-scale */ "mn3F");
-/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./types */ "41FX");
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./constants */ "ttef");
+/* harmony import */ var _formatters_datetime_formatter__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./formatters/datetime-formatter */ "JLsN");
+/* harmony import */ var _time_scale__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./time-scale */ "mn3F");
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./types */ "41FX");
+
 
 
 
@@ -15668,7 +16355,7 @@ function isDaylightSavingTime(d) {
 /**
  * Scale designed to support regular interval based data.
  */
-class TimeIntervalScale extends _time_scale__WEBPACK_IMPORTED_MODULE_4__["TimeScale"] {
+class TimeIntervalScale extends _time_scale__WEBPACK_IMPORTED_MODULE_5__["TimeScale"] {
     constructor(interval, id) {
         super(id);
         this.interval(interval);
@@ -15679,7 +16366,7 @@ class TimeIntervalScale extends _time_scale__WEBPACK_IMPORTED_MODULE_4__["TimeSc
             const standardTimeOffsetMs = intervalDays >= 1 && !isDaylightSavingTime(inputDate) && isDaylightSavingTime(this.domain()[0]) ? 3600000 : 0;
             const adjustedDate = new Date(inputDate.getTime() + standardTimeOffsetMs);
             const endDate = intervalDays >= 1 ? moment_moment__WEBPACK_IMPORTED_MODULE_2___default()(adjustedDate).add(intervalDays, "days").toDate() : moment_moment__WEBPACK_IMPORTED_MODULE_2___default()(adjustedDate).add(this.interval()).toDate();
-            return Object(_formatters_datetime_formatter__WEBPACK_IMPORTED_MODULE_3__["datetimeFormatter"])(adjustedDate) + " - " + Object(_formatters_datetime_formatter__WEBPACK_IMPORTED_MODULE_3__["datetimeFormatter"])(endDate);
+            return Object(_formatters_datetime_formatter__WEBPACK_IMPORTED_MODULE_4__["datetimeFormatter"])(adjustedDate) + " - " + Object(_formatters_datetime_formatter__WEBPACK_IMPORTED_MODULE_4__["datetimeFormatter"])(endDate);
         };
     }
     interval(value) {
@@ -15694,7 +16381,7 @@ class TimeIntervalScale extends _time_scale__WEBPACK_IMPORTED_MODULE_4__["TimeSc
             if (domain.length === 0 || domain.length % 2 !== 0) {
                 throw new Error("TimeIntervalScale domain has to be defined as a pair of [from, to] time values.");
             }
-            const isDomainEmpty = lodash_isEqual__WEBPACK_IMPORTED_MODULE_1___default()(domain, _types__WEBPACK_IMPORTED_MODULE_5__["EMPTY_CONTINUOUS_DOMAIN"]);
+            const isDomainEmpty = lodash_isEqual__WEBPACK_IMPORTED_MODULE_1___default()(domain, _types__WEBPACK_IMPORTED_MODULE_6__["EMPTY_CONTINUOUS_DOMAIN"]);
             const bands = [];
             // only try to determine bands if the domain is not empty
             if (!isDomainEmpty) {
@@ -15734,7 +16421,7 @@ class TimeIntervalScale extends _time_scale__WEBPACK_IMPORTED_MODULE_4__["TimeSc
         }
         return bands;
     }
-    convert(value, position = 0.5) {
+    convert(value, position = _constants__WEBPACK_IMPORTED_MODULE_3__["BAND_CENTER"]) {
         const interval = this.truncToInterval(value, this.interval());
         if (!interval) {
             throw new Error("Could not convert interval");
@@ -16645,8 +17332,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var lodash_toString__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lodash/toString */ "dt0z");
 /* harmony import */ var lodash_toString__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(lodash_toString__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _linear_scale__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./linear-scale */ "YYcv");
-/* harmony import */ var _scale__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./scale */ "7YSD");
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./constants */ "ttef");
+/* harmony import */ var _linear_scale__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./linear-scale */ "YYcv");
+/* harmony import */ var _scale__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./scale */ "7YSD");
+
 
 
 
@@ -16657,7 +17346,7 @@ __webpack_require__.r(__webpack_exports__);
  * Nova wrapper around [D3's scaleBand](https://d3indepth.com/scales/#scaleband)
  * A typical use case for a band scale is a bar chart
  */
-class BandScale extends _scale__WEBPACK_IMPORTED_MODULE_5__["Scale"] {
+class BandScale extends _scale__WEBPACK_IMPORTED_MODULE_6__["Scale"] {
     constructor(id) {
         super(id);
         this.formatters.tick = (value) => {
@@ -16678,7 +17367,7 @@ class BandScale extends _scale__WEBPACK_IMPORTED_MODULE_5__["Scale"] {
      * @param {number} [position=0.5] Number in the range of [0, 1] that will define the point inside of the band. Where 0 stands for start.
      * @returns {number} Center of a band
      */
-    convert(value, position = 0.5) {
+    convert(value, position = _constants__WEBPACK_IMPORTED_MODULE_4__["BAND_CENTER"]) {
         return this._d3Scale(value) + position * this.bandwidth();
     }
     /**
@@ -16753,7 +17442,7 @@ class BandScale extends _scale__WEBPACK_IMPORTED_MODULE_5__["Scale"] {
      * Creates linear scale with domain and range that are equal to current scale's range
      */
     copyToLinear() {
-        const scale = new _linear_scale__WEBPACK_IMPORTED_MODULE_4__["LinearScale"]();
+        const scale = new _linear_scale__WEBPACK_IMPORTED_MODULE_5__["LinearScale"]();
         scale.domain(this.range())
             .range(this.range());
         return scale;
@@ -16820,6 +17509,30 @@ function creatorFixed(fullname) {
       ? creatorFixed
       : creatorInherit)(fullname);
 });
+
+
+/***/ }),
+
+/***/ "V03s":
+/*!************************************************************************!*\
+  !*** ./node_modules/d3-transition/node_modules/d3-color/src/define.js ***!
+  \************************************************************************/
+/*! exports provided: default, extend */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "extend", function() { return extend; });
+/* harmony default export */ __webpack_exports__["default"] = (function(constructor, factory, prototype) {
+  constructor.prototype = factory.prototype = prototype;
+  prototype.constructor = constructor;
+});
+
+function extend(parent, definition) {
+  var prototype = Object.create(parent.prototype);
+  for (var key in definition) prototype[key] = definition[key];
+  return prototype;
+}
 
 
 /***/ }),
@@ -17801,7 +18514,7 @@ ZoomPlugin.DEFAULT_CONFIG = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hclLong", function() { return hclLong; });
-/* harmony import */ var d3_color__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3-color */ "Ij2O");
+/* harmony import */ var d3_color__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3-color */ "qXv/");
 /* harmony import */ var _color_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./color.js */ "sFV2");
 
 
@@ -19751,7 +20464,7 @@ class BarAccessors extends _accessors_rectangle_accessors__WEBPACK_IMPORTED_MODU
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hslLong", function() { return hslLong; });
-/* harmony import */ var d3_color__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3-color */ "Ij2O");
+/* harmony import */ var d3_color__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3-color */ "qXv/");
 /* harmony import */ var _color_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./color.js */ "sFV2");
 
 
@@ -19952,12 +20665,7 @@ class LineRenderer extends _xy_renderer__WEBPACK_IMPORTED_MODULE_8__["XYRenderer
         return [
             _constants__WEBPACK_IMPORTED_MODULE_3__["STANDARD_RENDER_LAYERS"][_types__WEBPACK_IMPORTED_MODULE_7__["RenderLayerName"].data],
             _constants__WEBPACK_IMPORTED_MODULE_3__["STANDARD_RENDER_LAYERS"][_types__WEBPACK_IMPORTED_MODULE_7__["RenderLayerName"].foreground],
-            {
-                name: LineRenderer.UNCLIPPED_DATA_LAYER_NAME,
-                // order calculated by adding 1 to the data layer order to ensure the unclipped data layer appears just after the data layer in the DOM
-                order: _constants__WEBPACK_IMPORTED_MODULE_3__["STANDARD_RENDER_LAYERS"][_types__WEBPACK_IMPORTED_MODULE_7__["RenderLayerName"].data].order + 1,
-                clipped: false,
-            },
+            _constants__WEBPACK_IMPORTED_MODULE_3__["STANDARD_RENDER_LAYERS"][_types__WEBPACK_IMPORTED_MODULE_7__["RenderLayerName"].unclippedData],
         ];
     }
     /** See {@link Renderer#getDataPointPosition} */
@@ -20021,7 +20729,7 @@ class LineRenderer extends _xy_renderer__WEBPACK_IMPORTED_MODULE_8__["XYRenderer
         const updateCx = (d, i) => renderSeries.scales.x.convert(accessors.data.x(d, i, dataSeries.data, dataSeries));
         const updateCy = (d, i) => renderSeries.scales.y.convert(accessors.data.y(d, i, dataSeries.data, dataSeries));
         // use an unclipped layer to ensure the line caps on the left and right sides of the chart don't get clipped
-        const lineCaps = renderSeries.containers[LineRenderer.UNCLIPPED_DATA_LAYER_NAME].selectAll(`.${LineRenderer.LINE_CAP_CLASS_NAME}`)
+        const lineCaps = renderSeries.containers[_types__WEBPACK_IMPORTED_MODULE_7__["RenderLayerName"].unclippedData].selectAll(`.${LineRenderer.LINE_CAP_CLASS_NAME}`)
             .data(definedData)
             .attr("cx", updateCx)
             .attr("cy", updateCy);
@@ -21148,16 +21856,22 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "stackedPreprocessor", function() { return stackedPreprocessor; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "stack", function() { return stack; });
-/* harmony import */ var _preprocessor_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./preprocessor-utils */ "UUpF");
+/* harmony import */ var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash/isUndefined */ "TP7S");
+/* harmony import */ var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash_isUndefined__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _preprocessor_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./preprocessor-utils */ "UUpF");
+
 
 function stackedPreprocessor(chartSeriesSet, isVisible) {
     // No need to preprocess empty series.
     if (chartSeriesSet.length === 0) {
         return chartSeriesSet;
     }
-    const categories = Object(_preprocessor_utils__WEBPACK_IMPORTED_MODULE_0__["gatherCategories"])(chartSeriesSet);
+    const categories = Object(_preprocessor_utils__WEBPACK_IMPORTED_MODULE_1__["gatherCategories"])(chartSeriesSet);
     // This is adding metadata to the dataset and filling missing
     const forExtents = chartSeriesSet.reduce((acc, chartSeries) => {
+        if (!lodash_isUndefined__WEBPACK_IMPORTED_MODULE_0___default()(chartSeries.preprocess) && !chartSeries.preprocess) {
+            return acc;
+        }
         const categoryAccessor = chartSeries.accessors.data["category"];
         const valueAccessor = chartSeries.accessors.data["value"];
         if (!valueAccessor) {
@@ -21328,7 +22042,7 @@ var InteractionType;
 /*!***************************!*\
   !*** ./src/public-api.ts ***!
   \***************************/
-/*! exports provided: ChartTooltipDirective, ChartTooltipComponent, ChartDonutContentComponent, ChartTooltipsComponent, ChartPopoverComponent, ChartMarkerComponent, NuiChartsModule, ChartComponent, GaugeMode, GAUGE_THICKNESS_DEFAULT, GaugeComponent, GaugeService, ChartCollectionIdDirective, ChartCollectionService, ChartPalette, MappedValueProvider, CHART_PALETTE_CS1, CHART_PALETTE_CS2, CHART_PALETTE_CS3, CHART_PALETTE_CS_S, CHART_PALETTE_CS_S_EXTENDED, CHART_MARKERS, ProcessedColorProvider, SequentialChartMarkerProvider, SequentialColorProvider, SequentialValueProvider, TextColorProvider, PathMarker, SvgMarker, defaultColorProvider, defaultPalette, defaultMarkerProvider, getColorValueByName, getAutomaticDomain, getAutomaticDomainWithIncludedInterval, getAutomaticDomainWithTicks, BandScale, PointScale, LinearScale, Scale, TimeScale, isDaylightSavingTime, TimeIntervalScale, datetimeFormatter, EMPTY_CONTINUOUS_DOMAIN, NORMALIZED_DOMAIN, isBandScale, hasInnerScale, NoopScale, convert, invert, ChartPlugin, DataManager, DataSeries, EventBus, InteractionType, Lasagna, MouseInteractiveArea, RenderEngine, Renderer, UtilityService, AxisConfig, BorderConfig, DimensionConfig, linearGaugeGridConfig, GridConfig, AreaGridConfig, BarGridConfig, BarHorizontalGridConfig, BarStatusGridConfig, sparkChartGridConfig, XYGridConfig, XYGrid, borderMidpoint, Grid, RadialGrid, TOOLTIP_POSITION_OFFSET, getVerticalSetup, getHorizontalSetup, ChartTooltipsPlugin, RadialTooltipsPlugin, BarTooltipsPlugin, ZoomPlugin, ChartPopoverPlugin, ChartDonutContentPlugin, MouseInteractiveAreaPlugin, RadialPopoverPlugin, RadialGaugeThresholdLabelsPlugin, RenderEnginePlugin, InteractionLabelPlugin, InteractionLinePlugin, ChartCollection, Chart, ChartAssist, LegendInteractionAssist, SparkChartAssist, ChartAssistEventType, ChartAssistRenderStateData, CssFilterId, GRAYSCALE_FILTER, GRAYSCALE_COLOR_MATRIX, LEGEND_SERIES_CLASS_NAME, LegendSeriesComponent, BasicLegendTileComponent, RichLegendTileComponent, LegendComponent, THRESHOLDS_MAIN_CHART_RENDERER_CONFIG, THRESHOLDS_SUMMARY_RENDERER_CONFIG, DEFAULT_MARKER_INTERACTION_CONFIG, RenderState, RenderLayerName, XYRenderer, SideIndicatorAccessors, SideIndicatorRenderer, XYAccessors, NoopAccessors, RectangleAccessors, NoopRenderer, BarRenderer, stackedPreprocessor, stack, barGrid, barScales, BarAccessors, barAccessors, HorizontalBarAccessors, VerticalBarAccessors, StatusAccessors, statusAccessors, BarHighlightStrategy, BarSeriesHighlightStrategy, radialPreprocessor, radial, DEFAULT_RADIAL_RENDERER_CONFIG, RadialRenderer, DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG, RadialGaugeThresholdsRenderer, radialGaugeRendererConfig, GaugeRenderingUtils, PieRenderer, radialGrid, radialScales, RadialAccessors, calculateMissingData, LineSelectSeriesInteractionStrategy, LineAccessors, LineRenderer, MissingDataLineRendererConfig, areaGrid, AreaAccessors, AreaRenderer, stackedAreaPreprocessor, stackedArea, stackedPercentageAreaPreprocessor, stackedPercentageArea, calculateDomainValueCombinedTotals, applyStackMetadata, stackedAreaAccessors, MOUSE_ACTIVE_EVENT, INTERACTION_VALUES_ACTIVE_EVENT, INTERACTION_VALUES_EVENT, INTERACTION_COORDINATES_EVENT, HIGHLIGHT_DATA_POINT_EVENT, SELECT_DATA_POINT_EVENT, HIGHLIGHT_SERIES_EVENT, INTERACTION_SERIES_EVENT, INTERACTION_DATA_POINTS_EVENT, INTERACTION_DATA_POINT_EVENT, DESTROY_EVENT, SET_DOMAIN_EVENT, REFRESH_EVENT, CHART_VIEW_STATUS_EVENT, SERIES_STATE_CHANGE_EVENT, CHART_COMPONENT, STANDARD_RENDER_LAYERS, DATA_POINT_NOT_FOUND, DATA_POINT_INTERACTION_RESET, IGNORE_INTERACTION_CLASS, ZoneBoundary, ThresholdsService, thresholdsSummaryGridConfig, thresholdsTopGridConfig */
+/*! exports provided: ChartTooltipDirective, ChartTooltipComponent, ChartDonutContentComponent, ChartTooltipsComponent, ChartPopoverComponent, ChartMarkerComponent, NuiChartsModule, ChartComponent, GaugeMode, GAUGE_THICKNESS_DEFAULT, GaugeComponent, GaugeUtil, ChartCollectionIdDirective, ChartCollectionService, ChartPalette, MappedValueProvider, CHART_PALETTE_CS1, CHART_PALETTE_CS2, CHART_PALETTE_CS3, CHART_PALETTE_CS_S, CHART_PALETTE_CS_S_EXTENDED, CHART_MARKERS, ProcessedColorProvider, SequentialChartMarkerProvider, SequentialColorProvider, SequentialValueProvider, TextColorProvider, PathMarker, SvgMarker, defaultColorProvider, defaultPalette, defaultMarkerProvider, getColorValueByName, getAutomaticDomain, getAutomaticDomainWithIncludedInterval, getAutomaticDomainWithTicks, BandScale, PointScale, LinearScale, Scale, TimeScale, isDaylightSavingTime, TimeIntervalScale, datetimeFormatter, EMPTY_CONTINUOUS_DOMAIN, NORMALIZED_DOMAIN, isBandScale, hasInnerScale, NoopScale, convert, invert, ChartPlugin, DataManager, DataSeries, EventBus, InteractionType, Lasagna, MouseInteractiveArea, RenderEngine, Renderer, UtilityService, AxisConfig, BorderConfig, DimensionConfig, linearGaugeGridConfig, GridConfig, AreaGridConfig, BarGridConfig, BarHorizontalGridConfig, BarStatusGridConfig, sparkChartGridConfig, XYGridConfig, XYGrid, borderMidpoint, Grid, RadialGrid, ChartDonutContentPlugin, ChartPopoverPlugin, RadialGaugeLabelsPlugin, GAUGE_LABEL_FORMATTER_NAME_DEFAULT, GAUGE_LABELS_CONTAINER_CLASS, GAUGE_THRESHOLD_LABEL_CLASS, InteractionLabelPlugin, InteractionLinePlugin, MouseInteractiveAreaPlugin, RadialPopoverPlugin, RenderEnginePlugin, TOOLTIP_POSITION_OFFSET, getVerticalSetup, getHorizontalSetup, ChartTooltipsPlugin, RadialTooltipsPlugin, BarTooltipsPlugin, ZoomPlugin, ChartCollection, Chart, ChartAssist, LegendInteractionAssist, SparkChartAssist, ChartAssistEventType, ChartAssistRenderStateData, CssFilterId, GRAYSCALE_FILTER, GRAYSCALE_COLOR_MATRIX, LEGEND_SERIES_CLASS_NAME, LegendSeriesComponent, BasicLegendTileComponent, RichLegendTileComponent, LegendComponent, THRESHOLDS_MAIN_CHART_RENDERER_CONFIG, THRESHOLDS_SUMMARY_RENDERER_CONFIG, DEFAULT_MARKER_INTERACTION_CONFIG, GAUGE_THRESHOLD_MARKER_CLASS, RenderState, RenderLayerName, XYRenderer, SideIndicatorAccessors, SideIndicatorRenderer, XYAccessors, NoopAccessors, RectangleAccessors, NoopRenderer, BarRenderer, stackedPreprocessor, stack, barGrid, barScales, BarAccessors, barAccessors, HorizontalBarAccessors, VerticalBarAccessors, StatusAccessors, statusAccessors, BarHighlightStrategy, BarSeriesHighlightStrategy, DEFAULT_LINEAR_GAUGE_THRESHOLDS_RENDERER_CONFIG, LinearGaugeThresholdsRenderer, radialPreprocessor, radial, DEFAULT_RADIAL_RENDERER_CONFIG, RadialRenderer, DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG, RadialGaugeThresholdsRenderer, radialGaugeRendererConfig, RadialGaugeRenderingUtil, PieRenderer, radialGrid, radialScales, RadialAccessors, calculateMissingData, LineSelectSeriesInteractionStrategy, LineAccessors, LineRenderer, MissingDataLineRendererConfig, areaGrid, AreaAccessors, AreaRenderer, stackedAreaPreprocessor, stackedArea, stackedPercentageAreaPreprocessor, stackedPercentageArea, calculateDomainValueCombinedTotals, applyStackMetadata, stackedAreaAccessors, MOUSE_ACTIVE_EVENT, INTERACTION_VALUES_ACTIVE_EVENT, INTERACTION_VALUES_EVENT, INTERACTION_COORDINATES_EVENT, HIGHLIGHT_DATA_POINT_EVENT, SELECT_DATA_POINT_EVENT, HIGHLIGHT_SERIES_EVENT, INTERACTION_SERIES_EVENT, INTERACTION_DATA_POINTS_EVENT, INTERACTION_DATA_POINT_EVENT, DESTROY_EVENT, SET_DOMAIN_EVENT, REFRESH_EVENT, CHART_VIEW_STATUS_EVENT, SERIES_STATE_CHANGE_EVENT, CHART_COMPONENT, STANDARD_RENDER_LAYERS, DATA_POINT_NOT_FOUND, DATA_POINT_INTERACTION_RESET, IGNORE_INTERACTION_CLASS, ZoneBoundary, ThresholdsService, thresholdsSummaryGridConfig, thresholdsTopGridConfig */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -21364,7 +22078,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "GaugeComponent", function() { return _gauge_public_api__WEBPACK_IMPORTED_MODULE_8__["GaugeComponent"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "GaugeService", function() { return _gauge_public_api__WEBPACK_IMPORTED_MODULE_8__["GaugeService"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "GaugeUtil", function() { return _gauge_public_api__WEBPACK_IMPORTED_MODULE_8__["GaugeUtil"]; });
 
 /* harmony import */ var _chart_collection_public_api__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./chart-collection/public-api */ "2ahV");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ChartCollectionIdDirective", function() { return _chart_collection_public_api__WEBPACK_IMPORTED_MODULE_9__["ChartCollectionIdDirective"]; });
@@ -21496,6 +22210,28 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RadialGrid", function() { return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["RadialGrid"]; });
 
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ChartDonutContentPlugin", function() { return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["ChartDonutContentPlugin"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ChartPopoverPlugin", function() { return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["ChartPopoverPlugin"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RadialGaugeLabelsPlugin", function() { return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["RadialGaugeLabelsPlugin"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "GAUGE_LABEL_FORMATTER_NAME_DEFAULT", function() { return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["GAUGE_LABEL_FORMATTER_NAME_DEFAULT"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "GAUGE_LABELS_CONTAINER_CLASS", function() { return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["GAUGE_LABELS_CONTAINER_CLASS"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "GAUGE_THRESHOLD_LABEL_CLASS", function() { return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["GAUGE_THRESHOLD_LABEL_CLASS"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "InteractionLabelPlugin", function() { return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["InteractionLabelPlugin"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "InteractionLinePlugin", function() { return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["InteractionLinePlugin"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MouseInteractiveAreaPlugin", function() { return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["MouseInteractiveAreaPlugin"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RadialPopoverPlugin", function() { return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["RadialPopoverPlugin"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RenderEnginePlugin", function() { return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["RenderEnginePlugin"]; });
+
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TOOLTIP_POSITION_OFFSET", function() { return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["TOOLTIP_POSITION_OFFSET"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getVerticalSetup", function() { return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["getVerticalSetup"]; });
@@ -21509,22 +22245,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BarTooltipsPlugin", function() { return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["BarTooltipsPlugin"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ZoomPlugin", function() { return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["ZoomPlugin"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ChartPopoverPlugin", function() { return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["ChartPopoverPlugin"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ChartDonutContentPlugin", function() { return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["ChartDonutContentPlugin"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MouseInteractiveAreaPlugin", function() { return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["MouseInteractiveAreaPlugin"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RadialPopoverPlugin", function() { return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["RadialPopoverPlugin"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RadialGaugeThresholdLabelsPlugin", function() { return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["RadialGaugeThresholdLabelsPlugin"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RenderEnginePlugin", function() { return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["RenderEnginePlugin"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "InteractionLabelPlugin", function() { return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["InteractionLabelPlugin"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "InteractionLinePlugin", function() { return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["InteractionLinePlugin"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ChartCollection", function() { return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["ChartCollection"]; });
 
@@ -21563,6 +22283,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "THRESHOLDS_SUMMARY_RENDERER_CONFIG", function() { return _renderers_public_api__WEBPACK_IMPORTED_MODULE_12__["THRESHOLDS_SUMMARY_RENDERER_CONFIG"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DEFAULT_MARKER_INTERACTION_CONFIG", function() { return _renderers_public_api__WEBPACK_IMPORTED_MODULE_12__["DEFAULT_MARKER_INTERACTION_CONFIG"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "GAUGE_THRESHOLD_MARKER_CLASS", function() { return _renderers_public_api__WEBPACK_IMPORTED_MODULE_12__["GAUGE_THRESHOLD_MARKER_CLASS"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RenderState", function() { return _renderers_public_api__WEBPACK_IMPORTED_MODULE_12__["RenderState"]; });
 
@@ -21608,6 +22330,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BarSeriesHighlightStrategy", function() { return _renderers_public_api__WEBPACK_IMPORTED_MODULE_12__["BarSeriesHighlightStrategy"]; });
 
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DEFAULT_LINEAR_GAUGE_THRESHOLDS_RENDERER_CONFIG", function() { return _renderers_public_api__WEBPACK_IMPORTED_MODULE_12__["DEFAULT_LINEAR_GAUGE_THRESHOLDS_RENDERER_CONFIG"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LinearGaugeThresholdsRenderer", function() { return _renderers_public_api__WEBPACK_IMPORTED_MODULE_12__["LinearGaugeThresholdsRenderer"]; });
+
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "radialPreprocessor", function() { return _renderers_public_api__WEBPACK_IMPORTED_MODULE_12__["radialPreprocessor"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "radial", function() { return _renderers_public_api__WEBPACK_IMPORTED_MODULE_12__["radial"]; });
@@ -21622,7 +22348,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "radialGaugeRendererConfig", function() { return _renderers_public_api__WEBPACK_IMPORTED_MODULE_12__["radialGaugeRendererConfig"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "GaugeRenderingUtils", function() { return _renderers_public_api__WEBPACK_IMPORTED_MODULE_12__["GaugeRenderingUtils"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RadialGaugeRenderingUtil", function() { return _renderers_public_api__WEBPACK_IMPORTED_MODULE_12__["RadialGaugeRenderingUtil"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PieRenderer", function() { return _renderers_public_api__WEBPACK_IMPORTED_MODULE_12__["PieRenderer"]; });
 
@@ -21744,6 +22470,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "quadtree", function() { return _quadtree_js__WEBPACK_IMPORTED_MODULE_0__["default"]; });
 
 
+
+
+/***/ }),
+
+/***/ "gOPF":
+/*!********************************************************************!*\
+  !*** ./src/renderers/radial/gauge/radial-gauge-renderer-config.ts ***!
+  \********************************************************************/
+/*! exports provided: radialGaugeRendererConfig */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "radialGaugeRendererConfig", function() { return radialGaugeRendererConfig; });
+/**
+ * Convenience function for generating a standard radial renderer configuration for a gauge
+ *
+ * @returns {IRadialRendererConfig} Standard renderer configuration for a gauge
+ */
+function radialGaugeRendererConfig() {
+    return {
+        annularGrowth: 0,
+        strokeWidth: 0,
+        enableSeriesHighlighting: false,
+    };
+}
 
 
 /***/ }),
@@ -22529,6 +23281,12 @@ const STANDARD_RENDER_LAYERS = {
         order: 50,
         clipped: true,
     },
+    [_renderers_types__WEBPACK_IMPORTED_MODULE_1__["RenderLayerName"].unclippedData]: {
+        name: _renderers_types__WEBPACK_IMPORTED_MODULE_1__["RenderLayerName"].unclippedData,
+        // order is one greater than the data layer to ensure the unclipped data layer appears just after the data layer in the DOM
+        order: 51,
+        clipped: false,
+    },
     [_renderers_types__WEBPACK_IMPORTED_MODULE_1__["RenderLayerName"].foreground]: {
         name: _renderers_types__WEBPACK_IMPORTED_MODULE_1__["RenderLayerName"].foreground,
         order: 1000,
@@ -23018,6 +23776,7 @@ class BarRenderer extends _xy_renderer__WEBPACK_IMPORTED_MODULE_11__["XYRenderer
             barClass: "bar-outline",
             highlightStrategy: undefined,
             pointerEvents: true,
+            enableMinBarThickness: true,
         };
         this.barContainerClass = "bar-container";
         // setting default values to the properties that were not set by user
@@ -23187,7 +23946,9 @@ class BarRenderer extends _xy_renderer__WEBPACK_IMPORTED_MODULE_11__["XYRenderer
                 start += this.config.padding;
                 thickness -= this.config.padding * 2;
             }
-            thickness = Math.max(thickness, BarRenderer.MIN_BAR_THICKNESS);
+            if (this.config.enableMinBarThickness) {
+                thickness = Math.max(thickness, BarRenderer.MIN_BAR_THICKNESS);
+            }
         }
         return { start, thickness };
     }
@@ -23246,151 +24007,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (function(a, b) {
   return b < a ? -1 : b > a ? 1 : b >= a ? 0 : NaN;
 });
-
-
-/***/ }),
-
-/***/ "iIvt":
-/*!**********************************************************************!*\
-  !*** ./node_modules/d3-interpolate/node_modules/d3-color/src/lab.js ***!
-  \**********************************************************************/
-/*! exports provided: gray, default, Lab, lch, hcl, Hcl */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "gray", function() { return gray; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return lab; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Lab", function() { return Lab; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "lch", function() { return lch; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hcl", function() { return hcl; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Hcl", function() { return Hcl; });
-/* harmony import */ var _define_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./define.js */ "xGXq");
-/* harmony import */ var _color_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./color.js */ "ozvG");
-/* harmony import */ var _math_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./math.js */ "uXcH");
-
-
-
-
-// https://observablehq.com/@mbostock/lab-and-rgb
-var K = 18,
-    Xn = 0.96422,
-    Yn = 1,
-    Zn = 0.82521,
-    t0 = 4 / 29,
-    t1 = 6 / 29,
-    t2 = 3 * t1 * t1,
-    t3 = t1 * t1 * t1;
-
-function labConvert(o) {
-  if (o instanceof Lab) return new Lab(o.l, o.a, o.b, o.opacity);
-  if (o instanceof Hcl) return hcl2lab(o);
-  if (!(o instanceof _color_js__WEBPACK_IMPORTED_MODULE_1__["Rgb"])) o = Object(_color_js__WEBPACK_IMPORTED_MODULE_1__["rgbConvert"])(o);
-  var r = rgb2lrgb(o.r),
-      g = rgb2lrgb(o.g),
-      b = rgb2lrgb(o.b),
-      y = xyz2lab((0.2225045 * r + 0.7168786 * g + 0.0606169 * b) / Yn), x, z;
-  if (r === g && g === b) x = z = y; else {
-    x = xyz2lab((0.4360747 * r + 0.3850649 * g + 0.1430804 * b) / Xn);
-    z = xyz2lab((0.0139322 * r + 0.0971045 * g + 0.7141733 * b) / Zn);
-  }
-  return new Lab(116 * y - 16, 500 * (x - y), 200 * (y - z), o.opacity);
-}
-
-function gray(l, opacity) {
-  return new Lab(l, 0, 0, opacity == null ? 1 : opacity);
-}
-
-function lab(l, a, b, opacity) {
-  return arguments.length === 1 ? labConvert(l) : new Lab(l, a, b, opacity == null ? 1 : opacity);
-}
-
-function Lab(l, a, b, opacity) {
-  this.l = +l;
-  this.a = +a;
-  this.b = +b;
-  this.opacity = +opacity;
-}
-
-Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["default"])(Lab, lab, Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["extend"])(_color_js__WEBPACK_IMPORTED_MODULE_1__["Color"], {
-  brighter: function(k) {
-    return new Lab(this.l + K * (k == null ? 1 : k), this.a, this.b, this.opacity);
-  },
-  darker: function(k) {
-    return new Lab(this.l - K * (k == null ? 1 : k), this.a, this.b, this.opacity);
-  },
-  rgb: function() {
-    var y = (this.l + 16) / 116,
-        x = isNaN(this.a) ? y : y + this.a / 500,
-        z = isNaN(this.b) ? y : y - this.b / 200;
-    x = Xn * lab2xyz(x);
-    y = Yn * lab2xyz(y);
-    z = Zn * lab2xyz(z);
-    return new _color_js__WEBPACK_IMPORTED_MODULE_1__["Rgb"](
-      lrgb2rgb( 3.1338561 * x - 1.6168667 * y - 0.4906146 * z),
-      lrgb2rgb(-0.9787684 * x + 1.9161415 * y + 0.0334540 * z),
-      lrgb2rgb( 0.0719453 * x - 0.2289914 * y + 1.4052427 * z),
-      this.opacity
-    );
-  }
-}));
-
-function xyz2lab(t) {
-  return t > t3 ? Math.pow(t, 1 / 3) : t / t2 + t0;
-}
-
-function lab2xyz(t) {
-  return t > t1 ? t * t * t : t2 * (t - t0);
-}
-
-function lrgb2rgb(x) {
-  return 255 * (x <= 0.0031308 ? 12.92 * x : 1.055 * Math.pow(x, 1 / 2.4) - 0.055);
-}
-
-function rgb2lrgb(x) {
-  return (x /= 255) <= 0.04045 ? x / 12.92 : Math.pow((x + 0.055) / 1.055, 2.4);
-}
-
-function hclConvert(o) {
-  if (o instanceof Hcl) return new Hcl(o.h, o.c, o.l, o.opacity);
-  if (!(o instanceof Lab)) o = labConvert(o);
-  if (o.a === 0 && o.b === 0) return new Hcl(NaN, 0 < o.l && o.l < 100 ? 0 : NaN, o.l, o.opacity);
-  var h = Math.atan2(o.b, o.a) * _math_js__WEBPACK_IMPORTED_MODULE_2__["rad2deg"];
-  return new Hcl(h < 0 ? h + 360 : h, Math.sqrt(o.a * o.a + o.b * o.b), o.l, o.opacity);
-}
-
-function lch(l, c, h, opacity) {
-  return arguments.length === 1 ? hclConvert(l) : new Hcl(h, c, l, opacity == null ? 1 : opacity);
-}
-
-function hcl(h, c, l, opacity) {
-  return arguments.length === 1 ? hclConvert(h) : new Hcl(h, c, l, opacity == null ? 1 : opacity);
-}
-
-function Hcl(h, c, l, opacity) {
-  this.h = +h;
-  this.c = +c;
-  this.l = +l;
-  this.opacity = +opacity;
-}
-
-function hcl2lab(o) {
-  if (isNaN(o.h)) return new Lab(o.l, 0, 0, o.opacity);
-  var h = o.h * _math_js__WEBPACK_IMPORTED_MODULE_2__["deg2rad"];
-  return new Lab(o.l, Math.cos(h) * o.c, Math.sin(h) * o.c, o.opacity);
-}
-
-Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["default"])(Hcl, hcl, Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["extend"])(_color_js__WEBPACK_IMPORTED_MODULE_1__["Color"], {
-  brighter: function(k) {
-    return new Hcl(this.h, this.c, this.l + K * (k == null ? 1 : k), this.opacity);
-  },
-  darker: function(k) {
-    return new Hcl(this.h, this.c, this.l - K * (k == null ? 1 : k), this.opacity);
-  },
-  rgb: function() {
-    return hcl2lab(this).rgb();
-  }
-}));
 
 
 /***/ }),
@@ -23760,72 +24376,6 @@ function safeGet(object, key) {
 }
 
 module.exports = safeGet;
-
-
-/***/ }),
-
-/***/ "iwCl":
-/*!*******************************************************!*\
-  !*** ./src/renderers/radial/gauge-rendering-utils.ts ***!
-  \*******************************************************/
-/*! exports provided: GaugeRenderingUtils */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GaugeRenderingUtils", function() { return GaugeRenderingUtils; });
-/* harmony import */ var d3_shape__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3-shape */ "8d86");
-
-class GaugeRenderingUtils {
-    static generateThresholdData(data) {
-        const arcData = GaugeRenderingUtils.generateArcData(data);
-        const thresholdsData = [];
-        const pieGenerator = Object(d3_shape__WEBPACK_IMPORTED_MODULE_0__["pie"])().sort(null);
-        const arcsForCircles = pieGenerator(arcData);
-        arcsForCircles.forEach((arcDatum, i) => {
-            // Drawing circles at threshold points
-            if (i % 2 === 1) {
-                thresholdsData.push(arcDatum);
-            }
-        });
-        return thresholdsData;
-    }
-    static generateArcData(data) {
-        // arcs with a value of zero serve as the threshold points
-        const arcData = Array(data.length * 2 - 1).fill(0);
-        data.forEach((d, i) => {
-            // arcs with a non-zero value serve as the space between the threshold points
-            arcData[i * 2] = i === 0 ? d.value : d.value - data[i - 1].value;
-        });
-        return arcData;
-    }
-}
-
-
-/***/ }),
-
-/***/ "jC88":
-/*!*******************************************************!*\
-  !*** ./src/renderers/radial/gauge-renderer-config.ts ***!
-  \*******************************************************/
-/*! exports provided: radialGaugeRendererConfig */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "radialGaugeRendererConfig", function() { return radialGaugeRendererConfig; });
-/**
- * Convenience function for generating a standard radial renderer configuration for a gauge
- *
- * @returns {IRadialRendererConfig} Standard renderer configuration for a gauge
- */
-function radialGaugeRendererConfig() {
-    return {
-        annularGrowth: 0,
-        strokeWidth: 0,
-        enableSeriesHighlighting: false,
-    };
-}
 
 
 /***/ }),
@@ -24644,6 +25194,160 @@ ThresholdsService = ThresholdsService_1 = Object(tslib__WEBPACK_IMPORTED_MODULE_
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["LoggerService"]])
 ], ThresholdsService);
 
+
+
+/***/ }),
+
+/***/ "laqf":
+/*!**************************************************************!*\
+  !*** ./src/core/plugins/gauge/radial-gauge-labels-plugin.ts ***!
+  \**************************************************************/
+/*! exports provided: RadialGaugeLabelsPlugin */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RadialGaugeLabelsPlugin", function() { return RadialGaugeLabelsPlugin; });
+/* harmony import */ var d3_shape__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3-shape */ "8d86");
+/* harmony import */ var lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash/defaultsDeep */ "P4Tr");
+/* harmony import */ var lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash/isUndefined */ "TP7S");
+/* harmony import */ var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "qCKp");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "kU1M");
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../constants */ "he5r");
+/* harmony import */ var _renderers_radial_gauge_radial_gauge_rendering_util__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../renderers/radial/gauge/radial-gauge-rendering-util */ "Rtv/");
+/* harmony import */ var _renderers_radial_gauge_radial_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../renderers/radial/gauge/radial-gauge-thresholds-renderer */ "CmBv");
+/* harmony import */ var _renderers_types__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../renderers/types */ "AbRU");
+/* harmony import */ var _common_chart_plugin__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../common/chart-plugin */ "e7eq");
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./constants */ "GXwZ");
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * @ignore
+ * A chart plugin that handles the rendering of labels for radial gauge thresholds
+ */
+class RadialGaugeLabelsPlugin extends _common_chart_plugin__WEBPACK_IMPORTED_MODULE_9__["ChartPlugin"] {
+    constructor(config = {}) {
+        super();
+        this.config = config;
+        /** The default plugin configuration */
+        this.DEFAULT_CONFIG = {
+            gridMargin: {
+                top: RadialGaugeLabelsPlugin.MARGIN_DEFAULT,
+                right: RadialGaugeLabelsPlugin.MARGIN_DEFAULT,
+                bottom: RadialGaugeLabelsPlugin.MARGIN_DEFAULT,
+                left: RadialGaugeLabelsPlugin.MARGIN_DEFAULT,
+            },
+            labelPadding: 5,
+            formatterName: _constants__WEBPACK_IMPORTED_MODULE_10__["GAUGE_LABEL_FORMATTER_NAME_DEFAULT"],
+            enableThresholdLabels: true,
+        };
+        this.destroy$ = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
+        this.config = lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_1___default()(this.config, this.DEFAULT_CONFIG);
+    }
+    initialize() {
+        this.lasagnaLayer = this.chart.getGrid().getLasagna().addLayer({
+            name: _constants__WEBPACK_IMPORTED_MODULE_10__["GAUGE_LABELS_CONTAINER_CLASS"],
+            order: _constants__WEBPACK_IMPORTED_MODULE_5__["STANDARD_RENDER_LAYERS"][_renderers_types__WEBPACK_IMPORTED_MODULE_8__["RenderLayerName"].data].order,
+            clipped: false,
+        });
+        const gridConfig = this.chart.getGrid().config();
+        gridConfig.dimension.margin = this.config.gridMargin;
+        this.chart.getEventBus().getStream(_constants__WEBPACK_IMPORTED_MODULE_5__["INTERACTION_DATA_POINTS_EVENT"]).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeUntil"])(this.destroy$)).subscribe((event) => {
+            const gaugeThresholdLabelsGroup = this.lasagnaLayer.select(`.${_constants__WEBPACK_IMPORTED_MODULE_10__["GAUGE_LABELS_CONTAINER_CLASS"]}`);
+            if (!gaugeThresholdLabelsGroup.empty()) {
+                const dataPoints = event.data.dataPoints;
+                const labelOpacity = Object.keys(dataPoints).find((key, index) => dataPoints[key].index === _constants__WEBPACK_IMPORTED_MODULE_5__["DATA_POINT_NOT_FOUND"]) ? 0 : 1;
+                gaugeThresholdLabelsGroup.style("opacity", labelOpacity);
+            }
+        });
+    }
+    updateDimensions() {
+        if (this.config.enableThresholdLabels) {
+            this.drawThresholdLabels();
+        }
+    }
+    destroy() {
+        if (this.destroy$) {
+            this.destroy$.next();
+            this.destroy$.complete();
+        }
+    }
+    drawThresholdLabels() {
+        var _a, _b;
+        const thresholdsSeries = this.chart.getDataManager().chartSeriesSet.find((series) => series.renderer instanceof _renderers_radial_gauge_radial_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_7__["RadialGaugeThresholdsRenderer"]);
+        const renderer = thresholdsSeries === null || thresholdsSeries === void 0 ? void 0 : thresholdsSeries.renderer;
+        const labelRadius = (renderer === null || renderer === void 0 ? void 0 : renderer.getOuterRadius((_a = thresholdsSeries === null || thresholdsSeries === void 0 ? void 0 : thresholdsSeries.scales.r.range()) !== null && _a !== void 0 ? _a : [0, 0], 0)) + this.config.labelPadding;
+        if (lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default()(labelRadius)) {
+            throw new Error("Radius is undefined");
+        }
+        const data = thresholdsSeries === null || thresholdsSeries === void 0 ? void 0 : thresholdsSeries.data;
+        if (lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default()(data)) {
+            throw new Error("Gauge threshold series data is undefined");
+        }
+        let gaugeThresholdsLabelsGroup = this.lasagnaLayer.select(`.${_constants__WEBPACK_IMPORTED_MODULE_10__["GAUGE_LABELS_CONTAINER_CLASS"]}`);
+        if (gaugeThresholdsLabelsGroup.empty()) {
+            gaugeThresholdsLabelsGroup = this.lasagnaLayer.append("svg:g")
+                .attr("class", _constants__WEBPACK_IMPORTED_MODULE_10__["GAUGE_LABELS_CONTAINER_CLASS"])
+                .style("opacity", 0);
+        }
+        const labelGenerator = Object(d3_shape__WEBPACK_IMPORTED_MODULE_0__["arc"])()
+            .outerRadius(labelRadius)
+            .innerRadius(labelRadius);
+        const formatter = (_b = thresholdsSeries === null || thresholdsSeries === void 0 ? void 0 : thresholdsSeries.scales.r.formatters[this.config.formatterName]) !== null && _b !== void 0 ? _b : (d => d);
+        const labelSelection = gaugeThresholdsLabelsGroup.selectAll(`text.${_constants__WEBPACK_IMPORTED_MODULE_10__["GAUGE_THRESHOLD_LABEL_CLASS"]}`)
+            .data(_renderers_radial_gauge_radial_gauge_rendering_util__WEBPACK_IMPORTED_MODULE_6__["RadialGaugeRenderingUtil"].generateThresholdData(data));
+        labelSelection.exit().remove();
+        labelSelection.enter()
+            .append("text")
+            .attr("class", _constants__WEBPACK_IMPORTED_MODULE_10__["GAUGE_THRESHOLD_LABEL_CLASS"])
+            .merge(labelSelection)
+            .attr("transform", (d) => `translate(${labelGenerator.centroid(d)})`)
+            .attr("title", (d, i) => formatter(data[i].value))
+            .style("text-anchor", (d) => this.getTextAnchor(d.startAngle))
+            .style("alignment-baseline", (d) => this.getAlignmentBaseline(d.startAngle))
+            .text((d, i) => formatter(data[i].value));
+    }
+    getTextAnchor(angle) {
+        // pie charts start on the top, so we need to subtract Math.PI / 2 (90 degrees)
+        const cosine = Math.cos(angle - Math.PI / 2);
+        if (cosine > 0.5) {
+            // used for right 120 degrees of chart
+            return "start";
+        }
+        if (cosine < -0.5) {
+            // used for left 120 degrees of chart
+            return "end";
+        }
+        // used for top 60 degrees and bottom 60 degrees of chart
+        return "middle";
+    }
+    getAlignmentBaseline(angle) {
+        // pie charts start on the top, so we need to add Math.PI / 2 (90 degrees)
+        const sine = Math.sin(angle + Math.PI / 2);
+        if (sine > 0.5) {
+            // used for top 120 degrees of chart
+            return "text-after-edge";
+        }
+        if (sine < -0.5) {
+            // used for bottom 120 degrees of chart
+            return "text-before-edge";
+        }
+        // used for left 60 degrees and right 60 degrees of chart
+        return "central";
+    }
+}
+RadialGaugeLabelsPlugin.MARGIN_DEFAULT = 25;
 
 
 /***/ }),
@@ -25734,6 +26438,23 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "oV0g":
+/*!**********************************************************************!*\
+  !*** ./node_modules/d3-transition/node_modules/d3-color/src/math.js ***!
+  \**********************************************************************/
+/*! exports provided: deg2rad, rad2deg */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deg2rad", function() { return deg2rad; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "rad2deg", function() { return rad2deg; });
+var deg2rad = Math.PI / 180;
+var rad2deg = 180 / Math.PI;
+
+
+/***/ }),
+
 /***/ "oVo9":
 /*!******************************************!*\
   !*** ./node_modules/d3-time/src/year.js ***!
@@ -25856,400 +26577,6 @@ __webpack_require__.r(__webpack_exports__);
       || (node.document && node) // node is a Window
       || node.defaultView; // node is a Document
 });
-
-
-/***/ }),
-
-/***/ "ozvG":
-/*!************************************************************************!*\
-  !*** ./node_modules/d3-interpolate/node_modules/d3-color/src/color.js ***!
-  \************************************************************************/
-/*! exports provided: Color, darker, brighter, default, rgbConvert, rgb, Rgb, hslConvert, hsl */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Color", function() { return Color; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "darker", function() { return darker; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "brighter", function() { return brighter; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return color; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "rgbConvert", function() { return rgbConvert; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "rgb", function() { return rgb; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Rgb", function() { return Rgb; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hslConvert", function() { return hslConvert; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hsl", function() { return hsl; });
-/* harmony import */ var _define_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./define.js */ "xGXq");
-
-
-function Color() {}
-
-var darker = 0.7;
-var brighter = 1 / darker;
-
-var reI = "\\s*([+-]?\\d+)\\s*",
-    reN = "\\s*([+-]?\\d*\\.?\\d+(?:[eE][+-]?\\d+)?)\\s*",
-    reP = "\\s*([+-]?\\d*\\.?\\d+(?:[eE][+-]?\\d+)?)%\\s*",
-    reHex = /^#([0-9a-f]{3,8})$/,
-    reRgbInteger = new RegExp("^rgb\\(" + [reI, reI, reI] + "\\)$"),
-    reRgbPercent = new RegExp("^rgb\\(" + [reP, reP, reP] + "\\)$"),
-    reRgbaInteger = new RegExp("^rgba\\(" + [reI, reI, reI, reN] + "\\)$"),
-    reRgbaPercent = new RegExp("^rgba\\(" + [reP, reP, reP, reN] + "\\)$"),
-    reHslPercent = new RegExp("^hsl\\(" + [reN, reP, reP] + "\\)$"),
-    reHslaPercent = new RegExp("^hsla\\(" + [reN, reP, reP, reN] + "\\)$");
-
-var named = {
-  aliceblue: 0xf0f8ff,
-  antiquewhite: 0xfaebd7,
-  aqua: 0x00ffff,
-  aquamarine: 0x7fffd4,
-  azure: 0xf0ffff,
-  beige: 0xf5f5dc,
-  bisque: 0xffe4c4,
-  black: 0x000000,
-  blanchedalmond: 0xffebcd,
-  blue: 0x0000ff,
-  blueviolet: 0x8a2be2,
-  brown: 0xa52a2a,
-  burlywood: 0xdeb887,
-  cadetblue: 0x5f9ea0,
-  chartreuse: 0x7fff00,
-  chocolate: 0xd2691e,
-  coral: 0xff7f50,
-  cornflowerblue: 0x6495ed,
-  cornsilk: 0xfff8dc,
-  crimson: 0xdc143c,
-  cyan: 0x00ffff,
-  darkblue: 0x00008b,
-  darkcyan: 0x008b8b,
-  darkgoldenrod: 0xb8860b,
-  darkgray: 0xa9a9a9,
-  darkgreen: 0x006400,
-  darkgrey: 0xa9a9a9,
-  darkkhaki: 0xbdb76b,
-  darkmagenta: 0x8b008b,
-  darkolivegreen: 0x556b2f,
-  darkorange: 0xff8c00,
-  darkorchid: 0x9932cc,
-  darkred: 0x8b0000,
-  darksalmon: 0xe9967a,
-  darkseagreen: 0x8fbc8f,
-  darkslateblue: 0x483d8b,
-  darkslategray: 0x2f4f4f,
-  darkslategrey: 0x2f4f4f,
-  darkturquoise: 0x00ced1,
-  darkviolet: 0x9400d3,
-  deeppink: 0xff1493,
-  deepskyblue: 0x00bfff,
-  dimgray: 0x696969,
-  dimgrey: 0x696969,
-  dodgerblue: 0x1e90ff,
-  firebrick: 0xb22222,
-  floralwhite: 0xfffaf0,
-  forestgreen: 0x228b22,
-  fuchsia: 0xff00ff,
-  gainsboro: 0xdcdcdc,
-  ghostwhite: 0xf8f8ff,
-  gold: 0xffd700,
-  goldenrod: 0xdaa520,
-  gray: 0x808080,
-  green: 0x008000,
-  greenyellow: 0xadff2f,
-  grey: 0x808080,
-  honeydew: 0xf0fff0,
-  hotpink: 0xff69b4,
-  indianred: 0xcd5c5c,
-  indigo: 0x4b0082,
-  ivory: 0xfffff0,
-  khaki: 0xf0e68c,
-  lavender: 0xe6e6fa,
-  lavenderblush: 0xfff0f5,
-  lawngreen: 0x7cfc00,
-  lemonchiffon: 0xfffacd,
-  lightblue: 0xadd8e6,
-  lightcoral: 0xf08080,
-  lightcyan: 0xe0ffff,
-  lightgoldenrodyellow: 0xfafad2,
-  lightgray: 0xd3d3d3,
-  lightgreen: 0x90ee90,
-  lightgrey: 0xd3d3d3,
-  lightpink: 0xffb6c1,
-  lightsalmon: 0xffa07a,
-  lightseagreen: 0x20b2aa,
-  lightskyblue: 0x87cefa,
-  lightslategray: 0x778899,
-  lightslategrey: 0x778899,
-  lightsteelblue: 0xb0c4de,
-  lightyellow: 0xffffe0,
-  lime: 0x00ff00,
-  limegreen: 0x32cd32,
-  linen: 0xfaf0e6,
-  magenta: 0xff00ff,
-  maroon: 0x800000,
-  mediumaquamarine: 0x66cdaa,
-  mediumblue: 0x0000cd,
-  mediumorchid: 0xba55d3,
-  mediumpurple: 0x9370db,
-  mediumseagreen: 0x3cb371,
-  mediumslateblue: 0x7b68ee,
-  mediumspringgreen: 0x00fa9a,
-  mediumturquoise: 0x48d1cc,
-  mediumvioletred: 0xc71585,
-  midnightblue: 0x191970,
-  mintcream: 0xf5fffa,
-  mistyrose: 0xffe4e1,
-  moccasin: 0xffe4b5,
-  navajowhite: 0xffdead,
-  navy: 0x000080,
-  oldlace: 0xfdf5e6,
-  olive: 0x808000,
-  olivedrab: 0x6b8e23,
-  orange: 0xffa500,
-  orangered: 0xff4500,
-  orchid: 0xda70d6,
-  palegoldenrod: 0xeee8aa,
-  palegreen: 0x98fb98,
-  paleturquoise: 0xafeeee,
-  palevioletred: 0xdb7093,
-  papayawhip: 0xffefd5,
-  peachpuff: 0xffdab9,
-  peru: 0xcd853f,
-  pink: 0xffc0cb,
-  plum: 0xdda0dd,
-  powderblue: 0xb0e0e6,
-  purple: 0x800080,
-  rebeccapurple: 0x663399,
-  red: 0xff0000,
-  rosybrown: 0xbc8f8f,
-  royalblue: 0x4169e1,
-  saddlebrown: 0x8b4513,
-  salmon: 0xfa8072,
-  sandybrown: 0xf4a460,
-  seagreen: 0x2e8b57,
-  seashell: 0xfff5ee,
-  sienna: 0xa0522d,
-  silver: 0xc0c0c0,
-  skyblue: 0x87ceeb,
-  slateblue: 0x6a5acd,
-  slategray: 0x708090,
-  slategrey: 0x708090,
-  snow: 0xfffafa,
-  springgreen: 0x00ff7f,
-  steelblue: 0x4682b4,
-  tan: 0xd2b48c,
-  teal: 0x008080,
-  thistle: 0xd8bfd8,
-  tomato: 0xff6347,
-  turquoise: 0x40e0d0,
-  violet: 0xee82ee,
-  wheat: 0xf5deb3,
-  white: 0xffffff,
-  whitesmoke: 0xf5f5f5,
-  yellow: 0xffff00,
-  yellowgreen: 0x9acd32
-};
-
-Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["default"])(Color, color, {
-  copy: function(channels) {
-    return Object.assign(new this.constructor, this, channels);
-  },
-  displayable: function() {
-    return this.rgb().displayable();
-  },
-  hex: color_formatHex, // Deprecated! Use color.formatHex.
-  formatHex: color_formatHex,
-  formatHsl: color_formatHsl,
-  formatRgb: color_formatRgb,
-  toString: color_formatRgb
-});
-
-function color_formatHex() {
-  return this.rgb().formatHex();
-}
-
-function color_formatHsl() {
-  return hslConvert(this).formatHsl();
-}
-
-function color_formatRgb() {
-  return this.rgb().formatRgb();
-}
-
-function color(format) {
-  var m, l;
-  format = (format + "").trim().toLowerCase();
-  return (m = reHex.exec(format)) ? (l = m[1].length, m = parseInt(m[1], 16), l === 6 ? rgbn(m) // #ff0000
-      : l === 3 ? new Rgb((m >> 8 & 0xf) | (m >> 4 & 0xf0), (m >> 4 & 0xf) | (m & 0xf0), ((m & 0xf) << 4) | (m & 0xf), 1) // #f00
-      : l === 8 ? rgba(m >> 24 & 0xff, m >> 16 & 0xff, m >> 8 & 0xff, (m & 0xff) / 0xff) // #ff000000
-      : l === 4 ? rgba((m >> 12 & 0xf) | (m >> 8 & 0xf0), (m >> 8 & 0xf) | (m >> 4 & 0xf0), (m >> 4 & 0xf) | (m & 0xf0), (((m & 0xf) << 4) | (m & 0xf)) / 0xff) // #f000
-      : null) // invalid hex
-      : (m = reRgbInteger.exec(format)) ? new Rgb(m[1], m[2], m[3], 1) // rgb(255, 0, 0)
-      : (m = reRgbPercent.exec(format)) ? new Rgb(m[1] * 255 / 100, m[2] * 255 / 100, m[3] * 255 / 100, 1) // rgb(100%, 0%, 0%)
-      : (m = reRgbaInteger.exec(format)) ? rgba(m[1], m[2], m[3], m[4]) // rgba(255, 0, 0, 1)
-      : (m = reRgbaPercent.exec(format)) ? rgba(m[1] * 255 / 100, m[2] * 255 / 100, m[3] * 255 / 100, m[4]) // rgb(100%, 0%, 0%, 1)
-      : (m = reHslPercent.exec(format)) ? hsla(m[1], m[2] / 100, m[3] / 100, 1) // hsl(120, 50%, 50%)
-      : (m = reHslaPercent.exec(format)) ? hsla(m[1], m[2] / 100, m[3] / 100, m[4]) // hsla(120, 50%, 50%, 1)
-      : named.hasOwnProperty(format) ? rgbn(named[format]) // eslint-disable-line no-prototype-builtins
-      : format === "transparent" ? new Rgb(NaN, NaN, NaN, 0)
-      : null;
-}
-
-function rgbn(n) {
-  return new Rgb(n >> 16 & 0xff, n >> 8 & 0xff, n & 0xff, 1);
-}
-
-function rgba(r, g, b, a) {
-  if (a <= 0) r = g = b = NaN;
-  return new Rgb(r, g, b, a);
-}
-
-function rgbConvert(o) {
-  if (!(o instanceof Color)) o = color(o);
-  if (!o) return new Rgb;
-  o = o.rgb();
-  return new Rgb(o.r, o.g, o.b, o.opacity);
-}
-
-function rgb(r, g, b, opacity) {
-  return arguments.length === 1 ? rgbConvert(r) : new Rgb(r, g, b, opacity == null ? 1 : opacity);
-}
-
-function Rgb(r, g, b, opacity) {
-  this.r = +r;
-  this.g = +g;
-  this.b = +b;
-  this.opacity = +opacity;
-}
-
-Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["default"])(Rgb, rgb, Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["extend"])(Color, {
-  brighter: function(k) {
-    k = k == null ? brighter : Math.pow(brighter, k);
-    return new Rgb(this.r * k, this.g * k, this.b * k, this.opacity);
-  },
-  darker: function(k) {
-    k = k == null ? darker : Math.pow(darker, k);
-    return new Rgb(this.r * k, this.g * k, this.b * k, this.opacity);
-  },
-  rgb: function() {
-    return this;
-  },
-  displayable: function() {
-    return (-0.5 <= this.r && this.r < 255.5)
-        && (-0.5 <= this.g && this.g < 255.5)
-        && (-0.5 <= this.b && this.b < 255.5)
-        && (0 <= this.opacity && this.opacity <= 1);
-  },
-  hex: rgb_formatHex, // Deprecated! Use color.formatHex.
-  formatHex: rgb_formatHex,
-  formatRgb: rgb_formatRgb,
-  toString: rgb_formatRgb
-}));
-
-function rgb_formatHex() {
-  return "#" + hex(this.r) + hex(this.g) + hex(this.b);
-}
-
-function rgb_formatRgb() {
-  var a = this.opacity; a = isNaN(a) ? 1 : Math.max(0, Math.min(1, a));
-  return (a === 1 ? "rgb(" : "rgba(")
-      + Math.max(0, Math.min(255, Math.round(this.r) || 0)) + ", "
-      + Math.max(0, Math.min(255, Math.round(this.g) || 0)) + ", "
-      + Math.max(0, Math.min(255, Math.round(this.b) || 0))
-      + (a === 1 ? ")" : ", " + a + ")");
-}
-
-function hex(value) {
-  value = Math.max(0, Math.min(255, Math.round(value) || 0));
-  return (value < 16 ? "0" : "") + value.toString(16);
-}
-
-function hsla(h, s, l, a) {
-  if (a <= 0) h = s = l = NaN;
-  else if (l <= 0 || l >= 1) h = s = NaN;
-  else if (s <= 0) h = NaN;
-  return new Hsl(h, s, l, a);
-}
-
-function hslConvert(o) {
-  if (o instanceof Hsl) return new Hsl(o.h, o.s, o.l, o.opacity);
-  if (!(o instanceof Color)) o = color(o);
-  if (!o) return new Hsl;
-  if (o instanceof Hsl) return o;
-  o = o.rgb();
-  var r = o.r / 255,
-      g = o.g / 255,
-      b = o.b / 255,
-      min = Math.min(r, g, b),
-      max = Math.max(r, g, b),
-      h = NaN,
-      s = max - min,
-      l = (max + min) / 2;
-  if (s) {
-    if (r === max) h = (g - b) / s + (g < b) * 6;
-    else if (g === max) h = (b - r) / s + 2;
-    else h = (r - g) / s + 4;
-    s /= l < 0.5 ? max + min : 2 - max - min;
-    h *= 60;
-  } else {
-    s = l > 0 && l < 1 ? 0 : h;
-  }
-  return new Hsl(h, s, l, o.opacity);
-}
-
-function hsl(h, s, l, opacity) {
-  return arguments.length === 1 ? hslConvert(h) : new Hsl(h, s, l, opacity == null ? 1 : opacity);
-}
-
-function Hsl(h, s, l, opacity) {
-  this.h = +h;
-  this.s = +s;
-  this.l = +l;
-  this.opacity = +opacity;
-}
-
-Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["default"])(Hsl, hsl, Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["extend"])(Color, {
-  brighter: function(k) {
-    k = k == null ? brighter : Math.pow(brighter, k);
-    return new Hsl(this.h, this.s, this.l * k, this.opacity);
-  },
-  darker: function(k) {
-    k = k == null ? darker : Math.pow(darker, k);
-    return new Hsl(this.h, this.s, this.l * k, this.opacity);
-  },
-  rgb: function() {
-    var h = this.h % 360 + (this.h < 0) * 360,
-        s = isNaN(h) || isNaN(this.s) ? 0 : this.s,
-        l = this.l,
-        m2 = l + (l < 0.5 ? l : 1 - l) * s,
-        m1 = 2 * l - m2;
-    return new Rgb(
-      hsl2rgb(h >= 240 ? h - 240 : h + 120, m1, m2),
-      hsl2rgb(h, m1, m2),
-      hsl2rgb(h < 120 ? h + 240 : h - 120, m1, m2),
-      this.opacity
-    );
-  },
-  displayable: function() {
-    return (0 <= this.s && this.s <= 1 || isNaN(this.s))
-        && (0 <= this.l && this.l <= 1)
-        && (0 <= this.opacity && this.opacity <= 1);
-  },
-  formatHsl: function() {
-    var a = this.opacity; a = isNaN(a) ? 1 : Math.max(0, Math.min(1, a));
-    return (a === 1 ? "hsl(" : "hsla(")
-        + (this.h || 0) + ", "
-        + (this.s || 0) * 100 + "%, "
-        + (this.l || 0) * 100 + "%"
-        + (a === 1 ? ")" : ", " + a + ")");
-  }
-}));
-
-/* From FvD 13.37, CSS Color Module Level 3 */
-function hsl2rgb(h, m1, m2) {
-  return (h < 60 ? m1 + (m2 - m1) * h / 60
-      : h < 180 ? m2
-      : h < 240 ? m1 + (m2 - m1) * (240 - h) / 60
-      : m1) * 255;
-}
 
 
 /***/ }),
@@ -26943,6 +27270,41 @@ __webpack_require__.r(__webpack_exports__);
 
   return new _index_js__WEBPACK_IMPORTED_MODULE_0__["Transition"](merges, this._parents, this._name, this._id);
 });
+
+
+/***/ }),
+
+/***/ "qXv/":
+/*!***********************************************************************!*\
+  !*** ./node_modules/d3-transition/node_modules/d3-color/src/index.js ***!
+  \***********************************************************************/
+/*! exports provided: color, rgb, hsl, lab, hcl, lch, gray, cubehelix */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _color_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./color.js */ "3lC8");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "color", function() { return _color_js__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "rgb", function() { return _color_js__WEBPACK_IMPORTED_MODULE_0__["rgb"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "hsl", function() { return _color_js__WEBPACK_IMPORTED_MODULE_0__["hsl"]; });
+
+/* harmony import */ var _lab_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./lab.js */ "/zD8");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "lab", function() { return _lab_js__WEBPACK_IMPORTED_MODULE_1__["default"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "hcl", function() { return _lab_js__WEBPACK_IMPORTED_MODULE_1__["hcl"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "lch", function() { return _lab_js__WEBPACK_IMPORTED_MODULE_1__["lch"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "gray", function() { return _lab_js__WEBPACK_IMPORTED_MODULE_1__["gray"]; });
+
+/* harmony import */ var _cubehelix_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./cubehelix.js */ "Ov49");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cubehelix", function() { return _cubehelix_js__WEBPACK_IMPORTED_MODULE_2__["default"]; });
+
+
+
+
 
 
 /***/ }),
@@ -27657,7 +28019,7 @@ var hours = hour.range;
 /*!************************************!*\
   !*** ./src/renderers/constants.ts ***!
   \************************************/
-/*! exports provided: THRESHOLDS_MAIN_CHART_RENDERER_CONFIG, THRESHOLDS_SUMMARY_RENDERER_CONFIG, DEFAULT_MARKER_INTERACTION_CONFIG */
+/*! exports provided: THRESHOLDS_MAIN_CHART_RENDERER_CONFIG, THRESHOLDS_SUMMARY_RENDERER_CONFIG, DEFAULT_MARKER_INTERACTION_CONFIG, GAUGE_THRESHOLD_MARKER_CLASS */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -27665,6 +28027,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "THRESHOLDS_MAIN_CHART_RENDERER_CONFIG", function() { return THRESHOLDS_MAIN_CHART_RENDERER_CONFIG; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "THRESHOLDS_SUMMARY_RENDERER_CONFIG", function() { return THRESHOLDS_SUMMARY_RENDERER_CONFIG; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DEFAULT_MARKER_INTERACTION_CONFIG", function() { return DEFAULT_MARKER_INTERACTION_CONFIG; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GAUGE_THRESHOLD_MARKER_CLASS", function() { return GAUGE_THRESHOLD_MARKER_CLASS; });
 /* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./types */ "AbRU");
 
 /** Renderer configuration for the thresholds on a chart */
@@ -27708,6 +28071,11 @@ const DEFAULT_MARKER_INTERACTION_CONFIG = {
     enabled: false,
     clickable: false,
 };
+/**
+ * @ignore
+ * Class name for gauge threshold markers
+ */
+const GAUGE_THRESHOLD_MARKER_CLASS = "gauge-threshold-marker";
 
 
 /***/ }),
@@ -28403,82 +28771,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "sgdl":
-/*!******************************************************************!*\
-  !*** ./src/renderers/radial/radial-gauge-thresholds-renderer.ts ***!
-  \******************************************************************/
-/*! exports provided: DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG, RadialGaugeThresholdsRenderer */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG", function() { return DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RadialGaugeThresholdsRenderer", function() { return RadialGaugeThresholdsRenderer; });
-/* harmony import */ var d3_shape__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3-shape */ "8d86");
-/* harmony import */ var lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash/defaultsDeep */ "P4Tr");
-/* harmony import */ var lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash/isUndefined */ "TP7S");
-/* harmony import */ var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../types */ "AbRU");
-/* harmony import */ var _gauge_rendering_utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./gauge-rendering-utils */ "iwCl");
-/* harmony import */ var _radial_renderer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./radial-renderer */ "+mSY");
-
-
-
-
-
-
-/**
- * @ignore Default configuration for Radial Gauge Thresholds Renderer
- */
-const DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG = {};
-/**
- * @ignore Renderer for drawing threshold level indicators for gauges
- */
-class RadialGaugeThresholdsRenderer extends _radial_renderer__WEBPACK_IMPORTED_MODULE_5__["RadialRenderer"] {
-    /**
-     * Creates an instance of RadialGaugeThresholdsRenderer.
-     * @param {IRadialGaugeThresholdsRendererConfig} [config]
-     * Renderer configuration object. Defaults to `DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG` constant value.
-     */
-    constructor(config = {}) {
-        super(config);
-        this.config = lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_1___default()(this.config, DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG);
-    }
-    /** See {@link Renderer#draw} */
-    draw(renderSeries, rendererSubject) {
-        const dataContainer = renderSeries.containers[_types__WEBPACK_IMPORTED_MODULE_3__["RenderLayerName"].data];
-        const data = renderSeries.dataSeries.data;
-        this.segmentWidth = this.config.annularWidth || 0;
-        const innerRadius = this.getInnerRadius(renderSeries.scales.r.range(), 0);
-        const markerGenerator = Object(d3_shape__WEBPACK_IMPORTED_MODULE_0__["arc"])()
-            .outerRadius(this.getOuterRadius(renderSeries.scales.r.range(), 0))
-            .innerRadius(innerRadius >= 0 ? innerRadius : 0);
-        const markerSelection = dataContainer.selectAll(`circle.${RadialGaugeThresholdsRenderer.MARKER_CLASS}`)
-            .data(_gauge_rendering_utils__WEBPACK_IMPORTED_MODULE_4__["GaugeRenderingUtils"].generateThresholdData(data));
-        markerSelection.exit().remove();
-        markerSelection.enter()
-            .append("circle")
-            .attr("class", RadialGaugeThresholdsRenderer.MARKER_CLASS)
-            .merge(markerSelection)
-            .attr("cx", d => markerGenerator.centroid(d)[0])
-            .attr("cy", d => markerGenerator.centroid(d)[1])
-            .attr("r", 4)
-            .style("fill", (d, i) => data[i].hit ? "var(--nui-color-text-light)" : "var(--nui-color-text-default)")
-            .style("stroke-width", 0);
-    }
-    getInnerRadius(range, index) {
-        if (lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default()(this.segmentWidth)) {
-            throw new Error("Can't compute inner radius");
-        }
-        return range[1] - range[0] - this.segmentWidth;
-    }
-}
-RadialGaugeThresholdsRenderer.MARKER_CLASS = "threshold-marker";
-
-
-/***/ }),
-
 /***/ "skEf":
 /*!*********************************************************!*\
   !*** ./node_modules/d3-selection/src/selection/html.js ***!
@@ -29070,6 +29362,22 @@ class DataSeries {
 
 /***/ }),
 
+/***/ "ttef":
+/*!*********************************************!*\
+  !*** ./src/core/common/scales/constants.ts ***!
+  \*********************************************/
+/*! exports provided: BAND_CENTER */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BAND_CENTER", function() { return BAND_CENTER; });
+/** The center position within a band on a band scale */
+const BAND_CENTER = 0.5;
+
+
+/***/ }),
+
 /***/ "u8S7":
 /*!*********************************!*\
   !*** ./src/thresholds/types.ts ***!
@@ -29120,23 +29428,6 @@ function barAccessors(config, colorProvider, markerProvider) {
         ? new _horizontal_bar_accessors__WEBPACK_IMPORTED_MODULE_0__["HorizontalBarAccessors"](colorProvider, markerProvider)
         : new _vertical_bar_accessors__WEBPACK_IMPORTED_MODULE_1__["VerticalBarAccessors"](colorProvider, markerProvider);
 }
-
-
-/***/ }),
-
-/***/ "uXcH":
-/*!***********************************************************************!*\
-  !*** ./node_modules/d3-interpolate/node_modules/d3-color/src/math.js ***!
-  \***********************************************************************/
-/*! exports provided: deg2rad, rad2deg */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deg2rad", function() { return deg2rad; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "rad2deg", function() { return rad2deg; });
-var deg2rad = Math.PI / 180;
-var rad2deg = 180 / Math.PI;
 
 
 /***/ }),
@@ -29253,85 +29544,6 @@ function invert(scale, coordinate) {
     }
     return [value, val];
 }
-
-
-/***/ }),
-
-/***/ "unCO":
-/*!****************************************************************************!*\
-  !*** ./node_modules/d3-interpolate/node_modules/d3-color/src/cubehelix.js ***!
-  \****************************************************************************/
-/*! exports provided: default, Cubehelix */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return cubehelix; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Cubehelix", function() { return Cubehelix; });
-/* harmony import */ var _define_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./define.js */ "xGXq");
-/* harmony import */ var _color_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./color.js */ "ozvG");
-/* harmony import */ var _math_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./math.js */ "uXcH");
-
-
-
-
-var A = -0.14861,
-    B = +1.78277,
-    C = -0.29227,
-    D = -0.90649,
-    E = +1.97294,
-    ED = E * D,
-    EB = E * B,
-    BC_DA = B * C - D * A;
-
-function cubehelixConvert(o) {
-  if (o instanceof Cubehelix) return new Cubehelix(o.h, o.s, o.l, o.opacity);
-  if (!(o instanceof _color_js__WEBPACK_IMPORTED_MODULE_1__["Rgb"])) o = Object(_color_js__WEBPACK_IMPORTED_MODULE_1__["rgbConvert"])(o);
-  var r = o.r / 255,
-      g = o.g / 255,
-      b = o.b / 255,
-      l = (BC_DA * b + ED * r - EB * g) / (BC_DA + ED - EB),
-      bl = b - l,
-      k = (E * (g - l) - C * bl) / D,
-      s = Math.sqrt(k * k + bl * bl) / (E * l * (1 - l)), // NaN if l=0 or l=1
-      h = s ? Math.atan2(k, bl) * _math_js__WEBPACK_IMPORTED_MODULE_2__["rad2deg"] - 120 : NaN;
-  return new Cubehelix(h < 0 ? h + 360 : h, s, l, o.opacity);
-}
-
-function cubehelix(h, s, l, opacity) {
-  return arguments.length === 1 ? cubehelixConvert(h) : new Cubehelix(h, s, l, opacity == null ? 1 : opacity);
-}
-
-function Cubehelix(h, s, l, opacity) {
-  this.h = +h;
-  this.s = +s;
-  this.l = +l;
-  this.opacity = +opacity;
-}
-
-Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["default"])(Cubehelix, cubehelix, Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["extend"])(_color_js__WEBPACK_IMPORTED_MODULE_1__["Color"], {
-  brighter: function(k) {
-    k = k == null ? _color_js__WEBPACK_IMPORTED_MODULE_1__["brighter"] : Math.pow(_color_js__WEBPACK_IMPORTED_MODULE_1__["brighter"], k);
-    return new Cubehelix(this.h, this.s, this.l * k, this.opacity);
-  },
-  darker: function(k) {
-    k = k == null ? _color_js__WEBPACK_IMPORTED_MODULE_1__["darker"] : Math.pow(_color_js__WEBPACK_IMPORTED_MODULE_1__["darker"], k);
-    return new Cubehelix(this.h, this.s, this.l * k, this.opacity);
-  },
-  rgb: function() {
-    var h = isNaN(this.h) ? 0 : (this.h + 120) * _math_js__WEBPACK_IMPORTED_MODULE_2__["deg2rad"],
-        l = +this.l,
-        a = isNaN(this.s) ? 0 : this.s * l * (1 - l),
-        cosh = Math.cos(h),
-        sinh = Math.sin(h);
-    return new _color_js__WEBPACK_IMPORTED_MODULE_1__["Rgb"](
-      255 * (l + a * (A * cosh + B * sinh)),
-      255 * (l + a * (C * cosh + D * sinh)),
-      255 * (l + a * (E * cosh)),
-      this.opacity
-    );
-  }
-}));
 
 
 /***/ }),
@@ -30302,7 +30514,11 @@ class RenderEngine {
             const childContainers = this.getSeriesChildContainers(chartSeries.id);
             const areDomainsValid = -1 === Object.values(chartSeries.scales).findIndex(scale => {
                 if (typeof scaleValidity[scale.id] === "undefined") {
-                    scaleValidity[scale.id] = scale.isDomainValid();
+                    const isValid = scale.isDomainValid();
+                    if (!isValid) {
+                        console.warn("Invalid scale domain detected for scale:", scale);
+                    }
+                    scaleValidity[scale.id] = isValid;
                 }
                 return !scaleValidity[scale.id];
             });
@@ -30665,30 +30881,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "xGXq":
-/*!*************************************************************************!*\
-  !*** ./node_modules/d3-interpolate/node_modules/d3-color/src/define.js ***!
-  \*************************************************************************/
-/*! exports provided: default, extend */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "extend", function() { return extend; });
-/* harmony default export */ __webpack_exports__["default"] = (function(constructor, factory, prototype) {
-  constructor.prototype = factory.prototype = prototype;
-  prototype.constructor = constructor;
-});
-
-function extend(parent, definition) {
-  var prototype = Object.create(parent.prototype);
-  for (var key in definition) prototype[key] = definition[key];
-  return prototype;
-}
-
-
-/***/ }),
-
 /***/ "xJQu":
 /*!*************************************************!*\
   !*** ./node_modules/d3-shape/src/symbol/wye.js ***!
@@ -30724,6 +30916,31 @@ var c = -0.5,
     context.closePath();
   }
 });
+
+
+/***/ }),
+
+/***/ "xibN":
+/*!**********************************************!*\
+  !*** ./src/core/plugins/gauge/public-api.ts ***!
+  \**********************************************/
+/*! exports provided: RadialGaugeLabelsPlugin, GAUGE_LABEL_FORMATTER_NAME_DEFAULT, GAUGE_LABELS_CONTAINER_CLASS, GAUGE_THRESHOLD_LABEL_CLASS */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _radial_gauge_labels_plugin__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./radial-gauge-labels-plugin */ "laqf");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RadialGaugeLabelsPlugin", function() { return _radial_gauge_labels_plugin__WEBPACK_IMPORTED_MODULE_0__["RadialGaugeLabelsPlugin"]; });
+
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./constants */ "GXwZ");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "GAUGE_LABEL_FORMATTER_NAME_DEFAULT", function() { return _constants__WEBPACK_IMPORTED_MODULE_1__["GAUGE_LABEL_FORMATTER_NAME_DEFAULT"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "GAUGE_LABELS_CONTAINER_CLASS", function() { return _constants__WEBPACK_IMPORTED_MODULE_1__["GAUGE_LABELS_CONTAINER_CLASS"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "GAUGE_THRESHOLD_LABEL_CLASS", function() { return _constants__WEBPACK_IMPORTED_MODULE_1__["GAUGE_THRESHOLD_LABEL_CLASS"]; });
+
+
+
 
 
 /***/ }),
