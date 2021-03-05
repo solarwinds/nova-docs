@@ -379,9 +379,10 @@
       "gKry");
 
       var LinearGaugeChartHorizontalPrototypeComponent = /*#__PURE__*/function () {
-        function LinearGaugeChartHorizontalPrototypeComponent() {
+        function LinearGaugeChartHorizontalPrototypeComponent(gaugeService) {
           _classCallCheck(this, LinearGaugeChartHorizontalPrototypeComponent);
 
+          this.gaugeService = gaugeService;
           this.value = 42;
           this.max = 200;
           this.thickness = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GAUGE_THICKNESS_DEFAULT"];
@@ -396,23 +397,28 @@
                 this.chartAssist.chart.updateDimensions();
               }
 
-              this.chartAssist.update(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.value, this.max, this.thresholds, this.seriesSet));
+              this.chartAssist.update(this.gaugeService.updateSeriesSet(this.value, this.max, this.thresholds, this.seriesSet));
             }
           }
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
             var grid = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["XYGrid"](Object(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["linearGaugeGridConfig"])(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Horizontal, this.thickness));
-            grid.config().dimension.margin.right = 5;
             var chart = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["Chart"](grid);
             this.chartAssist = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["ChartAssist"](chart, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["stack"]);
-            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].assembleSeriesSet(this.value, this.max, this.thresholds, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Horizontal);
+            this.seriesSet = this.gaugeService.assembleSeriesSet(this.value, this.max, this.thresholds, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Horizontal);
             this.chartAssist.update(this.seriesSet);
           }
         }]);
 
         return LinearGaugeChartHorizontalPrototypeComponent;
       }();
+
+      LinearGaugeChartHorizontalPrototypeComponent.ctorParameters = function () {
+        return [{
+          type: _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeService"]
+        }];
+      };
 
       LinearGaugeChartHorizontalPrototypeComponent.propDecorators = {
         value: [{
@@ -432,7 +438,7 @@
         selector: "linear-gauge-horizontal-chart-prototype",
         template: _raw_loader_linear_gauge_horizontal_chart_prototype_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
         styles: [_linear_gauge_horizontal_chart_prototype_component_less__WEBPACK_IMPORTED_MODULE_2__["default"]]
-      })], LinearGaugeChartHorizontalPrototypeComponent);
+      }), Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeService"]])], LinearGaugeChartHorizontalPrototypeComponent);
       /***/
     },
 
@@ -668,9 +674,10 @@
       "gKry");
 
       var LinearGaugeChartVerticalPrototypeComponent = /*#__PURE__*/function () {
-        function LinearGaugeChartVerticalPrototypeComponent() {
+        function LinearGaugeChartVerticalPrototypeComponent(gaugeService) {
           _classCallCheck(this, LinearGaugeChartVerticalPrototypeComponent);
 
+          this.gaugeService = gaugeService;
           this.value = 42;
           this.max = 200;
           this.thickness = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GAUGE_THICKNESS_DEFAULT"];
@@ -685,23 +692,28 @@
                 this.chartAssist.chart.updateDimensions();
               }
 
-              this.chartAssist.update(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.value, this.max, this.thresholds, this.seriesSet));
+              this.chartAssist.update(this.gaugeService.updateSeriesSet(this.value, this.max, this.thresholds, this.seriesSet));
             }
           }
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
             var grid = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["XYGrid"](Object(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["linearGaugeGridConfig"])(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Vertical, this.thickness));
-            grid.config().dimension.margin.top = 5;
             var chart = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["Chart"](grid);
             this.chartAssist = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["ChartAssist"](chart, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["stack"]);
-            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].assembleSeriesSet(this.value, this.max, this.thresholds, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Vertical);
+            this.seriesSet = this.gaugeService.assembleSeriesSet(this.value, this.max, this.thresholds, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Vertical);
             this.chartAssist.update(this.seriesSet);
           }
         }]);
 
         return LinearGaugeChartVerticalPrototypeComponent;
       }();
+
+      LinearGaugeChartVerticalPrototypeComponent.ctorParameters = function () {
+        return [{
+          type: _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeService"]
+        }];
+      };
 
       LinearGaugeChartVerticalPrototypeComponent.propDecorators = {
         value: [{
@@ -721,7 +733,7 @@
         selector: "linear-gauge-vertical-chart-prototype",
         template: _raw_loader_linear_gauge_vertical_chart_prototype_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
         styles: [_linear_gauge_vertical_chart_prototype_component_less__WEBPACK_IMPORTED_MODULE_2__["default"]]
-      })], LinearGaugeChartVerticalPrototypeComponent);
+      }), Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeService"]])], LinearGaugeChartVerticalPrototypeComponent);
       /***/
     },
 
@@ -796,9 +808,10 @@
       "gKry");
 
       var RadialGaugeChartPrototypeComponent = /*#__PURE__*/function () {
-        function RadialGaugeChartPrototypeComponent() {
+        function RadialGaugeChartPrototypeComponent(gaugeService) {
           _classCallCheck(this, RadialGaugeChartPrototypeComponent);
 
+          this.gaugeService = gaugeService;
           this.value = 42;
           this.max = 200;
           this.annularWidth = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GAUGE_THICKNESS_DEFAULT"];
@@ -812,7 +825,7 @@
                 this.updateAnnularWidth();
               }
 
-              this.chartAssist.update(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.value, this.max, this.thresholds, this.seriesSet));
+              this.chartAssist.update(this.gaugeService.updateSeriesSet(this.value, this.max, this.thresholds, this.seriesSet));
             }
           }
         }, {
@@ -830,9 +843,9 @@
                 left: 40
               }
             };
-            this.chartAssist.chart.addPlugin(new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["RadialGaugeLabelsPlugin"](labelConfig));
-            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].assembleSeriesSet(this.value, this.max, this.thresholds, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Radial);
-            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].setThresholdLabelFormatter(function (d) {
+            this.chartAssist.chart.addPlugin(new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["RadialGaugeThresholdLabelsPlugin"](labelConfig));
+            this.seriesSet = this.gaugeService.assembleSeriesSet(this.value, this.max, this.thresholds, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Radial);
+            this.seriesSet = this.gaugeService.setThresholdLabelFormatter(function (d) {
               return "".concat(d, "MS");
             }, this.seriesSet);
             this.updateAnnularWidth();
@@ -852,6 +865,12 @@
         return RadialGaugeChartPrototypeComponent;
       }();
 
+      RadialGaugeChartPrototypeComponent.ctorParameters = function () {
+        return [{
+          type: _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeService"]
+        }];
+      };
+
       RadialGaugeChartPrototypeComponent.propDecorators = {
         value: [{
           type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"]
@@ -870,7 +889,7 @@
         selector: "radial-gauge-chart-prototype",
         template: _raw_loader_radial_gauge_chart_prototype_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
         styles: [_radial_gauge_chart_prototype_component_less__WEBPACK_IMPORTED_MODULE_2__["default"]]
-      })], RadialGaugeChartPrototypeComponent);
+      }), Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeService"]])], RadialGaugeChartPrototypeComponent);
       /***/
     }
   }]);

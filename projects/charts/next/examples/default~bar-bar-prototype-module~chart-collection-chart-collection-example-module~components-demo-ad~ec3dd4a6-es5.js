@@ -1169,13 +1169,7 @@
       /* harmony import */
 
 
-      var _constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-      /*! ../constants */
-      "ttef");
-      /* harmony import */
-
-
-      var _types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      var _types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ../types */
       "41FX");
       /**
@@ -1189,14 +1183,14 @@
 
 
       function convert(scale, value) {
-        var position = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : _constants__WEBPACK_IMPORTED_MODULE_1__["BAND_CENTER"];
+        var position = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0.5;
         var levels = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : Number.MAX_VALUE;
 
         if (!scale) {
           return 0;
         }
 
-        if (!Object(_types__WEBPACK_IMPORTED_MODULE_2__["isBandScale"])(scale)) {
+        if (!Object(_types__WEBPACK_IMPORTED_MODULE_1__["isBandScale"])(scale)) {
           return scale.convert(value);
         }
 
@@ -2223,7 +2217,7 @@
       !*** ./src/renderers/radial/public-api.ts ***!
       \********************************************/
 
-    /*! exports provided: radialPreprocessor, radial, DEFAULT_RADIAL_RENDERER_CONFIG, RadialRenderer, DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG, RadialGaugeThresholdsRenderer, radialGaugeRendererConfig, RadialGaugeRenderingUtil, PieRenderer, radialGrid, radialScales, RadialAccessors */
+    /*! exports provided: radialPreprocessor, radial, DEFAULT_RADIAL_RENDERER_CONFIG, RadialRenderer, DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG, RadialGaugeThresholdsRenderer, radialGaugeRendererConfig, GaugeRenderingUtils, PieRenderer, radialGrid, radialScales, RadialAccessors */
 
     /***/
     function yfn(module, __webpack_exports__, __webpack_require__) {
@@ -2269,44 +2263,44 @@
       /* harmony import */
 
 
-      var _gauge_radial_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-      /*! ./gauge/radial-gauge-thresholds-renderer */
-      "CmBv");
+      var _radial_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! ./radial-gauge-thresholds-renderer */
+      "sgdl");
       /* harmony reexport (safe) */
 
 
       __webpack_require__.d(__webpack_exports__, "DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG", function () {
-        return _gauge_radial_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_2__["DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG"];
+        return _radial_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_2__["DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG"];
       });
       /* harmony reexport (safe) */
 
 
       __webpack_require__.d(__webpack_exports__, "RadialGaugeThresholdsRenderer", function () {
-        return _gauge_radial_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_2__["RadialGaugeThresholdsRenderer"];
+        return _radial_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_2__["RadialGaugeThresholdsRenderer"];
       });
       /* harmony import */
 
 
-      var _gauge_radial_gauge_renderer_config__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-      /*! ./gauge/radial-gauge-renderer-config */
-      "gOPF");
+      var _gauge_renderer_config__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! ./gauge-renderer-config */
+      "jC88");
       /* harmony reexport (safe) */
 
 
       __webpack_require__.d(__webpack_exports__, "radialGaugeRendererConfig", function () {
-        return _gauge_radial_gauge_renderer_config__WEBPACK_IMPORTED_MODULE_3__["radialGaugeRendererConfig"];
+        return _gauge_renderer_config__WEBPACK_IMPORTED_MODULE_3__["radialGaugeRendererConfig"];
       });
       /* harmony import */
 
 
-      var _gauge_radial_gauge_rendering_util__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-      /*! ./gauge/radial-gauge-rendering-util */
-      "Rtv/");
+      var _gauge_rendering_utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! ./gauge-rendering-utils */
+      "iwCl");
       /* harmony reexport (safe) */
 
 
-      __webpack_require__.d(__webpack_exports__, "RadialGaugeRenderingUtil", function () {
-        return _gauge_radial_gauge_rendering_util__WEBPACK_IMPORTED_MODULE_4__["RadialGaugeRenderingUtil"];
+      __webpack_require__.d(__webpack_exports__, "GaugeRenderingUtils", function () {
+        return _gauge_rendering_utils__WEBPACK_IMPORTED_MODULE_4__["GaugeRenderingUtils"];
       });
       /* harmony import */
 
@@ -2358,195 +2352,6 @@
       });
       /***/
 
-    },
-
-    /***/
-    "/zD8":
-    /*!*********************************************************************!*\
-      !*** ./node_modules/d3-transition/node_modules/d3-color/src/lab.js ***!
-      \*********************************************************************/
-
-    /*! exports provided: gray, default, Lab, lch, hcl, Hcl */
-
-    /***/
-    function zD8(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "gray", function () {
-        return gray;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "default", function () {
-        return lab;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "Lab", function () {
-        return Lab;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "lch", function () {
-        return lch;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "hcl", function () {
-        return hcl;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "Hcl", function () {
-        return Hcl;
-      });
-      /* harmony import */
-
-
-      var _define_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! ./define.js */
-      "V03s");
-      /* harmony import */
-
-
-      var _color_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-      /*! ./color.js */
-      "3lC8");
-      /* harmony import */
-
-
-      var _math_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-      /*! ./math.js */
-      "oV0g"); // https://observablehq.com/@mbostock/lab-and-rgb
-
-
-      var K = 18,
-          Xn = 0.96422,
-          Yn = 1,
-          Zn = 0.82521,
-          t0 = 4 / 29,
-          t1 = 6 / 29,
-          t2 = 3 * t1 * t1,
-          t3 = t1 * t1 * t1;
-
-      function labConvert(o) {
-        if (o instanceof Lab) return new Lab(o.l, o.a, o.b, o.opacity);
-        if (o instanceof Hcl) return hcl2lab(o);
-        if (!(o instanceof _color_js__WEBPACK_IMPORTED_MODULE_1__["Rgb"])) o = Object(_color_js__WEBPACK_IMPORTED_MODULE_1__["rgbConvert"])(o);
-        var r = rgb2lrgb(o.r),
-            g = rgb2lrgb(o.g),
-            b = rgb2lrgb(o.b),
-            y = xyz2lab((0.2225045 * r + 0.7168786 * g + 0.0606169 * b) / Yn),
-            x,
-            z;
-        if (r === g && g === b) x = z = y;else {
-          x = xyz2lab((0.4360747 * r + 0.3850649 * g + 0.1430804 * b) / Xn);
-          z = xyz2lab((0.0139322 * r + 0.0971045 * g + 0.7141733 * b) / Zn);
-        }
-        return new Lab(116 * y - 16, 500 * (x - y), 200 * (y - z), o.opacity);
-      }
-
-      function gray(l, opacity) {
-        return new Lab(l, 0, 0, opacity == null ? 1 : opacity);
-      }
-
-      function lab(l, a, b, opacity) {
-        return arguments.length === 1 ? labConvert(l) : new Lab(l, a, b, opacity == null ? 1 : opacity);
-      }
-
-      function Lab(l, a, b, opacity) {
-        this.l = +l;
-        this.a = +a;
-        this.b = +b;
-        this.opacity = +opacity;
-      }
-
-      Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["default"])(Lab, lab, Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["extend"])(_color_js__WEBPACK_IMPORTED_MODULE_1__["Color"], {
-        brighter: function brighter(k) {
-          return new Lab(this.l + K * (k == null ? 1 : k), this.a, this.b, this.opacity);
-        },
-        darker: function darker(k) {
-          return new Lab(this.l - K * (k == null ? 1 : k), this.a, this.b, this.opacity);
-        },
-        rgb: function rgb() {
-          var y = (this.l + 16) / 116,
-              x = isNaN(this.a) ? y : y + this.a / 500,
-              z = isNaN(this.b) ? y : y - this.b / 200;
-          x = Xn * lab2xyz(x);
-          y = Yn * lab2xyz(y);
-          z = Zn * lab2xyz(z);
-          return new _color_js__WEBPACK_IMPORTED_MODULE_1__["Rgb"](lrgb2rgb(3.1338561 * x - 1.6168667 * y - 0.4906146 * z), lrgb2rgb(-0.9787684 * x + 1.9161415 * y + 0.0334540 * z), lrgb2rgb(0.0719453 * x - 0.2289914 * y + 1.4052427 * z), this.opacity);
-        }
-      }));
-
-      function xyz2lab(t) {
-        return t > t3 ? Math.pow(t, 1 / 3) : t / t2 + t0;
-      }
-
-      function lab2xyz(t) {
-        return t > t1 ? t * t * t : t2 * (t - t0);
-      }
-
-      function lrgb2rgb(x) {
-        return 255 * (x <= 0.0031308 ? 12.92 * x : 1.055 * Math.pow(x, 1 / 2.4) - 0.055);
-      }
-
-      function rgb2lrgb(x) {
-        return (x /= 255) <= 0.04045 ? x / 12.92 : Math.pow((x + 0.055) / 1.055, 2.4);
-      }
-
-      function hclConvert(o) {
-        if (o instanceof Hcl) return new Hcl(o.h, o.c, o.l, o.opacity);
-        if (!(o instanceof Lab)) o = labConvert(o);
-        if (o.a === 0 && o.b === 0) return new Hcl(NaN, 0 < o.l && o.l < 100 ? 0 : NaN, o.l, o.opacity);
-
-        var h = Math.atan2(o.b, o.a) * _math_js__WEBPACK_IMPORTED_MODULE_2__["rad2deg"];
-
-        return new Hcl(h < 0 ? h + 360 : h, Math.sqrt(o.a * o.a + o.b * o.b), o.l, o.opacity);
-      }
-
-      function lch(l, c, h, opacity) {
-        return arguments.length === 1 ? hclConvert(l) : new Hcl(h, c, l, opacity == null ? 1 : opacity);
-      }
-
-      function hcl(h, c, l, opacity) {
-        return arguments.length === 1 ? hclConvert(h) : new Hcl(h, c, l, opacity == null ? 1 : opacity);
-      }
-
-      function Hcl(h, c, l, opacity) {
-        this.h = +h;
-        this.c = +c;
-        this.l = +l;
-        this.opacity = +opacity;
-      }
-
-      function hcl2lab(o) {
-        if (isNaN(o.h)) return new Lab(o.l, 0, 0, o.opacity);
-        var h = o.h * _math_js__WEBPACK_IMPORTED_MODULE_2__["deg2rad"];
-        return new Lab(o.l, Math.cos(h) * o.c, Math.sin(h) * o.c, o.opacity);
-      }
-
-      Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["default"])(Hcl, hcl, Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["extend"])(_color_js__WEBPACK_IMPORTED_MODULE_1__["Color"], {
-        brighter: function brighter(k) {
-          return new Hcl(this.h, this.c, this.l + K * (k == null ? 1 : k), this.opacity);
-        },
-        darker: function darker(k) {
-          return new Hcl(this.h, this.c, this.l - K * (k == null ? 1 : k), this.opacity);
-        },
-        rgb: function rgb() {
-          return hcl2lab(this).rgb();
-        }
-      }));
-      /***/
     },
 
     /***/
@@ -5618,432 +5423,6 @@
     },
 
     /***/
-    "3lC8":
-    /*!***********************************************************************!*\
-      !*** ./node_modules/d3-transition/node_modules/d3-color/src/color.js ***!
-      \***********************************************************************/
-
-    /*! exports provided: Color, darker, brighter, default, rgbConvert, rgb, Rgb, hslConvert, hsl */
-
-    /***/
-    function lC8(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "Color", function () {
-        return Color;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "darker", function () {
-        return _darker;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "brighter", function () {
-        return _brighter;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "default", function () {
-        return color;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "rgbConvert", function () {
-        return rgbConvert;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "rgb", function () {
-        return rgb;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "Rgb", function () {
-        return Rgb;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "hslConvert", function () {
-        return hslConvert;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "hsl", function () {
-        return hsl;
-      });
-      /* harmony import */
-
-
-      var _define_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! ./define.js */
-      "V03s");
-
-      function Color() {}
-
-      var _darker = 0.7;
-
-      var _brighter = 1 / _darker;
-
-      var reI = "\\s*([+-]?\\d+)\\s*",
-          reN = "\\s*([+-]?\\d*\\.?\\d+(?:[eE][+-]?\\d+)?)\\s*",
-          reP = "\\s*([+-]?\\d*\\.?\\d+(?:[eE][+-]?\\d+)?)%\\s*",
-          reHex = /^#([0-9a-f]{3,8})$/,
-          reRgbInteger = new RegExp("^rgb\\(" + [reI, reI, reI] + "\\)$"),
-          reRgbPercent = new RegExp("^rgb\\(" + [reP, reP, reP] + "\\)$"),
-          reRgbaInteger = new RegExp("^rgba\\(" + [reI, reI, reI, reN] + "\\)$"),
-          reRgbaPercent = new RegExp("^rgba\\(" + [reP, reP, reP, reN] + "\\)$"),
-          reHslPercent = new RegExp("^hsl\\(" + [reN, reP, reP] + "\\)$"),
-          reHslaPercent = new RegExp("^hsla\\(" + [reN, reP, reP, reN] + "\\)$");
-      var named = {
-        aliceblue: 0xf0f8ff,
-        antiquewhite: 0xfaebd7,
-        aqua: 0x00ffff,
-        aquamarine: 0x7fffd4,
-        azure: 0xf0ffff,
-        beige: 0xf5f5dc,
-        bisque: 0xffe4c4,
-        black: 0x000000,
-        blanchedalmond: 0xffebcd,
-        blue: 0x0000ff,
-        blueviolet: 0x8a2be2,
-        brown: 0xa52a2a,
-        burlywood: 0xdeb887,
-        cadetblue: 0x5f9ea0,
-        chartreuse: 0x7fff00,
-        chocolate: 0xd2691e,
-        coral: 0xff7f50,
-        cornflowerblue: 0x6495ed,
-        cornsilk: 0xfff8dc,
-        crimson: 0xdc143c,
-        cyan: 0x00ffff,
-        darkblue: 0x00008b,
-        darkcyan: 0x008b8b,
-        darkgoldenrod: 0xb8860b,
-        darkgray: 0xa9a9a9,
-        darkgreen: 0x006400,
-        darkgrey: 0xa9a9a9,
-        darkkhaki: 0xbdb76b,
-        darkmagenta: 0x8b008b,
-        darkolivegreen: 0x556b2f,
-        darkorange: 0xff8c00,
-        darkorchid: 0x9932cc,
-        darkred: 0x8b0000,
-        darksalmon: 0xe9967a,
-        darkseagreen: 0x8fbc8f,
-        darkslateblue: 0x483d8b,
-        darkslategray: 0x2f4f4f,
-        darkslategrey: 0x2f4f4f,
-        darkturquoise: 0x00ced1,
-        darkviolet: 0x9400d3,
-        deeppink: 0xff1493,
-        deepskyblue: 0x00bfff,
-        dimgray: 0x696969,
-        dimgrey: 0x696969,
-        dodgerblue: 0x1e90ff,
-        firebrick: 0xb22222,
-        floralwhite: 0xfffaf0,
-        forestgreen: 0x228b22,
-        fuchsia: 0xff00ff,
-        gainsboro: 0xdcdcdc,
-        ghostwhite: 0xf8f8ff,
-        gold: 0xffd700,
-        goldenrod: 0xdaa520,
-        gray: 0x808080,
-        green: 0x008000,
-        greenyellow: 0xadff2f,
-        grey: 0x808080,
-        honeydew: 0xf0fff0,
-        hotpink: 0xff69b4,
-        indianred: 0xcd5c5c,
-        indigo: 0x4b0082,
-        ivory: 0xfffff0,
-        khaki: 0xf0e68c,
-        lavender: 0xe6e6fa,
-        lavenderblush: 0xfff0f5,
-        lawngreen: 0x7cfc00,
-        lemonchiffon: 0xfffacd,
-        lightblue: 0xadd8e6,
-        lightcoral: 0xf08080,
-        lightcyan: 0xe0ffff,
-        lightgoldenrodyellow: 0xfafad2,
-        lightgray: 0xd3d3d3,
-        lightgreen: 0x90ee90,
-        lightgrey: 0xd3d3d3,
-        lightpink: 0xffb6c1,
-        lightsalmon: 0xffa07a,
-        lightseagreen: 0x20b2aa,
-        lightskyblue: 0x87cefa,
-        lightslategray: 0x778899,
-        lightslategrey: 0x778899,
-        lightsteelblue: 0xb0c4de,
-        lightyellow: 0xffffe0,
-        lime: 0x00ff00,
-        limegreen: 0x32cd32,
-        linen: 0xfaf0e6,
-        magenta: 0xff00ff,
-        maroon: 0x800000,
-        mediumaquamarine: 0x66cdaa,
-        mediumblue: 0x0000cd,
-        mediumorchid: 0xba55d3,
-        mediumpurple: 0x9370db,
-        mediumseagreen: 0x3cb371,
-        mediumslateblue: 0x7b68ee,
-        mediumspringgreen: 0x00fa9a,
-        mediumturquoise: 0x48d1cc,
-        mediumvioletred: 0xc71585,
-        midnightblue: 0x191970,
-        mintcream: 0xf5fffa,
-        mistyrose: 0xffe4e1,
-        moccasin: 0xffe4b5,
-        navajowhite: 0xffdead,
-        navy: 0x000080,
-        oldlace: 0xfdf5e6,
-        olive: 0x808000,
-        olivedrab: 0x6b8e23,
-        orange: 0xffa500,
-        orangered: 0xff4500,
-        orchid: 0xda70d6,
-        palegoldenrod: 0xeee8aa,
-        palegreen: 0x98fb98,
-        paleturquoise: 0xafeeee,
-        palevioletred: 0xdb7093,
-        papayawhip: 0xffefd5,
-        peachpuff: 0xffdab9,
-        peru: 0xcd853f,
-        pink: 0xffc0cb,
-        plum: 0xdda0dd,
-        powderblue: 0xb0e0e6,
-        purple: 0x800080,
-        rebeccapurple: 0x663399,
-        red: 0xff0000,
-        rosybrown: 0xbc8f8f,
-        royalblue: 0x4169e1,
-        saddlebrown: 0x8b4513,
-        salmon: 0xfa8072,
-        sandybrown: 0xf4a460,
-        seagreen: 0x2e8b57,
-        seashell: 0xfff5ee,
-        sienna: 0xa0522d,
-        silver: 0xc0c0c0,
-        skyblue: 0x87ceeb,
-        slateblue: 0x6a5acd,
-        slategray: 0x708090,
-        slategrey: 0x708090,
-        snow: 0xfffafa,
-        springgreen: 0x00ff7f,
-        steelblue: 0x4682b4,
-        tan: 0xd2b48c,
-        teal: 0x008080,
-        thistle: 0xd8bfd8,
-        tomato: 0xff6347,
-        turquoise: 0x40e0d0,
-        violet: 0xee82ee,
-        wheat: 0xf5deb3,
-        white: 0xffffff,
-        whitesmoke: 0xf5f5f5,
-        yellow: 0xffff00,
-        yellowgreen: 0x9acd32
-      };
-      Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["default"])(Color, color, {
-        copy: function copy(channels) {
-          return Object.assign(new this.constructor(), this, channels);
-        },
-        displayable: function displayable() {
-          return this.rgb().displayable();
-        },
-        hex: color_formatHex,
-        // Deprecated! Use color.formatHex.
-        formatHex: color_formatHex,
-        formatHsl: color_formatHsl,
-        formatRgb: color_formatRgb,
-        toString: color_formatRgb
-      });
-
-      function color_formatHex() {
-        return this.rgb().formatHex();
-      }
-
-      function color_formatHsl() {
-        return hslConvert(this).formatHsl();
-      }
-
-      function color_formatRgb() {
-        return this.rgb().formatRgb();
-      }
-
-      function color(format) {
-        var m, l;
-        format = (format + "").trim().toLowerCase();
-        return (m = reHex.exec(format)) ? (l = m[1].length, m = parseInt(m[1], 16), l === 6 ? rgbn(m) // #ff0000
-        : l === 3 ? new Rgb(m >> 8 & 0xf | m >> 4 & 0xf0, m >> 4 & 0xf | m & 0xf0, (m & 0xf) << 4 | m & 0xf, 1) // #f00
-        : l === 8 ? rgba(m >> 24 & 0xff, m >> 16 & 0xff, m >> 8 & 0xff, (m & 0xff) / 0xff) // #ff000000
-        : l === 4 ? rgba(m >> 12 & 0xf | m >> 8 & 0xf0, m >> 8 & 0xf | m >> 4 & 0xf0, m >> 4 & 0xf | m & 0xf0, ((m & 0xf) << 4 | m & 0xf) / 0xff) // #f000
-        : null // invalid hex
-        ) : (m = reRgbInteger.exec(format)) ? new Rgb(m[1], m[2], m[3], 1) // rgb(255, 0, 0)
-        : (m = reRgbPercent.exec(format)) ? new Rgb(m[1] * 255 / 100, m[2] * 255 / 100, m[3] * 255 / 100, 1) // rgb(100%, 0%, 0%)
-        : (m = reRgbaInteger.exec(format)) ? rgba(m[1], m[2], m[3], m[4]) // rgba(255, 0, 0, 1)
-        : (m = reRgbaPercent.exec(format)) ? rgba(m[1] * 255 / 100, m[2] * 255 / 100, m[3] * 255 / 100, m[4]) // rgb(100%, 0%, 0%, 1)
-        : (m = reHslPercent.exec(format)) ? hsla(m[1], m[2] / 100, m[3] / 100, 1) // hsl(120, 50%, 50%)
-        : (m = reHslaPercent.exec(format)) ? hsla(m[1], m[2] / 100, m[3] / 100, m[4]) // hsla(120, 50%, 50%, 1)
-        : named.hasOwnProperty(format) ? rgbn(named[format]) // eslint-disable-line no-prototype-builtins
-        : format === "transparent" ? new Rgb(NaN, NaN, NaN, 0) : null;
-      }
-
-      function rgbn(n) {
-        return new Rgb(n >> 16 & 0xff, n >> 8 & 0xff, n & 0xff, 1);
-      }
-
-      function rgba(r, g, b, a) {
-        if (a <= 0) r = g = b = NaN;
-        return new Rgb(r, g, b, a);
-      }
-
-      function rgbConvert(o) {
-        if (!(o instanceof Color)) o = color(o);
-        if (!o) return new Rgb();
-        o = o.rgb();
-        return new Rgb(o.r, o.g, o.b, o.opacity);
-      }
-
-      function rgb(r, g, b, opacity) {
-        return arguments.length === 1 ? rgbConvert(r) : new Rgb(r, g, b, opacity == null ? 1 : opacity);
-      }
-
-      function Rgb(r, g, b, opacity) {
-        this.r = +r;
-        this.g = +g;
-        this.b = +b;
-        this.opacity = +opacity;
-      }
-
-      Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["default"])(Rgb, rgb, Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["extend"])(Color, {
-        brighter: function brighter(k) {
-          k = k == null ? _brighter : Math.pow(_brighter, k);
-          return new Rgb(this.r * k, this.g * k, this.b * k, this.opacity);
-        },
-        darker: function darker(k) {
-          k = k == null ? _darker : Math.pow(_darker, k);
-          return new Rgb(this.r * k, this.g * k, this.b * k, this.opacity);
-        },
-        rgb: function rgb() {
-          return this;
-        },
-        displayable: function displayable() {
-          return -0.5 <= this.r && this.r < 255.5 && -0.5 <= this.g && this.g < 255.5 && -0.5 <= this.b && this.b < 255.5 && 0 <= this.opacity && this.opacity <= 1;
-        },
-        hex: rgb_formatHex,
-        // Deprecated! Use color.formatHex.
-        formatHex: rgb_formatHex,
-        formatRgb: rgb_formatRgb,
-        toString: rgb_formatRgb
-      }));
-
-      function rgb_formatHex() {
-        return "#" + hex(this.r) + hex(this.g) + hex(this.b);
-      }
-
-      function rgb_formatRgb() {
-        var a = this.opacity;
-        a = isNaN(a) ? 1 : Math.max(0, Math.min(1, a));
-        return (a === 1 ? "rgb(" : "rgba(") + Math.max(0, Math.min(255, Math.round(this.r) || 0)) + ", " + Math.max(0, Math.min(255, Math.round(this.g) || 0)) + ", " + Math.max(0, Math.min(255, Math.round(this.b) || 0)) + (a === 1 ? ")" : ", " + a + ")");
-      }
-
-      function hex(value) {
-        value = Math.max(0, Math.min(255, Math.round(value) || 0));
-        return (value < 16 ? "0" : "") + value.toString(16);
-      }
-
-      function hsla(h, s, l, a) {
-        if (a <= 0) h = s = l = NaN;else if (l <= 0 || l >= 1) h = s = NaN;else if (s <= 0) h = NaN;
-        return new Hsl(h, s, l, a);
-      }
-
-      function hslConvert(o) {
-        if (o instanceof Hsl) return new Hsl(o.h, o.s, o.l, o.opacity);
-        if (!(o instanceof Color)) o = color(o);
-        if (!o) return new Hsl();
-        if (o instanceof Hsl) return o;
-        o = o.rgb();
-        var r = o.r / 255,
-            g = o.g / 255,
-            b = o.b / 255,
-            min = Math.min(r, g, b),
-            max = Math.max(r, g, b),
-            h = NaN,
-            s = max - min,
-            l = (max + min) / 2;
-
-        if (s) {
-          if (r === max) h = (g - b) / s + (g < b) * 6;else if (g === max) h = (b - r) / s + 2;else h = (r - g) / s + 4;
-          s /= l < 0.5 ? max + min : 2 - max - min;
-          h *= 60;
-        } else {
-          s = l > 0 && l < 1 ? 0 : h;
-        }
-
-        return new Hsl(h, s, l, o.opacity);
-      }
-
-      function hsl(h, s, l, opacity) {
-        return arguments.length === 1 ? hslConvert(h) : new Hsl(h, s, l, opacity == null ? 1 : opacity);
-      }
-
-      function Hsl(h, s, l, opacity) {
-        this.h = +h;
-        this.s = +s;
-        this.l = +l;
-        this.opacity = +opacity;
-      }
-
-      Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["default"])(Hsl, hsl, Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["extend"])(Color, {
-        brighter: function brighter(k) {
-          k = k == null ? _brighter : Math.pow(_brighter, k);
-          return new Hsl(this.h, this.s, this.l * k, this.opacity);
-        },
-        darker: function darker(k) {
-          k = k == null ? _darker : Math.pow(_darker, k);
-          return new Hsl(this.h, this.s, this.l * k, this.opacity);
-        },
-        rgb: function rgb() {
-          var h = this.h % 360 + (this.h < 0) * 360,
-              s = isNaN(h) || isNaN(this.s) ? 0 : this.s,
-              l = this.l,
-              m2 = l + (l < 0.5 ? l : 1 - l) * s,
-              m1 = 2 * l - m2;
-          return new Rgb(hsl2rgb(h >= 240 ? h - 240 : h + 120, m1, m2), hsl2rgb(h, m1, m2), hsl2rgb(h < 120 ? h + 240 : h - 120, m1, m2), this.opacity);
-        },
-        displayable: function displayable() {
-          return (0 <= this.s && this.s <= 1 || isNaN(this.s)) && 0 <= this.l && this.l <= 1 && 0 <= this.opacity && this.opacity <= 1;
-        },
-        formatHsl: function formatHsl() {
-          var a = this.opacity;
-          a = isNaN(a) ? 1 : Math.max(0, Math.min(1, a));
-          return (a === 1 ? "hsl(" : "hsla(") + (this.h || 0) + ", " + (this.s || 0) * 100 + "%, " + (this.l || 0) * 100 + "%" + (a === 1 ? ")" : ", " + a + ")");
-        }
-      }));
-      /* From FvD 13.37, CSS Color Module Level 3 */
-
-      function hsl2rgb(h, m1, m2) {
-        return (h < 60 ? m1 + (m2 - m1) * h / 60 : h < 180 ? m2 : h < 240 ? m1 + (m2 - m1) * (240 - h) / 60 : m1) * 255;
-      }
-      /***/
-
-    },
-
-    /***/
     "3xmg":
     /*!**********************************************!*\
       !*** ./node_modules/d3-scale/src/ordinal.js ***!
@@ -6230,7 +5609,7 @@
 
       var d3_color__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! d3-color */
-      "qXv/");
+      "Ij2O");
       /* harmony import */
 
 
@@ -7514,7 +6893,7 @@
 
       var d3_color__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! d3-color */
-      "qXv/");
+      "Ij2O");
       /* harmony import */
 
 
@@ -7860,7 +7239,7 @@
 
       var d3_color__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! d3-color */
-      "qXv/");
+      "Ij2O");
       /* harmony import */
 
 
@@ -9254,6 +8633,259 @@
     },
 
     /***/
+    "7XYI":
+    /*!******************************************************************!*\
+      !*** ./src/core/plugins/radial-gauge-threshold-labels-plugin.ts ***!
+      \******************************************************************/
+
+    /*! exports provided: RadialGaugeThresholdLabelsPlugin */
+
+    /***/
+    function XYI(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "RadialGaugeThresholdLabelsPlugin", function () {
+        return RadialGaugeThresholdLabelsPlugin;
+      });
+      /* harmony import */
+
+
+      var d3_shape__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! d3-shape */
+      "8d86");
+      /* harmony import */
+
+
+      var lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! lodash/defaultsDeep */
+      "P4Tr");
+      /* harmony import */
+
+
+      var lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_1__);
+      /* harmony import */
+
+
+      var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! lodash/isUndefined */
+      "TP7S");
+      /* harmony import */
+
+
+      var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2__);
+      /* harmony import */
+
+
+      var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! rxjs */
+      "qCKp");
+      /* harmony import */
+
+
+      var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! rxjs/operators */
+      "kU1M");
+      /* harmony import */
+
+
+      var _constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! ../../constants */
+      "he5r");
+      /* harmony import */
+
+
+      var _renderers_radial_gauge_rendering_utils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      /*! ../../renderers/radial/gauge-rendering-utils */
+      "iwCl");
+      /* harmony import */
+
+
+      var _renderers_radial_radial_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      /*! ../../renderers/radial/radial-gauge-thresholds-renderer */
+      "sgdl");
+      /* harmony import */
+
+
+      var _renderers_types__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      /*! ../../renderers/types */
+      "AbRU");
+      /* harmony import */
+
+
+      var _common_chart_plugin__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      /*! ../common/chart-plugin */
+      "e7eq");
+      /**
+       * @ignore
+       * A chart plugin that handles the rendering of labels for radial gauge thresholds
+       */
+
+
+      var RadialGaugeThresholdLabelsPlugin = /*#__PURE__*/function (_common_chart_plugin_3) {
+        _inherits(RadialGaugeThresholdLabelsPlugin, _common_chart_plugin_3);
+
+        var _super7 = _createSuper(RadialGaugeThresholdLabelsPlugin);
+
+        function RadialGaugeThresholdLabelsPlugin() {
+          var _this30;
+
+          var config = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+          _classCallCheck(this, RadialGaugeThresholdLabelsPlugin);
+
+          _this30 = _super7.call(this);
+          _this30.config = config;
+          /** The default plugin configuration */
+
+          _this30.DEFAULT_CONFIG = {
+            gridMargin: {
+              top: RadialGaugeThresholdLabelsPlugin.MARGIN_DEFAULT,
+              right: RadialGaugeThresholdLabelsPlugin.MARGIN_DEFAULT,
+              bottom: RadialGaugeThresholdLabelsPlugin.MARGIN_DEFAULT,
+              left: RadialGaugeThresholdLabelsPlugin.MARGIN_DEFAULT
+            },
+            labelPadding: 5,
+            formatterName: RadialGaugeThresholdLabelsPlugin.FORMATTER_NAME_DEFAULT
+          };
+          _this30.destroy$ = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
+          _this30.config = lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_1___default()(_this30.config, _this30.DEFAULT_CONFIG);
+          return _this30;
+        }
+
+        _createClass(RadialGaugeThresholdLabelsPlugin, [{
+          key: "initialize",
+          value: function initialize() {
+            var _this31 = this;
+
+            this.lasagnaLayer = this.chart.getGrid().getLasagna().addLayer({
+              name: RadialGaugeThresholdLabelsPlugin.CONTAINER_CLASS,
+              order: _constants__WEBPACK_IMPORTED_MODULE_5__["STANDARD_RENDER_LAYERS"][_renderers_types__WEBPACK_IMPORTED_MODULE_8__["RenderLayerName"].data].order,
+              clipped: false
+            });
+            var gridConfig = this.chart.getGrid().config();
+            gridConfig.dimension.margin = this.config.gridMargin;
+            this.chart.getEventBus().getStream(_constants__WEBPACK_IMPORTED_MODULE_5__["INTERACTION_DATA_POINTS_EVENT"]).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeUntil"])(this.destroy$)).subscribe(function (event) {
+              var gaugeThresholdLabelsGroup = _this31.lasagnaLayer.select(".".concat(RadialGaugeThresholdLabelsPlugin.CONTAINER_CLASS));
+
+              if (!gaugeThresholdLabelsGroup.empty()) {
+                var dataPoints = event.data.dataPoints;
+                var labelOpacity = Object.keys(dataPoints).find(function (key, index) {
+                  return dataPoints[key].index === _constants__WEBPACK_IMPORTED_MODULE_5__["DATA_POINT_NOT_FOUND"];
+                }) ? 0 : 1;
+                gaugeThresholdLabelsGroup.style("opacity", labelOpacity);
+              }
+            });
+          }
+        }, {
+          key: "updateDimensions",
+          value: function updateDimensions() {
+            var _this32 = this;
+
+            var _a, _b;
+
+            var thresholdsSeries = this.chart.getDataManager().chartSeriesSet.find(function (series) {
+              return series.renderer instanceof _renderers_radial_radial_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_7__["RadialGaugeThresholdsRenderer"];
+            });
+            var renderer = thresholdsSeries === null || thresholdsSeries === void 0 ? void 0 : thresholdsSeries.renderer;
+            var labelRadius = (renderer === null || renderer === void 0 ? void 0 : renderer.getOuterRadius((_a = thresholdsSeries === null || thresholdsSeries === void 0 ? void 0 : thresholdsSeries.scales.r.range()) !== null && _a !== void 0 ? _a : [0, 0], 0)) + this.config.labelPadding;
+
+            if (lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default()(labelRadius)) {
+              throw new Error("Radius is undefined");
+            }
+
+            var data = thresholdsSeries === null || thresholdsSeries === void 0 ? void 0 : thresholdsSeries.data;
+
+            if (lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default()(data)) {
+              throw new Error("Gauge threshold series data is undefined");
+            }
+
+            var gaugeThresholdsLabelsGroup = this.lasagnaLayer.select(".".concat(RadialGaugeThresholdLabelsPlugin.CONTAINER_CLASS));
+
+            if (gaugeThresholdsLabelsGroup.empty()) {
+              gaugeThresholdsLabelsGroup = this.lasagnaLayer.append("svg:g").attr("class", RadialGaugeThresholdLabelsPlugin.CONTAINER_CLASS).style("opacity", 0);
+            }
+
+            var labelGenerator = Object(d3_shape__WEBPACK_IMPORTED_MODULE_0__["arc"])().outerRadius(labelRadius).innerRadius(labelRadius);
+            var formatter = (_b = thresholdsSeries === null || thresholdsSeries === void 0 ? void 0 : thresholdsSeries.scales.r.formatters[this.config.formatterName]) !== null && _b !== void 0 ? _b : function (d) {
+              return d;
+            };
+            var labelSelection = gaugeThresholdsLabelsGroup.selectAll("text.".concat(RadialGaugeThresholdLabelsPlugin.LABEL_CLASS)).data(_renderers_radial_gauge_rendering_utils__WEBPACK_IMPORTED_MODULE_6__["GaugeRenderingUtils"].generateThresholdData(data));
+            labelSelection.exit().remove();
+            labelSelection.enter().append("text").attr("class", RadialGaugeThresholdLabelsPlugin.LABEL_CLASS).merge(labelSelection).attr("transform", function (d) {
+              return "translate(".concat(labelGenerator.centroid(d), ")");
+            }).attr("title", function (d, i) {
+              return formatter(data[i].value);
+            }).style("text-anchor", function (d) {
+              return _this32.getTextAnchor(d.startAngle);
+            }).style("alignment-baseline", function (d) {
+              return _this32.getAlignmentBaseline(d.startAngle);
+            }).text(function (d, i) {
+              return formatter(data[i].value);
+            });
+          }
+        }, {
+          key: "destroy",
+          value: function destroy() {
+            if (this.destroy$) {
+              this.destroy$.next();
+              this.destroy$.complete();
+            }
+          }
+        }, {
+          key: "getTextAnchor",
+          value: function getTextAnchor(angle) {
+            // pie charts start on the top, so we need to subtract Math.PI / 2 (90 degrees)
+            var cosine = Math.cos(angle - Math.PI / 2);
+
+            if (cosine > 0.5) {
+              // used for right 120 degrees of chart
+              return "start";
+            }
+
+            if (cosine < -0.5) {
+              // used for left 120 degrees of chart
+              return "end";
+            } // used for top 60 degrees and bottom 60 degrees of chart
+
+
+            return "middle";
+          }
+        }, {
+          key: "getAlignmentBaseline",
+          value: function getAlignmentBaseline(angle) {
+            // pie charts start on the top, so we need to add Math.PI / 2 (90 degrees)
+            var sine = Math.sin(angle + Math.PI / 2);
+
+            if (sine > 0.5) {
+              // used for top 120 degrees of chart
+              return "text-after-edge";
+            }
+
+            if (sine < -0.5) {
+              // used for bottom 120 degrees of chart
+              return "text-before-edge";
+            } // used for left 60 degrees and right 60 degrees of chart
+
+
+            return "central";
+          }
+        }]);
+
+        return RadialGaugeThresholdLabelsPlugin;
+      }(_common_chart_plugin__WEBPACK_IMPORTED_MODULE_9__["ChartPlugin"]);
+
+      RadialGaugeThresholdLabelsPlugin.CONTAINER_CLASS = "gauge-threshold-labels";
+      RadialGaugeThresholdLabelsPlugin.LABEL_CLASS = "threshold-label";
+      RadialGaugeThresholdLabelsPlugin.FORMATTER_NAME_DEFAULT = "threshold-label";
+      RadialGaugeThresholdLabelsPlugin.MARGIN_DEFAULT = 25;
+      /***/
+    },
+
+    /***/
     "7YG3":
     /*!**********************************************!*\
       !*** ./src/renderers/area/area-accessors.ts ***!
@@ -9280,7 +8912,7 @@
       "xori");
 
       var AreaAccessors = function AreaAccessors() {
-        var _this30 = this;
+        var _this33 = this;
 
         var colorProvider = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : Object(_core_common_palette_default_providers__WEBPACK_IMPORTED_MODULE_0__["defaultColorProvider"])();
         var markerProvider = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : Object(_core_common_palette_default_providers__WEBPACK_IMPORTED_MODULE_0__["defaultMarkerProvider"])();
@@ -9294,39 +8926,39 @@
             return d.x;
           },
           x0: function x0(d, i, ds, s) {
-            return _this30.data.x(d, i, ds, s);
+            return _this33.data.x(d, i, ds, s);
           },
           x1: function x1(d, i, ds, s) {
-            return _this30.data.x(d, i, ds, s);
+            return _this33.data.x(d, i, ds, s);
           },
           y: function y(d, i, ds, s) {
             return d.y;
           },
           y0: function y0(d, i, ds, s) {
-            return _this30.data.y(d, i, ds, s);
+            return _this33.data.y(d, i, ds, s);
           },
           y1: function y1(d, i, ds, s) {
-            return _this30.data.y(d, i, ds, s);
+            return _this33.data.y(d, i, ds, s);
           },
           absoluteX0: function absoluteX0(d, i, ds, s) {
             var _a, _b;
 
-            return (_b = (_a = d["__stack_x"]) === null || _a === void 0 ? void 0 : _a.start) !== null && _b !== void 0 ? _b : _this30.data.x0(d, i, ds, s);
+            return (_b = (_a = d["__stack_x"]) === null || _a === void 0 ? void 0 : _a.start) !== null && _b !== void 0 ? _b : _this33.data.x0(d, i, ds, s);
           },
           absoluteX1: function absoluteX1(d, i, ds, s) {
             var _a, _b;
 
-            return (_b = (_a = d["__stack_x"]) === null || _a === void 0 ? void 0 : _a.end) !== null && _b !== void 0 ? _b : _this30.data.x1(d, i, ds, s);
+            return (_b = (_a = d["__stack_x"]) === null || _a === void 0 ? void 0 : _a.end) !== null && _b !== void 0 ? _b : _this33.data.x1(d, i, ds, s);
           },
           absoluteY0: function absoluteY0(d, i, ds, s) {
             var _a, _b;
 
-            return (_b = (_a = d["__stack_y"]) === null || _a === void 0 ? void 0 : _a.start) !== null && _b !== void 0 ? _b : _this30.data.y0(d, i, ds, s);
+            return (_b = (_a = d["__stack_y"]) === null || _a === void 0 ? void 0 : _a.start) !== null && _b !== void 0 ? _b : _this33.data.y0(d, i, ds, s);
           },
           absoluteY1: function absoluteY1(d, i, ds, s) {
             var _a, _b;
 
-            return (_b = (_a = d["__stack_y"]) === null || _a === void 0 ? void 0 : _a.end) !== null && _b !== void 0 ? _b : _this30.data.y1(d, i, ds, s);
+            return (_b = (_a = d["__stack_y"]) === null || _a === void 0 ? void 0 : _a.end) !== null && _b !== void 0 ? _b : _this33.data.y1(d, i, ds, s);
           }
         };
         this.series = {
@@ -10726,7 +10358,7 @@
         }, {
           key: "build",
           value: function build(element) {
-            var _this31 = this;
+            var _this34 = this;
 
             this.element = element; // @ts-ignore: Workaround to avoid strict build crash because of type
 
@@ -10758,17 +10390,17 @@
             this.initialize();
 
             var untilDestroy = function untilDestroy() {
-              return Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["takeUntil"])(_this31.getEventBus().getStream(_constants__WEBPACK_IMPORTED_MODULE_4__["DESTROY_EVENT"]));
+              return Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["takeUntil"])(_this34.getEventBus().getStream(_constants__WEBPACK_IMPORTED_MODULE_4__["DESTROY_EVENT"]));
             };
 
             this.updateSubject.pipe(untilDestroy()).subscribe(function (d) {
-              return _this31.onUpdate(d);
+              return _this34.onUpdate(d);
             });
             this.updateDimensionsSubject.pipe(untilDestroy()).subscribe(function () {
-              return _this31.onUpdateDimensions();
+              return _this34.onUpdateDimensions();
             });
             this.seriesStatesSubject.pipe(untilDestroy()).subscribe(function (rs) {
-              return _this31.onSetSeriesStates(rs);
+              return _this34.onSetSeriesStates(rs);
             });
           }
         }, {
@@ -11386,14 +11018,14 @@
         _createClass(ChartDonutContentComponent, [{
           key: "ngOnChanges",
           value: function ngOnChanges(changes) {
-            var _this32 = this;
+            var _this35 = this;
 
             var _a;
 
             if (changes.plugin) {
               (_a = this.contentPositionUpdateSubscription) === null || _a === void 0 ? void 0 : _a.unsubscribe();
               this.contentPositionUpdateSubscription = this.plugin.contentPositionUpdateSubject.subscribe(function (contentPosition) {
-                _this32.contentPosition = contentPosition;
+                _this35.contentPosition = contentPosition;
               });
               this.plugin.chart.updateDimensions();
             }
@@ -11822,7 +11454,7 @@
         }, {
           key: "findDataPointByValue",
           value: function findDataPointByValue(series, value, scaleKey, scales) {
-            var _this33 = this;
+            var _this36 = this;
 
             var _a, _b;
 
@@ -11838,7 +11470,7 @@
             } else if (lodash_isArray__WEBPACK_IMPORTED_MODULE_2___default()(value)) {
               return lodash_findIndex__WEBPACK_IMPORTED_MODULE_1___default()(series.data, function (d, i) {
                 var start = startAccessor === null || startAccessor === void 0 ? void 0 : startAccessor(d, i, series.data, series);
-                var lengthLimit = Math.min(_this33.levels, value.length, start.length); // diy efficient array comparison
+                var lengthLimit = Math.min(_this36.levels, value.length, start.length); // diy efficient array comparison
 
                 for (var j = 0; j < lengthLimit; j++) {
                   if (value[j] !== start[j]) {
@@ -12155,7 +11787,6 @@
       (function (RenderLayerName) {
         RenderLayerName["background"] = "background";
         RenderLayerName["data"] = "data";
-        RenderLayerName["unclippedData"] = "unclipped-data";
         RenderLayerName["foreground"] = "foreground";
       })(RenderLayerName || (RenderLayerName = {}));
       /***/
@@ -12196,16 +11827,16 @@
       var SequentialChartMarkerProvider = /*#__PURE__*/function (_sequential_value_pro) {
         _inherits(SequentialChartMarkerProvider, _sequential_value_pro);
 
-        var _super7 = _createSuper(SequentialChartMarkerProvider);
+        var _super8 = _createSuper(SequentialChartMarkerProvider);
 
         function SequentialChartMarkerProvider(markers) {
-          var _this34;
+          var _this37;
 
           _classCallCheck(this, SequentialChartMarkerProvider);
 
-          _this34 = _super7.call(this, markers);
-          _this34.markers = markers;
-          return _this34;
+          _this37 = _super8.call(this, markers);
+          _this37.markers = markers;
+          return _this37;
         }
 
         return SequentialChartMarkerProvider;
@@ -12319,12 +11950,12 @@
       var RadialPopoverPlugin = /*#__PURE__*/function (_chart_popover_plugin) {
         _inherits(RadialPopoverPlugin, _chart_popover_plugin);
 
-        var _super8 = _createSuper(RadialPopoverPlugin);
+        var _super9 = _createSuper(RadialPopoverPlugin);
 
         function RadialPopoverPlugin() {
           _classCallCheck(this, RadialPopoverPlugin);
 
-          return _super8.apply(this, arguments);
+          return _super9.apply(this, arguments);
         }
 
         _createClass(RadialPopoverPlugin, [{
@@ -12857,150 +12488,6 @@
     },
 
     /***/
-    "CmBv":
-    /*!************************************************************************!*\
-      !*** ./src/renderers/radial/gauge/radial-gauge-thresholds-renderer.ts ***!
-      \************************************************************************/
-
-    /*! exports provided: DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG, RadialGaugeThresholdsRenderer */
-
-    /***/
-    function CmBv(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG", function () {
-        return DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "RadialGaugeThresholdsRenderer", function () {
-        return RadialGaugeThresholdsRenderer;
-      });
-      /* harmony import */
-
-
-      var d3_shape__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! d3-shape */
-      "8d86");
-      /* harmony import */
-
-
-      var lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-      /*! lodash/defaultsDeep */
-      "P4Tr");
-      /* harmony import */
-
-
-      var lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_1__);
-      /* harmony import */
-
-
-      var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-      /*! lodash/isUndefined */
-      "TP7S");
-      /* harmony import */
-
-
-      var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2__);
-      /* harmony import */
-
-
-      var _constants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-      /*! ../../constants */
-      "s8k4");
-      /* harmony import */
-
-
-      var _types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-      /*! ../../types */
-      "AbRU");
-      /* harmony import */
-
-
-      var _radial_renderer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
-      /*! ../radial-renderer */
-      "+mSY");
-      /* harmony import */
-
-
-      var _radial_gauge_rendering_util__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
-      /*! ./radial-gauge-rendering-util */
-      "Rtv/");
-      /**
-       * @ignore Default configuration for Radial Gauge Thresholds Renderer
-       */
-
-
-      var DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG = {};
-      /**
-       * @ignore Renderer for drawing threshold level indicators for gauges
-       */
-
-      var RadialGaugeThresholdsRenderer = /*#__PURE__*/function (_radial_renderer__WEB) {
-        _inherits(RadialGaugeThresholdsRenderer, _radial_renderer__WEB);
-
-        var _super9 = _createSuper(RadialGaugeThresholdsRenderer);
-
-        /**
-         * Creates an instance of RadialGaugeThresholdsRenderer.
-         * @param {IRadialGaugeThresholdsRendererConfig} [config]
-         * Renderer configuration object. Defaults to `DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG` constant value.
-         */
-        function RadialGaugeThresholdsRenderer() {
-          var _this35;
-
-          var config = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-
-          _classCallCheck(this, RadialGaugeThresholdsRenderer);
-
-          _this35 = _super9.call(this, config);
-          _this35.config = lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_1___default()(_this35.config, DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG);
-          return _this35;
-        }
-        /** See {@link Renderer#draw} */
-
-
-        _createClass(RadialGaugeThresholdsRenderer, [{
-          key: "draw",
-          value: function draw(renderSeries, rendererSubject) {
-            var dataContainer = renderSeries.containers[_types__WEBPACK_IMPORTED_MODULE_4__["RenderLayerName"].data];
-            var data = renderSeries.dataSeries.data;
-            this.segmentWidth = this.config.annularWidth || 0;
-            var innerRadius = this.getInnerRadius(renderSeries.scales.r.range(), 0);
-            var markerGenerator = Object(d3_shape__WEBPACK_IMPORTED_MODULE_0__["arc"])().outerRadius(this.getOuterRadius(renderSeries.scales.r.range(), 0)).innerRadius(innerRadius >= 0 ? innerRadius : 0);
-            var markerSelection = dataContainer.selectAll("circle.".concat(_constants__WEBPACK_IMPORTED_MODULE_3__["GAUGE_THRESHOLD_MARKER_CLASS"])).data(_radial_gauge_rendering_util__WEBPACK_IMPORTED_MODULE_6__["RadialGaugeRenderingUtil"].generateThresholdData(data));
-            markerSelection.exit().remove();
-            markerSelection.enter().append("circle").attr("class", _constants__WEBPACK_IMPORTED_MODULE_3__["GAUGE_THRESHOLD_MARKER_CLASS"]).merge(markerSelection).attr("cx", function (d) {
-              return markerGenerator.centroid(d)[0];
-            }).attr("cy", function (d) {
-              return markerGenerator.centroid(d)[1];
-            }).attr("r", 4).style("fill", function (d, i) {
-              return "var(--nui-color-".concat(data[i].hit ? "text-light" : "icon-default", ")");
-            }).style("stroke-width", 0);
-          }
-        }, {
-          key: "getInnerRadius",
-          value: function getInnerRadius(range, index) {
-            if (lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default()(this.segmentWidth)) {
-              throw new Error("Can't compute inner radius");
-            }
-
-            return range[1] - range[0] - this.segmentWidth;
-          }
-        }]);
-
-        return RadialGaugeThresholdsRenderer;
-      }(_radial_renderer__WEBPACK_IMPORTED_MODULE_5__["RadialRenderer"]);
-      /***/
-
-    },
-
-    /***/
     "Cnj1":
     /*!**************************************************!*\
       !*** ./node_modules/d3-selection/src/matcher.js ***!
@@ -13127,8 +12614,8 @@
        */
 
 
-      var PieRenderer = /*#__PURE__*/function (_radial_renderer__WEB2) {
-        _inherits(PieRenderer, _radial_renderer__WEB2);
+      var PieRenderer = /*#__PURE__*/function (_radial_renderer__WEB) {
+        _inherits(PieRenderer, _radial_renderer__WEB);
 
         var _super10 = _createSuper(PieRenderer);
 
@@ -13229,7 +12716,7 @@
       !*** ./src/renderers/bar/public-api.ts ***!
       \*****************************************/
 
-    /*! exports provided: BarRenderer, stackedPreprocessor, stack, barGrid, barScales, BarAccessors, barAccessors, HorizontalBarAccessors, VerticalBarAccessors, StatusAccessors, statusAccessors, BarHighlightStrategy, BarSeriesHighlightStrategy, DEFAULT_LINEAR_GAUGE_THRESHOLDS_RENDERER_CONFIG, LinearGaugeThresholdsRenderer */
+    /*! exports provided: BarRenderer, stackedPreprocessor, stack, barGrid, barScales, BarAccessors, barAccessors, HorizontalBarAccessors, VerticalBarAccessors, StatusAccessors, statusAccessors, BarHighlightStrategy, BarSeriesHighlightStrategy */
 
     /***/
     function DILb(module, __webpack_exports__, __webpack_require__) {
@@ -13357,24 +12844,6 @@
 
       __webpack_require__.d(__webpack_exports__, "BarSeriesHighlightStrategy", function () {
         return _highlight_strategies_public_api__WEBPACK_IMPORTED_MODULE_6__["BarSeriesHighlightStrategy"];
-      });
-      /* harmony import */
-
-
-      var _linear_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
-      /*! ./linear-gauge-thresholds-renderer */
-      "LkUO");
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "DEFAULT_LINEAR_GAUGE_THRESHOLDS_RENDERER_CONFIG", function () {
-        return _linear_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_7__["DEFAULT_LINEAR_GAUGE_THRESHOLDS_RENDERER_CONFIG"];
-      });
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "LinearGaugeThresholdsRenderer", function () {
-        return _linear_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_7__["LinearGaugeThresholdsRenderer"];
       });
       /***/
 
@@ -13533,23 +13002,23 @@
          * @param {IAreaRendererConfig} [config={}] Renderer configuration object
          */
         function AreaRenderer() {
-          var _this36;
+          var _this38;
 
           var config = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
           _classCallCheck(this, AreaRenderer);
 
-          _this36 = _super11.call(this, config);
-          _this36.config = config;
-          _this36.DEFAULT_CONFIG = {
+          _this38 = _super11.call(this, config);
+          _this38.config = config;
+          _this38.DEFAULT_CONFIG = {
             curveType: d3_shape__WEBPACK_IMPORTED_MODULE_1__["curveLinear"],
             interactive: true,
             areaClass: "nui-chart-area",
             markerInteraction: _constants__WEBPACK_IMPORTED_MODULE_7__["DEFAULT_MARKER_INTERACTION_CONFIG"]
           }; // setting default values to the properties that were not set by user
 
-          _this36.config = lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_2___default()(_this36.config, _this36.DEFAULT_CONFIG);
-          return _this36;
+          _this38.config = lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_2___default()(_this38.config, _this38.DEFAULT_CONFIG);
+          return _this38;
         }
         /** See {@link Renderer#draw} */
 
@@ -13585,7 +13054,7 @@
         }, {
           key: "drawArea",
           value: function drawArea(renderSeries, path) {
-            var _this37 = this;
+            var _this39 = this;
 
             var _a;
 
@@ -13616,19 +13085,19 @@
             var areaFunc = Object(d3_shape__WEBPACK_IMPORTED_MODULE_1__["area"])().x0(function (d, i) {
               var _a, _b;
 
-              return _this37.safetyCheck(renderSeries.scales.x.convert((_b = (_a = accessors.data).absoluteX0) === null || _b === void 0 ? void 0 : _b.call(_a, d, i, dataSeries.data, dataSeries)));
+              return _this39.safetyCheck(renderSeries.scales.x.convert((_b = (_a = accessors.data).absoluteX0) === null || _b === void 0 ? void 0 : _b.call(_a, d, i, dataSeries.data, dataSeries)));
             }).x1(function (d, i) {
               var _a, _b;
 
-              return _this37.safetyCheck(renderSeries.scales.x.convert((_b = (_a = accessors.data).absoluteX1) === null || _b === void 0 ? void 0 : _b.call(_a, d, i, dataSeries.data, dataSeries)));
+              return _this39.safetyCheck(renderSeries.scales.x.convert((_b = (_a = accessors.data).absoluteX1) === null || _b === void 0 ? void 0 : _b.call(_a, d, i, dataSeries.data, dataSeries)));
             }).y0(function (d, i) {
               var _a, _b;
 
-              return _this37.safetyCheck(renderSeries.scales.y.convert((_b = (_a = accessors.data).absoluteY0) === null || _b === void 0 ? void 0 : _b.call(_a, d, i, dataSeries.data, dataSeries)));
+              return _this39.safetyCheck(renderSeries.scales.y.convert((_b = (_a = accessors.data).absoluteY0) === null || _b === void 0 ? void 0 : _b.call(_a, d, i, dataSeries.data, dataSeries)));
             }).y1(function (d, i) {
               var _a, _b;
 
-              return _this37.safetyCheck(renderSeries.scales.y.convert((_b = (_a = accessors.data).absoluteY1) === null || _b === void 0 ? void 0 : _b.call(_a, d, i, dataSeries.data, dataSeries)));
+              return _this39.safetyCheck(renderSeries.scales.y.convert((_b = (_a = accessors.data).absoluteY1) === null || _b === void 0 ? void 0 : _b.call(_a, d, i, dataSeries.data, dataSeries)));
             }).curve(this.config.curveType);
             path.attr("d", (_a = areaFunc(validatedData)) !== null && _a !== void 0 ? _a : "");
           }
@@ -13732,7 +13201,7 @@
       !*** ./src/core/public-api.ts ***!
       \********************************/
 
-    /*! exports provided: ChartPalette, MappedValueProvider, CHART_PALETTE_CS1, CHART_PALETTE_CS2, CHART_PALETTE_CS3, CHART_PALETTE_CS_S, CHART_PALETTE_CS_S_EXTENDED, CHART_MARKERS, ProcessedColorProvider, SequentialChartMarkerProvider, SequentialColorProvider, SequentialValueProvider, TextColorProvider, PathMarker, SvgMarker, defaultColorProvider, defaultPalette, defaultMarkerProvider, getColorValueByName, getAutomaticDomain, getAutomaticDomainWithIncludedInterval, getAutomaticDomainWithTicks, BandScale, PointScale, LinearScale, Scale, TimeScale, isDaylightSavingTime, TimeIntervalScale, datetimeFormatter, EMPTY_CONTINUOUS_DOMAIN, NORMALIZED_DOMAIN, isBandScale, hasInnerScale, NoopScale, convert, invert, ChartPlugin, DataManager, DataSeries, EventBus, InteractionType, Lasagna, MouseInteractiveArea, RenderEngine, Renderer, UtilityService, AxisConfig, BorderConfig, DimensionConfig, linearGaugeGridConfig, GridConfig, AreaGridConfig, BarGridConfig, BarHorizontalGridConfig, BarStatusGridConfig, sparkChartGridConfig, XYGridConfig, XYGrid, borderMidpoint, Grid, RadialGrid, ChartDonutContentPlugin, ChartPopoverPlugin, RadialGaugeLabelsPlugin, GAUGE_LABEL_FORMATTER_NAME_DEFAULT, GAUGE_LABELS_CONTAINER_CLASS, GAUGE_THRESHOLD_LABEL_CLASS, InteractionLabelPlugin, InteractionLinePlugin, MouseInteractiveAreaPlugin, RadialPopoverPlugin, RenderEnginePlugin, TOOLTIP_POSITION_OFFSET, getVerticalSetup, getHorizontalSetup, ChartTooltipsPlugin, RadialTooltipsPlugin, BarTooltipsPlugin, ZoomPlugin, ChartCollection, Chart, ChartAssist, LegendInteractionAssist, SparkChartAssist, ChartAssistEventType, ChartAssistRenderStateData, CssFilterId, GRAYSCALE_FILTER, GRAYSCALE_COLOR_MATRIX */
+    /*! exports provided: ChartPalette, MappedValueProvider, CHART_PALETTE_CS1, CHART_PALETTE_CS2, CHART_PALETTE_CS3, CHART_PALETTE_CS_S, CHART_PALETTE_CS_S_EXTENDED, CHART_MARKERS, ProcessedColorProvider, SequentialChartMarkerProvider, SequentialColorProvider, SequentialValueProvider, TextColorProvider, PathMarker, SvgMarker, defaultColorProvider, defaultPalette, defaultMarkerProvider, getColorValueByName, getAutomaticDomain, getAutomaticDomainWithIncludedInterval, getAutomaticDomainWithTicks, BandScale, PointScale, LinearScale, Scale, TimeScale, isDaylightSavingTime, TimeIntervalScale, datetimeFormatter, EMPTY_CONTINUOUS_DOMAIN, NORMALIZED_DOMAIN, isBandScale, hasInnerScale, NoopScale, convert, invert, ChartPlugin, DataManager, DataSeries, EventBus, InteractionType, Lasagna, MouseInteractiveArea, RenderEngine, Renderer, UtilityService, AxisConfig, BorderConfig, DimensionConfig, linearGaugeGridConfig, GridConfig, AreaGridConfig, BarGridConfig, BarHorizontalGridConfig, BarStatusGridConfig, sparkChartGridConfig, XYGridConfig, XYGrid, borderMidpoint, Grid, RadialGrid, TOOLTIP_POSITION_OFFSET, getVerticalSetup, getHorizontalSetup, ChartTooltipsPlugin, RadialTooltipsPlugin, BarTooltipsPlugin, ZoomPlugin, ChartPopoverPlugin, ChartDonutContentPlugin, MouseInteractiveAreaPlugin, RadialPopoverPlugin, RadialGaugeThresholdLabelsPlugin, RenderEnginePlugin, InteractionLabelPlugin, InteractionLinePlugin, ChartCollection, Chart, ChartAssist, LegendInteractionAssist, SparkChartAssist, ChartAssistEventType, ChartAssistRenderStateData, CssFilterId, GRAYSCALE_FILTER, GRAYSCALE_COLOR_MATRIX */
 
     /***/
     function DRhB(module, __webpack_exports__, __webpack_require__) {
@@ -14132,72 +13601,6 @@
       /* harmony reexport (safe) */
 
 
-      __webpack_require__.d(__webpack_exports__, "ChartDonutContentPlugin", function () {
-        return _plugins_public_api__WEBPACK_IMPORTED_MODULE_2__["ChartDonutContentPlugin"];
-      });
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "ChartPopoverPlugin", function () {
-        return _plugins_public_api__WEBPACK_IMPORTED_MODULE_2__["ChartPopoverPlugin"];
-      });
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "RadialGaugeLabelsPlugin", function () {
-        return _plugins_public_api__WEBPACK_IMPORTED_MODULE_2__["RadialGaugeLabelsPlugin"];
-      });
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "GAUGE_LABEL_FORMATTER_NAME_DEFAULT", function () {
-        return _plugins_public_api__WEBPACK_IMPORTED_MODULE_2__["GAUGE_LABEL_FORMATTER_NAME_DEFAULT"];
-      });
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "GAUGE_LABELS_CONTAINER_CLASS", function () {
-        return _plugins_public_api__WEBPACK_IMPORTED_MODULE_2__["GAUGE_LABELS_CONTAINER_CLASS"];
-      });
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "GAUGE_THRESHOLD_LABEL_CLASS", function () {
-        return _plugins_public_api__WEBPACK_IMPORTED_MODULE_2__["GAUGE_THRESHOLD_LABEL_CLASS"];
-      });
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "InteractionLabelPlugin", function () {
-        return _plugins_public_api__WEBPACK_IMPORTED_MODULE_2__["InteractionLabelPlugin"];
-      });
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "InteractionLinePlugin", function () {
-        return _plugins_public_api__WEBPACK_IMPORTED_MODULE_2__["InteractionLinePlugin"];
-      });
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "MouseInteractiveAreaPlugin", function () {
-        return _plugins_public_api__WEBPACK_IMPORTED_MODULE_2__["MouseInteractiveAreaPlugin"];
-      });
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "RadialPopoverPlugin", function () {
-        return _plugins_public_api__WEBPACK_IMPORTED_MODULE_2__["RadialPopoverPlugin"];
-      });
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "RenderEnginePlugin", function () {
-        return _plugins_public_api__WEBPACK_IMPORTED_MODULE_2__["RenderEnginePlugin"];
-      });
-      /* harmony reexport (safe) */
-
-
       __webpack_require__.d(__webpack_exports__, "TOOLTIP_POSITION_OFFSET", function () {
         return _plugins_public_api__WEBPACK_IMPORTED_MODULE_2__["TOOLTIP_POSITION_OFFSET"];
       });
@@ -14236,6 +13639,54 @@
 
       __webpack_require__.d(__webpack_exports__, "ZoomPlugin", function () {
         return _plugins_public_api__WEBPACK_IMPORTED_MODULE_2__["ZoomPlugin"];
+      });
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "ChartPopoverPlugin", function () {
+        return _plugins_public_api__WEBPACK_IMPORTED_MODULE_2__["ChartPopoverPlugin"];
+      });
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "ChartDonutContentPlugin", function () {
+        return _plugins_public_api__WEBPACK_IMPORTED_MODULE_2__["ChartDonutContentPlugin"];
+      });
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "MouseInteractiveAreaPlugin", function () {
+        return _plugins_public_api__WEBPACK_IMPORTED_MODULE_2__["MouseInteractiveAreaPlugin"];
+      });
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "RadialPopoverPlugin", function () {
+        return _plugins_public_api__WEBPACK_IMPORTED_MODULE_2__["RadialPopoverPlugin"];
+      });
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "RadialGaugeThresholdLabelsPlugin", function () {
+        return _plugins_public_api__WEBPACK_IMPORTED_MODULE_2__["RadialGaugeThresholdLabelsPlugin"];
+      });
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "RenderEnginePlugin", function () {
+        return _plugins_public_api__WEBPACK_IMPORTED_MODULE_2__["RenderEnginePlugin"];
+      });
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "InteractionLabelPlugin", function () {
+        return _plugins_public_api__WEBPACK_IMPORTED_MODULE_2__["InteractionLabelPlugin"];
+      });
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "InteractionLinePlugin", function () {
+        return _plugins_public_api__WEBPACK_IMPORTED_MODULE_2__["InteractionLinePlugin"];
       });
       /* harmony import */
 
@@ -15196,7 +14647,7 @@
       !*** ./src/gauge/public-api.ts ***!
       \*********************************/
 
-    /*! exports provided: GaugeMode, GAUGE_THICKNESS_DEFAULT, GaugeComponent, GaugeUtil */
+    /*! exports provided: GaugeMode, GAUGE_THICKNESS_DEFAULT, GaugeComponent, GaugeService */
 
     /***/
     function EIQL(module, __webpack_exports__, __webpack_require__) {
@@ -15236,14 +14687,14 @@
       /* harmony import */
 
 
-      var _gauge_util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-      /*! ./gauge-util */
-      "Hovb");
+      var _gauge_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! ./gauge.service */
+      "FWrN");
       /* harmony reexport (safe) */
 
 
-      __webpack_require__.d(__webpack_exports__, "GaugeUtil", function () {
-        return _gauge_util__WEBPACK_IMPORTED_MODULE_2__["GaugeUtil"];
+      __webpack_require__.d(__webpack_exports__, "GaugeService", function () {
+        return _gauge_service__WEBPACK_IMPORTED_MODULE_2__["GaugeService"];
       });
       /* harmony import */
 
@@ -15707,7 +15158,7 @@
 
       var d3_color__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! d3-color */
-      "qXv/");
+      "Ij2O");
       /* harmony import */
 
 
@@ -15970,6 +15421,342 @@
     },
 
     /***/
+    "FWrN":
+    /*!************************************!*\
+      !*** ./src/gauge/gauge.service.ts ***!
+      \************************************/
+
+    /*! exports provided: GaugeService */
+
+    /***/
+    function FWrN(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "GaugeService", function () {
+        return GaugeService;
+      });
+      /* harmony import */
+
+
+      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! tslib */
+      "mrSG");
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/core */
+      "fXoL");
+      /* harmony import */
+
+
+      var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! lodash/isUndefined */
+      "TP7S");
+      /* harmony import */
+
+
+      var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2__);
+      /* harmony import */
+
+
+      var _core_common_palette_palettes__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! ../core/common/palette/palettes */
+      "Isyg");
+      /* harmony import */
+
+
+      var _core_plugins_radial_gauge_threshold_labels_plugin__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! ../core/plugins/radial-gauge-threshold-labels-plugin */
+      "7XYI");
+      /* harmony import */
+
+
+      var _renderers_bar_accessors_horizontal_bar_accessors__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! ../renderers/bar/accessors/horizontal-bar-accessors */
+      "rTqn");
+      /* harmony import */
+
+
+      var _renderers_bar_accessors_vertical_bar_accessors__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      /*! ../renderers/bar/accessors/vertical-bar-accessors */
+      "mGqK");
+      /* harmony import */
+
+
+      var _renderers_bar_bar_renderer__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      /*! ../renderers/bar/bar-renderer */
+      "iC++");
+      /* harmony import */
+
+
+      var _renderers_bar_bar_scales__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      /*! ../renderers/bar/bar-scales */
+      "sMd8");
+      /* harmony import */
+
+
+      var _renderers_radial_accessors_radial_accessors__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      /*! ../renderers/radial/accessors/radial-accessors */
+      "ZF6T");
+      /* harmony import */
+
+
+      var _renderers_radial_gauge_renderer_config__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+      /*! ../renderers/radial/gauge-renderer-config */
+      "jC88");
+      /* harmony import */
+
+
+      var _renderers_radial_radial_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+      /*! ../renderers/radial/radial-gauge-thresholds-renderer */
+      "sgdl");
+      /* harmony import */
+
+
+      var _renderers_radial_radial_renderer__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+      /*! ../renderers/radial/radial-renderer */
+      "+mSY");
+      /* harmony import */
+
+
+      var _renderers_radial_radial_scales__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
+      /*! ../renderers/radial/radial-scales */
+      "ftV1");
+      /* harmony import */
+
+
+      var _constants__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
+      /*! ./constants */
+      "boxq");
+
+      var GaugeService_1;
+      /**
+       * @ignore
+       * Convenience service to simplify gauge creation
+       */
+
+      var GaugeService = GaugeService_1 = /*#__PURE__*/function () {
+        function GaugeService() {
+          _classCallCheck(this, GaugeService);
+        }
+
+        _createClass(GaugeService, [{
+          key: "assembleSeriesSet",
+          value: function assembleSeriesSet(value, max, thresholds, mode, valueColorAccessor) {
+            var initialValue = value !== null && value !== void 0 ? value : 0;
+            var initialMax = max !== null && max !== void 0 ? max : 0;
+
+            var _this$getGaugeAttribu = this.getGaugeAttributes(mode),
+                accessors = _this$getGaugeAttribu.accessors,
+                scales = _this$getGaugeAttribu.scales,
+                renderer = _this$getGaugeAttribu.renderer;
+
+            if (accessors.data) {
+              accessors.data.color = valueColorAccessor || this.createDefaultValueColorAccessor(thresholds);
+            }
+
+            var chartAssistSeries = _toConsumableArray(this.getGaugeData(initialValue, initialMax).map(function (s) {
+              return Object.assign(Object.assign({}, s), {
+                accessors: accessors,
+                scales: scales,
+                renderer: renderer
+              });
+            })); // TODO: generate threshold series for linear modes
+
+
+            if (mode === _constants__WEBPACK_IMPORTED_MODULE_14__["GaugeMode"].Radial) {
+              chartAssistSeries.push(this.generateThresholdSeries(initialValue, initialMax, thresholds, accessors, scales));
+            }
+
+            return chartAssistSeries;
+          }
+        }, {
+          key: "updateSeriesSet",
+          value: function updateSeriesSet(value, max, thresholds, seriesSet) {
+            var _this40 = this;
+
+            var newValue = value !== null && value !== void 0 ? value : 0;
+            var newMax = max !== null && max !== void 0 ? max : 0;
+            var updatedSeriesSet = seriesSet.map(function (series) {
+              if (series.id === GaugeService_1.QUANTITY_SERIES_ID) {
+                return Object.assign(Object.assign({}, series), {
+                  data: [{
+                    category: "gauge",
+                    value: newValue
+                  }]
+                });
+              }
+
+              if (series.id === GaugeService_1.REMAINDER_SERIES_ID) {
+                return Object.assign(Object.assign({}, series), {
+                  data: [{
+                    category: "gauge",
+                    value: newMax - newValue
+                  }]
+                });
+              } // threshold level markers
+
+
+              return Object.assign(Object.assign({}, series), {
+                data: _this40.getThresholdMarkerPoints(thresholds, newValue, newMax)
+              });
+            });
+            return updatedSeriesSet;
+          }
+        }, {
+          key: "generateThresholdSeries",
+          value: function generateThresholdSeries(value, max, thresholds, accessors, scales) {
+            return {
+              id: GaugeService_1.THRESHOLD_MARKERS_SERIES_ID,
+              data: this.getThresholdMarkerPoints(thresholds, value, max),
+              accessors: accessors,
+              scales: scales,
+              renderer: new _renderers_radial_radial_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_11__["RadialGaugeThresholdsRenderer"](),
+              excludeFromArcCalculation: true,
+              preprocess: false
+            };
+          }
+        }, {
+          key: "setThresholdLabelFormatter",
+          value: function setThresholdLabelFormatter(formatter, seriesSet) {
+            var formatterName = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : _core_plugins_radial_gauge_threshold_labels_plugin__WEBPACK_IMPORTED_MODULE_4__["RadialGaugeThresholdLabelsPlugin"].FORMATTER_NAME_DEFAULT;
+            var thresholdsSeries = seriesSet.find(function (series) {
+              return series.renderer instanceof _renderers_radial_radial_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_11__["RadialGaugeThresholdsRenderer"];
+            });
+
+            if (thresholdsSeries) {
+              thresholdsSeries.scales.r.formatters[formatterName] = formatter;
+            }
+
+            return seriesSet;
+          }
+        }, {
+          key: "getGaugeAttributes",
+          value: function getGaugeAttributes(mode) {
+            var t = this.getGaugeTools(mode);
+            var result = {
+              accessors: t.accessorFunction(),
+              renderer: t.rendererFunction(),
+              scales: t.scaleFunction()
+            };
+            return result;
+          }
+        }, {
+          key: "getGaugeTools",
+          value: function getGaugeTools(mode) {
+            var _chartTools;
+
+            var barRendererFunction = function barRendererFunction() {
+              var renderer = new _renderers_bar_bar_renderer__WEBPACK_IMPORTED_MODULE_7__["BarRenderer"]();
+              renderer.config.padding = 0;
+              renderer.config.strokeWidth = 0;
+              return renderer;
+            };
+
+            var chartTools = (_chartTools = {}, _defineProperty(_chartTools, _constants__WEBPACK_IMPORTED_MODULE_14__["GaugeMode"].Radial, {
+              rendererFunction: function rendererFunction() {
+                return new _renderers_radial_radial_renderer__WEBPACK_IMPORTED_MODULE_12__["RadialRenderer"](Object(_renderers_radial_gauge_renderer_config__WEBPACK_IMPORTED_MODULE_10__["radialGaugeRendererConfig"])());
+              },
+              accessorFunction: function accessorFunction() {
+                return new _renderers_radial_accessors_radial_accessors__WEBPACK_IMPORTED_MODULE_9__["RadialAccessors"]();
+              },
+              scaleFunction: function scaleFunction() {
+                return Object(_renderers_radial_radial_scales__WEBPACK_IMPORTED_MODULE_13__["radialScales"])();
+              }
+            }), _defineProperty(_chartTools, _constants__WEBPACK_IMPORTED_MODULE_14__["GaugeMode"].Horizontal, {
+              rendererFunction: barRendererFunction,
+              accessorFunction: function accessorFunction() {
+                return new _renderers_bar_accessors_horizontal_bar_accessors__WEBPACK_IMPORTED_MODULE_5__["HorizontalBarAccessors"]();
+              },
+              scaleFunction: function scaleFunction() {
+                return Object(_renderers_bar_bar_scales__WEBPACK_IMPORTED_MODULE_8__["barScales"])({
+                  horizontal: true
+                });
+              }
+            }), _defineProperty(_chartTools, _constants__WEBPACK_IMPORTED_MODULE_14__["GaugeMode"].Vertical, {
+              // TODO
+              rendererFunction: barRendererFunction,
+              accessorFunction: function accessorFunction() {
+                return new _renderers_bar_accessors_vertical_bar_accessors__WEBPACK_IMPORTED_MODULE_6__["VerticalBarAccessors"]();
+              },
+              scaleFunction: function scaleFunction() {
+                return Object(_renderers_bar_bar_scales__WEBPACK_IMPORTED_MODULE_8__["barScales"])();
+              }
+            }), _chartTools);
+            return chartTools[mode];
+          }
+        }, {
+          key: "createDefaultValueColorAccessor",
+          value: function createDefaultValueColorAccessor(thresholds) {
+            return function (data, i, series, dataSeries) {
+              var _a, _b;
+
+              if (dataSeries.id === GaugeService_1.REMAINDER_SERIES_ID) {
+                return "var(--nui-color-semantic-unknown-bg-hover)";
+              } else {
+                if (!lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default()((_a = thresholds[1]) === null || _a === void 0 ? void 0 : _a.value) && thresholds[1].value <= data.value) {
+                  return "var(--nui-color-semantic-critical)";
+                }
+
+                if (!lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default()((_b = thresholds[0]) === null || _b === void 0 ? void 0 : _b.value) && thresholds[0].value <= data.value) {
+                  return "var(--nui-color-semantic-warning)";
+                }
+
+                return _core_common_palette_palettes__WEBPACK_IMPORTED_MODULE_3__["CHART_PALETTE_CS1"][0];
+              }
+            };
+          }
+        }, {
+          key: "getGaugeData",
+          value: function getGaugeData(value, max) {
+            return [// category property is used for unifying the linear-style gauge visualization into a single bar stack
+            {
+              id: GaugeService_1.QUANTITY_SERIES_ID,
+              data: [{
+                category: "gauge",
+                value: value
+              }]
+            }, {
+              id: GaugeService_1.REMAINDER_SERIES_ID,
+              data: [{
+                category: "gauge",
+                value: max - value
+              }]
+            }];
+          }
+        }, {
+          key: "getThresholdMarkerPoints",
+          value: function getThresholdMarkerPoints(thresholds, value, max) {
+            var markerValues = thresholds.map(function (threshold) {
+              return {
+                hit: threshold.value <= value,
+                value: threshold.value
+              };
+            });
+            return [].concat(_toConsumableArray(markerValues), [{
+              value: max
+            }]);
+          }
+        }]);
+
+        return GaugeService;
+      }();
+
+      GaugeService.QUANTITY_SERIES_ID = "quantity";
+      GaugeService.REMAINDER_SERIES_ID = "remainder";
+      GaugeService.THRESHOLD_MARKERS_SERIES_ID = "threshold-markers";
+      GaugeService = GaugeService_1 = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: "root"
+      })], GaugeService);
+      /***/
+    },
+
+    /***/
     "Faen":
     /*!************************************************!*\
       !*** ./node_modules/d3-color/src/cubehelix.js ***!
@@ -16092,13 +15879,13 @@
 
 
       __webpack_require__.d(__webpack_exports__, "darker", function () {
-        return _darker2;
+        return _darker;
       });
       /* harmony export (binding) */
 
 
       __webpack_require__.d(__webpack_exports__, "brighter", function () {
-        return _brighter2;
+        return _brighter;
       });
       /* harmony export (binding) */
 
@@ -16145,9 +15932,9 @@
 
       function Color() {}
 
-      var _darker2 = 0.7;
+      var _darker = 0.7;
 
-      var _brighter2 = 1 / _darker2;
+      var _brighter = 1 / _darker;
 
       var reI = "\\s*([+-]?\\d+)\\s*",
           reN = "\\s*([+-]?\\d*\\.?\\d+(?:[eE][+-]?\\d+)?)\\s*",
@@ -16381,11 +16168,11 @@
 
       Object(_define__WEBPACK_IMPORTED_MODULE_0__["default"])(Rgb, rgb, Object(_define__WEBPACK_IMPORTED_MODULE_0__["extend"])(Color, {
         brighter: function brighter(k) {
-          k = k == null ? _brighter2 : Math.pow(_brighter2, k);
+          k = k == null ? _brighter : Math.pow(_brighter, k);
           return new Rgb(this.r * k, this.g * k, this.b * k, this.opacity);
         },
         darker: function darker(k) {
-          k = k == null ? _darker2 : Math.pow(_darker2, k);
+          k = k == null ? _darker : Math.pow(_darker, k);
           return new Rgb(this.r * k, this.g * k, this.b * k, this.opacity);
         },
         rgb: function rgb() {
@@ -16460,11 +16247,11 @@
 
       Object(_define__WEBPACK_IMPORTED_MODULE_0__["default"])(Hsl, hsl, Object(_define__WEBPACK_IMPORTED_MODULE_0__["extend"])(Color, {
         brighter: function brighter(k) {
-          k = k == null ? _brighter2 : Math.pow(_brighter2, k);
+          k = k == null ? _brighter : Math.pow(_brighter, k);
           return new Hsl(this.h, this.s, this.l * k, this.opacity);
         },
         darker: function darker(k) {
-          k = k == null ? _darker2 : Math.pow(_darker2, k);
+          k = k == null ? _darker : Math.pow(_darker, k);
           return new Hsl(this.h, this.s, this.l * k, this.opacity);
         },
         rgb: function rgb() {
@@ -16568,7 +16355,7 @@
       !*** ./src/renderers/public-api.ts ***!
       \*************************************/
 
-    /*! exports provided: THRESHOLDS_MAIN_CHART_RENDERER_CONFIG, THRESHOLDS_SUMMARY_RENDERER_CONFIG, DEFAULT_MARKER_INTERACTION_CONFIG, GAUGE_THRESHOLD_MARKER_CLASS, RenderState, RenderLayerName, XYRenderer, SideIndicatorAccessors, SideIndicatorRenderer, XYAccessors, NoopAccessors, RectangleAccessors, NoopRenderer, BarRenderer, stackedPreprocessor, stack, barGrid, barScales, BarAccessors, barAccessors, HorizontalBarAccessors, VerticalBarAccessors, StatusAccessors, statusAccessors, BarHighlightStrategy, BarSeriesHighlightStrategy, DEFAULT_LINEAR_GAUGE_THRESHOLDS_RENDERER_CONFIG, LinearGaugeThresholdsRenderer, radialPreprocessor, radial, DEFAULT_RADIAL_RENDERER_CONFIG, RadialRenderer, DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG, RadialGaugeThresholdsRenderer, radialGaugeRendererConfig, RadialGaugeRenderingUtil, PieRenderer, radialGrid, radialScales, RadialAccessors, calculateMissingData, LineSelectSeriesInteractionStrategy, LineAccessors, LineRenderer, MissingDataLineRendererConfig, areaGrid, AreaAccessors, AreaRenderer, stackedAreaPreprocessor, stackedArea, stackedPercentageAreaPreprocessor, stackedPercentageArea, calculateDomainValueCombinedTotals, applyStackMetadata, stackedAreaAccessors */
+    /*! exports provided: THRESHOLDS_MAIN_CHART_RENDERER_CONFIG, THRESHOLDS_SUMMARY_RENDERER_CONFIG, DEFAULT_MARKER_INTERACTION_CONFIG, RenderState, RenderLayerName, XYRenderer, SideIndicatorAccessors, SideIndicatorRenderer, XYAccessors, NoopAccessors, RectangleAccessors, NoopRenderer, BarRenderer, stackedPreprocessor, stack, barGrid, barScales, BarAccessors, barAccessors, HorizontalBarAccessors, VerticalBarAccessors, StatusAccessors, statusAccessors, BarHighlightStrategy, BarSeriesHighlightStrategy, radialPreprocessor, radial, DEFAULT_RADIAL_RENDERER_CONFIG, RadialRenderer, DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG, RadialGaugeThresholdsRenderer, radialGaugeRendererConfig, GaugeRenderingUtils, PieRenderer, radialGrid, radialScales, RadialAccessors, calculateMissingData, LineSelectSeriesInteractionStrategy, LineAccessors, LineRenderer, MissingDataLineRendererConfig, areaGrid, AreaAccessors, AreaRenderer, stackedAreaPreprocessor, stackedArea, stackedPercentageAreaPreprocessor, stackedPercentageArea, calculateDomainValueCombinedTotals, applyStackMetadata, stackedAreaAccessors */
 
     /***/
     function Foqm(module, __webpack_exports__, __webpack_require__) {
@@ -16598,12 +16385,6 @@
 
       __webpack_require__.d(__webpack_exports__, "DEFAULT_MARKER_INTERACTION_CONFIG", function () {
         return _constants__WEBPACK_IMPORTED_MODULE_0__["DEFAULT_MARKER_INTERACTION_CONFIG"];
-      });
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "GAUGE_THRESHOLD_MARKER_CLASS", function () {
-        return _constants__WEBPACK_IMPORTED_MODULE_0__["GAUGE_THRESHOLD_MARKER_CLASS"];
       });
       /* harmony import */
 
@@ -16773,18 +16554,6 @@
       __webpack_require__.d(__webpack_exports__, "BarSeriesHighlightStrategy", function () {
         return _bar_public_api__WEBPACK_IMPORTED_MODULE_6__["BarSeriesHighlightStrategy"];
       });
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "DEFAULT_LINEAR_GAUGE_THRESHOLDS_RENDERER_CONFIG", function () {
-        return _bar_public_api__WEBPACK_IMPORTED_MODULE_6__["DEFAULT_LINEAR_GAUGE_THRESHOLDS_RENDERER_CONFIG"];
-      });
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "LinearGaugeThresholdsRenderer", function () {
-        return _bar_public_api__WEBPACK_IMPORTED_MODULE_6__["LinearGaugeThresholdsRenderer"];
-      });
       /* harmony import */
 
 
@@ -16836,8 +16605,8 @@
       /* harmony reexport (safe) */
 
 
-      __webpack_require__.d(__webpack_exports__, "RadialGaugeRenderingUtil", function () {
-        return _radial_public_api__WEBPACK_IMPORTED_MODULE_7__["RadialGaugeRenderingUtil"];
+      __webpack_require__.d(__webpack_exports__, "GaugeRenderingUtils", function () {
+        return _radial_public_api__WEBPACK_IMPORTED_MODULE_7__["GaugeRenderingUtils"];
       });
       /* harmony reexport (safe) */
 
@@ -17371,59 +17140,6 @@
       };
       /***/
 
-    },
-
-    /***/
-    "GXwZ":
-    /*!*********************************************!*\
-      !*** ./src/core/plugins/gauge/constants.ts ***!
-      \*********************************************/
-
-    /*! exports provided: GAUGE_LABEL_FORMATTER_NAME_DEFAULT, GAUGE_LABELS_CONTAINER_CLASS, GAUGE_THRESHOLD_LABEL_CLASS */
-
-    /***/
-    function GXwZ(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "GAUGE_LABEL_FORMATTER_NAME_DEFAULT", function () {
-        return GAUGE_LABEL_FORMATTER_NAME_DEFAULT;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "GAUGE_LABELS_CONTAINER_CLASS", function () {
-        return GAUGE_LABELS_CONTAINER_CLASS;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "GAUGE_THRESHOLD_LABEL_CLASS", function () {
-        return GAUGE_THRESHOLD_LABEL_CLASS;
-      });
-      /**
-       * @ignore
-       * Default gauge label formatter name
-       */
-
-
-      var GAUGE_LABEL_FORMATTER_NAME_DEFAULT = "label";
-      /**
-       * @ignore
-       * Gauge labels container class name
-       */
-
-      var GAUGE_LABELS_CONTAINER_CLASS = "gauge-labels";
-      /**
-       * @ignore
-       * Gauge threshold label class name
-       */
-
-      var GAUGE_THRESHOLD_LABEL_CLASS = "threshold-label";
-      /***/
     },
 
     /***/
@@ -18057,7 +17773,7 @@
 
       var ChartComponent = ChartComponent_1 = /*#__PURE__*/function () {
         function ChartComponent(elRef, ngZone, cd) {
-          var _this38 = this;
+          var _this41 = this;
 
           _classCallCheck(this, ChartComponent);
 
@@ -18066,9 +17782,9 @@
           this.cd = cd;
 
           this.redraw = function () {
-            _this38.chart.updateDimensions();
+            _this41.chart.updateDimensions();
 
-            _this38.cd.detectChanges();
+            _this41.cd.detectChanges();
           };
 
           this.intersectionObserverCallback = function (entries, observer) {
@@ -18077,7 +17793,7 @@
               isChartInView: entries[0].isIntersecting
             };
 
-            _this38.chart.getEventBus().getStream(_constants__WEBPACK_IMPORTED_MODULE_4__["CHART_VIEW_STATUS_EVENT"]).next({
+            _this41.chart.getEventBus().getStream(_constants__WEBPACK_IMPORTED_MODULE_4__["CHART_VIEW_STATUS_EVENT"]).next({
               data: data
             });
           };
@@ -18108,30 +17824,30 @@
         }, {
           key: "ngAfterContentInit",
           value: function ngAfterContentInit() {
-            var _this39 = this;
+            var _this42 = this;
 
             this.chart.getEventBus().getStream(_constants__WEBPACK_IMPORTED_MODULE_4__["REFRESH_EVENT"]).subscribe(function () {
-              _this39.chart.updateDimensions();
+              _this42.chart.updateDimensions();
             });
           }
         }, {
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this40 = this;
+            var _this43 = this;
 
             this.resizeHandler = lodash_debounce__WEBPACK_IMPORTED_MODULE_2___default()(function () {
-              return _this40.redraw();
+              return _this43.redraw();
             }, 10);
             this.resizeObserver = new resize_observer_polyfill__WEBPACK_IMPORTED_MODULE_3__["default"](function () {
               // This was suggested here https://github.com/angular/zone.js/issues/1011
-              _this40.ngZone.run(function () {
-                return _this40.resizeHandler();
+              _this43.ngZone.run(function () {
+                return _this43.resizeHandler();
               });
             });
             this.ngZone.runOutsideAngular(function () {
               var _a;
 
-              return (_a = _this40.resizeObserver) === null || _a === void 0 ? void 0 : _a.observe(_this40.elRef.nativeElement);
+              return (_a = _this43.resizeObserver) === null || _a === void 0 ? void 0 : _a.observe(_this43.elRef.nativeElement);
             });
           }
         }, {
@@ -18408,358 +18124,6 @@
     },
 
     /***/
-    "Hovb":
-    /*!*********************************!*\
-      !*** ./src/gauge/gauge-util.ts ***!
-      \*********************************/
-
-    /*! exports provided: GaugeUtil */
-
-    /***/
-    function Hovb(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "GaugeUtil", function () {
-        return GaugeUtil;
-      });
-      /* harmony import */
-
-
-      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! tslib */
-      "mrSG");
-      /* harmony import */
-
-
-      var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-      /*! @angular/core */
-      "fXoL");
-      /* harmony import */
-
-
-      var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-      /*! lodash/isUndefined */
-      "TP7S");
-      /* harmony import */
-
-
-      var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2__);
-      /* harmony import */
-
-
-      var _core_common_palette_palettes__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-      /*! ../core/common/palette/palettes */
-      "Isyg");
-      /* harmony import */
-
-
-      var _core_plugins_gauge_constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-      /*! ../core/plugins/gauge/constants */
-      "GXwZ");
-      /* harmony import */
-
-
-      var _renderers_bar_accessors_horizontal_bar_accessors__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
-      /*! ../renderers/bar/accessors/horizontal-bar-accessors */
-      "rTqn");
-      /* harmony import */
-
-
-      var _renderers_bar_accessors_vertical_bar_accessors__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
-      /*! ../renderers/bar/accessors/vertical-bar-accessors */
-      "mGqK");
-      /* harmony import */
-
-
-      var _renderers_bar_bar_renderer__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
-      /*! ../renderers/bar/bar-renderer */
-      "iC++");
-      /* harmony import */
-
-
-      var _renderers_bar_bar_scales__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
-      /*! ../renderers/bar/bar-scales */
-      "sMd8");
-      /* harmony import */
-
-
-      var _renderers_bar_linear_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
-      /*! ../renderers/bar/linear-gauge-thresholds-renderer */
-      "LkUO");
-      /* harmony import */
-
-
-      var _renderers_radial_accessors_radial_accessors__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
-      /*! ../renderers/radial/accessors/radial-accessors */
-      "ZF6T");
-      /* harmony import */
-
-
-      var _renderers_radial_gauge_radial_gauge_renderer_config__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
-      /*! ../renderers/radial/gauge/radial-gauge-renderer-config */
-      "gOPF");
-      /* harmony import */
-
-
-      var _renderers_radial_gauge_radial_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
-      /*! ../renderers/radial/gauge/radial-gauge-thresholds-renderer */
-      "CmBv");
-      /* harmony import */
-
-
-      var _renderers_radial_radial_renderer__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
-      /*! ../renderers/radial/radial-renderer */
-      "+mSY");
-      /* harmony import */
-
-
-      var _renderers_radial_radial_scales__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
-      /*! ../renderers/radial/radial-scales */
-      "ftV1");
-      /* harmony import */
-
-
-      var _constants__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
-      /*! ./constants */
-      "boxq");
-
-      var GaugeUtil_1;
-      /**
-       * @ignore
-       * Convenience service to simplify gauge creation
-       */
-
-      var GaugeUtil = GaugeUtil_1 = /*#__PURE__*/function () {
-        function GaugeUtil() {
-          _classCallCheck(this, GaugeUtil);
-        }
-
-        _createClass(GaugeUtil, null, [{
-          key: "assembleSeriesSet",
-          value: function assembleSeriesSet(value, max, thresholds, mode, valueColorAccessor) {
-            value = value !== null && value !== void 0 ? value : 0;
-            max = max !== null && max !== void 0 ? max : 0;
-
-            var _GaugeUtil_1$getGauge = GaugeUtil_1.getGaugeAttributes(mode),
-                accessors = _GaugeUtil_1$getGauge.accessors,
-                scales = _GaugeUtil_1$getGauge.scales,
-                mainRenderer = _GaugeUtil_1$getGauge.mainRenderer,
-                thresholdsRenderer = _GaugeUtil_1$getGauge.thresholdsRenderer;
-
-            if (accessors.data) {
-              accessors.data.color = valueColorAccessor || GaugeUtil_1.createDefaultValueColorAccessor(thresholds);
-            }
-
-            var chartAssistSeries = _toConsumableArray(GaugeUtil_1.getGaugeData(value, max).map(function (s) {
-              return Object.assign(Object.assign({}, s), {
-                accessors: accessors,
-                scales: scales,
-                renderer: mainRenderer
-              });
-            }));
-
-            chartAssistSeries.push(GaugeUtil_1.generateThresholdSeries(value, max, thresholds, accessors, scales, thresholdsRenderer));
-            return chartAssistSeries;
-          }
-        }, {
-          key: "updateSeriesSet",
-          value: function updateSeriesSet(value, max, thresholds, seriesSet) {
-            var newValue = value !== null && value !== void 0 ? value : 0;
-            var newMax = max !== null && max !== void 0 ? max : 0;
-            var updatedSeriesSet = seriesSet.map(function (series) {
-              if (series.id === GaugeUtil_1.QUANTITY_SERIES_ID) {
-                return Object.assign(Object.assign({}, series), {
-                  data: [{
-                    category: "gauge",
-                    value: newValue
-                  }]
-                });
-              }
-
-              if (series.id === GaugeUtil_1.REMAINDER_SERIES_ID) {
-                return Object.assign(Object.assign({}, series), {
-                  data: [{
-                    category: "gauge",
-                    value: newMax - newValue
-                  }]
-                });
-              } // threshold level markers
-
-
-              return Object.assign(Object.assign({}, series), {
-                data: GaugeUtil_1.getThresholdMarkerPoints(thresholds, newValue, newMax)
-              });
-            });
-            return updatedSeriesSet;
-          }
-        }, {
-          key: "generateThresholdSeries",
-          value: function generateThresholdSeries(value, max, thresholds, accessors, scales, thresholdsRenderer) {
-            return {
-              id: GaugeUtil_1.THRESHOLD_MARKERS_SERIES_ID,
-              data: GaugeUtil_1.getThresholdMarkerPoints(thresholds, value, max),
-              accessors: accessors,
-              scales: scales,
-              renderer: thresholdsRenderer,
-              excludeFromArcCalculation: true,
-              preprocess: false
-            };
-          }
-        }, {
-          key: "setThresholdLabelFormatter",
-          value: function setThresholdLabelFormatter(formatter, seriesSet) {
-            var formatterName = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : _core_plugins_gauge_constants__WEBPACK_IMPORTED_MODULE_4__["GAUGE_LABEL_FORMATTER_NAME_DEFAULT"];
-            var thresholdsSeries = seriesSet.find(function (series) {
-              return series.renderer instanceof _renderers_radial_gauge_radial_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_12__["RadialGaugeThresholdsRenderer"];
-            });
-
-            if (thresholdsSeries) {
-              thresholdsSeries.scales.r.formatters[formatterName] = formatter;
-            }
-
-            return seriesSet;
-          }
-        }, {
-          key: "getGaugeAttributes",
-          value: function getGaugeAttributes(mode) {
-            var t = GaugeUtil_1.getGaugeTools(mode);
-            var result = {
-              accessors: t.accessorFunction(),
-              mainRenderer: t.mainRendererFunction(),
-              thresholdsRenderer: t.thresholdsRendererFunction(),
-              scales: t.scaleFunction()
-            };
-            return result;
-          }
-        }, {
-          key: "getGaugeTools",
-          value: function getGaugeTools(mode) {
-            var _chartTools;
-
-            var barRendererFunction = function barRendererFunction() {
-              var renderer = new _renderers_bar_bar_renderer__WEBPACK_IMPORTED_MODULE_7__["BarRenderer"]();
-              renderer.config.padding = 0;
-              renderer.config.strokeWidth = 0;
-              renderer.config.enableMinBarThickness = false;
-              return renderer;
-            };
-
-            var chartTools = (_chartTools = {}, _defineProperty(_chartTools, _constants__WEBPACK_IMPORTED_MODULE_15__["GaugeMode"].Radial, {
-              mainRendererFunction: function mainRendererFunction() {
-                return new _renderers_radial_radial_renderer__WEBPACK_IMPORTED_MODULE_13__["RadialRenderer"](Object(_renderers_radial_gauge_radial_gauge_renderer_config__WEBPACK_IMPORTED_MODULE_11__["radialGaugeRendererConfig"])());
-              },
-              thresholdsRendererFunction: function thresholdsRendererFunction() {
-                return new _renderers_radial_gauge_radial_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_12__["RadialGaugeThresholdsRenderer"]();
-              },
-              accessorFunction: function accessorFunction() {
-                return new _renderers_radial_accessors_radial_accessors__WEBPACK_IMPORTED_MODULE_10__["RadialAccessors"]();
-              },
-              scaleFunction: function scaleFunction() {
-                return Object(_renderers_radial_radial_scales__WEBPACK_IMPORTED_MODULE_14__["radialScales"])();
-              }
-            }), _defineProperty(_chartTools, _constants__WEBPACK_IMPORTED_MODULE_15__["GaugeMode"].Horizontal, {
-              mainRendererFunction: barRendererFunction,
-              thresholdsRendererFunction: function thresholdsRendererFunction() {
-                return new _renderers_bar_linear_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_9__["LinearGaugeThresholdsRenderer"]();
-              },
-              accessorFunction: function accessorFunction() {
-                return new _renderers_bar_accessors_horizontal_bar_accessors__WEBPACK_IMPORTED_MODULE_5__["HorizontalBarAccessors"]();
-              },
-              scaleFunction: function scaleFunction() {
-                return Object(_renderers_bar_bar_scales__WEBPACK_IMPORTED_MODULE_8__["barScales"])({
-                  horizontal: true
-                });
-              }
-            }), _defineProperty(_chartTools, _constants__WEBPACK_IMPORTED_MODULE_15__["GaugeMode"].Vertical, {
-              mainRendererFunction: barRendererFunction,
-              thresholdsRendererFunction: function thresholdsRendererFunction() {
-                return new _renderers_bar_linear_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_9__["LinearGaugeThresholdsRenderer"]();
-              },
-              accessorFunction: function accessorFunction() {
-                return new _renderers_bar_accessors_vertical_bar_accessors__WEBPACK_IMPORTED_MODULE_6__["VerticalBarAccessors"]();
-              },
-              scaleFunction: function scaleFunction() {
-                return Object(_renderers_bar_bar_scales__WEBPACK_IMPORTED_MODULE_8__["barScales"])();
-              }
-            }), _chartTools);
-            return chartTools[mode];
-          }
-        }, {
-          key: "createDefaultValueColorAccessor",
-          value: function createDefaultValueColorAccessor(thresholds) {
-            // assigning to variable to prevent "Lambda not supported" error
-            var valueColorAccessor = function valueColorAccessor(data, i, series, dataSeries) {
-              var _a, _b;
-
-              if (dataSeries.id === GaugeUtil_1.REMAINDER_SERIES_ID) {
-                return "var(--nui-color-semantic-unknown-bg-hover)";
-              } else {
-                if (!lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default()((_a = thresholds[1]) === null || _a === void 0 ? void 0 : _a.value) && thresholds[1].value <= data.value) {
-                  return "var(--nui-color-semantic-critical)";
-                }
-
-                if (!lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default()((_b = thresholds[0]) === null || _b === void 0 ? void 0 : _b.value) && thresholds[0].value <= data.value) {
-                  return "var(--nui-color-semantic-warning)";
-                }
-
-                return _core_common_palette_palettes__WEBPACK_IMPORTED_MODULE_3__["CHART_PALETTE_CS1"][0];
-              }
-            };
-
-            return valueColorAccessor;
-          }
-        }, {
-          key: "getGaugeData",
-          value: function getGaugeData(value, max) {
-            return [// category property is used for unifying the linear-style gauge visualization into a single bar stack
-            {
-              id: GaugeUtil_1.QUANTITY_SERIES_ID,
-              data: [{
-                category: "gauge",
-                value: value
-              }]
-            }, {
-              id: GaugeUtil_1.REMAINDER_SERIES_ID,
-              data: [{
-                category: "gauge",
-                value: max - value
-              }]
-            }];
-          }
-        }, {
-          key: "getThresholdMarkerPoints",
-          value: function getThresholdMarkerPoints(thresholds, value, max) {
-            var markerValues = thresholds.map(function (threshold) {
-              return {
-                category: "gauge",
-                hit: threshold.value <= value,
-                value: threshold.value
-              };
-            });
-            return [].concat(_toConsumableArray(markerValues), [{
-              category: "gauge",
-              value: max
-            }]);
-          }
-        }]);
-
-        return GaugeUtil;
-      }();
-
-      GaugeUtil.QUANTITY_SERIES_ID = "quantity";
-      GaugeUtil.REMAINDER_SERIES_ID = "remainder";
-      GaugeUtil.THRESHOLD_MARKERS_SERIES_ID = "threshold-markers";
-      GaugeUtil = GaugeUtil_1 = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
-        providedIn: "root"
-      })], GaugeUtil);
-      /***/
-    },
-
-    /***/
     "Hske":
     /*!************************************************************************!*\
       !*** ./node_modules/d3-scale/node_modules/d3-time-format/src/index.js ***!
@@ -18919,7 +18283,7 @@
         _createClass(ChartTooltipDirective, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this41 = this;
+            var _this44 = this;
 
             this.positionStrategy = this.overlayPositionBuilder.flexibleConnectedTo(this.elementRef).withPositions(this.positions).withFlexibleDimensions(false).withPush(true);
             this.overlayRef = this.overlay.create({
@@ -18930,13 +18294,13 @@
 
             if (this.openRemoteControl) {
               this.openSubscription = this.openRemoteControl.subscribe(function () {
-                _this41.show();
+                _this44.show();
               });
             }
 
             if (this.closeRemoteControl) {
               this.closeSubscription = this.closeRemoteControl.subscribe(function () {
-                _this41.hide();
+                _this44.hide();
               });
             }
           }
@@ -19008,6 +18372,89 @@
         selector: "[nuiChartTooltip]"
       }), Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_1__["Overlay"], _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_1__["OverlayPositionBuilder"], _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_1__["ScrollStrategyOptions"], _angular_core__WEBPACK_IMPORTED_MODULE_3__["ElementRef"]])], ChartTooltipDirective);
       /***/
+    },
+
+    /***/
+    "Ij2O":
+    /*!************************************************************************!*\
+      !*** ./node_modules/d3-interpolate/node_modules/d3-color/src/index.js ***!
+      \************************************************************************/
+
+    /*! exports provided: color, rgb, hsl, lab, hcl, lch, gray, cubehelix */
+
+    /***/
+    function Ij2O(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony import */
+
+
+      var _color_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! ./color.js */
+      "ozvG");
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "color", function () {
+        return _color_js__WEBPACK_IMPORTED_MODULE_0__["default"];
+      });
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "rgb", function () {
+        return _color_js__WEBPACK_IMPORTED_MODULE_0__["rgb"];
+      });
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "hsl", function () {
+        return _color_js__WEBPACK_IMPORTED_MODULE_0__["hsl"];
+      });
+      /* harmony import */
+
+
+      var _lab_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! ./lab.js */
+      "iIvt");
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "lab", function () {
+        return _lab_js__WEBPACK_IMPORTED_MODULE_1__["default"];
+      });
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "hcl", function () {
+        return _lab_js__WEBPACK_IMPORTED_MODULE_1__["hcl"];
+      });
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "lch", function () {
+        return _lab_js__WEBPACK_IMPORTED_MODULE_1__["lch"];
+      });
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "gray", function () {
+        return _lab_js__WEBPACK_IMPORTED_MODULE_1__["gray"];
+      });
+      /* harmony import */
+
+
+      var _cubehelix_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! ./cubehelix.js */
+      "unCO");
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "cubehelix", function () {
+        return _cubehelix_js__WEBPACK_IMPORTED_MODULE_2__["default"];
+      });
+      /***/
+
     },
 
     /***/
@@ -19207,7 +18654,7 @@
       !*** ./src/core/plugins/public-api.ts ***!
       \****************************************/
 
-    /*! exports provided: ChartDonutContentPlugin, ChartPopoverPlugin, RadialGaugeLabelsPlugin, GAUGE_LABEL_FORMATTER_NAME_DEFAULT, GAUGE_LABELS_CONTAINER_CLASS, GAUGE_THRESHOLD_LABEL_CLASS, InteractionLabelPlugin, InteractionLinePlugin, MouseInteractiveAreaPlugin, RadialPopoverPlugin, RenderEnginePlugin, TOOLTIP_POSITION_OFFSET, getVerticalSetup, getHorizontalSetup, ChartTooltipsPlugin, RadialTooltipsPlugin, BarTooltipsPlugin, ZoomPlugin */
+    /*! exports provided: TOOLTIP_POSITION_OFFSET, getVerticalSetup, getHorizontalSetup, ChartTooltipsPlugin, RadialTooltipsPlugin, BarTooltipsPlugin, ZoomPlugin, ChartPopoverPlugin, ChartDonutContentPlugin, MouseInteractiveAreaPlugin, RadialPopoverPlugin, RadialGaugeThresholdLabelsPlugin, RenderEnginePlugin, InteractionLabelPlugin, InteractionLinePlugin */
 
     /***/
     function JEn9(module, __webpack_exports__, __webpack_require__) {
@@ -19217,157 +18664,7 @@
       /* harmony import */
 
 
-      var _chart_donut_content_plugin__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! ./chart-donut-content-plugin */
-      "nsm8");
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "ChartDonutContentPlugin", function () {
-        return _chart_donut_content_plugin__WEBPACK_IMPORTED_MODULE_0__["ChartDonutContentPlugin"];
-      });
-      /* harmony import */
-
-
-      var _chart_popover_plugin__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-      /*! ./chart-popover-plugin */
-      "vte5");
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "ChartPopoverPlugin", function () {
-        return _chart_popover_plugin__WEBPACK_IMPORTED_MODULE_1__["ChartPopoverPlugin"];
-      });
-      /* harmony import */
-
-
-      var _gauge_public_api__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-      /*! ./gauge/public-api */
-      "xibN");
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "RadialGaugeLabelsPlugin", function () {
-        return _gauge_public_api__WEBPACK_IMPORTED_MODULE_2__["RadialGaugeLabelsPlugin"];
-      });
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "GAUGE_LABEL_FORMATTER_NAME_DEFAULT", function () {
-        return _gauge_public_api__WEBPACK_IMPORTED_MODULE_2__["GAUGE_LABEL_FORMATTER_NAME_DEFAULT"];
-      });
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "GAUGE_LABELS_CONTAINER_CLASS", function () {
-        return _gauge_public_api__WEBPACK_IMPORTED_MODULE_2__["GAUGE_LABELS_CONTAINER_CLASS"];
-      });
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "GAUGE_THRESHOLD_LABEL_CLASS", function () {
-        return _gauge_public_api__WEBPACK_IMPORTED_MODULE_2__["GAUGE_THRESHOLD_LABEL_CLASS"];
-      });
-      /* harmony import */
-
-
-      var _interaction_public_api__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-      /*! ./interaction/public-api */
-      "25H2");
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "InteractionLabelPlugin", function () {
-        return _interaction_public_api__WEBPACK_IMPORTED_MODULE_3__["InteractionLabelPlugin"];
-      });
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "InteractionLinePlugin", function () {
-        return _interaction_public_api__WEBPACK_IMPORTED_MODULE_3__["InteractionLinePlugin"];
-      });
-      /* harmony import */
-
-
-      var _mouse_interactive_area_plugin__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-      /*! ./mouse-interactive-area-plugin */
-      "/buC");
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "MouseInteractiveAreaPlugin", function () {
-        return _mouse_interactive_area_plugin__WEBPACK_IMPORTED_MODULE_4__["MouseInteractiveAreaPlugin"];
-      });
-      /* harmony import */
-
-
-      var _radial_popover_plugin__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
-      /*! ./radial-popover-plugin */
-      "BGQF");
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "RadialPopoverPlugin", function () {
-        return _radial_popover_plugin__WEBPACK_IMPORTED_MODULE_5__["RadialPopoverPlugin"];
-      });
-      /* harmony import */
-
-
-      var _render_engine_plugin__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
-      /*! ./render-engine-plugin */
-      "VH2C");
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "RenderEnginePlugin", function () {
-        return _render_engine_plugin__WEBPACK_IMPORTED_MODULE_6__["RenderEnginePlugin"];
-      });
-      /* harmony import */
-
-
-      var _tooltips__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
-      /*! ./tooltips */
-      "lmZZ");
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "TOOLTIP_POSITION_OFFSET", function () {
-        return _tooltips__WEBPACK_IMPORTED_MODULE_7__["TOOLTIP_POSITION_OFFSET"];
-      });
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "getVerticalSetup", function () {
-        return _tooltips__WEBPACK_IMPORTED_MODULE_7__["getVerticalSetup"];
-      });
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "getHorizontalSetup", function () {
-        return _tooltips__WEBPACK_IMPORTED_MODULE_7__["getHorizontalSetup"];
-      });
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "ChartTooltipsPlugin", function () {
-        return _tooltips__WEBPACK_IMPORTED_MODULE_7__["ChartTooltipsPlugin"];
-      });
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "RadialTooltipsPlugin", function () {
-        return _tooltips__WEBPACK_IMPORTED_MODULE_7__["RadialTooltipsPlugin"];
-      });
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "BarTooltipsPlugin", function () {
-        return _tooltips__WEBPACK_IMPORTED_MODULE_7__["BarTooltipsPlugin"];
-      });
-      /* harmony import */
-
-
-      var _types__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      var _types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ./types */
       "ePe5");
       /* empty/unused harmony star reexport */
@@ -19375,14 +18672,146 @@
       /* harmony import */
 
 
-      var _zoom_plugin__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      var _tooltips__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! ./tooltips */
+      "lmZZ");
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "TOOLTIP_POSITION_OFFSET", function () {
+        return _tooltips__WEBPACK_IMPORTED_MODULE_1__["TOOLTIP_POSITION_OFFSET"];
+      });
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "getVerticalSetup", function () {
+        return _tooltips__WEBPACK_IMPORTED_MODULE_1__["getVerticalSetup"];
+      });
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "getHorizontalSetup", function () {
+        return _tooltips__WEBPACK_IMPORTED_MODULE_1__["getHorizontalSetup"];
+      });
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "ChartTooltipsPlugin", function () {
+        return _tooltips__WEBPACK_IMPORTED_MODULE_1__["ChartTooltipsPlugin"];
+      });
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "RadialTooltipsPlugin", function () {
+        return _tooltips__WEBPACK_IMPORTED_MODULE_1__["RadialTooltipsPlugin"];
+      });
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "BarTooltipsPlugin", function () {
+        return _tooltips__WEBPACK_IMPORTED_MODULE_1__["BarTooltipsPlugin"];
+      });
+      /* harmony import */
+
+
+      var _zoom_plugin__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! ./zoom-plugin */
       "Wr1h");
       /* harmony reexport (safe) */
 
 
       __webpack_require__.d(__webpack_exports__, "ZoomPlugin", function () {
-        return _zoom_plugin__WEBPACK_IMPORTED_MODULE_9__["ZoomPlugin"];
+        return _zoom_plugin__WEBPACK_IMPORTED_MODULE_2__["ZoomPlugin"];
+      });
+      /* harmony import */
+
+
+      var _chart_popover_plugin__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! ./chart-popover-plugin */
+      "vte5");
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "ChartPopoverPlugin", function () {
+        return _chart_popover_plugin__WEBPACK_IMPORTED_MODULE_3__["ChartPopoverPlugin"];
+      });
+      /* harmony import */
+
+
+      var _chart_donut_content_plugin__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! ./chart-donut-content-plugin */
+      "nsm8");
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "ChartDonutContentPlugin", function () {
+        return _chart_donut_content_plugin__WEBPACK_IMPORTED_MODULE_4__["ChartDonutContentPlugin"];
+      });
+      /* harmony import */
+
+
+      var _mouse_interactive_area_plugin__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! ./mouse-interactive-area-plugin */
+      "/buC");
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "MouseInteractiveAreaPlugin", function () {
+        return _mouse_interactive_area_plugin__WEBPACK_IMPORTED_MODULE_5__["MouseInteractiveAreaPlugin"];
+      });
+      /* harmony import */
+
+
+      var _radial_popover_plugin__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      /*! ./radial-popover-plugin */
+      "BGQF");
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "RadialPopoverPlugin", function () {
+        return _radial_popover_plugin__WEBPACK_IMPORTED_MODULE_6__["RadialPopoverPlugin"];
+      });
+      /* harmony import */
+
+
+      var _radial_gauge_threshold_labels_plugin__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      /*! ./radial-gauge-threshold-labels-plugin */
+      "7XYI");
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "RadialGaugeThresholdLabelsPlugin", function () {
+        return _radial_gauge_threshold_labels_plugin__WEBPACK_IMPORTED_MODULE_7__["RadialGaugeThresholdLabelsPlugin"];
+      });
+      /* harmony import */
+
+
+      var _render_engine_plugin__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      /*! ./render-engine-plugin */
+      "VH2C");
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "RenderEnginePlugin", function () {
+        return _render_engine_plugin__WEBPACK_IMPORTED_MODULE_8__["RenderEnginePlugin"];
+      });
+      /* harmony import */
+
+
+      var _interaction_public_api__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      /*! ./interaction/public-api */
+      "25H2");
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "InteractionLabelPlugin", function () {
+        return _interaction_public_api__WEBPACK_IMPORTED_MODULE_9__["InteractionLabelPlugin"];
+      });
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "InteractionLinePlugin", function () {
+        return _interaction_public_api__WEBPACK_IMPORTED_MODULE_9__["InteractionLinePlugin"];
       });
       /***/
 
@@ -19764,7 +19193,7 @@
 
 
       var MouseInteractiveArea = function MouseInteractiveArea(target, interactiveArea, cursor) {
-        var _this42 = this;
+        var _this45 = this;
 
         _classCallCheck(this, MouseInteractiveArea);
 
@@ -19787,8 +19216,8 @@
 
           var x = 0,
               y = 0;
-          var interactiveAreaWidth = parseInt(_this42.interactiveArea.attr("width"), 10) || 0;
-          var interactiveAreaHeight = parseInt(_this42.interactiveArea.attr("height"), 10) || 0; // Hack from https://stackoverflow.com/questions/7000190/detect-all-firefox-versions-in-js#comment28264971_7000222
+          var interactiveAreaWidth = parseInt(_this45.interactiveArea.attr("width"), 10) || 0;
+          var interactiveAreaHeight = parseInt(_this45.interactiveArea.attr("height"), 10) || 0; // Hack from https://stackoverflow.com/questions/7000190/detect-all-firefox-versions-in-js#comment28264971_7000222
 
           var isFirefox = /firefox/i.test(navigator.userAgent); // Hack from https://github.com/d3/d3-selection/issues/81#issuecomment-528321960
 
@@ -19823,7 +19252,7 @@
             y = _calculatedY < 0 ? 0 : _calculatedY;
           }
 
-          _this42.interaction.next({
+          _this45.interaction.next({
             type: interactionType,
             coordinates: {
               x: x,
@@ -19833,17 +19262,17 @@
         };
 
         this.onMouseOver = function () {
-          if (_this42.isActive || d3_selection__WEBPACK_IMPORTED_MODULE_0__["event"].target.classList.contains(_constants__WEBPACK_IMPORTED_MODULE_2__["IGNORE_INTERACTION_CLASS"])) {
+          if (_this45.isActive || d3_selection__WEBPACK_IMPORTED_MODULE_0__["event"].target.classList.contains(_constants__WEBPACK_IMPORTED_MODULE_2__["IGNORE_INTERACTION_CLASS"])) {
             return;
           }
 
-          _this42.isActive = true;
+          _this45.isActive = true;
 
-          _this42.active.next(true);
+          _this45.active.next(true);
         };
 
         this.onMouseOut = function () {
-          if (!_this42.isActive) {
+          if (!_this45.isActive) {
             return;
           } // we're leaving the element – where to? Maybe to a descendant of the lasagna container? If so, we're still active.
 
@@ -19852,41 +19281,41 @@
 
           while (relatedTarget) {
             // go up the parent chain and check – if we're still inside the lasagna container, that's an internal transition – ignore it
-            if (relatedTarget === _this42.target.node()) {
+            if (relatedTarget === _this45.target.node()) {
               return;
             }
 
             relatedTarget = relatedTarget.parentNode;
           }
 
-          _this42.isActive = false;
+          _this45.isActive = false;
 
-          _this42.active.next(false);
+          _this45.active.next(false);
         }; // Remove in v12 - NUI-5827
 
         /** @deprecated - Please use 'onMouseOver' instead */
 
 
         this.onMouseEnter = function () {
-          _this42.onMouseOver();
+          _this45.onMouseOver();
         }; // Remove in v12 - NUI-5827
 
         /** @deprecated - Please use 'onMouseOut' instead */
 
 
         this.onMouseLeave = function () {
-          _this42.onMouseOut();
+          _this45.onMouseOut();
         };
 
         this.interactiveArea.style("cursor", cursor).classed(MouseInteractiveArea.CONTAINER_CLASS, true);
         this.target.on("mouseover", this.onMouseOver).on("mouseout", this.onMouseOut).on(_types__WEBPACK_IMPORTED_MODULE_5__["InteractionType"].MouseDown, function () {
-          return _this42.onMouseInteraction(_types__WEBPACK_IMPORTED_MODULE_5__["InteractionType"].MouseDown);
+          return _this45.onMouseInteraction(_types__WEBPACK_IMPORTED_MODULE_5__["InteractionType"].MouseDown);
         }).on(_types__WEBPACK_IMPORTED_MODULE_5__["InteractionType"].MouseUp, function () {
-          return _this42.onMouseInteraction(_types__WEBPACK_IMPORTED_MODULE_5__["InteractionType"].MouseUp);
+          return _this45.onMouseInteraction(_types__WEBPACK_IMPORTED_MODULE_5__["InteractionType"].MouseUp);
         }).on(_types__WEBPACK_IMPORTED_MODULE_5__["InteractionType"].MouseMove, function () {
-          return _this42.onMouseInteraction(_types__WEBPACK_IMPORTED_MODULE_5__["InteractionType"].MouseMove);
+          return _this45.onMouseInteraction(_types__WEBPACK_IMPORTED_MODULE_5__["InteractionType"].MouseMove);
         }).on(_types__WEBPACK_IMPORTED_MODULE_5__["InteractionType"].Click, function () {
-          return _this42.onMouseInteraction(_types__WEBPACK_IMPORTED_MODULE_5__["InteractionType"].Click);
+          return _this45.onMouseInteraction(_types__WEBPACK_IMPORTED_MODULE_5__["InteractionType"].Click);
         });
       };
 
@@ -20377,16 +19806,16 @@
         }, {
           key: "drawCircle",
           value: function drawCircle(elementSelection, status, point) {
-            var _this43 = this;
+            var _this46 = this;
 
             elementSelection.select("circle").attr("cx", point.x).attr("cy", point.y).attr("r", 5).on("mouseenter", function () {
-              return _this43.showTooltip({
+              return _this46.showTooltip({
                 x: point.x,
                 y: point.y,
-                value: "".concat(status, " level is ").concat(_this43.thresholds[status])
+                value: "".concat(status, " level is ").concat(_this46.thresholds[status])
               });
             }).on("mouseleave", function () {
-              return _this43.hideTooltip();
+              return _this46.hideTooltip();
             });
           }
         }, {
@@ -20869,17 +20298,17 @@
          * @param {IRendererConfig} [config={}] Renderer configuration object
          */
         function SideIndicatorRenderer() {
-          var _this44;
+          var _this47;
 
           var config = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
           _classCallCheck(this, SideIndicatorRenderer);
 
-          _this44 = _super13.call(this, config);
-          _this44.DEFAULT_CONFIG = {}; // setting default values to the properties that were not set by user
+          _this47 = _super13.call(this, config);
+          _this47.DEFAULT_CONFIG = {}; // setting default values to the properties that were not set by user
 
-          _this44.config = lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_0___default()(_this44.config, _this44.DEFAULT_CONFIG);
-          return _this44;
+          _this47.config = lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_0___default()(_this47.config, _this47.DEFAULT_CONFIG);
+          return _this47;
         }
         /** See {@link Renderer#draw} */
 
@@ -20887,7 +20316,7 @@
         _createClass(SideIndicatorRenderer, [{
           key: "draw",
           value: function draw(renderSeries, rendererSubject) {
-            var target = renderSeries.containers[_types__WEBPACK_IMPORTED_MODULE_3__["RenderLayerName"].unclippedData];
+            var target = renderSeries.containers[SideIndicatorRenderer.SIDE_INDICATORS_LAYER];
             var dataSeries = renderSeries.dataSeries;
             var scales = renderSeries.scales;
             var accessors = renderSeries.dataSeries.accessors;
@@ -20930,14 +20359,17 @@
         }, {
           key: "getRequiredLayers",
           value: function getRequiredLayers() {
-            return [_constants__WEBPACK_IMPORTED_MODULE_1__["STANDARD_RENDER_LAYERS"][_types__WEBPACK_IMPORTED_MODULE_3__["RenderLayerName"].unclippedData]];
+            return [{
+              name: SideIndicatorRenderer.SIDE_INDICATORS_LAYER,
+              // order calculated by adding 1 to the data layer order to ensure the unclipped data layer appears just after the data layer in the DOM
+              order: _constants__WEBPACK_IMPORTED_MODULE_1__["STANDARD_RENDER_LAYERS"][_types__WEBPACK_IMPORTED_MODULE_3__["RenderLayerName"].data].order + 1,
+              clipped: false
+            }];
           }
         }]);
 
         return SideIndicatorRenderer;
       }(_xy_renderer__WEBPACK_IMPORTED_MODULE_4__["XYRenderer"]);
-      /** @deprecated As of Nova v9, use RenderLayerName.unclippedData enum value instead. Removal: NUI-5753 */
-
 
       SideIndicatorRenderer.SIDE_INDICATORS_LAYER = "side-indicators";
       /***/
@@ -21044,24 +20476,24 @@
         }, {
           key: "initPlugin",
           value: function initPlugin() {
-            var _this45 = this;
+            var _this48 = this;
 
             var _a, _b;
 
             this.initPlugin$.next();
             (_a = this.plugin) === null || _a === void 0 ? void 0 : _a.openPopoverSubject.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["takeUntil"])(this.initPlugin$), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["takeUntil"])(this.destroy$)).subscribe(function () {
-              _this45.changeDetector.markForCheck();
+              _this48.changeDetector.markForCheck();
             });
             (_b = this.plugin) === null || _b === void 0 ? void 0 : _b.updatePositionSubject.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["takeUntil"])(this.initPlugin$), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["takeUntil"])(this.destroy$)).subscribe(function (position) {
               var _a, _b; // calculating a width offset to position the popover's host element at the midpoint of the popover target
 
 
               var widthOffset = position.width / 2;
-              _this45.element.nativeElement.style.left = position.left + widthOffset + "px";
-              _this45.element.nativeElement.style.top = position.top + "px";
-              (_a = _this45.popover) === null || _a === void 0 ? void 0 : _a.updatePosition();
+              _this48.element.nativeElement.style.left = position.left + widthOffset + "px";
+              _this48.element.nativeElement.style.top = position.top + "px";
+              (_a = _this48.popover) === null || _a === void 0 ? void 0 : _a.updatePosition();
 
-              _this45.update.next((_b = _this45.plugin) === null || _b === void 0 ? void 0 : _b.dataPoints);
+              _this48.update.next((_b = _this48.plugin) === null || _b === void 0 ? void 0 : _b.dataPoints);
             });
           }
         }]);
@@ -21098,148 +20530,6 @@
         styles: [_chart_popover_component_less__WEBPACK_IMPORTED_MODULE_2__["default"]]
       }), Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_3__["ChangeDetectorRef"], _angular_core__WEBPACK_IMPORTED_MODULE_3__["ElementRef"]])], ChartPopoverComponent);
       /***/
-    },
-
-    /***/
-    "LkUO":
-    /*!***************************************************************!*\
-      !*** ./src/renderers/bar/linear-gauge-thresholds-renderer.ts ***!
-      \***************************************************************/
-
-    /*! exports provided: DEFAULT_LINEAR_GAUGE_THRESHOLDS_RENDERER_CONFIG, LinearGaugeThresholdsRenderer */
-
-    /***/
-    function LkUO(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "DEFAULT_LINEAR_GAUGE_THRESHOLDS_RENDERER_CONFIG", function () {
-        return DEFAULT_LINEAR_GAUGE_THRESHOLDS_RENDERER_CONFIG;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "LinearGaugeThresholdsRenderer", function () {
-        return LinearGaugeThresholdsRenderer;
-      });
-      /* harmony import */
-
-
-      var lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! lodash/cloneDeep */
-      "BkRI");
-      /* harmony import */
-
-
-      var lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_0__);
-      /* harmony import */
-
-
-      var lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-      /*! lodash/defaultsDeep */
-      "P4Tr");
-      /* harmony import */
-
-
-      var lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_1__);
-      /* harmony import */
-
-
-      var _constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-      /*! ../../constants */
-      "he5r");
-      /* harmony import */
-
-
-      var _constants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-      /*! ../constants */
-      "s8k4");
-      /* harmony import */
-
-
-      var _types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-      /*! ../types */
-      "AbRU");
-      /* harmony import */
-
-
-      var _bar_renderer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
-      /*! ./bar-renderer */
-      "iC++");
-      /**
-       * @ignore Default configuration for Linear Gauge Thresholds Renderer
-       */
-
-
-      var DEFAULT_LINEAR_GAUGE_THRESHOLDS_RENDERER_CONFIG = {};
-      /**
-       * @ignore Renderer for drawing threshold level indicators for gauges
-       */
-
-      var LinearGaugeThresholdsRenderer = /*#__PURE__*/function (_bar_renderer__WEBPAC) {
-        _inherits(LinearGaugeThresholdsRenderer, _bar_renderer__WEBPAC);
-
-        var _super14 = _createSuper(LinearGaugeThresholdsRenderer);
-
-        /**
-         * Creates an instance of RadialGaugeThresholdsRenderer.
-         * @param {ILinearGaugeThresholdsRendererConfig} [config]
-         * Renderer configuration object. Defaults to `DEFAULT_LINEAR_GAUGE_THRESHOLDS_RENDERER_CONFIG` constant value.
-         */
-        function LinearGaugeThresholdsRenderer() {
-          var _this46;
-
-          var config = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-
-          _classCallCheck(this, LinearGaugeThresholdsRenderer);
-
-          _this46 = _super14.call(this, config);
-          _this46.config = lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_1___default()(_this46.config, DEFAULT_LINEAR_GAUGE_THRESHOLDS_RENDERER_CONFIG);
-          return _this46;
-        }
-        /** See {@link Renderer#draw} */
-
-
-        _createClass(LinearGaugeThresholdsRenderer, [{
-          key: "draw",
-          value: function draw(renderSeries, rendererSubject) {
-            var dataContainer = renderSeries.containers[_types__WEBPACK_IMPORTED_MODULE_4__["RenderLayerName"].unclippedData];
-            var dataSeries = renderSeries.dataSeries;
-            var accessors = dataSeries.accessors;
-            var data = lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_0___default()(dataSeries.data); // last value in the thresholds series is the max value of the gauge (needed by RadialGaugeThresholdsRenderer).
-            // removing this value to avoid rendering a marker for it
-
-            data.pop();
-            var markerSelection = dataContainer.selectAll("circle.".concat(_constants__WEBPACK_IMPORTED_MODULE_3__["GAUGE_THRESHOLD_MARKER_CLASS"])).data(data);
-            markerSelection.exit().remove();
-            markerSelection.enter().append("circle").attr("class", _constants__WEBPACK_IMPORTED_MODULE_3__["GAUGE_THRESHOLD_MARKER_CLASS"]).merge(markerSelection).attr("cx", function (d, i) {
-              var _a, _b;
-
-              return renderSeries.scales.x.convert((_b = (_a = accessors === null || accessors === void 0 ? void 0 : accessors.data) === null || _a === void 0 ? void 0 : _a.endX) === null || _b === void 0 ? void 0 : _b.call(_a, d, i, dataSeries.data, dataSeries));
-            }).attr("cy", function (d, i) {
-              var _a, _b;
-
-              return renderSeries.scales.y.convert((_b = (_a = accessors === null || accessors === void 0 ? void 0 : accessors.data) === null || _a === void 0 ? void 0 : _a.endY) === null || _b === void 0 ? void 0 : _b.call(_a, d, i, dataSeries.data, dataSeries));
-            }).attr("r", 4).style("fill", function (d, i) {
-              return "var(--nui-color-".concat(data[i].hit ? "text-light" : "icon-default", ")");
-            }).style("stroke-width", 0);
-          }
-          /** See {@link Renderer#getRequiredLayers} */
-
-        }, {
-          key: "getRequiredLayers",
-          value: function getRequiredLayers() {
-            return [_constants__WEBPACK_IMPORTED_MODULE_2__["STANDARD_RENDER_LAYERS"][_types__WEBPACK_IMPORTED_MODULE_4__["RenderLayerName"].unclippedData]];
-          }
-        }]);
-
-        return LinearGaugeThresholdsRenderer;
-      }(_bar_renderer__WEBPACK_IMPORTED_MODULE_5__["BarRenderer"]);
-      /***/
-
     },
 
     /***/
@@ -21765,12 +21055,12 @@
       var RadialTooltipsPlugin = /*#__PURE__*/function (_chart_tooltips_plugi) {
         _inherits(RadialTooltipsPlugin, _chart_tooltips_plugi);
 
-        var _super15 = _createSuper(RadialTooltipsPlugin);
+        var _super14 = _createSuper(RadialTooltipsPlugin);
 
         function RadialTooltipsPlugin() {
           _classCallCheck(this, RadialTooltipsPlugin);
 
-          return _super15.apply(this, arguments);
+          return _super14.apply(this, arguments);
         }
 
         _createClass(RadialTooltipsPlugin, [{
@@ -22341,7 +21631,7 @@
 
       var d3_color__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! d3-color */
-      "qXv/");
+      "Ij2O");
       /* harmony import */
 
 
@@ -22716,106 +22006,6 @@
     },
 
     /***/
-    "Ov49":
-    /*!***************************************************************************!*\
-      !*** ./node_modules/d3-transition/node_modules/d3-color/src/cubehelix.js ***!
-      \***************************************************************************/
-
-    /*! exports provided: default, Cubehelix */
-
-    /***/
-    function Ov49(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "default", function () {
-        return cubehelix;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "Cubehelix", function () {
-        return Cubehelix;
-      });
-      /* harmony import */
-
-
-      var _define_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! ./define.js */
-      "V03s");
-      /* harmony import */
-
-
-      var _color_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-      /*! ./color.js */
-      "3lC8");
-      /* harmony import */
-
-
-      var _math_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-      /*! ./math.js */
-      "oV0g");
-
-      var A = -0.14861,
-          B = +1.78277,
-          C = -0.29227,
-          D = -0.90649,
-          E = +1.97294,
-          ED = E * D,
-          EB = E * B,
-          BC_DA = B * C - D * A;
-
-      function cubehelixConvert(o) {
-        if (o instanceof Cubehelix) return new Cubehelix(o.h, o.s, o.l, o.opacity);
-        if (!(o instanceof _color_js__WEBPACK_IMPORTED_MODULE_1__["Rgb"])) o = Object(_color_js__WEBPACK_IMPORTED_MODULE_1__["rgbConvert"])(o);
-        var r = o.r / 255,
-            g = o.g / 255,
-            b = o.b / 255,
-            l = (BC_DA * b + ED * r - EB * g) / (BC_DA + ED - EB),
-            bl = b - l,
-            k = (E * (g - l) - C * bl) / D,
-            s = Math.sqrt(k * k + bl * bl) / (E * l * (1 - l)),
-            // NaN if l=0 or l=1
-        h = s ? Math.atan2(k, bl) * _math_js__WEBPACK_IMPORTED_MODULE_2__["rad2deg"] - 120 : NaN;
-        return new Cubehelix(h < 0 ? h + 360 : h, s, l, o.opacity);
-      }
-
-      function cubehelix(h, s, l, opacity) {
-        return arguments.length === 1 ? cubehelixConvert(h) : new Cubehelix(h, s, l, opacity == null ? 1 : opacity);
-      }
-
-      function Cubehelix(h, s, l, opacity) {
-        this.h = +h;
-        this.s = +s;
-        this.l = +l;
-        this.opacity = +opacity;
-      }
-
-      Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["default"])(Cubehelix, cubehelix, Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["extend"])(_color_js__WEBPACK_IMPORTED_MODULE_1__["Color"], {
-        brighter: function brighter(k) {
-          k = k == null ? _color_js__WEBPACK_IMPORTED_MODULE_1__["brighter"] : Math.pow(_color_js__WEBPACK_IMPORTED_MODULE_1__["brighter"], k);
-          return new Cubehelix(this.h, this.s, this.l * k, this.opacity);
-        },
-        darker: function darker(k) {
-          k = k == null ? _color_js__WEBPACK_IMPORTED_MODULE_1__["darker"] : Math.pow(_color_js__WEBPACK_IMPORTED_MODULE_1__["darker"], k);
-          return new Cubehelix(this.h, this.s, this.l * k, this.opacity);
-        },
-        rgb: function rgb() {
-          var h = isNaN(this.h) ? 0 : (this.h + 120) * _math_js__WEBPACK_IMPORTED_MODULE_2__["deg2rad"],
-              l = +this.l,
-              a = isNaN(this.s) ? 0 : this.s * l * (1 - l),
-              cosh = Math.cos(h),
-              sinh = Math.sin(h);
-          return new _color_js__WEBPACK_IMPORTED_MODULE_1__["Rgb"](255 * (l + a * (A * cosh + B * sinh)), 255 * (l + a * (C * cosh + D * sinh)), 255 * (l + a * (E * cosh)), this.opacity);
-        }
-      }));
-      /***/
-    },
-
-    /***/
     "P3dq":
     /*!*********************************************************!*\
       !*** ./node_modules/d3-selection/src/selection/join.js ***!
@@ -22955,7 +22145,7 @@
 
       var MappedValueProvider = /*#__PURE__*/function () {
         function MappedValueProvider(valueMap, defaultValue) {
-          var _this47 = this;
+          var _this49 = this;
 
           _classCallCheck(this, MappedValueProvider);
 
@@ -22963,7 +22153,7 @@
           this.defaultValue = defaultValue;
 
           this.get = function (entityId) {
-            return _this47.valueMap[entityId] || _this47.defaultValue;
+            return _this49.valueMap[entityId] || _this49.defaultValue;
           };
 
           this.reset();
@@ -23485,27 +22675,27 @@
       var BarHorizontalGridConfig = /*#__PURE__*/function (_xy_grid_config__WEBP2) {
         _inherits(BarHorizontalGridConfig, _xy_grid_config__WEBP2);
 
-        var _super16 = _createSuper(BarHorizontalGridConfig);
+        var _super15 = _createSuper(BarHorizontalGridConfig);
 
         function BarHorizontalGridConfig() {
-          var _this48;
+          var _this50;
 
           _classCallCheck(this, BarHorizontalGridConfig);
 
-          _this48 = _super16.call(this);
-          _this48.interactionPlugins = false;
-          _this48.axis.left.gridTicks = false;
-          _this48.axis.left.tickSize = 0;
-          _this48.axis.bottom.gridTicks = true;
-          _this48.axis.left.fit = true;
-          _this48.axis.bottom.fit = true;
-          _this48.axis.bottom.tickSize = 0;
-          _this48.axis.left.tickSize = 5;
-          _this48.dimension.padding.left = 2; // 2 for border
+          _this50 = _super15.call(this);
+          _this50.interactionPlugins = false;
+          _this50.axis.left.gridTicks = false;
+          _this50.axis.left.tickSize = 0;
+          _this50.axis.bottom.gridTicks = true;
+          _this50.axis.left.fit = true;
+          _this50.axis.bottom.fit = true;
+          _this50.axis.bottom.tickSize = 0;
+          _this50.axis.left.tickSize = 5;
+          _this50.dimension.padding.left = 2; // 2 for border
 
-          _this48.borders.left.visible = true;
-          _this48.borders.bottom.visible = false;
-          return _this48;
+          _this50.borders.left.visible = true;
+          _this50.borders.bottom.visible = false;
+          return _this50;
         }
 
         return BarHorizontalGridConfig;
@@ -24040,70 +23230,6 @@
     },
 
     /***/
-    "Rtv/":
-    /*!*******************************************************************!*\
-      !*** ./src/renderers/radial/gauge/radial-gauge-rendering-util.ts ***!
-      \*******************************************************************/
-
-    /*! exports provided: RadialGaugeRenderingUtil */
-
-    /***/
-    function Rtv(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "RadialGaugeRenderingUtil", function () {
-        return RadialGaugeRenderingUtil;
-      });
-      /* harmony import */
-
-
-      var d3_shape__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! d3-shape */
-      "8d86");
-
-      var RadialGaugeRenderingUtil = /*#__PURE__*/function () {
-        function RadialGaugeRenderingUtil() {
-          _classCallCheck(this, RadialGaugeRenderingUtil);
-        }
-
-        _createClass(RadialGaugeRenderingUtil, null, [{
-          key: "generateThresholdData",
-          value: function generateThresholdData(data) {
-            var arcData = RadialGaugeRenderingUtil.generateArcData(data);
-            var thresholdsData = [];
-            var pieGenerator = Object(d3_shape__WEBPACK_IMPORTED_MODULE_0__["pie"])().sort(null);
-            var arcsForMarkers = pieGenerator(arcData);
-            arcsForMarkers.forEach(function (arcDatum, i) {
-              if (i % 2 === 1) {
-                thresholdsData.push(arcDatum);
-              }
-            });
-            return thresholdsData;
-          }
-        }, {
-          key: "generateArcData",
-          value: function generateArcData(data) {
-            // arcs with a value of zero serve as the threshold points
-            var arcData = Array(data.length * 2 - 1).fill(0);
-            data.forEach(function (d, i) {
-              // arcs with a non-zero value serve as the space between the threshold points
-              arcData[i * 2] = i === 0 ? d.value : d.value - data[i - 1].value;
-            });
-            return arcData;
-          }
-        }]);
-
-        return RadialGaugeRenderingUtil;
-      }();
-      /***/
-
-    },
-
-    /***/
     "S23u":
     /*!******************************************!*\
       !*** ./src/renderers/area/public-api.ts ***!
@@ -24425,10 +23551,10 @@
       }
 
       function stackedPercentageArea(chartSeriesSet) {
-        var _this49 = this;
+        var _this51 = this;
 
         return stackedPercentageAreaPreprocessor(chartSeriesSet, function (series) {
-          return !_this49.isSeriesHidden(series.id);
+          return !_this51.isSeriesHidden(series.id);
         });
       }
 
@@ -24514,12 +23640,12 @@
       var BarTooltipsPlugin = /*#__PURE__*/function (_chart_tooltips_plugi2) {
         _inherits(BarTooltipsPlugin, _chart_tooltips_plugi2);
 
-        var _super17 = _createSuper(BarTooltipsPlugin);
+        var _super16 = _createSuper(BarTooltipsPlugin);
 
         function BarTooltipsPlugin(config) {
           _classCallCheck(this, BarTooltipsPlugin);
 
-          return _super17.call(this);
+          return _super16.call(this);
         }
 
         return BarTooltipsPlugin;
@@ -24991,10 +24117,10 @@
       var BarStatusGridConfig = /*#__PURE__*/function (_xy_grid_config__WEBP3) {
         _inherits(BarStatusGridConfig, _xy_grid_config__WEBP3);
 
-        var _super18 = _createSuper(BarStatusGridConfig);
+        var _super17 = _createSuper(BarStatusGridConfig);
 
         function BarStatusGridConfig() {
-          var _this50;
+          var _this52;
 
           var config = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
             showBottomAxis: true
@@ -25002,29 +24128,29 @@
 
           _classCallCheck(this, BarStatusGridConfig);
 
-          _this50 = _super18.call(this);
-          _this50.interactive = true;
-          _this50.interactionPlugins = false;
+          _this52 = _super17.call(this);
+          _this52.interactive = true;
+          _this52.interactionPlugins = false;
 
           if (!config.showBottomAxis) {
-            _this50.axis.bottom.visible = false;
-            _this50.borders.bottom.visible = false;
+            _this52.axis.bottom.visible = false;
+            _this52.borders.bottom.visible = false;
           }
 
-          _this50.axis.left.visible = false;
-          _this50.axis.left.gridTicks = false;
-          _this50.borders.left.visible = false;
-          _this50.dimension.autoHeight = false;
-          _this50.dimension.margin.top = 0;
+          _this52.axis.left.visible = false;
+          _this52.axis.left.gridTicks = false;
+          _this52.borders.left.visible = false;
+          _this52.dimension.autoHeight = false;
+          _this52.dimension.margin.top = 0;
 
           if (!config.showBottomAxis) {
-            _this50.dimension.margin.bottom = 0;
+            _this52.dimension.margin.bottom = 0;
           }
 
-          _this50.dimension.height(30); // TODO: solve magic number together with spark chart
+          _this52.dimension.height(30); // TODO: solve magic number together with spark chart
 
 
-          return _this50;
+          return _this52;
         }
 
         return BarStatusGridConfig;
@@ -25100,17 +24226,17 @@
       var RadialGrid = /*#__PURE__*/function (_grid__WEBPACK_IMPORT2) {
         _inherits(RadialGrid, _grid__WEBPACK_IMPORT2);
 
-        var _super19 = _createSuper(RadialGrid);
+        var _super18 = _createSuper(RadialGrid);
 
         function RadialGrid() {
-          var _this51;
+          var _this53;
 
           _classCallCheck(this, RadialGrid);
 
-          _this51 = _super19.apply(this, arguments);
+          _this53 = _super18.apply(this, arguments);
 
-          _this51.adjustRenderingArea = function () {
-            var d = _this51.config().dimension;
+          _this53.adjustRenderingArea = function () {
+            var d = _this53.config().dimension;
 
             var attrs = {
               "width": d.outerWidth(),
@@ -25118,12 +24244,12 @@
               "transform": "translate(".concat(-d.outerWidth() / 2, ", ").concat(-d.outerHeight() / 2, ")")
             };
 
-            _this51.renderingAreaClipPath.attrs(attrs);
+            _this53.renderingAreaClipPath.attrs(attrs);
 
-            _this51.renderingArea.attrs(attrs);
+            _this53.renderingArea.attrs(attrs);
           };
 
-          return _this51;
+          return _this53;
         }
 
         _createClass(RadialGrid, [{
@@ -25137,7 +24263,7 @@
         }, {
           key: "updateDimensions",
           value: function updateDimensions(dimensions) {
-            var _this52 = this;
+            var _this54 = this;
 
             this.config().dimension.outerWidth(dimensions.width).outerHeight(dimensions.height); // TODO: Chart's update: this.grid.scales = collectScales(seriesSet) may not yet happened
 
@@ -25154,7 +24280,7 @@
             // e.g. inside an expander that opens with an animation
 
             setTimeout(function () {
-              _this52.recenter();
+              _this54.recenter();
             });
             return this;
           }
@@ -25498,25 +24624,19 @@
       /* harmony import */
 
 
-      var _constants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-      /*! ./constants */
-      "ttef");
-      /* harmony import */
-
-
-      var _formatters_datetime_formatter__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      var _formatters_datetime_formatter__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! ./formatters/datetime-formatter */
       "JLsN");
       /* harmony import */
 
 
-      var _time_scale__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      var _time_scale__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! ./time-scale */
       "mn3F");
       /* harmony import */
 
 
-      var _types__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      var _types__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! ./types */
       "41FX"); // algorithm found here: https://stackoverflow.com/a/30280636/5108336
 
@@ -25534,30 +24654,30 @@
       var TimeIntervalScale = /*#__PURE__*/function (_time_scale__WEBPACK_) {
         _inherits(TimeIntervalScale, _time_scale__WEBPACK_);
 
-        var _super20 = _createSuper(TimeIntervalScale);
+        var _super19 = _createSuper(TimeIntervalScale);
 
         function TimeIntervalScale(interval, id) {
-          var _this53;
+          var _this55;
 
           _classCallCheck(this, TimeIntervalScale);
 
-          _this53 = _super20.call(this, id);
+          _this55 = _super19.call(this, id);
 
-          _this53.interval(interval);
+          _this55.interval(interval);
 
-          _this53._bandScale = Object(d3_scale__WEBPACK_IMPORTED_MODULE_0__["scaleBand"])();
+          _this55._bandScale = Object(d3_scale__WEBPACK_IMPORTED_MODULE_0__["scaleBand"])();
 
-          _this53.formatters.title = function (inputDate) {
-            var intervalDays = _this53.interval().asDays(); // if the date is outside of daylight saving time and interval >= 1 day, add an hour to the time to format the day as "mmm d" instead of "11:00pm"
+          _this55.formatters.title = function (inputDate) {
+            var intervalDays = _this55.interval().asDays(); // if the date is outside of daylight saving time and interval >= 1 day, add an hour to the time to format the day as "mmm d" instead of "11:00pm"
 
 
-            var standardTimeOffsetMs = intervalDays >= 1 && !isDaylightSavingTime(inputDate) && isDaylightSavingTime(_this53.domain()[0]) ? 3600000 : 0;
+            var standardTimeOffsetMs = intervalDays >= 1 && !isDaylightSavingTime(inputDate) && isDaylightSavingTime(_this55.domain()[0]) ? 3600000 : 0;
             var adjustedDate = new Date(inputDate.getTime() + standardTimeOffsetMs);
-            var endDate = intervalDays >= 1 ? moment_moment__WEBPACK_IMPORTED_MODULE_2___default()(adjustedDate).add(intervalDays, "days").toDate() : moment_moment__WEBPACK_IMPORTED_MODULE_2___default()(adjustedDate).add(_this53.interval()).toDate();
-            return Object(_formatters_datetime_formatter__WEBPACK_IMPORTED_MODULE_4__["datetimeFormatter"])(adjustedDate) + " - " + Object(_formatters_datetime_formatter__WEBPACK_IMPORTED_MODULE_4__["datetimeFormatter"])(endDate);
+            var endDate = intervalDays >= 1 ? moment_moment__WEBPACK_IMPORTED_MODULE_2___default()(adjustedDate).add(intervalDays, "days").toDate() : moment_moment__WEBPACK_IMPORTED_MODULE_2___default()(adjustedDate).add(_this55.interval()).toDate();
+            return Object(_formatters_datetime_formatter__WEBPACK_IMPORTED_MODULE_3__["datetimeFormatter"])(adjustedDate) + " - " + Object(_formatters_datetime_formatter__WEBPACK_IMPORTED_MODULE_3__["datetimeFormatter"])(endDate);
           };
 
-          return _this53;
+          return _this55;
         }
 
         _createClass(TimeIntervalScale, [{
@@ -25578,7 +24698,7 @@
                 throw new Error("TimeIntervalScale domain has to be defined as a pair of [from, to] time values.");
               }
 
-              var isDomainEmpty = lodash_isEqual__WEBPACK_IMPORTED_MODULE_1___default()(_domain2, _types__WEBPACK_IMPORTED_MODULE_6__["EMPTY_CONTINUOUS_DOMAIN"]);
+              var isDomainEmpty = lodash_isEqual__WEBPACK_IMPORTED_MODULE_1___default()(_domain2, _types__WEBPACK_IMPORTED_MODULE_5__["EMPTY_CONTINUOUS_DOMAIN"]);
               var bands = []; // only try to determine bands if the domain is not empty
 
               if (!isDomainEmpty) {
@@ -25634,7 +24754,7 @@
         }, {
           key: "convert",
           value: function convert(value) {
-            var position = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : _constants__WEBPACK_IMPORTED_MODULE_3__["BAND_CENTER"];
+            var position = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0.5;
             var interval = this.truncToInterval(value, this.interval());
 
             if (!interval) {
@@ -25700,7 +24820,7 @@
         }]);
 
         return TimeIntervalScale;
-      }(_time_scale__WEBPACK_IMPORTED_MODULE_5__["TimeScale"]);
+      }(_time_scale__WEBPACK_IMPORTED_MODULE_4__["TimeScale"]);
       /***/
 
     },
@@ -26092,20 +25212,20 @@
       var TextColorProvider = /*#__PURE__*/function (_processed_color_prov) {
         _inherits(TextColorProvider, _processed_color_prov);
 
-        var _super21 = _createSuper(TextColorProvider);
+        var _super20 = _createSuper(TextColorProvider);
 
         function TextColorProvider(sourceProvider, colorDefinitions) {
-          var _this54;
+          var _this56;
 
           _classCallCheck(this, TextColorProvider);
 
-          return _this54 = _super21.call(this, sourceProvider, function (input) {
+          return _this56 = _super20.call(this, sourceProvider, function (input) {
             var color = Object(_color_helper__WEBPACK_IMPORTED_MODULE_1__["getColorValueByName"])(input);
             var rgbInput = Object(d3_color__WEBPACK_IMPORTED_MODULE_0__["rgb"])(color);
 
-            var ratioToLight = _this54.getContrastRatio(rgbInput, Object(d3_color__WEBPACK_IMPORTED_MODULE_0__["rgb"])(colorDefinitions.light));
+            var ratioToLight = _this56.getContrastRatio(rgbInput, Object(d3_color__WEBPACK_IMPORTED_MODULE_0__["rgb"])(colorDefinitions.light));
 
-            var ratioToDark = _this54.getContrastRatio(rgbInput, Object(d3_color__WEBPACK_IMPORTED_MODULE_0__["rgb"])(colorDefinitions.dark));
+            var ratioToDark = _this56.getContrastRatio(rgbInput, Object(d3_color__WEBPACK_IMPORTED_MODULE_0__["rgb"])(colorDefinitions.dark));
 
             return ratioToDark > ratioToLight ? colorDefinitions.dark : colorDefinitions.light;
           });
@@ -26270,30 +25390,30 @@
        * @extends {ChartPlugin}
        */
 
-      var InteractionLabelPlugin = /*#__PURE__*/function (_common_chart_plugin_3) {
-        _inherits(InteractionLabelPlugin, _common_chart_plugin_3);
+      var InteractionLabelPlugin = /*#__PURE__*/function (_common_chart_plugin_4) {
+        _inherits(InteractionLabelPlugin, _common_chart_plugin_4);
 
-        var _super22 = _createSuper(InteractionLabelPlugin);
+        var _super21 = _createSuper(InteractionLabelPlugin);
 
         function InteractionLabelPlugin() {
-          var _this55;
+          var _this57;
 
           var formatterName = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "title";
 
           _classCallCheck(this, InteractionLabelPlugin);
 
-          _this55 = _super22.call(this);
-          _this55.formatterName = formatterName;
-          _this55.areLabelUpdatesEnabled = true;
-          _this55.isChartInView = false;
-          _this55.destroy$ = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
-          return _this55;
+          _this57 = _super21.call(this);
+          _this57.formatterName = formatterName;
+          _this57.areLabelUpdatesEnabled = true;
+          _this57.isChartInView = false;
+          _this57.destroy$ = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
+          return _this57;
         }
 
         _createClass(InteractionLabelPlugin, [{
           key: "initialize",
           value: function initialize() {
-            var _this56 = this;
+            var _this58 = this;
 
             this.interactionLabelLayer = this.chart.getGrid().getLasagna().addLayer({
               name: InteractionLabelPlugin.LAYER_NAME,
@@ -26301,17 +25421,17 @@
               clipped: false
             });
             this.chart.getEventBus().getStream(_constants__WEBPACK_IMPORTED_MODULE_5__["INTERACTION_VALUES_EVENT"]).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeUntil"])(this.destroy$)).subscribe(function (event) {
-              _this56.lastInteractionValuesPayload = event.data;
+              _this58.lastInteractionValuesPayload = event.data;
 
-              if (_this56.isChartInView) {
-                _this56.handleLabelUpdate();
+              if (_this58.isChartInView) {
+                _this58.handleLabelUpdate();
               }
             });
             this.chart.getEventBus().getStream(_constants__WEBPACK_IMPORTED_MODULE_5__["CHART_VIEW_STATUS_EVENT"]).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeUntil"])(this.destroy$)).subscribe(function (event) {
-              _this56.isChartInView = event.data.isChartInView;
+              _this58.isChartInView = event.data.isChartInView;
 
-              if (_this56.isChartInView && _this56.lastInteractionValuesPayload) {
-                _this56.handleLabelUpdate();
+              if (_this58.isChartInView && _this58.lastInteractionValuesPayload) {
+                _this58.handleLabelUpdate();
               }
             });
           }
@@ -27137,19 +26257,13 @@
       /* harmony import */
 
 
-      var _constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-      /*! ./constants */
-      "ttef");
-      /* harmony import */
-
-
-      var _linear_scale__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      var _linear_scale__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! ./linear-scale */
       "YYcv");
       /* harmony import */
 
 
-      var _scale__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      var _scale__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! ./scale */
       "7YSD");
       /**
@@ -27161,16 +26275,16 @@
       var BandScale = /*#__PURE__*/function (_scale__WEBPACK_IMPOR2) {
         _inherits(BandScale, _scale__WEBPACK_IMPOR2);
 
-        var _super23 = _createSuper(BandScale);
+        var _super22 = _createSuper(BandScale);
 
         function BandScale(id) {
-          var _this57;
+          var _this59;
 
           _classCallCheck(this, BandScale);
 
-          _this57 = _super23.call(this, id);
+          _this59 = _super22.call(this, id);
 
-          _this57.formatters.tick = function (value) {
+          _this59.formatters.tick = function (value) {
             if (lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default()(value)) {
               throw new Error("Can't format bandFormatScale");
             }
@@ -27178,7 +26292,7 @@
             return lodash_toString__WEBPACK_IMPORTED_MODULE_3___default()(value);
           };
 
-          return _this57;
+          return _this59;
         }
 
         _createClass(BandScale, [{
@@ -27198,7 +26312,7 @@
         }, {
           key: "convert",
           value: function convert(value) {
-            var position = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : _constants__WEBPACK_IMPORTED_MODULE_4__["BAND_CENTER"];
+            var position = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0.5;
             return this._d3Scale(value) + position * this.bandwidth();
           }
           /**
@@ -27211,7 +26325,7 @@
         }, {
           key: "invert",
           value: function invert(coordinate) {
-            var _this58 = this;
+            var _this60 = this;
 
             var domain = this._d3Scale.domain();
 
@@ -27221,7 +26335,7 @@
             } else {
               // bisector needs to have values sorted in natural order, so we reverse the domain first ...
               var _rangeMidPoints = this.getRangeMidPoints(domain.map(function (d, i) {
-                return _this58._d3Scale(domain[domain.length - 1 - i
+                return _this60._d3Scale(domain[domain.length - 1 - i
                 /* ... here ...*/
                 ]);
               }));
@@ -27307,7 +26421,7 @@
         }, {
           key: "copyToLinear",
           value: function copyToLinear() {
-            var scale = new _linear_scale__WEBPACK_IMPORTED_MODULE_5__["LinearScale"]();
+            var scale = new _linear_scale__WEBPACK_IMPORTED_MODULE_4__["LinearScale"]();
             scale.domain(this.range()).range(this.range());
             return scale;
           }
@@ -27338,16 +26452,16 @@
         }, {
           key: "getRangeMidPoints",
           value: function getRangeMidPoints(coords) {
-            var _this59 = this;
+            var _this61 = this;
 
             return coords.slice(1).map(function (d) {
-              return d - _this59._d3Scale.step() * _this59._d3Scale.paddingInner() / 2;
+              return d - _this61._d3Scale.step() * _this61._d3Scale.paddingInner() / 2;
             });
           }
         }]);
 
         return BandScale;
-      }(_scale__WEBPACK_IMPORTED_MODULE_6__["Scale"]);
+      }(_scale__WEBPACK_IMPORTED_MODULE_5__["Scale"]);
       /***/
 
     },
@@ -27398,46 +26512,6 @@
         var fullname = Object(_namespace__WEBPACK_IMPORTED_MODULE_0__["default"])(name);
         return (fullname.local ? creatorFixed : creatorInherit)(fullname);
       };
-      /***/
-
-    },
-
-    /***/
-    "V03s":
-    /*!************************************************************************!*\
-      !*** ./node_modules/d3-transition/node_modules/d3-color/src/define.js ***!
-      \************************************************************************/
-
-    /*! exports provided: default, extend */
-
-    /***/
-    function V03s(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "extend", function () {
-        return extend;
-      });
-      /* harmony default export */
-
-
-      __webpack_exports__["default"] = function (constructor, factory, prototype) {
-        constructor.prototype = factory.prototype = prototype;
-        prototype.constructor = constructor;
-      };
-
-      function extend(parent, definition) {
-        var prototype = Object.create(parent.prototype);
-
-        for (var key in definition) {
-          prototype[key] = definition[key];
-        }
-
-        return prototype;
-      }
       /***/
 
     },
@@ -27533,51 +26607,51 @@
       /** @ignore */
 
 
-      var RenderEnginePlugin = /*#__PURE__*/function (_common_chart_plugin_4) {
-        _inherits(RenderEnginePlugin, _common_chart_plugin_4);
+      var RenderEnginePlugin = /*#__PURE__*/function (_common_chart_plugin_5) {
+        _inherits(RenderEnginePlugin, _common_chart_plugin_5);
 
-        var _super24 = _createSuper(RenderEnginePlugin);
+        var _super23 = _createSuper(RenderEnginePlugin);
 
         function RenderEnginePlugin() {
-          var _this60;
+          var _this62;
 
           _classCallCheck(this, RenderEnginePlugin);
 
-          _this60 = _super24.apply(this, arguments); // initializing isChartInView to true to ensure emission of initial data point events
+          _this62 = _super23.apply(this, arguments); // initializing isChartInView to true to ensure emission of initial data point events
 
-          _this60.isChartInView = true;
-          _this60.destroy$ = new rxjs__WEBPACK_IMPORTED_MODULE_0__["Subject"]();
-          return _this60;
+          _this62.isChartInView = true;
+          _this62.destroy$ = new rxjs__WEBPACK_IMPORTED_MODULE_0__["Subject"]();
+          return _this62;
         }
 
         _createClass(RenderEnginePlugin, [{
           key: "initialize",
           value: function initialize() {
-            var _this61 = this;
+            var _this63 = this;
 
             this.renderEngine = this.chart.getRenderEngine();
             this.chart.getEventBus().getStream(_constants__WEBPACK_IMPORTED_MODULE_2__["INTERACTION_VALUES_EVENT"]).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["takeUntil"])(this.destroy$)).subscribe(function (event) {
-              _this61.lastInteractionValuesPayload = event.data;
+              _this63.lastInteractionValuesPayload = event.data;
 
-              if (_this61.isChartInView) {
-                _this61.chart.getRenderEngine().emitInteractionDataPoints(_this61.lastInteractionValuesPayload);
+              if (_this63.isChartInView) {
+                _this63.chart.getRenderEngine().emitInteractionDataPoints(_this63.lastInteractionValuesPayload);
               }
             });
             this.renderEngine.interactionDataPointsSubject.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["takeUntil"])(this.destroy$)).subscribe(function (event) {
-              _this61.chart.getEventBus().getStream(_constants__WEBPACK_IMPORTED_MODULE_2__["INTERACTION_DATA_POINTS_EVENT"]).next({
+              _this63.chart.getEventBus().getStream(_constants__WEBPACK_IMPORTED_MODULE_2__["INTERACTION_DATA_POINTS_EVENT"]).next({
                 data: event
               });
             });
             this.renderEngine.rendererSubject.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["takeUntil"])(this.destroy$)).subscribe(function (event) {
-              _this61.chart.getEventBus().getStream(event.eventName).next({
+              _this63.chart.getEventBus().getStream(event.eventName).next({
                 data: event.data
               });
             });
             this.chart.getEventBus().getStream(_constants__WEBPACK_IMPORTED_MODULE_2__["CHART_VIEW_STATUS_EVENT"]).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["takeUntil"])(this.destroy$)).subscribe(function (event) {
-              _this61.isChartInView = event.data.isChartInView;
+              _this63.isChartInView = event.data.isChartInView;
 
-              if (_this61.isChartInView && _this61.lastInteractionValuesPayload) {
-                _this61.chart.getRenderEngine().emitInteractionDataPoints(_this61.lastInteractionValuesPayload);
+              if (_this63.isChartInView && _this63.lastInteractionValuesPayload) {
+                _this63.chart.getRenderEngine().emitInteractionDataPoints(_this63.lastInteractionValuesPayload);
               }
             });
           }
@@ -28336,11 +27410,11 @@
         }, {
           key: "updateScaleDomains",
           value: function updateScaleDomains() {
-            var _this62 = this;
+            var _this64 = this;
 
             lodash_each__WEBPACK_IMPORTED_MODULE_0___default()(Object.keys(this._scalesIndexByKey), function (scaleKey) {
-              lodash_each__WEBPACK_IMPORTED_MODULE_0___default()(_this62._scalesIndexByKey[scaleKey].list, function (scale) {
-                _this62.updateScaleDomain(scale, scaleKey);
+              lodash_each__WEBPACK_IMPORTED_MODULE_0___default()(_this64._scalesIndexByKey[scaleKey].list, function (scale) {
+                _this64.updateScaleDomain(scale, scaleKey);
               });
             });
           }
@@ -28538,10 +27612,10 @@
         _createClass(ChartMarkerComponent, [{
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this63 = this;
+            var _this65 = this;
 
             this.svg.subscribe(function (svg) {
-              _this63.renderMarkerSvg(svg);
+              _this65.renderMarkerSvg(svg);
             });
           }
         }, {
@@ -28565,7 +27639,7 @@
         }, {
           key: "renderMarkerSvg",
           value: function renderMarkerSvg(svg) {
-            var _this64 = this;
+            var _this66 = this;
 
             var svgContainerElement = this.svgContent.nativeElement;
             var line = "<line x1=\"-10\" y1=\"0\" x2=\"10\" y2=\"0\" style=\"stroke:".concat(this.color, ";stroke-width:2\" />");
@@ -28578,11 +27652,11 @@
             svgContainerElement.insertAdjacentHTML("beforeend", svg);
             setTimeout(function () {
               var clientRect = svgContainerElement.getBBox();
-              _this64.viewBox = "".concat(clientRect.x - SVG_PADDING, " ").concat(clientRect.y - SVG_PADDING, " ") + "".concat(clientRect.width + 2 * SVG_PADDING, " ").concat(clientRect.height + 2 * SVG_PADDING);
-              _this64.width = Math.min(clientRect.width + 2 * SVG_PADDING, _this64.maxSize) + "px";
-              _this64.height = Math.min(clientRect.height + 2 * SVG_PADDING, _this64.maxSize) + "px";
+              _this66.viewBox = "".concat(clientRect.x - SVG_PADDING, " ").concat(clientRect.y - SVG_PADDING, " ") + "".concat(clientRect.width + 2 * SVG_PADDING, " ").concat(clientRect.height + 2 * SVG_PADDING);
+              _this66.width = Math.min(clientRect.width + 2 * SVG_PADDING, _this66.maxSize) + "px";
+              _this66.height = Math.min(clientRect.height + 2 * SVG_PADDING, _this66.maxSize) + "px";
 
-              _this64.changeDetector.markForCheck();
+              _this66.changeDetector.markForCheck();
             });
           }
         }]);
@@ -28769,66 +27843,66 @@
       /*! ../grid/grid */
       "qYyZ");
 
-      var ZoomPlugin = /*#__PURE__*/function (_common_chart_plugin_5) {
-        _inherits(ZoomPlugin, _common_chart_plugin_5);
+      var ZoomPlugin = /*#__PURE__*/function (_common_chart_plugin_6) {
+        _inherits(ZoomPlugin, _common_chart_plugin_6);
 
-        var _super25 = _createSuper(ZoomPlugin);
+        var _super24 = _createSuper(ZoomPlugin);
 
         function ZoomPlugin() {
-          var _this65$interactionHa;
+          var _this67$interactionHa;
 
-          var _this65;
+          var _this67;
 
           var config = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
           _classCallCheck(this, ZoomPlugin);
 
-          _this65 = _super25.call(this);
-          _this65.config = config;
-          _this65.destroy$ = new rxjs__WEBPACK_IMPORTED_MODULE_5__["Subject"]();
+          _this67 = _super24.call(this);
+          _this67.config = config;
+          _this67.destroy$ = new rxjs__WEBPACK_IMPORTED_MODULE_5__["Subject"]();
 
-          _this65.brushStart = function (xCoord) {
-            if (!lodash_isUndefined__WEBPACK_IMPORTED_MODULE_4___default()(_this65.brushStartX)) {
+          _this67.brushStart = function (xCoord) {
+            if (!lodash_isUndefined__WEBPACK_IMPORTED_MODULE_4___default()(_this67.brushStartX)) {
               return;
             }
 
-            _this65.chart.getEventBus().getStream(_constants__WEBPACK_IMPORTED_MODULE_7__["INTERACTION_VALUES_ACTIVE_EVENT"]).next({
+            _this67.chart.getEventBus().getStream(_constants__WEBPACK_IMPORTED_MODULE_7__["INTERACTION_VALUES_ACTIVE_EVENT"]).next({
               data: false
             });
 
-            _this65.brushStartX = xCoord;
+            _this67.brushStartX = xCoord;
           };
 
-          _this65.brushMove = function (xCoord) {
-            if (lodash_isUndefined__WEBPACK_IMPORTED_MODULE_4___default()(_this65.brushStartX)) {
+          _this67.brushMove = function (xCoord) {
+            if (lodash_isUndefined__WEBPACK_IMPORTED_MODULE_4___default()(_this67.brushStartX)) {
               return;
             }
 
-            var selection = [_this65.brushStartX, xCoord].sort(function (a, b) {
+            var selection = [_this67.brushStartX, xCoord].sort(function (a, b) {
               return a - b;
             });
 
-            _this65.brush.move(_this65.brushElement, selection);
+            _this67.brush.move(_this67.brushElement, selection);
           };
 
-          _this65.brushEnd = function (xCoord) {
-            if (lodash_isUndefined__WEBPACK_IMPORTED_MODULE_4___default()(_this65.brushStartX)) {
+          _this67.brushEnd = function (xCoord) {
+            if (lodash_isUndefined__WEBPACK_IMPORTED_MODULE_4___default()(_this67.brushStartX)) {
               return;
             }
 
-            var selection = [_this65.brushStartX, xCoord].sort(function (a, b) {
+            var selection = [_this67.brushStartX, xCoord].sort(function (a, b) {
               return a - b;
             });
-            _this65.brushStartX = undefined;
+            _this67.brushStartX = undefined;
 
-            _this65.chart.getEventBus().getStream(_constants__WEBPACK_IMPORTED_MODULE_7__["INTERACTION_VALUES_ACTIVE_EVENT"]).next({
+            _this67.chart.getEventBus().getStream(_constants__WEBPACK_IMPORTED_MODULE_7__["INTERACTION_VALUES_ACTIVE_EVENT"]).next({
               data: true
             }); // remove the brush
 
 
-            _this65.brush.move(_this65.brushElement, null);
+            _this67.brush.move(_this67.brushElement, null);
 
-            var xScales = _this65.grid.scales.x.list;
+            var xScales = _this67.grid.scales.x.list;
 
             if (!xScales || selection[0] === selection[1]) {
               return;
@@ -28836,7 +27910,7 @@
             // that the right-most column of pixels on the chart is selectable.
 
 
-            var widthCorrection = selection[1] === _this65.grid.config().dimension.width() - _grid_grid__WEBPACK_IMPORTED_MODULE_11__["Grid"].RENDER_AREA_WIDTH_CORRECTION ? _grid_grid__WEBPACK_IMPORTED_MODULE_11__["Grid"].RENDER_AREA_WIDTH_CORRECTION : 0;
+            var widthCorrection = selection[1] === _this67.grid.config().dimension.width() - _grid_grid__WEBPACK_IMPORTED_MODULE_11__["Grid"].RENDER_AREA_WIDTH_CORRECTION ? _grid_grid__WEBPACK_IMPORTED_MODULE_11__["Grid"].RENDER_AREA_WIDTH_CORRECTION : 0;
             var data = xScales.reduce(function (result, next) {
               result[next.id] = [selection[0], selection[1] + widthCorrection].map(function (x) {
                 return next.invert(x);
@@ -28844,20 +27918,20 @@
               return result;
             }, {}); // zoom the chart
 
-            _this65.chart.getEventBus().getStream(_constants__WEBPACK_IMPORTED_MODULE_7__["SET_DOMAIN_EVENT"]).next({
+            _this67.chart.getEventBus().getStream(_constants__WEBPACK_IMPORTED_MODULE_7__["SET_DOMAIN_EVENT"]).next({
               data: data
             });
           };
 
-          _this65.config = lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_2___default()(_this65.config, ZoomPlugin.DEFAULT_CONFIG);
-          _this65.interactionHandlerMap = (_this65$interactionHa = {}, _defineProperty(_this65$interactionHa, _common_types__WEBPACK_IMPORTED_MODULE_10__["InteractionType"].MouseDown, _this65.brushStart), _defineProperty(_this65$interactionHa, _common_types__WEBPACK_IMPORTED_MODULE_10__["InteractionType"].MouseMove, _this65.brushMove), _defineProperty(_this65$interactionHa, _common_types__WEBPACK_IMPORTED_MODULE_10__["InteractionType"].MouseUp, _this65.brushEnd), _this65$interactionHa);
-          return _this65;
+          _this67.config = lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_2___default()(_this67.config, ZoomPlugin.DEFAULT_CONFIG);
+          _this67.interactionHandlerMap = (_this67$interactionHa = {}, _defineProperty(_this67$interactionHa, _common_types__WEBPACK_IMPORTED_MODULE_10__["InteractionType"].MouseDown, _this67.brushStart), _defineProperty(_this67$interactionHa, _common_types__WEBPACK_IMPORTED_MODULE_10__["InteractionType"].MouseMove, _this67.brushMove), _defineProperty(_this67$interactionHa, _common_types__WEBPACK_IMPORTED_MODULE_10__["InteractionType"].MouseUp, _this67.brushEnd), _this67$interactionHa);
+          return _this67;
         }
 
         _createClass(ZoomPlugin, [{
           key: "initialize",
           value: function initialize() {
-            var _this66 = this;
+            var _this68 = this;
 
             this.grid = this.chart.getGrid();
             this.zoomBrushLayer = this.grid.getLasagna().addLayer({
@@ -28867,20 +27941,20 @@
               clipped: true
             });
             this.chart.getEventBus().getStream(_constants__WEBPACK_IMPORTED_MODULE_7__["INTERACTION_COORDINATES_EVENT"]).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["takeUntil"])(this.destroy$)).subscribe(function (chartEvent) {
-              if (chartEvent.broadcast && !_this66.config.enableExternalEvents) {
+              if (chartEvent.broadcast && !_this68.config.enableExternalEvents) {
                 return;
               }
 
               var data = chartEvent.data;
 
-              if (lodash_isEmpty__WEBPACK_IMPORTED_MODULE_3___default()(_this66.grid.scales) || lodash_isEmpty__WEBPACK_IMPORTED_MODULE_3___default()(data.coordinates)) {
+              if (lodash_isEmpty__WEBPACK_IMPORTED_MODULE_3___default()(_this68.grid.scales) || lodash_isEmpty__WEBPACK_IMPORTED_MODULE_3___default()(data.coordinates)) {
                 return;
               }
 
-              if (_this66.interactionHandlerMap[data.interactionType]) {
+              if (_this68.interactionHandlerMap[data.interactionType]) {
                 var xCoord = data.coordinates && data.coordinates.x;
 
-                _this66.interactionHandlerMap[data.interactionType](xCoord);
+                _this68.interactionHandlerMap[data.interactionType](xCoord);
               }
             });
             this.brush = Object(d3_brush__WEBPACK_IMPORTED_MODULE_0__["brushX"])();
@@ -28953,7 +28027,7 @@
 
       var d3_color__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! d3-color */
-      "qXv/");
+      "Ij2O");
       /* harmony import */
 
 
@@ -29662,20 +28736,20 @@
       var LinearScale = /*#__PURE__*/function (_scale__WEBPACK_IMPOR3) {
         _inherits(LinearScale, _scale__WEBPACK_IMPOR3);
 
-        var _super26 = _createSuper(LinearScale);
+        var _super25 = _createSuper(LinearScale);
 
         function LinearScale(id) {
-          var _this67;
+          var _this69;
 
           _classCallCheck(this, LinearScale);
 
-          _this67 = _super26.call(this, id);
+          _this69 = _super25.call(this, id);
 
-          _this67.formatters.tick = function (value) {
+          _this69.formatters.tick = function (value) {
             return value + "";
           };
 
-          return _this67;
+          return _this69;
         }
 
         _createClass(LinearScale, [{
@@ -30097,26 +29171,26 @@
        */
 
 
-      var InteractionLinePlugin = /*#__PURE__*/function (_common_chart_plugin_6) {
-        _inherits(InteractionLinePlugin, _common_chart_plugin_6);
+      var InteractionLinePlugin = /*#__PURE__*/function (_common_chart_plugin_7) {
+        _inherits(InteractionLinePlugin, _common_chart_plugin_7);
 
-        var _super27 = _createSuper(InteractionLinePlugin);
+        var _super26 = _createSuper(InteractionLinePlugin);
 
         function InteractionLinePlugin() {
-          var _this68;
+          var _this70;
 
           _classCallCheck(this, InteractionLinePlugin);
 
-          _this68 = _super27.apply(this, arguments);
-          _this68.isChartInView = false;
-          _this68.destroy$ = new rxjs__WEBPACK_IMPORTED_MODULE_2__["Subject"]();
-          return _this68;
+          _this70 = _super26.apply(this, arguments);
+          _this70.isChartInView = false;
+          _this70.destroy$ = new rxjs__WEBPACK_IMPORTED_MODULE_2__["Subject"]();
+          return _this70;
         }
 
         _createClass(InteractionLinePlugin, [{
           key: "initialize",
           value: function initialize() {
-            var _this69 = this;
+            var _this71 = this;
 
             this.interactionLineLayer = this.chart.getGrid().getLasagna().addLayer({
               name: "interaction-line",
@@ -30124,17 +29198,17 @@
               clipped: true
             });
             this.chart.getEventBus().getStream(_constants__WEBPACK_IMPORTED_MODULE_4__["INTERACTION_VALUES_EVENT"]).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["takeUntil"])(this.destroy$)).subscribe(function (event) {
-              _this69.lastInteractionValuesPayload = event.data;
+              _this71.lastInteractionValuesPayload = event.data;
 
-              if (_this69.isChartInView) {
-                _this69.handleLineUpdate();
+              if (_this71.isChartInView) {
+                _this71.handleLineUpdate();
               }
             });
             this.chart.getEventBus().getStream(_constants__WEBPACK_IMPORTED_MODULE_4__["CHART_VIEW_STATUS_EVENT"]).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["takeUntil"])(this.destroy$)).subscribe(function (event) {
-              _this69.isChartInView = event.data.isChartInView;
+              _this71.isChartInView = event.data.isChartInView;
 
-              if (_this69.isChartInView && _this69.lastInteractionValuesPayload) {
-                _this69.handleLineUpdate();
+              if (_this71.isChartInView && _this71.lastInteractionValuesPayload) {
+                _this71.handleLineUpdate();
               }
             });
           }
@@ -30957,12 +30031,12 @@
       var NoopRenderer = /*#__PURE__*/function (_core_common_renderer3) {
         _inherits(NoopRenderer, _core_common_renderer3);
 
-        var _super28 = _createSuper(NoopRenderer);
+        var _super27 = _createSuper(NoopRenderer);
 
         function NoopRenderer() {
           _classCallCheck(this, NoopRenderer);
 
-          return _super28.apply(this, arguments);
+          return _super27.apply(this, arguments);
         }
 
         _createClass(NoopRenderer, [{
@@ -31612,20 +30686,20 @@
       var BarAccessors = /*#__PURE__*/function (_accessors_rectangle_) {
         _inherits(BarAccessors, _accessors_rectangle_);
 
-        var _super29 = _createSuper(BarAccessors);
+        var _super28 = _createSuper(BarAccessors);
 
         function BarAccessors() {
-          var _this70;
+          var _this72;
 
           var colorProvider = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : Object(_core_common_palette_default_providers__WEBPACK_IMPORTED_MODULE_0__["defaultColorProvider"])();
           var markerProvider = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : Object(_core_common_palette_default_providers__WEBPACK_IMPORTED_MODULE_0__["defaultMarkerProvider"])();
 
           _classCallCheck(this, BarAccessors);
 
-          _this70 = _super29.call(this);
-          _this70.colorProvider = colorProvider;
-          _this70.markerProvider = markerProvider;
-          _this70.data = {
+          _this72 = _super28.call(this);
+          _this72.colorProvider = colorProvider;
+          _this72.markerProvider = markerProvider;
+          _this72.data = {
             value: function value(data) {
               return data.value;
             },
@@ -31634,8 +30708,8 @@
                 return d.category;
               }
 
-              if (_this70.series.category) {
-                return _this70.series.category(dataSeries.id, dataSeries);
+              if (_this72.series.category) {
+                return _this72.series.category(dataSeries.id, dataSeries);
               }
 
               return null;
@@ -31649,7 +30723,7 @@
                 return data.start;
               }
 
-              var value = _this70.getSingleValue(data, index, series, dataSeries);
+              var value = _this72.getSingleValue(data, index, series, dataSeries);
 
               if (Number.isFinite(value)) {
                 return Math.min(0, value);
@@ -31666,7 +30740,7 @@
                 return data.end;
               }
 
-              var value = _this70.getSingleValue(data, index, series, dataSeries);
+              var value = _this72.getSingleValue(data, index, series, dataSeries);
 
               if (Number.isFinite(value)) {
                 return Math.max(0, value);
@@ -31675,14 +30749,14 @@
               return null;
             }
           };
-          _this70.series = {
-            color: _this70.colorProvider ? _this70.colorProvider.get : undefined,
-            marker: _this70.markerProvider ? _this70.markerProvider.get : undefined,
+          _this72.series = {
+            color: _this72.colorProvider ? _this72.colorProvider.get : undefined,
+            marker: _this72.markerProvider ? _this72.markerProvider.get : undefined,
             category: function category(seriesId, series) {
               return series.name || series.id;
             }
           };
-          return _this70;
+          return _this72;
         }
 
         _createClass(BarAccessors, [{
@@ -31733,7 +30807,7 @@
 
       var d3_color__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! d3-color */
-      "qXv/");
+      "Ij2O");
       /* harmony import */
 
 
@@ -31902,22 +30976,22 @@
       var LineRenderer = /*#__PURE__*/function (_xy_renderer__WEBPACK3) {
         _inherits(LineRenderer, _xy_renderer__WEBPACK3);
 
-        var _super30 = _createSuper(LineRenderer);
+        var _super29 = _createSuper(LineRenderer);
 
         /**
          * Creates an instance of LineRenderer.
          * @param {ILineRendererConfig} [config={}] Renderer configuration object
          */
         function LineRenderer() {
-          var _this71;
+          var _this73;
 
           var config = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
           _classCallCheck(this, LineRenderer);
 
-          _this71 = _super30.call(this, config);
-          _this71.config = config;
-          _this71.DEFAULT_CONFIG = {
+          _this73 = _super29.call(this, config);
+          _this73.config = config;
+          _this73.DEFAULT_CONFIG = {
             strokeWidth: 2,
             curveType: d3_shape__WEBPACK_IMPORTED_MODULE_0__["curveLinear"],
             interactive: true,
@@ -31930,8 +31004,8 @@
             }
           }; // setting default values to the properties that were not set by user
 
-          _this71.config = lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_1___default()(_this71.config, _this71.DEFAULT_CONFIG);
-          return _this71;
+          _this73.config = lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_1___default()(_this73.config, _this73.DEFAULT_CONFIG);
+          return _this73;
         }
 
         _createClass(LineRenderer, [{
@@ -32032,7 +31106,12 @@
         }, {
           key: "getRequiredLayers",
           value: function getRequiredLayers() {
-            return [_constants__WEBPACK_IMPORTED_MODULE_3__["STANDARD_RENDER_LAYERS"][_types__WEBPACK_IMPORTED_MODULE_7__["RenderLayerName"].data], _constants__WEBPACK_IMPORTED_MODULE_3__["STANDARD_RENDER_LAYERS"][_types__WEBPACK_IMPORTED_MODULE_7__["RenderLayerName"].foreground], _constants__WEBPACK_IMPORTED_MODULE_3__["STANDARD_RENDER_LAYERS"][_types__WEBPACK_IMPORTED_MODULE_7__["RenderLayerName"].unclippedData]];
+            return [_constants__WEBPACK_IMPORTED_MODULE_3__["STANDARD_RENDER_LAYERS"][_types__WEBPACK_IMPORTED_MODULE_7__["RenderLayerName"].data], _constants__WEBPACK_IMPORTED_MODULE_3__["STANDARD_RENDER_LAYERS"][_types__WEBPACK_IMPORTED_MODULE_7__["RenderLayerName"].foreground], {
+              name: LineRenderer.UNCLIPPED_DATA_LAYER_NAME,
+              // order calculated by adding 1 to the data layer order to ensure the unclipped data layer appears just after the data layer in the DOM
+              order: _constants__WEBPACK_IMPORTED_MODULE_3__["STANDARD_RENDER_LAYERS"][_types__WEBPACK_IMPORTED_MODULE_7__["RenderLayerName"].data].order + 1,
+              clipped: false
+            }];
           }
           /** See {@link Renderer#getDataPointPosition} */
 
@@ -32122,8 +31201,7 @@
             }; // use an unclipped layer to ensure the line caps on the left and right sides of the chart don't get clipped
 
 
-            var lineCaps = renderSeries.containers[_types__WEBPACK_IMPORTED_MODULE_7__["RenderLayerName"].unclippedData].selectAll(".".concat(LineRenderer.LINE_CAP_CLASS_NAME)).data(definedData).attr("cx", updateCx).attr("cy", updateCy);
-
+            var lineCaps = renderSeries.containers[LineRenderer.UNCLIPPED_DATA_LAYER_NAME].selectAll(".".concat(LineRenderer.LINE_CAP_CLASS_NAME)).data(definedData).attr("cx", updateCx).attr("cy", updateCy);
             lineCaps.enter().append("circle").attr("class", LineRenderer.LINE_CAP_CLASS_NAME).attr("r", (_a = this.config.enhancedLineCap) === null || _a === void 0 ? void 0 : _a.radius).attr("cx", updateCx).attr("cy", updateCy).style("stroke-width", (_b = this.config.enhancedLineCap) === null || _b === void 0 ? void 0 : _b.strokeWidth).style("fill", fill).style("stroke", (_c = this.config.enhancedLineCap) === null || _c === void 0 ? void 0 : _c.stroke);
             lineCaps.exit().remove();
           }
@@ -33871,17 +32949,7 @@
       /* harmony import */
 
 
-      var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! lodash/isUndefined */
-      "TP7S");
-      /* harmony import */
-
-
-      var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash_isUndefined__WEBPACK_IMPORTED_MODULE_0__);
-      /* harmony import */
-
-
-      var _preprocessor_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      var _preprocessor_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ./preprocessor-utils */
       "UUpF");
 
@@ -33891,13 +32959,9 @@
           return chartSeriesSet;
         }
 
-        var categories = Object(_preprocessor_utils__WEBPACK_IMPORTED_MODULE_1__["gatherCategories"])(chartSeriesSet); // This is adding metadata to the dataset and filling missing
+        var categories = Object(_preprocessor_utils__WEBPACK_IMPORTED_MODULE_0__["gatherCategories"])(chartSeriesSet); // This is adding metadata to the dataset and filling missing
 
         var forExtents = chartSeriesSet.reduce(function (acc, chartSeries) {
-          if (!lodash_isUndefined__WEBPACK_IMPORTED_MODULE_0___default()(chartSeries.preprocess) && !chartSeries.preprocess) {
-            return acc;
-          }
-
           var categoryAccessor = chartSeries.accessors.data["category"];
           var valueAccessor = chartSeries.accessors.data["value"];
 
@@ -33933,10 +32997,10 @@
       }
 
       function stack(chartSeriesSet) {
-        var _this72 = this;
+        var _this74 = this;
 
         return stackedPreprocessor(chartSeriesSet, function (series) {
-          return !_this72.isSeriesHidden(series.id);
+          return !_this74.isSeriesHidden(series.id);
         });
       }
       /***/
@@ -34142,7 +33206,7 @@
       !*** ./src/public-api.ts ***!
       \***************************/
 
-    /*! exports provided: ChartTooltipDirective, ChartTooltipComponent, ChartDonutContentComponent, ChartTooltipsComponent, ChartPopoverComponent, ChartMarkerComponent, NuiChartsModule, ChartComponent, GaugeMode, GAUGE_THICKNESS_DEFAULT, GaugeComponent, GaugeUtil, ChartCollectionIdDirective, ChartCollectionService, ChartPalette, MappedValueProvider, CHART_PALETTE_CS1, CHART_PALETTE_CS2, CHART_PALETTE_CS3, CHART_PALETTE_CS_S, CHART_PALETTE_CS_S_EXTENDED, CHART_MARKERS, ProcessedColorProvider, SequentialChartMarkerProvider, SequentialColorProvider, SequentialValueProvider, TextColorProvider, PathMarker, SvgMarker, defaultColorProvider, defaultPalette, defaultMarkerProvider, getColorValueByName, getAutomaticDomain, getAutomaticDomainWithIncludedInterval, getAutomaticDomainWithTicks, BandScale, PointScale, LinearScale, Scale, TimeScale, isDaylightSavingTime, TimeIntervalScale, datetimeFormatter, EMPTY_CONTINUOUS_DOMAIN, NORMALIZED_DOMAIN, isBandScale, hasInnerScale, NoopScale, convert, invert, ChartPlugin, DataManager, DataSeries, EventBus, InteractionType, Lasagna, MouseInteractiveArea, RenderEngine, Renderer, UtilityService, AxisConfig, BorderConfig, DimensionConfig, linearGaugeGridConfig, GridConfig, AreaGridConfig, BarGridConfig, BarHorizontalGridConfig, BarStatusGridConfig, sparkChartGridConfig, XYGridConfig, XYGrid, borderMidpoint, Grid, RadialGrid, ChartDonutContentPlugin, ChartPopoverPlugin, RadialGaugeLabelsPlugin, GAUGE_LABEL_FORMATTER_NAME_DEFAULT, GAUGE_LABELS_CONTAINER_CLASS, GAUGE_THRESHOLD_LABEL_CLASS, InteractionLabelPlugin, InteractionLinePlugin, MouseInteractiveAreaPlugin, RadialPopoverPlugin, RenderEnginePlugin, TOOLTIP_POSITION_OFFSET, getVerticalSetup, getHorizontalSetup, ChartTooltipsPlugin, RadialTooltipsPlugin, BarTooltipsPlugin, ZoomPlugin, ChartCollection, Chart, ChartAssist, LegendInteractionAssist, SparkChartAssist, ChartAssistEventType, ChartAssistRenderStateData, CssFilterId, GRAYSCALE_FILTER, GRAYSCALE_COLOR_MATRIX, LEGEND_SERIES_CLASS_NAME, LegendSeriesComponent, BasicLegendTileComponent, RichLegendTileComponent, LegendComponent, THRESHOLDS_MAIN_CHART_RENDERER_CONFIG, THRESHOLDS_SUMMARY_RENDERER_CONFIG, DEFAULT_MARKER_INTERACTION_CONFIG, GAUGE_THRESHOLD_MARKER_CLASS, RenderState, RenderLayerName, XYRenderer, SideIndicatorAccessors, SideIndicatorRenderer, XYAccessors, NoopAccessors, RectangleAccessors, NoopRenderer, BarRenderer, stackedPreprocessor, stack, barGrid, barScales, BarAccessors, barAccessors, HorizontalBarAccessors, VerticalBarAccessors, StatusAccessors, statusAccessors, BarHighlightStrategy, BarSeriesHighlightStrategy, DEFAULT_LINEAR_GAUGE_THRESHOLDS_RENDERER_CONFIG, LinearGaugeThresholdsRenderer, radialPreprocessor, radial, DEFAULT_RADIAL_RENDERER_CONFIG, RadialRenderer, DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG, RadialGaugeThresholdsRenderer, radialGaugeRendererConfig, RadialGaugeRenderingUtil, PieRenderer, radialGrid, radialScales, RadialAccessors, calculateMissingData, LineSelectSeriesInteractionStrategy, LineAccessors, LineRenderer, MissingDataLineRendererConfig, areaGrid, AreaAccessors, AreaRenderer, stackedAreaPreprocessor, stackedArea, stackedPercentageAreaPreprocessor, stackedPercentageArea, calculateDomainValueCombinedTotals, applyStackMetadata, stackedAreaAccessors, MOUSE_ACTIVE_EVENT, INTERACTION_VALUES_ACTIVE_EVENT, INTERACTION_VALUES_EVENT, INTERACTION_COORDINATES_EVENT, HIGHLIGHT_DATA_POINT_EVENT, SELECT_DATA_POINT_EVENT, HIGHLIGHT_SERIES_EVENT, INTERACTION_SERIES_EVENT, INTERACTION_DATA_POINTS_EVENT, INTERACTION_DATA_POINT_EVENT, DESTROY_EVENT, SET_DOMAIN_EVENT, REFRESH_EVENT, CHART_VIEW_STATUS_EVENT, SERIES_STATE_CHANGE_EVENT, CHART_COMPONENT, STANDARD_RENDER_LAYERS, DATA_POINT_NOT_FOUND, DATA_POINT_INTERACTION_RESET, IGNORE_INTERACTION_CLASS, ZoneBoundary, ThresholdsService, thresholdsSummaryGridConfig, thresholdsTopGridConfig */
+    /*! exports provided: ChartTooltipDirective, ChartTooltipComponent, ChartDonutContentComponent, ChartTooltipsComponent, ChartPopoverComponent, ChartMarkerComponent, NuiChartsModule, ChartComponent, GaugeMode, GAUGE_THICKNESS_DEFAULT, GaugeComponent, GaugeService, ChartCollectionIdDirective, ChartCollectionService, ChartPalette, MappedValueProvider, CHART_PALETTE_CS1, CHART_PALETTE_CS2, CHART_PALETTE_CS3, CHART_PALETTE_CS_S, CHART_PALETTE_CS_S_EXTENDED, CHART_MARKERS, ProcessedColorProvider, SequentialChartMarkerProvider, SequentialColorProvider, SequentialValueProvider, TextColorProvider, PathMarker, SvgMarker, defaultColorProvider, defaultPalette, defaultMarkerProvider, getColorValueByName, getAutomaticDomain, getAutomaticDomainWithIncludedInterval, getAutomaticDomainWithTicks, BandScale, PointScale, LinearScale, Scale, TimeScale, isDaylightSavingTime, TimeIntervalScale, datetimeFormatter, EMPTY_CONTINUOUS_DOMAIN, NORMALIZED_DOMAIN, isBandScale, hasInnerScale, NoopScale, convert, invert, ChartPlugin, DataManager, DataSeries, EventBus, InteractionType, Lasagna, MouseInteractiveArea, RenderEngine, Renderer, UtilityService, AxisConfig, BorderConfig, DimensionConfig, linearGaugeGridConfig, GridConfig, AreaGridConfig, BarGridConfig, BarHorizontalGridConfig, BarStatusGridConfig, sparkChartGridConfig, XYGridConfig, XYGrid, borderMidpoint, Grid, RadialGrid, TOOLTIP_POSITION_OFFSET, getVerticalSetup, getHorizontalSetup, ChartTooltipsPlugin, RadialTooltipsPlugin, BarTooltipsPlugin, ZoomPlugin, ChartPopoverPlugin, ChartDonutContentPlugin, MouseInteractiveAreaPlugin, RadialPopoverPlugin, RadialGaugeThresholdLabelsPlugin, RenderEnginePlugin, InteractionLabelPlugin, InteractionLinePlugin, ChartCollection, Chart, ChartAssist, LegendInteractionAssist, SparkChartAssist, ChartAssistEventType, ChartAssistRenderStateData, CssFilterId, GRAYSCALE_FILTER, GRAYSCALE_COLOR_MATRIX, LEGEND_SERIES_CLASS_NAME, LegendSeriesComponent, BasicLegendTileComponent, RichLegendTileComponent, LegendComponent, THRESHOLDS_MAIN_CHART_RENDERER_CONFIG, THRESHOLDS_SUMMARY_RENDERER_CONFIG, DEFAULT_MARKER_INTERACTION_CONFIG, RenderState, RenderLayerName, XYRenderer, SideIndicatorAccessors, SideIndicatorRenderer, XYAccessors, NoopAccessors, RectangleAccessors, NoopRenderer, BarRenderer, stackedPreprocessor, stack, barGrid, barScales, BarAccessors, barAccessors, HorizontalBarAccessors, VerticalBarAccessors, StatusAccessors, statusAccessors, BarHighlightStrategy, BarSeriesHighlightStrategy, radialPreprocessor, radial, DEFAULT_RADIAL_RENDERER_CONFIG, RadialRenderer, DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG, RadialGaugeThresholdsRenderer, radialGaugeRendererConfig, GaugeRenderingUtils, PieRenderer, radialGrid, radialScales, RadialAccessors, calculateMissingData, LineSelectSeriesInteractionStrategy, LineAccessors, LineRenderer, MissingDataLineRendererConfig, areaGrid, AreaAccessors, AreaRenderer, stackedAreaPreprocessor, stackedArea, stackedPercentageAreaPreprocessor, stackedPercentageArea, calculateDomainValueCombinedTotals, applyStackMetadata, stackedAreaAccessors, MOUSE_ACTIVE_EVENT, INTERACTION_VALUES_ACTIVE_EVENT, INTERACTION_VALUES_EVENT, INTERACTION_COORDINATES_EVENT, HIGHLIGHT_DATA_POINT_EVENT, SELECT_DATA_POINT_EVENT, HIGHLIGHT_SERIES_EVENT, INTERACTION_SERIES_EVENT, INTERACTION_DATA_POINTS_EVENT, INTERACTION_DATA_POINT_EVENT, DESTROY_EVENT, SET_DOMAIN_EVENT, REFRESH_EVENT, CHART_VIEW_STATUS_EVENT, SERIES_STATE_CHANGE_EVENT, CHART_COMPONENT, STANDARD_RENDER_LAYERS, DATA_POINT_NOT_FOUND, DATA_POINT_INTERACTION_RESET, IGNORE_INTERACTION_CLASS, ZoneBoundary, ThresholdsService, thresholdsSummaryGridConfig, thresholdsTopGridConfig */
 
     /***/
     function gKry(module, __webpack_exports__, __webpack_require__) {
@@ -34272,8 +33336,8 @@
       /* harmony reexport (safe) */
 
 
-      __webpack_require__.d(__webpack_exports__, "GaugeUtil", function () {
-        return _gauge_public_api__WEBPACK_IMPORTED_MODULE_8__["GaugeUtil"];
+      __webpack_require__.d(__webpack_exports__, "GaugeService", function () {
+        return _gauge_public_api__WEBPACK_IMPORTED_MODULE_8__["GaugeService"];
       });
       /* harmony import */
 
@@ -34674,72 +33738,6 @@
       /* harmony reexport (safe) */
 
 
-      __webpack_require__.d(__webpack_exports__, "ChartDonutContentPlugin", function () {
-        return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["ChartDonutContentPlugin"];
-      });
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "ChartPopoverPlugin", function () {
-        return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["ChartPopoverPlugin"];
-      });
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "RadialGaugeLabelsPlugin", function () {
-        return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["RadialGaugeLabelsPlugin"];
-      });
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "GAUGE_LABEL_FORMATTER_NAME_DEFAULT", function () {
-        return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["GAUGE_LABEL_FORMATTER_NAME_DEFAULT"];
-      });
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "GAUGE_LABELS_CONTAINER_CLASS", function () {
-        return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["GAUGE_LABELS_CONTAINER_CLASS"];
-      });
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "GAUGE_THRESHOLD_LABEL_CLASS", function () {
-        return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["GAUGE_THRESHOLD_LABEL_CLASS"];
-      });
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "InteractionLabelPlugin", function () {
-        return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["InteractionLabelPlugin"];
-      });
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "InteractionLinePlugin", function () {
-        return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["InteractionLinePlugin"];
-      });
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "MouseInteractiveAreaPlugin", function () {
-        return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["MouseInteractiveAreaPlugin"];
-      });
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "RadialPopoverPlugin", function () {
-        return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["RadialPopoverPlugin"];
-      });
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "RenderEnginePlugin", function () {
-        return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["RenderEnginePlugin"];
-      });
-      /* harmony reexport (safe) */
-
-
       __webpack_require__.d(__webpack_exports__, "TOOLTIP_POSITION_OFFSET", function () {
         return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["TOOLTIP_POSITION_OFFSET"];
       });
@@ -34778,6 +33776,54 @@
 
       __webpack_require__.d(__webpack_exports__, "ZoomPlugin", function () {
         return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["ZoomPlugin"];
+      });
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "ChartPopoverPlugin", function () {
+        return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["ChartPopoverPlugin"];
+      });
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "ChartDonutContentPlugin", function () {
+        return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["ChartDonutContentPlugin"];
+      });
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "MouseInteractiveAreaPlugin", function () {
+        return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["MouseInteractiveAreaPlugin"];
+      });
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "RadialPopoverPlugin", function () {
+        return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["RadialPopoverPlugin"];
+      });
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "RadialGaugeThresholdLabelsPlugin", function () {
+        return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["RadialGaugeThresholdLabelsPlugin"];
+      });
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "RenderEnginePlugin", function () {
+        return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["RenderEnginePlugin"];
+      });
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "InteractionLabelPlugin", function () {
+        return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["InteractionLabelPlugin"];
+      });
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "InteractionLinePlugin", function () {
+        return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["InteractionLinePlugin"];
       });
       /* harmony reexport (safe) */
 
@@ -34898,12 +33944,6 @@
 
       __webpack_require__.d(__webpack_exports__, "DEFAULT_MARKER_INTERACTION_CONFIG", function () {
         return _renderers_public_api__WEBPACK_IMPORTED_MODULE_12__["DEFAULT_MARKER_INTERACTION_CONFIG"];
-      });
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "GAUGE_THRESHOLD_MARKER_CLASS", function () {
-        return _renderers_public_api__WEBPACK_IMPORTED_MODULE_12__["GAUGE_THRESHOLD_MARKER_CLASS"];
       });
       /* harmony reexport (safe) */
 
@@ -35040,18 +34080,6 @@
       /* harmony reexport (safe) */
 
 
-      __webpack_require__.d(__webpack_exports__, "DEFAULT_LINEAR_GAUGE_THRESHOLDS_RENDERER_CONFIG", function () {
-        return _renderers_public_api__WEBPACK_IMPORTED_MODULE_12__["DEFAULT_LINEAR_GAUGE_THRESHOLDS_RENDERER_CONFIG"];
-      });
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "LinearGaugeThresholdsRenderer", function () {
-        return _renderers_public_api__WEBPACK_IMPORTED_MODULE_12__["LinearGaugeThresholdsRenderer"];
-      });
-      /* harmony reexport (safe) */
-
-
       __webpack_require__.d(__webpack_exports__, "radialPreprocessor", function () {
         return _renderers_public_api__WEBPACK_IMPORTED_MODULE_12__["radialPreprocessor"];
       });
@@ -35094,8 +34122,8 @@
       /* harmony reexport (safe) */
 
 
-      __webpack_require__.d(__webpack_exports__, "RadialGaugeRenderingUtil", function () {
-        return _renderers_public_api__WEBPACK_IMPORTED_MODULE_12__["RadialGaugeRenderingUtil"];
+      __webpack_require__.d(__webpack_exports__, "GaugeRenderingUtils", function () {
+        return _renderers_public_api__WEBPACK_IMPORTED_MODULE_12__["GaugeRenderingUtils"];
       });
       /* harmony reexport (safe) */
 
@@ -35396,43 +34424,6 @@
       __webpack_require__.d(__webpack_exports__, "quadtree", function () {
         return _quadtree_js__WEBPACK_IMPORTED_MODULE_0__["default"];
       });
-      /***/
-
-    },
-
-    /***/
-    "gOPF":
-    /*!********************************************************************!*\
-      !*** ./src/renderers/radial/gauge/radial-gauge-renderer-config.ts ***!
-      \********************************************************************/
-
-    /*! exports provided: radialGaugeRendererConfig */
-
-    /***/
-    function gOPF(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "radialGaugeRendererConfig", function () {
-        return radialGaugeRendererConfig;
-      });
-      /**
-       * Convenience function for generating a standard radial renderer configuration for a gauge
-       *
-       * @returns {IRadialRendererConfig} Standard renderer configuration for a gauge
-       */
-
-
-      function radialGaugeRendererConfig() {
-        return {
-          annularGrowth: 0,
-          strokeWidth: 0,
-          enableSeriesHighlighting: false
-        };
-      }
       /***/
 
     },
@@ -36447,11 +35438,6 @@
         name: _renderers_types__WEBPACK_IMPORTED_MODULE_1__["RenderLayerName"].data,
         order: 50,
         clipped: true
-      }), _defineProperty(_STANDARD_RENDER_LAYE, _renderers_types__WEBPACK_IMPORTED_MODULE_1__["RenderLayerName"].unclippedData, {
-        name: _renderers_types__WEBPACK_IMPORTED_MODULE_1__["RenderLayerName"].unclippedData,
-        // order is one greater than the data layer to ensure the unclipped data layer appears just after the data layer in the DOM
-        order: 51,
-        clipped: false
       }), _defineProperty(_STANDARD_RENDER_LAYE, _renderers_types__WEBPACK_IMPORTED_MODULE_1__["RenderLayerName"].foreground, {
         name: _renderers_types__WEBPACK_IMPORTED_MODULE_1__["RenderLayerName"].foreground,
         order: 1000,
@@ -36524,10 +35510,10 @@
         }, {
           key: "destroy",
           value: function destroy() {
-            var _this73 = this;
+            var _this75 = this;
 
             lodash_each__WEBPACK_IMPORTED_MODULE_0___default()(Object.keys(this.streams), function (key) {
-              _this73.streams[key].complete();
+              _this75.streams[key].complete();
             });
           }
         }]);
@@ -37118,33 +36104,32 @@
       var BarRenderer = /*#__PURE__*/function (_xy_renderer__WEBPACK4) {
         _inherits(BarRenderer, _xy_renderer__WEBPACK4);
 
-        var _super31 = _createSuper(BarRenderer);
+        var _super30 = _createSuper(BarRenderer);
 
         /**
          * Creates an instance of BarRenderer.
          * @param {IBarRendererConfig} [config] Renderer configuration object
          */
         function BarRenderer() {
-          var _this74;
+          var _this76;
 
           var config = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
           _classCallCheck(this, BarRenderer);
 
-          _this74 = _super31.call(this, config);
-          _this74.config = config;
-          _this74.DEFAULT_CONFIG = {
+          _this76 = _super30.call(this, config);
+          _this76.config = config;
+          _this76.DEFAULT_CONFIG = {
             transitionDuration: 300,
             padding: 1,
             barClass: "bar-outline",
             highlightStrategy: undefined,
-            pointerEvents: true,
-            enableMinBarThickness: true
+            pointerEvents: true
           };
-          _this74.barContainerClass = "bar-container"; // setting default values to the properties that were not set by user
+          _this76.barContainerClass = "bar-container"; // setting default values to the properties that were not set by user
 
-          _this74.config = lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_2___default()(_this74.config, _this74.DEFAULT_CONFIG);
-          return _this74;
+          _this76.config = lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_2___default()(_this76.config, _this76.DEFAULT_CONFIG);
+          return _this76;
         }
         /** See {@link Renderer#draw} */
 
@@ -37152,7 +36137,7 @@
         _createClass(BarRenderer, [{
           key: "draw",
           value: function draw(renderSeries, rendererSubject) {
-            var _this75 = this;
+            var _this77 = this;
 
             var _a, _b, _c;
 
@@ -37169,7 +36154,7 @@
             bars.exit().remove();
             var barContainers = bars.enter().append("g").classed(this.barContainerClass, true);
             barContainers.append("rect").on("click", function (d, i) {
-              _this75.emitBarClick(renderSeries, d, i, rendererSubject);
+              _this77.emitBarClick(renderSeries, d, i, rendererSubject);
             });
 
             var getCssClass = function getCssClass(d, i) {
@@ -37183,7 +36168,7 @@
             }) // This saves attrsGenerator() output to local d3 variable generatedAttrs
             .select("rect") // tslint:disable-next-line:max-line-length
             .attr("class", function (d, i) {
-              return "".concat(BarRenderer.BAR_RECT_CLASS, " ").concat(_this75.config.barClass).concat(_this75.config.pointerEvents ? " pointer-events" : "") + getCssClass(d, i);
+              return "".concat(BarRenderer.BAR_RECT_CLASS, " ").concat(_this77.config.barClass).concat(_this77.config.pointerEvents ? " pointer-events" : "") + getCssClass(d, i);
             }).style("cursor", (_a = this.config.cursor) !== null && _a !== void 0 ? _a : "").style("stroke-width", (_c = (_b = this.config) === null || _b === void 0 ? void 0 : _b.strokeWidth) !== null && _c !== void 0 ? _c : "").style("fill", function (d, i) {
               var _a, _b;
 
@@ -37317,13 +36302,13 @@
         }, {
           key: "getAttrsGenerator",
           value: function getAttrsGenerator(dataSeries, scales) {
-            var _this76 = this;
+            var _this78 = this;
 
             var accessors = dataSeries.accessors.data;
             return function (d, i) {
-              var x = _this76.getDimensions(accessors, d, i, dataSeries, scales.x, "X");
+              var x = _this78.getDimensions(accessors, d, i, dataSeries, scales.x, "X");
 
-              var y = _this76.getDimensions(accessors, d, i, dataSeries, scales.y, "Y");
+              var y = _this78.getDimensions(accessors, d, i, dataSeries, scales.y, "Y");
 
               return {
                 x: x.start,
@@ -37368,9 +36353,7 @@
                 thickness -= this.config.padding * 2;
               }
 
-              if (this.config.enableMinBarThickness) {
-                thickness = Math.max(thickness, BarRenderer.MIN_BAR_THICKNESS);
-              }
+              thickness = Math.max(thickness, BarRenderer.MIN_BAR_THICKNESS);
             }
 
             return {
@@ -37479,6 +36462,195 @@
       };
       /***/
 
+    },
+
+    /***/
+    "iIvt":
+    /*!**********************************************************************!*\
+      !*** ./node_modules/d3-interpolate/node_modules/d3-color/src/lab.js ***!
+      \**********************************************************************/
+
+    /*! exports provided: gray, default, Lab, lch, hcl, Hcl */
+
+    /***/
+    function iIvt(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "gray", function () {
+        return gray;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "default", function () {
+        return lab;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "Lab", function () {
+        return Lab;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "lch", function () {
+        return lch;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "hcl", function () {
+        return hcl;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "Hcl", function () {
+        return Hcl;
+      });
+      /* harmony import */
+
+
+      var _define_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! ./define.js */
+      "xGXq");
+      /* harmony import */
+
+
+      var _color_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! ./color.js */
+      "ozvG");
+      /* harmony import */
+
+
+      var _math_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! ./math.js */
+      "uXcH"); // https://observablehq.com/@mbostock/lab-and-rgb
+
+
+      var K = 18,
+          Xn = 0.96422,
+          Yn = 1,
+          Zn = 0.82521,
+          t0 = 4 / 29,
+          t1 = 6 / 29,
+          t2 = 3 * t1 * t1,
+          t3 = t1 * t1 * t1;
+
+      function labConvert(o) {
+        if (o instanceof Lab) return new Lab(o.l, o.a, o.b, o.opacity);
+        if (o instanceof Hcl) return hcl2lab(o);
+        if (!(o instanceof _color_js__WEBPACK_IMPORTED_MODULE_1__["Rgb"])) o = Object(_color_js__WEBPACK_IMPORTED_MODULE_1__["rgbConvert"])(o);
+        var r = rgb2lrgb(o.r),
+            g = rgb2lrgb(o.g),
+            b = rgb2lrgb(o.b),
+            y = xyz2lab((0.2225045 * r + 0.7168786 * g + 0.0606169 * b) / Yn),
+            x,
+            z;
+        if (r === g && g === b) x = z = y;else {
+          x = xyz2lab((0.4360747 * r + 0.3850649 * g + 0.1430804 * b) / Xn);
+          z = xyz2lab((0.0139322 * r + 0.0971045 * g + 0.7141733 * b) / Zn);
+        }
+        return new Lab(116 * y - 16, 500 * (x - y), 200 * (y - z), o.opacity);
+      }
+
+      function gray(l, opacity) {
+        return new Lab(l, 0, 0, opacity == null ? 1 : opacity);
+      }
+
+      function lab(l, a, b, opacity) {
+        return arguments.length === 1 ? labConvert(l) : new Lab(l, a, b, opacity == null ? 1 : opacity);
+      }
+
+      function Lab(l, a, b, opacity) {
+        this.l = +l;
+        this.a = +a;
+        this.b = +b;
+        this.opacity = +opacity;
+      }
+
+      Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["default"])(Lab, lab, Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["extend"])(_color_js__WEBPACK_IMPORTED_MODULE_1__["Color"], {
+        brighter: function brighter(k) {
+          return new Lab(this.l + K * (k == null ? 1 : k), this.a, this.b, this.opacity);
+        },
+        darker: function darker(k) {
+          return new Lab(this.l - K * (k == null ? 1 : k), this.a, this.b, this.opacity);
+        },
+        rgb: function rgb() {
+          var y = (this.l + 16) / 116,
+              x = isNaN(this.a) ? y : y + this.a / 500,
+              z = isNaN(this.b) ? y : y - this.b / 200;
+          x = Xn * lab2xyz(x);
+          y = Yn * lab2xyz(y);
+          z = Zn * lab2xyz(z);
+          return new _color_js__WEBPACK_IMPORTED_MODULE_1__["Rgb"](lrgb2rgb(3.1338561 * x - 1.6168667 * y - 0.4906146 * z), lrgb2rgb(-0.9787684 * x + 1.9161415 * y + 0.0334540 * z), lrgb2rgb(0.0719453 * x - 0.2289914 * y + 1.4052427 * z), this.opacity);
+        }
+      }));
+
+      function xyz2lab(t) {
+        return t > t3 ? Math.pow(t, 1 / 3) : t / t2 + t0;
+      }
+
+      function lab2xyz(t) {
+        return t > t1 ? t * t * t : t2 * (t - t0);
+      }
+
+      function lrgb2rgb(x) {
+        return 255 * (x <= 0.0031308 ? 12.92 * x : 1.055 * Math.pow(x, 1 / 2.4) - 0.055);
+      }
+
+      function rgb2lrgb(x) {
+        return (x /= 255) <= 0.04045 ? x / 12.92 : Math.pow((x + 0.055) / 1.055, 2.4);
+      }
+
+      function hclConvert(o) {
+        if (o instanceof Hcl) return new Hcl(o.h, o.c, o.l, o.opacity);
+        if (!(o instanceof Lab)) o = labConvert(o);
+        if (o.a === 0 && o.b === 0) return new Hcl(NaN, 0 < o.l && o.l < 100 ? 0 : NaN, o.l, o.opacity);
+
+        var h = Math.atan2(o.b, o.a) * _math_js__WEBPACK_IMPORTED_MODULE_2__["rad2deg"];
+
+        return new Hcl(h < 0 ? h + 360 : h, Math.sqrt(o.a * o.a + o.b * o.b), o.l, o.opacity);
+      }
+
+      function lch(l, c, h, opacity) {
+        return arguments.length === 1 ? hclConvert(l) : new Hcl(h, c, l, opacity == null ? 1 : opacity);
+      }
+
+      function hcl(h, c, l, opacity) {
+        return arguments.length === 1 ? hclConvert(h) : new Hcl(h, c, l, opacity == null ? 1 : opacity);
+      }
+
+      function Hcl(h, c, l, opacity) {
+        this.h = +h;
+        this.c = +c;
+        this.l = +l;
+        this.opacity = +opacity;
+      }
+
+      function hcl2lab(o) {
+        if (isNaN(o.h)) return new Lab(o.l, 0, 0, o.opacity);
+        var h = o.h * _math_js__WEBPACK_IMPORTED_MODULE_2__["deg2rad"];
+        return new Lab(o.l, Math.cos(h) * o.c, Math.sin(h) * o.c, o.opacity);
+      }
+
+      Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["default"])(Hcl, hcl, Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["extend"])(_color_js__WEBPACK_IMPORTED_MODULE_1__["Color"], {
+        brighter: function brighter(k) {
+          return new Hcl(this.h, this.c, this.l + K * (k == null ? 1 : k), this.opacity);
+        },
+        darker: function darker(k) {
+          return new Hcl(this.h, this.c, this.l - K * (k == null ? 1 : k), this.opacity);
+        },
+        rgb: function rgb() {
+          return hcl2lab(this).rgb();
+        }
+      }));
+      /***/
     },
 
     /***/
@@ -37634,25 +36806,25 @@
       var BarGridConfig = /*#__PURE__*/function (_xy_grid_config__WEBP4) {
         _inherits(BarGridConfig, _xy_grid_config__WEBP4);
 
-        var _super32 = _createSuper(BarGridConfig);
+        var _super31 = _createSuper(BarGridConfig);
 
         function BarGridConfig() {
-          var _this77;
+          var _this79;
 
           _classCallCheck(this, BarGridConfig);
 
-          _this77 = _super32.call(this);
-          _this77.interactionPlugins = false;
-          _this77.axis.left.gridTicks = true;
-          _this77.axis.left.tickSize = 5;
-          _this77.axis.bottom.gridTicks = false;
-          _this77.axis.left.fit = true;
-          _this77.axis.bottom.tickSize = 5;
-          _this77.axis.left.tickSize = 0;
-          _this77.dimension.margin.right = 0;
-          _this77.dimension.padding.bottom = 2; // 2 for border
+          _this79 = _super31.call(this);
+          _this79.interactionPlugins = false;
+          _this79.axis.left.gridTicks = true;
+          _this79.axis.left.tickSize = 5;
+          _this79.axis.bottom.gridTicks = false;
+          _this79.axis.left.fit = true;
+          _this79.axis.bottom.tickSize = 5;
+          _this79.axis.left.tickSize = 0;
+          _this79.dimension.margin.right = 0;
+          _this79.dimension.padding.bottom = 2; // 2 for border
 
-          return _this77;
+          return _this79;
         }
 
         return BarGridConfig;
@@ -37975,6 +37147,108 @@
     },
 
     /***/
+    "iwCl":
+    /*!*******************************************************!*\
+      !*** ./src/renderers/radial/gauge-rendering-utils.ts ***!
+      \*******************************************************/
+
+    /*! exports provided: GaugeRenderingUtils */
+
+    /***/
+    function iwCl(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "GaugeRenderingUtils", function () {
+        return GaugeRenderingUtils;
+      });
+      /* harmony import */
+
+
+      var d3_shape__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! d3-shape */
+      "8d86");
+
+      var GaugeRenderingUtils = /*#__PURE__*/function () {
+        function GaugeRenderingUtils() {
+          _classCallCheck(this, GaugeRenderingUtils);
+        }
+
+        _createClass(GaugeRenderingUtils, null, [{
+          key: "generateThresholdData",
+          value: function generateThresholdData(data) {
+            var arcData = GaugeRenderingUtils.generateArcData(data);
+            var thresholdsData = [];
+            var pieGenerator = Object(d3_shape__WEBPACK_IMPORTED_MODULE_0__["pie"])().sort(null);
+            var arcsForCircles = pieGenerator(arcData);
+            arcsForCircles.forEach(function (arcDatum, i) {
+              // Drawing circles at threshold points
+              if (i % 2 === 1) {
+                thresholdsData.push(arcDatum);
+              }
+            });
+            return thresholdsData;
+          }
+        }, {
+          key: "generateArcData",
+          value: function generateArcData(data) {
+            // arcs with a value of zero serve as the threshold points
+            var arcData = Array(data.length * 2 - 1).fill(0);
+            data.forEach(function (d, i) {
+              // arcs with a non-zero value serve as the space between the threshold points
+              arcData[i * 2] = i === 0 ? d.value : d.value - data[i - 1].value;
+            });
+            return arcData;
+          }
+        }]);
+
+        return GaugeRenderingUtils;
+      }();
+      /***/
+
+    },
+
+    /***/
+    "jC88":
+    /*!*******************************************************!*\
+      !*** ./src/renderers/radial/gauge-renderer-config.ts ***!
+      \*******************************************************/
+
+    /*! exports provided: radialGaugeRendererConfig */
+
+    /***/
+    function jC88(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "radialGaugeRendererConfig", function () {
+        return radialGaugeRendererConfig;
+      });
+      /**
+       * Convenience function for generating a standard radial renderer configuration for a gauge
+       *
+       * @returns {IRadialRendererConfig} Standard renderer configuration for a gauge
+       */
+
+
+      function radialGaugeRendererConfig() {
+        return {
+          annularGrowth: 0,
+          strokeWidth: 0,
+          enableSeriesHighlighting: false
+        };
+      }
+      /***/
+
+    },
+
+    /***/
     "jICm":
     /*!**************************************************!*\
       !*** ./node_modules/d3-shape/src/curve/basis.js ***!
@@ -38253,7 +37527,7 @@
 
       var ProcessedColorProvider = /*#__PURE__*/function () {
         function ProcessedColorProvider(sourceProvider, fn) {
-          var _this78 = this;
+          var _this80 = this;
 
           _classCallCheck(this, ProcessedColorProvider);
 
@@ -38261,17 +37535,17 @@
           this.fn = fn;
 
           this.get = function (entityId) {
-            var clr = _this78.sourceProvider.get(entityId);
+            var clr = _this80.sourceProvider.get(entityId);
 
             if (!clr) {
               throw new Error("clr is not defined");
             }
 
-            var processedColor = _this78.processedColors[clr];
+            var processedColor = _this80.processedColors[clr];
 
             if (!processedColor) {
-              processedColor = _this78.fn(clr);
-              _this78.processedColors[clr] = processedColor;
+              processedColor = _this80.fn(clr);
+              _this80.processedColors[clr] = processedColor;
             }
 
             return processedColor;
@@ -38895,7 +38169,7 @@
         }, {
           key: "getBreakPoints",
           value: function getBreakPoints(sourceSeries, zones) {
-            var _this79 = this;
+            var _this81 = this;
 
             var _a, _b, _c, _d;
 
@@ -38922,7 +38196,7 @@
                 var zoneStartY = (_b = (_a = zone.accessors.data).start) === null || _b === void 0 ? void 0 : _b.call(_a, zone.data[0], 0, zone.data, zone);
                 var zoneEndY = (_d = (_c = zone.accessors.data).end) === null || _d === void 0 ? void 0 : _d.call(_c, zone.data[0], 0, zone.data, zone);
                 var zoneCrossPoints = [zoneStartY, zoneEndY].map(function (y) {
-                  return _this79.getCrossPointWithY(xy1, xy2, y);
+                  return _this81.getCrossPointWithY(xy1, xy2, y);
                 }) // calculate cross points for both limits
                 .filter(function (c) {
                   return c;
@@ -38999,7 +38273,7 @@
         }, {
           key: "getThresholdLines",
           value: function getThresholdLines(zones) {
-            var _this80 = this;
+            var _this82 = this;
 
             if (-1 === zones.findIndex(function (z) {
               return z.entered;
@@ -39041,7 +38315,7 @@
             }
 
             return lodash_values__WEBPACK_IMPORTED_MODULE_6___default()(limits).map(function (limit) {
-              return _this80.getThresholdLine(limit.series, limit.accessor, limit.zoneBoundary);
+              return _this82.getThresholdLine(limit.series, limit.accessor, limit.zoneBoundary);
             });
           }
           /**
@@ -39256,270 +38530,6 @@
       };
 
       ThresholdsService = ThresholdsService_1 = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(), Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["LoggerService"]])], ThresholdsService);
-      /***/
-    },
-
-    /***/
-    "laqf":
-    /*!**************************************************************!*\
-      !*** ./src/core/plugins/gauge/radial-gauge-labels-plugin.ts ***!
-      \**************************************************************/
-
-    /*! exports provided: RadialGaugeLabelsPlugin */
-
-    /***/
-    function laqf(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "RadialGaugeLabelsPlugin", function () {
-        return RadialGaugeLabelsPlugin;
-      });
-      /* harmony import */
-
-
-      var d3_shape__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! d3-shape */
-      "8d86");
-      /* harmony import */
-
-
-      var lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-      /*! lodash/defaultsDeep */
-      "P4Tr");
-      /* harmony import */
-
-
-      var lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_1__);
-      /* harmony import */
-
-
-      var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-      /*! lodash/isUndefined */
-      "TP7S");
-      /* harmony import */
-
-
-      var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2__);
-      /* harmony import */
-
-
-      var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-      /*! rxjs */
-      "qCKp");
-      /* harmony import */
-
-
-      var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-      /*! rxjs/operators */
-      "kU1M");
-      /* harmony import */
-
-
-      var _constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
-      /*! ../../../constants */
-      "he5r");
-      /* harmony import */
-
-
-      var _renderers_radial_gauge_radial_gauge_rendering_util__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
-      /*! ../../../renderers/radial/gauge/radial-gauge-rendering-util */
-      "Rtv/");
-      /* harmony import */
-
-
-      var _renderers_radial_gauge_radial_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
-      /*! ../../../renderers/radial/gauge/radial-gauge-thresholds-renderer */
-      "CmBv");
-      /* harmony import */
-
-
-      var _renderers_types__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
-      /*! ../../../renderers/types */
-      "AbRU");
-      /* harmony import */
-
-
-      var _common_chart_plugin__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
-      /*! ../../common/chart-plugin */
-      "e7eq");
-      /* harmony import */
-
-
-      var _constants__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
-      /*! ./constants */
-      "GXwZ");
-      /**
-       * @ignore
-       * A chart plugin that handles the rendering of labels for radial gauge thresholds
-       */
-
-
-      var RadialGaugeLabelsPlugin = /*#__PURE__*/function (_common_chart_plugin_7) {
-        _inherits(RadialGaugeLabelsPlugin, _common_chart_plugin_7);
-
-        var _super33 = _createSuper(RadialGaugeLabelsPlugin);
-
-        function RadialGaugeLabelsPlugin() {
-          var _this81;
-
-          var config = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-
-          _classCallCheck(this, RadialGaugeLabelsPlugin);
-
-          _this81 = _super33.call(this);
-          _this81.config = config;
-          /** The default plugin configuration */
-
-          _this81.DEFAULT_CONFIG = {
-            gridMargin: {
-              top: RadialGaugeLabelsPlugin.MARGIN_DEFAULT,
-              right: RadialGaugeLabelsPlugin.MARGIN_DEFAULT,
-              bottom: RadialGaugeLabelsPlugin.MARGIN_DEFAULT,
-              left: RadialGaugeLabelsPlugin.MARGIN_DEFAULT
-            },
-            labelPadding: 5,
-            formatterName: _constants__WEBPACK_IMPORTED_MODULE_10__["GAUGE_LABEL_FORMATTER_NAME_DEFAULT"],
-            enableThresholdLabels: true
-          };
-          _this81.destroy$ = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
-          _this81.config = lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_1___default()(_this81.config, _this81.DEFAULT_CONFIG);
-          return _this81;
-        }
-
-        _createClass(RadialGaugeLabelsPlugin, [{
-          key: "initialize",
-          value: function initialize() {
-            var _this82 = this;
-
-            this.lasagnaLayer = this.chart.getGrid().getLasagna().addLayer({
-              name: _constants__WEBPACK_IMPORTED_MODULE_10__["GAUGE_LABELS_CONTAINER_CLASS"],
-              order: _constants__WEBPACK_IMPORTED_MODULE_5__["STANDARD_RENDER_LAYERS"][_renderers_types__WEBPACK_IMPORTED_MODULE_8__["RenderLayerName"].data].order,
-              clipped: false
-            });
-            var gridConfig = this.chart.getGrid().config();
-            gridConfig.dimension.margin = this.config.gridMargin;
-            this.chart.getEventBus().getStream(_constants__WEBPACK_IMPORTED_MODULE_5__["INTERACTION_DATA_POINTS_EVENT"]).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeUntil"])(this.destroy$)).subscribe(function (event) {
-              var gaugeThresholdLabelsGroup = _this82.lasagnaLayer.select(".".concat(_constants__WEBPACK_IMPORTED_MODULE_10__["GAUGE_LABELS_CONTAINER_CLASS"]));
-
-              if (!gaugeThresholdLabelsGroup.empty()) {
-                var dataPoints = event.data.dataPoints;
-                var labelOpacity = Object.keys(dataPoints).find(function (key, index) {
-                  return dataPoints[key].index === _constants__WEBPACK_IMPORTED_MODULE_5__["DATA_POINT_NOT_FOUND"];
-                }) ? 0 : 1;
-                gaugeThresholdLabelsGroup.style("opacity", labelOpacity);
-              }
-            });
-          }
-        }, {
-          key: "updateDimensions",
-          value: function updateDimensions() {
-            if (this.config.enableThresholdLabels) {
-              this.drawThresholdLabels();
-            }
-          }
-        }, {
-          key: "destroy",
-          value: function destroy() {
-            if (this.destroy$) {
-              this.destroy$.next();
-              this.destroy$.complete();
-            }
-          }
-        }, {
-          key: "drawThresholdLabels",
-          value: function drawThresholdLabels() {
-            var _this83 = this;
-
-            var _a, _b;
-
-            var thresholdsSeries = this.chart.getDataManager().chartSeriesSet.find(function (series) {
-              return series.renderer instanceof _renderers_radial_gauge_radial_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_7__["RadialGaugeThresholdsRenderer"];
-            });
-            var renderer = thresholdsSeries === null || thresholdsSeries === void 0 ? void 0 : thresholdsSeries.renderer;
-            var labelRadius = (renderer === null || renderer === void 0 ? void 0 : renderer.getOuterRadius((_a = thresholdsSeries === null || thresholdsSeries === void 0 ? void 0 : thresholdsSeries.scales.r.range()) !== null && _a !== void 0 ? _a : [0, 0], 0)) + this.config.labelPadding;
-
-            if (lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default()(labelRadius)) {
-              throw new Error("Radius is undefined");
-            }
-
-            var data = thresholdsSeries === null || thresholdsSeries === void 0 ? void 0 : thresholdsSeries.data;
-
-            if (lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default()(data)) {
-              throw new Error("Gauge threshold series data is undefined");
-            }
-
-            var gaugeThresholdsLabelsGroup = this.lasagnaLayer.select(".".concat(_constants__WEBPACK_IMPORTED_MODULE_10__["GAUGE_LABELS_CONTAINER_CLASS"]));
-
-            if (gaugeThresholdsLabelsGroup.empty()) {
-              gaugeThresholdsLabelsGroup = this.lasagnaLayer.append("svg:g").attr("class", _constants__WEBPACK_IMPORTED_MODULE_10__["GAUGE_LABELS_CONTAINER_CLASS"]).style("opacity", 0);
-            }
-
-            var labelGenerator = Object(d3_shape__WEBPACK_IMPORTED_MODULE_0__["arc"])().outerRadius(labelRadius).innerRadius(labelRadius);
-            var formatter = (_b = thresholdsSeries === null || thresholdsSeries === void 0 ? void 0 : thresholdsSeries.scales.r.formatters[this.config.formatterName]) !== null && _b !== void 0 ? _b : function (d) {
-              return d;
-            };
-            var labelSelection = gaugeThresholdsLabelsGroup.selectAll("text.".concat(_constants__WEBPACK_IMPORTED_MODULE_10__["GAUGE_THRESHOLD_LABEL_CLASS"])).data(_renderers_radial_gauge_radial_gauge_rendering_util__WEBPACK_IMPORTED_MODULE_6__["RadialGaugeRenderingUtil"].generateThresholdData(data));
-            labelSelection.exit().remove();
-            labelSelection.enter().append("text").attr("class", _constants__WEBPACK_IMPORTED_MODULE_10__["GAUGE_THRESHOLD_LABEL_CLASS"]).merge(labelSelection).attr("transform", function (d) {
-              return "translate(".concat(labelGenerator.centroid(d), ")");
-            }).attr("title", function (d, i) {
-              return formatter(data[i].value);
-            }).style("text-anchor", function (d) {
-              return _this83.getTextAnchor(d.startAngle);
-            }).style("alignment-baseline", function (d) {
-              return _this83.getAlignmentBaseline(d.startAngle);
-            }).text(function (d, i) {
-              return formatter(data[i].value);
-            });
-          }
-        }, {
-          key: "getTextAnchor",
-          value: function getTextAnchor(angle) {
-            // pie charts start on the top, so we need to subtract Math.PI / 2 (90 degrees)
-            var cosine = Math.cos(angle - Math.PI / 2);
-
-            if (cosine > 0.5) {
-              // used for right 120 degrees of chart
-              return "start";
-            }
-
-            if (cosine < -0.5) {
-              // used for left 120 degrees of chart
-              return "end";
-            } // used for top 60 degrees and bottom 60 degrees of chart
-
-
-            return "middle";
-          }
-        }, {
-          key: "getAlignmentBaseline",
-          value: function getAlignmentBaseline(angle) {
-            // pie charts start on the top, so we need to add Math.PI / 2 (90 degrees)
-            var sine = Math.sin(angle + Math.PI / 2);
-
-            if (sine > 0.5) {
-              // used for top 120 degrees of chart
-              return "text-after-edge";
-            }
-
-            if (sine < -0.5) {
-              // used for bottom 120 degrees of chart
-              return "text-before-edge";
-            } // used for left 60 degrees and right 60 degrees of chart
-
-
-            return "central";
-          }
-        }]);
-
-        return RadialGaugeLabelsPlugin;
-      }(_common_chart_plugin__WEBPACK_IMPORTED_MODULE_9__["ChartPlugin"]);
-
-      RadialGaugeLabelsPlugin.MARGIN_DEFAULT = 25;
       /***/
     },
 
@@ -39850,32 +38860,32 @@
       var VerticalBarAccessors = /*#__PURE__*/function (_bar_accessors__WEBPA) {
         _inherits(VerticalBarAccessors, _bar_accessors__WEBPA);
 
-        var _super34 = _createSuper(VerticalBarAccessors);
+        var _super32 = _createSuper(VerticalBarAccessors);
 
         function VerticalBarAccessors(colorProvider, markerProvider) {
-          var _this84;
+          var _this83;
 
           _classCallCheck(this, VerticalBarAccessors);
 
-          _this84 = _super34.call(this, colorProvider, markerProvider);
-          _this84.data = Object.assign(Object.assign({}, _this84.data), {
+          _this83 = _super32.call(this, colorProvider, markerProvider);
+          _this83.data = Object.assign(Object.assign({}, _this83.data), {
             startX: function startX(d, i, s, ds) {
-              return _this84.data.category(d, i, s, ds);
+              return _this83.data.category(d, i, s, ds);
             },
             endX: function endX(d, i, s, ds) {
-              return _this84.data.category(d, i, s, ds);
+              return _this83.data.category(d, i, s, ds);
             },
             thicknessX: function thicknessX(d, i, s, ds) {
-              return _this84.data.thickness ? _this84.data.thickness(d, i, s, ds) : undefined;
+              return _this83.data.thickness ? _this83.data.thickness(d, i, s, ds) : undefined;
             },
             startY: function startY(d, i, s, ds) {
-              return _this84.data.start(d, i, s, ds);
+              return _this83.data.start(d, i, s, ds);
             },
             endY: function endY(d, i, s, ds) {
-              return _this84.data.end(d, i, s, ds);
+              return _this83.data.end(d, i, s, ds);
             }
           });
-          return _this84;
+          return _this83;
         }
 
         return VerticalBarAccessors;
@@ -40149,16 +39159,16 @@
       var TimeScale = /*#__PURE__*/function (_scale__WEBPACK_IMPOR4) {
         _inherits(TimeScale, _scale__WEBPACK_IMPOR4);
 
-        var _super35 = _createSuper(TimeScale);
+        var _super33 = _createSuper(TimeScale);
 
         function TimeScale(id) {
-          var _this85;
+          var _this84;
 
           _classCallCheck(this, TimeScale);
 
-          _this85 = _super35.call(this, id);
-          _this85.formatters.tick = _formatters_datetime_formatter__WEBPACK_IMPORTED_MODULE_1__["datetimeFormatter"];
-          return _this85;
+          _this84 = _super33.call(this, id);
+          _this84.formatters.tick = _formatters_datetime_formatter__WEBPACK_IMPORTED_MODULE_1__["datetimeFormatter"];
+          return _this84;
         }
 
         _createClass(TimeScale, [{
@@ -40853,26 +39863,26 @@
       var ChartDonutContentPlugin = /*#__PURE__*/function (_common_chart_plugin_8) {
         _inherits(ChartDonutContentPlugin, _common_chart_plugin_8);
 
-        var _super36 = _createSuper(ChartDonutContentPlugin);
+        var _super34 = _createSuper(ChartDonutContentPlugin);
 
         function ChartDonutContentPlugin() {
-          var _this86;
+          var _this85;
 
           _classCallCheck(this, ChartDonutContentPlugin);
 
-          _this86 = _super36.apply(this, arguments);
+          _this85 = _super34.apply(this, arguments);
           /** Subject for getting updates on the content position */
 
-          _this86.contentPositionUpdateSubject = new rxjs__WEBPACK_IMPORTED_MODULE_1__["Subject"]();
+          _this85.contentPositionUpdateSubject = new rxjs__WEBPACK_IMPORTED_MODULE_1__["Subject"]();
           /** The current content position */
 
-          _this86.contentPosition = {
+          _this85.contentPosition = {
             top: 0,
             left: 0,
             width: 0,
             height: 0
           };
-          return _this86;
+          return _this85;
         }
 
         _createClass(ChartDonutContentPlugin, [{
@@ -40958,15 +39968,15 @@
       var XYGridConfig = /*#__PURE__*/function (_grid_config__WEBPACK) {
         _inherits(XYGridConfig, _grid_config__WEBPACK);
 
-        var _super37 = _createSuper(XYGridConfig);
+        var _super35 = _createSuper(XYGridConfig);
 
         function XYGridConfig() {
-          var _this87;
+          var _this86;
 
           _classCallCheck(this, XYGridConfig);
 
-          _this87 = _super37.call(this);
-          _this87.axis = {
+          _this86 = _super35.call(this);
+          _this86.axis = {
             top: new _axis_config__WEBPACK_IMPORTED_MODULE_0__["AxisConfig"](),
             right: new _axis_config__WEBPACK_IMPORTED_MODULE_0__["AxisConfig"](),
             bottom: new _axis_config__WEBPACK_IMPORTED_MODULE_0__["AxisConfig"](),
@@ -40974,21 +39984,21 @@
           }; // We should avoid this kind of option in future versions of XYGrid and XYGridConfig
           // because ideally all plugins should be added manually (NUI-3304).
 
-          _this87.interactionPlugins = true;
-          _this87.dimension.padding = Object.assign({}, XYGridConfig.DEFAULT_PADDING);
-          _this87.dimension.margin = Object.assign({}, XYGridConfig.DEFAULT_MARGIN);
-          _this87.borders.bottom = new _border_config__WEBPACK_IMPORTED_MODULE_1__["BorderConfig"]("nui-chart-border nui-chart-border--thick");
-          _this87.borders.left = new _border_config__WEBPACK_IMPORTED_MODULE_1__["BorderConfig"]("nui-chart-border nui-chart-border--thick");
-          _this87.borders.left.visible = false; // TODO: figure out if this is the valid default
+          _this86.interactionPlugins = true;
+          _this86.dimension.padding = Object.assign({}, XYGridConfig.DEFAULT_PADDING);
+          _this86.dimension.margin = Object.assign({}, XYGridConfig.DEFAULT_MARGIN);
+          _this86.borders.bottom = new _border_config__WEBPACK_IMPORTED_MODULE_1__["BorderConfig"]("nui-chart-border nui-chart-border--thick");
+          _this86.borders.left = new _border_config__WEBPACK_IMPORTED_MODULE_1__["BorderConfig"]("nui-chart-border nui-chart-border--thick");
+          _this86.borders.left.visible = false; // TODO: figure out if this is the valid default
 
-          _this87.axis.left.gridTicks = true;
-          _this87.axis.left.tickSize = 0;
-          _this87.axis.left.padding = 10;
-          _this87.axis.right.fit = true;
-          _this87.axis.right.tickSize = 0;
-          _this87.axis.right.padding = 10;
-          _this87.axis.bottom.tickLabel.horizontalPadding = 5;
-          return _this87;
+          _this86.axis.left.gridTicks = true;
+          _this86.axis.left.tickSize = 0;
+          _this86.axis.left.padding = 10;
+          _this86.axis.right.fit = true;
+          _this86.axis.right.tickSize = 0;
+          _this86.axis.right.padding = 10;
+          _this86.axis.bottom.tickLabel.horizontalPadding = 5;
+          return _this86;
         }
 
         return XYGridConfig;
@@ -41045,16 +40055,16 @@
       var SequentialColorProvider = /*#__PURE__*/function (_sequential_value_pro2) {
         _inherits(SequentialColorProvider, _sequential_value_pro2);
 
-        var _super38 = _createSuper(SequentialColorProvider);
+        var _super36 = _createSuper(SequentialColorProvider);
 
         function SequentialColorProvider(colors) {
-          var _this88;
+          var _this87;
 
           _classCallCheck(this, SequentialColorProvider);
 
-          _this88 = _super38.call(this, colors);
-          _this88.colors = colors;
-          return _this88;
+          _this87 = _super36.call(this, colors);
+          _this87.colors = colors;
+          return _this87;
         }
 
         return SequentialColorProvider;
@@ -41166,37 +40176,6 @@
       };
       /***/
 
-    },
-
-    /***/
-    "oV0g":
-    /*!**********************************************************************!*\
-      !*** ./node_modules/d3-transition/node_modules/d3-color/src/math.js ***!
-      \**********************************************************************/
-
-    /*! exports provided: deg2rad, rad2deg */
-
-    /***/
-    function oV0g(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "deg2rad", function () {
-        return deg2rad;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "rad2deg", function () {
-        return rad2deg;
-      });
-
-      var deg2rad = Math.PI / 180;
-      var rad2deg = 180 / Math.PI;
-      /***/
     },
 
     /***/
@@ -41361,10 +40340,10 @@
       }
 
       function radial(chartSeriesSet) {
-        var _this89 = this;
+        var _this88 = this;
 
         return radialPreprocessor(chartSeriesSet, function (series) {
-          return !_this89.isSeriesHidden(series.id);
+          return !_this88.isSeriesHidden(series.id);
         });
       }
       /***/
@@ -41392,6 +40371,432 @@
         node.document && node // node is a Window
         || node.defaultView; // node is a Document
       };
+      /***/
+
+    },
+
+    /***/
+    "ozvG":
+    /*!************************************************************************!*\
+      !*** ./node_modules/d3-interpolate/node_modules/d3-color/src/color.js ***!
+      \************************************************************************/
+
+    /*! exports provided: Color, darker, brighter, default, rgbConvert, rgb, Rgb, hslConvert, hsl */
+
+    /***/
+    function ozvG(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "Color", function () {
+        return Color;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "darker", function () {
+        return _darker2;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "brighter", function () {
+        return _brighter2;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "default", function () {
+        return color;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "rgbConvert", function () {
+        return rgbConvert;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "rgb", function () {
+        return rgb;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "Rgb", function () {
+        return Rgb;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "hslConvert", function () {
+        return hslConvert;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "hsl", function () {
+        return hsl;
+      });
+      /* harmony import */
+
+
+      var _define_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! ./define.js */
+      "xGXq");
+
+      function Color() {}
+
+      var _darker2 = 0.7;
+
+      var _brighter2 = 1 / _darker2;
+
+      var reI = "\\s*([+-]?\\d+)\\s*",
+          reN = "\\s*([+-]?\\d*\\.?\\d+(?:[eE][+-]?\\d+)?)\\s*",
+          reP = "\\s*([+-]?\\d*\\.?\\d+(?:[eE][+-]?\\d+)?)%\\s*",
+          reHex = /^#([0-9a-f]{3,8})$/,
+          reRgbInteger = new RegExp("^rgb\\(" + [reI, reI, reI] + "\\)$"),
+          reRgbPercent = new RegExp("^rgb\\(" + [reP, reP, reP] + "\\)$"),
+          reRgbaInteger = new RegExp("^rgba\\(" + [reI, reI, reI, reN] + "\\)$"),
+          reRgbaPercent = new RegExp("^rgba\\(" + [reP, reP, reP, reN] + "\\)$"),
+          reHslPercent = new RegExp("^hsl\\(" + [reN, reP, reP] + "\\)$"),
+          reHslaPercent = new RegExp("^hsla\\(" + [reN, reP, reP, reN] + "\\)$");
+      var named = {
+        aliceblue: 0xf0f8ff,
+        antiquewhite: 0xfaebd7,
+        aqua: 0x00ffff,
+        aquamarine: 0x7fffd4,
+        azure: 0xf0ffff,
+        beige: 0xf5f5dc,
+        bisque: 0xffe4c4,
+        black: 0x000000,
+        blanchedalmond: 0xffebcd,
+        blue: 0x0000ff,
+        blueviolet: 0x8a2be2,
+        brown: 0xa52a2a,
+        burlywood: 0xdeb887,
+        cadetblue: 0x5f9ea0,
+        chartreuse: 0x7fff00,
+        chocolate: 0xd2691e,
+        coral: 0xff7f50,
+        cornflowerblue: 0x6495ed,
+        cornsilk: 0xfff8dc,
+        crimson: 0xdc143c,
+        cyan: 0x00ffff,
+        darkblue: 0x00008b,
+        darkcyan: 0x008b8b,
+        darkgoldenrod: 0xb8860b,
+        darkgray: 0xa9a9a9,
+        darkgreen: 0x006400,
+        darkgrey: 0xa9a9a9,
+        darkkhaki: 0xbdb76b,
+        darkmagenta: 0x8b008b,
+        darkolivegreen: 0x556b2f,
+        darkorange: 0xff8c00,
+        darkorchid: 0x9932cc,
+        darkred: 0x8b0000,
+        darksalmon: 0xe9967a,
+        darkseagreen: 0x8fbc8f,
+        darkslateblue: 0x483d8b,
+        darkslategray: 0x2f4f4f,
+        darkslategrey: 0x2f4f4f,
+        darkturquoise: 0x00ced1,
+        darkviolet: 0x9400d3,
+        deeppink: 0xff1493,
+        deepskyblue: 0x00bfff,
+        dimgray: 0x696969,
+        dimgrey: 0x696969,
+        dodgerblue: 0x1e90ff,
+        firebrick: 0xb22222,
+        floralwhite: 0xfffaf0,
+        forestgreen: 0x228b22,
+        fuchsia: 0xff00ff,
+        gainsboro: 0xdcdcdc,
+        ghostwhite: 0xf8f8ff,
+        gold: 0xffd700,
+        goldenrod: 0xdaa520,
+        gray: 0x808080,
+        green: 0x008000,
+        greenyellow: 0xadff2f,
+        grey: 0x808080,
+        honeydew: 0xf0fff0,
+        hotpink: 0xff69b4,
+        indianred: 0xcd5c5c,
+        indigo: 0x4b0082,
+        ivory: 0xfffff0,
+        khaki: 0xf0e68c,
+        lavender: 0xe6e6fa,
+        lavenderblush: 0xfff0f5,
+        lawngreen: 0x7cfc00,
+        lemonchiffon: 0xfffacd,
+        lightblue: 0xadd8e6,
+        lightcoral: 0xf08080,
+        lightcyan: 0xe0ffff,
+        lightgoldenrodyellow: 0xfafad2,
+        lightgray: 0xd3d3d3,
+        lightgreen: 0x90ee90,
+        lightgrey: 0xd3d3d3,
+        lightpink: 0xffb6c1,
+        lightsalmon: 0xffa07a,
+        lightseagreen: 0x20b2aa,
+        lightskyblue: 0x87cefa,
+        lightslategray: 0x778899,
+        lightslategrey: 0x778899,
+        lightsteelblue: 0xb0c4de,
+        lightyellow: 0xffffe0,
+        lime: 0x00ff00,
+        limegreen: 0x32cd32,
+        linen: 0xfaf0e6,
+        magenta: 0xff00ff,
+        maroon: 0x800000,
+        mediumaquamarine: 0x66cdaa,
+        mediumblue: 0x0000cd,
+        mediumorchid: 0xba55d3,
+        mediumpurple: 0x9370db,
+        mediumseagreen: 0x3cb371,
+        mediumslateblue: 0x7b68ee,
+        mediumspringgreen: 0x00fa9a,
+        mediumturquoise: 0x48d1cc,
+        mediumvioletred: 0xc71585,
+        midnightblue: 0x191970,
+        mintcream: 0xf5fffa,
+        mistyrose: 0xffe4e1,
+        moccasin: 0xffe4b5,
+        navajowhite: 0xffdead,
+        navy: 0x000080,
+        oldlace: 0xfdf5e6,
+        olive: 0x808000,
+        olivedrab: 0x6b8e23,
+        orange: 0xffa500,
+        orangered: 0xff4500,
+        orchid: 0xda70d6,
+        palegoldenrod: 0xeee8aa,
+        palegreen: 0x98fb98,
+        paleturquoise: 0xafeeee,
+        palevioletred: 0xdb7093,
+        papayawhip: 0xffefd5,
+        peachpuff: 0xffdab9,
+        peru: 0xcd853f,
+        pink: 0xffc0cb,
+        plum: 0xdda0dd,
+        powderblue: 0xb0e0e6,
+        purple: 0x800080,
+        rebeccapurple: 0x663399,
+        red: 0xff0000,
+        rosybrown: 0xbc8f8f,
+        royalblue: 0x4169e1,
+        saddlebrown: 0x8b4513,
+        salmon: 0xfa8072,
+        sandybrown: 0xf4a460,
+        seagreen: 0x2e8b57,
+        seashell: 0xfff5ee,
+        sienna: 0xa0522d,
+        silver: 0xc0c0c0,
+        skyblue: 0x87ceeb,
+        slateblue: 0x6a5acd,
+        slategray: 0x708090,
+        slategrey: 0x708090,
+        snow: 0xfffafa,
+        springgreen: 0x00ff7f,
+        steelblue: 0x4682b4,
+        tan: 0xd2b48c,
+        teal: 0x008080,
+        thistle: 0xd8bfd8,
+        tomato: 0xff6347,
+        turquoise: 0x40e0d0,
+        violet: 0xee82ee,
+        wheat: 0xf5deb3,
+        white: 0xffffff,
+        whitesmoke: 0xf5f5f5,
+        yellow: 0xffff00,
+        yellowgreen: 0x9acd32
+      };
+      Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["default"])(Color, color, {
+        copy: function copy(channels) {
+          return Object.assign(new this.constructor(), this, channels);
+        },
+        displayable: function displayable() {
+          return this.rgb().displayable();
+        },
+        hex: color_formatHex,
+        // Deprecated! Use color.formatHex.
+        formatHex: color_formatHex,
+        formatHsl: color_formatHsl,
+        formatRgb: color_formatRgb,
+        toString: color_formatRgb
+      });
+
+      function color_formatHex() {
+        return this.rgb().formatHex();
+      }
+
+      function color_formatHsl() {
+        return hslConvert(this).formatHsl();
+      }
+
+      function color_formatRgb() {
+        return this.rgb().formatRgb();
+      }
+
+      function color(format) {
+        var m, l;
+        format = (format + "").trim().toLowerCase();
+        return (m = reHex.exec(format)) ? (l = m[1].length, m = parseInt(m[1], 16), l === 6 ? rgbn(m) // #ff0000
+        : l === 3 ? new Rgb(m >> 8 & 0xf | m >> 4 & 0xf0, m >> 4 & 0xf | m & 0xf0, (m & 0xf) << 4 | m & 0xf, 1) // #f00
+        : l === 8 ? rgba(m >> 24 & 0xff, m >> 16 & 0xff, m >> 8 & 0xff, (m & 0xff) / 0xff) // #ff000000
+        : l === 4 ? rgba(m >> 12 & 0xf | m >> 8 & 0xf0, m >> 8 & 0xf | m >> 4 & 0xf0, m >> 4 & 0xf | m & 0xf0, ((m & 0xf) << 4 | m & 0xf) / 0xff) // #f000
+        : null // invalid hex
+        ) : (m = reRgbInteger.exec(format)) ? new Rgb(m[1], m[2], m[3], 1) // rgb(255, 0, 0)
+        : (m = reRgbPercent.exec(format)) ? new Rgb(m[1] * 255 / 100, m[2] * 255 / 100, m[3] * 255 / 100, 1) // rgb(100%, 0%, 0%)
+        : (m = reRgbaInteger.exec(format)) ? rgba(m[1], m[2], m[3], m[4]) // rgba(255, 0, 0, 1)
+        : (m = reRgbaPercent.exec(format)) ? rgba(m[1] * 255 / 100, m[2] * 255 / 100, m[3] * 255 / 100, m[4]) // rgb(100%, 0%, 0%, 1)
+        : (m = reHslPercent.exec(format)) ? hsla(m[1], m[2] / 100, m[3] / 100, 1) // hsl(120, 50%, 50%)
+        : (m = reHslaPercent.exec(format)) ? hsla(m[1], m[2] / 100, m[3] / 100, m[4]) // hsla(120, 50%, 50%, 1)
+        : named.hasOwnProperty(format) ? rgbn(named[format]) // eslint-disable-line no-prototype-builtins
+        : format === "transparent" ? new Rgb(NaN, NaN, NaN, 0) : null;
+      }
+
+      function rgbn(n) {
+        return new Rgb(n >> 16 & 0xff, n >> 8 & 0xff, n & 0xff, 1);
+      }
+
+      function rgba(r, g, b, a) {
+        if (a <= 0) r = g = b = NaN;
+        return new Rgb(r, g, b, a);
+      }
+
+      function rgbConvert(o) {
+        if (!(o instanceof Color)) o = color(o);
+        if (!o) return new Rgb();
+        o = o.rgb();
+        return new Rgb(o.r, o.g, o.b, o.opacity);
+      }
+
+      function rgb(r, g, b, opacity) {
+        return arguments.length === 1 ? rgbConvert(r) : new Rgb(r, g, b, opacity == null ? 1 : opacity);
+      }
+
+      function Rgb(r, g, b, opacity) {
+        this.r = +r;
+        this.g = +g;
+        this.b = +b;
+        this.opacity = +opacity;
+      }
+
+      Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["default"])(Rgb, rgb, Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["extend"])(Color, {
+        brighter: function brighter(k) {
+          k = k == null ? _brighter2 : Math.pow(_brighter2, k);
+          return new Rgb(this.r * k, this.g * k, this.b * k, this.opacity);
+        },
+        darker: function darker(k) {
+          k = k == null ? _darker2 : Math.pow(_darker2, k);
+          return new Rgb(this.r * k, this.g * k, this.b * k, this.opacity);
+        },
+        rgb: function rgb() {
+          return this;
+        },
+        displayable: function displayable() {
+          return -0.5 <= this.r && this.r < 255.5 && -0.5 <= this.g && this.g < 255.5 && -0.5 <= this.b && this.b < 255.5 && 0 <= this.opacity && this.opacity <= 1;
+        },
+        hex: rgb_formatHex,
+        // Deprecated! Use color.formatHex.
+        formatHex: rgb_formatHex,
+        formatRgb: rgb_formatRgb,
+        toString: rgb_formatRgb
+      }));
+
+      function rgb_formatHex() {
+        return "#" + hex(this.r) + hex(this.g) + hex(this.b);
+      }
+
+      function rgb_formatRgb() {
+        var a = this.opacity;
+        a = isNaN(a) ? 1 : Math.max(0, Math.min(1, a));
+        return (a === 1 ? "rgb(" : "rgba(") + Math.max(0, Math.min(255, Math.round(this.r) || 0)) + ", " + Math.max(0, Math.min(255, Math.round(this.g) || 0)) + ", " + Math.max(0, Math.min(255, Math.round(this.b) || 0)) + (a === 1 ? ")" : ", " + a + ")");
+      }
+
+      function hex(value) {
+        value = Math.max(0, Math.min(255, Math.round(value) || 0));
+        return (value < 16 ? "0" : "") + value.toString(16);
+      }
+
+      function hsla(h, s, l, a) {
+        if (a <= 0) h = s = l = NaN;else if (l <= 0 || l >= 1) h = s = NaN;else if (s <= 0) h = NaN;
+        return new Hsl(h, s, l, a);
+      }
+
+      function hslConvert(o) {
+        if (o instanceof Hsl) return new Hsl(o.h, o.s, o.l, o.opacity);
+        if (!(o instanceof Color)) o = color(o);
+        if (!o) return new Hsl();
+        if (o instanceof Hsl) return o;
+        o = o.rgb();
+        var r = o.r / 255,
+            g = o.g / 255,
+            b = o.b / 255,
+            min = Math.min(r, g, b),
+            max = Math.max(r, g, b),
+            h = NaN,
+            s = max - min,
+            l = (max + min) / 2;
+
+        if (s) {
+          if (r === max) h = (g - b) / s + (g < b) * 6;else if (g === max) h = (b - r) / s + 2;else h = (r - g) / s + 4;
+          s /= l < 0.5 ? max + min : 2 - max - min;
+          h *= 60;
+        } else {
+          s = l > 0 && l < 1 ? 0 : h;
+        }
+
+        return new Hsl(h, s, l, o.opacity);
+      }
+
+      function hsl(h, s, l, opacity) {
+        return arguments.length === 1 ? hslConvert(h) : new Hsl(h, s, l, opacity == null ? 1 : opacity);
+      }
+
+      function Hsl(h, s, l, opacity) {
+        this.h = +h;
+        this.s = +s;
+        this.l = +l;
+        this.opacity = +opacity;
+      }
+
+      Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["default"])(Hsl, hsl, Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["extend"])(Color, {
+        brighter: function brighter(k) {
+          k = k == null ? _brighter2 : Math.pow(_brighter2, k);
+          return new Hsl(this.h, this.s, this.l * k, this.opacity);
+        },
+        darker: function darker(k) {
+          k = k == null ? _darker2 : Math.pow(_darker2, k);
+          return new Hsl(this.h, this.s, this.l * k, this.opacity);
+        },
+        rgb: function rgb() {
+          var h = this.h % 360 + (this.h < 0) * 360,
+              s = isNaN(h) || isNaN(this.s) ? 0 : this.s,
+              l = this.l,
+              m2 = l + (l < 0.5 ? l : 1 - l) * s,
+              m1 = 2 * l - m2;
+          return new Rgb(hsl2rgb(h >= 240 ? h - 240 : h + 120, m1, m2), hsl2rgb(h, m1, m2), hsl2rgb(h < 120 ? h + 240 : h - 120, m1, m2), this.opacity);
+        },
+        displayable: function displayable() {
+          return (0 <= this.s && this.s <= 1 || isNaN(this.s)) && 0 <= this.l && this.l <= 1 && 0 <= this.opacity && this.opacity <= 1;
+        },
+        formatHsl: function formatHsl() {
+          var a = this.opacity;
+          a = isNaN(a) ? 1 : Math.max(0, Math.min(1, a));
+          return (a === 1 ? "hsl(" : "hsla(") + (this.h || 0) + ", " + (this.s || 0) * 100 + "%, " + (this.l || 0) * 100 + "%" + (a === 1 ? ")" : ", " + a + ")");
+        }
+      }));
+      /* From FvD 13.37, CSS Color Module Level 3 */
+
+      function hsl2rgb(h, m1, m2) {
+        return (h < 60 ? m1 + (m2 - m1) * h / 60 : h < 180 ? m2 : h < 240 ? m1 + (m2 - m1) * (240 - h) / 60 : m1) * 255;
+      }
       /***/
 
     },
@@ -41497,29 +40902,29 @@
       var LineAccessors = /*#__PURE__*/function (_accessors_xy_accesso) {
         _inherits(LineAccessors, _accessors_xy_accesso);
 
-        var _super39 = _createSuper(LineAccessors);
+        var _super37 = _createSuper(LineAccessors);
 
         function LineAccessors() {
-          var _this90;
+          var _this89;
 
           var colorProvider = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : Object(_core_common_palette_default_providers__WEBPACK_IMPORTED_MODULE_0__["defaultColorProvider"])();
           var markerProvider = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : Object(_core_common_palette_default_providers__WEBPACK_IMPORTED_MODULE_0__["defaultMarkerProvider"])();
 
           _classCallCheck(this, LineAccessors);
 
-          _this90 = _super39.call(this);
-          _this90.colorProvider = colorProvider;
-          _this90.markerProvider = markerProvider;
+          _this89 = _super37.call(this);
+          _this89.colorProvider = colorProvider;
+          _this89.markerProvider = markerProvider;
 
-          _this90.data.defined = function (d, i) {
+          _this89.data.defined = function (d, i) {
             return d.hasOwnProperty("defined") ? d.defined : true;
           };
 
-          _this90.series = {
-            color: _this90.colorProvider ? _this90.colorProvider.get : undefined,
-            marker: _this90.markerProvider ? _this90.markerProvider.get : undefined
+          _this89.series = {
+            color: _this89.colorProvider ? _this89.colorProvider.get : undefined,
+            marker: _this89.markerProvider ? _this89.markerProvider.get : undefined
           };
-          return _this90;
+          return _this89;
         }
 
         return LineAccessors;
@@ -42596,89 +42001,6 @@
     },
 
     /***/
-    "qXv/":
-    /*!***********************************************************************!*\
-      !*** ./node_modules/d3-transition/node_modules/d3-color/src/index.js ***!
-      \***********************************************************************/
-
-    /*! exports provided: color, rgb, hsl, lab, hcl, lch, gray, cubehelix */
-
-    /***/
-    function qXv(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony import */
-
-
-      var _color_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! ./color.js */
-      "3lC8");
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "color", function () {
-        return _color_js__WEBPACK_IMPORTED_MODULE_0__["default"];
-      });
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "rgb", function () {
-        return _color_js__WEBPACK_IMPORTED_MODULE_0__["rgb"];
-      });
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "hsl", function () {
-        return _color_js__WEBPACK_IMPORTED_MODULE_0__["hsl"];
-      });
-      /* harmony import */
-
-
-      var _lab_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-      /*! ./lab.js */
-      "/zD8");
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "lab", function () {
-        return _lab_js__WEBPACK_IMPORTED_MODULE_1__["default"];
-      });
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "hcl", function () {
-        return _lab_js__WEBPACK_IMPORTED_MODULE_1__["hcl"];
-      });
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "lch", function () {
-        return _lab_js__WEBPACK_IMPORTED_MODULE_1__["lch"];
-      });
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "gray", function () {
-        return _lab_js__WEBPACK_IMPORTED_MODULE_1__["gray"];
-      });
-      /* harmony import */
-
-
-      var _cubehelix_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-      /*! ./cubehelix.js */
-      "Ov49");
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "cubehelix", function () {
-        return _cubehelix_js__WEBPACK_IMPORTED_MODULE_2__["default"];
-      });
-      /***/
-
-    },
-
-    /***/
     "qYyZ":
     /*!*******************************!*\
       !*** ./src/core/grid/grid.ts ***!
@@ -42756,7 +42078,7 @@
 
       var Grid = /*#__PURE__*/function () {
         function Grid() {
-          var _this91 = this;
+          var _this90 = this;
 
           _classCallCheck(this, Grid);
 
@@ -42767,7 +42089,7 @@
            */
 
           this.adjustRenderingArea = function () {
-            var d = _this91.config().dimension;
+            var d = _this90.config().dimension;
 
             var renderingAreaClipPathAttrs = {
               "width": d.width(),
@@ -42779,9 +42101,9 @@
               "width": d.width() > 0 ? d.width() - Grid.RENDER_AREA_WIDTH_CORRECTION : d.width()
             });
 
-            _this91.renderingAreaClipPath.attrs(renderingAreaClipPathAttrs);
+            _this90.renderingAreaClipPath.attrs(renderingAreaClipPathAttrs);
 
-            _this91.renderingArea.attrs(renderingAreaAttrs);
+            _this90.renderingArea.attrs(renderingAreaAttrs);
           };
         }
         /** See {@link IGrid#getInteractiveArea} */
@@ -42943,7 +42265,7 @@
         }, {
           key: "buildBorders",
           value: function buildBorders(container) {
-            var _this92 = this;
+            var _this91 = this;
 
             if (!this.config() || !this.config().borders) {
               return;
@@ -42957,7 +42279,7 @@
 
 
               if (borderConfigs[side]) {
-                borders[side] = (_a = _this92.createBorder(container, borderConfigs[side])) !== null && _a !== void 0 ? _a : undefined;
+                borders[side] = (_a = _this91.createBorder(container, borderConfigs[side])) !== null && _a !== void 0 ? _a : undefined;
               }
             });
             return borders;
@@ -43295,32 +42617,32 @@
       var HorizontalBarAccessors = /*#__PURE__*/function (_bar_accessors__WEBPA2) {
         _inherits(HorizontalBarAccessors, _bar_accessors__WEBPA2);
 
-        var _super40 = _createSuper(HorizontalBarAccessors);
+        var _super38 = _createSuper(HorizontalBarAccessors);
 
         function HorizontalBarAccessors(colorProvider, markerProvider) {
-          var _this93;
+          var _this92;
 
           _classCallCheck(this, HorizontalBarAccessors);
 
-          _this93 = _super40.call(this, colorProvider, markerProvider);
-          _this93.data = Object.assign(Object.assign({}, _this93.data), {
+          _this92 = _super38.call(this, colorProvider, markerProvider);
+          _this92.data = Object.assign(Object.assign({}, _this92.data), {
             startX: function startX(d, i, s, ds) {
-              return _this93.data.start(d, i, s, ds);
+              return _this92.data.start(d, i, s, ds);
             },
             endX: function endX(d, i, s, ds) {
-              return _this93.data.end(d, i, s, ds);
+              return _this92.data.end(d, i, s, ds);
             },
             startY: function startY(d, i, s, ds) {
-              return _this93.data.category(d, i, s, ds);
+              return _this92.data.category(d, i, s, ds);
             },
             endY: function endY(d, i, s, ds) {
-              return _this93.data.category(d, i, s, ds);
+              return _this92.data.category(d, i, s, ds);
             },
             thicknessY: function thicknessY(d, i, s, ds) {
-              return _this93.data.thickness ? _this93.data.thickness(d, i, s, ds) : undefined;
+              return _this92.data.thickness ? _this92.data.thickness(d, i, s, ds) : undefined;
             }
           });
-          return _this93;
+          return _this92;
         }
 
         return HorizontalBarAccessors;
@@ -43759,7 +43081,7 @@
       !*** ./src/renderers/constants.ts ***!
       \************************************/
 
-    /*! exports provided: THRESHOLDS_MAIN_CHART_RENDERER_CONFIG, THRESHOLDS_SUMMARY_RENDERER_CONFIG, DEFAULT_MARKER_INTERACTION_CONFIG, GAUGE_THRESHOLD_MARKER_CLASS */
+    /*! exports provided: THRESHOLDS_MAIN_CHART_RENDERER_CONFIG, THRESHOLDS_SUMMARY_RENDERER_CONFIG, DEFAULT_MARKER_INTERACTION_CONFIG */
 
     /***/
     function s8k4(module, __webpack_exports__, __webpack_require__) {
@@ -43785,12 +43107,6 @@
 
       __webpack_require__.d(__webpack_exports__, "DEFAULT_MARKER_INTERACTION_CONFIG", function () {
         return DEFAULT_MARKER_INTERACTION_CONFIG;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "GAUGE_THRESHOLD_MARKER_CLASS", function () {
-        return GAUGE_THRESHOLD_MARKER_CLASS;
       });
       /* harmony import */
 
@@ -43833,12 +43149,6 @@
         enabled: false,
         clickable: false
       };
-      /**
-       * @ignore
-       * Class name for gauge threshold markers
-       */
-
-      var GAUGE_THRESHOLD_MARKER_CLASS = "gauge-threshold-marker";
       /***/
     },
 
@@ -44000,11 +43310,11 @@
         }, {
           key: "ngAfterContentInit",
           value: function ngAfterContentInit() {
-            var _this94 = this;
+            var _this93 = this;
 
             if (this.legend) {
               this.legend.activeChanged.subscribe(function (active) {
-                return _this94._active = active;
+                return _this93._active = active;
               });
               this.icon = this.icon || this.legend.seriesIcon;
               this._active = this.legend.active;
@@ -44906,6 +44216,145 @@
 
 
       __webpack_exports__["default"] = ":host.nui-legend-series {\n  padding: 2px;\n  max-width: 250px;\n  cursor: default;\n  background-color: var(--nui-color-bg-content,#fff);\n}\n:host.nui-legend-series:not(.nui-legend-series--horizontal):not(:last-child) {\n  margin-bottom: 1px;\n}\n:host.nui-legend-series :host.nui-legend-series__tile-wrapper {\n  display: flex;\n  justify-content: center;\n}\n:host.nui-legend-series :host.nui-legend-series__tile {\n  display: flex;\n}\n:host.nui-legend-series--horizontal:not(:last-child) {\n  margin-right: 10px;\n}\n:host.nui-legend-series :empty {\n  display: none;\n}\n:host.nui-legend-series .description {\n  line-height: 18px;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  overflow: hidden;\n  padding-left: 5px;\n  padding-right: 5px;\n  min-width: 130px;\n}\n:host.nui-legend-series .description-container {\n  overflow: hidden;\n}\n:host.nui-legend-series .description-primary {\n  font-weight: 600;\n  color: var(--nui-color-text-default,#111);\n}\n:host.nui-legend-series .description-primary:not(:last-child) {\n  margin-bottom: -3px;\n}\n:host.nui-legend-series .description-secondary {\n  color: var(--nui-color-text-secondary,rgba(17, 17, 17, 0.6));\n}\n:host.nui-legend-series .description-secondary:not(:first-child) {\n  margin-top: -1px;\n}\n:host.nui-legend-series--interactive {\n  cursor: pointer;\n}\n:host.nui-legend-series--interactive .nui-legend-series__tile-wrapper {\n  position: relative;\n}\n:host.nui-legend-series--interactive .nui-legend-series__tile-wrapper .nui-legend-series__checkbox-wrapper {\n  align-self: center;\n  position: absolute;\n  visibility: hidden;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n:host.nui-legend-series--interactive .nui-legend-series__tile-wrapper .nui-legend-series__checkbox-mark {\n  border: solid 2px;\n  background: no-repeat 0 center;\n  border-color: var(--nui-color-active,#0079aa);\n  background-color: var(--nui-color-bg-content,#fff);\n  background-size: 16px;\n  border-radius: 3px;\n  min-width: 16px;\n  width: 16px;\n  height: 16px;\n  transition: background-color 0.3s, border-color 0.3s;\n}\n:host.nui-legend-series--interactive .nui-legend-series__tile-wrapper .nui-legend-series__checkbox-glyph {\n  width: 100%;\n  height: 100%;\n  background-size: 12px;\n  background-image: url(\"data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIKCSB2aWV3Qm94PSIwIDAgMjAgMjAiIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMjAgMjA7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS54dWktY2hlY2tib3gtZ2x5cGh7ZmlsbDpub25lO3N0cm9rZTojRkZGRkZGO3N0cm9rZS13aWR0aDozO3N0cm9rZS1taXRlcmxpbWl0OjEwO3N0cm9rZS1saW5lY2FwOnJvdW5kO30KPC9zdHlsZT4KPHBvbHlsaW5lIGNsYXNzPSJ4dWktY2hlY2tib3gtZ2x5cGgiIHBvaW50cz0iMTcsNCA4LDE1IDMsOSAiLz4KPC9zdmc+\");\n  display: none;\n}\n:host.nui-legend-series--interactive .nui-legend-series__tile-wrapper .nui-legend-series__checkbox--checked .nui-legend-series__checkbox-mark {\n  background-color: var(--nui-color-active,#0079aa);\n  border-color: var(--nui-color-active,#0079aa);\n}\n:host.nui-legend-series--interactive .nui-legend-series__tile-wrapper .nui-legend-series__checkbox--checked .nui-legend-series__checkbox-mark > .nui-legend-series__checkbox-glyph {\n  display: block;\n}\n:host.nui-legend-series--interactive .nui-legend-series--deselected .nui-legend-series__checkbox-wrapper,\n:host.nui-legend-series--interactive .nui-legend-series__tile-wrapper:hover .nui-legend-series__checkbox-wrapper {\n  visibility: visible;\n}\n:host.nui-legend-series--interactive .nui-legend-series--deselected .nui-legend-series__tile,\n:host.nui-legend-series--interactive .nui-legend-series__tile-wrapper:hover .nui-legend-series__tile {\n  visibility: hidden;\n}\n:host.nui-legend-series--interactive .nui-legend-series__tile-wrapper:hover {\n  background-color: var(--nui-color-bg-transparent-hover,rgba(17, 17, 17, 0.05));\n}\n:host.nui-legend-series--interactive:hover {\n  background-color: var(--nui-color-bg-light-hover,#f2f2f2);\n}\n:host.nui-legend-series--interactive:hover .nui-legend-series--deselected .nui-legend-series__tile-wrapper {\n  background-color: var(--nui-color-bg-transparent-hover,rgba(17, 17, 17, 0.05));\n}\n:host.nui-legend-series--interactive:not(:hover) .nui-legend-series--deselected .nui-legend-series__tile-wrapper {\n  background-color: var(--nui-color-bg-secondary,#fafafa);\n}\n:host.nui-legend-series:not(:hover) :host.nui-legend-series--state-hidden .description-container {\n  opacity: 0.3;\n}\n:host.nui-legend-series :host.nui-legend-series--state-deemphasized {\n  opacity: 0.3;\n}\n:host.description-min-width--unset .description {\n  min-width: unset;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImxlZ2VuZC1zZXJpZXMuY29tcG9uZW50Lmxlc3MiLCIuLi8uLi8uLi9ub2RlX21vZHVsZXMvQG5vdmEtdWkvYml0cy9zZGsvbGVzcy9taXhpbnMvY3NzLXZhcmlhYmxlcy5sZXNzIiwiLi4vLi4vLi4vbm9kZV9tb2R1bGVzL0Bub3ZhLXVpL2JpdHMvc2RrL2xlc3MvbWl4aW5zL2NoZWNrYm94Lmxlc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBUUk7RUFDSSxZQUFBO0VBQ0EsZ0JBQUE7RUFDQSxlQUFBO0VDTkosa0RBQUE7QURBSjtBQVNRO0VBQ0ksa0JBQUE7QUFQWjtBQVVRO0VBQ0ksYUFBQTtFQUNBLHVCQUFBO0FBUlo7QUFXUTtFQUNJLGFBQUE7QUFUWjtBQVlRO0VBQ0ksa0JBQUE7QUFWWjtBQWFRO0VBQ0ksYUFBQTtBQVhaO0FBY1E7RUFDSSxpQkFBQTtFQUNBLG1CQUFBO0VBQ0EsdUJBQUE7RUFDQSxnQkFBQTtFQUNBLGlCQUFBO0VBQ0Esa0JBQUE7RUFDQSxnQkFBQTtBQVpaO0FBY1k7RUFDSSxnQkFBQTtBQVpoQjtBQWVZO0VBQ0ksZ0JBQUE7RUM1Q1oseUNBQUE7QURnQ0o7QUFnQlk7RUFDSSxtQkFBQTtBQWRoQjtBQWlCWTtFQ3BEUiw0REFBQTtBRHNDSjtBQWtCWTtFQUNJLGdCQUFBO0FBaEJoQjtBQW9CUTtFQUNJLGVBQUE7QUFsQlo7QUFvQlk7RUFDSSxrQkFBQTtBQWxCaEI7QUFxQm9CO0VBQ0ksa0JBQUE7RUFDQSxrQkFBQTtFQUNBLGtCQUFBO0VBRUEsUUFBQTtFQUNBLFNBQUE7RUFDQSxnQ0FBQTtBQXBCeEI7QUF1Qm9CO0VFaEZoQixpQkFBQTtFQUNBLDhCQUFBO0VEQ0EsNkNBQUE7RUFBQSxrREFBQTtFQ0VBLHFCQUFBO0VBQ0Esa0JBQUE7RUFDQSxlQUFBO0VBQ0EsV0FBQTtFQUNBLFlBQUE7RUFDQSxvREFBQTtBRjRESjtBQWVvQjtFRXZFaEIsV0FBQTtFQUNBLFlBQUE7RUFDQSxxQkFBQTtFQUdBLG1yQkFBQTtFRm9Fb0IsYUFBQTtBQVZ4QjtBQWFvQjtFQ3ZGaEIsaURBQUE7RUFBQSw2Q0FBQTtBRDhFSjtBQVNvQjtFQU1ZLGNBQUE7QUFaaEM7QUFtQlk7O0VBR1EsbUJBQUE7QUFsQnBCO0FBZVk7O0VBT1Esa0JBQUE7QUFsQnBCO0FBc0JZO0VDL0dSLDhFQUFBO0FENEZKO0FBdUJZO0VDbkhSLHlEQUFBO0FEK0ZKO0FBb0JZO0VDbkhSLDhFQUFBO0FEa0dKO0FBMkJZO0VDN0hSLHVEQUFBO0FEcUdKO0FBaUNRO0VBRVEsWUFBQTtBQWhDaEI7QUFvQ1E7RUFDSSxZQUFBO0FBbENaO0FBc0NJO0VBRVEsZ0JBQUE7QUFyQ1oiLCJmaWxlIjoibGVnZW5kLXNlcmllcy5jb21wb25lbnQubGVzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgKHJlZmVyZW5jZSkgXCIuLi8uLi9zdHlsZXMubGVzc1wiO1xuQGltcG9ydCAocmVmZXJlbmNlKSBcIkBub3ZhLXVpL2JpdHMvc2RrL2xlc3MvbnVpLWZyYW1ld29yay12YXJpYWJsZXMubGVzc1wiO1xuQGltcG9ydCAocmVmZXJlbmNlKSBcIkBub3ZhLXVpL2JpdHMvc2RrL2xlc3MvbWl4aW5zLmxlc3NcIjtcblxuQG51aS1sZWdlbmQtc2VyaWVzLW1heC13aWR0aDogMjUwcHg7XG5AbnVpLWxlZ2VuZC1zZXJpZXMtZGVzY3JpcHRpb24tbWluLXdpZHRoOiAxMzBweDsgLy8gMTgwcHggZnJvbSBtb2NrdXBzIC0gNTBweCBmb3IgdGlsZVxuXG46aG9zdCB7XG4gICAgJi5udWktbGVnZW5kLXNlcmllcyB7XG4gICAgICAgIHBhZGRpbmc6IEBudWktc3BhY2UteHhzO1xuICAgICAgICBtYXgtd2lkdGg6IEBudWktbGVnZW5kLXNlcmllcy1tYXgtd2lkdGg7XG4gICAgICAgIGN1cnNvcjogZGVmYXVsdDsgLy8gdG8gcHJldmVudCB0ZXh0IHNlbGVjdGlvbiBjdXJzb3JcbiAgICAgICAgLnNldENzc1ZhcmlhYmxlKGJhY2tncm91bmQtY29sb3IsIG51aS1jb2xvci1iZy1jb250ZW50KTtcblxuICAgICAgICAmOm5vdCgubnVpLWxlZ2VuZC1zZXJpZXMtLWhvcml6b250YWwpOm5vdCg6bGFzdC1jaGlsZCkge1xuICAgICAgICAgICAgbWFyZ2luLWJvdHRvbTogMXB4O1xuICAgICAgICB9XG5cbiAgICAgICAgJiAmX190aWxlLXdyYXBwZXIge1xuICAgICAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICAgICAgICB9XG5cbiAgICAgICAgJiAmX190aWxlIHtcbiAgICAgICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgIH1cblxuICAgICAgICAmLS1ob3Jpem9udGFsOm5vdCg6bGFzdC1jaGlsZCkge1xuICAgICAgICAgICAgbWFyZ2luLXJpZ2h0OiBAbnVpLXNwYWNlLXNtO1xuICAgICAgICB9XG5cbiAgICAgICAgJiA6ZW1wdHkge1xuICAgICAgICAgICAgZGlzcGxheTogbm9uZTtcbiAgICAgICAgfVxuXG4gICAgICAgICYgLmRlc2NyaXB0aW9uIHtcbiAgICAgICAgICAgIGxpbmUtaGVpZ2h0OiBAbnVpLWxpbmUtaGVpZ2h0LWRlZmF1bHQ7XG4gICAgICAgICAgICB3aGl0ZS1zcGFjZTogbm93cmFwO1xuICAgICAgICAgICAgdGV4dC1vdmVyZmxvdzogZWxsaXBzaXM7XG4gICAgICAgICAgICBvdmVyZmxvdzogaGlkZGVuO1xuICAgICAgICAgICAgcGFkZGluZy1sZWZ0OiBAbnVpLXNwYWNlLXhzO1xuICAgICAgICAgICAgcGFkZGluZy1yaWdodDogQG51aS1zcGFjZS14cztcbiAgICAgICAgICAgIG1pbi13aWR0aDogQG51aS1sZWdlbmQtc2VyaWVzLWRlc2NyaXB0aW9uLW1pbi13aWR0aDtcblxuICAgICAgICAgICAgJi1jb250YWluZXIge1xuICAgICAgICAgICAgICAgIG92ZXJmbG93OiBoaWRkZW47XG4gICAgICAgICAgICB9XG5cbiAgICAgICAgICAgICYtcHJpbWFyeSB7XG4gICAgICAgICAgICAgICAgZm9udC13ZWlnaHQ6IEBudWktZm9udC13ZWlnaHQtc2VtaWJvbGQ7XG4gICAgICAgICAgICAgICAgLnNldENzc1ZhcmlhYmxlKGNvbG9yLCBudWktY29sb3ItdGV4dC1kZWZhdWx0KTtcbiAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgJi1wcmltYXJ5Om5vdCg6bGFzdC1jaGlsZCkge1xuICAgICAgICAgICAgICAgIG1hcmdpbi1ib3R0b206IC1AbnVpLWxlZ2VuZC1zZXJpZXMtY29udGVudC1tYXJnaW47XG4gICAgICAgICAgICB9XG5cbiAgICAgICAgICAgICYtc2Vjb25kYXJ5IHtcbiAgICAgICAgICAgICAgICAuc2V0Q3NzVmFyaWFibGUoY29sb3IsIG51aS1jb2xvci10ZXh0LXNlY29uZGFyeSk7XG4gICAgICAgICAgICB9XG5cbiAgICAgICAgICAgICYtc2Vjb25kYXJ5Om5vdCg6Zmlyc3QtY2hpbGQpIHtcbiAgICAgICAgICAgICAgICBtYXJnaW4tdG9wOiAtMXB4O1xuICAgICAgICAgICAgfVxuICAgICAgICB9XG5cbiAgICAgICAgJi0taW50ZXJhY3RpdmUge1xuICAgICAgICAgICAgY3Vyc29yOiBwb2ludGVyO1xuXG4gICAgICAgICAgICAmIC5udWktbGVnZW5kLXNlcmllc19fdGlsZS13cmFwcGVyIHtcbiAgICAgICAgICAgICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG5cbiAgICAgICAgICAgICAgICAubnVpLWxlZ2VuZC1zZXJpZXNfX2NoZWNrYm94IHtcbiAgICAgICAgICAgICAgICAgICAgJi13cmFwcGVyIHtcbiAgICAgICAgICAgICAgICAgICAgICAgIGFsaWduLXNlbGY6IGNlbnRlcjtcbiAgICAgICAgICAgICAgICAgICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICAgICAgICAgICAgICAgICAgICAgIHZpc2liaWxpdHk6IGhpZGRlbjtcblxuICAgICAgICAgICAgICAgICAgICAgICAgdG9wOiA1MCU7XG4gICAgICAgICAgICAgICAgICAgICAgICBsZWZ0OiA1MCU7XG4gICAgICAgICAgICAgICAgICAgICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcbiAgICAgICAgICAgICAgICAgICAgfVxuXG4gICAgICAgICAgICAgICAgICAgICYtbWFyayB7XG4gICAgICAgICAgICAgICAgICAgICAgICAubnVpLWNoZWNrYm94X19tYXJrKCk7XG4gICAgICAgICAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgICAgICAgICAmLWdseXBoIHtcbiAgICAgICAgICAgICAgICAgICAgICAgIC5udWktY2hlY2tib3hfX2dseXBoKCk7XG4gICAgICAgICAgICAgICAgICAgICAgICBkaXNwbGF5OiBub25lO1xuICAgICAgICAgICAgICAgICAgICB9XG5cbiAgICAgICAgICAgICAgICAgICAgJi0tY2hlY2tlZCB7XG4gICAgICAgICAgICAgICAgICAgICAgICAubnVpLWxlZ2VuZC1zZXJpZXNfX2NoZWNrYm94LW1hcmsge1xuICAgICAgICAgICAgICAgICAgICAgICAgICAgIC5zZXRDc3NWYXJpYWJsZShiYWNrZ3JvdW5kLWNvbG9yLCBudWktY29sb3ItYWN0aXZlKTtcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAuc2V0Q3NzVmFyaWFibGUoYm9yZGVyLWNvbG9yLCBudWktY29sb3ItYWN0aXZlKTtcblxuICAgICAgICAgICAgICAgICAgICAgICAgICAgID4gLm51aS1sZWdlbmQtc2VyaWVzX19jaGVja2JveC1nbHlwaCB7XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGRpc3BsYXk6IGJsb2NrO1xuICAgICAgICAgICAgICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgJiAubnVpLWxlZ2VuZC1zZXJpZXMtLWRlc2VsZWN0ZWQsXG4gICAgICAgICAgICAmIC5udWktbGVnZW5kLXNlcmllc19fdGlsZS13cmFwcGVyOmhvdmVyIHtcbiAgICAgICAgICAgICAgICAubnVpLWxlZ2VuZC1zZXJpZXNfX2NoZWNrYm94LXdyYXBwZXIge1xuICAgICAgICAgICAgICAgICAgICB2aXNpYmlsaXR5OiB2aXNpYmxlO1xuICAgICAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgICAgIC5udWktbGVnZW5kLXNlcmllc19fdGlsZSB7XG4gICAgICAgICAgICAgICAgICAgIHZpc2liaWxpdHk6IGhpZGRlbjtcbiAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICB9XG5cbiAgICAgICAgICAgICYgLm51aS1sZWdlbmQtc2VyaWVzX190aWxlLXdyYXBwZXI6aG92ZXIge1xuICAgICAgICAgICAgICAgIC5zZXRDc3NWYXJpYWJsZShiYWNrZ3JvdW5kLWNvbG9yLCBudWktY29sb3ItYmctdHJhbnNwYXJlbnQtaG92ZXIpO1xuICAgICAgICAgICAgfVxuXG4gICAgICAgICAgICAmOmhvdmVyIHtcbiAgICAgICAgICAgICAgICAuc2V0Q3NzVmFyaWFibGUoYmFja2dyb3VuZC1jb2xvciwgbnVpLWNvbG9yLWJnLWxpZ2h0LWhvdmVyKTtcblxuICAgICAgICAgICAgICAgIC5udWktbGVnZW5kLXNlcmllcy0tZGVzZWxlY3RlZCB7XG4gICAgICAgICAgICAgICAgICAgIC5udWktbGVnZW5kLXNlcmllc19fdGlsZS13cmFwcGVyIHtcbiAgICAgICAgICAgICAgICAgICAgICAgIC5zZXRDc3NWYXJpYWJsZShiYWNrZ3JvdW5kLWNvbG9yLCBudWktY29sb3ItYmctdHJhbnNwYXJlbnQtaG92ZXIpO1xuICAgICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgfVxuXG4gICAgICAgICAgICAmOm5vdCg6aG92ZXIpIHtcbiAgICAgICAgICAgICAgICAubnVpLWxlZ2VuZC1zZXJpZXMtLWRlc2VsZWN0ZWQge1xuICAgICAgICAgICAgICAgICAgICAubnVpLWxlZ2VuZC1zZXJpZXNfX3RpbGUtd3JhcHBlciB7XG4gICAgICAgICAgICAgICAgICAgICAgICAuc2V0Q3NzVmFyaWFibGUoYmFja2dyb3VuZC1jb2xvciwgbnVpLWNvbG9yLWJnLXNlY29uZGFyeSk7XG4gICAgICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICB9XG4gICAgICAgIH1cblxuICAgICAgICAmOm5vdCg6aG92ZXIpICYtLXN0YXRlLWhpZGRlbiB7XG4gICAgICAgICAgICAuZGVzY3JpcHRpb24tY29udGFpbmVyIHtcbiAgICAgICAgICAgICAgICBvcGFjaXR5OiBAbnVpLWxlZ2VuZC1kZWVtcGhhc2l6ZWQtb3BhY2l0eTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgfVxuXG4gICAgICAgICYgJi0tc3RhdGUtZGVlbXBoYXNpemVkIHtcbiAgICAgICAgICAgIG9wYWNpdHk6IEBudWktbGVnZW5kLWRlZW1waGFzaXplZC1vcGFjaXR5O1xuICAgICAgICB9XG4gICAgfVxuXG4gICAgJi5kZXNjcmlwdGlvbi1taW4td2lkdGgtLXVuc2V0IHtcbiAgICAgICAgLmRlc2NyaXB0aW9uIHtcbiAgICAgICAgICAgIG1pbi13aWR0aDogdW5zZXQ7XG4gICAgICAgIH1cbiAgICB9XG59XG4iLCIuc2V0Q3NzVmFyaWFibGUoQHByb3BlcnR5LCBAdmFsdWUpe1xuICAgIEBldmFsdWF0ZWQgOiBcIkB7dmFsdWV9XCI7XG4gICAgLy90aGUgZG91YmxlIEAgZm9yY2VzIGEgaW5kaXJlY3Rpb24gZXZhbHVhdGlvbiwga2luZGEgbGlrZSBhIHBvaW50ZXJcbiAgICBAZmFsbGJhY2sgOiBAQGV2YWx1YXRlZDtcblxuICAgIEB7cHJvcGVydHl9OiB+XCJ2YXIoLS1Ae3ZhbHVlfSxAe2ZhbGxiYWNrfSlcIjtcbn1cbiIsIkBpbXBvcnQgKHJlZmVyZW5jZSkgdXJsKCcuLi9udWktZnJhbWV3b3JrLXZhcmlhYmxlcy5sZXNzJyk7XG5cbi5udWktY2hlY2tib3hfX21hcmsoKSB7XG4gICAgYm9yZGVyOiBzb2xpZCBAbnVpLWxpbmUtbWVkaXVtO1xuICAgIGJhY2tncm91bmQ6IG5vLXJlcGVhdCAwIGNlbnRlcjtcbiAgICAuc2V0Q3NzVmFyaWFibGUoYm9yZGVyLWNvbG9yLCBudWktY29sb3ItYWN0aXZlKTtcbiAgICAuc2V0Q3NzVmFyaWFibGUoYmFja2dyb3VuZC1jb2xvciwgbnVpLWNvbG9yLWJnLWNvbnRlbnQpO1xuICAgIGJhY2tncm91bmQtc2l6ZTogQGljb24tc2l6ZS1kZWZhdWx0O1xuICAgIGJvcmRlci1yYWRpdXM6IEBudWktcmFkaXVzLWRlZmF1bHQ7XG4gICAgbWluLXdpZHRoOiBAaWNvbi1zaXplLWRlZmF1bHQ7XG4gICAgd2lkdGg6IEBpY29uLXNpemUtZGVmYXVsdDtcbiAgICBoZWlnaHQ6IEBpY29uLXNpemUtZGVmYXVsdDtcbiAgICB0cmFuc2l0aW9uOiBiYWNrZ3JvdW5kLWNvbG9yIDAuM3MsIGJvcmRlci1jb2xvciAwLjNzO1xufVxuXG4ubnVpLWNoZWNrYm94X19nbHlwaCgpIHtcbiAgICB3aWR0aDogMTAwJTtcbiAgICBoZWlnaHQ6IDEwMCU7XG4gICAgYmFja2dyb3VuZC1zaXplOiAoQGljb24tc2l6ZS1kZWZhdWx0IC0gKEBudWktbGluZS1tZWRpdW0gKiAyKSk7XG5cbiAgICAvLyBUb0RvOiBXZSBzaG91bGQgcmlkIG9mIGJhc2U2NCBjb2RlIGhlcmVcbiAgICBiYWNrZ3JvdW5kLWltYWdlOiB1cmwoXCJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBEOTRiV3dnZG1WeWMybHZiajBpTVM0d0lpQmxibU52WkdsdVp6MGlkWFJtTFRnaVB6NEtQSE4yWnlCMlpYSnphVzl1UFNJeExqRWlJR2xrUFNKTVlYbGxjbDh4SWlCNGJXeHVjejBpYUhSMGNEb3ZMM2QzZHk1M015NXZjbWN2TWpBd01DOXpkbWNpSUhodGJHNXpPbmhzYVc1clBTSm9kSFJ3T2k4dmQzZDNMbmN6TG05eVp5OHhPVGs1TDNoc2FXNXJJaUI0UFNJd2NIZ2lJSGs5SWpCd2VDSUtDU0IyYVdWM1FtOTRQU0l3SURBZ01qQWdNakFpSUhkcFpIUm9QU0l5TUNJZ2FHVnBaMmgwUFNJeU1DSWdjM1I1YkdVOUltVnVZV0pzWlMxaVlXTnJaM0p2ZFc1a09tNWxkeUF3SURBZ01qQWdNakE3SWlCNGJXdzZjM0JoWTJVOUluQnlaWE5sY25abElqNEtQSE4wZVd4bElIUjVjR1U5SW5SbGVIUXZZM056SWo0S0NTNTRkV2t0WTJobFkydGliM2d0WjJ4NWNHaDdabWxzYkRwdWIyNWxPM04wY205clpUb2pSa1pHUmtaR08zTjBjbTlyWlMxM2FXUjBhRG96TzNOMGNtOXJaUzF0YVhSbGNteHBiV2wwT2pFd08zTjBjbTlyWlMxc2FXNWxZMkZ3T25KdmRXNWtPMzBLUEM5emRIbHNaVDRLUEhCdmJIbHNhVzVsSUdOc1lYTnpQU0o0ZFdrdFkyaGxZMnRpYjNndFoyeDVjR2dpSUhCdmFXNTBjejBpTVRjc05DQTRMREUxSURNc09TQWlMejRLUEM5emRtYytcIik7XG59XG4iXX0= */";
+      /***/
+    },
+
+    /***/
+    "sgdl":
+    /*!******************************************************************!*\
+      !*** ./src/renderers/radial/radial-gauge-thresholds-renderer.ts ***!
+      \******************************************************************/
+
+    /*! exports provided: DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG, RadialGaugeThresholdsRenderer */
+
+    /***/
+    function sgdl(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG", function () {
+        return DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "RadialGaugeThresholdsRenderer", function () {
+        return RadialGaugeThresholdsRenderer;
+      });
+      /* harmony import */
+
+
+      var d3_shape__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! d3-shape */
+      "8d86");
+      /* harmony import */
+
+
+      var lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! lodash/defaultsDeep */
+      "P4Tr");
+      /* harmony import */
+
+
+      var lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_1__);
+      /* harmony import */
+
+
+      var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! lodash/isUndefined */
+      "TP7S");
+      /* harmony import */
+
+
+      var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2__);
+      /* harmony import */
+
+
+      var _types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! ../types */
+      "AbRU");
+      /* harmony import */
+
+
+      var _gauge_rendering_utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! ./gauge-rendering-utils */
+      "iwCl");
+      /* harmony import */
+
+
+      var _radial_renderer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! ./radial-renderer */
+      "+mSY");
+      /**
+       * @ignore Default configuration for Radial Gauge Thresholds Renderer
+       */
+
+
+      var DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG = {};
+      /**
+       * @ignore Renderer for drawing threshold level indicators for gauges
+       */
+
+      var RadialGaugeThresholdsRenderer = /*#__PURE__*/function (_radial_renderer__WEB2) {
+        _inherits(RadialGaugeThresholdsRenderer, _radial_renderer__WEB2);
+
+        var _super39 = _createSuper(RadialGaugeThresholdsRenderer);
+
+        /**
+         * Creates an instance of RadialGaugeThresholdsRenderer.
+         * @param {IRadialGaugeThresholdsRendererConfig} [config]
+         * Renderer configuration object. Defaults to `DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG` constant value.
+         */
+        function RadialGaugeThresholdsRenderer() {
+          var _this94;
+
+          var config = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+          _classCallCheck(this, RadialGaugeThresholdsRenderer);
+
+          _this94 = _super39.call(this, config);
+          _this94.config = lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_1___default()(_this94.config, DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG);
+          return _this94;
+        }
+        /** See {@link Renderer#draw} */
+
+
+        _createClass(RadialGaugeThresholdsRenderer, [{
+          key: "draw",
+          value: function draw(renderSeries, rendererSubject) {
+            var dataContainer = renderSeries.containers[_types__WEBPACK_IMPORTED_MODULE_3__["RenderLayerName"].data];
+            var data = renderSeries.dataSeries.data;
+            this.segmentWidth = this.config.annularWidth || 0;
+            var innerRadius = this.getInnerRadius(renderSeries.scales.r.range(), 0);
+            var markerGenerator = Object(d3_shape__WEBPACK_IMPORTED_MODULE_0__["arc"])().outerRadius(this.getOuterRadius(renderSeries.scales.r.range(), 0)).innerRadius(innerRadius >= 0 ? innerRadius : 0);
+            var markerSelection = dataContainer.selectAll("circle.".concat(RadialGaugeThresholdsRenderer.MARKER_CLASS)).data(_gauge_rendering_utils__WEBPACK_IMPORTED_MODULE_4__["GaugeRenderingUtils"].generateThresholdData(data));
+            markerSelection.exit().remove();
+            markerSelection.enter().append("circle").attr("class", RadialGaugeThresholdsRenderer.MARKER_CLASS).merge(markerSelection).attr("cx", function (d) {
+              return markerGenerator.centroid(d)[0];
+            }).attr("cy", function (d) {
+              return markerGenerator.centroid(d)[1];
+            }).attr("r", 4).style("fill", function (d, i) {
+              return data[i].hit ? "var(--nui-color-text-light)" : "var(--nui-color-text-default)";
+            }).style("stroke-width", 0);
+          }
+        }, {
+          key: "getInnerRadius",
+          value: function getInnerRadius(range, index) {
+            if (lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default()(this.segmentWidth)) {
+              throw new Error("Can't compute inner radius");
+            }
+
+            return range[1] - range[0] - this.segmentWidth;
+          }
+        }]);
+
+        return RadialGaugeThresholdsRenderer;
+      }(_radial_renderer__WEBPACK_IMPORTED_MODULE_5__["RadialRenderer"]);
+
+      RadialGaugeThresholdsRenderer.MARKER_CLASS = "threshold-marker";
       /***/
     },
 
@@ -46022,32 +45471,6 @@
     },
 
     /***/
-    "ttef":
-    /*!*********************************************!*\
-      !*** ./src/core/common/scales/constants.ts ***!
-      \*********************************************/
-
-    /*! exports provided: BAND_CENTER */
-
-    /***/
-    function ttef(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "BAND_CENTER", function () {
-        return BAND_CENTER;
-      });
-      /** The center position within a band on a band scale */
-
-
-      var BAND_CENTER = 0.5;
-      /***/
-    },
-
-    /***/
     "u8S7":
     /*!*********************************!*\
       !*** ./src/thresholds/types.ts ***!
@@ -46128,6 +45551,37 @@
       }
       /***/
 
+    },
+
+    /***/
+    "uXcH":
+    /*!***********************************************************************!*\
+      !*** ./node_modules/d3-interpolate/node_modules/d3-color/src/math.js ***!
+      \***********************************************************************/
+
+    /*! exports provided: deg2rad, rad2deg */
+
+    /***/
+    function uXcH(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "deg2rad", function () {
+        return deg2rad;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "rad2deg", function () {
+        return rad2deg;
+      });
+
+      var deg2rad = Math.PI / 180;
+      var rad2deg = 180 / Math.PI;
+      /***/
     },
 
     /***/
@@ -46322,6 +45776,106 @@
       }
       /***/
 
+    },
+
+    /***/
+    "unCO":
+    /*!****************************************************************************!*\
+      !*** ./node_modules/d3-interpolate/node_modules/d3-color/src/cubehelix.js ***!
+      \****************************************************************************/
+
+    /*! exports provided: default, Cubehelix */
+
+    /***/
+    function unCO(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "default", function () {
+        return cubehelix;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "Cubehelix", function () {
+        return Cubehelix;
+      });
+      /* harmony import */
+
+
+      var _define_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! ./define.js */
+      "xGXq");
+      /* harmony import */
+
+
+      var _color_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! ./color.js */
+      "ozvG");
+      /* harmony import */
+
+
+      var _math_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! ./math.js */
+      "uXcH");
+
+      var A = -0.14861,
+          B = +1.78277,
+          C = -0.29227,
+          D = -0.90649,
+          E = +1.97294,
+          ED = E * D,
+          EB = E * B,
+          BC_DA = B * C - D * A;
+
+      function cubehelixConvert(o) {
+        if (o instanceof Cubehelix) return new Cubehelix(o.h, o.s, o.l, o.opacity);
+        if (!(o instanceof _color_js__WEBPACK_IMPORTED_MODULE_1__["Rgb"])) o = Object(_color_js__WEBPACK_IMPORTED_MODULE_1__["rgbConvert"])(o);
+        var r = o.r / 255,
+            g = o.g / 255,
+            b = o.b / 255,
+            l = (BC_DA * b + ED * r - EB * g) / (BC_DA + ED - EB),
+            bl = b - l,
+            k = (E * (g - l) - C * bl) / D,
+            s = Math.sqrt(k * k + bl * bl) / (E * l * (1 - l)),
+            // NaN if l=0 or l=1
+        h = s ? Math.atan2(k, bl) * _math_js__WEBPACK_IMPORTED_MODULE_2__["rad2deg"] - 120 : NaN;
+        return new Cubehelix(h < 0 ? h + 360 : h, s, l, o.opacity);
+      }
+
+      function cubehelix(h, s, l, opacity) {
+        return arguments.length === 1 ? cubehelixConvert(h) : new Cubehelix(h, s, l, opacity == null ? 1 : opacity);
+      }
+
+      function Cubehelix(h, s, l, opacity) {
+        this.h = +h;
+        this.s = +s;
+        this.l = +l;
+        this.opacity = +opacity;
+      }
+
+      Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["default"])(Cubehelix, cubehelix, Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["extend"])(_color_js__WEBPACK_IMPORTED_MODULE_1__["Color"], {
+        brighter: function brighter(k) {
+          k = k == null ? _color_js__WEBPACK_IMPORTED_MODULE_1__["brighter"] : Math.pow(_color_js__WEBPACK_IMPORTED_MODULE_1__["brighter"], k);
+          return new Cubehelix(this.h, this.s, this.l * k, this.opacity);
+        },
+        darker: function darker(k) {
+          k = k == null ? _color_js__WEBPACK_IMPORTED_MODULE_1__["darker"] : Math.pow(_color_js__WEBPACK_IMPORTED_MODULE_1__["darker"], k);
+          return new Cubehelix(this.h, this.s, this.l * k, this.opacity);
+        },
+        rgb: function rgb() {
+          var h = isNaN(this.h) ? 0 : (this.h + 120) * _math_js__WEBPACK_IMPORTED_MODULE_2__["deg2rad"],
+              l = +this.l,
+              a = isNaN(this.s) ? 0 : this.s * l * (1 - l),
+              cosh = Math.cos(h),
+              sinh = Math.sin(h);
+          return new _color_js__WEBPACK_IMPORTED_MODULE_1__["Rgb"](255 * (l + a * (A * cosh + B * sinh)), 255 * (l + a * (C * cosh + D * sinh)), 255 * (l + a * (E * cosh)), this.opacity);
+        }
+      }));
+      /***/
     },
 
     /***/
@@ -47099,7 +46653,7 @@
       var ChartPopoverPlugin = /*#__PURE__*/function (_common_chart_plugin_9) {
         _inherits(ChartPopoverPlugin, _common_chart_plugin_9);
 
-        var _super41 = _createSuper(ChartPopoverPlugin);
+        var _super40 = _createSuper(ChartPopoverPlugin);
 
         function ChartPopoverPlugin() {
           var _this95;
@@ -47108,7 +46662,7 @@
 
           _classCallCheck(this, ChartPopoverPlugin);
 
-          _this95 = _super41.call(this);
+          _this95 = _super40.call(this);
           _this95.config = config;
           /** Emits the popover's target position */
 
@@ -48088,13 +47642,7 @@
 
               var areDomainsValid = -1 === Object.values(chartSeries.scales).findIndex(function (scale) {
                 if (typeof scaleValidity[scale.id] === "undefined") {
-                  var isValid = scale.isDomainValid();
-
-                  if (!isValid) {
-                    console.warn("Invalid scale domain detected for scale:", scale);
-                  }
-
-                  scaleValidity[scale.id] = isValid;
+                  scaleValidity[scale.id] = scale.isDomainValid();
                 }
 
                 return !scaleValidity[scale.id];
@@ -48644,6 +48192,46 @@
     },
 
     /***/
+    "xGXq":
+    /*!*************************************************************************!*\
+      !*** ./node_modules/d3-interpolate/node_modules/d3-color/src/define.js ***!
+      \*************************************************************************/
+
+    /*! exports provided: default, extend */
+
+    /***/
+    function xGXq(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "extend", function () {
+        return extend;
+      });
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = function (constructor, factory, prototype) {
+        constructor.prototype = factory.prototype = prototype;
+        prototype.constructor = constructor;
+      };
+
+      function extend(parent, definition) {
+        var prototype = Object.create(parent.prototype);
+
+        for (var key in definition) {
+          prototype[key] = definition[key];
+        }
+
+        return prototype;
+      }
+      /***/
+
+    },
+
+    /***/
     "xJQu":
     /*!*************************************************!*\
       !*** ./node_modules/d3-shape/src/symbol/wye.js ***!
@@ -48685,59 +48273,6 @@
         }
       };
       /***/
-    },
-
-    /***/
-    "xibN":
-    /*!**********************************************!*\
-      !*** ./src/core/plugins/gauge/public-api.ts ***!
-      \**********************************************/
-
-    /*! exports provided: RadialGaugeLabelsPlugin, GAUGE_LABEL_FORMATTER_NAME_DEFAULT, GAUGE_LABELS_CONTAINER_CLASS, GAUGE_THRESHOLD_LABEL_CLASS */
-
-    /***/
-    function xibN(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony import */
-
-
-      var _radial_gauge_labels_plugin__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! ./radial-gauge-labels-plugin */
-      "laqf");
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "RadialGaugeLabelsPlugin", function () {
-        return _radial_gauge_labels_plugin__WEBPACK_IMPORTED_MODULE_0__["RadialGaugeLabelsPlugin"];
-      });
-      /* harmony import */
-
-
-      var _constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-      /*! ./constants */
-      "GXwZ");
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "GAUGE_LABEL_FORMATTER_NAME_DEFAULT", function () {
-        return _constants__WEBPACK_IMPORTED_MODULE_1__["GAUGE_LABEL_FORMATTER_NAME_DEFAULT"];
-      });
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "GAUGE_LABELS_CONTAINER_CLASS", function () {
-        return _constants__WEBPACK_IMPORTED_MODULE_1__["GAUGE_LABELS_CONTAINER_CLASS"];
-      });
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "GAUGE_THRESHOLD_LABEL_CLASS", function () {
-        return _constants__WEBPACK_IMPORTED_MODULE_1__["GAUGE_THRESHOLD_LABEL_CLASS"];
-      });
-      /***/
-
     },
 
     /***/

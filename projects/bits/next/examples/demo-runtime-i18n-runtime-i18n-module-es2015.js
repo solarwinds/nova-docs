@@ -50,9 +50,6 @@ class RuntimeI18NExampleComponent {
         localStorage.removeItem("locale");
         this.pageReload();
     }
-    ngOnDestroy() {
-        localStorage.removeItem("locale");
-    }
 }
 RuntimeI18NExampleComponent.ɵfac = function RuntimeI18NExampleComponent_Factory(t) { return new (t || RuntimeI18NExampleComponent)(); };
 RuntimeI18NExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: RuntimeI18NExampleComponent, selectors: [["nui-runtime-i18n-example"]], decls: 32, vars: 3, consts: function () { let i18n_0; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
@@ -288,7 +285,7 @@ webpackContext.id = "ll9c";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { Component, OnDestroy } from \"@angular/core\";\n\n@Component({\n    selector: \"nui-runtime-i18n-example\",\n    templateUrl: \"./runtime-i18n-example.component.html\",\n})\nexport class RuntimeI18NExampleComponent implements OnDestroy {\n    public firstNamePlaceholder: string = `John`;\n    public lastNamePlaceholder: string = `Doe`;\n    public email: string = `john.doe@whatever.com`;\n\n    private pageReload() {\n        window.location.reload();\n    }\n\n    public setLocale(locale: string) {\n        localStorage.setItem(\"locale\", locale);\n        this.pageReload();\n    }\n\n    public setDefaultLocale() {\n        localStorage.removeItem(\"locale\");\n        this.pageReload();\n    }\n\n    public ngOnDestroy() {\n        localStorage.removeItem(\"locale\");\n    }\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import { Component } from \"@angular/core\";\n\n@Component({\n    selector: \"nui-runtime-i18n-example\",\n    templateUrl: \"./runtime-i18n-example.component.html\",\n})\nexport class RuntimeI18NExampleComponent {\n    public firstNamePlaceholder: string = `John`;\n    public lastNamePlaceholder: string = `Doe`;\n    public email: string = `john.doe@whatever.com`;\n\n    private pageReload() {\n        window.location.reload();\n    }\n\n    public setLocale(locale: string) {\n        localStorage.setItem(\"locale\", locale);\n        this.pageReload();\n    }\n\n    public setDefaultLocale() {\n        localStorage.removeItem(\"locale\");\n        this.pageReload();\n    }\n}\n");
 
 /***/ })
 

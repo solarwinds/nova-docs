@@ -190,24 +190,6 @@
     </table>
 </section>
 
-            <section>
-    <h3 id="constructor">Constructor</h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-<code>constructor()</code>
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/services/data-source/server-side-source.service.ts:18</a></div>
-                            </td>
-                        </tr>
-
-            </tbody>
-        </table>
-</section>
 
             <section>
     
@@ -1350,7 +1332,7 @@ export abstract class ServerSideDataSource&lt;T, F extends IFilters &#x3D; IFilt
     protected applyFilters$ &#x3D; new Subject&lt;F&gt;();
     protected destroy$: Subject&lt;void&gt; &#x3D; new Subject();
 
-    constructor() {
+    protected constructor() {
         super();
 
         this.setupFilters();

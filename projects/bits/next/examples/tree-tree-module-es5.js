@@ -4266,7 +4266,7 @@
         },
         features: [_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵProvidersFeature"]([_nova_ui_bits__WEBPACK_IMPORTED_MODULE_5__["VirtualViewportManager"]])],
         decls: 9,
-        vars: 6,
+        vars: 4,
         consts: function consts() {
           var i18n_0;
 
@@ -4286,7 +4286,7 @@
             i18n_2 = $localize(_templateObject19 || (_templateObject19 = _taggedTemplateLiteral([":\u241F4dc1e9a4bbd21cf153990984cd4ecb4444117098\u241F6327967827692127661: Close "])));
           }
 
-          return [["title", i18n_0, 3, "closed"], ["nui-busy", "", 3, "busy"], [1, "d-flex", "flex-row"], [1, "virtual-scroll-list-repeat", 3, "itemConfig", "repeatItemTemplateRef", "itemsSource", "virtualScroll", "itemSize"], ["nui-button", "", "type", "button", 3, "click"], i18n_2, ["repeatItemTemplate", ""], [1, "d-flex", "justify-content-between", "w-100"]];
+          return [["title", i18n_0, 3, "closed"], ["nui-busy", "", 3, "busy"], [1, "d-flex", "flex-row"], ["virtualScroll", "true", "itemSize", "30", 1, "virtual-scroll-list-repeat", 3, "itemConfig", "repeatItemTemplateRef", "itemsSource"], ["nui-button", "", "type", "button", 3, "click"], i18n_2, ["repeatItemTemplate", ""], [1, "d-flex", "justify-content-between", "w-100"]];
         },
         template: function TreeDialogContentExampleComponent_Template(rf, ctx) {
           if (rf & 1) {
@@ -4334,7 +4334,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("itemConfig", ctx.itemConfig)("repeatItemTemplateRef", _r0)("itemsSource", ctx.items)("virtualScroll", true)("itemSize", 30);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("itemConfig", ctx.itemConfig)("repeatItemTemplateRef", _r0)("itemsSource", ctx.items);
           }
         },
         directives: [_src_lib_dialog_dialog_header_component__WEBPACK_IMPORTED_MODULE_14__["DialogHeaderComponent"], _src_lib_busy_busy_component__WEBPACK_IMPORTED_MODULE_12__["BusyComponent"], _src_lib_repeat_repeat_component__WEBPACK_IMPORTED_MODULE_15__["RepeatComponent"], _src_lib_dialog_dialog_footer_component__WEBPACK_IMPORTED_MODULE_16__["DialogFooterComponent"], _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_10__["ButtonComponent"]],

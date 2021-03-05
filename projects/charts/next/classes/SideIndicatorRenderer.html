@@ -206,7 +206,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="72" class="link-to-prism">src/renderers/side-indicator-renderer.ts:72</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="71" class="link-to-prism">src/renderers/side-indicator-renderer.ts:71</a></div>
                             </td>
                         </tr>
 
@@ -282,7 +282,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="70" class="link-to-prism">src/renderers/side-indicator-renderer.ts:70</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="69" class="link-to-prism">src/renderers/side-indicator-renderer.ts:69</a></div>
                             </td>
                         </tr>
 
@@ -520,8 +520,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="85"
-                            class="link-to-prism">src/renderers/side-indicator-renderer.ts:85</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="84"
+                            class="link-to-prism">src/renderers/side-indicator-renderer.ts:84</a></div>
                 </td>
             </tr>
 
@@ -606,8 +606,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="120"
-                            class="link-to-prism">src/renderers/side-indicator-renderer.ts:120</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="119"
+                            class="link-to-prism">src/renderers/side-indicator-renderer.ts:119</a></div>
                 </td>
             </tr>
 
@@ -704,8 +704,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="125"
-                            class="link-to-prism">src/renderers/side-indicator-renderer.ts:125</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="124"
+                            class="link-to-prism">src/renderers/side-indicator-renderer.ts:124</a></div>
                 </td>
             </tr>
 
@@ -1967,7 +1967,6 @@ export class SideIndicatorAccessors implements ISideIndicatorAccessors {
  */
 export class SideIndicatorRenderer extends XYRenderer&lt;ISideIndicatorAccessors&gt; {
 
-    /** @deprecated As of Nova v9, use RenderLayerName.unclippedData enum value instead. Removal: NUI-5753 */
     public static SIDE_INDICATORS_LAYER &#x3D; &quot;side-indicators&quot;;
 
     private DEFAULT_CONFIG: IRendererConfig &#x3D; {};
@@ -1984,7 +1983,7 @@ export class SideIndicatorRenderer extends XYRenderer&lt;ISideIndicatorAccessors
 
     /** See {@link Renderer#draw} */
     public draw(renderSeries: IRenderSeries&lt;ISideIndicatorAccessors&gt;, rendererSubject: Subject&lt;IRendererEventPayload&gt;): void {
-        const target &#x3D; renderSeries.containers[RenderLayerName.unclippedData];
+        const target &#x3D; renderSeries.containers[SideIndicatorRenderer.SIDE_INDICATORS_LAYER];
         const dataSeries &#x3D; renderSeries.dataSeries;
         const scales &#x3D; renderSeries.scales;
         const accessors &#x3D; renderSeries.dataSeries.accessors;
@@ -2024,9 +2023,12 @@ export class SideIndicatorRenderer extends XYRenderer&lt;ISideIndicatorAccessors
 
     /** See {@link Renderer#getRequiredLayers} */
     public getRequiredLayers(): ILasagnaLayer[] {
-        return [
-            STANDARD_RENDER_LAYERS[RenderLayerName.unclippedData],
-        ];
+        return [{
+            name: SideIndicatorRenderer.SIDE_INDICATORS_LAYER,
+            // order calculated by adding 1 to the data layer order to ensure the unclipped data layer appears just after the data layer in the DOM
+            order: STANDARD_RENDER_LAYERS[RenderLayerName.data].order + 1,
+            clipped: false,
+        }];
     }
 
 }

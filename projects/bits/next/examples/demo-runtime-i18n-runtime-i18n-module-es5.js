@@ -106,11 +106,6 @@
             localStorage.removeItem("locale");
             this.pageReload();
           }
-        }, {
-          key: "ngOnDestroy",
-          value: function ngOnDestroy() {
-            localStorage.removeItem("locale");
-          }
         }]);
 
         return RuntimeI18NExampleComponent;
@@ -518,7 +513,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import { Component, OnDestroy } from \"@angular/core\";\n\n@Component({\n    selector: \"nui-runtime-i18n-example\",\n    templateUrl: \"./runtime-i18n-example.component.html\",\n})\nexport class RuntimeI18NExampleComponent implements OnDestroy {\n    public firstNamePlaceholder: string = `John`;\n    public lastNamePlaceholder: string = `Doe`;\n    public email: string = `john.doe@whatever.com`;\n\n    private pageReload() {\n        window.location.reload();\n    }\n\n    public setLocale(locale: string) {\n        localStorage.setItem(\"locale\", locale);\n        this.pageReload();\n    }\n\n    public setDefaultLocale() {\n        localStorage.removeItem(\"locale\");\n        this.pageReload();\n    }\n\n    public ngOnDestroy() {\n        localStorage.removeItem(\"locale\");\n    }\n}\n";
+      __webpack_exports__["default"] = "import { Component } from \"@angular/core\";\n\n@Component({\n    selector: \"nui-runtime-i18n-example\",\n    templateUrl: \"./runtime-i18n-example.component.html\",\n})\nexport class RuntimeI18NExampleComponent {\n    public firstNamePlaceholder: string = `John`;\n    public lastNamePlaceholder: string = `Doe`;\n    public email: string = `john.doe@whatever.com`;\n\n    private pageReload() {\n        window.location.reload();\n    }\n\n    public setLocale(locale: string) {\n        localStorage.setItem(\"locale\", locale);\n        this.pageReload();\n    }\n\n    public setDefaultLocale() {\n        localStorage.removeItem(\"locale\");\n        this.pageReload();\n    }\n}\n";
       /***/
     }
   }]);

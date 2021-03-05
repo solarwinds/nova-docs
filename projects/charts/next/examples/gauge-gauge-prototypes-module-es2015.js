@@ -230,7 +230,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let LinearGaugeChartHorizontalPrototypeComponent = class LinearGaugeChartHorizontalPrototypeComponent {
-    constructor() {
+    constructor(gaugeService) {
+        this.gaugeService = gaugeService;
         this.value = 42;
         this.max = 200;
         this.thickness = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GAUGE_THICKNESS_DEFAULT"];
@@ -241,18 +242,20 @@ let LinearGaugeChartHorizontalPrototypeComponent = class LinearGaugeChartHorizon
                 this.chartAssist.chart.getGrid().config().dimension.height(this.thickness);
                 this.chartAssist.chart.updateDimensions();
             }
-            this.chartAssist.update(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.value, this.max, this.thresholds, this.seriesSet));
+            this.chartAssist.update(this.gaugeService.updateSeriesSet(this.value, this.max, this.thresholds, this.seriesSet));
         }
     }
     ngOnInit() {
         const grid = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["XYGrid"](Object(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["linearGaugeGridConfig"])(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Horizontal, this.thickness));
-        grid.config().dimension.margin.right = 5;
         const chart = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["Chart"](grid);
         this.chartAssist = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["ChartAssist"](chart, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["stack"]);
-        this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].assembleSeriesSet(this.value, this.max, this.thresholds, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Horizontal);
+        this.seriesSet = this.gaugeService.assembleSeriesSet(this.value, this.max, this.thresholds, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Horizontal);
         this.chartAssist.update(this.seriesSet);
     }
 };
+LinearGaugeChartHorizontalPrototypeComponent.ctorParameters = () => [
+    { type: _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeService"] }
+];
 LinearGaugeChartHorizontalPrototypeComponent.propDecorators = {
     value: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }],
     max: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }],
@@ -264,7 +267,8 @@ LinearGaugeChartHorizontalPrototypeComponent = Object(tslib__WEBPACK_IMPORTED_MO
         selector: "linear-gauge-horizontal-chart-prototype",
         template: _raw_loader_linear_gauge_horizontal_chart_prototype_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
         styles: [_linear_gauge_horizontal_chart_prototype_component_less__WEBPACK_IMPORTED_MODULE_2__["default"]]
-    })
+    }),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeService"]])
 ], LinearGaugeChartHorizontalPrototypeComponent);
 
 
@@ -411,7 +415,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let LinearGaugeChartVerticalPrototypeComponent = class LinearGaugeChartVerticalPrototypeComponent {
-    constructor() {
+    constructor(gaugeService) {
+        this.gaugeService = gaugeService;
         this.value = 42;
         this.max = 200;
         this.thickness = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GAUGE_THICKNESS_DEFAULT"];
@@ -422,18 +427,20 @@ let LinearGaugeChartVerticalPrototypeComponent = class LinearGaugeChartVerticalP
                 this.chartAssist.chart.getGrid().config().dimension.width(this.thickness);
                 this.chartAssist.chart.updateDimensions();
             }
-            this.chartAssist.update(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.value, this.max, this.thresholds, this.seriesSet));
+            this.chartAssist.update(this.gaugeService.updateSeriesSet(this.value, this.max, this.thresholds, this.seriesSet));
         }
     }
     ngOnInit() {
         const grid = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["XYGrid"](Object(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["linearGaugeGridConfig"])(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Vertical, this.thickness));
-        grid.config().dimension.margin.top = 5;
         const chart = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["Chart"](grid);
         this.chartAssist = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["ChartAssist"](chart, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["stack"]);
-        this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].assembleSeriesSet(this.value, this.max, this.thresholds, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Vertical);
+        this.seriesSet = this.gaugeService.assembleSeriesSet(this.value, this.max, this.thresholds, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Vertical);
         this.chartAssist.update(this.seriesSet);
     }
 };
+LinearGaugeChartVerticalPrototypeComponent.ctorParameters = () => [
+    { type: _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeService"] }
+];
 LinearGaugeChartVerticalPrototypeComponent.propDecorators = {
     value: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }],
     max: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }],
@@ -445,7 +452,8 @@ LinearGaugeChartVerticalPrototypeComponent = Object(tslib__WEBPACK_IMPORTED_MODU
         selector: "linear-gauge-vertical-chart-prototype",
         template: _raw_loader_linear_gauge_vertical_chart_prototype_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
         styles: [_linear_gauge_vertical_chart_prototype_component_less__WEBPACK_IMPORTED_MODULE_2__["default"]]
-    })
+    }),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeService"]])
 ], LinearGaugeChartVerticalPrototypeComponent);
 
 
@@ -486,7 +494,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let RadialGaugeChartPrototypeComponent = class RadialGaugeChartPrototypeComponent {
-    constructor() {
+    constructor(gaugeService) {
+        this.gaugeService = gaugeService;
         this.value = 42;
         this.max = 200;
         this.annularWidth = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GAUGE_THICKNESS_DEFAULT"];
@@ -496,7 +505,7 @@ let RadialGaugeChartPrototypeComponent = class RadialGaugeChartPrototypeComponen
             if (changes.annularWidth) {
                 this.updateAnnularWidth();
             }
-            this.chartAssist.update(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.value, this.max, this.thresholds, this.seriesSet));
+            this.chartAssist.update(this.gaugeService.updateSeriesSet(this.value, this.max, this.thresholds, this.seriesSet));
         }
     }
     ngOnInit() {
@@ -507,9 +516,9 @@ let RadialGaugeChartPrototypeComponent = class RadialGaugeChartPrototypeComponen
         const labelConfig = {
             gridMargin: { top: 40, right: 40, bottom: 40, left: 40 },
         };
-        this.chartAssist.chart.addPlugin(new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["RadialGaugeLabelsPlugin"](labelConfig));
-        this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].assembleSeriesSet(this.value, this.max, this.thresholds, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Radial);
-        this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].setThresholdLabelFormatter((d) => `${d}MS`, this.seriesSet);
+        this.chartAssist.chart.addPlugin(new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["RadialGaugeThresholdLabelsPlugin"](labelConfig));
+        this.seriesSet = this.gaugeService.assembleSeriesSet(this.value, this.max, this.thresholds, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Radial);
+        this.seriesSet = this.gaugeService.setThresholdLabelFormatter((d) => `${d}MS`, this.seriesSet);
         this.updateAnnularWidth();
         this.chartAssist.update(this.seriesSet);
     }
@@ -519,6 +528,9 @@ let RadialGaugeChartPrototypeComponent = class RadialGaugeChartPrototypeComponen
         });
     }
 };
+RadialGaugeChartPrototypeComponent.ctorParameters = () => [
+    { type: _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeService"] }
+];
 RadialGaugeChartPrototypeComponent.propDecorators = {
     value: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }],
     max: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }],
@@ -530,7 +542,8 @@ RadialGaugeChartPrototypeComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["
         selector: "radial-gauge-chart-prototype",
         template: _raw_loader_radial_gauge_chart_prototype_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
         styles: [_radial_gauge_chart_prototype_component_less__WEBPACK_IMPORTED_MODULE_2__["default"]]
-    })
+    }),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeService"]])
 ], RadialGaugeChartPrototypeComponent);
 
 

@@ -80,18 +80,22 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let RadialGaugeTesterComponent = class RadialGaugeTesterComponent {
-    constructor() {
+    constructor(gaugeService) {
+        this.gaugeService = gaugeService;
         this.max = 200;
     }
     ngOnInit() {
         this.chartAssist = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["ChartAssist"](new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["Chart"](Object(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["radialGrid"])()), _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["radial"]);
         this.contentPlugin = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["ChartDonutContentPlugin"]();
         this.chartAssist.chart.addPlugin(this.contentPlugin);
-        this.chartAssist.chart.addPlugin(new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["RadialGaugeLabelsPlugin"]());
-        this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].assembleSeriesSet(this.value, this.max, this.thresholds, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Radial);
+        this.chartAssist.chart.addPlugin(new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["RadialGaugeThresholdLabelsPlugin"]());
+        this.seriesSet = this.gaugeService.assembleSeriesSet(this.value, this.max, this.thresholds, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Radial);
         this.chartAssist.update(this.seriesSet);
     }
 };
+RadialGaugeTesterComponent.ctorParameters = () => [
+    { type: _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeService"] }
+];
 RadialGaugeTesterComponent.propDecorators = {
     value: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }],
     max: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }],
@@ -102,7 +106,8 @@ RadialGaugeTesterComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decora
         selector: "radial-gauge-tester",
         template: _raw_loader_radial_gauge_tester_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
         styles: [_radial_gauge_tester_component_less__WEBPACK_IMPORTED_MODULE_2__["default"]]
-    })
+    }),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeService"]])
 ], RadialGaugeTesterComponent);
 
 
@@ -130,7 +135,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let VerticalGaugeTesterComponent = class VerticalGaugeTesterComponent {
-    constructor() {
+    constructor(gaugeService) {
+        this.gaugeService = gaugeService;
         this.value = 42;
         this.max = 200;
     }
@@ -138,10 +144,13 @@ let VerticalGaugeTesterComponent = class VerticalGaugeTesterComponent {
         const grid = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["XYGrid"](Object(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["linearGaugeGridConfig"])(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Vertical));
         const chart = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["Chart"](grid);
         this.chartAssist = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["ChartAssist"](chart, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["stack"]);
-        this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].assembleSeriesSet(this.value, this.max, this.thresholds, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Vertical);
+        this.seriesSet = this.gaugeService.assembleSeriesSet(this.value, this.max, this.thresholds, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Vertical);
         this.chartAssist.update(this.seriesSet);
     }
 };
+VerticalGaugeTesterComponent.ctorParameters = () => [
+    { type: _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeService"] }
+];
 VerticalGaugeTesterComponent.propDecorators = {
     value: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }],
     max: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }],
@@ -152,7 +161,8 @@ VerticalGaugeTesterComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__deco
         selector: "vertical-gauge-tester",
         template: _raw_loader_vertical_gauge_tester_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
         styles: [_vertical_gauge_tester_component_less__WEBPACK_IMPORTED_MODULE_2__["default"]]
-    })
+    }),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeService"]])
 ], VerticalGaugeTesterComponent);
 
 
@@ -247,7 +257,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let HorizontalGaugeTesterComponent = class HorizontalGaugeTesterComponent {
-    constructor() {
+    constructor(gaugeService) {
+        this.gaugeService = gaugeService;
         this.value = 42;
         this.max = 200;
     }
@@ -255,10 +266,13 @@ let HorizontalGaugeTesterComponent = class HorizontalGaugeTesterComponent {
         const grid = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["XYGrid"](Object(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["linearGaugeGridConfig"])(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Horizontal));
         const chart = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["Chart"](grid);
         this.chartAssist = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["ChartAssist"](chart, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["stack"]);
-        this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].assembleSeriesSet(this.value, this.max, this.thresholds, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Horizontal);
+        this.seriesSet = this.gaugeService.assembleSeriesSet(this.value, this.max, this.thresholds, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Horizontal);
         this.chartAssist.update(this.seriesSet);
     }
 };
+HorizontalGaugeTesterComponent.ctorParameters = () => [
+    { type: _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeService"] }
+];
 HorizontalGaugeTesterComponent.propDecorators = {
     value: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }],
     max: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }],
@@ -269,7 +283,8 @@ HorizontalGaugeTesterComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__de
         selector: "horizontal-gauge-tester",
         template: _raw_loader_horizontal_gauge_tester_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
         styles: [_horizontal_gauge_tester_component_less__WEBPACK_IMPORTED_MODULE_2__["default"]]
-    })
+    }),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeService"]])
 ], HorizontalGaugeTesterComponent);
 
 
