@@ -197,8 +197,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="50"
-                            class="link-to-prism">src/lib/configurator/services/configurator-data-source-manager.service.ts:50</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="47"
+                            class="link-to-prism">src/lib/configurator/services/configurator-data-source-manager.service.ts:47</a></div>
                 </td>
             </tr>
 
@@ -330,9 +330,6 @@ export class ConfiguratorDataSourceManagerService implements OnDestroy {
             } else {
                 this.error.next(undefined);
             }
-        });
-
-        this.eventBus.subscribeUntil(DATA_SOURCE_CHANGE, this.onDestroy$, (event: IEvent&lt;any&gt;) &#x3D;&gt; {
         });
     }
 
