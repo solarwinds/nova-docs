@@ -1060,7 +1060,14 @@ export class TableColumnsConverterService extends BaseConverter implements After
     }
 
     public toPreview(form: FormGroup): void {
-        form.get(&quot;columnsOutput&quot;)?.valueChanges
+        // table configurator v2 doesn&#x27;t have &#x60;columnsOutput&#x60;, it just uses &#x60;columns&#x60; as source of truth
+        const formControl &#x3D; form.contains(&quot;columnsOutput&quot;) ? form.get(&quot;columnsOutput&quot;) : form.get(&quot;columns&quot;);
+
+        if (!formControl) {
+            throw new Error(&quot;FormControl is not defined!&quot;);
+        }
+
+        formControl.valueChanges
             .pipe(
                 takeUntil(this.destroy$),
                 distinctUntilChanged(isEqual)

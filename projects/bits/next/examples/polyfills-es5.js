@@ -2293,7 +2293,7 @@
         return visitAll$1;
       });
       /**
-       * @license Angular v11.2.3
+       * @license Angular v11.2.4
        * (c) 2010-2021 Google LLC. https://angular.io/
        * License: MIT
        */
@@ -6478,302 +6478,6 @@
        */
 
 
-      var DASH_CASE_REGEXP = /-+([a-z0-9])/g;
-
-      function dashCaseToCamelCase(input) {
-        return input.replace(DASH_CASE_REGEXP, function () {
-          for (var _len = arguments.length, m = new Array(_len), _key = 0; _key < _len; _key++) {
-            m[_key] = arguments[_key];
-          }
-
-          return m[1].toUpperCase();
-        });
-      }
-
-      function splitAtColon(input, defaultValues) {
-        return _splitAt(input, ':', defaultValues);
-      }
-
-      function splitAtPeriod(input, defaultValues) {
-        return _splitAt(input, '.', defaultValues);
-      }
-
-      function _splitAt(input, character, defaultValues) {
-        var characterIndex = input.indexOf(character);
-        if (characterIndex == -1) return defaultValues;
-        return [input.slice(0, characterIndex).trim(), input.slice(characterIndex + 1).trim()];
-      }
-
-      function visitValue(value, visitor, context) {
-        if (Array.isArray(value)) {
-          return visitor.visitArray(value, context);
-        }
-
-        if (isStrictStringMap(value)) {
-          return visitor.visitStringMap(value, context);
-        }
-
-        if (value == null || typeof value == 'string' || typeof value == 'number' || typeof value == 'boolean') {
-          return visitor.visitPrimitive(value, context);
-        }
-
-        return visitor.visitOther(value, context);
-      }
-
-      function isDefined(val) {
-        return val !== null && val !== undefined;
-      }
-
-      function noUndefined(val) {
-        return val === undefined ? null : val;
-      }
-
-      var ValueTransformer = /*#__PURE__*/function () {
-        function ValueTransformer() {
-          _classCallCheck(this, ValueTransformer);
-        }
-
-        _createClass(ValueTransformer, [{
-          key: "visitArray",
-          value: function visitArray(arr, context) {
-            var _this57 = this;
-
-            return arr.map(function (value) {
-              return visitValue(value, _this57, context);
-            });
-          }
-        }, {
-          key: "visitStringMap",
-          value: function visitStringMap(map, context) {
-            var _this58 = this;
-
-            var result = {};
-            Object.keys(map).forEach(function (key) {
-              result[key] = visitValue(map[key], _this58, context);
-            });
-            return result;
-          }
-        }, {
-          key: "visitPrimitive",
-          value: function visitPrimitive(value, context) {
-            return value;
-          }
-        }, {
-          key: "visitOther",
-          value: function visitOther(value, context) {
-            return value;
-          }
-        }]);
-
-        return ValueTransformer;
-      }();
-
-      var SyncAsync = {
-        assertSync: function assertSync(value) {
-          if (isPromise(value)) {
-            throw new Error("Illegal state: value cannot be a promise");
-          }
-
-          return value;
-        },
-        then: function then(value, cb) {
-          return isPromise(value) ? value.then(cb) : cb(value);
-        },
-        all: function all(syncAsyncValues) {
-          return syncAsyncValues.some(isPromise) ? Promise.all(syncAsyncValues) : syncAsyncValues;
-        }
-      };
-
-      function error(msg) {
-        throw new Error("Internal Error: ".concat(msg));
-      }
-
-      function syntaxError(msg, parseErrors) {
-        var error = Error(msg);
-        error[ERROR_SYNTAX_ERROR] = true;
-        if (parseErrors) error[ERROR_PARSE_ERRORS] = parseErrors;
-        return error;
-      }
-
-      var ERROR_SYNTAX_ERROR = 'ngSyntaxError';
-      var ERROR_PARSE_ERRORS = 'ngParseErrors';
-
-      function isSyntaxError(error) {
-        return error[ERROR_SYNTAX_ERROR];
-      }
-
-      function getParseErrors(error) {
-        return error[ERROR_PARSE_ERRORS] || [];
-      } // Escape characters that have a special meaning in Regular Expressions
-
-
-      function escapeRegExp(s) {
-        return s.replace(/([.*+?^=!:${}()|[\]\/\\])/g, '\\$1');
-      }
-
-      var STRING_MAP_PROTO = Object.getPrototypeOf({});
-
-      function isStrictStringMap(obj) {
-        return typeof obj === 'object' && obj !== null && Object.getPrototypeOf(obj) === STRING_MAP_PROTO;
-      }
-
-      function utf8Encode(str) {
-        var encoded = [];
-
-        for (var index = 0; index < str.length; index++) {
-          var codePoint = str.charCodeAt(index); // decode surrogate
-          // see https://mathiasbynens.be/notes/javascript-encoding#surrogate-formulae
-
-          if (codePoint >= 0xd800 && codePoint <= 0xdbff && str.length > index + 1) {
-            var low = str.charCodeAt(index + 1);
-
-            if (low >= 0xdc00 && low <= 0xdfff) {
-              index++;
-              codePoint = (codePoint - 0xd800 << 10) + low - 0xdc00 + 0x10000;
-            }
-          }
-
-          if (codePoint <= 0x7f) {
-            encoded.push(codePoint);
-          } else if (codePoint <= 0x7ff) {
-            encoded.push(codePoint >> 6 & 0x1F | 0xc0, codePoint & 0x3f | 0x80);
-          } else if (codePoint <= 0xffff) {
-            encoded.push(codePoint >> 12 | 0xe0, codePoint >> 6 & 0x3f | 0x80, codePoint & 0x3f | 0x80);
-          } else if (codePoint <= 0x1fffff) {
-            encoded.push(codePoint >> 18 & 0x07 | 0xf0, codePoint >> 12 & 0x3f | 0x80, codePoint >> 6 & 0x3f | 0x80, codePoint & 0x3f | 0x80);
-          }
-        }
-
-        return encoded;
-      }
-
-      function stringify(token) {
-        if (typeof token === 'string') {
-          return token;
-        }
-
-        if (Array.isArray(token)) {
-          return '[' + token.map(stringify).join(', ') + ']';
-        }
-
-        if (token == null) {
-          return '' + token;
-        }
-
-        if (token.overriddenName) {
-          return "".concat(token.overriddenName);
-        }
-
-        if (token.name) {
-          return "".concat(token.name);
-        }
-
-        if (!token.toString) {
-          return 'object';
-        } // WARNING: do not try to `JSON.stringify(token)` here
-        // see https://github.com/angular/angular/issues/23440
-
-
-        var res = token.toString();
-
-        if (res == null) {
-          return '' + res;
-        }
-
-        var newLineIndex = res.indexOf('\n');
-        return newLineIndex === -1 ? res : res.substring(0, newLineIndex);
-      }
-      /**
-       * Lazily retrieves the reference value from a forwardRef.
-       */
-
-
-      function resolveForwardRef(type) {
-        if (typeof type === 'function' && type.hasOwnProperty('__forward_ref__')) {
-          return type();
-        } else {
-          return type;
-        }
-      }
-      /**
-       * Determine if the argument is shaped like a Promise
-       */
-
-
-      function isPromise(obj) {
-        // allow any Promise/A+ compliant thenable.
-        // It's up to the caller to ensure that obj.then conforms to the spec
-        return !!obj && typeof obj.then === 'function';
-      }
-
-      var Version = function Version(full) {
-        _classCallCheck(this, Version);
-
-        this.full = full;
-        var splits = full.split('.');
-        this.major = splits[0];
-        this.minor = splits[1];
-        this.patch = splits.slice(2).join('.');
-      };
-
-      var __window = typeof window !== 'undefined' && window;
-
-      var __self = typeof self !== 'undefined' && typeof WorkerGlobalScope !== 'undefined' && self instanceof WorkerGlobalScope && self;
-
-      var __global = typeof global !== 'undefined' && global; // Check __global first, because in Node tests both __global and __window may be defined and _global
-      // should be __global in that case.
-
-
-      var _global = __global || __window || __self;
-
-      function newArray(size, value) {
-        var list = [];
-
-        for (var i = 0; i < size; i++) {
-          list.push(value);
-        }
-
-        return list;
-      }
-      /**
-       * Partitions a given array into 2 arrays, based on a boolean value returned by the condition
-       * function.
-       *
-       * @param arr Input array that should be partitioned
-       * @param conditionFn Condition function that is called for each item in a given array and returns a
-       * boolean value.
-       */
-
-
-      function partitionArray(arr, conditionFn) {
-        var truthy = [];
-        var falsy = [];
-
-        var _iterator2 = _createForOfIteratorHelper(arr),
-            _step2;
-
-        try {
-          for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
-            var item = _step2.value;
-            (conditionFn(item) ? truthy : falsy).push(item);
-          }
-        } catch (err) {
-          _iterator2.e(err);
-        } finally {
-          _iterator2.f();
-        }
-
-        return [truthy, falsy];
-      }
-      /**
-       * @license
-       * Copyright Google LLC All Rights Reserved.
-       *
-       * Use of this source code is governed by an MIT-style license that can be
-       * found in the LICENSE file at https://angular.io/license
-       */
-
-
       var CONSTANT_PREFIX = '_c';
       /**
        * `ConstantPool` tries to reuse literal factories when two or more literals are identical.
@@ -6815,14 +6519,14 @@
         var _super47 = _createSuper(FixupExpression);
 
         function FixupExpression(resolved) {
-          var _this59;
+          var _this57;
 
           _classCallCheck(this, FixupExpression);
 
-          _this59 = _super47.call(this, resolved.type);
-          _this59.resolved = resolved;
-          _this59.original = resolved;
-          return _this59;
+          _this57 = _super47.call(this, resolved.type);
+          _this57.resolved = resolved;
+          _this57.original = resolved;
+          return _this57;
         }
 
         _createClass(FixupExpression, [{
@@ -6980,9 +6684,9 @@
                 };
               }));
 
-              var _key2 = this.keyOf(expressionForKey);
+              var _key = this.keyOf(expressionForKey);
 
-              return this._getLiteralFactory(_key2, literal.entries.map(function (e) {
+              return this._getLiteralFactory(_key, literal.entries.map(function (e) {
                 return e.value;
               }), function (entries) {
                 return literalMap(entries.map(function (value, index) {
@@ -6998,7 +6702,7 @@
         }, {
           key: "_getLiteralFactory",
           value: function _getLiteralFactory(key, values, resultMap) {
-            var _this60 = this;
+            var _this58 = this;
 
             var literalFactory = this.literalFactories.get(key);
             var literalFactoryArguments = values.filter(function (e) {
@@ -7007,7 +6711,7 @@
 
             if (!literalFactory) {
               var resultExpressions = values.map(function (e, index) {
-                return e.isConstant() ? _this60.getConstLiteral(e, true) : variable("a".concat(index));
+                return e.isConstant() ? _this58.getConstLiteral(e, true) : variable("a".concat(index));
               });
               var parameters = resultExpressions.filter(isVariable).map(function (e) {
                 return new FnParam(e.name, DYNAMIC_TYPE);
@@ -7061,9 +6765,6 @@
               :
                 return this.pipeDefinitions;
             }
-
-            error("Unknown definition kind ".concat(kind));
-            return this.componentDefinitions;
           }
         }, {
           key: "propertyNameOf",
@@ -7089,9 +6790,6 @@
               :
                 return 'ɵpipe';
             }
-
-            error("Unknown definition kind ".concat(kind));
-            return '<unknown>';
           }
         }, {
           key: "freshName",
@@ -7148,16 +6846,16 @@
         }, {
           key: "visitLiteralArrayExpr",
           value: function visitLiteralArrayExpr(ast, context) {
-            var _this61 = this;
+            var _this59 = this;
 
             return "[".concat(ast.entries.map(function (entry) {
-              return entry.visitExpression(_this61, context);
+              return entry.visitExpression(_this59, context);
             }).join(','), "]");
           }
         }, {
           key: "visitLiteralMapExpr",
           value: function visitLiteralMapExpr(ast, context) {
-            var _this62 = this;
+            var _this60 = this;
 
             var mapKey = function mapKey(entry) {
               var quote = entry.quoted ? '"' : '';
@@ -7165,7 +6863,7 @@
             };
 
             var mapEntry = function mapEntry(entry) {
-              return "".concat(mapKey(entry), ":").concat(entry.value.visitExpression(_this62, context));
+              return "".concat(mapKey(entry), ":").concat(entry.value.visitExpression(_this60, context));
             };
 
             return "{".concat(ast.entries.map(mapEntry).join(','));
@@ -7505,6 +7203,302 @@
 
         return StaticSymbolCache;
       }();
+      /**
+       * @license
+       * Copyright Google LLC All Rights Reserved.
+       *
+       * Use of this source code is governed by an MIT-style license that can be
+       * found in the LICENSE file at https://angular.io/license
+       */
+
+
+      var DASH_CASE_REGEXP = /-+([a-z0-9])/g;
+
+      function dashCaseToCamelCase(input) {
+        return input.replace(DASH_CASE_REGEXP, function () {
+          for (var _len = arguments.length, m = new Array(_len), _key2 = 0; _key2 < _len; _key2++) {
+            m[_key2] = arguments[_key2];
+          }
+
+          return m[1].toUpperCase();
+        });
+      }
+
+      function splitAtColon(input, defaultValues) {
+        return _splitAt(input, ':', defaultValues);
+      }
+
+      function splitAtPeriod(input, defaultValues) {
+        return _splitAt(input, '.', defaultValues);
+      }
+
+      function _splitAt(input, character, defaultValues) {
+        var characterIndex = input.indexOf(character);
+        if (characterIndex == -1) return defaultValues;
+        return [input.slice(0, characterIndex).trim(), input.slice(characterIndex + 1).trim()];
+      }
+
+      function visitValue(value, visitor, context) {
+        if (Array.isArray(value)) {
+          return visitor.visitArray(value, context);
+        }
+
+        if (isStrictStringMap(value)) {
+          return visitor.visitStringMap(value, context);
+        }
+
+        if (value == null || typeof value == 'string' || typeof value == 'number' || typeof value == 'boolean') {
+          return visitor.visitPrimitive(value, context);
+        }
+
+        return visitor.visitOther(value, context);
+      }
+
+      function isDefined(val) {
+        return val !== null && val !== undefined;
+      }
+
+      function noUndefined(val) {
+        return val === undefined ? null : val;
+      }
+
+      var ValueTransformer = /*#__PURE__*/function () {
+        function ValueTransformer() {
+          _classCallCheck(this, ValueTransformer);
+        }
+
+        _createClass(ValueTransformer, [{
+          key: "visitArray",
+          value: function visitArray(arr, context) {
+            var _this61 = this;
+
+            return arr.map(function (value) {
+              return visitValue(value, _this61, context);
+            });
+          }
+        }, {
+          key: "visitStringMap",
+          value: function visitStringMap(map, context) {
+            var _this62 = this;
+
+            var result = {};
+            Object.keys(map).forEach(function (key) {
+              result[key] = visitValue(map[key], _this62, context);
+            });
+            return result;
+          }
+        }, {
+          key: "visitPrimitive",
+          value: function visitPrimitive(value, context) {
+            return value;
+          }
+        }, {
+          key: "visitOther",
+          value: function visitOther(value, context) {
+            return value;
+          }
+        }]);
+
+        return ValueTransformer;
+      }();
+
+      var SyncAsync = {
+        assertSync: function assertSync(value) {
+          if (isPromise(value)) {
+            throw new Error("Illegal state: value cannot be a promise");
+          }
+
+          return value;
+        },
+        then: function then(value, cb) {
+          return isPromise(value) ? value.then(cb) : cb(value);
+        },
+        all: function all(syncAsyncValues) {
+          return syncAsyncValues.some(isPromise) ? Promise.all(syncAsyncValues) : syncAsyncValues;
+        }
+      };
+
+      function error(msg) {
+        throw new Error("Internal Error: ".concat(msg));
+      }
+
+      function syntaxError(msg, parseErrors) {
+        var error = Error(msg);
+        error[ERROR_SYNTAX_ERROR] = true;
+        if (parseErrors) error[ERROR_PARSE_ERRORS] = parseErrors;
+        return error;
+      }
+
+      var ERROR_SYNTAX_ERROR = 'ngSyntaxError';
+      var ERROR_PARSE_ERRORS = 'ngParseErrors';
+
+      function isSyntaxError(error) {
+        return error[ERROR_SYNTAX_ERROR];
+      }
+
+      function getParseErrors(error) {
+        return error[ERROR_PARSE_ERRORS] || [];
+      } // Escape characters that have a special meaning in Regular Expressions
+
+
+      function escapeRegExp(s) {
+        return s.replace(/([.*+?^=!:${}()|[\]\/\\])/g, '\\$1');
+      }
+
+      var STRING_MAP_PROTO = Object.getPrototypeOf({});
+
+      function isStrictStringMap(obj) {
+        return typeof obj === 'object' && obj !== null && Object.getPrototypeOf(obj) === STRING_MAP_PROTO;
+      }
+
+      function utf8Encode(str) {
+        var encoded = [];
+
+        for (var index = 0; index < str.length; index++) {
+          var codePoint = str.charCodeAt(index); // decode surrogate
+          // see https://mathiasbynens.be/notes/javascript-encoding#surrogate-formulae
+
+          if (codePoint >= 0xd800 && codePoint <= 0xdbff && str.length > index + 1) {
+            var low = str.charCodeAt(index + 1);
+
+            if (low >= 0xdc00 && low <= 0xdfff) {
+              index++;
+              codePoint = (codePoint - 0xd800 << 10) + low - 0xdc00 + 0x10000;
+            }
+          }
+
+          if (codePoint <= 0x7f) {
+            encoded.push(codePoint);
+          } else if (codePoint <= 0x7ff) {
+            encoded.push(codePoint >> 6 & 0x1F | 0xc0, codePoint & 0x3f | 0x80);
+          } else if (codePoint <= 0xffff) {
+            encoded.push(codePoint >> 12 | 0xe0, codePoint >> 6 & 0x3f | 0x80, codePoint & 0x3f | 0x80);
+          } else if (codePoint <= 0x1fffff) {
+            encoded.push(codePoint >> 18 & 0x07 | 0xf0, codePoint >> 12 & 0x3f | 0x80, codePoint >> 6 & 0x3f | 0x80, codePoint & 0x3f | 0x80);
+          }
+        }
+
+        return encoded;
+      }
+
+      function stringify(token) {
+        if (typeof token === 'string') {
+          return token;
+        }
+
+        if (Array.isArray(token)) {
+          return '[' + token.map(stringify).join(', ') + ']';
+        }
+
+        if (token == null) {
+          return '' + token;
+        }
+
+        if (token.overriddenName) {
+          return "".concat(token.overriddenName);
+        }
+
+        if (token.name) {
+          return "".concat(token.name);
+        }
+
+        if (!token.toString) {
+          return 'object';
+        } // WARNING: do not try to `JSON.stringify(token)` here
+        // see https://github.com/angular/angular/issues/23440
+
+
+        var res = token.toString();
+
+        if (res == null) {
+          return '' + res;
+        }
+
+        var newLineIndex = res.indexOf('\n');
+        return newLineIndex === -1 ? res : res.substring(0, newLineIndex);
+      }
+      /**
+       * Lazily retrieves the reference value from a forwardRef.
+       */
+
+
+      function resolveForwardRef(type) {
+        if (typeof type === 'function' && type.hasOwnProperty('__forward_ref__')) {
+          return type();
+        } else {
+          return type;
+        }
+      }
+      /**
+       * Determine if the argument is shaped like a Promise
+       */
+
+
+      function isPromise(obj) {
+        // allow any Promise/A+ compliant thenable.
+        // It's up to the caller to ensure that obj.then conforms to the spec
+        return !!obj && typeof obj.then === 'function';
+      }
+
+      var Version = function Version(full) {
+        _classCallCheck(this, Version);
+
+        this.full = full;
+        var splits = full.split('.');
+        this.major = splits[0];
+        this.minor = splits[1];
+        this.patch = splits.slice(2).join('.');
+      };
+
+      var __window = typeof window !== 'undefined' && window;
+
+      var __self = typeof self !== 'undefined' && typeof WorkerGlobalScope !== 'undefined' && self instanceof WorkerGlobalScope && self;
+
+      var __global = typeof global !== 'undefined' && global; // Check __global first, because in Node tests both __global and __window may be defined and _global
+      // should be __global in that case.
+
+
+      var _global = __global || __window || __self;
+
+      function newArray(size, value) {
+        var list = [];
+
+        for (var i = 0; i < size; i++) {
+          list.push(value);
+        }
+
+        return list;
+      }
+      /**
+       * Partitions a given array into 2 arrays, based on a boolean value returned by the condition
+       * function.
+       *
+       * @param arr Input array that should be partitioned
+       * @param conditionFn Condition function that is called for each item in a given array and returns a
+       * boolean value.
+       */
+
+
+      function partitionArray(arr, conditionFn) {
+        var truthy = [];
+        var falsy = [];
+
+        var _iterator2 = _createForOfIteratorHelper(arr),
+            _step2;
+
+        try {
+          for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+            var item = _step2.value;
+            (conditionFn(item) ? truthy : falsy).push(item);
+          }
+        } catch (err) {
+          _iterator2.e(err);
+        } finally {
+          _iterator2.f();
+        }
+
+        return [truthy, falsy];
+      }
       /**
        * @license
        * Copyright Google LLC All Rights Reserved.
@@ -18659,7 +18653,7 @@
 
               this._attemptCharCodeUntilFn(isNotWhitespace);
 
-              while (this._cursor.peek() !== $SLASH && this._cursor.peek() !== $GT && this._cursor.peek() !== $LT) {
+              while (this._cursor.peek() !== $SLASH && this._cursor.peek() !== $GT && this._cursor.peek() !== $LT && this._cursor.peek() !== $EOF) {
                 this._consumeAttributeName();
 
                 this._attemptCharCodeUntilFn(isNotWhitespace);
@@ -19002,7 +18996,7 @@
       }
 
       function isNameEnd(code) {
-        return isWhitespace(code) || code === $GT || code === $LT || code === $SLASH || code === $SQ || code === $DQ || code === $EQ;
+        return isWhitespace(code) || code === $GT || code === $LT || code === $SLASH || code === $SQ || code === $DQ || code === $EQ || code === $EOF;
       }
 
       function isPrefixEnd(code) {
@@ -26161,7 +26155,7 @@
 
       var SCHEMA = ['[Element]|textContent,%classList,className,id,innerHTML,*beforecopy,*beforecut,*beforepaste,*copy,*cut,*paste,*search,*selectstart,*webkitfullscreenchange,*webkitfullscreenerror,*wheel,outerHTML,#scrollLeft,#scrollTop,slot' +
       /* added manually to avoid breaking changes */
-      ',*message,*mozfullscreenchange,*mozfullscreenerror,*mozpointerlockchange,*mozpointerlockerror,*webglcontextcreationerror,*webglcontextlost,*webglcontextrestored', '[HTMLElement]^[Element]|accessKey,contentEditable,dir,!draggable,!hidden,innerText,lang,*abort,*auxclick,*blur,*cancel,*canplay,*canplaythrough,*change,*click,*close,*contextmenu,*cuechange,*dblclick,*drag,*dragend,*dragenter,*dragleave,*dragover,*dragstart,*drop,*durationchange,*emptied,*ended,*error,*focus,*gotpointercapture,*input,*invalid,*keydown,*keypress,*keyup,*load,*loadeddata,*loadedmetadata,*loadstart,*lostpointercapture,*mousedown,*mouseenter,*mouseleave,*mousemove,*mouseout,*mouseover,*mouseup,*mousewheel,*pause,*play,*playing,*pointercancel,*pointerdown,*pointerenter,*pointerleave,*pointermove,*pointerout,*pointerover,*pointerup,*progress,*ratechange,*reset,*resize,*scroll,*seeked,*seeking,*select,*show,*stalled,*submit,*suspend,*timeupdate,*toggle,*volumechange,*waiting,outerText,!spellcheck,%style,#tabIndex,title,!translate', 'abbr,address,article,aside,b,bdi,bdo,cite,code,dd,dfn,dt,em,figcaption,figure,footer,header,i,kbd,main,mark,nav,noscript,rb,rp,rt,rtc,ruby,s,samp,section,small,strong,sub,sup,u,var,wbr^[HTMLElement]|accessKey,contentEditable,dir,!draggable,!hidden,innerText,lang,*abort,*auxclick,*blur,*cancel,*canplay,*canplaythrough,*change,*click,*close,*contextmenu,*cuechange,*dblclick,*drag,*dragend,*dragenter,*dragleave,*dragover,*dragstart,*drop,*durationchange,*emptied,*ended,*error,*focus,*gotpointercapture,*input,*invalid,*keydown,*keypress,*keyup,*load,*loadeddata,*loadedmetadata,*loadstart,*lostpointercapture,*mousedown,*mouseenter,*mouseleave,*mousemove,*mouseout,*mouseover,*mouseup,*mousewheel,*pause,*play,*playing,*pointercancel,*pointerdown,*pointerenter,*pointerleave,*pointermove,*pointerout,*pointerover,*pointerup,*progress,*ratechange,*reset,*resize,*scroll,*seeked,*seeking,*select,*show,*stalled,*submit,*suspend,*timeupdate,*toggle,*volumechange,*waiting,outerText,!spellcheck,%style,#tabIndex,title,!translate', 'media^[HTMLElement]|!autoplay,!controls,%controlsList,%crossOrigin,#currentTime,!defaultMuted,#defaultPlaybackRate,!disableRemotePlayback,!loop,!muted,*encrypted,*waitingforkey,#playbackRate,preload,src,%srcObject,#volume', ':svg:^[HTMLElement]|*abort,*auxclick,*blur,*cancel,*canplay,*canplaythrough,*change,*click,*close,*contextmenu,*cuechange,*dblclick,*drag,*dragend,*dragenter,*dragleave,*dragover,*dragstart,*drop,*durationchange,*emptied,*ended,*error,*focus,*gotpointercapture,*input,*invalid,*keydown,*keypress,*keyup,*load,*loadeddata,*loadedmetadata,*loadstart,*lostpointercapture,*mousedown,*mouseenter,*mouseleave,*mousemove,*mouseout,*mouseover,*mouseup,*mousewheel,*pause,*play,*playing,*pointercancel,*pointerdown,*pointerenter,*pointerleave,*pointermove,*pointerout,*pointerover,*pointerup,*progress,*ratechange,*reset,*resize,*scroll,*seeked,*seeking,*select,*show,*stalled,*submit,*suspend,*timeupdate,*toggle,*volumechange,*waiting,%style,#tabIndex', ':svg:graphics^:svg:|', ':svg:animation^:svg:|*begin,*end,*repeat', ':svg:geometry^:svg:|', ':svg:componentTransferFunction^:svg:|', ':svg:gradient^:svg:|', ':svg:textContent^:svg:graphics|', ':svg:textPositioning^:svg:textContent|', 'a^[HTMLElement]|charset,coords,download,hash,host,hostname,href,hreflang,name,password,pathname,ping,port,protocol,referrerPolicy,rel,rev,search,shape,target,text,type,username', 'area^[HTMLElement]|alt,coords,download,hash,host,hostname,href,!noHref,password,pathname,ping,port,protocol,referrerPolicy,rel,search,shape,target,username', 'audio^media|', 'br^[HTMLElement]|clear', 'base^[HTMLElement]|href,target', 'body^[HTMLElement]|aLink,background,bgColor,link,*beforeunload,*blur,*error,*focus,*hashchange,*languagechange,*load,*message,*offline,*online,*pagehide,*pageshow,*popstate,*rejectionhandled,*resize,*scroll,*storage,*unhandledrejection,*unload,text,vLink', 'button^[HTMLElement]|!autofocus,!disabled,formAction,formEnctype,formMethod,!formNoValidate,formTarget,name,type,value', 'canvas^[HTMLElement]|#height,#width', 'content^[HTMLElement]|select', 'dl^[HTMLElement]|!compact', 'datalist^[HTMLElement]|', 'details^[HTMLElement]|!open', 'dialog^[HTMLElement]|!open,returnValue', 'dir^[HTMLElement]|!compact', 'div^[HTMLElement]|align', 'embed^[HTMLElement]|align,height,name,src,type,width', 'fieldset^[HTMLElement]|!disabled,name', 'font^[HTMLElement]|color,face,size', 'form^[HTMLElement]|acceptCharset,action,autocomplete,encoding,enctype,method,name,!noValidate,target', 'frame^[HTMLElement]|frameBorder,longDesc,marginHeight,marginWidth,name,!noResize,scrolling,src', 'frameset^[HTMLElement]|cols,*beforeunload,*blur,*error,*focus,*hashchange,*languagechange,*load,*message,*offline,*online,*pagehide,*pageshow,*popstate,*rejectionhandled,*resize,*scroll,*storage,*unhandledrejection,*unload,rows', 'hr^[HTMLElement]|align,color,!noShade,size,width', 'head^[HTMLElement]|', 'h1,h2,h3,h4,h5,h6^[HTMLElement]|align', 'html^[HTMLElement]|version', 'iframe^[HTMLElement]|align,!allowFullscreen,frameBorder,height,longDesc,marginHeight,marginWidth,name,referrerPolicy,%sandbox,scrolling,src,srcdoc,width', 'img^[HTMLElement]|align,alt,border,%crossOrigin,#height,#hspace,!isMap,longDesc,lowsrc,name,referrerPolicy,sizes,src,srcset,useMap,#vspace,#width', 'input^[HTMLElement]|accept,align,alt,autocapitalize,autocomplete,!autofocus,!checked,!defaultChecked,defaultValue,dirName,!disabled,%files,formAction,formEnctype,formMethod,!formNoValidate,formTarget,#height,!incremental,!indeterminate,max,#maxLength,min,#minLength,!multiple,name,pattern,placeholder,!readOnly,!required,selectionDirection,#selectionEnd,#selectionStart,#size,src,step,type,useMap,value,%valueAsDate,#valueAsNumber,#width', 'li^[HTMLElement]|type,#value', 'label^[HTMLElement]|htmlFor', 'legend^[HTMLElement]|align', 'link^[HTMLElement]|as,charset,%crossOrigin,!disabled,href,hreflang,integrity,media,referrerPolicy,rel,%relList,rev,%sizes,target,type', 'map^[HTMLElement]|name', 'marquee^[HTMLElement]|behavior,bgColor,direction,height,#hspace,#loop,#scrollAmount,#scrollDelay,!trueSpeed,#vspace,width', 'menu^[HTMLElement]|!compact', 'meta^[HTMLElement]|content,httpEquiv,name,scheme', 'meter^[HTMLElement]|#high,#low,#max,#min,#optimum,#value', 'ins,del^[HTMLElement]|cite,dateTime', 'ol^[HTMLElement]|!compact,!reversed,#start,type', 'object^[HTMLElement]|align,archive,border,code,codeBase,codeType,data,!declare,height,#hspace,name,standby,type,useMap,#vspace,width', 'optgroup^[HTMLElement]|!disabled,label', 'option^[HTMLElement]|!defaultSelected,!disabled,label,!selected,text,value', 'output^[HTMLElement]|defaultValue,%htmlFor,name,value', 'p^[HTMLElement]|align', 'param^[HTMLElement]|name,type,value,valueType', 'picture^[HTMLElement]|', 'pre^[HTMLElement]|#width', 'progress^[HTMLElement]|#max,#value', 'q,blockquote,cite^[HTMLElement]|', 'script^[HTMLElement]|!async,charset,%crossOrigin,!defer,event,htmlFor,integrity,src,text,type', 'select^[HTMLElement]|!autofocus,!disabled,#length,!multiple,name,!required,#selectedIndex,#size,value', 'shadow^[HTMLElement]|', 'slot^[HTMLElement]|name', 'source^[HTMLElement]|media,sizes,src,srcset,type', 'span^[HTMLElement]|', 'style^[HTMLElement]|!disabled,media,type', 'caption^[HTMLElement]|align', 'th,td^[HTMLElement]|abbr,align,axis,bgColor,ch,chOff,#colSpan,headers,height,!noWrap,#rowSpan,scope,vAlign,width', 'col,colgroup^[HTMLElement]|align,ch,chOff,#span,vAlign,width', 'table^[HTMLElement]|align,bgColor,border,%caption,cellPadding,cellSpacing,frame,rules,summary,%tFoot,%tHead,width', 'tr^[HTMLElement]|align,bgColor,ch,chOff,vAlign', 'tfoot,thead,tbody^[HTMLElement]|align,ch,chOff,vAlign', 'template^[HTMLElement]|', 'textarea^[HTMLElement]|autocapitalize,!autofocus,#cols,defaultValue,dirName,!disabled,#maxLength,#minLength,name,placeholder,!readOnly,!required,#rows,selectionDirection,#selectionEnd,#selectionStart,value,wrap', 'title^[HTMLElement]|text', 'track^[HTMLElement]|!default,kind,label,src,srclang', 'ul^[HTMLElement]|!compact,type', 'unknown^[HTMLElement]|', 'video^media|#height,poster,#width', ':svg:a^:svg:graphics|', ':svg:animate^:svg:animation|', ':svg:animateMotion^:svg:animation|', ':svg:animateTransform^:svg:animation|', ':svg:circle^:svg:geometry|', ':svg:clipPath^:svg:graphics|', ':svg:defs^:svg:graphics|', ':svg:desc^:svg:|', ':svg:discard^:svg:|', ':svg:ellipse^:svg:geometry|', ':svg:feBlend^:svg:|', ':svg:feColorMatrix^:svg:|', ':svg:feComponentTransfer^:svg:|', ':svg:feComposite^:svg:|', ':svg:feConvolveMatrix^:svg:|', ':svg:feDiffuseLighting^:svg:|', ':svg:feDisplacementMap^:svg:|', ':svg:feDistantLight^:svg:|', ':svg:feDropShadow^:svg:|', ':svg:feFlood^:svg:|', ':svg:feFuncA^:svg:componentTransferFunction|', ':svg:feFuncB^:svg:componentTransferFunction|', ':svg:feFuncG^:svg:componentTransferFunction|', ':svg:feFuncR^:svg:componentTransferFunction|', ':svg:feGaussianBlur^:svg:|', ':svg:feImage^:svg:|', ':svg:feMerge^:svg:|', ':svg:feMergeNode^:svg:|', ':svg:feMorphology^:svg:|', ':svg:feOffset^:svg:|', ':svg:fePointLight^:svg:|', ':svg:feSpecularLighting^:svg:|', ':svg:feSpotLight^:svg:|', ':svg:feTile^:svg:|', ':svg:feTurbulence^:svg:|', ':svg:filter^:svg:|', ':svg:foreignObject^:svg:graphics|', ':svg:g^:svg:graphics|', ':svg:image^:svg:graphics|', ':svg:line^:svg:geometry|', ':svg:linearGradient^:svg:gradient|', ':svg:mpath^:svg:|', ':svg:marker^:svg:|', ':svg:mask^:svg:|', ':svg:metadata^:svg:|', ':svg:path^:svg:geometry|', ':svg:pattern^:svg:|', ':svg:polygon^:svg:geometry|', ':svg:polyline^:svg:geometry|', ':svg:radialGradient^:svg:gradient|', ':svg:rect^:svg:geometry|', ':svg:svg^:svg:graphics|#currentScale,#zoomAndPan', ':svg:script^:svg:|type', ':svg:set^:svg:animation|', ':svg:stop^:svg:|', ':svg:style^:svg:|!disabled,media,title,type', ':svg:switch^:svg:graphics|', ':svg:symbol^:svg:|', ':svg:tspan^:svg:textPositioning|', ':svg:text^:svg:textPositioning|', ':svg:textPath^:svg:textContent|', ':svg:title^:svg:|', ':svg:use^:svg:graphics|', ':svg:view^:svg:|#zoomAndPan', 'data^[HTMLElement]|value', 'keygen^[HTMLElement]|!autofocus,challenge,!disabled,form,keytype,name', 'menuitem^[HTMLElement]|type,label,icon,!disabled,!checked,radiogroup,!default', 'summary^[HTMLElement]|', 'time^[HTMLElement]|dateTime', ':svg:cursor^:svg:|'];
+      ',*message,*mozfullscreenchange,*mozfullscreenerror,*mozpointerlockchange,*mozpointerlockerror,*webglcontextcreationerror,*webglcontextlost,*webglcontextrestored', '[HTMLElement]^[Element]|accessKey,contentEditable,dir,!draggable,!hidden,innerText,lang,*abort,*auxclick,*blur,*cancel,*canplay,*canplaythrough,*change,*click,*close,*contextmenu,*cuechange,*dblclick,*drag,*dragend,*dragenter,*dragleave,*dragover,*dragstart,*drop,*durationchange,*emptied,*ended,*error,*focus,*gotpointercapture,*input,*invalid,*keydown,*keypress,*keyup,*load,*loadeddata,*loadedmetadata,*loadstart,*lostpointercapture,*mousedown,*mouseenter,*mouseleave,*mousemove,*mouseout,*mouseover,*mouseup,*mousewheel,*pause,*play,*playing,*pointercancel,*pointerdown,*pointerenter,*pointerleave,*pointermove,*pointerout,*pointerover,*pointerup,*progress,*ratechange,*reset,*resize,*scroll,*seeked,*seeking,*select,*show,*stalled,*submit,*suspend,*timeupdate,*toggle,*volumechange,*waiting,outerText,!spellcheck,%style,#tabIndex,title,!translate', 'abbr,address,article,aside,b,bdi,bdo,cite,code,dd,dfn,dt,em,figcaption,figure,footer,header,i,kbd,main,mark,nav,noscript,rb,rp,rt,rtc,ruby,s,samp,section,small,strong,sub,sup,u,var,wbr^[HTMLElement]|accessKey,contentEditable,dir,!draggable,!hidden,innerText,lang,*abort,*auxclick,*blur,*cancel,*canplay,*canplaythrough,*change,*click,*close,*contextmenu,*cuechange,*dblclick,*drag,*dragend,*dragenter,*dragleave,*dragover,*dragstart,*drop,*durationchange,*emptied,*ended,*error,*focus,*gotpointercapture,*input,*invalid,*keydown,*keypress,*keyup,*load,*loadeddata,*loadedmetadata,*loadstart,*lostpointercapture,*mousedown,*mouseenter,*mouseleave,*mousemove,*mouseout,*mouseover,*mouseup,*mousewheel,*pause,*play,*playing,*pointercancel,*pointerdown,*pointerenter,*pointerleave,*pointermove,*pointerout,*pointerover,*pointerup,*progress,*ratechange,*reset,*resize,*scroll,*seeked,*seeking,*select,*show,*stalled,*submit,*suspend,*timeupdate,*toggle,*volumechange,*waiting,outerText,!spellcheck,%style,#tabIndex,title,!translate', 'media^[HTMLElement]|!autoplay,!controls,%controlsList,%crossOrigin,#currentTime,!defaultMuted,#defaultPlaybackRate,!disableRemotePlayback,!loop,!muted,*encrypted,*waitingforkey,#playbackRate,preload,src,%srcObject,#volume', ':svg:^[HTMLElement]|*abort,*auxclick,*blur,*cancel,*canplay,*canplaythrough,*change,*click,*close,*contextmenu,*cuechange,*dblclick,*drag,*dragend,*dragenter,*dragleave,*dragover,*dragstart,*drop,*durationchange,*emptied,*ended,*error,*focus,*gotpointercapture,*input,*invalid,*keydown,*keypress,*keyup,*load,*loadeddata,*loadedmetadata,*loadstart,*lostpointercapture,*mousedown,*mouseenter,*mouseleave,*mousemove,*mouseout,*mouseover,*mouseup,*mousewheel,*pause,*play,*playing,*pointercancel,*pointerdown,*pointerenter,*pointerleave,*pointermove,*pointerout,*pointerover,*pointerup,*progress,*ratechange,*reset,*resize,*scroll,*seeked,*seeking,*select,*show,*stalled,*submit,*suspend,*timeupdate,*toggle,*volumechange,*waiting,%style,#tabIndex', ':svg:graphics^:svg:|', ':svg:animation^:svg:|*begin,*end,*repeat', ':svg:geometry^:svg:|', ':svg:componentTransferFunction^:svg:|', ':svg:gradient^:svg:|', ':svg:textContent^:svg:graphics|', ':svg:textPositioning^:svg:textContent|', 'a^[HTMLElement]|charset,coords,download,hash,host,hostname,href,hreflang,name,password,pathname,ping,port,protocol,referrerPolicy,rel,rev,search,shape,target,text,type,username', 'area^[HTMLElement]|alt,coords,download,hash,host,hostname,href,!noHref,password,pathname,ping,port,protocol,referrerPolicy,rel,search,shape,target,username', 'audio^media|', 'br^[HTMLElement]|clear', 'base^[HTMLElement]|href,target', 'body^[HTMLElement]|aLink,background,bgColor,link,*beforeunload,*blur,*error,*focus,*hashchange,*languagechange,*load,*message,*offline,*online,*pagehide,*pageshow,*popstate,*rejectionhandled,*resize,*scroll,*storage,*unhandledrejection,*unload,text,vLink', 'button^[HTMLElement]|!autofocus,!disabled,formAction,formEnctype,formMethod,!formNoValidate,formTarget,name,type,value', 'canvas^[HTMLElement]|#height,#width', 'content^[HTMLElement]|select', 'dl^[HTMLElement]|!compact', 'datalist^[HTMLElement]|', 'details^[HTMLElement]|!open', 'dialog^[HTMLElement]|!open,returnValue', 'dir^[HTMLElement]|!compact', 'div^[HTMLElement]|align', 'embed^[HTMLElement]|align,height,name,src,type,width', 'fieldset^[HTMLElement]|!disabled,name', 'font^[HTMLElement]|color,face,size', 'form^[HTMLElement]|acceptCharset,action,autocomplete,encoding,enctype,method,name,!noValidate,target', 'frame^[HTMLElement]|frameBorder,longDesc,marginHeight,marginWidth,name,!noResize,scrolling,src', 'frameset^[HTMLElement]|cols,*beforeunload,*blur,*error,*focus,*hashchange,*languagechange,*load,*message,*offline,*online,*pagehide,*pageshow,*popstate,*rejectionhandled,*resize,*scroll,*storage,*unhandledrejection,*unload,rows', 'hr^[HTMLElement]|align,color,!noShade,size,width', 'head^[HTMLElement]|', 'h1,h2,h3,h4,h5,h6^[HTMLElement]|align', 'html^[HTMLElement]|version', 'iframe^[HTMLElement]|align,!allowFullscreen,frameBorder,height,longDesc,marginHeight,marginWidth,name,referrerPolicy,%sandbox,scrolling,src,srcdoc,width', 'img^[HTMLElement]|align,alt,border,%crossOrigin,#height,#hspace,!isMap,longDesc,lowsrc,name,referrerPolicy,sizes,src,srcset,useMap,#vspace,#width', 'input^[HTMLElement]|accept,align,alt,autocapitalize,autocomplete,!autofocus,!checked,!defaultChecked,defaultValue,dirName,!disabled,%files,formAction,formEnctype,formMethod,!formNoValidate,formTarget,#height,!incremental,!indeterminate,max,#maxLength,min,#minLength,!multiple,name,pattern,placeholder,!readOnly,!required,selectionDirection,#selectionEnd,#selectionStart,#size,src,step,type,useMap,value,%valueAsDate,#valueAsNumber,#width', 'li^[HTMLElement]|type,#value', 'label^[HTMLElement]|htmlFor', 'legend^[HTMLElement]|align', 'link^[HTMLElement]|as,charset,%crossOrigin,!disabled,href,hreflang,integrity,media,referrerPolicy,rel,%relList,rev,%sizes,target,type', 'map^[HTMLElement]|name', 'marquee^[HTMLElement]|behavior,bgColor,direction,height,#hspace,#loop,#scrollAmount,#scrollDelay,!trueSpeed,#vspace,width', 'menu^[HTMLElement]|!compact', 'meta^[HTMLElement]|content,httpEquiv,name,scheme', 'meter^[HTMLElement]|#high,#low,#max,#min,#optimum,#value', 'ins,del^[HTMLElement]|cite,dateTime', 'ol^[HTMLElement]|!compact,!reversed,#start,type', 'object^[HTMLElement]|align,archive,border,code,codeBase,codeType,data,!declare,height,#hspace,name,standby,type,useMap,#vspace,width', 'optgroup^[HTMLElement]|!disabled,label', 'option^[HTMLElement]|!defaultSelected,!disabled,label,!selected,text,value', 'output^[HTMLElement]|defaultValue,%htmlFor,name,value', 'p^[HTMLElement]|align', 'param^[HTMLElement]|name,type,value,valueType', 'picture^[HTMLElement]|', 'pre^[HTMLElement]|#width', 'progress^[HTMLElement]|#max,#value', 'q,blockquote,cite^[HTMLElement]|', 'script^[HTMLElement]|!async,charset,%crossOrigin,!defer,event,htmlFor,integrity,src,text,type', 'select^[HTMLElement]|autocomplete,!autofocus,!disabled,#length,!multiple,name,!required,#selectedIndex,#size,value', 'shadow^[HTMLElement]|', 'slot^[HTMLElement]|name', 'source^[HTMLElement]|media,sizes,src,srcset,type', 'span^[HTMLElement]|', 'style^[HTMLElement]|!disabled,media,type', 'caption^[HTMLElement]|align', 'th,td^[HTMLElement]|abbr,align,axis,bgColor,ch,chOff,#colSpan,headers,height,!noWrap,#rowSpan,scope,vAlign,width', 'col,colgroup^[HTMLElement]|align,ch,chOff,#span,vAlign,width', 'table^[HTMLElement]|align,bgColor,border,%caption,cellPadding,cellSpacing,frame,rules,summary,%tFoot,%tHead,width', 'tr^[HTMLElement]|align,bgColor,ch,chOff,vAlign', 'tfoot,thead,tbody^[HTMLElement]|align,ch,chOff,vAlign', 'template^[HTMLElement]|', 'textarea^[HTMLElement]|autocapitalize,autocomplete,!autofocus,#cols,defaultValue,dirName,!disabled,#maxLength,#minLength,name,placeholder,!readOnly,!required,#rows,selectionDirection,#selectionEnd,#selectionStart,value,wrap', 'title^[HTMLElement]|text', 'track^[HTMLElement]|!default,kind,label,src,srclang', 'ul^[HTMLElement]|!compact,type', 'unknown^[HTMLElement]|', 'video^media|#height,poster,#width', ':svg:a^:svg:graphics|', ':svg:animate^:svg:animation|', ':svg:animateMotion^:svg:animation|', ':svg:animateTransform^:svg:animation|', ':svg:circle^:svg:geometry|', ':svg:clipPath^:svg:graphics|', ':svg:defs^:svg:graphics|', ':svg:desc^:svg:|', ':svg:discard^:svg:|', ':svg:ellipse^:svg:geometry|', ':svg:feBlend^:svg:|', ':svg:feColorMatrix^:svg:|', ':svg:feComponentTransfer^:svg:|', ':svg:feComposite^:svg:|', ':svg:feConvolveMatrix^:svg:|', ':svg:feDiffuseLighting^:svg:|', ':svg:feDisplacementMap^:svg:|', ':svg:feDistantLight^:svg:|', ':svg:feDropShadow^:svg:|', ':svg:feFlood^:svg:|', ':svg:feFuncA^:svg:componentTransferFunction|', ':svg:feFuncB^:svg:componentTransferFunction|', ':svg:feFuncG^:svg:componentTransferFunction|', ':svg:feFuncR^:svg:componentTransferFunction|', ':svg:feGaussianBlur^:svg:|', ':svg:feImage^:svg:|', ':svg:feMerge^:svg:|', ':svg:feMergeNode^:svg:|', ':svg:feMorphology^:svg:|', ':svg:feOffset^:svg:|', ':svg:fePointLight^:svg:|', ':svg:feSpecularLighting^:svg:|', ':svg:feSpotLight^:svg:|', ':svg:feTile^:svg:|', ':svg:feTurbulence^:svg:|', ':svg:filter^:svg:|', ':svg:foreignObject^:svg:graphics|', ':svg:g^:svg:graphics|', ':svg:image^:svg:graphics|', ':svg:line^:svg:geometry|', ':svg:linearGradient^:svg:gradient|', ':svg:mpath^:svg:|', ':svg:marker^:svg:|', ':svg:mask^:svg:|', ':svg:metadata^:svg:|', ':svg:path^:svg:geometry|', ':svg:pattern^:svg:|', ':svg:polygon^:svg:geometry|', ':svg:polyline^:svg:geometry|', ':svg:radialGradient^:svg:gradient|', ':svg:rect^:svg:geometry|', ':svg:svg^:svg:graphics|#currentScale,#zoomAndPan', ':svg:script^:svg:|type', ':svg:set^:svg:animation|', ':svg:stop^:svg:|', ':svg:style^:svg:|!disabled,media,title,type', ':svg:switch^:svg:graphics|', ':svg:symbol^:svg:|', ':svg:tspan^:svg:textPositioning|', ':svg:text^:svg:textPositioning|', ':svg:textPath^:svg:textContent|', ':svg:title^:svg:|', ':svg:use^:svg:graphics|', ':svg:view^:svg:|#zoomAndPan', 'data^[HTMLElement]|value', 'keygen^[HTMLElement]|!autofocus,challenge,!disabled,form,keytype,name', 'menuitem^[HTMLElement]|type,label,icon,!disabled,!checked,radiogroup,!default', 'summary^[HTMLElement]|', 'time^[HTMLElement]|dateTime', ':svg:cursor^:svg:|'];
       var _ATTR_TO_PROP = {
         'class': 'className',
         'for': 'htmlFor',
@@ -30710,9 +30704,7 @@
           tokenizeExpansionForms: true
         }));
 
-        if (parseResult.errors && parseResult.errors.length > 0) {
-          // TODO(ayazhafiz): we may not always want to bail out at this point (e.g. in
-          // the context of a language service).
+        if (!options.alwaysAttemptHtmlToR3AstConversion && parseResult.errors && parseResult.errors.length > 0) {
           return {
             interpolationConfig: interpolationConfig,
             preserveWhitespaces: preserveWhitespaces,
@@ -30737,7 +30729,7 @@
         !preserveWhitespaces, enableI18nLegacyMessageIdFormat);
         var i18nMetaResult = i18nMetaVisitor.visitAllWithErrors(rootNodes);
 
-        if (i18nMetaResult.errors && i18nMetaResult.errors.length > 0) {
+        if (!options.alwaysAttemptHtmlToR3AstConversion && i18nMetaResult.errors && i18nMetaResult.errors.length > 0) {
           return {
             interpolationConfig: interpolationConfig,
             preserveWhitespaces: preserveWhitespaces,
@@ -30774,6 +30766,7 @@
             styles = _htmlAstToRender3Ast.styles,
             ngContentSelectors = _htmlAstToRender3Ast.ngContentSelectors;
 
+        errors.push.apply(errors, _toConsumableArray(parseResult.errors).concat(_toConsumableArray(i18nMetaResult.errors)));
         return {
           interpolationConfig: interpolationConfig,
           preserveWhitespaces: preserveWhitespaces,
@@ -31334,7 +31327,6 @@
         }
 
         error('Unexpected query form');
-        return NULL_EXPR;
       }
 
       function prepareQueryParams(query, constantPool) {
@@ -31937,7 +31929,8 @@
           key: "compilePipeDeclaration",
           value: function compilePipeDeclaration(angularCoreEnv, sourceMapUrl, declaration) {
             var meta = convertDeclarePipeFacadeToMetadata(declaration);
-            return compilePipeFromMetadata(meta);
+            var res = compilePipeFromMetadata(meta);
+            return this.jitExpression(res.expression, angularCoreEnv, sourceMapUrl, []);
           }
         }, {
           key: "compileInjectable",
@@ -32450,7 +32443,7 @@
        */
 
 
-      var VERSION$1 = new Version('11.2.3');
+      var VERSION$1 = new Version('11.2.4');
       /**
        * @license
        * Copyright Google LLC All Rights Reserved.
@@ -46553,7 +46546,7 @@
 
       function createDirectiveDefinitionMap(meta) {
         var definitionMap = new DefinitionMap();
-        definitionMap.set('version', literal('11.2.3')); // e.g. `type: MyDirective`
+        definitionMap.set('version', literal('11.2.4')); // e.g. `type: MyDirective`
 
         definitionMap.set('type', meta.internalType); // e.g. `selector: 'some-dir'`
 
@@ -46850,7 +46843,7 @@
 
       function createPipeDefinitionMap(meta) {
         var definitionMap = new DefinitionMap();
-        definitionMap.set('version', literal('11.2.3'));
+        definitionMap.set('version', literal('11.2.4'));
         definitionMap.set('ngImport', importExpr(Identifiers$1.core)); // e.g. `type: MyPipe`
 
         definitionMap.set('type', meta.internalType); // e.g. `name: "myPipe"`
@@ -53302,7 +53295,7 @@
     /***/
     function NDB(module, exports) {
       /**
-       * @license Angular v11.2.3
+       * @license Angular v11.2.4
        * (c) 2010-2021 Google LLC. https://angular.io/
        * License: MIT
        */
@@ -69687,7 +69680,7 @@
         return _angular_compiler__WEBPACK_IMPORTED_MODULE_0__["computeMsgId"];
       });
       /**
-       * @license Angular v11.2.3
+       * @license Angular v11.2.4
        * (c) 2010-2021 Google LLC. https://angular.io/
        * License: MIT
        */

@@ -163,7 +163,7 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Pipe, PipeTransform } from &quot;@angular/core&quot;;
 import { AbstractControl, FormGroup } from &quot;@angular/forms&quot;;
 import { combineLatest, Observable } from &quot;rxjs&quot;;
-import { map, startWith } from &quot;rxjs/operators&quot;;
+import { distinct, map, startWith } from &quot;rxjs/operators&quot;;
 
 import { AccordionState } from &quot;../../types&quot;;
 import { hasControlInErrorState } from &quot;../functions/has-control-in-error-state&quot;;
@@ -182,7 +182,8 @@ export class WidgetEditorAccordionFormStatePipe implements PipeTransform {
         return combineLatest([form.statusChanges, form.valueChanges])
             .pipe(
                 startWith(null),
-                map(() &#x3D;&gt; hasControlInErrorState(form) ? AccordionState.CRITICAL : AccordionState.DEFAULT)
+                map(() &#x3D;&gt; hasControlInErrorState(form) ? AccordionState.CRITICAL : AccordionState.DEFAULT),
+                distinct()
             );
     }
 

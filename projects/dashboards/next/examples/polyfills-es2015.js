@@ -2223,7 +2223,7 @@ module.exports = __webpack_require__(/*! ./_descriptors */ "nh4g") ? function (o
 /***/ (function(module, exports) {
 
 /**
- * @license Angular v11.2.3
+ * @license Angular v11.2.4
  * (c) 2010-2021 Google LLC. https://angular.io/
  * License: MIT
  */
