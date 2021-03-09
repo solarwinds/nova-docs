@@ -1,0 +1,1058 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@nova-ui/charts documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">@nova-ui/charts documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content class">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Classes</li>
+  <li>UtilityService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">API</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/core/common/utility.service.ts</code>
+        </p>
+
+
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#clampToRange">clampToRange</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#cssEscape">cssEscape</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#findNearestIndex">findNearestIndex</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#getClosestIndex">getClosestIndex</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#getScaleValues">getScaleValues</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#getXYValues">getXYValues</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#uuid">uuid</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="clampToRange"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            clampToRange
+                        </b>
+                        <a href="#clampToRange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>clampToRange(value: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, range: [number, number])</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="63"
+                            class="link-to-prism">src/core/common/utility.service.ts:63</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Clamps given value to range</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>value</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>range</td>
+                                    <td>
+                                            <code>[number, number]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cssEscape"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            cssEscape
+                        </b>
+                        <a href="#cssEscape"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>cssEscape(value: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="92"
+                            class="link-to-prism">src/core/common/utility.service.ts:92</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>CSS.escape() replacement</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>value</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="findNearestIndex"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            findNearestIndex
+                        </b>
+                        <a href="#findNearestIndex"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>findNearestIndex(haystack: T[], needle: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, selector: (d: T,index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>) => void)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="179"
+                            class="link-to-prism">src/core/common/utility.service.ts:179</a></div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Type parameters :</b>
+                    <ul class="type-parameters">
+                        <li>T</li>
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This method performs a binary search to find an index in the <code>haystack</code> that is the closest representation of given <code>needle</code>.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>haystack</td>
+                                    <td>
+                                            <code>T[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>needle</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>selector</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>identity</code>
+                                    </td>
+
+                                    <td>
+                                        <p>this function is used to process the <code>haystack</code> elements</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getClosestIndex"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            getClosestIndex
+                        </b>
+                        <a href="#getClosestIndex"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getClosestIndex(haystack: T[], accessor: (d: T,i: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>) => void, needle: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="24"
+                            class="link-to-prism">src/core/common/utility.service.ts:24</a></div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Type parameters :</b>
+                    <ul class="type-parameters">
+                        <li>T</li>
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>haystack</td>
+                                    <td>
+                                            <code>T[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>accessor</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>needle</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>number | undefined</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getScaleValues"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            getScaleValues
+                        </b>
+                        <a href="#getScaleValues"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getScaleValues(scales: <a href="../interfaces/IScale.html">IScale<any>[]</a>, coordinate: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="224"
+                            class="link-to-prism">src/core/common/utility.service.ts:224</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Gets the scale value based on the specified scales and raw coordinate</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>scales</td>
+                                    <td>
+                                                <code><a href="../interfaces/IScale.html" target="_self" >IScale&lt;any&gt;[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>coordinate</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Record&lt;string, any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getXYValues"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            getXYValues
+                        </b>
+                        <a href="#getXYValues"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getXYValues(xScales: <a href="../interfaces/IScale.html">IScale<any>[]</a>, yScales: <a href="../interfaces/IScale.html">IScale<any>[]</a>, xCoordinate: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, yCoordinate: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="204"
+                            class="link-to-prism">src/core/common/utility.service.ts:204</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Gets the &#39;x&#39; and &#39;y&#39; scale values based on the specified scales and raw x-y coordinates</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>xScales</td>
+                                    <td>
+                                                <code><a href="../interfaces/IScale.html" target="_self" >IScale&lt;any&gt;[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>yScales</td>
+                                    <td>
+                                                <code><a href="../interfaces/IScale.html" target="_self" >IScale&lt;any&gt;[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>xCoordinate</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>yCoordinate</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="uuid"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            uuid
+                        </b>
+                        <a href="#uuid"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>uuid()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="75"
+                            class="link-to-prism">src/core/common/utility.service.ts:75</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import identity from &quot;lodash/identity&quot;;
+import isEmpty from &quot;lodash/isEmpty&quot;;
+import isUndefined from &quot;lodash/isUndefined&quot;;
+
+import { IInteractionValues } from &quot;../plugins/types&quot;;
+
+import { invert } from &quot;./scales/helpers/invert&quot;;
+import { IScale } from &quot;./scales/types&quot;;
+
+export class UtilityService {
+
+    private static getValueAccessor(accessor: (d: any, i: number) &#x3D;&gt; any, dataPoint: any) {
+        const value &#x3D; accessor(dataPoint, 0);
+        if (typeof value &#x3D;&#x3D;&#x3D; &quot;number&quot; || typeof value &#x3D;&#x3D;&#x3D; &quot;string&quot;) {
+            return accessor;
+        }
+        if (value.valueOf &amp;&amp; typeof value.valueOf() &#x3D;&#x3D;&#x3D; &quot;number&quot;) {
+            return (d: any, i: number) &#x3D;&gt; accessor(d, i).valueOf();
+        }
+
+        throw new Error(&quot;Value in the data series does not return numeric valueOf().&quot;);
+    }
+
+    public static getClosestIndex&lt;T&gt;(haystack: T[], accessor: (d: T, i: number) &#x3D;&gt; any, needle: any): number | undefined {
+        if (haystack.length &#x3D;&#x3D;&#x3D; 1) {
+            return 0;
+        } else if (haystack.length &#x3D;&#x3D;&#x3D; 0) {
+            return;
+        }
+
+        const valueAccessor &#x3D; UtilityService.getValueAccessor(accessor, haystack[0]);
+        if (typeof needle &#x3D;&#x3D;&#x3D; &quot;string&quot;) {
+            return haystack.findIndex(straw &#x3D;&gt; valueAccessor(straw, 0) &#x3D;&#x3D;&#x3D; needle);
+        }
+
+        let closestDataIndex &#x3D; this.findNearestIndex(haystack, needle, accessor);
+
+        // Compensate for bisect
+        closestDataIndex &#x3D; (closestDataIndex &gt; 0) ? closestDataIndex - 1 : closestDataIndex;
+        // Ensure inbounds reference if right end of data
+        closestDataIndex &#x3D; (closestDataIndex &gt;&#x3D; haystack.length - 1 &amp;&amp; haystack.length !&#x3D;&#x3D; 1)
+            ? haystack.length - 2
+            : closestDataIndex;
+        const indexIncrement &#x3D; UtilityService.getCloser(
+            valueAccessor(haystack[closestDataIndex], closestDataIndex),
+            valueAccessor(haystack[closestDataIndex + 1], closestDataIndex + 1),
+            needle);
+
+        return closestDataIndex + indexIncrement;
+    }
+
+    private static getCloser(a: number, b: number, test: number): number {
+        return (Math.abs(test - a) &lt;&#x3D; Math.abs(test - b)) ? 0 : 1;
+    }
+
+    /**
+     * Clamps given value to range
+     *
+     * @param {number} value
+     * @param {[number , number]} range
+     * @returns {number}
+     */
+    public static clampToRange(value: number, range: [number, number]) {
+        if (value &lt; range[0]) {
+            return range[0];
+        }
+
+        if (value &gt; range[1]) {
+            return range[1];
+        }
+
+        return value;
+    }
+
+    public static uuid() {
+        let dt &#x3D; new Date().getTime();
+        const uuid &#x3D; &quot;xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&quot;.replace(/[xy]/g, (c) &#x3D;&gt; {
+            // tslint:disable-next-line
+            const r &#x3D; (dt + Math.random() * 16) % 16 | 0;
+            dt &#x3D; Math.floor(dt / 16);
+            // tslint:disable-next-line
+            return (c &#x3D;&#x3D;&#x3D; &quot;x&quot; ? r : (r &amp; 0x3 | 0x8)).toString(16);
+        });
+        return uuid;
+    }
+
+    /**
+     *  CSS.escape() replacement
+     * @param value
+     * @returns {string}
+     */
+    public static cssEscape(value: any): string {
+        // TODO: remove when Edge supports CSS.escape
+        // Courtesy of Mathias Bynens: https://github.com/mathiasbynens/CSS.escape.git
+        if (arguments.length &#x3D;&#x3D;&#x3D; 0) {
+            throw new TypeError(&quot;&#x60;cssEscape&#x60; requires an argument.&quot;);
+        }
+        const sstring &#x3D; String(value);
+        const length &#x3D; sstring.length;
+        let index &#x3D; -1;
+        let codeUnit;
+        let result &#x3D; &quot;&quot;;
+        const firstCodeUnit &#x3D; sstring.charCodeAt(0);
+        while (++index &lt; length) {
+            codeUnit &#x3D; sstring.charCodeAt(index);
+            // Note: there’s no need to special-case astral symbols, surrogate
+            // pairs, or lone surrogates.
+
+            // If the character is NULL (U+0000), then the REPLACEMENT CHARACTER
+            // (U+FFFD).
+            if (codeUnit &#x3D;&#x3D;&#x3D; 0x0000) {
+                result +&#x3D; &quot;\uFFFD&quot;;
+                continue;
+            }
+
+            if (
+                // If the character is in the range [\1-\1F] (U+0001 to U+001F) or is
+            // U+007F, […]
+                (codeUnit &gt;&#x3D; 0x0001 &amp;&amp; codeUnit &lt;&#x3D; 0x001F) || codeUnit &#x3D;&#x3D;&#x3D; 0x007F ||
+                // If the character is the first character and is in the range [0-9]
+                // (U+0030 to U+0039), […]
+                (index &#x3D;&#x3D;&#x3D; 0 &amp;&amp; codeUnit &gt;&#x3D; 0x0030 &amp;&amp; codeUnit &lt;&#x3D; 0x0039) ||
+                // If the character is the second character and is in the range [0-9]
+                // (U+0030 to U+0039) and the first character is a &#x60;-&#x60; (U+002D), […]
+                (
+                    index &#x3D;&#x3D;&#x3D; 1 &amp;&amp;
+                    codeUnit &gt;&#x3D; 0x0030 &amp;&amp; codeUnit &lt;&#x3D; 0x0039 &amp;&amp;
+                    firstCodeUnit &#x3D;&#x3D;&#x3D; 0x002D
+                )
+            ) {
+                // https://drafts.csswg.org/cssom/#escape-a-character-as-code-point
+                result +&#x3D; &quot;\\&quot; + codeUnit.toString(16) + &quot; &quot;;
+                continue;
+            }
+
+            if (
+                // If the character is the first character and is a &#x60;-&#x60; (U+002D), and
+            // there is no second character, […]
+                index &#x3D;&#x3D;&#x3D; 0 &amp;&amp;
+                length &#x3D;&#x3D;&#x3D; 1 &amp;&amp;
+                codeUnit &#x3D;&#x3D;&#x3D; 0x002D
+            ) {
+                result +&#x3D; &quot;\\&quot; + sstring.charAt(index);
+                continue;
+            }
+
+            // If the character is not handled by one of the above rules and is
+            // greater than or equal to U+0080, is &#x60;-&#x60; (U+002D) or &#x60;_&#x60; (U+005F), or
+            // is in one of the ranges [0-9] (U+0030 to U+0039), [A-Z] (U+0041 to
+            // U+005A), or [a-z] (U+0061 to U+007A), […]
+            if (
+                codeUnit &gt;&#x3D; 0x0080 ||
+                codeUnit &#x3D;&#x3D;&#x3D; 0x002D ||
+                codeUnit &#x3D;&#x3D;&#x3D; 0x005F ||
+                codeUnit &gt;&#x3D; 0x0030 &amp;&amp; codeUnit &lt;&#x3D; 0x0039 ||
+                codeUnit &gt;&#x3D; 0x0041 &amp;&amp; codeUnit &lt;&#x3D; 0x005A ||
+                codeUnit &gt;&#x3D; 0x0061 &amp;&amp; codeUnit &lt;&#x3D; 0x007A
+            ) {
+                // the character itself
+                result +&#x3D; sstring.charAt(index);
+                continue;
+            }
+
+            // Otherwise, the escaped character.
+            // https://drafts.csswg.org/cssom/#escape-a-character
+            result +&#x3D; &quot;\\&quot; + sstring.charAt(index);
+
+        }
+        return result;
+    }
+
+    /**
+     * This method performs a binary search to find an index in the &#x60;haystack&#x60; that is the closest representation of given &#x60;needle&#x60;.
+     *
+     * @param haystack
+     * @param needle
+     * @param selector this function is used to process the &#x60;haystack&#x60; elements
+     */
+    public static findNearestIndex&lt;T&gt;(haystack: T[], needle: any, selector: (d: T, index: number) &#x3D;&gt; any &#x3D; identity) {
+        let low &#x3D; 0, high &#x3D; haystack &#x3D;&#x3D; null ? low : haystack.length;
+
+        while (low &lt; high) {
+            // tslint:disable-next-line:no-bitwise
+            const mid &#x3D; (low + high) &gt;&gt;&gt; 1, computed &#x3D; selector(haystack[mid], mid);
+
+            if (computed !&#x3D;&#x3D; null &amp;&amp; (computed &lt; needle)) {
+                low &#x3D; mid + 1;
+            } else {
+                high &#x3D; mid;
+            }
+        }
+
+        return Math.round(low);
+    }
+
+    /**
+     * Gets the &#x27;x&#x27; and &#x27;y&#x27; scale values based on the specified scales and raw x-y coordinates
+     *
+     * @param xScales
+     * @param yScales
+     * @param xCoordinate
+     * @param yCoordinate
+     */
+    public static getXYValues(xScales: IScale&lt;any&gt;[], yScales: IScale&lt;any&gt;[], xCoordinate: number, yCoordinate: number) {
+        const xValue &#x3D; UtilityService.getScaleValues(xScales, xCoordinate);
+        const yValue &#x3D; UtilityService.getScaleValues(yScales, yCoordinate);
+
+        const values: IInteractionValues &#x3D; {};
+        if (!isEmpty(xValue)) {
+            values.x &#x3D; xValue;
+        }
+        if (!isEmpty(yValue)) {
+            values.y &#x3D; yValue;
+        }
+        return values;
+    }
+
+    /**
+     * Gets the scale value based on the specified scales and raw coordinate
+     *
+     * @param scales
+     * @param coordinate
+     */
+    public static getScaleValues(scales: IScale&lt;any&gt;[], coordinate: number): Record&lt;string, any&gt; {
+        function callbackFn(result: Record&lt;string, any&gt;, next: IScale&lt;any&gt;) {
+            const inverted &#x3D; invert(next, coordinate);
+            if (isUndefined(inverted)) {
+                return result;
+            }
+
+            result[next.id] &#x3D; inverted;
+            return result;
+        }
+        return scales.reduce(callbackFn, {});
+    }
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'UtilityService.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
