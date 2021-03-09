@@ -2169,7 +2169,7 @@ TreeDialogContentExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE
     } if (rf & 2) {
         let _t;
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵloadQuery"]()) && (ctx.repeat = _t.first);
-    } }, inputs: { items: "items", isLoading: "isLoading" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵProvidersFeature"]([_nova_ui_bits__WEBPACK_IMPORTED_MODULE_5__["VirtualViewportManager"]])], decls: 9, vars: 4, consts: function () { let i18n_0; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+    } }, inputs: { items: "items", isLoading: "isLoading" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵProvidersFeature"]([_nova_ui_bits__WEBPACK_IMPORTED_MODULE_5__["VirtualViewportManager"]])], decls: 9, vars: 6, consts: function () { let i18n_0; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
         const MSG_EXTERNAL_5892089246202495025$$DEMO_SRC_COMPONENTS_DEMO_COMMON_TREE_TREE_SHOW_ALL_DIALOG_TREE_SHOW_ALL_DIALOG_EXAMPLE_COMPONENT_TS_1 = goog.getMsg("Dialog title");
         i18n_0 = MSG_EXTERNAL_5892089246202495025$$DEMO_SRC_COMPONENTS_DEMO_COMMON_TREE_TREE_SHOW_ALL_DIALOG_TREE_SHOW_ALL_DIALOG_EXAMPLE_COMPONENT_TS_1;
     }
@@ -2181,7 +2181,7 @@ TreeDialogContentExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE
     }
     else {
         i18n_2 = $localize `:␟4dc1e9a4bbd21cf153990984cd4ecb4444117098␟6327967827692127661: Close `;
-    } return [["title", i18n_0, 3, "closed"], ["nui-busy", "", 3, "busy"], [1, "d-flex", "flex-row"], ["virtualScroll", "true", "itemSize", "30", 1, "virtual-scroll-list-repeat", 3, "itemConfig", "repeatItemTemplateRef", "itemsSource"], ["nui-button", "", "type", "button", 3, "click"], i18n_2, ["repeatItemTemplate", ""], [1, "d-flex", "justify-content-between", "w-100"]]; }, template: function TreeDialogContentExampleComponent_Template(rf, ctx) { if (rf & 1) {
+    } return [["title", i18n_0, 3, "closed"], ["nui-busy", "", 3, "busy"], [1, "d-flex", "flex-row"], [1, "virtual-scroll-list-repeat", 3, "itemConfig", "repeatItemTemplateRef", "itemsSource", "virtualScroll", "itemSize"], ["nui-button", "", "type", "button", 3, "click"], i18n_2, ["repeatItemTemplate", ""], [1, "d-flex", "justify-content-between", "w-100"]]; }, template: function TreeDialogContentExampleComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "nui-dialog-header", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("closed", function TreeDialogContentExampleComponent_Template_nui_dialog_header_closed_0_listener() { return ctx.close(); });
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
@@ -2202,7 +2202,7 @@ TreeDialogContentExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("busy", ctx.isLoading);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("itemConfig", ctx.itemConfig)("repeatItemTemplateRef", _r0)("itemsSource", ctx.items);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("itemConfig", ctx.itemConfig)("repeatItemTemplateRef", _r0)("itemsSource", ctx.items)("virtualScroll", true)("itemSize", 30);
     } }, directives: [_src_lib_dialog_dialog_header_component__WEBPACK_IMPORTED_MODULE_14__["DialogHeaderComponent"], _src_lib_busy_busy_component__WEBPACK_IMPORTED_MODULE_12__["BusyComponent"], _src_lib_repeat_repeat_component__WEBPACK_IMPORTED_MODULE_15__["RepeatComponent"], _src_lib_dialog_dialog_footer_component__WEBPACK_IMPORTED_MODULE_16__["DialogFooterComponent"], _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_10__["ButtonComponent"]], styles: [".virtual-scroll-list-repeat[_ngcontent-%COMP%] {\n            height: 400px; // height has to be defined if using 'nui-repeat' with virtual scroll\n        }"], data: { animation: [] }, changeDetection: 0 });
 
 
