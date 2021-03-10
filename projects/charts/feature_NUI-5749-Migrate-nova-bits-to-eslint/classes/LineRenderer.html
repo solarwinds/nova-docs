@@ -1161,8 +1161,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="153"
-                            class="link-to-prism">src/renderers/line/line-renderer.ts:153</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="148"
+                            class="link-to-prism">src/renderers/line/line-renderer.ts:148</a></div>
                 </td>
             </tr>
 
@@ -3976,12 +3976,7 @@ export class LineRenderer extends XYRenderer&lt;ILineAccessors&gt; {
         return [
             STANDARD_RENDER_LAYERS[RenderLayerName.data],
             STANDARD_RENDER_LAYERS[RenderLayerName.foreground],
-            {
-                name: LineRenderer.UNCLIPPED_DATA_LAYER_NAME,
-                // order calculated by adding 1 to the data layer order to ensure the unclipped data layer appears just after the data layer in the DOM
-                order: STANDARD_RENDER_LAYERS[RenderLayerName.data].order + 1,
-                clipped: false,
-            },
+            STANDARD_RENDER_LAYERS[RenderLayerName.unclippedData],
         ];
     }
 
@@ -4059,7 +4054,7 @@ export class LineRenderer extends XYRenderer&lt;ILineAccessors&gt; {
         const updateCy &#x3D; (d: any, i: number) &#x3D;&gt; renderSeries.scales.y.convert(accessors.data.y(d, i, dataSeries.data, dataSeries));
 
         // use an unclipped layer to ensure the line caps on the left and right sides of the chart don&#x27;t get clipped
-        const lineCaps &#x3D; renderSeries.containers[LineRenderer.UNCLIPPED_DATA_LAYER_NAME].selectAll(&#x60;.${LineRenderer.LINE_CAP_CLASS_NAME}&#x60;)
+        const lineCaps &#x3D; renderSeries.containers[RenderLayerName.unclippedData].selectAll(&#x60;.${LineRenderer.LINE_CAP_CLASS_NAME}&#x60;)
             .data(definedData)
             .attr(&quot;cx&quot;, updateCx)
             .attr(&quot;cy&quot;, updateCy);
