@@ -244,6 +244,9 @@
                             <a href="#mockLoggerService" title="src/lib/mocks.ts"><b>mockLoggerService</b>&nbsp;&nbsp;&nbsp;(src/.../mocks.ts)</a>
                         </li>
                         <li>
+                            <a href="#NOVA_CONFIGURATOR_DATA_SOURCE_MANAGER" title="src/lib/services/types.ts"><b>NOVA_CONFIGURATOR_DATA_SOURCE_MANAGER</b>&nbsp;&nbsp;&nbsp;(src/.../types.ts)</a>
+                        </li>
+                        <li>
                             <a href="#NOVA_DASHBOARD_EVENT_PROXY" title="src/lib/services/types.ts"><b>NOVA_DASHBOARD_EVENT_PROXY</b>&nbsp;&nbsp;&nbsp;(src/.../types.ts)</a>
                         </li>
                         <li>
@@ -1059,6 +1062,33 @@
                     <tr>
                         <td class="col-md-4">
                             <i>Default value : </i><code>new EventDefinition(&quot;INTERACTION&quot;)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="NOVA_CONFIGURATOR_DATA_SOURCE_MANAGER"></a>
+                        <span class="name">
+                            <b>
+                            NOVA_CONFIGURATOR_DATA_SOURCE_MANAGER</b>
+                            <a href="#NOVA_CONFIGURATOR_DATA_SOURCE_MANAGER"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&quot;NOVA_CONFIGURATOR_DATA_SOURCE_MANAGER&quot;</code>
                         </td>
                     </tr>
 
@@ -2455,7 +2485,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>new EventDefinition(&quot;DATA_SOURCE_OUTPUT&quot;)</code>
+                            <i>Default value : </i><code>new EventDefinition(&quot;DATA_SOURCE_OUTPUT&quot;, () &#x3D;&gt; new ReplaySubject&lt;IEvent&gt;(1))</code>
                         </td>
                     </tr>
 
@@ -3409,6 +3439,9 @@
                 [WellKnownProviders.FormattersRegistry]: {
                     providerId: NOVA_TABLE_FORMATTERS_REGISTRY,
                 },
+                [WellKnownProviders.DataSourceManager]: {
+                    providerId: NOVA_CONFIGURATOR_DATA_SOURCE_MANAGER,
+                },
             },
         },
         // /presentation
@@ -3482,18 +3515,13 @@
         // into the formatter.
         columns: {
             id: &quot;columns&quot;,
-            componentType: TableColumnsConfigurationComponent.lateLoadKey,
+            componentType: TableColumnsConfigurationV2Component.lateLoadKey,
             properties: {
+                // Deprecated (see TableColumnsConfigurationV2Component.template)
                 template: [
+                    {},
                     {
-                        id: &quot;description&quot;,
-                        componentType: DescriptionConfigurationComponent.lateLoadKey,
-                    },
-                    {
-                        id: &quot;presentation&quot;,
-                        componentType: PresentationConfigurationComponent.lateLoadKey,
                         properties: {
-                            // Note: Now you can define your formatters in the TableFormatterRegistry which can contain more formatter options
                             formatters: DEFAULT_TABLE_FORMATTERS,
                         },
                     },
@@ -4416,6 +4444,8 @@
     TimeseriesMetadataConfigurationComponent,
     TimeseriesSeriesCollectionConfigurationComponent,
     TableColumnsConfigurationComponent,
+    TableColumnsConfigurationV2Component,
+    TableColumnConfigurationComponent,
     DonutContentPercentageFormatterComponent,
     DonutContentPercentageConfigurationComponent,
     DonutContentSumFormatterComponent,
@@ -4436,7 +4466,9 @@
     WidgetEditorComponent,
     WidgetClonerComponent,
     DescriptionConfigurationComponent,
+    DescriptionConfigurationV2Component,
     PresentationConfigurationComponent,
+    PresentationConfigurationV2Component,
     TimeseriesTileDescriptionConfigurationComponent,
     TimeseriesTileIndicatorDataConfigurationComponent,
     RefresherConfigurationComponent,

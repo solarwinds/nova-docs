@@ -125,7 +125,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="81" class="link-to-prism">src/lib/services/provider-registry.service.ts:81</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="87" class="link-to-prism">src/lib/services/provider-registry.service.ts:87</a></div>
                             </td>
                         </tr>
 
@@ -192,8 +192,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="232"
-                            class="link-to-prism">src/lib/services/provider-registry.service.ts:232</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="242"
+                            class="link-to-prism">src/lib/services/provider-registry.service.ts:242</a></div>
                 </td>
             </tr>
 
@@ -264,8 +264,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="241"
-                            class="link-to-prism">src/lib/services/provider-registry.service.ts:241</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="251"
+                            class="link-to-prism">src/lib/services/provider-registry.service.ts:251</a></div>
                 </td>
             </tr>
 
@@ -348,8 +348,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="228"
-                            class="link-to-prism">src/lib/services/provider-registry.service.ts:228</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="238"
+                            class="link-to-prism">src/lib/services/provider-registry.service.ts:238</a></div>
                 </td>
             </tr>
 
@@ -428,7 +428,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="81" class="link-to-prism">src/lib/services/provider-registry.service.ts:81</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="87" class="link-to-prism">src/lib/services/provider-registry.service.ts:87</a></div>
                             </td>
                         </tr>
 
@@ -460,6 +460,8 @@ import { RefresherSettingsService } from &quot;../components/providers/refresher
 import { StatusContentFallbackAdapter } from &quot;../components/providers/status-content-fallback-adapter&quot;;
 import { TableDataSourceAdapter } from &quot;../components/providers/table-data-source-adapter&quot;;
 import { TimeseriesDataSourceAdapter } from &quot;../components/providers/timeseries-data-source-adapter&quot;;
+import { DashwizService } from &quot;../configurator/components/wizard/dashwiz/dashwiz.service&quot;;
+import { ConfiguratorDataSourceManagerService } from &quot;../configurator/services/configurator-data-source-manager.service&quot;;
 import { KpiSectionConverterService } from &quot;../configurator/services/converters/kpi/kpi-section-converter/kpi-section-converter.service&quot;;
 import { KpiTilesConverterService } from &quot;../configurator/services/converters/kpi/kpi-tiles-converter.service&quot;;
 // tslint:disable-next-line: max-line-length
@@ -480,9 +482,14 @@ import { DASHBOARD_EVENT_BUS, DATA_SOURCE, FORMATTERS_REGISTRY, PIZZAGNA_EVENT_B
 
 import { EventRegistryService } from &quot;./event-registry.service&quot;;
 import { KpiColorComparatorsRegistryService } from &quot;./kpi-color-comparators-registry.service&quot;;
-import { KpiFormattersRegistryService, ProportionalDonutContentFormattersRegistryService, TableFormatterRegistryService } from &quot;./table-formatter-registry.service&quot;;
+import {
+    KpiFormattersRegistryService,
+    ProportionalDonutContentFormattersRegistryService,
+    TableFormatterRegistryService,
+} from &quot;./table-formatter-registry.service&quot;;
 import {
     IStaticProviders,
+    NOVA_CONFIGURATOR_DATA_SOURCE_MANAGER,
     NOVA_DASHBOARD_EVENT_PROXY,
     NOVA_DATASOURCE_ADAPTER,
     NOVA_DATASOURCE_INTERVAL_REFRESHER,
@@ -516,7 +523,6 @@ import {
 } from &quot;./types&quot;;
 import { WidgetConfigurationService } from &quot;./widget-configuration.service&quot;;
 import { WidgetToDashboardEventProxyService } from &quot;./widget-to-dashboard-event-proxy.service&quot;;
-
 
 
 @Injectable({ providedIn: &quot;root&quot; })
@@ -664,6 +670,10 @@ export class ProviderRegistryService {
                 provide: FORMATTERS_REGISTRY,
                 useExisting: ProportionalDonutContentFormattersRegistryService,
                 deps: [PizzagnaService],
+            },
+            [NOVA_CONFIGURATOR_DATA_SOURCE_MANAGER]: {
+                provide: ConfiguratorDataSourceManagerService,
+                deps: [PIZZAGNA_EVENT_BUS, [new Optional(), DashwizService]],
             },
         });
     }
