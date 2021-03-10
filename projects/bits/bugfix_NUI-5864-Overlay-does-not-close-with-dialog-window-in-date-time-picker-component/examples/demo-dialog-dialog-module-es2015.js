@@ -12,17 +12,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DialogInsideOverlayExampleComponent", function() { return DialogInsideOverlayExampleComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @nova-ui/bits */ "b5Xb");
-/* harmony import */ var moment_moment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! moment/moment */ "wd/R");
-/* harmony import */ var moment_moment__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(moment_moment__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _src_lib_select_v2_select_select_v2_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../src/lib/select-v2/select/select-v2.component */ "UpNd");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "ofXK");
-/* harmony import */ var _src_lib_select_v2_option_select_v2_option_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../../../src/lib/select-v2/option/select-v2-option.component */ "tpGn");
-/* harmony import */ var _src_lib_dialog_dialog_header_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../../../src/lib/dialog/dialog-header.component */ "skCw");
-/* harmony import */ var _src_lib_date_time_picker_date_time_picker_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../../../../src/lib/date-time-picker/date-time-picker.component */ "/NB1");
-/* harmony import */ var _src_lib_dialog_dialog_footer_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../../../../src/lib/dialog/dialog-footer.component */ "NHEo");
-/* harmony import */ var _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../../../../src/lib/button/button.component */ "6urz");
-
-
+/* harmony import */ var _src_lib_select_v2_select_select_v2_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../src/lib/select-v2/select/select-v2.component */ "UpNd");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var _src_lib_select_v2_option_select_v2_option_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../../src/lib/select-v2/option/select-v2-option.component */ "tpGn");
+/* harmony import */ var _src_lib_dialog_dialog_header_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../../../src/lib/dialog/dialog-header.component */ "skCw");
+/* harmony import */ var _src_lib_dialog_dialog_footer_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../../../src/lib/dialog/dialog-footer.component */ "NHEo");
+/* harmony import */ var _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../../../../src/lib/button/button.component */ "6urz");
 
 
 
@@ -46,7 +41,7 @@ function DialogInsideOverlayExampleComponent_nui_select_v2_option_1_Template(rf,
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", option_r3, " ");
 } }
 function DialogInsideOverlayExampleComponent_ng_template_2_nui_select_v2_option_4_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "nui-select-v2-option", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "nui-select-v2-option", 12);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
@@ -65,36 +60,29 @@ function DialogInsideOverlayExampleComponent_ng_template_2_Template(rf, ctx) { i
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "nui-select-v2", 6);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, DialogInsideOverlayExampleComponent_ng_template_2_nui_select_v2_option_4_Template, 2, 2, "nui-select-v2-option", 7);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "nui-date-time-picker", 8);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("modelChanged", function DialogInsideOverlayExampleComponent_ng_template_2_Template_nui_date_time_picker_modelChanged_5_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r11); const ctx_r10 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r10.onModelChanged($event); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam maximus faucibus bibendum. Aenean feugiat interdum leo sed posuere. Etiam at pulvinar enim, nec interdum purus. Duis elit metus, lobortis vitae quam a, malesuada cursus quam. Duis vel lacinia purus. Maecenas eget arcu ac ante sagittis eleifend vel ut purus. Pellentesque sit amet semper ipsum, eu vulputate tortor. Aliquam vitae nisi augue. Duis non erat sit amet sem venenatis accumsan at ullamcorper lorem. Morbi non turpis nibh. ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam maximus faucibus bibendum. Aenean feugiat interdum leo sed posuere. Etiam at pulvinar enim, nec interdum purus. Duis elit metus, lobortis vitae quam a, malesuada cursus quam. Duis vel lacinia purus. Maecenas eget arcu ac ante sagittis eleifend vel ut purus. Pellentesque sit amet semper ipsum, eu vulputate tortor. Aliquam vitae nisi augue. Duis non erat sit amet sem venenatis accumsan at ullamcorper lorem. Morbi non turpis nibh. ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "nui-dialog-footer");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "button", 9);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function DialogInsideOverlayExampleComponent_ng_template_2_Template_button_click_8_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r11); const ctx_r12 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r12.onCancel(); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](9, 10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "nui-dialog-footer");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "button", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function DialogInsideOverlayExampleComponent_ng_template_2_Template_button_click_7_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r11); const ctx_r10 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r10.onCancel(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](8, 9);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "button", 11);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function DialogInsideOverlayExampleComponent_ng_template_2_Template_button_click_10_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r11); const ctx_r13 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r13.onDone(); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](11, 12);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "button", 10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function DialogInsideOverlayExampleComponent_ng_template_2_Template_button_click_9_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r11); const ctx_r12 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r12.onDone(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](10, 11);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r2.options2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("model", ctx_r2.dt)("appendToBody", true);
 } }
 class DialogInsideOverlayExampleComponent {
     constructor(dialogService) {
         this.dialogService = dialogService;
         this.options1 = Array.from({ length: 25 }).map((_, i) => $localize `Item ${i}`);
         this.options2 = Array.from({ length: 25 }).map((_, i) => $localize `Item ${i}`);
-        this.dt = moment_moment__WEBPACK_IMPORTED_MODULE_2___default()();
-        this.selectedDate = new Date(this.dt.valueOf());
     }
     /**
      * Notice that the 'useOverlay' option is being passed in here
@@ -107,9 +95,6 @@ class DialogInsideOverlayExampleComponent {
     }
     onCancel() {
         this.activeDialog.close();
-    }
-    onModelChanged(event) {
-        this.selectedDate = new Date(event.valueOf());
     }
 }
 DialogInsideOverlayExampleComponent.ɵfac = function DialogInsideOverlayExampleComponent_Factory(t) { return new (t || DialogInsideOverlayExampleComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["DialogService"])); };
@@ -143,16 +128,16 @@ DialogInsideOverlayExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODU
     }
     else {
         i18n_8 = $localize `:␟1bd5e17c9582661e20763a7634ef07881e33bbd7␟9216117865911519658:Action`;
-    } return [["id", "select-to-open-dialog", "placeholder", i18n_0, 3, "popupViewportMargin"], [3, "value", "click", 4, "ngFor", "ngForOf"], ["headerButtonsContent", ""], [3, "value", "click"], ["title", i18n_2, 3, "closed"], [1, "dialog-body"], ["placeholder", i18n_4, 1, "mb-5"], [3, "value", 4, "ngFor", "ngForOf"], ["displayMode", "inline", 1, "date-time-picker", 3, "model", "appendToBody", "modelChanged"], ["nui-button", "", "type", "button", 3, "click"], i18n_6, ["nui-button", "", "type", "button", "displayStyle", "primary", 3, "click"], i18n_8, [3, "value"]]; }, template: function DialogInsideOverlayExampleComponent_Template(rf, ctx) { if (rf & 1) {
+    } return [["id", "select-to-open-dialog", "placeholder", i18n_0, 3, "popupViewportMargin"], [3, "value", "click", 4, "ngFor", "ngForOf"], ["headerButtonsContent", ""], [3, "value", "click"], ["title", i18n_2, 3, "closed"], [1, "dialog-body"], ["placeholder", i18n_4], [3, "value", 4, "ngFor", "ngForOf"], ["nui-button", "", "type", "button", 3, "click"], i18n_6, ["nui-button", "", "type", "button", "displayStyle", "primary", 3, "click"], i18n_8, [3, "value"]]; }, template: function DialogInsideOverlayExampleComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "nui-select-v2", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, DialogInsideOverlayExampleComponent_nui_select_v2_option_1_Template, 2, 2, "nui-select-v2-option", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, DialogInsideOverlayExampleComponent_ng_template_2_Template, 12, 3, "ng-template", null, 2, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, DialogInsideOverlayExampleComponent_ng_template_2_Template, 11, 1, "ng-template", null, 2, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("popupViewportMargin", 100);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.options1);
-    } }, directives: [_src_lib_select_v2_select_select_v2_component__WEBPACK_IMPORTED_MODULE_3__["SelectV2Component"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgForOf"], _src_lib_select_v2_option_select_v2_option_component__WEBPACK_IMPORTED_MODULE_5__["SelectV2OptionComponent"], _src_lib_dialog_dialog_header_component__WEBPACK_IMPORTED_MODULE_6__["DialogHeaderComponent"], _src_lib_date_time_picker_date_time_picker_component__WEBPACK_IMPORTED_MODULE_7__["DateTimePickerComponent"], _src_lib_dialog_dialog_footer_component__WEBPACK_IMPORTED_MODULE_8__["DialogFooterComponent"], _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_9__["ButtonComponent"]], encapsulation: 2 });
+    } }, directives: [_src_lib_select_v2_select_select_v2_component__WEBPACK_IMPORTED_MODULE_2__["SelectV2Component"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgForOf"], _src_lib_select_v2_option_select_v2_option_component__WEBPACK_IMPORTED_MODULE_4__["SelectV2OptionComponent"], _src_lib_dialog_dialog_header_component__WEBPACK_IMPORTED_MODULE_5__["DialogHeaderComponent"], _src_lib_dialog_dialog_footer_component__WEBPACK_IMPORTED_MODULE_6__["DialogFooterComponent"], _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_7__["ButtonComponent"]], encapsulation: 2 });
 
 
 /***/ }),
@@ -442,8 +427,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _dialog_keyboard_dialog_with_keyboard_example_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../dialog-keyboard/dialog-with-keyboard.example.component */ "HqCK");
 /* harmony import */ var _dialog_static_backdrop_dialog_with_static_backdrop_example_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../dialog-static-backdrop/dialog-with-static-backdrop.example.component */ "QPNM");
 /* harmony import */ var _dialog_inside_overlay_dialog_inside_overlay_example_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../dialog-inside-overlay/dialog-inside-overlay.example.component */ "+Rq8");
-/* harmony import */ var _dialog_actions_before_closure_dialog_actions_before_closure_example_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../dialog-actions-before-closure/dialog-actions-before-closure.example.component */ "+fpV");
-/* harmony import */ var _dialog_after_opened_dialog_after_opened_example_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../dialog-after-opened/dialog-after-opened.example.component */ "cRSG");
+/* harmony import */ var _dialog_inside_overlay_with_date_time_picker_dialog_inside_overlay_with_date_time_picker_example_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../dialog-inside-overlay-with-date-time-picker/dialog-inside-overlay-with-date-time-picker.example.component */ "ed45");
+/* harmony import */ var _dialog_actions_before_closure_dialog_actions_before_closure_example_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../dialog-actions-before-closure/dialog-actions-before-closure.example.component */ "+fpV");
+/* harmony import */ var _dialog_after_opened_dialog_after_opened_example_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../dialog-after-opened/dialog-after-opened.example.component */ "cRSG");
+
 
 
 
@@ -463,7 +450,7 @@ __webpack_require__.r(__webpack_exports__);
 class DialogDocsComponent {
 }
 DialogDocsComponent.ɵfac = function DialogDocsComponent_Factory(t) { return new (t || DialogDocsComponent)(); };
-DialogDocsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: DialogDocsComponent, selectors: [["ng-component"]], decls: 335, vars: 6, consts: [["filenamePrefix", "simple-dialog", "exampleTitle", "Simple dialog"], ["filenamePrefix", "component-as-content", "exampleTitle", "Component as content for dialog"], ["filenamePrefix", "dialog-content", "exampleTitle", "Dialog Content Example Component"], ["filenamePrefix", "dialog-severity", "exampleTitle", "Dialog Severity"], ["filenamePrefix", "header-buttons", "exampleTitle", "Custom Dialog Header"], ["filenamePrefix", "dialog-sizes", "exampleTitle", "Dialog Sizes"], ["filenamePrefix", "dialog-position", "exampleTitle", "Dialog Positions"], ["type", "info"], ["filenamePrefix", "dialog-custom-class", "exampleTitle", "Custom Class"], ["target", "_parent", "href", "../interfaces/IConfirmationDialogOptions.html"], ["filenamePrefix", "confirmation-dialog", "exampleTitle", "Confirmation Dialog"], ["filenamePrefix", "dialog-with-keyboard", "exampleTitle", "Dialog With Keyboard"], ["filenamePrefix", "dialog-with-static-backdrop", "exampleTitle", "Dialog With Static Backdrop"], ["filenamePrefix", "dialog-inside-overlay", "exampleTitle", "Dialog Inside Overlay"], ["type", "info", 3, "allowDismiss"], ["filenamePrefix", "dialog-actions-before-closure", "exampleTitle", "Dialog Actions Before Closure"], ["filenamePrefix", "dialog-after-opened", "exampleTitle", "Perform an action on dialog open"]], template: function DialogDocsComponent_Template(rf, ctx) { if (rf & 1) {
+DialogDocsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: DialogDocsComponent, selectors: [["ng-component"]], decls: 337, vars: 6, consts: [["filenamePrefix", "simple-dialog", "exampleTitle", "Simple dialog"], ["filenamePrefix", "component-as-content", "exampleTitle", "Component as content for dialog"], ["filenamePrefix", "dialog-content", "exampleTitle", "Dialog Content Example Component"], ["filenamePrefix", "dialog-severity", "exampleTitle", "Dialog Severity"], ["filenamePrefix", "header-buttons", "exampleTitle", "Custom Dialog Header"], ["filenamePrefix", "dialog-sizes", "exampleTitle", "Dialog Sizes"], ["filenamePrefix", "dialog-position", "exampleTitle", "Dialog Positions"], ["type", "info"], ["filenamePrefix", "dialog-custom-class", "exampleTitle", "Custom Class"], ["target", "_parent", "href", "../interfaces/IConfirmationDialogOptions.html"], ["filenamePrefix", "confirmation-dialog", "exampleTitle", "Confirmation Dialog"], ["filenamePrefix", "dialog-with-keyboard", "exampleTitle", "Dialog With Keyboard"], ["filenamePrefix", "dialog-with-static-backdrop", "exampleTitle", "Dialog With Static Backdrop"], ["filenamePrefix", "dialog-inside-overlay", "exampleTitle", "Dialog Inside Overlay"], ["filenamePrefix", "dialog-inside-overlaywith-date-time-picker", "exampleTitle", "Dialog Inside Overlay With DateTimePicker Component"], ["type", "info", 3, "allowDismiss"], ["filenamePrefix", "dialog-actions-before-closure", "exampleTitle", "Dialog Actions Before Closure"], ["filenamePrefix", "dialog-after-opened", "exampleTitle", "Perform an action on dialog open"]], template: function DialogDocsComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "h2");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Required Modules");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -799,145 +786,148 @@ DialogDocsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefi
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](234, "nui-example-wrapper", 13);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](235, "nui-dialog-inside-overlay-example");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](236, "h2");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](237, "Dialog Closure Actions");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](236, "nui-example-wrapper", 14);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](237, "nui-dialog-inside-overlay-with-date-time-picker-example");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](238, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](239, " The ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](240, "code");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](241, "nui-dialog");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](238, "h2");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](239, "Dialog Closure Actions");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](242, " provides you with a number of ways to perform actions on it's closure. There are two built-in events ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](243, "code");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](244, "ESC");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](240, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](241, " The ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](242, "code");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](243, "nui-dialog");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](245, " and ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](246, "code");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](247, "BACKDROP_CLICK");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](244, " provides you with a number of ways to perform actions on it's closure. There are two built-in events ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](245, "code");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](246, "ESC");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](248, " which are triggered by the keyboard escape key and clicking the dialog's backdrop respectively. However, the user is able to create their own events, which they can pass as an argument into the ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](249, "code");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](250, "dismiss(event)");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](247, " and ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](248, "code");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](249, "BACKDROP_CLICK");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](251, " method of the ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](252, "code");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](253, "dialogRef");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](250, " which are triggered by the keyboard escape key and clicking the dialog's backdrop respectively. However, the user is able to create their own events, which they can pass as an argument into the ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](251, "code");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](252, "dismiss(event)");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](254, ". To capture the events there are two types of EventEmitters of the ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](255, "code");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](256, "dialogRef");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](253, " method of the ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](254, "code");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](255, "dialogRef");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](257, " - ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](258, "code");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](259, "closed$");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](256, ". To capture the events there are two types of EventEmitters of the ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](257, "code");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](258, "dialogRef");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](260, " and ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](261, "code");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](262, "beforeDismissed$");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](259, " - ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](260, "code");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](261, "closed$");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](263, ". As can be determined from their names, the ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](264, "code");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](265, "closed$");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](262, " and ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](263, "code");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](264, "beforeDismissed$");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](266, " event emitter will emit an event right after the dialog window is closed, while the ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](267, "code");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](268, "beforeDismissed$");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](265, ". As can be determined from their names, the ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](266, "code");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](267, "closed$");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](269, " emits right before the dialog is dismissed.\n");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](268, " event emitter will emit an event right after the dialog window is closed, while the ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](269, "code");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](270, "beforeDismissed$");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](270, "nui-message", 14);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](271, "strong");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](272, "Note:");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](271, " emits right before the dialog is dismissed.\n");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](273, "code");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](274, "beforeDissmissed$");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](272, "nui-message", 15);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](273, "strong");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](274, "Note:");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](275, " is only emitted on dialog dismissal (or cancellation); it is not emitted on dialog submission. ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](276, "code");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](277, "beforeDismissed$");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](275, "code");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](276, "beforeDissmissed$");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](278, "works best in conjunction with the special ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](279, "code");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](280, "beforeDismiss");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](277, " is only emitted on dialog dismissal (or cancellation); it is not emitted on dialog submission. ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](278, "code");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](279, "beforeDismissed$");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](281, " function, which can be configured as an optional configuration parameter of the dialog. This function, if it returns ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](282, "code");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](283, "false");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](280, "works best in conjunction with the special ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](281, "code");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](282, "beforeDismiss");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](284, ", will prevent the dialog from closing, until the ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](285, "code");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](286, "close");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](283, " function, which can be configured as an optional configuration parameter of the dialog. This function, if it returns ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](284, "code");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](285, "false");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](287, " method is called. All this lets you be very flexible in how exactly you want the dialog to be dismissed and when to perform certain actions.\n");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](286, ", will prevent the dialog from closing, until the ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](287, "code");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](288, "close");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](288, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](289, " The example of the dialog's closure actions below shows how flexible a simple dialog can be in terms of performing certain actions at certain points of the dialog's lifecycle\n");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](289, " method is called. All this lets you be very flexible in how exactly you want the dialog to be dismissed and when to perform certain actions.\n");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](290, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](291, " For this example:\n");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](291, " The example of the dialog's closure actions below shows how flexible a simple dialog can be in terms of performing certain actions at certain points of the dialog's lifecycle\n");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](292, "ol");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](293, "li");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](294, "strong");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](295, "BACKDROP click");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](292, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](293, " For this example:\n");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](296, " - The logic specific to the backdrop click is performed, and the dialog stays open in this case. ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](294, "ol");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](295, "li");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](296, "strong");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](297, "BACKDROP click");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](297, "li");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](298, "strong");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](299, "ESC key pressed");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](298, " - The logic specific to the backdrop click is performed, and the dialog stays open in this case. ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](300, " - First, the logic specific to the ESC button click is performed. Then, general logic before the dialog dismissal is performed. And, finally, the logic to perform right after dialog closure is run. ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](299, "li");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](300, "strong");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](301, "ESC key pressed");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](301, "li");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](302, "strong");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](303, "ACTION button pressed");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](302, " - First, the logic specific to the ESC button click is performed. Then, general logic before the dialog dismissal is performed. And, finally, the logic to perform right after dialog closure is run. ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](304, " - The logic specific to the ACTION button click is performed. Then, the custom DONE event is sent, and finally the event is captured and custom logic is run in response. The dialog stays open in this case. ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](303, "li");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](304, "strong");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](305, "ACTION button pressed");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](305, "li");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](306, "strong");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](307, "CANCEL button pressed");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](306, " - The logic specific to the ACTION button click is performed. Then, the custom DONE event is sent, and finally the event is captured and custom logic is run in response. The dialog stays open in this case. ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](308, " - The logic specific to the CANCEL button click is performed. Then, general logic before the dialog dismissal is performed. And, finally, the logic to perform right after dialog closure is run. ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](307, "li");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](308, "strong");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](309, "CANCEL button pressed");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](309, "li");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](310, "strong");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](311, "Header Close button pressed");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](310, " - The logic specific to the CANCEL button click is performed. Then, general logic before the dialog dismissal is performed. And, finally, the logic to perform right after dialog closure is run. ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](312, " - The logic specific to the header Close button click is performed. Then, general logic before the dialog dismissal is performed. And, finally, the logic to perform right after dialog closure is run. ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](311, "li");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](312, "strong");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](313, "Header Close button pressed");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](314, " - The logic specific to the header Close button click is performed. Then, general logic before the dialog dismissal is performed. And, finally, the logic to perform right after dialog closure is run. ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](313, "nui-example-wrapper", 15);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](314, "nui-dialog-actions-before-closure-example");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](315, "nui-example-wrapper", 16);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](316, "nui-dialog-actions-before-closure-example");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](315, "h2");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](316, "Dialog Open Actions");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](317, "h2");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](318, "Dialog Open Actions");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](317, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](318, " It's possible to perform some actions in your code when a dialog is opened by subscribing to the ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](319, "code");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](320, "DialogService");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](319, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](320, " It's possible to perform some actions in your code when a dialog is opened by subscribing to the ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](321, "code");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](322, "DialogService");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](321, "'s ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](322, "code");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](323, "afterOpened$");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](323, "'s ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](324, "code");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](325, "afterOpened$");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](324, " observable. It emits a ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](325, "code");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](326, "NuiDialogRef");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](326, " observable. It emits a ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](327, "code");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](328, "NuiDialogRef");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](327, " that contains the component's data. This works for both a confirmation dialog and a dialog containing a consumer-defined component. The examples below trigger a toast on the top right of the page when each dialog is opened.\n");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](329, " that contains the component's data. This works for both a confirmation dialog and a dialog containing a consumer-defined component. The examples below trigger a toast on the top right of the page when each dialog is opened.\n");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](328, "nui-message", 14);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](329, " To see the source code of the consumer-defined component used in this example, open the source expander of the second example panel in this section.\n");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](330, "nui-message", 15);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](331, " To see the source code of the consumer-defined component used in this example, open the source expander of the second example panel in this section.\n");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](330, "nui-example-wrapper", 16);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](331, "nui-dialog-after-opened-example");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](332, "nui-example-wrapper", 17);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](333, "nui-dialog-after-opened-example");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](332, "nui-example-wrapper", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](333, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](334, "The code of this example panel is related to the example above. It only shows code.");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](334, "nui-example-wrapper", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](335, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](336, "The code of this example panel is related to the example above. It only shows code.");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
@@ -945,11 +935,11 @@ DialogDocsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefi
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate2"]("DialogService.open(content, ", "{", " windowClass: \"myCustomClass\" ", "}", ") ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](68);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate2"]("", "{", " keyboard: false ", "}", "");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](64);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](66);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("allowDismiss", false);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](58);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("allowDismiss", false);
-    } }, directives: [_src_lib_docs_example_wrapper_example_wrapper_component__WEBPACK_IMPORTED_MODULE_1__["ExampleWrapperComponent"], _simple_dialog_simple_dialog_example_component__WEBPACK_IMPORTED_MODULE_2__["SimpleDialogExampleComponent"], _component_as_content_component_as_content_example_component__WEBPACK_IMPORTED_MODULE_3__["ComponentAsContentExampleComponent"], _dialog_severity_dialog_severity_example_component__WEBPACK_IMPORTED_MODULE_4__["DialogSeverityExampleComponent"], _header_buttons_header_buttons_example_component__WEBPACK_IMPORTED_MODULE_5__["HeaderButtonsExampleComponent"], _dialog_sizes_dialog_sizes_example_component__WEBPACK_IMPORTED_MODULE_6__["DialogSizesExampleComponent"], _dialog_position_dialog_position_example_component__WEBPACK_IMPORTED_MODULE_7__["DialogPositionExampleComponent"], _src_lib_message_message_component__WEBPACK_IMPORTED_MODULE_8__["MessageComponent"], _dialog_custom_class_dialog_custom_class_example_component__WEBPACK_IMPORTED_MODULE_9__["DialogCustomClassExampleComponent"], _confirmation_dialog_confirmation_dialog_example_component__WEBPACK_IMPORTED_MODULE_10__["ConfirmationDialogExampleComponent"], _dialog_keyboard_dialog_with_keyboard_example_component__WEBPACK_IMPORTED_MODULE_11__["DialogWithKeyboardExampleComponent"], _dialog_static_backdrop_dialog_with_static_backdrop_example_component__WEBPACK_IMPORTED_MODULE_12__["DialogWithStaticBackdropExampleComponent"], _dialog_inside_overlay_dialog_inside_overlay_example_component__WEBPACK_IMPORTED_MODULE_13__["DialogInsideOverlayExampleComponent"], _dialog_actions_before_closure_dialog_actions_before_closure_example_component__WEBPACK_IMPORTED_MODULE_14__["DialogActionBeforeClosureExampleComponent"], _dialog_after_opened_dialog_after_opened_example_component__WEBPACK_IMPORTED_MODULE_15__["DialogAfterOpenedExampleComponent"]], encapsulation: 2 });
+    } }, directives: [_src_lib_docs_example_wrapper_example_wrapper_component__WEBPACK_IMPORTED_MODULE_1__["ExampleWrapperComponent"], _simple_dialog_simple_dialog_example_component__WEBPACK_IMPORTED_MODULE_2__["SimpleDialogExampleComponent"], _component_as_content_component_as_content_example_component__WEBPACK_IMPORTED_MODULE_3__["ComponentAsContentExampleComponent"], _dialog_severity_dialog_severity_example_component__WEBPACK_IMPORTED_MODULE_4__["DialogSeverityExampleComponent"], _header_buttons_header_buttons_example_component__WEBPACK_IMPORTED_MODULE_5__["HeaderButtonsExampleComponent"], _dialog_sizes_dialog_sizes_example_component__WEBPACK_IMPORTED_MODULE_6__["DialogSizesExampleComponent"], _dialog_position_dialog_position_example_component__WEBPACK_IMPORTED_MODULE_7__["DialogPositionExampleComponent"], _src_lib_message_message_component__WEBPACK_IMPORTED_MODULE_8__["MessageComponent"], _dialog_custom_class_dialog_custom_class_example_component__WEBPACK_IMPORTED_MODULE_9__["DialogCustomClassExampleComponent"], _confirmation_dialog_confirmation_dialog_example_component__WEBPACK_IMPORTED_MODULE_10__["ConfirmationDialogExampleComponent"], _dialog_keyboard_dialog_with_keyboard_example_component__WEBPACK_IMPORTED_MODULE_11__["DialogWithKeyboardExampleComponent"], _dialog_static_backdrop_dialog_with_static_backdrop_example_component__WEBPACK_IMPORTED_MODULE_12__["DialogWithStaticBackdropExampleComponent"], _dialog_inside_overlay_dialog_inside_overlay_example_component__WEBPACK_IMPORTED_MODULE_13__["DialogInsideOverlayExampleComponent"], _dialog_inside_overlay_with_date_time_picker_dialog_inside_overlay_with_date_time_picker_example_component__WEBPACK_IMPORTED_MODULE_14__["DialogInsideOverlayWithDateTimePickerExampleComponent"], _dialog_actions_before_closure_dialog_actions_before_closure_example_component__WEBPACK_IMPORTED_MODULE_15__["DialogActionBeforeClosureExampleComponent"], _dialog_after_opened_dialog_after_opened_example_component__WEBPACK_IMPORTED_MODULE_16__["DialogAfterOpenedExampleComponent"]], encapsulation: 2 });
 
 
 /***/ }),
@@ -1054,7 +1044,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("export * from \"./dialog-docs/dialog-docs.example.component\";\nexport * from \"./simple-dialog/simple-dialog.example.component\";\nexport * from \"./component-as-content/component-as-content.example.component\";\nexport * from \"./component-as-content/dialog-content.example.component\";\nexport * from \"./dialog-severity/dialog-severity.example.component\";\nexport * from \"./dialog-sizes/dialog-sizes.example.component\";\nexport * from \"./dialog-position/dialog-position.example.component\";\nexport * from \"./header-buttons/header-buttons.example.component\";\nexport * from \"./dialog-custom-class/dialog-custom-class.example.component\";\nexport * from \"./confirmation-dialog/confirmation-dialog.example.component\";\nexport * from \"./dialog-visual-test/dialog-visual-test.component\";\nexport * from \"./dialog-keyboard/dialog-with-keyboard.example.component\";\nexport * from \"./dialog-static-backdrop/dialog-with-static-backdrop.example.component\";\nexport * from \"./dialog-inside-overlay/dialog-inside-overlay.example.component\";\nexport * from \"./dialog-actions-before-closure/dialog-actions-before-closure.example.component\";\nexport * from \"./dialog-test/dialog-zindex-test.component\";\nexport * from \"./dialog-after-opened/dialog-after-opened.example.component\";\nexport * from \"./dialog-actions-before-closure/dialog-actions-before-closure.example.component\";\n");
+/* harmony default export */ __webpack_exports__["default"] = ("export * from \"./dialog-docs/dialog-docs.example.component\";\nexport * from \"./simple-dialog/simple-dialog.example.component\";\nexport * from \"./component-as-content/component-as-content.example.component\";\nexport * from \"./component-as-content/dialog-content.example.component\";\nexport * from \"./dialog-severity/dialog-severity.example.component\";\nexport * from \"./dialog-sizes/dialog-sizes.example.component\";\nexport * from \"./dialog-position/dialog-position.example.component\";\nexport * from \"./header-buttons/header-buttons.example.component\";\nexport * from \"./dialog-custom-class/dialog-custom-class.example.component\";\nexport * from \"./confirmation-dialog/confirmation-dialog.example.component\";\nexport * from \"./dialog-visual-test/dialog-visual-test.component\";\nexport * from \"./dialog-keyboard/dialog-with-keyboard.example.component\";\nexport * from \"./dialog-static-backdrop/dialog-with-static-backdrop.example.component\";\nexport * from \"./dialog-inside-overlay/dialog-inside-overlay.example.component\";\nexport * from \"./dialog-actions-before-closure/dialog-actions-before-closure.example.component\";\nexport * from \"./dialog-test/dialog-zindex-test.component\";\nexport * from \"./dialog-after-opened/dialog-after-opened.example.component\";\nexport * from \"./dialog-actions-before-closure/dialog-actions-before-closure.example.component\";\nexport * from \"./dialog-inside-overlay-with-date-time-picker/dialog-inside-overlay-with-date-time-picker.example.component\";\n");
 
 /***/ }),
 
@@ -1160,7 +1150,7 @@ __webpack_require__.r(__webpack_exports__);
 /*!**************************************************!*\
   !*** ./demo/src/components/demo/dialog/index.ts ***!
   \**************************************************/
-/*! exports provided: DialogDocsComponent, SimpleDialogExampleComponent, ComponentAsContentExampleComponent, DialogContentExampleComponent, DialogSeverityExampleComponent, DialogSizesExampleComponent, DialogPositionExampleComponent, HeaderButtonsExampleComponent, DialogCustomClassExampleComponent, ConfirmationDialogExampleComponent, DialogVisualTestComponent, DialogWithKeyboardExampleComponent, DialogWithStaticBackdropExampleComponent, DialogInsideOverlayExampleComponent, DialogActionBeforeClosureExampleComponent, DialogZIndexTestComponent, DialogAfterOpenedExampleComponent */
+/*! exports provided: DialogDocsComponent, SimpleDialogExampleComponent, ComponentAsContentExampleComponent, DialogContentExampleComponent, DialogSeverityExampleComponent, DialogSizesExampleComponent, DialogPositionExampleComponent, HeaderButtonsExampleComponent, DialogCustomClassExampleComponent, ConfirmationDialogExampleComponent, DialogVisualTestComponent, DialogWithKeyboardExampleComponent, DialogWithStaticBackdropExampleComponent, DialogInsideOverlayExampleComponent, DialogActionBeforeClosureExampleComponent, DialogZIndexTestComponent, DialogAfterOpenedExampleComponent, DialogInsideOverlayWithDateTimePickerExampleComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1216,7 +1206,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _dialog_after_opened_dialog_after_opened_example_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./dialog-after-opened/dialog-after-opened.example.component */ "cRSG");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DialogAfterOpenedExampleComponent", function() { return _dialog_after_opened_dialog_after_opened_example_component__WEBPACK_IMPORTED_MODULE_16__["DialogAfterOpenedExampleComponent"]; });
 
-/* empty/unused harmony star reexport */
+/* empty/unused harmony star reexport *//* harmony import */ var _dialog_inside_overlay_with_date_time_picker_dialog_inside_overlay_with_date_time_picker_example_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./dialog-inside-overlay-with-date-time-picker/dialog-inside-overlay-with-date-time-picker.example.component */ "ed45");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DialogInsideOverlayWithDateTimePickerExampleComponent", function() { return _dialog_inside_overlay_with_date_time_picker_dialog_inside_overlay_with_date_time_picker_example_component__WEBPACK_IMPORTED_MODULE_17__["DialogInsideOverlayWithDateTimePickerExampleComponent"]; });
+
+
+
 
 
 
@@ -1273,6 +1267,8 @@ var map = {
 	"./dialog-custom-class/dialog-custom-class.example.component.ts": "5Tta",
 	"./dialog-docs/dialog-docs.example.component.html": "e0nl",
 	"./dialog-docs/dialog-docs.example.component.ts": "6BiM",
+	"./dialog-inside-overlay-with-date-time-picker/dialog-inside-overlay-with-date-time-picker.example.component.html": "xeBr",
+	"./dialog-inside-overlay-with-date-time-picker/dialog-inside-overlay-with-date-time-picker.example.component.ts": "o0H5",
 	"./dialog-inside-overlay/dialog-inside-overlay.example.component.html": "ggfY",
 	"./dialog-inside-overlay/dialog-inside-overlay.example.component.ts": "N0bp",
 	"./dialog-keyboard/dialog-with-keyboard.example.component.html": "yajv",
@@ -1730,7 +1726,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { Component, TemplateRef } from \"@angular/core\";\nimport { DialogService, NuiDialogRef } from \"@nova-ui/bits\";\nimport moment, { Moment } from \"moment/moment\";\n\n@Component({\n    selector: \"nui-dialog-inside-overlay-example\",\n    templateUrl: \"./dialog-inside-overlay.example.component.html\",\n})\nexport class DialogInsideOverlayExampleComponent {\n    public options1 = Array.from({ length: 25 }).map((_, i) => $localize `Item ${i}`);\n    public options2 = Array.from({ length: 25 }).map((_, i) => $localize `Item ${i}`);\n\n    public dt: Moment;\n    public selectedDate: Date;\n\n    private activeDialog: NuiDialogRef;\n\n    constructor(private dialogService: DialogService) {\n        this.dt = moment();\n        this.selectedDate = new Date(this.dt.valueOf());\n    }\n\n    /**\n     * Notice that the 'useOverlay' option is being passed in here\n     */\n    public openInOverlay(content: TemplateRef<string>) {\n        this.activeDialog = this.dialogService.open(content, {size: \"sm\", useOverlay: true});\n    }\n\n    public onDone(): void {\n        this.activeDialog.close();\n    }\n\n    public onCancel(): void {\n        this.activeDialog.close();\n    }\n\n    public onModelChanged(event: any) {\n        this.selectedDate = new Date(event.valueOf());\n    }\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import { Component, TemplateRef } from \"@angular/core\";\nimport { DialogService, NuiDialogRef } from \"@nova-ui/bits\";\n\n@Component({\n    selector: \"nui-dialog-inside-overlay-example\",\n    templateUrl: \"./dialog-inside-overlay.example.component.html\",\n})\nexport class DialogInsideOverlayExampleComponent {\n    public options1 = Array.from({ length: 25 }).map((_, i) => $localize `Item ${i}`);\n    public options2 = Array.from({ length: 25 }).map((_, i) => $localize `Item ${i}`);\n\n    private activeDialog: NuiDialogRef;\n\n    constructor(private dialogService: DialogService) {}\n\n    /**\n     * Notice that the 'useOverlay' option is being passed in here\n     */\n    public openInOverlay(content: TemplateRef<string>) {\n        this.activeDialog = this.dialogService.open(content, {size: \"sm\", useOverlay: true});\n    }\n\n    public onDone(): void {\n        this.activeDialog.close();\n    }\n\n    public onCancel(): void {\n        this.activeDialog.close();\n    }\n}\n");
 
 /***/ }),
 
@@ -2875,7 +2871,121 @@ DialogAfterOpenedExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h2>Required Modules</h2>\n<ul>\n    <li>\n        <code> NuiDialogModule </code>\n    </li>\n</ul>\n\n<h2>Basic Usage</h2>\n\n<p>\n    Dialog can be added by passing <code>template</code> to the <code>DialogService's open</code> method.\n    You can pass the result of the dialog or the reason why dialog is dismissed by using <code>close</code> or <code>dismiss</code> methods in your ng-template.\n    All passed data can be handled by <code>result</code> property of dialog's <code>open</code> method.\n</p>\n<nui-example-wrapper filenamePrefix=\"simple-dialog\" exampleTitle=\"Simple dialog\">\n    <nui-simple-dialog-example></nui-simple-dialog-example>\n</nui-example-wrapper>\n\n<h2>Usage as a Component</h2>\n\n<p>You can pass an existing component as content of the dialog window. </p>\n<p>In this case remember to add content component as an entryComponents section of your NgModule.</p>\n<p>For this case you need to pass the component's class name to the <code>open</code> method of <code>DialogService</code>.</p>\n<p>See both example panels below.</p>\n<nui-example-wrapper filenamePrefix=\"component-as-content\" exampleTitle=\"Component as content for dialog\">\n    <nui-component-as-content-example></nui-component-as-content-example>\n</nui-example-wrapper>\n<nui-example-wrapper filenamePrefix=\"dialog-content\" exampleTitle=\"Dialog Content Example Component\">\n    <p>The code of this example panel is related to the example above. It only shows code.</p>\n</nui-example-wrapper>\n\n<h2>Severity</h2>\n\n<p>You can pass <code>severity</code> property to the <code>dialog-header</code>\ncomponent and it will show different severity styles. Possible values are: <code>critical, warning, info.</code></p>\n<p>You can also add custom action buttons to the Dialog header. </p>\n<p>In order to do so, you need to define them inside <code>dialog-header</code> component, as shown in the example below.</p>\n<nui-example-wrapper filenamePrefix=\"dialog-severity\" exampleTitle=\"Dialog Severity\">\n    <nui-dialog-severity-example></nui-dialog-severity-example>\n</nui-example-wrapper>\n\n<h2>Custom Dialog header</h2>\n\n<p>You can add custom action buttons to the Dialog header. </p>\n<p>In order to do so, you need to define them inside <code>dialog-header</code> component, as shown in the example below.</p>\n<nui-example-wrapper filenamePrefix=\"header-buttons\" exampleTitle=\"Custom Dialog Header\">\n    <nui-header-buttons-example></nui-header-buttons-example>\n</nui-example-wrapper>\n\n<h2>Dialog Sizes</h2>\n\n<p>You can define size of the dialog by passing it as second argument to <code>DialogService's</code>\n    <code>open</code> method. Possible sizes are: <code>sm,</code><code>md,</code> and <code>lg</code>.\n    Default size is <code>md</code>.\n</p>\n<nui-example-wrapper filenamePrefix=\"dialog-sizes\" exampleTitle=\"Dialog Sizes\">\n    <nui-dialog-sizes-example></nui-dialog-sizes-example>\n</nui-example-wrapper>\n\n<h2>Position on screen</h2>\n\n<p>When content is longer than available screen, dialog grows vertically by default.</p>\n<p>By adding <code>responsive-mode</code> class to the <code>dialog-body</code>, dialog will fit the available screen\n    and content will be scrollable inside the dialog. Also it's possible to remove padding from content in\n    <code>dialog-body</code>by adding <code>compact-mode</code> class</p>\n<nui-example-wrapper filenamePrefix=\"dialog-position\" exampleTitle=\"Dialog Positions\">\n    <nui-dialog-position-example></nui-dialog-position-example>\n</nui-example-wrapper>\n\n<h2>Custom class</h2>\n\n<p>It is possible to add custom class to the dialog window. In order to do it, you need to pass <code>windowClass</code>\noption into <code>DialogService open</code> method as second argument. </p>\n<p> Here's an example: <code>DialogService.open(content, {{ '{' }} windowClass: \"myCustomClass\" {{ '}' }}) </code> </p>\n<p> It will allow you to apply custom styles to the dialog if needed. </p>\n<p> Example below shows dialog with custom width (500px). </p>\n<p> NOTE: custom class is applied to the dialog component which appended into the <code>body</code> element.\n<p> That's why this class must be specified as <code>body</code> descendant class.</p>\n<nui-message type=\"info\">\n    Custom class styles can be overriden by default styles of <code>nui-dialog</code> component. In this case please make custom class selector more specific in your styles.\n</nui-message>\n<nui-example-wrapper filenamePrefix=\"dialog-custom-class\" exampleTitle=\"Custom Class\">\n    <nui-dialog-custom-class-example></nui-dialog-custom-class-example>\n</nui-example-wrapper>\n\n<h2>Confirmation Dialog</h2>\n\n<p>\n    You can use Confirmation Dialog by calling the <code>confirm</code> method of DialogService. Set the <code>message</code> input\n    to a string value that will serve as the confirmation message. Optionally, you can customize the title and button labels using\n    the <code>title</code>, <code>confirmText</code>, <code>dismissText</code> and <code>severity</code> properties defined in\n    <a target=\"_parent\" href=\"../interfaces/IConfirmationDialogOptions.html\">IConfirmationDialogOptions</a>.\n\n    <nui-message type=\"info\">\n        By default, when the confirmation dialog opens, the <code>Confirm</code> button is focused. Use <code>setFocus</code> input to\n        set the <code>Dismiss</code> button focused on dialog open.\n    </nui-message>\n</p>\n<nui-example-wrapper filenamePrefix=\"confirmation-dialog\" exampleTitle=\"Confirmation Dialog\">\n    <nui-confirmation-dialog-example></nui-confirmation-dialog-example>\n</nui-example-wrapper>\n\n<h2>Keyboard Options</h2>\n\n<p>\n    There is a field in <code>options</code> that allows dialog to be interacted with via keyboard. Usage: <code>{{ '{' }} keyboard: false {{ '}' }}</code>\n</p>\n\n<nui-example-wrapper filenamePrefix=\"dialog-with-keyboard\" exampleTitle=\"Dialog With Keyboard\">\n    <nui-dialog-with-keyboard-example></nui-dialog-with-keyboard-example>\n</nui-example-wrapper>\n\n<h2>Static Backdrop</h2>\n<p>\n    By default, nui-dialog closes if user clicks outside the dialog. It is handy though to keep the dialog on no matter where user clicks. To achieve this behavior,\n    it is recommended to use the <code>backdrop</code> input of the component and set <code>static</code> string to it.\n</p>\n\n<nui-example-wrapper filenamePrefix=\"dialog-with-static-backdrop\" exampleTitle=\"Dialog With Static Backdrop\">\n    <nui-dialog-with-static-backdrop-example></nui-dialog-with-static-backdrop-example>\n</nui-example-wrapper>\n\n<h2>Dialog Inside Overlay</h2>\n<p>\n    The implementation of the <code>nui-dialog</code> is not currently based on <code>nui-overlay</code>, which means there might be a need to display the dialog properly\n    with overlay-based components, including nested ones. To make the dialog open inside the overlay container it is enough to passe in the <code>useOverlay</code> option\n    when opening the dialog.\n</p>\n\n<nui-example-wrapper filenamePrefix=\"dialog-inside-overlay\" exampleTitle=\"Dialog Inside Overlay\">\n    <nui-dialog-inside-overlay-example></nui-dialog-inside-overlay-example>\n</nui-example-wrapper>\n\n<h2>Dialog Closure Actions</h2>\n<p>\n    The <code>nui-dialog</code> provides you with a number of ways to perform actions on it's closure. There are two built-in events <code>ESC</code> and <code>BACKDROP_CLICK</code>\n    which are triggered by the keyboard escape key and clicking the dialog's backdrop respectively. However, the user is able to create their own events, which they can pass as an argument into the\n    <code>dismiss(event)</code> method of the <code>dialogRef</code>. To capture the events there are two types of EventEmitters of the <code>dialogRef</code> - <code>closed$</code>\n    and <code>beforeDismissed$</code>. As can be determined from their names, the <code>closed$</code> event emitter will emit an event right after the dialog window is closed, while the\n    <code>beforeDismissed$</code> emits right before the dialog is dismissed.\n</p>\n<nui-message type=\"info\" [allowDismiss]=\"false\">\n    <strong>Note:</strong> <code>beforeDissmissed$</code> is only emitted on dialog dismissal (or cancellation); it is not emitted on dialog submission.\n    <code>beforeDismissed$</code>works best in conjunction with the special <code>beforeDismiss</code> function, which can\n    be configured as an optional configuration parameter of the dialog. This function, if it returns <code>false</code>, will prevent the dialog from closing, until the <code>close</code>\n    method is called. All this lets you be very flexible in how exactly you want the dialog to be dismissed and when to perform certain actions.\n</nui-message>\n<p>\n    The example of the dialog's closure actions below shows how flexible a simple dialog can be in terms of performing certain actions at certain points of the dialog's lifecycle\n</p>\n\n<p>\n    For this example:\n</p>\n<ol>\n    <li>\n        <strong>BACKDROP click</strong> - The logic specific to the backdrop click is performed, and the dialog stays open in this case.\n    </li>\n    <li>\n        <strong>ESC key pressed</strong> - First, the logic specific to the ESC button click is performed. Then, general logic before the dialog dismissal is performed. And, finally, the logic to perform right after dialog closure is run.\n    </li>\n    <li>\n        <strong>ACTION button pressed</strong> - The logic specific to the ACTION button click is performed. Then, the custom DONE event is sent, and finally the event is captured and custom logic is run in response. The dialog stays open in this case.\n    </li>\n    <li>\n        <strong>CANCEL button pressed</strong> - The logic specific to the CANCEL button click is performed. Then, general logic before the dialog dismissal is performed. And, finally, the logic to perform right after dialog closure is run.\n    </li>\n    <li>\n        <strong>Header Close button pressed</strong> - The logic specific to the header Close button click is performed. Then, general logic before the dialog dismissal is performed. And, finally, the logic to perform right after dialog closure is run.\n    </li>\n</ol>\n\n\n<nui-example-wrapper filenamePrefix=\"dialog-actions-before-closure\" exampleTitle=\"Dialog Actions Before Closure\">\n    <nui-dialog-actions-before-closure-example></nui-dialog-actions-before-closure-example>\n</nui-example-wrapper>\n\n<h2>Dialog Open Actions</h2>\n<p>\n    It's possible to perform some actions in your code when a dialog is opened by subscribing to the\n    <code>DialogService</code>'s <code>afterOpened$</code> observable. It emits a\n    <code>NuiDialogRef</code> that contains the component's data. This works for both a confirmation\n    dialog and a dialog containing a consumer-defined component. The examples below trigger a toast on\n    the top right of the page when each dialog is opened.\n</p>\n<nui-message type=\"info\" [allowDismiss]=\"false\">\n    To see the source code of the consumer-defined component used in this example, open the source\n    expander of the second example panel in this section.\n</nui-message>\n\n<nui-example-wrapper filenamePrefix=\"dialog-after-opened\" exampleTitle=\"Perform an action on dialog open\">\n    <nui-dialog-after-opened-example></nui-dialog-after-opened-example>\n</nui-example-wrapper>\n<nui-example-wrapper filenamePrefix=\"dialog-content\" exampleTitle=\"Dialog Content Example Component\">\n    <p>The code of this example panel is related to the example above. It only shows code.</p>\n</nui-example-wrapper>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<h2>Required Modules</h2>\n<ul>\n    <li>\n        <code> NuiDialogModule </code>\n    </li>\n</ul>\n\n<h2>Basic Usage</h2>\n\n<p>\n    Dialog can be added by passing <code>template</code> to the <code>DialogService's open</code> method.\n    You can pass the result of the dialog or the reason why dialog is dismissed by using <code>close</code> or <code>dismiss</code> methods in your ng-template.\n    All passed data can be handled by <code>result</code> property of dialog's <code>open</code> method.\n</p>\n<nui-example-wrapper filenamePrefix=\"simple-dialog\" exampleTitle=\"Simple dialog\">\n    <nui-simple-dialog-example></nui-simple-dialog-example>\n</nui-example-wrapper>\n\n<h2>Usage as a Component</h2>\n\n<p>You can pass an existing component as content of the dialog window. </p>\n<p>In this case remember to add content component as an entryComponents section of your NgModule.</p>\n<p>For this case you need to pass the component's class name to the <code>open</code> method of <code>DialogService</code>.</p>\n<p>See both example panels below.</p>\n<nui-example-wrapper filenamePrefix=\"component-as-content\" exampleTitle=\"Component as content for dialog\">\n    <nui-component-as-content-example></nui-component-as-content-example>\n</nui-example-wrapper>\n<nui-example-wrapper filenamePrefix=\"dialog-content\" exampleTitle=\"Dialog Content Example Component\">\n    <p>The code of this example panel is related to the example above. It only shows code.</p>\n</nui-example-wrapper>\n\n<h2>Severity</h2>\n\n<p>You can pass <code>severity</code> property to the <code>dialog-header</code>\ncomponent and it will show different severity styles. Possible values are: <code>critical, warning, info.</code></p>\n<p>You can also add custom action buttons to the Dialog header. </p>\n<p>In order to do so, you need to define them inside <code>dialog-header</code> component, as shown in the example below.</p>\n<nui-example-wrapper filenamePrefix=\"dialog-severity\" exampleTitle=\"Dialog Severity\">\n    <nui-dialog-severity-example></nui-dialog-severity-example>\n</nui-example-wrapper>\n\n<h2>Custom Dialog header</h2>\n\n<p>You can add custom action buttons to the Dialog header. </p>\n<p>In order to do so, you need to define them inside <code>dialog-header</code> component, as shown in the example below.</p>\n<nui-example-wrapper filenamePrefix=\"header-buttons\" exampleTitle=\"Custom Dialog Header\">\n    <nui-header-buttons-example></nui-header-buttons-example>\n</nui-example-wrapper>\n\n<h2>Dialog Sizes</h2>\n\n<p>You can define size of the dialog by passing it as second argument to <code>DialogService's</code>\n    <code>open</code> method. Possible sizes are: <code>sm,</code><code>md,</code> and <code>lg</code>.\n    Default size is <code>md</code>.\n</p>\n<nui-example-wrapper filenamePrefix=\"dialog-sizes\" exampleTitle=\"Dialog Sizes\">\n    <nui-dialog-sizes-example></nui-dialog-sizes-example>\n</nui-example-wrapper>\n\n<h2>Position on screen</h2>\n\n<p>When content is longer than available screen, dialog grows vertically by default.</p>\n<p>By adding <code>responsive-mode</code> class to the <code>dialog-body</code>, dialog will fit the available screen\n    and content will be scrollable inside the dialog. Also it's possible to remove padding from content in\n    <code>dialog-body</code>by adding <code>compact-mode</code> class</p>\n<nui-example-wrapper filenamePrefix=\"dialog-position\" exampleTitle=\"Dialog Positions\">\n    <nui-dialog-position-example></nui-dialog-position-example>\n</nui-example-wrapper>\n\n<h2>Custom class</h2>\n\n<p>It is possible to add custom class to the dialog window. In order to do it, you need to pass <code>windowClass</code>\noption into <code>DialogService open</code> method as second argument. </p>\n<p> Here's an example: <code>DialogService.open(content, {{ '{' }} windowClass: \"myCustomClass\" {{ '}' }}) </code> </p>\n<p> It will allow you to apply custom styles to the dialog if needed. </p>\n<p> Example below shows dialog with custom width (500px). </p>\n<p> NOTE: custom class is applied to the dialog component which appended into the <code>body</code> element.\n<p> That's why this class must be specified as <code>body</code> descendant class.</p>\n<nui-message type=\"info\">\n    Custom class styles can be overriden by default styles of <code>nui-dialog</code> component. In this case please make custom class selector more specific in your styles.\n</nui-message>\n<nui-example-wrapper filenamePrefix=\"dialog-custom-class\" exampleTitle=\"Custom Class\">\n    <nui-dialog-custom-class-example></nui-dialog-custom-class-example>\n</nui-example-wrapper>\n\n<h2>Confirmation Dialog</h2>\n\n<p>\n    You can use Confirmation Dialog by calling the <code>confirm</code> method of DialogService. Set the <code>message</code> input\n    to a string value that will serve as the confirmation message. Optionally, you can customize the title and button labels using\n    the <code>title</code>, <code>confirmText</code>, <code>dismissText</code> and <code>severity</code> properties defined in\n    <a target=\"_parent\" href=\"../interfaces/IConfirmationDialogOptions.html\">IConfirmationDialogOptions</a>.\n\n    <nui-message type=\"info\">\n        By default, when the confirmation dialog opens, the <code>Confirm</code> button is focused. Use <code>setFocus</code> input to\n        set the <code>Dismiss</code> button focused on dialog open.\n    </nui-message>\n</p>\n<nui-example-wrapper filenamePrefix=\"confirmation-dialog\" exampleTitle=\"Confirmation Dialog\">\n    <nui-confirmation-dialog-example></nui-confirmation-dialog-example>\n</nui-example-wrapper>\n\n<h2>Keyboard Options</h2>\n\n<p>\n    There is a field in <code>options</code> that allows dialog to be interacted with via keyboard. Usage: <code>{{ '{' }} keyboard: false {{ '}' }}</code>\n</p>\n\n<nui-example-wrapper filenamePrefix=\"dialog-with-keyboard\" exampleTitle=\"Dialog With Keyboard\">\n    <nui-dialog-with-keyboard-example></nui-dialog-with-keyboard-example>\n</nui-example-wrapper>\n\n<h2>Static Backdrop</h2>\n<p>\n    By default, nui-dialog closes if user clicks outside the dialog. It is handy though to keep the dialog on no matter where user clicks. To achieve this behavior,\n    it is recommended to use the <code>backdrop</code> input of the component and set <code>static</code> string to it.\n</p>\n\n<nui-example-wrapper filenamePrefix=\"dialog-with-static-backdrop\" exampleTitle=\"Dialog With Static Backdrop\">\n    <nui-dialog-with-static-backdrop-example></nui-dialog-with-static-backdrop-example>\n</nui-example-wrapper>\n\n<h2>Dialog Inside Overlay</h2>\n<p>\n    The implementation of the <code>nui-dialog</code> is not currently based on <code>nui-overlay</code>, which means there might be a need to display the dialog properly\n    with overlay-based components, including nested ones. To make the dialog open inside the overlay container it is enough to passe in the <code>useOverlay</code> option\n    when opening the dialog.\n</p>\n\n<nui-example-wrapper filenamePrefix=\"dialog-inside-overlay\" exampleTitle=\"Dialog Inside Overlay\">\n    <nui-dialog-inside-overlay-example></nui-dialog-inside-overlay-example>\n</nui-example-wrapper>\n\n<nui-example-wrapper filenamePrefix=\"dialog-inside-overlaywith-date-time-picker\" exampleTitle=\"Dialog Inside Overlay With DateTimePicker Component\">\n    <nui-dialog-inside-overlay-with-date-time-picker-example></nui-dialog-inside-overlay-with-date-time-picker-example>\n</nui-example-wrapper>\n\n<h2>Dialog Closure Actions</h2>\n<p>\n    The <code>nui-dialog</code> provides you with a number of ways to perform actions on it's closure. There are two built-in events <code>ESC</code> and <code>BACKDROP_CLICK</code>\n    which are triggered by the keyboard escape key and clicking the dialog's backdrop respectively. However, the user is able to create their own events, which they can pass as an argument into the\n    <code>dismiss(event)</code> method of the <code>dialogRef</code>. To capture the events there are two types of EventEmitters of the <code>dialogRef</code> - <code>closed$</code>\n    and <code>beforeDismissed$</code>. As can be determined from their names, the <code>closed$</code> event emitter will emit an event right after the dialog window is closed, while the\n    <code>beforeDismissed$</code> emits right before the dialog is dismissed.\n</p>\n<nui-message type=\"info\" [allowDismiss]=\"false\">\n    <strong>Note:</strong> <code>beforeDissmissed$</code> is only emitted on dialog dismissal (or cancellation); it is not emitted on dialog submission.\n    <code>beforeDismissed$</code>works best in conjunction with the special <code>beforeDismiss</code> function, which can\n    be configured as an optional configuration parameter of the dialog. This function, if it returns <code>false</code>, will prevent the dialog from closing, until the <code>close</code>\n    method is called. All this lets you be very flexible in how exactly you want the dialog to be dismissed and when to perform certain actions.\n</nui-message>\n<p>\n    The example of the dialog's closure actions below shows how flexible a simple dialog can be in terms of performing certain actions at certain points of the dialog's lifecycle\n</p>\n\n<p>\n    For this example:\n</p>\n<ol>\n    <li>\n        <strong>BACKDROP click</strong> - The logic specific to the backdrop click is performed, and the dialog stays open in this case.\n    </li>\n    <li>\n        <strong>ESC key pressed</strong> - First, the logic specific to the ESC button click is performed. Then, general logic before the dialog dismissal is performed. And, finally, the logic to perform right after dialog closure is run.\n    </li>\n    <li>\n        <strong>ACTION button pressed</strong> - The logic specific to the ACTION button click is performed. Then, the custom DONE event is sent, and finally the event is captured and custom logic is run in response. The dialog stays open in this case.\n    </li>\n    <li>\n        <strong>CANCEL button pressed</strong> - The logic specific to the CANCEL button click is performed. Then, general logic before the dialog dismissal is performed. And, finally, the logic to perform right after dialog closure is run.\n    </li>\n    <li>\n        <strong>Header Close button pressed</strong> - The logic specific to the header Close button click is performed. Then, general logic before the dialog dismissal is performed. And, finally, the logic to perform right after dialog closure is run.\n    </li>\n</ol>\n\n\n<nui-example-wrapper filenamePrefix=\"dialog-actions-before-closure\" exampleTitle=\"Dialog Actions Before Closure\">\n    <nui-dialog-actions-before-closure-example></nui-dialog-actions-before-closure-example>\n</nui-example-wrapper>\n\n<h2>Dialog Open Actions</h2>\n<p>\n    It's possible to perform some actions in your code when a dialog is opened by subscribing to the\n    <code>DialogService</code>'s <code>afterOpened$</code> observable. It emits a\n    <code>NuiDialogRef</code> that contains the component's data. This works for both a confirmation\n    dialog and a dialog containing a consumer-defined component. The examples below trigger a toast on\n    the top right of the page when each dialog is opened.\n</p>\n<nui-message type=\"info\" [allowDismiss]=\"false\">\n    To see the source code of the consumer-defined component used in this example, open the source\n    expander of the second example panel in this section.\n</nui-message>\n\n<nui-example-wrapper filenamePrefix=\"dialog-after-opened\" exampleTitle=\"Perform an action on dialog open\">\n    <nui-dialog-after-opened-example></nui-dialog-after-opened-example>\n</nui-example-wrapper>\n<nui-example-wrapper filenamePrefix=\"dialog-content\" exampleTitle=\"Dialog Content Example Component\">\n    <p>The code of this example panel is related to the example above. It only shows code.</p>\n</nui-example-wrapper>\n");
+
+/***/ }),
+
+/***/ "ed45":
+/*!******************************************************************************************************************************************************!*\
+  !*** ./demo/src/components/demo/dialog/dialog-inside-overlay-with-date-time-picker/dialog-inside-overlay-with-date-time-picker.example.component.ts ***!
+  \******************************************************************************************************************************************************/
+/*! exports provided: DialogInsideOverlayWithDateTimePickerExampleComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DialogInsideOverlayWithDateTimePickerExampleComponent", function() { return DialogInsideOverlayWithDateTimePickerExampleComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @nova-ui/bits */ "b5Xb");
+/* harmony import */ var moment_moment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! moment/moment */ "wd/R");
+/* harmony import */ var moment_moment__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(moment_moment__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../src/lib/button/button.component */ "6urz");
+/* harmony import */ var _src_lib_dialog_dialog_header_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../../src/lib/dialog/dialog-header.component */ "skCw");
+/* harmony import */ var _src_lib_date_time_picker_date_time_picker_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../../../src/lib/date-time-picker/date-time-picker.component */ "/NB1");
+/* harmony import */ var _src_lib_dialog_dialog_footer_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../../../src/lib/dialog/dialog-footer.component */ "NHEo");
+
+
+
+
+
+
+
+
+
+function DialogInsideOverlayWithDateTimePickerExampleComponent_ng_template_2_Template(rf, ctx) { if (rf & 1) {
+    const _r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "nui-dialog-header", 3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("closed", function DialogInsideOverlayWithDateTimePickerExampleComponent_ng_template_2_Template_nui_dialog_header_closed_0_listener() { const close_r2 = ctx.close; return close_r2(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "p");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "nui-date-time-picker", 5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("modelChanged", function DialogInsideOverlayWithDateTimePickerExampleComponent_ng_template_2_Template_nui_date_time_picker_modelChanged_3_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r5); const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r4.onModelChanged($event); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam maximus faucibus bibendum. Aenean feugiat interdum leo sed posuere. Etiam at pulvinar enim, nec interdum purus. Duis elit metus, lobortis vitae quam a, malesuada cursus quam. Duis vel lacinia purus. Maecenas eget arcu ac ante sagittis eleifend vel ut purus. Pellentesque sit amet semper ipsum, eu vulputate tortor. Aliquam vitae nisi augue. Duis non erat sit amet sem venenatis accumsan at ullamcorper lorem. Morbi non turpis nibh. ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "nui-dialog-footer");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "button", 6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function DialogInsideOverlayWithDateTimePickerExampleComponent_ng_template_2_Template_button_click_6_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r5); const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r6.onCancel(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](7, 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "button", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function DialogInsideOverlayWithDateTimePickerExampleComponent_ng_template_2_Template_button_click_8_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r5); const ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r7.onDone(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](9, 9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("model", ctx_r1.dt)("appendToBody", true);
+} }
+class DialogInsideOverlayWithDateTimePickerExampleComponent {
+    constructor(dialogService) {
+        this.dialogService = dialogService;
+        this.dt = moment_moment__WEBPACK_IMPORTED_MODULE_2___default()();
+        this.selectedDate = new Date(this.dt.valueOf());
+    }
+    /**
+     * Notice that the 'useOverlay' option is being passed in here
+     */
+    openInOverlay(content) {
+        this.activeDialog = this.dialogService.open(content, { size: "sm", useOverlay: true });
+    }
+    onDone() {
+        this.activeDialog.close();
+    }
+    onCancel() {
+        this.activeDialog.close();
+    }
+    onModelChanged(event) {
+        this.selectedDate = new Date(event.valueOf());
+    }
+}
+DialogInsideOverlayWithDateTimePickerExampleComponent.ɵfac = function DialogInsideOverlayWithDateTimePickerExampleComponent_Factory(t) { return new (t || DialogInsideOverlayWithDateTimePickerExampleComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["DialogService"])); };
+DialogInsideOverlayWithDateTimePickerExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: DialogInsideOverlayWithDateTimePickerExampleComponent, selectors: [["nui-dialog-inside-overlay-with-date-time-picker-example"]], decls: 4, vars: 0, consts: function () { let i18n_0; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+        const MSG_EXTERNAL_5021721454568914986$$DEMO_SRC_COMPONENTS_DEMO_DIALOG_DIALOG_INSIDE_OVERLAY_WITH_DATE_TIME_PICKER_DIALOG_INSIDE_OVERLAY_WITH_DATE_TIME_PICKER_EXAMPLE_COMPONENT_TS_1 = goog.getMsg("Open Dialog");
+        i18n_0 = MSG_EXTERNAL_5021721454568914986$$DEMO_SRC_COMPONENTS_DEMO_DIALOG_DIALOG_INSIDE_OVERLAY_WITH_DATE_TIME_PICKER_DIALOG_INSIDE_OVERLAY_WITH_DATE_TIME_PICKER_EXAMPLE_COMPONENT_TS_1;
+    }
+    else {
+        i18n_0 = $localize `:␟51bea37436ab02915bfceb958edc654551491ac1␟5021721454568914986:Open Dialog`;
+    } let i18n_2; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+        const MSG_EXTERNAL_6048569446453718997$$DEMO_SRC_COMPONENTS_DEMO_DIALOG_DIALOG_INSIDE_OVERLAY_WITH_DATE_TIME_PICKER_DIALOG_INSIDE_OVERLAY_WITH_DATE_TIME_PICKER_EXAMPLE_COMPONENT_TS__3 = goog.getMsg("Dialog Title");
+        i18n_2 = MSG_EXTERNAL_6048569446453718997$$DEMO_SRC_COMPONENTS_DEMO_DIALOG_DIALOG_INSIDE_OVERLAY_WITH_DATE_TIME_PICKER_DIALOG_INSIDE_OVERLAY_WITH_DATE_TIME_PICKER_EXAMPLE_COMPONENT_TS__3;
+    }
+    else {
+        i18n_2 = $localize `:␟3adbb5e2eb76ed612cb6cea384dae8481bba9cbb␟6048569446453718997:Dialog Title`;
+    } let i18n_4; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+        const MSG_EXTERNAL_2159130950882492111$$DEMO_SRC_COMPONENTS_DEMO_DIALOG_DIALOG_INSIDE_OVERLAY_WITH_DATE_TIME_PICKER_DIALOG_INSIDE_OVERLAY_WITH_DATE_TIME_PICKER_EXAMPLE_COMPONENT_TS__5 = goog.getMsg("Cancel");
+        i18n_4 = MSG_EXTERNAL_2159130950882492111$$DEMO_SRC_COMPONENTS_DEMO_DIALOG_DIALOG_INSIDE_OVERLAY_WITH_DATE_TIME_PICKER_DIALOG_INSIDE_OVERLAY_WITH_DATE_TIME_PICKER_EXAMPLE_COMPONENT_TS__5;
+    }
+    else {
+        i18n_4 = $localize `:␟d7b35c384aecd25a516200d6921836374613dfe7␟2159130950882492111:Cancel`;
+    } let i18n_6; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+        const MSG_EXTERNAL_9216117865911519658$$DEMO_SRC_COMPONENTS_DEMO_DIALOG_DIALOG_INSIDE_OVERLAY_WITH_DATE_TIME_PICKER_DIALOG_INSIDE_OVERLAY_WITH_DATE_TIME_PICKER_EXAMPLE_COMPONENT_TS__7 = goog.getMsg("Action");
+        i18n_6 = MSG_EXTERNAL_9216117865911519658$$DEMO_SRC_COMPONENTS_DEMO_DIALOG_DIALOG_INSIDE_OVERLAY_WITH_DATE_TIME_PICKER_DIALOG_INSIDE_OVERLAY_WITH_DATE_TIME_PICKER_EXAMPLE_COMPONENT_TS__7;
+    }
+    else {
+        i18n_6 = $localize `:␟1bd5e17c9582661e20763a7634ef07881e33bbd7␟9216117865911519658:Action`;
+    } return [["id", "nui-dialog-inside-overlay-with-date-time-picker-btn", "nui-button", "", "type", "button", 3, "click"], i18n_0, ["headerButtonsContent", ""], ["title", i18n_2, 3, "closed"], [1, "dialog-body"], ["id", "date-time-picker", "displayMode", "inline", 3, "model", "appendToBody", "modelChanged"], ["nui-button", "", "type", "button", 3, "click"], i18n_4, ["nui-button", "", "type", "button", "displayStyle", "primary", 3, "click"], i18n_6]; }, template: function DialogInsideOverlayWithDateTimePickerExampleComponent_Template(rf, ctx) { if (rf & 1) {
+        const _r8 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function DialogInsideOverlayWithDateTimePickerExampleComponent_Template_button_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r8); const _r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](3); return ctx.openInOverlay(_r0); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](1, 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, DialogInsideOverlayWithDateTimePickerExampleComponent_ng_template_2_Template, 10, 2, "ng-template", null, 2, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
+    } }, directives: [_src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_3__["ButtonComponent"], _src_lib_dialog_dialog_header_component__WEBPACK_IMPORTED_MODULE_4__["DialogHeaderComponent"], _src_lib_date_time_picker_date_time_picker_component__WEBPACK_IMPORTED_MODULE_5__["DateTimePickerComponent"], _src_lib_dialog_dialog_footer_component__WEBPACK_IMPORTED_MODULE_6__["DialogFooterComponent"]], encapsulation: 2 });
+
 
 /***/ }),
 
@@ -3702,7 +3812,7 @@ ConfirmationDialogExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODUL
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<nui-select-v2 id=\"select-to-open-dialog\" placeholder=\"Select an item\"\n               i18n-placeholder\n               [popupViewportMargin]=\"100\">\n    <nui-select-v2-option *ngFor=\"let option of options1\"\n                          [value]=\"option\"\n                          (click)=\"openInOverlay(headerButtonsContent)\">\n        {{ option }}\n    </nui-select-v2-option>\n</nui-select-v2>\n\n<ng-template  #headerButtonsContent let-close=\"close\">\n    <nui-dialog-header title=\"Dialog Title\" i18n-title (closed)=\"close()\"></nui-dialog-header>\n    <div class=\"dialog-body\">\n        <p>\n            <nui-select-v2 class=\"mb-5\" placeholder=\"Select an item\" i18n-placeholder>\n                <nui-select-v2-option *ngFor=\"let option of options2\" [value]=\"option\">\n                    {{ option }}\n                </nui-select-v2-option>\n            </nui-select-v2>\n            <nui-date-time-picker class=\"date-time-picker\" (modelChanged)=\"onModelChanged($event)\" displayMode=\"inline\" [model]=\"dt\" [appendToBody]=\"true\"></nui-date-time-picker>\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam maximus faucibus bibendum.\n            Aenean feugiat interdum leo sed posuere. Etiam at pulvinar enim, nec interdum purus.\n            Duis elit metus, lobortis vitae quam a, malesuada cursus quam. Duis vel lacinia purus.\n            Maecenas eget arcu ac ante sagittis eleifend vel ut purus.\n            Pellentesque sit amet semper ipsum, eu vulputate tortor. Aliquam vitae nisi augue.\n            Duis non erat sit amet sem venenatis accumsan at ullamcorper lorem. Morbi non turpis nibh.\n        </p>\n    </div>\n    <nui-dialog-footer>\n        <button nui-button type=\"button\" (click)=\"onCancel()\" i18n>Cancel</button>\n        <button nui-button type=\"button\" displayStyle=\"primary\" (click)=\"onDone()\" i18n>Action</button>\n    </nui-dialog-footer>\n</ng-template>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<nui-select-v2 id=\"select-to-open-dialog\" placeholder=\"Select an item\"\n               i18n-placeholder\n               [popupViewportMargin]=\"100\">\n    <nui-select-v2-option *ngFor=\"let option of options1\"\n                          [value]=\"option\"\n                          (click)=\"openInOverlay(headerButtonsContent)\">\n        {{ option }}\n    </nui-select-v2-option>\n</nui-select-v2>\n\n<ng-template  #headerButtonsContent let-close=\"close\">\n    <nui-dialog-header title=\"Dialog Title\" i18n-title (closed)=\"close()\"></nui-dialog-header>\n    <div class=\"dialog-body\">\n        <p>\n            <nui-select-v2 placeholder=\"Select an item\" i18n-placeholder>\n                <nui-select-v2-option *ngFor=\"let option of options2\" [value]=\"option\">\n                    {{ option }}\n                </nui-select-v2-option>\n            </nui-select-v2>\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam maximus faucibus bibendum.\n            Aenean feugiat interdum leo sed posuere. Etiam at pulvinar enim, nec interdum purus.\n            Duis elit metus, lobortis vitae quam a, malesuada cursus quam. Duis vel lacinia purus.\n            Maecenas eget arcu ac ante sagittis eleifend vel ut purus.\n            Pellentesque sit amet semper ipsum, eu vulputate tortor. Aliquam vitae nisi augue.\n            Duis non erat sit amet sem venenatis accumsan at ullamcorper lorem. Morbi non turpis nibh.\n        </p>\n    </div>\n    <nui-dialog-footer>\n        <button nui-button type=\"button\" (click)=\"onCancel()\" i18n>Cancel</button>\n        <button nui-button type=\"button\" displayStyle=\"primary\" (click)=\"onDone()\" i18n>Action</button>\n    </nui-dialog-footer>\n</ng-template>\n");
 
 /***/ }),
 
@@ -3767,7 +3877,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { NgModule } from \"@angular/core\";\nimport { RouterModule } from \"@angular/router\";\nimport {\n    DEMO_PATH_TOKEN,\n    NuiBusyModule,\n    NuiButtonModule,\n    NuiDateTimePickerModule,\n    NuiDialogModule,\n    NuiDocsModule,\n    NuiIconModule,\n    NuiMenuModule,\n    NuiMessageModule,\n    NuiPopoverModule,\n    NuiPopupModule,\n    NuiSelectModule,\n    NuiSelectV2Module,\n    NuiSpinnerModule,\n    NuiTimeFrameBarModule,\n    NuiTimeFramePickerModule,\n    NuiTooltipModule,\n    SrlcStage,\n} from \"@nova-ui/bits\";\n\nimport {\n    ComponentAsContentExampleComponent,\n    ConfirmationDialogExampleComponent,\n    DialogActionBeforeClosureExampleComponent,\n    DialogAfterOpenedExampleComponent,\n    DialogContentExampleComponent,\n    DialogCustomClassExampleComponent,\n    DialogDocsComponent,\n    DialogInsideOverlayExampleComponent,\n    DialogPositionExampleComponent,\n    DialogSeverityExampleComponent,\n    DialogSizesExampleComponent,\n    DialogVisualTestComponent,\n    DialogWithKeyboardExampleComponent,\n    DialogWithStaticBackdropExampleComponent,\n    DialogZIndexTestComponent,\n    HeaderButtonsExampleComponent,\n    SimpleDialogExampleComponent,\n} from \"./index\";\n\nconst routes = [\n    {\n        path: \"\",\n        component: DialogDocsComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.ga,\n            },\n            showThemeSwitcher: true,\n        },\n    },\n    {\n        path: \"dialog-test\",\n        component: DialogDocsComponent,\n        data: {\n            showThemeSwitcher: true,\n        },\n    },\n    {\n        path: \"zindex-test\",\n        component: DialogZIndexTestComponent,\n    },\n    {\n        path: \"dialog-overlay\",\n        component: DialogVisualTestComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"dialog-actions-before-closure\",\n        component: DialogActionBeforeClosureExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"dialog-visual-test\",\n        component: DialogVisualTestComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n];\n\n@NgModule({\n    imports: [\n        NuiDialogModule,\n        NuiDocsModule,\n        NuiButtonModule,\n        NuiMessageModule,\n        NuiSelectV2Module,\n        RouterModule.forChild(routes),\n        NuiSelectModule,\n        NuiDialogModule,\n        NuiDocsModule,\n        NuiButtonModule,\n        NuiMessageModule,\n        NuiSelectModule,\n        NuiPopoverModule,\n        NuiTooltipModule,\n        NuiDateTimePickerModule,\n        NuiBusyModule,\n        NuiSpinnerModule,\n        NuiSelectV2Module,\n        NuiMenuModule,\n        NuiPopupModule,\n        NuiTimeFrameBarModule,\n        NuiTimeFramePickerModule,\n        NuiIconModule,\n    ],\n    declarations: [\n        DialogContentExampleComponent,\n        ComponentAsContentExampleComponent,\n        ConfirmationDialogExampleComponent,\n        DialogCustomClassExampleComponent,\n        DialogDocsComponent,\n        DialogWithKeyboardExampleComponent,\n        DialogPositionExampleComponent,\n        DialogSeverityExampleComponent,\n        DialogSizesExampleComponent,\n        DialogInsideOverlayExampleComponent,\n        DialogVisualTestComponent,\n        HeaderButtonsExampleComponent,\n        SimpleDialogExampleComponent,\n        DialogWithStaticBackdropExampleComponent,\n        DialogZIndexTestComponent,\n        DialogActionBeforeClosureExampleComponent,\n        DialogAfterOpenedExampleComponent,\n    ],\n    providers: [\n        {\n            provide: DEMO_PATH_TOKEN,\n            useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/),\n        },\n    ],\n    exports: [\n        RouterModule,\n    ],\n    entryComponents: [DialogContentExampleComponent],\n})\nexport class DialogModule {\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import { NgModule } from \"@angular/core\";\nimport { RouterModule } from \"@angular/router\";\nimport {\n    DEMO_PATH_TOKEN,\n    NuiBusyModule,\n    NuiButtonModule,\n    NuiDateTimePickerModule,\n    NuiDialogModule,\n    NuiDocsModule,\n    NuiIconModule,\n    NuiMenuModule,\n    NuiMessageModule,\n    NuiPopoverModule,\n    NuiPopupModule,\n    NuiSelectModule,\n    NuiSelectV2Module,\n    NuiSpinnerModule,\n    NuiTimeFrameBarModule,\n    NuiTimeFramePickerModule,\n    NuiTooltipModule,\n    SrlcStage,\n} from \"@nova-ui/bits\";\n\nimport {\n    ComponentAsContentExampleComponent,\n    ConfirmationDialogExampleComponent,\n    DialogActionBeforeClosureExampleComponent,\n    DialogAfterOpenedExampleComponent,\n    DialogContentExampleComponent,\n    DialogCustomClassExampleComponent,\n    DialogDocsComponent,\n    DialogInsideOverlayExampleComponent,\n    DialogInsideOverlayWithDateTimePickerExampleComponent,\n    DialogPositionExampleComponent,\n    DialogSeverityExampleComponent,\n    DialogSizesExampleComponent,\n    DialogVisualTestComponent,\n    DialogWithKeyboardExampleComponent,\n    DialogWithStaticBackdropExampleComponent,\n    DialogZIndexTestComponent,\n    HeaderButtonsExampleComponent,\n    SimpleDialogExampleComponent,\n} from \"./index\";\n\nconst routes = [\n    {\n        path: \"\",\n        component: DialogDocsComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.ga,\n            },\n            showThemeSwitcher: true,\n        },\n    },\n    {\n        path: \"dialog-test\",\n        component: DialogDocsComponent,\n        data: {\n            showThemeSwitcher: true,\n        },\n    },\n    {\n        path: \"zindex-test\",\n        component: DialogZIndexTestComponent,\n    },\n    {\n        path: \"dialog-overlay\",\n        component: DialogVisualTestComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"dialog-actions-before-closure\",\n        component: DialogActionBeforeClosureExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"dialog-visual-test\",\n        component: DialogVisualTestComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n];\n\n@NgModule({\n    imports: [\n        NuiDialogModule,\n        NuiDocsModule,\n        NuiButtonModule,\n        NuiMessageModule,\n        NuiSelectV2Module,\n        RouterModule.forChild(routes),\n        NuiSelectModule,\n        NuiDialogModule,\n        NuiDocsModule,\n        NuiButtonModule,\n        NuiMessageModule,\n        NuiSelectModule,\n        NuiPopoverModule,\n        NuiTooltipModule,\n        NuiDateTimePickerModule,\n        NuiBusyModule,\n        NuiSpinnerModule,\n        NuiSelectV2Module,\n        NuiMenuModule,\n        NuiPopupModule,\n        NuiTimeFrameBarModule,\n        NuiTimeFramePickerModule,\n        NuiIconModule,\n    ],\n    declarations: [\n        DialogContentExampleComponent,\n        ComponentAsContentExampleComponent,\n        ConfirmationDialogExampleComponent,\n        DialogCustomClassExampleComponent,\n        DialogDocsComponent,\n        DialogWithKeyboardExampleComponent,\n        DialogPositionExampleComponent,\n        DialogSeverityExampleComponent,\n        DialogSizesExampleComponent,\n        DialogInsideOverlayExampleComponent,\n        DialogVisualTestComponent,\n        HeaderButtonsExampleComponent,\n        SimpleDialogExampleComponent,\n        DialogWithStaticBackdropExampleComponent,\n        DialogZIndexTestComponent,\n        DialogInsideOverlayWithDateTimePickerExampleComponent,\n        DialogActionBeforeClosureExampleComponent,\n        DialogAfterOpenedExampleComponent,\n    ],\n    providers: [\n        {\n            provide: DEMO_PATH_TOKEN,\n            useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/),\n        },\n    ],\n    exports: [\n        RouterModule,\n    ],\n    entryComponents: [DialogContentExampleComponent],\n})\nexport class DialogModule {\n}\n");
 
 /***/ }),
 
@@ -3888,6 +3998,7 @@ DialogModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjec
         _index__WEBPACK_IMPORTED_MODULE_2__["SimpleDialogExampleComponent"],
         _index__WEBPACK_IMPORTED_MODULE_2__["DialogWithStaticBackdropExampleComponent"],
         _index__WEBPACK_IMPORTED_MODULE_2__["DialogZIndexTestComponent"],
+        _index__WEBPACK_IMPORTED_MODULE_2__["DialogInsideOverlayWithDateTimePickerExampleComponent"],
         _index__WEBPACK_IMPORTED_MODULE_2__["DialogActionBeforeClosureExampleComponent"],
         _index__WEBPACK_IMPORTED_MODULE_2__["DialogAfterOpenedExampleComponent"]], imports: [_nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiDialogModule"],
         _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiDocsModule"],
@@ -3914,6 +4025,19 @@ DialogModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjec
 
 /***/ }),
 
+/***/ "o0H5":
+/*!********************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/dialog/dialog-inside-overlay-with-date-time-picker/dialog-inside-overlay-with-date-time-picker.example.component.ts ***!
+  \********************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("import { Component, TemplateRef } from \"@angular/core\";\nimport { DialogService, NuiDialogRef } from \"@nova-ui/bits\";\nimport moment, { Moment } from \"moment/moment\";\n\n@Component({\n    selector: \"nui-dialog-inside-overlay-with-date-time-picker-example\",\n    templateUrl: \"./dialog-inside-overlay-with-date-time-picker.example.component.html\",\n})\nexport class DialogInsideOverlayWithDateTimePickerExampleComponent {\n    public dt: Moment;\n    public selectedDate: Date;\n\n    private activeDialog: NuiDialogRef;\n\n    constructor(private dialogService: DialogService) {\n        this.dt = moment();\n        this.selectedDate = new Date(this.dt.valueOf());\n    }\n\n    /**\n     * Notice that the 'useOverlay' option is being passed in here\n     */\n    public openInOverlay(content: TemplateRef<string>) {\n        this.activeDialog = this.dialogService.open(content, {size: \"sm\", useOverlay: true});\n    }\n\n    public onDone(): void {\n        this.activeDialog.close();\n    }\n\n    public onCancel(): void {\n        this.activeDialog.close();\n    }\n\n    public onModelChanged(event: any) {\n        this.selectedDate = new Date(event.valueOf());\n    }\n}\n");
+
+/***/ }),
+
 /***/ "q8+I":
 /*!********************************************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/dialog/dialog-sizes/dialog-sizes.example.component.html ***!
@@ -3924,6 +4048,19 @@ DialogModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjec
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ("<ng-template #content let-close=\"close\">\n    <nui-dialog-header title=\"Dialog title\" i18n-title (closed)=\"close()\"></nui-dialog-header>\n    <div class=\"dialog-body\">\n        <p i18n>\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam maximus faucibus bibendum.\n            Aenean feugiat interdum leo sed posuere. Etiam at pulvinar enim, nec interdum purus.\n            Duis elit metus, lobortis vitae quam a, malesuada cursus quam. Duis vel lacinia purus.\n            Maecenas eget arcu ac ante sagittis eleifend vel ut purus.\n            Pellentesque sit amet semper ipsum, eu vulputate tortor. Aliquam vitae nisi augue.\n            Duis non erat sit amet sem venenatis accumsan at ullamcorper lorem. Morbi non turpis nibh.\n        </p>\n    </div>\n    <nui-dialog-footer>\n        <button nui-button type=\"button\"\n                (click)=\"onButtonClick('Cancel')\" i18n>\n            Cancel\n        </button>\n        <button nui-button type=\"button\"\n                displayStyle=\"primary\"\n                (click)=\"onButtonClick('Action')\" i18n>\n            Action\n        </button>\n    </nui-dialog-footer>\n</ng-template>\n\n<button id=\"nui-demo-small-dialog-btn\" nui-button type=\"button\" (click)=\"open(content, 'sm')\">Show Small Dialog</button>\n<button id=\"nui-demo-medium-dialog-btn\" class=\"ml-4\" nui-button type=\"button\" (click)=\"open(content, 'md')\">Show Medium Dialog</button>\n<button id=\"nui-demo-large-dialog-btn\" class=\"ml-4\" nui-button type=\"button\" (click)=\"open(content, 'lg')\">Show Large Dialog</button>\n");
+
+/***/ }),
+
+/***/ "xeBr":
+/*!**********************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/dialog/dialog-inside-overlay-with-date-time-picker/dialog-inside-overlay-with-date-time-picker.example.component.html ***!
+  \**********************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<button id=\"nui-dialog-inside-overlay-with-date-time-picker-btn\" nui-button type=\"button\" (click)=\"openInOverlay(headerButtonsContent)\" i18n>Open Dialog</button>\n\n<ng-template  #headerButtonsContent let-close=\"close\">\n    <nui-dialog-header title=\"Dialog Title\" i18n-title (closed)=\"close()\"></nui-dialog-header>\n    <div class=\"dialog-body\">\n        <p>\n            <nui-date-time-picker id=\"date-time-picker\" (modelChanged)=\"onModelChanged($event)\" displayMode=\"inline\" [model]=\"dt\" [appendToBody]=\"true\"></nui-date-time-picker>\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam maximus faucibus bibendum.\n            Aenean feugiat interdum leo sed posuere. Etiam at pulvinar enim, nec interdum purus.\n            Duis elit metus, lobortis vitae quam a, malesuada cursus quam. Duis vel lacinia purus.\n            Maecenas eget arcu ac ante sagittis eleifend vel ut purus.\n            Pellentesque sit amet semper ipsum, eu vulputate tortor. Aliquam vitae nisi augue.\n            Duis non erat sit amet sem venenatis accumsan at ullamcorper lorem. Morbi non turpis nibh.\n        </p>\n    </div>\n    <nui-dialog-footer>\n        <button nui-button type=\"button\" (click)=\"onCancel()\" i18n>Cancel</button>\n        <button nui-button type=\"button\" displayStyle=\"primary\" (click)=\"onDone()\" i18n>Action</button>\n    </nui-dialog-footer>\n</ng-template>\n");
 
 /***/ }),
 
