@@ -807,7 +807,7 @@
                         </tr>
                 <tr>
                     <td class="col-md-4">
-                        <div class="io-description"><p>Option to disabled datepicker.</p>
+                        <div class="io-description"><p>Option to disabled datepicker. </p>
 </div>
                     </td>
                 </tr>
@@ -2463,7 +2463,7 @@ export class DatePickerComponent implements OnChanges, OnInit, ControlValueAcces
     @Input() inline: boolean;
     /** checks if value in datepicker is required */
     @Input() isRequired: boolean;
-    /** Option to disabled datepicker.*/
+    /** Option to disabled datepicker. */
     @Input() isDisabled: boolean;
     /** to apply error state styles */
     @Input() isInErrorState: boolean;
@@ -2699,6 +2699,10 @@ export class DatePickerComponent implements OnChanges, OnInit, ControlValueAcces
         // Details: https://github.com/angular/angular/issues/17013
         if (this.calendarChanged) {
             this.calendarChanged.unsubscribe();
+        }
+
+        if (this.overlay?.showing) {
+            this.overlay.hide();
         }
 
         this.onDestroy$.next();

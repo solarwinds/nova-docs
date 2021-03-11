@@ -35,7 +35,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { Component } from \"@angular/core\";\nimport { ToastService } from \"@nova-ui/bits\";\n\n/* tslint:disable-next-line */\nimport * as colors from \"../../../../src/styles/data/framework-colors.json\";\n\n@Component({\n    selector: \"framework-colors-example\",\n    styleUrls: [\"./framework-colors-example.component.less\"],\n    templateUrl: \"./framework-colors-example.component.html\",\n})\nexport class FrameworkColorsExampleComponent {\n    public colors = colors;\n\n    constructor(private toastService: ToastService) {}\n\n    public onClipboardSuccess() {\n        this.toastService.success({\n            message: $localize `Color successfully copied to clipboard`,\n        });\n    }\n    public keyValueCompare(a: any, b: any) {\n        return parseInt(a.key, 10) - parseInt(b.key, 10);\n    }\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import { Component } from \"@angular/core\";\nimport { ToastService } from \"@nova-ui/bits\";\n\n/* eslint-disable-next-line */\nimport * as colors from \"../../../../src/styles/data/framework-colors.json\";\n\n@Component({\n    selector: \"framework-colors-example\",\n    styleUrls: [\"./framework-colors-example.component.less\"],\n    templateUrl: \"./framework-colors-example.component.html\",\n})\nexport class FrameworkColorsExampleComponent {\n    public colors = colors;\n\n    constructor(private toastService: ToastService) {}\n\n    public onClipboardSuccess() {\n        this.toastService.success({\n            message: $localize `Color successfully copied to clipboard`,\n        });\n    }\n    public keyValueCompare(a: any, b: any) {\n        return parseInt(a.key, 10) - parseInt(b.key, 10);\n    }\n}\n");
 
 /***/ }),
 
@@ -162,7 +162,7 @@ var _src_styles_data_framework_colors_json__WEBPACK_IMPORTED_MODULE_1___namespac
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "ofXK");
 /* harmony import */ var _src_common_directives_clipboard_clipboard_directive__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../src/common/directives/clipboard/clipboard.directive */ "eJM4");
 
-/* tslint:disable-next-line */
+/* eslint-disable-next-line */
 
 
 
@@ -1935,7 +1935,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { Component } from \"@angular/core\";\nimport { ToastService } from \"@nova-ui/bits\";\n\n/* tslint:disable-next-line */\nimport * as colors from \"../../../../src/styles/data/framework-colors-dark.json\";\n\n@Component({\n    selector: \"framework-colors-dark.example\",\n    styleUrls: [\"./framework-colors-dark.example.component.less\"],\n    templateUrl: \"./framework-colors-dark.example.component.html\",\n})\nexport class FrameworkColorsDarkExampleComponent {\n    public colors = colors;\n    constructor(private toastService: ToastService) {}\n\n    public onClipboardSuccess() {\n        this.toastService.success({\n            message: $localize `Color successfully copied to clipboard`,\n        });\n    }\n\n    public keyValueCompare(a: any, b: any) {\n        return parseInt(a.key, 10) - parseInt(b.key, 10);\n    }\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import { Component } from \"@angular/core\";\nimport { ToastService } from \"@nova-ui/bits\";\n\n/* eslint-disable-next-line */\nimport * as colors from \"../../../../src/styles/data/framework-colors-dark.json\";\n\n@Component({\n    selector: \"framework-colors-dark.example\",\n    styleUrls: [\"./framework-colors-dark.example.component.less\"],\n    templateUrl: \"./framework-colors-dark.example.component.html\",\n})\nexport class FrameworkColorsDarkExampleComponent {\n    public colors = colors;\n    constructor(private toastService: ToastService) {}\n\n    public onClipboardSuccess() {\n        this.toastService.success({\n            message: $localize `Color successfully copied to clipboard`,\n        });\n    }\n\n    public keyValueCompare(a: any, b: any) {\n        return parseInt(a.key, 10) - parseInt(b.key, 10);\n    }\n}\n");
 
 /***/ }),
 
@@ -1957,7 +1957,7 @@ var _src_styles_data_framework_colors_dark_json__WEBPACK_IMPORTED_MODULE_1___nam
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "ofXK");
 /* harmony import */ var _src_common_directives_clipboard_clipboard_directive__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../src/common/directives/clipboard/clipboard.directive */ "eJM4");
 
-/* tslint:disable-next-line */
+/* eslint-disable-next-line */
 
 
 

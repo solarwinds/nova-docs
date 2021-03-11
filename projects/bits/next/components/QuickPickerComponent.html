@@ -403,7 +403,7 @@
                         </tr>
                 <tr>
                     <td class="col-md-4">
-                        <div class="io-description"><p>callback to invoke on selecting specific preset</p>
+                        <div class="io-description"><p>callback to invoke on selecting specific preset </p>
 </div>
                     </td>
                 </tr>
@@ -661,7 +661,7 @@ export class QuickPickerComponent {
     @Input() public presetKeysOrder: string[];
 
 
-    /** callback to invoke on selecting specific preset*/
+    /** callback to invoke on selecting specific preset */
     @Output() public presetSelected &#x3D; new EventEmitter&lt;string&gt;();
 
     public get presetKeys(): string[] {

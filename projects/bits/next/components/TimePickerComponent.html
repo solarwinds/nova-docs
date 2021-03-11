@@ -574,7 +574,7 @@
                         </tr>
                 <tr>
                     <td class="col-md-4">
-                        <div class="io-description"><p>tells timepicker whether to save year, month, day and seconds of the date</p>
+                        <div class="io-description"><p>tells timepicker whether to save year, month, day and seconds of the date </p>
 </div>
                     </td>
                 </tr>
@@ -2302,7 +2302,7 @@ export class TimePickerComponent implements OnInit, OnDestroy, OnChanges, AfterV
     @Input() isDisabled: boolean;
     /** sets custom formatting for time */
     @Input() timeFormat &#x3D; &quot;LT&quot;;
-    /** tells timepicker whether to save year, month, day and seconds of the date*/
+    /** tells timepicker whether to save year, month, day and seconds of the date */
     @Input() preserveInsignificant &#x3D; false;
     /** to apply error state styles */
     @Input() isInErrorState &#x3D; false;
@@ -2532,6 +2532,10 @@ export class TimePickerComponent implements OnInit, OnDestroy, OnChanges, AfterV
     }
 
     ngOnDestroy() {
+        if (this.overlay?.showing) {
+            this.overlay.hide();
+        }
+
         this.onDestroy$.next();
         this.onDestroy$.complete();
 
