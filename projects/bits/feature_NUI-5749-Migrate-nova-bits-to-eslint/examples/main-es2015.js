@@ -11769,7 +11769,7 @@ const _c0 = ["*"];
  * @ignore
  * @deprecated in v11 - Use PopupComponent instead - Removal: NUI-5796
  */
-/* eslint-disable */
+/* eslint-disable @angular-eslint/no-host-metadata-property */
 class PopupContainerComponent {
     constructor(elRef, zone, positionService, edgeDetector) {
         this.elRef = elRef;
@@ -32354,8 +32354,8 @@ const _c3 = ["*", "[popupAreaContent]"];
  * 1st layer of content to define "popup area". DO NOT USE "opened" WITH "nuiPopupToggle".
  * IT IS NEEDED TO CHOOSE ONE.
  */
-/* eslint-disable  */
-/* eslint-disable */
+/* eslint-disable @angular-eslint/no-host-metadata-property */
+/* eslint-disable @angular-eslint/no-host-metadata-property */
 class PopupDeprecatedComponent {
     constructor(elementRef, edgeDetector, changeDetectorRef, eventBusService, componentFactoryResolver, injector, appRef, logger, popupContainer) {
         this.elementRef = elementRef;

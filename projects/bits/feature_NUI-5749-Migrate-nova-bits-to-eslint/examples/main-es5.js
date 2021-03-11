@@ -20390,7 +20390,7 @@
        * @deprecated in v11 - Use PopupComponent instead - Removal: NUI-5796
        */
 
-      /* eslint-disable */
+      /* eslint-disable @angular-eslint/no-host-metadata-property */
 
       var PopupContainerComponent = /*#__PURE__*/function () {
         function PopupContainerComponent(elRef, zone, positionService, edgeDetector) {
@@ -60705,9 +60705,9 @@
        * IT IS NEEDED TO CHOOSE ONE.
        */
 
-      /* eslint-disable  */
+      /* eslint-disable @angular-eslint/no-host-metadata-property */
 
-      /* eslint-disable */
+      /* eslint-disable @angular-eslint/no-host-metadata-property */
 
       var PopupDeprecatedComponent = /*#__PURE__*/function () {
         function PopupDeprecatedComponent(elementRef, edgeDetector, changeDetectorRef, eventBusService, componentFactoryResolver, injector, appRef, logger, popupContainer) {
