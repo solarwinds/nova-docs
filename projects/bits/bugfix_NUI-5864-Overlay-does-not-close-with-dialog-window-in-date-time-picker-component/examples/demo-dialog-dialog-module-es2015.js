@@ -1009,6 +1009,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "9hzO":
+/*!******************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/dialog/dialog-test/dialog-test.example.component.html ***!
+  \******************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<nui-simple-dialog-example></nui-simple-dialog-example> \n\n<nui-dialog-with-keyboard-example></nui-dialog-with-keyboard-example>\n\n<nui-dialog-severity-example></nui-dialog-severity-example>\n\n<nui-dialog-custom-class-example></nui-dialog-custom-class-example>\n\n<nui-dialog-with-static-backdrop-example></nui-dialog-with-static-backdrop-example>\n\n<nui-dialog-inside-overlay-example></nui-dialog-inside-overlay-example>\n\n<nui-dialog-inside-overlay-with-date-time-picker-example></nui-dialog-inside-overlay-with-date-time-picker-example>\n");
+
+/***/ }),
+
 /***/ "Auv2":
 /*!**********************************************************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/dialog/component-as-content/component-as-content.example.component.ts ***!
@@ -1022,16 +1035,16 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "B42D":
-/*!*****************************************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/dialog/dialog-test/dialog-zindex-test.component.html ***!
-  \*****************************************************************************************************************************/
+/***/ "BV87":
+/*!**********************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/dialog/dialog-zindex-test/dialog-zindex-test.component.ts ***!
+  \**********************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h2>Basic Usage</h2>\n<nui-simple-dialog-example></nui-simple-dialog-example>\n\n<h2>Usage as a Component</h2>\n<nui-component-as-content-example></nui-component-as-content-example>\n\n<h2>Severity</h2>\n<nui-dialog-severity-example></nui-dialog-severity-example>\n\n<h2>Custom Dialog header</h2>\n<nui-header-buttons-example></nui-header-buttons-example>\n\n<h2>Dialog Sizes</h2>\n<nui-dialog-sizes-example></nui-dialog-sizes-example>\n\n<h2>Position on screen</h2>\n<nui-dialog-position-example></nui-dialog-position-example>\n\n<h2>Custom class</h2>\n<nui-dialog-custom-class-example></nui-dialog-custom-class-example>\n\n<h2>Confirmation Dialog</h2>\n<nui-confirmation-dialog-example></nui-confirmation-dialog-example>\n\n<h2>Keyboard Options</h2>\n<nui-dialog-with-keyboard-example></nui-dialog-with-keyboard-example>\n\n<h2>Static Backdrop</h2>\n<nui-dialog-with-static-backdrop-example></nui-dialog-with-static-backdrop-example>\n\n<h2>Z-Index Strategy</h2>\n<button id=\"nui-visual-test-open-overlay-btn\" nui-button type=\"button\"\n        (click)=\"openOverlay(mainOverlayContent, '60%', '400px')\">\n    Open overlay\n</button>\n\n<ng-template #smallOverlayContent>\n    <div class=\"overlay-container\">\n        <div class=\"overlay-body\">\n            <ng-container *ngTemplateOutlet=\"loremIpsum\"></ng-container>\n        </div>\n    </div>\n    <div class=\"overlay-footer\">\n        <button id=\"nui-visual-test-open-small-dialog-btn\" nui-button type=\"button\"\n                (click)=\"openInnerDialog(smallDialogContent)\">\n            Open small Dialog\n        </button>\n        <button id=\"nui-visual-test-close-overlay-from-small-btn\" nui-button type=\"button\" (click)=\"closeOverlay()\">\n            Close overlay\n        </button>\n    </div>\n</ng-template>\n<ng-template #mainOverlayContent>\n    <div class=\"overlay-container\">\n        <div class=\"overlay-body\">\n            <p>This is the content of an CDK overlay container.</p>\n            <ng-container *ngTemplateOutlet=\"tooltip;context: {text:'Main overlay tooltip'}\"></ng-container>\n            <ng-container *ngTemplateOutlet=\"timeframeBarTemplate\"></ng-container>\n            <ng-container *ngTemplateOutlet=\"menu\"></ng-container>\n            <ng-container *ngTemplateOutlet=\"popup\"></ng-container>\n            <ng-container *ngTemplateOutlet=\"select\"></ng-container>\n            <ng-container *ngTemplateOutlet=\"combobox\"></ng-container>\n            <ng-container *ngTemplateOutlet=\"popover\"></ng-container>\n            <ng-container *ngTemplateOutlet=\"dtPicker\"></ng-container>\n            <ng-container *ngTemplateOutlet=\"spinner\"></ng-container>\n            <ng-container *ngTemplateOutlet=\"busyTemplate;context: {text:'Inner overlay tooltip'}\"></ng-container>\n        </div>\n    </div>\n    <div class=\"overlay-footer\">\n        <button nui-button type=\"button\" (click)=\"showToast()\">\n            Show toast\n        </button>\n        <button id=\"nui-visual-test-switch-appendToBody-btn\"\n                nui-button\n                type=\"button\"\n                (click)=\"toggleAppendToBody()\"\n                i18n>\n            appendToBody={{appendToBody}}\n        </button>\n        <button id=\"nui-visual-test-switch-busy-btn\"\n                nui-button\n                type=\"button\"\n                (click)=\"toggleBusy()\"\n                i18n>\n            busy={{busy}}\n        </button>\n        <button id=\"nui-visual-test-inner-dialog-btn\" nui-button type=\"button\"\n                (click)=\"openInnerDialog(innerDialogContent)\">\n            Open Inner Dialog\n        </button>\n        <button nui-button type=\"button\" (click)=\"closeOverlay()\">\n            Close overlay\n        </button>\n    </div>\n</ng-template>\n\n<ng-template #smallDialogContent let-close=\"close\" let-dismiss=\"dismiss\">\n    <nui-dialog-header title=\"Small Dialog Title\" (closed)=\"close()\"></nui-dialog-header>\n    <div class=\"dialog-body\">\n        <ng-container *ngTemplateOutlet=\"loremIpsum\"></ng-container>\n    </div>\n    <nui-dialog-footer>\n        <button id=\"nui-visual-test-close-small-dialog-btn\" nui-button type=\"button\" (click)=\"close()\">\n            Close\n        </button>\n    </nui-dialog-footer>\n</ng-template>\n\n<ng-template #innerDialogContent let-close=\"close\" let-dismiss=\"dismiss\">\n    <nui-dialog-header title=\"Inner Dialog Title\" (closed)=\"close()\"></nui-dialog-header>\n    <div class=\"dialog-body\">\n        <p>This is the content of a dialog.</p>\n        <ng-container *ngTemplateOutlet=\"tooltip;context: {text:'Inner dialog tooltip'}\"></ng-container>\n        <ng-container *ngTemplateOutlet=\"timeframeBarTemplate\"></ng-container>\n        <ng-container *ngTemplateOutlet=\"menu\"></ng-container>\n        <ng-container *ngTemplateOutlet=\"popup\"></ng-container>\n        <ng-container *ngTemplateOutlet=\"select\"></ng-container>\n        <ng-container *ngTemplateOutlet=\"combobox\"></ng-container>\n        <ng-container *ngTemplateOutlet=\"popover\"></ng-container>\n        <ng-container *ngTemplateOutlet=\"dtPicker\"></ng-container>\n        <ng-container *ngTemplateOutlet=\"spinner\"></ng-container>\n        <ng-container *ngTemplateOutlet=\"busyTemplate;context: {text:'Inner dialog tooltip'}\"></ng-container>\n    </div>\n    <nui-dialog-footer>\n        <button id=\"nui-visual-test-open-overlay-from-dialog-btn\" nui-button type=\"button\"\n                (click)=\"openOverlay(smallOverlayContent, '40%', '200px')\">\n            +Overlay\n        </button>\n        <button id=\"nui-visual-test-open-small-dialog-from-dialog-btn\" nui-button type=\"button\"\n                (click)=\"openInnerDialog(smallDialogContent)\">\n            +Dialog\n        </button>\n        <button nui-button\n                type=\"button\"\n                (click)=\"toggleBusy()\"\n                i18n>\n            Switch busy\n        </button>\n        <button nui-button type=\"button\" (click)=\"showToast()\">Show toast</button>\n        <button nui-button type=\"button\" (click)=\"closeDialog();close()\">Close</button>\n    </nui-dialog-footer>\n</ng-template>\n\n<ng-template #menu>\n    <nui-menu [appendToBody]=\"appendToBody\" title=\"Menu\"class=\"clickable-visual-item\">\n        <nui-menu-action *ngFor=\"let item of items\">{{item}}</nui-menu-action>\n    </nui-menu>\n</ng-template>\n\n<ng-template #popup>\n    <nui-popup [appendToBody]=\"appendToBody\" class=\"clickable-visual-item\">\n        <button nui-button\n                nuiPopupToggle\n                type=\"button\"\n                icon=\"caret-down\"\n                [iconRight]=\"true\"\n                class=\"menu-button\"\n                [isEmpty]=\"false\"\n                i18n>\n            Popup\n        </button>\n        <div popupAreaContent>\n            <ng-container *ngFor=\"let item of items\">\n                <nui-menu-item tabindex=\"0\" nuiTooltip=\"This tooltip is part of a menu item\">{{item}}</nui-menu-item>\n            </ng-container>\n        </div>\n    </nui-popup>\n</ng-template>\n\n<ng-template #select>\n    <!-- select v1 -->\n    <nui-select\n        class=\"clickable-visual-item\"\n        [itemsSource]=\"items\"\n        [inline]=\"true\"\n        [appendToBody]=\"appendToBody\"\n        placeholder=\"Select v1\"\n    ></nui-select>\n\n    <!-- select v2 -->\n    <nui-select-v2\n        class=\"clickable-visual-item d-inline-flex\"\n        placeholder=\"Select v2\">\n        <ng-container *ngFor=\"let item of items\">\n            <nui-select-v2-option [value]=\"item\" i18n>{{item}}</nui-select-v2-option>\n        </ng-container>\n    </nui-select-v2>\n\n</ng-template>\n\n<ng-template #combobox>\n    <nui-combobox\n        class=\"clickable-visual-item\"\n        [itemsSource]=\"items\"\n        [inline]=\"true\"\n        [appendToBody]=\"appendToBody\"\n        i18n-placeholder\n        placeholder=\"Combobox v1\"></nui-combobox>\n\n    <nui-combobox-v2\n        class=\"clickable-visual-item d-inline-flex\"\n        placeholder=\"Combobox v2\">\n        <ng-container *ngFor=\"let item of items\">\n            <nui-select-v2-option [value]=\"item\">\n                <div class=\"d-flex align-items-center\">\n                    <span [nuiComboboxV2OptionHighlight]=\"item\"></span>\n                </div>\n            </nui-select-v2-option>\n        </ng-container>\n    </nui-combobox-v2>\n</ng-template>\n\n<ng-template #spinner>\n    <nui-spinner size=\"large\"\n                 [show]=\"true\"\n                 message=\"Spinner\" i18n-message\n                 helpText=\"Optional spinner description\" i18n-helpText>\n    </nui-spinner>\n</ng-template>\n\n<ng-template #busyTemplate let-text=\"text\">\n    <div nui-busy [busy]=\"busy\" class=\"busy-content\">\n        We used focus trigger so that the popover with a\n        <span nuiTooltip=\"{{text}} {{longTextTooltip}}\"\n            tooltipPlacement=\"bottom\"\n            class=\"nui-text-widget--hoverable\">\n            big tooltip\n        </span> will remain open even after we move the mouse away from it even.\n    </div>\n</ng-template>\n\n<ng-template #dtPicker>\n    <div class=\"inline-flex\">\n        <nui-date-time-picker\n            class=\"clickable-visual-item\"\n            [appendToBody]=\"appendToBody\"\n            [model]=\"dt\"\n            displayMode=\"inline\">\n        </nui-date-time-picker>\n    </div>\n</ng-template>\n\n<ng-template #timeframeBarTemplate>\n    <nui-time-frame-bar [(timeFrame)]=\"timeFrame\">\n\n        <!-- content for default projection slot -->\n        <nui-icon icon=\"calendar\" class=\"pr-3\"></nui-icon>\n        {{timeFrame | timeFrame}}\n\n        <!-- content for time frame selection projection slot -->\n        <nui-quick-picker timeFrameSelection>\n            <nui-time-frame-picker></nui-time-frame-picker>\n        </nui-quick-picker>\n\n    </nui-time-frame-bar>\n</ng-template>\n\n<ng-template #popover>\n    I'm a\n    <nui-popover tabindex=\"1\"\n                 class=\"clickable-visual-item\"\n                 trigger=\"focus\"\n                 [template]=\"popoverWithBasicUsage\">\n        <span class=\"nui-text-widget--hoverable\">popover</span>\n    </nui-popover>\n    with Focus Trigger\n    <ng-template #popoverWithBasicUsage>\n        <span>I'm a popover with some content with a</span>&nbsp;\n        <span nuiTooltip=\"Tooltip inside popover {{longTextTooltip}}\" class=\"nui-text-widget--hoverable\">tooltip</span>\n        &nbsp;inside.\n        <ng-container *ngTemplateOutlet=\"loremIpsum\"></ng-container>\n    </ng-template>\n</ng-template>\n\n<ng-template #tooltip let-text=\"text\">\n    <span id=\"long-text-tooltip\"\n          nuiTooltip=\"Tooltip should appear on top of any other components (popup, popover, menu,etc.) even if it's displayed after the popover has been displayed.\"\n          tooltipPlacement=\"bottom\"\n          class=\"nui-text-widget--hoverable\">I'm a long text tooltip!\n    </span>\n</ng-template>\n\n<ng-template #loremIpsum>\n    <p>\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam maximus faucibus bibendum.\n        Aenean feugiat interdum leo sed posuere. Etiam at pulvinar enim, nec interdum purus.\n        Pellentesque sit amet semper ipsum, eu vulputate tortor. Aliquam vitae nisi augue.\n        Duis non erat sit amet sem venenatis accumsan at ullamcorper lorem. Morbi non turpis nibh.\n    </p>\n</ng-template>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import {Overlay, OverlayRef} from \"@angular/cdk/overlay\";\nimport {TemplatePortal} from \"@angular/cdk/portal\";\nimport {Component, OnInit, TemplateRef, ViewContainerRef, ViewEncapsulation} from \"@angular/core\";\nimport {DialogService, ITimeframe, NuiDialogRef, ToastService} from \"@nova-ui/bits\";\nimport moment from \"moment/moment\";\n\n@Component({\n    selector: \"nui-dialog-zindex--test\",\n    templateUrl: \"./dialog-zindex-test.component.html\",\n    styleUrls: [\"./dialog-zindex-test.component.less\"],\n    encapsulation: ViewEncapsulation.None,\n})\nexport class DialogZIndexTestComponent implements OnInit {\n    public busy: boolean = false;\n    public appendToBody: boolean = false;\n\n    public timeFrame: ITimeframe;\n\n    public dt = moment(\"2018-02-02\");\n    public items = [\"Long description item 1\", \"Item 2\", \"Item 3\", \"Item 4\", \"Item 5\", \"Item 6\"];\n    public longTextTooltip = `\n    which should appear on top of any other components (popup, popover, menu,etc.) even if it's displayed after the popover has been displayed.\n    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam maximus faucibus bibendum.\n    Aenean feugiat interdum leo sed posuere. Etiam at pulvinar enim, nec interdum purus.\n    Pellentesque sit amet semper ipsum, eu vulputate tortor. Aliquam vitae nisi augue.\n    Duis non erat sit amet sem venenatis accumsan at ullamcorper lorem. Morbi non turpis nibh.\n    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam maximus faucibus bibendum.\n    Duis non erat sit amet sem venenatis accumsan at ullamcorper lorem. Morbi non turpis nibh.\n    `;\n\n    private activeDialogs: NuiDialogRef[] = [];\n    private overlayRef: OverlayRef;\n    private baseDate = moment([2018, 5, 1, 15, 0, 0]);\n\n    constructor(private dialogService: DialogService,\n                private toastService: ToastService,\n                private overlay: Overlay,\n                private viewContainerRef: ViewContainerRef\n    ) {}\n\n    public ngOnInit(): void {\n        this.timeFrame = {\n            startDatetime: this.baseDate.clone().subtract(1, \"weeks\"),\n            endDatetime: this.baseDate.clone(),\n        };\n    }\n\n    public toggleBusy() {\n        this.busy = !this.busy;\n    }\n\n    public toggleAppendToBody() {\n        this.appendToBody = !this.appendToBody;\n    }\n\n    public openOverlay(templateRef: TemplateRef<string>, width: string, height: string) {\n        const positionStrategy = this.overlay.position().global()\n            .centerHorizontally()\n            .centerVertically();\n\n        this.overlayRef = this.overlay.create({\n            positionStrategy,\n            hasBackdrop: true,\n            panelClass: [\"main-overlay-panel\", \"d-flex\", \"flex-column\"],\n            width: width,\n            height: height,\n            scrollStrategy: this.overlay.scrollStrategies.block(),\n\n        });\n        const portal = new TemplatePortal(templateRef, this.viewContainerRef);\n        this.overlayRef.attach(portal);\n    }\n\n    public closeOverlay() {\n        this.overlayRef.detach();\n    }\n\n    public openInnerDialog(templateRef: TemplateRef<string>) {\n        this.activeDialogs.push(this.dialogService.open(templateRef, {windowClass: \"inner-dialog\"}));\n    }\n\n    public closeDialog() {\n        this.activeDialogs.pop()?.close();\n    }\n\n    public showToast(): void {\n        this.toastService.success({message: $localize`Sample toast displayed!`, title: $localize`Event`});\n    }\n}\n");
 
 /***/ }),
 
@@ -1044,7 +1057,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("export * from \"./dialog-docs/dialog-docs.example.component\";\nexport * from \"./simple-dialog/simple-dialog.example.component\";\nexport * from \"./component-as-content/component-as-content.example.component\";\nexport * from \"./component-as-content/dialog-content.example.component\";\nexport * from \"./dialog-severity/dialog-severity.example.component\";\nexport * from \"./dialog-sizes/dialog-sizes.example.component\";\nexport * from \"./dialog-position/dialog-position.example.component\";\nexport * from \"./header-buttons/header-buttons.example.component\";\nexport * from \"./dialog-custom-class/dialog-custom-class.example.component\";\nexport * from \"./confirmation-dialog/confirmation-dialog.example.component\";\nexport * from \"./dialog-visual-test/dialog-visual-test.component\";\nexport * from \"./dialog-keyboard/dialog-with-keyboard.example.component\";\nexport * from \"./dialog-static-backdrop/dialog-with-static-backdrop.example.component\";\nexport * from \"./dialog-inside-overlay/dialog-inside-overlay.example.component\";\nexport * from \"./dialog-actions-before-closure/dialog-actions-before-closure.example.component\";\nexport * from \"./dialog-test/dialog-zindex-test.component\";\nexport * from \"./dialog-after-opened/dialog-after-opened.example.component\";\nexport * from \"./dialog-actions-before-closure/dialog-actions-before-closure.example.component\";\nexport * from \"./dialog-inside-overlay-with-date-time-picker/dialog-inside-overlay-with-date-time-picker.example.component\";\n");
+/* harmony default export */ __webpack_exports__["default"] = ("export * from \"./dialog-docs/dialog-docs.example.component\";\nexport * from \"./simple-dialog/simple-dialog.example.component\";\nexport * from \"./component-as-content/component-as-content.example.component\";\nexport * from \"./component-as-content/dialog-content.example.component\";\nexport * from \"./dialog-severity/dialog-severity.example.component\";\nexport * from \"./dialog-sizes/dialog-sizes.example.component\";\nexport * from \"./dialog-position/dialog-position.example.component\";\nexport * from \"./header-buttons/header-buttons.example.component\";\nexport * from \"./dialog-custom-class/dialog-custom-class.example.component\";\nexport * from \"./confirmation-dialog/confirmation-dialog.example.component\";\nexport * from \"./dialog-visual-test/dialog-visual-test.component\";\nexport * from \"./dialog-keyboard/dialog-with-keyboard.example.component\";\nexport * from \"./dialog-static-backdrop/dialog-with-static-backdrop.example.component\";\nexport * from \"./dialog-inside-overlay/dialog-inside-overlay.example.component\";\nexport * from \"./dialog-actions-before-closure/dialog-actions-before-closure.example.component\";\nexport * from \"./dialog-zindex-test/dialog-zindex-test.component\";\nexport * from \"./dialog-after-opened/dialog-after-opened.example.component\";\nexport * from \"./dialog-actions-before-closure/dialog-actions-before-closure.example.component\";\nexport * from \"./dialog-test/dialog-test.example.component\";\nexport * from \"./dialog-inside-overlay-with-date-time-picker/dialog-inside-overlay-with-date-time-picker.example.component\";\n");
 
 /***/ }),
 
@@ -1150,7 +1163,7 @@ __webpack_require__.r(__webpack_exports__);
 /*!**************************************************!*\
   !*** ./demo/src/components/demo/dialog/index.ts ***!
   \**************************************************/
-/*! exports provided: DialogDocsComponent, SimpleDialogExampleComponent, ComponentAsContentExampleComponent, DialogContentExampleComponent, DialogSeverityExampleComponent, DialogSizesExampleComponent, DialogPositionExampleComponent, HeaderButtonsExampleComponent, DialogCustomClassExampleComponent, ConfirmationDialogExampleComponent, DialogVisualTestComponent, DialogWithKeyboardExampleComponent, DialogWithStaticBackdropExampleComponent, DialogInsideOverlayExampleComponent, DialogActionBeforeClosureExampleComponent, DialogZIndexTestComponent, DialogAfterOpenedExampleComponent, DialogInsideOverlayWithDateTimePickerExampleComponent */
+/*! exports provided: DialogDocsComponent, SimpleDialogExampleComponent, ComponentAsContentExampleComponent, DialogContentExampleComponent, DialogSeverityExampleComponent, DialogSizesExampleComponent, DialogPositionExampleComponent, HeaderButtonsExampleComponent, DialogCustomClassExampleComponent, ConfirmationDialogExampleComponent, DialogVisualTestComponent, DialogWithKeyboardExampleComponent, DialogWithStaticBackdropExampleComponent, DialogInsideOverlayExampleComponent, DialogActionBeforeClosureExampleComponent, DialogZIndexTestComponent, DialogAfterOpenedExampleComponent, DialogTestComponent, DialogInsideOverlayWithDateTimePickerExampleComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1200,14 +1213,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _dialog_actions_before_closure_dialog_actions_before_closure_example_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./dialog-actions-before-closure/dialog-actions-before-closure.example.component */ "+fpV");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DialogActionBeforeClosureExampleComponent", function() { return _dialog_actions_before_closure_dialog_actions_before_closure_example_component__WEBPACK_IMPORTED_MODULE_14__["DialogActionBeforeClosureExampleComponent"]; });
 
-/* harmony import */ var _dialog_test_dialog_zindex_test_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./dialog-test/dialog-zindex-test.component */ "fW7r");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DialogZIndexTestComponent", function() { return _dialog_test_dialog_zindex_test_component__WEBPACK_IMPORTED_MODULE_15__["DialogZIndexTestComponent"]; });
+/* harmony import */ var _dialog_zindex_test_dialog_zindex_test_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./dialog-zindex-test/dialog-zindex-test.component */ "TXQN");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DialogZIndexTestComponent", function() { return _dialog_zindex_test_dialog_zindex_test_component__WEBPACK_IMPORTED_MODULE_15__["DialogZIndexTestComponent"]; });
 
 /* harmony import */ var _dialog_after_opened_dialog_after_opened_example_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./dialog-after-opened/dialog-after-opened.example.component */ "cRSG");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DialogAfterOpenedExampleComponent", function() { return _dialog_after_opened_dialog_after_opened_example_component__WEBPACK_IMPORTED_MODULE_16__["DialogAfterOpenedExampleComponent"]; });
 
-/* empty/unused harmony star reexport *//* harmony import */ var _dialog_inside_overlay_with_date_time_picker_dialog_inside_overlay_with_date_time_picker_example_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./dialog-inside-overlay-with-date-time-picker/dialog-inside-overlay-with-date-time-picker.example.component */ "ed45");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DialogInsideOverlayWithDateTimePickerExampleComponent", function() { return _dialog_inside_overlay_with_date_time_picker_dialog_inside_overlay_with_date_time_picker_example_component__WEBPACK_IMPORTED_MODULE_17__["DialogInsideOverlayWithDateTimePickerExampleComponent"]; });
+/* empty/unused harmony star reexport *//* harmony import */ var _dialog_test_dialog_test_example_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./dialog-test/dialog-test.example.component */ "w9bX");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DialogTestComponent", function() { return _dialog_test_dialog_test_example_component__WEBPACK_IMPORTED_MODULE_17__["DialogTestComponent"]; });
+
+/* harmony import */ var _dialog_inside_overlay_with_date_time_picker_dialog_inside_overlay_with_date_time_picker_example_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./dialog-inside-overlay-with-date-time-picker/dialog-inside-overlay-with-date-time-picker.example.component */ "ed45");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DialogInsideOverlayWithDateTimePickerExampleComponent", function() { return _dialog_inside_overlay_with_date_time_picker_dialog_inside_overlay_with_date_time_picker_example_component__WEBPACK_IMPORTED_MODULE_18__["DialogInsideOverlayWithDateTimePickerExampleComponent"]; });
+
 
 
 
@@ -1281,11 +1298,13 @@ var map = {
 	"./dialog-sizes/dialog-sizes.example.component.ts": "2ll4",
 	"./dialog-static-backdrop/dialog-with-static-backdrop.example.component.html": "Lstl",
 	"./dialog-static-backdrop/dialog-with-static-backdrop.example.component.ts": "lbYS",
-	"./dialog-test/dialog-zindex-test.component.html": "B42D",
-	"./dialog-test/dialog-zindex-test.component.less": "R7wm",
-	"./dialog-test/dialog-zindex-test.component.ts": "PLjn",
+	"./dialog-test/dialog-test.example.component.html": "9hzO",
+	"./dialog-test/dialog-test.example.component.ts": "zLy7",
 	"./dialog-visual-test/dialog-visual-test.component.html": "LfRD",
 	"./dialog-visual-test/dialog-visual-test.component.ts": "W/vu",
+	"./dialog-zindex-test/dialog-zindex-test.component.html": "fERX",
+	"./dialog-zindex-test/dialog-zindex-test.component.less": "qmXi",
+	"./dialog-zindex-test/dialog-zindex-test.component.ts": "BV87",
 	"./dialog.module.ts": "mX2p",
 	"./header-buttons/header-buttons.example.component.html": "Pj5b",
 	"./header-buttons/header-buttons.example.component.ts": "zhgJ",
@@ -1937,19 +1956,6 @@ DialogPositionExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0_
 
 /***/ }),
 
-/***/ "PLjn":
-/*!***************************************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/dialog/dialog-test/dialog-zindex-test.component.ts ***!
-  \***************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import {Overlay, OverlayRef} from \"@angular/cdk/overlay\";\nimport {TemplatePortal} from \"@angular/cdk/portal\";\nimport {Component, OnInit, TemplateRef, ViewContainerRef, ViewEncapsulation} from \"@angular/core\";\nimport {DialogService, ITimeframe, NuiDialogRef, ToastService} from \"@nova-ui/bits\";\nimport moment from \"moment/moment\";\n\n@Component({\n    selector: \"nui-dialog-zindex--test\",\n    templateUrl: \"./dialog-zindex-test.component.html\",\n    styleUrls: [\"./dialog-zindex-test.component.less\"],\n    encapsulation: ViewEncapsulation.None,\n})\nexport class DialogZIndexTestComponent implements OnInit {\n    public busy: boolean = false;\n    public appendToBody: boolean = false;\n\n    public timeFrame: ITimeframe;\n\n    public dt = moment(\"2018-02-02\");\n    public items = [\"Long description item 1\", \"Item 2\", \"Item 3\", \"Item 4\", \"Item 5\", \"Item 6\"];\n    public longTextTooltip = `\n    which should appear on top of any other components (popup, popover, menu,etc.) even if it's displayed after the popover has been displayed.\n    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam maximus faucibus bibendum.\n    Aenean feugiat interdum leo sed posuere. Etiam at pulvinar enim, nec interdum purus.\n    Pellentesque sit amet semper ipsum, eu vulputate tortor. Aliquam vitae nisi augue.\n    Duis non erat sit amet sem venenatis accumsan at ullamcorper lorem. Morbi non turpis nibh.\n    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam maximus faucibus bibendum.\n    Duis non erat sit amet sem venenatis accumsan at ullamcorper lorem. Morbi non turpis nibh.\n    `;\n\n    private activeDialogs: NuiDialogRef[] = [];\n    private overlayRef: OverlayRef;\n    private baseDate = moment([2018, 5, 1, 15, 0, 0]);\n\n    constructor(private dialogService: DialogService,\n                private toastService: ToastService,\n                private overlay: Overlay,\n                private viewContainerRef: ViewContainerRef\n    ) {}\n\n    public ngOnInit(): void {\n        this.timeFrame = {\n            startDatetime: this.baseDate.clone().subtract(1, \"weeks\"),\n            endDatetime: this.baseDate.clone(),\n        };\n    }\n\n    public toggleBusy() {\n        this.busy = !this.busy;\n    }\n\n    public toggleAppendToBody() {\n        this.appendToBody = !this.appendToBody;\n    }\n\n    public openOverlay(templateRef: TemplateRef<string>, width: string, height: string) {\n        const positionStrategy = this.overlay.position().global()\n            .centerHorizontally()\n            .centerVertically();\n\n        this.overlayRef = this.overlay.create({\n            positionStrategy,\n            hasBackdrop: true,\n            panelClass: [\"main-overlay-panel\", \"d-flex\", \"flex-column\"],\n            width: width,\n            height: height,\n            scrollStrategy: this.overlay.scrollStrategies.block(),\n\n        });\n        const portal = new TemplatePortal(templateRef, this.viewContainerRef);\n        this.overlayRef.attach(portal);\n    }\n\n    public closeOverlay() {\n        this.overlayRef.detach();\n    }\n\n    public openInnerDialog(templateRef: TemplateRef<string>) {\n        this.activeDialogs.push(this.dialogService.open(templateRef, {windowClass: \"inner-dialog\"}));\n    }\n\n    public closeDialog() {\n        this.activeDialogs.pop()?.close();\n    }\n\n    public showToast(): void {\n        this.toastService.success({message: $localize`Sample toast displayed!`, title: $localize`Event`});\n    }\n}\n");
-
-/***/ }),
-
 /***/ "PNRQ":
 /*!**********************************************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/dialog/simple-dialog/simple-dialog.example.component.html ***!
@@ -2127,16 +2133,733 @@ DialogWithStaticBackdropExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED
 
 /***/ }),
 
-/***/ "R7wm":
-/*!*****************************************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/dialog/dialog-test/dialog-zindex-test.component.less ***!
-  \*****************************************************************************************************************************/
-/*! exports provided: default */
+/***/ "TXQN":
+/*!********************************************************************************************!*\
+  !*** ./demo/src/components/demo/dialog/dialog-zindex-test/dialog-zindex-test.component.ts ***!
+  \********************************************************************************************/
+/*! exports provided: DialogZIndexTestComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("@import (reference) \"nui-framework-variables\";\n\n.main-overlay-panel {\n    padding: @nui-space-sm;\n    background: @nui-color-bg-content;\n\n    .overlay-footer {\n        display: flex;\n        justify-content: flex-end;\n        padding: @nui-space-sm;\n        button {\n            margin-left: 15px;\n        }\n    }\n}\n\n.busy-content {\n    border: 1px @nui-color-line-default solid;\n    padding: @nui-space-sm;\n}\n\n.inline-flex {\n    display: inline-flex;\n}\n\n");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DialogZIndexTestComponent", function() { return DialogZIndexTestComponent; });
+/* harmony import */ var _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/cdk/overlay */ "rDax");
+/* harmony import */ var _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/cdk/portal */ "+rOU");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @nova-ui/bits */ "b5Xb");
+/* harmony import */ var moment_moment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! moment/moment */ "wd/R");
+/* harmony import */ var moment_moment__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(moment_moment__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _simple_dialog_simple_dialog_example_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../simple-dialog/simple-dialog.example.component */ "b7fi");
+/* harmony import */ var _component_as_content_component_as_content_example_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../component-as-content/component-as-content.example.component */ "UJKN");
+/* harmony import */ var _dialog_severity_dialog_severity_example_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../dialog-severity/dialog-severity.example.component */ "JOKZ");
+/* harmony import */ var _header_buttons_header_buttons_example_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../header-buttons/header-buttons.example.component */ "GXFr");
+/* harmony import */ var _dialog_sizes_dialog_sizes_example_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../dialog-sizes/dialog-sizes.example.component */ "WQXM");
+/* harmony import */ var _dialog_position_dialog_position_example_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../dialog-position/dialog-position.example.component */ "N9CE");
+/* harmony import */ var _dialog_custom_class_dialog_custom_class_example_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../dialog-custom-class/dialog-custom-class.example.component */ "/3M5");
+/* harmony import */ var _confirmation_dialog_confirmation_dialog_example_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../confirmation-dialog/confirmation-dialog.example.component */ "fcXS");
+/* harmony import */ var _dialog_keyboard_dialog_with_keyboard_example_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../dialog-keyboard/dialog-with-keyboard.example.component */ "HqCK");
+/* harmony import */ var _dialog_static_backdrop_dialog_with_static_backdrop_example_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../dialog-static-backdrop/dialog-with-static-backdrop.example.component */ "QPNM");
+/* harmony import */ var _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../../../../../../src/lib/button/button.component */ "6urz");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var _src_lib_dialog_dialog_header_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../../../../../../src/lib/dialog/dialog-header.component */ "skCw");
+/* harmony import */ var _src_lib_dialog_dialog_footer_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../../../../../../src/lib/dialog/dialog-footer.component */ "NHEo");
+/* harmony import */ var _src_lib_menu_menu_menu_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../../../../../../src/lib/menu/menu/menu.component */ "JG2v");
+/* harmony import */ var _src_lib_menu_menu_item_menu_action_menu_action_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../../../../../../src/lib/menu/menu-item/menu-action/menu-action.component */ "6sIJ");
+/* harmony import */ var _src_lib_popup_adapter_popup_adapter_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../../../../../../src/lib/popup-adapter/popup-adapter.component */ "tUgt");
+/* harmony import */ var _src_lib_popup_popup_toggle_directive__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../../../../../../src/lib/popup/popup-toggle.directive */ "Yclq");
+/* harmony import */ var _src_lib_menu_menu_item_menu_item_menu_item_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../../../../../../src/lib/menu/menu-item/menu-item/menu-item.component */ "fNSn");
+/* harmony import */ var _src_lib_tooltip_tooltip_directive__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../../../../../../src/lib/tooltip/tooltip.directive */ "mgRW");
+/* harmony import */ var _src_lib_select_select_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ../../../../../../src/lib/select/select.component */ "8Za4");
+/* harmony import */ var _src_lib_select_v2_select_select_v2_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ../../../../../../src/lib/select-v2/select/select-v2.component */ "UpNd");
+/* harmony import */ var _src_lib_select_v2_option_select_v2_option_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ../../../../../../src/lib/select-v2/option/select-v2-option.component */ "tpGn");
+/* harmony import */ var _src_lib_select_combobox_combobox_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ../../../../../../src/lib/select/combobox/combobox.component */ "KXc3");
+/* harmony import */ var _src_lib_select_v2_combobox_v2_combobox_v2_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ../../../../../../src/lib/select-v2/combobox-v2/combobox-v2.component */ "eZSC");
+/* harmony import */ var _src_lib_select_v2_combobox_v2_option_highlight_combobox_v2_option_highlight_directive__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ../../../../../../src/lib/select-v2/combobox-v2-option-highlight/combobox-v2-option-highlight.directive */ "Mjyr");
+/* harmony import */ var _src_lib_spinner_spinner_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ../../../../../../src/lib/spinner/spinner.component */ "NFOm");
+/* harmony import */ var _src_lib_busy_busy_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ../../../../../../src/lib/busy/busy.component */ "3XPh");
+/* harmony import */ var _src_lib_date_time_picker_date_time_picker_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ../../../../../../src/lib/date-time-picker/date-time-picker.component */ "/NB1");
+/* harmony import */ var _src_lib_convenience_time_frame_bar_time_frame_bar_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ../../../../../../src/lib/convenience/time-frame-bar/time-frame-bar.component */ "SKIm");
+/* harmony import */ var _src_lib_icon_icon_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ../../../../../../src/lib/icon/icon.component */ "45Bz");
+/* harmony import */ var _src_lib_time_frame_picker_quick_picker_quick_picker_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ../../../../../../src/lib/time-frame-picker/quick-picker/quick-picker.component */ "KiNg");
+/* harmony import */ var _src_lib_time_frame_picker_time_frame_picker_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ../../../../../../src/lib/time-frame-picker/time-frame-picker.component */ "chzP");
+/* harmony import */ var _src_lib_popover_popover_component__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ../../../../../../src/lib/popover/popover.component */ "N1kL");
+/* harmony import */ var _src_lib_time_frame_picker_time_frame_format_pipe__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ../../../../../../src/lib/time-frame-picker/time-frame-format.pipe */ "Y/g/");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function DialogZIndexTestComponent_ng_template_34_ng_container_2_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainer"](0);
+} }
+function DialogZIndexTestComponent_ng_template_34_Template(rf, ctx) { if (rf & 1) {
+    const _r32 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 16);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](1, "div", 17);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, DialogZIndexTestComponent_ng_template_34_ng_container_2_Template, 1, 0, "ng-container", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](3, "div", 19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](4, "button", 20);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function DialogZIndexTestComponent_ng_template_34_Template_button_click_4_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r32); const ctx_r31 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"](); const _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](39); return ctx_r31.openInnerDialog(_r4); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](5, " Open small Dialog ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](6, "button", 21);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function DialogZIndexTestComponent_ng_template_34_Template_button_click_6_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r32); const ctx_r33 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"](); return ctx_r33.closeOverlay(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](7, " Close overlay ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
+    const _r28 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](63);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngTemplateOutlet", _r28);
+} }
+function DialogZIndexTestComponent_ng_template_36_ng_container_4_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainer"](0);
+} }
+function DialogZIndexTestComponent_ng_template_36_ng_container_5_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainer"](0);
+} }
+function DialogZIndexTestComponent_ng_template_36_ng_container_6_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainer"](0);
+} }
+function DialogZIndexTestComponent_ng_template_36_ng_container_7_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainer"](0);
+} }
+function DialogZIndexTestComponent_ng_template_36_ng_container_8_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainer"](0);
+} }
+function DialogZIndexTestComponent_ng_template_36_ng_container_9_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainer"](0);
+} }
+function DialogZIndexTestComponent_ng_template_36_ng_container_10_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainer"](0);
+} }
+function DialogZIndexTestComponent_ng_template_36_ng_container_11_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainer"](0);
+} }
+function DialogZIndexTestComponent_ng_template_36_ng_container_12_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainer"](0);
+} }
+function DialogZIndexTestComponent_ng_template_36_ng_container_13_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainer"](0);
+} }
+const _c4 = function () { return { text: "Main overlay tooltip" }; };
+const _c5 = function () { return { text: "Inner overlay tooltip" }; };
+function DialogZIndexTestComponent_ng_template_36_Template(rf, ctx) { if (rf & 1) {
+    const _r45 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 16);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](1, "div", 17);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](2, "p");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](3, "This is the content of an CDK overlay container.");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](4, DialogZIndexTestComponent_ng_template_36_ng_container_4_Template, 1, 0, "ng-container", 22);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](5, DialogZIndexTestComponent_ng_template_36_ng_container_5_Template, 1, 0, "ng-container", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](6, DialogZIndexTestComponent_ng_template_36_ng_container_6_Template, 1, 0, "ng-container", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](7, DialogZIndexTestComponent_ng_template_36_ng_container_7_Template, 1, 0, "ng-container", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](8, DialogZIndexTestComponent_ng_template_36_ng_container_8_Template, 1, 0, "ng-container", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](9, DialogZIndexTestComponent_ng_template_36_ng_container_9_Template, 1, 0, "ng-container", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](10, DialogZIndexTestComponent_ng_template_36_ng_container_10_Template, 1, 0, "ng-container", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](11, DialogZIndexTestComponent_ng_template_36_ng_container_11_Template, 1, 0, "ng-container", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](12, DialogZIndexTestComponent_ng_template_36_ng_container_12_Template, 1, 0, "ng-container", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](13, DialogZIndexTestComponent_ng_template_36_ng_container_13_Template, 1, 0, "ng-container", 22);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](14, "div", 19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](15, "button", 23);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function DialogZIndexTestComponent_ng_template_36_Template_button_click_15_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r45); const ctx_r44 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"](); return ctx_r44.showToast(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](16, " Show toast ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](17, "button", 24);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function DialogZIndexTestComponent_ng_template_36_Template_button_click_17_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r45); const ctx_r46 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"](); return ctx_r46.toggleAppendToBody(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵi18n"](18, 25);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](19, "button", 26);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function DialogZIndexTestComponent_ng_template_36_Template_button_click_19_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r45); const ctx_r47 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"](); return ctx_r47.toggleBusy(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵi18n"](20, 27);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](21, "button", 28);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function DialogZIndexTestComponent_ng_template_36_Template_button_click_21_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r45); const ctx_r48 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"](); const _r6 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](41); return ctx_r48.openInnerDialog(_r6); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](22, " Open Inner Dialog ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](23, "button", 23);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function DialogZIndexTestComponent_ng_template_36_Template_button_click_23_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r45); const ctx_r49 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"](); return ctx_r49.closeOverlay(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](24, " Close overlay ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
+    const _r26 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](61);
+    const _r22 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](57);
+    const _r8 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](43);
+    const _r10 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](45);
+    const _r12 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](47);
+    const _r14 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](49);
+    const _r24 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](59);
+    const _r20 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](55);
+    const _r16 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](51);
+    const _r18 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](53);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngTemplateOutlet", _r26)("ngTemplateOutletContext", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpureFunction0"](14, _c4));
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngTemplateOutlet", _r22);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngTemplateOutlet", _r8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngTemplateOutlet", _r10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngTemplateOutlet", _r12);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngTemplateOutlet", _r14);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngTemplateOutlet", _r24);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngTemplateOutlet", _r20);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngTemplateOutlet", _r16);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngTemplateOutlet", _r18)("ngTemplateOutletContext", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpureFunction0"](15, _c5));
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵi18nExp"](ctx_r3.appendToBody);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵi18nApply"](18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵi18nExp"](ctx_r3.busy);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵi18nApply"](20);
+} }
+function DialogZIndexTestComponent_ng_template_38_ng_container_2_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainer"](0);
+} }
+function DialogZIndexTestComponent_ng_template_38_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "nui-dialog-header", 29);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("closed", function DialogZIndexTestComponent_ng_template_38_Template_nui_dialog_header_closed_0_listener() { const close_r50 = ctx.close; return close_r50(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](1, "div", 30);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, DialogZIndexTestComponent_ng_template_38_ng_container_2_Template, 1, 0, "ng-container", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](3, "nui-dialog-footer");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](4, "button", 31);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function DialogZIndexTestComponent_ng_template_38_Template_button_click_4_listener() { const close_r50 = ctx.close; return close_r50(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](5, " Close ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
+    const _r28 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](63);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngTemplateOutlet", _r28);
+} }
+function DialogZIndexTestComponent_ng_template_40_ng_container_4_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainer"](0);
+} }
+function DialogZIndexTestComponent_ng_template_40_ng_container_5_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainer"](0);
+} }
+function DialogZIndexTestComponent_ng_template_40_ng_container_6_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainer"](0);
+} }
+function DialogZIndexTestComponent_ng_template_40_ng_container_7_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainer"](0);
+} }
+function DialogZIndexTestComponent_ng_template_40_ng_container_8_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainer"](0);
+} }
+function DialogZIndexTestComponent_ng_template_40_ng_container_9_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainer"](0);
+} }
+function DialogZIndexTestComponent_ng_template_40_ng_container_10_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainer"](0);
+} }
+function DialogZIndexTestComponent_ng_template_40_ng_container_11_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainer"](0);
+} }
+function DialogZIndexTestComponent_ng_template_40_ng_container_12_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainer"](0);
+} }
+function DialogZIndexTestComponent_ng_template_40_ng_container_13_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainer"](0);
+} }
+const _c8 = function () { return { text: "Inner dialog tooltip" }; };
+function DialogZIndexTestComponent_ng_template_40_Template(rf, ctx) { if (rf & 1) {
+    const _r69 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "nui-dialog-header", 32);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("closed", function DialogZIndexTestComponent_ng_template_40_Template_nui_dialog_header_closed_0_listener() { const close_r55 = ctx.close; return close_r55(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](1, "div", 30);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](2, "p");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](3, "This is the content of a dialog.");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](4, DialogZIndexTestComponent_ng_template_40_ng_container_4_Template, 1, 0, "ng-container", 22);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](5, DialogZIndexTestComponent_ng_template_40_ng_container_5_Template, 1, 0, "ng-container", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](6, DialogZIndexTestComponent_ng_template_40_ng_container_6_Template, 1, 0, "ng-container", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](7, DialogZIndexTestComponent_ng_template_40_ng_container_7_Template, 1, 0, "ng-container", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](8, DialogZIndexTestComponent_ng_template_40_ng_container_8_Template, 1, 0, "ng-container", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](9, DialogZIndexTestComponent_ng_template_40_ng_container_9_Template, 1, 0, "ng-container", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](10, DialogZIndexTestComponent_ng_template_40_ng_container_10_Template, 1, 0, "ng-container", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](11, DialogZIndexTestComponent_ng_template_40_ng_container_11_Template, 1, 0, "ng-container", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](12, DialogZIndexTestComponent_ng_template_40_ng_container_12_Template, 1, 0, "ng-container", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](13, DialogZIndexTestComponent_ng_template_40_ng_container_13_Template, 1, 0, "ng-container", 22);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](14, "nui-dialog-footer");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](15, "button", 33);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function DialogZIndexTestComponent_ng_template_40_Template_button_click_15_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r69); const ctx_r68 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"](); const _r0 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](35); return ctx_r68.openOverlay(_r0, "40%", "200px"); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](16, " +Overlay ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](17, "button", 34);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function DialogZIndexTestComponent_ng_template_40_Template_button_click_17_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r69); const ctx_r70 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"](); const _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](39); return ctx_r70.openInnerDialog(_r4); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](18, " +Dialog ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](19, "button", 23);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function DialogZIndexTestComponent_ng_template_40_Template_button_click_19_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r69); const ctx_r71 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"](); return ctx_r71.toggleBusy(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵi18n"](20, 35);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](21, "button", 23);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function DialogZIndexTestComponent_ng_template_40_Template_button_click_21_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r69); const ctx_r72 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"](); return ctx_r72.showToast(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](22, "Show toast");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](23, "button", 23);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function DialogZIndexTestComponent_ng_template_40_Template_button_click_23_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r69); const close_r55 = ctx.close; const ctx_r73 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"](); ctx_r73.closeDialog(); return close_r55(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](24, "Close");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
+    const _r26 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](61);
+    const _r22 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](57);
+    const _r8 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](43);
+    const _r10 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](45);
+    const _r12 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](47);
+    const _r14 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](49);
+    const _r24 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](59);
+    const _r20 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](55);
+    const _r16 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](51);
+    const _r18 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](53);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngTemplateOutlet", _r26)("ngTemplateOutletContext", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpureFunction0"](12, _c8));
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngTemplateOutlet", _r22);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngTemplateOutlet", _r8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngTemplateOutlet", _r10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngTemplateOutlet", _r12);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngTemplateOutlet", _r14);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngTemplateOutlet", _r24);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngTemplateOutlet", _r20);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngTemplateOutlet", _r16);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngTemplateOutlet", _r18)("ngTemplateOutletContext", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpureFunction0"](13, _c8));
+} }
+function DialogZIndexTestComponent_ng_template_42_nui_menu_action_1_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "nui-menu-action");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const item_r75 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](item_r75);
+} }
+function DialogZIndexTestComponent_ng_template_42_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "nui-menu", 36);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](1, DialogZIndexTestComponent_ng_template_42_nui_menu_action_1_Template, 2, 1, "nui-menu-action", 37);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("appendToBody", ctx_r9.appendToBody);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx_r9.items);
+} }
+function DialogZIndexTestComponent_ng_template_44_ng_container_4_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainerStart"](0);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](1, "nui-menu-item", 42);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainerEnd"]();
+} if (rf & 2) {
+    const item_r77 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](item_r77);
+} }
+function DialogZIndexTestComponent_ng_template_44_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "nui-popup", 38);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](1, "button", 39);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵi18n"](2, 40);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](3, "div", 41);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](4, DialogZIndexTestComponent_ng_template_44_ng_container_4_Template, 3, 1, "ng-container", 37);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("appendToBody", ctx_r11.appendToBody);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("iconRight", true)("isEmpty", false);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx_r11.items);
+} }
+function DialogZIndexTestComponent_ng_template_46_ng_container_2_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainerStart"](0);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](1, "nui-select-v2-option", 45);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵi18n"](2, 46);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainerEnd"]();
+} if (rf & 2) {
+    const item_r79 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("value", item_r79);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵi18nExp"](item_r79);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵi18nApply"](2);
+} }
+function DialogZIndexTestComponent_ng_template_46_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](0, "nui-select", 43);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](1, "nui-select-v2", 44);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, DialogZIndexTestComponent_ng_template_46_ng_container_2_Template, 3, 2, "ng-container", 37);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r13 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("itemsSource", ctx_r13.items)("inline", true)("appendToBody", ctx_r13.appendToBody);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx_r13.items);
+} }
+function DialogZIndexTestComponent_ng_template_48_ng_container_2_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainerStart"](0);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](1, "nui-select-v2-option", 45);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](2, "div", 49);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](3, "span", 50);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainerEnd"]();
+} if (rf & 2) {
+    const item_r81 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("value", item_r81);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("nuiComboboxV2OptionHighlight", item_r81);
+} }
+function DialogZIndexTestComponent_ng_template_48_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](0, "nui-combobox", 47);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](1, "nui-combobox-v2", 48);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, DialogZIndexTestComponent_ng_template_48_ng_container_2_Template, 4, 2, "ng-container", 37);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r15 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("itemsSource", ctx_r15.items)("inline", true)("appendToBody", ctx_r15.appendToBody);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx_r15.items);
+} }
+function DialogZIndexTestComponent_ng_template_50_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](0, "nui-spinner", 51);
+} if (rf & 2) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("show", true);
+} }
+function DialogZIndexTestComponent_ng_template_52_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 52);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, " We used focus trigger so that the popover with a ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](2, "span", 53);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](3, " big tooltip ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](4, " will remain open even after we move the mouse away from it even. ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const text_r82 = ctx.text;
+    const ctx_r19 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("busy", ctx_r19.busy);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate2"]("nuiTooltip", "", text_r82, " ", ctx_r19.longTextTooltip, "");
+} }
+function DialogZIndexTestComponent_ng_template_54_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 54);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](1, "nui-date-time-picker", 55);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r21 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("appendToBody", ctx_r21.appendToBody)("model", ctx_r21.dt);
+} }
+function DialogZIndexTestComponent_ng_template_56_Template(rf, ctx) { if (rf & 1) {
+    const _r84 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "nui-time-frame-bar", 56);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("timeFrameChange", function DialogZIndexTestComponent_ng_template_56_Template_nui_time_frame_bar_timeFrameChange_0_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r84); const ctx_r83 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"](); return ctx_r83.timeFrame = $event; });
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](1, "nui-icon", 57);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipe"](3, "timeFrame");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](4, "nui-quick-picker", 58);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](5, "nui-time-frame-picker");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r23 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("timeFrame", ctx_r23.timeFrame);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate1"](" ", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipeBind1"](3, 2, ctx_r23.timeFrame), " ");
+} }
+function DialogZIndexTestComponent_ng_template_58_ng_template_5_ng_container_6_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainer"](0);
+} }
+function DialogZIndexTestComponent_ng_template_58_ng_template_5_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "span");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, "I'm a popover with some content with a");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](2, "\u00A0 ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](3, "span", 62);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](4, "tooltip");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](5, " \u00A0inside. ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](6, DialogZIndexTestComponent_ng_template_58_ng_template_5_ng_container_6_Template, 1, 0, "ng-container", 18);
+} if (rf & 2) {
+    const ctx_r86 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"](2);
+    const _r28 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](63);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate1"]("nuiTooltip", "Tooltip inside popover ", ctx_r86.longTextTooltip, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngTemplateOutlet", _r28);
+} }
+function DialogZIndexTestComponent_ng_template_58_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](0, " I'm a ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](1, "nui-popover", 59);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](2, "span", 60);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](3, "popover");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](4, " with Focus Trigger ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](5, DialogZIndexTestComponent_ng_template_58_ng_template_5_Template, 7, 2, "ng-template", null, 61, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
+} if (rf & 2) {
+    const _r85 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("template", _r85);
+} }
+function DialogZIndexTestComponent_ng_template_60_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "span", 63);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, "I'm a long text tooltip! ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+} }
+function DialogZIndexTestComponent_ng_template_62_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "p");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam maximus faucibus bibendum. Aenean feugiat interdum leo sed posuere. Etiam at pulvinar enim, nec interdum purus. Pellentesque sit amet semper ipsum, eu vulputate tortor. Aliquam vitae nisi augue. Duis non erat sit amet sem venenatis accumsan at ullamcorper lorem. Morbi non turpis nibh. ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+} }
+class DialogZIndexTestComponent {
+    constructor(dialogService, toastService, overlay, viewContainerRef) {
+        this.dialogService = dialogService;
+        this.toastService = toastService;
+        this.overlay = overlay;
+        this.viewContainerRef = viewContainerRef;
+        this.busy = false;
+        this.appendToBody = false;
+        this.dt = moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2018-02-02");
+        this.items = ["Long description item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6"];
+        this.longTextTooltip = `
+    which should appear on top of any other components (popup, popover, menu,etc.) even if it's displayed after the popover has been displayed.
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam maximus faucibus bibendum.
+    Aenean feugiat interdum leo sed posuere. Etiam at pulvinar enim, nec interdum purus.
+    Pellentesque sit amet semper ipsum, eu vulputate tortor. Aliquam vitae nisi augue.
+    Duis non erat sit amet sem venenatis accumsan at ullamcorper lorem. Morbi non turpis nibh.
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam maximus faucibus bibendum.
+    Duis non erat sit amet sem venenatis accumsan at ullamcorper lorem. Morbi non turpis nibh.
+    `;
+        this.activeDialogs = [];
+        this.baseDate = moment_moment__WEBPACK_IMPORTED_MODULE_4___default()([2018, 5, 1, 15, 0, 0]);
+    }
+    ngOnInit() {
+        this.timeFrame = {
+            startDatetime: this.baseDate.clone().subtract(1, "weeks"),
+            endDatetime: this.baseDate.clone(),
+        };
+    }
+    toggleBusy() {
+        this.busy = !this.busy;
+    }
+    toggleAppendToBody() {
+        this.appendToBody = !this.appendToBody;
+    }
+    openOverlay(templateRef, width, height) {
+        const positionStrategy = this.overlay.position().global()
+            .centerHorizontally()
+            .centerVertically();
+        this.overlayRef = this.overlay.create({
+            positionStrategy,
+            hasBackdrop: true,
+            panelClass: ["main-overlay-panel", "d-flex", "flex-column"],
+            width: width,
+            height: height,
+            scrollStrategy: this.overlay.scrollStrategies.block(),
+        });
+        const portal = new _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_1__["TemplatePortal"](templateRef, this.viewContainerRef);
+        this.overlayRef.attach(portal);
+    }
+    closeOverlay() {
+        this.overlayRef.detach();
+    }
+    openInnerDialog(templateRef) {
+        this.activeDialogs.push(this.dialogService.open(templateRef, { windowClass: "inner-dialog" }));
+    }
+    closeDialog() {
+        var _a;
+        (_a = this.activeDialogs.pop()) === null || _a === void 0 ? void 0 : _a.close();
+    }
+    showToast() {
+        this.toastService.success({ message: $localize `Sample toast displayed!`, title: $localize `Event` });
+    }
+}
+DialogZIndexTestComponent.ɵfac = function DialogZIndexTestComponent_Factory(t) { return new (t || DialogZIndexTestComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["DialogService"]), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["ToastService"]), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_0__["Overlay"]), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_2__["ViewContainerRef"])); };
+DialogZIndexTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({ type: DialogZIndexTestComponent, selectors: [["nui-dialog-zindex--test"]], decls: 64, vars: 0, consts: function () { let i18n_0; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+        const MSG_EXTERNAL_2572580832429526198$$DEMO_SRC_COMPONENTS_DEMO_DIALOG_DIALOG_ZINDEX_TEST_DIALOG_ZINDEX_TEST_COMPONENT_TS__1 = goog.getMsg(" appendToBody={$interpolation} ", { "interpolation": "\uFFFD0\uFFFD" });
+        i18n_0 = MSG_EXTERNAL_2572580832429526198$$DEMO_SRC_COMPONENTS_DEMO_DIALOG_DIALOG_ZINDEX_TEST_DIALOG_ZINDEX_TEST_COMPONENT_TS__1;
+    }
+    else {
+        i18n_0 = $localize `:␟4817379f179376c5d5db06a9a19289c38c4a2088␟2572580832429526198: appendToBody=${"\uFFFD0\uFFFD"}:INTERPOLATION: `;
+    } let i18n_2; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+        const MSG_EXTERNAL_8906943059497155563$$DEMO_SRC_COMPONENTS_DEMO_DIALOG_DIALOG_ZINDEX_TEST_DIALOG_ZINDEX_TEST_COMPONENT_TS__3 = goog.getMsg(" busy={$interpolation} ", { "interpolation": "\uFFFD0\uFFFD" });
+        i18n_2 = MSG_EXTERNAL_8906943059497155563$$DEMO_SRC_COMPONENTS_DEMO_DIALOG_DIALOG_ZINDEX_TEST_DIALOG_ZINDEX_TEST_COMPONENT_TS__3;
+    }
+    else {
+        i18n_2 = $localize `:␟e1e3bda292b8bc713dfe7e9129b59ee328b9c268␟8906943059497155563: busy=${"\uFFFD0\uFFFD"}:INTERPOLATION: `;
+    } let i18n_6; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+        const MSG_EXTERNAL_1603682264641628393$$DEMO_SRC_COMPONENTS_DEMO_DIALOG_DIALOG_ZINDEX_TEST_DIALOG_ZINDEX_TEST_COMPONENT_TS__7 = goog.getMsg(" Switch busy ");
+        i18n_6 = MSG_EXTERNAL_1603682264641628393$$DEMO_SRC_COMPONENTS_DEMO_DIALOG_DIALOG_ZINDEX_TEST_DIALOG_ZINDEX_TEST_COMPONENT_TS__7;
+    }
+    else {
+        i18n_6 = $localize `:␟56bd0d88d7f8b94de09397ed861f787676c43bd0␟1603682264641628393: Switch busy `;
+    } let i18n_9; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+        const MSG_EXTERNAL_3013441546499596593$$DEMO_SRC_COMPONENTS_DEMO_DIALOG_DIALOG_ZINDEX_TEST_DIALOG_ZINDEX_TEST_COMPONENT_TS__10 = goog.getMsg(" Popup ");
+        i18n_9 = MSG_EXTERNAL_3013441546499596593$$DEMO_SRC_COMPONENTS_DEMO_DIALOG_DIALOG_ZINDEX_TEST_DIALOG_ZINDEX_TEST_COMPONENT_TS__10;
+    }
+    else {
+        i18n_9 = $localize `:␟349152e79d4998da4e5ba75d4d65f65ed4b52ab5␟3013441546499596593: Popup `;
+    } let i18n_11; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+        const MSG_EXTERNAL_1628382286062172232$$DEMO_SRC_COMPONENTS_DEMO_DIALOG_DIALOG_ZINDEX_TEST_DIALOG_ZINDEX_TEST_COMPONENT_TS___12 = goog.getMsg("{$interpolation}", { "interpolation": "\uFFFD0\uFFFD" });
+        i18n_11 = MSG_EXTERNAL_1628382286062172232$$DEMO_SRC_COMPONENTS_DEMO_DIALOG_DIALOG_ZINDEX_TEST_DIALOG_ZINDEX_TEST_COMPONENT_TS___12;
+    }
+    else {
+        i18n_11 = $localize `:␟bbffadc040d79a90f05c750b360e43a0cadce635␟1628382286062172232:${"\uFFFD0\uFFFD"}:INTERPOLATION:`;
+    } let i18n_13; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+        const MSG_EXTERNAL_7640074618766962714$$DEMO_SRC_COMPONENTS_DEMO_DIALOG_DIALOG_ZINDEX_TEST_DIALOG_ZINDEX_TEST_COMPONENT_TS__14 = goog.getMsg("Combobox v1");
+        i18n_13 = MSG_EXTERNAL_7640074618766962714$$DEMO_SRC_COMPONENTS_DEMO_DIALOG_DIALOG_ZINDEX_TEST_DIALOG_ZINDEX_TEST_COMPONENT_TS__14;
+    }
+    else {
+        i18n_13 = $localize `:␟fd0eb1f8a5bb5b6f11bc7132ee0fe30ea1eb12f8␟7640074618766962714:Combobox v1`;
+    } let i18n_15; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+        const MSG_EXTERNAL_1236517560182531840$$DEMO_SRC_COMPONENTS_DEMO_DIALOG_DIALOG_ZINDEX_TEST_DIALOG_ZINDEX_TEST_COMPONENT_TS__16 = goog.getMsg("Spinner");
+        i18n_15 = MSG_EXTERNAL_1236517560182531840$$DEMO_SRC_COMPONENTS_DEMO_DIALOG_DIALOG_ZINDEX_TEST_DIALOG_ZINDEX_TEST_COMPONENT_TS__16;
+    }
+    else {
+        i18n_15 = $localize `:␟7104de91c8c73253641d3792fb3b4e2fb8c9c2d2␟1236517560182531840:Spinner`;
+    } let i18n_17; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+        const MSG_EXTERNAL_533206746245095297$$DEMO_SRC_COMPONENTS_DEMO_DIALOG_DIALOG_ZINDEX_TEST_DIALOG_ZINDEX_TEST_COMPONENT_TS__18 = goog.getMsg("Optional spinner description");
+        i18n_17 = MSG_EXTERNAL_533206746245095297$$DEMO_SRC_COMPONENTS_DEMO_DIALOG_DIALOG_ZINDEX_TEST_DIALOG_ZINDEX_TEST_COMPONENT_TS__18;
+    }
+    else {
+        i18n_17 = $localize `:␟91ccfaf08fe940b3e859dd3eaa40073cb40a0610␟533206746245095297:Optional spinner description`;
+    } return [["id", "nui-visual-test-open-overlay-btn", "nui-button", "", "type", "button", 3, "click"], ["smallOverlayContent", ""], ["mainOverlayContent", ""], ["smallDialogContent", ""], ["innerDialogContent", ""], ["menu", ""], ["popup", ""], ["select", ""], ["combobox", ""], ["spinner", ""], ["busyTemplate", ""], ["dtPicker", ""], ["timeframeBarTemplate", ""], ["popover", ""], ["tooltip", ""], ["loremIpsum", ""], [1, "overlay-container"], [1, "overlay-body"], [4, "ngTemplateOutlet"], [1, "overlay-footer"], ["id", "nui-visual-test-open-small-dialog-btn", "nui-button", "", "type", "button", 3, "click"], ["id", "nui-visual-test-close-overlay-from-small-btn", "nui-button", "", "type", "button", 3, "click"], [4, "ngTemplateOutlet", "ngTemplateOutletContext"], ["nui-button", "", "type", "button", 3, "click"], ["id", "nui-visual-test-switch-appendToBody-btn", "nui-button", "", "type", "button", 3, "click"], i18n_0, ["id", "nui-visual-test-switch-busy-btn", "nui-button", "", "type", "button", 3, "click"], i18n_2, ["id", "nui-visual-test-inner-dialog-btn", "nui-button", "", "type", "button", 3, "click"], ["title", "Small Dialog Title", 3, "closed"], [1, "dialog-body"], ["id", "nui-visual-test-close-small-dialog-btn", "nui-button", "", "type", "button", 3, "click"], ["title", "Inner Dialog Title", 3, "closed"], ["id", "nui-visual-test-open-overlay-from-dialog-btn", "nui-button", "", "type", "button", 3, "click"], ["id", "nui-visual-test-open-small-dialog-from-dialog-btn", "nui-button", "", "type", "button", 3, "click"], i18n_6, ["title", "Menu", 1, "clickable-visual-item", 3, "appendToBody"], [4, "ngFor", "ngForOf"], [1, "clickable-visual-item", 3, "appendToBody"], ["nui-button", "", "nuiPopupToggle", "", "type", "button", "icon", "caret-down", 1, "menu-button", 3, "iconRight", "isEmpty"], i18n_9, ["popupAreaContent", ""], ["tabindex", "0", "nuiTooltip", "This tooltip is part of a menu item"], ["placeholder", "Select v1", 1, "clickable-visual-item", 3, "itemsSource", "inline", "appendToBody"], ["placeholder", "Select v2", 1, "clickable-visual-item", "d-inline-flex"], [3, "value"], i18n_11, ["placeholder", i18n_13, 1, "clickable-visual-item", 3, "itemsSource", "inline", "appendToBody"], ["placeholder", "Combobox v2", 1, "clickable-visual-item", "d-inline-flex"], [1, "d-flex", "align-items-center"], [3, "nuiComboboxV2OptionHighlight"], ["size", "large", "message", i18n_15, "helpText", i18n_17, 3, "show"], ["nui-busy", "", 1, "busy-content", 3, "busy"], ["tooltipPlacement", "bottom", 1, "nui-text-widget--hoverable", 3, "nuiTooltip"], [1, "inline-flex"], ["displayMode", "inline", 1, "clickable-visual-item", 3, "appendToBody", "model"], [3, "timeFrame", "timeFrameChange"], ["icon", "calendar", 1, "pr-3"], ["timeFrameSelection", ""], ["tabindex", "1", "trigger", "focus", 1, "clickable-visual-item", 3, "template"], [1, "nui-text-widget--hoverable"], ["popoverWithBasicUsage", ""], [1, "nui-text-widget--hoverable", 3, "nuiTooltip"], ["id", "long-text-tooltip", "nuiTooltip", "Tooltip should appear on top of any other components (popup, popover, menu,etc.) even if it's displayed after the popover has been displayed.", "tooltipPlacement", "bottom", 1, "nui-text-widget--hoverable"]]; }, template: function DialogZIndexTestComponent_Template(rf, ctx) { if (rf & 1) {
+        const _r89 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵgetCurrentView"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "h2");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, "Basic Usage");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](2, "nui-simple-dialog-example");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](3, "h2");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](4, "Usage as a Component");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](5, "nui-component-as-content-example");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](6, "h2");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](7, "Severity");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](8, "nui-dialog-severity-example");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](9, "h2");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](10, "Custom Dialog header");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](11, "nui-header-buttons-example");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](12, "h2");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](13, "Dialog Sizes");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](14, "nui-dialog-sizes-example");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](15, "h2");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](16, "Position on screen");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](17, "nui-dialog-position-example");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](18, "h2");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](19, "Custom class");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](20, "nui-dialog-custom-class-example");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](21, "h2");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](22, "Confirmation Dialog");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](23, "nui-confirmation-dialog-example");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](24, "h2");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](25, "Keyboard Options");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](26, "nui-dialog-with-keyboard-example");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](27, "h2");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](28, "Static Backdrop");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](29, "nui-dialog-with-static-backdrop-example");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](30, "h2");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](31, "Z-Index Strategy");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](32, "button", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function DialogZIndexTestComponent_Template_button_click_32_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r89); const _r2 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](37); return ctx.openOverlay(_r2, "60%", "400px"); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](33, " Open overlay\n");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](34, DialogZIndexTestComponent_ng_template_34_Template, 8, 1, "ng-template", null, 1, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](36, DialogZIndexTestComponent_ng_template_36_Template, 25, 16, "ng-template", null, 2, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](38, DialogZIndexTestComponent_ng_template_38_Template, 6, 1, "ng-template", null, 3, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](40, DialogZIndexTestComponent_ng_template_40_Template, 25, 14, "ng-template", null, 4, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](42, DialogZIndexTestComponent_ng_template_42_Template, 2, 2, "ng-template", null, 5, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](44, DialogZIndexTestComponent_ng_template_44_Template, 5, 4, "ng-template", null, 6, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](46, DialogZIndexTestComponent_ng_template_46_Template, 3, 4, "ng-template", null, 7, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](48, DialogZIndexTestComponent_ng_template_48_Template, 3, 4, "ng-template", null, 8, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](50, DialogZIndexTestComponent_ng_template_50_Template, 1, 1, "ng-template", null, 9, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](52, DialogZIndexTestComponent_ng_template_52_Template, 5, 3, "ng-template", null, 10, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](54, DialogZIndexTestComponent_ng_template_54_Template, 2, 2, "ng-template", null, 11, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](56, DialogZIndexTestComponent_ng_template_56_Template, 6, 4, "ng-template", null, 12, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](58, DialogZIndexTestComponent_ng_template_58_Template, 7, 1, "ng-template", null, 13, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](60, DialogZIndexTestComponent_ng_template_60_Template, 2, 0, "ng-template", null, 14, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](62, DialogZIndexTestComponent_ng_template_62_Template, 2, 0, "ng-template", null, 15, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
+    } }, directives: [_simple_dialog_simple_dialog_example_component__WEBPACK_IMPORTED_MODULE_5__["SimpleDialogExampleComponent"], _component_as_content_component_as_content_example_component__WEBPACK_IMPORTED_MODULE_6__["ComponentAsContentExampleComponent"], _dialog_severity_dialog_severity_example_component__WEBPACK_IMPORTED_MODULE_7__["DialogSeverityExampleComponent"], _header_buttons_header_buttons_example_component__WEBPACK_IMPORTED_MODULE_8__["HeaderButtonsExampleComponent"], _dialog_sizes_dialog_sizes_example_component__WEBPACK_IMPORTED_MODULE_9__["DialogSizesExampleComponent"], _dialog_position_dialog_position_example_component__WEBPACK_IMPORTED_MODULE_10__["DialogPositionExampleComponent"], _dialog_custom_class_dialog_custom_class_example_component__WEBPACK_IMPORTED_MODULE_11__["DialogCustomClassExampleComponent"], _confirmation_dialog_confirmation_dialog_example_component__WEBPACK_IMPORTED_MODULE_12__["ConfirmationDialogExampleComponent"], _dialog_keyboard_dialog_with_keyboard_example_component__WEBPACK_IMPORTED_MODULE_13__["DialogWithKeyboardExampleComponent"], _dialog_static_backdrop_dialog_with_static_backdrop_example_component__WEBPACK_IMPORTED_MODULE_14__["DialogWithStaticBackdropExampleComponent"], _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_15__["ButtonComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_16__["NgTemplateOutlet"], _src_lib_dialog_dialog_header_component__WEBPACK_IMPORTED_MODULE_17__["DialogHeaderComponent"], _src_lib_dialog_dialog_footer_component__WEBPACK_IMPORTED_MODULE_18__["DialogFooterComponent"], _src_lib_menu_menu_menu_component__WEBPACK_IMPORTED_MODULE_19__["MenuComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_16__["NgForOf"], _src_lib_menu_menu_item_menu_action_menu_action_component__WEBPACK_IMPORTED_MODULE_20__["MenuActionComponent"], _src_lib_popup_adapter_popup_adapter_component__WEBPACK_IMPORTED_MODULE_21__["PopupComponent"], _src_lib_popup_popup_toggle_directive__WEBPACK_IMPORTED_MODULE_22__["PopupToggleDirective"], _src_lib_menu_menu_item_menu_item_menu_item_component__WEBPACK_IMPORTED_MODULE_23__["MenuItemComponent"], _src_lib_tooltip_tooltip_directive__WEBPACK_IMPORTED_MODULE_24__["TooltipDirective"], _src_lib_select_select_component__WEBPACK_IMPORTED_MODULE_25__["SelectComponent"], _src_lib_select_v2_select_select_v2_component__WEBPACK_IMPORTED_MODULE_26__["SelectV2Component"], _src_lib_select_v2_option_select_v2_option_component__WEBPACK_IMPORTED_MODULE_27__["SelectV2OptionComponent"], _src_lib_select_combobox_combobox_component__WEBPACK_IMPORTED_MODULE_28__["ComboboxComponent"], _src_lib_select_v2_combobox_v2_combobox_v2_component__WEBPACK_IMPORTED_MODULE_29__["ComboboxV2Component"], _src_lib_select_v2_combobox_v2_option_highlight_combobox_v2_option_highlight_directive__WEBPACK_IMPORTED_MODULE_30__["ComboboxV2OptionHighlightDirective"], _src_lib_spinner_spinner_component__WEBPACK_IMPORTED_MODULE_31__["SpinnerComponent"], _src_lib_busy_busy_component__WEBPACK_IMPORTED_MODULE_32__["BusyComponent"], _src_lib_date_time_picker_date_time_picker_component__WEBPACK_IMPORTED_MODULE_33__["DateTimePickerComponent"], _src_lib_convenience_time_frame_bar_time_frame_bar_component__WEBPACK_IMPORTED_MODULE_34__["TimeFrameBarComponent"], _src_lib_icon_icon_component__WEBPACK_IMPORTED_MODULE_35__["IconComponent"], _src_lib_time_frame_picker_quick_picker_quick_picker_component__WEBPACK_IMPORTED_MODULE_36__["QuickPickerComponent"], _src_lib_time_frame_picker_time_frame_picker_component__WEBPACK_IMPORTED_MODULE_37__["TimeFramePickerComponent"], _src_lib_popover_popover_component__WEBPACK_IMPORTED_MODULE_38__["PopoverComponent"]], pipes: [_src_lib_time_frame_picker_time_frame_format_pipe__WEBPACK_IMPORTED_MODULE_39__["TimeFrameFormatPipe"]], styles: [".main-overlay-panel {\n  padding: 10px;\n  background: #fff;\n}\n.main-overlay-panel .overlay-footer {\n  display: flex;\n  justify-content: flex-end;\n  padding: 10px;\n}\n.main-overlay-panel .overlay-footer button {\n  margin-left: 15px;\n}\n.busy-content {\n  border: 1px #d9d9d9 solid;\n  padding: 10px;\n}\n.inline-flex {\n  display: inline-flex;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImRpYWxvZy16aW5kZXgtdGVzdC5jb21wb25lbnQubGVzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFFQTtFQUNJLGFBQUE7RUFDQSxnQkFBQTtBQURKO0FBREE7RUFLUSxhQUFBO0VBQ0EseUJBQUE7RUFDQSxhQUFBO0FBRFI7QUFOQTtFQVNZLGlCQUFBO0FBQVo7QUFLQTtFQUNJLHlCQUFBO0VBQ0EsYUFBQTtBQUhKO0FBTUE7RUFDSSxvQkFBQTtBQUpKIiwiZmlsZSI6ImRpYWxvZy16aW5kZXgtdGVzdC5jb21wb25lbnQubGVzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgKHJlZmVyZW5jZSkgXCJudWktZnJhbWV3b3JrLXZhcmlhYmxlc1wiO1xuXG4ubWFpbi1vdmVybGF5LXBhbmVsIHtcbiAgICBwYWRkaW5nOiBAbnVpLXNwYWNlLXNtO1xuICAgIGJhY2tncm91bmQ6IEBudWktY29sb3ItYmctY29udGVudDtcblxuICAgIC5vdmVybGF5LWZvb3RlciB7XG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgIGp1c3RpZnktY29udGVudDogZmxleC1lbmQ7XG4gICAgICAgIHBhZGRpbmc6IEBudWktc3BhY2Utc207XG4gICAgICAgIGJ1dHRvbiB7XG4gICAgICAgICAgICBtYXJnaW4tbGVmdDogMTVweDtcbiAgICAgICAgfVxuICAgIH1cbn1cblxuLmJ1c3ktY29udGVudCB7XG4gICAgYm9yZGVyOiAxcHggQG51aS1jb2xvci1saW5lLWRlZmF1bHQgc29saWQ7XG4gICAgcGFkZGluZzogQG51aS1zcGFjZS1zbTtcbn1cblxuLmlubGluZS1mbGV4IHtcbiAgICBkaXNwbGF5OiBpbmxpbmUtZmxleDtcbn1cblxuIl19 */"], encapsulation: 2 });
+
 
 /***/ }),
 
@@ -2989,733 +3712,16 @@ DialogInsideOverlayWithDateTimePickerExampleComponent.ɵcmp = _angular_core__WEB
 
 /***/ }),
 
-/***/ "fW7r":
-/*!*************************************************************************************!*\
-  !*** ./demo/src/components/demo/dialog/dialog-test/dialog-zindex-test.component.ts ***!
-  \*************************************************************************************/
-/*! exports provided: DialogZIndexTestComponent */
+/***/ "fERX":
+/*!************************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/dialog/dialog-zindex-test/dialog-zindex-test.component.html ***!
+  \************************************************************************************************************************************/
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DialogZIndexTestComponent", function() { return DialogZIndexTestComponent; });
-/* harmony import */ var _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/cdk/overlay */ "rDax");
-/* harmony import */ var _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/cdk/portal */ "+rOU");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @nova-ui/bits */ "b5Xb");
-/* harmony import */ var moment_moment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! moment/moment */ "wd/R");
-/* harmony import */ var moment_moment__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(moment_moment__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _simple_dialog_simple_dialog_example_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../simple-dialog/simple-dialog.example.component */ "b7fi");
-/* harmony import */ var _component_as_content_component_as_content_example_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../component-as-content/component-as-content.example.component */ "UJKN");
-/* harmony import */ var _dialog_severity_dialog_severity_example_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../dialog-severity/dialog-severity.example.component */ "JOKZ");
-/* harmony import */ var _header_buttons_header_buttons_example_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../header-buttons/header-buttons.example.component */ "GXFr");
-/* harmony import */ var _dialog_sizes_dialog_sizes_example_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../dialog-sizes/dialog-sizes.example.component */ "WQXM");
-/* harmony import */ var _dialog_position_dialog_position_example_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../dialog-position/dialog-position.example.component */ "N9CE");
-/* harmony import */ var _dialog_custom_class_dialog_custom_class_example_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../dialog-custom-class/dialog-custom-class.example.component */ "/3M5");
-/* harmony import */ var _confirmation_dialog_confirmation_dialog_example_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../confirmation-dialog/confirmation-dialog.example.component */ "fcXS");
-/* harmony import */ var _dialog_keyboard_dialog_with_keyboard_example_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../dialog-keyboard/dialog-with-keyboard.example.component */ "HqCK");
-/* harmony import */ var _dialog_static_backdrop_dialog_with_static_backdrop_example_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../dialog-static-backdrop/dialog-with-static-backdrop.example.component */ "QPNM");
-/* harmony import */ var _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../../../../../../src/lib/button/button.component */ "6urz");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/common */ "ofXK");
-/* harmony import */ var _src_lib_dialog_dialog_header_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../../../../../../src/lib/dialog/dialog-header.component */ "skCw");
-/* harmony import */ var _src_lib_dialog_dialog_footer_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../../../../../../src/lib/dialog/dialog-footer.component */ "NHEo");
-/* harmony import */ var _src_lib_menu_menu_menu_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../../../../../../src/lib/menu/menu/menu.component */ "JG2v");
-/* harmony import */ var _src_lib_menu_menu_item_menu_action_menu_action_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../../../../../../src/lib/menu/menu-item/menu-action/menu-action.component */ "6sIJ");
-/* harmony import */ var _src_lib_popup_adapter_popup_adapter_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../../../../../../src/lib/popup-adapter/popup-adapter.component */ "tUgt");
-/* harmony import */ var _src_lib_popup_popup_toggle_directive__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../../../../../../src/lib/popup/popup-toggle.directive */ "Yclq");
-/* harmony import */ var _src_lib_menu_menu_item_menu_item_menu_item_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../../../../../../src/lib/menu/menu-item/menu-item/menu-item.component */ "fNSn");
-/* harmony import */ var _src_lib_tooltip_tooltip_directive__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../../../../../../src/lib/tooltip/tooltip.directive */ "mgRW");
-/* harmony import */ var _src_lib_select_select_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ../../../../../../src/lib/select/select.component */ "8Za4");
-/* harmony import */ var _src_lib_select_v2_select_select_v2_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ../../../../../../src/lib/select-v2/select/select-v2.component */ "UpNd");
-/* harmony import */ var _src_lib_select_v2_option_select_v2_option_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ../../../../../../src/lib/select-v2/option/select-v2-option.component */ "tpGn");
-/* harmony import */ var _src_lib_select_combobox_combobox_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ../../../../../../src/lib/select/combobox/combobox.component */ "KXc3");
-/* harmony import */ var _src_lib_select_v2_combobox_v2_combobox_v2_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ../../../../../../src/lib/select-v2/combobox-v2/combobox-v2.component */ "eZSC");
-/* harmony import */ var _src_lib_select_v2_combobox_v2_option_highlight_combobox_v2_option_highlight_directive__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ../../../../../../src/lib/select-v2/combobox-v2-option-highlight/combobox-v2-option-highlight.directive */ "Mjyr");
-/* harmony import */ var _src_lib_spinner_spinner_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ../../../../../../src/lib/spinner/spinner.component */ "NFOm");
-/* harmony import */ var _src_lib_busy_busy_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ../../../../../../src/lib/busy/busy.component */ "3XPh");
-/* harmony import */ var _src_lib_date_time_picker_date_time_picker_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ../../../../../../src/lib/date-time-picker/date-time-picker.component */ "/NB1");
-/* harmony import */ var _src_lib_convenience_time_frame_bar_time_frame_bar_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ../../../../../../src/lib/convenience/time-frame-bar/time-frame-bar.component */ "SKIm");
-/* harmony import */ var _src_lib_icon_icon_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ../../../../../../src/lib/icon/icon.component */ "45Bz");
-/* harmony import */ var _src_lib_time_frame_picker_quick_picker_quick_picker_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ../../../../../../src/lib/time-frame-picker/quick-picker/quick-picker.component */ "KiNg");
-/* harmony import */ var _src_lib_time_frame_picker_time_frame_picker_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ../../../../../../src/lib/time-frame-picker/time-frame-picker.component */ "chzP");
-/* harmony import */ var _src_lib_popover_popover_component__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ../../../../../../src/lib/popover/popover.component */ "N1kL");
-/* harmony import */ var _src_lib_time_frame_picker_time_frame_format_pipe__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ../../../../../../src/lib/time-frame-picker/time-frame-format.pipe */ "Y/g/");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function DialogZIndexTestComponent_ng_template_34_ng_container_2_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainer"](0);
-} }
-function DialogZIndexTestComponent_ng_template_34_Template(rf, ctx) { if (rf & 1) {
-    const _r32 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 16);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](1, "div", 17);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, DialogZIndexTestComponent_ng_template_34_ng_container_2_Template, 1, 0, "ng-container", 18);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](3, "div", 19);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](4, "button", 20);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function DialogZIndexTestComponent_ng_template_34_Template_button_click_4_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r32); const ctx_r31 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"](); const _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](39); return ctx_r31.openInnerDialog(_r4); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](5, " Open small Dialog ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](6, "button", 21);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function DialogZIndexTestComponent_ng_template_34_Template_button_click_6_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r32); const ctx_r33 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"](); return ctx_r33.closeOverlay(); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](7, " Close overlay ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
-    const _r28 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](63);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngTemplateOutlet", _r28);
-} }
-function DialogZIndexTestComponent_ng_template_36_ng_container_4_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainer"](0);
-} }
-function DialogZIndexTestComponent_ng_template_36_ng_container_5_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainer"](0);
-} }
-function DialogZIndexTestComponent_ng_template_36_ng_container_6_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainer"](0);
-} }
-function DialogZIndexTestComponent_ng_template_36_ng_container_7_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainer"](0);
-} }
-function DialogZIndexTestComponent_ng_template_36_ng_container_8_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainer"](0);
-} }
-function DialogZIndexTestComponent_ng_template_36_ng_container_9_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainer"](0);
-} }
-function DialogZIndexTestComponent_ng_template_36_ng_container_10_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainer"](0);
-} }
-function DialogZIndexTestComponent_ng_template_36_ng_container_11_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainer"](0);
-} }
-function DialogZIndexTestComponent_ng_template_36_ng_container_12_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainer"](0);
-} }
-function DialogZIndexTestComponent_ng_template_36_ng_container_13_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainer"](0);
-} }
-const _c4 = function () { return { text: "Main overlay tooltip" }; };
-const _c5 = function () { return { text: "Inner overlay tooltip" }; };
-function DialogZIndexTestComponent_ng_template_36_Template(rf, ctx) { if (rf & 1) {
-    const _r45 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 16);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](1, "div", 17);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](2, "p");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](3, "This is the content of an CDK overlay container.");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](4, DialogZIndexTestComponent_ng_template_36_ng_container_4_Template, 1, 0, "ng-container", 22);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](5, DialogZIndexTestComponent_ng_template_36_ng_container_5_Template, 1, 0, "ng-container", 18);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](6, DialogZIndexTestComponent_ng_template_36_ng_container_6_Template, 1, 0, "ng-container", 18);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](7, DialogZIndexTestComponent_ng_template_36_ng_container_7_Template, 1, 0, "ng-container", 18);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](8, DialogZIndexTestComponent_ng_template_36_ng_container_8_Template, 1, 0, "ng-container", 18);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](9, DialogZIndexTestComponent_ng_template_36_ng_container_9_Template, 1, 0, "ng-container", 18);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](10, DialogZIndexTestComponent_ng_template_36_ng_container_10_Template, 1, 0, "ng-container", 18);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](11, DialogZIndexTestComponent_ng_template_36_ng_container_11_Template, 1, 0, "ng-container", 18);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](12, DialogZIndexTestComponent_ng_template_36_ng_container_12_Template, 1, 0, "ng-container", 18);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](13, DialogZIndexTestComponent_ng_template_36_ng_container_13_Template, 1, 0, "ng-container", 22);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](14, "div", 19);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](15, "button", 23);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function DialogZIndexTestComponent_ng_template_36_Template_button_click_15_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r45); const ctx_r44 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"](); return ctx_r44.showToast(); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](16, " Show toast ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](17, "button", 24);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function DialogZIndexTestComponent_ng_template_36_Template_button_click_17_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r45); const ctx_r46 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"](); return ctx_r46.toggleAppendToBody(); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵi18n"](18, 25);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](19, "button", 26);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function DialogZIndexTestComponent_ng_template_36_Template_button_click_19_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r45); const ctx_r47 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"](); return ctx_r47.toggleBusy(); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵi18n"](20, 27);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](21, "button", 28);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function DialogZIndexTestComponent_ng_template_36_Template_button_click_21_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r45); const ctx_r48 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"](); const _r6 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](41); return ctx_r48.openInnerDialog(_r6); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](22, " Open Inner Dialog ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](23, "button", 23);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function DialogZIndexTestComponent_ng_template_36_Template_button_click_23_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r45); const ctx_r49 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"](); return ctx_r49.closeOverlay(); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](24, " Close overlay ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
-    const _r26 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](61);
-    const _r22 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](57);
-    const _r8 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](43);
-    const _r10 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](45);
-    const _r12 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](47);
-    const _r14 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](49);
-    const _r24 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](59);
-    const _r20 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](55);
-    const _r16 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](51);
-    const _r18 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](53);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngTemplateOutlet", _r26)("ngTemplateOutletContext", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpureFunction0"](14, _c4));
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngTemplateOutlet", _r22);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngTemplateOutlet", _r8);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngTemplateOutlet", _r10);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngTemplateOutlet", _r12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngTemplateOutlet", _r14);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngTemplateOutlet", _r24);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngTemplateOutlet", _r20);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngTemplateOutlet", _r16);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngTemplateOutlet", _r18)("ngTemplateOutletContext", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpureFunction0"](15, _c5));
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵi18nExp"](ctx_r3.appendToBody);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵi18nApply"](18);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵi18nExp"](ctx_r3.busy);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵi18nApply"](20);
-} }
-function DialogZIndexTestComponent_ng_template_38_ng_container_2_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainer"](0);
-} }
-function DialogZIndexTestComponent_ng_template_38_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "nui-dialog-header", 29);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("closed", function DialogZIndexTestComponent_ng_template_38_Template_nui_dialog_header_closed_0_listener() { const close_r50 = ctx.close; return close_r50(); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](1, "div", 30);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, DialogZIndexTestComponent_ng_template_38_ng_container_2_Template, 1, 0, "ng-container", 18);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](3, "nui-dialog-footer");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](4, "button", 31);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function DialogZIndexTestComponent_ng_template_38_Template_button_click_4_listener() { const close_r50 = ctx.close; return close_r50(); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](5, " Close ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
-    const _r28 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](63);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngTemplateOutlet", _r28);
-} }
-function DialogZIndexTestComponent_ng_template_40_ng_container_4_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainer"](0);
-} }
-function DialogZIndexTestComponent_ng_template_40_ng_container_5_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainer"](0);
-} }
-function DialogZIndexTestComponent_ng_template_40_ng_container_6_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainer"](0);
-} }
-function DialogZIndexTestComponent_ng_template_40_ng_container_7_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainer"](0);
-} }
-function DialogZIndexTestComponent_ng_template_40_ng_container_8_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainer"](0);
-} }
-function DialogZIndexTestComponent_ng_template_40_ng_container_9_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainer"](0);
-} }
-function DialogZIndexTestComponent_ng_template_40_ng_container_10_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainer"](0);
-} }
-function DialogZIndexTestComponent_ng_template_40_ng_container_11_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainer"](0);
-} }
-function DialogZIndexTestComponent_ng_template_40_ng_container_12_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainer"](0);
-} }
-function DialogZIndexTestComponent_ng_template_40_ng_container_13_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainer"](0);
-} }
-const _c8 = function () { return { text: "Inner dialog tooltip" }; };
-function DialogZIndexTestComponent_ng_template_40_Template(rf, ctx) { if (rf & 1) {
-    const _r69 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "nui-dialog-header", 32);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("closed", function DialogZIndexTestComponent_ng_template_40_Template_nui_dialog_header_closed_0_listener() { const close_r55 = ctx.close; return close_r55(); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](1, "div", 30);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](2, "p");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](3, "This is the content of a dialog.");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](4, DialogZIndexTestComponent_ng_template_40_ng_container_4_Template, 1, 0, "ng-container", 22);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](5, DialogZIndexTestComponent_ng_template_40_ng_container_5_Template, 1, 0, "ng-container", 18);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](6, DialogZIndexTestComponent_ng_template_40_ng_container_6_Template, 1, 0, "ng-container", 18);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](7, DialogZIndexTestComponent_ng_template_40_ng_container_7_Template, 1, 0, "ng-container", 18);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](8, DialogZIndexTestComponent_ng_template_40_ng_container_8_Template, 1, 0, "ng-container", 18);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](9, DialogZIndexTestComponent_ng_template_40_ng_container_9_Template, 1, 0, "ng-container", 18);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](10, DialogZIndexTestComponent_ng_template_40_ng_container_10_Template, 1, 0, "ng-container", 18);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](11, DialogZIndexTestComponent_ng_template_40_ng_container_11_Template, 1, 0, "ng-container", 18);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](12, DialogZIndexTestComponent_ng_template_40_ng_container_12_Template, 1, 0, "ng-container", 18);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](13, DialogZIndexTestComponent_ng_template_40_ng_container_13_Template, 1, 0, "ng-container", 22);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](14, "nui-dialog-footer");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](15, "button", 33);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function DialogZIndexTestComponent_ng_template_40_Template_button_click_15_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r69); const ctx_r68 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"](); const _r0 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](35); return ctx_r68.openOverlay(_r0, "40%", "200px"); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](16, " +Overlay ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](17, "button", 34);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function DialogZIndexTestComponent_ng_template_40_Template_button_click_17_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r69); const ctx_r70 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"](); const _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](39); return ctx_r70.openInnerDialog(_r4); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](18, " +Dialog ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](19, "button", 23);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function DialogZIndexTestComponent_ng_template_40_Template_button_click_19_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r69); const ctx_r71 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"](); return ctx_r71.toggleBusy(); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵi18n"](20, 35);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](21, "button", 23);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function DialogZIndexTestComponent_ng_template_40_Template_button_click_21_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r69); const ctx_r72 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"](); return ctx_r72.showToast(); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](22, "Show toast");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](23, "button", 23);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function DialogZIndexTestComponent_ng_template_40_Template_button_click_23_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r69); const close_r55 = ctx.close; const ctx_r73 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"](); ctx_r73.closeDialog(); return close_r55(); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](24, "Close");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
-    const _r26 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](61);
-    const _r22 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](57);
-    const _r8 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](43);
-    const _r10 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](45);
-    const _r12 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](47);
-    const _r14 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](49);
-    const _r24 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](59);
-    const _r20 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](55);
-    const _r16 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](51);
-    const _r18 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](53);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngTemplateOutlet", _r26)("ngTemplateOutletContext", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpureFunction0"](12, _c8));
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngTemplateOutlet", _r22);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngTemplateOutlet", _r8);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngTemplateOutlet", _r10);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngTemplateOutlet", _r12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngTemplateOutlet", _r14);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngTemplateOutlet", _r24);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngTemplateOutlet", _r20);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngTemplateOutlet", _r16);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngTemplateOutlet", _r18)("ngTemplateOutletContext", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpureFunction0"](13, _c8));
-} }
-function DialogZIndexTestComponent_ng_template_42_nui_menu_action_1_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "nui-menu-action");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const item_r75 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](item_r75);
-} }
-function DialogZIndexTestComponent_ng_template_42_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "nui-menu", 36);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](1, DialogZIndexTestComponent_ng_template_42_nui_menu_action_1_Template, 2, 1, "nui-menu-action", 37);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const ctx_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("appendToBody", ctx_r9.appendToBody);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx_r9.items);
-} }
-function DialogZIndexTestComponent_ng_template_44_ng_container_4_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainerStart"](0);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](1, "nui-menu-item", 42);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainerEnd"]();
-} if (rf & 2) {
-    const item_r77 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](item_r77);
-} }
-function DialogZIndexTestComponent_ng_template_44_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "nui-popup", 38);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](1, "button", 39);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵi18n"](2, 40);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](3, "div", 41);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](4, DialogZIndexTestComponent_ng_template_44_ng_container_4_Template, 3, 1, "ng-container", 37);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("appendToBody", ctx_r11.appendToBody);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("iconRight", true)("isEmpty", false);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx_r11.items);
-} }
-function DialogZIndexTestComponent_ng_template_46_ng_container_2_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainerStart"](0);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](1, "nui-select-v2-option", 45);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵi18n"](2, 46);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainerEnd"]();
-} if (rf & 2) {
-    const item_r79 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("value", item_r79);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵi18nExp"](item_r79);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵi18nApply"](2);
-} }
-function DialogZIndexTestComponent_ng_template_46_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](0, "nui-select", 43);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](1, "nui-select-v2", 44);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, DialogZIndexTestComponent_ng_template_46_ng_container_2_Template, 3, 2, "ng-container", 37);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const ctx_r13 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("itemsSource", ctx_r13.items)("inline", true)("appendToBody", ctx_r13.appendToBody);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx_r13.items);
-} }
-function DialogZIndexTestComponent_ng_template_48_ng_container_2_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainerStart"](0);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](1, "nui-select-v2-option", 45);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](2, "div", 49);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](3, "span", 50);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainerEnd"]();
-} if (rf & 2) {
-    const item_r81 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("value", item_r81);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("nuiComboboxV2OptionHighlight", item_r81);
-} }
-function DialogZIndexTestComponent_ng_template_48_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](0, "nui-combobox", 47);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](1, "nui-combobox-v2", 48);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, DialogZIndexTestComponent_ng_template_48_ng_container_2_Template, 4, 2, "ng-container", 37);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const ctx_r15 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("itemsSource", ctx_r15.items)("inline", true)("appendToBody", ctx_r15.appendToBody);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx_r15.items);
-} }
-function DialogZIndexTestComponent_ng_template_50_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](0, "nui-spinner", 51);
-} if (rf & 2) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("show", true);
-} }
-function DialogZIndexTestComponent_ng_template_52_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 52);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, " We used focus trigger so that the popover with a ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](2, "span", 53);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](3, " big tooltip ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](4, " will remain open even after we move the mouse away from it even. ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const text_r82 = ctx.text;
-    const ctx_r19 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("busy", ctx_r19.busy);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate2"]("nuiTooltip", "", text_r82, " ", ctx_r19.longTextTooltip, "");
-} }
-function DialogZIndexTestComponent_ng_template_54_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 54);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](1, "nui-date-time-picker", 55);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const ctx_r21 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("appendToBody", ctx_r21.appendToBody)("model", ctx_r21.dt);
-} }
-function DialogZIndexTestComponent_ng_template_56_Template(rf, ctx) { if (rf & 1) {
-    const _r84 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "nui-time-frame-bar", 56);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("timeFrameChange", function DialogZIndexTestComponent_ng_template_56_Template_nui_time_frame_bar_timeFrameChange_0_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r84); const ctx_r83 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"](); return ctx_r83.timeFrame = $event; });
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](1, "nui-icon", 57);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipe"](3, "timeFrame");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](4, "nui-quick-picker", 58);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](5, "nui-time-frame-picker");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const ctx_r23 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("timeFrame", ctx_r23.timeFrame);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate1"](" ", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipeBind1"](3, 2, ctx_r23.timeFrame), " ");
-} }
-function DialogZIndexTestComponent_ng_template_58_ng_template_5_ng_container_6_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainer"](0);
-} }
-function DialogZIndexTestComponent_ng_template_58_ng_template_5_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "span");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, "I'm a popover with some content with a");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](2, "\u00A0 ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](3, "span", 62);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](4, "tooltip");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](5, " \u00A0inside. ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](6, DialogZIndexTestComponent_ng_template_58_ng_template_5_ng_container_6_Template, 1, 0, "ng-container", 18);
-} if (rf & 2) {
-    const ctx_r86 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"](2);
-    const _r28 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](63);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate1"]("nuiTooltip", "Tooltip inside popover ", ctx_r86.longTextTooltip, "");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngTemplateOutlet", _r28);
-} }
-function DialogZIndexTestComponent_ng_template_58_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](0, " I'm a ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](1, "nui-popover", 59);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](2, "span", 60);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](3, "popover");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](4, " with Focus Trigger ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](5, DialogZIndexTestComponent_ng_template_58_ng_template_5_Template, 7, 2, "ng-template", null, 61, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
-} if (rf & 2) {
-    const _r85 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](6);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("template", _r85);
-} }
-function DialogZIndexTestComponent_ng_template_60_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "span", 63);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, "I'm a long text tooltip! ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-} }
-function DialogZIndexTestComponent_ng_template_62_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "p");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam maximus faucibus bibendum. Aenean feugiat interdum leo sed posuere. Etiam at pulvinar enim, nec interdum purus. Pellentesque sit amet semper ipsum, eu vulputate tortor. Aliquam vitae nisi augue. Duis non erat sit amet sem venenatis accumsan at ullamcorper lorem. Morbi non turpis nibh. ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-} }
-class DialogZIndexTestComponent {
-    constructor(dialogService, toastService, overlay, viewContainerRef) {
-        this.dialogService = dialogService;
-        this.toastService = toastService;
-        this.overlay = overlay;
-        this.viewContainerRef = viewContainerRef;
-        this.busy = false;
-        this.appendToBody = false;
-        this.dt = moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2018-02-02");
-        this.items = ["Long description item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6"];
-        this.longTextTooltip = `
-    which should appear on top of any other components (popup, popover, menu,etc.) even if it's displayed after the popover has been displayed.
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam maximus faucibus bibendum.
-    Aenean feugiat interdum leo sed posuere. Etiam at pulvinar enim, nec interdum purus.
-    Pellentesque sit amet semper ipsum, eu vulputate tortor. Aliquam vitae nisi augue.
-    Duis non erat sit amet sem venenatis accumsan at ullamcorper lorem. Morbi non turpis nibh.
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam maximus faucibus bibendum.
-    Duis non erat sit amet sem venenatis accumsan at ullamcorper lorem. Morbi non turpis nibh.
-    `;
-        this.activeDialogs = [];
-        this.baseDate = moment_moment__WEBPACK_IMPORTED_MODULE_4___default()([2018, 5, 1, 15, 0, 0]);
-    }
-    ngOnInit() {
-        this.timeFrame = {
-            startDatetime: this.baseDate.clone().subtract(1, "weeks"),
-            endDatetime: this.baseDate.clone(),
-        };
-    }
-    toggleBusy() {
-        this.busy = !this.busy;
-    }
-    toggleAppendToBody() {
-        this.appendToBody = !this.appendToBody;
-    }
-    openOverlay(templateRef, width, height) {
-        const positionStrategy = this.overlay.position().global()
-            .centerHorizontally()
-            .centerVertically();
-        this.overlayRef = this.overlay.create({
-            positionStrategy,
-            hasBackdrop: true,
-            panelClass: ["main-overlay-panel", "d-flex", "flex-column"],
-            width: width,
-            height: height,
-            scrollStrategy: this.overlay.scrollStrategies.block(),
-        });
-        const portal = new _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_1__["TemplatePortal"](templateRef, this.viewContainerRef);
-        this.overlayRef.attach(portal);
-    }
-    closeOverlay() {
-        this.overlayRef.detach();
-    }
-    openInnerDialog(templateRef) {
-        this.activeDialogs.push(this.dialogService.open(templateRef, { windowClass: "inner-dialog" }));
-    }
-    closeDialog() {
-        var _a;
-        (_a = this.activeDialogs.pop()) === null || _a === void 0 ? void 0 : _a.close();
-    }
-    showToast() {
-        this.toastService.success({ message: $localize `Sample toast displayed!`, title: $localize `Event` });
-    }
-}
-DialogZIndexTestComponent.ɵfac = function DialogZIndexTestComponent_Factory(t) { return new (t || DialogZIndexTestComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["DialogService"]), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["ToastService"]), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_0__["Overlay"]), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_2__["ViewContainerRef"])); };
-DialogZIndexTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({ type: DialogZIndexTestComponent, selectors: [["nui-dialog-zindex--test"]], decls: 64, vars: 0, consts: function () { let i18n_0; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-        const MSG_EXTERNAL_2572580832429526198$$DEMO_SRC_COMPONENTS_DEMO_DIALOG_DIALOG_TEST_DIALOG_ZINDEX_TEST_COMPONENT_TS__1 = goog.getMsg(" appendToBody={$interpolation} ", { "interpolation": "\uFFFD0\uFFFD" });
-        i18n_0 = MSG_EXTERNAL_2572580832429526198$$DEMO_SRC_COMPONENTS_DEMO_DIALOG_DIALOG_TEST_DIALOG_ZINDEX_TEST_COMPONENT_TS__1;
-    }
-    else {
-        i18n_0 = $localize `:␟4817379f179376c5d5db06a9a19289c38c4a2088␟2572580832429526198: appendToBody=${"\uFFFD0\uFFFD"}:INTERPOLATION: `;
-    } let i18n_2; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-        const MSG_EXTERNAL_8906943059497155563$$DEMO_SRC_COMPONENTS_DEMO_DIALOG_DIALOG_TEST_DIALOG_ZINDEX_TEST_COMPONENT_TS__3 = goog.getMsg(" busy={$interpolation} ", { "interpolation": "\uFFFD0\uFFFD" });
-        i18n_2 = MSG_EXTERNAL_8906943059497155563$$DEMO_SRC_COMPONENTS_DEMO_DIALOG_DIALOG_TEST_DIALOG_ZINDEX_TEST_COMPONENT_TS__3;
-    }
-    else {
-        i18n_2 = $localize `:␟e1e3bda292b8bc713dfe7e9129b59ee328b9c268␟8906943059497155563: busy=${"\uFFFD0\uFFFD"}:INTERPOLATION: `;
-    } let i18n_6; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-        const MSG_EXTERNAL_1603682264641628393$$DEMO_SRC_COMPONENTS_DEMO_DIALOG_DIALOG_TEST_DIALOG_ZINDEX_TEST_COMPONENT_TS__7 = goog.getMsg(" Switch busy ");
-        i18n_6 = MSG_EXTERNAL_1603682264641628393$$DEMO_SRC_COMPONENTS_DEMO_DIALOG_DIALOG_TEST_DIALOG_ZINDEX_TEST_COMPONENT_TS__7;
-    }
-    else {
-        i18n_6 = $localize `:␟56bd0d88d7f8b94de09397ed861f787676c43bd0␟1603682264641628393: Switch busy `;
-    } let i18n_9; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-        const MSG_EXTERNAL_3013441546499596593$$DEMO_SRC_COMPONENTS_DEMO_DIALOG_DIALOG_TEST_DIALOG_ZINDEX_TEST_COMPONENT_TS__10 = goog.getMsg(" Popup ");
-        i18n_9 = MSG_EXTERNAL_3013441546499596593$$DEMO_SRC_COMPONENTS_DEMO_DIALOG_DIALOG_TEST_DIALOG_ZINDEX_TEST_COMPONENT_TS__10;
-    }
-    else {
-        i18n_9 = $localize `:␟349152e79d4998da4e5ba75d4d65f65ed4b52ab5␟3013441546499596593: Popup `;
-    } let i18n_11; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-        const MSG_EXTERNAL_1628382286062172232$$DEMO_SRC_COMPONENTS_DEMO_DIALOG_DIALOG_TEST_DIALOG_ZINDEX_TEST_COMPONENT_TS___12 = goog.getMsg("{$interpolation}", { "interpolation": "\uFFFD0\uFFFD" });
-        i18n_11 = MSG_EXTERNAL_1628382286062172232$$DEMO_SRC_COMPONENTS_DEMO_DIALOG_DIALOG_TEST_DIALOG_ZINDEX_TEST_COMPONENT_TS___12;
-    }
-    else {
-        i18n_11 = $localize `:␟bbffadc040d79a90f05c750b360e43a0cadce635␟1628382286062172232:${"\uFFFD0\uFFFD"}:INTERPOLATION:`;
-    } let i18n_13; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-        const MSG_EXTERNAL_7640074618766962714$$DEMO_SRC_COMPONENTS_DEMO_DIALOG_DIALOG_TEST_DIALOG_ZINDEX_TEST_COMPONENT_TS__14 = goog.getMsg("Combobox v1");
-        i18n_13 = MSG_EXTERNAL_7640074618766962714$$DEMO_SRC_COMPONENTS_DEMO_DIALOG_DIALOG_TEST_DIALOG_ZINDEX_TEST_COMPONENT_TS__14;
-    }
-    else {
-        i18n_13 = $localize `:␟fd0eb1f8a5bb5b6f11bc7132ee0fe30ea1eb12f8␟7640074618766962714:Combobox v1`;
-    } let i18n_15; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-        const MSG_EXTERNAL_1236517560182531840$$DEMO_SRC_COMPONENTS_DEMO_DIALOG_DIALOG_TEST_DIALOG_ZINDEX_TEST_COMPONENT_TS__16 = goog.getMsg("Spinner");
-        i18n_15 = MSG_EXTERNAL_1236517560182531840$$DEMO_SRC_COMPONENTS_DEMO_DIALOG_DIALOG_TEST_DIALOG_ZINDEX_TEST_COMPONENT_TS__16;
-    }
-    else {
-        i18n_15 = $localize `:␟7104de91c8c73253641d3792fb3b4e2fb8c9c2d2␟1236517560182531840:Spinner`;
-    } let i18n_17; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-        const MSG_EXTERNAL_533206746245095297$$DEMO_SRC_COMPONENTS_DEMO_DIALOG_DIALOG_TEST_DIALOG_ZINDEX_TEST_COMPONENT_TS__18 = goog.getMsg("Optional spinner description");
-        i18n_17 = MSG_EXTERNAL_533206746245095297$$DEMO_SRC_COMPONENTS_DEMO_DIALOG_DIALOG_TEST_DIALOG_ZINDEX_TEST_COMPONENT_TS__18;
-    }
-    else {
-        i18n_17 = $localize `:␟91ccfaf08fe940b3e859dd3eaa40073cb40a0610␟533206746245095297:Optional spinner description`;
-    } return [["id", "nui-visual-test-open-overlay-btn", "nui-button", "", "type", "button", 3, "click"], ["smallOverlayContent", ""], ["mainOverlayContent", ""], ["smallDialogContent", ""], ["innerDialogContent", ""], ["menu", ""], ["popup", ""], ["select", ""], ["combobox", ""], ["spinner", ""], ["busyTemplate", ""], ["dtPicker", ""], ["timeframeBarTemplate", ""], ["popover", ""], ["tooltip", ""], ["loremIpsum", ""], [1, "overlay-container"], [1, "overlay-body"], [4, "ngTemplateOutlet"], [1, "overlay-footer"], ["id", "nui-visual-test-open-small-dialog-btn", "nui-button", "", "type", "button", 3, "click"], ["id", "nui-visual-test-close-overlay-from-small-btn", "nui-button", "", "type", "button", 3, "click"], [4, "ngTemplateOutlet", "ngTemplateOutletContext"], ["nui-button", "", "type", "button", 3, "click"], ["id", "nui-visual-test-switch-appendToBody-btn", "nui-button", "", "type", "button", 3, "click"], i18n_0, ["id", "nui-visual-test-switch-busy-btn", "nui-button", "", "type", "button", 3, "click"], i18n_2, ["id", "nui-visual-test-inner-dialog-btn", "nui-button", "", "type", "button", 3, "click"], ["title", "Small Dialog Title", 3, "closed"], [1, "dialog-body"], ["id", "nui-visual-test-close-small-dialog-btn", "nui-button", "", "type", "button", 3, "click"], ["title", "Inner Dialog Title", 3, "closed"], ["id", "nui-visual-test-open-overlay-from-dialog-btn", "nui-button", "", "type", "button", 3, "click"], ["id", "nui-visual-test-open-small-dialog-from-dialog-btn", "nui-button", "", "type", "button", 3, "click"], i18n_6, ["title", "Menu", 1, "clickable-visual-item", 3, "appendToBody"], [4, "ngFor", "ngForOf"], [1, "clickable-visual-item", 3, "appendToBody"], ["nui-button", "", "nuiPopupToggle", "", "type", "button", "icon", "caret-down", 1, "menu-button", 3, "iconRight", "isEmpty"], i18n_9, ["popupAreaContent", ""], ["tabindex", "0", "nuiTooltip", "This tooltip is part of a menu item"], ["placeholder", "Select v1", 1, "clickable-visual-item", 3, "itemsSource", "inline", "appendToBody"], ["placeholder", "Select v2", 1, "clickable-visual-item", "d-inline-flex"], [3, "value"], i18n_11, ["placeholder", i18n_13, 1, "clickable-visual-item", 3, "itemsSource", "inline", "appendToBody"], ["placeholder", "Combobox v2", 1, "clickable-visual-item", "d-inline-flex"], [1, "d-flex", "align-items-center"], [3, "nuiComboboxV2OptionHighlight"], ["size", "large", "message", i18n_15, "helpText", i18n_17, 3, "show"], ["nui-busy", "", 1, "busy-content", 3, "busy"], ["tooltipPlacement", "bottom", 1, "nui-text-widget--hoverable", 3, "nuiTooltip"], [1, "inline-flex"], ["displayMode", "inline", 1, "clickable-visual-item", 3, "appendToBody", "model"], [3, "timeFrame", "timeFrameChange"], ["icon", "calendar", 1, "pr-3"], ["timeFrameSelection", ""], ["tabindex", "1", "trigger", "focus", 1, "clickable-visual-item", 3, "template"], [1, "nui-text-widget--hoverable"], ["popoverWithBasicUsage", ""], [1, "nui-text-widget--hoverable", 3, "nuiTooltip"], ["id", "long-text-tooltip", "nuiTooltip", "Tooltip should appear on top of any other components (popup, popover, menu,etc.) even if it's displayed after the popover has been displayed.", "tooltipPlacement", "bottom", 1, "nui-text-widget--hoverable"]]; }, template: function DialogZIndexTestComponent_Template(rf, ctx) { if (rf & 1) {
-        const _r89 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵgetCurrentView"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "h2");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, "Basic Usage");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](2, "nui-simple-dialog-example");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](3, "h2");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](4, "Usage as a Component");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](5, "nui-component-as-content-example");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](6, "h2");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](7, "Severity");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](8, "nui-dialog-severity-example");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](9, "h2");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](10, "Custom Dialog header");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](11, "nui-header-buttons-example");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](12, "h2");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](13, "Dialog Sizes");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](14, "nui-dialog-sizes-example");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](15, "h2");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](16, "Position on screen");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](17, "nui-dialog-position-example");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](18, "h2");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](19, "Custom class");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](20, "nui-dialog-custom-class-example");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](21, "h2");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](22, "Confirmation Dialog");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](23, "nui-confirmation-dialog-example");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](24, "h2");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](25, "Keyboard Options");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](26, "nui-dialog-with-keyboard-example");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](27, "h2");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](28, "Static Backdrop");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](29, "nui-dialog-with-static-backdrop-example");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](30, "h2");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](31, "Z-Index Strategy");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](32, "button", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function DialogZIndexTestComponent_Template_button_click_32_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r89); const _r2 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](37); return ctx.openOverlay(_r2, "60%", "400px"); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](33, " Open overlay\n");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](34, DialogZIndexTestComponent_ng_template_34_Template, 8, 1, "ng-template", null, 1, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](36, DialogZIndexTestComponent_ng_template_36_Template, 25, 16, "ng-template", null, 2, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](38, DialogZIndexTestComponent_ng_template_38_Template, 6, 1, "ng-template", null, 3, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](40, DialogZIndexTestComponent_ng_template_40_Template, 25, 14, "ng-template", null, 4, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](42, DialogZIndexTestComponent_ng_template_42_Template, 2, 2, "ng-template", null, 5, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](44, DialogZIndexTestComponent_ng_template_44_Template, 5, 4, "ng-template", null, 6, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](46, DialogZIndexTestComponent_ng_template_46_Template, 3, 4, "ng-template", null, 7, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](48, DialogZIndexTestComponent_ng_template_48_Template, 3, 4, "ng-template", null, 8, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](50, DialogZIndexTestComponent_ng_template_50_Template, 1, 1, "ng-template", null, 9, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](52, DialogZIndexTestComponent_ng_template_52_Template, 5, 3, "ng-template", null, 10, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](54, DialogZIndexTestComponent_ng_template_54_Template, 2, 2, "ng-template", null, 11, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](56, DialogZIndexTestComponent_ng_template_56_Template, 6, 4, "ng-template", null, 12, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](58, DialogZIndexTestComponent_ng_template_58_Template, 7, 1, "ng-template", null, 13, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](60, DialogZIndexTestComponent_ng_template_60_Template, 2, 0, "ng-template", null, 14, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](62, DialogZIndexTestComponent_ng_template_62_Template, 2, 0, "ng-template", null, 15, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
-    } }, directives: [_simple_dialog_simple_dialog_example_component__WEBPACK_IMPORTED_MODULE_5__["SimpleDialogExampleComponent"], _component_as_content_component_as_content_example_component__WEBPACK_IMPORTED_MODULE_6__["ComponentAsContentExampleComponent"], _dialog_severity_dialog_severity_example_component__WEBPACK_IMPORTED_MODULE_7__["DialogSeverityExampleComponent"], _header_buttons_header_buttons_example_component__WEBPACK_IMPORTED_MODULE_8__["HeaderButtonsExampleComponent"], _dialog_sizes_dialog_sizes_example_component__WEBPACK_IMPORTED_MODULE_9__["DialogSizesExampleComponent"], _dialog_position_dialog_position_example_component__WEBPACK_IMPORTED_MODULE_10__["DialogPositionExampleComponent"], _dialog_custom_class_dialog_custom_class_example_component__WEBPACK_IMPORTED_MODULE_11__["DialogCustomClassExampleComponent"], _confirmation_dialog_confirmation_dialog_example_component__WEBPACK_IMPORTED_MODULE_12__["ConfirmationDialogExampleComponent"], _dialog_keyboard_dialog_with_keyboard_example_component__WEBPACK_IMPORTED_MODULE_13__["DialogWithKeyboardExampleComponent"], _dialog_static_backdrop_dialog_with_static_backdrop_example_component__WEBPACK_IMPORTED_MODULE_14__["DialogWithStaticBackdropExampleComponent"], _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_15__["ButtonComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_16__["NgTemplateOutlet"], _src_lib_dialog_dialog_header_component__WEBPACK_IMPORTED_MODULE_17__["DialogHeaderComponent"], _src_lib_dialog_dialog_footer_component__WEBPACK_IMPORTED_MODULE_18__["DialogFooterComponent"], _src_lib_menu_menu_menu_component__WEBPACK_IMPORTED_MODULE_19__["MenuComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_16__["NgForOf"], _src_lib_menu_menu_item_menu_action_menu_action_component__WEBPACK_IMPORTED_MODULE_20__["MenuActionComponent"], _src_lib_popup_adapter_popup_adapter_component__WEBPACK_IMPORTED_MODULE_21__["PopupComponent"], _src_lib_popup_popup_toggle_directive__WEBPACK_IMPORTED_MODULE_22__["PopupToggleDirective"], _src_lib_menu_menu_item_menu_item_menu_item_component__WEBPACK_IMPORTED_MODULE_23__["MenuItemComponent"], _src_lib_tooltip_tooltip_directive__WEBPACK_IMPORTED_MODULE_24__["TooltipDirective"], _src_lib_select_select_component__WEBPACK_IMPORTED_MODULE_25__["SelectComponent"], _src_lib_select_v2_select_select_v2_component__WEBPACK_IMPORTED_MODULE_26__["SelectV2Component"], _src_lib_select_v2_option_select_v2_option_component__WEBPACK_IMPORTED_MODULE_27__["SelectV2OptionComponent"], _src_lib_select_combobox_combobox_component__WEBPACK_IMPORTED_MODULE_28__["ComboboxComponent"], _src_lib_select_v2_combobox_v2_combobox_v2_component__WEBPACK_IMPORTED_MODULE_29__["ComboboxV2Component"], _src_lib_select_v2_combobox_v2_option_highlight_combobox_v2_option_highlight_directive__WEBPACK_IMPORTED_MODULE_30__["ComboboxV2OptionHighlightDirective"], _src_lib_spinner_spinner_component__WEBPACK_IMPORTED_MODULE_31__["SpinnerComponent"], _src_lib_busy_busy_component__WEBPACK_IMPORTED_MODULE_32__["BusyComponent"], _src_lib_date_time_picker_date_time_picker_component__WEBPACK_IMPORTED_MODULE_33__["DateTimePickerComponent"], _src_lib_convenience_time_frame_bar_time_frame_bar_component__WEBPACK_IMPORTED_MODULE_34__["TimeFrameBarComponent"], _src_lib_icon_icon_component__WEBPACK_IMPORTED_MODULE_35__["IconComponent"], _src_lib_time_frame_picker_quick_picker_quick_picker_component__WEBPACK_IMPORTED_MODULE_36__["QuickPickerComponent"], _src_lib_time_frame_picker_time_frame_picker_component__WEBPACK_IMPORTED_MODULE_37__["TimeFramePickerComponent"], _src_lib_popover_popover_component__WEBPACK_IMPORTED_MODULE_38__["PopoverComponent"]], pipes: [_src_lib_time_frame_picker_time_frame_format_pipe__WEBPACK_IMPORTED_MODULE_39__["TimeFrameFormatPipe"]], styles: [".main-overlay-panel {\n  padding: 10px;\n  background: #fff;\n}\n.main-overlay-panel .overlay-footer {\n  display: flex;\n  justify-content: flex-end;\n  padding: 10px;\n}\n.main-overlay-panel .overlay-footer button {\n  margin-left: 15px;\n}\n.busy-content {\n  border: 1px #d9d9d9 solid;\n  padding: 10px;\n}\n.inline-flex {\n  display: inline-flex;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImRpYWxvZy16aW5kZXgtdGVzdC5jb21wb25lbnQubGVzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFFQTtFQUNJLGFBQUE7RUFDQSxnQkFBQTtBQURKO0FBREE7RUFLUSxhQUFBO0VBQ0EseUJBQUE7RUFDQSxhQUFBO0FBRFI7QUFOQTtFQVNZLGlCQUFBO0FBQVo7QUFLQTtFQUNJLHlCQUFBO0VBQ0EsYUFBQTtBQUhKO0FBTUE7RUFDSSxvQkFBQTtBQUpKIiwiZmlsZSI6ImRpYWxvZy16aW5kZXgtdGVzdC5jb21wb25lbnQubGVzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgKHJlZmVyZW5jZSkgXCJudWktZnJhbWV3b3JrLXZhcmlhYmxlc1wiO1xuXG4ubWFpbi1vdmVybGF5LXBhbmVsIHtcbiAgICBwYWRkaW5nOiBAbnVpLXNwYWNlLXNtO1xuICAgIGJhY2tncm91bmQ6IEBudWktY29sb3ItYmctY29udGVudDtcblxuICAgIC5vdmVybGF5LWZvb3RlciB7XG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgIGp1c3RpZnktY29udGVudDogZmxleC1lbmQ7XG4gICAgICAgIHBhZGRpbmc6IEBudWktc3BhY2Utc207XG4gICAgICAgIGJ1dHRvbiB7XG4gICAgICAgICAgICBtYXJnaW4tbGVmdDogMTVweDtcbiAgICAgICAgfVxuICAgIH1cbn1cblxuLmJ1c3ktY29udGVudCB7XG4gICAgYm9yZGVyOiAxcHggQG51aS1jb2xvci1saW5lLWRlZmF1bHQgc29saWQ7XG4gICAgcGFkZGluZzogQG51aS1zcGFjZS1zbTtcbn1cblxuLmlubGluZS1mbGV4IHtcbiAgICBkaXNwbGF5OiBpbmxpbmUtZmxleDtcbn1cblxuIl19 */"], encapsulation: 2 });
-
+/* harmony default export */ __webpack_exports__["default"] = ("<h2>Basic Usage</h2>\n<nui-simple-dialog-example></nui-simple-dialog-example>\n\n<h2>Usage as a Component</h2>\n<nui-component-as-content-example></nui-component-as-content-example>\n\n<h2>Severity</h2>\n<nui-dialog-severity-example></nui-dialog-severity-example>\n\n<h2>Custom Dialog header</h2>\n<nui-header-buttons-example></nui-header-buttons-example>\n\n<h2>Dialog Sizes</h2>\n<nui-dialog-sizes-example></nui-dialog-sizes-example>\n\n<h2>Position on screen</h2>\n<nui-dialog-position-example></nui-dialog-position-example>\n\n<h2>Custom class</h2>\n<nui-dialog-custom-class-example></nui-dialog-custom-class-example>\n\n<h2>Confirmation Dialog</h2>\n<nui-confirmation-dialog-example></nui-confirmation-dialog-example>\n\n<h2>Keyboard Options</h2>\n<nui-dialog-with-keyboard-example></nui-dialog-with-keyboard-example>\n\n<h2>Static Backdrop</h2>\n<nui-dialog-with-static-backdrop-example></nui-dialog-with-static-backdrop-example>\n\n<h2>Z-Index Strategy</h2>\n<button id=\"nui-visual-test-open-overlay-btn\" nui-button type=\"button\"\n        (click)=\"openOverlay(mainOverlayContent, '60%', '400px')\">\n    Open overlay\n</button>\n\n<ng-template #smallOverlayContent>\n    <div class=\"overlay-container\">\n        <div class=\"overlay-body\">\n            <ng-container *ngTemplateOutlet=\"loremIpsum\"></ng-container>\n        </div>\n    </div>\n    <div class=\"overlay-footer\">\n        <button id=\"nui-visual-test-open-small-dialog-btn\" nui-button type=\"button\"\n                (click)=\"openInnerDialog(smallDialogContent)\">\n            Open small Dialog\n        </button>\n        <button id=\"nui-visual-test-close-overlay-from-small-btn\" nui-button type=\"button\" (click)=\"closeOverlay()\">\n            Close overlay\n        </button>\n    </div>\n</ng-template>\n<ng-template #mainOverlayContent>\n    <div class=\"overlay-container\">\n        <div class=\"overlay-body\">\n            <p>This is the content of an CDK overlay container.</p>\n            <ng-container *ngTemplateOutlet=\"tooltip;context: {text:'Main overlay tooltip'}\"></ng-container>\n            <ng-container *ngTemplateOutlet=\"timeframeBarTemplate\"></ng-container>\n            <ng-container *ngTemplateOutlet=\"menu\"></ng-container>\n            <ng-container *ngTemplateOutlet=\"popup\"></ng-container>\n            <ng-container *ngTemplateOutlet=\"select\"></ng-container>\n            <ng-container *ngTemplateOutlet=\"combobox\"></ng-container>\n            <ng-container *ngTemplateOutlet=\"popover\"></ng-container>\n            <ng-container *ngTemplateOutlet=\"dtPicker\"></ng-container>\n            <ng-container *ngTemplateOutlet=\"spinner\"></ng-container>\n            <ng-container *ngTemplateOutlet=\"busyTemplate;context: {text:'Inner overlay tooltip'}\"></ng-container>\n        </div>\n    </div>\n    <div class=\"overlay-footer\">\n        <button nui-button type=\"button\" (click)=\"showToast()\">\n            Show toast\n        </button>\n        <button id=\"nui-visual-test-switch-appendToBody-btn\"\n                nui-button\n                type=\"button\"\n                (click)=\"toggleAppendToBody()\"\n                i18n>\n            appendToBody={{appendToBody}}\n        </button>\n        <button id=\"nui-visual-test-switch-busy-btn\"\n                nui-button\n                type=\"button\"\n                (click)=\"toggleBusy()\"\n                i18n>\n            busy={{busy}}\n        </button>\n        <button id=\"nui-visual-test-inner-dialog-btn\" nui-button type=\"button\"\n                (click)=\"openInnerDialog(innerDialogContent)\">\n            Open Inner Dialog\n        </button>\n        <button nui-button type=\"button\" (click)=\"closeOverlay()\">\n            Close overlay\n        </button>\n    </div>\n</ng-template>\n\n<ng-template #smallDialogContent let-close=\"close\" let-dismiss=\"dismiss\">\n    <nui-dialog-header title=\"Small Dialog Title\" (closed)=\"close()\"></nui-dialog-header>\n    <div class=\"dialog-body\">\n        <ng-container *ngTemplateOutlet=\"loremIpsum\"></ng-container>\n    </div>\n    <nui-dialog-footer>\n        <button id=\"nui-visual-test-close-small-dialog-btn\" nui-button type=\"button\" (click)=\"close()\">\n            Close\n        </button>\n    </nui-dialog-footer>\n</ng-template>\n\n<ng-template #innerDialogContent let-close=\"close\" let-dismiss=\"dismiss\">\n    <nui-dialog-header title=\"Inner Dialog Title\" (closed)=\"close()\"></nui-dialog-header>\n    <div class=\"dialog-body\">\n        <p>This is the content of a dialog.</p>\n        <ng-container *ngTemplateOutlet=\"tooltip;context: {text:'Inner dialog tooltip'}\"></ng-container>\n        <ng-container *ngTemplateOutlet=\"timeframeBarTemplate\"></ng-container>\n        <ng-container *ngTemplateOutlet=\"menu\"></ng-container>\n        <ng-container *ngTemplateOutlet=\"popup\"></ng-container>\n        <ng-container *ngTemplateOutlet=\"select\"></ng-container>\n        <ng-container *ngTemplateOutlet=\"combobox\"></ng-container>\n        <ng-container *ngTemplateOutlet=\"popover\"></ng-container>\n        <ng-container *ngTemplateOutlet=\"dtPicker\"></ng-container>\n        <ng-container *ngTemplateOutlet=\"spinner\"></ng-container>\n        <ng-container *ngTemplateOutlet=\"busyTemplate;context: {text:'Inner dialog tooltip'}\"></ng-container>\n    </div>\n    <nui-dialog-footer>\n        <button id=\"nui-visual-test-open-overlay-from-dialog-btn\" nui-button type=\"button\"\n                (click)=\"openOverlay(smallOverlayContent, '40%', '200px')\">\n            +Overlay\n        </button>\n        <button id=\"nui-visual-test-open-small-dialog-from-dialog-btn\" nui-button type=\"button\"\n                (click)=\"openInnerDialog(smallDialogContent)\">\n            +Dialog\n        </button>\n        <button nui-button\n                type=\"button\"\n                (click)=\"toggleBusy()\"\n                i18n>\n            Switch busy\n        </button>\n        <button nui-button type=\"button\" (click)=\"showToast()\">Show toast</button>\n        <button nui-button type=\"button\" (click)=\"closeDialog();close()\">Close</button>\n    </nui-dialog-footer>\n</ng-template>\n\n<ng-template #menu>\n    <nui-menu [appendToBody]=\"appendToBody\" title=\"Menu\"class=\"clickable-visual-item\">\n        <nui-menu-action *ngFor=\"let item of items\">{{item}}</nui-menu-action>\n    </nui-menu>\n</ng-template>\n\n<ng-template #popup>\n    <nui-popup [appendToBody]=\"appendToBody\" class=\"clickable-visual-item\">\n        <button nui-button\n                nuiPopupToggle\n                type=\"button\"\n                icon=\"caret-down\"\n                [iconRight]=\"true\"\n                class=\"menu-button\"\n                [isEmpty]=\"false\"\n                i18n>\n            Popup\n        </button>\n        <div popupAreaContent>\n            <ng-container *ngFor=\"let item of items\">\n                <nui-menu-item tabindex=\"0\" nuiTooltip=\"This tooltip is part of a menu item\">{{item}}</nui-menu-item>\n            </ng-container>\n        </div>\n    </nui-popup>\n</ng-template>\n\n<ng-template #select>\n    <!-- select v1 -->\n    <nui-select\n        class=\"clickable-visual-item\"\n        [itemsSource]=\"items\"\n        [inline]=\"true\"\n        [appendToBody]=\"appendToBody\"\n        placeholder=\"Select v1\"\n    ></nui-select>\n\n    <!-- select v2 -->\n    <nui-select-v2\n        class=\"clickable-visual-item d-inline-flex\"\n        placeholder=\"Select v2\">\n        <ng-container *ngFor=\"let item of items\">\n            <nui-select-v2-option [value]=\"item\" i18n>{{item}}</nui-select-v2-option>\n        </ng-container>\n    </nui-select-v2>\n\n</ng-template>\n\n<ng-template #combobox>\n    <nui-combobox\n        class=\"clickable-visual-item\"\n        [itemsSource]=\"items\"\n        [inline]=\"true\"\n        [appendToBody]=\"appendToBody\"\n        i18n-placeholder\n        placeholder=\"Combobox v1\"></nui-combobox>\n\n    <nui-combobox-v2\n        class=\"clickable-visual-item d-inline-flex\"\n        placeholder=\"Combobox v2\">\n        <ng-container *ngFor=\"let item of items\">\n            <nui-select-v2-option [value]=\"item\">\n                <div class=\"d-flex align-items-center\">\n                    <span [nuiComboboxV2OptionHighlight]=\"item\"></span>\n                </div>\n            </nui-select-v2-option>\n        </ng-container>\n    </nui-combobox-v2>\n</ng-template>\n\n<ng-template #spinner>\n    <nui-spinner size=\"large\"\n                 [show]=\"true\"\n                 message=\"Spinner\" i18n-message\n                 helpText=\"Optional spinner description\" i18n-helpText>\n    </nui-spinner>\n</ng-template>\n\n<ng-template #busyTemplate let-text=\"text\">\n    <div nui-busy [busy]=\"busy\" class=\"busy-content\">\n        We used focus trigger so that the popover with a\n        <span nuiTooltip=\"{{text}} {{longTextTooltip}}\"\n            tooltipPlacement=\"bottom\"\n            class=\"nui-text-widget--hoverable\">\n            big tooltip\n        </span> will remain open even after we move the mouse away from it even.\n    </div>\n</ng-template>\n\n<ng-template #dtPicker>\n    <div class=\"inline-flex\">\n        <nui-date-time-picker\n            class=\"clickable-visual-item\"\n            [appendToBody]=\"appendToBody\"\n            [model]=\"dt\"\n            displayMode=\"inline\">\n        </nui-date-time-picker>\n    </div>\n</ng-template>\n\n<ng-template #timeframeBarTemplate>\n    <nui-time-frame-bar [(timeFrame)]=\"timeFrame\">\n\n        <!-- content for default projection slot -->\n        <nui-icon icon=\"calendar\" class=\"pr-3\"></nui-icon>\n        {{timeFrame | timeFrame}}\n\n        <!-- content for time frame selection projection slot -->\n        <nui-quick-picker timeFrameSelection>\n            <nui-time-frame-picker></nui-time-frame-picker>\n        </nui-quick-picker>\n\n    </nui-time-frame-bar>\n</ng-template>\n\n<ng-template #popover>\n    I'm a\n    <nui-popover tabindex=\"1\"\n                 class=\"clickable-visual-item\"\n                 trigger=\"focus\"\n                 [template]=\"popoverWithBasicUsage\">\n        <span class=\"nui-text-widget--hoverable\">popover</span>\n    </nui-popover>\n    with Focus Trigger\n    <ng-template #popoverWithBasicUsage>\n        <span>I'm a popover with some content with a</span>&nbsp;\n        <span nuiTooltip=\"Tooltip inside popover {{longTextTooltip}}\" class=\"nui-text-widget--hoverable\">tooltip</span>\n        &nbsp;inside.\n        <ng-container *ngTemplateOutlet=\"loremIpsum\"></ng-container>\n    </ng-template>\n</ng-template>\n\n<ng-template #tooltip let-text=\"text\">\n    <span id=\"long-text-tooltip\"\n          nuiTooltip=\"Tooltip should appear on top of any other components (popup, popover, menu,etc.) even if it's displayed after the popover has been displayed.\"\n          tooltipPlacement=\"bottom\"\n          class=\"nui-text-widget--hoverable\">I'm a long text tooltip!\n    </span>\n</ng-template>\n\n<ng-template #loremIpsum>\n    <p>\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam maximus faucibus bibendum.\n        Aenean feugiat interdum leo sed posuere. Etiam at pulvinar enim, nec interdum purus.\n        Pellentesque sit amet semper ipsum, eu vulputate tortor. Aliquam vitae nisi augue.\n        Duis non erat sit amet sem venenatis accumsan at ullamcorper lorem. Morbi non turpis nibh.\n    </p>\n</ng-template>\n");
 
 /***/ }),
 
@@ -3877,7 +3883,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { NgModule } from \"@angular/core\";\nimport { RouterModule } from \"@angular/router\";\nimport {\n    DEMO_PATH_TOKEN,\n    NuiBusyModule,\n    NuiButtonModule,\n    NuiDateTimePickerModule,\n    NuiDialogModule,\n    NuiDocsModule,\n    NuiIconModule,\n    NuiMenuModule,\n    NuiMessageModule,\n    NuiPopoverModule,\n    NuiPopupModule,\n    NuiSelectModule,\n    NuiSelectV2Module,\n    NuiSpinnerModule,\n    NuiTimeFrameBarModule,\n    NuiTimeFramePickerModule,\n    NuiTooltipModule,\n    SrlcStage,\n} from \"@nova-ui/bits\";\n\nimport {\n    ComponentAsContentExampleComponent,\n    ConfirmationDialogExampleComponent,\n    DialogActionBeforeClosureExampleComponent,\n    DialogAfterOpenedExampleComponent,\n    DialogContentExampleComponent,\n    DialogCustomClassExampleComponent,\n    DialogDocsComponent,\n    DialogInsideOverlayExampleComponent,\n    DialogInsideOverlayWithDateTimePickerExampleComponent,\n    DialogPositionExampleComponent,\n    DialogSeverityExampleComponent,\n    DialogSizesExampleComponent,\n    DialogVisualTestComponent,\n    DialogWithKeyboardExampleComponent,\n    DialogWithStaticBackdropExampleComponent,\n    DialogZIndexTestComponent,\n    HeaderButtonsExampleComponent,\n    SimpleDialogExampleComponent,\n} from \"./index\";\n\nconst routes = [\n    {\n        path: \"\",\n        component: DialogDocsComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.ga,\n            },\n            showThemeSwitcher: true,\n        },\n    },\n    {\n        path: \"dialog-test\",\n        component: DialogDocsComponent,\n        data: {\n            showThemeSwitcher: true,\n        },\n    },\n    {\n        path: \"zindex-test\",\n        component: DialogZIndexTestComponent,\n    },\n    {\n        path: \"dialog-overlay\",\n        component: DialogVisualTestComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"dialog-actions-before-closure\",\n        component: DialogActionBeforeClosureExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"dialog-visual-test\",\n        component: DialogVisualTestComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n];\n\n@NgModule({\n    imports: [\n        NuiDialogModule,\n        NuiDocsModule,\n        NuiButtonModule,\n        NuiMessageModule,\n        NuiSelectV2Module,\n        RouterModule.forChild(routes),\n        NuiSelectModule,\n        NuiDialogModule,\n        NuiDocsModule,\n        NuiButtonModule,\n        NuiMessageModule,\n        NuiSelectModule,\n        NuiPopoverModule,\n        NuiTooltipModule,\n        NuiDateTimePickerModule,\n        NuiBusyModule,\n        NuiSpinnerModule,\n        NuiSelectV2Module,\n        NuiMenuModule,\n        NuiPopupModule,\n        NuiTimeFrameBarModule,\n        NuiTimeFramePickerModule,\n        NuiIconModule,\n    ],\n    declarations: [\n        DialogContentExampleComponent,\n        ComponentAsContentExampleComponent,\n        ConfirmationDialogExampleComponent,\n        DialogCustomClassExampleComponent,\n        DialogDocsComponent,\n        DialogWithKeyboardExampleComponent,\n        DialogPositionExampleComponent,\n        DialogSeverityExampleComponent,\n        DialogSizesExampleComponent,\n        DialogInsideOverlayExampleComponent,\n        DialogVisualTestComponent,\n        HeaderButtonsExampleComponent,\n        SimpleDialogExampleComponent,\n        DialogWithStaticBackdropExampleComponent,\n        DialogZIndexTestComponent,\n        DialogInsideOverlayWithDateTimePickerExampleComponent,\n        DialogActionBeforeClosureExampleComponent,\n        DialogAfterOpenedExampleComponent,\n    ],\n    providers: [\n        {\n            provide: DEMO_PATH_TOKEN,\n            useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/),\n        },\n    ],\n    exports: [\n        RouterModule,\n    ],\n    entryComponents: [DialogContentExampleComponent],\n})\nexport class DialogModule {\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import { NgModule } from \"@angular/core\";\nimport { RouterModule } from \"@angular/router\";\nimport {\n    DEMO_PATH_TOKEN,\n    NuiBusyModule,\n    NuiButtonModule,\n    NuiDateTimePickerModule,\n    NuiDialogModule,\n    NuiDocsModule,\n    NuiIconModule,\n    NuiMenuModule,\n    NuiMessageModule,\n    NuiPopoverModule,\n    NuiPopupModule,\n    NuiSelectModule,\n    NuiSelectV2Module,\n    NuiSpinnerModule,\n    NuiTimeFrameBarModule,\n    NuiTimeFramePickerModule,\n    NuiTooltipModule,\n    SrlcStage,\n} from \"@nova-ui/bits\";\n\nimport {\n    ComponentAsContentExampleComponent,\n    ConfirmationDialogExampleComponent,\n    DialogActionBeforeClosureExampleComponent,\n    DialogAfterOpenedExampleComponent,\n    DialogContentExampleComponent,\n    DialogCustomClassExampleComponent,\n    DialogDocsComponent,\n    DialogInsideOverlayExampleComponent,\n    DialogInsideOverlayWithDateTimePickerExampleComponent,\n    DialogPositionExampleComponent,\n    DialogSeverityExampleComponent,\n    DialogSizesExampleComponent,\n    DialogTestComponent,\n    DialogVisualTestComponent,\n    DialogWithKeyboardExampleComponent,\n    DialogWithStaticBackdropExampleComponent,\n    DialogZIndexTestComponent,\n    HeaderButtonsExampleComponent,\n    SimpleDialogExampleComponent,\n} from \"./index\";\n\nconst routes = [\n    {\n        path: \"\",\n        component: DialogDocsComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.ga,\n            },\n            showThemeSwitcher: true,\n        },\n    },\n    {\n        path: \"dialog-test\",\n        component: DialogTestComponent,\n        data: {\n            showThemeSwitcher: true,\n        },\n    },\n    {\n        path: \"zindex-test\",\n        component: DialogZIndexTestComponent,\n    },\n    {\n        path: \"dialog-overlay\",\n        component: DialogVisualTestComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"dialog-actions-before-closure\",\n        component: DialogActionBeforeClosureExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"dialog-visual-test\",\n        component: DialogVisualTestComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n];\n\n@NgModule({\n    imports: [\n        NuiDialogModule,\n        NuiDocsModule,\n        NuiButtonModule,\n        NuiMessageModule,\n        NuiSelectV2Module,\n        RouterModule.forChild(routes),\n        NuiSelectModule,\n        NuiDialogModule,\n        NuiDocsModule,\n        NuiButtonModule,\n        NuiMessageModule,\n        NuiSelectModule,\n        NuiPopoverModule,\n        NuiTooltipModule,\n        NuiDateTimePickerModule,\n        NuiBusyModule,\n        NuiSpinnerModule,\n        NuiSelectV2Module,\n        NuiMenuModule,\n        NuiPopupModule,\n        NuiTimeFrameBarModule,\n        NuiTimeFramePickerModule,\n        NuiIconModule,\n    ],\n    declarations: [\n        DialogContentExampleComponent,\n        ComponentAsContentExampleComponent,\n        ConfirmationDialogExampleComponent,\n        DialogCustomClassExampleComponent,\n        DialogDocsComponent,\n        DialogTestComponent,\n        DialogWithKeyboardExampleComponent,\n        DialogPositionExampleComponent,\n        DialogSeverityExampleComponent,\n        DialogSizesExampleComponent,\n        DialogInsideOverlayExampleComponent,\n        DialogVisualTestComponent,\n        HeaderButtonsExampleComponent,\n        SimpleDialogExampleComponent,\n        DialogWithStaticBackdropExampleComponent,\n        DialogZIndexTestComponent,\n        DialogInsideOverlayWithDateTimePickerExampleComponent,\n        DialogActionBeforeClosureExampleComponent,\n        DialogAfterOpenedExampleComponent,\n    ],\n    providers: [\n        {\n            provide: DEMO_PATH_TOKEN,\n            useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/),\n        },\n    ],\n    exports: [\n        RouterModule,\n    ],\n    entryComponents: [DialogContentExampleComponent],\n})\nexport class DialogModule {\n}\n");
 
 /***/ }),
 
@@ -3913,7 +3919,7 @@ const routes = [
     },
     {
         path: "dialog-test",
-        component: _index__WEBPACK_IMPORTED_MODULE_2__["DialogDocsComponent"],
+        component: _index__WEBPACK_IMPORTED_MODULE_2__["DialogTestComponent"],
         data: {
             showThemeSwitcher: true,
         },
@@ -3988,6 +3994,7 @@ DialogModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjec
         _index__WEBPACK_IMPORTED_MODULE_2__["ConfirmationDialogExampleComponent"],
         _index__WEBPACK_IMPORTED_MODULE_2__["DialogCustomClassExampleComponent"],
         _index__WEBPACK_IMPORTED_MODULE_2__["DialogDocsComponent"],
+        _index__WEBPACK_IMPORTED_MODULE_2__["DialogTestComponent"],
         _index__WEBPACK_IMPORTED_MODULE_2__["DialogWithKeyboardExampleComponent"],
         _index__WEBPACK_IMPORTED_MODULE_2__["DialogPositionExampleComponent"],
         _index__WEBPACK_IMPORTED_MODULE_2__["DialogSeverityExampleComponent"],
@@ -4051,6 +4058,61 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "qmXi":
+/*!************************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/dialog/dialog-zindex-test/dialog-zindex-test.component.less ***!
+  \************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("@import (reference) \"nui-framework-variables\";\n\n.main-overlay-panel {\n    padding: @nui-space-sm;\n    background: @nui-color-bg-content;\n\n    .overlay-footer {\n        display: flex;\n        justify-content: flex-end;\n        padding: @nui-space-sm;\n        button {\n            margin-left: 15px;\n        }\n    }\n}\n\n.busy-content {\n    border: 1px @nui-color-line-default solid;\n    padding: @nui-space-sm;\n}\n\n.inline-flex {\n    display: inline-flex;\n}\n\n");
+
+/***/ }),
+
+/***/ "w9bX":
+/*!**************************************************************************************!*\
+  !*** ./demo/src/components/demo/dialog/dialog-test/dialog-test.example.component.ts ***!
+  \**************************************************************************************/
+/*! exports provided: DialogTestComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DialogTestComponent", function() { return DialogTestComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _simple_dialog_simple_dialog_example_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../simple-dialog/simple-dialog.example.component */ "b7fi");
+/* harmony import */ var _dialog_keyboard_dialog_with_keyboard_example_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../dialog-keyboard/dialog-with-keyboard.example.component */ "HqCK");
+/* harmony import */ var _dialog_severity_dialog_severity_example_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../dialog-severity/dialog-severity.example.component */ "JOKZ");
+/* harmony import */ var _dialog_custom_class_dialog_custom_class_example_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../dialog-custom-class/dialog-custom-class.example.component */ "/3M5");
+/* harmony import */ var _dialog_static_backdrop_dialog_with_static_backdrop_example_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../dialog-static-backdrop/dialog-with-static-backdrop.example.component */ "QPNM");
+/* harmony import */ var _dialog_inside_overlay_dialog_inside_overlay_example_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../dialog-inside-overlay/dialog-inside-overlay.example.component */ "+Rq8");
+/* harmony import */ var _dialog_inside_overlay_with_date_time_picker_dialog_inside_overlay_with_date_time_picker_example_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../dialog-inside-overlay-with-date-time-picker/dialog-inside-overlay-with-date-time-picker.example.component */ "ed45");
+
+
+
+
+
+
+
+
+class DialogTestComponent {
+}
+DialogTestComponent.ɵfac = function DialogTestComponent_Factory(t) { return new (t || DialogTestComponent)(); };
+DialogTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: DialogTestComponent, selectors: [["ng-component"]], decls: 7, vars: 0, template: function DialogTestComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "nui-simple-dialog-example");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "nui-dialog-with-keyboard-example");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "nui-dialog-severity-example");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "nui-dialog-custom-class-example");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](4, "nui-dialog-with-static-backdrop-example");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](5, "nui-dialog-inside-overlay-example");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](6, "nui-dialog-inside-overlay-with-date-time-picker-example");
+    } }, directives: [_simple_dialog_simple_dialog_example_component__WEBPACK_IMPORTED_MODULE_1__["SimpleDialogExampleComponent"], _dialog_keyboard_dialog_with_keyboard_example_component__WEBPACK_IMPORTED_MODULE_2__["DialogWithKeyboardExampleComponent"], _dialog_severity_dialog_severity_example_component__WEBPACK_IMPORTED_MODULE_3__["DialogSeverityExampleComponent"], _dialog_custom_class_dialog_custom_class_example_component__WEBPACK_IMPORTED_MODULE_4__["DialogCustomClassExampleComponent"], _dialog_static_backdrop_dialog_with_static_backdrop_example_component__WEBPACK_IMPORTED_MODULE_5__["DialogWithStaticBackdropExampleComponent"], _dialog_inside_overlay_dialog_inside_overlay_example_component__WEBPACK_IMPORTED_MODULE_6__["DialogInsideOverlayExampleComponent"], _dialog_inside_overlay_with_date_time_picker_dialog_inside_overlay_with_date_time_picker_example_component__WEBPACK_IMPORTED_MODULE_7__["DialogInsideOverlayWithDateTimePickerExampleComponent"]], encapsulation: 2 });
+
+
+/***/ }),
+
 /***/ "xeBr":
 /*!**********************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/dialog/dialog-inside-overlay-with-date-time-picker/dialog-inside-overlay-with-date-time-picker.example.component.html ***!
@@ -4074,6 +4136,19 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ("<ng-template #content let-close=\"close\" let-dismiss=\"dismiss\">\n    <nui-dialog-header title=\"Dialog title\" i18n-title (closed)=\"close()\"></nui-dialog-header>\n    <div class=\"dialog-body\">\n        <p i18n>\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam maximus faucibus bibendum.\n            Aenean feugiat interdum leo sed posuere. Etiam at pulvinar enim, nec interdum purus.\n            Duis elit metus, lobortis vitae quam a, malesuada cursus quam. Duis vel lacinia purus.\n            Maecenas eget arcu ac ante sagittis eleifend vel ut purus.\n            Pellentesque sit amet semper ipsum, eu vulputate tortor. Aliquam vitae nisi augue.\n            Duis non erat sit amet sem venenatis accumsan at ullamcorper lorem. Morbi non turpis nibh.\n        </p>\n    </div>\n    <nui-dialog-footer>\n        <button nui-button type=\"button\"\n                (click)=\"actionCanceled(); close()\" i18n>\n            Cancel\n        </button>\n        <button nui-button type=\"button\"\n                displayStyle=\"primary\"\n                (click)=\"actionDone(); close()\" i18n>\n            Action\n        </button>\n    </nui-dialog-footer>\n</ng-template>\n\n<button id=\"nui-demo-with-keyboard-dialog-btn\" nui-button type=\"button\" (click)=\"openWith(content)\" i18n>Close me with ESC button</button>\n<button id=\"nui-demo-without-keyboard-dialog-btn\" class=\"ml-4\" nui-button type=\"button\" (click)=\"openWithout(content)\" i18n>ESC button won't close me</button>\n");
+
+/***/ }),
+
+/***/ "zLy7":
+/*!****************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/dialog/dialog-test/dialog-test.example.component.ts ***!
+  \****************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("import { Component } from \"@angular/core\";\n\n@Component({\n    templateUrl: \"./dialog-test.example.component.html\",\n})\nexport class DialogTestComponent {}\n");
 
 /***/ }),
 
