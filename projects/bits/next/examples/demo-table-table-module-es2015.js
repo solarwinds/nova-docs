@@ -156,6 +156,8 @@ var map = {
 	"./table-search/table-search.example.component.ts": "kJJM",
 	"./table-select/table-select.example.component.html": "PcpU",
 	"./table-select/table-select.example.component.ts": "6bWa",
+	"./table-selectable-toggle/table-selectable-toggle.example.component.html": "4Gnt",
+	"./table-selectable-toggle/table-selectable-toggle.example.component.ts": "ksqJ",
 	"./table-sorting/table-sorting.example.component.html": "6J2b",
 	"./table-sorting/table-sorting.example.component.ts": "tsv0",
 	"./table-test/table-test-data-source.ts": "6t4g",
@@ -717,7 +719,7 @@ TableVirtualScrollRealApiProgressTextFooterExampleComponent.ɵcmp = _angular_cor
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("export * from \"./table-docs/table-docs.example.component\";\nexport * from \"./table-basic/table-basic.example.component\";\nexport * from \"./table-pinned-header/table-pinned-header.example.component\";\nexport * from \"./table-cell-content-align/table-cell-content-align.example.component\";\nexport * from \"./table-cell-width-set/table-cell-width-set.example.component\";\nexport * from \"./table-row-clickable/table-row-clickable.example.component\";\nexport * from \"./table-row-height-set/table-row-height-set.example.component\";\nexport * from \"./table-reorder/table-reorder.example.component\";\nexport * from \"./table-pagination/table-pagination.example.component\";\nexport * from \"./table-columns-add-remove/table-columns-add-remove.example.component\";\nexport * from \"./table-search/table-search.example.component\";\nexport * from \"./table-sorting/table-sorting.example.component\";\nexport * from \"./table-resize/table-resize.example.component\";\nexport * from \"./table-select/table-select.example.component\";\nexport * from \"./table-test/table-test.component\";\nexport * from \"./table-visual-test/table-visual-test.example\";\nexport * from \"./table-virtual-scroll-real-api/table-virtual-scroll-real-api.example.component\";\nexport * from \"./table-virtual-scroll-steps-and-button/table-virtual-scroll-steps-and-button.example.component\";\nexport * from \"./table-virtual-scroll-real-api-progress-footer/table-virtual-scroll-real-api-progress-footer.example.component\";\nexport * from \"./table-virtual-scroll-real-api-progress-text-footer/table-virtual-scroll-real-api-progress-text-footer.example.component\";\nexport * from \"./table-virtual-scroll-real-api-minimalist/table-virtual-scroll-real-api-minimalist.example.component\";\nexport * from \"./table-search-with-select-and-pagination/table-search-with-select-and-pagination.example.component\";\n");
+/* harmony default export */ __webpack_exports__["default"] = ("export * from \"./table-docs/table-docs.example.component\";\nexport * from \"./table-basic/table-basic.example.component\";\nexport * from \"./table-pinned-header/table-pinned-header.example.component\";\nexport * from \"./table-cell-content-align/table-cell-content-align.example.component\";\nexport * from \"./table-cell-width-set/table-cell-width-set.example.component\";\nexport * from \"./table-row-clickable/table-row-clickable.example.component\";\nexport * from \"./table-row-height-set/table-row-height-set.example.component\";\nexport * from \"./table-reorder/table-reorder.example.component\";\nexport * from \"./table-pagination/table-pagination.example.component\";\nexport * from \"./table-columns-add-remove/table-columns-add-remove.example.component\";\nexport * from \"./table-search/table-search.example.component\";\nexport * from \"./table-sorting/table-sorting.example.component\";\nexport * from \"./table-resize/table-resize.example.component\";\nexport * from \"./table-select/table-select.example.component\";\nexport * from \"./table-selectable-toggle/table-selectable-toggle.example.component\";\nexport * from \"./table-test/table-test.component\";\nexport * from \"./table-visual-test/table-visual-test.example\";\nexport * from \"./table-virtual-scroll-real-api/table-virtual-scroll-real-api.example.component\";\nexport * from \"./table-virtual-scroll-steps-and-button/table-virtual-scroll-steps-and-button.example.component\";\nexport * from \"./table-virtual-scroll-real-api-progress-footer/table-virtual-scroll-real-api-progress-footer.example.component\";\nexport * from \"./table-virtual-scroll-real-api-progress-text-footer/table-virtual-scroll-real-api-progress-text-footer.example.component\";\nexport * from \"./table-virtual-scroll-real-api-minimalist/table-virtual-scroll-real-api-minimalist.example.component\";\nexport * from \"./table-search-with-select-and-pagination/table-search-with-select-and-pagination.example.component\";\n");
 
 /***/ }),
 
@@ -731,6 +733,19 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ("import { Injectable } from \"@angular/core\";\nimport { DataSourceService, INovaFilteringOutputs, INovaFilters, SearchService } from \"@nova-ui/bits\";\nimport { BehaviorSubject } from \"rxjs\";\n\nimport {\n    IRandomUserResponse,\n    IRandomUserResults,\n    IRandomUserTableModel,\n    UsersQueryResponse\n} from \"./table-virtual-scroll-real-api/table-virtual-scroll-real-api.example.component\";\n\n@Injectable()\nexport class RandomuserTableDataSource1 extends DataSourceService<IRandomUserTableModel> {\n    private readonly url = \"https://randomuser.me/api\";\n    private readonly seed = \"sw\";\n    private page: number = 1;\n    private dataStart: number = 0;\n    private cache = Array.from<IRandomUserTableModel>({ length: 0 });\n\n    public step: BehaviorSubject<number> = new BehaviorSubject(100);\n    public busy = new BehaviorSubject(false);\n    public itemsToLoad: BehaviorSubject<number> = new BehaviorSubject(500);\n\n    constructor(private searchService: SearchService) {\n        super();\n    }\n\n    public async getFilteredData(filters: INovaFilters): Promise<INovaFilteringOutputs> {\n        this.busy.next(true);\n\n        // We're returning Promise with setTimeout here to make the response from the server longer, as the API being used sends responses\n        // almost immediately. We need it longer to be able the show the spinner component on data load\n        return new Promise(resolve => {\n            setTimeout(() => {\n                this.getData(this.dataStart, this.dataStart + this.step.value).then((response: UsersQueryResponse | undefined) => {\n                    if (!response) { return; }\n\n                    this.cache = this.cache.concat(response.users);\n                    this.dataSubject.next(this.cache);\n                    resolve({\n                        repeat: {\n                            itemsSource: this.cache,\n                        },\n                        // This API can return thousands of results, however doesn't return the max number of results,\n                        // so we set the max number of result manually here.\n                        itemsToLoad: this.itemsToLoad.value,\n                        totalItems: 1575,\n                        start: response.start,\n                    });\n                    this.busy.next(false);\n                    this.dataStart += this.step.value;\n                    this.page++;\n                });\n            }, 500);\n        });\n    }\n\n    public async getData(start: number = 0, end: number= 20): Promise<UsersQueryResponse | undefined> {\n        let response: IRandomUserResponse | undefined;\n        try {\n            response = await\n                        (await fetch(`${this.url}/?page=${this.page}&results=${end - start}&seed=${this.seed}`))\n                            .json();\n                                return {\n                                    users: response?.results.map((result: IRandomUserResults, i: number) => ({\n                                        no: this.cache.length + i + 1,\n                                        nameTitle: result.name.title,\n                                        nameFirst: result.name.first,\n                                        nameLast: result.name.last,\n                                        gender: result.gender,\n                                        country: result.location.country,\n                                        city: result.location.city,\n                                        postcode: result.location.postcode,\n                                        email: result.email,\n                                        cell: result.cell,\n                                    })),\n                                    total: response?.results.length,\n                                    start: start,\n                                } as UsersQueryResponse;\n        } catch (e) {\n            console.error(\"Error responding from server. Please visit https://https://randomuser.me/ to see if it's available\");\n        }\n    }\n}\n");
+
+/***/ }),
+
+/***/ "4Gnt":
+/*!*****************************************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/table/table-selectable-toggle/table-selectable-toggle.example.component.html ***!
+  \*****************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<button id=\"demo-table-selectable-toggle-btn\" nui-button type=\"button\" (click)=\"toggleSelectable()\">Toggle Selectable</button>\n<div class=\"nui-table__container\" id=\"demo-table-selectable-toggle\">\n    <table nui-table [dataSource]=\"dataSource\" [totalItems]=\"paginationTotal\" [(selection)]=\"selection\"\n           [selectable]=\"selectable\" [trackBy]=\"trackBy\">\n        <ng-container nuiColumnDef=\"position\">\n            <th nui-header-cell *nuiHeaderCellDef i18n> No.</th>\n            <td nui-cell *nuiCellDef=\"let element\"> {{element.position}}</td>\n        </ng-container>\n\n        <ng-container nuiColumnDef=\"item\">\n            <th nui-header-cell *nuiHeaderCellDef i18n> Item</th>\n            <td nui-cell *nuiCellDef=\"let element\"> {{element.item}}</td>\n        </ng-container>\n\n        <ng-container nuiColumnDef=\"description\">\n            <th nui-header-cell *nuiHeaderCellDef i18n> Description</th>\n            <td nui-cell *nuiCellDef=\"let element\" [tooltipText]=\"element.description\">\n                {{element.description}}\n            </td>\n        </ng-container>\n\n        <ng-container nuiColumnDef=\"status\" type=\"icon\">\n            <th nui-header-cell *nuiHeaderCellDef>\n                <div class=\"d-flex align-items-center\">\n                    <nui-icon [icon]=\"'enable'\"></nui-icon>\n                </div>\n            </th>\n            <td nui-cell *nuiCellDef=\"let element\">\n                <div class=\"d-flex align-items-center\">\n                    <nui-icon [icon]=\"element.status\"></nui-icon>\n                </div>\n            </td>\n        </ng-container>\n\n        <ng-container nuiColumnDef=\"location\">\n            <th nui-header-cell *nuiHeaderCellDef i18n> Location</th>\n            <td nui-cell *nuiCellDef=\"let element\"> {{element.location}}</td>\n        </ng-container>\n\n        <tr nui-header-row *nuiHeaderRowDef=\"displayedColumns\"></tr>\n        <tr nui-row *nuiRowDef=\"let row; columns: displayedColumns;\" [rowObject]=\"row\" [clickableRow]=\"selectable\"></tr>\n    </table>\n</div>\n<nui-paginator id=\"nui-demo-table-select-paginator\"\n               [page]=\"1\"\n               [pageSize]=\"10\"\n               [total]=\"paginationTotal\"\n               activeClass=\"active\"\n               disabledClass=\"disabled\"\n               showPrevNext=\"true\"\n               (pagerAction)=\"changePagination($event)\"\n               #filteringPaginator>\n</nui-paginator>\n<nui-divider></nui-divider>\n<h2>Selection result</h2>\n<div class=\"flex-row-container\">\n    <span class=\"flex-independent-row-item\">\n        {{selection | json}}\n    </span>\n</div>\n\n");
 
 /***/ }),
 
@@ -1600,6 +1615,15 @@ const routes = [
         },
     },
     {
+        path: "selectable-toggle",
+        component: _index__WEBPACK_IMPORTED_MODULE_4__["TableSelectableToggleExampleComponent"],
+        data: {
+            "srlc": {
+                "hideIndicator": true,
+            },
+        },
+    },
+    {
         path: "select",
         component: _index__WEBPACK_IMPORTED_MODULE_4__["TableSelectExampleComponent"],
         data: {
@@ -1711,6 +1735,7 @@ TableModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefineInject
         _index__WEBPACK_IMPORTED_MODULE_4__["TableRowClickableExampleComponent"],
         _index__WEBPACK_IMPORTED_MODULE_4__["TableResizeExampleComponent"],
         _index__WEBPACK_IMPORTED_MODULE_4__["TableSearchExampleComponent"],
+        _index__WEBPACK_IMPORTED_MODULE_4__["TableSelectableToggleExampleComponent"],
         _index__WEBPACK_IMPORTED_MODULE_4__["TableSelectExampleComponent"],
         _index__WEBPACK_IMPORTED_MODULE_4__["TableSortingExampleComponent"],
         _index__WEBPACK_IMPORTED_MODULE_4__["TableCellContentAlignComponent"],
@@ -8062,7 +8087,7 @@ __webpack_require__.r(__webpack_exports__);
 /*!*************************************************!*\
   !*** ./demo/src/components/demo/table/index.ts ***!
   \*************************************************/
-/*! exports provided: TableDocsComponent, TableRowSelectInstructionsComponent, TableBasicExampleComponent, TablePinnedHeaderComponent, TableCellContentAlignComponent, TableCellWidthSetExampleComponent, TableRowClickableExampleComponent, TableRowHeightSetExampleComponent, TableReorderExampleComponent, TablePaginationExampleComponent, TableColumnsAddRemoveExampleComponent, TableSearchExampleComponent, TableSortingExampleComponent, TableResizeExampleComponent, TableSelectExampleComponent, TableTestComponent, TableVisualTestComponent, TableVirtualScrollRealApiExampleComponent, RandomuserTableDataSource, TableVirtualScrollStepsAndButtonExampleComponent, TableVirtualScrollRealApiProgressFooterExampleComponent, TableVirtualScrollRealApiProgressTextFooterExampleComponent, TableVirtualScrollRealApiMinimalistExampleComponent, TableSearchWithSelectAndPaginationComponent */
+/*! exports provided: TableDocsComponent, TableRowSelectInstructionsComponent, TableBasicExampleComponent, TablePinnedHeaderComponent, TableCellContentAlignComponent, TableCellWidthSetExampleComponent, TableRowClickableExampleComponent, TableRowHeightSetExampleComponent, TableReorderExampleComponent, TablePaginationExampleComponent, TableColumnsAddRemoveExampleComponent, TableSearchExampleComponent, TableSortingExampleComponent, TableResizeExampleComponent, TableSelectExampleComponent, TableSelectableToggleExampleComponent, TableTestComponent, TableVisualTestComponent, TableVirtualScrollRealApiExampleComponent, RandomuserTableDataSource, TableVirtualScrollStepsAndButtonExampleComponent, TableVirtualScrollRealApiProgressFooterExampleComponent, TableVirtualScrollRealApiProgressTextFooterExampleComponent, TableVirtualScrollRealApiMinimalistExampleComponent, TableSearchWithSelectAndPaginationComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8111,31 +8136,35 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _table_select_table_select_example_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./table-select/table-select.example.component */ "YgYn");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TableSelectExampleComponent", function() { return _table_select_table_select_example_component__WEBPACK_IMPORTED_MODULE_13__["TableSelectExampleComponent"]; });
 
-/* harmony import */ var _table_test_table_test_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./table-test/table-test.component */ "z4hb");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TableTestComponent", function() { return _table_test_table_test_component__WEBPACK_IMPORTED_MODULE_14__["TableTestComponent"]; });
+/* harmony import */ var _table_selectable_toggle_table_selectable_toggle_example_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./table-selectable-toggle/table-selectable-toggle.example.component */ "p/vV");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TableSelectableToggleExampleComponent", function() { return _table_selectable_toggle_table_selectable_toggle_example_component__WEBPACK_IMPORTED_MODULE_14__["TableSelectableToggleExampleComponent"]; });
 
-/* harmony import */ var _table_visual_test_table_visual_test_example__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./table-visual-test/table-visual-test.example */ "s5Ti");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TableVisualTestComponent", function() { return _table_visual_test_table_visual_test_example__WEBPACK_IMPORTED_MODULE_15__["TableVisualTestComponent"]; });
+/* harmony import */ var _table_test_table_test_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./table-test/table-test.component */ "z4hb");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TableTestComponent", function() { return _table_test_table_test_component__WEBPACK_IMPORTED_MODULE_15__["TableTestComponent"]; });
 
-/* harmony import */ var _table_virtual_scroll_real_api_table_virtual_scroll_real_api_example_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./table-virtual-scroll-real-api/table-virtual-scroll-real-api.example.component */ "aiGc");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TableVirtualScrollRealApiExampleComponent", function() { return _table_virtual_scroll_real_api_table_virtual_scroll_real_api_example_component__WEBPACK_IMPORTED_MODULE_16__["TableVirtualScrollRealApiExampleComponent"]; });
+/* harmony import */ var _table_visual_test_table_visual_test_example__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./table-visual-test/table-visual-test.example */ "s5Ti");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TableVisualTestComponent", function() { return _table_visual_test_table_visual_test_example__WEBPACK_IMPORTED_MODULE_16__["TableVisualTestComponent"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RandomuserTableDataSource", function() { return _table_virtual_scroll_real_api_table_virtual_scroll_real_api_example_component__WEBPACK_IMPORTED_MODULE_16__["RandomuserTableDataSource"]; });
+/* harmony import */ var _table_virtual_scroll_real_api_table_virtual_scroll_real_api_example_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./table-virtual-scroll-real-api/table-virtual-scroll-real-api.example.component */ "aiGc");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TableVirtualScrollRealApiExampleComponent", function() { return _table_virtual_scroll_real_api_table_virtual_scroll_real_api_example_component__WEBPACK_IMPORTED_MODULE_17__["TableVirtualScrollRealApiExampleComponent"]; });
 
-/* harmony import */ var _table_virtual_scroll_steps_and_button_table_virtual_scroll_steps_and_button_example_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./table-virtual-scroll-steps-and-button/table-virtual-scroll-steps-and-button.example.component */ "zX3T");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TableVirtualScrollStepsAndButtonExampleComponent", function() { return _table_virtual_scroll_steps_and_button_table_virtual_scroll_steps_and_button_example_component__WEBPACK_IMPORTED_MODULE_17__["TableVirtualScrollStepsAndButtonExampleComponent"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RandomuserTableDataSource", function() { return _table_virtual_scroll_real_api_table_virtual_scroll_real_api_example_component__WEBPACK_IMPORTED_MODULE_17__["RandomuserTableDataSource"]; });
 
-/* harmony import */ var _table_virtual_scroll_real_api_progress_footer_table_virtual_scroll_real_api_progress_footer_example_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./table-virtual-scroll-real-api-progress-footer/table-virtual-scroll-real-api-progress-footer.example.component */ "Jv3n");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TableVirtualScrollRealApiProgressFooterExampleComponent", function() { return _table_virtual_scroll_real_api_progress_footer_table_virtual_scroll_real_api_progress_footer_example_component__WEBPACK_IMPORTED_MODULE_18__["TableVirtualScrollRealApiProgressFooterExampleComponent"]; });
+/* harmony import */ var _table_virtual_scroll_steps_and_button_table_virtual_scroll_steps_and_button_example_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./table-virtual-scroll-steps-and-button/table-virtual-scroll-steps-and-button.example.component */ "zX3T");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TableVirtualScrollStepsAndButtonExampleComponent", function() { return _table_virtual_scroll_steps_and_button_table_virtual_scroll_steps_and_button_example_component__WEBPACK_IMPORTED_MODULE_18__["TableVirtualScrollStepsAndButtonExampleComponent"]; });
 
-/* harmony import */ var _table_virtual_scroll_real_api_progress_text_footer_table_virtual_scroll_real_api_progress_text_footer_example_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./table-virtual-scroll-real-api-progress-text-footer/table-virtual-scroll-real-api-progress-text-footer.example.component */ "34la");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TableVirtualScrollRealApiProgressTextFooterExampleComponent", function() { return _table_virtual_scroll_real_api_progress_text_footer_table_virtual_scroll_real_api_progress_text_footer_example_component__WEBPACK_IMPORTED_MODULE_19__["TableVirtualScrollRealApiProgressTextFooterExampleComponent"]; });
+/* harmony import */ var _table_virtual_scroll_real_api_progress_footer_table_virtual_scroll_real_api_progress_footer_example_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./table-virtual-scroll-real-api-progress-footer/table-virtual-scroll-real-api-progress-footer.example.component */ "Jv3n");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TableVirtualScrollRealApiProgressFooterExampleComponent", function() { return _table_virtual_scroll_real_api_progress_footer_table_virtual_scroll_real_api_progress_footer_example_component__WEBPACK_IMPORTED_MODULE_19__["TableVirtualScrollRealApiProgressFooterExampleComponent"]; });
 
-/* harmony import */ var _table_virtual_scroll_real_api_minimalist_table_virtual_scroll_real_api_minimalist_example_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./table-virtual-scroll-real-api-minimalist/table-virtual-scroll-real-api-minimalist.example.component */ "GE5v");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TableVirtualScrollRealApiMinimalistExampleComponent", function() { return _table_virtual_scroll_real_api_minimalist_table_virtual_scroll_real_api_minimalist_example_component__WEBPACK_IMPORTED_MODULE_20__["TableVirtualScrollRealApiMinimalistExampleComponent"]; });
+/* harmony import */ var _table_virtual_scroll_real_api_progress_text_footer_table_virtual_scroll_real_api_progress_text_footer_example_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./table-virtual-scroll-real-api-progress-text-footer/table-virtual-scroll-real-api-progress-text-footer.example.component */ "34la");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TableVirtualScrollRealApiProgressTextFooterExampleComponent", function() { return _table_virtual_scroll_real_api_progress_text_footer_table_virtual_scroll_real_api_progress_text_footer_example_component__WEBPACK_IMPORTED_MODULE_20__["TableVirtualScrollRealApiProgressTextFooterExampleComponent"]; });
 
-/* harmony import */ var _table_search_with_select_and_pagination_table_search_with_select_and_pagination_example_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./table-search-with-select-and-pagination/table-search-with-select-and-pagination.example.component */ "PaBn");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TableSearchWithSelectAndPaginationComponent", function() { return _table_search_with_select_and_pagination_table_search_with_select_and_pagination_example_component__WEBPACK_IMPORTED_MODULE_21__["TableSearchWithSelectAndPaginationComponent"]; });
+/* harmony import */ var _table_virtual_scroll_real_api_minimalist_table_virtual_scroll_real_api_minimalist_example_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./table-virtual-scroll-real-api-minimalist/table-virtual-scroll-real-api-minimalist.example.component */ "GE5v");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TableVirtualScrollRealApiMinimalistExampleComponent", function() { return _table_virtual_scroll_real_api_minimalist_table_virtual_scroll_real_api_minimalist_example_component__WEBPACK_IMPORTED_MODULE_21__["TableVirtualScrollRealApiMinimalistExampleComponent"]; });
+
+/* harmony import */ var _table_search_with_select_and_pagination_table_search_with_select_and_pagination_example_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./table-search-with-select-and-pagination/table-search-with-select-and-pagination.example.component */ "PaBn");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TableSearchWithSelectAndPaginationComponent", function() { return _table_search_with_select_and_pagination_table_search_with_select_and_pagination_example_component__WEBPACK_IMPORTED_MODULE_22__["TableSearchWithSelectAndPaginationComponent"]; });
+
 
 
 
@@ -8902,6 +8931,19 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ("import { AfterViewInit, Component, OnDestroy, ViewChild } from \"@angular/core\";\nimport {\n    ClientSideDataSource,\n    INovaFilteringOutputs, SearchComponent, TableComponent\n} from \"@nova-ui/bits\";\nimport { Subscription } from \"rxjs\";\nimport { debounceTime } from \"rxjs/operators\";\n\ninterface IExampleTableModel {\n    position: number;\n    name: string;\n    features: any;\n    asset: string;\n    location: string;\n    status: string;\n    outages: number;\n    checks: any;\n}\n\n@Component({\n    selector: \"nui-table-search-example\",\n    providers: [ClientSideDataSource],\n    templateUrl: \"./table-search.example.component.html\",\n    styleUrls: [\"./table-search.example.component.less\"],\n})\nexport class TableSearchExampleComponent implements AfterViewInit, OnDestroy {\n    public displayedColumns = [\"position\", \"name\", \"features\", \"asset\", \"location\", \"status\", \"outages\", \"checks\"];\n    public dataSource: any = [];\n    public searchTerm: string;\n    public columnsToApplySearch: any = [];\n    @ViewChild(\"filteringSearch\") filteringSearch: SearchComponent;\n    @ViewChild(\"filteringTable\") filteringTable: TableComponent<IExampleTableModel>;\n\n    private outputsSubscription: Subscription;\n    private searchSubscription: Subscription;\n\n    constructor(public dataSourceService: ClientSideDataSource<IExampleTableModel>) {\n        dataSourceService.setData(getData());\n    }\n\n    ngAfterViewInit() {\n        this.dataSourceService.componentTree = {\n            search: {\n                componentInstance: this.filteringSearch,\n            },\n        };\n        this.outputsSubscription = this.dataSourceService.outputsSubject.subscribe((data: INovaFilteringOutputs) => {\n            this.dataSource = data.repeat?.itemsSource;\n        });\n        this.searchSubscription = this.filteringSearch.inputChange.pipe(debounceTime(500))\n            .subscribe(() => {\n                this.onSearch(undefined);\n            });\n\n        this.dataSourceService.applyFilters();\n    }\n\n    public applySearchField() {\n        if (!this.columnsToApplySearch.length) {\n            this.columnsToApplySearch = [\"location\"];\n        } else {\n            this.columnsToApplySearch = [];\n        }\n    }\n\n    public onSearch(value?: string) {\n        this.dataSourceService.setSearchProperties(this.columnsToApplySearch);\n        this.dataSourceService.applyFilters();\n    }\n\n    public onSearchCancel() {\n        this.dataSourceService.applyFilters();\n    }\n\n    ngOnDestroy() {\n        this.searchSubscription.unsubscribe();\n        this.outputsSubscription.unsubscribe();\n    }\n}\n\n/** Table data */\nfunction getData(): IExampleTableModel[] {\n    return [\n        {\n            position: 1,\n            name: \"FOCUS-SVR-02258\",\n            features: [\"remote-access-vpn-tunnel\", \"tools\", \"database\", \"orion-ape-backup\", \"patch-manager01\"],\n            asset: \"Workstation\",\n            location: \"Brno\",\n            status: \"Active\",\n            outages: 90,\n            checks: [{\n                icon: \"status_up\",\n                num: 25,\n            }],\n        },\n        {\n            position: 2,\n            name: \"Man-LT-JYJ4AD5\",\n            features: [\"remote-access-vpn-tunnel\", \"tools\", \"database\", \"orion-ape-backup\", \"patch-manager01\"],\n            asset: \"Workstation\",\n            location: \"Brno\",\n            status: \"Active\",\n            outages: 9,\n            checks: [{\n                icon: \"status_critical\",\n                num: 25,\n            }],\n        },\n        {\n            position: 3,\n            name: \"FOCUS-SVR-02258\",\n            features: [\"remote-access-vpn-tunnel\", \"tools\", \"database\", \"orion-ape-backup\", \"patch-manager01\"],\n            asset: \"Workstation\",\n            location: \"Brno\",\n            status: \"Active\",\n            outages: 17,\n            checks: [{\n                icon: \"status_down\",\n                num: 25,\n            }],\n        },\n        {\n            position: 4,\n            name: \"Man-ATFLT-BRNO1\",\n            features: [\"remote-access-vpn-tunnel\", \"tools\", \"database\", \"orion-ape-backup\", \"patch-manager01\"],\n            asset: \"Workstation\",\n            location: \"Austin\",\n            status: \"Active\",\n            outages: 3,\n            checks: [{\n                icon: \"status_up\",\n                num: 25,\n            }],\n        },\n        {\n            position: 5,\n            name: \"Man-LTF-JYAF75J4AD5\",\n            features: [\"remote-access-vpn-tunnel\", \"tools\", \"database\", \"orion-ape-backup\", \"patch-manager01\"],\n            asset: \"Workstation\",\n            location: \"Austin\",\n            status: \"Active\",\n            outages: 56,\n            checks: [{\n                icon: \"status_up\",\n                num: 25,\n            }],\n        },\n    ];\n}\n");
+
+/***/ }),
+
+/***/ "ksqJ":
+/*!***************************************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/table/table-selectable-toggle/table-selectable-toggle.example.component.ts ***!
+  \***************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, ViewChild } from \"@angular/core\";\nimport { ClientSideDataSource, INovaFilteringOutputs, ISelection, PaginatorComponent, SelectionModel, SelectorService } from \"@nova-ui/bits\";\nimport { Subscription } from \"rxjs\";\n\ninterface IExampleTableModel {\n    position: number;\n    item: string;\n    description: string;\n    status: string;\n    location: string;\n}\n\n@Component({\n    selector: \"nui-table-selectable-toggle\",\n    providers: [ClientSideDataSource],\n    templateUrl: \"./table-selectable-toggle.example.component.html\",\n    changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class TableSelectableToggleExampleComponent implements AfterViewInit, OnDestroy {\n    public displayedColumns = [\"position\", \"item\", \"description\", \"status\", \"location\"];\n    public dataSource?: IExampleTableModel[] = [];\n    public paginationTotal?: number;\n    public selectedItems: IExampleTableModel[] = [];\n    public selectable = true;\n    public selection: ISelection = {\n        isAllPages: false,\n        include: [2, 3],\n        exclude: [\n        ],\n    };\n\n    @ViewChild(\"filteringPaginator\") filteringPaginator: PaginatorComponent;\n\n    private outputsSubscription: Subscription;\n\n    constructor(public dataSourceService: ClientSideDataSource<IExampleTableModel>,\n        public selectorService: SelectorService,\n        public changeDetector: ChangeDetectorRef) {\n    }\n\n    public ngAfterViewInit() {\n        this.dataSourceService.componentTree = {\n            paginator: {\n                componentInstance: this.filteringPaginator,\n            },\n        };\n        this.outputsSubscription = this.dataSourceService.outputsSubject.subscribe((data: INovaFilteringOutputs) => {\n            this.dataSource = data.repeat?.itemsSource;\n            this.paginationTotal = data.paginator?.total;\n            this.changeDetector.markForCheck();\n        });\n        this.applyFilters();\n    }\n\n    public changePagination($event: any) {\n        this.applyFilters();\n    }\n\n    public applyFilters() {\n        this.dataSourceService.setData(getData());\n        this.dataSourceService.applyFilters();\n    }\n\n    public ngOnDestroy() {\n        this.outputsSubscription.unsubscribe();\n    }\n\n    public trackBy(index: number, item: IExampleTableModel) {\n        return item.position;\n    }\n\n    public toggleSelectable() {\n        this.selectable = !this.selectable;\n        this.selection = new SelectionModel();\n    }\n}\n\n/** Table data */\nfunction getData(): IExampleTableModel[] {\n    return [\n        {\n            position: 1,\n            item: \"FOCUS-SVR-02258123\",\n            description: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\n            status: \"status_inactive\",\n            location: \"Brno\",\n        },\n        {\n            position: 2,\n            item: \"Man-LT-JYJ4AD5\",\n            description: \"Sed ut perspiciatis unde omnis iste natus error sit.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n        {\n            position: 3,\n            item: \"FOCUS-SVR-02258\",\n            description: \"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n        {\n            position: 4,\n            item: \"Man-LT-JYJ4AD5\",\n            description: \"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n        {\n            position: 5,\n            item: \"Man-LT-JYJ4AD5\",\n            description: \"Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n        {\n            position: 6,\n            item: \"Man-LT-JYJ4AD5\",\n            description: \"Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n        {\n            position: 7,\n            item: \"Man-LT-JYJ4AD5\",\n            description: \"Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n        {\n            position: 8,\n            item: \"Man-LT-JYJ4AD5\",\n            description: \"Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n        {\n            position: 9,\n            item: \"Man-LT-JYJ4AD5\",\n            description: \"Quis autem vel eum iure reprehenderit qui in ea voluptate.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n        {\n            position: 10,\n            item: \"Man-LT-JYJ4AD5\",\n            description: \"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n        {\n            position: 11,\n            item: \"FOCUS-SVR-111111\",\n            description: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\n            status: \"status_inactive\",\n            location: \"Brno\",\n        },\n        {\n            position: 12,\n            item: \"Man-LT-2222222\",\n            description: \"Sed ut perspiciatis unde omnis iste natus error sit.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n        {\n            position: 13,\n            item: \"FOCUS-SVR-333333\",\n            description: \"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n        {\n            position: 14,\n            item: \"Man-LT-444444\",\n            description: \"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n        {\n            position: 15,\n            item: \"Man-LT-555555\",\n            description: \"Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n        {\n            position: 16,\n            item: \"Man-LT-666666\",\n            description: \"Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n        {\n            position: 17,\n            item: \"Man-LT-777777\",\n            description: \"Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n        {\n            position: 18,\n            item: \"Man-LT-888888\",\n            description: \"Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n        {\n            position: 19,\n            item: \"Man-LT-999999\",\n            description: \"Quis autem vel eum iure reprehenderit qui in ea voluptate.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n        {\n            position: 20,\n            item: \"Man-LT-200000\",\n            description: \"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n    ];\n}\n");
 
 /***/ }),
 
@@ -9870,6 +9912,418 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "p/vV":
+/*!*************************************************************************************************************!*\
+  !*** ./demo/src/components/demo/table/table-selectable-toggle/table-selectable-toggle.example.component.ts ***!
+  \*************************************************************************************************************/
+/*! exports provided: TableSelectableToggleExampleComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TableSelectableToggleExampleComponent", function() { return TableSelectableToggleExampleComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @nova-ui/bits */ "b5Xb");
+/* harmony import */ var _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../src/lib/button/button.component */ "6urz");
+/* harmony import */ var _src_lib_table_table_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../src/lib/table/table.component */ "ey6q");
+/* harmony import */ var _src_lib_table_table_cell_table_column_def_directive__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-cell/table-column-def.directive */ "XeyC");
+/* harmony import */ var _src_lib_table_table_cell_table_header_cell_def_directive__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-cell/table-header-cell-def.directive */ "htGY");
+/* harmony import */ var _src_lib_table_table_cell_table_cell_def_directive__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-cell/table-cell-def.directive */ "/BSE");
+/* harmony import */ var _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-row/table-row.component */ "LFiI");
+/* harmony import */ var _src_lib_paginator_paginator_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../../../../src/lib/paginator/paginator.component */ "4E9B");
+/* harmony import */ var _src_lib_divider_divider_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../../../../src/lib/divider/divider.component */ "UGtJ");
+/* harmony import */ var _src_lib_table_table_cell_table_header_cell_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-cell/table-header-cell.component */ "Ppt+");
+/* harmony import */ var _src_lib_table_table_cell_table_cell_directive__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-cell/table-cell.directive */ "jdPS");
+/* harmony import */ var _src_lib_icon_icon_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../../../../../src/lib/icon/icon.component */ "45Bz");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/common */ "ofXK");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const _c0 = ["filteringPaginator"];
+function TableSelectableToggleExampleComponent_th_5_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "th", 17);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](1, 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} }
+function TableSelectableToggleExampleComponent_td_6_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "td", 19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const element_r13 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", element_r13.position, "");
+} }
+function TableSelectableToggleExampleComponent_th_8_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "th", 17);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](1, 20);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} }
+function TableSelectableToggleExampleComponent_td_9_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "td", 19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const element_r14 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", element_r14.item, "");
+} }
+function TableSelectableToggleExampleComponent_th_11_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "th", 17);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](1, 21);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} }
+function TableSelectableToggleExampleComponent_td_12_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "td", 22);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const element_r15 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("tooltipText", element_r15.description);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", element_r15.description, " ");
+} }
+function TableSelectableToggleExampleComponent_th_14_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "th", 17);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 23);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "nui-icon", 24);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("icon", "enable");
+} }
+function TableSelectableToggleExampleComponent_td_15_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "td", 19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 23);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "nui-icon", 24);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const element_r16 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("icon", element_r16.status);
+} }
+function TableSelectableToggleExampleComponent_th_17_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "th", 17);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](1, 25);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} }
+function TableSelectableToggleExampleComponent_td_18_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "td", 19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const element_r17 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", element_r17.location, "");
+} }
+function TableSelectableToggleExampleComponent_tr_19_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "tr", 26);
+} }
+function TableSelectableToggleExampleComponent_tr_20_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "tr", 27);
+} if (rf & 2) {
+    const row_r18 = ctx.$implicit;
+    const ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("rowObject", row_r18)("clickableRow", ctx_r11.selectable);
+} }
+class TableSelectableToggleExampleComponent {
+    constructor(dataSourceService, selectorService, changeDetector) {
+        this.dataSourceService = dataSourceService;
+        this.selectorService = selectorService;
+        this.changeDetector = changeDetector;
+        this.displayedColumns = ["position", "item", "description", "status", "location"];
+        this.dataSource = [];
+        this.selectedItems = [];
+        this.selectable = true;
+        this.selection = {
+            isAllPages: false,
+            include: [2, 3],
+            exclude: [],
+        };
+    }
+    ngAfterViewInit() {
+        this.dataSourceService.componentTree = {
+            paginator: {
+                componentInstance: this.filteringPaginator,
+            },
+        };
+        this.outputsSubscription = this.dataSourceService.outputsSubject.subscribe((data) => {
+            var _a, _b;
+            this.dataSource = (_a = data.repeat) === null || _a === void 0 ? void 0 : _a.itemsSource;
+            this.paginationTotal = (_b = data.paginator) === null || _b === void 0 ? void 0 : _b.total;
+            this.changeDetector.markForCheck();
+        });
+        this.applyFilters();
+    }
+    changePagination($event) {
+        this.applyFilters();
+    }
+    applyFilters() {
+        this.dataSourceService.setData(getData());
+        this.dataSourceService.applyFilters();
+    }
+    ngOnDestroy() {
+        this.outputsSubscription.unsubscribe();
+    }
+    trackBy(index, item) {
+        return item.position;
+    }
+    toggleSelectable() {
+        this.selectable = !this.selectable;
+        this.selection = new _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["SelectionModel"]();
+    }
+}
+TableSelectableToggleExampleComponent.ɵfac = function TableSelectableToggleExampleComponent_Factory(t) { return new (t || TableSelectableToggleExampleComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["ClientSideDataSource"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["SelectorService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"])); };
+TableSelectableToggleExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: TableSelectableToggleExampleComponent, selectors: [["nui-table-selectable-toggle"]], viewQuery: function TableSelectableToggleExampleComponent_Query(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_c0, 1);
+    } if (rf & 2) {
+        let _t;
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.filteringPaginator = _t.first);
+    } }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵProvidersFeature"]([_nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["ClientSideDataSource"]])], decls: 30, vars: 13, consts: function () { let i18n_1; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+        const MSG_EXTERNAL_1345472093440723911$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECTABLE_TOGGLE_TABLE_SELECTABLE_TOGGLE_EXAMPLE_COMPONENT_TS__2 = goog.getMsg(" No.");
+        i18n_1 = MSG_EXTERNAL_1345472093440723911$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECTABLE_TOGGLE_TABLE_SELECTABLE_TOGGLE_EXAMPLE_COMPONENT_TS__2;
+    }
+    else {
+        i18n_1 = $localize `:␟333f0164082b9f12f63ca11438b2085d074a5b0f␟1345472093440723911: No.`;
+    } let i18n_3; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+        const MSG_EXTERNAL_1466114336146187941$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECTABLE_TOGGLE_TABLE_SELECTABLE_TOGGLE_EXAMPLE_COMPONENT_TS__4 = goog.getMsg(" Item");
+        i18n_3 = MSG_EXTERNAL_1466114336146187941$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECTABLE_TOGGLE_TABLE_SELECTABLE_TOGGLE_EXAMPLE_COMPONENT_TS__4;
+    }
+    else {
+        i18n_3 = $localize `:␟25089eb429c6d3c5693152e8f3683de49f7f9707␟1466114336146187941: Item`;
+    } let i18n_5; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+        const MSG_EXTERNAL_4556215123825736249$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECTABLE_TOGGLE_TABLE_SELECTABLE_TOGGLE_EXAMPLE_COMPONENT_TS__6 = goog.getMsg(" Description");
+        i18n_5 = MSG_EXTERNAL_4556215123825736249$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECTABLE_TOGGLE_TABLE_SELECTABLE_TOGGLE_EXAMPLE_COMPONENT_TS__6;
+    }
+    else {
+        i18n_5 = $localize `:␟1966b0173d4a08be5ddb5cda1246d604fcd242c7␟4556215123825736249: Description`;
+    } let i18n_7; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+        const MSG_EXTERNAL_7598846418510631873$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECTABLE_TOGGLE_TABLE_SELECTABLE_TOGGLE_EXAMPLE_COMPONENT_TS__8 = goog.getMsg(" Location");
+        i18n_7 = MSG_EXTERNAL_7598846418510631873$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECTABLE_TOGGLE_TABLE_SELECTABLE_TOGGLE_EXAMPLE_COMPONENT_TS__8;
+    }
+    else {
+        i18n_7 = $localize `:␟4ed56c7c2b85b2b764c9853d121c291db3b70ed9␟7598846418510631873: Location`;
+    } return [["id", "demo-table-selectable-toggle-btn", "nui-button", "", "type", "button", 3, "click"], ["id", "demo-table-selectable-toggle", 1, "nui-table__container"], ["nui-table", "", 3, "dataSource", "totalItems", "selection", "selectable", "trackBy", "selectionChange"], ["nuiColumnDef", "position"], ["nui-header-cell", "", 4, "nuiHeaderCellDef"], ["nui-cell", "", 4, "nuiCellDef"], ["nuiColumnDef", "item"], ["nuiColumnDef", "description"], ["nui-cell", "", 3, "tooltipText", 4, "nuiCellDef"], ["nuiColumnDef", "status", "type", "icon"], ["nuiColumnDef", "location"], ["nui-header-row", "", 4, "nuiHeaderRowDef"], ["nui-row", "", 3, "rowObject", "clickableRow", 4, "nuiRowDef", "nuiRowDefColumns"], ["id", "nui-demo-table-select-paginator", "activeClass", "active", "disabledClass", "disabled", "showPrevNext", "true", 3, "page", "pageSize", "total", "pagerAction"], ["filteringPaginator", ""], [1, "flex-row-container"], [1, "flex-independent-row-item"], ["nui-header-cell", ""], i18n_1, ["nui-cell", ""], i18n_3, i18n_5, ["nui-cell", "", 3, "tooltipText"], [1, "d-flex", "align-items-center"], [3, "icon"], i18n_7, ["nui-header-row", ""], ["nui-row", "", 3, "rowObject", "clickableRow"]]; }, template: function TableSelectableToggleExampleComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function TableSelectableToggleExampleComponent_Template_button_click_0_listener() { return ctx.toggleSelectable(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Toggle Selectable");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "table", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("selectionChange", function TableSelectableToggleExampleComponent_Template_table_selectionChange_3_listener($event) { return ctx.selection = $event; });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](4, 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](5, TableSelectableToggleExampleComponent_th_5_Template, 2, 0, "th", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](6, TableSelectableToggleExampleComponent_td_6_Template, 2, 1, "td", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](7, 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](8, TableSelectableToggleExampleComponent_th_8_Template, 2, 0, "th", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](9, TableSelectableToggleExampleComponent_td_9_Template, 2, 1, "td", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](10, 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](11, TableSelectableToggleExampleComponent_th_11_Template, 2, 0, "th", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](12, TableSelectableToggleExampleComponent_td_12_Template, 2, 2, "td", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](13, 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](14, TableSelectableToggleExampleComponent_th_14_Template, 3, 1, "th", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](15, TableSelectableToggleExampleComponent_td_15_Template, 3, 1, "td", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](16, 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](17, TableSelectableToggleExampleComponent_th_17_Template, 2, 0, "th", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](18, TableSelectableToggleExampleComponent_td_18_Template, 2, 1, "td", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](19, TableSelectableToggleExampleComponent_tr_19_Template, 1, 0, "tr", 11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](20, TableSelectableToggleExampleComponent_tr_20_Template, 1, 2, "tr", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "nui-paginator", 13, 14);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("pagerAction", function TableSelectableToggleExampleComponent_Template_nui_paginator_pagerAction_21_listener($event) { return ctx.changePagination($event); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](23, "nui-divider");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "h2");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](25, "Selection result");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "div", 15);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](27, "span", 16);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](28);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](29, "json");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("dataSource", ctx.dataSource)("totalItems", ctx.paginationTotal)("selection", ctx.selection)("selectable", ctx.selectable)("trackBy", ctx.trackBy);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](16);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("nuiHeaderRowDef", ctx.displayedColumns);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("nuiRowDefColumns", ctx.displayedColumns);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("page", 1)("pageSize", 10)("total", ctx.paginationTotal);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](29, 11, ctx.selection), " ");
+    } }, directives: [_src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_2__["ButtonComponent"], _src_lib_table_table_component__WEBPACK_IMPORTED_MODULE_3__["TableComponent"], _src_lib_table_table_cell_table_column_def_directive__WEBPACK_IMPORTED_MODULE_4__["TableColumnDefDirective"], _src_lib_table_table_cell_table_header_cell_def_directive__WEBPACK_IMPORTED_MODULE_5__["TableHeaderCellDefDirective"], _src_lib_table_table_cell_table_cell_def_directive__WEBPACK_IMPORTED_MODULE_6__["TableCellDefDirective"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_7__["TableHeaderRowDefDirective"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_7__["TableRowDefDirective"], _src_lib_paginator_paginator_component__WEBPACK_IMPORTED_MODULE_8__["PaginatorComponent"], _src_lib_divider_divider_component__WEBPACK_IMPORTED_MODULE_9__["DividerComponent"], _src_lib_table_table_cell_table_header_cell_component__WEBPACK_IMPORTED_MODULE_10__["TableHeaderCellComponent"], _src_lib_table_table_cell_table_cell_directive__WEBPACK_IMPORTED_MODULE_11__["TableCellDirective"], _src_lib_icon_icon_component__WEBPACK_IMPORTED_MODULE_12__["IconComponent"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_7__["TableHeaderRowComponent"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_7__["TableRowComponent"]], pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_13__["JsonPipe"]], encapsulation: 2, changeDetection: 0 });
+/** Table data */
+function getData() {
+    return [
+        {
+            position: 1,
+            item: "FOCUS-SVR-02258123",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            status: "status_inactive",
+            location: "Brno",
+        },
+        {
+            position: 2,
+            item: "Man-LT-JYJ4AD5",
+            description: "Sed ut perspiciatis unde omnis iste natus error sit.",
+            status: "status_up",
+            location: "Brno",
+        },
+        {
+            position: 3,
+            item: "FOCUS-SVR-02258",
+            description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            status: "status_up",
+            location: "Brno",
+        },
+        {
+            position: 4,
+            item: "Man-LT-JYJ4AD5",
+            description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+            status: "status_up",
+            location: "Brno",
+        },
+        {
+            position: 5,
+            item: "Man-LT-JYJ4AD5",
+            description: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            status: "status_up",
+            location: "Brno",
+        },
+        {
+            position: 6,
+            item: "Man-LT-JYJ4AD5",
+            description: "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.",
+            status: "status_up",
+            location: "Brno",
+        },
+        {
+            position: 7,
+            item: "Man-LT-JYJ4AD5",
+            description: "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur.",
+            status: "status_up",
+            location: "Brno",
+        },
+        {
+            position: 8,
+            item: "Man-LT-JYJ4AD5",
+            description: "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.",
+            status: "status_up",
+            location: "Brno",
+        },
+        {
+            position: 9,
+            item: "Man-LT-JYJ4AD5",
+            description: "Quis autem vel eum iure reprehenderit qui in ea voluptate.",
+            status: "status_up",
+            location: "Brno",
+        },
+        {
+            position: 10,
+            item: "Man-LT-JYJ4AD5",
+            description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.",
+            status: "status_up",
+            location: "Brno",
+        },
+        {
+            position: 11,
+            item: "FOCUS-SVR-111111",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            status: "status_inactive",
+            location: "Brno",
+        },
+        {
+            position: 12,
+            item: "Man-LT-2222222",
+            description: "Sed ut perspiciatis unde omnis iste natus error sit.",
+            status: "status_up",
+            location: "Brno",
+        },
+        {
+            position: 13,
+            item: "FOCUS-SVR-333333",
+            description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            status: "status_up",
+            location: "Brno",
+        },
+        {
+            position: 14,
+            item: "Man-LT-444444",
+            description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+            status: "status_up",
+            location: "Brno",
+        },
+        {
+            position: 15,
+            item: "Man-LT-555555",
+            description: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            status: "status_up",
+            location: "Brno",
+        },
+        {
+            position: 16,
+            item: "Man-LT-666666",
+            description: "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.",
+            status: "status_up",
+            location: "Brno",
+        },
+        {
+            position: 17,
+            item: "Man-LT-777777",
+            description: "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur.",
+            status: "status_up",
+            location: "Brno",
+        },
+        {
+            position: 18,
+            item: "Man-LT-888888",
+            description: "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.",
+            status: "status_up",
+            location: "Brno",
+        },
+        {
+            position: 19,
+            item: "Man-LT-999999",
+            description: "Quis autem vel eum iure reprehenderit qui in ea voluptate.",
+            status: "status_up",
+            location: "Brno",
+        },
+        {
+            position: 20,
+            item: "Man-LT-200000",
+            description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.",
+            status: "status_up",
+            location: "Brno",
+        },
+    ];
+}
+
+
+/***/ }),
+
 /***/ "pNPw":
 /*!***********************************************************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/table/table-cell-width-set/table-cell-width-set.example.component.html ***!
@@ -10710,7 +11164,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { ScrollingModule } from \"@angular/cdk/scrolling\";\nimport { DatePipe } from \"@angular/common\";\nimport { NgModule } from \"@angular/core\";\nimport { RouterModule } from \"@angular/router\";\nimport {\n    DEMO_PATH_TOKEN,\n    NuiButtonModule,\n    NuiCheckboxModule,\n    NuiDividerModule,\n    NuiDocsModule,\n    NuiExpanderModule,\n    NuiIconModule,\n    NuiMenuModule,\n    NuiMessageModule,\n    NuiPaginatorModule,\n    NuiProgressModule,\n    NuiSearchModule,\n    NuiSpinnerModule,\n    NuiSwitchModule,\n    NuiTableModule,\n    NuiTextboxModule,\n    SrlcStage,\n} from \"@nova-ui/bits\";\n\nimport {\n    TableBasicExampleComponent,\n    TableCellContentAlignComponent,\n    TableCellWidthSetExampleComponent,\n    TableColumnsAddRemoveExampleComponent,\n    TableDocsComponent,\n    TablePaginationExampleComponent,\n    TablePinnedHeaderComponent,\n    TableReorderExampleComponent,\n    TableResizeExampleComponent,\n    TableRowClickableExampleComponent,\n    TableRowHeightSetExampleComponent,\n    TableRowSelectInstructionsComponent,\n    TableSearchExampleComponent,\n    TableSearchWithSelectAndPaginationComponent,\n    TableSelectExampleComponent,\n    TableSortingExampleComponent,\n    TableTestComponent,\n    TableVirtualScrollRealApiExampleComponent,\n    TableVirtualScrollRealApiMinimalistExampleComponent,\n    TableVirtualScrollRealApiProgressFooterExampleComponent,\n    TableVirtualScrollRealApiProgressTextFooterExampleComponent,\n    TableVirtualScrollStepsAndButtonExampleComponent,\n    TableVisualTestComponent,\n} from \"./index\";\nimport { TableVirtualScrollSelectStickyHeaderExampleComponent } from \"./table-virtual-scroll-select-sticky-header/table-virtual-scroll-select-sticky-header-example.component\";\nimport { TableVirtualScrollStickyHeaderExampleComponent } from \"./table-virtual-scroll-sticky-header/table-virtual-scroll-sticky-header-example.component\";\n\nconst routes = [\n    {\n        path: \"\",\n        component: TableDocsComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.ga,\n            },\n            showThemeSwitcher: true,\n        },\n    },\n    {\n        path: \"table-test\",\n        component: TableTestComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.ga,\n            },\n        },\n    },\n    {\n        path: \"basic\",\n        component: TableBasicExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"width-set\",\n        component: TableCellWidthSetExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"pagination\",\n        component: TablePaginationExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"search\",\n        component: TableSearchExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"height\",\n        component: TableRowHeightSetExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"custom-actions\",\n        component: TableColumnsAddRemoveExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"sorting\",\n        component: TableSortingExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"reorder\",\n        component: TableReorderExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"resize\",\n        component: TableResizeExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"select\",\n        component: TableSelectExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"table-visual-test\",\n        component: TableVisualTestComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"table-row-clickable\",\n        component: TableRowClickableExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"virtual-1\",\n        component: TableVirtualScrollRealApiExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"virtual-2\",\n        component: TableVirtualScrollRealApiMinimalistExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"step\",\n        component: TableVirtualScrollStepsAndButtonExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"sticky\",\n        component: TableVirtualScrollStickyHeaderExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"select-sticky\",\n        component: TableVirtualScrollSelectStickyHeaderExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n];\n\n@NgModule({\n    imports: [\n        NuiButtonModule,\n        NuiTableModule,\n        NuiDocsModule,\n        NuiPaginatorModule,\n        NuiSearchModule,\n        NuiSwitchModule,\n        NuiDividerModule,\n        NuiCheckboxModule,\n        NuiTextboxModule,\n        NuiMessageModule,\n        NuiExpanderModule,\n        NuiMenuModule,\n        NuiIconModule,\n        RouterModule.forChild(routes),\n        ScrollingModule,\n        NuiSpinnerModule,\n        NuiProgressModule,\n    ],\n    declarations: [\n        TableBasicExampleComponent,\n        TableCellWidthSetExampleComponent,\n        TableColumnsAddRemoveExampleComponent,\n        TableDocsComponent,\n        TablePaginationExampleComponent,\n        TablePinnedHeaderComponent,\n        TableReorderExampleComponent,\n        TableRowHeightSetExampleComponent,\n        TableRowClickableExampleComponent,\n        TableResizeExampleComponent,\n        TableSearchExampleComponent,\n        TableSelectExampleComponent,\n        TableSortingExampleComponent,\n        TableCellContentAlignComponent,\n        TableTestComponent,\n        TableVisualTestComponent,\n        TableVirtualScrollRealApiExampleComponent,\n        TableVirtualScrollStepsAndButtonExampleComponent,\n        TableVirtualScrollRealApiProgressFooterExampleComponent,\n        TableVirtualScrollRealApiProgressTextFooterExampleComponent,\n        TableVirtualScrollRealApiMinimalistExampleComponent,\n        TableSearchWithSelectAndPaginationComponent,\n        TableVirtualScrollStickyHeaderExampleComponent,\n        TableVirtualScrollSelectStickyHeaderExampleComponent,\n        TableRowSelectInstructionsComponent,\n    ],\n    providers: [\n        DatePipe,\n        {\n            provide: DEMO_PATH_TOKEN,\n            useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/),\n        },\n    ],\n    exports: [\n        RouterModule,\n    ],\n})\nexport class TableModule {\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import { ScrollingModule } from \"@angular/cdk/scrolling\";\nimport { DatePipe } from \"@angular/common\";\nimport { NgModule } from \"@angular/core\";\nimport { RouterModule } from \"@angular/router\";\nimport {\n    DEMO_PATH_TOKEN,\n    NuiButtonModule,\n    NuiCheckboxModule,\n    NuiDividerModule,\n    NuiDocsModule,\n    NuiExpanderModule,\n    NuiIconModule,\n    NuiMenuModule,\n    NuiMessageModule,\n    NuiPaginatorModule,\n    NuiProgressModule,\n    NuiSearchModule,\n    NuiSpinnerModule,\n    NuiSwitchModule,\n    NuiTableModule,\n    NuiTextboxModule,\n    SrlcStage,\n} from \"@nova-ui/bits\";\n\nimport {\n    TableBasicExampleComponent,\n    TableCellContentAlignComponent,\n    TableCellWidthSetExampleComponent,\n    TableColumnsAddRemoveExampleComponent,\n    TableDocsComponent,\n    TablePaginationExampleComponent,\n    TablePinnedHeaderComponent,\n    TableReorderExampleComponent,\n    TableResizeExampleComponent,\n    TableRowClickableExampleComponent,\n    TableRowHeightSetExampleComponent,\n    TableRowSelectInstructionsComponent,\n    TableSearchExampleComponent,\n    TableSearchWithSelectAndPaginationComponent,\n    TableSelectableToggleExampleComponent,\n    TableSelectExampleComponent,\n    TableSortingExampleComponent,\n    TableTestComponent,\n    TableVirtualScrollRealApiExampleComponent,\n    TableVirtualScrollRealApiMinimalistExampleComponent,\n    TableVirtualScrollRealApiProgressFooterExampleComponent,\n    TableVirtualScrollRealApiProgressTextFooterExampleComponent,\n    TableVirtualScrollStepsAndButtonExampleComponent,\n    TableVisualTestComponent,\n} from \"./index\";\nimport { TableVirtualScrollSelectStickyHeaderExampleComponent } from \"./table-virtual-scroll-select-sticky-header/table-virtual-scroll-select-sticky-header-example.component\";\nimport { TableVirtualScrollStickyHeaderExampleComponent } from \"./table-virtual-scroll-sticky-header/table-virtual-scroll-sticky-header-example.component\";\n\nconst routes = [\n    {\n        path: \"\",\n        component: TableDocsComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.ga,\n            },\n            showThemeSwitcher: true,\n        },\n    },\n    {\n        path: \"table-test\",\n        component: TableTestComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.ga,\n            },\n        },\n    },\n    {\n        path: \"basic\",\n        component: TableBasicExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"width-set\",\n        component: TableCellWidthSetExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"pagination\",\n        component: TablePaginationExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"search\",\n        component: TableSearchExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"height\",\n        component: TableRowHeightSetExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"custom-actions\",\n        component: TableColumnsAddRemoveExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"sorting\",\n        component: TableSortingExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"reorder\",\n        component: TableReorderExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"resize\",\n        component: TableResizeExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"selectable-toggle\",\n        component: TableSelectableToggleExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"select\",\n        component: TableSelectExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"table-visual-test\",\n        component: TableVisualTestComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"table-row-clickable\",\n        component: TableRowClickableExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"virtual-1\",\n        component: TableVirtualScrollRealApiExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"virtual-2\",\n        component: TableVirtualScrollRealApiMinimalistExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"step\",\n        component: TableVirtualScrollStepsAndButtonExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"sticky\",\n        component: TableVirtualScrollStickyHeaderExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"select-sticky\",\n        component: TableVirtualScrollSelectStickyHeaderExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n];\n\n@NgModule({\n    imports: [\n        NuiButtonModule,\n        NuiTableModule,\n        NuiDocsModule,\n        NuiPaginatorModule,\n        NuiSearchModule,\n        NuiSwitchModule,\n        NuiDividerModule,\n        NuiCheckboxModule,\n        NuiTextboxModule,\n        NuiMessageModule,\n        NuiExpanderModule,\n        NuiMenuModule,\n        NuiIconModule,\n        RouterModule.forChild(routes),\n        ScrollingModule,\n        NuiSpinnerModule,\n        NuiProgressModule,\n    ],\n    declarations: [\n        TableBasicExampleComponent,\n        TableCellWidthSetExampleComponent,\n        TableColumnsAddRemoveExampleComponent,\n        TableDocsComponent,\n        TablePaginationExampleComponent,\n        TablePinnedHeaderComponent,\n        TableReorderExampleComponent,\n        TableRowHeightSetExampleComponent,\n        TableRowClickableExampleComponent,\n        TableResizeExampleComponent,\n        TableSearchExampleComponent,\n        TableSelectableToggleExampleComponent,\n        TableSelectExampleComponent,\n        TableSortingExampleComponent,\n        TableCellContentAlignComponent,\n        TableTestComponent,\n        TableVisualTestComponent,\n        TableVirtualScrollRealApiExampleComponent,\n        TableVirtualScrollStepsAndButtonExampleComponent,\n        TableVirtualScrollRealApiProgressFooterExampleComponent,\n        TableVirtualScrollRealApiProgressTextFooterExampleComponent,\n        TableVirtualScrollRealApiMinimalistExampleComponent,\n        TableSearchWithSelectAndPaginationComponent,\n        TableVirtualScrollStickyHeaderExampleComponent,\n        TableVirtualScrollSelectStickyHeaderExampleComponent,\n        TableRowSelectInstructionsComponent,\n    ],\n    providers: [\n        DatePipe,\n        {\n            provide: DEMO_PATH_TOKEN,\n            useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/),\n        },\n    ],\n    exports: [\n        RouterModule,\n    ],\n})\nexport class TableModule {\n}\n");
 
 /***/ }),
 

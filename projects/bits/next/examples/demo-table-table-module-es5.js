@@ -1,5 +1,5 @@
 (function () {
-  var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10, _templateObject11, _templateObject12, _templateObject13, _templateObject14, _templateObject15, _templateObject16, _templateObject17, _templateObject18, _templateObject19, _templateObject20, _templateObject21, _templateObject22, _templateObject23, _templateObject24, _templateObject25, _templateObject26, _templateObject27, _templateObject28, _templateObject29, _templateObject30, _templateObject31, _templateObject32, _templateObject33, _templateObject34, _templateObject35, _templateObject36, _templateObject37, _templateObject38, _templateObject39, _templateObject40, _templateObject41, _templateObject42, _templateObject43, _templateObject44, _templateObject45, _templateObject46, _templateObject47, _templateObject48, _templateObject49, _templateObject50, _templateObject51, _templateObject52, _templateObject53, _templateObject54, _templateObject55, _templateObject56, _templateObject57, _templateObject58, _templateObject59, _templateObject60, _templateObject61, _templateObject62, _templateObject63, _templateObject64, _templateObject65, _templateObject66, _templateObject67, _templateObject68, _templateObject69, _templateObject70, _templateObject71, _templateObject72, _templateObject73, _templateObject74, _templateObject75, _templateObject76, _templateObject77, _templateObject78, _templateObject79, _templateObject80, _templateObject81, _templateObject82, _templateObject83, _templateObject84, _templateObject85, _templateObject86, _templateObject87, _templateObject88, _templateObject89, _templateObject90, _templateObject91, _templateObject92, _templateObject93, _templateObject94, _templateObject95, _templateObject96, _templateObject97, _templateObject98, _templateObject99, _templateObject100, _templateObject101, _templateObject102, _templateObject103, _templateObject104, _templateObject105, _templateObject106, _templateObject107, _templateObject108, _templateObject109, _templateObject110, _templateObject111, _templateObject112, _templateObject113, _templateObject114, _templateObject115, _templateObject116, _templateObject117, _templateObject118, _templateObject119, _templateObject120, _templateObject121, _templateObject122, _templateObject123, _templateObject124, _templateObject125, _templateObject126, _templateObject127, _templateObject128, _templateObject129, _templateObject130, _templateObject131, _templateObject132, _templateObject133, _templateObject134, _templateObject135, _templateObject136, _templateObject137, _templateObject138, _templateObject139, _templateObject140, _templateObject141, _templateObject142, _templateObject143, _templateObject144, _templateObject145, _templateObject146, _templateObject147, _templateObject148, _templateObject149, _templateObject150, _templateObject151, _templateObject152, _templateObject153, _templateObject154, _templateObject155, _templateObject156, _templateObject157, _templateObject158, _templateObject159, _templateObject160, _templateObject161, _templateObject162, _templateObject163, _templateObject164, _templateObject165, _templateObject166, _templateObject167, _templateObject168, _templateObject169, _templateObject170, _templateObject171, _templateObject172, _templateObject173, _templateObject174, _templateObject175, _templateObject176, _templateObject177, _templateObject178, _templateObject179, _templateObject180;
+  var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10, _templateObject11, _templateObject12, _templateObject13, _templateObject14, _templateObject15, _templateObject16, _templateObject17, _templateObject18, _templateObject19, _templateObject20, _templateObject21, _templateObject22, _templateObject23, _templateObject24, _templateObject25, _templateObject26, _templateObject27, _templateObject28, _templateObject29, _templateObject30, _templateObject31, _templateObject32, _templateObject33, _templateObject34, _templateObject35, _templateObject36, _templateObject37, _templateObject38, _templateObject39, _templateObject40, _templateObject41, _templateObject42, _templateObject43, _templateObject44, _templateObject45, _templateObject46, _templateObject47, _templateObject48, _templateObject49, _templateObject50, _templateObject51, _templateObject52, _templateObject53, _templateObject54, _templateObject55, _templateObject56, _templateObject57, _templateObject58, _templateObject59, _templateObject60, _templateObject61, _templateObject62, _templateObject63, _templateObject64, _templateObject65, _templateObject66, _templateObject67, _templateObject68, _templateObject69, _templateObject70, _templateObject71, _templateObject72, _templateObject73, _templateObject74, _templateObject75, _templateObject76, _templateObject77, _templateObject78, _templateObject79, _templateObject80, _templateObject81, _templateObject82, _templateObject83, _templateObject84, _templateObject85, _templateObject86, _templateObject87, _templateObject88, _templateObject89, _templateObject90, _templateObject91, _templateObject92, _templateObject93, _templateObject94, _templateObject95, _templateObject96, _templateObject97, _templateObject98, _templateObject99, _templateObject100, _templateObject101, _templateObject102, _templateObject103, _templateObject104, _templateObject105, _templateObject106, _templateObject107, _templateObject108, _templateObject109, _templateObject110, _templateObject111, _templateObject112, _templateObject113, _templateObject114, _templateObject115, _templateObject116, _templateObject117, _templateObject118, _templateObject119, _templateObject120, _templateObject121, _templateObject122, _templateObject123, _templateObject124, _templateObject125, _templateObject126, _templateObject127, _templateObject128, _templateObject129, _templateObject130, _templateObject131, _templateObject132, _templateObject133, _templateObject134, _templateObject135, _templateObject136, _templateObject137, _templateObject138, _templateObject139, _templateObject140, _templateObject141, _templateObject142, _templateObject143, _templateObject144, _templateObject145, _templateObject146, _templateObject147, _templateObject148, _templateObject149, _templateObject150, _templateObject151, _templateObject152, _templateObject153, _templateObject154, _templateObject155, _templateObject156, _templateObject157, _templateObject158, _templateObject159, _templateObject160, _templateObject161, _templateObject162, _templateObject163, _templateObject164, _templateObject165, _templateObject166, _templateObject167, _templateObject168, _templateObject169, _templateObject170, _templateObject171, _templateObject172, _templateObject173, _templateObject174, _templateObject175, _templateObject176, _templateObject177, _templateObject178, _templateObject179, _templateObject180, _templateObject181, _templateObject182, _templateObject183, _templateObject184;
 
   function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
@@ -283,6 +283,8 @@
         "./table-search/table-search.example.component.ts": "kJJM",
         "./table-select/table-select.example.component.html": "PcpU",
         "./table-select/table-select.example.component.ts": "6bWa",
+        "./table-selectable-toggle/table-selectable-toggle.example.component.html": "4Gnt",
+        "./table-selectable-toggle/table-selectable-toggle.example.component.ts": "ksqJ",
         "./table-sorting/table-sorting.example.component.html": "6J2b",
         "./table-sorting/table-sorting.example.component.ts": "tsv0",
         "./table-test/table-test-data-source.ts": "6t4g",
@@ -1308,7 +1310,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "export * from \"./table-docs/table-docs.example.component\";\nexport * from \"./table-basic/table-basic.example.component\";\nexport * from \"./table-pinned-header/table-pinned-header.example.component\";\nexport * from \"./table-cell-content-align/table-cell-content-align.example.component\";\nexport * from \"./table-cell-width-set/table-cell-width-set.example.component\";\nexport * from \"./table-row-clickable/table-row-clickable.example.component\";\nexport * from \"./table-row-height-set/table-row-height-set.example.component\";\nexport * from \"./table-reorder/table-reorder.example.component\";\nexport * from \"./table-pagination/table-pagination.example.component\";\nexport * from \"./table-columns-add-remove/table-columns-add-remove.example.component\";\nexport * from \"./table-search/table-search.example.component\";\nexport * from \"./table-sorting/table-sorting.example.component\";\nexport * from \"./table-resize/table-resize.example.component\";\nexport * from \"./table-select/table-select.example.component\";\nexport * from \"./table-test/table-test.component\";\nexport * from \"./table-visual-test/table-visual-test.example\";\nexport * from \"./table-virtual-scroll-real-api/table-virtual-scroll-real-api.example.component\";\nexport * from \"./table-virtual-scroll-steps-and-button/table-virtual-scroll-steps-and-button.example.component\";\nexport * from \"./table-virtual-scroll-real-api-progress-footer/table-virtual-scroll-real-api-progress-footer.example.component\";\nexport * from \"./table-virtual-scroll-real-api-progress-text-footer/table-virtual-scroll-real-api-progress-text-footer.example.component\";\nexport * from \"./table-virtual-scroll-real-api-minimalist/table-virtual-scroll-real-api-minimalist.example.component\";\nexport * from \"./table-search-with-select-and-pagination/table-search-with-select-and-pagination.example.component\";\n";
+      __webpack_exports__["default"] = "export * from \"./table-docs/table-docs.example.component\";\nexport * from \"./table-basic/table-basic.example.component\";\nexport * from \"./table-pinned-header/table-pinned-header.example.component\";\nexport * from \"./table-cell-content-align/table-cell-content-align.example.component\";\nexport * from \"./table-cell-width-set/table-cell-width-set.example.component\";\nexport * from \"./table-row-clickable/table-row-clickable.example.component\";\nexport * from \"./table-row-height-set/table-row-height-set.example.component\";\nexport * from \"./table-reorder/table-reorder.example.component\";\nexport * from \"./table-pagination/table-pagination.example.component\";\nexport * from \"./table-columns-add-remove/table-columns-add-remove.example.component\";\nexport * from \"./table-search/table-search.example.component\";\nexport * from \"./table-sorting/table-sorting.example.component\";\nexport * from \"./table-resize/table-resize.example.component\";\nexport * from \"./table-select/table-select.example.component\";\nexport * from \"./table-selectable-toggle/table-selectable-toggle.example.component\";\nexport * from \"./table-test/table-test.component\";\nexport * from \"./table-visual-test/table-visual-test.example\";\nexport * from \"./table-virtual-scroll-real-api/table-virtual-scroll-real-api.example.component\";\nexport * from \"./table-virtual-scroll-steps-and-button/table-virtual-scroll-steps-and-button.example.component\";\nexport * from \"./table-virtual-scroll-real-api-progress-footer/table-virtual-scroll-real-api-progress-footer.example.component\";\nexport * from \"./table-virtual-scroll-real-api-progress-text-footer/table-virtual-scroll-real-api-progress-text-footer.example.component\";\nexport * from \"./table-virtual-scroll-real-api-minimalist/table-virtual-scroll-real-api-minimalist.example.component\";\nexport * from \"./table-search-with-select-and-pagination/table-search-with-select-and-pagination.example.component\";\n";
       /***/
     },
 
@@ -1329,6 +1331,26 @@
 
 
       __webpack_exports__["default"] = "import { Injectable } from \"@angular/core\";\nimport { DataSourceService, INovaFilteringOutputs, INovaFilters, SearchService } from \"@nova-ui/bits\";\nimport { BehaviorSubject } from \"rxjs\";\n\nimport {\n    IRandomUserResponse,\n    IRandomUserResults,\n    IRandomUserTableModel,\n    UsersQueryResponse\n} from \"./table-virtual-scroll-real-api/table-virtual-scroll-real-api.example.component\";\n\n@Injectable()\nexport class RandomuserTableDataSource1 extends DataSourceService<IRandomUserTableModel> {\n    private readonly url = \"https://randomuser.me/api\";\n    private readonly seed = \"sw\";\n    private page: number = 1;\n    private dataStart: number = 0;\n    private cache = Array.from<IRandomUserTableModel>({ length: 0 });\n\n    public step: BehaviorSubject<number> = new BehaviorSubject(100);\n    public busy = new BehaviorSubject(false);\n    public itemsToLoad: BehaviorSubject<number> = new BehaviorSubject(500);\n\n    constructor(private searchService: SearchService) {\n        super();\n    }\n\n    public async getFilteredData(filters: INovaFilters): Promise<INovaFilteringOutputs> {\n        this.busy.next(true);\n\n        // We're returning Promise with setTimeout here to make the response from the server longer, as the API being used sends responses\n        // almost immediately. We need it longer to be able the show the spinner component on data load\n        return new Promise(resolve => {\n            setTimeout(() => {\n                this.getData(this.dataStart, this.dataStart + this.step.value).then((response: UsersQueryResponse | undefined) => {\n                    if (!response) { return; }\n\n                    this.cache = this.cache.concat(response.users);\n                    this.dataSubject.next(this.cache);\n                    resolve({\n                        repeat: {\n                            itemsSource: this.cache,\n                        },\n                        // This API can return thousands of results, however doesn't return the max number of results,\n                        // so we set the max number of result manually here.\n                        itemsToLoad: this.itemsToLoad.value,\n                        totalItems: 1575,\n                        start: response.start,\n                    });\n                    this.busy.next(false);\n                    this.dataStart += this.step.value;\n                    this.page++;\n                });\n            }, 500);\n        });\n    }\n\n    public async getData(start: number = 0, end: number= 20): Promise<UsersQueryResponse | undefined> {\n        let response: IRandomUserResponse | undefined;\n        try {\n            response = await\n                        (await fetch(`${this.url}/?page=${this.page}&results=${end - start}&seed=${this.seed}`))\n                            .json();\n                                return {\n                                    users: response?.results.map((result: IRandomUserResults, i: number) => ({\n                                        no: this.cache.length + i + 1,\n                                        nameTitle: result.name.title,\n                                        nameFirst: result.name.first,\n                                        nameLast: result.name.last,\n                                        gender: result.gender,\n                                        country: result.location.country,\n                                        city: result.location.city,\n                                        postcode: result.location.postcode,\n                                        email: result.email,\n                                        cell: result.cell,\n                                    })),\n                                    total: response?.results.length,\n                                    start: start,\n                                } as UsersQueryResponse;\n        } catch (e) {\n            console.error(\"Error responding from server. Please visit https://https://randomuser.me/ to see if it's available\");\n        }\n    }\n}\n";
+      /***/
+    },
+
+    /***/
+    "4Gnt":
+    /*!*****************************************************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/table/table-selectable-toggle/table-selectable-toggle.example.component.html ***!
+      \*****************************************************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function Gnt(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "<button id=\"demo-table-selectable-toggle-btn\" nui-button type=\"button\" (click)=\"toggleSelectable()\">Toggle Selectable</button>\n<div class=\"nui-table__container\" id=\"demo-table-selectable-toggle\">\n    <table nui-table [dataSource]=\"dataSource\" [totalItems]=\"paginationTotal\" [(selection)]=\"selection\"\n           [selectable]=\"selectable\" [trackBy]=\"trackBy\">\n        <ng-container nuiColumnDef=\"position\">\n            <th nui-header-cell *nuiHeaderCellDef i18n> No.</th>\n            <td nui-cell *nuiCellDef=\"let element\"> {{element.position}}</td>\n        </ng-container>\n\n        <ng-container nuiColumnDef=\"item\">\n            <th nui-header-cell *nuiHeaderCellDef i18n> Item</th>\n            <td nui-cell *nuiCellDef=\"let element\"> {{element.item}}</td>\n        </ng-container>\n\n        <ng-container nuiColumnDef=\"description\">\n            <th nui-header-cell *nuiHeaderCellDef i18n> Description</th>\n            <td nui-cell *nuiCellDef=\"let element\" [tooltipText]=\"element.description\">\n                {{element.description}}\n            </td>\n        </ng-container>\n\n        <ng-container nuiColumnDef=\"status\" type=\"icon\">\n            <th nui-header-cell *nuiHeaderCellDef>\n                <div class=\"d-flex align-items-center\">\n                    <nui-icon [icon]=\"'enable'\"></nui-icon>\n                </div>\n            </th>\n            <td nui-cell *nuiCellDef=\"let element\">\n                <div class=\"d-flex align-items-center\">\n                    <nui-icon [icon]=\"element.status\"></nui-icon>\n                </div>\n            </td>\n        </ng-container>\n\n        <ng-container nuiColumnDef=\"location\">\n            <th nui-header-cell *nuiHeaderCellDef i18n> Location</th>\n            <td nui-cell *nuiCellDef=\"let element\"> {{element.location}}</td>\n        </ng-container>\n\n        <tr nui-header-row *nuiHeaderRowDef=\"displayedColumns\"></tr>\n        <tr nui-row *nuiRowDef=\"let row; columns: displayedColumns;\" [rowObject]=\"row\" [clickableRow]=\"selectable\"></tr>\n    </table>\n</div>\n<nui-paginator id=\"nui-demo-table-select-paginator\"\n               [page]=\"1\"\n               [pageSize]=\"10\"\n               [total]=\"paginationTotal\"\n               activeClass=\"active\"\n               disabledClass=\"disabled\"\n               showPrevNext=\"true\"\n               (pagerAction)=\"changePagination($event)\"\n               #filteringPaginator>\n</nui-paginator>\n<nui-divider></nui-divider>\n<h2>Selection result</h2>\n<div class=\"flex-row-container\">\n    <span class=\"flex-independent-row-item\">\n        {{selection | json}}\n    </span>\n</div>\n\n";
       /***/
     },
 
@@ -2832,6 +2854,14 @@
           }
         }
       }, {
+        path: "selectable-toggle",
+        component: _index__WEBPACK_IMPORTED_MODULE_4__["TableSelectableToggleExampleComponent"],
+        data: {
+          "srlc": {
+            "hideIndicator": true
+          }
+        }
+      }, {
         path: "select",
         component: _index__WEBPACK_IMPORTED_MODULE_4__["TableSelectExampleComponent"],
         data: {
@@ -2919,7 +2949,7 @@
 
       (function () {
         (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵsetNgModuleScope"](TableModule, {
-          declarations: [_index__WEBPACK_IMPORTED_MODULE_4__["TableBasicExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableCellWidthSetExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableColumnsAddRemoveExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableDocsComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TablePaginationExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TablePinnedHeaderComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableReorderExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableRowHeightSetExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableRowClickableExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableResizeExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableSearchExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableSelectExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableSortingExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableCellContentAlignComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableTestComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableVisualTestComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableVirtualScrollRealApiExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableVirtualScrollStepsAndButtonExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableVirtualScrollRealApiProgressFooterExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableVirtualScrollRealApiProgressTextFooterExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableVirtualScrollRealApiMinimalistExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableSearchWithSelectAndPaginationComponent"], _table_virtual_scroll_sticky_header_table_virtual_scroll_sticky_header_example_component__WEBPACK_IMPORTED_MODULE_6__["TableVirtualScrollStickyHeaderExampleComponent"], _table_virtual_scroll_select_sticky_header_table_virtual_scroll_select_sticky_header_example_component__WEBPACK_IMPORTED_MODULE_5__["TableVirtualScrollSelectStickyHeaderExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableRowSelectInstructionsComponent"]],
+          declarations: [_index__WEBPACK_IMPORTED_MODULE_4__["TableBasicExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableCellWidthSetExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableColumnsAddRemoveExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableDocsComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TablePaginationExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TablePinnedHeaderComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableReorderExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableRowHeightSetExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableRowClickableExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableResizeExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableSearchExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableSelectableToggleExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableSelectExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableSortingExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableCellContentAlignComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableTestComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableVisualTestComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableVirtualScrollRealApiExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableVirtualScrollStepsAndButtonExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableVirtualScrollRealApiProgressFooterExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableVirtualScrollRealApiProgressTextFooterExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableVirtualScrollRealApiMinimalistExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableSearchWithSelectAndPaginationComponent"], _table_virtual_scroll_sticky_header_table_virtual_scroll_sticky_header_example_component__WEBPACK_IMPORTED_MODULE_6__["TableVirtualScrollStickyHeaderExampleComponent"], _table_virtual_scroll_select_sticky_header_table_virtual_scroll_select_sticky_header_example_component__WEBPACK_IMPORTED_MODULE_5__["TableVirtualScrollSelectStickyHeaderExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableRowSelectInstructionsComponent"]],
           imports: [_nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["NuiButtonModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["NuiTableModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["NuiDocsModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["NuiPaginatorModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["NuiSearchModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["NuiSwitchModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["NuiDividerModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["NuiCheckboxModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["NuiTextboxModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["NuiMessageModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["NuiExpanderModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["NuiMenuModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["NuiIconModule"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"], _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_0__["ScrollingModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["NuiSpinnerModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["NuiProgressModule"]],
           exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]]
         });
@@ -14055,7 +14085,7 @@
       !*** ./demo/src/components/demo/table/index.ts ***!
       \*************************************************/
 
-    /*! exports provided: TableDocsComponent, TableRowSelectInstructionsComponent, TableBasicExampleComponent, TablePinnedHeaderComponent, TableCellContentAlignComponent, TableCellWidthSetExampleComponent, TableRowClickableExampleComponent, TableRowHeightSetExampleComponent, TableReorderExampleComponent, TablePaginationExampleComponent, TableColumnsAddRemoveExampleComponent, TableSearchExampleComponent, TableSortingExampleComponent, TableResizeExampleComponent, TableSelectExampleComponent, TableTestComponent, TableVisualTestComponent, TableVirtualScrollRealApiExampleComponent, RandomuserTableDataSource, TableVirtualScrollStepsAndButtonExampleComponent, TableVirtualScrollRealApiProgressFooterExampleComponent, TableVirtualScrollRealApiProgressTextFooterExampleComponent, TableVirtualScrollRealApiMinimalistExampleComponent, TableSearchWithSelectAndPaginationComponent */
+    /*! exports provided: TableDocsComponent, TableRowSelectInstructionsComponent, TableBasicExampleComponent, TablePinnedHeaderComponent, TableCellContentAlignComponent, TableCellWidthSetExampleComponent, TableRowClickableExampleComponent, TableRowHeightSetExampleComponent, TableReorderExampleComponent, TablePaginationExampleComponent, TableColumnsAddRemoveExampleComponent, TableSearchExampleComponent, TableSortingExampleComponent, TableResizeExampleComponent, TableSelectExampleComponent, TableSelectableToggleExampleComponent, TableTestComponent, TableVisualTestComponent, TableVirtualScrollRealApiExampleComponent, RandomuserTableDataSource, TableVirtualScrollStepsAndButtonExampleComponent, TableVirtualScrollRealApiProgressFooterExampleComponent, TableVirtualScrollRealApiProgressTextFooterExampleComponent, TableVirtualScrollRealApiMinimalistExampleComponent, TableSearchWithSelectAndPaginationComponent */
 
     /***/
     function gGfI(module, __webpack_exports__, __webpack_require__) {
@@ -14239,104 +14269,116 @@
       /* harmony import */
 
 
-      var _table_test_table_test_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
+      var _table_selectable_toggle_table_selectable_toggle_example_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
+      /*! ./table-selectable-toggle/table-selectable-toggle.example.component */
+      "p/vV");
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "TableSelectableToggleExampleComponent", function () {
+        return _table_selectable_toggle_table_selectable_toggle_example_component__WEBPACK_IMPORTED_MODULE_14__["TableSelectableToggleExampleComponent"];
+      });
+      /* harmony import */
+
+
+      var _table_test_table_test_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
       /*! ./table-test/table-test.component */
       "z4hb");
       /* harmony reexport (safe) */
 
 
       __webpack_require__.d(__webpack_exports__, "TableTestComponent", function () {
-        return _table_test_table_test_component__WEBPACK_IMPORTED_MODULE_14__["TableTestComponent"];
+        return _table_test_table_test_component__WEBPACK_IMPORTED_MODULE_15__["TableTestComponent"];
       });
       /* harmony import */
 
 
-      var _table_visual_test_table_visual_test_example__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
+      var _table_visual_test_table_visual_test_example__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
       /*! ./table-visual-test/table-visual-test.example */
       "s5Ti");
       /* harmony reexport (safe) */
 
 
       __webpack_require__.d(__webpack_exports__, "TableVisualTestComponent", function () {
-        return _table_visual_test_table_visual_test_example__WEBPACK_IMPORTED_MODULE_15__["TableVisualTestComponent"];
+        return _table_visual_test_table_visual_test_example__WEBPACK_IMPORTED_MODULE_16__["TableVisualTestComponent"];
       });
       /* harmony import */
 
 
-      var _table_virtual_scroll_real_api_table_virtual_scroll_real_api_example_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
+      var _table_virtual_scroll_real_api_table_virtual_scroll_real_api_example_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(
       /*! ./table-virtual-scroll-real-api/table-virtual-scroll-real-api.example.component */
       "aiGc");
       /* harmony reexport (safe) */
 
 
       __webpack_require__.d(__webpack_exports__, "TableVirtualScrollRealApiExampleComponent", function () {
-        return _table_virtual_scroll_real_api_table_virtual_scroll_real_api_example_component__WEBPACK_IMPORTED_MODULE_16__["TableVirtualScrollRealApiExampleComponent"];
+        return _table_virtual_scroll_real_api_table_virtual_scroll_real_api_example_component__WEBPACK_IMPORTED_MODULE_17__["TableVirtualScrollRealApiExampleComponent"];
       });
       /* harmony reexport (safe) */
 
 
       __webpack_require__.d(__webpack_exports__, "RandomuserTableDataSource", function () {
-        return _table_virtual_scroll_real_api_table_virtual_scroll_real_api_example_component__WEBPACK_IMPORTED_MODULE_16__["RandomuserTableDataSource"];
+        return _table_virtual_scroll_real_api_table_virtual_scroll_real_api_example_component__WEBPACK_IMPORTED_MODULE_17__["RandomuserTableDataSource"];
       });
       /* harmony import */
 
 
-      var _table_virtual_scroll_steps_and_button_table_virtual_scroll_steps_and_button_example_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(
+      var _table_virtual_scroll_steps_and_button_table_virtual_scroll_steps_and_button_example_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(
       /*! ./table-virtual-scroll-steps-and-button/table-virtual-scroll-steps-and-button.example.component */
       "zX3T");
       /* harmony reexport (safe) */
 
 
       __webpack_require__.d(__webpack_exports__, "TableVirtualScrollStepsAndButtonExampleComponent", function () {
-        return _table_virtual_scroll_steps_and_button_table_virtual_scroll_steps_and_button_example_component__WEBPACK_IMPORTED_MODULE_17__["TableVirtualScrollStepsAndButtonExampleComponent"];
+        return _table_virtual_scroll_steps_and_button_table_virtual_scroll_steps_and_button_example_component__WEBPACK_IMPORTED_MODULE_18__["TableVirtualScrollStepsAndButtonExampleComponent"];
       });
       /* harmony import */
 
 
-      var _table_virtual_scroll_real_api_progress_footer_table_virtual_scroll_real_api_progress_footer_example_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(
+      var _table_virtual_scroll_real_api_progress_footer_table_virtual_scroll_real_api_progress_footer_example_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(
       /*! ./table-virtual-scroll-real-api-progress-footer/table-virtual-scroll-real-api-progress-footer.example.component */
       "Jv3n");
       /* harmony reexport (safe) */
 
 
       __webpack_require__.d(__webpack_exports__, "TableVirtualScrollRealApiProgressFooterExampleComponent", function () {
-        return _table_virtual_scroll_real_api_progress_footer_table_virtual_scroll_real_api_progress_footer_example_component__WEBPACK_IMPORTED_MODULE_18__["TableVirtualScrollRealApiProgressFooterExampleComponent"];
+        return _table_virtual_scroll_real_api_progress_footer_table_virtual_scroll_real_api_progress_footer_example_component__WEBPACK_IMPORTED_MODULE_19__["TableVirtualScrollRealApiProgressFooterExampleComponent"];
       });
       /* harmony import */
 
 
-      var _table_virtual_scroll_real_api_progress_text_footer_table_virtual_scroll_real_api_progress_text_footer_example_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(
+      var _table_virtual_scroll_real_api_progress_text_footer_table_virtual_scroll_real_api_progress_text_footer_example_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(
       /*! ./table-virtual-scroll-real-api-progress-text-footer/table-virtual-scroll-real-api-progress-text-footer.example.component */
       "34la");
       /* harmony reexport (safe) */
 
 
       __webpack_require__.d(__webpack_exports__, "TableVirtualScrollRealApiProgressTextFooterExampleComponent", function () {
-        return _table_virtual_scroll_real_api_progress_text_footer_table_virtual_scroll_real_api_progress_text_footer_example_component__WEBPACK_IMPORTED_MODULE_19__["TableVirtualScrollRealApiProgressTextFooterExampleComponent"];
+        return _table_virtual_scroll_real_api_progress_text_footer_table_virtual_scroll_real_api_progress_text_footer_example_component__WEBPACK_IMPORTED_MODULE_20__["TableVirtualScrollRealApiProgressTextFooterExampleComponent"];
       });
       /* harmony import */
 
 
-      var _table_virtual_scroll_real_api_minimalist_table_virtual_scroll_real_api_minimalist_example_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(
+      var _table_virtual_scroll_real_api_minimalist_table_virtual_scroll_real_api_minimalist_example_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(
       /*! ./table-virtual-scroll-real-api-minimalist/table-virtual-scroll-real-api-minimalist.example.component */
       "GE5v");
       /* harmony reexport (safe) */
 
 
       __webpack_require__.d(__webpack_exports__, "TableVirtualScrollRealApiMinimalistExampleComponent", function () {
-        return _table_virtual_scroll_real_api_minimalist_table_virtual_scroll_real_api_minimalist_example_component__WEBPACK_IMPORTED_MODULE_20__["TableVirtualScrollRealApiMinimalistExampleComponent"];
+        return _table_virtual_scroll_real_api_minimalist_table_virtual_scroll_real_api_minimalist_example_component__WEBPACK_IMPORTED_MODULE_21__["TableVirtualScrollRealApiMinimalistExampleComponent"];
       });
       /* harmony import */
 
 
-      var _table_search_with_select_and_pagination_table_search_with_select_and_pagination_example_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(
+      var _table_search_with_select_and_pagination_table_search_with_select_and_pagination_example_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(
       /*! ./table-search-with-select-and-pagination/table-search-with-select-and-pagination.example.component */
       "PaBn");
       /* harmony reexport (safe) */
 
 
       __webpack_require__.d(__webpack_exports__, "TableSearchWithSelectAndPaginationComponent", function () {
-        return _table_search_with_select_and_pagination_table_search_with_select_and_pagination_example_component__WEBPACK_IMPORTED_MODULE_21__["TableSearchWithSelectAndPaginationComponent"];
+        return _table_search_with_select_and_pagination_table_search_with_select_and_pagination_example_component__WEBPACK_IMPORTED_MODULE_22__["TableSearchWithSelectAndPaginationComponent"];
       });
       /***/
 
@@ -15657,6 +15699,26 @@
 
 
       __webpack_exports__["default"] = "import { AfterViewInit, Component, OnDestroy, ViewChild } from \"@angular/core\";\nimport {\n    ClientSideDataSource,\n    INovaFilteringOutputs, SearchComponent, TableComponent\n} from \"@nova-ui/bits\";\nimport { Subscription } from \"rxjs\";\nimport { debounceTime } from \"rxjs/operators\";\n\ninterface IExampleTableModel {\n    position: number;\n    name: string;\n    features: any;\n    asset: string;\n    location: string;\n    status: string;\n    outages: number;\n    checks: any;\n}\n\n@Component({\n    selector: \"nui-table-search-example\",\n    providers: [ClientSideDataSource],\n    templateUrl: \"./table-search.example.component.html\",\n    styleUrls: [\"./table-search.example.component.less\"],\n})\nexport class TableSearchExampleComponent implements AfterViewInit, OnDestroy {\n    public displayedColumns = [\"position\", \"name\", \"features\", \"asset\", \"location\", \"status\", \"outages\", \"checks\"];\n    public dataSource: any = [];\n    public searchTerm: string;\n    public columnsToApplySearch: any = [];\n    @ViewChild(\"filteringSearch\") filteringSearch: SearchComponent;\n    @ViewChild(\"filteringTable\") filteringTable: TableComponent<IExampleTableModel>;\n\n    private outputsSubscription: Subscription;\n    private searchSubscription: Subscription;\n\n    constructor(public dataSourceService: ClientSideDataSource<IExampleTableModel>) {\n        dataSourceService.setData(getData());\n    }\n\n    ngAfterViewInit() {\n        this.dataSourceService.componentTree = {\n            search: {\n                componentInstance: this.filteringSearch,\n            },\n        };\n        this.outputsSubscription = this.dataSourceService.outputsSubject.subscribe((data: INovaFilteringOutputs) => {\n            this.dataSource = data.repeat?.itemsSource;\n        });\n        this.searchSubscription = this.filteringSearch.inputChange.pipe(debounceTime(500))\n            .subscribe(() => {\n                this.onSearch(undefined);\n            });\n\n        this.dataSourceService.applyFilters();\n    }\n\n    public applySearchField() {\n        if (!this.columnsToApplySearch.length) {\n            this.columnsToApplySearch = [\"location\"];\n        } else {\n            this.columnsToApplySearch = [];\n        }\n    }\n\n    public onSearch(value?: string) {\n        this.dataSourceService.setSearchProperties(this.columnsToApplySearch);\n        this.dataSourceService.applyFilters();\n    }\n\n    public onSearchCancel() {\n        this.dataSourceService.applyFilters();\n    }\n\n    ngOnDestroy() {\n        this.searchSubscription.unsubscribe();\n        this.outputsSubscription.unsubscribe();\n    }\n}\n\n/** Table data */\nfunction getData(): IExampleTableModel[] {\n    return [\n        {\n            position: 1,\n            name: \"FOCUS-SVR-02258\",\n            features: [\"remote-access-vpn-tunnel\", \"tools\", \"database\", \"orion-ape-backup\", \"patch-manager01\"],\n            asset: \"Workstation\",\n            location: \"Brno\",\n            status: \"Active\",\n            outages: 90,\n            checks: [{\n                icon: \"status_up\",\n                num: 25,\n            }],\n        },\n        {\n            position: 2,\n            name: \"Man-LT-JYJ4AD5\",\n            features: [\"remote-access-vpn-tunnel\", \"tools\", \"database\", \"orion-ape-backup\", \"patch-manager01\"],\n            asset: \"Workstation\",\n            location: \"Brno\",\n            status: \"Active\",\n            outages: 9,\n            checks: [{\n                icon: \"status_critical\",\n                num: 25,\n            }],\n        },\n        {\n            position: 3,\n            name: \"FOCUS-SVR-02258\",\n            features: [\"remote-access-vpn-tunnel\", \"tools\", \"database\", \"orion-ape-backup\", \"patch-manager01\"],\n            asset: \"Workstation\",\n            location: \"Brno\",\n            status: \"Active\",\n            outages: 17,\n            checks: [{\n                icon: \"status_down\",\n                num: 25,\n            }],\n        },\n        {\n            position: 4,\n            name: \"Man-ATFLT-BRNO1\",\n            features: [\"remote-access-vpn-tunnel\", \"tools\", \"database\", \"orion-ape-backup\", \"patch-manager01\"],\n            asset: \"Workstation\",\n            location: \"Austin\",\n            status: \"Active\",\n            outages: 3,\n            checks: [{\n                icon: \"status_up\",\n                num: 25,\n            }],\n        },\n        {\n            position: 5,\n            name: \"Man-LTF-JYAF75J4AD5\",\n            features: [\"remote-access-vpn-tunnel\", \"tools\", \"database\", \"orion-ape-backup\", \"patch-manager01\"],\n            asset: \"Workstation\",\n            location: \"Austin\",\n            status: \"Active\",\n            outages: 56,\n            checks: [{\n                icon: \"status_up\",\n                num: 25,\n            }],\n        },\n    ];\n}\n";
+      /***/
+    },
+
+    /***/
+    "ksqJ":
+    /*!***************************************************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/table/table-selectable-toggle/table-selectable-toggle.example.component.ts ***!
+      \***************************************************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function ksqJ(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, ViewChild } from \"@angular/core\";\nimport { ClientSideDataSource, INovaFilteringOutputs, ISelection, PaginatorComponent, SelectionModel, SelectorService } from \"@nova-ui/bits\";\nimport { Subscription } from \"rxjs\";\n\ninterface IExampleTableModel {\n    position: number;\n    item: string;\n    description: string;\n    status: string;\n    location: string;\n}\n\n@Component({\n    selector: \"nui-table-selectable-toggle\",\n    providers: [ClientSideDataSource],\n    templateUrl: \"./table-selectable-toggle.example.component.html\",\n    changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class TableSelectableToggleExampleComponent implements AfterViewInit, OnDestroy {\n    public displayedColumns = [\"position\", \"item\", \"description\", \"status\", \"location\"];\n    public dataSource?: IExampleTableModel[] = [];\n    public paginationTotal?: number;\n    public selectedItems: IExampleTableModel[] = [];\n    public selectable = true;\n    public selection: ISelection = {\n        isAllPages: false,\n        include: [2, 3],\n        exclude: [\n        ],\n    };\n\n    @ViewChild(\"filteringPaginator\") filteringPaginator: PaginatorComponent;\n\n    private outputsSubscription: Subscription;\n\n    constructor(public dataSourceService: ClientSideDataSource<IExampleTableModel>,\n        public selectorService: SelectorService,\n        public changeDetector: ChangeDetectorRef) {\n    }\n\n    public ngAfterViewInit() {\n        this.dataSourceService.componentTree = {\n            paginator: {\n                componentInstance: this.filteringPaginator,\n            },\n        };\n        this.outputsSubscription = this.dataSourceService.outputsSubject.subscribe((data: INovaFilteringOutputs) => {\n            this.dataSource = data.repeat?.itemsSource;\n            this.paginationTotal = data.paginator?.total;\n            this.changeDetector.markForCheck();\n        });\n        this.applyFilters();\n    }\n\n    public changePagination($event: any) {\n        this.applyFilters();\n    }\n\n    public applyFilters() {\n        this.dataSourceService.setData(getData());\n        this.dataSourceService.applyFilters();\n    }\n\n    public ngOnDestroy() {\n        this.outputsSubscription.unsubscribe();\n    }\n\n    public trackBy(index: number, item: IExampleTableModel) {\n        return item.position;\n    }\n\n    public toggleSelectable() {\n        this.selectable = !this.selectable;\n        this.selection = new SelectionModel();\n    }\n}\n\n/** Table data */\nfunction getData(): IExampleTableModel[] {\n    return [\n        {\n            position: 1,\n            item: \"FOCUS-SVR-02258123\",\n            description: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\n            status: \"status_inactive\",\n            location: \"Brno\",\n        },\n        {\n            position: 2,\n            item: \"Man-LT-JYJ4AD5\",\n            description: \"Sed ut perspiciatis unde omnis iste natus error sit.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n        {\n            position: 3,\n            item: \"FOCUS-SVR-02258\",\n            description: \"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n        {\n            position: 4,\n            item: \"Man-LT-JYJ4AD5\",\n            description: \"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n        {\n            position: 5,\n            item: \"Man-LT-JYJ4AD5\",\n            description: \"Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n        {\n            position: 6,\n            item: \"Man-LT-JYJ4AD5\",\n            description: \"Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n        {\n            position: 7,\n            item: \"Man-LT-JYJ4AD5\",\n            description: \"Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n        {\n            position: 8,\n            item: \"Man-LT-JYJ4AD5\",\n            description: \"Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n        {\n            position: 9,\n            item: \"Man-LT-JYJ4AD5\",\n            description: \"Quis autem vel eum iure reprehenderit qui in ea voluptate.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n        {\n            position: 10,\n            item: \"Man-LT-JYJ4AD5\",\n            description: \"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n        {\n            position: 11,\n            item: \"FOCUS-SVR-111111\",\n            description: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\n            status: \"status_inactive\",\n            location: \"Brno\",\n        },\n        {\n            position: 12,\n            item: \"Man-LT-2222222\",\n            description: \"Sed ut perspiciatis unde omnis iste natus error sit.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n        {\n            position: 13,\n            item: \"FOCUS-SVR-333333\",\n            description: \"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n        {\n            position: 14,\n            item: \"Man-LT-444444\",\n            description: \"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n        {\n            position: 15,\n            item: \"Man-LT-555555\",\n            description: \"Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n        {\n            position: 16,\n            item: \"Man-LT-666666\",\n            description: \"Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n        {\n            position: 17,\n            item: \"Man-LT-777777\",\n            description: \"Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n        {\n            position: 18,\n            item: \"Man-LT-888888\",\n            description: \"Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n        {\n            position: 19,\n            item: \"Man-LT-999999\",\n            description: \"Quis autem vel eum iure reprehenderit qui in ea voluptate.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n        {\n            position: 20,\n            item: \"Man-LT-200000\",\n            description: \"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n    ];\n}\n";
       /***/
     },
 
@@ -17351,6 +17413,671 @@
     },
 
     /***/
+    "p/vV":
+    /*!*************************************************************************************************************!*\
+      !*** ./demo/src/components/demo/table/table-selectable-toggle/table-selectable-toggle.example.component.ts ***!
+      \*************************************************************************************************************/
+
+    /*! exports provided: TableSelectableToggleExampleComponent */
+
+    /***/
+    function pVV(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "TableSelectableToggleExampleComponent", function () {
+        return TableSelectableToggleExampleComponent;
+      });
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! @angular/core */
+      "fXoL");
+      /* harmony import */
+
+
+      var _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @nova-ui/bits */
+      "b5Xb");
+      /* harmony import */
+
+
+      var _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! ../../../../../../src/lib/button/button.component */
+      "6urz");
+      /* harmony import */
+
+
+      var _src_lib_table_table_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! ../../../../../../src/lib/table/table.component */
+      "ey6q");
+      /* harmony import */
+
+
+      var _src_lib_table_table_cell_table_column_def_directive__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! ../../../../../../src/lib/table/table-cell/table-column-def.directive */
+      "XeyC");
+      /* harmony import */
+
+
+      var _src_lib_table_table_cell_table_header_cell_def_directive__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! ../../../../../../src/lib/table/table-cell/table-header-cell-def.directive */
+      "htGY");
+      /* harmony import */
+
+
+      var _src_lib_table_table_cell_table_cell_def_directive__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      /*! ../../../../../../src/lib/table/table-cell/table-cell-def.directive */
+      "/BSE");
+      /* harmony import */
+
+
+      var _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      /*! ../../../../../../src/lib/table/table-row/table-row.component */
+      "LFiI");
+      /* harmony import */
+
+
+      var _src_lib_paginator_paginator_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      /*! ../../../../../../src/lib/paginator/paginator.component */
+      "4E9B");
+      /* harmony import */
+
+
+      var _src_lib_divider_divider_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      /*! ../../../../../../src/lib/divider/divider.component */
+      "UGtJ");
+      /* harmony import */
+
+
+      var _src_lib_table_table_cell_table_header_cell_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+      /*! ../../../../../../src/lib/table/table-cell/table-header-cell.component */
+      "Ppt+");
+      /* harmony import */
+
+
+      var _src_lib_table_table_cell_table_cell_directive__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+      /*! ../../../../../../src/lib/table/table-cell/table-cell.directive */
+      "jdPS");
+      /* harmony import */
+
+
+      var _src_lib_icon_icon_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+      /*! ../../../../../../src/lib/icon/icon.component */
+      "45Bz");
+      /* harmony import */
+
+
+      var _angular_common__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
+      /*! @angular/common */
+      "ofXK");
+
+      var _c0 = ["filteringPaginator"];
+
+      function TableSelectableToggleExampleComponent_th_5_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "th", 17);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](1, 18);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+      }
+
+      function TableSelectableToggleExampleComponent_td_6_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "td", 19);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var element_r13 = ctx.$implicit;
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", element_r13.position, "");
+        }
+      }
+
+      function TableSelectableToggleExampleComponent_th_8_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "th", 17);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](1, 20);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+      }
+
+      function TableSelectableToggleExampleComponent_td_9_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "td", 19);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var element_r14 = ctx.$implicit;
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", element_r14.item, "");
+        }
+      }
+
+      function TableSelectableToggleExampleComponent_th_11_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "th", 17);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](1, 21);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+      }
+
+      function TableSelectableToggleExampleComponent_td_12_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "td", 22);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var element_r15 = ctx.$implicit;
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("tooltipText", element_r15.description);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", element_r15.description, " ");
+        }
+      }
+
+      function TableSelectableToggleExampleComponent_th_14_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "th", 17);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 23);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "nui-icon", 24);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("icon", "enable");
+        }
+      }
+
+      function TableSelectableToggleExampleComponent_td_15_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "td", 19);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 23);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "nui-icon", 24);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var element_r16 = ctx.$implicit;
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("icon", element_r16.status);
+        }
+      }
+
+      function TableSelectableToggleExampleComponent_th_17_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "th", 17);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](1, 25);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+      }
+
+      function TableSelectableToggleExampleComponent_td_18_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "td", 19);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var element_r17 = ctx.$implicit;
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", element_r17.location, "");
+        }
+      }
+
+      function TableSelectableToggleExampleComponent_tr_19_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "tr", 26);
+        }
+      }
+
+      function TableSelectableToggleExampleComponent_tr_20_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "tr", 27);
+        }
+
+        if (rf & 2) {
+          var row_r18 = ctx.$implicit;
+
+          var ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("rowObject", row_r18)("clickableRow", ctx_r11.selectable);
+        }
+      }
+
+      var TableSelectableToggleExampleComponent = /*#__PURE__*/function () {
+        function TableSelectableToggleExampleComponent(dataSourceService, selectorService, changeDetector) {
+          _classCallCheck(this, TableSelectableToggleExampleComponent);
+
+          this.dataSourceService = dataSourceService;
+          this.selectorService = selectorService;
+          this.changeDetector = changeDetector;
+          this.displayedColumns = ["position", "item", "description", "status", "location"];
+          this.dataSource = [];
+          this.selectedItems = [];
+          this.selectable = true;
+          this.selection = {
+            isAllPages: false,
+            include: [2, 3],
+            exclude: []
+          };
+        }
+
+        _createClass(TableSelectableToggleExampleComponent, [{
+          key: "ngAfterViewInit",
+          value: function ngAfterViewInit() {
+            var _this27 = this;
+
+            this.dataSourceService.componentTree = {
+              paginator: {
+                componentInstance: this.filteringPaginator
+              }
+            };
+            this.outputsSubscription = this.dataSourceService.outputsSubject.subscribe(function (data) {
+              var _a, _b;
+
+              _this27.dataSource = (_a = data.repeat) === null || _a === void 0 ? void 0 : _a.itemsSource;
+              _this27.paginationTotal = (_b = data.paginator) === null || _b === void 0 ? void 0 : _b.total;
+
+              _this27.changeDetector.markForCheck();
+            });
+            this.applyFilters();
+          }
+        }, {
+          key: "changePagination",
+          value: function changePagination($event) {
+            this.applyFilters();
+          }
+        }, {
+          key: "applyFilters",
+          value: function applyFilters() {
+            this.dataSourceService.setData(getData());
+            this.dataSourceService.applyFilters();
+          }
+        }, {
+          key: "ngOnDestroy",
+          value: function ngOnDestroy() {
+            this.outputsSubscription.unsubscribe();
+          }
+        }, {
+          key: "trackBy",
+          value: function trackBy(index, item) {
+            return item.position;
+          }
+        }, {
+          key: "toggleSelectable",
+          value: function toggleSelectable() {
+            this.selectable = !this.selectable;
+            this.selection = new _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["SelectionModel"]();
+          }
+        }]);
+
+        return TableSelectableToggleExampleComponent;
+      }();
+
+      TableSelectableToggleExampleComponent.ɵfac = function TableSelectableToggleExampleComponent_Factory(t) {
+        return new (t || TableSelectableToggleExampleComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["ClientSideDataSource"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["SelectorService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"]));
+      };
+
+      TableSelectableToggleExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+        type: TableSelectableToggleExampleComponent,
+        selectors: [["nui-table-selectable-toggle"]],
+        viewQuery: function TableSelectableToggleExampleComponent_Query(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_c0, 1);
+          }
+
+          if (rf & 2) {
+            var _t;
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.filteringPaginator = _t.first);
+          }
+        },
+        features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵProvidersFeature"]([_nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["ClientSideDataSource"]])],
+        decls: 30,
+        vars: 13,
+        consts: function consts() {
+          var i18n_1;
+
+          if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+            var MSG_EXTERNAL_1345472093440723911$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECTABLE_TOGGLE_TABLE_SELECTABLE_TOGGLE_EXAMPLE_COMPONENT_TS__2 = goog.getMsg(" No.");
+            i18n_1 = MSG_EXTERNAL_1345472093440723911$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECTABLE_TOGGLE_TABLE_SELECTABLE_TOGGLE_EXAMPLE_COMPONENT_TS__2;
+          } else {
+            i18n_1 = $localize(_templateObject137 || (_templateObject137 = _taggedTemplateLiteral([":\u241F333f0164082b9f12f63ca11438b2085d074a5b0f\u241F1345472093440723911: No."])));
+          }
+
+          var i18n_3;
+
+          if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+            var MSG_EXTERNAL_1466114336146187941$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECTABLE_TOGGLE_TABLE_SELECTABLE_TOGGLE_EXAMPLE_COMPONENT_TS__4 = goog.getMsg(" Item");
+            i18n_3 = MSG_EXTERNAL_1466114336146187941$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECTABLE_TOGGLE_TABLE_SELECTABLE_TOGGLE_EXAMPLE_COMPONENT_TS__4;
+          } else {
+            i18n_3 = $localize(_templateObject138 || (_templateObject138 = _taggedTemplateLiteral([":\u241F25089eb429c6d3c5693152e8f3683de49f7f9707\u241F1466114336146187941: Item"])));
+          }
+
+          var i18n_5;
+
+          if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+            var MSG_EXTERNAL_4556215123825736249$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECTABLE_TOGGLE_TABLE_SELECTABLE_TOGGLE_EXAMPLE_COMPONENT_TS__6 = goog.getMsg(" Description");
+            i18n_5 = MSG_EXTERNAL_4556215123825736249$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECTABLE_TOGGLE_TABLE_SELECTABLE_TOGGLE_EXAMPLE_COMPONENT_TS__6;
+          } else {
+            i18n_5 = $localize(_templateObject139 || (_templateObject139 = _taggedTemplateLiteral([":\u241F1966b0173d4a08be5ddb5cda1246d604fcd242c7\u241F4556215123825736249: Description"])));
+          }
+
+          var i18n_7;
+
+          if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+            var MSG_EXTERNAL_7598846418510631873$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECTABLE_TOGGLE_TABLE_SELECTABLE_TOGGLE_EXAMPLE_COMPONENT_TS__8 = goog.getMsg(" Location");
+            i18n_7 = MSG_EXTERNAL_7598846418510631873$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECTABLE_TOGGLE_TABLE_SELECTABLE_TOGGLE_EXAMPLE_COMPONENT_TS__8;
+          } else {
+            i18n_7 = $localize(_templateObject140 || (_templateObject140 = _taggedTemplateLiteral([":\u241F4ed56c7c2b85b2b764c9853d121c291db3b70ed9\u241F7598846418510631873: Location"])));
+          }
+
+          return [["id", "demo-table-selectable-toggle-btn", "nui-button", "", "type", "button", 3, "click"], ["id", "demo-table-selectable-toggle", 1, "nui-table__container"], ["nui-table", "", 3, "dataSource", "totalItems", "selection", "selectable", "trackBy", "selectionChange"], ["nuiColumnDef", "position"], ["nui-header-cell", "", 4, "nuiHeaderCellDef"], ["nui-cell", "", 4, "nuiCellDef"], ["nuiColumnDef", "item"], ["nuiColumnDef", "description"], ["nui-cell", "", 3, "tooltipText", 4, "nuiCellDef"], ["nuiColumnDef", "status", "type", "icon"], ["nuiColumnDef", "location"], ["nui-header-row", "", 4, "nuiHeaderRowDef"], ["nui-row", "", 3, "rowObject", "clickableRow", 4, "nuiRowDef", "nuiRowDefColumns"], ["id", "nui-demo-table-select-paginator", "activeClass", "active", "disabledClass", "disabled", "showPrevNext", "true", 3, "page", "pageSize", "total", "pagerAction"], ["filteringPaginator", ""], [1, "flex-row-container"], [1, "flex-independent-row-item"], ["nui-header-cell", ""], i18n_1, ["nui-cell", ""], i18n_3, i18n_5, ["nui-cell", "", 3, "tooltipText"], [1, "d-flex", "align-items-center"], [3, "icon"], i18n_7, ["nui-header-row", ""], ["nui-row", "", 3, "rowObject", "clickableRow"]];
+        },
+        template: function TableSelectableToggleExampleComponent_Template(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 0);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function TableSelectableToggleExampleComponent_Template_button_click_0_listener() {
+              return ctx.toggleSelectable();
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Toggle Selectable");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "table", 2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("selectionChange", function TableSelectableToggleExampleComponent_Template_table_selectionChange_3_listener($event) {
+              return ctx.selection = $event;
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](4, 3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](5, TableSelectableToggleExampleComponent_th_5_Template, 2, 0, "th", 4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](6, TableSelectableToggleExampleComponent_td_6_Template, 2, 1, "td", 5);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](7, 6);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](8, TableSelectableToggleExampleComponent_th_8_Template, 2, 0, "th", 4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](9, TableSelectableToggleExampleComponent_td_9_Template, 2, 1, "td", 5);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](10, 7);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](11, TableSelectableToggleExampleComponent_th_11_Template, 2, 0, "th", 4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](12, TableSelectableToggleExampleComponent_td_12_Template, 2, 2, "td", 8);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](13, 9);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](14, TableSelectableToggleExampleComponent_th_14_Template, 3, 1, "th", 4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](15, TableSelectableToggleExampleComponent_td_15_Template, 3, 1, "td", 5);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](16, 10);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](17, TableSelectableToggleExampleComponent_th_17_Template, 2, 0, "th", 4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](18, TableSelectableToggleExampleComponent_td_18_Template, 2, 1, "td", 5);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](19, TableSelectableToggleExampleComponent_tr_19_Template, 1, 0, "tr", 11);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](20, TableSelectableToggleExampleComponent_tr_20_Template, 1, 2, "tr", 12);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "nui-paginator", 13, 14);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("pagerAction", function TableSelectableToggleExampleComponent_Template_nui_paginator_pagerAction_21_listener($event) {
+              return ctx.changePagination($event);
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](23, "nui-divider");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "h2");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](25, "Selection result");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "div", 15);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](27, "span", 16);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](28);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](29, "json");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          }
+
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("dataSource", ctx.dataSource)("totalItems", ctx.paginationTotal)("selection", ctx.selection)("selectable", ctx.selectable)("trackBy", ctx.trackBy);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](16);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("nuiHeaderRowDef", ctx.displayedColumns);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("nuiRowDefColumns", ctx.displayedColumns);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("page", 1)("pageSize", 10)("total", ctx.paginationTotal);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](29, 11, ctx.selection), " ");
+          }
+        },
+        directives: [_src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_2__["ButtonComponent"], _src_lib_table_table_component__WEBPACK_IMPORTED_MODULE_3__["TableComponent"], _src_lib_table_table_cell_table_column_def_directive__WEBPACK_IMPORTED_MODULE_4__["TableColumnDefDirective"], _src_lib_table_table_cell_table_header_cell_def_directive__WEBPACK_IMPORTED_MODULE_5__["TableHeaderCellDefDirective"], _src_lib_table_table_cell_table_cell_def_directive__WEBPACK_IMPORTED_MODULE_6__["TableCellDefDirective"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_7__["TableHeaderRowDefDirective"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_7__["TableRowDefDirective"], _src_lib_paginator_paginator_component__WEBPACK_IMPORTED_MODULE_8__["PaginatorComponent"], _src_lib_divider_divider_component__WEBPACK_IMPORTED_MODULE_9__["DividerComponent"], _src_lib_table_table_cell_table_header_cell_component__WEBPACK_IMPORTED_MODULE_10__["TableHeaderCellComponent"], _src_lib_table_table_cell_table_cell_directive__WEBPACK_IMPORTED_MODULE_11__["TableCellDirective"], _src_lib_icon_icon_component__WEBPACK_IMPORTED_MODULE_12__["IconComponent"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_7__["TableHeaderRowComponent"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_7__["TableRowComponent"]],
+        pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_13__["JsonPipe"]],
+        encapsulation: 2,
+        changeDetection: 0
+      });
+      /** Table data */
+
+      function getData() {
+        return [{
+          position: 1,
+          item: "FOCUS-SVR-02258123",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          status: "status_inactive",
+          location: "Brno"
+        }, {
+          position: 2,
+          item: "Man-LT-JYJ4AD5",
+          description: "Sed ut perspiciatis unde omnis iste natus error sit.",
+          status: "status_up",
+          location: "Brno"
+        }, {
+          position: 3,
+          item: "FOCUS-SVR-02258",
+          description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          status: "status_up",
+          location: "Brno"
+        }, {
+          position: 4,
+          item: "Man-LT-JYJ4AD5",
+          description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+          status: "status_up",
+          location: "Brno"
+        }, {
+          position: 5,
+          item: "Man-LT-JYJ4AD5",
+          description: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          status: "status_up",
+          location: "Brno"
+        }, {
+          position: 6,
+          item: "Man-LT-JYJ4AD5",
+          description: "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.",
+          status: "status_up",
+          location: "Brno"
+        }, {
+          position: 7,
+          item: "Man-LT-JYJ4AD5",
+          description: "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur.",
+          status: "status_up",
+          location: "Brno"
+        }, {
+          position: 8,
+          item: "Man-LT-JYJ4AD5",
+          description: "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.",
+          status: "status_up",
+          location: "Brno"
+        }, {
+          position: 9,
+          item: "Man-LT-JYJ4AD5",
+          description: "Quis autem vel eum iure reprehenderit qui in ea voluptate.",
+          status: "status_up",
+          location: "Brno"
+        }, {
+          position: 10,
+          item: "Man-LT-JYJ4AD5",
+          description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.",
+          status: "status_up",
+          location: "Brno"
+        }, {
+          position: 11,
+          item: "FOCUS-SVR-111111",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          status: "status_inactive",
+          location: "Brno"
+        }, {
+          position: 12,
+          item: "Man-LT-2222222",
+          description: "Sed ut perspiciatis unde omnis iste natus error sit.",
+          status: "status_up",
+          location: "Brno"
+        }, {
+          position: 13,
+          item: "FOCUS-SVR-333333",
+          description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+          status: "status_up",
+          location: "Brno"
+        }, {
+          position: 14,
+          item: "Man-LT-444444",
+          description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+          status: "status_up",
+          location: "Brno"
+        }, {
+          position: 15,
+          item: "Man-LT-555555",
+          description: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          status: "status_up",
+          location: "Brno"
+        }, {
+          position: 16,
+          item: "Man-LT-666666",
+          description: "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.",
+          status: "status_up",
+          location: "Brno"
+        }, {
+          position: 17,
+          item: "Man-LT-777777",
+          description: "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur.",
+          status: "status_up",
+          location: "Brno"
+        }, {
+          position: 18,
+          item: "Man-LT-888888",
+          description: "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.",
+          status: "status_up",
+          location: "Brno"
+        }, {
+          position: 19,
+          item: "Man-LT-999999",
+          description: "Quis autem vel eum iure reprehenderit qui in ea voluptate.",
+          status: "status_up",
+          location: "Brno"
+        }, {
+          position: 20,
+          item: "Man-LT-200000",
+          description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.",
+          status: "status_up",
+          location: "Brno"
+        }];
+      }
+      /***/
+
+    },
+
+    /***/
     "pNPw":
     /*!***********************************************************************************************************************************************!*\
       !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/table/table-cell-width-set/table-cell-width-set.example.component.html ***!
@@ -18061,7 +18788,7 @@
         _createClass(TablePaginationExampleComponent, [{
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this27 = this;
+            var _this28 = this;
 
             this.dataSourceService.componentTree = {
               paginator: {
@@ -18071,8 +18798,8 @@
             this.outputsSubscription = this.dataSourceService.outputsSubject.subscribe(function (data) {
               var _a, _b;
 
-              _this27.dataSource = (_a = data.repeat) === null || _a === void 0 ? void 0 : _a.itemsSource;
-              _this27.paginationTotal = (_b = data.paginator) === null || _b === void 0 ? void 0 : _b.total;
+              _this28.dataSource = (_a = data.repeat) === null || _a === void 0 ? void 0 : _a.itemsSource;
+              _this28.paginationTotal = (_b = data.paginator) === null || _b === void 0 ? void 0 : _b.total;
             });
             this.dataSourceService.applyFilters();
           }
@@ -18119,7 +18846,7 @@
             var MSG_EXTERNAL_1345472093440723911$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_PAGINATION_TABLE_PAGINATION_EXAMPLE_COMPONENT_TS__2 = goog.getMsg(" No.");
             i18n_1 = MSG_EXTERNAL_1345472093440723911$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_PAGINATION_TABLE_PAGINATION_EXAMPLE_COMPONENT_TS__2;
           } else {
-            i18n_1 = $localize(_templateObject137 || (_templateObject137 = _taggedTemplateLiteral([":\u241F333f0164082b9f12f63ca11438b2085d074a5b0f\u241F1345472093440723911: No."])));
+            i18n_1 = $localize(_templateObject141 || (_templateObject141 = _taggedTemplateLiteral([":\u241F333f0164082b9f12f63ca11438b2085d074a5b0f\u241F1345472093440723911: No."])));
           }
 
           var i18n_3;
@@ -18128,7 +18855,7 @@
             var MSG_EXTERNAL_5923354303687392819$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_PAGINATION_TABLE_PAGINATION_EXAMPLE_COMPONENT_TS__4 = goog.getMsg(" Name");
             i18n_3 = MSG_EXTERNAL_5923354303687392819$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_PAGINATION_TABLE_PAGINATION_EXAMPLE_COMPONENT_TS__4;
           } else {
-            i18n_3 = $localize(_templateObject138 || (_templateObject138 = _taggedTemplateLiteral([":\u241F7b07cc6126aa22c8a3041963963e85a0791a7e40\u241F5923354303687392819: Name"])));
+            i18n_3 = $localize(_templateObject142 || (_templateObject142 = _taggedTemplateLiteral([":\u241F7b07cc6126aa22c8a3041963963e85a0791a7e40\u241F5923354303687392819: Name"])));
           }
 
           var i18n_5;
@@ -18137,7 +18864,7 @@
             var MSG_EXTERNAL_4366791221426489252$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_PAGINATION_TABLE_PAGINATION_EXAMPLE_COMPONENT_TS__6 = goog.getMsg(" Features");
             i18n_5 = MSG_EXTERNAL_4366791221426489252$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_PAGINATION_TABLE_PAGINATION_EXAMPLE_COMPONENT_TS__6;
           } else {
-            i18n_5 = $localize(_templateObject139 || (_templateObject139 = _taggedTemplateLiteral([":\u241F176794380c10213e5247f7350b40037bd3affcb3\u241F4366791221426489252: Features"])));
+            i18n_5 = $localize(_templateObject143 || (_templateObject143 = _taggedTemplateLiteral([":\u241F176794380c10213e5247f7350b40037bd3affcb3\u241F4366791221426489252: Features"])));
           }
 
           var i18n_7;
@@ -18146,7 +18873,7 @@
             var MSG_EXTERNAL_6940950714946520886$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_PAGINATION_TABLE_PAGINATION_EXAMPLE_COMPONENT_TS__8 = goog.getMsg(" Asset Class");
             i18n_7 = MSG_EXTERNAL_6940950714946520886$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_PAGINATION_TABLE_PAGINATION_EXAMPLE_COMPONENT_TS__8;
           } else {
-            i18n_7 = $localize(_templateObject140 || (_templateObject140 = _taggedTemplateLiteral([":\u241Fc123012b555ee9898f49540288d43c3c606e27d6\u241F6940950714946520886: Asset Class"])));
+            i18n_7 = $localize(_templateObject144 || (_templateObject144 = _taggedTemplateLiteral([":\u241Fc123012b555ee9898f49540288d43c3c606e27d6\u241F6940950714946520886: Asset Class"])));
           }
 
           var i18n_9;
@@ -18155,7 +18882,7 @@
             var MSG_EXTERNAL_7598846418510631873$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_PAGINATION_TABLE_PAGINATION_EXAMPLE_COMPONENT_TS__10 = goog.getMsg(" Location");
             i18n_9 = MSG_EXTERNAL_7598846418510631873$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_PAGINATION_TABLE_PAGINATION_EXAMPLE_COMPONENT_TS__10;
           } else {
-            i18n_9 = $localize(_templateObject141 || (_templateObject141 = _taggedTemplateLiteral([":\u241F4ed56c7c2b85b2b764c9853d121c291db3b70ed9\u241F7598846418510631873: Location"])));
+            i18n_9 = $localize(_templateObject145 || (_templateObject145 = _taggedTemplateLiteral([":\u241F4ed56c7c2b85b2b764c9853d121c291db3b70ed9\u241F7598846418510631873: Location"])));
           }
 
           var i18n_11;
@@ -18164,7 +18891,7 @@
             var MSG_EXTERNAL_7043724726246657652$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_PAGINATION_TABLE_PAGINATION_EXAMPLE_COMPONENT_TS__12 = goog.getMsg(" Status");
             i18n_11 = MSG_EXTERNAL_7043724726246657652$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_PAGINATION_TABLE_PAGINATION_EXAMPLE_COMPONENT_TS__12;
           } else {
-            i18n_11 = $localize(_templateObject142 || (_templateObject142 = _taggedTemplateLiteral([":\u241Ff3ab141a02057a7853b9cde7dea17eef6811e27a\u241F7043724726246657652: Status"])));
+            i18n_11 = $localize(_templateObject146 || (_templateObject146 = _taggedTemplateLiteral([":\u241Ff3ab141a02057a7853b9cde7dea17eef6811e27a\u241F7043724726246657652: Status"])));
           }
 
           var i18n_13;
@@ -18173,7 +18900,7 @@
             var MSG_EXTERNAL_3645300875970966243$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_PAGINATION_TABLE_PAGINATION_EXAMPLE_COMPONENT_TS__14 = goog.getMsg(" Outages");
             i18n_13 = MSG_EXTERNAL_3645300875970966243$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_PAGINATION_TABLE_PAGINATION_EXAMPLE_COMPONENT_TS__14;
           } else {
-            i18n_13 = $localize(_templateObject143 || (_templateObject143 = _taggedTemplateLiteral([":\u241Fe81b7832d164ea9359f7937353f7dfc314064a3a\u241F3645300875970966243: Outages"])));
+            i18n_13 = $localize(_templateObject147 || (_templateObject147 = _taggedTemplateLiteral([":\u241Fe81b7832d164ea9359f7937353f7dfc314064a3a\u241F3645300875970966243: Outages"])));
           }
 
           var i18n_15;
@@ -18182,7 +18909,7 @@
             var MSG_EXTERNAL_7108392645161261297$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_PAGINATION_TABLE_PAGINATION_EXAMPLE_COMPONENT_TS__16 = goog.getMsg(" Checks");
             i18n_15 = MSG_EXTERNAL_7108392645161261297$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_PAGINATION_TABLE_PAGINATION_EXAMPLE_COMPONENT_TS__16;
           } else {
-            i18n_15 = $localize(_templateObject144 || (_templateObject144 = _taggedTemplateLiteral([":\u241Ffc6c8586d4f4fbce21310ff2a21da10de8c8a04b\u241F7108392645161261297: Checks"])));
+            i18n_15 = $localize(_templateObject148 || (_templateObject148 = _taggedTemplateLiteral([":\u241Ffc6c8586d4f4fbce21310ff2a21da10de8c8a04b\u241F7108392645161261297: Checks"])));
           }
 
           return [["id", "nui-demo-pagination-table", 1, "nui-table__container"], ["nui-table", "", 3, "dataSource"], ["nuiColumnDef", "position"], ["nui-header-cell", "", 4, "nuiHeaderCellDef"], ["nui-cell", "", 4, "nuiCellDef"], ["nuiColumnDef", "name"], ["nuiColumnDef", "features"], ["nuiColumnDef", "asset"], ["nuiColumnDef", "location"], ["nuiColumnDef", "status"], ["nuiColumnDef", "outages"], ["nuiColumnDef", "checks"], ["nui-header-row", "", 4, "nuiHeaderRowDef"], ["nui-row", "", 4, "nuiRowDef", "nuiRowDefColumns"], ["id", "nui-demo-pagination-table-paginator", "activeClass", "active", "disabledClass", "disabled", "showPrevNext", "true", 3, "page", "pageSize", "total", "pagerAction"], ["filteringPaginator", ""], ["nui-header-cell", ""], i18n_1, ["nui-cell", ""], i18n_3, i18n_5, ["class", "icon-margin", 3, "icon", 4, "ngFor", "ngForOf"], [1, "icon-margin", 3, "icon"], i18n_7, i18n_9, i18n_11, i18n_13, i18n_15, [4, "ngFor", "ngForOf"], [3, "icon"], ["nui-header-row", ""], ["nui-row", ""]];
@@ -18671,7 +19398,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import { ScrollingModule } from \"@angular/cdk/scrolling\";\nimport { DatePipe } from \"@angular/common\";\nimport { NgModule } from \"@angular/core\";\nimport { RouterModule } from \"@angular/router\";\nimport {\n    DEMO_PATH_TOKEN,\n    NuiButtonModule,\n    NuiCheckboxModule,\n    NuiDividerModule,\n    NuiDocsModule,\n    NuiExpanderModule,\n    NuiIconModule,\n    NuiMenuModule,\n    NuiMessageModule,\n    NuiPaginatorModule,\n    NuiProgressModule,\n    NuiSearchModule,\n    NuiSpinnerModule,\n    NuiSwitchModule,\n    NuiTableModule,\n    NuiTextboxModule,\n    SrlcStage,\n} from \"@nova-ui/bits\";\n\nimport {\n    TableBasicExampleComponent,\n    TableCellContentAlignComponent,\n    TableCellWidthSetExampleComponent,\n    TableColumnsAddRemoveExampleComponent,\n    TableDocsComponent,\n    TablePaginationExampleComponent,\n    TablePinnedHeaderComponent,\n    TableReorderExampleComponent,\n    TableResizeExampleComponent,\n    TableRowClickableExampleComponent,\n    TableRowHeightSetExampleComponent,\n    TableRowSelectInstructionsComponent,\n    TableSearchExampleComponent,\n    TableSearchWithSelectAndPaginationComponent,\n    TableSelectExampleComponent,\n    TableSortingExampleComponent,\n    TableTestComponent,\n    TableVirtualScrollRealApiExampleComponent,\n    TableVirtualScrollRealApiMinimalistExampleComponent,\n    TableVirtualScrollRealApiProgressFooterExampleComponent,\n    TableVirtualScrollRealApiProgressTextFooterExampleComponent,\n    TableVirtualScrollStepsAndButtonExampleComponent,\n    TableVisualTestComponent,\n} from \"./index\";\nimport { TableVirtualScrollSelectStickyHeaderExampleComponent } from \"./table-virtual-scroll-select-sticky-header/table-virtual-scroll-select-sticky-header-example.component\";\nimport { TableVirtualScrollStickyHeaderExampleComponent } from \"./table-virtual-scroll-sticky-header/table-virtual-scroll-sticky-header-example.component\";\n\nconst routes = [\n    {\n        path: \"\",\n        component: TableDocsComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.ga,\n            },\n            showThemeSwitcher: true,\n        },\n    },\n    {\n        path: \"table-test\",\n        component: TableTestComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.ga,\n            },\n        },\n    },\n    {\n        path: \"basic\",\n        component: TableBasicExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"width-set\",\n        component: TableCellWidthSetExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"pagination\",\n        component: TablePaginationExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"search\",\n        component: TableSearchExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"height\",\n        component: TableRowHeightSetExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"custom-actions\",\n        component: TableColumnsAddRemoveExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"sorting\",\n        component: TableSortingExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"reorder\",\n        component: TableReorderExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"resize\",\n        component: TableResizeExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"select\",\n        component: TableSelectExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"table-visual-test\",\n        component: TableVisualTestComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"table-row-clickable\",\n        component: TableRowClickableExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"virtual-1\",\n        component: TableVirtualScrollRealApiExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"virtual-2\",\n        component: TableVirtualScrollRealApiMinimalistExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"step\",\n        component: TableVirtualScrollStepsAndButtonExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"sticky\",\n        component: TableVirtualScrollStickyHeaderExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"select-sticky\",\n        component: TableVirtualScrollSelectStickyHeaderExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n];\n\n@NgModule({\n    imports: [\n        NuiButtonModule,\n        NuiTableModule,\n        NuiDocsModule,\n        NuiPaginatorModule,\n        NuiSearchModule,\n        NuiSwitchModule,\n        NuiDividerModule,\n        NuiCheckboxModule,\n        NuiTextboxModule,\n        NuiMessageModule,\n        NuiExpanderModule,\n        NuiMenuModule,\n        NuiIconModule,\n        RouterModule.forChild(routes),\n        ScrollingModule,\n        NuiSpinnerModule,\n        NuiProgressModule,\n    ],\n    declarations: [\n        TableBasicExampleComponent,\n        TableCellWidthSetExampleComponent,\n        TableColumnsAddRemoveExampleComponent,\n        TableDocsComponent,\n        TablePaginationExampleComponent,\n        TablePinnedHeaderComponent,\n        TableReorderExampleComponent,\n        TableRowHeightSetExampleComponent,\n        TableRowClickableExampleComponent,\n        TableResizeExampleComponent,\n        TableSearchExampleComponent,\n        TableSelectExampleComponent,\n        TableSortingExampleComponent,\n        TableCellContentAlignComponent,\n        TableTestComponent,\n        TableVisualTestComponent,\n        TableVirtualScrollRealApiExampleComponent,\n        TableVirtualScrollStepsAndButtonExampleComponent,\n        TableVirtualScrollRealApiProgressFooterExampleComponent,\n        TableVirtualScrollRealApiProgressTextFooterExampleComponent,\n        TableVirtualScrollRealApiMinimalistExampleComponent,\n        TableSearchWithSelectAndPaginationComponent,\n        TableVirtualScrollStickyHeaderExampleComponent,\n        TableVirtualScrollSelectStickyHeaderExampleComponent,\n        TableRowSelectInstructionsComponent,\n    ],\n    providers: [\n        DatePipe,\n        {\n            provide: DEMO_PATH_TOKEN,\n            useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/),\n        },\n    ],\n    exports: [\n        RouterModule,\n    ],\n})\nexport class TableModule {\n}\n";
+      __webpack_exports__["default"] = "import { ScrollingModule } from \"@angular/cdk/scrolling\";\nimport { DatePipe } from \"@angular/common\";\nimport { NgModule } from \"@angular/core\";\nimport { RouterModule } from \"@angular/router\";\nimport {\n    DEMO_PATH_TOKEN,\n    NuiButtonModule,\n    NuiCheckboxModule,\n    NuiDividerModule,\n    NuiDocsModule,\n    NuiExpanderModule,\n    NuiIconModule,\n    NuiMenuModule,\n    NuiMessageModule,\n    NuiPaginatorModule,\n    NuiProgressModule,\n    NuiSearchModule,\n    NuiSpinnerModule,\n    NuiSwitchModule,\n    NuiTableModule,\n    NuiTextboxModule,\n    SrlcStage,\n} from \"@nova-ui/bits\";\n\nimport {\n    TableBasicExampleComponent,\n    TableCellContentAlignComponent,\n    TableCellWidthSetExampleComponent,\n    TableColumnsAddRemoveExampleComponent,\n    TableDocsComponent,\n    TablePaginationExampleComponent,\n    TablePinnedHeaderComponent,\n    TableReorderExampleComponent,\n    TableResizeExampleComponent,\n    TableRowClickableExampleComponent,\n    TableRowHeightSetExampleComponent,\n    TableRowSelectInstructionsComponent,\n    TableSearchExampleComponent,\n    TableSearchWithSelectAndPaginationComponent,\n    TableSelectableToggleExampleComponent,\n    TableSelectExampleComponent,\n    TableSortingExampleComponent,\n    TableTestComponent,\n    TableVirtualScrollRealApiExampleComponent,\n    TableVirtualScrollRealApiMinimalistExampleComponent,\n    TableVirtualScrollRealApiProgressFooterExampleComponent,\n    TableVirtualScrollRealApiProgressTextFooterExampleComponent,\n    TableVirtualScrollStepsAndButtonExampleComponent,\n    TableVisualTestComponent,\n} from \"./index\";\nimport { TableVirtualScrollSelectStickyHeaderExampleComponent } from \"./table-virtual-scroll-select-sticky-header/table-virtual-scroll-select-sticky-header-example.component\";\nimport { TableVirtualScrollStickyHeaderExampleComponent } from \"./table-virtual-scroll-sticky-header/table-virtual-scroll-sticky-header-example.component\";\n\nconst routes = [\n    {\n        path: \"\",\n        component: TableDocsComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.ga,\n            },\n            showThemeSwitcher: true,\n        },\n    },\n    {\n        path: \"table-test\",\n        component: TableTestComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.ga,\n            },\n        },\n    },\n    {\n        path: \"basic\",\n        component: TableBasicExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"width-set\",\n        component: TableCellWidthSetExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"pagination\",\n        component: TablePaginationExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"search\",\n        component: TableSearchExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"height\",\n        component: TableRowHeightSetExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"custom-actions\",\n        component: TableColumnsAddRemoveExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"sorting\",\n        component: TableSortingExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"reorder\",\n        component: TableReorderExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"resize\",\n        component: TableResizeExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"selectable-toggle\",\n        component: TableSelectableToggleExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"select\",\n        component: TableSelectExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"table-visual-test\",\n        component: TableVisualTestComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"table-row-clickable\",\n        component: TableRowClickableExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"virtual-1\",\n        component: TableVirtualScrollRealApiExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"virtual-2\",\n        component: TableVirtualScrollRealApiMinimalistExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"step\",\n        component: TableVirtualScrollStepsAndButtonExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"sticky\",\n        component: TableVirtualScrollStickyHeaderExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"select-sticky\",\n        component: TableVirtualScrollSelectStickyHeaderExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n];\n\n@NgModule({\n    imports: [\n        NuiButtonModule,\n        NuiTableModule,\n        NuiDocsModule,\n        NuiPaginatorModule,\n        NuiSearchModule,\n        NuiSwitchModule,\n        NuiDividerModule,\n        NuiCheckboxModule,\n        NuiTextboxModule,\n        NuiMessageModule,\n        NuiExpanderModule,\n        NuiMenuModule,\n        NuiIconModule,\n        RouterModule.forChild(routes),\n        ScrollingModule,\n        NuiSpinnerModule,\n        NuiProgressModule,\n    ],\n    declarations: [\n        TableBasicExampleComponent,\n        TableCellWidthSetExampleComponent,\n        TableColumnsAddRemoveExampleComponent,\n        TableDocsComponent,\n        TablePaginationExampleComponent,\n        TablePinnedHeaderComponent,\n        TableReorderExampleComponent,\n        TableRowHeightSetExampleComponent,\n        TableRowClickableExampleComponent,\n        TableResizeExampleComponent,\n        TableSearchExampleComponent,\n        TableSelectableToggleExampleComponent,\n        TableSelectExampleComponent,\n        TableSortingExampleComponent,\n        TableCellContentAlignComponent,\n        TableTestComponent,\n        TableVisualTestComponent,\n        TableVirtualScrollRealApiExampleComponent,\n        TableVirtualScrollStepsAndButtonExampleComponent,\n        TableVirtualScrollRealApiProgressFooterExampleComponent,\n        TableVirtualScrollRealApiProgressTextFooterExampleComponent,\n        TableVirtualScrollRealApiMinimalistExampleComponent,\n        TableSearchWithSelectAndPaginationComponent,\n        TableVirtualScrollStickyHeaderExampleComponent,\n        TableVirtualScrollSelectStickyHeaderExampleComponent,\n        TableRowSelectInstructionsComponent,\n    ],\n    providers: [\n        DatePipe,\n        {\n            provide: DEMO_PATH_TOKEN,\n            useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/),\n        },\n    ],\n    exports: [\n        RouterModule,\n    ],\n})\nexport class TableModule {\n}\n";
       /***/
     },
 
@@ -19532,7 +20259,7 @@
         _createClass(TableTestComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this28 = this;
+            var _this29 = this;
 
             this.myForm = this.formBuilder.group({
               checkboxGroup: this.formBuilder.control(this.displayedColumnsCopy, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(3)])
@@ -19546,19 +20273,19 @@
               sortable: this.formBuilder.control(this.sortable)
             });
             this.optionsForm.valueChanges.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["debounceTime"])(500)).subscribe(function (value) {
-              _this28.alignment = value.alignment;
-              _this28.positionWidth = value.positionWidth;
-              _this28.density = value.density;
-              _this28.sortable = value.sortable;
-              _this28.resizable = value.resizable;
-              _this28.reorderable = value.reorderable;
+              _this29.alignment = value.alignment;
+              _this29.positionWidth = value.positionWidth;
+              _this29.density = value.density;
+              _this29.sortable = value.sortable;
+              _this29.resizable = value.resizable;
+              _this29.reorderable = value.reorderable;
             });
           }
         }, {
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
             return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee7() {
-              var _this29 = this;
+              var _this30 = this;
 
               return regeneratorRuntime.wrap(function _callee7$(_context7) {
                 while (1) {
@@ -19576,11 +20303,11 @@
                       this.outputsSubscription = this.dataSourceService.outputsSubject.subscribe(function (data) {
                         var _a, _b;
 
-                        _this29.dataSource = (_a = data.repeat) === null || _a === void 0 ? void 0 : _a.itemsSource;
-                        _this29.paginationTotal = (_b = data.paginator) === null || _b === void 0 ? void 0 : _b.total;
+                        _this30.dataSource = (_a = data.repeat) === null || _a === void 0 ? void 0 : _a.itemsSource;
+                        _this30.paginationTotal = (_b = data.paginator) === null || _b === void 0 ? void 0 : _b.total;
                       });
                       this.searchSubscription = this.filteringSearch.inputChange.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["debounceTime"])(500)).subscribe(function () {
-                        _this29.dataSourceService.applyFilters();
+                        _this30.dataSourceService.applyFilters();
                       });
                       _context7.next = 6;
                       return this.dataSourceService.applyFilters();
@@ -19766,7 +20493,7 @@
             var MSG_EXTERNAL_5772127433285568792$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS_5 = goog.getMsg(" Table parameters ");
             i18n_4 = MSG_EXTERNAL_5772127433285568792$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS_5;
           } else {
-            i18n_4 = $localize(_templateObject145 || (_templateObject145 = _taggedTemplateLiteral([":\u241Fd259a5cfe568df279f8f23c18e8582f331ad5e20\u241F5772127433285568792: Table parameters "])));
+            i18n_4 = $localize(_templateObject149 || (_templateObject149 = _taggedTemplateLiteral([":\u241Fd259a5cfe568df279f8f23c18e8582f331ad5e20\u241F5772127433285568792: Table parameters "])));
           }
 
           var i18n_6;
@@ -19775,7 +20502,7 @@
             var MSG_EXTERNAL_4985615836900499435$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS_7 = goog.getMsg(" Edit columns ");
             i18n_6 = MSG_EXTERNAL_4985615836900499435$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS_7;
           } else {
-            i18n_6 = $localize(_templateObject146 || (_templateObject146 = _taggedTemplateLiteral([":\u241F6fe5549e71336528a5de31c671558342b1efe833\u241F4985615836900499435: Edit columns "])));
+            i18n_6 = $localize(_templateObject150 || (_templateObject150 = _taggedTemplateLiteral([":\u241F6fe5549e71336528a5de31c671558342b1efe833\u241F4985615836900499435: Edit columns "])));
           }
 
           var i18n_8;
@@ -19784,7 +20511,7 @@
             var MSG_EXTERNAL_1411763968419044459$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS_9 = goog.getMsg(" Toggle search by outages ");
             i18n_8 = MSG_EXTERNAL_1411763968419044459$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS_9;
           } else {
-            i18n_8 = $localize(_templateObject147 || (_templateObject147 = _taggedTemplateLiteral([":\u241Fd576216a4a50cff6756bddab3fa93b81cc8e2f93\u241F1411763968419044459: Toggle search by outages "])));
+            i18n_8 = $localize(_templateObject151 || (_templateObject151 = _taggedTemplateLiteral([":\u241Fd576216a4a50cff6756bddab3fa93b81cc8e2f93\u241F1411763968419044459: Toggle search by outages "])));
           }
 
           var i18n_10;
@@ -19793,7 +20520,7 @@
             var MSG_EXTERNAL_3337002790898405536$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS_11 = goog.getMsg("Disable features column for sorting");
             i18n_10 = MSG_EXTERNAL_3337002790898405536$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS_11;
           } else {
-            i18n_10 = $localize(_templateObject148 || (_templateObject148 = _taggedTemplateLiteral([":\u241Ff0cdcf0dde17b71278fe7759c99f6fe9157aa14b\u241F3337002790898405536:Disable features column for sorting"])));
+            i18n_10 = $localize(_templateObject152 || (_templateObject152 = _taggedTemplateLiteral([":\u241Ff0cdcf0dde17b71278fe7759c99f6fe9157aa14b\u241F3337002790898405536:Disable features column for sorting"])));
           }
 
           var i18n_12;
@@ -19802,7 +20529,7 @@
             var MSG_EXTERNAL_8363291180171434623$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__13 = goog.getMsg("Table parameters");
             i18n_12 = MSG_EXTERNAL_8363291180171434623$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__13;
           } else {
-            i18n_12 = $localize(_templateObject149 || (_templateObject149 = _taggedTemplateLiteral([":\u241F55d4cef22a65e0850dc95aa127f45e9df525f68f\u241F8363291180171434623:Table parameters"])));
+            i18n_12 = $localize(_templateObject153 || (_templateObject153 = _taggedTemplateLiteral([":\u241F55d4cef22a65e0850dc95aa127f45e9df525f68f\u241F8363291180171434623:Table parameters"])));
           }
 
           var i18n_14;
@@ -19811,7 +20538,7 @@
             var MSG_EXTERNAL_246781905578646665$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__15 = goog.getMsg("Change cells content alignment");
             i18n_14 = MSG_EXTERNAL_246781905578646665$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__15;
           } else {
-            i18n_14 = $localize(_templateObject150 || (_templateObject150 = _taggedTemplateLiteral([":\u241Fc1dfdaa9b9cd04a5e8604df0eeea9faed49acdc8\u241F246781905578646665:Change cells content alignment"])));
+            i18n_14 = $localize(_templateObject154 || (_templateObject154 = _taggedTemplateLiteral([":\u241Fc1dfdaa9b9cd04a5e8604df0eeea9faed49acdc8\u241F246781905578646665:Change cells content alignment"])));
           }
 
           var i18n_16;
@@ -19820,7 +20547,7 @@
             var MSG_EXTERNAL_96479540979750045$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__17 = goog.getMsg("Change rows density");
             i18n_16 = MSG_EXTERNAL_96479540979750045$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__17;
           } else {
-            i18n_16 = $localize(_templateObject151 || (_templateObject151 = _taggedTemplateLiteral([":\u241F2a4fe583915b73526b33437bba41a39aeddf6ee1\u241F96479540979750045:Change rows density"])));
+            i18n_16 = $localize(_templateObject155 || (_templateObject155 = _taggedTemplateLiteral([":\u241F2a4fe583915b73526b33437bba41a39aeddf6ee1\u241F96479540979750045:Change rows density"])));
           }
 
           var i18n_18;
@@ -19829,7 +20556,7 @@
             var MSG_EXTERNAL_8532151145041227661$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__19 = goog.getMsg("Change columns width");
             i18n_18 = MSG_EXTERNAL_8532151145041227661$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__19;
           } else {
-            i18n_18 = $localize(_templateObject152 || (_templateObject152 = _taggedTemplateLiteral([":\u241Ffe817864c1dc1742c09b858f6530b55b77cd07b5\u241F8532151145041227661:Change columns width"])));
+            i18n_18 = $localize(_templateObject156 || (_templateObject156 = _taggedTemplateLiteral([":\u241Ffe817864c1dc1742c09b858f6530b55b77cd07b5\u241F8532151145041227661:Change columns width"])));
           }
 
           var i18n_20;
@@ -19838,7 +20565,7 @@
             var MSG_EXTERNAL_8716342697541286006$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__21 = goog.getMsg(" Close ");
             i18n_20 = MSG_EXTERNAL_8716342697541286006$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__21;
           } else {
-            i18n_20 = $localize(_templateObject153 || (_templateObject153 = _taggedTemplateLiteral([":\u241Fabd523106b7164d5e101df33944bbf99a509f285\u241F8716342697541286006: Close "])));
+            i18n_20 = $localize(_templateObject157 || (_templateObject157 = _taggedTemplateLiteral([":\u241Fabd523106b7164d5e101df33944bbf99a509f285\u241F8716342697541286006: Close "])));
           }
 
           var i18n_22;
@@ -19847,7 +20574,7 @@
             var MSG_EXTERNAL_2408126496114120045$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__23 = goog.getMsg("Edit columns");
             i18n_22 = MSG_EXTERNAL_2408126496114120045$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__23;
           } else {
-            i18n_22 = $localize(_templateObject154 || (_templateObject154 = _taggedTemplateLiteral([":\u241F6f19e091c95a7783ed1a794a76800bfa2e580474\u241F2408126496114120045:Edit columns"])));
+            i18n_22 = $localize(_templateObject158 || (_templateObject158 = _taggedTemplateLiteral([":\u241F6f19e091c95a7783ed1a794a76800bfa2e580474\u241F2408126496114120045:Edit columns"])));
           }
 
           var i18n_24;
@@ -19856,7 +20583,7 @@
             var MSG_EXTERNAL_1465722133080575331$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__25 = goog.getMsg("Available columns");
             i18n_24 = MSG_EXTERNAL_1465722133080575331$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__25;
           } else {
-            i18n_24 = $localize(_templateObject155 || (_templateObject155 = _taggedTemplateLiteral([":\u241Fdd0306e460f34cf0d9c1f9da2c095b42c249a020\u241F1465722133080575331:Available columns"])));
+            i18n_24 = $localize(_templateObject159 || (_templateObject159 = _taggedTemplateLiteral([":\u241Fdd0306e460f34cf0d9c1f9da2c095b42c249a020\u241F1465722133080575331:Available columns"])));
           }
 
           var i18n_26;
@@ -19865,7 +20592,7 @@
             var MSG_EXTERNAL_1149997874969812833$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__27 = goog.getMsg("Create new column");
             i18n_26 = MSG_EXTERNAL_1149997874969812833$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__27;
           } else {
-            i18n_26 = $localize(_templateObject156 || (_templateObject156 = _taggedTemplateLiteral([":\u241Fea9e79c35aacc08d2b0ad15367a2bf5224c80cd4\u241F1149997874969812833:Create new column"])));
+            i18n_26 = $localize(_templateObject160 || (_templateObject160 = _taggedTemplateLiteral([":\u241Fea9e79c35aacc08d2b0ad15367a2bf5224c80cd4\u241F1149997874969812833:Create new column"])));
           }
 
           var i18n_28;
@@ -19874,7 +20601,7 @@
             var MSG_EXTERNAL_5721612456517589470$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__29 = goog.getMsg("Enter new column title");
             i18n_28 = MSG_EXTERNAL_5721612456517589470$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__29;
           } else {
-            i18n_28 = $localize(_templateObject157 || (_templateObject157 = _taggedTemplateLiteral([":\u241Fd024747bfabcb4f63763c5b931d6ac5840d26df0\u241F5721612456517589470:Enter new column title"])));
+            i18n_28 = $localize(_templateObject161 || (_templateObject161 = _taggedTemplateLiteral([":\u241Fd024747bfabcb4f63763c5b931d6ac5840d26df0\u241F5721612456517589470:Enter new column title"])));
           }
 
           var i18n_30;
@@ -19883,7 +20610,7 @@
             var MSG_EXTERNAL_8056937770550940393$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__31 = goog.getMsg(" Add new column ");
             i18n_30 = MSG_EXTERNAL_8056937770550940393$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__31;
           } else {
-            i18n_30 = $localize(_templateObject158 || (_templateObject158 = _taggedTemplateLiteral([":\u241F724b4d401f296839b85e79ddf32128342ee1f064\u241F8056937770550940393: Add new column "])));
+            i18n_30 = $localize(_templateObject162 || (_templateObject162 = _taggedTemplateLiteral([":\u241F724b4d401f296839b85e79ddf32128342ee1f064\u241F8056937770550940393: Add new column "])));
           }
 
           var i18n_32;
@@ -19892,7 +20619,7 @@
             var MSG_EXTERNAL_7413740698367559631$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__33 = goog.getMsg(" Cancel ");
             i18n_32 = MSG_EXTERNAL_7413740698367559631$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__33;
           } else {
-            i18n_32 = $localize(_templateObject159 || (_templateObject159 = _taggedTemplateLiteral([":\u241F0a08acf9503528341c28241d8d764ebc843c92f7\u241F7413740698367559631: Cancel "])));
+            i18n_32 = $localize(_templateObject163 || (_templateObject163 = _taggedTemplateLiteral([":\u241F0a08acf9503528341c28241d8d764ebc843c92f7\u241F7413740698367559631: Cancel "])));
           }
 
           var i18n_34;
@@ -19901,7 +20628,7 @@
             var MSG_EXTERNAL_7639014780203448203$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__35 = goog.getMsg(" Update columns ");
             i18n_34 = MSG_EXTERNAL_7639014780203448203$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__35;
           } else {
-            i18n_34 = $localize(_templateObject160 || (_templateObject160 = _taggedTemplateLiteral([":\u241Fb90a1c28cde3d4985f92f9b3d7476d4a13af3b94\u241F7639014780203448203: Update columns "])));
+            i18n_34 = $localize(_templateObject164 || (_templateObject164 = _taggedTemplateLiteral([":\u241Fb90a1c28cde3d4985f92f9b3d7476d4a13af3b94\u241F7639014780203448203: Update columns "])));
           }
 
           var i18n_36;
@@ -19910,7 +20637,7 @@
             var MSG_EXTERNAL_3498101055154698277$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS___37 = goog.getMsg("Select minimum 3 checkboxes!");
             i18n_36 = MSG_EXTERNAL_3498101055154698277$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS___37;
           } else {
-            i18n_36 = $localize(_templateObject161 || (_templateObject161 = _taggedTemplateLiteral([":\u241Faaf9b8331666795542f417fe39c78014513ca737\u241F3498101055154698277:Select minimum 3 checkboxes!"])));
+            i18n_36 = $localize(_templateObject165 || (_templateObject165 = _taggedTemplateLiteral([":\u241Faaf9b8331666795542f417fe39c78014513ca737\u241F3498101055154698277:Select minimum 3 checkboxes!"])));
           }
 
           var i18n_38;
@@ -19919,7 +20646,7 @@
             var MSG_EXTERNAL_4511235385998512563$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__39 = goog.getMsg("No.");
             i18n_38 = MSG_EXTERNAL_4511235385998512563$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__39;
           } else {
-            i18n_38 = $localize(_templateObject162 || (_templateObject162 = _taggedTemplateLiteral([":\u241F8675a724bb3952337aef7625c81b11e39a82d31b\u241F4511235385998512563:No."])));
+            i18n_38 = $localize(_templateObject166 || (_templateObject166 = _taggedTemplateLiteral([":\u241F8675a724bb3952337aef7625c81b11e39a82d31b\u241F4511235385998512563:No."])));
           }
 
           var i18n_40;
@@ -19928,7 +20655,7 @@
             var MSG_EXTERNAL_8953033926734869941$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__41 = goog.getMsg("Name");
             i18n_40 = MSG_EXTERNAL_8953033926734869941$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__41;
           } else {
-            i18n_40 = $localize(_templateObject163 || (_templateObject163 = _taggedTemplateLiteral([":\u241Fcff1428d10d59d14e45edec3c735a27b5482db59\u241F8953033926734869941:Name"])));
+            i18n_40 = $localize(_templateObject167 || (_templateObject167 = _taggedTemplateLiteral([":\u241Fcff1428d10d59d14e45edec3c735a27b5482db59\u241F8953033926734869941:Name"])));
           }
 
           var i18n_42;
@@ -19937,7 +20664,7 @@
             var MSG_EXTERNAL_6599364831830861985$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__43 = goog.getMsg("Features");
             i18n_42 = MSG_EXTERNAL_6599364831830861985$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__43;
           } else {
-            i18n_42 = $localize(_templateObject164 || (_templateObject164 = _taggedTemplateLiteral([":\u241F6cdb1fea93d77c07950c0c76c6e0ad79ebbef084\u241F6599364831830861985:Features"])));
+            i18n_42 = $localize(_templateObject168 || (_templateObject168 = _taggedTemplateLiteral([":\u241F6cdb1fea93d77c07950c0c76c6e0ad79ebbef084\u241F6599364831830861985:Features"])));
           }
 
           var i18n_44;
@@ -19946,7 +20673,7 @@
             var MSG_EXTERNAL_4574987680940794089$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__45 = goog.getMsg("Asset Class");
             i18n_44 = MSG_EXTERNAL_4574987680940794089$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__45;
           } else {
-            i18n_44 = $localize(_templateObject165 || (_templateObject165 = _taggedTemplateLiteral([":\u241F584c9433705e9bfdd2e7a9f0192690f453d36196\u241F4574987680940794089:Asset Class"])));
+            i18n_44 = $localize(_templateObject169 || (_templateObject169 = _taggedTemplateLiteral([":\u241F584c9433705e9bfdd2e7a9f0192690f453d36196\u241F4574987680940794089:Asset Class"])));
           }
 
           var i18n_46;
@@ -19955,7 +20682,7 @@
             var MSG_EXTERNAL_471816275243265264$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__47 = goog.getMsg("Location");
             i18n_46 = MSG_EXTERNAL_471816275243265264$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__47;
           } else {
-            i18n_46 = $localize(_templateObject166 || (_templateObject166 = _taggedTemplateLiteral([":\u241Fed31c09fd77c36238c13d83635f3fe5294c733d2\u241F471816275243265264:Location"])));
+            i18n_46 = $localize(_templateObject170 || (_templateObject170 = _taggedTemplateLiteral([":\u241Fed31c09fd77c36238c13d83635f3fe5294c733d2\u241F471816275243265264:Location"])));
           }
 
           var i18n_48;
@@ -19967,7 +20694,7 @@
             });
             i18n_48 = MSG_EXTERNAL_1339790904510203255$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__49;
           } else {
-            i18n_48 = $localize(_templateObject167 || (_templateObject167 = _taggedTemplateLiteral([":\u241F79868c1613d2d4a258888bf56100f576bf7908f8\u241F1339790904510203255:", ":START_TAG_NUI_ICON:", ":CLOSE_TAG_NUI_ICON:"])), "\uFFFD#2\uFFFD", "\uFFFD/#2\uFFFD");
+            i18n_48 = $localize(_templateObject171 || (_templateObject171 = _taggedTemplateLiteral([":\u241F79868c1613d2d4a258888bf56100f576bf7908f8\u241F1339790904510203255:", ":START_TAG_NUI_ICON:", ":CLOSE_TAG_NUI_ICON:"])), "\uFFFD#2\uFFFD", "\uFFFD/#2\uFFFD");
           }
 
           var i18n_50;
@@ -19976,7 +20703,7 @@
             var MSG_EXTERNAL_6839146054918474677$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__51 = goog.getMsg("Outages");
             i18n_50 = MSG_EXTERNAL_6839146054918474677$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__51;
           } else {
-            i18n_50 = $localize(_templateObject168 || (_templateObject168 = _taggedTemplateLiteral([":\u241Fd27fe2a77fbf58112bb91a4828a2c4cdfcaec83b\u241F6839146054918474677:Outages"])));
+            i18n_50 = $localize(_templateObject172 || (_templateObject172 = _taggedTemplateLiteral([":\u241Fd27fe2a77fbf58112bb91a4828a2c4cdfcaec83b\u241F6839146054918474677:Outages"])));
           }
 
           var i18n_52;
@@ -19985,7 +20712,7 @@
             var MSG_EXTERNAL_86770805401291669$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__53 = goog.getMsg("Checks");
             i18n_52 = MSG_EXTERNAL_86770805401291669$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__53;
           } else {
-            i18n_52 = $localize(_templateObject169 || (_templateObject169 = _taggedTemplateLiteral([":\u241F3662d1d079624d13ee2e3027d0bb200fa403eef8\u241F86770805401291669:Checks"])));
+            i18n_52 = $localize(_templateObject173 || (_templateObject173 = _taggedTemplateLiteral([":\u241F3662d1d079624d13ee2e3027d0bb200fa403eef8\u241F86770805401291669:Checks"])));
           }
 
           return [[1, "nui-table__options"], [1, "demo-options-section"], ["type", "button", "id", "nui-demo-table-test-columns-table-parameters-btn", "nui-button", "", "icon", "edit", 3, "click"], i18n_4, ["parameters", ""], ["type", "button", "id", "nui-demo-table-test-columns-add-remove-edit-btn", "nui-button", "", "icon", "edit", 3, "click"], i18n_6, ["type", "button", "id", "nui-demo-table-test-limit-search-btn", "nui-button", "", 3, "click"], i18n_8, ["nui-button", "", "type", "button", "id", "nui-demo-table-test-disable-column-sorting-btn", 3, "click"], i18n_10, ["content", ""], [1, "nui-searchable-table__search"], ["id", "nui-demo-table-test-search", 3, "value", "search", "cancel"], ["filteringSearch", ""], ["id", "nui-test-table", 1, "nui-table__container"], ["nui-table", "", 3, "dataSource", "sortable", "resizable", "reorderable", "selectable", "totalItems", "sortOrderChanged", "columnsOrderChange"], ["testTable", "", "sortableTable", "", "filteringTable", ""], ["nuiColumnDef", "position", 3, "columnWidth"], ["nui-header-cell", "", 3, "alignment", 4, "nuiHeaderCellDef"], ["nui-cell", "", 3, "alignment", 4, "nuiCellDef"], ["nuiColumnDef", "name"], ["nuiColumnDef", "features"], ["nui-header-cell", "", 3, "isColumnSortingDisabled", "alignment", 4, "nuiHeaderCellDef"], ["nuiColumnDef", "asset"], ["nuiColumnDef", "location"], ["nuiColumnDef", "status", "type", "icon"], ["nui-header-cell", "", 4, "nuiHeaderCellDef"], ["nui-cell", "", 4, "nuiCellDef"], ["nuiColumnDef", "outages"], ["nuiColumnDef", "checks"], ["nui-header-row", "", 4, "nuiHeaderRowDef", "nuiHeaderRowDefSticky"], ["nui-row", "", 3, "density", "rowObject", 4, "nuiRowDef", "nuiRowDefColumns"], ["id", "nui-demo-table-test-paginator", "activeClass", "active", "disabledClass", "disabled", "showPrevNext", "true", 3, "page", "pageSize", "total", "pagerAction"], ["filteringPaginator", ""], ["title", i18n_12, 3, "closed"], [3, "formGroup"], [1, "form-group"], [1, "dialog-body"], ["formControlName", "reorderable"], ["formControlName", "resizable"], ["formControlName", "sortable"], i18n_14, ["id", "nui-demo-table-test-columns-alignment-select", "placeholder", "Select alignment", "formControlName", "alignment", 3, "itemsSource"], i18n_16, ["id", "nui-demo-table-test-columns-density-select", "placeholder", "Select row density", "formControlName", "density", 3, "itemsSource"], i18n_18, ["placeholder", "Set columns width", "id", "nui-demo-table-test-column-width", "formControlName", "positionWidth"], ["nui-button", "", "id", "nui-demo-table-test-columns-dialog-close-btn", "type", "button", "displayStyle", "primary", 3, "click"], i18n_20, ["title", i18n_22, 3, "closed"], ["type", "critical", 3, "allowDismiss", 4, "ngIf"], i18n_24, ["id", "nui-demo-table-test-add-remove-checkboxes", "formControlName", "checkboxGroup", "required", "", 3, "values", "valuesChange"], ["class", "text-capitalize", 3, "value", "checked", 4, "ngFor", "ngForOf"], i18n_26, [1, "d-flex", "flex-row"], [1, "col"], ["id", "nui-demo-table-test-add-remove-new-column-textbox", "placeholder", i18n_28, 3, "value", "textChange"], [1, "col", "col-auto"], ["nui-button", "", "type", "button", "displayStyle", "default", "id", "nui-demo-table-test-add-remove-new-column-btn", 1, "ml-3", 3, "click"], i18n_30, ["nui-button", "", "type", "button", 3, "click"], i18n_32, ["nui-button", "", "type", "button", "id", "nui-demo-table-test-columns-add-remove-submit-btn", "displayStyle", "primary", 3, "disabled", "click"], i18n_34, ["type", "critical", 3, "allowDismiss"], i18n_36, [1, "text-capitalize", 3, "value", "checked"], ["nui-header-cell", "", 3, "alignment"], i18n_38, ["nui-cell", "", 3, "alignment"], i18n_40, ["nui-header-cell", "", 3, "isColumnSortingDisabled", "alignment"], i18n_42, ["class", "icon-margin", 3, "icon", 4, "ngFor", "ngForOf"], [1, "icon-margin", 3, "icon"], i18n_44, i18n_46, ["nui-header-cell", ""], i18n_48, ["icon", "enable"], ["nui-cell", ""], [3, "icon"], i18n_50, i18n_52, [4, "ngFor", "ngForOf"], ["nui-header-row", ""], ["nui-row", "", 3, "density", "rowObject"]];
@@ -20889,16 +21616,16 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this30 = this;
+            var _this31 = this;
 
             this.dataSource.outputsSubject.subscribe(function (outputs) {
               if (outputs) {
-                _this30.users.next(outputs.repeat.itemsSource);
+                _this31.users.next(outputs.repeat.itemsSource);
 
-                _this30._loadedItems = outputs.itemsToLoad;
-                _this30.totalItems = outputs.totalItems;
+                _this31._loadedItems = outputs.itemsToLoad;
+                _this31.totalItems = outputs.totalItems;
 
-                _this30.dataSource.step.next(_this30.step);
+                _this31.dataSource.step.next(_this31.step);
                 /**
                  * Option 1:
                  * When Option 2 code snippet (see below) is commented out, and the following one is uncommented,
@@ -20915,22 +21642,22 @@
                  */
 
 
-                if (_this30.users.value.length < _this30.loadedItems) {
-                  var leftover = _this30.users.value.length - _this30.itemsToLoad * Math.round(_this30.users.value.length / _this30.itemsToLoad);
+                if (_this31.users.value.length < _this31.loadedItems) {
+                  var leftover = _this31.users.value.length - _this31.itemsToLoad * Math.round(_this31.users.value.length / _this31.itemsToLoad);
 
-                  if (_this30.step > Math.abs(leftover)) {
-                    _this30.dataSource.step.next(_this30.itemsToLoad % _this30.step);
+                  if (_this31.step > Math.abs(leftover)) {
+                    _this31.dataSource.step.next(_this31.itemsToLoad % _this31.step);
                   }
 
-                  _this30.dataSource.applyFilters();
+                  _this31.dataSource.applyFilters();
                 }
 
-                _this30.cd.detectChanges();
+                _this31.cd.detectChanges();
               }
             });
             this.dataSource.applyFilters();
             this.dataSource.busy.subscribe(function (busy) {
-              _this30._isBusy = busy;
+              _this31._isBusy = busy;
             });
           }
         }, {
@@ -20996,7 +21723,7 @@
             });
             i18n_0 = MSG_EXTERNAL_299948609284975408$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_EXAMPLE_COMPONENT_TS_1;
           } else {
-            i18n_0 = $localize(_templateObject170 || (_templateObject170 = _taggedTemplateLiteral([":\u241F56b6c3648cf7e13e13d2a4f21a55fd2b4c4689d5\u241F299948609284975408: ", ":INTERPOLATION: "])), "\uFFFD0\uFFFD");
+            i18n_0 = $localize(_templateObject174 || (_templateObject174 = _taggedTemplateLiteral([":\u241F56b6c3648cf7e13e13d2a4f21a55fd2b4c4689d5\u241F299948609284975408: ", ":INTERPOLATION: "])), "\uFFFD0\uFFFD");
           }
 
           var i18n_2;
@@ -21005,7 +21732,7 @@
             var MSG_EXTERNAL_1345472093440723911$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_EXAMPLE_COMPONENT_TS__3 = goog.getMsg(" No.");
             i18n_2 = MSG_EXTERNAL_1345472093440723911$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_EXAMPLE_COMPONENT_TS__3;
           } else {
-            i18n_2 = $localize(_templateObject171 || (_templateObject171 = _taggedTemplateLiteral([":\u241F333f0164082b9f12f63ca11438b2085d074a5b0f\u241F1345472093440723911: No."])));
+            i18n_2 = $localize(_templateObject175 || (_templateObject175 = _taggedTemplateLiteral([":\u241F333f0164082b9f12f63ca11438b2085d074a5b0f\u241F1345472093440723911: No."])));
           }
 
           var i18n_4;
@@ -21014,7 +21741,7 @@
             var MSG_EXTERNAL_8357643335000303339$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_EXAMPLE_COMPONENT_TS__5 = goog.getMsg(" Title");
             i18n_4 = MSG_EXTERNAL_8357643335000303339$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_EXAMPLE_COMPONENT_TS__5;
           } else {
-            i18n_4 = $localize(_templateObject172 || (_templateObject172 = _taggedTemplateLiteral([":\u241F952a1244074407cd841ce6253538e566581f10dd\u241F8357643335000303339: Title"])));
+            i18n_4 = $localize(_templateObject176 || (_templateObject176 = _taggedTemplateLiteral([":\u241F952a1244074407cd841ce6253538e566581f10dd\u241F8357643335000303339: Title"])));
           }
 
           var i18n_6;
@@ -21023,7 +21750,7 @@
             var MSG_EXTERNAL_2860311194545881177$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_EXAMPLE_COMPONENT_TS__7 = goog.getMsg(" First Name");
             i18n_6 = MSG_EXTERNAL_2860311194545881177$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_EXAMPLE_COMPONENT_TS__7;
           } else {
-            i18n_6 = $localize(_templateObject173 || (_templateObject173 = _taggedTemplateLiteral([":\u241Fba4a0caee703d6328fdb0d70380f541915451742\u241F2860311194545881177: First Name"])));
+            i18n_6 = $localize(_templateObject177 || (_templateObject177 = _taggedTemplateLiteral([":\u241Fba4a0caee703d6328fdb0d70380f541915451742\u241F2860311194545881177: First Name"])));
           }
 
           var i18n_8;
@@ -21032,7 +21759,7 @@
             var MSG_EXTERNAL_1738284750176372142$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_EXAMPLE_COMPONENT_TS__9 = goog.getMsg(" Last Name");
             i18n_8 = MSG_EXTERNAL_1738284750176372142$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_EXAMPLE_COMPONENT_TS__9;
           } else {
-            i18n_8 = $localize(_templateObject174 || (_templateObject174 = _taggedTemplateLiteral([":\u241F26b7649337e48ef3e3ccd71ea1a710dab5f7eb61\u241F1738284750176372142: Last Name"])));
+            i18n_8 = $localize(_templateObject178 || (_templateObject178 = _taggedTemplateLiteral([":\u241F26b7649337e48ef3e3ccd71ea1a710dab5f7eb61\u241F1738284750176372142: Last Name"])));
           }
 
           var i18n_10;
@@ -21041,7 +21768,7 @@
             var MSG_EXTERNAL_2667859507116816026$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_EXAMPLE_COMPONENT_TS__11 = goog.getMsg(" Gender");
             i18n_10 = MSG_EXTERNAL_2667859507116816026$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_EXAMPLE_COMPONENT_TS__11;
           } else {
-            i18n_10 = $localize(_templateObject175 || (_templateObject175 = _taggedTemplateLiteral([":\u241F8a4933776bdd10c9818e105e60d956769de4149f\u241F2667859507116816026: Gender"])));
+            i18n_10 = $localize(_templateObject179 || (_templateObject179 = _taggedTemplateLiteral([":\u241F8a4933776bdd10c9818e105e60d956769de4149f\u241F2667859507116816026: Gender"])));
           }
 
           var i18n_12;
@@ -21050,7 +21777,7 @@
             var MSG_EXTERNAL_1456073909159321718$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_EXAMPLE_COMPONENT_TS__13 = goog.getMsg(" Country");
             i18n_12 = MSG_EXTERNAL_1456073909159321718$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_EXAMPLE_COMPONENT_TS__13;
           } else {
-            i18n_12 = $localize(_templateObject176 || (_templateObject176 = _taggedTemplateLiteral([":\u241F0425e05bbff231ff83e71da0ecbf4e5aae0b02cf\u241F1456073909159321718: Country"])));
+            i18n_12 = $localize(_templateObject180 || (_templateObject180 = _taggedTemplateLiteral([":\u241F0425e05bbff231ff83e71da0ecbf4e5aae0b02cf\u241F1456073909159321718: Country"])));
           }
 
           var i18n_14;
@@ -21059,7 +21786,7 @@
             var MSG_EXTERNAL_8764220957450565928$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_EXAMPLE_COMPONENT_TS__15 = goog.getMsg(" City");
             i18n_14 = MSG_EXTERNAL_8764220957450565928$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_EXAMPLE_COMPONENT_TS__15;
           } else {
-            i18n_14 = $localize(_templateObject177 || (_templateObject177 = _taggedTemplateLiteral([":\u241F8ecca5416af6383f4ca3e66acf35eca90e690a3c\u241F8764220957450565928: City"])));
+            i18n_14 = $localize(_templateObject181 || (_templateObject181 = _taggedTemplateLiteral([":\u241F8ecca5416af6383f4ca3e66acf35eca90e690a3c\u241F8764220957450565928: City"])));
           }
 
           var i18n_16;
@@ -21068,7 +21795,7 @@
             var MSG_EXTERNAL_6046214701664071824$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_EXAMPLE_COMPONENT_TS__17 = goog.getMsg(" Postcode");
             i18n_16 = MSG_EXTERNAL_6046214701664071824$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_EXAMPLE_COMPONENT_TS__17;
           } else {
-            i18n_16 = $localize(_templateObject178 || (_templateObject178 = _taggedTemplateLiteral([":\u241F12219316a6afe56a50fe109f4ded8640e551d35a\u241F6046214701664071824: Postcode"])));
+            i18n_16 = $localize(_templateObject182 || (_templateObject182 = _taggedTemplateLiteral([":\u241F12219316a6afe56a50fe109f4ded8640e551d35a\u241F6046214701664071824: Postcode"])));
           }
 
           var i18n_18;
@@ -21077,7 +21804,7 @@
             var MSG_EXTERNAL_9117442902261307677$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_EXAMPLE_COMPONENT_TS__19 = goog.getMsg(" Email");
             i18n_18 = MSG_EXTERNAL_9117442902261307677$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_EXAMPLE_COMPONENT_TS__19;
           } else {
-            i18n_18 = $localize(_templateObject179 || (_templateObject179 = _taggedTemplateLiteral([":\u241Fa20a6d4a37afdd7b03a99c1673b6625e1bfd319b\u241F9117442902261307677: Email"])));
+            i18n_18 = $localize(_templateObject183 || (_templateObject183 = _taggedTemplateLiteral([":\u241Fa20a6d4a37afdd7b03a99c1673b6625e1bfd319b\u241F9117442902261307677: Email"])));
           }
 
           var i18n_20;
@@ -21086,7 +21813,7 @@
             var MSG_EXTERNAL_7006732017012080604$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_EXAMPLE_COMPONENT_TS__21 = goog.getMsg(" Cell");
             i18n_20 = MSG_EXTERNAL_7006732017012080604$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_EXAMPLE_COMPONENT_TS__21;
           } else {
-            i18n_20 = $localize(_templateObject180 || (_templateObject180 = _taggedTemplateLiteral([":\u241F714a2901dd3ebc87509d7e399a32d0c439fa6c39\u241F7006732017012080604: Cell"])));
+            i18n_20 = $localize(_templateObject184 || (_templateObject184 = _taggedTemplateLiteral([":\u241F714a2901dd3ebc87509d7e399a32d0c439fa6c39\u241F7006732017012080604: Cell"])));
           }
 
           return [[1, "mb-3"], [1, "row"], [1, "col-3"], [3, "value", "valueChange"], i18n_0, [1, "h-100", 3, "itemSize", "tableStickyHeader"], ["viewport", ""], ["nui-table", "", 3, "dataSource", "resizable", "reorderable"], ["nuiColumnDef", "no", 3, "columnWidth"], ["nui-header-cell", "", 4, "nuiHeaderCellDef"], ["nui-cell", "", 4, "nuiCellDef"], ["nuiColumnDef", "nameTitle", 3, "columnWidth"], ["nuiColumnDef", "nameFirst", 3, "columnWidth"], ["nuiColumnDef", "nameLast", 3, "columnWidth"], ["nuiColumnDef", "gender", 3, "columnWidth"], ["nuiColumnDef", "country", 3, "columnWidth"], ["nuiColumnDef", "city", 3, "columnWidth"], ["nuiColumnDef", "postcode", 3, "columnWidth"], ["nuiColumnDef", "email", 3, "columnWidth"], ["nuiColumnDef", "cell", 3, "columnWidth"], ["nui-cell", "", "style", "overflow: visible", 4, "nuiCellDef"], ["nui-header-row", "", 4, "nuiHeaderRowDef"], ["nuiRowDef", "", "cdkVirtualFor", "", 3, "nuiRowDefColumns", "cdkVirtualForOf"], [4, "ngIf"], ["footer", ""], ["nui-header-cell", ""], i18n_2, ["nui-cell", ""], i18n_4, i18n_6, i18n_8, i18n_10, i18n_12, i18n_14, i18n_16, i18n_18, i18n_20, ["nui-cell", "", 2, "overflow", "visible"], ["nui-header-row", ""], ["nui-row", "", "density", "tiny"], [4, "ngTemplateOutlet"], [1, "nui-demo-scrolling-footer", "mt-1"], [1, "h-100", "w-100"], ["class", "d-flex justify-content-center align-items-center", 4, "ngIf", "ngIfElse"], ["defaultText", ""], [1, "d-flex", "justify-content-center", "align-items-center"], ["size", "small", 1, "mr-2", "d-inline-flex", 3, "show"], [1, "h-100", "d-flex", "justify-content-center", "align-items-center"], [1, "px-2"], [1, "pl-2"], [4, "ngIf", "ngIfElse"], ["class", "d-flex justify-content-center", 4, "ngIf"], ["endOfData", ""], [1, "d-flex", "justify-content-center"], ["btn", "", "nui-button", "", "type", "button", "size", "compact", "displayStyle", "action", 3, "click"]];

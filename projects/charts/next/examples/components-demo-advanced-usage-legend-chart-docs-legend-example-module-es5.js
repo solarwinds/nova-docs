@@ -320,6 +320,7 @@
         "./legend-text-color/legend-text-color.example.component.html": "qDJM",
         "./legend-text-color/legend-text-color.example.component.ts": "ne+A",
         "./legend-visual-test/legend-visual-test.component.html": "fZ1x",
+        "./legend-visual-test/legend-visual-test.component.less": "w51a",
         "./legend-visual-test/legend-visual-test.component.ts": "cpli"
       };
 
@@ -679,20 +680,26 @@
       /* harmony import */
 
 
-      var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      var _legend_visual_test_component_less__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! ./legend-visual-test.component.less */
+      "WtO5");
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @angular/core */
       "fXoL");
       /* harmony import */
 
 
-      var _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      var _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! @nova-ui/charts */
       "gKry");
 
       var LegendVisualTestComponent = function LegendVisualTestComponent() {
         _classCallCheck(this, LegendVisualTestComponent);
 
-        this.markers = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["SequentialChartMarkerProvider"](_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["CHART_MARKERS"]);
+        this.markers = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["SequentialChartMarkerProvider"](_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["CHART_MARKERS"]);
         this.seriesData = [{
           seriesId: "1",
           value: 15.5,
@@ -708,13 +715,34 @@
         }];
         this.tileBackgroundColor = "#1f77b4";
         this.tileColor = "white";
-        this.renderStates = Object.keys(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["RenderState"]);
+        this.renderStates = Object.keys(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["RenderState"]);
       };
 
-      LegendVisualTestComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
+      LegendVisualTestComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
         selector: "nui-legend-visual-test",
-        template: _raw_loader_legend_visual_test_component_html__WEBPACK_IMPORTED_MODULE_1__["default"]
+        template: _raw_loader_legend_visual_test_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
+        styles: [_legend_visual_test_component_less__WEBPACK_IMPORTED_MODULE_2__["default"]]
       })], LegendVisualTestComponent);
+      /***/
+    },
+
+    /***/
+    "WtO5":
+    /*!*************************************************************************************************************!*\
+      !*** ./examples/components/demo/advanced-usage/legend/legend-visual-test/legend-visual-test.component.less ***!
+      \*************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function WtO5(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "@font-face{font-family:Roboto,Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif;src:url(Roboto-Regular.woff) format(\"woff\"),url(Roboto-Regular.woff2) format(\"woff2\");font-weight:400;font-style:normal}@font-face{font-family:Roboto,Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif;src:url(Roboto-Bold.woff) format(\"woff\"),url(Roboto-Bold.woff2) format(\"woff2\");font-weight:700;font-style:normal}.text-style-roboto {\n  font-family: \"Roboto\";\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uLy4uL25vZGVfbW9kdWxlcy9Abm92YS11aS9iaXRzL2J1bmRsZXMvY3NzL3N0eWxlcy1mb250LXJvYm90by5jc3MiLCJsZWdlbmQtdmlzdWFsLXRlc3QuY29tcG9uZW50Lmxlc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsV0FBVyxzRUFBc0UsQ0FBQyxxRkFBcUYsQ0FBQyxlQUFlLENBQUMsaUJBQWlCLENBQUMsV0FBVyxzRUFBc0UsQ0FBQywrRUFBK0UsQ0FBQyxlQUFlLENBQUMsaUJBQWlCLENDRTdZO0VBQ0kscUJBQUE7QUFBSiIsImZpbGUiOiJsZWdlbmQtdmlzdWFsLXRlc3QuY29tcG9uZW50Lmxlc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAZm9udC1mYWNle2ZvbnQtZmFtaWx5OlJvYm90byxPcGVuIFNhbnMsSGVsdmV0aWNhIE5ldWUsSGVsdmV0aWNhLEFyaWFsLHNhbnMtc2VyaWY7c3JjOnVybChSb2JvdG8tUmVndWxhci53b2ZmKSBmb3JtYXQoXCJ3b2ZmXCIpLHVybChSb2JvdG8tUmVndWxhci53b2ZmMikgZm9ybWF0KFwid29mZjJcIik7Zm9udC13ZWlnaHQ6NDAwO2ZvbnQtc3R5bGU6bm9ybWFsfUBmb250LWZhY2V7Zm9udC1mYW1pbHk6Um9ib3RvLE9wZW4gU2FucyxIZWx2ZXRpY2EgTmV1ZSxIZWx2ZXRpY2EsQXJpYWwsc2Fucy1zZXJpZjtzcmM6dXJsKFJvYm90by1Cb2xkLndvZmYpIGZvcm1hdChcIndvZmZcIiksdXJsKFJvYm90by1Cb2xkLndvZmYyKSBmb3JtYXQoXCJ3b2ZmMlwiKTtmb250LXdlaWdodDo3MDA7Zm9udC1zdHlsZTpub3JtYWx9IiwiQGltcG9ydCBcIkBub3ZhLXVpL2JpdHMvYnVuZGxlcy9jc3Mvc3R5bGVzLWZvbnQtcm9ib3RvLmNzc1wiO1xuXG4udGV4dC1zdHlsZS1yb2JvdG8ge1xuICAgIGZvbnQtZmFtaWx5OiBcIlJvYm90b1wiO1xufSJdfQ== */";
       /***/
     },
 

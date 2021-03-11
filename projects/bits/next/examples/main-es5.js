@@ -1324,7 +1324,8 @@
             var _a;
 
             if (!lodash_isUndefined__WEBPACK_IMPORTED_MODULE_4___default()(totalItems)) {
-              (_a = this.logger) === null || _a === void 0 ? void 0 : _a.warn("'totalItems' parameter of SelectorService.selectItems is unused - deprecated in v9");
+              (_a = this.logger) === null || _a === void 0 ? void 0 : _a.warn("'totalItems' parameter of SelectorService.selectItems is unused and deprecated. As of Nova v9, this \
+                argument may be omitted. Removal: NUI-5896");
             }
 
             if (selectionMode === _repeat_types__WEBPACK_IMPORTED_MODULE_9__["RepeatSelectionMode"].radio || selectionMode === _repeat_types__WEBPACK_IMPORTED_MODULE_9__["RepeatSelectionMode"].single || selectionMode === _repeat_types__WEBPACK_IMPORTED_MODULE_9__["RepeatSelectionMode"].radioWithNonRequiredSelection || selectionMode === _repeat_types__WEBPACK_IMPORTED_MODULE_9__["RepeatSelectionMode"].singleWithRequiredSelection) {
@@ -9432,6 +9433,7 @@
           this.shouldHighlightEdge = new rxjs__WEBPACK_IMPORTED_MODULE_4__["Subject"]();
           this.dataSourceChanged = new rxjs__WEBPACK_IMPORTED_MODULE_4__["Subject"]();
           this.selectionChanged = new rxjs__WEBPACK_IMPORTED_MODULE_4__["Subject"]();
+          this.selectableChanged = new rxjs__WEBPACK_IMPORTED_MODULE_4__["Subject"]();
           this.columnWidthSubject = new rxjs__WEBPACK_IMPORTED_MODULE_4__["Subject"]();
           this.stickyHeaderChangedSubject = new rxjs__WEBPACK_IMPORTED_MODULE_4__["Subject"]();
           this._selection = {
@@ -9558,6 +9560,10 @@
             return this._selectable;
           },
           set: function set(isSelectable) {
+            if (isSelectable !== this._selectable) {
+              this.selectableChanged.next(isSelectable);
+            }
+
             this._selectable = isSelectable;
           }
         }, {
@@ -23686,43 +23692,55 @@
       /* harmony import */
 
 
-      var _constants_interaction_constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! rxjs */
+      "qCKp");
+      /* harmony import */
+
+
+      var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! rxjs/operators */
+      "kU1M");
+      /* harmony import */
+
+
+      var _constants_interaction_constants__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! ../../../constants/interaction.constants */
       "8BfG");
       /* harmony import */
 
 
-      var _selector_public_api__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      var _selector_public_api__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! ../../selector/public-api */
       "JFa6");
       /* harmony import */
 
 
-      var _table_state_handler_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      var _table_state_handler_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! ../table-state-handler.service */
       "5uSY");
       /* harmony import */
 
 
-      var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      var _angular_common__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
       /*! @angular/common */
       "ofXK");
       /* harmony import */
 
 
-      var _common_directives_click_interceptor_click_interceptor_directive__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      var _common_directives_click_interceptor_click_interceptor_directive__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
       /*! ../../../common/directives/click-interceptor/click-interceptor.directive */
       "qMZP");
       /* harmony import */
 
 
-      var _selector_selector_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      var _selector_selector_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
       /*! ../../selector/selector.component */
       "E+Rb");
       /* harmony import */
 
 
-      var _checkbox_checkbox_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+      var _checkbox_checkbox_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
       /*! ../../checkbox/checkbox.component */
       "Oh8U");
 
@@ -23869,7 +23887,7 @@
       }(_angular_cdk_table__WEBPACK_IMPORTED_MODULE_0__["CdkHeaderRowDef"]);
 
       TableHeaderRowDefDirective.ɵfac = function TableHeaderRowDefDirective_Factory(t) {
-        return new (t || TableHeaderRowDefDirective)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["TemplateRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["IterableDiffers"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_table_state_handler_service__WEBPACK_IMPORTED_MODULE_6__["TableStateHandlerService"]));
+        return new (t || TableHeaderRowDefDirective)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["TemplateRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["IterableDiffers"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_table_state_handler_service__WEBPACK_IMPORTED_MODULE_8__["TableStateHandlerService"]));
       };
 
       TableHeaderRowDefDirective.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineDirective"]({
@@ -23940,7 +23958,7 @@
       }(_angular_cdk_table__WEBPACK_IMPORTED_MODULE_0__["CdkRowDef"]);
 
       TableRowDefDirective.ɵfac = function TableRowDefDirective_Factory(t) {
-        return new (t || TableRowDefDirective)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["TemplateRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["IterableDiffers"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_table_state_handler_service__WEBPACK_IMPORTED_MODULE_6__["TableStateHandlerService"]));
+        return new (t || TableRowDefDirective)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["TemplateRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["IterableDiffers"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_table_state_handler_service__WEBPACK_IMPORTED_MODULE_8__["TableStateHandlerService"]));
       };
 
       TableRowDefDirective.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineDirective"]({
@@ -24011,7 +24029,7 @@
       }(_angular_cdk_table__WEBPACK_IMPORTED_MODULE_0__["CdkFooterRowDef"]);
 
       TableFooterRowDefDirective.ɵfac = function TableFooterRowDefDirective_Factory(t) {
-        return new (t || TableFooterRowDefDirective)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["TemplateRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["IterableDiffers"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_table_state_handler_service__WEBPACK_IMPORTED_MODULE_6__["TableStateHandlerService"]));
+        return new (t || TableFooterRowDefDirective)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["TemplateRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["IterableDiffers"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_table_state_handler_service__WEBPACK_IMPORTED_MODULE_8__["TableStateHandlerService"]));
       };
 
       TableFooterRowDefDirective.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineDirective"]({
@@ -24045,10 +24063,11 @@
           _this68.changeDetectorRef = changeDetectorRef;
           _this68.density = "default";
           _this68.selectorState = {
-            checkboxStatus: _selector_public_api__WEBPACK_IMPORTED_MODULE_5__["CheckboxStatus"].Unchecked,
+            checkboxStatus: _selector_public_api__WEBPACK_IMPORTED_MODULE_7__["CheckboxStatus"].Unchecked,
             selectorItems: []
           };
           _this68.selectable = _this68.tableStateHandlerService.selectable;
+          _this68.onDestroy$ = new rxjs__WEBPACK_IMPORTED_MODULE_4__["Subject"]();
           return _this68;
         }
 
@@ -24079,17 +24098,23 @@
 
             if (this.tableStateHandlerService.selectable) {
               this.selectorState = this.tableStateHandlerService.getSelectorState();
-              this.updateSelectorState(); // if dataSource changes we need to update selector state
+              this.updateSelectorState();
+            } // if dataSource changes we need to update selector state
 
-              this.dataSourceChangeSubscription = this.tableStateHandlerService.dataSourceChanged.subscribe(function () {
-                _this69.updateSelectorState();
-              }); // when single row is selected we need to update selector state
-              // we also need to detect changes for selector state
 
-              this.selectionChangeSubscription = this.tableStateHandlerService.selectionChanged.subscribe(function () {
-                _this69.updateSelectorState();
-              });
-            }
+            this.dataSourceChangeSubscription = this.tableStateHandlerService.dataSourceChanged.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["takeUntil"])(this.onDestroy$)).subscribe(function () {
+              _this69.updateSelectorState();
+            }); // when single row is selected we need to update selector state
+            // we also need to detect changes for selector state
+
+            this.selectionChangeSubscription = this.tableStateHandlerService.selectionChanged.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["takeUntil"])(this.onDestroy$)).subscribe(function () {
+              _this69.updateSelectorState();
+            });
+            this.tableStateHandlerService.selectableChanged.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["takeUntil"])(this.onDestroy$)).subscribe(function (selectable) {
+              _this69.selectable = selectable;
+
+              _this69.changeDetectorRef.markForCheck();
+            });
           }
         }, {
           key: "ngAfterViewInit",
@@ -24114,13 +24139,8 @@
         }, {
           key: "ngOnDestroy",
           value: function ngOnDestroy() {
-            if (this.dataSourceChangeSubscription) {
-              this.dataSourceChangeSubscription.unsubscribe();
-            }
-
-            if (this.selectionChangeSubscription) {
-              this.selectionChangeSubscription.unsubscribe();
-            }
+            this.onDestroy$.next();
+            this.onDestroy$.complete();
           }
         }]);
 
@@ -24128,7 +24148,7 @@
       }(_angular_cdk_table__WEBPACK_IMPORTED_MODULE_0__["CdkHeaderRow"]);
 
       TableHeaderRowComponent.ɵfac = function TableHeaderRowComponent_Factory(t) {
-        return new (t || TableHeaderRowComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_table_state_handler_service__WEBPACK_IMPORTED_MODULE_6__["TableStateHandlerService"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectorRef"]));
+        return new (t || TableHeaderRowComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_table_state_handler_service__WEBPACK_IMPORTED_MODULE_8__["TableStateHandlerService"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectorRef"]));
       };
 
       TableHeaderRowComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
@@ -24163,7 +24183,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.selectable);
           }
         },
-        directives: [_angular_common__WEBPACK_IMPORTED_MODULE_7__["NgIf"], _angular_cdk_table__WEBPACK_IMPORTED_MODULE_0__["CdkCellOutlet"], _common_directives_click_interceptor_click_interceptor_directive__WEBPACK_IMPORTED_MODULE_8__["ClickInterceptorDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_7__["NgClass"], _selector_selector_component__WEBPACK_IMPORTED_MODULE_9__["SelectorComponent"]],
+        directives: [_angular_common__WEBPACK_IMPORTED_MODULE_9__["NgIf"], _angular_cdk_table__WEBPACK_IMPORTED_MODULE_0__["CdkCellOutlet"], _common_directives_click_interceptor_click_interceptor_directive__WEBPACK_IMPORTED_MODULE_10__["ClickInterceptorDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_9__["NgClass"], _selector_selector_component__WEBPACK_IMPORTED_MODULE_11__["SelectorComponent"]],
         encapsulation: 2,
         changeDetection: 0
       });
@@ -24191,9 +24211,10 @@
           _this70.clickableRow = false;
           _this70.clickableRowConfig = {
             clickableSelectors: ["nui-row", "tr[nui-row]"],
-            ignoredSelectors: _constants_interaction_constants__WEBPACK_IMPORTED_MODULE_4__["DEFAULT_INTERACTIVE_ELEMENTS"]
+            ignoredSelectors: _constants_interaction_constants__WEBPACK_IMPORTED_MODULE_6__["DEFAULT_INTERACTIVE_ELEMENTS"]
           };
           _this70.selectable = _this70.tableStateHandlerService.selectable;
+          _this70.onDestroy$ = new rxjs__WEBPACK_IMPORTED_MODULE_4__["Subject"]();
           return _this70;
         }
 
@@ -24223,14 +24244,16 @@
             var _this71 = this;
 
             var rowHeightClass = "nui-table__table-row_height_".concat(this.density.toLowerCase());
-            this.elementRef.nativeElement.classList.add(rowHeightClass);
+            this.elementRef.nativeElement.classList.add(rowHeightClass); // when selection changes we need to detect changes to check check-boxes
 
-            if (this.tableStateHandlerService.selectable) {
-              // when selection changes we need to detect changes to check check-boxes
-              this.selectionChangeSubscription = this.tableStateHandlerService.selectionChanged.subscribe(function () {
-                _this71.changeDetectorRef.detectChanges();
-              });
-            }
+            this.selectionChangeSubscription = this.tableStateHandlerService.selectionChanged.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["takeUntil"])(this.onDestroy$)).subscribe(function () {
+              _this71.changeDetectorRef.detectChanges();
+            });
+            this.tableStateHandlerService.selectableChanged.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["takeUntil"])(this.onDestroy$)).subscribe(function (selectable) {
+              _this71.selectable = selectable;
+
+              _this71.changeDetectorRef.markForCheck();
+            });
           }
         }, {
           key: "rowClickHandler",
@@ -24290,13 +24313,8 @@
         }, {
           key: "ngOnDestroy",
           value: function ngOnDestroy() {
-            if (this.selectionChangeSubscription) {
-              this.selectionChangeSubscription.unsubscribe();
-            }
-
-            if (this.rowClickSubscription) {
-              this.rowClickSubscription.unsubscribe();
-            }
+            this.onDestroy$.next();
+            this.onDestroy$.complete();
           }
         }]);
 
@@ -24304,7 +24322,7 @@
       }(_angular_cdk_table__WEBPACK_IMPORTED_MODULE_0__["CdkRow"]);
 
       TableRowComponent.ɵfac = function TableRowComponent_Factory(t) {
-        return new (t || TableRowComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_table_state_handler_service__WEBPACK_IMPORTED_MODULE_6__["TableStateHandlerService"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectorRef"]));
+        return new (t || TableRowComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_table_state_handler_service__WEBPACK_IMPORTED_MODULE_8__["TableStateHandlerService"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectorRef"]));
       };
 
       TableRowComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
@@ -24359,7 +24377,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.selectable);
           }
         },
-        directives: [_angular_common__WEBPACK_IMPORTED_MODULE_7__["NgIf"], _angular_cdk_table__WEBPACK_IMPORTED_MODULE_0__["CdkCellOutlet"], _checkbox_checkbox_component__WEBPACK_IMPORTED_MODULE_10__["CheckboxComponent"]],
+        directives: [_angular_common__WEBPACK_IMPORTED_MODULE_9__["NgIf"], _angular_cdk_table__WEBPACK_IMPORTED_MODULE_0__["CdkCellOutlet"], _checkbox_checkbox_component__WEBPACK_IMPORTED_MODULE_12__["CheckboxComponent"]],
         encapsulation: 2,
         changeDetection: 0
       });
@@ -46287,7 +46305,7 @@
             }
 
             if (changes.dataSource) {
-              this.onDatasourceChange(changes.dataSource.currentValue);
+              this.onDataSourceChange(changes.dataSource.currentValue);
             }
 
             if (changes.selectable) {
@@ -46389,16 +46407,16 @@
             this.tableStateHandlerService.sortingState.next(sortedColumn);
           }
         }, {
-          key: "onDatasourceChange",
-          value: function onDatasourceChange(ds) {
+          key: "onDataSourceChange",
+          value: function onDataSourceChange(ds) {
             if (!ds) {
               this.dataSource = [];
             }
 
-            var changedDatasource = ds ? ds : []; // if no totalItems specified, we assume that there is only one page
+            var changedDataSource = ds ? ds : []; // if no totalItems specified, we assume that there is only one page
 
-            this.tableStateHandlerService.changeDataSource(changedDatasource);
-            this.tableStateHandlerService.totalItems = this.totalItems || changedDatasource.length;
+            this.tableStateHandlerService.totalItems = this.totalItems || changedDataSource.length;
+            this.tableStateHandlerService.changeDataSource(changedDataSource);
           }
         }, {
           key: "ngOnDestroy",
