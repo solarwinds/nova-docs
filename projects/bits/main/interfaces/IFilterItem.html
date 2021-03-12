@@ -205,6 +205,7 @@ export const defaultFilters: INovaFilters &#x3D; {
 
 export interface IDataSourceError {
     type: string | number;
+    message?: string;
 }
 
 export interface IDataSourceOutput&lt;T&gt; {
@@ -252,7 +253,7 @@ export interface IDataFieldsConfig {
 }
 
 // TODO: mark dataType field as optional in vNext, because previously it was used only for TableWidget,
-//  but IDataField is using in DataSource now so that consumers are required to fill these fields
+//  but IDataField is using in DataSource now so that consumers are required to fill these fields - will be done in the scope of NUI-5836
 export interface IDataField {
     id: string;
     label: string;
@@ -265,6 +266,7 @@ export interface IDataField {
 </div>
 
 
+                   
 
 
 
@@ -287,6 +289,7 @@ export interface IDataField {
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
             var COMPODOC_CURRENT_PAGE_URL = 'IFilterItem.html';
+            var MAX_SEARCH_RESULTS = 15;
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>

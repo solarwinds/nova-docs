@@ -74,7 +74,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <code>[key: string]:    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <code>[key: string]:        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 </code>
                     </td>
                 </tr>
@@ -94,7 +94,7 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Directionality } from &quot;@angular/cdk/bidi&quot;;
 import { Platform } from &quot;@angular/cdk/platform&quot;;
 import { CdkVirtualForOf } from &quot;@angular/cdk/scrolling&quot;;
-import { CdkTable } from &quot;@angular/cdk/table&quot;;
+import { CdkTable, CDK_TABLE_TEMPLATE } from &quot;@angular/cdk/table&quot;;
 import { DOCUMENT } from &quot;@angular/common&quot;;
 import {
     AfterContentInit,
@@ -135,7 +135,9 @@ interface TableRowData {
 /** @dynamic */
 @Component({
     selector: &quot;nui-table, table[nui-table]&quot;,
-    templateUrl: &quot;./table.component.html&quot;,
+    // We used to have our own template for the table but it broke with Angular release 10 so we are now using this even though it is intended to be private
+    // so we can be up to date with the CDK table template.
+    template: CDK_TABLE_TEMPLATE,
     exportAs: &quot;nuiTable&quot;,
     host: {
         &quot;class&quot;: &quot;nui-table__table&quot;,
@@ -152,16 +154,20 @@ export class TableComponent&lt;T&gt; extends CdkTable&lt;T&gt; implements OnInit
     @Input() resizable &#x3D; false;
     @Input() selectable &#x3D; false;
     @Input() totalItems: number;
-    @Input() dataSource: T[];
+
+    @Input()
+    get dataSource(): T[] {
+        return super.dataSource as any;
+    }
+    set dataSource(value: T[]) {
+        super.dataSource &#x3D; value as any;
+    }
+
     @Input() selection: ISelection;
     @Input() sortedColumn: ISortedItem;
 
     @Output() columnsOrderChange: EventEmitter&lt;Array&lt;any&gt;&gt; &#x3D; new EventEmitter();
     @Output() sortOrderChanged: EventEmitter&lt;ISortedItem&gt; &#x3D; new EventEmitter();
-
-    /** @deprecated Use selectionChanged instead of rowsSelected */
-    @Output() rowsSelected: EventEmitter&lt;ISelection&gt; &#x3D; new EventEmitter();
-    /** Use selectionChanged instead of rowsSelected */
     @Output() selectionChange: EventEmitter&lt;ISelection&gt; &#x3D; new EventEmitter();
 
     public sortDirection: SorterDirection;
@@ -294,7 +300,6 @@ export class TableComponent&lt;T&gt; extends CdkTable&lt;T&gt; implements OnInit
         // if we try to manually trigger change detection in a parent component
         if (this.selectable) {
             this.selectionChangedSubscription &#x3D; this.tableStateHandlerService.selectionChanged.subscribe((selection: ISelection) &#x3D;&gt; {
-                this.rowsSelected.emit(selection); // tslint:disable-line:deprecation
                 this.selectionChange.emit(selection);
             });
 
@@ -355,6 +360,7 @@ export class TableComponent&lt;T&gt; extends CdkTable&lt;T&gt; implements OnInit
 </div>
 
 
+                   
 
 
 
@@ -377,6 +383,7 @@ export class TableComponent&lt;T&gt; extends CdkTable&lt;T&gt; implements OnInit
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
             var COMPODOC_CURRENT_PAGE_URL = 'TableRowData.html';
+            var MAX_SEARCH_RESULTS = 15;
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>

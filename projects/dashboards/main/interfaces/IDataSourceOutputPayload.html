@@ -69,7 +69,7 @@
                 <h3>Extends</h3>
             </p>
             <p class="comment">
-                    <code><a href="../interfaces/IDataSourceOutput.html" target="_self" >IDataSourceOutput</a></code>
+                        <code><a href="../interfaces/IDataSourceOutput.html" target="_self" >IDataSourceOutput</a></code>
             </p>
 
 
@@ -111,6 +111,7 @@ export interface IDataSourceBusyPayload extends IComponentIdPayload {
 
 export interface IDataSourceError {
     type: string | number;
+    message?: string;
 }
 
 
@@ -159,6 +160,7 @@ export interface IBroker extends IBrokerUserConfig {
 </div>
 
 
+                   
 
 
 
@@ -181,6 +183,7 @@ export interface IBroker extends IBrokerUserConfig {
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
             var COMPODOC_CURRENT_PAGE_URL = 'IDataSourceOutputPayload.html';
+            var MAX_SEARCH_RESULTS = 15;
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>

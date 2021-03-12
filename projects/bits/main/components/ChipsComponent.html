@@ -64,16 +64,20 @@
     <p class="comment">
         <p>Control used to list groups of selected options (former ng1 nui-chiclets component).</p>
 <p>  <strong>Usage:</strong></p>
-<div><pre class="line-numbers"><code class="language-html"> * &lt;nui-chips [autoHide]=&quot;false&quot;
- *            [itemsSource]=&quot;itemsSource&quot;
- *            [title]=&quot;title&quot;
- *            [orientation]=&quot;&#39;vertical&#39;&quot;
- *            [allowRemoveAll]=&quot;false&quot;
- *            [removeAllLinkText]=&quot;clearAllText&quot;
- *            (chipRemoved)=&quot;onRemove($event)&quot;
- *            (removeAll)=&quot;onRemoveAll()&quot;&gt;
- * &lt;/nui-chips&gt;
- *</code></pre></div>
+<p>```html</p>
+<ul>
+<li>&lt;nui-chips [autoHide]=&quot;false&quot;</li>
+<li>[itemsSource]=&quot;itemsSource&quot;</li>
+<li>[title]=&quot;title&quot;</li>
+<li>[orientation]=&quot;&#39;vertical&#39;&quot;</li>
+<li>[allowRemoveAll]=&quot;false&quot;</li>
+<li>[removeAllLinkText]=&quot;clearAllText&quot;</li>
+<li>(chipRemoved)=&quot;onRemove($event)&quot;</li>
+<li>(removeAll)=&quot;onRemoveAll()&quot;&gt;</li>
+<li></nui-chips></li>
+<li>```</li>
+</ul>
+
     </p>
 
 
@@ -81,10 +85,10 @@
         <h3>Implements</h3>
     </p>
     <p class="comment">
-                <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
-                <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
-                <code><a href="https://angular.io/api/core/OnChanges" target="_blank" >OnChanges</a></code>
-                <code><a href="https://angular.io/api/core/AfterViewInit" target="_blank" >AfterViewInit</a></code>
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                    <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
+                    <code><a href="https://angular.io/api/core/OnChanges" target="_blank" >OnChanges</a></code>
+                    <code><a href="https://angular.io/api/core/AfterViewInit" target="_blank" >AfterViewInit</a></code>
     </p>
 
 
@@ -108,7 +112,7 @@
             <tr>
                 <td class="col-md-3">providers</td>
                 <td class="col-md-9">
-                            <code><a href="../injectables/ChipsOverflowService.html" target="_self" >ChipsOverflowService</a></code>
+                                <code><a href="../injectables/ChipsOverflowService.html" target="_self" >ChipsOverflowService</a></code>
                 </td>
             </tr>
 
@@ -297,7 +301,7 @@
                                                         <td>zone</td>
                                                   
                                                         <td>
-                                                                    <code><a href="https://angular.io/api/core/NgZone" target="_blank" >NgZone</a></code>
+                                                                        <code><a href="https://angular.io/api/core/NgZone" target="_blank" >NgZone</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -309,7 +313,7 @@
                                                         <td>chipsOverflowService</td>
                                                   
                                                         <td>
-                                                                    <code><a href="../injectables/ChipsOverflowService.html" target="_self" >ChipsOverflowService</a></code>
+                                                                        <code><a href="../injectables/ChipsOverflowService.html" target="_self" >ChipsOverflowService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -331,16 +335,14 @@
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
-                    <td class="col-md-2">
+                    <td class="col-md-4">
                         <a name="allowRemoveAll"></a>
-                        <code>allowRemoveAll</code>
+                        <b>allowRemoveAll</b>
                     </td>
-                    <td class="col-md-10">
-                        <div><p>Flag for &#39;Clear all&#39; link visibility.</p>
-</div>
-                        <p>
-                            <em>Default value : </em><code>true</code>
-                        </p>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
                     </td>
                 </tr>
                         <tr>
@@ -348,21 +350,25 @@
                                     <div class="io-line">Defined in <a href="" data-line="73" class="link-to-prism">src/lib/chips/chips.component.ts:73</a></div>
                             </td>
                         </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Flag for &#39;Clear all&#39; link visibility.</p>
+</div>
+                    </td>
+                </tr>
             </tbody>
         </table>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
-                    <td class="col-md-2">
+                    <td class="col-md-4">
                         <a name="autoHide"></a>
-                        <code>autoHide</code>
+                        <b>autoHide</b>
                     </td>
-                    <td class="col-md-10">
-                        <div><p>Expression to determine if the component is hidden when &#39;itemsSource&#39; is empty.</p>
-</div>
-                        <p>
-                            <em>Default value : </em><code>true</code>
-                        </p>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
                     </td>
                 </tr>
                         <tr>
@@ -370,20 +376,26 @@
                                     <div class="io-line">Defined in <a href="" data-line="77" class="link-to-prism">src/lib/chips/chips.component.ts:77</a></div>
                             </td>
                         </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Expression to determine if the component is hidden when &#39;itemsSource&#39; is empty.</p>
+</div>
+                    </td>
+                </tr>
             </tbody>
         </table>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
-                    <td class="col-md-2">
+                    <td class="col-md-4">
                         <a name="customClass"></a>
-                        <code>customClass</code>
+                        <b>customClass</b>
                     </td>
-                    <td class="col-md-10">
-                            <p>
-                            <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
-                            </p>
                     </td>
                 </tr>
                         <tr>
@@ -396,18 +408,15 @@
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
-                    <td class="col-md-2">
+                    <td class="col-md-4">
                         <a name="itemsSource"></a>
-                        <code>itemsSource</code>
+                        <b>itemsSource</b>
                     </td>
-                    <td class="col-md-10">
-                        <div><p>Data source. Both &#39;flatItems&#39; and &#39;groupedItems&#39; collections could be passed simultaneously
-(previous ng1 implementation did not allow that, it handled only one type of items).</p>
-</div>
-                            <p>
-                            <em>Type :</em>    <code><a href="../interfaces/IChipsItemsSource.html" target="_self" >IChipsItemsSource</a></code>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/IChipsItemsSource.html" target="_self" >IChipsItemsSource</a></code>
 
-                            </p>
                     </td>
                 </tr>
                         <tr>
@@ -415,22 +424,27 @@
                                     <div class="io-line">Defined in <a href="" data-line="86" class="link-to-prism">src/lib/chips/chips.component.ts:86</a></div>
                             </td>
                         </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Data source. Both &#39;flatItems&#39; and &#39;groupedItems&#39; collections could be passed simultaneously
+(previous ng1 implementation did not allow that, it handled only one type of items).</p>
+</div>
+                    </td>
+                </tr>
             </tbody>
         </table>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
-                    <td class="col-md-2">
+                    <td class="col-md-4">
                         <a name="orientation"></a>
-                        <code>orientation</code>
+                        <b>orientation</b>
                     </td>
-                    <td class="col-md-10">
-                        <div><p>Can be set to &#39;vertical&#39; to switch chips to vertical list mode. Otherwise horizontal mode is used.</p>
-</div>
-                            <p>
-                            <em>Type :</em>    <code>&quot;horizontal&quot; | &quot;vertical&quot;</code>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>&quot;horizontal&quot; | &quot;vertical&quot;</code>
 
-                            </p>
                     </td>
                 </tr>
                         <tr>
@@ -438,25 +452,31 @@
                                     <div class="io-line">Defined in <a href="" data-line="90" class="link-to-prism">src/lib/chips/chips.component.ts:90</a></div>
                             </td>
                         </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Can be set to &#39;vertical&#39; to switch chips to vertical list mode. Otherwise horizontal mode is used.</p>
+</div>
+                    </td>
+                </tr>
             </tbody>
         </table>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
-                    <td class="col-md-2">
+                    <td class="col-md-4">
                         <a name="overflow"></a>
-                        <code>overflow</code>
+                        <b>overflow</b>
                     </td>
-                    <td class="col-md-10">
-                        <div><p>Whether overflow mode turned on</p>
-</div>
-                            <p>
-                            <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 
-                            </p>
-                        <p>
-                            <em>Default value : </em><code>false</code>
-                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
                     </td>
                 </tr>
                         <tr>
@@ -464,25 +484,31 @@
                                     <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">src/lib/chips/chips.component.ts:65</a></div>
                             </td>
                         </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Whether overflow mode turned on</p>
+</div>
+                    </td>
+                </tr>
             </tbody>
         </table>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
-                    <td class="col-md-2">
+                    <td class="col-md-4">
                         <a name="overflowLinesNumber"></a>
-                        <code>overflowLinesNumber</code>
+                        <b>overflowLinesNumber</b>
                     </td>
-                    <td class="col-md-10">
-                        <div><p>Limits chips lines if overflow mode</p>
-</div>
-                            <p>
-                            <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
 
-                            </p>
-                        <p>
-                            <em>Default value : </em><code>1</code>
-                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>1</code>
                     </td>
                 </tr>
                         <tr>
@@ -490,22 +516,26 @@
                                     <div class="io-line">Defined in <a href="" data-line="69" class="link-to-prism">src/lib/chips/chips.component.ts:69</a></div>
                             </td>
                         </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Limits chips lines if overflow mode</p>
+</div>
+                    </td>
+                </tr>
             </tbody>
         </table>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
-                    <td class="col-md-2">
+                    <td class="col-md-4">
                         <a name="removeAllLinkText"></a>
-                        <code>removeAllLinkText</code>
+                        <b>removeAllLinkText</b>
                     </td>
-                    <td class="col-md-10">
-                        <div><p>Value to be shown as remove all link text.</p>
-</div>
-                            <p>
-                            <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
-                            </p>
                     </td>
                 </tr>
                         <tr>
@@ -513,22 +543,26 @@
                                     <div class="io-line">Defined in <a href="" data-line="81" class="link-to-prism">src/lib/chips/chips.component.ts:81</a></div>
                             </td>
                         </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Value to be shown as remove all link text.</p>
+</div>
+                    </td>
+                </tr>
             </tbody>
         </table>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
-                    <td class="col-md-2">
+                    <td class="col-md-4">
                         <a name="title"></a>
-                        <code>title</code>
+                        <b>title</b>
                     </td>
-                    <td class="col-md-10">
-                        <div><p>Value to be shown as vertical orientation chips title.</p>
-</div>
-                            <p>
-                            <em>Type :</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
-                            </p>
                     </td>
                 </tr>
                         <tr>
@@ -536,6 +570,12 @@
                                     <div class="io-line">Defined in <a href="" data-line="94" class="link-to-prism">src/lib/chips/chips.component.ts:94</a></div>
                             </td>
                         </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Value to be shown as vertical orientation chips title.</p>
+</div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
@@ -544,15 +584,14 @@
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
-                    <td class="col-md-2">
+                    <td class="col-md-4">
                         <a name="chipRemoved"></a>
-                        <code>chipRemoved</code>
+                        <b>chipRemoved</b>
                     </td>
-                    <td class="col-md-10">
-                        <div><p>Event that is fired when single item is cleared (by clicking on item or its remove icon).
-Event data passed contains object with item clicked and its parent group.</p>
-</div>
-                        <em><code>$event</code> Type:</em>    <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
 
                     </td>
                 </tr>
@@ -561,19 +600,26 @@ Event data passed contains object with item clicked and its parent group.</p>
                                     <div class="io-line">Defined in <a href="" data-line="102" class="link-to-prism">src/lib/chips/chips.component.ts:102</a></div>
                             </td>
                         </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Event that is fired when single item is cleared (by clicking on item or its remove icon).
+Event data passed contains object with item clicked and its parent group.</p>
+</div>
+                    </td>
+                </tr>
             </tbody>
         </table>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
-                    <td class="col-md-2">
+                    <td class="col-md-4">
                         <a name="chipsOverflowed"></a>
-                        <code>chipsOverflowed</code>
+                        <b>chipsOverflowed</b>
                     </td>
-                    <td class="col-md-10">
-                        <div><p>Emits overflowed chips if chips overflow</p>
-</div>
-                        <em><code>$event</code> Type:</em>    <code><a href="../interfaces/IChipsItemsSource.html" target="_self" >EventEmitter&lt;IChipsItemsSource&gt;</a></code>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>EventEmitter&lt;IChipsItemsSource&gt;</code>
 
                     </td>
                 </tr>
@@ -582,19 +628,25 @@ Event data passed contains object with item clicked and its parent group.</p>
                                     <div class="io-line">Defined in <a href="" data-line="111" class="link-to-prism">src/lib/chips/chips.component.ts:111</a></div>
                             </td>
                         </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Emits overflowed chips if chips overflow</p>
+</div>
+                    </td>
+                </tr>
             </tbody>
         </table>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
-                    <td class="col-md-2">
+                    <td class="col-md-4">
                         <a name="removeAll"></a>
-                        <code>removeAll</code>
+                        <b>removeAll</b>
                     </td>
-                    <td class="col-md-10">
-                        <div><p>Event that is fired when &#39;Clear All&#39; is clicked.</p>
-</div>
-                        <em><code>$event</code> Type:</em>    <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
 
                     </td>
                 </tr>
@@ -603,238 +655,246 @@ Event data passed contains object with item clicked and its parent group.</p>
                                     <div class="io-line">Defined in <a href="" data-line="106" class="link-to-prism">src/lib/chips/chips.component.ts:106</a></div>
                             </td>
                         </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Event that is fired when &#39;Clear All&#39; is clicked.</p>
+</div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
 
     <section>
-    <h3>HostListeners</h3>        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="window:resize"></a>
-                        <span class="name">
-                            <b>
+    <h3>HostListeners</h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="window:resize"></a>
+                    <span class="name">
+                        <b>
                             window:resize
-                            </b>
-                            <a href="#window:resize"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
+                        </b>
+                        <a href="#window:resize"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
 <code>window:resize()</code>
-                    </td>
-                </tr>
+                </td>
+            </tr>
 
 
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="155" class="link-to-prism">src/lib/chips/chips.component.ts:155</a></div>
-                            </td>
-                        </tr>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="155"
+                            class="link-to-prism">src/lib/chips/chips.component.ts:155</a></div>
+                </td>
+            </tr>
 
 
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>Handles Popup on window resize </p>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Handles Popup on window resize </p>
 </div>
 
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>
-
     <section>
     
-        <h3 id="methods">
-            Methods
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="getItemsCount"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getItemsCount"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
                             getItemsCount
-                            </b>
-                            <a href="#getItemsCount"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>getItemsCount()</code>
-                    </td>
-                </tr>
+                        </b>
+                        <a href="#getItemsCount"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getItemsCount()</code>
+                </td>
+            </tr>
 
 
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="161" class="link-to-prism">src/lib/chips/chips.component.ts:161</a></div>
-                            </td>
-                        </tr>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="161"
+                            class="link-to-prism">src/lib/chips/chips.component.ts:161</a></div>
+                </td>
+            </tr>
 
 
-                <tr>
-                    <td class="col-md-4">
+            <tr>
+                <td class="col-md-4">
 
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
 
-                            </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="onRemove"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onRemove"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
                             onRemove
-                            </b>
-                            <a href="#onRemove"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>onRemove(data: literal type)</code>
-                    </td>
-                </tr>
+                        </b>
+                        <a href="#onRemove"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onRemove(data: literal type)</code>
+                </td>
+            </tr>
 
 
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="170" class="link-to-prism">src/lib/chips/chips.component.ts:170</a></div>
-                            </td>
-                        </tr>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="170"
+                            class="link-to-prism">src/lib/chips/chips.component.ts:170</a></div>
+                </td>
+            </tr>
 
 
-                <tr>
-                    <td class="col-md-4">
+            <tr>
+                <td class="col-md-4">
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>data</td>
-                                                        <td>
-                                                                    <code>literal type</code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+                                    <td>
+                                            <code>literal type</code>
+                                    </td>
 
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                                    <td>
+                                        No
+                                    </td>
 
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="onRemoveAll"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onRemoveAll"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
                             onRemoveAll
-                            </b>
-                            <a href="#onRemoveAll"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>onRemoveAll(event: MouseEvent)</code>
-                    </td>
-                </tr>
+                        </b>
+                        <a href="#onRemoveAll"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onRemoveAll(event: MouseEvent)</code>
+                </td>
+            </tr>
 
 
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="174" class="link-to-prism">src/lib/chips/chips.component.ts:174</a></div>
-                            </td>
-                        </tr>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="174"
+                            class="link-to-prism">src/lib/chips/chips.component.ts:174</a></div>
+                </td>
+            </tr>
 
 
-                <tr>
-                    <td class="col-md-4">
+            <tr>
+                <td class="col-md-4">
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>event</td>
-                                                        <td>
-                                                                    <code>MouseEvent</code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+                                    <td>
+                                            <code>MouseEvent</code>
+                                    </td>
 
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                                    <td>
+                                        No
+                                    </td>
 
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>
-
     <section>
     
         <h3 id="inputs">
@@ -848,21 +908,14 @@ Event data passed contains object with item clicked and its parent group.</p>
                         <span class="name">
                             <b>
                                 <span class="modifier">Public</span>
-                            isOverflowed
-                            </b>
+                            isOverflowed</b>
                             <a href="#isOverflowed"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span><code>isOverflowed:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" target="_blank" >Boolean</a></code>
-</code>
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" target="_blank" >Boolean</a></code>
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" target="_blank" >Boolean</a></code>
 
                         </td>
                     </tr>
@@ -1104,7 +1157,7 @@ export class ChipsComponent implements OnInit, OnDestroy, OnChanges, AfterViewIn
 <script>
         var COMPONENT_TEMPLATE = '<div><div [style.display]="(getItemsCount() !== 0 || !autoHide) ? \'flex\' : \'none\'"     #nuiChips     class="nui-chips media"     [ngClass]="customClass"     role="presentation"     [class.nui-chips__vertical]="orientation === \'vertical\'">    <h4 *ngIf="!!title && orientation === \'vertical\'" class="nui-chips__title-cell">        <span class="nui-chips__title">{{ title }}:</span>        <span class="nui-chips__count">({{ getItemsCount() }})</span>    </h4>    <div class="nui-chips__main-cell" #chipsMainCell [style.flex-grow]="isOverflowed ? 1 : 0">        <ng-container *ngIf="itemsSource.flatItems?.length">            <nui-chip class="chip-flat" #chipItem *ngFor="let flatItem of itemsSource.flatItems; let last = last;"                [customClass]="flatItem.customClass"                [class.group-last]="last"                [item]="flatItem"                (remove)="onRemove({item: flatItem, group: undefined})"></nui-chip>        </ng-container>        <ng-container *ngFor="let group of itemsSource.groupedItems; let lastGroup = last">            <ng-container *ngIf="group.items?.length > 0">                <div class="nui-chips__group-name" [ngClass]="group.customClass" #chipItem>                    <div class="nui-chips__group-label">                        {{ group.label }}                    </div>                </div>                <nui-chip #chipItem *ngFor="let groupItem of group.items; let last = last;"                    [customClass]="groupItem.customClass"                    [class.group-last]="last && !lastGroup"                    [item]="groupItem"                    (remove)="onRemove({item: groupItem, group: group})"></nui-chip>            </ng-container>        </ng-container>        <ng-content select=".nui-chips-overflowed"></ng-content>    </div>    <div class="nui-chips__clear-cell" #clearAll *ngIf="allowRemoveAll && getItemsCount() > 0">        <a href class="nui-chips__clear" (click)="onRemoveAll($event)">{{ removeAllLinkText }}</a>    </div></div></div>'
     var COMPONENTS = [{'name': 'BreadcrumbComponent', 'selector': 'nui-breadcrumb'},{'name': 'BusyComponent', 'selector': '[nui-busy]'},{'name': 'ButtonComponent', 'selector': '[nui-button]'},{'name': 'CardComponent', 'selector': 'nui-card'},{'name': 'CardGroupComponent', 'selector': 'nui-card-group'},{'name': 'CheckboxComponent', 'selector': 'nui-checkbox'},{'name': 'CheckboxGroupComponent', 'selector': 'nui-checkbox-group'},{'name': 'ChipsComponent', 'selector': 'nui-chips'},{'name': 'ChipsOverflowComponent', 'selector': 'nui-chips-overflow'},{'name': 'ComboboxComponent', 'selector': 'nui-combobox'},{'name': 'ComboboxV2Component', 'selector': 'nui-combobox-v2'},{'name': 'CustomValidationMessageComponent', 'selector': 'nui-custom-validation-message'},{'name': 'DatePickerComponent', 'selector': 'nui-date-picker'},{'name': 'DateTimePickerComponent', 'selector': 'nui-date-time-picker'},{'name': 'DialogComponent', 'selector': 'nui-dialog-window'},{'name': 'ExpanderComponent', 'selector': 'nui-expander'},{'name': 'FormFieldComponent', 'selector': 'nui-form-field'},{'name': 'IconComponent', 'selector': 'nui-icon'},{'name': 'ImageComponent', 'selector': 'nui-image'},{'name': 'MenuComponent', 'selector': 'nui-menu'},{'name': 'MessageComponent', 'selector': 'nui-message'},{'name': 'OverlayComponent', 'selector': 'nui-overlay'},{'name': 'PaginatorComponent', 'selector': 'nui-paginator'},{'name': 'PanelComponent', 'selector': 'nui-panel'},{'name': 'PopoverComponent', 'selector': 'nui-popover'},{'name': 'PopupComponent', 'selector': 'nui-popup'},{'name': 'PopupDeprecatedComponent', 'selector': 'nui-popup-deprecated'},{'name': 'ProgressComponent', 'selector': 'nui-progress'},{'name': 'QuickPickerComponent', 'selector': 'nui-quick-picker'},{'name': 'RadioGroupComponent', 'selector': 'nui-radio-group'},{'name': 'RepeatComponent', 'selector': 'nui-repeat'},{'name': 'SearchComponent', 'selector': 'nui-search'},{'name': 'SelectComponent', 'selector': 'nui-select'},{'name': 'SelectV2Component', 'selector': 'nui-select-v2'},{'name': 'SheetComponent', 'selector': 'nui-sheet'},{'name': 'SheetGroupComponent', 'selector': 'nui-sheet-group'},{'name': 'SorterComponent', 'selector': 'nui-sorter'},{'name': 'SpinnerComponent', 'selector': 'nui-spinner'},{'name': 'SwitchComponent', 'selector': 'nui-switch'},{'name': 'TabHeadingGroupComponent', 'selector': 'nui-tab-heading-group'},{'name': 'TableComponent', 'selector': 'nui-table, table[nui-table]'},{'name': 'TextboxComponent', 'selector': 'nui-textbox'},{'name': 'TextboxNumberComponent', 'selector': 'nui-textbox-number'},{'name': 'TimeFrameBarComponent', 'selector': 'nui-time-frame-bar'},{'name': 'TimeFramePickerComponent', 'selector': 'nui-time-frame-picker'},{'name': 'TimePickerComponent', 'selector': 'nui-time-picker'},{'name': 'ToastComponent', 'selector': 'nui-toast-component'},{'name': 'ToolbarComponent', 'selector': 'nui-toolbar'},{'name': 'WizardComponent', 'selector': 'nui-wizard'},{'name': 'WizardFooterComponent', 'selector': 'wizard-footer'},{'name': 'WizardHorizontalComponent', 'selector': 'nui-wizard-horizontal'},{'name': 'WizardStepComponent', 'selector': 'nui-wizard-step'},{'name': 'WizardStepHeaderComponent', 'selector': 'wizard-step-header'},{'name': 'WizardStepV2Component', 'selector': 'nui-wizard-step-v2'},{'name': 'WizardVerticalComponent', 'selector': 'nui-wizard-vertical'}];
-    var DIRECTIVES = [{'name': 'ClickInterceptorDirective', 'selector': '[nuiClickInterceptor]'},{'name': 'DndDropTargetDirective', 'selector': '[cdkDropList][nuiDndDropTarget]'},{'name': 'MarkAsSelectedItemDirective', 'selector': '[nuiMarkAsSelectedItem]'},{'name': 'TableStickyHeaderDirective', 'selector': 'cdk-virtual-scroll-viewport[tableStickyHeader]'},{'name': 'TableVirtualScrollLinearDirective', 'selector': '[tableVirtualScroll]:not([offset])'},{'name': 'TooltipDirective', 'selector': '[nuiTooltip]'},{'name': 'WizardDirective', 'selector': '[nuiWizard]'},{'name': 'WizardStepFooterDirective', 'selector': '[wizardStepFooter]'},{'name': 'WizardStepLabelDirective', 'selector': '[wizardStepLabel]'},{'name': 'WizardStepperNextDirective', 'selector': 'button[nuiWizardNext]'},{'name': 'WizardStepperPreviousDirective', 'selector': 'button[nuiWizardPrevious]'}];
+    var DIRECTIVES = [{'name': 'ClickInterceptorDirective', 'selector': '[nuiClickInterceptor]'},{'name': 'DndDropTargetDirective', 'selector': '[cdkDropList][nuiDndDropTarget]'},{'name': 'MarkAsSelectedItemDirective', 'selector': '[nuiMarkAsSelectedItem]'},{'name': 'TableStickyHeaderDirective', 'selector': 'cdk-virtual-scroll-viewport[tableStickyHeader]'},{'name': 'TableVirtualScrollDirective', 'selector': '[tableVirtualScroll]:not([rowCount])'},{'name': 'TableVirtualScrollLinearDirective', 'selector': '[tableVirtualScroll]:not([offset])'},{'name': 'TooltipDirective', 'selector': '[nuiTooltip]'},{'name': 'WizardDirective', 'selector': '[nuiWizard]'},{'name': 'WizardStepFooterDirective', 'selector': '[wizardStepFooter]'},{'name': 'WizardStepLabelDirective', 'selector': '[wizardStepLabel]'},{'name': 'WizardStepperNextDirective', 'selector': 'button[nuiWizardNext]'},{'name': 'WizardStepperPreviousDirective', 'selector': 'button[nuiWizardPrevious]'}];
     var ACTUAL_COMPONENT = {'name': 'ChipsComponent'};
 </script>
 <script src="../js/tree.js"></script>
@@ -1118,6 +1171,7 @@ export class ChipsComponent implements OnInit, OnDestroy, OnChanges, AfterViewIn
 
 
 
+                   
 
 
 
@@ -1140,6 +1194,7 @@ export class ChipsComponent implements OnInit, OnDestroy, OnChanges, AfterViewIn
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
             var COMPODOC_CURRENT_PAGE_URL = 'ChipsComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>
