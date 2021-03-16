@@ -1982,7 +1982,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "@import (reference) \"@nova-ui/bits/sdk/less/mixins/font-roboto.less\";\n\n.text-style-roboto {\n    .font-roboto();\n}";
+      __webpack_exports__["default"] = "@import (reference) \"@nova-ui/bits/sdk/less/mixins/font-roboto.less\";\n\n.text-style-roboto {\n    .font-roboto-family();\n}";
       /***/
     },
 
