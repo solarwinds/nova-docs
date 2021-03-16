@@ -46,7 +46,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<h2>Specific Text Styles</h2>\n<h4 class=\"mb-3\">Core IT</h4>\n<div class=\"mb-2\"><code>.nui-text-product</code></div>\n<mark>This style uses <strong>Roboto</strong> font, however, Nova Bits styles do not include it. You can easily add it in following ways:</mark>\n<nui-expander header=\"Use mixin\">\n    <ol>\n        <li>\n            Import <strong>font-roboto.less</strong> directly like <mark>@import \"@nova-ui/bits/sdk/less/mixins/font-roboto.less\"</mark>\n        </li>\n        <li>\n            Use <code>.font-roboto()</code> mixin to load Roboto font\n        </li>\n    </ol>\n</nui-expander>\n<nui-expander header=\"Use stylesheet file\">\n    <ol>\n        <li>\n            Find the compiled stylesheet file under the <mark>@nova-ui/bits/bundles/css/styles-font-roboto.css</mark>\n        </li>\n        <li>\n            Add it to angular.json to set Roboto font globally, or use it locally by importing the file into the stylesheet where this font is needed.\n        </li>\n        <li>\n            Angular.json Examples: \n            <p>\n                <mark>\n                    \"styles\": [\n                        \"[path_to_node_modules]/@nova-ui/bits/bundles/css/styles-font-roboto.css\"\n                        ],\n                </mark>\n            </p>\n        </li>\n\n    </ol>\n</nui-expander>\n<div class=\"dark-bg-rectangle\"><span class=\"nui-text-product ml-2\" i18n>Lorem ipsum dolor sit amet</span></div>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Page Title</h4>\n<div class=\"mb-2\"><code>.nui-text-page</code></div>\n<span class=\"nui-text-page ml-2\" i18n>Lorem ipsum dolor sit amet</span>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Widget Text</h4>\n<div class=\"mb-2\"><code>.nui-text-widget</code></div>\n<span class=\"nui-text-widget ml-2\" i18n>Lorem ipsum dolor sit amet</span>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Panel Title</h4>\n<div class=\"mb-2\"><code>.nui-text-panel</code></div>\n<span class=\"nui-text-panel ml-2\" i18n>Lorem ipsum dolor sit amet</span>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Panel Title Inverse</h4>\n<div class=\"mb-2\"><code>.nui-text-panel--inverse</code></div>\n<div class=\"dark-bg-rectangle\"><span class=\"nui-text-panel--inverse ml-2\" i18n>Lorem ipsum dolor sit amet</span></div>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Panel Title for Dark Bg</h4>\n<div class=\"mb-2\"><code>.nui-text-panel--darkbg</code></div>\n<div class=\"dark-bg-rectangle\"><span class=\"nui-text-panel--darkbg ml-2\" i18n>Lorem ipsum dolor sit amet</span></div>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Label Text</h4>\n<div class=\"mb-2\"><code>.nui-text-label</code></div>\n<span class=\"nui-text-label ml-2\" i18n>Lorem ipsum dolor sit amet</span>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Label Text Inverse</h4>\n<div class=\"mb-2\"><code>.nui-text-label--inverse</code></div>\n<div class=\"dark-bg-rectangle\"><span class=\"nui-text-label--inverse ml-2\" i18n>Lorem ipsum dolor sit amet</span></div>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Label Text for Dark Bg</h4>\n<div class=\"mb-2\"><code>.nui-text-label--darkbg</code></div>\n<div class=\"dark-bg-rectangle\"><span class=\"nui-text-label--darkbg ml-2\" i18n>Lorem ipsum dolor sit amet</span></div>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Default Text</h4>\n<div class=\"mb-2\"><code>.nui-text-default</code></div>\n<span class=\"nui-text-default ml-2\" i18n>Lorem ipsum dolor sit amet</span>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Default Text Inverse</h4>\n<div class=\"mb-2\"><code>.nui-text-default--inverse</code></div>\n<div class=\"dark-bg-rectangle\"><span class=\"nui-text-default--inverse ml-2\" i18n>Lorem ipsum dolor sit amet</span></div>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Default Text Inverse Selected</h4>\n<div class=\"mb-2\"><code>.nui-text-default--inverse-selected</code></div>\n<div class=\"dark-bg-rectangle\"><span class=\"nui-text-default--inverse-selected ml-2\" i18n>Lorem ipsum dolor sit amet</span></div>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Default Text for Dark Bg</h4>\n<div class=\"mb-2\"><code>.nui-text-default--darkbg</code></div>\n<div class=\"dark-bg-rectangle\"><span class=\"nui-text-default--darkbg ml-2\" i18n>Lorem ipsum dolor sit amet</span></div>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Disabled Text</h4>\n<div class=\"mb-2\"><code>.nui-text-disabled</code></div>\n<span class=\"nui-text-disabled ml-2\" i18n>Lorem ipsum dolor sit amet</span>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Selected Default Text for Dark Bg</h4>\n<div class=\"mb-2\"><code>.nui-text-default--darkbg-selected</code></div>\n<div class=\"dark-bg-rectangle\"><span class=\"nui-text-default--darkbg-selected ml-2\" i18n>Lorem ipsum dolor sit amet</span></div>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Secondary Text</h4>\n<div class=\"mb-2\"><code>.nui-text-secondary</code></div>\n<span class=\"nui-text-secondary ml-2\" i18n>Lorem ipsum dolor sit amet</span>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Secondary Text Inverse</h4>\n<div class=\"mb-2\"><code>.nui-text-secondary--inverse</code></div>\n<div class=\"dark-bg-rectangle\"><span class=\"nui-text-secondary--inverse ml-2\" i18n>Lorem ipsum dolor sit amet</span></div>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Secondary Text for Dark Bg</h4>\n<div class=\"mb-2\"><code>.nui-text-secondary--darkbg</code></div>\n<div class=\"dark-bg-rectangle\"><span class=\"nui-text-secondary--darkbg ml-2\" i18n>Lorem ipsum dolor sit amet</span></div>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Secondary Disabled</h4>\n<div class=\"mb-2\"><code>.nui-text-secondary--disabled</code></div>\n<span class=\"nui-text-secondary--disabled ml-2\" i18n>Lorem ipsum dolor sit amet</span>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Link</h4>\n<div class=\"mb-2\"><code>.nui-text-link</code></div>\n<span class=\"nui-text-link ml-2\" i18n>Lorem ipsum dolor sit amet</span>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Source Code</h4>\n<div class=\"mb-2\"><code>.nui-text-source-code</code></div>\n<span class=\"nui-text-source-code ml-2\" i18n>Lorem ipsum dolor sit amet</span>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Source Code Secondary</h4>\n<div class=\"mb-2\"><code>.nui-text-source-code-secondary</code></div>\n<span class=\"nui-text-source-code-secondary ml-2\" i18n>Lorem ipsum dolor sit amet</span>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Secondary Title</h4>\n<div class=\"mb-2\"><code>.nui-text-title-secondary</code></div>\n<span class=\"nui-text-title-secondary ml-2\" i18n>Secondary Title</span>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Secondary Title Inverse</h4>\n<div class=\"mb-2\"><code>.nui-text-title-secondary--inverse</code></div>\n<div class=\"dark-bg-rectangle\"><span class=\"nui-text-title-secondary--inverse ml-2\" i18n>Secondary Title</span></div>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Secondary Title for Dark Bg</h4>\n<div class=\"mb-2\"><code>.nui-text-title-secondary--darkbg</code></div>\n<div class=\"dark-bg-rectangle\"><span class=\"nui-text-title-secondary--darkbg ml-2\" i18n>Secondary Title</span></div>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Small Text</h4>\n<div class=\"mb-2\"><code>.nui-text-small</code></div>\n<span class=\"nui-text-small ml-2\" i18n>Lorem ipsum dolor sit amet</span>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Small Text Inverse</h4>\n<div class=\"mb-2\"><code>.nui-text-small--inverse</code></div>\n<div class=\"dark-bg-rectangle\"><span class=\"nui-text-small--inverse ml-2\" i18n>Lorem ipsum dolor sit amet</span></div>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Small Text Secondary</h4>\n<div class=\"mb-2\"><code>.nui-text-small-secondary</code></div>\n<span class=\"nui-text-small-secondary ml-2\" i18n>Lorem ipsum dolor sit amet</span>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Small Text Secondary Inverse</h4>\n<div class=\"mb-2\"><code>.nui-text-small-secondary--inverse</code></div>\n<div class=\"dark-bg-rectangle\"><span class=\"nui-text-small-secondary--inverse ml-2\" i18n>Lorem ipsum dolor sit amet</span></div>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Small Text for Dark Bg</h4>\n<div class=\"mb-2\"><code>.nui-text-small--darkbg</code></div>\n<div class=\"dark-bg-rectangle\"><span class=\"nui-text-small--darkbg ml-2\" i18n>Lorem ipsum dolor sit amet</span></div>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Small Text Disabled</h4>\n<div class=\"mb-2\"><code>.nui-text-small--disabled</code></div>\n<span class=\"nui-text-small--disabled ml-2\" i18n>Lorem ipsum dolor sit amet</span>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Link Small</h4>\n<div class=\"mb-2\"><code>.nui-text-link-small</code></div>\n<span class=\"nui-text-link-small ml-2\" i18n>Lorem ipsum dolor sit amet</span>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Validation Text</h4>\n<div class=\"mb-2\"><code>.nui-text-validation</code></div>\n<span class=\"nui-text-validation ml-2\" i18n>Validation Text</span>\n<nui-divider size=\"small\"></nui-divider>\n\n<br>\n<h2>Text Decoration</h2>\n\n<span class=\"nui-text-small-secondary\" i18n>The list is not complete. There are more of possible decorated fonts, these are just examples.</span>\n\n<h4 class=\"mb-3\">Text Page Hoverable</h4>\n<div class=\"mb-2\"><code>.nui-text-page--hoverable</code></div>\n<span class=\"nui-text-page--hoverable ml-2\" i18n>Lorem ipsum dolor sit amet</span>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Text Widget Hoverable</h4>\n<div class=\"mb-2\"><code>.nui-text-widget--hoverable</code></div>\n<span class=\"nui-text-widget--hoverable ml-2\" i18n>Lorem ipsum dolor sit amet</span>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Default Text Hoverable</h4>\n<div class=\"mb-2\"><code>.nui-text-default--hoverable</code></div>\n<span class=\"nui-text-default--hoverable ml-2\" i18n>Lorem ipsum dolor sit amet</span>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Secondary Text Hoverable</h4>\n<div class=\"mb-2\"><code>.nui-text-secondary--hoverable</code></div>\n<span class=\"nui-text-secondary--hoverable ml-2\" i18n>Lorem ipsum dolor sit amet</span>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Small Text Hoverable</h4>\n<div class=\"mb-2\"><code>.nui-text-small--hoverable</code></div>\n<span class=\"nui-text-small--hoverable ml-2\" i18n>Lorem ipsum dolor sit amet</span>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Small Text Inverse Hoverable</h4>\n<div class=\"mb-2\"><code>.nui-text-small--inverse--hoverable</code></div>\n<div class=\"dark-bg-rectangle\"><span class=\"nui-text-small--inverse--hoverable ml-2\" i18n>Lorem ipsum dolor sit amet</span></div>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Small Secondary Text Hoverable</h4>\n<div class=\"mb-2\"><code>.nui-text-small-secondary--hoverable</code></div>\n<span class=\"nui-text-small-secondary--hoverable ml-2\" i18n>Lorem ipsum dolor sit amet</span>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Small Text Hoverable for Dark Bg</h4>\n<div class=\"mb-2\"><code>.nui-text-small--darkbg--hoverable</code></div>\n<div class=\"dark-bg-rectangle\"><span class=\"nui-text-small--darkbg--hoverable ml-2\" i18n>Lorem ipsum dolor sit amet</span></div>\n<nui-divider size=\"small\"></nui-divider>\n";
+      __webpack_exports__["default"] = "<h2>Specific Text Styles</h2>\n<h4 class=\"mb-3\">Core IT</h4>\n<div class=\"mb-2\"><code>.nui-text-product</code></div>\n<mark>This style uses <strong>Roboto</strong> font, however, Nova Bits styles do not include it. You can easily add it in following ways:</mark>\n<nui-expander header=\"Use mixin\">\n    <ol>\n        <li>\n            Import <strong>font-roboto.less</strong> directly like <mark>@import \"@nova-ui/bits/sdk/less/mixins/font-roboto.less\"</mark>\n        </li>\n        <li>\n            Use <code>.font-roboto()</code> mixin to load Roboto font\n        </li>\n        <li>\n            Mixin Example: \n            <p>\n                <mark>\n                    .font-roboto();<br>\n                    .css-class &#123;\n                        <p style=\"text-indent:20px\">\n                            <mark>\n                                font-family: @font-family-roboto;\n                            </mark>\n                        </p>\n                    &#125;\n                </mark>\n            </p>\n        </li>\n    </ol>\n</nui-expander>\n<nui-expander header=\"Use stylesheet file\">\n    <ol>\n        <li>\n            Find the compiled stylesheet file under the <mark>@nova-ui/bits/bundles/css/styles-font-roboto.css</mark>\n        </li>\n        <li>\n            Add it to angular.json to set Roboto font globally, or use it locally by importing the file into the stylesheet where this font is needed.\n        </li>\n        <li>\n            Angular.json Example: \n            <p>\n                <mark>\n                    \"styles\": [\n                        <p style=\"text-indent:20px\">\n                            <mark>\n                                \"[path_to_node_modules]/@nova-ui/bits/bundles/css/styles-font-roboto.css\"\n                            </mark>\n                        </p>\n                    ],\n                </mark>\n            </p>\n        </li>\n\n    </ol>\n</nui-expander>\n<div class=\"dark-bg-rectangle\"><span class=\"nui-text-product ml-2\" i18n>Lorem ipsum dolor sit amet</span></div>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Page Title</h4>\n<div class=\"mb-2\"><code>.nui-text-page</code></div>\n<span class=\"nui-text-page ml-2\" i18n>Lorem ipsum dolor sit amet</span>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Widget Text</h4>\n<div class=\"mb-2\"><code>.nui-text-widget</code></div>\n<span class=\"nui-text-widget ml-2\" i18n>Lorem ipsum dolor sit amet</span>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Panel Title</h4>\n<div class=\"mb-2\"><code>.nui-text-panel</code></div>\n<span class=\"nui-text-panel ml-2\" i18n>Lorem ipsum dolor sit amet</span>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Panel Title Inverse</h4>\n<div class=\"mb-2\"><code>.nui-text-panel--inverse</code></div>\n<div class=\"dark-bg-rectangle\"><span class=\"nui-text-panel--inverse ml-2\" i18n>Lorem ipsum dolor sit amet</span></div>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Panel Title for Dark Bg</h4>\n<div class=\"mb-2\"><code>.nui-text-panel--darkbg</code></div>\n<div class=\"dark-bg-rectangle\"><span class=\"nui-text-panel--darkbg ml-2\" i18n>Lorem ipsum dolor sit amet</span></div>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Label Text</h4>\n<div class=\"mb-2\"><code>.nui-text-label</code></div>\n<span class=\"nui-text-label ml-2\" i18n>Lorem ipsum dolor sit amet</span>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Label Text Inverse</h4>\n<div class=\"mb-2\"><code>.nui-text-label--inverse</code></div>\n<div class=\"dark-bg-rectangle\"><span class=\"nui-text-label--inverse ml-2\" i18n>Lorem ipsum dolor sit amet</span></div>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Label Text for Dark Bg</h4>\n<div class=\"mb-2\"><code>.nui-text-label--darkbg</code></div>\n<div class=\"dark-bg-rectangle\"><span class=\"nui-text-label--darkbg ml-2\" i18n>Lorem ipsum dolor sit amet</span></div>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Default Text</h4>\n<div class=\"mb-2\"><code>.nui-text-default</code></div>\n<span class=\"nui-text-default ml-2\" i18n>Lorem ipsum dolor sit amet</span>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Default Text Inverse</h4>\n<div class=\"mb-2\"><code>.nui-text-default--inverse</code></div>\n<div class=\"dark-bg-rectangle\"><span class=\"nui-text-default--inverse ml-2\" i18n>Lorem ipsum dolor sit amet</span></div>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Default Text Inverse Selected</h4>\n<div class=\"mb-2\"><code>.nui-text-default--inverse-selected</code></div>\n<div class=\"dark-bg-rectangle\"><span class=\"nui-text-default--inverse-selected ml-2\" i18n>Lorem ipsum dolor sit amet</span></div>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Default Text for Dark Bg</h4>\n<div class=\"mb-2\"><code>.nui-text-default--darkbg</code></div>\n<div class=\"dark-bg-rectangle\"><span class=\"nui-text-default--darkbg ml-2\" i18n>Lorem ipsum dolor sit amet</span></div>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Disabled Text</h4>\n<div class=\"mb-2\"><code>.nui-text-disabled</code></div>\n<span class=\"nui-text-disabled ml-2\" i18n>Lorem ipsum dolor sit amet</span>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Selected Default Text for Dark Bg</h4>\n<div class=\"mb-2\"><code>.nui-text-default--darkbg-selected</code></div>\n<div class=\"dark-bg-rectangle\"><span class=\"nui-text-default--darkbg-selected ml-2\" i18n>Lorem ipsum dolor sit amet</span></div>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Secondary Text</h4>\n<div class=\"mb-2\"><code>.nui-text-secondary</code></div>\n<span class=\"nui-text-secondary ml-2\" i18n>Lorem ipsum dolor sit amet</span>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Secondary Text Inverse</h4>\n<div class=\"mb-2\"><code>.nui-text-secondary--inverse</code></div>\n<div class=\"dark-bg-rectangle\"><span class=\"nui-text-secondary--inverse ml-2\" i18n>Lorem ipsum dolor sit amet</span></div>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Secondary Text for Dark Bg</h4>\n<div class=\"mb-2\"><code>.nui-text-secondary--darkbg</code></div>\n<div class=\"dark-bg-rectangle\"><span class=\"nui-text-secondary--darkbg ml-2\" i18n>Lorem ipsum dolor sit amet</span></div>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Secondary Disabled</h4>\n<div class=\"mb-2\"><code>.nui-text-secondary--disabled</code></div>\n<span class=\"nui-text-secondary--disabled ml-2\" i18n>Lorem ipsum dolor sit amet</span>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Link</h4>\n<div class=\"mb-2\"><code>.nui-text-link</code></div>\n<span class=\"nui-text-link ml-2\" i18n>Lorem ipsum dolor sit amet</span>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Source Code</h4>\n<div class=\"mb-2\"><code>.nui-text-source-code</code></div>\n<span class=\"nui-text-source-code ml-2\" i18n>Lorem ipsum dolor sit amet</span>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Source Code Secondary</h4>\n<div class=\"mb-2\"><code>.nui-text-source-code-secondary</code></div>\n<span class=\"nui-text-source-code-secondary ml-2\" i18n>Lorem ipsum dolor sit amet</span>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Secondary Title</h4>\n<div class=\"mb-2\"><code>.nui-text-title-secondary</code></div>\n<span class=\"nui-text-title-secondary ml-2\" i18n>Secondary Title</span>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Secondary Title Inverse</h4>\n<div class=\"mb-2\"><code>.nui-text-title-secondary--inverse</code></div>\n<div class=\"dark-bg-rectangle\"><span class=\"nui-text-title-secondary--inverse ml-2\" i18n>Secondary Title</span></div>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Secondary Title for Dark Bg</h4>\n<div class=\"mb-2\"><code>.nui-text-title-secondary--darkbg</code></div>\n<div class=\"dark-bg-rectangle\"><span class=\"nui-text-title-secondary--darkbg ml-2\" i18n>Secondary Title</span></div>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Small Text</h4>\n<div class=\"mb-2\"><code>.nui-text-small</code></div>\n<span class=\"nui-text-small ml-2\" i18n>Lorem ipsum dolor sit amet</span>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Small Text Inverse</h4>\n<div class=\"mb-2\"><code>.nui-text-small--inverse</code></div>\n<div class=\"dark-bg-rectangle\"><span class=\"nui-text-small--inverse ml-2\" i18n>Lorem ipsum dolor sit amet</span></div>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Small Text Secondary</h4>\n<div class=\"mb-2\"><code>.nui-text-small-secondary</code></div>\n<span class=\"nui-text-small-secondary ml-2\" i18n>Lorem ipsum dolor sit amet</span>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Small Text Secondary Inverse</h4>\n<div class=\"mb-2\"><code>.nui-text-small-secondary--inverse</code></div>\n<div class=\"dark-bg-rectangle\"><span class=\"nui-text-small-secondary--inverse ml-2\" i18n>Lorem ipsum dolor sit amet</span></div>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Small Text for Dark Bg</h4>\n<div class=\"mb-2\"><code>.nui-text-small--darkbg</code></div>\n<div class=\"dark-bg-rectangle\"><span class=\"nui-text-small--darkbg ml-2\" i18n>Lorem ipsum dolor sit amet</span></div>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Small Text Disabled</h4>\n<div class=\"mb-2\"><code>.nui-text-small--disabled</code></div>\n<span class=\"nui-text-small--disabled ml-2\" i18n>Lorem ipsum dolor sit amet</span>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Link Small</h4>\n<div class=\"mb-2\"><code>.nui-text-link-small</code></div>\n<span class=\"nui-text-link-small ml-2\" i18n>Lorem ipsum dolor sit amet</span>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Validation Text</h4>\n<div class=\"mb-2\"><code>.nui-text-validation</code></div>\n<span class=\"nui-text-validation ml-2\" i18n>Validation Text</span>\n<nui-divider size=\"small\"></nui-divider>\n\n<br>\n<h2>Text Decoration</h2>\n\n<span class=\"nui-text-small-secondary\" i18n>The list is not complete. There are more of possible decorated fonts, these are just examples.</span>\n\n<h4 class=\"mb-3\">Text Page Hoverable</h4>\n<div class=\"mb-2\"><code>.nui-text-page--hoverable</code></div>\n<span class=\"nui-text-page--hoverable ml-2\" i18n>Lorem ipsum dolor sit amet</span>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Text Widget Hoverable</h4>\n<div class=\"mb-2\"><code>.nui-text-widget--hoverable</code></div>\n<span class=\"nui-text-widget--hoverable ml-2\" i18n>Lorem ipsum dolor sit amet</span>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Default Text Hoverable</h4>\n<div class=\"mb-2\"><code>.nui-text-default--hoverable</code></div>\n<span class=\"nui-text-default--hoverable ml-2\" i18n>Lorem ipsum dolor sit amet</span>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Secondary Text Hoverable</h4>\n<div class=\"mb-2\"><code>.nui-text-secondary--hoverable</code></div>\n<span class=\"nui-text-secondary--hoverable ml-2\" i18n>Lorem ipsum dolor sit amet</span>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Small Text Hoverable</h4>\n<div class=\"mb-2\"><code>.nui-text-small--hoverable</code></div>\n<span class=\"nui-text-small--hoverable ml-2\" i18n>Lorem ipsum dolor sit amet</span>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Small Text Inverse Hoverable</h4>\n<div class=\"mb-2\"><code>.nui-text-small--inverse--hoverable</code></div>\n<div class=\"dark-bg-rectangle\"><span class=\"nui-text-small--inverse--hoverable ml-2\" i18n>Lorem ipsum dolor sit amet</span></div>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Small Secondary Text Hoverable</h4>\n<div class=\"mb-2\"><code>.nui-text-small-secondary--hoverable</code></div>\n<span class=\"nui-text-small-secondary--hoverable ml-2\" i18n>Lorem ipsum dolor sit amet</span>\n<nui-divider size=\"small\"></nui-divider>\n\n<h4 class=\"mb-3\">Small Text Hoverable for Dark Bg</h4>\n<div class=\"mb-2\"><code>.nui-text-small--darkbg--hoverable</code></div>\n<div class=\"dark-bg-rectangle\"><span class=\"nui-text-small--darkbg--hoverable ml-2\" i18n>Lorem ipsum dolor sit amet</span></div>\n<nui-divider size=\"small\"></nui-divider>\n";
       /***/
     },
 
@@ -1948,7 +1948,7 @@
       TypographyExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: TypographyExampleComponent,
         selectors: [["typography-example"]],
-        decls: 385,
+        decls: 400,
         vars: 0,
         consts: function consts() {
           var i18n_0;
@@ -2329,7 +2329,7 @@
             i18n_82 = $localize(_templateObject43 || (_templateObject43 = _taggedTemplateLiteral([":\u241F7f39e2a6277992a1f4a1673f0604a9596c1bd5d1\u241F6326435920628436107:Lorem ipsum dolor sit amet"])));
           }
 
-          return [[1, "mb-3"], [1, "mb-2"], ["header", "Use mixin"], ["header", "Use stylesheet file"], [1, "dark-bg-rectangle"], [1, "nui-text-product", "ml-2"], i18n_0, ["size", "small"], [1, "nui-text-page", "ml-2"], i18n_2, [1, "nui-text-widget", "ml-2"], i18n_4, [1, "nui-text-panel", "ml-2"], i18n_6, [1, "nui-text-panel--inverse", "ml-2"], i18n_8, [1, "nui-text-panel--darkbg", "ml-2"], i18n_10, [1, "nui-text-label", "ml-2"], i18n_12, [1, "nui-text-label--inverse", "ml-2"], i18n_14, [1, "nui-text-label--darkbg", "ml-2"], i18n_16, [1, "nui-text-default", "ml-2"], i18n_18, [1, "nui-text-default--inverse", "ml-2"], i18n_20, [1, "nui-text-default--inverse-selected", "ml-2"], i18n_22, [1, "nui-text-default--darkbg", "ml-2"], i18n_24, [1, "nui-text-disabled", "ml-2"], i18n_26, [1, "nui-text-default--darkbg-selected", "ml-2"], i18n_28, [1, "nui-text-secondary", "ml-2"], i18n_30, [1, "nui-text-secondary--inverse", "ml-2"], i18n_32, [1, "nui-text-secondary--darkbg", "ml-2"], i18n_34, [1, "nui-text-secondary--disabled", "ml-2"], i18n_36, [1, "nui-text-link", "ml-2"], i18n_38, [1, "nui-text-source-code", "ml-2"], i18n_40, [1, "nui-text-source-code-secondary", "ml-2"], i18n_42, [1, "nui-text-title-secondary", "ml-2"], i18n_44, [1, "nui-text-title-secondary--inverse", "ml-2"], i18n_46, [1, "nui-text-title-secondary--darkbg", "ml-2"], i18n_48, [1, "nui-text-small", "ml-2"], i18n_50, [1, "nui-text-small--inverse", "ml-2"], i18n_52, [1, "nui-text-small-secondary", "ml-2"], i18n_54, [1, "nui-text-small-secondary--inverse", "ml-2"], i18n_56, [1, "nui-text-small--darkbg", "ml-2"], i18n_58, [1, "nui-text-small--disabled", "ml-2"], i18n_60, [1, "nui-text-link-small", "ml-2"], i18n_62, [1, "nui-text-validation", "ml-2"], i18n_64, [1, "nui-text-small-secondary"], i18n_66, [1, "nui-text-page--hoverable", "ml-2"], i18n_68, [1, "nui-text-widget--hoverable", "ml-2"], i18n_70, [1, "nui-text-default--hoverable", "ml-2"], i18n_72, [1, "nui-text-secondary--hoverable", "ml-2"], i18n_74, [1, "nui-text-small--hoverable", "ml-2"], i18n_76, [1, "nui-text-small--inverse--hoverable", "ml-2"], i18n_78, [1, "nui-text-small-secondary--hoverable", "ml-2"], i18n_80, [1, "nui-text-small--darkbg--hoverable", "ml-2"], i18n_82];
+          return [[1, "mb-3"], [1, "mb-2"], ["header", "Use mixin"], [2, "text-indent", "20px"], ["header", "Use stylesheet file"], [1, "dark-bg-rectangle"], [1, "nui-text-product", "ml-2"], i18n_0, ["size", "small"], [1, "nui-text-page", "ml-2"], i18n_2, [1, "nui-text-widget", "ml-2"], i18n_4, [1, "nui-text-panel", "ml-2"], i18n_6, [1, "nui-text-panel--inverse", "ml-2"], i18n_8, [1, "nui-text-panel--darkbg", "ml-2"], i18n_10, [1, "nui-text-label", "ml-2"], i18n_12, [1, "nui-text-label--inverse", "ml-2"], i18n_14, [1, "nui-text-label--darkbg", "ml-2"], i18n_16, [1, "nui-text-default", "ml-2"], i18n_18, [1, "nui-text-default--inverse", "ml-2"], i18n_20, [1, "nui-text-default--inverse-selected", "ml-2"], i18n_22, [1, "nui-text-default--darkbg", "ml-2"], i18n_24, [1, "nui-text-disabled", "ml-2"], i18n_26, [1, "nui-text-default--darkbg-selected", "ml-2"], i18n_28, [1, "nui-text-secondary", "ml-2"], i18n_30, [1, "nui-text-secondary--inverse", "ml-2"], i18n_32, [1, "nui-text-secondary--darkbg", "ml-2"], i18n_34, [1, "nui-text-secondary--disabled", "ml-2"], i18n_36, [1, "nui-text-link", "ml-2"], i18n_38, [1, "nui-text-source-code", "ml-2"], i18n_40, [1, "nui-text-source-code-secondary", "ml-2"], i18n_42, [1, "nui-text-title-secondary", "ml-2"], i18n_44, [1, "nui-text-title-secondary--inverse", "ml-2"], i18n_46, [1, "nui-text-title-secondary--darkbg", "ml-2"], i18n_48, [1, "nui-text-small", "ml-2"], i18n_50, [1, "nui-text-small--inverse", "ml-2"], i18n_52, [1, "nui-text-small-secondary", "ml-2"], i18n_54, [1, "nui-text-small-secondary--inverse", "ml-2"], i18n_56, [1, "nui-text-small--darkbg", "ml-2"], i18n_58, [1, "nui-text-small--disabled", "ml-2"], i18n_60, [1, "nui-text-link-small", "ml-2"], i18n_62, [1, "nui-text-validation", "ml-2"], i18n_64, [1, "nui-text-small-secondary"], i18n_66, [1, "nui-text-page--hoverable", "ml-2"], i18n_68, [1, "nui-text-widget--hoverable", "ml-2"], i18n_70, [1, "nui-text-default--hoverable", "ml-2"], i18n_72, [1, "nui-text-secondary--hoverable", "ml-2"], i18n_74, [1, "nui-text-small--hoverable", "ml-2"], i18n_76, [1, "nui-text-small--inverse--hoverable", "ml-2"], i18n_78, [1, "nui-text-small-secondary--hoverable", "ml-2"], i18n_80, [1, "nui-text-small--darkbg--hoverable", "ml-2"], i18n_82];
         },
         template: function TypographyExampleComponent_Template(rf, ctx) {
           if (rf & 1) {
@@ -2407,41 +2407,85 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "li");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](27, " Mixin Example: ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](28, "p");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](29, "mark");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](30, " .font-roboto();");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](31, "br");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](32, " .css-class { ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](33, "p", 3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](34, "mark");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](35, " font-family: @font-family-roboto; ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](36, " } ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "nui-expander", 3);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](37, "nui-expander", 4);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](27, "ol");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](38, "ol");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](28, "li");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](39, "li");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](29, " Find the compiled stylesheet file under the ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](40, " Find the compiled stylesheet file under the ");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](30, "mark");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](41, "mark");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](31, "@nova-ui/bits/bundles/css/styles-font-roboto.css");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](42, "@nova-ui/bits/bundles/css/styles-font-roboto.css");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](32, "li");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](43, "li");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](33, " Add it to angular.json to set Roboto font globally, or use it locally by importing the file into the stylesheet where this font is needed. ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](44, " Add it to angular.json to set Roboto font globally, or use it locally by importing the file into the stylesheet where this font is needed. ");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](34, "li");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](45, "li");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](35, " Angular.json Examples: ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](46, " Angular.json Example: ");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](36, "p");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](47, "p");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](37, "mark");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](48, "mark");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](49, " \"styles\": [ ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](50, "p", 3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](51, "mark");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](52, " \"[path_to_node_modules]/@nova-ui/bits/bundles/css/styles-font-roboto.css\" ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](38, " \"styles\": [ \"[path_to_node_modules]/@nova-ui/bits/bundles/css/styles-font-roboto.css\" ], ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](53, " ], ");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -2453,1059 +2497,1059 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](39, "div", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](54, "div", 5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](40, "span", 5);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](55, "span", 6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](41, 6);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](56, 7);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](42, "nui-divider", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](57, "nui-divider", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](43, "h4", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](58, "h4", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](44, "Page Title");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](59, "Page Title");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](45, "div", 1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](60, "div", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](46, "code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](61, "code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](47, ".nui-text-page");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](62, ".nui-text-page");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](48, "span", 8);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](63, "span", 9);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](49, 9);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](64, 10);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](50, "nui-divider", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](65, "nui-divider", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](51, "h4", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](66, "h4", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](52, "Widget Text");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](67, "Widget Text");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](53, "div", 1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](68, "div", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](54, "code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](69, "code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](55, ".nui-text-widget");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](70, ".nui-text-widget");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](56, "span", 10);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](71, "span", 11);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](57, 11);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](72, 12);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](58, "nui-divider", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](73, "nui-divider", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](59, "h4", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](74, "h4", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](60, "Panel Title");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](75, "Panel Title");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](61, "div", 1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](76, "div", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](62, "code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](77, "code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](63, ".nui-text-panel");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](78, ".nui-text-panel");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](64, "span", 12);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](79, "span", 13);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](65, 13);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](80, 14);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](66, "nui-divider", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](81, "nui-divider", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](67, "h4", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](82, "h4", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](68, "Panel Title Inverse");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](83, "Panel Title Inverse");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](69, "div", 1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](84, "div", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](70, "code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](85, "code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](71, ".nui-text-panel--inverse");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](86, ".nui-text-panel--inverse");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](72, "div", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](87, "div", 5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](73, "span", 14);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](88, "span", 15);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](74, 15);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](89, 16);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](75, "nui-divider", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](90, "nui-divider", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](76, "h4", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](91, "h4", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](77, "Panel Title for Dark Bg");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](92, "Panel Title for Dark Bg");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](78, "div", 1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](93, "div", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](79, "code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](94, "code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](80, ".nui-text-panel--darkbg");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](95, ".nui-text-panel--darkbg");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](81, "div", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](96, "div", 5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](82, "span", 16);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](97, "span", 17);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](83, 17);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](98, 18);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](84, "nui-divider", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](99, "nui-divider", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](85, "h4", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](100, "h4", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](86, "Label Text");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](101, "Label Text");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](87, "div", 1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](102, "div", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](88, "code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](103, "code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](89, ".nui-text-label");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](104, ".nui-text-label");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](90, "span", 18);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](105, "span", 19);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](91, 19);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](106, 20);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](92, "nui-divider", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](107, "nui-divider", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](93, "h4", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](108, "h4", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](94, "Label Text Inverse");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](109, "Label Text Inverse");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](95, "div", 1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](110, "div", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](96, "code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](111, "code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](97, ".nui-text-label--inverse");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](112, ".nui-text-label--inverse");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](98, "div", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](113, "div", 5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](99, "span", 20);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](114, "span", 21);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](100, 21);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](115, 22);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](101, "nui-divider", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](116, "nui-divider", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](102, "h4", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](117, "h4", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](103, "Label Text for Dark Bg");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](118, "Label Text for Dark Bg");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](104, "div", 1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](119, "div", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](105, "code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](120, "code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](106, ".nui-text-label--darkbg");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](121, ".nui-text-label--darkbg");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](107, "div", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](122, "div", 5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](108, "span", 22);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](123, "span", 23);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](109, 23);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](124, 24);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](110, "nui-divider", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](125, "nui-divider", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](111, "h4", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](126, "h4", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](112, "Default Text");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](127, "Default Text");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](113, "div", 1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](128, "div", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](114, "code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](129, "code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](115, ".nui-text-default");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](130, ".nui-text-default");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](116, "span", 24);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](131, "span", 25);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](117, 25);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](132, 26);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](118, "nui-divider", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](133, "nui-divider", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](119, "h4", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](134, "h4", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](120, "Default Text Inverse");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](135, "Default Text Inverse");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](121, "div", 1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](136, "div", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](122, "code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](137, "code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](123, ".nui-text-default--inverse");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](138, ".nui-text-default--inverse");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](124, "div", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](139, "div", 5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](125, "span", 26);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](140, "span", 27);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](126, 27);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](141, 28);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](127, "nui-divider", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](142, "nui-divider", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](128, "h4", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](143, "h4", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](129, "Default Text Inverse Selected");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](144, "Default Text Inverse Selected");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](130, "div", 1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](145, "div", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](131, "code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](146, "code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](132, ".nui-text-default--inverse-selected");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](147, ".nui-text-default--inverse-selected");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](133, "div", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](148, "div", 5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](134, "span", 28);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](149, "span", 29);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](135, 29);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](150, 30);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](136, "nui-divider", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](151, "nui-divider", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](137, "h4", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](152, "h4", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](138, "Default Text for Dark Bg");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](153, "Default Text for Dark Bg");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](139, "div", 1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](154, "div", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](140, "code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](155, "code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](141, ".nui-text-default--darkbg");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](156, ".nui-text-default--darkbg");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](142, "div", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](157, "div", 5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](143, "span", 30);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](158, "span", 31);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](144, 31);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](159, 32);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](145, "nui-divider", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](160, "nui-divider", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](146, "h4", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](161, "h4", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](147, "Disabled Text");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](162, "Disabled Text");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](148, "div", 1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](163, "div", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](149, "code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](164, "code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](150, ".nui-text-disabled");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](165, ".nui-text-disabled");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](151, "span", 32);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](166, "span", 33);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](152, 33);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](167, 34);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](153, "nui-divider", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](168, "nui-divider", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](154, "h4", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](169, "h4", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](155, "Selected Default Text for Dark Bg");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](170, "Selected Default Text for Dark Bg");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](156, "div", 1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](171, "div", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](157, "code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](172, "code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](158, ".nui-text-default--darkbg-selected");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](173, ".nui-text-default--darkbg-selected");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](159, "div", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](174, "div", 5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](160, "span", 34);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](175, "span", 35);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](161, 35);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](176, 36);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](162, "nui-divider", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](177, "nui-divider", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](163, "h4", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](178, "h4", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](164, "Secondary Text");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](179, "Secondary Text");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](165, "div", 1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](180, "div", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](166, "code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](181, "code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](167, ".nui-text-secondary");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](182, ".nui-text-secondary");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](168, "span", 36);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](183, "span", 37);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](169, 37);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](184, 38);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](170, "nui-divider", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](185, "nui-divider", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](171, "h4", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](186, "h4", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](172, "Secondary Text Inverse");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](187, "Secondary Text Inverse");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](173, "div", 1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](188, "div", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](174, "code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](189, "code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](175, ".nui-text-secondary--inverse");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](190, ".nui-text-secondary--inverse");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](176, "div", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](191, "div", 5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](177, "span", 38);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](192, "span", 39);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](178, 39);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](193, 40);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](179, "nui-divider", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](194, "nui-divider", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](180, "h4", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](195, "h4", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](181, "Secondary Text for Dark Bg");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](196, "Secondary Text for Dark Bg");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](182, "div", 1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](197, "div", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](183, "code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](198, "code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](184, ".nui-text-secondary--darkbg");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](199, ".nui-text-secondary--darkbg");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](185, "div", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](200, "div", 5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](186, "span", 40);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](201, "span", 41);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](187, 41);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](202, 42);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](188, "nui-divider", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](203, "nui-divider", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](189, "h4", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](204, "h4", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](190, "Secondary Disabled");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](205, "Secondary Disabled");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](191, "div", 1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](206, "div", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](192, "code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](207, "code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](193, ".nui-text-secondary--disabled");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](208, ".nui-text-secondary--disabled");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](194, "span", 42);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](209, "span", 43);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](195, 43);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](210, 44);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](196, "nui-divider", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](211, "nui-divider", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](197, "h4", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](212, "h4", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](198, "Link");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](213, "Link");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](199, "div", 1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](214, "div", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](200, "code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](215, "code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](201, ".nui-text-link");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](216, ".nui-text-link");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](202, "span", 44);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](217, "span", 45);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](203, 45);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](218, 46);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](204, "nui-divider", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](219, "nui-divider", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](205, "h4", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](220, "h4", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](206, "Source Code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](221, "Source Code");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](207, "div", 1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](222, "div", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](208, "code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](223, "code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](209, ".nui-text-source-code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](224, ".nui-text-source-code");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](210, "span", 46);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](225, "span", 47);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](211, 47);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](226, 48);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](212, "nui-divider", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](227, "nui-divider", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](213, "h4", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](228, "h4", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](214, "Source Code Secondary");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](229, "Source Code Secondary");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](215, "div", 1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](230, "div", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](216, "code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](231, "code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](217, ".nui-text-source-code-secondary");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](232, ".nui-text-source-code-secondary");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](218, "span", 48);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](233, "span", 49);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](219, 49);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](234, 50);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](220, "nui-divider", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](235, "nui-divider", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](221, "h4", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](236, "h4", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](222, "Secondary Title");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](237, "Secondary Title");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](223, "div", 1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](238, "div", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](224, "code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](239, "code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](225, ".nui-text-title-secondary");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](240, ".nui-text-title-secondary");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](226, "span", 50);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](241, "span", 51);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](227, 51);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](242, 52);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](228, "nui-divider", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](243, "nui-divider", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](229, "h4", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](244, "h4", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](230, "Secondary Title Inverse");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](245, "Secondary Title Inverse");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](231, "div", 1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](246, "div", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](232, "code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](247, "code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](233, ".nui-text-title-secondary--inverse");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](248, ".nui-text-title-secondary--inverse");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](234, "div", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](249, "div", 5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](235, "span", 52);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](250, "span", 53);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](236, 53);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](251, 54);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](237, "nui-divider", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](252, "nui-divider", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](238, "h4", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](253, "h4", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](239, "Secondary Title for Dark Bg");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](254, "Secondary Title for Dark Bg");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](240, "div", 1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](255, "div", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](241, "code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](256, "code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](242, ".nui-text-title-secondary--darkbg");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](257, ".nui-text-title-secondary--darkbg");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](243, "div", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](258, "div", 5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](244, "span", 54);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](259, "span", 55);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](245, 55);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](260, 56);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](246, "nui-divider", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](261, "nui-divider", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](247, "h4", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](262, "h4", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](248, "Small Text");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](263, "Small Text");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](249, "div", 1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](264, "div", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](250, "code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](265, "code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](251, ".nui-text-small");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](266, ".nui-text-small");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](252, "span", 56);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](267, "span", 57);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](253, 57);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](268, 58);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](254, "nui-divider", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](269, "nui-divider", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](255, "h4", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](270, "h4", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](256, "Small Text Inverse");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](271, "Small Text Inverse");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](257, "div", 1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](272, "div", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](258, "code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](273, "code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](259, ".nui-text-small--inverse");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](274, ".nui-text-small--inverse");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](260, "div", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](275, "div", 5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](261, "span", 58);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](276, "span", 59);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](262, 59);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](277, 60);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](263, "nui-divider", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](278, "nui-divider", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](264, "h4", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](279, "h4", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](265, "Small Text Secondary");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](280, "Small Text Secondary");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](266, "div", 1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](281, "div", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](267, "code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](282, "code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](268, ".nui-text-small-secondary");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](283, ".nui-text-small-secondary");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](269, "span", 60);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](284, "span", 61);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](270, 61);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](285, 62);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](271, "nui-divider", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](286, "nui-divider", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](272, "h4", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](287, "h4", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](273, "Small Text Secondary Inverse");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](288, "Small Text Secondary Inverse");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](274, "div", 1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](289, "div", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](275, "code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](290, "code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](276, ".nui-text-small-secondary--inverse");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](291, ".nui-text-small-secondary--inverse");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](277, "div", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](292, "div", 5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](278, "span", 62);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](293, "span", 63);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](279, 63);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](294, 64);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](280, "nui-divider", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](295, "nui-divider", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](281, "h4", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](296, "h4", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](282, "Small Text for Dark Bg");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](297, "Small Text for Dark Bg");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](283, "div", 1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](298, "div", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](284, "code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](299, "code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](285, ".nui-text-small--darkbg");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](300, ".nui-text-small--darkbg");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](286, "div", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](301, "div", 5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](287, "span", 64);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](302, "span", 65);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](288, 65);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](303, 66);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](289, "nui-divider", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](304, "nui-divider", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](290, "h4", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](305, "h4", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](291, "Small Text Disabled");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](306, "Small Text Disabled");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](292, "div", 1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](307, "div", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](293, "code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](308, "code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](294, ".nui-text-small--disabled");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](309, ".nui-text-small--disabled");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](295, "span", 66);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](310, "span", 67);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](296, 67);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](311, 68);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](297, "nui-divider", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](312, "nui-divider", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](298, "h4", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](313, "h4", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](299, "Link Small");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](314, "Link Small");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](300, "div", 1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](315, "div", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](301, "code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](316, "code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](302, ".nui-text-link-small");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](317, ".nui-text-link-small");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](303, "span", 68);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](318, "span", 69);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](304, 69);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](319, 70);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](305, "nui-divider", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](320, "nui-divider", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](306, "h4", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](321, "h4", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](307, "Validation Text");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](322, "Validation Text");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](308, "div", 1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](323, "div", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](309, "code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](324, "code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](310, ".nui-text-validation");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](325, ".nui-text-validation");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](311, "span", 70);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](326, "span", 71);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](312, 71);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](327, 72);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](313, "nui-divider", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](328, "nui-divider", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](314, "br");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](329, "br");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](315, "h2");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](330, "h2");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](316, "Text Decoration");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](331, "Text Decoration");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](317, "span", 72);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](332, "span", 73);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](318, 73);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](333, 74);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](319, "h4", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](334, "h4", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](320, "Text Page Hoverable");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](335, "Text Page Hoverable");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](321, "div", 1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](336, "div", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](322, "code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](337, "code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](323, ".nui-text-page--hoverable");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](338, ".nui-text-page--hoverable");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](324, "span", 74);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](339, "span", 75);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](325, 75);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](340, 76);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](326, "nui-divider", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](341, "nui-divider", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](327, "h4", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](342, "h4", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](328, "Text Widget Hoverable");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](343, "Text Widget Hoverable");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](329, "div", 1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](344, "div", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](330, "code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](345, "code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](331, ".nui-text-widget--hoverable");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](346, ".nui-text-widget--hoverable");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](332, "span", 76);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](347, "span", 77);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](333, 77);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](348, 78);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](334, "nui-divider", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](349, "nui-divider", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](335, "h4", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](350, "h4", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](336, "Default Text Hoverable");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](351, "Default Text Hoverable");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](337, "div", 1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](352, "div", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](338, "code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](353, "code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](339, ".nui-text-default--hoverable");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](354, ".nui-text-default--hoverable");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](340, "span", 78);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](355, "span", 79);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](341, 79);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](356, 80);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](342, "nui-divider", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](357, "nui-divider", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](343, "h4", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](358, "h4", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](344, "Secondary Text Hoverable");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](359, "Secondary Text Hoverable");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](345, "div", 1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](360, "div", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](346, "code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](361, "code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](347, ".nui-text-secondary--hoverable");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](362, ".nui-text-secondary--hoverable");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](348, "span", 80);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](363, "span", 81);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](349, 81);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](364, 82);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](350, "nui-divider", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](365, "nui-divider", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](351, "h4", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](366, "h4", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](352, "Small Text Hoverable");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](367, "Small Text Hoverable");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](353, "div", 1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](368, "div", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](354, "code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](369, "code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](355, ".nui-text-small--hoverable");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](370, ".nui-text-small--hoverable");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](356, "span", 82);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](371, "span", 83);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](357, 83);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](372, 84);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](358, "nui-divider", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](373, "nui-divider", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](359, "h4", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](374, "h4", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](360, "Small Text Inverse Hoverable");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](375, "Small Text Inverse Hoverable");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](361, "div", 1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](376, "div", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](362, "code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](377, "code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](363, ".nui-text-small--inverse--hoverable");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](378, ".nui-text-small--inverse--hoverable");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](364, "div", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](379, "div", 5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](365, "span", 84);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](380, "span", 85);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](366, 85);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](381, 86);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](367, "nui-divider", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](382, "nui-divider", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](368, "h4", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](383, "h4", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](369, "Small Secondary Text Hoverable");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](384, "Small Secondary Text Hoverable");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](370, "div", 1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](385, "div", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](371, "code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](386, "code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](372, ".nui-text-small-secondary--hoverable");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](387, ".nui-text-small-secondary--hoverable");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](373, "span", 86);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](388, "span", 87);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](374, 87);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](389, 88);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](375, "nui-divider", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](390, "nui-divider", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](376, "h4", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](391, "h4", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](377, "Small Text Hoverable for Dark Bg");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](392, "Small Text Hoverable for Dark Bg");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](378, "div", 1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](393, "div", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](379, "code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](394, "code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](380, ".nui-text-small--darkbg--hoverable");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](395, ".nui-text-small--darkbg--hoverable");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](381, "div", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](396, "div", 5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](382, "span", 88);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](397, "span", 89);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](383, 89);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](398, 90);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](384, "nui-divider", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](399, "nui-divider", 8);
           }
         },
         directives: [_src_lib_expander_expander_component__WEBPACK_IMPORTED_MODULE_1__["ExpanderComponent"], _src_lib_divider_divider_component__WEBPACK_IMPORTED_MODULE_2__["DividerComponent"]],
