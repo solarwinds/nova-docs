@@ -43,6 +43,7 @@
 
 
 
+                   
 
 
 
@@ -86,7 +87,7 @@ so it&#39;s important to define it. In the case of reusing DataSource for other 
 Data Fields Config.</p>
 <p>DataFieldsConfig is a part of <a href="https://ux.solarwinds.io/nova/docs/nova-bits/latest/sdk/api-docs-ng2/interfaces/IDataSource.html">IDataSource</a>
 interface that data sources usually implement. You can add it this way:</p>
-<!--- TODO: Remove Partial in the vNext -->
+<!--- TODO: Remove Partial in the vNext - NUI-5838 -->
 
 <div><pre class="line-numbers"><code class="language-none">&#64;Injectable()
 export class MyDataSource&lt;T = any&gt; extends ServerSideDataSource&lt;T&gt; implements IDataSource {
@@ -162,6 +163,7 @@ if they were already loaded, put <code>reloadWidgetsOnScroll</code> of <code>con
             var COMPODOC_CURRENT_PAGE_DEPTH = 2;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'additional-page';
             var COMPODOC_CURRENT_PAGE_URL = 'data-sources.html';
+            var MAX_SEARCH_RESULTS = 15;
        </script>
 
        <script src="../../js/libs/custom-elements.min.js"></script>

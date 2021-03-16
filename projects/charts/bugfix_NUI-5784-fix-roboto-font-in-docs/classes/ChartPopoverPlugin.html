@@ -808,7 +808,7 @@ import values from &quot;lodash/values&quot;;
 import { Subject } from &quot;rxjs&quot;;
 import { takeUntil } from &quot;rxjs/operators&quot;;
 
-import { INTERACTION_DATA_POINT_EVENT, INTERACTION_DATA_POINTS_EVENT } from &quot;../../constants&quot;;
+import { INTERACTION_DATA_POINTS_EVENT, INTERACTION_DATA_POINT_EVENT } from &quot;../../constants&quot;;
 import { ChartPlugin } from &quot;../common/chart-plugin&quot;;
 import { IChartEvent, IDataPoint, IDataPointsPayload, InteractionType } from &quot;../common/types&quot;;
 
@@ -935,6 +935,7 @@ export class ChartPopoverPlugin extends ChartPlugin {
 
 
 
+                   
 
 
 
@@ -957,6 +958,7 @@ export class ChartPopoverPlugin extends ChartPlugin {
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
             var COMPODOC_CURRENT_PAGE_URL = 'ChartPopoverPlugin.html';
+            var MAX_SEARCH_RESULTS = 15;
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>

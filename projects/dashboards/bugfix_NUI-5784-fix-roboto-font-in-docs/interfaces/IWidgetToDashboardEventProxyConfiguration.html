@@ -76,7 +76,7 @@
                 <h3>Extends</h3>
             </p>
             <p class="comment">
-                    <code><a href="../interfaces/IProperties.html" target="_self" >IProperties</a></code>
+                        <code><a href="../interfaces/IProperties.html" target="_self" >IProperties</a></code>
             </p>
 
         <section>
@@ -203,7 +203,7 @@ import { Subject, Subscription } from &quot;rxjs&quot;;
 import { takeUntil } from &quot;rxjs/operators&quot;;
 
 import { PizzagnaService } from &quot;../pizzagna/services/pizzagna.service&quot;;
-import { DASHBOARD_EVENT_BUS, IConfigurable, IProperties, PIZZAGNA_EVENT_BUS, PizzagnaLayer } from &quot;../types&quot;;
+import { DASHBOARD_EVENT_BUS, IConfigurable, IProperties, PizzagnaLayer, PIZZAGNA_EVENT_BUS } from &quot;../types&quot;;
 
 import { EventRegistryService } from &quot;./event-registry.service&quot;;
 import { WidgetConfigurationService } from &quot;./widget-configuration.service&quot;;
@@ -354,6 +354,7 @@ export class WidgetToDashboardEventProxyService implements IConfigurable, OnDest
 </div>
 
 
+                   
 
 
 
@@ -376,6 +377,7 @@ export class WidgetToDashboardEventProxyService implements IConfigurable, OnDest
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
             var COMPODOC_CURRENT_PAGE_URL = 'IWidgetToDashboardEventProxyConfiguration.html';
+            var MAX_SEARCH_RESULTS = 15;
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>

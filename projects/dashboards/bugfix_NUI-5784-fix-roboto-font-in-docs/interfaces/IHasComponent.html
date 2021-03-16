@@ -97,92 +97,92 @@
 
             <section>
     
-        <h3 id="methods">
-            Methods
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="setComponent"></a>
-                        <span class="name">
-                            <b>
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setComponent"></a>
+                    <span class="name">
+                        <b>
                             setComponent
-                            </b>
-                            <a href="#setComponent"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
+                        </b>
+                        <a href="#setComponent"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
 <code>setComponent(component: T, componentId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                    </td>
-                </tr>
+                </td>
+            </tr>
 
 
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="162" class="link-to-prism">src/lib/types.ts:162</a></div>
-                            </td>
-                        </tr>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="162"
+                            class="link-to-prism">src/lib/types.ts:162</a></div>
+                </td>
+            </tr>
 
 
-                <tr>
-                    <td class="col-md-4">
+            <tr>
+                <td class="col-md-4">
 
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>component</td>
-                                                        <td>
-                                                                    <code>T</code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>component</td>
+                                    <td>
+                                            <code>T</code>
+                                    </td>
 
-                                                </tr>
-                                                <tr>
-                                                        <td>componentId</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
+                                    <td>
+                                        No
+                                    </td>
 
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                                </tr>
+                                <tr>
+                                    <td>componentId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>
-
 
     </div>
 
@@ -191,7 +191,6 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ChangeDetectorRef, EventEmitter, InjectionToken, Injector, StaticProvider } from &quot;@angular/core&quot;;
 import { AbstractControl, FormGroup } from &quot;@angular/forms&quot;;
 import { EventBus } from &quot;@nova-ui/bits&quot;;
-import { NuiEvent } from &quot;@nova-ui/bits/services/event-bus.service&quot;;
 import { GridsterItem } from &quot;angular-gridster2&quot;;
 import { Observable } from &quot;rxjs&quot;;
 
@@ -203,11 +202,11 @@ import { IConfiguratorSource } from &quot;./configurator/services/types&quot;;
  */
 export type DeepPartial&lt;T&gt; &#x3D; T extends object ? { [K in keyof T]?: DeepPartial&lt;T[K]&gt; } : T;
 
-export const PIZZAGNA_EVENT_BUS &#x3D; new InjectionToken&lt;EventBus&lt;NuiEvent&gt;&gt;(&quot;PIZZAGNA_EVENT_BUS&quot;);
-export const DASHBOARD_EVENT_BUS &#x3D; new InjectionToken&lt;EventBus&lt;NuiEvent&gt;&gt;(&quot;DASHBOARD_EVENT_BUS&quot;);
-export const DATA_SOURCE &#x3D; new InjectionToken&lt;EventBus&lt;NuiEvent&gt;&gt;(&quot;DATA_SOURCE&quot;);
-export const FORMATTERS_REGISTRY &#x3D; new InjectionToken&lt;EventBus&lt;NuiEvent&gt;&gt;(&quot;FORMATTERS_REGISTRY&quot;);
-export const TEST_REGISTRY &#x3D; new InjectionToken&lt;EventBus&lt;NuiEvent&gt;&gt;(&quot;TEST_REGISTRY&quot;);
+export const PIZZAGNA_EVENT_BUS &#x3D; new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(&quot;PIZZAGNA_EVENT_BUS&quot;);
+export const DASHBOARD_EVENT_BUS &#x3D; new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(&quot;DASHBOARD_EVENT_BUS&quot;);
+export const DATA_SOURCE &#x3D; new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(&quot;DATA_SOURCE&quot;);
+export const FORMATTERS_REGISTRY &#x3D; new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(&quot;FORMATTERS_REGISTRY&quot;);
+export const TEST_REGISTRY &#x3D; new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(&quot;TEST_REGISTRY&quot;);
 
 export type WidgetUpdateOperation &#x3D; (widget: IWidget, source: IConfiguratorSource) &#x3D;&gt; Observable&lt;IWidget&gt;;
 export type WidgetRemovalOperation &#x3D; (widgetId: string, source: IConfiguratorSource) &#x3D;&gt; Observable&lt;string&gt;;
@@ -230,6 +229,7 @@ export enum WellKnownProviders {
     EventBusDebugger &#x3D; &quot;eventBusDebugger&quot;,
     KpiColorPrioritizer &#x3D; &quot;kpiColorPrioritizer&quot;,
     FormattersRegistry &#x3D; &quot;formattersRegistry&quot;,
+    DataSourceManager &#x3D; &quot;dataSourceManager&quot;,
 }
 
 export enum WellKnownPathKey {
@@ -322,7 +322,7 @@ export interface IWidgetTypeDefinition {
     configurator?: IPizzagna;
     widget: IPizzagna;
     /**
-     * Paths to various important values in pizzagnas - this should be coupled with respective pizzagnas in v10
+     * Paths to various important values in pizzagnas - this should be coupled with respective pizzagnas in v10 - NUI-5829
      */
     paths?: {
         widget?: Record&lt;string, string&gt;,
@@ -358,7 +358,7 @@ export interface IHasComponent&lt;T &#x3D; any&gt; {
 export interface IConfigurable {
     providerKey?: string;
     setComponent?: (component: any, componentId: string) &#x3D;&gt; void;
-    // TODO: BREAKING rename to &#x27;updateProperties&#x27; in v10
+    // TODO: BREAKING rename to &#x27;updateProperties&#x27; in v12 - NUI-5828
     updateConfiguration(properties: IProperties): void;
 }
 
@@ -412,6 +412,7 @@ export interface IComparatorsDict extends Partial&lt;Record&lt;ComparatorTypes |
 </div>
 
 
+                   
 
 
 
@@ -434,6 +435,7 @@ export interface IComparatorsDict extends Partial&lt;Record&lt;ComparatorTypes |
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
             var COMPODOC_CURRENT_PAGE_URL = 'IHasComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>

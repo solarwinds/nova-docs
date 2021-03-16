@@ -135,7 +135,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>interactionType:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                        <code>interactionType:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -143,7 +143,7 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
                                         </td>
                                     </tr>
@@ -194,7 +194,7 @@ export abstract class InteractionHandler&lt;T extends IInteractionHandlerPropert
 
     protected initializeSubscriptions() {
         this.eventBus.getStream(INTERACTION).subscribe((event: IEvent&lt;IInteractionPayload&lt;any&gt;&gt;) &#x3D;&gt; {
-            if (!this.properties.interactionType || this.properties.interactionType &#x3D;&#x3D;&#x3D; event.payload?.interactionType) {
+            if (!this.properties?.interactionType || this.properties?.interactionType &#x3D;&#x3D;&#x3D; event.payload?.interactionType) {
                 // TODO: ensure that payload is defined
                 // @ts-ignore
                 this.handleInteraction(event.payload);
@@ -211,6 +211,7 @@ export abstract class InteractionHandler&lt;T extends IInteractionHandlerPropert
 </div>
 
 
+                   
 
 
 
@@ -233,6 +234,7 @@ export abstract class InteractionHandler&lt;T extends IInteractionHandlerPropert
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
             var COMPODOC_CURRENT_PAGE_URL = 'IInteractionPayload.html';
+            var MAX_SEARCH_RESULTS = 15;
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>

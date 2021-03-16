@@ -110,7 +110,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>configurator:     <code><a href="../interfaces/IPizzagna.html" target="_self" >IPizzagna</a></code>
+                                        <code>configurator:         <code><a href="../interfaces/IPizzagna.html" target="_self" >IPizzagna</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -118,7 +118,7 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>    <code><a href="../interfaces/IPizzagna.html" target="_self" >IPizzagna</a></code>
+                                            <i>Type : </i>        <code><a href="../interfaces/IPizzagna.html" target="_self" >IPizzagna</a></code>
 
                                         </td>
                                     </tr>
@@ -168,7 +168,7 @@
 
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-description"><p>Paths to various important values in pizzagnas - this should be coupled with respective pizzagnas in v10</p>
+                                    <div class="io-description"><p>Paths to various important values in pizzagnas - this should be coupled with respective pizzagnas in v10 - NUI-5829</p>
 </div>
                                 </td>
                             </tr>
@@ -184,7 +184,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>widget:     <code><a href="../interfaces/IPizzagna.html" target="_self" >IPizzagna</a></code>
+                                        <code>widget:         <code><a href="../interfaces/IPizzagna.html" target="_self" >IPizzagna</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -192,7 +192,7 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>    <code><a href="../interfaces/IPizzagna.html" target="_self" >IPizzagna</a></code>
+                                            <i>Type : </i>        <code><a href="../interfaces/IPizzagna.html" target="_self" >IPizzagna</a></code>
 
                                         </td>
                                     </tr>
@@ -211,7 +211,6 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ChangeDetectorRef, EventEmitter, InjectionToken, Injector, StaticProvider } from &quot;@angular/core&quot;;
 import { AbstractControl, FormGroup } from &quot;@angular/forms&quot;;
 import { EventBus } from &quot;@nova-ui/bits&quot;;
-import { NuiEvent } from &quot;@nova-ui/bits/services/event-bus.service&quot;;
 import { GridsterItem } from &quot;angular-gridster2&quot;;
 import { Observable } from &quot;rxjs&quot;;
 
@@ -223,11 +222,11 @@ import { IConfiguratorSource } from &quot;./configurator/services/types&quot;;
  */
 export type DeepPartial&lt;T&gt; &#x3D; T extends object ? { [K in keyof T]?: DeepPartial&lt;T[K]&gt; } : T;
 
-export const PIZZAGNA_EVENT_BUS &#x3D; new InjectionToken&lt;EventBus&lt;NuiEvent&gt;&gt;(&quot;PIZZAGNA_EVENT_BUS&quot;);
-export const DASHBOARD_EVENT_BUS &#x3D; new InjectionToken&lt;EventBus&lt;NuiEvent&gt;&gt;(&quot;DASHBOARD_EVENT_BUS&quot;);
-export const DATA_SOURCE &#x3D; new InjectionToken&lt;EventBus&lt;NuiEvent&gt;&gt;(&quot;DATA_SOURCE&quot;);
-export const FORMATTERS_REGISTRY &#x3D; new InjectionToken&lt;EventBus&lt;NuiEvent&gt;&gt;(&quot;FORMATTERS_REGISTRY&quot;);
-export const TEST_REGISTRY &#x3D; new InjectionToken&lt;EventBus&lt;NuiEvent&gt;&gt;(&quot;TEST_REGISTRY&quot;);
+export const PIZZAGNA_EVENT_BUS &#x3D; new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(&quot;PIZZAGNA_EVENT_BUS&quot;);
+export const DASHBOARD_EVENT_BUS &#x3D; new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(&quot;DASHBOARD_EVENT_BUS&quot;);
+export const DATA_SOURCE &#x3D; new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(&quot;DATA_SOURCE&quot;);
+export const FORMATTERS_REGISTRY &#x3D; new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(&quot;FORMATTERS_REGISTRY&quot;);
+export const TEST_REGISTRY &#x3D; new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(&quot;TEST_REGISTRY&quot;);
 
 export type WidgetUpdateOperation &#x3D; (widget: IWidget, source: IConfiguratorSource) &#x3D;&gt; Observable&lt;IWidget&gt;;
 export type WidgetRemovalOperation &#x3D; (widgetId: string, source: IConfiguratorSource) &#x3D;&gt; Observable&lt;string&gt;;
@@ -250,6 +249,7 @@ export enum WellKnownProviders {
     EventBusDebugger &#x3D; &quot;eventBusDebugger&quot;,
     KpiColorPrioritizer &#x3D; &quot;kpiColorPrioritizer&quot;,
     FormattersRegistry &#x3D; &quot;formattersRegistry&quot;,
+    DataSourceManager &#x3D; &quot;dataSourceManager&quot;,
 }
 
 export enum WellKnownPathKey {
@@ -342,7 +342,7 @@ export interface IWidgetTypeDefinition {
     configurator?: IPizzagna;
     widget: IPizzagna;
     /**
-     * Paths to various important values in pizzagnas - this should be coupled with respective pizzagnas in v10
+     * Paths to various important values in pizzagnas - this should be coupled with respective pizzagnas in v10 - NUI-5829
      */
     paths?: {
         widget?: Record&lt;string, string&gt;,
@@ -378,7 +378,7 @@ export interface IHasComponent&lt;T &#x3D; any&gt; {
 export interface IConfigurable {
     providerKey?: string;
     setComponent?: (component: any, componentId: string) &#x3D;&gt; void;
-    // TODO: BREAKING rename to &#x27;updateProperties&#x27; in v10
+    // TODO: BREAKING rename to &#x27;updateProperties&#x27; in v12 - NUI-5828
     updateConfiguration(properties: IProperties): void;
 }
 
@@ -432,6 +432,7 @@ export interface IComparatorsDict extends Partial&lt;Record&lt;ComparatorTypes |
 </div>
 
 
+                   
 
 
 
@@ -454,6 +455,7 @@ export interface IComparatorsDict extends Partial&lt;Record&lt;ComparatorTypes |
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
             var COMPODOC_CURRENT_PAGE_URL = 'IWidgetTypeDefinition.html';
+            var MAX_SEARCH_RESULTS = 15;
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>
