@@ -1304,7 +1304,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("@import (reference) \"@nova-ui/bits/sdk/less/mixins/font-roboto.less\";\n\n.text-style-roboto {\n    .font-roboto-family();\n}");
+/* harmony default export */ __webpack_exports__["default"] = ("@import (reference) \"@nova-ui/bits/sdk/less/mixins/font-roboto.less\";\n\n.text-style-roboto {\n    .font-roboto();\n    font-family: @font-family-roboto;\n}");
 
 /***/ }),
 
