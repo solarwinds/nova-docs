@@ -29819,6 +29819,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lodash_flatten__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_flatten__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var lodash_uniq__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash/uniq */ "7tbW");
 /* harmony import */ var lodash_uniq__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_uniq__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../types */ "41FX");
+
 
 
 
@@ -29830,8 +29832,9 @@ __webpack_require__.r(__webpack_exports__);
  */
 function mergeDomains(domains, scale) {
     if (scale.isContinuous()) {
-        const domainMin = Object(d3_array__WEBPACK_IMPORTED_MODULE_0__["min"])(domains.filter(e => typeof e[0] !== undefined).map(e => e[0]));
-        const domainMax = Object(d3_array__WEBPACK_IMPORTED_MODULE_0__["max"])(domains.filter(e => typeof e[1] !== undefined).map(e => e[1]));
+        const nonEmptyDomains = domains.filter(d => d !== _types__WEBPACK_IMPORTED_MODULE_3__["EMPTY_CONTINUOUS_DOMAIN"]);
+        const domainMin = Object(d3_array__WEBPACK_IMPORTED_MODULE_0__["min"])(nonEmptyDomains.filter(e => typeof e[0] !== undefined).map(e => e[0]));
+        const domainMax = Object(d3_array__WEBPACK_IMPORTED_MODULE_0__["max"])(nonEmptyDomains.filter(e => typeof e[1] !== undefined).map(e => e[1]));
         return [domainMin, domainMax];
     }
     const maxLength = Math.max(...domains.map(d => d.length));
