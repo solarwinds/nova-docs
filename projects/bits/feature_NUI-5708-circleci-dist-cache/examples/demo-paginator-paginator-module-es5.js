@@ -1548,14 +1548,13 @@
         _classCallCheck(this, PaginatorModule);
       };
 
-      PaginatorModule.ɵfac = function PaginatorModule_Factory(t) {
-        return new (t || PaginatorModule)();
-      };
-
       PaginatorModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({
         type: PaginatorModule
       });
       PaginatorModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({
+        factory: function PaginatorModule_Factory(t) {
+          return new (t || PaginatorModule)();
+        },
         providers: [{
           provide: _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["DEMO_PATH_TOKEN"],
           useFactory: function useFactory() {

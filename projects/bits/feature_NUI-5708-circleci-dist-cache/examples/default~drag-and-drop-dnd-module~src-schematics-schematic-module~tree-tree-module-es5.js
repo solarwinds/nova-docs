@@ -1827,14 +1827,14 @@
         _classCallCheck(this, CdkTreeModule);
       };
 
-      CdkTreeModule.ɵfac = function CdkTreeModule_Factory(t) {
-        return new (t || CdkTreeModule)();
-      };
-
       CdkTreeModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({
         type: CdkTreeModule
       });
-      CdkTreeModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({});
+      CdkTreeModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({
+        factory: function CdkTreeModule_Factory(t) {
+          return new (t || CdkTreeModule)();
+        }
+      });
 
       (function () {
         (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵsetNgModuleScope"](CdkTreeModule, {

@@ -1785,14 +1785,13 @@
         _classCallCheck(this, StaticExampleModule);
       };
 
-      StaticExampleModule.ɵfac = function StaticExampleModule_Factory(t) {
-        return new (t || StaticExampleModule)();
-      };
-
       StaticExampleModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵdefineNgModule"]({
         type: StaticExampleModule
       });
       StaticExampleModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵdefineInjector"]({
+        factory: function StaticExampleModule_Factory(t) {
+          return new (t || StaticExampleModule)();
+        },
         providers: [{
           provide: _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["DEMO_PATH_TOKEN"],
           useFactory: function useFactory() {

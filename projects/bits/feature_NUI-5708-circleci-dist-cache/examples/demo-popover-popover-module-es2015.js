@@ -1701,9 +1701,8 @@ const routes = [
 ];
 class PopoverModule {
 }
-PopoverModule.ɵfac = function PopoverModule_Factory(t) { return new (t || PopoverModule)(); };
 PopoverModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({ type: PopoverModule });
-PopoverModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({ providers: [
+PopoverModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({ factory: function PopoverModule_Factory(t) { return new (t || PopoverModule)(); }, providers: [
         {
             provide: _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["DEMO_PATH_TOKEN"],
             useFactory: () => __webpack_require__("zhSv"),

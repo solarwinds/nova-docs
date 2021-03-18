@@ -501,9 +501,8 @@ const routes = [{
     }];
 class DividerModule {
 }
-DividerModule.ɵfac = function DividerModule_Factory(t) { return new (t || DividerModule)(); };
 DividerModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({ type: DividerModule });
-DividerModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({ providers: [
+DividerModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({ factory: function DividerModule_Factory(t) { return new (t || DividerModule)(); }, providers: [
         {
             provide: _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["DEMO_PATH_TOKEN"],
             useFactory: () => __webpack_require__("T7av"),

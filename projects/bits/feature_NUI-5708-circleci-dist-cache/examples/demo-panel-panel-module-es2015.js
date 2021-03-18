@@ -100,9 +100,8 @@ const routes = [
 ];
 class PanelModule {
 }
-PanelModule.ɵfac = function PanelModule_Factory(t) { return new (t || PanelModule)(); };
 PanelModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({ type: PanelModule });
-PanelModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({ providers: [
+PanelModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({ factory: function PanelModule_Factory(t) { return new (t || PanelModule)(); }, providers: [
         {
             provide: _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["DEMO_PATH_TOKEN"],
             useFactory: () => __webpack_require__("ktjt"),

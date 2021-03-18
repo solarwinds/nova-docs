@@ -3707,14 +3707,13 @@
         _classCallCheck(this, TimeFramePickerModule);
       };
 
-      TimeFramePickerModule.ɵfac = function TimeFramePickerModule_Factory(t) {
-        return new (t || TimeFramePickerModule)();
-      };
-
       TimeFramePickerModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineNgModule"]({
         type: TimeFramePickerModule
       });
       TimeFramePickerModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjector"]({
+        factory: function TimeFramePickerModule_Factory(t) {
+          return new (t || TimeFramePickerModule)();
+        },
         providers: [{
           provide: _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["DEMO_PATH_TOKEN"],
           useFactory: function useFactory() {

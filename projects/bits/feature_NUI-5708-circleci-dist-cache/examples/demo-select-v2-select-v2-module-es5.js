@@ -868,14 +868,13 @@
         _classCallCheck(this, SelectV2Module);
       };
 
-      SelectV2Module.ɵfac = function SelectV2Module_Factory(t) {
-        return new (t || SelectV2Module)();
-      };
-
       SelectV2Module.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineNgModule"]({
         type: SelectV2Module
       });
       SelectV2Module.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineInjector"]({
+        factory: function SelectV2Module_Factory(t) {
+          return new (t || SelectV2Module)();
+        },
         providers: [{
           provide: _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["DEMO_PATH_TOKEN"],
           useFactory: function useFactory() {
@@ -3463,7 +3462,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx.items);
           }
         },
-        directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_0__["ɵangular_packages_forms_forms_ba"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormGroupDirective"], _src_lib_form_field_form_field_component__WEBPACK_IMPORTED_MODULE_2__["FormFieldComponent"], _src_lib_select_v2_select_select_v2_component__WEBPACK_IMPORTED_MODULE_3__["SelectV2Component"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControlName"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgForOf"], _src_lib_validation_message_validation_message_component__WEBPACK_IMPORTED_MODULE_5__["ValidationMessageComponent"], _src_lib_select_v2_option_select_v2_option_component__WEBPACK_IMPORTED_MODULE_6__["SelectV2OptionComponent"]],
+        directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_0__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormGroupDirective"], _src_lib_form_field_form_field_component__WEBPACK_IMPORTED_MODULE_2__["FormFieldComponent"], _src_lib_select_v2_select_select_v2_component__WEBPACK_IMPORTED_MODULE_3__["SelectV2Component"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControlName"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgForOf"], _src_lib_validation_message_validation_message_component__WEBPACK_IMPORTED_MODULE_5__["ValidationMessageComponent"], _src_lib_select_v2_option_select_v2_option_component__WEBPACK_IMPORTED_MODULE_6__["SelectV2OptionComponent"]],
         encapsulation: 2
       });
       /***/
@@ -5855,7 +5854,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", ctx.handleClicksOutside);
           }
         },
-        directives: [_src_lib_select_v2_select_select_v2_component__WEBPACK_IMPORTED_MODULE_5__["SelectV2Component"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_6__["NgForOf"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_ba"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroupDirective"], _src_lib_form_field_form_field_component__WEBPACK_IMPORTED_MODULE_7__["FormFieldComponent"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlName"], _src_lib_validation_message_validation_message_component__WEBPACK_IMPORTED_MODULE_8__["ValidationMessageComponent"], _src_lib_switch_switch_component__WEBPACK_IMPORTED_MODULE_9__["SwitchComponent"], _src_lib_select_v2_option_select_v2_option_component__WEBPACK_IMPORTED_MODULE_10__["SelectV2OptionComponent"], _src_lib_icon_icon_component__WEBPACK_IMPORTED_MODULE_11__["IconComponent"], _src_lib_select_v2_option_group_select_v2_option_group_component__WEBPACK_IMPORTED_MODULE_12__["SelectV2OptionGroupComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_6__["NgIf"], _src_lib_divider_divider_component__WEBPACK_IMPORTED_MODULE_13__["DividerComponent"], _src_lib_dialog_dialog_header_component__WEBPACK_IMPORTED_MODULE_14__["DialogHeaderComponent"], _src_lib_dialog_dialog_footer_component__WEBPACK_IMPORTED_MODULE_15__["DialogFooterComponent"], _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_16__["ButtonComponent"]],
+        directives: [_src_lib_select_v2_select_select_v2_component__WEBPACK_IMPORTED_MODULE_5__["SelectV2Component"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_6__["NgForOf"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroupDirective"], _src_lib_form_field_form_field_component__WEBPACK_IMPORTED_MODULE_7__["FormFieldComponent"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlName"], _src_lib_validation_message_validation_message_component__WEBPACK_IMPORTED_MODULE_8__["ValidationMessageComponent"], _src_lib_switch_switch_component__WEBPACK_IMPORTED_MODULE_9__["SwitchComponent"], _src_lib_select_v2_option_select_v2_option_component__WEBPACK_IMPORTED_MODULE_10__["SelectV2OptionComponent"], _src_lib_icon_icon_component__WEBPACK_IMPORTED_MODULE_11__["IconComponent"], _src_lib_select_v2_option_group_select_v2_option_group_component__WEBPACK_IMPORTED_MODULE_12__["SelectV2OptionGroupComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_6__["NgIf"], _src_lib_divider_divider_component__WEBPACK_IMPORTED_MODULE_13__["DividerComponent"], _src_lib_dialog_dialog_header_component__WEBPACK_IMPORTED_MODULE_14__["DialogHeaderComponent"], _src_lib_dialog_dialog_footer_component__WEBPACK_IMPORTED_MODULE_15__["DialogFooterComponent"], _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_16__["ButtonComponent"]],
         styles: [".select-test-focus-drop {\n  height: 1px;\n  width: 1px;\n}\n.custom-select-styles.nui-overlay-panel .nui-overlay {\n  height: 200px;\n  background-color: deepskyblue;\n  border-radius: 5%;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNlbGVjdC12Mi10ZXN0LmV4YW1wbGUuY29tcG9uZW50Lmxlc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxXQUFBO0VBQ0EsVUFBQTtBQUNKO0FBRUE7RUFFUSxhQUFBO0VBQ0EsNkJBQUE7RUFDQSxpQkFBQTtBQURSIiwiZmlsZSI6InNlbGVjdC12Mi10ZXN0LmV4YW1wbGUuY29tcG9uZW50Lmxlc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuc2VsZWN0LXRlc3QtZm9jdXMtZHJvcCB7XG4gICAgaGVpZ2h0OiAxcHg7XG4gICAgd2lkdGg6IDFweDtcbn1cblxuLmN1c3RvbS1zZWxlY3Qtc3R5bGVzLm51aS1vdmVybGF5LXBhbmVsIHtcbiAgICAubnVpLW92ZXJsYXkge1xuICAgICAgICBoZWlnaHQ6IDIwMHB4O1xuICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiBkZWVwc2t5Ymx1ZTtcbiAgICAgICAgYm9yZGVyLXJhZGl1czogNSU7XG4gICAgfVxufVxuIl19 */"],
         encapsulation: 2
       });

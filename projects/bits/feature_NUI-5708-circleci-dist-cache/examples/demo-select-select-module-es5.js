@@ -359,7 +359,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("isInErrorState", ctx.myForm.controls["item"].invalid && ctx.myForm.controls["item"].touched)("itemsSource", ctx.dataset.items);
           }
         },
-        directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_0__["ɵangular_packages_forms_forms_ba"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormGroupDirective"], _src_lib_select_select_component__WEBPACK_IMPORTED_MODULE_3__["SelectComponent"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControlName"], _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_4__["ButtonComponent"]],
+        directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_0__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormGroupDirective"], _src_lib_select_select_component__WEBPACK_IMPORTED_MODULE_3__["SelectComponent"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControlName"], _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_4__["ButtonComponent"]],
         encapsulation: 2
       });
       /***/
@@ -1300,7 +1300,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("isInErrorState", ctx.myForm.controls["item"].invalid && ctx.myForm.controls["item"].touched)("itemsSource", ctx.datasetBasic.items);
           }
         },
-        directives: [_src_lib_select_select_component__WEBPACK_IMPORTED_MODULE_2__["SelectComponent"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["ɵangular_packages_forms_forms_ba"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormGroupDirective"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControlName"], _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_3__["ButtonComponent"], _src_lib_icon_icon_component__WEBPACK_IMPORTED_MODULE_4__["IconComponent"], _src_lib_progress_progress_component__WEBPACK_IMPORTED_MODULE_5__["ProgressComponent"]],
+        directives: [_src_lib_select_select_component__WEBPACK_IMPORTED_MODULE_2__["SelectComponent"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormGroupDirective"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControlName"], _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_3__["ButtonComponent"], _src_lib_icon_icon_component__WEBPACK_IMPORTED_MODULE_4__["IconComponent"], _src_lib_progress_progress_component__WEBPACK_IMPORTED_MODULE_5__["ProgressComponent"]],
         styles: [".select-examples-custom-template[_ngcontent-%COMP%] {\n  min-width: 300px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNlbGVjdC1jdXN0b20tdGVtcGxhdGUuZXhhbXBsZS5jb21wb25lbnQubGVzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFDSTtFQUNJLGdCQUFBO0FBQVIiLCJmaWxlIjoic2VsZWN0LWN1c3RvbS10ZW1wbGF0ZS5leGFtcGxlLmNvbXBvbmVudC5sZXNzIiwic291cmNlc0NvbnRlbnQiOlsiLnNlbGVjdC1leGFtcGxlcyB7XG4gICAgJi1jdXN0b20tdGVtcGxhdGUge1xuICAgICAgICBtaW4td2lkdGg6IDMwMHB4O1xuICAgIH1cbn1cbiJdfQ== */"]
       });
       /***/
@@ -2013,14 +2013,13 @@
         _classCallCheck(this, SelectModule);
       };
 
-      SelectModule.ɵfac = function SelectModule_Factory(t) {
-        return new (t || SelectModule)();
-      };
-
       SelectModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({
         type: SelectModule
       });
       SelectModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({
+        factory: function SelectModule_Factory(t) {
+          return new (t || SelectModule)();
+        },
         providers: [{
           provide: _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["DEMO_PATH_TOKEN"],
           useFactory: function useFactory() {

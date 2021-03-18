@@ -123,9 +123,8 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiDatePickerModule {
 }
-NuiDatePickerModule.ɵfac = function NuiDatePickerModule_Factory(t) { return new (t || NuiDatePickerModule)(); };
 NuiDatePickerModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdefineNgModule"]({ type: NuiDatePickerModule });
-NuiDatePickerModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdefineInjector"]({ providers: [], imports: [[
+NuiDatePickerModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdefineInjector"]({ factory: function NuiDatePickerModule_Factory(t) { return new (t || NuiDatePickerModule)(); }, providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
             _textbox_textbox_module__WEBPACK_IMPORTED_MODULE_4__["NuiTextboxModule"],
             _icon_icon_module__WEBPACK_IMPORTED_MODULE_2__["NuiIconModule"],
@@ -240,9 +239,8 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiWizardV2Module {
 }
-NuiWizardV2Module.ɵfac = function NuiWizardV2Module_Factory(t) { return new (t || NuiWizardV2Module)(); };
 NuiWizardV2Module.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdefineNgModule"]({ type: NuiWizardV2Module });
-NuiWizardV2Module.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdefineInjector"]({ providers: [_error_state_matcher_provider__WEBPACK_IMPORTED_MODULE_2__["ErrorStateMatcher"]], imports: [[
+NuiWizardV2Module.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdefineInjector"]({ factory: function NuiWizardV2Module_Factory(t) { return new (t || NuiWizardV2Module)(); }, providers: [_error_state_matcher_provider__WEBPACK_IMPORTED_MODULE_2__["ErrorStateMatcher"]], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
             _icon_icon_module__WEBPACK_IMPORTED_MODULE_1__["NuiIconModule"],
         ]] });
@@ -858,9 +856,8 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiTimePickerModule {
 }
-NuiTimePickerModule.ɵfac = function NuiTimePickerModule_Factory(t) { return new (t || NuiTimePickerModule)(); };
 NuiTimePickerModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineNgModule"]({ type: NuiTimePickerModule });
-NuiTimePickerModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjector"]({ providers: [], imports: [[
+NuiTimePickerModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjector"]({ factory: function NuiTimePickerModule_Factory(t) { return new (t || NuiTimePickerModule)(); }, providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
             _textbox_textbox_module__WEBPACK_IMPORTED_MODULE_4__["NuiTextboxModule"],
             _icon_icon_module__WEBPACK_IMPORTED_MODULE_1__["NuiIconModule"],
@@ -3193,9 +3190,8 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiDialogModule {
 }
-NuiDialogModule.ɵfac = function NuiDialogModule_Factory(t) { return new (t || NuiDialogModule)(); };
 NuiDialogModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdefineNgModule"]({ type: NuiDialogModule });
-NuiDialogModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdefineInjector"]({ providers: [
+NuiDialogModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdefineInjector"]({ factory: function NuiDialogModule_Factory(t) { return new (t || NuiDialogModule)(); }, providers: [
         _dialog_service__WEBPACK_IMPORTED_MODULE_10__["DialogService"],
         _dialog_stack_service__WEBPACK_IMPORTED_MODULE_8__["DialogStackService"],
     ], imports: [[
@@ -3238,9 +3234,8 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiDndModule {
 }
-NuiDndModule.ɵfac = function NuiDndModule_Factory(t) { return new (t || NuiDndModule)(); };
 NuiDndModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineNgModule"]({ type: NuiDndModule });
-NuiDndModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({ imports: [[
+NuiDndModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({ factory: function NuiDndModule_Factory(t) { return new (t || NuiDndModule)(); }, imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
         ]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵsetNgModuleScope"](NuiDndModule, { declarations: [_dnd_drop_target_directive__WEBPACK_IMPORTED_MODULE_1__["DndDropTargetDirective"]], imports: [_common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"]], exports: [_dnd_drop_target_directive__WEBPACK_IMPORTED_MODULE_1__["DndDropTargetDirective"]] }); })();
@@ -3856,9 +3851,8 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiImageModule {
 }
-NuiImageModule.ɵfac = function NuiImageModule_Factory(t) { return new (t || NuiImageModule)(); };
 NuiImageModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineNgModule"]({ type: NuiImageModule });
-NuiImageModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({ providers: [], imports: [[
+NuiImageModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({ factory: function NuiImageModule_Factory(t) { return new (t || NuiImageModule)(); }, providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
         ]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵsetNgModuleScope"](NuiImageModule, { declarations: [_image_component__WEBPACK_IMPORTED_MODULE_1__["ImageComponent"]], imports: [_common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"]], exports: [_image_component__WEBPACK_IMPORTED_MODULE_1__["ImageComponent"]] }); })();
@@ -5582,9 +5576,8 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiPaginatorModule {
 }
-NuiPaginatorModule.ɵfac = function NuiPaginatorModule_Factory(t) { return new (t || NuiPaginatorModule)(); };
 NuiPaginatorModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineNgModule"]({ type: NuiPaginatorModule });
-NuiPaginatorModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjector"]({ providers: [], imports: [[
+NuiPaginatorModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjector"]({ factory: function NuiPaginatorModule_Factory(t) { return new (t || NuiPaginatorModule)(); }, providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_1__["NuiCommonModule"],
             _popup_popup_module__WEBPACK_IMPORTED_MODULE_3__["NuiPopupModule"],
             _button_button_module__WEBPACK_IMPORTED_MODULE_2__["NuiButtonModule"],
@@ -6200,9 +6193,8 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiWizardModule {
 }
-NuiWizardModule.ɵfac = function NuiWizardModule_Factory(t) { return new (t || NuiWizardModule)(); };
 NuiWizardModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefineNgModule"]({ type: NuiWizardModule });
-NuiWizardModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefineInjector"]({ providers: [], imports: [[
+NuiWizardModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefineInjector"]({ factory: function NuiWizardModule_Factory(t) { return new (t || NuiWizardModule)(); }, providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
             _button_button_module__WEBPACK_IMPORTED_MODULE_2__["NuiButtonModule"],
             _busy_busy_module__WEBPACK_IMPORTED_MODULE_1__["NuiBusyModule"],
@@ -6824,9 +6816,8 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiCommonModule {
 }
-NuiCommonModule.ɵfac = function NuiCommonModule_Factory(t) { return new (t || NuiCommonModule)(); };
 NuiCommonModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({ type: NuiCommonModule });
-NuiCommonModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({ providers: [
+NuiCommonModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({ factory: function NuiCommonModule_Factory(t) { return new (t || NuiCommonModule)(); }, providers: [
         _directives_dragdrop_drag_and_drop_service__WEBPACK_IMPORTED_MODULE_23__["DragAndDropService"],
         _services_event_bus_service__WEBPACK_IMPORTED_MODULE_11__["EventBusService"],
         _environment__WEBPACK_IMPORTED_MODULE_5__["NUI_ENV_PROVIDER"],
@@ -6897,9 +6888,8 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiExpanderModule {
 }
-NuiExpanderModule.ɵfac = function NuiExpanderModule_Factory(t) { return new (t || NuiExpanderModule)(); };
 NuiExpanderModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({ type: NuiExpanderModule });
-NuiExpanderModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({ providers: [], imports: [[
+NuiExpanderModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({ factory: function NuiExpanderModule_Factory(t) { return new (t || NuiExpanderModule)(); }, providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
             _icon_icon_module__WEBPACK_IMPORTED_MODULE_1__["NuiIconModule"],
         ]] });
@@ -7225,9 +7215,8 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiDateTimePickerModule {
 }
-NuiDateTimePickerModule.ɵfac = function NuiDateTimePickerModule_Factory(t) { return new (t || NuiDateTimePickerModule)(); };
 NuiDateTimePickerModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineNgModule"]({ type: NuiDateTimePickerModule });
-NuiDateTimePickerModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjector"]({ providers: [], imports: [[
+NuiDateTimePickerModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjector"]({ factory: function NuiDateTimePickerModule_Factory(t) { return new (t || NuiDateTimePickerModule)(); }, providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
             _date_picker_date_picker_module__WEBPACK_IMPORTED_MODULE_1__["NuiDatePickerModule"],
             _time_picker_time_picker_module__WEBPACK_IMPORTED_MODULE_2__["NuiTimePickerModule"],
@@ -7865,9 +7854,8 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiRepeatModule {
 }
-NuiRepeatModule.ɵfac = function NuiRepeatModule_Factory(t) { return new (t || NuiRepeatModule)(); };
 NuiRepeatModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefineNgModule"]({ type: NuiRepeatModule });
-NuiRepeatModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefineInjector"]({ providers: [], imports: [[
+NuiRepeatModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefineInjector"]({ factory: function NuiRepeatModule_Factory(t) { return new (t || NuiRepeatModule)(); }, providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_2__["NuiCommonModule"],
             _checkbox_checkbox_module__WEBPACK_IMPORTED_MODULE_3__["NuiCheckboxModule"],
             _radio_radio_module__WEBPACK_IMPORTED_MODULE_4__["NuiRadioModule"],
@@ -8270,9 +8258,8 @@ __webpack_require__.r(__webpack_exports__);
 
 class NuiDemoModule {
 }
-NuiDemoModule.ɵfac = function NuiDemoModule_Factory(t) { return new (t || NuiDemoModule)(); };
 NuiDemoModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({ type: NuiDemoModule, bootstrap: [_components_app_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]] });
-NuiDemoModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({ providers: [
+NuiDemoModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({ factory: function NuiDemoModule_Factory(t) { return new (t || NuiDemoModule)(); }, providers: [
         { provide: _angular_core__WEBPACK_IMPORTED_MODULE_1__["TRANSLATIONS_FORMAT"], useValue: "xlf" },
         { provide: _angular_core__WEBPACK_IMPORTED_MODULE_1__["TRANSLATIONS"], useValue: _environments_environment__WEBPACK_IMPORTED_MODULE_7__["translationLibrary"] },
     ], imports: [[
@@ -8763,9 +8750,8 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiDividerModule {
 }
-NuiDividerModule.ɵfac = function NuiDividerModule_Factory(t) { return new (t || NuiDividerModule)(); };
 NuiDividerModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineNgModule"]({ type: NuiDividerModule });
-NuiDividerModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({ providers: [], imports: [[
+NuiDividerModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({ factory: function NuiDividerModule_Factory(t) { return new (t || NuiDividerModule)(); }, providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
         ]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵsetNgModuleScope"](NuiDividerModule, { declarations: [_divider_component__WEBPACK_IMPORTED_MODULE_1__["DividerComponent"]], imports: [_common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"]], exports: [_divider_component__WEBPACK_IMPORTED_MODULE_1__["DividerComponent"]] }); })();
@@ -8819,9 +8805,8 @@ __webpack_require__.r(__webpack_exports__);
 // Will be renamed in scope of the NUI-5797
 class NuiSelectV2Module {
 }
-NuiSelectV2Module.ɵfac = function NuiSelectV2Module_Factory(t) { return new (t || NuiSelectV2Module)(); };
 NuiSelectV2Module.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵdefineNgModule"]({ type: NuiSelectV2Module });
-NuiSelectV2Module.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵdefineInjector"]({ providers: [], imports: [[
+NuiSelectV2Module.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵdefineInjector"]({ factory: function NuiSelectV2Module_Factory(t) { return new (t || NuiSelectV2Module)(); }, providers: [], imports: [[
             _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
             _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_0__["OverlayModule"],
             _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_1__["PortalModule"],
@@ -10158,9 +10143,8 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiBusyModule {
 }
-NuiBusyModule.ɵfac = function NuiBusyModule_Factory(t) { return new (t || NuiBusyModule)(); };
 NuiBusyModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({ type: NuiBusyModule });
-NuiBusyModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({ providers: [], imports: [[
+NuiBusyModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({ factory: function NuiBusyModule_Factory(t) { return new (t || NuiBusyModule)(); }, providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
             _spinner_spinner_module__WEBPACK_IMPORTED_MODULE_1__["NuiSpinnerModule"],
         ]] });
@@ -10569,9 +10553,8 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiSwitchModule {
 }
-NuiSwitchModule.ɵfac = function NuiSwitchModule_Factory(t) { return new (t || NuiSwitchModule)(); };
 NuiSwitchModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineNgModule"]({ type: NuiSwitchModule });
-NuiSwitchModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({ providers: [], imports: [[
+NuiSwitchModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({ factory: function NuiSwitchModule_Factory(t) { return new (t || NuiSwitchModule)(); }, providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
         ]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵsetNgModuleScope"](NuiSwitchModule, { declarations: [_switch_component__WEBPACK_IMPORTED_MODULE_1__["SwitchComponent"]], imports: [_common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"]], exports: [_switch_component__WEBPACK_IMPORTED_MODULE_1__["SwitchComponent"]] }); })();
@@ -10606,9 +10589,8 @@ __webpack_require__.r(__webpack_exports__);
 // Don't ignore this module (component children need to be kept separate in the docs)
 class NuiLayoutModule {
 }
-NuiLayoutModule.ɵfac = function NuiLayoutModule_Factory(t) { return new (t || NuiLayoutModule)(); };
 NuiLayoutModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineNgModule"]({ type: NuiLayoutModule });
-NuiLayoutModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjector"]({ providers: [], imports: [[
+NuiLayoutModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjector"]({ factory: function NuiLayoutModule_Factory(t) { return new (t || NuiLayoutModule)(); }, providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
         ]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵsetNgModuleScope"](NuiLayoutModule, { declarations: [_sheet_sheet_component__WEBPACK_IMPORTED_MODULE_5__["SheetComponent"], _sheet_group_sheet_group_component__WEBPACK_IMPORTED_MODULE_4__["SheetGroupComponent"], _card_card_component__WEBPACK_IMPORTED_MODULE_2__["CardComponent"], _card_group_card_group_component__WEBPACK_IMPORTED_MODULE_1__["CardGroupComponent"], _layout_resizer_layout_resizer_component__WEBPACK_IMPORTED_MODULE_3__["LayoutResizerComponent"]], imports: [_common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"]], exports: [_sheet_sheet_component__WEBPACK_IMPORTED_MODULE_5__["SheetComponent"],
@@ -10748,9 +10730,8 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiMessageModule {
 }
-NuiMessageModule.ɵfac = function NuiMessageModule_Factory(t) { return new (t || NuiMessageModule)(); };
 NuiMessageModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineNgModule"]({ type: NuiMessageModule });
-NuiMessageModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjector"]({ providers: [], imports: [[
+NuiMessageModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjector"]({ factory: function NuiMessageModule_Factory(t) { return new (t || NuiMessageModule)(); }, providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
             _lib_icon_icon_module__WEBPACK_IMPORTED_MODULE_2__["NuiIconModule"],
             _lib_button_button_module__WEBPACK_IMPORTED_MODULE_1__["NuiButtonModule"],
@@ -10795,9 +10776,8 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiTabsModule {
 }
-NuiTabsModule.ɵfac = function NuiTabsModule_Factory(t) { return new (t || NuiTabsModule)(); };
 NuiTabsModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵdefineNgModule"]({ type: NuiTabsModule });
-NuiTabsModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵdefineInjector"]({ imports: [[
+NuiTabsModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵdefineInjector"]({ factory: function NuiTabsModule_Factory(t) { return new (t || NuiTabsModule)(); }, imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
             _icon_icon_module__WEBPACK_IMPORTED_MODULE_1__["NuiIconModule"],
         ]] });
@@ -11415,9 +11395,8 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiSelectorModule {
 }
-NuiSelectorModule.ɵfac = function NuiSelectorModule_Factory(t) { return new (t || NuiSelectorModule)(); };
 NuiSelectorModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineNgModule"]({ type: NuiSelectorModule });
-NuiSelectorModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjector"]({ providers: [], imports: [[
+NuiSelectorModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjector"]({ factory: function NuiSelectorModule_Factory(t) { return new (t || NuiSelectorModule)(); }, providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
             _checkbox_checkbox_module__WEBPACK_IMPORTED_MODULE_2__["NuiCheckboxModule"],
             _menu_menu_module__WEBPACK_IMPORTED_MODULE_3__["NuiMenuModule"],
@@ -14690,9 +14669,8 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiButtonModule {
 }
-NuiButtonModule.ɵfac = function NuiButtonModule_Factory(t) { return new (t || NuiButtonModule)(); };
 NuiButtonModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({ type: NuiButtonModule });
-NuiButtonModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({ providers: [], imports: [[
+NuiButtonModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({ factory: function NuiButtonModule_Factory(t) { return new (t || NuiButtonModule)(); }, providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
             _icon_icon_module__WEBPACK_IMPORTED_MODULE_1__["NuiIconModule"],
         ]] });
@@ -14739,9 +14717,8 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiTimeFrameBarModule {
 }
-NuiTimeFrameBarModule.ɵfac = function NuiTimeFrameBarModule_Factory(t) { return new (t || NuiTimeFrameBarModule)(); };
 NuiTimeFrameBarModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdefineNgModule"]({ type: NuiTimeFrameBarModule });
-NuiTimeFrameBarModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdefineInjector"]({ providers: [], imports: [[
+NuiTimeFrameBarModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdefineInjector"]({ factory: function NuiTimeFrameBarModule_Factory(t) { return new (t || NuiTimeFrameBarModule)(); }, providers: [], imports: [[
             _button_button_module__WEBPACK_IMPORTED_MODULE_1__["NuiButtonModule"],
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
             _date_picker_date_picker_module__WEBPACK_IMPORTED_MODULE_2__["NuiDatePickerModule"],
@@ -18433,9 +18410,8 @@ const appRoutes = [
 ];
 class AppRoutingModule {
 }
-AppRoutingModule.ɵfac = function AppRoutingModule_Factory(t) { return new (t || AppRoutingModule)(); };
 AppRoutingModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({ type: AppRoutingModule });
-AppRoutingModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({ imports: [[
+AppRoutingModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({ factory: function AppRoutingModule_Factory(t) { return new (t || AppRoutingModule)(); }, imports: [[
             _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"].forRoot(appRoutes, { useHash: true, relativeLinkResolution: "legacy" }),
         ], _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](AppRoutingModule, { imports: [_angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]], exports: [_angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]] }); })();
@@ -18553,9 +18529,8 @@ __webpack_require__.r(__webpack_exports__);
 /** @ignore @deprecated in v11 SelectComponent and ComboboxComponent in this module have been deprecated in favor of SelectV2Component and ComboboxV2Component which can be imported from SelectV2Module */
 class NuiSelectModule {
 }
-NuiSelectModule.ɵfac = function NuiSelectModule_Factory(t) { return new (t || NuiSelectModule)(); };
 NuiSelectModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdefineNgModule"]({ type: NuiSelectModule });
-NuiSelectModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdefineInjector"]({ providers: [], imports: [[
+NuiSelectModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdefineInjector"]({ factory: function NuiSelectModule_Factory(t) { return new (t || NuiSelectModule)(); }, providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_1__["NuiCommonModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_0__["ReactiveFormsModule"],
             _popup_popup_module__WEBPACK_IMPORTED_MODULE_6__["NuiPopupModule"],
@@ -18727,9 +18702,8 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiToolbarModule {
 }
-NuiToolbarModule.ɵfac = function NuiToolbarModule_Factory(t) { return new (t || NuiToolbarModule)(); };
 NuiToolbarModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdefineNgModule"]({ type: NuiToolbarModule });
-NuiToolbarModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdefineInjector"]({ providers: [], imports: [[
+NuiToolbarModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdefineInjector"]({ factory: function NuiToolbarModule_Factory(t) { return new (t || NuiToolbarModule)(); }, providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
             _icon_icon_module__WEBPACK_IMPORTED_MODULE_3__["NuiIconModule"],
             _menu_menu_module__WEBPACK_IMPORTED_MODULE_4__["NuiMenuModule"],
@@ -18802,9 +18776,8 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiDocsModule {
 }
-NuiDocsModule.ɵfac = function NuiDocsModule_Factory(t) { return new (t || NuiDocsModule)(); };
 NuiDocsModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_17__["ɵɵdefineNgModule"]({ type: NuiDocsModule });
-NuiDocsModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_17__["ɵɵdefineInjector"]({ imports: [[
+NuiDocsModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_17__["ɵɵdefineInjector"]({ factory: function NuiDocsModule_Factory(t) { return new (t || NuiDocsModule)(); }, imports: [[
             _angular_common__WEBPACK_IMPORTED_MODULE_0__["CommonModule"],
             _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"],
             _common_common_module__WEBPACK_IMPORTED_MODULE_2__["NuiCommonModule"],
@@ -18872,9 +18845,8 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiOverlayModule {
 }
-NuiOverlayModule.ɵfac = function NuiOverlayModule_Factory(t) { return new (t || NuiOverlayModule)(); };
 NuiOverlayModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineNgModule"]({ type: NuiOverlayModule });
-NuiOverlayModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineInjector"]({ providers: [_overlay_position_service__WEBPACK_IMPORTED_MODULE_4__["OverlayPositionService"]], imports: [[
+NuiOverlayModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineInjector"]({ factory: function NuiOverlayModule_Factory(t) { return new (t || NuiOverlayModule)(); }, providers: [_overlay_position_service__WEBPACK_IMPORTED_MODULE_4__["OverlayPositionService"]], imports: [[
             _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_0__["OverlayModule"],
             _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_1__["PortalModule"],
             _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
@@ -22625,9 +22597,8 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiContentModule {
 }
-NuiContentModule.ɵfac = function NuiContentModule_Factory(t) { return new (t || NuiContentModule)(); };
 NuiContentModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineNgModule"]({ type: NuiContentModule });
-NuiContentModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({ providers: [], imports: [[
+NuiContentModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({ factory: function NuiContentModule_Factory(t) { return new (t || NuiContentModule)(); }, providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
         ]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵsetNgModuleScope"](NuiContentModule, { declarations: [_content_component__WEBPACK_IMPORTED_MODULE_1__["ContentComponent"]], imports: [_common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"]], exports: [_content_component__WEBPACK_IMPORTED_MODULE_1__["ContentComponent"]] }); })();
@@ -22921,9 +22892,8 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiRadioModule {
 }
-NuiRadioModule.ɵfac = function NuiRadioModule_Factory(t) { return new (t || NuiRadioModule)(); };
 NuiRadioModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineNgModule"]({ type: NuiRadioModule });
-NuiRadioModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({ providers: [], imports: [[
+NuiRadioModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({ factory: function NuiRadioModule_Factory(t) { return new (t || NuiRadioModule)(); }, providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
         ]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵsetNgModuleScope"](NuiRadioModule, { declarations: [_radio_group_component__WEBPACK_IMPORTED_MODULE_1__["RadioComponent"],
@@ -25048,9 +25018,8 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiFormFieldModule {
 }
-NuiFormFieldModule.ɵfac = function NuiFormFieldModule_Factory(t) { return new (t || NuiFormFieldModule)(); };
 NuiFormFieldModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineNgModule"]({ type: NuiFormFieldModule });
-NuiFormFieldModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjector"]({ providers: [], imports: [[
+NuiFormFieldModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjector"]({ factory: function NuiFormFieldModule_Factory(t) { return new (t || NuiFormFieldModule)(); }, providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
             _icon_icon_module__WEBPACK_IMPORTED_MODULE_1__["NuiIconModule"],
             _popover_popover_module__WEBPACK_IMPORTED_MODULE_2__["NuiPopoverModule"],
@@ -25206,9 +25175,8 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiTimeFramePickerModule {
 }
-NuiTimeFramePickerModule.ɵfac = function NuiTimeFramePickerModule_Factory(t) { return new (t || NuiTimeFramePickerModule)(); };
 NuiTimeFramePickerModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefineNgModule"]({ type: NuiTimeFramePickerModule });
-NuiTimeFramePickerModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefineInjector"]({ providers: [_services_timeframe_service__WEBPACK_IMPORTED_MODULE_4__["TimeframeService"]], imports: [[
+NuiTimeFramePickerModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefineInjector"]({ factory: function NuiTimeFramePickerModule_Factory(t) { return new (t || NuiTimeFramePickerModule)(); }, providers: [_services_timeframe_service__WEBPACK_IMPORTED_MODULE_4__["TimeframeService"]], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
             _menu_menu_module__WEBPACK_IMPORTED_MODULE_2__["NuiMenuModule"],
             _date_time_picker_date_time_picker_module__WEBPACK_IMPORTED_MODULE_1__["NuiDateTimePickerModule"],
@@ -26054,9 +26022,8 @@ __webpack_require__.r(__webpack_exports__);
 /** @ignore */
 class NuiTooltipModule {
 }
-NuiTooltipModule.ɵfac = function NuiTooltipModule_Factory(t) { return new (t || NuiTooltipModule)(); };
 NuiTooltipModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineNgModule"]({ type: NuiTooltipModule });
-NuiTooltipModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjector"]({ imports: [[
+NuiTooltipModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjector"]({ factory: function NuiTooltipModule_Factory(t) { return new (t || NuiTooltipModule)(); }, imports: [[
             _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_0__["A11yModule"],
             _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
             _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_1__["OverlayModule"],
@@ -26462,9 +26429,8 @@ __webpack_require__.r(__webpack_exports__);
 
 class PopupAdapterModule {
 }
-PopupAdapterModule.ɵfac = function PopupAdapterModule_Factory(t) { return new (t || PopupAdapterModule)(); };
 PopupAdapterModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineNgModule"]({ type: PopupAdapterModule });
-PopupAdapterModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjector"]({ imports: [[
+PopupAdapterModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjector"]({ factory: function PopupAdapterModule_Factory(t) { return new (t || PopupAdapterModule)(); }, imports: [[
             _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
             _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_0__["PortalModule"],
             _select_v2_select_v2_module__WEBPACK_IMPORTED_MODULE_4__["NuiSelectV2Module"],
@@ -27084,9 +27050,8 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiMenuModule {
 }
-NuiMenuModule.ɵfac = function NuiMenuModule_Factory(t) { return new (t || NuiMenuModule)(); };
 NuiMenuModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_15__["ɵɵdefineNgModule"]({ type: NuiMenuModule });
-NuiMenuModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_15__["ɵɵdefineInjector"]({ imports: [[
+NuiMenuModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_15__["ɵɵdefineInjector"]({ factory: function NuiMenuModule_Factory(t) { return new (t || NuiMenuModule)(); }, imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
             _button_button_module__WEBPACK_IMPORTED_MODULE_1__["NuiButtonModule"],
             _checkbox_checkbox_module__WEBPACK_IMPORTED_MODULE_2__["NuiCheckboxModule"],
@@ -27812,9 +27777,8 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiSpinnerModule {
 }
-NuiSpinnerModule.ɵfac = function NuiSpinnerModule_Factory(t) { return new (t || NuiSpinnerModule)(); };
 NuiSpinnerModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineNgModule"]({ type: NuiSpinnerModule });
-NuiSpinnerModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjector"]({ providers: [], imports: [[
+NuiSpinnerModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjector"]({ factory: function NuiSpinnerModule_Factory(t) { return new (t || NuiSpinnerModule)(); }, providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
             _button_button_module__WEBPACK_IMPORTED_MODULE_1__["NuiButtonModule"],
             _tooltip_tooltip_module__WEBPACK_IMPORTED_MODULE_2__["NuiTooltipModule"],
@@ -27847,9 +27811,8 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiOverlayAdditionsModule {
 }
-NuiOverlayAdditionsModule.ɵfac = function NuiOverlayAdditionsModule_Factory(t) { return new (t || NuiOverlayAdditionsModule)(); };
 NuiOverlayAdditionsModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineNgModule"]({ type: NuiOverlayAdditionsModule });
-NuiOverlayAdditionsModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({});
+NuiOverlayAdditionsModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({ factory: function NuiOverlayAdditionsModule_Factory(t) { return new (t || NuiOverlayAdditionsModule)(); } });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵsetNgModuleScope"](NuiOverlayAdditionsModule, { declarations: [_overlay_item_overlay_item_component__WEBPACK_IMPORTED_MODULE_1__["OverlayItemComponent"],
         _arrow_component_overlay_arrow_component__WEBPACK_IMPORTED_MODULE_0__["OverlayArrowComponent"]], exports: [_overlay_item_overlay_item_component__WEBPACK_IMPORTED_MODULE_1__["OverlayItemComponent"],
         _arrow_component_overlay_arrow_component__WEBPACK_IMPORTED_MODULE_0__["OverlayArrowComponent"]] }); })();
@@ -28216,9 +28179,8 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiIconModule {
 }
-NuiIconModule.ɵfac = function NuiIconModule_Factory(t) { return new (t || NuiIconModule)(); };
 NuiIconModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({ type: NuiIconModule });
-NuiIconModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({ providers: [_icon_service__WEBPACK_IMPORTED_MODULE_2__["IconService"]], imports: [[
+NuiIconModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({ factory: function NuiIconModule_Factory(t) { return new (t || NuiIconModule)(); }, providers: [_icon_service__WEBPACK_IMPORTED_MODULE_2__["IconService"]], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
         ]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵsetNgModuleScope"](NuiIconModule, { declarations: [_icon_component__WEBPACK_IMPORTED_MODULE_1__["IconComponent"]], imports: [_common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"]], exports: [_icon_component__WEBPACK_IMPORTED_MODULE_1__["IconComponent"]] }); })();
@@ -28493,9 +28455,8 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiSorterModule {
 }
-NuiSorterModule.ɵfac = function NuiSorterModule_Factory(t) { return new (t || NuiSorterModule)(); };
 NuiSorterModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineNgModule"]({ type: NuiSorterModule });
-NuiSorterModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineInjector"]({ providers: [], imports: [[
+NuiSorterModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineInjector"]({ factory: function NuiSorterModule_Factory(t) { return new (t || NuiSorterModule)(); }, providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
             _menu_menu_module__WEBPACK_IMPORTED_MODULE_2__["NuiMenuModule"],
             _button_button_module__WEBPACK_IMPORTED_MODULE_1__["NuiButtonModule"],
@@ -28764,9 +28725,8 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiValidationMessageModule {
 }
-NuiValidationMessageModule.ɵfac = function NuiValidationMessageModule_Factory(t) { return new (t || NuiValidationMessageModule)(); };
 NuiValidationMessageModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineNgModule"]({ type: NuiValidationMessageModule });
-NuiValidationMessageModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjector"]({ providers: [], imports: [[
+NuiValidationMessageModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjector"]({ factory: function NuiValidationMessageModule_Factory(t) { return new (t || NuiValidationMessageModule)(); }, providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
             _icon_icon_module__WEBPACK_IMPORTED_MODULE_1__["NuiIconModule"],
         ]] });
@@ -28952,9 +28912,8 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiPopoverModule {
 }
-NuiPopoverModule.ɵfac = function NuiPopoverModule_Factory(t) { return new (t || NuiPopoverModule)(); };
 NuiPopoverModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineNgModule"]({ type: NuiPopoverModule });
-NuiPopoverModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjector"]({ providers: [], imports: [[
+NuiPopoverModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjector"]({ factory: function NuiPopoverModule_Factory(t) { return new (t || NuiPopoverModule)(); }, providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
             _icon_icon_module__WEBPACK_IMPORTED_MODULE_1__["NuiIconModule"],
             _overlay_overlay_module__WEBPACK_IMPORTED_MODULE_3__["NuiOverlayModule"],
@@ -29764,9 +29723,8 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiPopupModule {
 }
-NuiPopupModule.ɵfac = function NuiPopupModule_Factory(t) { return new (t || NuiPopupModule)(); };
 NuiPopupModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineNgModule"]({ type: NuiPopupModule });
-NuiPopupModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjector"]({ imports: [[
+NuiPopupModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjector"]({ factory: function NuiPopupModule_Factory(t) { return new (t || NuiPopupModule)(); }, imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
             _popup_adapter_popup_adapter_module__WEBPACK_IMPORTED_MODULE_2__["PopupAdapterModule"],
         ]] });
@@ -29905,9 +29863,8 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiPanelModule {
 }
-NuiPanelModule.ɵfac = function NuiPanelModule_Factory(t) { return new (t || NuiPanelModule)(); };
 NuiPanelModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({ type: NuiPanelModule });
-NuiPanelModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({ providers: [], imports: [[
+NuiPanelModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({ factory: function NuiPanelModule_Factory(t) { return new (t || NuiPanelModule)(); }, providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
             _button_button_module__WEBPACK_IMPORTED_MODULE_1__["NuiButtonModule"],
         ]] });
@@ -31017,9 +30974,8 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiSearchModule {
 }
-NuiSearchModule.ɵfac = function NuiSearchModule_Factory(t) { return new (t || NuiSearchModule)(); };
 NuiSearchModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineNgModule"]({ type: NuiSearchModule });
-NuiSearchModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineInjector"]({ providers: [], imports: [[
+NuiSearchModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineInjector"]({ factory: function NuiSearchModule_Factory(t) { return new (t || NuiSearchModule)(); }, providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_1__["NuiCommonModule"],
             _spinner_spinner_module__WEBPACK_IMPORTED_MODULE_3__["NuiSpinnerModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormsModule"],
@@ -31128,9 +31084,8 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiCheckboxModule {
 }
-NuiCheckboxModule.ɵfac = function NuiCheckboxModule_Factory(t) { return new (t || NuiCheckboxModule)(); };
 NuiCheckboxModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({ type: NuiCheckboxModule });
-NuiCheckboxModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({ providers: [], imports: [[
+NuiCheckboxModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({ factory: function NuiCheckboxModule_Factory(t) { return new (t || NuiCheckboxModule)(); }, providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
         ]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵsetNgModuleScope"](NuiCheckboxModule, { declarations: [_checkbox_component__WEBPACK_IMPORTED_MODULE_2__["CheckboxComponent"],
@@ -31226,9 +31181,8 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiToastModule {
 }
-NuiToastModule.ɵfac = function NuiToastModule_Factory(t) { return new (t || NuiToastModule)(); };
 NuiToastModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵdefineNgModule"]({ type: NuiToastModule });
-NuiToastModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵdefineInjector"]({ providers: [
+NuiToastModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵdefineInjector"]({ factory: function NuiToastModule_Factory(t) { return new (t || NuiToastModule)(); }, providers: [
         _toast_service__WEBPACK_IMPORTED_MODULE_6__["ToastService"],
         _toast_container_service__WEBPACK_IMPORTED_MODULE_3__["ToastContainerService"],
         { provide: _toast_servicebase__WEBPACK_IMPORTED_MODULE_7__["ToastServiceBase"], useExisting: _toast_service__WEBPACK_IMPORTED_MODULE_6__["ToastService"] },
@@ -32702,9 +32656,8 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiProgressModule {
 }
-NuiProgressModule.ɵfac = function NuiProgressModule_Factory(t) { return new (t || NuiProgressModule)(); };
 NuiProgressModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineNgModule"]({ type: NuiProgressModule });
-NuiProgressModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjector"]({ providers: [], imports: [[
+NuiProgressModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjector"]({ factory: function NuiProgressModule_Factory(t) { return new (t || NuiProgressModule)(); }, providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
             _button_button_module__WEBPACK_IMPORTED_MODULE_1__["NuiButtonModule"],
             _tooltip_tooltip_module__WEBPACK_IMPORTED_MODULE_2__["NuiTooltipModule"],
@@ -33322,9 +33275,8 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiBreadcrumbModule {
 }
-NuiBreadcrumbModule.ɵfac = function NuiBreadcrumbModule_Factory(t) { return new (t || NuiBreadcrumbModule)(); };
 NuiBreadcrumbModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineNgModule"]({ type: NuiBreadcrumbModule });
-NuiBreadcrumbModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjector"]({ providers: [_breadcrumb_state_service__WEBPACK_IMPORTED_MODULE_2__["BreadcrumbStateService"]], imports: [[
+NuiBreadcrumbModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjector"]({ factory: function NuiBreadcrumbModule_Factory(t) { return new (t || NuiBreadcrumbModule)(); }, providers: [_breadcrumb_state_service__WEBPACK_IMPORTED_MODULE_2__["BreadcrumbStateService"]], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
             _icon_icon_module__WEBPACK_IMPORTED_MODULE_1__["NuiIconModule"],
         ]] });
@@ -33399,9 +33351,8 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiChipsModule {
 }
-NuiChipsModule.ɵfac = function NuiChipsModule_Factory(t) { return new (t || NuiChipsModule)(); };
 NuiChipsModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineNgModule"]({ type: NuiChipsModule });
-NuiChipsModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjector"]({ providers: [], imports: [[
+NuiChipsModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjector"]({ factory: function NuiChipsModule_Factory(t) { return new (t || NuiChipsModule)(); }, providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
             _icon_icon_module__WEBPACK_IMPORTED_MODULE_1__["NuiIconModule"],
             _tooltip_tooltip_module__WEBPACK_IMPORTED_MODULE_2__["NuiTooltipModule"],
@@ -33625,9 +33576,8 @@ const DECLARATIONS_EXPORTS = [
  */
 class NuiTableModule {
 }
-NuiTableModule.ɵfac = function NuiTableModule_Factory(t) { return new (t || NuiTableModule)(); };
 NuiTableModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({ type: NuiTableModule });
-NuiTableModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({ providers: [], imports: [[
+NuiTableModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({ factory: function NuiTableModule_Factory(t) { return new (t || NuiTableModule)(); }, providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_2__["NuiCommonModule"],
             _select_select_module__WEBPACK_IMPORTED_MODULE_5__["NuiSelectModule"],
             _selector_selector_module__WEBPACK_IMPORTED_MODULE_6__["NuiSelectorModule"],
@@ -33712,9 +33662,8 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiTextboxModule {
 }
-NuiTextboxModule.ɵfac = function NuiTextboxModule_Factory(t) { return new (t || NuiTextboxModule)(); };
 NuiTextboxModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefineNgModule"]({ type: NuiTextboxModule });
-NuiTextboxModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefineInjector"]({ providers: [], imports: [[
+NuiTextboxModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefineInjector"]({ factory: function NuiTextboxModule_Factory(t) { return new (t || NuiTextboxModule)(); }, providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_1__["NuiCommonModule"],
             _spinner_spinner_module__WEBPACK_IMPORTED_MODULE_4__["NuiSpinnerModule"],
             _button_button_module__WEBPACK_IMPORTED_MODULE_2__["NuiButtonModule"],

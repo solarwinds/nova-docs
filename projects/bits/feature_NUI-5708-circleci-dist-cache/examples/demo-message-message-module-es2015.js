@@ -480,9 +480,8 @@ const routes = [
 ];
 class MessageModule {
 }
-MessageModule.ɵfac = function MessageModule_Factory(t) { return new (t || MessageModule)(); };
 MessageModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({ type: MessageModule });
-MessageModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({ providers: [
+MessageModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({ factory: function MessageModule_Factory(t) { return new (t || MessageModule)(); }, providers: [
         {
             provide: _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["DEMO_PATH_TOKEN"],
             useFactory: () => __webpack_require__("RYRy"),

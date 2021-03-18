@@ -132,14 +132,13 @@
         _classCallCheck(this, DragDropDemoModule);
       };
 
-      DragDropDemoModule.ɵfac = function DragDropDemoModule_Factory(t) {
-        return new (t || DragDropDemoModule)();
-      };
-
       DragDropDemoModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineNgModule"]({
         type: DragDropDemoModule
       });
       DragDropDemoModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineInjector"]({
+        factory: function DragDropDemoModule_Factory(t) {
+          return new (t || DragDropDemoModule)();
+        },
         providers: [{
           provide: _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["DEMO_PATH_TOKEN"],
           useFactory: function useFactory() {
@@ -881,14 +880,13 @@
         _classCallCheck(this, NuiFileDropExampleModule);
       };
 
-      NuiFileDropExampleModule.ɵfac = function NuiFileDropExampleModule_Factory(t) {
-        return new (t || NuiFileDropExampleModule)();
-      };
-
       NuiFileDropExampleModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineNgModule"]({
         type: NuiFileDropExampleModule
       });
       NuiFileDropExampleModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({
+        factory: function NuiFileDropExampleModule_Factory(t) {
+          return new (t || NuiFileDropExampleModule)();
+        },
         providers: [],
         imports: [[_src_common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"]]]
       });

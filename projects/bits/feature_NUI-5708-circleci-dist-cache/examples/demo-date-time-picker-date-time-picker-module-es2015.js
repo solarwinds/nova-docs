@@ -373,9 +373,8 @@ const routes = [
 ];
 class DateTimePickerModule {
 }
-DateTimePickerModule.ɵfac = function DateTimePickerModule_Factory(t) { return new (t || DateTimePickerModule)(); };
 DateTimePickerModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineNgModule"]({ type: DateTimePickerModule });
-DateTimePickerModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjector"]({ providers: [
+DateTimePickerModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjector"]({ factory: function DateTimePickerModule_Factory(t) { return new (t || DateTimePickerModule)(); }, providers: [
         {
             provide: _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["DEMO_PATH_TOKEN"],
             useFactory: () => __webpack_require__("8goZ"),

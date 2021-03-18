@@ -210,9 +210,8 @@ const routes = [{
     }];
 class RuntimeI18NModule {
 }
-RuntimeI18NModule.ɵfac = function RuntimeI18NModule_Factory(t) { return new (t || RuntimeI18NModule)(); };
 RuntimeI18NModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({ type: RuntimeI18NModule });
-RuntimeI18NModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({ providers: [
+RuntimeI18NModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({ factory: function RuntimeI18NModule_Factory(t) { return new (t || RuntimeI18NModule)(); }, providers: [
         {
             provide: _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["DEMO_PATH_TOKEN"],
             useFactory: () => __webpack_require__("ll9c"),

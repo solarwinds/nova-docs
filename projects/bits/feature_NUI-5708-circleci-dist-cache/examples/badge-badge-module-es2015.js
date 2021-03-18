@@ -241,9 +241,8 @@ const routes = [
 ];
 class BadgeModule {
 }
-BadgeModule.ɵfac = function BadgeModule_Factory(t) { return new (t || BadgeModule)(); };
 BadgeModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdefineNgModule"]({ type: BadgeModule });
-BadgeModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdefineInjector"]({ providers: [
+BadgeModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdefineInjector"]({ factory: function BadgeModule_Factory(t) { return new (t || BadgeModule)(); }, providers: [
         {
             provide: _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["DEMO_PATH_TOKEN"],
             useFactory: () => __webpack_require__("QHJt"),

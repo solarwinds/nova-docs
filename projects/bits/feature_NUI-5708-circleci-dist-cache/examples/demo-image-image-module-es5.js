@@ -1387,14 +1387,13 @@
         _classCallCheck(this, ImageModule);
       };
 
-      ImageModule.ɵfac = function ImageModule_Factory(t) {
-        return new (t || ImageModule)();
-      };
-
       ImageModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({
         type: ImageModule
       });
       ImageModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({
+        factory: function ImageModule_Factory(t) {
+          return new (t || ImageModule)();
+        },
         providers: [{
           provide: _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["DEMO_PATH_TOKEN"],
           useFactory: function useFactory() {

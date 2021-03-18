@@ -1770,14 +1770,13 @@
         _classCallCheck(this, IconModule);
       };
 
-      IconModule.ɵfac = function IconModule_Factory(t) {
-        return new (t || IconModule)();
-      };
-
       IconModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({
         type: IconModule
       });
       IconModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({
+        factory: function IconModule_Factory(t) {
+          return new (t || IconModule)();
+        },
         providers: [{
           provide: _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["DEMO_PATH_TOKEN"],
           useFactory: function useFactory() {

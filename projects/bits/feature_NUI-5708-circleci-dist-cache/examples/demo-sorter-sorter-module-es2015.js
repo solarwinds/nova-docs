@@ -50,9 +50,8 @@ const routes = [
 ];
 class SorterModule {
 }
-SorterModule.ɵfac = function SorterModule_Factory(t) { return new (t || SorterModule)(); };
 SorterModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefineNgModule"]({ type: SorterModule });
-SorterModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefineInjector"]({ providers: [
+SorterModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefineInjector"]({ factory: function SorterModule_Factory(t) { return new (t || SorterModule)(); }, providers: [
         {
             provide: _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["DEMO_PATH_TOKEN"],
             useFactory: () => __webpack_require__("vU4O"),

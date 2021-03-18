@@ -550,14 +550,13 @@
         _classCallCheck(this, ExternalLibrariesModule);
       };
 
-      ExternalLibrariesModule.ɵfac = function ExternalLibrariesModule_Factory(t) {
-        return new (t || ExternalLibrariesModule)();
-      };
-
       ExternalLibrariesModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({
         type: ExternalLibrariesModule
       });
       ExternalLibrariesModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({
+        factory: function ExternalLibrariesModule_Factory(t) {
+          return new (t || ExternalLibrariesModule)();
+        },
         imports: [[_angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"].forChild(routes)], _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]]
       });
 

@@ -1016,14 +1016,13 @@
         _classCallCheck(this, SwitchModule);
       };
 
-      SwitchModule.ɵfac = function SwitchModule_Factory(t) {
-        return new (t || SwitchModule)();
-      };
-
       SwitchModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({
         type: SwitchModule
       });
       SwitchModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({
+        factory: function SwitchModule_Factory(t) {
+          return new (t || SwitchModule)();
+        },
         providers: [{
           provide: _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["DEMO_PATH_TOKEN"],
           useFactory: function useFactory() {
