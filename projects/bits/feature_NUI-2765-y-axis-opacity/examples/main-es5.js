@@ -6430,7 +6430,7 @@
         }, {
           key: "ngOnChanges",
           value: function ngOnChanges(changes) {
-            var _a, _b, _c;
+            var _a, _b;
 
             if (changes.itemsSource && !lodash_isEqual__WEBPACK_IMPORTED_MODULE_2___default()(changes.itemsSource.previousValue, changes.itemsSource.currentValue)) {
               if (((_a = this.itemsSource) === null || _a === void 0 ? void 0 : _a.length) > 0 && typeof this.itemsSource[0] === "string") {
@@ -6451,15 +6451,6 @@
               });
               this.triggerSorterAction(oldValue);
               this.setPopupSelection();
-            }
-
-            if (changes.sortDirection && !changes.sortDirection.firstChange && ((_c = this.sortConfig) === null || _c === void 0 ? void 0 : _c.direction) !== changes.sortDirection.currentValue) {
-              var _oldValue = this.sortConfig;
-              this.sortDirection = changes.sortDirection.currentValue;
-              this.sortConfig = lodash_assign__WEBPACK_IMPORTED_MODULE_1___default()({}, this.sortConfig, {
-                direction: this.sortDirection
-              });
-              this.triggerSorterAction(_oldValue);
             }
 
             if (changes.appendToBody) {
