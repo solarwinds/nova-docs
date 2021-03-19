@@ -1,5 +1,5 @@
 (function () {
-  var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7;
+  var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10, _templateObject11, _templateObject12;
 
   function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
@@ -74,7 +74,13 @@
       /* harmony import */
 
 
-      var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      var _sorter_test_sorter_test_example_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      /*! ./sorter-test/sorter-test.example.component */
+      "nqcq");
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! @angular/core */
       "fXoL");
 
@@ -87,6 +93,9 @@
           },
           showThemeSwitcher: true
         }
+      }, {
+        path: "sorter-test",
+        component: _sorter_test_sorter_test_example_component__WEBPACK_IMPORTED_MODULE_7__["SorterTestExampleComponent"]
       }, {
         path: "visual-test",
         component: _sorter_visual_test_sorter_visual_test_harness_component__WEBPACK_IMPORTED_MODULE_6__["SorterVisualTestHarnessComponent"],
@@ -101,10 +110,10 @@
         _classCallCheck(this, SorterModule);
       };
 
-      SorterModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefineNgModule"]({
+      SorterModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵdefineNgModule"]({
         type: SorterModule
       });
-      SorterModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefineInjector"]({
+      SorterModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵdefineInjector"]({
         factory: function SorterModule_Factory(t) {
           return new (t || SorterModule)();
         },
@@ -118,8 +127,8 @@
       });
 
       (function () {
-        (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵsetNgModuleScope"](SorterModule, {
-          declarations: [_sorter_basic_sorter_basic_example_component__WEBPACK_IMPORTED_MODULE_2__["SorterBasicExampleComponent"], _sorter_visual_test_sorter_legacy_string_input_usage_sorter_legacy_string_input_usage_visual_test_component__WEBPACK_IMPORTED_MODULE_4__["SorterLegacyStringInputUsageVisualTestComponent"], _sorter_docs_sorter_docs_example_component__WEBPACK_IMPORTED_MODULE_3__["SorterExampleComponent"], _sorter_visual_test_sorter_recommended_usage_sorter_recommended_usage_visual_test_component__WEBPACK_IMPORTED_MODULE_5__["SorterRecommendedUsageVisualTestComponent"], _sorter_visual_test_sorter_visual_test_harness_component__WEBPACK_IMPORTED_MODULE_6__["SorterVisualTestHarnessComponent"]],
+        (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵsetNgModuleScope"](SorterModule, {
+          declarations: [_sorter_basic_sorter_basic_example_component__WEBPACK_IMPORTED_MODULE_2__["SorterBasicExampleComponent"], _sorter_visual_test_sorter_legacy_string_input_usage_sorter_legacy_string_input_usage_visual_test_component__WEBPACK_IMPORTED_MODULE_4__["SorterLegacyStringInputUsageVisualTestComponent"], _sorter_docs_sorter_docs_example_component__WEBPACK_IMPORTED_MODULE_3__["SorterExampleComponent"], _sorter_visual_test_sorter_recommended_usage_sorter_recommended_usage_visual_test_component__WEBPACK_IMPORTED_MODULE_5__["SorterRecommendedUsageVisualTestComponent"], _sorter_visual_test_sorter_visual_test_harness_component__WEBPACK_IMPORTED_MODULE_6__["SorterVisualTestHarnessComponent"], _sorter_test_sorter_test_example_component__WEBPACK_IMPORTED_MODULE_7__["SorterTestExampleComponent"]],
           imports: [_nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiSorterModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiRepeatModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiMessageModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiDocsModule"], _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]],
           exports: [_angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]]
         });
@@ -918,7 +927,27 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import { NgModule } from \"@angular/core\";\nimport { RouterModule } from \"@angular/router\";\nimport {\n    DEMO_PATH_TOKEN,\n    NuiDocsModule,\n    NuiMessageModule,\n    NuiRepeatModule,\n    NuiSorterModule,\n    SrlcStage,\n} from \"@nova-ui/bits\";\n\nimport { SorterBasicExampleComponent } from \"./sorter-basic/sorter-basic.example.component\";\nimport { SorterExampleComponent } from \"./sorter-docs/sorter-docs.example.component\";\nimport { SorterLegacyStringInputUsageVisualTestComponent } from \"./sorter-visual-test/sorter-legacy-string-input-usage/sorter-legacy-string-input-usage-visual-test.component\";\nimport { SorterRecommendedUsageVisualTestComponent } from \"./sorter-visual-test/sorter-recommended-usage/sorter-recommended-usage-visual-test.component\";\nimport { SorterVisualTestHarnessComponent } from \"./sorter-visual-test/sorter-visual-test-harness.component\";\n\nconst routes = [\n    {\n        path: \"\",\n        component: SorterExampleComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.ga,\n            },\n            showThemeSwitcher: true,\n        },\n    },\n    {\n        path: \"visual-test\",\n        component: SorterVisualTestHarnessComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n];\n\n@NgModule({\n    imports: [\n        NuiSorterModule,\n        NuiRepeatModule,\n        NuiMessageModule,\n        NuiDocsModule,\n        RouterModule.forChild(routes),\n    ],\n    declarations: [\n        SorterBasicExampleComponent,\n        SorterLegacyStringInputUsageVisualTestComponent,\n        SorterExampleComponent,\n        SorterRecommendedUsageVisualTestComponent,\n        SorterVisualTestHarnessComponent,\n    ],\n    providers: [\n        {\n            provide: DEMO_PATH_TOKEN,\n            useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/),\n        },\n    ],\n    exports: [\n        RouterModule,\n    ],\n})\nexport class SorterModule {\n}\n";
+      __webpack_exports__["default"] = "import { NgModule } from \"@angular/core\";\nimport { RouterModule } from \"@angular/router\";\nimport {\n    DEMO_PATH_TOKEN,\n    NuiDocsModule,\n    NuiMessageModule,\n    NuiRepeatModule,\n    NuiSorterModule,\n    SrlcStage,\n} from \"@nova-ui/bits\";\n\nimport { SorterBasicExampleComponent } from \"./sorter-basic/sorter-basic.example.component\";\nimport { SorterExampleComponent } from \"./sorter-docs/sorter-docs.example.component\";\nimport { SorterLegacyStringInputUsageVisualTestComponent } from \"./sorter-visual-test/sorter-legacy-string-input-usage/sorter-legacy-string-input-usage-visual-test.component\";\nimport { SorterRecommendedUsageVisualTestComponent } from \"./sorter-visual-test/sorter-recommended-usage/sorter-recommended-usage-visual-test.component\";\nimport { SorterVisualTestHarnessComponent } from \"./sorter-visual-test/sorter-visual-test-harness.component\";\nimport {SorterTestExampleComponent} from \"./sorter-test/sorter-test.example.component\";\n\nconst routes = [\n    {\n        path: \"\",\n        component: SorterExampleComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.ga,\n            },\n            showThemeSwitcher: true,\n        },\n    },\n    {\n        path: \"sorter-test\",\n        component: SorterTestExampleComponent,\n    },\n    {\n        path: \"visual-test\",\n        component: SorterVisualTestHarnessComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n];\n\n@NgModule({\n    imports: [\n        NuiSorterModule,\n        NuiRepeatModule,\n        NuiMessageModule,\n        NuiDocsModule,\n        RouterModule.forChild(routes),\n    ],\n    declarations: [\n        SorterBasicExampleComponent,\n        SorterLegacyStringInputUsageVisualTestComponent,\n        SorterExampleComponent,\n        SorterRecommendedUsageVisualTestComponent,\n        SorterVisualTestHarnessComponent,\n        SorterTestExampleComponent,\n    ],\n    providers: [\n        {\n            provide: DEMO_PATH_TOKEN,\n            useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/),\n        },\n    ],\n    exports: [\n        RouterModule,\n    ],\n})\nexport class SorterModule {\n}\n";
+      /***/
+    },
+
+    /***/
+    "9z4P":
+    /*!******************************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/sorter/sorter-test/sorter-test.example.component.less ***!
+      \******************************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function z4P(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "@col-width: 180px;\n\n.sorter-flex-row {\n    display: flex;    \n    flex-grow: 0;\n    flex-direction: row;\n    flex-wrap: wrap;\n    width: 100%;\n    padding: 0px 10px;\n}\n.sorter-flex-header{\n    padding-left: 3px;\n    margin-left: 5px;\n    margin-right: 10px;\n}\n.header-item {\n    font-weight: bold;  \n    margin-top: 10px;\n}\n.sorter-flex-item {\n    padding: 5px;\n    flex-grow: 1;\n    overflow: hidden;\n    white-space: nowrap;\n    text-overflow: ellipsis;\n    padding-right: 10px;\n    width: @col-width;\n}\n";
       /***/
     },
 
@@ -999,6 +1028,26 @@
 
 
       __webpack_exports__["default"] = "@col-width: 180px;\n\n.sorter-flex-row {\n    display: flex;    \n    flex-grow: 0;\n    flex-direction: row;\n    flex-wrap: wrap;\n    width: 100%;\n    padding: 0px 10px;\n}\n.sorter-flex-header{\n    padding-left: 3px;\n    margin-left: 5px;\n    margin-right: 10px;\n}\n.header-item {\n    font-weight: bold;  \n    margin-top: 10px;\n}\n.sorter-flex-item {\n    padding: 5px;\n    flex-grow: 1;\n    overflow: hidden;\n    white-space: nowrap;\n    text-overflow: ellipsis;\n    padding-right: 10px;\n    width: @col-width;\n}\n";
+      /***/
+    },
+
+    /***/
+    "KxaQ":
+    /*!******************************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/sorter/sorter-test/sorter-test.example.component.html ***!
+      \******************************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function KxaQ(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "<nui-sorter id=\"nui-demo-sorter\"\n            i18n-caption\n            caption=\"Sorter Caption\"\n            [itemsSource]=\"columns\"\n            [selectedItem]=\"sortBy\"\n            [sortDirection]=\"sortDirection\"\n            (sorterAction)=\"onSorterAction($event)\">\n</nui-sorter>\n<button (click)=\"resetSorter()\">reset sorter</button>\n<button (click)=\"updateSorterByProperty()\">update sorter by property</button>\n<button (click)=\"updateSorterByMethod()\">update sorter by method</button>\n<button (click)=\"updateSorterDirection()\">update sorter direction</button>\n\n<nui-repeat [itemsSource]=\"items\" [repeatItemTemplateRef]=\"repeatItemTemplate\">\n    <div repeatHeaderTemplate>\n        <div class=\"sorter-flex-header\">\n            <div class=\"sorter-flex-row\">\n                <div class=\"sorter-flex-item header-item\" *ngFor=\"let col of columns;\">{{ col.title }}</div>\n            </div>\n        </div>\n    </div>\n</nui-repeat>\n<ng-template #repeatItemTemplate let-item=\"item\">\n    <div class=\"sorter-flex-row\">\n        <div class=\"sorter-flex-item\">{{item.title}}</div>\n        <div class=\"sorter-flex-item\">{{item.year}}</div>\n        <div class=\"sorter-flex-item\">{{item.director}}</div>\n    </div>\n</ng-template>\n";
       /***/
     },
 
@@ -1160,6 +1209,400 @@
 
       __webpack_exports__["default"] = "import { Component, OnInit } from \"@angular/core\";\nimport { IMenuItem, ISorterChanges, SorterDirection } from \"@nova-ui/bits\";\nimport _orderBy from \"lodash/orderBy\";\n\ninterface IFilm {\n    title: string;\n    year: string;\n    director: string;\n}\n\n@Component({\n    selector: \"nui-sorter-basic-example\",\n    templateUrl: \"./sorter-basic.example.component.html\",\n    styleUrls: [\"./sorter-basic.example.component.less\"],\n})\nexport class SorterBasicExampleComponent implements OnInit {\n    public readonly columns: IMenuItem[] = [\n        {\n            title: $localize`Title`,\n            value: \"title\",\n        },\n        {\n            title: $localize`Year`,\n            value: \"year\",\n        },\n        {\n            title: $localize`Director`,\n            value: \"director\",\n        },\n    ];\n\n    public readonly initialSortDirection = SorterDirection.ascending;\n    public sortBy = this.columns[1].value;\n    public items: IFilm[] = getData();\n\n    public ngOnInit() {\n        this.sortItems(this.sortBy, this.initialSortDirection);\n    }\n\n    public onSorterAction(changeEvent: ISorterChanges) {\n        this.sortBy = changeEvent.newValue.sortBy;\n        this.sortItems(changeEvent.newValue.sortBy, changeEvent.newValue.direction);\n    }\n\n    private sortItems(sortBy: string, direction: SorterDirection) {\n        this.items = _orderBy(this.items, [sortBy], [direction as (SorterDirection.ascending | SorterDirection.descending)]) as IFilm[];\n    }\n}\n\nfunction getData(): IFilm[] {\n    return [\n        { title: \"Vertigo\", year: \"1958\", director: \"Alfred Hitchcock\" },\n        { title: \"Citizen Kane\", year: \"1941\", director: \"Orson Welles\" },\n        { title: \"2001: A Space Odyssey\", year: \"1968\", director: \"Stanley Kubrick\" },\n        { title: \"The Godfather\", year: \"1972\", director: \"Francis Ford Coppola\" },\n        { title: \"Mulholland Dr.\", year: \"2001\", director: \"David Lynch\" },\n        { title: \"Taxi Driver\", year: \"1976\", director: \"Martin Scorsese\" },\n        { title: \"La Dolce Vita\", year: \"1960\", director: \"Federico Fellini\" },\n        { title: \"The Silence of the Lambs\", year: \"1991\", director: \"Jonathan Demme\" },\n        { title: \"The Terminator\", year: \"1984\", director: \"James Cameron\" },\n    ];\n}\n";
       /***/
+    },
+
+    /***/
+    "nqcq":
+    /*!**************************************************************************************!*\
+      !*** ./demo/src/components/demo/sorter/sorter-test/sorter-test.example.component.ts ***!
+      \**************************************************************************************/
+
+    /*! exports provided: SorterTestExampleComponent */
+
+    /***/
+    function nqcq(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "SorterTestExampleComponent", function () {
+        return SorterTestExampleComponent;
+      });
+      /* harmony import */
+
+
+      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! tslib */
+      "mrSG");
+      /* harmony import */
+
+
+      var _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @nova-ui/bits */
+      "b5Xb");
+      /* harmony import */
+
+
+      var lodash_orderBy__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! lodash/orderBy */
+      "k8Y/");
+      /* harmony import */
+
+
+      var lodash_orderBy__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_orderBy__WEBPACK_IMPORTED_MODULE_2__);
+      /* harmony import */
+
+
+      var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! rxjs */
+      "qCKp");
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! @angular/core */
+      "fXoL");
+      /* harmony import */
+
+
+      var _src_lib_sorter_sorter_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! ../../../../../../src/lib/sorter/sorter.component */
+      "3WNR");
+      /* harmony import */
+
+
+      var _src_lib_repeat_repeat_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      /*! ../../../../../../src/lib/repeat/repeat.component */
+      "v2n/");
+      /* harmony import */
+
+
+      var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      /*! @angular/common */
+      "ofXK");
+
+      function SorterTestExampleComponent_div_13_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 8);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var col_r3 = ctx.$implicit;
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](col_r3.title);
+        }
+      }
+
+      function SorterTestExampleComponent_ng_template_14_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 5);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "div", 9);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](3, "div", 9);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](4);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](5, "div", 9);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](6);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var item_r4 = ctx.item;
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](item_r4.title);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](item_r4.year);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](item_r4.director);
+        }
+      }
+
+      var SorterTestExampleComponent = /*#__PURE__*/function () {
+        function SorterTestExampleComponent() {
+          _classCallCheck(this, SorterTestExampleComponent);
+
+          this.emptyColumns = [{
+            title: $localize(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["Empty"]))),
+            value: ""
+          }];
+          this.dataColumns = [{
+            title: $localize(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["Title"]))),
+            value: "title"
+          }, {
+            title: $localize(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["Year"]))),
+            value: "year"
+          }, {
+            title: $localize(_templateObject8 || (_templateObject8 = _taggedTemplateLiteral(["Director"]))),
+            value: "director"
+          }];
+          this.columns = this.dataColumns;
+          this.showSubject = new rxjs__WEBPACK_IMPORTED_MODULE_3__["BehaviorSubject"](true);
+          this.show$ = this.showSubject.asObservable();
+          this.sortDirection = _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["SorterDirection"].ascending;
+          this.sortBy = this.columns[0].value;
+          this.items = getData();
+        }
+
+        _createClass(SorterTestExampleComponent, [{
+          key: "ngOnInit",
+          value: function ngOnInit() {
+            this.sortItems(this.sortBy, this.sortDirection);
+          }
+        }, {
+          key: "updateSorterDirection",
+          value: function updateSorterDirection() {
+            var old = this.sortDirection;
+            this.sortDirection = old === _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["SorterDirection"].ascending ? _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["SorterDirection"].descending : _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["SorterDirection"].ascending;
+          }
+        }, {
+          key: "onSorterAction",
+          value: function onSorterAction(changeEvent) {
+            this.sortBy = changeEvent.newValue.sortBy;
+            this.sortItems(changeEvent.newValue.sortBy, changeEvent.newValue.direction);
+          }
+        }, {
+          key: "delayPromise",
+          value: function delayPromise() {
+            var delay = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+            return new Promise(function (resolve) {
+              setTimeout(resolve, delay);
+            });
+          }
+        }, {
+          key: "resetSorter",
+          value: function resetSorter() {
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+              return regeneratorRuntime.wrap(function _callee$(_context) {
+                while (1) {
+                  switch (_context.prev = _context.next) {
+                    case 0:
+                      this.showSubject.next(false);
+                      _context.next = 3;
+                      return this.delayPromise();
+
+                    case 3:
+                      this.columns = this.emptyColumns;
+                      this.sortBy = "";
+                      this.showSubject.next(true);
+
+                    case 6:
+                    case "end":
+                      return _context.stop();
+                  }
+                }
+              }, _callee, this);
+            }));
+          }
+        }, {
+          key: "updateSorterByProperty",
+          value: function updateSorterByProperty() {
+            this.columns = this.dataColumns;
+            this.sortBy = this.dataColumns[1].value;
+          }
+        }, {
+          key: "updateSorterByMethod",
+          value: function updateSorterByMethod() {
+            this.columns = this.dataColumns;
+            this.sorter.select(this.dataColumns[2]);
+          }
+        }, {
+          key: "sortItems",
+          value: function sortItems(sortBy, direction) {
+            this.items = lodash_orderBy__WEBPACK_IMPORTED_MODULE_2___default()(this.items, [sortBy], [direction]);
+          }
+        }]);
+
+        return SorterTestExampleComponent;
+      }();
+
+      SorterTestExampleComponent.ɵfac = function SorterTestExampleComponent_Factory(t) {
+        return new (t || SorterTestExampleComponent)();
+      };
+
+      SorterTestExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({
+        type: SorterTestExampleComponent,
+        selectors: [["nui-sorter-test-example"]],
+        viewQuery: function SorterTestExampleComponent_Query(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵviewQuery"](_nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["SorterComponent"], 1);
+          }
+
+          if (rf & 2) {
+            var _t;
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵloadQuery"]()) && (ctx.sorter = _t.first);
+          }
+        },
+        decls: 16,
+        vars: 6,
+        consts: function consts() {
+          var i18n_0;
+
+          if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+            var MSG_EXTERNAL_6216206084382868401$$DEMO_SRC_COMPONENTS_DEMO_SORTER_SORTER_TEST_SORTER_TEST_EXAMPLE_COMPONENT_TS_1 = goog.getMsg("Sorter Caption");
+            i18n_0 = MSG_EXTERNAL_6216206084382868401$$DEMO_SRC_COMPONENTS_DEMO_SORTER_SORTER_TEST_SORTER_TEST_EXAMPLE_COMPONENT_TS_1;
+          } else {
+            i18n_0 = $localize(_templateObject9 || (_templateObject9 = _taggedTemplateLiteral([":\u241F6fa73bd96af6604034e29044457c7a3fb23c502c\u241F6216206084382868401:Sorter Caption"])));
+          }
+
+          return [["id", "nui-demo-sorter", "caption", i18n_0, 3, "itemsSource", "selectedItem", "sortDirection", "sorterAction"], [3, "click"], [3, "itemsSource", "repeatItemTemplateRef"], ["repeatHeaderTemplate", ""], [1, "sorter-flex-header"], [1, "sorter-flex-row"], ["class", "sorter-flex-item header-item", 4, "ngFor", "ngForOf"], ["repeatItemTemplate", ""], [1, "sorter-flex-item", "header-item"], [1, "sorter-flex-item"]];
+        },
+        template: function SorterTestExampleComponent_Template(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "nui-sorter", 0);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("sorterAction", function SorterTestExampleComponent_Template_nui_sorter_sorterAction_0_listener($event) {
+              return ctx.onSorterAction($event);
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "button", 1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function SorterTestExampleComponent_Template_button_click_1_listener() {
+              return ctx.resetSorter();
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](2, "reset sorter");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](3, "button", 1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function SorterTestExampleComponent_Template_button_click_3_listener() {
+              return ctx.updateSorterByProperty();
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](4, "update sorter by property");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](5, "button", 1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function SorterTestExampleComponent_Template_button_click_5_listener() {
+              return ctx.updateSorterByMethod();
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](6, "update sorter by method");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](7, "button", 1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function SorterTestExampleComponent_Template_button_click_7_listener() {
+              return ctx.updateSorterDirection();
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](8, "update sorter direction");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](9, "nui-repeat", 2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](10, "div", 3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](11, "div", 4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](12, "div", 5);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](13, SorterTestExampleComponent_div_13_Template, 2, 1, "div", 6);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](14, SorterTestExampleComponent_ng_template_14_Template, 7, 3, "ng-template", null, 7, _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplateRefExtractor"]);
+          }
+
+          if (rf & 2) {
+            var _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵreference"](15);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("itemsSource", ctx.columns)("selectedItem", ctx.sortBy)("sortDirection", ctx.sortDirection);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](9);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("itemsSource", ctx.items)("repeatItemTemplateRef", _r1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngForOf", ctx.columns);
+          }
+        },
+        directives: [_src_lib_sorter_sorter_component__WEBPACK_IMPORTED_MODULE_5__["SorterComponent"], _src_lib_repeat_repeat_component__WEBPACK_IMPORTED_MODULE_6__["RepeatComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_7__["NgForOf"]],
+        styles: [".sorter-flex-row[_ngcontent-%COMP%] {\n  display: flex;\n  flex-grow: 0;\n  flex-direction: row;\n  flex-wrap: wrap;\n  width: 100%;\n  padding: 0px 10px;\n}\n.sorter-flex-header[_ngcontent-%COMP%] {\n  padding-left: 3px;\n  margin-left: 5px;\n  margin-right: 10px;\n}\n.header-item[_ngcontent-%COMP%] {\n  font-weight: bold;\n  margin-top: 10px;\n}\n.sorter-flex-item[_ngcontent-%COMP%] {\n  padding: 5px;\n  flex-grow: 1;\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  padding-right: 10px;\n  width: 180px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNvcnRlci10ZXN0LmV4YW1wbGUuY29tcG9uZW50Lmxlc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBRUE7RUFDSSxhQUFBO0VBQ0EsWUFBQTtFQUNBLG1CQUFBO0VBQ0EsZUFBQTtFQUNBLFdBQUE7RUFDQSxpQkFBQTtBQURKO0FBR0E7RUFDSSxpQkFBQTtFQUNBLGdCQUFBO0VBQ0Esa0JBQUE7QUFESjtBQUdBO0VBQ0ksaUJBQUE7RUFDQSxnQkFBQTtBQURKO0FBR0E7RUFDSSxZQUFBO0VBQ0EsWUFBQTtFQUNBLGdCQUFBO0VBQ0EsbUJBQUE7RUFDQSx1QkFBQTtFQUNBLG1CQUFBO0VBQ0EsWUFBQTtBQURKIiwiZmlsZSI6InNvcnRlci10ZXN0LmV4YW1wbGUuY29tcG9uZW50Lmxlc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAY29sLXdpZHRoOiAxODBweDtcblxuLnNvcnRlci1mbGV4LXJvdyB7XG4gICAgZGlzcGxheTogZmxleDsgICAgXG4gICAgZmxleC1ncm93OiAwO1xuICAgIGZsZXgtZGlyZWN0aW9uOiByb3c7XG4gICAgZmxleC13cmFwOiB3cmFwO1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIHBhZGRpbmc6IDBweCAxMHB4O1xufVxuLnNvcnRlci1mbGV4LWhlYWRlcntcbiAgICBwYWRkaW5nLWxlZnQ6IDNweDtcbiAgICBtYXJnaW4tbGVmdDogNXB4O1xuICAgIG1hcmdpbi1yaWdodDogMTBweDtcbn1cbi5oZWFkZXItaXRlbSB7XG4gICAgZm9udC13ZWlnaHQ6IGJvbGQ7ICBcbiAgICBtYXJnaW4tdG9wOiAxMHB4O1xufVxuLnNvcnRlci1mbGV4LWl0ZW0ge1xuICAgIHBhZGRpbmc6IDVweDtcbiAgICBmbGV4LWdyb3c6IDE7XG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgICB3aGl0ZS1zcGFjZTogbm93cmFwO1xuICAgIHRleHQtb3ZlcmZsb3c6IGVsbGlwc2lzO1xuICAgIHBhZGRpbmctcmlnaHQ6IDEwcHg7XG4gICAgd2lkdGg6IEBjb2wtd2lkdGg7XG59XG4iXX0= */"]
+      });
+
+      function getData() {
+        return [{
+          title: "Vertigo",
+          year: "1958",
+          director: "Alfred Hitchcock"
+        }, {
+          title: "Citizen Kane",
+          year: "1941",
+          director: "Orson Welles"
+        }, {
+          title: "2001: A Space Odyssey",
+          year: "1968",
+          director: "Stanley Kubrick"
+        }, {
+          title: "The Godfather",
+          year: "1972",
+          director: "Francis Ford Coppola"
+        }, {
+          title: "Mulholland Dr.",
+          year: "2001",
+          director: "David Lynch"
+        }, {
+          title: "Taxi Driver",
+          year: "1976",
+          director: "Martin Scorsese"
+        }, {
+          title: "La Dolce Vita",
+          year: "1960",
+          director: "Federico Fellini"
+        }, {
+          title: "The Silence of the Lambs",
+          year: "1991",
+          director: "Jonathan Demme"
+        }, {
+          title: "The Terminator",
+          year: "1984",
+          director: "James Cameron"
+        }];
+      }
+      /***/
+
     },
 
     /***/
@@ -1370,13 +1813,13 @@
           _classCallCheck(this, SorterRecommendedUsageVisualTestComponent);
 
           this.columns = [{
-            title: $localize(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["LongColumnNameForTitleLongColumnNameForTitle"]))),
+            title: $localize(_templateObject10 || (_templateObject10 = _taggedTemplateLiteral(["LongColumnNameForTitleLongColumnNameForTitle"]))),
             value: "title"
           }, {
-            title: $localize(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["Year"]))),
+            title: $localize(_templateObject11 || (_templateObject11 = _taggedTemplateLiteral(["Year"]))),
             value: "year"
           }, {
-            title: $localize(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["Director"]))),
+            title: $localize(_templateObject12 || (_templateObject12 = _taggedTemplateLiteral(["Director"]))),
             value: "director"
           }];
           this.initialSortDirection = _nova_ui_bits__WEBPACK_IMPORTED_MODULE_0__["SorterDirection"].ascending;
@@ -1503,6 +1946,26 @@
     },
 
     /***/
+    "v+OT":
+    /*!****************************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/sorter/sorter-test/sorter-test.example.component.ts ***!
+      \****************************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function vOT(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "import { Component, OnInit, ViewChild } from \"@angular/core\";\nimport { IMenuItem, ISorterChanges, SorterComponent, SorterDirection } from \"@nova-ui/bits\";\nimport _orderBy from \"lodash/orderBy\";\nimport { BehaviorSubject } from \"rxjs\";\n\ninterface IFilm {\n    title: string;\n    year: string;\n    director: string;\n}\n\n@Component({\n    selector: \"nui-sorter-test-example\",\n    templateUrl: \"./sorter-test.example.component.html\",\n    styleUrls: [\"./sorter-test.example.component.less\"],\n})\nexport class SorterTestExampleComponent implements OnInit {\n    private readonly emptyColumns: IMenuItem[] = [{\n        title: $localize`Empty`,\n        value: \"\",\n    }];\n    public readonly dataColumns: IMenuItem[] = [\n        {\n            title: $localize`Title`,\n            value: \"title\",\n        },\n        {\n            title: $localize`Year`,\n            value: \"year\",\n        },\n        {\n            title: $localize`Director`,\n            value: \"director\",\n        },\n    ];\n\n    public columns: IMenuItem[] = this.dataColumns;\n\n    @ViewChild(SorterComponent)\n    private sorter: SorterComponent;\n\n    private readonly showSubject = new BehaviorSubject(true);\n    public readonly show$ = this.showSubject.asObservable();\n    public sortDirection = SorterDirection.ascending;\n    public sortBy = this.columns[0].value;\n    public items: IFilm[] = getData();\n\n    public ngOnInit() {\n        this.sortItems(this.sortBy, this.sortDirection);\n    }\n\n    public updateSorterDirection() {\n        const old = this.sortDirection;\n        this.sortDirection = (old === SorterDirection.ascending) ?\n        SorterDirection.descending : SorterDirection.ascending;\n    }\n\n    public onSorterAction(changeEvent: ISorterChanges) {\n        this.sortBy = changeEvent.newValue.sortBy;\n        this.sortItems(changeEvent.newValue.sortBy, changeEvent.newValue.direction);\n    }\n\n    private delayPromise(delay: number = 0): Promise<void> {\n        return new Promise((resolve) => {\n            setTimeout(resolve, delay);\n        });\n    }\n\n    public async resetSorter() {\n        this.showSubject.next(false);\n        await this.delayPromise();\n        this.columns = this.emptyColumns;\n        this.sortBy = \"\";\n        this.showSubject.next(true);\n    }\n\n    public updateSorterByProperty() {\n        this.columns = this.dataColumns;\n        this.sortBy = this.dataColumns[1].value;\n    }\n\n    public updateSorterByMethod() {\n        this.columns = this.dataColumns;\n        this.sorter.select(this.dataColumns[2]);\n    }\n\n    private sortItems(sortBy: string, direction: SorterDirection) {\n        this.items = _orderBy(this.items, [sortBy], [direction as (SorterDirection.ascending | SorterDirection.descending)]) as IFilm[];\n    }\n}\n\nfunction getData(): IFilm[] {\n    return [\n        { title: \"Vertigo\", year: \"1958\", director: \"Alfred Hitchcock\" },\n        { title: \"Citizen Kane\", year: \"1941\", director: \"Orson Welles\" },\n        { title: \"2001: A Space Odyssey\", year: \"1968\", director: \"Stanley Kubrick\" },\n        { title: \"The Godfather\", year: \"1972\", director: \"Francis Ford Coppola\" },\n        { title: \"Mulholland Dr.\", year: \"2001\", director: \"David Lynch\" },\n        { title: \"Taxi Driver\", year: \"1976\", director: \"Martin Scorsese\" },\n        { title: \"La Dolce Vita\", year: \"1960\", director: \"Federico Fellini\" },\n        { title: \"The Silence of the Lambs\", year: \"1991\", director: \"Jonathan Demme\" },\n        { title: \"The Terminator\", year: \"1984\", director: \"James Cameron\" },\n    ];\n}\n";
+      /***/
+    },
+
+    /***/
     "vU4O":
     /*!*********************************************************************************************************!*\
       !*** ./demo/src/components/demo/sorter sync !./node_modules/raw-loader/dist/cjs.js .*\.(ts|html|less)$ ***!
@@ -1518,6 +1981,9 @@
         "./sorter-basic/sorter-basic.example.component.ts": "miG2",
         "./sorter-docs/sorter-docs.example.component.html": "I+9q",
         "./sorter-docs/sorter-docs.example.component.ts": "6gPP",
+        "./sorter-test/sorter-test.example.component.html": "KxaQ",
+        "./sorter-test/sorter-test.example.component.less": "9z4P",
+        "./sorter-test/sorter-test.example.component.ts": "v+OT",
         "./sorter-visual-test/sorter-legacy-string-input-usage/sorter-legacy-string-input-usage-visual-test.component.html": "Fq5Q",
         "./sorter-visual-test/sorter-legacy-string-input-usage/sorter-legacy-string-input-usage-visual-test.component.less": "IFsN",
         "./sorter-visual-test/sorter-legacy-string-input-usage/sorter-legacy-string-input-usage-visual-test.component.ts": "hs6M",

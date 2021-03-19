@@ -490,8 +490,8 @@ and it should be removed as an option in scope of NUI-5801</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="168"
-                            class="link-to-prism">src/lib/sorter/sorter.component.ts:168</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="178"
+                            class="link-to-prism">src/lib/sorter/sorter.component.ts:178</a></div>
                 </td>
             </tr>
 
@@ -531,8 +531,8 @@ and it should be removed as an option in scope of NUI-5801</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="156"
-                            class="link-to-prism">src/lib/sorter/sorter.component.ts:156</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="166"
+                            class="link-to-prism">src/lib/sorter/sorter.component.ts:166</a></div>
                 </td>
             </tr>
 
@@ -572,8 +572,8 @@ and it should be removed as an option in scope of NUI-5801</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="160"
-                            class="link-to-prism">src/lib/sorter/sorter.component.ts:160</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="170"
+                            class="link-to-prism">src/lib/sorter/sorter.component.ts:170</a></div>
                 </td>
             </tr>
 
@@ -613,8 +613,8 @@ and it should be removed as an option in scope of NUI-5801</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="164"
-                            class="link-to-prism">src/lib/sorter/sorter.component.ts:164</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="174"
+                            class="link-to-prism">src/lib/sorter/sorter.component.ts:174</a></div>
                 </td>
             </tr>
 
@@ -654,8 +654,8 @@ and it should be removed as an option in scope of NUI-5801</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="128"
-                            class="link-to-prism">src/lib/sorter/sorter.component.ts:128</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="138"
+                            class="link-to-prism">src/lib/sorter/sorter.component.ts:138</a></div>
                 </td>
             </tr>
 
@@ -726,8 +726,8 @@ and it should be removed as an option in scope of NUI-5801</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="145"
-                            class="link-to-prism">src/lib/sorter/sorter.component.ts:145</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="155"
+                            class="link-to-prism">src/lib/sorter/sorter.component.ts:155</a></div>
                 </td>
             </tr>
 
@@ -767,8 +767,8 @@ and it should be removed as an option in scope of NUI-5801</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="175"
-                            class="link-to-prism">src/lib/sorter/sorter.component.ts:175</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="185"
+                            class="link-to-prism">src/lib/sorter/sorter.component.ts:185</a></div>
                 </td>
             </tr>
 
@@ -1126,6 +1126,16 @@ export class SorterComponent implements OnChanges, OnInit, OnDestroy, AfterViewI
             this.triggerSorterAction(oldValue);
 
             this.setPopupSelection();
+        }
+
+        if (changes.sortDirection &amp;&amp; !changes.sortDirection.firstChange &amp;&amp; this.sortConfig?.direction !&#x3D;&#x3D; changes.sortDirection.currentValue) {
+            const oldValue &#x3D; this.sortConfig;
+            this.sortDirection &#x3D; changes.sortDirection.currentValue;
+            this.sortConfig &#x3D; _assign({}, this.sortConfig, {
+                direction: this.sortDirection,
+            });
+
+            this.triggerSorterAction(oldValue);
         }
 
         if (changes.appendToBody) {
