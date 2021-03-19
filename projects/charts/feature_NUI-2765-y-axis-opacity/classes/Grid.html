@@ -1,0 +1,1652 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@nova-ui/charts documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">@nova-ui/charts documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content class">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Classes</li>
+  <li>Grid</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">API</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/core/grid/grid.ts</code>
+        </p>
+
+
+
+            <p class="comment">
+                <h3>Implements</h3>
+            </p>
+            <p class="comment">
+                            <code><a href="../interfaces/IGrid.html" target="_self" >IGrid</a></code>
+            </p>
+
+            <p class="comment">
+                <h3>Example</h3>
+            </p>
+            <div class="io-description">
+            </div>
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#DEFAULT_BORDER_CLASS_NAME">DEFAULT_BORDER_CLASS_NAME</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#eventBus">eventBus</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#GRID_CLASS_NAME">GRID_CLASS_NAME</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#GRID_ELEMENTS_LAYER_NAME">GRID_ELEMENTS_LAYER_NAME</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#RENDERING_AREA_CLIP_PATH_PREFIX">RENDERING_AREA_CLIP_PATH_PREFIX</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#RENDERING_AREA_LAYER_NAME">RENDERING_AREA_LAYER_NAME</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#updateChartDimensionsSubject">updateChartDimensionsSubject</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#build">build</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#buildPlugins">buildPlugins</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#config">config</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#config">config</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#config">config</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getInteractiveArea">getInteractiveArea</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getLasagna">getLasagna</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#target">target</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#target">target</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#target">target</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#update">update</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#updateDimensions">updateDimensions</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#updateRanges">updateRanges</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+            <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="DEFAULT_BORDER_CLASS_NAME"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Static</span>
+                            DEFAULT_BORDER_CLASS_NAME</b>
+                            <a href="#DEFAULT_BORDER_CLASS_NAME"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&quot;nui-chart-border&quot;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/core/grid/grid.ts:29</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Class name applied to each of the grid&#39;s borders by default </p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="eventBus"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            eventBus</b>
+                            <a href="#eventBus"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>EventBus&lt;IChartEvent&gt;</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/core/grid/grid.ts:53</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Event bus provided by the chart </p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="GRID_CLASS_NAME"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Static</span>
+                            GRID_CLASS_NAME</b>
+                            <a href="#GRID_CLASS_NAME"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&quot;nui-chart-grid&quot;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/core/grid/grid.ts:26</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Class name for the grid </p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="GRID_ELEMENTS_LAYER_NAME"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Static</span>
+                            GRID_ELEMENTS_LAYER_NAME</b>
+                            <a href="#GRID_ELEMENTS_LAYER_NAME"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&quot;grid-elements&quot;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/core/grid/grid.ts:35</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Name for the lasagna layer containing the grid&#39;s rendered elements </p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="RENDERING_AREA_CLIP_PATH_PREFIX"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Static</span>
+                            RENDERING_AREA_CLIP_PATH_PREFIX</b>
+                            <a href="#RENDERING_AREA_CLIP_PATH_PREFIX"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&quot;clip-path_&quot;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/core/grid/grid.ts:32</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Prefix applied to the rendering area clip path id </p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="RENDERING_AREA_LAYER_NAME"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Static</span>
+                            RENDERING_AREA_LAYER_NAME</b>
+                            <a href="#RENDERING_AREA_LAYER_NAME"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&quot;rendering-area&quot;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/core/grid/grid.ts:38</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Name for the rendering area lasagna layer </p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="updateChartDimensionsSubject"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            updateChartDimensionsSubject</b>
+                            <a href="#updateChartDimensionsSubject"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Subject&lt;void&gt;</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/core/grid/grid.ts:50</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Subject for indicating that the chart&#39;s dimensions should be updated </p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="build"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            build
+                        </b>
+                        <a href="#build"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>build()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="133"
+                            class="link-to-prism">src/core/grid/grid.ts:133</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>See <a href="../interfaces/IGrid.html#build">IGrid</a> </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/IGrid.html" target="_self" >IGrid</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="buildPlugins"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            buildPlugins
+                        </b>
+                        <a href="#buildPlugins"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>buildPlugins(chart: <a href="../interfaces/IChart.html">IChart</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="173"
+                            class="link-to-prism">src/core/grid/grid.ts:173</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Derived classes override this method to build the grid&#39;s plugins</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>chart</td>
+                                    <td>
+                                                <code><a href="../interfaces/IChart.html" target="_self" >IChart</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The chart instance to pass to each plugin</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>IChartPlugin[]</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Default implementation returns an empty array</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="config"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            config
+                        </b>
+                        <a href="#config"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>config()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="107"
+                            class="link-to-prism">src/core/grid/grid.ts:107</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>See <a href="../interfaces/IGrid.html#config">IGrid</a> </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/IGridConfig.html" target="_self" >IGridConfig</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="config"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            config
+                        </b>
+                        <a href="#config"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>config(config: <a href="../interfaces/IGridConfig.html">IGridConfig</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="109"
+                            class="link-to-prism">src/core/grid/grid.ts:109</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>See <a href="../interfaces/IGrid.html#config">IGrid</a> </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>config</td>
+                                    <td>
+                                                <code><a href="../interfaces/IGridConfig.html" target="_self" >IGridConfig</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="config"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            config
+                        </b>
+                        <a href="#config"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>config(config?: <a href="../interfaces/IGridConfig.html">IGridConfig</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="111"
+                            class="link-to-prism">src/core/grid/grid.ts:111</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>See <a href="../interfaces/IGrid.html#config">IGrid</a> </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>config</td>
+                                    <td>
+                                                <code><a href="../interfaces/IGridConfig.html" target="_self" >IGridConfig</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>IGridConfig | </code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getInteractiveArea"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            getInteractiveArea
+                        </b>
+                        <a href="#getInteractiveArea"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getInteractiveArea()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="87"
+                            class="link-to-prism">src/core/grid/grid.ts:87</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>See <a href="../interfaces/IGrid.html#getInteractiveArea">IGrid</a> </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/typealiases.html#D3Selection" target="_self" >D3Selection&lt;SVGRectElement&gt;</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getLasagna"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            getLasagna
+                        </b>
+                        <a href="#getLasagna"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getLasagna()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="92"
+                            class="link-to-prism">src/core/grid/grid.ts:92</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>See <a href="../interfaces/IGrid.html#getLasagna">IGrid</a> </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Lasagna</code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="target"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            target
+                        </b>
+                        <a href="#target"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>target()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="120"
+                            class="link-to-prism">src/core/grid/grid.ts:120</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>See <a href="../interfaces/IGrid.html#target">IGrid</a> </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/typealiases.html#D3Selection" target="_self" >D3Selection&lt;SVGSVGElement&gt;</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="target"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            target
+                        </b>
+                        <a href="#target"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>target(target: <a href="../undefineds/D3Selection.html">D3Selection<SVGSVGElement></a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="122"
+                            class="link-to-prism">src/core/grid/grid.ts:122</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>See <a href="../interfaces/IGrid.html#target">IGrid</a> </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>target</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/typealiases.html#D3Selection" target="_self" >D3Selection&lt;SVGSVGElement&gt;</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/IGrid.html" target="_self" >IGrid</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="target"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            target
+                        </b>
+                        <a href="#target"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>target(target?: <a href="../undefineds/D3Selection.html">D3Selection<SVGSVGElement></a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="124"
+                            class="link-to-prism">src/core/grid/grid.ts:124</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>See <a href="../interfaces/IGrid.html#target">IGrid</a> </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>target</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/typealiases.html#D3Selection" target="_self" >D3Selection&lt;SVGSVGElement&gt;</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/IGrid.html" target="_self" >D3Selection | IGrid</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="update"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            update
+                        </b>
+                        <a href="#update"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>update()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="178"
+                            class="link-to-prism">src/core/grid/grid.ts:178</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>See <a href="../interfaces/IGrid.html#update">IGrid</a> </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/IGrid.html" target="_self" >IGrid</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateDimensions"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            updateDimensions
+                        </b>
+                        <a href="#updateDimensions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateDimensions(dimensions: <a href="../interfaces/IDimensions.html">Partial<IDimensions></a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="189"
+                            class="link-to-prism">src/core/grid/grid.ts:189</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>See <a href="../interfaces/IGrid.html#updateDimensions">IGrid</a> </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>dimensions</td>
+                                    <td>
+                                                <code><a href="../interfaces/IDimensions.html" target="_self" >Partial&lt;IDimensions&gt;</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/IGrid.html" target="_self" >IGrid</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateRanges"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            updateRanges
+                        </b>
+                        <a href="#updateRanges"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateRanges()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="205"
+                            class="link-to-prism">src/core/grid/grid.ts:205</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>See <a href="../interfaces/IGrid.html#updateRanges">IGrid</a> </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/IGrid.html" target="_self" >IGrid</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { select, Selection } from &quot;d3-selection&quot;;
+import each from &quot;lodash/each&quot;;
+import isEmpty from &quot;lodash/isEmpty&quot;;
+import { Subject } from &quot;rxjs&quot;;
+
+import { EventBus } from &quot;../common/event-bus&quot;;
+import { Lasagna } from &quot;../common/lasagna&quot;;
+import { ScalesIndex } from &quot;../common/scales/types&quot;;
+import { IChart, IChartEvent, IChartPlugin } from &quot;../common/types&quot;;
+import { D3Selection } from &quot;../common/types&quot;;
+import { UtilityService } from &quot;../common/utility.service&quot;;
+
+import { GridConfig } from &quot;./config/grid-config&quot;;
+import { IAllAround, IBorderConfig, IBorders, IDimensions, IGrid, IGridConfig } from &quot;./types&quot;;
+
+export const borderMidpoint &#x3D; 0.5;
+
+type BorderKey &#x3D; keyof IAllAround&lt;IBorderConfig&gt;;
+
+/**
+ * @implements {IGrid}
+ * Implementation for the dimensions, scaling, interactive area, and borders of a basic grid
+ */
+export abstract class Grid implements IGrid {
+    /** Class name for the grid */
+    public static GRID_CLASS_NAME &#x3D; &quot;nui-chart-grid&quot;;
+
+    /** Class name applied to each of the grid&#x27;s borders by default */
+    public static DEFAULT_BORDER_CLASS_NAME &#x3D; &quot;nui-chart-border&quot;;
+
+    /** Prefix applied to the rendering area clip path id */
+    public static RENDERING_AREA_CLIP_PATH_PREFIX &#x3D; &quot;clip-path_&quot;;
+
+    /** Name for the lasagna layer containing the grid&#x27;s rendered elements */
+    public static GRID_ELEMENTS_LAYER_NAME &#x3D; &quot;grid-elements&quot;;
+
+    /** Name for the rendering area lasagna layer */
+    public static RENDERING_AREA_LAYER_NAME &#x3D; &quot;rendering-area&quot;;
+
+    /** @ignore Height correction needed to prevent interaction gap between vertically stacked charts */
+    public static RENDER_AREA_HEIGHT_CORRECTION &#x3D; 1;
+
+    /** @ignore Width correction needed to prevent interaction gap between right side of grid and the edge of the rendering area */
+    public static RENDER_AREA_WIDTH_CORRECTION &#x3D; 1;
+
+    /** @ignore Width correction needed to sync bottom border length and grid width to tick placement */
+    public static TICK_DIMENSION_CORRECTION &#x3D; 1;
+
+    /** Subject for indicating that the chart&#x27;s dimensions should be updated */
+    public updateChartDimensionsSubject: Subject&lt;void&gt;;
+
+    /** Event bus provided by the chart */
+    public eventBus: EventBus&lt;IChartEvent&gt;;
+
+    /** d3 container for the grid */
+    protected container: D3Selection&lt;SVGGElement&gt;;
+
+    /** d3 selection for the grid&#x27;s rendering area clip path */
+    protected renderingAreaClipPath: D3Selection&lt;SVGRectElement&gt;;
+
+    /** d3 selection for the grid&#x27;s rendering area */
+    protected renderingArea: D3Selection&lt;SVGRectElement&gt;;
+
+    /** d3 selection for the grid&#x27;s interactive area */
+    protected interactiveArea: D3Selection&lt;SVGRectElement&gt;;
+
+    /** The grid&#x27;s layer manager */
+    protected lasagna: Lasagna;
+
+    /** Lasagna layer for the grid&#x27;s rendered elements */
+    protected gridElementsLayer: Selection&lt;SVGElement, any, SVGElement, any&gt;;
+
+    /** Definition of the grid&#x27;s borders as rendered */
+    protected borders: Partial&lt;IBorders&gt; &#x3D; {};
+
+    /** Property value of the grid&#x27;s scales */
+    protected _scales: ScalesIndex;
+
+    /** Property value of the grid&#x27;s configuration */
+    protected _config: IGridConfig;
+
+    /** Property value of the grid&#x27;s target d3 selection */
+    protected _target: D3Selection&lt;SVGSVGElement&gt;;
+
+
+    /** See {@link IGrid#getInteractiveArea} */
+    public getInteractiveArea(): D3Selection&lt;SVGRectElement&gt; {
+        return this.interactiveArea;
+    }
+
+    /** See {@link IGrid#getLasagna} */
+    public getLasagna(): Lasagna {
+        return this.lasagna;
+    }
+
+    /** @ignore */
+    public set scales(scales: ScalesIndex) {
+        this._scales &#x3D; scales;
+    }
+
+    /** @ignore */
+    public get scales(): ScalesIndex {
+        return this._scales;
+    }
+
+    /** See {@link IGrid#config} */
+    public config(): IGridConfig;
+    /** See {@link IGrid#config} */
+    public config(config: IGridConfig): this;
+    /** See {@link IGrid#config} */
+    public config(config?: IGridConfig): IGridConfig | this {
+        if (config &#x3D;&#x3D;&#x3D; undefined) {
+            return this._config;
+        }
+        this._config &#x3D; config;
+        return this;
+    }
+
+    /** See {@link IGrid#target} */
+    public target(): D3Selection&lt;SVGSVGElement&gt;;
+    /** See {@link IGrid#target} */
+    public target(target: D3Selection&lt;SVGSVGElement&gt;): IGrid;
+    /** See {@link IGrid#target} */
+    public target(target?: D3Selection&lt;SVGSVGElement&gt;): D3Selection&lt;SVGSVGElement&gt; | IGrid {
+        if (target &#x3D;&#x3D;&#x3D; undefined) {
+            return this._target;
+        }
+        this._target &#x3D; target;
+        return this;
+    }
+
+    /** See {@link IGrid#build} */
+    public build(): IGrid {
+        if (!this.config()) {
+            const config &#x3D; new GridConfig();
+            this.config(config);
+        }
+
+        this.container &#x3D; this._target.append(&quot;g&quot;)
+            .attrs({
+                &quot;class&quot;: Grid.GRID_CLASS_NAME,
+            });
+
+        const clipPathId &#x3D; Grid.RENDERING_AREA_CLIP_PATH_PREFIX + UtilityService.uuid();
+        // Asserting similar type to avoid refactoring all the grids
+        // TODO: Refactor lasagna service to accept multiple D3Selection types
+        //  or refactor grid implementations/interfaces to maintain the same selection type
+        this.lasagna &#x3D; new Lasagna(&lt;D3Selection&lt;SVGSVGElement&gt;&gt;(&lt;unknown&gt;this.container), clipPathId);
+        this.renderingArea &#x3D; this.buildRenderingArea(clipPathId);
+        this.adjustRenderingArea();
+
+        this.gridElementsLayer &#x3D; this.lasagna.addLayer({
+            name: Grid.GRID_ELEMENTS_LAYER_NAME,
+            order: 100,
+            clipped: false,
+        });
+
+        const borders &#x3D; this.buildBorders(this.gridElementsLayer);
+        if (borders) {
+            this.borders &#x3D; borders;
+        }
+
+        return this;
+    }
+
+    /**
+     * Derived classes override this method to build the grid&#x27;s plugins
+     *
+     * @param {IChart} chart The chart instance to pass to each plugin
+     *
+     * @returns {IChartPlugin[]} Default implementation returns an empty array
+     */
+    public buildPlugins(chart: IChart): IChartPlugin[] {
+        return [];
+    }
+
+    /** See {@link IGrid#update} */
+    public update(): IGrid {
+        if (isEmpty(this.scales)) {
+            return this;
+        }
+
+        this.updateBorders();
+        this.adjustRenderingArea();
+        return this;
+    }
+
+    /** See {@link IGrid#updateDimensions} */
+    public updateDimensions(dimensions: Partial&lt;IDimensions&gt;): IGrid {
+        const dimensionConfig &#x3D; this.config().dimension;
+
+        if (dimensions.width) {
+            dimensionConfig.outerWidth(dimensions.width - this.getOuterWidthDimensionCorrection());
+        }
+        if (dimensions.height) {
+            dimensionConfig.outerHeight(dimensions.height);
+        }
+
+        this.adjustRenderingArea();
+        this.updateRanges();
+
+        return this;
+    }
+    /** See {@link IGrid#updateRanges} */
+    public updateRanges(): IGrid {
+        this.update();
+        return this;
+    }
+
+    /**
+     * Calculate the width correction needed for accommodating grid elements that may extend beyond the chart&#x27;s configured width
+     */
+    protected getOuterWidthDimensionCorrection() {
+        return Grid.TICK_DIMENSION_CORRECTION;
+    }
+
+    /**
+     * Builds the grid borders as SVGElements based on the specified configuration
+     *
+     * @param {D3Selection} container d3 container for the borders
+     *
+     * @returns {Partial&lt;IBorders&gt;} The grid&#x27;s borders
+     */
+    protected buildBorders(container: D3Selection): Partial&lt;IBorders&gt; | undefined {
+        if (!this.config() || !this.config().borders) {
+            return;
+        }
+
+        const borderConfigs &#x3D; this.config().borders;
+        const borders: Partial&lt;IBorders&gt; &#x3D; {};
+        const borderKeys &#x3D; &lt;BorderKey[]&gt;Object.keys(borderConfigs);
+        each(borderKeys, (side: BorderKey) &#x3D;&gt; {
+            // We&#x27;re creating even invisible borders and updating visibility afterwards
+            if (borderConfigs[side]) {
+                borders[side] &#x3D; this.createBorder(container, borderConfigs[side]) ?? undefined;
+            }
+        });
+
+        return borders;
+    }
+
+    /**
+     * Adjusts the grid&#x27;s rendering area and clip path based on the grid&#x27;s configured width and height
+     */
+    protected adjustRenderingArea &#x3D; () &#x3D;&gt; {
+        const d &#x3D; this.config().dimension;
+        const renderingAreaClipPathAttrs &#x3D; {
+            &quot;width&quot;: d.width(),
+            &quot;height&quot;: d.height() + Grid.RENDER_AREA_HEIGHT_CORRECTION,
+            &quot;y&quot;: -Grid.RENDER_AREA_HEIGHT_CORRECTION,
+        };
+
+        const renderingAreaAttrs &#x3D; {
+            ...renderingAreaClipPathAttrs,
+            // Width correction needed to prevent interaction gap between right side of grid and the edge of the rendering area
+            &quot;width&quot;: d.width() &gt; 0 ? d.width() - Grid.RENDER_AREA_WIDTH_CORRECTION : d.width(),
+        };
+
+        this.renderingAreaClipPath.attrs(renderingAreaClipPathAttrs);
+        this.renderingArea.attrs(renderingAreaAttrs);
+    }
+
+    /**
+     * Builds the grid&#x27;s rendering area as a layer on the lasagna
+     *
+     * @param {string} clipPathId The clip path identifier
+     *
+     * @returns {D3Selection} The grid&#x27;s rendering area
+     */
+    private buildRenderingArea(clipPathId: string): D3Selection&lt;SVGRectElement&gt; {
+        this.renderingAreaClipPath &#x3D; this._target.append(&quot;clipPath&quot;)
+            .attr(&quot;id&quot;, clipPathId)
+            .append(&quot;rect&quot;);
+
+        const renderingAreaContainer &#x3D; this.lasagna.addLayer({
+            name: Grid.RENDERING_AREA_LAYER_NAME,
+            order: -1,
+            clipped: true,
+        });
+        return renderingAreaContainer.append(&quot;rect&quot;)
+            .attrs({
+                &quot;pointer-events&quot;: &quot;all&quot;,
+                &quot;fill&quot;: &quot;transparent&quot;,
+            });
+    }
+
+    /**
+     * Creates a border with the specified configuration in the provided container
+     *
+     * @param {D3Selection} container The container to append the border to
+     * @param {IBorderConfig} config The configuration to apply to the border
+     *
+     * @returns {SVGElement} The created border
+     */
+    private createBorder(container: D3Selection, config: IBorderConfig): SVGElement | null {
+        const border &#x3D; container.append(&quot;line&quot;)
+            .attr(&quot;class&quot;, config.className || Grid.DEFAULT_BORDER_CLASS_NAME);
+
+        if (config.width) {
+            // use style instead of attr to override css style
+            border.style(&quot;stroke-width&quot;, config.width);
+        }
+        if (config.color) {
+            // use style instead of attr to override css style
+            border.style(&quot;stroke&quot;, config.color);
+        }
+
+        return border.node();
+    }
+
+    // TODO: borders are evil. reconsider!
+    // We&#x27;re using borders instead of axis line and because of that we need to do these weird size adjustments
+    protected updateBottomBorder() {
+        if (!this.borders.bottom) {
+            throw new Error(&quot;BottomBorder is not defined&quot;);
+        }
+        select(this.borders.bottom)
+            .attrs({
+                &quot;x1&quot;: 0,
+                &quot;y1&quot;: this.config().dimension.height() - borderMidpoint,
+                &quot;x2&quot;: this.config().dimension.width() + Grid.TICK_DIMENSION_CORRECTION, // to get nice alignment with ticks
+                &quot;y2&quot;: this.config().dimension.height() - borderMidpoint,
+            })
+            .classed(&quot;hidden&quot;, !this._config.borders.bottom?.visible);
+    }
+
+    /**
+     * Updates the d3 line positioning and visibility attributes of each of the configured borders
+     */
+    protected updateBorders() {
+        if (this.borders.bottom) {
+            this.updateBottomBorder();
+        }
+        if (this.borders.top) {
+            select(this.borders.top)
+                .attrs({
+                    &quot;x1&quot;: 0,
+                    &quot;y1&quot;: borderMidpoint, // the line was outside of the viewport in some browser when set to 0
+                    &quot;x2&quot;: this.config().dimension.width() + Grid.TICK_DIMENSION_CORRECTION, // to get nice alignment with ticks
+                    &quot;y2&quot;: borderMidpoint,
+                })
+                .classed(&quot;hidden&quot;, !this._config.borders.top?.visible);
+        }
+        if (this.borders.right) {
+            select(this.borders.right)
+                .attrs({
+                    &quot;x1&quot;: this.config().dimension.width() - borderMidpoint,
+                    &quot;y1&quot;: 0,
+                    &quot;x2&quot;: this.config().dimension.width() - borderMidpoint,
+                    &quot;y2&quot;: this.config().dimension.height() + Grid.TICK_DIMENSION_CORRECTION, // to get nice alignment with ticks
+                })
+                .classed(&quot;hidden&quot;, !this._config.borders.right?.visible);
+        }
+        if (this.borders.left) {
+            select(this.borders.left)
+                .attrs({
+                    &quot;x1&quot;: borderMidpoint,
+                    &quot;y1&quot;: 0,
+                    &quot;x2&quot;: borderMidpoint,
+                    &quot;y2&quot;: this.config().dimension.height() + Grid.TICK_DIMENSION_CORRECTION, // to get nice alignment with ticks
+                })
+                .classed(&quot;hidden&quot;, !this._config.borders.left?.visible);
+        }
+    }
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'Grid.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
