@@ -6455,6 +6455,7 @@
 
             if (changes.sortDirection && !changes.sortDirection.firstChange && ((_c = this.sortConfig) === null || _c === void 0 ? void 0 : _c.direction) !== changes.sortDirection.currentValue) {
               var _oldValue = this.sortConfig;
+              this.sortDirection = changes.sortDirection.currentValue;
               this.sortConfig = lodash_assign__WEBPACK_IMPORTED_MODULE_1___default()({}, this.sortConfig, {
                 direction: this.sortDirection
               });
