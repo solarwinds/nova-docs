@@ -377,6 +377,9 @@
           }, {
             id: _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["CHART_VIEW_STATUS_EVENT"],
             name: "CHART_VIEW_STATUS_EVENT"
+          }, {
+            id: _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["SERIES_STATE_CHANGE_EVENT"],
+            name: "SERIES_STATE_CHANGE_EVENT"
           }];
           this.selectedEvent = this.eventFilters[0];
           this.selectedInteractionType = "";
@@ -427,8 +430,8 @@
                 scales = _this$getChartAttribu.scales,
                 seriesProcessor = _this$getChartAttribu.seriesProcessor;
 
-            this.chart = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["Chart"](grid);
-            this.chart.addPlugin(new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["InteractionLabelPlugin"]());
+            this.chartAssist = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["ChartAssist"](new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["Chart"](grid));
+            this.chartAssist.chart.addPlugin(new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["InteractionLabelPlugin"]());
             this.renderer = renderer;
             this.accessors = accessors;
             this.scales = scales;
@@ -440,7 +443,7 @@
             var _this3 = this;
 
             lodash_each__WEBPACK_IMPORTED_MODULE_5___default()(this.eventFilters, function (filter) {
-              _this3.chart.getEventBus().getStream(filter.id).subscribe(function (event) {
+              _this3.chartAssist.chart.getEventBus().getStream(filter.id).subscribe(function (event) {
                 if (_this3.selectedEvent.id === filter.id) {
                   if (!event.data.interactionType || _this3.selectedInteractionType === event.data.interactionType) {
                     recursivelyReplacePropValue(event, "dataSeries", "<< IChartSeries info is available here (replaced in output for brevity) >>");
@@ -460,7 +463,7 @@
             seriesSet = this.seriesProcessor ? this.seriesProcessor(seriesSet, function () {
               return true;
             }) : seriesSet;
-            this.chart.update(seriesSet);
+            this.chartAssist.update(seriesSet);
           }
         }, {
           key: "buildChartSeries",
