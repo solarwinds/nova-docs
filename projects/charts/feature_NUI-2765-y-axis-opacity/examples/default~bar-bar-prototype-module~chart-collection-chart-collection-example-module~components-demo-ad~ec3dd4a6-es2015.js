@@ -4729,8 +4729,8 @@ class XYGrid extends _grid__WEBPACK_IMPORTED_MODULE_19__["Grid"] {
         this.recalculateMargins(this.container);
         const untilDestroy = () => Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["takeUntil"])(this.eventBus.getStream(_constants__WEBPACK_IMPORTED_MODULE_9__["DESTROY_EVENT"]));
         this.eventBus.getStream(_constants__WEBPACK_IMPORTED_MODULE_9__["SERIES_STATE_CHANGE_EVENT"]).pipe(untilDestroy()).subscribe((e) => {
-            const axesOpacity = this.handleSeriesStateChange(e);
-            this.eventBus.getStream(_constants__WEBPACK_IMPORTED_MODULE_9__["XY_GRID_AXES_OPACITY_EVENT"]).next({ data: axesOpacity });
+            const axesStyles = this.handleSeriesStateChange(e);
+            this.eventBus.getStream(_constants__WEBPACK_IMPORTED_MODULE_9__["AXES_STYLE_CHANGE_EVENT"]).next({ data: axesStyles });
         });
         return this;
     }
@@ -4749,13 +4749,13 @@ class XYGrid extends _grid__WEBPACK_IMPORTED_MODULE_19__["Grid"] {
             { scaleId: this.leftScaleId, element: this.axisYLeft.group },
             { scaleId: this.rightScaleId, element: (_a = this.axisYRight) === null || _a === void 0 ? void 0 : _a.group },
         ];
-        const axesOpacity = this.calculateAxesOpacity(e, axes);
+        const axesStyles = this.calculateAxesStyles(e, axes);
         for (const a of axes) {
             if (a.scaleId) {
-                a.element.attr("opacity", axesOpacity[a.scaleId]);
+                a.element.attrs(axesStyles[a.scaleId]);
             }
         }
-        return axesOpacity;
+        return axesStyles;
     }
     /**
      * Return opacity for each axis
@@ -4764,7 +4764,7 @@ class XYGrid extends _grid__WEBPACK_IMPORTED_MODULE_19__["Grid"] {
      * @param axes
      * @private
      */
-    calculateAxesOpacity(e, axes) {
+    calculateAxesStyles(e, axes) {
         const renderStates = e.data;
         const emphasizedSeries = renderStates
             .filter(rs => rs.state === _renderers_types__WEBPACK_IMPORTED_MODULE_10__["RenderState"].emphasized && rs.series)
@@ -4777,7 +4777,7 @@ class XYGrid extends _grid__WEBPACK_IMPORTED_MODULE_19__["Grid"] {
             for (const emphasizedYScale of emphasizedYScales) {
                 if (emphasizedYScale.id === this.leftScaleId || emphasizedYScale.id === this.rightScaleId) {
                     return axes.reduce((acc, next) => {
-                        acc[next.scaleId] = emphasizedYScale.id === next.scaleId ? 1 : 0.1;
+                        acc[next.scaleId] = { opacity: emphasizedYScale.id === next.scaleId ? 1 : 0.1 };
                         return acc;
                     }, {});
                 }
@@ -4786,7 +4786,7 @@ class XYGrid extends _grid__WEBPACK_IMPORTED_MODULE_19__["Grid"] {
         }
         else {
             return axes.reduce((acc, next) => {
-                acc[next.scaleId] = 1;
+                acc[next.scaleId] = { opacity: 1 };
                 return acc;
             }, {});
         }
@@ -21510,7 +21510,7 @@ var InteractionType;
 /*!***************************!*\
   !*** ./src/public-api.ts ***!
   \***************************/
-/*! exports provided: ChartTooltipDirective, ChartTooltipComponent, ChartDonutContentComponent, ChartTooltipsComponent, ChartPopoverComponent, ChartMarkerComponent, NuiChartsModule, ChartComponent, GaugeMode, GAUGE_THICKNESS_DEFAULT, GaugeComponent, GaugeUtil, ChartCollectionIdDirective, ChartCollectionService, ChartPalette, MappedValueProvider, CHART_PALETTE_CS1, CHART_PALETTE_CS2, CHART_PALETTE_CS3, CHART_PALETTE_CS_S, CHART_PALETTE_CS_S_EXTENDED, CHART_MARKERS, ProcessedColorProvider, SequentialChartMarkerProvider, SequentialColorProvider, SequentialValueProvider, TextColorProvider, PathMarker, SvgMarker, defaultColorProvider, defaultPalette, defaultMarkerProvider, getColorValueByName, getAutomaticDomain, getAutomaticDomainWithIncludedInterval, getAutomaticDomainWithTicks, BandScale, PointScale, LinearScale, Scale, TimeScale, isDaylightSavingTime, TimeIntervalScale, datetimeFormatter, EMPTY_CONTINUOUS_DOMAIN, NORMALIZED_DOMAIN, isBandScale, hasInnerScale, NoopScale, convert, invert, ChartPlugin, DataManager, DataSeries, EventBus, InteractionType, Lasagna, MouseInteractiveArea, RenderEngine, Renderer, UtilityService, AxisConfig, BorderConfig, DimensionConfig, linearGaugeGridConfig, GridConfig, AreaGridConfig, BarGridConfig, BarHorizontalGridConfig, BarStatusGridConfig, sparkChartGridConfig, XYGridConfig, XYGrid, borderMidpoint, Grid, RadialGrid, ChartDonutContentPlugin, ChartPopoverPlugin, RadialGaugeLabelsPlugin, GAUGE_LABEL_FORMATTER_NAME_DEFAULT, GAUGE_LABELS_CONTAINER_CLASS, GAUGE_THRESHOLD_LABEL_CLASS, InteractionLabelPlugin, InteractionLinePlugin, MouseInteractiveAreaPlugin, RadialPopoverPlugin, RenderEnginePlugin, TOOLTIP_POSITION_OFFSET, getVerticalSetup, getHorizontalSetup, ChartTooltipsPlugin, RadialTooltipsPlugin, BarTooltipsPlugin, ZoomPlugin, ChartCollection, Chart, ChartAssist, LegendInteractionAssist, SparkChartAssist, ChartAssistEventType, ChartAssistRenderStateData, CssFilterId, GRAYSCALE_FILTER, GRAYSCALE_COLOR_MATRIX, LEGEND_SERIES_CLASS_NAME, LegendSeriesComponent, BasicLegendTileComponent, RichLegendTileComponent, LegendComponent, THRESHOLDS_MAIN_CHART_RENDERER_CONFIG, THRESHOLDS_SUMMARY_RENDERER_CONFIG, DEFAULT_MARKER_INTERACTION_CONFIG, GAUGE_THRESHOLD_MARKER_CLASS, RenderState, RenderLayerName, XYRenderer, SideIndicatorAccessors, SideIndicatorRenderer, XYAccessors, NoopAccessors, RectangleAccessors, NoopRenderer, BarRenderer, stackedPreprocessor, stack, barGrid, barScales, BarAccessors, barAccessors, HorizontalBarAccessors, VerticalBarAccessors, StatusAccessors, statusAccessors, BarHighlightStrategy, BarSeriesHighlightStrategy, DEFAULT_LINEAR_GAUGE_THRESHOLDS_RENDERER_CONFIG, LinearGaugeThresholdsRenderer, radialPreprocessor, radial, DEFAULT_RADIAL_RENDERER_CONFIG, RadialRenderer, DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG, RadialGaugeThresholdsRenderer, radialGaugeRendererConfig, RadialGaugeRenderingUtil, PieRenderer, radialGrid, radialScales, RadialAccessors, calculateMissingData, LineSelectSeriesInteractionStrategy, LineAccessors, LineRenderer, MissingDataLineRendererConfig, areaGrid, AreaAccessors, AreaRenderer, stackedAreaPreprocessor, stackedArea, stackedPercentageAreaPreprocessor, stackedPercentageArea, calculateDomainValueCombinedTotals, applyStackMetadata, stackedAreaAccessors, MOUSE_ACTIVE_EVENT, INTERACTION_VALUES_ACTIVE_EVENT, INTERACTION_VALUES_EVENT, INTERACTION_COORDINATES_EVENT, HIGHLIGHT_DATA_POINT_EVENT, SELECT_DATA_POINT_EVENT, HIGHLIGHT_SERIES_EVENT, INTERACTION_SERIES_EVENT, INTERACTION_DATA_POINTS_EVENT, INTERACTION_DATA_POINT_EVENT, DESTROY_EVENT, SET_DOMAIN_EVENT, REFRESH_EVENT, CHART_VIEW_STATUS_EVENT, SERIES_STATE_CHANGE_EVENT, XY_GRID_AXES_OPACITY_EVENT, CHART_COMPONENT, STANDARD_RENDER_LAYERS, DATA_POINT_NOT_FOUND, DATA_POINT_INTERACTION_RESET, IGNORE_INTERACTION_CLASS, ZoneBoundary, ThresholdsService, thresholdsSummaryGridConfig, thresholdsTopGridConfig */
+/*! exports provided: ChartTooltipDirective, ChartTooltipComponent, ChartDonutContentComponent, ChartTooltipsComponent, ChartPopoverComponent, ChartMarkerComponent, NuiChartsModule, ChartComponent, GaugeMode, GAUGE_THICKNESS_DEFAULT, GaugeComponent, GaugeUtil, ChartCollectionIdDirective, ChartCollectionService, ChartPalette, MappedValueProvider, CHART_PALETTE_CS1, CHART_PALETTE_CS2, CHART_PALETTE_CS3, CHART_PALETTE_CS_S, CHART_PALETTE_CS_S_EXTENDED, CHART_MARKERS, ProcessedColorProvider, SequentialChartMarkerProvider, SequentialColorProvider, SequentialValueProvider, TextColorProvider, PathMarker, SvgMarker, defaultColorProvider, defaultPalette, defaultMarkerProvider, getColorValueByName, getAutomaticDomain, getAutomaticDomainWithIncludedInterval, getAutomaticDomainWithTicks, BandScale, PointScale, LinearScale, Scale, TimeScale, isDaylightSavingTime, TimeIntervalScale, datetimeFormatter, EMPTY_CONTINUOUS_DOMAIN, NORMALIZED_DOMAIN, isBandScale, hasInnerScale, NoopScale, convert, invert, ChartPlugin, DataManager, DataSeries, EventBus, InteractionType, Lasagna, MouseInteractiveArea, RenderEngine, Renderer, UtilityService, AxisConfig, BorderConfig, DimensionConfig, linearGaugeGridConfig, GridConfig, AreaGridConfig, BarGridConfig, BarHorizontalGridConfig, BarStatusGridConfig, sparkChartGridConfig, XYGridConfig, XYGrid, borderMidpoint, Grid, RadialGrid, ChartDonutContentPlugin, ChartPopoverPlugin, RadialGaugeLabelsPlugin, GAUGE_LABEL_FORMATTER_NAME_DEFAULT, GAUGE_LABELS_CONTAINER_CLASS, GAUGE_THRESHOLD_LABEL_CLASS, InteractionLabelPlugin, InteractionLinePlugin, MouseInteractiveAreaPlugin, RadialPopoverPlugin, RenderEnginePlugin, TOOLTIP_POSITION_OFFSET, getVerticalSetup, getHorizontalSetup, ChartTooltipsPlugin, RadialTooltipsPlugin, BarTooltipsPlugin, ZoomPlugin, ChartCollection, Chart, ChartAssist, LegendInteractionAssist, SparkChartAssist, ChartAssistEventType, ChartAssistRenderStateData, CssFilterId, GRAYSCALE_FILTER, GRAYSCALE_COLOR_MATRIX, LEGEND_SERIES_CLASS_NAME, LegendSeriesComponent, BasicLegendTileComponent, RichLegendTileComponent, LegendComponent, THRESHOLDS_MAIN_CHART_RENDERER_CONFIG, THRESHOLDS_SUMMARY_RENDERER_CONFIG, DEFAULT_MARKER_INTERACTION_CONFIG, GAUGE_THRESHOLD_MARKER_CLASS, RenderState, RenderLayerName, XYRenderer, SideIndicatorAccessors, SideIndicatorRenderer, XYAccessors, NoopAccessors, RectangleAccessors, NoopRenderer, BarRenderer, stackedPreprocessor, stack, barGrid, barScales, BarAccessors, barAccessors, HorizontalBarAccessors, VerticalBarAccessors, StatusAccessors, statusAccessors, BarHighlightStrategy, BarSeriesHighlightStrategy, DEFAULT_LINEAR_GAUGE_THRESHOLDS_RENDERER_CONFIG, LinearGaugeThresholdsRenderer, radialPreprocessor, radial, DEFAULT_RADIAL_RENDERER_CONFIG, RadialRenderer, DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG, RadialGaugeThresholdsRenderer, radialGaugeRendererConfig, RadialGaugeRenderingUtil, PieRenderer, radialGrid, radialScales, RadialAccessors, calculateMissingData, LineSelectSeriesInteractionStrategy, LineAccessors, LineRenderer, MissingDataLineRendererConfig, areaGrid, AreaAccessors, AreaRenderer, stackedAreaPreprocessor, stackedArea, stackedPercentageAreaPreprocessor, stackedPercentageArea, calculateDomainValueCombinedTotals, applyStackMetadata, stackedAreaAccessors, MOUSE_ACTIVE_EVENT, INTERACTION_VALUES_ACTIVE_EVENT, INTERACTION_VALUES_EVENT, INTERACTION_COORDINATES_EVENT, HIGHLIGHT_DATA_POINT_EVENT, SELECT_DATA_POINT_EVENT, HIGHLIGHT_SERIES_EVENT, INTERACTION_SERIES_EVENT, INTERACTION_DATA_POINTS_EVENT, INTERACTION_DATA_POINT_EVENT, DESTROY_EVENT, SET_DOMAIN_EVENT, REFRESH_EVENT, CHART_VIEW_STATUS_EVENT, SERIES_STATE_CHANGE_EVENT, AXES_STYLE_CHANGE_EVENT, CHART_COMPONENT, STANDARD_RENDER_LAYERS, DATA_POINT_NOT_FOUND, DATA_POINT_INTERACTION_RESET, IGNORE_INTERACTION_CLASS, ZoneBoundary, ThresholdsService, thresholdsSummaryGridConfig, thresholdsTopGridConfig */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -21887,7 +21887,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SERIES_STATE_CHANGE_EVENT", function() { return _constants__WEBPACK_IMPORTED_MODULE_13__["SERIES_STATE_CHANGE_EVENT"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "XY_GRID_AXES_OPACITY_EVENT", function() { return _constants__WEBPACK_IMPORTED_MODULE_13__["XY_GRID_AXES_OPACITY_EVENT"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AXES_STYLE_CHANGE_EVENT", function() { return _constants__WEBPACK_IMPORTED_MODULE_13__["AXES_STYLE_CHANGE_EVENT"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CHART_COMPONENT", function() { return _constants__WEBPACK_IMPORTED_MODULE_13__["CHART_COMPONENT"]; });
 
@@ -22693,7 +22693,7 @@ function brush(dim) {
 /*!**************************!*\
   !*** ./src/constants.ts ***!
   \**************************/
-/*! exports provided: MOUSE_ACTIVE_EVENT, INTERACTION_VALUES_ACTIVE_EVENT, INTERACTION_VALUES_EVENT, INTERACTION_COORDINATES_EVENT, HIGHLIGHT_DATA_POINT_EVENT, SELECT_DATA_POINT_EVENT, HIGHLIGHT_SERIES_EVENT, INTERACTION_SERIES_EVENT, INTERACTION_DATA_POINTS_EVENT, INTERACTION_DATA_POINT_EVENT, DESTROY_EVENT, SET_DOMAIN_EVENT, REFRESH_EVENT, CHART_VIEW_STATUS_EVENT, SERIES_STATE_CHANGE_EVENT, XY_GRID_AXES_OPACITY_EVENT, CHART_COMPONENT, STANDARD_RENDER_LAYERS, DATA_POINT_NOT_FOUND, DATA_POINT_INTERACTION_RESET, IGNORE_INTERACTION_CLASS */
+/*! exports provided: MOUSE_ACTIVE_EVENT, INTERACTION_VALUES_ACTIVE_EVENT, INTERACTION_VALUES_EVENT, INTERACTION_COORDINATES_EVENT, HIGHLIGHT_DATA_POINT_EVENT, SELECT_DATA_POINT_EVENT, HIGHLIGHT_SERIES_EVENT, INTERACTION_SERIES_EVENT, INTERACTION_DATA_POINTS_EVENT, INTERACTION_DATA_POINT_EVENT, DESTROY_EVENT, SET_DOMAIN_EVENT, REFRESH_EVENT, CHART_VIEW_STATUS_EVENT, SERIES_STATE_CHANGE_EVENT, AXES_STYLE_CHANGE_EVENT, CHART_COMPONENT, STANDARD_RENDER_LAYERS, DATA_POINT_NOT_FOUND, DATA_POINT_INTERACTION_RESET, IGNORE_INTERACTION_CLASS */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -22713,7 +22713,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REFRESH_EVENT", function() { return REFRESH_EVENT; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CHART_VIEW_STATUS_EVENT", function() { return CHART_VIEW_STATUS_EVENT; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SERIES_STATE_CHANGE_EVENT", function() { return SERIES_STATE_CHANGE_EVENT; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "XY_GRID_AXES_OPACITY_EVENT", function() { return XY_GRID_AXES_OPACITY_EVENT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AXES_STYLE_CHANGE_EVENT", function() { return AXES_STYLE_CHANGE_EVENT; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CHART_COMPONENT", function() { return CHART_COMPONENT; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "STANDARD_RENDER_LAYERS", function() { return STANDARD_RENDER_LAYERS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DATA_POINT_NOT_FOUND", function() { return DATA_POINT_NOT_FOUND; });
@@ -22738,7 +22738,7 @@ const SET_DOMAIN_EVENT = "set_domain";
 const REFRESH_EVENT = "refresh";
 const CHART_VIEW_STATUS_EVENT = "chart_view_status";
 const SERIES_STATE_CHANGE_EVENT = "series_state_change";
-const XY_GRID_AXES_OPACITY_EVENT = "xy_grid_axes_opacity";
+const AXES_STYLE_CHANGE_EVENT = "axes_style_change";
 /** @ignore */
 const CHART_COMPONENT = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["InjectionToken"]("chart_component");
 /** @ignore */

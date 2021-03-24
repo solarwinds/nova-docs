@@ -388,6 +388,12 @@
       var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! rxjs */
       "qCKp");
+      /* harmony import */
+
+
+      var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      /*! rxjs/operators */
+      "kU1M");
 
       var LineChartWith2YAxesExampleComponent = /*#__PURE__*/function () {
         function LineChartWith2YAxesExampleComponent(changeDetector) {
@@ -398,18 +404,18 @@
         }
 
         _createClass(LineChartWith2YAxesExampleComponent, [{
-          key: "leftAxisOpacity",
+          key: "leftAxisStyles",
           get: function get() {
             var _a, _b;
 
-            return (_b = (_a = this.axesOpacity) === null || _a === void 0 ? void 0 : _a[this.yLeftScale.id]) !== null && _b !== void 0 ? _b : 1;
+            return (_b = (_a = this.axesStyles) === null || _a === void 0 ? void 0 : _a[this.yLeftScale.id]) !== null && _b !== void 0 ? _b : {};
           }
         }, {
-          key: "rightAxisOpacity",
+          key: "rightAxisStyles",
           get: function get() {
             var _a, _b;
 
-            return (_b = (_a = this.axesOpacity) === null || _a === void 0 ? void 0 : _a[this.yRightScale.id]) !== null && _b !== void 0 ? _b : 1;
+            return (_b = (_a = this.axesStyles) === null || _a === void 0 ? void 0 : _a[this.yRightScale.id]) !== null && _b !== void 0 ? _b : {};
           }
         }, {
           key: "ngOnInit",
@@ -453,10 +459,10 @@
               });
             }); // chart assist needs to be used to update data
 
-            this.chartAssist.update(seriesSet); //
+            this.chartAssist.update(seriesSet); // Here we subscribe to an event indicating changes on axis styling. We use that information to style axis labels
 
-            this.chart.eventBus.getStream(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["XY_GRID_AXES_OPACITY_EVENT"]).subscribe(function (event) {
-              _this.axesOpacity = event.data;
+            this.chart.eventBus.getStream(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["AXES_STYLE_CHANGE_EVENT"]).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["takeUntil"])(this.destroy$)).subscribe(function (event) {
+              _this.axesStyles = event.data;
 
               _this.changeDetector.markForCheck();
             });

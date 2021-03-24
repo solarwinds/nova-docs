@@ -469,7 +469,10 @@ export interface IInteractionDataPointEvent extends IInteractionPayload {
     dataPoint: IDataPoint;
 }
 
-export type IXYGridOpacityEventPayload &#x3D; Record&lt;string, number&gt;;
+/**
+ * Payload for axes style change when emphasizing series on grid
+ */
+export type IAxesStyleChangeEventPayload &#x3D; Record&lt;string, Record&lt;string, any&gt;&gt;;
 
 /**
  * Payload for interaction events regarding one or more data points

@@ -2199,14 +2199,14 @@ import isUndefined from &quot;lodash/isUndefined&quot;;
 import uniq from &quot;lodash/uniq&quot;;
 import { takeUntil } from &quot;rxjs/operators&quot;;
 
-import { DESTROY_EVENT, IGNORE_INTERACTION_CLASS, SERIES_STATE_CHANGE_EVENT, XY_GRID_AXES_OPACITY_EVENT } from &quot;../../constants&quot;;
+import { AXES_STYLE_CHANGE_EVENT, DESTROY_EVENT, IGNORE_INTERACTION_CLASS, SERIES_STATE_CHANGE_EVENT } from &quot;../../constants&quot;;
 import { RenderState } from &quot;../../renderers/types&quot;;
 import { MouseInteractiveArea } from &quot;../common/mouse-interactive-area&quot;;
 import { BandScale } from &quot;../common/scales/band-scale&quot;;
 import { getAutomaticDomain, getAutomaticDomainWithTicks } from &quot;../common/scales/domain-calculation/automatic-domain&quot;;
 import { LinearScale } from &quot;../common/scales/linear-scale&quot;;
 import { IBandScale, IScale, ScalesIndex } from &quot;../common/scales/types&quot;;
-import { D3Selection, IChart, IChartEvent, IChartPlugin, IRenderStateData, IXYGridOpacityEventPayload } from &quot;../common/types&quot;;
+import { D3Selection, IAxesStyleChangeEventPayload, IChart, IChartEvent, IChartPlugin, IRenderStateData } from &quot;../common/types&quot;;
 import { InteractionLabelPlugin } from &quot;../plugins/interaction/interaction-label-plugin&quot;;
 import { InteractionLinePlugin } from &quot;../plugins/interaction/interaction-line-plugin&quot;;
 import { MouseInteractiveAreaPlugin } from &quot;../plugins/mouse-interactive-area-plugin&quot;;
@@ -2360,9 +2360,9 @@ export class XYGrid extends Grid implements IGrid {
 
         const untilDestroy &#x3D; &lt;T&gt;() &#x3D;&gt; takeUntil&lt;T&gt;(this.eventBus.getStream(DESTROY_EVENT));
         this.eventBus.getStream(SERIES_STATE_CHANGE_EVENT).pipe(untilDestroy()).subscribe((e: IChartEvent) &#x3D;&gt; {
-            const axesOpacity &#x3D; this.handleSeriesStateChange(e);
+            const axesStyles &#x3D; this.handleSeriesStateChange(e);
 
-            this.eventBus.getStream(XY_GRID_AXES_OPACITY_EVENT).next({ data: axesOpacity } as IChartEvent&lt;IXYGridOpacityEventPayload&gt;);
+            this.eventBus.getStream(AXES_STYLE_CHANGE_EVENT).next({ data: axesStyles } as IChartEvent&lt;IAxesStyleChangeEventPayload&gt;);
         });
 
         return this;
@@ -2384,15 +2384,15 @@ export class XYGrid extends Grid implements IGrid {
             { scaleId: this.rightScaleId, element: this.axisYRight?.group },
         ];
 
-        const axesOpacity &#x3D; this.calculateAxesOpacity(e, axes);
+        const axesStyles &#x3D; this.calculateAxesStyles(e, axes);
 
         for (const a of axes) {
             if (a.scaleId) {
-                a.element.attr(&quot;opacity&quot;, axesOpacity[a.scaleId]);
+                a.element.attrs(axesStyles[a.scaleId]);
             }
         }
 
-        return axesOpacity;
+        return axesStyles;
     }
 
     /**
@@ -2402,7 +2402,7 @@ export class XYGrid extends Grid implements IGrid {
      * @param axes
      * @private
      */
-    private calculateAxesOpacity(e: IChartEvent, axes: IScaleSVGElement[]): Record&lt;string, number&gt; {
+    private calculateAxesStyles(e: IChartEvent, axes: IScaleSVGElement[]): Record&lt;string, Record&lt;string, any&gt;&gt; {
         const renderStates &#x3D; e.data as IRenderStateData[];
 
         const emphasizedSeries &#x3D; renderStates
@@ -2418,17 +2418,17 @@ export class XYGrid extends Grid implements IGrid {
             for (const emphasizedYScale of emphasizedYScales) {
                 if (emphasizedYScale.id &#x3D;&#x3D;&#x3D; this.leftScaleId || emphasizedYScale.id &#x3D;&#x3D;&#x3D; this.rightScaleId) {
                     return axes.reduce((acc, next) &#x3D;&gt; {
-                        acc[next.scaleId] &#x3D; emphasizedYScale.id &#x3D;&#x3D;&#x3D; next.scaleId ? 1 : 0.1;
+                        acc[next.scaleId] &#x3D; { opacity: emphasizedYScale.id &#x3D;&#x3D;&#x3D; next.scaleId ? 1 : 0.1 };
                         return acc;
-                    }, {} as Record&lt;string, number&gt;);
+                    }, {} as Record&lt;string, Record&lt;string, any&gt;&gt;);
                 }
             }
             return {};
         } else {
             return axes.reduce((acc, next) &#x3D;&gt; {
-                acc[next.scaleId] &#x3D; 1;
+                acc[next.scaleId] &#x3D; { opacity: 1 };
                 return acc;
-            }, {} as Record&lt;string, number&gt;);
+            }, {} as Record&lt;string, Record&lt;string, any&gt;&gt;);
         }
     }
 
