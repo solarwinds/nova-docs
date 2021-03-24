@@ -428,8 +428,7 @@
                 accessors = _this$getChartAttribu.accessors,
                 renderer = _this$getChartAttribu.renderer,
                 scales = _this$getChartAttribu.scales,
-                seriesProcessor = _this$getChartAttribu.seriesProcessor; // this.chart = new Chart(grid);
-
+                seriesProcessor = _this$getChartAttribu.seriesProcessor;
 
             this.chartAssist = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["ChartAssist"](new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["Chart"](grid));
             this.chartAssist.chart.addPlugin(new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["InteractionLabelPlugin"]());

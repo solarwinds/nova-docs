@@ -279,7 +279,6 @@ let EventSamplerComponent = class EventSamplerComponent {
     }
     buildChart() {
         const { grid, accessors, renderer, scales, seriesProcessor } = this.getChartAttributes(this.selectedChartType);
-        // this.chart = new Chart(grid);
         this.chartAssist = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["ChartAssist"](new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["Chart"](grid));
         this.chartAssist.chart.addPlugin(new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["InteractionLabelPlugin"]());
         this.renderer = renderer;
