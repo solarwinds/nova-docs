@@ -245,7 +245,6 @@ let EventSamplerComponent = class EventSamplerComponent {
             {
                 id: _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["SERIES_STATE_CHANGE_EVENT"],
                 name: "SERIES_STATE_CHANGE_EVENT",
-                interactionTypes: [_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["InteractionType"].MouseMove],
             },
         ];
         this.selectedEvent = this.eventFilters[0];
@@ -280,9 +279,9 @@ let EventSamplerComponent = class EventSamplerComponent {
     }
     buildChart() {
         const { grid, accessors, renderer, scales, seriesProcessor } = this.getChartAttributes(this.selectedChartType);
-        this.chart = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["Chart"](grid);
-        this.chartAssist = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["ChartAssist"](this.chart);
-        this.chart.addPlugin(new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["InteractionLabelPlugin"]());
+        // this.chart = new Chart(grid);
+        this.chartAssist = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["ChartAssist"](new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["Chart"](grid));
+        this.chartAssist.chart.addPlugin(new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["InteractionLabelPlugin"]());
         this.renderer = renderer;
         this.accessors = accessors;
         this.scales = scales;
@@ -290,7 +289,7 @@ let EventSamplerComponent = class EventSamplerComponent {
     }
     subscribeToChart() {
         lodash_each__WEBPACK_IMPORTED_MODULE_5___default()(this.eventFilters, filter => {
-            this.chart.getEventBus().getStream(filter.id).subscribe((event) => {
+            this.chartAssist.chart.getEventBus().getStream(filter.id).subscribe((event) => {
                 if (this.selectedEvent.id === filter.id) {
                     if (!event.data.interactionType || this.selectedInteractionType === event.data.interactionType) {
                         recursivelyReplacePropValue(event, "dataSeries", "<< IChartSeries info is available here (replaced in output for brevity) >>");
