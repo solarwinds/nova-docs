@@ -4024,7 +4024,7 @@ export class BarRenderer extends XYRenderer&lt;IRectangleAccessors&gt; {
         barContainers.merge(bars as any)
             .property(generatedAttrs, (d, i) &#x3D;&gt; attrsGenerator(d, i)) // This saves attrsGenerator() output to local d3 variable generatedAttrs
             .select&lt;Element&gt;(&quot;rect&quot;)
-            // tslint:disable-next-line:max-line-length
+            // eslint-disable-next-line max-len
             .attr(&quot;class&quot;, (d, i) &#x3D;&gt; &#x60;${BarRenderer.BAR_RECT_CLASS} ${this.config.barClass}${this.config.pointerEvents ? &quot; pointer-events&quot; : &quot;&quot;}&#x60; + getCssClass(d, i))
             .style(&quot;cursor&quot;, this.config.cursor ?? &quot;&quot;)
             .style(&quot;stroke-width&quot;, this.config?.strokeWidth ?? &quot;&quot;)

@@ -483,7 +483,7 @@ let ChartMarkersExampleComponent = class ChartMarkersExampleComponent {
         };
         this.chartAssist = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["ChartAssist"](this.chart);
         this.standardMarkers = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["SequentialChartMarkerProvider"](_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["CHART_MARKERS"]);
-        // tslint:disable:max-line-length
+        /* eslint-disable max-len */
         this.customMarkers = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["SequentialChartMarkerProvider"]([
             new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["SvgMarker"](`<g transform="translate(-10, -10)">
             <circle class="nui-chart--path__outline" fill='#D50000' cx='10' cy='10' r='10'></circle>

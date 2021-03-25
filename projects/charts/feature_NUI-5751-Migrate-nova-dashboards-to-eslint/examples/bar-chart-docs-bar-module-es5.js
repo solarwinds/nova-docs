@@ -404,7 +404,8 @@
 
       var _chart_docs_bar_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(
       /*! ./chart-docs-bar.component */
-      "ld5b");
+      "ld5b"); // eslint-disable-next-line max-len
+
 
       var exampleRoutes = [{
         path: "",

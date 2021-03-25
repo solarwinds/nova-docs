@@ -33,7 +33,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// tslint:disable-next-line: import-blacklist
+// eslint-disable-next-line no-restricted-imports
 
 let StackedBarPrototypeComponent = class StackedBarPrototypeComponent {
     constructor() {
