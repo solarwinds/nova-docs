@@ -2586,7 +2586,7 @@ export class BandScale&lt;T &#x3D; string&gt; extends Scale&lt;T&gt; implements 
         } else {
             // bisector needs to have values sorted in natural order, so we reverse the domain first ...
             const rangeMidPoints &#x3D; this.getRangeMidPoints(
-                domain.map((d: any, i: number) &#x3D;&gt; this._d3Scale(domain[domain.length - 1 - i /* ... here ...*/])));
+                domain.map((d: any, i: number) &#x3D;&gt; this._d3Scale(domain[domain.length - 1 - i /* ... here ... */])));
             return domain[domain.length - 1 - bisect(rangeMidPoints, coordinate) /* ... and reverse it back here */];
         }
     }

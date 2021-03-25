@@ -682,7 +682,7 @@
 
       var _line_chart_with_rich_tile_legend_line_chart_with_rich_tile_legend_example_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(
       /*! ./line-chart-with-rich-tile-legend/line-chart-with-rich-tile-legend.example.component */
-      "cEyI"); // tslint:disable-next-line: max-line-length
+      "cEyI"); // eslint-disable-next-line max-len
 
 
       var exampleRoutes = [{

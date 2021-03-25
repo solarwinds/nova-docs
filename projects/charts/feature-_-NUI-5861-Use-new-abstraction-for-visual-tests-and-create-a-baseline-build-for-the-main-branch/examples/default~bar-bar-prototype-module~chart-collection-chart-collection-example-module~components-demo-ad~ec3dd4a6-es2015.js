@@ -2786,7 +2786,7 @@ class ChartAssist {
         if (seriesProcessor) {
             this.seriesProcessor = seriesProcessor;
         }
-        /* tslint:disable-next-line:no-use-before-declare */
+        /* eslint-disable-next-line @typescript-eslint/no-use-before-define */
         this.legendInteractionAssist = new LegendInteractionAssist(this);
         this.syncHandlerMap = {
             [_types__WEBPACK_IMPORTED_MODULE_8__["ChartAssistEventType"].EmphasizeSeries]: this.emphasizeSeries,
@@ -11790,7 +11790,7 @@ const CHART_PALETTE_CS_S_EXTENDED = [
     "var(--nui-color-semantic-info)",
     "var(--nui-color-semantic-info-bg)",
 ];
-// tslint:disable:max-line-length
+/* eslint-disable max-len */
 /** Standard shapes for chart markers */
 const regularShapes = [
     "m0 0m-4 0a4 4 0 1 0 8 0 4 4 0 1 0-8 0z",
@@ -11809,7 +11809,7 @@ const emptyShapes = [
     "m0 4-4-8 8.001 0-4.001 8zm0-3.354 1.573-3.146-3.145 0 1.572 3.146z",
     "m0-1.951-2.237 1.626.855 2.63 2.766 0 .855-2.63-2.237-1.626zm0-1.854 4.001 2.907-1.528 4.703-4.945 0-1.528-4.703 4.001-2.907z",
 ];
-// tslint:enable:max-line-length
+/* eslint-enable max-len */
 /** Default chart marker set */
 const CHART_MARKERS = [
     ...regularShapes
@@ -14622,7 +14622,7 @@ LegendComponent.propDecorators = {
 LegendComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
         selector: "nui-legend",
-        // tslint:disable-next-line
+        // eslint-disable-next-line
         host: { "class": "d-inline-block" },
         template: _raw_loader_legend_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
         encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_2__["ViewEncapsulation"].Emulated,
@@ -15962,10 +15962,10 @@ class UtilityService {
     static uuid() {
         let dt = new Date().getTime();
         const uuid = "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
-            // tslint:disable-next-line
+            // eslint-disable-next-line
             const r = (dt + Math.random() * 16) % 16 | 0;
             dt = Math.floor(dt / 16);
-            // tslint:disable-next-line
+            // eslint-disable-next-line
             return (c === "x" ? r : (r & 0x3 | 0x8)).toString(16);
         });
         return uuid;
@@ -16052,7 +16052,7 @@ class UtilityService {
     static findNearestIndex(haystack, needle, selector = lodash_identity__WEBPACK_IMPORTED_MODULE_0___default.a) {
         let low = 0, high = haystack == null ? low : haystack.length;
         while (low < high) {
-            // tslint:disable-next-line:no-bitwise
+            // eslint-disable-next-line no-bitwise
             const mid = (low + high) >>> 1, computed = selector(haystack[mid], mid);
             if (computed !== null && (computed < needle)) {
                 low = mid + 1;
@@ -16542,7 +16542,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lodash_unionBy__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash/unionBy */ "hxiM");
 /* harmony import */ var lodash_unionBy__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash_unionBy__WEBPACK_IMPORTED_MODULE_0__);
 
-/** @ignore*/
+/** @ignore */
 function gatherCategories(chartSeriesSet, type = "category") {
     return chartSeriesSet.reduce((acc, chartSeries) => {
         const categoryAccessor = chartSeries.accessors.data[type];
@@ -16801,7 +16801,7 @@ class BandScale extends _scale__WEBPACK_IMPORTED_MODULE_6__["Scale"] {
         }
         else {
             // bisector needs to have values sorted in natural order, so we reverse the domain first ...
-            const rangeMidPoints = this.getRangeMidPoints(domain.map((d, i) => this._d3Scale(domain[domain.length - 1 - i /* ... here ...*/])));
+            const rangeMidPoints = this.getRangeMidPoints(domain.map((d, i) => this._d3Scale(domain[domain.length - 1 - i /* ... here ... */])));
             return domain[domain.length - 1 - Object(d3_array__WEBPACK_IMPORTED_MODULE_0__["bisect"])(rangeMidPoints, coordinate) /* ... and reverse it back here */];
         }
     }
@@ -21288,7 +21288,7 @@ function stackedPreprocessor(chartSeriesSet, isVisible) {
         });
         chartSeries.data = reorderedData;
         return acc;
-    }, Array.apply(null, Array(categories.length)).map(() => 0));
+    }, Array(categories.length).fill(0));
     return chartSeriesSet;
 }
 function stack(chartSeriesSet) {
@@ -23200,7 +23200,7 @@ class BarRenderer extends _xy_renderer__WEBPACK_IMPORTED_MODULE_11__["XYRenderer
         barContainers.merge(bars)
             .property(generatedAttrs, (d, i) => attrsGenerator(d, i)) // This saves attrsGenerator() output to local d3 variable generatedAttrs
             .select("rect")
-            // tslint:disable-next-line:max-line-length
+            // eslint-disable-next-line max-len
             .attr("class", (d, i) => `${BarRenderer.BAR_RECT_CLASS} ${this.config.barClass}${this.config.pointerEvents ? " pointer-events" : ""}` + getCssClass(d, i))
             .style("cursor", (_a = this.config.cursor) !== null && _a !== void 0 ? _a : "")
             .style("stroke-width", (_c = (_b = this.config) === null || _b === void 0 ? void 0 : _b.strokeWidth) !== null && _c !== void 0 ? _c : "")
@@ -28095,7 +28095,7 @@ LegendSeriesComponent.propDecorators = {
 };
 LegendSeriesComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
-        // tslint:disable-next-line
+        // eslint-disable-next-line
         host: { "class": LEGEND_SERIES_CLASS_NAME },
         selector: "nui-legend-series",
         template: _raw_loader_legend_series_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
@@ -30473,7 +30473,7 @@ class RenderEngine {
         this.dataManager = dataManager;
         /** Subject for emitting events to the outside world about data points closest to an interaction on the chart */
         this.interactionDataPointsSubject = new rxjs__WEBPACK_IMPORTED_MODULE_4__["Subject"]();
-        /** Subject passed to the renderer for triggering events regarding a data point*/
+        /** Subject passed to the renderer for triggering events regarding a data point */
         this.rendererSubject = new rxjs__WEBPACK_IMPORTED_MODULE_4__["Subject"]();
         this.highlightedDataPoints = {};
         this.renderLayers = {};
