@@ -17966,14 +17966,15 @@
             var markerValues = seriesConfig.thresholds.map(function (threshold) {
               return {
                 category: "gauge",
-                hit: threshold <= seriesConfig.value,
-                value: threshold
+                value: threshold,
+                hit: threshold <= seriesConfig.value
               };
             }); // tack the max value onto the end (used for donut arc calculation)
 
             return [].concat(_toConsumableArray(markerValues), [{
               category: "gauge",
-              value: seriesConfig.max
+              value: seriesConfig.max,
+              hit: false
             }]);
           }
         }]);
