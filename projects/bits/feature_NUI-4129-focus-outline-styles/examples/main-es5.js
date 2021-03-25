@@ -15842,7 +15842,8 @@
             this.checkbox.valueChange.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["debounceTime"])(debounceTimeValue)).subscribe(this.onCheckboxValueChange.bind(this));
             this.overlay.clickOutside.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["takeUntil"])(this.onDestroy$)).subscribe(function (_) {
               return _this41.overlay.hide();
-            });
+            }); // TODO: should change programmatically in scope of NUI-5937
+
             this.checkbox.checkboxLabel.nativeElement.setAttribute("tabindex", "-1");
           }
         }, {
