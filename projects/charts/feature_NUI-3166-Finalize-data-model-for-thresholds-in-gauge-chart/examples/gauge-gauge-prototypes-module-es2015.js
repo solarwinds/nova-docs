@@ -289,7 +289,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const routes = [
     {
-        path: "chart",
+        path: "",
         component: _gauge_test_page_component__WEBPACK_IMPORTED_MODULE_8__["GaugeTestPageComponent"],
         data: {
             srlc: {

@@ -17775,9 +17775,10 @@
 
             seriesConfig.value = (_a = seriesConfig.value) !== null && _a !== void 0 ? _a : 0;
             seriesConfig.max = (_b = seriesConfig.max) !== null && _b !== void 0 ? _b : 0;
+            var colorAccessor = seriesConfig.valueColorAccessor || GaugeUtil_1.createDefaultValueColorAccessor(seriesConfig.thresholds);
             var updatedSeriesSet = seriesSet.map(function (series) {
               if (series.accessors.data) {
-                series.accessors.data.color = seriesConfig.valueColorAccessor || GaugeUtil_1.createDefaultValueColorAccessor(seriesConfig.thresholds);
+                series.accessors.data.color = colorAccessor;
               }
 
               if (series.id === GaugeUtil_1.QUANTITY_SERIES_ID) {

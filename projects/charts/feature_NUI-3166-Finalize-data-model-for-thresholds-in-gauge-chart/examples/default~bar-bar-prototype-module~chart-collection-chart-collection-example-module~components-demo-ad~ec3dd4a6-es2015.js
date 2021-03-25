@@ -11287,9 +11287,10 @@ let GaugeUtil = GaugeUtil_1 = class GaugeUtil {
         var _a, _b;
         seriesConfig.value = (_a = seriesConfig.value) !== null && _a !== void 0 ? _a : 0;
         seriesConfig.max = (_b = seriesConfig.max) !== null && _b !== void 0 ? _b : 0;
+        const colorAccessor = seriesConfig.valueColorAccessor || GaugeUtil_1.createDefaultValueColorAccessor(seriesConfig.thresholds);
         const updatedSeriesSet = seriesSet.map((series) => {
             if (series.accessors.data) {
-                series.accessors.data.color = seriesConfig.valueColorAccessor || GaugeUtil_1.createDefaultValueColorAccessor(seriesConfig.thresholds);
+                series.accessors.data.color = colorAccessor;
             }
             if (series.id === GaugeUtil_1.QUANTITY_SERIES_ID) {
                 return Object.assign(Object.assign({}, series), { data: [{ category: "gauge", value: seriesConfig.value }] });

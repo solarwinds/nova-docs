@@ -518,7 +518,7 @@
       "m76+");
 
       var routes = [{
-        path: "chart",
+        path: "",
         component: _gauge_test_page_component__WEBPACK_IMPORTED_MODULE_8__["GaugeTestPageComponent"],
         data: {
           srlc: {
