@@ -78,7 +78,7 @@
       /* harmony import */
 
 
-      var moment__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_4__); // tslint:disable-next-line: import-blacklist
+      var moment__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_4__); // eslint-disable-next-line no-restricted-imports
 
 
       var StackedBarPrototypeComponent = /*#__PURE__*/function () {
