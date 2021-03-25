@@ -262,7 +262,7 @@
                 id: "series-".concat(index + 1),
                 name: el,
                 // for ordinal scale it is useful to identify each data point here somehow
-                data: Array.apply(null, Array(seriesCount)).map(function (_, i) {
+                data: Array(seriesCount).fill(undefined).map(function (_, i) {
                   return {
                     value: Math.floor(Math.random() * 100),
                     description: "Category ".concat(i + 1)
