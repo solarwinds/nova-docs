@@ -114,7 +114,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="161" class="link-to-prism">src/core/common/types.ts:161</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="163" class="link-to-prism">src/core/common/types.ts:163</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -319,6 +319,8 @@ export interface IRenderStateData {
     seriesId: string;
     /** Series render state */
     state: RenderState;
+    /** Series */
+    series?: IChartSeries&lt;IAccessors&gt;;
 }
 
 /** @ignore */
@@ -567,6 +569,11 @@ export interface IInteractionPayload {
 export interface IInteractionDataPointEvent extends IInteractionPayload {
     dataPoint: IDataPoint;
 }
+
+/**
+ * Payload for axes style change when emphasizing series on grid
+ */
+export type IAxesStyleChangeEventPayload &#x3D; Record&lt;string, Record&lt;string, any&gt;&gt;;
 
 /**
  * Payload for interaction events regarding one or more data points

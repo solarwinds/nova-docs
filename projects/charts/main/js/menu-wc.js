@@ -691,6 +691,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/IScale.html" data-type="entity-link">IScale</a>
                             </li>
                             <li class="link">
+                                <a href="interfaces/IScaleSVGElement.html" data-type="entity-link">IScaleSVGElement</a>
+                            </li>
+                            <li class="link">
                                 <a href="interfaces/ISeriesAccessors.html" data-type="entity-link">ISeriesAccessors</a>
                             </li>
                             <li class="link">
