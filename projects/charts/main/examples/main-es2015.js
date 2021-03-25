@@ -122,12 +122,8 @@ let ChartExampleIndexComponent = class ChartExampleIndexComponent {
     constructor() {
         this.links = [
             {
-                title: "Chart Gauge",
-                path: "/development/gauge/chart",
-            },
-            {
-                title: "Component Gauge",
-                path: "/development/gauge/component",
+                title: "Gauge",
+                path: "/development/gauge",
             },
         ];
         this.archivedLinks = [

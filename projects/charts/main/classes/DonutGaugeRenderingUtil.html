@@ -42,7 +42,7 @@
 
 <ol class="breadcrumb">
   <li>Classes</li>
-  <li>RadialGaugeRenderingUtil</li>
+  <li>DonutGaugeRenderingUtil</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -60,7 +60,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/renderers/radial/gauge/radial-gauge-rendering-util.ts</code>
+            <code>src/renderers/radial/gauge/donut-gauge-rendering-util.ts</code>
         </p>
 
 
@@ -128,7 +128,7 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="6"
-                            class="link-to-prism">src/renderers/radial/gauge/radial-gauge-rendering-util.ts:6</a></div>
+                            class="link-to-prism">src/renderers/radial/gauge/donut-gauge-rendering-util.ts:6</a></div>
                 </td>
             </tr>
 
@@ -189,9 +189,9 @@
 
 import { IGaugeThreshold } from &quot;../../../gauge/types&quot;;
 
-export class RadialGaugeRenderingUtil {
+export class DonutGaugeRenderingUtil {
     public static generateThresholdData(data: any[]) {
-        const arcData: number[] &#x3D; RadialGaugeRenderingUtil.generateArcData(data);
+        const arcData: number[] &#x3D; DonutGaugeRenderingUtil.generateArcData(data);
         const thresholdsData: any[] &#x3D; [];
         const pieGenerator &#x3D; pie().sort(null);
         const arcsForMarkers &#x3D; pieGenerator(arcData);
@@ -242,7 +242,7 @@ export class RadialGaugeRenderingUtil {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
-            var COMPODOC_CURRENT_PAGE_URL = 'RadialGaugeRenderingUtil.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'DonutGaugeRenderingUtil.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 
