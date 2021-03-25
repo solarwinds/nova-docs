@@ -1816,7 +1816,7 @@ __webpack_require__.r(__webpack_exports__);
  */
 /** Evergreen browsers require these. **/
 // Used for reflect-metadata in JIT. If you use AOT (and only Angular decorators), you can remove.
-// tslint:disable-next-line
+// eslint-disable-next-line
 
 
  // Included with Angular CLI.
@@ -1836,7 +1836,7 @@ __webpack_require__.r(__webpack_exports__);
 /***************************************************************************************************
  * Zone JS is required by default for Angular itself.
  */
-// tslint:disable-next-line
+// eslint-disable-next-line
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */

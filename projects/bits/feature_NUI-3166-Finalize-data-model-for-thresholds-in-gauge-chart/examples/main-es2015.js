@@ -11152,7 +11152,6 @@ var SelectionType;
     SelectionType["UnselectAll"] = "Unselect all items on this page";
     SelectionType["None"] = "Unselect all items";
     SelectionType["AllPages"] = "Select all items on all pages";
-    SelectionType["SomePages"] = "Select some items on all pages";
 })(SelectionType || (SelectionType = {}));
 var CheckboxStatus;
 (function (CheckboxStatus) {
