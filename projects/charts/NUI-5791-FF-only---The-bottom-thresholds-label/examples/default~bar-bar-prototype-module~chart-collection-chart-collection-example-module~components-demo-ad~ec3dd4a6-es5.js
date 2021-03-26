@@ -25445,7 +25445,7 @@
               return formatter(data[i].value);
             }).style("text-anchor", function (d) {
               return _this57.getTextAnchor(d.startAngle);
-            }).style("alignment-baseline", function (d) {
+            }).style("dominant-baseline", function (d) {
               return _this57.getAlignmentBaseline(d.startAngle);
             }).text(function (d, i) {
               return formatter(data[i].value);
