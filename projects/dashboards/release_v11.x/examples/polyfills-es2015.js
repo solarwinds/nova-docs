@@ -3665,7 +3665,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(/*! @angular/localize/init */ "N/DB");
 /** Evergreen browsers require these. **/
 // Used for reflect-metadata in JIT. If you use AOT (and only Angular decorators), you can remove.
-// tslint:disable-next-line
+// eslint-disable-next-line
 __webpack_require__(/*! core-js/es7/reflect */ "FZcq");
 /**
  * Required to support Web Animations `@angular/platform-browser/animations`.
@@ -3682,7 +3682,7 @@ __webpack_require__(/*! core-js/es7/reflect */ "FZcq");
 /***************************************************************************************************
  * Zone JS is required by default for Angular itself.
  */
-// tslint:disable-next-line
+// eslint-disable-next-line
 __webpack_require__(/*! zone.js/dist/zone */ "pDpN"); // Included with Angular CLI.
 /***************************************************************************************************
  * APPLICATION IMPORTS

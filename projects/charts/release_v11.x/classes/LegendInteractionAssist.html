@@ -146,7 +146,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="297" class="link-to-prism">src/core/chart-assists/chart-assist.ts:297</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="310" class="link-to-prism">src/core/chart-assists/chart-assist.ts:310</a></div>
                             </td>
                         </tr>
 
@@ -215,7 +215,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="297" class="link-to-prism">src/core/chart-assists/chart-assist.ts:297</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="310" class="link-to-prism">src/core/chart-assists/chart-assist.ts:310</a></div>
                             </td>
                         </tr>
 
@@ -253,8 +253,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="369"
-                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:369</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="384"
+                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:384</a></div>
                 </td>
             </tr>
 
@@ -325,8 +325,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="316"
-                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:316</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="331"
+                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:331</a></div>
                 </td>
             </tr>
 
@@ -366,8 +366,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="320"
-                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:320</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="335"
+                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:335</a></div>
                 </td>
             </tr>
 
@@ -438,8 +438,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="375"
-                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:375</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="390"
+                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:390</a></div>
                 </td>
             </tr>
 
@@ -479,8 +479,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="345"
-                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:345</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="360"
+                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:360</a></div>
                 </td>
             </tr>
 
@@ -570,8 +570,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="359"
-                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:359</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="374"
+                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:374</a></div>
                 </td>
             </tr>
 
@@ -661,8 +661,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="302"
-                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:302</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="315"
+                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:315</a></div>
                 </td>
             </tr>
 
@@ -720,6 +720,7 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import each from &quot;lodash/each&quot;;
+import keyBy from &quot;lodash/keyBy&quot;;
 import values from &quot;lodash/values&quot;;
 import { Observable, of, Subject, Subscription } from &quot;rxjs&quot;;
 import { filter, map, switchMap, takeUntil } from &quot;rxjs/operators&quot;;
@@ -729,8 +730,19 @@ import { RenderState } from &quot;../../renderers/types&quot;;
 import { EventBus } from &quot;../common/event-bus&quot;;
 import { defaultMarkerProvider, defaultPalette } from &quot;../common/palette/default-providers&quot;;
 import {
-    IAccessors, IChart, IChartAssistSeries, IChartEvent, IChartMarker, IChartPalette, IChartSeries, IDataPoint, IDataPointsPayload, IInteractionDataPointsEvent,
-    InteractionType, IRenderStateData, IValueProvider
+    IAccessors,
+    IChart,
+    IChartAssistSeries,
+    IChartEvent,
+    IChartMarker,
+    IChartPalette,
+    IChartSeries,
+    IDataPoint,
+    IDataPointsPayload,
+    IInteractionDataPointsEvent,
+    InteractionType,
+    IRenderStateData,
+    IValueProvider
 } from &quot;../common/types&quot;;
 
 import { ChartAssistEventType, ChartAssistRenderStateData, IChartAssist, IChartAssistEvent, IRenderStatesIndex } from &quot;./types&quot;;
@@ -812,7 +824,7 @@ export class ChartAssist&lt;T &#x3D; IAccessors&gt; implements IChartAssist {
             this.seriesProcessor &#x3D; seriesProcessor;
         }
 
-        /* tslint:disable-next-line:no-use-before-declare */
+        /* eslint-disable-next-line @typescript-eslint/no-use-before-define */
         this.legendInteractionAssist &#x3D; new LegendInteractionAssist(this);
 
         this.syncHandlerMap &#x3D; {
@@ -1014,6 +1026,7 @@ export class ChartAssist&lt;T &#x3D; IAccessors&gt; implements IChartAssist {
 export class LegendInteractionAssist {
 
     private seriesGroups: Record&lt;string, string[]&gt; &#x3D; {};
+    private seriesIndex: Record&lt;string, IChartAssistSeries&lt;IAccessors&gt;&gt;;
 
     public renderStatesIndex: IRenderStatesIndex &#x3D; {};
 
@@ -1022,6 +1035,7 @@ export class LegendInteractionAssist {
 
     public update(seriesSet: IChartAssistSeries&lt;IAccessors&gt;[]): void {
         this.seriesGroups &#x3D; this.getSeriesGroups(seriesSet);
+        this.seriesIndex &#x3D; keyBy(seriesSet, s &#x3D;&gt; s.id);
 
         this.resetSeries();
 
@@ -1029,6 +1043,7 @@ export class LegendInteractionAssist {
         for (const series of seriesSet.filter(s &#x3D;&gt; s.renderState)) {
             this.renderStatesIndex[series.id] &#x3D;
                 new ChartAssistRenderStateData(series.id,
+                    series,
                     series.renderState &#x3D;&#x3D;&#x3D; RenderState.hidden ? RenderState.default : series.renderState,
                     series.renderState !&#x3D;&#x3D; RenderState.hidden);
         }
@@ -1111,7 +1126,7 @@ export class LegendInteractionAssist {
         if (renderState) {
             renderState.emphasisState &#x3D; state;
         } else {
-            renderState &#x3D; new ChartAssistRenderStateData(seriesId, state);
+            renderState &#x3D; new ChartAssistRenderStateData(seriesId, this.seriesIndex[seriesId], state);
             this.renderStatesIndex[seriesId] &#x3D; renderState;
         }
     }
@@ -1121,7 +1136,7 @@ export class LegendInteractionAssist {
         if (renderState) {
             renderState.visible &#x3D; visible;
         } else {
-            renderState &#x3D; new ChartAssistRenderStateData(seriesId);
+            renderState &#x3D; new ChartAssistRenderStateData(seriesId, this.seriesIndex[seriesId], RenderState.default, visible);
             this.renderStatesIndex[seriesId] &#x3D; renderState;
         }
     }

@@ -269,6 +269,7 @@ export interface IChartAssistEvent {
  */
 export class ChartAssistRenderStateData implements IRenderStateData {
     constructor(public seriesId: string,
+                public series: IChartAssistSeries&lt;IAccessors&gt;,
                 public emphasisState &#x3D; RenderState.default,
                 public visible &#x3D; true) {
     }

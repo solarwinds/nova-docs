@@ -314,7 +314,7 @@ import { Subject } from &quot;rxjs&quot;;
     selector: &quot;[nuiDelayedMousePresenceDetection]&quot;,
 })
 export class DelayedMousePresenceDetectionDirective {
-    // tslint:disable-next-line:no-input-rename
+    // eslint-disable-next-line @angular-eslint/no-input-rename
     @Input(&quot;nuiDelayedMousePresenceDetection&quot;) public enabled: boolean &#x3D; true;
     @Input() mousePresentSubject: Subject&lt;boolean&gt;;
     @Input() delay: number &#x3D; 500;

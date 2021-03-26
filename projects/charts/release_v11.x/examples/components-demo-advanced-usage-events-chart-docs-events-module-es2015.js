@@ -242,6 +242,10 @@ let EventSamplerComponent = class EventSamplerComponent {
                 id: _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["CHART_VIEW_STATUS_EVENT"],
                 name: "CHART_VIEW_STATUS_EVENT",
             },
+            {
+                id: _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["SERIES_STATE_CHANGE_EVENT"],
+                name: "SERIES_STATE_CHANGE_EVENT",
+            },
         ];
         this.selectedEvent = this.eventFilters[0];
         this.selectedInteractionType = "";
@@ -275,8 +279,9 @@ let EventSamplerComponent = class EventSamplerComponent {
     }
     buildChart() {
         const { grid, accessors, renderer, scales, seriesProcessor } = this.getChartAttributes(this.selectedChartType);
-        this.chart = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["Chart"](grid);
-        this.chart.addPlugin(new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["InteractionLabelPlugin"]());
+        this.chartAssist = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["ChartAssist"](new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["Chart"](grid));
+        this.chartAssist.palette = this.palette;
+        this.chartAssist.chart.addPlugin(new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["InteractionLabelPlugin"]());
         this.renderer = renderer;
         this.accessors = accessors;
         this.scales = scales;
@@ -284,7 +289,7 @@ let EventSamplerComponent = class EventSamplerComponent {
     }
     subscribeToChart() {
         lodash_each__WEBPACK_IMPORTED_MODULE_5___default()(this.eventFilters, filter => {
-            this.chart.getEventBus().getStream(filter.id).subscribe((event) => {
+            this.chartAssist.chart.getEventBus().getStream(filter.id).subscribe((event) => {
                 if (this.selectedEvent.id === filter.id) {
                     if (!event.data.interactionType || this.selectedInteractionType === event.data.interactionType) {
                         recursivelyReplacePropValue(event, "dataSeries", "<< IChartSeries info is available here (replaced in output for brevity) >>");
@@ -299,7 +304,7 @@ let EventSamplerComponent = class EventSamplerComponent {
         let seriesSet = this.buildChartSeries(this.categories, this.subCategories, this.valueAccessor);
         // TODO: Refactor this to be able to pass different types of seriesSet to get rid of the any
         seriesSet = this.seriesProcessor ? this.seriesProcessor(seriesSet, () => true) : seriesSet;
-        this.chart.update(seriesSet);
+        this.chartAssist.update(seriesSet);
     }
     buildChartSeries(categories, subCategories, valueAccessor) {
         return subCategories.map((subCategory, i) => ({

@@ -382,36 +382,68 @@
 
 
       var moment_moment__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(moment_moment__WEBPACK_IMPORTED_MODULE_4__);
+      /* harmony import */
+
+
+      var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! rxjs */
+      "qCKp");
+      /* harmony import */
+
+
+      var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      /*! rxjs/operators */
+      "kU1M");
 
       var LineChartWith2YAxesExampleComponent = /*#__PURE__*/function () {
-        function LineChartWith2YAxesExampleComponent() {
+        function LineChartWith2YAxesExampleComponent(changeDetector) {
           _classCallCheck(this, LineChartWith2YAxesExampleComponent);
+
+          this.changeDetector = changeDetector;
+          this.destroy$ = new rxjs__WEBPACK_IMPORTED_MODULE_5__["Subject"]();
         }
 
         _createClass(LineChartWith2YAxesExampleComponent, [{
+          key: "leftAxisStyles",
+          get: function get() {
+            var _a, _b;
+
+            return (_b = (_a = this.axesStyles) === null || _a === void 0 ? void 0 : _a[this.yLeftScale.id]) !== null && _b !== void 0 ? _b : {};
+          }
+        }, {
+          key: "rightAxisStyles",
+          get: function get() {
+            var _a, _b;
+
+            return (_b = (_a = this.axesStyles) === null || _a === void 0 ? void 0 : _a[this.yRightScale.id]) !== null && _b !== void 0 ? _b : {};
+          }
+        }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var xScale = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["TimeScale"]();
-            var yLeftScale = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["LinearScale"]();
+            var _this = this;
 
-            yLeftScale.formatters.tick = function (value) {
+            var xScale = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["TimeScale"]();
+            this.yLeftScale = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["LinearScale"]();
+
+            this.yLeftScale.formatters.tick = function (value) {
               return "".concat(value, "%");
             };
 
-            var yRightScale = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["LinearScale"]();
+            this.yRightScale = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["LinearScale"]();
 
-            yRightScale.formatters.tick = function (value) {
+            this.yRightScale.formatters.tick = function (value) {
               return "".concat(value, "G");
             };
 
             var xyGrid = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["XYGrid"](); // Set the grid's left and right scale id's using the id's of the corresponding scales
 
-            xyGrid.leftScaleId = yLeftScale.id;
-            xyGrid.rightScaleId = yRightScale.id; // Set the grid's 'axis.left.fit' property to 'true' to accommodate the extra label width required by the
+            xyGrid.leftScaleId = this.yLeftScale.id;
+            xyGrid.rightScaleId = this.yRightScale.id; // Set the grid's 'axis.left.fit' property to 'true' to accommodate the extra label width required by the
             // left scale's tick formatter output (Note: 'axis.right.fit' is true by default.).
 
             xyGrid.config().axis.left.fit = true;
             this.chart = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["Chart"](xyGrid);
+            this.chartAssist = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["ChartAssist"](this.chart);
             var accessors = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["LineAccessors"]();
             var renderer = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["LineRenderer"]();
             var seriesSet = getData().map(function (d) {
@@ -421,22 +453,41 @@
                 scales: {
                   x: xScale,
                   // In this case, we're using the right-hand scale only for "series-3"
-                  y: d.id === "series-3" ? yRightScale : yLeftScale
-                }
+                  y: d.id === "series-3" ? _this.yRightScale : _this.yLeftScale
+                },
+                unitLabel: d.id === "series-3" ? "GB" : "%"
               });
             }); // chart assist needs to be used to update data
 
-            this.chart.update(seriesSet);
+            this.chartAssist.update(seriesSet); // Here we subscribe to an event indicating changes on axis styling. We use that information to style axis labels
+
+            this.chart.eventBus.getStream(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["AXES_STYLE_CHANGE_EVENT"]).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["takeUntil"])(this.destroy$)).subscribe(function (event) {
+              _this.axesStyles = event.data;
+
+              _this.changeDetector.markForCheck();
+            });
+          }
+        }, {
+          key: "ngOnDestroy",
+          value: function ngOnDestroy() {
+            this.destroy$.next();
+            this.destroy$.complete();
           }
         }]);
 
         return LineChartWith2YAxesExampleComponent;
       }();
 
+      LineChartWith2YAxesExampleComponent.ctorParameters = function () {
+        return [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["ChangeDetectorRef"]
+        }];
+      };
+
       LineChartWith2YAxesExampleComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
         selector: "line-chart-with-2y-axes-example",
         template: _raw_loader_line_chart_with_2y_axes_example_component_html__WEBPACK_IMPORTED_MODULE_1__["default"]
-      })], LineChartWith2YAxesExampleComponent);
+      }), Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_2__["ChangeDetectorRef"]])], LineChartWith2YAxesExampleComponent);
       /* Chart data */
 
       function getData() {
@@ -498,6 +549,10 @@
             x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2017-01-03T15:14:29.909Z", format),
             y: 90
           }]
+        }, {
+          id: "series-4",
+          name: "No data",
+          data: []
         }];
       }
       /***/
@@ -678,7 +733,7 @@
 
       var _line_chart_with_rich_tile_legend_line_chart_with_rich_tile_legend_example_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(
       /*! ./line-chart-with-rich-tile-legend/line-chart-with-rich-tile-legend.example.component */
-      "cEyI"); // tslint:disable-next-line: max-line-length
+      "cEyI"); // eslint-disable-next-line max-len
 
 
       var exampleRoutes = [{

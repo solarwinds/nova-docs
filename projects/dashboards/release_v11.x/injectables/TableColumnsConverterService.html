@@ -1189,7 +1189,8 @@ export class TableColumnsConverterService extends BaseConverter implements After
         const widthMessageInput &#x3D; &quot;isWidthMessageDisplayed&quot;;
         const { pizzagna } &#x3D; this.pizzagnaService;
         const columns &#x3D; pizzagna.data.columns.properties?.columns;
-        columns.forEach((col: ITableWidgetColumnConfig) &#x3D;&gt; this.pizzagnaService.setProperty(&#x60;${PizzagnaLayer.Data}.${col.id}/description.properties.${widthMessageInput}&#x60;, false));
+        columns.forEach((col: ITableWidgetColumnConfig) &#x3D;&gt;
+            this.pizzagnaService.setProperty(&#x60;${PizzagnaLayer.Data}.${col.id}/description.properties.${widthMessageInput}&#x60;, false));
 
         if (!columnId) {
             return;

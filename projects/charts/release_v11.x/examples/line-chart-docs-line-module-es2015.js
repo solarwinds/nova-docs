@@ -203,43 +203,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @nova-ui/charts */ "gKry");
 /* harmony import */ var moment_moment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! moment/moment */ "wd/R");
 /* harmony import */ var moment_moment__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(moment_moment__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs */ "qCKp");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/operators */ "kU1M");
+
+
 
 
 
 
 
 let LineChartWith2YAxesExampleComponent = class LineChartWith2YAxesExampleComponent {
+    constructor(changeDetector) {
+        this.changeDetector = changeDetector;
+        this.destroy$ = new rxjs__WEBPACK_IMPORTED_MODULE_5__["Subject"]();
+    }
+    get leftAxisStyles() {
+        var _a, _b;
+        return (_b = (_a = this.axesStyles) === null || _a === void 0 ? void 0 : _a[this.yLeftScale.id]) !== null && _b !== void 0 ? _b : {};
+    }
+    get rightAxisStyles() {
+        var _a, _b;
+        return (_b = (_a = this.axesStyles) === null || _a === void 0 ? void 0 : _a[this.yRightScale.id]) !== null && _b !== void 0 ? _b : {};
+    }
     ngOnInit() {
         const xScale = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["TimeScale"]();
-        const yLeftScale = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["LinearScale"]();
-        yLeftScale.formatters.tick = (value) => `${value}%`;
-        const yRightScale = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["LinearScale"]();
-        yRightScale.formatters.tick = (value) => `${value}G`;
+        this.yLeftScale = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["LinearScale"]();
+        this.yLeftScale.formatters.tick = (value) => `${value}%`;
+        this.yRightScale = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["LinearScale"]();
+        this.yRightScale.formatters.tick = (value) => `${value}G`;
         const xyGrid = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["XYGrid"]();
         // Set the grid's left and right scale id's using the id's of the corresponding scales
-        xyGrid.leftScaleId = yLeftScale.id;
-        xyGrid.rightScaleId = yRightScale.id;
+        xyGrid.leftScaleId = this.yLeftScale.id;
+        xyGrid.rightScaleId = this.yRightScale.id;
         // Set the grid's 'axis.left.fit' property to 'true' to accommodate the extra label width required by the
         // left scale's tick formatter output (Note: 'axis.right.fit' is true by default.).
         xyGrid.config().axis.left.fit = true;
         this.chart = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["Chart"](xyGrid);
+        this.chartAssist = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["ChartAssist"](this.chart);
         const accessors = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["LineAccessors"]();
         const renderer = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["LineRenderer"]();
         const seriesSet = getData().map(d => (Object.assign(Object.assign({}, d), { accessors,
             renderer, scales: {
                 x: xScale,
                 // In this case, we're using the right-hand scale only for "series-3"
-                y: d.id === "series-3" ? yRightScale : yLeftScale,
-            } })));
+                y: d.id === "series-3" ? this.yRightScale : this.yLeftScale,
+            }, unitLabel: d.id === "series-3" ? "GB" : "%" })));
         // chart assist needs to be used to update data
-        this.chart.update(seriesSet);
+        this.chartAssist.update(seriesSet);
+        // Here we subscribe to an event indicating changes on axis styling. We use that information to style axis labels
+        this.chart.eventBus.getStream(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["AXES_STYLE_CHANGE_EVENT"])
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["takeUntil"])(this.destroy$))
+            .subscribe((event) => {
+            this.axesStyles = event.data;
+            this.changeDetector.markForCheck();
+        });
+    }
+    ngOnDestroy() {
+        this.destroy$.next();
+        this.destroy$.complete();
     }
 };
+LineChartWith2YAxesExampleComponent.ctorParameters = () => [
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["ChangeDetectorRef"] }
+];
 LineChartWith2YAxesExampleComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
         selector: "line-chart-with-2y-axes-example",
         template: _raw_loader_line_chart_with_2y_axes_example_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
-    })
+    }),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_2__["ChangeDetectorRef"]])
 ], LineChartWith2YAxesExampleComponent);
 
 /* Chart data */
@@ -278,6 +310,11 @@ function getData() {
                 { x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-31T15:14:29.909Z", format), y: 22 },
                 { x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2017-01-03T15:14:29.909Z", format), y: 90 },
             ],
+        },
+        {
+            id: "series-4",
+            name: "No data",
+            data: [],
         },
     ];
 }
@@ -352,7 +389,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// tslint:disable-next-line: max-line-length
+// eslint-disable-next-line max-len
 
 
 

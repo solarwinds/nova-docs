@@ -80,7 +80,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="335" class="link-to-prism">src/core/common/types.ts:335</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="342" class="link-to-prism">src/core/common/types.ts:342</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -169,6 +169,8 @@ export interface IRenderStateData {
     seriesId: string;
     /** Series render state */
     state: RenderState;
+    /** Series */
+    series?: IChartSeries&lt;IAccessors&gt;;
 }
 
 /** @ignore */
@@ -190,7 +192,7 @@ export interface IRadialRendererConfig extends IRendererConfig {
     annularPadding?: number;
     /** annularGrowth is a percentage value to define annular width automatically.
      *  It will grow until it reaches maxThickness.
-     *  Set one to 0 to use annularWidth constant value instead*/
+     *  Set one to 0 to use annularWidth constant value instead */
     maxThickness?: number;
     annularGrowth?: number;
     cursor?: string;
@@ -201,17 +203,17 @@ export interface IRadialRendererConfig extends IRendererConfig {
 
 /**
  * @ignore
- * Configuration for the RadialGaugeThresholdsRenderer
+ * Configuration for the DonutGaugeThresholdsRenderer
  */
-// tslint:disable-next-line: no-empty-interface
-export interface IRadialGaugeThresholdsRendererConfig extends IRadialRendererConfig {
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+export interface IDonutGaugeThresholdsRendererConfig extends IRadialRendererConfig {
 }
 
 /**
  * @ignore
  * Configuration for the LinearGaugeThresholdsRenderer
  */
-// tslint:disable-next-line: no-empty-interface
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface ILinearGaugeThresholdsRendererConfig extends IRendererConfig {
 }
 
@@ -417,6 +419,11 @@ export interface IInteractionPayload {
 export interface IInteractionDataPointEvent extends IInteractionPayload {
     dataPoint: IDataPoint;
 }
+
+/**
+ * Payload for axes style change when emphasizing series on grid
+ */
+export type IAxesStyleChangeEventPayload &#x3D; Record&lt;string, Record&lt;string, any&gt;&gt;;
 
 /**
  * Payload for interaction events regarding one or more data points

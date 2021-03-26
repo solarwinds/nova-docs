@@ -838,10 +838,10 @@ export class UtilityService {
     public static uuid() {
         let dt &#x3D; new Date().getTime();
         const uuid &#x3D; &quot;xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&quot;.replace(/[xy]/g, (c) &#x3D;&gt; {
-            // tslint:disable-next-line
+            // eslint-disable-next-line
             const r &#x3D; (dt + Math.random() * 16) % 16 | 0;
             dt &#x3D; Math.floor(dt / 16);
-            // tslint:disable-next-line
+            // eslint-disable-next-line
             return (c &#x3D;&#x3D;&#x3D; &quot;x&quot; ? r : (r &amp; 0x3 | 0x8)).toString(16);
         });
         return uuid;
@@ -943,7 +943,7 @@ export class UtilityService {
         let low &#x3D; 0, high &#x3D; haystack &#x3D;&#x3D; null ? low : haystack.length;
 
         while (low &lt; high) {
-            // tslint:disable-next-line:no-bitwise
+            // eslint-disable-next-line no-bitwise
             const mid &#x3D; (low + high) &gt;&gt;&gt; 1, computed &#x3D; selector(haystack[mid], mid);
 
             if (computed !&#x3D;&#x3D; null &amp;&amp; (computed &lt; needle)) {

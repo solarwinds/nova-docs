@@ -372,9 +372,10 @@ import { Axis } from &quot;d3-axis&quot;;
 import { Selection } from &quot;d3-selection&quot;;
 import { Subject } from &quot;rxjs&quot;;
 
+import { EventBus } from &quot;../common/event-bus&quot;;
 import { Lasagna } from &quot;../common/lasagna&quot;;
 import { ScalesIndex } from &quot;../common/scales/types&quot;;
-import { D3Selection, IChart, IChartPlugin } from &quot;../common/types&quot;;
+import { D3Selection, IChart, IChartEvent, IChartPlugin } from &quot;../common/types&quot;;
 
 /**
  * Interface for defining aspects of the top, right, bottom, and left sides of a grid
@@ -575,6 +576,11 @@ export interface IGrid {
      * Subject for indicating that the chart&#x27;s dimensions should be updated
      */
     updateChartDimensionsSubject?: Subject&lt;void&gt;;
+
+    /**
+     * Chart event bus
+     */
+    eventBus: EventBus&lt;IChartEvent&gt;;
 
     /**
      * Provides access to the grid&#x27;s layering mechanism
