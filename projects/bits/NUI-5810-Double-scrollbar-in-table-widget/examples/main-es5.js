@@ -49470,8 +49470,6 @@
         }, {
           key: "setSticky",
           value: function setSticky() {
-            var _this156 = this;
-
             if (this.headPosition === TableVirtualScrollHeaderPosition.Sticky) {
               console.warn("Already in sticky mode");
               return;
@@ -49484,23 +49482,29 @@
 
             this.renderer.appendChild(this.stickyHeadContainer, this.headRef);
             this.syncHorizontalScroll();
-            this.syncColumnWidths(); // Note: While we're detaching header from CDK Viewport we have
-            // to recalculate viewport height to keep the same total height
-            // Skipping one tick to let header get his height;
-            // TODO: Find a better place to assign that
-
-            setTimeout(function () {
-              _this156.updateContainerToFitHead();
-            });
+            this.syncColumnWidths();
+            this.updateContainerToFitHead();
             this.headPosition = TableVirtualScrollHeaderPosition.Sticky;
           }
         }, {
           key: "updateContainerToFitHead",
           value: function updateContainerToFitHead() {
-            var _a, _b, _c;
+            var _this156 = this;
 
-            var viewportComputedHeight = lodash_isEmpty__WEBPACK_IMPORTED_MODULE_3___default()(this.userProvidedHeight) ? this.viewportEl.offsetHeight + "px" : this.userProvidedHeight;
-            this.viewportEl.style.setProperty("height", "calc(".concat(viewportComputedHeight, " - ").concat((_c = (_b = (_a = this.headRef) === null || _a === void 0 ? void 0 : _a.rows.item(0)) === null || _b === void 0 ? void 0 : _b.offsetHeight) !== null && _c !== void 0 ? _c : 0, "px)"), "important");
+            var _a, _b;
+
+            if ((_a = this.headRef) === null || _a === void 0 ? void 0 : _a.rows.item(0)) {
+              var adjustContainerToFitHead = function adjustContainerToFitHead() {
+                var _a, _b, _c;
+
+                var viewportComputedHeight = lodash_isEmpty__WEBPACK_IMPORTED_MODULE_3___default()(_this156.userProvidedHeight) ? _this156.viewportEl.offsetHeight + "px" : _this156.userProvidedHeight;
+
+                _this156.viewportEl.style.setProperty("height", "calc(".concat(viewportComputedHeight, " - ").concat((_c = (_b = (_a = _this156.headRef) === null || _a === void 0 ? void 0 : _a.rows.item(0)) === null || _b === void 0 ? void 0 : _b.offsetHeight) !== null && _c !== void 0 ? _c : 0, "px)"), "important");
+              };
+
+              this.headerResizeObserver = new resize_observer_polyfill__WEBPACK_IMPORTED_MODULE_4__["default"](adjustContainerToFitHead);
+              this.headerResizeObserver.observe((_b = this.headRef) === null || _b === void 0 ? void 0 : _b.rows.item(0));
+            }
           }
         }, {
           key: "assignRequiredProperties",
@@ -49627,6 +49631,10 @@
           value: function ngOnDestroy() {
             this.unsubscribe$.next();
             this.unsubscribe$.complete();
+
+            if (this.headerResizeObserver) {
+              this.headerResizeObserver.disconnect();
+            }
           }
         }]);
 
