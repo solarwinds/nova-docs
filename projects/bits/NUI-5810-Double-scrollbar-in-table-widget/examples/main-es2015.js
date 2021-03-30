@@ -26497,6 +26497,14 @@ class TableStickyHeaderDirective {
         this.viewport = viewport;
         this._sticky = true;
         this.unsubscribe$ = new rxjs__WEBPACK_IMPORTED_MODULE_5__["Subject"]();
+        this.updateContainerToFitHead = () => {
+            var _a, _b, _c, _d;
+            if (this._sticky) {
+                const viewportComputedHeight = lodash_isEmpty__WEBPACK_IMPORTED_MODULE_3___default()(this.userProvidedHeight) ?
+                    ((_a = this.viewportEl.parentElement) === null || _a === void 0 ? void 0 : _a.offsetHeight) + "px" : this.userProvidedHeight;
+                this.viewportEl.style.setProperty("height", `calc(${viewportComputedHeight} - ${(_d = (_c = (_b = this.headRef) === null || _b === void 0 ? void 0 : _b.rows.item(0)) === null || _c === void 0 ? void 0 : _c.offsetHeight) !== null && _d !== void 0 ? _d : 0}px)`, "important");
+            }
+        };
         this.handleColumnsUpdate$ = () => {
             var _a, _b, _c;
             // TODO: Perform a dirty check before starting assigning new values
@@ -26575,18 +26583,14 @@ class TableStickyHeaderDirective {
         this.renderer.appendChild(this.stickyHeadContainer, this.headRef);
         this.syncHorizontalScroll();
         this.syncColumnWidths();
-        this.updateContainerToFitHead();
+        setTimeout(() => this.updateContainerToFitHead());
+        this.updateContainerHeightOnHeadResize();
         this.headPosition = TableVirtualScrollHeaderPosition.Sticky;
     }
-    updateContainerToFitHead() {
+    updateContainerHeightOnHeadResize() {
         var _a, _b;
         if ((_a = this.headRef) === null || _a === void 0 ? void 0 : _a.rows.item(0)) {
-            const adjustContainerToFitHead = () => {
-                var _a, _b, _c;
-                const viewportComputedHeight = lodash_isEmpty__WEBPACK_IMPORTED_MODULE_3___default()(this.userProvidedHeight) ? this.viewportEl.offsetHeight + "px" : this.userProvidedHeight;
-                this.viewportEl.style.setProperty("height", `calc(${viewportComputedHeight} - ${(_c = (_b = (_a = this.headRef) === null || _a === void 0 ? void 0 : _a.rows.item(0)) === null || _b === void 0 ? void 0 : _b.offsetHeight) !== null && _c !== void 0 ? _c : 0}px)`, "important");
-            };
-            this.headerResizeObserver = new resize_observer_polyfill__WEBPACK_IMPORTED_MODULE_4__["default"](adjustContainerToFitHead);
+            this.headerResizeObserver = new resize_observer_polyfill__WEBPACK_IMPORTED_MODULE_4__["default"](this.updateContainerToFitHead);
             this.headerResizeObserver.observe((_b = this.headRef) === null || _b === void 0 ? void 0 : _b.rows.item(0));
         }
     }

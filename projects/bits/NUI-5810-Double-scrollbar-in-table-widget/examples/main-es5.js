@@ -49379,6 +49379,16 @@
           this._sticky = true;
           this.unsubscribe$ = new rxjs__WEBPACK_IMPORTED_MODULE_5__["Subject"]();
 
+          this.updateContainerToFitHead = function () {
+            var _a, _b, _c, _d;
+
+            if (_this154._sticky) {
+              var viewportComputedHeight = lodash_isEmpty__WEBPACK_IMPORTED_MODULE_3___default()(_this154.userProvidedHeight) ? ((_a = _this154.viewportEl.parentElement) === null || _a === void 0 ? void 0 : _a.offsetHeight) + "px" : _this154.userProvidedHeight;
+
+              _this154.viewportEl.style.setProperty("height", "calc(".concat(viewportComputedHeight, " - ").concat((_d = (_c = (_b = _this154.headRef) === null || _b === void 0 ? void 0 : _b.rows.item(0)) === null || _c === void 0 ? void 0 : _c.offsetHeight) !== null && _d !== void 0 ? _d : 0, "px)"), "important");
+            }
+          };
+
           this.handleColumnsUpdate$ = function () {
             var _a, _b, _c; // TODO: Perform a dirty check before starting assigning new values
             // Note: Setting the width of stickyHeadContainer container to be able to simulate horizontal scroll of the sticky header
@@ -49470,6 +49480,8 @@
         }, {
           key: "setSticky",
           value: function setSticky() {
+            var _this156 = this;
+
             if (this.headPosition === TableVirtualScrollHeaderPosition.Sticky) {
               console.warn("Already in sticky mode");
               return;
@@ -49483,26 +49495,19 @@
             this.renderer.appendChild(this.stickyHeadContainer, this.headRef);
             this.syncHorizontalScroll();
             this.syncColumnWidths();
-            this.updateContainerToFitHead();
+            setTimeout(function () {
+              return _this156.updateContainerToFitHead();
+            });
+            this.updateContainerHeightOnHeadResize();
             this.headPosition = TableVirtualScrollHeaderPosition.Sticky;
           }
         }, {
-          key: "updateContainerToFitHead",
-          value: function updateContainerToFitHead() {
-            var _this156 = this;
-
+          key: "updateContainerHeightOnHeadResize",
+          value: function updateContainerHeightOnHeadResize() {
             var _a, _b;
 
             if ((_a = this.headRef) === null || _a === void 0 ? void 0 : _a.rows.item(0)) {
-              var adjustContainerToFitHead = function adjustContainerToFitHead() {
-                var _a, _b, _c;
-
-                var viewportComputedHeight = lodash_isEmpty__WEBPACK_IMPORTED_MODULE_3___default()(_this156.userProvidedHeight) ? _this156.viewportEl.offsetHeight + "px" : _this156.userProvidedHeight;
-
-                _this156.viewportEl.style.setProperty("height", "calc(".concat(viewportComputedHeight, " - ").concat((_c = (_b = (_a = _this156.headRef) === null || _a === void 0 ? void 0 : _a.rows.item(0)) === null || _b === void 0 ? void 0 : _b.offsetHeight) !== null && _c !== void 0 ? _c : 0, "px)"), "important");
-              };
-
-              this.headerResizeObserver = new resize_observer_polyfill__WEBPACK_IMPORTED_MODULE_4__["default"](adjustContainerToFitHead);
+              this.headerResizeObserver = new resize_observer_polyfill__WEBPACK_IMPORTED_MODULE_4__["default"](this.updateContainerToFitHead);
               this.headerResizeObserver.observe((_b = this.headRef) === null || _b === void 0 ? void 0 : _b.rows.item(0));
             }
           }
