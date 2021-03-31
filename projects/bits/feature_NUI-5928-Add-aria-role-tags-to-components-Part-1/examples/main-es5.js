@@ -7429,6 +7429,12 @@
         type: IconComponent,
         selectors: [["nui-icon"]],
         hostAttrs: ["role", "img", 1, "nui-icon-wrapper"],
+        hostVars: 1,
+        hostBindings: function IconComponent_HostBindings(rf, ctx) {
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-label", ctx.icon + " icon");
+          }
+        },
         inputs: {
           iconColor: "iconColor",
           brushType: "brushType",
