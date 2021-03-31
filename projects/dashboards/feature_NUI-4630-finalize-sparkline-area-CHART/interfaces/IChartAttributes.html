@@ -328,8 +328,10 @@ export class CategoryChartUtilService {
     }
 
     public static getChartAttributes(
-        chartType: ProportionalWidgetChartTypes, colors?: IValueProvider&lt;string&gt;, markers?: IValueProvider&lt;IChartMarker&gt;)
-        : IChartAttributes | IChartAttributes&lt;IRadialAccessors&gt; {
+        chartType: ProportionalWidgetChartTypes,
+        colors?: IValueProvider&lt;string&gt;,
+        markers?: IValueProvider&lt;IChartMarker&gt;
+    ): IChartAttributes | IChartAttributes&lt;IRadialAccessors&gt; {
         const t: IChartTools | IChartTools&lt;IRadialAccessors&gt; &#x3D; CategoryChartUtilService.getChartTools(chartType);
         const result: IChartAttributes | IChartAttributes&lt;IRadialAccessors&gt; &#x3D; {
             grid: t.gridFunction(),
