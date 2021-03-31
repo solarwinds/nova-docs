@@ -373,8 +373,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="126"
-                            class="link-to-prism">src/lib/table/table-virtual-scroll/table-sticky-header.directive.ts:126</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="130"
+                            class="link-to-prism">src/lib/table/table-virtual-scroll/table-sticky-header.directive.ts:130</a></div>
                 </td>
             </tr>
 
@@ -422,7 +422,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="133" class="link-to-prism">src/lib/table/table-virtual-scroll/table-sticky-header.directive.ts:133</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="137" class="link-to-prism">src/lib/table/table-virtual-scroll/table-sticky-header.directive.ts:137</a></div>
                             </td>
                         </tr>
 
@@ -486,7 +486,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="117" class="link-to-prism">src/lib/table/table-virtual-scroll/table-sticky-header.directive.ts:117</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="121" class="link-to-prism">src/lib/table/table-virtual-scroll/table-sticky-header.directive.ts:121</a></div>
                             </td>
                         </tr>
 
@@ -654,7 +654,7 @@ export class TableStickyHeaderDirective implements AfterViewInit, OnDestroy {
     private userProvidedHeight: string;
 
     private unsubscribe$: Subject&lt;unknown&gt; &#x3D; new Subject&lt;unknown&gt;();
-    private headerResizeObserver: ResizeObserver;
+    private headResizeObserver: ResizeObserver;
 
     private get viewportEl(): HTMLElement {
         return this.viewport.elementRef.nativeElement;
@@ -711,6 +711,10 @@ export class TableStickyHeaderDirective implements AfterViewInit, OnDestroy {
 
         this.syncHorizontalScroll();
         this.syncColumnWidths();
+
+        // Note: While we&#x27;re detaching header from CDK Viewport we have
+        // to recalculate viewport height to keep the same total height.
+        // The setTimeout is for skipping one tick to let the header get his height.
         setTimeout(() &#x3D;&gt; this.updateContainerToFitHead());
         this.updateContainerHeightOnHeadResize();
 
@@ -728,8 +732,8 @@ export class TableStickyHeaderDirective implements AfterViewInit, OnDestroy {
 
     public updateContainerHeightOnHeadResize(): void {
         if (this.headRef?.rows.item(0)) {
-            this.headerResizeObserver &#x3D; new ResizeObserver(this.updateContainerToFitHead);
-            this.headerResizeObserver.observe(this.headRef?.rows.item(0) as Element);
+            this.headResizeObserver &#x3D; new ResizeObserver(this.updateContainerToFitHead);
+            this.headResizeObserver.observe(this.headRef?.rows.item(0) as Element);
         }
     }
 
@@ -869,8 +873,8 @@ export class TableStickyHeaderDirective implements AfterViewInit, OnDestroy {
         this.unsubscribe$.next();
         this.unsubscribe$.complete();
 
-        if (this.headerResizeObserver) {
-            this.headerResizeObserver.disconnect();
+        if (this.headResizeObserver) {
+            this.headResizeObserver.disconnect();
         }
     }
 }

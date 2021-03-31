@@ -49494,7 +49494,10 @@
 
             this.renderer.appendChild(this.stickyHeadContainer, this.headRef);
             this.syncHorizontalScroll();
-            this.syncColumnWidths();
+            this.syncColumnWidths(); // Note: While we're detaching header from CDK Viewport we have
+            // to recalculate viewport height to keep the same total height.
+            // The setTimeout is for skipping one tick to let the header get his height.
+
             setTimeout(function () {
               return _this156.updateContainerToFitHead();
             });
@@ -49507,8 +49510,8 @@
             var _a, _b;
 
             if ((_a = this.headRef) === null || _a === void 0 ? void 0 : _a.rows.item(0)) {
-              this.headerResizeObserver = new resize_observer_polyfill__WEBPACK_IMPORTED_MODULE_4__["default"](this.updateContainerToFitHead);
-              this.headerResizeObserver.observe((_b = this.headRef) === null || _b === void 0 ? void 0 : _b.rows.item(0));
+              this.headResizeObserver = new resize_observer_polyfill__WEBPACK_IMPORTED_MODULE_4__["default"](this.updateContainerToFitHead);
+              this.headResizeObserver.observe((_b = this.headRef) === null || _b === void 0 ? void 0 : _b.rows.item(0));
             }
           }
         }, {
@@ -49637,8 +49640,8 @@
             this.unsubscribe$.next();
             this.unsubscribe$.complete();
 
-            if (this.headerResizeObserver) {
-              this.headerResizeObserver.disconnect();
+            if (this.headResizeObserver) {
+              this.headResizeObserver.disconnect();
             }
           }
         }]);
