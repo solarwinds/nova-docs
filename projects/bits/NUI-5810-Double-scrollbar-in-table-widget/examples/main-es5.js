@@ -49507,7 +49507,9 @@
         }, {
           key: "updateContainerHeightOnHeadResize",
           value: function updateContainerHeightOnHeadResize() {
-            var _a, _b;
+            var _a, _b; // This resize observer is needed in case a parent element has a height of zero upon instantiation
+            // thereby prohibiting the header from having its intended height when its initially rendered.
+
 
             if ((_a = this.headRef) === null || _a === void 0 ? void 0 : _a.rows.item(0)) {
               this.headResizeObserver = new resize_observer_polyfill__WEBPACK_IMPORTED_MODULE_4__["default"](this.updateContainerToFitHead);
