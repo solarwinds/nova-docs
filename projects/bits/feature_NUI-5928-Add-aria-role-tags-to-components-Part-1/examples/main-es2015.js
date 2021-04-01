@@ -11608,7 +11608,7 @@ class ChipsComponent {
     set overflowCounter(el) {
         this.chipsOverflowService.overflowCounter = el;
     }
-    get role() { return this.getItemsCount() ? "listbox" : null; }
+    get role() { return this.getItemsCount() ? "list" : null; }
     ngOnChanges(changes) {
         if (changes.itemsSource) {
             this.chipsOverflowService.itemsSource = changes.itemsSource.currentValue;
@@ -14784,7 +14784,7 @@ class ContentComponent {
     }
 }
 ContentComponent.ɵfac = function ContentComponent_Factory(t) { return new (t || ContentComponent)(); };
-ContentComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ContentComponent, selectors: [["nui-content"]], hostAttrs: ["role", "contentinfo"], inputs: { size: "size" }, ngContentSelectors: _c0, decls: 2, vars: 1, consts: [["size", "normal", 1, "nui-content", 3, "ngClass"]], template: function ContentComponent_Template(rf, ctx) { if (rf & 1) {
+ContentComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ContentComponent, selectors: [["nui-content"]], hostAttrs: ["role", "document"], inputs: { size: "size" }, ngContentSelectors: _c0, decls: 2, vars: 1, consts: [["size", "normal", 1, "nui-content", 3, "ngClass"]], template: function ContentComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](1);
@@ -15124,7 +15124,7 @@ ChipComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComp
     } if (rf & 2) {
         let _t;
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.contentTemplate = _t.first);
-    } }, hostAttrs: ["role", "option", 1, "nui-chip"], inputs: { item: "item", closeButtonTooltip: "closeButtonTooltip", customClass: "customClass" }, outputs: { remove: "remove" }, ngContentSelectors: _c2, decls: 8, vars: 8, consts: [[1, "nui-chip__value", 3, "ngClass"], [1, "nui-chip__value-name", 3, "title", "ngClass"], [4, "ngIf", "ngIfElse"], ["icon", "remove", "iconSize", "small", "cssClass", "nui-chip__value-remove", 3, "nuiTooltip", "click"], ["projection", ""], ["itemLabel", ""], [4, "ngTemplateOutlet"]], template: function ChipComponent_Template(rf, ctx) { if (rf & 1) {
+    } }, hostAttrs: ["role", "listitem", 1, "nui-chip"], inputs: { item: "item", closeButtonTooltip: "closeButtonTooltip", customClass: "customClass" }, outputs: { remove: "remove" }, ngContentSelectors: _c2, decls: 8, vars: 8, consts: [[1, "nui-chip__value", 3, "ngClass"], [1, "nui-chip__value-name", 3, "title", "ngClass"], [4, "ngIf", "ngIfElse"], ["icon", "remove", "iconSize", "small", "cssClass", "nui-chip__value-remove", 3, "nuiTooltip", "click"], ["projection", ""], ["itemLabel", ""], [4, "ngTemplateOutlet"]], template: function ChipComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "span", 1);
@@ -22364,6 +22364,9 @@ function DatePickerInnerComponent_div_0_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("role", ctx_r0.role);
 } }
 const _c0 = ["*"];
 /** @ignore */
@@ -22580,9 +22583,9 @@ class DatePickerInnerComponent {
     }
 }
 DatePickerInnerComponent.ɵfac = function DatePickerInnerComponent_Factory(t) { return new (t || DatePickerInnerComponent)(); };
-DatePickerInnerComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: DatePickerInnerComponent, selectors: [["nui-date-picker-inner"]], inputs: { locale: "locale", datepickerMode: "datepickerMode", startingDay: "startingDay", yearRange: "yearRange", minDate: "minDate", maxDate: "maxDate", minMode: "minMode", maxMode: "maxMode", showWeeks: "showWeeks", dateFormat: "dateFormat", formatDay: "formatDay", formatMonth: "formatMonth", formatYear: "formatYear", formatDayHeader: "formatDayHeader", formatDayTitle: "formatDayTitle", formatMonthTitle: "formatMonthTitle", onlyCurrentMonth: "onlyCurrentMonth", preserveInsignificant: "preserveInsignificant", disabledDates: "disabledDates", initDate: "initDate", inline: "inline", selectedDate: "selectedDate", handleTimezone: "handleTimezone", value: "value" }, outputs: { selectionDone: "selectionDone", update: "update" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵNgOnChangesFeature"]], ngContentSelectors: _c0, decls: 1, vars: 1, consts: [["class", "nui-datepicker-inner", "role", "dialog", 4, "ngIf"], ["role", "dialog", 1, "nui-datepicker-inner"]], template: function DatePickerInnerComponent_Template(rf, ctx) { if (rf & 1) {
+DatePickerInnerComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: DatePickerInnerComponent, selectors: [["nui-date-picker-inner"]], inputs: { locale: "locale", datepickerMode: "datepickerMode", startingDay: "startingDay", yearRange: "yearRange", minDate: "minDate", maxDate: "maxDate", minMode: "minMode", maxMode: "maxMode", showWeeks: "showWeeks", dateFormat: "dateFormat", formatDay: "formatDay", formatMonth: "formatMonth", formatYear: "formatYear", formatDayHeader: "formatDayHeader", formatDayTitle: "formatDayTitle", formatMonthTitle: "formatMonthTitle", onlyCurrentMonth: "onlyCurrentMonth", preserveInsignificant: "preserveInsignificant", disabledDates: "disabledDates", initDate: "initDate", inline: "inline", selectedDate: "selectedDate", handleTimezone: "handleTimezone", role: "role", value: "value" }, outputs: { selectionDone: "selectionDone", update: "update" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵNgOnChangesFeature"]], ngContentSelectors: _c0, decls: 1, vars: 1, consts: [["class", "nui-datepicker-inner", 4, "ngIf"], [1, "nui-datepicker-inner"]], template: function DatePickerInnerComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, DatePickerInnerComponent_div_0_Template, 2, 0, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, DatePickerInnerComponent_div_0_Template, 2, 1, "div", 0);
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.datepickerMode);
     } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_6__["NgIf"]], encapsulation: 2 });
@@ -26376,7 +26379,7 @@ ExpanderComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefine
     } if (rf & 2) {
         let _t;
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.customHeaderContent = _t.first);
-    } }, inputs: { disabled: "disabled", icon: "icon", header: "header", hideLeftBorder: "hideLeftBorder", open: "open" }, outputs: { openChange: "openChange" }, ngContentSelectors: _c2, decls: 10, vars: 15, consts: [[1, "nui-expander"], ["role", "button", 1, "nui-expander__header", 3, "click"], [1, "nui-expander__header-icon", 3, "iconColor", "icon"], [1, "nui-expander__header-content-wrapper"], [1, "nui-expander__custom-header"], ["customHeaderContent", ""], ["class", "nui-expander__header-content", 3, "nui-expander__header-content--with-icon", 4, "ngIf"], ["role", "list", 1, "nui-expander__body"], [4, "ngIf"], [1, "nui-expander__header-content"], ["class", "nui-expander__header-content-icon", 3, "icon", 4, "ngIf"], [1, "nui-expander__header-title"], [1, "nui-expander__header-content-icon", 3, "icon"]], template: function ExpanderComponent_Template(rf, ctx) { if (rf & 1) {
+    } }, inputs: { disabled: "disabled", icon: "icon", header: "header", hideLeftBorder: "hideLeftBorder", open: "open" }, outputs: { openChange: "openChange" }, ngContentSelectors: _c2, decls: 10, vars: 15, consts: [[1, "nui-expander"], ["role", "switch", 1, "nui-expander__header", 3, "click"], [1, "nui-expander__header-icon", 3, "iconColor", "icon"], [1, "nui-expander__header-content-wrapper"], [1, "nui-expander__custom-header"], ["customHeaderContent", ""], ["class", "nui-expander__header-content", 3, "nui-expander__header-content--with-icon", 4, "ngIf"], ["role", "section", 1, "nui-expander__body"], [4, "ngIf"], [1, "nui-expander__header-content"], ["class", "nui-expander__header-content-icon", 3, "icon", 4, "ngIf"], [1, "nui-expander__header-title"], [1, "nui-expander__header-content-icon", 3, "icon"]], template: function ExpanderComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"](_c1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
@@ -31332,7 +31335,7 @@ function DatePickerComponent_ng_template_5_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("preserveInsignificant", ctx_r4.preserveInsignificant)("selectedDate", ctx_r4.selectedDate)("inline", ctx_r4.inline)("locale", ctx_r4.locale)("datepickerMode", ctx_r4.datepickerMode)("initDate", ctx_r4.initDate)("minDate", ctx_r4.minDate)("maxDate", ctx_r4.maxDate)("minMode", ctx_r4.minMode)("maxMode", ctx_r4.maxMode)("showWeeks", ctx_r4.showWeeks)("dateFormat", ctx_r4.dateFormat)("formatDay", ctx_r4.formatDay)("formatMonth", ctx_r4.formatMonth)("formatYear", ctx_r4.formatYear)("formatDayHeader", ctx_r4.formatDayHeader)("formatDayTitle", ctx_r4.formatDayTitle)("formatMonthTitle", ctx_r4.formatMonthTitle)("startingDay", ctx_r4.startingDay)("yearRange", ctx_r4.yearRange)("disabledDates", ctx_r4.disabledDates)("onlyCurrentMonth", ctx_r4.onlyCurrentMonth)("handleTimezone", ctx_r4.handleTimezone)("value", ctx_r4.value);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("preserveInsignificant", ctx_r4.preserveInsignificant)("selectedDate", ctx_r4.selectedDate)("inline", ctx_r4.inline)("locale", ctx_r4.locale)("datepickerMode", ctx_r4.datepickerMode)("initDate", ctx_r4.initDate)("minDate", ctx_r4.minDate)("maxDate", ctx_r4.maxDate)("minMode", ctx_r4.minMode)("maxMode", ctx_r4.maxMode)("showWeeks", ctx_r4.showWeeks)("dateFormat", ctx_r4.dateFormat)("formatDay", ctx_r4.formatDay)("formatMonth", ctx_r4.formatMonth)("formatYear", ctx_r4.formatYear)("formatDayHeader", ctx_r4.formatDayHeader)("formatDayTitle", ctx_r4.formatDayTitle)("formatMonthTitle", ctx_r4.formatMonthTitle)("startingDay", ctx_r4.startingDay)("yearRange", ctx_r4.yearRange)("disabledDates", ctx_r4.disabledDates)("onlyCurrentMonth", ctx_r4.onlyCurrentMonth)("handleTimezone", ctx_r4.handleTimezone)("value", ctx_r4.value)("role", ctx_r4.role);
 } }
 // <example-url>./../examples/index.html#/date-picker</example-url><br />
 class DatePickerComponent {
@@ -31372,6 +31375,7 @@ class DatePickerComponent {
         this.setDate(value);
         this.updateTextboxValue();
     }
+    get role() { return this.overlay ? "dialog" : "application"; }
     ngOnInit() {
         lodash_defaults__WEBPACK_IMPORTED_MODULE_2___default()(this, _public_api__WEBPACK_IMPORTED_MODULE_15__["datePickerDefaults"]);
         this.selectedDate = this._value;
@@ -31522,13 +31526,13 @@ DatePickerComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefi
                 useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["forwardRef"])(() => DatePickerComponent),
                 multi: true,
             },
-        ]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵNgOnChangesFeature"]], decls: 7, vars: 2, consts: [[1, "nui-datepicker"], [4, "ngIf"], ["popupArea", ""], ["datePickerInner", ""], [1, "nui-datepicker__container", 3, "click"], ["toggleRef", ""], ["autocomplete", "off", 3, "disabled", "isInErrorState", "ariaLabel", "textChange", "blurred"], ["date", ""], ["icon", "calendar", "aria-hidden", "true", 1, "nui-datepicker__icon", 3, "iconColor"], [3, "toggleReference", "overlayConfig", "customContainer"], ["overlay", ""], [4, "ngTemplateOutlet"], [3, "preserveInsignificant", "selectedDate", "inline", "locale", "datepickerMode", "initDate", "minDate", "maxDate", "minMode", "maxMode", "showWeeks", "dateFormat", "formatDay", "formatMonth", "formatYear", "formatDayHeader", "formatDayTitle", "formatMonthTitle", "startingDay", "yearRange", "disabledDates", "onlyCurrentMonth", "handleTimezone", "value", "update", "selectionDone"], ["tabindex", "0"]], template: function DatePickerComponent_Template(rf, ctx) { if (rf & 1) {
+        ]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵNgOnChangesFeature"]], decls: 7, vars: 2, consts: [[1, "nui-datepicker"], [4, "ngIf"], ["popupArea", ""], ["datePickerInner", ""], [1, "nui-datepicker__container", 3, "click"], ["toggleRef", ""], ["autocomplete", "off", 3, "disabled", "isInErrorState", "ariaLabel", "textChange", "blurred"], ["date", ""], ["icon", "calendar", "aria-hidden", "true", 1, "nui-datepicker__icon", 3, "iconColor"], [3, "toggleReference", "overlayConfig", "customContainer"], ["overlay", ""], [4, "ngTemplateOutlet"], [3, "preserveInsignificant", "selectedDate", "inline", "locale", "datepickerMode", "initDate", "minDate", "maxDate", "minMode", "maxMode", "showWeeks", "dateFormat", "formatDay", "formatMonth", "formatYear", "formatDayHeader", "formatDayTitle", "formatMonthTitle", "startingDay", "yearRange", "disabledDates", "onlyCurrentMonth", "handleTimezone", "value", "role", "update", "selectionDone"], ["tabindex", "0"]], template: function DatePickerComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, DatePickerComponent_ng_container_1_Template, 9, 10, "ng-container", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, DatePickerComponent_div_2_Template, 2, 1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "div", null, 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](5, DatePickerComponent_ng_template_5_Template, 4, 24, "ng-template", null, 3, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](5, DatePickerComponent_ng_template_5_Template, 4, 25, "ng-template", null, 3, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", !ctx.inline);
