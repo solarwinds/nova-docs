@@ -132,7 +132,7 @@
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#updateContainerHeightOnHeadResize">updateContainerHeightOnHeadResize</a>
+                                <a href="#updateViewportHeightOnHeadResize">updateViewportHeightOnHeadResize</a>
                             </li>
                         </ul>
                     </td>
@@ -185,7 +185,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/lib/table/table-virtual-scroll/table-sticky-header.directive.ts:62</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="64" class="link-to-prism">src/lib/table/table-virtual-scroll/table-sticky-header.directive.ts:64</a></div>
                             </td>
                         </tr>
 
@@ -291,8 +291,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="75"
-                            class="link-to-prism">src/lib/table/table-virtual-scroll/table-sticky-header.directive.ts:75</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="86"
+                            class="link-to-prism">src/lib/table/table-virtual-scroll/table-sticky-header.directive.ts:86</a></div>
                 </td>
             </tr>
 
@@ -332,8 +332,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="96"
-                            class="link-to-prism">src/lib/table/table-virtual-scroll/table-sticky-header.directive.ts:96</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="107"
+                            class="link-to-prism">src/lib/table/table-virtual-scroll/table-sticky-header.directive.ts:107</a></div>
                 </td>
             </tr>
 
@@ -353,28 +353,28 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="updateContainerHeightOnHeadResize"></a>
+                    <a name="updateViewportHeightOnHeadResize"></a>
                     <span class="name">
                         <b>
                             <span class="modifier">Public</span>
-                            updateContainerHeightOnHeadResize
+                            updateViewportHeightOnHeadResize
                         </b>
-                        <a href="#updateContainerHeightOnHeadResize"><span class="icon ion-ios-link"></span></a>
+                        <a href="#updateViewportHeightOnHeadResize"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>updateContainerHeightOnHeadResize()</code>
+                    <code>updateViewportHeightOnHeadResize()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="130"
-                            class="link-to-prism">src/lib/table/table-virtual-scroll/table-sticky-header.directive.ts:130</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="141"
+                            class="link-to-prism">src/lib/table/table-virtual-scroll/table-sticky-header.directive.ts:141</a></div>
                 </td>
             </tr>
 
@@ -422,7 +422,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="139" class="link-to-prism">src/lib/table/table-virtual-scroll/table-sticky-header.directive.ts:139</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="154" class="link-to-prism">src/lib/table/table-virtual-scroll/table-sticky-header.directive.ts:154</a></div>
                             </td>
                         </tr>
 
@@ -486,7 +486,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="121" class="link-to-prism">src/lib/table/table-virtual-scroll/table-sticky-header.directive.ts:121</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="132" class="link-to-prism">src/lib/table/table-virtual-scroll/table-sticky-header.directive.ts:132</a></div>
                             </td>
                         </tr>
 
@@ -655,6 +655,8 @@ export class TableStickyHeaderDirective implements AfterViewInit, OnDestroy {
 
     private unsubscribe$: Subject&lt;unknown&gt; &#x3D; new Subject&lt;unknown&gt;();
     private headResizeObserver: ResizeObserver;
+    // this is for keeping track of the original viewport height on head resize
+    private origViewportHeight: number;
 
     private get viewportEl(): HTMLElement {
         return this.viewport.elementRef.nativeElement;
@@ -673,6 +675,15 @@ export class TableStickyHeaderDirective implements AfterViewInit, OnDestroy {
         // Waiting for the next tick to let cdk table properly draw the table header
         setTimeout(() &#x3D;&gt; this.updateNativeHeaderPlaceholder());
         this.updateHeadPosition(this._sticky);
+    }
+
+    public ngOnDestroy(): void {
+        this.unsubscribe$.next();
+        this.unsubscribe$.complete();
+
+        if (this.headResizeObserver) {
+            this.headResizeObserver.disconnect();
+        }
     }
 
     public setNative(): void {
@@ -716,26 +727,30 @@ export class TableStickyHeaderDirective implements AfterViewInit, OnDestroy {
         // to recalculate viewport height to keep the same total height.
         // The setTimeout is for skipping one tick to let the header get his height.
         setTimeout(() &#x3D;&gt; this.updateContainerToFitHead());
-        this.updateContainerHeightOnHeadResize();
+        this.updateViewportHeightOnHeadResize();
 
         this.headPosition &#x3D; TableVirtualScrollHeaderPosition.Sticky;
     }
 
     public updateContainerToFitHead &#x3D; (): void &#x3D;&gt; {
         if (this._sticky) {
-            const viewportComputedHeight: string &#x3D; isEmpty(this.userProvidedHeight) ?
-                this.viewportEl.parentElement?.offsetHeight + &quot;px&quot; : this.userProvidedHeight;
+            this.origViewportHeight &#x3D; this.origViewportHeight || this.viewportEl?.offsetHeight;
+            const viewportComputedHeight: string &#x3D; isEmpty(this.userProvidedHeight) ? this.origViewportHeight + &quot;px&quot; : this.userProvidedHeight;
             this.viewportEl.style.setProperty(&quot;height&quot;,
                 &#x60;calc(${viewportComputedHeight} - ${this.headRef?.rows.item(0)?.offsetHeight ?? 0}px)&#x60;, &quot;important&quot;);
         }
     }
 
-    public updateContainerHeightOnHeadResize(): void {
+    public updateViewportHeightOnHeadResize(): void {
+        if (this.headResizeObserver) {
+            return;
+        }
+
         // This resize observer is needed in case a parent element has a height of zero upon instantiation
         // thereby prohibiting the header from having its intended height when its initially rendered.
-        if (this.headRef?.rows.item(0)) {
+        if (this.headRef) {
             this.headResizeObserver &#x3D; new ResizeObserver(this.updateContainerToFitHead);
-            this.headResizeObserver.observe(this.headRef?.rows.item(0) as Element);
+            this.headResizeObserver.observe(this.headRef);
         }
     }
 
@@ -869,15 +884,6 @@ export class TableStickyHeaderDirective implements AfterViewInit, OnDestroy {
             return;
         }
         this.setSticky();
-    }
-
-    public ngOnDestroy(): void {
-        this.unsubscribe$.next();
-        this.unsubscribe$.complete();
-
-        if (this.headResizeObserver) {
-            this.headResizeObserver.disconnect();
-        }
     }
 }
 </code></pre>

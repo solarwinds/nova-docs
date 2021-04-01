@@ -49383,7 +49383,8 @@
             var _a, _b, _c, _d;
 
             if (_this154._sticky) {
-              var viewportComputedHeight = lodash_isEmpty__WEBPACK_IMPORTED_MODULE_3___default()(_this154.userProvidedHeight) ? ((_a = _this154.viewportEl.parentElement) === null || _a === void 0 ? void 0 : _a.offsetHeight) + "px" : _this154.userProvidedHeight;
+              _this154.origViewportHeight = _this154.origViewportHeight || ((_a = _this154.viewportEl) === null || _a === void 0 ? void 0 : _a.offsetHeight);
+              var viewportComputedHeight = lodash_isEmpty__WEBPACK_IMPORTED_MODULE_3___default()(_this154.userProvidedHeight) ? _this154.origViewportHeight + "px" : _this154.userProvidedHeight;
 
               _this154.viewportEl.style.setProperty("height", "calc(".concat(viewportComputedHeight, " - ").concat((_d = (_c = (_b = _this154.headRef) === null || _b === void 0 ? void 0 : _b.rows.item(0)) === null || _c === void 0 ? void 0 : _c.offsetHeight) !== null && _d !== void 0 ? _d : 0, "px)"), "important");
             }
@@ -49457,6 +49458,16 @@
             this.updateHeadPosition(this._sticky);
           }
         }, {
+          key: "ngOnDestroy",
+          value: function ngOnDestroy() {
+            this.unsubscribe$.next();
+            this.unsubscribe$.complete();
+
+            if (this.headResizeObserver) {
+              this.headResizeObserver.disconnect();
+            }
+          }
+        }, {
           key: "setNative",
           value: function setNative() {
             if (this.headPosition === TableVirtualScrollHeaderPosition.Native) {
@@ -49501,19 +49512,21 @@
             setTimeout(function () {
               return _this156.updateContainerToFitHead();
             });
-            this.updateContainerHeightOnHeadResize();
+            this.updateViewportHeightOnHeadResize();
             this.headPosition = TableVirtualScrollHeaderPosition.Sticky;
           }
         }, {
-          key: "updateContainerHeightOnHeadResize",
-          value: function updateContainerHeightOnHeadResize() {
-            var _a, _b; // This resize observer is needed in case a parent element has a height of zero upon instantiation
+          key: "updateViewportHeightOnHeadResize",
+          value: function updateViewportHeightOnHeadResize() {
+            if (this.headResizeObserver) {
+              return;
+            } // This resize observer is needed in case a parent element has a height of zero upon instantiation
             // thereby prohibiting the header from having its intended height when its initially rendered.
 
 
-            if ((_a = this.headRef) === null || _a === void 0 ? void 0 : _a.rows.item(0)) {
+            if (this.headRef) {
               this.headResizeObserver = new resize_observer_polyfill__WEBPACK_IMPORTED_MODULE_4__["default"](this.updateContainerToFitHead);
-              this.headResizeObserver.observe((_b = this.headRef) === null || _b === void 0 ? void 0 : _b.rows.item(0));
+              this.headResizeObserver.observe(this.headRef);
             }
           }
         }, {
@@ -49635,16 +49648,6 @@
             }
 
             this.setSticky();
-          }
-        }, {
-          key: "ngOnDestroy",
-          value: function ngOnDestroy() {
-            this.unsubscribe$.next();
-            this.unsubscribe$.complete();
-
-            if (this.headResizeObserver) {
-              this.headResizeObserver.disconnect();
-            }
           }
         }]);
 

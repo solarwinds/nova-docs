@@ -26500,8 +26500,8 @@ class TableStickyHeaderDirective {
         this.updateContainerToFitHead = () => {
             var _a, _b, _c, _d;
             if (this._sticky) {
-                const viewportComputedHeight = lodash_isEmpty__WEBPACK_IMPORTED_MODULE_3___default()(this.userProvidedHeight) ?
-                    ((_a = this.viewportEl.parentElement) === null || _a === void 0 ? void 0 : _a.offsetHeight) + "px" : this.userProvidedHeight;
+                this.origViewportHeight = this.origViewportHeight || ((_a = this.viewportEl) === null || _a === void 0 ? void 0 : _a.offsetHeight);
+                const viewportComputedHeight = lodash_isEmpty__WEBPACK_IMPORTED_MODULE_3___default()(this.userProvidedHeight) ? this.origViewportHeight + "px" : this.userProvidedHeight;
                 this.viewportEl.style.setProperty("height", `calc(${viewportComputedHeight} - ${(_d = (_c = (_b = this.headRef) === null || _b === void 0 ? void 0 : _b.rows.item(0)) === null || _c === void 0 ? void 0 : _c.offsetHeight) !== null && _d !== void 0 ? _d : 0}px)`, "important");
             }
         };
@@ -26553,6 +26553,13 @@ class TableStickyHeaderDirective {
         setTimeout(() => this.updateNativeHeaderPlaceholder());
         this.updateHeadPosition(this._sticky);
     }
+    ngOnDestroy() {
+        this.unsubscribe$.next();
+        this.unsubscribe$.complete();
+        if (this.headResizeObserver) {
+            this.headResizeObserver.disconnect();
+        }
+    }
     setNative() {
         if (this.headPosition === TableVirtualScrollHeaderPosition.Native) {
             console.warn("Already in native mode");
@@ -26587,16 +26594,18 @@ class TableStickyHeaderDirective {
         // to recalculate viewport height to keep the same total height.
         // The setTimeout is for skipping one tick to let the header get his height.
         setTimeout(() => this.updateContainerToFitHead());
-        this.updateContainerHeightOnHeadResize();
+        this.updateViewportHeightOnHeadResize();
         this.headPosition = TableVirtualScrollHeaderPosition.Sticky;
     }
-    updateContainerHeightOnHeadResize() {
-        var _a, _b;
+    updateViewportHeightOnHeadResize() {
+        if (this.headResizeObserver) {
+            return;
+        }
         // This resize observer is needed in case a parent element has a height of zero upon instantiation
         // thereby prohibiting the header from having its intended height when its initially rendered.
-        if ((_a = this.headRef) === null || _a === void 0 ? void 0 : _a.rows.item(0)) {
+        if (this.headRef) {
             this.headResizeObserver = new resize_observer_polyfill__WEBPACK_IMPORTED_MODULE_4__["default"](this.updateContainerToFitHead);
-            this.headResizeObserver.observe((_b = this.headRef) === null || _b === void 0 ? void 0 : _b.rows.item(0));
+            this.headResizeObserver.observe(this.headRef);
         }
     }
     assignRequiredProperties() {
@@ -26680,13 +26689,6 @@ class TableStickyHeaderDirective {
             return;
         }
         this.setSticky();
-    }
-    ngOnDestroy() {
-        this.unsubscribe$.next();
-        this.unsubscribe$.complete();
-        if (this.headResizeObserver) {
-            this.headResizeObserver.disconnect();
-        }
     }
 }
 TableStickyHeaderDirective.ɵfac = function TableStickyHeaderDirective_Factory(t) { return new (t || TableStickyHeaderDirective)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["Renderer2"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_0__["CdkVirtualScrollViewport"])); };
