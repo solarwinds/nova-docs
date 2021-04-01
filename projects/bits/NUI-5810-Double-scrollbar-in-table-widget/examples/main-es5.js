@@ -49528,7 +49528,7 @@
 
             if (this.headRef) {
               this.headResizeObserver = new resize_observer_polyfill__WEBPACK_IMPORTED_MODULE_4__["default"](function (entries) {
-                return (// We wrap it in requestAnimationFrame to avoid this error - ResizeObserver loop limit exceeded
+                return (// We wrap this in requestAnimationFrame to avoid "ResizeObserver loop limit exceeded" error in unit tests
                   // https://stackoverflow.com/questions/49384120/resizeobserver-loop-limit-exceeded
                   window.requestAnimationFrame(function () {
                     if (!Array.isArray(entries) || !entries.length) {

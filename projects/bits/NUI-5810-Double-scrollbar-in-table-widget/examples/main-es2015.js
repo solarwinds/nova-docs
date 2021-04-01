@@ -26605,7 +26605,7 @@ class TableStickyHeaderDirective {
         // thereby prohibiting the header from having its intended height when its initially rendered.
         if (this.headRef) {
             this.headResizeObserver = new resize_observer_polyfill__WEBPACK_IMPORTED_MODULE_4__["default"]((entries) => 
-            // We wrap it in requestAnimationFrame to avoid this error - ResizeObserver loop limit exceeded
+            // We wrap this in requestAnimationFrame to avoid "ResizeObserver loop limit exceeded" error in unit tests
             // https://stackoverflow.com/questions/49384120/resizeobserver-loop-limit-exceeded
             window.requestAnimationFrame(() => {
                 if (!Array.isArray(entries) || !entries.length) {

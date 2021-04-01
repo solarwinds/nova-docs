@@ -750,7 +750,7 @@ export class TableStickyHeaderDirective implements AfterViewInit, OnDestroy {
         // thereby prohibiting the header from having its intended height when its initially rendered.
         if (this.headRef) {
             this.headResizeObserver &#x3D; new ResizeObserver((entries: ResizeObserverEntry[]) &#x3D;&gt;
-                // We wrap it in requestAnimationFrame to avoid this error - ResizeObserver loop limit exceeded
+                // We wrap this in requestAnimationFrame to avoid &quot;ResizeObserver loop limit exceeded&quot; error in unit tests
                 // https://stackoverflow.com/questions/49384120/resizeobserver-loop-limit-exceeded
                 window.requestAnimationFrame(() &#x3D;&gt; {
                     if (!Array.isArray(entries) || !entries.length) {
