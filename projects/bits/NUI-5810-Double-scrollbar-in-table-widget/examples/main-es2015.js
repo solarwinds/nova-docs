@@ -26604,7 +26604,15 @@ class TableStickyHeaderDirective {
         // This resize observer is needed in case a parent element has a height of zero upon instantiation
         // thereby prohibiting the header from having its intended height when its initially rendered.
         if (this.headRef) {
-            this.headResizeObserver = new resize_observer_polyfill__WEBPACK_IMPORTED_MODULE_4__["default"](this.updateContainerToFitHead);
+            this.headResizeObserver = new resize_observer_polyfill__WEBPACK_IMPORTED_MODULE_4__["default"]((entries) => 
+            // We wrap it in requestAnimationFrame to avoid this error - ResizeObserver loop limit exceeded
+            // https://stackoverflow.com/questions/49384120/resizeobserver-loop-limit-exceeded
+            window.requestAnimationFrame(() => {
+                if (!Array.isArray(entries) || !entries.length) {
+                    return;
+                }
+                this.updateContainerToFitHead();
+            }));
             this.headResizeObserver.observe(this.headRef);
         }
     }

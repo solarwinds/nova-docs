@@ -422,7 +422,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="154" class="link-to-prism">src/lib/table/table-virtual-scroll/table-sticky-header.directive.ts:154</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="163" class="link-to-prism">src/lib/table/table-virtual-scroll/table-sticky-header.directive.ts:163</a></div>
                             </td>
                         </tr>
 
@@ -749,7 +749,16 @@ export class TableStickyHeaderDirective implements AfterViewInit, OnDestroy {
         // This resize observer is needed in case a parent element has a height of zero upon instantiation
         // thereby prohibiting the header from having its intended height when its initially rendered.
         if (this.headRef) {
-            this.headResizeObserver &#x3D; new ResizeObserver(this.updateContainerToFitHead);
+            this.headResizeObserver &#x3D; new ResizeObserver((entries: ResizeObserverEntry[]) &#x3D;&gt;
+                // We wrap it in requestAnimationFrame to avoid this error - ResizeObserver loop limit exceeded
+                // https://stackoverflow.com/questions/49384120/resizeobserver-loop-limit-exceeded
+                window.requestAnimationFrame(() &#x3D;&gt; {
+                    if (!Array.isArray(entries) || !entries.length) {
+                        return;
+                    }
+                    this.updateContainerToFitHead();
+                })
+            );
             this.headResizeObserver.observe(this.headRef);
         }
     }
