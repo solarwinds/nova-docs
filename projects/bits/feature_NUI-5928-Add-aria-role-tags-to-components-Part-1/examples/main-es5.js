@@ -41788,6 +41788,11 @@
         }
 
         _createClass(DatePickerInnerComponent, [{
+          key: "role",
+          get: function get() {
+            return this.inline ? "application" : "dialog";
+          }
+        }, {
           key: "value",
           get: function get() {
             return this._value;
@@ -42100,7 +42105,6 @@
           inline: "inline",
           selectedDate: "selectedDate",
           handleTimezone: "handleTimezone",
-          role: "role",
           value: "value"
         },
         outputs: {
@@ -58867,7 +58871,7 @@
         if (rf & 2) {
           var ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("preserveInsignificant", ctx_r4.preserveInsignificant)("selectedDate", ctx_r4.selectedDate)("inline", ctx_r4.inline)("locale", ctx_r4.locale)("datepickerMode", ctx_r4.datepickerMode)("initDate", ctx_r4.initDate)("minDate", ctx_r4.minDate)("maxDate", ctx_r4.maxDate)("minMode", ctx_r4.minMode)("maxMode", ctx_r4.maxMode)("showWeeks", ctx_r4.showWeeks)("dateFormat", ctx_r4.dateFormat)("formatDay", ctx_r4.formatDay)("formatMonth", ctx_r4.formatMonth)("formatYear", ctx_r4.formatYear)("formatDayHeader", ctx_r4.formatDayHeader)("formatDayTitle", ctx_r4.formatDayTitle)("formatMonthTitle", ctx_r4.formatMonthTitle)("startingDay", ctx_r4.startingDay)("yearRange", ctx_r4.yearRange)("disabledDates", ctx_r4.disabledDates)("onlyCurrentMonth", ctx_r4.onlyCurrentMonth)("handleTimezone", ctx_r4.handleTimezone)("value", ctx_r4.value)("role", ctx_r4.role);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("preserveInsignificant", ctx_r4.preserveInsignificant)("selectedDate", ctx_r4.selectedDate)("inline", ctx_r4.inline)("locale", ctx_r4.locale)("datepickerMode", ctx_r4.datepickerMode)("initDate", ctx_r4.initDate)("minDate", ctx_r4.minDate)("maxDate", ctx_r4.maxDate)("minMode", ctx_r4.minMode)("maxMode", ctx_r4.maxMode)("showWeeks", ctx_r4.showWeeks)("dateFormat", ctx_r4.dateFormat)("formatDay", ctx_r4.formatDay)("formatMonth", ctx_r4.formatMonth)("formatYear", ctx_r4.formatYear)("formatDayHeader", ctx_r4.formatDayHeader)("formatDayTitle", ctx_r4.formatDayTitle)("formatMonthTitle", ctx_r4.formatMonthTitle)("startingDay", ctx_r4.startingDay)("yearRange", ctx_r4.yearRange)("disabledDates", ctx_r4.disabledDates)("onlyCurrentMonth", ctx_r4.onlyCurrentMonth)("handleTimezone", ctx_r4.handleTimezone)("value", ctx_r4.value);
         }
       } // <example-url>./../examples/index.html#/date-picker</example-url><br />
 
@@ -58926,11 +58930,6 @@
 
             this.setDate(value);
             this.updateTextboxValue();
-          }
-        }, {
-          key: "role",
-          get: function get() {
-            return this.overlay ? "dialog" : "application";
           }
         }, {
           key: "ngOnInit",
@@ -59210,7 +59209,7 @@
         }]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵNgOnChangesFeature"]],
         decls: 7,
         vars: 2,
-        consts: [[1, "nui-datepicker"], [4, "ngIf"], ["popupArea", ""], ["datePickerInner", ""], [1, "nui-datepicker__container", 3, "click"], ["toggleRef", ""], ["autocomplete", "off", 3, "disabled", "isInErrorState", "ariaLabel", "textChange", "blurred"], ["date", ""], ["icon", "calendar", "aria-hidden", "true", 1, "nui-datepicker__icon", 3, "iconColor"], [3, "toggleReference", "overlayConfig", "customContainer"], ["overlay", ""], [4, "ngTemplateOutlet"], [3, "preserveInsignificant", "selectedDate", "inline", "locale", "datepickerMode", "initDate", "minDate", "maxDate", "minMode", "maxMode", "showWeeks", "dateFormat", "formatDay", "formatMonth", "formatYear", "formatDayHeader", "formatDayTitle", "formatMonthTitle", "startingDay", "yearRange", "disabledDates", "onlyCurrentMonth", "handleTimezone", "value", "role", "update", "selectionDone"], ["tabindex", "0"]],
+        consts: [[1, "nui-datepicker"], [4, "ngIf"], ["popupArea", ""], ["datePickerInner", ""], [1, "nui-datepicker__container", 3, "click"], ["toggleRef", ""], ["autocomplete", "off", 3, "disabled", "isInErrorState", "ariaLabel", "textChange", "blurred"], ["date", ""], ["icon", "calendar", "aria-hidden", "true", 1, "nui-datepicker__icon", 3, "iconColor"], [3, "toggleReference", "overlayConfig", "customContainer"], ["overlay", ""], [4, "ngTemplateOutlet"], [3, "preserveInsignificant", "selectedDate", "inline", "locale", "datepickerMode", "initDate", "minDate", "maxDate", "minMode", "maxMode", "showWeeks", "dateFormat", "formatDay", "formatMonth", "formatYear", "formatDayHeader", "formatDayTitle", "formatMonthTitle", "startingDay", "yearRange", "disabledDates", "onlyCurrentMonth", "handleTimezone", "value", "update", "selectionDone"], ["tabindex", "0"]],
         template: function DatePickerComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -59223,7 +59222,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](5, DatePickerComponent_ng_template_5_Template, 4, 25, "ng-template", null, 3, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](5, DatePickerComponent_ng_template_5_Template, 4, 24, "ng-template", null, 3, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
           }
 
           if (rf & 2) {
