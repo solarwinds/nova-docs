@@ -6649,8 +6649,8 @@
         },
         features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵNgOnChangesFeature"]],
         decls: 14,
-        vars: 7,
-        consts: [["class", "nui-sorter__label", 4, "ngIf"], [1, "btn-group", "nui-sorter__popup"], [1, "d-inline-block"], ["toggleRef", ""], ["nui-button", "", "type", "button", 1, "nui-sorter__toggle-button", 3, "icon", "click"], [1, "nui-sorter__display-value"], ["nui-button", "", "type", "button", "role", "select", "icon", "caret-down", 1, "nui-selector__toggle", 3, "click"], ["popupArea", ""], [3, "toggleReference", "overlayConfig", "customContainer"], ["overlay", ""], [3, "itemsSource", "menuItemClicked"], [1, "nui-sorter__label"]],
+        vars: 8,
+        consts: [["class", "nui-sorter__label", 4, "ngIf"], [1, "btn-group", "nui-sorter__popup"], [1, "d-inline-block"], ["toggleRef", ""], ["nui-button", "", "type", "button", 1, "nui-sorter__toggle-button", 3, "icon", "click"], [1, "nui-sorter__display-value"], ["nui-button", "", "type", "button", "role", "menubutton", "icon", "caret-down", 1, "nui-selector__toggle", 3, "click"], ["popupArea", ""], [3, "role", "toggleReference", "overlayConfig", "customContainer"], ["overlay", ""], [3, "itemsSource", "menuItemClicked"], [1, "nui-sorter__label"]],
         template: function SorterComponent_Template(rf, ctx) {
           if (rf & 1) {
             var _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
@@ -6727,7 +6727,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("toggleReference", _r1)("overlayConfig", ctx.overlayConfig)("customContainer", ctx.customContainer);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("role", "menu")("toggleReference", _r1)("overlayConfig", ctx.overlayConfig)("customContainer", ctx.customContainer);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
@@ -15980,8 +15980,8 @@
         },
         features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵNgOnChangesFeature"]],
         decls: 12,
-        vars: 8,
-        consts: [[1, "btn-group"], ["toggleButton", ""], ["nui-button", "", "type", "button", 1, "nui-selector__checkbox-button", 3, "displayStyle", "click"], [1, "nui-selector__checkbox-container"], [3, "checked", "indeterminate"], ["checkbox", ""], ["nui-button", "", "type", "button", "role", "select", "class", "nui-selector__toggle", 3, "displayStyle", "icon", "click", 4, "ngIf"], ["popupArea", ""], [3, "toggleReference", "overlayConfig", "customContainer"], ["overlay", ""], [3, "itemsSource", "menuItemClicked"], ["nui-button", "", "type", "button", "role", "select", 1, "nui-selector__toggle", 3, "displayStyle", "icon", "click"]],
+        vars: 9,
+        consts: [[1, "btn-group"], ["toggleButton", ""], ["nui-button", "", "type", "button", 1, "nui-selector__checkbox-button", 3, "displayStyle", "click"], [1, "nui-selector__checkbox-container"], [3, "checked", "indeterminate"], ["checkbox", ""], ["nui-button", "", "type", "button", "role", "menubutton", "class", "nui-selector__toggle", 3, "displayStyle", "icon", "click", 4, "ngIf"], ["popupArea", ""], [3, "role", "toggleReference", "overlayConfig", "customContainer"], ["overlay", ""], [3, "itemsSource", "menuItemClicked"], ["nui-button", "", "type", "button", "role", "menubutton", 1, "nui-selector__toggle", 3, "displayStyle", "icon", "click"]],
         template: function SelectorComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0, 1);
@@ -16036,7 +16036,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("toggleReference", _r0)("overlayConfig", ctx.overlayConfig)("customContainer", ctx.customContainer);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("role", "menu")("toggleReference", _r0)("overlayConfig", ctx.overlayConfig)("customContainer", ctx.customContainer);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
@@ -19497,7 +19497,7 @@
         ngContentSelectors: _c1,
         decls: 8,
         vars: 14,
-        consts: [[3, "appendToBody", "width", "contextClass", "opened"], ["nui-button", "", "nuiPopupToggle", "", "type", "button", 1, "menu-button", "no-shadow", 3, "disabled", "displayStyle", "size", "icon", "iconRight", "isEmpty", "blur"], ["menuToggle", ""], ["popupAreaContent", ""], [3, "itemsSource", "size", 4, "ngIf"], [4, "ngIf"], [3, "itemsSource", "size"]],
+        consts: [[3, "appendToBody", "width", "contextClass", "opened"], ["nui-button", "", "nuiPopupToggle", "", "type", "button", "role", "menubutton", 1, "menu-button", "no-shadow", 3, "disabled", "displayStyle", "size", "icon", "iconRight", "isEmpty", "blur"], ["menuToggle", ""], ["popupAreaContent", ""], [3, "itemsSource", "size", 4, "ngIf"], [4, "ngIf"], [3, "itemsSource", "size"]],
         template: function MenuComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojectionDef"]();
@@ -32654,7 +32654,7 @@
       SelectV2Component.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: SelectV2Component,
         selectors: [["nui-select-v2"]],
-        hostAttrs: ["role", "select", 1, "nui-select-v2"],
+        hostAttrs: ["role", "button", 1, "nui-select-v2"],
         inputs: {
           displayValueTemplate: "displayValueTemplate"
         },
@@ -45906,6 +45906,12 @@
           }
         },
         hostAttrs: ["role", "combobox", 1, "nui-combobox-v2"],
+        hostVars: 1,
+        hostBindings: function ComboboxV2Component_HostBindings(rf, ctx) {
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-expanded", ctx.isDropdownOpen);
+          }
+        },
         inputs: {
           displayWith: "displayWith",
           isRemoveValueEnabled: "isRemoveValueEnabled",
@@ -53648,6 +53654,12 @@
           }
         },
         hostAttrs: ["role", "textbox"],
+        hostVars: 1,
+        hostBindings: function TextboxComponent_HostBindings(rf, ctx) {
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-label", ctx.ariaLabel + " textbox");
+          }
+        },
         inputs: {
           caption: "caption",
           autocomplete: "autocomplete",
