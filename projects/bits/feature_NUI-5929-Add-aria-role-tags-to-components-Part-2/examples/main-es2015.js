@@ -24620,7 +24620,7 @@ ComboboxV2Component.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefi
         let _t;
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.selectedItems = _t);
     } }, hostAttrs: ["role", "combobox", 1, "nui-combobox-v2"], hostVars: 1, hostBindings: function ComboboxV2Component_HostBindings(rf, ctx) { if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-expanded", ctx.isDropdownOpen);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-expanded", ctx.isDropdownOpen || false);
     } }, inputs: { displayWith: "displayWith", isRemoveValueEnabled: "isRemoveValueEnabled", isTypeaheadEnabled: "isTypeaheadEnabled" }, outputs: { searchEmpty: "searchEmpty", canCreateOption: "canCreateOption" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵProvidersFeature"]([
             _option_key_control_service__WEBPACK_IMPORTED_MODULE_8__["OptionKeyControlService"],
             _selected_items_key_control_service__WEBPACK_IMPORTED_MODULE_9__["SelectedItemsKeyControlService"],

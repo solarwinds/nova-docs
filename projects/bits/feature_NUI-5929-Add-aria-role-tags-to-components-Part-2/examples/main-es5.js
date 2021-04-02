@@ -45909,7 +45909,7 @@
         hostVars: 1,
         hostBindings: function ComboboxV2Component_HostBindings(rf, ctx) {
           if (rf & 2) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-expanded", ctx.isDropdownOpen);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-expanded", ctx.isDropdownOpen || false);
           }
         },
         inputs: {
