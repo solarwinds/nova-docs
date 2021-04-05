@@ -30694,7 +30694,7 @@
         }, {
           key: "isMetaKey",
           value: function isMetaKey(event) {
-            return event.ctrlKey || event.metaKey || event.code === "Backspace" || event.code === "Delete";
+            return event.ctrlKey || event.metaKey || event.code === "Backspace" || event.code === "Delete" || event.code === "Tab";
           }
         }], [{
           key: "createRangeValidator",

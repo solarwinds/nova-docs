@@ -17055,7 +17055,7 @@ class TextboxNumberComponent {
         }
     }
     isMetaKey(event) {
-        return event.ctrlKey || event.metaKey || event.code === "Backspace" || event.code === "Delete";
+        return event.ctrlKey || event.metaKey || event.code === "Backspace" || event.code === "Delete" || event.code === "Tab";
     }
 }
 TextboxNumberComponent.ɵfac = function TextboxNumberComponent_Factory(t) { return new (t || TextboxNumberComponent)(); };
