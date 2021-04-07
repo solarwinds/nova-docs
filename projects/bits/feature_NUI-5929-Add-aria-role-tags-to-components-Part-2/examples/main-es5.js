@@ -6649,8 +6649,8 @@
         },
         features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵNgOnChangesFeature"]],
         decls: 14,
-        vars: 8,
-        consts: [["class", "nui-sorter__label", 4, "ngIf"], [1, "btn-group", "nui-sorter__popup"], [1, "d-inline-block"], ["toggleRef", ""], ["nui-button", "", "type", "button", 1, "nui-sorter__toggle-button", 3, "icon", "click"], [1, "nui-sorter__display-value"], ["nui-button", "", "type", "button", "role", "menubutton", "icon", "caret-down", 1, "nui-selector__toggle", 3, "click"], ["popupArea", ""], [3, "role", "toggleReference", "overlayConfig", "customContainer"], ["overlay", ""], [3, "itemsSource", "menuItemClicked"], [1, "nui-sorter__label"]],
+        vars: 7,
+        consts: [["class", "nui-sorter__label", 4, "ngIf"], [1, "btn-group", "nui-sorter__popup"], [1, "d-inline-block"], ["toggleRef", ""], ["nui-button", "", "type", "button", 1, "nui-sorter__toggle-button", 3, "icon", "click"], [1, "nui-sorter__display-value"], ["nui-button", "", "type", "button", "icon", "caret-down", 1, "nui-selector__toggle", 3, "click"], ["popupArea", ""], [3, "toggleReference", "overlayConfig", "customContainer"], ["overlay", ""], [3, "itemsSource", "menuItemClicked"], [1, "nui-sorter__label"]],
         template: function SorterComponent_Template(rf, ctx) {
           if (rf & 1) {
             var _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
@@ -6727,7 +6727,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("role", "menu")("toggleReference", _r1)("overlayConfig", ctx.overlayConfig)("customContainer", ctx.customContainer);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("toggleReference", _r1)("overlayConfig", ctx.overlayConfig)("customContainer", ctx.customContainer);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
@@ -7019,13 +7019,12 @@
           this.clickable = false;
           this.nowrap = false;
           this.selected = false;
-          this.draggable = false;
         }
 
         _createClass(RepeatItemComponent, [{
           key: "role",
           get: function get() {
-            return this.clickable || this.draggable ? "option" : "listitem";
+            return this.clickable ? "option" : "listitem";
           }
         }]);
 
@@ -7048,8 +7047,7 @@
         inputs: {
           clickable: "clickable",
           nowrap: "nowrap",
-          selected: "selected",
-          draggable: "draggable"
+          selected: "selected"
         },
         ngContentSelectors: _c1,
         decls: 3,
@@ -15980,8 +15978,8 @@
         },
         features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵNgOnChangesFeature"]],
         decls: 12,
-        vars: 9,
-        consts: [[1, "btn-group"], ["toggleButton", ""], ["nui-button", "", "type", "button", 1, "nui-selector__checkbox-button", 3, "displayStyle", "click"], [1, "nui-selector__checkbox-container"], [3, "checked", "indeterminate"], ["checkbox", ""], ["nui-button", "", "type", "button", "role", "menubutton", "class", "nui-selector__toggle", 3, "displayStyle", "icon", "click", 4, "ngIf"], ["popupArea", ""], [3, "role", "toggleReference", "overlayConfig", "customContainer"], ["overlay", ""], [3, "itemsSource", "menuItemClicked"], ["nui-button", "", "type", "button", "role", "menubutton", 1, "nui-selector__toggle", 3, "displayStyle", "icon", "click"]],
+        vars: 8,
+        consts: [[1, "btn-group"], ["toggleButton", ""], ["nui-button", "", "type", "button", 1, "nui-selector__checkbox-button", 3, "displayStyle", "click"], [1, "nui-selector__checkbox-container"], [3, "checked", "indeterminate"], ["checkbox", ""], ["nui-button", "", "type", "button", "class", "nui-selector__toggle", 3, "displayStyle", "icon", "click", 4, "ngIf"], ["popupArea", ""], [3, "toggleReference", "overlayConfig", "customContainer"], ["overlay", ""], [3, "itemsSource", "menuItemClicked"], ["nui-button", "", "type", "button", 1, "nui-selector__toggle", 3, "displayStyle", "icon", "click"]],
         template: function SelectorComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0, 1);
@@ -16036,7 +16034,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("role", "menu")("toggleReference", _r0)("overlayConfig", ctx.overlayConfig)("customContainer", ctx.customContainer);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("toggleReference", _r0)("overlayConfig", ctx.overlayConfig)("customContainer", ctx.customContainer);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
@@ -19497,7 +19495,7 @@
         ngContentSelectors: _c1,
         decls: 8,
         vars: 14,
-        consts: [[3, "appendToBody", "width", "contextClass", "opened"], ["nui-button", "", "nuiPopupToggle", "", "type", "button", "role", "menubutton", 1, "menu-button", "no-shadow", 3, "disabled", "displayStyle", "size", "icon", "iconRight", "isEmpty", "blur"], ["menuToggle", ""], ["popupAreaContent", ""], [3, "itemsSource", "size", 4, "ngIf"], [4, "ngIf"], [3, "itemsSource", "size"]],
+        consts: [[3, "appendToBody", "width", "contextClass", "opened"], ["nui-button", "", "nuiPopupToggle", "", "type", "button", 1, "menu-button", "no-shadow", 3, "disabled", "displayStyle", "size", "icon", "iconRight", "isEmpty", "blur"], ["menuToggle", ""], ["popupAreaContent", ""], [3, "itemsSource", "size", 4, "ngIf"], [4, "ngIf"], [3, "itemsSource", "size"]],
         template: function MenuComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojectionDef"]();
@@ -29806,7 +29804,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.quickPicker = _t.first);
           }
         },
-        hostAttrs: ["role", "navigation"],
+        hostAttrs: ["role", "spinbutton"],
         inputs: {
           minDate: "minDate",
           maxDate: "maxDate",
@@ -32676,8 +32674,8 @@
         }]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInheritDefinitionFeature"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵNgOnChangesFeature"]],
         ngContentSelectors: _c1,
         decls: 6,
-        vars: 7,
-        consts: [["tabindex", "0", 1, "nui-select-v2__container", 3, "keydown"], ["input", ""], ["class", "nui-select-v2__value", 4, "ngIf"], [3, "ngTemplateOutlet", "ngTemplateOutletContext", 4, "ngIf"], [3, "role", "toggleReference", "viewportMargin", "overlayConfig"], [1, "nui-select-v2__value"], ["class", "nui-select-v2__value-content", 4, "ngIf"], ["class", "nui-select-v2__placeholder", 4, "ngIf"], [3, "icon"], [1, "nui-select-v2__value-content"], [1, "nui-select-v2__placeholder"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"]],
+        vars: 6,
+        consts: [["tabindex", "0", 1, "nui-select-v2__container", 3, "keydown"], ["input", ""], ["class", "nui-select-v2__value", 4, "ngIf"], [3, "ngTemplateOutlet", "ngTemplateOutletContext", 4, "ngIf"], ["roleAttr", "listbox", 3, "toggleReference", "viewportMargin", "overlayConfig"], [1, "nui-select-v2__value"], ["class", "nui-select-v2__value-content", 4, "ngIf"], ["class", "nui-select-v2__placeholder", 4, "ngIf"], [3, "icon"], [1, "nui-select-v2__value-content"], [1, "nui-select-v2__placeholder"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"]],
         template: function SelectV2Component_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"]();
@@ -32714,7 +32712,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("role", "listbox")("toggleReference", ctx.elRef.nativeElement)("viewportMargin", ctx.popupViewportMargin)("overlayConfig", ctx.overlayConfig);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("toggleReference", ctx.elRef.nativeElement)("viewportMargin", ctx.popupViewportMargin)("overlayConfig", ctx.overlayConfig);
           }
         },
         directives: [_angular_common__WEBPACK_IMPORTED_MODULE_8__["NgIf"], _overlay_overlay_component_overlay_component__WEBPACK_IMPORTED_MODULE_9__["OverlayComponent"], _icon_icon_component__WEBPACK_IMPORTED_MODULE_10__["IconComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_8__["NgTemplateOutlet"]],
@@ -45152,9 +45150,7 @@
         if (rf & 2) {
           var ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpureFunction1"](4, _c0, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipeBind1"](1, 2, ctx_r0.empty$)));
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵattribute"]("role", ctx_r0.role);
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpureFunction1"](3, _c0, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipeBind1"](1, 1, ctx_r0.empty$)));
         }
       }
 
@@ -45356,7 +45352,7 @@
           toggleReference: "toggleReference",
           viewportMargin: "viewportMargin",
           customContainer: "customContainer",
-          role: "role"
+          roleAttr: "roleAttr"
         },
         outputs: {
           clickOutside: "clickOutside"
@@ -45368,12 +45364,12 @@
         ngContentSelectors: _c1,
         decls: 1,
         vars: 0,
-        consts: [["cdk-portal", ""], [1, "nui-overlay", 3, "ngClass"]],
+        consts: [["cdk-portal", ""], ["role", "roleAttr", 1, "nui-overlay", 3, "ngClass"]],
         template: function OverlayComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵprojectionDef"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](0, OverlayComponent_ng_template_0_Template, 3, 6, "ng-template", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](0, OverlayComponent_ng_template_0_Template, 3, 5, "ng-template", 0);
           }
         },
         directives: [_angular_cdk_portal__WEBPACK_IMPORTED_MODULE_1__["TemplatePortalDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_13__["NgClass"]],
@@ -45939,8 +45935,8 @@
         }]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInheritDefinitionFeature"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵNgOnChangesFeature"]],
         ngContentSelectors: _c1,
         decls: 8,
-        vars: 17,
-        consts: [[1, "w-100", "d-flex", "flex-wrap", "align-items-center", "pt-2"], ["type", "text", 1, "nui-combobox-v2__input", "pb-2", 3, "disabled", "ngModel", "placeholder", "ngModelChange", "input", "keydown", "click"], ["input", ""], ["tabindex", "-1", "nui-button", "", "class", "nui-combobox-v2__remove-value action", "icon", "remove", "type", "button", 3, "isEmpty", "nuiTooltip", "disabled", "click", 4, "ngIf"], ["tabindex", "-1", "nui-button", "", "type", "button", "icon", "caret-down", 1, "nui-combobox-v2__toggle", "action", 3, "isEmpty", "disabled", "click"], [3, "role", "toggleReference", "viewportMargin", "overlayConfig"], ["tabindex", "-1", "nui-button", "", "icon", "remove", "type", "button", 1, "nui-combobox-v2__remove-value", "action", 3, "isEmpty", "nuiTooltip", "disabled", "click"]],
+        vars: 16,
+        consts: [[1, "w-100", "d-flex", "flex-wrap", "align-items-center", "pt-2"], ["type", "text", 1, "nui-combobox-v2__input", "pb-2", 3, "disabled", "ngModel", "placeholder", "ngModelChange", "input", "keydown", "click"], ["input", ""], ["tabindex", "-1", "nui-button", "", "class", "nui-combobox-v2__remove-value action", "icon", "remove", "type", "button", 3, "isEmpty", "nuiTooltip", "disabled", "click", 4, "ngIf"], ["tabindex", "-1", "nui-button", "", "type", "button", "icon", "caret-down", 1, "nui-combobox-v2__toggle", "action", 3, "isEmpty", "disabled", "click"], ["roleAttr", "listbox", 3, "toggleReference", "viewportMargin", "overlayConfig"], ["tabindex", "-1", "nui-button", "", "icon", "remove", "type", "button", 1, "nui-combobox-v2__remove-value", "action", 3, "isEmpty", "nuiTooltip", "disabled", "click"]],
         template: function ComboboxV2Component_Template(rf, ctx) {
           if (rf & 1) {
             var _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
@@ -46009,7 +46005,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("role", "listbox")("toggleReference", ctx.elRef.nativeElement)("viewportMargin", ctx.popupViewportMargin)("overlayConfig", ctx.overlayConfig);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("toggleReference", ctx.elRef.nativeElement)("viewportMargin", ctx.popupViewportMargin)("overlayConfig", ctx.overlayConfig);
           }
         },
         directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgModel"], _angular_common__WEBPACK_IMPORTED_MODULE_10__["NgIf"], _button_button_component__WEBPACK_IMPORTED_MODULE_11__["ButtonComponent"], _overlay_overlay_component_overlay_component__WEBPACK_IMPORTED_MODULE_12__["OverlayComponent"], _tooltip_tooltip_directive__WEBPACK_IMPORTED_MODULE_13__["TooltipDirective"]],
@@ -53158,7 +53154,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.menuItems = _t);
           }
         },
-        hostAttrs: ["role", "dialog", 1, "nui-menu-popup"],
+        hostAttrs: ["role", "menu", 1, "nui-menu-popup"],
         hostVars: 4,
         hostBindings: function MenuPopupComponent_HostBindings(rf, ctx) {
           if (rf & 2) {
@@ -60045,7 +60041,7 @@
 
           var ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("cdkDragData", item_r5)("cdkDragPreviewClass", ctx_r1.dragPreviewClass)("cdkDragDisabled", !ctx_r1.isItemDraggable(item_r5))("clickable", !(ctx_r1.selectionMode === ctx_r1.repeatSelectionMode.none))("selected", ctx_r1.isItemSelected(item_r5) && !ctx_r1.isItemDisabled(item_r5))("draggable", ctx_r1.isItemDraggable(item_r5))("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpureFunction3"](14, _c3, ctx_r1.isItemDisabled(item_r5), ctx_r1.isItemDraggable(item_r5) && !ctx_r1.dragHandleTemplateRef, ctx_r1.isItemDraggable(item_r5) && ctx_r1.mousedOver[itemIndex_r6]));
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("cdkDragData", item_r5)("cdkDragPreviewClass", ctx_r1.dragPreviewClass)("cdkDragDisabled", !ctx_r1.isItemDraggable(item_r5))("clickable", !(ctx_r1.selectionMode === ctx_r1.repeatSelectionMode.none))("selected", ctx_r1.isItemSelected(item_r5) && !ctx_r1.isItemDisabled(item_r5))("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpureFunction3"](13, _c3, ctx_r1.isItemDisabled(item_r5), ctx_r1.isItemDraggable(item_r5) && !ctx_r1.dragHandleTemplateRef, ctx_r1.isItemDraggable(item_r5) && ctx_r1.mousedOver[itemIndex_r6]));
 
           _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
 
@@ -60065,7 +60061,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngTemplateOutlet", ctx_r1.repeatItemTemplateRef)("ngTemplateOutletContext", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpureFunction1"](18, _c2, item_r5));
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngTemplateOutlet", ctx_r1.repeatItemTemplateRef)("ngTemplateOutletContext", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpureFunction1"](17, _c2, item_r5));
 
           _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
 
@@ -60300,7 +60296,7 @@
         }, {
           key: "role",
           get: function get() {
-            return this._draggable || this.selectionMode !== "none" ? "listbox" : "list";
+            return this.selectionMode !== "none" ? "listbox" : "list";
           }
         }, {
           key: "ngOnInit",
@@ -60604,12 +60600,12 @@
         ngContentSelectors: _c6,
         decls: 9,
         vars: 5,
-        consts: [["repeatItems", ""], [1, "nui-repeat-header"], [1, "repeat-group"], ["dropListArea", ""], [4, "ngIf"], ["style", "height: 100%", 3, "itemSize", 4, "ngIf"], ["cdkDrag", "", 1, "repeat-group-item", 3, "cdkDragData", "cdkDragPreviewClass", "cdkDragDisabled", "clickable", "selected", "draggable", "ngClass", "click"], ["drag", "cdkDrag"], ["class", "nui-repeat-item__controls-drag-handle align-self-center", 3, "ngClass", 4, "ngIf"], ["class", "nui-repeat-item__controls-drag-handle", 4, "ngIf"], [1, "nui-repeat-item__controls-container"], ["class", "nui-repeat-item__checkbox", 3, "value", "checked", "disabled", "valueChange", 4, "ngIf"], ["class", "nui-repeat-item__radio", 3, "value", "checked", "disabled", 4, "ngIf"], [1, "nui-repeat-item__content-container"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"], ["class", "nui-repeat-item__actions-container", 4, "ngIf"], [1, "nui-repeat-item__controls-drag-handle", "align-self-center", 3, "ngClass"], ["cdkDragHandle", "", 3, "mouseover", "mouseout"], [1, "nui-repeat-item__controls-drag-handle"], [3, "nui-dnd-preview", 4, "cdkDragPreview"], [1, "nui-repeat-item__checkbox", 3, "value", "checked", "disabled", "valueChange"], [1, "nui-repeat-item__radio", 3, "value", "checked", "disabled"], [1, "nui-repeat-item__actions-container"], [3, "ngTemplateOutlet", "ngTemplateOutletContext", 4, "ngFor", "ngForOf", "ngForTrackBy"], [2, "height", "100%", 3, "itemSize"], [4, "cdkVirtualFor", "cdkVirtualForOf", "cdkVirtualForTemplateCacheSize"]],
+        consts: [["repeatItems", ""], [1, "nui-repeat-header"], [1, "repeat-group"], ["dropListArea", ""], [4, "ngIf"], ["style", "height: 100%", 3, "itemSize", 4, "ngIf"], ["cdkDrag", "", 1, "repeat-group-item", 3, "cdkDragData", "cdkDragPreviewClass", "cdkDragDisabled", "clickable", "selected", "ngClass", "click"], ["drag", "cdkDrag"], ["class", "nui-repeat-item__controls-drag-handle align-self-center", 3, "ngClass", 4, "ngIf"], ["class", "nui-repeat-item__controls-drag-handle", 4, "ngIf"], [1, "nui-repeat-item__controls-container"], ["class", "nui-repeat-item__checkbox", 3, "value", "checked", "disabled", "valueChange", 4, "ngIf"], ["class", "nui-repeat-item__radio", 3, "value", "checked", "disabled", 4, "ngIf"], [1, "nui-repeat-item__content-container"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"], ["class", "nui-repeat-item__actions-container", 4, "ngIf"], [1, "nui-repeat-item__controls-drag-handle", "align-self-center", 3, "ngClass"], ["cdkDragHandle", "", 3, "mouseover", "mouseout"], [1, "nui-repeat-item__controls-drag-handle"], [3, "nui-dnd-preview", 4, "cdkDragPreview"], [1, "nui-repeat-item__checkbox", 3, "value", "checked", "disabled", "valueChange"], [1, "nui-repeat-item__radio", 3, "value", "checked", "disabled"], [1, "nui-repeat-item__actions-container"], [3, "ngTemplateOutlet", "ngTemplateOutletContext", 4, "ngFor", "ngForOf", "ngForTrackBy"], [2, "height", "100%", 3, "itemSize"], [4, "cdkVirtualFor", "cdkVirtualForOf", "cdkVirtualForTemplateCacheSize"]],
         template: function RepeatComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵprojectionDef"](_c5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](0, RepeatComponent_ng_template_0_Template, 10, 20, "ng-template", null, 0, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](0, RepeatComponent_ng_template_0_Template, 10, 19, "ng-template", null, 0, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](2, "div");
 

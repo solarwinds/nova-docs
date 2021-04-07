@@ -575,7 +575,7 @@ export class RepeatComponent&lt;T extends IRepeatItem &#x3D; any&gt; implements 
     /** Emits when the drop list has been destroyed. */
     private readonly dropListDestroyed &#x3D; new Subject&lt;void&gt;();
 
-    get role(): string { return this._draggable || this.selectionMode !&#x3D;&#x3D; &quot;none&quot; ? &quot;listbox&quot; : &quot;list&quot;; }
+    get role(): string { return this.selectionMode !&#x3D;&#x3D; &quot;none&quot; ? &quot;listbox&quot; : &quot;list&quot;; }
 
     constructor(public changeDetector: ChangeDetectorRef, public logger: LoggerService,
                 private iterableDiffers: IterableDiffers, public dragDropService: DragDrop,
