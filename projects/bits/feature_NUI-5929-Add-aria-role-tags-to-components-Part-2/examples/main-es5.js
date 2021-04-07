@@ -54794,11 +54794,6 @@
         }
 
         _createClass(PopoverModalComponent, [{
-          key: "role",
-          get: function get() {
-            return this.backdrop ? "alertdialog" : "dialog";
-          }
-        }, {
           key: "onClick",
           value: function onClick(event) {
             event.stopPropagation();
@@ -54869,7 +54864,7 @@
       PopoverModalComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: PopoverModalComponent,
         selectors: [["nui-popover-modal"]],
-        hostVars: 1,
+        hostAttrs: ["role", "dialog"],
         hostBindings: function PopoverModalComponent_HostBindings(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function PopoverModalComponent_click_HostBindingHandler($event) {
@@ -54879,10 +54874,6 @@
             })("mouseleave", function PopoverModalComponent_mouseleave_HostBindingHandler() {
               return ctx.onMouseLeave();
             });
-          }
-
-          if (rf & 2) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("role", ctx.role);
           }
         },
         inputs: {

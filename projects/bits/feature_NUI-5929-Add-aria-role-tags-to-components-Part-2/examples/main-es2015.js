@@ -29269,7 +29269,6 @@ class PopoverModalComponent {
         this.fadeIn = false;
         this.popoverModalSubscriptions = [];
     }
-    get role() { return this.backdrop ? "alertdialog" : "dialog"; }
     onClick(event) {
         event.stopPropagation();
     }
@@ -29310,10 +29309,8 @@ class PopoverModalComponent {
     }
 }
 PopoverModalComponent.ɵfac = function PopoverModalComponent_Factory(t) { return new (t || PopoverModalComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgZone"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"])); };
-PopoverModalComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: PopoverModalComponent, selectors: [["nui-popover-modal"]], hostVars: 1, hostBindings: function PopoverModalComponent_HostBindings(rf, ctx) { if (rf & 1) {
+PopoverModalComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: PopoverModalComponent, selectors: [["nui-popover-modal"]], hostAttrs: ["role", "dialog"], hostBindings: function PopoverModalComponent_HostBindings(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function PopoverModalComponent_click_HostBindingHandler($event) { return ctx.onClick($event); })("mouseenter", function PopoverModalComponent_mouseenter_HostBindingHandler() { return ctx.onMouseEnter(); })("mouseleave", function PopoverModalComponent_mouseleave_HostBindingHandler() { return ctx.onMouseLeave(); });
-    } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("role", ctx.role);
     } }, inputs: { backdrop: "backdrop", context: "context", template: "template", displayChange: "displayChange", hostElement: "hostElement", hasPadding: "hasPadding", unlimited: "unlimited" }, decls: 8, vars: 10, consts: [[1, "nui-popover-container-animation", "fade"], [1, "nui-popover-container", 3, "ngClass"], [1, "nui-popover-container__arrow", "arrow"], [1, "nui-popover-container__frame"], ["class", "nui-popover-container__header", 3, "nui-popover-container__header--with-border", 4, "ngIf"], [1, "nui-popover-container__content"], [3, "ngTemplateOutlet"], [1, "nui-popover-container__header"], ["class", "nui-popover-container__icon", 4, "ngIf"], ["class", "nui-popover-container__title", 3, "nui-popover-container__title--with-icon", "title", 4, "ngIf"], [1, "nui-popover-container__icon"], [3, "icon"], [1, "nui-popover-container__title", 3, "title"]], template: function PopoverModalComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("@fadeIn.done", function PopoverModalComponent_Template_div_animation_fadeIn_done_0_listener($event) { return ctx.onAnimationEnd($event); });
