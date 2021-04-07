@@ -924,8 +924,9 @@ class HttpMock {
         const itemList = nodeId === "Vegetables"
             ? this.vegetablesList
             : this.fruitsList;
-        const items = Array.from({ length: pageSize }).map(() => ({
-            name: this.getRandomFrom(itemList),
+        const totalItemList = this.getTotalItemList(itemList, this.totalItems / itemList.length);
+        const items = Array.from({ length: pageSize }).map((i, ind) => ({
+            name: totalItemList[ind],
             page,
         }));
         const response = {
@@ -934,8 +935,12 @@ class HttpMock {
         };
         return Object(rxjs__WEBPACK_IMPORTED_MODULE_0__["of"])(response).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["delay"])(1000));
     }
-    getRandomFrom(list) {
-        return list[Math.floor(Math.random() * list.length)];
+    getTotalItemList(list, times) {
+        const totalArray = [];
+        for (let i = 0; i < times; i++) {
+            totalArray.push(...list);
+        }
+        return totalArray;
     }
 }
 HttpMock.ɵfac = function HttpMock_Factory(t) { return new (t || HttpMock)(); };

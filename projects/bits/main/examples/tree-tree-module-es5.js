@@ -1917,15 +1917,14 @@
         _createClass(HttpMock, [{
           key: "getNodeItems",
           value: function getNodeItems(nodeId, page, pageSize) {
-            var _this11 = this;
-
             // nodeId can be handled on API depending on app needs
             var itemList = nodeId === "Vegetables" ? this.vegetablesList : this.fruitsList;
+            var totalItemList = this.getTotalItemList(itemList, this.totalItems / itemList.length);
             var items = Array.from({
               length: pageSize
-            }).map(function () {
+            }).map(function (i, ind) {
               return {
-                name: _this11.getRandomFrom(itemList),
+                name: totalItemList[ind],
                 page: page
               };
             });
@@ -1936,9 +1935,15 @@
             return Object(rxjs__WEBPACK_IMPORTED_MODULE_0__["of"])(response).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["delay"])(1000));
           }
         }, {
-          key: "getRandomFrom",
-          value: function getRandomFrom(list) {
-            return list[Math.floor(Math.random() * list.length)];
+          key: "getTotalItemList",
+          value: function getTotalItemList(list, times) {
+            var totalArray = [];
+
+            for (var i = 0; i < times; i++) {
+              totalArray.push.apply(totalArray, _toConsumableArray(list));
+            }
+
+            return totalArray;
           }
         }]);
 
@@ -2689,7 +2694,7 @@
         }, {
           key: "loadMoreItems",
           value: function loadMoreItems(node, nestedNodeDirective) {
-            var _this12 = this;
+            var _this11 = this;
 
             if (node.isLoading) {
               return;
@@ -2698,9 +2703,9 @@
             node.isLoading = true;
             var page = node.page ? node.page++ : 1;
             this.http.getNodeItems(node.name, page, this.pageSize).subscribe(function (res) {
-              _this12.setRemainingItemsCount(node, res.total);
+              _this11.setRemainingItemsCount(node, res.total);
 
-              _this12.handleNodeContent(node, nestedNodeDirective, res.items);
+              _this11.handleNodeContent(node, nestedNodeDirective, res.items);
 
               node.isLoading = false;
             });
@@ -3404,7 +3409,7 @@
         }, {
           key: "loadNodeItems",
           value: function loadNodeItems(node, nestedNodeDirective, paginatorOptions) {
-            var _this13 = this;
+            var _this12 = this;
 
             if (node.isLoading) {
               return;
@@ -3412,9 +3417,9 @@
 
             node.isLoading = true;
             this.http.getNodeItems(node.name, paginatorOptions.page, paginatorOptions.pageSize).subscribe(function (res) {
-              _this13.handleNodeTotalItems(node.name, res.total);
+              _this12.handleNodeTotalItems(node.name, res.total);
 
-              _this13.handleNodeContent(node, nestedNodeDirective, res.items);
+              _this12.handleNodeContent(node, nestedNodeDirective, res.items);
 
               node.isLoading = false;
             });
@@ -3856,19 +3861,19 @@
         var _super = _createSuper(VirtualScrollListDataSource);
 
         function VirtualScrollListDataSource(logger, http) {
-          var _this14;
+          var _this13;
 
           _classCallCheck(this, VirtualScrollListDataSource);
 
-          _this14 = _super.call(this);
-          _this14.logger = logger;
-          _this14.http = http; // cache used to store our previous fetched results while scrolling
+          _this13 = _super.call(this);
+          _this13.logger = logger;
+          _this13.http = http; // cache used to store our previous fetched results while scrolling
           // and more data is automatically fetched from the backend
 
-          _this14.cache = Array.from({
+          _this13.cache = Array.from({
             length: 0
           });
-          return _this14;
+          return _this13;
         }
 
         _createClass(VirtualScrollListDataSource, [{
@@ -3877,7 +3882,7 @@
             var _a;
 
             return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
-              var _this15 = this;
+              var _this14 = this;
 
               var reset;
               return regeneratorRuntime.wrap(function _callee$(_context) {
@@ -3894,9 +3899,9 @@
 
                       return _context.abrupt("return", this.getBackendData(filters).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_9__["tap"])(function (response) {
                         // after receiving data we need to append it to our previous fetched results
-                        _this15.cache = _this15.cache.concat(response.items);
+                        _this14.cache = _this14.cache.concat(response.items);
                       }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_9__["map"])(function (response) {
-                        var itemsSource = _this15.cache;
+                        var itemsSource = _this14.cache;
                         return {
                           repeat: {
                             itemsSource: itemsSource
@@ -3938,7 +3943,7 @@
         }, {
           key: "getBackendData",
           value: function getBackendData(filters) {
-            var _this16 = this;
+            var _this15 = this;
 
             // fetch response from the backend
             var requestParams = this.getRequestParams(filters);
@@ -3958,7 +3963,7 @@
                 count: response.count
               };
             }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_9__["catchError"])(function (e) {
-              _this16.logger.error(e);
+              _this15.logger.error(e);
 
               return Object(rxjs__WEBPACK_IMPORTED_MODULE_8__["of"])({
                 items: [],
@@ -4025,7 +4030,7 @@
         }, {
           key: "showAll",
           value: function showAll(node) {
-            var _this17 = this;
+            var _this16 = this;
 
             // setup the Dialog
             this.activeDialogRef = this.dialogService.open(TreeDialogContentExampleComponent, {
@@ -4039,11 +4044,11 @@
             this.setDsSearchFieldFor(node);
             this.subscribeToDialogScrolling();
             this.activeDialogRef.closed$.subscribe(function () {
-              _this17.virtualScrollListDataSource.deregisterComponent("virtualScroll");
+              _this16.virtualScrollListDataSource.deregisterComponent("virtualScroll");
 
-              _this17.virtualScrollListDataSource.deregisterComponent("search");
+              _this16.virtualScrollListDataSource.deregisterComponent("search");
 
-              _this17.virtualScrollListDataSource.reset();
+              _this16.virtualScrollListDataSource.reset();
             });
           }
           /**
@@ -4053,13 +4058,13 @@
         }, {
           key: "subscribeToDialogScrolling",
           value: function subscribeToDialogScrolling() {
-            var _this18 = this;
+            var _this17 = this;
 
             // 'setTimeout' to wait until the dialog is rendered
             setTimeout(function () {
-              var viewPortManager = _this18.activeDialogComponent.viewPortManager;
+              var viewPortManager = _this17.activeDialogComponent.viewPortManager;
 
-              _this18.virtualScrollListDataSource.registerComponent({
+              _this17.virtualScrollListDataSource.registerComponent({
                 virtualScroll: {
                   componentInstance: viewPortManager
                 }
@@ -4068,21 +4073,21 @@
               viewPortManager.observeNextPage$({
                 pageSize: RESULTS_PER_PAGE
               }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_9__["tap"])(function () {
-                _this18.virtualScrollListDataSource.applyFilters();
+                _this17.virtualScrollListDataSource.applyFilters();
 
-                _this18.virtualScrollListDataSource.outputsSubject.subscribe(function (v) {
-                  if (!_this18.activeDialogComponent) {
+                _this17.virtualScrollListDataSource.outputsSubject.subscribe(function (v) {
+                  if (!_this17.activeDialogComponent) {
                     return;
                   } // in case dialog was closed early
 
 
                   var items = v.repeat.itemsSource;
-                  _this18.activeDialogComponent.items = items;
-                  _this18.activeDialogComponent.isLoading = false;
+                  _this17.activeDialogComponent.items = items;
+                  _this17.activeDialogComponent.isLoading = false;
 
-                  _this18.activeDialogComponent.cdRef.detectChanges();
+                  _this17.activeDialogComponent.cdRef.detectChanges();
                 });
-              }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_9__["takeUntil"])(_this18.destroy$)).subscribe();
+              }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_9__["takeUntil"])(_this17.destroy$)).subscribe();
             });
           }
           /** Load first page on first open */
@@ -4090,7 +4095,7 @@
         }, {
           key: "onToggleClick",
           value: function onToggleClick(node, nestedNode) {
-            var _this19 = this;
+            var _this18 = this;
 
             this.eventBusService.getStream({
               id: "document-click"
@@ -4103,13 +4108,13 @@
               this.virtualScrollListDataSource.outputsSubject.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_9__["take"])(1)).subscribe(function (v) {
                 var items = v.repeat.itemsSource;
 
-                _this19.handleNodeTotalItems(node.name, v.paginator.total);
+                _this18.handleNodeTotalItems(node.name, v.paginator.total);
 
-                _this19.handleNodeContent(node, nestedNode, items);
+                _this18.handleNodeContent(node, nestedNode, items);
 
                 node.isLoading = false;
 
-                _this19.virtualScrollListDataSource.deregisterComponent("search");
+                _this18.virtualScrollListDataSource.deregisterComponent("search");
               });
             }
           }
@@ -4781,7 +4786,7 @@
         _createClass(TreeLazyExampleComponent, [{
           key: "loadMore",
           value: function loadMore(node, nestedNode) {
-            var _this20 = this;
+            var _this19 = this;
 
             var _a;
 
@@ -4796,7 +4801,7 @@
               node.isLoading = false;
               node.children = res;
 
-              _this20.cdkTree.renderNodeChanges(node.children, differ, nestedNode.nodeOutlet.first.viewContainer, node);
+              _this19.cdkTree.renderNodeChanges(node.children, differ, nestedNode.nodeOutlet.first.viewContainer, node);
             });
           }
         }]);
@@ -4904,7 +4909,7 @@
         _createClass(HttpMockService, [{
           key: "getNodeItems",
           value: function getNodeItems(nodeId, page, pageSize) {
-            var _this21 = this;
+            var _this20 = this;
 
             // nodeId can be handled on API depending on app needs
             var itemList = nodeId === "Vegetables" ? this.vegetablesList : this.fruitsList;
@@ -4912,7 +4917,7 @@
               length: pageSize
             }).map(function () {
               return {
-                name: _this21.getRandomFrom(itemList),
+                name: _this20.getRandomFrom(itemList),
                 page: page
               };
             });
@@ -5377,11 +5382,11 @@
         _createClass(TreeCheckboxExampleComponent, [{
           key: "descendantsAllSelected",
           value: function descendantsAllSelected(node) {
-            var _this22 = this;
+            var _this21 = this;
 
             var descendants = this.treeControl.getDescendants(node);
             return descendants.length > 0 && descendants.every(function (child) {
-              return _this22.selectionModel.isSelected(child);
+              return _this21.selectionModel.isSelected(child);
             });
           }
           /** Whether part of the descendants are selected */
@@ -5389,11 +5394,11 @@
         }, {
           key: "descendantsPartiallySelected",
           value: function descendantsPartiallySelected(node) {
-            var _this23 = this;
+            var _this22 = this;
 
             var descendants = this.treeControl.getDescendants(node);
             var result = descendants.some(function (child) {
-              return _this23.selectionModel.isSelected(child);
+              return _this22.selectionModel.isSelected(child);
             });
             return result && !this.descendantsAllSelected(node);
           }
@@ -5404,14 +5409,14 @@
           value: function branchItemSelectionToggle(node) {
             var _this$selectionModel5,
                 _this$selectionModel6,
-                _this24 = this;
+                _this23 = this;
 
             this.selectionModel.toggle(node);
             var descendants = this.treeControl.getDescendants(node);
             this.selectionModel.isSelected(node) ? (_this$selectionModel5 = this.selectionModel).select.apply(_this$selectionModel5, _toConsumableArray(descendants)) : (_this$selectionModel6 = this.selectionModel).deselect.apply(_this$selectionModel6, _toConsumableArray(descendants)); // Force update for the parent
 
             descendants.forEach(function (child) {
-              return _this24.selectionModel.isSelected(child);
+              return _this23.selectionModel.isSelected(child);
             });
             this.checkAllParentsSelection(node);
           }
@@ -5440,12 +5445,12 @@
         }, {
           key: "checkRootNodeSelection",
           value: function checkRootNodeSelection(node) {
-            var _this25 = this;
+            var _this24 = this;
 
             var nodeSelected = this.selectionModel.isSelected(node);
             var descendants = this.treeControl.getDescendants(node);
             var descAllSelected = descendants.length > 0 && descendants.every(function (child) {
-              return _this25.selectionModel.isSelected(child);
+              return _this24.selectionModel.isSelected(child);
             });
 
             if (nodeSelected && !descAllSelected) {
