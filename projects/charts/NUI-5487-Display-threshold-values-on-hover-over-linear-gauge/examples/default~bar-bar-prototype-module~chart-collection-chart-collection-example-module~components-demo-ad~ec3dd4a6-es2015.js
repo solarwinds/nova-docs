@@ -16039,7 +16039,7 @@ class DonutGaugeLabelsPlugin extends _common_chart_plugin__WEBPACK_IMPORTED_MODU
                 bottom: DonutGaugeLabelsPlugin.MARGIN_DEFAULT,
                 left: DonutGaugeLabelsPlugin.MARGIN_DEFAULT,
             },
-            autoClearance: true,
+            applyClearance: true,
             padding: 5,
             formatterName: _constants__WEBPACK_IMPORTED_MODULE_10__["GAUGE_LABEL_FORMATTER_NAME_DEFAULT"],
             enableThresholdLabels: true,
@@ -16138,7 +16138,7 @@ class DonutGaugeLabelsPlugin extends _common_chart_plugin__WEBPACK_IMPORTED_MODU
         return "central";
     }
     adjustGridMargin() {
-        if (this.config.autoClearance) {
+        if (this.config.applyClearance) {
             const gridConfig = this.chart.getGrid().config();
             gridConfig.dimension.margin = this.config.clearance;
         }
@@ -22697,7 +22697,7 @@ class LinearGaugeLabelsPlugin extends _common_chart_plugin__WEBPACK_IMPORTED_MOD
                 bottom: 20,
                 left: 25,
             },
-            autoClearance: true,
+            applyClearance: true,
             padding: 5,
             formatterName: _constants__WEBPACK_IMPORTED_MODULE_7__["GAUGE_LABEL_FORMATTER_NAME_DEFAULT"],
             enableThresholdLabels: true,
@@ -22805,7 +22805,7 @@ class LinearGaugeLabelsPlugin extends _common_chart_plugin__WEBPACK_IMPORTED_MOD
     }
     adjustGridMargin() {
         var _a;
-        if (this.config.autoClearance) {
+        if (this.config.applyClearance) {
             const gridConfig = this.chart.getGrid().config();
             const marginToAdjust = this.getMarginToAdjust();
             gridConfig.dimension.margin[marginToAdjust] = (_a = this.config.clearance) === null || _a === void 0 ? void 0 : _a[marginToAdjust];
