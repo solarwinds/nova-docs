@@ -3760,7 +3760,7 @@
         selectors: [["nui-month-picker"]],
         decls: 1,
         vars: 1,
-        consts: [["role", "grid", 4, "ngIf"], ["role", "grid"], ["nui-button", "", "type", "button", "displayStyle", "action", "icon", "caret-left", "tabindex", "-1", 3, "click"], ["nui-button", "", "type", "button", "displayStyle", "action", "tabindex", "-1", 1, "change-mode-button", 3, "id", "disabled", "ngClass", "click"], ["nui-button", "", "type", "button", "displayStyle", "action", "icon", "caret-right", "tabindex", "-1", 3, "click"], [4, "ngFor", "ngForOf"], ["class", "text-center month", "role", "gridcell", 3, "id", 4, "ngFor", "ngForOf"], ["role", "gridcell", 1, "text-center", "month", 3, "id"], ["nui-button", "", "type", "button", "displayStyle", "action", "tabindex", "-1", 3, "ngClass", "disabled", "click"], [3, "ngClass"]],
+        consts: [["role", "grid", 4, "ngIf"], ["role", "grid"], ["nui-button", "", "type", "button", "displayStyle", "action", "icon", "caret-left", "tabindex", "-1", 3, "click"], ["nui-button", "", "type", "button", "displayStyle", "action", "tabindex", "-1", 1, "change-mode-button", 3, "id", "disabled", "ngClass", "click"], ["nui-button", "", "type", "button", "displayStyle", "action", "icon", "caret-right", "tabindex", "-1", 3, "click"], [4, "ngFor", "ngForOf"], ["class", "text-center month", 3, "id", 4, "ngFor", "ngForOf"], [1, "text-center", "month", 3, "id"], ["nui-button", "", "type", "button", "displayStyle", "action", "tabindex", "-1", 3, "ngClass", "disabled", "click"], [3, "ngClass"]],
         template: function MonthPickerComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](0, MonthPickerComponent_table_0_Template, 13, 7, "table", 0);
@@ -7454,7 +7454,13 @@
       IconComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: IconComponent,
         selectors: [["nui-icon"]],
-        hostAttrs: [1, "nui-icon-wrapper"],
+        hostAttrs: ["role", "img", 1, "nui-icon-wrapper"],
+        hostVars: 1,
+        hostBindings: function IconComponent_HostBindings(rf, ctx) {
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-label", ctx.icon + " icon");
+          }
+        },
         inputs: {
           iconColor: "iconColor",
           brushType: "brushType",
@@ -11175,7 +11181,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.contentContainer = _t.first);
           }
         },
-        hostAttrs: [1, "nui-button", "btn"],
+        hostAttrs: ["role", "button", 1, "nui-button", "btn"],
         hostVars: 21,
         hostBindings: function ButtonComponent_HostBindings(rf, ctx) {
           if (rf & 2) {
@@ -11951,7 +11957,7 @@
         ngContentSelectors: _c0,
         decls: 3,
         vars: 2,
-        consts: [["role", "document", "cdkTrapFocus", ""], [1, "dialog-content"]],
+        consts: [["cdkTrapFocus", ""], [1, "dialog-content"]],
         template: function DialogComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵprojectionDef"]();
@@ -13247,7 +13253,7 @@
             i18n_0 = $localize(_templateObject12 || (_templateObject12 = _taggedTemplateLiteral([":\u241Fcca0dd32d2dc152d912523b3d1d6aef5d9ca4b74\u241F2117635896937974788: Today "])));
           }
 
-          return [["role", "grid", "aria-activedescendant", "activeDateId", 4, "ngIf"], ["role", "grid", "aria-activedescendant", "activeDateId"], ["nui-button", "", "type", "button", "displayStyle", "action", "icon", "caret-left", "tabindex", "-1", 3, "click"], ["nui-button", "", "type", "button", "displayStyle", "action", "tabindex", "-1", 1, "change-mode-button", 3, "id", "disabled", "ngClass", "click"], ["nui-button", "", "type", "button", "displayStyle", "action", "icon", "caret-right", "tabindex", "-1", 3, "click"], [4, "ngIf"], ["class", "text-center", 4, "ngFor", "ngForOf"], ["ngFor", "", 3, "ngForOf"], ["nui-button", "", "type", "button", "displayStyle", "action", 1, "today-button", 3, "disabled", "click"], i18n_0, [1, "text-center"], [1, "day-label"], ["aria-label", "label.full"], ["class", "h6 text-center", 4, "ngIf"], ["class", "text-center day", "role", "gridcell", 3, "id", 4, "ngFor", "ngForOf"], [1, "h6", "text-center"], ["role", "gridcell", 1, "text-center", "day", 3, "id"], ["nui-button", "", "type", "button", "displayStyle", "action", "tabindex", "-1", 3, "ngClass", "disabled", "click", 4, "ngIf"], ["nui-button", "", "type", "button", "displayStyle", "action", "tabindex", "-1", 3, "ngClass", "disabled", "click"], [3, "ngClass"]];
+          return [["role", "grid", "aria-activedescendant", "activeDateId", 4, "ngIf"], ["role", "grid", "aria-activedescendant", "activeDateId"], ["nui-button", "", "type", "button", "displayStyle", "action", "icon", "caret-left", "tabindex", "-1", 3, "click"], ["nui-button", "", "type", "button", "displayStyle", "action", "tabindex", "-1", 1, "change-mode-button", 3, "id", "disabled", "ngClass", "click"], ["nui-button", "", "type", "button", "displayStyle", "action", "icon", "caret-right", "tabindex", "-1", 3, "click"], [4, "ngIf"], ["class", "text-center", 4, "ngFor", "ngForOf"], ["ngFor", "", 3, "ngForOf"], ["nui-button", "", "type", "button", "displayStyle", "action", 1, "today-button", 3, "disabled", "click"], i18n_0, [1, "text-center"], [1, "day-label"], ["aria-label", "label.full"], ["class", "h6 text-center", 4, "ngIf"], ["class", "text-center day", 3, "id", 4, "ngFor", "ngForOf"], [1, "h6", "text-center"], [1, "text-center", "day", 3, "id"], ["nui-button", "", "type", "button", "displayStyle", "action", "tabindex", "-1", 3, "ngClass", "disabled", "click", 4, "ngIf"], ["nui-button", "", "type", "button", "displayStyle", "action", "tabindex", "-1", 3, "ngClass", "disabled", "click"], [3, "ngClass"]];
         },
         template: function DayPickerComponent_Template(rf, ctx) {
           if (rf & 1) {
@@ -17489,6 +17495,7 @@
       ConfirmationDialogComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: ConfirmationDialogComponent,
         selectors: [["nui-confirmation-dialog-window"]],
+        hostAttrs: ["role", "alertdialog"],
         inputs: {
           title: "title",
           message: "message",
@@ -20085,6 +20092,11 @@
             this.chipsOverflowService.overflowCounter = el;
           }
         }, {
+          key: "role",
+          get: function get() {
+            return this.getItemsCount() ? "list" : null;
+          }
+        }, {
           key: "ngOnChanges",
           value: function ngOnChanges(changes) {
             if (changes.itemsSource) {
@@ -20218,11 +20230,16 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.allChips = _t);
           }
         },
+        hostVars: 1,
         hostBindings: function ChipsComponent_HostBindings(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("resize", function ChipsComponent_resize_HostBindingHandler() {
               return ctx.onWinResize();
             }, false, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresolveWindow"]);
+          }
+
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("role", ctx.role);
           }
         },
         inputs: {
@@ -20245,7 +20262,7 @@
         ngContentSelectors: _c6,
         decls: 9,
         vars: 11,
-        consts: [["role", "presentation", 1, "nui-chips", "media", 3, "ngClass"], ["nuiChips", ""], ["class", "nui-chips__title-cell", 4, "ngIf"], [1, "nui-chips__main-cell"], ["chipsMainCell", ""], [4, "ngIf"], [4, "ngFor", "ngForOf"], ["class", "nui-chips__clear-cell", 4, "ngIf"], [1, "nui-chips__title-cell"], [1, "nui-chips__title"], [1, "nui-chips__count"], ["class", "chip-flat", 3, "customClass", "group-last", "item", "remove", 4, "ngFor", "ngForOf"], [1, "chip-flat", 3, "customClass", "item", "remove"], ["chipItem", ""], [1, "nui-chips__group-name", 3, "ngClass"], [1, "nui-chips__group-label"], [3, "customClass", "group-last", "item", "remove", 4, "ngFor", "ngForOf"], [3, "customClass", "item", "remove"], [1, "nui-chips__clear-cell"], ["clearAll", ""], ["href", "", 1, "nui-chips__clear", 3, "click"]],
+        consts: [[1, "nui-chips", "media", 3, "ngClass"], ["nuiChips", ""], ["class", "nui-chips__title-cell", 4, "ngIf"], [1, "nui-chips__main-cell"], ["chipsMainCell", ""], [4, "ngIf"], [4, "ngFor", "ngForOf"], ["class", "nui-chips__clear-cell", 4, "ngIf"], [1, "nui-chips__title-cell"], [1, "nui-chips__title"], [1, "nui-chips__count"], ["class", "chip-flat", 3, "customClass", "group-last", "item", "remove", 4, "ngFor", "ngForOf"], [1, "chip-flat", 3, "customClass", "item", "remove"], ["chipItem", ""], [1, "nui-chips__group-name", 3, "ngClass"], [1, "nui-chips__group-label"], [3, "customClass", "group-last", "item", "remove", 4, "ngFor", "ngForOf"], [3, "customClass", "item", "remove"], [1, "nui-chips__clear-cell"], ["clearAll", ""], ["href", "", 1, "nui-chips__clear", 3, "click"]],
         template: function ChipsComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"](_c5);
@@ -26366,6 +26383,11 @@
           this.isDeterminate = false;
           this.show = false;
           this.delay = 250;
+          /**
+           * Input to set aria label text
+           */
+
+          this.ariaLabel = "";
           this.cancel = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         }
 
@@ -26455,6 +26477,12 @@
         type: SpinnerComponent,
         selectors: [["nui-spinner"]],
         hostAttrs: ["role", "progressbar"],
+        hostVars: 1,
+        hostBindings: function SpinnerComponent_HostBindings(rf, ctx) {
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵattribute"]("aria-label", ctx.ariaLabel + " progress");
+          }
+        },
         inputs: {
           percent: "percent",
           show: "show",
@@ -26462,6 +26490,7 @@
           allowCancel: "allowCancel",
           message: "message",
           helpText: "helpText",
+          ariaLabel: "ariaLabel",
           size: "size"
         },
         outputs: {
@@ -26851,6 +26880,7 @@
       ContentComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: ContentComponent,
         selectors: [["nui-content"]],
+        hostAttrs: ["role", "document"],
         inputs: {
           size: "size"
         },
@@ -27218,6 +27248,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx.checkboxLabel = _t.first);
           }
         },
+        hostAttrs: ["role", "checkbox"],
         hostVars: 4,
         hostBindings: function CheckboxComponent_HostBindings(rf, ctx) {
           if (rf & 2) {
@@ -27496,7 +27527,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.contentTemplate = _t.first);
           }
         },
-        hostAttrs: [1, "nui-chip"],
+        hostAttrs: ["role", "listitem", 1, "nui-chip"],
         inputs: {
           item: "item",
           closeButtonTooltip: "closeButtonTooltip",
@@ -28724,6 +28755,7 @@
       ImageComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: ImageComponent,
         selectors: [["nui-image"]],
+        hostAttrs: ["role", "img"],
         inputs: {
           image: "image",
           "float": "float",
@@ -41788,6 +41820,12 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         }
+
+        if (rf & 2) {
+          var ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("role", ctx_r0.role);
+        }
       }
 
       var _c0 = ["*"];
@@ -41808,6 +41846,11 @@
         }
 
         _createClass(DatePickerInnerComponent, [{
+          key: "role",
+          get: function get() {
+            return this.inline ? "application" : "dialog";
+          }
+        }, {
           key: "value",
           get: function get() {
             return this._value;
@@ -42130,12 +42173,12 @@
         ngContentSelectors: _c0,
         decls: 1,
         vars: 1,
-        consts: [["class", "nui-datepicker-inner", "role", "application", 4, "ngIf"], ["role", "application", 1, "nui-datepicker-inner"]],
+        consts: [["class", "nui-datepicker-inner", 4, "ngIf"], [1, "nui-datepicker-inner"]],
         template: function DatePickerInnerComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, DatePickerInnerComponent_div_0_Template, 2, 0, "div", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, DatePickerInnerComponent_div_0_Template, 2, 1, "div", 0);
           }
 
           if (rf & 2) {
@@ -49157,8 +49200,8 @@
         },
         ngContentSelectors: _c2,
         decls: 10,
-        vars: 15,
-        consts: [[1, "nui-expander"], [1, "nui-expander__header", 3, "click"], [1, "nui-expander__header-icon", 3, "iconColor", "icon"], [1, "nui-expander__header-content-wrapper"], [1, "nui-expander__custom-header"], ["customHeaderContent", ""], ["class", "nui-expander__header-content", 3, "nui-expander__header-content--with-icon", 4, "ngIf"], [1, "nui-expander__body"], [4, "ngIf"], [1, "nui-expander__header-content"], ["class", "nui-expander__header-content-icon", 3, "icon", 4, "ngIf"], [1, "nui-expander__header-title"], [1, "nui-expander__header-content-icon", 3, "icon"]],
+        vars: 16,
+        consts: [[1, "nui-expander"], ["role", "button", 1, "nui-expander__header", 3, "click"], [1, "nui-expander__header-icon", 3, "iconColor", "icon"], [1, "nui-expander__header-content-wrapper"], [1, "nui-expander__custom-header"], ["customHeaderContent", ""], ["class", "nui-expander__header-content", 3, "nui-expander__header-content--with-icon", 4, "ngIf"], [1, "nui-expander__body"], [4, "ngIf"], [1, "nui-expander__header-content"], ["class", "nui-expander__header-content-icon", 3, "icon", 4, "ngIf"], [1, "nui-expander__header-title"], [1, "nui-expander__header-content-icon", 3, "icon"]],
         template: function ExpanderComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"](_c1);
@@ -49206,6 +49249,8 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("nui-expander__header--empty", !ctx.header && ctx.isCustomHeaderContentEmpty);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-expanded", ctx.state === "expanded");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
@@ -55287,7 +55332,7 @@
         selectors: [["nui-year-picker"]],
         decls: 1,
         vars: 1,
-        consts: [["role", "grid", 4, "ngIf"], ["role", "grid"], ["nui-button", "", "type", "button", "icon", "caret-left", "displayStyle", "action", "tabindex", "-1", 3, "click"], ["nui-button", "", "type", "button", "displayStyle", "action", "role", "heading", "tabindex", "-1", 1, "change-mode-button", 3, "id", "disabled", "ngClass", "click"], ["nui-button", "", "type", "button", "icon", "caret-right", "displayStyle", "action", "tabindex", "-1", 3, "click"], [4, "ngFor", "ngForOf"], ["class", "text-center year", "role", "gridcell", 4, "ngFor", "ngForOf"], ["role", "gridcell", 1, "text-center", "year"], ["nui-button", "", "type", "button", "displayStyle", "action", "tabindex", "-1", 3, "ngClass", "disabled", "click"], [3, "ngClass"]],
+        consts: [["role", "grid", 4, "ngIf"], ["role", "grid"], ["nui-button", "", "type", "button", "icon", "caret-left", "displayStyle", "action", "tabindex", "-1", 3, "click"], ["nui-button", "", "type", "button", "displayStyle", "action", "tabindex", "-1", 1, "change-mode-button", 3, "id", "disabled", "ngClass", "click"], ["nui-button", "", "type", "button", "icon", "caret-right", "displayStyle", "action", "tabindex", "-1", 3, "click"], [4, "ngFor", "ngForOf"], ["class", "text-center year", 4, "ngFor", "ngForOf"], [1, "text-center", "year"], ["nui-button", "", "type", "button", "displayStyle", "action", "tabindex", "-1", 3, "ngClass", "disabled", "click"], [3, "ngClass"]],
         template: function YearPickerComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](0, YearPickerComponent_table_0_Template, 13, 8, "table", 0);
@@ -56288,6 +56333,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.children = _t);
           }
         },
+        hostAttrs: ["role", "group"],
         inputs: {
           name: "name",
           values: "values",
