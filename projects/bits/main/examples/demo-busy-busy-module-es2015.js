@@ -202,7 +202,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col\">\n            <h3>Basic small busy</h3>\n            <div id=\"nui-busy-test-basic\" nui-busy [busy]=\"busy\">\n                <div>Busy content</div>\n                <div>With any kind of content should have busy indication in the center of parent container</div>\n            </div>\n            <hr />\n        </div>\n    </div>\n\n     <div class=\"row\">\n        <div class=\"col\">\n            <h3>Custom busy</h3>\n            <div id=\"nui-busy-test-custom\" nui-busy [busy]=\"busy\">\n                <div class=\"visual-test-busy-content\">\n                    Busy content\n                </div>\n                <nui-spinner id=\"nui-demo-spinner\" size=\"large\" i18n-message message=\"Hello from custom busy\"></nui-spinner>\n            </div>\n            <hr />\n        </div>\n     </div>\n\n     <div class=\"row\">\n        <div class=\"col\">\n            <h3>Progress busy</h3>\n            <div id=\"nui-busy-test-progress\" nui-busy [busy]=\"busy\">\n                <div class=\"visual-test-busy-content\">\n                    Busy content\n                </div>\n                <nui-progress id=\"nui-demo-progress\" i18n-message message=\"Hello from custom busy\"></nui-progress>\n            </div>\n            <hr />\n        </div>\n     </div>\n\n     <div class=\"row\">\n        <button id=\"nui-busy-test-button\" (click)=\"switchBusy()\">Switch busy state</button>\n     </div>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col\">\n            <h3>Basic small busy</h3>\n            <div id=\"nui-busy-test-basic\" nui-busy [busy]=\"busy\">\n                <div>Busy content</div>\n                <div>With any kind of content should have busy indication in the center of parent container</div>\n            </div>\n            <hr />\n        </div>\n    </div>\n\n     <div class=\"row\">\n        <div class=\"col\">\n            <h3>Custom busy</h3>\n            <div id=\"nui-busy-test-custom\" nui-busy [busy]=\"busy\">\n                <div class=\"visual-test-busy-content\">\n                    Busy content\n                </div>\n                <nui-spinner id=\"nui-demo-spinner\" size=\"large\" i18n-message message=\"Hello from custom busy\"></nui-spinner>\n            </div>\n            <hr />\n        </div>\n     </div>\n\n     <div class=\"row\">\n        <div class=\"col\">\n            <h3>Progress busy</h3>\n            <div id=\"nui-busy-test-progress\" nui-busy [busy]=\"busy\">\n                <div class=\"visual-test-busy-content\">\n                    Busy content\n                </div>\n                <nui-progress id=\"nui-demo-progress\" i18n-message message=\"Hello from custom busy\"></nui-progress>\n            </div>\n            <hr />\n        </div>\n     </div>\n\n     <div class=\"row\">\n        <div class=\"col\">\n            <h3>Progress busy from the start</h3>\n            <div id=\"nui-busy-test-progress\" nui-busy [busy]=\"busyAtTheStart\">\n                <div class=\"visual-test-busy-content\">\n                    Busy content\n                </div>\n                <nui-progress id=\"nui-demo-progress\" i18n-message message=\"Hello from custom busy\"></nui-progress>\n            </div>\n            <hr />\n        </div>\n     </div>\n\n     <div class=\"row\">\n        <div class=\"col\">\n            <h3>Custom busy</h3>\n            <div id=\"nui-busy-test-custom\" nui-busy [busy]=\"busyAtTheStart\">\n                <div class=\"visual-test-busy-content\">\n                    Busy content\n                </div>\n                <nui-spinner id=\"nui-demo-spinner\" size=\"large\" i18n-message message=\"Hello from custom busy\"></nui-spinner>\n            </div>\n            <hr />\n        </div>\n     </div>\n\n     <div class=\"row\">\n        <button id=\"nui-busy-test-button\" (click)=\"switchBusy()\">Switch busy state</button>\n     </div>\n</div>\n");
 
 /***/ }),
 
@@ -487,7 +487,7 @@ BusyModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjecto
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { Component } from \"@angular/core\";\n\n@Component({\n    selector: \"nui-busy-visual\",\n    templateUrl: \"./busy-visual-test.component.html\",\n    styleUrls: [\n        \"./busy-visual-test.component.less\",\n    ],\n})\nexport class BusyVisualTestComponent {\n    public busy: boolean;\n\n    public switchBusy() {\n        this.busy = !this.busy;\n    }\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import { Component } from \"@angular/core\";\n\n@Component({\n    selector: \"nui-busy-visual\",\n    templateUrl: \"./busy-visual-test.component.html\",\n    styleUrls: [\n        \"./busy-visual-test.component.less\",\n    ],\n})\nexport class BusyVisualTestComponent {\n    public busy: boolean;\n    public busyAtTheStart: boolean = true;\n\n    public switchBusy() {\n        this.busy = !this.busy;\n    }\n}\n");
 
 /***/ }),
 
@@ -696,12 +696,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class BusyVisualTestComponent {
+    constructor() {
+        this.busyAtTheStart = true;
+    }
     switchBusy() {
         this.busy = !this.busy;
     }
 }
 BusyVisualTestComponent.ɵfac = function BusyVisualTestComponent_Factory(t) { return new (t || BusyVisualTestComponent)(); };
-BusyVisualTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: BusyVisualTestComponent, selectors: [["nui-busy-visual"]], decls: 32, vars: 3, consts: function () { let i18n_0; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+BusyVisualTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: BusyVisualTestComponent, selectors: [["nui-busy-visual"]], decls: 50, vars: 5, consts: function () { let i18n_0; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
         const MSG_EXTERNAL_6776140435076536653$$DEMO_SRC_COMPONENTS_DEMO_BUSY_BUSY_VISUAL_TEST_BUSY_VISUAL_TEST_COMPONENT_TS_1 = goog.getMsg("Hello from custom busy");
         i18n_0 = MSG_EXTERNAL_6776140435076536653$$DEMO_SRC_COMPONENTS_DEMO_BUSY_BUSY_VISUAL_TEST_BUSY_VISUAL_TEST_COMPONENT_TS_1;
     }
@@ -713,7 +716,19 @@ BusyVisualTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵ
     }
     else {
         i18n_2 = $localize `:␟b1203654bb65c56eb8ba40a2a9f1b1d26d516c51␟6776140435076536653:Hello from custom busy`;
-    } return [[1, "container"], [1, "row"], [1, "col"], ["id", "nui-busy-test-basic", "nui-busy", "", 3, "busy"], ["id", "nui-busy-test-custom", "nui-busy", "", 3, "busy"], [1, "visual-test-busy-content"], ["id", "nui-demo-spinner", "size", "large", "message", i18n_0], ["id", "nui-busy-test-progress", "nui-busy", "", 3, "busy"], ["id", "nui-demo-progress", "message", i18n_2], ["id", "nui-busy-test-button", 3, "click"]]; }, template: function BusyVisualTestComponent_Template(rf, ctx) { if (rf & 1) {
+    } let i18n_4; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+        const MSG_EXTERNAL_6776140435076536653$$DEMO_SRC_COMPONENTS_DEMO_BUSY_BUSY_VISUAL_TEST_BUSY_VISUAL_TEST_COMPONENT_TS_5 = goog.getMsg("Hello from custom busy");
+        i18n_4 = MSG_EXTERNAL_6776140435076536653$$DEMO_SRC_COMPONENTS_DEMO_BUSY_BUSY_VISUAL_TEST_BUSY_VISUAL_TEST_COMPONENT_TS_5;
+    }
+    else {
+        i18n_4 = $localize `:␟b1203654bb65c56eb8ba40a2a9f1b1d26d516c51␟6776140435076536653:Hello from custom busy`;
+    } let i18n_6; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+        const MSG_EXTERNAL_6776140435076536653$$DEMO_SRC_COMPONENTS_DEMO_BUSY_BUSY_VISUAL_TEST_BUSY_VISUAL_TEST_COMPONENT_TS_7 = goog.getMsg("Hello from custom busy");
+        i18n_6 = MSG_EXTERNAL_6776140435076536653$$DEMO_SRC_COMPONENTS_DEMO_BUSY_BUSY_VISUAL_TEST_BUSY_VISUAL_TEST_COMPONENT_TS_7;
+    }
+    else {
+        i18n_6 = $localize `:␟b1203654bb65c56eb8ba40a2a9f1b1d26d516c51␟6776140435076536653:Hello from custom busy`;
+    } return [[1, "container"], [1, "row"], [1, "col"], ["id", "nui-busy-test-basic", "nui-busy", "", 3, "busy"], ["id", "nui-busy-test-custom", "nui-busy", "", 3, "busy"], [1, "visual-test-busy-content"], ["id", "nui-demo-spinner", "size", "large", "message", i18n_0], ["id", "nui-busy-test-progress", "nui-busy", "", 3, "busy"], ["id", "nui-demo-progress", "message", i18n_2], ["id", "nui-demo-progress", "message", i18n_4], ["id", "nui-demo-spinner", "size", "large", "message", i18n_6], ["id", "nui-busy-test-button", 3, "click"]]; }, template: function BusyVisualTestComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
@@ -760,9 +775,37 @@ BusyVisualTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵ
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](29, "div", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](30, "button", 9);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function BusyVisualTestComponent_Template_button_click_30_listener() { return ctx.switchBusy(); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](31, "Switch busy state");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](30, "div", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](31, "h3");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](32, "Progress busy from the start");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](33, "div", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](34, "div", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](35, " Busy content ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](36, "nui-progress", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](37, "hr");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](38, "div", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](39, "div", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](40, "h3");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](41, "Custom busy");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](42, "div", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](43, "div", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](44, " Busy content ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](45, "nui-spinner", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](46, "hr");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](47, "div", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](48, "button", 11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function BusyVisualTestComponent_Template_button_click_48_listener() { return ctx.switchBusy(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](49, "Switch busy state");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -773,6 +816,10 @@ BusyVisualTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵ
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("busy", ctx.busy);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("busy", ctx.busy);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("busy", ctx.busyAtTheStart);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("busy", ctx.busyAtTheStart);
     } }, directives: [_src_lib_busy_busy_component__WEBPACK_IMPORTED_MODULE_1__["BusyComponent"], _src_lib_spinner_spinner_component__WEBPACK_IMPORTED_MODULE_2__["SpinnerComponent"], _src_lib_progress_progress_component__WEBPACK_IMPORTED_MODULE_3__["ProgressComponent"]], styles: [".visual-test-busy-content[_ngcontent-%COMP%] {\n  height: 50px;\n}\n#nui-busy-test-basic[_ngcontent-%COMP%] {\n  height: 100px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImJ1c3ktdmlzdWFsLXRlc3QuY29tcG9uZW50Lmxlc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxZQUFBO0FBQ0o7QUFDQTtFQUNJLGFBQUE7QUFDSiIsImZpbGUiOiJidXN5LXZpc3VhbC10ZXN0LmNvbXBvbmVudC5sZXNzIiwic291cmNlc0NvbnRlbnQiOlsiLnZpc3VhbC10ZXN0LWJ1c3ktY29udGVudCB7XG4gICAgaGVpZ2h0OiA1MHB4O1xufVxuI251aS1idXN5LXRlc3QtYmFzaWMge1xuICAgIGhlaWdodDogMTAwcHg7XG59XG4iXX0= */"] });
 
 

@@ -6845,6 +6845,7 @@
         _createClass(BusyComponent, [{
           key: "ngAfterContentInit",
           value: function ngAfterContentInit() {
+            this.setBusyStateForContentComponents();
             this.isSpinnerTemplate = Boolean(this.spinnerComponent);
             this.isProgressTemplate = Boolean(this.progressComponent);
 
@@ -6871,6 +6872,11 @@
               }
             }
 
+            this.setBusyStateForContentComponents();
+          }
+        }, {
+          key: "setBusyStateForContentComponents",
+          value: function setBusyStateForContentComponents() {
             if (this.spinnerComponent) {
               this.spinnerComponent.showSpinner = this.busy;
             }
@@ -30565,9 +30571,10 @@
           value: function addNumber(valueChange) {
             if (lodash_isUndefined__WEBPACK_IMPORTED_MODULE_3___default()(this.value) || isNaN(this.value)) {
               this.value = 0;
-            }
+            } // Explicitly converting current value to number because it can also be a string, and cause issues, like NUI-5599
 
-            var newValue = this.clampToRange(this.value + valueChange);
+
+            var newValue = this.clampToRange(Number(this.value) + valueChange);
             this.onValueChange(lodash_round__WEBPACK_IMPORTED_MODULE_4___default()(newValue, this.stepPrecision));
           }
         }, {
@@ -30811,7 +30818,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "button", 6);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function TextboxNumberComponent_Template_button_click_6_listener() {
-              return ctx.addNumber(ctx.step);
+              return ctx.addNumber(+ctx.step);
             });
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();

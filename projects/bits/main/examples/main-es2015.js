@@ -4320,6 +4320,7 @@ class BusyComponent {
         this.disableTabNavigation = true;
     }
     ngAfterContentInit() {
+        this.setBusyStateForContentComponents();
         this.isSpinnerTemplate = Boolean(this.spinnerComponent);
         this.isProgressTemplate = Boolean(this.progressComponent);
         if (this.spinnerComponent && this.progressComponent) {
@@ -4341,6 +4342,9 @@ class BusyComponent {
                 this.tabNavigationService.restoreTabNavigation();
             }
         }
+        this.setBusyStateForContentComponents();
+    }
+    setBusyStateForContentComponents() {
         if (this.spinnerComponent) {
             this.spinnerComponent.showSpinner = this.busy;
         }
@@ -16974,7 +16978,8 @@ class TextboxNumberComponent {
         if (lodash_isUndefined__WEBPACK_IMPORTED_MODULE_3___default()(this.value) || isNaN(this.value)) {
             this.value = 0;
         }
-        const newValue = this.clampToRange(this.value + valueChange);
+        // Explicitly converting current value to number because it can also be a string, and cause issues, like NUI-5599
+        const newValue = this.clampToRange(Number(this.value) + valueChange);
         this.onValueChange(lodash_round__WEBPACK_IMPORTED_MODULE_4___default()(newValue, this.stepPrecision));
     }
     onValueChange(value) {
@@ -17090,7 +17095,7 @@ TextboxNumberComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵd
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "span", 4);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "span", 5);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "button", 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function TextboxNumberComponent_Template_button_click_6_listener() { return ctx.addNumber(ctx.step); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function TextboxNumberComponent_Template_button_click_6_listener() { return ctx.addNumber(+ctx.step); });
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](7, "span", 7);
