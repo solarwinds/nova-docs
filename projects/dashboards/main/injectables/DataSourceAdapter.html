@@ -499,9 +499,10 @@ export class DataSourceAdapter&lt;T extends IFilteringOutputs &#x3D; IFilteringO
 
         // check if this is the first call of updateConfiguration and there is no dataSource configuration present in the incoming properties
         // This results in two initial invocations of the data source, and we should eventually remove it. But, currently,
-        // timeseries and proportional widgets rely on it in order to display their initial data.
+        // widgets sometimes rely on it in order to display their initial data.
         if (typeof this.dataSourceConfiguration &#x3D;&#x3D;&#x3D; &quot;undefined&quot; &amp;&amp; typeof dataSourceConfiguration &#x3D;&#x3D;&#x3D; &quot;undefined&quot;) {
-            this.eventBus.getStream(REFRESH).next();
+            // using a setTimeout here to give configurable data sources time to receive their configurations before they&#x27;re invoked
+            setTimeout(() &#x3D;&gt; this.eventBus.getStream(REFRESH).next());
         }
     }
 
