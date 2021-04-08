@@ -5871,6 +5871,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.options = _t);
           }
         },
+        hostAttrs: ["role", "group"],
         hostVars: 2,
         hostBindings: function SelectV2OptionGroupComponent_HostBindings(rf, ctx) {
           if (rf & 2) {
@@ -7017,13 +7018,25 @@
        * <example-url>./../examples/index.html#/repeat-item</example-url>
        */
 
-      var RepeatItemComponent = function RepeatItemComponent() {
-        _classCallCheck(this, RepeatItemComponent);
+      var RepeatItemComponent = /*#__PURE__*/function () {
+        function RepeatItemComponent() {
+          _classCallCheck(this, RepeatItemComponent);
 
-        this.clickable = false;
-        this.nowrap = false;
-        this.selected = false;
-      };
+          this.clickable = false;
+          this.nowrap = false;
+          this.selected = false;
+          this.selectable = false;
+        }
+
+        _createClass(RepeatItemComponent, [{
+          key: "role",
+          get: function get() {
+            return this.selectable ? "option" : "listitem";
+          }
+        }]);
+
+        return RepeatItemComponent;
+      }();
 
       RepeatItemComponent.ɵfac = function RepeatItemComponent_Factory(t) {
         return new (t || RepeatItemComponent)();
@@ -7032,10 +7045,17 @@
       RepeatItemComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: RepeatItemComponent,
         selectors: [["nui-repeat-item"]],
+        hostVars: 1,
+        hostBindings: function RepeatItemComponent_HostBindings(rf, ctx) {
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("role", ctx.role);
+          }
+        },
         inputs: {
           clickable: "clickable",
           nowrap: "nowrap",
-          selected: "selected"
+          selected: "selected",
+          selectable: "selectable"
         },
         ngContentSelectors: _c1,
         decls: 3,
@@ -8536,6 +8556,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx.virtualScrollViewport = _t.first);
           }
         },
+        hostAttrs: ["role", "navigation"],
         inputs: {
           itemsList: "itemsList",
           page: "page",
@@ -8576,7 +8597,7 @@
             i18n_1 = $localize(_templateObject11 || (_templateObject11 = _taggedTemplateLiteral([":\u241Fd662abcb49ed274a9ec81f5df13b35acbf4cba87\u241F6035911408728866723:", ":INTERPOLATION: of ", ":START_TAG_SPAN:", ":INTERPOLATION_1:", ":CLOSE_TAG_SPAN:"])), "\uFFFD0\uFFFD", "\uFFFD#7\uFFFD", "\uFFFD1\uFFFD", "\uFFFD/#7\uFFFD");
           }
 
-          return [["class", "nui-paginator", 4, "ngIf"], ["tableRow", ""], [1, "nui-paginator"], [1, "nui-paginator__items"], [1, "nui-paginator__list"], [3, "title", "ngClass", "value", 4, "ngFor", "ngForOf"], [1, "nui-paginator__options"], [1, "nui-paginator__info"], i18n_1, [1, "nui-paginator__total"], ["ariaLabel", "Items per page", 3, "value", "valueSelected"], [3, "value", 4, "ngFor", "ngForOf"], [3, "title", "ngClass", "value"], ["nui-button", "", "type", "button", "displayStyle", "action", "class", "move-icon", 3, "disabled", "icon", "click", 4, "ngIf"], ["nui-button", "", "type", "button", "displayStyle", "action", 3, "isEmpty", "click", 4, "ngIf"], [3, "appendToBody", "baseElementSelector", 4, "ngIf"], ["nui-button", "", "type", "button", "displayStyle", "action", 1, "move-icon", 3, "disabled", "icon", "click"], ["nui-button", "", "type", "button", "displayStyle", "action", 3, "isEmpty", "click"], [3, "appendToBody", "baseElementSelector"], ["nui-button", "", "type", "button", "nuiPopupToggle", "", "displayStyle", "action", 1, "nui-paginator__dots", 3, "ngClass", "isEmpty", "click"], ["popupAreaContent", "", 1, "nui-paginator__elipsis-pages"], [1, "nui-paginator__page-table", 3, "ngClass"], [3, "width", "height", "itemSize", "maxBufferPx", "minBufferPx", 4, "ngIf"], [4, "ngIf"], [3, "itemSize", "maxBufferPx", "minBufferPx"], [4, "cdkVirtualFor", "cdkVirtualForOf"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"], [3, "ngTemplateOutlet", "ngTemplateOutletContext", 4, "ngFor", "ngForOf"], [3, "value"], [3, "ngClass"], ["class", "nui-paginator__page-cell", "role", "gridcell", 4, "ngFor", "ngForOf"], ["role", "gridcell", 1, "nui-paginator__page-cell"], ["nui-button", "", "type", "button", "displayStyle", "action", 3, "click"]];
+          return [["class", "nui-paginator", 4, "ngIf"], ["tableRow", ""], [1, "nui-paginator"], [1, "nui-paginator__items"], ["role", "listbox", 1, "nui-paginator__list"], ["role", "option", 3, "title", "ngClass", "value", 4, "ngFor", "ngForOf"], [1, "nui-paginator__options"], [1, "nui-paginator__info"], i18n_1, [1, "nui-paginator__total"], ["ariaLabel", "Items per page", 3, "value", "valueSelected"], [3, "value", 4, "ngFor", "ngForOf"], ["role", "option", 3, "title", "ngClass", "value"], ["nui-button", "", "type", "button", "displayStyle", "action", "class", "move-icon", 3, "disabled", "icon", "click", 4, "ngIf"], ["nui-button", "", "type", "button", "displayStyle", "action", 3, "isEmpty", "click", 4, "ngIf"], [3, "appendToBody", "baseElementSelector", 4, "ngIf"], ["nui-button", "", "type", "button", "displayStyle", "action", 1, "move-icon", 3, "disabled", "icon", "click"], ["nui-button", "", "type", "button", "displayStyle", "action", 3, "isEmpty", "click"], [3, "appendToBody", "baseElementSelector"], ["nui-button", "", "type", "button", "nuiPopupToggle", "", "displayStyle", "action", 1, "nui-paginator__dots", 3, "ngClass", "isEmpty", "click"], ["popupAreaContent", "", 1, "nui-paginator__elipsis-pages"], [1, "nui-paginator__page-table", 3, "ngClass"], [3, "width", "height", "itemSize", "maxBufferPx", "minBufferPx", 4, "ngIf"], [4, "ngIf"], [3, "itemSize", "maxBufferPx", "minBufferPx"], [4, "cdkVirtualFor", "cdkVirtualForOf"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"], [3, "ngTemplateOutlet", "ngTemplateOutletContext", 4, "ngFor", "ngForOf"], [3, "value"], [3, "ngClass"], ["class", "nui-paginator__page-cell", 4, "ngFor", "ngForOf"], [1, "nui-paginator__page-cell"], ["nui-button", "", "type", "button", "displayStyle", "action", 3, "click"]];
         },
         template: function PaginatorComponent_Template(rf, ctx) {
           if (rf & 1) {
@@ -8993,6 +9014,11 @@
         }
 
         _createClass(MessageComponent, [{
+          key: "role",
+          get: function get() {
+            return this.type === "ok" || this.type === "info" ? "status" : "alert";
+          }
+        }, {
           key: "ngOnInit",
           value: function ngOnInit() {
             var _this24 = this;
@@ -9068,9 +9094,11 @@
       MessageComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
         type: MessageComponent,
         selectors: [["nui-message"]],
-        hostVars: 2,
+        hostVars: 3,
         hostBindings: function MessageComponent_HostBindings(rf, ctx) {
           if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵattribute"]("role", ctx.role);
+
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵclassProp"]("d-none", ctx.isHidden);
           }
         },
@@ -9085,7 +9113,7 @@
         ngContentSelectors: _c1,
         decls: 6,
         vars: 9,
-        consts: [["role", "alert", 3, "ngClass"], [1, "nui-message-icon", 3, "icon"], [1, "nui-message-content"], [1, "nui-message-content-text"], ["class", "nui-message-dismiss-button", 4, "ngIf"], [1, "nui-message-dismiss-button"], ["nui-button", "", "type", "button", "displayStyle", "action", "size", "default", "icon", "close", 3, "click"]],
+        consts: [[3, "ngClass"], [1, "nui-message-icon", 3, "icon"], [1, "nui-message-content"], [1, "nui-message-content-text"], ["class", "nui-message-dismiss-button", 4, "ngIf"], [1, "nui-message-dismiss-button"], ["nui-button", "", "type", "button", "displayStyle", "action", "size", "default", "icon", "close", 3, "click"]],
         template: function MessageComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojectionDef"]();
@@ -10260,6 +10288,7 @@
       SwitchComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: SwitchComponent,
         selectors: [["nui-switch"]],
+        hostAttrs: ["role", "switch"],
         inputs: {
           value: "value",
           disabled: "disabled",
@@ -10790,6 +10819,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.menuItem = _t.first);
           }
         },
+        hostAttrs: ["role", "menuitem"],
         inputs: {
           icon: "icon",
           type: "type"
@@ -15655,6 +15685,7 @@
       ValidationMessageComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: ValidationMessageComponent,
         selectors: [["nui-validation-message"]],
+        hostAttrs: ["role", "alert"],
         inputs: {
           show: "show",
           "for": "for"
@@ -15662,7 +15693,7 @@
         ngContentSelectors: _c0,
         decls: 1,
         vars: 1,
-        consts: [["class", "nui-validation-message", "role", "alert", 4, "ngIf"], ["role", "alert", 1, "nui-validation-message"], ["icon", "status_critical", "iconSize", "small", "aria-hidden", "true", 1, "nui-validation-message__icon"]],
+        consts: [["class", "nui-validation-message", 4, "ngIf"], [1, "nui-validation-message"], ["icon", "status_critical", "iconSize", "small", "aria-hidden", "true", 1, "nui-validation-message__icon"]],
         template: function ValidationMessageComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"]();
@@ -17076,6 +17107,7 @@
       ProgressComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: ProgressComponent,
         selectors: [["nui-progress"]],
+        hostAttrs: ["role", "progressbar"],
         inputs: {
           show: "show",
           showProgress: "showProgress",
@@ -18806,7 +18838,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx.overlayComponent = _t.first);
           }
         },
-        hostAttrs: ["aria-hidden", "true"],
+        hostAttrs: ["aria-hidden", "true", "role", "tooltip"],
         hostBindings: function TooltipComponent_HostBindings(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function TooltipComponent_click_HostBindingHandler() {
@@ -19452,7 +19484,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx.menuToggle = _t.first);
           }
         },
-        hostAttrs: [1, "nui-menu"],
+        hostAttrs: ["role", "menu", 1, "nui-menu"],
         inputs: {
           widthOfPopup: "widthOfPopup",
           contextClass: "contextClass",
@@ -23909,6 +23941,7 @@
       TableHeaderRowDefDirective.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineDirective"]({
         type: TableHeaderRowDefDirective,
         selectors: [["", "nuiHeaderRowDef", ""]],
+        hostAttrs: ["role", "row"],
         inputs: {
           nuiHeaderRowDef: "nuiHeaderRowDef",
           nuiHeaderRowDefSticky: "nuiHeaderRowDefSticky"
@@ -26421,6 +26454,7 @@
       SpinnerComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
         type: SpinnerComponent,
         selectors: [["nui-spinner"]],
+        hostAttrs: ["role", "progressbar"],
         inputs: {
           percent: "percent",
           show: "show",
@@ -28915,6 +28949,7 @@
       TabHeadingComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: TabHeadingComponent,
         selectors: [["nui-tab-heading"]],
+        hostAttrs: ["role", "tab"],
         hostVars: 2,
         hostBindings: function TabHeadingComponent_HostBindings(rf, ctx) {
           if (rf & 2) {
@@ -29777,6 +29812,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.quickPicker = _t.first);
           }
         },
+        hostAttrs: ["role", "spinbutton"],
         inputs: {
           minDate: "minDate",
           maxDate: "maxDate",
@@ -30749,6 +30785,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.input = _t.first);
           }
         },
+        hostAttrs: ["role", "spinbutton"],
         inputs: {
           value: "value",
           customBoxWidth: "customBoxWidth",
@@ -32287,7 +32324,7 @@
       DividerComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: DividerComponent,
         selectors: [["nui-divider"]],
-        hostAttrs: [1, "nui-divider"],
+        hostAttrs: ["role", "separator", 1, "nui-divider"],
         hostVars: 12,
         hostBindings: function DividerComponent_HostBindings(rf, ctx) {
           if (rf & 2) {
@@ -32624,7 +32661,7 @@
       SelectV2Component.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: SelectV2Component,
         selectors: [["nui-select-v2"]],
-        hostAttrs: [1, "nui-select-v2"],
+        hostAttrs: ["role", "button", 1, "nui-select-v2"],
         inputs: {
           displayValueTemplate: "displayValueTemplate"
         },
@@ -32647,7 +32684,7 @@
         ngContentSelectors: _c1,
         decls: 6,
         vars: 6,
-        consts: [["tabindex", "0", 1, "nui-select-v2__container", 3, "keydown"], ["input", ""], ["class", "nui-select-v2__value", 4, "ngIf"], [3, "ngTemplateOutlet", "ngTemplateOutletContext", 4, "ngIf"], [3, "toggleReference", "viewportMargin", "overlayConfig"], [1, "nui-select-v2__value"], ["class", "nui-select-v2__value-content", 4, "ngIf"], ["class", "nui-select-v2__placeholder", 4, "ngIf"], [3, "icon"], [1, "nui-select-v2__value-content"], [1, "nui-select-v2__placeholder"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"]],
+        consts: [["tabindex", "0", 1, "nui-select-v2__container", 3, "keydown"], ["input", ""], ["class", "nui-select-v2__value", 4, "ngIf"], [3, "ngTemplateOutlet", "ngTemplateOutletContext", 4, "ngIf"], ["roleAttr", "listbox", 3, "toggleReference", "viewportMargin", "overlayConfig"], [1, "nui-select-v2__value"], ["class", "nui-select-v2__value-content", 4, "ngIf"], ["class", "nui-select-v2__placeholder", 4, "ngIf"], [3, "icon"], [1, "nui-select-v2__value-content"], [1, "nui-select-v2__placeholder"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"]],
         template: function SelectV2Component_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"]();
@@ -36375,6 +36412,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.menuItem = _t.first);
           }
         },
+        hostAttrs: ["role", "menuitemcheckbox"],
         hostVars: 2,
         hostBindings: function MenuOptionComponent_HostBindings(rf, ctx) {
           if (rf & 1) {
@@ -37854,6 +37892,7 @@
       MenuGroupComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: MenuGroupComponent,
         selectors: [["nui-menu-group"]],
+        hostAttrs: ["role", "group"],
         inputs: {
           header: "header"
         },
@@ -38256,7 +38295,7 @@
       TableFooterCellDirective.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineDirective"]({
         type: TableFooterCellDirective,
         selectors: [["nui-footer-cell"], ["td", "nuiFooterCell", ""]],
-        hostAttrs: ["role", "gridcell", 1, "mat-footer-cell"],
+        hostAttrs: ["role", "cell", 1, "mat-footer-cell"],
         features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵInheritDefinitionFeature"]]
       });
       /***/
@@ -43311,7 +43350,7 @@
       SearchComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: SearchComponent,
         selectors: [["nui-search"]],
-        hostAttrs: [1, "nui-search"],
+        hostAttrs: ["role", "search", 1, "nui-search"],
         inputs: {
           captureFocus: "captureFocus",
           name: "name",
@@ -45321,7 +45360,8 @@
           overlayConfig: "overlayConfig",
           toggleReference: "toggleReference",
           viewportMargin: "viewportMargin",
-          customContainer: "customContainer"
+          customContainer: "customContainer",
+          roleAttr: "roleAttr"
         },
         outputs: {
           clickOutside: "clickOutside"
@@ -45333,7 +45373,7 @@
         ngContentSelectors: _c1,
         decls: 1,
         vars: 0,
-        consts: [["cdk-portal", ""], [1, "nui-overlay", 3, "ngClass"]],
+        consts: [["cdk-portal", ""], ["role", "roleAttr", 1, "nui-overlay", 3, "ngClass"]],
         template: function OverlayComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵprojectionDef"]();
@@ -45870,7 +45910,13 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.selectedItems = _t);
           }
         },
-        hostAttrs: [1, "nui-combobox-v2"],
+        hostAttrs: ["role", "combobox", 1, "nui-combobox-v2"],
+        hostVars: 1,
+        hostBindings: function ComboboxV2Component_HostBindings(rf, ctx) {
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-expanded", ctx.isDropdownOpen || false);
+          }
+        },
         inputs: {
           displayWith: "displayWith",
           isRemoveValueEnabled: "isRemoveValueEnabled",
@@ -45899,7 +45945,7 @@
         ngContentSelectors: _c1,
         decls: 8,
         vars: 16,
-        consts: [[1, "w-100", "d-flex", "flex-wrap", "align-items-center", "pt-2"], ["type", "text", 1, "nui-combobox-v2__input", "pb-2", 3, "disabled", "ngModel", "placeholder", "ngModelChange", "input", "keydown", "click"], ["input", ""], ["tabindex", "-1", "nui-button", "", "class", "nui-combobox-v2__remove-value action", "icon", "remove", "type", "button", 3, "isEmpty", "nuiTooltip", "disabled", "click", 4, "ngIf"], ["tabindex", "-1", "nui-button", "", "type", "button", "icon", "caret-down", 1, "nui-combobox-v2__toggle", "action", 3, "isEmpty", "disabled", "click"], [3, "toggleReference", "viewportMargin", "overlayConfig"], ["tabindex", "-1", "nui-button", "", "icon", "remove", "type", "button", 1, "nui-combobox-v2__remove-value", "action", 3, "isEmpty", "nuiTooltip", "disabled", "click"]],
+        consts: [[1, "w-100", "d-flex", "flex-wrap", "align-items-center", "pt-2"], ["type", "text", 1, "nui-combobox-v2__input", "pb-2", 3, "disabled", "ngModel", "placeholder", "ngModelChange", "input", "keydown", "click"], ["input", ""], ["tabindex", "-1", "nui-button", "", "class", "nui-combobox-v2__remove-value action", "icon", "remove", "type", "button", 3, "isEmpty", "nuiTooltip", "disabled", "click", 4, "ngIf"], ["tabindex", "-1", "nui-button", "", "type", "button", "icon", "caret-down", 1, "nui-combobox-v2__toggle", "action", 3, "isEmpty", "disabled", "click"], ["roleAttr", "listbox", 3, "toggleReference", "viewportMargin", "overlayConfig"], ["tabindex", "-1", "nui-button", "", "icon", "remove", "type", "button", 1, "nui-combobox-v2__remove-value", "action", 3, "isEmpty", "nuiTooltip", "disabled", "click"]],
         template: function ComboboxV2Component_Template(rf, ctx) {
           if (rf & 1) {
             var _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
@@ -47033,6 +47079,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.menuItem = _t.first);
           }
         },
+        hostAttrs: ["role", "menuitem"],
         features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵProvidersFeature"]([{
           provide: _menu_item_base__WEBPACK_IMPORTED_MODULE_2__["MenuItemBaseComponent"],
           useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["forwardRef"])(function () {
@@ -49936,7 +49983,7 @@
       TableCellDirective.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineDirective"]({
         type: TableCellDirective,
         selectors: [["nui-cell"], ["td", "nui-cell", ""]],
-        hostAttrs: ["role", "gridcell", 1, "nui-table__table-cell"],
+        hostAttrs: ["role", "cell", 1, "nui-table__table-cell"],
         hostVars: 5,
         hostBindings: function TableCellDirective_HostBindings(rf, ctx) {
           if (rf & 1) {
@@ -50861,6 +50908,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.children = _t);
           }
         },
+        hostAttrs: ["role", "radiogroup"],
         inputs: {
           ariaLabel: "ariaLabel",
           name: "name",
@@ -51030,6 +51078,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.radioTransclude = _t.first);
           }
         },
+        hostAttrs: ["role", "radio"],
         hostVars: 4,
         hostBindings: function RadioComponent_HostBindings(rf, ctx) {
           if (rf & 2) {
@@ -51473,6 +51522,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.resizableArea = _t.first);
           }
         },
+        hostAttrs: ["role", "tablist"],
         hostVars: 2,
         hostBindings: function TabHeadingGroupComponent_HostBindings(rf, ctx) {
           if (rf & 2) {
@@ -51655,6 +51705,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.menuItem = _t.first);
           }
         },
+        hostAttrs: ["role", "menuitemcheckbox"],
         hostVars: 2,
         hostBindings: function MenuSwitchComponent_HostBindings(rf, ctx) {
           if (rf & 1) {
@@ -53146,7 +53197,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.menuItems = _t);
           }
         },
-        hostAttrs: [1, "nui-menu-popup"],
+        hostAttrs: ["role", "menu", 1, "nui-menu-popup"],
         hostVars: 4,
         hostBindings: function MenuPopupComponent_HostBindings(rf, ctx) {
           if (rf & 2) {
@@ -53639,6 +53690,13 @@
             var _t;
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.textboxInput = _t.first);
+          }
+        },
+        hostAttrs: ["role", "textbox"],
+        hostVars: 1,
+        hostBindings: function TextboxComponent_HostBindings(rf, ctx) {
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-label", ctx.ariaLabel + " textbox");
           }
         },
         inputs: {
@@ -54847,6 +54905,7 @@
       PopoverModalComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: PopoverModalComponent,
         selectors: [["nui-popover-modal"]],
+        hostAttrs: ["role", "dialog"],
         hostBindings: function PopoverModalComponent_HostBindings(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function PopoverModalComponent_click_HostBindingHandler($event) {
@@ -57289,7 +57348,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.toolbarContainer = _t.first);
           }
         },
-        hostAttrs: [1, "nui-toolbar", "nui-strip-layout", "nui-flex-container"],
+        hostAttrs: ["role", "toolbar", 1, "nui-toolbar", "nui-strip-layout", "nui-flex-container"],
         hostVars: 4,
         hostBindings: function ToolbarComponent_HostBindings(rf, ctx) {
           if (rf & 2) {
@@ -57784,7 +57843,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵloadQuery"]()) && (ctx.popup = _t.first);
           }
         },
-        hostAttrs: [1, "nui-popup"],
+        hostAttrs: ["role", "dialog", 1, "nui-popup"],
         inputs: {
           width: "width",
           overlayConfig: "overlayConfig",
@@ -58252,7 +58311,7 @@
       SelectV2OptionComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: SelectV2OptionComponent,
         selectors: [["nui-select-v2-option"]],
-        hostAttrs: [1, "nui-select-v2-option"],
+        hostAttrs: ["role", "option", 1, "nui-select-v2-option"],
         hostVars: 4,
         hostBindings: function SelectV2OptionComponent_HostBindings(rf, ctx) {
           if (rf & 1) {
@@ -59646,6 +59705,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.menuItem = _t.first);
           }
         },
+        hostAttrs: ["role", "menuitem"],
         inputs: {
           url: "url",
           target: "target",
@@ -60015,7 +60075,7 @@
 
           var ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("cdkDragData", item_r5)("cdkDragPreviewClass", ctx_r1.dragPreviewClass)("cdkDragDisabled", !ctx_r1.isItemDraggable(item_r5))("clickable", !(ctx_r1.selectionMode === ctx_r1.repeatSelectionMode.none))("selected", ctx_r1.isItemSelected(item_r5) && !ctx_r1.isItemDisabled(item_r5))("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpureFunction3"](13, _c3, ctx_r1.isItemDisabled(item_r5), ctx_r1.isItemDraggable(item_r5) && !ctx_r1.dragHandleTemplateRef, ctx_r1.isItemDraggable(item_r5) && ctx_r1.mousedOver[itemIndex_r6]));
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("cdkDragData", item_r5)("cdkDragPreviewClass", ctx_r1.dragPreviewClass)("cdkDragDisabled", !ctx_r1.isItemDraggable(item_r5))("clickable", !(ctx_r1.selectionMode === ctx_r1.repeatSelectionMode.none))("selectable", !(ctx_r1.selectionMode === ctx_r1.repeatSelectionMode.none))("selected", ctx_r1.isItemSelected(item_r5) && !ctx_r1.isItemDisabled(item_r5))("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpureFunction3"](14, _c3, ctx_r1.isItemDisabled(item_r5), ctx_r1.isItemDraggable(item_r5) && !ctx_r1.dragHandleTemplateRef, ctx_r1.isItemDraggable(item_r5) && ctx_r1.mousedOver[itemIndex_r6]));
 
           _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
 
@@ -60035,7 +60095,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngTemplateOutlet", ctx_r1.repeatItemTemplateRef)("ngTemplateOutletContext", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpureFunction1"](17, _c2, item_r5));
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngTemplateOutlet", ctx_r1.repeatItemTemplateRef)("ngTemplateOutletContext", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpureFunction1"](18, _c2, item_r5));
 
           _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
 
@@ -60266,6 +60326,11 @@
             }
 
             return this._viewportRef;
+          }
+        }, {
+          key: "role",
+          get: function get() {
+            return this.selectionMode !== "none" ? "listbox" : "list";
           }
         }, {
           key: "ngOnInit",
@@ -60533,9 +60598,11 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵloadQuery"]()) && (ctx.draggableElements = _t);
           }
         },
-        hostVars: 4,
+        hostVars: 5,
         hostBindings: function RepeatComponent_HostBindings(rf, ctx) {
           if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵattribute"]("role", ctx.role);
+
             _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵstyleProp"]("width", ctx.width);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵclassProp"]("virtual-scroll-viewport", ctx.virtualScroll);
@@ -60567,12 +60634,12 @@
         ngContentSelectors: _c6,
         decls: 9,
         vars: 5,
-        consts: [["repeatItems", ""], [1, "nui-repeat-header"], ["role", "repeat", 1, "repeat-group"], ["dropListArea", ""], [4, "ngIf"], ["style", "height: 100%", 3, "itemSize", 4, "ngIf"], ["cdkDrag", "", 1, "repeat-group-item", 3, "cdkDragData", "cdkDragPreviewClass", "cdkDragDisabled", "clickable", "selected", "ngClass", "click"], ["drag", "cdkDrag"], ["class", "nui-repeat-item__controls-drag-handle align-self-center", 3, "ngClass", 4, "ngIf"], ["class", "nui-repeat-item__controls-drag-handle", 4, "ngIf"], [1, "nui-repeat-item__controls-container"], ["class", "nui-repeat-item__checkbox", 3, "value", "checked", "disabled", "valueChange", 4, "ngIf"], ["class", "nui-repeat-item__radio", 3, "value", "checked", "disabled", 4, "ngIf"], [1, "nui-repeat-item__content-container"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"], ["class", "nui-repeat-item__actions-container", 4, "ngIf"], [1, "nui-repeat-item__controls-drag-handle", "align-self-center", 3, "ngClass"], ["cdkDragHandle", "", 3, "mouseover", "mouseout"], [1, "nui-repeat-item__controls-drag-handle"], [3, "nui-dnd-preview", 4, "cdkDragPreview"], [1, "nui-repeat-item__checkbox", 3, "value", "checked", "disabled", "valueChange"], [1, "nui-repeat-item__radio", 3, "value", "checked", "disabled"], [1, "nui-repeat-item__actions-container"], [3, "ngTemplateOutlet", "ngTemplateOutletContext", 4, "ngFor", "ngForOf", "ngForTrackBy"], [2, "height", "100%", 3, "itemSize"], [4, "cdkVirtualFor", "cdkVirtualForOf", "cdkVirtualForTemplateCacheSize"]],
+        consts: [["repeatItems", ""], [1, "nui-repeat-header"], [1, "repeat-group"], ["dropListArea", ""], [4, "ngIf"], ["style", "height: 100%", 3, "itemSize", 4, "ngIf"], ["cdkDrag", "", 1, "repeat-group-item", 3, "cdkDragData", "cdkDragPreviewClass", "cdkDragDisabled", "clickable", "selectable", "selected", "ngClass", "click"], ["drag", "cdkDrag"], ["class", "nui-repeat-item__controls-drag-handle align-self-center", 3, "ngClass", 4, "ngIf"], ["class", "nui-repeat-item__controls-drag-handle", 4, "ngIf"], [1, "nui-repeat-item__controls-container"], ["class", "nui-repeat-item__checkbox", 3, "value", "checked", "disabled", "valueChange", 4, "ngIf"], ["class", "nui-repeat-item__radio", 3, "value", "checked", "disabled", 4, "ngIf"], [1, "nui-repeat-item__content-container"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"], ["class", "nui-repeat-item__actions-container", 4, "ngIf"], [1, "nui-repeat-item__controls-drag-handle", "align-self-center", 3, "ngClass"], ["cdkDragHandle", "", 3, "mouseover", "mouseout"], [1, "nui-repeat-item__controls-drag-handle"], [3, "nui-dnd-preview", 4, "cdkDragPreview"], [1, "nui-repeat-item__checkbox", 3, "value", "checked", "disabled", "valueChange"], [1, "nui-repeat-item__radio", 3, "value", "checked", "disabled"], [1, "nui-repeat-item__actions-container"], [3, "ngTemplateOutlet", "ngTemplateOutletContext", 4, "ngFor", "ngForOf", "ngForTrackBy"], [2, "height", "100%", 3, "itemSize"], [4, "cdkVirtualFor", "cdkVirtualForOf", "cdkVirtualForTemplateCacheSize"]],
         template: function RepeatComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵprojectionDef"](_c5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](0, RepeatComponent_ng_template_0_Template, 10, 19, "ng-template", null, 0, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](0, RepeatComponent_ng_template_0_Template, 10, 20, "ng-template", null, 0, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](2, "div");
 
@@ -61005,7 +61072,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.popupAreaContent = _t.first);
           }
         },
-        hostAttrs: [1, "nui-popup"],
+        hostAttrs: ["role", "dialog", 1, "nui-popup"],
         inputs: {
           width: "width",
           contextClass: "contextClass",
@@ -61795,12 +61862,17 @@
           });
           this.subscriptions.push(activateSubscription, closeSubscription);
         }
-        /**
-         * triggers fade in animation and sets timeout till the toast will be dismissed
-         */
-
 
         _createClass(ToastComponent, [{
+          key: "role",
+          get: function get() {
+            return this.toastPackage.toastType === "success" || this.toastPackage.toastType === "info" ? "status" : "alert";
+          }
+          /**
+           * triggers fade in animation and sets timeout till the toast will be dismissed
+           */
+
+        }, {
           key: "activateToast",
           value: function activateToast() {
             var _this215 = this;
@@ -61969,7 +62041,7 @@
       ToastComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: ToastComponent,
         selectors: [["nui-toast-component"]],
-        hostVars: 6,
+        hostVars: 7,
         hostBindings: function ToastComponent_HostBindings(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ToastComponent_click_HostBindingHandler() {
@@ -61982,6 +62054,8 @@
           }
 
           if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("role", ctx.role);
+
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMap"](ctx.toastClasses);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵstyleProp"]("display", ctx.display);
