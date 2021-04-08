@@ -13110,7 +13110,7 @@
       !*** ./src/core/public-api.ts ***!
       \********************************/
 
-    /*! exports provided: ChartPalette, MappedValueProvider, CHART_PALETTE_CS1, CHART_PALETTE_CS2, CHART_PALETTE_CS3, CHART_PALETTE_CS_S, CHART_PALETTE_CS_S_EXTENDED, CHART_MARKERS, ProcessedColorProvider, SequentialChartMarkerProvider, SequentialColorProvider, SequentialValueProvider, TextColorProvider, PathMarker, SvgMarker, defaultColorProvider, defaultPalette, defaultMarkerProvider, getColorValueByName, getAutomaticDomain, getAutomaticDomainWithIncludedInterval, getAutomaticDomainWithTicks, BandScale, PointScale, LinearScale, Scale, TimeScale, isDaylightSavingTime, TimeIntervalScale, datetimeFormatter, EMPTY_CONTINUOUS_DOMAIN, NORMALIZED_DOMAIN, isBandScale, hasInnerScale, NoopScale, convert, invert, ChartPlugin, DataManager, DataSeries, EventBus, InteractionType, Lasagna, MouseInteractiveArea, RenderEngine, Renderer, UtilityService, AxisConfig, BorderConfig, DimensionConfig, linearGaugeGridConfig, GridConfig, AreaGridConfig, BarGridConfig, BarHorizontalGridConfig, BarStatusGridConfig, sparkChartGridConfig, XYGridConfig, XYGrid, borderMidpoint, Grid, RadialGrid, ChartDonutContentPlugin, ChartPopoverPlugin, DonutGaugeLabelsPlugin, GAUGE_LABEL_FORMATTER_NAME_DEFAULT, GAUGE_LABELS_CONTAINER_CLASS, GAUGE_THRESHOLD_LABEL_CLASS, InteractionLabelPlugin, InteractionLinePlugin, MouseInteractiveAreaPlugin, RadialPopoverPlugin, RenderEnginePlugin, TOOLTIP_POSITION_OFFSET, getVerticalSetup, getHorizontalSetup, ChartTooltipsPlugin, RadialTooltipsPlugin, BarTooltipsPlugin, ZoomPlugin, ChartCollection, Chart, ChartAssist, LegendInteractionAssist, SparkChartAssist, ChartAssistEventType, ChartAssistRenderStateData, CssFilterId, GRAYSCALE_FILTER, GRAYSCALE_COLOR_MATRIX */
+    /*! exports provided: ChartPalette, MappedValueProvider, CHART_PALETTE_CS1, CHART_PALETTE_CS2, CHART_PALETTE_CS3, CHART_PALETTE_CS_S, CHART_PALETTE_CS_S_EXTENDED, CHART_MARKERS, ProcessedColorProvider, SequentialChartMarkerProvider, SequentialColorProvider, SequentialValueProvider, TextColorProvider, PathMarker, SvgMarker, defaultColorProvider, defaultPalette, defaultMarkerProvider, getColorValueByName, getAutomaticDomain, getAutomaticDomainWithIncludedInterval, getAutomaticDomainWithTicks, BandScale, PointScale, LinearScale, Scale, TimeScale, isDaylightSavingTime, TimeIntervalScale, datetimeFormatter, EMPTY_CONTINUOUS_DOMAIN, NORMALIZED_DOMAIN, isBandScale, hasInnerScale, NoopScale, convert, invert, ChartPlugin, DataManager, DataSeries, EventBus, InteractionType, Lasagna, MouseInteractiveArea, RenderEngine, Renderer, UtilityService, AxisConfig, BorderConfig, DimensionConfig, linearGaugeGridConfig, GridConfig, AreaGridConfig, BarGridConfig, BarHorizontalGridConfig, BarStatusGridConfig, sparkChartGridConfig, XYGridConfig, XYGrid, borderMidpoint, Grid, RadialGrid, ChartDonutContentPlugin, ChartPopoverPlugin, DonutGaugeLabelsPlugin, LinearGaugeLabelsPlugin, GAUGE_LABEL_FORMATTER_NAME_DEFAULT, GAUGE_LABELS_CONTAINER_CLASS, GAUGE_THRESHOLD_LABEL_CLASS, InteractionLabelPlugin, InteractionLinePlugin, MouseInteractiveAreaPlugin, RadialPopoverPlugin, RenderEnginePlugin, TOOLTIP_POSITION_OFFSET, getVerticalSetup, getHorizontalSetup, ChartTooltipsPlugin, RadialTooltipsPlugin, BarTooltipsPlugin, ZoomPlugin, ChartCollection, Chart, ChartAssist, LegendInteractionAssist, SparkChartAssist, ChartAssistEventType, ChartAssistRenderStateData, CssFilterId, GRAYSCALE_FILTER, GRAYSCALE_COLOR_MATRIX */
 
     /***/
     function DRhB(module, __webpack_exports__, __webpack_require__) {
@@ -13524,6 +13524,12 @@
 
       __webpack_require__.d(__webpack_exports__, "DonutGaugeLabelsPlugin", function () {
         return _plugins_public_api__WEBPACK_IMPORTED_MODULE_2__["DonutGaugeLabelsPlugin"];
+      });
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "LinearGaugeLabelsPlugin", function () {
+        return _plugins_public_api__WEBPACK_IMPORTED_MODULE_2__["LinearGaugeLabelsPlugin"];
       });
       /* harmony reexport (safe) */
 
@@ -17811,79 +17817,85 @@
       /* harmony import */
 
 
-      var _core_common_palette_palettes__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      var _core_common_scales_linear_scale__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! ../core/common/scales/linear-scale */
+      "YYcv");
+      /* harmony import */
+
+
+      var _core_common_palette_palettes__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! ../core/common/palette/palettes */
       "Isyg");
       /* harmony import */
 
 
-      var _core_plugins_gauge_constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      var _core_plugins_gauge_constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! ../core/plugins/gauge/constants */
       "GXwZ");
       /* harmony import */
 
 
-      var _renderers_bar_accessors_horizontal_bar_accessors__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      var _renderers_bar_accessors_horizontal_bar_accessors__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! ../renderers/bar/accessors/horizontal-bar-accessors */
       "rTqn");
       /* harmony import */
 
 
-      var _renderers_bar_accessors_vertical_bar_accessors__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      var _renderers_bar_accessors_vertical_bar_accessors__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! ../renderers/bar/accessors/vertical-bar-accessors */
       "mGqK");
       /* harmony import */
 
 
-      var _renderers_bar_bar_renderer__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      var _renderers_bar_bar_renderer__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! ../renderers/bar/bar-renderer */
       "iC++");
       /* harmony import */
 
 
-      var _renderers_bar_bar_scales__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      var _renderers_bar_bar_scales__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
       /*! ../renderers/bar/bar-scales */
       "sMd8");
       /* harmony import */
 
 
-      var _renderers_bar_linear_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      var _renderers_bar_linear_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
       /*! ../renderers/bar/linear-gauge-thresholds-renderer */
       "LkUO");
       /* harmony import */
 
 
-      var _renderers_radial_accessors_radial_accessors__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+      var _renderers_radial_accessors_radial_accessors__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
       /*! ../renderers/radial/accessors/radial-accessors */
       "ZF6T");
       /* harmony import */
 
 
-      var _renderers_radial_gauge_donut_gauge_renderer_config__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+      var _renderers_radial_gauge_donut_gauge_renderer_config__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
       /*! ../renderers/radial/gauge/donut-gauge-renderer-config */
       "JBZ3");
       /* harmony import */
 
 
-      var _renderers_radial_gauge_donut_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+      var _renderers_radial_gauge_donut_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
       /*! ../renderers/radial/gauge/donut-gauge-thresholds-renderer */
       "MsLP");
       /* harmony import */
 
 
-      var _renderers_radial_radial_renderer__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
+      var _renderers_radial_radial_renderer__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
       /*! ../renderers/radial/radial-renderer */
       "+mSY");
       /* harmony import */
 
 
-      var _renderers_radial_radial_scales__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
+      var _renderers_radial_radial_scales__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
       /*! ../renderers/radial/radial-scales */
       "ftV1");
       /* harmony import */
 
 
-      var _constants__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
+      var _constants__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
       /*! ./constants */
       "boxq");
 
@@ -17979,13 +17991,19 @@
         }, {
           key: "setThresholdLabelFormatter",
           value: function setThresholdLabelFormatter(formatter, seriesSet) {
-            var formatterName = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : _core_plugins_gauge_constants__WEBPACK_IMPORTED_MODULE_4__["GAUGE_LABEL_FORMATTER_NAME_DEFAULT"];
+            var formatterName = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : _core_plugins_gauge_constants__WEBPACK_IMPORTED_MODULE_5__["GAUGE_LABEL_FORMATTER_NAME_DEFAULT"];
             var thresholdsSeries = seriesSet.find(function (series) {
-              return series.renderer instanceof _renderers_radial_gauge_donut_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_12__["DonutGaugeThresholdsRenderer"];
+              return series.id === GaugeUtil_1.THRESHOLD_MARKERS_SERIES_ID;
             });
 
             if (thresholdsSeries) {
-              thresholdsSeries.scales.r.formatters[formatterName] = formatter;
+              var linearScale = Object.values(thresholdsSeries.scales).find(function (scale) {
+                return scale instanceof _core_common_scales_linear_scale__WEBPACK_IMPORTED_MODULE_3__["LinearScale"];
+              });
+
+              if (linearScale) {
+                linearScale.formatters[formatterName] = formatter;
+              }
             }
 
             return seriesSet;
@@ -18008,49 +18026,49 @@
             var _chartTools;
 
             var barRendererFunction = function barRendererFunction() {
-              var renderer = new _renderers_bar_bar_renderer__WEBPACK_IMPORTED_MODULE_7__["BarRenderer"]();
+              var renderer = new _renderers_bar_bar_renderer__WEBPACK_IMPORTED_MODULE_8__["BarRenderer"]();
               renderer.config.padding = 0;
               renderer.config.strokeWidth = 0;
               renderer.config.enableMinBarThickness = false;
               return renderer;
             };
 
-            var chartTools = (_chartTools = {}, _defineProperty(_chartTools, _constants__WEBPACK_IMPORTED_MODULE_15__["GaugeMode"].Donut, {
+            var chartTools = (_chartTools = {}, _defineProperty(_chartTools, _constants__WEBPACK_IMPORTED_MODULE_16__["GaugeMode"].Donut, {
               mainRendererFunction: function mainRendererFunction() {
-                return new _renderers_radial_radial_renderer__WEBPACK_IMPORTED_MODULE_13__["RadialRenderer"](Object(_renderers_radial_gauge_donut_gauge_renderer_config__WEBPACK_IMPORTED_MODULE_11__["donutGaugeRendererConfig"])());
+                return new _renderers_radial_radial_renderer__WEBPACK_IMPORTED_MODULE_14__["RadialRenderer"](Object(_renderers_radial_gauge_donut_gauge_renderer_config__WEBPACK_IMPORTED_MODULE_12__["donutGaugeRendererConfig"])());
               },
               thresholdsRendererFunction: function thresholdsRendererFunction() {
-                return new _renderers_radial_gauge_donut_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_12__["DonutGaugeThresholdsRenderer"]();
+                return new _renderers_radial_gauge_donut_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_13__["DonutGaugeThresholdsRenderer"]();
               },
               accessorFunction: function accessorFunction() {
-                return new _renderers_radial_accessors_radial_accessors__WEBPACK_IMPORTED_MODULE_10__["RadialAccessors"]();
+                return new _renderers_radial_accessors_radial_accessors__WEBPACK_IMPORTED_MODULE_11__["RadialAccessors"]();
               },
               scaleFunction: function scaleFunction() {
-                return Object(_renderers_radial_radial_scales__WEBPACK_IMPORTED_MODULE_14__["radialScales"])();
+                return Object(_renderers_radial_radial_scales__WEBPACK_IMPORTED_MODULE_15__["radialScales"])();
               }
-            }), _defineProperty(_chartTools, _constants__WEBPACK_IMPORTED_MODULE_15__["GaugeMode"].Horizontal, {
+            }), _defineProperty(_chartTools, _constants__WEBPACK_IMPORTED_MODULE_16__["GaugeMode"].Horizontal, {
               mainRendererFunction: barRendererFunction,
               thresholdsRendererFunction: function thresholdsRendererFunction() {
-                return new _renderers_bar_linear_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_9__["LinearGaugeThresholdsRenderer"]();
+                return new _renderers_bar_linear_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_10__["LinearGaugeThresholdsRenderer"]();
               },
               accessorFunction: function accessorFunction() {
-                return new _renderers_bar_accessors_horizontal_bar_accessors__WEBPACK_IMPORTED_MODULE_5__["HorizontalBarAccessors"]();
+                return new _renderers_bar_accessors_horizontal_bar_accessors__WEBPACK_IMPORTED_MODULE_6__["HorizontalBarAccessors"]();
               },
               scaleFunction: function scaleFunction() {
-                return Object(_renderers_bar_bar_scales__WEBPACK_IMPORTED_MODULE_8__["barScales"])({
+                return Object(_renderers_bar_bar_scales__WEBPACK_IMPORTED_MODULE_9__["barScales"])({
                   horizontal: true
                 });
               }
-            }), _defineProperty(_chartTools, _constants__WEBPACK_IMPORTED_MODULE_15__["GaugeMode"].Vertical, {
+            }), _defineProperty(_chartTools, _constants__WEBPACK_IMPORTED_MODULE_16__["GaugeMode"].Vertical, {
               mainRendererFunction: barRendererFunction,
               thresholdsRendererFunction: function thresholdsRendererFunction() {
-                return new _renderers_bar_linear_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_9__["LinearGaugeThresholdsRenderer"]();
+                return new _renderers_bar_linear_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_10__["LinearGaugeThresholdsRenderer"]();
               },
               accessorFunction: function accessorFunction() {
-                return new _renderers_bar_accessors_vertical_bar_accessors__WEBPACK_IMPORTED_MODULE_6__["VerticalBarAccessors"]();
+                return new _renderers_bar_accessors_vertical_bar_accessors__WEBPACK_IMPORTED_MODULE_7__["VerticalBarAccessors"]();
               },
               scaleFunction: function scaleFunction() {
-                return Object(_renderers_bar_bar_scales__WEBPACK_IMPORTED_MODULE_8__["barScales"])();
+                return Object(_renderers_bar_bar_scales__WEBPACK_IMPORTED_MODULE_9__["barScales"])();
               }
             }), _chartTools);
             return chartTools[mode];
@@ -18071,7 +18089,7 @@
                   return "var(--nui-color-semantic-warning)";
                 }
 
-                return _core_common_palette_palettes__WEBPACK_IMPORTED_MODULE_3__["CHART_PALETTE_CS1"][0];
+                return _core_common_palette_palettes__WEBPACK_IMPORTED_MODULE_4__["CHART_PALETTE_CS1"][0];
               }
             };
 
@@ -18086,7 +18104,7 @@
                 return "var(--nui-color-semantic-unknown-bg-hover)";
               } else {
                 if (!lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default()(thresholds[1]) && thresholds[1] <= data.value) {
-                  return _core_common_palette_palettes__WEBPACK_IMPORTED_MODULE_3__["CHART_PALETTE_CS1"][0];
+                  return _core_common_palette_palettes__WEBPACK_IMPORTED_MODULE_4__["CHART_PALETTE_CS1"][0];
                 }
 
                 if (!lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default()(thresholds[0]) && thresholds[0] <= data.value) {
@@ -18718,7 +18736,7 @@
       !*** ./src/core/plugins/public-api.ts ***!
       \****************************************/
 
-    /*! exports provided: ChartDonutContentPlugin, ChartPopoverPlugin, DonutGaugeLabelsPlugin, GAUGE_LABEL_FORMATTER_NAME_DEFAULT, GAUGE_LABELS_CONTAINER_CLASS, GAUGE_THRESHOLD_LABEL_CLASS, InteractionLabelPlugin, InteractionLinePlugin, MouseInteractiveAreaPlugin, RadialPopoverPlugin, RenderEnginePlugin, TOOLTIP_POSITION_OFFSET, getVerticalSetup, getHorizontalSetup, ChartTooltipsPlugin, RadialTooltipsPlugin, BarTooltipsPlugin, ZoomPlugin */
+    /*! exports provided: ChartDonutContentPlugin, ChartPopoverPlugin, DonutGaugeLabelsPlugin, LinearGaugeLabelsPlugin, GAUGE_LABEL_FORMATTER_NAME_DEFAULT, GAUGE_LABELS_CONTAINER_CLASS, GAUGE_THRESHOLD_LABEL_CLASS, InteractionLabelPlugin, InteractionLinePlugin, MouseInteractiveAreaPlugin, RadialPopoverPlugin, RenderEnginePlugin, TOOLTIP_POSITION_OFFSET, getVerticalSetup, getHorizontalSetup, ChartTooltipsPlugin, RadialTooltipsPlugin, BarTooltipsPlugin, ZoomPlugin */
 
     /***/
     function JEn9(module, __webpack_exports__, __webpack_require__) {
@@ -18760,6 +18778,12 @@
 
       __webpack_require__.d(__webpack_exports__, "DonutGaugeLabelsPlugin", function () {
         return _gauge_public_api__WEBPACK_IMPORTED_MODULE_2__["DonutGaugeLabelsPlugin"];
+      });
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "LinearGaugeLabelsPlugin", function () {
+        return _gauge_public_api__WEBPACK_IMPORTED_MODULE_2__["LinearGaugeLabelsPlugin"];
       });
       /* harmony reexport (safe) */
 
@@ -25350,13 +25374,14 @@
           /** The default plugin configuration */
 
           _this55.DEFAULT_CONFIG = {
-            gridMargin: {
+            clearance: {
               top: DonutGaugeLabelsPlugin.MARGIN_DEFAULT,
               right: DonutGaugeLabelsPlugin.MARGIN_DEFAULT,
               bottom: DonutGaugeLabelsPlugin.MARGIN_DEFAULT,
               left: DonutGaugeLabelsPlugin.MARGIN_DEFAULT
             },
-            labelPadding: 5,
+            applyClearance: true,
+            padding: 5,
             formatterName: _constants__WEBPACK_IMPORTED_MODULE_10__["GAUGE_LABEL_FORMATTER_NAME_DEFAULT"],
             enableThresholdLabels: true
           };
@@ -25375,8 +25400,7 @@
               order: _constants__WEBPACK_IMPORTED_MODULE_5__["STANDARD_RENDER_LAYERS"][_renderers_types__WEBPACK_IMPORTED_MODULE_8__["RenderLayerName"].data].order,
               clipped: false
             });
-            var gridConfig = this.chart.getGrid().config();
-            gridConfig.dimension.margin = this.config.gridMargin;
+            this.adjustGridMargin();
             this.chart.getEventBus().getStream(_constants__WEBPACK_IMPORTED_MODULE_5__["INTERACTION_DATA_POINTS_EVENT"]).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeUntil"])(this.destroy$)).subscribe(function (event) {
               var gaugeThresholdLabelsGroup = _this56.lasagnaLayer.select(".".concat(_constants__WEBPACK_IMPORTED_MODULE_10__["GAUGE_LABELS_CONTAINER_CLASS"]));
 
@@ -25415,7 +25439,7 @@
               return series.renderer instanceof _renderers_radial_gauge_donut_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_7__["DonutGaugeThresholdsRenderer"];
             });
             var renderer = thresholdsSeries === null || thresholdsSeries === void 0 ? void 0 : thresholdsSeries.renderer;
-            var labelRadius = (renderer === null || renderer === void 0 ? void 0 : renderer.getOuterRadius((_a = thresholdsSeries === null || thresholdsSeries === void 0 ? void 0 : thresholdsSeries.scales.r.range()) !== null && _a !== void 0 ? _a : [0, 0], 0)) + this.config.labelPadding;
+            var labelRadius = (renderer === null || renderer === void 0 ? void 0 : renderer.getOuterRadius((_a = thresholdsSeries === null || thresholdsSeries === void 0 ? void 0 : thresholdsSeries.scales.r.range()) !== null && _a !== void 0 ? _a : [0, 0], 0)) + this.config.padding;
 
             if (lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default()(labelRadius)) {
               throw new Error("Radius is undefined");
@@ -25488,6 +25512,14 @@
 
 
             return "central";
+          }
+        }, {
+          key: "adjustGridMargin",
+          value: function adjustGridMargin() {
+            if (this.config.applyClearance) {
+              var gridConfig = this.chart.getGrid().config();
+              gridConfig.dimension.margin = this.config.clearance;
+            }
           }
         }]);
 
@@ -33591,12 +33623,29 @@
     },
 
     /***/
+    "gC02":
+    /*!*****************************************!*\
+      !*** ./src/core/plugins/gauge/types.ts ***!
+      \*****************************************/
+
+    /*! no exports provided */
+
+    /***/
+    function gC02(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /***/
+
+    },
+
+    /***/
     "gKry":
     /*!***************************!*\
       !*** ./src/public-api.ts ***!
       \***************************/
 
-    /*! exports provided: ChartTooltipDirective, ChartTooltipComponent, ChartDonutContentComponent, ChartTooltipsComponent, ChartPopoverComponent, ChartMarkerComponent, NuiChartsModule, ChartComponent, GaugeMode, GAUGE_THICKNESS_DEFAULT, GaugeUtil, ChartCollectionIdDirective, ChartCollectionService, ChartPalette, MappedValueProvider, CHART_PALETTE_CS1, CHART_PALETTE_CS2, CHART_PALETTE_CS3, CHART_PALETTE_CS_S, CHART_PALETTE_CS_S_EXTENDED, CHART_MARKERS, ProcessedColorProvider, SequentialChartMarkerProvider, SequentialColorProvider, SequentialValueProvider, TextColorProvider, PathMarker, SvgMarker, defaultColorProvider, defaultPalette, defaultMarkerProvider, getColorValueByName, getAutomaticDomain, getAutomaticDomainWithIncludedInterval, getAutomaticDomainWithTicks, BandScale, PointScale, LinearScale, Scale, TimeScale, isDaylightSavingTime, TimeIntervalScale, datetimeFormatter, EMPTY_CONTINUOUS_DOMAIN, NORMALIZED_DOMAIN, isBandScale, hasInnerScale, NoopScale, convert, invert, ChartPlugin, DataManager, DataSeries, EventBus, InteractionType, Lasagna, MouseInteractiveArea, RenderEngine, Renderer, UtilityService, AxisConfig, BorderConfig, DimensionConfig, linearGaugeGridConfig, GridConfig, AreaGridConfig, BarGridConfig, BarHorizontalGridConfig, BarStatusGridConfig, sparkChartGridConfig, XYGridConfig, XYGrid, borderMidpoint, Grid, RadialGrid, ChartDonutContentPlugin, ChartPopoverPlugin, DonutGaugeLabelsPlugin, GAUGE_LABEL_FORMATTER_NAME_DEFAULT, GAUGE_LABELS_CONTAINER_CLASS, GAUGE_THRESHOLD_LABEL_CLASS, InteractionLabelPlugin, InteractionLinePlugin, MouseInteractiveAreaPlugin, RadialPopoverPlugin, RenderEnginePlugin, TOOLTIP_POSITION_OFFSET, getVerticalSetup, getHorizontalSetup, ChartTooltipsPlugin, RadialTooltipsPlugin, BarTooltipsPlugin, ZoomPlugin, ChartCollection, Chart, ChartAssist, LegendInteractionAssist, SparkChartAssist, ChartAssistEventType, ChartAssistRenderStateData, CssFilterId, GRAYSCALE_FILTER, GRAYSCALE_COLOR_MATRIX, LEGEND_SERIES_CLASS_NAME, LegendSeriesComponent, BasicLegendTileComponent, RichLegendTileComponent, LegendComponent, THRESHOLDS_MAIN_CHART_RENDERER_CONFIG, THRESHOLDS_SUMMARY_RENDERER_CONFIG, DEFAULT_MARKER_INTERACTION_CONFIG, GAUGE_THRESHOLD_MARKER_CLASS, RenderState, RenderLayerName, XYRenderer, SideIndicatorAccessors, SideIndicatorRenderer, XYAccessors, NoopAccessors, RectangleAccessors, NoopRenderer, BarRenderer, stackedPreprocessor, stack, barGrid, barScales, BarAccessors, barAccessors, HorizontalBarAccessors, VerticalBarAccessors, StatusAccessors, statusAccessors, BarHighlightStrategy, BarSeriesHighlightStrategy, DEFAULT_LINEAR_GAUGE_THRESHOLDS_RENDERER_CONFIG, LinearGaugeThresholdsRenderer, radialPreprocessor, radial, DEFAULT_RADIAL_RENDERER_CONFIG, RadialRenderer, DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG, DonutGaugeThresholdsRenderer, donutGaugeRendererConfig, DonutGaugeRenderingUtil, PieRenderer, radialGrid, radialScales, RadialAccessors, calculateMissingData, LineSelectSeriesInteractionStrategy, LineAccessors, LineRenderer, MissingDataLineRendererConfig, areaGrid, AreaAccessors, AreaRenderer, stackedAreaPreprocessor, stackedArea, stackedPercentageAreaPreprocessor, stackedPercentageArea, calculateDomainValueCombinedTotals, applyStackMetadata, stackedAreaAccessors, MOUSE_ACTIVE_EVENT, INTERACTION_VALUES_ACTIVE_EVENT, INTERACTION_VALUES_EVENT, INTERACTION_COORDINATES_EVENT, HIGHLIGHT_DATA_POINT_EVENT, SELECT_DATA_POINT_EVENT, HIGHLIGHT_SERIES_EVENT, INTERACTION_SERIES_EVENT, INTERACTION_DATA_POINTS_EVENT, INTERACTION_DATA_POINT_EVENT, DESTROY_EVENT, SET_DOMAIN_EVENT, REFRESH_EVENT, CHART_VIEW_STATUS_EVENT, SERIES_STATE_CHANGE_EVENT, AXES_STYLE_CHANGE_EVENT, CHART_COMPONENT, STANDARD_RENDER_LAYERS, DATA_POINT_NOT_FOUND, DATA_POINT_INTERACTION_RESET, IGNORE_INTERACTION_CLASS, ZoneBoundary, ThresholdsService, thresholdsSummaryGridConfig, thresholdsTopGridConfig */
+    /*! exports provided: ChartTooltipDirective, ChartTooltipComponent, ChartDonutContentComponent, ChartTooltipsComponent, ChartPopoverComponent, ChartMarkerComponent, NuiChartsModule, ChartComponent, GaugeMode, GAUGE_THICKNESS_DEFAULT, GaugeUtil, ChartCollectionIdDirective, ChartCollectionService, ChartPalette, MappedValueProvider, CHART_PALETTE_CS1, CHART_PALETTE_CS2, CHART_PALETTE_CS3, CHART_PALETTE_CS_S, CHART_PALETTE_CS_S_EXTENDED, CHART_MARKERS, ProcessedColorProvider, SequentialChartMarkerProvider, SequentialColorProvider, SequentialValueProvider, TextColorProvider, PathMarker, SvgMarker, defaultColorProvider, defaultPalette, defaultMarkerProvider, getColorValueByName, getAutomaticDomain, getAutomaticDomainWithIncludedInterval, getAutomaticDomainWithTicks, BandScale, PointScale, LinearScale, Scale, TimeScale, isDaylightSavingTime, TimeIntervalScale, datetimeFormatter, EMPTY_CONTINUOUS_DOMAIN, NORMALIZED_DOMAIN, isBandScale, hasInnerScale, NoopScale, convert, invert, ChartPlugin, DataManager, DataSeries, EventBus, InteractionType, Lasagna, MouseInteractiveArea, RenderEngine, Renderer, UtilityService, AxisConfig, BorderConfig, DimensionConfig, linearGaugeGridConfig, GridConfig, AreaGridConfig, BarGridConfig, BarHorizontalGridConfig, BarStatusGridConfig, sparkChartGridConfig, XYGridConfig, XYGrid, borderMidpoint, Grid, RadialGrid, ChartDonutContentPlugin, ChartPopoverPlugin, DonutGaugeLabelsPlugin, LinearGaugeLabelsPlugin, GAUGE_LABEL_FORMATTER_NAME_DEFAULT, GAUGE_LABELS_CONTAINER_CLASS, GAUGE_THRESHOLD_LABEL_CLASS, InteractionLabelPlugin, InteractionLinePlugin, MouseInteractiveAreaPlugin, RadialPopoverPlugin, RenderEnginePlugin, TOOLTIP_POSITION_OFFSET, getVerticalSetup, getHorizontalSetup, ChartTooltipsPlugin, RadialTooltipsPlugin, BarTooltipsPlugin, ZoomPlugin, ChartCollection, Chart, ChartAssist, LegendInteractionAssist, SparkChartAssist, ChartAssistEventType, ChartAssistRenderStateData, CssFilterId, GRAYSCALE_FILTER, GRAYSCALE_COLOR_MATRIX, LEGEND_SERIES_CLASS_NAME, LegendSeriesComponent, BasicLegendTileComponent, RichLegendTileComponent, LegendComponent, THRESHOLDS_MAIN_CHART_RENDERER_CONFIG, THRESHOLDS_SUMMARY_RENDERER_CONFIG, DEFAULT_MARKER_INTERACTION_CONFIG, GAUGE_THRESHOLD_MARKER_CLASS, RenderState, RenderLayerName, XYRenderer, SideIndicatorAccessors, SideIndicatorRenderer, XYAccessors, NoopAccessors, RectangleAccessors, NoopRenderer, BarRenderer, stackedPreprocessor, stack, barGrid, barScales, BarAccessors, barAccessors, HorizontalBarAccessors, VerticalBarAccessors, StatusAccessors, statusAccessors, BarHighlightStrategy, BarSeriesHighlightStrategy, DEFAULT_LINEAR_GAUGE_THRESHOLDS_RENDERER_CONFIG, LinearGaugeThresholdsRenderer, radialPreprocessor, radial, DEFAULT_RADIAL_RENDERER_CONFIG, RadialRenderer, DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG, DonutGaugeThresholdsRenderer, donutGaugeRendererConfig, DonutGaugeRenderingUtil, PieRenderer, radialGrid, radialScales, RadialAccessors, calculateMissingData, LineSelectSeriesInteractionStrategy, LineAccessors, LineRenderer, MissingDataLineRendererConfig, areaGrid, AreaAccessors, AreaRenderer, stackedAreaPreprocessor, stackedArea, stackedPercentageAreaPreprocessor, stackedPercentageArea, calculateDomainValueCombinedTotals, applyStackMetadata, stackedAreaAccessors, MOUSE_ACTIVE_EVENT, INTERACTION_VALUES_ACTIVE_EVENT, INTERACTION_VALUES_EVENT, INTERACTION_COORDINATES_EVENT, HIGHLIGHT_DATA_POINT_EVENT, SELECT_DATA_POINT_EVENT, HIGHLIGHT_SERIES_EVENT, INTERACTION_SERIES_EVENT, INTERACTION_DATA_POINTS_EVENT, INTERACTION_DATA_POINT_EVENT, DESTROY_EVENT, SET_DOMAIN_EVENT, REFRESH_EVENT, CHART_VIEW_STATUS_EVENT, SERIES_STATE_CHANGE_EVENT, AXES_STYLE_CHANGE_EVENT, CHART_COMPONENT, STANDARD_RENDER_LAYERS, DATA_POINT_NOT_FOUND, DATA_POINT_INTERACTION_RESET, IGNORE_INTERACTION_CLASS, ZoneBoundary, ThresholdsService, thresholdsSummaryGridConfig, thresholdsTopGridConfig */
 
     /***/
     function gKry(module, __webpack_exports__, __webpack_require__) {
@@ -34136,6 +34185,12 @@
 
       __webpack_require__.d(__webpack_exports__, "DonutGaugeLabelsPlugin", function () {
         return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["DonutGaugeLabelsPlugin"];
+      });
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "LinearGaugeLabelsPlugin", function () {
+        return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["LinearGaugeLabelsPlugin"];
       });
       /* harmony reexport (safe) */
 
@@ -35689,6 +35744,308 @@
     },
 
     /***/
+    "hVbV":
+    /*!**************************************************************!*\
+      !*** ./src/core/plugins/gauge/linear-gauge-labels-plugin.ts ***!
+      \**************************************************************/
+
+    /*! exports provided: LinearGaugeLabelsPlugin */
+
+    /***/
+    function hVbV(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "LinearGaugeLabelsPlugin", function () {
+        return LinearGaugeLabelsPlugin;
+      });
+      /* harmony import */
+
+
+      var lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! lodash/defaultsDeep */
+      "P4Tr");
+      /* harmony import */
+
+
+      var lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_0__);
+      /* harmony import */
+
+
+      var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! lodash/isUndefined */
+      "TP7S");
+      /* harmony import */
+
+
+      var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_isUndefined__WEBPACK_IMPORTED_MODULE_1__);
+      /* harmony import */
+
+
+      var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! rxjs */
+      "qCKp");
+      /* harmony import */
+
+
+      var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! rxjs/operators */
+      "kU1M");
+      /* harmony import */
+
+
+      var _constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! ../../../constants */
+      "he5r");
+      /* harmony import */
+
+
+      var _renderers_types__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! ../../../renderers/types */
+      "AbRU");
+      /* harmony import */
+
+
+      var _common_chart_plugin__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      /*! ../../common/chart-plugin */
+      "e7eq");
+      /* harmony import */
+
+
+      var _constants__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      /*! ./constants */
+      "GXwZ");
+      /* harmony import */
+
+
+      var lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      /*! lodash/cloneDeep */
+      "BkRI");
+      /* harmony import */
+
+
+      var lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_8__);
+      /* harmony import */
+
+
+      var _renderers_bar_accessors_horizontal_bar_accessors__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      /*! ../../../renderers/bar/accessors/horizontal-bar-accessors */
+      "rTqn");
+      /* harmony import */
+
+
+      var _gauge_gauge_util__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+      /*! ../../../gauge/gauge-util */
+      "Hovb");
+      /**
+       * @ignore
+       * A chart plugin that handles the rendering of labels for a donut gauge
+       */
+
+
+      var LinearGaugeLabelsPlugin = /*#__PURE__*/function (_common_chart_plugin_8) {
+        _inherits(LinearGaugeLabelsPlugin, _common_chart_plugin_8);
+
+        var _super32 = _createSuper(LinearGaugeLabelsPlugin);
+
+        function LinearGaugeLabelsPlugin() {
+          var _this77;
+
+          var config = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+          _classCallCheck(this, LinearGaugeLabelsPlugin);
+
+          _this77 = _super32.call(this);
+          _this77.config = config;
+          /** The default plugin configuration */
+
+          _this77.DEFAULT_CONFIG = {
+            clearance: {
+              top: 20,
+              right: 25,
+              bottom: 20,
+              left: 25
+            },
+            applyClearance: true,
+            padding: 5,
+            formatterName: _constants__WEBPACK_IMPORTED_MODULE_7__["GAUGE_LABEL_FORMATTER_NAME_DEFAULT"],
+            enableThresholdLabels: true,
+            flipLabels: false
+          };
+          _this77.destroy$ = new rxjs__WEBPACK_IMPORTED_MODULE_2__["Subject"]();
+          _this77.isHorizontal = true;
+
+          _this77.xTranslate = function (d, i) {
+            var _a, _b, _c, _d, _e;
+
+            if (_this77.isHorizontal) {
+              var thresholdSeries = _this77.thresholdSeries;
+              var value = (_d = (_c = (_b = (_a = _this77.thresholdSeries) === null || _a === void 0 ? void 0 : _a.accessors) === null || _b === void 0 ? void 0 : _b.data) === null || _c === void 0 ? void 0 : _c.value) === null || _d === void 0 ? void 0 : _d.call(_c, d, i, thresholdSeries === null || thresholdSeries === void 0 ? void 0 : thresholdSeries.data, thresholdSeries);
+              return (_e = _this77.thresholdSeries) === null || _e === void 0 ? void 0 : _e.scales.x.convert(value);
+            }
+
+            return _this77.getLabelOffset();
+          };
+
+          _this77.yTranslate = function (d, i) {
+            var _a, _b, _c, _d, _e;
+
+            if (_this77.isHorizontal) {
+              return _this77.getLabelOffset();
+            }
+
+            var thresholdSeries = _this77.thresholdSeries;
+            var value = (_d = (_c = (_b = (_a = _this77.thresholdSeries) === null || _a === void 0 ? void 0 : _a.accessors) === null || _b === void 0 ? void 0 : _b.data) === null || _c === void 0 ? void 0 : _c.value) === null || _d === void 0 ? void 0 : _d.call(_c, d, i, thresholdSeries === null || thresholdSeries === void 0 ? void 0 : thresholdSeries.data, thresholdSeries);
+            return (_e = _this77.thresholdSeries) === null || _e === void 0 ? void 0 : _e.scales.y.convert(value);
+          };
+
+          _this77.config = lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_0___default()(_this77.config, _this77.DEFAULT_CONFIG);
+          return _this77;
+        }
+
+        _createClass(LinearGaugeLabelsPlugin, [{
+          key: "initialize",
+          value: function initialize() {
+            var _this78 = this;
+
+            this.lasagnaLayer = this.chart.getGrid().getLasagna().addLayer({
+              name: _constants__WEBPACK_IMPORTED_MODULE_7__["GAUGE_LABELS_CONTAINER_CLASS"],
+              order: _constants__WEBPACK_IMPORTED_MODULE_4__["STANDARD_RENDER_LAYERS"][_renderers_types__WEBPACK_IMPORTED_MODULE_5__["RenderLayerName"].data].order,
+              clipped: false
+            });
+            this.chart.getEventBus().getStream(_constants__WEBPACK_IMPORTED_MODULE_4__["MOUSE_ACTIVE_EVENT"]).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["takeUntil"])(this.destroy$)).subscribe(function (event) {
+              var gaugeThresholdLabelsGroup = _this78.lasagnaLayer.select(".".concat(_constants__WEBPACK_IMPORTED_MODULE_7__["GAUGE_LABELS_CONTAINER_CLASS"]));
+
+              if (!gaugeThresholdLabelsGroup.empty()) {
+                gaugeThresholdLabelsGroup.style("opacity", event.data ? 1 : 0);
+              }
+            });
+          }
+        }, {
+          key: "updateDimensions",
+          value: function updateDimensions() {
+            var _a;
+
+            if (this.config.enableThresholdLabels) {
+              this.thresholdSeries = this.chart.getDataManager().chartSeriesSet.find(function (series) {
+                return series.id === _gauge_gauge_util__WEBPACK_IMPORTED_MODULE_10__["GaugeUtil"].THRESHOLD_MARKERS_SERIES_ID;
+              });
+              this.isHorizontal = ((_a = this.thresholdSeries) === null || _a === void 0 ? void 0 : _a.accessors) instanceof _renderers_bar_accessors_horizontal_bar_accessors__WEBPACK_IMPORTED_MODULE_9__["HorizontalBarAccessors"];
+              this.adjustGridMargin();
+              this.drawThresholdLabels();
+            }
+          }
+        }, {
+          key: "destroy",
+          value: function destroy() {
+            if (this.destroy$) {
+              this.destroy$.next();
+              this.destroy$.complete();
+            }
+          }
+        }, {
+          key: "drawThresholdLabels",
+          value: function drawThresholdLabels() {
+            var _this79 = this;
+
+            var _a, _b, _c;
+
+            var data = lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_8___default()((_a = this.thresholdSeries) === null || _a === void 0 ? void 0 : _a.data);
+
+            if (lodash_isUndefined__WEBPACK_IMPORTED_MODULE_1___default()(data)) {
+              throw new Error("Gauge threshold series data is undefined");
+            }
+
+            var gaugeThresholdsLabelsGroup = this.lasagnaLayer.select(".".concat(_constants__WEBPACK_IMPORTED_MODULE_7__["GAUGE_LABELS_CONTAINER_CLASS"]));
+
+            if (gaugeThresholdsLabelsGroup.empty()) {
+              gaugeThresholdsLabelsGroup = this.lasagnaLayer.append("svg:g").attr("class", _constants__WEBPACK_IMPORTED_MODULE_7__["GAUGE_LABELS_CONTAINER_CLASS"]).style("opacity", 0);
+            } // last value in the thresholds series is the max value of the gauge (needed by RadialGaugeThresholdsRenderer).
+            // removing this value to avoid rendering a marker for it
+
+
+            data.pop();
+            var formatter = (_c = (_b = this.thresholdSeries) === null || _b === void 0 ? void 0 : _b.scales[this.isHorizontal ? "x" : "y"].formatters[this.config.formatterName]) !== null && _c !== void 0 ? _c : function (d) {
+              return d;
+            };
+            var labelSelection = gaugeThresholdsLabelsGroup.selectAll("text.".concat(_constants__WEBPACK_IMPORTED_MODULE_7__["GAUGE_THRESHOLD_LABEL_CLASS"])).data(data);
+            labelSelection.exit().remove();
+            labelSelection.enter().append("text").attr("class", _constants__WEBPACK_IMPORTED_MODULE_7__["GAUGE_THRESHOLD_LABEL_CLASS"]).merge(labelSelection).attr("transform", function (d, i) {
+              return "translate(".concat(_this79.xTranslate(d, i), ", ").concat(_this79.yTranslate(d, i), ")");
+            }).attr("title", function (d, i) {
+              return formatter(data[i].value);
+            }).style("text-anchor", function (d) {
+              return _this79.getTextAnchor();
+            }).style("dominant-baseline", function (d) {
+              return _this79.getAlignmentBaseline();
+            }).text(function (d, i) {
+              return formatter(data[i].value);
+            });
+          }
+        }, {
+          key: "getLabelOffset",
+          value: function getLabelOffset() {
+            var labelStart = 0;
+
+            if (!this.config.flipLabels) {
+              var gridDimensions = this.chart.getGrid().config().dimension;
+              labelStart = this.isHorizontal ? gridDimensions.height() : gridDimensions.width();
+            }
+
+            var padding = this.config.padding;
+            padding = this.config.flipLabels ? -padding : padding;
+            return labelStart + padding;
+          }
+        }, {
+          key: "getTextAnchor",
+          value: function getTextAnchor() {
+            if (this.isHorizontal) {
+              return "middle";
+            }
+
+            return this.config.flipLabels ? "end" : "start";
+          }
+        }, {
+          key: "getAlignmentBaseline",
+          value: function getAlignmentBaseline() {
+            if (this.isHorizontal) {
+              return this.config.flipLabels ? "text-after-edge" : "hanging";
+            }
+
+            return "central";
+          }
+        }, {
+          key: "adjustGridMargin",
+          value: function adjustGridMargin() {
+            var _a;
+
+            if (this.config.applyClearance) {
+              var gridConfig = this.chart.getGrid().config();
+              var marginToAdjust = this.getMarginToAdjust();
+              gridConfig.dimension.margin[marginToAdjust] = (_a = this.config.clearance) === null || _a === void 0 ? void 0 : _a[marginToAdjust];
+            }
+          }
+        }, {
+          key: "getMarginToAdjust",
+          value: function getMarginToAdjust() {
+            if (this.isHorizontal) {
+              return this.config.flipLabels ? "top" : "bottom";
+            }
+
+            return this.config.flipLabels ? "left" : "right";
+          }
+        }]);
+
+        return LinearGaugeLabelsPlugin;
+      }(_common_chart_plugin__WEBPACK_IMPORTED_MODULE_6__["ChartPlugin"]);
+      /***/
+
+    },
+
+    /***/
     "he5r":
     /*!**************************!*\
       !*** ./src/constants.ts ***!
@@ -35948,10 +36305,10 @@
         }, {
           key: "destroy",
           value: function destroy() {
-            var _this77 = this;
+            var _this80 = this;
 
             lodash_each__WEBPACK_IMPORTED_MODULE_0___default()(Object.keys(this.streams), function (key) {
-              _this77.streams[key].complete();
+              _this80.streams[key].complete();
             });
           }
         }]);
@@ -36542,22 +36899,22 @@
       var BarRenderer = /*#__PURE__*/function (_xy_renderer__WEBPACK4) {
         _inherits(BarRenderer, _xy_renderer__WEBPACK4);
 
-        var _super32 = _createSuper(BarRenderer);
+        var _super33 = _createSuper(BarRenderer);
 
         /**
          * Creates an instance of BarRenderer.
          * @param {IBarRendererConfig} [config] Renderer configuration object
          */
         function BarRenderer() {
-          var _this78;
+          var _this81;
 
           var config = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
           _classCallCheck(this, BarRenderer);
 
-          _this78 = _super32.call(this, config);
-          _this78.config = config;
-          _this78.DEFAULT_CONFIG = {
+          _this81 = _super33.call(this, config);
+          _this81.config = config;
+          _this81.DEFAULT_CONFIG = {
             transitionDuration: 300,
             padding: 1,
             barClass: "bar-outline",
@@ -36565,10 +36922,10 @@
             pointerEvents: true,
             enableMinBarThickness: true
           };
-          _this78.barContainerClass = "bar-container"; // setting default values to the properties that were not set by user
+          _this81.barContainerClass = "bar-container"; // setting default values to the properties that were not set by user
 
-          _this78.config = lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_2___default()(_this78.config, _this78.DEFAULT_CONFIG);
-          return _this78;
+          _this81.config = lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_2___default()(_this81.config, _this81.DEFAULT_CONFIG);
+          return _this81;
         }
         /** See {@link Renderer#draw} */
 
@@ -36576,7 +36933,7 @@
         _createClass(BarRenderer, [{
           key: "draw",
           value: function draw(renderSeries, rendererSubject) {
-            var _this79 = this;
+            var _this82 = this;
 
             var _a, _b, _c;
 
@@ -36593,7 +36950,7 @@
             bars.exit().remove();
             var barContainers = bars.enter().append("g").classed(this.barContainerClass, true);
             barContainers.append("rect").on("click", function (d, i) {
-              _this79.emitBarClick(renderSeries, d, i, rendererSubject);
+              _this82.emitBarClick(renderSeries, d, i, rendererSubject);
             });
 
             var getCssClass = function getCssClass(d, i) {
@@ -36607,7 +36964,7 @@
             }) // This saves attrsGenerator() output to local d3 variable generatedAttrs
             .select("rect") // eslint-disable-next-line max-len
             .attr("class", function (d, i) {
-              return "".concat(BarRenderer.BAR_RECT_CLASS, " ").concat(_this79.config.barClass).concat(_this79.config.pointerEvents ? " pointer-events" : "") + getCssClass(d, i);
+              return "".concat(BarRenderer.BAR_RECT_CLASS, " ").concat(_this82.config.barClass).concat(_this82.config.pointerEvents ? " pointer-events" : "") + getCssClass(d, i);
             }).style("cursor", (_a = this.config.cursor) !== null && _a !== void 0 ? _a : "").style("stroke-width", (_c = (_b = this.config) === null || _b === void 0 ? void 0 : _b.strokeWidth) !== null && _c !== void 0 ? _c : "").style("fill", function (d, i) {
               var _a, _b;
 
@@ -36741,13 +37098,13 @@
         }, {
           key: "getAttrsGenerator",
           value: function getAttrsGenerator(dataSeries, scales) {
-            var _this80 = this;
+            var _this83 = this;
 
             var accessors = dataSeries.accessors.data;
             return function (d, i) {
-              var x = _this80.getDimensions(accessors, d, i, dataSeries, scales.x, "X");
+              var x = _this83.getDimensions(accessors, d, i, dataSeries, scales.x, "X");
 
-              var y = _this80.getDimensions(accessors, d, i, dataSeries, scales.y, "Y");
+              var y = _this83.getDimensions(accessors, d, i, dataSeries, scales.y, "Y");
 
               return {
                 x: x.start,
@@ -37247,25 +37604,25 @@
       var BarGridConfig = /*#__PURE__*/function (_xy_grid_config__WEBP4) {
         _inherits(BarGridConfig, _xy_grid_config__WEBP4);
 
-        var _super33 = _createSuper(BarGridConfig);
+        var _super34 = _createSuper(BarGridConfig);
 
         function BarGridConfig() {
-          var _this81;
+          var _this84;
 
           _classCallCheck(this, BarGridConfig);
 
-          _this81 = _super33.call(this);
-          _this81.interactionPlugins = false;
-          _this81.axis.left.gridTicks = true;
-          _this81.axis.left.tickSize = 5;
-          _this81.axis.bottom.gridTicks = false;
-          _this81.axis.left.fit = true;
-          _this81.axis.bottom.tickSize = 5;
-          _this81.axis.left.tickSize = 0;
-          _this81.dimension.margin.right = 0;
-          _this81.dimension.padding.bottom = 2; // 2 for border
+          _this84 = _super34.call(this);
+          _this84.interactionPlugins = false;
+          _this84.axis.left.gridTicks = true;
+          _this84.axis.left.tickSize = 5;
+          _this84.axis.bottom.gridTicks = false;
+          _this84.axis.left.fit = true;
+          _this84.axis.bottom.tickSize = 5;
+          _this84.axis.left.tickSize = 0;
+          _this84.dimension.margin.right = 0;
+          _this84.dimension.padding.bottom = 2; // 2 for border
 
-          return _this81;
+          return _this84;
         }
 
         return BarGridConfig;
@@ -37866,7 +38223,7 @@
 
       var ProcessedColorProvider = /*#__PURE__*/function () {
         function ProcessedColorProvider(sourceProvider, fn) {
-          var _this82 = this;
+          var _this85 = this;
 
           _classCallCheck(this, ProcessedColorProvider);
 
@@ -37874,17 +38231,17 @@
           this.fn = fn;
 
           this.get = function (entityId) {
-            var clr = _this82.sourceProvider.get(entityId);
+            var clr = _this85.sourceProvider.get(entityId);
 
             if (!clr) {
               throw new Error("clr is not defined");
             }
 
-            var processedColor = _this82.processedColors[clr];
+            var processedColor = _this85.processedColors[clr];
 
             if (!processedColor) {
-              processedColor = _this82.fn(clr);
-              _this82.processedColors[clr] = processedColor;
+              processedColor = _this85.fn(clr);
+              _this85.processedColors[clr] = processedColor;
             }
 
             return processedColor;
@@ -38508,7 +38865,7 @@
         }, {
           key: "getBreakPoints",
           value: function getBreakPoints(sourceSeries, zones) {
-            var _this83 = this;
+            var _this86 = this;
 
             var _a, _b, _c, _d;
 
@@ -38535,7 +38892,7 @@
                 var zoneStartY = (_b = (_a = zone.accessors.data).start) === null || _b === void 0 ? void 0 : _b.call(_a, zone.data[0], 0, zone.data, zone);
                 var zoneEndY = (_d = (_c = zone.accessors.data).end) === null || _d === void 0 ? void 0 : _d.call(_c, zone.data[0], 0, zone.data, zone);
                 var zoneCrossPoints = [zoneStartY, zoneEndY].map(function (y) {
-                  return _this83.getCrossPointWithY(xy1, xy2, y);
+                  return _this86.getCrossPointWithY(xy1, xy2, y);
                 }) // calculate cross points for both limits
                 .filter(function (c) {
                   return c;
@@ -38612,7 +38969,7 @@
         }, {
           key: "getThresholdLines",
           value: function getThresholdLines(zones) {
-            var _this84 = this;
+            var _this87 = this;
 
             if (-1 === zones.findIndex(function (z) {
               return z.entered;
@@ -38654,7 +39011,7 @@
             }
 
             return lodash_values__WEBPACK_IMPORTED_MODULE_6___default()(limits).map(function (limit) {
-              return _this84.getThresholdLine(limit.series, limit.accessor, limit.zoneBoundary);
+              return _this87.getThresholdLine(limit.series, limit.accessor, limit.zoneBoundary);
             });
           }
           /**
@@ -39199,32 +39556,32 @@
       var VerticalBarAccessors = /*#__PURE__*/function (_bar_accessors__WEBPA) {
         _inherits(VerticalBarAccessors, _bar_accessors__WEBPA);
 
-        var _super34 = _createSuper(VerticalBarAccessors);
+        var _super35 = _createSuper(VerticalBarAccessors);
 
         function VerticalBarAccessors(colorProvider, markerProvider) {
-          var _this85;
+          var _this88;
 
           _classCallCheck(this, VerticalBarAccessors);
 
-          _this85 = _super34.call(this, colorProvider, markerProvider);
-          _this85.data = Object.assign(Object.assign({}, _this85.data), {
+          _this88 = _super35.call(this, colorProvider, markerProvider);
+          _this88.data = Object.assign(Object.assign({}, _this88.data), {
             startX: function startX(d, i, s, ds) {
-              return _this85.data.category(d, i, s, ds);
+              return _this88.data.category(d, i, s, ds);
             },
             endX: function endX(d, i, s, ds) {
-              return _this85.data.category(d, i, s, ds);
+              return _this88.data.category(d, i, s, ds);
             },
             thicknessX: function thicknessX(d, i, s, ds) {
-              return _this85.data.thickness ? _this85.data.thickness(d, i, s, ds) : undefined;
+              return _this88.data.thickness ? _this88.data.thickness(d, i, s, ds) : undefined;
             },
             startY: function startY(d, i, s, ds) {
-              return _this85.data.start(d, i, s, ds);
+              return _this88.data.start(d, i, s, ds);
             },
             endY: function endY(d, i, s, ds) {
-              return _this85.data.end(d, i, s, ds);
+              return _this88.data.end(d, i, s, ds);
             }
           });
-          return _this85;
+          return _this88;
         }
 
         return VerticalBarAccessors;
@@ -39498,16 +39855,16 @@
       var TimeScale = /*#__PURE__*/function (_scale__WEBPACK_IMPOR4) {
         _inherits(TimeScale, _scale__WEBPACK_IMPOR4);
 
-        var _super35 = _createSuper(TimeScale);
+        var _super36 = _createSuper(TimeScale);
 
         function TimeScale(id) {
-          var _this86;
+          var _this89;
 
           _classCallCheck(this, TimeScale);
 
-          _this86 = _super35.call(this, id);
-          _this86.formatters.tick = _formatters_datetime_formatter__WEBPACK_IMPORTED_MODULE_1__["datetimeFormatter"];
-          return _this86;
+          _this89 = _super36.call(this, id);
+          _this89.formatters.tick = _formatters_datetime_formatter__WEBPACK_IMPORTED_MODULE_1__["datetimeFormatter"];
+          return _this89;
         }
 
         _createClass(TimeScale, [{
@@ -40199,29 +40556,29 @@
       */
 
 
-      var ChartDonutContentPlugin = /*#__PURE__*/function (_common_chart_plugin_8) {
-        _inherits(ChartDonutContentPlugin, _common_chart_plugin_8);
+      var ChartDonutContentPlugin = /*#__PURE__*/function (_common_chart_plugin_9) {
+        _inherits(ChartDonutContentPlugin, _common_chart_plugin_9);
 
-        var _super36 = _createSuper(ChartDonutContentPlugin);
+        var _super37 = _createSuper(ChartDonutContentPlugin);
 
         function ChartDonutContentPlugin() {
-          var _this87;
+          var _this90;
 
           _classCallCheck(this, ChartDonutContentPlugin);
 
-          _this87 = _super36.apply(this, arguments);
+          _this90 = _super37.apply(this, arguments);
           /** Subject for getting updates on the content position */
 
-          _this87.contentPositionUpdateSubject = new rxjs__WEBPACK_IMPORTED_MODULE_1__["Subject"]();
+          _this90.contentPositionUpdateSubject = new rxjs__WEBPACK_IMPORTED_MODULE_1__["Subject"]();
           /** The current content position */
 
-          _this87.contentPosition = {
+          _this90.contentPosition = {
             top: 0,
             left: 0,
             width: 0,
             height: 0
           };
-          return _this87;
+          return _this90;
         }
 
         _createClass(ChartDonutContentPlugin, [{
@@ -40307,15 +40664,15 @@
       var XYGridConfig = /*#__PURE__*/function (_grid_config__WEBPACK) {
         _inherits(XYGridConfig, _grid_config__WEBPACK);
 
-        var _super37 = _createSuper(XYGridConfig);
+        var _super38 = _createSuper(XYGridConfig);
 
         function XYGridConfig() {
-          var _this88;
+          var _this91;
 
           _classCallCheck(this, XYGridConfig);
 
-          _this88 = _super37.call(this);
-          _this88.axis = {
+          _this91 = _super38.call(this);
+          _this91.axis = {
             top: new _axis_config__WEBPACK_IMPORTED_MODULE_0__["AxisConfig"](),
             right: new _axis_config__WEBPACK_IMPORTED_MODULE_0__["AxisConfig"](),
             bottom: new _axis_config__WEBPACK_IMPORTED_MODULE_0__["AxisConfig"](),
@@ -40323,21 +40680,21 @@
           }; // We should avoid this kind of option in future versions of XYGrid and XYGridConfig
           // because ideally all plugins should be added manually (NUI-3304).
 
-          _this88.interactionPlugins = true;
-          _this88.dimension.padding = Object.assign({}, XYGridConfig.DEFAULT_PADDING);
-          _this88.dimension.margin = Object.assign({}, XYGridConfig.DEFAULT_MARGIN);
-          _this88.borders.bottom = new _border_config__WEBPACK_IMPORTED_MODULE_1__["BorderConfig"]("nui-chart-border nui-chart-border--thick");
-          _this88.borders.left = new _border_config__WEBPACK_IMPORTED_MODULE_1__["BorderConfig"]("nui-chart-border nui-chart-border--thick");
-          _this88.borders.left.visible = false; // TODO: figure out if this is the valid default
+          _this91.interactionPlugins = true;
+          _this91.dimension.padding = Object.assign({}, XYGridConfig.DEFAULT_PADDING);
+          _this91.dimension.margin = Object.assign({}, XYGridConfig.DEFAULT_MARGIN);
+          _this91.borders.bottom = new _border_config__WEBPACK_IMPORTED_MODULE_1__["BorderConfig"]("nui-chart-border nui-chart-border--thick");
+          _this91.borders.left = new _border_config__WEBPACK_IMPORTED_MODULE_1__["BorderConfig"]("nui-chart-border nui-chart-border--thick");
+          _this91.borders.left.visible = false; // TODO: figure out if this is the valid default
 
-          _this88.axis.left.gridTicks = true;
-          _this88.axis.left.tickSize = 0;
-          _this88.axis.left.padding = 10;
-          _this88.axis.right.fit = true;
-          _this88.axis.right.tickSize = 0;
-          _this88.axis.right.padding = 10;
-          _this88.axis.bottom.tickLabel.horizontalPadding = 5;
-          return _this88;
+          _this91.axis.left.gridTicks = true;
+          _this91.axis.left.tickSize = 0;
+          _this91.axis.left.padding = 10;
+          _this91.axis.right.fit = true;
+          _this91.axis.right.tickSize = 0;
+          _this91.axis.right.padding = 10;
+          _this91.axis.bottom.tickLabel.horizontalPadding = 5;
+          return _this91;
         }
 
         return XYGridConfig;
@@ -40394,16 +40751,16 @@
       var SequentialColorProvider = /*#__PURE__*/function (_sequential_value_pro2) {
         _inherits(SequentialColorProvider, _sequential_value_pro2);
 
-        var _super38 = _createSuper(SequentialColorProvider);
+        var _super39 = _createSuper(SequentialColorProvider);
 
         function SequentialColorProvider(colors) {
-          var _this89;
+          var _this92;
 
           _classCallCheck(this, SequentialColorProvider);
 
-          _this89 = _super38.call(this, colors);
-          _this89.colors = colors;
-          return _this89;
+          _this92 = _super39.call(this, colors);
+          _this92.colors = colors;
+          return _this92;
         }
 
         return SequentialColorProvider;
@@ -40679,10 +41036,10 @@
       }
 
       function radial(chartSeriesSet) {
-        var _this90 = this;
+        var _this93 = this;
 
         return radialPreprocessor(chartSeriesSet, function (series) {
-          return !_this90.isSeriesHidden(series.id);
+          return !_this93.isSeriesHidden(series.id);
         });
       }
       /***/
@@ -41241,29 +41598,29 @@
       var LineAccessors = /*#__PURE__*/function (_accessors_xy_accesso) {
         _inherits(LineAccessors, _accessors_xy_accesso);
 
-        var _super39 = _createSuper(LineAccessors);
+        var _super40 = _createSuper(LineAccessors);
 
         function LineAccessors() {
-          var _this91;
+          var _this94;
 
           var colorProvider = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : Object(_core_common_palette_default_providers__WEBPACK_IMPORTED_MODULE_0__["defaultColorProvider"])();
           var markerProvider = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : Object(_core_common_palette_default_providers__WEBPACK_IMPORTED_MODULE_0__["defaultMarkerProvider"])();
 
           _classCallCheck(this, LineAccessors);
 
-          _this91 = _super39.call(this);
-          _this91.colorProvider = colorProvider;
-          _this91.markerProvider = markerProvider;
+          _this94 = _super40.call(this);
+          _this94.colorProvider = colorProvider;
+          _this94.markerProvider = markerProvider;
 
-          _this91.data.defined = function (d, i) {
+          _this94.data.defined = function (d, i) {
             return d.hasOwnProperty("defined") ? d.defined : true;
           };
 
-          _this91.series = {
-            color: _this91.colorProvider ? _this91.colorProvider.get : undefined,
-            marker: _this91.markerProvider ? _this91.markerProvider.get : undefined
+          _this94.series = {
+            color: _this94.colorProvider ? _this94.colorProvider.get : undefined,
+            marker: _this94.markerProvider ? _this94.markerProvider.get : undefined
           };
-          return _this91;
+          return _this94;
         }
 
         return LineAccessors;
@@ -42417,7 +42774,7 @@
 
       var Grid = /*#__PURE__*/function () {
         function Grid() {
-          var _this92 = this;
+          var _this95 = this;
 
           _classCallCheck(this, Grid);
 
@@ -42428,7 +42785,7 @@
            */
 
           this.adjustRenderingArea = function () {
-            var d = _this92.config().dimension;
+            var d = _this95.config().dimension;
 
             var renderingAreaClipPathAttrs = {
               "width": d.width(),
@@ -42440,9 +42797,9 @@
               "width": d.width() > 0 ? d.width() - Grid.RENDER_AREA_WIDTH_CORRECTION : d.width()
             });
 
-            _this92.renderingAreaClipPath.attrs(renderingAreaClipPathAttrs);
+            _this95.renderingAreaClipPath.attrs(renderingAreaClipPathAttrs);
 
-            _this92.renderingArea.attrs(renderingAreaAttrs);
+            _this95.renderingArea.attrs(renderingAreaAttrs);
           };
         }
         /** See {@link IGrid#getInteractiveArea} */
@@ -42604,7 +42961,7 @@
         }, {
           key: "buildBorders",
           value: function buildBorders(container) {
-            var _this93 = this;
+            var _this96 = this;
 
             if (!this.config() || !this.config().borders) {
               return;
@@ -42618,7 +42975,7 @@
 
 
               if (borderConfigs[side]) {
-                borders[side] = (_a = _this93.createBorder(container, borderConfigs[side])) !== null && _a !== void 0 ? _a : undefined;
+                borders[side] = (_a = _this96.createBorder(container, borderConfigs[side])) !== null && _a !== void 0 ? _a : undefined;
               }
             });
             return borders;
@@ -42956,32 +43313,32 @@
       var HorizontalBarAccessors = /*#__PURE__*/function (_bar_accessors__WEBPA2) {
         _inherits(HorizontalBarAccessors, _bar_accessors__WEBPA2);
 
-        var _super40 = _createSuper(HorizontalBarAccessors);
+        var _super41 = _createSuper(HorizontalBarAccessors);
 
         function HorizontalBarAccessors(colorProvider, markerProvider) {
-          var _this94;
+          var _this97;
 
           _classCallCheck(this, HorizontalBarAccessors);
 
-          _this94 = _super40.call(this, colorProvider, markerProvider);
-          _this94.data = Object.assign(Object.assign({}, _this94.data), {
+          _this97 = _super41.call(this, colorProvider, markerProvider);
+          _this97.data = Object.assign(Object.assign({}, _this97.data), {
             startX: function startX(d, i, s, ds) {
-              return _this94.data.start(d, i, s, ds);
+              return _this97.data.start(d, i, s, ds);
             },
             endX: function endX(d, i, s, ds) {
-              return _this94.data.end(d, i, s, ds);
+              return _this97.data.end(d, i, s, ds);
             },
             startY: function startY(d, i, s, ds) {
-              return _this94.data.category(d, i, s, ds);
+              return _this97.data.category(d, i, s, ds);
             },
             endY: function endY(d, i, s, ds) {
-              return _this94.data.category(d, i, s, ds);
+              return _this97.data.category(d, i, s, ds);
             },
             thicknessY: function thicknessY(d, i, s, ds) {
-              return _this94.data.thickness ? _this94.data.thickness(d, i, s, ds) : undefined;
+              return _this97.data.thickness ? _this97.data.thickness(d, i, s, ds) : undefined;
             }
           });
-          return _this94;
+          return _this97;
         }
 
         return HorizontalBarAccessors;
@@ -43661,11 +44018,11 @@
         }, {
           key: "ngAfterContentInit",
           value: function ngAfterContentInit() {
-            var _this95 = this;
+            var _this98 = this;
 
             if (this.legend) {
               this.legend.activeChanged.subscribe(function (active) {
-                return _this95._active = active;
+                return _this98._active = active;
               });
               this.icon = this.icon || this.legend.seriesIcon;
               this._active = this.legend.active;
@@ -46897,32 +47254,32 @@
        */
 
 
-      var ChartPopoverPlugin = /*#__PURE__*/function (_common_chart_plugin_9) {
-        _inherits(ChartPopoverPlugin, _common_chart_plugin_9);
+      var ChartPopoverPlugin = /*#__PURE__*/function (_common_chart_plugin_10) {
+        _inherits(ChartPopoverPlugin, _common_chart_plugin_10);
 
-        var _super41 = _createSuper(ChartPopoverPlugin);
+        var _super42 = _createSuper(ChartPopoverPlugin);
 
         function ChartPopoverPlugin() {
-          var _this96;
+          var _this99;
 
           var config = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
           _classCallCheck(this, ChartPopoverPlugin);
 
-          _this96 = _super41.call(this);
-          _this96.config = config;
+          _this99 = _super42.call(this);
+          _this99.config = config;
           /** Emits the popover's target position */
 
-          _this96.updatePositionSubject = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
+          _this99.updatePositionSubject = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
           /** Emits an event indicating the popover should open */
 
-          _this96.openPopoverSubject = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
+          _this99.openPopoverSubject = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
           /** Emits an event indicating the popover should close */
 
-          _this96.closePopoverSubject = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
+          _this99.closePopoverSubject = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
           /** The target position of the popover */
 
-          _this96.popoverTargetPosition = {
+          _this99.popoverTargetPosition = {
             top: 0,
             left: 0,
             width: 0,
@@ -46930,29 +47287,29 @@
           };
           /** The default plugin configuration */
 
-          _this96.DEFAULT_CONFIG = {
+          _this99.DEFAULT_CONFIG = {
             eventStreamId: _constants__WEBPACK_IMPORTED_MODULE_5__["INTERACTION_DATA_POINTS_EVENT"],
             interactionType: _common_types__WEBPACK_IMPORTED_MODULE_7__["InteractionType"].MouseMove
           };
-          _this96.isOpen = false;
-          _this96.destroy$ = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
-          _this96.config = lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_0___default()(_this96.config, _this96.DEFAULT_CONFIG);
-          return _this96;
+          _this99.isOpen = false;
+          _this99.destroy$ = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
+          _this99.config = lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_0___default()(_this99.config, _this99.DEFAULT_CONFIG);
+          return _this99;
         }
 
         _createClass(ChartPopoverPlugin, [{
           key: "initialize",
           value: function initialize() {
-            var _this97 = this;
+            var _this100 = this;
 
             this.chart.getEventBus().getStream(this.config.eventStreamId).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeUntil"])(this.destroy$)).subscribe(function (event) {
               var _a;
 
-              if (event.data.interactionType === _this97.config.interactionType) {
+              if (event.data.interactionType === _this100.config.interactionType) {
                 // here we handle data either of type IInteractionDataPointsEvent or IInteractionDataPointEvent
                 var dataPoints = (_a = event.data.dataPoints) !== null && _a !== void 0 ? _a : _defineProperty({}, event.data.dataPoint.seriesId, event.data.dataPoint);
 
-                _this97.processDataPoints(dataPoints);
+                _this100.processDataPoints(dataPoints);
               }
             });
           }
@@ -47006,7 +47363,7 @@
         }, {
           key: "processDataPoints",
           value: function processDataPoints(dataPoints) {
-            var _this98 = this;
+            var _this101 = this;
 
             var validDataPoints = lodash_pickBy__WEBPACK_IMPORTED_MODULE_1___default()(dataPoints, function (d) {
               return d.index >= 0 && d.position;
@@ -47018,20 +47375,20 @@
               this.dataPoints = validDataPoints; // timeout is needed in order to successfully open popover on initial hover over the chart
 
               setTimeout(function () {
-                _this98.updatePositionSubject.next(_this98.popoverTargetPosition);
+                _this101.updatePositionSubject.next(_this101.popoverTargetPosition);
 
-                if (!_this98.isOpen) {
-                  _this98.isOpen = true;
+                if (!_this101.isOpen) {
+                  _this101.isOpen = true;
 
-                  _this98.openPopoverSubject.next();
+                  _this101.openPopoverSubject.next();
                 }
               });
             } else {
               // timeout is needed for symmetry of timing with above timeout for opening the popover
               setTimeout(function () {
-                _this98.closePopoverSubject.next();
+                _this101.closePopoverSubject.next();
 
-                _this98.isOpen = false;
+                _this101.isOpen = false;
               });
             }
           }
@@ -47136,7 +47493,7 @@
         _createClass(ChartCollection, [{
           key: "addChart",
           value: function addChart(chart) {
-            var _this99 = this;
+            var _this102 = this;
 
             var index = (++this.lastIndex).toString();
             this.charts[index] = chart;
@@ -47146,12 +47503,12 @@
             }
 
             lodash_each__WEBPACK_IMPORTED_MODULE_0___default()(this.events, function (event) {
-              _this99.subscribe(index, chart.getEventBus().getStream(event), function (value) {
+              _this102.subscribe(index, chart.getEventBus().getStream(event), function (value) {
                 var _a; // this is where we check for the __broadcast__ flag, which means it originated in the chart collection
 
 
                 if (!value.broadcast) {
-                  (_a = _this99.eventBus) === null || _a === void 0 ? void 0 : _a.getStream(event).next({
+                  (_a = _this102.eventBus) === null || _a === void 0 ? void 0 : _a.getStream(event).next({
                     chartIndex: index,
                     event: value
                   });
@@ -47159,10 +47516,10 @@
               });
             });
             this.subscribe(index, chart.getEventBus().getStream(_constants__WEBPACK_IMPORTED_MODULE_3__["DESTROY_EVENT"]), function (value) {
-              _this99.removeChart(chart);
+              _this102.removeChart(chart);
 
-              if (Object.keys(_this99.charts).length === 0) {
-                _this99.destroy();
+              if (Object.keys(_this102.charts).length === 0) {
+                _this102.destroy();
               }
             });
           }
@@ -47199,7 +47556,7 @@
         }, {
           key: "initializeEventBus",
           value: function initializeEventBus() {
-            var _this100 = this;
+            var _this103 = this;
 
             this.eventBus = new _common_event_bus__WEBPACK_IMPORTED_MODULE_4__["EventBus"]();
 
@@ -47210,15 +47567,15 @@
               var _loop5 = function _loop5() {
                 var event = _step12.value;
 
-                _this100.eventBus.getStream(event).subscribe(function (e) {
-                  for (var _i8 = 0, _Object$keys5 = Object.keys(_this100.charts); _i8 < _Object$keys5.length; _i8++) {
+                _this103.eventBus.getStream(event).subscribe(function (e) {
+                  for (var _i8 = 0, _Object$keys5 = Object.keys(_this103.charts); _i8 < _Object$keys5.length; _i8++) {
                     var i = _Object$keys5[_i8];
 
                     if (i !== e.chartIndex) {
                       // setting this flag prevents the event from looping infinitely
                       e.event.broadcast = true;
 
-                      _this100.charts[i].getEventBus().getStream(event).next(e.event);
+                      _this103.charts[i].getEventBus().getStream(event).next(e.event);
                     }
                   }
                 });
@@ -47627,7 +47984,7 @@
         }, {
           key: "update",
           value: function update() {
-            var _this101 = this;
+            var _this104 = this;
 
             var layerContainers = this.container.selectAll("g.".concat(Lasagna.LAYER_CLASS)).data(this.layers, function (d) {
               return d.name;
@@ -47637,7 +47994,7 @@
                 return "".concat(Lasagna.LAYER_CLASS, " ").concat(Lasagna.LAYER_CLASS, "-").concat(d.name);
               },
               "clip-path": function clipPath(d) {
-                return d.clipped ? "url(#".concat(_this101.clipPath, ")") : "";
+                return d.clipped ? "url(#".concat(_this104.clipPath, ")") : "";
               },
               "pointer-events": "none"
             });
@@ -47916,7 +48273,7 @@
 
       var RenderEngine = /*#__PURE__*/function () {
         function RenderEngine(lasagna, dataManager) {
-          var _this102 = this;
+          var _this105 = this;
 
           _classCallCheck(this, RenderEngine);
 
@@ -47933,7 +48290,7 @@
           this.layerIndex = {};
           this.highlightDataPointSubscription = this.rendererSubject.subscribe(function (event) {
             if (event.eventName === _constants__WEBPACK_IMPORTED_MODULE_5__["HIGHLIGHT_DATA_POINT_EVENT"]) {
-              _this102.highlightDataPoint(event.data.seriesId, event.data.index);
+              _this105.highlightDataPoint(event.data.seriesId, event.data.index);
             }
           });
         }
@@ -47945,11 +48302,11 @@
         _createClass(RenderEngine, [{
           key: "update",
           value: function update() {
-            var _this103 = this;
+            var _this106 = this;
 
             var scaleValidity = {};
             lodash_each__WEBPACK_IMPORTED_MODULE_0___default()(this.dataManager.chartSeriesSet, function (chartSeries) {
-              var childContainers = _this103.getSeriesChildContainers(chartSeries.id);
+              var childContainers = _this106.getSeriesChildContainers(chartSeries.id);
 
               var areDomainsValid = -1 === Object.values(chartSeries.scales).findIndex(function (scale) {
                 if (typeof scaleValidity[scale.id] === "undefined") {
@@ -47970,7 +48327,7 @@
                   dataSeries: chartSeries,
                   containers: childContainers,
                   scales: chartSeries.scales
-                }, _this103.rendererSubject);
+                }, _this106.rendererSubject);
               }
             });
           }
@@ -47996,7 +48353,7 @@
         }, {
           key: "emitInteractionDataPoints",
           value: function emitInteractionDataPoints(payload) {
-            var _this104 = this;
+            var _this107 = this;
 
             var highlightChangeDetected = false;
             var interactionDataPoints = this.dataManager.chartSeriesSet.reduce(function (result, chartSeries) {
@@ -48021,12 +48378,12 @@
               };
 
               if (payload.interactionType === _types__WEBPACK_IMPORTED_MODULE_6__["InteractionType"].MouseMove) {
-                var prevHighlight = _this104.highlightedDataPoints[chartSeries.id];
+                var prevHighlight = _this107.highlightedDataPoints[chartSeries.id];
 
                 if (!lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default()(dataIndex) && (lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default()(prevHighlight) || dataIndex === _constants__WEBPACK_IMPORTED_MODULE_5__["DATA_POINT_INTERACTION_RESET"] || dataIndex !== prevHighlight.index)) {
                   highlightChangeDetected = true;
 
-                  _this104.rendererSubject.next({
+                  _this107.rendererSubject.next({
                     eventName: _constants__WEBPACK_IMPORTED_MODULE_5__["HIGHLIGHT_DATA_POINT_EVENT"],
                     data: dataPoint
                   });
@@ -48078,19 +48435,19 @@
         }, {
           key: "setSeriesStates",
           value: function setSeriesStates(stateDataSet) {
-            var _this105 = this;
+            var _this108 = this;
 
             lodash_each__WEBPACK_IMPORTED_MODULE_0___default()(stateDataSet, function (_ref2) {
               var seriesId = _ref2.seriesId,
                   state = _ref2.state;
 
-              var chartSeries = _this105.dataManager.getChartSeries(seriesId);
+              var chartSeries = _this108.dataManager.getChartSeries(seriesId);
 
               if (!chartSeries) {
                 return;
               }
 
-              var childContainers = _this105.getSeriesChildContainers(seriesId);
+              var childContainers = _this108.getSeriesChildContainers(seriesId);
 
               var attrs = chartSeries.renderer.getContainerStateStyles(state);
               lodash_each__WEBPACK_IMPORTED_MODULE_0___default()(lodash_values__WEBPACK_IMPORTED_MODULE_3___default()(childContainers), function (cc) {
@@ -48138,40 +48495,40 @@
         }, {
           key: "removeUnusedLayers",
           value: function removeUnusedLayers() {
-            var _this106 = this;
+            var _this109 = this;
 
             lodash_each__WEBPACK_IMPORTED_MODULE_0___default()(Object.keys(this.renderLayers), function (layerName) {
-              if (!_this106.layerIndex[layerName]) {
-                _this106.lasagna.removeLayer(layerName);
+              if (!_this109.layerIndex[layerName]) {
+                _this109.lasagna.removeLayer(layerName);
 
-                delete _this106.renderLayers[layerName];
+                delete _this109.renderLayers[layerName];
               }
             });
           }
         }, {
           key: "addNeededLayers",
           value: function addNeededLayers() {
-            var _this107 = this;
+            var _this110 = this;
 
             lodash_each__WEBPACK_IMPORTED_MODULE_0___default()(this.layerIndex, function (layerData) {
-              if (!_this107.renderLayers[layerData.layerDefinition.name]) {
-                _this107.renderLayers[layerData.layerDefinition.name] = _this107.lasagna.addLayer(layerData.layerDefinition);
+              if (!_this110.renderLayers[layerData.layerDefinition.name]) {
+                _this110.renderLayers[layerData.layerDefinition.name] = _this110.lasagna.addLayer(layerData.layerDefinition);
               }
             });
           }
         }, {
           key: "updateLayerContents",
           value: function updateLayerContents() {
-            var _this108 = this;
+            var _this111 = this;
 
             lodash_each__WEBPACK_IMPORTED_MODULE_0___default()(Object.keys(this.renderLayers), function (layerName) {
-              var renderLayer = _this108.renderLayers[layerName];
-              var containers = renderLayer.selectAll("g.data-series-container").data(_this108.layerIndex[layerName].seriesUsing, function (d) {
+              var renderLayer = _this111.renderLayers[layerName];
+              var containers = renderLayer.selectAll("g.data-series-container").data(_this111.layerIndex[layerName].seriesUsing, function (d) {
                 return d.id;
               }).order();
               containers.enter().append("g").attrs({
                 "id": function id(d) {
-                  return _this108.getChildContainerId(layerName, d.id);
+                  return _this111.getChildContainerId(layerName, d.id);
                 },
                 "class": "data-series-container"
               });
@@ -48181,11 +48538,11 @@
         }, {
           key: "getSeriesChildContainers",
           value: function getSeriesChildContainers(seriesId) {
-            var _this109 = this;
+            var _this112 = this;
 
             var childContainers = {};
             lodash_each__WEBPACK_IMPORTED_MODULE_0___default()(Object.keys(this.renderLayers), function (layerName) {
-              var renderLayer = _this109.renderLayers[layerName];
+              var renderLayer = _this112.renderLayers[layerName];
               childContainers[layerName] = renderLayer.selectAll("#".concat(layerName, "-").concat(_utility_service__WEBPACK_IMPORTED_MODULE_7__["UtilityService"].cssEscape(seriesId)));
             });
             return childContainers;
@@ -48598,7 +48955,7 @@
       !*** ./src/core/plugins/gauge/public-api.ts ***!
       \**********************************************/
 
-    /*! exports provided: DonutGaugeLabelsPlugin, GAUGE_LABEL_FORMATTER_NAME_DEFAULT, GAUGE_LABELS_CONTAINER_CLASS, GAUGE_THRESHOLD_LABEL_CLASS */
+    /*! exports provided: DonutGaugeLabelsPlugin, LinearGaugeLabelsPlugin, GAUGE_LABEL_FORMATTER_NAME_DEFAULT, GAUGE_LABELS_CONTAINER_CLASS, GAUGE_THRESHOLD_LABEL_CLASS */
 
     /***/
     function xibN(module, __webpack_exports__, __webpack_require__) {
@@ -48620,27 +48977,47 @@
       /* harmony import */
 
 
-      var _constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      var _linear_gauge_labels_plugin__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! ./linear-gauge-labels-plugin */
+      "hVbV");
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "LinearGaugeLabelsPlugin", function () {
+        return _linear_gauge_labels_plugin__WEBPACK_IMPORTED_MODULE_1__["LinearGaugeLabelsPlugin"];
+      });
+      /* harmony import */
+
+
+      var _constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! ./constants */
       "GXwZ");
       /* harmony reexport (safe) */
 
 
       __webpack_require__.d(__webpack_exports__, "GAUGE_LABEL_FORMATTER_NAME_DEFAULT", function () {
-        return _constants__WEBPACK_IMPORTED_MODULE_1__["GAUGE_LABEL_FORMATTER_NAME_DEFAULT"];
+        return _constants__WEBPACK_IMPORTED_MODULE_2__["GAUGE_LABEL_FORMATTER_NAME_DEFAULT"];
       });
       /* harmony reexport (safe) */
 
 
       __webpack_require__.d(__webpack_exports__, "GAUGE_LABELS_CONTAINER_CLASS", function () {
-        return _constants__WEBPACK_IMPORTED_MODULE_1__["GAUGE_LABELS_CONTAINER_CLASS"];
+        return _constants__WEBPACK_IMPORTED_MODULE_2__["GAUGE_LABELS_CONTAINER_CLASS"];
       });
       /* harmony reexport (safe) */
 
 
       __webpack_require__.d(__webpack_exports__, "GAUGE_THRESHOLD_LABEL_CLASS", function () {
-        return _constants__WEBPACK_IMPORTED_MODULE_1__["GAUGE_THRESHOLD_LABEL_CLASS"];
+        return _constants__WEBPACK_IMPORTED_MODULE_2__["GAUGE_THRESHOLD_LABEL_CLASS"];
       });
+      /* harmony import */
+
+
+      var _types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! ./types */
+      "gC02");
+      /* empty/unused harmony star reexport */
+
       /***/
 
     },
@@ -49588,10 +49965,10 @@
       }
 
       function stackedArea(chartSeriesSet) {
-        var _this110 = this;
+        var _this113 = this;
 
         return stackedAreaPreprocessor(chartSeriesSet, function (series) {
-          return !_this110.isSeriesHidden(series.id);
+          return !_this113.isSeriesHidden(series.id);
         });
       }
       /***/
@@ -49758,7 +50135,7 @@
         }, {
           key: "findDataPointByValue",
           value: function findDataPointByValue(series, value, scaleKey) {
-            var _this111 = this;
+            var _this114 = this;
 
             var accessorSuffix = scaleKey.toUpperCase();
             var dataAccessors = series.accessors.data;
@@ -49772,7 +50149,7 @@
             } else if (lodash_isArray__WEBPACK_IMPORTED_MODULE_1___default()(value)) {
               return lodash_findIndex__WEBPACK_IMPORTED_MODULE_0___default()(series.data, function (d, i) {
                 var start = startAccessor === null || startAccessor === void 0 ? void 0 : startAccessor(d, i, series.data, series);
-                var lengthLimit = Math.min(_this111.levels, value.length, start.length); // diy efficient array comparison
+                var lengthLimit = Math.min(_this114.levels, value.length, start.length); // diy efficient array comparison
 
                 for (var j = 0; j < lengthLimit; j++) {
                   if (value[j] !== start[j]) {

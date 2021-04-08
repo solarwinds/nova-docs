@@ -323,6 +323,26 @@
     },
 
     /***/
+    "3Isn":
+    /*!**********************************************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/visual-test/donut/donut-gauge-tester.component.html ***!
+      \**********************************************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function Isn(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "<div class=\"d-flex\">\n    <nui-chart class=\"chart d-block\" [chart]=\"chartAssist.chart\"></nui-chart>\n\n    <nui-chart-donut-content style=\"position: absolute;\"\n                             [plugin]=\"contentPlugin\">\n        <div class=\"h-100 w-100 d-flex flex-column justify-content-center align-items-center text-center\">\n            <div class=\"d-inline-block\" nuiZoomContent [zoomRatio]=\"0.45\">\n                {{seriesConfig.value | number:'1.0-0'}}\n            </div>\n            <div class=\"content-label\">Network Latency</div>\n            <div class=\"content-label\">(ms)</div>\n        </div>\n    </nui-chart-donut-content>\n</div>\n";
+      /***/
+    },
+
+    /***/
     "3OzY":
     /*!************************************************************************************************************************************************************************!*\
       !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/area/area-chart-variable-baseline/area-chart-variable-baseline-example.component.ts ***!
@@ -1406,7 +1426,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import { Component, Input, OnInit } from \"@angular/core\";\nimport {\n    Chart,\n    ChartAssist,\n    GaugeMode,\n    GaugeUtil,\n    IAccessors,\n    IChartAssistSeries,\n    IGaugeSeriesConfig,\n    linearGaugeGridConfig,\n    stack,\n    XYGrid,\n    XYGridConfig\n} from \"@nova-ui/charts\";\n\n@Component({\n    selector: \"horizontal-gauge-tester\",\n    templateUrl: \"./horizontal-gauge-tester.component.html\",\n    styleUrls: [\"./horizontal-gauge-tester.component.less\"],\n})\nexport class HorizontalGaugeTesterComponent implements OnInit {\n    @Input() public seriesConfig: IGaugeSeriesConfig;\n\n    public chartAssist: ChartAssist;\n    public seriesSet: IChartAssistSeries<IAccessors>[];\n\n    public ngOnInit() {\n        const grid = new XYGrid(linearGaugeGridConfig(GaugeMode.Horizontal) as XYGridConfig);\n        const chart = new Chart(grid);\n\n        this.chartAssist = new ChartAssist(chart, stack);\n\n        this.seriesSet = GaugeUtil.assembleSeriesSet(this.seriesConfig, GaugeMode.Horizontal);\n        this.chartAssist.update(this.seriesSet);\n    }\n}\n";
+      __webpack_exports__["default"] = "import { Component, Input, OnInit } from \"@angular/core\";\nimport {\n    Chart,\n    ChartAssist,\n    GaugeMode,\n    GaugeUtil,\n    IAccessors,\n    IChartAssistSeries,\n    IGaugeSeriesConfig,\n    linearGaugeGridConfig,\n    LinearGaugeLabelsPlugin,\n    stack,\n    XYGrid,\n    XYGridConfig\n} from \"@nova-ui/charts\";\n\n@Component({\n    selector: \"horizontal-gauge-tester\",\n    templateUrl: \"./horizontal-gauge-tester.component.html\",\n    styleUrls: [\"./horizontal-gauge-tester.component.less\"],\n})\nexport class HorizontalGaugeTesterComponent implements OnInit {\n    @Input() public seriesConfig: IGaugeSeriesConfig;\n\n    public chartAssist: ChartAssist;\n    public seriesSet: IChartAssistSeries<IAccessors>[];\n\n    public ngOnInit() {\n        const grid = new XYGrid(linearGaugeGridConfig(GaugeMode.Horizontal) as XYGridConfig);\n        const chart = new Chart(grid);\n\n        this.chartAssist = new ChartAssist(chart, stack);\n        this.chartAssist.chart.addPlugin(new LinearGaugeLabelsPlugin());\n\n        this.seriesSet = GaugeUtil.assembleSeriesSet(this.seriesConfig, GaugeMode.Horizontal);\n        this.chartAssist.update(this.seriesSet);\n    }\n}\n";
       /***/
     },
 
@@ -1619,14 +1639,14 @@
         "./gauge/chart-docs-gauge.component.html": "ZWN/",
         "./gauge/chart-docs-gauge.component.ts": "2DII",
         "./gauge/chart-docs-gauge.module.ts": "ZDgL",
+        "./gauge/visual-test/donut/donut-gauge-tester.component.html": "3Isn",
+        "./gauge/visual-test/donut/donut-gauge-tester.component.less": "WISq",
+        "./gauge/visual-test/donut/donut-gauge-tester.component.ts": "wITR",
         "./gauge/visual-test/gauge-visual-test.component.html": "m1aH",
         "./gauge/visual-test/gauge-visual-test.component.ts": "d56P",
         "./gauge/visual-test/horizontal/horizontal-gauge-tester.component.html": "CqTf",
         "./gauge/visual-test/horizontal/horizontal-gauge-tester.component.less": "QoLo",
         "./gauge/visual-test/horizontal/horizontal-gauge-tester.component.ts": "Nchi",
-        "./gauge/visual-test/radial/donut-gauge-tester.component.html": "lGwb",
-        "./gauge/visual-test/radial/donut-gauge-tester.component.less": "STcq",
-        "./gauge/visual-test/radial/donut-gauge-tester.component.ts": "gZtX",
         "./gauge/visual-test/vertical/vertical-gauge-tester.component.html": "OzOS",
         "./gauge/visual-test/vertical/vertical-gauge-tester.component.less": "rphd",
         "./gauge/visual-test/vertical/vertical-gauge-tester.component.ts": "WxU7",
@@ -1850,26 +1870,6 @@
 
 
       __webpack_exports__["default"] = "<nui-chart class=\"d-flex\" [chart]=\"chart\"></nui-chart>\n";
-      /***/
-    },
-
-    /***/
-    "STcq":
-    /*!***********************************************************************************************************************************************!*\
-      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/visual-test/radial/donut-gauge-tester.component.less ***!
-      \***********************************************************************************************************************************************/
-
-    /*! exports provided: default */
-
-    /***/
-    function STcq(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony default export */
-
-
-      __webpack_exports__["default"] = "@import \"@nova-ui/bits/sdk/less/nui-framework-variables\";\n\n.chart {\n    width: 200px;\n    height: 200px;\n}\n\n.content-label {\n    line-height: 14px;\n    font-size: 11px;\n    font-weight: 400;\n    text-transform: uppercase;\n    color: var(--nui-color-text-secondary);\n}\n";
       /***/
     },
 
@@ -2154,6 +2154,26 @@
     },
 
     /***/
+    "WISq":
+    /*!**********************************************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/visual-test/donut/donut-gauge-tester.component.less ***!
+      \**********************************************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function WISq(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "@import \"@nova-ui/bits/sdk/less/nui-framework-variables\";\n\n.chart {\n    width: 200px;\n    height: 200px;\n}\n\n.content-label {\n    line-height: 14px;\n    font-size: 11px;\n    font-weight: 400;\n    text-transform: uppercase;\n    color: var(--nui-color-text-secondary);\n}\n";
+      /***/
+    },
+
+    /***/
     "WWui":
     /*!*********************************************************************************************************************!*\
       !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/spark/chart-docs-spark.module.ts ***!
@@ -2189,7 +2209,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import { Component, Input, OnInit } from \"@angular/core\";\nimport {\n    Chart,\n    ChartAssist,\n    GaugeMode,\n    GaugeUtil,\n    IAccessors,\n    IChartAssistSeries,\n    IGaugeSeriesConfig,\n    linearGaugeGridConfig,\n    stack,\n    XYGrid,\n    XYGridConfig\n} from \"@nova-ui/charts\";\n\n@Component({\n    selector: \"vertical-gauge-tester\",\n    templateUrl: \"./vertical-gauge-tester.component.html\",\n    styleUrls: [\"./vertical-gauge-tester.component.less\"],\n})\nexport class VerticalGaugeTesterComponent implements OnInit {\n    @Input() public seriesConfig: IGaugeSeriesConfig;\n\n    public chartAssist: ChartAssist;\n    public seriesSet: IChartAssistSeries<IAccessors>[];\n\n    public ngOnInit() {\n        const grid = new XYGrid(linearGaugeGridConfig(GaugeMode.Vertical) as XYGridConfig);\n        const chart = new Chart(grid);\n\n        this.chartAssist = new ChartAssist(chart, stack);\n\n        this.seriesSet = GaugeUtil.assembleSeriesSet(this.seriesConfig, GaugeMode.Vertical);\n        this.chartAssist.update(this.seriesSet);\n    }\n}\n";
+      __webpack_exports__["default"] = "import { Component, Input, OnInit } from \"@angular/core\";\nimport {\n    Chart,\n    ChartAssist,\n    GaugeMode,\n    GaugeUtil,\n    IAccessors,\n    IChartAssistSeries,\n    IGaugeSeriesConfig,\n    linearGaugeGridConfig,\n    LinearGaugeLabelsPlugin,\n    stack,\n    XYGrid,\n    XYGridConfig\n} from \"@nova-ui/charts\";\n\n@Component({\n    selector: \"vertical-gauge-tester\",\n    templateUrl: \"./vertical-gauge-tester.component.html\",\n    styleUrls: [\"./vertical-gauge-tester.component.less\"],\n})\nexport class VerticalGaugeTesterComponent implements OnInit {\n    @Input() public seriesConfig: IGaugeSeriesConfig;\n\n    public chartAssist: ChartAssist;\n    public seriesSet: IChartAssistSeries<IAccessors>[];\n\n    public ngOnInit() {\n        const grid = new XYGrid(linearGaugeGridConfig(GaugeMode.Vertical) as XYGridConfig);\n        const chart = new Chart(grid);\n\n        this.chartAssist = new ChartAssist(chart, stack);\n        this.chartAssist.chart.addPlugin(new LinearGaugeLabelsPlugin());\n\n        this.seriesSet = GaugeUtil.assembleSeriesSet(this.seriesConfig, GaugeMode.Vertical);\n        this.chartAssist.update(this.seriesSet);\n    }\n}\n";
       /***/
     },
 
@@ -2349,7 +2369,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import { NgModule } from \"@angular/core\";\nimport { FormsModule } from \"@angular/forms\";\nimport { RouterModule, Routes } from \"@angular/router\";\nimport { DEMO_PATH_TOKEN, NuiCommonModule, NuiDocsModule, NuiIconModule, NuiMessageModule } from \"@nova-ui/bits\";\nimport { NuiChartsModule } from \"@nova-ui/charts\";\n\nimport { DemoCommonModule } from \"../../common/demo-common.module\";\n\nimport { ChartDocsGaugeComponent } from \"./chart-docs-gauge.component\";\nimport { GaugeVisualTestComponent } from \"./visual-test/gauge-visual-test.component\";\nimport { HorizontalGaugeTesterComponent } from \"./visual-test/horizontal/horizontal-gauge-tester.component\";\nimport { DonutGaugeTesterComponent } from \"./visual-test/radial/donut-gauge-tester.component\";\nimport { VerticalGaugeTesterComponent } from \"./visual-test/vertical/vertical-gauge-tester.component\";\n\nconst exampleRoutes: Routes = [\n    {\n        path: \"\",\n        component: ChartDocsGaugeComponent,\n        data: {\n            showThemeSwitcher: true,\n        },\n    },\n    {\n        path: \"visual-test\",\n        component: GaugeVisualTestComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n];\n\n@NgModule({\n    declarations: [\n        ChartDocsGaugeComponent,\n        GaugeVisualTestComponent,\n        HorizontalGaugeTesterComponent,\n        DonutGaugeTesterComponent,\n        VerticalGaugeTesterComponent,\n    ],\n    imports: [\n        DemoCommonModule,\n        FormsModule,\n        NuiChartsModule,\n        NuiCommonModule,\n        NuiIconModule,\n        NuiDocsModule,\n        NuiMessageModule,\n        RouterModule.forChild(exampleRoutes),\n    ],\n    providers: [\n        { provide: DEMO_PATH_TOKEN, useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/) },\n    ],\n})\nexport class ChartDocsGaugeModule {\n}\n";
+      __webpack_exports__["default"] = "import { NgModule } from \"@angular/core\";\nimport { FormsModule } from \"@angular/forms\";\nimport { RouterModule, Routes } from \"@angular/router\";\nimport { DEMO_PATH_TOKEN, NuiCommonModule, NuiDocsModule, NuiIconModule, NuiMessageModule } from \"@nova-ui/bits\";\nimport { NuiChartsModule } from \"@nova-ui/charts\";\n\nimport { DemoCommonModule } from \"../../common/demo-common.module\";\n\nimport { ChartDocsGaugeComponent } from \"./chart-docs-gauge.component\";\nimport { GaugeVisualTestComponent } from \"./visual-test/gauge-visual-test.component\";\nimport { HorizontalGaugeTesterComponent } from \"./visual-test/horizontal/horizontal-gauge-tester.component\";\nimport { DonutGaugeTesterComponent } from \"./visual-test/donut/donut-gauge-tester.component\";\nimport { VerticalGaugeTesterComponent } from \"./visual-test/vertical/vertical-gauge-tester.component\";\n\nconst exampleRoutes: Routes = [\n    {\n        path: \"\",\n        component: ChartDocsGaugeComponent,\n        data: {\n            showThemeSwitcher: true,\n        },\n    },\n    {\n        path: \"visual-test\",\n        component: GaugeVisualTestComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n];\n\n@NgModule({\n    declarations: [\n        ChartDocsGaugeComponent,\n        GaugeVisualTestComponent,\n        HorizontalGaugeTesterComponent,\n        DonutGaugeTesterComponent,\n        VerticalGaugeTesterComponent,\n    ],\n    imports: [\n        DemoCommonModule,\n        FormsModule,\n        NuiChartsModule,\n        NuiCommonModule,\n        NuiIconModule,\n        NuiDocsModule,\n        NuiMessageModule,\n        RouterModule.forChild(exampleRoutes),\n    ],\n    providers: [\n        { provide: DEMO_PATH_TOKEN, useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/) },\n    ],\n})\nexport class ChartDocsGaugeModule {\n}\n";
       /***/
     },
 
@@ -2734,26 +2754,6 @@
     },
 
     /***/
-    "gZtX":
-    /*!*********************************************************************************************************************************************!*\
-      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/visual-test/radial/donut-gauge-tester.component.ts ***!
-      \*********************************************************************************************************************************************/
-
-    /*! exports provided: default */
-
-    /***/
-    function gZtX(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony default export */
-
-
-      __webpack_exports__["default"] = "import { Component, Input, OnInit } from \"@angular/core\";\nimport {\n    Chart,\n    ChartAssist,\n    ChartDonutContentPlugin,\n    DonutGaugeLabelsPlugin,\n    GaugeMode,\n    GaugeUtil,\n    IAccessors,\n    IChartAssistSeries,\n    IGaugeSeriesConfig,\n    radial,\n    radialGrid\n} from \"@nova-ui/charts\";\n\n@Component({\n    selector: \"donut-gauge-tester\",\n    templateUrl: \"./donut-gauge-tester.component.html\",\n    styleUrls: [\"./donut-gauge-tester.component.less\"],\n})\nexport class DonutGaugeTesterComponent implements OnInit {\n    @Input() public seriesConfig: IGaugeSeriesConfig;\n\n    public chartAssist: ChartAssist;\n    public contentPlugin: ChartDonutContentPlugin;\n    public seriesSet: IChartAssistSeries<IAccessors>[];\n\n    public ngOnInit() {\n        this.chartAssist = new ChartAssist(new Chart(radialGrid()), radial);\n        this.contentPlugin = new ChartDonutContentPlugin();\n        this.chartAssist.chart.addPlugin(this.contentPlugin);\n        this.chartAssist.chart.addPlugin(new DonutGaugeLabelsPlugin());\n\n        this.seriesSet = GaugeUtil.assembleSeriesSet(this.seriesConfig, GaugeMode.Donut);\n        this.chartAssist.update(this.seriesSet);\n    }\n}\n";
-      /***/
-    },
-
-    /***/
     "ggvU":
     /*!****************************************************************************************************************************************!*\
       !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/pie-and-donut/chart-docs-pie-and-donut.component.ts ***!
@@ -3034,26 +3034,6 @@
     },
 
     /***/
-    "lGwb":
-    /*!***********************************************************************************************************************************************!*\
-      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/visual-test/radial/donut-gauge-tester.component.html ***!
-      \***********************************************************************************************************************************************/
-
-    /*! exports provided: default */
-
-    /***/
-    function lGwb(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony default export */
-
-
-      __webpack_exports__["default"] = "<div class=\"d-flex\">\n    <nui-chart class=\"chart d-block\" [chart]=\"chartAssist.chart\"></nui-chart>\n\n    <nui-chart-donut-content style=\"position: absolute;\"\n                             [plugin]=\"contentPlugin\">\n        <div class=\"h-100 w-100 d-flex flex-column justify-content-center align-items-center text-center\">\n            <div class=\"d-inline-block\" nuiZoomContent [zoomRatio]=\"0.45\">\n                {{seriesConfig.value | number:'1.0-0'}}\n            </div>\n            <div class=\"content-label\">Network Latency</div>\n            <div class=\"content-label\">(ms)</div>\n        </div>\n    </nui-chart-donut-content>\n</div>\n";
-      /***/
-    },
-
-    /***/
     "lful":
     /*!******************************************************************************************************************************************************************!*\
       !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/bucketed-bar/bar-chart-percentage/bar-chart-percentage.example.component.html ***!
@@ -3089,7 +3069,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "\n<div class=\"container\">\n    <charts-test-harness>\n        <h3>Donut</h3>\n        <div class=\"d-flex justify-content-around\">\n            <donut-gauge-tester [seriesConfig]=\"getSeriesConfig(lowValue)\"></donut-gauge-tester>\n            <donut-gauge-tester [seriesConfig]=\"getSeriesConfig(mediumValue)\"></donut-gauge-tester>\n            <donut-gauge-tester id=\"visual-test-gauge-high-value\" [seriesConfig]=\"getSeriesConfig(highValue)\"></donut-gauge-tester>\n        </div>\n        <h3>Horizontal</h3>\n        <div class=\"d-flex justify-content-around\">\n            <horizontal-gauge-tester [seriesConfig]=\"getSeriesConfig(lowValue)\"></horizontal-gauge-tester>\n            <horizontal-gauge-tester [seriesConfig]=\"getSeriesConfig(mediumValue)\"></horizontal-gauge-tester>\n            <horizontal-gauge-tester [seriesConfig]=\"getSeriesConfig(highValue)\"></horizontal-gauge-tester>\n        </div>\n        <h3>Vertical</h3>\n        <div class=\"d-flex justify-content-around\">\n            <vertical-gauge-tester [seriesConfig]=\"getSeriesConfig(lowValue)\"></vertical-gauge-tester>\n            <vertical-gauge-tester [seriesConfig]=\"getSeriesConfig(mediumValue)\"></vertical-gauge-tester>\n            <vertical-gauge-tester [seriesConfig]=\"getSeriesConfig(highValue)\"></vertical-gauge-tester>\n        </div>\n    </charts-test-harness>\n</div>\n";
+      __webpack_exports__["default"] = "\n<div class=\"container\">\n    <charts-test-harness>\n        <h3>Donut</h3>\n        <div class=\"d-flex justify-content-around\">\n            <donut-gauge-tester [seriesConfig]=\"getSeriesConfig(lowValue)\"></donut-gauge-tester>\n            <donut-gauge-tester [seriesConfig]=\"getSeriesConfig(mediumValue)\"></donut-gauge-tester>\n            <donut-gauge-tester id=\"visual-test-gauge-donut-high-value\" [seriesConfig]=\"getSeriesConfig(highValue)\"></donut-gauge-tester>\n        </div>\n        <h3>Horizontal</h3>\n        <div class=\"d-flex justify-content-around\">\n            <horizontal-gauge-tester [seriesConfig]=\"getSeriesConfig(lowValue)\"></horizontal-gauge-tester>\n            <horizontal-gauge-tester id=\"visual-test-gauge-horizontal-medium-value\"  [seriesConfig]=\"getSeriesConfig(mediumValue)\"></horizontal-gauge-tester>\n            <horizontal-gauge-tester [seriesConfig]=\"getSeriesConfig(highValue)\"></horizontal-gauge-tester>\n        </div>\n        <h3>Vertical</h3>\n        <div class=\"d-flex justify-content-around\">\n            <vertical-gauge-tester id=\"visual-test-gauge-vertical-low-value\" [seriesConfig]=\"getSeriesConfig(lowValue)\"></vertical-gauge-tester>\n            <vertical-gauge-tester [seriesConfig]=\"getSeriesConfig(mediumValue)\"></vertical-gauge-tester>\n            <vertical-gauge-tester [seriesConfig]=\"getSeriesConfig(highValue)\"></vertical-gauge-tester>\n        </div>\n    </charts-test-harness>\n</div>\n";
       /***/
     },
 
@@ -3430,6 +3410,26 @@
 
 
       __webpack_exports__["default"] = "import { Component, OnInit } from \"@angular/core\";\nimport {\n    barAccessors, barGrid, BarRenderer, barScales, Chart, IBarAccessors, IChartSeries, NoopAccessors, NoopRenderer, NoopScale, TimeScale, XYGrid\n} from \"@nova-ui/charts\";\nimport moment, { Moment } from \"moment/moment\";\n\n@Component({\n    selector: \"nui-vertical-with-timescale-bar-chart-test\",\n    templateUrl: \"./vertical-with-timescale-bar-chart-test.component.html\",\n})\n\nexport class VerticalWithTimescaleBarChartTestComponent implements OnInit {\n    public chart = new Chart(barGrid());\n\n    ngOnInit() {\n        const accessors = barAccessors();\n        const renderer = new BarRenderer();\n\n        const scales = barScales();\n\n        const start = moment([2018, 7, 4]);\n        const seriesSet = getData(start).map((d): IChartSeries<IBarAccessors> => ({\n            ...d,\n            accessors,\n            renderer,\n            scales,\n        }));\n\n        scales.x.fixDomain(seriesSet.map(s => s.data[0].category));\n\n        const scaleId = \"bottom\";\n        const time = new TimeScale(scaleId);\n        const end = start.clone().add(seriesSet.length, \"hour\");\n        time.fixDomain([start.clone().toDate(), end.toDate()]);\n\n        // This is the most crucial part: users need to add \"fake\" series, so framework would be able to use provided time scale.\n        // You need to provide scale for x or y and provide the id (for bottom or left scale). Id must be the same as the one used to create scale.\n        // We suggest using Noops (render, accessor, other scale) for this fake series.\n        seriesSet.push({\n            id: \"0\",\n            name: \"hidden\",\n            data: [],\n            accessors: new NoopAccessors(),\n            renderer: new NoopRenderer(),\n            scales: {\n                x: time,\n                y: new NoopScale(),\n            },\n        });\n        (this.chart.getGrid() as XYGrid).bottomScaleId = scaleId;\n\n        this.chart.update(seriesSet);\n    }\n}\n\n/* Chart data */\nfunction getData(start: Moment) {\n    const values = [66, 14, 5, 40, 3, 23, 15];\n\n    const dataSet = [];\n    for (let i = 0; i < values.length; i++) {\n        const date = start.clone().add(i, \"hour\");\n        dataSet.push({\n            id: `id-${i}`,\n            name: date.toString(),\n            data: [{\n                value: values[i],\n                category: date.toString(),\n                [\"__bar\"]: {\n                    start: 0,\n                    end: values[i],\n                },\n            }],\n        });\n    }\n\n    return dataSet;\n}\n";
+      /***/
+    },
+
+    /***/
+    "wITR":
+    /*!********************************************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/visual-test/donut/donut-gauge-tester.component.ts ***!
+      \********************************************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function wITR(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "import { Component, Input, OnInit } from \"@angular/core\";\nimport {\n    Chart,\n    ChartAssist,\n    ChartDonutContentPlugin,\n    DonutGaugeLabelsPlugin,\n    GaugeMode,\n    GaugeUtil,\n    IAccessors,\n    IChartAssistSeries,\n    IGaugeSeriesConfig,\n    radial,\n    radialGrid\n} from \"@nova-ui/charts\";\n\n@Component({\n    selector: \"donut-gauge-tester\",\n    templateUrl: \"./donut-gauge-tester.component.html\",\n    styleUrls: [\"./donut-gauge-tester.component.less\"],\n})\nexport class DonutGaugeTesterComponent implements OnInit {\n    @Input() public seriesConfig: IGaugeSeriesConfig;\n\n    public chartAssist: ChartAssist;\n    public contentPlugin: ChartDonutContentPlugin;\n    public seriesSet: IChartAssistSeries<IAccessors>[];\n\n    public ngOnInit() {\n        this.chartAssist = new ChartAssist(new Chart(radialGrid()), radial);\n        this.contentPlugin = new ChartDonutContentPlugin();\n        this.chartAssist.chart.addPlugin(this.contentPlugin);\n        this.chartAssist.chart.addPlugin(new DonutGaugeLabelsPlugin());\n\n        this.seriesSet = GaugeUtil.assembleSeriesSet(this.seriesConfig, GaugeMode.Donut);\n        this.chartAssist.update(this.seriesSet);\n    }\n}\n";
       /***/
     },
 
