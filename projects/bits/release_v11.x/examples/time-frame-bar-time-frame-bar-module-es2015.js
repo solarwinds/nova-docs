@@ -22,7 +22,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<nui-time-frame-bar [id]=\"bar.id\" *ngFor=\"let bar of bars\"\n                    [timeFrame]=\"bar.timeFrame\"\n                    (timeFrameChange)=\"bar.change($event)\"\n                    (undo)=\"bar.undo()\"\n                    (clear)=\"bar.change()\"\n                    [historyIndex]=\"bar.history.index\">\n    <nui-icon icon=\"calendar\" class=\"pr-3\"></nui-icon>\n    {{bar.timeFrame | timeFrame}}\n    <nui-quick-picker timeFrameSelection>\n        <nui-time-frame-picker></nui-time-frame-picker>\n    </nui-quick-picker>\n</nui-time-frame-bar>\n\n<nui-time-frame-bar [id]=\"barNoQuickPick.id\"\n                    [(timeFrame)]=\"barNoQuickPick.timeFrame\">\n    <nui-icon icon=\"calendar\" class=\"pr-3\"></nui-icon>\n    {{barNoQuickPick.timeFrame | timeFrame}}\n    <nui-time-frame-picker timeFrameSelection></nui-time-frame-picker>\n</nui-time-frame-bar>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<nui-time-frame-bar [id]=\"bar.id\" *ngFor=\"let bar of bars\"\n                    [timeFrame]=\"bar.timeFrame\"\n                    (timeFrameChange)=\"changeTimeFrame($event, bar)\"\n                    (undo)=\"bar.undo()\"\n                    (clear)=\"bar.change()\"\n                    [historyIndex]=\"bar.history.index\">\n    <nui-icon icon=\"calendar\" class=\"pr-3\"></nui-icon>\n    {{bar.timeFrame | timeFrame}}\n    <nui-quick-picker timeFrameSelection>\n        <nui-time-frame-picker></nui-time-frame-picker>\n    </nui-quick-picker>\n</nui-time-frame-bar>\n\n<nui-time-frame-bar [id]=\"barNoQuickPick.id\"\n                    [(timeFrame)]=\"barNoQuickPick.timeFrame\">\n    <nui-icon icon=\"calendar\" class=\"pr-3\"></nui-icon>\n    {{barNoQuickPick.timeFrame | timeFrame}}\n    <nui-time-frame-picker timeFrameSelection></nui-time-frame-picker>\n</nui-time-frame-bar>\n");
 
 /***/ }),
 
@@ -179,7 +179,7 @@ TimeFrameBarModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefin
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { Component, OnInit } from \"@angular/core\";\nimport { HistoryStorage, ITimeframe } from \"@nova-ui/bits\";\nimport moment from \"moment/moment\";\n\nclass TestBar {\n    private baseDate = moment([2018, 5, 1, 15, 0, 0]);\n    public timeFrame: ITimeframe = this.getDefaultTF();\n    public history = new HistoryStorage<ITimeframe>();\n\n    constructor(public id: string) {\n        this.history.restart(this.timeFrame);\n    }\n\n    public zoomIn = (value: ITimeframe) => this.timeFrame = this.history.save(value);\n    public undo = () => this.timeFrame = this.history.undo();\n    public change = (value?: ITimeframe) => this.timeFrame = this.history.restart(value);\n\n    private getDefaultTF(): ITimeframe {\n        return {\n            startDatetime: this.baseDate.clone().subtract(1, \"week\"),\n            endDatetime: this.baseDate.clone(),\n        };\n    }\n}\n\n@Component({\n    selector: \"nui-convenience-time-frame-bar-visual-test\",\n    templateUrl: \"./time-frame-bar-visual.component.html\",\n})\nexport class TimeFrameBarVisualTestComponent implements OnInit {\n    public bars: TestBar[] = [\"first\", \"second\", \"third\"].map(id => new TestBar(id));\n    public barNoQuickPick = new TestBar(\"bar-no-quick-pick\");\n\n    ngOnInit(): void {\n        setTimeout(() => {\n            // No zoom on bar[0]\n            this.zoomBar(this.bars[1]);\n            this.zoomBar(this.bars[2]);\n            this.zoomBar(this.bars[2]);\n        });\n    }\n\n    public zoomBar(bar: TestBar) {\n        bar.zoomIn(this.zoomTF(bar.timeFrame));\n    }\n\n    public zoomTF(timeFrame: ITimeframe): ITimeframe {\n        return {\n            startDatetime: timeFrame.startDatetime.clone().add(1, \"day\"),\n            endDatetime: timeFrame.endDatetime.clone().subtract(1, \"day\"),\n        };\n    }\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import { Component, OnInit } from \"@angular/core\";\nimport { HistoryStorage, ITimeframe, TimeframeService } from \"@nova-ui/bits\";\nimport moment from \"moment/moment\";\n\nclass TestBar {\n    private _baseDate = moment([2018, 5, 1, 15, 0, 0]);\n    public get baseDate() {\n        return this._baseDate;\n    }\n    public timeFrame: ITimeframe = this.getDefaultTF();\n    public history = new HistoryStorage<ITimeframe>();\n\n    constructor(public id: string) {\n        this.history.restart(this.timeFrame);\n    }\n\n    public zoomIn = (value: ITimeframe) => this.timeFrame = this.history.save(value);\n    public undo = () => this.timeFrame = this.history.undo();\n    public change = (value?: ITimeframe) => this.timeFrame = this.history.restart(value);\n\n    private getDefaultTF(): ITimeframe {\n        return {\n            startDatetime: this._baseDate.clone().subtract(1, \"week\"),\n            endDatetime: this._baseDate.clone(),\n        };\n    }\n}\n\n@Component({\n    selector: \"nui-convenience-time-frame-bar-visual-test\",\n    templateUrl: \"./time-frame-bar-visual.component.html\",\n})\nexport class TimeFrameBarVisualTestComponent implements OnInit {\n    public bars: TestBar[] = [\"first\", \"second\", \"third\"].map(id => new TestBar(id));\n    public barNoQuickPick = new TestBar(\"bar-no-quick-pick\");\n\n    constructor(private timeframeService: TimeframeService) {\n    }\n\n    ngOnInit(): void {\n        setTimeout(() => {\n            // No zoom on bar[0]\n            this.zoomBar(this.bars[1]);\n            this.zoomBar(this.bars[2]);\n            this.zoomBar(this.bars[2]);\n        });\n    }\n\n    public zoomBar(bar: TestBar) {\n        bar.zoomIn(this.zoomTF(bar.timeFrame));\n    }\n\n    public zoomTF(timeFrame: ITimeframe): ITimeframe {\n        return {\n            startDatetime: timeFrame.startDatetime.clone().add(1, \"day\"),\n            endDatetime: timeFrame.endDatetime.clone().subtract(1, \"day\"),\n        };\n    }\n\n    public changeTimeFrame(value: ITimeframe, bar: TestBar) {\n        const tf = this.timeframeService.reconcileTimeframe(value, undefined, bar.baseDate);\n        bar.change(tf);\n    }\n\n}\n");
 
 /***/ }),
 
@@ -238,9 +238,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 function TimeFrameBarVisualTestComponent_nui_time_frame_bar_0_Template(rf, ctx) { if (rf & 1) {
+    const _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "nui-time-frame-bar", 4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("timeFrameChange", function TimeFrameBarVisualTestComponent_nui_time_frame_bar_0_Template_nui_time_frame_bar_timeFrameChange_0_listener($event) { const bar_r1 = ctx.$implicit; return bar_r1.change($event); })("undo", function TimeFrameBarVisualTestComponent_nui_time_frame_bar_0_Template_nui_time_frame_bar_undo_0_listener() { const bar_r1 = ctx.$implicit; return bar_r1.undo(); })("clear", function TimeFrameBarVisualTestComponent_nui_time_frame_bar_0_Template_nui_time_frame_bar_clear_0_listener() { const bar_r1 = ctx.$implicit; return bar_r1.change(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("timeFrameChange", function TimeFrameBarVisualTestComponent_nui_time_frame_bar_0_Template_nui_time_frame_bar_timeFrameChange_0_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r3); const bar_r1 = ctx.$implicit; const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"](); return ctx_r2.changeTimeFrame($event, bar_r1); })("undo", function TimeFrameBarVisualTestComponent_nui_time_frame_bar_0_Template_nui_time_frame_bar_undo_0_listener() { const bar_r1 = ctx.$implicit; return bar_r1.undo(); })("clear", function TimeFrameBarVisualTestComponent_nui_time_frame_bar_0_Template_nui_time_frame_bar_clear_0_listener() { const bar_r1 = ctx.$implicit; return bar_r1.change(); });
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](1, "nui-icon", 2);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipe"](3, "timeFrame");
@@ -257,7 +259,7 @@ function TimeFrameBarVisualTestComponent_nui_time_frame_bar_0_Template(rf, ctx) 
 class TestBar {
     constructor(id) {
         this.id = id;
-        this.baseDate = moment_moment__WEBPACK_IMPORTED_MODULE_1___default()([2018, 5, 1, 15, 0, 0]);
+        this._baseDate = moment_moment__WEBPACK_IMPORTED_MODULE_1___default()([2018, 5, 1, 15, 0, 0]);
         this.timeFrame = this.getDefaultTF();
         this.history = new _nova_ui_bits__WEBPACK_IMPORTED_MODULE_0__["HistoryStorage"]();
         this.zoomIn = (value) => this.timeFrame = this.history.save(value);
@@ -265,15 +267,19 @@ class TestBar {
         this.change = (value) => this.timeFrame = this.history.restart(value);
         this.history.restart(this.timeFrame);
     }
+    get baseDate() {
+        return this._baseDate;
+    }
     getDefaultTF() {
         return {
-            startDatetime: this.baseDate.clone().subtract(1, "week"),
-            endDatetime: this.baseDate.clone(),
+            startDatetime: this._baseDate.clone().subtract(1, "week"),
+            endDatetime: this._baseDate.clone(),
         };
     }
 }
 class TimeFrameBarVisualTestComponent {
-    constructor() {
+    constructor(timeframeService) {
+        this.timeframeService = timeframeService;
         this.bars = ["first", "second", "third"].map(id => new TestBar(id));
         this.barNoQuickPick = new TestBar("bar-no-quick-pick");
     }
@@ -294,8 +300,12 @@ class TimeFrameBarVisualTestComponent {
             endDatetime: timeFrame.endDatetime.clone().subtract(1, "day"),
         };
     }
+    changeTimeFrame(value, bar) {
+        const tf = this.timeframeService.reconcileTimeframe(value, undefined, bar.baseDate);
+        bar.change(tf);
+    }
 }
-TimeFrameBarVisualTestComponent.ɵfac = function TimeFrameBarVisualTestComponent_Factory(t) { return new (t || TimeFrameBarVisualTestComponent)(); };
+TimeFrameBarVisualTestComponent.ɵfac = function TimeFrameBarVisualTestComponent_Factory(t) { return new (t || TimeFrameBarVisualTestComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_nova_ui_bits__WEBPACK_IMPORTED_MODULE_0__["TimeframeService"])); };
 TimeFrameBarVisualTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({ type: TimeFrameBarVisualTestComponent, selectors: [["nui-convenience-time-frame-bar-visual-test"]], decls: 6, vars: 6, consts: [[3, "id", "timeFrame", "historyIndex", "timeFrameChange", "undo", "clear", 4, "ngFor", "ngForOf"], [3, "id", "timeFrame", "timeFrameChange"], ["icon", "calendar", 1, "pr-3"], ["timeFrameSelection", ""], [3, "id", "timeFrame", "historyIndex", "timeFrameChange", "undo", "clear"]], template: function TimeFrameBarVisualTestComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](0, TimeFrameBarVisualTestComponent_nui_time_frame_bar_0_Template, 6, 6, "nui-time-frame-bar", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](1, "nui-time-frame-bar", 1);

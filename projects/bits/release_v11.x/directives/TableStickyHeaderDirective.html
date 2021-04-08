@@ -104,6 +104,10 @@
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
+                                <a href="#updateContainerToFitHead">updateContainerToFitHead</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#virtualFor">virtualFor</a>
                             </li>
                         </ul>
@@ -128,7 +132,7 @@
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#updateContainerToFitHead">updateContainerToFitHead</a>
+                                <a href="#updateViewportHeightOnHeadResize">updateViewportHeightOnHeadResize</a>
                             </li>
                         </ul>
                     </td>
@@ -181,7 +185,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/lib/table/table-virtual-scroll/table-sticky-header.directive.ts:61</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="64" class="link-to-prism">src/lib/table/table-virtual-scroll/table-sticky-header.directive.ts:64</a></div>
                             </td>
                         </tr>
 
@@ -287,8 +291,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="74"
-                            class="link-to-prism">src/lib/table/table-virtual-scroll/table-sticky-header.directive.ts:74</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="86"
+                            class="link-to-prism">src/lib/table/table-virtual-scroll/table-sticky-header.directive.ts:86</a></div>
                 </td>
             </tr>
 
@@ -328,8 +332,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="95"
-                            class="link-to-prism">src/lib/table/table-virtual-scroll/table-sticky-header.directive.ts:95</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="107"
+                            class="link-to-prism">src/lib/table/table-virtual-scroll/table-sticky-header.directive.ts:107</a></div>
                 </td>
             </tr>
 
@@ -349,28 +353,28 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="updateContainerToFitHead"></a>
+                    <a name="updateViewportHeightOnHeadResize"></a>
                     <span class="name">
                         <b>
                             <span class="modifier">Public</span>
-                            updateContainerToFitHead
+                            updateViewportHeightOnHeadResize
                         </b>
-                        <a href="#updateContainerToFitHead"><span class="icon ion-ios-link"></span></a>
+                        <a href="#updateViewportHeightOnHeadResize"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>updateContainerToFitHead()</code>
+                    <code>updateViewportHeightOnHeadResize()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="121"
-                            class="link-to-prism">src/lib/table/table-virtual-scroll/table-sticky-header.directive.ts:121</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="141"
+                            class="link-to-prism">src/lib/table/table-virtual-scroll/table-sticky-header.directive.ts:141</a></div>
                 </td>
             </tr>
 
@@ -418,7 +422,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="127" class="link-to-prism">src/lib/table/table-virtual-scroll/table-sticky-header.directive.ts:127</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="163" class="link-to-prism">src/lib/table/table-virtual-scroll/table-sticky-header.directive.ts:163</a></div>
                             </td>
                         </tr>
 
@@ -456,6 +460,33 @@
                         <tr>
                             <td class="col-md-4">
                                     <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/lib/table/table-virtual-scroll/table-sticky-header.directive.ts:24</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="updateContainerToFitHead"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            updateContainerToFitHead</b>
+                            <a href="#updateContainerToFitHead"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>() &#x3D;&gt; {...}</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="132" class="link-to-prism">src/lib/table/table-virtual-scroll/table-sticky-header.directive.ts:132</a></div>
                             </td>
                         </tr>
 
@@ -623,6 +654,9 @@ export class TableStickyHeaderDirective implements AfterViewInit, OnDestroy {
     private userProvidedHeight: string;
 
     private unsubscribe$: Subject&lt;unknown&gt; &#x3D; new Subject&lt;unknown&gt;();
+    private headResizeObserver: ResizeObserver;
+    // this is for keeping track of the original viewport height on head resize
+    private origViewportHeight: number;
 
     private get viewportEl(): HTMLElement {
         return this.viewport.elementRef.nativeElement;
@@ -641,6 +675,15 @@ export class TableStickyHeaderDirective implements AfterViewInit, OnDestroy {
         // Waiting for the next tick to let cdk table properly draw the table header
         setTimeout(() &#x3D;&gt; this.updateNativeHeaderPlaceholder());
         this.updateHeadPosition(this._sticky);
+    }
+
+    public ngOnDestroy(): void {
+        this.unsubscribe$.next();
+        this.unsubscribe$.complete();
+
+        if (this.headResizeObserver) {
+            this.headResizeObserver.disconnect();
+        }
     }
 
     public setNative(): void {
@@ -681,25 +724,49 @@ export class TableStickyHeaderDirective implements AfterViewInit, OnDestroy {
         this.syncColumnWidths();
 
         // Note: While we&#x27;re detaching header from CDK Viewport we have
-        // to recalculate viewport height to keep the same total height
-        // Skipping one tick to let header get his height;
-        // TODO: Find a better place to assign that
-        setTimeout(() &#x3D;&gt; {
-            this.updateContainerToFitHead();
-        });
+        // to recalculate viewport height to keep the same total height.
+        // The setTimeout is for skipping one tick to let the header get his height.
+        setTimeout(() &#x3D;&gt; this.updateContainerToFitHead());
+        this.updateViewportHeightOnHeadResize();
+
         this.headPosition &#x3D; TableVirtualScrollHeaderPosition.Sticky;
     }
 
-    public updateContainerToFitHead(): void {
-        const viewportComputedHeight: string &#x3D; isEmpty(this.userProvidedHeight) ? this.viewportEl.offsetHeight + &quot;px&quot; : this.userProvidedHeight;
-        this.viewportEl.style.setProperty(&quot;height&quot;,
-            &#x60;calc(${ viewportComputedHeight } - ${ this.headRef?.rows.item(0)?.offsetHeight ?? 0 }px)&#x60;, &quot;important&quot;);
+    public updateContainerToFitHead &#x3D; (): void &#x3D;&gt; {
+        if (this._sticky) {
+            this.origViewportHeight &#x3D; this.origViewportHeight || this.viewportEl?.offsetHeight;
+            const viewportComputedHeight: string &#x3D; isEmpty(this.userProvidedHeight) ? this.origViewportHeight + &quot;px&quot; : this.userProvidedHeight;
+            this.viewportEl.style.setProperty(&quot;height&quot;,
+                &#x60;calc(${viewportComputedHeight} - ${this.headRef?.rows.item(0)?.offsetHeight ?? 0}px)&#x60;, &quot;important&quot;);
+        }
+    }
+
+    public updateViewportHeightOnHeadResize(): void {
+        if (this.headResizeObserver) {
+            return;
+        }
+
+        // This resize observer is needed in case a parent element has a height of zero upon instantiation
+        // thereby prohibiting the header from having its intended height when its initially rendered.
+        if (this.headRef) {
+            this.headResizeObserver &#x3D; new ResizeObserver((entries: ResizeObserverEntry[]) &#x3D;&gt;
+                // We wrap this in requestAnimationFrame to avoid &quot;ResizeObserver loop limit exceeded&quot; error in unit tests
+                // https://stackoverflow.com/questions/49384120/resizeobserver-loop-limit-exceeded
+                window.requestAnimationFrame(() &#x3D;&gt; {
+                    if (!Array.isArray(entries) || !entries.length) {
+                        return;
+                    }
+                    this.updateContainerToFitHead();
+                })
+            );
+            this.headResizeObserver.observe(this.headRef);
+        }
     }
 
     public handleColumnsUpdate$: () &#x3D;&gt; Observable&lt;unknown&gt; &#x3D; () &#x3D;&gt; {
         // TODO: Perform a dirty check before starting assigning new values
         // Note: Setting the width of stickyHeadContainer container to be able to simulate horizontal scroll of the sticky header
-        this.renderer.setStyle(this.stickyHeadContainer, &quot;width&quot;, &#x60;${ this.viewport._contentWrapper.nativeElement.scrollWidth }px&#x60;);
+        this.renderer.setStyle(this.stickyHeadContainer, &quot;width&quot;, &#x60;${this.viewport._contentWrapper.nativeElement.scrollWidth}px&#x60;);
 
         const headColumns: HTMLTableHeaderCellElement[] &#x3D; Array.from(this.stickyHeadContainer?.getElementsByTagName(&quot;th&quot;) || []);
         const firstDataRowCells: HTMLTableDataCellElement[] &#x3D; Array.from(this.bodyRef?.rows.item(0)?.cells || []);
@@ -713,7 +780,7 @@ export class TableStickyHeaderDirective implements AfterViewInit, OnDestroy {
         firstDataRowCells.forEach((cell: HTMLTableDataCellElement, index: number) &#x3D;&gt; {
             // Note: Assigning data cell width to the corresponding header column
             // (using the style width if specified; otherwise, falling back to the offsetWidth)
-            headColumns[index].style.width &#x3D; cell.style.width || &#x60;${ cell.offsetWidth }px&#x60;;
+            headColumns[index].style.width &#x3D; cell.style.width || &#x60;${cell.offsetWidth}px&#x60;;
         });
 
         // update the header placeholder to match the updated column widths
@@ -778,7 +845,7 @@ export class TableStickyHeaderDirective implements AfterViewInit, OnDestroy {
             tap((scrollLeft: number) &#x3D;&gt; {
                 previousScrollLeft &#x3D; scrollLeft;
                 // Note: Simulating horizontal scroll by assigning margin-left to be equal to scrolled distance
-                this.renderer.setStyle(this.stickyHeadContainer, &quot;margin-left&quot;, &#x60;-${ scrollLeft }px&#x60;);
+                this.renderer.setStyle(this.stickyHeadContainer, &quot;margin-left&quot;, &#x60;-${scrollLeft}px&#x60;);
             }),
             takeUntil(this.unsubscribe$)
         ).subscribe();
@@ -826,11 +893,6 @@ export class TableStickyHeaderDirective implements AfterViewInit, OnDestroy {
             return;
         }
         this.setSticky();
-    }
-
-    public ngOnDestroy(): void {
-        this.unsubscribe$.next();
-        this.unsubscribe$.complete();
     }
 }
 </code></pre>

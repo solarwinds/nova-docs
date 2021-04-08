@@ -1,5 +1,5 @@
 (function () {
-  var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10, _templateObject11;
+  var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10, _templateObject11, _templateObject12, _templateObject13;
 
   function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
@@ -398,7 +398,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col\">\n            <h3>Basic small busy</h3>\n            <div id=\"nui-busy-test-basic\" nui-busy [busy]=\"busy\">\n                <div>Busy content</div>\n                <div>With any kind of content should have busy indication in the center of parent container</div>\n            </div>\n            <hr />\n        </div>\n    </div>\n\n     <div class=\"row\">\n        <div class=\"col\">\n            <h3>Custom busy</h3>\n            <div id=\"nui-busy-test-custom\" nui-busy [busy]=\"busy\">\n                <div class=\"visual-test-busy-content\">\n                    Busy content\n                </div>\n                <nui-spinner id=\"nui-demo-spinner\" size=\"large\" i18n-message message=\"Hello from custom busy\"></nui-spinner>\n            </div>\n            <hr />\n        </div>\n     </div>\n\n     <div class=\"row\">\n        <div class=\"col\">\n            <h3>Progress busy</h3>\n            <div id=\"nui-busy-test-progress\" nui-busy [busy]=\"busy\">\n                <div class=\"visual-test-busy-content\">\n                    Busy content\n                </div>\n                <nui-progress id=\"nui-demo-progress\" i18n-message message=\"Hello from custom busy\"></nui-progress>\n            </div>\n            <hr />\n        </div>\n     </div>\n\n     <div class=\"row\">\n        <button id=\"nui-busy-test-button\" (click)=\"switchBusy()\">Switch busy state</button>\n     </div>\n</div>\n";
+      __webpack_exports__["default"] = "<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col\">\n            <h3>Basic small busy</h3>\n            <div id=\"nui-busy-test-basic\" nui-busy [busy]=\"busy\">\n                <div>Busy content</div>\n                <div>With any kind of content should have busy indication in the center of parent container</div>\n            </div>\n            <hr />\n        </div>\n    </div>\n\n     <div class=\"row\">\n        <div class=\"col\">\n            <h3>Custom busy</h3>\n            <div id=\"nui-busy-test-custom\" nui-busy [busy]=\"busy\">\n                <div class=\"visual-test-busy-content\">\n                    Busy content\n                </div>\n                <nui-spinner id=\"nui-demo-spinner\" size=\"large\" i18n-message message=\"Hello from custom busy\"></nui-spinner>\n            </div>\n            <hr />\n        </div>\n     </div>\n\n     <div class=\"row\">\n        <div class=\"col\">\n            <h3>Progress busy</h3>\n            <div id=\"nui-busy-test-progress\" nui-busy [busy]=\"busy\">\n                <div class=\"visual-test-busy-content\">\n                    Busy content\n                </div>\n                <nui-progress id=\"nui-demo-progress\" i18n-message message=\"Hello from custom busy\"></nui-progress>\n            </div>\n            <hr />\n        </div>\n     </div>\n\n     <div class=\"row\">\n        <div class=\"col\">\n            <h3>Progress busy from the start</h3>\n            <div id=\"nui-busy-test-progress\" nui-busy [busy]=\"busyAtTheStart\">\n                <div class=\"visual-test-busy-content\">\n                    Busy content\n                </div>\n                <nui-progress id=\"nui-demo-progress\" i18n-message message=\"Hello from custom busy\"></nui-progress>\n            </div>\n            <hr />\n        </div>\n     </div>\n\n     <div class=\"row\">\n        <div class=\"col\">\n            <h3>Custom busy</h3>\n            <div id=\"nui-busy-test-custom\" nui-busy [busy]=\"busyAtTheStart\">\n                <div class=\"visual-test-busy-content\">\n                    Busy content\n                </div>\n                <nui-spinner id=\"nui-demo-spinner\" size=\"large\" i18n-message message=\"Hello from custom busy\"></nui-spinner>\n            </div>\n            <hr />\n        </div>\n     </div>\n\n     <div class=\"row\">\n        <button id=\"nui-busy-test-button\" (click)=\"switchBusy()\">Switch busy state</button>\n     </div>\n</div>\n";
       /***/
     },
 
@@ -869,7 +869,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import { Component } from \"@angular/core\";\n\n@Component({\n    selector: \"nui-busy-visual\",\n    templateUrl: \"./busy-visual-test.component.html\",\n    styleUrls: [\n        \"./busy-visual-test.component.less\",\n    ],\n})\nexport class BusyVisualTestComponent {\n    public busy: boolean;\n\n    public switchBusy() {\n        this.busy = !this.busy;\n    }\n}\n";
+      __webpack_exports__["default"] = "import { Component } from \"@angular/core\";\n\n@Component({\n    selector: \"nui-busy-visual\",\n    templateUrl: \"./busy-visual-test.component.html\",\n    styleUrls: [\n        \"./busy-visual-test.component.less\",\n    ],\n})\nexport class BusyVisualTestComponent {\n    public busy: boolean;\n    public busyAtTheStart: boolean = true;\n\n    public switchBusy() {\n        this.busy = !this.busy;\n    }\n}\n";
       /***/
     },
 
@@ -1289,6 +1289,8 @@
       var BusyVisualTestComponent = /*#__PURE__*/function () {
         function BusyVisualTestComponent() {
           _classCallCheck(this, BusyVisualTestComponent);
+
+          this.busyAtTheStart = true;
         }
 
         _createClass(BusyVisualTestComponent, [{
@@ -1308,8 +1310,8 @@
       BusyVisualTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: BusyVisualTestComponent,
         selectors: [["nui-busy-visual"]],
-        decls: 32,
-        vars: 3,
+        decls: 50,
+        vars: 5,
         consts: function consts() {
           var i18n_0;
 
@@ -1329,7 +1331,25 @@
             i18n_2 = $localize(_templateObject10 || (_templateObject10 = _taggedTemplateLiteral([":\u241Fb1203654bb65c56eb8ba40a2a9f1b1d26d516c51\u241F6776140435076536653:Hello from custom busy"])));
           }
 
-          return [[1, "container"], [1, "row"], [1, "col"], ["id", "nui-busy-test-basic", "nui-busy", "", 3, "busy"], ["id", "nui-busy-test-custom", "nui-busy", "", 3, "busy"], [1, "visual-test-busy-content"], ["id", "nui-demo-spinner", "size", "large", "message", i18n_0], ["id", "nui-busy-test-progress", "nui-busy", "", 3, "busy"], ["id", "nui-demo-progress", "message", i18n_2], ["id", "nui-busy-test-button", 3, "click"]];
+          var i18n_4;
+
+          if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+            var MSG_EXTERNAL_6776140435076536653$$DEMO_SRC_COMPONENTS_DEMO_BUSY_BUSY_VISUAL_TEST_BUSY_VISUAL_TEST_COMPONENT_TS_5 = goog.getMsg("Hello from custom busy");
+            i18n_4 = MSG_EXTERNAL_6776140435076536653$$DEMO_SRC_COMPONENTS_DEMO_BUSY_BUSY_VISUAL_TEST_BUSY_VISUAL_TEST_COMPONENT_TS_5;
+          } else {
+            i18n_4 = $localize(_templateObject11 || (_templateObject11 = _taggedTemplateLiteral([":\u241Fb1203654bb65c56eb8ba40a2a9f1b1d26d516c51\u241F6776140435076536653:Hello from custom busy"])));
+          }
+
+          var i18n_6;
+
+          if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+            var MSG_EXTERNAL_6776140435076536653$$DEMO_SRC_COMPONENTS_DEMO_BUSY_BUSY_VISUAL_TEST_BUSY_VISUAL_TEST_COMPONENT_TS_7 = goog.getMsg("Hello from custom busy");
+            i18n_6 = MSG_EXTERNAL_6776140435076536653$$DEMO_SRC_COMPONENTS_DEMO_BUSY_BUSY_VISUAL_TEST_BUSY_VISUAL_TEST_COMPONENT_TS_7;
+          } else {
+            i18n_6 = $localize(_templateObject12 || (_templateObject12 = _taggedTemplateLiteral([":\u241Fb1203654bb65c56eb8ba40a2a9f1b1d26d516c51\u241F6776140435076536653:Hello from custom busy"])));
+          }
+
+          return [[1, "container"], [1, "row"], [1, "col"], ["id", "nui-busy-test-basic", "nui-busy", "", 3, "busy"], ["id", "nui-busy-test-custom", "nui-busy", "", 3, "busy"], [1, "visual-test-busy-content"], ["id", "nui-demo-spinner", "size", "large", "message", i18n_0], ["id", "nui-busy-test-progress", "nui-busy", "", 3, "busy"], ["id", "nui-demo-progress", "message", i18n_2], ["id", "nui-demo-progress", "message", i18n_4], ["id", "nui-demo-spinner", "size", "large", "message", i18n_6], ["id", "nui-busy-test-button", 3, "click"]];
         },
         template: function BusyVisualTestComponent_Template(rf, ctx) {
           if (rf & 1) {
@@ -1425,13 +1445,69 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](29, "div", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](30, "button", 9);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](30, "div", 2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function BusyVisualTestComponent_Template_button_click_30_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](31, "h3");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](32, "Progress busy from the start");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](33, "div", 7);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](34, "div", 5);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](35, " Busy content ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](36, "nui-progress", 9);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](37, "hr");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](38, "div", 1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](39, "div", 2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](40, "h3");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](41, "Custom busy");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](42, "div", 4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](43, "div", 5);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](44, " Busy content ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](45, "nui-spinner", 10);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](46, "hr");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](47, "div", 1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](48, "button", 11);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function BusyVisualTestComponent_Template_button_click_48_listener() {
               return ctx.switchBusy();
             });
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](31, "Switch busy state");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](49, "Switch busy state");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -1452,6 +1528,14 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("busy", ctx.busy);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("busy", ctx.busyAtTheStart);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("busy", ctx.busyAtTheStart);
           }
         },
         directives: [_src_lib_busy_busy_component__WEBPACK_IMPORTED_MODULE_1__["BusyComponent"], _src_lib_spinner_spinner_component__WEBPACK_IMPORTED_MODULE_2__["SpinnerComponent"], _src_lib_progress_progress_component__WEBPACK_IMPORTED_MODULE_3__["ProgressComponent"]],
@@ -1635,7 +1719,7 @@
             var MSG_EXTERNAL_3656907322428282268$$DEMO_SRC_COMPONENTS_DEMO_BUSY_BUSY_TEST_BUSY_TEST_COMPONENT_TS_1 = goog.getMsg(" Attempts to change my checked state will fail when busy is enabled ");
             i18n_0 = MSG_EXTERNAL_3656907322428282268$$DEMO_SRC_COMPONENTS_DEMO_BUSY_BUSY_TEST_BUSY_TEST_COMPONENT_TS_1;
           } else {
-            i18n_0 = $localize(_templateObject11 || (_templateObject11 = _taggedTemplateLiteral([":\u241F3a5518c8224b7fd24ab73d9dfd55a27c652488c0\u241F3656907322428282268: Attempts to change my checked state will fail when busy is enabled "])));
+            i18n_0 = $localize(_templateObject13 || (_templateObject13 = _taggedTemplateLiteral([":\u241F3a5518c8224b7fd24ab73d9dfd55a27c652488c0\u241F3656907322428282268: Attempts to change my checked state will fail when busy is enabled "])));
           }
 
           return [[1, "container"], [1, "row"], [1, "col"], ["id", "nui-busy-test-basic", "nui-busy", "", 3, "busy"], [1, "test-busy-content"], ["id", "nui-busy-test-progress", "nui-busy", "", 3, "busy"], ["id", "nui-demo-progress", "message", "Hello from custom busy"], ["id", "nui-busy-select-overlay", 1, "row", "justify-content-md-center", 3, "appendToBody", "itemsSource"], ["id", "nui-busy-test-custom", "nui-busy", "", 3, "busy"], ["id", "focusable-button-inside-busy-component"], ["href", "#"], i18n_0, ["id", "nui-demo-spinner", "size", "large", "message", "Hello from custom busy"], ["id", "nui-busy-test-button", "nui-button", "", "type", "button", 3, "click"]];

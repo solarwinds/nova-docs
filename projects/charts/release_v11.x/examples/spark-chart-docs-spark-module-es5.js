@@ -103,6 +103,12 @@
       var _spark_chart_test_spark_chart_test_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
       /*! ./spark-chart-test/spark-chart-test.component */
       "s5h1");
+      /* harmony import */
+
+
+      var _spark_chart_area_multiple_spark_chart_area_multiple_example_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
+      /*! ./spark-chart-area-multiple/spark-chart-area-multiple.example.component */
+      "SH0r");
 
       var exampleRoutes = [{
         path: "",
@@ -146,6 +152,14 @@
           }
         }
       }, {
+        path: "area",
+        component: _spark_chart_area_multiple_spark_chart_area_multiple_example_component__WEBPACK_IMPORTED_MODULE_13__["SparkChartAreaMultipleExampleComponent"],
+        data: {
+          "srlc": {
+            "hideIndicator": true
+          }
+        }
+      }, {
         path: "test",
         component: _spark_chart_test_spark_chart_test_component__WEBPACK_IMPORTED_MODULE_12__["SparkChartTestComponent"],
         data: {
@@ -160,7 +174,7 @@
       };
 
       ChartDocsSparkModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-        declarations: [_chart_docs_spark_component__WEBPACK_IMPORTED_MODULE_6__["ChartDocsSparkComponent"], _spark_chart_basic_spark_chart_basic_example_component__WEBPACK_IMPORTED_MODULE_7__["SparkChartBasicExampleComponent"], _spark_chart_legend_spark_chart_legend_example_component__WEBPACK_IMPORTED_MODULE_8__["SparkChartLegendExampleComponent"], _spark_chart_multiple_spark_chart_multiple_example_component__WEBPACK_IMPORTED_MODULE_9__["SparkChartMultipleExampleComponent"], _spark_chart_table_spark_chart_table_example_component__WEBPACK_IMPORTED_MODULE_11__["SparkChartTableExampleComponent"], _spark_chart_test_spark_chart_test_component__WEBPACK_IMPORTED_MODULE_12__["SparkChartTestComponent"], _spark_chart_stroke_test_area_spark_minimal_test_component__WEBPACK_IMPORTED_MODULE_10__["AreaSparkMinimalTestComponent"]],
+        declarations: [_chart_docs_spark_component__WEBPACK_IMPORTED_MODULE_6__["ChartDocsSparkComponent"], _spark_chart_basic_spark_chart_basic_example_component__WEBPACK_IMPORTED_MODULE_7__["SparkChartBasicExampleComponent"], _spark_chart_legend_spark_chart_legend_example_component__WEBPACK_IMPORTED_MODULE_8__["SparkChartLegendExampleComponent"], _spark_chart_multiple_spark_chart_multiple_example_component__WEBPACK_IMPORTED_MODULE_9__["SparkChartMultipleExampleComponent"], _spark_chart_table_spark_chart_table_example_component__WEBPACK_IMPORTED_MODULE_11__["SparkChartTableExampleComponent"], _spark_chart_area_multiple_spark_chart_area_multiple_example_component__WEBPACK_IMPORTED_MODULE_13__["SparkChartAreaMultipleExampleComponent"], _spark_chart_test_spark_chart_test_component__WEBPACK_IMPORTED_MODULE_12__["SparkChartTestComponent"], _spark_chart_stroke_test_area_spark_minimal_test_component__WEBPACK_IMPORTED_MODULE_10__["AreaSparkMinimalTestComponent"]],
         imports: [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"], _nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["NuiChartsModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_4__["NuiDocsModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_4__["NuiMessageModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_4__["NuiTableModule"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"].forChild(exampleRoutes)],
         providers: [{
           provide: _nova_ui_bits__WEBPACK_IMPORTED_MODULE_4__["DEMO_PATH_TOKEN"],
@@ -239,6 +253,8 @@
         "./chart-docs-spark.component.html": "VXYK",
         "./chart-docs-spark.component.ts": "aEDV",
         "./chart-docs-spark.module.ts": "WWui",
+        "./spark-chart-area-multiple/spark-chart-area-multiple.example.component.html": "/8ED",
+        "./spark-chart-area-multiple/spark-chart-area-multiple.example.component.ts": "slmc",
         "./spark-chart-basic/spark-chart-basic.example.component.html": "VU9g",
         "./spark-chart-basic/spark-chart-basic.example.component.ts": "9WrG",
         "./spark-chart-legend/spark-chart-legend.example.component.html": "kBhg",
@@ -297,6 +313,247 @@
 
       __webpack_exports__["default"] = ".chart-container {\n  border-left: 1px solid var(--nui-color-line-strong, #999);\n  border-right: 1px solid var(--nui-color-line-strong, #999);\n  height: 42px;\n  width: 150px;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFyZWEtc3BhcmstbWluaW1hbC10ZXN0LmNvbXBvbmVudC5sZXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0kseURBQUE7RUFDQSwwREFBQTtFQUNBLFlBQUE7RUFDQSxZQUFBO0FBQ0oiLCJmaWxlIjoiYXJlYS1zcGFyay1taW5pbWFsLXRlc3QuY29tcG9uZW50Lmxlc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuY2hhcnQtY29udGFpbmVyIHtcbiAgICBib3JkZXItbGVmdDogMXB4IHNvbGlkIHZhcigtLW51aS1jb2xvci1saW5lLXN0cm9uZywgIzk5OSk7XG4gICAgYm9yZGVyLXJpZ2h0OiAxcHggc29saWQgdmFyKC0tbnVpLWNvbG9yLWxpbmUtc3Ryb25nLCAjOTk5KTtcbiAgICBoZWlnaHQ6IDQycHg7XG4gICAgd2lkdGg6IDE1MHB4O1xufVxuIl19 */";
       /***/
+    },
+
+    /***/
+    "SH0r":
+    /*!*****************************************************************************************************************************!*\
+      !*** ./examples/components/demo/chart-types/spark/spark-chart-area-multiple/spark-chart-area-multiple.example.component.ts ***!
+      \*****************************************************************************************************************************/
+
+    /*! exports provided: SparkChartAreaMultipleExampleComponent */
+
+    /***/
+    function SH0r(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "SparkChartAreaMultipleExampleComponent", function () {
+        return SparkChartAreaMultipleExampleComponent;
+      });
+      /* harmony import */
+
+
+      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! tslib */
+      "mrSG");
+      /* harmony import */
+
+
+      var _raw_loader_spark_chart_area_multiple_example_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! raw-loader!./spark-chart-area-multiple.example.component.html */
+      "/8ED");
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! @angular/core */
+      "fXoL");
+      /* harmony import */
+
+
+      var _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! @nova-ui/charts */
+      "gKry");
+      /* harmony import */
+
+
+      var moment_moment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! moment/moment */
+      "wd/R");
+      /* harmony import */
+
+
+      var moment_moment__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(moment_moment__WEBPACK_IMPORTED_MODULE_4__);
+
+      var SparkChartAreaMultipleExampleComponent = /*#__PURE__*/function () {
+        function SparkChartAreaMultipleExampleComponent() {
+          _classCallCheck(this, SparkChartAreaMultipleExampleComponent);
+        }
+
+        _createClass(SparkChartAreaMultipleExampleComponent, [{
+          key: "ngOnInit",
+          value: function ngOnInit() {
+            // spark chart setup
+            this.chartAssist = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["SparkChartAssist"](); // Stacked Area accessors let the renderer know how to access x and y domain data respectively from a chart's input data set(s).
+            // providing chartAssist colors and markers to stackedAreaAccessors will share them with the area chart
+
+            var accessors = Object(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["stackedAreaAccessors"])(this.chartAssist.palette.standardColors, this.chartAssist.markers); // setting the AreaRenderer congif's strokeWidth to zero so no stroke is added around the filled area
+
+            var renderer = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["AreaRenderer"]({
+              strokeWidth: 0
+            });
+            var seriesSet = getData().map(function (d) {
+              return Object.assign(Object.assign({}, d), {
+                accessors: accessors,
+                renderer: renderer,
+                scales: {
+                  // using the same scale id for the x-axes is necessary to achieve synchronized hover interaction between charts
+                  // - sharing the same instance of the scale would work as well
+                  x: new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["TimeScale"]("shared_id"),
+                  y: new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["LinearScale"]()
+                }
+              });
+            }); // chart assist needs to be used to update data
+
+            this.chartAssist.update(seriesSet);
+          }
+        }]);
+
+        return SparkChartAreaMultipleExampleComponent;
+      }();
+
+      SparkChartAreaMultipleExampleComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
+        selector: "nui-spark-chart-area-multiple-example",
+        template: _raw_loader_spark_chart_area_multiple_example_component_html__WEBPACK_IMPORTED_MODULE_1__["default"]
+      })], SparkChartAreaMultipleExampleComponent);
+      /* Chart data */
+
+      function getData() {
+        var format = "YYYY-MM-DDTHH:mm:ssZ";
+        return [{
+          id: "spark-series-1",
+          name: "Tex-lab-aus-2621",
+          data: [{
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2018-07-08T01:51:43.448Z", format),
+            y: 85
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2018-07-21T17:35:10.344Z", format),
+            y: 57
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2018-08-04T09:18:37.241Z", format),
+            y: 99
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2018-08-18T01:02:04.137Z", format),
+            y: 75
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2018-08-31T16:45:31.034Z", format),
+            y: 55
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2018-09-14T08:28:57.931Z", format),
+            y: 73
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2018-09-28T00:12:24.827Z", format),
+            y: 30
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2018-10-11T15:55:51.724Z", format),
+            y: 77
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2018-10-25T07:39:18.620Z", format),
+            y: 57
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2018-11-07T23:22:45.517Z", format),
+            y: 61
+          }]
+        }, {
+          id: "spark-series-2",
+          name: "Cz-lab-brn-02",
+          data: [{
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2018-07-08T01:51:43.448Z", format),
+            y: 93
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2018-07-21T17:35:10.344Z", format),
+            y: 71
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2018-08-04T09:18:37.241Z", format),
+            y: 85
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2018-08-18T01:02:04.137Z", format),
+            y: 54
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2018-08-31T16:45:31.034Z", format),
+            y: 79
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2018-09-14T08:28:57.931Z", format),
+            y: 64
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2018-09-28T00:12:24.827Z", format),
+            y: 49
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2018-10-11T15:55:51.724Z", format),
+            y: 70
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2018-10-25T07:39:18.620Z", format),
+            y: 59
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2018-11-07T23:22:45.517Z", format),
+            y: 76
+          }]
+        }, {
+          id: "spark-series-3",
+          name: "Ua-lab-kie-03",
+          data: [{
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2018-07-08T01:51:43.448Z", format),
+            y: 60
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2018-07-21T17:35:10.344Z", format),
+            y: 75
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2018-08-04T09:18:37.241Z", format),
+            y: 42
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2018-08-18T01:02:04.137Z", format),
+            y: 84
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2018-08-31T16:45:31.034Z", format),
+            y: 41
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2018-09-14T08:28:57.931Z", format),
+            y: 50
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2018-09-28T00:12:24.827Z", format),
+            y: 56
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2018-10-11T15:55:51.724Z", format),
+            y: 44
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2018-10-25T07:39:18.620Z", format),
+            y: 75
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2018-11-07T23:22:45.517Z", format),
+            y: 48
+          }]
+        }, {
+          id: "spark-series-4",
+          name: "Tex-lab-kie-3203",
+          data: [{
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2018-07-08T01:51:43.448Z", format),
+            y: 30
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2018-07-21T17:35:10.344Z", format),
+            y: 25
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2018-08-04T09:18:37.241Z", format),
+            y: 84
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2018-08-18T01:02:04.137Z", format),
+            y: 44
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2018-08-31T16:45:31.034Z", format),
+            y: 56
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2018-09-14T08:28:57.931Z", format),
+            y: 70
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2018-09-28T00:12:24.827Z", format),
+            y: 15
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2018-10-11T15:55:51.724Z", format),
+            y: 27
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2018-10-25T07:39:18.620Z", format),
+            y: 85
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2018-11-07T23:22:45.517Z", format),
+            y: 30
+          }]
+        }];
+      }
+      /***/
+
     },
 
     /***/
