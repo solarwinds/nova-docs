@@ -25765,7 +25765,7 @@
             (_b = (_a = this.overlayComponent) === null || _a === void 0 ? void 0 : _a.getOverlayRef()) === null || _b === void 0 ? void 0 : _b.updatePosition();
           }
           /**
-           * Resets the size of the popover based on the overlay's position.
+           * Resets the size of the popover.
            */
 
         }, {
