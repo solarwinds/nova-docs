@@ -28664,6 +28664,11 @@
           this.domSanitizer = domSanitizer;
           this.el = el;
           /**
+           * Sets alt for image from external source
+           */
+
+          this.imageAlt = "";
+          /**
            * Sets the width of the container parent image
            */
 
@@ -28735,9 +28740,9 @@
             if (lodash_has__WEBPACK_IMPORTED_MODULE_3___default()(image, "code") && lodash_isString__WEBPACK_IMPORTED_MODULE_7___default()(image.code)) {
               imageHtml = image.code;
 
-              if (image.name && this.ariaLabel !== image.name) {
+              if (image.name && !this.ariaLabel && this.imageName !== image.name) {
                 Promise.resolve().then(function (_) {
-                  return _this86.ariaLabel = image.name;
+                  return _this86.imageName = image.name;
                 });
               }
             } else {
@@ -28767,12 +28772,13 @@
         hostVars: 1,
         hostBindings: function ImageComponent_HostBindings(rf, ctx) {
           if (rf & 2) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-label", ctx.ariaLabel || null);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-label", ctx.ariaLabel || ctx.imageName || null);
           }
         },
         inputs: {
           image: "image",
           imageAlt: "imageAlt",
+          ariaLabel: "ariaLabel",
           "float": "float",
           margin: "margin",
           isWatermark: "isWatermark",
