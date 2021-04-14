@@ -28733,6 +28733,7 @@
             if (lodash_has__WEBPACK_IMPORTED_MODULE_3___default()(image, "code") && lodash_isString__WEBPACK_IMPORTED_MODULE_7___default()(image.code)) {
               imageHtml = image.code;
               this.ariaLabel = image.name;
+              this.changeDetector.detectChanges();
             } else {
               imageHtml = "<img src=\"".concat(this.image, "\" alt=\"").concat(this.imageAlt, "\">");
             }
