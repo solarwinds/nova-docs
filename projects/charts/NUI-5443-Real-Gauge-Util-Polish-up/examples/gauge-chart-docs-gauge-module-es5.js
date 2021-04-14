@@ -263,7 +263,8 @@
             return {
               value: value,
               max: 200,
-              thresholds: [100, 158]
+              thresholds: [100, 158],
+              enableThresholdMarkers: true
             };
           }
         }]);

@@ -1742,7 +1742,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { Component } from \"@angular/core\";\nimport {  IGaugeConfig } from \"@nova-ui/charts\";\n\n@Component({\n    selector: \"gauge-visual-test\",\n    templateUrl: \"./gauge-visual-test.component.html\",\n})\nexport class GaugeVisualTestComponent {\n    public lowValue = 42;\n    public mediumValue = 130;\n    public highValue = 178;\n\n    public getGaugeConfig(value: number): IGaugeConfig {\n        return {\n            value,\n            max: 200,\n            thresholds: [100, 158],\n        };\n    }\n }\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import { Component } from \"@angular/core\";\nimport {  IGaugeConfig } from \"@nova-ui/charts\";\n\n@Component({\n    selector: \"gauge-visual-test\",\n    templateUrl: \"./gauge-visual-test.component.html\",\n})\nexport class GaugeVisualTestComponent {\n    public lowValue = 42;\n    public mediumValue = 130;\n    public highValue = 178;\n\n    public getGaugeConfig(value: number): IGaugeConfig {\n        return {\n            value,\n            max: 200,\n            thresholds: [100, 158],\n            enableThresholdMarkers: true,\n        };\n    }\n }\n");
 
 /***/ }),
 

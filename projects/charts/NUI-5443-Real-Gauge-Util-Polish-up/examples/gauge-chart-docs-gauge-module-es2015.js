@@ -160,6 +160,7 @@ let GaugeVisualTestComponent = class GaugeVisualTestComponent {
             value,
             max: 200,
             thresholds: [100, 158],
+            enableThresholdMarkers: true,
         };
     }
 };
