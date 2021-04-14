@@ -15786,8 +15786,9 @@ class ImageComponent {
         let imageHtml = "";
         if (lodash_has__WEBPACK_IMPORTED_MODULE_3___default()(image, "code") && lodash_isString__WEBPACK_IMPORTED_MODULE_7___default()(image.code)) {
             imageHtml = image.code;
-            this.ariaLabel = image.name;
-            this.changeDetector.detectChanges();
+            if (image.name && this.ariaLabel !== image.name) {
+                Promise.resolve().then(_ => this.ariaLabel = image.name);
+            }
         }
         else {
             imageHtml = `<img src="${this.image}" alt="${this.imageAlt}">`;

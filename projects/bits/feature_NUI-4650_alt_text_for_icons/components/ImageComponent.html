@@ -765,8 +765,9 @@ export class ImageComponent implements OnInit, AfterViewInit {
         let imageHtml: string &#x3D; &quot;&quot;;
         if (_has(image, &quot;code&quot;) &amp;&amp; _isString(image.code)) {
             imageHtml &#x3D; image.code;
-            this.ariaLabel &#x3D; image.name;
-            this.changeDetector.detectChanges();
+            if(image.name &amp;&amp; this.ariaLabel !&#x3D;&#x3D; image.name) {
+                Promise.resolve().then(_ &#x3D;&gt; this.ariaLabel &#x3D; image.name);
+            }
         } else {
             imageHtml &#x3D; &#x60;&lt;img src&#x3D;&quot;${this.image}&quot; alt&#x3D;&quot;${this.imageAlt}&quot;&gt;&#x60;;
         }
