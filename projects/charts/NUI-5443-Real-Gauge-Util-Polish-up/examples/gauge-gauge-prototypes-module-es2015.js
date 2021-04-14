@@ -145,7 +145,7 @@ let GaugeTestPageComponent = class GaugeTestPageComponent {
         this.flipLabels = false;
         // this.thresholds = new Array(200).fill(null).map((e, i) => i);
         // this.thresholds = [50, 75, 100, 125, 150, 175, 200];
-        this.reversedValueColorAccessor = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].createReversedColorAccessor(this.thresholds);
+        this.reversedColorAccessor = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].createReversedColorAccessor(this.thresholds);
         this.gaugeConfig = this.getGaugeConfig();
     }
     onReverseChange(reversed) {
@@ -161,7 +161,7 @@ let GaugeTestPageComponent = class GaugeTestPageComponent {
             value: this.value,
             max: this.maxValue,
             thresholds: this.thresholds,
-            valueColorAccessor: this.reversed ? this.reversedValueColorAccessor : undefined,
+            colorAccessor: this.reversed ? this.reversedColorAccessor : undefined,
             enableThresholdMarkers: true,
         };
     }
@@ -278,7 +278,7 @@ let DonutGaugePrototypeComponent = class DonutGaugePrototypeComponent {
         this.seriesSet.forEach(series => {
             const rendererConfig = series.renderer.config;
             // increase the max thickness from 30 for testing purposes
-            rendererConfig.maxThickness = 200;
+            rendererConfig.maxThickness = 20000;
             rendererConfig.annularGrowth = this.annularGrowth;
             rendererConfig.annularWidth = this.annularWidth;
         });

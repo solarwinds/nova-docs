@@ -11380,7 +11380,7 @@ let GaugeUtil = GaugeUtil_1 = class GaugeUtil {
         const renderingAttributes = GaugeUtil_1.generateRenderingAttributes(mode);
         const { accessors, scales, mainRenderer } = renderingAttributes;
         if (accessors.data) {
-            accessors.data.color = gaugeConfig.valueColorAccessor || GaugeUtil_1.createDefaultColorAccessor(gaugeConfig.thresholds);
+            accessors.data.color = gaugeConfig.colorAccessor || GaugeUtil_1.createDefaultColorAccessor(gaugeConfig.thresholds);
         }
         const chartAssistSeries = [
             ...GaugeUtil_1.generateGaugeData(gaugeConfig).map((s) => (Object.assign(Object.assign({}, s), { accessors,
@@ -11403,7 +11403,7 @@ let GaugeUtil = GaugeUtil_1 = class GaugeUtil {
         var _a, _b;
         gaugeConfig.value = (_a = gaugeConfig.value) !== null && _a !== void 0 ? _a : 0;
         gaugeConfig.max = (_b = gaugeConfig.max) !== null && _b !== void 0 ? _b : 0;
-        const colorAccessor = gaugeConfig.valueColorAccessor || GaugeUtil_1.createDefaultColorAccessor(gaugeConfig.thresholds);
+        const colorAccessor = gaugeConfig.colorAccessor || GaugeUtil_1.createDefaultColorAccessor(gaugeConfig.thresholds);
         const updatedSeriesSet = seriesSet.map((series) => {
             if (series.accessors.data) {
                 series.accessors.data.color = colorAccessor;

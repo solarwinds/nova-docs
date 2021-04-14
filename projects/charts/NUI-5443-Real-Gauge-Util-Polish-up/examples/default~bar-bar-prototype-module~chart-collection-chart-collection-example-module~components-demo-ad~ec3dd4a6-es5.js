@@ -17975,7 +17975,7 @@
                 mainRenderer = renderingAttributes.mainRenderer;
 
             if (accessors.data) {
-              accessors.data.color = gaugeConfig.valueColorAccessor || GaugeUtil_1.createDefaultColorAccessor(gaugeConfig.thresholds);
+              accessors.data.color = gaugeConfig.colorAccessor || GaugeUtil_1.createDefaultColorAccessor(gaugeConfig.thresholds);
             }
 
             var chartAssistSeries = _toConsumableArray(GaugeUtil_1.generateGaugeData(gaugeConfig).map(function (s) {
@@ -18008,7 +18008,7 @@
 
             gaugeConfig.value = (_a = gaugeConfig.value) !== null && _a !== void 0 ? _a : 0;
             gaugeConfig.max = (_b = gaugeConfig.max) !== null && _b !== void 0 ? _b : 0;
-            var colorAccessor = gaugeConfig.valueColorAccessor || GaugeUtil_1.createDefaultColorAccessor(gaugeConfig.thresholds);
+            var colorAccessor = gaugeConfig.colorAccessor || GaugeUtil_1.createDefaultColorAccessor(gaugeConfig.thresholds);
             var updatedSeriesSet = seriesSet.map(function (series) {
               if (series.accessors.data) {
                 series.accessors.data.color = colorAccessor;
