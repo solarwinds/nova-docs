@@ -145,7 +145,7 @@ let GaugeTestPageComponent = class GaugeTestPageComponent {
         this.flipLabels = false;
         // this.thresholds = new Array(200).fill(null).map((e, i) => i);
         // this.thresholds = [50, 75, 100, 125, 150, 175, 200];
-        this.reversedColorAccessor = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].createReversedColorAccessor(this.thresholds);
+        this.reversedColorAccessor = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].createReversedQuantityColorAccessor(this.thresholds);
         this.gaugeConfig = this.getGaugeConfig();
     }
     onReverseChange(reversed) {
@@ -161,7 +161,7 @@ let GaugeTestPageComponent = class GaugeTestPageComponent {
             value: this.value,
             max: this.maxValue,
             thresholds: this.thresholds,
-            colorAccessor: this.reversed ? this.reversedColorAccessor : undefined,
+            quantityColorAccessor: this.reversed ? this.reversedColorAccessor : undefined,
             enableThresholdMarkers: true,
         };
     }

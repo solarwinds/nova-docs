@@ -909,7 +909,8 @@
               throw new Error("Can't compute inner radius");
             }
 
-            return range[1] - range[0] - this.segmentWidth - index * (this.config.annularPadding + this.segmentWidth);
+            var calculatedRadius = range[1] - range[0] - this.segmentWidth - index * (this.config.annularPadding + this.segmentWidth);
+            return calculatedRadius >= 0 ? calculatedRadius : 0;
           }
         }, {
           key: "getOuterRadius",
@@ -918,13 +919,14 @@
               throw new Error("Can't compute outer radius");
             }
 
-            return range[1] - range[0] - index * (this.config.annularPadding + this.segmentWidth);
+            var calculatedRadius = range[1] - range[0] - index * (this.config.annularPadding + this.segmentWidth);
+            return calculatedRadius >= 0 ? calculatedRadius : 0;
           }
         }, {
           key: "getArc",
           value: function getArc(range, generatedArc, index) {
             var innerRadius = this.getInnerRadius(range, index);
-            return generatedArc.outerRadius(this.getOuterRadius(range, index)).innerRadius(innerRadius >= 0 ? innerRadius : 0);
+            return generatedArc.outerRadius(this.getOuterRadius(range, index)).innerRadius(innerRadius);
           }
         }, {
           key: "getSegmentWidth",
@@ -17970,17 +17972,24 @@
             gaugeConfig.value = (_a = gaugeConfig.value) !== null && _a !== void 0 ? _a : 0;
             gaugeConfig.max = (_b = gaugeConfig.max) !== null && _b !== void 0 ? _b : 0;
             var renderingAttributes = GaugeUtil_1.generateRenderingAttributes(mode);
-            var accessors = renderingAttributes.accessors,
+            var quantityAccessors = renderingAttributes.quantityAccessors,
+                remainderAccessors = renderingAttributes.remainderAccessors,
                 scales = renderingAttributes.scales,
                 mainRenderer = renderingAttributes.mainRenderer;
 
-            if (accessors.data) {
-              accessors.data.color = gaugeConfig.colorAccessor || GaugeUtil_1.createDefaultColorAccessor(gaugeConfig.thresholds);
+            if (quantityAccessors.data) {
+              quantityAccessors.data.color = gaugeConfig.quantityColorAccessor || GaugeUtil_1.createDefaultQuantityColorAccessor(gaugeConfig.thresholds);
+            }
+
+            if (remainderAccessors.data) {
+              remainderAccessors.data.color = gaugeConfig.remainderColorAccessor || function () {
+                return _constants__WEBPACK_IMPORTED_MODULE_15__["StandardGaugeColor"].Remainder;
+              };
             }
 
             var chartAssistSeries = _toConsumableArray(GaugeUtil_1.generateGaugeData(gaugeConfig).map(function (s) {
               return Object.assign(Object.assign({}, s), {
-                accessors: accessors,
+                accessors: s.id === _constants__WEBPACK_IMPORTED_MODULE_15__["GAUGE_QUANTITY_SERIES_ID"] ? quantityAccessors : remainderAccessors,
                 scales: scales,
                 renderer: mainRenderer
               });
@@ -18008,13 +18017,12 @@
 
             gaugeConfig.value = (_a = gaugeConfig.value) !== null && _a !== void 0 ? _a : 0;
             gaugeConfig.max = (_b = gaugeConfig.max) !== null && _b !== void 0 ? _b : 0;
-            var colorAccessor = gaugeConfig.colorAccessor || GaugeUtil_1.createDefaultColorAccessor(gaugeConfig.thresholds);
             var updatedSeriesSet = seriesSet.map(function (series) {
-              if (series.accessors.data) {
-                series.accessors.data.color = colorAccessor;
-              }
-
               if (series.id === _constants__WEBPACK_IMPORTED_MODULE_15__["GAUGE_QUANTITY_SERIES_ID"]) {
+                if (series.accessors.data) {
+                  series.accessors.data.color = gaugeConfig.quantityColorAccessor || GaugeUtil_1.createDefaultQuantityColorAccessor(gaugeConfig.thresholds);
+                }
+
                 return Object.assign(Object.assign({}, series), {
                   data: [{
                     category: GaugeUtil_1.DATA_CATEGORY,
@@ -18024,6 +18032,12 @@
               }
 
               if (series.id === _constants__WEBPACK_IMPORTED_MODULE_15__["GAUGE_REMAINDER_SERIES_ID"]) {
+                if (series.accessors.data) {
+                  series.accessors.data.color = gaugeConfig.remainderColorAccessor || function () {
+                    return _constants__WEBPACK_IMPORTED_MODULE_15__["StandardGaugeColor"].Remainder;
+                  };
+                }
+
                 return Object.assign(Object.assign({}, series), {
                   data: [{
                     category: GaugeUtil_1.DATA_CATEGORY,
@@ -18053,7 +18067,7 @@
           key: "generateThresholdSeries",
           value: function generateThresholdSeries(gaugeConfig, gaugeAttributes) {
             return Object.assign(Object.assign({}, GaugeUtil_1.generateThresholdData(gaugeConfig)), {
-              accessors: gaugeAttributes.accessors,
+              accessors: gaugeAttributes.quantityAccessors,
               scales: gaugeAttributes.scales,
               renderer: gaugeAttributes.thresholdsRenderer,
               excludeFromArcCalculation: true,
@@ -18103,7 +18117,8 @@
           value: function generateRenderingAttributes(mode) {
             var renderingTools = GaugeUtil_1.generateRenderingTools(mode);
             var result = {
-              accessors: renderingTools.accessorFunction(),
+              quantityAccessors: renderingTools.quantityAccessorFunction(),
+              remainderAccessors: renderingTools.remainderAccessorFunction(),
               mainRenderer: renderingTools.mainRendererFunction(),
               thresholdsRenderer: renderingTools.thresholdsRendererFunction(),
               scales: renderingTools.scaleFunction()
@@ -18130,7 +18145,10 @@
               thresholdsRendererFunction: function thresholdsRendererFunction() {
                 return new _renderers_radial_gauge_donut_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_12__["DonutGaugeThresholdsRenderer"]();
               },
-              accessorFunction: function accessorFunction() {
+              quantityAccessorFunction: function quantityAccessorFunction() {
+                return new _renderers_radial_accessors_radial_accessors__WEBPACK_IMPORTED_MODULE_10__["RadialAccessors"]();
+              },
+              remainderAccessorFunction: function remainderAccessorFunction() {
                 return new _renderers_radial_accessors_radial_accessors__WEBPACK_IMPORTED_MODULE_10__["RadialAccessors"]();
               },
               scaleFunction: function scaleFunction() {
@@ -18143,7 +18161,10 @@
               thresholdsRendererFunction: function thresholdsRendererFunction() {
                 return new _renderers_bar_linear_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_9__["LinearGaugeThresholdsRenderer"]();
               },
-              accessorFunction: function accessorFunction() {
+              quantityAccessorFunction: function quantityAccessorFunction() {
+                return new _renderers_bar_accessors_horizontal_bar_accessors__WEBPACK_IMPORTED_MODULE_5__["HorizontalBarAccessors"]();
+              },
+              remainderAccessorFunction: function remainderAccessorFunction() {
                 return new _renderers_bar_accessors_horizontal_bar_accessors__WEBPACK_IMPORTED_MODULE_5__["HorizontalBarAccessors"]();
               },
               scaleFunction: function scaleFunction() {
@@ -18158,7 +18179,10 @@
               thresholdsRendererFunction: function thresholdsRendererFunction() {
                 return new _renderers_bar_linear_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_9__["LinearGaugeThresholdsRenderer"]();
               },
-              accessorFunction: function accessorFunction() {
+              quantityAccessorFunction: function quantityAccessorFunction() {
+                return new _renderers_bar_accessors_vertical_bar_accessors__WEBPACK_IMPORTED_MODULE_6__["VerticalBarAccessors"]();
+              },
+              remainderAccessorFunction: function remainderAccessorFunction() {
                 return new _renderers_bar_accessors_vertical_bar_accessors__WEBPACK_IMPORTED_MODULE_6__["VerticalBarAccessors"]();
               },
               scaleFunction: function scaleFunction() {
@@ -18168,9 +18192,8 @@
             return renderingTools[mode];
           }
           /**
-           * Convenience function for creating a standard gauge color accessor in which low values are considered good
-           * and high values are considered bad. It provides colors for the remainder series and the quantity series.
-           * For the quantity series, it returns standard colors for Ok, Warning, and Critical statuses.
+           * Convenience function for creating a standard gauge quantity color accessor in which low values are considered good
+           * and high values are considered bad. It provides standard colors for Ok, Warning, and Critical statuses.
            *
            * @param thresholds An array of threshold values
            *
@@ -18178,60 +18201,49 @@
            */
 
         }, {
-          key: "createDefaultColorAccessor",
-          value: function createDefaultColorAccessor(thresholds) {
+          key: "createDefaultQuantityColorAccessor",
+          value: function createDefaultQuantityColorAccessor(thresholds) {
             // assigning to variable to prevent "Lambda not supported" error
-            var valueColorAccessor = function valueColorAccessor(data, i, series, dataSeries) {
-              if (dataSeries.id === _constants__WEBPACK_IMPORTED_MODULE_15__["GAUGE_REMAINDER_SERIES_ID"]) {
-                return _constants__WEBPACK_IMPORTED_MODULE_15__["StandardGaugeColor"].Remainder;
-              } else {
-                // quantity series
-                if (!lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default()(thresholds[1]) && thresholds[1] <= data.value) {
-                  return _constants__WEBPACK_IMPORTED_MODULE_15__["StandardGaugeColor"].Critical;
-                }
-
-                if (!lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default()(thresholds[0]) && thresholds[0] <= data.value) {
-                  return _constants__WEBPACK_IMPORTED_MODULE_15__["StandardGaugeColor"].Warning;
-                }
-
-                return _constants__WEBPACK_IMPORTED_MODULE_15__["StandardGaugeColor"].Ok;
-              }
-            };
-
-            return valueColorAccessor;
-          }
-          /**
-           * Convenience function for creating the reverse of the standard gauge color accessor in which low values are considered
-           * bad and high values are considered good. It provides colors for the remainder series and the quantity series.
-           * For the quantity series, it returns standard colors for Ok, Warning, and Critical statuses.
-           *
-           * @param thresholds An array of threshold values
-           *
-           * @returns {DataAccessor} An accessor for determining the color to use based on the series id and/or data value
-           */
-
-        }, {
-          key: "createReversedColorAccessor",
-          value: function createReversedColorAccessor(thresholds) {
-            // assigning to variable to prevent "Lambda not supported" error
-            var valueColorAccessor = function valueColorAccessor(data, i, series, dataSeries) {
-              if (dataSeries.id === _constants__WEBPACK_IMPORTED_MODULE_15__["GAUGE_REMAINDER_SERIES_ID"]) {
-                return _constants__WEBPACK_IMPORTED_MODULE_15__["StandardGaugeColor"].Remainder;
-              } else {
-                // quantity series
-                if (!lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default()(thresholds[1]) && thresholds[1] <= data.value) {
-                  return _constants__WEBPACK_IMPORTED_MODULE_15__["StandardGaugeColor"].Ok;
-                }
-
-                if (!lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default()(thresholds[0]) && thresholds[0] <= data.value) {
-                  return _constants__WEBPACK_IMPORTED_MODULE_15__["StandardGaugeColor"].Warning;
-                }
-
+            var colorAccessor = function colorAccessor(data, i, series, dataSeries) {
+              if (!lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default()(thresholds[1]) && thresholds[1] <= data.value) {
                 return _constants__WEBPACK_IMPORTED_MODULE_15__["StandardGaugeColor"].Critical;
               }
+
+              if (!lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default()(thresholds[0]) && thresholds[0] <= data.value) {
+                return _constants__WEBPACK_IMPORTED_MODULE_15__["StandardGaugeColor"].Warning;
+              }
+
+              return _constants__WEBPACK_IMPORTED_MODULE_15__["StandardGaugeColor"].Ok;
             };
 
-            return valueColorAccessor;
+            return colorAccessor;
+          }
+          /**
+           * Convenience function for creating the reverse of the standard gauge quantity color accessor in which low values are considered
+           * bad and high values are considered good. It provides standard colors for Ok, Warning, and Critical statuses.
+           *
+           * @param thresholds An array of threshold values
+           *
+           * @returns {DataAccessor} An accessor for determining the color to use based on the series id and/or data value
+           */
+
+        }, {
+          key: "createReversedQuantityColorAccessor",
+          value: function createReversedQuantityColorAccessor(thresholds) {
+            // assigning to variable to prevent "Lambda not supported" error
+            var colorAccessor = function colorAccessor(data, i, series, dataSeries) {
+              if (!lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default()(thresholds[1]) && thresholds[1] <= data.value) {
+                return _constants__WEBPACK_IMPORTED_MODULE_15__["StandardGaugeColor"].Ok;
+              }
+
+              if (!lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default()(thresholds[0]) && thresholds[0] <= data.value) {
+                return _constants__WEBPACK_IMPORTED_MODULE_15__["StandardGaugeColor"].Warning;
+              }
+
+              return _constants__WEBPACK_IMPORTED_MODULE_15__["StandardGaugeColor"].Critical;
+            };
+
+            return colorAccessor;
           }
           /**
            * Generates data in the form needed by the gauge visualization
@@ -21034,7 +21046,8 @@
               throw new Error("Can't compute inner radius");
             }
 
-            return range[1] - range[0] - this.segmentWidth;
+            var calculatedRadius = range[1] - range[0] - this.segmentWidth;
+            return calculatedRadius >= 0 ? calculatedRadius : 0;
           }
         }]);
 
