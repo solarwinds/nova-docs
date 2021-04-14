@@ -10319,7 +10319,7 @@
         ngContentSelectors: _c0,
         decls: 10,
         vars: 7,
-        consts: [[1, "nui-switch"], [1, "nui-switch__container"], ["role", "presentation", 1, "nui-switch__bar", 3, "tabindex", "click", "keyup.enter", "keyup.space"], [1, "nui-switch__on"], ["aria-hidden", "true", "viewBox", "0 0 7.1 6.7", 1, "nui-switch__svg"], ["points", "0.6,2.9 3.2,4.8 7.2,1.0 ", 1, "nui-switch__icon-on"], [1, "nui-switch__thumb"], [1, "nui-switch__label"]],
+        consts: [[1, "nui-switch"], [1, "nui-switch__container"], [1, "nui-switch__bar", 3, "tabindex", "click", "keyup.enter", "keyup.space"], [1, "nui-switch__on"], ["aria-hidden", "true", "viewBox", "0 0 7.1 6.7", 1, "nui-switch__svg"], ["points", "0.6,2.9 3.2,4.8 7.2,1.0 ", 1, "nui-switch__icon-on"], [1, "nui-switch__thumb"], [1, "nui-switch__label"]],
         template: function SwitchComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"]();
