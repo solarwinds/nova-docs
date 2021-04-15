@@ -25764,6 +25764,21 @@
 
             (_b = (_a = this.overlayComponent) === null || _a === void 0 ? void 0 : _a.getOverlayRef()) === null || _b === void 0 ? void 0 : _b.updatePosition();
           }
+          /**
+           * Resets the size of the popover.
+           */
+
+        }, {
+          key: "resetSize",
+          value: function resetSize() {
+            var _a, _b; // This is set to undefined so that angular cdk will set the height and width automatically
+
+
+            (_b = (_a = this.overlayComponent) === null || _a === void 0 ? void 0 : _a.getOverlayRef()) === null || _b === void 0 ? void 0 : _b.updateSize({
+              height: undefined,
+              width: undefined
+            });
+          }
         }, {
           key: "onTrigger",
           value: function onTrigger(triggerType) {
@@ -25955,7 +25970,7 @@
           value: function setPositionStrategy(position) {
             var _this78 = this;
 
-            var positionStrategy = this.overlay.position().flexibleConnectedTo(this.host.nativeElement).withPush(false).withViewportMargin(0).withPositions(this.getPopoverConnectedPosition(position));
+            var positionStrategy = this.overlay.position().flexibleConnectedTo(this.host.nativeElement).withPush(false).withViewportMargin(0).withGrowAfterOpen(true).withPositions(this.getPopoverConnectedPosition(position));
             var subscription = positionStrategy.positionChanges.subscribe(function (connectedPosition) {
               var overlayRefElement = _this78.overlayComponent.getOverlayRef().overlayElement;
 

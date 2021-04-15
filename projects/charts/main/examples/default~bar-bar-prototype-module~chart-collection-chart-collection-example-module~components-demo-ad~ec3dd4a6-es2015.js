@@ -12855,13 +12855,14 @@ let ChartPopoverComponent = class ChartPopoverComponent {
             this.changeDetector.markForCheck();
         });
         (_b = this.plugin) === null || _b === void 0 ? void 0 : _b.updatePositionSubject.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["takeUntil"])(this.initPlugin$), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["takeUntil"])(this.destroy$)).subscribe((position) => {
-            var _a, _b;
+            var _a, _b, _c;
+            (_a = this.popover) === null || _a === void 0 ? void 0 : _a.resetSize();
             // calculating a width offset to position the popover's host element at the midpoint of the popover target
             const widthOffset = position.width / 2;
             this.element.nativeElement.style.left = position.left + widthOffset + "px";
             this.element.nativeElement.style.top = position.top + "px";
-            (_a = this.popover) === null || _a === void 0 ? void 0 : _a.updatePosition();
-            this.update.next((_b = this.plugin) === null || _b === void 0 ? void 0 : _b.dataPoints);
+            (_b = this.popover) === null || _b === void 0 ? void 0 : _b.updatePosition();
+            this.update.next((_c = this.plugin) === null || _c === void 0 ? void 0 : _c.dataPoints);
         });
     }
 };

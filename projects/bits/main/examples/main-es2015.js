@@ -14209,6 +14209,17 @@ class PopoverComponent {
         var _a, _b;
         (_b = (_a = this.overlayComponent) === null || _a === void 0 ? void 0 : _a.getOverlayRef()) === null || _b === void 0 ? void 0 : _b.updatePosition();
     }
+    /**
+     * Resets the size of the popover.
+     */
+    resetSize() {
+        var _a, _b;
+        // This is set to undefined so that angular cdk will set the height and width automatically
+        (_b = (_a = this.overlayComponent) === null || _a === void 0 ? void 0 : _a.getOverlayRef()) === null || _b === void 0 ? void 0 : _b.updateSize({
+            height: undefined,
+            width: undefined,
+        });
+    }
     onTrigger(triggerType) {
         if (this.isTriggerPresent(triggerType)) {
             if (this.delay > 0 && triggerType === "mouseenter" && this.isTriggerPresent("mouseenter")) {
@@ -14352,6 +14363,7 @@ class PopoverComponent {
             .flexibleConnectedTo(this.host.nativeElement)
             .withPush(false)
             .withViewportMargin(0)
+            .withGrowAfterOpen(true)
             .withPositions(this.getPopoverConnectedPosition(position));
         const subscription = positionStrategy.positionChanges
             .subscribe((connectedPosition) => {

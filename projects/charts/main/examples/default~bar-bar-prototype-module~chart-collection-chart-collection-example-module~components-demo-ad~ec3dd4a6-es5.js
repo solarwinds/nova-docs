@@ -20338,15 +20338,16 @@
               _this45.changeDetector.markForCheck();
             });
             (_b = this.plugin) === null || _b === void 0 ? void 0 : _b.updatePositionSubject.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["takeUntil"])(this.initPlugin$), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["takeUntil"])(this.destroy$)).subscribe(function (position) {
-              var _a, _b; // calculating a width offset to position the popover's host element at the midpoint of the popover target
+              var _a, _b, _c;
 
+              (_a = _this45.popover) === null || _a === void 0 ? void 0 : _a.resetSize(); // calculating a width offset to position the popover's host element at the midpoint of the popover target
 
               var widthOffset = position.width / 2;
               _this45.element.nativeElement.style.left = position.left + widthOffset + "px";
               _this45.element.nativeElement.style.top = position.top + "px";
-              (_a = _this45.popover) === null || _a === void 0 ? void 0 : _a.updatePosition();
+              (_b = _this45.popover) === null || _b === void 0 ? void 0 : _b.updatePosition();
 
-              _this45.update.next((_b = _this45.plugin) === null || _b === void 0 ? void 0 : _b.dataPoints);
+              _this45.update.next((_c = _this45.plugin) === null || _c === void 0 ? void 0 : _c.dataPoints);
             });
           }
         }]);
