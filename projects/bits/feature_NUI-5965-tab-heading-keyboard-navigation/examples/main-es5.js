@@ -28969,9 +28969,9 @@
         }, {
           key: "onKeyDown",
           value: function onKeyDown(event) {
-            var key = event.key;
+            var code = event.code;
 
-            if (key === "Enter" || key === "Space") {
+            if (code === "Enter" || code === "Space") {
               if (document.activeElement === this.tabEl.nativeElement) {
                 this.selectTab();
               }

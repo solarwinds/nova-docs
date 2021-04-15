@@ -15910,8 +15910,8 @@ class TabHeadingComponent {
         this.changeDetector.detectChanges();
     }
     onKeyDown(event) {
-        const { key } = event;
-        if (key === "Enter" || key === "Space") {
+        const { code } = event;
+        if (code === "Enter" || code === "Space") {
             if (document.activeElement === this.tabEl.nativeElement) {
                 this.selectTab();
             }
