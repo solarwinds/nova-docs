@@ -224,8 +224,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="118"
-                            class="link-to-prism">src/renderers/bar/highlight-strategies/bar-highlight-strategy.ts:118</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="115"
+                            class="link-to-prism">src/renderers/bar/highlight-strategies/bar-highlight-strategy.ts:115</a></div>
                 </td>
             </tr>
 
@@ -535,8 +535,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="90"
-                            class="link-to-prism">src/renderers/bar/highlight-strategies/bar-highlight-strategy.ts:90</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="87"
+                            class="link-to-prism">src/renderers/bar/highlight-strategies/bar-highlight-strategy.ts:87</a></div>
                 </td>
             </tr>
 
@@ -695,13 +695,10 @@ export class BarHighlightStrategy implements IHighlightStrategy&lt;IRectangleAcc
                     (d, i) &#x3D;&gt; valueOf &gt;&#x3D; startAccessor?.(d, i, series.data, series).valueOf() &amp;&amp;
                         valueOf &lt;&#x3D; endAccessor?.(d, i, series.data, series).valueOf());
                 if (index &#x3D;&#x3D;&#x3D; -1 &amp;&amp; typeof endAccessor !&#x3D;&#x3D; &quot;undefined&quot;) {
-
                     if (isBandScale(scales[scaleKey])) {
                         const accessor &#x3D; (d: any, i: any) &#x3D;&gt; startAccessor?.(d, i, series.data, series);
                         const nearestIndex &#x3D; UtilityService.findNearestIndex(series.data, value, accessor);
-
                         index &#x3D; (nearestIndex &gt;&#x3D; series.data.length || accessor(series.data[nearestIndex], nearestIndex) &gt; valueOf) ? -1 : nearestIndex;
-
                     } else {
                         // @ts-ignore
                         // Needs to catch -1 otherwise typescript errors
