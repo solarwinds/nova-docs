@@ -161,8 +161,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="200"
-                            class="link-to-prism">src/core/common/types.ts:200</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="202"
+                            class="link-to-prism">src/core/common/types.ts:202</a></div>
                 </td>
             </tr>
 
@@ -231,8 +231,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="202"
-                            class="link-to-prism">src/core/common/types.ts:202</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="204"
+                            class="link-to-prism">src/core/common/types.ts:204</a></div>
                 </td>
             </tr>
 
@@ -301,8 +301,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="206"
-                            class="link-to-prism">src/core/common/types.ts:206</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="208"
+                            class="link-to-prism">src/core/common/types.ts:208</a></div>
                 </td>
             </tr>
 
@@ -340,8 +340,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="197"
-                            class="link-to-prism">src/core/common/types.ts:197</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="199"
+                            class="link-to-prism">src/core/common/types.ts:199</a></div>
                 </td>
             </tr>
 
@@ -379,8 +379,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="196"
-                            class="link-to-prism">src/core/common/types.ts:196</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="198"
+                            class="link-to-prism">src/core/common/types.ts:198</a></div>
                 </td>
             </tr>
 
@@ -418,8 +418,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="199"
-                            class="link-to-prism">src/core/common/types.ts:199</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="201"
+                            class="link-to-prism">src/core/common/types.ts:201</a></div>
                 </td>
             </tr>
 
@@ -457,8 +457,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="198"
-                            class="link-to-prism">src/core/common/types.ts:198</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="200"
+                            class="link-to-prism">src/core/common/types.ts:200</a></div>
                 </td>
             </tr>
 
@@ -497,8 +497,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="201"
-                            class="link-to-prism">src/core/common/types.ts:201</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="203"
+                            class="link-to-prism">src/core/common/types.ts:203</a></div>
                 </td>
             </tr>
 
@@ -563,8 +563,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="205"
-                            class="link-to-prism">src/core/common/types.ts:205</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="207"
+                            class="link-to-prism">src/core/common/types.ts:207</a></div>
                 </td>
             </tr>
 
@@ -633,8 +633,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="203"
-                            class="link-to-prism">src/core/common/types.ts:203</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="205"
+                            class="link-to-prism">src/core/common/types.ts:205</a></div>
                 </td>
             </tr>
 
@@ -703,8 +703,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="204"
-                            class="link-to-prism">src/core/common/types.ts:204</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="206"
+                            class="link-to-prism">src/core/common/types.ts:206</a></div>
                 </td>
             </tr>
 
@@ -766,6 +766,7 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ScaleLinear } from &quot;d3-scale&quot;;
 import { Selection } from &quot;d3-selection&quot;;
 import { ValueMap } from &quot;d3-selection-multi&quot;;
+import { StandardGaugeThresholdMarkerRadius } from &quot;../../gauge/constants&quot;;
 
 import { RenderState } from &quot;../../renderers/types&quot;;
 import { IGrid } from &quot;../grid/types&quot;;
@@ -877,16 +878,17 @@ export interface IRadialRendererConfig extends IRendererConfig {
  * @ignore
  * Configuration for the DonutGaugeThresholdsRenderer
  */
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface IDonutGaugeThresholdsRendererConfig extends IRadialRendererConfig {
+    markerRadius?: StandardGaugeThresholdMarkerRadius | number;
 }
 
 /**
  * @ignore
  * Configuration for the LinearGaugeThresholdsRenderer
  */
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface ILinearGaugeThresholdsRendererConfig extends IRendererConfig {
+    /** The radius of each threshold marker */
+    markerRadius?: StandardGaugeThresholdMarkerRadius | number;
 }
 
 export interface ILinearScales {

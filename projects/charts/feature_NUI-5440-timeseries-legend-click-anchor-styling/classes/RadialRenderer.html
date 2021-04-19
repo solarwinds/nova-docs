@@ -611,8 +611,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="133"
-                            class="link-to-prism">src/renderers/radial/radial-renderer.ts:133</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="95"
+                            class="link-to-prism">src/renderers/radial/radial-renderer.ts:95</a></div>
                 </td>
             </tr>
 
@@ -709,8 +709,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="149"
-                            class="link-to-prism">src/renderers/radial/radial-renderer.ts:149</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="111"
+                            class="link-to-prism">src/renderers/radial/radial-renderer.ts:111</a></div>
                 </td>
             </tr>
 
@@ -793,8 +793,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="156"
-                            class="link-to-prism">src/renderers/radial/radial-renderer.ts:156</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="118"
+                            class="link-to-prism">src/renderers/radial/radial-renderer.ts:118</a></div>
                 </td>
             </tr>
 
@@ -1984,12 +1984,7 @@ export class RadialRenderer extends Renderer&lt;IRadialAccessors&gt; {
             const separateArc &#x3D; this.getArc(renderSeries.scales.r.range(), arc(), index);
             return separateArc(d);
         };
-        if (!(this.config.maxThickness &amp;&amp; this.config.annularGrowth)) {
-            this.segmentWidth &#x3D; this.config.annularWidth;
-        } else {
-            this.segmentWidth &#x3D;
-                Math.min((renderSeries.scales.r.range()[1] - renderSeries.scales.r.range()[0]) * this.config.annularGrowth, this.config.maxThickness);
-        }
+        this.segmentWidth &#x3D; this.getSegmentWidth(renderSeries);
 
         const g: any &#x3D; dataContainer.selectAll(&quot;path.arc&quot;)
             .data(data);
@@ -2023,39 +2018,6 @@ export class RadialRenderer extends Renderer&lt;IRadialAccessors&gt; {
             .attr(&quot;fill&quot;, (d: any, i: number) &#x3D;&gt; accessors.data.color ?
                 accessors.data.color(d.data, i, data, renderSeries.dataSeries) :
                 accessors.series.color?.(renderSeries.dataSeries.id, renderSeries.dataSeries));
-    }
-
-    private emitDataPointHighlight(renderSeries: IRenderSeries&lt;IRadialAccessors&gt;, data: any, i: number,
-                                   rendererSubject: Subject&lt;IRendererEventPayload&gt;) {
-
-        const position: IPosition | undefined &#x3D; this.getDataPointPosition(renderSeries.dataSeries, i, renderSeries.scales);
-
-        const dataPoint: IDataPoint &#x3D; {
-            seriesId: renderSeries.dataSeries.id,
-            dataSeries: renderSeries.dataSeries,
-            index: i,
-            data: data,
-            position: position,
-        };
-
-        if (this.config.enableSeriesHighlighting) {
-            rendererSubject.next({ eventName: HIGHLIGHT_SERIES_EVENT, data: dataPoint });
-        }
-
-        if (this.config.enableDataPointHighlighting) {
-            rendererSubject.next({ eventName: HIGHLIGHT_DATA_POINT_EVENT, data: dataPoint });
-        }
-
-        // we&#x27;re emitting this event manually, because it&#x27;s not triggered by mouse interactive area in this case
-        rendererSubject.next({
-            eventName: INTERACTION_DATA_POINTS_EVENT,
-            data: {
-                interactionType: InteractionType.MouseMove,
-                dataPoints: {
-                    [renderSeries.dataSeries.id]: dataPoint,
-                },
-            },
-        });
     }
 
     /** See {@link Renderer#getDataPointPosition} */
@@ -2095,6 +2057,46 @@ export class RadialRenderer extends Renderer&lt;IRadialAccessors&gt; {
             .innerRadius(innerRadius &gt;&#x3D; 0 ? innerRadius : 0);
     }
 
+    protected getSegmentWidth(renderSeries: IRenderSeries&lt;IRadialAccessors&gt;) {
+        if (!(this.config.maxThickness &amp;&amp; this.config.annularGrowth)) {
+            return this.config.annularWidth;
+        } else {
+            return Math.min((renderSeries.scales.r.range()[1] - renderSeries.scales.r.range()[0]) * this.config.annularGrowth, this.config.maxThickness);
+        }
+    }
+
+    private emitDataPointHighlight(renderSeries: IRenderSeries&lt;IRadialAccessors&gt;, data: any, i: number,
+        rendererSubject: Subject&lt;IRendererEventPayload&gt;) {
+
+        const position: IPosition | undefined &#x3D; this.getDataPointPosition(renderSeries.dataSeries, i, renderSeries.scales);
+
+        const dataPoint: IDataPoint &#x3D; {
+            seriesId: renderSeries.dataSeries.id,
+            dataSeries: renderSeries.dataSeries,
+            index: i,
+            data: data,
+            position: position,
+        };
+
+        if (this.config.enableSeriesHighlighting) {
+            rendererSubject.next({ eventName: HIGHLIGHT_SERIES_EVENT, data: dataPoint });
+        }
+
+        if (this.config.enableDataPointHighlighting) {
+            rendererSubject.next({ eventName: HIGHLIGHT_DATA_POINT_EVENT, data: dataPoint });
+        }
+
+        // we&#x27;re emitting this event manually, because it&#x27;s not triggered by mouse interactive area in this case
+        rendererSubject.next({
+            eventName: INTERACTION_DATA_POINTS_EVENT,
+            data: {
+                interactionType: InteractionType.MouseMove,
+                dataPoints: {
+                    [renderSeries.dataSeries.id]: dataPoint,
+                },
+            },
+        });
+    }
 }
 </code></pre>
     </div>
