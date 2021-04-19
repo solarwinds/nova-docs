@@ -793,8 +793,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="118"
-                            class="link-to-prism">src/renderers/radial/radial-renderer.ts:118</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="120"
+                            class="link-to-prism">src/renderers/radial/radial-renderer.ts:120</a></div>
                 </td>
             </tr>
 
@@ -2041,20 +2041,24 @@ export class RadialRenderer extends Renderer&lt;IRadialAccessors&gt; {
         if (isUndefined(this.segmentWidth) || isUndefined(this.config.annularPadding)) {
             throw new Error(&quot;Can&#x27;t compute inner radius&quot;);
         }
-        return (range[1] - range[0] - this.segmentWidth) - index * (this.config.annularPadding + this.segmentWidth);
+
+        const calculatedRadius &#x3D; (range[1] - range[0] - this.segmentWidth) - index * (this.config.annularPadding + this.segmentWidth)
+        return calculatedRadius &gt;&#x3D; 0 ? calculatedRadius : 0;
     }
 
     public getOuterRadius(range: [number, number], index: number): number {
         if (isUndefined(this.segmentWidth) || isUndefined(this.config.annularPadding)) {
             throw new Error(&quot;Can&#x27;t compute outer radius&quot;);
         }
-        return (range[1] - range[0]) - index * (this.config.annularPadding + this.segmentWidth);
+
+        const calculatedRadius &#x3D; (range[1] - range[0]) - index * (this.config.annularPadding + this.segmentWidth)
+        return calculatedRadius &gt;&#x3D; 0 ? calculatedRadius : 0;
     }
 
     protected getArc(range: [number, number], generatedArc: Arc&lt;any, DefaultArcObject&gt;, index: number): Arc&lt;any, DefaultArcObject&gt; {
         const innerRadius &#x3D; this.getInnerRadius(range, index);
         return generatedArc.outerRadius(this.getOuterRadius(range, index))
-            .innerRadius(innerRadius &gt;&#x3D; 0 ? innerRadius : 0);
+            .innerRadius(innerRadius);
     }
 
     protected getSegmentWidth(renderSeries: IRenderSeries&lt;IRadialAccessors&gt;) {

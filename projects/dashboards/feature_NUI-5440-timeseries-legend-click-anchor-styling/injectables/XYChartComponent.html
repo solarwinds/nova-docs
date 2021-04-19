@@ -114,7 +114,7 @@
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#interactionOrLink">interactionOrLink</a>
+                                <a href="#isSeriesInteractive">isSeriesInteractive</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
@@ -281,20 +281,20 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="interactionOrLink"></a>
+                    <a name="isSeriesInteractive"></a>
                     <span class="name">
                         <b>
                             <span class="modifier">Public</span>
-                            interactionOrLink
+                            isSeriesInteractive
                         </b>
-                        <a href="#interactionOrLink"><span class="icon ion-ios-link"></span></a>
+                        <a href="#isSeriesInteractive"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>interactionOrLink(legendSeries: IChartAssistSeries<IAccessors>)</code>
+                    <code>isSeriesInteractive(legendSeries: IChartAssistSeries<IAccessors>)</code>
                 </td>
             </tr>
 
@@ -836,7 +836,7 @@ export abstract class XYChartComponent extends TimeseriesChartComponent
     }
 
     /** Checks if the series is interactive or if the dataSource has a link property */
-    public interactionOrLink(legendSeries: IChartAssistSeries&lt;IAccessors&gt;): boolean {
+    public isSeriesInteractive(legendSeries: IChartAssistSeries&lt;IAccessors&gt;): boolean {
         const link: boolean &#x3D; !(legendSeries?.link &#x3D;&#x3D;&#x3D; undefined) || !(this.seriesInteractive &#x3D;&#x3D;&#x3D; undefined);
         return link;
 
