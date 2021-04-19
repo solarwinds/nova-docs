@@ -603,8 +603,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="163"
-                            class="link-to-prism">src/core/chart.ts:163</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="166"
+                            class="link-to-prism">src/core/chart.ts:166</a></div>
                 </td>
             </tr>
 
@@ -876,8 +876,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="157"
-                            class="link-to-prism">src/core/chart.ts:157</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="160"
+                            class="link-to-prism">src/core/chart.ts:160</a></div>
                 </td>
             </tr>
 
@@ -1057,8 +1057,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="173"
-                            class="link-to-prism">src/core/chart.ts:173</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="176"
+                            class="link-to-prism">src/core/chart.ts:176</a></div>
                 </td>
             </tr>
 
@@ -1129,8 +1129,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="149"
-                            class="link-to-prism">src/core/chart.ts:149</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="152"
+                            class="link-to-prism">src/core/chart.ts:152</a></div>
                 </td>
             </tr>
 
@@ -1201,8 +1201,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="153"
-                            class="link-to-prism">src/core/chart.ts:153</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="156"
+                            class="link-to-prism">src/core/chart.ts:156</a></div>
                 </td>
             </tr>
 
@@ -1331,7 +1331,10 @@ export class Chart implements IChart {
         this.dataManager &#x3D; this.buildDataManager();
         this.renderEngine &#x3D; this.buildRenderEngine(this.grid.getLasagna(), this.dataManager);
 
-        this.addPlugin(new RenderEnginePlugin());
+        // Put the render engine at the front of the list since other plugins may be relying on renderers to be updated first
+        const renderEnginPlugin &#x3D; new RenderEnginePlugin();
+        renderEnginPlugin.chart &#x3D; this;
+        this.plugins.unshift(renderEnginPlugin);
 
         for (const gridPlugin of this.getGrid().buildPlugins(this)) {
             this.addPlugin(gridPlugin);

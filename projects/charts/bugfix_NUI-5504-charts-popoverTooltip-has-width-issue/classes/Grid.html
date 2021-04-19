@@ -1471,16 +1471,22 @@ export abstract class Grid implements IGrid {
      */
     protected adjustRenderingArea &#x3D; () &#x3D;&gt; {
         const d &#x3D; this.config().dimension;
+        const disableHeightCorrection &#x3D; this.config().disableRenderAreaHeightCorrection;
+        const disableWidthCorrection &#x3D; this.config().disableRenderAreaWidthCorrection;
+
         const renderingAreaClipPathAttrs &#x3D; {
             &quot;width&quot;: d.width(),
-            &quot;height&quot;: d.height() + Grid.RENDER_AREA_HEIGHT_CORRECTION,
-            &quot;y&quot;: -Grid.RENDER_AREA_HEIGHT_CORRECTION,
-        };
+            &quot;height&quot;: d.height() + (disableHeightCorrection ? 0 : Grid.RENDER_AREA_HEIGHT_CORRECTION),
+        } as any;
+
+        if (!disableHeightCorrection) {
+            renderingAreaClipPathAttrs[&quot;y&quot;] &#x3D; -Grid.RENDER_AREA_HEIGHT_CORRECTION;
+        }
 
         const renderingAreaAttrs &#x3D; {
             ...renderingAreaClipPathAttrs,
             // Width correction needed to prevent interaction gap between right side of grid and the edge of the rendering area
-            &quot;width&quot;: d.width() &gt; 0 ? d.width() - Grid.RENDER_AREA_WIDTH_CORRECTION : d.width(),
+            &quot;width&quot;: d.width() &gt; 0 ? d.width() - (disableWidthCorrection ? 0 : Grid.RENDER_AREA_WIDTH_CORRECTION) : d.width(),
         };
 
         this.renderingAreaClipPath.attrs(renderingAreaClipPathAttrs);
