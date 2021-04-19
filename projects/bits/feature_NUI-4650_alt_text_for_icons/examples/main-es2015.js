@@ -15739,10 +15739,6 @@ class ImageComponent {
         this.domSanitizer = domSanitizer;
         this.el = el;
         /**
-         * Sets alt for image from external source
-         */
-        this.imageAlt = "";
-        /**
          * Sets the width of the container parent image
          */
         this.width = "auto";
@@ -15762,7 +15758,7 @@ class ImageComponent {
     }
     ngOnChanges(changes) {
         var _a;
-        if (changes.image || changes.imageAlt) {
+        if (changes.image || changes.description) {
             this.imageName = this.image.name || ((_a = this.getImage(this.image)) === null || _a === void 0 ? void 0 : _a.name) || null;
             this.imageTemplate = this.getImageTemplate();
         }
@@ -15797,9 +15793,11 @@ class ImageComponent {
         let imageHtml = "";
         if (lodash_has__WEBPACK_IMPORTED_MODULE_3___default()(image, "code") && lodash_isString__WEBPACK_IMPORTED_MODULE_7___default()(image.code)) {
             imageHtml = image.code;
+            this.hasAlt = false;
         }
         else {
-            imageHtml = `<img src="${this.image}" alt="${this.imageAlt}">`;
+            imageHtml = `<img src="${this.image}" alt="${this.description}">`;
+            this.hasAlt = true;
         }
         return this.domSanitizer.bypassSecurityTrustHtml(imageHtml);
     }
@@ -15809,8 +15807,8 @@ class ImageComponent {
 }
 ImageComponent.ɵfac = function ImageComponent_Factory(t) { return new (t || ImageComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_log_service__WEBPACK_IMPORTED_MODULE_10__["LoggerService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_util_service__WEBPACK_IMPORTED_MODULE_11__["UtilService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_constants_images_constants__WEBPACK_IMPORTED_MODULE_9__["imagesPresetToken"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["DomSanitizer"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"])); };
 ImageComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ImageComponent, selectors: [["nui-image"]], hostAttrs: ["role", "img"], hostVars: 1, hostBindings: function ImageComponent_HostBindings(rf, ctx) { if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-label", ctx.ariaLabel || ctx.imageName || null);
-    } }, inputs: { image: "image", imageAlt: "imageAlt", ariaLabel: "ariaLabel", float: "float", margin: "margin", isWatermark: "isWatermark", width: "width", height: "height", autoFill: "autoFill" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵNgOnChangesFeature"]], decls: 1, vars: 17, consts: [[1, "nui-image", "nui-image__hidden", 3, "innerHTML"]], template: function ImageComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-label", ctx.hasAlt ? null : ctx.description || ctx.imageName);
+    } }, inputs: { image: "image", description: "description", float: "float", margin: "margin", isWatermark: "isWatermark", width: "width", height: "height", autoFill: "autoFill" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵNgOnChangesFeature"]], decls: 1, vars: 17, consts: [[1, "nui-image", "nui-image__hidden", 3, "innerHTML"]], template: function ImageComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "div", 0);
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵstyleProp"]("height", ctx.height)("width", ctx.width);

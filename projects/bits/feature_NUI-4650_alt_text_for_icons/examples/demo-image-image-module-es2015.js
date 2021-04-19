@@ -384,7 +384,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"d-flex\">\n    <div class=\"mr-5\">\n        <div class=\"mb-5\"><em>URL</em></div>\n        <nui-image [image]=\"bookCover.url\" [imageAlt]=\"bookCover.description\" width=\"200px\"></nui-image>\n    </div>\n    <div>\n        <div class=\"mb-5\"><em>Object with SVG</em></div>\n        <nui-image [image]=\"imageObject\" width=\"200px\"></nui-image>\n    </div>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"d-flex\">\n    <div class=\"mr-5\">\n        <div class=\"mb-5\"><em>URL</em></div>\n        <nui-image [image]=\"bookCover.url\" [description]=\"bookCover.description\" width=\"200px\"></nui-image>\n    </div>\n    <div>\n        <div class=\"mb-5\"><em>Object with SVG</em></div>\n        <nui-image [image]=\"imageObject\" width=\"200px\"></nui-image>\n    </div>\n</div>\n");
 
 /***/ }),
 
@@ -430,7 +430,7 @@ class ImageExternalExampleComponent {
     }
 }
 ImageExternalExampleComponent.ɵfac = function ImageExternalExampleComponent_Factory(t) { return new (t || ImageExternalExampleComponent)(); };
-ImageExternalExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ImageExternalExampleComponent, selectors: [["nui-image-external-example"]], decls: 11, vars: 3, consts: [[1, "d-flex"], [1, "mr-5"], [1, "mb-5"], ["width", "200px", 3, "image", "imageAlt"], ["width", "200px", 3, "image"]], template: function ImageExternalExampleComponent_Template(rf, ctx) { if (rf & 1) {
+ImageExternalExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ImageExternalExampleComponent, selectors: [["nui-image-external-example"]], decls: 11, vars: 3, consts: [[1, "d-flex"], [1, "mr-5"], [1, "mb-5"], ["width", "200px", 3, "image", "description"], ["width", "200px", 3, "image"]], template: function ImageExternalExampleComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
@@ -451,7 +451,7 @@ ImageExternalExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("image", ctx.bookCover.url)("imageAlt", ctx.bookCover.description);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("image", ctx.bookCover.url)("description", ctx.bookCover.description);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("image", ctx.imageObject);
     } }, directives: [_src_lib_image_image_component__WEBPACK_IMPORTED_MODULE_1__["ImageComponent"]], encapsulation: 2 });

@@ -739,7 +739,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<div class=\"d-flex\">\n    <div class=\"mr-5\">\n        <div class=\"mb-5\"><em>URL</em></div>\n        <nui-image [image]=\"bookCover.url\" [imageAlt]=\"bookCover.description\" width=\"200px\"></nui-image>\n    </div>\n    <div>\n        <div class=\"mb-5\"><em>Object with SVG</em></div>\n        <nui-image [image]=\"imageObject\" width=\"200px\"></nui-image>\n    </div>\n</div>\n";
+      __webpack_exports__["default"] = "<div class=\"d-flex\">\n    <div class=\"mr-5\">\n        <div class=\"mb-5\"><em>URL</em></div>\n        <nui-image [image]=\"bookCover.url\" [description]=\"bookCover.description\" width=\"200px\"></nui-image>\n    </div>\n    <div>\n        <div class=\"mb-5\"><em>Object with SVG</em></div>\n        <nui-image [image]=\"imageObject\" width=\"200px\"></nui-image>\n    </div>\n</div>\n";
       /***/
     },
 
@@ -819,7 +819,7 @@
         selectors: [["nui-image-external-example"]],
         decls: 11,
         vars: 3,
-        consts: [[1, "d-flex"], [1, "mr-5"], [1, "mb-5"], ["width", "200px", 3, "image", "imageAlt"], ["width", "200px", 3, "image"]],
+        consts: [[1, "d-flex"], [1, "mr-5"], [1, "mb-5"], ["width", "200px", 3, "image", "description"], ["width", "200px", 3, "image"]],
         template: function ImageExternalExampleComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -862,7 +862,7 @@
           if (rf & 2) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("image", ctx.bookCover.url)("imageAlt", ctx.bookCover.description);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("image", ctx.bookCover.url)("description", ctx.bookCover.description);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 

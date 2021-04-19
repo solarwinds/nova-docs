@@ -28664,11 +28664,6 @@
           this.domSanitizer = domSanitizer;
           this.el = el;
           /**
-           * Sets alt for image from external source
-           */
-
-          this.imageAlt = "";
-          /**
            * Sets the width of the container parent image
            */
 
@@ -28703,7 +28698,7 @@
           value: function ngOnChanges(changes) {
             var _a;
 
-            if (changes.image || changes.imageAlt) {
+            if (changes.image || changes.description) {
               this.imageName = this.image.name || ((_a = this.getImage(this.image)) === null || _a === void 0 ? void 0 : _a.name) || null;
               this.imageTemplate = this.getImageTemplate();
             }
@@ -28747,8 +28742,10 @@
 
             if (lodash_has__WEBPACK_IMPORTED_MODULE_3___default()(image, "code") && lodash_isString__WEBPACK_IMPORTED_MODULE_7___default()(image.code)) {
               imageHtml = image.code;
+              this.hasAlt = false;
             } else {
-              imageHtml = "<img src=\"".concat(this.image, "\" alt=\"").concat(this.imageAlt, "\">");
+              imageHtml = "<img src=\"".concat(this.image, "\" alt=\"").concat(this.description, "\">");
+              this.hasAlt = true;
             }
 
             return this.domSanitizer.bypassSecurityTrustHtml(imageHtml);
@@ -28774,13 +28771,12 @@
         hostVars: 1,
         hostBindings: function ImageComponent_HostBindings(rf, ctx) {
           if (rf & 2) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-label", ctx.ariaLabel || ctx.imageName || null);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-label", ctx.hasAlt ? null : ctx.description || ctx.imageName);
           }
         },
         inputs: {
           image: "image",
-          imageAlt: "imageAlt",
-          ariaLabel: "ariaLabel",
+          description: "description",
           "float": "float",
           margin: "margin",
           isWatermark: "isWatermark",
