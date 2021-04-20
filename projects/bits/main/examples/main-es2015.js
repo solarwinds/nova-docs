@@ -14103,6 +14103,10 @@ class PopoverComponent {
          */
         this.delay = 0;
         /**
+         * Sets whether the overlay can grow after the initial open via flexible width/height.
+         */
+        this.withGrowAfterOpen = false;
+        /**
          * Emits an event upon display of the popover
          */
         this.shown = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
@@ -14372,7 +14376,7 @@ class PopoverComponent {
             .flexibleConnectedTo(this.host.nativeElement)
             .withPush(false)
             .withViewportMargin(0)
-            .withGrowAfterOpen(true)
+            .withGrowAfterOpen(this.withGrowAfterOpen)
             .withPositions(this.getPopoverConnectedPosition(position));
         const subscription = positionStrategy.positionChanges
             .subscribe((connectedPosition) => {
@@ -14421,7 +14425,7 @@ PopoverComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineC
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx.overlayComponent = _t.first);
     } }, hostAttrs: [1, "nui-popover"], hostBindings: function PopoverComponent_HostBindings(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function PopoverComponent_click_HostBindingHandler($event) { return ctx.onClick($event); })("mouseenter", function PopoverComponent_mouseenter_HostBindingHandler() { return ctx.onMouseEnter(); })("mouseleave", function PopoverComponent_mouseleave_HostBindingHandler() { return ctx.onMouseLeave(); })("focusin", function PopoverComponent_focusin_HostBindingHandler() { return ctx.onFocusIn(); })("focusout", function PopoverComponent_focusout_HostBindingHandler() { return ctx.onFocusOut(); });
-    } }, inputs: { closePopover: "closePopover", openPopover: "openPopover", disabled: "disabled", trigger: "trigger", template: "template", placement: "placement", popoverTitle: "popoverTitle", icon: "icon", modal: "modal", container: "container", hasPadding: "hasPadding", preventClosing: "preventClosing", unlimited: "unlimited", delay: "delay", popoverOverlayPosition: "popoverOverlayPosition" }, outputs: { shown: "shown", hidden: "hidden" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵProvidersFeature"]([_popover_position_service__WEBPACK_IMPORTED_MODULE_13__["PopoverPositionService"]]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵNgOnChangesFeature"]], ngContentSelectors: _c2, decls: 4, vars: 3, consts: [[3, "customContainer", "toggleReference", "overlayConfig", "clickOutside"], ["modalContainer", ""]], template: function PopoverComponent_Template(rf, ctx) { if (rf & 1) {
+    } }, inputs: { closePopover: "closePopover", openPopover: "openPopover", disabled: "disabled", trigger: "trigger", template: "template", placement: "placement", popoverTitle: "popoverTitle", icon: "icon", modal: "modal", container: "container", hasPadding: "hasPadding", preventClosing: "preventClosing", unlimited: "unlimited", delay: "delay", withGrowAfterOpen: "withGrowAfterOpen", popoverOverlayPosition: "popoverOverlayPosition" }, outputs: { shown: "shown", hidden: "hidden" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵProvidersFeature"]([_popover_position_service__WEBPACK_IMPORTED_MODULE_13__["PopoverPositionService"]]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵNgOnChangesFeature"]], ngContentSelectors: _c2, decls: 4, vars: 3, consts: [[3, "customContainer", "toggleReference", "overlayConfig", "clickOutside"], ["modalContainer", ""]], template: function PopoverComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojectionDef"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojection"](0);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "nui-overlay", 0);

@@ -25620,6 +25620,11 @@
 
           this.delay = 0;
           /**
+           * Sets whether the overlay can grow after the initial open via flexible width/height.
+           */
+
+          this.withGrowAfterOpen = false;
+          /**
            * Emits an event upon display of the popover
            */
 
@@ -25988,7 +25993,7 @@
           value: function setPositionStrategy(position) {
             var _this79 = this;
 
-            var positionStrategy = this.overlay.position().flexibleConnectedTo(this.host.nativeElement).withPush(false).withViewportMargin(0).withGrowAfterOpen(true).withPositions(this.getPopoverConnectedPosition(position));
+            var positionStrategy = this.overlay.position().flexibleConnectedTo(this.host.nativeElement).withPush(false).withViewportMargin(0).withGrowAfterOpen(this.withGrowAfterOpen).withPositions(this.getPopoverConnectedPosition(position));
             var subscription = positionStrategy.positionChanges.subscribe(function (connectedPosition) {
               var overlayRefElement = _this79.overlayComponent.getOverlayRef().overlayElement;
 
@@ -26117,6 +26122,7 @@
           preventClosing: "preventClosing",
           unlimited: "unlimited",
           delay: "delay",
+          withGrowAfterOpen: "withGrowAfterOpen",
           popoverOverlayPosition: "popoverOverlayPosition"
         },
         outputs: {
