@@ -21519,8 +21519,6 @@
             }); // when datasource change we need to re-initialize key control stuff
 
             this.itemsChangeSubscription = this.menuItems.changes.subscribe(function (changes) {
-              var activeIndex = _this60.keyControlService.getActiveItemIndex();
-
               _this60.keyControlService.initKeyboardManager();
 
               _this60.keyControlService.setActiveItem(0);

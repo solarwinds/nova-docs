@@ -12301,7 +12301,6 @@ class ComboboxComponent extends _base_select__WEBPACK_IMPORTED_MODULE_23__["Base
         // when datasource change we need to re-initialize key control stuff
         this.itemsChangeSubscription = this.menuItems.changes
             .subscribe((changes) => {
-            const activeIndex = this.keyControlService.getActiveItemIndex();
             this.keyControlService.initKeyboardManager();
             this.keyControlService.setActiveItem(0);
             this.changeDetector.detectChanges();
