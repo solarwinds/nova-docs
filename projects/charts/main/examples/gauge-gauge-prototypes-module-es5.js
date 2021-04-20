@@ -87,8 +87,8 @@
               this.chartAssist.chart.updateDimensions();
             }
 
-            if (changes.seriesConfig && !changes.seriesConfig.firstChange) {
-              this.chartAssist.update(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.seriesSet, this.seriesConfig));
+            if (changes.gaugeConfig && !changes.gaugeConfig.firstChange) {
+              this.chartAssist.update(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.seriesSet, this.gaugeConfig));
             }
           }
         }, {
@@ -101,7 +101,7 @@
               flipLabels: this.flipLabels
             });
             this.chartAssist.chart.addPlugin(this.labelsPlugin);
-            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].assembleSeriesSet(this.seriesConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Horizontal);
+            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].assembleSeriesSet(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Horizontal);
             this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].setThresholdLabelFormatter(function (d) {
               return "".concat(d, "ms");
             }, this.seriesSet);
@@ -116,7 +116,7 @@
         thickness: [{
           type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"]
         }],
-        seriesConfig: [{
+        gaugeConfig: [{
           type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"]
         }],
         flipLabels: [{
@@ -167,7 +167,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<charts-test-harness>\n    <div class=\"testing-region d-flex align-items-center justify-content-around\">\n        <donut-gauge-prototype [seriesConfig]=\"seriesConfig\" [size]=\"donutSize\"></donut-gauge-prototype>\n        <linear-gauge-vertical-prototype [seriesConfig]=\"seriesConfig\" [thickness]=\"linearThickness\" [flipLabels]=\"flipLabels\"></linear-gauge-vertical-prototype>\n        <linear-gauge-horizontal-prototype [seriesConfig]=\"seriesConfig\" [thickness]=\"linearThickness\" [flipLabels]=\"flipLabels\"></linear-gauge-horizontal-prototype>\n    </div>\n\n    <div class=\"mb-2\">\n        <label for=\"valueInput\">\n            Value\n        </label>\n        <br />\n        <nui-textbox-number type=\"number\"\n                            [ngModel]=\"value\"\n                            (ngModelChange)=\"onValueChange($event)\"\n                            [minValue]=\"0\"\n                            [maxValue]=\"maxValue\"\n                            customBoxWidth=\"75px\"\n                            name=\"valueInput\"></nui-textbox-number>\n    </div>\n    <div class=\"mb-2\">\n        <label for=\"thicknessInput\">\n            Linear Thickness\n        </label>\n        <br />\n        <nui-textbox-number type=\"number\"\n                            [(ngModel)]=\"linearThickness\"\n                            [minValue]=\"15\"\n                            [maxValue]=\"30\"\n                            customBoxWidth=\"75px\"\n                            name=\"thicknessInput\"></nui-textbox-number>\n    </div>\n    <div class=\"mb-2\">\n        <label for=\"donutSizeInput\">\n            Donut Size\n        </label>\n        <br />\n        <nui-textbox-number type=\"number\"\n                            [(ngModel)]=\"donutSize\"\n                            [step]=50\n                            [minValue]=\"200\"\n                            [maxValue]=\"700\"\n                            customBoxWidth=\"75px\"\n                            name=\"donutSizeInput\"></nui-textbox-number>\n    </div>\n</charts-test-harness>\n<div class=\"ml-3\">\n    <div class=\"d-flex align-items-center\">\n        <input id=\"reversed\"\n               class=\"mb-2\"\n               type=\"checkbox\"\n               [ngModel]=\"reversed\"\n               (ngModelChange)=\"onReverseChange($event)\" />\n        <label class=\"px-3\" for=\"reversed\">Reversed</label>\n    </div>\n</div>\n<div class=\"ml-3\">\n    <div class=\"d-flex align-items-center\">\n        <input id=\"flip-labels\"\n               class=\"mb-2\"\n               type=\"checkbox\"\n               [(ngModel)]=\"flipLabels\" />\n        <label class=\"px-3\" for=\"flip-labels\">Flip Labels</label>\n    </div>\n</div>\n";
+      __webpack_exports__["default"] = "<charts-test-harness>\n    <div class=\"testing-region d-flex align-items-center justify-content-around\">\n        <donut-gauge-prototype [gaugeConfig]=\"gaugeConfig\" [size]=\"donutSize\" [annularGrowth]=\"annularGrowth\" [annularWidth]=\"thickness\"></donut-gauge-prototype>\n        <linear-gauge-vertical-prototype [gaugeConfig]=\"gaugeConfig\" [thickness]=\"thickness\" [flipLabels]=\"flipLabels\"></linear-gauge-vertical-prototype>\n        <linear-gauge-horizontal-prototype [gaugeConfig]=\"gaugeConfig\" [thickness]=\"thickness\" [flipLabels]=\"flipLabels\"></linear-gauge-horizontal-prototype>\n    </div>\n\n    <div class=\"mb-2\">\n        <label for=\"valueInput\">\n            Value\n        </label>\n        <br />\n        <nui-textbox-number type=\"number\"\n                            [ngModel]=\"value\"\n                            (ngModelChange)=\"onValueChange($event)\"\n                            [minValue]=\"0\"\n                            [maxValue]=\"maxValue\"\n                            customBoxWidth=\"75px\"\n                            name=\"valueInput\"></nui-textbox-number>\n    </div>\n    <div class=\"mb-2\">\n        <label for=\"thicknessInput\">\n            Thickness\n        </label>\n        <br />\n        <nui-textbox-number type=\"number\"\n                            [(ngModel)]=\"thickness\"\n                            [minValue]=\"0\"\n                            customBoxWidth=\"75px\"\n                            name=\"thicknessInput\"></nui-textbox-number>\n    </div>\n    <div class=\"mb-2\">\n        <nui-form-field caption=\"Donut Annular Growth\"\n                        hint=\"Set to zero to have the donut obey the manual thickness setting\"\n                        [showOptionalText]=\"false\">\n            <nui-textbox-number type=\"number\"\n                                [(ngModel)]=\"annularGrowth\"\n                                [minValue]=\"0\"\n                                [step]=\"0.01\"\n                                customBoxWidth=\"75px\"></nui-textbox-number>\n        </nui-form-field>\n    </div>\n    <div class=\"mb-2\">\n        <label for=\"donutSizeInput\">\n            Donut Size\n        </label>\n        <br />\n        <nui-textbox-number type=\"number\"\n                            [(ngModel)]=\"donutSize\"\n                            [minValue]=\"0\"\n                            [step]=\"25\"\n                            customBoxWidth=\"75px\"\n                            name=\"donutSizeInput\"></nui-textbox-number>\n    </div>\n</charts-test-harness>\n<div class=\"ml-3\">\n    <div class=\"d-flex align-items-center\">\n        <input id=\"reversed\"\n               class=\"mb-2\"\n               type=\"checkbox\"\n               [ngModel]=\"reversed\"\n               (ngModelChange)=\"onReverseChange($event)\" />\n        <label class=\"px-3\" for=\"reversed\">Reversed</label>\n    </div>\n</div>\n<div class=\"ml-3\">\n    <div class=\"d-flex align-items-center\">\n        <input id=\"flip-labels\"\n               class=\"mb-2\"\n               type=\"checkbox\"\n               [(ngModel)]=\"flipLabels\" />\n        <label class=\"px-3\" for=\"flip-labels\">Flip Labels</label>\n    </div>\n</div>\n";
       /***/
     },
 
@@ -247,37 +247,39 @@
 
           this.value = 95;
           this.maxValue = 200;
-          this.linearThickness = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["StandardLinearGaugeThickness"].Large;
+          this.annularGrowth = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["DEFAULT_RADIAL_RENDERER_CONFIG"].annularGrowth;
+          this.thickness = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["StandardLinearGaugeThickness"].Large;
           this.donutSize = 200;
           this.thresholds = [100, 150];
           this.reversed = false;
           this.flipLabels = false; // this.thresholds = new Array(200).fill(null).map((e, i) => i);
           // this.thresholds = [50, 75, 100, 125, 150, 175, 200];
 
-          this.reversedValueColorAccessor = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].createReversedValueColorAccessor(this.thresholds);
-          this.seriesConfig = this.getSeriesConfig();
+          this.reversedColorAccessor = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].createReversedQuantityColorAccessor(this.thresholds);
+          this.gaugeConfig = this.getGaugeConfig();
         }
 
         _createClass(GaugeTestPageComponent, [{
           key: "onReverseChange",
           value: function onReverseChange(reversed) {
             this.reversed = reversed;
-            this.seriesConfig = this.getSeriesConfig();
+            this.gaugeConfig = this.getGaugeConfig();
           }
         }, {
           key: "onValueChange",
           value: function onValueChange(value) {
             this.value = value;
-            this.seriesConfig = this.getSeriesConfig();
+            this.gaugeConfig = this.getGaugeConfig();
           }
         }, {
-          key: "getSeriesConfig",
-          value: function getSeriesConfig() {
+          key: "getGaugeConfig",
+          value: function getGaugeConfig() {
             return {
               value: this.value,
               max: this.maxValue,
               thresholds: this.thresholds,
-              valueColorAccessor: this.reversed ? this.reversedValueColorAccessor : undefined
+              quantityColorAccessor: this.reversed ? this.reversedColorAccessor : undefined,
+              enableThresholdMarkers: true
             };
           }
         }]);
@@ -353,7 +355,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<div class=\"d-flex\">\n    <nui-chart class=\"chart d-block\" [chart]=\"chartAssist.chart\"></nui-chart>\n\n    <nui-chart-donut-content style=\"position: absolute;\"\n                             [plugin]=\"contentPlugin\">\n        <div class=\"h-100 w-100 d-flex flex-column justify-content-center align-items-center text-center\">\n            <div class=\"d-inline-block\" nuiZoomContent [zoomRatio]=\"0.65\">\n                {{seriesConfig.value | number:'1.0-0'}}\n            </div>\n            <div class=\"content-label\">Network Latency</div>\n            <div class=\"content-label\">(ms)</div>\n        </div>\n    </nui-chart-donut-content>\n</div>\n";
+      __webpack_exports__["default"] = "<div class=\"d-flex\">\n    <nui-chart class=\"chart d-block\" [chart]=\"chartAssist.chart\"></nui-chart>\n\n    <nui-chart-donut-content style=\"position: absolute;\"\n                             [plugin]=\"contentPlugin\">\n        <div class=\"h-100 w-100 d-flex flex-column justify-content-center align-items-center text-center\">\n            <div class=\"d-inline-block\" nuiZoomContent [zoomRatio]=\"0.65\">\n                {{gaugeConfig.value | number:'1.0-0'}}\n            </div>\n            <div class=\"content-label\">Network Latency</div>\n            <div class=\"content-label\">(ms)</div>\n        </div>\n    </nui-chart-donut-content>\n</div>\n";
       /***/
     },
 
@@ -415,13 +417,14 @@
         _createClass(DonutGaugePrototypeComponent, [{
           key: "ngOnChanges",
           value: function ngOnChanges(changes) {
-            if (changes.size && !changes.size.firstChange) {
+            if (changes.size && !changes.size.firstChange || changes.annularWidth && !changes.annularWidth.firstChange || changes.annularGrowth && !changes.annularGrowth.firstChange) {
               this.updateDonutSize();
+              this.updateAnnularAttributes();
               this.chartAssist.chart.updateDimensions();
             }
 
-            if (changes.seriesConfig && !changes.seriesConfig.firstChange) {
-              this.chartAssist.update(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.seriesSet, this.seriesConfig));
+            if (changes.gaugeConfig && !changes.gaugeConfig.firstChange) {
+              this.chartAssist.update(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.seriesSet, this.gaugeConfig));
             }
           }
         }, {
@@ -442,11 +445,12 @@
               }
             };
             this.chartAssist.chart.addPlugin(new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["DonutGaugeLabelsPlugin"](labelConfig));
-            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].assembleSeriesSet(this.seriesConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Donut);
+            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].assembleSeriesSet(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Donut);
             this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].setThresholdLabelFormatter(function (d) {
               return "".concat(d, "ms");
             }, this.seriesSet);
             this.updateDonutSize();
+            this.updateAnnularAttributes();
             this.chartAssist.update(this.seriesSet);
           }
         }, {
@@ -455,6 +459,19 @@
             var gridDimensions = this.chartAssist.chart.getGrid().config().dimension;
             gridDimensions.height(this.size);
             gridDimensions.width(this.size);
+          }
+        }, {
+          key: "updateAnnularAttributes",
+          value: function updateAnnularAttributes() {
+            var _this = this;
+
+            this.seriesSet.forEach(function (series) {
+              var rendererConfig = series.renderer.config; // increase the max thickness from 30 for testing purposes
+
+              rendererConfig.maxThickness = 20000;
+              rendererConfig.annularGrowth = _this.annularGrowth;
+              rendererConfig.annularWidth = _this.annularWidth;
+            });
           }
         }]);
 
@@ -465,7 +482,13 @@
         size: [{
           type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"]
         }],
-        seriesConfig: [{
+        annularGrowth: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"]
+        }],
+        annularWidth: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"]
+        }],
+        gaugeConfig: [{
           type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"]
         }]
       };
@@ -599,7 +622,7 @@
 
       GaugePrototypesModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
         declarations: [_horizontal_linear_gauge_horizontal_prototype_component__WEBPACK_IMPORTED_MODULE_9__["LinearGaugeHorizontalPrototypeComponent"], _vertical_linear_gauge_vertical_prototype_component__WEBPACK_IMPORTED_MODULE_10__["LinearGaugeVerticalPrototypeComponent"], _donut_donut_gauge_prototype_component__WEBPACK_IMPORTED_MODULE_7__["DonutGaugePrototypeComponent"], _gauge_test_page_component__WEBPACK_IMPORTED_MODULE_8__["GaugeTestPageComponent"]],
-        imports: [_nova_ui_bits__WEBPACK_IMPORTED_MODULE_4__["NuiCommonModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_4__["NuiTextboxModule"], _common_demo_common_module__WEBPACK_IMPORTED_MODULE_6__["DemoCommonModule"], _nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["NuiChartsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"].forChild(routes)]
+        imports: [_nova_ui_bits__WEBPACK_IMPORTED_MODULE_4__["NuiCommonModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_4__["NuiFormFieldModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_4__["NuiTextboxModule"], _common_demo_common_module__WEBPACK_IMPORTED_MODULE_6__["DemoCommonModule"], _nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["NuiChartsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"].forChild(routes)]
       })], GaugePrototypesModule);
       /***/
     },
@@ -685,8 +708,8 @@
               this.chartAssist.chart.updateDimensions();
             }
 
-            if (changes.seriesConfig && !changes.seriesConfig.firstChange) {
-              this.chartAssist.update(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.seriesSet, this.seriesConfig));
+            if (changes.gaugeConfig && !changes.gaugeConfig.firstChange) {
+              this.chartAssist.update(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.seriesSet, this.gaugeConfig));
             }
           }
         }, {
@@ -707,7 +730,7 @@
             };
             this.labelsPlugin = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["LinearGaugeLabelsPlugin"](labelConfig);
             this.chartAssist.chart.addPlugin(this.labelsPlugin);
-            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].assembleSeriesSet(this.seriesConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Vertical);
+            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].assembleSeriesSet(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Vertical);
             this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].setThresholdLabelFormatter(function (d) {
               return "".concat(d, "ms");
             }, this.seriesSet);
@@ -722,7 +745,7 @@
         thickness: [{
           type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"]
         }],
-        seriesConfig: [{
+        gaugeConfig: [{
           type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"]
         }],
         flipLabels: [{
