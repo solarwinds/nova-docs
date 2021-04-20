@@ -5262,16 +5262,23 @@
             this.navigationControl.unsubscribe();
           }
         }, {
+          key: "getInputsAndOutputs",
+          value: function getInputsAndOutputs(compType) {
+            var inputs = compType.inputsList;
+            var outputs = Object.keys(compType).filter(function (key) {
+              return compType[key] instanceof _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"];
+            });
+            return [].concat(_toConsumableArray(inputs), _toConsumableArray(outputs));
+          }
+        }, {
           key: "addStepDynamic",
           value: function addStepDynamic(wizardStep, indexToInsert) {
             var componentFactory = this.componentFactoryResolver.resolveComponentFactory(_wizard_step_component__WEBPACK_IMPORTED_MODULE_6__["WizardStepComponent"]);
             var componentRef = this.dynamicStep.createComponent(componentFactory);
             var instance = componentRef.instance;
-            var wizardStepInputs = ["title", "stepTemplate", "nextText", "stepControl", "shortTitle", "description", "hidden", "disabled", "enter", "valid", "exit", "next"];
+            var wizardStepInputs = this.getInputsAndOutputs(wizardStep);
             wizardStepInputs.forEach(function (key) {
-              if (wizardStep[key]) {
-                instance[key] = wizardStep[key];
-              }
+              instance[key] = wizardStep[key];
             });
             this.arraySteps.splice(indexToInsert, 0, componentRef.instance);
             this.steps.reset(this.arraySteps);
@@ -43088,6 +43095,7 @@
           this.complete = false;
           this.icon = "step";
           this.iconColor = "";
+          this.inputsList = [];
           /**
            * Set flags for step entering and emits enter event
            */
@@ -43130,6 +43138,10 @@
         }, {
           key: "ngOnChanges",
           value: function ngOnChanges(changes) {
+            if (this.inputsList.length === 0) {
+              this.inputsList = Object.keys(changes);
+            }
+
             if (changes["stepControl"]) {
               this.valid.emit(this.stepControl);
             }

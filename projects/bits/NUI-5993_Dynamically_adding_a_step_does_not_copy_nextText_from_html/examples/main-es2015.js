@@ -3480,17 +3480,18 @@ class WizardComponent {
         this.steps.toArray().forEach((step) => step.valid.unsubscribe());
         this.navigationControl.unsubscribe();
     }
+    getInputsAndOutputs(compType) {
+        const inputs = compType.inputsList;
+        const outputs = Object.keys(compType).filter(key => compType[key] instanceof _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]);
+        return [...inputs, ...outputs];
+    }
     addStepDynamic(wizardStep, indexToInsert) {
         const componentFactory = this.componentFactoryResolver.resolveComponentFactory(_wizard_step_component__WEBPACK_IMPORTED_MODULE_6__["WizardStepComponent"]);
         const componentRef = this.dynamicStep.createComponent(componentFactory);
         const instance = componentRef.instance;
-        const wizardStepInputs = [
-            "title", "stepTemplate", "nextText", "stepControl", "shortTitle", "description", "hidden", "disabled", "enter", "valid", "exit", "next"
-        ];
+        const wizardStepInputs = this.getInputsAndOutputs(wizardStep);
         wizardStepInputs.forEach(key => {
-            if (wizardStep[key]) {
-                instance[key] = wizardStep[key];
-            }
+            instance[key] = wizardStep[key];
         });
         this.arraySteps.splice(indexToInsert, 0, componentRef.instance);
         this.steps.reset(this.arraySteps);
@@ -23103,6 +23104,7 @@ class WizardStepComponent {
         this.complete = false;
         this.icon = "step";
         this.iconColor = "";
+        this.inputsList = [];
         /**
          * Set flags for step entering and emits enter event
          */
@@ -23134,6 +23136,9 @@ class WizardStepComponent {
         this.nextText = this.nextText || $localize `Next`;
     }
     ngOnChanges(changes) {
+        if (this.inputsList.length === 0) {
+            this.inputsList = Object.keys(changes);
+        }
         if (changes["stepControl"]) {
             this.valid.emit(this.stepControl);
         }
