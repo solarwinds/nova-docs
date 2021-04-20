@@ -16,8 +16,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var _src_lib_wizard_wizard_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../../src/lib/wizard/wizard.component */ "23SV");
 /* harmony import */ var _src_lib_wizard_wizard_step_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../../../src/lib/wizard/wizard-step.component */ "cz7d");
-/* harmony import */ var _src_lib_textbox_textbox_number_textbox_number_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../../../src/lib/textbox/textbox-number/textbox-number.component */ "ShSb");
-/* harmony import */ var _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../../../../src/lib/button/button.component */ "6urz");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var _src_lib_textbox_textbox_number_textbox_number_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../../../../src/lib/textbox/textbox-number/textbox-number.component */ "ShSb");
+/* harmony import */ var _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../../../../src/lib/button/button.component */ "6urz");
+
 
 
 
@@ -31,18 +33,19 @@ const _c1 = ["dynamicStep"];
 function WizardDynamicRemoveExampleComponent_ng_template_6_Template(rf, ctx) { if (rf & 1) {
     const _r9 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "p");
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵi18n"](1, 14);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵi18n"](1, 15);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](2, "button", 12);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](2, "button", 16);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function WizardDynamicRemoveExampleComponent_ng_template_6_Template_button_click_2_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r9); const ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"](); return ctx_r8.addStep(); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵi18n"](3, 15);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵi18n"](3, 17);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 } }
 function WizardDynamicRemoveExampleComponent_ng_template_8_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "p");
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵi18n"](1, 16);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵi18n"](1, 18);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 } }
+const _c14 = function () { return { "font-weight": "bold" }; };
 class WizardDynamicRemoveExampleComponent {
     constructor() {
         this.destroy$ = new rxjs__WEBPACK_IMPORTED_MODULE_1__["Subject"]();
@@ -74,7 +77,7 @@ WizardDynamicRemoveExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODU
         let _t;
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵloadQuery"]()) && (ctx.wizardComponent = _t.first);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵloadQuery"]()) && (ctx.dynamicStep = _t.first);
-    } }, decls: 17, vars: 4, consts: function () { let i18n_2; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+    } }, decls: 19, vars: 6, consts: function () { let i18n_2; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
         const MSG_EXTERNAL_65984904390749158$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_WIZARD_DYNAMIC_REMOVE_WIZARD_DYNAMIC_REMOVE_EXAMPLE_COMPONENT_TS_3 = goog.getMsg("Finish");
         i18n_2 = MSG_EXTERNAL_65984904390749158$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_WIZARD_DYNAMIC_REMOVE_WIZARD_DYNAMIC_REMOVE_EXAMPLE_COMPONENT_TS_3;
     }
@@ -87,11 +90,11 @@ WizardDynamicRemoveExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODU
     else {
         i18n_4 = $localize `:␟bd5772b9673205503673958067be0dd245d3955b␟7648268751296041024:Add step dynamically`;
     } let i18n_6; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-        const MSG_EXTERNAL_543140118441913709$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_WIZARD_DYNAMIC_REMOVE_WIZARD_DYNAMIC_REMOVE_EXAMPLE_COMPONENT_TS_7 = goog.getMsg("Remove step dynamically");
-        i18n_6 = MSG_EXTERNAL_543140118441913709$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_WIZARD_DYNAMIC_REMOVE_WIZARD_DYNAMIC_REMOVE_EXAMPLE_COMPONENT_TS_7;
+        const MSG_EXTERNAL_1726131819944962604$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_WIZARD_DYNAMIC_REMOVE_WIZARD_DYNAMIC_REMOVE_EXAMPLE_COMPONENT_TS_7 = goog.getMsg(" Remove step dynamically ");
+        i18n_6 = MSG_EXTERNAL_1726131819944962604$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_WIZARD_DYNAMIC_REMOVE_WIZARD_DYNAMIC_REMOVE_EXAMPLE_COMPONENT_TS_7;
     }
     else {
-        i18n_6 = $localize `:␟eb3ffb0e60f3cf4a92b280bf509817a1d0fad198␟543140118441913709:Remove step dynamically`;
+        i18n_6 = $localize `:␟0204750c4ece2a4fc149e671dd2c3ba82298f9ac␟1726131819944962604: Remove step dynamically `;
     } let i18n_8; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
         const MSG_EXTERNAL_4074000604906025359$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_WIZARD_DYNAMIC_REMOVE_WIZARD_DYNAMIC_REMOVE_EXAMPLE_COMPONENT_TS__9 = goog.getMsg("Hi! You can add next step dynamically");
         i18n_8 = MSG_EXTERNAL_4074000604906025359$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_WIZARD_DYNAMIC_REMOVE_WIZARD_DYNAMIC_REMOVE_EXAMPLE_COMPONENT_TS__9;
@@ -110,7 +113,7 @@ WizardDynamicRemoveExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODU
     }
     else {
         i18n_12 = $localize `:␟ac4915de7d495c385f232606717e4c85222997da␟392108755776816996:Hi! I'm dynamic step!`;
-    } return [["id", "nui-demo-wizard-remove-dynamic", "finishText", i18n_2, 3, "selectionChange"], ["wizardComponent", ""], ["title", i18n_4, 3, "stepTemplate"], ["wizardStepAdd", ""], [3, "title", "stepTemplate"], ["dynamicStep", ""], ["step1", ""], ["dynamicStepTemplate", ""], [1, "d-flex"], [1, "font-weight-semibold"], [3, "minValue"], ["number", ""], ["nui-button", "", "type", "button", 3, "click"], i18n_6, i18n_8, i18n_10, i18n_12]; }, template: function WizardDynamicRemoveExampleComponent_Template(rf, ctx) { if (rf & 1) {
+    } return [["id", "nui-demo-wizard-remove-dynamic", "finishText", i18n_2, 3, "selectionChange"], ["wizardComponent", ""], ["title", i18n_4, 3, "stepTemplate"], ["wizardStepAdd", ""], [3, "title", "stepTemplate"], ["dynamicStep", ""], ["step1", ""], ["dynamicStepTemplate", ""], [1, "d-flex"], [1, ""], [1, "nui-textbox--bold", 3, "ngStyle"], [3, "minValue"], ["number", ""], ["displayStyle", "destructive", "nui-button", "", "type", "button", 1, "ml-3", "h-25", "align-self-end", 3, "click"], i18n_6, i18n_8, ["nui-button", "", "type", "button", 3, "click"], i18n_10, i18n_12]; }, template: function WizardDynamicRemoveExampleComponent_Template(rf, ctx) { if (rf & 1) {
         const _r10 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "nui-wizard", 0, 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("selectionChange", function WizardDynamicRemoveExampleComponent_Template_nui_wizard_selectionChange_0_listener($event) { return ctx.select($event); });
@@ -120,13 +123,16 @@ WizardDynamicRemoveExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODU
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](6, WizardDynamicRemoveExampleComponent_ng_template_6_Template, 4, 0, "ng-template", null, 6, _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplateRefExtractor"]);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](8, WizardDynamicRemoveExampleComponent_ng_template_8_Template, 2, 0, "ng-template", null, 7, _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplateRefExtractor"]);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](10, "div", 8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](11, "span", 9);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](12, "Step index to remove");
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](11, "div", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](12, "span", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](13, "Step index to remove");
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](13, "nui-textbox-number", 10, 11);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](15, "button", 12);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function WizardDynamicRemoveExampleComponent_Template_button_click_15_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r10); const _r7 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵreference"](14); return ctx.removeStep(+_r7.value); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵi18n"](16, 13);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](14, "br");
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](15, "nui-textbox-number", 11, 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](17, "button", 13);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function WizardDynamicRemoveExampleComponent_Template_button_click_17_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r10); const _r7 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵreference"](16); return ctx.removeStep(+_r7.value); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵi18n"](18, 14);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
     } if (rf & 2) {
@@ -136,9 +142,11 @@ WizardDynamicRemoveExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODU
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("stepTemplate", _r3);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("title", "Dynamic")("stepTemplate", _r5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngStyle", _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction0"](5, _c14));
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](3);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("minValue", 1);
-    } }, directives: [_src_lib_wizard_wizard_component__WEBPACK_IMPORTED_MODULE_4__["WizardComponent"], _src_lib_wizard_wizard_step_component__WEBPACK_IMPORTED_MODULE_5__["WizardStepComponent"], _src_lib_textbox_textbox_number_textbox_number_component__WEBPACK_IMPORTED_MODULE_6__["TextboxNumberComponent"], _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_7__["ButtonComponent"]], encapsulation: 2 });
+    } }, directives: [_src_lib_wizard_wizard_component__WEBPACK_IMPORTED_MODULE_4__["WizardComponent"], _src_lib_wizard_wizard_step_component__WEBPACK_IMPORTED_MODULE_5__["WizardStepComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_6__["NgStyle"], _src_lib_textbox_textbox_number_textbox_number_component__WEBPACK_IMPORTED_MODULE_7__["TextboxNumberComponent"], _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_8__["ButtonComponent"]], encapsulation: 2 });
 
 
 /***/ }),
@@ -529,7 +537,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<nui-wizard #wizardComponent\n            id=\"nui-demo-wizard-remove-dynamic\"\n            finishText=\"Finish\"\n            (selectionChange)=\"select($event)\"\n            i18n-finishText>\n    <nui-wizard-step #wizardStepAdd i18n-title title=\"Add step dynamically\" [stepTemplate]=\"step1\"></nui-wizard-step>\n</nui-wizard>\n<nui-wizard-step #dynamicStep [title]=\"'Dynamic'\" [stepTemplate]=\"dynamicStepTemplate\"></nui-wizard-step>\n<ng-template #step1>\n    <p i18n>Hi! You can add next step dynamically</p>\n    <button nui-button type=\"button\" (click)=\"addStep()\" i18n>Add dynamic step</button>\n</ng-template>\n<ng-template #dynamicStepTemplate>\n    <p i18n>Hi! I'm dynamic step!</p>\n</ng-template>\n\n<div class=\"d-flex\">\n    <span class=\"font-weight-semibold\">Step index to remove</span>\n    <nui-textbox-number [minValue]=\"1\" #number></nui-textbox-number>\n    <button nui-button type=\"button\" (click)=\"removeStep(+number.value)\" i18n>Remove step dynamically</button>\n</div>\n\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<nui-wizard #wizardComponent\n            id=\"nui-demo-wizard-remove-dynamic\"\n            finishText=\"Finish\"\n            (selectionChange)=\"select($event)\"\n            i18n-finishText>\n    <nui-wizard-step #wizardStepAdd i18n-title title=\"Add step dynamically\" [stepTemplate]=\"step1\"></nui-wizard-step>\n</nui-wizard>\n<nui-wizard-step #dynamicStep [title]=\"'Dynamic'\" [stepTemplate]=\"dynamicStepTemplate\"></nui-wizard-step>\n<ng-template #step1>\n    <p i18n>Hi! You can add next step dynamically</p>\n    <button nui-button type=\"button\" (click)=\"addStep()\" i18n>Add dynamic step</button>\n</ng-template>\n<ng-template #dynamicStepTemplate>\n    <p i18n>Hi! I'm dynamic step!</p>\n</ng-template>\n\n<div class=\"d-flex\">\n    <div class=\"\">\n        <span class=\"nui-textbox--bold\" [ngStyle]=\"{ 'font-weight': 'bold' }\">Step index to remove</span> <br>\n        <nui-textbox-number [minValue]=\"1\" #number></nui-textbox-number>\n    </div>\n    <button class=\"ml-3 h-25 align-self-end\"\n            displayStyle=\"destructive\"\n            nui-button type=\"button\"\n            (click)=\"removeStep(+number.value)\"\n            i18n>\n        Remove step dynamically\n    </button>\n</div>\n\n");
 
 /***/ }),
 
