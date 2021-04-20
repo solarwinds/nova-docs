@@ -60784,7 +60784,7 @@
         ngContentSelectors: _c6,
         decls: 9,
         vars: 5,
-        consts: [["repeatItems", ""], [1, "nui-repeat-header"], [1, "repeat-group"], ["dropListArea", ""], [4, "ngIf"], ["style", "height: 100%", 3, "itemSize", 4, "ngIf"], ["cdkDrag", "", 1, "repeat-group-item", 3, "cdkDragData", "cdkDragPreviewClass", "cdkDragDisabled", "clickable", "selectable", "selected", "ngClass", "click"], ["drag", "cdkDrag"], ["class", "nui-repeat-item__controls-drag-handle align-self-center", 3, "ngClass", 4, "ngIf"], ["class", "nui-repeat-item__controls-drag-handle", 4, "ngIf"], [1, "nui-repeat-item__controls-container"], ["class", "nui-repeat-item__checkbox", 3, "value", "checked", "disabled", "valueChange", 4, "ngIf"], ["class", "nui-repeat-item__radio", 3, "value", "checked", "disabled", 4, "ngIf"], [1, "nui-repeat-item__content-container"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"], ["class", "nui-repeat-item__actions-container", 4, "ngIf"], [1, "nui-repeat-item__controls-drag-handle", "align-self-center", 3, "ngClass"], ["cdkDragHandle", "", 3, "mouseover", "mouseout"], [1, "nui-repeat-item__controls-drag-handle"], [3, "nui-dnd-preview", 4, "cdkDragPreview"], [1, "nui-repeat-item__checkbox", 3, "value", "checked", "disabled", "valueChange"], [1, "nui-repeat-item__radio", 3, "value", "checked", "disabled"], [1, "nui-repeat-item__actions-container"], [3, "ngTemplateOutlet", "ngTemplateOutletContext", 4, "ngFor", "ngForOf", "ngForTrackBy"], [2, "height", "100%", 3, "itemSize"], [4, "cdkVirtualFor", "cdkVirtualForOf", "cdkVirtualForTemplateCacheSize"]],
+        consts: [["repeatItems", ""], [1, "nui-repeat-header"], ["aria-dropeffect", "move", 1, "repeat-group"], ["dropListArea", ""], [4, "ngIf"], ["style", "height: 100%", 3, "itemSize", 4, "ngIf"], ["aria-grabbed", "supported", "cdkDrag", "", 1, "repeat-group-item", 3, "cdkDragData", "cdkDragPreviewClass", "cdkDragDisabled", "clickable", "selectable", "selected", "ngClass", "click"], ["drag", "cdkDrag"], ["class", "nui-repeat-item__controls-drag-handle align-self-center", 3, "ngClass", 4, "ngIf"], ["class", "nui-repeat-item__controls-drag-handle", 4, "ngIf"], [1, "nui-repeat-item__controls-container"], ["class", "nui-repeat-item__checkbox", 3, "value", "checked", "disabled", "valueChange", 4, "ngIf"], ["class", "nui-repeat-item__radio", 3, "value", "checked", "disabled", 4, "ngIf"], [1, "nui-repeat-item__content-container"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"], ["class", "nui-repeat-item__actions-container", 4, "ngIf"], [1, "nui-repeat-item__controls-drag-handle", "align-self-center", 3, "ngClass"], ["cdkDragHandle", "", 3, "mouseover", "mouseout"], [1, "nui-repeat-item__controls-drag-handle"], [3, "nui-dnd-preview", 4, "cdkDragPreview"], [1, "nui-repeat-item__checkbox", 3, "value", "checked", "disabled", "valueChange"], [1, "nui-repeat-item__radio", 3, "value", "checked", "disabled"], [1, "nui-repeat-item__actions-container"], [3, "ngTemplateOutlet", "ngTemplateOutletContext", 4, "ngFor", "ngForOf", "ngForTrackBy"], [2, "height", "100%", 3, "itemSize"], [4, "cdkVirtualFor", "cdkVirtualForOf", "cdkVirtualForTemplateCacheSize"]],
         template: function RepeatComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵprojectionDef"](_c5);
@@ -62453,7 +62453,12 @@
       BreadcrumbComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: BreadcrumbComponent,
         selectors: [["nui-breadcrumb"]],
-        hostAttrs: ["aria-label", "Breadcrumb"],
+        hostVars: 1,
+        hostBindings: function BreadcrumbComponent_HostBindings(rf, ctx) {
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-label", ctx.ariaLabel);
+          }
+        },
         inputs: {
           items: "items",
           ariaLabel: "ariaLabel"

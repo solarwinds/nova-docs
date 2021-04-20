@@ -356,7 +356,7 @@ import { BreadcrumbItem } from &quot;./public-api&quot;;
     styleUrls: [&quot;./breadcrumb.component.less&quot;],
     templateUrl: &quot;./breadcrumb.component.html&quot;,
     encapsulation: ViewEncapsulation.None,
-    host: { &quot;aria-label&quot;: &quot;Breadcrumb&quot; },
+    host: { &quot;[attr.aria-label]&quot;: &quot;ariaLabel&quot; },
 })
 export class BreadcrumbComponent {
     @Input() items: BreadcrumbItem[];
