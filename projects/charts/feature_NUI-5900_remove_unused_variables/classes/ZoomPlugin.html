@@ -821,10 +821,13 @@ export class ZoomPlugin extends ChartPlugin {
             return;
         }
 
-        // Width correction to accommodate similar adjustment in grid. This ensures
-        // that the right-most column of pixels on the chart is selectable.
-        const widthCorrection &#x3D; selection[1] &#x3D;&#x3D;&#x3D; this.grid.config().dimension.width() - Grid.RENDER_AREA_WIDTH_CORRECTION ?
-            Grid.RENDER_AREA_WIDTH_CORRECTION : 0;
+        let widthCorrection &#x3D; 0;
+        const gridConfig &#x3D; this.grid.config();
+        if (!gridConfig.disableRenderAreaWidthCorrection &amp;&amp; selection[1] &#x3D;&#x3D;&#x3D; gridConfig.dimension.width() - Grid.RENDER_AREA_WIDTH_CORRECTION) {
+            // Width correction to accommodate similar adjustment in grid. This ensures that the right-most column of pixels on the chart is selectable.
+            widthCorrection &#x3D; Grid.RENDER_AREA_WIDTH_CORRECTION;
+        }
+
         const data: ISetDomainEventPayload &#x3D; xScales.reduce((result, next: IScale&lt;any&gt;) &#x3D;&gt; {
             result[next.id] &#x3D; [selection[0], selection[1] as number + widthCorrection].map(x &#x3D;&gt; next.invert(x as number));
             return result;

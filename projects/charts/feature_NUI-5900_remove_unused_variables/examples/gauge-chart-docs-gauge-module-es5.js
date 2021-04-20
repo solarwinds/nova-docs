@@ -140,7 +140,7 @@
             var chart = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["Chart"](grid);
             this.chartAssist = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["ChartAssist"](chart, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["stack"]);
             this.chartAssist.chart.addPlugin(new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["LinearGaugeLabelsPlugin"]());
-            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].assembleSeriesSet(this.seriesConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Vertical);
+            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].assembleSeriesSet(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Vertical);
             this.chartAssist.update(this.seriesSet);
           }
         }]);
@@ -149,7 +149,7 @@
       }();
 
       VerticalGaugeTesterComponent.propDecorators = {
-        seriesConfig: [{
+        gaugeConfig: [{
           type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"]
         }]
       };
@@ -258,12 +258,13 @@
         }
 
         _createClass(GaugeVisualTestComponent, [{
-          key: "getSeriesConfig",
-          value: function getSeriesConfig(value) {
+          key: "getGaugeConfig",
+          value: function getGaugeConfig(value) {
             return {
               value: value,
               max: 200,
-              thresholds: [100, 158]
+              thresholds: [100, 158],
+              enableThresholdMarkers: true
             };
           }
         }]);
@@ -340,7 +341,7 @@
             var chart = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["Chart"](grid);
             this.chartAssist = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["ChartAssist"](chart, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["stack"]);
             this.chartAssist.chart.addPlugin(new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["LinearGaugeLabelsPlugin"]());
-            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].assembleSeriesSet(this.seriesConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Horizontal);
+            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].assembleSeriesSet(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Horizontal);
             this.chartAssist.update(this.seriesSet);
           }
         }]);
@@ -349,7 +350,7 @@
       }();
 
       HorizontalGaugeTesterComponent.propDecorators = {
-        seriesConfig: [{
+        gaugeConfig: [{
           type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"]
         }]
       };
@@ -445,7 +446,7 @@
             this.contentPlugin = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["ChartDonutContentPlugin"]();
             this.chartAssist.chart.addPlugin(this.contentPlugin);
             this.chartAssist.chart.addPlugin(new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["DonutGaugeLabelsPlugin"]());
-            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].assembleSeriesSet(this.seriesConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Donut);
+            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].assembleSeriesSet(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Donut);
             this.chartAssist.update(this.seriesSet);
           }
         }]);
@@ -454,7 +455,7 @@
       }();
 
       DonutGaugeTesterComponent.propDecorators = {
-        seriesConfig: [{
+        gaugeConfig: [{
           type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"]
         }],
         size: [{
