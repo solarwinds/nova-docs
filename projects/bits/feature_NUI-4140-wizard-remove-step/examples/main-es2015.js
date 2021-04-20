@@ -3504,6 +3504,8 @@ class WizardComponent {
         this.arraySteps.splice(index, 1);
         this.steps.reset([]);
         this.steps.reset(this.arraySteps);
+        this.stepIndex = this.steps.toArray()
+            .findIndex((s) => s === this.currentStep);
     }
     disableStep(step) {
         const indexOfStep = this.arraySteps.indexOf(step);

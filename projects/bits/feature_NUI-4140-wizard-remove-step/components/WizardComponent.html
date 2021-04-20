@@ -762,8 +762,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="186"
-                            class="link-to-prism">src/lib/wizard/wizard.component.ts:186</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="188"
+                            class="link-to-prism">src/lib/wizard/wizard.component.ts:188</a></div>
                 </td>
             </tr>
 
@@ -834,8 +834,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="193"
-                            class="link-to-prism">src/lib/wizard/wizard.component.ts:193</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="195"
+                            class="link-to-prism">src/lib/wizard/wizard.component.ts:195</a></div>
                 </td>
             </tr>
 
@@ -906,8 +906,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="277"
-                            class="link-to-prism">src/lib/wizard/wizard.component.ts:277</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="279"
+                            class="link-to-prism">src/lib/wizard/wizard.component.ts:279</a></div>
                 </td>
             </tr>
 
@@ -947,8 +947,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="212"
-                            class="link-to-prism">src/lib/wizard/wizard.component.ts:212</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="214"
+                            class="link-to-prism">src/lib/wizard/wizard.component.ts:214</a></div>
                 </td>
             </tr>
 
@@ -1019,8 +1019,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="200"
-                            class="link-to-prism">src/lib/wizard/wizard.component.ts:200</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="202"
+                            class="link-to-prism">src/lib/wizard/wizard.component.ts:202</a></div>
                 </td>
             </tr>
 
@@ -1091,8 +1091,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="231"
-                            class="link-to-prism">src/lib/wizard/wizard.component.ts:231</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="233"
+                            class="link-to-prism">src/lib/wizard/wizard.component.ts:233</a></div>
                 </td>
             </tr>
 
@@ -1132,8 +1132,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="273"
-                            class="link-to-prism">src/lib/wizard/wizard.component.ts:273</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="275"
+                            class="link-to-prism">src/lib/wizard/wizard.component.ts:275</a></div>
                 </td>
             </tr>
 
@@ -1173,8 +1173,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="269"
-                            class="link-to-prism">src/lib/wizard/wizard.component.ts:269</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="271"
+                            class="link-to-prism">src/lib/wizard/wizard.component.ts:271</a></div>
                 </td>
             </tr>
 
@@ -1214,8 +1214,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="244"
-                            class="link-to-prism">src/lib/wizard/wizard.component.ts:244</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="246"
+                            class="link-to-prism">src/lib/wizard/wizard.component.ts:246</a></div>
                 </td>
             </tr>
 
@@ -1327,8 +1327,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="216"
-                            class="link-to-prism">src/lib/wizard/wizard.component.ts:216</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="218"
+                            class="link-to-prism">src/lib/wizard/wizard.component.ts:218</a></div>
                 </td>
             </tr>
 
@@ -1399,8 +1399,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="206"
-                            class="link-to-prism">src/lib/wizard/wizard.component.ts:206</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="208"
+                            class="link-to-prism">src/lib/wizard/wizard.component.ts:208</a></div>
                 </td>
             </tr>
 
@@ -1848,6 +1848,8 @@ export class WizardComponent implements OnInit, AfterContentInit, AfterViewCheck
         this.arraySteps.splice(index, 1);
         this.steps.reset([]);
         this.steps.reset(this.arraySteps);
+        this.stepIndex &#x3D; this.steps.toArray()
+            .findIndex((s) &#x3D;&gt; s &#x3D;&#x3D;&#x3D; this.currentStep);
     }
 
     public disableStep (step: WizardStepComponent) {
