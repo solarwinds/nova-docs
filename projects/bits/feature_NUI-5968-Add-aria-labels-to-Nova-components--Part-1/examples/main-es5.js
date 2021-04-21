@@ -15865,7 +15865,7 @@
         }
 
         if (rf & 2) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("displayStyle", "default")("icon", "caret-down")("ariaLabel", "Open Selector Menu");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("displayStyle", "default")("icon", "caret-down");
         }
       }
       /**
@@ -16039,7 +16039,7 @@
         features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵNgOnChangesFeature"]],
         decls: 12,
         vars: 9,
-        consts: [[1, "btn-group"], ["toggleButton", ""], ["nui-button", "", "type", "button", "role", "checkbox", 1, "nui-selector__checkbox-button", 3, "displayStyle", "click"], [1, "nui-selector__checkbox-container"], [3, "checked", "indeterminate"], ["checkbox", ""], ["nui-button", "", "type", "button", "class", "nui-selector__toggle", 3, "displayStyle", "icon", "ariaLabel", "click", 4, "ngIf"], ["popupArea", ""], [3, "toggleReference", "overlayConfig", "customContainer"], ["overlay", ""], [3, "itemsSource", "menuItemClicked"], ["nui-button", "", "type", "button", 1, "nui-selector__toggle", 3, "displayStyle", "icon", "ariaLabel", "click"]],
+        consts: [[1, "btn-group"], ["toggleButton", ""], ["nui-button", "", "type", "button", "role", "checkbox", 1, "nui-selector__checkbox-button", 3, "displayStyle", "click"], [1, "nui-selector__checkbox-container"], [3, "checked", "indeterminate"], ["checkbox", ""], ["nui-button", "", "type", "button", "class", "nui-selector__toggle", "ariaLabel", "Open Selector Menu", 3, "displayStyle", "icon", "click", 4, "ngIf"], ["popupArea", ""], [3, "toggleReference", "overlayConfig", "customContainer"], ["overlay", ""], [3, "itemsSource", "menuItemClicked"], ["nui-button", "", "type", "button", "ariaLabel", "Open Selector Menu", 1, "nui-selector__toggle", 3, "displayStyle", "icon", "click"]],
         template: function SelectorComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0, 1);
@@ -16058,7 +16058,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](6, SelectorComponent_button_6_Template, 1, 3, "button", 6);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](6, SelectorComponent_button_6_Template, 1, 2, "button", 6);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -17144,7 +17144,7 @@
 
         _createClass(ProgressComponent, [{
           key: "ngOnChanges",
-          value: function ngOnChanges(changes) {
+          value: function ngOnChanges() {
             this.isIndeterminate = this.percent === undefined;
           }
         }, {

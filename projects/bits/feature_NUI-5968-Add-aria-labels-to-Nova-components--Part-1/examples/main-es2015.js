@@ -9151,7 +9151,7 @@ function SelectorComponent_button_6_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function SelectorComponent_button_6_Template_button_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r6); _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); const _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](10); return _r4.toggle(); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("displayStyle", "default")("icon", "caret-down")("ariaLabel", "Open Selector Menu");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("displayStyle", "default")("icon", "caret-down");
 } }
 /**
  * @ignore
@@ -9266,7 +9266,7 @@ SelectorComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefine
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.overlay = _t.first);
     } }, hostAttrs: ["tabindex", "-1", 1, "nui-selector"], hostVars: 1, hostBindings: function SelectorComponent_HostBindings(rf, ctx) { if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-label", ctx.ariaLabel);
-    } }, inputs: { checkboxStatus: "checkboxStatus", items: "items", appendToBody: "appendToBody", ariaLabel: "ariaLabel" }, outputs: { selectionChange: "selectionChange" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵNgOnChangesFeature"]], decls: 12, vars: 9, consts: [[1, "btn-group"], ["toggleButton", ""], ["nui-button", "", "type", "button", "role", "checkbox", 1, "nui-selector__checkbox-button", 3, "displayStyle", "click"], [1, "nui-selector__checkbox-container"], [3, "checked", "indeterminate"], ["checkbox", ""], ["nui-button", "", "type", "button", "class", "nui-selector__toggle", 3, "displayStyle", "icon", "ariaLabel", "click", 4, "ngIf"], ["popupArea", ""], [3, "toggleReference", "overlayConfig", "customContainer"], ["overlay", ""], [3, "itemsSource", "menuItemClicked"], ["nui-button", "", "type", "button", 1, "nui-selector__toggle", 3, "displayStyle", "icon", "ariaLabel", "click"]], template: function SelectorComponent_Template(rf, ctx) { if (rf & 1) {
+    } }, inputs: { checkboxStatus: "checkboxStatus", items: "items", appendToBody: "appendToBody", ariaLabel: "ariaLabel" }, outputs: { selectionChange: "selectionChange" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵNgOnChangesFeature"]], decls: 12, vars: 9, consts: [[1, "btn-group"], ["toggleButton", ""], ["nui-button", "", "type", "button", "role", "checkbox", 1, "nui-selector__checkbox-button", 3, "displayStyle", "click"], [1, "nui-selector__checkbox-container"], [3, "checked", "indeterminate"], ["checkbox", ""], ["nui-button", "", "type", "button", "class", "nui-selector__toggle", "ariaLabel", "Open Selector Menu", 3, "displayStyle", "icon", "click", 4, "ngIf"], ["popupArea", ""], [3, "toggleReference", "overlayConfig", "customContainer"], ["overlay", ""], [3, "itemsSource", "menuItemClicked"], ["nui-button", "", "type", "button", "ariaLabel", "Open Selector Menu", 1, "nui-selector__toggle", 3, "displayStyle", "icon", "click"]], template: function SelectorComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0, 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "button", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function SelectorComponent_Template_button_click_2_listener($event) { return ctx.handleSelectorClick($event); });
@@ -9274,7 +9274,7 @@ SelectorComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefine
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](4, "nui-checkbox", 4, 5);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](6, SelectorComponent_button_6_Template, 1, 3, "button", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](6, SelectorComponent_button_6_Template, 1, 2, "button", 6);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](7, "div", null, 7);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "nui-overlay", 8, 9);
@@ -10120,7 +10120,7 @@ class ProgressComponent {
         this.cancel = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
         this.isIndeterminate = false;
     }
-    ngOnChanges(changes) {
+    ngOnChanges() {
         this.isIndeterminate = this.percent === undefined;
     }
     cancelProgress() {
