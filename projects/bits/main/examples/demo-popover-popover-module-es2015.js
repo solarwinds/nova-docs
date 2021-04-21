@@ -388,7 +388,7 @@ PopoverDebounceExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { NgModule } from \"@angular/core\";\nimport { RouterModule } from \"@angular/router\";\nimport {\n    DEMO_PATH_TOKEN,\n    NuiButtonModule,\n    NuiCheckboxModule,\n    NuiDocsModule,\n    NuiPopoverModule,\n    NuiSelectModule,\n    SrlcStage,\n} from \"@nova-ui/bits\";\n\nimport {\n    PopoverBasicUsageExampleComponent,\n    PopoverClickTriggerExampleComponent,\n    PopoverDebounceExampleComponent,\n    PopoverDisabledExampleComponent,\n    PopoverExampleComponent,\n    PopoverFocusTriggerExampleComponent,\n    PopoverIconExampleComponent,\n    PopoverModalExampleComponent,\n    PopoverMouseenterTriggerExampleComponent,\n    PopoverNoPaddingExampleComponent,\n    PopoverOpenAndCloseProgrammaticallyExampleComponent,\n    PopoverOutputsExampleComponent,\n    PopoverPlacementExampleComponent,\n    PopoverPreventCloseOnClickExampleComponent,\n    PopoverStatusExampleComponent,\n    PopoverUnlimitedExampleComponent,\n    PopoverVisualTestComponent,\n    PopoverWithContainerExampleComponent,\n    PopoverWithTitleExampleComponent,\n} from \"./index\";\n\nconst routes = [\n    {\n        path: \"\",\n        component: PopoverExampleComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.ga,\n            },\n            showThemeSwitcher: true,\n        },\n    },\n    {\n        path: \"popover-test\",\n        component: PopoverExampleComponent,\n    },\n    {\n        path: \"popover-visual-test\",\n        component: PopoverVisualTestComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n];\n\n@NgModule({\n    imports: [\n        NuiButtonModule,\n        NuiPopoverModule,\n        NuiCheckboxModule,\n        NuiSelectModule,\n        NuiDocsModule,\n        RouterModule.forChild(routes),\n    ],\n    declarations: [\n        PopoverBasicUsageExampleComponent,\n        PopoverClickTriggerExampleComponent,\n        PopoverDisabledExampleComponent,\n        PopoverExampleComponent,\n        PopoverFocusTriggerExampleComponent,\n        PopoverIconExampleComponent,\n        PopoverModalExampleComponent,\n        PopoverMouseenterTriggerExampleComponent,\n        PopoverNoPaddingExampleComponent,\n        PopoverOutputsExampleComponent,\n        PopoverOpenAndCloseProgrammaticallyExampleComponent,\n        PopoverPlacementExampleComponent,\n        PopoverPreventCloseOnClickExampleComponent,\n        PopoverWithContainerExampleComponent,\n        PopoverWithTitleExampleComponent,\n        PopoverVisualTestComponent,\n        PopoverUnlimitedExampleComponent,\n        PopoverStatusExampleComponent,\n        PopoverDebounceExampleComponent,\n    ],\n    providers: [\n        {\n            provide: DEMO_PATH_TOKEN,\n            useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/),\n        },\n    ],\n    exports: [\n        RouterModule,\n    ],\n})\nexport class PopoverModule {\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import { NgModule } from \"@angular/core\";\nimport { RouterModule } from \"@angular/router\";\nimport {\n    DEMO_PATH_TOKEN,\n    NuiButtonModule,\n    NuiCheckboxModule,\n    NuiDocsModule,\n    NuiPopoverModule,\n    NuiSelectModule,\n    NuiSelectV2Module,\n    SrlcStage,\n} from \"@nova-ui/bits\";\n\nimport {\n    PopoverBasicUsageExampleComponent,\n    PopoverClickTriggerExampleComponent,\n    PopoverDebounceExampleComponent,\n    PopoverDisabledExampleComponent,\n    PopoverExampleComponent,\n    PopoverFocusTriggerExampleComponent,\n    PopoverIconExampleComponent,\n    PopoverModalExampleComponent,\n    PopoverMouseenterTriggerExampleComponent,\n    PopoverNoPaddingExampleComponent,\n    PopoverOpenAndCloseProgrammaticallyExampleComponent,\n    PopoverOutputsExampleComponent,\n    PopoverPlacementExampleComponent,\n    PopoverPreventCloseOnClickExampleComponent,\n    PopoverStatusExampleComponent,\n    PopoverUnlimitedExampleComponent,\n    PopoverVisualTestComponent,\n    PopoverWithContainerExampleComponent,\n    PopoverWithTitleExampleComponent,\n} from \"./index\";\n\nconst routes = [\n    {\n        path: \"\",\n        component: PopoverExampleComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.ga,\n            },\n            showThemeSwitcher: true,\n        },\n    },\n    {\n        path: \"popover-test\",\n        component: PopoverExampleComponent,\n    },\n    {\n        path: \"popover-visual-test\",\n        component: PopoverVisualTestComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n];\n\n@NgModule({\n    imports: [\n        NuiButtonModule,\n        NuiPopoverModule,\n        NuiCheckboxModule,\n        NuiSelectModule,\n        NuiSelectV2Module,\n        NuiDocsModule,\n        RouterModule.forChild(routes),\n    ],\n    declarations: [\n        PopoverBasicUsageExampleComponent,\n        PopoverClickTriggerExampleComponent,\n        PopoverDisabledExampleComponent,\n        PopoverExampleComponent,\n        PopoverFocusTriggerExampleComponent,\n        PopoverIconExampleComponent,\n        PopoverModalExampleComponent,\n        PopoverMouseenterTriggerExampleComponent,\n        PopoverNoPaddingExampleComponent,\n        PopoverOutputsExampleComponent,\n        PopoverOpenAndCloseProgrammaticallyExampleComponent,\n        PopoverPlacementExampleComponent,\n        PopoverPreventCloseOnClickExampleComponent,\n        PopoverWithContainerExampleComponent,\n        PopoverWithTitleExampleComponent,\n        PopoverVisualTestComponent,\n        PopoverUnlimitedExampleComponent,\n        PopoverStatusExampleComponent,\n        PopoverDebounceExampleComponent,\n    ],\n    providers: [\n        {\n            provide: DEMO_PATH_TOKEN,\n            useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/),\n        },\n    ],\n    exports: [\n        RouterModule,\n    ],\n})\nexport class PopoverModule {\n}\n");
 
 /***/ }),
 
@@ -1625,7 +1625,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { Component } from \"@angular/core\";\nimport { Subject } from \"rxjs\";\n\n@Component({\n    selector: \"nui-popover-visual-test\",\n    templateUrl: \"./popover-visual-test.component.html\",\n    styleUrls: [\"./popover-visual-test.component.less\"],\n})\nexport class PopoverVisualTestComponent {\n    public dataset = {\n        items: [\"Item 1\", \"Item 2\", \"Item 3\", \"Item 4\", \"Item 5\"],\n    };\n    public closePopoverSubject = new Subject();\n\n    closePopover() {\n        this.closePopoverSubject.next();\n    }\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import { OverlayConfig } from \"@angular/cdk/overlay\";\nimport { Component } from \"@angular/core\";\nimport { OVERLAY_WITH_POPUP_STYLES_CLASS } from \"@nova-ui/bits\";\nimport { Subject } from \"rxjs\";\n\n@Component({\n    selector: \"nui-popover-visual-test\",\n    templateUrl: \"./popover-visual-test.component.html\",\n    styleUrls: [\"./popover-visual-test.component.less\"],\n})\nexport class PopoverVisualTestComponent {\n    public dataset = {\n        items: [\"Item 1\", \"Item 2\", \"Item 3\", \"Item 4\", \"Item 5\"],\n    };\n    public closePopoverSubject = new Subject();\n    // Testing only\n    public overlayConfig: OverlayConfig = {\n        panelClass: [OVERLAY_WITH_POPUP_STYLES_CLASS, \"combobox-v2-test-pane\"],\n    };\n    closePopover() {\n        this.closePopoverSubject.next();\n    }\n}\n");
 
 /***/ }),
 
@@ -1651,7 +1651,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"d-flex justify-content-between\">\n    <nui-popover popoverTitle=\"Title\"\n                 trigger=\"click\"\n                 icon=\"application\"\n                 [template]=\"popoverTemplate\"\n                 [preventClosing]=\"true\">\n        <button class=\"placement-check-btn\">Show top left popover</button>\n    </nui-popover>\n\n    <nui-popover popoverTitle=\"Title\"\n                 trigger=\"click\"\n                 icon=\"application\"\n                 [template]=\"popoverTemplate\"\n                 [preventClosing]=\"true\">\n        <button class=\"placement-check-btn\">Show top right popover</button>\n    </nui-popover>\n</div>\n\n<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col\">\n            <h3>Basic Popover</h3>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col\">\n            <div class=\"d-flex\">\n                <nui-popover id=\"nui-demo-popover-basic\"\n                             [template]=\"popoverWithBasicUsage\">\n                    Hover over me!\n                </nui-popover>\n\n                <ng-template #popoverWithBasicUsage>\n                    I'm implemented with the simplest usage! Expand my source code above to see how!\n                </ng-template>\n            </div>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col\">\n            <h3>Popover - Prevent Closing on Click</h3>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col col-8\">\n            <div class=\"d-flex\">\n                <nui-popover popoverTitle=\"Prevent close popover on click\"\n                             trigger=\"click\"\n                             id=\"nui-demo-popover-prevent-closing\"\n                             [template]=\"popoverPreventClose\"\n                             [closePopover]=\"closePopoverSubject\"\n                             [preventClosing]=\"true\">\n                    <button id=\"nui-demo-button-prevent-onclick\"><span>Click me!</span></button>\n                </nui-popover>\n\n                <ng-template #popoverPreventClose>\n                    <div class=\"mb-2\">\n                        <nui-checkbox id=\"nui-demo-checkbox-in-popover\">Hi, check me!</nui-checkbox>\n                    </div>\n                    <div class=\"mb-2\">\n                        <nui-combobox id=\"nui-demo-popover-combobox\"\n                                      [itemsSource]=\"dataset.items\"\n                                      placeholder=\"Select item\"></nui-combobox>\n                    </div>\n                    <div class=\"d-flex justify-content-end\">\n                        <button nui-button\n                                type=\"button\"\n                                displayStyle=\"action\"\n                                (click)=\"closePopover()\">Close</button>\n                        <button nui-button\n                                class=\"ml-3\"\n                                type=\"button\"\n                                displayStyle=\"primary\"\n                                (click)=\"closePopover()\">Confirm</button>\n                    </div>\n                </ng-template>\n            </div>\n        </div>\n        <div class=\"col col-4\">\n            <div class=\"d-flex\">\n                <nui-popover popoverTitle=\"Popover with Left Placement\"\n                             placement=\"left\"\n                             trigger=\"click\"\n                             [template]=\"popoverLeftPlacement\"\n                             [preventClosing]=\"true\">\n                    <button class=\"placement-check-btn\"><span>Click me!</span></button>\n                </nui-popover>\n\n                <ng-template #popoverLeftPlacement>\n                    <nui-checkbox>Placement is set to LEFT in this case</nui-checkbox>\n                </ng-template>\n            </div>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col\">\n            <h3>Removing Padding</h3>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col\">\n            <div class=\"d-flex\">\n                <nui-popover [hasPadding]=\"false\"\n                             id=\"nui-demo-popover-no-padding\"\n                             popoverTitle=\"My body has no padding\"\n                             [template]=\"popoverNoPadding\">\n                    Hover over me!\n                </nui-popover>\n\n                <ng-template #popoverNoPadding>\n                    I lack padding because I'm configured that way.\n                </ng-template>\n            </div>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col\">\n            <h3>Icon</h3>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col\">\n            <div class=\"d-flex flex-column\">\n                <div>\n                    <nui-popover icon=\"application\"\n                                 [template]=\"iconPopoverTemplateNoTitle\">\n                        Hover over me!\n                    </nui-popover>\n                </div>\n                <div>\n                    <nui-popover popoverTitle=\"Popover with Icon\"\n                                 icon=\"application\"\n                                 [template]=\"iconPopoverTemplateWithTitle\">\n                        Hover over me, too!\n                    </nui-popover>\n                </div>\n\n                <ng-template #iconPopoverTemplateNoTitle>I have an application icon and no title!</ng-template>\n                <ng-template #iconPopoverTemplateWithTitle>I have an application icon and a title!</ng-template>\n            </div>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col\">\n            <h3>Removing Width and Height Limitations</h3>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col\">\n            <div class=\"d-flex flex-column\">\n                <div>\n                    <nui-popover [template]=\"popoverUnlimited\"\n                                 [unlimited]=\"true\"\n                                 icon=\"application\"\n                                 id=\"nui-demo-popover-no-limits\">\n                        Hover over me!\n                    </nui-popover>\n                </div>\n\n                <div>\n                    <nui-popover [template]=\"popoverDefaultRestrictions\"\n                                 id=\"nui-demo-popover-limited-and-multiline\">\n                        Hover over me!\n                    </nui-popover>\n                </div>\n\n                <ng-template #popoverUnlimited>\n                    I'm implemented without restrictions on my width and height!\n                    That's why I'm taking up as much space as I have available on the page.\n                    Expand my source code above to see how!\n                </ng-template>\n\n                <ng-template #popoverDefaultRestrictions>\n                    I'm implemented with respect to the default <code>max-width</code> and <code>max-height</code> restrictions defined by the Nova Design\n                    Language!\n                    That's why my text will nicely wrap when it exceeds the <code>max-width</code> limit.\n                    Expand my source code above to see how!\n                </ng-template>\n            </div>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col\">\n            <h3>Modal Mode</h3>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col\">\n            <div class=\"d-flex\">\n                <nui-popover popoverTitle=\"Title\"\n                             id=\"nui-demo-popover-modal\"\n                             trigger=\"click\"\n                             placement=\"right\"\n                             icon=\"application\"\n                             [template]=\"popoverTemplate\"\n                             [modal]=\"true\">\n                    <button>Show modal popover</button>\n                </nui-popover>\n            </div>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col\">\n            <h3>Large Trigger Element Height</h3>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col\">\n            <div class=\"d-flex\">\n                <nui-popover popoverTitle=\"Popover with Top Placement\"\n                             placement=\"top\"\n                             [template]=\"popoverTemplate\"\n                             trigger=\"click\"\n                             [preventClosing]=\"true\">\n                    <button class=\"large-height placement-check-btn\">\n                        open top\n                    </button>\n                </nui-popover>\n\n                <nui-popover popoverTitle=\"Popover with Bottom Placement\"\n                             placement=\"bottom\"\n                             [template]=\"popoverTemplate\"\n                             trigger=\"click\"\n                             [preventClosing]=\"true\">\n                    <button class=\"large-height placement-check-btn\">\n                        open bottom\n                    </button>\n                </nui-popover>\n            </div>\n        </div>\n    </div>\n\n</div>\n\n<div class=\"d-flex footer justify-content-between align-items-center p-2\">\n    <nui-popover popoverTitle=\"Title\"\n                 id=\"nui-demo-popover-bottom-left\"\n                 trigger=\"click\"\n                 icon=\"application\"\n                 [template]=\"popoverTemplate\"\n                 [preventClosing]=\"true\">\n        <button class=\"placement-check-btn\">Show bottom-left popover</button>\n    </nui-popover>\n    <nui-popover popoverTitle=\"Title\"\n                 id=\"nui-demo-popover-bottom-right\"\n                 trigger=\"click\"\n                 icon=\"application\"\n                 [template]=\"popoverTemplate\"\n                 [preventClosing]=\"true\">\n        <button class=\"placement-check-btn\">Show bottom-right popover</button>\n    </nui-popover>\n</div>\n\n<ng-template #popoverTemplate>\n    Test Template\n</ng-template>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"d-flex justify-content-between\">\n    <nui-popover popoverTitle=\"Title\"\n                 trigger=\"click\"\n                 icon=\"application\"\n                 [template]=\"popoverTemplate\"\n                 [preventClosing]=\"true\">\n        <button class=\"placement-check-btn\">Show top left popover</button>\n    </nui-popover>\n\n    <nui-popover popoverTitle=\"Title\"\n                 trigger=\"click\"\n                 icon=\"application\"\n                 [template]=\"popoverTemplate\"\n                 [preventClosing]=\"true\">\n        <button class=\"placement-check-btn\">Show top right popover</button>\n    </nui-popover>\n</div>\n\n<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col\">\n            <h3>Basic Popover</h3>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col\">\n            <div class=\"d-flex\">\n                <nui-popover id=\"nui-demo-popover-basic\"\n                             [template]=\"popoverWithBasicUsage\">\n                    Hover over me!\n                </nui-popover>\n\n                <ng-template #popoverWithBasicUsage>\n                    I'm implemented with the simplest usage! Expand my source code above to see how!\n                </ng-template>\n            </div>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col\">\n            <h3>Popover - Prevent Closing on Click</h3>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col col-8\">\n            <div class=\"d-flex\">\n                <nui-popover popoverTitle=\"Prevent close popover on click\"\n                             trigger=\"click\"\n                             id=\"nui-demo-popover-prevent-closing\"\n                             [template]=\"popoverPreventClose\"\n                             [closePopover]=\"closePopoverSubject\"\n                             [preventClosing]=\"true\">\n                    <button id=\"nui-demo-button-prevent-onclick\"><span>Click me!</span></button>\n                </nui-popover>\n\n                <ng-template #popoverPreventClose>\n                    <div class=\"mb-2\">\n                        <nui-checkbox id=\"nui-demo-checkbox-in-popover\">Hi, check me!</nui-checkbox>\n                    </div>\n                    <div class=\"mb-2\">\n                        <nui-combobox id=\"nui-demo-popover-combobox\"\n                                      [itemsSource]=\"dataset.items\"\n                                      placeholder=\"Select item combo\"></nui-combobox>\n                        <nui-combobox-v2 [overlayConfig]=\"overlayConfig\" id=\"nui-demo-combobox-v2-in-popover\" placeholder=\"Select item combo v2\">\n                            <nui-select-v2-option *ngFor=\"let item of dataset.items\" [value]=\"item\">{{ item }}</nui-select-v2-option>\n                        </nui-combobox-v2>\n\n                    </div>\n                    <div class=\"d-flex justify-content-end\">\n                        <button nui-button\n                                type=\"button\"\n                                displayStyle=\"action\"\n                                (click)=\"closePopover()\">Close</button>\n                        <button nui-button\n                                class=\"ml-3\"\n                                type=\"button\"\n                                displayStyle=\"primary\"\n                                (click)=\"closePopover()\">Confirm</button>\n                    </div>\n                </ng-template>\n            </div>\n        </div>\n        <div class=\"col col-4\">\n            <div class=\"d-flex\">\n                <nui-popover popoverTitle=\"Popover with Left Placement\"\n                             placement=\"left\"\n                             trigger=\"click\"\n                             [template]=\"popoverLeftPlacement\"\n                             [preventClosing]=\"true\">\n                    <button class=\"placement-check-btn\"><span>Click me!</span></button>\n                </nui-popover>\n\n                <ng-template #popoverLeftPlacement>\n                    <nui-checkbox>Placement is set to LEFT in this case</nui-checkbox>\n                </ng-template>\n            </div>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col\">\n            <h3>Removing Padding</h3>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col\">\n            <div class=\"d-flex\">\n                <nui-popover [hasPadding]=\"false\"\n                             id=\"nui-demo-popover-no-padding\"\n                             popoverTitle=\"My body has no padding\"\n                             [template]=\"popoverNoPadding\">\n                    Hover over me!\n                </nui-popover>\n\n                <ng-template #popoverNoPadding>\n                    I lack padding because I'm configured that way.\n                </ng-template>\n            </div>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col\">\n            <h3>Icon</h3>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col\">\n            <div class=\"d-flex flex-column\">\n                <div>\n                    <nui-popover icon=\"application\"\n                                 [template]=\"iconPopoverTemplateNoTitle\">\n                        Hover over me!\n                    </nui-popover>\n                </div>\n                <div>\n                    <nui-popover popoverTitle=\"Popover with Icon\"\n                                 icon=\"application\"\n                                 [template]=\"iconPopoverTemplateWithTitle\">\n                        Hover over me, too!\n                    </nui-popover>\n                </div>\n\n                <ng-template #iconPopoverTemplateNoTitle>I have an application icon and no title!</ng-template>\n                <ng-template #iconPopoverTemplateWithTitle>I have an application icon and a title!</ng-template>\n            </div>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col\">\n            <h3>Removing Width and Height Limitations</h3>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col\">\n            <div class=\"d-flex flex-column\">\n                <div>\n                    <nui-popover [template]=\"popoverUnlimited\"\n                                 [unlimited]=\"true\"\n                                 icon=\"application\"\n                                 id=\"nui-demo-popover-no-limits\">\n                        Hover over me!\n                    </nui-popover>\n                </div>\n\n                <div>\n                    <nui-popover [template]=\"popoverDefaultRestrictions\"\n                                 id=\"nui-demo-popover-limited-and-multiline\">\n                        Hover over me!\n                    </nui-popover>\n                </div>\n\n                <ng-template #popoverUnlimited>\n                    I'm implemented without restrictions on my width and height!\n                    That's why I'm taking up as much space as I have available on the page.\n                    Expand my source code above to see how!\n                </ng-template>\n\n                <ng-template #popoverDefaultRestrictions>\n                    I'm implemented with respect to the default <code>max-width</code> and <code>max-height</code> restrictions defined by the Nova Design\n                    Language!\n                    That's why my text will nicely wrap when it exceeds the <code>max-width</code> limit.\n                    Expand my source code above to see how!\n                </ng-template>\n            </div>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col\">\n            <h3>Modal Mode</h3>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col\">\n            <div class=\"d-flex\">\n                <nui-popover popoverTitle=\"Title\"\n                             id=\"nui-demo-popover-modal\"\n                             trigger=\"click\"\n                             placement=\"right\"\n                             icon=\"application\"\n                             [template]=\"popoverTemplate\"\n                             [modal]=\"true\">\n                    <button>Show modal popover</button>\n                </nui-popover>\n            </div>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col\">\n            <h3>Large Trigger Element Height</h3>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col\">\n            <div class=\"d-flex\">\n                <nui-popover popoverTitle=\"Popover with Top Placement\"\n                             placement=\"top\"\n                             [template]=\"popoverTemplate\"\n                             trigger=\"click\"\n                             [preventClosing]=\"true\">\n                    <button class=\"large-height placement-check-btn\">\n                        open top\n                    </button>\n                </nui-popover>\n\n                <nui-popover popoverTitle=\"Popover with Bottom Placement\"\n                             placement=\"bottom\"\n                             [template]=\"popoverTemplate\"\n                             trigger=\"click\"\n                             [preventClosing]=\"true\">\n                    <button class=\"large-height placement-check-btn\">\n                        open bottom\n                    </button>\n                </nui-popover>\n            </div>\n        </div>\n    </div>\n\n</div>\n\n<div class=\"d-flex footer justify-content-between align-items-center p-2\">\n    <nui-popover popoverTitle=\"Title\"\n                 id=\"nui-demo-popover-bottom-left\"\n                 trigger=\"click\"\n                 icon=\"application\"\n                 [template]=\"popoverTemplate\"\n                 [preventClosing]=\"true\">\n        <button class=\"placement-check-btn\">Show bottom-left popover</button>\n    </nui-popover>\n    <nui-popover popoverTitle=\"Title\"\n                 id=\"nui-demo-popover-bottom-right\"\n                 trigger=\"click\"\n                 icon=\"application\"\n                 [template]=\"popoverTemplate\"\n                 [preventClosing]=\"true\">\n        <button class=\"placement-check-btn\">Show bottom-right popover</button>\n    </nui-popover>\n</div>\n\n<ng-template #popoverTemplate>\n    Test Template\n</ng-template>\n");
 
 /***/ }),
 
@@ -1712,6 +1712,7 @@ PopoverModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInje
             _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiPopoverModule"],
             _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiCheckboxModule"],
             _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiSelectModule"],
+            _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiSelectV2Module"],
             _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiDocsModule"],
             _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"].forChild(routes),
         ], _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]] });
@@ -1737,6 +1738,7 @@ PopoverModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInje
         _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiPopoverModule"],
         _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiCheckboxModule"],
         _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiSelectModule"],
+        _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiSelectV2Module"],
         _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiDocsModule"], _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]], exports: [_angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]] }); })();
 
 
@@ -2392,12 +2394,20 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PopoverVisualTestComponent", function() { return PopoverVisualTestComponent; });
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! rxjs */ "qCKp");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _src_lib_popover_popover_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../src/lib/popover/popover.component */ "N1kL");
-/* harmony import */ var _src_lib_checkbox_checkbox_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../src/lib/checkbox/checkbox.component */ "Oh8U");
-/* harmony import */ var _src_lib_select_combobox_combobox_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../../src/lib/select/combobox/combobox.component */ "KXc3");
-/* harmony import */ var _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../../../src/lib/button/button.component */ "6urz");
+/* harmony import */ var _nova_ui_bits__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @nova-ui/bits */ "b5Xb");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "qCKp");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _src_lib_popover_popover_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../src/lib/popover/popover.component */ "N1kL");
+/* harmony import */ var _src_lib_checkbox_checkbox_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../../src/lib/checkbox/checkbox.component */ "Oh8U");
+/* harmony import */ var _src_lib_select_combobox_combobox_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../../../src/lib/select/combobox/combobox.component */ "KXc3");
+/* harmony import */ var _src_lib_select_v2_combobox_v2_combobox_v2_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../../../src/lib/select-v2/combobox-v2/combobox-v2.component */ "eZSC");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../../../../src/lib/button/button.component */ "6urz");
+/* harmony import */ var _src_lib_select_v2_option_select_v2_option_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../../../../src/lib/select-v2/option/select-v2-option.component */ "tpGn");
+
+
+
+
 
 
 
@@ -2405,307 +2415,328 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function PopoverVisualTestComponent_ng_template_17_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](0, " I'm implemented with the simplest usage! Expand my source code above to see how! ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](0, " I'm implemented with the simplest usage! Expand my source code above to see how! ");
+} }
+function PopoverVisualTestComponent_ng_template_30_nui_select_v2_option_6_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "nui-select-v2-option", 43);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const item_r19 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("value", item_r19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](item_r19);
 } }
 function PopoverVisualTestComponent_ng_template_30_Template(rf, ctx) { if (rf & 1) {
-    const _r19 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 35);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "nui-checkbox", 36);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "Hi, check me!");
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "div", 35);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](4, "nui-combobox", 37);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "div", 38);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](6, "button", 39);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function PopoverVisualTestComponent_ng_template_30_Template_button_click_6_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r19); const ctx_r18 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](); return ctx_r18.closePopover(); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](7, "Close");
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](8, "button", 40);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function PopoverVisualTestComponent_ng_template_30_Template_button_click_8_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r19); const ctx_r20 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](); return ctx_r20.closePopover(); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](9, "Confirm");
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    const _r21 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 35);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](1, "nui-checkbox", 36);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](2, "Hi, check me!");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](3, "div", 35);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](4, "nui-combobox", 37);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](5, "nui-combobox-v2", 38);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](6, PopoverVisualTestComponent_ng_template_30_nui_select_v2_option_6_Template, 2, 2, "nui-select-v2-option", 39);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](7, "div", 40);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](8, "button", 41);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function PopoverVisualTestComponent_ng_template_30_Template_button_click_8_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r21); const ctx_r20 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"](); return ctx_r20.closePopover(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](9, "Close");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](10, "button", 42);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function PopoverVisualTestComponent_ng_template_30_Template_button_click_10_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r21); const ctx_r22 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"](); return ctx_r22.closePopover(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](11, "Confirm");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("itemsSource", ctx_r3.dataset.items);
+    const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("itemsSource", ctx_r3.dataset.items);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("overlayConfig", ctx_r3.overlayConfig);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx_r3.dataset.items);
 } }
 function PopoverVisualTestComponent_ng_template_38_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-checkbox");
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1, "Placement is set to LEFT in this case");
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "nui-checkbox");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, "Placement is set to LEFT in this case");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 } }
 function PopoverVisualTestComponent_ng_template_49_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](0, " I lack padding because I'm configured that way. ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](0, " I lack padding because I'm configured that way. ");
 } }
 function PopoverVisualTestComponent_ng_template_64_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](0, "I have an application icon and no title!");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](0, "I have an application icon and no title!");
 } }
 function PopoverVisualTestComponent_ng_template_66_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](0, "I have an application icon and a title!");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](0, "I have an application icon and a title!");
 } }
 function PopoverVisualTestComponent_ng_template_81_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](0, " I'm implemented without restrictions on my width and height! That's why I'm taking up as much space as I have available on the page. Expand my source code above to see how! ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](0, " I'm implemented without restrictions on my width and height! That's why I'm taking up as much space as I have available on the page. Expand my source code above to see how! ");
 } }
 function PopoverVisualTestComponent_ng_template_83_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](0, " I'm implemented with respect to the default ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "code");
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "max-width");
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](3, " and ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](4, "code");
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](5, "max-height");
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](6, " restrictions defined by the Nova Design Language! That's why my text will nicely wrap when it exceeds the ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](7, "code");
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](8, "max-width");
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](9, " limit. Expand my source code above to see how! ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](0, " I'm implemented with respect to the default ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](1, "code");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](2, "max-width");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](3, " and ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](4, "code");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](5, "max-height");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](6, " restrictions defined by the Nova Design Language! That's why my text will nicely wrap when it exceeds the ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](7, "code");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](8, "max-width");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](9, " limit. Expand my source code above to see how! ");
 } }
 function PopoverVisualTestComponent_ng_template_115_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](0, " Test Template\n");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](0, " Test Template\n");
 } }
 class PopoverVisualTestComponent {
     constructor() {
         this.dataset = {
             items: ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5"],
         };
-        this.closePopoverSubject = new rxjs__WEBPACK_IMPORTED_MODULE_0__["Subject"]();
+        this.closePopoverSubject = new rxjs__WEBPACK_IMPORTED_MODULE_1__["Subject"]();
+        // Testing only
+        this.overlayConfig = {
+            panelClass: [_nova_ui_bits__WEBPACK_IMPORTED_MODULE_0__["OVERLAY_WITH_POPUP_STYLES_CLASS"], "combobox-v2-test-pane"],
+        };
     }
     closePopover() {
         this.closePopoverSubject.next();
     }
 }
 PopoverVisualTestComponent.ɵfac = function PopoverVisualTestComponent_Factory(t) { return new (t || PopoverVisualTestComponent)(); };
-PopoverVisualTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: PopoverVisualTestComponent, selectors: [["nui-popover-visual-test"]], decls: 117, vars: 27, consts: [[1, "d-flex", "justify-content-between"], ["popoverTitle", "Title", "trigger", "click", "icon", "application", 3, "template", "preventClosing"], [1, "placement-check-btn"], [1, "container"], [1, "row"], [1, "col"], [1, "d-flex"], ["id", "nui-demo-popover-basic", 3, "template"], ["popoverWithBasicUsage", ""], [1, "col", "col-8"], ["popoverTitle", "Prevent close popover on click", "trigger", "click", "id", "nui-demo-popover-prevent-closing", 3, "template", "closePopover", "preventClosing"], ["id", "nui-demo-button-prevent-onclick"], ["popoverPreventClose", ""], [1, "col", "col-4"], ["popoverTitle", "Popover with Left Placement", "placement", "left", "trigger", "click", 3, "template", "preventClosing"], ["popoverLeftPlacement", ""], ["id", "nui-demo-popover-no-padding", "popoverTitle", "My body has no padding", 3, "hasPadding", "template"], ["popoverNoPadding", ""], [1, "d-flex", "flex-column"], ["icon", "application", 3, "template"], ["popoverTitle", "Popover with Icon", "icon", "application", 3, "template"], ["iconPopoverTemplateNoTitle", ""], ["iconPopoverTemplateWithTitle", ""], ["icon", "application", "id", "nui-demo-popover-no-limits", 3, "template", "unlimited"], ["id", "nui-demo-popover-limited-and-multiline", 3, "template"], ["popoverUnlimited", ""], ["popoverDefaultRestrictions", ""], ["popoverTitle", "Title", "id", "nui-demo-popover-modal", "trigger", "click", "placement", "right", "icon", "application", 3, "template", "modal"], ["popoverTitle", "Popover with Top Placement", "placement", "top", "trigger", "click", 3, "template", "preventClosing"], [1, "large-height", "placement-check-btn"], ["popoverTitle", "Popover with Bottom Placement", "placement", "bottom", "trigger", "click", 3, "template", "preventClosing"], [1, "d-flex", "footer", "justify-content-between", "align-items-center", "p-2"], ["popoverTitle", "Title", "id", "nui-demo-popover-bottom-left", "trigger", "click", "icon", "application", 3, "template", "preventClosing"], ["popoverTitle", "Title", "id", "nui-demo-popover-bottom-right", "trigger", "click", "icon", "application", 3, "template", "preventClosing"], ["popoverTemplate", ""], [1, "mb-2"], ["id", "nui-demo-checkbox-in-popover"], ["id", "nui-demo-popover-combobox", "placeholder", "Select item", 3, "itemsSource"], [1, "d-flex", "justify-content-end"], ["nui-button", "", "type", "button", "displayStyle", "action", 3, "click"], ["nui-button", "", "type", "button", "displayStyle", "primary", 1, "ml-3", 3, "click"]], template: function PopoverVisualTestComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "nui-popover", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "button", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](3, "Show top left popover");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](4, "nui-popover", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "button", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](6, "Show top right popover");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](7, "div", 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](8, "div", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](9, "div", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](10, "h3");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](11, "Basic Popover");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](12, "div", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](13, "div", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](14, "div", 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](15, "nui-popover", 7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](16, " Hover over me! ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](17, PopoverVisualTestComponent_ng_template_17_Template, 1, 0, "ng-template", null, 8, _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplateRefExtractor"]);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](19, "div", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](20, "div", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](21, "h3");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](22, "Popover - Prevent Closing on Click");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](23, "div", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](24, "div", 9);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](25, "div", 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](26, "nui-popover", 10);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](27, "button", 11);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](28, "span");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](29, "Click me!");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](30, PopoverVisualTestComponent_ng_template_30_Template, 10, 1, "ng-template", null, 12, _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplateRefExtractor"]);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](32, "div", 13);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](33, "div", 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](34, "nui-popover", 14);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](35, "button", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](36, "span");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](37, "Click me!");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](38, PopoverVisualTestComponent_ng_template_38_Template, 2, 0, "ng-template", null, 15, _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplateRefExtractor"]);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](40, "div", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](41, "div", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](42, "h3");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](43, "Removing Padding");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](44, "div", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](45, "div", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](46, "div", 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](47, "nui-popover", 16);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](48, " Hover over me! ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](49, PopoverVisualTestComponent_ng_template_49_Template, 1, 0, "ng-template", null, 17, _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplateRefExtractor"]);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](51, "div", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](52, "div", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](53, "h3");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](54, "Icon");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](55, "div", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](56, "div", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](57, "div", 18);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](58, "div");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](59, "nui-popover", 19);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](60, " Hover over me! ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](61, "div");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](62, "nui-popover", 20);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](63, " Hover over me, too! ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](64, PopoverVisualTestComponent_ng_template_64_Template, 1, 0, "ng-template", null, 21, _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplateRefExtractor"]);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](66, PopoverVisualTestComponent_ng_template_66_Template, 1, 0, "ng-template", null, 22, _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplateRefExtractor"]);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](68, "div", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](69, "div", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](70, "h3");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](71, "Removing Width and Height Limitations");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](72, "div", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](73, "div", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](74, "div", 18);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](75, "div");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](76, "nui-popover", 23);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](77, " Hover over me! ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](78, "div");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](79, "nui-popover", 24);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](80, " Hover over me! ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](81, PopoverVisualTestComponent_ng_template_81_Template, 1, 0, "ng-template", null, 25, _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplateRefExtractor"]);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](83, PopoverVisualTestComponent_ng_template_83_Template, 10, 0, "ng-template", null, 26, _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplateRefExtractor"]);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](85, "div", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](86, "div", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](87, "h3");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](88, "Modal Mode");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](89, "div", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](90, "div", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](91, "div", 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](92, "nui-popover", 27);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](93, "button");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](94, "Show modal popover");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](95, "div", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](96, "div", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](97, "h3");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](98, "Large Trigger Element Height");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](99, "div", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](100, "div", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](101, "div", 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](102, "nui-popover", 28);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](103, "button", 29);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](104, " open top ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](105, "nui-popover", 30);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](106, "button", 29);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](107, " open bottom ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](108, "div", 31);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](109, "nui-popover", 32);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](110, "button", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](111, "Show bottom-left popover");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](112, "nui-popover", 33);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](113, "button", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](114, "Show bottom-right popover");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](115, PopoverVisualTestComponent_ng_template_115_Template, 1, 0, "ng-template", null, 34, _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplateRefExtractor"]);
+PopoverVisualTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({ type: PopoverVisualTestComponent, selectors: [["nui-popover-visual-test"]], decls: 117, vars: 27, consts: [[1, "d-flex", "justify-content-between"], ["popoverTitle", "Title", "trigger", "click", "icon", "application", 3, "template", "preventClosing"], [1, "placement-check-btn"], [1, "container"], [1, "row"], [1, "col"], [1, "d-flex"], ["id", "nui-demo-popover-basic", 3, "template"], ["popoverWithBasicUsage", ""], [1, "col", "col-8"], ["popoverTitle", "Prevent close popover on click", "trigger", "click", "id", "nui-demo-popover-prevent-closing", 3, "template", "closePopover", "preventClosing"], ["id", "nui-demo-button-prevent-onclick"], ["popoverPreventClose", ""], [1, "col", "col-4"], ["popoverTitle", "Popover with Left Placement", "placement", "left", "trigger", "click", 3, "template", "preventClosing"], ["popoverLeftPlacement", ""], ["id", "nui-demo-popover-no-padding", "popoverTitle", "My body has no padding", 3, "hasPadding", "template"], ["popoverNoPadding", ""], [1, "d-flex", "flex-column"], ["icon", "application", 3, "template"], ["popoverTitle", "Popover with Icon", "icon", "application", 3, "template"], ["iconPopoverTemplateNoTitle", ""], ["iconPopoverTemplateWithTitle", ""], ["icon", "application", "id", "nui-demo-popover-no-limits", 3, "template", "unlimited"], ["id", "nui-demo-popover-limited-and-multiline", 3, "template"], ["popoverUnlimited", ""], ["popoverDefaultRestrictions", ""], ["popoverTitle", "Title", "id", "nui-demo-popover-modal", "trigger", "click", "placement", "right", "icon", "application", 3, "template", "modal"], ["popoverTitle", "Popover with Top Placement", "placement", "top", "trigger", "click", 3, "template", "preventClosing"], [1, "large-height", "placement-check-btn"], ["popoverTitle", "Popover with Bottom Placement", "placement", "bottom", "trigger", "click", 3, "template", "preventClosing"], [1, "d-flex", "footer", "justify-content-between", "align-items-center", "p-2"], ["popoverTitle", "Title", "id", "nui-demo-popover-bottom-left", "trigger", "click", "icon", "application", 3, "template", "preventClosing"], ["popoverTitle", "Title", "id", "nui-demo-popover-bottom-right", "trigger", "click", "icon", "application", 3, "template", "preventClosing"], ["popoverTemplate", ""], [1, "mb-2"], ["id", "nui-demo-checkbox-in-popover"], ["id", "nui-demo-popover-combobox", "placeholder", "Select item combo", 3, "itemsSource"], ["id", "nui-demo-combobox-v2-in-popover", "placeholder", "Select item combo v2", 3, "overlayConfig"], [3, "value", 4, "ngFor", "ngForOf"], [1, "d-flex", "justify-content-end"], ["nui-button", "", "type", "button", "displayStyle", "action", 3, "click"], ["nui-button", "", "type", "button", "displayStyle", "primary", 1, "ml-3", 3, "click"], [3, "value"]], template: function PopoverVisualTestComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](1, "nui-popover", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](2, "button", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](3, "Show top left popover");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](4, "nui-popover", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](5, "button", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](6, "Show top right popover");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](7, "div", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](8, "div", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](9, "div", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](10, "h3");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](11, "Basic Popover");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](12, "div", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](13, "div", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](14, "div", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](15, "nui-popover", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](16, " Hover over me! ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](17, PopoverVisualTestComponent_ng_template_17_Template, 1, 0, "ng-template", null, 8, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](19, "div", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](20, "div", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](21, "h3");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](22, "Popover - Prevent Closing on Click");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](23, "div", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](24, "div", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](25, "div", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](26, "nui-popover", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](27, "button", 11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](28, "span");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](29, "Click me!");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](30, PopoverVisualTestComponent_ng_template_30_Template, 12, 3, "ng-template", null, 12, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](32, "div", 13);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](33, "div", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](34, "nui-popover", 14);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](35, "button", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](36, "span");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](37, "Click me!");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](38, PopoverVisualTestComponent_ng_template_38_Template, 2, 0, "ng-template", null, 15, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](40, "div", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](41, "div", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](42, "h3");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](43, "Removing Padding");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](44, "div", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](45, "div", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](46, "div", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](47, "nui-popover", 16);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](48, " Hover over me! ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](49, PopoverVisualTestComponent_ng_template_49_Template, 1, 0, "ng-template", null, 17, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](51, "div", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](52, "div", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](53, "h3");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](54, "Icon");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](55, "div", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](56, "div", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](57, "div", 18);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](58, "div");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](59, "nui-popover", 19);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](60, " Hover over me! ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](61, "div");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](62, "nui-popover", 20);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](63, " Hover over me, too! ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](64, PopoverVisualTestComponent_ng_template_64_Template, 1, 0, "ng-template", null, 21, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](66, PopoverVisualTestComponent_ng_template_66_Template, 1, 0, "ng-template", null, 22, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](68, "div", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](69, "div", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](70, "h3");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](71, "Removing Width and Height Limitations");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](72, "div", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](73, "div", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](74, "div", 18);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](75, "div");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](76, "nui-popover", 23);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](77, " Hover over me! ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](78, "div");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](79, "nui-popover", 24);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](80, " Hover over me! ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](81, PopoverVisualTestComponent_ng_template_81_Template, 1, 0, "ng-template", null, 25, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](83, PopoverVisualTestComponent_ng_template_83_Template, 10, 0, "ng-template", null, 26, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](85, "div", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](86, "div", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](87, "h3");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](88, "Modal Mode");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](89, "div", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](90, "div", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](91, "div", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](92, "nui-popover", 27);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](93, "button");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](94, "Show modal popover");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](95, "div", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](96, "div", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](97, "h3");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](98, "Large Trigger Element Height");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](99, "div", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](100, "div", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](101, "div", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](102, "nui-popover", 28);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](103, "button", 29);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](104, " open top ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](105, "nui-popover", 30);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](106, "button", 29);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](107, " open bottom ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](108, "div", 31);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](109, "nui-popover", 32);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](110, "button", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](111, "Show bottom-left popover");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](112, "nui-popover", 33);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](113, "button", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](114, "Show bottom-right popover");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](115, PopoverVisualTestComponent_ng_template_115_Template, 1, 0, "ng-template", null, 34, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
     } if (rf & 2) {
-        const _r0 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵreference"](18);
-        const _r2 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵreference"](31);
-        const _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵreference"](39);
-        const _r6 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵreference"](50);
-        const _r8 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵreference"](65);
-        const _r10 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵreference"](67);
-        const _r12 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵreference"](82);
-        const _r14 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵreference"](84);
-        const _r16 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵreference"](116);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("template", _r16)("preventClosing", true);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("template", _r16)("preventClosing", true);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](11);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("template", _r0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](11);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("template", _r2)("closePopover", ctx.closePopoverSubject)("preventClosing", true);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("template", _r4)("preventClosing", true);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](13);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("hasPadding", false)("template", _r6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](12);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("template", _r8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("template", _r10);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](14);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("template", _r12)("unlimited", true);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("template", _r14);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](13);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("template", _r16)("modal", true);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](10);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("template", _r16)("preventClosing", true);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("template", _r16)("preventClosing", true);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("template", _r16)("preventClosing", true);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("template", _r16)("preventClosing", true);
-    } }, directives: [_src_lib_popover_popover_component__WEBPACK_IMPORTED_MODULE_2__["PopoverComponent"], _src_lib_checkbox_checkbox_component__WEBPACK_IMPORTED_MODULE_3__["CheckboxComponent"], _src_lib_select_combobox_combobox_component__WEBPACK_IMPORTED_MODULE_4__["ComboboxComponent"], _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_5__["ButtonComponent"]], styles: [".footer[_ngcontent-%COMP%] {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  width: 100%;\n  height: 60px;\n}\n.large-height[_ngcontent-%COMP%] {\n  height: 150px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBvcG92ZXItdmlzdWFsLXRlc3QuY29tcG9uZW50Lmxlc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxrQkFBQTtFQUNBLFNBQUE7RUFDQSxPQUFBO0VBQ0EsV0FBQTtFQUNBLFlBQUE7QUFDSjtBQUVBO0VBQ0ksYUFBQTtBQUFKIiwiZmlsZSI6InBvcG92ZXItdmlzdWFsLXRlc3QuY29tcG9uZW50Lmxlc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZm9vdGVyIHtcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgYm90dG9tOiAwO1xuICAgIGxlZnQ6IDA7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgaGVpZ2h0OiA2MHB4O1xufVxuXG4ubGFyZ2UtaGVpZ2h0IHtcbiAgICBoZWlnaHQ6IDE1MHB4O1xufSJdfQ== */"] });
+        const _r0 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](18);
+        const _r2 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](31);
+        const _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](39);
+        const _r6 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](50);
+        const _r8 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](65);
+        const _r10 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](67);
+        const _r12 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](82);
+        const _r14 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](84);
+        const _r16 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](116);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("template", _r16)("preventClosing", true);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("template", _r16)("preventClosing", true);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("template", _r0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("template", _r2)("closePopover", ctx.closePopoverSubject)("preventClosing", true);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("template", _r4)("preventClosing", true);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](13);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("hasPadding", false)("template", _r6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("template", _r8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("template", _r10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](14);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("template", _r12)("unlimited", true);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("template", _r14);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](13);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("template", _r16)("modal", true);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("template", _r16)("preventClosing", true);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("template", _r16)("preventClosing", true);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("template", _r16)("preventClosing", true);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("template", _r16)("preventClosing", true);
+    } }, directives: [_src_lib_popover_popover_component__WEBPACK_IMPORTED_MODULE_3__["PopoverComponent"], _src_lib_checkbox_checkbox_component__WEBPACK_IMPORTED_MODULE_4__["CheckboxComponent"], _src_lib_select_combobox_combobox_component__WEBPACK_IMPORTED_MODULE_5__["ComboboxComponent"], _src_lib_select_v2_combobox_v2_combobox_v2_component__WEBPACK_IMPORTED_MODULE_6__["ComboboxV2Component"], _angular_common__WEBPACK_IMPORTED_MODULE_7__["NgForOf"], _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_8__["ButtonComponent"], _src_lib_select_v2_option_select_v2_option_component__WEBPACK_IMPORTED_MODULE_9__["SelectV2OptionComponent"]], styles: [".footer[_ngcontent-%COMP%] {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  width: 100%;\n  height: 60px;\n}\n.large-height[_ngcontent-%COMP%] {\n  height: 150px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBvcG92ZXItdmlzdWFsLXRlc3QuY29tcG9uZW50Lmxlc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxrQkFBQTtFQUNBLFNBQUE7RUFDQSxPQUFBO0VBQ0EsV0FBQTtFQUNBLFlBQUE7QUFDSjtBQUVBO0VBQ0ksYUFBQTtBQUFKIiwiZmlsZSI6InBvcG92ZXItdmlzdWFsLXRlc3QuY29tcG9uZW50Lmxlc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZm9vdGVyIHtcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgYm90dG9tOiAwO1xuICAgIGxlZnQ6IDA7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgaGVpZ2h0OiA2MHB4O1xufVxuXG4ubGFyZ2UtaGVpZ2h0IHtcbiAgICBoZWlnaHQ6IDE1MHB4O1xufSJdfQ== */"] });
 
 
 /***/ }),
