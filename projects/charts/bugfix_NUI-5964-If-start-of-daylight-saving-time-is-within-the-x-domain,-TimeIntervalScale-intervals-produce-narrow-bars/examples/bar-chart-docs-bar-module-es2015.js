@@ -483,150 +483,194 @@ let DstTimeIntervalTestPageComponent = class DstTimeIntervalTestPageComponent {
     constructor() {
         this.insideDstData = getInsideDstData();
         this.outsideDstData = getOutsideDstData();
-        this.startDstOneMinuteData = getStartDstOneMinuteData();
-        this.startDstOneHourData = getStartDstOneHourData();
-        this.startDstTwoHourData = getStartDstTwoHourData();
-        this.startDstOneDayData = getStartDstOneDayData();
-        this.endDstOneMinuteData = getEndDstOneMinuteData();
-        this.endDstOneHourData = getEndDstOneHourData();
-        this.endDstTwoHourData = getEndDstTwoHourData();
-        this.endDstOneDayData = getEndDstOneDayData();
         this.oneMinuteInterval = Object(moment_moment__WEBPACK_IMPORTED_MODULE_3__["duration"])(1, "minute");
         this.oneDayInterval = Object(moment_moment__WEBPACK_IMPORTED_MODULE_3__["duration"])(1, "days");
         this.oneHourInterval = Object(moment_moment__WEBPACK_IMPORTED_MODULE_3__["duration"])(1, "hours");
         this.twoHourInterval = Object(moment_moment__WEBPACK_IMPORTED_MODULE_3__["duration"])(2, "hours");
+        this.populateStartAndEndDstDates();
+        this.startDstOneMinuteData = getStartDstOneMinuteData(this.startDstHour);
+        this.startDstOneHourData = getStartDstOneHourData(this.startDstHour);
+        this.startDstTwoHourData = getStartDstTwoHourData(this.startDstHour);
+        this.startDstOneDayData = getStartDstOneDayData(this.startDstMidnight);
+        this.endDstOneMinuteData = getEndDstOneMinuteData(this.endDstHour);
+        this.endDstOneHourData = getEndDstOneHourData(this.endDstHour);
+        this.endDstTwoHourData = getEndDstTwoHourData(this.endDstHour);
+        this.endDstOneDayData = getEndDstOneDayData(this.endDstMidnight);
+    }
+    populateStartAndEndDstDates() {
+        let datesInYear2021 = [];
+        for (let i = 1; i <= 365; i++) {
+            let d = new Date(2021, 0, 1);
+            d.setDate(i);
+            datesInYear2021.push(d);
+        }
+        let foundStart = false;
+        this.startDstMidnight = datesInYear2021.reduce((prev, curr) => {
+            if (curr.getTimezoneOffset() < prev.getTimezoneOffset()) {
+                foundStart = true;
+                return prev;
+            }
+            return foundStart ? prev : curr;
+        });
+        let hoursInDstStartDay = [];
+        for (let i = 0; i < 24; i++) {
+            let d = new Date(this.startDstMidnight);
+            d.setHours(i);
+            hoursInDstStartDay.push(d);
+        }
+        foundStart = false;
+        this.startDstHour = hoursInDstStartDay.reduce((prev, curr) => {
+            if (curr.getTimezoneOffset() < prev.getTimezoneOffset()) {
+                foundStart = true;
+                return curr;
+            }
+            return foundStart ? prev : curr;
+        });
+        this.endDstMidnight = datesInYear2021.reduce((prev, curr) => {
+            if (curr.getTimezoneOffset() > prev.getTimezoneOffset()) {
+                return prev;
+            }
+            return curr;
+        });
+        let hoursInDstEndDay = [];
+        for (let i = 0; i < 24; i++) {
+            let d = new Date(this.endDstMidnight);
+            d.setHours(i);
+            hoursInDstEndDay.push(d);
+        }
+        this.endDstHour = hoursInDstEndDay.reduce((prev, curr) => {
+            if (curr.getTimezoneOffset() > prev.getTimezoneOffset()) {
+                return moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(curr).subtract(1, "hour").toDate();
+            }
+            return prev;
+        });
+        console.log("Local Time Zone:", Intl.DateTimeFormat().resolvedOptions().timeZone);
     }
 };
+DstTimeIntervalTestPageComponent.ctorParameters = () => [];
 DstTimeIntervalTestPageComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
         template: _raw_loader_dst_time_interval_test_page_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
-    })
+    }),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [])
 ], DstTimeIntervalTestPageComponent);
 
-function getStartDstOneMinuteData() {
-    const format = "YYYY-MM-DDTHH:mm:ssZ";
+function getStartDstOneMinuteData(startDstHour) {
     return [
         {
             id: "series-1",
             name: "Series 1",
             data: [
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-14T07:58:00.000Z", format).toDate(), y: 30 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-14T07:59:00.000Z", format).toDate(), y: 95 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-14T08:00:00.000Z", format).toDate(), y: 15 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-14T08:01:00.000Z", format).toDate(), y: 60 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-14T08:02:00.000Z", format).toDate(), y: 35 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(startDstHour).subtract(1, "minute").toDate(), y: 30 },
+                { x: startDstHour, y: 95 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(startDstHour).add(1, "minute").toDate(), y: 15 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(startDstHour).add(2, "minutes").toDate(), y: 60 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(startDstHour).add(3, "minutes").toDate(), y: 35 },
             ],
         },
     ];
 }
-function getStartDstOneHourData() {
-    const format = "YYYY-MM-DDTHH:mm:ssZ";
+function getStartDstOneHourData(startDstHour) {
     return [
         {
             id: "series-1",
             name: "Series 1",
             data: [
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-14T06:00:00.000Z", format).toDate(), y: 30 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-14T07:00:00.000Z", format).toDate(), y: 95 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-14T08:00:00.000Z", format).toDate(), y: 15 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-14T09:00:00.000Z", format).toDate(), y: 60 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-14T10:00:00.000Z", format).toDate(), y: 35 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(startDstHour).subtract(1, "hour").toDate(), y: 30 },
+                { x: startDstHour, y: 95 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(startDstHour).add(1, "hour").toDate(), y: 15 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(startDstHour).add(2, "hours").toDate(), y: 60 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(startDstHour).add(3, "hours").toDate(), y: 35 },
             ],
         },
     ];
 }
-function getStartDstTwoHourData() {
-    const format = "YYYY-MM-DDTHH:mm:ssZ";
+function getStartDstTwoHourData(startDstHour) {
     return [
         {
             id: "series-1",
             name: "Series 1",
             data: [
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-14T04:00:00.000Z", format).toDate(), y: 30 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-14T06:00:00.000Z", format).toDate(), y: 95 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-14T08:00:00.000Z", format).toDate(), y: 15 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-14T10:00:00.000Z", format).toDate(), y: 60 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-14T12:00:00.000Z", format).toDate(), y: 35 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(startDstHour).subtract(2, "hours").toDate(), y: 30 },
+                { x: startDstHour, y: 95 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(startDstHour).add(2, "hours").toDate(), y: 15 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(startDstHour).add(4, "hours").toDate(), y: 60 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(startDstHour).add(6, "hours").toDate(), y: 35 },
             ],
         },
     ];
 }
-function getStartDstOneDayData() {
-    const format = "YYYY-MM-DDTHH";
+function getStartDstOneDayData(startDstMidnight) {
     return [
         {
             id: "series-1",
             name: "Series 1",
             data: [
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-13T0", format).toDate(), y: 30 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-14T0", format).toDate(), y: 95 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-15T0", format).toDate(), y: 15 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-16T0", format).toDate(), y: 60 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-17T0", format).toDate(), y: 35 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(startDstMidnight).subtract(1, "day").toDate(), y: 30 },
+                { x: startDstMidnight, y: 95 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(startDstMidnight).add(1, "day").toDate(), y: 15 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(startDstMidnight).add(2, "days").toDate(), y: 60 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(startDstMidnight).add(3, "days").toDate(), y: 35 },
             ],
         },
     ];
 }
-function getEndDstOneMinuteData() {
-    const format = "YYYY-MM-DDTHH:mm:ssZ";
+function getEndDstOneMinuteData(endDstHour) {
     return [
         {
             id: "series-1",
             name: "Series 1",
             data: [
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-01T06:58:00.000Z", format).toDate(), y: 30 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-01T06:59:00.000Z", format).toDate(), y: 95 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-01T07:00:00.000Z", format).toDate(), y: 15 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-01T07:01:00.000Z", format).toDate(), y: 60 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-01T07:02:00.000Z", format).toDate(), y: 35 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(endDstHour).subtract(1, "minute").toDate(), y: 30 },
+                { x: endDstHour, y: 95 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(endDstHour).add(1, "minute").toDate(), y: 15 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(endDstHour).add(2, "minutes").toDate(), y: 60 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(endDstHour).add(3, "minutes").toDate(), y: 35 },
             ],
         },
     ];
 }
-function getEndDstOneHourData() {
-    const format = "YYYY-MM-DDTHH:mm:ssZ";
+function getEndDstOneHourData(endDstHour) {
     return [
         {
             id: "series-1",
             name: "Series 1",
             data: [
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-01T06:00:00.000Z", format).toDate(), y: 30 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-01T07:00:00.000Z", format).toDate(), y: 95 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-01T08:00:00.000Z", format).toDate(), y: 15 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-01T09:00:00.000Z", format).toDate(), y: 60 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-01T10:00:00.000Z", format).toDate(), y: 35 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(endDstHour).subtract(1, "hour").toDate(), y: 30 },
+                { x: endDstHour, y: 95 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(endDstHour).add(1, "hour").toDate(), y: 15 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(endDstHour).add(2, "hours").toDate(), y: 60 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(endDstHour).add(3, "hours").toDate(), y: 35 },
             ],
         },
     ];
 }
-function getEndDstTwoHourData() {
-    const format = "YYYY-MM-DDTHH:mm:ssZ";
+function getEndDstTwoHourData(endDstHour) {
     return [
         {
             id: "series-1",
             name: "Series 1",
             data: [
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-01T03:00:00.000Z", format).toDate(), y: 30 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-01T05:00:00.000Z", format).toDate(), y: 95 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-01T07:00:00.000Z", format).toDate(), y: 15 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-01T09:00:00.000Z", format).toDate(), y: 60 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-01T11:00:00.000Z", format).toDate(), y: 35 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(endDstHour).subtract(2, "hours").toDate(), y: 30 },
+                { x: endDstHour, y: 95 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(endDstHour).add(2, "hours").toDate(), y: 15 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(endDstHour).add(4, "hours").toDate(), y: 60 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(endDstHour).add(6, "hours").toDate(), y: 35 },
             ],
         },
     ];
 }
-function getEndDstOneDayData() {
-    const format = "YYYY-MM-DDTHH";
+function getEndDstOneDayData(endDstMidnight) {
     return [
         {
             id: "series-1",
             name: "Series 1",
             data: [
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-10-31T0", format).toDate(), y: 30 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-01T0", format).toDate(), y: 95 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-02T0", format).toDate(), y: 15 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-03T0", format).toDate(), y: 60 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-04T0", format).toDate(), y: 35 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(endDstMidnight).subtract(1, "day").toDate(), y: 30 },
+                { x: endDstMidnight, y: 95 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(endDstMidnight).add(1, "day").toDate(), y: 15 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(endDstMidnight).add(2, "days").toDate(), y: 60 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(endDstMidnight).add(3, "days").toDate(), y: 35 },
             ],
         },
     ];
@@ -638,11 +682,11 @@ function getInsideDstData() {
             id: "series-1",
             name: "Series 1",
             data: [
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-04-03T0", format).toDate(), y: 30 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-04-04T0", format).toDate(), y: 95 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-04-05T0", format).toDate(), y: 15 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-04-06T0", format).toDate(), y: 60 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-04-07T0", format).toDate(), y: 35 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-07-03T0", format).toDate(), y: 30 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-07-04T0", format).toDate(), y: 95 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-07-05T0", format).toDate(), y: 15 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-07-06T0", format).toDate(), y: 60 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-07-07T0", format).toDate(), y: 35 },
             ],
         },
     ];
