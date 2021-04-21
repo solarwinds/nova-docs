@@ -1,212 +1,5 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["bar-chart-docs-bar-module"],{
 
-/***/ "+6AG":
-/*!*****************************************************************************************************************!*\
-  !*** ./examples/components/demo/chart-types/bar/bar-chart-test/daylight-saving-time/dst-test-page.component.ts ***!
-  \*****************************************************************************************************************/
-/*! exports provided: DstTestPageComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DstTestPageComponent", function() { return DstTestPageComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
-/* harmony import */ var _raw_loader_dst_test_page_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./dst-test-page.component.html */ "pyLK");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var moment_moment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! moment/moment */ "wd/R");
-/* harmony import */ var moment_moment__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(moment_moment__WEBPACK_IMPORTED_MODULE_3__);
-
-
-
-
-let DstTestPageComponent = class DstTestPageComponent {
-    constructor() {
-        this.insideDstData = getInsideDstData();
-        this.outsideDstData = getOutsideDstData();
-        this.startDstOneMinuteData = getStartDstOneMinuteData();
-        this.startDstOneHourData = getStartDstOneHourData();
-        this.startDstTwoHourData = getStartDstTwoHourData();
-        this.startDstOneDayData = getStartDstOneDayData();
-        this.endDstOneMinuteData = getEndDstOneMinuteData();
-        this.endDstOneHourData = getEndDstOneHourData();
-        this.endDstTwoHourData = getEndDstTwoHourData();
-        this.endDstOneDayData = getEndDstOneDayData();
-        this.oneMinuteInterval = Object(moment_moment__WEBPACK_IMPORTED_MODULE_3__["duration"])(1, "minute");
-        this.oneDayInterval = Object(moment_moment__WEBPACK_IMPORTED_MODULE_3__["duration"])(1, "days");
-        this.oneHourInterval = Object(moment_moment__WEBPACK_IMPORTED_MODULE_3__["duration"])(1, "hours");
-        this.twoHourInterval = Object(moment_moment__WEBPACK_IMPORTED_MODULE_3__["duration"])(2, "hours");
-    }
-};
-DstTestPageComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
-        template: _raw_loader_dst_test_page_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
-    })
-], DstTestPageComponent);
-
-function getStartDstOneMinuteData() {
-    const format = "YYYY-MM-DDTHH:mm:ssZ";
-    return [
-        {
-            id: "series-1",
-            name: "Series 1",
-            data: [
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-14T07:58:00.000Z", format).toDate(), y: 30 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-14T07:59:00.000Z", format).toDate(), y: 95 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-14T08:00:00.000Z", format).toDate(), y: 15 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-14T08:01:00.000Z", format).toDate(), y: 60 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-14T08:02:00.000Z", format).toDate(), y: 35 },
-            ],
-        },
-    ];
-}
-function getStartDstOneHourData() {
-    const format = "YYYY-MM-DDTHH:mm:ssZ";
-    return [
-        {
-            id: "series-1",
-            name: "Series 1",
-            data: [
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-14T06:00:00.000Z", format).toDate(), y: 30 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-14T07:00:00.000Z", format).toDate(), y: 95 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-14T08:00:00.000Z", format).toDate(), y: 15 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-14T09:00:00.000Z", format).toDate(), y: 60 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-14T10:00:00.000Z", format).toDate(), y: 35 },
-            ],
-        },
-    ];
-}
-function getStartDstTwoHourData() {
-    const format = "YYYY-MM-DDTHH:mm:ssZ";
-    return [
-        {
-            id: "series-1",
-            name: "Series 1",
-            data: [
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-14T04:00:00.000Z", format).toDate(), y: 30 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-14T06:00:00.000Z", format).toDate(), y: 95 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-14T08:00:00.000Z", format).toDate(), y: 15 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-14T10:00:00.000Z", format).toDate(), y: 60 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-14T12:00:00.000Z", format).toDate(), y: 35 },
-            ],
-        },
-    ];
-}
-function getStartDstOneDayData() {
-    const format = "YYYY-MM-DDTHH";
-    return [
-        {
-            id: "series-1",
-            name: "Series 1",
-            data: [
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-13T0", format).toDate(), y: 30 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-14T0", format).toDate(), y: 95 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-15T0", format).toDate(), y: 15 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-16T0", format).toDate(), y: 60 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-17T0", format).toDate(), y: 35 },
-            ],
-        },
-    ];
-}
-function getEndDstOneMinuteData() {
-    const format = "YYYY-MM-DDTHH:mm:ssZ";
-    return [
-        {
-            id: "series-1",
-            name: "Series 1",
-            data: [
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-01T06:58:00.000Z", format).toDate(), y: 30 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-01T06:59:00.000Z", format).toDate(), y: 95 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-01T07:00:00.000Z", format).toDate(), y: 15 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-01T07:01:00.000Z", format).toDate(), y: 60 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-01T07:02:00.000Z", format).toDate(), y: 35 },
-            ],
-        },
-    ];
-}
-function getEndDstOneHourData() {
-    const format = "YYYY-MM-DDTHH:mm:ssZ";
-    return [
-        {
-            id: "series-1",
-            name: "Series 1",
-            data: [
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-01T06:00:00.000Z", format).toDate(), y: 30 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-01T07:00:00.000Z", format).toDate(), y: 95 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-01T08:00:00.000Z", format).toDate(), y: 15 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-01T09:00:00.000Z", format).toDate(), y: 60 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-01T10:00:00.000Z", format).toDate(), y: 35 },
-            ],
-        },
-    ];
-}
-function getEndDstTwoHourData() {
-    const format = "YYYY-MM-DDTHH:mm:ssZ";
-    return [
-        {
-            id: "series-1",
-            name: "Series 1",
-            data: [
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-01T03:00:00.000Z", format).toDate(), y: 30 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-01T05:00:00.000Z", format).toDate(), y: 95 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-01T07:00:00.000Z", format).toDate(), y: 15 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-01T09:00:00.000Z", format).toDate(), y: 60 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-01T11:00:00.000Z", format).toDate(), y: 35 },
-            ],
-        },
-    ];
-}
-function getEndDstOneDayData() {
-    const format = "YYYY-MM-DDTHH";
-    return [
-        {
-            id: "series-1",
-            name: "Series 1",
-            data: [
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-10-31T0", format).toDate(), y: 30 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-01T0", format).toDate(), y: 95 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-02T0", format).toDate(), y: 15 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-03T0", format).toDate(), y: 60 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-04T0", format).toDate(), y: 35 },
-            ],
-        },
-    ];
-}
-function getInsideDstData() {
-    const format = "YYYY-MM-DDTHH";
-    return [
-        {
-            id: "series-1",
-            name: "Series 1",
-            data: [
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-04-03T0", format).toDate(), y: 30 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-04-04T0", format).toDate(), y: 95 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-04-05T0", format).toDate(), y: 15 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-04-06T0", format).toDate(), y: 60 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-04-07T0", format).toDate(), y: 35 },
-            ],
-        },
-    ];
-}
-function getOutsideDstData() {
-    const format = "YYYY-MM-DDTHH";
-    return [
-        {
-            id: "series-1",
-            name: "Series 1",
-            data: [
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-12-01T0", format).toDate(), y: 30 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-12-02T0", format).toDate(), y: 95 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-12-03T0", format).toDate(), y: 15 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-12-04T0", format).toDate(), y: 60 },
-                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-12-05T0", format).toDate(), y: 35 },
-            ],
-        },
-    ];
-}
-
-
-/***/ }),
-
 /***/ "0h2D":
 /*!*****************************************************************************************************************!*\
   !*** ./examples/components/demo/chart-types/bar/bar-chart-time-scale/bar-chart-time-scale.example.component.ts ***!
@@ -379,7 +172,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _bar_chart_test_basic_horizontal_basic_horizontal_bar_chart_test_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./bar-chart-test/basic-horizontal/basic-horizontal-bar-chart-test.component */ "x55w");
 /* harmony import */ var _bar_chart_test_basic_vertical_basic_vertical_bar_chart_test_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./bar-chart-test/basic-vertical/basic-vertical-bar-chart-test.component */ "Kz8y");
 /* harmony import */ var _bar_chart_test_daylight_saving_time_bar_chart_time_interval_bar_chart_time_interval_dst_test_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./bar-chart-test/daylight-saving-time/bar-chart-time-interval/bar-chart-time-interval-dst-test.component */ "7141");
-/* harmony import */ var _bar_chart_test_daylight_saving_time_dst_test_page_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./bar-chart-test/daylight-saving-time/dst-test-page.component */ "+6AG");
+/* harmony import */ var _bar_chart_test_daylight_saving_time_dst_time_interval_test_page_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./bar-chart-test/daylight-saving-time/dst-time-interval-test-page.component */ "9PPK");
 /* harmony import */ var _bar_chart_test_horizontal_with_legend_horizontal_with_legend_bar_chart_test_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./bar-chart-test/horizontal-with-legend/horizontal-with-legend-bar-chart-test.component */ "u+UU");
 /* harmony import */ var _bar_chart_test_time_interval_time_interval_test_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./bar-chart-test/time-interval/time-interval.test.component */ "gHkq");
 /* harmony import */ var _bar_chart_test_vertical_with_legend_vertical_with_legend_bar_chart_test_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./bar-chart-test/vertical-with-legend/vertical-with-legend-bar-chart-test.component */ "y362");
@@ -456,8 +249,8 @@ const exampleRoutes = [
         },
     },
     {
-        path: "dst-test",
-        component: _bar_chart_test_daylight_saving_time_dst_test_page_component__WEBPACK_IMPORTED_MODULE_13__["DstTestPageComponent"],
+        path: "dst-time-interval-test",
+        component: _bar_chart_test_daylight_saving_time_dst_time_interval_test_page_component__WEBPACK_IMPORTED_MODULE_13__["DstTimeIntervalTestPageComponent"],
         data: {
             "srlc": {
                 "hideIndicator": true,
@@ -526,7 +319,7 @@ ChartDocsBarModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
             _bar_chart_test_bar_chart_test_component__WEBPACK_IMPORTED_MODULE_7__["BarChartTestComponent"],
             _bar_chart_test_basic_horizontal_basic_horizontal_bar_chart_test_component__WEBPACK_IMPORTED_MODULE_10__["BasicHorizontalBarChartTestComponent"],
             _bar_chart_test_basic_vertical_basic_vertical_bar_chart_test_component__WEBPACK_IMPORTED_MODULE_11__["BasicVerticalBarChartTestComponent"],
-            _bar_chart_test_daylight_saving_time_dst_test_page_component__WEBPACK_IMPORTED_MODULE_13__["DstTestPageComponent"],
+            _bar_chart_test_daylight_saving_time_dst_time_interval_test_page_component__WEBPACK_IMPORTED_MODULE_13__["DstTimeIntervalTestPageComponent"],
             _bar_chart_test_daylight_saving_time_bar_chart_time_interval_bar_chart_time_interval_dst_test_component__WEBPACK_IMPORTED_MODULE_12__["BarChartTimeIntervalDstTestComponent"],
             _bar_chart_test_vertical_with_timescale_vertical_with_timescale_bar_chart_test_component__WEBPACK_IMPORTED_MODULE_17__["VerticalWithTimescaleBarChartTestComponent"],
             _bar_chart_test_vertical_with_legend_vertical_with_legend_bar_chart_test_component__WEBPACK_IMPORTED_MODULE_16__["VerticalWithLegendBarChartTestComponent"],
@@ -661,6 +454,213 @@ function getData() {
         { id: "uc", name: "UC Browser", data: [4] },
         { id: "opera", name: "Opera", data: [3] },
         { id: "other", name: "Other", data: [5] },
+    ];
+}
+
+
+/***/ }),
+
+/***/ "9PPK":
+/*!*******************************************************************************************************************************!*\
+  !*** ./examples/components/demo/chart-types/bar/bar-chart-test/daylight-saving-time/dst-time-interval-test-page.component.ts ***!
+  \*******************************************************************************************************************************/
+/*! exports provided: DstTimeIntervalTestPageComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DstTimeIntervalTestPageComponent", function() { return DstTimeIntervalTestPageComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _raw_loader_dst_time_interval_test_page_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./dst-time-interval-test-page.component.html */ "OCfy");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var moment_moment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! moment/moment */ "wd/R");
+/* harmony import */ var moment_moment__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(moment_moment__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+let DstTimeIntervalTestPageComponent = class DstTimeIntervalTestPageComponent {
+    constructor() {
+        this.insideDstData = getInsideDstData();
+        this.outsideDstData = getOutsideDstData();
+        this.startDstOneMinuteData = getStartDstOneMinuteData();
+        this.startDstOneHourData = getStartDstOneHourData();
+        this.startDstTwoHourData = getStartDstTwoHourData();
+        this.startDstOneDayData = getStartDstOneDayData();
+        this.endDstOneMinuteData = getEndDstOneMinuteData();
+        this.endDstOneHourData = getEndDstOneHourData();
+        this.endDstTwoHourData = getEndDstTwoHourData();
+        this.endDstOneDayData = getEndDstOneDayData();
+        this.oneMinuteInterval = Object(moment_moment__WEBPACK_IMPORTED_MODULE_3__["duration"])(1, "minute");
+        this.oneDayInterval = Object(moment_moment__WEBPACK_IMPORTED_MODULE_3__["duration"])(1, "days");
+        this.oneHourInterval = Object(moment_moment__WEBPACK_IMPORTED_MODULE_3__["duration"])(1, "hours");
+        this.twoHourInterval = Object(moment_moment__WEBPACK_IMPORTED_MODULE_3__["duration"])(2, "hours");
+    }
+};
+DstTimeIntervalTestPageComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
+        template: _raw_loader_dst_time_interval_test_page_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
+    })
+], DstTimeIntervalTestPageComponent);
+
+function getStartDstOneMinuteData() {
+    const format = "YYYY-MM-DDTHH:mm:ssZ";
+    return [
+        {
+            id: "series-1",
+            name: "Series 1",
+            data: [
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-14T07:58:00.000Z", format).toDate(), y: 30 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-14T07:59:00.000Z", format).toDate(), y: 95 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-14T08:00:00.000Z", format).toDate(), y: 15 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-14T08:01:00.000Z", format).toDate(), y: 60 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-14T08:02:00.000Z", format).toDate(), y: 35 },
+            ],
+        },
+    ];
+}
+function getStartDstOneHourData() {
+    const format = "YYYY-MM-DDTHH:mm:ssZ";
+    return [
+        {
+            id: "series-1",
+            name: "Series 1",
+            data: [
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-14T06:00:00.000Z", format).toDate(), y: 30 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-14T07:00:00.000Z", format).toDate(), y: 95 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-14T08:00:00.000Z", format).toDate(), y: 15 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-14T09:00:00.000Z", format).toDate(), y: 60 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-14T10:00:00.000Z", format).toDate(), y: 35 },
+            ],
+        },
+    ];
+}
+function getStartDstTwoHourData() {
+    const format = "YYYY-MM-DDTHH:mm:ssZ";
+    return [
+        {
+            id: "series-1",
+            name: "Series 1",
+            data: [
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-14T04:00:00.000Z", format).toDate(), y: 30 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-14T06:00:00.000Z", format).toDate(), y: 95 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-14T08:00:00.000Z", format).toDate(), y: 15 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-14T10:00:00.000Z", format).toDate(), y: 60 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-14T12:00:00.000Z", format).toDate(), y: 35 },
+            ],
+        },
+    ];
+}
+function getStartDstOneDayData() {
+    const format = "YYYY-MM-DDTHH";
+    return [
+        {
+            id: "series-1",
+            name: "Series 1",
+            data: [
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-13T0", format).toDate(), y: 30 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-14T0", format).toDate(), y: 95 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-15T0", format).toDate(), y: 15 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-16T0", format).toDate(), y: 60 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-03-17T0", format).toDate(), y: 35 },
+            ],
+        },
+    ];
+}
+function getEndDstOneMinuteData() {
+    const format = "YYYY-MM-DDTHH:mm:ssZ";
+    return [
+        {
+            id: "series-1",
+            name: "Series 1",
+            data: [
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-01T06:58:00.000Z", format).toDate(), y: 30 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-01T06:59:00.000Z", format).toDate(), y: 95 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-01T07:00:00.000Z", format).toDate(), y: 15 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-01T07:01:00.000Z", format).toDate(), y: 60 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-01T07:02:00.000Z", format).toDate(), y: 35 },
+            ],
+        },
+    ];
+}
+function getEndDstOneHourData() {
+    const format = "YYYY-MM-DDTHH:mm:ssZ";
+    return [
+        {
+            id: "series-1",
+            name: "Series 1",
+            data: [
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-01T06:00:00.000Z", format).toDate(), y: 30 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-01T07:00:00.000Z", format).toDate(), y: 95 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-01T08:00:00.000Z", format).toDate(), y: 15 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-01T09:00:00.000Z", format).toDate(), y: 60 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-01T10:00:00.000Z", format).toDate(), y: 35 },
+            ],
+        },
+    ];
+}
+function getEndDstTwoHourData() {
+    const format = "YYYY-MM-DDTHH:mm:ssZ";
+    return [
+        {
+            id: "series-1",
+            name: "Series 1",
+            data: [
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-01T03:00:00.000Z", format).toDate(), y: 30 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-01T05:00:00.000Z", format).toDate(), y: 95 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-01T07:00:00.000Z", format).toDate(), y: 15 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-01T09:00:00.000Z", format).toDate(), y: 60 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-01T11:00:00.000Z", format).toDate(), y: 35 },
+            ],
+        },
+    ];
+}
+function getEndDstOneDayData() {
+    const format = "YYYY-MM-DDTHH";
+    return [
+        {
+            id: "series-1",
+            name: "Series 1",
+            data: [
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-10-31T0", format).toDate(), y: 30 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-01T0", format).toDate(), y: 95 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-02T0", format).toDate(), y: 15 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-03T0", format).toDate(), y: 60 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-11-04T0", format).toDate(), y: 35 },
+            ],
+        },
+    ];
+}
+function getInsideDstData() {
+    const format = "YYYY-MM-DDTHH";
+    return [
+        {
+            id: "series-1",
+            name: "Series 1",
+            data: [
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-04-03T0", format).toDate(), y: 30 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-04-04T0", format).toDate(), y: 95 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-04-05T0", format).toDate(), y: 15 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-04-06T0", format).toDate(), y: 60 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-04-07T0", format).toDate(), y: 35 },
+            ],
+        },
+    ];
+}
+function getOutsideDstData() {
+    const format = "YYYY-MM-DDTHH";
+    return [
+        {
+            id: "series-1",
+            name: "Series 1",
+            data: [
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-12-01T0", format).toDate(), y: 30 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-12-02T0", format).toDate(), y: 95 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-12-03T0", format).toDate(), y: 15 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-12-04T0", format).toDate(), y: 60 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-12-05T0", format).toDate(), y: 35 },
+            ],
+        },
     ];
 }
 
@@ -1208,8 +1208,8 @@ var map = {
 	"./bar-chart-test/daylight-saving-time/bar-chart-time-interval/bar-chart-time-interval-dst-test.component.html": "JozS",
 	"./bar-chart-test/daylight-saving-time/bar-chart-time-interval/bar-chart-time-interval-dst-test.component.ts": "PSNa",
 	"./bar-chart-test/daylight-saving-time/daylight-saving-time-test.module.ts": "x13I",
-	"./bar-chart-test/daylight-saving-time/dst-test-page.component.html": "pyLK",
-	"./bar-chart-test/daylight-saving-time/dst-test-page.component.ts": "Uued",
+	"./bar-chart-test/daylight-saving-time/dst-time-interval-test-page.component.html": "OCfy",
+	"./bar-chart-test/daylight-saving-time/dst-time-interval-test-page.component.ts": "Uetg",
 	"./bar-chart-test/horizontal-with-legend/horizontal-with-legend-bar-chart-test.component.html": "x45f",
 	"./bar-chart-test/horizontal-with-legend/horizontal-with-legend-bar-chart-test.component.ts": "cktB",
 	"./bar-chart-test/time-interval/time-interval.test.component.html": "RqGI",

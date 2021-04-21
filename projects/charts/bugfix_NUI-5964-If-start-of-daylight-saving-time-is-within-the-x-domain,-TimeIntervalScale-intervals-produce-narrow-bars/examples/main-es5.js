@@ -204,9 +204,6 @@
         this.links = [{
           title: "Gauge",
           path: "/development/gauge"
-        }, {
-          title: "Daylight Saving Time",
-          path: "/development/dst"
         }];
         this.archivedLinks = [{
           title: "Legend",
