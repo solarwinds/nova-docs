@@ -28731,6 +28731,16 @@
             });
           }
         }, {
+          key: "ngOnChanges",
+          value: function ngOnChanges(changes) {
+            var _a;
+
+            if (changes.image || changes.description) {
+              this.imageName = this.image.name || ((_a = this.getImage(this.image)) === null || _a === void 0 ? void 0 : _a.name) || null;
+              this.imageTemplate = this.getImageTemplate();
+            }
+          }
+        }, {
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
             var _a;
@@ -28769,8 +28779,10 @@
 
             if (lodash_has__WEBPACK_IMPORTED_MODULE_3___default()(image, "code") && lodash_isString__WEBPACK_IMPORTED_MODULE_7___default()(image.code)) {
               imageHtml = image.code;
+              this.hasAlt = false;
             } else {
-              imageHtml = "<img src=\"".concat(this.image, "\">");
+              imageHtml = "<img src=\"".concat(this.image, "\" alt=\"").concat(this.description, "\">");
+              this.hasAlt = true;
             }
 
             return this.domSanitizer.bypassSecurityTrustHtml(imageHtml);
@@ -28793,8 +28805,15 @@
         type: ImageComponent,
         selectors: [["nui-image"]],
         hostAttrs: ["role", "img"],
+        hostVars: 1,
+        hostBindings: function ImageComponent_HostBindings(rf, ctx) {
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-label", ctx.hasAlt ? null : ctx.description || ctx.imageName);
+          }
+        },
         inputs: {
           image: "image",
+          description: "description",
           "float": "float",
           margin: "margin",
           isWatermark: "isWatermark",
@@ -28802,6 +28821,7 @@
           height: "height",
           autoFill: "autoFill"
         },
+        features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵNgOnChangesFeature"]],
         decls: 1,
         vars: 17,
         consts: [[1, "nui-image", "nui-image__hidden", 3, "innerHTML"]],
@@ -28815,7 +28835,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("nui-image__left", ctx["float"] === "left")("nui-image__right", ctx["float"] === "right")("nui-image__margin-centered", ctx.margin === "centered")("nui-image__margin-small", ctx.margin === "small")("nui-image__margin-large", ctx.margin === "large")("nui-image__watermarked", ctx.isWatermark);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("innerHTML", ctx.getImageTemplate(), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeHtml"]);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("innerHTML", ctx.imageTemplate, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeHtml"]);
           }
         },
         styles: [".nui-image {\n  width: 70%;\n  margin: 5px 10px;\n  float: none;\n}\n.nui-image img,\n.nui-image svg {\n  width: 100%;\n}\n.nui-image__left {\n  float: left;\n}\n.nui-image__right {\n  float: right;\n}\n.nui-image__margin-centered {\n  margin: 0 auto;\n}\n.nui-image__margin-small {\n  margin: 10px;\n}\n.nui-image__margin-large {\n  margin: 10px 15px;\n}\n.nui-image__watermarked {\n  opacity: 0.3;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImltYWdlLmNvbXBvbmVudC5sZXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUdBO0VBQ0UsVUFBQTtFQUNBLGdCQUFBO0VBQ0EsV0FBQTtBQUZGO0FBREE7O0VBS0ksV0FBQTtBQUFKO0FBRUU7RUFDRSxXQUFBO0FBQUo7QUFFRTtFQUNFLFlBQUE7QUFBSjtBQUVFO0VBQ0UsY0FBQTtBQUFKO0FBRUU7RUFDRSxZQUFBO0FBQUo7QUFFRTtFQUNFLGlCQUFBO0FBQUo7QUFFRTtFQUNFLFlBQUE7QUFBSiIsImZpbGUiOiJpbWFnZS5jb21wb25lbnQubGVzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgKHJlZmVyZW5jZSkgXCIuLi8uLi9zdHlsZXMvbnVpLWZyYW1ld29yay12YXJpYWJsZXMubGVzc1wiO1xuQGltcG9ydCAocmVmZXJlbmNlKSBcIi4uLy4uL3N0eWxlcy9taXhpbnMubGVzc1wiO1xuXG4ubnVpLWltYWdlIHtcbiAgd2lkdGg6IEBpbWFnZS1zaXplLWJhc2U7XG4gIG1hcmdpbjogQG51aS1zcGFjZS14cyBAbnVpLXNwYWNlLXNtO1xuICBmbG9hdDogbm9uZTtcbiAgaW1nLCBzdmcge1xuICAgIHdpZHRoOiAxMDAlO1xuICB9XG4gICZfX2xlZnQge1xuICAgIGZsb2F0OiBsZWZ0O1xuICB9XG4gICZfX3JpZ2h0IHtcbiAgICBmbG9hdDogcmlnaHQ7XG4gIH1cbiAgJl9fbWFyZ2luLWNlbnRlcmVkIHtcbiAgICBtYXJnaW46IDAgYXV0bztcbiAgfVxuICAmX19tYXJnaW4tc21hbGwge1xuICAgIG1hcmdpbjogQG51aS1zcGFjZS1zbTtcbiAgfVxuICAmX19tYXJnaW4tbGFyZ2Uge1xuICAgIG1hcmdpbjogQG51aS1zcGFjZS1zbSBAbnVpLXNwYWNlLW1kO1xuICB9XG4gICZfX3dhdGVybWFya2VkIHtcbiAgICBvcGFjaXR5OiAwLjM7XG4gIH1cbn1cbiJdfQ== */"],
