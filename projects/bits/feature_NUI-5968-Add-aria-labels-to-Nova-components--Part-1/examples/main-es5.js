@@ -31051,7 +31051,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("disabled", ctx.disabled)("ngModel", ctx.value)("ngModelOptions", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](24, _c2))("min", ctx.minValue)("max", ctx.maxValue)("placeholder", ctx.placeholder)("readonly", ctx.readonly);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("name", ctx.name)("aria-valuemin", ctx.minValue)("aria-valuemax", ctx.maxValue)("aria-valuenow", ctx.value)("aria-label", ctx.ariaLabel);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("name", ctx.name)("aria-valuemin", ctx.minValue || null)("aria-valuemax", ctx.maxValue || null)("aria-valuenow", ctx.value || null)("aria-label", ctx.ariaLabel);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
 
