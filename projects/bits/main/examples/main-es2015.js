@@ -3438,6 +3438,8 @@ class WizardComponent {
             allowStepChange: true,
         });
         this.previousStepIndex = 0;
+        this.dynamicSubscriptions = new Map();
+        this.dynamicRefs = new Map();
     }
     ngOnInit() {
         if (this.finishText === WizardComponent.placeholderFinishText) {
@@ -3481,14 +3483,43 @@ class WizardComponent {
         this.navigationControl.unsubscribe();
     }
     addStepDynamic(wizardStep, indexToInsert) {
+        var _a;
         const componentFactory = this.componentFactoryResolver.resolveComponentFactory(_wizard_step_component__WEBPACK_IMPORTED_MODULE_6__["WizardStepComponent"]);
         const componentRef = this.dynamicStep.createComponent(componentFactory);
         const instance = componentRef.instance;
-        instance.title = wizardStep.title;
-        instance.stepTemplate = wizardStep.stepTemplate;
+        const wizardStepInputs = this.getInputsAndOutputs(wizardStep);
+        wizardStepInputs.forEach(key => {
+            instance[key] = wizardStep[key];
+        });
+        this.handleStepControl(componentRef.instance);
+        const subscription = (_a = instance.valid) === null || _a === void 0 ? void 0 : _a.subscribe((event) => {
+            if (!lodash_isUndefined__WEBPACK_IMPORTED_MODULE_3___default()(event)) {
+                instance.stepControl = wizardStep.stepControl;
+                this.handleStepControl(componentRef.instance);
+            }
+        });
+        this.dynamicRefs.set(instance, componentRef);
+        this.dynamicSubscriptions.set(instance, subscription);
         this.arraySteps.splice(indexToInsert, 0, componentRef.instance);
+        this.steps.reset([]);
         this.steps.reset(this.arraySteps);
         return componentRef.instance;
+    }
+    removeStep(index) {
+        const steps = this.steps.toArray();
+        if (index < 1 || index > steps.length - 1) {
+            return;
+        }
+        const stepToRemove = steps[index];
+        if (this.currentStep === stepToRemove) {
+            this.onBackClick();
+        }
+        this.onRemoveDynamic(stepToRemove);
+        this.arraySteps.splice(index, 1);
+        this.steps.reset([]);
+        this.steps.reset(this.arraySteps);
+        this.stepIndex = this.steps.toArray()
+            .findIndex((s) => s === this.currentStep);
     }
     disableStep(step) {
         const indexOfStep = this.arraySteps.indexOf(step);
@@ -3597,6 +3628,11 @@ class WizardComponent {
             item.disabled = false;
         });
     }
+    getInputsAndOutputs(compType) {
+        const inputs = compType.inputsList;
+        const outputs = Object.keys(compType).filter(key => compType[key] instanceof _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]);
+        return [...inputs, ...outputs];
+    }
     handleStepControl(step) {
         if (!lodash_isUndefined__WEBPACK_IMPORTED_MODULE_3___default()(step === null || step === void 0 ? void 0 : step.stepControl)) {
             if (step === null || step === void 0 ? void 0 : step.stepControl) {
@@ -3610,6 +3646,16 @@ class WizardComponent {
     getLargestLabelWidth() {
         const widths = this.stepTitles.map((title) => title.nativeElement.offsetWidth);
         return Math.round(Math.max(...widths));
+    }
+    onRemoveDynamic(step) {
+        const dynamicSubscription = this.dynamicSubscriptions.get(step);
+        const ref = this.dynamicRefs.get(step);
+        if (ref) {
+            ref.destroy();
+        }
+        if (dynamicSubscription) {
+            dynamicSubscription.unsubscribe();
+        }
     }
 }
 WizardComponent.placeholderFinishText = "Action"; // as a placeholder "Action" does not need to be i18n
@@ -23120,6 +23166,7 @@ class WizardStepComponent {
         this.complete = false;
         this.icon = "step";
         this.iconColor = "";
+        this.inputsList = [];
         /**
          * Set flags for step entering and emits enter event
          */
@@ -23151,6 +23198,9 @@ class WizardStepComponent {
         this.nextText = this.nextText || $localize `Next`;
     }
     ngOnChanges(changes) {
+        if (this.inputsList.length === 0) {
+            this.inputsList = Object.keys(changes);
+        }
         if (changes["stepControl"]) {
             this.valid.emit(this.stepControl);
         }
