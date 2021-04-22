@@ -510,7 +510,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<button nui-button\n        #toggleButton\n        type=\"button\"\n        [isEmpty]=\"false\"\n        (click)=\"overlay.toggle()\"\n        i18n>\n        Toggle the Overlay\n</button>\n\n<nui-overlay #overlay [toggleReference]=\"toggleButton['el'].nativeElement\">\n    <img src=\"https://cdn.stocksnap.io/img-thumbs/960w/thumbs%20up-hand_QUWPLI693K.jpg\" class=\"w-100\">\n</nui-overlay>\n";
+      __webpack_exports__["default"] = "<button nui-button\n        #toggleButton\n        type=\"button\"\n        [isEmpty]=\"false\"\n        (click)=\"overlay.toggle()\"\n        i18n>\n        Toggle the Overlay\n</button>\n\n<nui-overlay #overlay [toggleReference]=\"toggleButton['el'].nativeElement\">\n    <img src=\"https://cdn.stocksnap.io/img-thumbs/960w/thumbs%20up-hand_QUWPLI693K.jpg\" alt=\"Thumbs up\" class=\"w-100\">\n</nui-overlay>\n";
       /***/
     },
 
@@ -762,7 +762,7 @@
             i18n_6 = $localize(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral([":\u241Ffa225a2e368b90ddeafcb4dd16b0f1fe8f4eeaec\u241F5912220945673240504: Toggle "])));
           }
 
-          return [[1, "d-flex"], ["nui-button", "", "type", "button", 1, "mr-5"], ["toggleButton", ""], i18n_0, ["nui-button", "", "type", "button", 3, "click"], i18n_2, i18n_4, i18n_6, [3, "toggleReference"], ["popup", ""], ["src", "https://cdn.stocksnap.io/img-thumbs/960w/thumbs%20up-hand_QUWPLI693K.jpg", 1, "w-100"]];
+          return [[1, "d-flex"], ["nui-button", "", "type", "button", 1, "mr-5"], ["toggleButton", ""], i18n_0, ["nui-button", "", "type", "button", 3, "click"], i18n_2, i18n_4, i18n_6, [3, "toggleReference"], ["popup", ""], ["src", "https://cdn.stocksnap.io/img-thumbs/960w/thumbs%20up-hand_QUWPLI693K.jpg", "alt", "Thumbs up", 1, "w-100"]];
         },
         template: function OverlayShowHideToggleExampleComponent_Template(rf, ctx) {
           if (rf & 1) {
@@ -1188,7 +1188,7 @@
             i18n_6 = $localize(_templateObject11 || (_templateObject11 = _taggedTemplateLiteral([":\u241F5204274026c6b64ba43eb5c1a5f60d868078e8aa\u241F7936791469018810193:Select Arrow"])));
           }
 
-          return [[1, "arrow-example"], [1, "d-flex", "justify-content-between", "align-items-center", "mb-5"], ["cdkDrag", "", 1, "dnd-button"], ["draggable", "cdkDrag"], ["nui-button", "", "type", "button", 1, "toggle-button", 3, "isEmpty", "click"], ["toggleButton", ""], i18n_0, ["nui-button", "", "type", "button", 1, "h-50", 3, "isEmpty", "click"], i18n_2, [3, "toggleReference", "overlayConfig"], ["overlay", ""], ["src", "https://cdn.stocksnap.io/img-thumbs/960w/thumbs%20up-hand_QUWPLI693K.jpg", 1, "w-100"], [4, "ngIf"], ["placeholder", i18n_4, 1, "select", 3, "formControl"], [3, "value", 4, "ngFor", "ngForOf"], ["placeholder", i18n_6, 1, "select", 3, "formControl"], [3, "value"]];
+          return [[1, "arrow-example"], [1, "d-flex", "justify-content-between", "align-items-center", "mb-5"], ["cdkDrag", "", 1, "dnd-button"], ["draggable", "cdkDrag"], ["nui-button", "", "type", "button", 1, "toggle-button", 3, "isEmpty", "click"], ["toggleButton", ""], i18n_0, ["nui-button", "", "type", "button", 1, "h-50", 3, "isEmpty", "click"], i18n_2, [3, "toggleReference", "overlayConfig"], ["overlay", ""], ["src", "https://cdn.stocksnap.io/img-thumbs/960w/thumbs%20up-hand_QUWPLI693K.jpg", "alt", "Thumbs up", 1, "w-100"], [4, "ngIf"], ["placeholder", i18n_4, 1, "select", 3, "formControl"], [3, "value", 4, "ngFor", "ngForOf"], ["placeholder", i18n_6, 1, "select", 3, "formControl"], [3, "value"]];
         },
         template: function OverlayArrowExampleComponent_Template(rf, ctx) {
           if (rf & 1) {
@@ -1516,7 +1516,7 @@
             i18n_0 = $localize(_templateObject12 || (_templateObject12 = _taggedTemplateLiteral([":\u241F8103d11e54ef41e73f4b43063cafb433df3618c3\u241F1401953185868182023: Toggle the Overlay\n"])));
           }
 
-          return [["nui-button", "", "type", "button", 3, "isEmpty", "click"], ["toggleButton", ""], i18n_0, [3, "toggleReference"], ["overlay", ""], ["src", "https://cdn.stocksnap.io/img-thumbs/960w/thumbs%20up-hand_QUWPLI693K.jpg", 1, "w-100"]];
+          return [["nui-button", "", "type", "button", 3, "isEmpty", "click"], ["toggleButton", ""], i18n_0, [3, "toggleReference"], ["overlay", ""], ["src", "https://cdn.stocksnap.io/img-thumbs/960w/thumbs%20up-hand_QUWPLI693K.jpg", "alt", "Thumbs up", 1, "w-100"]];
         },
         template: function OverlaySimpleExampleComponent_Template(rf, ctx) {
           if (rf & 1) {
@@ -3387,7 +3387,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<div class=\"d-flex\">\n    <button nui-button\n            #toggleButton\n            type=\"button\"\n            class=\"mr-5\"\n            i18n>\n            Overlay component Appears Here\n    </button>\n    <button nui-button\n            type=\"button\"\n            (click)=\"popup.show()\"\n            i18n>\n            Show\n    </button>\n    <button nui-button\n            type=\"button\"\n            (click)=\"popup.hide()\"\n            i18n>\n            Hide\n    </button>\n    <button nui-button\n            type=\"button\"\n            (click)=\"popup.toggle()\"\n            i18n>\n            Toggle\n    </button>\n</div>\n\n<nui-overlay #popup [toggleReference]=\"toggleButton['el'].nativeElement\">\n    <img src=\"https://cdn.stocksnap.io/img-thumbs/960w/thumbs%20up-hand_QUWPLI693K.jpg\" class=\"w-100\">\n</nui-overlay>\n";
+      __webpack_exports__["default"] = "<div class=\"d-flex\">\n    <button nui-button\n            #toggleButton\n            type=\"button\"\n            class=\"mr-5\"\n            i18n>\n            Overlay component Appears Here\n    </button>\n    <button nui-button\n            type=\"button\"\n            (click)=\"popup.show()\"\n            i18n>\n            Show\n    </button>\n    <button nui-button\n            type=\"button\"\n            (click)=\"popup.hide()\"\n            i18n>\n            Hide\n    </button>\n    <button nui-button\n            type=\"button\"\n            (click)=\"popup.toggle()\"\n            i18n>\n            Toggle\n    </button>\n</div>\n\n<nui-overlay #popup [toggleReference]=\"toggleButton['el'].nativeElement\">\n    <img src=\"https://cdn.stocksnap.io/img-thumbs/960w/thumbs%20up-hand_QUWPLI693K.jpg\"  alt=\"Thumbs up\" class=\"w-100\">\n</nui-overlay>\n";
       /***/
     },
 
@@ -4395,7 +4395,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<div class=\"arrow-example\">\n    <div class=\"d-flex justify-content-between align-items-center mb-5\">\n        <div class=\"dnd-button\" cdkDrag #draggable=cdkDrag>\n            <button nui-button\n                class=\"toggle-button\"\n                #toggleButton\n                type=\"button\"\n                [isEmpty]=\"false\"\n                (click)=\"overlay.toggle()\"\n                i18n>\n                Draggable toggle\n            </button>\n        </div>\n\n        <button nui-button\n            class=\"h-50\"\n            type=\"button\"\n            [isEmpty]=\"false\"\n            (click)=\"draggable.reset()\"\n            i18n>\n            Reset draggable button\n        </button>\n    </div>\n\n\n    <nui-overlay #overlay\n        [toggleReference]=\"toggleButton['el'].nativeElement\"\n        [overlayConfig]=\"overlayConfig\"\n        >\n        <img src=\"https://cdn.stocksnap.io/img-thumbs/960w/thumbs%20up-hand_QUWPLI693K.jpg\" class=\"w-100\">\n        <nui-overlay-arrow *ngIf=\"arrowSelectControl.value\"></nui-overlay-arrow>\n    </nui-overlay>\n\n\n    Position: <nui-select-v2 placeholder=\"Select Position\" i18n-placeholder [formControl]=\"positionSelectControl\" class=\"select\">\n        <nui-select-v2-option *ngFor=\"let position of possiblePositions\" [value]=\"position\">{{position}}</nui-select-v2-option>\n    </nui-select-v2>\n\n    Arrow: <nui-select-v2 placeholder=\"Select Arrow\" i18n-placeholder [formControl]=\"arrowSelectControl\" class=\"select\">\n        <nui-select-v2-option *ngFor=\"let arrow of [true, false]\" [value]=\"arrow\">{{arrow}}</nui-select-v2-option>\n    </nui-select-v2>\n\n</div>\n\n";
+      __webpack_exports__["default"] = "<div class=\"arrow-example\">\n    <div class=\"d-flex justify-content-between align-items-center mb-5\">\n        <div class=\"dnd-button\" cdkDrag #draggable=cdkDrag>\n            <button nui-button\n                class=\"toggle-button\"\n                #toggleButton\n                type=\"button\"\n                [isEmpty]=\"false\"\n                (click)=\"overlay.toggle()\"\n                i18n>\n                Draggable toggle\n            </button>\n        </div>\n\n        <button nui-button\n            class=\"h-50\"\n            type=\"button\"\n            [isEmpty]=\"false\"\n            (click)=\"draggable.reset()\"\n            i18n>\n            Reset draggable button\n        </button>\n    </div>\n\n\n    <nui-overlay #overlay\n        [toggleReference]=\"toggleButton['el'].nativeElement\"\n        [overlayConfig]=\"overlayConfig\"\n        >\n        <img src=\"https://cdn.stocksnap.io/img-thumbs/960w/thumbs%20up-hand_QUWPLI693K.jpg\" alt=\"Thumbs up\" class=\"w-100\">\n        <nui-overlay-arrow *ngIf=\"arrowSelectControl.value\"></nui-overlay-arrow>\n    </nui-overlay>\n\n\n    Position: <nui-select-v2 placeholder=\"Select Position\" i18n-placeholder [formControl]=\"positionSelectControl\" class=\"select\">\n        <nui-select-v2-option *ngFor=\"let position of possiblePositions\" [value]=\"position\">{{position}}</nui-select-v2-option>\n    </nui-select-v2>\n\n    Arrow: <nui-select-v2 placeholder=\"Select Arrow\" i18n-placeholder [formControl]=\"arrowSelectControl\" class=\"select\">\n        <nui-select-v2-option *ngFor=\"let arrow of [true, false]\" [value]=\"arrow\">{{arrow}}</nui-select-v2-option>\n    </nui-select-v2>\n\n</div>\n\n";
       /***/
     },
 
