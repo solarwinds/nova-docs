@@ -175,13 +175,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/NuiChartsModule.html" data-type="entity-link">NuiChartsModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-NuiChartsModule-8c97aba9b8dc5bf459719360a268d5c3"' : 'data-target="#xs-components-links-module-NuiChartsModule-8c97aba9b8dc5bf459719360a268d5c3"' }>
+                                            'data-target="#components-links-module-NuiChartsModule-78e587749c0ab2e21236676f1e06c8aa"' : 'data-target="#xs-components-links-module-NuiChartsModule-78e587749c0ab2e21236676f1e06c8aa"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-NuiChartsModule-8c97aba9b8dc5bf459719360a268d5c3"' :
-                                            'id="xs-components-links-module-NuiChartsModule-8c97aba9b8dc5bf459719360a268d5c3"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-NuiChartsModule-78e587749c0ab2e21236676f1e06c8aa"' :
+                                            'id="xs-components-links-module-NuiChartsModule-78e587749c0ab2e21236676f1e06c8aa"' }>
                                             <li class="link">
                                                 <a href="components/BasicLegendTileComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">BasicLegendTileComponent</a>
@@ -226,13 +226,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     </li>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#directives-links-module-NuiChartsModule-8c97aba9b8dc5bf459719360a268d5c3"' : 'data-target="#xs-directives-links-module-NuiChartsModule-8c97aba9b8dc5bf459719360a268d5c3"' }>
+                                        'data-target="#directives-links-module-NuiChartsModule-78e587749c0ab2e21236676f1e06c8aa"' : 'data-target="#xs-directives-links-module-NuiChartsModule-78e587749c0ab2e21236676f1e06c8aa"' }>
                                         <span class="icon ion-md-code-working"></span>
                                         <span>Directives</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="directives-links-module-NuiChartsModule-8c97aba9b8dc5bf459719360a268d5c3"' :
-                                        'id="xs-directives-links-module-NuiChartsModule-8c97aba9b8dc5bf459719360a268d5c3"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="directives-links-module-NuiChartsModule-78e587749c0ab2e21236676f1e06c8aa"' :
+                                        'id="xs-directives-links-module-NuiChartsModule-78e587749c0ab2e21236676f1e06c8aa"' }>
                                         <li class="link">
                                             <a href="directives/ChartCollectionIdDirective.html"
                                                 data-type="entity-link" data-context="sub-entity" data-context-id="modules">ChartCollectionIdDirective</a>
@@ -241,13 +241,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 </li>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#injectables-links-module-NuiChartsModule-8c97aba9b8dc5bf459719360a268d5c3"' : 'data-target="#xs-injectables-links-module-NuiChartsModule-8c97aba9b8dc5bf459719360a268d5c3"' }>
+                                        'data-target="#injectables-links-module-NuiChartsModule-78e587749c0ab2e21236676f1e06c8aa"' : 'data-target="#xs-injectables-links-module-NuiChartsModule-78e587749c0ab2e21236676f1e06c8aa"' }>
                                         <span class="icon ion-md-arrow-round-down"></span>
                                         <span>Injectables</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-NuiChartsModule-8c97aba9b8dc5bf459719360a268d5c3"' :
-                                        'id="xs-injectables-links-module-NuiChartsModule-8c97aba9b8dc5bf459719360a268d5c3"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-NuiChartsModule-78e587749c0ab2e21236676f1e06c8aa"' :
+                                        'id="xs-injectables-links-module-NuiChartsModule-78e587749c0ab2e21236676f1e06c8aa"' }>
                                         <li class="link">
                                             <a href="injectables/ChartCollectionService.html"
                                                 data-type="entity-link" data-context="sub-entity" data-context-id="modules" }>ChartCollectionService</a>
