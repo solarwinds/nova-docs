@@ -792,33 +792,33 @@
       /* harmony import */
 
 
-      var _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-      /*! @nova-ui/charts */
-      "gKry");
-      /* harmony import */
-
-
-      var moment_moment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      var moment_moment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! moment/moment */
       "wd/R");
       /* harmony import */
 
 
-      var moment_moment__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(moment_moment__WEBPACK_IMPORTED_MODULE_4__);
+      var moment_moment__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(moment_moment__WEBPACK_IMPORTED_MODULE_3__);
+      /* harmony import */
+
+
+      var _date_time_util__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! ./date-time-util */
+      "U73d");
 
       var DstTimeIntervalTestPageComponent = function DstTimeIntervalTestPageComponent() {
         _classCallCheck(this, DstTimeIntervalTestPageComponent);
 
         this.insideDstData = getInsideDstData();
         this.outsideDstData = getOutsideDstData();
-        this.oneMinuteInterval = Object(moment_moment__WEBPACK_IMPORTED_MODULE_4__["duration"])(1, "minute");
-        this.oneDayInterval = Object(moment_moment__WEBPACK_IMPORTED_MODULE_4__["duration"])(1, "days");
-        this.oneHourInterval = Object(moment_moment__WEBPACK_IMPORTED_MODULE_4__["duration"])(1, "hours");
-        this.twoHourInterval = Object(moment_moment__WEBPACK_IMPORTED_MODULE_4__["duration"])(2, "hours");
-        this.startDstMidnight = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["DateTimeUtil"].getStartDstMidnight(2021);
-        this.startDstHour = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["DateTimeUtil"].getStartDstHour(2021);
-        this.endDstMidnight = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["DateTimeUtil"].getEndDstMidnight(2021);
-        this.endDstHour = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["DateTimeUtil"].getEndDstHour(2021);
+        this.oneMinuteInterval = Object(moment_moment__WEBPACK_IMPORTED_MODULE_3__["duration"])(1, "minute");
+        this.oneDayInterval = Object(moment_moment__WEBPACK_IMPORTED_MODULE_3__["duration"])(1, "days");
+        this.oneHourInterval = Object(moment_moment__WEBPACK_IMPORTED_MODULE_3__["duration"])(1, "hours");
+        this.twoHourInterval = Object(moment_moment__WEBPACK_IMPORTED_MODULE_3__["duration"])(2, "hours");
+        this.startDstMidnight = _date_time_util__WEBPACK_IMPORTED_MODULE_4__["DateTimeUtil"].getStartDstMidnight(2021);
+        this.startDstHour = _date_time_util__WEBPACK_IMPORTED_MODULE_4__["DateTimeUtil"].getStartDstHour(2021);
+        this.endDstMidnight = _date_time_util__WEBPACK_IMPORTED_MODULE_4__["DateTimeUtil"].getEndDstMidnight(2021);
+        this.endDstHour = _date_time_util__WEBPACK_IMPORTED_MODULE_4__["DateTimeUtil"].getEndDstHour(2021);
         this.startDstOneMinuteData = getStartDstOneMinuteData(this.startDstHour);
         this.startDstOneHourData = getStartDstOneHourData(this.startDstHour);
         this.startDstTwoHourData = getStartDstTwoHourData(this.startDstHour);
@@ -843,19 +843,19 @@
           id: "series-1",
           name: "Series 1",
           data: [{
-            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()(startDstHour).subtract(1, "minute").toDate(),
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(startDstHour).subtract(1, "minute").toDate(),
             y: 30
           }, {
             x: startDstHour,
             y: 95
           }, {
-            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()(startDstHour).add(1, "minute").toDate(),
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(startDstHour).add(1, "minute").toDate(),
             y: 15
           }, {
-            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()(startDstHour).add(2, "minutes").toDate(),
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(startDstHour).add(2, "minutes").toDate(),
             y: 60
           }, {
-            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()(startDstHour).add(3, "minutes").toDate(),
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(startDstHour).add(3, "minutes").toDate(),
             y: 35
           }]
         }];
@@ -866,19 +866,19 @@
           id: "series-1",
           name: "Series 1",
           data: [{
-            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()(startDstHour).subtract(1, "hour").toDate(),
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(startDstHour).subtract(1, "hour").toDate(),
             y: 30
           }, {
             x: startDstHour,
             y: 95
           }, {
-            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()(startDstHour).add(1, "hour").toDate(),
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(startDstHour).add(1, "hour").toDate(),
             y: 15
           }, {
-            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()(startDstHour).add(2, "hours").toDate(),
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(startDstHour).add(2, "hours").toDate(),
             y: 60
           }, {
-            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()(startDstHour).add(3, "hours").toDate(),
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(startDstHour).add(3, "hours").toDate(),
             y: 35
           }]
         }];
@@ -889,19 +889,19 @@
           id: "series-1",
           name: "Series 1",
           data: [{
-            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()(startDstHour).subtract(2, "hours").toDate(),
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(startDstHour).subtract(2, "hours").toDate(),
             y: 30
           }, {
             x: startDstHour,
             y: 95
           }, {
-            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()(startDstHour).add(2, "hours").toDate(),
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(startDstHour).add(2, "hours").toDate(),
             y: 15
           }, {
-            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()(startDstHour).add(4, "hours").toDate(),
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(startDstHour).add(4, "hours").toDate(),
             y: 60
           }, {
-            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()(startDstHour).add(6, "hours").toDate(),
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(startDstHour).add(6, "hours").toDate(),
             y: 35
           }]
         }];
@@ -912,19 +912,19 @@
           id: "series-1",
           name: "Series 1",
           data: [{
-            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()(startDstMidnight).subtract(1, "day").toDate(),
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(startDstMidnight).subtract(1, "day").toDate(),
             y: 30
           }, {
             x: startDstMidnight,
             y: 95
           }, {
-            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()(startDstMidnight).add(1, "day").toDate(),
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(startDstMidnight).add(1, "day").toDate(),
             y: 15
           }, {
-            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()(startDstMidnight).add(2, "days").toDate(),
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(startDstMidnight).add(2, "days").toDate(),
             y: 60
           }, {
-            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()(startDstMidnight).add(3, "days").toDate(),
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(startDstMidnight).add(3, "days").toDate(),
             y: 35
           }]
         }];
@@ -935,19 +935,19 @@
           id: "series-1",
           name: "Series 1",
           data: [{
-            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()(endDstHour).subtract(1, "minute").toDate(),
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(endDstHour).subtract(1, "minute").toDate(),
             y: 30
           }, {
             x: endDstHour,
             y: 95
           }, {
-            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()(endDstHour).add(1, "minute").toDate(),
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(endDstHour).add(1, "minute").toDate(),
             y: 15
           }, {
-            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()(endDstHour).add(2, "minutes").toDate(),
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(endDstHour).add(2, "minutes").toDate(),
             y: 60
           }, {
-            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()(endDstHour).add(3, "minutes").toDate(),
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(endDstHour).add(3, "minutes").toDate(),
             y: 35
           }]
         }];
@@ -958,19 +958,19 @@
           id: "series-1",
           name: "Series 1",
           data: [{
-            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()(endDstHour).subtract(1, "hour").toDate(),
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(endDstHour).subtract(1, "hour").toDate(),
             y: 30
           }, {
             x: endDstHour,
             y: 95
           }, {
-            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()(endDstHour).add(1, "hour").toDate(),
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(endDstHour).add(1, "hour").toDate(),
             y: 15
           }, {
-            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()(endDstHour).add(2, "hours").toDate(),
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(endDstHour).add(2, "hours").toDate(),
             y: 60
           }, {
-            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()(endDstHour).add(3, "hours").toDate(),
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(endDstHour).add(3, "hours").toDate(),
             y: 35
           }]
         }];
@@ -981,19 +981,19 @@
           id: "series-1",
           name: "Series 1",
           data: [{
-            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()(endDstHour).subtract(2, "hours").toDate(),
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(endDstHour).subtract(2, "hours").toDate(),
             y: 30
           }, {
             x: endDstHour,
             y: 95
           }, {
-            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()(endDstHour).add(2, "hours").toDate(),
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(endDstHour).add(2, "hours").toDate(),
             y: 15
           }, {
-            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()(endDstHour).add(4, "hours").toDate(),
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(endDstHour).add(4, "hours").toDate(),
             y: 60
           }, {
-            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()(endDstHour).add(6, "hours").toDate(),
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(endDstHour).add(6, "hours").toDate(),
             y: 35
           }]
         }];
@@ -1004,19 +1004,19 @@
           id: "series-1",
           name: "Series 1",
           data: [{
-            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()(endDstMidnight).subtract(1, "day").toDate(),
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(endDstMidnight).subtract(1, "day").toDate(),
             y: 30
           }, {
             x: endDstMidnight,
             y: 95
           }, {
-            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()(endDstMidnight).add(1, "day").toDate(),
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(endDstMidnight).add(1, "day").toDate(),
             y: 15
           }, {
-            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()(endDstMidnight).add(2, "days").toDate(),
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(endDstMidnight).add(2, "days").toDate(),
             y: 60
           }, {
-            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()(endDstMidnight).add(3, "days").toDate(),
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(endDstMidnight).add(3, "days").toDate(),
             y: 35
           }]
         }];
@@ -1028,19 +1028,19 @@
           id: "series-1",
           name: "Series 1",
           data: [{
-            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2021-07-03T0", format).toDate(),
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-07-03T0", format).toDate(),
             y: 30
           }, {
-            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2021-07-04T0", format).toDate(),
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-07-04T0", format).toDate(),
             y: 95
           }, {
-            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2021-07-05T0", format).toDate(),
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-07-05T0", format).toDate(),
             y: 15
           }, {
-            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2021-07-06T0", format).toDate(),
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-07-06T0", format).toDate(),
             y: 60
           }, {
-            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2021-07-07T0", format).toDate(),
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-07-07T0", format).toDate(),
             y: 35
           }]
         }];
@@ -1052,19 +1052,19 @@
           id: "series-1",
           name: "Series 1",
           data: [{
-            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2020-12-01T0", format).toDate(),
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-12-01T0", format).toDate(),
             y: 30
           }, {
-            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2020-12-02T0", format).toDate(),
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-12-02T0", format).toDate(),
             y: 95
           }, {
-            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2020-12-03T0", format).toDate(),
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-12-03T0", format).toDate(),
             y: 15
           }, {
-            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2020-12-04T0", format).toDate(),
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-12-04T0", format).toDate(),
             y: 60
           }, {
-            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2020-12-05T0", format).toDate(),
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-12-05T0", format).toDate(),
             y: 35
           }]
         }];
@@ -1288,6 +1288,165 @@
           data: [5]
         }];
       }
+      /***/
+
+    },
+
+    /***/
+    "U73d":
+    /*!********************************************************************************************************!*\
+      !*** ./examples/components/demo/chart-types/bar/bar-chart-test/daylight-saving-time/date-time-util.ts ***!
+      \********************************************************************************************************/
+
+    /*! exports provided: DateTimeUtil */
+
+    /***/
+    function U73d(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "DateTimeUtil", function () {
+        return DateTimeUtil;
+      });
+      /* harmony import */
+
+
+      var moment_moment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! moment/moment */
+      "wd/R");
+      /* harmony import */
+
+
+      var moment_moment__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(moment_moment__WEBPACK_IMPORTED_MODULE_0__);
+      /** Class with common time utilities */
+
+
+      var DateTimeUtil = /*#__PURE__*/function () {
+        function DateTimeUtil() {
+          _classCallCheck(this, DateTimeUtil);
+        }
+
+        _createClass(DateTimeUtil, null, [{
+          key: "getStartDstMidnight",
+          value:
+          /**
+           * Gets the local midnight date-time of the day containing the start of daylight saving time for the provided year
+           *
+           * @param year The year to get the midnight date-time for the start of daylight saving time
+           *
+           * @returns {Date} The local midnight date-time of the day containing the start of daylight saving time for the provided year
+           */
+          function getStartDstMidnight(year) {
+            var datesInYear = [];
+
+            for (var i = 1; i <= 365; i++) {
+              var d = new Date(year, 0, 1);
+              d.setDate(i);
+              datesInYear.push(d);
+            }
+
+            var foundStart = false;
+            return datesInYear.reduce(function (prev, curr) {
+              if (curr.getTimezoneOffset() < prev.getTimezoneOffset()) {
+                foundStart = true;
+                return prev;
+              }
+
+              return foundStart ? prev : curr;
+            });
+          }
+          /**
+           * Gets the exact local date-time of the start of daylight saving time for the provided year
+           *
+           * @param year The year to get the exact date-time for the start of daylight saving time
+           *
+           * @returns {Date} The exact local date-time of the day containing the start of daylight saving time for the provided year
+           */
+
+        }, {
+          key: "getStartDstHour",
+          value: function getStartDstHour(year) {
+            var startDstMidnight = DateTimeUtil.getStartDstMidnight(year);
+            var hoursInDstStartDay = [];
+
+            for (var i = 0; i < 24; i++) {
+              var d = new Date(startDstMidnight);
+              d.setHours(i);
+              hoursInDstStartDay.push(d);
+            }
+
+            var foundStart = false;
+            return hoursInDstStartDay.reduce(function (prev, curr) {
+              if (curr.getTimezoneOffset() < prev.getTimezoneOffset()) {
+                foundStart = true;
+                return curr;
+              }
+
+              return foundStart ? prev : curr;
+            });
+          }
+          /**
+           * Gets the local midnight date-time of the day containing the end of daylight saving time for the provided year
+           *
+           * @param year The year to get the midnight date-time for the end of daylight saving time
+           *
+           * @returns {Date} The local midnight date-time of the day containing the end of daylight saving time for the provided year
+           */
+
+        }, {
+          key: "getEndDstMidnight",
+          value: function getEndDstMidnight(year) {
+            var datesInYear = [];
+
+            for (var i = 1; i <= 365; i++) {
+              var d = new Date(year, 0, 1);
+              d.setDate(i);
+              datesInYear.push(d);
+            }
+
+            return datesInYear.reduce(function (prev, curr) {
+              if (curr.getTimezoneOffset() > prev.getTimezoneOffset()) {
+                return prev;
+              }
+
+              return curr;
+            });
+          }
+          /**
+           * Gets the exact local date-time of the end of daylight saving time for the provided year
+           *
+           * @param year The year to get the exact date-time for the end of daylight saving time
+           *
+           * @returns {Date} The exact local date-time of the day containing the end of daylight saving time for the provided year
+           */
+
+        }, {
+          key: "getEndDstHour",
+          value: function getEndDstHour(year) {
+            var endDstMidnight = DateTimeUtil.getEndDstMidnight(year);
+            var hoursInDstEndDay = [];
+
+            for (var i = 0; i < 24; i++) {
+              var d = new Date(endDstMidnight);
+              d.setHours(i);
+              hoursInDstEndDay.push(d);
+            }
+
+            return hoursInDstEndDay.reduce(function (prev, curr) {
+              if (curr.getTimezoneOffset() > prev.getTimezoneOffset()) {
+                return moment_moment__WEBPACK_IMPORTED_MODULE_0___default()(curr).subtract(1, "hour").toDate();
+              }
+
+              return prev;
+            });
+          }
+        }]);
+
+        return DateTimeUtil;
+      }();
       /***/
 
     },
@@ -2022,6 +2181,7 @@
         "./bar-chart-test/basic-vertical/basic-vertical-bar-chart-test.component.ts": "bkbR",
         "./bar-chart-test/daylight-saving-time/bar-chart-time-interval/bar-chart-time-interval-dst-test.component.html": "JozS",
         "./bar-chart-test/daylight-saving-time/bar-chart-time-interval/bar-chart-time-interval-dst-test.component.ts": "PSNa",
+        "./bar-chart-test/daylight-saving-time/date-time-util.ts": "YAOY",
         "./bar-chart-test/daylight-saving-time/daylight-saving-time-test.module.ts": "x13I",
         "./bar-chart-test/daylight-saving-time/dst-time-interval-test-page.component.html": "OCfy",
         "./bar-chart-test/daylight-saving-time/dst-time-interval-test-page.component.ts": "Uetg",
