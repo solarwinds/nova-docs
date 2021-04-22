@@ -569,6 +569,12 @@
       var _src_lib_message_message_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ../../../../../../src/lib/message/message.component */
       "4pDv");
+      /* harmony import */
+
+
+      var _message_manual_control_message_manual_control_example_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! ../message-manual-control/message-manual-control.example.component */
+      "jyiZ");
 
       var MessageTestComponent = /*#__PURE__*/function () {
         function MessageTestComponent() {
@@ -592,7 +598,7 @@
       MessageTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: MessageTestComponent,
         selectors: [["message-test-component"]],
-        decls: 8,
+        decls: 9,
         vars: 1,
         consts: function consts() {
           var i18n_0;
@@ -623,7 +629,7 @@
             i18n_2 = $localize(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral([":\u241F02836e3a06f77544a771ac40aec8770faf7bd594\u241F5046902615158790751:", ":START_BOLD_TEXT:Simple help message.", ":CLOSE_BOLD_TEXT: Cius dit vellab idunt acestot aturecu. ", ":START_LINK:Learn More", ":CLOSE_LINK:"])), "\uFFFD#6\uFFFD", "\uFFFD/#6\uFFFD", "\uFFFD#7\uFFFD", "\uFFFD/#7\uFFFD");
           }
 
-          return [["id", "nui-demo-message-dismiss-not-allowed", "type", "warning", 3, "allowDismiss"], i18n_0, ["href", "../components/MessageComponent.html", "target", "_blank"], ["id", "nui-demo-message-dismiss-allowed", "type", "ok", 3, "dismiss"], i18n_2];
+          return [["id", "nui-demo-message-dismiss-not-allowed", "type", "warning", 3, "allowDismiss"], i18n_0, ["href", "../components/MessageComponent.html", "target", "_blank"], ["id", "nui-demo-message-dismiss-allowed", "type", "ok", 3, "dismiss"], i18n_2, ["id", "nui-demo-message-manual-control"]];
         },
         template: function MessageTestComponent_Template(rf, ctx) {
           if (rf & 1) {
@@ -654,13 +660,15 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18nEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](8, "nui-message-manual-control-example", 5);
           }
 
           if (rf & 2) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("allowDismiss", false);
           }
         },
-        directives: [_src_lib_message_message_component__WEBPACK_IMPORTED_MODULE_1__["MessageComponent"]],
+        directives: [_src_lib_message_message_component__WEBPACK_IMPORTED_MODULE_1__["MessageComponent"], _message_manual_control_message_manual_control_example_component__WEBPACK_IMPORTED_MODULE_2__["MessageManualControlExampleComponent"]],
         encapsulation: 2
       });
       /***/
@@ -1149,7 +1157,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<nui-message id=\"nui-demo-message-dismiss-not-allowed\"\n             type=\"warning\"\n             [allowDismiss]=\"false\" i18n>\n    <b>This is a message with not allowed dismiss.</b> Cius dit vellab idunt acestot aturecu lluptaepe eum qui con\n    ciusae dolenis moditatiusam es dolum sollor aliquam. Cius dit vellab idunt acestot aturecu\n    ciusae dolenis moditatiusam es dolum sollor aliquam. Cius dit vellab idunt acestot aturecu\n    ciusae dolenis moditatiusam es dolum sollor aliquam.\n    <a href=\"../components/MessageComponent.html\" target=\"_blank\">Learn More</a>\n</nui-message>\n\n<nui-message id=\"nui-demo-message-dismiss-allowed\" type=\"ok\" (dismiss)=\"onMessageDismiss()\" i18n>\n    <b>Simple help message.</b> Cius dit vellab idunt acestot aturecu.\n    <a href=\"../components/MessageComponent.html\" target=\"_blank\">Learn More</a>\n</nui-message>\n";
+      __webpack_exports__["default"] = "<nui-message id=\"nui-demo-message-dismiss-not-allowed\"\n             type=\"warning\"\n             [allowDismiss]=\"false\" i18n>\n    <b>This is a message with not allowed dismiss.</b> Cius dit vellab idunt acestot aturecu lluptaepe eum qui con\n    ciusae dolenis moditatiusam es dolum sollor aliquam. Cius dit vellab idunt acestot aturecu\n    ciusae dolenis moditatiusam es dolum sollor aliquam. Cius dit vellab idunt acestot aturecu\n    ciusae dolenis moditatiusam es dolum sollor aliquam.\n    <a href=\"../components/MessageComponent.html\" target=\"_blank\">Learn More</a>\n</nui-message>\n\n<nui-message id=\"nui-demo-message-dismiss-allowed\" type=\"ok\" (dismiss)=\"onMessageDismiss()\" i18n>\n    <b>Simple help message.</b> Cius dit vellab idunt acestot aturecu.\n    <a href=\"../components/MessageComponent.html\" target=\"_blank\">Learn More</a>\n</nui-message>\n\n<nui-message-manual-control-example id=\"nui-demo-message-manual-control\"></nui-message-manual-control-example>\n";
       /***/
     },
 
