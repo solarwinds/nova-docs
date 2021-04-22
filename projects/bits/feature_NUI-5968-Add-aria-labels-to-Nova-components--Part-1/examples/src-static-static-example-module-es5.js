@@ -1881,7 +1881,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import {AfterViewInit, Component, OnInit} from \"@angular/core\";\n\n@Component({\n    selector: \"links-example\",\n    styleUrls: [\"links.example.component.less\"],\n    templateUrl: \"./links.example.component.html\",\n})\nexport class LinksExampleComponent {\n}\n";
+      __webpack_exports__["default"] = "import { Component } from \"@angular/core\";\n\n@Component({\n    selector: \"links-example\",\n    styleUrls: [\"links.example.component.less\"],\n    templateUrl: \"./links.example.component.html\",\n})\nexport class LinksExampleComponent {\n}\n";
       /***/
     },
 

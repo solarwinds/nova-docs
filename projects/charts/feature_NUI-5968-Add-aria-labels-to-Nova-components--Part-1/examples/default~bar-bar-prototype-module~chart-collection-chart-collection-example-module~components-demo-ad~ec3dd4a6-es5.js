@@ -43040,7 +43040,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<div *ngIf=\"plugin && plugin.dataPoints\">\n    <nui-popover class=\"chart-popover__popover\"\n                 trigger=\"openPopoverSubject\"\n                 placement=\"top\"\n                 [unlimited]=\"true\"\n                 [template]=\"popoverTemplate\"\n                 [openPopover]=\"plugin.openPopoverSubject\"\n                 [closePopover]=\"plugin.closePopoverSubject\"\n                 [hasPadding]=\"false\"\n                 [container]=\"element.nativeElement\"\n                 [style.height.px]=\"plugin.popoverTargetPosition.height\">\n    </nui-popover>\n\n    <ng-template #popoverTemplate>\n        <ng-container *ngTemplateOutlet=\"template; context: {dataPoints:plugin.dataPoints}\"></ng-container>\n    </ng-template>\n</div>\n";
+      __webpack_exports__["default"] = "<div *ngIf=\"plugin && plugin.dataPoints\">\n    <nui-popover class=\"chart-popover__popover\"\n                 trigger=\"openPopoverSubject\"\n                 placement=\"top\"\n                 [unlimited]=\"true\"\n                 [template]=\"popoverTemplate\"\n                 [openPopover]=\"plugin.openPopoverSubject\"\n                 [closePopover]=\"plugin.closePopoverSubject\"\n                 [hasPadding]=\"false\"\n                 [container]=\"element.nativeElement\"\n                 [style.height.px]=\"plugin.popoverTargetPosition.height\"\n                 [withGrowAfterOpen]=\"true\">\n    </nui-popover>\n\n    <ng-template #popoverTemplate>\n        <ng-container *ngTemplateOutlet=\"template; context: {dataPoints:plugin.dataPoints}\"></ng-container>\n    </ng-template>\n</div>\n";
       /***/
     },
 

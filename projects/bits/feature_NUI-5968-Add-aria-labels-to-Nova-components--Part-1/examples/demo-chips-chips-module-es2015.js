@@ -151,7 +151,7 @@ webpackContext.id = "0WDX";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { Component, Inject } from \"@angular/core\";\nimport { IChipsGroup, IChipsItem, IChipsItemsSource, IToastService, ToastService } from \"@nova-ui/bits\";\nimport _cloneDeep from \"lodash/cloneDeep\";\nimport _pull from \"lodash/pull\";\n\nconst groupedItems: IChipsGroup[] = [\n    {\n        id: \"statusGroupId\", label: \"Status\", items: [\n        {id: \"statusGroupItem1\", label: \"Down\"},\n        {id: \"statusGroupItem2\", label: \"Critical\"},\n        {id: \"statusGroupItem3\", label: \"Warning\"},\n        {id: \"statusGroupItem4\", label: \"Unknown\"},\n        {id: \"statusGroupItem5\", label: \"Ok\"}],\n    },\n    {\n        id: \"vendorGroupId\", label: \"Vendor\", items: [\n        {id: \"vendorGroupItem1\", label: \"Cisco\"},\n        {id: \"vendorGroupItem2\", label: \"Hewlett Packard\"},\n        {id: \"vendorGroupItem3\", label: \"Uniper\"}],\n    }];\n\n@Component({\n    selector: \"nui-vertical-grouped-chips-example\",\n    templateUrl: \"vertical-grouped-chips.example.component.html\",\n})\n\nexport class VerticalGroupedChipsExampleComponent {\n    public verticalGroupedItemsSource: IChipsItemsSource = {groupedItems: _cloneDeep(groupedItems)};\n\n    public onClear(event: { item: IChipsItem, group?: IChipsGroup }) {\n        console.log(`'onClear' event fired. $event.item.id=${event.item.id} $event.group.id=${event.group?.id}`);\n        _pull(event.group?.items || [], event.item);\n    }\n\n    public onClearAll() {\n        this.verticalGroupedItemsSource.groupedItems = [];\n    }\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import { Component } from \"@angular/core\";\nimport { IChipsGroup, IChipsItem, IChipsItemsSource } from \"@nova-ui/bits\";\nimport _cloneDeep from \"lodash/cloneDeep\";\nimport _pull from \"lodash/pull\";\n\nconst groupedItems: IChipsGroup[] = [\n    {\n        id: \"statusGroupId\", label: \"Status\", items: [\n        {id: \"statusGroupItem1\", label: \"Down\"},\n        {id: \"statusGroupItem2\", label: \"Critical\"},\n        {id: \"statusGroupItem3\", label: \"Warning\"},\n        {id: \"statusGroupItem4\", label: \"Unknown\"},\n        {id: \"statusGroupItem5\", label: \"Ok\"}],\n    },\n    {\n        id: \"vendorGroupId\", label: \"Vendor\", items: [\n        {id: \"vendorGroupItem1\", label: \"Cisco\"},\n        {id: \"vendorGroupItem2\", label: \"Hewlett Packard\"},\n        {id: \"vendorGroupItem3\", label: \"Uniper\"}],\n    }];\n\n@Component({\n    selector: \"nui-vertical-grouped-chips-example\",\n    templateUrl: \"vertical-grouped-chips.example.component.html\",\n})\n\nexport class VerticalGroupedChipsExampleComponent {\n    public verticalGroupedItemsSource: IChipsItemsSource = {groupedItems: _cloneDeep(groupedItems)};\n\n    public onClear(event: { item: IChipsItem, group?: IChipsGroup }) {\n        console.log(`'onClear' event fired. $event.item.id=${event.item.id} $event.group.id=${event.group?.id}`);\n        _pull(event.group?.items || [], event.item);\n    }\n\n    public onClearAll() {\n        this.verticalGroupedItemsSource.groupedItems = [];\n    }\n}\n");
 
 /***/ }),
 
@@ -165,12 +165,10 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VerticalFlatChipsExampleComponent", function() { return VerticalFlatChipsExampleComponent; });
-/* harmony import */ var _nova_ui_bits__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @nova-ui/bits */ "b5Xb");
-/* harmony import */ var lodash_pull__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash/pull */ "hzCD");
-/* harmony import */ var lodash_pull__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_pull__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _src_lib_chips_chips_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../src/lib/chips/chips.component */ "JjEo");
-
+/* harmony import */ var lodash_pull__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash/pull */ "hzCD");
+/* harmony import */ var lodash_pull__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash_pull__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _src_lib_chips_chips_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../src/lib/chips/chips.component */ "JjEo");
 
 
 
@@ -187,29 +185,29 @@ class VerticalFlatChipsExampleComponent {
     }
     onClear(event) {
         console.log(`'onClear' event fired. $event.item.id=${event.item.id}`);
-        lodash_pull__WEBPACK_IMPORTED_MODULE_1___default()(this.verticalFlatItemsSource.flatItems || [], event.item);
+        lodash_pull__WEBPACK_IMPORTED_MODULE_0___default()(this.verticalFlatItemsSource.flatItems || [], event.item);
     }
     onClearAll() {
         this.verticalFlatItemsSource.flatItems = [];
     }
 }
 VerticalFlatChipsExampleComponent.ɵfac = function VerticalFlatChipsExampleComponent_Factory(t) { return new (t || VerticalFlatChipsExampleComponent)(); };
-VerticalFlatChipsExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({ type: VerticalFlatChipsExampleComponent, selectors: [["nui-vertical-flat-chips-example"]], decls: 2, vars: 1, consts: function () { let i18n_0; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+VerticalFlatChipsExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: VerticalFlatChipsExampleComponent, selectors: [["nui-vertical-flat-chips-example"]], decls: 2, vars: 1, consts: function () { let i18n_0; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
         const MSG_EXTERNAL_5168008278809915722$$DEMO_SRC_COMPONENTS_DEMO_CHIPS_VERTICAL_FLAT_CHIPS_VERTICAL_FLAT_CHIPS_EXAMPLE_COMPONENT_TS_1 = goog.getMsg("Statuses");
         i18n_0 = MSG_EXTERNAL_5168008278809915722$$DEMO_SRC_COMPONENTS_DEMO_CHIPS_VERTICAL_FLAT_CHIPS_VERTICAL_FLAT_CHIPS_EXAMPLE_COMPONENT_TS_1;
     }
     else {
         i18n_0 = $localize `:␟8a35b7aecbc09fd6b111ade416a7ed11371d95bd␟5168008278809915722:Statuses`;
     } return [[2, "max-width", "300px"], ["id", "nui-demo-chips-flat-vertical", "title", i18n_0, "orientation", "vertical", 3, "itemsSource", "chipRemoved", "removeAll"]]; }, template: function VerticalFlatChipsExampleComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](1, "nui-chips", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("chipRemoved", function VerticalFlatChipsExampleComponent_Template_nui_chips_chipRemoved_1_listener($event) { return ctx.onClear($event); })("removeAll", function VerticalFlatChipsExampleComponent_Template_nui_chips_removeAll_1_listener() { return ctx.onClearAll(); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "nui-chips", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("chipRemoved", function VerticalFlatChipsExampleComponent_Template_nui_chips_chipRemoved_1_listener($event) { return ctx.onClear($event); })("removeAll", function VerticalFlatChipsExampleComponent_Template_nui_chips_removeAll_1_listener() { return ctx.onClearAll(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("itemsSource", ctx.verticalFlatItemsSource);
-    } }, directives: [_src_lib_chips_chips_component__WEBPACK_IMPORTED_MODULE_3__["ChipsComponent"]], encapsulation: 2 });
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("itemsSource", ctx.verticalFlatItemsSource);
+    } }, directives: [_src_lib_chips_chips_component__WEBPACK_IMPORTED_MODULE_2__["ChipsComponent"]], encapsulation: 2 });
 
 
 /***/ }),
@@ -224,15 +222,13 @@ VerticalFlatChipsExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ChipsCustomCssExampleComponent", function() { return ChipsCustomCssExampleComponent; });
-/* harmony import */ var _nova_ui_bits__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @nova-ui/bits */ "b5Xb");
-/* harmony import */ var lodash_pull__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash/pull */ "hzCD");
-/* harmony import */ var lodash_pull__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_pull__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "ofXK");
-/* harmony import */ var _src_lib_chips_chips_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../../src/lib/chips/chips.component */ "JjEo");
-/* harmony import */ var _src_lib_chips_chip_chip_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../../../src/lib/chips/chip/chip.component */ "PEYr");
-/* harmony import */ var _src_lib_icon_icon_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../../../src/lib/icon/icon.component */ "45Bz");
-
+/* harmony import */ var lodash_pull__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash/pull */ "hzCD");
+/* harmony import */ var lodash_pull__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash_pull__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var _src_lib_chips_chips_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../src/lib/chips/chips.component */ "JjEo");
+/* harmony import */ var _src_lib_chips_chip_chip_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../../src/lib/chips/chip/chip.component */ "PEYr");
+/* harmony import */ var _src_lib_icon_icon_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../../../src/lib/icon/icon.component */ "45Bz");
 
 
 
@@ -240,29 +236,29 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function ChipsCustomCssExampleComponent_nui_chip_3_nui_icon_1_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](0, "nui-icon", 6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](0, "nui-icon", 6);
 } if (rf & 2) {
-    const chip_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]().$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("icon", chip_r2.icon);
+    const chip_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]().$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("icon", chip_r2.icon);
 } }
 function ChipsCustomCssExampleComponent_nui_chip_3_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "nui-chip", 4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](1, ChipsCustomCssExampleComponent_nui_chip_3_nui_icon_1_Template, 1, 1, "nui-icon", 5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-chip", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](1, ChipsCustomCssExampleComponent_nui_chip_3_nui_icon_1_Template, 1, 1, "nui-icon", 5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const chip_r2 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("item", chip_r2)("customClass", chip_r2.customClass);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", chip_r2.icon);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate1"](" ", chip_r2.label, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("item", chip_r2)("customClass", chip_r2.customClass);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", chip_r2.icon);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"](" ", chip_r2.label, " ");
 } }
 function ChipsCustomCssExampleComponent_nui_chip_10_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](0, "nui-chip", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](0, "nui-chip", 4);
 } if (rf & 2) {
     const chip_r5 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("item", chip_r5)("customClass", chip_r5.customClass);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("item", chip_r5)("customClass", chip_r5.customClass);
 } }
 class ChipsCustomCssExampleComponent {
     constructor() {
@@ -359,7 +355,7 @@ class ChipsCustomCssExampleComponent {
         var _a, _b;
         const source = event.group
             ? (_b = (_a = this.nuiChipsSet.groupedItems) === null || _a === void 0 ? void 0 : _a.find((group) => { var _a; return group.id === ((_a = event.group) === null || _a === void 0 ? void 0 : _a.id); })) === null || _b === void 0 ? void 0 : _b.items : this.nuiChipsSet.flatItems;
-        lodash_pull__WEBPACK_IMPORTED_MODULE_1___default()(source || [], event.item);
+        lodash_pull__WEBPACK_IMPORTED_MODULE_0___default()(source || [], event.item);
     }
     onClearAll() {
         this.nuiChipsSet.flatItems = [];
@@ -367,33 +363,33 @@ class ChipsCustomCssExampleComponent {
     }
 }
 ChipsCustomCssExampleComponent.ɵfac = function ChipsCustomCssExampleComponent_Factory(t) { return new (t || ChipsCustomCssExampleComponent)(); };
-ChipsCustomCssExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({ type: ChipsCustomCssExampleComponent, selectors: [["nui-chips-custom-css-example"]], decls: 11, vars: 3, consts: [["id", "standalone-chips", 1, "mb-5"], [3, "item", "customClass", 4, "ngFor", "ngForOf"], ["id", "nui-demo-chips-custom-css", "title", "Statuses", "orientation", "vertical", "customClass", "nui-chips-custom-styles", 3, "itemsSource", "chipRemoved", "removeAll"], ["id", "chips-width-example", 1, "mb-5"], [3, "item", "customClass"], ["iconSize", "small", "class", "mr-1", 3, "icon", 4, "ngIf"], ["iconSize", "small", 1, "mr-1", 3, "icon"]], template: function ChipsCustomCssExampleComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "h3");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, "Standalone chips");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](2, "div", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](3, ChipsCustomCssExampleComponent_nui_chip_3_Template, 3, 4, "nui-chip", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](4, "h3");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](5, "nui-chips Group set");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](6, "nui-chips", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("chipRemoved", function ChipsCustomCssExampleComponent_Template_nui_chips_chipRemoved_6_listener($event) { return ctx.onClear($event); })("removeAll", function ChipsCustomCssExampleComponent_Template_nui_chips_removeAll_6_listener() { return ctx.onClearAll(); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](7, "h3");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](8, "Unset Width");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](9, "div", 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](10, ChipsCustomCssExampleComponent_nui_chip_10_Template, 1, 2, "nui-chip", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+ChipsCustomCssExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: ChipsCustomCssExampleComponent, selectors: [["nui-chips-custom-css-example"]], decls: 11, vars: 3, consts: [["id", "standalone-chips", 1, "mb-5"], [3, "item", "customClass", 4, "ngFor", "ngForOf"], ["id", "nui-demo-chips-custom-css", "title", "Statuses", "orientation", "vertical", "customClass", "nui-chips-custom-styles", 3, "itemsSource", "chipRemoved", "removeAll"], ["id", "chips-width-example", 1, "mb-5"], [3, "item", "customClass"], ["iconSize", "small", "class", "mr-1", 3, "icon", 4, "ngIf"], ["iconSize", "small", 1, "mr-1", 3, "icon"]], template: function ChipsCustomCssExampleComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "h3");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1, "Standalone chips");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](3, ChipsCustomCssExampleComponent_nui_chip_3_Template, 3, 4, "nui-chip", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](4, "h3");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](5, "nui-chips Group set");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](6, "nui-chips", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("chipRemoved", function ChipsCustomCssExampleComponent_Template_nui_chips_chipRemoved_6_listener($event) { return ctx.onClear($event); })("removeAll", function ChipsCustomCssExampleComponent_Template_nui_chips_removeAll_6_listener() { return ctx.onClearAll(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](7, "h3");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](8, "Unset Width");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](9, "div", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](10, ChipsCustomCssExampleComponent_nui_chip_10_Template, 1, 2, "nui-chip", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx.standaloneChips);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("itemsSource", ctx.nuiChipsSet);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx.widthChips);
-    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["NgForOf"], _src_lib_chips_chips_component__WEBPACK_IMPORTED_MODULE_4__["ChipsComponent"], _src_lib_chips_chip_chip_component__WEBPACK_IMPORTED_MODULE_5__["ChipComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgIf"], _src_lib_icon_icon_component__WEBPACK_IMPORTED_MODULE_6__["IconComponent"]], styles: ["#standalone-chips .standalone-chip-custom-styles {\n  border: 1px solid;\n  margin-right: 2px;\n}\n#standalone-chips .custom-chip-critical {\n  border-color: var(--nui-color-semantic-critical,#dd2c00);\n  background-color: var(--nui-color-semantic-critical-bg,#fceae6);\n}\n#standalone-chips .custom-chip-critical:hover {\n  border-color: var(--nui-color-semantic-critical-hover,#c72800);\n  background-color: var(--nui-color-semantic-critical-bg-hover,#f8d5cc);\n}\n#standalone-chips .custom-chip-warning {\n  border-color: var(--nui-color-semantic-warning,#fec405);\n  background-color: var(--nui-color-semantic-warning-bg,#fff9e6);\n}\n#standalone-chips .custom-chip-warning:hover {\n  border-color: var(--nui-color-semantic-warning-hover,#e5b005);\n  background-color: var(--nui-color-semantic-warning-bg-hover,#fff3cd);\n}\n#standalone-chips .custom-chip-info {\n  border-color: var(--nui-color-semantic-info,#1c8eb1);\n  background-color: var(--nui-color-semantic-info-bg,#e8f4f7);\n}\n#standalone-chips .custom-chip-info:hover {\n  border-color: var(--nui-color-semantic-info-hover,#19809f);\n  background-color: var(--nui-color-semantic-info-bg-hover,#d2e8ef);\n}\n#standalone-chips .custom-chip-disabled {\n  cursor: not-allowed;\n  border-color: var(--nui-color-disabled-secondary,#e8e8e8);\n  background-color: var(--nui-color-disabled-secondary,#e8e8e8);\n  color: var(--nui-color-text-disabled,rgba(17, 17, 17, 0.3));\n}\n#standalone-chips .custom-chip-disabled .nui-chip__value-remove svg * {\n  fill: var(--nui-color-icon-disabled,rgba(17, 17, 17, 0.3));\n}\n#standalone-chips .custom-chip-disabled > * > * {\n  cursor: not-allowed;\n}\n#nui-demo-chips-custom-css .nui-chips-custom-styles {\n  max-width: 400px;\n  padding: 15px;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNoaXBzLWN1c3RvbS1jc3MuZXhhbXBsZS5jb21wb25lbnQubGVzcyIsIi4uLy4uLy4uLy4uLy4uLy4uL3NyYy9zdHlsZXMvbWl4aW5zL2Nzcy12YXJpYWJsZXMubGVzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFJQTtFQUVRLGlCQUFBO0VBQ0EsaUJBQUE7QUFKUjtBQUNBO0VDQ0ksd0RBQUE7RUFBQSwrREFBQTtBREVKO0FBTVE7RUNSSiw4REFBQTtFQUFBLHFFQUFBO0FETUo7QUFQQTtFQ0NJLHVEQUFBO0VBQUEsOERBQUE7QURVSjtBQU9RO0VDakJKLDZEQUFBO0VBQUEsb0VBQUE7QURjSjtBQWZBO0VDQ0ksb0RBQUE7RUFBQSwyREFBQTtBRGtCSjtBQVFRO0VDMUJKLDBEQUFBO0VBQUEsaUVBQUE7QURzQko7QUF2QkE7RUFrQ1EsbUJBQUE7RUNqQ0oseURBQUE7RUFBQSw2REFBQTtFQUFBLDJEQUFBO0FENEJKO0FBN0JBO0VDQ0ksMERBQUE7QUQrQko7QUFZUTtFQUNJLG1CQUFBO0FBVlo7QUFnQkE7RUFHUSxnQkFBQTtFQUNBLGFBQUE7QUFoQlIiLCJmaWxlIjoiY2hpcHMtY3VzdG9tLWNzcy5leGFtcGxlLmNvbXBvbmVudC5sZXNzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCAocmVmZXJlbmNlKSBcIm51aS1mcmFtZXdvcmstdmFyaWFibGVzXCI7XG5AaW1wb3J0IChyZWZlcmVuY2UpIFwibWl4aW5zXCI7XG5cbi8vIGN1c3RvbSBzdHlsZXMgZm9yIGVhY2ggb2Ygc3RhbmRhbG9uZSBgbnVpLWNoaXBgXG4jc3RhbmRhbG9uZS1jaGlwcyB7XG4gICAgLnN0YW5kYWxvbmUtY2hpcC1jdXN0b20tc3R5bGVzIHtcbiAgICAgICAgYm9yZGVyOiAxcHggc29saWQ7XG4gICAgICAgIG1hcmdpbi1yaWdodDogQG51aS1zcGFjZS14eHM7XG4gICAgfVxuXG4gICAgLmN1c3RvbS1jaGlwLWNyaXRpY2FsIHtcbiAgICAgICAgLnNldENzc1ZhcmlhYmxlKGJvcmRlci1jb2xvciwgbnVpLWNvbG9yLXNlbWFudGljLWNyaXRpY2FsKTtcbiAgICAgICAgLnNldENzc1ZhcmlhYmxlKGJhY2tncm91bmQtY29sb3IsIG51aS1jb2xvci1zZW1hbnRpYy1jcml0aWNhbC1iZyk7XG4gICAgICAgICY6aG92ZXIge1xuICAgICAgICAgICAgLnNldENzc1ZhcmlhYmxlKGJvcmRlci1jb2xvciwgbnVpLWNvbG9yLXNlbWFudGljLWNyaXRpY2FsLWhvdmVyKTtcbiAgICAgICAgICAgIC5zZXRDc3NWYXJpYWJsZShiYWNrZ3JvdW5kLWNvbG9yLCBudWktY29sb3Itc2VtYW50aWMtY3JpdGljYWwtYmctaG92ZXIpO1xuICAgICAgICB9XG4gICAgfVxuXG4gICAgLmN1c3RvbS1jaGlwLXdhcm5pbmcge1xuICAgICAgICAuc2V0Q3NzVmFyaWFibGUoYm9yZGVyLWNvbG9yLCBudWktY29sb3Itc2VtYW50aWMtd2FybmluZyk7XG4gICAgICAgIC5zZXRDc3NWYXJpYWJsZShiYWNrZ3JvdW5kLWNvbG9yLCBudWktY29sb3Itc2VtYW50aWMtd2FybmluZy1iZyk7XG4gICAgICAgICY6aG92ZXIge1xuICAgICAgICAgICAgLnNldENzc1ZhcmlhYmxlKGJvcmRlci1jb2xvciwgbnVpLWNvbG9yLXNlbWFudGljLXdhcm5pbmctaG92ZXIpO1xuICAgICAgICAgICAgLnNldENzc1ZhcmlhYmxlKGJhY2tncm91bmQtY29sb3IsIG51aS1jb2xvci1zZW1hbnRpYy13YXJuaW5nLWJnLWhvdmVyKTtcbiAgICAgICAgfVxuICAgIH1cblxuICAgIC5jdXN0b20tY2hpcC1pbmZvIHtcbiAgICAgICAgLnNldENzc1ZhcmlhYmxlKGJvcmRlci1jb2xvciwgbnVpLWNvbG9yLXNlbWFudGljLWluZm8pO1xuICAgICAgICAuc2V0Q3NzVmFyaWFibGUoYmFja2dyb3VuZC1jb2xvciwgbnVpLWNvbG9yLXNlbWFudGljLWluZm8tYmcpO1xuICAgICAgICAmOmhvdmVyIHtcbiAgICAgICAgICAgIC5zZXRDc3NWYXJpYWJsZShib3JkZXItY29sb3IsIG51aS1jb2xvci1zZW1hbnRpYy1pbmZvLWhvdmVyKTtcbiAgICAgICAgICAgIC5zZXRDc3NWYXJpYWJsZShiYWNrZ3JvdW5kLWNvbG9yLCBudWktY29sb3Itc2VtYW50aWMtaW5mby1iZy1ob3Zlcik7XG4gICAgICAgIH1cbiAgICB9XG5cbiAgICAuY3VzdG9tLWNoaXAtZGlzYWJsZWQge1xuICAgICAgICBjdXJzb3I6IG5vdC1hbGxvd2VkO1xuICAgICAgICAuc2V0Q3NzVmFyaWFibGUoYm9yZGVyLWNvbG9yLCBudWktY29sb3ItZGlzYWJsZWQtc2Vjb25kYXJ5KTtcbiAgICAgICAgLnNldENzc1ZhcmlhYmxlKGJhY2tncm91bmQtY29sb3IsIG51aS1jb2xvci1kaXNhYmxlZC1zZWNvbmRhcnkpO1xuICAgICAgICAuc2V0Q3NzVmFyaWFibGUoY29sb3IsIG51aS1jb2xvci10ZXh0LWRpc2FibGVkKTtcblxuICAgICAgICAvLyBjaGFuZ2UgdGhlIGNvbG9yIG9mIFwiWFwiIGJ1dHRvblxuICAgICAgICAubnVpLWNoaXBfX3ZhbHVlLXJlbW92ZSBzdmcgKiB7XG4gICAgICAgICAgICAuc2V0Q3NzVmFyaWFibGUoZmlsbCwgbnVpLWNvbG9yLWljb24tZGlzYWJsZWQpO1xuICAgICAgICB9XG5cbiAgICAgICAgJiA+ICogPiAqIHtcbiAgICAgICAgICAgIGN1cnNvcjogbm90LWFsbG93ZWQ7XG4gICAgICAgIH1cbiAgICB9XG59XG5cbi8vIGN1c3RvbSBzdHlsZXMgZm9yIGBudWktY2hpcHNgXG4jbnVpLWRlbW8tY2hpcHMtY3VzdG9tLWNzcyB7XG4gICAgLy8gY3VzdG9tIHN0eWxlcyBmb3IgYG51aS1jaGlwc2BcbiAgICAubnVpLWNoaXBzLWN1c3RvbS1zdHlsZXMge1xuICAgICAgICBtYXgtd2lkdGg6IDQwMHB4O1xuICAgICAgICBwYWRkaW5nOiBAbnVpLXNwYWNlLW1kO1xuICAgIH1cbn1cblxuIiwiLnNldENzc1ZhcmlhYmxlKEBwcm9wZXJ0eSwgQHZhbHVlKXtcbiAgICBAZXZhbHVhdGVkIDogXCJAe3ZhbHVlfVwiO1xuICAgIC8vdGhlIGRvdWJsZSBAIGZvcmNlcyBhIGluZGlyZWN0aW9uIGV2YWx1YXRpb24sIGtpbmRhIGxpa2UgYSBwb2ludGVyXG4gICAgQGZhbGxiYWNrIDogQEBldmFsdWF0ZWQ7XG5cbiAgICBAe3Byb3BlcnR5fTogflwidmFyKC0tQHt2YWx1ZX0sQHtmYWxsYmFja30pXCI7XG59XG4iXX0= */"], encapsulation: 2 });
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx.standaloneChips);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("itemsSource", ctx.nuiChipsSet);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx.widthChips);
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["NgForOf"], _src_lib_chips_chips_component__WEBPACK_IMPORTED_MODULE_3__["ChipsComponent"], _src_lib_chips_chip_chip_component__WEBPACK_IMPORTED_MODULE_4__["ChipComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_2__["NgIf"], _src_lib_icon_icon_component__WEBPACK_IMPORTED_MODULE_5__["IconComponent"]], styles: ["#standalone-chips .standalone-chip-custom-styles {\n  border: 1px solid;\n  margin-right: 2px;\n}\n#standalone-chips .custom-chip-critical {\n  border-color: var(--nui-color-semantic-critical,#dd2c00);\n  background-color: var(--nui-color-semantic-critical-bg,#fceae6);\n}\n#standalone-chips .custom-chip-critical:hover {\n  border-color: var(--nui-color-semantic-critical-hover,#c72800);\n  background-color: var(--nui-color-semantic-critical-bg-hover,#f8d5cc);\n}\n#standalone-chips .custom-chip-warning {\n  border-color: var(--nui-color-semantic-warning,#fec405);\n  background-color: var(--nui-color-semantic-warning-bg,#fff9e6);\n}\n#standalone-chips .custom-chip-warning:hover {\n  border-color: var(--nui-color-semantic-warning-hover,#e5b005);\n  background-color: var(--nui-color-semantic-warning-bg-hover,#fff3cd);\n}\n#standalone-chips .custom-chip-info {\n  border-color: var(--nui-color-semantic-info,#1c8eb1);\n  background-color: var(--nui-color-semantic-info-bg,#e8f4f7);\n}\n#standalone-chips .custom-chip-info:hover {\n  border-color: var(--nui-color-semantic-info-hover,#19809f);\n  background-color: var(--nui-color-semantic-info-bg-hover,#d2e8ef);\n}\n#standalone-chips .custom-chip-disabled {\n  cursor: not-allowed;\n  border-color: var(--nui-color-disabled-secondary,#e8e8e8);\n  background-color: var(--nui-color-disabled-secondary,#e8e8e8);\n  color: var(--nui-color-text-disabled,rgba(17, 17, 17, 0.3));\n}\n#standalone-chips .custom-chip-disabled .nui-chip__value-remove svg * {\n  fill: var(--nui-color-icon-disabled,rgba(17, 17, 17, 0.3));\n}\n#standalone-chips .custom-chip-disabled > * > * {\n  cursor: not-allowed;\n}\n#nui-demo-chips-custom-css .nui-chips-custom-styles {\n  max-width: 400px;\n  padding: 15px;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNoaXBzLWN1c3RvbS1jc3MuZXhhbXBsZS5jb21wb25lbnQubGVzcyIsIi4uLy4uLy4uLy4uLy4uLy4uL3NyYy9zdHlsZXMvbWl4aW5zL2Nzcy12YXJpYWJsZXMubGVzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFJQTtFQUVRLGlCQUFBO0VBQ0EsaUJBQUE7QUFKUjtBQUNBO0VDQ0ksd0RBQUE7RUFBQSwrREFBQTtBREVKO0FBTVE7RUNSSiw4REFBQTtFQUFBLHFFQUFBO0FETUo7QUFQQTtFQ0NJLHVEQUFBO0VBQUEsOERBQUE7QURVSjtBQU9RO0VDakJKLDZEQUFBO0VBQUEsb0VBQUE7QURjSjtBQWZBO0VDQ0ksb0RBQUE7RUFBQSwyREFBQTtBRGtCSjtBQVFRO0VDMUJKLDBEQUFBO0VBQUEsaUVBQUE7QURzQko7QUF2QkE7RUFrQ1EsbUJBQUE7RUNqQ0oseURBQUE7RUFBQSw2REFBQTtFQUFBLDJEQUFBO0FENEJKO0FBN0JBO0VDQ0ksMERBQUE7QUQrQko7QUFZUTtFQUNJLG1CQUFBO0FBVlo7QUFnQkE7RUFHUSxnQkFBQTtFQUNBLGFBQUE7QUFoQlIiLCJmaWxlIjoiY2hpcHMtY3VzdG9tLWNzcy5leGFtcGxlLmNvbXBvbmVudC5sZXNzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCAocmVmZXJlbmNlKSBcIm51aS1mcmFtZXdvcmstdmFyaWFibGVzXCI7XG5AaW1wb3J0IChyZWZlcmVuY2UpIFwibWl4aW5zXCI7XG5cbi8vIGN1c3RvbSBzdHlsZXMgZm9yIGVhY2ggb2Ygc3RhbmRhbG9uZSBgbnVpLWNoaXBgXG4jc3RhbmRhbG9uZS1jaGlwcyB7XG4gICAgLnN0YW5kYWxvbmUtY2hpcC1jdXN0b20tc3R5bGVzIHtcbiAgICAgICAgYm9yZGVyOiAxcHggc29saWQ7XG4gICAgICAgIG1hcmdpbi1yaWdodDogQG51aS1zcGFjZS14eHM7XG4gICAgfVxuXG4gICAgLmN1c3RvbS1jaGlwLWNyaXRpY2FsIHtcbiAgICAgICAgLnNldENzc1ZhcmlhYmxlKGJvcmRlci1jb2xvciwgbnVpLWNvbG9yLXNlbWFudGljLWNyaXRpY2FsKTtcbiAgICAgICAgLnNldENzc1ZhcmlhYmxlKGJhY2tncm91bmQtY29sb3IsIG51aS1jb2xvci1zZW1hbnRpYy1jcml0aWNhbC1iZyk7XG4gICAgICAgICY6aG92ZXIge1xuICAgICAgICAgICAgLnNldENzc1ZhcmlhYmxlKGJvcmRlci1jb2xvciwgbnVpLWNvbG9yLXNlbWFudGljLWNyaXRpY2FsLWhvdmVyKTtcbiAgICAgICAgICAgIC5zZXRDc3NWYXJpYWJsZShiYWNrZ3JvdW5kLWNvbG9yLCBudWktY29sb3Itc2VtYW50aWMtY3JpdGljYWwtYmctaG92ZXIpO1xuICAgICAgICB9XG4gICAgfVxuXG4gICAgLmN1c3RvbS1jaGlwLXdhcm5pbmcge1xuICAgICAgICAuc2V0Q3NzVmFyaWFibGUoYm9yZGVyLWNvbG9yLCBudWktY29sb3Itc2VtYW50aWMtd2FybmluZyk7XG4gICAgICAgIC5zZXRDc3NWYXJpYWJsZShiYWNrZ3JvdW5kLWNvbG9yLCBudWktY29sb3Itc2VtYW50aWMtd2FybmluZy1iZyk7XG4gICAgICAgICY6aG92ZXIge1xuICAgICAgICAgICAgLnNldENzc1ZhcmlhYmxlKGJvcmRlci1jb2xvciwgbnVpLWNvbG9yLXNlbWFudGljLXdhcm5pbmctaG92ZXIpO1xuICAgICAgICAgICAgLnNldENzc1ZhcmlhYmxlKGJhY2tncm91bmQtY29sb3IsIG51aS1jb2xvci1zZW1hbnRpYy13YXJuaW5nLWJnLWhvdmVyKTtcbiAgICAgICAgfVxuICAgIH1cblxuICAgIC5jdXN0b20tY2hpcC1pbmZvIHtcbiAgICAgICAgLnNldENzc1ZhcmlhYmxlKGJvcmRlci1jb2xvciwgbnVpLWNvbG9yLXNlbWFudGljLWluZm8pO1xuICAgICAgICAuc2V0Q3NzVmFyaWFibGUoYmFja2dyb3VuZC1jb2xvciwgbnVpLWNvbG9yLXNlbWFudGljLWluZm8tYmcpO1xuICAgICAgICAmOmhvdmVyIHtcbiAgICAgICAgICAgIC5zZXRDc3NWYXJpYWJsZShib3JkZXItY29sb3IsIG51aS1jb2xvci1zZW1hbnRpYy1pbmZvLWhvdmVyKTtcbiAgICAgICAgICAgIC5zZXRDc3NWYXJpYWJsZShiYWNrZ3JvdW5kLWNvbG9yLCBudWktY29sb3Itc2VtYW50aWMtaW5mby1iZy1ob3Zlcik7XG4gICAgICAgIH1cbiAgICB9XG5cbiAgICAuY3VzdG9tLWNoaXAtZGlzYWJsZWQge1xuICAgICAgICBjdXJzb3I6IG5vdC1hbGxvd2VkO1xuICAgICAgICAuc2V0Q3NzVmFyaWFibGUoYm9yZGVyLWNvbG9yLCBudWktY29sb3ItZGlzYWJsZWQtc2Vjb25kYXJ5KTtcbiAgICAgICAgLnNldENzc1ZhcmlhYmxlKGJhY2tncm91bmQtY29sb3IsIG51aS1jb2xvci1kaXNhYmxlZC1zZWNvbmRhcnkpO1xuICAgICAgICAuc2V0Q3NzVmFyaWFibGUoY29sb3IsIG51aS1jb2xvci10ZXh0LWRpc2FibGVkKTtcblxuICAgICAgICAvLyBjaGFuZ2UgdGhlIGNvbG9yIG9mIFwiWFwiIGJ1dHRvblxuICAgICAgICAubnVpLWNoaXBfX3ZhbHVlLXJlbW92ZSBzdmcgKiB7XG4gICAgICAgICAgICAuc2V0Q3NzVmFyaWFibGUoZmlsbCwgbnVpLWNvbG9yLWljb24tZGlzYWJsZWQpO1xuICAgICAgICB9XG5cbiAgICAgICAgJiA+ICogPiAqIHtcbiAgICAgICAgICAgIGN1cnNvcjogbm90LWFsbG93ZWQ7XG4gICAgICAgIH1cbiAgICB9XG59XG5cbi8vIGN1c3RvbSBzdHlsZXMgZm9yIGBudWktY2hpcHNgXG4jbnVpLWRlbW8tY2hpcHMtY3VzdG9tLWNzcyB7XG4gICAgLy8gY3VzdG9tIHN0eWxlcyBmb3IgYG51aS1jaGlwc2BcbiAgICAubnVpLWNoaXBzLWN1c3RvbS1zdHlsZXMge1xuICAgICAgICBtYXgtd2lkdGg6IDQwMHB4O1xuICAgICAgICBwYWRkaW5nOiBAbnVpLXNwYWNlLW1kO1xuICAgIH1cbn1cblxuIiwiLnNldENzc1ZhcmlhYmxlKEBwcm9wZXJ0eSwgQHZhbHVlKXtcbiAgICBAZXZhbHVhdGVkIDogXCJAe3ZhbHVlfVwiO1xuICAgIC8vdGhlIGRvdWJsZSBAIGZvcmNlcyBhIGluZGlyZWN0aW9uIGV2YWx1YXRpb24sIGtpbmRhIGxpa2UgYSBwb2ludGVyXG4gICAgQGZhbGxiYWNrIDogQEBldmFsdWF0ZWQ7XG5cbiAgICBAe3Byb3BlcnR5fTogflwidmFyKC0tQHt2YWx1ZX0sQHtmYWxsYmFja30pXCI7XG59XG4iXX0= */"], encapsulation: 2 });
 
 
 /***/ }),
@@ -408,12 +404,10 @@ ChipsCustomCssExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2_
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AutohideChipsExampleComponent", function() { return AutohideChipsExampleComponent; });
-/* harmony import */ var _nova_ui_bits__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @nova-ui/bits */ "b5Xb");
-/* harmony import */ var lodash_pull__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash/pull */ "hzCD");
-/* harmony import */ var lodash_pull__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_pull__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _src_lib_chips_chips_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../src/lib/chips/chips.component */ "JjEo");
-
+/* harmony import */ var lodash_pull__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash/pull */ "hzCD");
+/* harmony import */ var lodash_pull__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash_pull__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _src_lib_chips_chips_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../src/lib/chips/chips.component */ "JjEo");
 
 
 
@@ -430,20 +424,20 @@ class AutohideChipsExampleComponent {
     }
     onClear(event) {
         console.log(`'onClear' event fired. $event.item.id=${event.item.id}`);
-        lodash_pull__WEBPACK_IMPORTED_MODULE_1___default()(this.horizontalFlatItemsSource.flatItems || [], event.item);
+        lodash_pull__WEBPACK_IMPORTED_MODULE_0___default()(this.horizontalFlatItemsSource.flatItems || [], event.item);
     }
     onClearAll() {
         this.horizontalFlatItemsSource.flatItems = [];
     }
 }
 AutohideChipsExampleComponent.ɵfac = function AutohideChipsExampleComponent_Factory(t) { return new (t || AutohideChipsExampleComponent)(); };
-AutohideChipsExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({ type: AutohideChipsExampleComponent, selectors: [["nui-autohide-chips-example"]], decls: 1, vars: 2, consts: [["id", "nui-demo-chips-autohide", 3, "autoHide", "itemsSource", "chipRemoved", "removeAll"]], template: function AutohideChipsExampleComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "nui-chips", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("chipRemoved", function AutohideChipsExampleComponent_Template_nui_chips_chipRemoved_0_listener($event) { return ctx.onClear($event); })("removeAll", function AutohideChipsExampleComponent_Template_nui_chips_removeAll_0_listener() { return ctx.onClearAll(); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+AutohideChipsExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: AutohideChipsExampleComponent, selectors: [["nui-autohide-chips-example"]], decls: 1, vars: 2, consts: [["id", "nui-demo-chips-autohide", 3, "autoHide", "itemsSource", "chipRemoved", "removeAll"]], template: function AutohideChipsExampleComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-chips", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("chipRemoved", function AutohideChipsExampleComponent_Template_nui_chips_chipRemoved_0_listener($event) { return ctx.onClear($event); })("removeAll", function AutohideChipsExampleComponent_Template_nui_chips_removeAll_0_listener() { return ctx.onClearAll(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("autoHide", false)("itemsSource", ctx.horizontalFlatItemsSource);
-    } }, directives: [_src_lib_chips_chips_component__WEBPACK_IMPORTED_MODULE_3__["ChipsComponent"]], encapsulation: 2 });
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("autoHide", false)("itemsSource", ctx.horizontalFlatItemsSource);
+    } }, directives: [_src_lib_chips_chips_component__WEBPACK_IMPORTED_MODULE_2__["ChipsComponent"]], encapsulation: 2 });
 
 
 /***/ }),
@@ -496,7 +490,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { Component, Inject } from \"@angular/core\";\nimport { IChipsItem, IChipsItemsSource, IToastService, ToastService } from \"@nova-ui/bits\";\nimport _pull from \"lodash/pull\";\n\nconst horizontalFlatItems: IChipsItem[] = [\n    {id: \"flatId1\", label: \"Down\"},\n    {id: \"flatId2\", label: \"Critical\"},\n    {id: \"flatId3\", label: \"Warning\"},\n    {id: \"flatId4\", label: \"Unknown\"},\n    {id: \"flatId5\", label: \"Ok\"},\n];\n\n@Component({\n    selector: \"nui-basic-chips-example\",\n    templateUrl: \"./basic-chips.example.component.html\",\n})\n\nexport class BasicChipsExampleComponent {\n    public horizontalFlatItemsSource: IChipsItemsSource = { flatItems: horizontalFlatItems};\n\n    public onClear(event: { item: IChipsItem }) {\n        console.log(`'onClear' event fired. $event.item.id=${event.item.id}`);\n        _pull(this.horizontalFlatItemsSource.flatItems || [], event.item);\n    }\n\n    public onClearAll() {\n        this.horizontalFlatItemsSource.flatItems = [];\n    }\n\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import { Component } from \"@angular/core\";\nimport { IChipsItem, IChipsItemsSource } from \"@nova-ui/bits\";\nimport _pull from \"lodash/pull\";\n\nconst horizontalFlatItems: IChipsItem[] = [\n    {id: \"flatId1\", label: \"Down\"},\n    {id: \"flatId2\", label: \"Critical\"},\n    {id: \"flatId3\", label: \"Warning\"},\n    {id: \"flatId4\", label: \"Unknown\"},\n    {id: \"flatId5\", label: \"Ok\"},\n];\n\n@Component({\n    selector: \"nui-basic-chips-example\",\n    templateUrl: \"./basic-chips.example.component.html\",\n})\n\nexport class BasicChipsExampleComponent {\n    public horizontalFlatItemsSource: IChipsItemsSource = { flatItems: horizontalFlatItems};\n\n    public onClear(event: { item: IChipsItem }) {\n        console.log(`'onClear' event fired. $event.item.id=${event.item.id}`);\n        _pull(this.horizontalFlatItemsSource.flatItems || [], event.item);\n    }\n\n    public onClearAll() {\n        this.horizontalFlatItemsSource.flatItems = [];\n    }\n\n}\n");
 
 /***/ }),
 
@@ -840,7 +834,7 @@ ChipsVisualTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵ�
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { Component, Inject } from \"@angular/core\";\nimport { IChipsItem, IChipsItemsSource, IToastService, ToastService } from \"@nova-ui/bits\";\nimport _pull from \"lodash/pull\";\n\nconst verticalFlatItems: IChipsItem[] = [\n    {id: \"flatId1\", label: \"Down\"},\n    {id: \"flatId2\", label: \"Critical\"},\n    {id: \"flatId3\", label: \"Warning\"},\n    {id: \"flatId4\", label: \"Unknown\"},\n    {id: \"flatId5\", label: \"Ok\"},\n];\n\n@Component({\n    selector: \"nui-vertical-flat-chips-example\",\n    templateUrl: \"vertical-flat-chips.example.component.html\",\n})\n\nexport class VerticalFlatChipsExampleComponent {\n    public verticalFlatItemsSource: IChipsItemsSource = {flatItems: verticalFlatItems};\n\n    public onClear(event: { item: IChipsItem }) {\n        console.log(`'onClear' event fired. $event.item.id=${event.item.id}`);\n        _pull(this.verticalFlatItemsSource.flatItems || [], event.item);\n    }\n\n    public onClearAll() {\n        this.verticalFlatItemsSource.flatItems = [];\n    }\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import { Component } from \"@angular/core\";\nimport { IChipsItem, IChipsItemsSource } from \"@nova-ui/bits\";\nimport _pull from \"lodash/pull\";\n\nconst verticalFlatItems: IChipsItem[] = [\n    {id: \"flatId1\", label: \"Down\"},\n    {id: \"flatId2\", label: \"Critical\"},\n    {id: \"flatId3\", label: \"Warning\"},\n    {id: \"flatId4\", label: \"Unknown\"},\n    {id: \"flatId5\", label: \"Ok\"},\n];\n\n@Component({\n    selector: \"nui-vertical-flat-chips-example\",\n    templateUrl: \"vertical-flat-chips.example.component.html\",\n})\n\nexport class VerticalFlatChipsExampleComponent {\n    public verticalFlatItemsSource: IChipsItemsSource = {flatItems: verticalFlatItems};\n\n    public onClear(event: { item: IChipsItem }) {\n        console.log(`'onClear' event fired. $event.item.id=${event.item.id}`);\n        _pull(this.verticalFlatItemsSource.flatItems || [], event.item);\n    }\n\n    public onClearAll() {\n        this.verticalFlatItemsSource.flatItems = [];\n    }\n}\n");
 
 /***/ }),
 
@@ -854,14 +848,12 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GroupedChipsExampleComponent", function() { return GroupedChipsExampleComponent; });
-/* harmony import */ var _nova_ui_bits__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @nova-ui/bits */ "b5Xb");
-/* harmony import */ var lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash/cloneDeep */ "BkRI");
-/* harmony import */ var lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var lodash_pull__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash/pull */ "hzCD");
-/* harmony import */ var lodash_pull__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_pull__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _src_lib_chips_chips_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../../src/lib/chips/chips.component */ "JjEo");
-
+/* harmony import */ var lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash/cloneDeep */ "BkRI");
+/* harmony import */ var lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var lodash_pull__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash/pull */ "hzCD");
+/* harmony import */ var lodash_pull__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_pull__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _src_lib_chips_chips_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../src/lib/chips/chips.component */ "JjEo");
 
 
 
@@ -886,25 +878,25 @@ const groupedItems = [
 ];
 class GroupedChipsExampleComponent {
     constructor() {
-        this.horizontalGroupedItemsSource = { groupedItems: lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_1___default()(groupedItems) };
+        this.horizontalGroupedItemsSource = { groupedItems: lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_0___default()(groupedItems) };
     }
     onClear(event) {
         var _a, _b;
         console.log(`'onClear' event fired. $event.item.id=${event.item.id} $event.group.id=${(_a = event.group) === null || _a === void 0 ? void 0 : _a.id}`);
-        lodash_pull__WEBPACK_IMPORTED_MODULE_2___default()(((_b = event.group) === null || _b === void 0 ? void 0 : _b.items) || [], event.item);
+        lodash_pull__WEBPACK_IMPORTED_MODULE_1___default()(((_b = event.group) === null || _b === void 0 ? void 0 : _b.items) || [], event.item);
     }
     onClearAll() {
         this.horizontalGroupedItemsSource.groupedItems = [];
     }
 }
 GroupedChipsExampleComponent.ɵfac = function GroupedChipsExampleComponent_Factory(t) { return new (t || GroupedChipsExampleComponent)(); };
-GroupedChipsExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({ type: GroupedChipsExampleComponent, selectors: [["nui-grouped-chips-example"]], decls: 1, vars: 1, consts: [["id", "nui-demo-chips-grouped-horizontal", 3, "itemsSource", "chipRemoved", "removeAll"]], template: function GroupedChipsExampleComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "nui-chips", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("chipRemoved", function GroupedChipsExampleComponent_Template_nui_chips_chipRemoved_0_listener($event) { return ctx.onClear($event); })("removeAll", function GroupedChipsExampleComponent_Template_nui_chips_removeAll_0_listener() { return ctx.onClearAll(); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+GroupedChipsExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({ type: GroupedChipsExampleComponent, selectors: [["nui-grouped-chips-example"]], decls: 1, vars: 1, consts: [["id", "nui-demo-chips-grouped-horizontal", 3, "itemsSource", "chipRemoved", "removeAll"]], template: function GroupedChipsExampleComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "nui-chips", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("chipRemoved", function GroupedChipsExampleComponent_Template_nui_chips_chipRemoved_0_listener($event) { return ctx.onClear($event); })("removeAll", function GroupedChipsExampleComponent_Template_nui_chips_removeAll_0_listener() { return ctx.onClearAll(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("itemsSource", ctx.horizontalGroupedItemsSource);
-    } }, directives: [_src_lib_chips_chips_component__WEBPACK_IMPORTED_MODULE_4__["ChipsComponent"]], encapsulation: 2 });
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("itemsSource", ctx.horizontalGroupedItemsSource);
+    } }, directives: [_src_lib_chips_chips_component__WEBPACK_IMPORTED_MODULE_3__["ChipsComponent"]], encapsulation: 2 });
 
 
 /***/ }),
@@ -918,7 +910,7 @@ GroupedChipsExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_3__[
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { Component, Inject } from \"@angular/core\";\nimport { IChipsGroup, IChipsItem, IToastService, ToastService } from \"@nova-ui/bits\";\nimport _cloneDeep from \"lodash/cloneDeep\";\nimport _pull from \"lodash/pull\";\n\nconst groupedItems: IChipsGroup[] = [\n    {\n        id: \"statusGroupId\", label: \"Status\", items: [\n            {id: \"statusGroupItem1\", label: \"Down\"},\n            {id: \"statusGroupItem2\", label: \"Critical\"},\n            {id: \"statusGroupItem3\", label: \"Warning\"},\n            {id: \"statusGroupItem4\", label: \"Unknown\"},\n            {id: \"statusGroupItem5\", label: \"Ok\"}],\n    },\n    {\n        id: \"vendorGroupId\", label: \"Vendor\", items: [\n            {id: \"vendorGroupItem1\", label: \"Cisco\"},\n            {id: \"vendorGroupItem2\", label: \"Hewlett Packard\"},\n            {id: \"vendorGroupItem3\", label: \"Uniper\"}],\n    },\n];\n\n@Component({\n    selector: \"nui-grouped-chips-example\",\n    templateUrl: \"./grouped-chips.example.component.html\",\n})\n\nexport class GroupedChipsExampleComponent {\n    public horizontalGroupedItemsSource = {groupedItems: _cloneDeep(groupedItems)};\n\n    public onClear(event: { item: IChipsItem, group?: IChipsGroup }) {\n        console.log(`'onClear' event fired. $event.item.id=${event.item.id} $event.group.id=${event.group?.id}`);\n        _pull(event.group?.items || [], event.item);\n    }\n\n    public onClearAll() {\n        this.horizontalGroupedItemsSource.groupedItems = [];\n    }\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import { Component } from \"@angular/core\";\nimport { IChipsGroup, IChipsItem } from \"@nova-ui/bits\";\nimport _cloneDeep from \"lodash/cloneDeep\";\nimport _pull from \"lodash/pull\";\n\nconst groupedItems: IChipsGroup[] = [\n    {\n        id: \"statusGroupId\", label: \"Status\", items: [\n            {id: \"statusGroupItem1\", label: \"Down\"},\n            {id: \"statusGroupItem2\", label: \"Critical\"},\n            {id: \"statusGroupItem3\", label: \"Warning\"},\n            {id: \"statusGroupItem4\", label: \"Unknown\"},\n            {id: \"statusGroupItem5\", label: \"Ok\"}],\n    },\n    {\n        id: \"vendorGroupId\", label: \"Vendor\", items: [\n            {id: \"vendorGroupItem1\", label: \"Cisco\"},\n            {id: \"vendorGroupItem2\", label: \"Hewlett Packard\"},\n            {id: \"vendorGroupItem3\", label: \"Uniper\"}],\n    },\n];\n\n@Component({\n    selector: \"nui-grouped-chips-example\",\n    templateUrl: \"./grouped-chips.example.component.html\",\n})\n\nexport class GroupedChipsExampleComponent {\n    public horizontalGroupedItemsSource = {groupedItems: _cloneDeep(groupedItems)};\n\n    public onClear(event: { item: IChipsItem, group?: IChipsGroup }) {\n        console.log(`'onClear' event fired. $event.item.id=${event.item.id} $event.group.id=${event.group?.id}`);\n        _pull(event.group?.items || [], event.item);\n    }\n\n    public onClearAll() {\n        this.horizontalGroupedItemsSource.groupedItems = [];\n    }\n}\n");
 
 /***/ }),
 
@@ -1007,7 +999,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { Component, ViewEncapsulation } from \"@angular/core\";\nimport { IChipRemoved, IChipsGroup, IChipsItem, IChipsItemsSource } from \"@nova-ui/bits\";\nimport _pull from \"lodash/pull\";\n\n@Component({\n    selector: \"nui-chips-custom-css-example\",\n    templateUrl: \"./chips-custom-css.example.component.html\",\n    styleUrls: [\"chips-custom-css.example.component.less\"],\n    encapsulation: ViewEncapsulation.None,\n})\n\nexport class ChipsCustomCssExampleComponent {\n    public standaloneChips: Array<IChipsItem & any> = [\n        {\n            id: \"standaloneChip1\",\n            label: \"Custom Critical\",\n            customClass: [\"standalone-chip-custom-styles\", \"custom-chip-critical\"],\n            icon: \"severity_critical\",\n        },\n        {\n            id: \"standaloneChip2\",\n            label: \"Custom Warning\",\n            customClass: [\"standalone-chip-custom-styles\", \"custom-chip-warning\"],\n            icon: \"severity_warning\",\n        },\n        {\n            id: \"standaloneChip3\",\n            label: \"Custom Info\",\n            customClass: [\"standalone-chip-custom-styles\", \"custom-chip-info\"],\n            icon: \"severity_info\",\n        },\n        {\n            id: \"statusGroupItem5\",\n            label: \"Disabled\",\n            customClass: [\"standalone-chip-custom-styles\", \"custom-chip-disabled\"],\n            icon: \"severity_unknown\",\n        },\n    ];\n\n    public nuiChipsSet: IChipsItemsSource = {\n        flatItems: [\n            {\n                id: \"flatId2\",\n                label: \"Critical\",\n                customClass: \"nui-tag-critical nui-tag-with-hover-styles nui-tag-text-light\",\n            },\n            {\n                id: \"flatId3\",\n                label: \"Warning\",\n                customClass: \"nui-tag-warning nui-tag-with-hover-styles\",\n            },\n            {\n                id: \"flatId4\",\n                label: \"Info\",\n                customClass: \"nui-tag-info nui-tag-with-hover-styles nui-tag-text-light\",\n            },\n            {\n                id: \"flatId5\",\n                label: \"Ok\",\n                customClass: \"nui-tag-ok nui-tag-with-hover-styles nui-tag-text-light\",\n            },\n        ],\n        groupedItems: [\n            {\n                id: \"statusGroupId\",\n                label: \"Grouped Statuses\",\n                items: [\n                    {\n                        id: \"statusGroupItem2\",\n                        label: \"Critical\",\n                        customClass: \"nui-tag-critical nui-tag-with-hover-styles nui-tag-text-light\",\n                    },\n                    {\n                        id: \"statusGroupItem3\",\n                        label: \"Warning\",\n                        customClass: \"nui-tag-warning nui-tag-with-hover-styles\",\n                    },\n                    {\n                        id: \"statusGroupItem4\",\n                        label: \"Unknown\",\n                    },\n                    {\n                        id: \"statusGroupItem5\",\n                        label: \"Ok\",\n                        customClass: \"nui-tag-ok nui-tag-with-hover-styles nui-tag-text-light\",\n                    },\n                ],\n            },\n        ],\n    };\n\n\n    public widthChips: Array<IChipsItem & any> = [\n        {\n            id: \"widthChip1\",\n            label: \"Chip with default width and very very very very very very very long title \",\n        },\n        {\n            id: \"widthChip2\",\n            label: \"Chip with unset width and a very very very very very very very long title \",\n            customClass: \"unlimited-width\",\n        },\n    ];\n\n\n    public onClear(event: IChipRemoved) {\n        const source = event.group\n            ? this.nuiChipsSet.groupedItems?.find((group) => group.id === event.group?.id)?.items\n            : this.nuiChipsSet.flatItems;\n        _pull(source || [], event.item);\n    }\n\n    public onClearAll() {\n        this.nuiChipsSet.flatItems = [];\n        this.nuiChipsSet.groupedItems = [];\n    }\n\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import { Component, ViewEncapsulation } from \"@angular/core\";\nimport { IChipRemoved, IChipsItem, IChipsItemsSource } from \"@nova-ui/bits\";\nimport _pull from \"lodash/pull\";\n\n@Component({\n    selector: \"nui-chips-custom-css-example\",\n    templateUrl: \"./chips-custom-css.example.component.html\",\n    styleUrls: [\"chips-custom-css.example.component.less\"],\n    encapsulation: ViewEncapsulation.None,\n})\n\nexport class ChipsCustomCssExampleComponent {\n    public standaloneChips: Array<IChipsItem & any> = [\n        {\n            id: \"standaloneChip1\",\n            label: \"Custom Critical\",\n            customClass: [\"standalone-chip-custom-styles\", \"custom-chip-critical\"],\n            icon: \"severity_critical\",\n        },\n        {\n            id: \"standaloneChip2\",\n            label: \"Custom Warning\",\n            customClass: [\"standalone-chip-custom-styles\", \"custom-chip-warning\"],\n            icon: \"severity_warning\",\n        },\n        {\n            id: \"standaloneChip3\",\n            label: \"Custom Info\",\n            customClass: [\"standalone-chip-custom-styles\", \"custom-chip-info\"],\n            icon: \"severity_info\",\n        },\n        {\n            id: \"statusGroupItem5\",\n            label: \"Disabled\",\n            customClass: [\"standalone-chip-custom-styles\", \"custom-chip-disabled\"],\n            icon: \"severity_unknown\",\n        },\n    ];\n\n    public nuiChipsSet: IChipsItemsSource = {\n        flatItems: [\n            {\n                id: \"flatId2\",\n                label: \"Critical\",\n                customClass: \"nui-tag-critical nui-tag-with-hover-styles nui-tag-text-light\",\n            },\n            {\n                id: \"flatId3\",\n                label: \"Warning\",\n                customClass: \"nui-tag-warning nui-tag-with-hover-styles\",\n            },\n            {\n                id: \"flatId4\",\n                label: \"Info\",\n                customClass: \"nui-tag-info nui-tag-with-hover-styles nui-tag-text-light\",\n            },\n            {\n                id: \"flatId5\",\n                label: \"Ok\",\n                customClass: \"nui-tag-ok nui-tag-with-hover-styles nui-tag-text-light\",\n            },\n        ],\n        groupedItems: [\n            {\n                id: \"statusGroupId\",\n                label: \"Grouped Statuses\",\n                items: [\n                    {\n                        id: \"statusGroupItem2\",\n                        label: \"Critical\",\n                        customClass: \"nui-tag-critical nui-tag-with-hover-styles nui-tag-text-light\",\n                    },\n                    {\n                        id: \"statusGroupItem3\",\n                        label: \"Warning\",\n                        customClass: \"nui-tag-warning nui-tag-with-hover-styles\",\n                    },\n                    {\n                        id: \"statusGroupItem4\",\n                        label: \"Unknown\",\n                    },\n                    {\n                        id: \"statusGroupItem5\",\n                        label: \"Ok\",\n                        customClass: \"nui-tag-ok nui-tag-with-hover-styles nui-tag-text-light\",\n                    },\n                ],\n            },\n        ],\n    };\n\n\n    public widthChips: Array<IChipsItem & any> = [\n        {\n            id: \"widthChip1\",\n            label: \"Chip with default width and very very very very very very very long title \",\n        },\n        {\n            id: \"widthChip2\",\n            label: \"Chip with unset width and a very very very very very very very long title \",\n            customClass: \"unlimited-width\",\n        },\n    ];\n\n\n    public onClear(event: IChipRemoved) {\n        const source = event.group\n            ? this.nuiChipsSet.groupedItems?.find((group) => group.id === event.group?.id)?.items\n            : this.nuiChipsSet.flatItems;\n        _pull(source || [], event.item);\n    }\n\n    public onClearAll() {\n        this.nuiChipsSet.flatItems = [];\n        this.nuiChipsSet.groupedItems = [];\n    }\n\n}\n");
 
 /***/ }),
 
@@ -1347,12 +1339,10 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BasicChipsExampleComponent", function() { return BasicChipsExampleComponent; });
-/* harmony import */ var _nova_ui_bits__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @nova-ui/bits */ "b5Xb");
-/* harmony import */ var lodash_pull__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash/pull */ "hzCD");
-/* harmony import */ var lodash_pull__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_pull__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _src_lib_chips_chips_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../src/lib/chips/chips.component */ "JjEo");
-
+/* harmony import */ var lodash_pull__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash/pull */ "hzCD");
+/* harmony import */ var lodash_pull__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash_pull__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _src_lib_chips_chips_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../src/lib/chips/chips.component */ "JjEo");
 
 
 
@@ -1369,20 +1359,20 @@ class BasicChipsExampleComponent {
     }
     onClear(event) {
         console.log(`'onClear' event fired. $event.item.id=${event.item.id}`);
-        lodash_pull__WEBPACK_IMPORTED_MODULE_1___default()(this.horizontalFlatItemsSource.flatItems || [], event.item);
+        lodash_pull__WEBPACK_IMPORTED_MODULE_0___default()(this.horizontalFlatItemsSource.flatItems || [], event.item);
     }
     onClearAll() {
         this.horizontalFlatItemsSource.flatItems = [];
     }
 }
 BasicChipsExampleComponent.ɵfac = function BasicChipsExampleComponent_Factory(t) { return new (t || BasicChipsExampleComponent)(); };
-BasicChipsExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({ type: BasicChipsExampleComponent, selectors: [["nui-basic-chips-example"]], decls: 1, vars: 1, consts: [["id", "nui-demo-chips-flat-horizontal", 3, "itemsSource", "chipRemoved", "removeAll"]], template: function BasicChipsExampleComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "nui-chips", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("chipRemoved", function BasicChipsExampleComponent_Template_nui_chips_chipRemoved_0_listener($event) { return ctx.onClear($event); })("removeAll", function BasicChipsExampleComponent_Template_nui_chips_removeAll_0_listener() { return ctx.onClearAll(); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+BasicChipsExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: BasicChipsExampleComponent, selectors: [["nui-basic-chips-example"]], decls: 1, vars: 1, consts: [["id", "nui-demo-chips-flat-horizontal", 3, "itemsSource", "chipRemoved", "removeAll"]], template: function BasicChipsExampleComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-chips", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("chipRemoved", function BasicChipsExampleComponent_Template_nui_chips_chipRemoved_0_listener($event) { return ctx.onClear($event); })("removeAll", function BasicChipsExampleComponent_Template_nui_chips_removeAll_0_listener() { return ctx.onClearAll(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("itemsSource", ctx.horizontalFlatItemsSource);
-    } }, directives: [_src_lib_chips_chips_component__WEBPACK_IMPORTED_MODULE_3__["ChipsComponent"]], encapsulation: 2 });
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("itemsSource", ctx.horizontalFlatItemsSource);
+    } }, directives: [_src_lib_chips_chips_component__WEBPACK_IMPORTED_MODULE_2__["ChipsComponent"]], encapsulation: 2 });
 
 
 /***/ }),
@@ -1396,7 +1386,7 @@ BasicChipsExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2__["�
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { Component, Inject } from \"@angular/core\";\nimport { IChipsItem, IChipsItemsSource, IToastService, ToastService } from \"@nova-ui/bits\";\nimport _pull from \"lodash/pull\";\n\nconst horizontalFlatItems: IChipsItem[] = [\n    {id: \"flatId1\", label: \"Down\"},\n    {id: \"flatId2\", label: \"Critical\"},\n    {id: \"flatId3\", label: \"Warning\"},\n    {id: \"flatId4\", label: \"Unknown\"},\n    {id: \"flatId5\", label: \"Ok\"},\n];\n\n@Component({\n    selector: \"nui-autohide-chips-example\",\n    templateUrl: \"autohide-chips.example.component.html\",\n})\nexport class AutohideChipsExampleComponent {\n    public horizontalFlatItemsSource: IChipsItemsSource = { flatItems: horizontalFlatItems};\n\n    public onClear(event: { item: IChipsItem }) {\n        console.log(`'onClear' event fired. $event.item.id=${event.item.id}`);\n        _pull(this.horizontalFlatItemsSource.flatItems || [], event.item);\n    }\n\n    public onClearAll() {\n        this.horizontalFlatItemsSource.flatItems = [];\n    }\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import { Component } from \"@angular/core\";\nimport { IChipsItem, IChipsItemsSource } from \"@nova-ui/bits\";\nimport _pull from \"lodash/pull\";\n\nconst horizontalFlatItems: IChipsItem[] = [\n    {id: \"flatId1\", label: \"Down\"},\n    {id: \"flatId2\", label: \"Critical\"},\n    {id: \"flatId3\", label: \"Warning\"},\n    {id: \"flatId4\", label: \"Unknown\"},\n    {id: \"flatId5\", label: \"Ok\"},\n];\n\n@Component({\n    selector: \"nui-autohide-chips-example\",\n    templateUrl: \"autohide-chips.example.component.html\",\n})\nexport class AutohideChipsExampleComponent {\n    public horizontalFlatItemsSource: IChipsItemsSource = { flatItems: horizontalFlatItems};\n\n    public onClear(event: { item: IChipsItem }) {\n        console.log(`'onClear' event fired. $event.item.id=${event.item.id}`);\n        _pull(this.horizontalFlatItemsSource.flatItems || [], event.item);\n    }\n\n    public onClearAll() {\n        this.horizontalFlatItemsSource.flatItems = [];\n    }\n}\n");
 
 /***/ }),
 
@@ -1410,14 +1400,12 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VerticalGroupedChipsExampleComponent", function() { return VerticalGroupedChipsExampleComponent; });
-/* harmony import */ var _nova_ui_bits__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @nova-ui/bits */ "b5Xb");
-/* harmony import */ var lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash/cloneDeep */ "BkRI");
-/* harmony import */ var lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var lodash_pull__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash/pull */ "hzCD");
-/* harmony import */ var lodash_pull__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_pull__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _src_lib_chips_chips_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../../src/lib/chips/chips.component */ "JjEo");
-
+/* harmony import */ var lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash/cloneDeep */ "BkRI");
+/* harmony import */ var lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var lodash_pull__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash/pull */ "hzCD");
+/* harmony import */ var lodash_pull__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_pull__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _src_lib_chips_chips_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../src/lib/chips/chips.component */ "JjEo");
 
 
 
@@ -1442,34 +1430,34 @@ const groupedItems = [
 ];
 class VerticalGroupedChipsExampleComponent {
     constructor() {
-        this.verticalGroupedItemsSource = { groupedItems: lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_1___default()(groupedItems) };
+        this.verticalGroupedItemsSource = { groupedItems: lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_0___default()(groupedItems) };
     }
     onClear(event) {
         var _a, _b;
         console.log(`'onClear' event fired. $event.item.id=${event.item.id} $event.group.id=${(_a = event.group) === null || _a === void 0 ? void 0 : _a.id}`);
-        lodash_pull__WEBPACK_IMPORTED_MODULE_2___default()(((_b = event.group) === null || _b === void 0 ? void 0 : _b.items) || [], event.item);
+        lodash_pull__WEBPACK_IMPORTED_MODULE_1___default()(((_b = event.group) === null || _b === void 0 ? void 0 : _b.items) || [], event.item);
     }
     onClearAll() {
         this.verticalGroupedItemsSource.groupedItems = [];
     }
 }
 VerticalGroupedChipsExampleComponent.ɵfac = function VerticalGroupedChipsExampleComponent_Factory(t) { return new (t || VerticalGroupedChipsExampleComponent)(); };
-VerticalGroupedChipsExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({ type: VerticalGroupedChipsExampleComponent, selectors: [["nui-vertical-grouped-chips-example"]], decls: 2, vars: 1, consts: function () { let i18n_0; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+VerticalGroupedChipsExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({ type: VerticalGroupedChipsExampleComponent, selectors: [["nui-vertical-grouped-chips-example"]], decls: 2, vars: 1, consts: function () { let i18n_0; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
         const MSG_EXTERNAL_4163272119298020373$$DEMO_SRC_COMPONENTS_DEMO_CHIPS_VERTICAL_GROUPED_CHIPS_VERTICAL_GROUPED_CHIPS_EXAMPLE_COMPONENT_TS_1 = goog.getMsg("Filters");
         i18n_0 = MSG_EXTERNAL_4163272119298020373$$DEMO_SRC_COMPONENTS_DEMO_CHIPS_VERTICAL_GROUPED_CHIPS_VERTICAL_GROUPED_CHIPS_EXAMPLE_COMPONENT_TS_1;
     }
     else {
         i18n_0 = $localize `:␟1298c1d2bbbb7415f5494e800f6775fdb70f4df6␟4163272119298020373:Filters`;
     } return [[2, "max-width", "300px"], ["id", "nui-demo-chips-grouped-vertical", "title", i18n_0, "orientation", "vertical", 3, "itemsSource", "chipRemoved", "removeAll"]]; }, template: function VerticalGroupedChipsExampleComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](1, "nui-chips", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("chipRemoved", function VerticalGroupedChipsExampleComponent_Template_nui_chips_chipRemoved_1_listener($event) { return ctx.onClear($event); })("removeAll", function VerticalGroupedChipsExampleComponent_Template_nui_chips_removeAll_1_listener() { return ctx.onClearAll(); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](1, "nui-chips", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("chipRemoved", function VerticalGroupedChipsExampleComponent_Template_nui_chips_chipRemoved_1_listener($event) { return ctx.onClear($event); })("removeAll", function VerticalGroupedChipsExampleComponent_Template_nui_chips_removeAll_1_listener() { return ctx.onClearAll(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("itemsSource", ctx.verticalGroupedItemsSource);
-    } }, directives: [_src_lib_chips_chips_component__WEBPACK_IMPORTED_MODULE_4__["ChipsComponent"]], encapsulation: 2 });
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("itemsSource", ctx.verticalGroupedItemsSource);
+    } }, directives: [_src_lib_chips_chips_component__WEBPACK_IMPORTED_MODULE_3__["ChipsComponent"]], encapsulation: 2 });
 
 
 /***/ }),

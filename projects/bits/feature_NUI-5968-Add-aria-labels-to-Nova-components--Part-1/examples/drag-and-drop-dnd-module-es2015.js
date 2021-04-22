@@ -185,7 +185,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import {CdkDragDrop, moveItemInArray} from \"@angular/cdk/drag-drop\";\nimport {Component} from \"@angular/core\";\nimport {IRepeatItem} from \"@nova-ui/bits\";\n\n@Component({\n  selector: \"dnd-drag-placeholder\",\n  templateUrl: \"./dnd-drag-placeholder-example.component.html\",\n  styleUrls: [\"./dnd-drag-placeholder-example.component.less\"],\n})\nexport class DndDragPlaceholderExampleComponent {\n    public listItems: string[] = [\"Adobe\", \"IBM\", \"Dell\" ];\n\n    public onItemDropped(event: CdkDragDrop<string[]>) {\n        moveItemInArray(this.listItems, event.previousIndex, event.currentIndex);\n    }\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import {CdkDragDrop, moveItemInArray} from \"@angular/cdk/drag-drop\";\nimport {Component} from \"@angular/core\";\n\n@Component({\n  selector: \"dnd-drag-placeholder\",\n  templateUrl: \"./dnd-drag-placeholder-example.component.html\",\n  styleUrls: [\"./dnd-drag-placeholder-example.component.less\"],\n})\nexport class DndDragPlaceholderExampleComponent {\n    public listItems: string[] = [\"Adobe\", \"IBM\", \"Dell\" ];\n\n    public onItemDropped(event: CdkDragDrop<string[]>) {\n        moveItemInArray(this.listItems, event.previousIndex, event.currentIndex);\n    }\n}\n");
 
 /***/ }),
 

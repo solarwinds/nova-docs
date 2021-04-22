@@ -4493,7 +4493,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { AfterViewInit, ChangeDetectionStrategy, Component, SecurityContext, ViewChild } from \"@angular/core\";\nimport { FormControl } from \"@angular/forms\";\nimport { DomSanitizer } from \"@angular/platform-browser\";\nimport { ComboboxV2Component } from \"@nova-ui/bits\";\n\n@Component({\n    selector: \"nui-combobox-v2-create-option-example\",\n    templateUrl: \"combobox-v2-create-option.example.component.html\",\n    changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class ComboboxV2CreateOptionExampleComponent {\n    public options = Array.from({ length: 3 }).map((_, i) => $localize `Item ${i}`);\n    @ViewChild(\"combobox\") public combobox: ComboboxV2Component;\n\n    public comboboxControl = new FormControl();\n\n    constructor(private domSanitizer: DomSanitizer) {}\n\n    public createOption(option: string) {\n        const sanitizedOption = this.domSanitizer.sanitize(SecurityContext.HTML, option)?.trim();\n        if (sanitizedOption) {\n            this.options.push(sanitizedOption);\n            this.comboboxControl.setValue(sanitizedOption);\n        }\n    }\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import { ChangeDetectionStrategy, Component, SecurityContext, ViewChild } from \"@angular/core\";\nimport { FormControl } from \"@angular/forms\";\nimport { DomSanitizer } from \"@angular/platform-browser\";\nimport { ComboboxV2Component } from \"@nova-ui/bits\";\n\n@Component({\n    selector: \"nui-combobox-v2-create-option-example\",\n    templateUrl: \"combobox-v2-create-option.example.component.html\",\n    changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class ComboboxV2CreateOptionExampleComponent {\n    public options = Array.from({ length: 3 }).map((_, i) => $localize `Item ${i}`);\n    @ViewChild(\"combobox\") public combobox: ComboboxV2Component;\n\n    public comboboxControl = new FormControl();\n\n    constructor(private domSanitizer: DomSanitizer) {}\n\n    public createOption(option: string) {\n        const sanitizedOption = this.domSanitizer.sanitize(SecurityContext.HTML, option)?.trim();\n        if (sanitizedOption) {\n            this.options.push(sanitizedOption);\n            this.comboboxControl.setValue(sanitizedOption);\n        }\n    }\n}\n");
 
 /***/ }),
 
@@ -4623,7 +4623,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { Component } from \"@angular/core\";\nimport { FormControl } from \"@angular/forms\";\n\n@Component({\n    selector: \"nui-combobox-v2-inline-example\",\n    templateUrl: \"combobox-v2-inline.example.component.html\",\n    host: { class: \"combobox-container\" },\n})\nexport class ComboboxV2InlineExampleComponent {\n    public items = Array.from({ length: 100 }).map((_, i) => $localize `Item ${i}`);\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import { Component } from \"@angular/core\";\n\n@Component({\n    selector: \"nui-combobox-v2-inline-example\",\n    templateUrl: \"combobox-v2-inline.example.component.html\",\n    host: { class: \"combobox-container\" },\n})\nexport class ComboboxV2InlineExampleComponent {\n    public items = Array.from({ length: 100 }).map((_, i) => $localize `Item ${i}`);\n}\n");
 
 /***/ }),
 
