@@ -1,5 +1,5 @@
 (function () {
-  var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10, _templateObject11, _templateObject12, _templateObject13, _templateObject14, _templateObject15, _templateObject16, _templateObject17, _templateObject18, _templateObject19;
+  var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10, _templateObject11, _templateObject12, _templateObject13, _templateObject14, _templateObject15, _templateObject16, _templateObject17, _templateObject18, _templateObject19, _templateObject20, _templateObject21;
 
   function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
@@ -754,7 +754,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col\">\n            <h3>Basic Expander</h3>\n            <nui-expander id=\"nui-visual-test-expander-basic\">\n                <p>Content is here</p>\n            </nui-expander>\n            <hr />\n        </div>\n        <div class=\"col\">\n            <h3>Expander without Expand Line</h3>\n            <nui-expander id=\"nui-visual-test-expander-without-border\"\n                          [hideLeftBorder]=\"true\">\n                <p>Content is here</p>\n            </nui-expander>\n            <hr />\n        </div>\n        <div class=\"w-100\"></div>\n        <div class=\"col\">\n            <h3>Expander with Text</h3>\n            <nui-expander id=\"nui-visual-test-expander-header-text\"\n                          header=\"Advanced Layout Settings\">\n                <p>Content is here</p>\n            </nui-expander>\n            <hr />\n        </div>\n        <div class=\"col\">\n            <h3>Expander with Text and Icon</h3>\n            <nui-expander id=\"nui-visual-test-expander-text-and-icon\"\n                          header=\"Advanced Options\"\n                          icon=\"orion-sitemaster\">\n                <p>Content is here</p>\n            </nui-expander>\n            <hr />\n        </div>\n        <div class=\"w-100\"></div>\n        <div class=\"col-4\">\n            <h3>Expander with Custom Header</h3>\n            <nui-expander id=\"nui-visual-test-expander-custom-header\">\n                <div nuiExpanderHeader\n                     class=\"d-flex align-items-center justify-content-between\">\n                    <span>Advanced options</span>\n                    <nui-menu class=\"ml-3\"\n                              id=\"nui-demo-expander-header-menu\"\n                              icon=\"menu\"\n                              displayStyle=\"action\"\n                              nuiClickInterceptor\n                              [itemsSource]=\"itemsSource\"></nui-menu>\n                </div>\n                <p>Content is here</p>\n            </nui-expander>\n            <hr />\n        </div>\n        <div class=\"col-6 ml-auto\">\n            <h3>Staked Expanders</h3>\n            <nui-expander id=\"nui-visual-test-staked-expander-1\" header=\"Advanced Layout Settings\">\n                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam maximus faucibus bibendum.\n                    Aenean feugiat interdum leo sed posuere. Etiam at pulvinar enim, nec interdum purus.\n                    Duis elit metus, lobortis vitae quam a, malesuada cursus quam. Duis vel lacinia purus.\n                    Maecenas eget arcu ac ante sagittis eleifend vel ut purus.</p>\n            </nui-expander>\n            <nui-expander id=\"nui-visual-test-staked-expander-2\">\n                <div nuiExpanderHeader class=\"nui-text-default\">\n                    <span>Advanced options</span>\n                </div>\n                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam maximus faucibus bibendum.\n                    Aenean feugiat interdum leo sed posuere. Etiam at pulvinar enim, nec interdum purus.\n                    Duis elit metus, lobortis vitae quam a, malesuada cursus quam. Duis vel lacinia purus.\n                    Maecenas eget arcu ac ante sagittis eleifend vel ut purus.</p>\n            </nui-expander>\n            <nui-expander id=\"nui-visual-test-staked-expander-3\">\n                <div nuiExpanderHeader class=\"nui-text-secondary\">\n                    <span>Advanced options</span>\n                </div>\n                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam maximus faucibus bibendum.\n                    Aenean feugiat interdum leo sed posuere. Etiam at pulvinar enim, nec interdum purus.\n                    Duis elit metus, lobortis vitae quam a, malesuada cursus quam. Duis vel lacinia purus.\n                    Maecenas eget arcu ac ante sagittis eleifend vel ut purus.</p>\n            </nui-expander>\n            <hr />\n        </div>\n    </div>\n</div>\n";
+      __webpack_exports__["default"] = "<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col\">\n            <h3>Basic Expander</h3>\n            <nui-expander id=\"nui-visual-test-expander-basic\">\n                <p>Content is here</p>\n            </nui-expander>\n            <hr />\n        </div>\n        <div class=\"col\">\n            <h3>Expander without Expand Line</h3>\n            <nui-expander id=\"nui-visual-test-expander-without-border\"\n                          [hideLeftBorder]=\"true\">\n                <p>Content is here</p>\n            </nui-expander>\n            <hr />\n        </div>\n        <div class=\"w-100\"></div>\n        <div class=\"col\">\n            <h3>Expander with Text</h3>\n            <nui-expander id=\"nui-visual-test-expander-header-text\"\n                          header=\"Advanced Layout Settings\">\n                <p>Content is here</p>\n            </nui-expander>\n            <hr />\n        </div>\n        <div class=\"col\">\n            <h3>Expander with Text and Icon</h3>\n            <nui-expander id=\"nui-visual-test-expander-text-and-icon\"\n                          header=\"Advanced Options\"\n                          icon=\"orion-sitemaster\">\n                <p>Content is here</p>\n            </nui-expander>\n            <hr />\n        </div>\n        <div class=\"w-100\"></div>\n        <div class=\"col-4\">\n            <h3>Expander with Custom Header</h3>\n            <nui-expander id=\"nui-visual-test-expander-custom-header\">\n                <div nuiExpanderHeader\n                     class=\"d-flex align-items-center justify-content-between\">\n                    <span>Advanced options</span>\n                    <nui-menu class=\"ml-3\"\n                              id=\"nui-demo-expander-header-menu\"\n                              icon=\"menu\"\n                              displayStyle=\"action\"\n                              nuiClickInterceptor\n                              [itemsSource]=\"itemsSource\"></nui-menu>\n                </div>\n                <p>Content is here</p>\n            </nui-expander>\n            <hr />\n        </div>\n        <div class=\"col-6 ml-auto\">\n            <h3>Staked Expanders</h3>\n            <nui-expander id=\"nui-visual-test-staked-expander-1\" header=\"Advanced Layout Settings\">\n                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam maximus faucibus bibendum.\n                    Aenean feugiat interdum leo sed posuere. Etiam at pulvinar enim, nec interdum purus.\n                    Duis elit metus, lobortis vitae quam a, malesuada cursus quam. Duis vel lacinia purus.\n                    Maecenas eget arcu ac ante sagittis eleifend vel ut purus.</p>\n            </nui-expander>\n            <nui-expander id=\"nui-visual-test-staked-expander-2\">\n                <div nuiExpanderHeader class=\"nui-text-default\">\n                    <span>Advanced options</span>\n                </div>\n                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam maximus faucibus bibendum.\n                    Aenean feugiat interdum leo sed posuere. Etiam at pulvinar enim, nec interdum purus.\n                    Duis elit metus, lobortis vitae quam a, malesuada cursus quam. Duis vel lacinia purus.\n                    Maecenas eget arcu ac ante sagittis eleifend vel ut purus.</p>\n            </nui-expander>\n            <nui-expander id=\"nui-visual-test-staked-expander-3\">\n                <div nuiExpanderHeader class=\"nui-text-secondary\">\n                    <span>Advanced options</span>\n                </div>\n                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam maximus faucibus bibendum.\n                    Aenean feugiat interdum leo sed posuere. Etiam at pulvinar enim, nec interdum purus.\n                    Duis elit metus, lobortis vitae quam a, malesuada cursus quam. Duis vel lacinia purus.\n                    Maecenas eget arcu ac ante sagittis eleifend vel ut purus.</p>\n            </nui-expander>\n            <hr />\n        </div>\n        <div class=\"col\">\n            <h3>Expander with Nested Expanders</h3>\n            <nui-expander id=\"nui-visual-test-expander-nested-expander\" header=\"Parent\" [open]=\"true\">\n                <p i18n>Content goes here</p>\n                <nui-expander id=\"nui-visual-test-expander-nested-expander-child\" header=\"Child\" [open]=\"true\">\n                    <p i18n>Content goes here</p>\n                </nui-expander>\n            </nui-expander>\n            <hr/>\n        </div>\n    </div>\n</div>\n";
       /***/
     },
 
@@ -1621,9 +1621,29 @@
       ExpanderVisualTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: ExpanderVisualTestComponent,
         selectors: [["expander-visual-test"]],
-        decls: 62,
-        vars: 2,
-        consts: [[1, "container"], [1, "row"], [1, "col"], ["id", "nui-visual-test-expander-basic"], ["id", "nui-visual-test-expander-without-border", 3, "hideLeftBorder"], [1, "w-100"], ["id", "nui-visual-test-expander-header-text", "header", "Advanced Layout Settings"], ["id", "nui-visual-test-expander-text-and-icon", "header", "Advanced Options", "icon", "orion-sitemaster"], [1, "col-4"], ["id", "nui-visual-test-expander-custom-header"], ["nuiExpanderHeader", "", 1, "d-flex", "align-items-center", "justify-content-between"], ["id", "nui-demo-expander-header-menu", "icon", "menu", "displayStyle", "action", "nuiClickInterceptor", "", 1, "ml-3", 3, "itemsSource"], [1, "col-6", "ml-auto"], ["id", "nui-visual-test-staked-expander-1", "header", "Advanced Layout Settings"], ["id", "nui-visual-test-staked-expander-2"], ["nuiExpanderHeader", "", 1, "nui-text-default"], ["id", "nui-visual-test-staked-expander-3"], ["nuiExpanderHeader", "", 1, "nui-text-secondary"]],
+        decls: 72,
+        vars: 4,
+        consts: function consts() {
+          var i18n_0;
+
+          if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+            var MSG_EXTERNAL_7091744842168829224$$DEMO_SRC_COMPONENTS_DEMO_EXPANDER_EXPANDER_VISUAL_TEST_EXPANDER_VISUAL_TEST_COMPONENT_TS_1 = goog.getMsg("Content goes here");
+            i18n_0 = MSG_EXTERNAL_7091744842168829224$$DEMO_SRC_COMPONENTS_DEMO_EXPANDER_EXPANDER_VISUAL_TEST_EXPANDER_VISUAL_TEST_COMPONENT_TS_1;
+          } else {
+            i18n_0 = $localize(_templateObject19 || (_templateObject19 = _taggedTemplateLiteral([":\u241F8a3deffdaf691c1424e47239832379213c73320b\u241F7091744842168829224:Content goes here"])));
+          }
+
+          var i18n_2;
+
+          if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+            var MSG_EXTERNAL_7091744842168829224$$DEMO_SRC_COMPONENTS_DEMO_EXPANDER_EXPANDER_VISUAL_TEST_EXPANDER_VISUAL_TEST_COMPONENT_TS_3 = goog.getMsg("Content goes here");
+            i18n_2 = MSG_EXTERNAL_7091744842168829224$$DEMO_SRC_COMPONENTS_DEMO_EXPANDER_EXPANDER_VISUAL_TEST_EXPANDER_VISUAL_TEST_COMPONENT_TS_3;
+          } else {
+            i18n_2 = $localize(_templateObject20 || (_templateObject20 = _taggedTemplateLiteral([":\u241F8a3deffdaf691c1424e47239832379213c73320b\u241F7091744842168829224:Content goes here"])));
+          }
+
+          return [[1, "container"], [1, "row"], [1, "col"], ["id", "nui-visual-test-expander-basic"], ["id", "nui-visual-test-expander-without-border", 3, "hideLeftBorder"], [1, "w-100"], ["id", "nui-visual-test-expander-header-text", "header", "Advanced Layout Settings"], ["id", "nui-visual-test-expander-text-and-icon", "header", "Advanced Options", "icon", "orion-sitemaster"], [1, "col-4"], ["id", "nui-visual-test-expander-custom-header"], ["nuiExpanderHeader", "", 1, "d-flex", "align-items-center", "justify-content-between"], ["id", "nui-demo-expander-header-menu", "icon", "menu", "displayStyle", "action", "nuiClickInterceptor", "", 1, "ml-3", 3, "itemsSource"], [1, "col-6", "ml-auto"], ["id", "nui-visual-test-staked-expander-1", "header", "Advanced Layout Settings"], ["id", "nui-visual-test-staked-expander-2"], ["nuiExpanderHeader", "", 1, "nui-text-default"], ["id", "nui-visual-test-staked-expander-3"], ["nuiExpanderHeader", "", 1, "nui-text-secondary"], ["id", "nui-visual-test-expander-nested-expander", "header", "Parent", 3, "open"], i18n_0, ["id", "nui-visual-test-expander-nested-expander-child", "header", "Child", 3, "open"], i18n_2];
+        },
         template: function ExpanderVisualTestComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -1818,6 +1838,38 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](62, "div", 2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](63, "h3");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](64, "Expander with Nested Expanders");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](65, "nui-expander", 18);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](66, "p");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](67, 19);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](68, "nui-expander", 20);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](69, "p");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](70, 21);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](71, "hr");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -1831,6 +1883,14 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](27);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("itemsSource", ctx.itemsSource);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](26);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("open", true);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("open", true);
           }
         },
         directives: [_src_lib_expander_expander_component__WEBPACK_IMPORTED_MODULE_1__["ExpanderComponent"], _src_lib_menu_menu_menu_component__WEBPACK_IMPORTED_MODULE_2__["MenuComponent"]],
@@ -1911,7 +1971,7 @@
             var MSG_EXTERNAL_5604123572044860269$$DEMO_SRC_COMPONENTS_DEMO_EXPANDER_EXPANDER_BASIC_EXPANDER_BASIC_EXAMPLE_COMPONENT_TS_1 = goog.getMsg("Content is here");
             i18n_0 = MSG_EXTERNAL_5604123572044860269$$DEMO_SRC_COMPONENTS_DEMO_EXPANDER_EXPANDER_BASIC_EXPANDER_BASIC_EXAMPLE_COMPONENT_TS_1;
           } else {
-            i18n_0 = $localize(_templateObject19 || (_templateObject19 = _taggedTemplateLiteral([":\u241F40d572c70cba31b8774e3b60b58cfa17b82ba2cd\u241F5604123572044860269:Content is here"])));
+            i18n_0 = $localize(_templateObject21 || (_templateObject21 = _taggedTemplateLiteral([":\u241F40d572c70cba31b8774e3b60b58cfa17b82ba2cd\u241F5604123572044860269:Content is here"])));
           }
 
           return [["id", "nui-demo-expander-basic"], i18n_0];

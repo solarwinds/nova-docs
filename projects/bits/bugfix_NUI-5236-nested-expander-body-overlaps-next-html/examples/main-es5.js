@@ -49142,7 +49142,6 @@
 
           this.openChange = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
           this.state = "collapsed";
-          this.renderBody = false;
           this.isCustomHeaderContentEmpty = false;
         }
         /**
@@ -49160,10 +49159,6 @@
 
             if (previousValue !== value) {
               this.state = value ? "expanded" : "collapsed";
-
-              if (value) {
-                this.renderBody = true;
-              }
             }
           }
         }, {
@@ -52113,22 +52108,27 @@
         height: 0
       })), Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["transition"])("expanded <=> collapsed", [Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animate"])("350ms ease-in-out")])]);
       /**
-       * This animation is using the special selectors that ngIf and ngFor use on newly inserted or removed content.
+       * This v2 version of the expand animation respects the animations of elements nested inside the expander's content template.
+       *  It is using the special selectors that ngIf and ngFor use on projected content.
        */
 
-      var expandV2 = Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["trigger"])("expandContent", [Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["transition"])(":enter", [Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({
+      var expandV2 = Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["trigger"])("expandContent", [Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["transition"])(":enter", [Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["group"])([Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["query"])(":self", [Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({
         height: 0
-      }), Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animate"])("350ms ease-in", Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({
+      }), Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animate"])("350ms ease-in-out", Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({
         height: "*"
-      })), Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["query"])("@*", Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["stagger"])(300, [Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animate"])("350ms ease-in", Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({
-        height: "*"
-      }))]), {
+      }))], {
         optional: true
-      })]), Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["transition"])(":leave", [Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({
-        height: "*"
-      }), Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animate"])("350ms ease-out", Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({
+      }), Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["query"])("@*", [Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({
         height: 0
-      }))])]);
+      }), Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["stagger"])(10, [Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animate"])("250ms ease-in-out", Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({
+        height: "*"
+      }))])], {
+        optional: true
+      })])]), Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["transition"])(":leave", [Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["query"])(":self", [Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({
+        height: "*"
+      }), Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animate"])("350ms ease-in-out", Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({
+        height: 0
+      }))])])]);
       /***/
     },
 

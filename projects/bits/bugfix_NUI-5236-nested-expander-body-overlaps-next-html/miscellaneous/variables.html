@@ -782,16 +782,24 @@
                         <td class="col-md-4">
                             <i>Default value : </i><code>trigger(&quot;expandContent&quot;, [
     transition(&quot;:enter&quot;, [
-        style({ height: 0 }),
-        animate(&quot;350ms ease-in&quot;, style({ height: &quot;*&quot; })),
-        query(&quot;@*&quot;,
-            stagger(300, [
-                animate(&quot;350ms ease-in&quot;, style({ height: &quot;*&quot; })),
-            ]),{optional: true}),
+        group([
+            query(&quot;:self&quot;, [
+                style({ height: 0}),
+                    animate(&quot;350ms ease-in-out&quot;, style({ height: &quot;*&quot; })),
+            ], {optional: true}),
+            query(&quot;@*&quot;, [
+                style({ height: 0}),
+                stagger(10, [
+                    animate(&quot;250ms ease-in-out&quot;, style({ height: &quot;*&quot; })),
+                ]),
+            ], {optional: true}),
+        ]),
     ]),
     transition(&quot;:leave&quot;, [
-        style({ height: &quot;*&quot; }),
-        animate(&quot;350ms ease-out&quot;, style({ height: 0 })),
+        query(&quot;:self&quot;, [
+            style({ height: &quot;*&quot;}),
+            animate(&quot;350ms ease-in-out&quot;, style({ height: 0 })),
+        ]),
     ]),
 ])</code>
                         </td>
@@ -799,7 +807,8 @@
 
                 <tr>
                     <td class="col-md-4">
-                        <div class="io-description"><p>This animation is using the special selectors that ngIf and ngFor use on newly inserted or removed content.</p>
+                        <div class="io-description"><p>This v2 version of the expand animation respects the animations of elements nested inside the expander&#39;s content template.
+  It is using the special selectors that ngIf and ngFor use on projected content.</p>
 </div>
                     </td>
                 </tr>
