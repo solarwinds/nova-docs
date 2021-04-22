@@ -6612,6 +6612,11 @@
             this.overlayConfig.minWidth = this.toggleRef.nativeElement.offsetWidth;
           }
         }, {
+          key: "getAriaLabelForSortingButton",
+          value: function getAriaLabelForSortingButton() {
+            return this.sortDirection === _public_api__WEBPACK_IMPORTED_MODULE_10__["SorterDirection"].descending ? "".concat(this.getSelectedItemTitle(), ". Sorter direction - descending") : "".concat(this.getSelectedItemTitle(), ". Sorter direction - ascending");
+          }
+        }, {
           key: "ngOnDestroy",
           value: function ngOnDestroy() {
             this.onDestroy$.next();
@@ -6716,8 +6721,8 @@
         },
         features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵNgOnChangesFeature"]],
         decls: 14,
-        vars: 7,
-        consts: [["class", "nui-sorter__label", 4, "ngIf"], [1, "btn-group", "nui-sorter__popup"], [1, "d-inline-block"], ["toggleRef", ""], ["nui-button", "", "type", "button", 1, "nui-sorter__toggle-button", 3, "icon", "click"], [1, "nui-sorter__display-value"], ["nui-button", "", "type", "button", "icon", "caret-down", 1, "nui-selector__toggle", 3, "click"], ["popupArea", ""], [3, "toggleReference", "overlayConfig", "customContainer"], ["overlay", ""], [3, "itemsSource", "menuItemClicked"], [1, "nui-sorter__label"]],
+        vars: 8,
+        consts: [["class", "nui-sorter__label", 4, "ngIf"], [1, "btn-group", "nui-sorter__popup"], [1, "d-inline-block"], ["toggleRef", ""], ["nui-button", "", "type", "button", 1, "nui-sorter__toggle-button", 3, "icon", "ariaLabel", "click"], [1, "nui-sorter__display-value"], ["nui-button", "", "type", "button", "ariaLabel", "Open Sorter Menu", "icon", "caret-down", 1, "nui-selector__toggle", 3, "click"], ["popupArea", ""], [3, "toggleReference", "overlayConfig", "customContainer"], ["overlay", ""], [3, "itemsSource", "menuItemClicked"], [1, "nui-sorter__label"]],
         template: function SorterComponent_Template(rf, ctx) {
           if (rf & 1) {
             var _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
@@ -6786,7 +6791,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("icon", ctx.getSortIcon());
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("icon", ctx.getSortIcon())("ariaLabel", ctx.getAriaLabelForSortingButton());
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
@@ -6977,6 +6982,12 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.spinnerComponent = _t.first);
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.progressComponent = _t.first);
+          }
+        },
+        hostVars: 1,
+        hostBindings: function BusyComponent_HostBindings(rf, ctx) {
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-busy", ctx.busy);
           }
         },
         inputs: {
@@ -8670,7 +8681,7 @@
             i18n_1 = $localize(_templateObject11 || (_templateObject11 = _taggedTemplateLiteral([":\u241Fd662abcb49ed274a9ec81f5df13b35acbf4cba87\u241F6035911408728866723:", ":INTERPOLATION: of ", ":START_TAG_SPAN:", ":INTERPOLATION_1:", ":CLOSE_TAG_SPAN:"])), "\uFFFD0\uFFFD", "\uFFFD#7\uFFFD", "\uFFFD1\uFFFD", "\uFFFD/#7\uFFFD");
           }
 
-          return [["class", "nui-paginator", 4, "ngIf"], ["tableRow", ""], [1, "nui-paginator"], [1, "nui-paginator__items"], ["role", "listbox", 1, "nui-paginator__list"], ["role", "option", 3, "title", "ngClass", "value", 4, "ngFor", "ngForOf"], [1, "nui-paginator__options"], [1, "nui-paginator__info"], i18n_1, [1, "nui-paginator__total"], ["ariaLabel", "Items per page", 3, "value", "valueSelected"], [3, "value", 4, "ngFor", "ngForOf"], ["role", "option", 3, "title", "ngClass", "value"], ["nui-button", "", "type", "button", "displayStyle", "action", "class", "move-icon", 3, "disabled", "icon", "click", 4, "ngIf"], ["nui-button", "", "type", "button", "displayStyle", "action", 3, "isEmpty", "click", 4, "ngIf"], [3, "appendToBody", "baseElementSelector", 4, "ngIf"], ["nui-button", "", "type", "button", "displayStyle", "action", 1, "move-icon", 3, "disabled", "icon", "click"], ["nui-button", "", "type", "button", "displayStyle", "action", 3, "isEmpty", "click"], [3, "appendToBody", "baseElementSelector"], ["nui-button", "", "type", "button", "nuiPopupToggle", "", "displayStyle", "action", 1, "nui-paginator__dots", 3, "ngClass", "isEmpty", "click"], ["popupAreaContent", "", 1, "nui-paginator__elipsis-pages"], [1, "nui-paginator__page-table", 3, "ngClass"], [3, "width", "height", "itemSize", "maxBufferPx", "minBufferPx", 4, "ngIf"], [4, "ngIf"], [3, "itemSize", "maxBufferPx", "minBufferPx"], [4, "cdkVirtualFor", "cdkVirtualForOf"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"], [3, "ngTemplateOutlet", "ngTemplateOutletContext", 4, "ngFor", "ngForOf"], [3, "value"], [3, "ngClass"], ["class", "nui-paginator__page-cell", 4, "ngFor", "ngForOf"], [1, "nui-paginator__page-cell"], ["nui-button", "", "type", "button", "displayStyle", "action", 3, "click"]];
+          return [["class", "nui-paginator", 4, "ngIf"], ["tableRow", ""], [1, "nui-paginator"], [1, "nui-paginator__items"], ["role", "listbox", 1, "nui-paginator__list"], ["role", "option", 3, "title", "ngClass", "value", 4, "ngFor", "ngForOf"], [1, "nui-paginator__options"], [1, "nui-paginator__info"], i18n_1, [1, "nui-paginator__total"], ["ariaLabel", "Items per page", 3, "value", "valueSelected"], [3, "value", 4, "ngFor", "ngForOf"], ["role", "option", 3, "title", "ngClass", "value"], ["nui-button", "", "type", "button", "displayStyle", "action", "class", "move-icon", 3, "disabled", "icon", "click", 4, "ngIf"], ["nui-button", "", "type", "button", "displayStyle", "action", 3, "isEmpty", "click", 4, "ngIf"], [3, "appendToBody", "baseElementSelector", 4, "ngIf"], ["nui-button", "", "type", "button", "displayStyle", "action", 1, "move-icon", 3, "disabled", "icon", "click"], ["nui-button", "", "type", "button", "displayStyle", "action", 3, "isEmpty", "click"], [3, "appendToBody", "baseElementSelector"], ["nui-button", "", "type", "button", "nuiPopupToggle", "", "displayStyle", "action", "aria-haspopup", "true", 1, "nui-paginator__dots", 3, "ngClass", "isEmpty", "click"], ["popupAreaContent", "", 1, "nui-paginator__elipsis-pages"], [1, "nui-paginator__page-table", 3, "ngClass"], [3, "width", "height", "itemSize", "maxBufferPx", "minBufferPx", 4, "ngIf"], [4, "ngIf"], [3, "itemSize", "maxBufferPx", "minBufferPx"], [4, "cdkVirtualFor", "cdkVirtualForOf"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"], [3, "ngTemplateOutlet", "ngTemplateOutletContext", 4, "ngFor", "ngForOf"], [3, "value"], [3, "ngClass"], ["class", "nui-paginator__page-cell", 4, "ngFor", "ngForOf"], [1, "nui-paginator__page-cell"], ["nui-button", "", "type", "button", "displayStyle", "action", 3, "click"]];
         },
         template: function PaginatorComponent_Template(rf, ctx) {
           if (rf & 1) {
@@ -10361,7 +10372,6 @@
       SwitchComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: SwitchComponent,
         selectors: [["nui-switch"]],
-        hostAttrs: ["role", "switch"],
         inputs: {
           value: "value",
           disabled: "disabled",
@@ -10385,8 +10395,8 @@
         }])],
         ngContentSelectors: _c0,
         decls: 10,
-        vars: 7,
-        consts: [[1, "nui-switch"], [1, "nui-switch__container"], [1, "nui-switch__bar", 3, "tabindex", "click", "keyup.enter", "keyup.space"], [1, "nui-switch__on"], ["aria-hidden", "true", "viewBox", "0 0 7.1 6.7", 1, "nui-switch__svg"], ["points", "0.6,2.9 3.2,4.8 7.2,1.0 ", 1, "nui-switch__icon-on"], [1, "nui-switch__thumb"], [1, "nui-switch__label"]],
+        vars: 8,
+        consts: [[1, "nui-switch"], [1, "nui-switch__container"], ["role", "checkbox", 1, "nui-switch__bar", 3, "tabindex", "click", "keyup.enter", "keyup.space"], [1, "nui-switch__on"], ["aria-hidden", "true", "viewBox", "0 0 7.1 6.7", 1, "nui-switch__svg"], ["points", "0.6,2.9 3.2,4.8 7.2,1.0 ", 1, "nui-switch__icon-on"], [1, "nui-switch__thumb"], [1, "nui-switch__label"]],
         template: function SwitchComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"]();
@@ -10451,7 +10461,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("tabindex", ctx.disabled ? -1 : 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-label", ctx.ariaLabel);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-checked", ctx.value)("aria-label", ctx.ariaLabel);
           }
         },
         styles: ["[_nghost-%COMP%]   .nui-switch[_ngcontent-%COMP%] {\n  -webkit-user-select: none;\n  \n  -moz-user-select: none;\n  \n  -ms-user-select: none;\n  \n  \n  -o-user-select: none;\n  user-select: none;\n}\n[_nghost-%COMP%]   .nui-switch[disabled=true][_ngcontent-%COMP%] {\n  cursor: default;\n  pointer-events: none;\n  opacity: 0.4;\n  filter: alpha(opacity=40);\n}\n[_nghost-%COMP%]   .nui-switch[_ngcontent-%COMP%]:focus {\n  outline: none;\n}\n[_nghost-%COMP%]   .nui-switch.nui-switched[_ngcontent-%COMP%]   .nui-switch__bar[_ngcontent-%COMP%] {\n  background-color: var(--nui-color-on,#00a753);\n}\n[_nghost-%COMP%]   .nui-switch.nui-switched[_ngcontent-%COMP%]   .nui-switch__thumb[_ngcontent-%COMP%] {\n  transform: translateX(20px);\n}\n[_nghost-%COMP%]   .nui-switch__container[_ngcontent-%COMP%] {\n  display: inline-block;\n}\n[_nghost-%COMP%]   .nui-switch__label[_ngcontent-%COMP%] {\n  margin: 0 0 0 10px;\n}\n[_nghost-%COMP%]   .nui-switch__bar[_ngcontent-%COMP%] {\n  cursor: pointer;\n  height: 20px;\n  width: 40px;\n  border-radius: 10px;\n  background-color: var(--nui-color-off,#4d4d4d);\n  position: relative;\n  float: left;\n  transition: background-color ease 0.3s;\n}\n[_nghost-%COMP%]   .nui-switch__bar[_ngcontent-%COMP%]:focus {\n  outline: none;\n  z-index: 500;\n  box-shadow: 0 0 0 2px rgba(0, 196, 210, 0.5);\n}\n[_nghost-%COMP%]   .nui-switch__on[_ngcontent-%COMP%], [_nghost-%COMP%]   .nui-switch__off[_ngcontent-%COMP%], [_nghost-%COMP%]   .nui-switch__thumb[_ngcontent-%COMP%] {\n  width: 14px;\n  height: 14px;\n  text-align: center;\n  position: relative;\n  top: 3px;\n}\n[_nghost-%COMP%]   .nui-switch__thumb[_ngcontent-%COMP%] {\n  width: 14px;\n  height: 14px;\n  border-radius: 10px;\n  background-color: var(--nui-color-bg-light,#fff);\n  position: absolute;\n  left: 3px;\n  top: 3px;\n  transition: transform ease 0.3s;\n}\n[_nghost-%COMP%]   .nui-switch__svg[_ngcontent-%COMP%] {\n  width: 10px;\n  height: 10px;\n  display: block;\n  margin: 1px 6px;\n}\n[_nghost-%COMP%]   .nui-switch__icon-on[_ngcontent-%COMP%] {\n  fill: none;\n  stroke: var(--nui-color-line-inverse,#fff);\n  stroke-width: 1;\n  stroke-miterlimit: 10;\n}\n[_nghost-%COMP%]   .nui-switch__icon-off[_ngcontent-%COMP%] {\n  fill: none;\n  stroke: var(--nui-color-line-inverse,#fff);\n  stroke-width: 1;\n  stroke-miterlimit: 10;\n}\n[_nghost-%COMP%]   .nui-switch__icon-thumb[_ngcontent-%COMP%] {\n  fill: none;\n  stroke: var(--nui-color-line-default,#d9d9d9);\n  stroke-miterlimit: 10;\n}\n[_nghost-%COMP%]   .nui-switch__label[_ngcontent-%COMP%]:focus {\n  outline: none;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInN3aXRjaC5jb21wb25lbnQubGVzcyIsIi4uLy4uL3N0eWxlcy9taXhpbnMvbm8tc2VsZWN0Lmxlc3MiLCIuLi8uLi9zdHlsZXMvbWl4aW5zL29wYWNpdHkubGVzcyIsIi4uLy4uL3N0eWxlcy9taXhpbnMvY3NzLXZhcmlhYmxlcy5sZXNzIiwiLi4vLi4vc3R5bGVzL21peGlucy9mb2N1cy5sZXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQU1JO0VDTEYseUJBQUE7RURDQSw0QkFBNEI7RUNBNUIsc0JBQUE7RURFQSxnQkFBZ0I7RUNEaEIscUJBQUE7RURHQSxXQUFXO0VBQ1gsOENBQThDO0VDRDlDLG9CQUFBO0VBQ0EsaUJBQUE7QURHRjtBQURRO0VBQ0ksZUFBQTtFQUNBLG9CQUFBO0VFUlYsWUFBQTtFQUdBLHlCQUFBO0FGVUY7QUFEUTtFQUNJLGFBQUE7QUFHWjtBQUFRO0VHZEosNkNBQUE7QUhpQko7QUFIUTtFQUtRLDJCQUFBO0FBQ2hCO0FBR1E7RUFDSSxxQkFBQTtBQURaO0FBSVE7RUFDSSxrQkFBQTtBQUZaO0FBS1E7RUFDSSxlQUFBO0VBQ0EsWUFBQTtFQUNBLFdBQUE7RUFDQSxtQkFBQTtFR25DUiw4Q0FBQTtFSHFDUSxrQkFBQTtFQUNBLFdBQUE7RUFDQSxzQ0FBQTtBQUhaO0FBS1k7RUk3Q1IsYUFBQTtFQUNBLFlBQUE7RUFLQSw0Q0FBQTtBSnVDSjtBQUtROzs7RUFDSSxXQUFBO0VBQ0EsWUFBQTtFQUNBLGtCQUFBO0VBQ0Esa0JBQUE7RUFDQSxRQUFBO0FBRFo7QUFJUTtFQUNJLFdBQUE7RUFDQSxZQUFBO0VBQ0EsbUJBQUE7RUd6RFIsZ0RBQUE7RUgyRFEsa0JBQUE7RUFDQSxTQUFBO0VBQ0EsUUFBQTtFQUNBLCtCQUFBO0FBRlo7QUFLUTtFQUNJLFdBQUE7RUFDQSxZQUFBO0VBQ0EsY0FBQTtFQUNBLGVBQUE7QUFIWjtBQU1RO0VBQ0ksVUFBQTtFR3pFUiwwQ0FBQTtFSDJFUSxlQUFBO0VBQ0EscUJBQUE7QUFKWjtBQU9RO0VBQ0ksVUFBQTtFR2hGUiwwQ0FBQTtFSGtGUSxlQUFBO0VBQ0EscUJBQUE7QUFMWjtBQVFRO0VBQ0ksVUFBQTtFR3ZGUiw2Q0FBQTtFSHlGUSxxQkFBQTtBQU5aO0FBU1E7RUFDSSxhQUFBO0FBUFoiLCJmaWxlIjoic3dpdGNoLmNvbXBvbmVudC5sZXNzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCAocmVmZXJlbmNlKSBcIi4uLy4uL3N0eWxlcy9udWktZnJhbWV3b3JrLXZhcmlhYmxlcy5sZXNzXCI7XG5AaW1wb3J0IChyZWZlcmVuY2UpIFwiLi4vLi4vc3R5bGVzL21peGlucy5sZXNzXCI7XG5cbkBudWktc3dpdGNoLW9mZnNldDogM3B4O1xuXG46aG9zdCB7XG4gICAgJiAubnVpLXN3aXRjaCB7XG4gICAgICAgIC5uby1zZWxlY3QoKTtcblxuICAgICAgICAmW2Rpc2FibGVkPXRydWVdIHtcbiAgICAgICAgICAgIGN1cnNvcjogZGVmYXVsdDtcbiAgICAgICAgICAgIHBvaW50ZXItZXZlbnRzOiBub25lOyAvLyBGdXR1cmUtcHJvb2YgZGlzYWJsaW5nIG9mIGNsaWNrc1xuICAgICAgICAgICAgLm9wYWNpdHkoQGRpc2FibGVkLW9wYWNpdHkpO1xuICAgICAgICB9XG5cbiAgICAgICAgJjpmb2N1cyB7XG4gICAgICAgICAgICBvdXRsaW5lOm5vbmU7XG4gICAgICAgIH1cblxuICAgICAgICAmLm51aS1zd2l0Y2hlZCB7XG4gICAgICAgICAgICAubnVpLXN3aXRjaF9fYmFyIHtcbiAgICAgICAgICAgICAgICAuc2V0Q3NzVmFyaWFibGUoYmFja2dyb3VuZC1jb2xvciwgbnVpLWNvbG9yLW9uKTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgICAgIC5udWktc3dpdGNoX190aHVtYiB7XG4gICAgICAgICAgICAgICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVYKEBzd2l0Y2gtdG9nZ2xlLXdpZHRoKTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgfVxuXG4gICAgICAgICZfX2NvbnRhaW5lciB7XG4gICAgICAgICAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gICAgICAgIH1cblxuICAgICAgICAmX19sYWJlbCB7XG4gICAgICAgICAgICBtYXJnaW46IDAgMCAwIEBudWktc3BhY2Utc207XG4gICAgICAgIH1cblxuICAgICAgICAmX19iYXIge1xuICAgICAgICAgICAgY3Vyc29yOiBwb2ludGVyO1xuICAgICAgICAgICAgaGVpZ2h0OiBAc3dpdGNoLWhlaWdodDtcbiAgICAgICAgICAgIHdpZHRoOiBAc3dpdGNoLXdpZHRoO1xuICAgICAgICAgICAgYm9yZGVyLXJhZGl1czogQG51aS1zcGFjZS1zbTtcbiAgICAgICAgICAgIC5zZXRDc3NWYXJpYWJsZShiYWNrZ3JvdW5kLWNvbG9yLCBudWktY29sb3Itb2ZmKTtcbiAgICAgICAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICAgICAgICAgIGZsb2F0OiBsZWZ0O1xuICAgICAgICAgICAgdHJhbnNpdGlvbjogYmFja2dyb3VuZC1jb2xvciBlYXNlIDAuM3M7XG5cbiAgICAgICAgICAgICY6Zm9jdXMge1xuICAgICAgICAgICAgICAgIC5mb2N1cy1vdXRsaW5lKCk7XG4gICAgICAgICAgICB9XG4gICAgICAgIH1cblxuICAgICAgICAmX19vbiwgJl9fb2ZmLCAmX190aHVtYiB7XG4gICAgICAgICAgICB3aWR0aDogQG51aS1saW5lLWhlaWdodC1zbWFsbDtcbiAgICAgICAgICAgIGhlaWdodDogQG51aS1saW5lLWhlaWdodC1zbWFsbDtcbiAgICAgICAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICAgICAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICAgICAgICAgIHRvcDogQG51aS1zd2l0Y2gtb2Zmc2V0O1xuICAgICAgICB9XG5cbiAgICAgICAgJl9fdGh1bWIge1xuICAgICAgICAgICAgd2lkdGg6IEBudWktbGluZS1oZWlnaHQtc21hbGw7XG4gICAgICAgICAgICBoZWlnaHQ6IEBudWktbGluZS1oZWlnaHQtc21hbGw7XG4gICAgICAgICAgICBib3JkZXItcmFkaXVzOiBAbnVpLXNwYWNlLXNtO1xuICAgICAgICAgICAgLnNldENzc1ZhcmlhYmxlKGJhY2tncm91bmQtY29sb3IsIG51aS1jb2xvci1iZy1saWdodCk7XG4gICAgICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgICAgICAgICBsZWZ0OiBAbnVpLXN3aXRjaC1vZmZzZXQ7XG4gICAgICAgICAgICB0b3A6IEBudWktc3dpdGNoLW9mZnNldDtcbiAgICAgICAgICAgIHRyYW5zaXRpb246IHRyYW5zZm9ybSBlYXNlIDAuM3M7XG4gICAgICAgIH1cblxuICAgICAgICAmX19zdmcge1xuICAgICAgICAgICAgd2lkdGg6IEBudWktc3BhY2Utc207XG4gICAgICAgICAgICBoZWlnaHQ6IEBudWktc3BhY2Utc207XG4gICAgICAgICAgICBkaXNwbGF5OiBibG9jaztcbiAgICAgICAgICAgIG1hcmdpbjogMXB4IDZweDtcbiAgICAgICAgfVxuXG4gICAgICAgICZfX2ljb24tb24ge1xuICAgICAgICAgICAgZmlsbDogbm9uZTtcbiAgICAgICAgICAgIC5zZXRDc3NWYXJpYWJsZShzdHJva2UsIG51aS1jb2xvci1saW5lLWludmVyc2UpO1xuICAgICAgICAgICAgc3Ryb2tlLXdpZHRoOiAxO1xuICAgICAgICAgICAgc3Ryb2tlLW1pdGVybGltaXQ6IDEwO1xuICAgICAgICB9XG5cbiAgICAgICAgJl9faWNvbi1vZmYge1xuICAgICAgICAgICAgZmlsbDogbm9uZTtcbiAgICAgICAgICAgIC5zZXRDc3NWYXJpYWJsZShzdHJva2UsIG51aS1jb2xvci1saW5lLWludmVyc2UpO1xuICAgICAgICAgICAgc3Ryb2tlLXdpZHRoOiAxO1xuICAgICAgICAgICAgc3Ryb2tlLW1pdGVybGltaXQ6IDEwO1xuICAgICAgICB9XG5cbiAgICAgICAgJl9faWNvbi10aHVtYiB7XG4gICAgICAgICAgICBmaWxsOiBub25lO1xuICAgICAgICAgICAgLnNldENzc1ZhcmlhYmxlKHN0cm9rZSwgbnVpLWNvbG9yLWxpbmUtZGVmYXVsdCk7XG4gICAgICAgICAgICBzdHJva2UtbWl0ZXJsaW1pdDogMTA7XG4gICAgICAgIH1cblxuICAgICAgICAmX19sYWJlbDpmb2N1c3tcbiAgICAgICAgICAgIG91dGxpbmU6bm9uZTtcbiAgICAgICAgfVxuICAgIH1cbn1cbiIsIi5uby1zZWxlY3QoKSB7XG4gIC13ZWJraXQtdXNlci1zZWxlY3Q6IG5vbmU7ICAvKiBDaHJvbWUgYWxsIC8gU2FmYXJpIGFsbCAqL1xuICAtbW96LXVzZXItc2VsZWN0OiBub25lOyAgICAgLyogRmlyZWZveCBhbGwgKi9cbiAgLW1zLXVzZXItc2VsZWN0OiBub25lOyAgICAgIC8qIElFIDEwKyAqL1xuXG4gIC8qIE5vIHN1cHBvcnQgZm9yIHRoZXNlIHlldCwgdXNlIGF0IG93biByaXNrICovXG4gIC1vLXVzZXItc2VsZWN0OiBub25lO1xuICB1c2VyLXNlbGVjdDogbm9uZTtcbn0iLCIvLyBPcGFjaXR5XG5cbi5vcGFjaXR5KEBvcGFjaXR5KSB7XG4gIG9wYWNpdHk6IEBvcGFjaXR5O1xuICAvLyBJRTggZmlsdGVyXG4gIEBvcGFjaXR5LWllOiAoQG9wYWNpdHkgKiAxMDApO1xuICBmaWx0ZXI6IH5cImFscGhhKG9wYWNpdHk9QHtvcGFjaXR5LWllfSlcIjtcbn1cbiIsIi5zZXRDc3NWYXJpYWJsZShAcHJvcGVydHksIEB2YWx1ZSl7XG4gICAgQGV2YWx1YXRlZCA6IFwiQHt2YWx1ZX1cIjtcbiAgICAvL3RoZSBkb3VibGUgQCBmb3JjZXMgYSBpbmRpcmVjdGlvbiBldmFsdWF0aW9uLCBraW5kYSBsaWtlIGEgcG9pbnRlclxuICAgIEBmYWxsYmFjayA6IEBAZXZhbHVhdGVkO1xuXG4gICAgQHtwcm9wZXJ0eX06IH5cInZhcigtLUB7dmFsdWV9LEB7ZmFsbGJhY2t9KVwiO1xufVxuIiwiLmZvY3VzLW91dGxpbmUtYmFzZSgpIHtcbiAgICBvdXRsaW5lOiBub25lO1xuICAgIHotaW5kZXg6IEB6aW5kZXgtYWN0aXZlO1xufVxuXG4uZm9jdXMtb3V0bGluZSgpIHtcbiAgICAuZm9jdXMtb3V0bGluZS1iYXNlKCk7XG4gICAgYm94LXNoYWRvdzogMCAwIDAgQG51aS1saW5lLW1lZGl1bSBmYWRlKEBudWktY29sb3Itc2VsZWN0ZWQtY29udHJhc3QsIDUwJSk7XG59XG5cbi5mb2N1cy1vdXRsaW5lLWluc2V0KCkge1xuICAgIC5mb2N1cy1vdXRsaW5lLWJhc2UoKTtcbiAgICBib3gtc2hhZG93OiBpbnNldCAwIDAgMCBAbnVpLWxpbmUtbWVkaXVtIGZhZGUoQG51aS1jb2xvci1zZWxlY3RlZC1jb250cmFzdCwgNTAlKTtcbn1cbiJdfQ== */"]
@@ -11053,6 +11063,9 @@
           this.type = type;
           this.el = el;
           this.logger = logger;
+          /** Sets aria-label for the component */
+
+          this.ariaLabel = "";
           /**
            * Optionally, set whether to fire a "click" event repeatedly while the button is pressed.
            */
@@ -11147,7 +11160,7 @@
         }, {
           key: "ariaIconLabel",
           get: function get() {
-            return this.icon;
+            return this.ariaLabel || this.getAriaLabel();
           }
         }, {
           key: "ngOnInit",
@@ -11193,6 +11206,12 @@
               width: "".concat(d, "px"),
               height: "".concat(d, "px")
             };
+          }
+        }, {
+          key: "getAriaLabel",
+          value: function getAriaLabel() {
+            var innerText = this.contentContainer.element.nativeElement.innerText;
+            return this._isContentEmpty ? this.icon : innerText.trim();
           }
         }, {
           key: "setIsContentEmptyValue",
@@ -11248,11 +11267,11 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.contentContainer = _t.first);
           }
         },
-        hostAttrs: ["role", "button", 1, "nui-button", "btn"],
-        hostVars: 21,
+        hostAttrs: [1, "nui-button", "btn"],
+        hostVars: 22,
         hostBindings: function ButtonComponent_HostBindings(rf, ctx) {
           if (rf & 2) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-label", ctx.ariaIconLabel);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-busy", ctx.isBusy || null)("aria-label", ctx.ariaIconLabel);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("btn-lg", ctx.sizeClassLarge)("btn-xs", ctx.sizeClassCompact)("icon-right", ctx.iconRightClass)("icon-left", ctx.iconleftClass)("is-busy", ctx.isBusyClass)("is-empty", ctx.isEmptyClass)("btn-primary", ctx.dispStylePrimClass)("btn-action", ctx.dispStyleActionClass)("btn-destructive", ctx.displayStyleDestructiveClass)("btn-default", ctx.dispStyleDefaultClass);
           }
@@ -11264,6 +11283,7 @@
           iconRight: "iconRight",
           isBusy: "isBusy",
           isEmpty: "isEmpty",
+          ariaLabel: "ariaLabel",
           isRepeat: "isRepeat",
           size: "size"
         },
@@ -12009,7 +12029,7 @@
       DialogComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({
         type: DialogComponent,
         selectors: [["nui-dialog-window"]],
-        hostAttrs: ["role", "dialog", "tabindex", "-1"],
+        hostAttrs: ["role", "dialog", "aria-modal", "true", "tabindex", "-1"],
         hostVars: 2,
         hostBindings: function DialogComponent_HostBindings(rf, ctx) {
           if (rf & 1) {
@@ -15938,6 +15958,7 @@
         function SelectorComponent() {
           _classCallCheck(this, SelectorComponent);
 
+          this.ariaLabel = "Selector";
           this.selectionChange = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
           this.checkboxChecked = false;
           this.indeterminate = false;
@@ -16066,19 +16087,26 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.overlay = _t.first);
           }
         },
-        hostAttrs: [1, "nui-selector"],
+        hostAttrs: ["tabindex", "-1", 1, "nui-selector"],
+        hostVars: 1,
+        hostBindings: function SelectorComponent_HostBindings(rf, ctx) {
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-label", ctx.ariaLabel);
+          }
+        },
         inputs: {
           checkboxStatus: "checkboxStatus",
           items: "items",
-          appendToBody: "appendToBody"
+          appendToBody: "appendToBody",
+          ariaLabel: "ariaLabel"
         },
         outputs: {
           selectionChange: "selectionChange"
         },
         features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵNgOnChangesFeature"]],
         decls: 12,
-        vars: 8,
-        consts: [[1, "btn-group"], ["toggleButton", ""], ["nui-button", "", "type", "button", 1, "nui-selector__checkbox-button", 3, "displayStyle", "click"], [1, "nui-selector__checkbox-container"], [3, "checked", "indeterminate"], ["checkbox", ""], ["nui-button", "", "type", "button", "class", "nui-selector__toggle", 3, "displayStyle", "icon", "click", 4, "ngIf"], ["popupArea", ""], [3, "toggleReference", "overlayConfig", "customContainer"], ["overlay", ""], [3, "itemsSource", "menuItemClicked"], ["nui-button", "", "type", "button", 1, "nui-selector__toggle", 3, "displayStyle", "icon", "click"]],
+        vars: 9,
+        consts: [[1, "btn-group"], ["toggleButton", ""], ["nui-button", "", "type", "button", "role", "checkbox", 1, "nui-selector__checkbox-button", 3, "displayStyle", "click"], [1, "nui-selector__checkbox-container"], [3, "checked", "indeterminate"], ["checkbox", ""], ["nui-button", "", "type", "button", "class", "nui-selector__toggle", "ariaLabel", "Open Selector Menu", 3, "displayStyle", "icon", "click", 4, "ngIf"], ["popupArea", ""], [3, "toggleReference", "overlayConfig", "customContainer"], ["overlay", ""], [3, "itemsSource", "menuItemClicked"], ["nui-button", "", "type", "button", "ariaLabel", "Open Selector Menu", 1, "nui-selector__toggle", 3, "displayStyle", "icon", "click"]],
         template: function SelectorComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0, 1);
@@ -16122,6 +16150,8 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("displayStyle", "default");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-checked", ctx.checkboxChecked);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
@@ -17105,13 +17135,15 @@
         if (rf & 2) {
           var ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction2"](4, _c1, ctx_r1.isIndeterminate, ctx_r1.compactMode));
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-label", ctx_r1.ariaLabel)("aria-valuenow", ctx_r1.percent || null);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngStyle", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction1"](7, _c2, ctx_r1.percent));
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction2"](6, _c1, ctx_r1.isIndeterminate, ctx_r1.compactMode));
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngStyle", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction1"](9, _c2, ctx_r1.percent));
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
@@ -17172,6 +17204,7 @@
           _classCallCheck(this, ProgressComponent);
 
           this.showProgress = true;
+          this.ariaLabel = "";
           this.cancel = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
           this.isIndeterminate = false;
         }
@@ -17198,7 +17231,6 @@
       ProgressComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: ProgressComponent,
         selectors: [["nui-progress"]],
-        hostAttrs: ["role", "progressbar"],
         inputs: {
           show: "show",
           showProgress: "showProgress",
@@ -17210,6 +17242,7 @@
           helpText: "helpText",
           stacked: "stacked",
           compactMode: "compactMode",
+          ariaLabel: "ariaLabel",
           helpTemplateRef: "helpTemplateRef"
         },
         outputs: {
@@ -17218,14 +17251,14 @@
         features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵNgOnChangesFeature"]],
         decls: 6,
         vars: 5,
-        consts: [[1, "nui-progress"], ["class", "nui-progress__header", 3, "ngClass", 4, "ngIf"], ["class", "nui-progress__container", 4, "ngIf"], ["class", "nui-progress__hint", 3, "nui-progress__hint--stacked", 4, "ngIf"], ["defaultHelpTemplateRef", ""], [1, "nui-progress__header", 3, "ngClass"], [1, "nui-progress__message", "nui-text-label", "nui-progress__header-item"], [1, "nui-progress__container"], [1, "nui-progress__bar", 3, "ngClass"], [1, "nui-progress__bar-value", 3, "ngStyle"], ["class", "nui-progress__number nui-progress__header-item nui-text-small", 4, "ngIf"], ["nui-button", "", "type", "button", "class", "nui-progress__cancel", "icon", "close", "displayStyle", "action", 3, "nuiTooltip", "click", 4, "ngIf"], [1, "nui-progress__number", "nui-progress__header-item", "nui-text-small"], ["nui-button", "", "type", "button", "icon", "close", "displayStyle", "action", 1, "nui-progress__cancel", 3, "nuiTooltip", "click"], [1, "nui-progress__hint"], [3, "ngTemplateOutlet"], [1, "nui-text-small-secondary"]],
+        consts: [[1, "nui-progress"], ["class", "nui-progress__header", 3, "ngClass", 4, "ngIf"], ["class", "nui-progress__container", "role", "progressbar", "aria-valuemin", "0", "aria-valuemax", "100", 4, "ngIf"], ["class", "nui-progress__hint", 3, "nui-progress__hint--stacked", 4, "ngIf"], ["defaultHelpTemplateRef", ""], [1, "nui-progress__header", 3, "ngClass"], [1, "nui-progress__message", "nui-text-label", "nui-progress__header-item"], ["role", "progressbar", "aria-valuemin", "0", "aria-valuemax", "100", 1, "nui-progress__container"], [1, "nui-progress__bar", 3, "ngClass"], [1, "nui-progress__bar-value", 3, "ngStyle"], ["class", "nui-progress__number nui-progress__header-item nui-text-small", 4, "ngIf"], ["nui-button", "", "type", "button", "class", "nui-progress__cancel", "icon", "close", "displayStyle", "action", 3, "nuiTooltip", "click", 4, "ngIf"], [1, "nui-progress__number", "nui-progress__header-item", "nui-text-small"], ["nui-button", "", "type", "button", "icon", "close", "displayStyle", "action", 1, "nui-progress__cancel", 3, "nuiTooltip", "click"], [1, "nui-progress__hint"], [3, "ngTemplateOutlet"], [1, "nui-text-small-secondary"]],
         template: function ProgressComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, ProgressComponent_div_1_Template, 3, 4, "div", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, ProgressComponent_div_2_Template, 5, 9, "div", 2);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, ProgressComponent_div_2_Template, 5, 11, "div", 2);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, ProgressComponent_div_3_Template, 2, 3, "div", 3);
 
@@ -17546,6 +17579,7 @@
           this.confirmText = $localize(_templateObject14 || (_templateObject14 = _taggedTemplateLiteral(["Yes"])));
           this.dismissText = $localize(_templateObject15 || (_templateObject15 = _taggedTemplateLiteral(["No"])));
           this.setFocus = "confirm";
+          this.ariaLabel = "";
         }
 
         _createClass(ConfirmationDialogComponent, [{
@@ -17568,6 +17602,11 @@
           value: function focusButton(buttonType) {
             return this.setFocus === buttonType ? true : false;
           }
+        }, {
+          key: "getAriaLabel",
+          value: function getAriaLabel() {
+            return (this.severity ? "".concat(this.severity, " ").concat(this.title) : this.title) || this.ariaLabel;
+          }
         }]);
 
         return ConfirmationDialogComponent;
@@ -17580,14 +17619,21 @@
       ConfirmationDialogComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: ConfirmationDialogComponent,
         selectors: [["nui-confirmation-dialog-window"]],
-        hostAttrs: ["role", "alertdialog"],
+        hostAttrs: ["role", "dialog"],
+        hostVars: 1,
+        hostBindings: function ConfirmationDialogComponent_HostBindings(rf, ctx) {
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-label", ctx.getAriaLabel());
+          }
+        },
         inputs: {
           title: "title",
           message: "message",
           confirmText: "confirmText",
           dismissText: "dismissText",
           setFocus: "setFocus",
-          severity: "severity"
+          severity: "severity",
+          ariaLabel: "ariaLabel"
         },
         decls: 9,
         vars: 7,
@@ -19577,10 +19623,17 @@
           }
         },
         hostAttrs: ["role", "menu", 1, "nui-menu"],
+        hostVars: 1,
+        hostBindings: function MenuComponent_HostBindings(rf, ctx) {
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵattribute"]("aria-label", ctx.title || ctx.ariaLabel);
+          }
+        },
         inputs: {
           widthOfPopup: "widthOfPopup",
           contextClass: "contextClass",
           appendToBody: "appendToBody",
+          ariaLabel: "ariaLabel",
           title: "title",
           size: "size",
           displayStyle: "displayStyle",
@@ -19595,7 +19648,7 @@
         ngContentSelectors: _c1,
         decls: 8,
         vars: 14,
-        consts: [[3, "appendToBody", "width", "contextClass", "opened"], ["nui-button", "", "nuiPopupToggle", "", "type", "button", 1, "menu-button", "no-shadow", 3, "disabled", "displayStyle", "size", "icon", "iconRight", "isEmpty", "blur"], ["menuToggle", ""], ["popupAreaContent", ""], [3, "itemsSource", "size", 4, "ngIf"], [4, "ngIf"], [3, "itemsSource", "size"]],
+        consts: [[3, "appendToBody", "width", "contextClass", "opened"], ["nui-button", "", "nuiPopupToggle", "", "aria-haspopup", "true", "type", "button", 1, "menu-button", "no-shadow", 3, "disabled", "displayStyle", "size", "icon", "iconRight", "isEmpty", "blur"], ["menuToggle", ""], ["popupAreaContent", ""], [3, "itemsSource", "size", 4, "ngIf"], [4, "ngIf"], [3, "itemsSource", "size"]],
         template: function MenuComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojectionDef"]();
@@ -26491,7 +26544,7 @@
            * Input to set aria label text
            */
 
-          this.ariaLabel = "";
+          this.ariaLabel = "Spinner";
           this.cancel = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         }
 
@@ -26527,6 +26580,10 @@
           key: "ngOnChanges",
           value: function ngOnChanges(changes) {
             var _this82 = this;
+
+            if (changes === null || changes === void 0 ? void 0 : changes.percent) {
+              this.ariaValueNow = this.percent ? String(this.percent) : undefined;
+            }
 
             if (!changes["show"]) {
               return;
@@ -26580,11 +26637,11 @@
       SpinnerComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
         type: SpinnerComponent,
         selectors: [["nui-spinner"]],
-        hostAttrs: ["role", "progressbar"],
-        hostVars: 1,
+        hostAttrs: ["role", "progressbar", "aria-valuemin", "0", "aria-valuemax", "100"],
+        hostVars: 2,
         hostBindings: function SpinnerComponent_HostBindings(rf, ctx) {
           if (rf & 2) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵattribute"]("aria-label", ctx.ariaLabel + " progress");
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵattribute"]("aria-label", ctx.ariaLabel)("aria-valuenow", ctx.ariaValueNow);
           }
         },
         inputs: {
@@ -26672,7 +26729,7 @@
         ngContentSelectors: _c0,
         decls: 2,
         vars: 0,
-        consts: [[1, "dialog-footer"]],
+        consts: [["aria-label", "Dialog footer", 1, "dialog-footer"]],
         template: function DialogFooterComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"]();
@@ -27157,6 +27214,9 @@
           this.changeDetector = changeDetector;
           this.eventBusService = eventBusService;
           this.renderer = renderer;
+          /** Users ca specify the 'aria-labelledby' which will be set to the input element */
+
+          this.ariaLabelledby = null;
           /**
            * Sets "title" attribute for nui-checkbox label
            */
@@ -27243,6 +27303,15 @@
                 }
               }
             });
+          }
+        }, {
+          key: "getAriaChecked",
+          value: function getAriaChecked() {
+            if (this.checked) {
+              return "true";
+            }
+
+            return this.indeterminate ? "mixed" : "false";
           }
           /**
            * Used for changing of css style when nui-checkbox is hovered
@@ -27352,7 +27421,6 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx.checkboxLabel = _t.first);
           }
         },
-        hostAttrs: ["role", "checkbox"],
         hostVars: 4,
         hostBindings: function CheckboxComponent_HostBindings(rf, ctx) {
           if (rf & 2) {
@@ -27361,6 +27429,8 @@
         },
         inputs: {
           ariaLabel: "ariaLabel",
+          ariaLabelledby: "ariaLabelledby",
+          ariaDescribedby: "ariaDescribedby",
           name: "name",
           title: "title",
           value: "value",
@@ -27389,8 +27459,8 @@
         }])],
         ngContentSelectors: _c3,
         decls: 12,
-        vars: 12,
-        consts: [[1, "nui-checkbox"], [1, "nui-checkbox__label", 3, "title", "mouseenter", "mouseleave"], ["checkboxLabel", ""], [1, "nui-checkbox__content"], ["type", "checkbox", 1, "nui-checkbox__input", 3, "value", "checked", "disabled", "required", "indeterminate", "click", "change"], ["inputViewContainer", ""], [1, "nui-checkbox__mark"], [1, "nui-checkbox__glyph"], [1, "nui-checkbox__transclude"], ["checkboxContent", ""], ["class", "nui-help-hint", 4, "ngIf"], [1, "nui-help-hint"]],
+        vars: 15,
+        consts: [[1, "nui-checkbox"], ["role", "checkbox", 1, "nui-checkbox__label", 3, "title", "mouseenter", "mouseleave"], ["checkboxLabel", ""], [1, "nui-checkbox__content"], ["type", "checkbox", 1, "nui-checkbox__input", 3, "value", "checked", "disabled", "required", "indeterminate", "click", "change"], ["inputViewContainer", ""], [1, "nui-checkbox__mark"], [1, "nui-checkbox__glyph"], [1, "nui-checkbox__transclude"], ["checkboxContent", ""], ["class", "nui-help-hint", 4, "ngIf"], [1, "nui-help-hint"]],
         template: function CheckboxComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojectionDef"]();
@@ -27445,13 +27515,13 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("title", ctx.title);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵattribute"]("tabindex", !ctx.disabled ? 0 : -1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵattribute"]("aria-label", ctx.ariaLabel || null)("aria-labelledby", ctx.ariaLabelledby)("aria-checked", ctx.getAriaChecked())("aria-describedby", ctx.ariaDescribedby)("tabindex", !ctx.disabled ? 0 : -1);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", ctx.value)("checked", ctx.checked)("disabled", ctx.disabled)("required", ctx.required)("indeterminate", ctx.indeterminate);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵattribute"]("aria-label", ctx.ariaLabel)("name", ctx.name);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵattribute"]("name", ctx.name);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](7);
 
@@ -30980,7 +31050,7 @@
           multi: true
         }]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵNgOnChangesFeature"]],
         decls: 10,
-        vars: 22,
+        vars: 25,
         consts: [[1, "nui-textbox", "nui-textbox-number"], [1, "has-feedback", 3, "ngStyle"], ["step", "any", "type", "number", 1, "form-control", "input-control", "nui-textbox__input", 3, "disabled", "ngModel", "ngModelOptions", "min", "max", "placeholder", "readonly", "ngModelChange", "blur", "keydown", "paste"], ["numberInput", ""], [1, "nui-textbox-number__buttons"], [1, "nui-textbox-number__updown", "nui-textbox-number__up-button"], ["nui-button", "", "type", "button", "displayStyle", "action", "icon", "caret-up", "aria-label", "Up", 3, "isRepeat", "disabled", "click"], [1, "nui-textbox-number__updown", "nui-textbox-number__updown-divider"], [1, "nui-textbox-number__updown", "nui-textbox-number__down-button"], ["nui-button", "", "type", "button", "displayStyle", "action", "icon", "caret-down", "aria-label", "Down", 3, "isRepeat", "disabled", "click"]],
         template: function TextboxNumberComponent_Template(rf, ctx) {
           if (rf & 1) {
@@ -31042,13 +31112,13 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngStyle", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction2"](18, _c1, ctx.customBoxWidth, ctx.customBoxWidth));
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngStyle", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction2"](21, _c1, ctx.customBoxWidth, ctx.customBoxWidth));
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("disabled", ctx.disabled)("ngModel", ctx.value)("ngModelOptions", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](21, _c2))("min", ctx.minValue)("max", ctx.maxValue)("placeholder", ctx.placeholder)("readonly", ctx.readonly);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("disabled", ctx.disabled)("ngModel", ctx.value)("ngModelOptions", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](24, _c2))("min", ctx.minValue)("max", ctx.maxValue)("placeholder", ctx.placeholder)("readonly", ctx.readonly);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("name", ctx.name)("aria-label", ctx.ariaLabel);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("name", ctx.name)("aria-valuemin", ctx.minValue || null)("aria-valuemax", ctx.maxValue || null)("aria-valuenow", ctx.value || null)("aria-label", ctx.ariaLabel);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
 
@@ -38451,7 +38521,7 @@
       TableFooterCellDirective.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineDirective"]({
         type: TableFooterCellDirective,
         selectors: [["nui-footer-cell"], ["td", "nuiFooterCell", ""]],
-        hostAttrs: ["role", "cell", 1, "mat-footer-cell"],
+        hostAttrs: ["role", "gridcell", 1, "mat-footer-cell"],
         features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵInheritDefinitionFeature"]]
       });
       /***/
@@ -49329,8 +49399,8 @@
         },
         ngContentSelectors: _c2,
         decls: 10,
-        vars: 16,
-        consts: [[1, "nui-expander"], ["role", "button", 1, "nui-expander__header", 3, "click"], [1, "nui-expander__header-icon", 3, "iconColor", "icon"], [1, "nui-expander__header-content-wrapper"], [1, "nui-expander__custom-header"], ["customHeaderContent", ""], ["class", "nui-expander__header-content", 3, "nui-expander__header-content--with-icon", 4, "ngIf"], [1, "nui-expander__body"], [4, "ngIf"], [1, "nui-expander__header-content"], ["class", "nui-expander__header-content-icon", 3, "icon", 4, "ngIf"], [1, "nui-expander__header-title"], [1, "nui-expander__header-content-icon", 3, "icon"]],
+        vars: 18,
+        consts: [[1, "nui-expander"], ["role", "button", 1, "nui-expander__header", 3, "click"], ["aria-hidden", "true", 1, "nui-expander__header-icon", 3, "iconColor", "icon"], [1, "nui-expander__header-content-wrapper"], [1, "nui-expander__custom-header"], ["customHeaderContent", ""], ["class", "nui-expander__header-content", 3, "nui-expander__header-content--with-icon", 4, "ngIf"], ["role", "region", 1, "nui-expander__body"], [4, "ngIf"], [1, "nui-expander__header-content"], ["class", "nui-expander__header-content-icon", 3, "icon", 4, "ngIf"], [1, "nui-expander__header-title"], [1, "nui-expander__header-content-icon", 3, "icon"]],
         template: function ExpanderComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"](_c1);
@@ -49379,7 +49449,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("nui-expander__header--empty", !ctx.header && ctx.isCustomHeaderContentEmpty);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-expanded", ctx.state === "expanded");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-expanded", ctx.state === "expanded")("aria-disabled", ctx.disabled);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
@@ -49404,6 +49474,8 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("hide-left-border", ctx.hideLeftBorder);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("@expandedState", ctx.state);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-label", ctx.header || null);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
@@ -50157,7 +50229,7 @@
       TableCellDirective.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineDirective"]({
         type: TableCellDirective,
         selectors: [["nui-cell"], ["td", "nui-cell", ""]],
-        hostAttrs: ["role", "cell", 1, "nui-table__table-cell"],
+        hostAttrs: ["role", "gridcell", 1, "nui-table__table-cell"],
         hostVars: 5,
         hostBindings: function TableCellDirective_HostBindings(rf, ctx) {
           if (rf & 1) {
@@ -53678,7 +53750,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("autocomplete", ctx_r0.autocomplete)("disabled", ctx_r0.disabled)("type", ctx_r0.type)("placeholder", ctx_r0.placeholder)("readonly", ctx_r0.readonly);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("name", ctx_r0.name)("aria-label", ctx_r0.ariaLabel);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("name", ctx_r0.name)("aria-label", ctx_r0.ariaLabel)("aria-readonly", ctx_r0.readonly)("aria-invalid", ctx_r0.isInErrorState);
         }
       }
 
@@ -53712,7 +53784,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("rows", ctx_r1.rows)("disabled", ctx_r1.disabled)("placeholder", ctx_r1.placeholder)("readonly", ctx_r1.readonly);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("name", ctx_r1.name)("aria-label", ctx_r1.ariaLabel);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("name", ctx_r1.name)("aria-label", ctx_r1.ariaLabel)("aria-readonly", ctx_r1.readonly)("aria-invalid", ctx_r1.isInErrorState);
         }
       }
 
@@ -53866,13 +53938,6 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.textboxInput = _t.first);
           }
         },
-        hostAttrs: ["role", "textbox"],
-        hostVars: 1,
-        hostBindings: function TextboxComponent_HostBindings(rf, ctx) {
-          if (rf & 2) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-label", ctx.ariaLabel + " textbox");
-          }
-        },
         inputs: {
           caption: "caption",
           autocomplete: "autocomplete",
@@ -53916,9 +53981,9 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, TextboxComponent_input_2_Template, 2, 8, "input", 2);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, TextboxComponent_input_2_Template, 2, 10, "input", 2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, TextboxComponent_textarea_3_Template, 2, 7, "textarea", 3);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, TextboxComponent_textarea_3_Template, 2, 9, "textarea", 3);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 4);
 
@@ -56330,6 +56395,11 @@
            */
 
           this.ariaLabel = "";
+          /**
+           * Input to set aria label text
+           */
+
+          this.ariaLabeledby = "";
           this.subscriptionsArray = new Array();
           this.disabled = false;
         }
@@ -56466,7 +56536,8 @@
         inputs: {
           name: "name",
           values: "values",
-          ariaLabel: "ariaLabel"
+          ariaLabel: "ariaLabel",
+          ariaLabeledby: "ariaLabeledby"
         },
         outputs: {
           valuesChange: "valuesChange"
@@ -56486,7 +56557,7 @@
         }])],
         ngContentSelectors: _c0,
         decls: 2,
-        vars: 1,
+        vars: 2,
         consts: [[1, "nui-checkbox-group"]],
         template: function CheckboxGroupComponent_Template(rf, ctx) {
           if (rf & 1) {
@@ -56500,7 +56571,7 @@
           }
 
           if (rf & 2) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-label", ctx.ariaLabel);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-label", ctx.ariaLabel || null)("aria-labeledby", ctx.ariaLabeledby || null);
           }
         },
         encapsulation: 2,
@@ -56984,7 +57055,7 @@
         ngContentSelectors: _c0,
         decls: 8,
         vars: 5,
-        consts: [[1, "severity-text"], [3, "icon", 4, "ngIf"], [1, "dialog-title"], [1, "btn-group"], ["nui-button", "", "nuiSetFocus", "true", "preventScroll", "true", "type", "button", "displayStyle", "action", "icon", "close", "aria-label", "Close", 3, "click"], [3, "icon"]],
+        consts: [[1, "severity-text"], [3, "icon", 4, "ngIf"], [1, "dialog-title"], [1, "btn-group"], ["nui-button", "", "nuiSetFocus", "true", "preventScroll", "true", "type", "button", "displayStyle", "action", "icon", "close", "ariaLabel", "Close", 3, "click"], [3, "icon"]],
         template: function DialogHeaderComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"]();
@@ -60773,10 +60844,10 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵloadQuery"]()) && (ctx.draggableElements = _t);
           }
         },
-        hostVars: 5,
+        hostVars: 6,
         hostBindings: function RepeatComponent_HostBindings(rf, ctx) {
           if (rf & 2) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵattribute"]("role", ctx.role);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵattribute"]("role", ctx.role)("aria-multiselectable", ctx.selectionMode === ctx.repeatSelectionMode.multi || null);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵstyleProp"]("width", ctx.width);
 
@@ -60809,7 +60880,7 @@
         ngContentSelectors: _c6,
         decls: 9,
         vars: 5,
-        consts: [["repeatItems", ""], [1, "nui-repeat-header"], [1, "repeat-group"], ["dropListArea", ""], [4, "ngIf"], ["style", "height: 100%", 3, "itemSize", 4, "ngIf"], ["cdkDrag", "", 1, "repeat-group-item", 3, "cdkDragData", "cdkDragPreviewClass", "cdkDragDisabled", "clickable", "selectable", "selected", "ngClass", "click"], ["drag", "cdkDrag"], ["class", "nui-repeat-item__controls-drag-handle align-self-center", 3, "ngClass", 4, "ngIf"], ["class", "nui-repeat-item__controls-drag-handle", 4, "ngIf"], [1, "nui-repeat-item__controls-container"], ["class", "nui-repeat-item__checkbox", 3, "value", "checked", "disabled", "valueChange", 4, "ngIf"], ["class", "nui-repeat-item__radio", 3, "value", "checked", "disabled", 4, "ngIf"], [1, "nui-repeat-item__content-container"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"], ["class", "nui-repeat-item__actions-container", 4, "ngIf"], [1, "nui-repeat-item__controls-drag-handle", "align-self-center", 3, "ngClass"], ["cdkDragHandle", "", 3, "mouseover", "mouseout"], [1, "nui-repeat-item__controls-drag-handle"], [3, "nui-dnd-preview", 4, "cdkDragPreview"], [1, "nui-repeat-item__checkbox", 3, "value", "checked", "disabled", "valueChange"], [1, "nui-repeat-item__radio", 3, "value", "checked", "disabled"], [1, "nui-repeat-item__actions-container"], [3, "ngTemplateOutlet", "ngTemplateOutletContext", 4, "ngFor", "ngForOf", "ngForTrackBy"], [2, "height", "100%", 3, "itemSize"], [4, "cdkVirtualFor", "cdkVirtualForOf", "cdkVirtualForTemplateCacheSize"]],
+        consts: [["repeatItems", ""], [1, "nui-repeat-header"], ["aria-dropeffect", "move", 1, "repeat-group"], ["dropListArea", ""], [4, "ngIf"], ["style", "height: 100%", 3, "itemSize", 4, "ngIf"], ["aria-grabbed", "supported", "cdkDrag", "", 1, "repeat-group-item", 3, "cdkDragData", "cdkDragPreviewClass", "cdkDragDisabled", "clickable", "selectable", "selected", "ngClass", "click"], ["drag", "cdkDrag"], ["class", "nui-repeat-item__controls-drag-handle align-self-center", 3, "ngClass", 4, "ngIf"], ["class", "nui-repeat-item__controls-drag-handle", 4, "ngIf"], [1, "nui-repeat-item__controls-container"], ["class", "nui-repeat-item__checkbox", 3, "value", "checked", "disabled", "valueChange", 4, "ngIf"], ["class", "nui-repeat-item__radio", 3, "value", "checked", "disabled", 4, "ngIf"], [1, "nui-repeat-item__content-container"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"], ["class", "nui-repeat-item__actions-container", 4, "ngIf"], [1, "nui-repeat-item__controls-drag-handle", "align-self-center", 3, "ngClass"], ["cdkDragHandle", "", 3, "mouseover", "mouseout"], [1, "nui-repeat-item__controls-drag-handle"], [3, "nui-dnd-preview", 4, "cdkDragPreview"], [1, "nui-repeat-item__checkbox", 3, "value", "checked", "disabled", "valueChange"], [1, "nui-repeat-item__radio", 3, "value", "checked", "disabled"], [1, "nui-repeat-item__actions-container"], [3, "ngTemplateOutlet", "ngTemplateOutletContext", 4, "ngFor", "ngForOf", "ngForTrackBy"], [2, "height", "100%", 3, "itemSize"], [4, "cdkVirtualFor", "cdkVirtualForOf", "cdkVirtualForTemplateCacheSize"]],
         template: function RepeatComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵprojectionDef"](_c5);
@@ -62431,6 +62502,8 @@
         if (rf & 2) {
           var ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-label", ctx_r0.ariaLabel);
+
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r0.items);
@@ -62442,6 +62515,7 @@
         function BreadcrumbComponent() {
           _classCallCheck(this, BreadcrumbComponent);
 
+          this.ariaLabel = "Breadcrumb";
           this.navigation = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
         }
 
@@ -62475,18 +62549,25 @@
       BreadcrumbComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: BreadcrumbComponent,
         selectors: [["nui-breadcrumb"]],
+        hostVars: 1,
+        hostBindings: function BreadcrumbComponent_HostBindings(rf, ctx) {
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-label", ctx.ariaLabel);
+          }
+        },
         inputs: {
-          items: "items"
+          items: "items",
+          ariaLabel: "ariaLabel"
         },
         outputs: {
           navigation: "navigation"
         },
         decls: 1,
         vars: 1,
-        consts: [["class", "nui-breadcrumb", 4, "ngIf"], [1, "nui-breadcrumb"], ["class", "nui-breadcrumb__wrapper", 4, "ngFor", "ngForOf"], [1, "nui-breadcrumb__wrapper"], [4, "ngIf"], ["class", "nui-breadcrumb__crumb nui-breadcrumb__crumb-current-level", 4, "ngIf"], [1, "nui-breadcrumb__crumb", "nui-breadcrumb__crumb__link", 3, "click"], ["icon", "caret-right", "iconColor", "disabled-gray", "iconSize", "small", 1, "nui-breadcrumb__caret-icon"], [1, "nui-breadcrumb__crumb", "nui-breadcrumb__crumb-current-level"]],
+        consts: [["class", "nui-breadcrumb", 4, "ngIf"], [1, "nui-breadcrumb"], ["class", "nui-breadcrumb__wrapper", 4, "ngFor", "ngForOf"], [1, "nui-breadcrumb__wrapper"], [4, "ngIf"], ["aria-current", "page", "class", "nui-breadcrumb__crumb nui-breadcrumb__crumb-current-level", 4, "ngIf"], [1, "nui-breadcrumb__crumb", "nui-breadcrumb__crumb__link", 3, "click"], ["icon", "caret-right", "iconColor", "disabled-gray", "iconSize", "small", 1, "nui-breadcrumb__caret-icon"], ["aria-current", "page", 1, "nui-breadcrumb__crumb", "nui-breadcrumb__crumb-current-level"]],
         template: function BreadcrumbComponent_Template(rf, ctx) {
           if (rf & 1) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, BreadcrumbComponent_div_0_Template, 2, 1, "div", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, BreadcrumbComponent_div_0_Template, 2, 2, "div", 0);
           }
 
           if (rf & 2) {

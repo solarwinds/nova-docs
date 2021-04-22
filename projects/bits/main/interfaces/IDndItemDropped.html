@@ -382,6 +382,7 @@ interface IDndItemDropped {
     host: {
         &quot;[class.virtual-scroll-viewport]&quot;: &quot;virtualScroll&quot;,
         &quot;[attr.role]&quot;: &quot;role&quot;,
+        &quot;[attr.aria-multiselectable]&quot;: &quot;selectionMode &#x3D;&#x3D;&#x3D; repeatSelectionMode.multi || null&quot;,
     },
 })
 export class RepeatComponent&lt;T extends IRepeatItem &#x3D; any&gt; implements OnInit, OnDestroy, AfterViewInit, DoCheck, IFilterPub {
