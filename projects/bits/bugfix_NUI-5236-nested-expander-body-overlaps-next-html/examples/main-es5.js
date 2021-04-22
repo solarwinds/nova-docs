@@ -5201,6 +5201,8 @@
             allowStepChange: true
           });
           this.previousStepIndex = 0;
+          this.dynamicSubscriptions = new Map();
+          this.dynamicRefs = new Map();
         }
 
         _createClass(WizardComponent, [{
@@ -5264,14 +5266,56 @@
         }, {
           key: "addStepDynamic",
           value: function addStepDynamic(wizardStep, indexToInsert) {
+            var _this19 = this;
+
+            var _a;
+
             var componentFactory = this.componentFactoryResolver.resolveComponentFactory(_wizard_step_component__WEBPACK_IMPORTED_MODULE_6__["WizardStepComponent"]);
             var componentRef = this.dynamicStep.createComponent(componentFactory);
             var instance = componentRef.instance;
-            instance.title = wizardStep.title;
-            instance.stepTemplate = wizardStep.stepTemplate;
+            var wizardStepInputs = this.getInputsAndOutputs(wizardStep);
+            wizardStepInputs.forEach(function (key) {
+              instance[key] = wizardStep[key];
+            });
+            this.handleStepControl(componentRef.instance);
+            var subscription = (_a = instance.valid) === null || _a === void 0 ? void 0 : _a.subscribe(function (event) {
+              if (!lodash_isUndefined__WEBPACK_IMPORTED_MODULE_3___default()(event)) {
+                instance.stepControl = wizardStep.stepControl;
+
+                _this19.handleStepControl(componentRef.instance);
+              }
+            });
+            this.dynamicRefs.set(instance, componentRef);
+            this.dynamicSubscriptions.set(instance, subscription);
             this.arraySteps.splice(indexToInsert, 0, componentRef.instance);
+            this.steps.reset([]);
             this.steps.reset(this.arraySteps);
             return componentRef.instance;
+          }
+        }, {
+          key: "removeStep",
+          value: function removeStep(index) {
+            var _this20 = this;
+
+            var steps = this.steps.toArray();
+
+            if (index < 1 || index > steps.length - 1) {
+              return;
+            }
+
+            var stepToRemove = steps[index];
+
+            if (this.currentStep === stepToRemove) {
+              this.onBackClick();
+            }
+
+            this.onRemoveDynamic(stepToRemove);
+            this.arraySteps.splice(index, 1);
+            this.steps.reset([]);
+            this.steps.reset(this.arraySteps);
+            this.stepIndex = this.steps.toArray().findIndex(function (s) {
+              return s === _this20.currentStep;
+            });
           }
         }, {
           key: "disableStep",
@@ -5423,6 +5467,15 @@
             });
           }
         }, {
+          key: "getInputsAndOutputs",
+          value: function getInputsAndOutputs(compType) {
+            var inputs = compType.inputsList;
+            var outputs = Object.keys(compType).filter(function (key) {
+              return compType[key] instanceof _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"];
+            });
+            return [].concat(_toConsumableArray(inputs), _toConsumableArray(outputs));
+          }
+        }, {
           key: "handleStepControl",
           value: function handleStepControl(step) {
             if (!lodash_isUndefined__WEBPACK_IMPORTED_MODULE_3___default()(step === null || step === void 0 ? void 0 : step.stepControl)) {
@@ -5440,6 +5493,20 @@
               return title.nativeElement.offsetWidth;
             });
             return Math.round(Math.max.apply(Math, _toConsumableArray(widths)));
+          }
+        }, {
+          key: "onRemoveDynamic",
+          value: function onRemoveDynamic(step) {
+            var dynamicSubscription = this.dynamicSubscriptions.get(step);
+            var ref = this.dynamicRefs.get(step);
+
+            if (ref) {
+              ref.destroy();
+            }
+
+            if (dynamicSubscription) {
+              dynamicSubscription.unsubscribe();
+            }
           }
         }]);
 
@@ -5832,11 +5899,11 @@
         _createClass(SelectV2OptionGroupComponent, [{
           key: "ngAfterContentInit",
           value: function ngAfterContentInit() {
-            var _this19 = this;
+            var _this21 = this;
 
             if (this.select.isTypeaheadEnabled) {
               Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["merge"])([this.select.valueChanged, this.select.valueSelected]).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["takeUntil"])(this.onDestroy$)).subscribe(function () {
-                _this19.outfiltered = lodash_every__WEBPACK_IMPORTED_MODULE_1___default()(_this19.options.toArray(), function (option) {
+                _this21.outfiltered = lodash_every__WEBPACK_IMPORTED_MODULE_1___default()(_this21.options.toArray(), function (option) {
                   return option.outfiltered;
                 });
               });
@@ -6470,7 +6537,7 @@
         }, {
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this20 = this;
+            var _this22 = this;
 
             this.initSelectedItem();
             this.initSortDirection();
@@ -6479,7 +6546,7 @@
               direction: this.sortDirection
             };
             this.overlay.clickOutside.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["takeUntil"])(this.onDestroy$)).subscribe(function (_) {
-              return _this20.overlay.hide();
+              return _this22.overlay.hide();
             });
             this.updateOverlayWidth();
           }
@@ -6545,6 +6612,11 @@
             this.overlayConfig.minWidth = this.toggleRef.nativeElement.offsetWidth;
           }
         }, {
+          key: "getAriaLabelForSortingButton",
+          value: function getAriaLabelForSortingButton() {
+            return this.sortDirection === _public_api__WEBPACK_IMPORTED_MODULE_10__["SorterDirection"].descending ? "".concat(this.getSelectedItemTitle(), ". Sorter direction - descending") : "".concat(this.getSelectedItemTitle(), ". Sorter direction - ascending");
+          }
+        }, {
           key: "ngOnDestroy",
           value: function ngOnDestroy() {
             this.onDestroy$.next();
@@ -6567,14 +6639,14 @@
         }, {
           key: "initPopupItems",
           value: function initPopupItems() {
-            var _this21 = this;
+            var _this23 = this;
 
             this.items[0].itemsSource = this.itemsSource.map(function (item) {
               var menuItem = typeof item === "string" ? {
                 title: item,
                 value: item
               } : item;
-              menuItem.isSelected = _this21.selectedItem === menuItem.value;
+              menuItem.isSelected = _this23.selectedItem === menuItem.value;
               return menuItem;
             });
           }
@@ -6588,10 +6660,10 @@
         }, {
           key: "setPopupSelection",
           value: function setPopupSelection() {
-            var _this22 = this;
+            var _this24 = this;
 
             this.items[0].itemsSource.forEach(function (popupItem) {
-              popupItem.isSelected = popupItem.value === _this22.selectedItem;
+              popupItem.isSelected = popupItem.value === _this24.selectedItem;
             });
           }
         }, {
@@ -6649,8 +6721,8 @@
         },
         features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵNgOnChangesFeature"]],
         decls: 14,
-        vars: 7,
-        consts: [["class", "nui-sorter__label", 4, "ngIf"], [1, "btn-group", "nui-sorter__popup"], [1, "d-inline-block"], ["toggleRef", ""], ["nui-button", "", "type", "button", 1, "nui-sorter__toggle-button", 3, "icon", "click"], [1, "nui-sorter__display-value"], ["nui-button", "", "type", "button", "icon", "caret-down", 1, "nui-selector__toggle", 3, "click"], ["popupArea", ""], [3, "toggleReference", "overlayConfig", "customContainer"], ["overlay", ""], [3, "itemsSource", "menuItemClicked"], [1, "nui-sorter__label"]],
+        vars: 8,
+        consts: [["class", "nui-sorter__label", 4, "ngIf"], [1, "btn-group", "nui-sorter__popup"], [1, "d-inline-block"], ["toggleRef", ""], ["nui-button", "", "type", "button", 1, "nui-sorter__toggle-button", 3, "icon", "ariaLabel", "click"], [1, "nui-sorter__display-value"], ["nui-button", "", "type", "button", "ariaLabel", "Open Sorter Menu", "icon", "caret-down", 1, "nui-selector__toggle", 3, "click"], ["popupArea", ""], [3, "toggleReference", "overlayConfig", "customContainer"], ["overlay", ""], [3, "itemsSource", "menuItemClicked"], [1, "nui-sorter__label"]],
         template: function SorterComponent_Template(rf, ctx) {
           if (rf & 1) {
             var _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
@@ -6719,7 +6791,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("icon", ctx.getSortIcon());
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("icon", ctx.getSortIcon())("ariaLabel", ctx.getAriaLabelForSortingButton());
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
@@ -6910,6 +6982,12 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.spinnerComponent = _t.first);
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.progressComponent = _t.first);
+          }
+        },
+        hostVars: 1,
+        hostBindings: function BusyComponent_HostBindings(rf, ctx) {
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-busy", ctx.busy);
           }
         },
         inputs: {
@@ -8493,7 +8571,7 @@
         }, {
           key: "addItem",
           value: function addItem(item, isDisabled) {
-            var _this23 = this;
+            var _this25 = this;
 
             this.itemsList.push({
               iconName: item.iconName,
@@ -8502,7 +8580,7 @@
               style: isDisabled ? this.disabledClass : "",
               action: function action() {
                 if (item.page) {
-                  _this23.goToPage(item.page);
+                  _this25.goToPage(item.page);
                 }
 
                 return false;
@@ -8603,7 +8681,7 @@
             i18n_1 = $localize(_templateObject11 || (_templateObject11 = _taggedTemplateLiteral([":\u241Fd662abcb49ed274a9ec81f5df13b35acbf4cba87\u241F6035911408728866723:", ":INTERPOLATION: of ", ":START_TAG_SPAN:", ":INTERPOLATION_1:", ":CLOSE_TAG_SPAN:"])), "\uFFFD0\uFFFD", "\uFFFD#7\uFFFD", "\uFFFD1\uFFFD", "\uFFFD/#7\uFFFD");
           }
 
-          return [["class", "nui-paginator", 4, "ngIf"], ["tableRow", ""], [1, "nui-paginator"], [1, "nui-paginator__items"], ["role", "listbox", 1, "nui-paginator__list"], ["role", "option", 3, "title", "ngClass", "value", 4, "ngFor", "ngForOf"], [1, "nui-paginator__options"], [1, "nui-paginator__info"], i18n_1, [1, "nui-paginator__total"], ["ariaLabel", "Items per page", 3, "value", "valueSelected"], [3, "value", 4, "ngFor", "ngForOf"], ["role", "option", 3, "title", "ngClass", "value"], ["nui-button", "", "type", "button", "displayStyle", "action", "class", "move-icon", 3, "disabled", "icon", "click", 4, "ngIf"], ["nui-button", "", "type", "button", "displayStyle", "action", 3, "isEmpty", "click", 4, "ngIf"], [3, "appendToBody", "baseElementSelector", 4, "ngIf"], ["nui-button", "", "type", "button", "displayStyle", "action", 1, "move-icon", 3, "disabled", "icon", "click"], ["nui-button", "", "type", "button", "displayStyle", "action", 3, "isEmpty", "click"], [3, "appendToBody", "baseElementSelector"], ["nui-button", "", "type", "button", "nuiPopupToggle", "", "displayStyle", "action", 1, "nui-paginator__dots", 3, "ngClass", "isEmpty", "click"], ["popupAreaContent", "", 1, "nui-paginator__elipsis-pages"], [1, "nui-paginator__page-table", 3, "ngClass"], [3, "width", "height", "itemSize", "maxBufferPx", "minBufferPx", 4, "ngIf"], [4, "ngIf"], [3, "itemSize", "maxBufferPx", "minBufferPx"], [4, "cdkVirtualFor", "cdkVirtualForOf"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"], [3, "ngTemplateOutlet", "ngTemplateOutletContext", 4, "ngFor", "ngForOf"], [3, "value"], [3, "ngClass"], ["class", "nui-paginator__page-cell", 4, "ngFor", "ngForOf"], [1, "nui-paginator__page-cell"], ["nui-button", "", "type", "button", "displayStyle", "action", 3, "click"]];
+          return [["class", "nui-paginator", 4, "ngIf"], ["tableRow", ""], [1, "nui-paginator"], [1, "nui-paginator__items"], ["role", "listbox", 1, "nui-paginator__list"], ["role", "option", 3, "title", "ngClass", "value", 4, "ngFor", "ngForOf"], [1, "nui-paginator__options"], [1, "nui-paginator__info"], i18n_1, [1, "nui-paginator__total"], ["ariaLabel", "Items per page", 3, "value", "valueSelected"], [3, "value", 4, "ngFor", "ngForOf"], ["role", "option", 3, "title", "ngClass", "value"], ["nui-button", "", "type", "button", "displayStyle", "action", "class", "move-icon", 3, "disabled", "icon", "click", 4, "ngIf"], ["nui-button", "", "type", "button", "displayStyle", "action", 3, "isEmpty", "click", 4, "ngIf"], [3, "appendToBody", "baseElementSelector", 4, "ngIf"], ["nui-button", "", "type", "button", "displayStyle", "action", 1, "move-icon", 3, "disabled", "icon", "click"], ["nui-button", "", "type", "button", "displayStyle", "action", 3, "isEmpty", "click"], [3, "appendToBody", "baseElementSelector"], ["nui-button", "", "type", "button", "nuiPopupToggle", "", "displayStyle", "action", "aria-haspopup", "true", 1, "nui-paginator__dots", 3, "ngClass", "isEmpty", "click"], ["popupAreaContent", "", 1, "nui-paginator__elipsis-pages"], [1, "nui-paginator__page-table", 3, "ngClass"], [3, "width", "height", "itemSize", "maxBufferPx", "minBufferPx", 4, "ngIf"], [4, "ngIf"], [3, "itemSize", "maxBufferPx", "minBufferPx"], [4, "cdkVirtualFor", "cdkVirtualForOf"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"], [3, "ngTemplateOutlet", "ngTemplateOutletContext", 4, "ngFor", "ngForOf"], [3, "value"], [3, "ngClass"], ["class", "nui-paginator__page-cell", 4, "ngFor", "ngForOf"], [1, "nui-paginator__page-cell"], ["nui-button", "", "type", "button", "displayStyle", "action", 3, "click"]];
         },
         template: function PaginatorComponent_Template(rf, ctx) {
           if (rf & 1) {
@@ -9027,11 +9105,11 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this24 = this;
+            var _this26 = this;
 
             if (this.manualControl) {
               this.dismissSubscription = this.manualControl.subscribe(function (shown) {
-                _this24.dismissState = shown ? "initial" : "dismissed";
+                _this26.dismissState = shown ? "initial" : "dismissed";
               });
             }
           }
@@ -9744,37 +9822,37 @@
         }, {
           key: "calculateWidthsOfColumns",
           value: function calculateWidthsOfColumns() {
-            var _this25 = this;
+            var _this27 = this;
 
             // Apply width of 40px for non-resizable columns of type "icon"
             this.state.columns.filter(function (columnName) {
-              var columnIndex = _this25.state.columns.indexOf(columnName);
+              var columnIndex = _this27.state.columns.indexOf(columnName);
 
-              return _this25.state.columnsTypes[columnIndex] === "icon";
+              return _this27.state.columnsTypes[columnIndex] === "icon";
             }).forEach(function (column) {
-              _this25.state.columnsWidths[column] = {
+              _this27.state.columnsWidths[column] = {
                 width: ICON_CELL_WIDTH_PX
               };
             }); // "selectable" adding one more column with 75px width which is not in the "this.state.columns", so we need take it to the consideration
 
             var accumulator = this.resizable && this.selectable ? SELECTABLE_CELL_WIDTH_PX : 0;
             var userColumnsWidths = this.state.columns.filter(function (columnName) {
-              return _this25.state.columnsWidths[columnName];
+              return _this27.state.columnsWidths[columnName];
             }).reduce(function (total, curr) {
-              return total + _this25.state.columnsWidths[curr].width;
+              return total + _this27.state.columnsWidths[curr].width;
             }, accumulator);
             var widthConsideringUserInputs = userColumnsWidths > this.tableParentWidth ? 0 : this.tableParentWidth - userColumnsWidths - 1;
             var columnsToCalculateWidth = this.state.columns.filter(function (columnName) {
-              return !_this25.state.columnsWidths[columnName];
+              return !_this27.state.columnsWidths[columnName];
             }).length;
             var calculatedWidth = Math.floor(widthConsideringUserInputs / columnsToCalculateWidth);
             var widthOfColumn = calculatedWidth > MIN_COLUMN_WIDTH_PX ? calculatedWidth : MIN_COLUMN_WIDTH_PX;
             this.state.columns.filter(function (columnName) {
-              return !_this25.state.columnsWidths[columnName];
+              return !_this27.state.columnsWidths[columnName];
             }).forEach(function (column) {
               // There is a case when sum of columns can exceed width of parent
               // Then width of other columns should be set to min width
-              _this25.state.columnsWidths[column] = {
+              _this27.state.columnsWidths[column] = {
                 width: widthOfColumn
               };
             });
@@ -9890,16 +9968,16 @@
         }, {
           key: "emitDraggedOverCell",
           value: function emitDraggedOverCell() {
-            var _this26 = this;
+            var _this28 = this;
 
             this.zone.run(function () {
-              if (_this26.dragCellIndex !== _this26.draggedOverCellIndex && _this26.dragCellIndex !== _this26.newCellIndex) {
-                _this26.draggedOverCell.next({
-                  cellIndex: _this26.draggedOverCellIndex,
-                  dropAlignment: _this26.getDropCellAlignment()
+              if (_this28.dragCellIndex !== _this28.draggedOverCellIndex && _this28.dragCellIndex !== _this28.newCellIndex) {
+                _this28.draggedOverCell.next({
+                  cellIndex: _this28.draggedOverCellIndex,
+                  dropAlignment: _this28.getDropCellAlignment()
                 });
               } else {
-                _this26.draggedOverCell.next(undefined);
+                _this28.draggedOverCell.next(undefined);
               }
             });
           }
@@ -9966,10 +10044,10 @@
         }, {
           key: "getSelectedItems",
           value: function getSelectedItems() {
-            var _this27 = this;
+            var _this29 = this;
 
             var trackedItems = this.dataSource.map(function (d) {
-              return _this27.trackBy(d === null || d === void 0 ? void 0 : d.id, d);
+              return _this29.trackBy(d === null || d === void 0 ? void 0 : d.id, d);
             });
             return this.selectorService.getSelectedItems(this.selection, trackedItems);
           }
@@ -10294,7 +10372,6 @@
       SwitchComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: SwitchComponent,
         selectors: [["nui-switch"]],
-        hostAttrs: ["role", "switch"],
         inputs: {
           value: "value",
           disabled: "disabled",
@@ -10318,8 +10395,8 @@
         }])],
         ngContentSelectors: _c0,
         decls: 10,
-        vars: 7,
-        consts: [[1, "nui-switch"], [1, "nui-switch__container"], [1, "nui-switch__bar", 3, "tabindex", "click", "keyup.enter", "keyup.space"], [1, "nui-switch__on"], ["aria-hidden", "true", "viewBox", "0 0 7.1 6.7", 1, "nui-switch__svg"], ["points", "0.6,2.9 3.2,4.8 7.2,1.0 ", 1, "nui-switch__icon-on"], [1, "nui-switch__thumb"], [1, "nui-switch__label"]],
+        vars: 8,
+        consts: [[1, "nui-switch"], [1, "nui-switch__container"], ["role", "checkbox", 1, "nui-switch__bar", 3, "tabindex", "click", "keyup.enter", "keyup.space"], [1, "nui-switch__on"], ["aria-hidden", "true", "viewBox", "0 0 7.1 6.7", 1, "nui-switch__svg"], ["points", "0.6,2.9 3.2,4.8 7.2,1.0 ", 1, "nui-switch__icon-on"], [1, "nui-switch__thumb"], [1, "nui-switch__label"]],
         template: function SwitchComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"]();
@@ -10384,7 +10461,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("tabindex", ctx.disabled ? -1 : 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-label", ctx.ariaLabel);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-checked", ctx.value)("aria-label", ctx.ariaLabel);
           }
         },
         styles: ["[_nghost-%COMP%]   .nui-switch[_ngcontent-%COMP%] {\n  -webkit-user-select: none;\n  \n  -moz-user-select: none;\n  \n  -ms-user-select: none;\n  \n  \n  -o-user-select: none;\n  user-select: none;\n}\n[_nghost-%COMP%]   .nui-switch[disabled=true][_ngcontent-%COMP%] {\n  cursor: default;\n  pointer-events: none;\n  opacity: 0.4;\n  filter: alpha(opacity=40);\n}\n[_nghost-%COMP%]   .nui-switch[_ngcontent-%COMP%]:focus {\n  outline: none;\n}\n[_nghost-%COMP%]   .nui-switch.nui-switched[_ngcontent-%COMP%]   .nui-switch__bar[_ngcontent-%COMP%] {\n  background-color: var(--nui-color-on,#00a753);\n}\n[_nghost-%COMP%]   .nui-switch.nui-switched[_ngcontent-%COMP%]   .nui-switch__thumb[_ngcontent-%COMP%] {\n  transform: translateX(20px);\n}\n[_nghost-%COMP%]   .nui-switch__container[_ngcontent-%COMP%] {\n  display: inline-block;\n}\n[_nghost-%COMP%]   .nui-switch__label[_ngcontent-%COMP%] {\n  margin: 0 0 0 10px;\n}\n[_nghost-%COMP%]   .nui-switch__bar[_ngcontent-%COMP%] {\n  cursor: pointer;\n  height: 20px;\n  width: 40px;\n  border-radius: 10px;\n  background-color: var(--nui-color-off,#4d4d4d);\n  position: relative;\n  float: left;\n  transition: background-color ease 0.3s;\n}\n[_nghost-%COMP%]   .nui-switch__bar[_ngcontent-%COMP%]:focus {\n  outline: none;\n  z-index: 500;\n  box-shadow: 0 0 0 2px rgba(0, 196, 210, 0.5);\n}\n[_nghost-%COMP%]   .nui-switch__on[_ngcontent-%COMP%], [_nghost-%COMP%]   .nui-switch__off[_ngcontent-%COMP%], [_nghost-%COMP%]   .nui-switch__thumb[_ngcontent-%COMP%] {\n  width: 14px;\n  height: 14px;\n  text-align: center;\n  position: relative;\n  top: 3px;\n}\n[_nghost-%COMP%]   .nui-switch__thumb[_ngcontent-%COMP%] {\n  width: 14px;\n  height: 14px;\n  border-radius: 10px;\n  background-color: var(--nui-color-bg-light,#fff);\n  position: absolute;\n  left: 3px;\n  top: 3px;\n  transition: transform ease 0.3s;\n}\n[_nghost-%COMP%]   .nui-switch__svg[_ngcontent-%COMP%] {\n  width: 10px;\n  height: 10px;\n  display: block;\n  margin: 1px 6px;\n}\n[_nghost-%COMP%]   .nui-switch__icon-on[_ngcontent-%COMP%] {\n  fill: none;\n  stroke: var(--nui-color-line-inverse,#fff);\n  stroke-width: 1;\n  stroke-miterlimit: 10;\n}\n[_nghost-%COMP%]   .nui-switch__icon-off[_ngcontent-%COMP%] {\n  fill: none;\n  stroke: var(--nui-color-line-inverse,#fff);\n  stroke-width: 1;\n  stroke-miterlimit: 10;\n}\n[_nghost-%COMP%]   .nui-switch__icon-thumb[_ngcontent-%COMP%] {\n  fill: none;\n  stroke: var(--nui-color-line-default,#d9d9d9);\n  stroke-miterlimit: 10;\n}\n[_nghost-%COMP%]   .nui-switch__label[_ngcontent-%COMP%]:focus {\n  outline: none;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInN3aXRjaC5jb21wb25lbnQubGVzcyIsIi4uLy4uL3N0eWxlcy9taXhpbnMvbm8tc2VsZWN0Lmxlc3MiLCIuLi8uLi9zdHlsZXMvbWl4aW5zL29wYWNpdHkubGVzcyIsIi4uLy4uL3N0eWxlcy9taXhpbnMvY3NzLXZhcmlhYmxlcy5sZXNzIiwiLi4vLi4vc3R5bGVzL21peGlucy9mb2N1cy5sZXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQU1JO0VDTEYseUJBQUE7RURDQSw0QkFBNEI7RUNBNUIsc0JBQUE7RURFQSxnQkFBZ0I7RUNEaEIscUJBQUE7RURHQSxXQUFXO0VBQ1gsOENBQThDO0VDRDlDLG9CQUFBO0VBQ0EsaUJBQUE7QURHRjtBQURRO0VBQ0ksZUFBQTtFQUNBLG9CQUFBO0VFUlYsWUFBQTtFQUdBLHlCQUFBO0FGVUY7QUFEUTtFQUNJLGFBQUE7QUFHWjtBQUFRO0VHZEosNkNBQUE7QUhpQko7QUFIUTtFQUtRLDJCQUFBO0FBQ2hCO0FBR1E7RUFDSSxxQkFBQTtBQURaO0FBSVE7RUFDSSxrQkFBQTtBQUZaO0FBS1E7RUFDSSxlQUFBO0VBQ0EsWUFBQTtFQUNBLFdBQUE7RUFDQSxtQkFBQTtFR25DUiw4Q0FBQTtFSHFDUSxrQkFBQTtFQUNBLFdBQUE7RUFDQSxzQ0FBQTtBQUhaO0FBS1k7RUk3Q1IsYUFBQTtFQUNBLFlBQUE7RUFLQSw0Q0FBQTtBSnVDSjtBQUtROzs7RUFDSSxXQUFBO0VBQ0EsWUFBQTtFQUNBLGtCQUFBO0VBQ0Esa0JBQUE7RUFDQSxRQUFBO0FBRFo7QUFJUTtFQUNJLFdBQUE7RUFDQSxZQUFBO0VBQ0EsbUJBQUE7RUd6RFIsZ0RBQUE7RUgyRFEsa0JBQUE7RUFDQSxTQUFBO0VBQ0EsUUFBQTtFQUNBLCtCQUFBO0FBRlo7QUFLUTtFQUNJLFdBQUE7RUFDQSxZQUFBO0VBQ0EsY0FBQTtFQUNBLGVBQUE7QUFIWjtBQU1RO0VBQ0ksVUFBQTtFR3pFUiwwQ0FBQTtFSDJFUSxlQUFBO0VBQ0EscUJBQUE7QUFKWjtBQU9RO0VBQ0ksVUFBQTtFR2hGUiwwQ0FBQTtFSGtGUSxlQUFBO0VBQ0EscUJBQUE7QUFMWjtBQVFRO0VBQ0ksVUFBQTtFR3ZGUiw2Q0FBQTtFSHlGUSxxQkFBQTtBQU5aO0FBU1E7RUFDSSxhQUFBO0FBUFoiLCJmaWxlIjoic3dpdGNoLmNvbXBvbmVudC5sZXNzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCAocmVmZXJlbmNlKSBcIi4uLy4uL3N0eWxlcy9udWktZnJhbWV3b3JrLXZhcmlhYmxlcy5sZXNzXCI7XG5AaW1wb3J0IChyZWZlcmVuY2UpIFwiLi4vLi4vc3R5bGVzL21peGlucy5sZXNzXCI7XG5cbkBudWktc3dpdGNoLW9mZnNldDogM3B4O1xuXG46aG9zdCB7XG4gICAgJiAubnVpLXN3aXRjaCB7XG4gICAgICAgIC5uby1zZWxlY3QoKTtcblxuICAgICAgICAmW2Rpc2FibGVkPXRydWVdIHtcbiAgICAgICAgICAgIGN1cnNvcjogZGVmYXVsdDtcbiAgICAgICAgICAgIHBvaW50ZXItZXZlbnRzOiBub25lOyAvLyBGdXR1cmUtcHJvb2YgZGlzYWJsaW5nIG9mIGNsaWNrc1xuICAgICAgICAgICAgLm9wYWNpdHkoQGRpc2FibGVkLW9wYWNpdHkpO1xuICAgICAgICB9XG5cbiAgICAgICAgJjpmb2N1cyB7XG4gICAgICAgICAgICBvdXRsaW5lOm5vbmU7XG4gICAgICAgIH1cblxuICAgICAgICAmLm51aS1zd2l0Y2hlZCB7XG4gICAgICAgICAgICAubnVpLXN3aXRjaF9fYmFyIHtcbiAgICAgICAgICAgICAgICAuc2V0Q3NzVmFyaWFibGUoYmFja2dyb3VuZC1jb2xvciwgbnVpLWNvbG9yLW9uKTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgICAgIC5udWktc3dpdGNoX190aHVtYiB7XG4gICAgICAgICAgICAgICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVYKEBzd2l0Y2gtdG9nZ2xlLXdpZHRoKTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgfVxuXG4gICAgICAgICZfX2NvbnRhaW5lciB7XG4gICAgICAgICAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gICAgICAgIH1cblxuICAgICAgICAmX19sYWJlbCB7XG4gICAgICAgICAgICBtYXJnaW46IDAgMCAwIEBudWktc3BhY2Utc207XG4gICAgICAgIH1cblxuICAgICAgICAmX19iYXIge1xuICAgICAgICAgICAgY3Vyc29yOiBwb2ludGVyO1xuICAgICAgICAgICAgaGVpZ2h0OiBAc3dpdGNoLWhlaWdodDtcbiAgICAgICAgICAgIHdpZHRoOiBAc3dpdGNoLXdpZHRoO1xuICAgICAgICAgICAgYm9yZGVyLXJhZGl1czogQG51aS1zcGFjZS1zbTtcbiAgICAgICAgICAgIC5zZXRDc3NWYXJpYWJsZShiYWNrZ3JvdW5kLWNvbG9yLCBudWktY29sb3Itb2ZmKTtcbiAgICAgICAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICAgICAgICAgIGZsb2F0OiBsZWZ0O1xuICAgICAgICAgICAgdHJhbnNpdGlvbjogYmFja2dyb3VuZC1jb2xvciBlYXNlIDAuM3M7XG5cbiAgICAgICAgICAgICY6Zm9jdXMge1xuICAgICAgICAgICAgICAgIC5mb2N1cy1vdXRsaW5lKCk7XG4gICAgICAgICAgICB9XG4gICAgICAgIH1cblxuICAgICAgICAmX19vbiwgJl9fb2ZmLCAmX190aHVtYiB7XG4gICAgICAgICAgICB3aWR0aDogQG51aS1saW5lLWhlaWdodC1zbWFsbDtcbiAgICAgICAgICAgIGhlaWdodDogQG51aS1saW5lLWhlaWdodC1zbWFsbDtcbiAgICAgICAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICAgICAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICAgICAgICAgIHRvcDogQG51aS1zd2l0Y2gtb2Zmc2V0O1xuICAgICAgICB9XG5cbiAgICAgICAgJl9fdGh1bWIge1xuICAgICAgICAgICAgd2lkdGg6IEBudWktbGluZS1oZWlnaHQtc21hbGw7XG4gICAgICAgICAgICBoZWlnaHQ6IEBudWktbGluZS1oZWlnaHQtc21hbGw7XG4gICAgICAgICAgICBib3JkZXItcmFkaXVzOiBAbnVpLXNwYWNlLXNtO1xuICAgICAgICAgICAgLnNldENzc1ZhcmlhYmxlKGJhY2tncm91bmQtY29sb3IsIG51aS1jb2xvci1iZy1saWdodCk7XG4gICAgICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgICAgICAgICBsZWZ0OiBAbnVpLXN3aXRjaC1vZmZzZXQ7XG4gICAgICAgICAgICB0b3A6IEBudWktc3dpdGNoLW9mZnNldDtcbiAgICAgICAgICAgIHRyYW5zaXRpb246IHRyYW5zZm9ybSBlYXNlIDAuM3M7XG4gICAgICAgIH1cblxuICAgICAgICAmX19zdmcge1xuICAgICAgICAgICAgd2lkdGg6IEBudWktc3BhY2Utc207XG4gICAgICAgICAgICBoZWlnaHQ6IEBudWktc3BhY2Utc207XG4gICAgICAgICAgICBkaXNwbGF5OiBibG9jaztcbiAgICAgICAgICAgIG1hcmdpbjogMXB4IDZweDtcbiAgICAgICAgfVxuXG4gICAgICAgICZfX2ljb24tb24ge1xuICAgICAgICAgICAgZmlsbDogbm9uZTtcbiAgICAgICAgICAgIC5zZXRDc3NWYXJpYWJsZShzdHJva2UsIG51aS1jb2xvci1saW5lLWludmVyc2UpO1xuICAgICAgICAgICAgc3Ryb2tlLXdpZHRoOiAxO1xuICAgICAgICAgICAgc3Ryb2tlLW1pdGVybGltaXQ6IDEwO1xuICAgICAgICB9XG5cbiAgICAgICAgJl9faWNvbi1vZmYge1xuICAgICAgICAgICAgZmlsbDogbm9uZTtcbiAgICAgICAgICAgIC5zZXRDc3NWYXJpYWJsZShzdHJva2UsIG51aS1jb2xvci1saW5lLWludmVyc2UpO1xuICAgICAgICAgICAgc3Ryb2tlLXdpZHRoOiAxO1xuICAgICAgICAgICAgc3Ryb2tlLW1pdGVybGltaXQ6IDEwO1xuICAgICAgICB9XG5cbiAgICAgICAgJl9faWNvbi10aHVtYiB7XG4gICAgICAgICAgICBmaWxsOiBub25lO1xuICAgICAgICAgICAgLnNldENzc1ZhcmlhYmxlKHN0cm9rZSwgbnVpLWNvbG9yLWxpbmUtZGVmYXVsdCk7XG4gICAgICAgICAgICBzdHJva2UtbWl0ZXJsaW1pdDogMTA7XG4gICAgICAgIH1cblxuICAgICAgICAmX19sYWJlbDpmb2N1c3tcbiAgICAgICAgICAgIG91dGxpbmU6bm9uZTtcbiAgICAgICAgfVxuICAgIH1cbn1cbiIsIi5uby1zZWxlY3QoKSB7XG4gIC13ZWJraXQtdXNlci1zZWxlY3Q6IG5vbmU7ICAvKiBDaHJvbWUgYWxsIC8gU2FmYXJpIGFsbCAqL1xuICAtbW96LXVzZXItc2VsZWN0OiBub25lOyAgICAgLyogRmlyZWZveCBhbGwgKi9cbiAgLW1zLXVzZXItc2VsZWN0OiBub25lOyAgICAgIC8qIElFIDEwKyAqL1xuXG4gIC8qIE5vIHN1cHBvcnQgZm9yIHRoZXNlIHlldCwgdXNlIGF0IG93biByaXNrICovXG4gIC1vLXVzZXItc2VsZWN0OiBub25lO1xuICB1c2VyLXNlbGVjdDogbm9uZTtcbn0iLCIvLyBPcGFjaXR5XG5cbi5vcGFjaXR5KEBvcGFjaXR5KSB7XG4gIG9wYWNpdHk6IEBvcGFjaXR5O1xuICAvLyBJRTggZmlsdGVyXG4gIEBvcGFjaXR5LWllOiAoQG9wYWNpdHkgKiAxMDApO1xuICBmaWx0ZXI6IH5cImFscGhhKG9wYWNpdHk9QHtvcGFjaXR5LWllfSlcIjtcbn1cbiIsIi5zZXRDc3NWYXJpYWJsZShAcHJvcGVydHksIEB2YWx1ZSl7XG4gICAgQGV2YWx1YXRlZCA6IFwiQHt2YWx1ZX1cIjtcbiAgICAvL3RoZSBkb3VibGUgQCBmb3JjZXMgYSBpbmRpcmVjdGlvbiBldmFsdWF0aW9uLCBraW5kYSBsaWtlIGEgcG9pbnRlclxuICAgIEBmYWxsYmFjayA6IEBAZXZhbHVhdGVkO1xuXG4gICAgQHtwcm9wZXJ0eX06IH5cInZhcigtLUB7dmFsdWV9LEB7ZmFsbGJhY2t9KVwiO1xufVxuIiwiLmZvY3VzLW91dGxpbmUtYmFzZSgpIHtcbiAgICBvdXRsaW5lOiBub25lO1xuICAgIHotaW5kZXg6IEB6aW5kZXgtYWN0aXZlO1xufVxuXG4uZm9jdXMtb3V0bGluZSgpIHtcbiAgICAuZm9jdXMtb3V0bGluZS1iYXNlKCk7XG4gICAgYm94LXNoYWRvdzogMCAwIDAgQG51aS1saW5lLW1lZGl1bSBmYWRlKEBudWktY29sb3Itc2VsZWN0ZWQtY29udHJhc3QsIDUwJSk7XG59XG5cbi5mb2N1cy1vdXRsaW5lLWluc2V0KCkge1xuICAgIC5mb2N1cy1vdXRsaW5lLWJhc2UoKTtcbiAgICBib3gtc2hhZG93OiBpbnNldCAwIDAgMCBAbnVpLWxpbmUtbWVkaXVtIGZhZGUoQG51aS1jb2xvci1zZWxlY3RlZC1jb250cmFzdCwgNTAlKTtcbn1cbiJdfQ== */"]
@@ -10482,20 +10559,20 @@
         var _super3 = _createSuper(DataSourceService);
 
         function DataSourceService() {
-          var _this28;
+          var _this30;
 
           _classCallCheck(this, DataSourceService);
 
-          _this28 = _super3.call(this); // in future dataSource in cdk may have some constructor.
+          _this30 = _super3.call(this); // in future dataSource in cdk may have some constructor.
 
-          _this28.dataSubject = new rxjs__WEBPACK_IMPORTED_MODULE_6__["BehaviorSubject"]([]); // in general we do not have data at this point - that's why empty array
+          _this30.dataSubject = new rxjs__WEBPACK_IMPORTED_MODULE_6__["BehaviorSubject"]([]); // in general we do not have data at this point - that's why empty array
 
-          _this28.outputsSubject = new rxjs__WEBPACK_IMPORTED_MODULE_6__["Subject"](); // some empty state
+          _this30.outputsSubject = new rxjs__WEBPACK_IMPORTED_MODULE_6__["Subject"](); // some empty state
 
-          _this28.dataFieldsConfig = {
+          _this30.dataFieldsConfig = {
             dataFields$: new rxjs__WEBPACK_IMPORTED_MODULE_6__["BehaviorSubject"]([])
           };
-          return _this28;
+          return _this30;
         }
 
         _createClass(DataSourceService, [{
@@ -10564,12 +10641,12 @@
         }, {
           key: "getFilters",
           value: function getFilters() {
-            var _this29 = this;
+            var _this31 = this;
 
             var filters = {}; // Merge current filters
 
             lodash_forEach__WEBPACK_IMPORTED_MODULE_3___default()(this._components, function (node, componentName) {
-              filters[componentName] = _this29.getFilter(componentName);
+              filters[componentName] = _this31.getFilter(componentName);
             });
             return filters;
           }
@@ -10659,10 +10736,10 @@
         }, {
           key: "resetFilters",
           value: function resetFilters(filters) {
-            var _this30 = this;
+            var _this32 = this;
 
             lodash_forEach__WEBPACK_IMPORTED_MODULE_3___default()(filters, function (node, key) {
-              var filter = _this30._components[key].componentInstance;
+              var filter = _this32._components[key].componentInstance;
 
               if (filter === null || filter === void 0 ? void 0 : filter.resetFilter) {
                 filter.resetFilter();
@@ -10771,14 +10848,14 @@
         var _super4 = _createSuper(MenuActionComponent);
 
         function MenuActionComponent(group, cd) {
-          var _this31;
+          var _this33;
 
           _classCallCheck(this, MenuActionComponent);
 
-          _this31 = _super4.call(this, group, cd);
-          _this31.group = group;
-          _this31.disabled = false;
-          return _this31;
+          _this33 = _super4.call(this, group, cd);
+          _this33.group = group;
+          _this33.disabled = false;
+          return _this33;
         }
 
         _createClass(MenuActionComponent, [{
@@ -10986,6 +11063,9 @@
           this.type = type;
           this.el = el;
           this.logger = logger;
+          /** Sets aria-label for the component */
+
+          this.ariaLabel = "";
           /**
            * Optionally, set whether to fire a "click" event repeatedly while the button is pressed.
            */
@@ -11080,7 +11160,7 @@
         }, {
           key: "ariaIconLabel",
           get: function get() {
-            return this.icon;
+            return this.ariaLabel || this.getAriaLabel();
           }
         }, {
           key: "ngOnInit",
@@ -11128,6 +11208,12 @@
             };
           }
         }, {
+          key: "getAriaLabel",
+          value: function getAriaLabel() {
+            var innerText = this.contentContainer.element.nativeElement.innerText;
+            return this._isContentEmpty ? this.icon : innerText.trim();
+          }
+        }, {
           key: "setIsContentEmptyValue",
           value: function setIsContentEmptyValue() {
             var innerHTML = this.contentContainer.element.nativeElement.innerHTML;
@@ -11136,15 +11222,15 @@
         }, {
           key: "setupRepeatEvent",
           value: function setupRepeatEvent() {
-            var _this32 = this;
+            var _this34 = this;
 
             var hostElement = this.getHostElement();
             var mouseUp$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["fromEvent"])(hostElement, "mouseup").pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["takeUntil"])(this.ngUnsubscribe));
             var mouseLeave$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["fromEvent"])(hostElement, "mouseleave").pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["takeUntil"])(this.ngUnsubscribe));
             Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["fromEvent"])(hostElement, "mousedown").pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["takeUntil"])(this.ngUnsubscribe), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["filter"])(function () {
-              return _this32.isRepeat;
+              return _this34.isRepeat;
             })).subscribe(function () {
-              var repeatSubscription = Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["timer"])(_constants_button_constants__WEBPACK_IMPORTED_MODULE_3__["buttonConstants"].repeatDelay, _constants_button_constants__WEBPACK_IMPORTED_MODULE_3__["buttonConstants"].repeatInterval).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["takeUntil"])(Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["merge"])(mouseUp$, mouseLeave$, _this32.ngUnsubscribe))).subscribe(function () {
+              var repeatSubscription = Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["timer"])(_constants_button_constants__WEBPACK_IMPORTED_MODULE_3__["buttonConstants"].repeatDelay, _constants_button_constants__WEBPACK_IMPORTED_MODULE_3__["buttonConstants"].repeatInterval).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["takeUntil"])(Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["merge"])(mouseUp$, mouseLeave$, _this34.ngUnsubscribe))).subscribe(function () {
                 if (hostElement.disabled) {
                   repeatSubscription.unsubscribe();
                 } else {
@@ -11181,11 +11267,11 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.contentContainer = _t.first);
           }
         },
-        hostAttrs: ["role", "button", 1, "nui-button", "btn"],
-        hostVars: 21,
+        hostAttrs: [1, "nui-button", "btn"],
+        hostVars: 22,
         hostBindings: function ButtonComponent_HostBindings(rf, ctx) {
           if (rf & 2) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-label", ctx.ariaIconLabel);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-busy", ctx.isBusy || null)("aria-label", ctx.ariaIconLabel);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("btn-lg", ctx.sizeClassLarge)("btn-xs", ctx.sizeClassCompact)("icon-right", ctx.iconRightClass)("icon-left", ctx.iconleftClass)("is-busy", ctx.isBusyClass)("is-empty", ctx.isEmptyClass)("btn-primary", ctx.dispStylePrimClass)("btn-action", ctx.dispStyleActionClass)("btn-destructive", ctx.displayStyleDestructiveClass)("btn-default", ctx.dispStyleDefaultClass);
           }
@@ -11197,6 +11283,7 @@
           iconRight: "iconRight",
           isBusy: "isBusy",
           isEmpty: "isEmpty",
+          ariaLabel: "ariaLabel",
           isRepeat: "isRepeat",
           size: "size"
         },
@@ -11671,7 +11758,7 @@
 
       var ToastDirective = /*#__PURE__*/function () {
         function ToastDirective(elRef, notificationService) {
-          var _this33 = this;
+          var _this35 = this;
 
           _classCallCheck(this, ToastDirective);
 
@@ -11679,35 +11766,35 @@
           this.notificationService = notificationService;
 
           this.onHighlight = function (args) {
-            if (!_this33.elRef) {
+            if (!_this35.elRef) {
               return;
             }
 
             var highlightArgs = args;
             var currentItem = lodash_find__WEBPACK_IMPORTED_MODULE_1___default()(highlightArgs.items, function (item) {
-              return item[highlightArgs.itemIdentificator] === _this33.nuiToast[highlightArgs.itemIdentificator];
+              return item[highlightArgs.itemIdentificator] === _this35.nuiToast[highlightArgs.itemIdentificator];
             });
 
             if (!lodash_isNil__WEBPACK_IMPORTED_MODULE_2___default()(currentItem)) {
               if (highlightArgs.highlightState === _services_notification_args__WEBPACK_IMPORTED_MODULE_3__["SwitchState"].on) {
-                if (_this33.isHighlighted) {
+                if (_this35.isHighlighted) {
                   return;
                 }
 
-                _this33.isHighlighted = true;
-                _this33.status = highlightArgs.status;
+                _this35.isHighlighted = true;
+                _this35.status = highlightArgs.status;
 
-                _this33.elRef.nativeElement.classList.add(_this33.highlightOnClass);
+                _this35.elRef.nativeElement.classList.add(_this35.highlightOnClass);
 
-                _this33.elRef.nativeElement.classList.add(_this33.status);
-              } else if (_this33.isHighlighted) {
-                _this33.elRef.nativeElement.classList.remove(_this33.highlightOnClass);
+                _this35.elRef.nativeElement.classList.add(_this35.status);
+              } else if (_this35.isHighlighted) {
+                _this35.elRef.nativeElement.classList.remove(_this35.highlightOnClass);
 
-                _this33.elRef.nativeElement.classList.remove(_this33.status);
+                _this35.elRef.nativeElement.classList.remove(_this35.status);
 
-                _this33.elRef.nativeElement.classList.add(_this33.highlightFadeOutClass);
+                _this35.elRef.nativeElement.classList.add(_this35.highlightFadeOutClass);
 
-                _this33.isHighlighted = false;
+                _this35.isHighlighted = false;
               }
             }
           };
@@ -11792,7 +11879,19 @@
       /* harmony import */
 
 
-      var _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! @angular/router */
+      "tyNb");
+      /* harmony import */
+
+
+      var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! rxjs/operators */
+      "kU1M");
+      /* harmony import */
+
+
+      var _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @angular/cdk/a11y */
       "u47x");
 
@@ -11805,7 +11904,7 @@
        */
 
       var DialogComponent = /*#__PURE__*/function () {
-        function DialogComponent(document, elRef, renderer, ngZone, scrollDispatcher) {
+        function DialogComponent(document, elRef, renderer, ngZone, scrollDispatcher, router) {
           _classCallCheck(this, DialogComponent);
 
           this.document = document;
@@ -11813,6 +11912,7 @@
           this.renderer = renderer;
           this.ngZone = ngZone;
           this.scrollDispatcher = scrollDispatcher;
+          this.router = router;
           /**
            * Whether a backdrop element should be created for a given dialog (true by default).
            * Alternatively, specify 'static' for a backdrop which doesn't close the dialog on click.
@@ -11876,10 +11976,15 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
+            var _this36 = this;
+
             this.elWithFocus = this.document.activeElement;
             this.renderer.addClass(this.document.body, "dialog-open");
             this.scrollableElement = new _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_0__["CdkScrollable"](this.elRef, this.scrollDispatcher, this.ngZone);
             this.scrollDispatcher.register(this.scrollableElement);
+            this.router.events.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["take"])(1)).subscribe(function () {
+              _this36.dismiss("ROUTE_CHANGED");
+            });
           }
         }, {
           key: "ngAfterViewInit",
@@ -11918,13 +12023,13 @@
       }();
 
       DialogComponent.ɵfac = function DialogComponent_Factory(t) {
-        return new (t || DialogComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_1__["DOCUMENT"]), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_2__["ElementRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_2__["Renderer2"]), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgZone"]), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_0__["ScrollDispatcher"]));
+        return new (t || DialogComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_1__["DOCUMENT"]), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_2__["ElementRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_2__["Renderer2"]), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgZone"]), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_0__["ScrollDispatcher"]), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]));
       };
 
       DialogComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({
         type: DialogComponent,
         selectors: [["nui-dialog-window"]],
-        hostAttrs: ["role", "dialog", "tabindex", "-1"],
+        hostAttrs: ["role", "dialog", "aria-modal", "true", "tabindex", "-1"],
         hostVars: 2,
         hostBindings: function DialogComponent_HostBindings(rf, ctx) {
           if (rf & 1) {
@@ -11977,7 +12082,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵclassMap"]("modal-dialog" + (ctx.size ? " dialog-" + ctx.size : ""));
           }
         },
-        directives: [_angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_3__["CdkTrapFocus"]],
+        directives: [_angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_5__["CdkTrapFocus"]],
         styles: [".nui .dialog-open {\n  overflow: hidden;\n}\n.nui .dialog-open .nui-dialog {\n  overflow-x: hidden;\n  overflow-y: auto;\n}\n.nui .nui-dialog {\n  display: none;\n  overflow: hidden;\n  position: fixed;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  z-index: 1050;\n  pointer-events: auto;\n  -webkit-overflow-scrolling: touch;\n  outline: 0;\n}\n.nui .nui-dialog .modal-dialog {\n  position: relative;\n  width: auto;\n  max-width: 80%;\n  margin: 10px;\n}\n.nui .nui-dialog .modal-dialog .dialog-content {\n  position: relative;\n  background-color: var(--nui-color-bg-content_popover,#fff);\n  box-shadow: 0 0 5px 0 var(--nui-shadow-color, rgba(17, 17, 17, 0.3));\n  background-clip: padding-box;\n  outline: 0;\n  min-width: 400px;\n  word-wrap: break-word;\n}\n.nui .nui-dialog .modal-dialog .dialog-content .dialog-header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 15px;\n  border-bottom: 1px solid;\n  border-bottom-color: var(--nui-color-line-default,#d9d9d9);\n  min-height: 39px;\n  background: none;\n}\n.nui .nui-dialog .modal-dialog .dialog-content .dialog-header .severity-text {\n  display: inline-flex;\n  align-items: center;\n  overflow: hidden;\n}\n.nui .nui-dialog .modal-dialog .dialog-content .dialog-header .severity-text .dialog-title {\n  white-space: nowrap;\n  overflow: hidden;\n  -ms-text-overflow: ellipsis;\n  text-overflow: ellipsis;\n  display: inline-block;\n  margin: 0;\n  padding: 0;\n  line-height: 24px;\n  text-transform: none;\n}\n.nui .nui-dialog .modal-dialog .dialog-content .dialog-header .severity-text .nui-icon {\n  margin-right: 5px;\n}\n.nui .nui-dialog .modal-dialog .dialog-content .dialog-header .btn-group {\n  margin-left: 15px;\n}\n.nui .nui-dialog .modal-dialog .dialog-content .dialog-header.dialog-header-info {\n  border-bottom: 3px solid;\n  border-bottom-color: var(--nui-color-line-info,#1c8eb1);\n}\n.nui .nui-dialog .modal-dialog .dialog-content .dialog-header.dialog-header-warning {\n  border-bottom: 3px solid;\n  border-bottom-color: var(--nui-color-line-warning,#fec405);\n}\n.nui .nui-dialog .modal-dialog .dialog-content .dialog-header.dialog-header-critical {\n  border-bottom: 3px solid;\n  border-bottom-color: var(--nui-color-line-critical,#dd2c00);\n}\n.nui .nui-dialog .modal-dialog .dialog-content .dialog-body {\n  position: relative;\n  padding: 15px;\n}\n.nui .nui-dialog .modal-dialog .dialog-content .dialog-body.compact-mode {\n  padding: 0;\n}\n.nui .nui-dialog .modal-dialog .dialog-content .dialog-body.responsive-mode {\n  overflow: auto;\n  max-height: 71vh;\n}\n.nui .dialog-backdrop {\n  position: fixed;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  z-index: 1040;\n  background-color: var(--nui-color-overlay-modal,rgba(17, 17, 17, 0.5));\n}\n.nui .nui-overlay-container.cdk-overlay-container .dialog-backdrop,\n.nui .nui-overlay-container.cdk-overlay-container .nui-dialog {\n  z-index: 1000;\n}\n@media (min-width: 768px) {\n  .nui .nui-dialog .modal-dialog {\n    width: 600px;\n    margin: 80px auto;\n  }\n  .nui .nui-dialog .modal-dialog .dialog-content {\n    box-shadow: 0 0 5px 0 var(--nui-shadow-color, rgba(17, 17, 17, 0.3));\n  }\n  .nui-dialog .modal-dialog.dialog-sm {\n    width: 400px;\n  }\n}\n@media (min-width: 992px) {\n  .nui-dialog .modal-dialog.dialog-lg {\n    width: 900px;\n  }\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImRpYWxvZy5jb21wb25lbnQubGVzcyIsIi4uLy4uL3N0eWxlcy9taXhpbnMvY3NzLXZhcmlhYmxlcy5sZXNzIiwiLi4vLi4vc3R5bGVzL21peGlucy90ZXh0LW92ZXJmbG93Lmxlc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBTUE7RUFFUSxnQkFBQTtBQU5SO0FBSUE7RUFLWSxrQkFBQTtFQUNBLGdCQUFBO0FBTlo7QUFBQTtFQVdRLGFBQUE7RUFDQSxnQkFBQTtFQUNBLGVBQUE7RUFDQSxNQUFBO0VBQ0EsUUFBQTtFQUNBLFNBQUE7RUFDQSxPQUFBO0VBQ0EsYUFBQTtFQUdBLG9CQUFBO0VBQ0EsaUNBQUE7RUFJQSxVQUFBO0FBYlI7QUFiQTtFQTZCWSxrQkFBQTtFQUNBLFdBQUE7RUFDQSxjQUFBO0VBQ0EsWUFBQTtBQWJaO0FBbkJBO0VBbUNnQixrQkFBQTtFQ3BDWiwwREFBQTtFRHNDWSxvRUFBQTtFQUNBLDRCQUFBO0VBRUEsVUFBQTtFQUNBLGdCQUFBO0VBQ0EscUJBQUE7QUFkaEI7QUE1QkE7RUE4Q29CLGFBQUE7RUFDQSxtQkFBQTtFQUNBLDhCQUFBO0VBQ0EsYUFBQTtFQUNBLHdCQUFBO0VDbkRoQiwwREFBQTtFRHFEZ0IsZ0JBQUE7RUFDQSxnQkFBQTtBQWZwQjtBQXRDQTtFQXVEd0Isb0JBQUE7RUFDQSxtQkFBQTtFQUNBLGdCQUFBO0FBZHhCO0FBM0NBO0VFR0ksbUJBQUE7RUFDQSxnQkFBQTtFQUNBLDJCQUFBO0VBRUEsdUJBQUE7RUZ1RHdCLHFCQUFBO0VBQ0EsU0FBQTtFQUNBLFVBQUE7RUFDQSxpQkFBQTtFQUNBLG9CQUFBO0FBWDVCO0FBdkRBO0VBc0U0QixpQkFBQTtBQVo1QjtBQTFEQTtFQTJFd0IsaUJBQUE7QUFkeEI7QUFpQm9CO0VBQ0ksd0JBQUE7RUNoRnBCLHVEQUFBO0FEa0VKO0FBa0JvQjtFQUNJLHdCQUFBO0VDckZwQiwwREFBQTtBRHNFSjtBQW1Cb0I7RUFDSSx3QkFBQTtFQzFGcEIsMkRBQUE7QUQwRUo7QUF6RUE7RUFpR29CLGtCQUFBO0VBQ0EsYUFBQTtBQXJCcEI7QUFzQm9CO0VBQ0ksVUFBQTtBQXBCeEI7QUFzQm9CO0VBQ0ksY0FBQTtFQUNBLGdCQUFBO0FBcEJ4QjtBQXBGQTtFQWtIUSxlQUFBO0VBQ0EsTUFBQTtFQUNBLFFBQUE7RUFDQSxTQUFBO0VBQ0EsT0FBQTtFQUNBLGFBQUE7RUN4SEosc0VBQUE7QUQ4Rko7QUFpQ1E7O0VBRVEsYUFBQTtBQS9CaEI7QUFxQ0E7RUFFSTtJQUNJLFlBQUE7SUFDQSxpQkFBQTtFQXBDTjtFQWtDRTtJQUtRLG9FQUFBO0VBcENWO0VBeUNFO0lBQXNDLFlBQUE7RUF0Q3hDO0FBQ0Y7QUF3Q0E7RUFDSTtJQUFzQyxZQUFBO0VBckN4QztBQUNGIiwiZmlsZSI6ImRpYWxvZy5jb21wb25lbnQubGVzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgKHJlZmVyZW5jZSkgXCIuLi8uLi9zdHlsZXMvbnVpLWZyYW1ld29yay12YXJpYWJsZXMubGVzc1wiO1xuQGltcG9ydCAocmVmZXJlbmNlKSBcIi4uLy4uL3N0eWxlcy9taXhpbnMubGVzc1wiO1xuXG5Ac2V2ZXJpdHktYm9yZGVyOiAzcHg7XG5AZGlhbG9nLW1heC1oZWlnaHQ6IDcxdmg7XG5cbi5udWkge1xuICAgIC5kaWFsb2ctb3BlbiB7XG4gICAgICAgIG92ZXJmbG93OiBoaWRkZW47XG5cbiAgICAgICAgLm51aS1kaWFsb2cge1xuICAgICAgICAgICAgb3ZlcmZsb3cteDogaGlkZGVuO1xuICAgICAgICAgICAgb3ZlcmZsb3cteTogYXV0bztcbiAgICAgICAgfVxuICAgIH1cblxuICAgIC5udWktZGlhbG9nIHtcbiAgICAgICAgZGlzcGxheTogbm9uZTtcbiAgICAgICAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgICAgICAgcG9zaXRpb246IGZpeGVkO1xuICAgICAgICB0b3A6IDA7XG4gICAgICAgIHJpZ2h0OiAwO1xuICAgICAgICBib3R0b206IDA7XG4gICAgICAgIGxlZnQ6IDA7XG4gICAgICAgIHotaW5kZXg6IEB6aW5kZXgtbW9kYWw7XG4gICAgICAgIC8vIGNkay1vdmVyLWNvbnRhaW5lciBieSBkZWZhdWx0IGRpc2FibGVzIHBvaW50ZXIgZXZlbnRzIGZvciB1bmRlcmx5aW5nIGNoaWxkcmVuXG4gICAgICAgIC8vIGFuZCB3ZSBzdGlsbCB3YW50IG91ciBiYWNrZHJvcCB0byByZWNlaXZlIHRoZW1cbiAgICAgICAgcG9pbnRlci1ldmVudHM6IGF1dG87XG4gICAgICAgIC13ZWJraXQtb3ZlcmZsb3ctc2Nyb2xsaW5nOiB0b3VjaDtcblxuICAgICAgICAvLyBQcmV2ZW50IENocm9tZSBvbiBXaW5kb3dzIGZyb20gYWRkaW5nIGEgZm9jdXMgb3V0bGluZS4gRm9yIGRldGFpbHMsIHNlZVxuICAgICAgICAvLyBodHRwczovL2dpdGh1Yi5jb20vdHdicy9ib290c3RyYXAvcHVsbC8xMDk1MS5cbiAgICAgICAgb3V0bGluZTogMDtcblxuICAgICAgICAubW9kYWwtZGlhbG9nIHtcbiAgICAgICAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICAgICAgICAgIHdpZHRoOiBhdXRvO1xuICAgICAgICAgICAgbWF4LXdpZHRoOiA4MCU7XG4gICAgICAgICAgICBtYXJnaW46IDEwcHg7XG5cbiAgICAgICAgICAgIC5kaWFsb2ctY29udGVudCB7XG4gICAgICAgICAgICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgICAgICAgICAgICAgIC5zZXRDc3NWYXJpYWJsZShiYWNrZ3JvdW5kLWNvbG9yLCBudWktY29sb3ItYmctY29udGVudF9wb3BvdmVyKTtcbiAgICAgICAgICAgICAgICBib3gtc2hhZG93OiBAbnVpLXNoYWRvdy1kZWZhdWx0O1xuICAgICAgICAgICAgICAgIGJhY2tncm91bmQtY2xpcDogcGFkZGluZy1ib3g7XG4gICAgICAgICAgICAgICAgLy8gUmVtb3ZlIGZvY3VzIG91dGxpbmUgZnJvbSBvcGVuZWQgZGlhbG9nXG4gICAgICAgICAgICAgICAgb3V0bGluZTogMDtcbiAgICAgICAgICAgICAgICBtaW4td2lkdGg6IEBjb250ZW50LXNpemUtbGFyZ2U7XG4gICAgICAgICAgICAgICAgd29yZC13cmFwOiBicmVhay13b3JkO1xuICAgICAgICAgICAgICAgIC8vIERpYWxvZyBoZWFkZXJcbiAgICAgICAgICAgICAgICAvLyBUb3Agc2VjdGlvbiBvZiB0aGUgZGlhbG9nIHcvIHRpdGxlIGFuZCBkaXNtaXNzXG4gICAgICAgICAgICAgICAgLmRpYWxvZy1oZWFkZXIge1xuICAgICAgICAgICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICAgICAgICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgICAgICAgICAgICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XG4gICAgICAgICAgICAgICAgICAgIHBhZGRpbmc6IEBudWktc3BhY2UtbWQ7XG4gICAgICAgICAgICAgICAgICAgIGJvcmRlci1ib3R0b206IEBudWktbGluZS1kZWZhdWx0IHNvbGlkO1xuICAgICAgICAgICAgICAgICAgICAuc2V0Q3NzVmFyaWFibGUoYm9yZGVyLWJvdHRvbS1jb2xvciwgbnVpLWNvbG9yLWxpbmUtZGVmYXVsdCk7XG4gICAgICAgICAgICAgICAgICAgIG1pbi1oZWlnaHQ6IChAbnVpLXNwYWNlLW1kICsgQG51aS1saW5lLWhlaWdodC1oZXJvKTtcbiAgICAgICAgICAgICAgICAgICAgYmFja2dyb3VuZDogbm9uZTtcbiAgICAgICAgICAgICAgICAgICAgLnNldmVyaXR5LXRleHQge1xuICAgICAgICAgICAgICAgICAgICAgICAgZGlzcGxheTogaW5saW5lLWZsZXg7XG4gICAgICAgICAgICAgICAgICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgICAgICAgICAgICAgICAgICAgICAgb3ZlcmZsb3c6IGhpZGRlbjtcblxuICAgICAgICAgICAgICAgICAgICAgICAgLy8gVGl0bGUgdGV4dCB3aXRoaW4gaGVhZGVyXG4gICAgICAgICAgICAgICAgICAgICAgICAuZGlhbG9nLXRpdGxlIHtcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAudGV4dC1vdmVyZmxvdyhlbGxpcHNpcyk7XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICAgICAgICAgICAgICAgICAgICAgICAgICAgIG1hcmdpbjogMDtcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICBwYWRkaW5nOiAwO1xuICAgICAgICAgICAgICAgICAgICAgICAgICAgIGxpbmUtaGVpZ2h0OiBAbnVpLWxpbmUtaGVpZ2h0LWhlcm87XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgdGV4dC10cmFuc2Zvcm06IG5vbmU7XG4gICAgICAgICAgICAgICAgICAgICAgICB9XG5cbiAgICAgICAgICAgICAgICAgICAgICAgIC5udWktaWNvbiB7XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgbWFyZ2luLXJpZ2h0OiA1cHg7XG4gICAgICAgICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgICAgICAgICAuYnRuLWdyb3VwIHtcbiAgICAgICAgICAgICAgICAgICAgICAgIG1hcmdpbi1sZWZ0OiAxNXB4O1xuICAgICAgICAgICAgICAgICAgICB9XG5cbiAgICAgICAgICAgICAgICAgICAgJi5kaWFsb2ctaGVhZGVyLWluZm8ge1xuICAgICAgICAgICAgICAgICAgICAgICAgYm9yZGVyLWJvdHRvbTogQHNldmVyaXR5LWJvcmRlciBzb2xpZDtcbiAgICAgICAgICAgICAgICAgICAgICAgIC5zZXRDc3NWYXJpYWJsZShib3JkZXItYm90dG9tLWNvbG9yLCBudWktY29sb3ItbGluZS1pbmZvKTtcbiAgICAgICAgICAgICAgICAgICAgfVxuXG4gICAgICAgICAgICAgICAgICAgICYuZGlhbG9nLWhlYWRlci13YXJuaW5nIHtcbiAgICAgICAgICAgICAgICAgICAgICAgIGJvcmRlci1ib3R0b206IEBzZXZlcml0eS1ib3JkZXIgc29saWQ7XG4gICAgICAgICAgICAgICAgICAgICAgICAuc2V0Q3NzVmFyaWFibGUoYm9yZGVyLWJvdHRvbS1jb2xvciwgbnVpLWNvbG9yLWxpbmUtd2FybmluZyk7XG4gICAgICAgICAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgICAgICAgICAmLmRpYWxvZy1oZWFkZXItY3JpdGljYWwge1xuICAgICAgICAgICAgICAgICAgICAgICAgYm9yZGVyLWJvdHRvbTogQHNldmVyaXR5LWJvcmRlciBzb2xpZDtcbiAgICAgICAgICAgICAgICAgICAgICAgIC5zZXRDc3NWYXJpYWJsZShib3JkZXItYm90dG9tLWNvbG9yLCBudWktY29sb3ItbGluZS1jcml0aWNhbCk7XG4gICAgICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICB9XG5cbiAgICAgICAgICAgICAgICAvLyBEaWFsb2cgYm9keVxuICAgICAgICAgICAgICAgIC8vIFdoZXJlIGFsbCBkaWFsb2cgY29udGVudCByZXNpZGVzIChzaWJsaW5nIG9mIC5kaWFsb2ctaGVhZGVyIGFuZCAuZGlhbG9nLWZvb3RlcilcbiAgICAgICAgICAgICAgICAuZGlhbG9nLWJvZHkge1xuICAgICAgICAgICAgICAgICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgICAgICAgICAgICAgICAgIHBhZGRpbmc6IEBudWktc3BhY2UtbWQ7XG4gICAgICAgICAgICAgICAgICAgICYuY29tcGFjdC1tb2RlIHtcbiAgICAgICAgICAgICAgICAgICAgICAgIHBhZGRpbmc6IDA7XG4gICAgICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICAgICAgJi5yZXNwb25zaXZlLW1vZGUge1xuICAgICAgICAgICAgICAgICAgICAgICAgb3ZlcmZsb3c6IGF1dG87XG4gICAgICAgICAgICAgICAgICAgICAgICBtYXgtaGVpZ2h0OiBAZGlhbG9nLW1heC1oZWlnaHQ7XG4gICAgICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICB9XG5cbiAgICAgICAgICAgIH1cbiAgICAgICAgfVxuICAgIH1cblxuICAgIC8vIERpYWxvZyBiYWNrZ3JvdW5kXG4gICAgLmRpYWxvZy1iYWNrZHJvcCB7XG4gICAgICAgIHBvc2l0aW9uOiBmaXhlZDtcbiAgICAgICAgdG9wOiAwO1xuICAgICAgICByaWdodDogMDtcbiAgICAgICAgYm90dG9tOiAwO1xuICAgICAgICBsZWZ0OiAwO1xuICAgICAgICB6LWluZGV4OiBAemluZGV4LW1vZGFsLWJhY2tncm91bmQ7XG4gICAgICAgIC5zZXRDc3NWYXJpYWJsZShiYWNrZ3JvdW5kLWNvbG9yLCBudWktY29sb3Itb3ZlcmxheS1tb2RhbCk7XG4gICAgfVxuXG4gICAgLy8gVGhpcyB6LWluZGV4IG92ZXJyaWRlIG1ha2VzIG51aS1kaWFsb2cgd29yayBwcm9wZXJseSB3b3RoIG92ZXJsYXktYmFzZWQgY29tcG9uZW50cyxcbiAgICAvLyBpbiBjYXNlIHVzZXIgaGFzIHNldCAndXNlT3ZlcmxheScgb3B0aW9uICB0byAndHJ1ZSdcbiAgICAubnVpLW92ZXJsYXktY29udGFpbmVyIHtcbiAgICAgICAgJi5jZGstb3ZlcmxheS1jb250YWluZXIge1xuICAgICAgICAgICAgLmRpYWxvZy1iYWNrZHJvcCwgLm51aS1kaWFsb2cge1xuICAgICAgICAgICAgICAgIHotaW5kZXg6IDEwMDA7XG4gICAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICB9XG59XG5cbkBtZWRpYSAobWluLXdpZHRoOiBAc2NyZWVuLXNtLW1pbikge1xuICAgIC8vIEF1dG9tYXRpY2FsbHkgc2V0IGRpYWxvZydzIHdpZHRoIGZvciBsYXJnZXIgdmlld3BvcnRzXG4gICAgLm51aSAubnVpLWRpYWxvZyAubW9kYWwtZGlhbG9nIHtcbiAgICAgICAgd2lkdGg6IEBkaWFsb2ctbWQ7XG4gICAgICAgIG1hcmdpbjogQGRpYWxvZy1jb250ZW50LW1hcmdpbiBhdXRvO1xuXG4gICAgICAgIC5kaWFsb2ctY29udGVudCB7XG4gICAgICAgICAgICBib3gtc2hhZG93OiBAbnVpLXNoYWRvdy1kZWZhdWx0O1xuICAgICAgICB9XG4gICAgfVxuXG4gICAgLy8gRGlhbG9nIHNpemVzXG4gICAgLm51aS1kaWFsb2cgLm1vZGFsLWRpYWxvZy5kaWFsb2ctc20geyB3aWR0aDogQGRpYWxvZy1zbTsgfVxufVxuXG5AbWVkaWEgKG1pbi13aWR0aDogQHNjcmVlbi1tZC1taW4pIHtcbiAgICAubnVpLWRpYWxvZyAubW9kYWwtZGlhbG9nLmRpYWxvZy1sZyB7IHdpZHRoOiBAZGlhbG9nLWxnOyB9XG59XG4iLCIuc2V0Q3NzVmFyaWFibGUoQHByb3BlcnR5LCBAdmFsdWUpe1xuICAgIEBldmFsdWF0ZWQgOiBcIkB7dmFsdWV9XCI7XG4gICAgLy90aGUgZG91YmxlIEAgZm9yY2VzIGEgaW5kaXJlY3Rpb24gZXZhbHVhdGlvbiwga2luZGEgbGlrZSBhIHBvaW50ZXJcbiAgICBAZmFsbGJhY2sgOiBAQGV2YWx1YXRlZDtcblxuICAgIEB7cHJvcGVydHl9OiB+XCJ2YXIoLS1Ae3ZhbHVlfSxAe2ZhbGxiYWNrfSlcIjtcbn1cbiIsIi8vIFRleHQgb3ZlcmZsb3dcbi8vIFJlcXVpcmVzIGlubGluZS1ibG9jayBvciBibG9jayBmb3IgcHJvcGVyIHN0eWxpbmdcblxuLy8gVE9ETzogUkVNT1ZFIExFR0FDWSBCT09UU1RSQVAgTUlYSU5cbi50ZXh0LW92ZXJmbG93KCkge1xuICAudGV4dC1vdmVyZmxvdygnZWxsaXBzaXMnKTtcbn1cblxuLnRleHQtb3ZlcmZsb3coQG92ZXJmbG93KSB7XG4gICAgd2hpdGUtc3BhY2U6bm93cmFwO1xuICAgIG92ZXJmbG93OmhpZGRlbjtcbiAgICAtbXMtdGV4dC1vdmVyZmxvdzogQG92ZXJmbG93O1xuICAgIC1vLXRleHQtb3ZlcmZsb3c6IEBvdmVyZmxvdztcbiAgICB0ZXh0LW92ZXJmbG93OiBAb3ZlcmZsb3c7XG59XG4iXX0= */"],
         encapsulation: 2
       });
@@ -12525,31 +12630,31 @@
         var _super5 = _createSuper(SelectComponent);
 
         function SelectComponent(utilService, renderer, elRef, logger) {
-          var _this34;
+          var _this37;
 
           _classCallCheck(this, SelectComponent);
 
-          _this34 = _super5.call(this, utilService);
-          _this34.renderer = renderer;
-          _this34.elRef = elRef;
-          _this34.logger = logger;
+          _this37 = _super5.call(this, utilService);
+          _this37.renderer = renderer;
+          _this37.elRef = elRef;
+          _this37.logger = logger;
           /**
            * Input that indicates text which is displayed if "isRemoveValueEnabled" set to true
            */
 
-          _this34.removeValueText = "Unspecified";
+          _this37.removeValueText = "Unspecified";
           /**
            * Callback event that provides split-button behavior and interaction.
            */
 
-          _this34.secondaryAction = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
-          _this34.debouncedBlur = lodash_debounce__WEBPACK_IMPORTED_MODULE_2___default()(function () {
-            _this34.handleBlur();
+          _this37.secondaryAction = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+          _this37.debouncedBlur = lodash_debounce__WEBPACK_IMPORTED_MODULE_2___default()(function () {
+            _this37.handleBlur();
           }, 300);
 
-          _this34.logger.warn("<nui-select> is deprecated as of Nova v11. Please use <nui-select-v2> instead.");
+          _this37.logger.warn("<nui-select> is deprecated as of Nova v11. Please use <nui-select-v2> instead.");
 
-          return _this34;
+          return _this37;
         }
 
         _createClass(SelectComponent, [{
@@ -12565,13 +12670,13 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this35 = this;
+            var _this38 = this;
 
             _get(_getPrototypeOf(SelectComponent.prototype), "ngOnInit", this).call(this);
 
             this.unsubscriber = this.renderer.listen(this.elRef.nativeElement, "focusout", function () {
               // Blur is debounced cause when you click on menu item blur is triggered twice: from textbox and when popup is closed.
-              _this35.debouncedBlur();
+              _this38.debouncedBlur();
             });
           }
         }, {
@@ -13141,13 +13246,13 @@
         _createClass(DayPickerComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this36 = this;
+            var _this39 = this;
 
             this.datePicker.stepDay = {
               months: 1
             };
             this.datePicker.setRefreshViewHandler(function () {
-              var picker = _this36.datePicker;
+              var picker = _this39.datePicker;
               var value = picker.value && picker.value.isValid() ? picker.value.clone() : moment_moment__WEBPACK_IMPORTED_MODULE_0___default()();
               var month = value.month();
               var firstDateOfMonthDayOfWeek = value.clone().set("date", 1).day();
@@ -13155,12 +13260,12 @@
               var numDisplayedFromPreviousMonth = difference > 0 ? 7 - difference : -difference;
               var firstDateOfMonth = numDisplayedFromPreviousMonth > 0 ? value.clone().set("date", -numDisplayedFromPreviousMonth + 1) : value.clone().set("date", 1); // 42 is the number of days on a six-week calendar
 
-              var _days = _this36.getDates(firstDateOfMonth, 42);
+              var _days = _this39.getDates(firstDateOfMonth, 42);
 
               var days = [];
 
               for (var i = 0; i < 42; i++) {
-                var handler = _this36.datePicker.handleTimezone ? moment_moment__WEBPACK_IMPORTED_MODULE_0___default.a.parseZone : moment_moment__WEBPACK_IMPORTED_MODULE_0___default.a;
+                var handler = _this39.datePicker.handleTimezone ? moment_moment__WEBPACK_IMPORTED_MODULE_0___default.a.parseZone : moment_moment__WEBPACK_IMPORTED_MODULE_0___default.a;
 
                 var _dateObject = picker.createDateObject(handler(_days[i].date), picker.formatDay);
 
@@ -13170,17 +13275,17 @@
                 days[i] = _dateObject;
               }
 
-              _this36.labels = [];
+              _this39.labels = [];
 
               for (var j = 0; j < 7; j++) {
-                _this36.labels[j] = {
+                _this39.labels[j] = {
                   abbr: picker.formatDate(days[j].date, picker.formatDayHeader),
                   full: picker.formatDate(days[j].date, "EEEE")
                 };
               }
 
-              _this36.title = picker.formatDate(value, picker.formatDayTitle);
-              _this36.rows = picker.split(days, 7).map(function (row) {
+              _this39.title = picker.formatDate(value, picker.formatDayTitle);
+              _this39.rows = picker.split(days, 7).map(function (row) {
                 return {
                   days: row,
                   isRowVisible: !(picker.onlyCurrentMonth && row[0].secondary && row[6].secondary)
@@ -13189,11 +13294,11 @@
 
               if (picker.showWeeks) {
                 var thursdayIndex = (4 + 7 - picker.startingDay) % 7;
-                var numWeeks = _this36.rows.length;
-                _this36.weekNumbers = [];
+                var numWeeks = _this39.rows.length;
+                _this39.weekNumbers = [];
 
                 for (var curWeek = 0; curWeek < numWeeks; curWeek++) {
-                  _this36.weekNumbers.push(moment_moment__WEBPACK_IMPORTED_MODULE_0___default()(_this36.rows[curWeek].days[thursdayIndex].date).isoWeek());
+                  _this39.weekNumbers.push(moment_moment__WEBPACK_IMPORTED_MODULE_0___default()(_this39.rows[curWeek].days[thursdayIndex].date).isoWeek());
                 }
               }
             }, "day");
@@ -14293,7 +14398,7 @@
 
       var ThemeSwitchService = /*#__PURE__*/function () {
         function ThemeSwitchService(rendererFactory, router, _route, document) {
-          var _this37 = this;
+          var _this40 = this;
 
           _classCallCheck(this, ThemeSwitchService);
 
@@ -14314,23 +14419,23 @@
           this.darkModePreferenceHandler = function (event) {
             var isDarkModeEnabled = typeof event === "boolean" ? event : event.matches;
 
-            var isDarkPrevColorMode = _this37.isDarkModeEnabledSubject.getValue();
+            var isDarkPrevColorMode = _this40.isDarkModeEnabledSubject.getValue();
 
-            var demoContainerElement = _this37.document.children[0];
+            var demoContainerElement = _this40.document.children[0];
             /** Adding class "dark-nova-theme" to html element we make dark mode, otherwise - light mode */
 
-            _this37.renderer[isDarkModeEnabled ? "addClass" : "removeClass"](demoContainerElement, "dark-nova-theme");
+            _this40.renderer[isDarkModeEnabled ? "addClass" : "removeClass"](demoContainerElement, "dark-nova-theme");
             /**
              * Reiniting route in case when theme is switching forced
              * It allows to avoid reiniting route while application is started
              */
 
 
-            if (isDarkPrevColorMode !== null && isDarkPrevColorMode !== isDarkModeEnabled && _this37.withRefreshRoute) {
-              _this37.reInitRoute();
+            if (isDarkPrevColorMode !== null && isDarkPrevColorMode !== isDarkModeEnabled && _this40.withRefreshRoute) {
+              _this40.reInitRoute();
             }
 
-            _this37.isDarkModeEnabledSubject.next(isDarkModeEnabled);
+            _this40.isDarkModeEnabledSubject.next(isDarkModeEnabled);
           };
           /** Getting renderer instance */
 
@@ -14339,7 +14444,7 @@
           this.router.events.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])(function (event) {
             return event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_2__["NavigationEnd"];
           }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function () {
-            var route = _this37._route.root;
+            var route = _this40._route.root;
 
             while (route.firstChild) {
               route = route.firstChild;
@@ -14349,21 +14454,21 @@
           })).subscribe(function (route) {
             var showThemeSwitcher = (route.snapshot.data || {}).showThemeSwitcher;
 
-            _this37.showThemeSwitcherSubject.next(showThemeSwitcher);
+            _this40.showThemeSwitcherSubject.next(showThemeSwitcher);
 
             if (showThemeSwitcher) {
               /** Case when route is changed on the same page (see on breadcrumb component docs page) */
-              if (typeof _this37.isDarkModeEnabledSubject.getValue() === "boolean") {
-                _this37.darkThemePreference = window.matchMedia("(prefers-color-scheme: dark)");
+              if (typeof _this40.isDarkModeEnabledSubject.getValue() === "boolean") {
+                _this40.darkThemePreference = window.matchMedia("(prefers-color-scheme: dark)");
                 return;
               }
 
-              _this37.enableColorSchemePreferenceHandling();
+              _this40.enableColorSchemePreferenceHandling();
             } else {
               /** Reset to light theme */
-              _this37.darkModePreferenceHandler(false);
+              _this40.darkModePreferenceHandler(false);
 
-              _this37.disableColorSchemePreferenceHandling();
+              _this40.disableColorSchemePreferenceHandling();
             }
           });
         }
@@ -14412,7 +14517,7 @@
         }, {
           key: "reInitRoute",
           value: function reInitRoute() {
-            var _this38 = this;
+            var _this41 = this;
 
             /**
              * Logic for refreshing route
@@ -14427,7 +14532,7 @@
 
             this.router.navigated = false;
             this.router.navigate([this.router.url]).then(function () {
-              _this38.router.routeReuseStrategy.shouldReuseRoute = originalShouldReuseRoute;
+              _this41.router.routeReuseStrategy.shouldReuseRoute = originalShouldReuseRoute;
               /** After reiniting route we should restore scroll position */
 
               setTimeout(function () {
@@ -14540,10 +14645,10 @@
         }, {
           key: "ngOnDestroy",
           value: function ngOnDestroy() {
-            var _this39 = this;
+            var _this42 = this;
 
             lodash_each__WEBPACK_IMPORTED_MODULE_0___default()(Object.keys(this.streams), function (key) {
-              _this39.streams[key].complete();
+              _this42.streams[key].complete();
             });
           }
         }, {
@@ -15343,7 +15448,7 @@
 
       var NuiDialogRef = /*#__PURE__*/function () {
         function NuiDialogRef(windowCmptRef, contentRef, backdropCmptRef, beforeDismiss) {
-          var _this40 = this;
+          var _this43 = this;
 
           _classCallCheck(this, NuiDialogRef);
 
@@ -15354,18 +15459,18 @@
           this.closed$ = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
           this.beforeDismissed$ = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
           windowCmptRef === null || windowCmptRef === void 0 ? void 0 : windowCmptRef.instance.dismissEvent.subscribe(function (reason) {
-            _this40.dismiss(reason);
+            _this43.dismiss(reason);
           });
 
           if (windowCmptRef === null || windowCmptRef === void 0 ? void 0 : windowCmptRef.instance.closeEvent) {
             windowCmptRef.instance.closeEvent.subscribe(function (result) {
-              _this40.close(result);
+              _this43.close(result);
             });
           }
 
           this.result = new Promise(function (resolve, reject) {
-            _this40.resolve = resolve;
-            _this40.reject = reject;
+            _this43.resolve = resolve;
+            _this43.reject = reject;
           });
           this.result.then(null, lodash_noop__WEBPACK_IMPORTED_MODULE_1___default.a);
         }
@@ -15853,6 +15958,7 @@
         function SelectorComponent() {
           _classCallCheck(this, SelectorComponent);
 
+          this.ariaLabel = "Selector";
           this.selectionChange = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
           this.checkboxChecked = false;
           this.indeterminate = false;
@@ -15879,12 +15985,12 @@
         }, {
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this41 = this;
+            var _this44 = this;
 
             var debounceTimeValue = 10;
             this.checkbox.valueChange.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["debounceTime"])(debounceTimeValue)).subscribe(this.onCheckboxValueChange.bind(this));
             this.overlay.clickOutside.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["takeUntil"])(this.onDestroy$)).subscribe(function (_) {
-              return _this41.overlay.hide();
+              return _this44.overlay.hide();
             }); // TODO: should change programmatically in scope of NUI-5937
 
             this.checkbox.checkboxLabel.nativeElement.setAttribute("tabindex", "-1");
@@ -15981,19 +16087,26 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.overlay = _t.first);
           }
         },
-        hostAttrs: [1, "nui-selector"],
+        hostAttrs: ["tabindex", "-1", 1, "nui-selector"],
+        hostVars: 1,
+        hostBindings: function SelectorComponent_HostBindings(rf, ctx) {
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-label", ctx.ariaLabel);
+          }
+        },
         inputs: {
           checkboxStatus: "checkboxStatus",
           items: "items",
-          appendToBody: "appendToBody"
+          appendToBody: "appendToBody",
+          ariaLabel: "ariaLabel"
         },
         outputs: {
           selectionChange: "selectionChange"
         },
         features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵNgOnChangesFeature"]],
         decls: 12,
-        vars: 8,
-        consts: [[1, "btn-group"], ["toggleButton", ""], ["nui-button", "", "type", "button", 1, "nui-selector__checkbox-button", 3, "displayStyle", "click"], [1, "nui-selector__checkbox-container"], [3, "checked", "indeterminate"], ["checkbox", ""], ["nui-button", "", "type", "button", "class", "nui-selector__toggle", 3, "displayStyle", "icon", "click", 4, "ngIf"], ["popupArea", ""], [3, "toggleReference", "overlayConfig", "customContainer"], ["overlay", ""], [3, "itemsSource", "menuItemClicked"], ["nui-button", "", "type", "button", 1, "nui-selector__toggle", 3, "displayStyle", "icon", "click"]],
+        vars: 9,
+        consts: [[1, "btn-group"], ["toggleButton", ""], ["nui-button", "", "type", "button", "role", "checkbox", 1, "nui-selector__checkbox-button", 3, "displayStyle", "click"], [1, "nui-selector__checkbox-container"], [3, "checked", "indeterminate"], ["checkbox", ""], ["nui-button", "", "type", "button", "class", "nui-selector__toggle", "ariaLabel", "Open Selector Menu", 3, "displayStyle", "icon", "click", 4, "ngIf"], ["popupArea", ""], [3, "toggleReference", "overlayConfig", "customContainer"], ["overlay", ""], [3, "itemsSource", "menuItemClicked"], ["nui-button", "", "type", "button", "ariaLabel", "Open Selector Menu", 1, "nui-selector__toggle", 3, "displayStyle", "icon", "click"]],
         template: function SelectorComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0, 1);
@@ -16037,6 +16150,8 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("displayStyle", "default");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-checked", ctx.checkboxChecked);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
@@ -16089,14 +16204,14 @@
       "fXoL");
 
       var PlunkerFiles = function PlunkerFiles() {
-        var _this42 = this;
+        var _this45 = this;
 
         _classCallCheck(this, PlunkerFiles);
 
         this.includeCharts = true;
 
         this.getAppFile = function (filePrefix, className, selector) {
-          return "\nimport {\n    Component,\n    MissingTranslationStrategy,\n    NgModule,\n    TRANSLATIONS,\n    TRANSLATIONS_FORMAT\n} from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\nimport { BrowserAnimationsModule } from \"@angular/platform-browser/animations\";\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\nimport { HttpClientModule } from '@angular/common/http';\nimport '@angular/localize';\n\nimport { NuiModule } from '@nova-ui/bits';\n".concat(_this42.includeCharts ? "import { NuiChartsModule } from '@nova-ui/charts';" : "", "\n\nimport { ").concat(className, " } from './").concat(filePrefix, ".example.component';\n\nimport { translations } from './translations';\n\n@Component({\n    selector: 'my-app',\n    template: `\n    <div class=\"p-4\">\n        <h1>{{'").concat(filePrefix, "' | titlecase}} Demo</h1>\n        <div>\n          <").concat(selector, "></").concat(selector, ">\n        </div>\n    </div>`\n})\nexport class App {\n}\n\n@NgModule({\n    imports: [BrowserModule, BrowserAnimationsModule, FormsModule, ReactiveFormsModule, HttpClientModule,\n              NuiModule").concat(_this42.includeCharts ? ", NuiChartsModule" : "", "],\n    declarations: [App, ").concat(className, "],\n    bootstrap: [App],\n    providers: [\n        { provide: TRANSLATIONS_FORMAT, useValue: \"xlf\" },\n        { provide: TRANSLATIONS, useValue: translations },\n    ],\n})\nexport class AppModule {}\n");
+          return "\nimport {\n    Component,\n    MissingTranslationStrategy,\n    NgModule,\n    TRANSLATIONS,\n    TRANSLATIONS_FORMAT\n} from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\nimport { BrowserAnimationsModule } from \"@angular/platform-browser/animations\";\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\nimport { HttpClientModule } from '@angular/common/http';\nimport '@angular/localize';\n\nimport { NuiModule } from '@nova-ui/bits';\n".concat(_this45.includeCharts ? "import { NuiChartsModule } from '@nova-ui/charts';" : "", "\n\nimport { ").concat(className, " } from './").concat(filePrefix, ".example.component';\n\nimport { translations } from './translations';\n\n@Component({\n    selector: 'my-app',\n    template: `\n    <div class=\"p-4\">\n        <h1>{{'").concat(filePrefix, "' | titlecase}} Demo</h1>\n        <div>\n          <").concat(selector, "></").concat(selector, ">\n        </div>\n    </div>`\n})\nexport class App {\n}\n\n@NgModule({\n    imports: [BrowserModule, BrowserAnimationsModule, FormsModule, ReactiveFormsModule, HttpClientModule,\n              NuiModule").concat(_this45.includeCharts ? ", NuiChartsModule" : "", "],\n    declarations: [App, ").concat(className, "],\n    bootstrap: [App],\n    providers: [\n        { provide: TRANSLATIONS_FORMAT, useValue: \"xlf\" },\n        { provide: TRANSLATIONS, useValue: translations },\n    ],\n})\nexport class AppModule {}\n");
         };
 
         this.getSystemjsConfigFile = function (branchName) {
@@ -16108,7 +16223,7 @@
         };
 
         this.getIndexFile = function (branchName) {
-          return "<!DOCTYPE html>\n<html class=\"nui\">\n\n<head>\n    <base href=\".\" />\n    <title>Nova bits demo</title>\n    <link rel=\"stylesheet\" href=\"http://apollo-docs.swdev.local/nova-bits/".concat(branchName, "/dist/bundles/css/styles.css\" />\n    ").concat(_this42.includeCharts ? "<link rel=\"stylesheet\" href=\"http://apollo-docs.swdev.local/nova-charts/".concat(branchName, "/dist/bundles/css/styles.css\" />") : "", "\n    <script src=\"https://unpkg.com/core-js@^2.4.1/client/shim.js\"></script>\n    <script src=\"https://unpkg.com/zone.js@^0.8.25/dist/zone.js\"></script>\n    <script src=\"https://unpkg.com/zone.js@^0.8.25/dist/long-stack-trace-zone.js\"></script>\n    <script src=\"https://unpkg.com/reflect-metadata@^0.1.8/Reflect.js\"></script>\n    <script src=\"https://unpkg.com/systemjs@^0.19.40/dist/system.js\"></script>\n    <script src=\"config.js\"></script>\n    <script>\n        System.import('app').catch(console.error.bind(console));\n    </script>\n</head>\n\n<body>\n<my-app>loading...</my-app>\n</body>\n\n</html>\n");
+          return "<!DOCTYPE html>\n<html class=\"nui\">\n\n<head>\n    <base href=\".\" />\n    <title>Nova bits demo</title>\n    <link rel=\"stylesheet\" href=\"http://apollo-docs.swdev.local/nova-bits/".concat(branchName, "/dist/bundles/css/styles.css\" />\n    ").concat(_this45.includeCharts ? "<link rel=\"stylesheet\" href=\"http://apollo-docs.swdev.local/nova-charts/".concat(branchName, "/dist/bundles/css/styles.css\" />") : "", "\n    <script src=\"https://unpkg.com/core-js@^2.4.1/client/shim.js\"></script>\n    <script src=\"https://unpkg.com/zone.js@^0.8.25/dist/zone.js\"></script>\n    <script src=\"https://unpkg.com/zone.js@^0.8.25/dist/long-stack-trace-zone.js\"></script>\n    <script src=\"https://unpkg.com/reflect-metadata@^0.1.8/Reflect.js\"></script>\n    <script src=\"https://unpkg.com/systemjs@^0.19.40/dist/system.js\"></script>\n    <script src=\"config.js\"></script>\n    <script>\n        System.import('app').catch(console.error.bind(console));\n    </script>\n</head>\n\n<body>\n<my-app>loading...</my-app>\n</body>\n\n</html>\n");
         };
       };
 
@@ -16290,7 +16405,7 @@
          *
          */
         function SearchService(logger, datePipe) {
-          var _this43 = this;
+          var _this46 = this;
 
           _classCallCheck(this, SearchService);
 
@@ -16300,26 +16415,26 @@
           this.search = function (items, properties, searchValue, dateFormat) {
             // TODO: in case of interest, create options as object, put dateFormat in, put caseSensitive in
             if (!lodash_isArray__WEBPACK_IMPORTED_MODULE_2___default()(items)) {
-              _this43.logger.error("nuiSearchService needs items parameter as an Array");
+              _this46.logger.error("nuiSearchService needs items parameter as an Array");
             }
 
             if (!lodash_isArray__WEBPACK_IMPORTED_MODULE_2___default()(properties)) {
-              _this43.logger.error("nuiSearchService needs properties parameter as an Array");
+              _this46.logger.error("nuiSearchService needs properties parameter as an Array");
             }
 
             if (lodash_isEmpty__WEBPACK_IMPORTED_MODULE_4___default()(properties)) {
-              properties = _this43.getSearchableColumns(items);
+              properties = _this46.getSearchableColumns(items);
 
-              _this43.logger.warn("No properties specified to search on, so all of the fields will be used");
+              _this46.logger.warn("No properties specified to search on, so all of the fields will be used");
             }
 
             if (lodash_isUndefined__WEBPACK_IMPORTED_MODULE_7___default()(searchValue)) {
-              _this43.logger.warn("No searchValue specified to search by, the whole list will be the result");
+              _this46.logger.warn("No searchValue specified to search by, the whole list will be the result");
 
               return items;
             }
 
-            return _this43.filterResults(items, properties, searchValue, dateFormat);
+            return _this46.filterResults(items, properties, searchValue, dateFormat);
           };
 
           this.getSearchableColumns = function (items) {
@@ -16350,11 +16465,11 @@
         _createClass(SearchService, [{
           key: "filterResults",
           value: function filterResults(items, properties, searchValue, dateFormat) {
-            var _this44 = this;
+            var _this47 = this;
 
             return items.filter(function (item) {
               if (lodash_isString__WEBPACK_IMPORTED_MODULE_6___default()(item) || lodash_isNumber__WEBPACK_IMPORTED_MODULE_5___default()(item)) {
-                return _this44.filterPredicate(item, searchValue);
+                return _this47.filterPredicate(item, searchValue);
               }
 
               var _iterator2 = _createForOfIteratorHelper(properties),
@@ -16366,14 +16481,14 @@
                   var value = lodash_has__WEBPACK_IMPORTED_MODULE_1___default()(item, prop) ? item[prop] : item;
 
                   if (lodash_isDate__WEBPACK_IMPORTED_MODULE_3___default()(value)) {
-                    value = _this44.transformDate(value, dateFormat);
+                    value = _this47.transformDate(value, dateFormat);
                   }
 
                   if (lodash_isDate__WEBPACK_IMPORTED_MODULE_3___default()(searchValue)) {
-                    searchValue = _this44.transformDate(searchValue, dateFormat);
+                    searchValue = _this47.transformDate(searchValue, dateFormat);
                   }
 
-                  if (value && _this44.filterPredicate(value, searchValue)) {
+                  if (value && _this47.filterPredicate(value, searchValue)) {
                     return true;
                   }
                 }
@@ -16679,7 +16794,7 @@
 
       var ResizeDirective = /*#__PURE__*/function () {
         function ResizeDirective(element) {
-          var _this45 = this;
+          var _this48 = this;
 
           _classCallCheck(this, ResizeDirective);
 
@@ -16730,7 +16845,7 @@
 
 
           this.resizeEmit = function () {
-            _this45.elementResize.emit(true);
+            _this48.elementResize.emit(true);
           };
           /**
            * Removing resize listener from target element
@@ -17020,13 +17135,15 @@
         if (rf & 2) {
           var ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction2"](4, _c1, ctx_r1.isIndeterminate, ctx_r1.compactMode));
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-label", ctx_r1.ariaLabel)("aria-valuenow", ctx_r1.percent || null);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngStyle", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction1"](7, _c2, ctx_r1.percent));
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction2"](6, _c1, ctx_r1.isIndeterminate, ctx_r1.compactMode));
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngStyle", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction1"](9, _c2, ctx_r1.percent));
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
@@ -17087,6 +17204,7 @@
           _classCallCheck(this, ProgressComponent);
 
           this.showProgress = true;
+          this.ariaLabel = "";
           this.cancel = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
           this.isIndeterminate = false;
         }
@@ -17113,7 +17231,6 @@
       ProgressComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: ProgressComponent,
         selectors: [["nui-progress"]],
-        hostAttrs: ["role", "progressbar"],
         inputs: {
           show: "show",
           showProgress: "showProgress",
@@ -17125,6 +17242,7 @@
           helpText: "helpText",
           stacked: "stacked",
           compactMode: "compactMode",
+          ariaLabel: "ariaLabel",
           helpTemplateRef: "helpTemplateRef"
         },
         outputs: {
@@ -17133,14 +17251,14 @@
         features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵNgOnChangesFeature"]],
         decls: 6,
         vars: 5,
-        consts: [[1, "nui-progress"], ["class", "nui-progress__header", 3, "ngClass", 4, "ngIf"], ["class", "nui-progress__container", 4, "ngIf"], ["class", "nui-progress__hint", 3, "nui-progress__hint--stacked", 4, "ngIf"], ["defaultHelpTemplateRef", ""], [1, "nui-progress__header", 3, "ngClass"], [1, "nui-progress__message", "nui-text-label", "nui-progress__header-item"], [1, "nui-progress__container"], [1, "nui-progress__bar", 3, "ngClass"], [1, "nui-progress__bar-value", 3, "ngStyle"], ["class", "nui-progress__number nui-progress__header-item nui-text-small", 4, "ngIf"], ["nui-button", "", "type", "button", "class", "nui-progress__cancel", "icon", "close", "displayStyle", "action", 3, "nuiTooltip", "click", 4, "ngIf"], [1, "nui-progress__number", "nui-progress__header-item", "nui-text-small"], ["nui-button", "", "type", "button", "icon", "close", "displayStyle", "action", 1, "nui-progress__cancel", 3, "nuiTooltip", "click"], [1, "nui-progress__hint"], [3, "ngTemplateOutlet"], [1, "nui-text-small-secondary"]],
+        consts: [[1, "nui-progress"], ["class", "nui-progress__header", 3, "ngClass", 4, "ngIf"], ["class", "nui-progress__container", "role", "progressbar", "aria-valuemin", "0", "aria-valuemax", "100", 4, "ngIf"], ["class", "nui-progress__hint", 3, "nui-progress__hint--stacked", 4, "ngIf"], ["defaultHelpTemplateRef", ""], [1, "nui-progress__header", 3, "ngClass"], [1, "nui-progress__message", "nui-text-label", "nui-progress__header-item"], ["role", "progressbar", "aria-valuemin", "0", "aria-valuemax", "100", 1, "nui-progress__container"], [1, "nui-progress__bar", 3, "ngClass"], [1, "nui-progress__bar-value", 3, "ngStyle"], ["class", "nui-progress__number nui-progress__header-item nui-text-small", 4, "ngIf"], ["nui-button", "", "type", "button", "class", "nui-progress__cancel", "icon", "close", "displayStyle", "action", 3, "nuiTooltip", "click", 4, "ngIf"], [1, "nui-progress__number", "nui-progress__header-item", "nui-text-small"], ["nui-button", "", "type", "button", "icon", "close", "displayStyle", "action", 1, "nui-progress__cancel", 3, "nuiTooltip", "click"], [1, "nui-progress__hint"], [3, "ngTemplateOutlet"], [1, "nui-text-small-secondary"]],
         template: function ProgressComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, ProgressComponent_div_1_Template, 3, 4, "div", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, ProgressComponent_div_2_Template, 5, 9, "div", 2);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, ProgressComponent_div_2_Template, 5, 11, "div", 2);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, ProgressComponent_div_3_Template, 2, 3, "div", 3);
 
@@ -17461,6 +17579,7 @@
           this.confirmText = $localize(_templateObject14 || (_templateObject14 = _taggedTemplateLiteral(["Yes"])));
           this.dismissText = $localize(_templateObject15 || (_templateObject15 = _taggedTemplateLiteral(["No"])));
           this.setFocus = "confirm";
+          this.ariaLabel = "";
         }
 
         _createClass(ConfirmationDialogComponent, [{
@@ -17483,6 +17602,11 @@
           value: function focusButton(buttonType) {
             return this.setFocus === buttonType ? true : false;
           }
+        }, {
+          key: "getAriaLabel",
+          value: function getAriaLabel() {
+            return (this.severity ? "".concat(this.severity, " ").concat(this.title) : this.title) || this.ariaLabel;
+          }
         }]);
 
         return ConfirmationDialogComponent;
@@ -17495,14 +17619,21 @@
       ConfirmationDialogComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: ConfirmationDialogComponent,
         selectors: [["nui-confirmation-dialog-window"]],
-        hostAttrs: ["role", "alertdialog"],
+        hostAttrs: ["role", "dialog"],
+        hostVars: 1,
+        hostBindings: function ConfirmationDialogComponent_HostBindings(rf, ctx) {
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-label", ctx.getAriaLabel());
+          }
+        },
         inputs: {
           title: "title",
           message: "message",
           confirmText: "confirmText",
           dismissText: "dismissText",
           setFocus: "setFocus",
-          severity: "severity"
+          severity: "severity",
+          ariaLabel: "ariaLabel"
         },
         decls: 9,
         vars: 7,
@@ -17758,7 +17889,7 @@
 
       var DroppableDirective = /*#__PURE__*/function () {
         function DroppableDirective(elRef, dragAndDropService) {
-          var _this46 = this;
+          var _this49 = this;
 
           _classCallCheck(this, DroppableDirective);
 
@@ -17771,7 +17902,7 @@
           this.dropSuccess = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
           this.dragElements = [];
           this.dragThrottle = lodash_throttle__WEBPACK_IMPORTED_MODULE_2___default()(function (dragEvent) {
-            _this46.dragOver.emit(dragEvent);
+            _this49.dragOver.emit(dragEvent);
           }, _dragdrop_constants__WEBPACK_IMPORTED_MODULE_4__["scrollConstants"].checkIntervalInMs, {
             trailing: false
           });
@@ -17853,17 +17984,17 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this47 = this;
+            var _this50 = this;
 
             this.onDragStateChangedSubscription = this.dragAndDropService.onDragStateChanged.subscribe(function (item) {
-              if (!lodash_isNil__WEBPACK_IMPORTED_MODULE_1___default()(_this47.dropIndicatorClass) && _this47.validateDrop({
+              if (!lodash_isNil__WEBPACK_IMPORTED_MODULE_1___default()(_this50.dropIndicatorClass) && _this50.validateDrop({
                 data: item.payload,
                 isExternal: false
               })) {
                 if (item.isInProgress) {
-                  _this47.elRef.nativeElement.classList.add(_this47.dropIndicatorClass);
+                  _this50.elRef.nativeElement.classList.add(_this50.dropIndicatorClass);
                 } else {
-                  _this47.elRef.nativeElement.classList.remove(_this47.dropIndicatorClass);
+                  _this50.elRef.nativeElement.classList.remove(_this50.dropIndicatorClass);
                 }
               }
             });
@@ -18291,13 +18422,13 @@
 
         function WizardVerticalComponent(dir, changeDetectorRef, // @breaking-change 8.0.0 `elementRef` and `_document` parameters to become required.
         elementRef, _document) {
-          var _this48;
+          var _this51;
 
           _classCallCheck(this, WizardVerticalComponent);
 
-          _this48 = _super6.call(this, dir, changeDetectorRef, elementRef, _document);
-          _this48._orientation = "vertical";
-          return _this48;
+          _this51 = _super6.call(this, dir, changeDetectorRef, elementRef, _document);
+          _this51._orientation = "vertical";
+          return _this51;
         }
 
         _createClass(WizardVerticalComponent, [{
@@ -18651,7 +18782,7 @@
             return this._message;
           },
           set: function set(value) {
-            var _this49 = this;
+            var _this52 = this;
 
             this._message = value;
 
@@ -18660,7 +18791,7 @@
             this.ngZone.onMicrotaskEmpty.asObservable().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["take"])(1), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["takeUntil"])(this.destroy$)).subscribe(function () {
               var _a, _b;
 
-              (_b = (_a = _this49.overlayComponent) === null || _a === void 0 ? void 0 : _a.getOverlayRef()) === null || _b === void 0 ? void 0 : _b.updatePosition();
+              (_b = (_a = _this52.overlayComponent) === null || _a === void 0 ? void 0 : _a.getOverlayRef()) === null || _b === void 0 ? void 0 : _b.updatePosition();
             });
           }
         }, {
@@ -18682,13 +18813,13 @@
         }, {
           key: "show",
           value: function show() {
-            var _this50 = this;
+            var _this53 = this;
 
             if (this.hiding$.value) {
               this.hiding$.pipe( // open after "hide" in case hide is already in process (animation)
               Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["skip"])(1), // skip behavior subject 1st emit
               Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["take"])(1)).subscribe(function (v) {
-                return _this50._show();
+                return _this53._show();
               });
             } else {
               this._show();
@@ -18711,7 +18842,7 @@
         }, {
           key: "hide",
           value: function hide() {
-            var _this51 = this;
+            var _this54 = this;
 
             this._visibility = false; // Mark for check so if any parent component has set the
             // ChangeDetectionStrategy to OnPush it will be checked anyways
@@ -18720,9 +18851,9 @@
 
             this.hiding$.next(true);
             setTimeout(function () {
-              _this51.overlayComponent.hide();
+              _this54.overlayComponent.hide();
 
-              _this51.hiding$.next(false);
+              _this54.hiding$.next(false);
             }, ANIMATION_DELAY);
           }
           /** Returns an observable that notifies when the tooltip has been hidden from view. */
@@ -18798,17 +18929,17 @@
         }, {
           key: "updatePopupOverlayConfig",
           value: function updatePopupOverlayConfig() {
-            var _this52 = this;
+            var _this55 = this;
 
             var scrollableAncestors = this.scrollDispatcher.getAncestorScrollContainers(this.toggleReference); // Create connected position strategy that listens for scroll events to reposition.
 
             var strategy = this.overlay.position().flexibleConnectedTo(this.toggleReference).withTransformOriginOn(".nui-tooltip").withFlexibleDimensions(false).withViewportMargin(8).withScrollableContainers(scrollableAncestors).withPositions(this.possiblePositions);
             strategy.positionChanges.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["takeUntil"])(this.destroy$)).subscribe(function (change) {
-              if (change.scrollableViewProperties.isOverlayClipped && _this52.isVisible()) {
+              if (change.scrollableViewProperties.isOverlayClipped && _this55.isVisible()) {
                 // After position changes occur and the overlay is clipped by
                 // a parent scrollable then close the tooltip.
-                _this52.ngZone.run(function () {
-                  return _this52.hide();
+                _this55.ngZone.run(function () {
+                  return _this55.hide();
                 });
               }
             });
@@ -18944,7 +19075,7 @@
 
       var SetFocusDirective = /*#__PURE__*/function () {
         function SetFocusDirective(el, document) {
-          var _this53 = this;
+          var _this56 = this;
 
           _classCallCheck(this, SetFocusDirective);
 
@@ -18960,21 +19091,21 @@
           this.focusChange = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
 
           this.onBlur = function () {
-            if (_this53.document.activeElement !== _this53.focusableElement) {
-              if (_this53.nuiSetFocus) {
-                _this53.nuiSetFocus = false;
+            if (_this56.document.activeElement !== _this56.focusableElement) {
+              if (_this56.nuiSetFocus) {
+                _this56.nuiSetFocus = false;
 
-                _this53.focusChange.emit(false);
+                _this56.focusChange.emit(false);
               }
             }
           };
 
           this.onFocus = function () {
-            if (_this53.document.activeElement === _this53.focusableElement) {
-              if (!_this53.nuiSetFocus) {
-                _this53.nuiSetFocus = true;
+            if (_this56.document.activeElement === _this56.focusableElement) {
+              if (!_this56.nuiSetFocus) {
+                _this56.nuiSetFocus = true;
 
-                _this53.focusChange.emit(true);
+                _this56.focusChange.emit(true);
               }
             }
           };
@@ -19378,7 +19509,7 @@
         }, {
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this54 = this;
+            var _this57 = this;
 
             // setting data for key-control service
             this.setKeyboardManagerServiceData(); // initializing key-control manager
@@ -19386,8 +19517,8 @@
             this.keyControlService.initKeyboardManager(); // listening to events for key-control
 
             this.menuKeyControlListeners.push(this.renderer.listen(this.menuToggle.nativeElement, "keydown", function (event) {
-              if (!_this54.popup.popupToggle.disabled) {
-                _this54.keyControlService.handleKeydown(event);
+              if (!_this57.popup.popupToggle.disabled) {
+                _this57.keyControlService.handleKeydown(event);
               }
             })); // opening menu on focusin
             // The FocusMonitor is an injectable service that can be used to listen for changes in the focus state of an element.
@@ -19396,8 +19527,8 @@
 
             this.focusMonitorSubscription = this.focusMonitor.monitor(this.menuToggle.nativeElement).subscribe(function (origin) {
               if (origin === "keyboard") {
-                if (!_this54.popup.popupToggle.disabled) {
-                  _this54.popup.toggleOpened(new FocusEvent("focusin"));
+                if (!_this57.popup.popupToggle.disabled) {
+                  _this57.popup.toggleOpened(new FocusEvent("focusin"));
                 }
               }
             });
@@ -19492,10 +19623,17 @@
           }
         },
         hostAttrs: ["role", "menu", 1, "nui-menu"],
+        hostVars: 1,
+        hostBindings: function MenuComponent_HostBindings(rf, ctx) {
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵattribute"]("aria-label", ctx.title || ctx.ariaLabel);
+          }
+        },
         inputs: {
           widthOfPopup: "widthOfPopup",
           contextClass: "contextClass",
           appendToBody: "appendToBody",
+          ariaLabel: "ariaLabel",
           title: "title",
           size: "size",
           displayStyle: "displayStyle",
@@ -19510,7 +19648,7 @@
         ngContentSelectors: _c1,
         decls: 8,
         vars: 14,
-        consts: [[3, "appendToBody", "width", "contextClass", "opened"], ["nui-button", "", "nuiPopupToggle", "", "type", "button", 1, "menu-button", "no-shadow", 3, "disabled", "displayStyle", "size", "icon", "iconRight", "isEmpty", "blur"], ["menuToggle", ""], ["popupAreaContent", ""], [3, "itemsSource", "size", 4, "ngIf"], [4, "ngIf"], [3, "itemsSource", "size"]],
+        consts: [[3, "appendToBody", "width", "contextClass", "opened"], ["nui-button", "", "nuiPopupToggle", "", "aria-haspopup", "true", "type", "button", 1, "menu-button", "no-shadow", 3, "disabled", "displayStyle", "size", "icon", "iconRight", "isEmpty", "blur"], ["menuToggle", ""], ["popupAreaContent", ""], [3, "itemsSource", "size", 4, "ngIf"], [4, "ngIf"], [3, "itemsSource", "size"]],
         template: function MenuComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojectionDef"]();
@@ -20171,7 +20309,7 @@
         }, {
           key: "initChipsOverflow",
           value: function initChipsOverflow() {
-            var _this55 = this;
+            var _this58 = this;
 
             this.chipsOverflowService.mainCell = this.mainCell;
             this.chipsOverflowService.nuiChips = this.nuiChips;
@@ -20182,9 +20320,9 @@
             this.chipsOverflowService.chipsOverflowed.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeUntil"])(this.destroy$)).subscribe(function (e) {
               var _a, _b;
 
-              _this55.chipsOverflowed.emit(e);
+              _this58.chipsOverflowed.emit(e);
 
-              _this55.isOverflowed = Boolean(((_a = e.groupedItems) === null || _a === void 0 ? void 0 : _a.length) || ((_b = e.flatItems) === null || _b === void 0 ? void 0 : _b.length));
+              _this58.isOverflowed = Boolean(((_a = e.groupedItems) === null || _a === void 0 ? void 0 : _a.length) || ((_b = e.flatItems) === null || _b === void 0 ? void 0 : _b.length));
             });
           }
         }]);
@@ -20476,14 +20614,14 @@
         _createClass(PopupContainerComponent, [{
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this56 = this;
+            var _this59 = this;
 
             var position = this.setPosition(this.elRef.nativeElement, this.hostElement);
             this.zone.onStable.asObservable().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["take"])(1)).subscribe(function () {
               // To be sure, that change detection mechanism was invoked and placement was updated
-              _this56.zone.run(function () {
-                _this56.top = position.top;
-                _this56.left = position.left;
+              _this59.zone.run(function () {
+                _this59.top = position.top;
+                _this59.left = position.left;
               });
             });
           }
@@ -20713,15 +20851,15 @@
         var _super10 = _createSuper(WizardHorizontalComponent);
 
         function WizardHorizontalComponent() {
-          var _this57;
+          var _this60;
 
           _classCallCheck(this, WizardHorizontalComponent);
 
-          _this57 = _super10.apply(this, arguments);
+          _this60 = _super10.apply(this, arguments);
           /** Whether the label should display in bottom or end position. */
 
-          _this57.labelPosition = "end";
-          return _this57;
+          _this60.labelPosition = "end";
+          return _this60;
         }
 
         _createClass(WizardHorizontalComponent, [{
@@ -21400,30 +21538,30 @@
         var _super11 = _createSuper(ComboboxComponent);
 
         function ComboboxComponent(utilService, elRef, renderer, changeDetector, keyControlService, focusMonitor, logger) {
-          var _this58;
+          var _this61;
 
           _classCallCheck(this, ComboboxComponent);
 
-          _this58 = _super11.call(this, utilService);
-          _this58.elRef = elRef;
-          _this58.renderer = renderer;
-          _this58.changeDetector = changeDetector;
-          _this58.keyControlService = keyControlService;
-          _this58.focusMonitor = focusMonitor;
-          _this58.logger = logger;
-          _this58.openControl = new rxjs__WEBPACK_IMPORTED_MODULE_15__["Subject"]();
-          _this58.debouncedBlur = lodash_debounce__WEBPACK_IMPORTED_MODULE_3___default()(function () {
-            _this58.handleBlur();
+          _this61 = _super11.call(this, utilService);
+          _this61.elRef = elRef;
+          _this61.renderer = renderer;
+          _this61.changeDetector = changeDetector;
+          _this61.keyControlService = keyControlService;
+          _this61.focusMonitor = focusMonitor;
+          _this61.logger = logger;
+          _this61.openControl = new rxjs__WEBPACK_IMPORTED_MODULE_15__["Subject"]();
+          _this61.debouncedBlur = lodash_debounce__WEBPACK_IMPORTED_MODULE_3___default()(function () {
+            _this61.handleBlur();
           }, 300);
-          _this58.comboboxEventListeners = []; // Blur is debounced cause when you click on menu item blur is triggered twice: from textbox and when popup is closed.
+          _this61.comboboxEventListeners = []; // Blur is debounced cause when you click on menu item blur is triggered twice: from textbox and when popup is closed.
 
-          _this58.comboboxEventListeners.push(_this58.renderer.listen(_this58.elRef.nativeElement, "focusout", function () {
-            _this58.debouncedBlur();
+          _this61.comboboxEventListeners.push(_this61.renderer.listen(_this61.elRef.nativeElement, "focusout", function () {
+            _this61.debouncedBlur();
           }));
 
-          _this58.logger.warn("<nui-combobox> is deprecated as of Nova v11. Please use <nui-combobox-v2> instead.");
+          _this61.logger.warn("<nui-combobox> is deprecated as of Nova v11. Please use <nui-combobox-v2> instead.");
 
-          return _this58;
+          return _this61;
         }
 
         _createClass(ComboboxComponent, [{
@@ -21474,7 +21612,7 @@
         }, {
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this59 = this;
+            var _this62 = this;
 
             // setting data for key-control service
             this.setKeyboardManagerServiceData(); // initializing key-control manager
@@ -21482,7 +21620,7 @@
             this.keyControlService.initKeyboardManager(); // listening to events for key-control
 
             this.comboboxEventListeners.push(this.renderer.listen(this.elRef.nativeElement, "keydown", function (event) {
-              _this59.keyControlService.handleKeydown(event);
+              _this62.keyControlService.handleKeydown(event);
             })); // listen to focus event to open popup using tab key
             // The FocusMonitor is an injectable service that can be used to listen for changes in the focus state of an element.
             // It's more powerful than just listening for focus or blur events because it tells you how the element was focused
@@ -21492,22 +21630,20 @@
 
             this.focusMonitorSubscription = this.focusMonitor.monitor(this.comboboxToggle.nativeElement, true).subscribe(function (origin) {
               if (origin === "keyboard") {
-                if (!_this59.popup.popupToggle.disabled) {
-                  if (!_this59.isOpened) {
-                    _this59.openControl.next(new FocusEvent("focusin"));
+                if (!_this62.popup.popupToggle.disabled) {
+                  if (!_this62.isOpened) {
+                    _this62.openControl.next(new FocusEvent("focusin"));
                   }
                 }
               }
             }); // when datasource change we need to re-initialize key control stuff
 
             this.itemsChangeSubscription = this.menuItems.changes.subscribe(function (changes) {
-              var activeIndex = _this59.keyControlService.getActiveItemIndex();
+              _this62.keyControlService.initKeyboardManager();
 
-              _this59.keyControlService.initKeyboardManager();
+              _this62.keyControlService.setActiveItem(0);
 
-              _this59.keyControlService.setActiveItem(0);
-
-              _this59.changeDetector.detectChanges();
+              _this62.changeDetector.detectChanges();
             }); // when appendToBody is set width of the popup element should be calculated
             // To get actual value detectChanges() call afterViewInit is needed
 
@@ -23500,20 +23636,20 @@
         }, {
           key: "ngAfterContentInit",
           value: function ngAfterContentInit() {
-            var _this60 = this;
+            var _this63 = this;
 
             if (this.control) {
               Object(rxjs__WEBPACK_IMPORTED_MODULE_4__["merge"])(this.control.valueChanges, this.control.statusChanges, Object(_touched_changes_helper__WEBPACK_IMPORTED_MODULE_7__["extractTouchedChanges"])(this.control)).subscribe(function () {
-                _this60.validationMessages.forEach(function (message) {
-                  if (lodash_isNull__WEBPACK_IMPORTED_MODULE_3___default()(_this60.control.errors)) {
+                _this63.validationMessages.forEach(function (message) {
+                  if (lodash_isNull__WEBPACK_IMPORTED_MODULE_3___default()(_this63.control.errors)) {
                     message.show = false;
                   } else {
-                    message.show = !!_this60.control.errors[message["for"]];
+                    message.show = !!_this63.control.errors[message["for"]];
                   }
                 });
 
-                if (_this60.nuiFormControl) {
-                  _this60.nuiFormControl.isInErrorState = _this60.control.invalid;
+                if (_this63.nuiFormControl) {
+                  _this63.nuiFormControl.isInErrorState = _this63.control.invalid;
                 }
               });
             }
@@ -23521,7 +23657,7 @@
             if (this.nuiFormControl) {
               // using setTimeout to prevent "expression changed after it has been checked" error
               setTimeout(function () {
-                _this60.nuiFormControl.ariaLabel = _this60.caption;
+                _this63.nuiFormControl.ariaLabel = _this63.caption;
               });
             }
           }
@@ -23533,7 +23669,7 @@
         }, {
           key: "hasRequiredField",
           value: function hasRequiredField(abstractControl) {
-            var _this61 = this;
+            var _this64 = this;
 
             if (!abstractControl) {
               return false;
@@ -23555,7 +23691,7 @@
 
             if (abstractControl["controls"]) {
               lodash_forOwn__WEBPACK_IMPORTED_MODULE_2___default()(abstractControl["controls"], function (control) {
-                if (control && _this61.hasRequiredField(control)) {
+                if (control && _this64.hasRequiredField(control)) {
                   return true;
                 }
               });
@@ -23897,13 +24033,13 @@
         var _super12 = _createSuper(TableHeaderRowDefDirective);
 
         function TableHeaderRowDefDirective(template, _differs, tableStateHandlerService) {
-          var _this62;
+          var _this65;
 
           _classCallCheck(this, TableHeaderRowDefDirective);
 
-          _this62 = _super12.call(this, template, _differs);
-          _this62.tableStateHandlerService = tableStateHandlerService;
-          return _this62;
+          _this65 = _super12.call(this, template, _differs);
+          _this65.tableStateHandlerService = tableStateHandlerService;
+          return _this65;
         }
 
         _createClass(TableHeaderRowDefDirective, [{
@@ -23919,14 +24055,14 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this63 = this;
+            var _this66 = this;
 
             this.tableStateHandlerService.tableColumns = lodash_toArray__WEBPACK_IMPORTED_MODULE_3___default()(this.columns);
 
             if (this.tableStateHandlerService.reorderable) {
               // reordering columns when drop is fired on column
               this.tableColumnsSubscription = this.tableStateHandlerService.columnsState.subscribe(function (tableColumns) {
-                _this63.columns = tableColumns;
+                _this66.columns = tableColumns;
               });
             }
           }
@@ -23978,13 +24114,13 @@
         var _super13 = _createSuper(TableRowDefDirective);
 
         function TableRowDefDirective(template, _differs, tableStateHandlerService) {
-          var _this64;
+          var _this67;
 
           _classCallCheck(this, TableRowDefDirective);
 
-          _this64 = _super13.call(this, template, _differs);
-          _this64.tableStateHandlerService = tableStateHandlerService;
-          return _this64;
+          _this67 = _super13.call(this, template, _differs);
+          _this67.tableStateHandlerService = tableStateHandlerService;
+          return _this67;
         }
 
         _createClass(TableRowDefDirective, [{
@@ -24000,14 +24136,14 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this65 = this;
+            var _this68 = this;
 
             this.tableStateHandlerService.tableColumns = lodash_toArray__WEBPACK_IMPORTED_MODULE_3___default()(this.columns);
 
             if (this.tableStateHandlerService.reorderable) {
               // reordering columns when drop is fired on column
               this.tableColumnsSubscription = this.tableStateHandlerService.columnsState.subscribe(function (tableColumns) {
-                _this65.columns = tableColumns;
+                _this68.columns = tableColumns;
               });
             }
           }
@@ -24049,13 +24185,13 @@
         var _super14 = _createSuper(TableFooterRowDefDirective);
 
         function TableFooterRowDefDirective(template, _differs, tableStateHandlerService) {
-          var _this66;
+          var _this69;
 
           _classCallCheck(this, TableFooterRowDefDirective);
 
-          _this66 = _super14.call(this, template, _differs);
-          _this66.tableStateHandlerService = tableStateHandlerService;
-          return _this66;
+          _this69 = _super14.call(this, template, _differs);
+          _this69.tableStateHandlerService = tableStateHandlerService;
+          return _this69;
         }
 
         _createClass(TableFooterRowDefDirective, [{
@@ -24071,14 +24207,14 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this67 = this;
+            var _this70 = this;
 
             this.tableStateHandlerService.tableColumns = lodash_toArray__WEBPACK_IMPORTED_MODULE_3___default()(this.columns);
 
             if (this.tableStateHandlerService.reorderable) {
               // reordering columns when drop is fired on column
               this.tableColumnsSubscription = this.tableStateHandlerService.columnsState.subscribe(function (tableColumns) {
-                _this67.columns = tableColumns;
+                _this70.columns = tableColumns;
               });
             }
           }
@@ -24120,21 +24256,21 @@
         var _super15 = _createSuper(TableHeaderRowComponent);
 
         function TableHeaderRowComponent(tableStateHandlerService, changeDetectorRef) {
-          var _this68;
+          var _this71;
 
           _classCallCheck(this, TableHeaderRowComponent);
 
-          _this68 = _super15.call(this);
-          _this68.tableStateHandlerService = tableStateHandlerService;
-          _this68.changeDetectorRef = changeDetectorRef;
-          _this68.density = "default";
-          _this68.selectorState = {
+          _this71 = _super15.call(this);
+          _this71.tableStateHandlerService = tableStateHandlerService;
+          _this71.changeDetectorRef = changeDetectorRef;
+          _this71.density = "default";
+          _this71.selectorState = {
             checkboxStatus: _selector_public_api__WEBPACK_IMPORTED_MODULE_7__["CheckboxStatus"].Unchecked,
             selectorItems: []
           };
-          _this68.selectable = _this68.tableStateHandlerService.selectable;
-          _this68.onDestroy$ = new rxjs__WEBPACK_IMPORTED_MODULE_4__["Subject"]();
-          return _this68;
+          _this71.selectable = _this71.tableStateHandlerService.selectable;
+          _this71.onDestroy$ = new rxjs__WEBPACK_IMPORTED_MODULE_4__["Subject"]();
+          return _this71;
         }
 
         _createClass(TableHeaderRowComponent, [{
@@ -24160,7 +24296,7 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this69 = this;
+            var _this72 = this;
 
             if (this.tableStateHandlerService.selectable) {
               this.selectorState = this.tableStateHandlerService.getSelectorState();
@@ -24169,17 +24305,17 @@
 
 
             this.dataSourceChangeSubscription = this.tableStateHandlerService.dataSourceChanged.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["takeUntil"])(this.onDestroy$)).subscribe(function () {
-              _this69.updateSelectorState();
+              _this72.updateSelectorState();
             }); // when single row is selected we need to update selector state
             // we also need to detect changes for selector state
 
             this.selectionChangeSubscription = this.tableStateHandlerService.selectionChanged.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["takeUntil"])(this.onDestroy$)).subscribe(function () {
-              _this69.updateSelectorState();
+              _this72.updateSelectorState();
             });
             this.tableStateHandlerService.selectableChanged.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["takeUntil"])(this.onDestroy$)).subscribe(function (selectable) {
-              _this69.selectable = selectable;
+              _this72.selectable = selectable;
 
-              _this69.changeDetectorRef.markForCheck();
+              _this72.changeDetectorRef.markForCheck();
             });
           }
         }, {
@@ -24265,23 +24401,23 @@
         var _super16 = _createSuper(TableRowComponent);
 
         function TableRowComponent(elementRef, tableStateHandlerService, changeDetectorRef) {
-          var _this70;
+          var _this73;
 
           _classCallCheck(this, TableRowComponent);
 
-          _this70 = _super16.call(this);
-          _this70.elementRef = elementRef;
-          _this70.tableStateHandlerService = tableStateHandlerService;
-          _this70.changeDetectorRef = changeDetectorRef;
-          _this70.density = "default";
-          _this70.clickableRow = false;
-          _this70.clickableRowConfig = {
+          _this73 = _super16.call(this);
+          _this73.elementRef = elementRef;
+          _this73.tableStateHandlerService = tableStateHandlerService;
+          _this73.changeDetectorRef = changeDetectorRef;
+          _this73.density = "default";
+          _this73.clickableRow = false;
+          _this73.clickableRowConfig = {
             clickableSelectors: ["nui-row", "tr[nui-row]"],
             ignoredSelectors: _constants_interaction_constants__WEBPACK_IMPORTED_MODULE_6__["DEFAULT_INTERACTIVE_ELEMENTS"]
           };
-          _this70.selectable = _this70.tableStateHandlerService.selectable;
-          _this70.onDestroy$ = new rxjs__WEBPACK_IMPORTED_MODULE_4__["Subject"]();
-          return _this70;
+          _this73.selectable = _this73.tableStateHandlerService.selectable;
+          _this73.onDestroy$ = new rxjs__WEBPACK_IMPORTED_MODULE_4__["Subject"]();
+          return _this73;
         }
 
         _createClass(TableRowComponent, [{
@@ -24307,18 +24443,18 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this71 = this;
+            var _this74 = this;
 
             var rowHeightClass = "nui-table__table-row_height_".concat(this.density.toLowerCase());
             this.elementRef.nativeElement.classList.add(rowHeightClass); // when selection changes we need to detect changes to check check-boxes
 
             this.selectionChangeSubscription = this.tableStateHandlerService.selectionChanged.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["takeUntil"])(this.onDestroy$)).subscribe(function () {
-              _this71.changeDetectorRef.detectChanges();
+              _this74.changeDetectorRef.detectChanges();
             });
             this.tableStateHandlerService.selectableChanged.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["takeUntil"])(this.onDestroy$)).subscribe(function (selectable) {
-              _this71.selectable = selectable;
+              _this74.selectable = selectable;
 
-              _this71.changeDetectorRef.markForCheck();
+              _this74.changeDetectorRef.markForCheck();
             });
           }
         }, {
@@ -24586,17 +24722,17 @@
         var _super18 = _createSuper(ClientSideDataSource);
 
         function ClientSideDataSource(searchService) {
-          var _this72;
+          var _this75;
 
           _classCallCheck(this, ClientSideDataSource);
 
-          _this72 = _super18.call(this);
-          _this72.searchService = searchService;
-          _this72._searchProps = []; // cache used to store our previous fetched results while scrolling
+          _this75 = _super18.call(this);
+          _this75.searchService = searchService;
+          _this75._searchProps = []; // cache used to store our previous fetched results while scrolling
           // and more data is automatically fetched from the backend
 
-          _this72.virtualScrollData = [];
-          return _this72;
+          _this75.virtualScrollData = [];
+          return _this75;
         }
 
         _createClass(ClientSideDataSource, [{
@@ -25210,12 +25346,12 @@
         _createClass(ComboboxV2OptionHighlightDirective, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this73 = this;
+            var _this76 = this;
 
             this.updateHTML(this.combobox.inputValue);
             this.combobox.valueChanged.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeUntil"])(this.destroy$)).subscribe(this.updateHTML.bind(this));
             this.combobox.valueSelected.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeUntil"])(this.destroy$)).subscribe(function () {
-              return _this73.updateHTML();
+              return _this76.updateHTML();
             });
           }
         }, {
@@ -25602,6 +25738,11 @@
 
           this.delay = 0;
           /**
+           * Sets whether the overlay can grow after the initial open via flexible width/height.
+           */
+
+          this.withGrowAfterOpen = false;
+          /**
            * Emits an event upon display of the popover
            */
 
@@ -25663,7 +25804,7 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this74 = this;
+            var _this77 = this;
 
             var _a;
 
@@ -25684,9 +25825,9 @@
 
             if (this.openPopover && this.isTriggerPresent("openPopoverSubject")) {
               this.openPopoverSubscription = this.openPopover.subscribe(function () {
-                _this74.popoverOpenedProgrammatically = true;
+                _this77.popoverOpenedProgrammatically = true;
 
-                _this74.showPopover();
+                _this77.showPopover();
               });
             }
 
@@ -25782,7 +25923,7 @@
         }, {
           key: "onTrigger",
           value: function onTrigger(triggerType) {
-            var _this75 = this;
+            var _this78 = this;
 
             if (this.isTriggerPresent(triggerType)) {
               if (this.delay > 0 && triggerType === "mouseenter" && this.isTriggerPresent("mouseenter")) {
@@ -25791,7 +25932,7 @@
                 }
 
                 this.mouseEnterTimeout = setTimeout(function () {
-                  _this75.activatePopover();
+                  _this78.activatePopover();
                 }, this.delay);
               } else {
                 this.activatePopover();
@@ -25809,13 +25950,13 @@
         }, {
           key: "initializePopover",
           value: function initializePopover() {
-            var _this76 = this;
+            var _this79 = this;
 
             this.popoverModalSubscriptions = [];
             var closePopoverSubscription = Object(rxjs__WEBPACK_IMPORTED_MODULE_5__["merge"])(!this.preventClosing ? this.eventBusService.getStream({
               id: "close-popover"
             }) : rxjs__WEBPACK_IMPORTED_MODULE_5__["EMPTY"], this.closePopover || rxjs__WEBPACK_IMPORTED_MODULE_5__["EMPTY"]).subscribe(function () {
-              _this76.hidePopover();
+              _this79.hidePopover();
             });
 
             if (!this.popover) {
@@ -25835,13 +25976,13 @@
             this.popover.instance.popoverAfterHiddenSubject = this.popoverAfterHiddenSubject;
             this.popover.instance.popoverModalEventSubject = this.popoverModalEventSubject;
             var popoverBeforeHiddenSubscription = this.popoverBeforeHiddenSubject.subscribe(function () {
-              _this76.hidingAnimationInProgress = true;
+              _this79.hidingAnimationInProgress = true;
             });
             var popoverAfterHiddenSubscription = this.popoverAfterHiddenSubject.subscribe(function () {
-              if (_this76.hidingAnimationInProgress) {
-                _this76.cleanUp();
+              if (_this79.hidingAnimationInProgress) {
+                _this79.cleanUp();
 
-                _this76.hidingAnimationInProgress = false;
+                _this79.hidingAnimationInProgress = false;
               }
             });
 
@@ -25851,14 +25992,14 @@
               }).subscribe(function (event) {
                 var _a;
 
-                var popoverModalNativeElement = (_a = _this76.popover) === null || _a === void 0 ? void 0 : _a.instance.elRef.nativeElement;
+                var popoverModalNativeElement = (_a = _this79.popover) === null || _a === void 0 ? void 0 : _a.instance.elRef.nativeElement;
 
                 var eventPath = _services_util_service__WEBPACK_IMPORTED_MODULE_9__["UtilService"].getEventPath(event);
 
                 var clickInsidePopover = lodash_includes__WEBPACK_IMPORTED_MODULE_2___default()(eventPath, popoverModalNativeElement);
 
                 if (!clickInsidePopover) {
-                  _this76.popoverOpenedProgrammatically ? _this76.popoverOpenedProgrammatically = false : _this76.hidePopover();
+                  _this79.popoverOpenedProgrammatically ? _this79.popoverOpenedProgrammatically = false : _this79.hidePopover();
                 }
               });
               this.popoverModalSubscriptions.push(documentClickSubscription);
@@ -25868,19 +26009,19 @@
               switch (reason) {
                 case "backdrop-click":
                 case "outside-click":
-                  if (!_this76.preventClosing) {
-                    _this76.hidePopover();
+                  if (!_this79.preventClosing) {
+                    _this79.hidePopover();
                   }
 
                   break;
 
                 case "mouse-leave":
-                  _this76.mouseLeaveResolver();
+                  _this79.mouseLeaveResolver();
 
                   break;
 
                 case "mouse-enter":
-                  _this76.mouseEnterResolver();
+                  _this79.mouseEnterResolver();
 
                   break;
               }
@@ -25935,17 +26076,17 @@
         }, {
           key: "mouseLeaveResolver",
           value: function mouseLeaveResolver() {
-            var _this77 = this;
+            var _this80 = this;
 
             // if a cursor leaves both popover trigger and popover body - user has popoverConstants.mouseLeaveDelay ms
             // to return cursor to these elements. In case of using hover trigger it helps to ensure that popover won't close
             // when user moves their's cursor from popover trigger to popover body
             if (this.isTriggerPresent("mouseenter")) {
               this.mouseLeaveTimeout = setTimeout(function () {
-                if (_this77.popover) {
-                  _this77.hidePopover();
+                if (_this80.popover) {
+                  _this80.hidePopover();
 
-                  _this77.mouseLeaveTimeout = undefined;
+                  _this80.mouseLeaveTimeout = undefined;
                 }
               }, _constants_popover_constants__WEBPACK_IMPORTED_MODULE_7__["popoverConstants"].mouseLeaveDelay);
 
@@ -25968,13 +26109,13 @@
         }, {
           key: "setPositionStrategy",
           value: function setPositionStrategy(position) {
-            var _this78 = this;
+            var _this81 = this;
 
-            var positionStrategy = this.overlay.position().flexibleConnectedTo(this.host.nativeElement).withPush(false).withViewportMargin(0).withGrowAfterOpen(true).withPositions(this.getPopoverConnectedPosition(position));
+            var positionStrategy = this.overlay.position().flexibleConnectedTo(this.host.nativeElement).withPush(false).withViewportMargin(0).withGrowAfterOpen(this.withGrowAfterOpen).withPositions(this.getPopoverConnectedPosition(position));
             var subscription = positionStrategy.positionChanges.subscribe(function (connectedPosition) {
-              var overlayRefElement = _this78.overlayComponent.getOverlayRef().overlayElement;
+              var overlayRefElement = _this81.overlayComponent.getOverlayRef().overlayElement;
 
-              var elRefHeight = _this78.host.nativeElement.getBoundingClientRect().height;
+              var elRefHeight = _this81.host.nativeElement.getBoundingClientRect().height;
 
               var panelClass = connectedPosition.connectionPair.panelClass;
 
@@ -25982,7 +26123,7 @@
                 return;
               }
 
-              _this78.popoverPositionService.setPopoverOffset(panelClass, elRefHeight, overlayRefElement);
+              _this81.popoverPositionService.setPopoverOffset(panelClass, elRefHeight, overlayRefElement);
             });
             this.positionStrategySubscriptions.push(subscription);
             this.overlayConfig = Object.assign(Object.assign({}, this.overlayConfig), {
@@ -26099,6 +26240,7 @@
           preventClosing: "preventClosing",
           unlimited: "unlimited",
           delay: "delay",
+          withGrowAfterOpen: "withGrowAfterOpen",
           popoverOverlayPosition: "popoverOverlayPosition"
         },
         outputs: {
@@ -26402,7 +26544,7 @@
            * Input to set aria label text
            */
 
-          this.ariaLabel = "";
+          this.ariaLabel = "Spinner";
           this.cancel = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         }
 
@@ -26437,7 +26579,11 @@
         }, {
           key: "ngOnChanges",
           value: function ngOnChanges(changes) {
-            var _this79 = this;
+            var _this82 = this;
+
+            if (changes === null || changes === void 0 ? void 0 : changes.percent) {
+              this.ariaValueNow = this.percent ? String(this.percent) : undefined;
+            }
 
             if (!changes["show"]) {
               return;
@@ -26448,13 +26594,13 @@
 
             if (this.delay && this.show) {
               this.ngZone.runOutsideAngular(function () {
-                _this79.showTimer = setTimeout(function () {
-                  _this79.ngZone.run(function () {
-                    _this79.showSpinner = _this79.show;
+                _this82.showTimer = setTimeout(function () {
+                  _this82.ngZone.run(function () {
+                    _this82.showSpinner = _this82.show;
 
-                    _this79.changeDetector.detectChanges();
+                    _this82.changeDetector.detectChanges();
                   });
-                }, _this79.delay);
+                }, _this82.delay);
               });
             } else {
               this.showSpinner = this.show;
@@ -26491,11 +26637,11 @@
       SpinnerComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
         type: SpinnerComponent,
         selectors: [["nui-spinner"]],
-        hostAttrs: ["role", "progressbar"],
-        hostVars: 1,
+        hostAttrs: ["role", "progressbar", "aria-valuemin", "0", "aria-valuemax", "100"],
+        hostVars: 2,
         hostBindings: function SpinnerComponent_HostBindings(rf, ctx) {
           if (rf & 2) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵattribute"]("aria-label", ctx.ariaLabel + " progress");
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵattribute"]("aria-label", ctx.ariaLabel)("aria-valuenow", ctx.ariaValueNow);
           }
         },
         inputs: {
@@ -26583,7 +26729,7 @@
         ngContentSelectors: _c0,
         decls: 2,
         vars: 0,
-        consts: [[1, "dialog-footer"]],
+        consts: [["aria-label", "Dialog footer", 1, "dialog-footer"]],
         template: function DialogFooterComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"]();
@@ -27068,6 +27214,9 @@
           this.changeDetector = changeDetector;
           this.eventBusService = eventBusService;
           this.renderer = renderer;
+          /** Users ca specify the 'aria-labelledby' which will be set to the input element */
+
+          this.ariaLabelledby = null;
           /**
            * Sets "title" attribute for nui-checkbox label
            */
@@ -27133,27 +27282,36 @@
         }, {
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this80 = this;
+            var _this83 = this;
 
             this.rendererListener = this.renderer.listen(this.checkboxLabel.nativeElement, "keydown", function (event) {
-              _this80.eventBusService.getStream({
+              _this83.eventBusService.getStream({
                 id: "checkbox-keydown"
               }).next(event);
             });
             this.sub = this.eventBusService.getStream({
               id: "checkbox-keydown"
             }).subscribe(function (event) {
-              if (event.target === _this80.checkboxLabel.nativeElement) {
+              if (event.target === _this83.checkboxLabel.nativeElement) {
                 if (event.keyCode === _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_0__["ENTER"] || event.keyCode === _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_0__["SPACE"]) {
                   event.stopPropagation();
                   event.preventDefault();
 
-                  if (!_this80.disabled) {
-                    _this80.handleKeyboardActions();
+                  if (!_this83.disabled) {
+                    _this83.handleKeyboardActions();
                   }
                 }
               }
             });
+          }
+        }, {
+          key: "getAriaChecked",
+          value: function getAriaChecked() {
+            if (this.checked) {
+              return "true";
+            }
+
+            return this.indeterminate ? "mixed" : "false";
           }
           /**
            * Used for changing of css style when nui-checkbox is hovered
@@ -27263,7 +27421,6 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx.checkboxLabel = _t.first);
           }
         },
-        hostAttrs: ["role", "checkbox"],
         hostVars: 4,
         hostBindings: function CheckboxComponent_HostBindings(rf, ctx) {
           if (rf & 2) {
@@ -27272,6 +27429,8 @@
         },
         inputs: {
           ariaLabel: "ariaLabel",
+          ariaLabelledby: "ariaLabelledby",
+          ariaDescribedby: "ariaDescribedby",
           name: "name",
           title: "title",
           value: "value",
@@ -27300,8 +27459,8 @@
         }])],
         ngContentSelectors: _c3,
         decls: 12,
-        vars: 12,
-        consts: [[1, "nui-checkbox"], [1, "nui-checkbox__label", 3, "title", "mouseenter", "mouseleave"], ["checkboxLabel", ""], [1, "nui-checkbox__content"], ["type", "checkbox", 1, "nui-checkbox__input", 3, "value", "checked", "disabled", "required", "indeterminate", "click", "change"], ["inputViewContainer", ""], [1, "nui-checkbox__mark"], [1, "nui-checkbox__glyph"], [1, "nui-checkbox__transclude"], ["checkboxContent", ""], ["class", "nui-help-hint", 4, "ngIf"], [1, "nui-help-hint"]],
+        vars: 15,
+        consts: [[1, "nui-checkbox"], ["role", "checkbox", 1, "nui-checkbox__label", 3, "title", "mouseenter", "mouseleave"], ["checkboxLabel", ""], [1, "nui-checkbox__content"], ["type", "checkbox", 1, "nui-checkbox__input", 3, "value", "checked", "disabled", "required", "indeterminate", "click", "change"], ["inputViewContainer", ""], [1, "nui-checkbox__mark"], [1, "nui-checkbox__glyph"], [1, "nui-checkbox__transclude"], ["checkboxContent", ""], ["class", "nui-help-hint", 4, "ngIf"], [1, "nui-help-hint"]],
         template: function CheckboxComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojectionDef"]();
@@ -27356,13 +27515,13 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("title", ctx.title);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵattribute"]("tabindex", !ctx.disabled ? 0 : -1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵattribute"]("aria-label", ctx.ariaLabel || null)("aria-labelledby", ctx.ariaLabelledby)("aria-checked", ctx.getAriaChecked())("aria-describedby", ctx.ariaDescribedby)("tabindex", !ctx.disabled ? 0 : -1);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", ctx.value)("checked", ctx.checked)("disabled", ctx.disabled)("required", ctx.required)("indeterminate", ctx.indeterminate);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵattribute"]("aria-label", ctx.ariaLabel)("name", ctx.name);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵattribute"]("name", ctx.name);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](7);
 
@@ -27881,24 +28040,24 @@
         var _super20 = _createSuper(TableHeaderCellComponent);
 
         function TableHeaderCellComponent(columnDef, elementRef, tableStateHandlerService, utilService, zone) {
-          var _this81;
+          var _this84;
 
           _classCallCheck(this, TableHeaderCellComponent);
 
-          _this81 = _super20.call(this, columnDef, elementRef);
-          _this81.columnDef = columnDef;
-          _this81.elementRef = elementRef;
-          _this81.tableStateHandlerService = tableStateHandlerService;
-          _this81.utilService = utilService;
-          _this81.zone = zone;
-          _this81.isColumnSortingDisabled = false;
-          _this81.subscriptions = [];
-          _this81.resizable = false;
-          _this81.tableStateHandlerService.columnType = {
-            columnName: _this81.columnDef.name,
-            columnType: _this81.columnDef.type || "default"
+          _this84 = _super20.call(this, columnDef, elementRef);
+          _this84.columnDef = columnDef;
+          _this84.elementRef = elementRef;
+          _this84.tableStateHandlerService = tableStateHandlerService;
+          _this84.utilService = utilService;
+          _this84.zone = zone;
+          _this84.isColumnSortingDisabled = false;
+          _this84.subscriptions = [];
+          _this84.resizable = false;
+          _this84.tableStateHandlerService.columnType = {
+            columnName: _this84.columnDef.name,
+            columnType: _this84.columnDef.type || "default"
           };
-          return _this81;
+          return _this84;
         } // biding classes
 
 
@@ -28012,7 +28171,7 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this82 = this;
+            var _this85 = this;
 
             var alignment = this.alignment ? "align-".concat(this.alignment) : this.tableStateHandlerService.getAlignment(this.columnDef.name);
             this.resizable = this.tableStateHandlerService.resizable;
@@ -28026,35 +28185,35 @@
               this.elementRef.nativeElement.style.width = columnWidth + "px";
               this.subscriptions.push(this.tableStateHandlerService.shouldHighlightEdge.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["filter"])(function (value) {
                 // When resize is in progress on other columns this one shouldn't be highlighted
-                _this82.resizeInProgress = value.columnIndex !== _this82.currentCellIndex && value.eventPhase === "start";
-                return value.columnIndex === _this82.currentCellIndex;
+                _this85.resizeInProgress = value.columnIndex !== _this85.currentCellIndex && value.eventPhase === "start";
+                return value.columnIndex === _this85.currentCellIndex;
               }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["pluck"])("eventPhase")).subscribe(function (eventPhase) {
-                _this82.resizeEventPhase = eventPhase;
-                _this82.rightEdgeActive = _this82.isCursorInCell;
+                _this85.resizeEventPhase = eventPhase;
+                _this85.rightEdgeActive = _this85.isCursorInCell;
               }));
             }
 
             this.subscriptions.push(this.tableStateHandlerService.columnWidthSubject.subscribe(function () {
-              var columnWidth = _this82.tableStateHandlerService.getColumnWidth(_this82.columnDef.name);
+              var columnWidth = _this85.tableStateHandlerService.getColumnWidth(_this85.columnDef.name);
 
               if (columnWidth > 45) {
-                _this82.elementRef.nativeElement.style.width = columnWidth + "px";
+                _this85.elementRef.nativeElement.style.width = columnWidth + "px";
               }
             }));
 
             if (this.isSortable) {
               this.subscriptions.push(this.tableStateHandlerService.sortingState.subscribe(function () {
-                _this82.sortingState = _this82.tableStateHandlerService.getSortingState(_this82.currentCellIndex);
+                _this85.sortingState = _this85.tableStateHandlerService.getSortingState(_this85.currentCellIndex);
               }));
             }
 
             if (this.isReorderable) {
               this.subscriptions.push(this.tableStateHandlerService.draggedOverCell.subscribe(function (draggedOverCell) {
-                _this82.rightEdgeActive = _this82.leftEdgeActive = false;
+                _this85.rightEdgeActive = _this85.leftEdgeActive = false;
 
-                if (lodash_get__WEBPACK_IMPORTED_MODULE_2___default()(draggedOverCell, "cellIndex") === _this82.currentCellIndex) {
-                  _this82.rightEdgeActive = draggedOverCell.dropAlignment === "right";
-                  _this82.leftEdgeActive = draggedOverCell.dropAlignment === "left";
+                if (lodash_get__WEBPACK_IMPORTED_MODULE_2___default()(draggedOverCell, "cellIndex") === _this85.currentCellIndex) {
+                  _this85.rightEdgeActive = draggedOverCell.dropAlignment === "right";
+                  _this85.leftEdgeActive = draggedOverCell.dropAlignment === "left";
                 }
               }));
             }
@@ -28072,14 +28231,14 @@
         }, {
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this83 = this;
+            var _this86 = this;
 
             this.zone.runOutsideAngular(function () {
-              _this83.subscriptions.push(Object(rxjs__WEBPACK_IMPORTED_MODULE_5__["fromEvent"])(_this83.elementRef.nativeElement, "dragover").subscribe(function (event) {
+              _this86.subscriptions.push(Object(rxjs__WEBPACK_IMPORTED_MODULE_5__["fromEvent"])(_this86.elementRef.nativeElement, "dragover").subscribe(function (event) {
                 event.stopPropagation();
                 event.preventDefault();
 
-                _this83.tableStateHandlerService.setDraggedOverCell(event);
+                _this86.tableStateHandlerService.setDraggedOverCell(event);
               }));
             });
           }
@@ -28668,7 +28827,7 @@
 
       var ImageComponent = /*#__PURE__*/function () {
         function ImageComponent(logger, utilService, changeDetector, images, domSanitizer, el) {
-          var _this84 = this;
+          var _this87 = this;
 
           _classCallCheck(this, ImageComponent);
 
@@ -28690,7 +28849,7 @@
           this.height = "auto";
 
           this.getImage = function (imageName) {
-            return lodash_find__WEBPACK_IMPORTED_MODULE_2___default()(_this84.images, function (img) {
+            return lodash_find__WEBPACK_IMPORTED_MODULE_2___default()(_this87.images, function (img) {
               return lodash_isEqual__WEBPACK_IMPORTED_MODULE_5___default()(img.name, imageName);
             });
           };
@@ -28699,14 +28858,24 @@
         _createClass(ImageComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this85 = this;
+            var _this88 = this;
 
             var dimensionImputs = [this.height, this.width];
             dimensionImputs.forEach(function (item) {
-              if (!lodash_isUndefined__WEBPACK_IMPORTED_MODULE_8___default()(item) && !_this85.isImageSizeValid(item)) {
-                _this85.logger.error("Image size should be specified in 'px', '%', or 'auto");
+              if (!lodash_isUndefined__WEBPACK_IMPORTED_MODULE_8___default()(item) && !_this88.isImageSizeValid(item)) {
+                _this88.logger.error("Image size should be specified in 'px', '%', or 'auto");
               }
             });
+          }
+        }, {
+          key: "ngOnChanges",
+          value: function ngOnChanges(changes) {
+            var _a;
+
+            if (changes.image || changes.description) {
+              this.imageName = this.image.name || ((_a = this.getImage(this.image)) === null || _a === void 0 ? void 0 : _a.name) || null;
+              this.imageTemplate = this.getImageTemplate();
+            }
           }
         }, {
           key: "ngAfterViewInit",
@@ -28747,8 +28916,10 @@
 
             if (lodash_has__WEBPACK_IMPORTED_MODULE_3___default()(image, "code") && lodash_isString__WEBPACK_IMPORTED_MODULE_7___default()(image.code)) {
               imageHtml = image.code;
+              this.hasAlt = false;
             } else {
-              imageHtml = "<img src=\"".concat(this.image, "\">");
+              imageHtml = "<img src=\"".concat(this.image, "\" alt=\"").concat(this.description, "\">");
+              this.hasAlt = true;
             }
 
             return this.domSanitizer.bypassSecurityTrustHtml(imageHtml);
@@ -28771,8 +28942,15 @@
         type: ImageComponent,
         selectors: [["nui-image"]],
         hostAttrs: ["role", "img"],
+        hostVars: 1,
+        hostBindings: function ImageComponent_HostBindings(rf, ctx) {
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-label", ctx.hasAlt ? null : ctx.description || ctx.imageName);
+          }
+        },
         inputs: {
           image: "image",
+          description: "description",
           "float": "float",
           margin: "margin",
           isWatermark: "isWatermark",
@@ -28780,6 +28958,7 @@
           height: "height",
           autoFill: "autoFill"
         },
+        features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵNgOnChangesFeature"]],
         decls: 1,
         vars: 17,
         consts: [[1, "nui-image", "nui-image__hidden", 3, "innerHTML"]],
@@ -28793,7 +28972,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("nui-image__left", ctx["float"] === "left")("nui-image__right", ctx["float"] === "right")("nui-image__margin-centered", ctx.margin === "centered")("nui-image__margin-small", ctx.margin === "small")("nui-image__margin-large", ctx.margin === "large")("nui-image__watermarked", ctx.isWatermark);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("innerHTML", ctx.getImageTemplate(), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeHtml"]);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("innerHTML", ctx.imageTemplate, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeHtml"]);
           }
         },
         styles: [".nui-image {\n  width: 70%;\n  margin: 5px 10px;\n  float: none;\n}\n.nui-image img,\n.nui-image svg {\n  width: 100%;\n}\n.nui-image__left {\n  float: left;\n}\n.nui-image__right {\n  float: right;\n}\n.nui-image__margin-centered {\n  margin: 0 auto;\n}\n.nui-image__margin-small {\n  margin: 10px;\n}\n.nui-image__margin-large {\n  margin: 10px 15px;\n}\n.nui-image__watermarked {\n  opacity: 0.3;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImltYWdlLmNvbXBvbmVudC5sZXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUdBO0VBQ0UsVUFBQTtFQUNBLGdCQUFBO0VBQ0EsV0FBQTtBQUZGO0FBREE7O0VBS0ksV0FBQTtBQUFKO0FBRUU7RUFDRSxXQUFBO0FBQUo7QUFFRTtFQUNFLFlBQUE7QUFBSjtBQUVFO0VBQ0UsY0FBQTtBQUFKO0FBRUU7RUFDRSxZQUFBO0FBQUo7QUFFRTtFQUNFLGlCQUFBO0FBQUo7QUFFRTtFQUNFLFlBQUE7QUFBSiIsImZpbGUiOiJpbWFnZS5jb21wb25lbnQubGVzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgKHJlZmVyZW5jZSkgXCIuLi8uLi9zdHlsZXMvbnVpLWZyYW1ld29yay12YXJpYWJsZXMubGVzc1wiO1xuQGltcG9ydCAocmVmZXJlbmNlKSBcIi4uLy4uL3N0eWxlcy9taXhpbnMubGVzc1wiO1xuXG4ubnVpLWltYWdlIHtcbiAgd2lkdGg6IEBpbWFnZS1zaXplLWJhc2U7XG4gIG1hcmdpbjogQG51aS1zcGFjZS14cyBAbnVpLXNwYWNlLXNtO1xuICBmbG9hdDogbm9uZTtcbiAgaW1nLCBzdmcge1xuICAgIHdpZHRoOiAxMDAlO1xuICB9XG4gICZfX2xlZnQge1xuICAgIGZsb2F0OiBsZWZ0O1xuICB9XG4gICZfX3JpZ2h0IHtcbiAgICBmbG9hdDogcmlnaHQ7XG4gIH1cbiAgJl9fbWFyZ2luLWNlbnRlcmVkIHtcbiAgICBtYXJnaW46IDAgYXV0bztcbiAgfVxuICAmX19tYXJnaW4tc21hbGwge1xuICAgIG1hcmdpbjogQG51aS1zcGFjZS1zbTtcbiAgfVxuICAmX19tYXJnaW4tbGFyZ2Uge1xuICAgIG1hcmdpbjogQG51aS1zcGFjZS1zbSBAbnVpLXNwYWNlLW1kO1xuICB9XG4gICZfX3dhdGVybWFya2VkIHtcbiAgICBvcGFjaXR5OiAwLjM7XG4gIH1cbn1cbiJdfQ== */"],
@@ -28854,7 +29033,7 @@
         }, {
           key: "getResizeObserver",
           value: function getResizeObserver(config) {
-            var _this86 = this;
+            var _this89 = this;
 
             // We need the overlay to keep track of the width and height of its toggle reference in order to follow it's dimensions.
             // Derived from NUI-4744
@@ -28871,10 +29050,10 @@
                 entries.forEach(function (entry) {
                   var _a, _b;
 
-                  (_a = _this86.overlayComponent.getOverlayRef()) === null || _a === void 0 ? void 0 : _a.updatePosition();
+                  (_a = _this89.overlayComponent.getOverlayRef()) === null || _a === void 0 ? void 0 : _a.updatePosition();
 
                   if (!(config && config.updateSize === false)) {
-                    (_b = _this86.overlayComponent.getOverlayRef()) === null || _b === void 0 ? void 0 : _b.updateSize({
+                    (_b = _this89.overlayComponent.getOverlayRef()) === null || _b === void 0 ? void 0 : _b.updateSize({
                       width: entry.target.getBoundingClientRect().width
                     });
                   }
@@ -29732,7 +29911,7 @@
         _createClass(TimeFrameBarComponent, [{
           key: "ngAfterContentInit",
           value: function ngAfterContentInit() {
-            var _this87 = this;
+            var _this90 = this;
 
             if (!this.timeFramePicker) {
               throw new Error("TimeFramePickerComponent must be present in 'timeFrameSelection' slot");
@@ -29746,14 +29925,14 @@
             this.timeFramePicker.minDate = this.minDate;
             this.timeFramePicker.maxDate = this.maxDate;
             this.timeFramePicker.changed.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["takeUntil"])(this.destroy$)).subscribe(function (tf) {
-              return _this87.updatePickerTf(tf);
+              return _this90.updatePickerTf(tf);
             });
 
             if (this.quickPicker) {
               this.quickPicker.presets = this.quickPicker.presets || this.timeframeService.getDefaultPresets();
               this.quickPicker.pickerTitle = undefined === this.quickPicker.pickerTitle ? this.defaultPickerTitle : this.quickPicker.pickerTitle;
               this.quickPicker.presetSelected.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["takeUntil"])(this.destroy$)).subscribe(function (presetKey) {
-                return _this87.handlePresetSelection(presetKey);
+                return _this90.handlePresetSelection(presetKey);
               });
             }
           }
@@ -30339,10 +30518,10 @@
         }, {
           key: "getConnectedPositions",
           value: function getConnectedPositions(positions) {
-            var _this88 = this;
+            var _this91 = this;
 
             return positions.map(function (positionName) {
-              return _this88.popoverPositions[positionName];
+              return _this91.popoverPositions[positionName];
             });
           }
           /**
@@ -30663,15 +30842,15 @@
         }, {
           key: "onValueChange",
           value: function onValueChange(value) {
-            var _this89 = this;
+            var _this92 = this;
 
             this.value = value;
             setTimeout(function () {
-              _this89.onChange(_this89.value);
+              _this92.onChange(_this92.value);
 
-              _this89.valueChange.emit(_this89.value);
+              _this92.valueChange.emit(_this92.value);
 
-              _this89.onTouched();
+              _this92.onTouched();
             });
           }
         }, {
@@ -30871,7 +31050,7 @@
           multi: true
         }]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵNgOnChangesFeature"]],
         decls: 10,
-        vars: 22,
+        vars: 25,
         consts: [[1, "nui-textbox", "nui-textbox-number"], [1, "has-feedback", 3, "ngStyle"], ["step", "any", "type", "number", 1, "form-control", "input-control", "nui-textbox__input", 3, "disabled", "ngModel", "ngModelOptions", "min", "max", "placeholder", "readonly", "ngModelChange", "blur", "keydown", "paste"], ["numberInput", ""], [1, "nui-textbox-number__buttons"], [1, "nui-textbox-number__updown", "nui-textbox-number__up-button"], ["nui-button", "", "type", "button", "displayStyle", "action", "icon", "caret-up", "aria-label", "Up", 3, "isRepeat", "disabled", "click"], [1, "nui-textbox-number__updown", "nui-textbox-number__updown-divider"], [1, "nui-textbox-number__updown", "nui-textbox-number__down-button"], ["nui-button", "", "type", "button", "displayStyle", "action", "icon", "caret-down", "aria-label", "Down", 3, "isRepeat", "disabled", "click"]],
         template: function TextboxNumberComponent_Template(rf, ctx) {
           if (rf & 1) {
@@ -30933,13 +31112,13 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngStyle", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction2"](18, _c1, ctx.customBoxWidth, ctx.customBoxWidth));
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngStyle", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction2"](21, _c1, ctx.customBoxWidth, ctx.customBoxWidth));
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("disabled", ctx.disabled)("ngModel", ctx.value)("ngModelOptions", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](21, _c2))("min", ctx.minValue)("max", ctx.maxValue)("placeholder", ctx.placeholder)("readonly", ctx.readonly);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("disabled", ctx.disabled)("ngModel", ctx.value)("ngModelOptions", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](24, _c2))("min", ctx.minValue)("max", ctx.maxValue)("placeholder", ctx.placeholder)("readonly", ctx.readonly);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("name", ctx.name)("aria-label", ctx.ariaLabel);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("name", ctx.name)("aria-valuemin", ctx.minValue || null)("aria-valuemax", ctx.maxValue || null)("aria-valuenow", ctx.value || null)("aria-label", ctx.ariaLabel);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
 
@@ -31880,18 +32059,18 @@
         var _super21 = _createSuper(LocalFilteringDataSource);
 
         function LocalFilteringDataSource(searchService) {
-          var _this90;
+          var _this93;
 
           _classCallCheck(this, LocalFilteringDataSource);
 
-          _this90 = _super21.call(this);
-          _this90.searchService = searchService;
-          _this90._allCategoriesResult = {};
-          _this90._searchProps = []; // cache used to store our previous fetched results while scrolling
+          _this93 = _super21.call(this);
+          _this93.searchService = searchService;
+          _this93._allCategoriesResult = {};
+          _this93._searchProps = []; // cache used to store our previous fetched results while scrolling
           // and more data is automatically fetched from the backend
 
-          _this90.virtualScrollData = [];
-          return _this90;
+          _this93.virtualScrollData = [];
+          return _this93;
         }
 
         _createClass(LocalFilteringDataSource, [{
@@ -31981,10 +32160,10 @@
         }, {
           key: "multiFilterHandler",
           value: function multiFilterHandler(nextChunk, multiFiltersArr) {
-            var _this91 = this;
+            var _this94 = this;
 
             var allCategoriesArr = multiFiltersArr.map(function (el) {
-              return _this91.getAllCategories(el);
+              return _this94.getAllCategories(el);
             });
 
             if (multiFiltersArr.length) {
@@ -32104,13 +32283,13 @@
         }, {
           key: "countAvailableResults",
           value: function countAvailableResults(allCategoriesArr, nextChunk) {
-            var _this92 = this;
+            var _this95 = this;
 
             var allCategoriesResult = allCategoriesArr.map(function (el, index) {
               var key = Object.keys(el)[0];
               var valuesArr = allCategoriesArr[index][key];
               var resultArr = valuesArr.map(function (element) {
-                var r = _this92.searchService.search(nextChunk, [key], element);
+                var r = _this95.searchService.search(nextChunk, [key], element);
 
                 return _defineProperty({}, element, r.length);
               });
@@ -32138,7 +32317,7 @@
         }, {
           key: "searchThru",
           value: function searchThru(arrToMap, arrToSearchIn) {
-            var _this93 = this;
+            var _this96 = this;
 
             // We are filtering out filter groups which doesn't have selected filters. If filters are not present,
             // it means that filtered data with this filters should not participate in intersection
@@ -32152,7 +32331,7 @@
               return multiFilter[prop] // extract value array
               .value // find matches
               .map(function (el) {
-                return _this93.searchService.search(arrToSearchIn, [prop], el);
+                return _this96.searchService.search(arrToSearchIn, [prop], el);
               }) // flatten returned multidimensional arrays
               .reduce(function (prev, curr) {
                 return prev.concat(curr);
@@ -32621,27 +32800,27 @@
         }, {
           key: "ngAfterContentInit",
           value: function ngAfterContentInit() {
-            var _this94 = this;
+            var _this97 = this;
 
             // applying changes to content immediately after it was initialized (checked)
             // causes "Expression has changed after it was checked" error
             setTimeout(function () {
-              _get(_getPrototypeOf(SelectV2Component.prototype), "ngAfterContentInit", _this94).call(_this94);
+              _get(_getPrototypeOf(SelectV2Component.prototype), "ngAfterContentInit", _this97).call(_this97);
 
-              if (!_this94.multiselect) {
-                _this94.defineDisplayText();
+              if (!_this97.multiselect) {
+                _this97.defineDisplayText();
               }
 
-              _this94.cdRef.markForCheck();
+              _this97.cdRef.markForCheck();
             }); // options may be received after value changes, that's why
             // we check "selectedOptions" and "valueChanged" to be set per "value" again in "handleValueChange"
 
             Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["merge"])(this.optionsChanged(), this.valueChanged.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["takeUntil"])(this.destroy$))).subscribe(function () {
-              if (!_this94.multiselect) {
-                _this94.defineDisplayText();
+              if (!_this97.multiselect) {
+                _this97.defineDisplayText();
               }
 
-              _this94.cdRef.markForCheck();
+              _this97.cdRef.markForCheck();
             });
           }
           /** Selects specific Option and set its value to the model */
@@ -32849,7 +33028,7 @@
 
       var TimeframeService = /*#__PURE__*/function () {
         function TimeframeService() {
-          var _this95 = this;
+          var _this98 = this;
 
           _classCallCheck(this, TimeframeService);
 
@@ -32909,7 +33088,7 @@
 
           this.reconcileTimeframe = function (timeFrame, presets, baseDatetime) {
             if (!presets) {
-              presets = _this95.currentPresets;
+              presets = _this98.currentPresets;
             }
 
             if (!baseDatetime) {
@@ -34192,14 +34371,14 @@
         }, {
           key: "scrollToOption",
           value: function scrollToOption(options) {
-            var _this96 = this;
+            var _this99 = this;
 
             if (this.keyboardEventsManager.activeItem) {
               // setTimeout is necessary because scrolling to the selected item should occur only when overlay rendered
               setTimeout(function () {
                 var _a;
 
-                (_a = _this96.keyboardEventsManager.activeItem) === null || _a === void 0 ? void 0 : _a.scrollIntoView(options);
+                (_a = _this99.keyboardEventsManager.activeItem) === null || _a === void 0 ? void 0 : _a.scrollIntoView(options);
               });
             }
           }
@@ -34734,13 +34913,13 @@
         var _super23 = _createSuper(TableColumnDefDirective);
 
         function TableColumnDefDirective(tableStateHandlerService) {
-          var _this97;
+          var _this100;
 
           _classCallCheck(this, TableColumnDefDirective);
 
-          _this97 = _super23.call(this);
-          _this97.tableStateHandlerService = tableStateHandlerService;
-          return _this97;
+          _this100 = _super23.call(this);
+          _this100.tableStateHandlerService = tableStateHandlerService;
+          return _this100;
         }
         /* eslint-disable @angular-eslint/no-input-rename */
 
@@ -35375,14 +35554,14 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this98 = this;
+            var _this101 = this;
 
             this.defineSizes();
             this.defineState();
             this.togglesSubscription = this.toggles.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])(function (toggle) {
-              return toggle === _this98._isCollapsed;
+              return toggle === _this101._isCollapsed;
             })).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["distinctUntilChanged"])()).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["debounceTime"])(PanelComponent.ANIMATION_TIME)).subscribe(function (toggle) {
-              return _this98.toggleHideOrCollapsed();
+              return _this101.toggleHideOrCollapsed();
             });
           }
         }, {
@@ -35480,7 +35659,7 @@
         }, {
           key: "toggleCollapsed",
           value: function toggleCollapsed() {
-            var _this99 = this;
+            var _this102 = this;
 
             var animationFactory = this._isCollapsed ? this.expandAnimationFactory : this.collapseAnimationFactory;
             var sizeValue = this._isCollapsed ? this.paneSize : this.paneCollapsedSize;
@@ -35488,23 +35667,23 @@
             animationPlayer.play();
             this.isAnimating = true;
             animationPlayer.onDone(function () {
-              _this99.lastAnimationPlayer = animationPlayer;
+              _this102.lastAnimationPlayer = animationPlayer;
 
-              _this99.renderer.setStyle(_this99.getPaneContainerElement(), _this99.sizeParameter, sizeValue);
+              _this102.renderer.setStyle(_this102.getPaneContainerElement(), _this102.sizeParameter, sizeValue);
 
-              _this99.destroyLastAnimationPlayer();
+              _this102.destroyLastAnimationPlayer();
 
-              _this99._isCollapsed = !_this99._isCollapsed;
+              _this102._isCollapsed = !_this102._isCollapsed;
 
-              _this99.collapsed.emit(_this99._isCollapsed);
+              _this102.collapsed.emit(_this102._isCollapsed);
 
-              _this99.isAnimating = false;
+              _this102.isAnimating = false;
 
-              if (_this99.isResizable) {
-                _this99.isCollapsed ? _this99.removeMinSize() : _this99.applyBoundarySizes();
+              if (_this102.isResizable) {
+                _this102.isCollapsed ? _this102.removeMinSize() : _this102.applyBoundarySizes();
               }
 
-              _this99.changeDetectorRef.detectChanges();
+              _this102.changeDetectorRef.detectChanges();
             });
           }
         }, {
@@ -36148,7 +36327,7 @@
         }, {
           key: "ngOnChanges",
           value: function ngOnChanges(changes) {
-            var _this100 = this;
+            var _this103 = this;
 
             if (changes["value"] && !changes["value"].firstChange) {
               var value = changes["value"].currentValue;
@@ -36163,7 +36342,7 @@
               if (lodash_isString__WEBPACK_IMPORTED_MODULE_6___default()(this.selectedItem)) {
                 var newItemsSource = changes.itemsSource.currentValue;
                 var itemToSelect = newItemsSource.find(function (i) {
-                  return i[_this100.modelValue] === _this100.selectedItem;
+                  return i[_this103.modelValue] === _this103.selectedItem;
                 });
 
                 if (itemToSelect) {
@@ -36266,13 +36445,13 @@
         }, {
           key: "writeValue",
           value: function writeValue(value) {
-            var _this101 = this;
+            var _this104 = this;
 
             var selectedItem;
 
             if (this.modelValue && this.itemsSource && this.itemsSource.length) {
               selectedItem = this.itemsSource.find(function (item) {
-                return _this101.getItemModel(item) === value;
+                return _this104.getItemModel(item) === value;
               });
             } else {
               selectedItem = value;
@@ -36400,18 +36579,18 @@
         var _super24 = _createSuper(MenuOptionComponent);
 
         function MenuOptionComponent(group, cd) {
-          var _this102;
+          var _this105;
 
           _classCallCheck(this, MenuOptionComponent);
 
-          _this102 = _super24.call(this, group, cd);
-          _this102.group = group;
-          _this102.name = "";
-          _this102.value = "";
-          _this102.checked = false; // Is needed to predefine item state, sets nui-checkbox [disabled] property
+          _this105 = _super24.call(this, group, cd);
+          _this105.group = group;
+          _this105.name = "";
+          _this105.value = "";
+          _this105.checked = false; // Is needed to predefine item state, sets nui-checkbox [disabled] property
 
-          _this102.disabled = false;
-          return _this102;
+          _this105.disabled = false;
+          return _this105;
         }
 
         _createClass(MenuOptionComponent, [{
@@ -36612,28 +36791,28 @@
         _createClass(ZoomContentDirective, [{
           key: "ngOnChanges",
           value: function ngOnChanges(changes) {
-            var _this103 = this;
+            var _this106 = this;
 
             if (changes.scaleOUT$ && this.scaleOUT$) {
               this.scaleIN$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeUntil"])(this.destroy$)).subscribe(function (data) {
-                _this103.latestDataFromBroker = Object.assign({}, data);
-                _this103.element.style.transform = "scale(".concat(data.targetValue, ")");
+                _this106.latestDataFromBroker = Object.assign({}, data);
+                _this106.element.style.transform = "scale(".concat(data.targetValue, ")");
 
-                _this103.checkScaleBoundaries(data.targetValue);
+                _this106.checkScaleBoundaries(data.targetValue);
               });
             }
           }
         }, {
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this104 = this;
+            var _this107 = this;
 
             var resizeObserver = new resize_observer_polyfill__WEBPACK_IMPORTED_MODULE_2__["default"](function () {
-              return _this104.onResize();
+              return _this107.onResize();
             });
             this.ngZone.runOutsideAngular(function () {
-              resizeObserver.observe(_this104.element);
-              resizeObserver.observe(_this104.parentElement);
+              resizeObserver.observe(_this107.element);
+              resizeObserver.observe(_this107.parentElement);
             });
             this.resizeObserver = resizeObserver;
           }
@@ -37105,7 +37284,7 @@
 
       var ToastService = /*#__PURE__*/function () {
         function ToastService(notificationService, toastContainerService, _injector, sanitizer) {
-          var _this105 = this;
+          var _this108 = this;
 
           _classCallCheck(this, ToastService);
 
@@ -37137,11 +37316,11 @@
 
           this.notifyHighlights = function (itemsToHighlight, status) {
             if (itemsToHighlight) {
-              _this105.notificationService.post("Highlight", {
+              _this108.notificationService.post("Highlight", {
                 highlightState: _services_notification_args__WEBPACK_IMPORTED_MODULE_7__["SwitchState"].on,
                 status: status,
                 items: itemsToHighlight,
-                itemIdentificator: _this105.itemIdentificator
+                itemIdentificator: _this108.itemIdentificator
               });
             }
           };
@@ -37286,14 +37465,14 @@
         }, {
           key: "toastRemoveHighlight",
           value: function toastRemoveHighlight(toastInstance, itemsToRemoveHighlight) {
-            var _this106 = this;
+            var _this109 = this;
 
             var _a;
 
             if (toastInstance) {
               (_a = toastInstance === null || toastInstance === void 0 ? void 0 : toastInstance.onHidden) === null || _a === void 0 ? void 0 : _a.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["take"])(1)).subscribe(function () {
                 if (lodash_isArray__WEBPACK_IMPORTED_MODULE_4___default()(itemsToRemoveHighlight) && itemsToRemoveHighlight.length > 0) {
-                  _this106.notificationService.post("Highlight", {
+                  _this109.notificationService.post("Highlight", {
                     highlightState: _services_notification_args__WEBPACK_IMPORTED_MODULE_7__["SwitchState"].off,
                     items: itemsToRemoveHighlight
                   });
@@ -37313,7 +37492,7 @@
         }, {
           key: "buildNotification",
           value: function buildNotification(toastType, body, title, config) {
-            var _this107 = this;
+            var _this110 = this;
 
             // max opened and auto dismiss = true
             if (body && config.preventDuplicates && this.isDuplicate(body)) {
@@ -37360,7 +37539,7 @@
             if (!keepInactive) {
               setTimeout(function () {
                 toastInstance.toastRef.activate();
-                _this107.currentlyActive = _this107.currentlyActive + 1;
+                _this110.currentlyActive = _this110.currentlyActive + 1;
               });
             }
 
@@ -37609,23 +37788,23 @@
         _createClass(SheetGroupComponent, [{
           key: "filterGroups",
           value: function filterGroups(sheetGroupList) {
-            var _this108 = this;
+            var _this111 = this;
 
             return sheetGroupList.filter(function (group) {
-              return group !== _this108;
+              return group !== _this111;
             });
           }
         }, {
           key: "addResizers",
           value: function addResizers(resizableList) {
-            var _this109 = this;
+            var _this112 = this;
 
             resizableList.forEach(function (resizableItem, index) {
               if (index === resizableList.length - 1) {
                 return;
               }
 
-              _this109.appendResizer(_layout_resizer_layout_resizer_component__WEBPACK_IMPORTED_MODULE_2__["LayoutResizerComponent"], resizableItem);
+              _this112.appendResizer(_layout_resizer_layout_resizer_component__WEBPACK_IMPORTED_MODULE_2__["LayoutResizerComponent"], resizableItem);
             }); // make it such that it's valid even when resizer isn't added
 
             this.calculateFlexBasis(resizableList, resizableList.length);
@@ -37645,7 +37824,7 @@
         }, {
           key: "calculateFlexBasis",
           value: function calculateFlexBasis(resizableList, numOfItems) {
-            var _this110 = this;
+            var _this113 = this;
 
             var availableSpace = "100%";
             var hasInitSize = resizableList.some(function (element) {
@@ -37698,7 +37877,7 @@
               var item = _ref7.item,
                   value = _ref7.value;
 
-              _this110.renderer.setStyle(item.elRef.nativeElement, "flexBasis", "calc(".concat(value, ")"));
+              _this113.renderer.setStyle(item.elRef.nativeElement, "flexBasis", "calc(".concat(value, ")"));
             });
           }
         }, {
@@ -38071,7 +38250,7 @@
 
       var HighlightPipe = /*#__PURE__*/function () {
         function HighlightPipe() {
-          var _this111 = this;
+          var _this114 = this;
 
           _classCallCheck(this, HighlightPipe);
 
@@ -38079,7 +38258,7 @@
 
           this.getHighlightRegex = function (text) {
             var escaped = lodash_escapeRegExp__WEBPACK_IMPORTED_MODULE_1___default()(text);
-            return escaped.replace(_this111.deduplicateStarsRegex, function () {
+            return escaped.replace(_this114.deduplicateStarsRegex, function () {
               return ".*";
             });
           };
@@ -38342,7 +38521,7 @@
       TableFooterCellDirective.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineDirective"]({
         type: TableFooterCellDirective,
         selectors: [["nui-footer-cell"], ["td", "nuiFooterCell", ""]],
-        hostAttrs: ["role", "cell", 1, "mat-footer-cell"],
+        hostAttrs: ["role", "gridcell", 1, "mat-footer-cell"],
         features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵInheritDefinitionFeature"]]
       });
       /***/
@@ -41322,15 +41501,15 @@
         }, {
           key: "addResizeObserver",
           value: function addResizeObserver() {
-            var _this112 = this;
+            var _this115 = this;
 
             var resizeHandler = lodash_debounce__WEBPACK_IMPORTED_MODULE_1___default()(function (entry) {
-              return _this112.refreshStyle();
+              return _this115.refreshStyle();
             }, _constants_resize_constants__WEBPACK_IMPORTED_MODULE_5__["RESIZE_DEBOUNCE_TIME"]);
             this.resizeObserver = new resize_observer_polyfill__WEBPACK_IMPORTED_MODULE_4__["default"](function (entries) {
               entries.forEach(function (entry) {
-                _this112.ngZone.run(function () {
-                  if (!_this112.resizerDisabled) {
+                _this115.ngZone.run(function () {
+                  if (!_this115.resizerDisabled) {
                     resizeHandler(entry);
                   }
                 });
@@ -41339,18 +41518,18 @@
             this.ngZone.runOutsideAngular(function () {
               var _a;
 
-              (_a = _this112.resizeObserver) === null || _a === void 0 ? void 0 : _a.observe(_this112.targetElement.nativeElement.parentElement);
+              (_a = _this115.resizeObserver) === null || _a === void 0 ? void 0 : _a.observe(_this115.targetElement.nativeElement.parentElement);
             });
           }
         }, {
           key: "addSubscription",
           value: function addSubscription() {
-            var _this113 = this;
+            var _this116 = this;
 
             this.resizeSubscription = this.eventBusService.getStream({
               id: "complete-resize"
             }).subscribe(function (resize) {
-              return _this113.refreshStyle();
+              return _this116.refreshStyle();
             });
           }
         }, {
@@ -41382,16 +41561,16 @@
         }, {
           key: "appendEvents",
           value: function appendEvents() {
-            var _this114 = this;
+            var _this117 = this;
 
             this.eventSubscriptions.push(this.renderer.listen(this.resizeGutter, "mouseenter", function ($event) {
-              return _this114.onMouseEnter($event);
+              return _this117.onMouseEnter($event);
             }));
             this.eventSubscriptions.push(this.renderer.listen(this.resizeGutter, "mouseleave", function () {
-              return _this114.onMouseLeave();
+              return _this117.onMouseLeave();
             }));
             this.eventSubscriptions.push(this.renderer.listen(this.resizeGutter, "mousedown", function ($event) {
-              return _this114.onMouseDown($event);
+              return _this117.onMouseDown($event);
             }));
           }
         }, {
@@ -41437,7 +41616,7 @@
         }, {
           key: "onMouseEnter",
           value: function onMouseEnter(event) {
-            var _this115 = this;
+            var _this118 = this;
 
             this._isHovering = true; // Add hovering class only while mouse is not clicked
             // "which" is supported by Safari
@@ -41445,7 +41624,7 @@
             if (!lodash_isUndefined__WEBPACK_IMPORTED_MODULE_3___default()(event.buttons) && event.buttons === 0 || !lodash_isUndefined__WEBPACK_IMPORTED_MODULE_3___default()(event.which) && event.which === 0) {
               this.renderer.addClass(this.resizeGutter, "".concat(this.resizeClass, "--hovering"));
               this.mouseMoveUnlisten = this.renderer.listen(document, "mousemove", function ($event) {
-                return _this115.onMouseMove($event);
+                return _this118.onMouseMove($event);
               });
             }
           }
@@ -41477,7 +41656,7 @@
         }, {
           key: "onMouseDown",
           value: function onMouseDown(event) {
-            var _this116 = this;
+            var _this119 = this;
 
             this.renderer.addClass(this.resizeGutter, "".concat(this.resizeClass, "--active")); // Cursor should be there until mouseUp.
 
@@ -41485,7 +41664,7 @@
             this._isDragging = true;
             this._oldSize = this.isResizeHorizontal() ? event.clientX : event.clientY;
             this.mouseUpUnlisten = this.renderer.listen(document, "mouseup", function ($event) {
-              return _this116.onMouseUp($event);
+              return _this119.onMouseUp($event);
             });
             event.preventDefault(); // This disables accidental text selection while resizing
           }
@@ -41645,20 +41824,20 @@
         var _super27 = _createSuper(LayoutResizerComponent);
 
         function LayoutResizerComponent(_elRef, _renderer, _utilService, _targetElement, _ngZone, _eventBusService) {
-          var _this117;
+          var _this120;
 
           _classCallCheck(this, LayoutResizerComponent);
 
-          _this117 = _super27.call(this, _elRef, _renderer, _utilService, _targetElement, _ngZone, _eventBusService);
-          _this117._elRef = _elRef;
-          _this117._renderer = _renderer;
-          _this117._utilService = _utilService;
-          _this117._targetElement = _targetElement;
-          _this117._ngZone = _ngZone;
-          _this117._eventBusService = _eventBusService;
-          _this117.disabled = false;
-          _this117.resizeClass = "nui-layout-resizer";
-          return _this117;
+          _this120 = _super27.call(this, _elRef, _renderer, _utilService, _targetElement, _ngZone, _eventBusService);
+          _this120._elRef = _elRef;
+          _this120._renderer = _renderer;
+          _this120._utilService = _utilService;
+          _this120._targetElement = _targetElement;
+          _this120._ngZone = _ngZone;
+          _this120._eventBusService = _eventBusService;
+          _this120.disabled = false;
+          _this120.resizeClass = "nui-layout-resizer";
+          return _this120;
         }
         /*
          * From template can be accessed only public properties
@@ -42091,13 +42270,13 @@
         }, {
           key: "isDisabled",
           value: function isDisabled(date) {
-            var _this118 = this;
+            var _this121 = this;
 
             var isDateDisabled = false;
 
             if (this.disabledDates) {
               this.disabledDates.forEach(function (disabledDate) {
-                if (_this118.compareDateDisabled(disabledDate, date) === 0) {
+                if (_this121.compareDateDisabled(disabledDate, date) === 0) {
                   isDateDisabled = true;
                 }
               });
@@ -42680,7 +42859,7 @@
         _createClass(SourcesService, [{
           key: "getSourcesByFilenamePrefix",
           value: function getSourcesByFilenamePrefix(prefix) {
-            var _this119 = this;
+            var _this122 = this;
 
             if (!this.context) {
               this.logger.error("You need to configure SourceService in the module where you import NuiDocsModule\n                                e.g. { provide: DEMO_PATH_TOKEN,\n                                useFactory: () => (<any> require).context(\"!!raw-loader!./components/demo/\", true, /.*.(ts|html|less)$/)}, ");
@@ -42693,7 +42872,7 @@
               return prefixIndex !== -1 && (nextChar === "." || nextChar === "/");
             });
             return matchingFilePaths.reduce(function (acc, curr) {
-              var fileObj = _this119.getFileData(curr);
+              var fileObj = _this122.getFileData(curr);
 
               var key = Object.keys(fileObj)[0];
 
@@ -42887,7 +43066,7 @@
 
       var DataFilterService = /*#__PURE__*/function () {
         function DataFilterService(parent) {
-          var _this120 = this;
+          var _this123 = this;
 
           _classCallCheck(this, DataFilterService);
 
@@ -42899,7 +43078,7 @@
 
           if (this.parent) {
             this.parent.filteringSubject.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["takeUntil"])(this.onDestroy$)).subscribe(function () {
-              _this120.filteringSubject.next();
+              _this123.filteringSubject.next();
             });
           }
         }
@@ -42907,14 +43086,14 @@
         _createClass(DataFilterService, [{
           key: "registerFilter",
           value: function registerFilter(filter) {
-            var _this121 = this;
+            var _this124 = this;
 
             this._filters = Object.assign(Object.assign({}, this._filters), filter); // subscribing to onDestroy of filtering components to remove them from memory when this components are destroyed
 
             lodash_forEach__WEBPACK_IMPORTED_MODULE_0___default()(this._filters, function (node, key) {
               if (node.componentInstance.onDestroy$) {
-                _this121.destroySubscriptions.push(node.componentInstance.onDestroy$.subscribe(function () {
-                  _this121.unregisterFilters([key]);
+                _this124.destroySubscriptions.push(node.componentInstance.onDestroy$.subscribe(function () {
+                  _this124.unregisterFilters([key]);
                 }));
               }
             });
@@ -43043,7 +43222,7 @@
 
       var WizardStepComponent = /*#__PURE__*/function () {
         function WizardStepComponent() {
-          var _this122 = this;
+          var _this125 = this;
 
           _classCallCheck(this, WizardStepComponent);
 
@@ -43084,12 +43263,13 @@
           this.complete = false;
           this.icon = "step";
           this.iconColor = "";
+          this.inputsList = [];
           /**
            * Set flags for step entering and emits enter event
            */
 
           this.enterStep = function (event) {
-            _this122.enter.emit(event);
+            _this125.enter.emit(event);
           };
           /**
            * Set flags for step exiting and emits exit event
@@ -43097,24 +43277,24 @@
 
 
           this.exitStep = function (event) {
-            _this122.exit.emit(event);
+            _this125.exit.emit(event);
           };
 
           this.nextStep = function (event) {
-            _this122.next.emit(event);
+            _this125.next.emit(event);
           };
 
           this.applyEnteringStep = function () {
-            _this122.active = true;
-            _this122.icon = "step-active";
-            _this122.iconColor = "black";
+            _this125.active = true;
+            _this125.icon = "step-active";
+            _this125.iconColor = "black";
           };
 
           this.applyExitingStep = function () {
-            _this122.active = false;
-            _this122.visited = true;
-            _this122.icon = "step-complete";
-            _this122.iconColor = "";
+            _this125.active = false;
+            _this125.visited = true;
+            _this125.icon = "step-complete";
+            _this125.iconColor = "";
           };
         }
 
@@ -43126,6 +43306,10 @@
         }, {
           key: "ngOnChanges",
           value: function ngOnChanges(changes) {
+            if (this.inputsList.length === 0) {
+              this.inputsList = Object.keys(changes);
+            }
+
             if (changes["stepControl"]) {
               this.valid.emit(this.stepControl);
             }
@@ -43566,7 +43750,7 @@
         }, {
           key: "initKeyboardManager",
           value: function initKeyboardManager() {
-            var _this123 = this;
+            var _this126 = this;
 
             this.keyboardEventsManager = this.keyControlItemsSource ? new _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_0__["ActiveDescendantKeyManager"](this.menuPopup.menuItems).withVerticalOrientation() : new _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_0__["ActiveDescendantKeyManager"](this.menuItems).withVerticalOrientation();
 
@@ -43578,7 +43762,7 @@
 
             if (this.menuOpenListener) {
               this.menuOpenListenerSubscription = this.menuOpenListener.subscribe(function () {
-                _this123.keyboardEventsManager.setActiveItem(-1);
+                _this126.keyboardEventsManager.setActiveItem(-1);
               });
             }
           }
@@ -43600,19 +43784,19 @@
         }, {
           key: "initKeyManagerHandlers",
           value: function initKeyManagerHandlers() {
-            var _this124 = this;
+            var _this127 = this;
 
             this.keyboardEventsSubscription = this.keyboardEventsManager.change.subscribe(function (activeIndex) {
               var _a; // when the navigation item changes, we get new activeIndex
 
 
-              if (_this124.popup.isOpen && _this124.hasActiveItem()) {
-                _this124.scrollActiveOptionIntoView({
-                  scrollContainer: _this124.scrollContainer || _this124.popup.popupAreaContainer,
-                  menuItemHeight: (_a = _this124.keyboardEventsManager.activeItem) === null || _a === void 0 ? void 0 : _a.menuItem.nativeElement.offsetHeight,
+              if (_this127.popup.isOpen && _this127.hasActiveItem()) {
+                _this127.scrollActiveOptionIntoView({
+                  scrollContainer: _this127.scrollContainer || _this127.popup.popupAreaContainer,
+                  menuItemHeight: (_a = _this127.keyboardEventsManager.activeItem) === null || _a === void 0 ? void 0 : _a.menuItem.nativeElement.offsetHeight,
                   activeOptionIndex: activeIndex,
-                  menuGroups: _this124.menuGroups,
-                  menuItems: _this124.menuItems
+                  menuGroups: _this127.menuGroups,
+                  menuItems: _this127.menuItems
                 });
               }
             });
@@ -44136,16 +44320,16 @@
         var _super28 = _createSuper(WizardStepHeaderComponent);
 
         function WizardStepHeaderComponent(_focusMonitor, _elementRef) {
-          var _this125;
+          var _this128;
 
           _classCallCheck(this, WizardStepHeaderComponent);
 
-          _this125 = _super28.call(this, _elementRef);
-          _this125._focusMonitor = _focusMonitor;
+          _this128 = _super28.call(this, _elementRef);
+          _this128._focusMonitor = _focusMonitor;
           /** Label that is rendered below optional steps. */
 
-          _this125.optionalLabel = $localize(_templateObject39 || (_templateObject39 = _taggedTemplateLiteral(["Optional"])));
-          return _this125;
+          _this128.optionalLabel = $localize(_templateObject39 || (_templateObject39 = _taggedTemplateLiteral(["Optional"])));
+          return _this128;
         }
 
         _createClass(WizardStepHeaderComponent, [{
@@ -44516,13 +44700,13 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this126 = this;
+            var _this129 = this;
 
             this.times = this.generateTimeItems(this.timeStep);
             this.times.map(function (value) {
-              _this126.itemsSource[0].itemsSource.push({
+              _this129.itemsSource[0].itemsSource.push({
                 title: value,
-                displayFormat: _this126.timeFormat,
+                displayFormat: _this129.timeFormat,
                 isSelected: false
               });
             });
@@ -44534,15 +44718,15 @@
 
             this.itemToSelect = this.getItemToSelect();
             this.inputChanged.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["debounceTime"])(500)).subscribe(function (value) {
-              _this126.updateInnerModel(value);
+              _this129.updateInnerModel(value);
 
-              _this126.itemToSelect = _this126.getItemToSelect();
+              _this129.itemToSelect = _this129.getItemToSelect();
 
-              _this126.timeChanged.emit(_this126.innerModel);
+              _this129.timeChanged.emit(_this129.innerModel);
 
-              _this126.onChange(_this126.innerModel);
+              _this129.onChange(_this129.innerModel);
 
-              _this126.setErrorState(value);
+              _this129.setErrorState(value);
             });
             this.onAppendToBodyChange(this.appendToBody);
           }
@@ -44556,10 +44740,10 @@
         }, {
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this127 = this;
+            var _this130 = this;
 
             this.overlay.clickOutside.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["takeUntil"])(this.onDestroy$)).subscribe(function (_) {
-              return _this127.overlay.hide();
+              return _this130.overlay.hide();
             });
             this.initPopupUtilities();
           }
@@ -44572,10 +44756,10 @@
         }, {
           key: "updateInnerModel",
           value: function updateInnerModel(value) {
-            var _this128 = this;
+            var _this131 = this;
 
             setTimeout(function () {
-              return _this128.inputBlurred.emit();
+              return _this131.inputBlurred.emit();
             }, 100);
 
             if (value instanceof moment_moment__WEBPACK_IMPORTED_MODULE_4___default.a && !this.preserveInsignificant) {
@@ -44731,16 +44915,16 @@
         }, {
           key: "initPopupUtilities",
           value: function initPopupUtilities() {
-            var _this129 = this;
+            var _this132 = this;
 
             var resizeObserver = this.popupUtilities.setPopupComponent(this.overlay).getResizeObserver();
             this.overlay.show$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["takeUntil"])(this.onDestroy$)).subscribe(function () {
-              _this129.popupUtilities.syncWidth();
+              _this132.popupUtilities.syncWidth();
 
-              resizeObserver.observe(_this129.elementRef.nativeElement);
+              resizeObserver.observe(_this132.elementRef.nativeElement);
             });
             this.overlay.hide$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["takeUntil"])(this.onDestroy$)).subscribe(function () {
-              resizeObserver.unobserve(_this129.elementRef.nativeElement);
+              resizeObserver.unobserve(_this132.elementRef.nativeElement);
             });
           }
         }, {
@@ -44972,7 +45156,7 @@
 
       var ClipboardDirective = /*#__PURE__*/function () {
         function ClipboardDirective(logger, document) {
-          var _this130 = this;
+          var _this133 = this;
 
           _classCallCheck(this, ClipboardDirective);
 
@@ -44993,7 +45177,7 @@
           this.hasCopySupport = false;
 
           this.createNode = function (text) {
-            var node = _this130.document.createElement("textarea");
+            var node = _this133.document.createElement("textarea");
 
             node.style.position = "absolute";
             node.style.left = "-10000px";
@@ -45256,14 +45440,14 @@
         }, {
           key: "ngOnChanges",
           value: function ngOnChanges(changes) {
-            var _this131 = this;
+            var _this134 = this;
 
             var overlayPropsToMap = ["toggleReference", "customContainer"];
 
             if (changes) {
               overlayPropsToMap.forEach(function (key) {
                 if (changes[key]) {
-                  lodash_set__WEBPACK_IMPORTED_MODULE_3___default()(_this131.overlayService, key, changes[key].currentValue);
+                  lodash_set__WEBPACK_IMPORTED_MODULE_3___default()(_this134.overlayService, key, changes[key].currentValue);
                 }
               });
             }
@@ -45288,13 +45472,13 @@
         }, {
           key: "show",
           value: function show() {
-            var _this132 = this;
+            var _this135 = this;
 
             this.setOverlayConfig();
             this.overlayService.show();
             this.handleOutsideClicks();
             setTimeout(function () {
-              return _this132.empty$.next(_this132.isPopupContentEmpty());
+              return _this135.empty$.next(_this135.isPopupContentEmpty());
             }); // timeout to get the height of rendered content items
           }
           /** Hides Popup */
@@ -45324,7 +45508,7 @@
         }, {
           key: "overlayClickOutside",
           value: function overlayClickOutside() {
-            var _this133 = this;
+            var _this136 = this;
 
             return this.eventBusService.getStream({
               id: _constants_event_constants__WEBPACK_IMPORTED_MODULE_7__["DOCUMENT_CLICK_EVENT"]
@@ -45333,10 +45517,10 @@
 
               var clickTarget = event.target;
               var notOrigin = !lodash_some__WEBPACK_IMPORTED_MODULE_4___default()(event.composedPath(), function (p) {
-                return p === _this133.toggleReference;
+                return p === _this136.toggleReference;
               }); // the toggle elem
 
-              var notOverlay = ((_b = (_a = _this133.overlayService.getOverlayRef()) === null || _a === void 0 ? void 0 : _a.overlayElement) === null || _b === void 0 ? void 0 : _b.contains(clickTarget)) === false; // the popup
+              var notOverlay = ((_b = (_a = _this136.overlayService.getOverlayRef()) === null || _a === void 0 ? void 0 : _a.overlayElement) === null || _b === void 0 ? void 0 : _b.contains(clickTarget)) === false; // the popup
 
               return notOrigin && notOverlay;
             }));
@@ -45344,19 +45528,19 @@
         }, {
           key: "handleOutsideClicks",
           value: function handleOutsideClicks() {
-            var _this134 = this;
+            var _this137 = this;
 
             var _a;
 
             var clicksOutsideStream$ = ((_a = this.overlayConfig) === null || _a === void 0 ? void 0 : _a.hasBackdrop) ? this.overlayService.getOverlayRef().backdropClick() : this.overlayClickOutside();
             clicksOutsideStream$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["takeUntil"])(this.hide$)).subscribe(function (v) {
-              return _this134.clickOutside.emit(v);
+              return _this137.clickOutside.emit(v);
             });
           }
         }, {
           key: "setOverlayConfig",
           value: function setOverlayConfig() {
-            var _this135 = this;
+            var _this138 = this;
 
             var overlayConfig = this.overlayService.overlayConfig;
             var positionStrategy = this.cdkOverlay.position().flexibleConnectedTo(this.toggleReference).withPush(false).withViewportMargin(this.viewportMargin || POPUP_V2_VIEWPORT_MARGINS_DEFAULT).withPositions([{
@@ -45371,7 +45555,7 @@
               overlayY: "bottom"
             }]);
             this.positionStrategySubscription = this.overlayPositionService.updateOffsetOnPositionChanges(positionStrategy, function () {
-              return _this135.getOverlayRef();
+              return _this138.getOverlayRef();
             });
             this.overlayService.overlayConfig = Object.assign(Object.assign(Object.assign({}, overlayConfig), {
               positionStrategy: positionStrategy
@@ -45630,28 +45814,28 @@
         var _super29 = _createSuper(ComboboxV2Component);
 
         function ComboboxV2Component(elRef, optionKeyControlService, cdRef, selectedItemsKeyControlService) {
-          var _this136;
+          var _this139;
 
           _classCallCheck(this, ComboboxV2Component);
 
-          _this136 = _super29.call(this, optionKeyControlService, cdRef, elRef);
-          _this136.selectedItemsKeyControlService = selectedItemsKeyControlService;
+          _this139 = _super29.call(this, optionKeyControlService, cdRef, elRef);
+          _this139.selectedItemsKeyControlService = selectedItemsKeyControlService;
           /** Function that maps an Option's control value to its display value */
 
-          _this136.displayWith = null;
+          _this139.displayWith = null;
           /** Whether the control for removing value enabled */
 
-          _this136.isRemoveValueEnabled = true;
+          _this139.isRemoveValueEnabled = true;
           /** Whether to populate the remainder of the text being typed */
 
-          _this136.isTypeaheadEnabled = true;
+          _this139.isTypeaheadEnabled = true;
           /** Emits event whether options are presented after filtering */
 
-          _this136.searchEmpty = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"](false);
+          _this139.searchEmpty = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"](false);
           /** Emits event whether the typed text is unique among presented options */
 
-          _this136.canCreateOption = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"](false);
-          return _this136;
+          _this139.canCreateOption = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"](false);
+          return _this139;
         }
         /** Grabs and init keyboard navigation service for the "Selected Items" */
 
@@ -45664,7 +45848,7 @@
         }, {
           key: "ngAfterContentInit",
           value: function ngAfterContentInit() {
-            var _this137 = this;
+            var _this140 = this;
 
             this.clearValueButtonTooltip = this.multiselect ? $localize(_templateObject40 || (_templateObject40 = _taggedTemplateLiteral(["Remove all"]))) : $localize(_templateObject41 || (_templateObject41 = _taggedTemplateLiteral(["Remove"]))); // applying changes to content immediately after it was initialized (checked)
             // causes "Expression has changed after it was checked" error
@@ -45672,39 +45856,39 @@
             setTimeout(function () {
               var _a;
 
-              _get(_getPrototypeOf(ComboboxV2Component.prototype), "ngAfterContentInit", _this137).call(_this137);
+              _get(_getPrototypeOf(ComboboxV2Component.prototype), "ngAfterContentInit", _this140).call(_this140);
 
-              if (!_this137.multiselect) {
-                _this137.setInputValue((_a = _this137.getLastSelectedOption()) === null || _a === void 0 ? void 0 : _a.value);
+              if (!_this140.multiselect) {
+                _this140.setInputValue((_a = _this140.getLastSelectedOption()) === null || _a === void 0 ? void 0 : _a.value);
               }
 
-              _this137.cdRef.markForCheck();
+              _this140.cdRef.markForCheck();
             }); // options may be received after value changes, that's why
             // we check "selectedOptions" to be set per "value" again in "handleValueChange"
 
             this.optionsChanged().subscribe(function () {
-              _this137.filterItems(_this137.inputValue.toString());
+              _this140.filterItems(_this140.inputValue.toString());
 
-              _this137.cdRef.markForCheck();
+              _this140.cdRef.markForCheck();
             });
           }
         }, {
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this138 = this;
+            var _this141 = this;
 
             _get(_getPrototypeOf(ComboboxV2Component.prototype), "ngAfterViewInit", this).call(this);
 
             if (!this.multiselect) {
               this.dropdown.hide$.subscribe(function () {
-                var lastSelectedOption = _this138.getLastSelectedOption();
+                var lastSelectedOption = _this141.getLastSelectedOption();
 
                 if (lastSelectedOption) {
-                  _this138.setInputValue(lastSelectedOption.viewValue);
+                  _this141.setInputValue(lastSelectedOption.viewValue);
 
-                  _this138.filterItems(_this138.inputValue.toString());
+                  _this141.filterItems(_this141.inputValue.toString());
 
-                  _this138.cdRef.markForCheck();
+                  _this141.cdRef.markForCheck();
                 }
               });
             }
@@ -45825,14 +46009,14 @@
         }, {
           key: "selectTextInInput",
           value: function selectTextInInput() {
-            var _this139 = this;
+            var _this142 = this;
 
             if (!this.isDropdownOpen) {
               return;
             }
 
             setTimeout(function () {
-              return _this139.inputElement.nativeElement.select();
+              return _this142.inputElement.nativeElement.select();
             });
           }
           /** Sets value to the model */
@@ -46076,7 +46260,7 @@
           }
         },
         directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgModel"], _angular_common__WEBPACK_IMPORTED_MODULE_10__["NgIf"], _button_button_component__WEBPACK_IMPORTED_MODULE_11__["ButtonComponent"], _overlay_overlay_component_overlay_component__WEBPACK_IMPORTED_MODULE_12__["OverlayComponent"], _tooltip_tooltip_directive__WEBPACK_IMPORTED_MODULE_13__["TooltipDirective"]],
-        styles: [".nui-combobox-v2 {\n  border-color: var(--nui-color-line-default,#d9d9d9);\n  border-width: 1px;\n  border-style: solid;\n  border-radius: 3px;\n  background: var(--nui-color-bg-content,#fff);\n  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);\n  display: flex;\n  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;\n  color: var(--nui-color-text-default,#111);\n  min-height: calc(30px - (2 * 1px));\n  line-height: calc(calc(30px - (2 * 1px)) - 5px);\n  min-width: 100px;\n}\n.nui-combobox-v2:hover {\n  border-color: var(--nui-color-line-default-hover,#b3b3b3);\n}\n.nui-combobox-v2:focus-within,\n.nui-combobox-v2:focus {\n  border-color: var(--nui-color-line-active,#0079aa);\n  outline: none;\n}\n.nui-combobox-v2.error,\n.nui-combobox-v2.has-error {\n  border-color: var(--nui-color-line-critical,#dd2c00);\n}\n.nui-combobox-v2.error:hover,\n.nui-combobox-v2.has-error:hover,\n.nui-combobox-v2.error:focus,\n.nui-combobox-v2.has-error:focus,\n.nui-combobox-v2.error:active,\n.nui-combobox-v2.has-error:active {\n  border-color: var(--nui-color-line-critical,#dd2c00);\n}\n.nui-combobox-v2.disabled,\n.nui-combobox-v2[disabled] {\n  background: var(--nui-color-disabled-secondary,#e8e8e8);\n  border-color: transparent;\n  cursor: not-allowed;\n}\n.nui-combobox-v2.disabled:hover,\n.nui-combobox-v2[disabled]:hover {\n  background: var(--nui-color-disabled-secondary,#e8e8e8);\n  border-color: transparent;\n}\n.nui-combobox-v2[readonly] {\n  color: var(--nui-color-text-secondary,rgba(17, 17, 17, 0.6));\n  background: var(--nui-color-disabled-secondary,#e8e8e8);\n  border-color: transparent;\n  cursor: default;\n}\n.nui-combobox-v2[readonly]:hover,\n.nui-combobox-v2[readonly]:focus,\n.nui-combobox-v2[readonly]:active {\n  color: var(--nui-color-text-secondary,rgba(17, 17, 17, 0.6));\n  background: var(--nui-color-disabled-secondary,#e8e8e8);\n  border-color: transparent;\n}\n.nui-combobox-v2.disabled {\n  color: var(--nui-color-text-disabled,rgba(17, 17, 17, 0.3));\n  -webkit-user-select: none;\n  /* Chrome all / Safari all */\n  -moz-user-select: none;\n  /* Firefox all */\n  -ms-user-select: none;\n  /* IE 10+ */\n  /* No support for these yet, use at own risk */\n  -o-user-select: none;\n  user-select: none;\n}\n.nui-combobox-v2__input {\n  flex: 1;\n  outline: none;\n  box-sizing: border-box;\n  border: none;\n  background-color: transparent;\n  background-image: none;\n  min-height: calc(calc(30px - (2 * 1px)) - 5px);\n  height: calc(calc(30px - (2 * 1px)) - 5px);\n  resize: vertical;\n  padding: 0 10px;\n  overflow-y: hidden;\n  cursor: text;\n  width: inherit;\n  white-space: nowrap;\n  overflow: hidden;\n  -ms-text-overflow: ellipsis;\n  text-overflow: ellipsis;\n}\n.nui-combobox-v2__input[disabled] {\n  cursor: not-allowed;\n}\n.nui-combobox-v2__input[disabled]::-moz-placeholder {\n  color: var(--nui-color-text-disabled,rgba(17, 17, 17, 0.3));\n}\n.nui-combobox-v2__input[disabled]:-ms-input-placeholder {\n  color: var(--nui-color-text-disabled,rgba(17, 17, 17, 0.3));\n}\n.nui-combobox-v2__input[disabled]::placeholder {\n  color: var(--nui-color-text-disabled,rgba(17, 17, 17, 0.3));\n}\n.nui-combobox-v2__input::-moz-placeholder {\n  color: var(--nui-color-text-secondary,rgba(17, 17, 17, 0.6));\n  font-size: 13px;\n  font-weight: 400;\n  margin-right: 5px;\n  white-space: nowrap;\n  overflow: hidden;\n  -ms-text-overflow: ellipsis;\n  text-overflow: ellipsis;\n}\n.nui-combobox-v2__input:-ms-input-placeholder {\n  color: var(--nui-color-text-secondary,rgba(17, 17, 17, 0.6));\n  font-size: 13px;\n  font-weight: 400;\n  margin-right: 5px;\n  white-space: nowrap;\n  overflow: hidden;\n  -ms-text-overflow: ellipsis;\n  text-overflow: ellipsis;\n}\n.nui-combobox-v2__input::placeholder {\n  color: var(--nui-color-text-secondary,rgba(17, 17, 17, 0.6));\n  font-size: 13px;\n  font-weight: 400;\n  margin-right: 5px;\n  white-space: nowrap;\n  overflow: hidden;\n  -ms-text-overflow: ellipsis;\n  text-overflow: ellipsis;\n}\n.nui-combobox-v2__remove-value.nui-button.action {\n  border: none;\n  border-radius: 0px;\n  border-right: 1px solid;\n  border-right-color: var(--nui-color-line-default,#d9d9d9);\n  min-height: calc(30px - (2 * 1px));\n  max-height: calc(30px - (2 * 1px));\n  align-self: center;\n}\n.nui-combobox-v2__remove-value.nui-button.action:hover,\n.nui-combobox-v2__remove-value.nui-button.action:focus,\n.nui-combobox-v2__remove-value.nui-button.action:active {\n  border-right: 1px solid;\n  border-right-color: var(--nui-color-line-default,#d9d9d9);\n}\n.nui-combobox-v2__toggle.nui-button.action {\n  min-height: calc(30px - (2 * 1px));\n  max-height: calc(30px - (2 * 1px));\n  align-self: center;\n}\n.nui-combobox-v2__toggle.nui-button.action.rotate nui-icon {\n  /*If we change the icon element, the target also will change (the old one is removed from the DOM).\n            On click on the caret icon an event stops propagation. That's why we rotate the same icon.*/\n  transform: rotate(180deg);\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbWJvYm94LXYyLmNvbXBvbmVudC5sZXNzIiwiLi4vLi4vLi4vc3R5bGVzL21peGlucy9jc3MtdmFyaWFibGVzLmxlc3MiLCIuLi8uLi8uLi9zdHlsZXMvbnVpLWZyYW1ld29yay1iYXNlLmxlc3MiLCIuLi8uLi8uLi9zdHlsZXMvbWl4aW5zL2NvbXBvbmVudC1iYXNlcy9iYXNlLXRleHRib3gubGVzcyIsIi4uLy4uLy4uL3N0eWxlcy9taXhpbnMvbm8tc2VsZWN0Lmxlc3MiLCIuLi8uLi8uLi9zdHlsZXMvbWl4aW5zL3RleHQtb3ZlcmZsb3cubGVzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFXQTtFQ05JLG1EQUFBO0VDeVZBLGlCQUFBO0VBQ0EsbUJBQUE7RUFDQSxrQkFBQTtFRDNWQSw0Q0FBQTtFRUVBLGdEQUFBO0VITUEsYUFBQTtFQUNBLHdFQUFBO0VDVEEseUNBQUE7RURXQSxrQ0FBQTtFQUNBLCtDQUFBO0VBQ0EsZ0JBQUE7QUFMSjtBR0pJO0VGSkEseURBQUE7QURXSjtBR0hJOztFRlJBLGtEQUFBO0VFV0ksYUFBQTtBSEtSO0FHRkk7O0VGZEEsb0RBQUE7QURvQko7QUdKUTs7Ozs7O0VGaEJKLG9EQUFBO0FENEJKO0FHTEk7O0VGdkJBLHVEQUFBO0VFeUJJLHlCQUFBO0VBQ0EsbUJBQUE7QUhRUjtBR1BROztFRjNCSix1REFBQTtFRTZCUSx5QkFBQTtBSFVaO0FHTkk7RUZqQ0EsNERBQUE7RUFBQSx1REFBQTtFRW9DSSx5QkFBQTtFQUNBLGVBQUE7QUhRUjtBR1BROzs7RUZ0Q0osNERBQUE7RUFBQSx1REFBQTtFRTJDUSx5QkFBQTtBSFNaO0FBckNJO0VDZkEsMkRBQUE7RUdKRix5QkFBQTtFSjREQSw0QkFBNEI7RUkzRDVCLHNCQUFBO0VKNkRBLGdCQUFnQjtFSTVEaEIscUJBQUE7RUo4REEsV0FBVztFQUNYLDhDQUE4QztFSTVEOUMsb0JBQUE7RUFDQSxpQkFBQTtBSjhERjtBQTVDSTtFQUNJLE9BQUE7RUFDQSxhQUFBO0VBQ0Esc0JBQUE7RUFDQSxZQUFBO0VBQ0EsNkJBQUE7RUFDQSxzQkFBQTtFQUNBLDhDQUFBO0VBQ0EsMENBQUE7RUFDQSxnQkFBQTtFQUNBLGVBQUE7RUFDQSxrQkFBQTtFQUNBLFlBQUE7RUFDQSxjQUFBO0VLN0JKLG1CQUFBO0VBQ0EsZ0JBQUE7RUFDQSwyQkFBQTtFQUVBLHVCQUFBO0FMNEVKO0FBaERRO0VBQ0ksbUJBQUE7QUFrRFo7QUFqRFk7RUN0Q1IsMkRBQUE7QUQwRko7QUFwRFk7RUN0Q1IsMkRBQUE7QUQwRko7QUFwRFk7RUN0Q1IsMkRBQUE7QUQwRko7QUEvQ1E7RUMzQ0osNERBQUE7RUQ2Q1EsZUFBQTtFQUNBLGdCQUFBO0VBQ0EsaUJBQUE7RUszQ1IsbUJBQUE7RUFDQSxnQkFBQTtFQUNBLDJCQUFBO0VBRUEsdUJBQUE7QUw2Rko7QUExRFE7RUMzQ0osNERBQUE7RUQ2Q1EsZUFBQTtFQUNBLGdCQUFBO0VBQ0EsaUJBQUE7RUszQ1IsbUJBQUE7RUFDQSxnQkFBQTtFQUNBLDJCQUFBO0VBRUEsdUJBQUE7QUw2Rko7QUExRFE7RUMzQ0osNERBQUE7RUQ2Q1EsZUFBQTtFQUNBLGdCQUFBO0VBQ0EsaUJBQUE7RUszQ1IsbUJBQUE7RUFDQSxnQkFBQTtFQUNBLDJCQUFBO0VBRUEsdUJBQUE7QUw2Rko7QUFqREk7RUFDSSxZQUFBO0VBQ0Esa0JBQUE7RUFDQSx1QkFBQTtFQ3ZESix5REFBQTtFRHlESSxrQ0FBQTtFQUNBLGtDQUFBO0VBQ0Esa0JBQUE7QUFtRFI7QUFqRFE7OztFQUdJLHVCQUFBO0VDaEVSLHlEQUFBO0FEb0hKO0FBL0NJO0VBQ0ksa0NBQUE7RUFDQSxrQ0FBQTtFQUNBLGtCQUFBO0FBaURSO0FBL0NRO0VBaUROO3VHQUNxRztFQS9DM0YseUJBQUE7QUFpRFoiLCJmaWxlIjoiY29tYm9ib3gtdjIuY29tcG9uZW50Lmxlc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0IChyZWZlcmVuY2UpIFwiLi4vLi4vLi4vc3R5bGVzL251aS1mcmFtZXdvcmstdmFyaWFibGVzLmxlc3NcIjtcbkBpbXBvcnQgKHJlZmVyZW5jZSkgXCIuLi8uLi8uLi9zdHlsZXMvbWl4aW5zLmxlc3NcIjtcbkBpbXBvcnQgKHJlZmVyZW5jZSkgXCIuLi8uLi8uLi9zdHlsZXMvbnVpLWZyYW1ld29yay1iYXNlLmxlc3NcIjtcbkBpbXBvcnQgKHJlZmVyZW5jZSkgXCIuLi8uLi8uLi9zdHlsZXMvbnVpLWZyYW1ld29yay10eXBvZ3JhcGh5Lmxlc3NcIjtcbkBpbXBvcnQgKHJlZmVyZW5jZSkgXCIuLi8uLi8uLi9zdHlsZXMvbnVpLWZyYW1ld29yay1jb2xvcnMubGVzc1wiO1xuXG5AY29tYm9ib3gtaGVpZ2h0OiAzMHB4O1xuQG1pbi13aWR0aDogMTAwcHg7XG5AY29udGVudC1oZWlnaHQ6IGNhbGMoQGNvbWJvYm94LWhlaWdodCAtICgyICogQG51aS1saW5lLWRlZmF1bHQpKTsgLy8gQG51aS1saW5lLWRlZmF1bHQgLSBmb3IgYm9yZGVyc1xuQGlucHV0LWhlaWdodDogY2FsYyhAY29udGVudC1oZWlnaHQgLSBAbnVpLXNwYWNlLXhzKTsgLy8gQG51aS1zcGFjZS14cyBmb3IgcGFkZGluZ1xuXG4ubnVpLWNvbWJvYm94LXYyIHtcbiAgICAudGV4dGJveC1iYXNlKCk7XG4gICAgZGlzcGxheTogZmxleDtcbiAgICB0cmFuc2l0aW9uOiBib3JkZXItY29sb3IgZWFzZS1pbi1vdXQgLjE1cywgYm94LXNoYWRvdyBlYXNlLWluLW91dCAuMTVzO1xuICAgIC5zZXRDc3NWYXJpYWJsZShjb2xvciwgbnVpLWNvbG9yLXRleHQtZGVmYXVsdCk7XG4gICAgbWluLWhlaWdodDogQGNvbnRlbnQtaGVpZ2h0O1xuICAgIGxpbmUtaGVpZ2h0OiBAaW5wdXQtaGVpZ2h0O1xuICAgIG1pbi13aWR0aDogQG1pbi13aWR0aDtcblxuICAgICYuZGlzYWJsZWQge1xuICAgICAgICAuc2V0Q3NzVmFyaWFibGUoY29sb3IsIG51aS1jb2xvci10ZXh0LWRpc2FibGVkKTtcbiAgICAgICAgLm5vLXNlbGVjdCgpO1xuICAgIH1cblxuICAgICZfX2lucHV0IHtcbiAgICAgICAgZmxleDogMTtcbiAgICAgICAgb3V0bGluZTogbm9uZTtcbiAgICAgICAgYm94LXNpemluZzogYm9yZGVyLWJveDtcbiAgICAgICAgYm9yZGVyOiBub25lO1xuICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudDtcbiAgICAgICAgYmFja2dyb3VuZC1pbWFnZTogbm9uZTtcbiAgICAgICAgbWluLWhlaWdodDogQGlucHV0LWhlaWdodDtcbiAgICAgICAgaGVpZ2h0OiBAaW5wdXQtaGVpZ2h0O1xuICAgICAgICByZXNpemU6IHZlcnRpY2FsO1xuICAgICAgICBwYWRkaW5nOiAwIEBudWktc3BhY2Utc207XG4gICAgICAgIG92ZXJmbG93LXk6IGhpZGRlbjtcbiAgICAgICAgY3Vyc29yOiB0ZXh0O1xuICAgICAgICB3aWR0aDogaW5oZXJpdDtcbiAgICAgICAgLnRleHQtb3ZlcmZsb3coZWxsaXBzaXMpO1xuXG4gICAgICAgICZbZGlzYWJsZWRdIHtcbiAgICAgICAgICAgIGN1cnNvcjogQGN1cnNvci1kaXNhYmxlZDtcbiAgICAgICAgICAgICY6OnBsYWNlaG9sZGVyIHtcbiAgICAgICAgICAgICAgICAuc2V0Q3NzVmFyaWFibGUoY29sb3IsIG51aS1jb2xvci10ZXh0LWRpc2FibGVkKTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgfVxuXG4gICAgICAgICY6OnBsYWNlaG9sZGVyIHtcbiAgICAgICAgICAgIC5zZXRDc3NWYXJpYWJsZShjb2xvciwgbnVpLWNvbG9yLXRleHQtc2Vjb25kYXJ5KTtcbiAgICAgICAgICAgIGZvbnQtc2l6ZTogQG51aS1mb250LXNpemUtZGVmYXVsdDtcbiAgICAgICAgICAgIGZvbnQtd2VpZ2h0OiBAbnVpLWZvbnQtd2VpZ2h0LXJlZ3VsYXI7XG4gICAgICAgICAgICBtYXJnaW4tcmlnaHQ6IEBudWktc3BhY2UteHM7XG4gICAgICAgICAgICAudGV4dC1vdmVyZmxvdyhlbGxpcHNpcyk7XG4gICAgICAgIH1cbiAgICB9XG5cbiAgICAmX19yZW1vdmUtdmFsdWUubnVpLWJ1dHRvbi5hY3Rpb24ge1xuICAgICAgICBib3JkZXI6IG5vbmU7XG4gICAgICAgIGJvcmRlci1yYWRpdXM6IDBweDtcbiAgICAgICAgYm9yZGVyLXJpZ2h0OiAxcHggc29saWQ7XG4gICAgICAgIC5zZXRDc3NWYXJpYWJsZShib3JkZXItcmlnaHQtY29sb3IsIG51aS1jb2xvci1saW5lLWRlZmF1bHQpO1xuICAgICAgICBtaW4taGVpZ2h0OiBAY29udGVudC1oZWlnaHQ7XG4gICAgICAgIG1heC1oZWlnaHQ6IEBjb250ZW50LWhlaWdodDtcbiAgICAgICAgYWxpZ24tc2VsZjogY2VudGVyO1xuXG4gICAgICAgICY6aG92ZXIsXG4gICAgICAgICY6Zm9jdXMsXG4gICAgICAgICY6YWN0aXZlIHtcbiAgICAgICAgICAgIGJvcmRlci1yaWdodDogMXB4IHNvbGlkO1xuICAgICAgICAgICAgLnNldENzc1ZhcmlhYmxlKGJvcmRlci1yaWdodC1jb2xvciwgbnVpLWNvbG9yLWxpbmUtZGVmYXVsdCk7XG4gICAgICAgIH1cbiAgICB9XG5cbiAgICAmX190b2dnbGUubnVpLWJ1dHRvbi5hY3Rpb24ge1xuICAgICAgICBtaW4taGVpZ2h0OiBAY29udGVudC1oZWlnaHQ7XG4gICAgICAgIG1heC1oZWlnaHQ6IEBjb250ZW50LWhlaWdodDtcbiAgICAgICAgYWxpZ24tc2VsZjogY2VudGVyO1xuXG4gICAgICAgICYucm90YXRlIG51aS1pY29uIHtcbiAgICAgICAgICAgIC8qSWYgd2UgY2hhbmdlIHRoZSBpY29uIGVsZW1lbnQsIHRoZSB0YXJnZXQgYWxzbyB3aWxsIGNoYW5nZSAodGhlIG9sZCBvbmUgaXMgcmVtb3ZlZCBmcm9tIHRoZSBET00pLlxuICAgICAgICAgICAgT24gY2xpY2sgb24gdGhlIGNhcmV0IGljb24gYW4gZXZlbnQgc3RvcHMgcHJvcGFnYXRpb24uIFRoYXQncyB3aHkgd2Ugcm90YXRlIHRoZSBzYW1lIGljb24uKi9cbiAgICAgICAgICAgIHRyYW5zZm9ybTogcm90YXRlKDE4MGRlZyk7XG4gICAgICAgIH1cbiAgICB9XG59XG4iLCIuc2V0Q3NzVmFyaWFibGUoQHByb3BlcnR5LCBAdmFsdWUpe1xuICAgIEBldmFsdWF0ZWQgOiBcIkB7dmFsdWV9XCI7XG4gICAgLy90aGUgZG91YmxlIEAgZm9yY2VzIGEgaW5kaXJlY3Rpb24gZXZhbHVhdGlvbiwga2luZGEgbGlrZSBhIHBvaW50ZXJcbiAgICBAZmFsbGJhY2sgOiBAQGV2YWx1YXRlZDtcblxuICAgIEB7cHJvcGVydHl9OiB+XCJ2YXIoLS1Ae3ZhbHVlfSxAe2ZhbGxiYWNrfSlcIjtcbn1cbiIsIkBpbXBvcnQgKHJlZmVyZW5jZSkgXCJudWktZnJhbWV3b3JrLXZhcmlhYmxlcy5sZXNzXCI7XG5AaW1wb3J0IChyZWZlcmVuY2UpIFwibWl4aW5zL3ZlbmRvci1wcmVmaXhlc1wiO1xuQGltcG9ydCAocmVmZXJlbmNlKSBcIm1peGlucy5sZXNzXCI7XG5cbmh0bWwge1xuICAgIC13ZWJraXQtdGFwLWhpZ2hsaWdodC1jb2xvcjogcmdiYSgwLDAsMCwwKTtcbn1cblxuYm9keSB7XG4gICAgZm9udC1mYW1pbHk6IEBmb250LWZhbWlseS1vcGVuLXNhbnM7XG4gICAgZm9udC1zaXplOiBAbnVpLWZvbnQtc2l6ZS1kZWZhdWx0O1xuICAgIGxpbmUtaGVpZ2h0OiBAbGluZS1oZWlnaHQtYmFzZTtcbiAgICAuc2V0Q3NzVmFyaWFibGUoY29sb3IsIHRleHQtY29sb3IpO1xuICAgIC5zZXRDc3NWYXJpYWJsZShiYWNrZ3JvdW5kLWNvbG9yLCBib2R5LWJnKTtcbiAgICBtYXJnaW46IDA7XG59XG5cbi8vIFNldmVyYWwgY2xhc3NlcyBpbiBCb290c3RyYXAgOmV4dGVuZCB0aGUgLmNsZWFyZml4IGNsYXNzIHdoaWNoIGhhcyB0aGUgdW5mb3J0dW5hdGUgc2lkZSBlZmZlY3Rcbi8vIG9mIGRvdWJsaW5nIHRoZSAubnVpIG5hbWVzcGFjZSAoLm51aSAubnVpKSByZW5kZXJpbmcgdGhlbSBlZmZlY3RpdmVseSB1c2VsZXNzXG4vLyBzbyBhZGRpbmcgdGhlbSBiYWNrIGluIGZyYW1ld29yayB0byBnZXQgcHJvcGVyIGNsZWFyZml4ZXMgZ29pbmcgb25cbi5jbGVhcmZpeDpiZWZvcmUsXG4uY2xlYXJmaXg6YWZ0ZXIsXG4uZGwtaG9yaXpvbnRhbCBkZDpiZWZvcmUsXG4uZGwtaG9yaXpvbnRhbCBkZDphZnRlcixcbi5jb250YWluZXI6YmVmb3JlLFxuLmNvbnRhaW5lcjphZnRlcixcbi5jb250YWluZXItZmx1aWQ6YmVmb3JlLFxuLmNvbnRhaW5lci1mbHVpZDphZnRlcixcbi5yb3c6YmVmb3JlLFxuLnJvdzphZnRlcixcbi5mb3JtLWhvcml6b250YWwgLmZvcm0tZ3JvdXA6YmVmb3JlLFxuLmZvcm0taG9yaXpvbnRhbCAuZm9ybS1ncm91cDphZnRlcixcbi5idG4tdG9vbGJhcjpiZWZvcmUsXG4uYnRuLXRvb2xiYXI6YWZ0ZXIsXG4uYnRuLWdyb3VwLXZlcnRpY2FsID4gLmJ0bi1ncm91cDpiZWZvcmUsXG4uYnRuLWdyb3VwLXZlcnRpY2FsID4gLmJ0bi1ncm91cDphZnRlcixcbi5uYXY6YmVmb3JlLFxuLm5hdjphZnRlcixcbi5uYXZiYXI6YmVmb3JlLFxuLm5hdmJhcjphZnRlcixcbi5uYXZiYXItaGVhZGVyOmJlZm9yZSxcbi5uYXZiYXItaGVhZGVyOmFmdGVyLFxuLm5hdmJhci1jb2xsYXBzZTpiZWZvcmUsXG4ubmF2YmFyLWNvbGxhcHNlOmFmdGVyLFxuLnBhZ2VyOmJlZm9yZSxcbi5wYWdlcjphZnRlcixcbi5wYW5lbC1ib2R5OmJlZm9yZSxcbi5wYW5lbC1ib2R5OmFmdGVyLFxuLmRpYWxvZy1mb290ZXI6YmVmb3JlLFxuLmRpYWxvZy1mb290ZXI6YWZ0ZXIge1xuICAgIGNvbnRlbnQ6IFwiIFwiO1xuICAgIGRpc3BsYXk6IHRhYmxlO1xuICAgIHdpZHRoOiAwcHg7XG59XG5cbi5jbGVhcmZpeDphZnRlcixcbi5kbC1ob3Jpem9udGFsIGRkOmFmdGVyLFxuLmNvbnRhaW5lcjphZnRlcixcbi5jb250YWluZXItZmx1aWQ6YWZ0ZXIsXG4ucm93OmFmdGVyLFxuLmZvcm0taG9yaXpvbnRhbCAuZm9ybS1ncm91cDphZnRlcixcbi5idG4tdG9vbGJhcjphZnRlcixcbi5idG4tZ3JvdXAtdmVydGljYWwgPiAuYnRuLWdyb3VwOmFmdGVyLFxuLm5hdjphZnRlcixcbi5uYXZiYXI6YWZ0ZXIsXG4ubmF2YmFyLWhlYWRlcjphZnRlcixcbi5uYXZiYXItY29sbGFwc2U6YWZ0ZXIsXG4ucGFnZXI6YWZ0ZXIsXG4ucGFuZWwtYm9keTphZnRlcixcbi5kaWFsb2ctZm9vdGVyOmFmdGVyIHtcbiAgICBjbGVhcjogYm90aDtcbn1cblxuLy8gb3ZlcnJpZGVzIGZvciBidXR0b24gY2xhc3Nlc1xuLy8gVFlQRS5MRVNTIE9WRVJSSURFU1xuYmxvY2txdW90ZSwgLmJsb2NrcXVvdGUtcmV2ZXJzZSB7XG4gICAgYm9yZGVyLWxlZnQ6IDA7XG4gICAgYm9yZGVyLXJpZ2h0OiAwO1xuICAgIHBhZGRpbmctbGVmdDogMDtcbiAgICBwYWRkaW5nLXJpZ2h0OiAwO1xufVxuXG4ubGVhZCB7XG4gICAgbWFyZ2luLWJvdHRvbTogQG51aS1zcGFjZS1zbTtcbn1cblxuLnRleHQtcHJpbWFyeSwgLnRleHQtc3VjY2VzcywgLnRleHQtaW5mbywgLnRleHQtd2FybmluZywgLnRleHQtZGFuZ2VyIHtcbiAgICBmb250LXdlaWdodDogQG51aS1mb250LXdlaWdodC1zZW1pYm9sZDtcbn1cblxuLm51aS1oZWxwLWhpbnQge1xuICAgIC5zZXRDc3NWYXJpYWJsZShjb2xvciwgbnVpLWNvbG9yLXRleHQtc2Vjb25kYXJ5KTtcbiAgICBmb250LXNpemU6IEBudWktZm9udC1zaXplLXNtYWxsO1xuICAgIHBhZGRpbmc6IEBwYWRkaW5nLXhzLXZlcnRpY2FsIDAgMCAwO1xuICAgIG92ZXJmbG93OiBoaWRkZW47XG4gICAgdGV4dC1vdmVyZmxvdzogZWxsaXBzaXM7XG59XG5cbi5kcm9wdXAsXG4ubmF2YmFyLWZpeGVkLWJvdHRvbSAuZHJvcGRvd24ge1xuICAgIC8vIFJldmVyc2UgdGhlIGNhcmV0XG4gICAgLmNhcmV0IHtcbiAgICAgICAgYm9yZGVyLXRvcDogMDtcbiAgICAgICAgYm9yZGVyLWJvdHRvbTogMDtcbiAgICAgICAgY29udGVudDogXCJcIjtcbiAgICB9XG59XG5cbi8vIFRBQkxFUy5MRVNTIE9WRVJSSURFU1xuLnRhYmxlIHtcbiAgICBib3JkZXItY29sbGFwc2U6IHNlcGFyYXRlO1xuXG4gICAgPiB0aGVhZCB7XG4gICAgICAgIC5zZXRDc3NWYXJpYWJsZShiYWNrZ3JvdW5kLWNvbG9yLCBudWktY29sb3ItYmctd29ya3NwYWNlKTtcbiAgICAgICAgLnNldENzc1ZhcmlhYmxlKGNvbG9yLCBudWktY29sb3ItdGV4dC1zZWNvbmRhcnkpO1xuICAgICAgICBib3JkZXI6IDFweCBzb2xpZCBAbnVpLWNvbG9yLWJnLXdvcmtzcGFjZTtcbiAgICAgICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tbnVpLWNvbG9yLWJnLXdvcmtzcGFjZSxAbnVpLWNvbG9yLWJnLXdvcmtzcGFjZSk7XG5cbiAgICAgICAgPiB0aCB7XG4gICAgICAgICAgICBmb250LXdlaWdodDogQG51aS1mb250LXdlaWdodC1zZW1pYm9sZDtcbiAgICAgICAgfVxuICAgIH1cblxuICAgID4gdGJvZHkgPiB0ciA+IHRkLCA+IHRib2R5ID4gdHIgPiB0aCB7XG4gICAgICAgIGJvcmRlci10b3A6IDFweCBzb2xpZCBAbnVpLWNvbG9yLWJnLWxpZ2h0O1xuICAgICAgICBib3JkZXItdG9wOiAxcHggc29saWQgdmFyKC0tbnVpLWNvbG9yLWJnLWxpZ2h0LEBudWktY29sb3ItYmctbGlnaHQpO1xuICAgICAgICBib3JkZXItYm90dG9tOiAxcHggc29saWQgQG51aS1jb2xvci1iZy1saWdodDtcbiAgICAgICAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkIHZhcigtLW51aS1jb2xvci1iZy1saWdodCxAbnVpLWNvbG9yLWJnLWxpZ2h0KTtcbiAgICAgICAgYm9yZGVyLWxlZnQ6IDA7XG4gICAgICAgIGJvcmRlci1yaWdodDogMDtcbiAgICAgICAgJjpmaXJzdC1jaGlsZCB7XG4gICAgICAgICAgICBib3JkZXItbGVmdDogMXB4IHNvbGlkIEBudWktY29sb3ItYmctbGlnaHQ7XG4gICAgICAgICAgICBib3JkZXItbGVmdDogMXB4IHNvbGlkIHZhcigtLW51aS1jb2xvci1iZy1saWdodCxAbnVpLWNvbG9yLWJnLWxpZ2h0KTtcbiAgICAgICAgfVxuXG4gICAgICAgICY6bGFzdC1jaGlsZCB7XG4gICAgICAgICAgICBib3JkZXItcmlnaHQ6IDFweCBzb2xpZCBAbnVpLWNvbG9yLWJnLWxpZ2h0O1xuICAgICAgICAgICAgYm9yZGVyLXJpZ2h0OiAxcHggc29saWQgdmFyKC0tbnVpLWNvbG9yLWJnLWxpZ2h0LEBudWktY29sb3ItYmctbGlnaHQpO1xuICAgICAgICB9XG4gICAgfVxuXG4gICAgPiB0aGVhZCwgPiB0Ym9keSwgPiB0Zm9vdCB7XG4gICAgICAgID4gdHIge1xuICAgICAgICAgICAgPiB0aCwgPiB0ZCB7XG4gICAgICAgICAgICAgICAgcGFkZGluZy1sZWZ0OiAxNXB4O1xuICAgICAgICAgICAgICAgIHBhZGRpbmctcmlnaHQ6IDE1cHg7XG4gICAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICB9XG59XG5cbnVsIHtcbiAgICBsaXN0LXN0eWxlOiBub25lO1xuICAgIHBhZGRpbmc6IDA7XG59XG5cbi5saXN0LWdyb3VwIHtcbiAgICA+IC5saXN0LWdyb3VwLWl0ZW0ge1xuICAgICAgICBib3JkZXI6IG5vbmU7XG4gICAgICAgIG1hcmdpbjogMDtcbiAgICB9XG5cbiAgICAmLmxpc3QtZ3JvdXAtc3RyaXBlZCB7XG4gICAgICAgID4gLmxpc3QtZ3JvdXAtaXRlbSB7XG4gICAgICAgICAgICAmOm50aC1vZi10eXBlKG9kZCkge1xuICAgICAgICAgICAgICAgIC5zZXRDc3NWYXJpYWJsZShiYWNrZ3JvdW5kLWNvbG9yLCBudWktY29sb3ItYmctc2Vjb25kYXJ5KTtcbiAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgJi5udWktbGlzdGl0ZW0ge1xuICAgICAgICAgICAgICAgICYubnVpLWxpc3RpdGVtLS1zZWxlY3RlZCB7XG4gICAgICAgICAgICAgICAgICAgIC5saXN0aXRlbS0tc2VsZWN0ZWQoKTtcbiAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICB9XG59XG5cbi50YWJsZS1zdHJpcGVkIHtcbiAgICA+IHRib2R5ID4gdHI6bnRoLW9mLXR5cGUob2RkKSA+IHRkLCA+IHRib2R5ID4gdHI6bnRoLW9mLXR5cGUob2RkKSA+IHRoIHtcbiAgICAgICAgLnNldENzc1ZhcmlhYmxlKGJvcmRlci10b3AtY29sb3IsIG51aS1jb2xvci1iZy1zZWNvbmRhcnkpO1xuICAgICAgICAuc2V0Q3NzVmFyaWFibGUoYm9yZGVyLWJvdHRvbS1jb2xvciwgbnVpLWNvbG9yLWJnLXNlY29uZGFyeSk7XG4gICAgICAgICY6Zmlyc3QtY2hpbGQge1xuICAgICAgICAgICAgLnNldENzc1ZhcmlhYmxlKGJvcmRlci1sZWZ0LWNvbG9yLCBudWktY29sb3ItYmctc2Vjb25kYXJ5KTtcbiAgICAgICAgfVxuXG4gICAgICAgICY6bGFzdC1jaGlsZCB7XG4gICAgICAgICAgICAuc2V0Q3NzVmFyaWFibGUoYm9yZGVyLXJpZ2h0LWNvbG9yLCBudWktY29sb3ItYmctc2Vjb25kYXJ5KTtcbiAgICAgICAgfVxuICAgIH1cbn1cblxuLnRhYmxlLWhvdmVyID4gdGJvZHkgPiB0cjpob3ZlciA+IHRkLCAudGFibGUtaG92ZXIgPiB0Ym9keSA+IHRyOmhvdmVyID4gdGgge1xuICAgIGJvcmRlci1jb2xvcjogQG51aS1jb2xvci1saW5lLWFjdGl2ZSAhaW1wb3J0YW50O1xuICAgIGJvcmRlci1jb2xvcjogdmFyKC0tbnVpLWNvbG9yLWxpbmUtYWN0aXZlKSAhaW1wb3J0YW50O1xufVxuXG4udGFibGUgPiB0aGVhZCA+IHRyID4gdGQuYWN0aXZlLFxuLnRhYmxlID4gdGJvZHkgPiB0ciA+IHRkLmFjdGl2ZSxcbi50YWJsZSA+IHRmb290ID4gdHIgPiB0ZC5hY3RpdmUsXG4udGFibGUgPiB0aGVhZCA+IHRyID4gdGguYWN0aXZlLFxuLnRhYmxlID4gdGJvZHkgPiB0ciA+IHRoLmFjdGl2ZSxcbi50YWJsZSA+IHRmb290ID4gdHIgPiB0aC5hY3RpdmUsXG4udGFibGUgPiB0aGVhZCA+IHRyLmFjdGl2ZSA+IHRkLFxuLnRhYmxlID4gdGJvZHkgPiB0ci5hY3RpdmUgPiB0ZCxcbi50YWJsZSA+IHRmb290ID4gdHIuYWN0aXZlID4gdGQsXG4udGFibGUgPiB0aGVhZCA+IHRyLmFjdGl2ZSA+IHRoLFxuLnRhYmxlID4gdGJvZHkgPiB0ci5hY3RpdmUgPiB0aCxcbi50YWJsZSA+IHRmb290ID4gdHIuYWN0aXZlID4gdGgge1xuICAgIC5zZXRDc3NWYXJpYWJsZShib3JkZXItdG9wLWNvbG9yLCBudWktY29sb3Itc2VsZWN0ZWQpO1xuICAgIC5zZXRDc3NWYXJpYWJsZShib3JkZXItYm90dG9tLWNvbG9yLCBudWktY29sb3Itc2VsZWN0ZWQpO1xufVxuXG4udGFibGUgPiB0aGVhZCA+IHRyID4gdGQuc3VjY2Vzcyxcbi50YWJsZSA+IHRib2R5ID4gdHIgPiB0ZC5zdWNjZXNzLFxuLnRhYmxlID4gdGZvb3QgPiB0ciA+IHRkLnN1Y2Nlc3MsXG4udGFibGUgPiB0aGVhZCA+IHRyID4gdGguc3VjY2Vzcyxcbi50YWJsZSA+IHRib2R5ID4gdHIgPiB0aC5zdWNjZXNzLFxuLnRhYmxlID4gdGZvb3QgPiB0ciA+IHRoLnN1Y2Nlc3MsXG4udGFibGUgPiB0aGVhZCA+IHRyLnN1Y2Nlc3MgPiB0ZCxcbi50YWJsZSA+IHRib2R5ID4gdHIuc3VjY2VzcyA+IHRkLFxuLnRhYmxlID4gdGZvb3QgPiB0ci5zdWNjZXNzID4gdGQsXG4udGFibGUgPiB0aGVhZCA+IHRyLnN1Y2Nlc3MgPiB0aCxcbi50YWJsZSA+IHRib2R5ID4gdHIuc3VjY2VzcyA+IHRoLFxuLnRhYmxlID4gdGZvb3QgPiB0ci5zdWNjZXNzID4gdGgge1xuICAgIC5zZXRDc3NWYXJpYWJsZShib3JkZXItdG9wLWNvbG9yLCBudWktY29sb3ItbGluZS1vayk7XG4gICAgLnNldENzc1ZhcmlhYmxlKGJvcmRlci1ib3R0b20tY29sb3IsIG51aS1jb2xvci1saW5lLW9rKTtcbiAgICAuc2V0Q3NzVmFyaWFibGUoY29sb3IsIG51aS1jb2xvci10ZXh0LWRlZmF1bHQpO1xufVxuXG4udGFibGUgPiB0aGVhZCA+IHRyID4gdGQuaW5mbyxcbi50YWJsZSA+IHRib2R5ID4gdHIgPiB0ZC5pbmZvLFxuLnRhYmxlID4gdGZvb3QgPiB0ciA+IHRkLmluZm8sXG4udGFibGUgPiB0aGVhZCA+IHRyID4gdGguaW5mbyxcbi50YWJsZSA+IHRib2R5ID4gdHIgPiB0aC5pbmZvLFxuLnRhYmxlID4gdGZvb3QgPiB0ciA+IHRoLmluZm8sXG4udGFibGUgPiB0aGVhZCA+IHRyLmluZm8gPiB0ZCxcbi50YWJsZSA+IHRib2R5ID4gdHIuaW5mbyA+IHRkLFxuLnRhYmxlID4gdGZvb3QgPiB0ci5pbmZvID4gdGQsXG4udGFibGUgPiB0aGVhZCA+IHRyLmluZm8gPiB0aCxcbi50YWJsZSA+IHRib2R5ID4gdHIuaW5mbyA+IHRoLFxuLnRhYmxlID4gdGZvb3QgPiB0ci5pbmZvID4gdGgge1xuICAgIC5zZXRDc3NWYXJpYWJsZShib3JkZXItdG9wLWNvbG9yLCBudWktY29sb3ItbGluZS1pbmZvKTtcbiAgICAuc2V0Q3NzVmFyaWFibGUoYm9yZGVyLWJvdHRvbS1jb2xvciwgbnVpLWNvbG9yLWxpbmUtaW5mbyk7XG4gICAgLnNldENzc1ZhcmlhYmxlKGNvbG9yLCBudWktY29sb3ItdGV4dC1kZWZhdWx0KTtcbn1cblxuLnRhYmxlID4gdGhlYWQgPiB0ciA+IHRkLndhcm5pbmcsXG4udGFibGUgPiB0Ym9keSA+IHRyID4gdGQud2FybmluZyxcbi50YWJsZSA+IHRmb290ID4gdHIgPiB0ZC53YXJuaW5nLFxuLnRhYmxlID4gdGhlYWQgPiB0ciA+IHRoLndhcm5pbmcsXG4udGFibGUgPiB0Ym9keSA+IHRyID4gdGgud2FybmluZyxcbi50YWJsZSA+IHRmb290ID4gdHIgPiB0aC53YXJuaW5nLFxuLnRhYmxlID4gdGhlYWQgPiB0ci53YXJuaW5nID4gdGQsXG4udGFibGUgPiB0Ym9keSA+IHRyLndhcm5pbmcgPiB0ZCxcbi50YWJsZSA+IHRmb290ID4gdHIud2FybmluZyA+IHRkLFxuLnRhYmxlID4gdGhlYWQgPiB0ci53YXJuaW5nID4gdGgsXG4udGFibGUgPiB0Ym9keSA+IHRyLndhcm5pbmcgPiB0aCxcbi50YWJsZSA+IHRmb290ID4gdHIud2FybmluZyA+IHRoIHtcbiAgICAuc2V0Q3NzVmFyaWFibGUoYm9yZGVyLXRvcC1jb2xvciwgbnVpLWNvbG9yLWxpbmUtd2FybmluZyk7XG4gICAgLnNldENzc1ZhcmlhYmxlKGJvcmRlci1ib3R0b20tY29sb3IsIG51aS1jb2xvci1saW5lLXdhcm5pbmcpO1xuICAgIC5zZXRDc3NWYXJpYWJsZShjb2xvciwgbnVpLWNvbG9yLXRleHQtZGVmYXVsdCk7XG59XG5cbi50YWJsZSA+IHRoZWFkID4gdHIgPiB0ZC5kYW5nZXIsXG4udGFibGUgPiB0Ym9keSA+IHRyID4gdGQuZGFuZ2VyLFxuLnRhYmxlID4gdGZvb3QgPiB0ciA+IHRkLmRhbmdlcixcbi50YWJsZSA+IHRoZWFkID4gdHIgPiB0aC5kYW5nZXIsXG4udGFibGUgPiB0Ym9keSA+IHRyID4gdGguZGFuZ2VyLFxuLnRhYmxlID4gdGZvb3QgPiB0ciA+IHRoLmRhbmdlcixcbi50YWJsZSA+IHRoZWFkID4gdHIuZGFuZ2VyID4gdGQsXG4udGFibGUgPiB0Ym9keSA+IHRyLmRhbmdlciA+IHRkLFxuLnRhYmxlID4gdGZvb3QgPiB0ci5kYW5nZXIgPiB0ZCxcbi50YWJsZSA+IHRoZWFkID4gdHIuZGFuZ2VyID4gdGgsXG4udGFibGUgPiB0Ym9keSA+IHRyLmRhbmdlciA+IHRoLFxuLnRhYmxlID4gdGZvb3QgPiB0ci5kYW5nZXIgPiB0aCB7XG4gICAgLnNldENzc1ZhcmlhYmxlKGJvcmRlci10b3AtY29sb3IsIG51aS1jb2xvci1saW5lLWNyaXRpY2FsKTtcbiAgICAuc2V0Q3NzVmFyaWFibGUoYm9yZGVyLWJvdHRvbS1jb2xvciwgbnVpLWNvbG9yLWxpbmUtY3JpdGljYWwpO1xuICAgIC5zZXRDc3NWYXJpYWJsZShjb2xvciwgbnVpLWNvbG9yLXRleHQtY3JpdGljYWwpO1xufVxuXG4udGFibGUtYm9yZGVyZWQge1xuICAgIGJvcmRlcjogMXB4IHNvbGlkIEBudWktY29sb3ItbGluZS1kZWZhdWx0O1xuICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLW51aS1jb2xvci1saW5lLWRlZmF1bHQsQG51aS1jb2xvci1saW5lLWRlZmF1bHQpO1xuXG59XG4vLyBGT1JNUy5MRVNTIE9WRVJSSURFU1xudGV4dGFyZWEuZm9ybS1jb250cm9sIHtcbiAgICBoZWlnaHQ6IGF1dG87XG59XG5cbnNlbGVjdC5mb3JtLWNvbnRyb2wge1xuICAgIHBhZGRpbmctdG9wOiAzcHg7XG4gICAgcGFkZGluZy1ib3R0b206IDNweDtcbn1cblxuLmZvcm0taW5saW5lID4gLmZvcm0tZ3JvdXAge1xuICAgIG1hcmdpbi1yaWdodDogQG51aS1zcGFjZS1zbSAqIDM7XG5cbiAgICBsYWJlbCB7XG4gICAgICAgIG1hcmdpbi1yaWdodDogQG51aS1zcGFjZS1zbTtcbiAgICB9XG59XG5cbi5oYXMtZXJyb3IgLmZvcm0tY29udHJvbCB7XG4gICAgLnNldENzc1ZhcmlhYmxlKGJvcmRlci1jb2xvciwgbnVpLWNvbG9yLWxpbmUtY3JpdGljYWwpO1xufVxuXG4uaGFzLXdhcm5pbmcgLmZvcm0tY29udHJvbCB7XG4gICAgLnNldENzc1ZhcmlhYmxlKGJhY2tncm91bmQtY29sb3IsIG51aS1jb2xvci1zZW1hbnRpYy13YXJuaW5nLWJnKTtcbiAgICAuc2V0Q3NzVmFyaWFibGUoYm9yZGVyLWNvbG9yLCBudWktY29sb3ItbGluZS13YXJuaW5nKTtcbiAgICAuc2V0Q3NzVmFyaWFibGUoY29sb3IsIG51aS1jb2xvci10ZXh0LWRlZmF1bHQpO1xuICAgIGZvbnQtd2VpZ2h0OiBAbnVpLWZvbnQtd2VpZ2h0LXNlbWlib2xkO1xufVxuXG4vLyB3ZSBkb24ndCB3YW50IENocm9tZSB0byBzaG93IGJsdWUgb3V0bGluZXMgYXJvdW5kIGFsbCBjbGlja2FibGUgaXRlbXMgKGl0IHNob3dzIGl0IGZvciBidXR0b25zIGFueXdheSlcbltyb2xlPVwiYnV0dG9uXCJdIHtcbiAgICBvdXRsaW5lOiBub25lO1xufVxuXG4vLyBjb21tb24gc3R5bGluZyBtaXhpbiBmb3IgdGV4dCBpbnB1dHMgLyB0ZXh0YXJlYXNcbi5udWktaW5wdXQtdGV4dCgpIHtcbiAgICAmOmZvY3VzLCAmOmFjdGl2ZSB7XG4gICAgICAgIC5zZXRDc3NWYXJpYWJsZShib3JkZXItY29sb3IsIG51aS1jb2xvci1hY3RpdmUtaG92ZXIpO1xuICAgICAgICBib3gtc2hhZG93OiBpbnNldCAwIDFweCAzcHggQG51aS1jb2xvci1pbnB1dC1ib3gtc2hhZG93O1xuICAgICAgICBib3gtc2hhZG93OiBpbnNldCAwIDFweCAzcHggdmFyKC0tbnVpLWNvbG9yLWlucHV0LWJveC1zaGFkb3csQG51aS1jb2xvci1pbnB1dC1ib3gtc2hhZG93KTtcbiAgICB9XG4gICAgJltkaXNhYmxlZF0ge1xuICAgICAgICAmOmhvdmVyLCAmOmZvY3VzLCAmOmFjdGl2ZSB7XG4gICAgICAgICAgICAuc2V0Q3NzVmFyaWFibGUoYm9yZGVyLWNvbG9yLCBudWktY29sb3ItaW5wdXQtYm94LXNoYWRvdy1ob3Zlcik7XG4gICAgICAgICAgICBib3JkZXItY29sb3I6IHZhcigtLW51aS1jb2xvci1pbnB1dC1ib3gtc2hhZG93LWhvdmVyLEBudWktY29sb3ItaW5wdXQtYm94LXNoYWRvdy1ob3Zlcik7XG4gICAgICAgIH1cbiAgICB9XG4gICAgJjo6LW1zLWNsZWFyIHtcbiAgICAgICAgZGlzcGxheTogbm9uZTtcbiAgICB9XG59XG5cbi8vIHN0eWxlIG92ZXJyaWRlIGZvciB1aWItdHlwZWFoZWFkLFxuLy8gb3RoZXJ3aXNlIGl0IGxvc2VzIHNwZWNpZmljaXR5IGZpZ2h0IGJlY2F1c2Ugb2YgLm51aSBuYW1lc3BhY2UgbmVzdGluZyBmb3IgLmRyb3Bkb3duLW1lbnUgYmFzZSBzdHlsZXNcblt1aWItdHlwZWFoZWFkLXBvcHVwXS5kcm9wZG93bi1tZW51IHtcbiAgICBkaXNwbGF5OiBibG9jaztcbn1cblxuLm51aS1uby1hbmltYXRlIHtcbiAgICAudHJhbnNpdGlvbihub25lKSAhaW1wb3J0YW50O1xuICAgIC5hbmltYXRpb24obm9uZSAwcykgIWltcG9ydGFudDtcbn1cblxuLmdlbmVyaWMtY29udHJvbCgpIHtcbiAgICAuc2V0Q3NzVmFyaWFibGUoYm9yZGVyLWNvbG9yLCBudWktY29sb3ItbGluZS1kZWZhdWx0KTsgICAgXG4gICAgYm9yZGVyLXdpZHRoOiBAbnVpLWxpbmUtZGVmYXVsdDtcbiAgICBib3JkZXItc3R5bGU6IEBudWktYm9yZGVyLXNvbGlkO1xuICAgIGJvcmRlci1yYWRpdXM6IEBudWktcmFkaXVzLWRlZmF1bHQ7XG59IiwiXG5AaW1wb3J0IChyZWZlcmVuY2UpIFwiLi4vLi4vbnVpLWZyYW1ld29yay12YXJpYWJsZXMubGVzc1wiO1xuQGltcG9ydCAocmVmZXJlbmNlKSBcIi4uLy4uL251aS1mcmFtZXdvcmstYmFzZS5sZXNzXCI7XG5cbi50ZXh0Ym94LWJhc2UoKSB7XG4gICAgLmdlbmVyaWMtY29udHJvbCgpO1xuICAgIC5zZXRDc3NWYXJpYWJsZShiYWNrZ3JvdW5kLCBudWktY29sb3ItYmctY29udGVudCk7XG4gICAgYm94LXNoYWRvdzogaW5zZXQgMCAxcHggMXB4IHJnYmEoMCwwLDAsLjA3NSk7XG5cbiAgICAmOmhvdmVyIHtcbiAgICAgICAgLnNldENzc1ZhcmlhYmxlKGJvcmRlci1jb2xvciwgbnVpLWNvbG9yLWxpbmUtZGVmYXVsdC1ob3Zlcik7XG4gICAgfVxuXG4gICAgJjpmb2N1cy13aXRoaW4sXG4gICAgJjpmb2N1cyB7XG4gICAgICAgIC5zZXRDc3NWYXJpYWJsZShib3JkZXItY29sb3IsIG51aS1jb2xvci1saW5lLWFjdGl2ZSk7XG4gICAgICAgIG91dGxpbmU6IG5vbmU7XG4gICAgfVxuXG4gICAgJi5lcnJvciwgJi5oYXMtZXJyb3Ige1xuICAgICAgICAuc2V0Q3NzVmFyaWFibGUoYm9yZGVyLWNvbG9yLCBudWktY29sb3ItbGluZS1jcml0aWNhbCk7XG4gICAgICAgICY6aG92ZXIsXG4gICAgICAgICY6Zm9jdXMsXG4gICAgICAgICY6YWN0aXZlIHtcbiAgICAgICAgICAgIC5zZXRDc3NWYXJpYWJsZShib3JkZXItY29sb3IsIG51aS1jb2xvci1saW5lLWNyaXRpY2FsKTtcbiAgICAgICAgfVxuICAgIH1cblxuICAgICYuZGlzYWJsZWQsICZbZGlzYWJsZWRdIHtcbiAgICAgICAgLnNldENzc1ZhcmlhYmxlKGJhY2tncm91bmQsIG51aS1jb2xvci1kaXNhYmxlZC1zZWNvbmRhcnkpO1xuICAgICAgICBib3JkZXItY29sb3I6IHRyYW5zcGFyZW50O1xuICAgICAgICBjdXJzb3I6IEBjdXJzb3ItZGlzYWJsZWQ7XG4gICAgICAgICY6aG92ZXIge1xuICAgICAgICAgICAgLnNldENzc1ZhcmlhYmxlKGJhY2tncm91bmQsIG51aS1jb2xvci1kaXNhYmxlZC1zZWNvbmRhcnkpO1xuICAgICAgICAgICAgYm9yZGVyLWNvbG9yOiB0cmFuc3BhcmVudDtcbiAgICAgICAgfVxuICAgIH1cblxuICAgICZbcmVhZG9ubHldIHtcbiAgICAgICAgLnNldENzc1ZhcmlhYmxlKGNvbG9yLCBudWktY29sb3ItdGV4dC1zZWNvbmRhcnkpO1xuICAgICAgICAuc2V0Q3NzVmFyaWFibGUoYmFja2dyb3VuZCwgbnVpLWNvbG9yLWRpc2FibGVkLXNlY29uZGFyeSk7XG4gICAgICAgIGJvcmRlci1jb2xvcjogdHJhbnNwYXJlbnQ7XG4gICAgICAgIGN1cnNvcjogZGVmYXVsdDtcbiAgICAgICAgJjpob3ZlcixcbiAgICAgICAgJjpmb2N1cyxcbiAgICAgICAgJjphY3RpdmUge1xuICAgICAgICAgICAgLnNldENzc1ZhcmlhYmxlKGNvbG9yLCBudWktY29sb3ItdGV4dC1zZWNvbmRhcnkpO1xuICAgICAgICAgICAgLnNldENzc1ZhcmlhYmxlKGJhY2tncm91bmQsIG51aS1jb2xvci1kaXNhYmxlZC1zZWNvbmRhcnkpO1xuICAgICAgICAgICAgYm9yZGVyLWNvbG9yOiB0cmFuc3BhcmVudDtcbiAgICAgICAgfVxuICAgIH1cbn1cbiIsIi5uby1zZWxlY3QoKSB7XG4gIC13ZWJraXQtdXNlci1zZWxlY3Q6IG5vbmU7ICAvKiBDaHJvbWUgYWxsIC8gU2FmYXJpIGFsbCAqL1xuICAtbW96LXVzZXItc2VsZWN0OiBub25lOyAgICAgLyogRmlyZWZveCBhbGwgKi9cbiAgLW1zLXVzZXItc2VsZWN0OiBub25lOyAgICAgIC8qIElFIDEwKyAqL1xuXG4gIC8qIE5vIHN1cHBvcnQgZm9yIHRoZXNlIHlldCwgdXNlIGF0IG93biByaXNrICovXG4gIC1vLXVzZXItc2VsZWN0OiBub25lO1xuICB1c2VyLXNlbGVjdDogbm9uZTtcbn0iLCIvLyBUZXh0IG92ZXJmbG93XG4vLyBSZXF1aXJlcyBpbmxpbmUtYmxvY2sgb3IgYmxvY2sgZm9yIHByb3BlciBzdHlsaW5nXG5cbi8vIFRPRE86IFJFTU9WRSBMRUdBQ1kgQk9PVFNUUkFQIE1JWElOXG4udGV4dC1vdmVyZmxvdygpIHtcbiAgLnRleHQtb3ZlcmZsb3coJ2VsbGlwc2lzJyk7XG59XG5cbi50ZXh0LW92ZXJmbG93KEBvdmVyZmxvdykge1xuICAgIHdoaXRlLXNwYWNlOm5vd3JhcDtcbiAgICBvdmVyZmxvdzpoaWRkZW47XG4gICAgLW1zLXRleHQtb3ZlcmZsb3c6IEBvdmVyZmxvdztcbiAgICAtby10ZXh0LW92ZXJmbG93OiBAb3ZlcmZsb3c7XG4gICAgdGV4dC1vdmVyZmxvdzogQG92ZXJmbG93O1xufVxuIl19 */"],
+        styles: [".nui-combobox-v2 {\n  border-color: var(--nui-color-line-default,#d9d9d9);\n  border-width: 1px;\n  border-style: solid;\n  border-radius: 3px;\n  background: var(--nui-color-bg-content,#fff);\n  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);\n  display: flex;\n  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;\n  color: var(--nui-color-text-default,#111);\n  min-height: calc(30px - (2 * 1px));\n  line-height: calc(calc(30px - (2 * 1px)) - 5px);\n  min-width: 100px;\n  font-size: 13px;\n}\n.nui-combobox-v2:hover {\n  border-color: var(--nui-color-line-default-hover,#b3b3b3);\n}\n.nui-combobox-v2:focus-within,\n.nui-combobox-v2:focus {\n  border-color: var(--nui-color-line-active,#0079aa);\n  outline: none;\n}\n.nui-combobox-v2.error,\n.nui-combobox-v2.has-error {\n  border-color: var(--nui-color-line-critical,#dd2c00);\n}\n.nui-combobox-v2.error:hover,\n.nui-combobox-v2.has-error:hover,\n.nui-combobox-v2.error:focus,\n.nui-combobox-v2.has-error:focus,\n.nui-combobox-v2.error:active,\n.nui-combobox-v2.has-error:active {\n  border-color: var(--nui-color-line-critical,#dd2c00);\n}\n.nui-combobox-v2.disabled,\n.nui-combobox-v2[disabled] {\n  background: var(--nui-color-disabled-secondary,#e8e8e8);\n  border-color: transparent;\n  cursor: not-allowed;\n}\n.nui-combobox-v2.disabled:hover,\n.nui-combobox-v2[disabled]:hover {\n  background: var(--nui-color-disabled-secondary,#e8e8e8);\n  border-color: transparent;\n}\n.nui-combobox-v2[readonly] {\n  color: var(--nui-color-text-secondary,rgba(17, 17, 17, 0.6));\n  background: var(--nui-color-disabled-secondary,#e8e8e8);\n  border-color: transparent;\n  cursor: default;\n}\n.nui-combobox-v2[readonly]:hover,\n.nui-combobox-v2[readonly]:focus,\n.nui-combobox-v2[readonly]:active {\n  color: var(--nui-color-text-secondary,rgba(17, 17, 17, 0.6));\n  background: var(--nui-color-disabled-secondary,#e8e8e8);\n  border-color: transparent;\n}\n.nui-combobox-v2.disabled {\n  color: var(--nui-color-text-disabled,rgba(17, 17, 17, 0.3));\n  -webkit-user-select: none;\n  /* Chrome all / Safari all */\n  -moz-user-select: none;\n  /* Firefox all */\n  -ms-user-select: none;\n  /* IE 10+ */\n  /* No support for these yet, use at own risk */\n  -o-user-select: none;\n  user-select: none;\n}\n.nui-combobox-v2__input {\n  flex: 1;\n  outline: none;\n  box-sizing: border-box;\n  border: none;\n  background-color: transparent;\n  background-image: none;\n  min-height: calc(calc(30px - (2 * 1px)) - 5px);\n  height: calc(calc(30px - (2 * 1px)) - 5px);\n  resize: vertical;\n  padding: 0 10px;\n  overflow-y: hidden;\n  cursor: text;\n  width: inherit;\n  white-space: nowrap;\n  overflow: hidden;\n  -ms-text-overflow: ellipsis;\n  text-overflow: ellipsis;\n}\n.nui-combobox-v2__input[disabled] {\n  cursor: not-allowed;\n}\n.nui-combobox-v2__input[disabled]::-moz-placeholder {\n  color: var(--nui-color-text-disabled,rgba(17, 17, 17, 0.3));\n}\n.nui-combobox-v2__input[disabled]:-ms-input-placeholder {\n  color: var(--nui-color-text-disabled,rgba(17, 17, 17, 0.3));\n}\n.nui-combobox-v2__input[disabled]::placeholder {\n  color: var(--nui-color-text-disabled,rgba(17, 17, 17, 0.3));\n}\n.nui-combobox-v2__input::-moz-placeholder {\n  color: var(--nui-color-text-secondary,rgba(17, 17, 17, 0.6));\n  font-size: 13px;\n  font-weight: 400;\n  margin-right: 5px;\n  white-space: nowrap;\n  overflow: hidden;\n  -ms-text-overflow: ellipsis;\n  text-overflow: ellipsis;\n}\n.nui-combobox-v2__input:-ms-input-placeholder {\n  color: var(--nui-color-text-secondary,rgba(17, 17, 17, 0.6));\n  font-size: 13px;\n  font-weight: 400;\n  margin-right: 5px;\n  white-space: nowrap;\n  overflow: hidden;\n  -ms-text-overflow: ellipsis;\n  text-overflow: ellipsis;\n}\n.nui-combobox-v2__input::placeholder {\n  color: var(--nui-color-text-secondary,rgba(17, 17, 17, 0.6));\n  font-size: 13px;\n  font-weight: 400;\n  margin-right: 5px;\n  white-space: nowrap;\n  overflow: hidden;\n  -ms-text-overflow: ellipsis;\n  text-overflow: ellipsis;\n}\n.nui-combobox-v2__remove-value.nui-button.action {\n  border: none;\n  border-radius: 0px;\n  border-right: 1px solid;\n  border-right-color: var(--nui-color-line-default,#d9d9d9);\n  min-height: calc(30px - (2 * 1px));\n  max-height: calc(30px - (2 * 1px));\n  align-self: center;\n}\n.nui-combobox-v2__remove-value.nui-button.action:hover,\n.nui-combobox-v2__remove-value.nui-button.action:focus,\n.nui-combobox-v2__remove-value.nui-button.action:active {\n  border-right: 1px solid;\n  border-right-color: var(--nui-color-line-default,#d9d9d9);\n}\n.nui-combobox-v2__toggle.nui-button.action {\n  min-height: calc(30px - (2 * 1px));\n  max-height: calc(30px - (2 * 1px));\n  align-self: center;\n}\n.nui-combobox-v2__toggle.nui-button.action.rotate nui-icon {\n  /*If we change the icon element, the target also will change (the old one is removed from the DOM).\n            On click on the caret icon an event stops propagation. That's why we rotate the same icon.*/\n  transform: rotate(180deg);\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbWJvYm94LXYyLmNvbXBvbmVudC5sZXNzIiwiLi4vLi4vLi4vc3R5bGVzL21peGlucy9jc3MtdmFyaWFibGVzLmxlc3MiLCIuLi8uLi8uLi9zdHlsZXMvbnVpLWZyYW1ld29yay1iYXNlLmxlc3MiLCIuLi8uLi8uLi9zdHlsZXMvbWl4aW5zL2NvbXBvbmVudC1iYXNlcy9iYXNlLXRleHRib3gubGVzcyIsIi4uLy4uLy4uL3N0eWxlcy9taXhpbnMvbm8tc2VsZWN0Lmxlc3MiLCIuLi8uLi8uLi9zdHlsZXMvbWl4aW5zL3RleHQtb3ZlcmZsb3cubGVzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFXQTtFQ05JLG1EQUFBO0VDeVZBLGlCQUFBO0VBQ0EsbUJBQUE7RUFDQSxrQkFBQTtFRDNWQSw0Q0FBQTtFRUVBLGdEQUFBO0VITUEsYUFBQTtFQUNBLHdFQUFBO0VDVEEseUNBQUE7RURXQSxrQ0FBQTtFQUNBLCtDQUFBO0VBQ0EsZ0JBQUE7RUFDQSxlQUFBO0FBTEo7QUdMSTtFRkpBLHlEQUFBO0FEWUo7QUdKSTs7RUZSQSxrREFBQTtFRVdJLGFBQUE7QUhNUjtBR0hJOztFRmRBLG9EQUFBO0FEcUJKO0FHTFE7Ozs7OztFRmhCSixvREFBQTtBRDZCSjtBR05JOztFRnZCQSx1REFBQTtFRXlCSSx5QkFBQTtFQUNBLG1CQUFBO0FIU1I7QUdSUTs7RUYzQkosdURBQUE7RUU2QlEseUJBQUE7QUhXWjtBR1BJO0VGakNBLDREQUFBO0VBQUEsdURBQUE7RUVvQ0kseUJBQUE7RUFDQSxlQUFBO0FIU1I7QUdSUTs7O0VGdENKLDREQUFBO0VBQUEsdURBQUE7RUUyQ1EseUJBQUE7QUhVWjtBQXJDSTtFQ2hCQSwyREFBQTtFR0pGLHlCQUFBO0VKNkRBLDRCQUE0QjtFSTVENUIsc0JBQUE7RUo4REEsZ0JBQWdCO0VJN0RoQixxQkFBQTtFSitEQSxXQUFXO0VBQ1gsOENBQThDO0VJN0Q5QyxvQkFBQTtFQUNBLGlCQUFBO0FKK0RGO0FBNUNJO0VBQ0ksT0FBQTtFQUNBLGFBQUE7RUFDQSxzQkFBQTtFQUNBLFlBQUE7RUFDQSw2QkFBQTtFQUNBLHNCQUFBO0VBQ0EsOENBQUE7RUFDQSwwQ0FBQTtFQUNBLGdCQUFBO0VBQ0EsZUFBQTtFQUNBLGtCQUFBO0VBQ0EsWUFBQTtFQUNBLGNBQUE7RUs5QkosbUJBQUE7RUFDQSxnQkFBQTtFQUNBLDJCQUFBO0VBRUEsdUJBQUE7QUw2RUo7QUFoRFE7RUFDSSxtQkFBQTtBQWtEWjtBQWpEWTtFQ3ZDUiwyREFBQTtBRDJGSjtBQXBEWTtFQ3ZDUiwyREFBQTtBRDJGSjtBQXBEWTtFQ3ZDUiwyREFBQTtBRDJGSjtBQS9DUTtFQzVDSiw0REFBQTtFRDhDUSxlQUFBO0VBQ0EsZ0JBQUE7RUFDQSxpQkFBQTtFSzVDUixtQkFBQTtFQUNBLGdCQUFBO0VBQ0EsMkJBQUE7RUFFQSx1QkFBQTtBTDhGSjtBQTFEUTtFQzVDSiw0REFBQTtFRDhDUSxlQUFBO0VBQ0EsZ0JBQUE7RUFDQSxpQkFBQTtFSzVDUixtQkFBQTtFQUNBLGdCQUFBO0VBQ0EsMkJBQUE7RUFFQSx1QkFBQTtBTDhGSjtBQTFEUTtFQzVDSiw0REFBQTtFRDhDUSxlQUFBO0VBQ0EsZ0JBQUE7RUFDQSxpQkFBQTtFSzVDUixtQkFBQTtFQUNBLGdCQUFBO0VBQ0EsMkJBQUE7RUFFQSx1QkFBQTtBTDhGSjtBQWpESTtFQUNJLFlBQUE7RUFDQSxrQkFBQTtFQUNBLHVCQUFBO0VDeERKLHlEQUFBO0VEMERJLGtDQUFBO0VBQ0Esa0NBQUE7RUFDQSxrQkFBQTtBQW1EUjtBQWpEUTs7O0VBR0ksdUJBQUE7RUNqRVIseURBQUE7QURxSEo7QUEvQ0k7RUFDSSxrQ0FBQTtFQUNBLGtDQUFBO0VBQ0Esa0JBQUE7QUFpRFI7QUEvQ1E7RUFpRE47dUdBQ3FHO0VBL0MzRix5QkFBQTtBQWlEWiIsImZpbGUiOiJjb21ib2JveC12Mi5jb21wb25lbnQubGVzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgKHJlZmVyZW5jZSkgXCIuLi8uLi8uLi9zdHlsZXMvbnVpLWZyYW1ld29yay12YXJpYWJsZXMubGVzc1wiO1xuQGltcG9ydCAocmVmZXJlbmNlKSBcIi4uLy4uLy4uL3N0eWxlcy9taXhpbnMubGVzc1wiO1xuQGltcG9ydCAocmVmZXJlbmNlKSBcIi4uLy4uLy4uL3N0eWxlcy9udWktZnJhbWV3b3JrLWJhc2UubGVzc1wiO1xuQGltcG9ydCAocmVmZXJlbmNlKSBcIi4uLy4uLy4uL3N0eWxlcy9udWktZnJhbWV3b3JrLXR5cG9ncmFwaHkubGVzc1wiO1xuQGltcG9ydCAocmVmZXJlbmNlKSBcIi4uLy4uLy4uL3N0eWxlcy9udWktZnJhbWV3b3JrLWNvbG9ycy5sZXNzXCI7XG5cbkBjb21ib2JveC1oZWlnaHQ6IDMwcHg7XG5AbWluLXdpZHRoOiAxMDBweDtcbkBjb250ZW50LWhlaWdodDogY2FsYyhAY29tYm9ib3gtaGVpZ2h0IC0gKDIgKiBAbnVpLWxpbmUtZGVmYXVsdCkpOyAvLyBAbnVpLWxpbmUtZGVmYXVsdCAtIGZvciBib3JkZXJzXG5AaW5wdXQtaGVpZ2h0OiBjYWxjKEBjb250ZW50LWhlaWdodCAtIEBudWktc3BhY2UteHMpOyAvLyBAbnVpLXNwYWNlLXhzIGZvciBwYWRkaW5nXG5cbi5udWktY29tYm9ib3gtdjIge1xuICAgIC50ZXh0Ym94LWJhc2UoKTtcbiAgICBkaXNwbGF5OiBmbGV4O1xuICAgIHRyYW5zaXRpb246IGJvcmRlci1jb2xvciBlYXNlLWluLW91dCAuMTVzLCBib3gtc2hhZG93IGVhc2UtaW4tb3V0IC4xNXM7XG4gICAgLnNldENzc1ZhcmlhYmxlKGNvbG9yLCBudWktY29sb3ItdGV4dC1kZWZhdWx0KTtcbiAgICBtaW4taGVpZ2h0OiBAY29udGVudC1oZWlnaHQ7XG4gICAgbGluZS1oZWlnaHQ6IEBpbnB1dC1oZWlnaHQ7XG4gICAgbWluLXdpZHRoOiBAbWluLXdpZHRoO1xuICAgIGZvbnQtc2l6ZTogQG51aS1mb250LXNpemUtZGVmYXVsdDtcblxuICAgICYuZGlzYWJsZWQge1xuICAgICAgICAuc2V0Q3NzVmFyaWFibGUoY29sb3IsIG51aS1jb2xvci10ZXh0LWRpc2FibGVkKTtcbiAgICAgICAgLm5vLXNlbGVjdCgpO1xuICAgIH1cblxuICAgICZfX2lucHV0IHtcbiAgICAgICAgZmxleDogMTtcbiAgICAgICAgb3V0bGluZTogbm9uZTtcbiAgICAgICAgYm94LXNpemluZzogYm9yZGVyLWJveDtcbiAgICAgICAgYm9yZGVyOiBub25lO1xuICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudDtcbiAgICAgICAgYmFja2dyb3VuZC1pbWFnZTogbm9uZTtcbiAgICAgICAgbWluLWhlaWdodDogQGlucHV0LWhlaWdodDtcbiAgICAgICAgaGVpZ2h0OiBAaW5wdXQtaGVpZ2h0O1xuICAgICAgICByZXNpemU6IHZlcnRpY2FsO1xuICAgICAgICBwYWRkaW5nOiAwIEBudWktc3BhY2Utc207XG4gICAgICAgIG92ZXJmbG93LXk6IGhpZGRlbjtcbiAgICAgICAgY3Vyc29yOiB0ZXh0O1xuICAgICAgICB3aWR0aDogaW5oZXJpdDtcbiAgICAgICAgLnRleHQtb3ZlcmZsb3coZWxsaXBzaXMpO1xuXG4gICAgICAgICZbZGlzYWJsZWRdIHtcbiAgICAgICAgICAgIGN1cnNvcjogQGN1cnNvci1kaXNhYmxlZDtcbiAgICAgICAgICAgICY6OnBsYWNlaG9sZGVyIHtcbiAgICAgICAgICAgICAgICAuc2V0Q3NzVmFyaWFibGUoY29sb3IsIG51aS1jb2xvci10ZXh0LWRpc2FibGVkKTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgfVxuXG4gICAgICAgICY6OnBsYWNlaG9sZGVyIHtcbiAgICAgICAgICAgIC5zZXRDc3NWYXJpYWJsZShjb2xvciwgbnVpLWNvbG9yLXRleHQtc2Vjb25kYXJ5KTtcbiAgICAgICAgICAgIGZvbnQtc2l6ZTogQG51aS1mb250LXNpemUtZGVmYXVsdDtcbiAgICAgICAgICAgIGZvbnQtd2VpZ2h0OiBAbnVpLWZvbnQtd2VpZ2h0LXJlZ3VsYXI7XG4gICAgICAgICAgICBtYXJnaW4tcmlnaHQ6IEBudWktc3BhY2UteHM7XG4gICAgICAgICAgICAudGV4dC1vdmVyZmxvdyhlbGxpcHNpcyk7XG4gICAgICAgIH1cbiAgICB9XG5cbiAgICAmX19yZW1vdmUtdmFsdWUubnVpLWJ1dHRvbi5hY3Rpb24ge1xuICAgICAgICBib3JkZXI6IG5vbmU7XG4gICAgICAgIGJvcmRlci1yYWRpdXM6IDBweDtcbiAgICAgICAgYm9yZGVyLXJpZ2h0OiAxcHggc29saWQ7XG4gICAgICAgIC5zZXRDc3NWYXJpYWJsZShib3JkZXItcmlnaHQtY29sb3IsIG51aS1jb2xvci1saW5lLWRlZmF1bHQpO1xuICAgICAgICBtaW4taGVpZ2h0OiBAY29udGVudC1oZWlnaHQ7XG4gICAgICAgIG1heC1oZWlnaHQ6IEBjb250ZW50LWhlaWdodDtcbiAgICAgICAgYWxpZ24tc2VsZjogY2VudGVyO1xuXG4gICAgICAgICY6aG92ZXIsXG4gICAgICAgICY6Zm9jdXMsXG4gICAgICAgICY6YWN0aXZlIHtcbiAgICAgICAgICAgIGJvcmRlci1yaWdodDogMXB4IHNvbGlkO1xuICAgICAgICAgICAgLnNldENzc1ZhcmlhYmxlKGJvcmRlci1yaWdodC1jb2xvciwgbnVpLWNvbG9yLWxpbmUtZGVmYXVsdCk7XG4gICAgICAgIH1cbiAgICB9XG5cbiAgICAmX190b2dnbGUubnVpLWJ1dHRvbi5hY3Rpb24ge1xuICAgICAgICBtaW4taGVpZ2h0OiBAY29udGVudC1oZWlnaHQ7XG4gICAgICAgIG1heC1oZWlnaHQ6IEBjb250ZW50LWhlaWdodDtcbiAgICAgICAgYWxpZ24tc2VsZjogY2VudGVyO1xuXG4gICAgICAgICYucm90YXRlIG51aS1pY29uIHtcbiAgICAgICAgICAgIC8qSWYgd2UgY2hhbmdlIHRoZSBpY29uIGVsZW1lbnQsIHRoZSB0YXJnZXQgYWxzbyB3aWxsIGNoYW5nZSAodGhlIG9sZCBvbmUgaXMgcmVtb3ZlZCBmcm9tIHRoZSBET00pLlxuICAgICAgICAgICAgT24gY2xpY2sgb24gdGhlIGNhcmV0IGljb24gYW4gZXZlbnQgc3RvcHMgcHJvcGFnYXRpb24uIFRoYXQncyB3aHkgd2Ugcm90YXRlIHRoZSBzYW1lIGljb24uKi9cbiAgICAgICAgICAgIHRyYW5zZm9ybTogcm90YXRlKDE4MGRlZyk7XG4gICAgICAgIH1cbiAgICB9XG59XG4iLCIuc2V0Q3NzVmFyaWFibGUoQHByb3BlcnR5LCBAdmFsdWUpe1xuICAgIEBldmFsdWF0ZWQgOiBcIkB7dmFsdWV9XCI7XG4gICAgLy90aGUgZG91YmxlIEAgZm9yY2VzIGEgaW5kaXJlY3Rpb24gZXZhbHVhdGlvbiwga2luZGEgbGlrZSBhIHBvaW50ZXJcbiAgICBAZmFsbGJhY2sgOiBAQGV2YWx1YXRlZDtcblxuICAgIEB7cHJvcGVydHl9OiB+XCJ2YXIoLS1Ae3ZhbHVlfSxAe2ZhbGxiYWNrfSlcIjtcbn1cbiIsIkBpbXBvcnQgKHJlZmVyZW5jZSkgXCJudWktZnJhbWV3b3JrLXZhcmlhYmxlcy5sZXNzXCI7XG5AaW1wb3J0IChyZWZlcmVuY2UpIFwibWl4aW5zL3ZlbmRvci1wcmVmaXhlc1wiO1xuQGltcG9ydCAocmVmZXJlbmNlKSBcIm1peGlucy5sZXNzXCI7XG5cbmh0bWwge1xuICAgIC13ZWJraXQtdGFwLWhpZ2hsaWdodC1jb2xvcjogcmdiYSgwLDAsMCwwKTtcbn1cblxuYm9keSB7XG4gICAgZm9udC1mYW1pbHk6IEBmb250LWZhbWlseS1vcGVuLXNhbnM7XG4gICAgZm9udC1zaXplOiBAbnVpLWZvbnQtc2l6ZS1kZWZhdWx0O1xuICAgIGxpbmUtaGVpZ2h0OiBAbGluZS1oZWlnaHQtYmFzZTtcbiAgICAuc2V0Q3NzVmFyaWFibGUoY29sb3IsIHRleHQtY29sb3IpO1xuICAgIC5zZXRDc3NWYXJpYWJsZShiYWNrZ3JvdW5kLWNvbG9yLCBib2R5LWJnKTtcbiAgICBtYXJnaW46IDA7XG59XG5cbi8vIFNldmVyYWwgY2xhc3NlcyBpbiBCb290c3RyYXAgOmV4dGVuZCB0aGUgLmNsZWFyZml4IGNsYXNzIHdoaWNoIGhhcyB0aGUgdW5mb3J0dW5hdGUgc2lkZSBlZmZlY3Rcbi8vIG9mIGRvdWJsaW5nIHRoZSAubnVpIG5hbWVzcGFjZSAoLm51aSAubnVpKSByZW5kZXJpbmcgdGhlbSBlZmZlY3RpdmVseSB1c2VsZXNzXG4vLyBzbyBhZGRpbmcgdGhlbSBiYWNrIGluIGZyYW1ld29yayB0byBnZXQgcHJvcGVyIGNsZWFyZml4ZXMgZ29pbmcgb25cbi5jbGVhcmZpeDpiZWZvcmUsXG4uY2xlYXJmaXg6YWZ0ZXIsXG4uZGwtaG9yaXpvbnRhbCBkZDpiZWZvcmUsXG4uZGwtaG9yaXpvbnRhbCBkZDphZnRlcixcbi5jb250YWluZXI6YmVmb3JlLFxuLmNvbnRhaW5lcjphZnRlcixcbi5jb250YWluZXItZmx1aWQ6YmVmb3JlLFxuLmNvbnRhaW5lci1mbHVpZDphZnRlcixcbi5yb3c6YmVmb3JlLFxuLnJvdzphZnRlcixcbi5mb3JtLWhvcml6b250YWwgLmZvcm0tZ3JvdXA6YmVmb3JlLFxuLmZvcm0taG9yaXpvbnRhbCAuZm9ybS1ncm91cDphZnRlcixcbi5idG4tdG9vbGJhcjpiZWZvcmUsXG4uYnRuLXRvb2xiYXI6YWZ0ZXIsXG4uYnRuLWdyb3VwLXZlcnRpY2FsID4gLmJ0bi1ncm91cDpiZWZvcmUsXG4uYnRuLWdyb3VwLXZlcnRpY2FsID4gLmJ0bi1ncm91cDphZnRlcixcbi5uYXY6YmVmb3JlLFxuLm5hdjphZnRlcixcbi5uYXZiYXI6YmVmb3JlLFxuLm5hdmJhcjphZnRlcixcbi5uYXZiYXItaGVhZGVyOmJlZm9yZSxcbi5uYXZiYXItaGVhZGVyOmFmdGVyLFxuLm5hdmJhci1jb2xsYXBzZTpiZWZvcmUsXG4ubmF2YmFyLWNvbGxhcHNlOmFmdGVyLFxuLnBhZ2VyOmJlZm9yZSxcbi5wYWdlcjphZnRlcixcbi5wYW5lbC1ib2R5OmJlZm9yZSxcbi5wYW5lbC1ib2R5OmFmdGVyLFxuLmRpYWxvZy1mb290ZXI6YmVmb3JlLFxuLmRpYWxvZy1mb290ZXI6YWZ0ZXIge1xuICAgIGNvbnRlbnQ6IFwiIFwiO1xuICAgIGRpc3BsYXk6IHRhYmxlO1xuICAgIHdpZHRoOiAwcHg7XG59XG5cbi5jbGVhcmZpeDphZnRlcixcbi5kbC1ob3Jpem9udGFsIGRkOmFmdGVyLFxuLmNvbnRhaW5lcjphZnRlcixcbi5jb250YWluZXItZmx1aWQ6YWZ0ZXIsXG4ucm93OmFmdGVyLFxuLmZvcm0taG9yaXpvbnRhbCAuZm9ybS1ncm91cDphZnRlcixcbi5idG4tdG9vbGJhcjphZnRlcixcbi5idG4tZ3JvdXAtdmVydGljYWwgPiAuYnRuLWdyb3VwOmFmdGVyLFxuLm5hdjphZnRlcixcbi5uYXZiYXI6YWZ0ZXIsXG4ubmF2YmFyLWhlYWRlcjphZnRlcixcbi5uYXZiYXItY29sbGFwc2U6YWZ0ZXIsXG4ucGFnZXI6YWZ0ZXIsXG4ucGFuZWwtYm9keTphZnRlcixcbi5kaWFsb2ctZm9vdGVyOmFmdGVyIHtcbiAgICBjbGVhcjogYm90aDtcbn1cblxuLy8gb3ZlcnJpZGVzIGZvciBidXR0b24gY2xhc3Nlc1xuLy8gVFlQRS5MRVNTIE9WRVJSSURFU1xuYmxvY2txdW90ZSwgLmJsb2NrcXVvdGUtcmV2ZXJzZSB7XG4gICAgYm9yZGVyLWxlZnQ6IDA7XG4gICAgYm9yZGVyLXJpZ2h0OiAwO1xuICAgIHBhZGRpbmctbGVmdDogMDtcbiAgICBwYWRkaW5nLXJpZ2h0OiAwO1xufVxuXG4ubGVhZCB7XG4gICAgbWFyZ2luLWJvdHRvbTogQG51aS1zcGFjZS1zbTtcbn1cblxuLnRleHQtcHJpbWFyeSwgLnRleHQtc3VjY2VzcywgLnRleHQtaW5mbywgLnRleHQtd2FybmluZywgLnRleHQtZGFuZ2VyIHtcbiAgICBmb250LXdlaWdodDogQG51aS1mb250LXdlaWdodC1zZW1pYm9sZDtcbn1cblxuLm51aS1oZWxwLWhpbnQge1xuICAgIC5zZXRDc3NWYXJpYWJsZShjb2xvciwgbnVpLWNvbG9yLXRleHQtc2Vjb25kYXJ5KTtcbiAgICBmb250LXNpemU6IEBudWktZm9udC1zaXplLXNtYWxsO1xuICAgIHBhZGRpbmc6IEBwYWRkaW5nLXhzLXZlcnRpY2FsIDAgMCAwO1xuICAgIG92ZXJmbG93OiBoaWRkZW47XG4gICAgdGV4dC1vdmVyZmxvdzogZWxsaXBzaXM7XG59XG5cbi5kcm9wdXAsXG4ubmF2YmFyLWZpeGVkLWJvdHRvbSAuZHJvcGRvd24ge1xuICAgIC8vIFJldmVyc2UgdGhlIGNhcmV0XG4gICAgLmNhcmV0IHtcbiAgICAgICAgYm9yZGVyLXRvcDogMDtcbiAgICAgICAgYm9yZGVyLWJvdHRvbTogMDtcbiAgICAgICAgY29udGVudDogXCJcIjtcbiAgICB9XG59XG5cbi8vIFRBQkxFUy5MRVNTIE9WRVJSSURFU1xuLnRhYmxlIHtcbiAgICBib3JkZXItY29sbGFwc2U6IHNlcGFyYXRlO1xuXG4gICAgPiB0aGVhZCB7XG4gICAgICAgIC5zZXRDc3NWYXJpYWJsZShiYWNrZ3JvdW5kLWNvbG9yLCBudWktY29sb3ItYmctd29ya3NwYWNlKTtcbiAgICAgICAgLnNldENzc1ZhcmlhYmxlKGNvbG9yLCBudWktY29sb3ItdGV4dC1zZWNvbmRhcnkpO1xuICAgICAgICBib3JkZXI6IDFweCBzb2xpZCBAbnVpLWNvbG9yLWJnLXdvcmtzcGFjZTtcbiAgICAgICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tbnVpLWNvbG9yLWJnLXdvcmtzcGFjZSxAbnVpLWNvbG9yLWJnLXdvcmtzcGFjZSk7XG5cbiAgICAgICAgPiB0aCB7XG4gICAgICAgICAgICBmb250LXdlaWdodDogQG51aS1mb250LXdlaWdodC1zZW1pYm9sZDtcbiAgICAgICAgfVxuICAgIH1cblxuICAgID4gdGJvZHkgPiB0ciA+IHRkLCA+IHRib2R5ID4gdHIgPiB0aCB7XG4gICAgICAgIGJvcmRlci10b3A6IDFweCBzb2xpZCBAbnVpLWNvbG9yLWJnLWxpZ2h0O1xuICAgICAgICBib3JkZXItdG9wOiAxcHggc29saWQgdmFyKC0tbnVpLWNvbG9yLWJnLWxpZ2h0LEBudWktY29sb3ItYmctbGlnaHQpO1xuICAgICAgICBib3JkZXItYm90dG9tOiAxcHggc29saWQgQG51aS1jb2xvci1iZy1saWdodDtcbiAgICAgICAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkIHZhcigtLW51aS1jb2xvci1iZy1saWdodCxAbnVpLWNvbG9yLWJnLWxpZ2h0KTtcbiAgICAgICAgYm9yZGVyLWxlZnQ6IDA7XG4gICAgICAgIGJvcmRlci1yaWdodDogMDtcbiAgICAgICAgJjpmaXJzdC1jaGlsZCB7XG4gICAgICAgICAgICBib3JkZXItbGVmdDogMXB4IHNvbGlkIEBudWktY29sb3ItYmctbGlnaHQ7XG4gICAgICAgICAgICBib3JkZXItbGVmdDogMXB4IHNvbGlkIHZhcigtLW51aS1jb2xvci1iZy1saWdodCxAbnVpLWNvbG9yLWJnLWxpZ2h0KTtcbiAgICAgICAgfVxuXG4gICAgICAgICY6bGFzdC1jaGlsZCB7XG4gICAgICAgICAgICBib3JkZXItcmlnaHQ6IDFweCBzb2xpZCBAbnVpLWNvbG9yLWJnLWxpZ2h0O1xuICAgICAgICAgICAgYm9yZGVyLXJpZ2h0OiAxcHggc29saWQgdmFyKC0tbnVpLWNvbG9yLWJnLWxpZ2h0LEBudWktY29sb3ItYmctbGlnaHQpO1xuICAgICAgICB9XG4gICAgfVxuXG4gICAgPiB0aGVhZCwgPiB0Ym9keSwgPiB0Zm9vdCB7XG4gICAgICAgID4gdHIge1xuICAgICAgICAgICAgPiB0aCwgPiB0ZCB7XG4gICAgICAgICAgICAgICAgcGFkZGluZy1sZWZ0OiAxNXB4O1xuICAgICAgICAgICAgICAgIHBhZGRpbmctcmlnaHQ6IDE1cHg7XG4gICAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICB9XG59XG5cbnVsIHtcbiAgICBsaXN0LXN0eWxlOiBub25lO1xuICAgIHBhZGRpbmc6IDA7XG59XG5cbi5saXN0LWdyb3VwIHtcbiAgICA+IC5saXN0LWdyb3VwLWl0ZW0ge1xuICAgICAgICBib3JkZXI6IG5vbmU7XG4gICAgICAgIG1hcmdpbjogMDtcbiAgICB9XG5cbiAgICAmLmxpc3QtZ3JvdXAtc3RyaXBlZCB7XG4gICAgICAgID4gLmxpc3QtZ3JvdXAtaXRlbSB7XG4gICAgICAgICAgICAmOm50aC1vZi10eXBlKG9kZCkge1xuICAgICAgICAgICAgICAgIC5zZXRDc3NWYXJpYWJsZShiYWNrZ3JvdW5kLWNvbG9yLCBudWktY29sb3ItYmctc2Vjb25kYXJ5KTtcbiAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgJi5udWktbGlzdGl0ZW0ge1xuICAgICAgICAgICAgICAgICYubnVpLWxpc3RpdGVtLS1zZWxlY3RlZCB7XG4gICAgICAgICAgICAgICAgICAgIC5saXN0aXRlbS0tc2VsZWN0ZWQoKTtcbiAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICB9XG59XG5cbi50YWJsZS1zdHJpcGVkIHtcbiAgICA+IHRib2R5ID4gdHI6bnRoLW9mLXR5cGUob2RkKSA+IHRkLCA+IHRib2R5ID4gdHI6bnRoLW9mLXR5cGUob2RkKSA+IHRoIHtcbiAgICAgICAgLnNldENzc1ZhcmlhYmxlKGJvcmRlci10b3AtY29sb3IsIG51aS1jb2xvci1iZy1zZWNvbmRhcnkpO1xuICAgICAgICAuc2V0Q3NzVmFyaWFibGUoYm9yZGVyLWJvdHRvbS1jb2xvciwgbnVpLWNvbG9yLWJnLXNlY29uZGFyeSk7XG4gICAgICAgICY6Zmlyc3QtY2hpbGQge1xuICAgICAgICAgICAgLnNldENzc1ZhcmlhYmxlKGJvcmRlci1sZWZ0LWNvbG9yLCBudWktY29sb3ItYmctc2Vjb25kYXJ5KTtcbiAgICAgICAgfVxuXG4gICAgICAgICY6bGFzdC1jaGlsZCB7XG4gICAgICAgICAgICAuc2V0Q3NzVmFyaWFibGUoYm9yZGVyLXJpZ2h0LWNvbG9yLCBudWktY29sb3ItYmctc2Vjb25kYXJ5KTtcbiAgICAgICAgfVxuICAgIH1cbn1cblxuLnRhYmxlLWhvdmVyID4gdGJvZHkgPiB0cjpob3ZlciA+IHRkLCAudGFibGUtaG92ZXIgPiB0Ym9keSA+IHRyOmhvdmVyID4gdGgge1xuICAgIGJvcmRlci1jb2xvcjogQG51aS1jb2xvci1saW5lLWFjdGl2ZSAhaW1wb3J0YW50O1xuICAgIGJvcmRlci1jb2xvcjogdmFyKC0tbnVpLWNvbG9yLWxpbmUtYWN0aXZlKSAhaW1wb3J0YW50O1xufVxuXG4udGFibGUgPiB0aGVhZCA+IHRyID4gdGQuYWN0aXZlLFxuLnRhYmxlID4gdGJvZHkgPiB0ciA+IHRkLmFjdGl2ZSxcbi50YWJsZSA+IHRmb290ID4gdHIgPiB0ZC5hY3RpdmUsXG4udGFibGUgPiB0aGVhZCA+IHRyID4gdGguYWN0aXZlLFxuLnRhYmxlID4gdGJvZHkgPiB0ciA+IHRoLmFjdGl2ZSxcbi50YWJsZSA+IHRmb290ID4gdHIgPiB0aC5hY3RpdmUsXG4udGFibGUgPiB0aGVhZCA+IHRyLmFjdGl2ZSA+IHRkLFxuLnRhYmxlID4gdGJvZHkgPiB0ci5hY3RpdmUgPiB0ZCxcbi50YWJsZSA+IHRmb290ID4gdHIuYWN0aXZlID4gdGQsXG4udGFibGUgPiB0aGVhZCA+IHRyLmFjdGl2ZSA+IHRoLFxuLnRhYmxlID4gdGJvZHkgPiB0ci5hY3RpdmUgPiB0aCxcbi50YWJsZSA+IHRmb290ID4gdHIuYWN0aXZlID4gdGgge1xuICAgIC5zZXRDc3NWYXJpYWJsZShib3JkZXItdG9wLWNvbG9yLCBudWktY29sb3Itc2VsZWN0ZWQpO1xuICAgIC5zZXRDc3NWYXJpYWJsZShib3JkZXItYm90dG9tLWNvbG9yLCBudWktY29sb3Itc2VsZWN0ZWQpO1xufVxuXG4udGFibGUgPiB0aGVhZCA+IHRyID4gdGQuc3VjY2Vzcyxcbi50YWJsZSA+IHRib2R5ID4gdHIgPiB0ZC5zdWNjZXNzLFxuLnRhYmxlID4gdGZvb3QgPiB0ciA+IHRkLnN1Y2Nlc3MsXG4udGFibGUgPiB0aGVhZCA+IHRyID4gdGguc3VjY2Vzcyxcbi50YWJsZSA+IHRib2R5ID4gdHIgPiB0aC5zdWNjZXNzLFxuLnRhYmxlID4gdGZvb3QgPiB0ciA+IHRoLnN1Y2Nlc3MsXG4udGFibGUgPiB0aGVhZCA+IHRyLnN1Y2Nlc3MgPiB0ZCxcbi50YWJsZSA+IHRib2R5ID4gdHIuc3VjY2VzcyA+IHRkLFxuLnRhYmxlID4gdGZvb3QgPiB0ci5zdWNjZXNzID4gdGQsXG4udGFibGUgPiB0aGVhZCA+IHRyLnN1Y2Nlc3MgPiB0aCxcbi50YWJsZSA+IHRib2R5ID4gdHIuc3VjY2VzcyA+IHRoLFxuLnRhYmxlID4gdGZvb3QgPiB0ci5zdWNjZXNzID4gdGgge1xuICAgIC5zZXRDc3NWYXJpYWJsZShib3JkZXItdG9wLWNvbG9yLCBudWktY29sb3ItbGluZS1vayk7XG4gICAgLnNldENzc1ZhcmlhYmxlKGJvcmRlci1ib3R0b20tY29sb3IsIG51aS1jb2xvci1saW5lLW9rKTtcbiAgICAuc2V0Q3NzVmFyaWFibGUoY29sb3IsIG51aS1jb2xvci10ZXh0LWRlZmF1bHQpO1xufVxuXG4udGFibGUgPiB0aGVhZCA+IHRyID4gdGQuaW5mbyxcbi50YWJsZSA+IHRib2R5ID4gdHIgPiB0ZC5pbmZvLFxuLnRhYmxlID4gdGZvb3QgPiB0ciA+IHRkLmluZm8sXG4udGFibGUgPiB0aGVhZCA+IHRyID4gdGguaW5mbyxcbi50YWJsZSA+IHRib2R5ID4gdHIgPiB0aC5pbmZvLFxuLnRhYmxlID4gdGZvb3QgPiB0ciA+IHRoLmluZm8sXG4udGFibGUgPiB0aGVhZCA+IHRyLmluZm8gPiB0ZCxcbi50YWJsZSA+IHRib2R5ID4gdHIuaW5mbyA+IHRkLFxuLnRhYmxlID4gdGZvb3QgPiB0ci5pbmZvID4gdGQsXG4udGFibGUgPiB0aGVhZCA+IHRyLmluZm8gPiB0aCxcbi50YWJsZSA+IHRib2R5ID4gdHIuaW5mbyA+IHRoLFxuLnRhYmxlID4gdGZvb3QgPiB0ci5pbmZvID4gdGgge1xuICAgIC5zZXRDc3NWYXJpYWJsZShib3JkZXItdG9wLWNvbG9yLCBudWktY29sb3ItbGluZS1pbmZvKTtcbiAgICAuc2V0Q3NzVmFyaWFibGUoYm9yZGVyLWJvdHRvbS1jb2xvciwgbnVpLWNvbG9yLWxpbmUtaW5mbyk7XG4gICAgLnNldENzc1ZhcmlhYmxlKGNvbG9yLCBudWktY29sb3ItdGV4dC1kZWZhdWx0KTtcbn1cblxuLnRhYmxlID4gdGhlYWQgPiB0ciA+IHRkLndhcm5pbmcsXG4udGFibGUgPiB0Ym9keSA+IHRyID4gdGQud2FybmluZyxcbi50YWJsZSA+IHRmb290ID4gdHIgPiB0ZC53YXJuaW5nLFxuLnRhYmxlID4gdGhlYWQgPiB0ciA+IHRoLndhcm5pbmcsXG4udGFibGUgPiB0Ym9keSA+IHRyID4gdGgud2FybmluZyxcbi50YWJsZSA+IHRmb290ID4gdHIgPiB0aC53YXJuaW5nLFxuLnRhYmxlID4gdGhlYWQgPiB0ci53YXJuaW5nID4gdGQsXG4udGFibGUgPiB0Ym9keSA+IHRyLndhcm5pbmcgPiB0ZCxcbi50YWJsZSA+IHRmb290ID4gdHIud2FybmluZyA+IHRkLFxuLnRhYmxlID4gdGhlYWQgPiB0ci53YXJuaW5nID4gdGgsXG4udGFibGUgPiB0Ym9keSA+IHRyLndhcm5pbmcgPiB0aCxcbi50YWJsZSA+IHRmb290ID4gdHIud2FybmluZyA+IHRoIHtcbiAgICAuc2V0Q3NzVmFyaWFibGUoYm9yZGVyLXRvcC1jb2xvciwgbnVpLWNvbG9yLWxpbmUtd2FybmluZyk7XG4gICAgLnNldENzc1ZhcmlhYmxlKGJvcmRlci1ib3R0b20tY29sb3IsIG51aS1jb2xvci1saW5lLXdhcm5pbmcpO1xuICAgIC5zZXRDc3NWYXJpYWJsZShjb2xvciwgbnVpLWNvbG9yLXRleHQtZGVmYXVsdCk7XG59XG5cbi50YWJsZSA+IHRoZWFkID4gdHIgPiB0ZC5kYW5nZXIsXG4udGFibGUgPiB0Ym9keSA+IHRyID4gdGQuZGFuZ2VyLFxuLnRhYmxlID4gdGZvb3QgPiB0ciA+IHRkLmRhbmdlcixcbi50YWJsZSA+IHRoZWFkID4gdHIgPiB0aC5kYW5nZXIsXG4udGFibGUgPiB0Ym9keSA+IHRyID4gdGguZGFuZ2VyLFxuLnRhYmxlID4gdGZvb3QgPiB0ciA+IHRoLmRhbmdlcixcbi50YWJsZSA+IHRoZWFkID4gdHIuZGFuZ2VyID4gdGQsXG4udGFibGUgPiB0Ym9keSA+IHRyLmRhbmdlciA+IHRkLFxuLnRhYmxlID4gdGZvb3QgPiB0ci5kYW5nZXIgPiB0ZCxcbi50YWJsZSA+IHRoZWFkID4gdHIuZGFuZ2VyID4gdGgsXG4udGFibGUgPiB0Ym9keSA+IHRyLmRhbmdlciA+IHRoLFxuLnRhYmxlID4gdGZvb3QgPiB0ci5kYW5nZXIgPiB0aCB7XG4gICAgLnNldENzc1ZhcmlhYmxlKGJvcmRlci10b3AtY29sb3IsIG51aS1jb2xvci1saW5lLWNyaXRpY2FsKTtcbiAgICAuc2V0Q3NzVmFyaWFibGUoYm9yZGVyLWJvdHRvbS1jb2xvciwgbnVpLWNvbG9yLWxpbmUtY3JpdGljYWwpO1xuICAgIC5zZXRDc3NWYXJpYWJsZShjb2xvciwgbnVpLWNvbG9yLXRleHQtY3JpdGljYWwpO1xufVxuXG4udGFibGUtYm9yZGVyZWQge1xuICAgIGJvcmRlcjogMXB4IHNvbGlkIEBudWktY29sb3ItbGluZS1kZWZhdWx0O1xuICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLW51aS1jb2xvci1saW5lLWRlZmF1bHQsQG51aS1jb2xvci1saW5lLWRlZmF1bHQpO1xuXG59XG4vLyBGT1JNUy5MRVNTIE9WRVJSSURFU1xudGV4dGFyZWEuZm9ybS1jb250cm9sIHtcbiAgICBoZWlnaHQ6IGF1dG87XG59XG5cbnNlbGVjdC5mb3JtLWNvbnRyb2wge1xuICAgIHBhZGRpbmctdG9wOiAzcHg7XG4gICAgcGFkZGluZy1ib3R0b206IDNweDtcbn1cblxuLmZvcm0taW5saW5lID4gLmZvcm0tZ3JvdXAge1xuICAgIG1hcmdpbi1yaWdodDogQG51aS1zcGFjZS1zbSAqIDM7XG5cbiAgICBsYWJlbCB7XG4gICAgICAgIG1hcmdpbi1yaWdodDogQG51aS1zcGFjZS1zbTtcbiAgICB9XG59XG5cbi5oYXMtZXJyb3IgLmZvcm0tY29udHJvbCB7XG4gICAgLnNldENzc1ZhcmlhYmxlKGJvcmRlci1jb2xvciwgbnVpLWNvbG9yLWxpbmUtY3JpdGljYWwpO1xufVxuXG4uaGFzLXdhcm5pbmcgLmZvcm0tY29udHJvbCB7XG4gICAgLnNldENzc1ZhcmlhYmxlKGJhY2tncm91bmQtY29sb3IsIG51aS1jb2xvci1zZW1hbnRpYy13YXJuaW5nLWJnKTtcbiAgICAuc2V0Q3NzVmFyaWFibGUoYm9yZGVyLWNvbG9yLCBudWktY29sb3ItbGluZS13YXJuaW5nKTtcbiAgICAuc2V0Q3NzVmFyaWFibGUoY29sb3IsIG51aS1jb2xvci10ZXh0LWRlZmF1bHQpO1xuICAgIGZvbnQtd2VpZ2h0OiBAbnVpLWZvbnQtd2VpZ2h0LXNlbWlib2xkO1xufVxuXG4vLyB3ZSBkb24ndCB3YW50IENocm9tZSB0byBzaG93IGJsdWUgb3V0bGluZXMgYXJvdW5kIGFsbCBjbGlja2FibGUgaXRlbXMgKGl0IHNob3dzIGl0IGZvciBidXR0b25zIGFueXdheSlcbltyb2xlPVwiYnV0dG9uXCJdIHtcbiAgICBvdXRsaW5lOiBub25lO1xufVxuXG4vLyBjb21tb24gc3R5bGluZyBtaXhpbiBmb3IgdGV4dCBpbnB1dHMgLyB0ZXh0YXJlYXNcbi5udWktaW5wdXQtdGV4dCgpIHtcbiAgICAmOmZvY3VzLCAmOmFjdGl2ZSB7XG4gICAgICAgIC5zZXRDc3NWYXJpYWJsZShib3JkZXItY29sb3IsIG51aS1jb2xvci1hY3RpdmUtaG92ZXIpO1xuICAgICAgICBib3gtc2hhZG93OiBpbnNldCAwIDFweCAzcHggQG51aS1jb2xvci1pbnB1dC1ib3gtc2hhZG93O1xuICAgICAgICBib3gtc2hhZG93OiBpbnNldCAwIDFweCAzcHggdmFyKC0tbnVpLWNvbG9yLWlucHV0LWJveC1zaGFkb3csQG51aS1jb2xvci1pbnB1dC1ib3gtc2hhZG93KTtcbiAgICB9XG4gICAgJltkaXNhYmxlZF0ge1xuICAgICAgICAmOmhvdmVyLCAmOmZvY3VzLCAmOmFjdGl2ZSB7XG4gICAgICAgICAgICAuc2V0Q3NzVmFyaWFibGUoYm9yZGVyLWNvbG9yLCBudWktY29sb3ItaW5wdXQtYm94LXNoYWRvdy1ob3Zlcik7XG4gICAgICAgICAgICBib3JkZXItY29sb3I6IHZhcigtLW51aS1jb2xvci1pbnB1dC1ib3gtc2hhZG93LWhvdmVyLEBudWktY29sb3ItaW5wdXQtYm94LXNoYWRvdy1ob3Zlcik7XG4gICAgICAgIH1cbiAgICB9XG4gICAgJjo6LW1zLWNsZWFyIHtcbiAgICAgICAgZGlzcGxheTogbm9uZTtcbiAgICB9XG59XG5cbi8vIHN0eWxlIG92ZXJyaWRlIGZvciB1aWItdHlwZWFoZWFkLFxuLy8gb3RoZXJ3aXNlIGl0IGxvc2VzIHNwZWNpZmljaXR5IGZpZ2h0IGJlY2F1c2Ugb2YgLm51aSBuYW1lc3BhY2UgbmVzdGluZyBmb3IgLmRyb3Bkb3duLW1lbnUgYmFzZSBzdHlsZXNcblt1aWItdHlwZWFoZWFkLXBvcHVwXS5kcm9wZG93bi1tZW51IHtcbiAgICBkaXNwbGF5OiBibG9jaztcbn1cblxuLm51aS1uby1hbmltYXRlIHtcbiAgICAudHJhbnNpdGlvbihub25lKSAhaW1wb3J0YW50O1xuICAgIC5hbmltYXRpb24obm9uZSAwcykgIWltcG9ydGFudDtcbn1cblxuLmdlbmVyaWMtY29udHJvbCgpIHtcbiAgICAuc2V0Q3NzVmFyaWFibGUoYm9yZGVyLWNvbG9yLCBudWktY29sb3ItbGluZS1kZWZhdWx0KTsgICAgXG4gICAgYm9yZGVyLXdpZHRoOiBAbnVpLWxpbmUtZGVmYXVsdDtcbiAgICBib3JkZXItc3R5bGU6IEBudWktYm9yZGVyLXNvbGlkO1xuICAgIGJvcmRlci1yYWRpdXM6IEBudWktcmFkaXVzLWRlZmF1bHQ7XG59IiwiXG5AaW1wb3J0IChyZWZlcmVuY2UpIFwiLi4vLi4vbnVpLWZyYW1ld29yay12YXJpYWJsZXMubGVzc1wiO1xuQGltcG9ydCAocmVmZXJlbmNlKSBcIi4uLy4uL251aS1mcmFtZXdvcmstYmFzZS5sZXNzXCI7XG5cbi50ZXh0Ym94LWJhc2UoKSB7XG4gICAgLmdlbmVyaWMtY29udHJvbCgpO1xuICAgIC5zZXRDc3NWYXJpYWJsZShiYWNrZ3JvdW5kLCBudWktY29sb3ItYmctY29udGVudCk7XG4gICAgYm94LXNoYWRvdzogaW5zZXQgMCAxcHggMXB4IHJnYmEoMCwwLDAsLjA3NSk7XG5cbiAgICAmOmhvdmVyIHtcbiAgICAgICAgLnNldENzc1ZhcmlhYmxlKGJvcmRlci1jb2xvciwgbnVpLWNvbG9yLWxpbmUtZGVmYXVsdC1ob3Zlcik7XG4gICAgfVxuXG4gICAgJjpmb2N1cy13aXRoaW4sXG4gICAgJjpmb2N1cyB7XG4gICAgICAgIC5zZXRDc3NWYXJpYWJsZShib3JkZXItY29sb3IsIG51aS1jb2xvci1saW5lLWFjdGl2ZSk7XG4gICAgICAgIG91dGxpbmU6IG5vbmU7XG4gICAgfVxuXG4gICAgJi5lcnJvciwgJi5oYXMtZXJyb3Ige1xuICAgICAgICAuc2V0Q3NzVmFyaWFibGUoYm9yZGVyLWNvbG9yLCBudWktY29sb3ItbGluZS1jcml0aWNhbCk7XG4gICAgICAgICY6aG92ZXIsXG4gICAgICAgICY6Zm9jdXMsXG4gICAgICAgICY6YWN0aXZlIHtcbiAgICAgICAgICAgIC5zZXRDc3NWYXJpYWJsZShib3JkZXItY29sb3IsIG51aS1jb2xvci1saW5lLWNyaXRpY2FsKTtcbiAgICAgICAgfVxuICAgIH1cblxuICAgICYuZGlzYWJsZWQsICZbZGlzYWJsZWRdIHtcbiAgICAgICAgLnNldENzc1ZhcmlhYmxlKGJhY2tncm91bmQsIG51aS1jb2xvci1kaXNhYmxlZC1zZWNvbmRhcnkpO1xuICAgICAgICBib3JkZXItY29sb3I6IHRyYW5zcGFyZW50O1xuICAgICAgICBjdXJzb3I6IEBjdXJzb3ItZGlzYWJsZWQ7XG4gICAgICAgICY6aG92ZXIge1xuICAgICAgICAgICAgLnNldENzc1ZhcmlhYmxlKGJhY2tncm91bmQsIG51aS1jb2xvci1kaXNhYmxlZC1zZWNvbmRhcnkpO1xuICAgICAgICAgICAgYm9yZGVyLWNvbG9yOiB0cmFuc3BhcmVudDtcbiAgICAgICAgfVxuICAgIH1cblxuICAgICZbcmVhZG9ubHldIHtcbiAgICAgICAgLnNldENzc1ZhcmlhYmxlKGNvbG9yLCBudWktY29sb3ItdGV4dC1zZWNvbmRhcnkpO1xuICAgICAgICAuc2V0Q3NzVmFyaWFibGUoYmFja2dyb3VuZCwgbnVpLWNvbG9yLWRpc2FibGVkLXNlY29uZGFyeSk7XG4gICAgICAgIGJvcmRlci1jb2xvcjogdHJhbnNwYXJlbnQ7XG4gICAgICAgIGN1cnNvcjogZGVmYXVsdDtcbiAgICAgICAgJjpob3ZlcixcbiAgICAgICAgJjpmb2N1cyxcbiAgICAgICAgJjphY3RpdmUge1xuICAgICAgICAgICAgLnNldENzc1ZhcmlhYmxlKGNvbG9yLCBudWktY29sb3ItdGV4dC1zZWNvbmRhcnkpO1xuICAgICAgICAgICAgLnNldENzc1ZhcmlhYmxlKGJhY2tncm91bmQsIG51aS1jb2xvci1kaXNhYmxlZC1zZWNvbmRhcnkpO1xuICAgICAgICAgICAgYm9yZGVyLWNvbG9yOiB0cmFuc3BhcmVudDtcbiAgICAgICAgfVxuICAgIH1cbn1cbiIsIi5uby1zZWxlY3QoKSB7XG4gIC13ZWJraXQtdXNlci1zZWxlY3Q6IG5vbmU7ICAvKiBDaHJvbWUgYWxsIC8gU2FmYXJpIGFsbCAqL1xuICAtbW96LXVzZXItc2VsZWN0OiBub25lOyAgICAgLyogRmlyZWZveCBhbGwgKi9cbiAgLW1zLXVzZXItc2VsZWN0OiBub25lOyAgICAgIC8qIElFIDEwKyAqL1xuXG4gIC8qIE5vIHN1cHBvcnQgZm9yIHRoZXNlIHlldCwgdXNlIGF0IG93biByaXNrICovXG4gIC1vLXVzZXItc2VsZWN0OiBub25lO1xuICB1c2VyLXNlbGVjdDogbm9uZTtcbn0iLCIvLyBUZXh0IG92ZXJmbG93XG4vLyBSZXF1aXJlcyBpbmxpbmUtYmxvY2sgb3IgYmxvY2sgZm9yIHByb3BlciBzdHlsaW5nXG5cbi8vIFRPRE86IFJFTU9WRSBMRUdBQ1kgQk9PVFNUUkFQIE1JWElOXG4udGV4dC1vdmVyZmxvdygpIHtcbiAgLnRleHQtb3ZlcmZsb3coJ2VsbGlwc2lzJyk7XG59XG5cbi50ZXh0LW92ZXJmbG93KEBvdmVyZmxvdykge1xuICAgIHdoaXRlLXNwYWNlOm5vd3JhcDtcbiAgICBvdmVyZmxvdzpoaWRkZW47XG4gICAgLW1zLXRleHQtb3ZlcmZsb3c6IEBvdmVyZmxvdztcbiAgICAtby10ZXh0LW92ZXJmbG93OiBAb3ZlcmZsb3c7XG4gICAgdGV4dC1vdmVyZmxvdzogQG92ZXJmbG93O1xufVxuIl19 */"],
         encapsulation: 2,
         changeDetection: 0
       });
@@ -46345,27 +46529,27 @@
         var _super30 = _createSuper(TableComponent);
 
         function TableComponent(_differs, _changeDetectorRef, _elementRef, role, _dir, tableStateHandlerService, document, platform) {
-          var _this140;
+          var _this143;
 
           _classCallCheck(this, TableComponent);
 
-          _this140 = _super30.call(this, _differs, _changeDetectorRef, _elementRef, role, _dir, document, platform);
-          _this140._differs = _differs;
-          _this140._changeDetectorRef = _changeDetectorRef;
-          _this140._elementRef = _elementRef;
-          _this140._dir = _dir;
-          _this140.tableStateHandlerService = tableStateHandlerService;
-          _this140.document = document;
-          _this140.platform = platform;
-          _this140.reorderable = false;
-          _this140.sortable = false;
-          _this140.resizable = false;
-          _this140.selectable = false;
-          _this140.columnsOrderChange = new _angular_core__WEBPACK_IMPORTED_MODULE_5__["EventEmitter"]();
-          _this140.sortOrderChanged = new _angular_core__WEBPACK_IMPORTED_MODULE_5__["EventEmitter"]();
-          _this140.selectionChange = new _angular_core__WEBPACK_IMPORTED_MODULE_5__["EventEmitter"]();
-          _this140.layoutFixed = false;
-          return _this140;
+          _this143 = _super30.call(this, _differs, _changeDetectorRef, _elementRef, role, _dir, document, platform);
+          _this143._differs = _differs;
+          _this143._changeDetectorRef = _changeDetectorRef;
+          _this143._elementRef = _elementRef;
+          _this143._dir = _dir;
+          _this143.tableStateHandlerService = tableStateHandlerService;
+          _this143.document = document;
+          _this143.platform = platform;
+          _this143.reorderable = false;
+          _this143.sortable = false;
+          _this143.resizable = false;
+          _this143.selectable = false;
+          _this143.columnsOrderChange = new _angular_core__WEBPACK_IMPORTED_MODULE_5__["EventEmitter"]();
+          _this143.sortOrderChanged = new _angular_core__WEBPACK_IMPORTED_MODULE_5__["EventEmitter"]();
+          _this143.selectionChange = new _angular_core__WEBPACK_IMPORTED_MODULE_5__["EventEmitter"]();
+          _this143.layoutFixed = false;
+          return _this143;
         }
 
         _createClass(TableComponent, [{
@@ -46379,7 +46563,7 @@
         }, {
           key: "getFilterComponents",
           value: function getFilterComponents() {
-            var _this141 = this;
+            var _this144 = this;
 
             return !this.sortable ? {} : {
               sorter: {
@@ -46391,8 +46575,8 @@
                     return {
                       type: "sorter",
                       value: {
-                        sortBy: _this141.sortBy,
-                        direction: _this141.sortDirection
+                        sortBy: _this144.sortBy,
+                        direction: _this144.sortDirection
                       }
                     };
                   }
@@ -46448,7 +46632,7 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this142 = this;
+            var _this145 = this;
 
             _get(_getPrototypeOf(TableComponent.prototype), "ngOnInit", this).call(this);
 
@@ -46457,9 +46641,9 @@
             var columns = lodash_keys__WEBPACK_IMPORTED_MODULE_7___default()(firstRow);
             this.tableStateHandlerService.tableColumns = columns;
             columns.forEach(function (column) {
-              var alignment = _this142.tableStateHandlerService.defineAlignment(firstRow[column]);
+              var alignment = _this145.tableStateHandlerService.defineAlignment(firstRow[column]);
 
-              _this142.tableStateHandlerService.setAlignment(column, alignment);
+              _this145.tableStateHandlerService.setAlignment(column, alignment);
             });
 
             if (this.resizable) {
@@ -46471,11 +46655,11 @@
 
             if (this.sortable) {
               this.tableSortingSubscription = this.tableStateHandlerService.sortingState.subscribe(function (sortedColumn) {
-                _this142.sortDirection = sortedColumn.direction;
-                _this142.sortBy = sortedColumn.sortBy; // emit only if the data is really changed
+                _this145.sortDirection = sortedColumn.direction;
+                _this145.sortBy = sortedColumn.sortBy; // emit only if the data is really changed
 
-                if (!lodash_isEqual__WEBPACK_IMPORTED_MODULE_6___default()(sortedColumn, _this142.sortedColumn)) {
-                  _this142.sortOrderChanged.emit(sortedColumn);
+                if (!lodash_isEqual__WEBPACK_IMPORTED_MODULE_6___default()(sortedColumn, _this145.sortedColumn)) {
+                  _this145.sortOrderChanged.emit(sortedColumn);
                 }
               });
 
@@ -46486,28 +46670,28 @@
 
             if (this.reorderable) {
               this.tableColumnsSubscription = this.tableStateHandlerService.columnsState.subscribe(function (tableColumns) {
-                _this142.columnsOrderChange.emit(tableColumns);
+                _this145.columnsOrderChange.emit(tableColumns);
               });
             }
 
             if (this.selectable) {
               this.stickyChangedSubscription = this.tableStateHandlerService.stickyHeaderChangedSubject.subscribe(function () {
                 // calling cdk method to update sticky styles
-                _this142.updateStickyHeaderRowStyles();
+                _this145.updateStickyHeaderRowStyles();
               });
             }
           }
         }, {
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this143 = this;
+            var _this146 = this;
 
             // moved this from ngOnInit since we might emit the selectionChange event
             // before our component is actually ready and it might cause problems
             // if we try to manually trigger change detection in a parent component
             if (this.selectable) {
               this.selectionChangedSubscription = this.tableStateHandlerService.selectionChanged.subscribe(function (selection) {
-                _this143.selectionChange.emit(selection);
+                _this146.selectionChange.emit(selection);
               });
 
               if (this.selection) {
@@ -47088,14 +47272,14 @@
         var _super31 = _createSuper(MenuItemComponent);
 
         function MenuItemComponent(group, cd) {
-          var _this144;
+          var _this147;
 
           _classCallCheck(this, MenuItemComponent);
 
-          _this144 = _super31.call(this, group, cd);
-          _this144.group = group;
-          _this144.disabled = false;
-          return _this144;
+          _this147 = _super31.call(this, group, cd);
+          _this147.group = group;
+          _this147.disabled = false;
+          return _this147;
         }
 
         _createClass(MenuItemComponent, [{
@@ -47639,7 +47823,7 @@
         }, {
           key: "handleValueChange",
           value: function handleValueChange(value) {
-            var _this145 = this;
+            var _this148 = this;
 
             var _a;
 
@@ -47657,7 +47841,7 @@
               this._selectedOptions = value.map(function (v) {
                 var _a;
 
-                return (_a = _this145.options) === null || _a === void 0 ? void 0 : _a.find(function (option) {
+                return (_a = _this148.options) === null || _a === void 0 ? void 0 : _a.find(function (option) {
                   return lodash_isEqual__WEBPACK_IMPORTED_MODULE_4___default()(option.value, v);
                 });
               }).filter(function (_) {
@@ -47681,15 +47865,15 @@
         }, {
           key: "optionsChanged",
           value: function optionsChanged() {
-            var _this146 = this;
+            var _this149 = this;
 
             return this.allPopupItems.changes.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_9__["takeUntil"])(this.destroy$), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_9__["delay"])(0), // because we handle options as list of COMPONENTS, so we need to wait till next check
             Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_9__["tap"])(function () {
-              _this146.handleValueChange(_this146.value);
+              _this149.handleValueChange(_this149.value);
 
-              _this146.validateValueWithSelectedOptions();
+              _this149.validateValueWithSelectedOptions();
 
-              _this146.optionKeyControlService.setFirstItemActive();
+              _this149.optionKeyControlService.setFirstItemActive();
             }));
           }
         }, {
@@ -47709,14 +47893,14 @@
         }, {
           key: "scrollToOption",
           value: function scrollToOption() {
-            var _this147 = this;
+            var _this150 = this;
 
             // setTimeout is necessary because scrolling to the selected item should occur only when overlay rendered
             if (this.value && !this.multiselect) {
               setTimeout(function () {
                 var _a;
 
-                return (_a = _this147.selectedOptions[0]) === null || _a === void 0 ? void 0 : _a.scrollIntoView({
+                return (_a = _this150.selectedOptions[0]) === null || _a === void 0 ? void 0 : _a.scrollIntoView({
                   block: "center"
                 });
               });
@@ -47740,25 +47924,25 @@
         }, {
           key: "initClosingOnClicksOutside",
           value: function initClosingOnClicksOutside() {
-            var _this148 = this;
+            var _this151 = this;
 
             this.dropdown.clickOutside.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_9__["takeUntil"])(this.destroy$)).subscribe(function (v) {
-              if (!_this148.manualDropdownControl) {
-                _this148.hideDropdown();
+              if (!_this151.manualDropdownControl) {
+                _this151.hideDropdown();
               }
 
-              _this148.clickOutsideDropdown.emit(v);
+              _this151.clickOutsideDropdown.emit(v);
             });
           }
         }, {
           key: "initOnTouch",
           value: function initOnTouch() {
-            var _this149 = this;
+            var _this152 = this;
 
             this.dropdown.hide$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_9__["takeUntil"])(this.destroy$)).subscribe(function () {
-              _this149.onTouched();
+              _this152.onTouched();
 
-              _this149.cdRef.markForCheck(); // so caret icon will update properly
+              _this152.cdRef.markForCheck(); // so caret icon will update properly
 
             });
           }
@@ -47777,16 +47961,16 @@
         }, {
           key: "initPopupUtilities",
           value: function initPopupUtilities() {
-            var _this150 = this;
+            var _this153 = this;
 
             var resizeObserver = this.popupUtilities.setPopupComponent(this.dropdown).getResizeObserver();
             this.dropdown.show$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_9__["takeUntil"])(this.destroy$)).subscribe(function () {
-              _this150.popupUtilities.syncWidth();
+              _this153.popupUtilities.syncWidth();
 
-              resizeObserver.observe(_this150.elRef.nativeElement);
+              resizeObserver.observe(_this153.elRef.nativeElement);
             });
             this.dropdown.hide$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_9__["takeUntil"])(this.destroy$)).subscribe(function () {
-              resizeObserver.unobserve(_this150.elRef.nativeElement);
+              resizeObserver.unobserve(_this153.elRef.nativeElement);
             });
           }
         }]);
@@ -48086,13 +48270,13 @@
         var _super32 = _createSuper(OverlayCustomContainer);
 
         function OverlayCustomContainer(document, platform, overlayService) {
-          var _this151;
+          var _this154;
 
           _classCallCheck(this, OverlayCustomContainer);
 
-          _this151 = _super32.call(this, document, platform);
-          _this151.overlayService = overlayService;
-          return _this151;
+          _this154 = _super32.call(this, document, platform);
+          _this154.overlayService = overlayService;
+          return _this154;
         }
 
         _createClass(OverlayCustomContainer, [{
@@ -48510,13 +48694,13 @@
         var _super33 = _createSuper(TableHeaderCellDefDirective);
 
         function TableHeaderCellDefDirective(template) {
-          var _this152;
+          var _this155;
 
           _classCallCheck(this, TableHeaderCellDefDirective);
 
-          _this152 = _super33.call(this, template);
-          _this152.template = template;
-          return _this152;
+          _this155 = _super33.call(this, template);
+          _this155.template = template;
+          return _this155;
         }
 
         return TableHeaderCellDefDirective;
@@ -48728,7 +48912,7 @@
 
       var EdgeDetectionService = /*#__PURE__*/function () {
         function EdgeDetectionService(domUtilService, document, logger) {
-          var _this153 = this;
+          var _this156 = this;
 
           _classCallCheck(this, EdgeDetectionService);
 
@@ -48739,39 +48923,39 @@
 
           this.canBe = function (basePoint, placed, edgeDefinerElement) {
             if (!basePoint || !placed) {
-              _this153.logger.error("basePoint: Element and placed: Element arguments are required!");
+              _this156.logger.error("basePoint: Element and placed: Element arguments are required!");
 
               return;
             }
 
-            var result = _this153.initialEdgeDetectionResult;
+            var result = _this156.initialEdgeDetectionResult;
 
-            var edgeDefiner = edgeDefinerElement || _this153.domUtilService.getClosest(basePoint, _this153.edgeDefinerSelector);
+            var edgeDefiner = edgeDefinerElement || _this156.domUtilService.getClosest(basePoint, _this156.edgeDefinerSelector);
 
-            var basePosition = _this153.offset(basePoint).position;
+            var basePosition = _this156.offset(basePoint).position;
 
-            var baseWidth = _this153.outer(basePoint, "width");
+            var baseWidth = _this156.outer(basePoint, "width");
 
-            var baseHeight = _this153.outer(basePoint, "height");
+            var baseHeight = _this156.outer(basePoint, "height");
 
-            var depositWidth = _this153.outer(placed, "width");
+            var depositWidth = _this156.outer(placed, "width");
 
-            var depositHeight = _this153.outer(placed, "height");
+            var depositHeight = _this156.outer(placed, "height");
 
-            var container = _this153.getEdgeDefinerMeasurements(edgeDefiner);
+            var container = _this156.getEdgeDefinerMeasurements(edgeDefiner);
 
-            if (lodash_isNil__WEBPACK_IMPORTED_MODULE_3___default()(_this153.document.defaultView)) {
+            if (lodash_isNil__WEBPACK_IMPORTED_MODULE_3___default()(_this156.document.defaultView)) {
               throw new Error("Document defaultView is not available");
             }
 
-            result.placed.top = basePosition.top - container.position.top - depositHeight > _this153.document.defaultView.pageYOffset;
-            result.placed.right = basePosition.left - container.position.left + baseWidth + depositWidth < container.width + _this153.document.defaultView.pageXOffset;
-            result.placed.bottom = edgeDefiner ? basePosition.top + baseHeight + depositHeight < container.position.top + container.height : basePosition.top - container.position.top + baseHeight + depositHeight < container.height + _this153.document.defaultView.pageYOffset;
-            result.placed.left = basePosition.left - container.position.left - depositWidth > _this153.document.defaultView.pageXOffset;
-            result.aligned.top = basePosition.top - container.position.top + depositHeight < _this153.document.defaultView.pageYOffset + container.height;
-            result.aligned.right = basePosition.left - container.position.left + baseWidth - depositWidth > _this153.document.defaultView.pageXOffset;
-            result.aligned.bottom = basePosition.top - container.position.top + baseHeight - depositHeight > _this153.document.defaultView.pageYOffset;
-            result.aligned.left = basePosition.left - container.position.left + depositWidth < _this153.document.defaultView.pageXOffset + container.width;
+            result.placed.top = basePosition.top - container.position.top - depositHeight > _this156.document.defaultView.pageYOffset;
+            result.placed.right = basePosition.left - container.position.left + baseWidth + depositWidth < container.width + _this156.document.defaultView.pageXOffset;
+            result.placed.bottom = edgeDefiner ? basePosition.top + baseHeight + depositHeight < container.position.top + container.height : basePosition.top - container.position.top + baseHeight + depositHeight < container.height + _this156.document.defaultView.pageYOffset;
+            result.placed.left = basePosition.left - container.position.left - depositWidth > _this156.document.defaultView.pageXOffset;
+            result.aligned.top = basePosition.top - container.position.top + depositHeight < _this156.document.defaultView.pageYOffset + container.height;
+            result.aligned.right = basePosition.left - container.position.left + baseWidth - depositWidth > _this156.document.defaultView.pageXOffset;
+            result.aligned.bottom = basePosition.top - container.position.top + baseHeight - depositHeight > _this156.document.defaultView.pageYOffset;
+            result.aligned.left = basePosition.left - container.position.left + depositWidth < _this156.document.defaultView.pageXOffset + container.width;
             return result;
           };
 
@@ -49047,7 +49231,7 @@
 
       function ExpanderComponent_div_7_nui_icon_1_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "nui-icon", 11);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "nui-icon", 12);
         }
 
         if (rf & 2) {
@@ -49059,11 +49243,11 @@
 
       function ExpanderComponent_div_7_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 8);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 9);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, ExpanderComponent_div_7_nui_icon_1_Template, 1, 1, "nui-icon", 9);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, ExpanderComponent_div_7_nui_icon_1_Template, 1, 1, "nui-icon", 10);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "span", 10);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "span", 11);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3);
 
@@ -49087,9 +49271,9 @@
         }
       }
 
-      function ExpanderComponent_div_8_Template(rf, ctx) {
+      function ExpanderComponent_div_9_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 12);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 13);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](1, 1);
 
@@ -49102,6 +49286,8 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("hide-left-border", ctx_r2.hideLeftBorder);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("@expandContent", undefined);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-label", ctx_r2.header || null);
         }
       }
 
@@ -49214,9 +49400,9 @@
           openChange: "openChange"
         },
         ngContentSelectors: _c2,
-        decls: 9,
-        vars: 13,
-        consts: [[1, "nui-expander"], ["role", "button", 1, "nui-expander__header", 3, "click"], [1, "nui-expander__header-icon", 3, "iconColor", "icon"], [1, "nui-expander__header-content-wrapper"], [1, "nui-expander__custom-header"], ["customHeaderContent", ""], ["class", "nui-expander__header-content", 3, "nui-expander__header-content--with-icon", 4, "ngIf"], ["class", "nui-expander__body", 3, "hide-left-border", 4, "ngIf"], [1, "nui-expander__header-content"], ["class", "nui-expander__header-content-icon", 3, "icon", 4, "ngIf"], [1, "nui-expander__header-title"], [1, "nui-expander__header-content-icon", 3, "icon"], [1, "nui-expander__body"]],
+        decls: 10,
+        vars: 14,
+        consts: [[1, "nui-expander"], ["role", "button", 1, "nui-expander__header", 3, "click"], ["aria-hidden", "true", 1, "nui-expander__header-icon", 3, "iconColor", "icon"], [1, "nui-expander__header-content-wrapper"], [1, "nui-expander__custom-header"], ["customHeaderContent", ""], ["class", "nui-expander__header-content", 3, "nui-expander__header-content--with-icon", 4, "ngIf"], [1, "nui-expander__body-wrapper"], ["class", "nui-expander__body", "role", "region", 3, "hide-left-border", 4, "ngIf"], [1, "nui-expander__header-content"], ["class", "nui-expander__header-content-icon", 3, "icon", 4, "ngIf"], [1, "nui-expander__header-title"], [1, "nui-expander__header-content-icon", 3, "icon"], ["role", "region", 1, "nui-expander__body"]],
         template: function ExpanderComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"](_c1);
@@ -49245,7 +49431,11 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](8, ExpanderComponent_div_8_Template, 2, 3, "div", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "div", 7);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](9, ExpanderComponent_div_9_Template, 2, 4, "div", 8);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
           }
@@ -49257,7 +49447,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("nui-expander__header--empty", !ctx.header && ctx.isCustomHeaderContentEmpty);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-expanded", ctx.state === "expanded");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-expanded", ctx.state === "expanded")("aria-disabled", ctx.disabled);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
@@ -49277,7 +49467,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.isCustomHeaderContentEmpty);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.open);
           }
@@ -49470,7 +49660,7 @@
 
       var TableStickyHeaderDirective = /*#__PURE__*/function () {
         function TableStickyHeaderDirective(renderer, viewport) {
-          var _this154 = this;
+          var _this157 = this;
 
           _classCallCheck(this, TableStickyHeaderDirective);
 
@@ -49482,11 +49672,11 @@
           this.updateContainerToFitHead = function () {
             var _a, _b, _c, _d;
 
-            if (_this154._sticky) {
-              _this154.origViewportHeight = _this154.origViewportHeight || ((_a = _this154.viewportEl) === null || _a === void 0 ? void 0 : _a.offsetHeight);
-              var viewportComputedHeight = lodash_isEmpty__WEBPACK_IMPORTED_MODULE_3___default()(_this154.userProvidedHeight) ? _this154.origViewportHeight + "px" : _this154.userProvidedHeight;
+            if (_this157._sticky) {
+              _this157.origViewportHeight = _this157.origViewportHeight || ((_a = _this157.viewportEl) === null || _a === void 0 ? void 0 : _a.offsetHeight);
+              var viewportComputedHeight = lodash_isEmpty__WEBPACK_IMPORTED_MODULE_3___default()(_this157.userProvidedHeight) ? _this157.origViewportHeight + "px" : _this157.userProvidedHeight;
 
-              _this154.viewportEl.style.setProperty("height", "calc(".concat(viewportComputedHeight, " - ").concat((_d = (_c = (_b = _this154.headRef) === null || _b === void 0 ? void 0 : _b.rows.item(0)) === null || _c === void 0 ? void 0 : _c.offsetHeight) !== null && _d !== void 0 ? _d : 0, "px)"), "important");
+              _this157.viewportEl.style.setProperty("height", "calc(".concat(viewportComputedHeight, " - ").concat((_d = (_c = (_b = _this157.headRef) === null || _b === void 0 ? void 0 : _b.rows.item(0)) === null || _c === void 0 ? void 0 : _c.offsetHeight) !== null && _d !== void 0 ? _d : 0, "px)"), "important");
             }
           };
 
@@ -49495,10 +49685,10 @@
             // Note: Setting the width of stickyHeadContainer container to be able to simulate horizontal scroll of the sticky header
 
 
-            _this154.renderer.setStyle(_this154.stickyHeadContainer, "width", "".concat(_this154.viewport._contentWrapper.nativeElement.scrollWidth, "px"));
+            _this157.renderer.setStyle(_this157.stickyHeadContainer, "width", "".concat(_this157.viewport._contentWrapper.nativeElement.scrollWidth, "px"));
 
-            var headColumns = Array.from(((_a = _this154.stickyHeadContainer) === null || _a === void 0 ? void 0 : _a.getElementsByTagName("th")) || []);
-            var firstDataRowCells = Array.from(((_c = (_b = _this154.bodyRef) === null || _b === void 0 ? void 0 : _b.rows.item(0)) === null || _c === void 0 ? void 0 : _c.cells) || []); // Note: If head columns are not in sync with data columns skip
+            var headColumns = Array.from(((_a = _this157.stickyHeadContainer) === null || _a === void 0 ? void 0 : _a.getElementsByTagName("th")) || []);
+            var firstDataRowCells = Array.from(((_c = (_b = _this157.bodyRef) === null || _b === void 0 ? void 0 : _b.rows.item(0)) === null || _c === void 0 ? void 0 : _c.cells) || []); // Note: If head columns are not in sync with data columns skip
 
             if (headColumns.length !== firstDataRowCells.length) {
               return rxjs__WEBPACK_IMPORTED_MODULE_5__["EMPTY"];
@@ -49511,7 +49701,7 @@
               headColumns[index].style.width = cell.style.width || "".concat(cell.offsetWidth, "px");
             }); // update the header placeholder to match the updated column widths
 
-            _this154.updateNativeHeaderPlaceholder(); // Note: Returning empty observable to be able to create an execution queue
+            _this157.updateNativeHeaderPlaceholder(); // Note: Returning empty observable to be able to create an execution queue
 
 
             return rxjs__WEBPACK_IMPORTED_MODULE_5__["EMPTY"];
@@ -49547,13 +49737,13 @@
         }, {
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this155 = this;
+            var _this158 = this;
 
             this.assignRequiredProperties(); // TODO: Find a better way to identify when the table header are rendered properly
             // Waiting for the next tick to let cdk table properly draw the table header
 
             setTimeout(function () {
-              return _this155.updateNativeHeaderPlaceholder();
+              return _this158.updateNativeHeaderPlaceholder();
             });
             this.updateHeadPosition(this._sticky);
           }
@@ -49591,7 +49781,7 @@
         }, {
           key: "setSticky",
           value: function setSticky() {
-            var _this156 = this;
+            var _this159 = this;
 
             if (this.headPosition === TableVirtualScrollHeaderPosition.Sticky) {
               console.warn("Already in sticky mode");
@@ -49610,7 +49800,7 @@
             // The setTimeout is for skipping one tick to let the header get his height.
 
             setTimeout(function () {
-              return _this156.updateContainerToFitHead();
+              return _this159.updateContainerToFitHead();
             });
             this.updateViewportHeightOnHeadResize();
             this.headPosition = TableVirtualScrollHeaderPosition.Sticky;
@@ -49618,7 +49808,7 @@
         }, {
           key: "updateViewportHeightOnHeadResize",
           value: function updateViewportHeightOnHeadResize() {
-            var _this157 = this;
+            var _this160 = this;
 
             if (this.headResizeObserver) {
               return;
@@ -49635,7 +49825,7 @@
                       return;
                     }
 
-                    _this157.updateContainerToFitHead();
+                    _this160.updateContainerToFitHead();
                   })
                 );
               });
@@ -49658,7 +49848,7 @@
         }, {
           key: "syncColumnWidths",
           value: function syncColumnWidths() {
-            var _this158 = this;
+            var _this161 = this;
 
             var resize$ = new rxjs__WEBPACK_IMPORTED_MODULE_5__["Subject"](); // Note: Passing the resize event to resize$ subject to be able
             // to handle all the columnWidth update trigger in a single stream
@@ -49683,7 +49873,7 @@
             // to update the rows and then proceed with the event
             Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["delay"])(0), // Note: Reattaching native header on every columns changes
             Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["tap"])(function () {
-              return _this158.updateNativeHeaderPlaceholder();
+              return _this161.updateNativeHeaderPlaceholder();
             }));
 
             if (!this.virtualFor) {
@@ -49697,24 +49887,24 @@
         }, {
           key: "syncHorizontalScroll",
           value: function syncHorizontalScroll() {
-            var _this159 = this;
+            var _this162 = this;
 
             var previousScrollLeft = 0;
             this.viewport.elementScrolled().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["map"])(function () {
-              return _this159.viewportEl.scrollLeft;
+              return _this162.viewportEl.scrollLeft;
             }), // Note: Filtering out vertical scroll events
             Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["filter"])(function (scrollLeft) {
               return scrollLeft !== previousScrollLeft;
             }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["tap"])(function (scrollLeft) {
               previousScrollLeft = scrollLeft; // Note: Simulating horizontal scroll by assigning margin-left to be equal to scrolled distance
 
-              _this159.renderer.setStyle(_this159.stickyHeadContainer, "margin-left", "-".concat(scrollLeft, "px"));
+              _this162.renderer.setStyle(_this162.stickyHeadContainer, "margin-left", "-".concat(scrollLeft, "px"));
             }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["takeUntil"])(this.unsubscribe$)).subscribe();
           }
         }, {
           key: "createStickyHeaderContainer",
           value: function createStickyHeaderContainer() {
-            var _this160 = this;
+            var _this163 = this;
 
             var _a;
 
@@ -49727,7 +49917,7 @@
             var originalTableClasses = Array.from(((_a = this.tableElRef) === null || _a === void 0 ? void 0 : _a.classList) || []);
             originalTableClasses.push("sticky-table-header-container");
             originalTableClasses.forEach(function (cssClass) {
-              return _this160.renderer.addClass(_this160.stickyHeadContainer, cssClass);
+              return _this163.renderer.addClass(_this163.stickyHeadContainer, cssClass);
             });
             this.renderer.insertBefore(this.viewportEl.parentElement, wrapper, this.viewportEl);
           }
@@ -49938,16 +50128,16 @@
         var _super34 = _createSuper(TableCellDirective);
 
         function TableCellDirective(columnDef, elementRef, tableStateHandlerService, cd) {
-          var _this161;
+          var _this164;
 
           _classCallCheck(this, TableCellDirective);
 
-          _this161 = _super34.call(this, columnDef, elementRef);
-          _this161.columnDef = columnDef;
-          _this161.elementRef = elementRef;
-          _this161.tableStateHandlerService = tableStateHandlerService;
-          _this161.cd = cd;
-          return _this161;
+          _this164 = _super34.call(this, columnDef, elementRef);
+          _this164.columnDef = columnDef;
+          _this164.elementRef = elementRef;
+          _this164.tableStateHandlerService = tableStateHandlerService;
+          _this164.cd = cd;
+          return _this164;
         }
 
         _createClass(TableCellDirective, [{
@@ -49968,7 +50158,7 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this162 = this;
+            var _this165 = this;
 
             var alignment = this.alignment ? "align-".concat(this.alignment) : this.tableStateHandlerService.getAlignment(this.columnDef.name);
             this.elementRef.nativeElement.classList.add(alignment);
@@ -49976,23 +50166,23 @@
 
             if (this.tableStateHandlerService.reorderable) {
               this.subscribeToDraggedOverCell = this.tableStateHandlerService.draggedOverCell.subscribe(function (draggedOverCell) {
-                _this162.rightEdgeActive = _this162.leftEdgeActive = false;
+                _this165.rightEdgeActive = _this165.leftEdgeActive = false;
 
-                if (lodash_get__WEBPACK_IMPORTED_MODULE_2___default()(draggedOverCell, "cellIndex") === _this162.currentCellIndex) {
-                  _this162.rightEdgeActive = draggedOverCell.dropAlignment === "right";
-                  _this162.leftEdgeActive = draggedOverCell.dropAlignment === "left";
+                if (lodash_get__WEBPACK_IMPORTED_MODULE_2___default()(draggedOverCell, "cellIndex") === _this165.currentCellIndex) {
+                  _this165.rightEdgeActive = draggedOverCell.dropAlignment === "right";
+                  _this165.leftEdgeActive = draggedOverCell.dropAlignment === "left";
 
-                  _this162.cd.detectChanges();
+                  _this165.cd.detectChanges();
                 }
               });
             }
 
             if (this.tableStateHandlerService.resizable) {
               this.resizeSubscription = this.tableStateHandlerService.shouldHighlightEdge.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["filter"])(function (value) {
-                return value.columnIndex === _this162.currentCellIndex;
+                return value.columnIndex === _this165.currentCellIndex;
               })).subscribe(function () {
                 // Anytime the event for this column is emitted state will change.
-                _this162.rightEdgeActive = !_this162.rightEdgeActive;
+                _this165.rightEdgeActive = !_this165.rightEdgeActive;
               });
             }
           }
@@ -50029,7 +50219,7 @@
       TableCellDirective.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineDirective"]({
         type: TableCellDirective,
         selectors: [["nui-cell"], ["td", "nui-cell", ""]],
-        hostAttrs: ["role", "cell", 1, "nui-table__table-cell"],
+        hostAttrs: ["role", "gridcell", 1, "nui-table__table-cell"],
         hostVars: 5,
         hostBindings: function TableCellDirective_HostBindings(rf, ctx) {
           if (rf & 1) {
@@ -50380,31 +50570,31 @@
         var _super35 = _createSuper(ServerSideDataSource);
 
         function ServerSideDataSource() {
-          var _this163;
+          var _this166;
 
           _classCallCheck(this, ServerSideDataSource);
 
-          _this163 = _super35.call(this);
-          _this163.busy = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"](false);
-          _this163.applyFilters$ = new rxjs__WEBPACK_IMPORTED_MODULE_1__["Subject"]();
-          _this163.destroy$ = new rxjs__WEBPACK_IMPORTED_MODULE_1__["Subject"]();
+          _this166 = _super35.call(this);
+          _this166.busy = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"](false);
+          _this166.applyFilters$ = new rxjs__WEBPACK_IMPORTED_MODULE_1__["Subject"]();
+          _this166.destroy$ = new rxjs__WEBPACK_IMPORTED_MODULE_1__["Subject"]();
 
-          _this163.setupFilters();
+          _this166.setupFilters();
 
-          return _this163;
+          return _this166;
         }
 
         _createClass(ServerSideDataSource, [{
           key: "setupFilters",
           value: function setupFilters() {
-            var _this164 = this;
+            var _this167 = this;
 
             this.applyFilters$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["tap"])(function (filters) {
-              return _this164.beforeApplyFilters(filters);
+              return _this167.beforeApplyFilters(filters);
             }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["switchMap"])(function (filters) {
-              return _this164.getBackendData(filters);
+              return _this167.getBackendData(filters);
             }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["tap"])(function (data) {
-              return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(_this164, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee7() {
+              return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(_this167, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee7() {
                 return regeneratorRuntime.wrap(function _callee7$(_context7) {
                   while (1) {
                     switch (_context7.prev = _context7.next) {
@@ -50438,12 +50628,12 @@
         }, {
           key: "afterApplyFilters",
           value: function afterApplyFilters(data) {
-            var _this165 = this;
+            var _this168 = this;
 
             var _super = Object.create(null, {
               afterApplyFilters: {
                 get: function get() {
-                  return _get(_getPrototypeOf(ServerSideDataSource.prototype), "afterApplyFilters", _this165);
+                  return _get(_getPrototypeOf(ServerSideDataSource.prototype), "afterApplyFilters", _this168);
                 }
               }
             });
@@ -50775,7 +50965,7 @@
 
       var RadioGroupComponent = /*#__PURE__*/function () {
         function RadioGroupComponent(renderer) {
-          var _this166 = this;
+          var _this169 = this;
 
           _classCallCheck(this, RadioGroupComponent);
 
@@ -50795,8 +50985,8 @@
           this.subscriptions = new Array();
 
           this.setChildDisabled = function (child) {
-            if (!lodash_isUndefined__WEBPACK_IMPORTED_MODULE_3___default()(_this166.disabled)) {
-              child.disabled = _this166.disabled;
+            if (!lodash_isUndefined__WEBPACK_IMPORTED_MODULE_3___default()(_this169.disabled)) {
+              child.disabled = _this169.disabled;
             }
           };
         }
@@ -50821,31 +51011,31 @@
         }, {
           key: "ngAfterContentInit",
           value: function ngAfterContentInit() {
-            var _this167 = this;
+            var _this170 = this;
 
             this.children.toArray().forEach(function (child) {
-              _this167.renderer.setAttribute(child.inputViewContainer.element.nativeElement, "name", _this167.name);
+              _this170.renderer.setAttribute(child.inputViewContainer.element.nativeElement, "name", _this170.name);
 
-              _this167.subscriptions.push(_this167.subscribeToRadioEvent(child)); // timeout to prevent "expression changed after it has been checked" error
+              _this170.subscriptions.push(_this170.subscribeToRadioEvent(child)); // timeout to prevent "expression changed after it has been checked" error
 
 
               setTimeout(function () {
-                _this167.setChildDisabled(child);
+                _this170.setChildDisabled(child);
               });
             });
             this.children.changes.subscribe(function (radioComponentQueryList) {
-              _this167.subscriptions.forEach(function (sub) {
+              _this170.subscriptions.forEach(function (sub) {
                 return sub.unsubscribe();
               });
 
               radioComponentQueryList.toArray().forEach(function (radio) {
-                _this167.renderer.setAttribute(radio.inputViewContainer.element.nativeElement, "name", _this167.name);
+                _this170.renderer.setAttribute(radio.inputViewContainer.element.nativeElement, "name", _this170.name);
 
-                _this167.subscriptions.push(_this167.subscribeToRadioEvent(radio)); // timeout to prevent "expression changed after it has been checked" error
+                _this170.subscriptions.push(_this170.subscribeToRadioEvent(radio)); // timeout to prevent "expression changed after it has been checked" error
 
 
                 setTimeout(function () {
-                  _this167.setChildDisabled(radio);
+                  _this170.setChildDisabled(radio);
                 });
               });
             });
@@ -50897,17 +51087,17 @@
         }, {
           key: "updateSelectedRadioFromValue",
           value: function updateSelectedRadioFromValue() {
-            var _this168 = this;
+            var _this171 = this;
 
             // If the value already matches the selected radio, do nothing.
             var isAlreadySelected = this.selectedRadio !== null && this.selectedRadio.value === this._value;
 
             if (this.children && !isAlreadySelected) {
               this.children.forEach(function (radio) {
-                radio.checked = _this168.value === radio.value;
+                radio.checked = _this171.value === radio.value;
 
                 if (radio.checked) {
-                  _this168.selectedRadio = radio;
+                  _this171.selectedRadio = radio;
                 }
               });
             }
@@ -50915,20 +51105,20 @@
         }, {
           key: "subscribeToRadioEvent",
           value: function subscribeToRadioEvent(radio) {
-            var _this169 = this;
+            var _this172 = this;
 
             return radio.valueChange.subscribe(function (value) {
-              _this169.value = value;
+              _this172.value = value;
 
-              _this169.valueChange.emit(value);
+              _this172.valueChange.emit(value);
 
               if (!radio.keepFormPristine) {
-                _this169.onChange(_this169.value);
+                _this172.onChange(_this172.value);
 
-                _this169.onTouched();
+                _this172.onTouched();
               }
 
-              _this169.writeValue(_this169.value);
+              _this172.writeValue(_this172.value);
             });
           }
         }]);
@@ -51048,7 +51238,7 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this170 = this;
+            var _this173 = this;
 
             if (this.radioGroup !== null) {
               if (this.radioGroup.value === this.value) {
@@ -51060,7 +51250,7 @@
               // TODO: remove timeout in v10 NUI-4843
               // nui-radio-group should subscribe before event is emitted
               this.timeoutId = setTimeout(function () {
-                _this170.valueChange.emit(_this170.value);
+                _this173.valueChange.emit(_this173.value);
               }, 0);
             } // Checks if user supplied any content as a label for radio button to adjust styles for radio buttons without labels
 
@@ -51364,32 +51554,32 @@
         }, {
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this171 = this;
+            var _this174 = this;
 
             // Observing the size of the component to check traverse
             this._ro = new resize_observer_polyfill__WEBPACK_IMPORTED_MODULE_1__["default"](function (entries) {
               return entries.forEach(function () {
-                return _this171.checkTraverse();
+                return _this174.checkTraverse();
               });
             });
             this.ngZone.runOutsideAngular(function () {
-              _this171._ro.observe(_this171.resizableArea.nativeElement);
+              _this174._ro.observe(_this174.resizableArea.nativeElement);
 
-              _this171._ro.observe(_this171.el.nativeElement);
+              _this174._ro.observe(_this174.el.nativeElement);
             }); // Making the first tab in group active by default
 
             this.setActiveTab();
             this.subscribeToSelection();
             this._changesSubscription = this._tabs.changes.subscribe(function (changedTabs) {
-              _this171.setActiveTab();
+              _this174.setActiveTab();
 
-              _this171._tabSelectedSubscriptions.forEach(function (sub) {
+              _this174._tabSelectedSubscriptions.forEach(function (sub) {
                 return sub.unsubscribe();
               });
 
-              _this171._tabSelectedSubscriptions = [];
+              _this174._tabSelectedSubscriptions = [];
 
-              _this171.subscribeToSelection();
+              _this174.subscribeToSelection();
             });
           }
         }, {
@@ -51461,23 +51651,23 @@
         }, {
           key: "subscribeToSelection",
           value: function subscribeToSelection() {
-            var _this172 = this;
+            var _this175 = this;
 
             this._tabs.forEach(function (tab) {
-              _this172._tabSelectedSubscriptions.push(tab.selected.subscribe(function (currentTab) {
+              _this175._tabSelectedSubscriptions.push(tab.selected.subscribe(function (currentTab) {
                 if (!currentTab.active && !currentTab.disabled) {
                   // Making all elements in array inactive to make than current one active
-                  _this172._tabs.forEach(function (tabHeading) {
+                  _this175._tabs.forEach(function (tabHeading) {
                     tabHeading.active = false;
                   });
 
                   currentTab.active = true;
 
-                  _this172.changeDetectorRef.markForCheck();
+                  _this175.changeDetectorRef.markForCheck();
 
-                  _this172.changeDetectorRef.detectChanges();
+                  _this175.changeDetectorRef.detectChanges();
 
-                  _this172.selected.emit(currentTab.tabId);
+                  _this175.selected.emit(currentTab.tabId);
                 }
               }));
             });
@@ -51694,16 +51884,16 @@
         var _super36 = _createSuper(MenuSwitchComponent);
 
         function MenuSwitchComponent(group, cd) {
-          var _this173;
+          var _this176;
 
           _classCallCheck(this, MenuSwitchComponent);
 
-          _this173 = _super36.call(this, group, cd);
-          _this173.group = group;
-          _this173.checked = false; // Is needed to predefine item state, sets nui-switch [disabled] property
+          _this176 = _super36.call(this, group, cd);
+          _this176.group = group;
+          _this176.checked = false; // Is needed to predefine item state, sets nui-switch [disabled] property
 
-          _this173.disabled = false;
-          return _this173;
+          _this176.disabled = false;
+          return _this176;
         }
 
         _createClass(MenuSwitchComponent, [{
@@ -51857,7 +52047,7 @@
 
       var TableResizerDirective = /*#__PURE__*/function () {
         function TableResizerDirective(tableStateHandlerService) {
-          var _this174 = this;
+          var _this177 = this;
 
           _classCallCheck(this, TableResizerDirective);
 
@@ -51866,18 +52056,18 @@
           this.resizerMovement = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
 
           this.mouseMoveHandler = function (event) {
-            _this174.resizerMovement.emit(event.movementX);
+            _this177.resizerMovement.emit(event.movementX);
           };
 
           this.removeResizeListeners = function () {
-            document.removeEventListener("mousemove", _this174.mouseMoveHandler);
-            document.removeEventListener("mouseup", _this174.removeResizeListeners);
+            document.removeEventListener("mousemove", _this177.mouseMoveHandler);
+            document.removeEventListener("mouseup", _this177.removeResizeListeners);
 
-            _this174.resizerMovement.emit(null); // This needs to be after the sort click handler which is why it needs a setTimeout
+            _this177.resizerMovement.emit(null); // This needs to be after the sort click handler which is why it needs a setTimeout
 
 
             setTimeout(function () {
-              _this174.tableStateHandlerService.emitResizeEvent(_this174.columnIndex, TableResizePhase.end);
+              _this177.tableStateHandlerService.emitResizeEvent(_this177.columnIndex, TableResizePhase.end);
             });
           };
         }
@@ -52218,7 +52408,7 @@
         _createClass(TabNavigationService, [{
           key: "disableTabNavigation",
           value: function disableTabNavigation(domElRef) {
-            var _this175 = this;
+            var _this178 = this;
 
             // dom manipulation to cache the altered elements
             // and do tabIndex=-1 on focusable HTML elements
@@ -52226,7 +52416,7 @@
             domElRef.nativeElement.querySelectorAll(focusableElementsCSSSelector).forEach(function (domEl) {
               var tabIndex = domEl.getAttribute("tabindex");
 
-              _this175.tabFocusableElements.push({
+              _this178.tabFocusableElements.push({
                 nativeElement: domEl,
                 tabIndex: lodash_isNull__WEBPACK_IMPORTED_MODULE_1___default()(tabIndex) ? undefined : tabIndex
               }); // disable focusing element via tab
@@ -52342,7 +52532,7 @@
 
       var TooltipDirective = /*#__PURE__*/function () {
         function TooltipDirective(_elementRef, _viewContainerRef, _ngZone, _ariaDescriber, _focusMonitor, resolver, overlayPositionService) {
-          var _this176 = this;
+          var _this179 = this;
 
           _classCallCheck(this, TooltipDirective);
 
@@ -52367,9 +52557,9 @@
           var element = _elementRef.nativeElement;
 
           this._manualListeners.set("mouseenter", function () {
-            return _this176.show();
+            return _this179.show();
           }).set("mouseleave", function () {
-            return _this176.hide();
+            return _this179.hide();
           });
 
           this._manualListeners.forEach(function (listener, event) {
@@ -52380,11 +52570,11 @@
             // Note that the focus monitor runs outside the Angular zone.
             if (!origin) {
               _ngZone.run(function () {
-                return _this176.hide();
+                return _this179.hide();
               });
             } else if (origin === "keyboard") {
               _ngZone.run(function () {
-                return _this176.show();
+                return _this179.show();
               });
             }
           });
@@ -52445,7 +52635,7 @@
         }, {
           key: "ngOnDestroy",
           value: function ngOnDestroy() {
-            var _this177 = this;
+            var _this180 = this;
 
             if (this._tooltipInstance) {
               this._tooltipInstance = undefined;
@@ -52453,7 +52643,7 @@
 
 
             this._manualListeners.forEach(function (listener, event) {
-              _this177._elementRef.nativeElement.removeEventListener(event, listener);
+              _this180._elementRef.nativeElement.removeEventListener(event, listener);
             });
 
             this._manualListeners.clear();
@@ -52471,7 +52661,7 @@
         }, {
           key: "show",
           value: function show() {
-            var _this178 = this;
+            var _this181 = this;
 
             var _a;
 
@@ -52491,11 +52681,11 @@
                 // That's why inside setTimeout operation there's one more check if it's disabled.
 
 
-                if (!_this178.canShowTooltip()) {
+                if (!_this181.canShowTooltip()) {
                   return;
                 }
 
-                (_a = _this178._tooltipInstance) === null || _a === void 0 ? void 0 : _a.show();
+                (_a = _this181._tooltipInstance) === null || _a === void 0 ? void 0 : _a.show();
               });
             } else {
               (_a = this._tooltipInstance) === null || _a === void 0 ? void 0 : _a.show();
@@ -52506,13 +52696,13 @@
         }, {
           key: "hide",
           value: function hide() {
-            var _this179 = this;
+            var _this182 = this;
 
             // without setTimeout, sometimes 'hide' is called before 'show', because show has setTimeout for it's own reasons.
             setTimeout(function () {
               var _a;
 
-              return (_a = _this179._tooltipInstance) === null || _a === void 0 ? void 0 : _a.hide();
+              return (_a = _this182._tooltipInstance) === null || _a === void 0 ? void 0 : _a.hide();
             });
           }
           /** Shows/hides the tooltip */
@@ -53578,7 +53768,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("autocomplete", ctx_r0.autocomplete)("disabled", ctx_r0.disabled)("type", ctx_r0.type)("placeholder", ctx_r0.placeholder)("readonly", ctx_r0.readonly);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("name", ctx_r0.name)("aria-label", ctx_r0.ariaLabel);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("name", ctx_r0.name)("aria-label", ctx_r0.ariaLabel)("aria-readonly", ctx_r0.readonly)("aria-invalid", ctx_r0.isInErrorState);
         }
       }
 
@@ -53612,7 +53802,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("rows", ctx_r1.rows)("disabled", ctx_r1.disabled)("placeholder", ctx_r1.placeholder)("readonly", ctx_r1.readonly);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("name", ctx_r1.name)("aria-label", ctx_r1.ariaLabel);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("name", ctx_r1.name)("aria-label", ctx_r1.ariaLabel)("aria-readonly", ctx_r1.readonly)("aria-invalid", ctx_r1.isInErrorState);
         }
       }
 
@@ -53766,13 +53956,6 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.textboxInput = _t.first);
           }
         },
-        hostAttrs: ["role", "textbox"],
-        hostVars: 1,
-        hostBindings: function TextboxComponent_HostBindings(rf, ctx) {
-          if (rf & 2) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-label", ctx.ariaLabel + " textbox");
-          }
-        },
         inputs: {
           caption: "caption",
           autocomplete: "autocomplete",
@@ -53816,9 +53999,9 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, TextboxComponent_input_2_Template, 2, 8, "input", 2);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, TextboxComponent_input_2_Template, 2, 10, "input", 2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, TextboxComponent_textarea_3_Template, 2, 7, "textarea", 3);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, TextboxComponent_textarea_3_Template, 2, 9, "textarea", 3);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 4);
 
@@ -54125,24 +54308,24 @@
         var _super37 = _createSuper(EventBusService);
 
         function EventBusService(rendererFactory) {
-          var _this180;
+          var _this183;
 
           _classCallCheck(this, EventBusService);
 
-          _this180 = _super37.call(this); // Angular does not allow to easily use renderer in services. This is a workaround
+          _this183 = _super37.call(this); // Angular does not allow to easily use renderer in services. This is a workaround
 
-          _this180.renderer = rendererFactory.createRenderer(null, null); // This is moved from popup code.
+          _this183.renderer = rendererFactory.createRenderer(null, null); // This is moved from popup code.
           // Every event that is triggered for document should be handled by popup,
           // but we should register listener only once
 
-          _this180.renderer.listen("document", "click", function (event) {
+          _this183.renderer.listen("document", "click", function (event) {
             // separate stream to detect document-body clicks in case of popup in popover
-            _this180.getStream({
+            _this183.getStream({
               id: _constants_event_constants__WEBPACK_IMPORTED_MODULE_1__["DOCUMENT_CLICK_EVENT"]
             }).next(event);
           });
 
-          return _this180;
+          return _this183;
         }
 
         return EventBusService;
@@ -54202,13 +54385,13 @@
         var _super38 = _createSuper(TableFooterCellDefDirective);
 
         function TableFooterCellDefDirective(template) {
-          var _this181;
+          var _this184;
 
           _classCallCheck(this, TableFooterCellDefDirective);
 
-          _this181 = _super38.call(this, template);
-          _this181.template = template;
-          return _this181;
+          _this184 = _super38.call(this, template);
+          _this184.template = template;
+          return _this184;
         }
 
         return TableFooterCellDefDirective;
@@ -54453,7 +54636,7 @@
 
       var SrlcIndicatorComponent = /*#__PURE__*/function () {
         function SrlcIndicatorComponent(router) {
-          var _this182 = this;
+          var _this185 = this;
 
           _classCallCheck(this, SrlcIndicatorComponent);
 
@@ -54465,7 +54648,7 @@
           };
 
           this.getMessageType = function () {
-            switch (_this182.componentSrlc.stage) {
+            switch (_this185.componentSrlc.stage) {
               case _public_api__WEBPACK_IMPORTED_MODULE_3__["SrlcStage"].preAlpha:
                 return "critical";
 
@@ -54492,7 +54675,7 @@
           this.getMessageText = function () {
             var _a;
 
-            switch (_this182.componentSrlc.stage) {
+            switch (_this185.componentSrlc.stage) {
               case _public_api__WEBPACK_IMPORTED_MODULE_3__["SrlcStage"].preAlpha:
                 return "<strong>Under Development</strong> DO NOT USE. This component is under active development and significant,\n                    API breaking changes are still expected. Its use will not be supported.";
 
@@ -54507,7 +54690,7 @@
                 return "<strong>Production Ready</strong> Available for production use - see documented examples below.";
 
               case _public_api__WEBPACK_IMPORTED_MODULE_3__["SrlcStage"].support:
-                return "<strong>Deprecated</strong> Sorry, but we no longer recommend using this component.\n                    Only critical issues are going to be fixed.\n                    End Of Life is scheduled to <strong>".concat((_a = _this182.componentSrlc.eolDate) === null || _a === void 0 ? void 0 : _a.toDateString(), "</strong>.");
+                return "<strong>Deprecated</strong> Sorry, but we no longer recommend using this component.\n                    Only critical issues are going to be fixed.\n                    End Of Life is scheduled to <strong>".concat((_a = _this185.componentSrlc.eolDate) === null || _a === void 0 ? void 0 : _a.toDateString(), "</strong>.");
 
               case _public_api__WEBPACK_IMPORTED_MODULE_3__["SrlcStage"].eol:
                 return "<strong>Not Supported</strong> Sorry, but this component is not supported any more!";
@@ -54521,7 +54704,7 @@
         _createClass(SrlcIndicatorComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this183 = this;
+            var _this186 = this;
 
             this.router.events.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["filter"])(function (event) {
               return event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_0__["RoutesRecognized"];
@@ -54535,7 +54718,7 @@
               return route;
             })).subscribe(function (route) {
               var routeDataSrlc = (route.data || {}).srlc;
-              _this183.componentSrlc = lodash_defaults__WEBPACK_IMPORTED_MODULE_1___default()(routeDataSrlc || {}, _this183.globalSrlc);
+              _this186.componentSrlc = lodash_defaults__WEBPACK_IMPORTED_MODULE_1___default()(routeDataSrlc || {}, _this186.globalSrlc);
             });
           }
         }]);
@@ -54926,15 +55109,15 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this184 = this;
+            var _this187 = this;
 
             var displayChangeSubscription = this.displayChange.subscribe(function (show) {
               if (!show) {
-                _this184.popoverBeforeHiddenSubject.next();
+                _this187.popoverBeforeHiddenSubject.next();
 
-                _this184.fadeIn = false;
+                _this187.fadeIn = false;
 
-                _this184.cdRef.markForCheck();
+                _this187.cdRef.markForCheck();
               }
             });
             this.popoverModalSubscriptions.push(displayChangeSubscription);
@@ -54942,13 +55125,13 @@
         }, {
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this185 = this;
+            var _this188 = this;
 
             // To prevent from exception 'expression was changed after check'
             var zoneSubscription = this.zone.onStable.asObservable().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["take"])(1)).subscribe(function () {
               // To be sure, that change detection mechanism was invoked and placement was updated
-              _this185.zone.run(function () {
-                return _this185.fadeIn = true;
+              _this188.zone.run(function () {
+                return _this188.fadeIn = true;
               });
             });
             this.popoverModalSubscriptions.push(zoneSubscription);
@@ -55314,18 +55497,18 @@
         _createClass(YearPickerComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this186 = this;
+            var _this189 = this;
 
             this.datePicker.stepYear = {
               years: this.datePicker.yearRange
             };
             this.datePicker.setRefreshViewHandler(function () {
-              var picker = _this186.datePicker;
+              var picker = _this189.datePicker;
               var years = new Array(picker.yearRange);
               var date = picker.value && picker.value.isValid() ? picker.value.clone() : moment_moment__WEBPACK_IMPORTED_MODULE_0___default()();
               date = date.set("date", 1);
 
-              var start = _this186.getStartingYear(date.year());
+              var start = _this189.getStartingYear(date.year());
 
               for (var i = 0; i < picker.yearRange; i++) {
                 date = date.set({
@@ -55335,8 +55518,8 @@
                 years[i].uid = picker.uniqueId + "-" + i;
               }
 
-              _this186.title = [years[0].label, years[picker.yearRange - 1].label].join(" - ");
-              _this186.rows = picker.split(years, 5);
+              _this189.title = [years[0].label, years[picker.yearRange - 1].label].join(" - ");
+              _this189.rows = picker.split(years, 5);
             }, "year");
             this.datePicker.setCompareHandler(function (date1, date2) {
               return date1.year() - date2.year();
@@ -55640,7 +55823,7 @@
         _createClass(PlunkerProjectService, [{
           key: "open",
           value: function open(prefix, sources, translations) {
-            var _this187 = this;
+            var _this190 = this;
 
             var form = this.document.createElement("form");
 
@@ -55652,7 +55835,7 @@
 
 
             Object.keys(sources).forEach(function (key) {
-              form.append(_this187.formInput("".concat(prefix, ".example.component"), key, modifySources(sources[key])));
+              form.append(_this190.formInput("".concat(prefix, ".example.component"), key, modifySources(sources[key])));
             }); // translations
 
             form.append(this.formInput("translations", "ts", translations)); // application files
@@ -56230,6 +56413,11 @@
            */
 
           this.ariaLabel = "";
+          /**
+           * Input to set aria label text
+           */
+
+          this.ariaLabeledby = "";
           this.subscriptionsArray = new Array();
           this.disabled = false;
         }
@@ -56241,32 +56429,32 @@
         _createClass(CheckboxGroupComponent, [{
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this188 = this;
+            var _this191 = this;
 
             this.children.toArray().forEach(function (child) {
-              _this188.renderer.setAttribute(child.inputViewContainer.element.nativeElement, "name", _this188.name);
+              _this191.renderer.setAttribute(child.inputViewContainer.element.nativeElement, "name", _this191.name);
 
-              _this188.subscriptionsArray.push(_this188.subscribeToCheckboxEvent(child));
+              _this191.subscriptionsArray.push(_this191.subscribeToCheckboxEvent(child));
 
               setTimeout(function () {
-                child.checked = _this188.values.indexOf(child.value) > -1;
-                child.disabled = child.disabled || _this188.disabled;
+                child.checked = _this191.values.indexOf(child.value) > -1;
+                child.disabled = child.disabled || _this191.disabled;
               });
             });
             this.children.changes.subscribe(function (checkboxComponentQueryList) {
               // verify that there are no observers on checkboxes as we are creating new.
-              _this188.subscriptionsArray.forEach(function (sub) {
+              _this191.subscriptionsArray.forEach(function (sub) {
                 return sub.unsubscribe();
               });
 
               checkboxComponentQueryList.toArray().forEach(function (checkbox) {
-                _this188.renderer.setAttribute(checkbox.inputViewContainer.element.nativeElement, "name", _this188.name);
+                _this191.renderer.setAttribute(checkbox.inputViewContainer.element.nativeElement, "name", _this191.name);
 
-                _this188.subscriptionsArray.push(_this188.subscribeToCheckboxEvent(checkbox));
+                _this191.subscriptionsArray.push(_this191.subscribeToCheckboxEvent(checkbox));
 
                 setTimeout(function () {
-                  checkbox.checked = _this188.values.indexOf(checkbox.value) > -1;
-                  checkbox.disabled = checkbox.disabled || _this188.disabled;
+                  checkbox.checked = _this191.values.indexOf(checkbox.value) > -1;
+                  checkbox.disabled = checkbox.disabled || _this191.disabled;
                 });
               });
             });
@@ -56295,13 +56483,13 @@
         }, {
           key: "setDisabledState",
           value: function setDisabledState(isDisabled) {
-            var _this189 = this;
+            var _this192 = this;
 
             this.disabled = isDisabled;
 
             if (this.children) {
               this.children.toArray().forEach(function (child) {
-                return child.disabled = _this189.disabled;
+                return child.disabled = _this192.disabled;
               });
             }
           }
@@ -56319,24 +56507,24 @@
         }, {
           key: "subscribeToCheckboxEvent",
           value: function subscribeToCheckboxEvent(checkbox) {
-            var _this190 = this;
+            var _this193 = this;
 
             return checkbox.valueChange.subscribe(function (event) {
               if (event.target.checked) {
-                _this190.values = [].concat(_toConsumableArray(_this190.values), [event.target.value]);
+                _this193.values = [].concat(_toConsumableArray(_this193.values), [event.target.value]);
               } else {
-                lodash_remove__WEBPACK_IMPORTED_MODULE_2___default()(_this190.values, function (x) {
+                lodash_remove__WEBPACK_IMPORTED_MODULE_2___default()(_this193.values, function (x) {
                   return x === event.target.value;
                 });
               }
 
-              _this190.valuesChange.emit(_this190.values);
+              _this193.valuesChange.emit(_this193.values);
 
-              _this190.onChange(_this190.values);
+              _this193.onChange(_this193.values);
 
-              _this190.onTouched();
+              _this193.onTouched();
 
-              _this190.writeValue(_this190.values);
+              _this193.writeValue(_this193.values);
             });
           }
         }]);
@@ -56366,7 +56554,8 @@
         inputs: {
           name: "name",
           values: "values",
-          ariaLabel: "ariaLabel"
+          ariaLabel: "ariaLabel",
+          ariaLabeledby: "ariaLabeledby"
         },
         outputs: {
           valuesChange: "valuesChange"
@@ -56386,7 +56575,7 @@
         }])],
         ngContentSelectors: _c0,
         decls: 2,
-        vars: 1,
+        vars: 2,
         consts: [[1, "nui-checkbox-group"]],
         template: function CheckboxGroupComponent_Template(rf, ctx) {
           if (rf & 1) {
@@ -56400,7 +56589,7 @@
           }
 
           if (rf & 2) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-label", ctx.ariaLabel);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-label", ctx.ariaLabel || null)("aria-labeledby", ctx.ariaLabeledby || null);
           }
         },
         encapsulation: 2,
@@ -56581,14 +56770,14 @@
         var _super39 = _createSuper(WizardStepV2Component);
 
         function WizardStepV2Component(changeDetectorRef, stepper, _errorStateMatcher, stepperOptions) {
-          var _this191;
+          var _this194;
 
           _classCallCheck(this, WizardStepV2Component);
 
-          _this191 = _super39.call(this, stepper, stepperOptions);
-          _this191.changeDetectorRef = changeDetectorRef;
-          _this191._errorStateMatcher = _errorStateMatcher;
-          return _this191;
+          _this194 = _super39.call(this, stepper, stepperOptions);
+          _this194.changeDetectorRef = changeDetectorRef;
+          _this194._errorStateMatcher = _errorStateMatcher;
+          return _this194;
         }
         /** Custom error state matcher that additionally checks for validity of interacted form. */
 
@@ -56666,18 +56855,18 @@
         var _super40 = _createSuper(WizardDirective);
 
         function WizardDirective() {
-          var _this192;
+          var _this195;
 
           _classCallCheck(this, WizardDirective);
 
-          _this192 = _super40.apply(this, arguments);
+          _this195 = _super40.apply(this, arguments);
           /** Event emitted when the current step is done transitioning in. */
 
-          _this192.animationDone = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+          _this195.animationDone = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
           /** Stream of animation `done` events when the body expands/collapses. */
 
-          _this192._animationDone = new rxjs__WEBPACK_IMPORTED_MODULE_2__["Subject"]();
-          return _this192;
+          _this195._animationDone = new rxjs__WEBPACK_IMPORTED_MODULE_2__["Subject"]();
+          return _this195;
         }
         /** The step that is selected. */
 
@@ -56693,13 +56882,13 @@
         }, {
           key: "ngAfterContentInit",
           value: function ngAfterContentInit() {
-            var _this193 = this;
+            var _this196 = this;
 
             // Mark the component for change detection whenever the content children query changes
             this._steps.changes.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["takeUntil"])(this._destroyed)).subscribe(function () {
-              _this193.steps.reset(_this193._steps);
+              _this196.steps.reset(_this196._steps);
 
-              _this193._stateChanged();
+              _this196._stateChanged();
             });
 
             this._animationDone.pipe( // This needs a `distinctUntilChanged` in order to avoid emitting the same event twice due
@@ -56709,7 +56898,7 @@
               return x.fromState === y.fromState && x.toState === y.toState;
             }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["takeUntil"])(this._destroyed)).subscribe(function (event) {
               if (event.toState === "current") {
-                _this193.animationDone.emit();
+                _this196.animationDone.emit();
               }
             });
           }
@@ -56884,7 +57073,7 @@
         ngContentSelectors: _c0,
         decls: 8,
         vars: 5,
-        consts: [[1, "severity-text"], [3, "icon", 4, "ngIf"], [1, "dialog-title"], [1, "btn-group"], ["nui-button", "", "nuiSetFocus", "true", "preventScroll", "true", "type", "button", "displayStyle", "action", "icon", "close", "aria-label", "Close", 3, "click"], [3, "icon"]],
+        consts: [[1, "severity-text"], [3, "icon", 4, "ngIf"], [1, "dialog-title"], [1, "btn-group"], ["nui-button", "", "nuiSetFocus", "true", "preventScroll", "true", "type", "button", "displayStyle", "action", "icon", "close", "ariaLabel", "Close", 3, "click"], [3, "icon"]],
         template: function DialogHeaderComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"]();
@@ -57268,17 +57457,17 @@
         _createClass(ToolbarComponent, [{
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this194 = this;
+            var _this197 = this;
 
             this.splitToolbarItems();
             this.childrenSubscription = Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["merge"])(this.groups.changes, this.items.changes).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["debounceTime"])(20)).subscribe(function () {
               // timeout is needed for updating actual querylist. without it splitToolbarItems won't get new element in groups' arrays
               setTimeout(function () {
-                _this194.splitToolbarItems();
+                _this197.splitToolbarItems();
               }, 0);
             });
             this.ngZone.onStable.asObservable().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["take"])(1)).subscribe(function () {
-              _this194.moveToolbarItems();
+              _this197.moveToolbarItems();
             });
             this.destructiveItems = [];
             this.groups.forEach(function (group) {
@@ -57287,10 +57476,10 @@
               });
 
               if (isDestructiveItem.length) {
-                _this194.destructiveItems.push(isDestructiveItem);
+                _this197.destructiveItems.push(isDestructiveItem);
 
-                if (_this194.destructiveItems.length === 1 && _this194.destructiveIsLastItem || _this194.destructiveItems.length > 1) {
-                  _this194.logger.error("Only one tool-bar-item with type destructive may be defined, and it must be the last item in last group");
+                if (_this197.destructiveItems.length === 1 && _this197.destructiveIsLastItem || _this197.destructiveItems.length > 1) {
+                  _this197.logger.error("Only one tool-bar-item with type destructive may be defined, and it must be the last item in last group");
                 }
               }
             });
@@ -57324,7 +57513,7 @@
         }, {
           key: "splitToolbarItems",
           value: function splitToolbarItems() {
-            var _this195 = this;
+            var _this198 = this;
 
             this.commandGroups = [];
             this.menuGroups = [];
@@ -57337,13 +57526,13 @@
               });
 
               if (commandGroupItems.length) {
-                _this195.commandGroups.push({
+                _this198.commandGroups.push({
                   items: commandGroupItems
                 });
               }
 
               if (menuGroupItems.length) {
-                _this195.menuGroups.push({
+                _this198.menuGroups.push({
                   items: menuGroupItems,
                   title: group.title
                 });
@@ -57619,7 +57808,7 @@
             return (_a = this.popup) === null || _a === void 0 ? void 0 : _a.showing;
           },
           set: function set(open) {
-            var _this196 = this;
+            var _this199 = this;
 
             if (this.isContentInitialized) {
               this.isOpenHandler(open);
@@ -57627,7 +57816,7 @@
             }
 
             setTimeout(function () {
-              return _this196.isOpenHandler(open);
+              return _this199.isOpenHandler(open);
             });
           }
         }, {
@@ -57673,7 +57862,7 @@
         }, {
           key: "ngAfterContentInit",
           value: function ngAfterContentInit() {
-            var _this197 = this;
+            var _this200 = this;
 
             this.isContentInitialized = true;
             this.initToggleRef();
@@ -57683,14 +57872,14 @@
 
             if (this.popupToggle) {
               this.popupToggle.toggle.subscribe(function (e) {
-                return _this197.toggleOpened(e);
+                return _this200.toggleOpened(e);
               });
             }
           }
         }, {
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this198 = this;
+            var _this201 = this;
 
             this.overlayConfig = Object.assign(Object.assign({}, this.overlayConfig), {
               width: this.width
@@ -57698,7 +57887,7 @@
 
             if (this.manualOpenControl) {
               this.manualOpenControl.subscribe(function (e) {
-                return _this198.toggleOpened(e);
+                return _this201.toggleOpened(e);
               });
             }
 
@@ -57709,10 +57898,10 @@
             this.eventBusService.getStream({
               id: _constants_event_constants__WEBPACK_IMPORTED_MODULE_5__["DOCUMENT_CLICK_EVENT"]
             }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeUntil"])(this.destroy$)).subscribe(function (event) {
-              var isToggle = _this198.popupToggle && event ? _this198.popupToggle.host.nativeElement.contains(event.target) : false;
+              var isToggle = _this201.popupToggle && event ? _this201.popupToggle.host.nativeElement.contains(event.target) : false;
 
-              if (_this198.isOpen && !isToggle) {
-                _this198.closePopup();
+              if (_this201.isOpen && !isToggle) {
+                _this201.closePopup();
               }
             });
             this.cdRef.detectChanges();
@@ -57832,7 +58021,7 @@
         }, {
           key: "show",
           value: function show() {
-            var _this199 = this;
+            var _this202 = this;
 
             if (!this.toggleReference) {
               return;
@@ -57846,7 +58035,7 @@
 
             if (this.contextClass) {
               this.contextClass.split(" ").forEach(function (contextClass) {
-                _this199.popupAreaContainer.nativeElement.classList.add(contextClass);
+                _this202.popupAreaContainer.nativeElement.classList.add(contextClass);
               });
             }
 
@@ -57856,13 +58045,13 @@
         }, {
           key: "hide",
           value: function hide() {
-            var _this200 = this;
+            var _this203 = this;
 
             this.visible = false;
             setTimeout(function () {
-              _this200.popup.hide();
+              _this203.popup.hide();
 
-              _this200.opened.emit(_this200.popup.showing);
+              _this203.opened.emit(_this203.popup.showing);
             });
           }
         }, {
@@ -58062,7 +58251,7 @@
       var DndDropTargetDirective = /*#__PURE__*/function () {
         // canDrop primitive value is used for the host element class binding
         function DndDropTargetDirective(targetDropList, renderer, hostElement) {
-          var _this201 = this;
+          var _this204 = this;
 
           _classCallCheck(this, DndDropTargetDirective);
 
@@ -58097,10 +58286,10 @@
 
             if (showDropZone) {
               var ACCEPT_ALL_ITEMS = true;
-              result = (_b = (_a = _this201.canBeDropped) === null || _a === void 0 ? void 0 : _a.call(_this201, drag.data, _this201.targetDropList)) !== null && _b !== void 0 ? _b : ACCEPT_ALL_ITEMS;
+              result = (_b = (_a = _this204.canBeDropped) === null || _a === void 0 ? void 0 : _a.call(_this204, drag.data, _this204.targetDropList)) !== null && _b !== void 0 ? _b : ACCEPT_ALL_ITEMS;
             }
 
-            _this201._canLastDragItemBeDropped = result;
+            _this204._canLastDragItemBeDropped = result;
             return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["of"])(result);
           }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["distinctUntilChanged"])(), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["shareReplay"])()); // If consumer will not subscribe in the template to canDrop$ we should set proper classes anyway.
           // That's why we're subscribing also here, the number of observables will remain the same because of shareReplay
@@ -58125,7 +58314,7 @@
         }, {
           key: "ngAfterContentInit",
           value: function ngAfterContentInit() {
-            var _this202 = this;
+            var _this205 = this;
 
             // Using this to provide current draggable item reference that is needed for predicate validation
             // cdkDropList is not throwing any event on dragStart, then we should subscribe to dragStartEventEmitter from item
@@ -58134,7 +58323,7 @@
                 return drag.started;
               })));
             }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["tap"])(function (item) {
-              return _this202.itemDragStarted$.next(item.source);
+              return _this205.itemDragStarted$.next(item.source);
             }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["takeUntil"])(this._destroy$)).subscribe();
           }
         }, {
@@ -58329,17 +58518,17 @@
         var _super41 = _createSuper(SelectV2OptionComponent);
 
         function SelectV2OptionComponent(parent, element) {
-          var _this203;
+          var _this206;
 
           _classCallCheck(this, SelectV2OptionComponent);
 
-          _this203 = _super41.call(this, element);
-          _this203.element = element;
+          _this206 = _super41.call(this, element);
+          _this206.element = element;
           /** Whether the Option outfiltered */
 
-          _this203.outfiltered = false;
-          _this203.select = parent;
-          return _this203;
+          _this206.outfiltered = false;
+          _this206.select = parent;
+          return _this206;
         }
         /** Whether the Option selected */
 
@@ -59077,7 +59266,7 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this204 = this;
+            var _this207 = this;
 
             lodash_defaults__WEBPACK_IMPORTED_MODULE_2___default()(this, _public_api__WEBPACK_IMPORTED_MODULE_15__["datePickerDefaults"]);
             this.selectedDate = this._value;
@@ -59086,19 +59275,19 @@
             this.inputChanged.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["debounceTime"])(500)).subscribe(function (value) {
               var momentValue = moment_moment__WEBPACK_IMPORTED_MODULE_6___default()(value, _public_api__WEBPACK_IMPORTED_MODULE_15__["datePickerDateFormats"], true);
 
-              _this204.onTouched(); // In case of FormControl absence we still need to perform validation
+              _this207.onTouched(); // In case of FormControl absence we still need to perform validation
 
 
-              var templateDrivenControlValid = !_this204.formControl && lodash_isNull__WEBPACK_IMPORTED_MODULE_5___default()(_validators__WEBPACK_IMPORTED_MODULE_9__["NuiValidators"].dateFormat(momentValue));
-              var reactiveDrivenControlValid = _this204.formControl && _this204.formControl.valid && lodash_isNull__WEBPACK_IMPORTED_MODULE_5___default()(_validators__WEBPACK_IMPORTED_MODULE_9__["NuiValidators"].dateFormat(momentValue));
-              var isInputValid = (templateDrivenControlValid || reactiveDrivenControlValid) && !_this204.isDateDisabled(momentValue);
+              var templateDrivenControlValid = !_this207.formControl && lodash_isNull__WEBPACK_IMPORTED_MODULE_5___default()(_validators__WEBPACK_IMPORTED_MODULE_9__["NuiValidators"].dateFormat(momentValue));
+              var reactiveDrivenControlValid = _this207.formControl && _this207.formControl.valid && lodash_isNull__WEBPACK_IMPORTED_MODULE_5___default()(_validators__WEBPACK_IMPORTED_MODULE_9__["NuiValidators"].dateFormat(momentValue));
+              var isInputValid = (templateDrivenControlValid || reactiveDrivenControlValid) && !_this207.isDateDisabled(momentValue);
 
-              _this204.setDate(momentValue);
+              _this207.setDate(momentValue);
 
-              _this204.setErrorState(!isInputValid);
+              _this207.setErrorState(!isInputValid);
 
-              if (_this204.value.isValid() && !lodash_isEqual__WEBPACK_IMPORTED_MODULE_3___default()(_this204.value.format(_this204.momentDateFormat), value)) {
-                _this204.updateTextboxValue();
+              if (_this207.value.isValid() && !lodash_isEqual__WEBPACK_IMPORTED_MODULE_3___default()(_this207.value.format(_this207.momentDateFormat), value)) {
+                _this207.updateTextboxValue();
               }
             });
             this.onAppendToBodyChange(this.appendToBody);
@@ -59113,30 +59302,30 @@
         }, {
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this205 = this;
+            var _this208 = this;
 
             this.calendarChanged = this._datePicker.calendarMoved.subscribe(function (value) {
-              return _this205.calendarNavigated.emit(value);
+              return _this208.calendarNavigated.emit(value);
             });
             this.updateTextboxValue();
             this.cd.detectChanges();
 
             if (this.overlay) {
               this.overlay.clickOutside.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["takeUntil"])(this.onDestroy$)).subscribe(function (_) {
-                return _this205.overlay.hide();
+                return _this208.overlay.hide();
               }); // Sets innerDatePicker 'value' to 'null' on popup close and refreshView() on popup open,
               // so in case datePicker.value is invalid it will build the calendar from the scratch
               // and not keep its previous state.
 
               this.overlay.show$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["takeUntil"])(this.onDestroy$)).subscribe(function (_) {
-                return _this205._datePicker.refreshView();
+                return _this208._datePicker.refreshView();
               });
               this.overlay.hide$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["takeUntil"])(this.onDestroy$)).subscribe(function (_) {
-                var currentDateValid = moment_moment__WEBPACK_IMPORTED_MODULE_6___default()(_this205.value).isValid();
+                var currentDateValid = moment_moment__WEBPACK_IMPORTED_MODULE_6___default()(_this208.value).isValid();
 
                 if (!currentDateValid) {
-                  _this205._datePicker.value = undefined;
-                  _this205._datePicker.datepickerMode = "day";
+                  _this208._datePicker.value = undefined;
+                  _this208._datePicker.datepickerMode = "day";
                 }
               });
             }
@@ -59144,10 +59333,10 @@
         }, {
           key: "updateTouchedState",
           value: function updateTouchedState() {
-            var _this206 = this;
+            var _this209 = this;
 
             setTimeout(function () {
-              return _this206.inputBlurred.emit();
+              return _this209.inputBlurred.emit();
             }, 100);
             this.onTouched();
           }
@@ -59478,7 +59667,7 @@
 
 
       var DomUtilService = function DomUtilService(document) {
-        var _this207 = this;
+        var _this210 = this;
 
         _classCallCheck(this, DomUtilService);
 
@@ -59511,7 +59700,7 @@
           } // Get the closest matching element
 
 
-          for (; elem && elem !== _this207.document; elem = (_a = elem.parentElement) !== null && _a !== void 0 ? _a : undefined) {
+          for (; elem && elem !== _this210.document; elem = (_a = elem.parentElement) !== null && _a !== void 0 ? _a : undefined) {
             if (elem === null || elem === void 0 ? void 0 : elem.matches(selector)) {
               return elem;
             }
@@ -59603,22 +59792,22 @@
         }, {
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this208 = this;
+            var _this211 = this;
 
             this.resizeHandler = lodash_debounce__WEBPACK_IMPORTED_MODULE_1___default()(function (entry) {
-              return _this208.containerResize.emit(entry);
+              return _this211.containerResize.emit(entry);
             }, this._debounceTime);
             this.resizeObserver = new resize_observer_polyfill__WEBPACK_IMPORTED_MODULE_2__["default"](function (entries) {
               entries.forEach(function (entry) {
-                _this208.ngZone.run(function () {
-                  _this208.resizeHandler(entry);
+                _this211.ngZone.run(function () {
+                  _this211.resizeHandler(entry);
                 });
               });
             });
             this.ngZone.runOutsideAngular(function () {
               var _a;
 
-              (_a = _this208.resizeObserver) === null || _a === void 0 ? void 0 : _a.observe(_this208._element.nativeElement);
+              (_a = _this211.resizeObserver) === null || _a === void 0 ? void 0 : _a.observe(_this211._element.nativeElement);
             });
           }
         }, {
@@ -59726,19 +59915,19 @@
         var _super42 = _createSuper(MenuLinkComponent);
 
         function MenuLinkComponent(group, cd) {
-          var _this209;
+          var _this212;
 
           _classCallCheck(this, MenuLinkComponent);
 
-          _this209 = _super42.call(this, group, cd);
-          _this209.group = group;
+          _this212 = _super42.call(this, group, cd);
+          _this212.group = group;
           /**
            * Sets inner "target" attribute of anchor tag
            */
 
-          _this209.target = "";
-          _this209.disabled = false;
-          return _this209;
+          _this212.target = "";
+          _this212.disabled = false;
+          return _this212;
         }
 
         _createClass(MenuLinkComponent, [{
@@ -60272,7 +60461,7 @@
 
       var RepeatComponent = /*#__PURE__*/function () {
         function RepeatComponent(changeDetector, logger, iterableDiffers, dragDropService, elRef) {
-          var _this210 = this;
+          var _this213 = this;
 
           _classCallCheck(this, RepeatComponent);
 
@@ -60336,9 +60525,9 @@
           this.dropListDestroyed = new rxjs__WEBPACK_IMPORTED_MODULE_4__["Subject"]();
 
           this.intersectionObserverCallback = function (entries, observer) {
-            if (entries[0].isIntersecting && _this210.virtualScroll) {
+            if (entries[0].isIntersecting && _this213.virtualScroll) {
               // recheck the cdk viewport size in case the repeat is instantiated before becoming visible in the viewport (NUI-5820)
-              _this210.viewportRef.checkViewportSize();
+              _this213.viewportRef.checkViewportSize();
             }
           };
         }
@@ -60586,7 +60775,7 @@
         }, {
           key: "initializeCDKDropList",
           value: function initializeCDKDropList() {
-            var _this211 = this;
+            var _this214 = this;
 
             if (!this.virtualScroll && this.dropListArea && this._draggable && !this.dropListRef) {
               this.dropListRef = this.dragDropService.createDropList(this.dropListArea);
@@ -60594,7 +60783,7 @@
               this.dropListRef.data = this.itemsSource; // self-destroyed subscription
 
               this.dropListRef.dropped.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["tap"])(function (event) {
-                return _this211.itemDropped(event);
+                return _this214.itemDropped(event);
               }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["takeUntil"])(this.dropListDestroyed)).subscribe();
               this.dropListRef.withItems(this.draggableElements.map(function (item) {
                 return item._dragRef;
@@ -60673,10 +60862,10 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵloadQuery"]()) && (ctx.draggableElements = _t);
           }
         },
-        hostVars: 5,
+        hostVars: 6,
         hostBindings: function RepeatComponent_HostBindings(rf, ctx) {
           if (rf & 2) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵattribute"]("role", ctx.role);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵattribute"]("role", ctx.role)("aria-multiselectable", ctx.selectionMode === ctx.repeatSelectionMode.multi || null);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵstyleProp"]("width", ctx.width);
 
@@ -60709,7 +60898,7 @@
         ngContentSelectors: _c6,
         decls: 9,
         vars: 5,
-        consts: [["repeatItems", ""], [1, "nui-repeat-header"], [1, "repeat-group"], ["dropListArea", ""], [4, "ngIf"], ["style", "height: 100%", 3, "itemSize", 4, "ngIf"], ["cdkDrag", "", 1, "repeat-group-item", 3, "cdkDragData", "cdkDragPreviewClass", "cdkDragDisabled", "clickable", "selectable", "selected", "ngClass", "click"], ["drag", "cdkDrag"], ["class", "nui-repeat-item__controls-drag-handle align-self-center", 3, "ngClass", 4, "ngIf"], ["class", "nui-repeat-item__controls-drag-handle", 4, "ngIf"], [1, "nui-repeat-item__controls-container"], ["class", "nui-repeat-item__checkbox", 3, "value", "checked", "disabled", "valueChange", 4, "ngIf"], ["class", "nui-repeat-item__radio", 3, "value", "checked", "disabled", 4, "ngIf"], [1, "nui-repeat-item__content-container"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"], ["class", "nui-repeat-item__actions-container", 4, "ngIf"], [1, "nui-repeat-item__controls-drag-handle", "align-self-center", 3, "ngClass"], ["cdkDragHandle", "", 3, "mouseover", "mouseout"], [1, "nui-repeat-item__controls-drag-handle"], [3, "nui-dnd-preview", 4, "cdkDragPreview"], [1, "nui-repeat-item__checkbox", 3, "value", "checked", "disabled", "valueChange"], [1, "nui-repeat-item__radio", 3, "value", "checked", "disabled"], [1, "nui-repeat-item__actions-container"], [3, "ngTemplateOutlet", "ngTemplateOutletContext", 4, "ngFor", "ngForOf", "ngForTrackBy"], [2, "height", "100%", 3, "itemSize"], [4, "cdkVirtualFor", "cdkVirtualForOf", "cdkVirtualForTemplateCacheSize"]],
+        consts: [["repeatItems", ""], [1, "nui-repeat-header"], ["aria-dropeffect", "move", 1, "repeat-group"], ["dropListArea", ""], [4, "ngIf"], ["style", "height: 100%", 3, "itemSize", 4, "ngIf"], ["aria-grabbed", "supported", "cdkDrag", "", 1, "repeat-group-item", 3, "cdkDragData", "cdkDragPreviewClass", "cdkDragDisabled", "clickable", "selectable", "selected", "ngClass", "click"], ["drag", "cdkDrag"], ["class", "nui-repeat-item__controls-drag-handle align-self-center", 3, "ngClass", 4, "ngIf"], ["class", "nui-repeat-item__controls-drag-handle", 4, "ngIf"], [1, "nui-repeat-item__controls-container"], ["class", "nui-repeat-item__checkbox", 3, "value", "checked", "disabled", "valueChange", 4, "ngIf"], ["class", "nui-repeat-item__radio", 3, "value", "checked", "disabled", 4, "ngIf"], [1, "nui-repeat-item__content-container"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"], ["class", "nui-repeat-item__actions-container", 4, "ngIf"], [1, "nui-repeat-item__controls-drag-handle", "align-self-center", 3, "ngClass"], ["cdkDragHandle", "", 3, "mouseover", "mouseout"], [1, "nui-repeat-item__controls-drag-handle"], [3, "nui-dnd-preview", 4, "cdkDragPreview"], [1, "nui-repeat-item__checkbox", 3, "value", "checked", "disabled", "valueChange"], [1, "nui-repeat-item__radio", 3, "value", "checked", "disabled"], [1, "nui-repeat-item__actions-container"], [3, "ngTemplateOutlet", "ngTemplateOutletContext", 4, "ngFor", "ngForOf", "ngForTrackBy"], [2, "height", "100%", 3, "itemSize"], [4, "cdkVirtualFor", "cdkVirtualForOf", "cdkVirtualForTemplateCacheSize"]],
         template: function RepeatComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵprojectionDef"](_c5);
@@ -60964,19 +61153,19 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this212 = this;
+            var _this215 = this;
 
             if (this.manualOpenControl) {
               this.popupSubscriptions.push(this.manualOpenControl.subscribe(function (event) {
-                _this212.toggleOpened(event);
+                _this215.toggleOpened(event);
               }));
             }
 
             this.popupSubscriptions.push(this.eventBusService.getStream({
               id: _constants_event_constants__WEBPACK_IMPORTED_MODULE_3__["DOCUMENT_CLICK_EVENT"]
             }).subscribe(function (event) {
-              if (_this212.isOpen) {
-                _this212.closePopup(event);
+              if (_this215.isOpen) {
+                _this215.closePopup(event);
               }
             })); // This is needed to make the isOpen @Input work.
 
@@ -60985,7 +61174,7 @@
         }, {
           key: "ngAfterContentInit",
           value: function ngAfterContentInit() {
-            var _this213 = this;
+            var _this216 = this;
 
             this.setPopupPosition();
 
@@ -60994,7 +61183,7 @@
             }
 
             this.popupSubscriptions.push(this.popupToggle.toggle.subscribe(function (event) {
-              _this213.toggleOpened(event);
+              _this216.toggleOpened(event);
             }));
           }
         }, {
@@ -61894,7 +62083,7 @@
 
       var ToastComponent = /*#__PURE__*/function () {
         function ToastComponent(toastService, toastPackage, ngZone) {
-          var _this214 = this;
+          var _this217 = this;
 
           _classCallCheck(this, ToastComponent);
 
@@ -61927,13 +62116,13 @@
           this.toastIcon = this.toastTypeToSeverityIcon[toastPackage.toastType];
           this.closeButton = this.toastPackage.config.closeButton;
           var activateSubscription = this.toastPackage.toastRef.afterActivate().subscribe(function () {
-            _this214.display = "block";
+            _this217.display = "block";
             setTimeout(function () {
-              return _this214.activateToast();
+              return _this217.activateToast();
             }); // Is needed to make "display: none" & "opacity" transitions working
           });
           var closeSubscription = this.toastPackage.toastRef.manualClosed().subscribe(function () {
-            _this214.remove();
+            _this217.remove();
           });
           this.subscriptions.push(activateSubscription, closeSubscription);
         }
@@ -61950,18 +62139,18 @@
         }, {
           key: "activateToast",
           value: function activateToast() {
-            var _this215 = this;
+            var _this218 = this;
 
             this.state = ToastState.Active;
             this.fadeOut = false;
 
             if (this.options.timeOut) {
               this.ngZone.runOutsideAngular(function () {
-                _this215.timeout = setTimeout(function () {
-                  _this215.ngZone.run(function () {
-                    _this215.remove();
+                _this218.timeout = setTimeout(function () {
+                  _this218.ngZone.run(function () {
+                    _this218.remove();
                   });
-                }, _this215.options.timeOut);
+                }, _this218.options.timeOut);
               });
               this.hideTime = new Date().getTime() + this.options.timeOut;
 
@@ -61977,7 +62166,7 @@
         }, {
           key: "remove",
           value: function remove() {
-            var _this216 = this;
+            var _this219 = this;
 
             if (this.state === ToastState.Removed) {
               return;
@@ -61987,7 +62176,7 @@
             this.state = ToastState.Removed;
             this.fadeOut = true;
             this.timeout = setTimeout(function () {
-              return _this216.toastService.remove(_this216.toastPackage.toastId);
+              return _this219.toastService.remove(_this219.toastPackage.toastId);
             }, this.animationFadeOutLength);
           }
           /**
@@ -62032,7 +62221,7 @@
         }, {
           key: "delayedHideToast",
           value: function delayedHideToast() {
-            var _this217 = this;
+            var _this220 = this;
 
             clearInterval(this.intervalId);
 
@@ -62041,7 +62230,7 @@
             }
 
             this.timeout = setTimeout(function () {
-              return _this217.remove();
+              return _this220.remove();
             }, this.options.extendedTimeOut);
             this.options.timeOut = this.options.extendedTimeOut;
             this.hideTime = new Date().getTime() + (this.options.timeOut || 0);
@@ -62054,15 +62243,15 @@
         }, {
           key: "repeatProgressBarChange",
           value: function repeatProgressBarChange() {
-            var _this218 = this;
+            var _this221 = this;
 
             var intervalId;
             this.ngZone.runOutsideAngular(function () {
               intervalId = setInterval(function () {
-                _this218.ngZone.run(function () {
-                  _this218.updateProgress();
+                _this221.ngZone.run(function () {
+                  _this221.updateProgress();
                 });
-              }, (_this218.options.timeOut || 0) / 100);
+              }, (_this221.options.timeOut || 0) / 100);
             }); // using type assertion to avoid compile time error
             // variable intervalId is assigned by clojure / async
 
@@ -62331,6 +62520,8 @@
         if (rf & 2) {
           var ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-label", ctx_r0.ariaLabel);
+
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r0.items);
@@ -62342,6 +62533,7 @@
         function BreadcrumbComponent() {
           _classCallCheck(this, BreadcrumbComponent);
 
+          this.ariaLabel = "Breadcrumb";
           this.navigation = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
         }
 
@@ -62375,18 +62567,25 @@
       BreadcrumbComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: BreadcrumbComponent,
         selectors: [["nui-breadcrumb"]],
+        hostVars: 1,
+        hostBindings: function BreadcrumbComponent_HostBindings(rf, ctx) {
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-label", ctx.ariaLabel);
+          }
+        },
         inputs: {
-          items: "items"
+          items: "items",
+          ariaLabel: "ariaLabel"
         },
         outputs: {
           navigation: "navigation"
         },
         decls: 1,
         vars: 1,
-        consts: [["class", "nui-breadcrumb", 4, "ngIf"], [1, "nui-breadcrumb"], ["class", "nui-breadcrumb__wrapper", 4, "ngFor", "ngForOf"], [1, "nui-breadcrumb__wrapper"], [4, "ngIf"], ["class", "nui-breadcrumb__crumb nui-breadcrumb__crumb-current-level", 4, "ngIf"], [1, "nui-breadcrumb__crumb", "nui-breadcrumb__crumb__link", 3, "click"], ["icon", "caret-right", "iconColor", "disabled-gray", "iconSize", "small", 1, "nui-breadcrumb__caret-icon"], [1, "nui-breadcrumb__crumb", "nui-breadcrumb__crumb-current-level"]],
+        consts: [["class", "nui-breadcrumb", 4, "ngIf"], [1, "nui-breadcrumb"], ["class", "nui-breadcrumb__wrapper", 4, "ngFor", "ngForOf"], [1, "nui-breadcrumb__wrapper"], [4, "ngIf"], ["aria-current", "page", "class", "nui-breadcrumb__crumb nui-breadcrumb__crumb-current-level", 4, "ngIf"], [1, "nui-breadcrumb__crumb", "nui-breadcrumb__crumb__link", 3, "click"], ["icon", "caret-right", "iconColor", "disabled-gray", "iconSize", "small", 1, "nui-breadcrumb__caret-icon"], ["aria-current", "page", 1, "nui-breadcrumb__crumb", "nui-breadcrumb__crumb-current-level"]],
         template: function BreadcrumbComponent_Template(rf, ctx) {
           if (rf & 1) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, BreadcrumbComponent_div_0_Template, 2, 1, "div", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, BreadcrumbComponent_div_0_Template, 2, 2, "div", 0);
           }
 
           if (rf & 2) {
@@ -62704,15 +62903,15 @@
         }, {
           key: "initChipResizeObserver",
           value: function initChipResizeObserver() {
-            var _this219 = this;
+            var _this222 = this;
 
             if (!this.allChips.first) {
               return;
             }
 
             this.chipResizeObserver = new resize_observer_polyfill__WEBPACK_IMPORTED_MODULE_1__["default"](function () {
-              _this219.zone.run(function () {
-                return _this219.handleOverflow();
+              _this222.zone.run(function () {
+                return _this222.handleOverflow();
               });
             }); // Rendering occurs gradually, so we tracking every dimension change, to calculate overflow items correctly
             // to avoid case when Overflow Counter renders on the next line. Observing occurs only on first item, but it
@@ -62723,20 +62922,20 @@
         }, {
           key: "initChipsMutationObserver",
           value: function initChipsMutationObserver() {
-            var _this220 = this;
+            var _this223 = this;
 
             var config = {
               childList: true
             };
             this.chipsMutationObserver = new MutationObserver(function () {
-              return _this220.handleOverflow();
+              return _this223.handleOverflow();
             });
             this.chipsMutationObserver.observe(this.mainCell.nativeElement, config);
           }
         }, {
           key: "processChipsOverflow",
           value: function processChipsOverflow() {
-            var _this221 = this;
+            var _this224 = this;
 
             var _a;
 
@@ -62746,13 +62945,13 @@
             var rowMaxWidth = this.getRowWidth();
             var counterWidth = ((_a = this.overflowCounter) === null || _a === void 0 ? void 0 : _a.nativeElement.getBoundingClientRect().width) || 0;
             this.allChips.toArray().forEach(function (item) {
-              var chipElement = _this221.getNativeElement(item);
+              var chipElement = _this224.getNativeElement(item);
 
               chipElement.style.display = "inline";
               var chipElementWidth = chipElement.getBoundingClientRect().width;
 
               var isLastLine = function isLastLine() {
-                return renderedLines === _this221.overflowLinesNumber;
+                return renderedLines === _this224.overflowLinesNumber;
               };
 
               if (!isLastLine() && acc + chipElementWidth > rowMaxWidth) {
@@ -62774,7 +62973,7 @@
               if (isLastLine() && chipsOverflow) {
                 chipElement.style.display = "none";
 
-                _this221.updateOverflowChips(item);
+                _this224.updateOverflowChips(item);
               }
             });
           }

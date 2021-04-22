@@ -216,7 +216,7 @@
           path: "/development/data-point-selection"
         }, {
           title: "Stacked Vertical Bar",
-          path: "/development/bar/stacked-vertical"
+          path: "/development/bar/stacked-bar"
         }, {
           title: "Data Point Popovers",
           path: "/development/popovers/data-point"
