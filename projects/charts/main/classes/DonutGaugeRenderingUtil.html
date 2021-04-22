@@ -82,7 +82,7 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Static</span>
-                                <a href="#generateThresholdData">generateThresholdData</a>
+                                <a href="#generateThresholdRenderingData">generateThresholdRenderingData</a>
                             </li>
                         </ul>
                     </td>
@@ -107,20 +107,20 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="generateThresholdData"></a>
+                    <a name="generateThresholdRenderingData"></a>
                     <span class="name">
                         <b>
                             <span class="modifier">Static</span>
-                            generateThresholdData
+                            generateThresholdRenderingData
                         </b>
-                        <a href="#generateThresholdData"><span class="icon ion-ios-link"></span></a>
+                        <a href="#generateThresholdRenderingData"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>generateThresholdData(data: any[])</code>
+                    <code>generateThresholdRenderingData(data: any[])</code>
                 </td>
             </tr>
 
@@ -190,7 +190,7 @@
 import { IGaugeThreshold } from &quot;../../../gauge/types&quot;;
 
 export class DonutGaugeRenderingUtil {
-    public static generateThresholdData(data: any[]) {
+    public static generateThresholdRenderingData(data: any[]) {
         const arcData: number[] &#x3D; DonutGaugeRenderingUtil.generateArcData(data);
         const thresholdsData: any[] &#x3D; [];
         const pieGenerator &#x3D; pie().sort(null);
