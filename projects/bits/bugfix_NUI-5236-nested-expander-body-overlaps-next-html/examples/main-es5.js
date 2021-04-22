@@ -49401,8 +49401,8 @@
         },
         ngContentSelectors: _c2,
         decls: 10,
-        vars: 13,
-        consts: [[1, "nui-expander"], ["role", "button", 1, "nui-expander__header", 3, "click"], [1, "nui-expander__header-icon", 3, "iconColor", "icon"], [1, "nui-expander__header-content-wrapper"], [1, "nui-expander__custom-header"], ["customHeaderContent", ""], ["class", "nui-expander__header-content", 3, "nui-expander__header-content--with-icon", 4, "ngIf"], [1, "nui-expander__body-wrapper"], ["class", "nui-expander__body", 3, "hide-left-border", 4, "ngIf"], [1, "nui-expander__header-content"], ["class", "nui-expander__header-content-icon", 3, "icon", 4, "ngIf"], [1, "nui-expander__header-title"], [1, "nui-expander__header-content-icon", 3, "icon"], [1, "nui-expander__body"]],
+        vars: 14,
+        consts: [[1, "nui-expander"], ["role", "button", 1, "nui-expander__header", 3, "click"], ["aria-hidden", "true", 1, "nui-expander__header-icon", 3, "iconColor", "icon"], [1, "nui-expander__header-content-wrapper"], [1, "nui-expander__custom-header"], ["customHeaderContent", ""], ["class", "nui-expander__header-content", 3, "nui-expander__header-content--with-icon", 4, "ngIf"], [1, "nui-expander__body-wrapper"], ["class", "nui-expander__body", "role", "region", 3, "hide-left-border", 4, "ngIf"], [1, "nui-expander__header-content"], ["class", "nui-expander__header-content-icon", 3, "icon", 4, "ngIf"], [1, "nui-expander__header-title"], [1, "nui-expander__header-content-icon", 3, "icon"], ["role", "region", 1, "nui-expander__body"]],
         template: function ExpanderComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"](_c1);
@@ -49433,7 +49433,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "div", 7);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](9, ExpanderComponent_div_9_Template, 2, 3, "div", 8);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](9, ExpanderComponent_div_9_Template, 2, 4, "div", 8);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
