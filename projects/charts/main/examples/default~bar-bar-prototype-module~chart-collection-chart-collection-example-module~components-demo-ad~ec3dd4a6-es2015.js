@@ -6376,9 +6376,9 @@ class Chart {
         this.dataManager = this.buildDataManager();
         this.renderEngine = this.buildRenderEngine(this.grid.getLasagna(), this.dataManager);
         // Put the render engine at the front of the list since other plugins may be relying on renderers to be updated first
-        const renderEnginPlugin = new _plugins_render_engine_plugin__WEBPACK_IMPORTED_MODULE_8__["RenderEnginePlugin"]();
-        renderEnginPlugin.chart = this;
-        this.plugins.unshift(renderEnginPlugin);
+        const renderEnginePlugin = new _plugins_render_engine_plugin__WEBPACK_IMPORTED_MODULE_8__["RenderEnginePlugin"]();
+        renderEnginePlugin.chart = this;
+        this.plugins.unshift(renderEnginePlugin);
         for (const gridPlugin of this.getGrid().buildPlugins(this)) {
             this.addPlugin(gridPlugin);
         }
@@ -15762,16 +15762,25 @@ function isDaylightSavingTime(d) {
 class TimeIntervalScale extends _time_scale__WEBPACK_IMPORTED_MODULE_5__["TimeScale"] {
     constructor(interval, id) {
         super(id);
-        this.interval(interval);
-        this._bandScale = Object(d3_scale__WEBPACK_IMPORTED_MODULE_0__["scaleBand"])();
-        this.formatters.title = (inputDate) => {
+        this.defaultTitleFormatter = (inputDate) => {
             const intervalDays = this.interval().asDays();
-            // if the date is outside of daylight saving time and interval >= 1 day, add an hour to the time to format the day as "mmm d" instead of "11:00pm"
-            const standardTimeOffsetMs = intervalDays >= 1 && !isDaylightSavingTime(inputDate) && isDaylightSavingTime(this.domain()[0]) ? 3600000 : 0;
+            const isDst = isDaylightSavingTime(inputDate);
+            const isDomainStartDst = isDaylightSavingTime(this.domain()[0]);
+            const isTransFromDst = !isDst && isDomainStartDst;
+            const isTransToDst = isDst && !isDomainStartDst;
+            let standardTimeOffsetMs = 0;
+            if ((isTransFromDst || isTransToDst) && intervalDays >= 1) {
+                // if transitioning from/to daylight saving time and interval >= 1 day, add/subtract an hour to/from
+                // the time to format the day as "mmm d" instead of "11:00pm" or "1:00am" respectively
+                standardTimeOffsetMs = isTransFromDst ? 3600000 : -3600000;
+            }
             const adjustedDate = new Date(inputDate.getTime() + standardTimeOffsetMs);
             const endDate = intervalDays >= 1 ? moment_moment__WEBPACK_IMPORTED_MODULE_2___default()(adjustedDate).add(intervalDays, "days").toDate() : moment_moment__WEBPACK_IMPORTED_MODULE_2___default()(adjustedDate).add(this.interval()).toDate();
             return Object(_formatters_datetime_formatter__WEBPACK_IMPORTED_MODULE_4__["datetimeFormatter"])(adjustedDate) + " - " + Object(_formatters_datetime_formatter__WEBPACK_IMPORTED_MODULE_4__["datetimeFormatter"])(endDate);
         };
+        this.interval(interval);
+        this._bandScale = Object(d3_scale__WEBPACK_IMPORTED_MODULE_0__["scaleBand"])();
+        this.formatters.title = this.defaultTitleFormatter;
     }
     interval(value) {
         if (value) {
@@ -15812,25 +15821,12 @@ class TimeIntervalScale extends _time_scale__WEBPACK_IMPORTED_MODULE_5__["TimeSc
     getBands() {
         return this._bandScale.domain();
     }
-    getBandsForInterval(from, to) {
-        const bands = [];
-        let date = this.truncToInterval(from, this.interval(), true);
-        if (!date) {
-            throw new Error("Could not get bands for interval");
-        }
-        const intervalMs = this.interval().asMilliseconds();
-        while (date <= to) {
-            bands.push(date);
-            date = new Date(date.getTime() + intervalMs);
-        }
-        return bands;
-    }
     convert(value, position = _constants__WEBPACK_IMPORTED_MODULE_3__["BAND_CENTER"]) {
-        const interval = this.truncToInterval(value, this.interval());
-        if (!interval) {
+        const truncatedDate = this.truncToInterval(value, this.interval());
+        if (!truncatedDate) {
             throw new Error("Could not convert interval");
         }
-        const bandValue = this._bandScale(interval);
+        const bandValue = this._bandScale(truncatedDate);
         if (typeof bandValue === "number") {
             return bandValue + position * this.bandwidth();
         }
@@ -15853,14 +15849,23 @@ class TimeIntervalScale extends _time_scale__WEBPACK_IMPORTED_MODULE_5__["TimeSc
         if (!datetime) {
             return datetime;
         }
-        const isDomainStartDst = isDomainChange ? isDaylightSavingTime(datetime) : isDaylightSavingTime(this.domain()[0]);
-        const standardTimeOffsetMinutes = !isDaylightSavingTime(datetime) && isDomainStartDst ? 60 : 0;
-        const timeZoneOffsetMs = (datetime.getTimezoneOffset() - standardTimeOffsetMinutes) * 60000;
-        const timestamp = datetime.getTime() - timeZoneOffsetMs;
+        const isDst = isDaylightSavingTime(datetime);
+        const isDomainStartDst = isDomainChange ? isDst : isDaylightSavingTime(this.domain()[0]);
+        const isTransFromDst = isDomainStartDst && !isDst;
+        const isTransToDst = !isDomainStartDst && isDst;
+        const intervalDays = this.interval().asDays();
+        const transToDstAdjustment = intervalDays >= 1 && isTransToDst ? Object(moment_moment__WEBPACK_IMPORTED_MODULE_2__["duration"])(1, "hour").asMilliseconds() : 0;
+        const adjustedDt = new Date(datetime.getTime() + transToDstAdjustment);
+        let standardTimeOffsetMinutes = 0;
+        if (isTransFromDst || isTransToDst) {
+            standardTimeOffsetMinutes = isTransFromDst ? -60 : 60;
+        }
+        const timeZoneOffsetMs = (adjustedDt.getTimezoneOffset() + standardTimeOffsetMinutes) * 60000;
+        const timestamp = adjustedDt.getTime() - timeZoneOffsetMs;
         const intervalMs = interval.asMilliseconds();
         const remainder = timestamp % intervalMs;
         if (remainder === 0) {
-            return datetime;
+            return adjustedDt;
         }
         // round to interval
         const truncatedTimestamp = timestamp - remainder;
@@ -15868,6 +15873,27 @@ class TimeIntervalScale extends _time_scale__WEBPACK_IMPORTED_MODULE_5__["TimeSc
     }
     isContinuous() {
         return true;
+    }
+    getBandsForInterval(from, to) {
+        const bands = [];
+        let bandDate = this.truncToInterval(from, this.interval(), true);
+        if (!bandDate) {
+            throw new Error("Could not get bands for interval");
+        }
+        const intervalMs = this.interval().asMilliseconds();
+        const intervalDays = this.interval().asDays();
+        const isDomainStartDst = isDaylightSavingTime(from);
+        const isDomainEndDst = isDaylightSavingTime(to);
+        // Add one hour to the "to" date if:
+        // 1) we're transitioning to daylight saving time and 2) the interval is >= one day.
+        // This ensures that the last day in the domain, which starts an hour later, is included in the generated bands.
+        const dstAdjustment = !isDomainStartDst && isDomainEndDst ? Object(moment_moment__WEBPACK_IMPORTED_MODULE_2__["duration"])(1, "hour").asMilliseconds() : 0;
+        const adjustedToDate = intervalDays >= 1 ? new Date(to.getTime() + dstAdjustment) : to;
+        while (bandDate <= adjustedToDate) {
+            bands.push(bandDate);
+            bandDate = new Date(bandDate.getTime() + intervalMs);
+        }
+        return bands;
     }
 }
 
