@@ -49047,7 +49047,7 @@
 
       function ExpanderComponent_div_7_nui_icon_1_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "nui-icon", 11);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "nui-icon", 12);
         }
 
         if (rf & 2) {
@@ -49059,11 +49059,11 @@
 
       function ExpanderComponent_div_7_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 8);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 9);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, ExpanderComponent_div_7_nui_icon_1_Template, 1, 1, "nui-icon", 9);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, ExpanderComponent_div_7_nui_icon_1_Template, 1, 1, "nui-icon", 10);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "span", 10);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "span", 11);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3);
 
@@ -49087,9 +49087,9 @@
         }
       }
 
-      function ExpanderComponent_div_8_Template(rf, ctx) {
+      function ExpanderComponent_div_9_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 12);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 13);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](1, 1);
 
@@ -49214,9 +49214,9 @@
           openChange: "openChange"
         },
         ngContentSelectors: _c2,
-        decls: 9,
+        decls: 10,
         vars: 13,
-        consts: [[1, "nui-expander"], ["role", "button", 1, "nui-expander__header", 3, "click"], [1, "nui-expander__header-icon", 3, "iconColor", "icon"], [1, "nui-expander__header-content-wrapper"], [1, "nui-expander__custom-header"], ["customHeaderContent", ""], ["class", "nui-expander__header-content", 3, "nui-expander__header-content--with-icon", 4, "ngIf"], ["class", "nui-expander__body", 3, "hide-left-border", 4, "ngIf"], [1, "nui-expander__header-content"], ["class", "nui-expander__header-content-icon", 3, "icon", 4, "ngIf"], [1, "nui-expander__header-title"], [1, "nui-expander__header-content-icon", 3, "icon"], [1, "nui-expander__body"]],
+        consts: [[1, "nui-expander"], ["role", "button", 1, "nui-expander__header", 3, "click"], [1, "nui-expander__header-icon", 3, "iconColor", "icon"], [1, "nui-expander__header-content-wrapper"], [1, "nui-expander__custom-header"], ["customHeaderContent", ""], ["class", "nui-expander__header-content", 3, "nui-expander__header-content--with-icon", 4, "ngIf"], [1, "nui-expander__body-wrapper"], ["class", "nui-expander__body", 3, "hide-left-border", 4, "ngIf"], [1, "nui-expander__header-content"], ["class", "nui-expander__header-content-icon", 3, "icon", 4, "ngIf"], [1, "nui-expander__header-title"], [1, "nui-expander__header-content-icon", 3, "icon"], [1, "nui-expander__body"]],
         template: function ExpanderComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"](_c1);
@@ -49245,7 +49245,11 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](8, ExpanderComponent_div_8_Template, 2, 3, "div", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "div", 7);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](9, ExpanderComponent_div_9_Template, 2, 3, "div", 8);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
           }
@@ -49277,7 +49281,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.isCustomHeaderContentEmpty);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.open);
           }
