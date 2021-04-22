@@ -647,6 +647,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx.dragElement = _t.first);
           }
         },
+        hostAttrs: ["aria-grabbed", "supported"],
         inputs: {
           payload: "payload",
           dropTarget: "dropTarget",
@@ -912,6 +913,12 @@
             var _t;
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx.dropList = _t.first);
+          }
+        },
+        hostVars: 1,
+        hostBindings: function DroppableComponent_HostBindings(rf, ctx) {
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵattribute"]("aria-dropeffect", ctx.move);
           }
         },
         outputs: {
