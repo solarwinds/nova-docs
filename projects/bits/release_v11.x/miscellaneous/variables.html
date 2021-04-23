@@ -94,6 +94,9 @@
                             <a href="#expand" title="src/animations/expand.ts"><b>expand</b>&nbsp;&nbsp;&nbsp;(src/.../expand.ts)</a>
                         </li>
                         <li>
+                            <a href="#expandV2" title="src/animations/expand.ts"><b>expandV2</b>&nbsp;&nbsp;&nbsp;(src/.../expand.ts)</a>
+                        </li>
+                        <li>
                             <a href="#extractTouchedChanges" title="src/lib/form-field/touched-changes-helper.ts"><b>extractTouchedChanges</b>&nbsp;&nbsp;&nbsp;(src/.../touched-changes-helper.ts)</a>
                         </li>
                         <li>
@@ -760,6 +763,55 @@
                         </td>
                     </tr>
 
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="expandV2"></a>
+                        <span class="name">
+                            <b>
+                            expandV2</b>
+                            <a href="#expandV2"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>trigger(&quot;expandContent&quot;, [
+    transition(&quot;:enter&quot;, [
+        group([
+            query(&quot;:self&quot;, [
+                style({ height: 0}),
+                    animate(&quot;350ms ease-in-out&quot;, style({ height: &quot;*&quot; })),
+            ], {optional: true}),
+            query(&quot;@*&quot;, [
+                style({ height: 0}),
+                stagger(10, [
+                    animate(&quot;250ms ease-in-out&quot;, style({ height: &quot;*&quot; })),
+                ]),
+            ], {optional: true}),
+        ]),
+    ]),
+    transition(&quot;:leave&quot;, [
+        query(&quot;:self&quot;, [
+            style({ height: &quot;*&quot;}),
+            animate(&quot;350ms ease-in-out&quot;, style({ height: 0 })),
+        ]),
+    ]),
+])</code>
+                        </td>
+                    </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>This v2 version of the expand animation respects the animations of elements nested inside the expander&#39;s content template.
+  It is using the special selectors that ngIf and ngFor use on projected content.</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>

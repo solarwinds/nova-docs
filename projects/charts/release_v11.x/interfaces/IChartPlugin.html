@@ -145,8 +145,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="231"
-                            class="link-to-prism">src/core/common/types.ts:231</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="234"
+                            class="link-to-prism">src/core/common/types.ts:234</a></div>
                 </td>
             </tr>
 
@@ -186,8 +186,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="222"
-                            class="link-to-prism">src/core/common/types.ts:222</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="225"
+                            class="link-to-prism">src/core/common/types.ts:225</a></div>
                 </td>
             </tr>
 
@@ -227,8 +227,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="225"
-                            class="link-to-prism">src/core/common/types.ts:225</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="228"
+                            class="link-to-prism">src/core/common/types.ts:228</a></div>
                 </td>
             </tr>
 
@@ -268,8 +268,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="228"
-                            class="link-to-prism">src/core/common/types.ts:228</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="231"
+                            class="link-to-prism">src/core/common/types.ts:231</a></div>
                 </td>
             </tr>
 
@@ -334,6 +334,7 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ScaleLinear } from &quot;d3-scale&quot;;
 import { Selection } from &quot;d3-selection&quot;;
 import { ValueMap } from &quot;d3-selection-multi&quot;;
+import { StandardGaugeThresholdMarkerRadius } from &quot;../../gauge/constants&quot;;
 
 import { RenderState } from &quot;../../renderers/types&quot;;
 import { IGrid } from &quot;../grid/types&quot;;
@@ -445,16 +446,18 @@ export interface IRadialRendererConfig extends IRendererConfig {
  * @ignore
  * Configuration for the DonutGaugeThresholdsRenderer
  */
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface IDonutGaugeThresholdsRendererConfig extends IRadialRendererConfig {
+    /** The radius of each threshold marker */
+    markerRadius?: StandardGaugeThresholdMarkerRadius | number;
 }
 
 /**
  * @ignore
  * Configuration for the LinearGaugeThresholdsRenderer
  */
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface ILinearGaugeThresholdsRendererConfig extends IRendererConfig {
+    /** The radius of each threshold marker */
+    markerRadius?: StandardGaugeThresholdMarkerRadius | number;
 }
 
 export interface ILinearScales {

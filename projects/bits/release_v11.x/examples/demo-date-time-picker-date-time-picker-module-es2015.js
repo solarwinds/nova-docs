@@ -574,7 +574,7 @@ DateTimePickerTimezonesExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { Component, OnInit } from \"@angular/core\";\nimport { FormControl, Validators } from \"@angular/forms\";\nimport moment, { Moment } from \"moment/moment\";\n\n\n@Component({\n  selector: \"nui-date-time-picker-empty-state\",\n  templateUrl: \"./date-time-picker-empty-state.component.html\",\n})\nexport class DateTimePickerEmptyStateComponent {\n  public dt: Moment | undefined = undefined;\n  public selectedDate: Date | String = \"\";\n  public initEmpty: boolean = true;\n  public control: FormControl = new FormControl(this.dt, Validators.required);\n\n  constructor() {}\n\n  onModelChanged(event: Moment) {\n    this.selectedDate = new Date(event.valueOf());\n  }\n\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import { Component } from \"@angular/core\";\nimport { FormControl, Validators } from \"@angular/forms\";\nimport { Moment } from \"moment/moment\";\n\n\n@Component({\n  selector: \"nui-date-time-picker-empty-state\",\n  templateUrl: \"./date-time-picker-empty-state.component.html\",\n})\nexport class DateTimePickerEmptyStateComponent {\n  public dt: Moment | undefined = undefined;\n  public selectedDate: Date | String = \"\";\n  public initEmpty: boolean = true;\n  public control: FormControl = new FormControl(this.dt, Validators.required);\n\n  constructor() {}\n\n  onModelChanged(event: Moment) {\n    this.selectedDate = new Date(event.valueOf());\n  }\n\n}\n");
 
 /***/ }),
 
@@ -896,13 +896,10 @@ DateTimePickerTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DateTimePickerEmptyStateComponent", function() { return DateTimePickerEmptyStateComponent; });
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
-/* harmony import */ var moment_moment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! moment/moment */ "wd/R");
-/* harmony import */ var moment_moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment_moment__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _src_lib_form_field_form_field_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../src/lib/form-field/form-field.component */ "L5T1");
-/* harmony import */ var _src_lib_date_time_picker_date_time_picker_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../../src/lib/date-time-picker/date-time-picker.component */ "/NB1");
-/* harmony import */ var _src_lib_validation_message_validation_message_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../../../src/lib/validation-message/validation-message.component */ "Dm7Q");
-
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _src_lib_form_field_form_field_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../src/lib/form-field/form-field.component */ "L5T1");
+/* harmony import */ var _src_lib_date_time_picker_date_time_picker_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../src/lib/date-time-picker/date-time-picker.component */ "/NB1");
+/* harmony import */ var _src_lib_validation_message_validation_message_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../../src/lib/validation-message/validation-message.component */ "Dm7Q");
 
 
 
@@ -921,46 +918,46 @@ class DateTimePickerEmptyStateComponent {
     }
 }
 DateTimePickerEmptyStateComponent.ɵfac = function DateTimePickerEmptyStateComponent_Factory(t) { return new (t || DateTimePickerEmptyStateComponent)(); };
-DateTimePickerEmptyStateComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({ type: DateTimePickerEmptyStateComponent, selectors: [["nui-date-time-picker-empty-state"]], decls: 15, vars: 7, consts: [[1, "demo-options-section"], ["caption", "Date Time Picker", 3, "control"], [3, "initEmpty", "formControl", "modelChanged"], ["for", "required"], ["for", "invalidFormat"], [1, "mt-2"]], template: function DateTimePickerEmptyStateComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "section", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](1, "nui-form-field", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](2, "nui-date-time-picker", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("modelChanged", function DateTimePickerEmptyStateComponent_Template_nui_date_time_picker_modelChanged_2_listener($event) { return ctx.onModelChanged($event); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](3, "nui-validation-message", 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](4, " This field is required ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](5, "nui-validation-message", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](6, " Invalid format ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](7, "p", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](9, "p", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](10);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](11, "p", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](12);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](13, "p", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](14);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+DateTimePickerEmptyStateComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: DateTimePickerEmptyStateComponent, selectors: [["nui-date-time-picker-empty-state"]], decls: 15, vars: 7, consts: [[1, "demo-options-section"], ["caption", "Date Time Picker", 3, "control"], [3, "initEmpty", "formControl", "modelChanged"], ["for", "required"], ["for", "invalidFormat"], [1, "mt-2"]], template: function DateTimePickerEmptyStateComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "section", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "nui-form-field", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "nui-date-time-picker", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("modelChanged", function DateTimePickerEmptyStateComponent_Template_nui_date_time_picker_modelChanged_2_listener($event) { return ctx.onModelChanged($event); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "nui-validation-message", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](4, " This field is required ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "nui-validation-message", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](6, " Invalid format ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](7, "p", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](9, "p", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](11, "p", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](13, "p", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](14);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("control", ctx.control);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("initEmpty", ctx.initEmpty)("formControl", ctx.control);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate1"]("Value: ", ctx.selectedDate, "");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate1"]("Valid: ", ctx.control.valid, "");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate1"]("Touched: ", ctx.control.touched, "");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate1"]("Dirty: ", ctx.control.dirty, "");
-    } }, directives: [_src_lib_form_field_form_field_component__WEBPACK_IMPORTED_MODULE_3__["FormFieldComponent"], _src_lib_date_time_picker_date_time_picker_component__WEBPACK_IMPORTED_MODULE_4__["DateTimePickerComponent"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControlDirective"], _src_lib_validation_message_validation_message_component__WEBPACK_IMPORTED_MODULE_5__["ValidationMessageComponent"]], encapsulation: 2 });
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("control", ctx.control);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("initEmpty", ctx.initEmpty)("formControl", ctx.control);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"]("Value: ", ctx.selectedDate, "");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"]("Valid: ", ctx.control.valid, "");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"]("Touched: ", ctx.control.touched, "");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"]("Dirty: ", ctx.control.dirty, "");
+    } }, directives: [_src_lib_form_field_form_field_component__WEBPACK_IMPORTED_MODULE_2__["FormFieldComponent"], _src_lib_date_time_picker_date_time_picker_component__WEBPACK_IMPORTED_MODULE_3__["DateTimePickerComponent"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControlDirective"], _src_lib_validation_message_validation_message_component__WEBPACK_IMPORTED_MODULE_4__["ValidationMessageComponent"]], encapsulation: 2 });
 
 
 /***/ }),
