@@ -46,20 +46,20 @@ class SwitchSimpleExampleComponent {
     }
 }
 SwitchSimpleExampleComponent.ɵfac = function SwitchSimpleExampleComponent_Factory(t) { return new (t || SwitchSimpleExampleComponent)(); };
-SwitchSimpleExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: SwitchSimpleExampleComponent, selectors: [["nui-switch-simple-example"]], inputs: { isOn: "isOn" }, decls: 2, vars: 2, consts: function () { let i18n_0; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+SwitchSimpleExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: SwitchSimpleExampleComponent, selectors: [["nui-switch-simple-example"]], inputs: { isOn: "isOn" }, decls: 2, vars: 3, consts: function () { let i18n_0; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
         const MSG_EXTERNAL_3472865780454984874$$DEMO_SRC_COMPONENTS_DEMO_SWITCH_SWITCH_SIMPLE_SWITCH_SIMPLE_EXAMPLE_COMPONENT_TS_1 = goog.getMsg(" {$interpolation}\n", { "interpolation": "\uFFFD0\uFFFD" });
         i18n_0 = MSG_EXTERNAL_3472865780454984874$$DEMO_SRC_COMPONENTS_DEMO_SWITCH_SWITCH_SIMPLE_SWITCH_SIMPLE_EXAMPLE_COMPONENT_TS_1;
     }
     else {
         i18n_0 = $localize `:␟c172c1bd2a49d42d89b4b2423b3d237983732b62␟3472865780454984874: ${"\uFFFD0\uFFFD"}:INTERPOLATION:
 `;
-    } return [["id", "nui-switch-simple-example", 3, "value", "valueChange"], i18n_0]; }, template: function SwitchSimpleExampleComponent_Template(rf, ctx) { if (rf & 1) {
+    } return [["id", "nui-switch-simple-example", 3, "value", "ariaLabel", "valueChange"], i18n_0]; }, template: function SwitchSimpleExampleComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "nui-switch", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("valueChange", function SwitchSimpleExampleComponent_Template_nui_switch_valueChange_0_listener($event) { return ctx.isOn = $event; });
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](1, 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", ctx.isOn);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", ctx.isOn)("ariaLabel", ctx.isOn ? "On" : "Off");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18nExp"](ctx.isOn ? "On" : "Off");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18nApply"](1);
@@ -408,7 +408,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<nui-switch id=\"nui-switch-simple-example\" [(value)]=\"isOn\" i18n>\n    {{isOn ? 'On' : 'Off'}}\n</nui-switch>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<nui-switch id=\"nui-switch-simple-example\" [(value)]=\"isOn\" i18n [ariaLabel]=\"isOn ? 'On' : 'Off'\">\n    {{isOn ? 'On' : 'Off'}}\n</nui-switch>\n");
 
 /***/ }),
 

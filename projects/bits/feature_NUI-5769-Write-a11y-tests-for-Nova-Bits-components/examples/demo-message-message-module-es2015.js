@@ -270,6 +270,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MessageTestComponent", function() { return MessageTestComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var _src_lib_message_message_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../src/lib/message/message.component */ "4pDv");
+/* harmony import */ var _message_manual_control_message_manual_control_example_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../message-manual-control/message-manual-control.example.component */ "jyiZ");
+
 
 
 class MessageTestComponent {
@@ -278,7 +280,7 @@ class MessageTestComponent {
     }
 }
 MessageTestComponent.ɵfac = function MessageTestComponent_Factory(t) { return new (t || MessageTestComponent)(); };
-MessageTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: MessageTestComponent, selectors: [["message-test-component"]], decls: 8, vars: 1, consts: function () { let i18n_0; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+MessageTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: MessageTestComponent, selectors: [["message-test-component"]], decls: 9, vars: 1, consts: function () { let i18n_0; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
         const MSG_EXTERNAL_2835376135174835804$$DEMO_SRC_COMPONENTS_DEMO_MESSAGE_MESSAGE_TEST_MESSAGE_TEST_COMPONENT_TS_1 = goog.getMsg("{$startBoldText}This is a message with not allowed dismiss.{$closeBoldText} Cius dit vellab idunt acestot aturecu lluptaepe eum qui con ciusae dolenis moditatiusam es dolum sollor aliquam. Cius dit vellab idunt acestot aturecu ciusae dolenis moditatiusam es dolum sollor aliquam. Cius dit vellab idunt acestot aturecu ciusae dolenis moditatiusam es dolum sollor aliquam. {$startLink}Learn More{$closeLink}", { "startBoldText": "\uFFFD#2\uFFFD", "closeBoldText": "\uFFFD/#2\uFFFD", "startLink": "\uFFFD#3\uFFFD", "closeLink": "\uFFFD/#3\uFFFD" });
         i18n_0 = MSG_EXTERNAL_2835376135174835804$$DEMO_SRC_COMPONENTS_DEMO_MESSAGE_MESSAGE_TEST_MESSAGE_TEST_COMPONENT_TS_1;
     }
@@ -290,7 +292,7 @@ MessageTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdef
     }
     else {
         i18n_2 = $localize `:␟02836e3a06f77544a771ac40aec8770faf7bd594␟5046902615158790751:${"\uFFFD#6\uFFFD"}:START_BOLD_TEXT:Simple help message.${"\uFFFD/#6\uFFFD"}:CLOSE_BOLD_TEXT: Cius dit vellab idunt acestot aturecu. ${"\uFFFD#7\uFFFD"}:START_LINK:Learn More${"\uFFFD/#7\uFFFD"}:CLOSE_LINK:`;
-    } return [["id", "nui-demo-message-dismiss-not-allowed", "type", "warning", 3, "allowDismiss"], i18n_0, ["href", "../components/MessageComponent.html", "target", "_blank"], ["id", "nui-demo-message-dismiss-allowed", "type", "ok", 3, "dismiss"], i18n_2]; }, template: function MessageTestComponent_Template(rf, ctx) { if (rf & 1) {
+    } return [["id", "nui-demo-message-dismiss-not-allowed", "type", "warning", 3, "allowDismiss"], i18n_0, ["href", "../components/MessageComponent.html", "target", "_blank"], ["id", "nui-demo-message-dismiss-allowed", "type", "ok", 3, "dismiss"], i18n_2, ["id", "nui-demo-message-manual-control"]]; }, template: function MessageTestComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "nui-message", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18nStart"](1, 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "b");
@@ -304,9 +306,10 @@ MessageTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdef
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](7, "a", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18nEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](8, "nui-message-manual-control-example", 5);
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("allowDismiss", false);
-    } }, directives: [_src_lib_message_message_component__WEBPACK_IMPORTED_MODULE_1__["MessageComponent"]], encapsulation: 2 });
+    } }, directives: [_src_lib_message_message_component__WEBPACK_IMPORTED_MODULE_1__["MessageComponent"], _message_manual_control_message_manual_control_example_component__WEBPACK_IMPORTED_MODULE_2__["MessageManualControlExampleComponent"]], encapsulation: 2 });
 
 
 /***/ }),
@@ -569,7 +572,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<nui-message id=\"nui-demo-message-dismiss-not-allowed\"\n             type=\"warning\"\n             [allowDismiss]=\"false\" i18n>\n    <b>This is a message with not allowed dismiss.</b> Cius dit vellab idunt acestot aturecu lluptaepe eum qui con\n    ciusae dolenis moditatiusam es dolum sollor aliquam. Cius dit vellab idunt acestot aturecu\n    ciusae dolenis moditatiusam es dolum sollor aliquam. Cius dit vellab idunt acestot aturecu\n    ciusae dolenis moditatiusam es dolum sollor aliquam.\n    <a href=\"../components/MessageComponent.html\" target=\"_blank\">Learn More</a>\n</nui-message>\n\n<nui-message id=\"nui-demo-message-dismiss-allowed\" type=\"ok\" (dismiss)=\"onMessageDismiss()\" i18n>\n    <b>Simple help message.</b> Cius dit vellab idunt acestot aturecu.\n    <a href=\"../components/MessageComponent.html\" target=\"_blank\">Learn More</a>\n</nui-message>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<nui-message id=\"nui-demo-message-dismiss-not-allowed\"\n             type=\"warning\"\n             [allowDismiss]=\"false\" i18n>\n    <b>This is a message with not allowed dismiss.</b> Cius dit vellab idunt acestot aturecu lluptaepe eum qui con\n    ciusae dolenis moditatiusam es dolum sollor aliquam. Cius dit vellab idunt acestot aturecu\n    ciusae dolenis moditatiusam es dolum sollor aliquam. Cius dit vellab idunt acestot aturecu\n    ciusae dolenis moditatiusam es dolum sollor aliquam.\n    <a href=\"../components/MessageComponent.html\" target=\"_blank\">Learn More</a>\n</nui-message>\n\n<nui-message id=\"nui-demo-message-dismiss-allowed\" type=\"ok\" (dismiss)=\"onMessageDismiss()\" i18n>\n    <b>Simple help message.</b> Cius dit vellab idunt acestot aturecu.\n    <a href=\"../components/MessageComponent.html\" target=\"_blank\">Learn More</a>\n</nui-message>\n\n<nui-message-manual-control-example id=\"nui-demo-message-manual-control\"></nui-message-manual-control-example>\n");
 
 /***/ }),
 

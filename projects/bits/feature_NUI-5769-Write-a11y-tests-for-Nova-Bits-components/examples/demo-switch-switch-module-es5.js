@@ -99,7 +99,7 @@
           isOn: "isOn"
         },
         decls: 2,
-        vars: 2,
+        vars: 3,
         consts: function consts() {
           var i18n_0;
 
@@ -112,7 +112,7 @@
             i18n_0 = $localize(_templateObject || (_templateObject = _taggedTemplateLiteral([":\u241Fc172c1bd2a49d42d89b4b2423b3d237983732b62\u241F3472865780454984874: ", ":INTERPOLATION:\n"])), "\uFFFD0\uFFFD");
           }
 
-          return [["id", "nui-switch-simple-example", 3, "value", "valueChange"], i18n_0];
+          return [["id", "nui-switch-simple-example", 3, "value", "ariaLabel", "valueChange"], i18n_0];
         },
         template: function SwitchSimpleExampleComponent_Template(rf, ctx) {
           if (rf & 1) {
@@ -128,7 +128,7 @@
           }
 
           if (rf & 2) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", ctx.isOn);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", ctx.isOn)("ariaLabel", ctx.isOn ? "On" : "Off");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
@@ -789,7 +789,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<nui-switch id=\"nui-switch-simple-example\" [(value)]=\"isOn\" i18n>\n    {{isOn ? 'On' : 'Off'}}\n</nui-switch>\n";
+      __webpack_exports__["default"] = "<nui-switch id=\"nui-switch-simple-example\" [(value)]=\"isOn\" i18n [ariaLabel]=\"isOn ? 'On' : 'Off'\">\n    {{isOn ? 'On' : 'Off'}}\n</nui-switch>\n";
       /***/
     },
 
