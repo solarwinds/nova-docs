@@ -305,7 +305,7 @@ DraggableComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefin
         let _t;
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx.dropList = _t.first);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx.dragElement = _t.first);
-    } }, inputs: { payload: "payload", dropTarget: "dropTarget", dragHandle: "dragHandle", dragPreview: "dragPreview" }, outputs: { dragStart: "dragStart", dragEnd: "dragEnd" }, ngContentSelectors: _c1, decls: 5, vars: 8, consts: [["cdkDropList", "", 3, "cdkDropListConnectedTo"], ["cdkDrag", "", 3, "cdkDragData"], ["cdkDragHandle", "", "width", "24px", "fill", "currentColor", "viewBox", "0 0 24 24", 4, "ngIf"], [4, "ngIf"], ["cdkDragHandle", "", "width", "24px", "fill", "currentColor", "viewBox", "0 0 24 24"], ["d", "M10 9h4V6h3l-5-5-5 5h3v3zm-1 1H6V7l-5 5 5 5v-3h3v-4zm14 2l-5-5v3h-3v4h3v3l5-5zm-9 3h-4v3H7l5 5 5-5h-3v-3z"], ["d", "M0 0h24v24H0z", "fill", "none"], [4, "cdkDragPreview"], [4, "ngTemplateOutlet"]], template: function DraggableComponent_Template(rf, ctx) { if (rf & 1) {
+    } }, hostAttrs: ["aria-grabbed", "supported"], inputs: { payload: "payload", dropTarget: "dropTarget", dragHandle: "dragHandle", dragPreview: "dragPreview" }, outputs: { dragStart: "dragStart", dragEnd: "dragEnd" }, ngContentSelectors: _c1, decls: 5, vars: 8, consts: [["cdkDropList", "", 3, "cdkDropListConnectedTo"], ["cdkDrag", "", 3, "cdkDragData"], ["cdkDragHandle", "", "width", "24px", "fill", "currentColor", "viewBox", "0 0 24 24", 4, "ngIf"], [4, "ngIf"], ["cdkDragHandle", "", "width", "24px", "fill", "currentColor", "viewBox", "0 0 24 24"], ["d", "M10 9h4V6h3l-5-5-5 5h3v3zm-1 1H6V7l-5 5 5 5v-3h3v-4zm14 2l-5-5v3h-3v4h3v3l5-5zm-9 3h-4v3H7l5 5 5-5h-3v-3z"], ["d", "M0 0h24v24H0z", "fill", "none"], [4, "cdkDragPreview"], [4, "ngTemplateOutlet"]], template: function DraggableComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojectionDef"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "div", 1);
@@ -447,6 +447,8 @@ DroppableComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefin
     } if (rf & 2) {
         let _t;
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx.dropList = _t.first);
+    } }, hostVars: 1, hostBindings: function DroppableComponent_HostBindings(rf, ctx) { if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵattribute"]("aria-dropeffect", ctx.move);
     } }, outputs: { dragOver: "dragOver", dragEnter: "dragEnter", dragLeave: "dragLeave", dropSuccess: "dropSuccess" }, ngContentSelectors: _c0, decls: 2, vars: 0, consts: [["cdkDropList", "", 3, "cdkDropListDropped"]], template: function DroppableComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojectionDef"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 0);
