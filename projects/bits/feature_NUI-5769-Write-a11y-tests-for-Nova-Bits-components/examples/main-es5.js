@@ -27227,7 +27227,7 @@
            */
 
           this.valueChange = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
-          this._ariaLabel = "";
+          this._ariaLabel = "Checkbox";
         }
         /**
          * Input to set aria label text
@@ -56414,7 +56414,7 @@
            * Input to set aria label text
            */
 
-          this.ariaLabel = "";
+          this.ariaLabel = "Checkbox Group";
           /**
            * Input to set aria label text
            */
