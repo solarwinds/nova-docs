@@ -1,0 +1,926 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@nova-ui/dashboards documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">@nova-ui/dashboards documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content directive">
+                   <div class="content-data">
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Directives</li>
+  <li>ComponentPortalDirective</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">API</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/lib/pizzagna/directives/component-portal/component-portal.directive.ts</code>
+        </p>
+
+
+            <p class="comment">
+                <h3>Implements</h3>
+            </p>
+            <p class="comment">
+                            <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                            <code><a href="https://angular.io/api/core/AfterViewInit" target="_blank" >AfterViewInit</a></code>
+                            <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
+                            <code><a href="https://angular.io/api/core/OnChanges" target="_blank" >OnChanges</a></code>
+            </p>
+
+
+        <section>
+            <h3>Metadata</h3>
+            <table class="table table-sm table-hover">
+                <tbody>
+
+                    <tr>
+                        <td class="col-md-3">Selector</td>
+                        <td class="col-md-9"><code>[nuiComponentPortal]</code></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </section>
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#portal">portal</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#attached">attached</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#componentId">componentId</a>
+                            </li>
+                            <li>
+                                <a href="#componentType">componentType</a>
+                            </li>
+                            <li>
+                                <a href="#outputs">outputs</a>
+                            </li>
+                            <li>
+                                <a href="#properties">properties</a>
+                            </li>
+                            <li>
+                                <a href="#providers">providers</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#output">output</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(injector: <a href="https://angular.io/api/core/Injector" target="_blank">Injector</a>, logger: LoggerService, portalService: ComponentPortalService, renderer: <a href="https://angular.io/api/core/Renderer2" target="_blank">Renderer2</a>, providerRegistry: <a href="../injectables/ProviderRegistryService.html">ProviderRegistryService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/lib/pizzagna/directives/component-portal/component-portal.directive.ts:47</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>injector</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/core/Injector" target="_blank" >Injector</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>logger</td>
+                                                  
+                                                        <td>
+                                                                    <code>LoggerService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>portalService</td>
+                                                  
+                                                        <td>
+                                                                    <code>ComponentPortalService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>renderer</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/core/Renderer2" target="_blank" >Renderer2</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>providerRegistry</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ProviderRegistryService.html" target="_self" >ProviderRegistryService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="componentId"></a>
+                        <b>componentId</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/lib/pizzagna/directives/component-portal/component-portal.directive.ts:34</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="componentType"></a>
+                        <b>componentType</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string | Function</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/lib/pizzagna/directives/component-portal/component-portal.directive.ts:35</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="outputs"></a>
+                        <b>outputs</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/lib/pizzagna/directives/component-portal/component-portal.directive.ts:38</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="properties"></a>
+                        <b>properties</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Record&lt;string | any&gt;</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/lib/pizzagna/directives/component-portal/component-portal.directive.ts:36</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="providers"></a>
+                        <b>providers</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/IProviderConfiguration.html" target="_self" >Record&lt;string | IProviderConfiguration&gt;</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/lib/pizzagna/directives/component-portal/component-portal.directive.ts:37</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+            <section>
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="output"></a>
+                        <b>output</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/lib/pizzagna/directives/component-portal/component-portal.directive.ts:40</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="attached"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            attached
+                        </b>
+                        <a href="#attached"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>attached(componentRef: ComponentRef<any>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="103"
+                            class="link-to-prism">src/lib/pizzagna/directives/component-portal/component-portal.directive.ts:103</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>componentRef</td>
+                                    <td>
+                                            <code>ComponentRef&lt;any&gt;</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="portal"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            portal</b>
+                            <a href="#portal"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Portal&lt;any&gt;</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/lib/pizzagna/directives/component-portal/component-portal.directive.ts:42</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Portal } from &quot;@angular/cdk/portal&quot;;
+import {
+    AfterViewInit,
+    ComponentRef,
+    Directive,
+    EventEmitter,
+    Injector,
+    Input,
+    OnChanges,
+    OnDestroy,
+    OnInit,
+    Output,
+    Renderer2,
+    SimpleChange,
+    SimpleChanges,
+    StaticProvider
+} from &quot;@angular/core&quot;;
+import { IEvent, LoggerService } from &quot;@nova-ui/bits&quot;;
+import isArray from &quot;lodash/isArray&quot;;
+import values from &quot;lodash/values&quot;;
+import xor from &quot;lodash/xor&quot;;
+import { ReplaySubject, Subject, Subscription } from &quot;rxjs&quot;;
+import { takeUntil } from &quot;rxjs/operators&quot;;
+
+import { ProviderRegistryService } from &quot;../../../services/provider-registry.service&quot;;
+import { IConfigurable, IProviderConfiguration } from &quot;../../../types&quot;;
+import { ComponentPortalService } from &quot;../../services/component-portal.service&quot;;
+
+@Directive({
+    selector: &quot;[nuiComponentPortal]&quot;,
+    exportAs: &quot;nuiComponentPortal&quot;,
+})
+export class ComponentPortalDirective implements OnInit, AfterViewInit, OnDestroy, OnChanges {
+    @Input() public componentId: string;
+    @Input() public componentType: string | Function;
+    @Input() public properties: Record&lt;string, any&gt;;
+    @Input() public providers: Record&lt;string, IProviderConfiguration&gt;;
+    @Input() public outputs: string[];
+
+    @Output() public output &#x3D; new EventEmitter&lt;IEvent&gt;();
+
+    public portal: Portal&lt;any&gt;;
+    private component: any;
+    private propertiesChanges &#x3D; new ReplaySubject&lt;SimpleChange&gt;();
+    private providerInstances: Record&lt;string, any&gt; &#x3D; {};
+    private destroy$ &#x3D; new Subject();
+    private changesSubscription?: Subscription;
+
+    constructor(private injector: Injector,
+                private logger: LoggerService,
+                private portalService: ComponentPortalService,
+                private renderer: Renderer2,
+                private providerRegistry: ProviderRegistryService) {
+    }
+
+    public ngOnInit(): void {
+        this.logger.debug(&quot;Portal created:&quot;, this.componentId);
+        this.recreatePortal();
+    }
+
+    public ngAfterViewInit(): void {
+        Object.keys(this.providerInstances).forEach(key &#x3D;&gt; {
+            const provider &#x3D; this.providerInstances[key];
+            if (provider.ngAfterViewInit) {
+                provider.ngAfterViewInit();
+            }
+        });
+    }
+
+    public ngOnChanges(changes: SimpleChanges): void {
+        let recreated &#x3D; false;
+        const providersChange &#x3D; changes.providers;
+
+        if (providersChange &amp;&amp; !providersChange.isFirstChange()) {
+            if (this.checkForProviderChanges(providersChange)) {
+                this.logger.debug(&quot;Portal recreated (provider change):&quot;, this.componentId);
+                this.recreatePortal();
+                recreated &#x3D; true; // we want to prevent multiple recreations within one ngOnChanges cycle
+            } else {
+                this.updateProviderConfigurations(providersChange);
+            }
+        }
+
+        if (changes.componentType &amp;&amp; !changes.componentType.isFirstChange() &amp;&amp; !recreated) {
+            this.logger.debug(&quot;Portal recreated (component change):&quot;, this.componentId);
+            this.recreatePortal();
+        }
+
+        if (changes.properties) {
+            this.propertiesChanges.next(changes.properties);
+        }
+    }
+
+    public ngOnDestroy(): void {
+        this.logger.debug(&quot;Portal destroyed:&quot;, this.componentId);
+
+        this.destroyProviders();
+
+        this.destroy$.next();
+        this.destroy$.complete();
+    }
+
+    public attached(componentRef: ComponentRef&lt;any&gt;) {
+        this.component &#x3D; componentRef.instance;
+
+        // ctrl+shift+click on a pizzagna to get a dump of its properties
+        // this will propagate through the parent components, so it should dump the parent pizzagnas as well
+        this.renderer.listen(componentRef.location.nativeElement, &quot;click&quot;, (event: MouseEvent) &#x3D;&gt; {
+            // event.metaKey is a CMD key for Mac
+            if ((event.ctrlKey || event.metaKey) &amp;&amp; event.shiftKey &amp;&amp; event.button &#x3D;&#x3D;&#x3D; 0) {
+                console.log(&quot;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; PIZZAGNA DUMP &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&quot;);
+                console.log(&quot;componentId:&quot;, this.componentId);
+                console.log(&quot;component:&quot;, this.component);
+                console.log(&quot;componentType:&quot;, this.componentType);
+                console.log(&quot;properties:&quot;, this.properties);
+                console.log(&quot;providers:&quot;, this.providers);
+                console.log(&quot;providerInstances:&quot;, this.providerInstances);
+                console.log(&quot;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&quot;);
+            }
+        });
+
+        for (const key of Object.keys(this.providerInstances)) {
+            const provider &#x3D; this.providerInstances[key];
+            if (provider.setComponent) {
+                // setting componentId separately because &quot;componentId&quot; is used as another input,
+                // at the moment of setting the component here, &#x27;this.component&#x27; doesn&#x27;t have &#x27;componentId&#x27; property,
+                // because &#x27;changesSubscription&#x27; has not received any changes. it leads to the issue
+                // when providers do not know the ID until component property changed
+                provider.setComponent(this.component, this.componentId);
+            }
+            if (provider.setProviders) {
+                provider.setProviders(this.providerInstances, this.componentId);
+            }
+        }
+
+        this.subscribeToOutputs();
+
+        this.changesSubscription &#x3D; this.propertiesChanges
+            .pipe(takeUntil(this.destroy$))
+            .subscribe((change) &#x3D;&gt; this.applyPropertiesChange(change));
+    }
+
+    private recreatePortal() {
+        if (this.changesSubscription) {
+            this.changesSubscription.unsubscribe();
+            this.changesSubscription &#x3D; undefined;
+            this.propertiesChanges &#x3D; new ReplaySubject&lt;SimpleChange&gt;();
+        }
+
+        let injector &#x3D; this.injector;
+
+        this.destroyProviders();
+
+        if (this.providers) {
+            injector &#x3D; this.updateProviders(injector);
+        }
+
+        this.portal &#x3D; this.portalService.createComponentPortal(this.componentType, injector);
+
+        // apply initial property values to the freshly (re)created component
+        if (this.properties) {
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
+            for (const key of Object.keys(this.properties)) {
+                this.propertiesChanges.next(new SimpleChange(undefined, this.properties, true));
+            }
+        }
+    }
+
+    private updateProviders(injector: Injector) {
+        const providerKeys &#x3D; Object.keys(this.providers);
+        const registeredProviders &#x3D; providerKeys.reduce((acc, next) &#x3D;&gt; {
+            // for cases when providerId is just empty string, null or undefined (for example adding a tile doesn&#x27;t provide a DS to it)
+            if (this.providers[next].providerId) {
+                acc[next] &#x3D; this.providerRegistry.getProvider(this.providers[next].providerId);
+            }
+            return acc;
+        }, {} as Record&lt;string, StaticProvider&gt;);
+
+        const portalInjector &#x3D; this.portalService.createInjector({
+            injector: injector,
+            providers: values(registeredProviders),
+        });
+
+        this.providerInstances &#x3D; providerKeys.reduce((acc, next) &#x3D;&gt; {
+            const registeredProvider &#x3D; (registeredProviders[next] as any);
+            const providerConfig &#x3D; this.providers[next];
+            if (registeredProvider) {
+                // TODO: Why do we pass null to the injectFlags parameter?
+                // @ts-ignore
+                const injections &#x3D; portalInjector.get(registeredProvider.provide, null, null);
+                const providerInstance &#x3D; isArray(injections)
+                    ? (injections as any).find((v: any) &#x3D;&gt; v instanceof registeredProvider.useClass)
+                    : injections;
+
+                if (!providerInstance) {
+                    throw new Error(&quot;Provider &#x27;&quot; + next + &quot;&#x27; does not exist.&quot;);
+                }
+                if (providerInstance.updateConfiguration &amp;&amp; providerConfig.properties) {
+                    providerInstance.updateConfiguration({
+                        providerKey: next,
+                        ...(providerConfig.properties || {}),
+                    });
+                }
+                providerInstance.providerKey &#x3D; next;
+
+                acc[next] &#x3D; providerInstance;
+            } else if (providerConfig.providerId) {
+                this.logger.error(&quot;There&#x27;s no registered provider for id&quot;, next);
+            }
+            return acc;
+        }, this.providerInstances);
+
+        for (const key of Object.keys(this.providerInstances)) {
+            const pi &#x3D; this.providerInstances[key];
+            if (pi.ngOnInit) {
+                pi.ngOnInit();
+            }
+        }
+
+        return portalInjector;
+    }
+
+    private updateProviderConfigurations(providersChange: SimpleChange) {
+        for (const providerKey of Object.keys(this.providers)) {
+            // for cases when providerId is just empty string, null or undefined (for example adding a tile doesn&#x27;t provide a DS to it)
+            if (!this.providers[providerKey].providerId) {
+                return;
+            }
+            const providerInstance &#x3D; this.providerInstances[providerKey];
+            if (!providerInstance) {
+                throw new Error(&quot;Provider &#x27;&quot; + providerKey + &quot;&#x27; does not exist.&quot;);
+            }
+
+            const previousValue &#x3D; providersChange.previousValue[providerKey];
+            const currentValue &#x3D; providersChange.currentValue[providerKey];
+
+            const previousProperties &#x3D; previousValue &amp;&amp; previousValue.properties;
+            const currentProperties &#x3D; currentValue &amp;&amp; currentValue.properties;
+
+            if (previousProperties !&#x3D;&#x3D; currentProperties &amp;&amp; providerInstance.updateConfiguration) {
+                (providerInstance as IConfigurable).updateConfiguration({
+                    providerKey,
+                    ...currentProperties,
+                });
+            }
+        }
+    }
+
+    private subscribeToOutputs() {
+        if (!this.outputs) {
+            return;
+        }
+
+        for (const output of this.outputs.filter(o &#x3D;&gt; this.component[o] instanceof EventEmitter)) {
+            this.component[output].pipe(takeUntil(this.destroy$))
+                .subscribe(($event: any) &#x3D;&gt; {
+                    this.output.emit({
+                        id: output,
+                        payload: $event,
+                    });
+                });
+        }
+    }
+
+    private checkForProviderChanges(change: SimpleChange): boolean {
+        const previousKeys &#x3D; change.previousValue ? Object.keys(change.previousValue) : [];
+        const currentKeys &#x3D; change.currentValue ? Object.keys(change.currentValue) : [];
+        if (previousKeys.length !&#x3D;&#x3D; currentKeys.length || xor(previousKeys, currentKeys).length &gt; 0) {
+            return true;
+        }
+
+        const previousIds &#x3D; Object.keys(change.previousValue).map((key: string) &#x3D;&gt; change.previousValue[key].providerId);
+        const currentIds &#x3D; Object.keys(change.currentValue).map((key: string) &#x3D;&gt; change.currentValue[key].providerId);
+        if (xor(previousIds, currentIds).length &gt; 0) {
+            return true;
+        }
+
+        return false;
+    }
+
+    private destroyProviders() {
+        if (this.providerInstances) {
+            for (const piKey of Object.keys(this.providerInstances)) {
+                const providerInstance &#x3D; this.providerInstances[piKey];
+                if (providerInstance.ngOnDestroy) {
+                    providerInstance.ngOnDestroy();
+                }
+                delete this.providerInstances[piKey];
+            }
+        }
+    }
+
+    /**
+     * There was a change in component properties, so we need to handle that here
+     *
+     * @param change a change of the &#x60;properties&#x60; input
+     */
+    private applyPropertiesChange(change: SimpleChange) {
+        let properties &#x3D; change.currentValue;
+        if (!properties) {
+            return;
+        }
+
+        // we add componentId to the mix, so components will be able to use it
+        properties &#x3D; {
+            ...properties,
+            componentId: this.componentId,
+        };
+
+        const changes: SimpleChanges &#x3D; {};
+        let changeHappened &#x3D; false;
+        for (const key of Object.keys(properties)) {
+            const previousValue &#x3D; this.component[key];
+
+            // reference based change detection in action here!
+            if (properties[key] !&#x3D;&#x3D; previousValue) {
+                changeHappened &#x3D; true;
+                this.component[key] &#x3D; properties[key];
+                // we&#x27;re simulating angular by calling ngOnChanges manually
+                if (this.component.ngOnChanges) {
+                    changes[key] &#x3D; new SimpleChange(previousValue, properties[key], change.isFirstChange());
+                }
+            }
+        }
+
+        if (changeHappened) {
+            if (this.component.ngOnChanges) {
+                this.component.ngOnChanges(changes);
+            }
+            const changeDetector &#x3D; this.component.changeDetector;
+            if (changeDetector) {
+                changeDetector.markForCheck();
+            } else {
+                this.logger.warn(&#x60;Property &#x27;changeDetector&#x27; is missing on component &#x27;${this.componentType}&#x27;,&#x60; +
+                    &#x60; so dynamic refresh of given component might not work.&#x60;);
+            }
+        }
+    }
+
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'directive';
+            var COMPODOC_CURRENT_PAGE_URL = 'ComponentPortalDirective.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
