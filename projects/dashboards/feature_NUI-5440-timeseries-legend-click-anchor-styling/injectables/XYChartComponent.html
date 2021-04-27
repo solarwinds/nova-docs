@@ -495,7 +495,7 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>onInteraction(legendSeries: IChartAssistSeries<IAccessors>)</code>
+                    <code>onInteraction(legendSeries: IChartAssistSeries<IAccessors>, event: MouseEvent)</code>
                 </td>
             </tr>
 
@@ -526,6 +526,18 @@
                                     <td>legendSeries</td>
                                     <td>
                                             <code>IChartAssistSeries&lt;IAccessors&gt;</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>event</td>
+                                    <td>
+                                            <code>MouseEvent</code>
                                     </td>
 
                                     <td>
@@ -837,7 +849,7 @@ export abstract class XYChartComponent extends TimeseriesChartComponent
 
     /** Checks if the series is interactive or if the dataSource has a link property */
     public isSeriesInteractive(legendSeries: IChartAssistSeries&lt;IAccessors&gt;): boolean {
-        return !(legendSeries?.link &#x3D;&#x3D;&#x3D; undefined) || !(this.seriesInteractive &#x3D;&#x3D;&#x3D; undefined);
+        return !(legendSeries?.link &#x3D;&#x3D;&#x3D; undefined) || !(legendSeries?.secondaryLink &#x3D;&#x3D;&#x3D; undefined) || !(this.seriesInteractive &#x3D;&#x3D;&#x3D; undefined);
     }
 
     public onLegendClick(legendSeries: IChartAssistSeries&lt;IAccessors&gt;, event: MouseEvent) {
@@ -855,20 +867,25 @@ export abstract class XYChartComponent extends TimeseriesChartComponent
         }
     }
 
-    public onInteraction(legendSeries: IChartAssistSeries&lt;IAccessors&gt;) {
-        if (!this.seriesInteractive) {
-            return;
-        }
-
-        if (legendSeries?.link) {
-            this.eventBus.getStream(INTERACTION).next({ payload: { data: legendSeries } });
-        } else {
+    public onInteraction(legendSeries: IChartAssistSeries&lt;IAccessors&gt;, event: MouseEvent) {
+        let interactive &#x3D; this.isSeriesInteractive(legendSeries);
+        if (!interactive) {
+            console.log(&quot;📘 xy-chart.component: 96# -&gt; legendSeries:&quot;, legendSeries);
             this.eventBus.getStream(INTERACTION).next({
                 payload: {
                     data: legendSeries,
                     interactionType: TimeseriesInteractionType.Series,
                 },
             });
+            return;
+        }
+        const target &#x3D; event.target as HTMLElement;
+        const secondaryDescription &#x3D; target.classList.contains(&quot;legend-description-secondary&quot;);
+
+        if (legendSeries.link &amp;&amp; !secondaryDescription) {
+            this.eventBus.getStream(INTERACTION).next({ payload: { data: legendSeries } });
+        } else if (secondaryDescription) {
+            this.chartAssist.toggleSeries(legendSeries.id, this.chartAssist.isSeriesHidden(legendSeries.id));
         }
     }
 
