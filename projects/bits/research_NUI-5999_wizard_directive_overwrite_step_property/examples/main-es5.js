@@ -56886,6 +56886,10 @@
           value: function ngAfterContentInit() {
             var _this196 = this;
 
+            this.steps.changes.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["takeUntil"])(this._destroyed)).subscribe(function () {
+              return _this196._stateChanged();
+            });
+
             this._animationDone.pipe( // This needs a `distinctUntilChanged` in order to avoid emitting the same event twice due
             // to a bug in animations where the `.done` callback gets invoked twice on some browsers.
             // See https://github.com/angular/angular/issues/24084

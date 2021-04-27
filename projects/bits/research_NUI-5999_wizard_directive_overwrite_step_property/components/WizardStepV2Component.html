@@ -608,6 +608,8 @@ export class WizardDirective extends CdkStepper implements AfterContentInit {
     }
 
     ngAfterContentInit() {
+        this.steps.changes.pipe(takeUntil(this._destroyed))
+            .subscribe(() &#x3D;&gt; this._stateChanged());
         this._animationDone.pipe(
             // This needs a &#x60;distinctUntilChanged&#x60; in order to avoid emitting the same event twice due
             // to a bug in animations where the &#x60;.done&#x60; callback gets invoked twice on some browsers.

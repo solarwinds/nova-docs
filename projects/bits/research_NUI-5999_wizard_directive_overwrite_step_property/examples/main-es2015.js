@@ -30347,6 +30347,8 @@ class WizardDirective extends _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_0__[
         this.selectedIndex = this.steps ? this.steps.toArray().indexOf(step) : -1;
     }
     ngAfterContentInit() {
+        this.steps.changes.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["takeUntil"])(this._destroyed))
+            .subscribe(() => this._stateChanged());
         this._animationDone.pipe(
         // This needs a `distinctUntilChanged` in order to avoid emitting the same event twice due
         // to a bug in animations where the `.done` callback gets invoked twice on some browsers.
