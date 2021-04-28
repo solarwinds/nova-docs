@@ -56886,11 +56886,8 @@
           value: function ngAfterContentInit() {
             var _this196 = this;
 
-            // Mark the component for change detection whenever the content children query changes
-            this._steps.changes.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["takeUntil"])(this._destroyed)).subscribe(function () {
-              _this196.steps.reset(_this196._steps);
-
-              _this196._stateChanged();
+            this.steps.changes.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["takeUntil"])(this._destroyed)).subscribe(function () {
+              return _this196._stateChanged();
             });
 
             this._animationDone.pipe( // This needs a `distinctUntilChanged` in order to avoid emitting the same event twice due
@@ -56924,12 +56921,15 @@
         contentQueries: function WizardDirective_ContentQueries(rf, ctx, dirIndex) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵcontentQuery"](dirIndex, WizardStepV2Component, 1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵcontentQuery"](dirIndex, WizardStepV2Component, 1);
           }
 
           if (rf & 2) {
             var _t;
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx._steps = _t);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx.steps = _t);
           }
         },
         viewQuery: function WizardDirective_Query(rf, ctx) {

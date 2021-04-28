@@ -30347,11 +30347,8 @@ class WizardDirective extends _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_0__[
         this.selectedIndex = this.steps ? this.steps.toArray().indexOf(step) : -1;
     }
     ngAfterContentInit() {
-        // Mark the component for change detection whenever the content children query changes
-        this._steps.changes.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["takeUntil"])(this._destroyed)).subscribe(() => {
-            this.steps.reset(this._steps);
-            this._stateChanged();
-        });
+        this.steps.changes.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["takeUntil"])(this._destroyed))
+            .subscribe(() => this._stateChanged());
         this._animationDone.pipe(
         // This needs a `distinctUntilChanged` in order to avoid emitting the same event twice due
         // to a bug in animations where the `.done` callback gets invoked twice on some browsers.
@@ -30370,9 +30367,11 @@ WizardDirective.ngAcceptInputTypeHasError = undefined;
 WizardDirective.ɵfac = function WizardDirective_Factory(t) { return ɵWizardDirective_BaseFactory(t || WizardDirective); };
 WizardDirective.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineDirective"]({ type: WizardDirective, selectors: [["", "nuiWizard", ""]], contentQueries: function WizardDirective_ContentQueries(rf, ctx, dirIndex) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵcontentQuery"](dirIndex, WizardStepV2Component, 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵcontentQuery"](dirIndex, WizardStepV2Component, 1);
     } if (rf & 2) {
         let _t;
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx._steps = _t);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx.steps = _t);
     } }, viewQuery: function WizardDirective_Query(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵviewQuery"](_wizard_step_header_component__WEBPACK_IMPORTED_MODULE_6__["WizardStepHeaderComponent"], 1);
     } if (rf & 2) {
