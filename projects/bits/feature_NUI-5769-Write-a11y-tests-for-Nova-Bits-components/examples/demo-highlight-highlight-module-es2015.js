@@ -74,12 +74,12 @@ HighlightModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineIn
             _angular_forms__WEBPACK_IMPORTED_MODULE_0__["ReactiveFormsModule"],
             _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiDocsModule"],
             _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forChild(routes),
-            _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiSelectModule"],
+            _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiCommonModule"],
         ], _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵsetNgModuleScope"](HighlightModule, { declarations: [_highlight_example_component__WEBPACK_IMPORTED_MODULE_3__["HighlightExampleComponent"]], imports: [_nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiDividerModule"],
         _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormsModule"],
         _angular_forms__WEBPACK_IMPORTED_MODULE_0__["ReactiveFormsModule"],
-        _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiDocsModule"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiSelectModule"]], exports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]] }); })();
+        _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiDocsModule"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiCommonModule"]], exports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]] }); })();
 
 
 /***/ }),
@@ -265,7 +265,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { NgModule } from \"@angular/core\";\nimport { FormsModule, ReactiveFormsModule } from \"@angular/forms\";\nimport { RouterModule } from \"@angular/router\";\nimport { DEMO_PATH_TOKEN, NuiDividerModule, NuiDocsModule, NuiSelectModule } from \"@nova-ui/bits\";\n\nimport { HighlightExampleComponent } from \"./highlight.example.component\";\n\nconst routes = [{\n    path: \"\",\n    component: HighlightExampleComponent,\n}];\n\n@NgModule({\n    imports: [\n        NuiDividerModule,\n        FormsModule,\n        ReactiveFormsModule,\n        NuiDocsModule,\n        RouterModule.forChild(routes),\n        NuiSelectModule,\n    ],\n    declarations: [\n        HighlightExampleComponent,\n    ],\n    providers: [\n        {\n            provide: DEMO_PATH_TOKEN,\n            useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/),\n        },\n    ],\n    exports: [\n        RouterModule,\n    ],\n})\nexport class HighlightModule {\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import { NgModule } from \"@angular/core\";\nimport { FormsModule, ReactiveFormsModule } from \"@angular/forms\";\nimport { RouterModule } from \"@angular/router\";\nimport { DEMO_PATH_TOKEN, NuiDividerModule, NuiDocsModule, NuiCommonModule } from \"@nova-ui/bits\";\n\nimport { HighlightExampleComponent } from \"./highlight.example.component\";\n\nconst routes = [{\n    path: \"\",\n    component: HighlightExampleComponent,\n}];\n\n@NgModule({\n    imports: [\n        NuiDividerModule,\n        FormsModule,\n        ReactiveFormsModule,\n        NuiDocsModule,\n        RouterModule.forChild(routes),\n        NuiCommonModule,\n    ],\n    declarations: [\n        HighlightExampleComponent,\n    ],\n    providers: [\n        {\n            provide: DEMO_PATH_TOKEN,\n            useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/),\n        },\n    ],\n    exports: [\n        RouterModule,\n    ],\n})\nexport class HighlightModule {\n}\n");
 
 /***/ })
 

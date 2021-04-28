@@ -11399,133 +11399,139 @@
       /* harmony import */
 
 
-      var _services_dom_util_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      var _pipes_highlight_pipe__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      /*! ../pipes/highlight.pipe */
+      "ZlWS");
+      /* harmony import */
+
+
+      var _services_dom_util_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
       /*! ../services/dom-util.service */
       "uj+m");
       /* harmony import */
 
 
-      var _services_edge_detection_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+      var _services_edge_detection_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
       /*! ../services/edge-detection.service */
       "ibgH");
       /* harmony import */
 
 
-      var _services_event_bus_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+      var _services_event_bus_service__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
       /*! ../services/event-bus.service */
       "oCSD");
       /* harmony import */
 
 
-      var _services_event_propagation_service__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+      var _services_event_propagation_service__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
       /*! ../services/event-propagation.service */
       "+0BR");
       /* harmony import */
 
 
-      var _services_history_storage__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
+      var _services_history_storage__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
       /*! ../services/history-storage */
       "YUul");
       /* harmony import */
 
 
-      var _services_log_service__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
+      var _services_log_service__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
       /*! ../services/log-service */
       "eqCI");
       /* harmony import */
 
 
-      var _services_notification_service__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
+      var _services_notification_service__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
       /*! ../services/notification-service */
       "VCez");
       /* harmony import */
 
 
-      var _services_position_service__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
+      var _services_position_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(
       /*! ../services/position.service */
       "Q8/f");
       /* harmony import */
 
 
-      var _services_search_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(
+      var _services_search_service__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(
       /*! ../services/search.service */
       "EaWR");
       /* harmony import */
 
 
-      var _services_transient_cache_service__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(
+      var _services_transient_cache_service__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(
       /*! ../services/transient-cache.service */
       "02PJ");
       /* harmony import */
 
 
-      var _services_unit_conversion_service__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(
+      var _services_unit_conversion_service__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(
       /*! ../services/unit-conversion.service */
       "pi50");
       /* harmony import */
 
 
-      var _services_util_service__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(
+      var _services_util_service__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(
       /*! ../services/util.service */
       "/e7+");
       /* harmony import */
 
 
-      var _directives_click_interceptor_click_interceptor_directive__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(
+      var _directives_click_interceptor_click_interceptor_directive__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(
       /*! ./directives/click-interceptor/click-interceptor.directive */
       "qMZP");
       /* harmony import */
 
 
-      var _directives_clipboard_clipboard_directive__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(
+      var _directives_clipboard_clipboard_directive__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(
       /*! ./directives/clipboard/clipboard.directive */
       "eJM4");
       /* harmony import */
 
 
-      var _directives_dragdrop_drag_and_drop_service__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(
+      var _directives_dragdrop_drag_and_drop_service__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(
       /*! ./directives/dragdrop/drag-and-drop.service */
       "Eh93");
       /* harmony import */
 
 
-      var _directives_dragdrop_draggable_directive__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(
+      var _directives_dragdrop_draggable_directive__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(
       /*! ./directives/dragdrop/draggable.directive */
       "0TTj");
       /* harmony import */
 
 
-      var _directives_dragdrop_droppable_directive__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(
+      var _directives_dragdrop_droppable_directive__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(
       /*! ./directives/dragdrop/droppable.directive */
       "GM/8");
       /* harmony import */
 
 
-      var _directives_resize_observer_resize_observer_directive__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(
+      var _directives_resize_observer_resize_observer_directive__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(
       /*! ./directives/resize-observer/resize-observer.directive */
       "ujIh");
       /* harmony import */
 
 
-      var _directives_resize_resize_directive__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(
+      var _directives_resize_resize_directive__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(
       /*! ./directives/resize/resize.directive */
       "F2yd");
       /* harmony import */
 
 
-      var _directives_resizer_resizer_directive__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(
+      var _directives_resizer_resizer_directive__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(
       /*! ./directives/resizer/resizer.directive */
       "bA9B");
       /* harmony import */
 
 
-      var _directives_set_focus_set_focus_directive__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(
+      var _directives_set_focus_set_focus_directive__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(
       /*! ./directives/set-focus/set-focus.directive */
       "IoYV");
       /* harmony import */
 
 
-      var _directives_zoom_content_zoom_content_directive__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(
+      var _directives_zoom_content_zoom_content_directive__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(
       /*! ./directives/zoom-content/zoom-content.directive */
       "YDg1");
       /**
@@ -11548,7 +11554,7 @@
         factory: function NuiCommonModule_Factory(t) {
           return new (t || NuiCommonModule)();
         },
-        providers: [_directives_dragdrop_drag_and_drop_service__WEBPACK_IMPORTED_MODULE_23__["DragAndDropService"], _services_event_bus_service__WEBPACK_IMPORTED_MODULE_11__["EventBusService"], _environment__WEBPACK_IMPORTED_MODULE_5__["NUI_ENV_PROVIDER"], _services_unit_conversion_service__WEBPACK_IMPORTED_MODULE_19__["UnitConversionService"], _services_util_service__WEBPACK_IMPORTED_MODULE_20__["UtilService"], _services_transient_cache_service__WEBPACK_IMPORTED_MODULE_18__["TransientCacheService"], _services_search_service__WEBPACK_IMPORTED_MODULE_17__["SearchService"], _angular_common__WEBPACK_IMPORTED_MODULE_0__["DatePipe"], _services_position_service__WEBPACK_IMPORTED_MODULE_16__["PositionService"], _services_notification_service__WEBPACK_IMPORTED_MODULE_15__["NotificationService"], _services_event_propagation_service__WEBPACK_IMPORTED_MODULE_12__["EventPropagationService"], _services_edge_detection_service__WEBPACK_IMPORTED_MODULE_10__["EdgeDetectionService"], _services_log_service__WEBPACK_IMPORTED_MODULE_14__["LoggerService"], _services_dom_util_service__WEBPACK_IMPORTED_MODULE_9__["DomUtilService"], _lib_selector_selector_service__WEBPACK_IMPORTED_MODULE_6__["SelectorService"], _services_history_storage__WEBPACK_IMPORTED_MODULE_13__["HistoryStorage"], {
+        providers: [_directives_dragdrop_drag_and_drop_service__WEBPACK_IMPORTED_MODULE_24__["DragAndDropService"], _services_event_bus_service__WEBPACK_IMPORTED_MODULE_12__["EventBusService"], _environment__WEBPACK_IMPORTED_MODULE_5__["NUI_ENV_PROVIDER"], _services_unit_conversion_service__WEBPACK_IMPORTED_MODULE_20__["UnitConversionService"], _services_util_service__WEBPACK_IMPORTED_MODULE_21__["UtilService"], _services_transient_cache_service__WEBPACK_IMPORTED_MODULE_19__["TransientCacheService"], _services_search_service__WEBPACK_IMPORTED_MODULE_18__["SearchService"], _angular_common__WEBPACK_IMPORTED_MODULE_0__["DatePipe"], _services_position_service__WEBPACK_IMPORTED_MODULE_17__["PositionService"], _services_notification_service__WEBPACK_IMPORTED_MODULE_16__["NotificationService"], _services_event_propagation_service__WEBPACK_IMPORTED_MODULE_13__["EventPropagationService"], _services_edge_detection_service__WEBPACK_IMPORTED_MODULE_11__["EdgeDetectionService"], _services_log_service__WEBPACK_IMPORTED_MODULE_15__["LoggerService"], _services_dom_util_service__WEBPACK_IMPORTED_MODULE_10__["DomUtilService"], _lib_selector_selector_service__WEBPACK_IMPORTED_MODULE_6__["SelectorService"], _services_history_storage__WEBPACK_IMPORTED_MODULE_14__["HistoryStorage"], {
           provide: "windowObject",
           useValue: window
         }, {
@@ -11563,9 +11569,9 @@
 
       (function () {
         (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](NuiCommonModule, {
-          declarations: [_directives_click_interceptor_click_interceptor_directive__WEBPACK_IMPORTED_MODULE_21__["ClickInterceptorDirective"], _directives_clipboard_clipboard_directive__WEBPACK_IMPORTED_MODULE_22__["ClipboardDirective"], _directives_dragdrop_draggable_directive__WEBPACK_IMPORTED_MODULE_24__["DraggableDirective"], _directives_dragdrop_droppable_directive__WEBPACK_IMPORTED_MODULE_25__["DroppableDirective"], _directives_resize_resize_directive__WEBPACK_IMPORTED_MODULE_27__["ResizeDirective"], _directives_resize_observer_resize_observer_directive__WEBPACK_IMPORTED_MODULE_26__["ResizeObserverDirective"], _directives_resizer_resizer_directive__WEBPACK_IMPORTED_MODULE_28__["ResizerDirective"], _directives_set_focus_set_focus_directive__WEBPACK_IMPORTED_MODULE_29__["SetFocusDirective"], _pipes_limit_to_pipe__WEBPACK_IMPORTED_MODULE_7__["LimitToPipe"], _pipes_unit_conversion_pipe__WEBPACK_IMPORTED_MODULE_8__["UnitConversionPipe"], _directives_zoom_content_zoom_content_directive__WEBPACK_IMPORTED_MODULE_30__["ZoomContentDirective"]],
+          declarations: [_directives_click_interceptor_click_interceptor_directive__WEBPACK_IMPORTED_MODULE_22__["ClickInterceptorDirective"], _directives_clipboard_clipboard_directive__WEBPACK_IMPORTED_MODULE_23__["ClipboardDirective"], _directives_dragdrop_draggable_directive__WEBPACK_IMPORTED_MODULE_25__["DraggableDirective"], _directives_dragdrop_droppable_directive__WEBPACK_IMPORTED_MODULE_26__["DroppableDirective"], _directives_resize_resize_directive__WEBPACK_IMPORTED_MODULE_28__["ResizeDirective"], _directives_resize_observer_resize_observer_directive__WEBPACK_IMPORTED_MODULE_27__["ResizeObserverDirective"], _directives_resizer_resizer_directive__WEBPACK_IMPORTED_MODULE_29__["ResizerDirective"], _directives_set_focus_set_focus_directive__WEBPACK_IMPORTED_MODULE_30__["SetFocusDirective"], _pipes_limit_to_pipe__WEBPACK_IMPORTED_MODULE_7__["LimitToPipe"], _pipes_highlight_pipe__WEBPACK_IMPORTED_MODULE_9__["HighlightPipe"], _pipes_unit_conversion_pipe__WEBPACK_IMPORTED_MODULE_8__["UnitConversionPipe"], _directives_zoom_content_zoom_content_directive__WEBPACK_IMPORTED_MODULE_31__["ZoomContentDirective"]],
           imports: [_angular_common__WEBPACK_IMPORTED_MODULE_0__["CommonModule"]],
-          exports: [_angular_common__WEBPACK_IMPORTED_MODULE_0__["CommonModule"], _directives_click_interceptor_click_interceptor_directive__WEBPACK_IMPORTED_MODULE_21__["ClickInterceptorDirective"], _directives_clipboard_clipboard_directive__WEBPACK_IMPORTED_MODULE_22__["ClipboardDirective"], _directives_dragdrop_draggable_directive__WEBPACK_IMPORTED_MODULE_24__["DraggableDirective"], _directives_dragdrop_droppable_directive__WEBPACK_IMPORTED_MODULE_25__["DroppableDirective"], _directives_resize_resize_directive__WEBPACK_IMPORTED_MODULE_27__["ResizeDirective"], _directives_resize_observer_resize_observer_directive__WEBPACK_IMPORTED_MODULE_26__["ResizeObserverDirective"], _directives_resizer_resizer_directive__WEBPACK_IMPORTED_MODULE_28__["ResizerDirective"], _directives_set_focus_set_focus_directive__WEBPACK_IMPORTED_MODULE_29__["SetFocusDirective"], _pipes_unit_conversion_pipe__WEBPACK_IMPORTED_MODULE_8__["UnitConversionPipe"], _directives_zoom_content_zoom_content_directive__WEBPACK_IMPORTED_MODULE_30__["ZoomContentDirective"]]
+          exports: [_angular_common__WEBPACK_IMPORTED_MODULE_0__["CommonModule"], _directives_click_interceptor_click_interceptor_directive__WEBPACK_IMPORTED_MODULE_22__["ClickInterceptorDirective"], _directives_clipboard_clipboard_directive__WEBPACK_IMPORTED_MODULE_23__["ClipboardDirective"], _directives_dragdrop_draggable_directive__WEBPACK_IMPORTED_MODULE_25__["DraggableDirective"], _directives_dragdrop_droppable_directive__WEBPACK_IMPORTED_MODULE_26__["DroppableDirective"], _directives_resize_resize_directive__WEBPACK_IMPORTED_MODULE_28__["ResizeDirective"], _directives_resize_observer_resize_observer_directive__WEBPACK_IMPORTED_MODULE_27__["ResizeObserverDirective"], _directives_resizer_resizer_directive__WEBPACK_IMPORTED_MODULE_29__["ResizerDirective"], _directives_set_focus_set_focus_directive__WEBPACK_IMPORTED_MODULE_30__["SetFocusDirective"], _pipes_unit_conversion_pipe__WEBPACK_IMPORTED_MODULE_8__["UnitConversionPipe"], _pipes_highlight_pipe__WEBPACK_IMPORTED_MODULE_9__["HighlightPipe"], _directives_zoom_content_zoom_content_directive__WEBPACK_IMPORTED_MODULE_31__["ZoomContentDirective"]]
         });
       })();
       /***/
@@ -34129,55 +34135,49 @@
       /* harmony import */
 
 
-      var _pipes_highlight_pipe__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-      /*! ../../pipes/highlight.pipe */
-      "ZlWS");
-      /* harmony import */
-
-
-      var _button_button_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      var _button_button_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! ../button/button.module */
       "NlXT");
       /* harmony import */
 
 
-      var _icon_icon_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      var _icon_icon_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! ../icon/icon.module */
       "mmWn");
       /* harmony import */
 
 
-      var _menu_menu_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      var _menu_menu_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! ../menu/menu.module */
       "kc1z");
       /* harmony import */
 
 
-      var _popup_popup_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      var _popup_popup_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! ../popup/popup.module */
       "rHGt");
       /* harmony import */
 
 
-      var _textbox_textbox_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      var _textbox_textbox_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! ../textbox/textbox.module */
       "zmwP");
       /* harmony import */
 
 
-      var _combobox_combobox_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      var _combobox_combobox_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! ./combobox/combobox.component */
       "KXc3");
       /* harmony import */
 
 
-      var _select_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      var _select_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! ./select.component */
       "8Za4");
       /* harmony import */
 
 
-      var _angular_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+      var _angular_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
       /*! @angular/core */
       "fXoL"); // eslint-disable-next-line max-len
 
@@ -34188,22 +34188,22 @@
         _classCallCheck(this, NuiSelectModule);
       };
 
-      NuiSelectModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdefineNgModule"]({
+      NuiSelectModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdefineNgModule"]({
         type: NuiSelectModule
       });
-      NuiSelectModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdefineInjector"]({
+      NuiSelectModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdefineInjector"]({
         factory: function NuiSelectModule_Factory(t) {
           return new (t || NuiSelectModule)();
         },
         providers: [],
-        imports: [[_common_common_module__WEBPACK_IMPORTED_MODULE_1__["NuiCommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["ReactiveFormsModule"], _popup_popup_module__WEBPACK_IMPORTED_MODULE_6__["NuiPopupModule"], _icon_icon_module__WEBPACK_IMPORTED_MODULE_4__["NuiIconModule"], _textbox_textbox_module__WEBPACK_IMPORTED_MODULE_7__["NuiTextboxModule"], _button_button_module__WEBPACK_IMPORTED_MODULE_3__["NuiButtonModule"], _menu_menu_module__WEBPACK_IMPORTED_MODULE_5__["NuiMenuModule"]], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["ReactiveFormsModule"]]
+        imports: [[_common_common_module__WEBPACK_IMPORTED_MODULE_1__["NuiCommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["ReactiveFormsModule"], _popup_popup_module__WEBPACK_IMPORTED_MODULE_5__["NuiPopupModule"], _icon_icon_module__WEBPACK_IMPORTED_MODULE_3__["NuiIconModule"], _textbox_textbox_module__WEBPACK_IMPORTED_MODULE_6__["NuiTextboxModule"], _button_button_module__WEBPACK_IMPORTED_MODULE_2__["NuiButtonModule"], _menu_menu_module__WEBPACK_IMPORTED_MODULE_4__["NuiMenuModule"]], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["ReactiveFormsModule"]]
       });
 
       (function () {
-        (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵsetNgModuleScope"](NuiSelectModule, {
-          declarations: [_combobox_combobox_component__WEBPACK_IMPORTED_MODULE_8__["ComboboxComponent"], _select_component__WEBPACK_IMPORTED_MODULE_9__["SelectComponent"], _pipes_highlight_pipe__WEBPACK_IMPORTED_MODULE_2__["HighlightPipe"]],
-          imports: [_common_common_module__WEBPACK_IMPORTED_MODULE_1__["NuiCommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["ReactiveFormsModule"], _popup_popup_module__WEBPACK_IMPORTED_MODULE_6__["NuiPopupModule"], _icon_icon_module__WEBPACK_IMPORTED_MODULE_4__["NuiIconModule"], _textbox_textbox_module__WEBPACK_IMPORTED_MODULE_7__["NuiTextboxModule"], _button_button_module__WEBPACK_IMPORTED_MODULE_3__["NuiButtonModule"], _menu_menu_module__WEBPACK_IMPORTED_MODULE_5__["NuiMenuModule"]],
-          exports: [_combobox_combobox_component__WEBPACK_IMPORTED_MODULE_8__["ComboboxComponent"], _select_component__WEBPACK_IMPORTED_MODULE_9__["SelectComponent"], _pipes_highlight_pipe__WEBPACK_IMPORTED_MODULE_2__["HighlightPipe"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["ReactiveFormsModule"]]
+        (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵsetNgModuleScope"](NuiSelectModule, {
+          declarations: [_combobox_combobox_component__WEBPACK_IMPORTED_MODULE_7__["ComboboxComponent"], _select_component__WEBPACK_IMPORTED_MODULE_8__["SelectComponent"]],
+          imports: [_common_common_module__WEBPACK_IMPORTED_MODULE_1__["NuiCommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["ReactiveFormsModule"], _popup_popup_module__WEBPACK_IMPORTED_MODULE_5__["NuiPopupModule"], _icon_icon_module__WEBPACK_IMPORTED_MODULE_3__["NuiIconModule"], _textbox_textbox_module__WEBPACK_IMPORTED_MODULE_6__["NuiTextboxModule"], _button_button_module__WEBPACK_IMPORTED_MODULE_2__["NuiButtonModule"], _menu_menu_module__WEBPACK_IMPORTED_MODULE_4__["NuiMenuModule"]],
+          exports: [_combobox_combobox_component__WEBPACK_IMPORTED_MODULE_7__["ComboboxComponent"], _select_component__WEBPACK_IMPORTED_MODULE_8__["SelectComponent"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["ReactiveFormsModule"]]
         });
       })();
       /***/
@@ -56894,11 +56894,8 @@
           value: function ngAfterContentInit() {
             var _this196 = this;
 
-            // Mark the component for change detection whenever the content children query changes
-            this._steps.changes.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["takeUntil"])(this._destroyed)).subscribe(function () {
-              _this196.steps.reset(_this196._steps);
-
-              _this196._stateChanged();
+            this.steps.changes.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["takeUntil"])(this._destroyed)).subscribe(function () {
+              return _this196._stateChanged();
             });
 
             this._animationDone.pipe( // This needs a `distinctUntilChanged` in order to avoid emitting the same event twice due
@@ -56932,12 +56929,15 @@
         contentQueries: function WizardDirective_ContentQueries(rf, ctx, dirIndex) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵcontentQuery"](dirIndex, WizardStepV2Component, 1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵcontentQuery"](dirIndex, WizardStepV2Component, 1);
           }
 
           if (rf & 2) {
             var _t;
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx._steps = _t);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx.steps = _t);
           }
         },
         viewQuery: function WizardDirective_Query(rf, ctx) {

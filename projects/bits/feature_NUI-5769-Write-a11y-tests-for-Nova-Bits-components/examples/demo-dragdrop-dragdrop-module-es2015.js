@@ -393,7 +393,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { NgModule } from \"@angular/core\";\n\nimport { NuiCommonModule } from \"../../../../../../src/common/common.module\";\n\nimport { FileDropExampleComponent } from \"./file-drop.component\";\n\n\n/**\n * @ignore\n */\n@NgModule({\n    imports: [\n        NuiCommonModule,\n    ],\n    declarations: [\n        FileDropExampleComponent,\n    ],\n    exports: [\n        FileDropExampleComponent,\n    ],\n    providers: [],\n})\nexport class NuiFileDropExampleModule {\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import { NgModule } from \"@angular/core\";\n\nimport { NuiCommonModule } from \"@nova-ui/bits\";\n\nimport { FileDropExampleComponent } from \"./file-drop.component\";\n\n\n/**\n * @ignore\n */\n@NgModule({\n    imports: [\n        NuiCommonModule,\n    ],\n    declarations: [\n        FileDropExampleComponent,\n    ],\n    exports: [\n        FileDropExampleComponent,\n    ],\n    providers: [],\n})\nexport class NuiFileDropExampleModule {\n}\n");
 
 /***/ }),
 
@@ -446,7 +446,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NuiFileDropExampleModule", function() { return NuiFileDropExampleModule; });
-/* harmony import */ var _src_common_common_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../../src/common/common.module */ "7JYY");
+/* harmony import */ var _nova_ui_bits__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @nova-ui/bits */ "b5Xb");
 /* harmony import */ var _file_drop_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./file-drop.component */ "vRqb");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
 
@@ -459,9 +459,9 @@ class NuiFileDropExampleModule {
 }
 NuiFileDropExampleModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineNgModule"]({ type: NuiFileDropExampleModule });
 NuiFileDropExampleModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({ factory: function NuiFileDropExampleModule_Factory(t) { return new (t || NuiFileDropExampleModule)(); }, providers: [], imports: [[
-            _src_common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
+            _nova_ui_bits__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
         ]] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵsetNgModuleScope"](NuiFileDropExampleModule, { declarations: [_file_drop_component__WEBPACK_IMPORTED_MODULE_1__["FileDropExampleComponent"]], imports: [_src_common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"]], exports: [_file_drop_component__WEBPACK_IMPORTED_MODULE_1__["FileDropExampleComponent"]] }); })();
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵsetNgModuleScope"](NuiFileDropExampleModule, { declarations: [_file_drop_component__WEBPACK_IMPORTED_MODULE_1__["FileDropExampleComponent"]], imports: [_nova_ui_bits__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"]], exports: [_file_drop_component__WEBPACK_IMPORTED_MODULE_1__["FileDropExampleComponent"]] }); })();
 
 
 /***/ }),
