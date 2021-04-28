@@ -595,6 +595,7 @@ export class WizardDirective extends CdkStepper implements AfterContentInit {
 
     /** Steps that the stepper holds. */
     @ContentChildren(WizardStepV2Component, {descendants: true}) _steps: QueryList&lt;WizardStepV2Component&gt;;
+    /** Override CdkStepper &#x27;steps&#x27; property to use WizardStepV2Component instead of CdkStep */
     @ContentChildren(WizardStepV2Component, {descendants: true}) steps: QueryList&lt;WizardStepV2Component&gt;;
 
     /** The step that is selected. */
