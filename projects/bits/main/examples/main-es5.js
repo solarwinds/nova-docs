@@ -8681,7 +8681,7 @@
             i18n_1 = $localize(_templateObject11 || (_templateObject11 = _taggedTemplateLiteral([":\u241Fd662abcb49ed274a9ec81f5df13b35acbf4cba87\u241F6035911408728866723:", ":INTERPOLATION: of ", ":START_TAG_SPAN:", ":INTERPOLATION_1:", ":CLOSE_TAG_SPAN:"])), "\uFFFD0\uFFFD", "\uFFFD#7\uFFFD", "\uFFFD1\uFFFD", "\uFFFD/#7\uFFFD");
           }
 
-          return [["class", "nui-paginator", 4, "ngIf"], ["tableRow", ""], [1, "nui-paginator"], [1, "nui-paginator__items"], ["role", "listbox", 1, "nui-paginator__list"], ["role", "option", 3, "title", "ngClass", "value", 4, "ngFor", "ngForOf"], [1, "nui-paginator__options"], [1, "nui-paginator__info"], i18n_1, [1, "nui-paginator__total"], ["ariaLabel", "Items per page", 3, "value", "valueSelected"], [3, "value", 4, "ngFor", "ngForOf"], ["role", "option", 3, "title", "ngClass", "value"], ["nui-button", "", "type", "button", "displayStyle", "action", "class", "move-icon", 3, "disabled", "icon", "click", 4, "ngIf"], ["nui-button", "", "type", "button", "displayStyle", "action", 3, "isEmpty", "click", 4, "ngIf"], [3, "appendToBody", "baseElementSelector", 4, "ngIf"], ["nui-button", "", "type", "button", "displayStyle", "action", 1, "move-icon", 3, "disabled", "icon", "click"], ["nui-button", "", "type", "button", "displayStyle", "action", 3, "isEmpty", "click"], [3, "appendToBody", "baseElementSelector"], ["nui-button", "", "type", "button", "nuiPopupToggle", "", "displayStyle", "action", "aria-haspopup", "true", 1, "nui-paginator__dots", 3, "ngClass", "isEmpty", "click"], ["popupAreaContent", "", 1, "nui-paginator__elipsis-pages"], [1, "nui-paginator__page-table", 3, "ngClass"], [3, "width", "height", "itemSize", "maxBufferPx", "minBufferPx", 4, "ngIf"], [4, "ngIf"], [3, "itemSize", "maxBufferPx", "minBufferPx"], [4, "cdkVirtualFor", "cdkVirtualForOf"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"], [3, "ngTemplateOutlet", "ngTemplateOutletContext", 4, "ngFor", "ngForOf"], [3, "value"], [3, "ngClass"], ["class", "nui-paginator__page-cell", 4, "ngFor", "ngForOf"], [1, "nui-paginator__page-cell"], ["nui-button", "", "type", "button", "displayStyle", "action", 3, "click"]];
+          return [["class", "nui-paginator", 4, "ngIf"], ["tableRow", ""], [1, "nui-paginator"], [1, "nui-paginator__items"], ["role", "listbox", "aria-label", "List of pages", 1, "nui-paginator__list"], ["role", "option", 3, "title", "ngClass", "value", 4, "ngFor", "ngForOf"], [1, "nui-paginator__options"], [1, "nui-paginator__info"], i18n_1, [1, "nui-paginator__total"], ["ariaLabel", "Items per page", 3, "value", "valueSelected"], [3, "value", 4, "ngFor", "ngForOf"], ["role", "option", 3, "title", "ngClass", "value"], ["nui-button", "", "type", "button", "displayStyle", "action", "class", "move-icon", 3, "disabled", "icon", "click", 4, "ngIf"], ["nui-button", "", "type", "button", "displayStyle", "action", 3, "isEmpty", "click", 4, "ngIf"], [3, "appendToBody", "baseElementSelector", 4, "ngIf"], ["nui-button", "", "type", "button", "displayStyle", "action", 1, "move-icon", 3, "disabled", "icon", "click"], ["nui-button", "", "type", "button", "displayStyle", "action", 3, "isEmpty", "click"], [3, "appendToBody", "baseElementSelector"], ["nui-button", "", "type", "button", "nuiPopupToggle", "", "displayStyle", "action", "aria-haspopup", "true", 1, "nui-paginator__dots", 3, "ngClass", "isEmpty", "click"], ["popupAreaContent", "", 1, "nui-paginator__elipsis-pages"], [1, "nui-paginator__page-table", 3, "ngClass"], [3, "width", "height", "itemSize", "maxBufferPx", "minBufferPx", 4, "ngIf"], [4, "ngIf"], [3, "itemSize", "maxBufferPx", "minBufferPx"], [4, "cdkVirtualFor", "cdkVirtualForOf"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"], [3, "ngTemplateOutlet", "ngTemplateOutletContext", 4, "ngFor", "ngForOf"], [3, "value"], [3, "ngClass"], ["class", "nui-paginator__page-cell", 4, "ngFor", "ngForOf"], [1, "nui-paginator__page-cell"], ["nui-button", "", "type", "button", "displayStyle", "action", 3, "click"]];
         },
         template: function PaginatorComponent_Template(rf, ctx) {
           if (rf & 1) {
@@ -10307,7 +10307,7 @@
           /**
            * Input to set aria label text
            */
-          this.ariaLabel = "";
+          this.ariaLabel = "Switch";
           this.valueChange = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
         }
 
@@ -17210,7 +17210,7 @@
           _classCallCheck(this, ProgressComponent);
 
           this.showProgress = true;
-          this.ariaLabel = "";
+          this.ariaLabel = "Progress bar";
           this.cancel = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
           this.isIndeterminate = false;
         }
@@ -19628,7 +19628,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx.menuToggle = _t.first);
           }
         },
-        hostAttrs: ["role", "menu", 1, "nui-menu"],
+        hostAttrs: [1, "nui-menu"],
         hostVars: 1,
         hostBindings: function MenuComponent_HostBindings(rf, ctx) {
           if (rf & 2) {
@@ -27233,7 +27233,7 @@
            */
 
           this.valueChange = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
-          this._ariaLabel = "";
+          this._ariaLabel = "Checkbox";
         }
         /**
          * Input to set aria label text
@@ -30811,7 +30811,7 @@
            * Input to set aria label text
            */
 
-          this.ariaLabel = "";
+          this.ariaLabel = "Textbox number input";
           /**
            * Event fired when textBoxNumber is focused out.
            */
@@ -31018,6 +31018,12 @@
           }
         },
         hostAttrs: ["role", "spinbutton"],
+        hostVars: 4,
+        hostBindings: function TextboxNumberComponent_HostBindings(rf, ctx) {
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-label", ctx.ariaLabel)("aria-valuemin", ctx.minValue || null)("aria-valuemax", ctx.maxValue || null)("aria-valuenow", ctx.value || 0);
+          }
+        },
         inputs: {
           value: "value",
           customBoxWidth: "customBoxWidth",
@@ -31056,8 +31062,8 @@
           multi: true
         }]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵNgOnChangesFeature"]],
         decls: 10,
-        vars: 25,
-        consts: [[1, "nui-textbox", "nui-textbox-number"], [1, "has-feedback", 3, "ngStyle"], ["step", "any", "type", "number", 1, "form-control", "input-control", "nui-textbox__input", 3, "disabled", "ngModel", "ngModelOptions", "min", "max", "placeholder", "readonly", "ngModelChange", "blur", "keydown", "paste"], ["numberInput", ""], [1, "nui-textbox-number__buttons"], [1, "nui-textbox-number__updown", "nui-textbox-number__up-button"], ["nui-button", "", "type", "button", "displayStyle", "action", "icon", "caret-up", "aria-label", "Up", 3, "isRepeat", "disabled", "click"], [1, "nui-textbox-number__updown", "nui-textbox-number__updown-divider"], [1, "nui-textbox-number__updown", "nui-textbox-number__down-button"], ["nui-button", "", "type", "button", "displayStyle", "action", "icon", "caret-down", "aria-label", "Down", 3, "isRepeat", "disabled", "click"]],
+        vars: 21,
+        consts: [[1, "nui-textbox", "nui-textbox-number"], [1, "has-feedback", 3, "ngStyle"], ["step", "any", "type", "number", "aria-label", "Textbox number input", 1, "form-control", "input-control", "nui-textbox__input", 3, "disabled", "ngModel", "ngModelOptions", "min", "max", "placeholder", "readonly", "ngModelChange", "blur", "keydown", "paste"], ["numberInput", ""], [1, "nui-textbox-number__buttons"], [1, "nui-textbox-number__updown", "nui-textbox-number__up-button"], ["nui-button", "", "type", "button", "displayStyle", "action", "icon", "caret-up", "aria-label", "Up", 3, "isRepeat", "disabled", "click"], [1, "nui-textbox-number__updown", "nui-textbox-number__updown-divider"], [1, "nui-textbox-number__updown", "nui-textbox-number__down-button"], ["nui-button", "", "type", "button", "displayStyle", "action", "icon", "caret-down", "aria-label", "Down", 3, "isRepeat", "disabled", "click"]],
         template: function TextboxNumberComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -31118,13 +31124,13 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngStyle", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction2"](21, _c1, ctx.customBoxWidth, ctx.customBoxWidth));
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngStyle", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction2"](17, _c1, ctx.customBoxWidth, ctx.customBoxWidth));
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("disabled", ctx.disabled)("ngModel", ctx.value)("ngModelOptions", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](24, _c2))("min", ctx.minValue)("max", ctx.maxValue)("placeholder", ctx.placeholder)("readonly", ctx.readonly);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("disabled", ctx.disabled)("ngModel", ctx.value)("ngModelOptions", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](20, _c2))("min", ctx.minValue)("max", ctx.maxValue)("placeholder", ctx.placeholder)("readonly", ctx.readonly);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("name", ctx.name)("aria-valuemin", ctx.minValue || null)("aria-valuemax", ctx.maxValue || null)("aria-valuenow", ctx.value || null)("aria-label", ctx.ariaLabel);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("name", ctx.name);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
 
@@ -44663,7 +44669,7 @@
           this.isInErrorState = false;
           /** Input to set aria label text */
 
-          this.ariaLabel = "";
+          this.ariaLabel = "Time Picker";
           /** Allows popup box to be attached to document.body */
 
           this.appendToBody = false;
@@ -45401,7 +45407,9 @@
         if (rf & 2) {
           var ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpureFunction1"](3, _c0, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipeBind1"](1, 1, ctx_r0.empty$)));
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpureFunction1"](4, _c0, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipeBind1"](1, 2, ctx_r0.empty$)));
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵattribute"]("role", ctx_r0.roleAttr || null);
         }
       }
 
@@ -45615,12 +45623,12 @@
         ngContentSelectors: _c1,
         decls: 1,
         vars: 0,
-        consts: [["cdk-portal", ""], ["role", "roleAttr", 1, "nui-overlay", 3, "ngClass"]],
+        consts: [["cdk-portal", ""], [1, "nui-overlay", 3, "ngClass"]],
         template: function OverlayComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵprojectionDef"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](0, OverlayComponent_ng_template_0_Template, 3, 5, "ng-template", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](0, OverlayComponent_ng_template_0_Template, 3, 6, "ng-template", 0);
           }
         },
         directives: [_angular_cdk_portal__WEBPACK_IMPORTED_MODULE_1__["TemplatePortalDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_13__["NgClass"]],
@@ -49400,7 +49408,7 @@
         ngContentSelectors: _c2,
         decls: 10,
         vars: 15,
-        consts: [[1, "nui-expander"], ["role", "button", 1, "nui-expander__header", 3, "click"], ["aria-hidden", "true", 1, "nui-expander__header-icon", 3, "iconColor", "icon"], [1, "nui-expander__header-content-wrapper"], [1, "nui-expander__custom-header"], ["customHeaderContent", ""], ["class", "nui-expander__header-content", 3, "nui-expander__header-content--with-icon", 4, "ngIf"], ["role", "region", 1, "nui-expander__body-wrapper"], ["class", "nui-expander__body", 3, "hide-left-border", 4, "ngIf"], [1, "nui-expander__header-content"], ["class", "nui-expander__header-content-icon", 3, "icon", 4, "ngIf"], [1, "nui-expander__header-title"], [1, "nui-expander__header-content-icon", 3, "icon"], [1, "nui-expander__body"]],
+        consts: [[1, "nui-expander"], ["role", "button", "aria-label", "Expander toggle", 1, "nui-expander__header", 3, "click"], ["aria-hidden", "true", 1, "nui-expander__header-icon", 3, "iconColor", "icon"], [1, "nui-expander__header-content-wrapper"], [1, "nui-expander__custom-header"], ["customHeaderContent", ""], ["class", "nui-expander__header-content", 3, "nui-expander__header-content--with-icon", 4, "ngIf"], ["role", "region", 1, "nui-expander__body-wrapper"], ["class", "nui-expander__body", 3, "hide-left-border", 4, "ngIf"], [1, "nui-expander__header-content"], ["class", "nui-expander__header-content-icon", 3, "icon", 4, "ngIf"], [1, "nui-expander__header-title"], [1, "nui-expander__header-content-icon", 3, "icon"], [1, "nui-expander__body"]],
         template: function ExpanderComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"](_c1);
@@ -53873,7 +53881,7 @@
            * Input to set aria label text
            */
 
-          this.ariaLabel = "";
+          this.ariaLabel = "Textbox input";
           /**
            * Event fired when textbox is focused out.
            */
@@ -56414,7 +56422,7 @@
            * Input to set aria label text
            */
 
-          this.ariaLabel = "";
+          this.ariaLabel = "Checkbox Group";
           /**
            * Input to set aria label text
            */
@@ -57789,6 +57797,7 @@
           this.document = document;
           this.width = "auto";
           this.appendToBody = false;
+          this.ariaLabel = "Popup";
           this.opened = new _angular_core__WEBPACK_IMPORTED_MODULE_2__["EventEmitter"]();
           this._overlayConfig = ADAPTER_OVERLAY_CONFIG;
           this.destroy$ = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
@@ -58110,6 +58119,12 @@
           }
         },
         hostAttrs: ["role", "dialog", 1, "nui-popup"],
+        hostVars: 1,
+        hostBindings: function PopupComponent_HostBindings(rf, ctx) {
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵattribute"]("aria-label", ctx.ariaLabel);
+          }
+        },
         inputs: {
           width: "width",
           overlayConfig: "overlayConfig",
@@ -58120,6 +58135,7 @@
           appendToBody: "appendToBody",
           baseElementSelector: "baseElementSelector",
           isHostToggleRef: "isHostToggleRef",
+          ariaLabel: "ariaLabel",
           isOpen: "isOpen",
           visible: "visible"
         },
@@ -59217,7 +59233,7 @@
           this.cd = cd;
           /** Input to set aria label text */
 
-          this.ariaLabel = "";
+          this.ariaLabel = "Date Picker";
           /** sets date-picker mode, supports: `day`, `month`, `year` */
 
           this.datepickerMode = "day";
@@ -61137,6 +61153,7 @@
           this.logger = logger;
           this.popupContainer = popupContainer;
           this.isOpen = false;
+          this.ariaLabel = "Popup";
           this.opened = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
           this.popupSubscriptions = [];
           /**
@@ -61339,6 +61356,12 @@
           }
         },
         hostAttrs: ["role", "dialog", 1, "nui-popup"],
+        hostVars: 1,
+        hostBindings: function PopupDeprecatedComponent_HostBindings(rf, ctx) {
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-label", ctx.ariaLabel);
+          }
+        },
         inputs: {
           width: "width",
           contextClass: "contextClass",
@@ -61347,7 +61370,8 @@
           manualOpenControl: "manualOpenControl",
           directionTop: "directionTop",
           directionRight: "directionRight",
-          baseElementSelector: "baseElementSelector"
+          baseElementSelector: "baseElementSelector",
+          ariaLabel: "ariaLabel"
         },
         outputs: {
           opened: "opened"
