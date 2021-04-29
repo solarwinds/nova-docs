@@ -1714,7 +1714,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ng-template #stepBusy>\n    <p i18n>Welcome!</p>\n</ng-template>\n<ng-template #step2>\n    <nui-checkbox name=\"nui-demo-checkbox\"\n                    i18n-title\n                    title=\"Check box with help text\"\n                    i18n-hint\n                    hint=\"This is some help text\"\n                    required=\"true\"\n                    [value]=\"false\"\n                    i18n>Check box with help text\n    </nui-checkbox>\n    <nui-checkbox name=\"nui-demo-checkbox-plain\"\n                    [checked]=\"true\"\n                    [value]=\"false\"\n                    i18n>Plain checkbox\n    </nui-checkbox>\n</ng-template>\n<div nui-busy [busy]=\"isBusy\">\n    <nui-wizard #wizardComponent\n                id=\"nui-demo-wizard-busy\"\n                finishText=\"Finish\"\n                i18n-finishText>\n        <nui-wizard-step i18n-title title=\"Make step busy\" [stepTemplate]=\"stepBusy\"></nui-wizard-step>\n        <nui-wizard-step i18n-title title=\"Final\" [stepTemplate]=\"step2\"></nui-wizard-step>\n    </nui-wizard>\n    <nui-spinner size=\"large\" message=\"Fetching data...\"></nui-spinner>\n</div>\n\n<button nui-button type=\"button\" id=\"nui-demo-busy-button\" (click)=\"toggleStepBusy()\" i18n>Toggle busy on current step</button>\n<button nui-button type=\"button\" (click)=\"toggleBusy()\">Toggle busy on all wizard content</button>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ng-template #stepBusy>\n    <p i18n>Welcome!</p>\n</ng-template>\n<ng-template #step2>\n    <nui-checkbox name=\"nui-demo-checkbox\"\n                    i18n-title\n                    title=\"Check box with help text\"\n                    i18n-hint\n                    hint=\"This is some help text\"\n                    required=\"true\"\n                    [disabled]=\"isBusy\"\n                    [value]=\"false\"\n                    i18n>Check box with help text\n    </nui-checkbox>\n    <nui-checkbox name=\"nui-demo-checkbox-plain\"\n                    [checked]=\"true\"\n                    [value]=\"false\"\n                    [disabled]=\"isBusy\"\n                    i18n>Plain checkbox\n    </nui-checkbox>\n</ng-template>\n<div nui-busy [busy]=\"isBusy\">\n    <nui-wizard #wizardComponent\n                id=\"nui-demo-wizard-busy\"\n                finishText=\"Finish\"\n                i18n-finishText>\n        <nui-wizard-step i18n-title title=\"Make step busy\" [stepTemplate]=\"stepBusy\"></nui-wizard-step>\n        <nui-wizard-step i18n-title title=\"Final\" [stepTemplate]=\"step2\"></nui-wizard-step>\n    </nui-wizard>\n    <nui-spinner size=\"large\" message=\"Fetching data...\"></nui-spinner>\n</div>\n\n<button nui-button type=\"button\" id=\"nui-demo-busy-button\" (click)=\"toggleStepBusy()\" i18n>Toggle busy on current step</button>\n<button nui-button type=\"button\" (click)=\"toggleBusy()\">Toggle busy on all wizard content</button>\n");
 
 /***/ }),
 
@@ -1797,9 +1797,10 @@ function WizardBusyExampleComponent_ng_template_2_Template(rf, ctx) { if (rf & 1
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵi18n"](3, 15);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", false);
+    const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("disabled", ctx_r3.isBusy)("value", false);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("checked", true)("value", false);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("checked", true)("value", false)("disabled", ctx_r3.isBusy);
 } }
 class WizardBusyExampleComponent {
     constructor() {
@@ -1881,9 +1882,9 @@ WizardBusyExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["�
     }
     else {
         i18n_17 = $localize `:␟4279bb41f011a36dde2569b52bd9296a94480c6e␟7797723356051242784:Plain checkbox `;
-    } return [["stepBusy", ""], ["step2", ""], ["nui-busy", "", 3, "busy"], ["id", "nui-demo-wizard-busy", "finishText", i18n_1], ["wizardComponent", ""], ["title", i18n_3, 3, "stepTemplate"], ["title", i18n_5, 3, "stepTemplate"], ["size", "large", "message", "Fetching data..."], ["nui-button", "", "type", "button", "id", "nui-demo-busy-button", 3, "click"], i18n_7, ["nui-button", "", "type", "button", 3, "click"], i18n_9, ["name", "nui-demo-checkbox", "title", i18n_11, "hint", i18n_13, "required", "true", 3, "value"], i18n_15, ["name", "nui-demo-checkbox-plain", 3, "checked", "value"], i18n_17]; }, template: function WizardBusyExampleComponent_Template(rf, ctx) { if (rf & 1) {
+    } return [["stepBusy", ""], ["step2", ""], ["nui-busy", "", 3, "busy"], ["id", "nui-demo-wizard-busy", "finishText", i18n_1], ["wizardComponent", ""], ["title", i18n_3, 3, "stepTemplate"], ["title", i18n_5, 3, "stepTemplate"], ["size", "large", "message", "Fetching data..."], ["nui-button", "", "type", "button", "id", "nui-demo-busy-button", 3, "click"], i18n_7, ["nui-button", "", "type", "button", 3, "click"], i18n_9, ["name", "nui-demo-checkbox", "title", i18n_11, "hint", i18n_13, "required", "true", 3, "disabled", "value"], i18n_15, ["name", "nui-demo-checkbox-plain", 3, "checked", "value", "disabled"], i18n_17]; }, template: function WizardBusyExampleComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](0, WizardBusyExampleComponent_ng_template_0_Template, 2, 0, "ng-template", null, 0, _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplateRefExtractor"]);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](2, WizardBusyExampleComponent_ng_template_2_Template, 4, 3, "ng-template", null, 1, _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplateRefExtractor"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](2, WizardBusyExampleComponent_ng_template_2_Template, 4, 5, "ng-template", null, 1, _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplateRefExtractor"]);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](4, "div", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "nui-wizard", 3, 4);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](7, "nui-wizard-step", 5);
