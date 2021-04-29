@@ -6376,9 +6376,9 @@ class Chart {
         this.dataManager = this.buildDataManager();
         this.renderEngine = this.buildRenderEngine(this.grid.getLasagna(), this.dataManager);
         // Put the render engine at the front of the list since other plugins may be relying on renderers to be updated first
-        const renderEnginPlugin = new _plugins_render_engine_plugin__WEBPACK_IMPORTED_MODULE_8__["RenderEnginePlugin"]();
-        renderEnginPlugin.chart = this;
-        this.plugins.unshift(renderEnginPlugin);
+        const renderEnginePlugin = new _plugins_render_engine_plugin__WEBPACK_IMPORTED_MODULE_8__["RenderEnginePlugin"]();
+        renderEnginePlugin.chart = this;
+        this.plugins.unshift(renderEnginePlugin);
         for (const gridPlugin of this.getGrid().buildPlugins(this)) {
             this.addPlugin(gridPlugin);
         }
@@ -11326,27 +11326,22 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GaugeUtil", function() { return GaugeUtil; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash/isUndefined */ "TP7S");
-/* harmony import */ var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _core_common_scales_linear_scale__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../core/common/scales/linear-scale */ "YYcv");
-/* harmony import */ var _core_plugins_gauge_constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../core/plugins/gauge/constants */ "GXwZ");
-/* harmony import */ var _renderers_bar_accessors_horizontal_bar_accessors__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../renderers/bar/accessors/horizontal-bar-accessors */ "rTqn");
-/* harmony import */ var _renderers_bar_accessors_vertical_bar_accessors__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../renderers/bar/accessors/vertical-bar-accessors */ "mGqK");
-/* harmony import */ var _renderers_bar_bar_renderer__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../renderers/bar/bar-renderer */ "iC++");
-/* harmony import */ var _renderers_bar_bar_scales__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../renderers/bar/bar-scales */ "sMd8");
-/* harmony import */ var _renderers_bar_linear_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../renderers/bar/linear-gauge-thresholds-renderer */ "LkUO");
-/* harmony import */ var _renderers_radial_accessors_radial_accessors__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../renderers/radial/accessors/radial-accessors */ "ZF6T");
-/* harmony import */ var _renderers_radial_gauge_donut_gauge_renderer_config__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../renderers/radial/gauge/donut-gauge-renderer-config */ "JBZ3");
-/* harmony import */ var _renderers_radial_gauge_donut_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../renderers/radial/gauge/donut-gauge-thresholds-renderer */ "MsLP");
-/* harmony import */ var _renderers_radial_radial_renderer__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../renderers/radial/radial-renderer */ "+mSY");
-/* harmony import */ var _renderers_radial_radial_scales__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../renderers/radial/radial-scales */ "ftV1");
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./constants */ "boxq");
-/* harmony import */ var _renderers_bar_linear_gauge_renderer_config__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../renderers/bar/linear-gauge-renderer-config */ "wM+W");
-var GaugeUtil_1;
-
-
+/* harmony import */ var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash/isUndefined */ "TP7S");
+/* harmony import */ var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash_isUndefined__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _core_common_scales_linear_scale__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../core/common/scales/linear-scale */ "YYcv");
+/* harmony import */ var _core_plugins_gauge_constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../core/plugins/gauge/constants */ "GXwZ");
+/* harmony import */ var _renderers_bar_accessors_horizontal_bar_accessors__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../renderers/bar/accessors/horizontal-bar-accessors */ "rTqn");
+/* harmony import */ var _renderers_bar_accessors_vertical_bar_accessors__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../renderers/bar/accessors/vertical-bar-accessors */ "mGqK");
+/* harmony import */ var _renderers_bar_bar_renderer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../renderers/bar/bar-renderer */ "iC++");
+/* harmony import */ var _renderers_bar_bar_scales__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../renderers/bar/bar-scales */ "sMd8");
+/* harmony import */ var _renderers_bar_linear_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../renderers/bar/linear-gauge-thresholds-renderer */ "LkUO");
+/* harmony import */ var _renderers_radial_accessors_radial_accessors__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../renderers/radial/accessors/radial-accessors */ "ZF6T");
+/* harmony import */ var _renderers_radial_gauge_donut_gauge_renderer_config__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../renderers/radial/gauge/donut-gauge-renderer-config */ "JBZ3");
+/* harmony import */ var _renderers_radial_gauge_donut_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../renderers/radial/gauge/donut-gauge-thresholds-renderer */ "MsLP");
+/* harmony import */ var _renderers_radial_radial_renderer__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../renderers/radial/radial-renderer */ "+mSY");
+/* harmony import */ var _renderers_radial_radial_scales__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../renderers/radial/radial-scales */ "ftV1");
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./constants */ "boxq");
+/* harmony import */ var _renderers_bar_linear_gauge_renderer_config__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../renderers/bar/linear-gauge-renderer-config */ "wM+W");
 
 
 
@@ -11366,7 +11361,7 @@ var GaugeUtil_1;
  * @ignore
  * Convenience utility to simplify gauge usage
  */
-let GaugeUtil = GaugeUtil_1 = class GaugeUtil {
+class GaugeUtil {
     /**
      * Assembles a gauge series set with all of the standard requisite scales, renderers, accessors, etc. needed for creating a gauge visualization
      *
@@ -11379,19 +11374,19 @@ let GaugeUtil = GaugeUtil_1 = class GaugeUtil {
         var _a, _b;
         gaugeConfig.value = (_a = gaugeConfig.value) !== null && _a !== void 0 ? _a : 0;
         gaugeConfig.max = (_b = gaugeConfig.max) !== null && _b !== void 0 ? _b : 0;
-        const renderingAttributes = GaugeUtil_1.generateRenderingAttributes(mode);
+        const renderingAttributes = GaugeUtil.generateRenderingAttributes(mode);
         const { quantityAccessors, remainderAccessors, scales, mainRenderer } = renderingAttributes;
         if (quantityAccessors.data) {
-            quantityAccessors.data.color = gaugeConfig.quantityColorAccessor || GaugeUtil_1.createDefaultQuantityColorAccessor(gaugeConfig.thresholds);
+            quantityAccessors.data.color = gaugeConfig.quantityColorAccessor || GaugeUtil.createDefaultQuantityColorAccessor(gaugeConfig.thresholds);
         }
         if (remainderAccessors.data) {
-            remainderAccessors.data.color = gaugeConfig.remainderColorAccessor || (() => (_constants__WEBPACK_IMPORTED_MODULE_15__["StandardGaugeColor"].Remainder));
+            remainderAccessors.data.color = gaugeConfig.remainderColorAccessor || (() => (_constants__WEBPACK_IMPORTED_MODULE_13__["StandardGaugeColor"].Remainder));
         }
         const chartAssistSeries = [
-            ...GaugeUtil_1.generateGaugeData(gaugeConfig).map((s) => (Object.assign(Object.assign({}, s), { accessors: s.id === _constants__WEBPACK_IMPORTED_MODULE_15__["GAUGE_QUANTITY_SERIES_ID"] ? quantityAccessors : remainderAccessors, scales, renderer: mainRenderer }))),
+            ...GaugeUtil.generateGaugeData(gaugeConfig).map((s) => (Object.assign(Object.assign({}, s), { accessors: s.id === _constants__WEBPACK_IMPORTED_MODULE_13__["GAUGE_QUANTITY_SERIES_ID"] ? quantityAccessors : remainderAccessors, scales, renderer: mainRenderer }))),
         ];
         if (gaugeConfig.enableThresholdMarkers) {
-            chartAssistSeries.push(GaugeUtil_1.generateThresholdSeries(gaugeConfig, renderingAttributes));
+            chartAssistSeries.push(GaugeUtil.generateThresholdSeries(gaugeConfig, renderingAttributes));
         }
         return chartAssistSeries;
     }
@@ -11408,20 +11403,20 @@ let GaugeUtil = GaugeUtil_1 = class GaugeUtil {
         gaugeConfig.value = (_a = gaugeConfig.value) !== null && _a !== void 0 ? _a : 0;
         gaugeConfig.max = (_b = gaugeConfig.max) !== null && _b !== void 0 ? _b : 0;
         const updatedSeriesSet = seriesSet.map((series) => {
-            if (series.id === _constants__WEBPACK_IMPORTED_MODULE_15__["GAUGE_QUANTITY_SERIES_ID"]) {
+            if (series.id === _constants__WEBPACK_IMPORTED_MODULE_13__["GAUGE_QUANTITY_SERIES_ID"]) {
                 if (series.accessors.data) {
-                    series.accessors.data.color = gaugeConfig.quantityColorAccessor || GaugeUtil_1.createDefaultQuantityColorAccessor(gaugeConfig.thresholds);
+                    series.accessors.data.color = gaugeConfig.quantityColorAccessor || GaugeUtil.createDefaultQuantityColorAccessor(gaugeConfig.thresholds);
                 }
-                return Object.assign(Object.assign({}, series), { data: [{ category: GaugeUtil_1.DATA_CATEGORY, value: gaugeConfig.value }] });
+                return Object.assign(Object.assign({}, series), { data: [{ category: GaugeUtil.DATA_CATEGORY, value: gaugeConfig.value }] });
             }
-            if (series.id === _constants__WEBPACK_IMPORTED_MODULE_15__["GAUGE_REMAINDER_SERIES_ID"]) {
+            if (series.id === _constants__WEBPACK_IMPORTED_MODULE_13__["GAUGE_REMAINDER_SERIES_ID"]) {
                 if (series.accessors.data) {
-                    series.accessors.data.color = gaugeConfig.remainderColorAccessor || (() => (_constants__WEBPACK_IMPORTED_MODULE_15__["StandardGaugeColor"].Remainder));
+                    series.accessors.data.color = gaugeConfig.remainderColorAccessor || (() => (_constants__WEBPACK_IMPORTED_MODULE_13__["StandardGaugeColor"].Remainder));
                 }
-                return Object.assign(Object.assign({}, series), { data: [{ category: GaugeUtil_1.DATA_CATEGORY, value: gaugeConfig.max - gaugeConfig.value }] });
+                return Object.assign(Object.assign({}, series), { data: [{ category: GaugeUtil.DATA_CATEGORY, value: gaugeConfig.max - gaugeConfig.value }] });
             }
-            if (series.id === _constants__WEBPACK_IMPORTED_MODULE_15__["GAUGE_THRESHOLD_MARKERS_SERIES_ID"]) {
-                return Object.assign(Object.assign({}, series), GaugeUtil_1.generateThresholdData(gaugeConfig));
+            if (series.id === _constants__WEBPACK_IMPORTED_MODULE_13__["GAUGE_THRESHOLD_MARKERS_SERIES_ID"]) {
+                return Object.assign(Object.assign({}, series), GaugeUtil.generateThresholdData(gaugeConfig));
             }
             return series;
         });
@@ -11436,7 +11431,7 @@ let GaugeUtil = GaugeUtil_1 = class GaugeUtil {
      * @returns {IChartAssistSeries<IAccessors>} The threshold series
      */
     static generateThresholdSeries(gaugeConfig, gaugeAttributes) {
-        return Object.assign(Object.assign({}, GaugeUtil_1.generateThresholdData(gaugeConfig)), { accessors: gaugeAttributes.quantityAccessors, scales: gaugeAttributes.scales, renderer: gaugeAttributes.thresholdsRenderer, excludeFromArcCalculation: true, preprocess: false });
+        return Object.assign(Object.assign({}, GaugeUtil.generateThresholdData(gaugeConfig)), { accessors: gaugeAttributes.quantityAccessors, scales: gaugeAttributes.scales, renderer: gaugeAttributes.thresholdsRenderer, excludeFromArcCalculation: true, preprocess: false });
     }
     /**
      * Sets the formatter to use for the threshold labels
@@ -11447,10 +11442,10 @@ let GaugeUtil = GaugeUtil_1 = class GaugeUtil {
      *
      * @returns {IChartAssistSeries<IAccessors>[]} The series set as modified to use the provided formatter
      */
-    static setThresholdLabelFormatter(formatter, seriesSet, formatterName = _core_plugins_gauge_constants__WEBPACK_IMPORTED_MODULE_4__["GAUGE_LABEL_FORMATTER_NAME_DEFAULT"]) {
-        const thresholdsSeries = seriesSet.find((series) => series.id === _constants__WEBPACK_IMPORTED_MODULE_15__["GAUGE_THRESHOLD_MARKERS_SERIES_ID"]);
+    static setThresholdLabelFormatter(formatter, seriesSet, formatterName = _core_plugins_gauge_constants__WEBPACK_IMPORTED_MODULE_2__["GAUGE_LABEL_FORMATTER_NAME_DEFAULT"]) {
+        const thresholdsSeries = seriesSet.find((series) => series.id === _constants__WEBPACK_IMPORTED_MODULE_13__["GAUGE_THRESHOLD_MARKERS_SERIES_ID"]);
         if (thresholdsSeries) {
-            const linearScale = Object.values(thresholdsSeries.scales).find(scale => scale instanceof _core_common_scales_linear_scale__WEBPACK_IMPORTED_MODULE_3__["LinearScale"]);
+            const linearScale = Object.values(thresholdsSeries.scales).find(scale => scale instanceof _core_common_scales_linear_scale__WEBPACK_IMPORTED_MODULE_1__["LinearScale"]);
             if (linearScale) {
                 linearScale.formatters[formatterName] = formatter;
             }
@@ -11465,7 +11460,7 @@ let GaugeUtil = GaugeUtil_1 = class GaugeUtil {
      * @returns {IGaugeRenderingAttributes} The attributes required to instantiate a gauge
      */
     static generateRenderingAttributes(mode) {
-        const renderingTools = GaugeUtil_1.generateRenderingTools(mode);
+        const renderingTools = GaugeUtil.generateRenderingTools(mode);
         const result = {
             quantityAccessors: renderingTools.quantityAccessorFunction(),
             remainderAccessors: renderingTools.remainderAccessorFunction(),
@@ -11484,26 +11479,26 @@ let GaugeUtil = GaugeUtil_1 = class GaugeUtil {
      */
     static generateRenderingTools(mode) {
         const renderingTools = {
-            [_constants__WEBPACK_IMPORTED_MODULE_15__["GaugeMode"].Donut]: {
-                mainRendererFunction: () => new _renderers_radial_radial_renderer__WEBPACK_IMPORTED_MODULE_13__["RadialRenderer"](Object(_renderers_radial_gauge_donut_gauge_renderer_config__WEBPACK_IMPORTED_MODULE_11__["donutGaugeRendererConfig"])()),
-                thresholdsRendererFunction: () => new _renderers_radial_gauge_donut_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_12__["DonutGaugeThresholdsRenderer"](),
-                quantityAccessorFunction: () => new _renderers_radial_accessors_radial_accessors__WEBPACK_IMPORTED_MODULE_10__["RadialAccessors"](),
-                remainderAccessorFunction: () => new _renderers_radial_accessors_radial_accessors__WEBPACK_IMPORTED_MODULE_10__["RadialAccessors"](),
-                scaleFunction: () => Object(_renderers_radial_radial_scales__WEBPACK_IMPORTED_MODULE_14__["radialScales"])(),
+            [_constants__WEBPACK_IMPORTED_MODULE_13__["GaugeMode"].Donut]: {
+                mainRendererFunction: () => new _renderers_radial_radial_renderer__WEBPACK_IMPORTED_MODULE_11__["RadialRenderer"](Object(_renderers_radial_gauge_donut_gauge_renderer_config__WEBPACK_IMPORTED_MODULE_9__["donutGaugeRendererConfig"])()),
+                thresholdsRendererFunction: () => new _renderers_radial_gauge_donut_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_10__["DonutGaugeThresholdsRenderer"](),
+                quantityAccessorFunction: () => new _renderers_radial_accessors_radial_accessors__WEBPACK_IMPORTED_MODULE_8__["RadialAccessors"](),
+                remainderAccessorFunction: () => new _renderers_radial_accessors_radial_accessors__WEBPACK_IMPORTED_MODULE_8__["RadialAccessors"](),
+                scaleFunction: () => Object(_renderers_radial_radial_scales__WEBPACK_IMPORTED_MODULE_12__["radialScales"])(),
             },
-            [_constants__WEBPACK_IMPORTED_MODULE_15__["GaugeMode"].Horizontal]: {
-                mainRendererFunction: () => new _renderers_bar_bar_renderer__WEBPACK_IMPORTED_MODULE_7__["BarRenderer"](Object(_renderers_bar_linear_gauge_renderer_config__WEBPACK_IMPORTED_MODULE_16__["linearGaugeRendererConfig"])()),
-                thresholdsRendererFunction: () => new _renderers_bar_linear_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_9__["LinearGaugeThresholdsRenderer"](),
-                quantityAccessorFunction: () => new _renderers_bar_accessors_horizontal_bar_accessors__WEBPACK_IMPORTED_MODULE_5__["HorizontalBarAccessors"](),
-                remainderAccessorFunction: () => new _renderers_bar_accessors_horizontal_bar_accessors__WEBPACK_IMPORTED_MODULE_5__["HorizontalBarAccessors"](),
-                scaleFunction: () => Object(_renderers_bar_bar_scales__WEBPACK_IMPORTED_MODULE_8__["barScales"])({ horizontal: true }),
+            [_constants__WEBPACK_IMPORTED_MODULE_13__["GaugeMode"].Horizontal]: {
+                mainRendererFunction: () => new _renderers_bar_bar_renderer__WEBPACK_IMPORTED_MODULE_5__["BarRenderer"](Object(_renderers_bar_linear_gauge_renderer_config__WEBPACK_IMPORTED_MODULE_14__["linearGaugeRendererConfig"])()),
+                thresholdsRendererFunction: () => new _renderers_bar_linear_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_7__["LinearGaugeThresholdsRenderer"](),
+                quantityAccessorFunction: () => new _renderers_bar_accessors_horizontal_bar_accessors__WEBPACK_IMPORTED_MODULE_3__["HorizontalBarAccessors"](),
+                remainderAccessorFunction: () => new _renderers_bar_accessors_horizontal_bar_accessors__WEBPACK_IMPORTED_MODULE_3__["HorizontalBarAccessors"](),
+                scaleFunction: () => Object(_renderers_bar_bar_scales__WEBPACK_IMPORTED_MODULE_6__["barScales"])({ horizontal: true }),
             },
-            [_constants__WEBPACK_IMPORTED_MODULE_15__["GaugeMode"].Vertical]: {
-                mainRendererFunction: () => new _renderers_bar_bar_renderer__WEBPACK_IMPORTED_MODULE_7__["BarRenderer"](Object(_renderers_bar_linear_gauge_renderer_config__WEBPACK_IMPORTED_MODULE_16__["linearGaugeRendererConfig"])()),
-                thresholdsRendererFunction: () => new _renderers_bar_linear_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_9__["LinearGaugeThresholdsRenderer"](),
-                quantityAccessorFunction: () => new _renderers_bar_accessors_vertical_bar_accessors__WEBPACK_IMPORTED_MODULE_6__["VerticalBarAccessors"](),
-                remainderAccessorFunction: () => new _renderers_bar_accessors_vertical_bar_accessors__WEBPACK_IMPORTED_MODULE_6__["VerticalBarAccessors"](),
-                scaleFunction: () => Object(_renderers_bar_bar_scales__WEBPACK_IMPORTED_MODULE_8__["barScales"])(),
+            [_constants__WEBPACK_IMPORTED_MODULE_13__["GaugeMode"].Vertical]: {
+                mainRendererFunction: () => new _renderers_bar_bar_renderer__WEBPACK_IMPORTED_MODULE_5__["BarRenderer"](Object(_renderers_bar_linear_gauge_renderer_config__WEBPACK_IMPORTED_MODULE_14__["linearGaugeRendererConfig"])()),
+                thresholdsRendererFunction: () => new _renderers_bar_linear_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_7__["LinearGaugeThresholdsRenderer"](),
+                quantityAccessorFunction: () => new _renderers_bar_accessors_vertical_bar_accessors__WEBPACK_IMPORTED_MODULE_4__["VerticalBarAccessors"](),
+                remainderAccessorFunction: () => new _renderers_bar_accessors_vertical_bar_accessors__WEBPACK_IMPORTED_MODULE_4__["VerticalBarAccessors"](),
+                scaleFunction: () => Object(_renderers_bar_bar_scales__WEBPACK_IMPORTED_MODULE_6__["barScales"])(),
             },
         };
         return renderingTools[mode];
@@ -11518,15 +11513,21 @@ let GaugeUtil = GaugeUtil_1 = class GaugeUtil {
      */
     static createDefaultQuantityColorAccessor(thresholds) {
         // assigning to variable to prevent "Lambda not supported" error
-        const colorAccessor = (data, i, series, dataSeries) => {
-            if (!lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default()(thresholds[1]) && thresholds[1] <= data.value) {
-                return _constants__WEBPACK_IMPORTED_MODULE_15__["StandardGaugeColor"].Critical;
-            }
-            if (!lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default()(thresholds[0]) && thresholds[0] <= data.value) {
-                return _constants__WEBPACK_IMPORTED_MODULE_15__["StandardGaugeColor"].Warning;
-            }
-            return _constants__WEBPACK_IMPORTED_MODULE_15__["StandardGaugeColor"].Ok;
-        };
+        let colorAccessor;
+        if (thresholds) {
+            colorAccessor = (data, i, series, dataSeries) => {
+                if (!lodash_isUndefined__WEBPACK_IMPORTED_MODULE_0___default()(thresholds[1]) && thresholds[1] <= data.value) {
+                    return _constants__WEBPACK_IMPORTED_MODULE_13__["StandardGaugeColor"].Critical;
+                }
+                if (!lodash_isUndefined__WEBPACK_IMPORTED_MODULE_0___default()(thresholds[0]) && thresholds[0] <= data.value) {
+                    return _constants__WEBPACK_IMPORTED_MODULE_13__["StandardGaugeColor"].Warning;
+                }
+                return _constants__WEBPACK_IMPORTED_MODULE_13__["StandardGaugeColor"].Ok;
+            };
+        }
+        else {
+            colorAccessor = () => _constants__WEBPACK_IMPORTED_MODULE_13__["StandardGaugeColor"].Ok;
+        }
         return colorAccessor;
     }
     /**
@@ -11537,16 +11538,16 @@ let GaugeUtil = GaugeUtil_1 = class GaugeUtil {
      *
      * @returns {DataAccessor} An accessor for determining the color to use based on the series id and/or data value
      */
-    static createReversedQuantityColorAccessor(thresholds) {
+    static createReversedQuantityThresholdColorAccessor(thresholds) {
         // assigning to variable to prevent "Lambda not supported" error
         const colorAccessor = (data, i, series, dataSeries) => {
-            if (!lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default()(thresholds[1]) && thresholds[1] <= data.value) {
-                return _constants__WEBPACK_IMPORTED_MODULE_15__["StandardGaugeColor"].Ok;
+            if (!lodash_isUndefined__WEBPACK_IMPORTED_MODULE_0___default()(thresholds[1]) && thresholds[1] <= data.value) {
+                return _constants__WEBPACK_IMPORTED_MODULE_13__["StandardGaugeColor"].Ok;
             }
-            if (!lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default()(thresholds[0]) && thresholds[0] <= data.value) {
-                return _constants__WEBPACK_IMPORTED_MODULE_15__["StandardGaugeColor"].Warning;
+            if (!lodash_isUndefined__WEBPACK_IMPORTED_MODULE_0___default()(thresholds[0]) && thresholds[0] <= data.value) {
+                return _constants__WEBPACK_IMPORTED_MODULE_13__["StandardGaugeColor"].Warning;
             }
-            return _constants__WEBPACK_IMPORTED_MODULE_15__["StandardGaugeColor"].Critical;
+            return _constants__WEBPACK_IMPORTED_MODULE_13__["StandardGaugeColor"].Critical;
         };
         return colorAccessor;
     }
@@ -11560,8 +11561,8 @@ let GaugeUtil = GaugeUtil_1 = class GaugeUtil {
     static generateGaugeData(gaugeConfig) {
         return [
             // category property is used for unifying the linear-style gauge visualization into a single bar stack
-            { id: _constants__WEBPACK_IMPORTED_MODULE_15__["GAUGE_QUANTITY_SERIES_ID"], data: [{ category: GaugeUtil_1.DATA_CATEGORY, value: gaugeConfig.value }] },
-            { id: _constants__WEBPACK_IMPORTED_MODULE_15__["GAUGE_REMAINDER_SERIES_ID"], data: [{ category: GaugeUtil_1.DATA_CATEGORY, value: gaugeConfig.max - gaugeConfig.value }] },
+            { id: _constants__WEBPACK_IMPORTED_MODULE_13__["GAUGE_QUANTITY_SERIES_ID"], data: [{ category: GaugeUtil.DATA_CATEGORY, value: gaugeConfig.value }] },
+            { id: _constants__WEBPACK_IMPORTED_MODULE_13__["GAUGE_REMAINDER_SERIES_ID"], data: [{ category: GaugeUtil.DATA_CATEGORY, value: gaugeConfig.max - gaugeConfig.value }] },
         ];
     }
     /**
@@ -11572,24 +11573,23 @@ let GaugeUtil = GaugeUtil_1 = class GaugeUtil {
      * @returns {Partial<IDataSeries<IAccessors, IGaugeThreshold>>} Threshold data in the form needed by the gauge's thresholds visualization
      */
     static generateThresholdData(gaugeConfig) {
+        if (!gaugeConfig.thresholds) {
+            throw new Error("Thresholds are not defined in the gauge config. Unable to generate threshold data.");
+        }
         const markerValues = gaugeConfig.thresholds.map(threshold => ({
-            category: GaugeUtil_1.DATA_CATEGORY,
+            category: GaugeUtil.DATA_CATEGORY,
             value: threshold,
             hit: threshold <= gaugeConfig.value,
         }));
         return {
-            id: _constants__WEBPACK_IMPORTED_MODULE_15__["GAUGE_THRESHOLD_MARKERS_SERIES_ID"],
+            id: _constants__WEBPACK_IMPORTED_MODULE_13__["GAUGE_THRESHOLD_MARKERS_SERIES_ID"],
             // tack the max value onto the end (used for donut arc calculation)
-            data: [...markerValues, { category: GaugeUtil_1.DATA_CATEGORY, value: gaugeConfig.max, hit: false }],
+            data: [...markerValues, { category: GaugeUtil.DATA_CATEGORY, value: gaugeConfig.max, hit: false }],
         };
     }
-};
+}
 /** Value used for unifying the linear-style gauge visualization into a single bar stack */
 GaugeUtil.DATA_CATEGORY = "gauge";
-GaugeUtil = GaugeUtil_1 = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Directive"])() // decorator required in Angular 11+
-], GaugeUtil);
-
 
 
 /***/ }),
@@ -13255,7 +13255,7 @@ class DonutGaugeThresholdsRenderer extends _radial_renderer__WEBPACK_IMPORTED_MO
             .outerRadius(this.getOuterRadius(renderSeries.scales.r.range(), 0))
             .innerRadius(innerRadius >= 0 ? innerRadius : 0);
         const markerSelection = dataContainer.selectAll(`circle.${_constants__WEBPACK_IMPORTED_MODULE_4__["GAUGE_THRESHOLD_MARKER_CLASS"]}`)
-            .data(_donut_gauge_rendering_util__WEBPACK_IMPORTED_MODULE_7__["DonutGaugeRenderingUtil"].generateThresholdData(data));
+            .data(_donut_gauge_rendering_util__WEBPACK_IMPORTED_MODULE_7__["DonutGaugeRenderingUtil"].generateThresholdRenderingData(data));
         markerSelection.exit().remove();
         markerSelection.enter()
             .append("circle")
@@ -15762,16 +15762,25 @@ function isDaylightSavingTime(d) {
 class TimeIntervalScale extends _time_scale__WEBPACK_IMPORTED_MODULE_5__["TimeScale"] {
     constructor(interval, id) {
         super(id);
-        this.interval(interval);
-        this._bandScale = Object(d3_scale__WEBPACK_IMPORTED_MODULE_0__["scaleBand"])();
-        this.formatters.title = (inputDate) => {
+        this.defaultTitleFormatter = (inputDate) => {
             const intervalDays = this.interval().asDays();
-            // if the date is outside of daylight saving time and interval >= 1 day, add an hour to the time to format the day as "mmm d" instead of "11:00pm"
-            const standardTimeOffsetMs = intervalDays >= 1 && !isDaylightSavingTime(inputDate) && isDaylightSavingTime(this.domain()[0]) ? 3600000 : 0;
+            const isDst = isDaylightSavingTime(inputDate);
+            const isDomainStartDst = isDaylightSavingTime(this.domain()[0]);
+            const isTransFromDst = !isDst && isDomainStartDst;
+            const isTransToDst = isDst && !isDomainStartDst;
+            let standardTimeOffsetMs = 0;
+            if ((isTransFromDst || isTransToDst) && intervalDays >= 1) {
+                // if transitioning from/to daylight saving time and interval >= 1 day, add/subtract an hour to/from
+                // the time to format the day as "mmm d" instead of "11:00pm" or "1:00am" respectively
+                standardTimeOffsetMs = isTransFromDst ? 3600000 : -3600000;
+            }
             const adjustedDate = new Date(inputDate.getTime() + standardTimeOffsetMs);
             const endDate = intervalDays >= 1 ? moment_moment__WEBPACK_IMPORTED_MODULE_2___default()(adjustedDate).add(intervalDays, "days").toDate() : moment_moment__WEBPACK_IMPORTED_MODULE_2___default()(adjustedDate).add(this.interval()).toDate();
             return Object(_formatters_datetime_formatter__WEBPACK_IMPORTED_MODULE_4__["datetimeFormatter"])(adjustedDate) + " - " + Object(_formatters_datetime_formatter__WEBPACK_IMPORTED_MODULE_4__["datetimeFormatter"])(endDate);
         };
+        this.interval(interval);
+        this._bandScale = Object(d3_scale__WEBPACK_IMPORTED_MODULE_0__["scaleBand"])();
+        this.formatters.title = this.defaultTitleFormatter;
     }
     interval(value) {
         if (value) {
@@ -15812,25 +15821,12 @@ class TimeIntervalScale extends _time_scale__WEBPACK_IMPORTED_MODULE_5__["TimeSc
     getBands() {
         return this._bandScale.domain();
     }
-    getBandsForInterval(from, to) {
-        const bands = [];
-        let date = this.truncToInterval(from, this.interval(), true);
-        if (!date) {
-            throw new Error("Could not get bands for interval");
-        }
-        const intervalMs = this.interval().asMilliseconds();
-        while (date <= to) {
-            bands.push(date);
-            date = new Date(date.getTime() + intervalMs);
-        }
-        return bands;
-    }
     convert(value, position = _constants__WEBPACK_IMPORTED_MODULE_3__["BAND_CENTER"]) {
-        const interval = this.truncToInterval(value, this.interval());
-        if (!interval) {
+        const truncatedDate = this.truncToInterval(value, this.interval());
+        if (!truncatedDate) {
             throw new Error("Could not convert interval");
         }
-        const bandValue = this._bandScale(interval);
+        const bandValue = this._bandScale(truncatedDate);
         if (typeof bandValue === "number") {
             return bandValue + position * this.bandwidth();
         }
@@ -15853,14 +15849,23 @@ class TimeIntervalScale extends _time_scale__WEBPACK_IMPORTED_MODULE_5__["TimeSc
         if (!datetime) {
             return datetime;
         }
-        const isDomainStartDst = isDomainChange ? isDaylightSavingTime(datetime) : isDaylightSavingTime(this.domain()[0]);
-        const standardTimeOffsetMinutes = !isDaylightSavingTime(datetime) && isDomainStartDst ? 60 : 0;
-        const timeZoneOffsetMs = (datetime.getTimezoneOffset() - standardTimeOffsetMinutes) * 60000;
-        const timestamp = datetime.getTime() - timeZoneOffsetMs;
+        const isDst = isDaylightSavingTime(datetime);
+        const isDomainStartDst = isDomainChange ? isDst : isDaylightSavingTime(this.domain()[0]);
+        const isTransFromDst = isDomainStartDst && !isDst;
+        const isTransToDst = !isDomainStartDst && isDst;
+        const intervalDays = this.interval().asDays();
+        const transToDstAdjustment = intervalDays >= 1 && isTransToDst ? Object(moment_moment__WEBPACK_IMPORTED_MODULE_2__["duration"])(1, "hour").asMilliseconds() : 0;
+        const adjustedDt = new Date(datetime.getTime() + transToDstAdjustment);
+        let standardTimeOffsetMinutes = 0;
+        if (isTransFromDst || isTransToDst) {
+            standardTimeOffsetMinutes = isTransFromDst ? -60 : 60;
+        }
+        const timeZoneOffsetMs = (adjustedDt.getTimezoneOffset() + standardTimeOffsetMinutes) * 60000;
+        const timestamp = adjustedDt.getTime() - timeZoneOffsetMs;
         const intervalMs = interval.asMilliseconds();
         const remainder = timestamp % intervalMs;
         if (remainder === 0) {
-            return datetime;
+            return adjustedDt;
         }
         // round to interval
         const truncatedTimestamp = timestamp - remainder;
@@ -15868,6 +15873,27 @@ class TimeIntervalScale extends _time_scale__WEBPACK_IMPORTED_MODULE_5__["TimeSc
     }
     isContinuous() {
         return true;
+    }
+    getBandsForInterval(from, to) {
+        const bands = [];
+        let bandDate = this.truncToInterval(from, this.interval(), true);
+        if (!bandDate) {
+            throw new Error("Could not get bands for interval");
+        }
+        const intervalMs = this.interval().asMilliseconds();
+        const intervalDays = this.interval().asDays();
+        const isDomainStartDst = isDaylightSavingTime(from);
+        const isDomainEndDst = isDaylightSavingTime(to);
+        // Add one hour to the "to" date if:
+        // 1) we're transitioning to daylight saving time and 2) the interval is >= one day.
+        // This ensures that the last day in the domain, which starts an hour later, is included in the generated bands.
+        const dstAdjustment = !isDomainStartDst && isDomainEndDst ? Object(moment_moment__WEBPACK_IMPORTED_MODULE_2__["duration"])(1, "hour").asMilliseconds() : 0;
+        const adjustedToDate = intervalDays >= 1 ? new Date(to.getTime() + dstAdjustment) : to;
+        while (bandDate <= adjustedToDate) {
+            bands.push(bandDate);
+            bandDate = new Date(bandDate.getTime() + intervalMs);
+        }
+        return bands;
     }
 }
 
@@ -16204,7 +16230,7 @@ class DonutGaugeLabelsPlugin extends _common_chart_plugin__WEBPACK_IMPORTED_MODU
             throw new Error("Gauge threshold series data is undefined");
         }
         const labelSelection = gaugeThresholdsLabelsGroup.selectAll(`text.${_constants__WEBPACK_IMPORTED_MODULE_10__["GAUGE_THRESHOLD_LABEL_CLASS"]}`)
-            .data(_renderers_radial_gauge_donut_gauge_rendering_util__WEBPACK_IMPORTED_MODULE_6__["DonutGaugeRenderingUtil"].generateThresholdData(data));
+            .data(_renderers_radial_gauge_donut_gauge_rendering_util__WEBPACK_IMPORTED_MODULE_6__["DonutGaugeRenderingUtil"].generateThresholdRenderingData(data));
         labelSelection.exit().remove();
         labelSelection.enter()
             .append("text")
@@ -27369,7 +27395,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div *ngIf=\"plugin && plugin.dataPoints\">\n    <nui-popover class=\"chart-popover__popover\"\n                 trigger=\"openPopoverSubject\"\n                 placement=\"top\"\n                 [unlimited]=\"true\"\n                 [template]=\"popoverTemplate\"\n                 [openPopover]=\"plugin.openPopoverSubject\"\n                 [closePopover]=\"plugin.closePopoverSubject\"\n                 [hasPadding]=\"false\"\n                 [container]=\"element.nativeElement\"\n                 [style.height.px]=\"plugin.popoverTargetPosition.height\">\n    </nui-popover>\n\n    <ng-template #popoverTemplate>\n        <ng-container *ngTemplateOutlet=\"template; context: {dataPoints:plugin.dataPoints}\"></ng-container>\n    </ng-template>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div *ngIf=\"plugin && plugin.dataPoints\">\n    <nui-popover class=\"chart-popover__popover\"\n                 trigger=\"openPopoverSubject\"\n                 placement=\"top\"\n                 [unlimited]=\"true\"\n                 [template]=\"popoverTemplate\"\n                 [openPopover]=\"plugin.openPopoverSubject\"\n                 [closePopover]=\"plugin.closePopoverSubject\"\n                 [hasPadding]=\"false\"\n                 [container]=\"element.nativeElement\"\n                 [style.height.px]=\"plugin.popoverTargetPosition.height\"\n                 [withGrowAfterOpen]=\"true\">\n    </nui-popover>\n\n    <ng-template #popoverTemplate>\n        <ng-container *ngTemplateOutlet=\"template; context: {dataPoints:plugin.dataPoints}\"></ng-container>\n    </ng-template>\n</div>\n");
 
 /***/ }),
 
@@ -30692,7 +30718,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var d3_shape__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3-shape */ "8d86");
 
 class DonutGaugeRenderingUtil {
-    static generateThresholdData(data) {
+    static generateThresholdRenderingData(data) {
         const arcData = DonutGaugeRenderingUtil.generateArcData(data);
         const thresholdsData = [];
         const pieGenerator = Object(d3_shape__WEBPACK_IMPORTED_MODULE_0__["pie"])().sort(null);

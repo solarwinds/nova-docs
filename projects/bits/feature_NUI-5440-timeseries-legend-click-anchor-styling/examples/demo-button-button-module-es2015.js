@@ -142,7 +142,7 @@ __webpack_require__.r(__webpack_exports__);
 class ButtonVisualTestComponent {
 }
 ButtonVisualTestComponent.ɵfac = function ButtonVisualTestComponent_Factory(t) { return new (t || ButtonVisualTestComponent)(); };
-ButtonVisualTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ButtonVisualTestComponent, selectors: [["nui-button-visual"]], decls: 79, vars: 10, consts: function () { let i18n_0; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+ButtonVisualTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ButtonVisualTestComponent, selectors: [["nui-button-visual"]], decls: 88, vars: 10, consts: function () { let i18n_0; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
         const MSG_EXTERNAL_3009058853923760985$$DEMO_SRC_COMPONENTS_DEMO_BUTTON_BUTTON_VISUAL_TEST_BUTTON_VISUAL_TEST_COMPONENT_TS_1 = goog.getMsg("Disabled Primary");
         i18n_0 = MSG_EXTERNAL_3009058853923760985$$DEMO_SRC_COMPONENTS_DEMO_BUTTON_BUTTON_VISUAL_TEST_BUTTON_VISUAL_TEST_COMPONENT_TS_1;
     }
@@ -160,7 +160,7 @@ ButtonVisualTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵ
     }
     else {
         i18n_4 = $localize `:␟c1063420593b7c9546136e41036b8948e2b40108␟7813900013056642814:Disabled Destructive`;
-    } return [[1, "container"], [1, "row"], ["nui-button", "", "id", "basic-button", "type", "button"], ["nui-button", "", "id", "primary-button", "type", "button", "displayStyle", "primary"], ["nui-button", "", "id", "action-button", "type", "button", "displayStyle", "action"], ["nui-button", "", "type", "button", "displayStyle", "destructive"], [1, "row", 2, "display", "block"], ["nui-button", "", "type", "button", "size", "compact"], ["nui-button", "", "type", "button"], ["nui-button", "", "type", "button", "size", "large"], ["nui-button", "", "type", "button", "icon", "add"], ["nui-button", "", "type", "button", "icon", "reload", 3, "iconRight"], ["nui-button", "", "type", "button", "icon", "power-on", "iconColor", "orange"], ["nui-button", "", "type", "button", "icon", "star-full"], [1, "w-100", "mt-2"], ["nui-button", "", "id", "primary-button", "type", "button", "displayStyle", "primary", "icon", "add"], ["nui-button", "", "id", "action-button", "type", "button", "displayStyle", "action", "icon", "status_warning"], ["nui-button", "", "type", "button", "displayStyle", "destructive", "icon", "printer"], ["nui-button", "", "type", "button", "size", "large", "displayStyle", "primary", "icon", "add", 3, "iconRight", "disabled"], i18n_0, ["nui-button", "", "type", "button", "size", "large", "displayStyle", "action", "icon", "status_warning", 3, "iconRight", "disabled"], i18n_2, ["nui-button", "", "type", "button", "size", "large", "displayStyle", "destructive", "icon", "printer", 3, "iconRight", "disabled"], i18n_4, ["nui-button", "", "type", "button", "displayStyle", "action", "icon", "caret-up", 3, "isRepeat"], ["nui-button", "", "type", "button", "displayStyle", "action", "icon", "caret-down", 3, "isRepeat"], ["nui-button", "", "type", "button", 3, "isBusy"], [1, "btn-group"]]; }, template: function ButtonVisualTestComponent_Template(rf, ctx) { if (rf & 1) {
+    } return [[1, "container"], [1, "row"], ["nui-button", "", "id", "basic-button", "type", "button"], ["nui-button", "", "id", "primary-button", "type", "button", "displayStyle", "primary"], ["nui-button", "", "id", "action-button", "type", "button", "displayStyle", "action"], ["nui-button", "", "type", "button", "displayStyle", "destructive"], [1, "row", 2, "display", "block"], ["nui-button", "", "type", "button", "size", "compact"], ["nui-button", "", "type", "button"], ["nui-button", "", "type", "button", "size", "large"], ["nui-button", "", "type", "button", "icon", "add"], ["nui-button", "", "type", "button", "icon", "reload", 3, "iconRight"], ["nui-button", "", "type", "button", "icon", "power-on", "iconColor", "orange"], ["nui-button", "", "type", "button", "icon", "star-full"], [1, "w-100", "mt-2"], ["nui-button", "", "id", "primary-button", "type", "button", "displayStyle", "primary", "icon", "add"], ["nui-button", "", "id", "action-button", "type", "button", "displayStyle", "action", "icon", "status_warning"], ["nui-button", "", "type", "button", "displayStyle", "destructive", "icon", "printer"], ["nui-button", "", "type", "button", "size", "large", "displayStyle", "primary", "icon", "add", 3, "iconRight", "disabled"], i18n_0, ["nui-button", "", "type", "button", "size", "large", "displayStyle", "action", "icon", "status_warning", 3, "iconRight", "disabled"], i18n_2, ["nui-button", "", "type", "button", "size", "large", "displayStyle", "destructive", "icon", "printer", 3, "iconRight", "disabled"], i18n_4, ["nui-button", "", "type", "button", "size", "compact", "icon", "add"], ["nui-button", "", "type", "button", "size", "large", "icon", "add"], ["nui-button", "", "type", "button", "displayStyle", "action", "icon", "caret-up", 3, "isRepeat"], ["nui-button", "", "type", "button", "displayStyle", "action", "icon", "caret-down", 3, "isRepeat"], ["nui-button", "", "type", "button", 3, "isBusy"], [1, "btn-group"]]; }, template: function ButtonVisualTestComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "h3");
@@ -241,46 +241,60 @@ ButtonVisualTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵ
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](51, 23);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](52, "div", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](52, "div", 6);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](53, "h3");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](54, "Buttons with repeat");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](54, "Sized buttons with icons");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](55, "button", 24);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](56, "Compact + icon");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](55, "div", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](56, "button", 24);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](57, "button", 25);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](57, "button", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](58, "Default + icon");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](58, "div", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](59, "h3");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](60, "Button with busy");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](59, "button", 25);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](60, "Large + icon");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](61, "div", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](62, "button", 26);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](63, "Click me!");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](62, "h3");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](63, "Buttons with repeat");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](64, "div", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](65, "h3");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](66, "Buttons in a group");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](65, "button", 26);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](66, "button", 27);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](67, "div", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](68, "div", 27);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](69, "button", 8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](70, "First");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](68, "h3");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](69, "Button with busy");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](71, "button", 8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](72, "Second");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](73, "button", 8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](74, "Third");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](70, "div", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](71, "button", 28);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](72, "Click me!");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](75, "button", 8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](76, "Fourth");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](77, "button", 8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](78, "Fifth");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](73, "div", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](74, "h3");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](75, "Buttons in a group");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](76, "div", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](77, "div", 29);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](78, "button", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](79, "First");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](80, "button", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](81, "Second");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](82, "button", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](83, "Third");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](84, "button", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](85, "Fourth");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](86, "button", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](87, "Fifth");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -294,7 +308,7 @@ ButtonVisualTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵ
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("iconRight", true)("disabled", true);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("iconRight", true)("disabled", true);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](15);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("isRepeat", true);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("isRepeat", true);
@@ -484,6 +498,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
 /* harmony import */ var _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../src/lib/button/button.component */ "6urz");
+/* harmony import */ var _button_long_text_button_with_long_text_example_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../button-long-text/button-with-long-text-example.component */ "bX81");
+
 
 
 
@@ -497,7 +513,7 @@ class ButtonTestComponent {
     }
 }
 ButtonTestComponent.ɵfac = function ButtonTestComponent_Factory(t) { return new (t || ButtonTestComponent)(); };
-ButtonTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ButtonTestComponent, selectors: [["nui-button-test"]], decls: 21, vars: 9, consts: function () { let i18n_0; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+ButtonTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ButtonTestComponent, selectors: [["nui-button-test"]], decls: 22, vars: 9, consts: function () { let i18n_0; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
         const MSG_EXTERNAL_8706736617333460404$$DEMO_SRC_COMPONENTS_DEMO_BUTTON_BUTTON_TEST_BUTTON_TEST_COMPONENT_TS_1 = goog.getMsg(" Compact\n");
         i18n_0 = MSG_EXTERNAL_8706736617333460404$$DEMO_SRC_COMPONENTS_DEMO_BUTTON_BUTTON_TEST_BUTTON_TEST_COMPONENT_TS_1;
     }
@@ -553,7 +569,7 @@ ButtonTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefi
     else {
         i18n_14 = $localize `:␟ba3095c0b882037f6640665af3184031ee980ac5␟1369743847649479916: Icon
 `;
-    } return [["id", "is-repeat-off", "type", "radio", "value", "false", 3, "ngModel", "ngModelChange"], ["id", "is-repeat-on", "type", "radio", "value", "true", 3, "ngModel", "ngModelChange"], ["id", "nui-demo-click-results"], ["id", "nui-demo-up-btn", "nui-button", "", "type", "button", "icon", "caret-up", 3, "isRepeat", "click"], ["id", "nui-demo-primary-compact-btn", "nui-button", "", "type", "button", "size", "compact", "displayStyle", "primary"], i18n_0, ["id", "nui-demo-primary-large-plus-icon-btn", "nui-button", "", "type", "button", "size", "large", "displayStyle", "primary", "icon", "add", 3, "iconRight"], i18n_2, ["id", "nui-demo-primary-large-plus-icon-disabled-btn", "nui-button", "", "type", "button", "size", "large", "displayStyle", "primary", "icon", "add", 3, "iconRight", "disabled"], i18n_4, ["id", "nui-demo-primary-large-plus-icon-busy-btn", "nui-button", "", "type", "button", "size", "large", "displayStyle", "primary", "icon", "add", 3, "iconRight", "isBusy"], i18n_6, ["nui-button", "", "id", "nui-demo-default-compact-btn", "type", "button", "size", "compact", "displayStyle", "default", "icon", "add"], i18n_8, ["id", "nui-default-large-btn", "nui-button", "", "type", "button", "size", "large", "displayStyle", "default", "icon", "add", 1, "testClass"], i18n_10, ["id", "nui-demo-action-compact-btn", "nui-button", "", "type", "button", "size", "compact", "displayStyle", "action"], i18n_12, ["id", "nui-demo-btn-with-icon", "nui-button", "", "type", "button", "icon", "add"], i18n_14]; }, template: function ButtonTestComponent_Template(rf, ctx) { if (rf & 1) {
+    } return [["id", "is-repeat-off", "type", "radio", "value", "false", 3, "ngModel", "ngModelChange"], ["id", "is-repeat-on", "type", "radio", "value", "true", 3, "ngModel", "ngModelChange"], ["id", "nui-demo-click-results"], ["id", "nui-demo-up-btn", "nui-button", "", "type", "button", "icon", "caret-up", 3, "isRepeat", "click"], ["id", "nui-demo-primary-compact-btn", "nui-button", "", "type", "button", "size", "compact", "displayStyle", "primary"], i18n_0, ["id", "nui-demo-primary-large-plus-icon-btn", "nui-button", "", "type", "button", "size", "large", "displayStyle", "primary", "icon", "add", 3, "iconRight"], i18n_2, ["id", "nui-demo-primary-large-plus-icon-disabled-btn", "nui-button", "", "type", "button", "size", "large", "displayStyle", "primary", "icon", "add", 3, "iconRight", "disabled"], i18n_4, ["id", "nui-demo-primary-large-plus-icon-busy-btn", "nui-button", "", "type", "button", "size", "large", "displayStyle", "primary", "icon", "add", 3, "iconRight", "isBusy"], i18n_6, ["nui-button", "", "id", "nui-demo-default-compact-btn", "type", "button", "size", "compact", "displayStyle", "default", "icon", "add"], i18n_8, ["id", "nui-default-large-btn", "nui-button", "", "type", "button", "size", "large", "displayStyle", "default", "icon", "add", 1, "testClass"], i18n_10, ["id", "nui-demo-action-compact-btn", "nui-button", "", "type", "button", "size", "compact", "displayStyle", "action"], i18n_12, ["id", "nui-demo-btn-with-icon", "nui-button", "", "type", "button", "icon", "add"], i18n_14, ["id", "nui-demo-long-text-btn"]]; }, template: function ButtonTestComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "input", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function ButtonTestComponent_Template_input_ngModelChange_0_listener($event) { return ctx.isRepeat = $event; });
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -590,6 +606,7 @@ ButtonTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefi
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "button", 18);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](20, 19);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](21, "nui-with-button-long-text-example", 20);
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx.isRepeat);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
@@ -604,7 +621,7 @@ ButtonTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefi
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("iconRight", true)("disabled", true);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("iconRight", true)("isBusy", true);
-    } }, directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["RadioControlValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgModel"], _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_2__["ButtonComponent"]], encapsulation: 2 });
+    } }, directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["RadioControlValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgModel"], _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_2__["ButtonComponent"], _button_long_text_button_with_long_text_example_component__WEBPACK_IMPORTED_MODULE_3__["ButtonWithLongTextExampleComponent"]], encapsulation: 2 });
 
 
 /***/ }),
@@ -1165,7 +1182,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\n    <div class=\"row\"><h3>Basic button</h3></div>\n    <div class=\"row\"><button nui-button id=\"basic-button\" type=\"button\">Click me!</button></div>\n\n    <div class=\"row\"><h3>Primary, Action, and Destructive buttons</h3></div>\n    <div class=\"row\">\n        <button nui-button id=\"primary-button\" type=\"button\" displayStyle=\"primary\">Click me!</button>\n        <button nui-button id=\"action-button\" type=\"button\" displayStyle=\"action\">Click me!</button>\n        <button nui-button type=\"button\" displayStyle=\"destructive\">Click me!</button>\n    </div>\n\n    <div class=\"row\"><h3>Sized buttons</h3></div>\n    <!-- nui-button is vulnerable to bootstrap 'row' class which sets 'display: flex'. Consider removing the inline style \n         from the following div either when the issue is resolved or shadow dom is applied to the component-->\n    <div class=\"row\" style=\"display: block\">\n        <button nui-button type=\"button\" size=\"compact\">Compact</button>\n        <button nui-button type=\"button\">Default</button>\n        <button nui-button type=\"button\" size=\"large\">Large</button>\n    </div>\n\n    <div class=\"row\"><h3>Buttons with icons</h3></div>\n    <div class=\"row\" style=\"display: block\">\n        <button nui-button type=\"button\" icon=\"add\">Click me!</button>\n        <button nui-button type=\"button\" icon=\"reload\" [iconRight]=\"true\">Click me!</button>\n        <button nui-button type=\"button\" icon=\"power-on\" iconColor=\"orange\">Click me!</button>\n        <button nui-button type=\"button\" icon=\"star-full\"></button>\n        <div class=\"w-100 mt-2\"></div>\n        <button nui-button id=\"primary-button\" type=\"button\" displayStyle=\"primary\" icon=\"add\">Click me!</button>\n        <button nui-button id=\"action-button\" type=\"button\" displayStyle=\"action\" icon=\"status_warning\">Click me!</button>\n        <button nui-button type=\"button\" displayStyle=\"destructive\" icon=\"printer\">Click me!</button>\n        <div class=\"w-100 mt-2\"></div>\n        <button nui-button type=\"button\" size=\"large\" displayStyle=\"primary\" icon=\"add\" [iconRight]=\"true\" [disabled]=\"true\" i18n>Disabled Primary</button>\n        <button nui-button type=\"button\" size=\"large\" displayStyle=\"action\" icon=\"status_warning\" [iconRight]=\"true\" [disabled]=\"true\" i18n>Disabled Action</button>\n        <button nui-button type=\"button\" size=\"large\" displayStyle=\"destructive\" icon=\"printer\" [iconRight]=\"true\" [disabled]=\"true\" i18n>Disabled Destructive</button>\n\n    </div>\n\n    <div class=\"row\"><h3>Buttons with repeat</h3></div>\n    <div class=\"row\">\n        <button nui-button type=\"button\" [isRepeat]=\"true\" displayStyle=\"action\" icon=\"caret-up\"></button>\n        <button nui-button type=\"button\" [isRepeat]=\"true\" displayStyle=\"action\" icon=\"caret-down\"></button>\n    </div>\n\n    <div class=\"row\"><h3>Button with busy</h3></div>\n    <div class=\"row\"><button nui-button type=\"button\" [isBusy]=\"true\">Click me!</button></div>\n\n    <div class=\"row\"><h3>Buttons in a group</h3></div>\n    <div class=\"row\">\n        <div class=\"btn-group\">\n            <button nui-button type=\"button\">First</button>\n            <button nui-button type=\"button\">Second</button>\n            <button nui-button type=\"button\">Third</button>\n            <button nui-button type=\"button\">Fourth</button>\n            <button nui-button type=\"button\">Fifth</button>\n        </div>\n    </div>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\n    <div class=\"row\"><h3>Basic button</h3></div>\n    <div class=\"row\"><button nui-button id=\"basic-button\" type=\"button\">Click me!</button></div>\n\n    <div class=\"row\"><h3>Primary, Action, and Destructive buttons</h3></div>\n    <div class=\"row\">\n        <button nui-button id=\"primary-button\" type=\"button\" displayStyle=\"primary\">Click me!</button>\n        <button nui-button id=\"action-button\" type=\"button\" displayStyle=\"action\">Click me!</button>\n        <button nui-button type=\"button\" displayStyle=\"destructive\">Click me!</button>\n    </div>\n\n    <div class=\"row\"><h3>Sized buttons</h3></div>\n    <!-- nui-button is vulnerable to bootstrap 'row' class which sets 'display: flex'. Consider removing the inline style \n         from the following div either when the issue is resolved or shadow dom is applied to the component-->\n    <div class=\"row\" style=\"display: block\">\n        <button nui-button type=\"button\" size=\"compact\">Compact</button>\n        <button nui-button type=\"button\">Default</button>\n        <button nui-button type=\"button\" size=\"large\">Large</button>\n    </div>\n\n    <div class=\"row\"><h3>Buttons with icons</h3></div>\n    <div class=\"row\" style=\"display: block\">\n        <button nui-button type=\"button\" icon=\"add\">Click me!</button>\n        <button nui-button type=\"button\" icon=\"reload\" [iconRight]=\"true\">Click me!</button>\n        <button nui-button type=\"button\" icon=\"power-on\" iconColor=\"orange\">Click me!</button>\n        <button nui-button type=\"button\" icon=\"star-full\"></button>\n        <div class=\"w-100 mt-2\"></div>\n        <button nui-button id=\"primary-button\" type=\"button\" displayStyle=\"primary\" icon=\"add\">Click me!</button>\n        <button nui-button id=\"action-button\" type=\"button\" displayStyle=\"action\" icon=\"status_warning\">Click me!</button>\n        <button nui-button type=\"button\" displayStyle=\"destructive\" icon=\"printer\">Click me!</button>\n        <div class=\"w-100 mt-2\"></div>\n        <button nui-button type=\"button\" size=\"large\" displayStyle=\"primary\" icon=\"add\" [iconRight]=\"true\" [disabled]=\"true\" i18n>Disabled Primary</button>\n        <button nui-button type=\"button\" size=\"large\" displayStyle=\"action\" icon=\"status_warning\" [iconRight]=\"true\" [disabled]=\"true\" i18n>Disabled Action</button>\n        <button nui-button type=\"button\" size=\"large\" displayStyle=\"destructive\" icon=\"printer\" [iconRight]=\"true\" [disabled]=\"true\" i18n>Disabled Destructive</button>\n\n    </div>\n\n    <div class=\"row\" style=\"display: block\"><h3>Sized buttons with icons</h3>\n        <button nui-button type=\"button\" size=\"compact\" icon=\"add\">Compact + icon</button>\n        <button nui-button type=\"button\" icon=\"add\">Default + icon</button>\n        <button nui-button type=\"button\" size=\"large\" icon=\"add\">Large + icon</button>\n    </div>\n\n    <div class=\"row\"><h3>Buttons with repeat</h3></div>\n    <div class=\"row\">\n        <button nui-button type=\"button\" [isRepeat]=\"true\" displayStyle=\"action\" icon=\"caret-up\"></button>\n        <button nui-button type=\"button\" [isRepeat]=\"true\" displayStyle=\"action\" icon=\"caret-down\"></button>\n    </div>\n\n    <div class=\"row\"><h3>Button with busy</h3></div>\n    <div class=\"row\"><button nui-button type=\"button\" [isBusy]=\"true\">Click me!</button></div>\n\n    <div class=\"row\"><h3>Buttons in a group</h3></div>\n    <div class=\"row\">\n        <div class=\"btn-group\">\n            <button nui-button type=\"button\">First</button>\n            <button nui-button type=\"button\">Second</button>\n            <button nui-button type=\"button\">Third</button>\n            <button nui-button type=\"button\">Fourth</button>\n            <button nui-button type=\"button\">Fifth</button>\n        </div>\n    </div>\n</div>\n");
 
 /***/ }),
 
@@ -1178,7 +1195,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<input id=\"is-repeat-off\" type=\"radio\" [(ngModel)]=\"isRepeat\" value=\"false\" />\n<input id=\"is-repeat-on\" type=\"radio\" [(ngModel)]=\"isRepeat\" value=\"true\" />\n<span id=\"nui-demo-click-results\">{{count}}</span>\n\n<button id=\"nui-demo-up-btn\" nui-button type=\"button\" [isRepeat]=\"isRepeat === 'true'\" icon=\"caret-up\" (click)=\"onCountUpClick()\">\n</button>\n<button id=\"nui-demo-primary-compact-btn\" nui-button type=\"button\" size=\"compact\" displayStyle=\"primary\" i18n>\n    Compact\n</button>\n<button id=\"nui-demo-primary-large-plus-icon-btn\" nui-button type=\"button\" size=\"large\" displayStyle=\"primary\" icon=\"add\" [iconRight]=\"true\" i18n>\n    Large + icon\n</button>\n<button id=\"nui-demo-primary-large-plus-icon-disabled-btn\" nui-button type=\"button\" size=\"large\" displayStyle=\"primary\" icon=\"add\" [iconRight]=\"true\"\n        [disabled]=\"true\" i18n>\n    Disabled\n</button>\n<button id=\"nui-demo-primary-large-plus-icon-busy-btn\" nui-button type=\"button\" size=\"large\" displayStyle=\"primary\" icon=\"add\" [iconRight]=\"true\"\n        [isBusy]=\"true\" i18n>\n    Busy\n</button>\n<button nui-button id=\"nui-demo-default-compact-btn\" type=\"button\" size=\"compact\" displayStyle=\"default\" icon=\"add\" i18n>\n    Compact\n</button>\n<button id=\"nui-default-large-btn\" nui-button class=\"testClass\" type=\"button\" size=\"large\" displayStyle=\"default\" icon=\"add\" i18n>\n    Large + icon\n</button>\n<button id=\"nui-demo-action-compact-btn\" nui-button type=\"button\" size=\"compact\" displayStyle=\"action\" i18n>\n    Compact\n</button>\n<button id=\"nui-demo-btn-with-icon\" nui-button type=\"button\" icon=\"add\" i18n>\n    Icon\n</button>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<input id=\"is-repeat-off\" type=\"radio\" [(ngModel)]=\"isRepeat\" value=\"false\" />\n<input id=\"is-repeat-on\" type=\"radio\" [(ngModel)]=\"isRepeat\" value=\"true\" />\n<span id=\"nui-demo-click-results\">{{count}}</span>\n\n<button id=\"nui-demo-up-btn\" nui-button type=\"button\" [isRepeat]=\"isRepeat === 'true'\" icon=\"caret-up\" (click)=\"onCountUpClick()\">\n</button>\n<button id=\"nui-demo-primary-compact-btn\" nui-button type=\"button\" size=\"compact\" displayStyle=\"primary\" i18n>\n    Compact\n</button>\n<button id=\"nui-demo-primary-large-plus-icon-btn\" nui-button type=\"button\" size=\"large\" displayStyle=\"primary\" icon=\"add\" [iconRight]=\"true\" i18n>\n    Large + icon\n</button>\n<button id=\"nui-demo-primary-large-plus-icon-disabled-btn\" nui-button type=\"button\" size=\"large\" displayStyle=\"primary\" icon=\"add\" [iconRight]=\"true\"\n        [disabled]=\"true\" i18n>\n    Disabled\n</button>\n<button id=\"nui-demo-primary-large-plus-icon-busy-btn\" nui-button type=\"button\" size=\"large\" displayStyle=\"primary\" icon=\"add\" [iconRight]=\"true\"\n        [isBusy]=\"true\" i18n>\n    Busy\n</button>\n<button nui-button id=\"nui-demo-default-compact-btn\" type=\"button\" size=\"compact\" displayStyle=\"default\" icon=\"add\" i18n>\n    Compact\n</button>\n<button id=\"nui-default-large-btn\" nui-button class=\"testClass\" type=\"button\" size=\"large\" displayStyle=\"default\" icon=\"add\" i18n>\n    Large + icon\n</button>\n<button id=\"nui-demo-action-compact-btn\" nui-button type=\"button\" size=\"compact\" displayStyle=\"action\" i18n>\n    Compact\n</button>\n<button id=\"nui-demo-btn-with-icon\" nui-button type=\"button\" icon=\"add\" i18n>\n    Icon\n</button>\n\n<nui-with-button-long-text-example id=\"nui-demo-long-text-btn\"></nui-with-button-long-text-example>\n");
 
 /***/ }),
 

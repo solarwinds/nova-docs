@@ -171,15 +171,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _bar_chart_test_bar_chart_tick_label_max_width_bar_chart_tick_label_max_width_test_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./bar-chart-test/bar-chart-tick-label-max-width/bar-chart-tick-label-max-width-test.component */ "w4ni");
 /* harmony import */ var _bar_chart_test_basic_horizontal_basic_horizontal_bar_chart_test_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./bar-chart-test/basic-horizontal/basic-horizontal-bar-chart-test.component */ "x55w");
 /* harmony import */ var _bar_chart_test_basic_vertical_basic_vertical_bar_chart_test_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./bar-chart-test/basic-vertical/basic-vertical-bar-chart-test.component */ "Kz8y");
-/* harmony import */ var _bar_chart_test_horizontal_with_legend_horizontal_with_legend_bar_chart_test_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./bar-chart-test/horizontal-with-legend/horizontal-with-legend-bar-chart-test.component */ "u+UU");
-/* harmony import */ var _bar_chart_test_time_interval_time_interval_test_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./bar-chart-test/time-interval/time-interval.test.component */ "gHkq");
-/* harmony import */ var _bar_chart_test_vertical_with_legend_vertical_with_legend_bar_chart_test_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./bar-chart-test/vertical-with-legend/vertical-with-legend-bar-chart-test.component */ "y362");
-/* harmony import */ var _bar_chart_test_vertical_with_timescale_vertical_with_timescale_bar_chart_test_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./bar-chart-test/vertical-with-timescale/vertical-with-timescale-bar-chart-test.component */ "pGMu");
-/* harmony import */ var _bar_chart_time_interval_bar_chart_time_interval_example_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./bar-chart-time-interval/bar-chart-time-interval.example.component */ "d/zz");
-/* harmony import */ var _bar_chart_time_scale_bar_chart_time_scale_example_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./bar-chart-time-scale/bar-chart-time-scale.example.component */ "0h2D");
-/* harmony import */ var _bar_chart_with_legend_bar_chart_with_legend_example_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./bar-chart-with-legend/bar-chart-with-legend.example.component */ "8Iil");
-/* harmony import */ var _bar_chart_bar_chart_example_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./bar-chart/bar-chart.example.component */ "3TZA");
-/* harmony import */ var _chart_docs_bar_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./chart-docs-bar.component */ "ld5b");
+/* harmony import */ var _bar_chart_test_daylight_saving_time_bar_chart_time_interval_bar_chart_time_interval_dst_test_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./bar-chart-test/daylight-saving-time/bar-chart-time-interval/bar-chart-time-interval-dst-test.component */ "7141");
+/* harmony import */ var _bar_chart_test_daylight_saving_time_dst_time_interval_test_page_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./bar-chart-test/daylight-saving-time/dst-time-interval-test-page.component */ "9PPK");
+/* harmony import */ var _bar_chart_test_horizontal_with_legend_horizontal_with_legend_bar_chart_test_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./bar-chart-test/horizontal-with-legend/horizontal-with-legend-bar-chart-test.component */ "u+UU");
+/* harmony import */ var _bar_chart_test_time_interval_time_interval_test_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./bar-chart-test/time-interval/time-interval.test.component */ "gHkq");
+/* harmony import */ var _bar_chart_test_vertical_with_legend_vertical_with_legend_bar_chart_test_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./bar-chart-test/vertical-with-legend/vertical-with-legend-bar-chart-test.component */ "y362");
+/* harmony import */ var _bar_chart_test_vertical_with_timescale_vertical_with_timescale_bar_chart_test_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./bar-chart-test/vertical-with-timescale/vertical-with-timescale-bar-chart-test.component */ "pGMu");
+/* harmony import */ var _bar_chart_time_interval_bar_chart_time_interval_example_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./bar-chart-time-interval/bar-chart-time-interval.example.component */ "d/zz");
+/* harmony import */ var _bar_chart_time_scale_bar_chart_time_scale_example_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./bar-chart-time-scale/bar-chart-time-scale.example.component */ "0h2D");
+/* harmony import */ var _bar_chart_with_legend_bar_chart_with_legend_example_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./bar-chart-with-legend/bar-chart-with-legend.example.component */ "8Iil");
+/* harmony import */ var _bar_chart_bar_chart_example_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./bar-chart/bar-chart.example.component */ "3TZA");
+/* harmony import */ var _chart_docs_bar_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./chart-docs-bar.component */ "ld5b");
 
 
 
@@ -202,10 +204,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
 const exampleRoutes = [
     {
         path: "",
-        component: _chart_docs_bar_component__WEBPACK_IMPORTED_MODULE_20__["ChartDocsBarComponent"],
+        component: _chart_docs_bar_component__WEBPACK_IMPORTED_MODULE_22__["ChartDocsBarComponent"],
         data: {
             "srlc": {
                 "stage": _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["SrlcStage"].beta,
@@ -215,7 +219,7 @@ const exampleRoutes = [
     },
     {
         path: "bar-chart",
-        component: _bar_chart_bar_chart_example_component__WEBPACK_IMPORTED_MODULE_19__["BarChartExampleComponent"],
+        component: _bar_chart_bar_chart_example_component__WEBPACK_IMPORTED_MODULE_21__["BarChartExampleComponent"],
         data: {
             "srlc": {
                 hideIndicator: true,
@@ -233,7 +237,7 @@ const exampleRoutes = [
     },
     {
         path: "with-legend",
-        component: _bar_chart_with_legend_bar_chart_with_legend_example_component__WEBPACK_IMPORTED_MODULE_18__["BarChartWithLegendExampleComponent"],
+        component: _bar_chart_with_legend_bar_chart_with_legend_example_component__WEBPACK_IMPORTED_MODULE_20__["BarChartWithLegendExampleComponent"],
     },
     {
         path: "test",
@@ -245,8 +249,17 @@ const exampleRoutes = [
         },
     },
     {
+        path: "dst-time-interval-test",
+        component: _bar_chart_test_daylight_saving_time_dst_time_interval_test_page_component__WEBPACK_IMPORTED_MODULE_13__["DstTimeIntervalTestPageComponent"],
+        data: {
+            "srlc": {
+                "hideIndicator": true,
+            },
+        },
+    },
+    {
         path: "time-interval",
-        component: _bar_chart_time_interval_bar_chart_time_interval_example_component__WEBPACK_IMPORTED_MODULE_16__["BarChartTimeIntervalExampleComponent"],
+        component: _bar_chart_time_interval_bar_chart_time_interval_example_component__WEBPACK_IMPORTED_MODULE_18__["BarChartTimeIntervalExampleComponent"],
         data: {
             "srlc": {
                 "hideIndicator": true,
@@ -295,21 +308,23 @@ let ChartDocsBarModule = class ChartDocsBarModule {
 ChartDocsBarModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
         declarations: [
-            _chart_docs_bar_component__WEBPACK_IMPORTED_MODULE_20__["ChartDocsBarComponent"],
-            _bar_chart_bar_chart_example_component__WEBPACK_IMPORTED_MODULE_19__["BarChartExampleComponent"],
+            _chart_docs_bar_component__WEBPACK_IMPORTED_MODULE_22__["ChartDocsBarComponent"],
+            _bar_chart_bar_chart_example_component__WEBPACK_IMPORTED_MODULE_21__["BarChartExampleComponent"],
             _bar_chart_horizontal_bar_chart_horizontal_example_component__WEBPACK_IMPORTED_MODULE_6__["BarChartHorizontalExampleComponent"],
-            _bar_chart_time_scale_bar_chart_time_scale_example_component__WEBPACK_IMPORTED_MODULE_17__["BarChartTimeScaleExampleComponent"],
-            _bar_chart_time_interval_bar_chart_time_interval_example_component__WEBPACK_IMPORTED_MODULE_16__["BarChartTimeIntervalExampleComponent"],
+            _bar_chart_time_scale_bar_chart_time_scale_example_component__WEBPACK_IMPORTED_MODULE_19__["BarChartTimeScaleExampleComponent"],
+            _bar_chart_time_interval_bar_chart_time_interval_example_component__WEBPACK_IMPORTED_MODULE_18__["BarChartTimeIntervalExampleComponent"],
             _bar_chart_test_bar_chart_tick_label_max_width_bar_chart_tick_label_max_width_test_component__WEBPACK_IMPORTED_MODULE_9__["BarChartTickLabelMaxWidthTestComponent"],
             _bar_chart_test_bar_chart_tick_label_max_width_with_margin_bar_chart_tick_label_max_width_with_margin_test_component__WEBPACK_IMPORTED_MODULE_8__["BarChartTickLabelMaxWidthWithMarginTestComponent"],
-            _bar_chart_with_legend_bar_chart_with_legend_example_component__WEBPACK_IMPORTED_MODULE_18__["BarChartWithLegendExampleComponent"],
+            _bar_chart_with_legend_bar_chart_with_legend_example_component__WEBPACK_IMPORTED_MODULE_20__["BarChartWithLegendExampleComponent"],
             _bar_chart_test_bar_chart_test_component__WEBPACK_IMPORTED_MODULE_7__["BarChartTestComponent"],
             _bar_chart_test_basic_horizontal_basic_horizontal_bar_chart_test_component__WEBPACK_IMPORTED_MODULE_10__["BasicHorizontalBarChartTestComponent"],
             _bar_chart_test_basic_vertical_basic_vertical_bar_chart_test_component__WEBPACK_IMPORTED_MODULE_11__["BasicVerticalBarChartTestComponent"],
-            _bar_chart_test_vertical_with_timescale_vertical_with_timescale_bar_chart_test_component__WEBPACK_IMPORTED_MODULE_15__["VerticalWithTimescaleBarChartTestComponent"],
-            _bar_chart_test_vertical_with_legend_vertical_with_legend_bar_chart_test_component__WEBPACK_IMPORTED_MODULE_14__["VerticalWithLegendBarChartTestComponent"],
-            _bar_chart_test_horizontal_with_legend_horizontal_with_legend_bar_chart_test_component__WEBPACK_IMPORTED_MODULE_12__["HorizontalWithLegendBarChartTestComponent"],
-            _bar_chart_test_time_interval_time_interval_test_component__WEBPACK_IMPORTED_MODULE_13__["TimeIntervalTestComponent"],
+            _bar_chart_test_daylight_saving_time_dst_time_interval_test_page_component__WEBPACK_IMPORTED_MODULE_13__["DstTimeIntervalTestPageComponent"],
+            _bar_chart_test_daylight_saving_time_bar_chart_time_interval_bar_chart_time_interval_dst_test_component__WEBPACK_IMPORTED_MODULE_12__["BarChartTimeIntervalDstTestComponent"],
+            _bar_chart_test_vertical_with_timescale_vertical_with_timescale_bar_chart_test_component__WEBPACK_IMPORTED_MODULE_17__["VerticalWithTimescaleBarChartTestComponent"],
+            _bar_chart_test_vertical_with_legend_vertical_with_legend_bar_chart_test_component__WEBPACK_IMPORTED_MODULE_16__["VerticalWithLegendBarChartTestComponent"],
+            _bar_chart_test_horizontal_with_legend_horizontal_with_legend_bar_chart_test_component__WEBPACK_IMPORTED_MODULE_14__["HorizontalWithLegendBarChartTestComponent"],
+            _bar_chart_test_time_interval_time_interval_test_component__WEBPACK_IMPORTED_MODULE_15__["TimeIntervalTestComponent"],
         ],
         imports: [
             _common_demo_common_module__WEBPACK_IMPORTED_MODULE_5__["DemoCommonModule"],
@@ -324,6 +339,61 @@ ChartDocsBarModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
         ],
     })
 ], ChartDocsBarModule);
+
+
+
+/***/ }),
+
+/***/ "7141":
+/*!************************************************************************************************************************************************************!*\
+  !*** ./examples/components/demo/chart-types/bar/bar-chart-test/daylight-saving-time/bar-chart-time-interval/bar-chart-time-interval-dst-test.component.ts ***!
+  \************************************************************************************************************************************************************/
+/*! exports provided: BarChartTimeIntervalDstTestComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BarChartTimeIntervalDstTestComponent", function() { return BarChartTimeIntervalDstTestComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _raw_loader_bar_chart_time_interval_dst_test_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./bar-chart-time-interval-dst-test.component.html */ "JozS");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @nova-ui/charts */ "gKry");
+/* harmony import */ var moment_moment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! moment/moment */ "wd/R");
+/* harmony import */ var moment_moment__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(moment_moment__WEBPACK_IMPORTED_MODULE_4__);
+
+
+
+
+
+let BarChartTimeIntervalDstTestComponent = class BarChartTimeIntervalDstTestComponent {
+    constructor() {
+        this.chart = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["Chart"](Object(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["barGrid"])());
+    }
+    ngOnInit() {
+        const accessors = Object(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["barAccessors"])();
+        accessors.data.category = (d) => d.x;
+        accessors.data.value = (d) => d.y;
+        const renderer = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["BarRenderer"]({ highlightStrategy: new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["BarHighlightStrategy"]("x"), pointerEvents: false });
+        const scales = {
+            x: new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["TimeIntervalScale"](this.interval),
+            y: new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["LinearScale"](),
+        };
+        this.chart.addPlugin(new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["InteractionLabelPlugin"]());
+        this.chart.update(this.data.map((s) => (Object.assign(Object.assign({}, s), { accessors,
+            renderer,
+            scales }))));
+    }
+};
+BarChartTimeIntervalDstTestComponent.propDecorators = {
+    data: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"] }],
+    interval: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"] }]
+};
+BarChartTimeIntervalDstTestComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
+        selector: "bar-chart-time-interval-dst-test",
+        template: _raw_loader_bar_chart_time_interval_dst_test_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
+    })
+], BarChartTimeIntervalDstTestComponent);
 
 
 
@@ -384,6 +454,214 @@ function getData() {
         { id: "uc", name: "UC Browser", data: [4] },
         { id: "opera", name: "Opera", data: [3] },
         { id: "other", name: "Other", data: [5] },
+    ];
+}
+
+
+/***/ }),
+
+/***/ "9PPK":
+/*!*******************************************************************************************************************************!*\
+  !*** ./examples/components/demo/chart-types/bar/bar-chart-test/daylight-saving-time/dst-time-interval-test-page.component.ts ***!
+  \*******************************************************************************************************************************/
+/*! exports provided: DstTimeIntervalTestPageComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DstTimeIntervalTestPageComponent", function() { return DstTimeIntervalTestPageComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _raw_loader_dst_time_interval_test_page_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./dst-time-interval-test-page.component.html */ "OCfy");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var moment_moment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! moment/moment */ "wd/R");
+/* harmony import */ var moment_moment__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(moment_moment__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _date_time_util__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./date-time-util */ "U73d");
+
+
+
+
+
+let DstTimeIntervalTestPageComponent = class DstTimeIntervalTestPageComponent {
+    constructor() {
+        this.insideDstData = getInsideDstData();
+        this.outsideDstData = getOutsideDstData();
+        this.oneMinuteInterval = Object(moment_moment__WEBPACK_IMPORTED_MODULE_3__["duration"])(1, "minute");
+        this.oneDayInterval = Object(moment_moment__WEBPACK_IMPORTED_MODULE_3__["duration"])(1, "days");
+        this.oneHourInterval = Object(moment_moment__WEBPACK_IMPORTED_MODULE_3__["duration"])(1, "hours");
+        this.twoHourInterval = Object(moment_moment__WEBPACK_IMPORTED_MODULE_3__["duration"])(2, "hours");
+        this.startDstMidnight = _date_time_util__WEBPACK_IMPORTED_MODULE_4__["DateTimeUtil"].getStartDstMidnight(2021);
+        this.startDstHour = _date_time_util__WEBPACK_IMPORTED_MODULE_4__["DateTimeUtil"].getStartDstHour(2021);
+        this.endDstMidnight = _date_time_util__WEBPACK_IMPORTED_MODULE_4__["DateTimeUtil"].getEndDstMidnight(2021);
+        this.endDstHour = _date_time_util__WEBPACK_IMPORTED_MODULE_4__["DateTimeUtil"].getEndDstHour(2021);
+        this.startDstOneMinuteData = getStartDstOneMinuteData(this.startDstHour);
+        this.startDstOneHourData = getStartDstOneHourData(this.startDstHour);
+        this.startDstTwoHourData = getStartDstTwoHourData(this.startDstHour);
+        this.startDstOneDayData = getStartDstOneDayData(this.startDstMidnight);
+        this.endDstOneMinuteData = getEndDstOneMinuteData(this.endDstHour);
+        this.endDstOneHourData = getEndDstOneHourData(this.endDstHour);
+        this.endDstTwoHourData = getEndDstTwoHourData(this.endDstHour);
+        this.endDstOneDayData = getEndDstOneDayData(this.endDstMidnight);
+        console.log("Local Time Zone:", Intl.DateTimeFormat().resolvedOptions().timeZone);
+    }
+};
+DstTimeIntervalTestPageComponent.ctorParameters = () => [];
+DstTimeIntervalTestPageComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
+        template: _raw_loader_dst_time_interval_test_page_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
+    }),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [])
+], DstTimeIntervalTestPageComponent);
+
+function getStartDstOneMinuteData(startDstHour) {
+    return [
+        {
+            id: "series-1",
+            name: "Series 1",
+            data: [
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(startDstHour).subtract(1, "minute").toDate(), y: 30 },
+                { x: startDstHour, y: 95 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(startDstHour).add(1, "minute").toDate(), y: 15 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(startDstHour).add(2, "minutes").toDate(), y: 60 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(startDstHour).add(3, "minutes").toDate(), y: 35 },
+            ],
+        },
+    ];
+}
+function getStartDstOneHourData(startDstHour) {
+    return [
+        {
+            id: "series-1",
+            name: "Series 1",
+            data: [
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(startDstHour).subtract(1, "hour").toDate(), y: 30 },
+                { x: startDstHour, y: 95 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(startDstHour).add(1, "hour").toDate(), y: 15 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(startDstHour).add(2, "hours").toDate(), y: 60 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(startDstHour).add(3, "hours").toDate(), y: 35 },
+            ],
+        },
+    ];
+}
+function getStartDstTwoHourData(startDstHour) {
+    return [
+        {
+            id: "series-1",
+            name: "Series 1",
+            data: [
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(startDstHour).subtract(2, "hours").toDate(), y: 30 },
+                { x: startDstHour, y: 95 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(startDstHour).add(2, "hours").toDate(), y: 15 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(startDstHour).add(4, "hours").toDate(), y: 60 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(startDstHour).add(6, "hours").toDate(), y: 35 },
+            ],
+        },
+    ];
+}
+function getStartDstOneDayData(startDstMidnight) {
+    return [
+        {
+            id: "series-1",
+            name: "Series 1",
+            data: [
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(startDstMidnight).subtract(1, "day").toDate(), y: 30 },
+                { x: startDstMidnight, y: 95 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(startDstMidnight).add(1, "day").toDate(), y: 15 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(startDstMidnight).add(2, "days").toDate(), y: 60 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(startDstMidnight).add(3, "days").toDate(), y: 35 },
+            ],
+        },
+    ];
+}
+function getEndDstOneMinuteData(endDstHour) {
+    return [
+        {
+            id: "series-1",
+            name: "Series 1",
+            data: [
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(endDstHour).subtract(1, "minute").toDate(), y: 30 },
+                { x: endDstHour, y: 95 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(endDstHour).add(1, "minute").toDate(), y: 15 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(endDstHour).add(2, "minutes").toDate(), y: 60 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(endDstHour).add(3, "minutes").toDate(), y: 35 },
+            ],
+        },
+    ];
+}
+function getEndDstOneHourData(endDstHour) {
+    return [
+        {
+            id: "series-1",
+            name: "Series 1",
+            data: [
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(endDstHour).subtract(1, "hour").toDate(), y: 30 },
+                { x: endDstHour, y: 95 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(endDstHour).add(1, "hour").toDate(), y: 15 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(endDstHour).add(2, "hours").toDate(), y: 60 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(endDstHour).add(3, "hours").toDate(), y: 35 },
+            ],
+        },
+    ];
+}
+function getEndDstTwoHourData(endDstHour) {
+    return [
+        {
+            id: "series-1",
+            name: "Series 1",
+            data: [
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(endDstHour).subtract(2, "hours").toDate(), y: 30 },
+                { x: endDstHour, y: 95 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(endDstHour).add(2, "hours").toDate(), y: 15 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(endDstHour).add(4, "hours").toDate(), y: 60 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(endDstHour).add(6, "hours").toDate(), y: 35 },
+            ],
+        },
+    ];
+}
+function getEndDstOneDayData(endDstMidnight) {
+    return [
+        {
+            id: "series-1",
+            name: "Series 1",
+            data: [
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(endDstMidnight).subtract(1, "day").toDate(), y: 30 },
+                { x: endDstMidnight, y: 95 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(endDstMidnight).add(1, "day").toDate(), y: 15 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(endDstMidnight).add(2, "days").toDate(), y: 60 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()(endDstMidnight).add(3, "days").toDate(), y: 35 },
+            ],
+        },
+    ];
+}
+function getInsideDstData() {
+    const format = "YYYY-MM-DDTHH";
+    return [
+        {
+            id: "series-1",
+            name: "Series 1",
+            data: [
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-07-03T0", format).toDate(), y: 30 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-07-04T0", format).toDate(), y: 95 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-07-05T0", format).toDate(), y: 15 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-07-06T0", format).toDate(), y: 60 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2021-07-07T0", format).toDate(), y: 35 },
+            ],
+        },
+    ];
+}
+function getOutsideDstData() {
+    const format = "YYYY-MM-DDTHH";
+    return [
+        {
+            id: "series-1",
+            name: "Series 1",
+            data: [
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-12-01T0", format).toDate(), y: 30 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-12-02T0", format).toDate(), y: 95 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-12-03T0", format).toDate(), y: 15 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-12-04T0", format).toDate(), y: 60 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_3___default()("2020-12-05T0", format).toDate(), y: 35 },
+            ],
+        },
     ];
 }
 
@@ -492,6 +770,116 @@ function getData() {
         { id: "opera", name: "Opera", data: [3] },
         { id: "other", name: "Other", data: [5] },
     ];
+}
+
+
+/***/ }),
+
+/***/ "U73d":
+/*!********************************************************************************************************!*\
+  !*** ./examples/components/demo/chart-types/bar/bar-chart-test/daylight-saving-time/date-time-util.ts ***!
+  \********************************************************************************************************/
+/*! exports provided: DateTimeUtil */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DateTimeUtil", function() { return DateTimeUtil; });
+/* harmony import */ var moment_moment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! moment/moment */ "wd/R");
+/* harmony import */ var moment_moment__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(moment_moment__WEBPACK_IMPORTED_MODULE_0__);
+
+/** Class with common time utilities */
+class DateTimeUtil {
+    /**
+     * Gets the local midnight date-time of the day containing the start of daylight saving time for the provided year
+     *
+     * @param year The year to get the midnight date-time for the start of daylight saving time
+     *
+     * @returns {Date} The local midnight date-time of the day containing the start of daylight saving time for the provided year
+     */
+    static getStartDstMidnight(year) {
+        let datesInYear = [];
+        for (let i = 1; i <= 365; i++) {
+            let d = new Date(year, 0, 1);
+            d.setDate(i);
+            datesInYear.push(d);
+        }
+        let foundStart = false;
+        return datesInYear.reduce((prev, curr) => {
+            if (curr.getTimezoneOffset() < prev.getTimezoneOffset()) {
+                foundStart = true;
+                return prev;
+            }
+            return foundStart ? prev : curr;
+        });
+    }
+    /**
+     * Gets the exact local date-time of the start of daylight saving time for the provided year
+     *
+     * @param year The year to get the exact date-time for the start of daylight saving time
+     *
+     * @returns {Date} The exact local date-time of the day containing the start of daylight saving time for the provided year
+     */
+    static getStartDstHour(year) {
+        const startDstMidnight = DateTimeUtil.getStartDstMidnight(year);
+        let hoursInDstStartDay = [];
+        for (let i = 0; i < 24; i++) {
+            let d = new Date(startDstMidnight);
+            d.setHours(i);
+            hoursInDstStartDay.push(d);
+        }
+        let foundStart = false;
+        return hoursInDstStartDay.reduce((prev, curr) => {
+            if (curr.getTimezoneOffset() < prev.getTimezoneOffset()) {
+                foundStart = true;
+                return curr;
+            }
+            return foundStart ? prev : curr;
+        });
+    }
+    /**
+     * Gets the local midnight date-time of the day containing the end of daylight saving time for the provided year
+     *
+     * @param year The year to get the midnight date-time for the end of daylight saving time
+     *
+     * @returns {Date} The local midnight date-time of the day containing the end of daylight saving time for the provided year
+     */
+    static getEndDstMidnight(year) {
+        let datesInYear = [];
+        for (let i = 1; i <= 365; i++) {
+            let d = new Date(year, 0, 1);
+            d.setDate(i);
+            datesInYear.push(d);
+        }
+        return datesInYear.reduce((prev, curr) => {
+            if (curr.getTimezoneOffset() > prev.getTimezoneOffset()) {
+                return prev;
+            }
+            return curr;
+        });
+    }
+    /**
+     * Gets the exact local date-time of the end of daylight saving time for the provided year
+     *
+     * @param year The year to get the exact date-time for the end of daylight saving time
+     *
+     * @returns {Date} The exact local date-time of the day containing the end of daylight saving time for the provided year
+     */
+    static getEndDstHour(year) {
+        const endDstMidnight = DateTimeUtil.getEndDstMidnight(year);
+        let hoursInDstEndDay = [];
+        for (let i = 0; i < 24; i++) {
+            let d = new Date(endDstMidnight);
+            d.setHours(i);
+            hoursInDstEndDay.push(d);
+        }
+        return hoursInDstEndDay.reduce((prev, curr) => {
+            if (curr.getTimezoneOffset() > prev.getTimezoneOffset()) {
+                return moment_moment__WEBPACK_IMPORTED_MODULE_0___default()(curr).subtract(1, "hour").toDate();
+            }
+            return prev;
+        });
+    }
 }
 
 
@@ -928,6 +1316,12 @@ var map = {
 	"./bar-chart-test/basic-horizontal/basic-horizontal-bar-chart-test.component.ts": "iqrN",
 	"./bar-chart-test/basic-vertical/basic-vertical-bar-chart-test.component.html": "IISk",
 	"./bar-chart-test/basic-vertical/basic-vertical-bar-chart-test.component.ts": "bkbR",
+	"./bar-chart-test/daylight-saving-time/bar-chart-time-interval/bar-chart-time-interval-dst-test.component.html": "JozS",
+	"./bar-chart-test/daylight-saving-time/bar-chart-time-interval/bar-chart-time-interval-dst-test.component.ts": "PSNa",
+	"./bar-chart-test/daylight-saving-time/date-time-util.ts": "YAOY",
+	"./bar-chart-test/daylight-saving-time/daylight-saving-time-test.module.ts": "x13I",
+	"./bar-chart-test/daylight-saving-time/dst-time-interval-test-page.component.html": "OCfy",
+	"./bar-chart-test/daylight-saving-time/dst-time-interval-test-page.component.ts": "Uetg",
 	"./bar-chart-test/horizontal-with-legend/horizontal-with-legend-bar-chart-test.component.html": "x45f",
 	"./bar-chart-test/horizontal-with-legend/horizontal-with-legend-bar-chart-test.component.ts": "cktB",
 	"./bar-chart-test/time-interval/time-interval.test.component.html": "RqGI",
