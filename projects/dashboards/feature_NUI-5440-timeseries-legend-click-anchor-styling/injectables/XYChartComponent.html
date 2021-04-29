@@ -126,11 +126,15 @@
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#onInteraction">onInteraction</a>
+                                <a href="#onLegendClick">onLegendClick</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#onLegendClick">onLegendClick</a>
+                                <a href="#onPrimaryDescClick">onPrimaryDescClick</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#onSecondaryDescClick">onSecondaryDescClick</a>
                             </li>
                         </ul>
                     </td>
@@ -341,7 +345,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                        <b>Returns : </b>    <code>boolean | undefined</code>
 
                     </div>
                     <div class="io-description">
@@ -482,28 +486,28 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="onInteraction"></a>
+                    <a name="onLegendClick"></a>
                     <span class="name">
                         <b>
                             <span class="modifier">Public</span>
-                            onInteraction
+                            onLegendClick
                         </b>
-                        <a href="#onInteraction"><span class="icon ion-ios-link"></span></a>
+                        <a href="#onLegendClick"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>onInteraction(legendSeries: IChartAssistSeries<IAccessors>, event: MouseEvent)</code>
+                    <code>onLegendClick(legendSeries: IChartAssistSeries<IAccessors>, event: MouseEvent)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="93"
-                            class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:93</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="78"
+                            class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:78</a></div>
                 </td>
             </tr>
 
@@ -566,28 +570,28 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="onLegendClick"></a>
+                    <a name="onPrimaryDescClick"></a>
                     <span class="name">
                         <b>
                             <span class="modifier">Public</span>
-                            onLegendClick
+                            onPrimaryDescClick
                         </b>
-                        <a href="#onLegendClick"><span class="icon ion-ios-link"></span></a>
+                        <a href="#onPrimaryDescClick"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>onLegendClick(legendSeries: IChartAssistSeries<IAccessors>, event: MouseEvent)</code>
+                    <code>onPrimaryDescClick(legendSeries: IChartAssistSeries<IAccessors>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="78"
-                            class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:78</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="93"
+                            class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:93</a></div>
                 </td>
             </tr>
 
@@ -618,10 +622,70 @@
 
 
                                 </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSecondaryDescClick"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            onSecondaryDescClick
+                        </b>
+                        <a href="#onSecondaryDescClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onSecondaryDescClick(legendSeries: IChartAssistSeries<IAccessors>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="102"
+                            class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:102</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
                                 <tr>
-                                    <td>event</td>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>legendSeries</td>
                                     <td>
-                                            <code>MouseEvent</code>
+                                            <code>IChartAssistSeries&lt;IAccessors&gt;</code>
                                     </td>
 
                                     <td>
@@ -848,8 +912,8 @@ export abstract class XYChartComponent extends TimeseriesChartComponent
     }
 
     /** Checks if the series is interactive or if the dataSource has a link property */
-    public isSeriesInteractive(legendSeries: IChartAssistSeries&lt;IAccessors&gt;): boolean {
-        return !(legendSeries?.link &#x3D;&#x3D;&#x3D; undefined) || !(legendSeries?.secondaryLink &#x3D;&#x3D;&#x3D; undefined) || !(this.seriesInteractive &#x3D;&#x3D;&#x3D; undefined);
+    public isSeriesInteractive(legendSeries: IChartAssistSeries&lt;IAccessors&gt;): boolean | undefined {
+        return !(legendSeries?.link &#x3D;&#x3D;&#x3D; undefined) || !(legendSeries?.secondaryLink &#x3D;&#x3D;&#x3D; undefined) || !!this.seriesInteractive;
     }
 
     public onLegendClick(legendSeries: IChartAssistSeries&lt;IAccessors&gt;, event: MouseEvent) {
@@ -867,26 +931,17 @@ export abstract class XYChartComponent extends TimeseriesChartComponent
         }
     }
 
-    public onInteraction(legendSeries: IChartAssistSeries&lt;IAccessors&gt;, event: MouseEvent) {
-        let interactive &#x3D; this.isSeriesInteractive(legendSeries);
-        if (!interactive) {
-            console.log(&quot;📘 xy-chart.component: 96# -&gt; legendSeries:&quot;, legendSeries);
-            this.eventBus.getStream(INTERACTION).next({
-                payload: {
-                    data: legendSeries,
-                    interactionType: TimeseriesInteractionType.Series,
-                },
-            });
-            return;
-        }
-        const target &#x3D; event.target as HTMLElement;
-        const secondaryDescription &#x3D; target.classList.contains(&quot;legend-description-secondary&quot;);
+    public onPrimaryDescClick(legendSeries: IChartAssistSeries&lt;IAccessors&gt;) {
+        this.eventBus.getStream(INTERACTION).next({
+            payload: {
+                data: legendSeries,
+                interactionType: TimeseriesInteractionType.Series,
+            },
+        });
+    }
 
-        if (legendSeries.link &amp;&amp; !secondaryDescription) {
-            this.eventBus.getStream(INTERACTION).next({ payload: { data: legendSeries } });
-        } else if (secondaryDescription) {
-            this.chartAssist.toggleSeries(legendSeries.id, this.chartAssist.isSeriesHidden(legendSeries.id));
-        }
+    public onSecondaryDescClick(legendSeries: IChartAssistSeries&lt;IAccessors&gt;) {
+        this.chartAssist.toggleSeries(legendSeries.id, this.chartAssist.isSeriesHidden(legendSeries.id));
     }
 
     /** Updates chart data. */
