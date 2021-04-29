@@ -1753,7 +1753,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { Component, ViewChild } from \"@angular/core\";\nimport { IBusyConfig, WizardComponent } from \"@nova-ui/bits\";\n\n@Component({\n    selector: \"nui-wizard-busy-example\",\n    templateUrl: \"./wizard-busy.example.component.html\",\n})\nexport class WizardBusyExampleComponent  {\n    @ViewChild(\"wizardComponent\") wizardComponent: WizardComponent;\n\n    public isBusy = false;\n\n    public busyConfig: IBusyConfig = {\n        busy: false,\n        message: $localize `Step is busy`,\n    };\n\n    constructor() {}\n\n    public toggleStepBusy() {\n        this.busyConfig.busy = !this.busyConfig.busy;\n        this.wizardComponent.navigationControl.next({ busyState: this.busyConfig, allowStepChange: !this.busyConfig.busy});\n    }\n\n    public toggleBusy(): void {\n        this.isBusy = !this.isBusy;\n    }\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import { Component, ViewChild } from \"@angular/core\";\nimport { IBusyConfig, WizardComponent } from \"@nova-ui/bits\";\n\n@Component({\n    selector: \"nui-wizard-busy-example\",\n    templateUrl: \"./wizard-busy.example.component.html\",\n})\nexport class WizardBusyExampleComponent  {\n    @ViewChild(\"wizardComponent\") wizardComponent: WizardComponent;\n\n    public isBusy = false;\n\n    public busyConfig: IBusyConfig = {\n        busy: false,\n        message: $localize `Step is busy`,\n    };\n\n    constructor() {}\n\n    public toggleStepBusy() {\n        /* Switch off spinner of all content. Just to avoid two spinners */\n        this.isBusy = false;\n        this.busyConfig.busy = !this.busyConfig.busy;\n        this.wizardComponent.navigationControl.next({ busyState: this.busyConfig, allowStepChange: !this.busyConfig.busy});\n    }\n\n    public toggleBusy(): void {\n        /* Switch off spinner of step content. Just to avoid two spinners */\n        this.busyConfig.busy = false;\n        this.isBusy = !this.isBusy;\n    }\n}\n");
 
 /***/ }),
 
@@ -1810,10 +1810,14 @@ class WizardBusyExampleComponent {
         };
     }
     toggleStepBusy() {
+        /* Switch off spinner of all content. Just to avoid two spinners */
+        this.isBusy = false;
         this.busyConfig.busy = !this.busyConfig.busy;
         this.wizardComponent.navigationControl.next({ busyState: this.busyConfig, allowStepChange: !this.busyConfig.busy });
     }
     toggleBusy() {
+        /* Switch off spinner of step content. Just to avoid two spinners */
+        this.busyConfig.busy = false;
         this.isBusy = !this.isBusy;
     }
 }
