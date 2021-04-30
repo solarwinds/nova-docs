@@ -1079,7 +1079,7 @@ export class KpiSectionConverterService extends BaseConverter {
         super(eventBus, previewService, pizzagnaService);
     }
 
-    public updateConfiguration(properties: { formParts: IConverterFormPartsProperties[]; }) {
+    public updateConfiguration(properties: { formParts: IConverterFormPartsProperties[] }) {
         if (properties &amp;&amp; properties.formParts) {
             this.formParts &#x3D; properties.formParts;
         }

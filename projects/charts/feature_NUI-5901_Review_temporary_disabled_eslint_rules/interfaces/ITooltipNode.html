@@ -235,7 +235,7 @@ export class ChartTooltipsComponent implements OnChanges, OnDestroy {
     private handleOpen() {
         this.changeDetector.detectChanges();
 
-        const currentTooltipDirectivesIndex: { [seriesId: string]: ChartTooltipDirective; } &#x3D; {};
+        const currentTooltipDirectivesIndex: { [seriesId: string]: ChartTooltipDirective } &#x3D; {};
         this.tooltips.forEach(tooltip &#x3D;&gt; {
             // this is how we identify which series does the tooltip belong to
             const seriesId: string | undefined &#x3D; tooltip.elementRef.nativeElement.getAttribute(&quot;series-id&quot;) ?? undefined;

@@ -983,7 +983,7 @@ export class TableColumnsConfigurationComponent implements OnInit, IHasForm, OnC
                 formPizzagna &#x3D; immutableSet(formPizzagna, &#x60;${PizzagnaLayer.Data}.columns.properties.dataFields&#x60;, dataFields);
 
                 const columnsTemplate &#x3D; this.pizzagnaService.pizzagna[PizzagnaLayer.Structure].columns.properties?.template;
-                const presentationIndex &#x3D; columnsTemplate.findIndex((val: { id: string; }) &#x3D;&gt; val.id &#x3D;&#x3D;&#x3D; &quot;presentation&quot;);
+                const presentationIndex &#x3D; columnsTemplate.findIndex((val: { id: string }) &#x3D;&gt; val.id &#x3D;&#x3D;&#x3D; &quot;presentation&quot;);
                 const presentationPizzagnaPath: string &#x3D; &#x60;${PizzagnaLayer.Structure}.columns.properties.template[${presentationIndex}].properties.dataFields&#x60;;
                 formPizzagna &#x3D; immutableSet(formPizzagna, presentationPizzagnaPath, dataFields);
 

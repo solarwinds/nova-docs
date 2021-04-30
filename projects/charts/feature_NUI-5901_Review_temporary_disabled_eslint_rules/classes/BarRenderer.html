@@ -4149,7 +4149,7 @@ export class BarRenderer extends XYRenderer&lt;IRectangleAccessors&gt; {
     }
 
     private getDimensions(accessors: IRectangleDataAccessors, d: any, i: number,
-                          dataSeries: IDataSeries&lt;IRectangleAccessors&gt;, scale: IScale&lt;any&gt;, accessorSuffix: string): { thickness: number; start: number } {
+                          dataSeries: IDataSeries&lt;IRectangleAccessors&gt;, scale: IScale&lt;any&gt;, accessorSuffix: string): { thickness: number, start: number } {
         let start: number;
         let thickness: number;
 
