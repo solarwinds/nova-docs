@@ -8681,7 +8681,7 @@
             i18n_1 = $localize(_templateObject11 || (_templateObject11 = _taggedTemplateLiteral([":\u241Fd662abcb49ed274a9ec81f5df13b35acbf4cba87\u241F6035911408728866723:", ":INTERPOLATION: of ", ":START_TAG_SPAN:", ":INTERPOLATION_1:", ":CLOSE_TAG_SPAN:"])), "\uFFFD0\uFFFD", "\uFFFD#7\uFFFD", "\uFFFD1\uFFFD", "\uFFFD/#7\uFFFD");
           }
 
-          return [["class", "nui-paginator", 4, "ngIf"], ["tableRow", ""], [1, "nui-paginator"], [1, "nui-paginator__items"], ["role", "listbox", 1, "nui-paginator__list"], ["role", "option", 3, "title", "ngClass", "value", 4, "ngFor", "ngForOf"], [1, "nui-paginator__options"], [1, "nui-paginator__info"], i18n_1, [1, "nui-paginator__total"], ["ariaLabel", "Items per page", 3, "value", "valueSelected"], [3, "value", 4, "ngFor", "ngForOf"], ["role", "option", 3, "title", "ngClass", "value"], ["nui-button", "", "type", "button", "displayStyle", "action", "class", "move-icon", 3, "disabled", "icon", "click", 4, "ngIf"], ["nui-button", "", "type", "button", "displayStyle", "action", 3, "isEmpty", "click", 4, "ngIf"], [3, "appendToBody", "baseElementSelector", 4, "ngIf"], ["nui-button", "", "type", "button", "displayStyle", "action", 1, "move-icon", 3, "disabled", "icon", "click"], ["nui-button", "", "type", "button", "displayStyle", "action", 3, "isEmpty", "click"], [3, "appendToBody", "baseElementSelector"], ["nui-button", "", "type", "button", "nuiPopupToggle", "", "displayStyle", "action", "aria-haspopup", "true", 1, "nui-paginator__dots", 3, "ngClass", "isEmpty", "click"], ["popupAreaContent", "", 1, "nui-paginator__elipsis-pages"], [1, "nui-paginator__page-table", 3, "ngClass"], [3, "width", "height", "itemSize", "maxBufferPx", "minBufferPx", 4, "ngIf"], [4, "ngIf"], [3, "itemSize", "maxBufferPx", "minBufferPx"], [4, "cdkVirtualFor", "cdkVirtualForOf"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"], [3, "ngTemplateOutlet", "ngTemplateOutletContext", 4, "ngFor", "ngForOf"], [3, "value"], [3, "ngClass"], ["class", "nui-paginator__page-cell", 4, "ngFor", "ngForOf"], [1, "nui-paginator__page-cell"], ["nui-button", "", "type", "button", "displayStyle", "action", 3, "click"]];
+          return [["class", "nui-paginator", 4, "ngIf"], ["tableRow", ""], [1, "nui-paginator"], [1, "nui-paginator__items"], ["role", "listbox", "aria-label", "List of pages", 1, "nui-paginator__list"], ["role", "option", 3, "title", "ngClass", "value", 4, "ngFor", "ngForOf"], [1, "nui-paginator__options"], [1, "nui-paginator__info"], i18n_1, [1, "nui-paginator__total"], ["ariaLabel", "Items per page", 3, "value", "valueSelected"], [3, "value", 4, "ngFor", "ngForOf"], ["role", "option", 3, "title", "ngClass", "value"], ["nui-button", "", "type", "button", "displayStyle", "action", "class", "move-icon", 3, "disabled", "icon", "click", 4, "ngIf"], ["nui-button", "", "type", "button", "displayStyle", "action", 3, "isEmpty", "click", 4, "ngIf"], [3, "appendToBody", "baseElementSelector", 4, "ngIf"], ["nui-button", "", "type", "button", "displayStyle", "action", 1, "move-icon", 3, "disabled", "icon", "click"], ["nui-button", "", "type", "button", "displayStyle", "action", 3, "isEmpty", "click"], [3, "appendToBody", "baseElementSelector"], ["nui-button", "", "type", "button", "nuiPopupToggle", "", "displayStyle", "action", "aria-haspopup", "true", 1, "nui-paginator__dots", 3, "ngClass", "isEmpty", "click"], ["popupAreaContent", "", 1, "nui-paginator__elipsis-pages"], [1, "nui-paginator__page-table", 3, "ngClass"], [3, "width", "height", "itemSize", "maxBufferPx", "minBufferPx", 4, "ngIf"], [4, "ngIf"], [3, "itemSize", "maxBufferPx", "minBufferPx"], [4, "cdkVirtualFor", "cdkVirtualForOf"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"], [3, "ngTemplateOutlet", "ngTemplateOutletContext", 4, "ngFor", "ngForOf"], [3, "value"], [3, "ngClass"], ["class", "nui-paginator__page-cell", 4, "ngFor", "ngForOf"], [1, "nui-paginator__page-cell"], ["nui-button", "", "type", "button", "displayStyle", "action", 3, "click"]];
         },
         template: function PaginatorComponent_Template(rf, ctx) {
           if (rf & 1) {
@@ -10307,7 +10307,7 @@
           /**
            * Input to set aria label text
            */
-          this.ariaLabel = "";
+          this.ariaLabel = "Switch";
           this.valueChange = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
         }
 
@@ -11399,133 +11399,139 @@
       /* harmony import */
 
 
-      var _services_dom_util_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      var _pipes_highlight_pipe__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      /*! ../pipes/highlight.pipe */
+      "ZlWS");
+      /* harmony import */
+
+
+      var _services_dom_util_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
       /*! ../services/dom-util.service */
       "uj+m");
       /* harmony import */
 
 
-      var _services_edge_detection_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+      var _services_edge_detection_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
       /*! ../services/edge-detection.service */
       "ibgH");
       /* harmony import */
 
 
-      var _services_event_bus_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+      var _services_event_bus_service__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
       /*! ../services/event-bus.service */
       "oCSD");
       /* harmony import */
 
 
-      var _services_event_propagation_service__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+      var _services_event_propagation_service__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
       /*! ../services/event-propagation.service */
       "+0BR");
       /* harmony import */
 
 
-      var _services_history_storage__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
+      var _services_history_storage__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
       /*! ../services/history-storage */
       "YUul");
       /* harmony import */
 
 
-      var _services_log_service__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
+      var _services_log_service__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
       /*! ../services/log-service */
       "eqCI");
       /* harmony import */
 
 
-      var _services_notification_service__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
+      var _services_notification_service__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
       /*! ../services/notification-service */
       "VCez");
       /* harmony import */
 
 
-      var _services_position_service__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
+      var _services_position_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(
       /*! ../services/position.service */
       "Q8/f");
       /* harmony import */
 
 
-      var _services_search_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(
+      var _services_search_service__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(
       /*! ../services/search.service */
       "EaWR");
       /* harmony import */
 
 
-      var _services_transient_cache_service__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(
+      var _services_transient_cache_service__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(
       /*! ../services/transient-cache.service */
       "02PJ");
       /* harmony import */
 
 
-      var _services_unit_conversion_service__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(
+      var _services_unit_conversion_service__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(
       /*! ../services/unit-conversion.service */
       "pi50");
       /* harmony import */
 
 
-      var _services_util_service__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(
+      var _services_util_service__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(
       /*! ../services/util.service */
       "/e7+");
       /* harmony import */
 
 
-      var _directives_click_interceptor_click_interceptor_directive__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(
+      var _directives_click_interceptor_click_interceptor_directive__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(
       /*! ./directives/click-interceptor/click-interceptor.directive */
       "qMZP");
       /* harmony import */
 
 
-      var _directives_clipboard_clipboard_directive__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(
+      var _directives_clipboard_clipboard_directive__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(
       /*! ./directives/clipboard/clipboard.directive */
       "eJM4");
       /* harmony import */
 
 
-      var _directives_dragdrop_drag_and_drop_service__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(
+      var _directives_dragdrop_drag_and_drop_service__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(
       /*! ./directives/dragdrop/drag-and-drop.service */
       "Eh93");
       /* harmony import */
 
 
-      var _directives_dragdrop_draggable_directive__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(
+      var _directives_dragdrop_draggable_directive__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(
       /*! ./directives/dragdrop/draggable.directive */
       "0TTj");
       /* harmony import */
 
 
-      var _directives_dragdrop_droppable_directive__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(
+      var _directives_dragdrop_droppable_directive__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(
       /*! ./directives/dragdrop/droppable.directive */
       "GM/8");
       /* harmony import */
 
 
-      var _directives_resize_observer_resize_observer_directive__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(
+      var _directives_resize_observer_resize_observer_directive__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(
       /*! ./directives/resize-observer/resize-observer.directive */
       "ujIh");
       /* harmony import */
 
 
-      var _directives_resize_resize_directive__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(
+      var _directives_resize_resize_directive__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(
       /*! ./directives/resize/resize.directive */
       "F2yd");
       /* harmony import */
 
 
-      var _directives_resizer_resizer_directive__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(
+      var _directives_resizer_resizer_directive__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(
       /*! ./directives/resizer/resizer.directive */
       "bA9B");
       /* harmony import */
 
 
-      var _directives_set_focus_set_focus_directive__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(
+      var _directives_set_focus_set_focus_directive__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(
       /*! ./directives/set-focus/set-focus.directive */
       "IoYV");
       /* harmony import */
 
 
-      var _directives_zoom_content_zoom_content_directive__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(
+      var _directives_zoom_content_zoom_content_directive__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(
       /*! ./directives/zoom-content/zoom-content.directive */
       "YDg1");
       /**
@@ -11548,7 +11554,7 @@
         factory: function NuiCommonModule_Factory(t) {
           return new (t || NuiCommonModule)();
         },
-        providers: [_directives_dragdrop_drag_and_drop_service__WEBPACK_IMPORTED_MODULE_23__["DragAndDropService"], _services_event_bus_service__WEBPACK_IMPORTED_MODULE_11__["EventBusService"], _environment__WEBPACK_IMPORTED_MODULE_5__["NUI_ENV_PROVIDER"], _services_unit_conversion_service__WEBPACK_IMPORTED_MODULE_19__["UnitConversionService"], _services_util_service__WEBPACK_IMPORTED_MODULE_20__["UtilService"], _services_transient_cache_service__WEBPACK_IMPORTED_MODULE_18__["TransientCacheService"], _services_search_service__WEBPACK_IMPORTED_MODULE_17__["SearchService"], _angular_common__WEBPACK_IMPORTED_MODULE_0__["DatePipe"], _services_position_service__WEBPACK_IMPORTED_MODULE_16__["PositionService"], _services_notification_service__WEBPACK_IMPORTED_MODULE_15__["NotificationService"], _services_event_propagation_service__WEBPACK_IMPORTED_MODULE_12__["EventPropagationService"], _services_edge_detection_service__WEBPACK_IMPORTED_MODULE_10__["EdgeDetectionService"], _services_log_service__WEBPACK_IMPORTED_MODULE_14__["LoggerService"], _services_dom_util_service__WEBPACK_IMPORTED_MODULE_9__["DomUtilService"], _lib_selector_selector_service__WEBPACK_IMPORTED_MODULE_6__["SelectorService"], _services_history_storage__WEBPACK_IMPORTED_MODULE_13__["HistoryStorage"], {
+        providers: [_directives_dragdrop_drag_and_drop_service__WEBPACK_IMPORTED_MODULE_24__["DragAndDropService"], _services_event_bus_service__WEBPACK_IMPORTED_MODULE_12__["EventBusService"], _environment__WEBPACK_IMPORTED_MODULE_5__["NUI_ENV_PROVIDER"], _services_unit_conversion_service__WEBPACK_IMPORTED_MODULE_20__["UnitConversionService"], _services_util_service__WEBPACK_IMPORTED_MODULE_21__["UtilService"], _services_transient_cache_service__WEBPACK_IMPORTED_MODULE_19__["TransientCacheService"], _services_search_service__WEBPACK_IMPORTED_MODULE_18__["SearchService"], _angular_common__WEBPACK_IMPORTED_MODULE_0__["DatePipe"], _services_position_service__WEBPACK_IMPORTED_MODULE_17__["PositionService"], _services_notification_service__WEBPACK_IMPORTED_MODULE_16__["NotificationService"], _services_event_propagation_service__WEBPACK_IMPORTED_MODULE_13__["EventPropagationService"], _services_edge_detection_service__WEBPACK_IMPORTED_MODULE_11__["EdgeDetectionService"], _services_log_service__WEBPACK_IMPORTED_MODULE_15__["LoggerService"], _services_dom_util_service__WEBPACK_IMPORTED_MODULE_10__["DomUtilService"], _lib_selector_selector_service__WEBPACK_IMPORTED_MODULE_6__["SelectorService"], _services_history_storage__WEBPACK_IMPORTED_MODULE_14__["HistoryStorage"], {
           provide: "windowObject",
           useValue: window
         }, {
@@ -11563,9 +11569,9 @@
 
       (function () {
         (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](NuiCommonModule, {
-          declarations: [_directives_click_interceptor_click_interceptor_directive__WEBPACK_IMPORTED_MODULE_21__["ClickInterceptorDirective"], _directives_clipboard_clipboard_directive__WEBPACK_IMPORTED_MODULE_22__["ClipboardDirective"], _directives_dragdrop_draggable_directive__WEBPACK_IMPORTED_MODULE_24__["DraggableDirective"], _directives_dragdrop_droppable_directive__WEBPACK_IMPORTED_MODULE_25__["DroppableDirective"], _directives_resize_resize_directive__WEBPACK_IMPORTED_MODULE_27__["ResizeDirective"], _directives_resize_observer_resize_observer_directive__WEBPACK_IMPORTED_MODULE_26__["ResizeObserverDirective"], _directives_resizer_resizer_directive__WEBPACK_IMPORTED_MODULE_28__["ResizerDirective"], _directives_set_focus_set_focus_directive__WEBPACK_IMPORTED_MODULE_29__["SetFocusDirective"], _pipes_limit_to_pipe__WEBPACK_IMPORTED_MODULE_7__["LimitToPipe"], _pipes_unit_conversion_pipe__WEBPACK_IMPORTED_MODULE_8__["UnitConversionPipe"], _directives_zoom_content_zoom_content_directive__WEBPACK_IMPORTED_MODULE_30__["ZoomContentDirective"]],
+          declarations: [_directives_click_interceptor_click_interceptor_directive__WEBPACK_IMPORTED_MODULE_22__["ClickInterceptorDirective"], _directives_clipboard_clipboard_directive__WEBPACK_IMPORTED_MODULE_23__["ClipboardDirective"], _directives_dragdrop_draggable_directive__WEBPACK_IMPORTED_MODULE_25__["DraggableDirective"], _directives_dragdrop_droppable_directive__WEBPACK_IMPORTED_MODULE_26__["DroppableDirective"], _directives_resize_resize_directive__WEBPACK_IMPORTED_MODULE_28__["ResizeDirective"], _directives_resize_observer_resize_observer_directive__WEBPACK_IMPORTED_MODULE_27__["ResizeObserverDirective"], _directives_resizer_resizer_directive__WEBPACK_IMPORTED_MODULE_29__["ResizerDirective"], _directives_set_focus_set_focus_directive__WEBPACK_IMPORTED_MODULE_30__["SetFocusDirective"], _pipes_limit_to_pipe__WEBPACK_IMPORTED_MODULE_7__["LimitToPipe"], _pipes_highlight_pipe__WEBPACK_IMPORTED_MODULE_9__["HighlightPipe"], _pipes_unit_conversion_pipe__WEBPACK_IMPORTED_MODULE_8__["UnitConversionPipe"], _directives_zoom_content_zoom_content_directive__WEBPACK_IMPORTED_MODULE_31__["ZoomContentDirective"]],
           imports: [_angular_common__WEBPACK_IMPORTED_MODULE_0__["CommonModule"]],
-          exports: [_angular_common__WEBPACK_IMPORTED_MODULE_0__["CommonModule"], _directives_click_interceptor_click_interceptor_directive__WEBPACK_IMPORTED_MODULE_21__["ClickInterceptorDirective"], _directives_clipboard_clipboard_directive__WEBPACK_IMPORTED_MODULE_22__["ClipboardDirective"], _directives_dragdrop_draggable_directive__WEBPACK_IMPORTED_MODULE_24__["DraggableDirective"], _directives_dragdrop_droppable_directive__WEBPACK_IMPORTED_MODULE_25__["DroppableDirective"], _directives_resize_resize_directive__WEBPACK_IMPORTED_MODULE_27__["ResizeDirective"], _directives_resize_observer_resize_observer_directive__WEBPACK_IMPORTED_MODULE_26__["ResizeObserverDirective"], _directives_resizer_resizer_directive__WEBPACK_IMPORTED_MODULE_28__["ResizerDirective"], _directives_set_focus_set_focus_directive__WEBPACK_IMPORTED_MODULE_29__["SetFocusDirective"], _pipes_unit_conversion_pipe__WEBPACK_IMPORTED_MODULE_8__["UnitConversionPipe"], _directives_zoom_content_zoom_content_directive__WEBPACK_IMPORTED_MODULE_30__["ZoomContentDirective"]]
+          exports: [_angular_common__WEBPACK_IMPORTED_MODULE_0__["CommonModule"], _directives_click_interceptor_click_interceptor_directive__WEBPACK_IMPORTED_MODULE_22__["ClickInterceptorDirective"], _directives_clipboard_clipboard_directive__WEBPACK_IMPORTED_MODULE_23__["ClipboardDirective"], _directives_dragdrop_draggable_directive__WEBPACK_IMPORTED_MODULE_25__["DraggableDirective"], _directives_dragdrop_droppable_directive__WEBPACK_IMPORTED_MODULE_26__["DroppableDirective"], _directives_resize_resize_directive__WEBPACK_IMPORTED_MODULE_28__["ResizeDirective"], _directives_resize_observer_resize_observer_directive__WEBPACK_IMPORTED_MODULE_27__["ResizeObserverDirective"], _directives_resizer_resizer_directive__WEBPACK_IMPORTED_MODULE_29__["ResizerDirective"], _directives_set_focus_set_focus_directive__WEBPACK_IMPORTED_MODULE_30__["SetFocusDirective"], _pipes_unit_conversion_pipe__WEBPACK_IMPORTED_MODULE_8__["UnitConversionPipe"], _pipes_highlight_pipe__WEBPACK_IMPORTED_MODULE_9__["HighlightPipe"], _directives_zoom_content_zoom_content_directive__WEBPACK_IMPORTED_MODULE_31__["ZoomContentDirective"]]
         });
       })();
       /***/
@@ -17204,7 +17210,7 @@
           _classCallCheck(this, ProgressComponent);
 
           this.showProgress = true;
-          this.ariaLabel = "";
+          this.ariaLabel = "Progress bar";
           this.cancel = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
           this.isIndeterminate = false;
         }
@@ -19622,7 +19628,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx.menuToggle = _t.first);
           }
         },
-        hostAttrs: ["role", "menu", 1, "nui-menu"],
+        hostAttrs: [1, "nui-menu"],
         hostVars: 1,
         hostBindings: function MenuComponent_HostBindings(rf, ctx) {
           if (rf & 2) {
@@ -27227,7 +27233,7 @@
            */
 
           this.valueChange = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
-          this._ariaLabel = "";
+          this._ariaLabel = "Checkbox";
         }
         /**
          * Input to set aria label text
@@ -30805,7 +30811,7 @@
            * Input to set aria label text
            */
 
-          this.ariaLabel = "";
+          this.ariaLabel = "Textbox number input";
           /**
            * Event fired when textBoxNumber is focused out.
            */
@@ -31012,6 +31018,12 @@
           }
         },
         hostAttrs: ["role", "spinbutton"],
+        hostVars: 4,
+        hostBindings: function TextboxNumberComponent_HostBindings(rf, ctx) {
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-label", ctx.ariaLabel)("aria-valuemin", ctx.minValue || null)("aria-valuemax", ctx.maxValue || null)("aria-valuenow", ctx.value || 0);
+          }
+        },
         inputs: {
           value: "value",
           customBoxWidth: "customBoxWidth",
@@ -31050,8 +31062,8 @@
           multi: true
         }]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵNgOnChangesFeature"]],
         decls: 10,
-        vars: 25,
-        consts: [[1, "nui-textbox", "nui-textbox-number"], [1, "has-feedback", 3, "ngStyle"], ["step", "any", "type", "number", 1, "form-control", "input-control", "nui-textbox__input", 3, "disabled", "ngModel", "ngModelOptions", "min", "max", "placeholder", "readonly", "ngModelChange", "blur", "keydown", "paste"], ["numberInput", ""], [1, "nui-textbox-number__buttons"], [1, "nui-textbox-number__updown", "nui-textbox-number__up-button"], ["nui-button", "", "type", "button", "displayStyle", "action", "icon", "caret-up", "aria-label", "Up", 3, "isRepeat", "disabled", "click"], [1, "nui-textbox-number__updown", "nui-textbox-number__updown-divider"], [1, "nui-textbox-number__updown", "nui-textbox-number__down-button"], ["nui-button", "", "type", "button", "displayStyle", "action", "icon", "caret-down", "aria-label", "Down", 3, "isRepeat", "disabled", "click"]],
+        vars: 21,
+        consts: [[1, "nui-textbox", "nui-textbox-number"], [1, "has-feedback", 3, "ngStyle"], ["step", "any", "type", "number", "aria-label", "Textbox number input", 1, "form-control", "input-control", "nui-textbox__input", 3, "disabled", "ngModel", "ngModelOptions", "min", "max", "placeholder", "readonly", "ngModelChange", "blur", "keydown", "paste"], ["numberInput", ""], [1, "nui-textbox-number__buttons"], [1, "nui-textbox-number__updown", "nui-textbox-number__up-button"], ["nui-button", "", "type", "button", "displayStyle", "action", "icon", "caret-up", "aria-label", "Up", 3, "isRepeat", "disabled", "click"], [1, "nui-textbox-number__updown", "nui-textbox-number__updown-divider"], [1, "nui-textbox-number__updown", "nui-textbox-number__down-button"], ["nui-button", "", "type", "button", "displayStyle", "action", "icon", "caret-down", "aria-label", "Down", 3, "isRepeat", "disabled", "click"]],
         template: function TextboxNumberComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -31112,13 +31124,13 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngStyle", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction2"](21, _c1, ctx.customBoxWidth, ctx.customBoxWidth));
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngStyle", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction2"](17, _c1, ctx.customBoxWidth, ctx.customBoxWidth));
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("disabled", ctx.disabled)("ngModel", ctx.value)("ngModelOptions", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](24, _c2))("min", ctx.minValue)("max", ctx.maxValue)("placeholder", ctx.placeholder)("readonly", ctx.readonly);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("disabled", ctx.disabled)("ngModel", ctx.value)("ngModelOptions", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](20, _c2))("min", ctx.minValue)("max", ctx.maxValue)("placeholder", ctx.placeholder)("readonly", ctx.readonly);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("name", ctx.name)("aria-valuemin", ctx.minValue || null)("aria-valuemax", ctx.maxValue || null)("aria-valuenow", ctx.value || null)("aria-label", ctx.ariaLabel);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("name", ctx.name);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
 
@@ -34123,55 +34135,49 @@
       /* harmony import */
 
 
-      var _pipes_highlight_pipe__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-      /*! ../../pipes/highlight.pipe */
-      "ZlWS");
-      /* harmony import */
-
-
-      var _button_button_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      var _button_button_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! ../button/button.module */
       "NlXT");
       /* harmony import */
 
 
-      var _icon_icon_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      var _icon_icon_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! ../icon/icon.module */
       "mmWn");
       /* harmony import */
 
 
-      var _menu_menu_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      var _menu_menu_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! ../menu/menu.module */
       "kc1z");
       /* harmony import */
 
 
-      var _popup_popup_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      var _popup_popup_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! ../popup/popup.module */
       "rHGt");
       /* harmony import */
 
 
-      var _textbox_textbox_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      var _textbox_textbox_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! ../textbox/textbox.module */
       "zmwP");
       /* harmony import */
 
 
-      var _combobox_combobox_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      var _combobox_combobox_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! ./combobox/combobox.component */
       "KXc3");
       /* harmony import */
 
 
-      var _select_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      var _select_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! ./select.component */
       "8Za4");
       /* harmony import */
 
 
-      var _angular_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+      var _angular_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
       /*! @angular/core */
       "fXoL"); // eslint-disable-next-line max-len
 
@@ -34182,22 +34188,22 @@
         _classCallCheck(this, NuiSelectModule);
       };
 
-      NuiSelectModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdefineNgModule"]({
+      NuiSelectModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdefineNgModule"]({
         type: NuiSelectModule
       });
-      NuiSelectModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdefineInjector"]({
+      NuiSelectModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdefineInjector"]({
         factory: function NuiSelectModule_Factory(t) {
           return new (t || NuiSelectModule)();
         },
         providers: [],
-        imports: [[_common_common_module__WEBPACK_IMPORTED_MODULE_1__["NuiCommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["ReactiveFormsModule"], _popup_popup_module__WEBPACK_IMPORTED_MODULE_6__["NuiPopupModule"], _icon_icon_module__WEBPACK_IMPORTED_MODULE_4__["NuiIconModule"], _textbox_textbox_module__WEBPACK_IMPORTED_MODULE_7__["NuiTextboxModule"], _button_button_module__WEBPACK_IMPORTED_MODULE_3__["NuiButtonModule"], _menu_menu_module__WEBPACK_IMPORTED_MODULE_5__["NuiMenuModule"]], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["ReactiveFormsModule"]]
+        imports: [[_common_common_module__WEBPACK_IMPORTED_MODULE_1__["NuiCommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["ReactiveFormsModule"], _popup_popup_module__WEBPACK_IMPORTED_MODULE_5__["NuiPopupModule"], _icon_icon_module__WEBPACK_IMPORTED_MODULE_3__["NuiIconModule"], _textbox_textbox_module__WEBPACK_IMPORTED_MODULE_6__["NuiTextboxModule"], _button_button_module__WEBPACK_IMPORTED_MODULE_2__["NuiButtonModule"], _menu_menu_module__WEBPACK_IMPORTED_MODULE_4__["NuiMenuModule"]], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["ReactiveFormsModule"]]
       });
 
       (function () {
-        (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵsetNgModuleScope"](NuiSelectModule, {
-          declarations: [_combobox_combobox_component__WEBPACK_IMPORTED_MODULE_8__["ComboboxComponent"], _select_component__WEBPACK_IMPORTED_MODULE_9__["SelectComponent"], _pipes_highlight_pipe__WEBPACK_IMPORTED_MODULE_2__["HighlightPipe"]],
-          imports: [_common_common_module__WEBPACK_IMPORTED_MODULE_1__["NuiCommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["ReactiveFormsModule"], _popup_popup_module__WEBPACK_IMPORTED_MODULE_6__["NuiPopupModule"], _icon_icon_module__WEBPACK_IMPORTED_MODULE_4__["NuiIconModule"], _textbox_textbox_module__WEBPACK_IMPORTED_MODULE_7__["NuiTextboxModule"], _button_button_module__WEBPACK_IMPORTED_MODULE_3__["NuiButtonModule"], _menu_menu_module__WEBPACK_IMPORTED_MODULE_5__["NuiMenuModule"]],
-          exports: [_combobox_combobox_component__WEBPACK_IMPORTED_MODULE_8__["ComboboxComponent"], _select_component__WEBPACK_IMPORTED_MODULE_9__["SelectComponent"], _pipes_highlight_pipe__WEBPACK_IMPORTED_MODULE_2__["HighlightPipe"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["ReactiveFormsModule"]]
+        (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵsetNgModuleScope"](NuiSelectModule, {
+          declarations: [_combobox_combobox_component__WEBPACK_IMPORTED_MODULE_7__["ComboboxComponent"], _select_component__WEBPACK_IMPORTED_MODULE_8__["SelectComponent"]],
+          imports: [_common_common_module__WEBPACK_IMPORTED_MODULE_1__["NuiCommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["ReactiveFormsModule"], _popup_popup_module__WEBPACK_IMPORTED_MODULE_5__["NuiPopupModule"], _icon_icon_module__WEBPACK_IMPORTED_MODULE_3__["NuiIconModule"], _textbox_textbox_module__WEBPACK_IMPORTED_MODULE_6__["NuiTextboxModule"], _button_button_module__WEBPACK_IMPORTED_MODULE_2__["NuiButtonModule"], _menu_menu_module__WEBPACK_IMPORTED_MODULE_4__["NuiMenuModule"]],
+          exports: [_combobox_combobox_component__WEBPACK_IMPORTED_MODULE_7__["ComboboxComponent"], _select_component__WEBPACK_IMPORTED_MODULE_8__["SelectComponent"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["ReactiveFormsModule"]]
         });
       })();
       /***/
@@ -44663,7 +44669,7 @@
           this.isInErrorState = false;
           /** Input to set aria label text */
 
-          this.ariaLabel = "";
+          this.ariaLabel = "Time Picker";
           /** Allows popup box to be attached to document.body */
 
           this.appendToBody = false;
@@ -45401,7 +45407,9 @@
         if (rf & 2) {
           var ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpureFunction1"](3, _c0, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipeBind1"](1, 1, ctx_r0.empty$)));
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpureFunction1"](4, _c0, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipeBind1"](1, 2, ctx_r0.empty$)));
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵattribute"]("role", ctx_r0.roleAttr || null);
         }
       }
 
@@ -45615,12 +45623,12 @@
         ngContentSelectors: _c1,
         decls: 1,
         vars: 0,
-        consts: [["cdk-portal", ""], ["role", "roleAttr", 1, "nui-overlay", 3, "ngClass"]],
+        consts: [["cdk-portal", ""], [1, "nui-overlay", 3, "ngClass"]],
         template: function OverlayComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵprojectionDef"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](0, OverlayComponent_ng_template_0_Template, 3, 5, "ng-template", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](0, OverlayComponent_ng_template_0_Template, 3, 6, "ng-template", 0);
           }
         },
         directives: [_angular_cdk_portal__WEBPACK_IMPORTED_MODULE_1__["TemplatePortalDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_13__["NgClass"]],
@@ -49400,7 +49408,7 @@
         ngContentSelectors: _c2,
         decls: 10,
         vars: 15,
-        consts: [[1, "nui-expander"], ["role", "button", 1, "nui-expander__header", 3, "click"], ["aria-hidden", "true", 1, "nui-expander__header-icon", 3, "iconColor", "icon"], [1, "nui-expander__header-content-wrapper"], [1, "nui-expander__custom-header"], ["customHeaderContent", ""], ["class", "nui-expander__header-content", 3, "nui-expander__header-content--with-icon", 4, "ngIf"], ["role", "region", 1, "nui-expander__body-wrapper"], ["class", "nui-expander__body", 3, "hide-left-border", 4, "ngIf"], [1, "nui-expander__header-content"], ["class", "nui-expander__header-content-icon", 3, "icon", 4, "ngIf"], [1, "nui-expander__header-title"], [1, "nui-expander__header-content-icon", 3, "icon"], [1, "nui-expander__body"]],
+        consts: [[1, "nui-expander"], ["role", "button", "aria-label", "Expander toggle", 1, "nui-expander__header", 3, "click"], ["aria-hidden", "true", 1, "nui-expander__header-icon", 3, "iconColor", "icon"], [1, "nui-expander__header-content-wrapper"], [1, "nui-expander__custom-header"], ["customHeaderContent", ""], ["class", "nui-expander__header-content", 3, "nui-expander__header-content--with-icon", 4, "ngIf"], ["role", "region", 1, "nui-expander__body-wrapper"], ["class", "nui-expander__body", 3, "hide-left-border", 4, "ngIf"], [1, "nui-expander__header-content"], ["class", "nui-expander__header-content-icon", 3, "icon", 4, "ngIf"], [1, "nui-expander__header-title"], [1, "nui-expander__header-content-icon", 3, "icon"], [1, "nui-expander__body"]],
         template: function ExpanderComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"](_c1);
@@ -53873,7 +53881,7 @@
            * Input to set aria label text
            */
 
-          this.ariaLabel = "";
+          this.ariaLabel = "Textbox input";
           /**
            * Event fired when textbox is focused out.
            */
@@ -56414,7 +56422,7 @@
            * Input to set aria label text
            */
 
-          this.ariaLabel = "";
+          this.ariaLabel = "Checkbox Group";
           /**
            * Input to set aria label text
            */
@@ -56886,11 +56894,8 @@
           value: function ngAfterContentInit() {
             var _this196 = this;
 
-            // Mark the component for change detection whenever the content children query changes
-            this._steps.changes.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["takeUntil"])(this._destroyed)).subscribe(function () {
-              _this196.steps.reset(_this196._steps);
-
-              _this196._stateChanged();
+            this.steps.changes.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["takeUntil"])(this._destroyed)).subscribe(function () {
+              return _this196._stateChanged();
             });
 
             this._animationDone.pipe( // This needs a `distinctUntilChanged` in order to avoid emitting the same event twice due
@@ -56924,12 +56929,15 @@
         contentQueries: function WizardDirective_ContentQueries(rf, ctx, dirIndex) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵcontentQuery"](dirIndex, WizardStepV2Component, 1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵcontentQuery"](dirIndex, WizardStepV2Component, 1);
           }
 
           if (rf & 2) {
             var _t;
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx._steps = _t);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx.steps = _t);
           }
         },
         viewQuery: function WizardDirective_Query(rf, ctx) {
@@ -57789,6 +57797,7 @@
           this.document = document;
           this.width = "auto";
           this.appendToBody = false;
+          this.ariaLabel = "Popup";
           this.opened = new _angular_core__WEBPACK_IMPORTED_MODULE_2__["EventEmitter"]();
           this._overlayConfig = ADAPTER_OVERLAY_CONFIG;
           this.destroy$ = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
@@ -58110,6 +58119,12 @@
           }
         },
         hostAttrs: ["role", "dialog", 1, "nui-popup"],
+        hostVars: 1,
+        hostBindings: function PopupComponent_HostBindings(rf, ctx) {
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵattribute"]("aria-label", ctx.ariaLabel);
+          }
+        },
         inputs: {
           width: "width",
           overlayConfig: "overlayConfig",
@@ -58120,6 +58135,7 @@
           appendToBody: "appendToBody",
           baseElementSelector: "baseElementSelector",
           isHostToggleRef: "isHostToggleRef",
+          ariaLabel: "ariaLabel",
           isOpen: "isOpen",
           visible: "visible"
         },
@@ -59217,7 +59233,7 @@
           this.cd = cd;
           /** Input to set aria label text */
 
-          this.ariaLabel = "";
+          this.ariaLabel = "Date Picker";
           /** sets date-picker mode, supports: `day`, `month`, `year` */
 
           this.datepickerMode = "day";
@@ -61137,6 +61153,7 @@
           this.logger = logger;
           this.popupContainer = popupContainer;
           this.isOpen = false;
+          this.ariaLabel = "Popup";
           this.opened = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
           this.popupSubscriptions = [];
           /**
@@ -61339,6 +61356,12 @@
           }
         },
         hostAttrs: ["role", "dialog", 1, "nui-popup"],
+        hostVars: 1,
+        hostBindings: function PopupDeprecatedComponent_HostBindings(rf, ctx) {
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-label", ctx.ariaLabel);
+          }
+        },
         inputs: {
           width: "width",
           contextClass: "contextClass",
@@ -61347,7 +61370,8 @@
           manualOpenControl: "manualOpenControl",
           directionTop: "directionTop",
           directionRight: "directionRight",
-          baseElementSelector: "baseElementSelector"
+          baseElementSelector: "baseElementSelector",
+          ariaLabel: "ariaLabel"
         },
         outputs: {
           opened: "opened"

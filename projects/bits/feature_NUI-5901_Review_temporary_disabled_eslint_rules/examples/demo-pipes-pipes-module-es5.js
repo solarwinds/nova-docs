@@ -42,7 +42,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import { NgModule } from \"@angular/core\";\nimport { RouterModule } from \"@angular/router\";\nimport { DEMO_PATH_TOKEN, NuiDocsModule, NuiSearchModule, NuiSelectModule } from \"@nova-ui/bits\";\n\nimport { HighlightPipeDocsExampleComponent, HighlightPipeExampleComponent } from \"./index\";\n\nconst routes = [\n    {\n        path: \"\",\n        component: HighlightPipeDocsExampleComponent,\n    },\n    {\n        path: \"highlight-pipe\",\n        component: HighlightPipeDocsExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n            showThemeSwitcher: true,\n        },\n    },\n];\n\n@NgModule({\n    imports: [\n        NuiDocsModule,\n        NuiSearchModule,\n        NuiSelectModule,\n        RouterModule.forChild(routes),\n    ],\n    declarations: [\n        HighlightPipeExampleComponent,\n        HighlightPipeDocsExampleComponent,\n    ],\n    providers: [\n        {\n            provide: DEMO_PATH_TOKEN,\n            useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/),\n        },\n    ],\n    exports: [\n        RouterModule,\n    ],\n})\nexport class PipesModule {\n}\n";
+      __webpack_exports__["default"] = "import { NgModule } from \"@angular/core\";\nimport { RouterModule } from \"@angular/router\";\nimport { DEMO_PATH_TOKEN, NuiDocsModule, NuiSearchModule, NuiCommonModule } from \"@nova-ui/bits\";\n\nimport { HighlightPipeDocsExampleComponent, HighlightPipeExampleComponent } from \"./index\";\n\nconst routes = [\n    {\n        path: \"\",\n        component: HighlightPipeDocsExampleComponent,\n    },\n    {\n        path: \"highlight-pipe\",\n        component: HighlightPipeDocsExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n            showThemeSwitcher: true,\n        },\n    },\n];\n\n@NgModule({\n    imports: [\n        NuiDocsModule,\n        NuiSearchModule,\n        NuiCommonModule,\n        RouterModule.forChild(routes),\n    ],\n    declarations: [\n        HighlightPipeExampleComponent,\n        HighlightPipeDocsExampleComponent,\n    ],\n    providers: [\n        {\n            provide: DEMO_PATH_TOKEN,\n            useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/),\n        },\n    ],\n    exports: [\n        RouterModule,\n    ],\n})\nexport class PipesModule {\n}\n";
       /***/
     },
 
@@ -365,13 +365,13 @@
             return __webpack_require__("i/3M");
           }
         }],
-        imports: [[_nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiDocsModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiSearchModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiSelectModule"], _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"].forChild(routes)], _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]]
+        imports: [[_nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiDocsModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiSearchModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiCommonModule"], _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"].forChild(routes)], _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]]
       });
 
       (function () {
         (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵsetNgModuleScope"](PipesModule, {
           declarations: [_index__WEBPACK_IMPORTED_MODULE_2__["HighlightPipeExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_2__["HighlightPipeDocsExampleComponent"]],
-          imports: [_nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiDocsModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiSearchModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiSelectModule"], _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]],
+          imports: [_nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiDocsModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiSearchModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiCommonModule"], _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]],
           exports: [_angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]]
         });
       })();

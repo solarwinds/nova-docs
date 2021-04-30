@@ -1370,7 +1370,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h2>Required Modules</h2>\n<ul>\n    <li>\n        <code>NuiWizardModule</code>\n    </li>\n</ul>\n<h2>Basic Usage</h2>\n\n<p>\n    To use the wizard component, place a <code>nui-wizard</code> element in your template and include one or more\n    <code><a href=\"../components/WizardStepComponent.html\" target=\"_blank\">nui-wizard-step</a></code> elements as children of the\n    <code>nui-wizard</code> element.\n</p>\n<nui-message type=\"info\" [allowDismiss]=\"false\">\n    <strong>Note:</strong> To specify a label for the finish button of the last step, specify a value for the\n    <code>nui-wizard</code>'s <code>finishText</code> input.\n</nui-message>\n<nui-example-wrapper filenamePrefix=\"wizard-simple\" exampleTitle=\"Simple wizard\">\n    <nui-wizard-simple-example></nui-wizard-simple-example>\n</nui-example-wrapper>\n\n<h2>Usage with a dialog</h2>\n<p>You can pass an existing wizard component as content of the dialog window. </p>\n<p>You should insert wizard component in dialog body. </p>\n<nui-example-wrapper filenamePrefix=\"wizard-dialog\" exampleTitle=\"wizard in dialog\">\n    <nui-wizard-dialog-example></nui-wizard-dialog-example>\n</nui-example-wrapper>\n<h2>Busy step</h2>\n<p>You can make your step busy to forbid actions.</p>\n<p>You should pass 'busyConfig' (look at type 'IBusyConfig') to 'navigationControl' method of wizard step to make it work.</p>\n<nui-example-wrapper filenamePrefix=\"wizard-busy\" exampleTitle=\"wizard step busy\">\n    <nui-wizard-busy-example></nui-wizard-busy-example>\n</nui-example-wrapper>\n<h2>Validation</h2>\n<p>You can use any custom input validation to wizard step.</p>\n<p>To forbid passing to next step while form is not valid you should pass boolean value to next step's property 'stepControl'.</p>\n<nui-example-wrapper filenamePrefix=\"wizard-validation\" exampleTitle=\"wizard step validation\">\n    <nui-wizard-validation-example></nui-wizard-validation-example>\n</nui-example-wrapper>\n<h2>Disabled step</h2>\n<p>You can disable wizard step to forbid user switch to this step.</p>\n<p>To make step disabled you should use wizard method 'disableStep' and pass wizardStep component to it.</p>\n<nui-example-wrapper filenamePrefix=\"wizard-disabled\" exampleTitle=\"wizard step disable\">\n    <nui-wizard-disabled-example></nui-wizard-disabled-example>\n</nui-example-wrapper>\n<h2>Hide/show step</h2>\n<p>You can hide or show wizard steps.</p>\n<p>To make it you should use wizard methods 'hideStep', 'showStep' and pass wizardStepComponent to it.</p>\n<nui-example-wrapper filenamePrefix=\"wizard-hide\" exampleTitle=\"wizard step hide/show\">\n    <nui-wizard-hide-example></nui-wizard-hide-example>\n</nui-example-wrapper>\n<h2>Adding step dynamically</h2>\n<p>You are able to add wizard steps dynamically</p>\n<p>To make it you should use wizard method 'addStepDynamic' and pass 2 arguments wizardStepComponent and index to insert it in correct place.</p>\n<p><strong>Note:</strong> Angular doesn't allow binding to outputs of dynamically created component from template. You can access outputs of\n    <code><a href=\"../components/WizardStepComponent.html\" target=\"_blank\">nui-wizard-step</a></code> directly.<code>addStepDynamic</code> method of Wizard\nreturns you instance of dynamically added step and you can manually subscribe to outputs like <code>enter</code>,<code>exit</code> etc.\n</p>\n<nui-example-wrapper filenamePrefix=\"wizard-dynamic\" exampleTitle=\"wizard add dynamic step\">\n    <nui-wizard-dynamic-example></nui-wizard-dynamic-example>\n</nui-example-wrapper>\n<h2>Remove step dynamically</h2>\n<p>You are able to remove wizard steps dynamically</p>\n<p>To make it you should use wizard method 'removeStep' and pass index</p>\n<p><strong>Note:</strong> Your couldn't remove first (0 index) step</p>\n<nui-example-wrapper filenamePrefix=\"wizard-dynamic-remove\" exampleTitle=\"wizard remove dynamic step\">\n<nui-wizard-dynamic-remove-example></nui-wizard-dynamic-remove-example>\n</nui-example-wrapper>\n<h2>Additional button in footer example</h2>\n<p>You are able to provide additional button in footer of wizard.</p>\n<p>To do it you should provide nui-button as a content of nui-wizard component.</p>\n<nui-example-wrapper filenamePrefix=\"wizard-additional-button\" exampleTitle=\"wizard additional button\">\n    <nui-wizard-additional-button-example></nui-wizard-additional-button-example>\n</nui-example-wrapper>\n<h2>Confirmation dialog</h2>\n<p>To implement confirmation dialog you should use method 'confirm' from dialog service and call it from outputs such as 'onCancel' or 'onFinish'.</p>\n<p>By default UX suggestion 'onCancel' output sends boolean event which is false when user is on first step.</p>\n<p>On this example confirmation dialog represents default UX behavior and does not appear on first wizard step.</p>\n<nui-example-wrapper filenamePrefix=\"wizard-confirmation-dialog\" exampleTitle=\"wizard confirmation dialog\">\n    <nui-wizard-confirmation-dialog-example></nui-wizard-confirmation-dialog-example>\n</nui-example-wrapper>\n<h2>Constant height</h2>\n<p>\n    To make the height of the wizard constant for all steps and have the body of a step scroll vertically if it extends beyond the fixed height, set the\n    <code>enableScroll</code> input to true and set the desired height of the wizard body container using the <code>bodyContainerHeight</code> input.\n</p>\n<p>\n    Supported values of <code>bodyContainerHeight</code> are the same as in CSS. For example: 100px, 5vh, etc.\n</p>\n<nui-example-wrapper filenamePrefix=\"wizard-constant-height\" exampleTitle=\"wizard constant height\">\n    <nui-wizard-constant-height-example></nui-wizard-constant-height-example>\n</nui-example-wrapper>\n<h2>Stretched steps line width</h2>\n<p>\n    To make the width of the steps line stretch according to the largest of step labels, use <code>stretchStepLines</code> input.\n    With it set to <code>true</code>, wizard will calculate the width of the largest label and adjust all the lines so the labels don't overflow.\n</p>\n<nui-example-wrapper filenamePrefix=\"wizard-custom-step-line-width\" exampleTitle=\"wizard custom steps label width\">\n    <nui-wizard-custom-step-line-width></nui-wizard-custom-step-line-width>\n</nui-example-wrapper>\n\n<h2>Wizard steps combination</h2>\n<p>\n    You can provide a combination of static and dynamic steps of the wizard.\n    See example below:\n</p>\n<nui-example-wrapper filenamePrefix=\"wizard-steps\" exampleTitle=\"wizard steps combination\">\n    <nui-wizard-steps-example></nui-wizard-steps-example>\n</nui-example-wrapper>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<h2>Required Modules</h2>\n<ul>\n    <li>\n        <code>NuiWizardModule</code>\n    </li>\n</ul>\n<h2>Basic Usage</h2>\n\n<p>\n    To use the wizard component, place a <code>nui-wizard</code> element in your template and include one or more\n    <code><a href=\"../components/WizardStepComponent.html\" target=\"_blank\">nui-wizard-step</a></code> elements as children of the\n    <code>nui-wizard</code> element.\n</p>\n<nui-message type=\"info\" [allowDismiss]=\"false\">\n    <strong>Note:</strong> To specify a label for the finish button of the last step, specify a value for the\n    <code>nui-wizard</code>'s <code>finishText</code> input.\n</nui-message>\n<nui-example-wrapper filenamePrefix=\"wizard-simple\" exampleTitle=\"Simple wizard\">\n    <nui-wizard-simple-example></nui-wizard-simple-example>\n</nui-example-wrapper>\n\n<h2>Usage with a dialog</h2>\n<p>You can pass an existing wizard component as content of the dialog window. </p>\n<p>You should insert wizard component in dialog body. </p>\n<nui-example-wrapper filenamePrefix=\"wizard-dialog\" exampleTitle=\"wizard in dialog\">\n    <nui-wizard-dialog-example></nui-wizard-dialog-example>\n</nui-example-wrapper>\n<h2>Busy step</h2>\n<p>You can make your step busy to forbid actions.</p>\n<p>If you want to hide only step content you should pass 'busyConfig' (look at type 'IBusyConfig') to\n'navigationControl' method of wizard step to make it work.\n</p>\n<p> If you want to hide all Wizard content you need just wrap Wizard component on busy</p>\n<nui-example-wrapper filenamePrefix=\"wizard-busy\" exampleTitle=\"wizard step busy\">\n    <nui-wizard-busy-example></nui-wizard-busy-example>\n</nui-example-wrapper>\n<h2>Validation</h2>\n<p>You can use any custom input validation to wizard step.</p>\n<p>To forbid passing to next step while form is not valid you should pass boolean value to next step's property 'stepControl'.</p>\n<nui-example-wrapper filenamePrefix=\"wizard-validation\" exampleTitle=\"wizard step validation\">\n    <nui-wizard-validation-example></nui-wizard-validation-example>\n</nui-example-wrapper>\n<h2>Disabled step</h2>\n<p>You can disable wizard step to forbid user switch to this step.</p>\n<p>To make step disabled you should use wizard method 'disableStep' and pass wizardStep component to it.</p>\n<nui-example-wrapper filenamePrefix=\"wizard-disabled\" exampleTitle=\"wizard step disable\">\n    <nui-wizard-disabled-example></nui-wizard-disabled-example>\n</nui-example-wrapper>\n<h2>Hide/show step</h2>\n<p>You can hide or show wizard steps.</p>\n<p>To make it you should use wizard methods 'hideStep', 'showStep' and pass wizardStepComponent to it.</p>\n<nui-example-wrapper filenamePrefix=\"wizard-hide\" exampleTitle=\"wizard step hide/show\">\n    <nui-wizard-hide-example></nui-wizard-hide-example>\n</nui-example-wrapper>\n<h2>Adding step dynamically</h2>\n<p>You are able to add wizard steps dynamically</p>\n<p>To make it you should use wizard method 'addStepDynamic' and pass 2 arguments wizardStepComponent and index to insert it in correct place.</p>\n<p><strong>Note:</strong> Angular doesn't allow binding to outputs of dynamically created component from template. You can access outputs of\n    <code><a href=\"../components/WizardStepComponent.html\" target=\"_blank\">nui-wizard-step</a></code> directly.<code>addStepDynamic</code> method of Wizard\nreturns you instance of dynamically added step and you can manually subscribe to outputs like <code>enter</code>,<code>exit</code> etc.\n</p>\n<nui-example-wrapper filenamePrefix=\"wizard-dynamic\" exampleTitle=\"wizard add dynamic step\">\n    <nui-wizard-dynamic-example></nui-wizard-dynamic-example>\n</nui-example-wrapper>\n<h2>Remove step dynamically</h2>\n<p>You are able to remove wizard steps dynamically</p>\n<p>To make it you should use wizard method 'removeStep' and pass index</p>\n<p><strong>Note:</strong> Your couldn't remove first (0 index) step</p>\n<nui-example-wrapper filenamePrefix=\"wizard-dynamic-remove\" exampleTitle=\"wizard remove dynamic step\">\n<nui-wizard-dynamic-remove-example></nui-wizard-dynamic-remove-example>\n</nui-example-wrapper>\n<h2>Additional button in footer example</h2>\n<p>You are able to provide additional button in footer of wizard.</p>\n<p>To do it you should provide nui-button as a content of nui-wizard component.</p>\n<nui-example-wrapper filenamePrefix=\"wizard-additional-button\" exampleTitle=\"wizard additional button\">\n    <nui-wizard-additional-button-example></nui-wizard-additional-button-example>\n</nui-example-wrapper>\n<h2>Confirmation dialog</h2>\n<p>To implement confirmation dialog you should use method 'confirm' from dialog service and call it from outputs such as 'onCancel' or 'onFinish'.</p>\n<p>By default UX suggestion 'onCancel' output sends boolean event which is false when user is on first step.</p>\n<p>On this example confirmation dialog represents default UX behavior and does not appear on first wizard step.</p>\n<nui-example-wrapper filenamePrefix=\"wizard-confirmation-dialog\" exampleTitle=\"wizard confirmation dialog\">\n    <nui-wizard-confirmation-dialog-example></nui-wizard-confirmation-dialog-example>\n</nui-example-wrapper>\n<h2>Constant height</h2>\n<p>\n    To make the height of the wizard constant for all steps and have the body of a step scroll vertically if it extends beyond the fixed height, set the\n    <code>enableScroll</code> input to true and set the desired height of the wizard body container using the <code>bodyContainerHeight</code> input.\n</p>\n<p>\n    Supported values of <code>bodyContainerHeight</code> are the same as in CSS. For example: 100px, 5vh, etc.\n</p>\n<nui-example-wrapper filenamePrefix=\"wizard-constant-height\" exampleTitle=\"wizard constant height\">\n    <nui-wizard-constant-height-example></nui-wizard-constant-height-example>\n</nui-example-wrapper>\n<h2>Stretched steps line width</h2>\n<p>\n    To make the width of the steps line stretch according to the largest of step labels, use <code>stretchStepLines</code> input.\n    With it set to <code>true</code>, wizard will calculate the width of the largest label and adjust all the lines so the labels don't overflow.\n</p>\n<nui-example-wrapper filenamePrefix=\"wizard-custom-step-line-width\" exampleTitle=\"wizard custom steps label width\">\n    <nui-wizard-custom-step-line-width></nui-wizard-custom-step-line-width>\n</nui-example-wrapper>\n\n<h2>Wizard steps combination</h2>\n<p>\n    You can provide a combination of static and dynamic steps of the wizard.\n    See example below:\n</p>\n<nui-example-wrapper filenamePrefix=\"wizard-steps\" exampleTitle=\"wizard steps combination\">\n    <nui-wizard-steps-example></nui-wizard-steps-example>\n</nui-example-wrapper>\n");
 
 /***/ }),
 
@@ -1714,7 +1714,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ng-template #stepBusy>\n    <p i18n>Welcome!</p>\n</ng-template>\n<ng-template #step2>\n    <nui-checkbox name=\"nui-demo-checkbox\"\n                    i18n-title\n                    title=\"Check box with help text\"\n                    i18n-hint\n                    hint=\"This is some help text\"\n                    required=\"true\"\n                    [value]=\"false\"\n                    i18n>Check box with help text\n    </nui-checkbox>\n    <nui-checkbox name=\"nui-demo-checkbox-plain\"\n                    [checked]=\"true\"\n                    [value]=\"false\"\n                    i18n>Plain checkbox\n    </nui-checkbox>\n</ng-template>\n<nui-wizard #wizardComponent\n            id=\"nui-demo-wizard-busy\"\n            finishText=\"Finish\"\n            i18n-finishText>\n    <nui-wizard-step i18n-title title=\"Make step busy\" [stepTemplate]=\"stepBusy\"></nui-wizard-step>\n    <nui-wizard-step i18n-title title=\"Final\" [stepTemplate]=\"step2\"></nui-wizard-step>\n</nui-wizard>\n\n<button nui-button type=\"button\" id=\"nui-demo-busy-button\" (click)=\"toggleStepBusy()\" i18n>Toggle busy on current step</button>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ng-template #stepBusy>\n    <p i18n>Welcome!</p>\n</ng-template>\n<ng-template #step2>\n    <nui-checkbox name=\"nui-demo-checkbox\"\n                    i18n-title\n                    title=\"Check box with help text\"\n                    i18n-hint\n                    hint=\"This is some help text\"\n                    required=\"true\"\n                    [disabled]=\"isBusy\"\n                    [value]=\"false\"\n                    i18n>Check box with help text\n    </nui-checkbox>\n    <nui-checkbox name=\"nui-demo-checkbox-plain\"\n                    [checked]=\"true\"\n                    [value]=\"false\"\n                    [disabled]=\"isBusy\"\n                    i18n>Plain checkbox\n    </nui-checkbox>\n</ng-template>\n<div nui-busy [busy]=\"isBusy\">\n    <nui-wizard #wizardComponent\n                id=\"nui-demo-wizard-busy\"\n                finishText=\"Finish\"\n                i18n-finishText>\n        <nui-wizard-step i18n-title title=\"Make step busy\" [stepTemplate]=\"stepBusy\"></nui-wizard-step>\n        <nui-wizard-step i18n-title title=\"Final\" [stepTemplate]=\"step2\"></nui-wizard-step>\n    </nui-wizard>\n    <nui-spinner size=\"large\" message=\"Fetching data...\"></nui-spinner>\n</div>\n\n<button nui-button type=\"button\" id=\"nui-demo-busy-button\" (click)=\"toggleStepBusy()\" i18n>Toggle busy on current step</button>\n<button nui-button type=\"button\" (click)=\"toggleBusy()\">Toggle busy on all wizard content</button>\n");
 
 /***/ }),
 
@@ -1753,7 +1753,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { Component, ViewChild } from \"@angular/core\";\nimport { IBusyConfig, WizardComponent } from \"@nova-ui/bits\";\n\n@Component({\n    selector: \"nui-wizard-busy-example\",\n    templateUrl: \"./wizard-busy.example.component.html\",\n})\nexport class WizardBusyExampleComponent  {\n    @ViewChild(\"wizardComponent\") wizardComponent: WizardComponent;\n\n    public busyConfig: IBusyConfig = {\n        busy: false,\n        message: $localize `Step is busy`,\n    };\n\n    constructor() {}\n\n    public toggleStepBusy() {\n        this.busyConfig.busy = !this.busyConfig.busy;\n        this.wizardComponent.navigationControl.next({ busyState: this.busyConfig, allowStepChange: !this.busyConfig.busy});\n    }\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import { Component, ViewChild } from \"@angular/core\";\nimport { IBusyConfig, WizardComponent } from \"@nova-ui/bits\";\n\n@Component({\n    selector: \"nui-wizard-busy-example\",\n    templateUrl: \"./wizard-busy.example.component.html\",\n})\nexport class WizardBusyExampleComponent  {\n    @ViewChild(\"wizardComponent\") wizardComponent: WizardComponent;\n\n    public isBusy = false;\n\n    public busyConfig: IBusyConfig = {\n        busy: false,\n        message: $localize `Step is busy`,\n    };\n\n    constructor() {}\n\n    public toggleStepBusy() {\n        /* Switch off spinner of all content. Just to avoid two spinners */\n        this.isBusy = false;\n        this.busyConfig.busy = !this.busyConfig.busy;\n        this.wizardComponent.navigationControl.next({ busyState: this.busyConfig, allowStepChange: !this.busyConfig.busy});\n    }\n\n    public toggleBusy(): void {\n        /* Switch off spinner of step content. Just to avoid two spinners */\n        this.busyConfig.busy = false;\n        this.isBusy = !this.isBusy;\n    }\n}\n");
 
 /***/ }),
 
@@ -1769,10 +1769,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WizardBusyExampleComponent", function() { return WizardBusyExampleComponent; });
 /* harmony import */ var _nova_ui_bits__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @nova-ui/bits */ "b5Xb");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _src_lib_wizard_wizard_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../src/lib/wizard/wizard.component */ "23SV");
-/* harmony import */ var _src_lib_wizard_wizard_step_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../src/lib/wizard/wizard-step.component */ "cz7d");
-/* harmony import */ var _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../../src/lib/button/button.component */ "6urz");
-/* harmony import */ var _src_lib_checkbox_checkbox_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../../../src/lib/checkbox/checkbox.component */ "Oh8U");
+/* harmony import */ var _src_lib_busy_busy_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../src/lib/busy/busy.component */ "3XPh");
+/* harmony import */ var _src_lib_wizard_wizard_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../src/lib/wizard/wizard.component */ "23SV");
+/* harmony import */ var _src_lib_wizard_wizard_step_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../../src/lib/wizard/wizard-step.component */ "cz7d");
+/* harmony import */ var _src_lib_spinner_spinner_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../../../src/lib/spinner/spinner.component */ "NFOm");
+/* harmony import */ var _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../../../src/lib/button/button.component */ "6urz");
+/* harmony import */ var _src_lib_checkbox_checkbox_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../../../../src/lib/checkbox/checkbox.component */ "Oh8U");
+
+
 
 
 
@@ -1782,31 +1786,40 @@ __webpack_require__.r(__webpack_exports__);
 const _c0 = ["wizardComponent"];
 function WizardBusyExampleComponent_ng_template_0_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "p");
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵi18n"](1, 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵi18n"](1, 11);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } }
 function WizardBusyExampleComponent_ng_template_2_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-checkbox", 9);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵi18n"](1, 10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-checkbox", 12);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵi18n"](1, 13);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "nui-checkbox", 11);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵi18n"](3, 12);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "nui-checkbox", 14);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵi18n"](3, 15);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", false);
+    const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("disabled", ctx_r3.isBusy)("value", false);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("checked", true)("value", false);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("checked", true)("value", false)("disabled", ctx_r3.isBusy);
 } }
 class WizardBusyExampleComponent {
     constructor() {
+        this.isBusy = false;
         this.busyConfig = {
             busy: false,
             message: $localize `Step is busy`,
         };
     }
     toggleStepBusy() {
+        /* Switch off spinner of all content. Just to avoid two spinners */
+        this.isBusy = false;
         this.busyConfig.busy = !this.busyConfig.busy;
         this.wizardComponent.navigationControl.next({ busyState: this.busyConfig, allowStepChange: !this.busyConfig.busy });
+    }
+    toggleBusy() {
+        /* Switch off spinner of step content. Just to avoid two spinners */
+        this.busyConfig.busy = false;
+        this.isBusy = !this.isBusy;
     }
 }
 WizardBusyExampleComponent.ɵfac = function WizardBusyExampleComponent_Factory(t) { return new (t || WizardBusyExampleComponent)(); };
@@ -1815,7 +1828,7 @@ WizardBusyExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["�
     } if (rf & 2) {
         let _t;
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx.wizardComponent = _t.first);
-    } }, decls: 10, vars: 2, consts: function () { let i18n_1; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+    } }, decls: 14, vars: 3, consts: function () { let i18n_1; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
         const MSG_EXTERNAL_65984904390749158$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_WIZARD_BUSY_WIZARD_BUSY_EXAMPLE_COMPONENT_TS_2 = goog.getMsg("Finish");
         i18n_1 = MSG_EXTERNAL_65984904390749158$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_WIZARD_BUSY_WIZARD_BUSY_EXAMPLE_COMPONENT_TS_2;
     }
@@ -1869,25 +1882,34 @@ WizardBusyExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["�
     }
     else {
         i18n_17 = $localize `:␟4279bb41f011a36dde2569b52bd9296a94480c6e␟7797723356051242784:Plain checkbox `;
-    } return [["stepBusy", ""], ["step2", ""], ["id", "nui-demo-wizard-busy", "finishText", i18n_1], ["wizardComponent", ""], ["title", i18n_3, 3, "stepTemplate"], ["title", i18n_5, 3, "stepTemplate"], ["nui-button", "", "type", "button", "id", "nui-demo-busy-button", 3, "click"], i18n_7, i18n_9, ["name", "nui-demo-checkbox", "title", i18n_11, "hint", i18n_13, "required", "true", 3, "value"], i18n_15, ["name", "nui-demo-checkbox-plain", 3, "checked", "value"], i18n_17]; }, template: function WizardBusyExampleComponent_Template(rf, ctx) { if (rf & 1) {
+    } return [["stepBusy", ""], ["step2", ""], ["nui-busy", "", 3, "busy"], ["id", "nui-demo-wizard-busy", "finishText", i18n_1], ["wizardComponent", ""], ["title", i18n_3, 3, "stepTemplate"], ["title", i18n_5, 3, "stepTemplate"], ["size", "large", "message", "Fetching data..."], ["nui-button", "", "type", "button", "id", "nui-demo-busy-button", 3, "click"], i18n_7, ["nui-button", "", "type", "button", 3, "click"], i18n_9, ["name", "nui-demo-checkbox", "title", i18n_11, "hint", i18n_13, "required", "true", 3, "disabled", "value"], i18n_15, ["name", "nui-demo-checkbox-plain", 3, "checked", "value", "disabled"], i18n_17]; }, template: function WizardBusyExampleComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](0, WizardBusyExampleComponent_ng_template_0_Template, 2, 0, "ng-template", null, 0, _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplateRefExtractor"]);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](2, WizardBusyExampleComponent_ng_template_2_Template, 4, 3, "ng-template", null, 1, _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplateRefExtractor"]);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](4, "nui-wizard", 2, 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](6, "nui-wizard-step", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](2, WizardBusyExampleComponent_ng_template_2_Template, 4, 5, "ng-template", null, 1, _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplateRefExtractor"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](4, "div", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "nui-wizard", 3, 4);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](7, "nui-wizard-step", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](8, "nui-wizard-step", 6);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](8, "button", 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function WizardBusyExampleComponent_Template_button_click_8_listener() { return ctx.toggleStepBusy(); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵi18n"](9, 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](9, "nui-spinner", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](10, "button", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function WizardBusyExampleComponent_Template_button_click_10_listener() { return ctx.toggleStepBusy(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵi18n"](11, 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](12, "button", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function WizardBusyExampleComponent_Template_button_click_12_listener() { return ctx.toggleBusy(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](13, "Toggle busy on all wizard content");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     } if (rf & 2) {
         const _r0 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵreference"](1);
         const _r2 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵreference"](3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("busy", ctx.isBusy);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("stepTemplate", _r0);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("stepTemplate", _r2);
-    } }, directives: [_src_lib_wizard_wizard_component__WEBPACK_IMPORTED_MODULE_2__["WizardComponent"], _src_lib_wizard_wizard_step_component__WEBPACK_IMPORTED_MODULE_3__["WizardStepComponent"], _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_4__["ButtonComponent"], _src_lib_checkbox_checkbox_component__WEBPACK_IMPORTED_MODULE_5__["CheckboxComponent"]], encapsulation: 2 });
+    } }, directives: [_src_lib_busy_busy_component__WEBPACK_IMPORTED_MODULE_2__["BusyComponent"], _src_lib_wizard_wizard_component__WEBPACK_IMPORTED_MODULE_3__["WizardComponent"], _src_lib_wizard_wizard_step_component__WEBPACK_IMPORTED_MODULE_4__["WizardStepComponent"], _src_lib_spinner_spinner_component__WEBPACK_IMPORTED_MODULE_5__["SpinnerComponent"], _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_6__["ButtonComponent"], _src_lib_checkbox_checkbox_component__WEBPACK_IMPORTED_MODULE_7__["CheckboxComponent"]], encapsulation: 2 });
 
 
 /***/ }),
@@ -1914,7 +1936,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { NgModule } from \"@angular/core\";\nimport { FormsModule, ReactiveFormsModule } from \"@angular/forms\";\nimport { RouterModule } from \"@angular/router\";\nimport {\n    DEMO_PATH_TOKEN,\n    NuiButtonModule,\n    NuiCheckboxModule,\n    NuiDialogModule,\n    NuiDocsModule,\n    NuiFormFieldModule,\n    NuiMessageModule,\n    NuiRadioModule,\n    NuiTextboxModule,\n    NuiValidationMessageModule,\n    NuiWizardModule,\n    SrlcStage,\n} from \"@nova-ui/bits\";\n\nimport {\n    WizardAdditionalButtonExampleComponent,\n    WizardBusyExampleComponent,\n    WizardConfirmationDialogExampleComponent,\n    WizardConstantHeightExampleComponent,\n    WizardCustomStepLineWidthComponent,\n    WizardDialogExampleComponent,\n    WizardDisabledExampleComponent,\n    WizardDynamicExampleComponent,\n    WizardExampleComponent,\n    WizardHiddenExampleComponent,\n    WizardSimpleExampleComponent,\n    WizardStepsExampleComponent,\n    WizardValidationExampleComponent,\n    WizardVisualTestComponent,\n    WizardDynamicRemoveExampleComponent,\n} from \"./index\";\n\nconst routes = [\n    {\n        path: \"\",\n        component: WizardExampleComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.ga,\n            },\n            showThemeSwitcher: true,\n        },\n    },\n    {\n        path: \"wizard-test\",\n        component: WizardExampleComponent,\n    },\n    {\n        path: \"wizard-visual-test\",\n        component: WizardVisualTestComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"wizard-steps\",\n        component: WizardStepsExampleComponent,\n    },\n];\n\n@NgModule({\n    imports: [\n        NuiButtonModule,\n        NuiWizardModule,\n        NuiMessageModule,\n        NuiDocsModule,\n        NuiTextboxModule,\n        NuiRadioModule,\n        NuiCheckboxModule,\n        NuiDialogModule,\n        NuiValidationMessageModule,\n        NuiFormFieldModule,\n        FormsModule,\n        ReactiveFormsModule,\n        RouterModule.forChild(routes),\n    ],\n    declarations: [\n        WizardAdditionalButtonExampleComponent,\n        WizardBusyExampleComponent,\n        WizardConfirmationDialogExampleComponent,\n        WizardConstantHeightExampleComponent,\n        WizardDialogExampleComponent,\n        WizardDisabledExampleComponent,\n        WizardDynamicExampleComponent,\n        WizardExampleComponent,\n        WizardHiddenExampleComponent,\n        WizardSimpleExampleComponent,\n        WizardValidationExampleComponent,\n        WizardVisualTestComponent,\n        WizardCustomStepLineWidthComponent,\n        WizardDynamicRemoveExampleComponent,\n        WizardStepsExampleComponent,\n    ],\n    providers: [\n        {\n            provide: DEMO_PATH_TOKEN,\n            useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/),\n        },\n    ],\n    exports: [\n        RouterModule,\n    ],\n})\nexport class WizardModule {\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import { NgModule } from \"@angular/core\";\nimport { FormsModule, ReactiveFormsModule } from \"@angular/forms\";\nimport { RouterModule } from \"@angular/router\";\nimport {\n    DEMO_PATH_TOKEN,\n    NuiButtonModule,\n    NuiCheckboxModule,\n    NuiDialogModule,\n    NuiDocsModule,\n    NuiFormFieldModule,\n    NuiMessageModule,\n    NuiRadioModule,\n    NuiTextboxModule,\n    NuiValidationMessageModule,\n    NuiWizardModule,\n    SrlcStage,\n    NuiBusyModule,\n    NuiSpinnerModule,\n} from \"@nova-ui/bits\";\n\nimport {\n    WizardAdditionalButtonExampleComponent,\n    WizardBusyExampleComponent,\n    WizardConfirmationDialogExampleComponent,\n    WizardConstantHeightExampleComponent,\n    WizardCustomStepLineWidthComponent,\n    WizardDialogExampleComponent,\n    WizardDisabledExampleComponent,\n    WizardDynamicExampleComponent,\n    WizardExampleComponent,\n    WizardHiddenExampleComponent,\n    WizardSimpleExampleComponent,\n    WizardStepsExampleComponent,\n    WizardValidationExampleComponent,\n    WizardVisualTestComponent,\n    WizardDynamicRemoveExampleComponent,\n} from \"./index\";\n\nconst routes = [\n    {\n        path: \"\",\n        component: WizardExampleComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.ga,\n            },\n            showThemeSwitcher: true,\n        },\n    },\n    {\n        path: \"wizard-test\",\n        component: WizardExampleComponent,\n    },\n    {\n        path: \"wizard-visual-test\",\n        component: WizardVisualTestComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"wizard-steps\",\n        component: WizardStepsExampleComponent,\n    },\n];\n\n@NgModule({\n    imports: [\n        NuiButtonModule,\n        NuiWizardModule,\n        NuiMessageModule,\n        NuiDocsModule,\n        NuiTextboxModule,\n        NuiRadioModule,\n        NuiCheckboxModule,\n        NuiDialogModule,\n        NuiValidationMessageModule,\n        NuiFormFieldModule,\n        FormsModule,\n        ReactiveFormsModule,\n        RouterModule.forChild(routes),\n        NuiBusyModule,\n        NuiSpinnerModule,\n    ],\n    declarations: [\n        WizardAdditionalButtonExampleComponent,\n        WizardBusyExampleComponent,\n        WizardConfirmationDialogExampleComponent,\n        WizardConstantHeightExampleComponent,\n        WizardDialogExampleComponent,\n        WizardDisabledExampleComponent,\n        WizardDynamicExampleComponent,\n        WizardExampleComponent,\n        WizardHiddenExampleComponent,\n        WizardSimpleExampleComponent,\n        WizardValidationExampleComponent,\n        WizardVisualTestComponent,\n        WizardCustomStepLineWidthComponent,\n        WizardDynamicRemoveExampleComponent,\n        WizardStepsExampleComponent,\n    ],\n    providers: [\n        {\n            provide: DEMO_PATH_TOKEN,\n            useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/),\n        },\n    ],\n    exports: [\n        RouterModule,\n    ],\n})\nexport class WizardModule {\n}\n");
 
 /***/ }),
 
@@ -2179,7 +2201,7 @@ __webpack_require__.r(__webpack_exports__);
 class WizardExampleComponent {
 }
 WizardExampleComponent.ɵfac = function WizardExampleComponent_Factory(t) { return new (t || WizardExampleComponent)(); };
-WizardExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: WizardExampleComponent, selectors: [["nui-wizard-example"]], decls: 162, vars: 1, consts: [["href", "../components/WizardStepComponent.html", "target", "_blank"], ["type", "info", 3, "allowDismiss"], ["filenamePrefix", "wizard-simple", "exampleTitle", "Simple wizard"], ["filenamePrefix", "wizard-dialog", "exampleTitle", "wizard in dialog"], ["filenamePrefix", "wizard-busy", "exampleTitle", "wizard step busy"], ["filenamePrefix", "wizard-validation", "exampleTitle", "wizard step validation"], ["filenamePrefix", "wizard-disabled", "exampleTitle", "wizard step disable"], ["filenamePrefix", "wizard-hide", "exampleTitle", "wizard step hide/show"], ["filenamePrefix", "wizard-dynamic", "exampleTitle", "wizard add dynamic step"], ["filenamePrefix", "wizard-dynamic-remove", "exampleTitle", "wizard remove dynamic step"], ["filenamePrefix", "wizard-additional-button", "exampleTitle", "wizard additional button"], ["filenamePrefix", "wizard-confirmation-dialog", "exampleTitle", "wizard confirmation dialog"], ["filenamePrefix", "wizard-constant-height", "exampleTitle", "wizard constant height"], ["filenamePrefix", "wizard-custom-step-line-width", "exampleTitle", "wizard custom steps label width"], ["filenamePrefix", "wizard-steps", "exampleTitle", "wizard steps combination"]], template: function WizardExampleComponent_Template(rf, ctx) { if (rf & 1) {
+WizardExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: WizardExampleComponent, selectors: [["nui-wizard-example"]], decls: 164, vars: 1, consts: [["href", "../components/WizardStepComponent.html", "target", "_blank"], ["type", "info", 3, "allowDismiss"], ["filenamePrefix", "wizard-simple", "exampleTitle", "Simple wizard"], ["filenamePrefix", "wizard-dialog", "exampleTitle", "wizard in dialog"], ["filenamePrefix", "wizard-busy", "exampleTitle", "wizard step busy"], ["filenamePrefix", "wizard-validation", "exampleTitle", "wizard step validation"], ["filenamePrefix", "wizard-disabled", "exampleTitle", "wizard step disable"], ["filenamePrefix", "wizard-hide", "exampleTitle", "wizard step hide/show"], ["filenamePrefix", "wizard-dynamic", "exampleTitle", "wizard add dynamic step"], ["filenamePrefix", "wizard-dynamic-remove", "exampleTitle", "wizard remove dynamic step"], ["filenamePrefix", "wizard-additional-button", "exampleTitle", "wizard additional button"], ["filenamePrefix", "wizard-confirmation-dialog", "exampleTitle", "wizard confirmation dialog"], ["filenamePrefix", "wizard-constant-height", "exampleTitle", "wizard constant height"], ["filenamePrefix", "wizard-custom-step-line-width", "exampleTitle", "wizard custom steps label width"], ["filenamePrefix", "wizard-steps", "exampleTitle", "wizard steps combination"]], template: function WizardExampleComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "h2");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Required Modules");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -2246,177 +2268,180 @@ WizardExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵd
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](43, "You can make your step busy to forbid actions.");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](44, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](45, "You should pass 'busyConfig' (look at type 'IBusyConfig') to 'navigationControl' method of wizard step to make it work.");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](45, "If you want to hide only step content you should pass 'busyConfig' (look at type 'IBusyConfig') to\n'navigationControl' method of wizard step to make it work.\n");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](46, "nui-example-wrapper", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](47, "nui-wizard-busy-example");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](46, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](47, " If you want to hide all Wizard content you need just wrap Wizard component on busy");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](48, "h2");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](49, "Validation");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](48, "nui-example-wrapper", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](49, "nui-wizard-busy-example");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](50, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](51, "You can use any custom input validation to wizard step.");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](50, "h2");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](51, "Validation");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](52, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](53, "To forbid passing to next step while form is not valid you should pass boolean value to next step's property 'stepControl'.");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](53, "You can use any custom input validation to wizard step.");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](54, "nui-example-wrapper", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](55, "nui-wizard-validation-example");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](54, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](55, "To forbid passing to next step while form is not valid you should pass boolean value to next step's property 'stepControl'.");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](56, "h2");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](57, "Disabled step");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](56, "nui-example-wrapper", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](57, "nui-wizard-validation-example");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](58, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](59, "You can disable wizard step to forbid user switch to this step.");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](58, "h2");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](59, "Disabled step");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](60, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](61, "To make step disabled you should use wizard method 'disableStep' and pass wizardStep component to it.");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](61, "You can disable wizard step to forbid user switch to this step.");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](62, "nui-example-wrapper", 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](63, "nui-wizard-disabled-example");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](62, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](63, "To make step disabled you should use wizard method 'disableStep' and pass wizardStep component to it.");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](64, "h2");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](65, "Hide/show step");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](64, "nui-example-wrapper", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](65, "nui-wizard-disabled-example");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](66, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](67, "You can hide or show wizard steps.");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](66, "h2");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](67, "Hide/show step");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](68, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](69, "To make it you should use wizard methods 'hideStep', 'showStep' and pass wizardStepComponent to it.");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](69, "You can hide or show wizard steps.");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](70, "nui-example-wrapper", 7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](71, "nui-wizard-hide-example");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](70, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](71, "To make it you should use wizard methods 'hideStep', 'showStep' and pass wizardStepComponent to it.");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](72, "h2");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](73, "Adding step dynamically");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](72, "nui-example-wrapper", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](73, "nui-wizard-hide-example");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](74, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](75, "You are able to add wizard steps dynamically");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](74, "h2");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](75, "Adding step dynamically");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](76, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](77, "To make it you should use wizard method 'addStepDynamic' and pass 2 arguments wizardStepComponent and index to insert it in correct place.");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](77, "You are able to add wizard steps dynamically");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](78, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](79, "strong");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](80, "Note:");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](79, "To make it you should use wizard method 'addStepDynamic' and pass 2 arguments wizardStepComponent and index to insert it in correct place.");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](81, " Angular doesn't allow binding to outputs of dynamically created component from template. You can access outputs of ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](82, "code");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](83, "a", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](84, "nui-wizard-step");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](80, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](81, "strong");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](82, "Note:");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](83, " Angular doesn't allow binding to outputs of dynamically created component from template. You can access outputs of ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](84, "code");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](85, "a", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](86, "nui-wizard-step");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](85, " directly.");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](86, "code");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](87, "addStepDynamic");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](87, " directly.");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](88, "code");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](89, "addStepDynamic");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](88, " method of Wizard\nreturns you instance of dynamically added step and you can manually subscribe to outputs like ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](89, "code");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](90, "enter");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](90, " method of Wizard\nreturns you instance of dynamically added step and you can manually subscribe to outputs like ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](91, "code");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](92, "enter");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](91, ",");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](92, "code");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](93, "exit");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](93, ",");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](94, "code");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](95, "exit");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](94, " etc.\n");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](96, " etc.\n");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](95, "nui-example-wrapper", 8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](96, "nui-wizard-dynamic-example");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](97, "nui-example-wrapper", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](98, "nui-wizard-dynamic-example");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](97, "h2");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](98, "Remove step dynamically");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](99, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](100, "You are able to remove wizard steps dynamically");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](99, "h2");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](100, "Remove step dynamically");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](101, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](102, "To make it you should use wizard method 'removeStep' and pass index");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](102, "You are able to remove wizard steps dynamically");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](103, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](104, "strong");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](105, "Note:");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](104, "To make it you should use wizard method 'removeStep' and pass index");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](106, " Your couldn't remove first (0 index) step");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](105, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](106, "strong");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](107, "Note:");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](107, "nui-example-wrapper", 9);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](108, "nui-wizard-dynamic-remove-example");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](108, " Your couldn't remove first (0 index) step");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](109, "h2");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](110, "Additional button in footer example");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](109, "nui-example-wrapper", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](110, "nui-wizard-dynamic-remove-example");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](111, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](112, "You are able to provide additional button in footer of wizard.");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](111, "h2");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](112, "Additional button in footer example");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](113, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](114, "To do it you should provide nui-button as a content of nui-wizard component.");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](114, "You are able to provide additional button in footer of wizard.");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](115, "nui-example-wrapper", 10);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](116, "nui-wizard-additional-button-example");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](115, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](116, "To do it you should provide nui-button as a content of nui-wizard component.");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](117, "h2");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](118, "Confirmation dialog");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](117, "nui-example-wrapper", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](118, "nui-wizard-additional-button-example");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](119, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](120, "To implement confirmation dialog you should use method 'confirm' from dialog service and call it from outputs such as 'onCancel' or 'onFinish'.");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](119, "h2");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](120, "Confirmation dialog");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](121, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](122, "By default UX suggestion 'onCancel' output sends boolean event which is false when user is on first step.");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](122, "To implement confirmation dialog you should use method 'confirm' from dialog service and call it from outputs such as 'onCancel' or 'onFinish'.");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](123, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](124, "On this example confirmation dialog represents default UX behavior and does not appear on first wizard step.");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](124, "By default UX suggestion 'onCancel' output sends boolean event which is false when user is on first step.");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](125, "nui-example-wrapper", 11);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](126, "nui-wizard-confirmation-dialog-example");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](125, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](126, "On this example confirmation dialog represents default UX behavior and does not appear on first wizard step.");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](127, "h2");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](128, "Constant height");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](127, "nui-example-wrapper", 11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](128, "nui-wizard-confirmation-dialog-example");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](129, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](130, " To make the height of the wizard constant for all steps and have the body of a step scroll vertically if it extends beyond the fixed height, set the ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](131, "code");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](132, "enableScroll");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](129, "h2");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](130, "Constant height");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](133, " input to true and set the desired height of the wizard body container using the ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](134, "code");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](135, "bodyContainerHeight");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](131, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](132, " To make the height of the wizard constant for all steps and have the body of a step scroll vertically if it extends beyond the fixed height, set the ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](133, "code");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](134, "enableScroll");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](136, " input.\n");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](135, " input to true and set the desired height of the wizard body container using the ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](136, "code");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](137, "bodyContainerHeight");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](137, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](138, " Supported values of ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](139, "code");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](140, "bodyContainerHeight");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](138, " input.\n");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](141, " are the same as in CSS. For example: 100px, 5vh, etc.\n");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](139, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](140, " Supported values of ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](141, "code");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](142, "bodyContainerHeight");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](142, "nui-example-wrapper", 12);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](143, "nui-wizard-constant-height-example");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](143, " are the same as in CSS. For example: 100px, 5vh, etc.\n");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](144, "h2");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](145, "Stretched steps line width");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](144, "nui-example-wrapper", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](145, "nui-wizard-constant-height-example");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](146, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](147, " To make the width of the steps line stretch according to the largest of step labels, use ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](148, "code");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](149, "stretchStepLines");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](146, "h2");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](147, "Stretched steps line width");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](150, " input. With it set to ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](151, "code");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](152, "true");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](148, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](149, " To make the width of the steps line stretch according to the largest of step labels, use ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](150, "code");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](151, "stretchStepLines");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](153, ", wizard will calculate the width of the largest label and adjust all the lines so the labels don't overflow.\n");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](152, " input. With it set to ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](153, "code");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](154, "true");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](154, "nui-example-wrapper", 13);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](155, "nui-wizard-custom-step-line-width");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](155, ", wizard will calculate the width of the largest label and adjust all the lines so the labels don't overflow.\n");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](156, "h2");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](157, "Wizard steps combination");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](156, "nui-example-wrapper", 13);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](157, "nui-wizard-custom-step-line-width");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](158, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](159, " You can provide a combination of static and dynamic steps of the wizard. See example below:\n");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](158, "h2");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](159, "Wizard steps combination");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](160, "nui-example-wrapper", 14);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](161, "nui-wizard-steps-example");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](160, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](161, " You can provide a combination of static and dynamic steps of the wizard. See example below:\n");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](162, "nui-example-wrapper", 14);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](163, "nui-wizard-steps-example");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](20);
@@ -3269,6 +3294,8 @@ WizardModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjec
             _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormsModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_0__["ReactiveFormsModule"],
             _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forChild(routes),
+            _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiBusyModule"],
+            _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiSpinnerModule"],
         ], _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵsetNgModuleScope"](WizardModule, { declarations: [_index__WEBPACK_IMPORTED_MODULE_3__["WizardAdditionalButtonExampleComponent"],
         _index__WEBPACK_IMPORTED_MODULE_3__["WizardBusyExampleComponent"],
@@ -3295,7 +3322,8 @@ WizardModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjec
         _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiValidationMessageModule"],
         _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiFormFieldModule"],
         _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormsModule"],
-        _angular_forms__WEBPACK_IMPORTED_MODULE_0__["ReactiveFormsModule"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]], exports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]] }); })();
+        _angular_forms__WEBPACK_IMPORTED_MODULE_0__["ReactiveFormsModule"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiBusyModule"],
+        _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiSpinnerModule"]], exports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]] }); })();
 
 
 /***/ }),
