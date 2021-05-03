@@ -345,7 +345,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>    <code>boolean | undefined</code>
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 
                     </div>
                     <div class="io-description">
@@ -662,8 +662,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="102"
-                            class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:102</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="106"
+                            class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:106</a></div>
                 </td>
             </tr>
 
@@ -912,8 +912,8 @@ export abstract class XYChartComponent extends TimeseriesChartComponent
     }
 
     /** Checks if the series is interactive or if the dataSource has a link property */
-    public isSeriesInteractive(legendSeries: IChartAssistSeries&lt;IAccessors&gt;): boolean | undefined {
-        return !(legendSeries?.link &#x3D;&#x3D;&#x3D; undefined) || !(legendSeries?.secondaryLink &#x3D;&#x3D;&#x3D; undefined) || !!this.seriesInteractive;
+    public isSeriesInteractive(legendSeries: IChartAssistSeries&lt;IAccessors&gt;): boolean {
+        return !(legendSeries?.link &#x3D;&#x3D;&#x3D; undefined) || !(legendSeries?.secondaryLink &#x3D;&#x3D;&#x3D; undefined) || this.seriesInteractive;
     }
 
     public onLegendClick(legendSeries: IChartAssistSeries&lt;IAccessors&gt;, event: MouseEvent) {
@@ -932,6 +932,10 @@ export abstract class XYChartComponent extends TimeseriesChartComponent
     }
 
     public onPrimaryDescClick(legendSeries: IChartAssistSeries&lt;IAccessors&gt;) {
+        if (!this.seriesInteractive) {
+            this.chartAssist.toggleSeries(legendSeries.id, this.chartAssist.isSeriesHidden(legendSeries.id));
+            return;
+        }
         this.eventBus.getStream(INTERACTION).next({
             payload: {
                 data: legendSeries,
