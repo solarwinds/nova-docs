@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>\n    Highlight pipe is used to mark a portion of text. It will search the provided text for the specified string and highlight it.\n</p>\n\n<h2>Required Modules</h2>\n<ul>\n    <li>\n        <code>NuiCommonModule</code>\n    </li>\n</ul>\n\n<h2>Basic Usage</h2>\n<p>\n    This pipe can only be used with the <code>innerHTML</code> attribute. It escapes all the characters by default, and highlights every match in the string.\n</p>\n<nui-example-wrapper filenamePrefix=\"highlight-pipe\" exampleTitle=\"Basic Usage\">\n    <nui-demo-highlight-pipe></nui-demo-highlight-pipe>\n</nui-example-wrapper>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<p>\n    The <code><a href=\"../pipes/HighlightPipe.html#info\" target=\"_parent\">nuiHighlight</a></code> pipe is used to mark a portion of text. It will search the\n    provided text for the specified string and highlight it.\n</p>\n\n<h2>Required Modules</h2>\n<ul>\n    <li>\n        <code>NuiCommonModule</code>\n    </li>\n</ul>\n\n<h2>Basic Usage</h2>\n<p>\n    This pipe can only be used with the <code>innerHTML</code> attribute. It escapes all the characters by default, and highlights every match in the string.\n</p>\n<nui-example-wrapper filenamePrefix=\"highlight-pipe\" exampleTitle=\"Basic Usage\">\n    <nui-demo-highlight-pipe></nui-demo-highlight-pipe>\n</nui-example-wrapper>\n");
 
 /***/ }),
 
