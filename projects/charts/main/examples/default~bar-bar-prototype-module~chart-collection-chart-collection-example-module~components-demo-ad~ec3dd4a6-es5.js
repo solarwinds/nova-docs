@@ -18004,23 +18004,24 @@
 
             gaugeConfig.value = (_a = gaugeConfig.value) !== null && _a !== void 0 ? _a : 0;
             gaugeConfig.max = (_b = gaugeConfig.max) !== null && _b !== void 0 ? _b : 0;
+            var clampedConfig = GaugeUtil.clampValueToMax(gaugeConfig);
             var updatedSeriesSet = seriesSet.map(function (series) {
               if (series.id === _constants__WEBPACK_IMPORTED_MODULE_13__["GAUGE_QUANTITY_SERIES_ID"]) {
                 if (series.accessors.data) {
-                  series.accessors.data.color = gaugeConfig.quantityColorAccessor || GaugeUtil.createDefaultQuantityColorAccessor(gaugeConfig.thresholds);
+                  series.accessors.data.color = clampedConfig.quantityColorAccessor || GaugeUtil.createDefaultQuantityColorAccessor(clampedConfig.thresholds);
                 }
 
                 return Object.assign(Object.assign({}, series), {
                   data: [{
                     category: GaugeUtil.DATA_CATEGORY,
-                    value: gaugeConfig.value
+                    value: clampedConfig.value
                   }]
                 });
               }
 
               if (series.id === _constants__WEBPACK_IMPORTED_MODULE_13__["GAUGE_REMAINDER_SERIES_ID"]) {
                 if (series.accessors.data) {
-                  series.accessors.data.color = gaugeConfig.remainderColorAccessor || function () {
+                  series.accessors.data.color = clampedConfig.remainderColorAccessor || function () {
                     return _constants__WEBPACK_IMPORTED_MODULE_13__["StandardGaugeColor"].Remainder;
                   };
                 }
@@ -18028,13 +18029,13 @@
                 return Object.assign(Object.assign({}, series), {
                   data: [{
                     category: GaugeUtil.DATA_CATEGORY,
-                    value: gaugeConfig.max - gaugeConfig.value
+                    value: clampedConfig.max - clampedConfig.value
                   }]
                 });
               }
 
               if (series.id === _constants__WEBPACK_IMPORTED_MODULE_13__["GAUGE_THRESHOLD_MARKERS_SERIES_ID"]) {
-                return Object.assign(Object.assign({}, series), GaugeUtil.generateThresholdData(gaugeConfig));
+                return Object.assign(Object.assign({}, series), GaugeUtil.generateThresholdData(clampedConfig));
               }
 
               return series;
@@ -18182,9 +18183,9 @@
            * Convenience function for creating a standard gauge quantity color accessor in which low values are considered good
            * and high values are considered bad. It provides standard colors for Ok, Warning, and Critical statuses.
            *
-           * @param thresholds An array of threshold values
+           * @param thresholds An optional array of threshold values
            *
-           * @returns {DataAccessor} An accessor for determining the color to use based on the series id and/or data value
+           * @returns {DataAccessor} An accessor for determining the color to use for the quantity visualization
            */
 
         }, {
@@ -18251,18 +18252,19 @@
         }, {
           key: "generateGaugeData",
           value: function generateGaugeData(gaugeConfig) {
+            var clampedConfig = GaugeUtil.clampValueToMax(gaugeConfig);
             return [// category property is used for unifying the linear-style gauge visualization into a single bar stack
             {
               id: _constants__WEBPACK_IMPORTED_MODULE_13__["GAUGE_QUANTITY_SERIES_ID"],
               data: [{
                 category: GaugeUtil.DATA_CATEGORY,
-                value: gaugeConfig.value
+                value: clampedConfig.value
               }]
             }, {
               id: _constants__WEBPACK_IMPORTED_MODULE_13__["GAUGE_REMAINDER_SERIES_ID"],
               data: [{
                 category: GaugeUtil.DATA_CATEGORY,
-                value: gaugeConfig.max - gaugeConfig.value
+                value: clampedConfig.max - clampedConfig.value
               }]
             }];
           }
@@ -18297,6 +18299,20 @@
                 hit: false
               }])
             };
+          }
+        }, {
+          key: "clampValueToMax",
+          value: function clampValueToMax(gaugeConfig) {
+            var value = gaugeConfig.value;
+
+            if (gaugeConfig.value > gaugeConfig.max) {
+              console.warn("Configured gauge value ".concat(gaugeConfig.value, " is larger than configured max ").concat(gaugeConfig.max, ". Clamping value to ").concat(gaugeConfig.max, "."));
+              value = gaugeConfig.max;
+            }
+
+            return Object.assign(Object.assign({}, gaugeConfig), {
+              value: value
+            });
           }
         }]);
 

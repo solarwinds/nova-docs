@@ -127,7 +127,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="94" class="link-to-prism">src/services/public-api.ts:94</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="99" class="link-to-prism">src/services/public-api.ts:99</a></div>
                             </td>
                         </tr>
 
@@ -155,7 +155,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="95" class="link-to-prism">src/services/public-api.ts:95</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="100" class="link-to-prism">src/services/public-api.ts:100</a></div>
                             </td>
                         </tr>
 
@@ -245,8 +245,13 @@ export interface ITransientCache {
     size: () &#x3D;&gt; number;
 }
 
+/**
+ * The result of a unit conversion returned by the UnitConversionService&#x27;s convert method
+ */
 export interface IUnitConversionResult {
+    /** Serves as an index into the exported &#x27;unitConversionConstants&#x27; for determining which unit string display value to use. */
     order: number;
+    /** The converted value as a string */
     value: string;
 }
 

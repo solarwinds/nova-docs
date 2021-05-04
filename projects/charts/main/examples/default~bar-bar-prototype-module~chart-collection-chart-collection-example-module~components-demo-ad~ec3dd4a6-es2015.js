@@ -11402,21 +11402,22 @@ class GaugeUtil {
         var _a, _b;
         gaugeConfig.value = (_a = gaugeConfig.value) !== null && _a !== void 0 ? _a : 0;
         gaugeConfig.max = (_b = gaugeConfig.max) !== null && _b !== void 0 ? _b : 0;
+        const clampedConfig = GaugeUtil.clampValueToMax(gaugeConfig);
         const updatedSeriesSet = seriesSet.map((series) => {
             if (series.id === _constants__WEBPACK_IMPORTED_MODULE_13__["GAUGE_QUANTITY_SERIES_ID"]) {
                 if (series.accessors.data) {
-                    series.accessors.data.color = gaugeConfig.quantityColorAccessor || GaugeUtil.createDefaultQuantityColorAccessor(gaugeConfig.thresholds);
+                    series.accessors.data.color = clampedConfig.quantityColorAccessor || GaugeUtil.createDefaultQuantityColorAccessor(clampedConfig.thresholds);
                 }
-                return Object.assign(Object.assign({}, series), { data: [{ category: GaugeUtil.DATA_CATEGORY, value: gaugeConfig.value }] });
+                return Object.assign(Object.assign({}, series), { data: [{ category: GaugeUtil.DATA_CATEGORY, value: clampedConfig.value }] });
             }
             if (series.id === _constants__WEBPACK_IMPORTED_MODULE_13__["GAUGE_REMAINDER_SERIES_ID"]) {
                 if (series.accessors.data) {
-                    series.accessors.data.color = gaugeConfig.remainderColorAccessor || (() => (_constants__WEBPACK_IMPORTED_MODULE_13__["StandardGaugeColor"].Remainder));
+                    series.accessors.data.color = clampedConfig.remainderColorAccessor || (() => (_constants__WEBPACK_IMPORTED_MODULE_13__["StandardGaugeColor"].Remainder));
                 }
-                return Object.assign(Object.assign({}, series), { data: [{ category: GaugeUtil.DATA_CATEGORY, value: gaugeConfig.max - gaugeConfig.value }] });
+                return Object.assign(Object.assign({}, series), { data: [{ category: GaugeUtil.DATA_CATEGORY, value: clampedConfig.max - clampedConfig.value }] });
             }
             if (series.id === _constants__WEBPACK_IMPORTED_MODULE_13__["GAUGE_THRESHOLD_MARKERS_SERIES_ID"]) {
-                return Object.assign(Object.assign({}, series), GaugeUtil.generateThresholdData(gaugeConfig));
+                return Object.assign(Object.assign({}, series), GaugeUtil.generateThresholdData(clampedConfig));
             }
             return series;
         });
@@ -11507,9 +11508,9 @@ class GaugeUtil {
      * Convenience function for creating a standard gauge quantity color accessor in which low values are considered good
      * and high values are considered bad. It provides standard colors for Ok, Warning, and Critical statuses.
      *
-     * @param thresholds An array of threshold values
+     * @param thresholds An optional array of threshold values
      *
-     * @returns {DataAccessor} An accessor for determining the color to use based on the series id and/or data value
+     * @returns {DataAccessor} An accessor for determining the color to use for the quantity visualization
      */
     static createDefaultQuantityColorAccessor(thresholds) {
         // assigning to variable to prevent "Lambda not supported" error
@@ -11559,10 +11560,11 @@ class GaugeUtil {
      * @returns {Partial<IDataSeries<IAccessors>>[]} Data in the form needed by the gauge visualization
      */
     static generateGaugeData(gaugeConfig) {
+        const clampedConfig = GaugeUtil.clampValueToMax(gaugeConfig);
         return [
             // category property is used for unifying the linear-style gauge visualization into a single bar stack
-            { id: _constants__WEBPACK_IMPORTED_MODULE_13__["GAUGE_QUANTITY_SERIES_ID"], data: [{ category: GaugeUtil.DATA_CATEGORY, value: gaugeConfig.value }] },
-            { id: _constants__WEBPACK_IMPORTED_MODULE_13__["GAUGE_REMAINDER_SERIES_ID"], data: [{ category: GaugeUtil.DATA_CATEGORY, value: gaugeConfig.max - gaugeConfig.value }] },
+            { id: _constants__WEBPACK_IMPORTED_MODULE_13__["GAUGE_QUANTITY_SERIES_ID"], data: [{ category: GaugeUtil.DATA_CATEGORY, value: clampedConfig.value }] },
+            { id: _constants__WEBPACK_IMPORTED_MODULE_13__["GAUGE_REMAINDER_SERIES_ID"], data: [{ category: GaugeUtil.DATA_CATEGORY, value: clampedConfig.max - clampedConfig.value }] },
         ];
     }
     /**
@@ -11586,6 +11588,14 @@ class GaugeUtil {
             // tack the max value onto the end (used for donut arc calculation)
             data: [...markerValues, { category: GaugeUtil.DATA_CATEGORY, value: gaugeConfig.max, hit: false }],
         };
+    }
+    static clampValueToMax(gaugeConfig) {
+        let value = gaugeConfig.value;
+        if (gaugeConfig.value > gaugeConfig.max) {
+            console.warn(`Configured gauge value ${gaugeConfig.value} is larger than configured max ${gaugeConfig.max}. Clamping value to ${gaugeConfig.max}.`);
+            value = gaugeConfig.max;
+        }
+        return Object.assign(Object.assign({}, gaugeConfig), { value });
     }
 }
 /** Value used for unifying the linear-style gauge visualization into a single bar stack */

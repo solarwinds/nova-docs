@@ -46,6 +46,9 @@
 
 <ul class="nav nav-tabs" role="tablist">
         <li class="active">
+            <a href="#example" role="tab" id="example-tab" data-toggle="tab" data-link="example">Overview</a>
+        </li>
+        <li >
             <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">API</a>
         </li>
         <li >
@@ -54,7 +57,7 @@
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info">
+    <div class="tab-pane fade " id="c-info">
 
         <p class="comment">
             <h3>File</h3>
@@ -67,17 +70,9 @@
                 <h3>Description</h3>
             </p>
             <p class="comment">
-                <p>Filter used for formatting value of different units. Unit suffix is automatically added based on value.
-Units that are supported: bytes, bits per second, hertz.</p>
-<p><strong>Parameters :</strong></p>
-<p>value - value to be converted</p>
-<p>precision - precision of formatted value. Extra trailing zeros are removed independently of the precision.</p>
-<p>plusSignIf - true and source value is positive, plus sign prefix is added.</p>
-<p>unit - type of unit: bytes, bits per second or hertz. Effects scale and unit shortcut value in the function output.</p>
-<p><strong>Usage :</strong>
-   value | unitConversion:precision:plusSign:unit</p>
-<p><strong>Example :</strong>
-   <code>{{ 1200 | unitConversion:2:false:"bitsPerSecond" }}</code></p>
+                <p><example-url>./../examples/index.html#/pipes/unit-conversion</example-url></p>
+<p>Pipe for converting a large quantity of a small basic unit to a smaller approximation of the same quantity in a larger unit. This can be useful for
+displaying larger values in a limited amount of space.</p>
 
             </p>
 
@@ -114,21 +109,24 @@ Units that are supported: bytes, bits per second, hertz.</p>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>transform(value: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, precision: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, plusSign: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>, unit: <a href="../undefineds/UnitOption.html">UnitOption</a>)</code>
+<code>transform(value: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, scale: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, plusSign: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>, unit: <a href="../undefineds/UnitOption.html">UnitOption</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="36"
-                            class="link-to-prism">src/pipes/unit-conversion.pipe.ts:36</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="29"
+                            class="link-to-prism">src/pipes/unit-conversion.pipe.ts:29</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Gets a string representation of the conversion of a large quantity of a small basic unit to a smaller quantity of a larger unit.
+For example, a quantity of 1024 in bytes is output as &quot;1 KB&quot;.</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -139,6 +137,7 @@ Units that are supported: bytes, bits per second, hertz.</p>
                                     <td>Type</td>
                                     <td>Optional</td>
                                     <td>Default value</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -155,9 +154,13 @@ Units that are supported: bytes, bits per second, hertz.</p>
                                     <td>
                                     </td>
 
+                                    <td>
+                                        <p>The value to convert</p>
+
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td>precision</td>
+                                    <td>scale</td>
                                     <td>
                                                 <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
                                     </td>
@@ -170,6 +173,10 @@ Units that are supported: bytes, bits per second, hertz.</p>
                                         <code>0</code>
                                     </td>
 
+                                    <td>
+                                        <p>The number of significant digits to the right of the decimal to include in the converted value</p>
+
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>plusSign</td>
@@ -185,6 +192,10 @@ Units that are supported: bytes, bits per second, hertz.</p>
                                         <code>false</code>
                                     </td>
 
+                                    <td>
+                                        <p>Specify whether to prefix positive values with a &#39;+&#39;</p>
+
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>unit</td>
@@ -200,6 +211,10 @@ Units that are supported: bytes, bits per second, hertz.</p>
                                         <code>&quot;bytes&quot;</code>
                                     </td>
 
+                                    <td>
+                                        <p>The basic unit to use for the conversion result&#39;s unit label</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -211,7 +226,8 @@ Units that are supported: bytes, bits per second, hertz.</p>
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>The conversion result appended with the converted unit label</p>
+
                     </div>
                 </td>
             </tr>
@@ -224,33 +240,15 @@ Units that are supported: bytes, bits per second, hertz.</p>
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Pipe, PipeTransform } from &quot;@angular/core&quot;;
-import isFinite from &quot;lodash/isFinite&quot;;
-import isNaN from &quot;lodash/isNaN&quot;;
 
-import { unitConversionConstants, UnitOption } from &quot;../constants/unit-conversion.constant&quot;;
-import { IUnitConversionResult } from &quot;../services/public-api&quot;;
+import { UnitBase, UnitOption } from &quot;../constants/unit-conversion.constants&quot;;
 import { UnitConversionService } from &quot;../services/unit-conversion.service&quot;;
 
 /**
- * Filter used for formatting value of different units. Unit suffix is automatically added based on value.
- * Units that are supported: bytes, bits per second, hertz.
+ * &lt;example-url&gt;./../examples/index.html#/pipes/unit-conversion&lt;/example-url&gt;
  *
- * __Parameters :__
- *
- * value - value to be converted
- *
- * precision - precision of formatted value. Extra trailing zeros are removed independently of the precision.
- *
- * plusSignIf - true and source value is positive, plus sign prefix is added.
- *
- * unit - type of unit: bytes, bits per second or hertz. Effects scale and unit shortcut value in the function output.
- *
- * __Usage :__
- *   value | unitConversion:precision:plusSign:unit
- *
- * __Example :__
- *   &lt;code&gt;{{ 1200 | unitConversion:2:false:&quot;bitsPerSecond&quot; }}&lt;/code&gt;
- *
+ * Pipe for converting a large quantity of a small basic unit to a smaller approximation of the same quantity in a larger unit. This can be useful for
+ * displaying larger values in a limited amount of space.
  */
 @Pipe({
     name: &quot;unitConversion&quot;,
@@ -258,25 +256,32 @@ import { UnitConversionService } from &quot;../services/unit-conversion.service&
 export class UnitConversionPipe implements PipeTransform {
     constructor(private unitConversionService: UnitConversionService) {}
 
-    transform(value: any, precision: number &#x3D; 0, plusSign: boolean &#x3D; false, unit: UnitOption &#x3D; &quot;bytes&quot;): string {
-        const scale &#x3D; unit &#x3D;&#x3D;&#x3D; &quot;bytes&quot; ? 1024 : 1000;
+    /**
+     * Gets a string representation of the conversion of a large quantity of a small basic unit to a smaller quantity of a larger unit.
+     * For example, a quantity of 1024 in bytes is output as &quot;1 KB&quot;.
+     *
+     * @param value The value to convert
+     * @param scale The number of significant digits to the right of the decimal to include in the converted value
+     * @param plusSign Specify whether to prefix positive values with a &#x27;+&#x27;
+     * @param unit The basic unit to use for the conversion result&#x27;s unit label
+     *
+     * @returns {string} The conversion result appended with the converted unit label
+     */
+    transform(value: any, scale: number &#x3D; 0, plusSign: boolean &#x3D; false, unit: UnitOption &#x3D; &quot;bytes&quot;): string {
+        const base &#x3D; unit &#x3D;&#x3D;&#x3D; &quot;bytes&quot; ? UnitBase.Bytes : UnitBase.Standard;
+        const result &#x3D; this.unitConversionService.convert(value as number, base, scale);
 
-        if (isNaN(parseFloat(value)) || !isFinite(value)) {
-            return &quot;---&quot;;
-        }
-
-        if (value &#x3D;&#x3D;&#x3D; 0) {
-            return value + &quot; &quot; + unitConversionConstants[unit][0];
-        }
-        const convResult: IUnitConversionResult &#x3D; this.unitConversionService.convert(value as number, scale, precision);
-        const prefix &#x3D; plusSign &amp;&amp; value &gt; 0 ? &quot;+&quot; : &quot;&quot;;
-
-        return prefix + convResult.value + &quot; &quot; + unitConversionConstants[unit][convResult.order];
+        return this.unitConversionService.getFullDisplay(result, unit, plusSign);
     }
 }
 </code></pre>
     </div>
 
+    <div class="tab-pane fade active in" id="c-example">
+            <iframe class="exampleContainer" src="./../examples/index.html#/pipes/unit-conversion">
+                <p>no-iframes</p>
+            </iframe>
+    </div>
 </div>
 
 

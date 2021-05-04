@@ -523,6 +523,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     <a href="injectables/ThemeSwitchService.html" data-type="entity-link">ThemeSwitchService</a>
                                 </li>
                                 <li class="link">
+                                    <a href="injectables/UnitConversionService.html" data-type="entity-link">UnitConversionService</a>
+                                </li>
+                                <li class="link">
                                     <a href="injectables/VirtualViewportManager.html" data-type="entity-link">VirtualViewportManager</a>
                                 </li>
                             </ul>
