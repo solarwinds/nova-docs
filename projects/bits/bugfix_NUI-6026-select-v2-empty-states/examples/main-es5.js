@@ -47931,9 +47931,14 @@
 
             var _a;
 
-            var selectedValue = (_a = this.options) === null || _a === void 0 ? void 0 : _a.find(function (option) {
-              return lodash_isEqual__WEBPACK_IMPORTED_MODULE_4___default()(option.value, _this151.value);
-            });
+            var selectedValue;
+
+            if (!this.multiselect) {
+              selectedValue = (_a = this.options) === null || _a === void 0 ? void 0 : _a.find(function (option) {
+                return lodash_isEqual__WEBPACK_IMPORTED_MODULE_4___default()(option.value, _this151.value);
+              });
+            }
+
             selectedValue && !this.multiselect ? this.optionKeyControlService.setActiveItem(this.selectedOptions[0]) : this.optionKeyControlService.setFirstItemActive();
           }
         }, {
