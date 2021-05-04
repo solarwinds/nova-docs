@@ -413,7 +413,7 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>onPrimaryDescClick(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, legendSeries: IChartAssistSeries<IAccessors>)</code>
+                    <code>onPrimaryDescClick(event: MouseEvent, legendSeries: IChartAssistSeries<IAccessors>)</code>
                 </td>
             </tr>
 
@@ -443,7 +443,7 @@
                                 <tr>
                                     <td>event</td>
                                     <td>
-                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            <code>MouseEvent</code>
                                     </td>
 
                                     <td>
@@ -681,7 +681,7 @@ export abstract class XYChartComponent extends TimeseriesChartComponent
         return this.configuration.legendPlacement &#x3D;&#x3D;&#x3D; LegendPlacement.Right;
     }
 
-    public onPrimaryDescClick(event: any, legendSeries: IChartAssistSeries&lt;IAccessors&gt;) {
+    public onPrimaryDescClick(event: MouseEvent, legendSeries: IChartAssistSeries&lt;IAccessors&gt;) {
         if (!this.seriesInteractive) {
             return;
         }
