@@ -25687,7 +25687,7 @@ class BaseSelectV2 {
     }
     getValueFromOptions(options = this.selectedOptions) {
         var _a;
-        return this.multiselect ? options.map(o => o.value) : ((_a = options[0]) === null || _a === void 0 ? void 0 : _a.value) || null;
+        return this.multiselect ? options.map(o => o.value) : ((_a = options[0]) === null || _a === void 0 ? void 0 : _a.value) || "";
     }
     handleValueChange(value) {
         var _a;
@@ -25723,7 +25723,7 @@ class BaseSelectV2 {
     }
     validateValueWithSelectedOptions() {
         const selectedOptionValues = this.selectedOptions.map(option => option.value);
-        const valuePropToCompare = this.value
+        const valuePropToCompare = !lodash_isUndefined__WEBPACK_IMPORTED_MODULE_5___default()(this.value)
             ? this.multiselect ? this.value : [this.value]
             : [];
         if (!lodash_isEqual__WEBPACK_IMPORTED_MODULE_4___default()(selectedOptionValues, valuePropToCompare)) {
@@ -25745,7 +25745,9 @@ class BaseSelectV2 {
         this.optionKeyControlService.setSkipPredicate((option) => !!(option.outfiltered || option.isDisabled));
     }
     setActiveItemOnDropdown() {
-        !lodash_isUndefined__WEBPACK_IMPORTED_MODULE_5___default()(this.value) && !this.multiselect
+        var _a;
+        const selectedValue = (_a = this.options) === null || _a === void 0 ? void 0 : _a.find(option => lodash_isEqual__WEBPACK_IMPORTED_MODULE_4___default()(option.value, this.value));
+        selectedValue && !this.multiselect
             ? this.optionKeyControlService.setActiveItem(this.selectedOptions[0])
             : this.optionKeyControlService.setFirstItemActive();
     }
