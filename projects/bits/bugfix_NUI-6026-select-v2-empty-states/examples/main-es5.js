@@ -25296,13 +25296,13 @@
       /* harmony import */
 
 
-      var lodash_isNil__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-      /*! lodash/isNil */
-      "J2iB");
+      var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! lodash/isUndefined */
+      "TP7S");
       /* harmony import */
 
 
-      var lodash_isNil__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_isNil__WEBPACK_IMPORTED_MODULE_2__);
+      var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2__);
       /* harmony import */
 
 
@@ -25379,7 +25379,7 @@
             var _a;
 
             var isHighlightNecessary = highlighted && ((_a = this.combobox.getLastSelectedOption()) === null || _a === void 0 ? void 0 : _a.viewValue) !== highlighted;
-            this.el.nativeElement.innerHTML = isHighlightNecessary && !lodash_isNil__WEBPACK_IMPORTED_MODULE_2___default()(highlighted) ? this.highlightPipe.transform(this.value, highlighted.toString()) : lodash_escape__WEBPACK_IMPORTED_MODULE_1___default()(this.value);
+            this.el.nativeElement.innerHTML = isHighlightNecessary && !lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default()(highlighted) ? this.highlightPipe.transform(this.value, highlighted.toString()) : lodash_escape__WEBPACK_IMPORTED_MODULE_1___default()(this.value);
           }
         }]);
 

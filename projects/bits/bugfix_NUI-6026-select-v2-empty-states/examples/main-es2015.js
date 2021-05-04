@@ -13961,8 +13961,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var lodash_escape__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash/escape */ "Te9D");
 /* harmony import */ var lodash_escape__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_escape__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var lodash_isNil__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash/isNil */ "J2iB");
-/* harmony import */ var lodash_isNil__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_isNil__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash/isUndefined */ "TP7S");
+/* harmony import */ var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "qCKp");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "kU1M");
 /* harmony import */ var _pipes_highlight_pipe__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../pipes/highlight.pipe */ "ZlWS");
@@ -14011,7 +14011,7 @@ class ComboboxV2OptionHighlightDirective {
     updateHTML(highlighted) {
         var _a;
         const isHighlightNecessary = highlighted && ((_a = this.combobox.getLastSelectedOption()) === null || _a === void 0 ? void 0 : _a.viewValue) !== highlighted;
-        this.el.nativeElement.innerHTML = (isHighlightNecessary && !lodash_isNil__WEBPACK_IMPORTED_MODULE_2___default()(highlighted)
+        this.el.nativeElement.innerHTML = (isHighlightNecessary && !lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default()(highlighted)
             ? this.highlightPipe.transform(this.value, highlighted.toString())
             : lodash_escape__WEBPACK_IMPORTED_MODULE_1___default()(this.value));
     }
