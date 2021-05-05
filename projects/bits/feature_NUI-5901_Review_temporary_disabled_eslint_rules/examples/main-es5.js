@@ -5718,61 +5718,26 @@
       /* harmony import */
 
 
-      var lodash_isFinite__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! lodash/isFinite */
-      "lFKM");
+      var _constants_unit_conversion_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! ../constants/unit-conversion.constants */
+      "Uuhz");
       /* harmony import */
 
 
-      var lodash_isFinite__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash_isFinite__WEBPACK_IMPORTED_MODULE_0__);
-      /* harmony import */
-
-
-      var lodash_isNaN__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-      /*! lodash/isNaN */
-      "GODc");
-      /* harmony import */
-
-
-      var lodash_isNaN__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_isNaN__WEBPACK_IMPORTED_MODULE_1__);
-      /* harmony import */
-
-
-      var _constants_unit_conversion_constant__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-      /*! ../constants/unit-conversion.constant */
-      "Ped9");
-      /* harmony import */
-
-
-      var _services_unit_conversion_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      var _services_unit_conversion_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ../services/unit-conversion.service */
       "pi50");
       /* harmony import */
 
 
-      var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! @angular/core */
       "fXoL");
       /**
-       * Filter used for formatting value of different units. Unit suffix is automatically added based on value.
-       * Units that are supported: bytes, bits per second, hertz.
+       * <example-url>./../examples/index.html#/pipes/unit-conversion</example-url>
        *
-       * __Parameters :__
-       *
-       * value - value to be converted
-       *
-       * precision - precision of formatted value. Extra trailing zeros are removed independently of the precision.
-       *
-       * plusSignIf - true and source value is positive, plus sign prefix is added.
-       *
-       * unit - type of unit: bytes, bits per second or hertz. Effects scale and unit shortcut value in the function output.
-       *
-       * __Usage :__
-       *   value | unitConversion:precision:plusSign:unit
-       *
-       * __Example :__
-       *   <code>{{ 1200 | unitConversion:2:false:"bitsPerSecond" }}</code>
-       *
+       * Pipe for converting a large quantity of a small basic unit to a smaller approximation of the same quantity in a larger unit. This can be useful for
+       * displaying larger values in a limited amount of space.
        */
 
 
@@ -5782,26 +5747,28 @@
 
           this.unitConversionService = unitConversionService;
         }
+        /**
+         * Gets a string representation of the conversion of a large quantity of a small basic unit to a smaller quantity of a larger unit.
+         * For example, a quantity of 1024 in bytes is output as "1 KB".
+         *
+         * @param value The value to convert
+         * @param scale The number of significant digits to the right of the decimal to include in the converted value
+         * @param plusSign Specify whether to prefix positive values with a '+'
+         * @param unit The basic unit to use for the conversion result's unit label
+         *
+         * @returns {string} The conversion result appended with the converted unit label
+         */
+
 
         _createClass(UnitConversionPipe, [{
           key: "transform",
           value: function transform(value) {
-            var precision = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+            var scale = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
             var plusSign = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
             var unit = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : "bytes";
-            var scale = unit === "bytes" ? 1024 : 1000;
-
-            if (lodash_isNaN__WEBPACK_IMPORTED_MODULE_1___default()(parseFloat(value)) || !lodash_isFinite__WEBPACK_IMPORTED_MODULE_0___default()(value)) {
-              return "---";
-            }
-
-            if (value === 0) {
-              return value + " " + _constants_unit_conversion_constant__WEBPACK_IMPORTED_MODULE_2__["unitConversionConstants"][unit][0];
-            }
-
-            var convResult = this.unitConversionService.convert(value, scale, precision);
-            var prefix = plusSign && value > 0 ? "+" : "";
-            return prefix + convResult.value + " " + _constants_unit_conversion_constant__WEBPACK_IMPORTED_MODULE_2__["unitConversionConstants"][unit][convResult.order];
+            var base = unit === "bytes" ? _constants_unit_conversion_constants__WEBPACK_IMPORTED_MODULE_0__["UnitBase"].Bytes : _constants_unit_conversion_constants__WEBPACK_IMPORTED_MODULE_0__["UnitBase"].Standard;
+            var result = this.unitConversionService.convert(value, base, scale);
+            return this.unitConversionService.getFullDisplay(result, unit, plusSign);
           }
         }]);
 
@@ -5809,10 +5776,10 @@
       }();
 
       UnitConversionPipe.ɵfac = function UnitConversionPipe_Factory(t) {
-        return new (t || UnitConversionPipe)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_services_unit_conversion_service__WEBPACK_IMPORTED_MODULE_3__["UnitConversionService"]));
+        return new (t || UnitConversionPipe)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_services_unit_conversion_service__WEBPACK_IMPORTED_MODULE_1__["UnitConversionService"]));
       };
 
-      UnitConversionPipe.ɵpipe = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefinePipe"]({
+      UnitConversionPipe.ɵpipe = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefinePipe"]({
         name: "unitConversion",
         type: UnitConversionPipe,
         pure: true
@@ -11369,9 +11336,9 @@
       /* harmony import */
 
 
-      var _constants_unit_conversion_constant__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-      /*! ../constants/unit-conversion.constant */
-      "Ped9");
+      var _constants_unit_conversion_constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! ../constants/unit-conversion.constants */
+      "Uuhz");
       /* harmony import */
 
 
@@ -11558,8 +11525,8 @@
           provide: "windowObject",
           useValue: window
         }, {
-          provide: _constants_unit_conversion_constant__WEBPACK_IMPORTED_MODULE_4__["unitConversionToken"],
-          useValue: _constants_unit_conversion_constant__WEBPACK_IMPORTED_MODULE_4__["unitConversionConstants"]
+          provide: _constants_unit_conversion_constants__WEBPACK_IMPORTED_MODULE_4__["unitConversionToken"],
+          useValue: _constants_unit_conversion_constants__WEBPACK_IMPORTED_MODULE_4__["unitConversionConstants"]
         }, {
           provide: _constants_images_constants__WEBPACK_IMPORTED_MODULE_3__["imagesPresetToken"],
           useValue: _constants_images__WEBPACK_IMPORTED_MODULE_2__["imagesData"]
@@ -22124,7 +22091,7 @@
       !*** ./src/nui-api.ts ***!
       \************************/
 
-    /*! exports provided: NuiButtonModule, NuiCheckboxModule, NuiCommonModule, NuiDividerModule, NuiIconModule, NuiMessageModule, NuiImageModule, NuiMenuModule, NuiPopupModule, NuiSwitchModule, NuiSelectModule, NuiSelectV2Module, NuiSpinnerModule, NuiTabsModule, NuiTextboxModule, NuiTooltipModule, NuiLayoutModule, NuiOverlayModule, NuiOverlayAdditionsModule, NuiBreadcrumbModule, NuiBusyModule, NuiChipsModule, NuiContentModule, NuiDatePickerModule, NuiDateTimePickerModule, NuiDialogModule, NuiExpanderModule, NuiFormFieldModule, NuiPaginatorModule, NuiPanelModule, NuiPopoverModule, NuiProgressModule, NuiRadioModule, NuiRepeatModule, NuiSearchModule, NuiSelectorModule, NuiSorterModule, NuiTableModule, NuiTimeFrameBarModule, NuiTimeFramePickerModule, NuiTimePickerModule, NuiToastModule, NuiToolbarModule, NuiValidationMessageModule, NuiWizardModule, NuiWizardV2Module, NuiDocsModule, ButtonSizeType, CheckboxChangeEvent, datePickerDefaults, datePickerDateFormats, NuiDndModule, DndDropTargetDirective, NuiDialogEvent, SrlcStage, NuiFormFieldControl, IconCategory, IconCategoryNamespace, IconStatus, IconSeverity, IconState, IconWidget, MenuActionType, PanelModes, PanelStates, SizeParameters, PanelBackgroundColor, PopoverOverlayPosition, RepeatSelectionMode, PaddingOptions, NUI_SELECT_V2_OPTION_PARENT_COMPONENT, SelectionType, CheckboxStatus, SorterDirection, SpinnerSize, ButtonIcon, DEFAULT_TABLE_HEADER_OFFSET, TABLE_ROW_HEIGHT, complexScrollStrategyFactory, TableVirtualScrollLinearDirective, TableVirtualScrollDirective, TableVirtualScrollHeaderPosition, TableStickyHeaderDirective, SliceRangePipe, ToolbarItemType, ToolbarItemDisplayStyle, TooltipDirective, ValidationMessageComponent, CustomValidationMessageComponent, wizardAnimations, WizardHorizontalComponent, WizardVerticalComponent, WizardStepV2Component, WizardDirective, WizardStepHeaderComponent, WizardStepLabelDirective, WizardStepFooterDirective, WizardFooterComponent, WizardStepperNextDirective, WizardStepperPreviousDirective, OVERLAY_CONTAINER_CLASS, OVERLAY_PANEL_CLASS, OVERLAY_DEFAULT_PRIORITY, OverlayPlacement, OverlayPosition, OverlayPositionService, getOverlayPositions, OVERLAY_ITEM, OVERLAY_CONTAINER, OVERLAY_WITH_POPUP_STYLES_CLASS, OVERLAY_ARROW_SIZE, OverlayUtilitiesService, OverlayCustomContainer, OverlayContainerService, POPUP_V2_VIEWPORT_MARGINS_DEFAULT, OverlayComponent, OverlayItemComponent, unitConversionToken, unitConversionConstants, imagesPresetToken, KEY_CODE, RESIZE_DEBOUNCE_TIME, DEMO_PATH_TOKEN, DEFAULT_INTERACTIVE_ELEMENTS, ResizeDirection, ResizeUnit, resizeDirectionHelpers, defaultFilters, NuiActiveDialog, SelectionModel, IEvent, EventDefinition, NuiValidators, LogLevel, NuiEnvironment, NUI_ENV_PROVIDER_FACTORY, NUI_ENV_PROVIDER, uuid, immutableSet, removeErrors, traverse, nameof */
+    /*! exports provided: NuiButtonModule, NuiCheckboxModule, NuiCommonModule, NuiDividerModule, NuiIconModule, NuiMessageModule, NuiImageModule, NuiMenuModule, NuiPopupModule, NuiSwitchModule, NuiSelectModule, NuiSelectV2Module, NuiSpinnerModule, NuiTabsModule, NuiTextboxModule, NuiTooltipModule, NuiLayoutModule, NuiOverlayModule, NuiOverlayAdditionsModule, NuiBreadcrumbModule, NuiBusyModule, NuiChipsModule, NuiContentModule, NuiDatePickerModule, NuiDateTimePickerModule, NuiDialogModule, NuiExpanderModule, NuiFormFieldModule, NuiPaginatorModule, NuiPanelModule, NuiPopoverModule, NuiProgressModule, NuiRadioModule, NuiRepeatModule, NuiSearchModule, NuiSelectorModule, NuiSorterModule, NuiTableModule, NuiTimeFrameBarModule, NuiTimeFramePickerModule, NuiTimePickerModule, NuiToastModule, NuiToolbarModule, NuiValidationMessageModule, NuiWizardModule, NuiWizardV2Module, NuiDocsModule, ButtonSizeType, CheckboxChangeEvent, datePickerDefaults, datePickerDateFormats, NuiDndModule, DndDropTargetDirective, NuiDialogEvent, SrlcStage, NuiFormFieldControl, IconCategory, IconCategoryNamespace, IconStatus, IconSeverity, IconState, IconWidget, MenuActionType, PanelModes, PanelStates, SizeParameters, PanelBackgroundColor, PopoverOverlayPosition, RepeatSelectionMode, PaddingOptions, NUI_SELECT_V2_OPTION_PARENT_COMPONENT, SelectionType, CheckboxStatus, SorterDirection, SpinnerSize, ButtonIcon, DEFAULT_TABLE_HEADER_OFFSET, TABLE_ROW_HEIGHT, complexScrollStrategyFactory, TableVirtualScrollLinearDirective, TableVirtualScrollDirective, TableVirtualScrollHeaderPosition, TableStickyHeaderDirective, SliceRangePipe, ToolbarItemType, ToolbarItemDisplayStyle, TooltipDirective, ValidationMessageComponent, CustomValidationMessageComponent, wizardAnimations, WizardHorizontalComponent, WizardVerticalComponent, WizardStepV2Component, WizardDirective, WizardStepHeaderComponent, WizardStepLabelDirective, WizardStepFooterDirective, WizardFooterComponent, WizardStepperNextDirective, WizardStepperPreviousDirective, OVERLAY_CONTAINER_CLASS, OVERLAY_PANEL_CLASS, OVERLAY_DEFAULT_PRIORITY, OverlayPlacement, OverlayPosition, OverlayPositionService, getOverlayPositions, OVERLAY_ITEM, OVERLAY_CONTAINER, OVERLAY_WITH_POPUP_STYLES_CLASS, OVERLAY_ARROW_SIZE, OverlayUtilitiesService, OverlayCustomContainer, OverlayContainerService, POPUP_V2_VIEWPORT_MARGINS_DEFAULT, OverlayComponent, OverlayItemComponent, unitConversionToken, UnitBase, unitConversionConstants, imagesPresetToken, KEY_CODE, RESIZE_DEBOUNCE_TIME, DEMO_PATH_TOKEN, DEFAULT_INTERACTIVE_ELEMENTS, ResizeDirection, ResizeUnit, resizeDirectionHelpers, defaultFilters, NuiActiveDialog, SelectionModel, IEvent, EventDefinition, NuiValidators, LogLevel, NuiEnvironment, NUI_ENV_PROVIDER_FACTORY, NUI_ENV_PROVIDER, uuid, immutableSet, removeErrors, traverse, nameof */
 
     /***/
     function Ks4r(module, __webpack_exports__, __webpack_require__) {
@@ -23140,6 +23107,12 @@
 
       __webpack_require__.d(__webpack_exports__, "unitConversionToken", function () {
         return _constants__WEBPACK_IMPORTED_MODULE_49__["unitConversionToken"];
+      });
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "UnitBase", function () {
+        return _constants__WEBPACK_IMPORTED_MODULE_49__["UnitBase"];
       });
       /* harmony reexport (safe) */
 
@@ -27843,48 +27816,6 @@
       }(_data_source_service__WEBPACK_IMPORTED_MODULE_1__["DataSourceService"]);
       /***/
 
-    },
-
-    /***/
-    "Ped9":
-    /*!***************************************************!*\
-      !*** ./src/constants/unit-conversion.constant.ts ***!
-      \***************************************************/
-
-    /*! exports provided: unitConversionToken, unitConversionConstants */
-
-    /***/
-    function Ped9(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "unitConversionToken", function () {
-        return unitConversionToken;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "unitConversionConstants", function () {
-        return unitConversionConstants;
-      });
-      /* harmony import */
-
-
-      var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! @angular/core */
-      "fXoL");
-
-      var unitConversionToken = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["InjectionToken"]("unit-conversion.constant");
-      var unitConversionConstants = {
-        bytes: ["B", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"],
-        bytesPerSecond: ["Bps", "kBps", "MBps", "GBps", "TBps", "PBps", "EBps", "ZBps", "YBps"],
-        bitsPerSecond: ["bps", "kbps", "Mbps", "Gpbs", "Tbps", "Pbps", "Ebps", "Zbps", "Ybps"],
-        hertz: ["Hz", "kHz", "MHz", "GHz", "THz", "PHz", "EHz", "ZHz", "YHz"]
-      };
-      /***/
     },
 
     /***/
@@ -33279,6 +33210,68 @@
     },
 
     /***/
+    "Uuhz":
+    /*!****************************************************!*\
+      !*** ./src/constants/unit-conversion.constants.ts ***!
+      \****************************************************/
+
+    /*! exports provided: unitConversionToken, UnitBase, unitConversionConstants */
+
+    /***/
+    function Uuhz(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "unitConversionToken", function () {
+        return unitConversionToken;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "UnitBase", function () {
+        return UnitBase;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "unitConversionConstants", function () {
+        return unitConversionConstants;
+      });
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! @angular/core */
+      "fXoL");
+
+      var unitConversionToken = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["InjectionToken"]("unit-conversion.constant");
+      /** Standard base values used in unit conversion */
+
+      var UnitBase;
+
+      (function (UnitBase) {
+        UnitBase[UnitBase["Standard"] = 1000] = "Standard";
+        UnitBase[UnitBase["Bytes"] = 1024] = "Bytes";
+      })(UnitBase || (UnitBase = {}));
+      /**
+       * Unit display values used in unit conversion
+       */
+
+
+      var unitConversionConstants = {
+        generic: ["", "k", "M", "B", "T", "Qa", "Qi", "Sx", "Sp"],
+        bytes: ["B", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"],
+        bytesPerSecond: ["Bps", "kBps", "MBps", "GBps", "TBps", "PBps", "EBps", "ZBps", "YBps"],
+        bitsPerSecond: ["bps", "kbps", "Mbps", "Gpbs", "Tbps", "Pbps", "Ebps", "Zbps", "Ybps"],
+        hertz: ["Hz", "kHz", "MHz", "GHz", "THz", "PHz", "EHz", "ZHz", "YHz"]
+      };
+      /***/
+    },
+
+    /***/
     "V5Xt":
     /*!*******************************************************!*\
       !*** ./demo/src/components/app/app-routing.module.ts ***!
@@ -36295,6 +36288,7 @@
       /**
        * @deprecated in v11 - Use BaseSelectV2 instead - Removal: NUI-5796
        */
+      // eslint-disable-next-line @angular-eslint/directive-class-suffix
 
 
       var BaseSelect = /*#__PURE__*/function () {
@@ -38228,12 +38222,10 @@
       /*! @angular/core */
       "fXoL");
       /**
-       * <example-url>./../examples/index.html#/pipes/highlight-pipe</example-url>
-       */
-
-      /**
-       * Filter used for highlighting of part of plain text in case of search. Returns HTML.
-       * Can only be used with `innerHTML` directive. Escapes all the characters by default and highlights every match in the string
+       * <example-url>./../examples/index.html#/pipes/highlight</example-url>
+       *
+       * The nuiHighlight pipe is used to mark a portion of text. It will search the provided text for the specified string and highlight it. Returns HTML.
+       * Can only be used with `innerHTML` directive. Escapes all the characters by default and highlights every match in the string.
        *
        * __Parameters :__
        *
@@ -38242,15 +38234,18 @@
        *   search - The search term to be highlighted.
        *
        * __Usage :__
-       *   highlight | nuiHighlight:search
+       *   "text" | nuiHighlight : "search"
        *
        * __Examples :__
+       *
        *   <code>{{ "hello world" | nuiHighlight:"world" }}</code>
-       *   formats to: <code>hello < span class="nui-highlighted"> world </ span></code>
+       *
+       *   formats to: <code>hello &lt;span class="nui-highlighted"&gt;world&lt;/span&gt;</code>
        *
        *
-       *   <code>{{ "hello < span class="x">FOO</ span> bar" | nuiHighlight:"bar" }}</code>
-       *   formats to: <code>hello &lt; span class=&quot;x&quot;&gt;FOO&lt;/ span&gt; < span class="nui-highlighted">bar</ span> </ span></code>
+       *   <code>{{ "hello &lt;span class="x"&gt;FOO&lt;/span&gt; bar" | nuiHighlight:"bar" }}</code>
+       *
+       *   formats to: <code>hello &lt;span class=&quot;x&quot;&gt;FOO&lt;/span&gt;&lt;span class="nui-highlighted"&gt;bar&lt;/span&gt;;</code>
        */
 
 
@@ -38573,7 +38568,7 @@
       !*** ./src/public_api.ts ***!
       \***************************/
 
-    /*! exports provided: NuiButtonModule, NuiCheckboxModule, NuiCommonModule, NuiDividerModule, NuiIconModule, NuiMessageModule, NuiImageModule, NuiMenuModule, NuiPopupModule, NuiSwitchModule, NuiSelectModule, NuiSelectV2Module, NuiSpinnerModule, NuiTabsModule, NuiTextboxModule, NuiTooltipModule, NuiLayoutModule, NuiOverlayModule, NuiOverlayAdditionsModule, NuiBreadcrumbModule, NuiBusyModule, NuiChipsModule, NuiContentModule, NuiDatePickerModule, NuiDateTimePickerModule, NuiDialogModule, NuiExpanderModule, NuiFormFieldModule, NuiPaginatorModule, NuiPanelModule, NuiPopoverModule, NuiProgressModule, NuiRadioModule, NuiRepeatModule, NuiSearchModule, NuiSelectorModule, NuiSorterModule, NuiTableModule, NuiTimeFrameBarModule, NuiTimeFramePickerModule, NuiTimePickerModule, NuiToastModule, NuiToolbarModule, NuiValidationMessageModule, NuiWizardModule, NuiWizardV2Module, NuiDocsModule, ButtonSizeType, CheckboxChangeEvent, datePickerDefaults, datePickerDateFormats, NuiDndModule, DndDropTargetDirective, NuiDialogEvent, SrlcStage, NuiFormFieldControl, IconCategory, IconCategoryNamespace, IconStatus, IconSeverity, IconState, IconWidget, MenuActionType, PanelModes, PanelStates, SizeParameters, PanelBackgroundColor, PopoverOverlayPosition, RepeatSelectionMode, PaddingOptions, NUI_SELECT_V2_OPTION_PARENT_COMPONENT, SelectionType, CheckboxStatus, SorterDirection, SpinnerSize, ButtonIcon, DEFAULT_TABLE_HEADER_OFFSET, TABLE_ROW_HEIGHT, complexScrollStrategyFactory, TableVirtualScrollLinearDirective, TableVirtualScrollDirective, TableVirtualScrollHeaderPosition, TableStickyHeaderDirective, SliceRangePipe, ToolbarItemType, ToolbarItemDisplayStyle, CustomValidationMessageComponent, wizardAnimations, WizardHorizontalComponent, WizardVerticalComponent, WizardStepV2Component, WizardDirective, WizardStepHeaderComponent, WizardStepLabelDirective, WizardStepFooterDirective, WizardFooterComponent, WizardStepperNextDirective, WizardStepperPreviousDirective, OVERLAY_CONTAINER_CLASS, OVERLAY_PANEL_CLASS, OVERLAY_DEFAULT_PRIORITY, OverlayPlacement, OverlayPosition, getOverlayPositions, OVERLAY_ITEM, OVERLAY_CONTAINER, OVERLAY_WITH_POPUP_STYLES_CLASS, OVERLAY_ARROW_SIZE, OverlayUtilitiesService, OverlayCustomContainer, POPUP_V2_VIEWPORT_MARGINS_DEFAULT, unitConversionToken, unitConversionConstants, imagesPresetToken, KEY_CODE, RESIZE_DEBOUNCE_TIME, DEFAULT_INTERACTIVE_ELEMENTS, ResizeDirection, ResizeUnit, resizeDirectionHelpers, defaultFilters, NuiActiveDialog, SelectionModel, IEvent, EventDefinition, NuiValidators, LogLevel, NuiEnvironment, NUI_ENV_PROVIDER_FACTORY, NUI_ENV_PROVIDER, uuid, immutableSet, removeErrors, traverse, nameof, BreadcrumbComponent, ContentComponent, ExpanderComponent, MessageComponent, DividerComponent, RadioComponent, RadioGroupComponent, CheckboxComponent, CheckboxGroupComponent, ChipComponent, ChipsComponent, ChipsOverflowComponent, IconComponent, SpinnerComponent, SwitchComponent, PaginatorComponent, ProgressComponent, PanelComponent, ButtonComponent, BusyComponent, ImageComponent, SearchComponent, TextboxComponent, RepeatItemComponent, RepeatComponent, MenuActionComponent, MenuComponent, MenuGroupComponent, MenuItemBaseComponent, MenuLinkComponent, MenuOptionComponent, MenuPopupComponent, MenuSwitchComponent, WizardStepComponent, WizardComponent, ToastComponent, PopupDeprecatedComponent, PopupToggleDirective, SelectorComponent, PopoverComponent, PopupComponent, PopoverModalComponent, SelectComponent, SelectV2OptionComponent, SelectV2OptionGroupComponent, ComboboxV2OptionHighlightDirective, OverlayItemComponent, OverlayComponent, ArrowComponent, SelectV2Component, ComboboxV2Component, MarkAsSelectedItemDirective, ComboboxComponent, BaseSelect, DatePickerComponent, TimePickerComponent, TimeFramePickerComponent, DateTimePickerComponent, SorterComponent, DialogComponent, NuiDialogRef, DialogHeaderComponent, DialogFooterComponent, DialogBackdropComponent, ConfirmationDialogComponent, TableComponent, TableFooterRowComponent, TableHeaderRowComponent, TableRowComponent, TableFooterRowDefDirective, TableRowDefDirective, TableHeaderRowDefDirective, CardComponent, CardGroupComponent, SheetComponent, SheetGroupComponent, TableHeaderCellComponent, TableFooterCellDefDirective, TableFooterCellDirective, TableHeaderCellDefDirective, TableColumnDefDirective, TableCellDirective, TableCellDefDirective, TableResizerDirective, ToolbarComponent, ToolbarGroupComponent, ToolbarItemComponent, ToolbarSplitterComponent, ValidationMessageComponent, TextboxNumberComponent, FormFieldComponent, TabGroupComponent, TabHeadingCustomTemplateRefDirective, TabHeadingDirective, TabComponent, ClipboardDirective, DraggableDirective, DroppableDirective, ResizeObserverDirective, ResizerDirective, ResizeDirective, SetFocusDirective, TooltipDirective, ZoomContentDirective, ThemeSwitcherComponent, ClickInterceptorDirective, MenuItemComponent, TabHeadingComponent, TabHeadingGroupComponent, TooltipComponent, LayoutResizerComponent, TimeFrameBarComponent, QuickPickerComponent, CopyTextComponent, ExampleWrapperComponent, ExampleCodeComponent, SrlcIndicatorComponent, HighlightPipe, LimitToPipe, TimeFrameFormatPipe, UnitConversionPipe, IconService, DragAndDropService, BreadcrumbStateService, NoopDataSourceService, DataSourceService, DataSourceFeatures, DataFilterService, DialogStackService, DialogService, DomUtilService, EdgeDetectionService, EventPropagationService, HistoryStorage, ListService, LoggerService, NotificationService, PositionService, SearchService, SelectorService, UtilService, TimeframeService, ToastContainerService, ToastService, ToastDirective, ThemeSwitchService, TransientCacheService, TableStateHandlerService, UnitConversionService, LocalFilteringDataSource, ClientSideDataSource, ServerSideDataSource, EventBusService, EventBus, MenuKeyControlService, VirtualViewportManager, OverlayContainerService, OverlayPositionService, OverlayService, DEMO_PATH_TOKEN, expand */
+    /*! exports provided: NuiButtonModule, NuiCheckboxModule, NuiCommonModule, NuiDividerModule, NuiIconModule, NuiMessageModule, NuiImageModule, NuiMenuModule, NuiPopupModule, NuiSwitchModule, NuiSelectModule, NuiSelectV2Module, NuiSpinnerModule, NuiTabsModule, NuiTextboxModule, NuiTooltipModule, NuiLayoutModule, NuiOverlayModule, NuiOverlayAdditionsModule, NuiBreadcrumbModule, NuiBusyModule, NuiChipsModule, NuiContentModule, NuiDatePickerModule, NuiDateTimePickerModule, NuiDialogModule, NuiExpanderModule, NuiFormFieldModule, NuiPaginatorModule, NuiPanelModule, NuiPopoverModule, NuiProgressModule, NuiRadioModule, NuiRepeatModule, NuiSearchModule, NuiSelectorModule, NuiSorterModule, NuiTableModule, NuiTimeFrameBarModule, NuiTimeFramePickerModule, NuiTimePickerModule, NuiToastModule, NuiToolbarModule, NuiValidationMessageModule, NuiWizardModule, NuiWizardV2Module, NuiDocsModule, ButtonSizeType, CheckboxChangeEvent, datePickerDefaults, datePickerDateFormats, NuiDndModule, DndDropTargetDirective, NuiDialogEvent, SrlcStage, NuiFormFieldControl, IconCategory, IconCategoryNamespace, IconStatus, IconSeverity, IconState, IconWidget, MenuActionType, PanelModes, PanelStates, SizeParameters, PanelBackgroundColor, PopoverOverlayPosition, RepeatSelectionMode, PaddingOptions, NUI_SELECT_V2_OPTION_PARENT_COMPONENT, SelectionType, CheckboxStatus, SorterDirection, SpinnerSize, ButtonIcon, DEFAULT_TABLE_HEADER_OFFSET, TABLE_ROW_HEIGHT, complexScrollStrategyFactory, TableVirtualScrollLinearDirective, TableVirtualScrollDirective, TableVirtualScrollHeaderPosition, TableStickyHeaderDirective, SliceRangePipe, ToolbarItemType, ToolbarItemDisplayStyle, CustomValidationMessageComponent, wizardAnimations, WizardHorizontalComponent, WizardVerticalComponent, WizardStepV2Component, WizardDirective, WizardStepHeaderComponent, WizardStepLabelDirective, WizardStepFooterDirective, WizardFooterComponent, WizardStepperNextDirective, WizardStepperPreviousDirective, OVERLAY_CONTAINER_CLASS, OVERLAY_PANEL_CLASS, OVERLAY_DEFAULT_PRIORITY, OverlayPlacement, OverlayPosition, getOverlayPositions, OVERLAY_ITEM, OVERLAY_CONTAINER, OVERLAY_WITH_POPUP_STYLES_CLASS, OVERLAY_ARROW_SIZE, OverlayUtilitiesService, OverlayCustomContainer, POPUP_V2_VIEWPORT_MARGINS_DEFAULT, unitConversionToken, UnitBase, unitConversionConstants, imagesPresetToken, KEY_CODE, RESIZE_DEBOUNCE_TIME, DEFAULT_INTERACTIVE_ELEMENTS, ResizeDirection, ResizeUnit, resizeDirectionHelpers, defaultFilters, NuiActiveDialog, SelectionModel, IEvent, EventDefinition, NuiValidators, LogLevel, NuiEnvironment, NUI_ENV_PROVIDER_FACTORY, NUI_ENV_PROVIDER, uuid, immutableSet, removeErrors, traverse, nameof, BreadcrumbComponent, ContentComponent, ExpanderComponent, MessageComponent, DividerComponent, RadioComponent, RadioGroupComponent, CheckboxComponent, CheckboxGroupComponent, ChipComponent, ChipsComponent, ChipsOverflowComponent, IconComponent, SpinnerComponent, SwitchComponent, PaginatorComponent, ProgressComponent, PanelComponent, ButtonComponent, BusyComponent, ImageComponent, SearchComponent, TextboxComponent, RepeatItemComponent, RepeatComponent, MenuActionComponent, MenuComponent, MenuGroupComponent, MenuItemBaseComponent, MenuLinkComponent, MenuOptionComponent, MenuPopupComponent, MenuSwitchComponent, WizardStepComponent, WizardComponent, ToastComponent, PopupDeprecatedComponent, PopupToggleDirective, SelectorComponent, PopoverComponent, PopupComponent, PopoverModalComponent, SelectComponent, SelectV2OptionComponent, SelectV2OptionGroupComponent, ComboboxV2OptionHighlightDirective, OverlayItemComponent, OverlayComponent, ArrowComponent, SelectV2Component, ComboboxV2Component, MarkAsSelectedItemDirective, ComboboxComponent, BaseSelect, DatePickerComponent, TimePickerComponent, TimeFramePickerComponent, DateTimePickerComponent, SorterComponent, DialogComponent, NuiDialogRef, DialogHeaderComponent, DialogFooterComponent, DialogBackdropComponent, ConfirmationDialogComponent, TableComponent, TableFooterRowComponent, TableHeaderRowComponent, TableRowComponent, TableFooterRowDefDirective, TableRowDefDirective, TableHeaderRowDefDirective, CardComponent, CardGroupComponent, SheetComponent, SheetGroupComponent, TableHeaderCellComponent, TableFooterCellDefDirective, TableFooterCellDirective, TableHeaderCellDefDirective, TableColumnDefDirective, TableCellDirective, TableCellDefDirective, TableResizerDirective, ToolbarComponent, ToolbarGroupComponent, ToolbarItemComponent, ToolbarSplitterComponent, ValidationMessageComponent, TextboxNumberComponent, FormFieldComponent, TabGroupComponent, TabHeadingCustomTemplateRefDirective, TabHeadingDirective, TabComponent, ClipboardDirective, DraggableDirective, DroppableDirective, ResizeObserverDirective, ResizerDirective, ResizeDirective, SetFocusDirective, TooltipDirective, ZoomContentDirective, ThemeSwitcherComponent, ClickInterceptorDirective, MenuItemComponent, TabHeadingComponent, TabHeadingGroupComponent, TooltipComponent, LayoutResizerComponent, TimeFrameBarComponent, QuickPickerComponent, CopyTextComponent, ExampleWrapperComponent, ExampleCodeComponent, SrlcIndicatorComponent, HighlightPipe, LimitToPipe, TimeFrameFormatPipe, UnitConversionPipe, IconService, DragAndDropService, BreadcrumbStateService, NoopDataSourceService, DataSourceService, DataSourceFeatures, DataFilterService, DialogStackService, DialogService, DomUtilService, EdgeDetectionService, EventPropagationService, HistoryStorage, ListService, LoggerService, NotificationService, PositionService, SearchService, SelectorService, UtilService, TimeframeService, ToastContainerService, ToastService, ToastDirective, ThemeSwitchService, TransientCacheService, TableStateHandlerService, UnitConversionService, LocalFilteringDataSource, ClientSideDataSource, ServerSideDataSource, EventBusService, EventBus, MenuKeyControlService, VirtualViewportManager, OverlayContainerService, OverlayPositionService, OverlayService, DEMO_PATH_TOKEN, expand */
 
     /***/
     function b5Xb(module, __webpack_exports__, __webpack_require__) {
@@ -39257,6 +39252,12 @@
 
       __webpack_require__.d(__webpack_exports__, "unitConversionToken", function () {
         return _nui_api__WEBPACK_IMPORTED_MODULE_0__["unitConversionToken"];
+      });
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "UnitBase", function () {
+        return _nui_api__WEBPACK_IMPORTED_MODULE_0__["UnitBase"];
       });
       /* harmony reexport (safe) */
 
@@ -47530,6 +47531,7 @@
       var DEFAULT_SELECT_OVERLAY_CONFIG = {
         panelClass: _overlay_constants__WEBPACK_IMPORTED_MODULE_10__["OVERLAY_WITH_POPUP_STYLES_CLASS"]
       }; // Will be renamed in scope of the NUI-5797
+      // eslint-disable-next-line @angular-eslint/directive-class-suffix
 
       var BaseSelectV2 = /*#__PURE__*/function () {
         function BaseSelectV2(optionKeyControlService, cdRef, elRef) {
@@ -50399,7 +50401,7 @@
       !*** ./src/constants/index.ts ***!
       \********************************/
 
-    /*! exports provided: unitConversionToken, unitConversionConstants, imagesPresetToken, KEY_CODE, RESIZE_DEBOUNCE_TIME, DEMO_PATH_TOKEN, DEFAULT_INTERACTIVE_ELEMENTS */
+    /*! exports provided: unitConversionToken, UnitBase, unitConversionConstants, imagesPresetToken, KEY_CODE, RESIZE_DEBOUNCE_TIME, DEMO_PATH_TOKEN, DEFAULT_INTERACTIVE_ELEMENTS */
 
     /***/
     function jxKE(module, __webpack_exports__, __webpack_require__) {
@@ -50409,20 +50411,26 @@
       /* harmony import */
 
 
-      var _unit_conversion_constant__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! ./unit-conversion.constant */
-      "Ped9");
+      var _unit_conversion_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! ./unit-conversion.constants */
+      "Uuhz");
       /* harmony reexport (safe) */
 
 
       __webpack_require__.d(__webpack_exports__, "unitConversionToken", function () {
-        return _unit_conversion_constant__WEBPACK_IMPORTED_MODULE_0__["unitConversionToken"];
+        return _unit_conversion_constants__WEBPACK_IMPORTED_MODULE_0__["unitConversionToken"];
+      });
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "UnitBase", function () {
+        return _unit_conversion_constants__WEBPACK_IMPORTED_MODULE_0__["UnitBase"];
       });
       /* harmony reexport (safe) */
 
 
       __webpack_require__.d(__webpack_exports__, "unitConversionConstants", function () {
-        return _unit_conversion_constant__WEBPACK_IMPORTED_MODULE_0__["unitConversionConstants"];
+        return _unit_conversion_constants__WEBPACK_IMPORTED_MODULE_0__["unitConversionConstants"];
       });
       /* harmony import */
 
@@ -53628,6 +53636,7 @@
       /**
        * Base class for menu items. Adds styles to host element
        */
+      // eslint-disable-next-line @angular-eslint/directive-class-suffix
 
 
       var MenuItemBaseComponent = /*#__PURE__*/function () {
@@ -54864,17 +54873,27 @@
       /* harmony import */
 
 
-      var _log_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! ../constants */
+      "jxKE");
+      /* harmony import */
+
+
+      var _log_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ./log-service */
       "eqCI");
       /* harmony import */
 
 
-      var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! @angular/core */
       "fXoL");
       /**
-       * @ignore
+       * <example-url>./../examples/index.html#/common/unit-conversion-service</example-url>
+       */
+
+      /**
+       * Service for converting a raw value to a larger unit approximation of the value--for example, 1024 B to 1 MB, 12345 Hz to 12.35 kHz, etc.
        */
 
 
@@ -54884,11 +54903,22 @@
 
           this.logger = logger;
         }
+        /**
+         * Converts a raw value to a larger unit approximation of the value. For example, 1024 B to 1 KB, 12345 Hz to 12.35 kHz, etc.
+         *
+         * @param value The value to convert
+         * @param base The base to use for the exponential expression when calculating the conversion result
+         * @param scale The number of significant digits to the right of the decimal to include in the resulting converted value
+         *
+         * @returns {IUnitConversionResult} The conversion result
+         */
+
 
         _createClass(UnitConversionService, [{
           key: "convert",
-          value: function convert(value, base) {
-            var precision = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1;
+          value: function convert(value) {
+            var base = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : _constants__WEBPACK_IMPORTED_MODULE_0__["UnitBase"].Standard;
+            var scale = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1;
             var resultValue;
             var resultOrder;
             var strValue;
@@ -54909,9 +54939,9 @@
                 resultOrder += 1;
               }
 
-              strValue = resultValue.toFixed(precision); // remove trailing zeros
+              strValue = resultValue.toFixed(scale); // remove trailing zeros
 
-              strValue = strValue.replace(/\.0+$/, "");
+              strValue = parseFloat(strValue).toString();
             } else {
               resultOrder = 0;
               strValue = value.toString();
@@ -54922,16 +54952,79 @@
               order: resultOrder
             };
           }
+          /**
+           * Gets the display string of a conversion result
+           *
+           * @param conversion The result of an invocation of this service's convert method
+           * @param unit The unit used in the conversion
+           * @param plusSign Whether to prepend the display string with a '+'
+           * @param nanDisplay The string to display in case the conversion result is NaN or Infinity
+           *
+           * @returns {string} The display string of the conversion result
+           */
+
+        }, {
+          key: "getFullDisplay",
+          value: function getFullDisplay(conversion, unit) {
+            var plusSign = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+            var nanDisplay = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : "---";
+            var isValidNumber = this.isValidNumber(conversion.value);
+            var spacing = unit !== "generic" && isValidNumber ? " " : "";
+            var unitDisplay = isValidNumber ? this.getUnitDisplay(conversion, unit) : "";
+            return "".concat(this.getValueDisplay(conversion, plusSign, nanDisplay)).concat(spacing).concat(unitDisplay);
+          }
+          /**
+           * Gets the converted value display string
+           *
+           * @param conversion The result of an invocation of this service's convert method
+           * @param plusSign Whether to prepend the display string with a '+'
+           * @param nanDisplay The string to display in case the conversion result is NaN or Infinity
+           *
+           * @returns {string} The converted value display string
+           */
+
+        }, {
+          key: "getValueDisplay",
+          value: function getValueDisplay(conversion) {
+            var plusSign = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+            var nanDisplay = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "---";
+
+            if (!this.isValidNumber(conversion.value)) {
+              return nanDisplay;
+            }
+
+            var prefix = plusSign && parseInt(conversion.value, 10) > 0 ? "+" : "";
+            return "".concat(prefix).concat(conversion.value);
+          }
+          /**
+           * Gets the converted unit display string
+           *
+           * @param conversion The result of an invocation of this service's convert method
+           * @param unit The basic unit used in the conversion
+           *
+           * @returns {string} The converted unit display string
+           */
+
+        }, {
+          key: "getUnitDisplay",
+          value: function getUnitDisplay(conversion, unit) {
+            return _constants__WEBPACK_IMPORTED_MODULE_0__["unitConversionConstants"][unit][conversion.order];
+          }
+        }, {
+          key: "isValidNumber",
+          value: function isValidNumber(value) {
+            return !isNaN(parseFloat(value)) && isFinite(parseInt(value, 10));
+          }
         }]);
 
         return UnitConversionService;
       }();
 
       UnitConversionService.ɵfac = function UnitConversionService_Factory(t) {
-        return new (t || UnitConversionService)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_log_service__WEBPACK_IMPORTED_MODULE_0__["LoggerService"]));
+        return new (t || UnitConversionService)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_log_service__WEBPACK_IMPORTED_MODULE_1__["LoggerService"]));
       };
 
-      UnitConversionService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
+      UnitConversionService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjectable"]({
         token: UnitConversionService,
         factory: UnitConversionService.ɵfac,
         providedIn: "root"

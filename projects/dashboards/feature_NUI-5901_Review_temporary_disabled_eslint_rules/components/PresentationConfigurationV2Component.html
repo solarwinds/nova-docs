@@ -619,8 +619,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="239"
-                            class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor-v2/column-configuration/presentation-configuration/presentation-configuration-v2.component.ts:239</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="241"
+                            class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor-v2/column-configuration/presentation-configuration/presentation-configuration-v2.component.ts:241</a></div>
                 </td>
             </tr>
 
@@ -1596,12 +1596,14 @@ export class PresentationConfigurationV2Component implements IHasChangeDetector,
             this.onValueChange();
         };
 
-        updateParentForm();
         propertiesControl.markAsPristine();
 
         this.propertiesForm.valueChanges
             .pipe(takeUntil(this.propertiesFormReady))
             .subscribe(updateParentForm);
+
+        // initially, populate the formatter form with inputs from the widget
+        this.propertiesForm.patchValue(this.formatter.properties);
     }
 
     public onValueChange() {
