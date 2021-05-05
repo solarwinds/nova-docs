@@ -19863,6 +19863,7 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * @deprecated in v11 - Use BaseSelectV2 instead - Removal: NUI-5796
  */
+// eslint-disable-next-line @angular-eslint/directive-class-suffix
 class BaseSelect {
     constructor(utilService) {
         this.utilService = utilService;
@@ -25491,6 +25492,7 @@ const DEFAULT_SELECT_OVERLAY_CONFIG = {
     panelClass: _overlay_constants__WEBPACK_IMPORTED_MODULE_10__["OVERLAY_WITH_POPUP_STYLES_CLASS"],
 };
 // Will be renamed in scope of the NUI-5797
+// eslint-disable-next-line @angular-eslint/directive-class-suffix
 class BaseSelectV2 {
     constructor(optionKeyControlService, cdRef, elRef) {
         this.optionKeyControlService = optionKeyControlService;
@@ -28703,6 +28705,7 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * Base class for menu items. Adds styles to host element
  */
+// eslint-disable-next-line @angular-eslint/directive-class-suffix
 class MenuItemBaseComponent {
     constructor(group, cd) {
         this.group = group;

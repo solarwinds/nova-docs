@@ -36288,6 +36288,7 @@
       /**
        * @deprecated in v11 - Use BaseSelectV2 instead - Removal: NUI-5796
        */
+      // eslint-disable-next-line @angular-eslint/directive-class-suffix
 
 
       var BaseSelect = /*#__PURE__*/function () {
@@ -47530,6 +47531,7 @@
       var DEFAULT_SELECT_OVERLAY_CONFIG = {
         panelClass: _overlay_constants__WEBPACK_IMPORTED_MODULE_10__["OVERLAY_WITH_POPUP_STYLES_CLASS"]
       }; // Will be renamed in scope of the NUI-5797
+      // eslint-disable-next-line @angular-eslint/directive-class-suffix
 
       var BaseSelectV2 = /*#__PURE__*/function () {
         function BaseSelectV2(optionKeyControlService, cdRef, elRef) {
@@ -53634,6 +53636,7 @@
       /**
        * Base class for menu items. Adds styles to host element
        */
+      // eslint-disable-next-line @angular-eslint/directive-class-suffix
 
 
       var MenuItemBaseComponent = /*#__PURE__*/function () {
