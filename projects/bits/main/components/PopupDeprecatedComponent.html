@@ -1013,7 +1013,7 @@
     Optional,
     Output,
     ViewChild,
-    ViewEncapsulation
+    ViewEncapsulation,
 } from &quot;@angular/core&quot;;
 import _isUndefined from &quot;lodash/isUndefined&quot;;
 import {Subject, Subscription} from &quot;rxjs&quot;;
@@ -1141,7 +1141,7 @@ export class PopupDeprecatedComponent implements AfterContentInit, OnDestroy, On
                 private logger: LoggerService,
                 @Optional() private popupContainer: PopupContainerService) {
 
-                    this.logger.warn(&quot;&lt;nui-popup-deprecated&gt; is deprecated as of Nova v11. Please use &lt;nui-popup&gt; instead.&quot;);
+        this.logger.warn(&quot;&lt;nui-popup-deprecated&gt; is deprecated as of Nova v11. Please use &lt;nui-popup&gt; instead.&quot;);
     }
     public ngOnInit() {
         if (this.manualOpenControl) {

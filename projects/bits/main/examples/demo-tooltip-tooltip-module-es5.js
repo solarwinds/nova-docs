@@ -1276,7 +1276,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import { Component } from \"@angular/core\";\n\n\n@Component({\n    selector: \"nui-tooltip-disabled-example\",\n    templateUrl: \"tooltip-disabled.example.component.html\",\n})\n\nexport class TooltipDisabledExampleComponent {\n    public isDisabled = false;\n    public tooltip = $localize `I am a Tooltip!`;\n    public message = $localize `Toggle to switch state`;\n\n\n    constructor() {}\n\n    public onValueChanged(value: boolean) {\n        this.isDisabled = value;\n        this.message = value\n                        ? $localize `Tooltip is Disabled and hidden!`\n                        : $localize `Tooltip is Enabled and can be shown\"`;\n    }\n}\n";
+      __webpack_exports__["default"] = "import { Component } from \"@angular/core\";\n\n\n@Component({\n    selector: \"nui-tooltip-disabled-example\",\n    templateUrl: \"tooltip-disabled.example.component.html\",\n})\n\nexport class TooltipDisabledExampleComponent {\n    public isDisabled = false;\n    public tooltip = $localize `I am a Tooltip!`;\n    public message = $localize `Toggle to switch state`;\n\n\n    constructor() {}\n\n    public onValueChanged(value: boolean) {\n        this.isDisabled = value;\n        this.message = value\n            ? $localize `Tooltip is Disabled and hidden!`\n            : $localize `Tooltip is Enabled and can be shown\"`;\n    }\n}\n";
       /***/
     },
 

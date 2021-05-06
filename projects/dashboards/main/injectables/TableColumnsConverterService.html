@@ -1037,8 +1037,8 @@ import { BaseConverter } from &quot;../base-converter&quot;;
 export class TableColumnsConverterService extends BaseConverter implements AfterViewInit {
 
     constructor(@Inject(PIZZAGNA_EVENT_BUS) eventBus: EventBus&lt;IEvent&gt;,
-                previewService: PreviewService,
-                pizzagnaService: PizzagnaService) {
+                                            previewService: PreviewService,
+                                            pizzagnaService: PizzagnaService) {
         super(eventBus, previewService, pizzagnaService);
     }
 
@@ -1089,12 +1089,12 @@ export class TableColumnsConverterService extends BaseConverter implements After
                     // this assigment resolves a race condition that sometimes occured when data fields received from the data source would be
                     // overwritten by an &quot;older&quot; formPizzagna value assigned above
                     formPizzagna &#x3D; immutableSet(formPizzagna, &#x60;${PizzagnaLayer.Structure}.columns.properties.template&#x60;,
-                        this.pizzagnaService.pizzagna[PizzagnaLayer.Structure].columns.properties?.template);
+                                                this.pizzagnaService.pizzagna[PizzagnaLayer.Structure].columns.properties?.template);
 
                     formPizzagna &#x3D; immutableSet(formPizzagna, &#x60;${PizzagnaLayer.Data}.filters.properties.columns&#x60;, columns);
                     // this triggers change detection on the &quot;filters&quot; component
                     formPizzagna &#x3D; immutableSet(formPizzagna, &#x60;${PizzagnaLayer.Structure}.presentation.properties.nodes&#x60;,
-                        [...formPizzagna?.structure?.presentation?.properties?.nodes]);
+                                                [...formPizzagna?.structure?.presentation?.properties?.nodes]);
 
                     this.updateFormPizzagna(formPizzagna);
                 });
@@ -1137,7 +1137,7 @@ export class TableColumnsConverterService extends BaseConverter implements After
     private handleColumnsWithoutSpecifiedWidth(activeColumnsWithoutWidth: Array&lt;ITableWidgetColumnConfig&gt;) {
         switch (activeColumnsWithoutWidth.length) {
             // if all columns have specified width, reset last columns value so that other columns can resize
-            case 0:
+            case 0: {
                 const activeColumns &#x3D; (this.component.form.get(&quot;columns&quot;) as FormArray).controls.filter(control &#x3D;&gt;
                     get(control, &#x60;value.properties[${control.value.id}/description].isActive&#x60;));
                 if (isEmpty(activeColumns)) {
@@ -1148,8 +1148,9 @@ export class TableColumnsConverterService extends BaseConverter implements After
                 }
                 const lastActiveColumn &#x3D; activeColumns[activeColumns.length - 1];
                 console.warn(&#x60;Cannot set width for all columns. Resetting &quot;${lastActiveColumn.value.label}&quot; width.&#x60;);
-                lastActiveColumn.patchValue({ width: null }, { emitEvent: false });
+                lastActiveColumn.patchValue({width: null}, {emitEvent: false});
                 return lastActiveColumn.value;
+            }
             case 1:
                 return activeColumnsWithoutWidth[0];
             default:

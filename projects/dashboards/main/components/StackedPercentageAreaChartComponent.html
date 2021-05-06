@@ -749,7 +749,7 @@ import {
     IAccessors,
     IValueProvider,
     stackedAreaAccessors,
-    stackedPercentageArea
+    stackedPercentageArea,
 } from &quot;@nova-ui/charts&quot;;
 
 import { DATA_SOURCE, PIZZAGNA_EVENT_BUS } from &quot;../../../../../types&quot;;
@@ -765,8 +765,8 @@ export class StackedPercentageAreaChartComponent extends XYChartComponent {
 
     constructor(@Inject(PIZZAGNA_EVENT_BUS) eventBus: EventBus&lt;IEvent&gt;,
                 @Optional() @Inject(DATA_SOURCE) dataSource: IDataSource,
-                timeseriesScalesService: TimeseriesScalesService,
-                changeDetector: ChangeDetectorRef) {
+                                            timeseriesScalesService: TimeseriesScalesService,
+                                            changeDetector: ChangeDetectorRef) {
         super(eventBus, dataSource, timeseriesScalesService, changeDetector);
 
         this.renderer &#x3D; new AreaRenderer();

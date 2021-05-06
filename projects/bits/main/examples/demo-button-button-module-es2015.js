@@ -121,7 +121,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { Component } from \"@angular/core\";\n\n@Component({\n    selector: \"nui-with-button-long-text-example\",\n    templateUrl: \"./button-with-long-text-example.component.html\",\n})\nexport class ButtonWithLongTextExampleComponent {\n    public disableWidthRestriction = true;\n\n    public toggleWidthRestriction() {\n         this.disableWidthRestriction = !this.disableWidthRestriction;\n    }\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import { Component } from \"@angular/core\";\n\n@Component({\n    selector: \"nui-with-button-long-text-example\",\n    templateUrl: \"./button-with-long-text-example.component.html\",\n})\nexport class ButtonWithLongTextExampleComponent {\n    public disableWidthRestriction = true;\n\n    public toggleWidthRestriction() {\n        this.disableWidthRestriction = !this.disableWidthRestriction;\n    }\n}\n");
 
 /***/ }),
 

@@ -1043,17 +1043,17 @@ the button has no inner content, the empty button styling will still be applied.
     OnInit,
     ViewChild,
     ViewContainerRef,
-    ViewEncapsulation
+    ViewEncapsulation,
 } from &quot;@angular/core&quot;;
 import {
     fromEvent,
     merge,
     Subject,
-    timer
+    timer,
 } from &quot;rxjs&quot;;
 import {
     filter,
-    takeUntil
+    takeUntil,
 } from &quot;rxjs/operators&quot;;
 
 import { buttonConstants } from &quot;../../constants/button.constants&quot;;
@@ -1123,9 +1123,9 @@ export class ButtonComponent implements OnInit, OnDestroy, AfterContentChecked {
      */
     // TODO: Remove this setter/getter logic in scope of NUI-3475
     @Input() public get size(): ButtonSizeType { return this._size; }
-             public set size(value: ButtonSizeType) {
-                this._size &#x3D; (value as string) &#x3D;&#x3D;&#x3D; &quot;small&quot; ? ButtonSizeType.compact : value;
-             }
+    public set size(value: ButtonSizeType) {
+        this._size &#x3D; (value as string) &#x3D;&#x3D;&#x3D; &quot;small&quot; ? ButtonSizeType.compact : value;
+    }
 
     @HostBinding(&quot;class.btn-lg&quot;) public get sizeClassLarge() { return this.size &#x3D;&#x3D;&#x3D; &quot;large&quot;; }
     @HostBinding(&quot;class.btn-xs&quot;) public get sizeClassCompact() {return this.size &#x3D;&#x3D;&#x3D; &quot;compact&quot;; }

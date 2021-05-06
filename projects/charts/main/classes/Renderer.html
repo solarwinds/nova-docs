@@ -1573,7 +1573,7 @@ export abstract class Renderer&lt;TA extends IAccessors&gt; {
         }
 
         return extent&lt;Numeric, Numeric&gt;(data,
-            (datum, index, arr) &#x3D;&gt; dataSeries.accessors.data?.[scaleName]?.(datum, index, Array.from(arr), dataSeries));
+                                        (datum, index, arr) &#x3D;&gt; dataSeries.accessors.data?.[scaleName]?.(datum, index, Array.from(arr), dataSeries));
     }
 
     /**

@@ -1613,7 +1613,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import { Component } from \"@angular/core\";\n\n@Component({\n  selector: \"nui-search-docs-example\",\n  templateUrl: \"./search-docs.example.component.html\",\n})\nexport class SearchDocsExampleComponent  { }\n";
+      __webpack_exports__["default"] = "import { Component } from \"@angular/core\";\n\n@Component({\n    selector: \"nui-search-docs-example\",\n    templateUrl: \"./search-docs.example.component.html\",\n})\nexport class SearchDocsExampleComponent  { }\n";
       /***/
     },
 

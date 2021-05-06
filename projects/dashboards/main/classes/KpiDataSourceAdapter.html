@@ -630,7 +630,7 @@ export class KpiDataSourceAdapter extends DataSourceAdapter&lt;IKpiData&gt; {
 
     constructor(@Inject(PIZZAGNA_EVENT_BUS) eventBus: EventBus&lt;IEvent&gt;,
         @Optional() @Inject(DATA_SOURCE) dataSource: IDataSource,
-        pizzagnaService: PizzagnaService,
+                                            pizzagnaService: PizzagnaService,
         private numberPipe: DecimalPipe) {
         super(eventBus, dataSource, pizzagnaService);
     }

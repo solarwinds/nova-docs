@@ -755,8 +755,8 @@ export class LineChartComponent extends XYChartComponent {
 
     constructor(@Inject(PIZZAGNA_EVENT_BUS) eventBus: EventBus&lt;IEvent&gt;,
                 @Optional() @Inject(DATA_SOURCE) dataSource: IDataSource,
-                timeseriesScalesService: TimeseriesScalesService,
-                changeDetector: ChangeDetectorRef) {
+                                            timeseriesScalesService: TimeseriesScalesService,
+                                            changeDetector: ChangeDetectorRef) {
         super(eventBus, dataSource, timeseriesScalesService, changeDetector);
 
         this.renderer &#x3D; new LineRenderer();

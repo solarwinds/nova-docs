@@ -1378,7 +1378,7 @@
     OnDestroy,
     OnInit,
     Optional,
-    SimpleChanges
+    SimpleChanges,
 } from &quot;@angular/core&quot;;
 import {
     AbstractControl,
@@ -1391,7 +1391,7 @@ import {
     NG_VALIDATORS,
     NG_VALUE_ACCESSOR,
     ValidationErrors,
-    Validators
+    Validators,
 } from &quot;@angular/forms&quot;;
 import { EventBus, IDataField, IEvent } from &quot;@nova-ui/bits&quot;;
 import isUndefined from &quot;lodash/isUndefined&quot;;
@@ -1490,7 +1490,7 @@ export class PresentationConfigurationV2Component implements IHasChangeDetector,
         this.form &#x3D; this.formBuilder.group({
             &quot;componentType&quot;: this.formBuilder.control(this.providedFormatters?.[0]?.componentType, Validators.required),
             &quot;properties&quot;: this.formBuilder.control({},
-                () &#x3D;&gt; this.propertiesForm?.invalid ? { properties: true } : null
+                                                   () &#x3D;&gt; this.propertiesForm?.invalid ? { properties: true } : null
             ),
         });
 

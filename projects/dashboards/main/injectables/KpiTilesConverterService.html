@@ -1039,8 +1039,8 @@ export class KpiTilesConverterService extends BaseConverter implements AfterView
     private shouldReadForm &#x3D; false;
 
     constructor(@Inject(PIZZAGNA_EVENT_BUS) eventBus: EventBus&lt;IEvent&gt;,
-                previewService: PreviewService,
-                pizzagnaService: PizzagnaService) {
+                                            previewService: PreviewService,
+                                            pizzagnaService: PizzagnaService) {
         super(eventBus, previewService, pizzagnaService);
     }
 
@@ -1051,9 +1051,9 @@ export class KpiTilesConverterService extends BaseConverter implements AfterView
     public buildForm(): void {
         const preview &#x3D; this.getPreview();
         const tiles: IKpiItemConfiguration[] &#x3D; preview?.tiles?.properties?.nodes?.map((id: string) &#x3D;&gt; ({
-                id,
-                componentType: preview[id].componentType,
-            } as IKpiItemConfiguration)) || [] ;
+            id,
+            componentType: preview[id].componentType,
+        } as IKpiItemConfiguration)) || [] ;
         const tileIds &#x3D; tiles?.map(tile &#x3D;&gt; tile.id);
 
         this.pizzagnaService.createComponentsFromTemplate(&quot;tiles&quot;, tileIds);

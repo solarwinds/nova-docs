@@ -315,7 +315,7 @@ export class KpiScaleSyncBroker implements IConfigurable {
     constructor(
         @Inject(PIZZAGNA_EVENT_BUS) private eventBus: EventBus&lt;IEvent&gt;,
         private pizzagnaService: PizzagnaService) {
-            this.valuesObject &#x3D; this.builder.valuesObject;
+        this.valuesObject &#x3D; this.builder.valuesObject;
     }
 
     public updateConfiguration(properties: IProperties): void {
@@ -379,29 +379,29 @@ export class KpiScaleSyncBroker implements IConfigurable {
         const targetObj &#x3D; this.valuesObject[data.id].filter(obj &#x3D;&gt; obj.targetID &#x3D;&#x3D;&#x3D; data.targetID);
 
         targetObj.length
-                ? targetObj[0].targetValue &#x3D; data.targetValue
-                : this.valuesObject[data.id].push({ targetID: data.targetID, targetValue: data.targetValue });
+            ? targetObj[0].targetValue &#x3D; data.targetValue
+            : this.valuesObject[data.id].push({ targetID: data.targetID, targetValue: data.targetValue });
     }
 
     private createPropertiesAndSubscribeToBrokers() {
         this.tileNodes &#x3D; this.pizzagnaService.getComponent(this.componentId).properties?.nodes;
-            const { scaleSyncConfig } &#x3D; this.properties;
+        const { scaleSyncConfig } &#x3D; this.properties;
 
-            if (this.tileNodes?.length) {
-                this.tileNodes.forEach((node, i) &#x3D;&gt; {
-                    const property: IPizzagnaProperty &#x3D; {
-                        componentId: node,
-                        pizzagnaKey: PizzagnaLayer.Data,
-                        propertyPath: [&#x60;syncValuesBroker&#x60;],
-                    };
-                    this.pizzagnaService.setProperty(property, this.getBrokers());
-                });
+        if (this.tileNodes?.length) {
+            this.tileNodes.forEach((node, i) &#x3D;&gt; {
+                const property: IPizzagnaProperty &#x3D; {
+                    componentId: node,
+                    pizzagnaKey: PizzagnaLayer.Data,
+                    propertyPath: [&#x60;syncValuesBroker&#x60;],
+                };
+                this.pizzagnaService.setProperty(property, this.getBrokers());
+            });
 
-                if (scaleSyncConfig &amp;&amp; isArray(scaleSyncConfig)) {
-                    scaleSyncConfig.forEach((s: IBrokerUserConfig) &#x3D;&gt; this.configure().addBroker({ id: s.id, type: s?.type }));
-                    this.subscribeToBrokers();
-                }
+            if (scaleSyncConfig &amp;&amp; isArray(scaleSyncConfig)) {
+                scaleSyncConfig.forEach((s: IBrokerUserConfig) &#x3D;&gt; this.configure().addBroker({ id: s.id, type: s?.type }));
+                this.subscribeToBrokers();
             }
+        }
     }
 
     private getMin &#x3D; (n: number[]) &#x3D;&gt; Math.min(...n);

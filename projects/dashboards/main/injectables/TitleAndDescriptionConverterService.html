@@ -1066,8 +1066,8 @@ export class TitleAndDescriptionConverterService extends BaseConverter implement
     public static readonly PROPERTIES_PATH &#x3D; &#x60;${PizzagnaLayer.Configuration}.titleAndDescription.properties&#x60;;
 
     constructor(@Inject(PIZZAGNA_EVENT_BUS) eventBus: EventBus&lt;IEvent&gt;,
-                previewService: PreviewService,
-                pizzagnaService: PizzagnaService) {
+                                            previewService: PreviewService,
+                                            pizzagnaService: PizzagnaService) {
         super(eventBus, previewService, pizzagnaService);
     }
 

@@ -798,9 +798,9 @@ class DateTimeUtil {
      * @returns {Date} The local midnight date-time of the day containing the start of daylight saving time for the provided year
      */
     static getStartDstMidnight(year) {
-        let datesInYear = [];
+        const datesInYear = [];
         for (let i = 1; i <= 365; i++) {
-            let d = new Date(year, 0, 1);
+            const d = new Date(year, 0, 1);
             d.setDate(i);
             datesInYear.push(d);
         }
@@ -822,9 +822,9 @@ class DateTimeUtil {
      */
     static getStartDstHour(year) {
         const startDstMidnight = DateTimeUtil.getStartDstMidnight(year);
-        let hoursInDstStartDay = [];
+        const hoursInDstStartDay = [];
         for (let i = 0; i < 24; i++) {
-            let d = new Date(startDstMidnight);
+            const d = new Date(startDstMidnight);
             d.setHours(i);
             hoursInDstStartDay.push(d);
         }
@@ -845,9 +845,9 @@ class DateTimeUtil {
      * @returns {Date} The local midnight date-time of the day containing the end of daylight saving time for the provided year
      */
     static getEndDstMidnight(year) {
-        let datesInYear = [];
+        const datesInYear = [];
         for (let i = 1; i <= 365; i++) {
-            let d = new Date(year, 0, 1);
+            const d = new Date(year, 0, 1);
             d.setDate(i);
             datesInYear.push(d);
         }
@@ -867,9 +867,9 @@ class DateTimeUtil {
      */
     static getEndDstHour(year) {
         const endDstMidnight = DateTimeUtil.getEndDstMidnight(year);
-        let hoursInDstEndDay = [];
+        const hoursInDstEndDay = [];
         for (let i = 0; i < 24; i++) {
-            let d = new Date(endDstMidnight);
+            const d = new Date(endDstMidnight);
             d.setHours(i);
             hoursInDstEndDay.push(d);
         }
