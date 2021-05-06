@@ -122,7 +122,7 @@
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#onLegendClick">onLegendClick</a>
+                                <a href="#onPrimaryDescClick">onPrimaryDescClick</a>
                             </li>
                         </ul>
                     </td>
@@ -400,20 +400,20 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="onLegendClick"></a>
+                    <a name="onPrimaryDescClick"></a>
                     <span class="name">
                         <b>
                             <span class="modifier">Public</span>
-                            onLegendClick
+                            onPrimaryDescClick
                         </b>
-                        <a href="#onLegendClick"><span class="icon ion-ios-link"></span></a>
+                        <a href="#onPrimaryDescClick"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>onLegendClick(legendSeries: IChartAssistSeries<IAccessors>, event: MouseEvent)</code>
+                    <code>onPrimaryDescClick(event: MouseEvent, legendSeries: IChartAssistSeries<IAccessors>)</code>
                 </td>
             </tr>
 
@@ -441,9 +441,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>legendSeries</td>
+                                    <td>event</td>
                                     <td>
-                                            <code>IChartAssistSeries&lt;IAccessors&gt;</code>
+                                            <code>MouseEvent</code>
                                     </td>
 
                                     <td>
@@ -453,9 +453,9 @@
 
                                 </tr>
                                 <tr>
-                                    <td>event</td>
+                                    <td>legendSeries</td>
                                     <td>
-                                            <code>MouseEvent</code>
+                                            <code>IChartAssistSeries&lt;IAccessors&gt;</code>
                                     </td>
 
                                     <td>
@@ -681,19 +681,18 @@ export abstract class XYChartComponent extends TimeseriesChartComponent
         return this.configuration.legendPlacement &#x3D;&#x3D;&#x3D; LegendPlacement.Right;
     }
 
-    public onLegendClick(legendSeries: IChartAssistSeries&lt;IAccessors&gt;, event: MouseEvent) {
+    public onPrimaryDescClick(event: MouseEvent, legendSeries: IChartAssistSeries&lt;IAccessors&gt;) {
         if (!this.seriesInteractive) {
             return;
         }
-        const target &#x3D; event.target as HTMLElement;
-        if (target.classList.contains(&quot;description&quot;)) {
-            this.eventBus.getStream(INTERACTION).next({
-                payload: {
-                    data: legendSeries,
-                    interactionType: TimeseriesInteractionType.Series,
-                },
-            });
-        }
+
+        event.stopPropagation();
+        this.eventBus.getStream(INTERACTION).next({
+            payload: {
+                data: legendSeries,
+                interactionType: TimeseriesInteractionType.Series,
+            },
+        });
     }
 
     /** Updates chart data. */

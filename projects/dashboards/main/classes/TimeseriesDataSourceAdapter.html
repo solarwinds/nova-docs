@@ -560,6 +560,8 @@ export class TimeseriesDataSourceAdapter extends DataSourceAdapter {
             .map((series: ITimeseriesWidgetData) &#x3D;&gt; ({
                 id: series.id,
                 data: series.data,
+                link: series.link,
+                secondaryLink: series.secondaryLink,
                 legendDescriptionPrimary: this.seriesIndex.find(s &#x3D;&gt; s.selectedSeriesId &#x3D;&#x3D;&#x3D; series.id)?.label,
                 legendDescriptionSecondary: series.description,
             }));
