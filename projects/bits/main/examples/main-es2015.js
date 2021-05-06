@@ -13946,8 +13946,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var lodash_escape__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash/escape */ "Te9D");
 /* harmony import */ var lodash_escape__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_escape__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var lodash_isNil__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash/isNil */ "J2iB");
-/* harmony import */ var lodash_isNil__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_isNil__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash/isUndefined */ "TP7S");
+/* harmony import */ var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "qCKp");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "kU1M");
 /* harmony import */ var _pipes_highlight_pipe__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../pipes/highlight.pipe */ "ZlWS");
@@ -13996,7 +13996,7 @@ class ComboboxV2OptionHighlightDirective {
     updateHTML(highlighted) {
         var _a;
         const isHighlightNecessary = highlighted && ((_a = this.combobox.getLastSelectedOption()) === null || _a === void 0 ? void 0 : _a.viewValue) !== highlighted;
-        this.el.nativeElement.innerHTML = (isHighlightNecessary && !lodash_isNil__WEBPACK_IMPORTED_MODULE_2___default()(highlighted)
+        this.el.nativeElement.innerHTML = (isHighlightNecessary && !lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default()(highlighted)
             ? this.highlightPipe.transform(this.value, highlighted.toString())
             : lodash_escape__WEBPACK_IMPORTED_MODULE_1___default()(this.value));
     }
@@ -25455,8 +25455,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lodash_includes__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(lodash_includes__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var lodash_isEqual__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! lodash/isEqual */ "Y+p1");
 /* harmony import */ var lodash_isEqual__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(lodash_isEqual__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var lodash_isNil__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! lodash/isNil */ "J2iB");
-/* harmony import */ var lodash_isNil__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(lodash_isNil__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! lodash/isUndefined */ "TP7S");
+/* harmony import */ var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(lodash_isUndefined__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var lodash_last__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! lodash/last */ "RBan");
 /* harmony import */ var lodash_last__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(lodash_last__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var lodash_pull__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! lodash/pull */ "hzCD");
@@ -25689,11 +25689,11 @@ class BaseSelectV2 {
     }
     getValueFromOptions(options = this.selectedOptions) {
         var _a;
-        return this.multiselect ? options.map(o => o.value) : ((_a = options[0]) === null || _a === void 0 ? void 0 : _a.value) || null;
+        return this.multiselect ? options.map(o => o.value) : ((_a = options[0]) === null || _a === void 0 ? void 0 : _a.value) || "";
     }
     handleValueChange(value) {
         var _a;
-        if (lodash_isNil__WEBPACK_IMPORTED_MODULE_5___default()(value)) {
+        if (lodash_isUndefined__WEBPACK_IMPORTED_MODULE_5___default()(value)) {
             this.value = "";
             this._selectedOptions = [];
             this.setActiveItemOnDropdown();
@@ -25725,7 +25725,7 @@ class BaseSelectV2 {
     }
     validateValueWithSelectedOptions() {
         const selectedOptionValues = this.selectedOptions.map(option => option.value);
-        const valuePropToCompare = this.value
+        const valuePropToCompare = !lodash_isUndefined__WEBPACK_IMPORTED_MODULE_5___default()(this.value)
             ? this.multiselect ? this.value : [this.value]
             : [];
         if (!lodash_isEqual__WEBPACK_IMPORTED_MODULE_4___default()(selectedOptionValues, valuePropToCompare)) {
@@ -25736,7 +25736,7 @@ class BaseSelectV2 {
     }
     scrollToOption() {
         // setTimeout is necessary because scrolling to the selected item should occur only when overlay rendered
-        if (this.value && !this.multiselect) {
+        if (!lodash_isUndefined__WEBPACK_IMPORTED_MODULE_5___default()(this.value) && !this.multiselect) {
             setTimeout(() => { var _a; return (_a = this.selectedOptions[0]) === null || _a === void 0 ? void 0 : _a.scrollIntoView({ block: "center" }); });
         }
     }
@@ -25747,7 +25747,12 @@ class BaseSelectV2 {
         this.optionKeyControlService.setSkipPredicate((option) => !!(option.outfiltered || option.isDisabled));
     }
     setActiveItemOnDropdown() {
-        this.value && !this.multiselect
+        var _a;
+        let selectedValue;
+        if (!this.multiselect) {
+            selectedValue = (_a = this.options) === null || _a === void 0 ? void 0 : _a.find(option => lodash_isEqual__WEBPACK_IMPORTED_MODULE_4___default()(option.value, this.value));
+        }
+        selectedValue && !this.multiselect
             ? this.optionKeyControlService.setActiveItem(this.selectedOptions[0])
             : this.optionKeyControlService.setFirstItemActive();
     }
