@@ -2759,9 +2759,9 @@
         }
       }
 
-      var _c2 = function _c2() {
+      var _c2 = function _c2(a0) {
         return {
-          minHeight: 310
+          minHeight: a0
         };
       };
 
@@ -2790,6 +2790,16 @@
               this.viewport.scrollToOffset(this.scrollOffset);
               this.viewport.checkViewportSize();
             }
+          }
+          /**
+           To avoid double scroll on scrolling all page or scalable screens we need implicitly set
+           height for overlay little bit bigger than for container
+           * */
+
+        }, {
+          key: "overlayHeight",
+          get: function get() {
+            return this.containerHeight + 10;
           }
         }, {
           key: "ngAfterViewInit",
@@ -2856,7 +2866,7 @@
           }
         },
         decls: 5,
-        vars: 11,
+        vars: 12,
         consts: function consts() {
           var i18n_0;
 
@@ -2885,7 +2895,7 @@
           }
 
           if (rf & 2) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("overlayConfig", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](10, _c2))("formControl", ctx.comboboxControl)("isTypeaheadEnabled", false);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("overlayConfig", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction1"](10, _c2, ctx.overlayHeight))("formControl", ctx.comboboxControl)("isTypeaheadEnabled", false);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
 
@@ -3977,7 +3987,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<nui-combobox-v2 placeholder=\"Select Item\" i18n-placeholder\n                 [overlayConfig]=\"{ minHeight: 310 }\"\n                 [formControl]=\"comboboxControl\"\n                 [isTypeaheadEnabled]=\"false\"\n                 #combobox>\n\n    <cdk-virtual-scroll-viewport itemSize=\"30\"\n                                 [minBufferPx]=\"300\"\n                                 [maxBufferPx]=\"600\"\n                                 [style.height.px]=\"containerHeight\">\n\n        <div *cdkVirtualFor=\"let item of filteredItems | async; index as i\">\n            <nui-select-v2-option [value]=\"item\" class=\"d-flex align-items-center\">\n                <span [nuiComboboxV2OptionHighlight]=\"item\"></span>\n            </nui-select-v2-option>\n        </div>\n    </cdk-virtual-scroll-viewport>\n</nui-combobox-v2>\n";
+      __webpack_exports__["default"] = "<nui-combobox-v2 placeholder=\"Select Item\" i18n-placeholder\n                 [overlayConfig]=\"{ minHeight: overlayHeight }\"\n                 [formControl]=\"comboboxControl\"\n                 [isTypeaheadEnabled]=\"false\"\n                 #combobox>\n\n    <cdk-virtual-scroll-viewport itemSize=\"30\"\n                                 [minBufferPx]=\"300\"\n                                 [maxBufferPx]=\"600\"\n                                 [style.height.px]=\"containerHeight\">\n\n        <div *cdkVirtualFor=\"let item of filteredItems | async; index as i\">\n            <nui-select-v2-option [value]=\"item\" class=\"d-flex align-items-center\">\n                <span [nuiComboboxV2OptionHighlight]=\"item\"></span>\n            </nui-select-v2-option>\n        </div>\n    </cdk-virtual-scroll-viewport>\n</nui-combobox-v2>\n";
       /***/
     },
 
@@ -8198,7 +8208,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import { CdkVirtualScrollViewport } from \"@angular/cdk/scrolling\";\nimport { AfterViewInit, Component, HostListener, OnDestroy, ViewChild } from \"@angular/core\";\nimport { FormControl } from \"@angular/forms\";\nimport { ComboboxV2Component } from \"@nova-ui/bits\";\nimport { Observable, of, Subject } from \"rxjs\";\nimport { delay, takeUntil, tap } from \"rxjs/operators\";\n\nconst defaultContainerHeight: number = 300;\n\n@Component({\n    selector: \"nui-combobox-v2-virtual-scroll-example\",\n    templateUrl: \"combobox-v2-virtual-scroll.example.component.html\",\n    host: { class: \"combobox-container\" },\n})\nexport class ComboboxV2VirtualScrollExampleComponent implements OnDestroy, AfterViewInit {\n    public items = Array.from({ length: 100000 }).map((_, i) => $localize `Item ${i}`);\n    public comboboxControl = new FormControl();\n    public filteredItems: Observable<any[]> = of([...this.items]);\n    public containerHeight: number = defaultContainerHeight;\n\n    private destroy$: Subject<void> = new Subject();\n    private scrollOffset: number = 0;\n\n    @ViewChild(CdkVirtualScrollViewport) private viewport: CdkVirtualScrollViewport;\n    @ViewChild(ComboboxV2Component) private combobox: ComboboxV2Component;\n\n    @HostListener(\"click\")\n    public handleClick() {\n        if (this.viewport) {\n            this.viewport.scrollToOffset(this.scrollOffset);\n            this.viewport.checkViewportSize();\n        }\n    }\n\n    ngAfterViewInit(): void {\n        this.combobox.valueSelected.pipe(takeUntil(this.destroy$)).subscribe(() => {\n            this.scrollOffset = this.viewport.measureScrollOffset();\n        });\n\n        this.combobox.valueChanged.pipe(\n            tap(v => this.filteredItems = of(this.filterItems(v as string))),\n            delay(0),\n            takeUntil(this.destroy$)\n        ).subscribe();\n    }\n\n    private filterItems(value: string): string[] {\n        if (!value) {\n            return this.items;\n        }\n        const filterValue = value?.toLowerCase();\n\n        return this.items.filter(option => option.toLowerCase().includes(filterValue));\n    }\n\n    ngOnDestroy() {\n        this.destroy$.next();\n        this.destroy$.complete();\n    }\n}\n";
+      __webpack_exports__["default"] = "import { CdkVirtualScrollViewport } from \"@angular/cdk/scrolling\";\nimport { AfterViewInit, Component, HostListener, OnDestroy, ViewChild } from \"@angular/core\";\nimport { FormControl } from \"@angular/forms\";\nimport { ComboboxV2Component } from \"@nova-ui/bits\";\nimport { Observable, of, Subject } from \"rxjs\";\nimport { delay, takeUntil, tap } from \"rxjs/operators\";\n\nconst defaultContainerHeight: number = 300;\n\n@Component({\n    selector: \"nui-combobox-v2-virtual-scroll-example\",\n    templateUrl: \"combobox-v2-virtual-scroll.example.component.html\",\n    host: { class: \"combobox-container\" },\n})\nexport class ComboboxV2VirtualScrollExampleComponent implements OnDestroy, AfterViewInit {\n    public items = Array.from({ length: 100000 }).map((_, i) => $localize `Item ${i}`);\n    public comboboxControl = new FormControl();\n    public filteredItems: Observable<any[]> = of([...this.items]);\n    public containerHeight: number = defaultContainerHeight;\n\n    private destroy$: Subject<void> = new Subject();\n    private scrollOffset: number = 0;\n\n    @ViewChild(CdkVirtualScrollViewport) private viewport: CdkVirtualScrollViewport;\n    @ViewChild(ComboboxV2Component) private combobox: ComboboxV2Component;\n\n    @HostListener(\"click\")\n    public handleClick() {\n        if (this.viewport) {\n            this.viewport.scrollToOffset(this.scrollOffset);\n            this.viewport.checkViewportSize();\n        }\n    }\n\n    /**\n     To avoid double scroll on scrolling all page or scalable screens we need implicitly set\n     height for overlay little bit bigger than for container\n     * */\n    get overlayHeight(): number {\n        return this.containerHeight + 10;\n    }\n\n    ngAfterViewInit(): void {\n        this.combobox.valueSelected.pipe(takeUntil(this.destroy$)).subscribe(() => {\n            this.scrollOffset = this.viewport.measureScrollOffset();\n        });\n\n        this.combobox.valueChanged.pipe(\n            tap(v => this.filteredItems = of(this.filterItems(v as string))),\n            delay(0),\n            takeUntil(this.destroy$)\n        ).subscribe();\n    }\n\n    private filterItems(value: string): string[] {\n        if (!value) {\n            return this.items;\n        }\n        const filterValue = value?.toLowerCase();\n\n        return this.items.filter(option => option.toLowerCase().includes(filterValue));\n    }\n\n    ngOnDestroy() {\n        this.destroy$.next();\n        this.destroy$.complete();\n    }\n}\n";
       /***/
     },
 

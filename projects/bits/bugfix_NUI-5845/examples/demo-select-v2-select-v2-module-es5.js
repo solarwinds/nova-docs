@@ -2959,7 +2959,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import { CdkVirtualScrollViewport } from \"@angular/cdk/scrolling\";\nimport { AfterViewInit, Component, HostListener, OnDestroy, OnInit, ViewChild } from \"@angular/core\";\nimport { FormControl } from \"@angular/forms\";\nimport { SelectV2Component } from \"@nova-ui/bits\";\nimport { Subject } from \"rxjs\";\nimport { takeUntil } from \"rxjs/operators\";\n\n@Component({\n    selector: \"nui-select-v2-virtual-scroll-example\",\n    templateUrl: \"select-v2-virtual-scroll.example.component.html\",\n    host: { class: \"select-container\" },\n})\nexport class SelectV2VirtualScrollExampleComponent implements OnInit, OnDestroy, AfterViewInit {\n    public icons: any[] = [\"check\", \"email\", \"execute\"];\n    public items = Array.from({ length: 100000 }).map((_, i) => $localize `Item ${i}`);\n\n    public selectControl = new FormControl();\n    public containerHeight: number = 300;\n\n    private destroy$: Subject<void> = new Subject();\n    private scrollOffset: number = 0;\n\n    @ViewChild(CdkVirtualScrollViewport) private viewport: CdkVirtualScrollViewport;\n    @ViewChild(SelectV2Component) private select: SelectV2Component;\n\n    @HostListener(\"click\", [\"$event\"])\n    public handleClick(event: MouseEvent) {\n        if (this.viewport) {\n            this.viewport.scrollToOffset(this.scrollOffset);\n            this.viewport.checkViewportSize();\n        }\n    }\n\n    ngOnInit() {\n        this.selectControl.valueChanges.pipe(takeUntil(this.destroy$)).subscribe(value => {\n            console.log(\"Value from Select\", value);\n        });\n    }\n\n    ngAfterViewInit(): void {\n        this.select.valueSelected.pipe(takeUntil(this.destroy$)).subscribe((selectionText) => {\n            this.scrollOffset = this.viewport.measureScrollOffset();\n        });\n    }\n\n    ngOnDestroy() {\n        this.destroy$.next();\n        this.destroy$.complete();\n    }\n}\n";
+      __webpack_exports__["default"] = "import { CdkVirtualScrollViewport } from \"@angular/cdk/scrolling\";\nimport { AfterViewInit, Component, HostListener, OnDestroy, OnInit, ViewChild } from \"@angular/core\";\nimport { FormControl } from \"@angular/forms\";\nimport { SelectV2Component } from \"@nova-ui/bits\";\nimport { Subject } from \"rxjs\";\nimport { takeUntil } from \"rxjs/operators\";\n\n@Component({\n    selector: \"nui-select-v2-virtual-scroll-example\",\n    templateUrl: \"select-v2-virtual-scroll.example.component.html\",\n    host: { class: \"select-container\" },\n})\nexport class SelectV2VirtualScrollExampleComponent implements OnInit, OnDestroy, AfterViewInit {\n    public icons: any[] = [\"check\", \"email\", \"execute\"];\n    public items = Array.from({ length: 100000 }).map((_, i) => $localize `Item ${i}`);\n\n    public selectControl = new FormControl();\n    public containerHeight: number = 300;\n\n    private destroy$: Subject<void> = new Subject();\n    private scrollOffset: number = 0;\n\n    @ViewChild(CdkVirtualScrollViewport) private viewport: CdkVirtualScrollViewport;\n    @ViewChild(SelectV2Component) private select: SelectV2Component;\n\n    @HostListener(\"click\", [\"$event\"])\n    public handleClick(event: MouseEvent) {\n        if (this.viewport) {\n            this.viewport.scrollToOffset(this.scrollOffset);\n            this.viewport.checkViewportSize();\n        }\n    }\n\n    /**\n     To avoid double scroll on scrolling all page or scalable screens we need implicitly set\n     height for overlay little bit bigger than for container\n     * */\n    get overlayHeight(): number {\n        return this.containerHeight + 10;\n    }\n\n    ngOnInit() {\n        this.selectControl.valueChanges.pipe(takeUntil(this.destroy$)).subscribe(value => {\n            console.log(\"Value from Select\", value);\n        });\n    }\n\n    ngAfterViewInit(): void {\n        this.select.valueSelected.pipe(takeUntil(this.destroy$)).subscribe((selectionText) => {\n            this.scrollOffset = this.viewport.measureScrollOffset();\n        });\n    }\n\n    ngOnDestroy() {\n        this.destroy$.next();\n        this.destroy$.complete();\n    }\n}\n";
       /***/
     },
 
@@ -6620,7 +6620,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<nui-select-v2 placeholder=\"Select Item\" i18n-placeholder\n               [overlayConfig]=\"{ minHeight: 310 }\"\n               [formControl]=\"selectControl\">\n    <cdk-virtual-scroll-viewport itemSize=\"30\"\n                                 [minBufferPx]=\"containerHeight\"\n                                 [maxBufferPx]=\"containerHeight * 2\"\n                                 [style.height.px]=\"containerHeight\">\n\n        <div *cdkVirtualFor=\"let item of items; index as i\">\n            <nui-select-v2-option [value]=\"item\" [index]=\"i\" class=\"d-flex align-items-center\">\n                {{item}}\n            </nui-select-v2-option>\n        </div>\n\n    </cdk-virtual-scroll-viewport>\n</nui-select-v2>\n";
+      __webpack_exports__["default"] = "<nui-select-v2 placeholder=\"Select Item\" i18n-placeholder\n               [overlayConfig]=\"{ minHeight: overlayHeight }\"\n               [formControl]=\"selectControl\">\n    <cdk-virtual-scroll-viewport itemSize=\"30\"\n                                 [minBufferPx]=\"containerHeight\"\n                                 [maxBufferPx]=\"containerHeight * 2\"\n                                 [style.height.px]=\"containerHeight\">\n\n        <div *cdkVirtualFor=\"let item of items; index as i\">\n            <nui-select-v2-option [value]=\"item\" [index]=\"i\" class=\"d-flex align-items-center\">\n                {{item}}\n            </nui-select-v2-option>\n        </div>\n\n    </cdk-virtual-scroll-viewport>\n</nui-select-v2>\n";
       /***/
     },
 
@@ -7130,9 +7130,9 @@
         }
       }
 
-      var _c2 = function _c2() {
+      var _c2 = function _c2(a0) {
         return {
-          minHeight: 310
+          minHeight: a0
         };
       };
 
@@ -7159,6 +7159,16 @@
               this.viewport.scrollToOffset(this.scrollOffset);
               this.viewport.checkViewportSize();
             }
+          }
+          /**
+           To avoid double scroll on scrolling all page or scalable screens we need implicitly set
+           height for overlay little bit bigger than for container
+           * */
+
+        }, {
+          key: "overlayHeight",
+          get: function get() {
+            return this.containerHeight + 10;
           }
         }, {
           key: "ngOnInit",
@@ -7217,7 +7227,7 @@
           }
         },
         decls: 3,
-        vars: 8,
+        vars: 9,
         consts: function consts() {
           var i18n_0;
 
@@ -7244,7 +7254,7 @@
           }
 
           if (rf & 2) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("overlayConfig", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](7, _c2))("formControl", ctx.selectControl);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("overlayConfig", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction1"](7, _c2, ctx.overlayHeight))("formControl", ctx.selectControl);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
 
