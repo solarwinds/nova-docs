@@ -1201,6 +1201,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/ITimeseriesWidgetStatusData.html" data-type="entity-link">ITimeseriesWidgetStatusData</a>
                             </li>
                             <li class="link">
+                                <a href="interfaces/ITimeSpanOption.html" data-type="entity-link">ITimeSpanOption</a>
+                            </li>
+                            <li class="link">
                                 <a href="interfaces/IUrlInteractionHandlerProperties.html" data-type="entity-link">IUrlInteractionHandlerProperties</a>
                             </li>
                             <li class="link">
