@@ -70,7 +70,19 @@
                 <h3>Description</h3>
             </p>
             <p class="comment">
-                <p><example-url>./../examples/index.html#/pipes/highlight-pipe</example-url></p>
+                <p><example-url>./../examples/index.html#/pipes/highlight</example-url></p>
+<p>The nuiHighlight pipe is used to mark a portion of text. It will search the provided text for the specified string and highlight it. Returns HTML.
+Can only be used with <code>innerHTML</code> directive. Escapes all the characters by default and highlights every match in the string.</p>
+<p><strong>Parameters :</strong></p>
+<p>   text - The source text.</p>
+<p>   search - The search term to be highlighted.</p>
+<p><strong>Usage :</strong>
+   &quot;text&quot; | nuiHighlight : &quot;search&quot;</p>
+<p><strong>Examples :</strong></p>
+<p>   <code>{{ "hello world" | nuiHighlight:"world" }}</code></p>
+<p>   formats to: <code>hello &lt;span class="nui-highlighted"&gt;world&lt;/span&gt;</code></p>
+<p>   <code>{{ "hello &lt;span class="x"&gt;FOO&lt;/span&gt; bar" | nuiHighlight:"bar" }}</code></p>
+<p>   formats to: <code>hello &lt;span class=&quot;x&quot;&gt;FOO&lt;/span&gt;&lt;span class="nui-highlighted"&gt;bar&lt;/span&gt;;</code></p>
 
             </p>
 
@@ -116,8 +128,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="55"
-                            class="link-to-prism">src/pipes/highlight.pipe.ts:55</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="58"
+                            class="link-to-prism">src/pipes/highlight.pipe.ts:58</a></div>
                 </td>
             </tr>
 
@@ -188,8 +200,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="38"
-                            class="link-to-prism">src/pipes/highlight.pipe.ts:38</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="40"
+                            class="link-to-prism">src/pipes/highlight.pipe.ts:40</a></div>
                 </td>
             </tr>
 
@@ -260,13 +272,12 @@ import escape from &quot;lodash/escape&quot;;
 import escapeRegExp from &quot;lodash/escapeRegExp&quot;;
 import isEmpty from &quot;lodash/isEmpty&quot;;
 import isString from &quot;lodash/isString&quot;;
-/**
- * &lt;example-url&gt;./../examples/index.html#/pipes/highlight-pipe&lt;/example-url&gt;
- */
 
 /**
- * Filter used for highlighting of part of plain text in case of search. Returns HTML.
- * Can only be used with &#x60;innerHTML&#x60; directive. Escapes all the characters by default and highlights every match in the string
+ * &lt;example-url&gt;./../examples/index.html#/pipes/highlight&lt;/example-url&gt;
+ *
+ * The nuiHighlight pipe is used to mark a portion of text. It will search the provided text for the specified string and highlight it. Returns HTML.
+ * Can only be used with &#x60;innerHTML&#x60; directive. Escapes all the characters by default and highlights every match in the string.
  *
  * __Parameters :__
  *
@@ -275,15 +286,18 @@ import isString from &quot;lodash/isString&quot;;
  *   search - The search term to be highlighted.
  *
  * __Usage :__
- *   highlight | nuiHighlight:search
+ *   &quot;text&quot; | nuiHighlight : &quot;search&quot;
  *
  * __Examples :__
+ *
  *   &lt;code&gt;{{ &quot;hello world&quot; | nuiHighlight:&quot;world&quot; }}&lt;/code&gt;
- *   formats to: &lt;code&gt;hello &lt; span class&#x3D;&quot;nui-highlighted&quot;&gt; world &lt;/ span&gt;&lt;/code&gt;
+ *
+ *   formats to: &lt;code&gt;hello &amp;lt;span class&#x3D;&quot;nui-highlighted&quot;&amp;gt;world&amp;lt;/span&amp;gt;&lt;/code&gt;
  *
  *
- *   &lt;code&gt;{{ &quot;hello &lt; span class&#x3D;&quot;x&quot;&gt;FOO&lt;/ span&gt; bar&quot; | nuiHighlight:&quot;bar&quot; }}&lt;/code&gt;
- *   formats to: &lt;code&gt;hello &amp;lt; span class&#x3D;&amp;quot;x&amp;quot;&amp;gt;FOO&amp;lt;/ span&amp;gt; &lt; span class&#x3D;&quot;nui-highlighted&quot;&gt;bar&lt;/ span&gt; &lt;/ span&gt;&lt;/code&gt;
+ *   &lt;code&gt;{{ &quot;hello &amp;lt;span class&#x3D;&quot;x&quot;&amp;gt;FOO&amp;lt;/span&amp;gt; bar&quot; | nuiHighlight:&quot;bar&quot; }}&lt;/code&gt;
+ *
+ *   formats to: &lt;code&gt;hello &amp;lt;span class&#x3D;&amp;quot;x&amp;quot;&amp;gt;FOO&amp;lt;/span&amp;gt;&amp;lt;span class&#x3D;&quot;nui-highlighted&quot;&amp;gt;bar&amp;lt;/span&amp;gt;;&lt;/code&gt;
  */
 @Pipe({
     name: &quot;nuiHighlight&quot;,
@@ -308,6 +322,7 @@ export class HighlightPipe implements PipeTransform {
         }
         return result;
     }
+
     public escapeItem(item: string): string {
         return escape(item);
     }
@@ -321,7 +336,7 @@ export class HighlightPipe implements PipeTransform {
     </div>
 
     <div class="tab-pane fade active in" id="c-example">
-            <iframe class="exampleContainer" src="./../examples/index.html#/pipes/highlight-pipe">
+            <iframe class="exampleContainer" src="./../examples/index.html#/pipes/highlight">
                 <p>no-iframes</p>
             </iframe>
     </div>

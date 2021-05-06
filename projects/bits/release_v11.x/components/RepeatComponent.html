@@ -1968,7 +1968,7 @@ import {
     TemplateRef,
     ViewChild,
     ViewChildren,
-    ViewEncapsulation
+    ViewEncapsulation,
 } from &quot;@angular/core&quot;;
 import _isEqual from &quot;lodash/isEqual&quot;;
 import {Subject} from &quot;rxjs&quot;;
@@ -1983,7 +1983,7 @@ import {
     IRepeatItem,
     IRepeatItemConfig,
     PaddingOptions,
-    RepeatSelectionMode
+    RepeatSelectionMode,
 } from &quot;./types&quot;;
 
 interface IDndItemDropped {
@@ -2399,9 +2399,9 @@ export class RepeatComponent&lt;T extends IRepeatItem &#x3D; any&gt; implements 
         } else {
             // moves the item from the source: event.container[computedPreviousIndex] to target: event.container.data[event.currentIndex]
             transferArrayItem(event.previousContainer.data,
-                event.container.data,
-                computedPreviousIndex,
-                event.currentIndex);
+                              event.container.data,
+                              computedPreviousIndex,
+                              event.currentIndex);
         }
 
         if (sortingOrderChanged) {

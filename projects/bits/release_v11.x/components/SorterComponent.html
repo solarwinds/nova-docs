@@ -1079,7 +1079,7 @@ import {
     Output,
     SimpleChanges,
     ViewChild,
-    ViewEncapsulation
+    ViewEncapsulation,
 } from &quot;@angular/core&quot;;
 import _assign from &quot;lodash/assign&quot;;
 import _isEqual from &quot;lodash/isEqual&quot;;
@@ -1111,7 +1111,7 @@ export class SorterComponent implements OnChanges, OnInit, OnDestroy, AfterViewI
     @Input() appendToBody: boolean &#x3D; false;
     @Input() caption: string;
 
-     /**
+    /**
      * The string[] type for itemsSource is the legacy non-i18n-friendly type
      * and it should be removed as an option in scope of NUI-5801
      */
@@ -1256,8 +1256,8 @@ export class SorterComponent implements OnChanges, OnInit, OnDestroy, AfterViewI
 
     public getAriaLabelForSortingButton(): string {
         return this.sortDirection &#x3D;&#x3D;&#x3D; SorterDirection.descending
-                    ? &#x60;${this.getSelectedItemTitle()}. Sorter direction - descending&#x60;
-                    : &#x60;${this.getSelectedItemTitle()}. Sorter direction - ascending&#x60;;
+            ? &#x60;${this.getSelectedItemTitle()}. Sorter direction - descending&#x60;
+            : &#x60;${this.getSelectedItemTitle()}. Sorter direction - ascending&#x60;;
     }
 
     public ngOnDestroy() {

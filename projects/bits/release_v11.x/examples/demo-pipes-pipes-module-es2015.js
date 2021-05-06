@@ -9,7 +9,20 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>\n    Highlight pipe is used to mark a part of the text. It will look through your text and find the specified word or part of the text and highlights it.\n    Since it is an example of angular's pipe, user can change the search term dynamically.\n</p>\n<p>\n    This pipe can only be used with `innerHTML` directive. It escapes all the characters by default and highlights every match in the string.\n</p>\n<nui-example-wrapper filenamePrefix=\"highlight-pipe\" exampleTitle=\"Highlight Pipe\">\n    <nui-demo-highlight-pipe></nui-demo-highlight-pipe>\n</nui-example-wrapper>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<p>\n    The <code><a href=\"../pipes/HighlightPipe.html#info\" target=\"_parent\">nuiHighlight</a></code> pipe is used to mark a portion of text. It will search the\n    provided text for the specified string and highlight it.\n</p>\n\n<h2>Required Modules</h2>\n<ul>\n    <li>\n        <code>NuiCommonModule</code>\n    </li>\n</ul>\n\n<h2>Basic Usage</h2>\n<p>\n    This pipe can only be used with the <code>innerHTML</code> attribute. It escapes all the characters by default, and highlights every match in the string.\n</p>\n<nui-example-wrapper filenamePrefix=\"highlight-pipe\" exampleTitle=\"Basic Usage\">\n    <nui-demo-highlight-pipe></nui-demo-highlight-pipe>\n</nui-example-wrapper>\n");
+
+/***/ }),
+
+/***/ "3uq/":
+/*!********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/pipes/unit-conversion/unit-conversion-basic/unit-conversion-pipe-basic.example.component.ts ***!
+  \********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("import { Component } from \"@angular/core\";\n\n@Component({\n    selector: \"unit-conversion-pipe-basic-example\",\n    templateUrl: \"./unit-conversion-pipe-basic.example.component.html\",\n    styleUrls: [\"./unit-conversion-pipe-basic.example.component.less\"],\n})\nexport class UnitConversionPipeBasicExampleComponent {\n    public num = 998990;\n}\n");
 
 /***/ }),
 
@@ -22,41 +35,33 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { NgModule } from \"@angular/core\";\nimport { RouterModule } from \"@angular/router\";\nimport { DEMO_PATH_TOKEN, NuiDocsModule, NuiSearchModule, NuiSelectModule } from \"@nova-ui/bits\";\n\nimport { HighlightPipeDocsExampleComponent, HighlightPipeExampleComponent } from \"./index\";\n\nconst routes = [\n    {\n        path: \"\",\n        component: HighlightPipeDocsExampleComponent,\n    },\n    {\n        path: \"highlight-pipe\",\n        component: HighlightPipeDocsExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n            showThemeSwitcher: true,\n        },\n    },\n];\n\n@NgModule({\n    imports: [\n        NuiDocsModule,\n        NuiSearchModule,\n        NuiSelectModule,\n        RouterModule.forChild(routes),\n    ],\n    declarations: [\n        HighlightPipeExampleComponent,\n        HighlightPipeDocsExampleComponent,\n    ],\n    providers: [\n        {\n            provide: DEMO_PATH_TOKEN,\n            useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/),\n        },\n    ],\n    exports: [\n        RouterModule,\n    ],\n})\nexport class PipesModule {\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import { NgModule } from \"@angular/core\";\nimport { RouterModule } from \"@angular/router\";\nimport { DEMO_PATH_TOKEN, NuiDocsModule } from \"@nova-ui/bits\";\n\nconst routes = [\n    {\n        path: \"highlight\",\n        loadChildren: () => import(\"./highlight/highlight-pipe-example.module\").then(m => m.HighlightPipeExampleModule),\n    },\n    {\n        path: \"unit-conversion\",\n        loadChildren: () => import(\"./unit-conversion/unit-conversion-pipe-example.module\").then(m => m.UnitConversionPipeExampleModule),\n    },\n];\n\n@NgModule({\n    imports: [\n        NuiDocsModule,\n        RouterModule.forChild(routes),\n    ],\n    providers: [\n        {\n            provide: DEMO_PATH_TOKEN,\n            useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/),\n        },\n    ],\n    exports: [\n        RouterModule,\n    ],\n})\nexport class PipesModule {\n}\n");
 
 /***/ }),
 
-/***/ "STls":
-/*!***************************************************************************************************************!*\
-  !*** ./demo/src/components/demo/pipes/highlight/highlight-pipe-docs/highlight-pipe-docs.example.component.ts ***!
-  \***************************************************************************************************************/
-/*! exports provided: HighlightPipeDocsExampleComponent */
+/***/ "6F/a":
+/*!********************************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/pipes/unit-conversion/docs/unit-conversion-pipe-docs.component.less ***!
+  \********************************************************************************************************************************************/
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HighlightPipeDocsExampleComponent", function() { return HighlightPipeDocsExampleComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _src_lib_docs_example_wrapper_example_wrapper_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../../src/lib/docs/example-wrapper/example-wrapper.component */ "CVg4");
-/* harmony import */ var _highlight_pipe_highlight_pipe_example_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../highlight-pipe/highlight-pipe.example.component */ "yc7x");
+/* harmony default export */ __webpack_exports__["default"] = (":host {\n    ul {\n        padding-left: 40px;\n\n        li {\n            list-style: disc;\n        }\n    }\n    a {\n        cursor: pointer;\n    }\n}\n");
 
+/***/ }),
 
+/***/ "BWQn":
+/*!*************************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/pipes/unit-conversion/unit-conversion-pipe-example.module.ts ***!
+  \*************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-class HighlightPipeDocsExampleComponent {
-}
-HighlightPipeDocsExampleComponent.ɵfac = function HighlightPipeDocsExampleComponent_Factory(t) { return new (t || HighlightPipeDocsExampleComponent)(); };
-HighlightPipeDocsExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: HighlightPipeDocsExampleComponent, selectors: [["nui-pipes-docs-example"]], decls: 6, vars: 0, consts: [["filenamePrefix", "highlight-pipe", "exampleTitle", "Highlight Pipe"]], template: function HighlightPipeDocsExampleComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " Highlight pipe is used to mark a part of the text. It will look through your text and find the specified word or part of the text and highlights it. Since it is an example of angular's pipe, user can change the search term dynamically.\n");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, " This pipe can only be used with `innerHTML` directive. It escapes all the characters by default and highlights every match in the string.\n");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "nui-example-wrapper", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](5, "nui-demo-highlight-pipe");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    } }, directives: [_src_lib_docs_example_wrapper_example_wrapper_component__WEBPACK_IMPORTED_MODULE_1__["ExampleWrapperComponent"], _highlight_pipe_highlight_pipe_example_component__WEBPACK_IMPORTED_MODULE_2__["HighlightPipeExampleComponent"]], encapsulation: 2 });
-
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("import { NgModule } from \"@angular/core\";\nimport { FormsModule } from \"@angular/forms\";\nimport { RouterModule } from \"@angular/router\";\nimport {\n    DEMO_PATH_TOKEN,\n    NuiCommonModule,\n    NuiDocsModule,\n    NuiFormFieldModule,\n    NuiMessageModule,\n    NuiTextboxModule,\n    SrlcStage,\n} from \"@nova-ui/bits\";\n\nimport { UnitConversionPipeDocsComponent } from \"./docs/unit-conversion-pipe-docs.component\";\nimport { UnitConversionPipeBasicExampleComponent } from \"./unit-conversion-basic/unit-conversion-pipe-basic.example.component\";\n\nconst routes = [\n    {\n        path: \"\",\n        component: UnitConversionPipeDocsComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.ga,\n            },\n            showThemeSwitcher: true,\n        },\n    },\n    {\n        path: \"basic\",\n        component: UnitConversionPipeBasicExampleComponent,\n        data: {\n            \"srlc\": {\n                hideIndicator: true,\n            },\n        },\n    },\n];\n\n@NgModule({\n    declarations: [\n        UnitConversionPipeDocsComponent,\n        UnitConversionPipeBasicExampleComponent,\n    ],\n    imports: [\n        FormsModule,\n        NuiCommonModule,\n        NuiDocsModule,\n        NuiFormFieldModule,\n        NuiMessageModule,\n        NuiTextboxModule,\n        RouterModule.forChild(routes),\n    ],\n    providers: [\n        {\n            provide: DEMO_PATH_TOKEN,\n            useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/),\n        },\n    ],\n    exports: [\n        RouterModule,\n    ],\n})\nexport class UnitConversionPipeExampleModule { }\n");
 
 /***/ }),
 
@@ -73,6 +78,32 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "Yw5f":
+/*!**********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/pipes/unit-conversion/unit-conversion-basic/unit-conversion-pipe-basic.example.component.html ***!
+  \**********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"conversion d-flex flex-column align-items-end\">\n    {{ num | unitConversion : 2 : false : \"bitsPerSecond\" }}\n</div>\n<hr>\n<nui-form-field class=\"d-block mt-5\"\n                caption=\"Bits Per Second\"\n                [showOptionalText]=\"false\">\n    <nui-textbox-number type=\"number\"\n                        [(ngModel)]=\"num\"\n                        [minValue]=\"0\"\n                        [step]=\"10\"\n                        customBoxWidth=\"200px\"></nui-textbox-number>\n</nui-form-field>\n");
+
+/***/ }),
+
+/***/ "dMpX":
+/*!*************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/pipes/highlight/highlight-pipe-example.module.ts ***!
+  \*************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("import { NgModule } from \"@angular/core\";\nimport { RouterModule } from \"@angular/router\";\nimport {\n    DEMO_PATH_TOKEN,\n    NuiCommonModule,\n    NuiDocsModule,\n    NuiSearchModule,\n    SrlcStage,\n} from \"@nova-ui/bits\";\n\nimport { HighlightPipeDocsExampleComponent } from \"./highlight-pipe-docs/highlight-pipe-docs.example.component\";\nimport { HighlightPipeExampleComponent } from \"./highlight-pipe/highlight-pipe.example.component\";\n\nconst routes = [\n    {\n        path: \"\",\n        component: HighlightPipeDocsExampleComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.ga,\n            },\n            showThemeSwitcher: true,\n        },\n    },\n    {\n        path: \"highlight-pipe\",\n        component: HighlightPipeExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n            showThemeSwitcher: true,\n        },\n    },\n];\n\n@NgModule({\n    declarations: [\n        HighlightPipeDocsExampleComponent,\n        HighlightPipeExampleComponent,\n    ],\n    imports: [\n        NuiCommonModule,\n        NuiDocsModule,\n        NuiSearchModule,\n        RouterModule.forChild(routes),\n    ],\n    providers: [\n        {\n            provide: DEMO_PATH_TOKEN,\n            useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/),\n        },\n    ],\n    exports: [\n        RouterModule,\n    ],\n})\nexport class HighlightPipeExampleModule { }\n");
+
+/***/ }),
+
 /***/ "dniG":
 /*!*********************************************************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/pipes/highlight/highlight-pipe/highlight-pipe.example.component.html ***!
@@ -82,28 +113,20 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("Highlight some part of the text:\n<p [innerHTML]='\"hello world\" | nuiHighlight:\"world\"' >\n</p>\nDynamic highlight(for example, using with search):\n<nui-search (inputChange)=\"changeSearchValue($event)\" [value]=\"term\"></nui-search>\n<p [innerHTML]='searchString | nuiHighlight: term '></p>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<h3>Highlighting a portion of text:</h3>\n<p [innerHTML]='\"hello world\" | nuiHighlight:\"world\"' ></p>\n\n<h3>Dynamic highlighting (for example, with search):</h3>\n<nui-search (inputChange)=\"changeSearchValue($event)\" [value]=\"term\"></nui-search>\n<p [innerHTML]='searchString | nuiHighlight: term '></p>\n");
 
 /***/ }),
 
-/***/ "gtie":
-/*!*************************************************!*\
-  !*** ./demo/src/components/demo/pipes/index.ts ***!
-  \*************************************************/
-/*! exports provided: HighlightPipeExampleComponent, HighlightPipeDocsExampleComponent */
+/***/ "eD/Y":
+/*!**********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/pipes/unit-conversion/unit-conversion-basic/unit-conversion-pipe-basic.example.component.less ***!
+  \**********************************************************************************************************************************************************************/
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _highlight_highlight_pipe_highlight_pipe_example_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./highlight/highlight-pipe/highlight-pipe.example.component */ "yc7x");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "HighlightPipeExampleComponent", function() { return _highlight_highlight_pipe_highlight_pipe_example_component__WEBPACK_IMPORTED_MODULE_0__["HighlightPipeExampleComponent"]; });
-
-/* harmony import */ var _highlight_highlight_pipe_docs_highlight_pipe_docs_example_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./highlight/highlight-pipe-docs/highlight-pipe-docs.example.component */ "STls");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "HighlightPipeDocsExampleComponent", function() { return _highlight_highlight_pipe_docs_highlight_pipe_docs_example_component__WEBPACK_IMPORTED_MODULE_1__["HighlightPipeDocsExampleComponent"]; });
-
-
-
-
+/* harmony default export */ __webpack_exports__["default"] = (".conversion {\n    font-size: 25px;\n    width: 150px;\n}\n");
 
 /***/ }),
 
@@ -117,10 +140,17 @@ __webpack_require__.r(__webpack_exports__);
 var map = {
 	"./highlight/highlight-pipe-docs/highlight-pipe-docs.example.component.html": "/m90",
 	"./highlight/highlight-pipe-docs/highlight-pipe-docs.example.component.ts": "i9Ed",
+	"./highlight/highlight-pipe-example.module.ts": "dMpX",
 	"./highlight/highlight-pipe/highlight-pipe.example.component.html": "dniG",
 	"./highlight/highlight-pipe/highlight-pipe.example.component.ts": "VP4k",
-	"./index.ts": "i4x5",
-	"./pipes.module.ts": "5xI0"
+	"./pipes.module.ts": "5xI0",
+	"./unit-conversion/docs/unit-conversion-pipe-docs.component.html": "jxIk",
+	"./unit-conversion/docs/unit-conversion-pipe-docs.component.less": "6F/a",
+	"./unit-conversion/docs/unit-conversion-pipe-docs.component.ts": "wD7G",
+	"./unit-conversion/unit-conversion-basic/unit-conversion-pipe-basic.example.component.html": "Yw5f",
+	"./unit-conversion/unit-conversion-basic/unit-conversion-pipe-basic.example.component.less": "eD/Y",
+	"./unit-conversion/unit-conversion-basic/unit-conversion-pipe-basic.example.component.ts": "3uq/",
+	"./unit-conversion/unit-conversion-pipe-example.module.ts": "BWQn"
 };
 
 
@@ -142,19 +172,6 @@ webpackContext.keys = function webpackContextKeys() {
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
 webpackContext.id = "i/3M";
-
-/***/ }),
-
-/***/ "i4x5":
-/*!***************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/pipes/index.ts ***!
-  \***************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("export * from \"./highlight/highlight-pipe/highlight-pipe.example.component\";\nexport * from \"./highlight/highlight-pipe-docs/highlight-pipe-docs.example.component\";\n");
 
 /***/ }),
 
@@ -183,96 +200,61 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PipesModule", function() { return PipesModule; });
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/router */ "tyNb");
 /* harmony import */ var _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @nova-ui/bits */ "b5Xb");
-/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./index */ "gtie");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
-
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
 
 
 
 
 const routes = [
     {
-        path: "",
-        component: _index__WEBPACK_IMPORTED_MODULE_2__["HighlightPipeDocsExampleComponent"],
+        path: "highlight",
+        loadChildren: () => __webpack_require__.e(/*! import() | highlight-highlight-pipe-example-module */ "highlight-highlight-pipe-example-module").then(__webpack_require__.bind(null, /*! ./highlight/highlight-pipe-example.module */ "soum")).then(m => m.HighlightPipeExampleModule),
     },
     {
-        path: "highlight-pipe",
-        component: _index__WEBPACK_IMPORTED_MODULE_2__["HighlightPipeDocsExampleComponent"],
-        data: {
-            "srlc": {
-                "hideIndicator": true,
-            },
-            showThemeSwitcher: true,
-        },
+        path: "unit-conversion",
+        loadChildren: () => __webpack_require__.e(/*! import() | unit-conversion-unit-conversion-pipe-example-module */ "unit-conversion-unit-conversion-pipe-example-module").then(__webpack_require__.bind(null, /*! ./unit-conversion/unit-conversion-pipe-example.module */ "dlWr")).then(m => m.UnitConversionPipeExampleModule),
     },
 ];
 class PipesModule {
 }
-PipesModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({ type: PipesModule });
-PipesModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({ factory: function PipesModule_Factory(t) { return new (t || PipesModule)(); }, providers: [
+PipesModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineNgModule"]({ type: PipesModule });
+PipesModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({ factory: function PipesModule_Factory(t) { return new (t || PipesModule)(); }, providers: [
         {
             provide: _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["DEMO_PATH_TOKEN"],
             useFactory: () => __webpack_require__("i/3M"),
         },
     ], imports: [[
             _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiDocsModule"],
-            _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiSearchModule"],
-            _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiSelectModule"],
             _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"].forChild(routes),
         ], _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵsetNgModuleScope"](PipesModule, { declarations: [_index__WEBPACK_IMPORTED_MODULE_2__["HighlightPipeExampleComponent"],
-        _index__WEBPACK_IMPORTED_MODULE_2__["HighlightPipeDocsExampleComponent"]], imports: [_nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiDocsModule"],
-        _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiSearchModule"],
-        _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiSelectModule"], _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]], exports: [_angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]] }); })();
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵsetNgModuleScope"](PipesModule, { imports: [_nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiDocsModule"], _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]], exports: [_angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]] }); })();
 
 
 /***/ }),
 
-/***/ "yc7x":
-/*!*****************************************************************************************************!*\
-  !*** ./demo/src/components/demo/pipes/highlight/highlight-pipe/highlight-pipe.example.component.ts ***!
-  \*****************************************************************************************************/
-/*! exports provided: HighlightPipeExampleComponent */
+/***/ "jxIk":
+/*!********************************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/pipes/unit-conversion/docs/unit-conversion-pipe-docs.component.html ***!
+  \********************************************************************************************************************************************/
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HighlightPipeExampleComponent", function() { return HighlightPipeExampleComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _src_lib_search_search_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../../src/lib/search/search.component */ "dYN2");
-/* harmony import */ var _src_pipes_highlight_pipe__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../src/pipes/highlight.pipe */ "ZlWS");
+/* harmony default export */ __webpack_exports__["default"] = ("<p>\n    The <code><a href=\"../pipes/UnitConversionPipe.html#info\" target=\"_parent\">unitConversion</a></code> pipe can be used to convert a large value of a small\n    basic unit to a smaller value of a larger unit--for example, converting a quantity of 1024 in bytes to \"1 KB\". The converted unit label is automatically\n    appended to the output. Supported units are of type <code><a href=\"../miscellaneous/typealiases.html#UnitOption\" target=\"_blank\">UnitOption</a></code> and\n    include the following: <code>\"generic\"</code> (e.g. 1k for 1000), <code>\"bytes\"</code>, <code>\"bytesPerSecond\"</code>, <code>\"bitsPerSecond\"</code>, and\n    <code>\"hertz\"</code>.\n</p>\n<nui-message type=\"info\" [allowDismiss]=\"false\">\n    Under the hood, this pipe uses the <code><a href=\"../injectables/UnitConversionService.html\" target=\"_blank\">UnitConversionService</a></code>. If the pipe\n    doesn't offer something that you need, such as separating the value and unit out into separate outputs, or you need to convert a value outside the context\n    of a template, using the service directly may be a better option for you.\n</nui-message>\n\n<h2>Required Modules</h2>\n<ul>\n    <li>\n        <code>NuiCommonModule</code>\n    </li>\n</ul>\n\n<h2>Basic Usage</h2>\n<p>To get started with using the pipe, take a look at the template source of the example below.</p>\n\n<h3>Parameters</h3>\n<p>The pipe accepts the following parameters:</p>\n<ul>\n    <li>\n        <strong>value</strong> - The value to be converted.\n    </li>\n    <li>\n        <strong>scale</strong> - The decimal scale of the formatted value for specifying how many significant digits to display to the right of the decimal.\n        Defaults to <code>0</code>.\n    </li>\n    <li>\n        <strong>plusSign</strong> - Boolean for specifying whether to prefix the output with a '+' when the source value is greater than zero. Defaults to false.\n    </li>\n    <li>\n        <strong>unit</strong> - The basic unit to use for the conversion. Accepts arguments of type\n        <code><a href=\"../miscellaneous/typealiases.html#UnitOption\" target=\"_blank\">UnitOption</a></code>. Defaults to <code>\"bytes\"</code>.\n    </li>\n</ul>\n\n<nui-example-wrapper filenamePrefix=\"unit-conversion-pipe-basic\" exampleTitle=\"Basic Usage\">\n    <unit-conversion-pipe-basic-example></unit-conversion-pipe-basic-example>\n</nui-example-wrapper>\n");
 
+/***/ }),
 
+/***/ "wD7G":
+/*!******************************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/pipes/unit-conversion/docs/unit-conversion-pipe-docs.component.ts ***!
+  \******************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-class HighlightPipeExampleComponent {
-    constructor() {
-        this.term = "bar";
-        this.searchString = `hello <span class="x">FOO</span> bar`;
-    }
-    changeSearchValue(value) {
-        this.term = value;
-    }
-}
-HighlightPipeExampleComponent.ɵfac = function HighlightPipeExampleComponent_Factory(t) { return new (t || HighlightPipeExampleComponent)(); };
-HighlightPipeExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: HighlightPipeExampleComponent, selectors: [["nui-demo-highlight-pipe"]], decls: 7, vars: 9, consts: [[3, "innerHTML"], [3, "value", "inputChange"]], template: function HighlightPipeExampleComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](0, "Highlight some part of the text:\n");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "p", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](2, "nuiHighlight");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "\nDynamic highlight(for example, using with search):\n");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "nui-search", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("inputChange", function HighlightPipeExampleComponent_Template_nui_search_inputChange_4_listener($event) { return ctx.changeSearchValue($event); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](5, "p", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](6, "nuiHighlight");
-    } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("innerHTML", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind2"](2, 3, "hello world", "world"), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeHtml"]);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", ctx.term);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("innerHTML", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind2"](6, 6, ctx.searchString, ctx.term), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeHtml"]);
-    } }, directives: [_src_lib_search_search_component__WEBPACK_IMPORTED_MODULE_1__["SearchComponent"]], pipes: [_src_pipes_highlight_pipe__WEBPACK_IMPORTED_MODULE_2__["HighlightPipe"]], encapsulation: 2 });
-
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("import { Component } from \"@angular/core\";\n\n@Component({\n    templateUrl: \"./unit-conversion-pipe-docs.component.html\",\n    styleUrls: [\"./unit-conversion-pipe-docs.component.less\"],\n})\nexport class UnitConversionPipeDocsComponent { }\n");
 
 /***/ })
 

@@ -342,8 +342,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="50"
-                            class="link-to-prism">src/lib/configurator/services/converters/proportional/proportional-widget-chart-options-converter.service.ts:50</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="51"
+                            class="link-to-prism">src/lib/configurator/services/converters/proportional/proportional-widget-chart-options-converter.service.ts:51</a></div>
                 </td>
             </tr>
 
@@ -1035,8 +1035,8 @@ export class ProportionalWidgetChartOptionsConverterService extends BaseConverte
     private readonly PROPERTIES_PATH &#x3D; &#x60;${PizzagnaLayer.Configuration}.chartOptionsEditor.properties&#x60;;
 
     constructor(@Inject(PIZZAGNA_EVENT_BUS) eventBus: EventBus&lt;IEvent&gt;,
-                previewService: PreviewService,
-                pizzagnaService: PizzagnaService) {
+                                            previewService: PreviewService,
+                                            pizzagnaService: PizzagnaService) {
         super(eventBus, previewService, pizzagnaService);
     }
 
@@ -1052,16 +1052,17 @@ export class ProportionalWidgetChartOptionsConverterService extends BaseConverte
             editorPizzagna, &#x60;${this.PROPERTIES_PATH}.chartType&#x60;, chartOptions?.type ?? undefined);
 
         editorPizzagna &#x3D; immutableSet(editorPizzagna,
-            &#x60;${this.PROPERTIES_PATH}.legendPlacement&#x60;, chartOptions?.legendPlacement ?? LegendPlacement.None);
+                                      &#x60;${this.PROPERTIES_PATH}.legendPlacement&#x60;, chartOptions?.legendPlacement ?? LegendPlacement.None);
 
         editorPizzagna &#x3D; immutableSet(editorPizzagna,
-            &#x60;${this.PROPERTIES_PATH}.legendFormatterComponentType&#x60;, chartOptions?.legendFormatter?.componentType ?? &quot;&quot;);
+                                      &#x60;${this.PROPERTIES_PATH}.legendFormatterComponentType&#x60;, chartOptions?.legendFormatter?.componentType ?? &quot;&quot;);
 
         editorPizzagna &#x3D; immutableSet(editorPizzagna,
-            &#x60;${this.PROPERTIES_PATH}.contentFormatterComponentType&#x60;, chartOptions?.contentFormatter?.componentType ?? &quot;DonutContentRawFormatterComponent&quot;);
+                                      &#x60;${this.PROPERTIES_PATH}.contentFormatterComponentType&#x60;,
+                                      chartOptions?.contentFormatter?.componentType ?? &quot;DonutContentRawFormatterComponent&quot;);
 
         editorPizzagna &#x3D; immutableSet(editorPizzagna,
-            &#x60;${this.PROPERTIES_PATH}.contentFormatterProperties&#x60;, chartOptions?.contentFormatter?.properties ?? &quot;&quot;);
+                                      &#x60;${this.PROPERTIES_PATH}.contentFormatterProperties&#x60;, chartOptions?.contentFormatter?.properties ?? &quot;&quot;);
 
         this.updateFormPizzagna(editorPizzagna);
     }

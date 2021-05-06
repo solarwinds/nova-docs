@@ -52,14 +52,21 @@
       /* harmony import */
 
 
-      var _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      var _nova_ui_bits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! @nova-ui/bits */
+      "Rr1A");
+      /* harmony import */
+
+
+      var _nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @nova-ui/charts */
       "gKry");
 
       var LinearGaugeHorizontalPrototypeComponent = /*#__PURE__*/function () {
-        function LinearGaugeHorizontalPrototypeComponent() {
+        function LinearGaugeHorizontalPrototypeComponent(unitConversionService) {
           _classCallCheck(this, LinearGaugeHorizontalPrototypeComponent);
 
+          this.unitConversionService = unitConversionService;
           this.flipLabels = false;
         }
 
@@ -88,22 +95,26 @@
             }
 
             if (changes.gaugeConfig && !changes.gaugeConfig.firstChange) {
-              this.chartAssist.update(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.seriesSet, this.gaugeConfig));
+              this.chartAssist.update(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["GaugeUtil"].updateSeriesSet(this.seriesSet, this.gaugeConfig));
             }
           }
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var grid = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["XYGrid"](Object(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["linearGaugeGridConfig"])(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Horizontal, this.thickness));
-            var chart = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["Chart"](grid);
-            this.chartAssist = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["ChartAssist"](chart, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["stack"]);
-            this.labelsPlugin = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["LinearGaugeLabelsPlugin"]({
+            var _this = this;
+
+            var grid = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["XYGrid"](Object(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["linearGaugeGridConfig"])(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["GaugeMode"].Horizontal, this.thickness));
+            var chart = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["Chart"](grid);
+            this.chartAssist = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["ChartAssist"](chart, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["stack"]);
+            this.labelsPlugin = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["LinearGaugeLabelsPlugin"]({
               flipLabels: this.flipLabels
             });
             this.chartAssist.chart.addPlugin(this.labelsPlugin);
-            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].assembleSeriesSet(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Horizontal);
-            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].setThresholdLabelFormatter(function (d) {
-              return "".concat(d, "ms");
+            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["GaugeUtil"].assembleSeriesSet(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["GaugeMode"].Horizontal);
+            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["GaugeUtil"].setThresholdLabelFormatter(function (d) {
+              var conversion = _this.unitConversionService.convert(parseInt(d, 10), 1000, 2);
+
+              return _this.unitConversionService.getFullDisplay(conversion, "generic");
             }, this.seriesSet);
             this.chartAssist.update(this.seriesSet);
           }
@@ -111,6 +122,12 @@
 
         return LinearGaugeHorizontalPrototypeComponent;
       }();
+
+      LinearGaugeHorizontalPrototypeComponent.ctorParameters = function () {
+        return [{
+          type: _nova_ui_bits__WEBPACK_IMPORTED_MODULE_4__["UnitConversionService"]
+        }];
+      };
 
       LinearGaugeHorizontalPrototypeComponent.propDecorators = {
         thickness: [{
@@ -127,7 +144,7 @@
         selector: "linear-gauge-horizontal-prototype",
         template: _raw_loader_linear_gauge_horizontal_prototype_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
         styles: [_linear_gauge_horizontal_prototype_component_less__WEBPACK_IMPORTED_MODULE_2__["default"]]
-      })], LinearGaugeHorizontalPrototypeComponent);
+      }), Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_nova_ui_bits__WEBPACK_IMPORTED_MODULE_4__["UnitConversionService"]])], LinearGaugeHorizontalPrototypeComponent);
       /***/
     },
 
@@ -167,7 +184,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<charts-test-harness>\n    <div class=\"testing-region d-flex align-items-center justify-content-around\">\n        <donut-gauge-prototype [gaugeConfig]=\"gaugeConfig\" [size]=\"donutSize\" [annularGrowth]=\"annularGrowth\" [annularWidth]=\"thickness\"></donut-gauge-prototype>\n        <linear-gauge-vertical-prototype [gaugeConfig]=\"gaugeConfig\" [thickness]=\"thickness\" [flipLabels]=\"flipLabels\"></linear-gauge-vertical-prototype>\n        <linear-gauge-horizontal-prototype [gaugeConfig]=\"gaugeConfig\" [thickness]=\"thickness\" [flipLabels]=\"flipLabels\"></linear-gauge-horizontal-prototype>\n    </div>\n\n    <div class=\"mb-2\">\n        <label for=\"valueInput\">\n            Value\n        </label>\n        <br />\n        <nui-textbox-number type=\"number\"\n                            [ngModel]=\"value\"\n                            (ngModelChange)=\"onValueChange($event)\"\n                            [minValue]=\"0\"\n                            [maxValue]=\"maxValue\"\n                            customBoxWidth=\"75px\"\n                            name=\"valueInput\"></nui-textbox-number>\n    </div>\n    <div class=\"mb-2\">\n        <label for=\"thicknessInput\">\n            Thickness\n        </label>\n        <br />\n        <nui-textbox-number type=\"number\"\n                            [(ngModel)]=\"thickness\"\n                            [minValue]=\"0\"\n                            customBoxWidth=\"75px\"\n                            name=\"thicknessInput\"></nui-textbox-number>\n    </div>\n    <div class=\"mb-2\">\n        <nui-form-field caption=\"Donut Annular Growth\"\n                        hint=\"Set to zero to have the donut obey the manual thickness setting\"\n                        [showOptionalText]=\"false\">\n            <nui-textbox-number type=\"number\"\n                                [(ngModel)]=\"annularGrowth\"\n                                [minValue]=\"0\"\n                                [step]=\"0.01\"\n                                customBoxWidth=\"75px\"></nui-textbox-number>\n        </nui-form-field>\n    </div>\n    <div class=\"mb-2\">\n        <label for=\"donutSizeInput\">\n            Donut Size\n        </label>\n        <br />\n        <nui-textbox-number type=\"number\"\n                            [(ngModel)]=\"donutSize\"\n                            [minValue]=\"0\"\n                            [step]=\"25\"\n                            customBoxWidth=\"75px\"\n                            name=\"donutSizeInput\"></nui-textbox-number>\n    </div>\n</charts-test-harness>\n<div class=\"ml-3\">\n    <div class=\"d-flex align-items-center\">\n        <input id=\"reversed\"\n               class=\"mb-2\"\n               type=\"checkbox\"\n               [ngModel]=\"reversed\"\n               (ngModelChange)=\"onReverseChange($event)\" />\n        <label class=\"px-3\" for=\"reversed\">Reversed</label>\n    </div>\n</div>\n<div class=\"ml-3\">\n    <div class=\"d-flex align-items-center\">\n        <input id=\"flip-labels\"\n               class=\"mb-2\"\n               type=\"checkbox\"\n               [(ngModel)]=\"flipLabels\" />\n        <label class=\"px-3\" for=\"flip-labels\">Flip Labels</label>\n    </div>\n</div>\n";
+      __webpack_exports__["default"] = "<charts-test-harness>\n    <div class=\"testing-region d-flex align-items-center justify-content-around\">\n        <donut-gauge-prototype [gaugeConfig]=\"gaugeConfig\" [size]=\"donutSize\" [annularGrowth]=\"annularGrowth\" [annularWidth]=\"thickness\"></donut-gauge-prototype>\n        <linear-gauge-vertical-prototype [gaugeConfig]=\"gaugeConfig\" [thickness]=\"thickness\" [flipLabels]=\"flipLabels\"></linear-gauge-vertical-prototype>\n        <linear-gauge-horizontal-prototype [gaugeConfig]=\"gaugeConfig\" [thickness]=\"thickness\" [flipLabels]=\"flipLabels\"></linear-gauge-horizontal-prototype>\n    </div>\n\n    <div class=\"mb-2\">\n        <label for=\"valueInput\">\n            Value\n        </label>\n        <br />\n        <nui-textbox-number type=\"number\"\n                            [ngModel]=\"value\"\n                            (ngModelChange)=\"onValueChange($event)\"\n                            [minValue]=\"0\"\n                            [maxValue]=\"maxValue\"\n                            step=\"10\"\n                            customBoxWidth=\"75px\"\n                            name=\"valueInput\"></nui-textbox-number>\n    </div>\n    <div class=\"mb-2\">\n        <label for=\"thicknessInput\">\n            Thickness\n        </label>\n        <br />\n        <nui-textbox-number type=\"number\"\n                            [(ngModel)]=\"thickness\"\n                            [minValue]=\"0\"\n                            customBoxWidth=\"75px\"\n                            name=\"thicknessInput\"></nui-textbox-number>\n    </div>\n    <div class=\"mb-2\">\n        <nui-form-field caption=\"Donut Annular Growth\"\n                        hint=\"Set to zero to have the donut obey the manual thickness setting\"\n                        [showOptionalText]=\"false\">\n            <nui-textbox-number type=\"number\"\n                                [(ngModel)]=\"annularGrowth\"\n                                [minValue]=\"0\"\n                                [step]=\"0.01\"\n                                customBoxWidth=\"75px\"></nui-textbox-number>\n        </nui-form-field>\n    </div>\n    <div class=\"mb-2\">\n        <label for=\"donutSizeInput\">\n            Donut Size\n        </label>\n        <br />\n        <nui-textbox-number type=\"number\"\n                            [(ngModel)]=\"donutSize\"\n                            [minValue]=\"0\"\n                            [step]=\"25\"\n                            customBoxWidth=\"75px\"\n                            name=\"donutSizeInput\"></nui-textbox-number>\n    </div>\n</charts-test-harness>\n<div class=\"ml-3\">\n    <div class=\"d-flex align-items-center\">\n        <input id=\"reversed\"\n               class=\"mb-2\"\n               type=\"checkbox\"\n               [ngModel]=\"reversed\"\n               (ngModelChange)=\"onReverseChange($event)\" />\n        <label class=\"px-3\" for=\"reversed\">Reversed</label>\n    </div>\n</div>\n<div class=\"ml-3\">\n    <div class=\"d-flex align-items-center\">\n        <input id=\"flip-labels\"\n               class=\"mb-2\"\n               type=\"checkbox\"\n               [(ngModel)]=\"flipLabels\" />\n        <label class=\"px-3\" for=\"flip-labels\">Flip Labels</label>\n    </div>\n</div>\n";
       /***/
     },
 
@@ -245,12 +262,12 @@
         function GaugeTestPageComponent() {
           _classCallCheck(this, GaugeTestPageComponent);
 
-          this.value = 95;
-          this.maxValue = 200;
+          this.value = 950;
+          this.maxValue = 2000;
           this.annularGrowth = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["DEFAULT_RADIAL_RENDERER_CONFIG"].annularGrowth;
           this.thickness = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["StandardLinearGaugeThickness"].Large;
           this.donutSize = 200;
-          this.thresholds = [100, 150];
+          this.thresholds = [1000, 1500];
           this.reversed = false;
           this.flipLabels = false; // this.thresholds = new Array(200).fill(null).map((e, i) => i);
           // this.thresholds = [50, 75, 100, 125, 150, 175, 200];
@@ -355,7 +372,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<div class=\"d-flex\">\n    <nui-chart class=\"chart d-block\" [chart]=\"chartAssist.chart\"></nui-chart>\n\n    <nui-chart-donut-content style=\"position: absolute;\"\n                             [plugin]=\"contentPlugin\">\n        <div class=\"h-100 w-100 d-flex flex-column justify-content-center align-items-center text-center\">\n            <div class=\"d-inline-block\" nuiZoomContent [zoomRatio]=\"0.65\">\n                {{gaugeConfig.value | number:'1.0-0'}}\n            </div>\n            <div class=\"content-label\">Network Latency</div>\n            <div class=\"content-label\">(ms)</div>\n        </div>\n    </nui-chart-donut-content>\n</div>\n";
+      __webpack_exports__["default"] = "<div class=\"d-flex\">\n    <nui-chart class=\"chart d-block\" [chart]=\"chartAssist.chart\"></nui-chart>\n\n    <nui-chart-donut-content style=\"position: absolute;\"\n                             [plugin]=\"contentPlugin\">\n        <div class=\"h-100 w-100 d-flex flex-column justify-content-center align-items-center text-center\">\n            <div class=\"d-inline-block\" nuiZoomContent [zoomRatio]=\"0.65\">\n                {{gaugeConfig.value | unitConversion : 2 : false : \"generic\"}}\n            </div>\n            <div class=\"content-label\">Network Latency</div>\n            <div class=\"content-label\">(ms)</div>\n        </div>\n    </nui-chart-donut-content>\n</div>\n";
       /***/
     },
 
@@ -405,13 +422,21 @@
       /* harmony import */
 
 
-      var _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      var _nova_ui_bits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! @nova-ui/bits */
+      "Rr1A");
+      /* harmony import */
+
+
+      var _nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @nova-ui/charts */
       "gKry");
 
       var DonutGaugePrototypeComponent = /*#__PURE__*/function () {
-        function DonutGaugePrototypeComponent() {
+        function DonutGaugePrototypeComponent(unitConversionService) {
           _classCallCheck(this, DonutGaugePrototypeComponent);
+
+          this.unitConversionService = unitConversionService;
         }
 
         _createClass(DonutGaugePrototypeComponent, [{
@@ -424,17 +449,19 @@
             }
 
             if (changes.gaugeConfig && !changes.gaugeConfig.firstChange) {
-              this.chartAssist.update(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.seriesSet, this.gaugeConfig));
+              this.chartAssist.update(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["GaugeUtil"].updateSeriesSet(this.seriesSet, this.gaugeConfig));
             }
           }
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var grid = Object(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["radialGrid"])();
+            var _this2 = this;
+
+            var grid = Object(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["radialGrid"])();
             grid.config().dimension.autoHeight = false;
             grid.config().dimension.autoWidth = false;
-            this.chartAssist = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["ChartAssist"](new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["Chart"](grid), _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["radial"]);
-            this.contentPlugin = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["ChartDonutContentPlugin"]();
+            this.chartAssist = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["ChartAssist"](new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["Chart"](grid), _nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["radial"]);
+            this.contentPlugin = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["ChartDonutContentPlugin"]();
             this.chartAssist.chart.addPlugin(this.contentPlugin);
             var labelConfig = {
               clearance: {
@@ -444,10 +471,12 @@
                 left: 40
               }
             };
-            this.chartAssist.chart.addPlugin(new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["DonutGaugeLabelsPlugin"](labelConfig));
-            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].assembleSeriesSet(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Donut);
-            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].setThresholdLabelFormatter(function (d) {
-              return "".concat(d, "ms");
+            this.chartAssist.chart.addPlugin(new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["DonutGaugeLabelsPlugin"](labelConfig));
+            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["GaugeUtil"].assembleSeriesSet(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["GaugeMode"].Donut);
+            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["GaugeUtil"].setThresholdLabelFormatter(function (d) {
+              var conversion = _this2.unitConversionService.convert(parseInt(d, 10), 1000, 2);
+
+              return _this2.unitConversionService.getFullDisplay(conversion, "generic");
             }, this.seriesSet);
             this.updateDonutSize();
             this.updateAnnularAttributes();
@@ -463,20 +492,26 @@
         }, {
           key: "updateAnnularAttributes",
           value: function updateAnnularAttributes() {
-            var _this = this;
+            var _this3 = this;
 
             this.seriesSet.forEach(function (series) {
               var rendererConfig = series.renderer.config; // increase the max thickness from 30 for testing purposes
 
               rendererConfig.maxThickness = 20000;
-              rendererConfig.annularGrowth = _this.annularGrowth;
-              rendererConfig.annularWidth = _this.annularWidth;
+              rendererConfig.annularGrowth = _this3.annularGrowth;
+              rendererConfig.annularWidth = _this3.annularWidth;
             });
           }
         }]);
 
         return DonutGaugePrototypeComponent;
       }();
+
+      DonutGaugePrototypeComponent.ctorParameters = function () {
+        return [{
+          type: _nova_ui_bits__WEBPACK_IMPORTED_MODULE_4__["UnitConversionService"]
+        }];
+      };
 
       DonutGaugePrototypeComponent.propDecorators = {
         size: [{
@@ -496,7 +531,7 @@
         selector: "donut-gauge-prototype",
         template: _raw_loader_donut_gauge_prototype_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
         styles: [_donut_gauge_prototype_component_less__WEBPACK_IMPORTED_MODULE_2__["default"]]
-      })], DonutGaugePrototypeComponent);
+      }), Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_nova_ui_bits__WEBPACK_IMPORTED_MODULE_4__["UnitConversionService"]])], DonutGaugePrototypeComponent);
       /***/
     },
 
@@ -673,14 +708,21 @@
       /* harmony import */
 
 
-      var _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      var _nova_ui_bits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! @nova-ui/bits */
+      "Rr1A");
+      /* harmony import */
+
+
+      var _nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @nova-ui/charts */
       "gKry");
 
       var LinearGaugeVerticalPrototypeComponent = /*#__PURE__*/function () {
-        function LinearGaugeVerticalPrototypeComponent() {
+        function LinearGaugeVerticalPrototypeComponent(unitConversionService) {
           _classCallCheck(this, LinearGaugeVerticalPrototypeComponent);
 
+          this.unitConversionService = unitConversionService;
           this.flipLabels = false;
         }
 
@@ -709,30 +751,34 @@
             }
 
             if (changes.gaugeConfig && !changes.gaugeConfig.firstChange) {
-              this.chartAssist.update(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.seriesSet, this.gaugeConfig));
+              this.chartAssist.update(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["GaugeUtil"].updateSeriesSet(this.seriesSet, this.gaugeConfig));
             }
           }
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var grid = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["XYGrid"](Object(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["linearGaugeGridConfig"])(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Vertical, this.thickness));
-            var chart = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["Chart"](grid);
-            this.chartAssist = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["ChartAssist"](chart, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["stack"]);
+            var _this4 = this;
+
+            var grid = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["XYGrid"](Object(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["linearGaugeGridConfig"])(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["GaugeMode"].Vertical, this.thickness));
+            var chart = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["Chart"](grid);
+            this.chartAssist = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["ChartAssist"](chart, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["stack"]);
             var labelConfig = {
               flipLabels: this.flipLabels,
               // extra clearance for the longer labels generated by the formatter
               clearance: {
                 top: 0,
-                right: 40,
+                right: 30,
                 bottom: 0,
-                left: 40
+                left: 30
               }
             };
-            this.labelsPlugin = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["LinearGaugeLabelsPlugin"](labelConfig);
+            this.labelsPlugin = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["LinearGaugeLabelsPlugin"](labelConfig);
             this.chartAssist.chart.addPlugin(this.labelsPlugin);
-            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].assembleSeriesSet(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Vertical);
-            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].setThresholdLabelFormatter(function (d) {
-              return "".concat(d, "ms");
+            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["GaugeUtil"].assembleSeriesSet(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["GaugeMode"].Vertical);
+            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["GaugeUtil"].setThresholdLabelFormatter(function (d) {
+              var conversion = _this4.unitConversionService.convert(parseInt(d, 10), 1000, 2);
+
+              return _this4.unitConversionService.getFullDisplay(conversion, "generic");
             }, this.seriesSet);
             this.chartAssist.update(this.seriesSet);
           }
@@ -740,6 +786,12 @@
 
         return LinearGaugeVerticalPrototypeComponent;
       }();
+
+      LinearGaugeVerticalPrototypeComponent.ctorParameters = function () {
+        return [{
+          type: _nova_ui_bits__WEBPACK_IMPORTED_MODULE_4__["UnitConversionService"]
+        }];
+      };
 
       LinearGaugeVerticalPrototypeComponent.propDecorators = {
         thickness: [{
@@ -756,7 +808,7 @@
         selector: "linear-gauge-vertical-prototype",
         template: _raw_loader_linear_gauge_vertical_prototype_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
         styles: [_linear_gauge_vertical_prototype_component_less__WEBPACK_IMPORTED_MODULE_2__["default"]]
-      })], LinearGaugeVerticalPrototypeComponent);
+      }), Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_nova_ui_bits__WEBPACK_IMPORTED_MODULE_4__["UnitConversionService"]])], LinearGaugeVerticalPrototypeComponent);
       /***/
     },
 

@@ -1709,7 +1709,7 @@ import {
     Renderer2,
     ViewChild,
     ViewContainerRef,
-    ViewEncapsulation
+    ViewEncapsulation,
 } from &quot;@angular/core&quot;;
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from &quot;@angular/forms&quot;;
 import {Subscription} from &quot;rxjs&quot;;
@@ -1859,7 +1859,7 @@ export class CheckboxComponent implements AfterViewInit, ICheckboxComponent, Con
     private rendererListener: Function;
     private sub: Subscription;
 
-    private _ariaLabel: string &#x3D; &quot;&quot;;
+    private _ariaLabel: string &#x3D; &quot;Checkbox&quot;;
 
     constructor(private changeDetector: ChangeDetectorRef,
                 private eventBusService: EventBusService,

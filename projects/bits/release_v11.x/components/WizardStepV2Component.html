@@ -516,7 +516,7 @@ import {
     SkipSelf,
     TemplateRef,
     ViewChildren,
-    ViewEncapsulation
+    ViewEncapsulation,
 } from &quot;@angular/core&quot;;
 import {FormControl, FormGroupDirective, NgForm} from &quot;@angular/forms&quot;;
 import {Subject} from &quot;rxjs&quot;;
@@ -595,6 +595,8 @@ export class WizardDirective extends CdkStepper implements AfterContentInit {
 
     /** Steps that the stepper holds. */
     @ContentChildren(WizardStepV2Component, {descendants: true}) _steps: QueryList&lt;WizardStepV2Component&gt;;
+    /** Override CdkStepper &#x27;steps&#x27; property to use WizardStepV2Component instead of CdkStep */
+    @ContentChildren(WizardStepV2Component, {descendants: true}) steps: QueryList&lt;WizardStepV2Component&gt;;
 
     /** The step that is selected. */
     @Input()
@@ -607,12 +609,8 @@ export class WizardDirective extends CdkStepper implements AfterContentInit {
     }
 
     ngAfterContentInit() {
-        // Mark the component for change detection whenever the content children query changes
-        this._steps.changes.pipe(takeUntil(this._destroyed)).subscribe(() &#x3D;&gt; {
-            this.steps.reset(this._steps as any);
-            this._stateChanged();
-        });
-
+        this.steps.changes.pipe(takeUntil(this._destroyed))
+            .subscribe(() &#x3D;&gt; this._stateChanged());
         this._animationDone.pipe(
             // This needs a &#x60;distinctUntilChanged&#x60; in order to avoid emitting the same event twice due
             // to a bug in animations where the &#x60;.done&#x60; callback gets invoked twice on some browsers.

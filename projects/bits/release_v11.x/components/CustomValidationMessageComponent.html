@@ -158,13 +158,13 @@ import { ValidationMessageComponent } from &quot;../validation-message.component
  */
 
 @Component({
-  selector: &quot;nui-custom-validation-message&quot;,
-  template: &#x60;
+    selector: &quot;nui-custom-validation-message&quot;,
+    template: &#x60;
       &lt;ng-container *ngIf&#x3D;&quot;show&quot;&gt;
           &lt;ng-content&gt;&lt;/ng-content&gt;
       &lt;/ng-container&gt;
   &#x60;,
-  providers: [{provide: ValidationMessageComponent, useExisting: forwardRef(() &#x3D;&gt; CustomValidationMessageComponent)}],
+    providers: [{provide: ValidationMessageComponent, useExisting: forwardRef(() &#x3D;&gt; CustomValidationMessageComponent)}],
 })
 export class CustomValidationMessageComponent extends ValidationMessageComponent {}
 </code></pre>

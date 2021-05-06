@@ -437,7 +437,7 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>&quot;&quot;</code>
+                        <i>Default value : </i><code>&quot;Time Picker&quot;</code>
                     </td>
                 </tr>
                         <tr>
@@ -2254,7 +2254,7 @@ import {
     Output,
     SimpleChanges,
     ViewChild,
-    ViewEncapsulation
+    ViewEncapsulation,
 } from &quot;@angular/core&quot;;
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from &quot;@angular/forms&quot;;
 import _isEmpty from &quot;lodash/isEmpty&quot;;
@@ -2307,7 +2307,7 @@ export class TimePickerComponent implements OnInit, OnDestroy, OnChanges, AfterV
     /** to apply error state styles */
     @Input() isInErrorState &#x3D; false;
     /** Input to set aria label text */
-    @Input() public ariaLabel: string &#x3D; &quot;&quot;;
+    @Input() public ariaLabel: string &#x3D; &quot;Time Picker&quot;;
     /** to allow the empty values for init state */
     @Input() initEmpty: boolean;
     /** Allows popup box to be attached to document.body */

@@ -525,7 +525,7 @@ export class TimeseriesDataSourceAdapter extends DataSourceAdapter {
 
     constructor(@Inject(PIZZAGNA_EVENT_BUS) eventBus: EventBus&lt;IEvent&gt;,
         @Inject(DATA_SOURCE) dataSource: IDataSource,
-        pizzagnaService: PizzagnaService) {
+                                            pizzagnaService: PizzagnaService) {
         super(eventBus, dataSource, pizzagnaService);
     }
 
@@ -560,6 +560,8 @@ export class TimeseriesDataSourceAdapter extends DataSourceAdapter {
             .map((series: ITimeseriesWidgetData) &#x3D;&gt; ({
                 id: series.id,
                 data: series.data,
+                link: series.link,
+                secondaryLink: series.secondaryLink,
                 legendDescriptionPrimary: this.seriesIndex.find(s &#x3D;&gt; s.selectedSeriesId &#x3D;&#x3D;&#x3D; series.id)?.label,
                 legendDescriptionSecondary: series.description,
             }));

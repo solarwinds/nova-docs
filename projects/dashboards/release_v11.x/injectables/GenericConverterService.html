@@ -1070,12 +1070,12 @@ export class GenericConverterService extends BaseConverter {
     private formParts: IConverterFormPartsProperties[];
 
     constructor(@Inject(PIZZAGNA_EVENT_BUS) eventBus: EventBus&lt;IEvent&gt;,
-                previewService: PreviewService,
-                pizzagnaService: PizzagnaService) {
+                                            previewService: PreviewService,
+                                            pizzagnaService: PizzagnaService) {
         super(eventBus, previewService, pizzagnaService);
     }
 
-    public updateConfiguration(properties: { formParts: IConverterFormPartsProperties[]; }) {
+    public updateConfiguration(properties: { formParts: IConverterFormPartsProperties[] }) {
         if (properties &amp;&amp; properties.formParts) {
             this.formParts &#x3D; properties.formParts;
         }

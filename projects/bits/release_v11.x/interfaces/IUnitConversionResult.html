@@ -64,6 +64,13 @@
             <code>src/services/public-api.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>The result of a unit conversion returned by the UnitConversionService&#39;s convert method</p>
+
+            </p>
 
 
         <section>
@@ -122,6 +129,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Serves as an index into the exported &#39;unitConversionConstants&#39; for determining which unit string display value to use. </p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -151,6 +164,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>The converted value as a string </p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
@@ -229,8 +248,13 @@ export interface ITransientCache {
     size: () &#x3D;&gt; number;
 }
 
+/**
+ * The result of a unit conversion returned by the UnitConversionService&#x27;s convert method
+ */
 export interface IUnitConversionResult {
+    /** Serves as an index into the exported &#x27;unitConversionConstants&#x27; for determining which unit string display value to use. */
     order: number;
+    /** The converted value as a string */
     value: string;
 }
 

@@ -742,7 +742,7 @@ import {
     IInteractionDataPointsEvent,
     InteractionType,
     IRenderStateData,
-    IValueProvider
+    IValueProvider,
 } from &quot;../common/types&quot;;
 
 import { ChartAssistEventType, ChartAssistRenderStateData, IChartAssist, IChartAssistEvent, IRenderStatesIndex } from &quot;./types&quot;;
@@ -1043,9 +1043,9 @@ export class LegendInteractionAssist {
         for (const series of seriesSet.filter(s &#x3D;&gt; s.renderState)) {
             this.renderStatesIndex[series.id] &#x3D;
                 new ChartAssistRenderStateData(series.id,
-                    series,
-                    series.renderState &#x3D;&#x3D;&#x3D; RenderState.hidden ? RenderState.default : series.renderState,
-                    series.renderState !&#x3D;&#x3D; RenderState.hidden);
+                                               series,
+                                               series.renderState &#x3D;&#x3D;&#x3D; RenderState.hidden ? RenderState.default : series.renderState,
+                                               series.renderState !&#x3D;&#x3D; RenderState.hidden);
         }
     }
 

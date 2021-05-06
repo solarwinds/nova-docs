@@ -632,7 +632,7 @@ export class OptionKeyControlService&lt;T extends IOption&gt; {
 
     private hasActiveItem(): boolean {
         if (isNil(this.keyboardEventsManager.activeItemIndex)) {
-           throw new Error(&quot;ActiveItemIndex is not defined&quot;);
+            throw new Error(&quot;ActiveItemIndex is not defined&quot;);
         }
         return Boolean(this.keyboardEventsManager.activeItem &amp;&amp; this.keyboardEventsManager.activeItemIndex &gt;&#x3D; 0);
     }

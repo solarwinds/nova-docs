@@ -3754,59 +3754,42 @@ const regexpValidation = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UnitConversionPipe", function() { return UnitConversionPipe; });
-/* harmony import */ var lodash_isFinite__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash/isFinite */ "lFKM");
-/* harmony import */ var lodash_isFinite__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash_isFinite__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var lodash_isNaN__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash/isNaN */ "GODc");
-/* harmony import */ var lodash_isNaN__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_isNaN__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _constants_unit_conversion_constant__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../constants/unit-conversion.constant */ "Ped9");
-/* harmony import */ var _services_unit_conversion_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/unit-conversion.service */ "pi50");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ "fXoL");
-
-
+/* harmony import */ var _constants_unit_conversion_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constants/unit-conversion.constants */ "Uuhz");
+/* harmony import */ var _services_unit_conversion_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/unit-conversion.service */ "pi50");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
 
 
 
 
 /**
- * Filter used for formatting value of different units. Unit suffix is automatically added based on value.
- * Units that are supported: bytes, bits per second, hertz.
+ * <example-url>./../examples/index.html#/pipes/unit-conversion</example-url>
  *
- * __Parameters :__
- *
- * value - value to be converted
- *
- * precision - precision of formatted value. Extra trailing zeros are removed independently of the precision.
- *
- * plusSignIf - true and source value is positive, plus sign prefix is added.
- *
- * unit - type of unit: bytes, bits per second or hertz. Effects scale and unit shortcut value in the function output.
- *
- * __Usage :__
- *   value | unitConversion:precision:plusSign:unit
- *
- * __Example :__
- *   <code>{{ 1200 | unitConversion:2:false:"bitsPerSecond" }}</code>
- *
+ * Pipe for converting a large quantity of a small basic unit to a smaller approximation of the same quantity in a larger unit. This can be useful for
+ * displaying larger values in a limited amount of space.
  */
 class UnitConversionPipe {
     constructor(unitConversionService) {
         this.unitConversionService = unitConversionService;
     }
-    transform(value, precision = 0, plusSign = false, unit = "bytes") {
-        const scale = unit === "bytes" ? 1024 : 1000;
-        if (lodash_isNaN__WEBPACK_IMPORTED_MODULE_1___default()(parseFloat(value)) || !lodash_isFinite__WEBPACK_IMPORTED_MODULE_0___default()(value)) {
-            return "---";
-        }
-        if (value === 0) {
-            return value + " " + _constants_unit_conversion_constant__WEBPACK_IMPORTED_MODULE_2__["unitConversionConstants"][unit][0];
-        }
-        const convResult = this.unitConversionService.convert(value, scale, precision);
-        const prefix = plusSign && value > 0 ? "+" : "";
-        return prefix + convResult.value + " " + _constants_unit_conversion_constant__WEBPACK_IMPORTED_MODULE_2__["unitConversionConstants"][unit][convResult.order];
+    /**
+     * Gets a string representation of the conversion of a large quantity of a small basic unit to a smaller quantity of a larger unit.
+     * For example, a quantity of 1024 in bytes is output as "1 KB".
+     *
+     * @param value The value to convert
+     * @param scale The number of significant digits to the right of the decimal to include in the converted value
+     * @param plusSign Specify whether to prefix positive values with a '+'
+     * @param unit The basic unit to use for the conversion result's unit label
+     *
+     * @returns {string} The conversion result appended with the converted unit label
+     */
+    transform(value, scale = 0, plusSign = false, unit = "bytes") {
+        const base = unit === "bytes" ? _constants_unit_conversion_constants__WEBPACK_IMPORTED_MODULE_0__["UnitBase"].Bytes : _constants_unit_conversion_constants__WEBPACK_IMPORTED_MODULE_0__["UnitBase"].Standard;
+        const result = this.unitConversionService.convert(value, base, scale);
+        return this.unitConversionService.getFullDisplay(result, unit, plusSign);
     }
 }
-UnitConversionPipe.ɵfac = function UnitConversionPipe_Factory(t) { return new (t || UnitConversionPipe)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_services_unit_conversion_service__WEBPACK_IMPORTED_MODULE_3__["UnitConversionService"])); };
-UnitConversionPipe.ɵpipe = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefinePipe"]({ name: "unitConversion", type: UnitConversionPipe, pure: true });
+UnitConversionPipe.ɵfac = function UnitConversionPipe_Factory(t) { return new (t || UnitConversionPipe)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_services_unit_conversion_service__WEBPACK_IMPORTED_MODULE_1__["UnitConversionService"])); };
+UnitConversionPipe.ɵpipe = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefinePipe"]({ name: "unitConversion", type: UnitConversionPipe, pure: true });
 
 
 /***/ }),
@@ -5345,7 +5328,7 @@ PaginatorComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefin
     }
     else {
         i18n_1 = $localize `:␟d662abcb49ed274a9ec81f5df13b35acbf4cba87␟6035911408728866723:${"\uFFFD0\uFFFD"}:INTERPOLATION: of ${"\uFFFD#7\uFFFD"}:START_TAG_SPAN:${"\uFFFD1\uFFFD"}:INTERPOLATION_1:${"\uFFFD/#7\uFFFD"}:CLOSE_TAG_SPAN:`;
-    } return [["class", "nui-paginator", 4, "ngIf"], ["tableRow", ""], [1, "nui-paginator"], [1, "nui-paginator__items"], ["role", "listbox", 1, "nui-paginator__list"], ["role", "option", 3, "title", "ngClass", "value", 4, "ngFor", "ngForOf"], [1, "nui-paginator__options"], [1, "nui-paginator__info"], i18n_1, [1, "nui-paginator__total"], ["ariaLabel", "Items per page", 3, "value", "valueSelected"], [3, "value", 4, "ngFor", "ngForOf"], ["role", "option", 3, "title", "ngClass", "value"], ["nui-button", "", "type", "button", "displayStyle", "action", "class", "move-icon", 3, "disabled", "icon", "click", 4, "ngIf"], ["nui-button", "", "type", "button", "displayStyle", "action", 3, "isEmpty", "click", 4, "ngIf"], [3, "appendToBody", "baseElementSelector", 4, "ngIf"], ["nui-button", "", "type", "button", "displayStyle", "action", 1, "move-icon", 3, "disabled", "icon", "click"], ["nui-button", "", "type", "button", "displayStyle", "action", 3, "isEmpty", "click"], [3, "appendToBody", "baseElementSelector"], ["nui-button", "", "type", "button", "nuiPopupToggle", "", "displayStyle", "action", "aria-haspopup", "true", 1, "nui-paginator__dots", 3, "ngClass", "isEmpty", "click"], ["popupAreaContent", "", 1, "nui-paginator__elipsis-pages"], [1, "nui-paginator__page-table", 3, "ngClass"], [3, "width", "height", "itemSize", "maxBufferPx", "minBufferPx", 4, "ngIf"], [4, "ngIf"], [3, "itemSize", "maxBufferPx", "minBufferPx"], [4, "cdkVirtualFor", "cdkVirtualForOf"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"], [3, "ngTemplateOutlet", "ngTemplateOutletContext", 4, "ngFor", "ngForOf"], [3, "value"], [3, "ngClass"], ["class", "nui-paginator__page-cell", 4, "ngFor", "ngForOf"], [1, "nui-paginator__page-cell"], ["nui-button", "", "type", "button", "displayStyle", "action", 3, "click"]]; }, template: function PaginatorComponent_Template(rf, ctx) { if (rf & 1) {
+    } return [["class", "nui-paginator", 4, "ngIf"], ["tableRow", ""], [1, "nui-paginator"], [1, "nui-paginator__items"], ["role", "listbox", "aria-label", "List of pages", 1, "nui-paginator__list"], ["role", "option", 3, "title", "ngClass", "value", 4, "ngFor", "ngForOf"], [1, "nui-paginator__options"], [1, "nui-paginator__info"], i18n_1, [1, "nui-paginator__total"], ["ariaLabel", "Items per page", 3, "value", "valueSelected"], [3, "value", 4, "ngFor", "ngForOf"], ["role", "option", 3, "title", "ngClass", "value"], ["nui-button", "", "type", "button", "displayStyle", "action", "class", "move-icon", 3, "disabled", "icon", "click", 4, "ngIf"], ["nui-button", "", "type", "button", "displayStyle", "action", 3, "isEmpty", "click", 4, "ngIf"], [3, "appendToBody", "baseElementSelector", 4, "ngIf"], ["nui-button", "", "type", "button", "displayStyle", "action", 1, "move-icon", 3, "disabled", "icon", "click"], ["nui-button", "", "type", "button", "displayStyle", "action", 3, "isEmpty", "click"], [3, "appendToBody", "baseElementSelector"], ["nui-button", "", "type", "button", "nuiPopupToggle", "", "displayStyle", "action", "aria-haspopup", "true", 1, "nui-paginator__dots", 3, "ngClass", "isEmpty", "click"], ["popupAreaContent", "", 1, "nui-paginator__elipsis-pages"], [1, "nui-paginator__page-table", 3, "ngClass"], [3, "width", "height", "itemSize", "maxBufferPx", "minBufferPx", 4, "ngIf"], [4, "ngIf"], [3, "itemSize", "maxBufferPx", "minBufferPx"], [4, "cdkVirtualFor", "cdkVirtualForOf"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"], [3, "ngTemplateOutlet", "ngTemplateOutletContext", 4, "ngFor", "ngForOf"], [3, "value"], [3, "ngClass"], ["class", "nui-paginator__page-cell", 4, "ngFor", "ngForOf"], [1, "nui-paginator__page-cell"], ["nui-button", "", "type", "button", "displayStyle", "action", 3, "click"]]; }, template: function PaginatorComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](0, PaginatorComponent_div_0_Template, 10, 5, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](1, PaginatorComponent_ng_template_1_Template, 2, 4, "ng-template", null, 1, _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplateRefExtractor"]);
     } if (rf & 2) {
@@ -6311,7 +6294,7 @@ class SwitchComponent {
         /**
          * Input to set aria label text
          */
-        this.ariaLabel = "";
+        this.ariaLabel = "Switch";
         this.valueChange = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
     }
     toggle() {
@@ -6828,36 +6811,38 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var _constants_images__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../constants/images */ "7TQK");
 /* harmony import */ var _constants_images_constants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../constants/images.constants */ "hKb4");
-/* harmony import */ var _constants_unit_conversion_constant__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../constants/unit-conversion.constant */ "Ped9");
+/* harmony import */ var _constants_unit_conversion_constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../constants/unit-conversion.constants */ "Uuhz");
 /* harmony import */ var _environment__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../environment */ "e2Tw");
 /* harmony import */ var _lib_selector_selector_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../lib/selector/selector.service */ "/7Tu");
 /* harmony import */ var _pipes_limit_to_pipe__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../pipes/limit-to.pipe */ "Fsde");
 /* harmony import */ var _pipes_unit_conversion_pipe__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../pipes/unit-conversion.pipe */ "29HT");
-/* harmony import */ var _services_dom_util_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../services/dom-util.service */ "uj+m");
-/* harmony import */ var _services_edge_detection_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../services/edge-detection.service */ "ibgH");
-/* harmony import */ var _services_event_bus_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../services/event-bus.service */ "oCSD");
-/* harmony import */ var _services_event_propagation_service__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../services/event-propagation.service */ "+0BR");
-/* harmony import */ var _services_history_storage__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../services/history-storage */ "YUul");
-/* harmony import */ var _services_log_service__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../services/log-service */ "eqCI");
-/* harmony import */ var _services_notification_service__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../services/notification-service */ "VCez");
-/* harmony import */ var _services_position_service__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../services/position.service */ "Q8/f");
-/* harmony import */ var _services_search_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../services/search.service */ "EaWR");
-/* harmony import */ var _services_transient_cache_service__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../services/transient-cache.service */ "02PJ");
-/* harmony import */ var _services_unit_conversion_service__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../services/unit-conversion.service */ "pi50");
-/* harmony import */ var _services_util_service__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../services/util.service */ "/e7+");
-/* harmony import */ var _directives_click_interceptor_click_interceptor_directive__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./directives/click-interceptor/click-interceptor.directive */ "qMZP");
-/* harmony import */ var _directives_clipboard_clipboard_directive__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./directives/clipboard/clipboard.directive */ "eJM4");
-/* harmony import */ var _directives_dragdrop_drag_and_drop_service__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./directives/dragdrop/drag-and-drop.service */ "Eh93");
-/* harmony import */ var _directives_dragdrop_draggable_directive__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./directives/dragdrop/draggable.directive */ "0TTj");
-/* harmony import */ var _directives_dragdrop_droppable_directive__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./directives/dragdrop/droppable.directive */ "GM/8");
-/* harmony import */ var _directives_resize_observer_resize_observer_directive__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./directives/resize-observer/resize-observer.directive */ "ujIh");
-/* harmony import */ var _directives_resize_resize_directive__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./directives/resize/resize.directive */ "F2yd");
-/* harmony import */ var _directives_resizer_resizer_directive__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./directives/resizer/resizer.directive */ "bA9B");
-/* harmony import */ var _directives_set_focus_set_focus_directive__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./directives/set-focus/set-focus.directive */ "IoYV");
-/* harmony import */ var _directives_zoom_content_zoom_content_directive__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./directives/zoom-content/zoom-content.directive */ "YDg1");
+/* harmony import */ var _pipes_highlight_pipe__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../pipes/highlight.pipe */ "ZlWS");
+/* harmony import */ var _services_dom_util_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../services/dom-util.service */ "uj+m");
+/* harmony import */ var _services_edge_detection_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../services/edge-detection.service */ "ibgH");
+/* harmony import */ var _services_event_bus_service__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../services/event-bus.service */ "oCSD");
+/* harmony import */ var _services_event_propagation_service__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../services/event-propagation.service */ "+0BR");
+/* harmony import */ var _services_history_storage__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../services/history-storage */ "YUul");
+/* harmony import */ var _services_log_service__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../services/log-service */ "eqCI");
+/* harmony import */ var _services_notification_service__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../services/notification-service */ "VCez");
+/* harmony import */ var _services_position_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../services/position.service */ "Q8/f");
+/* harmony import */ var _services_search_service__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../services/search.service */ "EaWR");
+/* harmony import */ var _services_transient_cache_service__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../services/transient-cache.service */ "02PJ");
+/* harmony import */ var _services_unit_conversion_service__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../services/unit-conversion.service */ "pi50");
+/* harmony import */ var _services_util_service__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../services/util.service */ "/e7+");
+/* harmony import */ var _directives_click_interceptor_click_interceptor_directive__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./directives/click-interceptor/click-interceptor.directive */ "qMZP");
+/* harmony import */ var _directives_clipboard_clipboard_directive__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./directives/clipboard/clipboard.directive */ "eJM4");
+/* harmony import */ var _directives_dragdrop_drag_and_drop_service__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./directives/dragdrop/drag-and-drop.service */ "Eh93");
+/* harmony import */ var _directives_dragdrop_draggable_directive__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./directives/dragdrop/draggable.directive */ "0TTj");
+/* harmony import */ var _directives_dragdrop_droppable_directive__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./directives/dragdrop/droppable.directive */ "GM/8");
+/* harmony import */ var _directives_resize_observer_resize_observer_directive__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./directives/resize-observer/resize-observer.directive */ "ujIh");
+/* harmony import */ var _directives_resize_resize_directive__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./directives/resize/resize.directive */ "F2yd");
+/* harmony import */ var _directives_resizer_resizer_directive__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./directives/resizer/resizer.directive */ "bA9B");
+/* harmony import */ var _directives_set_focus_set_focus_directive__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./directives/set-focus/set-focus.directive */ "IoYV");
+/* harmony import */ var _directives_zoom_content_zoom_content_directive__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./directives/zoom-content/zoom-content.directive */ "YDg1");
 /**
  * @ignore
  */
+
 
 
 
@@ -6897,49 +6882,51 @@ class NuiCommonModule {
 }
 NuiCommonModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({ type: NuiCommonModule });
 NuiCommonModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({ factory: function NuiCommonModule_Factory(t) { return new (t || NuiCommonModule)(); }, providers: [
-        _directives_dragdrop_drag_and_drop_service__WEBPACK_IMPORTED_MODULE_23__["DragAndDropService"],
-        _services_event_bus_service__WEBPACK_IMPORTED_MODULE_11__["EventBusService"],
+        _directives_dragdrop_drag_and_drop_service__WEBPACK_IMPORTED_MODULE_24__["DragAndDropService"],
+        _services_event_bus_service__WEBPACK_IMPORTED_MODULE_12__["EventBusService"],
         _environment__WEBPACK_IMPORTED_MODULE_5__["NUI_ENV_PROVIDER"],
-        _services_unit_conversion_service__WEBPACK_IMPORTED_MODULE_19__["UnitConversionService"],
-        _services_util_service__WEBPACK_IMPORTED_MODULE_20__["UtilService"],
-        _services_transient_cache_service__WEBPACK_IMPORTED_MODULE_18__["TransientCacheService"],
-        _services_search_service__WEBPACK_IMPORTED_MODULE_17__["SearchService"],
+        _services_unit_conversion_service__WEBPACK_IMPORTED_MODULE_20__["UnitConversionService"],
+        _services_util_service__WEBPACK_IMPORTED_MODULE_21__["UtilService"],
+        _services_transient_cache_service__WEBPACK_IMPORTED_MODULE_19__["TransientCacheService"],
+        _services_search_service__WEBPACK_IMPORTED_MODULE_18__["SearchService"],
         _angular_common__WEBPACK_IMPORTED_MODULE_0__["DatePipe"],
-        _services_position_service__WEBPACK_IMPORTED_MODULE_16__["PositionService"],
-        _services_notification_service__WEBPACK_IMPORTED_MODULE_15__["NotificationService"],
-        _services_event_propagation_service__WEBPACK_IMPORTED_MODULE_12__["EventPropagationService"],
-        _services_edge_detection_service__WEBPACK_IMPORTED_MODULE_10__["EdgeDetectionService"],
-        _services_log_service__WEBPACK_IMPORTED_MODULE_14__["LoggerService"],
-        _services_dom_util_service__WEBPACK_IMPORTED_MODULE_9__["DomUtilService"],
+        _services_position_service__WEBPACK_IMPORTED_MODULE_17__["PositionService"],
+        _services_notification_service__WEBPACK_IMPORTED_MODULE_16__["NotificationService"],
+        _services_event_propagation_service__WEBPACK_IMPORTED_MODULE_13__["EventPropagationService"],
+        _services_edge_detection_service__WEBPACK_IMPORTED_MODULE_11__["EdgeDetectionService"],
+        _services_log_service__WEBPACK_IMPORTED_MODULE_15__["LoggerService"],
+        _services_dom_util_service__WEBPACK_IMPORTED_MODULE_10__["DomUtilService"],
         _lib_selector_selector_service__WEBPACK_IMPORTED_MODULE_6__["SelectorService"],
-        _services_history_storage__WEBPACK_IMPORTED_MODULE_13__["HistoryStorage"],
+        _services_history_storage__WEBPACK_IMPORTED_MODULE_14__["HistoryStorage"],
         { provide: "windowObject", useValue: window },
-        { provide: _constants_unit_conversion_constant__WEBPACK_IMPORTED_MODULE_4__["unitConversionToken"], useValue: _constants_unit_conversion_constant__WEBPACK_IMPORTED_MODULE_4__["unitConversionConstants"] },
+        { provide: _constants_unit_conversion_constants__WEBPACK_IMPORTED_MODULE_4__["unitConversionToken"], useValue: _constants_unit_conversion_constants__WEBPACK_IMPORTED_MODULE_4__["unitConversionConstants"] },
         { provide: _constants_images_constants__WEBPACK_IMPORTED_MODULE_3__["imagesPresetToken"], useValue: _constants_images__WEBPACK_IMPORTED_MODULE_2__["imagesData"] },
     ], imports: [[
             _angular_common__WEBPACK_IMPORTED_MODULE_0__["CommonModule"],
         ], _angular_common__WEBPACK_IMPORTED_MODULE_0__["CommonModule"]] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](NuiCommonModule, { declarations: [_directives_click_interceptor_click_interceptor_directive__WEBPACK_IMPORTED_MODULE_21__["ClickInterceptorDirective"],
-        _directives_clipboard_clipboard_directive__WEBPACK_IMPORTED_MODULE_22__["ClipboardDirective"],
-        _directives_dragdrop_draggable_directive__WEBPACK_IMPORTED_MODULE_24__["DraggableDirective"],
-        _directives_dragdrop_droppable_directive__WEBPACK_IMPORTED_MODULE_25__["DroppableDirective"],
-        _directives_resize_resize_directive__WEBPACK_IMPORTED_MODULE_27__["ResizeDirective"],
-        _directives_resize_observer_resize_observer_directive__WEBPACK_IMPORTED_MODULE_26__["ResizeObserverDirective"],
-        _directives_resizer_resizer_directive__WEBPACK_IMPORTED_MODULE_28__["ResizerDirective"],
-        _directives_set_focus_set_focus_directive__WEBPACK_IMPORTED_MODULE_29__["SetFocusDirective"],
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](NuiCommonModule, { declarations: [_directives_click_interceptor_click_interceptor_directive__WEBPACK_IMPORTED_MODULE_22__["ClickInterceptorDirective"],
+        _directives_clipboard_clipboard_directive__WEBPACK_IMPORTED_MODULE_23__["ClipboardDirective"],
+        _directives_dragdrop_draggable_directive__WEBPACK_IMPORTED_MODULE_25__["DraggableDirective"],
+        _directives_dragdrop_droppable_directive__WEBPACK_IMPORTED_MODULE_26__["DroppableDirective"],
+        _directives_resize_resize_directive__WEBPACK_IMPORTED_MODULE_28__["ResizeDirective"],
+        _directives_resize_observer_resize_observer_directive__WEBPACK_IMPORTED_MODULE_27__["ResizeObserverDirective"],
+        _directives_resizer_resizer_directive__WEBPACK_IMPORTED_MODULE_29__["ResizerDirective"],
+        _directives_set_focus_set_focus_directive__WEBPACK_IMPORTED_MODULE_30__["SetFocusDirective"],
         _pipes_limit_to_pipe__WEBPACK_IMPORTED_MODULE_7__["LimitToPipe"],
+        _pipes_highlight_pipe__WEBPACK_IMPORTED_MODULE_9__["HighlightPipe"],
         _pipes_unit_conversion_pipe__WEBPACK_IMPORTED_MODULE_8__["UnitConversionPipe"],
-        _directives_zoom_content_zoom_content_directive__WEBPACK_IMPORTED_MODULE_30__["ZoomContentDirective"]], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_0__["CommonModule"]], exports: [_angular_common__WEBPACK_IMPORTED_MODULE_0__["CommonModule"],
-        _directives_click_interceptor_click_interceptor_directive__WEBPACK_IMPORTED_MODULE_21__["ClickInterceptorDirective"],
-        _directives_clipboard_clipboard_directive__WEBPACK_IMPORTED_MODULE_22__["ClipboardDirective"],
-        _directives_dragdrop_draggable_directive__WEBPACK_IMPORTED_MODULE_24__["DraggableDirective"],
-        _directives_dragdrop_droppable_directive__WEBPACK_IMPORTED_MODULE_25__["DroppableDirective"],
-        _directives_resize_resize_directive__WEBPACK_IMPORTED_MODULE_27__["ResizeDirective"],
-        _directives_resize_observer_resize_observer_directive__WEBPACK_IMPORTED_MODULE_26__["ResizeObserverDirective"],
-        _directives_resizer_resizer_directive__WEBPACK_IMPORTED_MODULE_28__["ResizerDirective"],
-        _directives_set_focus_set_focus_directive__WEBPACK_IMPORTED_MODULE_29__["SetFocusDirective"],
+        _directives_zoom_content_zoom_content_directive__WEBPACK_IMPORTED_MODULE_31__["ZoomContentDirective"]], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_0__["CommonModule"]], exports: [_angular_common__WEBPACK_IMPORTED_MODULE_0__["CommonModule"],
+        _directives_click_interceptor_click_interceptor_directive__WEBPACK_IMPORTED_MODULE_22__["ClickInterceptorDirective"],
+        _directives_clipboard_clipboard_directive__WEBPACK_IMPORTED_MODULE_23__["ClipboardDirective"],
+        _directives_dragdrop_draggable_directive__WEBPACK_IMPORTED_MODULE_25__["DraggableDirective"],
+        _directives_dragdrop_droppable_directive__WEBPACK_IMPORTED_MODULE_26__["DroppableDirective"],
+        _directives_resize_resize_directive__WEBPACK_IMPORTED_MODULE_28__["ResizeDirective"],
+        _directives_resize_observer_resize_observer_directive__WEBPACK_IMPORTED_MODULE_27__["ResizeObserverDirective"],
+        _directives_resizer_resizer_directive__WEBPACK_IMPORTED_MODULE_29__["ResizerDirective"],
+        _directives_set_focus_set_focus_directive__WEBPACK_IMPORTED_MODULE_30__["SetFocusDirective"],
         _pipes_unit_conversion_pipe__WEBPACK_IMPORTED_MODULE_8__["UnitConversionPipe"],
-        _directives_zoom_content_zoom_content_directive__WEBPACK_IMPORTED_MODULE_30__["ZoomContentDirective"]] }); })();
+        _pipes_highlight_pipe__WEBPACK_IMPORTED_MODULE_9__["HighlightPipe"],
+        _directives_zoom_content_zoom_content_directive__WEBPACK_IMPORTED_MODULE_31__["ZoomContentDirective"]] }); })();
 
 
 /***/ }),
@@ -10162,7 +10149,7 @@ function ProgressComponent_ng_template_4_Template(rf, ctx) { if (rf & 1) {
 class ProgressComponent {
     constructor() {
         this.showProgress = true;
-        this.ariaLabel = "";
+        this.ariaLabel = "Progress bar";
         this.cancel = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
         this.isIndeterminate = false;
     }
@@ -11413,7 +11400,7 @@ MenuComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComp
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx.popup = _t.first);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx.menuPopup = _t.first);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx.menuToggle = _t.first);
-    } }, hostAttrs: ["role", "menu", 1, "nui-menu"], hostVars: 1, hostBindings: function MenuComponent_HostBindings(rf, ctx) { if (rf & 2) {
+    } }, hostAttrs: [1, "nui-menu"], hostVars: 1, hostBindings: function MenuComponent_HostBindings(rf, ctx) { if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵattribute"]("aria-label", ctx.title || ctx.ariaLabel);
     } }, inputs: { widthOfPopup: "widthOfPopup", contextClass: "contextClass", appendToBody: "appendToBody", ariaLabel: "ariaLabel", title: "title", size: "size", displayStyle: "displayStyle", isDisabled: "isDisabled", icon: "icon", itemsSource: "itemsSource" }, outputs: { blurred: "blurred" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵProvidersFeature"]([_menu_key_control_service__WEBPACK_IMPORTED_MODULE_8__["MenuKeyControlService"]]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵNgOnChangesFeature"]], ngContentSelectors: _c1, decls: 8, vars: 14, consts: [[3, "appendToBody", "width", "contextClass", "opened"], ["nui-button", "", "nuiPopupToggle", "", "aria-haspopup", "true", "type", "button", 1, "menu-button", "no-shadow", 3, "disabled", "displayStyle", "size", "icon", "iconRight", "isEmpty", "blur"], ["menuToggle", ""], ["popupAreaContent", ""], [3, "itemsSource", "size", 4, "ngIf"], [4, "ngIf"], [3, "itemsSource", "size"]], template: function MenuComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojectionDef"]();
@@ -12620,7 +12607,7 @@ QuickPickerComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdef
 /*!************************!*\
   !*** ./src/nui-api.ts ***!
   \************************/
-/*! exports provided: NuiButtonModule, NuiCheckboxModule, NuiCommonModule, NuiDividerModule, NuiIconModule, NuiMessageModule, NuiImageModule, NuiMenuModule, NuiPopupModule, NuiSwitchModule, NuiSelectModule, NuiSelectV2Module, NuiSpinnerModule, NuiTabsModule, NuiTextboxModule, NuiTooltipModule, NuiLayoutModule, NuiOverlayModule, NuiOverlayAdditionsModule, NuiBreadcrumbModule, NuiBusyModule, NuiChipsModule, NuiContentModule, NuiDatePickerModule, NuiDateTimePickerModule, NuiDialogModule, NuiExpanderModule, NuiFormFieldModule, NuiPaginatorModule, NuiPanelModule, NuiPopoverModule, NuiProgressModule, NuiRadioModule, NuiRepeatModule, NuiSearchModule, NuiSelectorModule, NuiSorterModule, NuiTableModule, NuiTimeFrameBarModule, NuiTimeFramePickerModule, NuiTimePickerModule, NuiToastModule, NuiToolbarModule, NuiValidationMessageModule, NuiWizardModule, NuiWizardV2Module, NuiDocsModule, ButtonSizeType, CheckboxChangeEvent, datePickerDefaults, datePickerDateFormats, NuiDndModule, DndDropTargetDirective, NuiDialogEvent, SrlcStage, NuiFormFieldControl, IconCategory, IconCategoryNamespace, IconStatus, IconSeverity, IconState, IconWidget, MenuActionType, PanelModes, PanelStates, SizeParameters, PanelBackgroundColor, PopoverOverlayPosition, RepeatSelectionMode, PaddingOptions, NUI_SELECT_V2_OPTION_PARENT_COMPONENT, SelectionType, CheckboxStatus, SorterDirection, SpinnerSize, ButtonIcon, DEFAULT_TABLE_HEADER_OFFSET, TABLE_ROW_HEIGHT, complexScrollStrategyFactory, TableVirtualScrollLinearDirective, TableVirtualScrollDirective, TableVirtualScrollHeaderPosition, TableStickyHeaderDirective, SliceRangePipe, ToolbarItemType, ToolbarItemDisplayStyle, TooltipDirective, ValidationMessageComponent, CustomValidationMessageComponent, wizardAnimations, WizardHorizontalComponent, WizardVerticalComponent, WizardStepV2Component, WizardDirective, WizardStepHeaderComponent, WizardStepLabelDirective, WizardStepFooterDirective, WizardFooterComponent, WizardStepperNextDirective, WizardStepperPreviousDirective, OVERLAY_CONTAINER_CLASS, OVERLAY_PANEL_CLASS, OVERLAY_DEFAULT_PRIORITY, OverlayPlacement, OverlayPosition, OverlayPositionService, getOverlayPositions, OVERLAY_ITEM, OVERLAY_CONTAINER, OVERLAY_WITH_POPUP_STYLES_CLASS, OVERLAY_ARROW_SIZE, OverlayUtilitiesService, OverlayCustomContainer, OverlayContainerService, POPUP_V2_VIEWPORT_MARGINS_DEFAULT, OverlayComponent, OverlayItemComponent, unitConversionToken, unitConversionConstants, imagesPresetToken, KEY_CODE, RESIZE_DEBOUNCE_TIME, DEMO_PATH_TOKEN, DEFAULT_INTERACTIVE_ELEMENTS, ResizeDirection, ResizeUnit, resizeDirectionHelpers, defaultFilters, NuiActiveDialog, SelectionModel, IEvent, EventDefinition, NuiValidators, LogLevel, NuiEnvironment, NUI_ENV_PROVIDER_FACTORY, NUI_ENV_PROVIDER, uuid, immutableSet, removeErrors, traverse, nameof */
+/*! exports provided: NuiButtonModule, NuiCheckboxModule, NuiCommonModule, NuiDividerModule, NuiIconModule, NuiMessageModule, NuiImageModule, NuiMenuModule, NuiPopupModule, NuiSwitchModule, NuiSelectModule, NuiSelectV2Module, NuiSpinnerModule, NuiTabsModule, NuiTextboxModule, NuiTooltipModule, NuiLayoutModule, NuiOverlayModule, NuiOverlayAdditionsModule, NuiBreadcrumbModule, NuiBusyModule, NuiChipsModule, NuiContentModule, NuiDatePickerModule, NuiDateTimePickerModule, NuiDialogModule, NuiExpanderModule, NuiFormFieldModule, NuiPaginatorModule, NuiPanelModule, NuiPopoverModule, NuiProgressModule, NuiRadioModule, NuiRepeatModule, NuiSearchModule, NuiSelectorModule, NuiSorterModule, NuiTableModule, NuiTimeFrameBarModule, NuiTimeFramePickerModule, NuiTimePickerModule, NuiToastModule, NuiToolbarModule, NuiValidationMessageModule, NuiWizardModule, NuiWizardV2Module, NuiDocsModule, ButtonSizeType, CheckboxChangeEvent, datePickerDefaults, datePickerDateFormats, NuiDndModule, DndDropTargetDirective, NuiDialogEvent, SrlcStage, NuiFormFieldControl, IconCategory, IconCategoryNamespace, IconStatus, IconSeverity, IconState, IconWidget, MenuActionType, PanelModes, PanelStates, SizeParameters, PanelBackgroundColor, PopoverOverlayPosition, RepeatSelectionMode, PaddingOptions, NUI_SELECT_V2_OPTION_PARENT_COMPONENT, SelectionType, CheckboxStatus, SorterDirection, SpinnerSize, ButtonIcon, DEFAULT_TABLE_HEADER_OFFSET, TABLE_ROW_HEIGHT, complexScrollStrategyFactory, TableVirtualScrollLinearDirective, TableVirtualScrollDirective, TableVirtualScrollHeaderPosition, TableStickyHeaderDirective, SliceRangePipe, ToolbarItemType, ToolbarItemDisplayStyle, TooltipDirective, ValidationMessageComponent, CustomValidationMessageComponent, wizardAnimations, WizardHorizontalComponent, WizardVerticalComponent, WizardStepV2Component, WizardDirective, WizardStepHeaderComponent, WizardStepLabelDirective, WizardStepFooterDirective, WizardFooterComponent, WizardStepperNextDirective, WizardStepperPreviousDirective, OVERLAY_CONTAINER_CLASS, OVERLAY_PANEL_CLASS, OVERLAY_DEFAULT_PRIORITY, OverlayPlacement, OverlayPosition, OverlayPositionService, getOverlayPositions, OVERLAY_ITEM, OVERLAY_CONTAINER, OVERLAY_WITH_POPUP_STYLES_CLASS, OVERLAY_ARROW_SIZE, OverlayUtilitiesService, OverlayCustomContainer, OverlayContainerService, POPUP_V2_VIEWPORT_MARGINS_DEFAULT, OverlayComponent, OverlayItemComponent, unitConversionToken, UnitBase, unitConversionConstants, imagesPresetToken, KEY_CODE, RESIZE_DEBOUNCE_TIME, DEMO_PATH_TOKEN, DEFAULT_INTERACTIVE_ELEMENTS, ResizeDirection, ResizeUnit, resizeDirectionHelpers, defaultFilters, NuiActiveDialog, SelectionModel, IEvent, EventDefinition, NuiValidators, LogLevel, NuiEnvironment, NUI_ENV_PROVIDER_FACTORY, NUI_ENV_PROVIDER, uuid, immutableSet, removeErrors, traverse, nameof */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12910,6 +12897,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(/*! ./types */ "p21n");
 /* empty/unused harmony star reexport *//* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_49__ = __webpack_require__(/*! ./constants */ "jxKE");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "unitConversionToken", function() { return _constants__WEBPACK_IMPORTED_MODULE_49__["unitConversionToken"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UnitBase", function() { return _constants__WEBPACK_IMPORTED_MODULE_49__["UnitBase"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "unitConversionConstants", function() { return _constants__WEBPACK_IMPORTED_MODULE_49__["unitConversionConstants"]; });
 
@@ -13957,8 +13946,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var lodash_escape__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash/escape */ "Te9D");
 /* harmony import */ var lodash_escape__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_escape__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var lodash_isNil__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash/isNil */ "J2iB");
-/* harmony import */ var lodash_isNil__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_isNil__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash/isUndefined */ "TP7S");
+/* harmony import */ var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "qCKp");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "kU1M");
 /* harmony import */ var _pipes_highlight_pipe__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../pipes/highlight.pipe */ "ZlWS");
@@ -14007,7 +13996,7 @@ class ComboboxV2OptionHighlightDirective {
     updateHTML(highlighted) {
         var _a;
         const isHighlightNecessary = highlighted && ((_a = this.combobox.getLastSelectedOption()) === null || _a === void 0 ? void 0 : _a.viewValue) !== highlighted;
-        this.el.nativeElement.innerHTML = (isHighlightNecessary && !lodash_isNil__WEBPACK_IMPORTED_MODULE_2___default()(highlighted)
+        this.el.nativeElement.innerHTML = (isHighlightNecessary && !lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default()(highlighted)
             ? this.highlightPipe.transform(this.value, highlighted.toString())
             : lodash_escape__WEBPACK_IMPORTED_MODULE_1___default()(this.value));
     }
@@ -14992,7 +14981,7 @@ class CheckboxComponent {
          * Event that is fired when nui-checkbox is toggled
          */
         this.valueChange = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
-        this._ariaLabel = "";
+        this._ariaLabel = "Checkbox";
     }
     /**
      * Input to set aria label text
@@ -15298,30 +15287,6 @@ class NoopDataSourceService extends _data_source_service__WEBPACK_IMPORTED_MODUL
         });
     }
 }
-
-
-/***/ }),
-
-/***/ "Ped9":
-/*!***************************************************!*\
-  !*** ./src/constants/unit-conversion.constant.ts ***!
-  \***************************************************/
-/*! exports provided: unitConversionToken, unitConversionConstants */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unitConversionToken", function() { return unitConversionToken; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unitConversionConstants", function() { return unitConversionConstants; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
-
-const unitConversionToken = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["InjectionToken"]("unit-conversion.constant");
-const unitConversionConstants = {
-    bytes: ["B", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"],
-    bytesPerSecond: ["Bps", "kBps", "MBps", "GBps", "TBps", "PBps", "EBps", "ZBps", "YBps"],
-    bitsPerSecond: ["bps", "kbps", "Mbps", "Gpbs", "Tbps", "Pbps", "Ebps", "Zbps", "Ybps"],
-    hertz: ["Hz", "kHz", "MHz", "GHz", "THz", "PHz", "EHz", "ZHz", "YHz"],
-};
 
 
 /***/ }),
@@ -17074,7 +17039,7 @@ class TextboxNumberComponent {
         /**
          * Input to set aria label text
          */
-        this.ariaLabel = "";
+        this.ariaLabel = "Textbox number input";
         /**
          * Event fired when textBoxNumber is focused out.
          */
@@ -17205,7 +17170,9 @@ TextboxNumberComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵd
     } if (rf & 2) {
         let _t;
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.input = _t.first);
-    } }, hostAttrs: ["role", "spinbutton"], inputs: { value: "value", customBoxWidth: "customBoxWidth", disabled: "disabled", name: "name", placeholder: "placeholder", readonly: "readonly", step: "step", stepPrecision: "stepPrecision", isInErrorState: "isInErrorState", ariaLabel: "ariaLabel", minValue: "minValue", maxValue: "maxValue" }, outputs: { blurred: "blurred", valueChange: "valueChange" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵProvidersFeature"]([
+    } }, hostAttrs: ["role", "spinbutton"], hostVars: 4, hostBindings: function TextboxNumberComponent_HostBindings(rf, ctx) { if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-label", ctx.ariaLabel)("aria-valuemin", ctx.minValue || null)("aria-valuemax", ctx.maxValue || null)("aria-valuenow", ctx.value || 0);
+    } }, inputs: { value: "value", customBoxWidth: "customBoxWidth", disabled: "disabled", name: "name", placeholder: "placeholder", readonly: "readonly", step: "step", stepPrecision: "stepPrecision", isInErrorState: "isInErrorState", ariaLabel: "ariaLabel", minValue: "minValue", maxValue: "maxValue" }, outputs: { blurred: "blurred", valueChange: "valueChange" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵProvidersFeature"]([
             {
                 provide: _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NG_VALUE_ACCESSOR"],
                 useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["forwardRef"])(() => TextboxNumberComponent),
@@ -17221,7 +17188,7 @@ TextboxNumberComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵd
                 useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["forwardRef"])(() => TextboxNumberComponent),
                 multi: true,
             },
-        ]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵNgOnChangesFeature"]], decls: 10, vars: 25, consts: [[1, "nui-textbox", "nui-textbox-number"], [1, "has-feedback", 3, "ngStyle"], ["step", "any", "type", "number", 1, "form-control", "input-control", "nui-textbox__input", 3, "disabled", "ngModel", "ngModelOptions", "min", "max", "placeholder", "readonly", "ngModelChange", "blur", "keydown", "paste"], ["numberInput", ""], [1, "nui-textbox-number__buttons"], [1, "nui-textbox-number__updown", "nui-textbox-number__up-button"], ["nui-button", "", "type", "button", "displayStyle", "action", "icon", "caret-up", "aria-label", "Up", 3, "isRepeat", "disabled", "click"], [1, "nui-textbox-number__updown", "nui-textbox-number__updown-divider"], [1, "nui-textbox-number__updown", "nui-textbox-number__down-button"], ["nui-button", "", "type", "button", "displayStyle", "action", "icon", "caret-down", "aria-label", "Down", 3, "isRepeat", "disabled", "click"]], template: function TextboxNumberComponent_Template(rf, ctx) { if (rf & 1) {
+        ]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵNgOnChangesFeature"]], decls: 10, vars: 21, consts: [[1, "nui-textbox", "nui-textbox-number"], [1, "has-feedback", 3, "ngStyle"], ["step", "any", "type", "number", "aria-label", "Textbox number input", 1, "form-control", "input-control", "nui-textbox__input", 3, "disabled", "ngModel", "ngModelOptions", "min", "max", "placeholder", "readonly", "ngModelChange", "blur", "keydown", "paste"], ["numberInput", ""], [1, "nui-textbox-number__buttons"], [1, "nui-textbox-number__updown", "nui-textbox-number__up-button"], ["nui-button", "", "type", "button", "displayStyle", "action", "icon", "caret-up", "aria-label", "Up", 3, "isRepeat", "disabled", "click"], [1, "nui-textbox-number__updown", "nui-textbox-number__updown-divider"], [1, "nui-textbox-number__updown", "nui-textbox-number__down-button"], ["nui-button", "", "type", "button", "displayStyle", "action", "icon", "caret-down", "aria-label", "Down", 3, "isRepeat", "disabled", "click"]], template: function TextboxNumberComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "input", 2, 3);
@@ -17245,15 +17212,15 @@ TextboxNumberComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵd
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("nui-textbox--disabled", ctx.disabled)("has-error", ctx.hasError());
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngStyle", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction2"](21, _c1, ctx.customBoxWidth, ctx.customBoxWidth));
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngStyle", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction2"](17, _c1, ctx.customBoxWidth, ctx.customBoxWidth));
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("disabled", ctx.disabled)("ngModel", ctx.value)("ngModelOptions", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](24, _c2))("min", ctx.minValue)("max", ctx.maxValue)("placeholder", ctx.placeholder)("readonly", ctx.readonly);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("name", ctx.name)("aria-valuemin", ctx.minValue || null)("aria-valuemax", ctx.maxValue || null)("aria-valuenow", ctx.value || null)("aria-label", ctx.ariaLabel);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("disabled", ctx.disabled)("ngModel", ctx.value)("ngModelOptions", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](20, _c2))("min", ctx.minValue)("max", ctx.maxValue)("placeholder", ctx.placeholder)("readonly", ctx.readonly);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("name", ctx.name);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("isRepeat", ctx.isRepeatable)("disabled", ctx.readonly || ctx.disabled || ctx.compareMax());
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("isRepeat", ctx.isRepeatable)("disabled", ctx.readonly || ctx.disabled || ctx.compareMin());
-    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_7__["NgStyle"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NumberValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgModel"], _button_button_component__WEBPACK_IMPORTED_MODULE_8__["ButtonComponent"]], styles: [".nui .nui-textbox--disabled .has-feedback .input-control {\n  color: var(--nui-color-text-disabled,rgba(17, 17, 17, 0.3));\n}\n.nui .nui-textbox--disabled .has-feedback .input-control:hover {\n  color: var(--nui-color-text-disabled,rgba(17, 17, 17, 0.3));\n}\n.nui .nui-textbox--bold .nui-textbox__input {\n  line-height: 18px;\n  font-size: 13px;\n  font-weight: 600;\n  color: #111;\n  color: var(--nui-color-text-default,#111);\n}\n.nui .nui-textbox__input {\n  min-height: 30px;\n}\n.nui .nui-textbox .has-feedback {\n  position: relative;\n}\n.nui .nui-textbox .has-feedback .input-control {\n  padding: 5px 10px;\n  overflow-y: hidden;\n}\n.nui .nui-textbox .has-feedback .input-control.nui-textbox__input--multiline {\n  padding-top: 5px;\n}\n.nui .nui-textbox .has-feedback .input-control:focus {\n  outline: none;\n  z-index: 500;\n  box-shadow: 0 0 0 2px rgba(0, 196, 210, 0.5);\n}\n.nui .nui .nui-textbox--centered .has-feedback .input-control {\n  padding: 0;\n  text-align: center;\n}\n.nui .nui-textbox .input-control {\n  resize: vertical;\n}\n.nui .nui-textbox .input-control[hidden] {\n  display: none !important;\n}\n.nui .nui-textbox.has-error .help-block,\n.nui .nui-textbox.has-error .control-label,\n.nui .nui-textbox.has-error .radio,\n.nui .nui-textbox.has-error .checkbox,\n.nui .nui-textbox.has-error .radio-inline,\n.nui .nui-textbox.has-error .checkbox-inline,\n.nui .nui-textbox.has-error.nui-radio label,\n.nui .nui-textbox.has-error.checkbox label,\n.nui .nui-textbox.has-error.radio-inline label,\n.nui .nui-textbox.has-error.checkbox-inline label {\n  color: var(--nui-color-text-default,#111);\n}\n.nui .nui-textbox.has-error .nui-validation > div {\n  padding: 5px 0;\n  color: var(--nui-color-text-default,#111);\n}\n.nui .nui-textbox.has-error .input-group-addon {\n  color: var(--nui-color-text-default,#111);\n  border-color: var(--nui-color-line-critical,#dd2c00);\n  background-color: var(--nui-color-bg-content,#fff);\n}\n.nui .nui-textbox.has-error .form-control-feedback {\n  color: var(--nui-color-text-default,#111);\n}\n.nui .nui-textbox .form-control-feedback {\n  top: 12px;\n  margin: 0 7px 0 0;\n  position: absolute;\n  right: 0;\n  z-index: 2;\n  display: block;\n  width: 30px;\n  height: 30px;\n  line-height: 30px;\n  text-align: center;\n  pointer-events: none;\n}\n.nui .nui-textbox .form-control-feedback.nui-textbox__busy {\n  top: 0;\n  margin: 0 1px 0 0;\n}\n.nui .nui-textbox .form-control-feedback svg {\n  position: relative;\n  bottom: 3px;\n}\n.nui .textarea-scrollable .has-feedback .input-control {\n  overflow-y: auto;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRleHRib3guY29tcG9uZW50Lmxlc3MiLCIuLi8uLi9zdHlsZXMvbWl4aW5zL2Nzcy12YXJpYWJsZXMubGVzcyIsIi4uLy4uL3N0eWxlcy9udWktZnJhbWV3b3JrLXR5cG9ncmFwaHkubGVzcyIsIi4uLy4uL3N0eWxlcy9taXhpbnMvZm9jdXMubGVzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFnQkk7RUNYQSwyREFBQTtBREhKO0FBa0JnQjtFQ2ZaLDJEQUFBO0FEQUo7QUFxQkk7RUVyQkEsaUJBQUE7RUFDQSxlQUFBO0VBMEJBLGdCQUFBO0VBQ0EsV0FBQTtFQUNBLHlDQUFBO0FGdEJKO0FBb0JJO0VBQ0ksZ0JBQUE7QUFsQlI7QUFEQTtFQXVCUSxrQkFBQTtBQW5CUjtBQXVCSTtFQUNJLGlCQUFBO0VBQ0Esa0JBQUE7QUFyQlI7QUF1QlE7RUFDSSxnQkFBQTtBQXJCWjtBQXdCUTtFR2hESixhQUFBO0VBQ0EsWUFBQTtFQUtBLDRDQUFBO0FIdUJKO0FBeUJRO0VBQ0ksVUFBQTtFQUNBLGtCQUFBO0FBdkJaO0FBcEJBO0VBZ0RRLGdCQUFBO0FBekJSO0FBMkJRO0VBQ0ksd0JBQUE7QUF6Qlo7QUE2Qkk7Ozs7Ozs7Ozs7RUNoRUEseUNBQUE7QUQrQ0o7QUFpQkk7RUE2Q1EsY0FBQTtFQzdHUix5Q0FBQTtBRG1ESjtBQWFJO0VDaEVBLHlDQUFBO0VBQUEsb0RBQUE7RUFBQSxrREFBQTtBRHdESjtBQVFJO0VDaEVBLHlDQUFBO0FEMkRKO0FBbERBO0VBNERRLFNBQUE7RUFDQSxpQkFBQTtFQUNBLGtCQUFBO0VBQ0EsUUFBQTtFQUNBLFVBQUE7RUFDQSxjQUFBO0VBQ0EsV0FBQTtFQUNBLFlBQUE7RUFDQSxpQkFBQTtFQUNBLGtCQUFBO0VBQ0Esb0JBQUE7QUFQUjtBQVNRO0VBQ0ksTUFBQTtFQUNBLGlCQUFBO0FBUFo7QUFuRUE7RUErRVEsa0JBQUE7RUFDQSxXQUFBO0FBVFI7QUE4Q0k7RUFDSSxnQkFBQTtBQTVDUiIsImZpbGUiOiJ0ZXh0Ym94LmNvbXBvbmVudC5sZXNzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCAocmVmZXJlbmNlKSBcIi4uLy4uL3N0eWxlcy9udWktZnJhbWV3b3JrLXZhcmlhYmxlcy5sZXNzXCI7XG5AaW1wb3J0IChyZWZlcmVuY2UpIFwiLi4vLi4vc3R5bGVzL251aS1mcmFtZXdvcmstYmFzZS5sZXNzXCI7XG5AaW1wb3J0IChyZWZlcmVuY2UpIFwiLi4vLi4vc3R5bGVzL251aS1mcmFtZXdvcmstdHlwb2dyYXBoeS5sZXNzXCI7XG5AaW1wb3J0IChyZWZlcmVuY2UpIFwiLi4vLi4vc3R5bGVzL251aS1mcmFtZXdvcmstY29sb3JzLmxlc3NcIjtcblxuQHRleHRib3gtZmVlZGJhY2staWNvbi1tYXJnaW46IEBudWktc3BhY2UteHMgKyBAbnVpLXNwYWNlLXh4cztcbkB0ZXh0Ym94LWZlZWRiYWNrLWljb24tb2Zmc2V0OiAoKDIgKiBAdGV4dGJveC1mZWVkYmFjay1pY29uLW1hcmdpbikgKyBAaWNvbi1zaXplLXNtYWxsKTtcbkB0ZXh0Ym94LXVwZG93bi1vZmZzZXQ6ICgoMiAqIEBpbnB1dC1oZWlnaHQtYmFzZSkgLSAyKTtcbkB0ZXh0Ym94LXBhZGRpbmctc2ltcGxlLXVwZG93bjogQHRleHRib3gtdXBkb3duLW9mZnNldCArIEB0ZXh0Ym94LWZlZWRiYWNrLWljb24tbWFyZ2luO1xuQHRleHRib3gtZmVlZGJhY2staWNvbi13aXRoLXVwZG93bi1tYXJnaW46IEB0ZXh0Ym94LWZlZWRiYWNrLWljb24tbWFyZ2luICsgQHRleHRib3gtdXBkb3duLW9mZnNldDtcbkB0ZXh0Ym94LWZlZWRiYWNrLWljb24tb2Zmc2V0LXdpdGgtdXBkb3duOiBAdGV4dGJveC1mZWVkYmFjay1pY29uLW9mZnNldCArIEB0ZXh0Ym94LXVwZG93bi1vZmZzZXQ7XG5AdGV4dGJveC1idXN5LW9mZnNldDogMXB4O1xuQHRleHRib3gtYnVzeS1vZmZzZXQtd2l0aC11cGRvd246IEB0ZXh0Ym94LXVwZG93bi1vZmZzZXQgKyBAdGV4dGJveC1idXN5LW9mZnNldDtcblxuLm51aSAubnVpLXRleHRib3gge1xuXG4gICAgJi0tZGlzYWJsZWQge1xuICAgICAgICAuaGFzLWZlZWRiYWNrIHtcbiAgICAgICAgICAgIC5pbnB1dC1jb250cm9sIHtcbiAgICAgICAgICAgICAgICAuc2V0Q3NzVmFyaWFibGUoY29sb3IsIG51aS1jb2xvci10ZXh0LWRpc2FibGVkKTtcbiAgICAgICAgICAgICAgICAmOmhvdmVyIHtcbiAgICAgICAgICAgICAgICAgICAgLnNldENzc1ZhcmlhYmxlKGNvbG9yLCBudWktY29sb3ItdGV4dC1kaXNhYmxlZCk7XG4gICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgfVxuICAgICAgICB9XG4gICAgfVxuICAgICYtLWJvbGQge1xuICAgICAgICAubnVpLXRleHRib3hfX2lucHV0IHtcbiAgICAgICAgICAgIC5udWktdGV4dC1sYWJlbChAbnVpLWNvbG9yLXRleHQtZGVmYXVsdCwgbnVpLWNvbG9yLXRleHQtZGVmYXVsdCk7XG4gICAgICAgIH1cbiAgICB9XG5cbiAgICAmX19pbnB1dCB7XG4gICAgICAgIG1pbi1oZWlnaHQ6IDMwcHg7XG4gICAgfVxuXG4gICAgLmhhcy1mZWVkYmFjayB7XG4gICAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICB9XG5cbiAgICAvL25lZWQgdG8gYWx3YXlzIGhhdmUgdGhlIGhhcy1mZWVkYmFjayBjbGFzcyB0byBhdm9pZCBhIGJpbmRpbmcganVtcC9mbGlja2VyIHdoZW4gc2hvdy9oaWRlXG4gICAgJiAuaGFzLWZlZWRiYWNrIC5pbnB1dC1jb250cm9sIHtcbiAgICAgICAgcGFkZGluZzogQG51aS1zcGFjZS14cyBAbnVpLXNwYWNlLXNtO1xuICAgICAgICBvdmVyZmxvdy15OiBoaWRkZW47XG5cbiAgICAgICAgJi5udWktdGV4dGJveF9faW5wdXQtLW11bHRpbGluZSB7XG4gICAgICAgICAgICBwYWRkaW5nLXRvcDogQG51aS1zcGFjZS14cztcbiAgICAgICAgfVxuXG4gICAgICAgICY6Zm9jdXMge1xuICAgICAgICAgICAgLmZvY3VzLW91dGxpbmUoKVxuICAgICAgICB9XG4gICAgfVxuXG4gICAgJi0tY2VudGVyZWQge1xuICAgICAgICAubnVpICYgLmhhcy1mZWVkYmFjayAuaW5wdXQtY29udHJvbCB7XG4gICAgICAgICAgICBwYWRkaW5nOiAwO1xuICAgICAgICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgICAgICB9XG4gICAgfVxuXG4gICAgLmlucHV0LWNvbnRyb2wge1xuICAgICAgICByZXNpemU6IHZlcnRpY2FsO1xuXG4gICAgICAgICZbaGlkZGVuXSB7XG4gICAgICAgICAgICBkaXNwbGF5OiBub25lICFpbXBvcnRhbnQ7XG4gICAgICAgIH1cbiAgICB9XG5cbiAgICAmLmhhcy1lcnJvciB7XG4gICAgICAgIC5mb3JtLWNvbnRyb2wtdmFsaWRhdGlvbigpO1xuICAgIH1cblxuICAgIC5mb3JtLWNvbnRyb2wtZmVlZGJhY2sge1xuICAgICAgICB0b3A6IDEycHg7XG4gICAgICAgIG1hcmdpbjogMCBAdGV4dGJveC1mZWVkYmFjay1pY29uLW1hcmdpbiAwIDA7XG4gICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICAgICAgcmlnaHQ6IDA7XG4gICAgICAgIHotaW5kZXg6IDI7XG4gICAgICAgIGRpc3BsYXk6IGJsb2NrO1xuICAgICAgICB3aWR0aDogQGlucHV0LWhlaWdodC1iYXNlO1xuICAgICAgICBoZWlnaHQ6IEBpbnB1dC1oZWlnaHQtYmFzZTtcbiAgICAgICAgbGluZS1oZWlnaHQ6IEBpbnB1dC1oZWlnaHQtYmFzZTtcbiAgICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgICAgICBwb2ludGVyLWV2ZW50czogbm9uZTtcblxuICAgICAgICAmLm51aS10ZXh0Ym94X19idXN5IHtcbiAgICAgICAgICAgIHRvcDogMDtcbiAgICAgICAgICAgIG1hcmdpbjogMCBAdGV4dGJveC1idXN5LW9mZnNldCAwIDA7XG4gICAgICAgIH1cbiAgICB9XG5cbiAgICAuZm9ybS1jb250cm9sLWZlZWRiYWNrIHN2ZyB7XG4gICAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICAgICAgYm90dG9tOiAzcHg7XG4gICAgfVxufVxuXG4uZm9ybS1jb250cm9sLXZhbGlkYXRpb24oKSB7XG4gICAgLy8gQ29sb3IgdGhlIGxhYmVsIGFuZCBoZWxwIHRleHRcbiAgICAuaGVscC1ibG9jayxcbiAgICAuY29udHJvbC1sYWJlbCxcbiAgICAucmFkaW8sXG4gICAgLmNoZWNrYm94LFxuICAgIC5yYWRpby1pbmxpbmUsXG4gICAgLmNoZWNrYm94LWlubGluZSxcbiAgICAmLm51aS1yYWRpbyBsYWJlbCxcbiAgICAmLmNoZWNrYm94IGxhYmVsLFxuICAgICYucmFkaW8taW5saW5lIGxhYmVsLFxuICAgICYuY2hlY2tib3gtaW5saW5lIGxhYmVsICB7XG4gICAgICAgIC5zZXRDc3NWYXJpYWJsZShjb2xvciwgbnVpLWNvbG9yLXRleHQtZGVmYXVsdCk7XG4gICAgfVxuICAgIC5udWktdmFsaWRhdGlvbiB7XG4gICAgICAgID4gZGl2IHtcbiAgICAgICAgICAgIHBhZGRpbmc6IDVweCAwO1xuICAgICAgICAgICAgLnNldENzc1ZhcmlhYmxlKGNvbG9yLCBudWktY29sb3ItdGV4dC1kZWZhdWx0KTtcbiAgICAgICAgfVxuICAgIH1cbiAgICAvLyBTZXQgdmFsaWRhdGlvbiBzdGF0ZXMgYWxzbyBmb3IgYWRkb25zXG4gICAgLmlucHV0LWdyb3VwLWFkZG9uIHtcbiAgICAgICAgLnNldENzc1ZhcmlhYmxlKGNvbG9yLCBudWktY29sb3ItdGV4dC1kZWZhdWx0KTtcbiAgICAgICAgLnNldENzc1ZhcmlhYmxlKGJvcmRlci1jb2xvciwgbnVpLWNvbG9yLWxpbmUtY3JpdGljYWwpO1xuICAgICAgICAuc2V0Q3NzVmFyaWFibGUoYmFja2dyb3VuZC1jb2xvciwgbnVpLWNvbG9yLWJnLWNvbnRlbnQpO1xuICAgIH1cbiAgICAvLyBPcHRpb25hbCBmZWVkYmFjayBpY29uXG4gICAgLmZvcm0tY29udHJvbC1mZWVkYmFjayB7XG4gICAgICAgIC5zZXRDc3NWYXJpYWJsZShjb2xvciwgbnVpLWNvbG9yLXRleHQtZGVmYXVsdCk7XG4gICAgfVxufVxuLy8gVE9ETzogaGFuZGxlIGl0IGluIHNjb3BlIG9mIE5VSS0zODI0XG4ubnVpIC50ZXh0YXJlYS1zY3JvbGxhYmxlIHtcbiAgICAmIC5oYXMtZmVlZGJhY2sgLmlucHV0LWNvbnRyb2wge1xuICAgICAgICBvdmVyZmxvdy15OiBhdXRvO1xuICAgIH1cbn1cblxuXG4iLCIuc2V0Q3NzVmFyaWFibGUoQHByb3BlcnR5LCBAdmFsdWUpe1xuICAgIEBldmFsdWF0ZWQgOiBcIkB7dmFsdWV9XCI7XG4gICAgLy90aGUgZG91YmxlIEAgZm9yY2VzIGEgaW5kaXJlY3Rpb24gZXZhbHVhdGlvbiwga2luZGEgbGlrZSBhIHBvaW50ZXJcbiAgICBAZmFsbGJhY2sgOiBAQGV2YWx1YXRlZDtcblxuICAgIEB7cHJvcGVydHl9OiB+XCJ2YXIoLS1Ae3ZhbHVlfSxAe2ZhbGxiYWNrfSlcIjtcbn1cbiIsIkBpbXBvcnQgKHJlZmVyZW5jZSkgXCJudWktZnJhbWV3b3JrLXZhcmlhYmxlcy5sZXNzXCI7XG5AaW1wb3J0IChyZWZlcmVuY2UpIFwibWl4aW5zLmxlc3NcIjtcblxuLyogZm9udC1zaXplICovXG4ubnVpLXRleHQtc2l6ZShAc2l6ZTogZGVmYXVsdCkge1xuICAgIGxpbmUtaGVpZ2h0OiB+XCJAe251aS1saW5lLWhlaWdodC1Ae3NpemV9fVwiO1xuICAgIGZvbnQtc2l6ZTogflwiQHtudWktZm9udC1zaXplLUB7c2l6ZX19XCI7XG59XG4vKiBmb250LXNpemUgZW5kcyAqL1xuXG4ubnVpLXRleHQtcGFnZSgpIHtcbiAgICAubnVpLXRleHQtc2l6ZShoZXJvKTtcbiAgICBmb250LXdlaWdodDogQG51aS1mb250LXdlaWdodC1zZW1pYm9sZDtcbiAgICAuc2V0Q3NzVmFyaWFibGUoY29sb3IsIG51aS1jb2xvci10ZXh0LWRlZmF1bHQpO1xufVxuXG4ubnVpLXRleHQtd2lkZ2V0KCkge1xuICAgIC5udWktdGV4dC1zaXplKGJpZyk7XG4gICAgZm9udC13ZWlnaHQ6IEBudWktZm9udC13ZWlnaHQtc2VtaWJvbGQ7XG4gICAgLnNldENzc1ZhcmlhYmxlKGNvbG9yLCBudWktY29sb3ItdGV4dC1kZWZhdWx0KTtcbn1cblxuLm51aS10ZXh0LXBhbmVsKEBjb2xvciwgQGNvbG9yTmFtZSkge1xuICAgIC5udWktdGV4dC1zaXplKGRlZmF1bHQpO1xuICAgIGZvbnQtd2VpZ2h0OiBAbnVpLWZvbnQtd2VpZ2h0LXNlbWlib2xkO1xuICAgIHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7XG4gICAgY29sb3I6IEBjb2xvcjtcbiAgICBjb2xvcjogflwidmFyKC0tQHtjb2xvck5hbWV9LEB7Y29sb3J9KVwiO1xufVxuXG4ubnVpLXRleHQtbGFiZWwoQGNvbG9yLCBAY29sb3JOYW1lKSB7XG4gICAgLm51aS10ZXh0LXNpemUoZGVmYXVsdCk7XG4gICAgZm9udC13ZWlnaHQ6IEBudWktZm9udC13ZWlnaHQtc2VtaWJvbGQ7XG4gICAgY29sb3I6IEBjb2xvcjtcbiAgICBjb2xvcjogflwidmFyKC0tQHtjb2xvck5hbWV9LEB7Y29sb3J9KVwiO1xufVxuXG4ubnVpLXRleHQtZGVmYXVsdChAY29sb3IsIEBjb2xvck5hbWUpIHtcbiAgICAubnVpLXRleHQtc2l6ZShkZWZhdWx0KTtcbiAgICBmb250LXdlaWdodDogQG51aS1mb250LXdlaWdodC1yZWd1bGFyO1xuICAgIGNvbG9yOiBAY29sb3I7XG4gICAgY29sb3I6IH5cInZhcigtLUB7Y29sb3JOYW1lfSxAe2NvbG9yfSlcIjtcbn1cblxuLm51aS10ZXh0LXNlY29uZGFyeShAY29sb3IsIEBjb2xvck5hbWUpIHtcbiAgICAubnVpLXRleHQtc2l6ZShkZWZhdWx0KTtcbiAgICBmb250LXdlaWdodDogQG51aS1mb250LXdlaWdodC1yZWd1bGFyO1xuICAgIGNvbG9yOiBAY29sb3I7XG4gICAgY29sb3I6IH5cInZhcigtLUB7Y29sb3JOYW1lfSxAe2NvbG9yfSlcIjtcbn1cblxuLm51aS10ZXh0LXRpdGxlLXNlY29uZGFyeShAY29sb3IsIEBjb2xvck5hbWUpIHtcbiAgICAubnVpLXRleHQtc2l6ZShzbWFsbCk7XG4gICAgZm9udC13ZWlnaHQ6IEBudWktZm9udC13ZWlnaHQtcmVndWxhcjtcbiAgICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xuICAgIGNvbG9yOiBAY29sb3I7XG4gICAgY29sb3I6IH5cInZhcigtLUB7Y29sb3JOYW1lfSxAe2NvbG9yfSlcIjtcbn1cblxuLm51aS10ZXh0LXNtYWxsKEBjb2xvciwgQGNvbG9yTmFtZSkge1xuICAgIC5udWktdGV4dC1zaXplKHNtYWxsKTtcbiAgICBmb250LXdlaWdodDogQG51aS1mb250LXdlaWdodC1yZWd1bGFyO1xuICAgIGNvbG9yOiBAY29sb3I7XG4gICAgY29sb3I6IH5cInZhcigtLUB7Y29sb3JOYW1lfSxAe2NvbG9yfSlcIjtcbn1cblxuLy8gVGhpcyBtaXhpbiBpcyBkZXByZWNhdGVkLiBVc2UgbnVpLXRleHQtc21hbGwoKSBpbnN0ZWFkXG4ubnVpLXRleHQtaGludChAY29sb3IsIEBjb2xvck5hbWUpICB7XG4gICAgLm51aS10ZXh0LXNpemUoc21hbGwpO1xuICAgIGZvbnQtd2VpZ2h0OiBAbnVpLWZvbnQtd2VpZ2h0LXJlZ3VsYXI7XG4gICAgY29sb3I6IEBjb2xvcjtcbiAgICBjb2xvcjogflwidmFyKC0tQHtjb2xvck5hbWV9LEB7Y29sb3J9KVwiO1xufVxuXG4ubnVpLXRleHQtaG92ZXJhYmxlKCkge1xuICAgIHRleHQtZGVjb3JhdGlvbi1saW5lOiB1bmRlcmxpbmU7XG4gICAgdGV4dC1kZWNvcmF0aW9uLXN0eWxlOiBkb3R0ZWQ7XG59XG5cbi5udWktdGV4dC1zbWFsbC1zZWNvbmRhcnkoKSB7XG4gICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtc2Vjb25kYXJ5KTtcbn1cblxuLy9zZW1hbnRpYyBzdHlsZXNcbi5udWktdGV4dCB7XG4gICAgJi1kaXNhYmxlZCB7XG4gICAgICAgIC5udWktdGV4dC1kZWZhdWx0KEBudWktY29sb3ItdGV4dC1kaXNhYmxlZCwgbnVpLWNvbG9yLXRleHQtZGlzYWJsZWQpO1xuICAgIH1cbiAgICAmLXByb2R1Y3Qge1xuICAgICAgICAubnVpLXRleHQtc2l6ZShoZXJvKTtcbiAgICAgICAgZm9udC1mYW1pbHk6IEBmb250LWZhbWlseS1yb2JvdG87XG4gICAgICAgIGZvbnQtd2VpZ2h0OiBAbnVpLWZvbnQtd2VpZ2h0LWJvbGQ7XG4gICAgICAgIC5zZXRDc3NWYXJpYWJsZShjb2xvciwgbnVpLWNvbG9yLXRleHQtbGlnaHQpO1xuICAgIH1cblxuICAgICYtcGFnZSB7XG4gICAgICAgIC5udWktdGV4dC1wYWdlKCk7XG5cbiAgICAgICAgJi0taG92ZXJhYmxlIHtcbiAgICAgICAgICAgIC5udWktdGV4dC1wYWdlKCk7XG4gICAgICAgICAgICAubnVpLXRleHQtaG92ZXJhYmxlKCk7XG4gICAgICAgIH1cbiAgICB9XG5cbiAgICAmLXdpZGdldCB7XG4gICAgICAgIC5udWktdGV4dC13aWRnZXQoKTtcblxuICAgICAgICAmLS1ob3ZlcmFibGUge1xuICAgICAgICAgICAgLm51aS10ZXh0LXdpZGdldCgpO1xuICAgICAgICAgICAgLm51aS10ZXh0LWhvdmVyYWJsZSgpO1xuICAgICAgICB9XG4gICAgfVxuXG4gICAgJi1wYW5lbCB7XG4gICAgICAgIC5udWktdGV4dC1wYW5lbChAbnVpLWNvbG9yLXRleHQtZGVmYXVsdCxudWktY29sb3ItdGV4dC1kZWZhdWx0KTtcbiAgICB9XG5cbiAgICAmLXBhbmVsLS1pbnZlcnNlIHtcbiAgICAgICAgLm51aS10ZXh0LXBhbmVsKEBudWktY29sb3ItdGV4dC1pbnZlcnNlLG51aS1jb2xvci10ZXh0LWludmVyc2UpO1xuICAgIH1cblxuICAgICYtcGFuZWwtLWhvdmVyYWJsZSB7XG4gICAgICAgIC5udWktdGV4dC1wYW5lbChAbnVpLWNvbG9yLXRleHQtZGVmYXVsdCxudWktY29sb3ItdGV4dC1kZWZhdWx0KTtcbiAgICAgICAgLm51aS10ZXh0LWhvdmVyYWJsZSgpO1xuICAgIH1cblxuICAgICYtcGFuZWwtLWRhcmtiZyB7XG4gICAgICAgIC5udWktdGV4dC1wYW5lbChAbnVpLWNvbG9yLXRleHQtbGlnaHQsbnVpLWNvbG9yLXRleHQtbGlnaHQpO1xuICAgIH1cblxuICAgICYtcGFuZWwtLWRhcmtiZy0taG92ZXJhYmxlIHtcbiAgICAgICAgLm51aS10ZXh0LXBhbmVsKEBudWktY29sb3ItdGV4dC1saWdodCxudWktY29sb3ItdGV4dC1saWdodCk7XG4gICAgICAgIC5udWktdGV4dC1ob3ZlcmFibGUoKTtcbiAgICB9XG5cbiAgICAmLWxhYmVsIHtcbiAgICAgICAgLm51aS10ZXh0LWxhYmVsKEBudWktY29sb3ItdGV4dC1kZWZhdWx0LG51aS1jb2xvci10ZXh0LWRlZmF1bHQpO1xuICAgIH1cblxuICAgICYtbGFiZWwtLWludmVyc2Uge1xuICAgICAgICAubnVpLXRleHQtbGFiZWwoQG51aS1jb2xvci10ZXh0LWludmVyc2UsbnVpLWNvbG9yLXRleHQtaW52ZXJzZSk7XG4gICAgfVxuXG4gICAgJi1sYWJlbC0taG92ZXJhYmxlIHtcbiAgICAgICAgLm51aS10ZXh0LWxhYmVsKEBudWktY29sb3ItdGV4dC1kZWZhdWx0LG51aS1jb2xvci10ZXh0LWRlZmF1bHQpO1xuICAgICAgICAubnVpLXRleHQtaG92ZXJhYmxlKCk7XG4gICAgfVxuXG4gICAgJi1sYWJlbC0tZGFya2JnIHtcbiAgICAgICAgLm51aS10ZXh0LWxhYmVsKEBudWktY29sb3ItdGV4dC1saWdodCxudWktY29sb3ItdGV4dC1saWdodCk7XG4gICAgfVxuXG4gICAgJi1sYWJlbC0tZGFya2JnLS1ob3ZlcmFibGUge1xuICAgICAgICAubnVpLXRleHQtbGFiZWwoQG51aS1jb2xvci10ZXh0LWxpZ2h0LG51aS1jb2xvci10ZXh0LWxpZ2h0KTtcbiAgICAgICAgLm51aS10ZXh0LWhvdmVyYWJsZSgpO1xuICAgIH1cblxuICAgICYtZGVmYXVsdCB7XG4gICAgICAgIC5udWktdGV4dC1kZWZhdWx0KEBudWktY29sb3ItdGV4dC1kZWZhdWx0LG51aS1jb2xvci10ZXh0LWRlZmF1bHQpO1xuICAgIH1cblxuICAgICYtZGVmYXVsdC0taW52ZXJzZSB7XG4gICAgICAgIC5udWktdGV4dC1kZWZhdWx0KEBudWktY29sb3ItdGV4dC1pbnZlcnNlLG51aS1jb2xvci10ZXh0LWludmVyc2UpO1xuICAgIH1cblxuICAgICYtZGVmYXVsdC0taW52ZXJzZS1zZWxlY3RlZCB7XG4gICAgICAgIC5udWktdGV4dC1kZWZhdWx0KEBudWktY29sb3ItdGV4dC1oaWdobGlnaHQtcGxhdGZvcm1fYmFyLG51aS1jb2xvci10ZXh0LWhpZ2hsaWdodC1wbGF0Zm9ybV9iYXIpO1xuICAgIH1cblxuICAgICYtZGVmYXVsdC0taG92ZXJhYmxlIHtcbiAgICAgICAgLm51aS10ZXh0LWRlZmF1bHQoQG51aS1jb2xvci10ZXh0LWRlZmF1bHQsbnVpLWNvbG9yLXRleHQtZGVmYXVsdCk7XG4gICAgICAgIC5udWktdGV4dC1ob3ZlcmFibGUoKTtcbiAgICB9XG5cbiAgICAmLWRlZmF1bHQtLWRhcmtiZyB7XG4gICAgICAgIC5udWktdGV4dC1kZWZhdWx0KEBudWktY29sb3ItdGV4dC1saWdodCxudWktY29sb3ItdGV4dC1saWdodCk7XG4gICAgfVxuICAgICYtZGVmYXVsdC0tZGFya2JnLS1ob3ZlcmFibGUge1xuICAgICAgICAubnVpLXRleHQtZGVmYXVsdChAbnVpLWNvbG9yLXRleHQtbGlnaHQsbnVpLWNvbG9yLXRleHQtbGlnaHQpO1xuICAgICAgICAubnVpLXRleHQtaG92ZXJhYmxlKCk7XG4gICAgfVxuXG4gICAgJi1kZWZhdWx0LS1kYXJrYmctc2VsZWN0ZWQge1xuICAgICAgICAubnVpLXRleHQtZGVmYXVsdChAbnVpLWNvbG9yLXRleHQtaGlnaGxpZ2h0LXBsYXRmb3JtX2JhcixudWktY29sb3ItdGV4dC1oaWdobGlnaHQtcGxhdGZvcm1fYmFyKTtcbiAgICB9XG5cbiAgICAmLWRlZmF1bHQtLWRhcmtiZy1zZWxlY3RlZC0taG92ZXJhYmxlIHtcbiAgICAgICAgLm51aS10ZXh0LWRlZmF1bHQoQG51aS1jb2xvci10ZXh0LWhpZ2hsaWdodC1wbGF0Zm9ybV9iYXIsbnVpLWNvbG9yLXRleHQtaGlnaGxpZ2h0LXBsYXRmb3JtX2Jhcik7XG4gICAgICAgIC5udWktdGV4dC1ob3ZlcmFibGUoKTtcbiAgICB9XG5cbiAgICAmLXNlY29uZGFyeSB7XG4gICAgICAgIC5udWktdGV4dC1zZWNvbmRhcnkoQG51aS1jb2xvci10ZXh0LXNlY29uZGFyeSxudWktY29sb3ItdGV4dC1zZWNvbmRhcnkpO1xuICAgIH1cblxuICAgICYtc2Vjb25kYXJ5LS1pbnZlcnNlIHtcbiAgICAgICAgLm51aS10ZXh0LXNlY29uZGFyeShAbnVpLWNvbG9yLXRleHQtaW52ZXJzZS1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtaW52ZXJzZS1zZWNvbmRhcnkpO1xuICAgIH1cblxuICAgICYtc2Vjb25kYXJ5LS1ob3ZlcmFibGUge1xuICAgICAgICAubnVpLXRleHQtc2Vjb25kYXJ5KEBudWktY29sb3ItdGV4dC1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtc2Vjb25kYXJ5KTtcbiAgICAgICAgLm51aS10ZXh0LWhvdmVyYWJsZSgpO1xuICAgIH1cblxuICAgICYtc2Vjb25kYXJ5LS1kYXJrYmcge1xuICAgICAgICAubnVpLXRleHQtc2Vjb25kYXJ5KEBudWktY29sb3ItdGV4dC1saWdodC1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtbGlnaHQtc2Vjb25kYXJ5KTtcbiAgICB9XG5cbiAgICAmLXNlY29uZGFyeS0tZGFya2JnLS1ob3ZlcmFibGUge1xuICAgICAgICAubnVpLXRleHQtc2Vjb25kYXJ5KEBudWktY29sb3ItdGV4dC1saWdodC1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtbGlnaHQtc2Vjb25kYXJ5KTtcbiAgICAgICAgLm51aS10ZXh0LWhvdmVyYWJsZSgpO1xuICAgIH1cblxuICAgICYtc2Vjb25kYXJ5LS1kaXNhYmxlZCB7XG4gICAgICAgIC5udWktdGV4dC1zZWNvbmRhcnkoQG51aS1jb2xvci10ZXh0LWRpc2FibGVkLG51aS1jb2xvci10ZXh0LWRpc2FibGVkKTtcbiAgICB9XG5cbiAgICAmLXNlY29uZGFyeS0tZGlzYWJsZWQtLWhvdmVyYWJsZSB7XG4gICAgICAgIC5udWktdGV4dC1zZWNvbmRhcnkoQG51aS1jb2xvci10ZXh0LWRpc2FibGVkLG51aS1jb2xvci10ZXh0LWRpc2FibGVkKTtcbiAgICAgICAgLm51aS10ZXh0LWhvdmVyYWJsZSgpO1xuICAgIH1cblxuICAgICYtbGluayB7XG4gICAgICAgIC5udWktdGV4dC1zaXplKGRlZmF1bHQpO1xuICAgICAgICBmb250LXdlaWdodDogQG51aS1mb250LXdlaWdodC1yZWd1bGFyO1xuICAgICAgICAuc2V0Q3NzVmFyaWFibGUoY29sb3IsIG51aS1jb2xvci10ZXh0LWxpbmspO1xuICAgIH1cbiAgICAmLWxpbms6aG92ZXIge1xuICAgICAgICB0ZXh0LWRlY29yYXRpb246IHVuZGVybGluZTtcbiAgICB9XG5cbiAgICAmLWxpbmstc21hbGwge1xuICAgICAgICAubnVpLXRleHQtc2l6ZShzbWFsbCk7XG4gICAgICAgIGZvbnQtd2VpZ2h0OiBAbnVpLWZvbnQtd2VpZ2h0LXJlZ3VsYXI7XG4gICAgICAgIC5zZXRDc3NWYXJpYWJsZShjb2xvciwgbnVpLWNvbG9yLXRleHQtbGluayk7XG4gICAgfVxuICAgICYtbGluay1zbWFsbDpob3ZlciB7XG4gICAgICAgIHRleHQtZGVjb3JhdGlvbjogdW5kZXJsaW5lO1xuICAgIH1cblxuICAgICYtc291cmNlLWNvZGUge1xuICAgICAgICAubnVpLXRleHQtc2l6ZShkZWZhdWx0KTtcbiAgICAgICAgZm9udC1mYW1pbHk6IEBmb250LWZhbWlseS1zb3VyY2UtY29kZS1wcm87XG4gICAgICAgIGZvbnQtd2VpZ2h0OiBAbnVpLWZvbnQtd2VpZ2h0LXJlZ3VsYXI7XG5cbiAgICAgICAgJi1zZWNvbmRhcnkge1xuICAgICAgICAgICAgLm51aS10ZXh0LXNpemUoZGVmYXVsdCk7XG4gICAgICAgICAgICBmb250LWZhbWlseTogQGZvbnQtZmFtaWx5LXNvdXJjZS1jb2RlLXBybztcbiAgICAgICAgICAgIGZvbnQtd2VpZ2h0OiBAbnVpLWZvbnQtd2VpZ2h0LXJlZ3VsYXI7XG4gICAgICAgICAgICAuc2V0Q3NzVmFyaWFibGUoY29sb3IsIG51aS1jb2xvci10ZXh0LXNlY29uZGFyeSk7XG4gICAgICAgIH1cbiAgICB9XG5cbiAgICAmLXRpdGxlLXNlY29uZGFyeSB7XG4gICAgICAgIC5udWktdGV4dC10aXRsZS1zZWNvbmRhcnkoQG51aS1jb2xvci10ZXh0LXNlY29uZGFyeSxudWktY29sb3ItdGV4dC1zZWNvbmRhcnkpO1xuICAgIH1cblxuICAgICYtdGl0bGUtc2Vjb25kYXJ5LS1pbnZlcnNlIHtcbiAgICAgICAgLm51aS10ZXh0LXRpdGxlLXNlY29uZGFyeShAbnVpLWNvbG9yLXRleHQtaW52ZXJzZS1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtaW52ZXJzZS1zZWNvbmRhcnkpO1xuICAgIH1cblxuICAgICYtdGl0bGUtc2Vjb25kYXJ5LS1kYXJrYmcge1xuICAgICAgICAubnVpLXRleHQtdGl0bGUtc2Vjb25kYXJ5KEBudWktY29sb3ItdGV4dC1saWdodC1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtbGlnaHQtc2Vjb25kYXJ5KTtcbiAgICB9XG5cbiAgICAmLXNtYWxsIHtcbiAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1kZWZhdWx0LG51aS1jb2xvci10ZXh0LWRlZmF1bHQpO1xuICAgIH1cblxuICAgICYtc21hbGwtc2Vjb25kYXJ5IHtcbiAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtc2Vjb25kYXJ5KTtcblxuICAgICAgICAmLS1ob3ZlcmFibGUge1xuICAgICAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtc2Vjb25kYXJ5KTtcbiAgICAgICAgICAgIC5udWktdGV4dC1ob3ZlcmFibGUoKTtcbiAgICAgICAgfVxuICAgIH1cblxuICAgICYtc21hbGwtc2Vjb25kYXJ5LS1pbnZlcnNlIHtcbiAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1pbnZlcnNlLXNlY29uZGFyeSxudWktY29sb3ItdGV4dC1pbnZlcnNlLXNlY29uZGFyeSk7XG5cbiAgICAgICAgJi0taG92ZXJhYmxlIHtcbiAgICAgICAgICAgIC5udWktdGV4dC1zbWFsbChAbnVpLWNvbG9yLXRleHQtaW52ZXJzZS1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtaW52ZXJzZS1zZWNvbmRhcnkpO1xuICAgICAgICAgICAgLm51aS10ZXh0LWhvdmVyYWJsZSgpO1xuICAgICAgICB9XG4gICAgfVxuXG4gICAgJi1zbWFsbC0taW52ZXJzZSB7XG4gICAgICAgIC5udWktdGV4dC1zbWFsbChAbnVpLWNvbG9yLXRleHQtaW52ZXJzZSxudWktY29sb3ItdGV4dC1pbnZlcnNlKTtcblxuICAgICAgICAmLS1ob3ZlcmFibGUge1xuICAgICAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1pbnZlcnNlLG51aS1jb2xvci10ZXh0LWludmVyc2UpO1xuICAgICAgICAgICAgLm51aS10ZXh0LWhvdmVyYWJsZSgpO1xuICAgICAgICB9XG4gICAgfVxuXG4gICAgJi1zbWFsbC0taG92ZXJhYmxlIHtcbiAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1kZWZhdWx0LG51aS1jb2xvci10ZXh0LWRlZmF1bHQpO1xuICAgICAgICAubnVpLXRleHQtaG92ZXJhYmxlKCk7XG4gICAgfVxuXG4gICAgJi1zbWFsbC0tZGFya2JnIHtcbiAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1saWdodCwgbnVpLWNvbG9yLXRleHQtbGlnaHQpO1xuICAgIH1cblxuICAgICYtc21hbGwtLWRhcmtiZy0taG92ZXJhYmxlIHtcbiAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1saWdodCwgbnVpLWNvbG9yLXRleHQtbGlnaHQpO1xuICAgICAgICAubnVpLXRleHQtaG92ZXJhYmxlKCk7XG4gICAgfVxuXG4gICAgJi1zbWFsbC0tZGlzYWJsZWQge1xuICAgICAgICAubnVpLXRleHQtc21hbGwoQG51aS1jb2xvci10ZXh0LWRpc2FibGVkLG51aS1jb2xvci10ZXh0LWRpc2FibGVkKTtcbiAgICB9XG5cbiAgICAmLXNtYWxsLS1kaXNhYmxlZC0taG92ZXJhYmxlIHtcbiAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1kaXNhYmxlZCxudWktY29sb3ItdGV4dC1kaXNhYmxlZCk7XG4gICAgICAgIC5udWktdGV4dC1ob3ZlcmFibGUoKTtcbiAgICB9XG5cbiAgICAvLyBgbnVpLXRleHQtaGludGAgc3R5bGVzIGFyZSBkZXByZWNhdGVkLiBVc2UgYG51aS10ZXh0LXNtYWxsLXNlY29uZGFyeWAgaW5zdGVhZC5cbiAgICAmLWhpbnQge1xuICAgICAgICAubnVpLXRleHQtaGludChAbnVpLWNvbG9yLXRleHQtc2Vjb25kYXJ5LG51aS1jb2xvci10ZXh0LXNlY29uZGFyeSk7XG4gICAgfVxuXG4gICAgJi1oaW50LS1ob3ZlcmFibGUge1xuICAgICAgICAubnVpLXRleHQtaGludChAbnVpLWNvbG9yLXRleHQtc2Vjb25kYXJ5LG51aS1jb2xvci10ZXh0LXNlY29uZGFyeSk7XG4gICAgICAgIC5udWktdGV4dC1ob3ZlcmFibGUoKTtcbiAgICB9XG5cbiAgICAmLWhpbnQtLWRhcmtiZyB7XG4gICAgICAgIC5udWktdGV4dC1oaW50KEBudWktY29sb3ItdGV4dC1saWdodC1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtbGlnaHQtc2Vjb25kYXJ5KTtcbiAgICB9XG5cbiAgICAmLWhpbnQtLWRhcmtiZy0taG92ZXJhYmxlIHtcbiAgICAgICAgLm51aS10ZXh0LWhpbnQoQG51aS1jb2xvci10ZXh0LWxpZ2h0LXNlY29uZGFyeSxudWktY29sb3ItdGV4dC1saWdodC1zZWNvbmRhcnkpO1xuICAgICAgICAubnVpLXRleHQtaG92ZXJhYmxlKCk7XG4gICAgfVxuXG4gICAgJi12YWxpZGF0aW9uIHtcbiAgICAgICAgLm51aS10ZXh0LXNpemUoc21hbGwpO1xuICAgICAgICBmb250LXdlaWdodDogQG51aS1mb250LXdlaWdodC1zZW1pYm9sZDtcbiAgICAgICAgLnNldENzc1ZhcmlhYmxlKGNvbG9yLCBudWktY29sb3ItdGV4dC1jcml0aWNhbCk7XG4gICAgfVxuXG4gICAgJi1lbGxpcHNpcyB7XG4gICAgICAgIC50ZXh0LW92ZXJmbG93KGVsbGlwc2lzKTtcbiAgICB9XG59XG5cbiIsIi5mb2N1cy1vdXRsaW5lLWJhc2UoKSB7XG4gICAgb3V0bGluZTogbm9uZTtcbiAgICB6LWluZGV4OiBAemluZGV4LWFjdGl2ZTtcbn1cblxuLmZvY3VzLW91dGxpbmUoKSB7XG4gICAgLmZvY3VzLW91dGxpbmUtYmFzZSgpO1xuICAgIGJveC1zaGFkb3c6IDAgMCAwIEBudWktbGluZS1tZWRpdW0gZmFkZShAbnVpLWNvbG9yLXNlbGVjdGVkLWNvbnRyYXN0LCA1MCUpO1xufVxuXG4uZm9jdXMtb3V0bGluZS1pbnNldCgpIHtcbiAgICAuZm9jdXMtb3V0bGluZS1iYXNlKCk7XG4gICAgYm94LXNoYWRvdzogaW5zZXQgMCAwIDAgQG51aS1saW5lLW1lZGl1bSBmYWRlKEBudWktY29sb3Itc2VsZWN0ZWQtY29udHJhc3QsIDUwJSk7XG59XG4iXX0= */", ".nui .nui-textbox input[type=\"number\"]::-webkit-inner-spin-button {\n  display: none;\n}\n.nui .nui-textbox input[type=\"number\"] {\n  -moz-appearance: textfield;\n}\n.nui .nui-textbox--disabled .nui-textbox-number__buttons,\n.nui .nui-textbox--disabled .nui-textbox-number__updown-divider {\n  border-color: var(--nui-color-disabled-light,#e9e9e9);\n}\n.nui .nui-textbox-number {\n  display: flex;\n}\n.nui .nui-textbox-number__buttons {\n  display: inline-flex;\n  height: 30px;\n  border: solid 1px;\n  border-color: var(--nui-color-line-default,#d9d9d9);\n  border-top-right-radius: 3px;\n  border-bottom-right-radius: 3px;\n  border-left: none;\n}\n.nui .nui-textbox-number__updown {\n  display: block;\n  line-height: 1;\n  height: 30px;\n  top: 1px;\n  text-align: center;\n}\n.nui .nui .nui-textbox-number__updown button.nui-button {\n  padding-left: 5px;\n  width: 30px;\n  height: 28px;\n}\n.nui .nui .nui-textbox-number__updown button.nui-button:focus {\n  outline: none;\n}\n.nui .nui-textbox-number__updown-divider {\n  z-index: 1;\n  height: 28px;\n  top: 1px;\n  right: 30px;\n  width: 0;\n  border-right: solid 1px;\n  border-right-color: var(--nui-color-line-default,#d9d9d9);\n}\n.nui .nui-textbox-number__up-button {\n  right: 1px;\n}\n.nui .nui-textbox-number__down-button {\n  right: 30px;\n}\n.nui .nui-textbox-number .has-feedback {\n  flex: 1;\n}\n.nui .nui-textbox-number .input-control {\n  border-top-right-radius: 0;\n  border-bottom-right-radius: 0;\n}\n.nui .nui-textbox-number input[type=\"number\"] ~ nui-icon > .form-control-feedback {\n  margin: 0 65px 0 0;\n}\n.nui .nui-textbox-number input[type=\"number\"] ~ nui-icon > .form-control-feedback.nui-textbox__busy {\n  top: 0;\n  margin: 0 59px 0 0;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRleHRib3gtbnVtYmVyLmNvbXBvbmVudC5sZXNzIiwiLi4vLi4vLi4vc3R5bGVzL21peGlucy9jc3MtdmFyaWFibGVzLmxlc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBV0E7RUFFUSxhQUFBO0FBWFI7QUFTQTtFQU1RLDBCQUFBO0FBWlI7QUFnQlE7O0VDaEJKLHFEQUFBO0FESUo7QUFtQkE7RUFDSSxhQUFBO0FBakJKO0FBbUJJO0VBQ0ksb0JBQUE7RUFDQSxZQUFBO0VBQ0EsaUJBQUE7RUM3QkosbURBQUE7RUQrQkksNEJBQUE7RUFDQSwrQkFBQTtFQUNBLGlCQUFBO0FBakJSO0FBb0JJO0VBQ0ksY0FBQTtFQUNBLGNBQUE7RUFDQSxZQUFBO0VBQ0EsUUFBQTtFQUNBLGtCQUFBO0FBbEJSO0FBbUJRO0VBQ0ksaUJBQUE7RUFDQSxXQUFBO0VBQ0EsWUFBQTtBQWpCWjtBQWtCWTtFQUNJLGFBQUE7QUFoQmhCO0FBbUJRO0VBQ0ksVUFBQTtFQUNBLFlBQUE7RUFDQSxRQUFBO0VBQ0EsV0FBQTtFQUNBLFFBQUE7RUFDQSx1QkFBQTtFQ3hEUix5REFBQTtBRHdDSjtBQXFCSTtFQUNJLFVBQUE7QUFuQlI7QUFzQkk7RUFDSSxXQUFBO0FBcEJSO0FBdkJBO0VBK0NRLE9BQUE7QUFyQlI7QUExQkE7RUFtRFEsMEJBQUE7RUFDQSw2QkFBQTtBQXRCUjtBQTlCQTtFQXdEUSxrQkFBQTtBQXZCUjtBQXdCUTtFQUNJLE1BQUE7RUFDQSxrQkFBQTtBQXRCWiIsImZpbGUiOiJ0ZXh0Ym94LW51bWJlci5jb21wb25lbnQubGVzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgKHJlZmVyZW5jZSkgXCIuLi8uLi8uLi9zdHlsZXMvbnVpLWZyYW1ld29yay12YXJpYWJsZXMubGVzc1wiO1xuQGltcG9ydCAocmVmZXJlbmNlKSBcIi4uLy4uLy4uL3N0eWxlcy9udWktZnJhbWV3b3JrLXR5cG9ncmFwaHkubGVzc1wiO1xuQGltcG9ydCAocmVmZXJlbmNlKSBcIi4uLy4uLy4uL3N0eWxlcy9udWktZnJhbWV3b3JrLWNvbG9ycy5sZXNzXCI7XG5cbkB0ZXh0Ym94LWZlZWRiYWNrLWljb24tbWFyZ2luOiBAbnVpLXNwYWNlLXhzICsgQG51aS1zcGFjZS14eHM7XG5AdGV4dGJveC11cGRvd24tb2Zmc2V0OiAoKDIgKiBAaW5wdXQtaGVpZ2h0LWJhc2UpIC0gMik7XG5AdGV4dGJveC1wYWRkaW5nLXNpbXBsZS11cGRvd246IEB0ZXh0Ym94LXVwZG93bi1vZmZzZXQgKyBAdGV4dGJveC1mZWVkYmFjay1pY29uLW1hcmdpbjtcbkB0ZXh0Ym94LWZlZWRiYWNrLWljb24td2l0aC11cGRvd24tbWFyZ2luOiBAdGV4dGJveC1mZWVkYmFjay1pY29uLW1hcmdpbiArIEB0ZXh0Ym94LXVwZG93bi1vZmZzZXQ7XG5AdGV4dGJveC1idXN5LW9mZnNldDogMXB4O1xuQHRleHRib3gtYnVzeS1vZmZzZXQtd2l0aC11cGRvd246IEB0ZXh0Ym94LXVwZG93bi1vZmZzZXQgKyBAdGV4dGJveC1idXN5LW9mZnNldDtcblxuLm51aSAubnVpLXRleHRib3gge1xuICAgIGlucHV0W3R5cGU9XCJudW1iZXJcIl06Oi13ZWJraXQtaW5uZXItc3Bpbi1idXR0b24ge1xuICAgICAgICBkaXNwbGF5OiBub25lO1xuICAgIH1cblxuICAgIGlucHV0W3R5cGU9XCJudW1iZXJcIl0ge1xuICAgICAgICAtbW96LWFwcGVhcmFuY2U6IHRleHRmaWVsZDtcbiAgICB9XG5cbiAgICAmLS1kaXNhYmxlZCAubnVpLXRleHRib3gtbnVtYmVyIHtcbiAgICAgICAgJl9fYnV0dG9ucyxcbiAgICAgICAgJl9fdXBkb3duLWRpdmlkZXIge1xuICAgICAgICAgICAgLnNldENzc1ZhcmlhYmxlKGJvcmRlci1jb2xvciwgbnVpLWNvbG9yLWRpc2FibGVkLWxpZ2h0KTtcbiAgICAgICAgfVxuICAgIH1cbn1cblxuLm51aSAubnVpLXRleHRib3gtbnVtYmVyIHtcbiAgICBkaXNwbGF5OiBmbGV4O1xuXG4gICAgJl9fYnV0dG9ucyB7XG4gICAgICAgIGRpc3BsYXk6IGlubGluZS1mbGV4O1xuICAgICAgICBoZWlnaHQ6IChAbnVpLXNwYWNlLW1kICogMik7XG4gICAgICAgIGJvcmRlcjogc29saWQgQG51aS1saW5lLWRlZmF1bHQ7XG4gICAgICAgIC5zZXRDc3NWYXJpYWJsZShib3JkZXItY29sb3IsIG51aS1jb2xvci1saW5lLWRlZmF1bHQpO1xuICAgICAgICBib3JkZXItdG9wLXJpZ2h0LXJhZGl1czogQG51aS1yYWRpdXMtZGVmYXVsdDtcbiAgICAgICAgYm9yZGVyLWJvdHRvbS1yaWdodC1yYWRpdXM6IEBudWktcmFkaXVzLWRlZmF1bHQ7XG4gICAgICAgIGJvcmRlci1sZWZ0OiBub25lO1xuICAgIH1cblxuICAgICZfX3VwZG93biB7XG4gICAgICAgIGRpc3BsYXk6IGJsb2NrO1xuICAgICAgICBsaW5lLWhlaWdodDogMTtcbiAgICAgICAgaGVpZ2h0OiAoQG51aS1zcGFjZS1tZCAqIDIpO1xuICAgICAgICB0b3A6IDFweDtcbiAgICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgICAgICAubnVpICYgYnV0dG9uLm51aS1idXR0b24ge1xuICAgICAgICAgICAgcGFkZGluZy1sZWZ0OiBAbnVpLXNwYWNlLXhzO1xuICAgICAgICAgICAgd2lkdGg6IChAbnVpLXNwYWNlLW1kICogMik7XG4gICAgICAgICAgICBoZWlnaHQ6IDI4cHg7XG4gICAgICAgICAgICAmOmZvY3VzIHtcbiAgICAgICAgICAgICAgICBvdXRsaW5lOiBub25lO1xuICAgICAgICAgICAgfVxuICAgICAgICB9XG4gICAgICAgICYtZGl2aWRlciB7XG4gICAgICAgICAgICB6LWluZGV4OiAxO1xuICAgICAgICAgICAgaGVpZ2h0OiAyOHB4O1xuICAgICAgICAgICAgdG9wOiAxcHg7XG4gICAgICAgICAgICByaWdodDogKEBudWktc3BhY2UtbWQgKiAyKTtcbiAgICAgICAgICAgIHdpZHRoOiAwO1xuICAgICAgICAgICAgYm9yZGVyLXJpZ2h0OiBzb2xpZCBAbnVpLWxpbmUtZGVmYXVsdDtcbiAgICAgICAgICAgIC5zZXRDc3NWYXJpYWJsZShib3JkZXItcmlnaHQtY29sb3IsIG51aS1jb2xvci1saW5lLWRlZmF1bHQpO1xuICAgICAgICB9XG4gICAgfVxuXG4gICAgJl9fdXAtYnV0dG9uIHtcbiAgICAgICAgcmlnaHQ6IDFweDtcbiAgICB9XG5cbiAgICAmX19kb3duLWJ1dHRvbiB7XG4gICAgICAgIHJpZ2h0OiAoQG51aS1zcGFjZS1tZCAqIDIpO1xuICAgIH1cblxuICAgIC5oYXMtZmVlZGJhY2sge1xuICAgICAgICBmbGV4OiAxO1xuICAgIH1cblxuICAgIC5pbnB1dC1jb250cm9sIHtcbiAgICAgICAgYm9yZGVyLXRvcC1yaWdodC1yYWRpdXM6IDA7XG4gICAgICAgIGJvcmRlci1ib3R0b20tcmlnaHQtcmFkaXVzOiAwO1xuICAgIH1cblxuICAgIGlucHV0W3R5cGU9XCJudW1iZXJcIl0gfiBudWktaWNvbiA+IC5mb3JtLWNvbnRyb2wtZmVlZGJhY2sge1xuICAgICAgICBtYXJnaW46IDAgQHRleHRib3gtZmVlZGJhY2staWNvbi13aXRoLXVwZG93bi1tYXJnaW4gMCAwO1xuICAgICAgICAmLm51aS10ZXh0Ym94X19idXN5IHtcbiAgICAgICAgICAgIHRvcDogMDtcbiAgICAgICAgICAgIG1hcmdpbjogMCBAdGV4dGJveC1idXN5LW9mZnNldC13aXRoLXVwZG93biAwIDA7XG4gICAgICAgIH1cbiAgICB9XG59XG4iLCIuc2V0Q3NzVmFyaWFibGUoQHByb3BlcnR5LCBAdmFsdWUpe1xuICAgIEBldmFsdWF0ZWQgOiBcIkB7dmFsdWV9XCI7XG4gICAgLy90aGUgZG91YmxlIEAgZm9yY2VzIGEgaW5kaXJlY3Rpb24gZXZhbHVhdGlvbiwga2luZGEgbGlrZSBhIHBvaW50ZXJcbiAgICBAZmFsbGJhY2sgOiBAQGV2YWx1YXRlZDtcblxuICAgIEB7cHJvcGVydHl9OiB+XCJ2YXIoLS1Ae3ZhbHVlfSxAe2ZhbGxiYWNrfSlcIjtcbn1cbiJdfQ== */"], encapsulation: 2 });
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_7__["NgStyle"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NumberValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgModel"], _button_button_component__WEBPACK_IMPORTED_MODULE_8__["ButtonComponent"]], styles: [".nui .nui-textbox--disabled .has-feedback .input-control {\n  color: var(--nui-color-text-disabled,rgba(17, 17, 17, 0.3));\n}\n.nui .nui-textbox--disabled .has-feedback .input-control:hover {\n  color: var(--nui-color-text-disabled,rgba(17, 17, 17, 0.3));\n}\n.nui .nui-textbox--bold .nui-textbox__input {\n  line-height: 18px;\n  font-size: 13px;\n  font-weight: 600;\n  color: #111;\n  color: var(--nui-color-text-default,#111);\n}\n.nui .nui-textbox__input {\n  min-height: 30px;\n}\n.nui .nui-textbox .has-feedback {\n  position: relative;\n}\n.nui .nui-textbox .has-feedback .input-control {\n  padding: 5px 10px;\n  overflow-y: hidden;\n}\n.nui .nui-textbox .has-feedback .input-control.nui-textbox__input--multiline {\n  padding-top: 5px;\n}\n.nui .nui-textbox .has-feedback .input-control:focus {\n  outline: none;\n  z-index: 500;\n  box-shadow: 0 0 0 2px rgba(0, 196, 210, 0.5);\n}\n.nui .nui .nui-textbox--centered .has-feedback .input-control {\n  padding: 0;\n  text-align: center;\n}\n.nui .nui-textbox .input-control {\n  resize: vertical;\n}\n.nui .nui-textbox .input-control[hidden] {\n  display: none !important;\n}\n.nui .nui-textbox.has-error .help-block,\n.nui .nui-textbox.has-error .control-label,\n.nui .nui-textbox.has-error .radio,\n.nui .nui-textbox.has-error .checkbox,\n.nui .nui-textbox.has-error .radio-inline,\n.nui .nui-textbox.has-error .checkbox-inline,\n.nui .nui-textbox.has-error.nui-radio label,\n.nui .nui-textbox.has-error.checkbox label,\n.nui .nui-textbox.has-error.radio-inline label,\n.nui .nui-textbox.has-error.checkbox-inline label {\n  color: var(--nui-color-text-default,#111);\n}\n.nui .nui-textbox.has-error .nui-validation > div {\n  padding: 5px 0;\n  color: var(--nui-color-text-default,#111);\n}\n.nui .nui-textbox.has-error .input-group-addon {\n  color: var(--nui-color-text-default,#111);\n  border-color: var(--nui-color-line-critical,#dd2c00);\n  background-color: var(--nui-color-bg-content,#fff);\n}\n.nui .nui-textbox.has-error .form-control-feedback {\n  color: var(--nui-color-text-default,#111);\n}\n.nui .nui-textbox .form-control-feedback {\n  top: 12px;\n  margin: 0 7px 0 0;\n  position: absolute;\n  right: 0;\n  z-index: 2;\n  display: block;\n  width: 30px;\n  height: 30px;\n  line-height: 30px;\n  text-align: center;\n  pointer-events: none;\n}\n.nui .nui-textbox .form-control-feedback.nui-textbox__busy {\n  top: 0;\n  margin: 0 1px 0 0;\n}\n.nui .nui-textbox .form-control-feedback svg {\n  position: relative;\n  bottom: 3px;\n}\n.nui .textarea-scrollable .has-feedback .input-control {\n  overflow-y: auto;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRleHRib3guY29tcG9uZW50Lmxlc3MiLCIuLi8uLi9zdHlsZXMvbWl4aW5zL2Nzcy12YXJpYWJsZXMubGVzcyIsIi4uLy4uL3N0eWxlcy9udWktZnJhbWV3b3JrLXR5cG9ncmFwaHkubGVzcyIsIi4uLy4uL3N0eWxlcy9taXhpbnMvZm9jdXMubGVzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFnQkk7RUNYQSwyREFBQTtBREhKO0FBa0JnQjtFQ2ZaLDJEQUFBO0FEQUo7QUFxQkk7RUVyQkEsaUJBQUE7RUFDQSxlQUFBO0VBMEJBLGdCQUFBO0VBQ0EsV0FBQTtFQUNBLHlDQUFBO0FGdEJKO0FBb0JJO0VBQ0ksZ0JBQUE7QUFsQlI7QUFEQTtFQXVCUSxrQkFBQTtBQW5CUjtBQXVCSTtFQUNJLGlCQUFBO0VBQ0Esa0JBQUE7QUFyQlI7QUF1QlE7RUFDSSxnQkFBQTtBQXJCWjtBQXdCUTtFR2hESixhQUFBO0VBQ0EsWUFBQTtFQUtBLDRDQUFBO0FIdUJKO0FBeUJRO0VBQ0ksVUFBQTtFQUNBLGtCQUFBO0FBdkJaO0FBcEJBO0VBZ0RRLGdCQUFBO0FBekJSO0FBMkJRO0VBQ0ksd0JBQUE7QUF6Qlo7QUE2Qkk7Ozs7Ozs7Ozs7RUNoRUEseUNBQUE7QUQrQ0o7QUFpQkk7RUE2Q1EsY0FBQTtFQzdHUix5Q0FBQTtBRG1ESjtBQWFJO0VDaEVBLHlDQUFBO0VBQUEsb0RBQUE7RUFBQSxrREFBQTtBRHdESjtBQVFJO0VDaEVBLHlDQUFBO0FEMkRKO0FBbERBO0VBNERRLFNBQUE7RUFDQSxpQkFBQTtFQUNBLGtCQUFBO0VBQ0EsUUFBQTtFQUNBLFVBQUE7RUFDQSxjQUFBO0VBQ0EsV0FBQTtFQUNBLFlBQUE7RUFDQSxpQkFBQTtFQUNBLGtCQUFBO0VBQ0Esb0JBQUE7QUFQUjtBQVNRO0VBQ0ksTUFBQTtFQUNBLGlCQUFBO0FBUFo7QUFuRUE7RUErRVEsa0JBQUE7RUFDQSxXQUFBO0FBVFI7QUE4Q0k7RUFDSSxnQkFBQTtBQTVDUiIsImZpbGUiOiJ0ZXh0Ym94LmNvbXBvbmVudC5sZXNzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCAocmVmZXJlbmNlKSBcIi4uLy4uL3N0eWxlcy9udWktZnJhbWV3b3JrLXZhcmlhYmxlcy5sZXNzXCI7XG5AaW1wb3J0IChyZWZlcmVuY2UpIFwiLi4vLi4vc3R5bGVzL251aS1mcmFtZXdvcmstYmFzZS5sZXNzXCI7XG5AaW1wb3J0IChyZWZlcmVuY2UpIFwiLi4vLi4vc3R5bGVzL251aS1mcmFtZXdvcmstdHlwb2dyYXBoeS5sZXNzXCI7XG5AaW1wb3J0IChyZWZlcmVuY2UpIFwiLi4vLi4vc3R5bGVzL251aS1mcmFtZXdvcmstY29sb3JzLmxlc3NcIjtcblxuQHRleHRib3gtZmVlZGJhY2staWNvbi1tYXJnaW46IEBudWktc3BhY2UteHMgKyBAbnVpLXNwYWNlLXh4cztcbkB0ZXh0Ym94LWZlZWRiYWNrLWljb24tb2Zmc2V0OiAoKDIgKiBAdGV4dGJveC1mZWVkYmFjay1pY29uLW1hcmdpbikgKyBAaWNvbi1zaXplLXNtYWxsKTtcbkB0ZXh0Ym94LXVwZG93bi1vZmZzZXQ6ICgoMiAqIEBpbnB1dC1oZWlnaHQtYmFzZSkgLSAyKTtcbkB0ZXh0Ym94LXBhZGRpbmctc2ltcGxlLXVwZG93bjogQHRleHRib3gtdXBkb3duLW9mZnNldCArIEB0ZXh0Ym94LWZlZWRiYWNrLWljb24tbWFyZ2luO1xuQHRleHRib3gtZmVlZGJhY2staWNvbi13aXRoLXVwZG93bi1tYXJnaW46IEB0ZXh0Ym94LWZlZWRiYWNrLWljb24tbWFyZ2luICsgQHRleHRib3gtdXBkb3duLW9mZnNldDtcbkB0ZXh0Ym94LWZlZWRiYWNrLWljb24tb2Zmc2V0LXdpdGgtdXBkb3duOiBAdGV4dGJveC1mZWVkYmFjay1pY29uLW9mZnNldCArIEB0ZXh0Ym94LXVwZG93bi1vZmZzZXQ7XG5AdGV4dGJveC1idXN5LW9mZnNldDogMXB4O1xuQHRleHRib3gtYnVzeS1vZmZzZXQtd2l0aC11cGRvd246IEB0ZXh0Ym94LXVwZG93bi1vZmZzZXQgKyBAdGV4dGJveC1idXN5LW9mZnNldDtcblxuLm51aSAubnVpLXRleHRib3gge1xuXG4gICAgJi0tZGlzYWJsZWQge1xuICAgICAgICAuaGFzLWZlZWRiYWNrIHtcbiAgICAgICAgICAgIC5pbnB1dC1jb250cm9sIHtcbiAgICAgICAgICAgICAgICAuc2V0Q3NzVmFyaWFibGUoY29sb3IsIG51aS1jb2xvci10ZXh0LWRpc2FibGVkKTtcbiAgICAgICAgICAgICAgICAmOmhvdmVyIHtcbiAgICAgICAgICAgICAgICAgICAgLnNldENzc1ZhcmlhYmxlKGNvbG9yLCBudWktY29sb3ItdGV4dC1kaXNhYmxlZCk7XG4gICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgfVxuICAgICAgICB9XG4gICAgfVxuICAgICYtLWJvbGQge1xuICAgICAgICAubnVpLXRleHRib3hfX2lucHV0IHtcbiAgICAgICAgICAgIC5udWktdGV4dC1sYWJlbChAbnVpLWNvbG9yLXRleHQtZGVmYXVsdCwgbnVpLWNvbG9yLXRleHQtZGVmYXVsdCk7XG4gICAgICAgIH1cbiAgICB9XG5cbiAgICAmX19pbnB1dCB7XG4gICAgICAgIG1pbi1oZWlnaHQ6IDMwcHg7XG4gICAgfVxuXG4gICAgLmhhcy1mZWVkYmFjayB7XG4gICAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICB9XG5cbiAgICAvL25lZWQgdG8gYWx3YXlzIGhhdmUgdGhlIGhhcy1mZWVkYmFjayBjbGFzcyB0byBhdm9pZCBhIGJpbmRpbmcganVtcC9mbGlja2VyIHdoZW4gc2hvdy9oaWRlXG4gICAgJiAuaGFzLWZlZWRiYWNrIC5pbnB1dC1jb250cm9sIHtcbiAgICAgICAgcGFkZGluZzogQG51aS1zcGFjZS14cyBAbnVpLXNwYWNlLXNtO1xuICAgICAgICBvdmVyZmxvdy15OiBoaWRkZW47XG5cbiAgICAgICAgJi5udWktdGV4dGJveF9faW5wdXQtLW11bHRpbGluZSB7XG4gICAgICAgICAgICBwYWRkaW5nLXRvcDogQG51aS1zcGFjZS14cztcbiAgICAgICAgfVxuXG4gICAgICAgICY6Zm9jdXMge1xuICAgICAgICAgICAgLmZvY3VzLW91dGxpbmUoKVxuICAgICAgICB9XG4gICAgfVxuXG4gICAgJi0tY2VudGVyZWQge1xuICAgICAgICAubnVpICYgLmhhcy1mZWVkYmFjayAuaW5wdXQtY29udHJvbCB7XG4gICAgICAgICAgICBwYWRkaW5nOiAwO1xuICAgICAgICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgICAgICB9XG4gICAgfVxuXG4gICAgLmlucHV0LWNvbnRyb2wge1xuICAgICAgICByZXNpemU6IHZlcnRpY2FsO1xuXG4gICAgICAgICZbaGlkZGVuXSB7XG4gICAgICAgICAgICBkaXNwbGF5OiBub25lICFpbXBvcnRhbnQ7XG4gICAgICAgIH1cbiAgICB9XG5cbiAgICAmLmhhcy1lcnJvciB7XG4gICAgICAgIC5mb3JtLWNvbnRyb2wtdmFsaWRhdGlvbigpO1xuICAgIH1cblxuICAgIC5mb3JtLWNvbnRyb2wtZmVlZGJhY2sge1xuICAgICAgICB0b3A6IDEycHg7XG4gICAgICAgIG1hcmdpbjogMCBAdGV4dGJveC1mZWVkYmFjay1pY29uLW1hcmdpbiAwIDA7XG4gICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICAgICAgcmlnaHQ6IDA7XG4gICAgICAgIHotaW5kZXg6IDI7XG4gICAgICAgIGRpc3BsYXk6IGJsb2NrO1xuICAgICAgICB3aWR0aDogQGlucHV0LWhlaWdodC1iYXNlO1xuICAgICAgICBoZWlnaHQ6IEBpbnB1dC1oZWlnaHQtYmFzZTtcbiAgICAgICAgbGluZS1oZWlnaHQ6IEBpbnB1dC1oZWlnaHQtYmFzZTtcbiAgICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgICAgICBwb2ludGVyLWV2ZW50czogbm9uZTtcblxuICAgICAgICAmLm51aS10ZXh0Ym94X19idXN5IHtcbiAgICAgICAgICAgIHRvcDogMDtcbiAgICAgICAgICAgIG1hcmdpbjogMCBAdGV4dGJveC1idXN5LW9mZnNldCAwIDA7XG4gICAgICAgIH1cbiAgICB9XG5cbiAgICAuZm9ybS1jb250cm9sLWZlZWRiYWNrIHN2ZyB7XG4gICAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICAgICAgYm90dG9tOiAzcHg7XG4gICAgfVxufVxuXG4uZm9ybS1jb250cm9sLXZhbGlkYXRpb24oKSB7XG4gICAgLy8gQ29sb3IgdGhlIGxhYmVsIGFuZCBoZWxwIHRleHRcbiAgICAuaGVscC1ibG9jayxcbiAgICAuY29udHJvbC1sYWJlbCxcbiAgICAucmFkaW8sXG4gICAgLmNoZWNrYm94LFxuICAgIC5yYWRpby1pbmxpbmUsXG4gICAgLmNoZWNrYm94LWlubGluZSxcbiAgICAmLm51aS1yYWRpbyBsYWJlbCxcbiAgICAmLmNoZWNrYm94IGxhYmVsLFxuICAgICYucmFkaW8taW5saW5lIGxhYmVsLFxuICAgICYuY2hlY2tib3gtaW5saW5lIGxhYmVsICB7XG4gICAgICAgIC5zZXRDc3NWYXJpYWJsZShjb2xvciwgbnVpLWNvbG9yLXRleHQtZGVmYXVsdCk7XG4gICAgfVxuICAgIC5udWktdmFsaWRhdGlvbiB7XG4gICAgICAgID4gZGl2IHtcbiAgICAgICAgICAgIHBhZGRpbmc6IDVweCAwO1xuICAgICAgICAgICAgLnNldENzc1ZhcmlhYmxlKGNvbG9yLCBudWktY29sb3ItdGV4dC1kZWZhdWx0KTtcbiAgICAgICAgfVxuICAgIH1cbiAgICAvLyBTZXQgdmFsaWRhdGlvbiBzdGF0ZXMgYWxzbyBmb3IgYWRkb25zXG4gICAgLmlucHV0LWdyb3VwLWFkZG9uIHtcbiAgICAgICAgLnNldENzc1ZhcmlhYmxlKGNvbG9yLCBudWktY29sb3ItdGV4dC1kZWZhdWx0KTtcbiAgICAgICAgLnNldENzc1ZhcmlhYmxlKGJvcmRlci1jb2xvciwgbnVpLWNvbG9yLWxpbmUtY3JpdGljYWwpO1xuICAgICAgICAuc2V0Q3NzVmFyaWFibGUoYmFja2dyb3VuZC1jb2xvciwgbnVpLWNvbG9yLWJnLWNvbnRlbnQpO1xuICAgIH1cbiAgICAvLyBPcHRpb25hbCBmZWVkYmFjayBpY29uXG4gICAgLmZvcm0tY29udHJvbC1mZWVkYmFjayB7XG4gICAgICAgIC5zZXRDc3NWYXJpYWJsZShjb2xvciwgbnVpLWNvbG9yLXRleHQtZGVmYXVsdCk7XG4gICAgfVxufVxuLy8gVE9ETzogaGFuZGxlIGl0IGluIHNjb3BlIG9mIE5VSS0zODI0XG4ubnVpIC50ZXh0YXJlYS1zY3JvbGxhYmxlIHtcbiAgICAmIC5oYXMtZmVlZGJhY2sgLmlucHV0LWNvbnRyb2wge1xuICAgICAgICBvdmVyZmxvdy15OiBhdXRvO1xuICAgIH1cbn1cblxuXG4iLCIuc2V0Q3NzVmFyaWFibGUoQHByb3BlcnR5LCBAdmFsdWUpe1xuICAgIEBldmFsdWF0ZWQgOiBcIkB7dmFsdWV9XCI7XG4gICAgLy90aGUgZG91YmxlIEAgZm9yY2VzIGEgaW5kaXJlY3Rpb24gZXZhbHVhdGlvbiwga2luZGEgbGlrZSBhIHBvaW50ZXJcbiAgICBAZmFsbGJhY2sgOiBAQGV2YWx1YXRlZDtcblxuICAgIEB7cHJvcGVydHl9OiB+XCJ2YXIoLS1Ae3ZhbHVlfSxAe2ZhbGxiYWNrfSlcIjtcbn1cbiIsIkBpbXBvcnQgKHJlZmVyZW5jZSkgXCJudWktZnJhbWV3b3JrLXZhcmlhYmxlcy5sZXNzXCI7XG5AaW1wb3J0IChyZWZlcmVuY2UpIFwibWl4aW5zLmxlc3NcIjtcblxuLyogZm9udC1zaXplICovXG4ubnVpLXRleHQtc2l6ZShAc2l6ZTogZGVmYXVsdCkge1xuICAgIGxpbmUtaGVpZ2h0OiB+XCJAe251aS1saW5lLWhlaWdodC1Ae3NpemV9fVwiO1xuICAgIGZvbnQtc2l6ZTogflwiQHtudWktZm9udC1zaXplLUB7c2l6ZX19XCI7XG59XG4vKiBmb250LXNpemUgZW5kcyAqL1xuXG4ubnVpLXRleHQtcGFnZSgpIHtcbiAgICAubnVpLXRleHQtc2l6ZShoZXJvKTtcbiAgICBmb250LXdlaWdodDogQG51aS1mb250LXdlaWdodC1zZW1pYm9sZDtcbiAgICAuc2V0Q3NzVmFyaWFibGUoY29sb3IsIG51aS1jb2xvci10ZXh0LWRlZmF1bHQpO1xufVxuXG4ubnVpLXRleHQtd2lkZ2V0KCkge1xuICAgIC5udWktdGV4dC1zaXplKGJpZyk7XG4gICAgZm9udC13ZWlnaHQ6IEBudWktZm9udC13ZWlnaHQtc2VtaWJvbGQ7XG4gICAgLnNldENzc1ZhcmlhYmxlKGNvbG9yLCBudWktY29sb3ItdGV4dC1kZWZhdWx0KTtcbn1cblxuLm51aS10ZXh0LXBhbmVsKEBjb2xvciwgQGNvbG9yTmFtZSkge1xuICAgIC5udWktdGV4dC1zaXplKGRlZmF1bHQpO1xuICAgIGZvbnQtd2VpZ2h0OiBAbnVpLWZvbnQtd2VpZ2h0LXNlbWlib2xkO1xuICAgIHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7XG4gICAgY29sb3I6IEBjb2xvcjtcbiAgICBjb2xvcjogflwidmFyKC0tQHtjb2xvck5hbWV9LEB7Y29sb3J9KVwiO1xufVxuXG4ubnVpLXRleHQtbGFiZWwoQGNvbG9yLCBAY29sb3JOYW1lKSB7XG4gICAgLm51aS10ZXh0LXNpemUoZGVmYXVsdCk7XG4gICAgZm9udC13ZWlnaHQ6IEBudWktZm9udC13ZWlnaHQtc2VtaWJvbGQ7XG4gICAgY29sb3I6IEBjb2xvcjtcbiAgICBjb2xvcjogflwidmFyKC0tQHtjb2xvck5hbWV9LEB7Y29sb3J9KVwiO1xufVxuXG4ubnVpLXRleHQtZGVmYXVsdChAY29sb3IsIEBjb2xvck5hbWUpIHtcbiAgICAubnVpLXRleHQtc2l6ZShkZWZhdWx0KTtcbiAgICBmb250LXdlaWdodDogQG51aS1mb250LXdlaWdodC1yZWd1bGFyO1xuICAgIGNvbG9yOiBAY29sb3I7XG4gICAgY29sb3I6IH5cInZhcigtLUB7Y29sb3JOYW1lfSxAe2NvbG9yfSlcIjtcbn1cblxuLm51aS10ZXh0LXNlY29uZGFyeShAY29sb3IsIEBjb2xvck5hbWUpIHtcbiAgICAubnVpLXRleHQtc2l6ZShkZWZhdWx0KTtcbiAgICBmb250LXdlaWdodDogQG51aS1mb250LXdlaWdodC1yZWd1bGFyO1xuICAgIGNvbG9yOiBAY29sb3I7XG4gICAgY29sb3I6IH5cInZhcigtLUB7Y29sb3JOYW1lfSxAe2NvbG9yfSlcIjtcbn1cblxuLm51aS10ZXh0LXRpdGxlLXNlY29uZGFyeShAY29sb3IsIEBjb2xvck5hbWUpIHtcbiAgICAubnVpLXRleHQtc2l6ZShzbWFsbCk7XG4gICAgZm9udC13ZWlnaHQ6IEBudWktZm9udC13ZWlnaHQtcmVndWxhcjtcbiAgICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xuICAgIGNvbG9yOiBAY29sb3I7XG4gICAgY29sb3I6IH5cInZhcigtLUB7Y29sb3JOYW1lfSxAe2NvbG9yfSlcIjtcbn1cblxuLm51aS10ZXh0LXNtYWxsKEBjb2xvciwgQGNvbG9yTmFtZSkge1xuICAgIC5udWktdGV4dC1zaXplKHNtYWxsKTtcbiAgICBmb250LXdlaWdodDogQG51aS1mb250LXdlaWdodC1yZWd1bGFyO1xuICAgIGNvbG9yOiBAY29sb3I7XG4gICAgY29sb3I6IH5cInZhcigtLUB7Y29sb3JOYW1lfSxAe2NvbG9yfSlcIjtcbn1cblxuLy8gVGhpcyBtaXhpbiBpcyBkZXByZWNhdGVkLiBVc2UgbnVpLXRleHQtc21hbGwoKSBpbnN0ZWFkXG4ubnVpLXRleHQtaGludChAY29sb3IsIEBjb2xvck5hbWUpICB7XG4gICAgLm51aS10ZXh0LXNpemUoc21hbGwpO1xuICAgIGZvbnQtd2VpZ2h0OiBAbnVpLWZvbnQtd2VpZ2h0LXJlZ3VsYXI7XG4gICAgY29sb3I6IEBjb2xvcjtcbiAgICBjb2xvcjogflwidmFyKC0tQHtjb2xvck5hbWV9LEB7Y29sb3J9KVwiO1xufVxuXG4ubnVpLXRleHQtaG92ZXJhYmxlKCkge1xuICAgIHRleHQtZGVjb3JhdGlvbi1saW5lOiB1bmRlcmxpbmU7XG4gICAgdGV4dC1kZWNvcmF0aW9uLXN0eWxlOiBkb3R0ZWQ7XG59XG5cbi5udWktdGV4dC1zbWFsbC1zZWNvbmRhcnkoKSB7XG4gICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtc2Vjb25kYXJ5KTtcbn1cblxuLy9zZW1hbnRpYyBzdHlsZXNcbi5udWktdGV4dCB7XG4gICAgJi1kaXNhYmxlZCB7XG4gICAgICAgIC5udWktdGV4dC1kZWZhdWx0KEBudWktY29sb3ItdGV4dC1kaXNhYmxlZCwgbnVpLWNvbG9yLXRleHQtZGlzYWJsZWQpO1xuICAgIH1cbiAgICAmLXByb2R1Y3Qge1xuICAgICAgICAubnVpLXRleHQtc2l6ZShoZXJvKTtcbiAgICAgICAgZm9udC1mYW1pbHk6IEBmb250LWZhbWlseS1yb2JvdG87XG4gICAgICAgIGZvbnQtd2VpZ2h0OiBAbnVpLWZvbnQtd2VpZ2h0LWJvbGQ7XG4gICAgICAgIC5zZXRDc3NWYXJpYWJsZShjb2xvciwgbnVpLWNvbG9yLXRleHQtbGlnaHQpO1xuICAgIH1cblxuICAgICYtcGFnZSB7XG4gICAgICAgIC5udWktdGV4dC1wYWdlKCk7XG5cbiAgICAgICAgJi0taG92ZXJhYmxlIHtcbiAgICAgICAgICAgIC5udWktdGV4dC1wYWdlKCk7XG4gICAgICAgICAgICAubnVpLXRleHQtaG92ZXJhYmxlKCk7XG4gICAgICAgIH1cbiAgICB9XG5cbiAgICAmLXdpZGdldCB7XG4gICAgICAgIC5udWktdGV4dC13aWRnZXQoKTtcblxuICAgICAgICAmLS1ob3ZlcmFibGUge1xuICAgICAgICAgICAgLm51aS10ZXh0LXdpZGdldCgpO1xuICAgICAgICAgICAgLm51aS10ZXh0LWhvdmVyYWJsZSgpO1xuICAgICAgICB9XG4gICAgfVxuXG4gICAgJi1wYW5lbCB7XG4gICAgICAgIC5udWktdGV4dC1wYW5lbChAbnVpLWNvbG9yLXRleHQtZGVmYXVsdCxudWktY29sb3ItdGV4dC1kZWZhdWx0KTtcbiAgICB9XG5cbiAgICAmLXBhbmVsLS1pbnZlcnNlIHtcbiAgICAgICAgLm51aS10ZXh0LXBhbmVsKEBudWktY29sb3ItdGV4dC1pbnZlcnNlLG51aS1jb2xvci10ZXh0LWludmVyc2UpO1xuICAgIH1cblxuICAgICYtcGFuZWwtLWhvdmVyYWJsZSB7XG4gICAgICAgIC5udWktdGV4dC1wYW5lbChAbnVpLWNvbG9yLXRleHQtZGVmYXVsdCxudWktY29sb3ItdGV4dC1kZWZhdWx0KTtcbiAgICAgICAgLm51aS10ZXh0LWhvdmVyYWJsZSgpO1xuICAgIH1cblxuICAgICYtcGFuZWwtLWRhcmtiZyB7XG4gICAgICAgIC5udWktdGV4dC1wYW5lbChAbnVpLWNvbG9yLXRleHQtbGlnaHQsbnVpLWNvbG9yLXRleHQtbGlnaHQpO1xuICAgIH1cblxuICAgICYtcGFuZWwtLWRhcmtiZy0taG92ZXJhYmxlIHtcbiAgICAgICAgLm51aS10ZXh0LXBhbmVsKEBudWktY29sb3ItdGV4dC1saWdodCxudWktY29sb3ItdGV4dC1saWdodCk7XG4gICAgICAgIC5udWktdGV4dC1ob3ZlcmFibGUoKTtcbiAgICB9XG5cbiAgICAmLWxhYmVsIHtcbiAgICAgICAgLm51aS10ZXh0LWxhYmVsKEBudWktY29sb3ItdGV4dC1kZWZhdWx0LG51aS1jb2xvci10ZXh0LWRlZmF1bHQpO1xuICAgIH1cblxuICAgICYtbGFiZWwtLWludmVyc2Uge1xuICAgICAgICAubnVpLXRleHQtbGFiZWwoQG51aS1jb2xvci10ZXh0LWludmVyc2UsbnVpLWNvbG9yLXRleHQtaW52ZXJzZSk7XG4gICAgfVxuXG4gICAgJi1sYWJlbC0taG92ZXJhYmxlIHtcbiAgICAgICAgLm51aS10ZXh0LWxhYmVsKEBudWktY29sb3ItdGV4dC1kZWZhdWx0LG51aS1jb2xvci10ZXh0LWRlZmF1bHQpO1xuICAgICAgICAubnVpLXRleHQtaG92ZXJhYmxlKCk7XG4gICAgfVxuXG4gICAgJi1sYWJlbC0tZGFya2JnIHtcbiAgICAgICAgLm51aS10ZXh0LWxhYmVsKEBudWktY29sb3ItdGV4dC1saWdodCxudWktY29sb3ItdGV4dC1saWdodCk7XG4gICAgfVxuXG4gICAgJi1sYWJlbC0tZGFya2JnLS1ob3ZlcmFibGUge1xuICAgICAgICAubnVpLXRleHQtbGFiZWwoQG51aS1jb2xvci10ZXh0LWxpZ2h0LG51aS1jb2xvci10ZXh0LWxpZ2h0KTtcbiAgICAgICAgLm51aS10ZXh0LWhvdmVyYWJsZSgpO1xuICAgIH1cblxuICAgICYtZGVmYXVsdCB7XG4gICAgICAgIC5udWktdGV4dC1kZWZhdWx0KEBudWktY29sb3ItdGV4dC1kZWZhdWx0LG51aS1jb2xvci10ZXh0LWRlZmF1bHQpO1xuICAgIH1cblxuICAgICYtZGVmYXVsdC0taW52ZXJzZSB7XG4gICAgICAgIC5udWktdGV4dC1kZWZhdWx0KEBudWktY29sb3ItdGV4dC1pbnZlcnNlLG51aS1jb2xvci10ZXh0LWludmVyc2UpO1xuICAgIH1cblxuICAgICYtZGVmYXVsdC0taW52ZXJzZS1zZWxlY3RlZCB7XG4gICAgICAgIC5udWktdGV4dC1kZWZhdWx0KEBudWktY29sb3ItdGV4dC1oaWdobGlnaHQtcGxhdGZvcm1fYmFyLG51aS1jb2xvci10ZXh0LWhpZ2hsaWdodC1wbGF0Zm9ybV9iYXIpO1xuICAgIH1cblxuICAgICYtZGVmYXVsdC0taG92ZXJhYmxlIHtcbiAgICAgICAgLm51aS10ZXh0LWRlZmF1bHQoQG51aS1jb2xvci10ZXh0LWRlZmF1bHQsbnVpLWNvbG9yLXRleHQtZGVmYXVsdCk7XG4gICAgICAgIC5udWktdGV4dC1ob3ZlcmFibGUoKTtcbiAgICB9XG5cbiAgICAmLWRlZmF1bHQtLWRhcmtiZyB7XG4gICAgICAgIC5udWktdGV4dC1kZWZhdWx0KEBudWktY29sb3ItdGV4dC1saWdodCxudWktY29sb3ItdGV4dC1saWdodCk7XG4gICAgfVxuICAgICYtZGVmYXVsdC0tZGFya2JnLS1ob3ZlcmFibGUge1xuICAgICAgICAubnVpLXRleHQtZGVmYXVsdChAbnVpLWNvbG9yLXRleHQtbGlnaHQsbnVpLWNvbG9yLXRleHQtbGlnaHQpO1xuICAgICAgICAubnVpLXRleHQtaG92ZXJhYmxlKCk7XG4gICAgfVxuXG4gICAgJi1kZWZhdWx0LS1kYXJrYmctc2VsZWN0ZWQge1xuICAgICAgICAubnVpLXRleHQtZGVmYXVsdChAbnVpLWNvbG9yLXRleHQtaGlnaGxpZ2h0LXBsYXRmb3JtX2JhcixudWktY29sb3ItdGV4dC1oaWdobGlnaHQtcGxhdGZvcm1fYmFyKTtcbiAgICB9XG5cbiAgICAmLWRlZmF1bHQtLWRhcmtiZy1zZWxlY3RlZC0taG92ZXJhYmxlIHtcbiAgICAgICAgLm51aS10ZXh0LWRlZmF1bHQoQG51aS1jb2xvci10ZXh0LWhpZ2hsaWdodC1wbGF0Zm9ybV9iYXIsbnVpLWNvbG9yLXRleHQtaGlnaGxpZ2h0LXBsYXRmb3JtX2Jhcik7XG4gICAgICAgIC5udWktdGV4dC1ob3ZlcmFibGUoKTtcbiAgICB9XG5cbiAgICAmLXNlY29uZGFyeSB7XG4gICAgICAgIC5udWktdGV4dC1zZWNvbmRhcnkoQG51aS1jb2xvci10ZXh0LXNlY29uZGFyeSxudWktY29sb3ItdGV4dC1zZWNvbmRhcnkpO1xuICAgIH1cblxuICAgICYtc2Vjb25kYXJ5LS1pbnZlcnNlIHtcbiAgICAgICAgLm51aS10ZXh0LXNlY29uZGFyeShAbnVpLWNvbG9yLXRleHQtaW52ZXJzZS1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtaW52ZXJzZS1zZWNvbmRhcnkpO1xuICAgIH1cblxuICAgICYtc2Vjb25kYXJ5LS1ob3ZlcmFibGUge1xuICAgICAgICAubnVpLXRleHQtc2Vjb25kYXJ5KEBudWktY29sb3ItdGV4dC1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtc2Vjb25kYXJ5KTtcbiAgICAgICAgLm51aS10ZXh0LWhvdmVyYWJsZSgpO1xuICAgIH1cblxuICAgICYtc2Vjb25kYXJ5LS1kYXJrYmcge1xuICAgICAgICAubnVpLXRleHQtc2Vjb25kYXJ5KEBudWktY29sb3ItdGV4dC1saWdodC1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtbGlnaHQtc2Vjb25kYXJ5KTtcbiAgICB9XG5cbiAgICAmLXNlY29uZGFyeS0tZGFya2JnLS1ob3ZlcmFibGUge1xuICAgICAgICAubnVpLXRleHQtc2Vjb25kYXJ5KEBudWktY29sb3ItdGV4dC1saWdodC1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtbGlnaHQtc2Vjb25kYXJ5KTtcbiAgICAgICAgLm51aS10ZXh0LWhvdmVyYWJsZSgpO1xuICAgIH1cblxuICAgICYtc2Vjb25kYXJ5LS1kaXNhYmxlZCB7XG4gICAgICAgIC5udWktdGV4dC1zZWNvbmRhcnkoQG51aS1jb2xvci10ZXh0LWRpc2FibGVkLG51aS1jb2xvci10ZXh0LWRpc2FibGVkKTtcbiAgICB9XG5cbiAgICAmLXNlY29uZGFyeS0tZGlzYWJsZWQtLWhvdmVyYWJsZSB7XG4gICAgICAgIC5udWktdGV4dC1zZWNvbmRhcnkoQG51aS1jb2xvci10ZXh0LWRpc2FibGVkLG51aS1jb2xvci10ZXh0LWRpc2FibGVkKTtcbiAgICAgICAgLm51aS10ZXh0LWhvdmVyYWJsZSgpO1xuICAgIH1cblxuICAgICYtbGluayB7XG4gICAgICAgIC5udWktdGV4dC1zaXplKGRlZmF1bHQpO1xuICAgICAgICBmb250LXdlaWdodDogQG51aS1mb250LXdlaWdodC1yZWd1bGFyO1xuICAgICAgICAuc2V0Q3NzVmFyaWFibGUoY29sb3IsIG51aS1jb2xvci10ZXh0LWxpbmspO1xuICAgIH1cbiAgICAmLWxpbms6aG92ZXIge1xuICAgICAgICB0ZXh0LWRlY29yYXRpb246IHVuZGVybGluZTtcbiAgICB9XG5cbiAgICAmLWxpbmstc21hbGwge1xuICAgICAgICAubnVpLXRleHQtc2l6ZShzbWFsbCk7XG4gICAgICAgIGZvbnQtd2VpZ2h0OiBAbnVpLWZvbnQtd2VpZ2h0LXJlZ3VsYXI7XG4gICAgICAgIC5zZXRDc3NWYXJpYWJsZShjb2xvciwgbnVpLWNvbG9yLXRleHQtbGluayk7XG4gICAgfVxuICAgICYtbGluay1zbWFsbDpob3ZlciB7XG4gICAgICAgIHRleHQtZGVjb3JhdGlvbjogdW5kZXJsaW5lO1xuICAgIH1cblxuICAgICYtc291cmNlLWNvZGUge1xuICAgICAgICAubnVpLXRleHQtc2l6ZShkZWZhdWx0KTtcbiAgICAgICAgZm9udC1mYW1pbHk6IEBmb250LWZhbWlseS1zb3VyY2UtY29kZS1wcm87XG4gICAgICAgIGZvbnQtd2VpZ2h0OiBAbnVpLWZvbnQtd2VpZ2h0LXJlZ3VsYXI7XG5cbiAgICAgICAgJi1zZWNvbmRhcnkge1xuICAgICAgICAgICAgLm51aS10ZXh0LXNpemUoZGVmYXVsdCk7XG4gICAgICAgICAgICBmb250LWZhbWlseTogQGZvbnQtZmFtaWx5LXNvdXJjZS1jb2RlLXBybztcbiAgICAgICAgICAgIGZvbnQtd2VpZ2h0OiBAbnVpLWZvbnQtd2VpZ2h0LXJlZ3VsYXI7XG4gICAgICAgICAgICAuc2V0Q3NzVmFyaWFibGUoY29sb3IsIG51aS1jb2xvci10ZXh0LXNlY29uZGFyeSk7XG4gICAgICAgIH1cbiAgICB9XG5cbiAgICAmLXRpdGxlLXNlY29uZGFyeSB7XG4gICAgICAgIC5udWktdGV4dC10aXRsZS1zZWNvbmRhcnkoQG51aS1jb2xvci10ZXh0LXNlY29uZGFyeSxudWktY29sb3ItdGV4dC1zZWNvbmRhcnkpO1xuICAgIH1cblxuICAgICYtdGl0bGUtc2Vjb25kYXJ5LS1pbnZlcnNlIHtcbiAgICAgICAgLm51aS10ZXh0LXRpdGxlLXNlY29uZGFyeShAbnVpLWNvbG9yLXRleHQtaW52ZXJzZS1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtaW52ZXJzZS1zZWNvbmRhcnkpO1xuICAgIH1cblxuICAgICYtdGl0bGUtc2Vjb25kYXJ5LS1kYXJrYmcge1xuICAgICAgICAubnVpLXRleHQtdGl0bGUtc2Vjb25kYXJ5KEBudWktY29sb3ItdGV4dC1saWdodC1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtbGlnaHQtc2Vjb25kYXJ5KTtcbiAgICB9XG5cbiAgICAmLXNtYWxsIHtcbiAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1kZWZhdWx0LG51aS1jb2xvci10ZXh0LWRlZmF1bHQpO1xuICAgIH1cblxuICAgICYtc21hbGwtc2Vjb25kYXJ5IHtcbiAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtc2Vjb25kYXJ5KTtcblxuICAgICAgICAmLS1ob3ZlcmFibGUge1xuICAgICAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtc2Vjb25kYXJ5KTtcbiAgICAgICAgICAgIC5udWktdGV4dC1ob3ZlcmFibGUoKTtcbiAgICAgICAgfVxuICAgIH1cblxuICAgICYtc21hbGwtc2Vjb25kYXJ5LS1pbnZlcnNlIHtcbiAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1pbnZlcnNlLXNlY29uZGFyeSxudWktY29sb3ItdGV4dC1pbnZlcnNlLXNlY29uZGFyeSk7XG5cbiAgICAgICAgJi0taG92ZXJhYmxlIHtcbiAgICAgICAgICAgIC5udWktdGV4dC1zbWFsbChAbnVpLWNvbG9yLXRleHQtaW52ZXJzZS1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtaW52ZXJzZS1zZWNvbmRhcnkpO1xuICAgICAgICAgICAgLm51aS10ZXh0LWhvdmVyYWJsZSgpO1xuICAgICAgICB9XG4gICAgfVxuXG4gICAgJi1zbWFsbC0taW52ZXJzZSB7XG4gICAgICAgIC5udWktdGV4dC1zbWFsbChAbnVpLWNvbG9yLXRleHQtaW52ZXJzZSxudWktY29sb3ItdGV4dC1pbnZlcnNlKTtcblxuICAgICAgICAmLS1ob3ZlcmFibGUge1xuICAgICAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1pbnZlcnNlLG51aS1jb2xvci10ZXh0LWludmVyc2UpO1xuICAgICAgICAgICAgLm51aS10ZXh0LWhvdmVyYWJsZSgpO1xuICAgICAgICB9XG4gICAgfVxuXG4gICAgJi1zbWFsbC0taG92ZXJhYmxlIHtcbiAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1kZWZhdWx0LG51aS1jb2xvci10ZXh0LWRlZmF1bHQpO1xuICAgICAgICAubnVpLXRleHQtaG92ZXJhYmxlKCk7XG4gICAgfVxuXG4gICAgJi1zbWFsbC0tZGFya2JnIHtcbiAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1saWdodCwgbnVpLWNvbG9yLXRleHQtbGlnaHQpO1xuICAgIH1cblxuICAgICYtc21hbGwtLWRhcmtiZy0taG92ZXJhYmxlIHtcbiAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1saWdodCwgbnVpLWNvbG9yLXRleHQtbGlnaHQpO1xuICAgICAgICAubnVpLXRleHQtaG92ZXJhYmxlKCk7XG4gICAgfVxuXG4gICAgJi1zbWFsbC0tZGlzYWJsZWQge1xuICAgICAgICAubnVpLXRleHQtc21hbGwoQG51aS1jb2xvci10ZXh0LWRpc2FibGVkLG51aS1jb2xvci10ZXh0LWRpc2FibGVkKTtcbiAgICB9XG5cbiAgICAmLXNtYWxsLS1kaXNhYmxlZC0taG92ZXJhYmxlIHtcbiAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1kaXNhYmxlZCxudWktY29sb3ItdGV4dC1kaXNhYmxlZCk7XG4gICAgICAgIC5udWktdGV4dC1ob3ZlcmFibGUoKTtcbiAgICB9XG5cbiAgICAvLyBgbnVpLXRleHQtaGludGAgc3R5bGVzIGFyZSBkZXByZWNhdGVkLiBVc2UgYG51aS10ZXh0LXNtYWxsLXNlY29uZGFyeWAgaW5zdGVhZC5cbiAgICAmLWhpbnQge1xuICAgICAgICAubnVpLXRleHQtaGludChAbnVpLWNvbG9yLXRleHQtc2Vjb25kYXJ5LG51aS1jb2xvci10ZXh0LXNlY29uZGFyeSk7XG4gICAgfVxuXG4gICAgJi1oaW50LS1ob3ZlcmFibGUge1xuICAgICAgICAubnVpLXRleHQtaGludChAbnVpLWNvbG9yLXRleHQtc2Vjb25kYXJ5LG51aS1jb2xvci10ZXh0LXNlY29uZGFyeSk7XG4gICAgICAgIC5udWktdGV4dC1ob3ZlcmFibGUoKTtcbiAgICB9XG5cbiAgICAmLWhpbnQtLWRhcmtiZyB7XG4gICAgICAgIC5udWktdGV4dC1oaW50KEBudWktY29sb3ItdGV4dC1saWdodC1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtbGlnaHQtc2Vjb25kYXJ5KTtcbiAgICB9XG5cbiAgICAmLWhpbnQtLWRhcmtiZy0taG92ZXJhYmxlIHtcbiAgICAgICAgLm51aS10ZXh0LWhpbnQoQG51aS1jb2xvci10ZXh0LWxpZ2h0LXNlY29uZGFyeSxudWktY29sb3ItdGV4dC1saWdodC1zZWNvbmRhcnkpO1xuICAgICAgICAubnVpLXRleHQtaG92ZXJhYmxlKCk7XG4gICAgfVxuXG4gICAgJi12YWxpZGF0aW9uIHtcbiAgICAgICAgLm51aS10ZXh0LXNpemUoc21hbGwpO1xuICAgICAgICBmb250LXdlaWdodDogQG51aS1mb250LXdlaWdodC1zZW1pYm9sZDtcbiAgICAgICAgLnNldENzc1ZhcmlhYmxlKGNvbG9yLCBudWktY29sb3ItdGV4dC1jcml0aWNhbCk7XG4gICAgfVxuXG4gICAgJi1lbGxpcHNpcyB7XG4gICAgICAgIC50ZXh0LW92ZXJmbG93KGVsbGlwc2lzKTtcbiAgICB9XG59XG5cbiIsIi5mb2N1cy1vdXRsaW5lLWJhc2UoKSB7XG4gICAgb3V0bGluZTogbm9uZTtcbiAgICB6LWluZGV4OiBAemluZGV4LWFjdGl2ZTtcbn1cblxuLmZvY3VzLW91dGxpbmUoKSB7XG4gICAgLmZvY3VzLW91dGxpbmUtYmFzZSgpO1xuICAgIGJveC1zaGFkb3c6IDAgMCAwIEBudWktbGluZS1tZWRpdW0gZmFkZShAbnVpLWNvbG9yLXNlbGVjdGVkLWNvbnRyYXN0LCA1MCUpO1xufVxuXG4uZm9jdXMtb3V0bGluZS1pbnNldCgpIHtcbiAgICAuZm9jdXMtb3V0bGluZS1iYXNlKCk7XG4gICAgYm94LXNoYWRvdzogaW5zZXQgMCAwIDAgQG51aS1saW5lLW1lZGl1bSBmYWRlKEBudWktY29sb3Itc2VsZWN0ZWQtY29udHJhc3QsIDUwJSk7XG59XG4iXX0= */", ".nui .nui-textbox input[type=\"number\"]::-webkit-inner-spin-button {\n  display: none;\n}\n.nui .nui-textbox input[type=\"number\"] {\n  -moz-appearance: textfield;\n}\n.nui .nui-textbox--disabled .nui-textbox-number__buttons,\n.nui .nui-textbox--disabled .nui-textbox-number__updown-divider {\n  border-color: var(--nui-color-disabled-light,#e9e9e9);\n}\n.nui .nui-textbox-number {\n  display: flex;\n}\n.nui .nui-textbox-number__buttons {\n  display: inline-flex;\n  height: 30px;\n  border: solid 1px;\n  border-color: var(--nui-color-line-default,#d9d9d9);\n  border-top-right-radius: 3px;\n  border-bottom-right-radius: 3px;\n  border-left: none;\n}\n.nui .nui-textbox-number__updown {\n  display: block;\n  line-height: 1;\n  height: 30px;\n  top: 1px;\n  text-align: center;\n}\n.nui .nui-textbox-number__updown button.nui-button {\n  padding-left: 5px;\n  padding-top: 7px;\n  width: 30px;\n  height: 28px;\n  min-height: 28px;\n}\n.nui .nui-textbox-number__updown button.nui-button:focus {\n  outline: none;\n}\n.nui .nui-textbox-number__updown-divider {\n  z-index: 1;\n  height: 28px;\n  top: 1px;\n  right: 30px;\n  width: 0;\n  border-right: solid 1px;\n  border-right-color: var(--nui-color-line-default,#d9d9d9);\n}\n.nui .nui-textbox-number__up-button {\n  right: 1px;\n}\n.nui .nui-textbox-number__down-button {\n  right: 30px;\n}\n.nui .nui-textbox-number .has-feedback {\n  flex: 1;\n}\n.nui .nui-textbox-number .input-control {\n  border-top-right-radius: 0;\n  border-bottom-right-radius: 0;\n}\n.nui .nui-textbox-number input[type=\"number\"] ~ nui-icon > .form-control-feedback {\n  margin: 0 65px 0 0;\n}\n.nui .nui-textbox-number input[type=\"number\"] ~ nui-icon > .form-control-feedback.nui-textbox__busy {\n  top: 0;\n  margin: 0 59px 0 0;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRleHRib3gtbnVtYmVyLmNvbXBvbmVudC5sZXNzIiwiLi4vLi4vLi4vc3R5bGVzL21peGlucy9jc3MtdmFyaWFibGVzLmxlc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBYUE7RUFFUSxhQUFBO0FBYlI7QUFXQTtFQU1RLDBCQUFBO0FBZFI7QUFrQlE7O0VDbEJKLHFEQUFBO0FESUo7QUFxQkE7RUFDSSxhQUFBO0FBbkJKO0FBcUJJO0VBQ0ksb0JBQUE7RUFDQSxZQUFBO0VBQ0EsaUJBQUE7RUMvQkosbURBQUE7RURpQ0ksNEJBQUE7RUFDQSwrQkFBQTtFQUNBLGlCQUFBO0FBbkJSO0FBc0JJO0VBQ0ksY0FBQTtFQUNBLGNBQUE7RUFDQSxZQUFBO0VBQ0EsUUFBQTtFQUNBLGtCQUFBO0FBcEJSO0FBZUk7RUFPUSxpQkFBQTtFQUNBLGdCQUFBO0VBQ0EsV0FBQTtFQUNBLFlBQUE7RUFDQSxnQkFBQTtBQW5CWjtBQW9CWTtFQUNJLGFBQUE7QUFsQmhCO0FBcUJRO0VBQ0ksVUFBQTtFQUNBLFlBQUE7RUFDQSxRQUFBO0VBQ0EsV0FBQTtFQUNBLFFBQUE7RUFDQSx1QkFBQTtFQzVEUix5REFBQTtBRDBDSjtBQXVCSTtFQUNJLFVBQUE7QUFyQlI7QUF3Qkk7RUFDSSxXQUFBO0FBdEJSO0FBdkJBO0VBaURRLE9BQUE7QUF2QlI7QUExQkE7RUFxRFEsMEJBQUE7RUFDQSw2QkFBQTtBQXhCUjtBQTlCQTtFQTBEUSxrQkFBQTtBQXpCUjtBQTBCUTtFQUNJLE1BQUE7RUFDQSxrQkFBQTtBQXhCWiIsImZpbGUiOiJ0ZXh0Ym94LW51bWJlci5jb21wb25lbnQubGVzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgKHJlZmVyZW5jZSkgXCIuLi8uLi8uLi9zdHlsZXMvbnVpLWZyYW1ld29yay12YXJpYWJsZXMubGVzc1wiO1xuQGltcG9ydCAocmVmZXJlbmNlKSBcIi4uLy4uLy4uL3N0eWxlcy9udWktZnJhbWV3b3JrLXR5cG9ncmFwaHkubGVzc1wiO1xuQGltcG9ydCAocmVmZXJlbmNlKSBcIi4uLy4uLy4uL3N0eWxlcy9udWktZnJhbWV3b3JrLWNvbG9ycy5sZXNzXCI7XG5AaW1wb3J0IChyZWZlcmVuY2UpIFwiLi4vLi4vLi4vc3R5bGVzL2NvbXBvbmVudHMvYnV0dG9ucy5sZXNzXCI7XG5cbkB0ZXh0Ym94LWZlZWRiYWNrLWljb24tbWFyZ2luOiBAbnVpLXNwYWNlLXhzICsgQG51aS1zcGFjZS14eHM7XG5AdGV4dGJveC11cGRvd24tb2Zmc2V0OiAoKDIgKiBAaW5wdXQtaGVpZ2h0LWJhc2UpIC0gMik7XG5AdGV4dGJveC1wYWRkaW5nLXNpbXBsZS11cGRvd246IEB0ZXh0Ym94LXVwZG93bi1vZmZzZXQgKyBAdGV4dGJveC1mZWVkYmFjay1pY29uLW1hcmdpbjtcbkB0ZXh0Ym94LWZlZWRiYWNrLWljb24td2l0aC11cGRvd24tbWFyZ2luOiBAdGV4dGJveC1mZWVkYmFjay1pY29uLW1hcmdpbiArIEB0ZXh0Ym94LXVwZG93bi1vZmZzZXQ7XG5AdGV4dGJveC1idXN5LW9mZnNldDogMXB4O1xuQHRleHRib3gtYnV0dG9uLWhlaWdodDogKEBpbnB1dC1oZWlnaHQtYmFzZSAtIChAbnVpLWxpbmUtZGVmYXVsdCAqIDIpKTtcbkB0ZXh0Ym94LWJ1c3ktb2Zmc2V0LXdpdGgtdXBkb3duOiBAdGV4dGJveC11cGRvd24tb2Zmc2V0ICsgQHRleHRib3gtYnVzeS1vZmZzZXQ7XG5cbi5udWkgLm51aS10ZXh0Ym94IHtcbiAgICBpbnB1dFt0eXBlPVwibnVtYmVyXCJdOjotd2Via2l0LWlubmVyLXNwaW4tYnV0dG9uIHtcbiAgICAgICAgZGlzcGxheTogbm9uZTtcbiAgICB9XG5cbiAgICBpbnB1dFt0eXBlPVwibnVtYmVyXCJdIHtcbiAgICAgICAgLW1vei1hcHBlYXJhbmNlOiB0ZXh0ZmllbGQ7XG4gICAgfVxuXG4gICAgJi0tZGlzYWJsZWQgLm51aS10ZXh0Ym94LW51bWJlciB7XG4gICAgICAgICZfX2J1dHRvbnMsXG4gICAgICAgICZfX3VwZG93bi1kaXZpZGVyIHtcbiAgICAgICAgICAgIC5zZXRDc3NWYXJpYWJsZShib3JkZXItY29sb3IsIG51aS1jb2xvci1kaXNhYmxlZC1saWdodCk7XG4gICAgICAgIH1cbiAgICB9XG59XG5cbi5udWkgLm51aS10ZXh0Ym94LW51bWJlciB7XG4gICAgZGlzcGxheTogZmxleDtcblxuICAgICZfX2J1dHRvbnMge1xuICAgICAgICBkaXNwbGF5OiBpbmxpbmUtZmxleDtcbiAgICAgICAgaGVpZ2h0OiAoQG51aS1zcGFjZS1tZCAqIDIpO1xuICAgICAgICBib3JkZXI6IHNvbGlkIEBudWktbGluZS1kZWZhdWx0O1xuICAgICAgICAuc2V0Q3NzVmFyaWFibGUoYm9yZGVyLWNvbG9yLCBudWktY29sb3ItbGluZS1kZWZhdWx0KTtcbiAgICAgICAgYm9yZGVyLXRvcC1yaWdodC1yYWRpdXM6IEBudWktcmFkaXVzLWRlZmF1bHQ7XG4gICAgICAgIGJvcmRlci1ib3R0b20tcmlnaHQtcmFkaXVzOiBAbnVpLXJhZGl1cy1kZWZhdWx0O1xuICAgICAgICBib3JkZXItbGVmdDogbm9uZTtcbiAgICB9XG5cbiAgICAmX191cGRvd24ge1xuICAgICAgICBkaXNwbGF5OiBibG9jaztcbiAgICAgICAgbGluZS1oZWlnaHQ6IDE7XG4gICAgICAgIGhlaWdodDogKEBudWktc3BhY2UtbWQgKiAyKTtcbiAgICAgICAgdG9wOiAxcHg7XG4gICAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICAgICAgYnV0dG9uLm51aS1idXR0b24ge1xuICAgICAgICAgICAgcGFkZGluZy1sZWZ0OiBAbnVpLXNwYWNlLXhzO1xuICAgICAgICAgICAgcGFkZGluZy10b3A6IChAYnRuLXBhZGRpbmctaXMtZW1wdHkgKyBAbnVpLWxpbmUtZGVmYXVsdCk7XG4gICAgICAgICAgICB3aWR0aDogKEBudWktc3BhY2UtbWQgKiAyKTtcbiAgICAgICAgICAgIGhlaWdodDogQHRleHRib3gtYnV0dG9uLWhlaWdodDtcbiAgICAgICAgICAgIG1pbi1oZWlnaHQ6IEB0ZXh0Ym94LWJ1dHRvbi1oZWlnaHQ7XG4gICAgICAgICAgICAmOmZvY3VzIHtcbiAgICAgICAgICAgICAgICBvdXRsaW5lOiBub25lO1xuICAgICAgICAgICAgfVxuICAgICAgICB9XG4gICAgICAgICYtZGl2aWRlciB7XG4gICAgICAgICAgICB6LWluZGV4OiAxO1xuICAgICAgICAgICAgaGVpZ2h0OiAyOHB4O1xuICAgICAgICAgICAgdG9wOiAxcHg7XG4gICAgICAgICAgICByaWdodDogKEBudWktc3BhY2UtbWQgKiAyKTtcbiAgICAgICAgICAgIHdpZHRoOiAwO1xuICAgICAgICAgICAgYm9yZGVyLXJpZ2h0OiBzb2xpZCBAbnVpLWxpbmUtZGVmYXVsdDtcbiAgICAgICAgICAgIC5zZXRDc3NWYXJpYWJsZShib3JkZXItcmlnaHQtY29sb3IsIG51aS1jb2xvci1saW5lLWRlZmF1bHQpO1xuICAgICAgICB9XG4gICAgfVxuXG4gICAgJl9fdXAtYnV0dG9uIHtcbiAgICAgICAgcmlnaHQ6IDFweDtcbiAgICB9XG5cbiAgICAmX19kb3duLWJ1dHRvbiB7XG4gICAgICAgIHJpZ2h0OiAoQG51aS1zcGFjZS1tZCAqIDIpO1xuICAgIH1cblxuICAgIC5oYXMtZmVlZGJhY2sge1xuICAgICAgICBmbGV4OiAxO1xuICAgIH1cblxuICAgIC5pbnB1dC1jb250cm9sIHtcbiAgICAgICAgYm9yZGVyLXRvcC1yaWdodC1yYWRpdXM6IDA7XG4gICAgICAgIGJvcmRlci1ib3R0b20tcmlnaHQtcmFkaXVzOiAwO1xuICAgIH1cblxuICAgIGlucHV0W3R5cGU9XCJudW1iZXJcIl0gfiBudWktaWNvbiA+IC5mb3JtLWNvbnRyb2wtZmVlZGJhY2sge1xuICAgICAgICBtYXJnaW46IDAgQHRleHRib3gtZmVlZGJhY2staWNvbi13aXRoLXVwZG93bi1tYXJnaW4gMCAwO1xuICAgICAgICAmLm51aS10ZXh0Ym94X19idXN5IHtcbiAgICAgICAgICAgIHRvcDogMDtcbiAgICAgICAgICAgIG1hcmdpbjogMCBAdGV4dGJveC1idXN5LW9mZnNldC13aXRoLXVwZG93biAwIDA7XG4gICAgICAgIH1cbiAgICB9XG59XG4iLCIuc2V0Q3NzVmFyaWFibGUoQHByb3BlcnR5LCBAdmFsdWUpe1xuICAgIEBldmFsdWF0ZWQgOiBcIkB7dmFsdWV9XCI7XG4gICAgLy90aGUgZG91YmxlIEAgZm9yY2VzIGEgaW5kaXJlY3Rpb24gZXZhbHVhdGlvbiwga2luZGEgbGlrZSBhIHBvaW50ZXJcbiAgICBAZmFsbGJhY2sgOiBAQGV2YWx1YXRlZDtcblxuICAgIEB7cHJvcGVydHl9OiB+XCJ2YXIoLS1Ae3ZhbHVlfSxAe2ZhbGxiYWNrfSlcIjtcbn1cbiJdfQ== */"], encapsulation: 2 });
 
 
 /***/ }),
@@ -18307,6 +18274,41 @@ TimeframeService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefine
 
 /***/ }),
 
+/***/ "Uuhz":
+/*!****************************************************!*\
+  !*** ./src/constants/unit-conversion.constants.ts ***!
+  \****************************************************/
+/*! exports provided: unitConversionToken, UnitBase, unitConversionConstants */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unitConversionToken", function() { return unitConversionToken; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UnitBase", function() { return UnitBase; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unitConversionConstants", function() { return unitConversionConstants; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+
+const unitConversionToken = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["InjectionToken"]("unit-conversion.constant");
+/** Standard base values used in unit conversion */
+var UnitBase;
+(function (UnitBase) {
+    UnitBase[UnitBase["Standard"] = 1000] = "Standard";
+    UnitBase[UnitBase["Bytes"] = 1024] = "Bytes";
+})(UnitBase || (UnitBase = {}));
+/**
+ * Unit display values used in unit conversion
+ */
+const unitConversionConstants = {
+    generic: ["", "k", "M", "B", "T", "Qa", "Qi", "Sx", "Sp"],
+    bytes: ["B", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"],
+    bytesPerSecond: ["Bps", "kBps", "MBps", "GBps", "TBps", "PBps", "EBps", "ZBps", "YBps"],
+    bitsPerSecond: ["bps", "kbps", "Mbps", "Gpbs", "Tbps", "Pbps", "Ebps", "Zbps", "Ybps"],
+    hertz: ["Hz", "kHz", "MHz", "GHz", "THz", "PHz", "EHz", "ZHz", "YHz"],
+};
+
+
+/***/ }),
+
 /***/ "V5Xt":
 /*!*******************************************************!*\
   !*** ./demo/src/components/app/app-routing.module.ts ***!
@@ -18655,16 +18657,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NuiSelectModule", function() { return NuiSelectModule; });
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
 /* harmony import */ var _common_common_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../common/common.module */ "7JYY");
-/* harmony import */ var _pipes_highlight_pipe__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../pipes/highlight.pipe */ "ZlWS");
-/* harmony import */ var _button_button_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../button/button.module */ "NlXT");
-/* harmony import */ var _icon_icon_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../icon/icon.module */ "mmWn");
-/* harmony import */ var _menu_menu_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../menu/menu.module */ "kc1z");
-/* harmony import */ var _popup_popup_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../popup/popup.module */ "rHGt");
-/* harmony import */ var _textbox_textbox_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../textbox/textbox.module */ "zmwP");
-/* harmony import */ var _combobox_combobox_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./combobox/combobox.component */ "KXc3");
-/* harmony import */ var _select_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./select.component */ "8Za4");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/core */ "fXoL");
-
+/* harmony import */ var _button_button_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../button/button.module */ "NlXT");
+/* harmony import */ var _icon_icon_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../icon/icon.module */ "mmWn");
+/* harmony import */ var _menu_menu_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../menu/menu.module */ "kc1z");
+/* harmony import */ var _popup_popup_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../popup/popup.module */ "rHGt");
+/* harmony import */ var _textbox_textbox_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../textbox/textbox.module */ "zmwP");
+/* harmony import */ var _combobox_combobox_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./combobox/combobox.component */ "KXc3");
+/* harmony import */ var _select_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./select.component */ "8Za4");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/core */ "fXoL");
 
 
 
@@ -18679,27 +18679,25 @@ __webpack_require__.r(__webpack_exports__);
 /** @ignore @deprecated in v11 SelectComponent and ComboboxComponent in this module have been deprecated in favor of SelectV2Component and ComboboxV2Component which can be imported from SelectV2Module */
 class NuiSelectModule {
 }
-NuiSelectModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdefineNgModule"]({ type: NuiSelectModule });
-NuiSelectModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdefineInjector"]({ factory: function NuiSelectModule_Factory(t) { return new (t || NuiSelectModule)(); }, providers: [], imports: [[
+NuiSelectModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdefineNgModule"]({ type: NuiSelectModule });
+NuiSelectModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdefineInjector"]({ factory: function NuiSelectModule_Factory(t) { return new (t || NuiSelectModule)(); }, providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_1__["NuiCommonModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_0__["ReactiveFormsModule"],
-            _popup_popup_module__WEBPACK_IMPORTED_MODULE_6__["NuiPopupModule"],
-            _icon_icon_module__WEBPACK_IMPORTED_MODULE_4__["NuiIconModule"],
-            _textbox_textbox_module__WEBPACK_IMPORTED_MODULE_7__["NuiTextboxModule"],
-            _button_button_module__WEBPACK_IMPORTED_MODULE_3__["NuiButtonModule"],
-            _menu_menu_module__WEBPACK_IMPORTED_MODULE_5__["NuiMenuModule"],
+            _popup_popup_module__WEBPACK_IMPORTED_MODULE_5__["NuiPopupModule"],
+            _icon_icon_module__WEBPACK_IMPORTED_MODULE_3__["NuiIconModule"],
+            _textbox_textbox_module__WEBPACK_IMPORTED_MODULE_6__["NuiTextboxModule"],
+            _button_button_module__WEBPACK_IMPORTED_MODULE_2__["NuiButtonModule"],
+            _menu_menu_module__WEBPACK_IMPORTED_MODULE_4__["NuiMenuModule"],
         ], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["ReactiveFormsModule"]] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵsetNgModuleScope"](NuiSelectModule, { declarations: [_combobox_combobox_component__WEBPACK_IMPORTED_MODULE_8__["ComboboxComponent"],
-        _select_component__WEBPACK_IMPORTED_MODULE_9__["SelectComponent"],
-        _pipes_highlight_pipe__WEBPACK_IMPORTED_MODULE_2__["HighlightPipe"]], imports: [_common_common_module__WEBPACK_IMPORTED_MODULE_1__["NuiCommonModule"],
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵsetNgModuleScope"](NuiSelectModule, { declarations: [_combobox_combobox_component__WEBPACK_IMPORTED_MODULE_7__["ComboboxComponent"],
+        _select_component__WEBPACK_IMPORTED_MODULE_8__["SelectComponent"]], imports: [_common_common_module__WEBPACK_IMPORTED_MODULE_1__["NuiCommonModule"],
         _angular_forms__WEBPACK_IMPORTED_MODULE_0__["ReactiveFormsModule"],
-        _popup_popup_module__WEBPACK_IMPORTED_MODULE_6__["NuiPopupModule"],
-        _icon_icon_module__WEBPACK_IMPORTED_MODULE_4__["NuiIconModule"],
-        _textbox_textbox_module__WEBPACK_IMPORTED_MODULE_7__["NuiTextboxModule"],
-        _button_button_module__WEBPACK_IMPORTED_MODULE_3__["NuiButtonModule"],
-        _menu_menu_module__WEBPACK_IMPORTED_MODULE_5__["NuiMenuModule"]], exports: [_combobox_combobox_component__WEBPACK_IMPORTED_MODULE_8__["ComboboxComponent"],
-        _select_component__WEBPACK_IMPORTED_MODULE_9__["SelectComponent"],
-        _pipes_highlight_pipe__WEBPACK_IMPORTED_MODULE_2__["HighlightPipe"],
+        _popup_popup_module__WEBPACK_IMPORTED_MODULE_5__["NuiPopupModule"],
+        _icon_icon_module__WEBPACK_IMPORTED_MODULE_3__["NuiIconModule"],
+        _textbox_textbox_module__WEBPACK_IMPORTED_MODULE_6__["NuiTextboxModule"],
+        _button_button_module__WEBPACK_IMPORTED_MODULE_2__["NuiButtonModule"],
+        _menu_menu_module__WEBPACK_IMPORTED_MODULE_4__["NuiMenuModule"]], exports: [_combobox_combobox_component__WEBPACK_IMPORTED_MODULE_7__["ComboboxComponent"],
+        _select_component__WEBPACK_IMPORTED_MODULE_8__["SelectComponent"],
         _angular_forms__WEBPACK_IMPORTED_MODULE_0__["ReactiveFormsModule"]] }); })();
 
 
@@ -19865,6 +19863,7 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * @deprecated in v11 - Use BaseSelectV2 instead - Removal: NUI-5796
  */
+// eslint-disable-next-line @angular-eslint/directive-class-suffix
 class BaseSelect {
     constructor(utilService) {
         this.utilService = utilService;
@@ -20934,11 +20933,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /**
- * <example-url>./../examples/index.html#/pipes/highlight-pipe</example-url>
- */
-/**
- * Filter used for highlighting of part of plain text in case of search. Returns HTML.
- * Can only be used with `innerHTML` directive. Escapes all the characters by default and highlights every match in the string
+ * <example-url>./../examples/index.html#/pipes/highlight</example-url>
+ *
+ * The nuiHighlight pipe is used to mark a portion of text. It will search the provided text for the specified string and highlight it. Returns HTML.
+ * Can only be used with `innerHTML` directive. Escapes all the characters by default and highlights every match in the string.
  *
  * __Parameters :__
  *
@@ -20947,15 +20945,18 @@ __webpack_require__.r(__webpack_exports__);
  *   search - The search term to be highlighted.
  *
  * __Usage :__
- *   highlight | nuiHighlight:search
+ *   "text" | nuiHighlight : "search"
  *
  * __Examples :__
+ *
  *   <code>{{ "hello world" | nuiHighlight:"world" }}</code>
- *   formats to: <code>hello < span class="nui-highlighted"> world </ span></code>
+ *
+ *   formats to: <code>hello &lt;span class="nui-highlighted"&gt;world&lt;/span&gt;</code>
  *
  *
- *   <code>{{ "hello < span class="x">FOO</ span> bar" | nuiHighlight:"bar" }}</code>
- *   formats to: <code>hello &lt; span class=&quot;x&quot;&gt;FOO&lt;/ span&gt; < span class="nui-highlighted">bar</ span> </ span></code>
+ *   <code>{{ "hello &lt;span class="x"&gt;FOO&lt;/span&gt; bar" | nuiHighlight:"bar" }}</code>
+ *
+ *   formats to: <code>hello &lt;span class=&quot;x&quot;&gt;FOO&lt;/span&gt;&lt;span class="nui-highlighted"&gt;bar&lt;/span&gt;;</code>
  */
 class HighlightPipe {
     constructor() {
@@ -21164,7 +21165,7 @@ __webpack_require__.r(__webpack_exports__);
 /*!***************************!*\
   !*** ./src/public_api.ts ***!
   \***************************/
-/*! exports provided: NuiButtonModule, NuiCheckboxModule, NuiCommonModule, NuiDividerModule, NuiIconModule, NuiMessageModule, NuiImageModule, NuiMenuModule, NuiPopupModule, NuiSwitchModule, NuiSelectModule, NuiSelectV2Module, NuiSpinnerModule, NuiTabsModule, NuiTextboxModule, NuiTooltipModule, NuiLayoutModule, NuiOverlayModule, NuiOverlayAdditionsModule, NuiBreadcrumbModule, NuiBusyModule, NuiChipsModule, NuiContentModule, NuiDatePickerModule, NuiDateTimePickerModule, NuiDialogModule, NuiExpanderModule, NuiFormFieldModule, NuiPaginatorModule, NuiPanelModule, NuiPopoverModule, NuiProgressModule, NuiRadioModule, NuiRepeatModule, NuiSearchModule, NuiSelectorModule, NuiSorterModule, NuiTableModule, NuiTimeFrameBarModule, NuiTimeFramePickerModule, NuiTimePickerModule, NuiToastModule, NuiToolbarModule, NuiValidationMessageModule, NuiWizardModule, NuiWizardV2Module, NuiDocsModule, ButtonSizeType, CheckboxChangeEvent, datePickerDefaults, datePickerDateFormats, NuiDndModule, DndDropTargetDirective, NuiDialogEvent, SrlcStage, NuiFormFieldControl, IconCategory, IconCategoryNamespace, IconStatus, IconSeverity, IconState, IconWidget, MenuActionType, PanelModes, PanelStates, SizeParameters, PanelBackgroundColor, PopoverOverlayPosition, RepeatSelectionMode, PaddingOptions, NUI_SELECT_V2_OPTION_PARENT_COMPONENT, SelectionType, CheckboxStatus, SorterDirection, SpinnerSize, ButtonIcon, DEFAULT_TABLE_HEADER_OFFSET, TABLE_ROW_HEIGHT, complexScrollStrategyFactory, TableVirtualScrollLinearDirective, TableVirtualScrollDirective, TableVirtualScrollHeaderPosition, TableStickyHeaderDirective, SliceRangePipe, ToolbarItemType, ToolbarItemDisplayStyle, CustomValidationMessageComponent, wizardAnimations, WizardHorizontalComponent, WizardVerticalComponent, WizardStepV2Component, WizardDirective, WizardStepHeaderComponent, WizardStepLabelDirective, WizardStepFooterDirective, WizardFooterComponent, WizardStepperNextDirective, WizardStepperPreviousDirective, OVERLAY_CONTAINER_CLASS, OVERLAY_PANEL_CLASS, OVERLAY_DEFAULT_PRIORITY, OverlayPlacement, OverlayPosition, getOverlayPositions, OVERLAY_ITEM, OVERLAY_CONTAINER, OVERLAY_WITH_POPUP_STYLES_CLASS, OVERLAY_ARROW_SIZE, OverlayUtilitiesService, OverlayCustomContainer, POPUP_V2_VIEWPORT_MARGINS_DEFAULT, unitConversionToken, unitConversionConstants, imagesPresetToken, KEY_CODE, RESIZE_DEBOUNCE_TIME, DEFAULT_INTERACTIVE_ELEMENTS, ResizeDirection, ResizeUnit, resizeDirectionHelpers, defaultFilters, NuiActiveDialog, SelectionModel, IEvent, EventDefinition, NuiValidators, LogLevel, NuiEnvironment, NUI_ENV_PROVIDER_FACTORY, NUI_ENV_PROVIDER, uuid, immutableSet, removeErrors, traverse, nameof, BreadcrumbComponent, ContentComponent, ExpanderComponent, MessageComponent, DividerComponent, RadioComponent, RadioGroupComponent, CheckboxComponent, CheckboxGroupComponent, ChipComponent, ChipsComponent, ChipsOverflowComponent, IconComponent, SpinnerComponent, SwitchComponent, PaginatorComponent, ProgressComponent, PanelComponent, ButtonComponent, BusyComponent, ImageComponent, SearchComponent, TextboxComponent, RepeatItemComponent, RepeatComponent, MenuActionComponent, MenuComponent, MenuGroupComponent, MenuItemBaseComponent, MenuLinkComponent, MenuOptionComponent, MenuPopupComponent, MenuSwitchComponent, WizardStepComponent, WizardComponent, ToastComponent, PopupDeprecatedComponent, PopupToggleDirective, SelectorComponent, PopoverComponent, PopupComponent, PopoverModalComponent, SelectComponent, SelectV2OptionComponent, SelectV2OptionGroupComponent, ComboboxV2OptionHighlightDirective, OverlayItemComponent, OverlayComponent, ArrowComponent, SelectV2Component, ComboboxV2Component, MarkAsSelectedItemDirective, ComboboxComponent, BaseSelect, DatePickerComponent, TimePickerComponent, TimeFramePickerComponent, DateTimePickerComponent, SorterComponent, DialogComponent, NuiDialogRef, DialogHeaderComponent, DialogFooterComponent, DialogBackdropComponent, ConfirmationDialogComponent, TableComponent, TableFooterRowComponent, TableHeaderRowComponent, TableRowComponent, TableFooterRowDefDirective, TableRowDefDirective, TableHeaderRowDefDirective, CardComponent, CardGroupComponent, SheetComponent, SheetGroupComponent, TableHeaderCellComponent, TableFooterCellDefDirective, TableFooterCellDirective, TableHeaderCellDefDirective, TableColumnDefDirective, TableCellDirective, TableCellDefDirective, TableResizerDirective, ToolbarComponent, ToolbarGroupComponent, ToolbarItemComponent, ToolbarSplitterComponent, ValidationMessageComponent, TextboxNumberComponent, FormFieldComponent, TabGroupComponent, TabHeadingCustomTemplateRefDirective, TabHeadingDirective, TabComponent, ClipboardDirective, DraggableDirective, DroppableDirective, ResizeObserverDirective, ResizerDirective, ResizeDirective, SetFocusDirective, TooltipDirective, ZoomContentDirective, ThemeSwitcherComponent, ClickInterceptorDirective, MenuItemComponent, TabHeadingComponent, TabHeadingGroupComponent, TooltipComponent, LayoutResizerComponent, TimeFrameBarComponent, QuickPickerComponent, CopyTextComponent, ExampleWrapperComponent, ExampleCodeComponent, SrlcIndicatorComponent, HighlightPipe, LimitToPipe, TimeFrameFormatPipe, UnitConversionPipe, IconService, DragAndDropService, BreadcrumbStateService, NoopDataSourceService, DataSourceService, DataSourceFeatures, DataFilterService, DialogStackService, DialogService, DomUtilService, EdgeDetectionService, EventPropagationService, HistoryStorage, ListService, LoggerService, NotificationService, PositionService, SearchService, SelectorService, UtilService, TimeframeService, ToastContainerService, ToastService, ToastDirective, ThemeSwitchService, TransientCacheService, TableStateHandlerService, UnitConversionService, LocalFilteringDataSource, ClientSideDataSource, ServerSideDataSource, EventBusService, EventBus, MenuKeyControlService, VirtualViewportManager, OverlayContainerService, OverlayPositionService, OverlayService, DEMO_PATH_TOKEN, expand */
+/*! exports provided: NuiButtonModule, NuiCheckboxModule, NuiCommonModule, NuiDividerModule, NuiIconModule, NuiMessageModule, NuiImageModule, NuiMenuModule, NuiPopupModule, NuiSwitchModule, NuiSelectModule, NuiSelectV2Module, NuiSpinnerModule, NuiTabsModule, NuiTextboxModule, NuiTooltipModule, NuiLayoutModule, NuiOverlayModule, NuiOverlayAdditionsModule, NuiBreadcrumbModule, NuiBusyModule, NuiChipsModule, NuiContentModule, NuiDatePickerModule, NuiDateTimePickerModule, NuiDialogModule, NuiExpanderModule, NuiFormFieldModule, NuiPaginatorModule, NuiPanelModule, NuiPopoverModule, NuiProgressModule, NuiRadioModule, NuiRepeatModule, NuiSearchModule, NuiSelectorModule, NuiSorterModule, NuiTableModule, NuiTimeFrameBarModule, NuiTimeFramePickerModule, NuiTimePickerModule, NuiToastModule, NuiToolbarModule, NuiValidationMessageModule, NuiWizardModule, NuiWizardV2Module, NuiDocsModule, ButtonSizeType, CheckboxChangeEvent, datePickerDefaults, datePickerDateFormats, NuiDndModule, DndDropTargetDirective, NuiDialogEvent, SrlcStage, NuiFormFieldControl, IconCategory, IconCategoryNamespace, IconStatus, IconSeverity, IconState, IconWidget, MenuActionType, PanelModes, PanelStates, SizeParameters, PanelBackgroundColor, PopoverOverlayPosition, RepeatSelectionMode, PaddingOptions, NUI_SELECT_V2_OPTION_PARENT_COMPONENT, SelectionType, CheckboxStatus, SorterDirection, SpinnerSize, ButtonIcon, DEFAULT_TABLE_HEADER_OFFSET, TABLE_ROW_HEIGHT, complexScrollStrategyFactory, TableVirtualScrollLinearDirective, TableVirtualScrollDirective, TableVirtualScrollHeaderPosition, TableStickyHeaderDirective, SliceRangePipe, ToolbarItemType, ToolbarItemDisplayStyle, CustomValidationMessageComponent, wizardAnimations, WizardHorizontalComponent, WizardVerticalComponent, WizardStepV2Component, WizardDirective, WizardStepHeaderComponent, WizardStepLabelDirective, WizardStepFooterDirective, WizardFooterComponent, WizardStepperNextDirective, WizardStepperPreviousDirective, OVERLAY_CONTAINER_CLASS, OVERLAY_PANEL_CLASS, OVERLAY_DEFAULT_PRIORITY, OverlayPlacement, OverlayPosition, getOverlayPositions, OVERLAY_ITEM, OVERLAY_CONTAINER, OVERLAY_WITH_POPUP_STYLES_CLASS, OVERLAY_ARROW_SIZE, OverlayUtilitiesService, OverlayCustomContainer, POPUP_V2_VIEWPORT_MARGINS_DEFAULT, unitConversionToken, UnitBase, unitConversionConstants, imagesPresetToken, KEY_CODE, RESIZE_DEBOUNCE_TIME, DEFAULT_INTERACTIVE_ELEMENTS, ResizeDirection, ResizeUnit, resizeDirectionHelpers, defaultFilters, NuiActiveDialog, SelectionModel, IEvent, EventDefinition, NuiValidators, LogLevel, NuiEnvironment, NUI_ENV_PROVIDER_FACTORY, NUI_ENV_PROVIDER, uuid, immutableSet, removeErrors, traverse, nameof, BreadcrumbComponent, ContentComponent, ExpanderComponent, MessageComponent, DividerComponent, RadioComponent, RadioGroupComponent, CheckboxComponent, CheckboxGroupComponent, ChipComponent, ChipsComponent, ChipsOverflowComponent, IconComponent, SpinnerComponent, SwitchComponent, PaginatorComponent, ProgressComponent, PanelComponent, ButtonComponent, BusyComponent, ImageComponent, SearchComponent, TextboxComponent, RepeatItemComponent, RepeatComponent, MenuActionComponent, MenuComponent, MenuGroupComponent, MenuItemBaseComponent, MenuLinkComponent, MenuOptionComponent, MenuPopupComponent, MenuSwitchComponent, WizardStepComponent, WizardComponent, ToastComponent, PopupDeprecatedComponent, PopupToggleDirective, SelectorComponent, PopoverComponent, PopupComponent, PopoverModalComponent, SelectComponent, SelectV2OptionComponent, SelectV2OptionGroupComponent, ComboboxV2OptionHighlightDirective, OverlayItemComponent, OverlayComponent, ArrowComponent, SelectV2Component, ComboboxV2Component, MarkAsSelectedItemDirective, ComboboxComponent, BaseSelect, DatePickerComponent, TimePickerComponent, TimeFramePickerComponent, DateTimePickerComponent, SorterComponent, DialogComponent, NuiDialogRef, DialogHeaderComponent, DialogFooterComponent, DialogBackdropComponent, ConfirmationDialogComponent, TableComponent, TableFooterRowComponent, TableHeaderRowComponent, TableRowComponent, TableFooterRowDefDirective, TableRowDefDirective, TableHeaderRowDefDirective, CardComponent, CardGroupComponent, SheetComponent, SheetGroupComponent, TableHeaderCellComponent, TableFooterCellDefDirective, TableFooterCellDirective, TableHeaderCellDefDirective, TableColumnDefDirective, TableCellDirective, TableCellDefDirective, TableResizerDirective, ToolbarComponent, ToolbarGroupComponent, ToolbarItemComponent, ToolbarSplitterComponent, ValidationMessageComponent, TextboxNumberComponent, FormFieldComponent, TabGroupComponent, TabHeadingCustomTemplateRefDirective, TabHeadingDirective, TabComponent, ClipboardDirective, DraggableDirective, DroppableDirective, ResizeObserverDirective, ResizerDirective, ResizeDirective, SetFocusDirective, TooltipDirective, ZoomContentDirective, ThemeSwitcherComponent, ClickInterceptorDirective, MenuItemComponent, TabHeadingComponent, TabHeadingGroupComponent, TooltipComponent, LayoutResizerComponent, TimeFrameBarComponent, QuickPickerComponent, CopyTextComponent, ExampleWrapperComponent, ExampleCodeComponent, SrlcIndicatorComponent, HighlightPipe, LimitToPipe, TimeFrameFormatPipe, UnitConversionPipe, IconService, DragAndDropService, BreadcrumbStateService, NoopDataSourceService, DataSourceService, DataSourceFeatures, DataFilterService, DialogStackService, DialogService, DomUtilService, EdgeDetectionService, EventPropagationService, HistoryStorage, ListService, LoggerService, NotificationService, PositionService, SearchService, SelectorService, UtilService, TimeframeService, ToastContainerService, ToastService, ToastDirective, ThemeSwitchService, TransientCacheService, TableStateHandlerService, UnitConversionService, LocalFilteringDataSource, ClientSideDataSource, ServerSideDataSource, EventBusService, EventBus, MenuKeyControlService, VirtualViewportManager, OverlayContainerService, OverlayPositionService, OverlayService, DEMO_PATH_TOKEN, expand */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -21393,6 +21394,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "POPUP_V2_VIEWPORT_MARGINS_DEFAULT", function() { return _nui_api__WEBPACK_IMPORTED_MODULE_0__["POPUP_V2_VIEWPORT_MARGINS_DEFAULT"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "unitConversionToken", function() { return _nui_api__WEBPACK_IMPORTED_MODULE_0__["unitConversionToken"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UnitBase", function() { return _nui_api__WEBPACK_IMPORTED_MODULE_0__["UnitBase"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "unitConversionConstants", function() { return _nui_api__WEBPACK_IMPORTED_MODULE_0__["unitConversionConstants"]; });
 
@@ -23930,7 +23933,7 @@ class TimePickerComponent {
         /** to apply error state styles */
         this.isInErrorState = false;
         /** Input to set aria label text */
-        this.ariaLabel = "";
+        this.ariaLabel = "Time Picker";
         /** Allows popup box to be attached to document.body */
         this.appendToBody = false;
         this.timeChanged = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
@@ -24336,7 +24339,8 @@ function OverlayComponent_ng_template_0_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpureFunction1"](3, _c0, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipeBind1"](1, 1, ctx_r0.empty$)));
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpureFunction1"](4, _c0, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipeBind1"](1, 2, ctx_r0.empty$)));
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵattribute"]("role", ctx_r0.roleAttr || null);
 } }
 const _c1 = ["*"];
 const POPUP_V2_VIEWPORT_MARGINS_DEFAULT = 30;
@@ -24460,9 +24464,9 @@ OverlayComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineC
             _overlay_service__WEBPACK_IMPORTED_MODULE_11__["OverlayService"],
             _overlay_position_service__WEBPACK_IMPORTED_MODULE_10__["OverlayPositionService"],
             { provide: _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_0__["OverlayContainer"], useClass: _overlay_custom_container__WEBPACK_IMPORTED_MODULE_9__["OverlayCustomContainer"] },
-        ]), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵNgOnChangesFeature"]], ngContentSelectors: _c1, decls: 1, vars: 0, consts: [["cdk-portal", ""], ["role", "roleAttr", 1, "nui-overlay", 3, "ngClass"]], template: function OverlayComponent_Template(rf, ctx) { if (rf & 1) {
+        ]), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵNgOnChangesFeature"]], ngContentSelectors: _c1, decls: 1, vars: 0, consts: [["cdk-portal", ""], [1, "nui-overlay", 3, "ngClass"]], template: function OverlayComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵprojectionDef"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](0, OverlayComponent_ng_template_0_Template, 3, 5, "ng-template", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](0, OverlayComponent_ng_template_0_Template, 3, 6, "ng-template", 0);
     } }, directives: [_angular_cdk_portal__WEBPACK_IMPORTED_MODULE_1__["TemplatePortalDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_13__["NgClass"]], pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_13__["AsyncPipe"]], styles: [".nui-overlay {\n  display: block;\n  overflow-x: hidden;\n  overflow-y: auto;\n  width: 100%;\n}\n.with-popup-styles .nui-overlay {\n  padding: 5px 0;\n  border-radius: 3px;\n  box-shadow: 0 0 5px 0 var(--nui-shadow-color, rgba(17, 17, 17, 0.3));\n  background-color: var(--nui-color-bg-content_popover,#fff);\n}\n.with-popup-styles .nui-overlay.empty {\n  padding: 0;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm92ZXJsYXkuY29tcG9uZW50Lmxlc3MiLCIuLi8uLi8uLi9zdHlsZXMvbWl4aW5zL2Nzcy12YXJpYWJsZXMubGVzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFHQTtFQUNJLGNBQUE7RUFDQSxrQkFBQTtFQUNBLGdCQUFBO0VBQ0EsV0FBQTtBQUZKO0FBS0E7RUFFUSxjQUFBO0VBQ0Esa0JBQUE7RUFDQSxvRUFBQTtFQ1RKLDBEQUFBO0FETUo7QUFNUTtFQUNJLFVBQUE7QUFKWiIsImZpbGUiOiJvdmVybGF5LmNvbXBvbmVudC5sZXNzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCAocmVmZXJlbmNlKSBcIi4uLy4uLy4uL3N0eWxlcy9udWktZnJhbWV3b3JrLXZhcmlhYmxlcy5sZXNzXCI7XG5AaW1wb3J0IChyZWZlcmVuY2UpIFwiLi4vLi4vLi4vc3R5bGVzL21peGlucy5sZXNzXCI7XG5cbi5udWktb3ZlcmxheSB7XG4gICAgZGlzcGxheTogYmxvY2s7XG4gICAgb3ZlcmZsb3cteDogaGlkZGVuO1xuICAgIG92ZXJmbG93LXk6IGF1dG87XG4gICAgd2lkdGg6IDEwMCU7XG59XG5cbi53aXRoLXBvcHVwLXN0eWxlcyB7XG4gICAgLm51aS1vdmVybGF5IHtcbiAgICAgICAgcGFkZGluZzogQG51aS1zcGFjZS14cyAwO1xuICAgICAgICBib3JkZXItcmFkaXVzOiBAbnVpLXJhZGl1cy1kZWZhdWx0O1xuICAgICAgICBib3gtc2hhZG93OiBAbnVpLXNoYWRvdy1kZWZhdWx0O1xuICAgICAgICAuc2V0Q3NzVmFyaWFibGUoYmFja2dyb3VuZC1jb2xvciwgbnVpLWNvbG9yLWJnLWNvbnRlbnRfcG9wb3Zlcik7XG5cbiAgICAgICAgJi5lbXB0eSB7XG4gICAgICAgICAgICBwYWRkaW5nOiAwO1xuICAgICAgICB9XG4gICAgfVxufVxuIiwiLnNldENzc1ZhcmlhYmxlKEBwcm9wZXJ0eSwgQHZhbHVlKXtcbiAgICBAZXZhbHVhdGVkIDogXCJAe3ZhbHVlfVwiO1xuICAgIC8vdGhlIGRvdWJsZSBAIGZvcmNlcyBhIGluZGlyZWN0aW9uIGV2YWx1YXRpb24sIGtpbmRhIGxpa2UgYSBwb2ludGVyXG4gICAgQGZhbGxiYWNrIDogQEBldmFsdWF0ZWQ7XG5cbiAgICBAe3Byb3BlcnR5fTogflwidmFyKC0tQHt2YWx1ZX0sQHtmYWxsYmFja30pXCI7XG59XG4iXX0= */"], encapsulation: 2, changeDetection: 0 });
 
 
@@ -25451,8 +25455,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lodash_includes__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(lodash_includes__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var lodash_isEqual__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! lodash/isEqual */ "Y+p1");
 /* harmony import */ var lodash_isEqual__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(lodash_isEqual__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var lodash_isNil__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! lodash/isNil */ "J2iB");
-/* harmony import */ var lodash_isNil__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(lodash_isNil__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! lodash/isUndefined */ "TP7S");
+/* harmony import */ var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(lodash_isUndefined__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var lodash_last__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! lodash/last */ "RBan");
 /* harmony import */ var lodash_last__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(lodash_last__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var lodash_pull__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! lodash/pull */ "hzCD");
@@ -25488,6 +25492,7 @@ const DEFAULT_SELECT_OVERLAY_CONFIG = {
     panelClass: _overlay_constants__WEBPACK_IMPORTED_MODULE_10__["OVERLAY_WITH_POPUP_STYLES_CLASS"],
 };
 // Will be renamed in scope of the NUI-5797
+// eslint-disable-next-line @angular-eslint/directive-class-suffix
 class BaseSelectV2 {
     constructor(optionKeyControlService, cdRef, elRef) {
         this.optionKeyControlService = optionKeyControlService;
@@ -25684,11 +25689,11 @@ class BaseSelectV2 {
     }
     getValueFromOptions(options = this.selectedOptions) {
         var _a;
-        return this.multiselect ? options.map(o => o.value) : ((_a = options[0]) === null || _a === void 0 ? void 0 : _a.value) || null;
+        return this.multiselect ? options.map(o => o.value) : ((_a = options[0]) === null || _a === void 0 ? void 0 : _a.value) || "";
     }
     handleValueChange(value) {
         var _a;
-        if (lodash_isNil__WEBPACK_IMPORTED_MODULE_5___default()(value)) {
+        if (lodash_isUndefined__WEBPACK_IMPORTED_MODULE_5___default()(value)) {
             this.value = "";
             this._selectedOptions = [];
             this.setActiveItemOnDropdown();
@@ -25720,7 +25725,7 @@ class BaseSelectV2 {
     }
     validateValueWithSelectedOptions() {
         const selectedOptionValues = this.selectedOptions.map(option => option.value);
-        const valuePropToCompare = this.value
+        const valuePropToCompare = !lodash_isUndefined__WEBPACK_IMPORTED_MODULE_5___default()(this.value)
             ? this.multiselect ? this.value : [this.value]
             : [];
         if (!lodash_isEqual__WEBPACK_IMPORTED_MODULE_4___default()(selectedOptionValues, valuePropToCompare)) {
@@ -25731,7 +25736,7 @@ class BaseSelectV2 {
     }
     scrollToOption() {
         // setTimeout is necessary because scrolling to the selected item should occur only when overlay rendered
-        if (this.value && !this.multiselect) {
+        if (!lodash_isUndefined__WEBPACK_IMPORTED_MODULE_5___default()(this.value) && !this.multiselect) {
             setTimeout(() => { var _a; return (_a = this.selectedOptions[0]) === null || _a === void 0 ? void 0 : _a.scrollIntoView({ block: "center" }); });
         }
     }
@@ -25742,7 +25747,12 @@ class BaseSelectV2 {
         this.optionKeyControlService.setSkipPredicate((option) => !!(option.outfiltered || option.isDisabled));
     }
     setActiveItemOnDropdown() {
-        this.value && !this.multiselect
+        var _a;
+        let selectedValue;
+        if (!this.multiselect) {
+            selectedValue = (_a = this.options) === null || _a === void 0 ? void 0 : _a.find(option => lodash_isEqual__WEBPACK_IMPORTED_MODULE_4___default()(option.value, this.value));
+        }
+        selectedValue && !this.multiselect
             ? this.optionKeyControlService.setActiveItem(this.selectedOptions[0])
             : this.optionKeyControlService.setFirstItemActive();
     }
@@ -26519,7 +26529,7 @@ ExpanderComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefine
     } if (rf & 2) {
         let _t;
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.customHeaderContent = _t.first);
-    } }, inputs: { disabled: "disabled", icon: "icon", header: "header", hideLeftBorder: "hideLeftBorder", open: "open" }, outputs: { openChange: "openChange" }, ngContentSelectors: _c2, decls: 10, vars: 15, consts: [[1, "nui-expander"], ["role", "button", 1, "nui-expander__header", 3, "click"], ["aria-hidden", "true", 1, "nui-expander__header-icon", 3, "iconColor", "icon"], [1, "nui-expander__header-content-wrapper"], [1, "nui-expander__custom-header"], ["customHeaderContent", ""], ["class", "nui-expander__header-content", 3, "nui-expander__header-content--with-icon", 4, "ngIf"], ["role", "region", 1, "nui-expander__body-wrapper"], ["class", "nui-expander__body", 3, "hide-left-border", 4, "ngIf"], [1, "nui-expander__header-content"], ["class", "nui-expander__header-content-icon", 3, "icon", 4, "ngIf"], [1, "nui-expander__header-title"], [1, "nui-expander__header-content-icon", 3, "icon"], [1, "nui-expander__body"]], template: function ExpanderComponent_Template(rf, ctx) { if (rf & 1) {
+    } }, inputs: { disabled: "disabled", icon: "icon", header: "header", hideLeftBorder: "hideLeftBorder", open: "open" }, outputs: { openChange: "openChange" }, ngContentSelectors: _c2, decls: 10, vars: 15, consts: [[1, "nui-expander"], ["role", "button", "aria-label", "Expander toggle", 1, "nui-expander__header", 3, "click"], ["aria-hidden", "true", 1, "nui-expander__header-icon", 3, "iconColor", "icon"], [1, "nui-expander__header-content-wrapper"], [1, "nui-expander__custom-header"], ["customHeaderContent", ""], ["class", "nui-expander__header-content", 3, "nui-expander__header-content--with-icon", 4, "ngIf"], ["role", "region", 1, "nui-expander__body-wrapper"], ["class", "nui-expander__body", 3, "hide-left-border", 4, "ngIf"], [1, "nui-expander__header-content"], ["class", "nui-expander__header-content-icon", 3, "icon", 4, "ngIf"], [1, "nui-expander__header-title"], [1, "nui-expander__header-content-icon", 3, "icon"], [1, "nui-expander__body"]], template: function ExpanderComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"](_c1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
@@ -27060,15 +27070,17 @@ __webpack_require__.r(__webpack_exports__);
 /*!********************************!*\
   !*** ./src/constants/index.ts ***!
   \********************************/
-/*! exports provided: unitConversionToken, unitConversionConstants, imagesPresetToken, KEY_CODE, RESIZE_DEBOUNCE_TIME, DEMO_PATH_TOKEN, DEFAULT_INTERACTIVE_ELEMENTS */
+/*! exports provided: unitConversionToken, UnitBase, unitConversionConstants, imagesPresetToken, KEY_CODE, RESIZE_DEBOUNCE_TIME, DEMO_PATH_TOKEN, DEFAULT_INTERACTIVE_ELEMENTS */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _unit_conversion_constant__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./unit-conversion.constant */ "Ped9");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "unitConversionToken", function() { return _unit_conversion_constant__WEBPACK_IMPORTED_MODULE_0__["unitConversionToken"]; });
+/* harmony import */ var _unit_conversion_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./unit-conversion.constants */ "Uuhz");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "unitConversionToken", function() { return _unit_conversion_constants__WEBPACK_IMPORTED_MODULE_0__["unitConversionToken"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "unitConversionConstants", function() { return _unit_conversion_constant__WEBPACK_IMPORTED_MODULE_0__["unitConversionConstants"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UnitBase", function() { return _unit_conversion_constants__WEBPACK_IMPORTED_MODULE_0__["UnitBase"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "unitConversionConstants", function() { return _unit_conversion_constants__WEBPACK_IMPORTED_MODULE_0__["unitConversionConstants"]; });
 
 /* harmony import */ var _images_constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./images.constants */ "hKb4");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "imagesPresetToken", function() { return _images_constants__WEBPACK_IMPORTED_MODULE_1__["imagesPresetToken"]; });
@@ -28698,6 +28710,7 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * Base class for menu items. Adds styles to host element
  */
+// eslint-disable-next-line @angular-eslint/directive-class-suffix
 class MenuItemBaseComponent {
     constructor(group, cd) {
         this.group = group;
@@ -28824,7 +28837,7 @@ class TextboxComponent {
         /**
          * Input to set aria label text
          */
-        this.ariaLabel = "";
+        this.ariaLabel = "Textbox input";
         /**
          * Event fired when textbox is focused out.
          */
@@ -29332,19 +29345,33 @@ var PaddingOptions;
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UnitConversionService", function() { return UnitConversionService; });
-/* harmony import */ var _log_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./log-service */ "eqCI");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constants */ "jxKE");
+/* harmony import */ var _log_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./log-service */ "eqCI");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
+
 
 
 
 /**
- * @ignore
+ * <example-url>./../examples/index.html#/common/unit-conversion-service</example-url>
+ */
+/**
+ * Service for converting a raw value to a larger unit approximation of the value--for example, 1024 B to 1 MB, 12345 Hz to 12.35 kHz, etc.
  */
 class UnitConversionService {
     constructor(logger) {
         this.logger = logger;
     }
-    convert(value, base, precision = 1) {
+    /**
+     * Converts a raw value to a larger unit approximation of the value. For example, 1024 B to 1 KB, 12345 Hz to 12.35 kHz, etc.
+     *
+     * @param value The value to convert
+     * @param base The base to use for the exponential expression when calculating the conversion result
+     * @param scale The number of significant digits to the right of the decimal to include in the resulting converted value
+     *
+     * @returns {IUnitConversionResult} The conversion result
+     */
+    convert(value, base = _constants__WEBPACK_IMPORTED_MODULE_0__["UnitBase"].Standard, scale = 1) {
         let resultValue;
         let resultOrder;
         let strValue;
@@ -29360,9 +29387,9 @@ class UnitConversionService {
                 resultValue = valueCeiled / base;
                 resultOrder += 1;
             }
-            strValue = (resultValue).toFixed(precision);
+            strValue = (resultValue).toFixed(scale);
             // remove trailing zeros
-            strValue = strValue.replace(/\.0+$/, "");
+            strValue = parseFloat(strValue).toString();
         }
         else {
             resultOrder = 0;
@@ -29373,9 +29400,55 @@ class UnitConversionService {
             order: resultOrder,
         };
     }
+    /**
+     * Gets the display string of a conversion result
+     *
+     * @param conversion The result of an invocation of this service's convert method
+     * @param unit The unit used in the conversion
+     * @param plusSign Whether to prepend the display string with a '+'
+     * @param nanDisplay The string to display in case the conversion result is NaN or Infinity
+     *
+     * @returns {string} The display string of the conversion result
+     */
+    getFullDisplay(conversion, unit, plusSign = false, nanDisplay = "---") {
+        const isValidNumber = this.isValidNumber(conversion.value);
+        const spacing = unit !== "generic" && isValidNumber ? " " : "";
+        const unitDisplay = isValidNumber ? this.getUnitDisplay(conversion, unit) : "";
+        return `${this.getValueDisplay(conversion, plusSign, nanDisplay)}${spacing}${unitDisplay}`;
+    }
+    /**
+     * Gets the converted value display string
+     *
+     * @param conversion The result of an invocation of this service's convert method
+     * @param plusSign Whether to prepend the display string with a '+'
+     * @param nanDisplay The string to display in case the conversion result is NaN or Infinity
+     *
+     * @returns {string} The converted value display string
+     */
+    getValueDisplay(conversion, plusSign = false, nanDisplay = "---") {
+        if (!this.isValidNumber(conversion.value)) {
+            return nanDisplay;
+        }
+        const prefix = plusSign && parseInt(conversion.value, 10) > 0 ? "+" : "";
+        return `${prefix}${conversion.value}`;
+    }
+    /**
+     * Gets the converted unit display string
+     *
+     * @param conversion The result of an invocation of this service's convert method
+     * @param unit The basic unit used in the conversion
+     *
+     * @returns {string} The converted unit display string
+     */
+    getUnitDisplay(conversion, unit) {
+        return _constants__WEBPACK_IMPORTED_MODULE_0__["unitConversionConstants"][unit][conversion.order];
+    }
+    isValidNumber(value) {
+        return !isNaN(parseFloat(value)) && isFinite(parseInt(value, 10));
+    }
 }
-UnitConversionService.ɵfac = function UnitConversionService_Factory(t) { return new (t || UnitConversionService)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_log_service__WEBPACK_IMPORTED_MODULE_0__["LoggerService"])); };
-UnitConversionService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({ token: UnitConversionService, factory: UnitConversionService.ɵfac, providedIn: "root" });
+UnitConversionService.ɵfac = function UnitConversionService_Factory(t) { return new (t || UnitConversionService)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_log_service__WEBPACK_IMPORTED_MODULE_1__["LoggerService"])); };
+UnitConversionService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjectable"]({ token: UnitConversionService, factory: UnitConversionService.ɵfac, providedIn: "root" });
 
 
 /***/ }),
@@ -30117,7 +30190,7 @@ class CheckboxGroupComponent {
         /**
          * Input to set aria label text
          */
-        this.ariaLabel = "";
+        this.ariaLabel = "Checkbox Group";
         /**
          * Input to set aria label text
          */
@@ -30347,11 +30420,8 @@ class WizardDirective extends _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_0__[
         this.selectedIndex = this.steps ? this.steps.toArray().indexOf(step) : -1;
     }
     ngAfterContentInit() {
-        // Mark the component for change detection whenever the content children query changes
-        this._steps.changes.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["takeUntil"])(this._destroyed)).subscribe(() => {
-            this.steps.reset(this._steps);
-            this._stateChanged();
-        });
+        this.steps.changes.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["takeUntil"])(this._destroyed))
+            .subscribe(() => this._stateChanged());
         this._animationDone.pipe(
         // This needs a `distinctUntilChanged` in order to avoid emitting the same event twice due
         // to a bug in animations where the `.done` callback gets invoked twice on some browsers.
@@ -30370,9 +30440,11 @@ WizardDirective.ngAcceptInputTypeHasError = undefined;
 WizardDirective.ɵfac = function WizardDirective_Factory(t) { return ɵWizardDirective_BaseFactory(t || WizardDirective); };
 WizardDirective.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineDirective"]({ type: WizardDirective, selectors: [["", "nuiWizard", ""]], contentQueries: function WizardDirective_ContentQueries(rf, ctx, dirIndex) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵcontentQuery"](dirIndex, WizardStepV2Component, 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵcontentQuery"](dirIndex, WizardStepV2Component, 1);
     } if (rf & 2) {
         let _t;
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx._steps = _t);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx.steps = _t);
     } }, viewQuery: function WizardDirective_Query(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵviewQuery"](_wizard_step_header_component__WEBPACK_IMPORTED_MODULE_6__["WizardStepHeaderComponent"], 1);
     } if (rf & 2) {
@@ -30800,6 +30872,7 @@ class PopupComponent {
         this.document = document;
         this.width = "auto";
         this.appendToBody = false;
+        this.ariaLabel = "Popup";
         this.opened = new _angular_core__WEBPACK_IMPORTED_MODULE_2__["EventEmitter"]();
         this._overlayConfig = ADAPTER_OVERLAY_CONFIG;
         this.destroy$ = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
@@ -31026,7 +31099,9 @@ PopupComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineCom
         let _t;
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵloadQuery"]()) && (ctx.popupArea = _t.first);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵloadQuery"]()) && (ctx.popup = _t.first);
-    } }, hostAttrs: ["role", "dialog", 1, "nui-popup"], inputs: { width: "width", overlayConfig: "overlayConfig", contextClass: "contextClass", directionTop: "directionTop", directionRight: "directionRight", manualOpenControl: "manualOpenControl", appendToBody: "appendToBody", baseElementSelector: "baseElementSelector", isHostToggleRef: "isHostToggleRef", isOpen: "isOpen", visible: "visible" }, outputs: { opened: "opened" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵNgOnChangesFeature"]], ngContentSelectors: _c2, decls: 9, vars: 5, consts: [["nuiClickInterceptor", "", 1, "nui-popup-container"], [1, "nui-popup__content"], ["popupArea", ""], [3, "toggleReference", "overlayConfig", "customContainer"], [1, "nui-popup__area"], [1, "nui-popup__area--container"]], template: function PopupComponent_Template(rf, ctx) { if (rf & 1) {
+    } }, hostAttrs: ["role", "dialog", 1, "nui-popup"], hostVars: 1, hostBindings: function PopupComponent_HostBindings(rf, ctx) { if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵattribute"]("aria-label", ctx.ariaLabel);
+    } }, inputs: { width: "width", overlayConfig: "overlayConfig", contextClass: "contextClass", directionTop: "directionTop", directionRight: "directionRight", manualOpenControl: "manualOpenControl", appendToBody: "appendToBody", baseElementSelector: "baseElementSelector", isHostToggleRef: "isHostToggleRef", ariaLabel: "ariaLabel", isOpen: "isOpen", visible: "visible" }, outputs: { opened: "opened" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵNgOnChangesFeature"]], ngContentSelectors: _c2, decls: 9, vars: 5, consts: [["nuiClickInterceptor", "", 1, "nui-popup-container"], [1, "nui-popup__content"], ["popupArea", ""], [3, "toggleReference", "overlayConfig", "customContainer"], [1, "nui-popup__area"], [1, "nui-popup__area--container"]], template: function PopupComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵprojectionDef"](_c1);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](1, "div", 1);
@@ -31535,7 +31610,7 @@ class DatePickerComponent {
     constructor(cd) {
         this.cd = cd;
         /** Input to set aria label text */
-        this.ariaLabel = "";
+        this.ariaLabel = "Date Picker";
         /** sets date-picker mode, supports: `day`, `month`, `year` */
         this.datepickerMode = "day";
         /** if false week numbers will be hidden */
@@ -32597,6 +32672,7 @@ class PopupDeprecatedComponent {
         this.logger = logger;
         this.popupContainer = popupContainer;
         this.isOpen = false;
+        this.ariaLabel = "Popup";
         this.opened = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
         this.popupSubscriptions = [];
         /**
@@ -32734,7 +32810,9 @@ PopupDeprecatedComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵ�
         let _t;
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.popupAreaContainer = _t.first);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.popupAreaContent = _t.first);
-    } }, hostAttrs: ["role", "dialog", 1, "nui-popup"], inputs: { width: "width", contextClass: "contextClass", appendToBody: "appendToBody", isOpen: "isOpen", manualOpenControl: "manualOpenControl", directionTop: "directionTop", directionRight: "directionRight", baseElementSelector: "baseElementSelector" }, outputs: { opened: "opened" }, ngContentSelectors: _c3, decls: 8, vars: 13, consts: [["nuiClickInterceptor", "", 1, "nui-popup-container"], [1, "nui-popup__content"], ["popupArea", ""], ["tabindex", "-1", 1, "nui-popup__area--container"], ["popupAreaContainer", ""]], template: function PopupDeprecatedComponent_Template(rf, ctx) { if (rf & 1) {
+    } }, hostAttrs: ["role", "dialog", 1, "nui-popup"], hostVars: 1, hostBindings: function PopupDeprecatedComponent_HostBindings(rf, ctx) { if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-label", ctx.ariaLabel);
+    } }, inputs: { width: "width", contextClass: "contextClass", appendToBody: "appendToBody", isOpen: "isOpen", manualOpenControl: "manualOpenControl", directionTop: "directionTop", directionRight: "directionRight", baseElementSelector: "baseElementSelector", ariaLabel: "ariaLabel" }, outputs: { opened: "opened" }, ngContentSelectors: _c3, decls: 8, vars: 13, consts: [["nuiClickInterceptor", "", 1, "nui-popup-container"], [1, "nui-popup__content"], ["popupArea", ""], ["tabindex", "-1", 1, "nui-popup__area--container"], ["popupAreaContainer", ""]], template: function PopupDeprecatedComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"](_c2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);

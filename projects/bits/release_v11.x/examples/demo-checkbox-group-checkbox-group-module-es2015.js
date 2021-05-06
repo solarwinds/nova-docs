@@ -199,6 +199,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _src_lib_checkbox_checkbox_group_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../src/lib/checkbox/checkbox-group.component */ "s1l0");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "ofXK");
 /* harmony import */ var _src_lib_checkbox_checkbox_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../../src/lib/checkbox/checkbox.component */ "Oh8U");
+/* harmony import */ var _checkbox_group_in_form_checkbox_group_in_form_example_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../checkbox-group-in-form/checkbox-group-in-form.example.component */ "5OyA");
+
 
 
 
@@ -206,37 +208,26 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function CheckboxGroupTestComponent_nui_checkbox_3_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-checkbox", 12);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const vegetable_r2 = ctx.$implicit;
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", vegetable_r2)("checked", ctx_r0.isChecked(vegetable_r2));
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"](" ", vegetable_r2, " ");
+} }
+function CheckboxGroupTestComponent_nui_checkbox_8_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-checkbox", 13);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const vegetable_r3 = ctx.$implicit;
-    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", vegetable_r3)("checked", ctx_r0.isChecked(vegetable_r3));
+    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", vegetable_r3)("hint", ctx_r1.hints.indexOf(vegetable_r3) >= 0 ? ctx_r1.hints[ctx_r1.hints.indexOf(vegetable_r3)] : null)("checked", ctx_r1.isChecked(vegetable_r3));
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"](" ", vegetable_r3, " ");
-} }
-function CheckboxGroupTestComponent_nui_checkbox_8_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-checkbox", 14);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const vegetable_r4 = ctx.$implicit;
-    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", vegetable_r4)("hint", ctx_r1.hints.indexOf(vegetable_r4) >= 0 ? ctx_r1.hints[ctx_r1.hints.indexOf(vegetable_r4)] : null)("checked", ctx_r1.isChecked(vegetable_r4));
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"](" ", vegetable_r4, " ");
-} }
-function CheckboxGroupTestComponent_nui_checkbox_12_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-checkbox", 15);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const vegetable_r5 = ctx.$implicit;
-    const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", vegetable_r5)("checked", ctx_r2.isChecked(vegetable_r5));
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"](" ", vegetable_r5, " ");
 } }
 class CheckboxGroupTestComponent {
     constructor(formBuilder) {
@@ -265,7 +256,7 @@ class CheckboxGroupTestComponent {
     }
 }
 CheckboxGroupTestComponent.ɵfac = function CheckboxGroupTestComponent_Factory(t) { return new (t || CheckboxGroupTestComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormBuilder"])); };
-CheckboxGroupTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: CheckboxGroupTestComponent, selectors: [["nui-checkbox-group-test-example"]], decls: 24, vars: 26, consts: [[1, "container", "d-flex"], [1, "d-flex", "flex-column", "mr-5"], ["id", "nui-demo-checkbox-group-basic", "name", "vegetable", 3, "values"], ["hint", "This is some help text", 3, "value", "checked", 4, "ngFor", "ngForOf"], ["hint", "If it's not disabled ring the alarm!", "id", "nui-demo-checkbox-group-1-disabled-checkbox", "disabled", "true", 3, "value", "checked"], [1, "d-flex", "flex-column", "mt-5"], ["id", "nui-demo-checkbox-group-justified", "name", "vegetable", 3, "values"], ["class", "nui-checkbox--justified", 3, "value", "hint", "checked", 4, "ngFor", "ngForOf"], [3, "formGroup"], ["id", "nui-demo-checkbox-group-in-form", "name", "vegetable", "formControlName", "checkboxGroup"], [3, "value", "checked", 4, "ngFor", "ngForOf"], ["id", "nui-demo-checkbox-group-in-form-disabled-checkboxes", "name", "vegetable", "formControlName", "checkboxGroup2"], [3, "value", "disabled", "checked"], ["hint", "This is some help text", 3, "value", "checked"], [1, "nui-checkbox--justified", 3, "value", "hint", "checked"], [3, "value", "checked"]], template: function CheckboxGroupTestComponent_Template(rf, ctx) { if (rf & 1) {
+CheckboxGroupTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: CheckboxGroupTestComponent, selectors: [["nui-checkbox-group-test-example"]], decls: 22, vars: 24, consts: [[1, "container", "d-flex"], [1, "d-flex", "flex-column", "mr-5"], ["id", "nui-demo-checkbox-group-basic", "name", "vegetable", 3, "values"], ["hint", "This is some help text", 3, "value", "checked", 4, "ngFor", "ngForOf"], ["hint", "If it's not disabled ring the alarm!", "id", "nui-demo-checkbox-group-1-disabled-checkbox", "disabled", "true", 3, "value", "checked"], [1, "d-flex", "flex-column", "mt-5"], ["id", "nui-demo-checkbox-group-justified", "name", "vegetable", 3, "values"], ["class", "nui-checkbox--justified", 3, "value", "hint", "checked", 4, "ngFor", "ngForOf"], [3, "formGroup"], ["id", "nui-demo-checkbox-group-in-form-disabled-checkboxes", "name", "vegetable", "formControlName", "checkboxGroup2"], [3, "value", "disabled", "checked"], ["id", "nui-demo-checkbox-group-part-of-form"], ["hint", "This is some help text", 3, "value", "checked"], [1, "nui-checkbox--justified", 3, "value", "hint", "checked"]], template: function CheckboxGroupTestComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "nui-checkbox-group", 2);
@@ -283,27 +274,23 @@ CheckboxGroupTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["�
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](9, "div", 5);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](10, "form", 8);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](11, "nui-checkbox-group", 9);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](12, CheckboxGroupTestComponent_nui_checkbox_12_Template, 2, 3, "nui-checkbox", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](12, "nui-checkbox", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](13);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](14, "nui-checkbox", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](15);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](13, "div", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](14, "form", 8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](15, "nui-checkbox-group", 11);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](16, "nui-checkbox", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](16, "nui-checkbox", 10);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](17);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](18, "nui-checkbox", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](18, "nui-checkbox", 10);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](19);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](20, "nui-checkbox", 12);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](21);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](22, "nui-checkbox", 12);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](23);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](20, "div", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](21, "nui-checkbox-group-in-form-example", 11);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     } if (rf & 2) {
@@ -318,10 +305,6 @@ CheckboxGroupTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["�
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("values", ctx.selectedVegetables);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx.vegetables);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("formGroup", ctx.testForm);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx.vegetables);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("formGroup", ctx.testForm);
@@ -341,7 +324,7 @@ CheckboxGroupTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["�
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", ctx.vegetables[3])("disabled", false)("checked", ctx.isChecked(ctx.vegetables[3]));
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"](" ", ctx.vegetables[3], "");
-    } }, directives: [_src_lib_checkbox_checkbox_group_component__WEBPACK_IMPORTED_MODULE_2__["CheckboxGroupComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgForOf"], _src_lib_checkbox_checkbox_component__WEBPACK_IMPORTED_MODULE_4__["CheckboxComponent"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormGroupDirective"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControlName"]], encapsulation: 2 });
+    } }, directives: [_src_lib_checkbox_checkbox_group_component__WEBPACK_IMPORTED_MODULE_2__["CheckboxGroupComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgForOf"], _src_lib_checkbox_checkbox_component__WEBPACK_IMPORTED_MODULE_4__["CheckboxComponent"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormGroupDirective"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControlName"], _checkbox_group_in_form_checkbox_group_in_form_example_component__WEBPACK_IMPORTED_MODULE_5__["CheckboxGroupInFormExampleComponent"]], encapsulation: 2 });
 
 
 /***/ }),
@@ -582,7 +565,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container d-flex\">\n    <div class=\"d-flex flex-column mr-5\">\n        <nui-checkbox-group id=\"nui-demo-checkbox-group-basic\"\n                            name=\"vegetable\"\n                            [values]=\"selectedVegetables\">\n            <nui-checkbox *ngFor=\"let vegetable of vegetables\"\n                          [value]=\"vegetable\"\n                          hint=\"This is some help text\"\n                          [checked]=\"isChecked(vegetable)\">\n                {{vegetable}}\n            </nui-checkbox>\n            <nui-checkbox hint=\"If it's not disabled ring the alarm!\"\n                          id=\"nui-demo-checkbox-group-1-disabled-checkbox\"\n                          [value]=\"disabledOne\"\n                          [checked]=\"!isChecked(disabledOne)\"\n                          disabled=\"true\">{{disabledOne}}</nui-checkbox>\n        </nui-checkbox-group>\n    </div>\n    <div class=\"d-flex flex-column mt-5\">\n        <nui-checkbox-group id=\"nui-demo-checkbox-group-justified\"\n                        name=\"vegetable\"\n                        [values]=\"selectedVegetables\">\n            <nui-checkbox *ngFor=\"let vegetable of vegetables\"\n                        [value]=\"vegetable\"\n                        [hint]=\"(hints.indexOf(vegetable) >=0) ? hints[hints.indexOf(vegetable)] : null\"\n                        [checked]=\"isChecked(vegetable)\"\n                        class=\"nui-checkbox--justified\">\n                {{vegetable}}\n            </nui-checkbox>\n        </nui-checkbox-group>\n    </div>\n    <div class=\"d-flex flex-column mt-5\">\n        <form [formGroup]=\"testForm\">\n            <nui-checkbox-group id=\"nui-demo-checkbox-group-in-form\"\n                            name=\"vegetable\"\n                            formControlName=\"checkboxGroup\">\n                <nui-checkbox *ngFor=\"let vegetable of vegetables\"\n                            [value]=\"vegetable\"\n                            [checked]=\"isChecked(vegetable)\">\n                    {{vegetable}}\n                </nui-checkbox>\n            </nui-checkbox-group>\n        </form>\n    </div>\n    <div class=\"d-flex flex-column mt-5\">\n        <form [formGroup]=\"testForm\">\n            <nui-checkbox-group id=\"nui-demo-checkbox-group-in-form-disabled-checkboxes\"\n                            name=\"vegetable\"\n                            formControlName=\"checkboxGroup2\">\n                <nui-checkbox [value]=\"vegetables[0]\"\n                                [disabled]=\"true\"\n                                [checked]=\"isChecked(vegetables[0])\">\n                    {{vegetables[0]}}</nui-checkbox>\n                <nui-checkbox [value]=\"vegetables[1]\"\n                                [disabled]=\"false\"\n                                [checked]=\"isChecked(vegetables[1])\">\n                    {{vegetables[1]}}</nui-checkbox>\n                <nui-checkbox [value]=\"vegetables[2]\"\n                                [disabled]=\"true\"\n                                [checked]=\"isChecked(vegetables[2])\">\n                    {{vegetables[2]}}</nui-checkbox>\n                <nui-checkbox [value]=\"vegetables[3]\"\n                                [disabled]=\"false\"\n                                [checked]=\"isChecked(vegetables[3])\">\n                    {{vegetables[3]}}</nui-checkbox>\n            </nui-checkbox-group>\n        </form>\n    </div>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container d-flex\">\n    <div class=\"d-flex flex-column mr-5\">\n        <nui-checkbox-group id=\"nui-demo-checkbox-group-basic\"\n                            name=\"vegetable\"\n                            [values]=\"selectedVegetables\">\n            <nui-checkbox *ngFor=\"let vegetable of vegetables\"\n                          [value]=\"vegetable\"\n                          hint=\"This is some help text\"\n                          [checked]=\"isChecked(vegetable)\">\n                {{vegetable}}\n            </nui-checkbox>\n            <nui-checkbox hint=\"If it's not disabled ring the alarm!\"\n                          id=\"nui-demo-checkbox-group-1-disabled-checkbox\"\n                          [value]=\"disabledOne\"\n                          [checked]=\"!isChecked(disabledOne)\"\n                          disabled=\"true\">{{disabledOne}}</nui-checkbox>\n        </nui-checkbox-group>\n    </div>\n    <div class=\"d-flex flex-column mt-5\">\n        <nui-checkbox-group id=\"nui-demo-checkbox-group-justified\"\n                        name=\"vegetable\"\n                        [values]=\"selectedVegetables\">\n            <nui-checkbox *ngFor=\"let vegetable of vegetables\"\n                        [value]=\"vegetable\"\n                        [hint]=\"(hints.indexOf(vegetable) >=0) ? hints[hints.indexOf(vegetable)] : null\"\n                        [checked]=\"isChecked(vegetable)\"\n                        class=\"nui-checkbox--justified\">\n                {{vegetable}}\n            </nui-checkbox>\n        </nui-checkbox-group>\n    </div>\n    <div class=\"d-flex flex-column mt-5\">\n        <form [formGroup]=\"testForm\">\n            <nui-checkbox-group id=\"nui-demo-checkbox-group-in-form-disabled-checkboxes\"\n                            name=\"vegetable\"\n                            formControlName=\"checkboxGroup2\">\n                <nui-checkbox [value]=\"vegetables[0]\"\n                                [disabled]=\"true\"\n                                [checked]=\"isChecked(vegetables[0])\">\n                    {{vegetables[0]}}</nui-checkbox>\n                <nui-checkbox [value]=\"vegetables[1]\"\n                                [disabled]=\"false\"\n                                [checked]=\"isChecked(vegetables[1])\">\n                    {{vegetables[1]}}</nui-checkbox>\n                <nui-checkbox [value]=\"vegetables[2]\"\n                                [disabled]=\"true\"\n                                [checked]=\"isChecked(vegetables[2])\">\n                    {{vegetables[2]}}</nui-checkbox>\n                <nui-checkbox [value]=\"vegetables[3]\"\n                                [disabled]=\"false\"\n                                [checked]=\"isChecked(vegetables[3])\">\n                    {{vegetables[3]}}</nui-checkbox>\n            </nui-checkbox-group>\n        </form>\n    </div>\n    <div class=\"d-flex flex-column mr-5\">\n        <nui-checkbox-group-in-form-example id=\"nui-demo-checkbox-group-part-of-form\"></nui-checkbox-group-in-form-example>\n    </div>\n</div>\n");
 
 /***/ }),
 
@@ -731,7 +714,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col\">\n            <h3>Basic Checkbox-Group with Hint Text</h3>\n            <nui-checkbox-group id=\"nui-demo-checkbox-group-basic\"\n                                name=\"vegetable\"\n                                [values]=\"selectedVegetables\">\n                <nui-checkbox *ngFor=\"let vegetable of vegetables\"\n                              [value]=\"vegetable\"\n                              hint=\"This is some help text\"\n                              [checked]=\"isChecked(vegetable)\">\n                    {{vegetable}}\n                </nui-checkbox>\n                <nui-checkbox hint=\"If it's not disabled ring the alarm!\"\n                                id=\"nui-demo-checkbox-group-1-disabled-checkbox\"\n                                [value]=\"disabledOne\"\n                                [checked]=\"!isChecked(disabledOne)\"\n                                disabled=\"true\">{{disabledOne}}</nui-checkbox>\n            </nui-checkbox-group>\n            <hr />\n        </div>\n        <div class=\"col\">\n            <h3>Inline Checkbox-Group</h3>\n            <nui-checkbox-group id=\"nui-demo-checkbox-group-inline\"\n                                class=\"nui-checkbox-group-inline\"\n                                [values]=\"selectedVegetables\"\n                                name=\"vegetable\">\n                <nui-checkbox *ngFor=\"let vegetable of vegetables\"\n                              [value]=\"vegetable\">\n                    {{vegetable}}\n                </nui-checkbox>\n            </nui-checkbox-group>\n            <hr />\n        </div>\n        <div class=\"w-100\"></div>\n        <div class=\"col\">\n            <h3>Justified Checkbox-Group</h3>\n            <nui-checkbox-group id=\"nui-demo-checkbox-group-justified\"\n                                name=\"vegetable\"\n                                [values]=\"selectedVegetables\">\n                <nui-checkbox *ngFor=\"let vegetable of vegetables\"\n                              [value]=\"vegetable\"\n                              [checked]=\"isChecked(vegetable)\"\n                              class=\"nui-checkbox--justified\">\n                    {{vegetable}}\n                </nui-checkbox>\n            </nui-checkbox-group>\n            <hr />\n        </div>\n        <div class=\"col\">\n            <h3>Disabled checkboxes within the form</h3>\n            <form [formGroup]=\"testForm\">\n                <nui-checkbox-group id=\"nui-demo-checkbox-group-in-form-disabled-checkboxes\"\n                                name=\"vegetable\"\n                                formControlName=\"checkboxGroup2\">\n                    <nui-checkbox [value]=\"vegetables[0]\"\n                                    [disabled]=\"true\"\n                                    [checked]=\"isChecked(vegetables[0])\">\n                        {{vegetables[0]}}</nui-checkbox>\n                    <nui-checkbox [value]=\"vegetables[1]\"\n                                    [disabled]=\"false\"\n                                    [checked]=\"isChecked(vegetables[1])\">\n                        {{vegetables[1]}}</nui-checkbox>\n                    <nui-checkbox [value]=\"vegetables[2]\"\n                                    [disabled]=\"true\"\n                                    [checked]=\"isChecked(vegetables[2])\">\n                        {{vegetables[2]}}</nui-checkbox>\n                    <nui-checkbox [value]=\"vegetables[3]\"\n                                    [disabled]=\"false\"\n                                    [checked]=\"isChecked(vegetables[3])\">\n                        {{vegetables[3]}}</nui-checkbox>\n                </nui-checkbox-group>\n            </form>\n        </div>\n    </div>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col\">\n            <h3>Basic Checkbox-Group with Hint Text</h3>\n            <nui-checkbox-group id=\"nui-demo-checkbox-group-basic\"\n                                name=\"vegetable\"\n                                [values]=\"selectedVegetables\">\n                <nui-checkbox *ngFor=\"let vegetable of vegetables\"\n                              [value]=\"vegetable\"\n                              hint=\"This is some help text\"\n                              [checked]=\"isChecked(vegetable)\">\n                    {{vegetable}}\n                </nui-checkbox>\n                <nui-checkbox hint=\"If it's not disabled ring the alarm!\"\n                                id=\"nui-demo-checkbox-group-1-disabled-checkbox\"\n                                [value]=\"disabledOne\"\n                                [checked]=\"!isChecked(disabledOne)\"\n                                disabled=\"true\">{{disabledOne}}</nui-checkbox>\n            </nui-checkbox-group>\n            <hr />\n        </div>\n        <div class=\"col\">\n            <h3>Inline Checkbox-Group</h3>\n            <nui-checkbox-group id=\"nui-demo-checkbox-group-inline\"\n                                class=\"nui-checkbox-group-inline\"\n                                [values]=\"selectedVegetables\"\n                                name=\"vegetable\">\n                <nui-checkbox *ngFor=\"let vegetable of vegetables\"\n                              [value]=\"vegetable\">\n                    {{vegetable}}\n                </nui-checkbox>\n            </nui-checkbox-group>\n            <hr />\n        </div>\n        <div class=\"w-100\"></div>\n        <div class=\"col\">\n            <h3>Justified Checkbox-Group</h3>\n            <nui-checkbox-group id=\"nui-demo-checkbox-group-justified\"\n                                name=\"vegetable\"\n                                [values]=\"selectedVegetables\">\n                <nui-checkbox *ngFor=\"let vegetable of vegetables\"\n                              [value]=\"vegetable\"\n                              [checked]=\"isChecked(vegetable)\"\n                              class=\"nui-checkbox--justified\">\n                    {{vegetable}}\n                </nui-checkbox>\n            </nui-checkbox-group>\n            <hr />\n        </div>\n        <div class=\"col\">\n            <h3>Disabled checkboxes within the form</h3>\n            <form [formGroup]=\"testForm\">\n                <nui-checkbox-group id=\"nui-demo-checkbox-group-in-form-disabled-checkboxes\"\n                                name=\"vegetable\"\n                                formControlName=\"enabledCheckboxGroup\">\n                    <nui-checkbox [value]=\"vegetables[0]\"\n                                    [disabled]=\"true\"\n                                    [checked]=\"isChecked(vegetables[0])\">\n                        {{vegetables[0]}}</nui-checkbox>\n                    <nui-checkbox [value]=\"vegetables[1]\"\n                                    [disabled]=\"false\"\n                                    [checked]=\"isChecked(vegetables[1])\">\n                        {{vegetables[1]}}</nui-checkbox>\n                    <nui-checkbox [value]=\"vegetables[2]\"\n                                    [disabled]=\"true\"\n                                    [checked]=\"isChecked(vegetables[2])\">\n                        {{vegetables[2]}}</nui-checkbox>\n                    <nui-checkbox [value]=\"vegetables[3]\"\n                                    [disabled]=\"false\"\n                                    [checked]=\"isChecked(vegetables[3])\">\n                        {{vegetables[3]}}</nui-checkbox>\n                </nui-checkbox-group>\n            </form>\n        </div>\n    </div>\n    <div class=\"d-flex flex-column mt-5\">\n        <h3>Disabled checkboxes within the disabled form</h3>\n        <form [formGroup]=\"testForm\">\n            <nui-checkbox-group id=\"nui-demo-checkbox-group-in-form\"\n                            name=\"vegetable\"\n                            formControlName=\"disabledCheckboxGroup\">\n                <nui-checkbox *ngFor=\"let vegetable of vegetables\"\n                            [value]=\"vegetable\"\n                            [checked]=\"isChecked(vegetable)\">\n                    {{vegetable}}\n                </nui-checkbox>\n            </nui-checkbox-group>\n        </form>\n    </div>\n</div>\n");
 
 /***/ }),
 
@@ -757,36 +740,47 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function CheckboxGroupVisualTestComponent_nui_checkbox_6_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-checkbox", 14);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const vegetable_r3 = ctx.$implicit;
-    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", vegetable_r3)("checked", ctx_r0.isChecked(vegetable_r3));
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"](" ", vegetable_r3, " ");
-} }
-function CheckboxGroupVisualTestComponent_nui_checkbox_14_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-checkbox", 15);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-checkbox", 17);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const vegetable_r4 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", vegetable_r4);
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", vegetable_r4)("checked", ctx_r0.isChecked(vegetable_r4));
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"](" ", vegetable_r4, " ");
 } }
-function CheckboxGroupVisualTestComponent_nui_checkbox_21_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-checkbox", 16);
+function CheckboxGroupVisualTestComponent_nui_checkbox_14_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-checkbox", 18);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const vegetable_r5 = ctx.$implicit;
-    const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", vegetable_r5)("checked", ctx_r2.isChecked(vegetable_r5));
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", vegetable_r5);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"](" ", vegetable_r5, " ");
+} }
+function CheckboxGroupVisualTestComponent_nui_checkbox_21_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-checkbox", 19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const vegetable_r6 = ctx.$implicit;
+    const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", vegetable_r6)("checked", ctx_r2.isChecked(vegetable_r6));
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"](" ", vegetable_r6, " ");
+} }
+function CheckboxGroupVisualTestComponent_nui_checkbox_41_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-checkbox", 20);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const vegetable_r7 = ctx.$implicit;
+    const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", vegetable_r7)("checked", ctx_r3.isChecked(vegetable_r7));
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"](" ", vegetable_r7, " ");
 } }
 class CheckboxGroupVisualTestComponent {
     constructor(formBuilder) {
@@ -814,7 +808,7 @@ class CheckboxGroupVisualTestComponent {
     }
 }
 CheckboxGroupVisualTestComponent.ɵfac = function CheckboxGroupVisualTestComponent_Factory(t) { return new (t || CheckboxGroupVisualTestComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormBuilder"])); };
-CheckboxGroupVisualTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: CheckboxGroupVisualTestComponent, selectors: [["nui-checkbox-group-visual-test"]], decls: 36, vars: 26, consts: [[1, "container"], [1, "row"], [1, "col"], ["id", "nui-demo-checkbox-group-basic", "name", "vegetable", 3, "values"], ["hint", "This is some help text", 3, "value", "checked", 4, "ngFor", "ngForOf"], ["hint", "If it's not disabled ring the alarm!", "id", "nui-demo-checkbox-group-1-disabled-checkbox", "disabled", "true", 3, "value", "checked"], ["id", "nui-demo-checkbox-group-inline", "name", "vegetable", 1, "nui-checkbox-group-inline", 3, "values"], [3, "value", 4, "ngFor", "ngForOf"], [1, "w-100"], ["id", "nui-demo-checkbox-group-justified", "name", "vegetable", 3, "values"], ["class", "nui-checkbox--justified", 3, "value", "checked", 4, "ngFor", "ngForOf"], [3, "formGroup"], ["id", "nui-demo-checkbox-group-in-form-disabled-checkboxes", "name", "vegetable", "formControlName", "checkboxGroup2"], [3, "value", "disabled", "checked"], ["hint", "This is some help text", 3, "value", "checked"], [3, "value"], [1, "nui-checkbox--justified", 3, "value", "checked"]], template: function CheckboxGroupVisualTestComponent_Template(rf, ctx) { if (rf & 1) {
+CheckboxGroupVisualTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: CheckboxGroupVisualTestComponent, selectors: [["nui-checkbox-group-visual-test"]], decls: 42, vars: 28, consts: [[1, "container"], [1, "row"], [1, "col"], ["id", "nui-demo-checkbox-group-basic", "name", "vegetable", 3, "values"], ["hint", "This is some help text", 3, "value", "checked", 4, "ngFor", "ngForOf"], ["hint", "If it's not disabled ring the alarm!", "id", "nui-demo-checkbox-group-1-disabled-checkbox", "disabled", "true", 3, "value", "checked"], ["id", "nui-demo-checkbox-group-inline", "name", "vegetable", 1, "nui-checkbox-group-inline", 3, "values"], [3, "value", 4, "ngFor", "ngForOf"], [1, "w-100"], ["id", "nui-demo-checkbox-group-justified", "name", "vegetable", 3, "values"], ["class", "nui-checkbox--justified", 3, "value", "checked", 4, "ngFor", "ngForOf"], [3, "formGroup"], ["id", "nui-demo-checkbox-group-in-form-disabled-checkboxes", "name", "vegetable", "formControlName", "enabledCheckboxGroup"], [3, "value", "disabled", "checked"], [1, "d-flex", "flex-column", "mt-5"], ["id", "nui-demo-checkbox-group-in-form", "name", "vegetable", "formControlName", "disabledCheckboxGroup"], [3, "value", "checked", 4, "ngFor", "ngForOf"], ["hint", "This is some help text", 3, "value", "checked"], [3, "value"], [1, "nui-checkbox--justified", 3, "value", "checked"], [3, "value", "checked"]], template: function CheckboxGroupVisualTestComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "div", 2);
@@ -870,6 +864,16 @@ CheckboxGroupVisualTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](36, "div", 14);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](37, "h3");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](38, "Disabled checkboxes within the disabled form");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](39, "form", 11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](40, "nui-checkbox-group", 15);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](41, CheckboxGroupVisualTestComponent_nui_checkbox_41_Template, 2, 3, "nui-checkbox", 16);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](5);
@@ -906,6 +910,10 @@ CheckboxGroupVisualTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", ctx.vegetables[3])("disabled", false)("checked", ctx.isChecked(ctx.vegetables[3]));
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"](" ", ctx.vegetables[3], "");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("formGroup", ctx.testForm);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx.vegetables);
     } }, directives: [_src_lib_checkbox_checkbox_group_component__WEBPACK_IMPORTED_MODULE_2__["CheckboxGroupComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgForOf"], _src_lib_checkbox_checkbox_component__WEBPACK_IMPORTED_MODULE_4__["CheckboxComponent"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormGroupDirective"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControlName"]], encapsulation: 2 });
 
 

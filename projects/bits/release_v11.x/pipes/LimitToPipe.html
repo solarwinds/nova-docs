@@ -201,12 +201,12 @@ import take from &quot;lodash/take&quot;;
  *
  */
 @Pipe({
-  name: &quot;limitTo&quot;,
+    name: &quot;limitTo&quot;,
 })
 export class LimitToPipe implements PipeTransform {
-  transform(collection: any[], limitTo: number): any[] {
-    return take(collection, limitTo);
-  }
+    transform(collection: any[], limitTo: number): any[] {
+        return take(collection, limitTo);
+    }
 }
 </code></pre>
     </div>

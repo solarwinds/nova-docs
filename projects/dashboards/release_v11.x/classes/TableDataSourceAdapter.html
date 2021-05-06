@@ -463,7 +463,7 @@ export class TableDataSourceAdapter&lt;T extends IFilteringOutputs&gt; extends D
 
     constructor(@Inject(PIZZAGNA_EVENT_BUS) eventBus: EventBus&lt;IEvent&gt;,
                 @Inject(DATA_SOURCE) dataSource: IDataSource,
-                pizzagnaService: PizzagnaService,
+                                            pizzagnaService: PizzagnaService,
                 @Optional() protected virtualViewport: VirtualViewportManager) {
         super(eventBus, dataSource, pizzagnaService);
     }

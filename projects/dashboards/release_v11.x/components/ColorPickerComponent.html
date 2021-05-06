@@ -1092,23 +1092,23 @@ const CONTAINER_SIDE_PADDINGS_PX: number &#x3D; 20;
 const BOX_WIDTH_PX: number &#x3D; 30;
 
 @Component({
-  selector: &quot;nui-color-picker&quot;,
-  templateUrl: &quot;./color-picker.component.html&quot;,
-  styleUrls: [&quot;./color-picker.component.less&quot;],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [
-    {
-        provide: NuiFormFieldControl,
-        useExisting: forwardRef(() &#x3D;&gt; ColorPickerComponent),
-        multi: true,
-    },
-    {
-        provide: NG_VALUE_ACCESSOR,
-        useExisting: forwardRef(() &#x3D;&gt; ColorPickerComponent),
-        multi: true,
-    },
-    ColorService,
-],
+    selector: &quot;nui-color-picker&quot;,
+    templateUrl: &quot;./color-picker.component.html&quot;,
+    styleUrls: [&quot;./color-picker.component.less&quot;],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    providers: [
+        {
+            provide: NuiFormFieldControl,
+            useExisting: forwardRef(() &#x3D;&gt; ColorPickerComponent),
+            multi: true,
+        },
+        {
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: forwardRef(() &#x3D;&gt; ColorPickerComponent),
+            multi: true,
+        },
+        ColorService,
+    ],
 })
 export class ColorPickerComponent implements NuiFormFieldControl, ControlValueAccessor, OnChanges, AfterViewInit, OnDestroy {
     @Input() colors: string[];

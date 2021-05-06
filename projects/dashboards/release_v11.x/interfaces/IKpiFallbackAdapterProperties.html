@@ -164,7 +164,7 @@ export class KpiStatusContentFallbackAdapter extends StatusContentFallbackAdapte
     private errorMap: Record&lt;string, string&gt; &#x3D; {};
 
     constructor(@Inject(PIZZAGNA_EVENT_BUS) eventBus: EventBus&lt;IEvent&gt;,
-                pizzagnaService: PizzagnaService) {
+                                            pizzagnaService: PizzagnaService) {
         super(eventBus, pizzagnaService);
 
         this.eventBus.getStream(DATA_SOURCE_DESTROYED)

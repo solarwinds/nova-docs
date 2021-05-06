@@ -66,7 +66,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import {Component} from \"@angular/core\";\n\n@Component({\n  selector: \"dnd-basic\",\n  templateUrl: \"./dnd-basic.example.component.html\",\n  styleUrls: [\"./dnd-basic.example.component.less\"],\n})\nexport class DndBasicExampleComponent {\n}\n\n";
+      __webpack_exports__["default"] = "import {Component} from \"@angular/core\";\n\n@Component({\n    selector: \"dnd-basic\",\n    templateUrl: \"./dnd-basic.example.component.html\",\n    styleUrls: [\"./dnd-basic.example.component.less\"],\n})\nexport class DndBasicExampleComponent {\n}\n\n";
       /***/
     },
 
@@ -86,7 +86,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import {Component} from \"@angular/core\";\n\n@Component({\n  selector: \"nui-dnd-docs\",\n  templateUrl: \"./dnd-docs.example.component.html\",\n})\nexport class DndDocsExampleComponent {\n    public initialSetupCode = `\n// our module where we want to use drag-and-drop features\nimport { DragDropModule } from \"@angular/cdk/drag-drop\";\n\n@NgModule({\n    imports: [\n        DragDropModule,\n        // other modules that we might need\n    ],\n    declarations: [ /* our module declaration */],\n    exports:      [ /* our exports */ ],\n})\nexport class MyModule {}`\n        .replace(\"\\r\\n\", \"<br/>\") // nice rendering\n    ;\n\n    public hideHandleWhileDragging = `\n.dnd-drag-preview .drag-handle {\n    display: none;\n}\n    `;\n}\n";
+      __webpack_exports__["default"] = "import {Component} from \"@angular/core\";\n\n@Component({\n    selector: \"nui-dnd-docs\",\n    templateUrl: \"./dnd-docs.example.component.html\",\n})\nexport class DndDocsExampleComponent {\n    public initialSetupCode = `\n// our module where we want to use drag-and-drop features\nimport { DragDropModule } from \"@angular/cdk/drag-drop\";\n\n@NgModule({\n    imports: [\n        DragDropModule,\n        // other modules that we might need\n    ],\n    declarations: [ /* our module declaration */],\n    exports:      [ /* our exports */ ],\n})\nexport class MyModule {}`\n        .replace(\"\\r\\n\", \"<br/>\") // nice rendering\n    ;\n\n    public hideHandleWhileDragging = `\n.dnd-drag-preview .drag-handle {\n    display: none;\n}\n    `;\n}\n";
       /***/
     },
 
@@ -106,7 +106,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import {Component} from \"@angular/core\";\n\n@Component({\n  selector: \"dnd-axis-constraints\",\n  templateUrl: \"./dnd-axis-constraints.example.component.html\",\n  styleUrls: [\"./dnd-axis-constraints.example.component.less\"],\n})\nexport class DndAxisConstraintsExampleComponent {\n}\n\n";
+      __webpack_exports__["default"] = "import {Component} from \"@angular/core\";\n\n@Component({\n    selector: \"dnd-axis-constraints\",\n    templateUrl: \"./dnd-axis-constraints.example.component.html\",\n    styleUrls: [\"./dnd-axis-constraints.example.component.less\"],\n})\nexport class DndAxisConstraintsExampleComponent {\n}\n\n";
       /***/
     },
 
@@ -271,7 +271,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import {CdkDragDrop, moveItemInArray} from \"@angular/cdk/drag-drop\";\nimport {Component} from \"@angular/core\";\n\n@Component({\n  selector: \"dnd-drag-placeholder\",\n  templateUrl: \"./dnd-drag-placeholder-example.component.html\",\n  styleUrls: [\"./dnd-drag-placeholder-example.component.less\"],\n})\nexport class DndDragPlaceholderExampleComponent {\n    public listItems: string[] = [\"Adobe\", \"IBM\", \"Dell\" ];\n\n    public onItemDropped(event: CdkDragDrop<string[]>) {\n        moveItemInArray(this.listItems, event.previousIndex, event.currentIndex);\n    }\n}\n";
+      __webpack_exports__["default"] = "import {CdkDragDrop, moveItemInArray} from \"@angular/cdk/drag-drop\";\nimport {Component} from \"@angular/core\";\n\n@Component({\n    selector: \"dnd-drag-placeholder\",\n    templateUrl: \"./dnd-drag-placeholder-example.component.html\",\n    styleUrls: [\"./dnd-drag-placeholder-example.component.less\"],\n})\nexport class DndDragPlaceholderExampleComponent {\n    public listItems: string[] = [\"Adobe\", \"IBM\", \"Dell\" ];\n\n    public onItemDropped(event: CdkDragDrop<string[]>) {\n        moveItemInArray(this.listItems, event.previousIndex, event.currentIndex);\n    }\n}\n";
       /***/
     },
 
@@ -331,7 +331,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import {CdkDragDrop, moveItemInArray} from \"@angular/cdk/drag-drop\";\nimport {Component} from \"@angular/core\";\n\nclass IListItem  {\n    title: string;\n    enabled: boolean;\n}\n\n@Component({\n  selector: \"dnd-drag-disabled\",\n  templateUrl: \"./dnd-drag-disabled-example.component.html\",\n  styleUrls: [\"./dnd-drag-disabled-example.component.less\"],\n})\nexport class DndDragDisabledExampleComponent {\n    public listItems: IListItem[] = [\n        {\n            title: \"Adobe\",\n            enabled: true,\n        },\n        {\n            title: \"IBM\",\n            enabled: false,\n        },\n    ];\n\n    public onItemDropped(event: CdkDragDrop<IListItem[]>) {\n        moveItemInArray(this.listItems, event.previousIndex, event.currentIndex);\n    }\n\n    public translatedStatus(enabled: boolean) {\n        return enabled ? $localize `Enabled` : $localize `Disabled`;\n    }\n}\n";
+      __webpack_exports__["default"] = "import {CdkDragDrop, moveItemInArray} from \"@angular/cdk/drag-drop\";\nimport {Component} from \"@angular/core\";\n\nclass IListItem  {\n    title: string;\n    enabled: boolean;\n}\n\n@Component({\n    selector: \"dnd-drag-disabled\",\n    templateUrl: \"./dnd-drag-disabled-example.component.html\",\n    styleUrls: [\"./dnd-drag-disabled-example.component.less\"],\n})\nexport class DndDragDisabledExampleComponent {\n    public listItems: IListItem[] = [\n        {\n            title: \"Adobe\",\n            enabled: true,\n        },\n        {\n            title: \"IBM\",\n            enabled: false,\n        },\n    ];\n\n    public onItemDropped(event: CdkDragDrop<IListItem[]>) {\n        moveItemInArray(this.listItems, event.previousIndex, event.currentIndex);\n    }\n\n    public translatedStatus(enabled: boolean) {\n        return enabled ? $localize `Enabled` : $localize `Disabled`;\n    }\n}\n";
       /***/
     },
 
@@ -411,7 +411,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import {CdkDragDrop, moveItemInArray} from \"@angular/cdk/drag-drop\";\nimport {Component} from \"@angular/core\";\nimport {IRepeatItem} from \"@nova-ui/bits\";\n\ninterface IListItem extends IRepeatItem {\n    title: string;\n    preview: string;\n}\n\n@Component({\n  selector: \"dnd-drag-preview\",\n  templateUrl: \"./dnd-drag-preview.example.component.html\",\n  styleUrls: [\"./dnd-drag-preview.example.component.less\"],\n})\nexport class DndDragPreviewExampleComponent {\n    public listItems: IListItem[] = [\n        {\n            title: \"Adobe\",\n            preview: \"https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Adobe_Systems_logo_and_wordmark.svg/524px-Adobe_Systems_logo_and_wordmark.svg.png\",\n        },\n        {\n            title: \"IBM\",\n            preview: \"https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/800px-IBM_logo.svg.png\",\n        },\n        {\n            title: \"Dell\",\n            preview: \"https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Dell_Logo.svg/300px-Dell_Logo.svg.png\",\n        },\n    ];\n\n    public onItemDropped(event: CdkDragDrop<IListItem[]>) {\n        moveItemInArray(this.listItems, event.previousIndex, event.currentIndex);\n    }\n}\n";
+      __webpack_exports__["default"] = "import {CdkDragDrop, moveItemInArray} from \"@angular/cdk/drag-drop\";\nimport {Component} from \"@angular/core\";\nimport {IRepeatItem} from \"@nova-ui/bits\";\n\ninterface IListItem extends IRepeatItem {\n    title: string;\n    preview: string;\n}\n\n@Component({\n    selector: \"dnd-drag-preview\",\n    templateUrl: \"./dnd-drag-preview.example.component.html\",\n    styleUrls: [\"./dnd-drag-preview.example.component.less\"],\n})\nexport class DndDragPreviewExampleComponent {\n    public listItems: IListItem[] = [\n        {\n            title: \"Adobe\",\n            preview: \"https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Adobe_Systems_logo_and_wordmark.svg/524px-Adobe_Systems_logo_and_wordmark.svg.png\",\n        },\n        {\n            title: \"IBM\",\n            preview: \"https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/800px-IBM_logo.svg.png\",\n        },\n        {\n            title: \"Dell\",\n            preview: \"https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Dell_Logo.svg/300px-Dell_Logo.svg.png\",\n        },\n    ];\n\n    public onItemDropped(event: CdkDragDrop<IListItem[]>) {\n        moveItemInArray(this.listItems, event.previousIndex, event.currentIndex);\n    }\n}\n";
       /***/
     },
 
@@ -1129,7 +1129,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import {CdkDragDrop, moveItemInArray} from \"@angular/cdk/drag-drop\";\nimport { Component} from \"@angular/core\";\n\nclass IListItem {\n    title: string;\n    enabled?: boolean;\n    hasHandle?: boolean;\n}\n\n@Component({\n  selector: \"dnd-custom-handle\",\n  templateUrl: \"./dnd-custom-handle.example.component.html\",\n  styleUrls: [\"./dnd-custom-handle.example.component.less\"],\n})\nexport class DndCustomHandleExampleComponent {\n    public mousedOver: boolean[] = [];\n    public listItems: IListItem[] = [\n        {\n            title: \"I can only be dragged using the handle\",\n            enabled: true,\n            hasHandle: true,\n        },\n        {\n            title: \" I can be dragged without any handle\",\n            enabled: true,\n            hasHandle: false,\n        },\n        {\n            title: \"Disabled item CAN'T be dragged\",\n            enabled: false,\n        },\n    ];\n\n    public onItemDropped(event: CdkDragDrop<IListItem[]>) {\n        moveItemInArray(this.listItems, event.previousIndex, event.currentIndex);\n    }\n}\n";
+      __webpack_exports__["default"] = "import {CdkDragDrop, moveItemInArray} from \"@angular/cdk/drag-drop\";\nimport { Component} from \"@angular/core\";\n\nclass IListItem {\n    title: string;\n    enabled?: boolean;\n    hasHandle?: boolean;\n}\n\n@Component({\n    selector: \"dnd-custom-handle\",\n    templateUrl: \"./dnd-custom-handle.example.component.html\",\n    styleUrls: [\"./dnd-custom-handle.example.component.less\"],\n})\nexport class DndCustomHandleExampleComponent {\n    public mousedOver: boolean[] = [];\n    public listItems: IListItem[] = [\n        {\n            title: \"I can only be dragged using the handle\",\n            enabled: true,\n            hasHandle: true,\n        },\n        {\n            title: \" I can be dragged without any handle\",\n            enabled: true,\n            hasHandle: false,\n        },\n        {\n            title: \"Disabled item CAN'T be dragged\",\n            enabled: false,\n        },\n    ];\n\n    public onItemDropped(event: CdkDragDrop<IListItem[]>) {\n        moveItemInArray(this.listItems, event.previousIndex, event.currentIndex);\n    }\n}\n";
       /***/
     },
 

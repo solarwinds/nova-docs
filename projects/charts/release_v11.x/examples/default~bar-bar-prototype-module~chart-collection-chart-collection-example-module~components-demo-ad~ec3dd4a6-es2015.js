@@ -11402,21 +11402,22 @@ class GaugeUtil {
         var _a, _b;
         gaugeConfig.value = (_a = gaugeConfig.value) !== null && _a !== void 0 ? _a : 0;
         gaugeConfig.max = (_b = gaugeConfig.max) !== null && _b !== void 0 ? _b : 0;
+        const clampedConfig = GaugeUtil.clampValueToMax(gaugeConfig);
         const updatedSeriesSet = seriesSet.map((series) => {
             if (series.id === _constants__WEBPACK_IMPORTED_MODULE_13__["GAUGE_QUANTITY_SERIES_ID"]) {
                 if (series.accessors.data) {
-                    series.accessors.data.color = gaugeConfig.quantityColorAccessor || GaugeUtil.createDefaultQuantityColorAccessor(gaugeConfig.thresholds);
+                    series.accessors.data.color = clampedConfig.quantityColorAccessor || GaugeUtil.createDefaultQuantityColorAccessor(clampedConfig.thresholds);
                 }
-                return Object.assign(Object.assign({}, series), { data: [{ category: GaugeUtil.DATA_CATEGORY, value: gaugeConfig.value }] });
+                return Object.assign(Object.assign({}, series), { data: [{ category: GaugeUtil.DATA_CATEGORY, value: clampedConfig.value }] });
             }
             if (series.id === _constants__WEBPACK_IMPORTED_MODULE_13__["GAUGE_REMAINDER_SERIES_ID"]) {
                 if (series.accessors.data) {
-                    series.accessors.data.color = gaugeConfig.remainderColorAccessor || (() => (_constants__WEBPACK_IMPORTED_MODULE_13__["StandardGaugeColor"].Remainder));
+                    series.accessors.data.color = clampedConfig.remainderColorAccessor || (() => (_constants__WEBPACK_IMPORTED_MODULE_13__["StandardGaugeColor"].Remainder));
                 }
-                return Object.assign(Object.assign({}, series), { data: [{ category: GaugeUtil.DATA_CATEGORY, value: gaugeConfig.max - gaugeConfig.value }] });
+                return Object.assign(Object.assign({}, series), { data: [{ category: GaugeUtil.DATA_CATEGORY, value: clampedConfig.max - clampedConfig.value }] });
             }
             if (series.id === _constants__WEBPACK_IMPORTED_MODULE_13__["GAUGE_THRESHOLD_MARKERS_SERIES_ID"]) {
-                return Object.assign(Object.assign({}, series), GaugeUtil.generateThresholdData(gaugeConfig));
+                return Object.assign(Object.assign({}, series), GaugeUtil.generateThresholdData(clampedConfig));
             }
             return series;
         });
@@ -11507,9 +11508,9 @@ class GaugeUtil {
      * Convenience function for creating a standard gauge quantity color accessor in which low values are considered good
      * and high values are considered bad. It provides standard colors for Ok, Warning, and Critical statuses.
      *
-     * @param thresholds An array of threshold values
+     * @param thresholds An optional array of threshold values
      *
-     * @returns {DataAccessor} An accessor for determining the color to use based on the series id and/or data value
+     * @returns {DataAccessor} An accessor for determining the color to use for the quantity visualization
      */
     static createDefaultQuantityColorAccessor(thresholds) {
         // assigning to variable to prevent "Lambda not supported" error
@@ -11559,10 +11560,11 @@ class GaugeUtil {
      * @returns {Partial<IDataSeries<IAccessors>>[]} Data in the form needed by the gauge visualization
      */
     static generateGaugeData(gaugeConfig) {
+        const clampedConfig = GaugeUtil.clampValueToMax(gaugeConfig);
         return [
             // category property is used for unifying the linear-style gauge visualization into a single bar stack
-            { id: _constants__WEBPACK_IMPORTED_MODULE_13__["GAUGE_QUANTITY_SERIES_ID"], data: [{ category: GaugeUtil.DATA_CATEGORY, value: gaugeConfig.value }] },
-            { id: _constants__WEBPACK_IMPORTED_MODULE_13__["GAUGE_REMAINDER_SERIES_ID"], data: [{ category: GaugeUtil.DATA_CATEGORY, value: gaugeConfig.max - gaugeConfig.value }] },
+            { id: _constants__WEBPACK_IMPORTED_MODULE_13__["GAUGE_QUANTITY_SERIES_ID"], data: [{ category: GaugeUtil.DATA_CATEGORY, value: clampedConfig.value }] },
+            { id: _constants__WEBPACK_IMPORTED_MODULE_13__["GAUGE_REMAINDER_SERIES_ID"], data: [{ category: GaugeUtil.DATA_CATEGORY, value: clampedConfig.max - clampedConfig.value }] },
         ];
     }
     /**
@@ -11586,6 +11588,14 @@ class GaugeUtil {
             // tack the max value onto the end (used for donut arc calculation)
             data: [...markerValues, { category: GaugeUtil.DATA_CATEGORY, value: gaugeConfig.max, hit: false }],
         };
+    }
+    static clampValueToMax(gaugeConfig) {
+        let value = gaugeConfig.value;
+        if (gaugeConfig.value > gaugeConfig.max) {
+            console.warn(`Configured gauge value ${gaugeConfig.value} is larger than configured max ${gaugeConfig.max}. Clamping value to ${gaugeConfig.max}.`);
+            value = gaugeConfig.max;
+        }
+        return Object.assign(Object.assign({}, gaugeConfig), { value });
     }
 }
 /** Value used for unifying the linear-style gauge visualization into a single bar stack */
@@ -28220,14 +28230,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LegendSeriesComponent", function() { return LegendSeriesComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
 /* harmony import */ var _raw_loader_legend_series_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./legend-series.component.html */ "eA7p");
-/* harmony import */ var _legend_series_component_less__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./legend-series.component.less */ "sdkI");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var lodash_isEmpty__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! lodash/isEmpty */ "E+oP");
-/* harmony import */ var lodash_isEmpty__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(lodash_isEmpty__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _renderers_types__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../renderers/types */ "AbRU");
-/* harmony import */ var _legend_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../legend.component */ "QpXW");
-/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../types */ "srsU");
-
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var lodash_isEmpty__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lodash/isEmpty */ "E+oP");
+/* harmony import */ var lodash_isEmpty__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(lodash_isEmpty__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _renderers_types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../renderers/types */ "AbRU");
+/* harmony import */ var _legend_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../legend.component */ "QpXW");
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../types */ "srsU");
 
 
 
@@ -28247,7 +28255,7 @@ let LegendSeriesComponent = class LegendSeriesComponent {
         /**
          * Emits an event with a boolean value indicating a new selected status
          */
-        this.isSelectedChange = new _angular_core__WEBPACK_IMPORTED_MODULE_3__["EventEmitter"]();
+        this.isSelectedChange = new _angular_core__WEBPACK_IMPORTED_MODULE_2__["EventEmitter"]();
         this.isHorizontalClassApplied = false;
         this._active = false;
         this._interactive = false;
@@ -28283,13 +28291,13 @@ let LegendSeriesComponent = class LegendSeriesComponent {
         this._seriesRenderState = renderState;
     }
     get seriesRenderState() {
-        return this._seriesRenderState || _renderers_types__WEBPACK_IMPORTED_MODULE_5__["RenderState"].default;
+        return this._seriesRenderState || _renderers_types__WEBPACK_IMPORTED_MODULE_4__["RenderState"].default;
     }
     get isInteractiveClassApplied() {
         return this._interactive;
     }
     get isActiveClassApplied() {
-        return this._active && this.seriesRenderState !== _renderers_types__WEBPACK_IMPORTED_MODULE_5__["RenderState"].hidden;
+        return this._active && this.seriesRenderState !== _renderers_types__WEBPACK_IMPORTED_MODULE_4__["RenderState"].hidden;
     }
     ngAfterContentInit() {
         if (this.legend) {
@@ -28297,7 +28305,7 @@ let LegendSeriesComponent = class LegendSeriesComponent {
             this.icon = this.icon || this.legend.seriesIcon;
             this._active = this.legend.active;
             this.interactive = this.legend.interactive;
-            this.isHorizontalClassApplied = this.legend.orientation === _types__WEBPACK_IMPORTED_MODULE_7__["LegendOrientation"].horizontal;
+            this.isHorizontalClassApplied = this.legend.orientation === _types__WEBPACK_IMPORTED_MODULE_6__["LegendOrientation"].horizontal;
         }
     }
     /**
@@ -28312,7 +28320,7 @@ let LegendSeriesComponent = class LegendSeriesComponent {
      * @returns boolean indicating whether the series has a primary or secondary description
      */
     hasInputDescription() {
-        return !lodash_isEmpty__WEBPACK_IMPORTED_MODULE_4___default()(this.descriptionPrimary) || !lodash_isEmpty__WEBPACK_IMPORTED_MODULE_4___default()(this.descriptionSecondary);
+        return !lodash_isEmpty__WEBPACK_IMPORTED_MODULE_3___default()(this.descriptionPrimary) || !lodash_isEmpty__WEBPACK_IMPORTED_MODULE_3___default()(this.descriptionSecondary);
     }
     /**
      * @returns boolean indicating whether the series has a projected description
@@ -28322,35 +28330,33 @@ let LegendSeriesComponent = class LegendSeriesComponent {
     }
 };
 LegendSeriesComponent.ctorParameters = () => [
-    { type: _legend_component__WEBPACK_IMPORTED_MODULE_6__["LegendComponent"], decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Optional"] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Host"] }] }
+    { type: _legend_component__WEBPACK_IMPORTED_MODULE_5__["LegendComponent"], decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Optional"] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Host"] }] }
 ];
 LegendSeriesComponent.propDecorators = {
-    active: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }],
-    interactive: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }],
-    isSelected: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }],
-    isSelectedChange: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Output"] }],
-    descriptionPrimary: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }],
-    descriptionSecondary: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }],
-    icon: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }],
-    color: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }],
-    seriesRenderState: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }],
-    projectedDescription: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ViewChild"], args: ["projectedDescription",] }],
-    isInteractiveClassApplied: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["HostBinding"], args: [`class.${LEGEND_SERIES_CLASS_NAME}--interactive`,] }],
-    isHorizontalClassApplied: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["HostBinding"], args: [`class.${LEGEND_SERIES_CLASS_NAME}--horizontal`,] }],
-    isActiveClassApplied: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["HostBinding"], args: [`class.inverse`,] }],
-    onClick: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["HostListener"], args: ["click",] }]
+    active: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"] }],
+    interactive: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"] }],
+    isSelected: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"] }],
+    isSelectedChange: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Output"] }],
+    descriptionPrimary: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"] }],
+    descriptionSecondary: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"] }],
+    icon: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"] }],
+    color: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"] }],
+    seriesRenderState: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"] }],
+    projectedDescription: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["ViewChild"], args: ["projectedDescription",] }],
+    isInteractiveClassApplied: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["HostBinding"], args: [`class.${LEGEND_SERIES_CLASS_NAME}--interactive`,] }],
+    isHorizontalClassApplied: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["HostBinding"], args: [`class.${LEGEND_SERIES_CLASS_NAME}--horizontal`,] }],
+    isActiveClassApplied: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["HostBinding"], args: [`class.inverse`,] }],
+    onClick: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["HostListener"], args: ["click",] }]
 };
 LegendSeriesComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
         // eslint-disable-next-line
         host: { "class": LEGEND_SERIES_CLASS_NAME },
         selector: "nui-legend-series",
         template: _raw_loader_legend_series_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
-        encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ViewEncapsulation"].Emulated,
-        changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ChangeDetectionStrategy"].OnPush,
-        styles: [_legend_series_component_less__WEBPACK_IMPORTED_MODULE_2__["default"]]
+        changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_2__["ChangeDetectionStrategy"].OnPush,
     }),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_legend_component__WEBPACK_IMPORTED_MODULE_6__["LegendComponent"]])
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_legend_component__WEBPACK_IMPORTED_MODULE_5__["LegendComponent"]])
 ], LegendSeriesComponent);
 
 
@@ -28882,19 +28888,6 @@ var map = Array.prototype.map,
   };
 });
 
-
-/***/ }),
-
-/***/ "sdkI":
-/*!***************************************************************!*\
-  !*** ./src/legend/legend-series/legend-series.component.less ***!
-  \***************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (":host.nui-legend-series {\n  padding: 2px;\n  max-width: 250px;\n  cursor: default;\n  background-color: var(--nui-color-bg-content,#fff);\n}\n:host.nui-legend-series:not(.nui-legend-series--horizontal):not(:last-child) {\n  margin-bottom: 1px;\n}\n:host.nui-legend-series :host.nui-legend-series__tile-wrapper {\n  display: flex;\n  justify-content: center;\n}\n:host.nui-legend-series :host.nui-legend-series__tile {\n  display: flex;\n}\n:host.nui-legend-series--horizontal:not(:last-child) {\n  margin-right: 10px;\n}\n:host.nui-legend-series :empty {\n  display: none;\n}\n:host.nui-legend-series .description {\n  line-height: 18px;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  overflow: hidden;\n  padding-left: 5px;\n  padding-right: 5px;\n  min-width: 130px;\n}\n:host.nui-legend-series .description-container {\n  overflow: hidden;\n}\n:host.nui-legend-series .description-primary {\n  font-weight: 600;\n  color: var(--nui-color-text-default,#111);\n}\n:host.nui-legend-series .description-primary:not(:last-child) {\n  margin-bottom: -3px;\n}\n:host.nui-legend-series .description-secondary {\n  color: var(--nui-color-text-secondary,rgba(17, 17, 17, 0.6));\n}\n:host.nui-legend-series .description-secondary:not(:first-child) {\n  margin-top: -1px;\n}\n:host.nui-legend-series--interactive {\n  cursor: pointer;\n}\n:host.nui-legend-series--interactive .nui-legend-series__tile-wrapper {\n  position: relative;\n}\n:host.nui-legend-series--interactive .nui-legend-series__tile-wrapper .nui-legend-series__checkbox-wrapper {\n  align-self: center;\n  position: absolute;\n  visibility: hidden;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n:host.nui-legend-series--interactive .nui-legend-series__tile-wrapper .nui-legend-series__checkbox-mark {\n  border: solid 2px;\n  background: no-repeat 0 center;\n  border-color: var(--nui-color-active,#0079aa);\n  background-color: var(--nui-color-bg-content,#fff);\n  background-size: 16px;\n  border-radius: 3px;\n  min-width: 16px;\n  width: 16px;\n  height: 16px;\n  transition: background-color 0.3s, border-color 0.3s;\n}\n:host.nui-legend-series--interactive .nui-legend-series__tile-wrapper .nui-legend-series__checkbox-glyph {\n  width: 100%;\n  height: 100%;\n  background-size: 12px;\n  background-image: url(\"data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIKCSB2aWV3Qm94PSIwIDAgMjAgMjAiIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMjAgMjA7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS54dWktY2hlY2tib3gtZ2x5cGh7ZmlsbDpub25lO3N0cm9rZTojRkZGRkZGO3N0cm9rZS13aWR0aDozO3N0cm9rZS1taXRlcmxpbWl0OjEwO3N0cm9rZS1saW5lY2FwOnJvdW5kO30KPC9zdHlsZT4KPHBvbHlsaW5lIGNsYXNzPSJ4dWktY2hlY2tib3gtZ2x5cGgiIHBvaW50cz0iMTcsNCA4LDE1IDMsOSAiLz4KPC9zdmc+\");\n  display: none;\n}\n:host.nui-legend-series--interactive .nui-legend-series__tile-wrapper .nui-legend-series__checkbox--checked .nui-legend-series__checkbox-mark {\n  background-color: var(--nui-color-active,#0079aa);\n  border-color: var(--nui-color-active,#0079aa);\n}\n:host.nui-legend-series--interactive .nui-legend-series__tile-wrapper .nui-legend-series__checkbox--checked .nui-legend-series__checkbox-mark > .nui-legend-series__checkbox-glyph {\n  display: block;\n}\n:host.nui-legend-series--interactive .nui-legend-series--deselected .nui-legend-series__checkbox-wrapper,\n:host.nui-legend-series--interactive .nui-legend-series__tile-wrapper:hover .nui-legend-series__checkbox-wrapper {\n  visibility: visible;\n}\n:host.nui-legend-series--interactive .nui-legend-series--deselected .nui-legend-series__tile,\n:host.nui-legend-series--interactive .nui-legend-series__tile-wrapper:hover .nui-legend-series__tile {\n  visibility: hidden;\n}\n:host.nui-legend-series--interactive .nui-legend-series__tile-wrapper:hover {\n  background-color: var(--nui-color-bg-transparent-hover,rgba(17, 17, 17, 0.05));\n}\n:host.nui-legend-series--interactive:hover {\n  background-color: var(--nui-color-bg-light-hover,#f2f2f2);\n}\n:host.nui-legend-series--interactive:hover .nui-legend-series--deselected .nui-legend-series__tile-wrapper {\n  background-color: var(--nui-color-bg-transparent-hover,rgba(17, 17, 17, 0.05));\n}\n:host.nui-legend-series--interactive:not(:hover) .nui-legend-series--deselected .nui-legend-series__tile-wrapper {\n  background-color: var(--nui-color-bg-secondary,#fafafa);\n}\n:host.nui-legend-series:not(:hover) :host.nui-legend-series--state-hidden .description-container {\n  opacity: 0.3;\n}\n:host.nui-legend-series :host.nui-legend-series--state-deemphasized {\n  opacity: 0.3;\n}\n:host.description-min-width--unset .description {\n  min-width: unset;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImxlZ2VuZC1zZXJpZXMuY29tcG9uZW50Lmxlc3MiLCIuLi8uLi8uLi9ub2RlX21vZHVsZXMvQG5vdmEtdWkvYml0cy9zZGsvbGVzcy9taXhpbnMvY3NzLXZhcmlhYmxlcy5sZXNzIiwiLi4vLi4vLi4vbm9kZV9tb2R1bGVzL0Bub3ZhLXVpL2JpdHMvc2RrL2xlc3MvbWl4aW5zL2NoZWNrYm94Lmxlc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBUUk7RUFDSSxZQUFBO0VBQ0EsZ0JBQUE7RUFDQSxlQUFBO0VDTkosa0RBQUE7QURBSjtBQVNRO0VBQ0ksa0JBQUE7QUFQWjtBQVVRO0VBQ0ksYUFBQTtFQUNBLHVCQUFBO0FBUlo7QUFXUTtFQUNJLGFBQUE7QUFUWjtBQVlRO0VBQ0ksa0JBQUE7QUFWWjtBQWFRO0VBQ0ksYUFBQTtBQVhaO0FBY1E7RUFDSSxpQkFBQTtFQUNBLG1CQUFBO0VBQ0EsdUJBQUE7RUFDQSxnQkFBQTtFQUNBLGlCQUFBO0VBQ0Esa0JBQUE7RUFDQSxnQkFBQTtBQVpaO0FBY1k7RUFDSSxnQkFBQTtBQVpoQjtBQWVZO0VBQ0ksZ0JBQUE7RUM1Q1oseUNBQUE7QURnQ0o7QUFnQlk7RUFDSSxtQkFBQTtBQWRoQjtBQWlCWTtFQ3BEUiw0REFBQTtBRHNDSjtBQWtCWTtFQUNJLGdCQUFBO0FBaEJoQjtBQW9CUTtFQUNJLGVBQUE7QUFsQlo7QUFvQlk7RUFDSSxrQkFBQTtBQWxCaEI7QUFxQm9CO0VBQ0ksa0JBQUE7RUFDQSxrQkFBQTtFQUNBLGtCQUFBO0VBRUEsUUFBQTtFQUNBLFNBQUE7RUFDQSxnQ0FBQTtBQXBCeEI7QUF1Qm9CO0VFaEZoQixpQkFBQTtFQUNBLDhCQUFBO0VEQ0EsNkNBQUE7RUFBQSxrREFBQTtFQ0VBLHFCQUFBO0VBQ0Esa0JBQUE7RUFDQSxlQUFBO0VBQ0EsV0FBQTtFQUNBLFlBQUE7RUFDQSxvREFBQTtBRjRESjtBQWVvQjtFRXZFaEIsV0FBQTtFQUNBLFlBQUE7RUFDQSxxQkFBQTtFQUdBLG1yQkFBQTtFRm9Fb0IsYUFBQTtBQVZ4QjtBQWFvQjtFQ3ZGaEIsaURBQUE7RUFBQSw2Q0FBQTtBRDhFSjtBQVNvQjtFQU1ZLGNBQUE7QUFaaEM7QUFtQlk7O0VBR1EsbUJBQUE7QUFsQnBCO0FBZVk7O0VBT1Esa0JBQUE7QUFsQnBCO0FBc0JZO0VDL0dSLDhFQUFBO0FENEZKO0FBdUJZO0VDbkhSLHlEQUFBO0FEK0ZKO0FBb0JZO0VDbkhSLDhFQUFBO0FEa0dKO0FBMkJZO0VDN0hSLHVEQUFBO0FEcUdKO0FBaUNRO0VBRVEsWUFBQTtBQWhDaEI7QUFvQ1E7RUFDSSxZQUFBO0FBbENaO0FBc0NJO0VBRVEsZ0JBQUE7QUFyQ1oiLCJmaWxlIjoibGVnZW5kLXNlcmllcy5jb21wb25lbnQubGVzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgKHJlZmVyZW5jZSkgXCIuLi8uLi9zdHlsZXMubGVzc1wiO1xuQGltcG9ydCAocmVmZXJlbmNlKSBcIkBub3ZhLXVpL2JpdHMvc2RrL2xlc3MvbnVpLWZyYW1ld29yay12YXJpYWJsZXMubGVzc1wiO1xuQGltcG9ydCAocmVmZXJlbmNlKSBcIkBub3ZhLXVpL2JpdHMvc2RrL2xlc3MvbWl4aW5zLmxlc3NcIjtcblxuQG51aS1sZWdlbmQtc2VyaWVzLW1heC13aWR0aDogMjUwcHg7XG5AbnVpLWxlZ2VuZC1zZXJpZXMtZGVzY3JpcHRpb24tbWluLXdpZHRoOiAxMzBweDsgLy8gMTgwcHggZnJvbSBtb2NrdXBzIC0gNTBweCBmb3IgdGlsZVxuXG46aG9zdCB7XG4gICAgJi5udWktbGVnZW5kLXNlcmllcyB7XG4gICAgICAgIHBhZGRpbmc6IEBudWktc3BhY2UteHhzO1xuICAgICAgICBtYXgtd2lkdGg6IEBudWktbGVnZW5kLXNlcmllcy1tYXgtd2lkdGg7XG4gICAgICAgIGN1cnNvcjogZGVmYXVsdDsgLy8gdG8gcHJldmVudCB0ZXh0IHNlbGVjdGlvbiBjdXJzb3JcbiAgICAgICAgLnNldENzc1ZhcmlhYmxlKGJhY2tncm91bmQtY29sb3IsIG51aS1jb2xvci1iZy1jb250ZW50KTtcblxuICAgICAgICAmOm5vdCgubnVpLWxlZ2VuZC1zZXJpZXMtLWhvcml6b250YWwpOm5vdCg6bGFzdC1jaGlsZCkge1xuICAgICAgICAgICAgbWFyZ2luLWJvdHRvbTogMXB4O1xuICAgICAgICB9XG5cbiAgICAgICAgJiAmX190aWxlLXdyYXBwZXIge1xuICAgICAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICAgICAgICB9XG5cbiAgICAgICAgJiAmX190aWxlIHtcbiAgICAgICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgIH1cblxuICAgICAgICAmLS1ob3Jpem9udGFsOm5vdCg6bGFzdC1jaGlsZCkge1xuICAgICAgICAgICAgbWFyZ2luLXJpZ2h0OiBAbnVpLXNwYWNlLXNtO1xuICAgICAgICB9XG5cbiAgICAgICAgJiA6ZW1wdHkge1xuICAgICAgICAgICAgZGlzcGxheTogbm9uZTtcbiAgICAgICAgfVxuXG4gICAgICAgICYgLmRlc2NyaXB0aW9uIHtcbiAgICAgICAgICAgIGxpbmUtaGVpZ2h0OiBAbnVpLWxpbmUtaGVpZ2h0LWRlZmF1bHQ7XG4gICAgICAgICAgICB3aGl0ZS1zcGFjZTogbm93cmFwO1xuICAgICAgICAgICAgdGV4dC1vdmVyZmxvdzogZWxsaXBzaXM7XG4gICAgICAgICAgICBvdmVyZmxvdzogaGlkZGVuO1xuICAgICAgICAgICAgcGFkZGluZy1sZWZ0OiBAbnVpLXNwYWNlLXhzO1xuICAgICAgICAgICAgcGFkZGluZy1yaWdodDogQG51aS1zcGFjZS14cztcbiAgICAgICAgICAgIG1pbi13aWR0aDogQG51aS1sZWdlbmQtc2VyaWVzLWRlc2NyaXB0aW9uLW1pbi13aWR0aDtcblxuICAgICAgICAgICAgJi1jb250YWluZXIge1xuICAgICAgICAgICAgICAgIG92ZXJmbG93OiBoaWRkZW47XG4gICAgICAgICAgICB9XG5cbiAgICAgICAgICAgICYtcHJpbWFyeSB7XG4gICAgICAgICAgICAgICAgZm9udC13ZWlnaHQ6IEBudWktZm9udC13ZWlnaHQtc2VtaWJvbGQ7XG4gICAgICAgICAgICAgICAgLnNldENzc1ZhcmlhYmxlKGNvbG9yLCBudWktY29sb3ItdGV4dC1kZWZhdWx0KTtcbiAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgJi1wcmltYXJ5Om5vdCg6bGFzdC1jaGlsZCkge1xuICAgICAgICAgICAgICAgIG1hcmdpbi1ib3R0b206IC1AbnVpLWxlZ2VuZC1zZXJpZXMtY29udGVudC1tYXJnaW47XG4gICAgICAgICAgICB9XG5cbiAgICAgICAgICAgICYtc2Vjb25kYXJ5IHtcbiAgICAgICAgICAgICAgICAuc2V0Q3NzVmFyaWFibGUoY29sb3IsIG51aS1jb2xvci10ZXh0LXNlY29uZGFyeSk7XG4gICAgICAgICAgICB9XG5cbiAgICAgICAgICAgICYtc2Vjb25kYXJ5Om5vdCg6Zmlyc3QtY2hpbGQpIHtcbiAgICAgICAgICAgICAgICBtYXJnaW4tdG9wOiAtMXB4O1xuICAgICAgICAgICAgfVxuICAgICAgICB9XG5cbiAgICAgICAgJi0taW50ZXJhY3RpdmUge1xuICAgICAgICAgICAgY3Vyc29yOiBwb2ludGVyO1xuXG4gICAgICAgICAgICAmIC5udWktbGVnZW5kLXNlcmllc19fdGlsZS13cmFwcGVyIHtcbiAgICAgICAgICAgICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG5cbiAgICAgICAgICAgICAgICAubnVpLWxlZ2VuZC1zZXJpZXNfX2NoZWNrYm94IHtcbiAgICAgICAgICAgICAgICAgICAgJi13cmFwcGVyIHtcbiAgICAgICAgICAgICAgICAgICAgICAgIGFsaWduLXNlbGY6IGNlbnRlcjtcbiAgICAgICAgICAgICAgICAgICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICAgICAgICAgICAgICAgICAgICAgIHZpc2liaWxpdHk6IGhpZGRlbjtcblxuICAgICAgICAgICAgICAgICAgICAgICAgdG9wOiA1MCU7XG4gICAgICAgICAgICAgICAgICAgICAgICBsZWZ0OiA1MCU7XG4gICAgICAgICAgICAgICAgICAgICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcbiAgICAgICAgICAgICAgICAgICAgfVxuXG4gICAgICAgICAgICAgICAgICAgICYtbWFyayB7XG4gICAgICAgICAgICAgICAgICAgICAgICAubnVpLWNoZWNrYm94X19tYXJrKCk7XG4gICAgICAgICAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgICAgICAgICAmLWdseXBoIHtcbiAgICAgICAgICAgICAgICAgICAgICAgIC5udWktY2hlY2tib3hfX2dseXBoKCk7XG4gICAgICAgICAgICAgICAgICAgICAgICBkaXNwbGF5OiBub25lO1xuICAgICAgICAgICAgICAgICAgICB9XG5cbiAgICAgICAgICAgICAgICAgICAgJi0tY2hlY2tlZCB7XG4gICAgICAgICAgICAgICAgICAgICAgICAubnVpLWxlZ2VuZC1zZXJpZXNfX2NoZWNrYm94LW1hcmsge1xuICAgICAgICAgICAgICAgICAgICAgICAgICAgIC5zZXRDc3NWYXJpYWJsZShiYWNrZ3JvdW5kLWNvbG9yLCBudWktY29sb3ItYWN0aXZlKTtcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAuc2V0Q3NzVmFyaWFibGUoYm9yZGVyLWNvbG9yLCBudWktY29sb3ItYWN0aXZlKTtcblxuICAgICAgICAgICAgICAgICAgICAgICAgICAgID4gLm51aS1sZWdlbmQtc2VyaWVzX19jaGVja2JveC1nbHlwaCB7XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGRpc3BsYXk6IGJsb2NrO1xuICAgICAgICAgICAgICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgJiAubnVpLWxlZ2VuZC1zZXJpZXMtLWRlc2VsZWN0ZWQsXG4gICAgICAgICAgICAmIC5udWktbGVnZW5kLXNlcmllc19fdGlsZS13cmFwcGVyOmhvdmVyIHtcbiAgICAgICAgICAgICAgICAubnVpLWxlZ2VuZC1zZXJpZXNfX2NoZWNrYm94LXdyYXBwZXIge1xuICAgICAgICAgICAgICAgICAgICB2aXNpYmlsaXR5OiB2aXNpYmxlO1xuICAgICAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgICAgIC5udWktbGVnZW5kLXNlcmllc19fdGlsZSB7XG4gICAgICAgICAgICAgICAgICAgIHZpc2liaWxpdHk6IGhpZGRlbjtcbiAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICB9XG5cbiAgICAgICAgICAgICYgLm51aS1sZWdlbmQtc2VyaWVzX190aWxlLXdyYXBwZXI6aG92ZXIge1xuICAgICAgICAgICAgICAgIC5zZXRDc3NWYXJpYWJsZShiYWNrZ3JvdW5kLWNvbG9yLCBudWktY29sb3ItYmctdHJhbnNwYXJlbnQtaG92ZXIpO1xuICAgICAgICAgICAgfVxuXG4gICAgICAgICAgICAmOmhvdmVyIHtcbiAgICAgICAgICAgICAgICAuc2V0Q3NzVmFyaWFibGUoYmFja2dyb3VuZC1jb2xvciwgbnVpLWNvbG9yLWJnLWxpZ2h0LWhvdmVyKTtcblxuICAgICAgICAgICAgICAgIC5udWktbGVnZW5kLXNlcmllcy0tZGVzZWxlY3RlZCB7XG4gICAgICAgICAgICAgICAgICAgIC5udWktbGVnZW5kLXNlcmllc19fdGlsZS13cmFwcGVyIHtcbiAgICAgICAgICAgICAgICAgICAgICAgIC5zZXRDc3NWYXJpYWJsZShiYWNrZ3JvdW5kLWNvbG9yLCBudWktY29sb3ItYmctdHJhbnNwYXJlbnQtaG92ZXIpO1xuICAgICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgfVxuXG4gICAgICAgICAgICAmOm5vdCg6aG92ZXIpIHtcbiAgICAgICAgICAgICAgICAubnVpLWxlZ2VuZC1zZXJpZXMtLWRlc2VsZWN0ZWQge1xuICAgICAgICAgICAgICAgICAgICAubnVpLWxlZ2VuZC1zZXJpZXNfX3RpbGUtd3JhcHBlciB7XG4gICAgICAgICAgICAgICAgICAgICAgICAuc2V0Q3NzVmFyaWFibGUoYmFja2dyb3VuZC1jb2xvciwgbnVpLWNvbG9yLWJnLXNlY29uZGFyeSk7XG4gICAgICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICB9XG4gICAgICAgIH1cblxuICAgICAgICAmOm5vdCg6aG92ZXIpICYtLXN0YXRlLWhpZGRlbiB7XG4gICAgICAgICAgICAuZGVzY3JpcHRpb24tY29udGFpbmVyIHtcbiAgICAgICAgICAgICAgICBvcGFjaXR5OiBAbnVpLWxlZ2VuZC1kZWVtcGhhc2l6ZWQtb3BhY2l0eTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgfVxuXG4gICAgICAgICYgJi0tc3RhdGUtZGVlbXBoYXNpemVkIHtcbiAgICAgICAgICAgIG9wYWNpdHk6IEBudWktbGVnZW5kLWRlZW1waGFzaXplZC1vcGFjaXR5O1xuICAgICAgICB9XG4gICAgfVxuXG4gICAgJi5kZXNjcmlwdGlvbi1taW4td2lkdGgtLXVuc2V0IHtcbiAgICAgICAgLmRlc2NyaXB0aW9uIHtcbiAgICAgICAgICAgIG1pbi13aWR0aDogdW5zZXQ7XG4gICAgICAgIH1cbiAgICB9XG59XG4iLCIuc2V0Q3NzVmFyaWFibGUoQHByb3BlcnR5LCBAdmFsdWUpe1xuICAgIEBldmFsdWF0ZWQgOiBcIkB7dmFsdWV9XCI7XG4gICAgLy90aGUgZG91YmxlIEAgZm9yY2VzIGEgaW5kaXJlY3Rpb24gZXZhbHVhdGlvbiwga2luZGEgbGlrZSBhIHBvaW50ZXJcbiAgICBAZmFsbGJhY2sgOiBAQGV2YWx1YXRlZDtcblxuICAgIEB7cHJvcGVydHl9OiB+XCJ2YXIoLS1Ae3ZhbHVlfSxAe2ZhbGxiYWNrfSlcIjtcbn1cbiIsIkBpbXBvcnQgKHJlZmVyZW5jZSkgdXJsKCcuLi9udWktZnJhbWV3b3JrLXZhcmlhYmxlcy5sZXNzJyk7XG5cbi5udWktY2hlY2tib3hfX21hcmsoKSB7XG4gICAgYm9yZGVyOiBzb2xpZCBAbnVpLWxpbmUtbWVkaXVtO1xuICAgIGJhY2tncm91bmQ6IG5vLXJlcGVhdCAwIGNlbnRlcjtcbiAgICAuc2V0Q3NzVmFyaWFibGUoYm9yZGVyLWNvbG9yLCBudWktY29sb3ItYWN0aXZlKTtcbiAgICAuc2V0Q3NzVmFyaWFibGUoYmFja2dyb3VuZC1jb2xvciwgbnVpLWNvbG9yLWJnLWNvbnRlbnQpO1xuICAgIGJhY2tncm91bmQtc2l6ZTogQGljb24tc2l6ZS1kZWZhdWx0O1xuICAgIGJvcmRlci1yYWRpdXM6IEBudWktcmFkaXVzLWRlZmF1bHQ7XG4gICAgbWluLXdpZHRoOiBAaWNvbi1zaXplLWRlZmF1bHQ7XG4gICAgd2lkdGg6IEBpY29uLXNpemUtZGVmYXVsdDtcbiAgICBoZWlnaHQ6IEBpY29uLXNpemUtZGVmYXVsdDtcbiAgICB0cmFuc2l0aW9uOiBiYWNrZ3JvdW5kLWNvbG9yIDAuM3MsIGJvcmRlci1jb2xvciAwLjNzO1xufVxuXG4ubnVpLWNoZWNrYm94X19nbHlwaCgpIHtcbiAgICB3aWR0aDogMTAwJTtcbiAgICBoZWlnaHQ6IDEwMCU7XG4gICAgYmFja2dyb3VuZC1zaXplOiAoQGljb24tc2l6ZS1kZWZhdWx0IC0gKEBudWktbGluZS1tZWRpdW0gKiAyKSk7XG5cbiAgICAvLyBUb0RvOiBXZSBzaG91bGQgcmlkIG9mIGJhc2U2NCBjb2RlIGhlcmVcbiAgICBiYWNrZ3JvdW5kLWltYWdlOiB1cmwoXCJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBEOTRiV3dnZG1WeWMybHZiajBpTVM0d0lpQmxibU52WkdsdVp6MGlkWFJtTFRnaVB6NEtQSE4yWnlCMlpYSnphVzl1UFNJeExqRWlJR2xrUFNKTVlYbGxjbDh4SWlCNGJXeHVjejBpYUhSMGNEb3ZMM2QzZHk1M015NXZjbWN2TWpBd01DOXpkbWNpSUhodGJHNXpPbmhzYVc1clBTSm9kSFJ3T2k4dmQzZDNMbmN6TG05eVp5OHhPVGs1TDNoc2FXNXJJaUI0UFNJd2NIZ2lJSGs5SWpCd2VDSUtDU0IyYVdWM1FtOTRQU0l3SURBZ01qQWdNakFpSUhkcFpIUm9QU0l5TUNJZ2FHVnBaMmgwUFNJeU1DSWdjM1I1YkdVOUltVnVZV0pzWlMxaVlXTnJaM0p2ZFc1a09tNWxkeUF3SURBZ01qQWdNakE3SWlCNGJXdzZjM0JoWTJVOUluQnlaWE5sY25abElqNEtQSE4wZVd4bElIUjVjR1U5SW5SbGVIUXZZM056SWo0S0NTNTRkV2t0WTJobFkydGliM2d0WjJ4NWNHaDdabWxzYkRwdWIyNWxPM04wY205clpUb2pSa1pHUmtaR08zTjBjbTlyWlMxM2FXUjBhRG96TzNOMGNtOXJaUzF0YVhSbGNteHBiV2wwT2pFd08zTjBjbTlyWlMxc2FXNWxZMkZ3T25KdmRXNWtPMzBLUEM5emRIbHNaVDRLUEhCdmJIbHNhVzVsSUdOc1lYTnpQU0o0ZFdrdFkyaGxZMnRpYjNndFoyeDVjR2dpSUhCdmFXNTBjejBpTVRjc05DQTRMREUxSURNc09TQWlMejRLUEM5emRtYytcIik7XG59XG4iXX0= */");
 
 /***/ }),
 

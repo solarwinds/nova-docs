@@ -174,6 +174,11 @@ export interface ITimeseriesChartTypeOption {
     value: TimeseriesChartPreset;
 }
 
+export interface ITimeSpanOption {
+    id: string;
+    name: string;
+}
+
 @Component({
     selector: &quot;nui-timeseries-metadata-configuration&quot;,
     templateUrl: &quot;./timeseries-metadata-configuration.component.html&quot;,
@@ -183,7 +188,7 @@ export class TimeseriesMetadataConfigurationComponent implements IHasChangeDetec
     static lateLoadKey &#x3D; &quot;TimeseriesMetadataConfigurationComponent&quot;;
 
     @Input() legendPlacements: LegendPlacement[] &#x3D; [];
-    @Input() timeSpans: { id: string, name: string }[] &#x3D; [];
+    @Input() timeSpans: ITimeSpanOption[] &#x3D; [];
     @Input() startingTimespan: any;
     @Input() legendPlacement: LegendPlacement;
     @Input() leftAxisLabel: string;
@@ -205,16 +210,15 @@ export class TimeseriesMetadataConfigurationComponent implements IHasChangeDetec
     constructor(public changeDetector: ChangeDetectorRef,
                 private formBuilder: FormBuilder,
                 @Inject(PIZZAGNA_EVENT_BUS) private eventBus: EventBus&lt;IEvent&gt;) {
+        this.form &#x3D; this.formBuilder.group({
+            leftAxisLabel: [&quot;&quot;],
+            startingTimespan: [null, Validators.required],
+            legendPlacement: [LegendPlacement.None, [Validators.required]],
+            preset: [TimeseriesChartPreset.Line, [Validators.required]],
+        });
     }
 
     public ngOnInit(): void {
-        this.form &#x3D; this.formBuilder.group({
-            leftAxisLabel: [this.leftAxisLabel || &quot;&quot;],
-            startingTimespan: [this.startingTimespan || null, Validators.required],
-            legendPlacement: [this.legendPlacement || LegendPlacement.None, [Validators.required]],
-            preset: [this.preset || TimeseriesChartPreset.Line, [Validators.required]],
-        });
-
         this.form.get(&quot;startingTimespan&quot;)?.valueChanges
             .pipe(takeUntil(this.destroy$))
             .subscribe((value) &#x3D;&gt; {
@@ -228,20 +232,28 @@ export class TimeseriesMetadataConfigurationComponent implements IHasChangeDetec
     }
 
     ngOnChanges(changes: SimpleChanges): void {
-        if (changes.leftAxisLabel &amp;&amp; !changes.leftAxisLabel.isFirstChange()) {
+        const startingTimespanControl &#x3D; this.form.get(&quot;startingTimespan&quot;);
+
+        if (changes.leftAxisLabel) {
             this.form.get(&quot;leftAxisLabel&quot;)?.setValue(this.leftAxisLabel, {emitEvent: false});
         }
 
-        if (changes.startingTimespan &amp;&amp; !changes.startingTimespan.isFirstChange()) {
-            this.form.get(&quot;startingTimespan&quot;)?.setValue(this.startingTimespan, {emitEvent: false});
+        if (changes.startingTimespan) {
+            startingTimespanControl?.setValue(this.startingTimespan, {emitEvent: false});
         }
 
-        if (changes.legendPlacement &amp;&amp; !changes.legendPlacement.isFirstChange()) {
+        if (changes.legendPlacement) {
             this.form.get(&quot;legendPlacement&quot;)?.setValue(this.legendPlacement, {emitEvent: false});
         }
 
-        if (changes.preset &amp;&amp; !changes.preset.isFirstChange()) {
+        if (changes.preset) {
             this.form.get(&quot;preset&quot;)?.setValue(this.preset, {emitEvent: false});
+        }
+
+        if (changes.timeSpans) {
+            if (!startingTimespanControl?.value &amp;&amp; this.timeSpans?.length &gt; 0) {
+                startingTimespanControl?.setValue(this.timeSpans[0]);
+            }
         }
     }
 

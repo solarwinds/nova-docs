@@ -770,7 +770,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import { NgModule } from \"@angular/core\";\n\nimport { NuiCommonModule } from \"../../../../../../src/common/common.module\";\n\nimport { FileDropExampleComponent } from \"./file-drop.component\";\n\n\n/**\n * @ignore\n */\n@NgModule({\n    imports: [\n        NuiCommonModule,\n    ],\n    declarations: [\n        FileDropExampleComponent,\n    ],\n    exports: [\n        FileDropExampleComponent,\n    ],\n    providers: [],\n})\nexport class NuiFileDropExampleModule {\n}\n";
+      __webpack_exports__["default"] = "import { NgModule } from \"@angular/core\";\n\nimport { NuiCommonModule } from \"@nova-ui/bits\";\n\nimport { FileDropExampleComponent } from \"./file-drop.component\";\n\n\n/**\n * @ignore\n */\n@NgModule({\n    imports: [\n        NuiCommonModule,\n    ],\n    declarations: [\n        FileDropExampleComponent,\n    ],\n    exports: [\n        FileDropExampleComponent,\n    ],\n    providers: [],\n})\nexport class NuiFileDropExampleModule {\n}\n";
       /***/
     },
 
@@ -856,9 +856,9 @@
       /* harmony import */
 
 
-      var _src_common_common_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! ../../../../../../src/common/common.module */
-      "7JYY");
+      var _nova_ui_bits__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! @nova-ui/bits */
+      "b5Xb");
       /* harmony import */
 
 
@@ -888,13 +888,13 @@
           return new (t || NuiFileDropExampleModule)();
         },
         providers: [],
-        imports: [[_src_common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"]]]
+        imports: [[_nova_ui_bits__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"]]]
       });
 
       (function () {
         (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵsetNgModuleScope"](NuiFileDropExampleModule, {
           declarations: [_file_drop_component__WEBPACK_IMPORTED_MODULE_1__["FileDropExampleComponent"]],
-          imports: [_src_common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"]],
+          imports: [_nova_ui_bits__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"]],
           exports: [_file_drop_component__WEBPACK_IMPORTED_MODULE_1__["FileDropExampleComponent"]]
         });
       })();
@@ -1144,7 +1144,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import { Component } from \"@angular/core\";\n\nimport { FileDropState } from \"../file-drop/public-api\";\n\n@Component({\n    selector: \"nui-dragdrop-files-example\",\n    templateUrl: \"./dragdrop-files.example.component.html\",\n    styleUrls: [\"./dragdrop-files.example.component.less\"],\n})\nexport class DragdropFilesExampleComponent {\n\n    public gifError = false;\n    public imageType = \"image/gif\";\n\n    public fileDropState = FileDropState.default;\n\n    public files: File[] = [];\n\n    dropHandler(ev: DragEvent) {\n\n        if (!ev.dataTransfer) {\n            throw new Error(\"dataTransfer is not defined\");\n        }\n        this.files.push(\n            ...this.extractFilesFromDropEventData(ev.dataTransfer)\n                    .filter((file: File) => this.validateDataType(file.type))\n        );\n\n        this.invalidateFiles();\n    }\n\n    onFileRead(ev: Event) {\n        const files: FileList | null = (ev.target as HTMLInputElement).files;\n        if (!files) {\n            throw new Error(\"fileList is not defined\");\n        }\n        // no validation here since we have native one in browser input\n        this.files.push(...Array.from(files));\n    }\n\n    dragEnterHandler(ev: DragEvent) {\n        // This naively checks only first file\n\n        if (ev.dataTransfer && ev.dataTransfer.items) {\n            this.gifError = !this.validateDataType(ev.dataTransfer.items[0].type);\n        }\n\n        this.fileDropState = this.gifError ? FileDropState.error : FileDropState.active;\n    }\n\n    invalidateFiles() {\n        // Change it if you want to have some error highlight even after dragLeave\n        this.fileDropState = FileDropState.default;\n        this.gifError = false;\n    }\n\n    rmFile(fileInput: File) {\n        this.files = this.files.filter(file => file !== fileInput);\n    }\n\n    private validateDataType(dataType: string) {\n        return dataType.includes(this.imageType);\n    }\n\n    // TODO: this can be extracted to a service\n    private extractFilesFromDropEventData(data: DataTransfer): File[] {\n        const files: File[] = [];\n        if (data.items) {\n            // Use DataTransferItemList interface to access the file(s)\n            for (let i = 0; i < data.items.length; i++) {\n                // If dropped items aren't files, reject them\n                if (data.items[i].kind === \"file\") {\n                    const file: File | null = data.items[i].getAsFile();\n                    if (file) {\n                        files.push(file);\n                    }\n                }\n            }\n        } else {\n            // Use DataTransfer interface to access the file(s) for Safari\n            for (let i = 0; i < data.files.length; i++) {\n                files.push(data.files[i]);\n            }\n        }\n        return files;\n    }\n\n}\n";
+      __webpack_exports__["default"] = "import { Component } from \"@angular/core\";\n\nimport { FileDropState } from \"../file-drop/public-api\";\n\n@Component({\n    selector: \"nui-dragdrop-files-example\",\n    templateUrl: \"./dragdrop-files.example.component.html\",\n    styleUrls: [\"./dragdrop-files.example.component.less\"],\n})\nexport class DragdropFilesExampleComponent {\n\n    public gifError = false;\n    public imageType = \"image/gif\";\n\n    public fileDropState = FileDropState.default;\n\n    public files: File[] = [];\n\n    dropHandler(ev: DragEvent) {\n\n        if (!ev.dataTransfer) {\n            throw new Error(\"dataTransfer is not defined\");\n        }\n        this.files.push(\n            ...this.extractFilesFromDropEventData(ev.dataTransfer)\n                .filter((file: File) => this.validateDataType(file.type))\n        );\n\n        this.invalidateFiles();\n    }\n\n    onFileRead(ev: Event) {\n        const files: FileList | null = (ev.target as HTMLInputElement).files;\n        if (!files) {\n            throw new Error(\"fileList is not defined\");\n        }\n        // no validation here since we have native one in browser input\n        this.files.push(...Array.from(files));\n    }\n\n    dragEnterHandler(ev: DragEvent) {\n        // This naively checks only first file\n\n        if (ev.dataTransfer && ev.dataTransfer.items) {\n            this.gifError = !this.validateDataType(ev.dataTransfer.items[0].type);\n        }\n\n        this.fileDropState = this.gifError ? FileDropState.error : FileDropState.active;\n    }\n\n    invalidateFiles() {\n        // Change it if you want to have some error highlight even after dragLeave\n        this.fileDropState = FileDropState.default;\n        this.gifError = false;\n    }\n\n    rmFile(fileInput: File) {\n        this.files = this.files.filter(file => file !== fileInput);\n    }\n\n    private validateDataType(dataType: string) {\n        return dataType.includes(this.imageType);\n    }\n\n    // TODO: this can be extracted to a service\n    private extractFilesFromDropEventData(data: DataTransfer): File[] {\n        const files: File[] = [];\n        if (data.items) {\n            // Use DataTransferItemList interface to access the file(s)\n            for (let i = 0; i < data.items.length; i++) {\n                // If dropped items aren't files, reject them\n                if (data.items[i].kind === \"file\") {\n                    const file: File | null = data.items[i].getAsFile();\n                    if (file) {\n                        files.push(file);\n                    }\n                }\n            }\n        } else {\n            // Use DataTransfer interface to access the file(s) for Safari\n            for (let i = 0; i < data.files.length; i++) {\n                files.push(data.files[i]);\n            }\n        }\n        return files;\n    }\n\n}\n";
       /***/
     },
 

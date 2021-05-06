@@ -674,25 +674,25 @@ export class BarHighlightStrategy implements IHighlightStrategy&lt;IRectangleAcc
 
         if (typeof value &#x3D;&#x3D;&#x3D; &quot;string&quot;) {
             return findIndex(series.data,
-                (d, i) &#x3D;&gt; value &#x3D;&#x3D;&#x3D; startAccessor?.(d, i, series.data, series));
+                             (d, i) &#x3D;&gt; value &#x3D;&#x3D;&#x3D; startAccessor?.(d, i, series.data, series));
         } else if (isArray(value)) {
             return findIndex(series.data,
-                (d, i) &#x3D;&gt; {
-                    const start &#x3D; startAccessor?.(d, i, series.data, series);
-                    const lengthLimit &#x3D; Math.min(this.levels, value.length, start.length);
-                    // diy efficient array comparison
-                    for (let j &#x3D; 0; j &lt; lengthLimit; j++) {
-                        if (value[j] !&#x3D;&#x3D; start[j]) {
-                            return false;
-                        }
-                    }
-                    return true;
-                });
+                             (d, i) &#x3D;&gt; {
+                                 const start &#x3D; startAccessor?.(d, i, series.data, series);
+                                 const lengthLimit &#x3D; Math.min(this.levels, value.length, start.length);
+                                 // diy efficient array comparison
+                                 for (let j &#x3D; 0; j &lt; lengthLimit; j++) {
+                                     if (value[j] !&#x3D;&#x3D; start[j]) {
+                                         return false;
+                                     }
+                                 }
+                                 return true;
+                             });
         } else if (value.valueOf) {
             const valueOf &#x3D; value.valueOf();
             if (scales &amp;&amp; scales[scaleKey]?.isContinuous()) {
                 let index &#x3D; findIndex(series.data,
-                    (d, i) &#x3D;&gt; valueOf &gt;&#x3D; startAccessor?.(d, i, series.data, series).valueOf() &amp;&amp;
+                                      (d, i) &#x3D;&gt; valueOf &gt;&#x3D; startAccessor?.(d, i, series.data, series).valueOf() &amp;&amp;
                         valueOf &lt;&#x3D; endAccessor?.(d, i, series.data, series).valueOf());
                 if (index &#x3D;&#x3D;&#x3D; -1 &amp;&amp; typeof endAccessor !&#x3D;&#x3D; &quot;undefined&quot;) {
                     if (isBandScale(scales[scaleKey])) {
@@ -708,7 +708,7 @@ export class BarHighlightStrategy implements IHighlightStrategy&lt;IRectangleAcc
                 return index;
             }
             return findIndex(series.data,
-                (d, i) &#x3D;&gt; valueOf &gt;&#x3D; startAccessor?.(d, i, series.data, series).valueOf() &amp;&amp;
+                             (d, i) &#x3D;&gt; valueOf &gt;&#x3D; startAccessor?.(d, i, series.data, series).valueOf() &amp;&amp;
                     valueOf &lt;&#x3D; endAccessor?.(d, i, series.data, series).valueOf());
         }
 

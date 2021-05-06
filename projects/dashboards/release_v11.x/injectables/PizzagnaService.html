@@ -872,7 +872,7 @@ export class PizzagnaService {
         for (const component of components) {
             for (const childId of Object.keys(component.children)) {
                 updatedPizzagna &#x3D; immutableSet(updatedPizzagna,
-                    &#x60;${PizzagnaLayer.Data}.${childId}.properties&#x60;, component.children[childId]);
+                                               &#x60;${PizzagnaLayer.Data}.${childId}.properties&#x60;, component.children[childId]);
             }
         }
 

@@ -1042,7 +1042,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import { Component } from \"@angular/core\";\nimport { FormControl, Validators } from \"@angular/forms\";\nimport { Moment } from \"moment/moment\";\n\n\n@Component({\n  selector: \"nui-date-time-picker-empty-state\",\n  templateUrl: \"./date-time-picker-empty-state.component.html\",\n})\nexport class DateTimePickerEmptyStateComponent {\n  public dt: Moment | undefined = undefined;\n  public selectedDate: Date | String = \"\";\n  public initEmpty: boolean = true;\n  public control: FormControl = new FormControl(this.dt, Validators.required);\n\n  constructor() {}\n\n  onModelChanged(event: Moment) {\n    this.selectedDate = new Date(event.valueOf());\n  }\n\n}\n";
+      __webpack_exports__["default"] = "import { Component } from \"@angular/core\";\nimport { FormControl, Validators } from \"@angular/forms\";\nimport { Moment } from \"moment/moment\";\n\n\n@Component({\n    selector: \"nui-date-time-picker-empty-state\",\n    templateUrl: \"./date-time-picker-empty-state.component.html\",\n})\nexport class DateTimePickerEmptyStateComponent {\n  public dt: Moment | undefined = undefined;\n  public selectedDate: Date | String = \"\";\n  public initEmpty: boolean = true;\n  public control: FormControl = new FormControl(this.dt, Validators.required);\n\n  constructor() {}\n\n  onModelChanged(event: Moment) {\n      this.selectedDate = new Date(event.valueOf());\n  }\n\n}\n";
       /***/
     },
 
