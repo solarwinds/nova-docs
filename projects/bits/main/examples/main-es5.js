@@ -25269,13 +25269,13 @@
       /* harmony import */
 
 
-      var lodash_isNil__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-      /*! lodash/isNil */
-      "J2iB");
+      var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! lodash/isUndefined */
+      "TP7S");
       /* harmony import */
 
 
-      var lodash_isNil__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_isNil__WEBPACK_IMPORTED_MODULE_2__);
+      var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2__);
       /* harmony import */
 
 
@@ -25352,7 +25352,7 @@
             var _a;
 
             var isHighlightNecessary = highlighted && ((_a = this.combobox.getLastSelectedOption()) === null || _a === void 0 ? void 0 : _a.viewValue) !== highlighted;
-            this.el.nativeElement.innerHTML = isHighlightNecessary && !lodash_isNil__WEBPACK_IMPORTED_MODULE_2___default()(highlighted) ? this.highlightPipe.transform(this.value, highlighted.toString()) : lodash_escape__WEBPACK_IMPORTED_MODULE_1___default()(this.value);
+            this.el.nativeElement.innerHTML = isHighlightNecessary && !lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default()(highlighted) ? this.highlightPipe.transform(this.value, highlighted.toString()) : lodash_escape__WEBPACK_IMPORTED_MODULE_1___default()(this.value);
           }
         }]);
 
@@ -47451,13 +47451,13 @@
       /* harmony import */
 
 
-      var lodash_isNil__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
-      /*! lodash/isNil */
-      "J2iB");
+      var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! lodash/isUndefined */
+      "TP7S");
       /* harmony import */
 
 
-      var lodash_isNil__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(lodash_isNil__WEBPACK_IMPORTED_MODULE_5__);
+      var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(lodash_isUndefined__WEBPACK_IMPORTED_MODULE_5__);
       /* harmony import */
 
 
@@ -47828,7 +47828,7 @@
 
             return this.multiselect ? options.map(function (o) {
               return o.value;
-            }) : ((_a = options[0]) === null || _a === void 0 ? void 0 : _a.value) || null;
+            }) : ((_a = options[0]) === null || _a === void 0 ? void 0 : _a.value) || "";
           }
         }, {
           key: "handleValueChange",
@@ -47837,7 +47837,7 @@
 
             var _a;
 
-            if (lodash_isNil__WEBPACK_IMPORTED_MODULE_5___default()(value)) {
+            if (lodash_isUndefined__WEBPACK_IMPORTED_MODULE_5___default()(value)) {
               this.value = "";
               this._selectedOptions = [];
               this.setActiveItemOnDropdown();
@@ -47892,7 +47892,7 @@
             var selectedOptionValues = this.selectedOptions.map(function (option) {
               return option.value;
             });
-            var valuePropToCompare = this.value ? this.multiselect ? this.value : [this.value] : [];
+            var valuePropToCompare = !lodash_isUndefined__WEBPACK_IMPORTED_MODULE_5___default()(this.value) ? this.multiselect ? this.value : [this.value] : [];
 
             if (!lodash_isEqual__WEBPACK_IMPORTED_MODULE_4___default()(selectedOptionValues, valuePropToCompare)) {
               this.value = this.multiselect ? selectedOptionValues : selectedOptionValues[0];
@@ -47906,7 +47906,7 @@
             var _this150 = this;
 
             // setTimeout is necessary because scrolling to the selected item should occur only when overlay rendered
-            if (this.value && !this.multiselect) {
+            if (!lodash_isUndefined__WEBPACK_IMPORTED_MODULE_5___default()(this.value) && !this.multiselect) {
               setTimeout(function () {
                 var _a;
 
@@ -47929,30 +47929,42 @@
         }, {
           key: "setActiveItemOnDropdown",
           value: function setActiveItemOnDropdown() {
-            this.value && !this.multiselect ? this.optionKeyControlService.setActiveItem(this.selectedOptions[0]) : this.optionKeyControlService.setFirstItemActive();
+            var _this151 = this;
+
+            var _a;
+
+            var selectedValue;
+
+            if (!this.multiselect) {
+              selectedValue = (_a = this.options) === null || _a === void 0 ? void 0 : _a.find(function (option) {
+                return lodash_isEqual__WEBPACK_IMPORTED_MODULE_4___default()(option.value, _this151.value);
+              });
+            }
+
+            selectedValue && !this.multiselect ? this.optionKeyControlService.setActiveItem(this.selectedOptions[0]) : this.optionKeyControlService.setFirstItemActive();
           }
         }, {
           key: "initClosingOnClicksOutside",
           value: function initClosingOnClicksOutside() {
-            var _this151 = this;
+            var _this152 = this;
 
             this.dropdown.clickOutside.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_9__["takeUntil"])(this.destroy$)).subscribe(function (v) {
-              if (!_this151.manualDropdownControl) {
-                _this151.hideDropdown();
+              if (!_this152.manualDropdownControl) {
+                _this152.hideDropdown();
               }
 
-              _this151.clickOutsideDropdown.emit(v);
+              _this152.clickOutsideDropdown.emit(v);
             });
           }
         }, {
           key: "initOnTouch",
           value: function initOnTouch() {
-            var _this152 = this;
+            var _this153 = this;
 
             this.dropdown.hide$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_9__["takeUntil"])(this.destroy$)).subscribe(function () {
-              _this152.onTouched();
+              _this153.onTouched();
 
-              _this152.cdRef.markForCheck(); // so caret icon will update properly
+              _this153.cdRef.markForCheck(); // so caret icon will update properly
 
             });
           }
@@ -47971,16 +47983,16 @@
         }, {
           key: "initPopupUtilities",
           value: function initPopupUtilities() {
-            var _this153 = this;
+            var _this154 = this;
 
             var resizeObserver = this.popupUtilities.setPopupComponent(this.dropdown).getResizeObserver();
             this.dropdown.show$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_9__["takeUntil"])(this.destroy$)).subscribe(function () {
-              _this153.popupUtilities.syncWidth();
+              _this154.popupUtilities.syncWidth();
 
-              resizeObserver.observe(_this153.elRef.nativeElement);
+              resizeObserver.observe(_this154.elRef.nativeElement);
             });
             this.dropdown.hide$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_9__["takeUntil"])(this.destroy$)).subscribe(function () {
-              resizeObserver.unobserve(_this153.elRef.nativeElement);
+              resizeObserver.unobserve(_this154.elRef.nativeElement);
             });
           }
         }]);
@@ -48280,13 +48292,13 @@
         var _super32 = _createSuper(OverlayCustomContainer);
 
         function OverlayCustomContainer(document, platform, overlayService) {
-          var _this154;
+          var _this155;
 
           _classCallCheck(this, OverlayCustomContainer);
 
-          _this154 = _super32.call(this, document, platform);
-          _this154.overlayService = overlayService;
-          return _this154;
+          _this155 = _super32.call(this, document, platform);
+          _this155.overlayService = overlayService;
+          return _this155;
         }
 
         _createClass(OverlayCustomContainer, [{
@@ -48704,13 +48716,13 @@
         var _super33 = _createSuper(TableHeaderCellDefDirective);
 
         function TableHeaderCellDefDirective(template) {
-          var _this155;
+          var _this156;
 
           _classCallCheck(this, TableHeaderCellDefDirective);
 
-          _this155 = _super33.call(this, template);
-          _this155.template = template;
-          return _this155;
+          _this156 = _super33.call(this, template);
+          _this156.template = template;
+          return _this156;
         }
 
         return TableHeaderCellDefDirective;
@@ -48922,7 +48934,7 @@
 
       var EdgeDetectionService = /*#__PURE__*/function () {
         function EdgeDetectionService(domUtilService, document, logger) {
-          var _this156 = this;
+          var _this157 = this;
 
           _classCallCheck(this, EdgeDetectionService);
 
@@ -48933,39 +48945,39 @@
 
           this.canBe = function (basePoint, placed, edgeDefinerElement) {
             if (!basePoint || !placed) {
-              _this156.logger.error("basePoint: Element and placed: Element arguments are required!");
+              _this157.logger.error("basePoint: Element and placed: Element arguments are required!");
 
               return;
             }
 
-            var result = _this156.initialEdgeDetectionResult;
+            var result = _this157.initialEdgeDetectionResult;
 
-            var edgeDefiner = edgeDefinerElement || _this156.domUtilService.getClosest(basePoint, _this156.edgeDefinerSelector);
+            var edgeDefiner = edgeDefinerElement || _this157.domUtilService.getClosest(basePoint, _this157.edgeDefinerSelector);
 
-            var basePosition = _this156.offset(basePoint).position;
+            var basePosition = _this157.offset(basePoint).position;
 
-            var baseWidth = _this156.outer(basePoint, "width");
+            var baseWidth = _this157.outer(basePoint, "width");
 
-            var baseHeight = _this156.outer(basePoint, "height");
+            var baseHeight = _this157.outer(basePoint, "height");
 
-            var depositWidth = _this156.outer(placed, "width");
+            var depositWidth = _this157.outer(placed, "width");
 
-            var depositHeight = _this156.outer(placed, "height");
+            var depositHeight = _this157.outer(placed, "height");
 
-            var container = _this156.getEdgeDefinerMeasurements(edgeDefiner);
+            var container = _this157.getEdgeDefinerMeasurements(edgeDefiner);
 
-            if (lodash_isNil__WEBPACK_IMPORTED_MODULE_3___default()(_this156.document.defaultView)) {
+            if (lodash_isNil__WEBPACK_IMPORTED_MODULE_3___default()(_this157.document.defaultView)) {
               throw new Error("Document defaultView is not available");
             }
 
-            result.placed.top = basePosition.top - container.position.top - depositHeight > _this156.document.defaultView.pageYOffset;
-            result.placed.right = basePosition.left - container.position.left + baseWidth + depositWidth < container.width + _this156.document.defaultView.pageXOffset;
-            result.placed.bottom = edgeDefiner ? basePosition.top + baseHeight + depositHeight < container.position.top + container.height : basePosition.top - container.position.top + baseHeight + depositHeight < container.height + _this156.document.defaultView.pageYOffset;
-            result.placed.left = basePosition.left - container.position.left - depositWidth > _this156.document.defaultView.pageXOffset;
-            result.aligned.top = basePosition.top - container.position.top + depositHeight < _this156.document.defaultView.pageYOffset + container.height;
-            result.aligned.right = basePosition.left - container.position.left + baseWidth - depositWidth > _this156.document.defaultView.pageXOffset;
-            result.aligned.bottom = basePosition.top - container.position.top + baseHeight - depositHeight > _this156.document.defaultView.pageYOffset;
-            result.aligned.left = basePosition.left - container.position.left + depositWidth < _this156.document.defaultView.pageXOffset + container.width;
+            result.placed.top = basePosition.top - container.position.top - depositHeight > _this157.document.defaultView.pageYOffset;
+            result.placed.right = basePosition.left - container.position.left + baseWidth + depositWidth < container.width + _this157.document.defaultView.pageXOffset;
+            result.placed.bottom = edgeDefiner ? basePosition.top + baseHeight + depositHeight < container.position.top + container.height : basePosition.top - container.position.top + baseHeight + depositHeight < container.height + _this157.document.defaultView.pageYOffset;
+            result.placed.left = basePosition.left - container.position.left - depositWidth > _this157.document.defaultView.pageXOffset;
+            result.aligned.top = basePosition.top - container.position.top + depositHeight < _this157.document.defaultView.pageYOffset + container.height;
+            result.aligned.right = basePosition.left - container.position.left + baseWidth - depositWidth > _this157.document.defaultView.pageXOffset;
+            result.aligned.bottom = basePosition.top - container.position.top + baseHeight - depositHeight > _this157.document.defaultView.pageYOffset;
+            result.aligned.left = basePosition.left - container.position.left + depositWidth < _this157.document.defaultView.pageXOffset + container.width;
             return result;
           };
 
@@ -49672,7 +49684,7 @@
 
       var TableStickyHeaderDirective = /*#__PURE__*/function () {
         function TableStickyHeaderDirective(renderer, viewport) {
-          var _this157 = this;
+          var _this158 = this;
 
           _classCallCheck(this, TableStickyHeaderDirective);
 
@@ -49684,11 +49696,11 @@
           this.updateContainerToFitHead = function () {
             var _a, _b, _c, _d;
 
-            if (_this157._sticky) {
-              _this157.origViewportHeight = _this157.origViewportHeight || ((_a = _this157.viewportEl) === null || _a === void 0 ? void 0 : _a.offsetHeight);
-              var viewportComputedHeight = lodash_isEmpty__WEBPACK_IMPORTED_MODULE_3___default()(_this157.userProvidedHeight) ? _this157.origViewportHeight + "px" : _this157.userProvidedHeight;
+            if (_this158._sticky) {
+              _this158.origViewportHeight = _this158.origViewportHeight || ((_a = _this158.viewportEl) === null || _a === void 0 ? void 0 : _a.offsetHeight);
+              var viewportComputedHeight = lodash_isEmpty__WEBPACK_IMPORTED_MODULE_3___default()(_this158.userProvidedHeight) ? _this158.origViewportHeight + "px" : _this158.userProvidedHeight;
 
-              _this157.viewportEl.style.setProperty("height", "calc(".concat(viewportComputedHeight, " - ").concat((_d = (_c = (_b = _this157.headRef) === null || _b === void 0 ? void 0 : _b.rows.item(0)) === null || _c === void 0 ? void 0 : _c.offsetHeight) !== null && _d !== void 0 ? _d : 0, "px)"), "important");
+              _this158.viewportEl.style.setProperty("height", "calc(".concat(viewportComputedHeight, " - ").concat((_d = (_c = (_b = _this158.headRef) === null || _b === void 0 ? void 0 : _b.rows.item(0)) === null || _c === void 0 ? void 0 : _c.offsetHeight) !== null && _d !== void 0 ? _d : 0, "px)"), "important");
             }
           };
 
@@ -49697,10 +49709,10 @@
             // Note: Setting the width of stickyHeadContainer container to be able to simulate horizontal scroll of the sticky header
 
 
-            _this157.renderer.setStyle(_this157.stickyHeadContainer, "width", "".concat(_this157.viewport._contentWrapper.nativeElement.scrollWidth, "px"));
+            _this158.renderer.setStyle(_this158.stickyHeadContainer, "width", "".concat(_this158.viewport._contentWrapper.nativeElement.scrollWidth, "px"));
 
-            var headColumns = Array.from(((_a = _this157.stickyHeadContainer) === null || _a === void 0 ? void 0 : _a.getElementsByTagName("th")) || []);
-            var firstDataRowCells = Array.from(((_c = (_b = _this157.bodyRef) === null || _b === void 0 ? void 0 : _b.rows.item(0)) === null || _c === void 0 ? void 0 : _c.cells) || []); // Note: If head columns are not in sync with data columns skip
+            var headColumns = Array.from(((_a = _this158.stickyHeadContainer) === null || _a === void 0 ? void 0 : _a.getElementsByTagName("th")) || []);
+            var firstDataRowCells = Array.from(((_c = (_b = _this158.bodyRef) === null || _b === void 0 ? void 0 : _b.rows.item(0)) === null || _c === void 0 ? void 0 : _c.cells) || []); // Note: If head columns are not in sync with data columns skip
 
             if (headColumns.length !== firstDataRowCells.length) {
               return rxjs__WEBPACK_IMPORTED_MODULE_5__["EMPTY"];
@@ -49713,7 +49725,7 @@
               headColumns[index].style.width = cell.style.width || "".concat(cell.offsetWidth, "px");
             }); // update the header placeholder to match the updated column widths
 
-            _this157.updateNativeHeaderPlaceholder(); // Note: Returning empty observable to be able to create an execution queue
+            _this158.updateNativeHeaderPlaceholder(); // Note: Returning empty observable to be able to create an execution queue
 
 
             return rxjs__WEBPACK_IMPORTED_MODULE_5__["EMPTY"];
@@ -49749,13 +49761,13 @@
         }, {
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this158 = this;
+            var _this159 = this;
 
             this.assignRequiredProperties(); // TODO: Find a better way to identify when the table header are rendered properly
             // Waiting for the next tick to let cdk table properly draw the table header
 
             setTimeout(function () {
-              return _this158.updateNativeHeaderPlaceholder();
+              return _this159.updateNativeHeaderPlaceholder();
             });
             this.updateHeadPosition(this._sticky);
           }
@@ -49793,7 +49805,7 @@
         }, {
           key: "setSticky",
           value: function setSticky() {
-            var _this159 = this;
+            var _this160 = this;
 
             if (this.headPosition === TableVirtualScrollHeaderPosition.Sticky) {
               console.warn("Already in sticky mode");
@@ -49812,7 +49824,7 @@
             // The setTimeout is for skipping one tick to let the header get his height.
 
             setTimeout(function () {
-              return _this159.updateContainerToFitHead();
+              return _this160.updateContainerToFitHead();
             });
             this.updateViewportHeightOnHeadResize();
             this.headPosition = TableVirtualScrollHeaderPosition.Sticky;
@@ -49820,7 +49832,7 @@
         }, {
           key: "updateViewportHeightOnHeadResize",
           value: function updateViewportHeightOnHeadResize() {
-            var _this160 = this;
+            var _this161 = this;
 
             if (this.headResizeObserver) {
               return;
@@ -49837,7 +49849,7 @@
                       return;
                     }
 
-                    _this160.updateContainerToFitHead();
+                    _this161.updateContainerToFitHead();
                   })
                 );
               });
@@ -49860,7 +49872,7 @@
         }, {
           key: "syncColumnWidths",
           value: function syncColumnWidths() {
-            var _this161 = this;
+            var _this162 = this;
 
             var resize$ = new rxjs__WEBPACK_IMPORTED_MODULE_5__["Subject"](); // Note: Passing the resize event to resize$ subject to be able
             // to handle all the columnWidth update trigger in a single stream
@@ -49885,7 +49897,7 @@
             // to update the rows and then proceed with the event
             Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["delay"])(0), // Note: Reattaching native header on every columns changes
             Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["tap"])(function () {
-              return _this161.updateNativeHeaderPlaceholder();
+              return _this162.updateNativeHeaderPlaceholder();
             }));
 
             if (!this.virtualFor) {
@@ -49899,24 +49911,24 @@
         }, {
           key: "syncHorizontalScroll",
           value: function syncHorizontalScroll() {
-            var _this162 = this;
+            var _this163 = this;
 
             var previousScrollLeft = 0;
             this.viewport.elementScrolled().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["map"])(function () {
-              return _this162.viewportEl.scrollLeft;
+              return _this163.viewportEl.scrollLeft;
             }), // Note: Filtering out vertical scroll events
             Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["filter"])(function (scrollLeft) {
               return scrollLeft !== previousScrollLeft;
             }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["tap"])(function (scrollLeft) {
               previousScrollLeft = scrollLeft; // Note: Simulating horizontal scroll by assigning margin-left to be equal to scrolled distance
 
-              _this162.renderer.setStyle(_this162.stickyHeadContainer, "margin-left", "-".concat(scrollLeft, "px"));
+              _this163.renderer.setStyle(_this163.stickyHeadContainer, "margin-left", "-".concat(scrollLeft, "px"));
             }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["takeUntil"])(this.unsubscribe$)).subscribe();
           }
         }, {
           key: "createStickyHeaderContainer",
           value: function createStickyHeaderContainer() {
-            var _this163 = this;
+            var _this164 = this;
 
             var _a;
 
@@ -49929,7 +49941,7 @@
             var originalTableClasses = Array.from(((_a = this.tableElRef) === null || _a === void 0 ? void 0 : _a.classList) || []);
             originalTableClasses.push("sticky-table-header-container");
             originalTableClasses.forEach(function (cssClass) {
-              return _this163.renderer.addClass(_this163.stickyHeadContainer, cssClass);
+              return _this164.renderer.addClass(_this164.stickyHeadContainer, cssClass);
             });
             this.renderer.insertBefore(this.viewportEl.parentElement, wrapper, this.viewportEl);
           }
@@ -50140,16 +50152,16 @@
         var _super34 = _createSuper(TableCellDirective);
 
         function TableCellDirective(columnDef, elementRef, tableStateHandlerService, cd) {
-          var _this164;
+          var _this165;
 
           _classCallCheck(this, TableCellDirective);
 
-          _this164 = _super34.call(this, columnDef, elementRef);
-          _this164.columnDef = columnDef;
-          _this164.elementRef = elementRef;
-          _this164.tableStateHandlerService = tableStateHandlerService;
-          _this164.cd = cd;
-          return _this164;
+          _this165 = _super34.call(this, columnDef, elementRef);
+          _this165.columnDef = columnDef;
+          _this165.elementRef = elementRef;
+          _this165.tableStateHandlerService = tableStateHandlerService;
+          _this165.cd = cd;
+          return _this165;
         }
 
         _createClass(TableCellDirective, [{
@@ -50170,7 +50182,7 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this165 = this;
+            var _this166 = this;
 
             var alignment = this.alignment ? "align-".concat(this.alignment) : this.tableStateHandlerService.getAlignment(this.columnDef.name);
             this.elementRef.nativeElement.classList.add(alignment);
@@ -50178,23 +50190,23 @@
 
             if (this.tableStateHandlerService.reorderable) {
               this.subscribeToDraggedOverCell = this.tableStateHandlerService.draggedOverCell.subscribe(function (draggedOverCell) {
-                _this165.rightEdgeActive = _this165.leftEdgeActive = false;
+                _this166.rightEdgeActive = _this166.leftEdgeActive = false;
 
-                if (lodash_get__WEBPACK_IMPORTED_MODULE_2___default()(draggedOverCell, "cellIndex") === _this165.currentCellIndex) {
-                  _this165.rightEdgeActive = draggedOverCell.dropAlignment === "right";
-                  _this165.leftEdgeActive = draggedOverCell.dropAlignment === "left";
+                if (lodash_get__WEBPACK_IMPORTED_MODULE_2___default()(draggedOverCell, "cellIndex") === _this166.currentCellIndex) {
+                  _this166.rightEdgeActive = draggedOverCell.dropAlignment === "right";
+                  _this166.leftEdgeActive = draggedOverCell.dropAlignment === "left";
 
-                  _this165.cd.detectChanges();
+                  _this166.cd.detectChanges();
                 }
               });
             }
 
             if (this.tableStateHandlerService.resizable) {
               this.resizeSubscription = this.tableStateHandlerService.shouldHighlightEdge.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["filter"])(function (value) {
-                return value.columnIndex === _this165.currentCellIndex;
+                return value.columnIndex === _this166.currentCellIndex;
               })).subscribe(function () {
                 // Anytime the event for this column is emitted state will change.
-                _this165.rightEdgeActive = !_this165.rightEdgeActive;
+                _this166.rightEdgeActive = !_this166.rightEdgeActive;
               });
             }
           }
@@ -50588,31 +50600,31 @@
         var _super35 = _createSuper(ServerSideDataSource);
 
         function ServerSideDataSource() {
-          var _this166;
+          var _this167;
 
           _classCallCheck(this, ServerSideDataSource);
 
-          _this166 = _super35.call(this);
-          _this166.busy = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"](false);
-          _this166.applyFilters$ = new rxjs__WEBPACK_IMPORTED_MODULE_1__["Subject"]();
-          _this166.destroy$ = new rxjs__WEBPACK_IMPORTED_MODULE_1__["Subject"]();
+          _this167 = _super35.call(this);
+          _this167.busy = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"](false);
+          _this167.applyFilters$ = new rxjs__WEBPACK_IMPORTED_MODULE_1__["Subject"]();
+          _this167.destroy$ = new rxjs__WEBPACK_IMPORTED_MODULE_1__["Subject"]();
 
-          _this166.setupFilters();
+          _this167.setupFilters();
 
-          return _this166;
+          return _this167;
         }
 
         _createClass(ServerSideDataSource, [{
           key: "setupFilters",
           value: function setupFilters() {
-            var _this167 = this;
+            var _this168 = this;
 
             this.applyFilters$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["tap"])(function (filters) {
-              return _this167.beforeApplyFilters(filters);
+              return _this168.beforeApplyFilters(filters);
             }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["switchMap"])(function (filters) {
-              return _this167.getBackendData(filters);
+              return _this168.getBackendData(filters);
             }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["tap"])(function (data) {
-              return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(_this167, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee7() {
+              return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(_this168, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee7() {
                 return regeneratorRuntime.wrap(function _callee7$(_context7) {
                   while (1) {
                     switch (_context7.prev = _context7.next) {
@@ -50646,12 +50658,12 @@
         }, {
           key: "afterApplyFilters",
           value: function afterApplyFilters(data) {
-            var _this168 = this;
+            var _this169 = this;
 
             var _super = Object.create(null, {
               afterApplyFilters: {
                 get: function get() {
-                  return _get(_getPrototypeOf(ServerSideDataSource.prototype), "afterApplyFilters", _this168);
+                  return _get(_getPrototypeOf(ServerSideDataSource.prototype), "afterApplyFilters", _this169);
                 }
               }
             });
@@ -50983,7 +50995,7 @@
 
       var RadioGroupComponent = /*#__PURE__*/function () {
         function RadioGroupComponent(renderer) {
-          var _this169 = this;
+          var _this170 = this;
 
           _classCallCheck(this, RadioGroupComponent);
 
@@ -51003,8 +51015,8 @@
           this.subscriptions = new Array();
 
           this.setChildDisabled = function (child) {
-            if (!lodash_isUndefined__WEBPACK_IMPORTED_MODULE_3___default()(_this169.disabled)) {
-              child.disabled = _this169.disabled;
+            if (!lodash_isUndefined__WEBPACK_IMPORTED_MODULE_3___default()(_this170.disabled)) {
+              child.disabled = _this170.disabled;
             }
           };
         }
@@ -51029,31 +51041,31 @@
         }, {
           key: "ngAfterContentInit",
           value: function ngAfterContentInit() {
-            var _this170 = this;
+            var _this171 = this;
 
             this.children.toArray().forEach(function (child) {
-              _this170.renderer.setAttribute(child.inputViewContainer.element.nativeElement, "name", _this170.name);
+              _this171.renderer.setAttribute(child.inputViewContainer.element.nativeElement, "name", _this171.name);
 
-              _this170.subscriptions.push(_this170.subscribeToRadioEvent(child)); // timeout to prevent "expression changed after it has been checked" error
+              _this171.subscriptions.push(_this171.subscribeToRadioEvent(child)); // timeout to prevent "expression changed after it has been checked" error
 
 
               setTimeout(function () {
-                _this170.setChildDisabled(child);
+                _this171.setChildDisabled(child);
               });
             });
             this.children.changes.subscribe(function (radioComponentQueryList) {
-              _this170.subscriptions.forEach(function (sub) {
+              _this171.subscriptions.forEach(function (sub) {
                 return sub.unsubscribe();
               });
 
               radioComponentQueryList.toArray().forEach(function (radio) {
-                _this170.renderer.setAttribute(radio.inputViewContainer.element.nativeElement, "name", _this170.name);
+                _this171.renderer.setAttribute(radio.inputViewContainer.element.nativeElement, "name", _this171.name);
 
-                _this170.subscriptions.push(_this170.subscribeToRadioEvent(radio)); // timeout to prevent "expression changed after it has been checked" error
+                _this171.subscriptions.push(_this171.subscribeToRadioEvent(radio)); // timeout to prevent "expression changed after it has been checked" error
 
 
                 setTimeout(function () {
-                  _this170.setChildDisabled(radio);
+                  _this171.setChildDisabled(radio);
                 });
               });
             });
@@ -51105,17 +51117,17 @@
         }, {
           key: "updateSelectedRadioFromValue",
           value: function updateSelectedRadioFromValue() {
-            var _this171 = this;
+            var _this172 = this;
 
             // If the value already matches the selected radio, do nothing.
             var isAlreadySelected = this.selectedRadio !== null && this.selectedRadio.value === this._value;
 
             if (this.children && !isAlreadySelected) {
               this.children.forEach(function (radio) {
-                radio.checked = _this171.value === radio.value;
+                radio.checked = _this172.value === radio.value;
 
                 if (radio.checked) {
-                  _this171.selectedRadio = radio;
+                  _this172.selectedRadio = radio;
                 }
               });
             }
@@ -51123,20 +51135,20 @@
         }, {
           key: "subscribeToRadioEvent",
           value: function subscribeToRadioEvent(radio) {
-            var _this172 = this;
+            var _this173 = this;
 
             return radio.valueChange.subscribe(function (value) {
-              _this172.value = value;
+              _this173.value = value;
 
-              _this172.valueChange.emit(value);
+              _this173.valueChange.emit(value);
 
               if (!radio.keepFormPristine) {
-                _this172.onChange(_this172.value);
+                _this173.onChange(_this173.value);
 
-                _this172.onTouched();
+                _this173.onTouched();
               }
 
-              _this172.writeValue(_this172.value);
+              _this173.writeValue(_this173.value);
             });
           }
         }]);
@@ -51256,7 +51268,7 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this173 = this;
+            var _this174 = this;
 
             if (this.radioGroup !== null) {
               if (this.radioGroup.value === this.value) {
@@ -51268,7 +51280,7 @@
               // TODO: remove timeout in v10 NUI-4843
               // nui-radio-group should subscribe before event is emitted
               this.timeoutId = setTimeout(function () {
-                _this173.valueChange.emit(_this173.value);
+                _this174.valueChange.emit(_this174.value);
               }, 0);
             } // Checks if user supplied any content as a label for radio button to adjust styles for radio buttons without labels
 
@@ -51572,32 +51584,32 @@
         }, {
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this174 = this;
+            var _this175 = this;
 
             // Observing the size of the component to check traverse
             this._ro = new resize_observer_polyfill__WEBPACK_IMPORTED_MODULE_1__["default"](function (entries) {
               return entries.forEach(function () {
-                return _this174.checkTraverse();
+                return _this175.checkTraverse();
               });
             });
             this.ngZone.runOutsideAngular(function () {
-              _this174._ro.observe(_this174.resizableArea.nativeElement);
+              _this175._ro.observe(_this175.resizableArea.nativeElement);
 
-              _this174._ro.observe(_this174.el.nativeElement);
+              _this175._ro.observe(_this175.el.nativeElement);
             }); // Making the first tab in group active by default
 
             this.setActiveTab();
             this.subscribeToSelection();
             this._changesSubscription = this._tabs.changes.subscribe(function (changedTabs) {
-              _this174.setActiveTab();
+              _this175.setActiveTab();
 
-              _this174._tabSelectedSubscriptions.forEach(function (sub) {
+              _this175._tabSelectedSubscriptions.forEach(function (sub) {
                 return sub.unsubscribe();
               });
 
-              _this174._tabSelectedSubscriptions = [];
+              _this175._tabSelectedSubscriptions = [];
 
-              _this174.subscribeToSelection();
+              _this175.subscribeToSelection();
             });
           }
         }, {
@@ -51669,23 +51681,23 @@
         }, {
           key: "subscribeToSelection",
           value: function subscribeToSelection() {
-            var _this175 = this;
+            var _this176 = this;
 
             this._tabs.forEach(function (tab) {
-              _this175._tabSelectedSubscriptions.push(tab.selected.subscribe(function (currentTab) {
+              _this176._tabSelectedSubscriptions.push(tab.selected.subscribe(function (currentTab) {
                 if (!currentTab.active && !currentTab.disabled) {
                   // Making all elements in array inactive to make than current one active
-                  _this175._tabs.forEach(function (tabHeading) {
+                  _this176._tabs.forEach(function (tabHeading) {
                     tabHeading.active = false;
                   });
 
                   currentTab.active = true;
 
-                  _this175.changeDetectorRef.markForCheck();
+                  _this176.changeDetectorRef.markForCheck();
 
-                  _this175.changeDetectorRef.detectChanges();
+                  _this176.changeDetectorRef.detectChanges();
 
-                  _this175.selected.emit(currentTab.tabId);
+                  _this176.selected.emit(currentTab.tabId);
                 }
               }));
             });
@@ -51902,16 +51914,16 @@
         var _super36 = _createSuper(MenuSwitchComponent);
 
         function MenuSwitchComponent(group, cd) {
-          var _this176;
+          var _this177;
 
           _classCallCheck(this, MenuSwitchComponent);
 
-          _this176 = _super36.call(this, group, cd);
-          _this176.group = group;
-          _this176.checked = false; // Is needed to predefine item state, sets nui-switch [disabled] property
+          _this177 = _super36.call(this, group, cd);
+          _this177.group = group;
+          _this177.checked = false; // Is needed to predefine item state, sets nui-switch [disabled] property
 
-          _this176.disabled = false;
-          return _this176;
+          _this177.disabled = false;
+          return _this177;
         }
 
         _createClass(MenuSwitchComponent, [{
@@ -52065,7 +52077,7 @@
 
       var TableResizerDirective = /*#__PURE__*/function () {
         function TableResizerDirective(tableStateHandlerService) {
-          var _this177 = this;
+          var _this178 = this;
 
           _classCallCheck(this, TableResizerDirective);
 
@@ -52074,18 +52086,18 @@
           this.resizerMovement = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
 
           this.mouseMoveHandler = function (event) {
-            _this177.resizerMovement.emit(event.movementX);
+            _this178.resizerMovement.emit(event.movementX);
           };
 
           this.removeResizeListeners = function () {
-            document.removeEventListener("mousemove", _this177.mouseMoveHandler);
-            document.removeEventListener("mouseup", _this177.removeResizeListeners);
+            document.removeEventListener("mousemove", _this178.mouseMoveHandler);
+            document.removeEventListener("mouseup", _this178.removeResizeListeners);
 
-            _this177.resizerMovement.emit(null); // This needs to be after the sort click handler which is why it needs a setTimeout
+            _this178.resizerMovement.emit(null); // This needs to be after the sort click handler which is why it needs a setTimeout
 
 
             setTimeout(function () {
-              _this177.tableStateHandlerService.emitResizeEvent(_this177.columnIndex, TableResizePhase.end);
+              _this178.tableStateHandlerService.emitResizeEvent(_this178.columnIndex, TableResizePhase.end);
             });
           };
         }
@@ -52426,7 +52438,7 @@
         _createClass(TabNavigationService, [{
           key: "disableTabNavigation",
           value: function disableTabNavigation(domElRef) {
-            var _this178 = this;
+            var _this179 = this;
 
             // dom manipulation to cache the altered elements
             // and do tabIndex=-1 on focusable HTML elements
@@ -52434,7 +52446,7 @@
             domElRef.nativeElement.querySelectorAll(focusableElementsCSSSelector).forEach(function (domEl) {
               var tabIndex = domEl.getAttribute("tabindex");
 
-              _this178.tabFocusableElements.push({
+              _this179.tabFocusableElements.push({
                 nativeElement: domEl,
                 tabIndex: lodash_isNull__WEBPACK_IMPORTED_MODULE_1___default()(tabIndex) ? undefined : tabIndex
               }); // disable focusing element via tab
@@ -52550,7 +52562,7 @@
 
       var TooltipDirective = /*#__PURE__*/function () {
         function TooltipDirective(_elementRef, _viewContainerRef, _ngZone, _ariaDescriber, _focusMonitor, resolver, overlayPositionService) {
-          var _this179 = this;
+          var _this180 = this;
 
           _classCallCheck(this, TooltipDirective);
 
@@ -52575,9 +52587,9 @@
           var element = _elementRef.nativeElement;
 
           this._manualListeners.set("mouseenter", function () {
-            return _this179.show();
+            return _this180.show();
           }).set("mouseleave", function () {
-            return _this179.hide();
+            return _this180.hide();
           });
 
           this._manualListeners.forEach(function (listener, event) {
@@ -52588,11 +52600,11 @@
             // Note that the focus monitor runs outside the Angular zone.
             if (!origin) {
               _ngZone.run(function () {
-                return _this179.hide();
+                return _this180.hide();
               });
             } else if (origin === "keyboard") {
               _ngZone.run(function () {
-                return _this179.show();
+                return _this180.show();
               });
             }
           });
@@ -52653,7 +52665,7 @@
         }, {
           key: "ngOnDestroy",
           value: function ngOnDestroy() {
-            var _this180 = this;
+            var _this181 = this;
 
             if (this._tooltipInstance) {
               this._tooltipInstance = undefined;
@@ -52661,7 +52673,7 @@
 
 
             this._manualListeners.forEach(function (listener, event) {
-              _this180._elementRef.nativeElement.removeEventListener(event, listener);
+              _this181._elementRef.nativeElement.removeEventListener(event, listener);
             });
 
             this._manualListeners.clear();
@@ -52679,7 +52691,7 @@
         }, {
           key: "show",
           value: function show() {
-            var _this181 = this;
+            var _this182 = this;
 
             var _a;
 
@@ -52699,11 +52711,11 @@
                 // That's why inside setTimeout operation there's one more check if it's disabled.
 
 
-                if (!_this181.canShowTooltip()) {
+                if (!_this182.canShowTooltip()) {
                   return;
                 }
 
-                (_a = _this181._tooltipInstance) === null || _a === void 0 ? void 0 : _a.show();
+                (_a = _this182._tooltipInstance) === null || _a === void 0 ? void 0 : _a.show();
               });
             } else {
               (_a = this._tooltipInstance) === null || _a === void 0 ? void 0 : _a.show();
@@ -52714,13 +52726,13 @@
         }, {
           key: "hide",
           value: function hide() {
-            var _this182 = this;
+            var _this183 = this;
 
             // without setTimeout, sometimes 'hide' is called before 'show', because show has setTimeout for it's own reasons.
             setTimeout(function () {
               var _a;
 
-              return (_a = _this182._tooltipInstance) === null || _a === void 0 ? void 0 : _a.hide();
+              return (_a = _this183._tooltipInstance) === null || _a === void 0 ? void 0 : _a.hide();
             });
           }
           /** Shows/hides the tooltip */
@@ -54327,24 +54339,24 @@
         var _super37 = _createSuper(EventBusService);
 
         function EventBusService(rendererFactory) {
-          var _this183;
+          var _this184;
 
           _classCallCheck(this, EventBusService);
 
-          _this183 = _super37.call(this); // Angular does not allow to easily use renderer in services. This is a workaround
+          _this184 = _super37.call(this); // Angular does not allow to easily use renderer in services. This is a workaround
 
-          _this183.renderer = rendererFactory.createRenderer(null, null); // This is moved from popup code.
+          _this184.renderer = rendererFactory.createRenderer(null, null); // This is moved from popup code.
           // Every event that is triggered for document should be handled by popup,
           // but we should register listener only once
 
-          _this183.renderer.listen("document", "click", function (event) {
+          _this184.renderer.listen("document", "click", function (event) {
             // separate stream to detect document-body clicks in case of popup in popover
-            _this183.getStream({
+            _this184.getStream({
               id: _constants_event_constants__WEBPACK_IMPORTED_MODULE_1__["DOCUMENT_CLICK_EVENT"]
             }).next(event);
           });
 
-          return _this183;
+          return _this184;
         }
 
         return EventBusService;
@@ -54404,13 +54416,13 @@
         var _super38 = _createSuper(TableFooterCellDefDirective);
 
         function TableFooterCellDefDirective(template) {
-          var _this184;
+          var _this185;
 
           _classCallCheck(this, TableFooterCellDefDirective);
 
-          _this184 = _super38.call(this, template);
-          _this184.template = template;
-          return _this184;
+          _this185 = _super38.call(this, template);
+          _this185.template = template;
+          return _this185;
         }
 
         return TableFooterCellDefDirective;
@@ -54655,7 +54667,7 @@
 
       var SrlcIndicatorComponent = /*#__PURE__*/function () {
         function SrlcIndicatorComponent(router) {
-          var _this185 = this;
+          var _this186 = this;
 
           _classCallCheck(this, SrlcIndicatorComponent);
 
@@ -54667,7 +54679,7 @@
           };
 
           this.getMessageType = function () {
-            switch (_this185.componentSrlc.stage) {
+            switch (_this186.componentSrlc.stage) {
               case _public_api__WEBPACK_IMPORTED_MODULE_3__["SrlcStage"].preAlpha:
                 return "critical";
 
@@ -54694,7 +54706,7 @@
           this.getMessageText = function () {
             var _a;
 
-            switch (_this185.componentSrlc.stage) {
+            switch (_this186.componentSrlc.stage) {
               case _public_api__WEBPACK_IMPORTED_MODULE_3__["SrlcStage"].preAlpha:
                 return "<strong>Under Development</strong> DO NOT USE. This component is under active development and significant,\n                    API breaking changes are still expected. Its use will not be supported.";
 
@@ -54709,7 +54721,7 @@
                 return "<strong>Production Ready</strong> Available for production use - see documented examples below.";
 
               case _public_api__WEBPACK_IMPORTED_MODULE_3__["SrlcStage"].support:
-                return "<strong>Deprecated</strong> Sorry, but we no longer recommend using this component.\n                    Only critical issues are going to be fixed.\n                    End Of Life is scheduled to <strong>".concat((_a = _this185.componentSrlc.eolDate) === null || _a === void 0 ? void 0 : _a.toDateString(), "</strong>.");
+                return "<strong>Deprecated</strong> Sorry, but we no longer recommend using this component.\n                    Only critical issues are going to be fixed.\n                    End Of Life is scheduled to <strong>".concat((_a = _this186.componentSrlc.eolDate) === null || _a === void 0 ? void 0 : _a.toDateString(), "</strong>.");
 
               case _public_api__WEBPACK_IMPORTED_MODULE_3__["SrlcStage"].eol:
                 return "<strong>Not Supported</strong> Sorry, but this component is not supported any more!";
@@ -54723,7 +54735,7 @@
         _createClass(SrlcIndicatorComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this186 = this;
+            var _this187 = this;
 
             this.router.events.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["filter"])(function (event) {
               return event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_0__["RoutesRecognized"];
@@ -54737,7 +54749,7 @@
               return route;
             })).subscribe(function (route) {
               var routeDataSrlc = (route.data || {}).srlc;
-              _this186.componentSrlc = lodash_defaults__WEBPACK_IMPORTED_MODULE_1___default()(routeDataSrlc || {}, _this186.globalSrlc);
+              _this187.componentSrlc = lodash_defaults__WEBPACK_IMPORTED_MODULE_1___default()(routeDataSrlc || {}, _this187.globalSrlc);
             });
           }
         }]);
@@ -55212,15 +55224,15 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this187 = this;
+            var _this188 = this;
 
             var displayChangeSubscription = this.displayChange.subscribe(function (show) {
               if (!show) {
-                _this187.popoverBeforeHiddenSubject.next();
+                _this188.popoverBeforeHiddenSubject.next();
 
-                _this187.fadeIn = false;
+                _this188.fadeIn = false;
 
-                _this187.cdRef.markForCheck();
+                _this188.cdRef.markForCheck();
               }
             });
             this.popoverModalSubscriptions.push(displayChangeSubscription);
@@ -55228,13 +55240,13 @@
         }, {
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this188 = this;
+            var _this189 = this;
 
             // To prevent from exception 'expression was changed after check'
             var zoneSubscription = this.zone.onStable.asObservable().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["take"])(1)).subscribe(function () {
               // To be sure, that change detection mechanism was invoked and placement was updated
-              _this188.zone.run(function () {
-                return _this188.fadeIn = true;
+              _this189.zone.run(function () {
+                return _this189.fadeIn = true;
               });
             });
             this.popoverModalSubscriptions.push(zoneSubscription);
@@ -55600,18 +55612,18 @@
         _createClass(YearPickerComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this189 = this;
+            var _this190 = this;
 
             this.datePicker.stepYear = {
               years: this.datePicker.yearRange
             };
             this.datePicker.setRefreshViewHandler(function () {
-              var picker = _this189.datePicker;
+              var picker = _this190.datePicker;
               var years = new Array(picker.yearRange);
               var date = picker.value && picker.value.isValid() ? picker.value.clone() : moment_moment__WEBPACK_IMPORTED_MODULE_0___default()();
               date = date.set("date", 1);
 
-              var start = _this189.getStartingYear(date.year());
+              var start = _this190.getStartingYear(date.year());
 
               for (var i = 0; i < picker.yearRange; i++) {
                 date = date.set({
@@ -55621,8 +55633,8 @@
                 years[i].uid = picker.uniqueId + "-" + i;
               }
 
-              _this189.title = [years[0].label, years[picker.yearRange - 1].label].join(" - ");
-              _this189.rows = picker.split(years, 5);
+              _this190.title = [years[0].label, years[picker.yearRange - 1].label].join(" - ");
+              _this190.rows = picker.split(years, 5);
             }, "year");
             this.datePicker.setCompareHandler(function (date1, date2) {
               return date1.year() - date2.year();
@@ -55926,7 +55938,7 @@
         _createClass(PlunkerProjectService, [{
           key: "open",
           value: function open(prefix, sources, translations) {
-            var _this190 = this;
+            var _this191 = this;
 
             var form = this.document.createElement("form");
 
@@ -55938,7 +55950,7 @@
 
 
             Object.keys(sources).forEach(function (key) {
-              form.append(_this190.formInput("".concat(prefix, ".example.component"), key, modifySources(sources[key])));
+              form.append(_this191.formInput("".concat(prefix, ".example.component"), key, modifySources(sources[key])));
             }); // translations
 
             form.append(this.formInput("translations", "ts", translations)); // application files
@@ -56532,32 +56544,32 @@
         _createClass(CheckboxGroupComponent, [{
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this191 = this;
+            var _this192 = this;
 
             this.children.toArray().forEach(function (child) {
-              _this191.renderer.setAttribute(child.inputViewContainer.element.nativeElement, "name", _this191.name);
+              _this192.renderer.setAttribute(child.inputViewContainer.element.nativeElement, "name", _this192.name);
 
-              _this191.subscriptionsArray.push(_this191.subscribeToCheckboxEvent(child));
+              _this192.subscriptionsArray.push(_this192.subscribeToCheckboxEvent(child));
 
               setTimeout(function () {
-                child.checked = _this191.values.indexOf(child.value) > -1;
-                child.disabled = child.disabled || _this191.disabled;
+                child.checked = _this192.values.indexOf(child.value) > -1;
+                child.disabled = child.disabled || _this192.disabled;
               });
             });
             this.children.changes.subscribe(function (checkboxComponentQueryList) {
               // verify that there are no observers on checkboxes as we are creating new.
-              _this191.subscriptionsArray.forEach(function (sub) {
+              _this192.subscriptionsArray.forEach(function (sub) {
                 return sub.unsubscribe();
               });
 
               checkboxComponentQueryList.toArray().forEach(function (checkbox) {
-                _this191.renderer.setAttribute(checkbox.inputViewContainer.element.nativeElement, "name", _this191.name);
+                _this192.renderer.setAttribute(checkbox.inputViewContainer.element.nativeElement, "name", _this192.name);
 
-                _this191.subscriptionsArray.push(_this191.subscribeToCheckboxEvent(checkbox));
+                _this192.subscriptionsArray.push(_this192.subscribeToCheckboxEvent(checkbox));
 
                 setTimeout(function () {
-                  checkbox.checked = _this191.values.indexOf(checkbox.value) > -1;
-                  checkbox.disabled = checkbox.disabled || _this191.disabled;
+                  checkbox.checked = _this192.values.indexOf(checkbox.value) > -1;
+                  checkbox.disabled = checkbox.disabled || _this192.disabled;
                 });
               });
             });
@@ -56586,13 +56598,13 @@
         }, {
           key: "setDisabledState",
           value: function setDisabledState(isDisabled) {
-            var _this192 = this;
+            var _this193 = this;
 
             this.disabled = isDisabled;
 
             if (this.children) {
               this.children.toArray().forEach(function (child) {
-                return child.disabled = _this192.disabled;
+                return child.disabled = _this193.disabled;
               });
             }
           }
@@ -56610,24 +56622,24 @@
         }, {
           key: "subscribeToCheckboxEvent",
           value: function subscribeToCheckboxEvent(checkbox) {
-            var _this193 = this;
+            var _this194 = this;
 
             return checkbox.valueChange.subscribe(function (event) {
               if (event.target.checked) {
-                _this193.values = [].concat(_toConsumableArray(_this193.values), [event.target.value]);
+                _this194.values = [].concat(_toConsumableArray(_this194.values), [event.target.value]);
               } else {
-                lodash_remove__WEBPACK_IMPORTED_MODULE_2___default()(_this193.values, function (x) {
+                lodash_remove__WEBPACK_IMPORTED_MODULE_2___default()(_this194.values, function (x) {
                   return x === event.target.value;
                 });
               }
 
-              _this193.valuesChange.emit(_this193.values);
+              _this194.valuesChange.emit(_this194.values);
 
-              _this193.onChange(_this193.values);
+              _this194.onChange(_this194.values);
 
-              _this193.onTouched();
+              _this194.onTouched();
 
-              _this193.writeValue(_this193.values);
+              _this194.writeValue(_this194.values);
             });
           }
         }]);
@@ -56873,14 +56885,14 @@
         var _super39 = _createSuper(WizardStepV2Component);
 
         function WizardStepV2Component(changeDetectorRef, stepper, _errorStateMatcher, stepperOptions) {
-          var _this194;
+          var _this195;
 
           _classCallCheck(this, WizardStepV2Component);
 
-          _this194 = _super39.call(this, stepper, stepperOptions);
-          _this194.changeDetectorRef = changeDetectorRef;
-          _this194._errorStateMatcher = _errorStateMatcher;
-          return _this194;
+          _this195 = _super39.call(this, stepper, stepperOptions);
+          _this195.changeDetectorRef = changeDetectorRef;
+          _this195._errorStateMatcher = _errorStateMatcher;
+          return _this195;
         }
         /** Custom error state matcher that additionally checks for validity of interacted form. */
 
@@ -56958,18 +56970,18 @@
         var _super40 = _createSuper(WizardDirective);
 
         function WizardDirective() {
-          var _this195;
+          var _this196;
 
           _classCallCheck(this, WizardDirective);
 
-          _this195 = _super40.apply(this, arguments);
+          _this196 = _super40.apply(this, arguments);
           /** Event emitted when the current step is done transitioning in. */
 
-          _this195.animationDone = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+          _this196.animationDone = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
           /** Stream of animation `done` events when the body expands/collapses. */
 
-          _this195._animationDone = new rxjs__WEBPACK_IMPORTED_MODULE_2__["Subject"]();
-          return _this195;
+          _this196._animationDone = new rxjs__WEBPACK_IMPORTED_MODULE_2__["Subject"]();
+          return _this196;
         }
         /** The step that is selected. */
 
@@ -56985,10 +56997,10 @@
         }, {
           key: "ngAfterContentInit",
           value: function ngAfterContentInit() {
-            var _this196 = this;
+            var _this197 = this;
 
             this.steps.changes.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["takeUntil"])(this._destroyed)).subscribe(function () {
-              return _this196._stateChanged();
+              return _this197._stateChanged();
             });
 
             this._animationDone.pipe( // This needs a `distinctUntilChanged` in order to avoid emitting the same event twice due
@@ -56998,7 +57010,7 @@
               return x.fromState === y.fromState && x.toState === y.toState;
             }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["takeUntil"])(this._destroyed)).subscribe(function (event) {
               if (event.toState === "current") {
-                _this196.animationDone.emit();
+                _this197.animationDone.emit();
               }
             });
           }
@@ -57560,17 +57572,17 @@
         _createClass(ToolbarComponent, [{
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this197 = this;
+            var _this198 = this;
 
             this.splitToolbarItems();
             this.childrenSubscription = Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["merge"])(this.groups.changes, this.items.changes).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["debounceTime"])(20)).subscribe(function () {
               // timeout is needed for updating actual querylist. without it splitToolbarItems won't get new element in groups' arrays
               setTimeout(function () {
-                _this197.splitToolbarItems();
+                _this198.splitToolbarItems();
               }, 0);
             });
             this.ngZone.onStable.asObservable().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["take"])(1)).subscribe(function () {
-              _this197.moveToolbarItems();
+              _this198.moveToolbarItems();
             });
             this.destructiveItems = [];
             this.groups.forEach(function (group) {
@@ -57579,10 +57591,10 @@
               });
 
               if (isDestructiveItem.length) {
-                _this197.destructiveItems.push(isDestructiveItem);
+                _this198.destructiveItems.push(isDestructiveItem);
 
-                if (_this197.destructiveItems.length === 1 && _this197.destructiveIsLastItem || _this197.destructiveItems.length > 1) {
-                  _this197.logger.error("Only one tool-bar-item with type destructive may be defined, and it must be the last item in last group");
+                if (_this198.destructiveItems.length === 1 && _this198.destructiveIsLastItem || _this198.destructiveItems.length > 1) {
+                  _this198.logger.error("Only one tool-bar-item with type destructive may be defined, and it must be the last item in last group");
                 }
               }
             });
@@ -57616,7 +57628,7 @@
         }, {
           key: "splitToolbarItems",
           value: function splitToolbarItems() {
-            var _this198 = this;
+            var _this199 = this;
 
             this.commandGroups = [];
             this.menuGroups = [];
@@ -57629,13 +57641,13 @@
               });
 
               if (commandGroupItems.length) {
-                _this198.commandGroups.push({
+                _this199.commandGroups.push({
                   items: commandGroupItems
                 });
               }
 
               if (menuGroupItems.length) {
-                _this198.menuGroups.push({
+                _this199.menuGroups.push({
                   items: menuGroupItems,
                   title: group.title
                 });
@@ -57912,7 +57924,7 @@
             return (_a = this.popup) === null || _a === void 0 ? void 0 : _a.showing;
           },
           set: function set(open) {
-            var _this199 = this;
+            var _this200 = this;
 
             if (this.isContentInitialized) {
               this.isOpenHandler(open);
@@ -57920,7 +57932,7 @@
             }
 
             setTimeout(function () {
-              return _this199.isOpenHandler(open);
+              return _this200.isOpenHandler(open);
             });
           }
         }, {
@@ -57966,7 +57978,7 @@
         }, {
           key: "ngAfterContentInit",
           value: function ngAfterContentInit() {
-            var _this200 = this;
+            var _this201 = this;
 
             this.isContentInitialized = true;
             this.initToggleRef();
@@ -57976,14 +57988,14 @@
 
             if (this.popupToggle) {
               this.popupToggle.toggle.subscribe(function (e) {
-                return _this200.toggleOpened(e);
+                return _this201.toggleOpened(e);
               });
             }
           }
         }, {
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this201 = this;
+            var _this202 = this;
 
             this.overlayConfig = Object.assign(Object.assign({}, this.overlayConfig), {
               width: this.width
@@ -57991,7 +58003,7 @@
 
             if (this.manualOpenControl) {
               this.manualOpenControl.subscribe(function (e) {
-                return _this201.toggleOpened(e);
+                return _this202.toggleOpened(e);
               });
             }
 
@@ -58002,10 +58014,10 @@
             this.eventBusService.getStream({
               id: _constants_event_constants__WEBPACK_IMPORTED_MODULE_5__["DOCUMENT_CLICK_EVENT"]
             }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeUntil"])(this.destroy$)).subscribe(function (event) {
-              var isToggle = _this201.popupToggle && event ? _this201.popupToggle.host.nativeElement.contains(event.target) : false;
+              var isToggle = _this202.popupToggle && event ? _this202.popupToggle.host.nativeElement.contains(event.target) : false;
 
-              if (_this201.isOpen && !isToggle) {
-                _this201.closePopup();
+              if (_this202.isOpen && !isToggle) {
+                _this202.closePopup();
               }
             });
             this.cdRef.detectChanges();
@@ -58125,7 +58137,7 @@
         }, {
           key: "show",
           value: function show() {
-            var _this202 = this;
+            var _this203 = this;
 
             if (!this.toggleReference) {
               return;
@@ -58139,7 +58151,7 @@
 
             if (this.contextClass) {
               this.contextClass.split(" ").forEach(function (contextClass) {
-                _this202.popupAreaContainer.nativeElement.classList.add(contextClass);
+                _this203.popupAreaContainer.nativeElement.classList.add(contextClass);
               });
             }
 
@@ -58149,13 +58161,13 @@
         }, {
           key: "hide",
           value: function hide() {
-            var _this203 = this;
+            var _this204 = this;
 
             this.visible = false;
             setTimeout(function () {
-              _this203.popup.hide();
+              _this204.popup.hide();
 
-              _this203.opened.emit(_this203.popup.showing);
+              _this204.opened.emit(_this204.popup.showing);
             });
           }
         }, {
@@ -58362,7 +58374,7 @@
       var DndDropTargetDirective = /*#__PURE__*/function () {
         // canDrop primitive value is used for the host element class binding
         function DndDropTargetDirective(targetDropList, renderer, hostElement) {
-          var _this204 = this;
+          var _this205 = this;
 
           _classCallCheck(this, DndDropTargetDirective);
 
@@ -58397,10 +58409,10 @@
 
             if (showDropZone) {
               var ACCEPT_ALL_ITEMS = true;
-              result = (_b = (_a = _this204.canBeDropped) === null || _a === void 0 ? void 0 : _a.call(_this204, drag.data, _this204.targetDropList)) !== null && _b !== void 0 ? _b : ACCEPT_ALL_ITEMS;
+              result = (_b = (_a = _this205.canBeDropped) === null || _a === void 0 ? void 0 : _a.call(_this205, drag.data, _this205.targetDropList)) !== null && _b !== void 0 ? _b : ACCEPT_ALL_ITEMS;
             }
 
-            _this204._canLastDragItemBeDropped = result;
+            _this205._canLastDragItemBeDropped = result;
             return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["of"])(result);
           }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["distinctUntilChanged"])(), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["shareReplay"])()); // If consumer will not subscribe in the template to canDrop$ we should set proper classes anyway.
           // That's why we're subscribing also here, the number of observables will remain the same because of shareReplay
@@ -58425,7 +58437,7 @@
         }, {
           key: "ngAfterContentInit",
           value: function ngAfterContentInit() {
-            var _this205 = this;
+            var _this206 = this;
 
             // Using this to provide current draggable item reference that is needed for predicate validation
             // cdkDropList is not throwing any event on dragStart, then we should subscribe to dragStartEventEmitter from item
@@ -58434,7 +58446,7 @@
                 return drag.started;
               })));
             }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["tap"])(function (item) {
-              return _this205.itemDragStarted$.next(item.source);
+              return _this206.itemDragStarted$.next(item.source);
             }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["takeUntil"])(this._destroy$)).subscribe();
           }
         }, {
@@ -58629,17 +58641,17 @@
         var _super41 = _createSuper(SelectV2OptionComponent);
 
         function SelectV2OptionComponent(parent, element) {
-          var _this206;
+          var _this207;
 
           _classCallCheck(this, SelectV2OptionComponent);
 
-          _this206 = _super41.call(this, element);
-          _this206.element = element;
+          _this207 = _super41.call(this, element);
+          _this207.element = element;
           /** Whether the Option outfiltered */
 
-          _this206.outfiltered = false;
-          _this206.select = parent;
-          return _this206;
+          _this207.outfiltered = false;
+          _this207.select = parent;
+          return _this207;
         }
         /** Whether the Option selected */
 
@@ -59377,7 +59389,7 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this207 = this;
+            var _this208 = this;
 
             lodash_defaults__WEBPACK_IMPORTED_MODULE_2___default()(this, _public_api__WEBPACK_IMPORTED_MODULE_15__["datePickerDefaults"]);
             this.selectedDate = this._value;
@@ -59386,19 +59398,19 @@
             this.inputChanged.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["debounceTime"])(500)).subscribe(function (value) {
               var momentValue = moment_moment__WEBPACK_IMPORTED_MODULE_6___default()(value, _public_api__WEBPACK_IMPORTED_MODULE_15__["datePickerDateFormats"], true);
 
-              _this207.onTouched(); // In case of FormControl absence we still need to perform validation
+              _this208.onTouched(); // In case of FormControl absence we still need to perform validation
 
 
-              var templateDrivenControlValid = !_this207.formControl && lodash_isNull__WEBPACK_IMPORTED_MODULE_5___default()(_validators__WEBPACK_IMPORTED_MODULE_9__["NuiValidators"].dateFormat(momentValue));
-              var reactiveDrivenControlValid = _this207.formControl && _this207.formControl.valid && lodash_isNull__WEBPACK_IMPORTED_MODULE_5___default()(_validators__WEBPACK_IMPORTED_MODULE_9__["NuiValidators"].dateFormat(momentValue));
-              var isInputValid = (templateDrivenControlValid || reactiveDrivenControlValid) && !_this207.isDateDisabled(momentValue);
+              var templateDrivenControlValid = !_this208.formControl && lodash_isNull__WEBPACK_IMPORTED_MODULE_5___default()(_validators__WEBPACK_IMPORTED_MODULE_9__["NuiValidators"].dateFormat(momentValue));
+              var reactiveDrivenControlValid = _this208.formControl && _this208.formControl.valid && lodash_isNull__WEBPACK_IMPORTED_MODULE_5___default()(_validators__WEBPACK_IMPORTED_MODULE_9__["NuiValidators"].dateFormat(momentValue));
+              var isInputValid = (templateDrivenControlValid || reactiveDrivenControlValid) && !_this208.isDateDisabled(momentValue);
 
-              _this207.setDate(momentValue);
+              _this208.setDate(momentValue);
 
-              _this207.setErrorState(!isInputValid);
+              _this208.setErrorState(!isInputValid);
 
-              if (_this207.value.isValid() && !lodash_isEqual__WEBPACK_IMPORTED_MODULE_3___default()(_this207.value.format(_this207.momentDateFormat), value)) {
-                _this207.updateTextboxValue();
+              if (_this208.value.isValid() && !lodash_isEqual__WEBPACK_IMPORTED_MODULE_3___default()(_this208.value.format(_this208.momentDateFormat), value)) {
+                _this208.updateTextboxValue();
               }
             });
             this.onAppendToBodyChange(this.appendToBody);
@@ -59413,30 +59425,30 @@
         }, {
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this208 = this;
+            var _this209 = this;
 
             this.calendarChanged = this._datePicker.calendarMoved.subscribe(function (value) {
-              return _this208.calendarNavigated.emit(value);
+              return _this209.calendarNavigated.emit(value);
             });
             this.updateTextboxValue();
             this.cd.detectChanges();
 
             if (this.overlay) {
               this.overlay.clickOutside.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["takeUntil"])(this.onDestroy$)).subscribe(function (_) {
-                return _this208.overlay.hide();
+                return _this209.overlay.hide();
               }); // Sets innerDatePicker 'value' to 'null' on popup close and refreshView() on popup open,
               // so in case datePicker.value is invalid it will build the calendar from the scratch
               // and not keep its previous state.
 
               this.overlay.show$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["takeUntil"])(this.onDestroy$)).subscribe(function (_) {
-                return _this208._datePicker.refreshView();
+                return _this209._datePicker.refreshView();
               });
               this.overlay.hide$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["takeUntil"])(this.onDestroy$)).subscribe(function (_) {
-                var currentDateValid = moment_moment__WEBPACK_IMPORTED_MODULE_6___default()(_this208.value).isValid();
+                var currentDateValid = moment_moment__WEBPACK_IMPORTED_MODULE_6___default()(_this209.value).isValid();
 
                 if (!currentDateValid) {
-                  _this208._datePicker.value = undefined;
-                  _this208._datePicker.datepickerMode = "day";
+                  _this209._datePicker.value = undefined;
+                  _this209._datePicker.datepickerMode = "day";
                 }
               });
             }
@@ -59444,10 +59456,10 @@
         }, {
           key: "updateTouchedState",
           value: function updateTouchedState() {
-            var _this209 = this;
+            var _this210 = this;
 
             setTimeout(function () {
-              return _this209.inputBlurred.emit();
+              return _this210.inputBlurred.emit();
             }, 100);
             this.onTouched();
           }
@@ -59778,7 +59790,7 @@
 
 
       var DomUtilService = function DomUtilService(document) {
-        var _this210 = this;
+        var _this211 = this;
 
         _classCallCheck(this, DomUtilService);
 
@@ -59811,7 +59823,7 @@
           } // Get the closest matching element
 
 
-          for (; elem && elem !== _this210.document; elem = (_a = elem.parentElement) !== null && _a !== void 0 ? _a : undefined) {
+          for (; elem && elem !== _this211.document; elem = (_a = elem.parentElement) !== null && _a !== void 0 ? _a : undefined) {
             if (elem === null || elem === void 0 ? void 0 : elem.matches(selector)) {
               return elem;
             }
@@ -59903,22 +59915,22 @@
         }, {
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this211 = this;
+            var _this212 = this;
 
             this.resizeHandler = lodash_debounce__WEBPACK_IMPORTED_MODULE_1___default()(function (entry) {
-              return _this211.containerResize.emit(entry);
+              return _this212.containerResize.emit(entry);
             }, this._debounceTime);
             this.resizeObserver = new resize_observer_polyfill__WEBPACK_IMPORTED_MODULE_2__["default"](function (entries) {
               entries.forEach(function (entry) {
-                _this211.ngZone.run(function () {
-                  _this211.resizeHandler(entry);
+                _this212.ngZone.run(function () {
+                  _this212.resizeHandler(entry);
                 });
               });
             });
             this.ngZone.runOutsideAngular(function () {
               var _a;
 
-              (_a = _this211.resizeObserver) === null || _a === void 0 ? void 0 : _a.observe(_this211._element.nativeElement);
+              (_a = _this212.resizeObserver) === null || _a === void 0 ? void 0 : _a.observe(_this212._element.nativeElement);
             });
           }
         }, {
@@ -60026,19 +60038,19 @@
         var _super42 = _createSuper(MenuLinkComponent);
 
         function MenuLinkComponent(group, cd) {
-          var _this212;
+          var _this213;
 
           _classCallCheck(this, MenuLinkComponent);
 
-          _this212 = _super42.call(this, group, cd);
-          _this212.group = group;
+          _this213 = _super42.call(this, group, cd);
+          _this213.group = group;
           /**
            * Sets inner "target" attribute of anchor tag
            */
 
-          _this212.target = "";
-          _this212.disabled = false;
-          return _this212;
+          _this213.target = "";
+          _this213.disabled = false;
+          return _this213;
         }
 
         _createClass(MenuLinkComponent, [{
@@ -60572,7 +60584,7 @@
 
       var RepeatComponent = /*#__PURE__*/function () {
         function RepeatComponent(changeDetector, logger, iterableDiffers, dragDropService, elRef) {
-          var _this213 = this;
+          var _this214 = this;
 
           _classCallCheck(this, RepeatComponent);
 
@@ -60636,9 +60648,9 @@
           this.dropListDestroyed = new rxjs__WEBPACK_IMPORTED_MODULE_4__["Subject"]();
 
           this.intersectionObserverCallback = function (entries, observer) {
-            if (entries[0].isIntersecting && _this213.virtualScroll) {
+            if (entries[0].isIntersecting && _this214.virtualScroll) {
               // recheck the cdk viewport size in case the repeat is instantiated before becoming visible in the viewport (NUI-5820)
-              _this213.viewportRef.checkViewportSize();
+              _this214.viewportRef.checkViewportSize();
             }
           };
         }
@@ -60886,7 +60898,7 @@
         }, {
           key: "initializeCDKDropList",
           value: function initializeCDKDropList() {
-            var _this214 = this;
+            var _this215 = this;
 
             if (!this.virtualScroll && this.dropListArea && this._draggable && !this.dropListRef) {
               this.dropListRef = this.dragDropService.createDropList(this.dropListArea);
@@ -60894,7 +60906,7 @@
               this.dropListRef.data = this.itemsSource; // self-destroyed subscription
 
               this.dropListRef.dropped.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["tap"])(function (event) {
-                return _this214.itemDropped(event);
+                return _this215.itemDropped(event);
               }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["takeUntil"])(this.dropListDestroyed)).subscribe();
               this.dropListRef.withItems(this.draggableElements.map(function (item) {
                 return item._dragRef;
@@ -61265,19 +61277,19 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this215 = this;
+            var _this216 = this;
 
             if (this.manualOpenControl) {
               this.popupSubscriptions.push(this.manualOpenControl.subscribe(function (event) {
-                _this215.toggleOpened(event);
+                _this216.toggleOpened(event);
               }));
             }
 
             this.popupSubscriptions.push(this.eventBusService.getStream({
               id: _constants_event_constants__WEBPACK_IMPORTED_MODULE_3__["DOCUMENT_CLICK_EVENT"]
             }).subscribe(function (event) {
-              if (_this215.isOpen) {
-                _this215.closePopup(event);
+              if (_this216.isOpen) {
+                _this216.closePopup(event);
               }
             })); // This is needed to make the isOpen @Input work.
 
@@ -61286,7 +61298,7 @@
         }, {
           key: "ngAfterContentInit",
           value: function ngAfterContentInit() {
-            var _this216 = this;
+            var _this217 = this;
 
             this.setPopupPosition();
 
@@ -61295,7 +61307,7 @@
             }
 
             this.popupSubscriptions.push(this.popupToggle.toggle.subscribe(function (event) {
-              _this216.toggleOpened(event);
+              _this217.toggleOpened(event);
             }));
           }
         }, {
@@ -62202,7 +62214,7 @@
 
       var ToastComponent = /*#__PURE__*/function () {
         function ToastComponent(toastService, toastPackage, ngZone) {
-          var _this217 = this;
+          var _this218 = this;
 
           _classCallCheck(this, ToastComponent);
 
@@ -62235,13 +62247,13 @@
           this.toastIcon = this.toastTypeToSeverityIcon[toastPackage.toastType];
           this.closeButton = this.toastPackage.config.closeButton;
           var activateSubscription = this.toastPackage.toastRef.afterActivate().subscribe(function () {
-            _this217.display = "block";
+            _this218.display = "block";
             setTimeout(function () {
-              return _this217.activateToast();
+              return _this218.activateToast();
             }); // Is needed to make "display: none" & "opacity" transitions working
           });
           var closeSubscription = this.toastPackage.toastRef.manualClosed().subscribe(function () {
-            _this217.remove();
+            _this218.remove();
           });
           this.subscriptions.push(activateSubscription, closeSubscription);
         }
@@ -62258,18 +62270,18 @@
         }, {
           key: "activateToast",
           value: function activateToast() {
-            var _this218 = this;
+            var _this219 = this;
 
             this.state = ToastState.Active;
             this.fadeOut = false;
 
             if (this.options.timeOut) {
               this.ngZone.runOutsideAngular(function () {
-                _this218.timeout = setTimeout(function () {
-                  _this218.ngZone.run(function () {
-                    _this218.remove();
+                _this219.timeout = setTimeout(function () {
+                  _this219.ngZone.run(function () {
+                    _this219.remove();
                   });
-                }, _this218.options.timeOut);
+                }, _this219.options.timeOut);
               });
               this.hideTime = new Date().getTime() + this.options.timeOut;
 
@@ -62285,7 +62297,7 @@
         }, {
           key: "remove",
           value: function remove() {
-            var _this219 = this;
+            var _this220 = this;
 
             if (this.state === ToastState.Removed) {
               return;
@@ -62295,7 +62307,7 @@
             this.state = ToastState.Removed;
             this.fadeOut = true;
             this.timeout = setTimeout(function () {
-              return _this219.toastService.remove(_this219.toastPackage.toastId);
+              return _this220.toastService.remove(_this220.toastPackage.toastId);
             }, this.animationFadeOutLength);
           }
           /**
@@ -62340,7 +62352,7 @@
         }, {
           key: "delayedHideToast",
           value: function delayedHideToast() {
-            var _this220 = this;
+            var _this221 = this;
 
             clearInterval(this.intervalId);
 
@@ -62349,7 +62361,7 @@
             }
 
             this.timeout = setTimeout(function () {
-              return _this220.remove();
+              return _this221.remove();
             }, this.options.extendedTimeOut);
             this.options.timeOut = this.options.extendedTimeOut;
             this.hideTime = new Date().getTime() + (this.options.timeOut || 0);
@@ -62362,15 +62374,15 @@
         }, {
           key: "repeatProgressBarChange",
           value: function repeatProgressBarChange() {
-            var _this221 = this;
+            var _this222 = this;
 
             var intervalId;
             this.ngZone.runOutsideAngular(function () {
               intervalId = setInterval(function () {
-                _this221.ngZone.run(function () {
-                  _this221.updateProgress();
+                _this222.ngZone.run(function () {
+                  _this222.updateProgress();
                 });
-              }, (_this221.options.timeOut || 0) / 100);
+              }, (_this222.options.timeOut || 0) / 100);
             }); // using type assertion to avoid compile time error
             // variable intervalId is assigned by clojure / async
 
@@ -63022,15 +63034,15 @@
         }, {
           key: "initChipResizeObserver",
           value: function initChipResizeObserver() {
-            var _this222 = this;
+            var _this223 = this;
 
             if (!this.allChips.first) {
               return;
             }
 
             this.chipResizeObserver = new resize_observer_polyfill__WEBPACK_IMPORTED_MODULE_1__["default"](function () {
-              _this222.zone.run(function () {
-                return _this222.handleOverflow();
+              _this223.zone.run(function () {
+                return _this223.handleOverflow();
               });
             }); // Rendering occurs gradually, so we tracking every dimension change, to calculate overflow items correctly
             // to avoid case when Overflow Counter renders on the next line. Observing occurs only on first item, but it
@@ -63041,20 +63053,20 @@
         }, {
           key: "initChipsMutationObserver",
           value: function initChipsMutationObserver() {
-            var _this223 = this;
+            var _this224 = this;
 
             var config = {
               childList: true
             };
             this.chipsMutationObserver = new MutationObserver(function () {
-              return _this223.handleOverflow();
+              return _this224.handleOverflow();
             });
             this.chipsMutationObserver.observe(this.mainCell.nativeElement, config);
           }
         }, {
           key: "processChipsOverflow",
           value: function processChipsOverflow() {
-            var _this224 = this;
+            var _this225 = this;
 
             var _a;
 
@@ -63064,13 +63076,13 @@
             var rowMaxWidth = this.getRowWidth();
             var counterWidth = ((_a = this.overflowCounter) === null || _a === void 0 ? void 0 : _a.nativeElement.getBoundingClientRect().width) || 0;
             this.allChips.toArray().forEach(function (item) {
-              var chipElement = _this224.getNativeElement(item);
+              var chipElement = _this225.getNativeElement(item);
 
               chipElement.style.display = "inline";
               var chipElementWidth = chipElement.getBoundingClientRect().width;
 
               var isLastLine = function isLastLine() {
-                return renderedLines === _this224.overflowLinesNumber;
+                return renderedLines === _this225.overflowLinesNumber;
               };
 
               if (!isLastLine() && acc + chipElementWidth > rowMaxWidth) {
@@ -63092,7 +63104,7 @@
               if (isLastLine() && chipsOverflow) {
                 chipElement.style.display = "none";
 
-                _this224.updateOverflowChips(item);
+                _this225.updateOverflowChips(item);
               }
             });
           }
