@@ -25585,7 +25585,7 @@ class BaseSelectV2 {
         }
         this.initKeyboardManager();
         this.defineDropdownContainer();
-        this.detectVirtualScroll();
+        this.adjustDropdownOnVScrollResize();
     }
     /** Handles mousedown event */
     onMouseDown() {
@@ -25697,8 +25697,8 @@ class BaseSelectV2 {
         }
         this.destroy$.next();
         this.destroy$.complete();
-        if (this._virtualScrollResizeObserver) {
-            this._virtualScrollResizeObserver.unobserve(this.cdkVirtualScroll.elementRef.nativeElement);
+        if (this.virtualScrollResizeObserver) {
+            this.virtualScrollResizeObserver.unobserve(this.cdkVirtualScroll.elementRef.nativeElement);
         }
     }
     getValueFromOptions(options = this.selectedOptions) {
@@ -25801,10 +25801,11 @@ class BaseSelectV2 {
             resizeObserver.unobserve(this.elRef.nativeElement);
         });
     }
-    /** This helps to dynamically set minHeight for overlay to avoid issues with double scroll
-     Overlay minHeight should be bigger than cdkVirtualScroll container
+    /**
+     * This helps to dynamically set minHeight for overlay to avoid issues with double
+     * scroll. Overlay minHeight should be bigger than cdkVirtualScroll container.
      */
-    detectVirtualScroll() {
+    adjustDropdownOnVScrollResize() {
         if (!this.cdkVirtualScroll) {
             return;
         }
@@ -25812,14 +25813,14 @@ class BaseSelectV2 {
         const height = parseInt(element.style.height, 10);
         const minHeight = Number.isNaN(height) ? 0 : height + 10;
         this.dropdown.overlayConfig = Object.assign(Object.assign({}, this.overlayConfig), { minHeight });
-        this._virtualScrollResizeObserver = new resize_observer_polyfill__WEBPACK_IMPORTED_MODULE_17__["default"](entries => {
+        this.virtualScrollResizeObserver = new resize_observer_polyfill__WEBPACK_IMPORTED_MODULE_17__["default"](entries => {
             for (const entry of entries) {
                 const content = entry.contentRect;
                 const minHeight = content.height ? content.height + 10 : 0;
                 this.dropdown.updateSize({ minHeight });
             }
         });
-        this._virtualScrollResizeObserver.observe(element);
+        this.virtualScrollResizeObserver.observe(element);
     }
 }
 BaseSelectV2.ɵfac = function BaseSelectV2_Factory(t) { return new (t || BaseSelectV2)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_option_key_control_service__WEBPACK_IMPORTED_MODULE_13__["OptionKeyControlService"]), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_2__["ChangeDetectorRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_2__["ElementRef"])); };

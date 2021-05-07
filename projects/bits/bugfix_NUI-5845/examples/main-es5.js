@@ -47671,7 +47671,7 @@
 
             this.initKeyboardManager();
             this.defineDropdownContainer();
-            this.detectVirtualScroll();
+            this.adjustDropdownOnVScrollResize();
           }
           /** Handles mousedown event */
 
@@ -47842,8 +47842,8 @@
             this.destroy$.next();
             this.destroy$.complete();
 
-            if (this._virtualScrollResizeObserver) {
-              this._virtualScrollResizeObserver.unobserve(this.cdkVirtualScroll.elementRef.nativeElement);
+            if (this.virtualScrollResizeObserver) {
+              this.virtualScrollResizeObserver.unobserve(this.cdkVirtualScroll.elementRef.nativeElement);
             }
           }
         }, {
@@ -48010,13 +48010,14 @@
               resizeObserver.unobserve(_this153.elRef.nativeElement);
             });
           }
-          /** This helps to dynamically set minHeight for overlay to avoid issues with double scroll
-           Overlay minHeight should be bigger than cdkVirtualScroll container
+          /**
+           * This helps to dynamically set minHeight for overlay to avoid issues with double
+           * scroll. Overlay minHeight should be bigger than cdkVirtualScroll container.
            */
 
         }, {
-          key: "detectVirtualScroll",
-          value: function detectVirtualScroll() {
+          key: "adjustDropdownOnVScrollResize",
+          value: function adjustDropdownOnVScrollResize() {
             var _this154 = this;
 
             if (!this.cdkVirtualScroll) {
@@ -48029,7 +48030,7 @@
             this.dropdown.overlayConfig = Object.assign(Object.assign({}, this.overlayConfig), {
               minHeight: minHeight
             });
-            this._virtualScrollResizeObserver = new resize_observer_polyfill__WEBPACK_IMPORTED_MODULE_17__["default"](function (entries) {
+            this.virtualScrollResizeObserver = new resize_observer_polyfill__WEBPACK_IMPORTED_MODULE_17__["default"](function (entries) {
               var _iterator6 = _createForOfIteratorHelper(entries),
                   _step6;
 
@@ -48050,8 +48051,7 @@
                 _iterator6.f();
               }
             });
-
-            this._virtualScrollResizeObserver.observe(element);
+            this.virtualScrollResizeObserver.observe(element);
           }
         }]);
 
