@@ -47552,7 +47552,8 @@
       var _c0 = ["input"];
       var DEFAULT_SELECT_OVERLAY_CONFIG = {
         panelClass: _overlay_constants__WEBPACK_IMPORTED_MODULE_10__["OVERLAY_WITH_POPUP_STYLES_CLASS"]
-      }; // Will be renamed in scope of the NUI-5797
+      };
+      var V_SCROLL_HEIGHT_BUFFER = 10; // Will be renamed in scope of the NUI-5797
       // eslint-disable-next-line @angular-eslint/directive-class-suffix
 
       var BaseSelectV2 = /*#__PURE__*/function () {
@@ -48026,7 +48027,7 @@
 
             var element = this.cdkVirtualScroll.elementRef.nativeElement;
             var height = parseInt(element.style.height, 10);
-            var minHeight = Number.isNaN(height) ? 0 : height + 10;
+            var minHeight = Number.isNaN(height) ? 0 : height + V_SCROLL_HEIGHT_BUFFER;
             this.dropdown.overlayConfig = Object.assign(Object.assign({}, this.overlayConfig), {
               minHeight: minHeight
             });
@@ -48039,7 +48040,7 @@
                   var entry = _step6.value;
                   var content = entry.contentRect;
 
-                  var _minHeight = content.height ? content.height + 10 : 0;
+                  var _minHeight = content.height ? content.height + V_SCROLL_HEIGHT_BUFFER : 0;
 
                   _this154.dropdown.updateSize({
                     minHeight: _minHeight
