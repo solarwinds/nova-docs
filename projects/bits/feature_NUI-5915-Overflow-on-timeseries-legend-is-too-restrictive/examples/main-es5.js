@@ -54939,19 +54939,13 @@
 
               if (value > 0 && value < 1) {
                 this.logger.warn("unit conversion service does not support conversion to negative order of magnitude");
-              } // fix the precision edge case
-
-
-              var valueCeiled = Math.ceil(resultValue);
-
-              if (valueCeiled % base === 0) {
-                resultValue = valueCeiled / base;
-                resultOrder += 1;
               }
 
               strValue = resultValue.toFixed(scale); // remove trailing zeros
 
-              strValue = parseFloat(strValue).toLocaleString();
+              strValue = parseFloat(strValue).toLocaleString(undefined, {
+                maximumFractionDigits: scale
+              });
             } else {
               resultOrder = 0;
               strValue = value.toLocaleString();

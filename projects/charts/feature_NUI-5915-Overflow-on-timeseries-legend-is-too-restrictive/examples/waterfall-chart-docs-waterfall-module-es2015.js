@@ -253,7 +253,7 @@ let WaterfallChartSimpleComponent = class WaterfallChartSimpleComponent {
         // Step 3 - Adjust the color accessor, to retrieve the color or the bar by the corresponding data type.
         accessors.data.color = (d) => colorProvider.get(d.type);
         // Step 4 - Configure the format of the bottom label by setting custom scales.x.formatter function.
-        scales.x.formatters.tick = (value) => `${Number(value / 1000).toFixed(1)}s`;
+        scales.x.formatters.tick = (value) => `${parseFloat(Number(value / 1000).toFixed(1)).toLocaleString()}s`;
         // Step 5 - Configure the thickness of the bar using the BandScale.padding method on your scales.y.
         scales.y.padding(0.5);
         this.chart.update(getData().map(s => (Object.assign(Object.assign({}, s), { accessors,
