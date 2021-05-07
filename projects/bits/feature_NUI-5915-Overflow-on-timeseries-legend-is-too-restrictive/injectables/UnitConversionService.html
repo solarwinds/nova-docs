@@ -310,8 +310,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="64"
-                            class="link-to-prism">src/services/unit-conversion.service.ts:64</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="71"
+                            class="link-to-prism">src/services/unit-conversion.service.ts:71</a></div>
                 </td>
             </tr>
 
@@ -448,8 +448,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="98"
-                            class="link-to-prism">src/services/unit-conversion.service.ts:98</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="105"
+                            class="link-to-prism">src/services/unit-conversion.service.ts:105</a></div>
                 </td>
             </tr>
 
@@ -544,8 +544,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="81"
-                            class="link-to-prism">src/services/unit-conversion.service.ts:81</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="88"
+                            class="link-to-prism">src/services/unit-conversion.service.ts:88</a></div>
                 </td>
             </tr>
 
@@ -682,6 +682,13 @@ export class UnitConversionService {
 
             if (value &gt; 0 &amp;&amp; value &lt; 1) {
                 this.logger.warn(&quot;unit conversion service does not support conversion to negative order of magnitude&quot;);
+            }
+
+            // fix the precision edge case
+            const valueCeiled &#x3D; Math.ceil(resultValue);
+            if (valueCeiled % base &#x3D;&#x3D;&#x3D; 0) {
+                resultValue &#x3D; valueCeiled / base;
+                resultOrder +&#x3D; 1;
             }
 
             strValue &#x3D; (resultValue).toFixed(scale);
