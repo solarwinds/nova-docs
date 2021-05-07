@@ -48010,8 +48010,9 @@
               resizeObserver.unobserve(_this153.elRef.nativeElement);
             });
           }
-          /** This helps to dynamically set minHeight for overlay to avoid issues with double scroll
-           Overlay minHeight should be bigger than cdkVirtualScroll container
+          /**
+           * This helps to dynamically set minHeight for overlay to avoid issues with double
+           * scroll. Overlay minHeight should be bigger than cdkVirtualScroll container.
            */
 
         }, {

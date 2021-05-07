@@ -25801,8 +25801,9 @@ class BaseSelectV2 {
             resizeObserver.unobserve(this.elRef.nativeElement);
         });
     }
-    /** This helps to dynamically set minHeight for overlay to avoid issues with double scroll
-     Overlay minHeight should be bigger than cdkVirtualScroll container
+    /**
+     * This helps to dynamically set minHeight for overlay to avoid issues with double
+     * scroll. Overlay minHeight should be bigger than cdkVirtualScroll container.
      */
     detectVirtualScroll() {
         if (!this.cdkVirtualScroll) {
