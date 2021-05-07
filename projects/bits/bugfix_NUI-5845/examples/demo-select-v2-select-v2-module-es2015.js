@@ -1673,7 +1673,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { CdkVirtualScrollViewport } from \"@angular/cdk/scrolling\";\nimport { AfterViewInit, Component, HostListener, OnDestroy, OnInit, ViewChild } from \"@angular/core\";\nimport { FormControl } from \"@angular/forms\";\nimport { SelectV2Component } from \"@nova-ui/bits\";\nimport { Subject } from \"rxjs\";\nimport { takeUntil } from \"rxjs/operators\";\n\n@Component({\n    selector: \"nui-select-v2-virtual-scroll-example\",\n    templateUrl: \"select-v2-virtual-scroll.example.component.html\",\n    host: { class: \"select-container\" },\n})\nexport class SelectV2VirtualScrollExampleComponent implements OnInit, OnDestroy, AfterViewInit {\n    public icons: any[] = [\"check\", \"email\", \"execute\"];\n    public items = Array.from({ length: 100000 }).map((_, i) => $localize `Item ${i}`);\n\n    public selectControl = new FormControl();\n    public containerHeight: number = 300;\n\n    private destroy$: Subject<void> = new Subject();\n    private scrollOffset: number = 0;\n\n    @ViewChild(CdkVirtualScrollViewport) private viewport: CdkVirtualScrollViewport;\n    @ViewChild(SelectV2Component) private select: SelectV2Component;\n\n    @HostListener(\"click\", [\"$event\"])\n    public handleClick(event: MouseEvent) {\n        if (this.viewport) {\n            this.viewport.scrollToOffset(this.scrollOffset);\n            this.viewport.checkViewportSize();\n        }\n    }\n\n    /**\n     To avoid double scroll on scrolling all page or scalable screens we need implicitly set\n     height for overlay little bit bigger than for container\n     * */\n    get overlayHeight(): number {\n        return this.containerHeight + 10;\n    }\n\n    ngOnInit() {\n        this.selectControl.valueChanges.pipe(takeUntil(this.destroy$)).subscribe(value => {\n            console.log(\"Value from Select\", value);\n        });\n    }\n\n    ngAfterViewInit(): void {\n        this.select.valueSelected.pipe(takeUntil(this.destroy$)).subscribe((selectionText) => {\n            this.scrollOffset = this.viewport.measureScrollOffset();\n        });\n    }\n\n    ngOnDestroy() {\n        this.destroy$.next();\n        this.destroy$.complete();\n    }\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import { CdkVirtualScrollViewport } from \"@angular/cdk/scrolling\";\nimport { AfterViewInit, Component, HostListener, OnDestroy, OnInit, ViewChild } from \"@angular/core\";\nimport { FormControl } from \"@angular/forms\";\nimport { SelectV2Component } from \"@nova-ui/bits\";\nimport { Subject } from \"rxjs\";\nimport { takeUntil } from \"rxjs/operators\";\n\n@Component({\n    selector: \"nui-select-v2-virtual-scroll-example\",\n    templateUrl: \"select-v2-virtual-scroll.example.component.html\",\n    host: { class: \"select-container\" },\n})\nexport class SelectV2VirtualScrollExampleComponent implements OnInit, OnDestroy, AfterViewInit {\n    public icons: any[] = [\"check\", \"email\", \"execute\"];\n    public items = Array.from({ length: 100000 }).map((_, i) => $localize `Item ${i}`);\n\n    public selectControl = new FormControl();\n    public containerHeight: number = 300;\n\n    private destroy$: Subject<void> = new Subject();\n    private scrollOffset: number = 0;\n\n    @ViewChild(CdkVirtualScrollViewport) private viewport: CdkVirtualScrollViewport;\n    @ViewChild(SelectV2Component) private select: SelectV2Component;\n\n    @HostListener(\"click\", [\"$event\"])\n    public handleClick(event: MouseEvent) {\n        if (this.viewport) {\n            this.viewport.scrollToOffset(this.scrollOffset);\n            this.viewport.checkViewportSize();\n        }\n    }\n\n    ngOnInit() {\n        this.selectControl.valueChanges.pipe(takeUntil(this.destroy$)).subscribe(value => {\n            console.log(\"Value from Select\", value);\n        });\n    }\n\n    ngAfterViewInit(): void {\n        this.select.valueSelected.pipe(takeUntil(this.destroy$)).subscribe((selectionText) => {\n            this.scrollOffset = this.viewport.measureScrollOffset();\n        });\n    }\n\n    ngOnDestroy() {\n        this.destroy$.next();\n        this.destroy$.complete();\n    }\n}\n");
 
 /***/ }),
 
@@ -3501,7 +3501,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<nui-select-v2 placeholder=\"Select Item\" i18n-placeholder\n               [overlayConfig]=\"{ minHeight: overlayHeight }\"\n               [formControl]=\"selectControl\">\n    <cdk-virtual-scroll-viewport itemSize=\"30\"\n                                 [minBufferPx]=\"containerHeight\"\n                                 [maxBufferPx]=\"containerHeight * 2\"\n                                 [style.height.px]=\"containerHeight\">\n\n        <div *cdkVirtualFor=\"let item of items; index as i\">\n            <nui-select-v2-option [value]=\"item\" [index]=\"i\" class=\"d-flex align-items-center\">\n                {{item}}\n            </nui-select-v2-option>\n        </div>\n\n    </cdk-virtual-scroll-viewport>\n</nui-select-v2>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<nui-select-v2 placeholder=\"Select Item\" i18n-placeholder\n               [formControl]=\"selectControl\">\n    <cdk-virtual-scroll-viewport itemSize=\"30\"\n                                 [minBufferPx]=\"containerHeight\"\n                                 [maxBufferPx]=\"containerHeight * 2\"\n                                 [style.height.px]=\"containerHeight\">\n\n        <div *cdkVirtualFor=\"let item of items; index as i\">\n            <nui-select-v2-option [value]=\"item\" [index]=\"i\" class=\"d-flex align-items-center\">\n                {{item}}\n            </nui-select-v2-option>\n        </div>\n\n    </cdk-virtual-scroll-viewport>\n</nui-select-v2>\n");
 
 /***/ }),
 
@@ -3764,7 +3764,6 @@ function SelectV2VirtualScrollExampleComponent_div_2_Template(rf, ctx) { if (rf 
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", item_r1, " ");
 } }
-const _c2 = function (a0) { return { minHeight: a0 }; };
 class SelectV2VirtualScrollExampleComponent {
     constructor() {
         this.icons = ["check", "email", "execute"];
@@ -3779,13 +3778,6 @@ class SelectV2VirtualScrollExampleComponent {
             this.viewport.scrollToOffset(this.scrollOffset);
             this.viewport.checkViewportSize();
         }
-    }
-    /**
-     To avoid double scroll on scrolling all page or scalable screens we need implicitly set
-     height for overlay little bit bigger than for container
-     * */
-    get overlayHeight() {
-        return this.containerHeight + 10;
     }
     ngOnInit() {
         this.selectControl.valueChanges.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeUntil"])(this.destroy$)).subscribe(value => {
@@ -3812,20 +3804,20 @@ SelectV2VirtualScrollExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MO
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵloadQuery"]()) && (ctx.select = _t.first);
     } }, hostAttrs: [1, "select-container"], hostBindings: function SelectV2VirtualScrollExampleComponent_HostBindings(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function SelectV2VirtualScrollExampleComponent_click_HostBindingHandler($event) { return ctx.handleClick($event); });
-    } }, decls: 3, vars: 9, consts: function () { let i18n_0; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+    } }, decls: 3, vars: 6, consts: function () { let i18n_0; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
         const MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_SELECT_V2_SELECT_V2_VIRTUAL_SCROLL_SELECT_V2_VIRTUAL_SCROLL_EXAMPLE_COMPONENT_TS_1 = goog.getMsg("Select Item");
         i18n_0 = MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_SELECT_V2_SELECT_V2_VIRTUAL_SCROLL_SELECT_V2_VIRTUAL_SCROLL_EXAMPLE_COMPONENT_TS_1;
     }
     else {
         i18n_0 = $localize `:␟42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c␟8325381706328570325:Select Item`;
-    } return [["placeholder", i18n_0, 3, "overlayConfig", "formControl"], ["itemSize", "30", 3, "minBufferPx", "maxBufferPx"], [4, "cdkVirtualFor", "cdkVirtualForOf"], [1, "d-flex", "align-items-center", 3, "value", "index"]]; }, template: function SelectV2VirtualScrollExampleComponent_Template(rf, ctx) { if (rf & 1) {
+    } return [["placeholder", i18n_0, 3, "formControl"], ["itemSize", "30", 3, "minBufferPx", "maxBufferPx"], [4, "cdkVirtualFor", "cdkVirtualForOf"], [1, "d-flex", "align-items-center", 3, "value", "index"]]; }, template: function SelectV2VirtualScrollExampleComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "nui-select-v2", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "cdk-virtual-scroll-viewport", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](2, SelectV2VirtualScrollExampleComponent_div_2_Template, 3, 3, "div", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("overlayConfig", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction1"](7, _c2, ctx.overlayHeight))("formControl", ctx.selectControl);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("formControl", ctx.selectControl);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵstyleProp"]("height", ctx.containerHeight, "px");
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("minBufferPx", ctx.containerHeight)("maxBufferPx", ctx.containerHeight * 2);

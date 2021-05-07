@@ -2759,16 +2759,12 @@
         }
       }
 
-      var _c2 = function _c2(a0) {
-        return {
-          minHeight: a0
-        };
-      };
-
       var defaultContainerHeight = 300;
 
       var ComboboxV2VirtualScrollExampleComponent = /*#__PURE__*/function () {
         function ComboboxV2VirtualScrollExampleComponent() {
+          var _this2 = this;
+
           _classCallCheck(this, ComboboxV2VirtualScrollExampleComponent);
 
           this.items = Array.from({
@@ -2781,6 +2777,15 @@
           this.containerHeight = defaultContainerHeight;
           this.destroy$ = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
           this.scrollOffset = 0;
+
+          this.calculateContainerHeight = function () {
+            if (_this2.combobox.inputValue && _this2.viewport.measureRenderedContentSize() < defaultContainerHeight) {
+              _this2.containerHeight = _this2.viewport.measureRenderedContentSize();
+              return;
+            }
+
+            _this2.containerHeight = defaultContainerHeight;
+          };
         }
 
         _createClass(ComboboxV2VirtualScrollExampleComponent, [{
@@ -2791,39 +2796,17 @@
               this.viewport.checkViewportSize();
             }
           }
-          /**
-           To avoid double scroll on scrolling all page or scalable screens we need implicitly set
-           height for overlay little bit bigger than for container
-           * */
-
-        }, {
-          key: "overlayHeight",
-          get: function get() {
-            return this.containerHeight + 10;
-          }
         }, {
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this2 = this;
+            var _this3 = this;
 
             this.combobox.valueSelected.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeUntil"])(this.destroy$)).subscribe(function () {
-              _this2.scrollOffset = _this2.viewport.measureScrollOffset();
+              _this3.scrollOffset = _this3.viewport.measureScrollOffset();
             });
-            this.combobox.valueChanged.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])(function (v) {
-              return _this2.filteredItems = Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["of"])(_this2.filterItems(v));
-            }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["delay"])(0), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeUntil"])(this.destroy$)).subscribe();
-          }
-        }, {
-          key: "filterItems",
-          value: function filterItems(value) {
-            if (!value) {
-              return this.items;
-            }
-
-            var filterValue = value === null || value === void 0 ? void 0 : value.toLowerCase();
-            return this.items.filter(function (option) {
-              return option.toLowerCase().includes(filterValue);
-            });
+            this.combobox.valueChanged.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["delay"])(0), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])(function (v) {
+              return _this3.calculateContainerHeight();
+            }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeUntil"])(this.destroy$)).subscribe();
           }
         }, {
           key: "ngOnDestroy",
@@ -2866,7 +2849,7 @@
           }
         },
         decls: 5,
-        vars: 12,
+        vars: 9,
         consts: function consts() {
           var i18n_0;
 
@@ -2877,7 +2860,7 @@
             i18n_0 = $localize(_templateObject38 || (_templateObject38 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
           }
 
-          return [["placeholder", i18n_0, 3, "overlayConfig", "formControl", "isTypeaheadEnabled"], ["combobox", ""], ["itemSize", "30", 3, "minBufferPx", "maxBufferPx"], [4, "cdkVirtualFor", "cdkVirtualForOf"], [1, "d-flex", "align-items-center", 3, "value"], [3, "nuiComboboxV2OptionHighlight"]];
+          return [["placeholder", i18n_0, 3, "formControl", "isTypeaheadEnabled"], ["combobox", ""], ["itemSize", "30", 3, "minBufferPx", "maxBufferPx"], [4, "cdkVirtualFor", "cdkVirtualForOf"], [1, "d-flex", "align-items-center", 3, "value"], [3, "nuiComboboxV2OptionHighlight"]];
         },
         template: function ComboboxV2VirtualScrollExampleComponent_Template(rf, ctx) {
           if (rf & 1) {
@@ -2895,7 +2878,7 @@
           }
 
           if (rf & 2) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("overlayConfig", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction1"](10, _c2, ctx.overlayHeight))("formControl", ctx.comboboxControl)("isTypeaheadEnabled", false);
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("formControl", ctx.comboboxControl)("isTypeaheadEnabled", true);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
 
@@ -2905,7 +2888,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("cdkVirtualForOf", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind1"](4, 8, ctx.filteredItems));
+            _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("cdkVirtualForOf", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind1"](4, 7, ctx.filteredItems));
           }
         },
         directives: [_src_lib_select_v2_combobox_v2_combobox_v2_component__WEBPACK_IMPORTED_MODULE_6__["ComboboxV2Component"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlDirective"], _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_0__["CdkVirtualScrollViewport"], _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_0__["CdkFixedSizeVirtualScroll"], _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_0__["CdkVirtualForOf"], _src_lib_select_v2_option_select_v2_option_component__WEBPACK_IMPORTED_MODULE_7__["SelectV2OptionComponent"], _src_lib_select_v2_combobox_v2_option_highlight_combobox_v2_option_highlight_directive__WEBPACK_IMPORTED_MODULE_8__["ComboboxV2OptionHighlightDirective"]],
@@ -3987,7 +3970,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<nui-combobox-v2 placeholder=\"Select Item\" i18n-placeholder\n                 [overlayConfig]=\"{ minHeight: overlayHeight }\"\n                 [formControl]=\"comboboxControl\"\n                 [isTypeaheadEnabled]=\"false\"\n                 #combobox>\n\n    <cdk-virtual-scroll-viewport itemSize=\"30\"\n                                 [minBufferPx]=\"300\"\n                                 [maxBufferPx]=\"600\"\n                                 [style.height.px]=\"containerHeight\">\n\n        <div *cdkVirtualFor=\"let item of filteredItems | async; index as i\">\n            <nui-select-v2-option [value]=\"item\" class=\"d-flex align-items-center\">\n                <span [nuiComboboxV2OptionHighlight]=\"item\"></span>\n            </nui-select-v2-option>\n        </div>\n    </cdk-virtual-scroll-viewport>\n</nui-combobox-v2>\n";
+      __webpack_exports__["default"] = "<nui-combobox-v2 placeholder=\"Select Item\" i18n-placeholder\n                 [formControl]=\"comboboxControl\"\n                 [isTypeaheadEnabled]=\"true\"\n                 #combobox>\n\n    <cdk-virtual-scroll-viewport itemSize=\"30\"\n                                 [minBufferPx]=\"300\"\n                                 [maxBufferPx]=\"600\"\n                                 [style.height.px]=\"containerHeight\">\n\n        <div *cdkVirtualFor=\"let item of filteredItems | async; index as i\">\n            <nui-select-v2-option [value]=\"item\" class=\"d-flex align-items-center\">\n                <span [nuiComboboxV2OptionHighlight]=\"item\"></span>\n            </nui-select-v2-option>\n        </div>\n    </cdk-virtual-scroll-viewport>\n</nui-combobox-v2>\n";
       /***/
     },
 
@@ -5095,12 +5078,12 @@
         _createClass(ComboboxV2CustomTypeaheadExampleComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this3 = this;
+            var _this4 = this;
 
             this.filteredItems$ = this.comboboxControl.valueChanges.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["startWith"])(""), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (value) {
               return (value === null || value === void 0 ? void 0 : value.name) || value;
             }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (name) {
-              return name ? _this3.filterItems(name) : _this3.items.slice();
+              return name ? _this4.filterItems(name) : _this4.items.slice();
             }));
           }
         }, {
@@ -5409,13 +5392,13 @@
         _createClass(ComboboxV2GettingValueExampleComponent, [{
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this4 = this;
+            var _this5 = this;
 
             this.comboboxValueSelectedExample.valueSelected.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["tap"])(function (value) {
-              return _this4.comboboxValueSelectedValue = value;
+              return _this5.comboboxValueSelectedValue = value;
             }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["takeUntil"])(this.destroy$)).subscribe();
             this.comboboxValueChangedExample.valueChanged.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["tap"])(function (value) {
-              return _this4.comboboxValueChangedValue = value;
+              return _this5.comboboxValueChangedValue = value;
             }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["takeUntil"])(this.destroy$)).subscribe();
           }
         }]);
@@ -8208,7 +8191,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import { CdkVirtualScrollViewport } from \"@angular/cdk/scrolling\";\nimport { AfterViewInit, Component, HostListener, OnDestroy, ViewChild } from \"@angular/core\";\nimport { FormControl } from \"@angular/forms\";\nimport { ComboboxV2Component } from \"@nova-ui/bits\";\nimport { Observable, of, Subject } from \"rxjs\";\nimport { delay, takeUntil, tap } from \"rxjs/operators\";\n\nconst defaultContainerHeight: number = 300;\n\n@Component({\n    selector: \"nui-combobox-v2-virtual-scroll-example\",\n    templateUrl: \"combobox-v2-virtual-scroll.example.component.html\",\n    host: { class: \"combobox-container\" },\n})\nexport class ComboboxV2VirtualScrollExampleComponent implements OnDestroy, AfterViewInit {\n    public items = Array.from({ length: 100000 }).map((_, i) => $localize `Item ${i}`);\n    public comboboxControl = new FormControl();\n    public filteredItems: Observable<any[]> = of([...this.items]);\n    public containerHeight: number = defaultContainerHeight;\n\n    private destroy$: Subject<void> = new Subject();\n    private scrollOffset: number = 0;\n\n    @ViewChild(CdkVirtualScrollViewport) private viewport: CdkVirtualScrollViewport;\n    @ViewChild(ComboboxV2Component) private combobox: ComboboxV2Component;\n\n    @HostListener(\"click\")\n    public handleClick() {\n        if (this.viewport) {\n            this.viewport.scrollToOffset(this.scrollOffset);\n            this.viewport.checkViewportSize();\n        }\n    }\n\n    /**\n     To avoid double scroll on scrolling all page or scalable screens we need implicitly set\n     height for overlay little bit bigger than for container\n     * */\n    get overlayHeight(): number {\n        return this.containerHeight + 10;\n    }\n\n    ngAfterViewInit(): void {\n        this.combobox.valueSelected.pipe(takeUntil(this.destroy$)).subscribe(() => {\n            this.scrollOffset = this.viewport.measureScrollOffset();\n        });\n\n        this.combobox.valueChanged.pipe(\n            tap(v => this.filteredItems = of(this.filterItems(v as string))),\n            delay(0),\n            takeUntil(this.destroy$)\n        ).subscribe();\n    }\n\n    private filterItems(value: string): string[] {\n        if (!value) {\n            return this.items;\n        }\n        const filterValue = value?.toLowerCase();\n\n        return this.items.filter(option => option.toLowerCase().includes(filterValue));\n    }\n\n    ngOnDestroy() {\n        this.destroy$.next();\n        this.destroy$.complete();\n    }\n}\n";
+      __webpack_exports__["default"] = "import { CdkVirtualScrollViewport } from \"@angular/cdk/scrolling\";\nimport { AfterViewInit, Component, HostListener, OnDestroy, ViewChild } from \"@angular/core\";\nimport { FormControl } from \"@angular/forms\";\nimport { ComboboxV2Component } from \"@nova-ui/bits\";\nimport { Observable, of, Subject } from \"rxjs\";\nimport { delay, takeUntil, tap } from \"rxjs/operators\";\n\nconst defaultContainerHeight: number = 300;\n\n@Component({\n    selector: \"nui-combobox-v2-virtual-scroll-example\",\n    templateUrl: \"combobox-v2-virtual-scroll.example.component.html\",\n    host: { class: \"combobox-container\" },\n})\nexport class ComboboxV2VirtualScrollExampleComponent implements OnDestroy, AfterViewInit {\n    public items = Array.from({ length: 100000 }).map((_, i) => $localize `Item ${i}`);\n    public comboboxControl = new FormControl();\n    public filteredItems: Observable<any[]> = of([...this.items]);\n    public containerHeight: number = defaultContainerHeight;\n\n    private destroy$: Subject<void> = new Subject();\n    private scrollOffset: number = 0;\n\n    @ViewChild(CdkVirtualScrollViewport) private viewport: CdkVirtualScrollViewport;\n    @ViewChild(ComboboxV2Component) private combobox: ComboboxV2Component;\n\n    @HostListener(\"click\")\n    public handleClick() {\n        if (this.viewport) {\n            this.viewport.scrollToOffset(this.scrollOffset);\n            this.viewport.checkViewportSize();\n        }\n    }\n\n    ngAfterViewInit(): void {\n        this.combobox.valueSelected.pipe(takeUntil(this.destroy$)).subscribe(() => {\n            this.scrollOffset = this.viewport.measureScrollOffset();\n        });\n\n        this.combobox.valueChanged.pipe(\n            delay(0),\n            tap(v => this.calculateContainerHeight()),\n            takeUntil(this.destroy$)\n        ).subscribe();\n    }\n\n    private calculateContainerHeight = (): void => {\n        if (this.combobox.inputValue && (this.viewport.measureRenderedContentSize() < defaultContainerHeight)) {\n            this.containerHeight = this.viewport.measureRenderedContentSize();\n            return;\n        }\n        this.containerHeight = defaultContainerHeight;\n    }\n\n    ngOnDestroy() {\n        this.destroy$.next();\n        this.destroy$.complete();\n    }\n}\n";
       /***/
     },
 
@@ -8474,7 +8457,7 @@
 
       var ComboboxV2CustomizeOptionsExampleComponent = /*#__PURE__*/function () {
         function ComboboxV2CustomizeOptionsExampleComponent() {
-          var _this5 = this;
+          var _this6 = this;
 
           _classCallCheck(this, ComboboxV2CustomizeOptionsExampleComponent);
 
@@ -8485,7 +8468,7 @@
             return {
               id: "value-".concat(i),
               name: $localize(_templateObject88 || (_templateObject88 = _taggedTemplateLiteral(["Item ", ""])), i),
-              icon: _this5.getRandomIcon()
+              icon: _this6.getRandomIcon()
             };
           });
           this.comboboxControl = new _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControl"]();
@@ -9248,11 +9231,11 @@
         _createClass(ComboboxV2CustomControlExampleComponent, [{
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this6 = this;
+            var _this7 = this;
 
             this.combobox.clickOutsideDropdown.subscribe(function () {
-              if (_this6.handleClicksOutside) {
-                _this6.combobox.hideDropdown();
+              if (_this7.handleClicksOutside) {
+                _this7.combobox.hideDropdown();
               }
             });
           }
