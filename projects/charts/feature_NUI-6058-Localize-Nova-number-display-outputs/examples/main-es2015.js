@@ -120,10 +120,66 @@ __webpack_require__.r(__webpack_exports__);
  */
 let ChartExampleIndexComponent = class ChartExampleIndexComponent {
     constructor() {
-        this.links = [
+        this.prototypes = [
             {
                 title: "Gauge",
                 path: "/development/gauge",
+            },
+        ];
+        this.chartTypesVisualTests = [
+            {
+                title: "Area",
+                path: "/chart-types/area/test",
+            },
+            {
+                title: "Bar",
+                path: "/chart-types/bar/test",
+            },
+            {
+                title: "Bucketed Bar",
+                path: "/chart-types/bucketed-bar/test",
+            },
+            {
+                title: "Gauge",
+                path: "/chart-types/gauge/visual-test",
+            },
+            {
+                title: "Line",
+                path: "/chart-types/line/visual-test",
+            },
+            {
+                title: "Spark",
+                path: "/chart-types/spark/test",
+            },
+            {
+                title: "Status",
+                path: "/chart-types/status/test",
+            },
+            {
+                title: "Waterfall",
+                path: "/chart-types/waterfall/test",
+            },
+        ];
+        this.otherVisualTests = [
+            {
+                title: "Legend",
+                path: "/advanced-usage/legend/visual-test",
+            },
+            {
+                title: "Popovers",
+                path: "/plugins/popovers/visual-test",
+            },
+            {
+                title: "Tooltips",
+                path: "/plugins/tooltips/visual-test",
+            },
+            {
+                title: "Thresholds",
+                path: "/thresholds/summary-visual-test",
+            },
+            {
+                title: "Timeframe Bar",
+                path: "/time-frame-bar/test",
             },
         ];
         this.archivedLinks = [
@@ -218,15 +274,25 @@ ChartExampleIndexComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decora
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: "nui-chart-example-index",
         template: `
-        <h1>Chart Prototypes</h1>
+        <h1>Prototypes</h1>
         <ul>
-            <li *ngFor="let link of links"><a [routerLink]="link.path">{{link.title}}</a></li>
+            <li *ngFor="let link of prototypes"><a [routerLink]="link.path">{{link.title}}</a></li>
         </ul>
         <nui-expander header="Archive">
             <ul>
                 <li *ngFor="let link of archivedLinks"><a [routerLink]="link.path">{{link.title}}</a></li>
             </ul>
         </nui-expander>
+        <hr>
+        <h1>Visual Tests</h1>
+        <h2>Chart Types</h2>
+        <ul>
+            <li *ngFor="let link of chartTypesVisualTests"><a [routerLink]="link.path">{{link.title}}</a></li>
+        </ul>
+        <h2>Other</h2>
+        <ul>
+            <li *ngFor="let link of otherVisualTests"><a [routerLink]="link.path">{{link.title}}</a></li>
+        </ul>
     `,
     })
 ], ChartExampleIndexComponent);
