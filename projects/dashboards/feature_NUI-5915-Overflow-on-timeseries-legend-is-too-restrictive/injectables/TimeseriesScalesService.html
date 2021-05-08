@@ -356,7 +356,7 @@ export class TimeseriesScalesService {
             }
             case TimeseriesScaleType.Linear: {
                 scale &#x3D; new LinearScale();
-                scale.formatters.tick &#x3D; (value: string): string &#x3D;&gt; this.unitConversionPipe.transform(value)?.toString() || &quot;&quot;;
+                scale.formatters.tick &#x3D; this.unitConversionPipe.transform;
                 break;
             }
             case TimeseriesScaleType.TimeInterval: {

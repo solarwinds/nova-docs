@@ -128,7 +128,6 @@
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                    <span class="modifier">Readonly</span>
                                 <a href="#conversionThreshold">conversionThreshold</a>
                             </li>
                             <li>
@@ -340,7 +339,6 @@
                         <span class="name">
                             <b>
                                 <span class="modifier">Public</span>
-                                <span class="modifier">Readonly</span>
                             conversionThreshold</b>
                             <a href="#conversionThreshold"><span class="icon ion-ios-link"></span></a>
                         </span>
@@ -521,7 +519,7 @@ export class DonutContentRawFormatterComponent implements OnChanges {
 
     public sum: number;
     public convertedValue: string;
-    public readonly conversionThreshold &#x3D; DEFAULT_UNIT_CONVERSION_THRESHOLD;
+    public conversionThreshold &#x3D; DEFAULT_UNIT_CONVERSION_THRESHOLD;
 
     private unitConversionPipe: DashboardUnitConversionPipe;
     constructor(public changeDetector: ChangeDetectorRef,
