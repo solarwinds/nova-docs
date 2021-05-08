@@ -694,10 +694,10 @@ export class UnitConversionService {
             strValue &#x3D; (resultValue).toFixed(scale);
 
             // remove trailing zeros
-            strValue &#x3D; parseFloat(strValue).toLocaleString(undefined, { maximumFractionDigits: scale });
+            strValue &#x3D; parseFloat(strValue).toString();
         } else {
             resultOrder &#x3D; 0;
-            strValue &#x3D; value.toLocaleString();
+            strValue &#x3D; value.toString();
         }
 
         return {
