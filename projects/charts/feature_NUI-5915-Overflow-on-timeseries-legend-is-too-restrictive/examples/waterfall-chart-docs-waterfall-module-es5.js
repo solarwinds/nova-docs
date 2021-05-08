@@ -396,7 +396,7 @@
 
 
             scales.x.formatters.tick = function (value) {
-              return "".concat(parseFloat(Number(value / 1000).toFixed(1)).toLocaleString(), "s");
+              return "".concat(Number(value / 1000).toFixed(1), "s");
             }; // Step 5 - Configure the thickness of the bar using the BandScale.padding method on your scales.y.
 
 

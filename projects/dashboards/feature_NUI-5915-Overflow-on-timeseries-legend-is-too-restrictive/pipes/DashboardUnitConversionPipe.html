@@ -120,7 +120,7 @@ Conversions are applied for values 10000 or greater</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Transforms a large value to its abbreviated counterpart</p>
+                    <div class="io-description"><p>Transforms a large number value to its abbreviated counterpart</p>
 </div>
 
                     <div class="io-description">
@@ -187,7 +187,7 @@ export class DashboardUnitConversionPipe implements PipeTransform {
     constructor(private unitConversionService: UnitConversionService) { }
 
     /**
-     * Transforms a large value to its abbreviated counterpart
+     * Transforms a large number value to its abbreviated counterpart
      *
      * @param value The value to convert
      * @returns The string representation of the converted value
@@ -195,11 +195,11 @@ export class DashboardUnitConversionPipe implements PipeTransform {
     transform(value: string | number | undefined): string {
         const valueAsNumber &#x3D; typeof value &#x3D;&#x3D;&#x3D; &quot;string&quot; ? parseInt(value, 10) : value;
 
-        if (valueAsNumber &#x3D;&#x3D;&#x3D; undefined || valueAsNumber &lt; DEFAULT_UNIT_CONVERSION_THRESHOLD) {
-            return valueAsNumber?.toLocaleString() || &quot;&quot;;
+        if (valueAsNumber &#x3D;&#x3D;&#x3D; undefined || isNaN(valueAsNumber) || valueAsNumber &lt; DEFAULT_UNIT_CONVERSION_THRESHOLD) {
+            return value?.toString() || &quot;&quot;;
         }
 
-        const conversion &#x3D; this.unitConversionService.convert(valueAsNumber, UnitBase.Standard, 1);
+        const conversion &#x3D; this.unitConversionService.convert(value as number, UnitBase.Standard, 1);
         return this.unitConversionService.getFullDisplay(conversion, &quot;generic&quot;);
     }
 }

@@ -54951,12 +54951,10 @@
 
               strValue = resultValue.toFixed(scale); // remove trailing zeros
 
-              strValue = parseFloat(strValue).toLocaleString(undefined, {
-                maximumFractionDigits: scale
-              });
+              strValue = parseFloat(strValue).toString();
             } else {
               resultOrder = 0;
-              strValue = value.toLocaleString();
+              strValue = value.toString();
             }
 
             return {
