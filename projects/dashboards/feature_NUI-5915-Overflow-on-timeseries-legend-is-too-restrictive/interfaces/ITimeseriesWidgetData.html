@@ -92,7 +92,6 @@
                                         <a href="#link">link</a>
                                 </li>
                                 <li>
-                                            <span class="modifier">Optional</span>
                                         <a href="#name">name</a>
                                 </li>
                                 <li>
@@ -254,11 +253,6 @@
                                         </td>
                                     </tr>
 
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Optional</i>
-                                        </td>
-                                    </tr>
 
 
 
@@ -329,11 +323,11 @@ export interface ITimeseriesWidgetSeries {
 
 export interface ITimeseriesWidgetData&lt;T &#x3D; ITimeseriesWidgetSeriesData&gt; {
     id: string;
+    name: string;
     description: string;
     data: T[];
     link?: string;
     secondaryLink?: string;
-    name?: string; // unused
 }
 
 export interface ITimeseriesWidgetSeriesData {
