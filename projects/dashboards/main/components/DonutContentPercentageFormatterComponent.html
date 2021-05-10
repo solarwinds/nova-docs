@@ -392,7 +392,7 @@
                 <td class="col-md-4">
 
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
 
                     </div>
                 </td>
@@ -618,7 +618,7 @@ export class DonutContentPercentageFormatterComponent implements OnChanges, OnIn
     @Input() chartAssist: ChartAssist;
     @Input() properties: IProperties;
 
-    ngOnChanges(changes: SimpleChanges) {
+    ngOnChanges(changes: SimpleChanges): void {
         if (changes.data) {
             this.sum &#x3D; sumBy(this.data, s &#x3D;&gt; s.data[0]);
         }
@@ -631,7 +631,7 @@ export class DonutContentPercentageFormatterComponent implements OnChanges, OnIn
         this.getProperContentValue();
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.chartAssist
             .chartAssistSubject
             .pipe(
@@ -642,11 +642,11 @@ export class DonutContentPercentageFormatterComponent implements OnChanges, OnIn
             .subscribe();
     }
 
-    public getProperSeriesData() {
+    public getProperSeriesData(): number {
         return this.emphasizedSeriesData ? this.emphasizedSeriesData?.data[0] : this.currentMetricData;
     }
 
-    public getProperContentValue() {
+    public getProperContentValue(): void {
         this.chartContent &#x3D; (this.getProperSeriesData() / this.sum * 100).toFixed(2) + &quot;%&quot;;
     }
 }
