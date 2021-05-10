@@ -25643,6 +25643,9 @@ class BaseSelectV2 {
         this.dropdown.toggle();
         this.setActiveItemOnDropdown();
         this.scrollToOption();
+        if (this.cdkVirtualScroll) {
+            this.cdkVirtualScroll.checkViewportSize();
+        }
     }
     /** Selects specific option and set its value to the model */
     selectOption(option) {
