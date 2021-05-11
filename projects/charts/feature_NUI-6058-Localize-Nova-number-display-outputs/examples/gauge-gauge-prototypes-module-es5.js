@@ -112,7 +112,7 @@
             this.chartAssist.chart.addPlugin(this.labelsPlugin);
             this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["GaugeUtil"].assembleSeriesSet(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["GaugeMode"].Horizontal);
             this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["GaugeUtil"].setThresholdLabelFormatter(function (d) {
-              var conversion = _this.unitConversionService.convert(parseInt(d, 10), 1000, 2);
+              var conversion = _this.unitConversionService.convert(parseInt(d, 10), 1000, 2, true);
 
               return _this.unitConversionService.getFullDisplay(conversion, "generic");
             }, this.seriesSet);
@@ -474,7 +474,7 @@
             this.chartAssist.chart.addPlugin(new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["DonutGaugeLabelsPlugin"](labelConfig));
             this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["GaugeUtil"].assembleSeriesSet(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["GaugeMode"].Donut);
             this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["GaugeUtil"].setThresholdLabelFormatter(function (d) {
-              var conversion = _this2.unitConversionService.convert(parseInt(d, 10), 1000, 2);
+              var conversion = _this2.unitConversionService.convert(parseInt(d, 10), 1000, 2, true);
 
               return _this2.unitConversionService.getFullDisplay(conversion, "generic");
             }, this.seriesSet);
@@ -776,7 +776,7 @@
             this.chartAssist.chart.addPlugin(this.labelsPlugin);
             this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["GaugeUtil"].assembleSeriesSet(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["GaugeMode"].Vertical);
             this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["GaugeUtil"].setThresholdLabelFormatter(function (d) {
-              var conversion = _this4.unitConversionService.convert(parseInt(d, 10), 1000, 2);
+              var conversion = _this4.unitConversionService.convert(parseInt(d, 10), 1000, 2, true);
 
               return _this4.unitConversionService.getFullDisplay(conversion, "generic");
             }, this.seriesSet);

@@ -182,15 +182,15 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>convert(value: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, base: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, scale: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+<code>convert(value: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, base: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, scale: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, localize)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="26"
-                            class="link-to-prism">src/services/unit-conversion.service.ts:26</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="27"
+                            class="link-to-prism">src/services/unit-conversion.service.ts:27</a></div>
                 </td>
             </tr>
 
@@ -269,6 +269,24 @@
 
                                     </td>
                                 </tr>
+                                <tr>
+                                    <td>localize</td>
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>false</code>
+                                    </td>
+
+                                    <td>
+                                        <p>Whether to localize the output string (defaults to false)</p>
+
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -310,8 +328,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="71"
-                            class="link-to-prism">src/services/unit-conversion.service.ts:71</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="73"
+                            class="link-to-prism">src/services/unit-conversion.service.ts:73</a></div>
                 </td>
             </tr>
 
@@ -448,8 +466,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="105"
-                            class="link-to-prism">src/services/unit-conversion.service.ts:105</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="107"
+                            class="link-to-prism">src/services/unit-conversion.service.ts:107</a></div>
                 </td>
             </tr>
 
@@ -544,8 +562,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="88"
-                            class="link-to-prism">src/services/unit-conversion.service.ts:88</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="90"
+                            class="link-to-prism">src/services/unit-conversion.service.ts:90</a></div>
                 </td>
             </tr>
 
@@ -668,10 +686,11 @@ export class UnitConversionService {
      * @param value The value to convert
      * @param base The base to use for the exponential expression when calculating the conversion result
      * @param scale The number of significant digits to the right of the decimal to include in the resulting converted value
+     * @param localize Whether to localize the output string (defaults to false)
      *
      * @returns {IUnitConversionResult} The conversion result
      */
-    convert(value: number, base: number &#x3D; UnitBase.Standard, scale: number &#x3D; 1): IUnitConversionResult {
+    convert(value: number, base: number &#x3D; UnitBase.Standard, scale: number &#x3D; 1, localize &#x3D; false): IUnitConversionResult {
         let resultValue: number;
         let resultOrder: number;
         let strValue: string;
@@ -694,10 +713,11 @@ export class UnitConversionService {
             strValue &#x3D; (resultValue).toFixed(scale);
 
             // remove trailing zeros
-            strValue &#x3D; parseFloat(strValue).toLocaleString(undefined, { maximumFractionDigits: scale });
+            const outputNumber &#x3D; parseFloat(strValue);
+            strValue &#x3D; localize ? outputNumber.toLocaleString(undefined, { maximumFractionDigits: scale }) : outputNumber.toString();
         } else {
             resultOrder &#x3D; 0;
-            strValue &#x3D; value.toLocaleString();
+            strValue &#x3D; localize ? value.toLocaleString() : value.toString();
         }
 
         return {

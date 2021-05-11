@@ -5767,7 +5767,7 @@
             var plusSign = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
             var unit = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : "bytes";
             var base = unit === "bytes" ? _constants_unit_conversion_constants__WEBPACK_IMPORTED_MODULE_0__["UnitBase"].Bytes : _constants_unit_conversion_constants__WEBPACK_IMPORTED_MODULE_0__["UnitBase"].Standard;
-            var result = this.unitConversionService.convert(value, base, scale);
+            var result = this.unitConversionService.convert(value, base, scale, true);
             return this.unitConversionService.getFullDisplay(result, unit, plusSign);
           }
         }]);
@@ -54919,6 +54919,7 @@
          * @param value The value to convert
          * @param base The base to use for the exponential expression when calculating the conversion result
          * @param scale The number of significant digits to the right of the decimal to include in the resulting converted value
+         * @param localize Whether to localize the output string (defaults to false)
          *
          * @returns {IUnitConversionResult} The conversion result
          */
@@ -54929,6 +54930,7 @@
           value: function convert(value) {
             var base = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : _constants__WEBPACK_IMPORTED_MODULE_0__["UnitBase"].Standard;
             var scale = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1;
+            var localize = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
             var resultValue;
             var resultOrder;
             var strValue;
@@ -54951,12 +54953,13 @@
 
               strValue = resultValue.toFixed(scale); // remove trailing zeros
 
-              strValue = parseFloat(strValue).toLocaleString(undefined, {
+              var outputNumber = parseFloat(strValue);
+              strValue = localize ? outputNumber.toLocaleString(undefined, {
                 maximumFractionDigits: scale
-              });
+              }) : outputNumber.toString();
             } else {
               resultOrder = 0;
-              strValue = value.toLocaleString();
+              strValue = localize ? value.toLocaleString() : value.toString();
             }
 
             return {
