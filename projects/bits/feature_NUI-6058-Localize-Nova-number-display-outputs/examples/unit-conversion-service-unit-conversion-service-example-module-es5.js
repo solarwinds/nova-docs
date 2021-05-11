@@ -72,7 +72,7 @@
           key: "onNumberChange",
           value: function onNumberChange(num) {
             this.num = num;
-            var conversionResult = this.unitConversionService.convert(this.num, _nova_ui_bits__WEBPACK_IMPORTED_MODULE_0__["UnitBase"].Bytes, 2, true);
+            var conversionResult = this.unitConversionService.convert(this.num, _nova_ui_bits__WEBPACK_IMPORTED_MODULE_0__["UnitBase"].Bytes, 2);
             this.conversionDisplay = this.unitConversionService.getFullDisplay(conversionResult, "bytes");
           }
         }]);
@@ -316,7 +316,7 @@
       UnitConversionServiceDocsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: UnitConversionServiceDocsComponent,
         selectors: [["ng-component"]],
-        decls: 102,
+        decls: 95,
         vars: 2,
         consts: [["href", "../injectables/UnitConversionService.html#info", "target", "_parent"], ["type", "info", 3, "allowDismiss"], ["href", "../pipes/UnitConversionPipe.html", "target", "_blank"], ["href", "../miscellaneous/enumerations.html#UnitBase", "target", "_blank"], ["href", "../interfaces/IUnitConversionResult.html", "target", "_blank"], ["type", "warning", 3, "allowDismiss"], ["href", "../miscellaneous/typealiases.html#UnitOption", "target", "_blank"], ["filenamePrefix", "unit-conversion-service-basic", "exampleTitle", "Basic Usage"], ["filenamePrefix", "unit-conversion-service-separate-unit-display", "exampleTitle", "Separating the Value and Unit for Display"]],
         template: function UnitConversionServiceDocsComponent_Template(rf, ctx) {
@@ -377,7 +377,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](19, " method which accepts four arguments:\n");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](19, " method which accepts three arguments:\n");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -439,185 +439,165 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](40, "li");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](41, "strong");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](42, "localize");
-
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](43, " - An optional boolean for specifying whether to localize the output value (defaults to ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](40, "p");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](44, "code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](41, " The result of the conversion is of type ");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](45, "false");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](42, "code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](43, "a", 4);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](46, "). ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](44, "IUnitConversionResult");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](47, "p");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](45, ".\n");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](48, " The result of the conversion is of type ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](49, "code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](46, "nui-message", 5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](50, "a", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](47, "strong");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](51, "IUnitConversionResult");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](48, "Note:");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](49, " For converting a value in bytes, be sure to specify ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](50, "code");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](51, "a", 3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](52, "UnitBase.Bytes");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](52, ".\n");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](53, ", or 1024, for the convert method's base parameter.\n");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](53, "nui-message", 5);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](54, "p");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](54, "strong");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](55, " Once the conversion has been calculated, the result can be converted to a display string that includes both the value and the unit. This can be done via the ");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](55, "Note:");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](56, "code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](57, "a", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](56, " For converting a value in bytes, be sure to specify ");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](57, "code");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](58, "a", 3);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](59, "UnitBase.Bytes");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](58, "getFullDisplay");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](60, ", or 1024, for the convert method's base parameter.\n");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](59, " method. Supported basic units are of type ");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](60, "code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](61, "p");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](61, "a", 6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](62, " Once the conversion has been calculated, the result can be converted to a display string that includes both the value and the unit. This can be done via the ");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](63, "code");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](64, "a", 0);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](65, "getFullDisplay");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](62, "UnitOption");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](66, " method. Supported basic units are of type ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](63, " and include the following: ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](64, "code");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](65, "\"generic\"");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](66, " (e.g. 1K for 1000), ");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](67, "code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](68, "a", 6);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](68, "\"bytes\"");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](69, "UnitOption");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](69, ", ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](70, "code");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](71, "\"bytesPerSecond\"");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](72, ", ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](73, "code");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](74, "\"bitsPerSecond\"");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](75, ", and ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](76, "code");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](77, "\"hertz\"");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](78, ".\n");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](79, "nui-example-wrapper", 7);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](80, "unit-conversion-service-basic-example");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](81, "h2");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](82, "Separating the Value and Unit for Display");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](83, "p");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](84, " The display strings for the value and unit can also be determined separately for situations in which you'd like to display the conversion data in separate elements on the page. To get just the converted value for display, use the ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](85, "code");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](86, "a", 0);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](87, "getValueDisplay");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](70, " and include the following: ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](88, " method, and to get just the converted unit for display, use the ");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](71, "code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](89, "code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](72, "\"generic\"");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](90, "a", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](73, " (e.g. 1K for 1000), ");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](74, "code");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](75, "\"bytes\"");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](76, ", ");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](77, "code");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](78, "\"bytesPerSecond\"");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](79, ", ");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](80, "code");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](81, "\"bitsPerSecond\"");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](82, ", and ");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](83, "code");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](84, "\"hertz\"");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](85, ".\n");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](86, "nui-example-wrapper", 7);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](87, "unit-conversion-service-basic-example");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](88, "h2");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](89, "Separating the Value and Unit for Display");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](90, "p");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](91, " The display strings for the value and unit can also be determined separately for situations in which you'd like to display the conversion data in separate elements on the page. To get just the converted value for display, use the ");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](92, "code");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](93, "a", 0);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](94, "getValueDisplay");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](91, "getUnitDisplay");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](95, " method, and to get just the converted unit for display, use the ");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](96, "code");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](97, "a", 0);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](98, "getUnitDisplay");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](92, " method.\n");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](93, "nui-example-wrapper", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](99, " method.\n");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](100, "nui-example-wrapper", 8);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](101, "unit-conversion-service-separate-unit-display-example");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](94, "unit-conversion-service-separate-unit-display-example");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
           }
@@ -627,7 +607,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("allowDismiss", false);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](47);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](40);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("allowDismiss", false);
           }
@@ -728,7 +708,7 @@
           key: "onNumberChange",
           value: function onNumberChange(num) {
             this.num = num;
-            var conversion = this.unitConversionService.convert(this.num, _nova_ui_bits__WEBPACK_IMPORTED_MODULE_0__["UnitBase"].Standard, 2, true);
+            var conversion = this.unitConversionService.convert(this.num, _nova_ui_bits__WEBPACK_IMPORTED_MODULE_0__["UnitBase"].Standard, 2);
             this.valueDisplay = this.unitConversionService.getValueDisplay(conversion);
             this.unitDisplay = this.unitConversionService.getUnitDisplay(conversion, "hertz");
           }

@@ -57,7 +57,7 @@ let LinearGaugeHorizontalPrototypeComponent = class LinearGaugeHorizontalPrototy
         this.chartAssist.chart.addPlugin(this.labelsPlugin);
         this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["GaugeUtil"].assembleSeriesSet(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["GaugeMode"].Horizontal);
         this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["GaugeUtil"].setThresholdLabelFormatter((d) => {
-            const conversion = this.unitConversionService.convert(parseInt(d, 10), 1000, 2, true);
+            const conversion = this.unitConversionService.convert(parseInt(d, 10), 1000, 2);
             return this.unitConversionService.getFullDisplay(conversion, "generic");
         }, this.seriesSet);
         this.chartAssist.update(this.seriesSet);
@@ -280,7 +280,7 @@ let DonutGaugePrototypeComponent = class DonutGaugePrototypeComponent {
         this.chartAssist.chart.addPlugin(new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["DonutGaugeLabelsPlugin"](labelConfig));
         this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["GaugeUtil"].assembleSeriesSet(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["GaugeMode"].Donut);
         this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["GaugeUtil"].setThresholdLabelFormatter((d) => {
-            const conversion = this.unitConversionService.convert(parseInt(d, 10), 1000, 2, true);
+            const conversion = this.unitConversionService.convert(parseInt(d, 10), 1000, 2);
             return this.unitConversionService.getFullDisplay(conversion, "generic");
         }, this.seriesSet);
         this.updateDonutSize();
@@ -473,7 +473,7 @@ let LinearGaugeVerticalPrototypeComponent = class LinearGaugeVerticalPrototypeCo
         this.chartAssist.chart.addPlugin(this.labelsPlugin);
         this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["GaugeUtil"].assembleSeriesSet(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["GaugeMode"].Vertical);
         this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["GaugeUtil"].setThresholdLabelFormatter((d) => {
-            const conversion = this.unitConversionService.convert(parseInt(d, 10), 1000, 2, true);
+            const conversion = this.unitConversionService.convert(parseInt(d, 10), 1000, 2);
             return this.unitConversionService.getFullDisplay(conversion, "generic");
         }, this.seriesSet);
         this.chartAssist.update(this.seriesSet);
