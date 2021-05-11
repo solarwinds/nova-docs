@@ -1370,6 +1370,151 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "/zD8":
+/*!*********************************************************************!*\
+  !*** ./node_modules/d3-transition/node_modules/d3-color/src/lab.js ***!
+  \*********************************************************************/
+/*! exports provided: gray, default, Lab, lch, hcl, Hcl */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "gray", function() { return gray; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return lab; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Lab", function() { return Lab; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "lch", function() { return lch; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hcl", function() { return hcl; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Hcl", function() { return Hcl; });
+/* harmony import */ var _define_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./define.js */ "V03s");
+/* harmony import */ var _color_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./color.js */ "3lC8");
+/* harmony import */ var _math_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./math.js */ "oV0g");
+
+
+
+
+// https://observablehq.com/@mbostock/lab-and-rgb
+var K = 18,
+    Xn = 0.96422,
+    Yn = 1,
+    Zn = 0.82521,
+    t0 = 4 / 29,
+    t1 = 6 / 29,
+    t2 = 3 * t1 * t1,
+    t3 = t1 * t1 * t1;
+
+function labConvert(o) {
+  if (o instanceof Lab) return new Lab(o.l, o.a, o.b, o.opacity);
+  if (o instanceof Hcl) return hcl2lab(o);
+  if (!(o instanceof _color_js__WEBPACK_IMPORTED_MODULE_1__["Rgb"])) o = Object(_color_js__WEBPACK_IMPORTED_MODULE_1__["rgbConvert"])(o);
+  var r = rgb2lrgb(o.r),
+      g = rgb2lrgb(o.g),
+      b = rgb2lrgb(o.b),
+      y = xyz2lab((0.2225045 * r + 0.7168786 * g + 0.0606169 * b) / Yn), x, z;
+  if (r === g && g === b) x = z = y; else {
+    x = xyz2lab((0.4360747 * r + 0.3850649 * g + 0.1430804 * b) / Xn);
+    z = xyz2lab((0.0139322 * r + 0.0971045 * g + 0.7141733 * b) / Zn);
+  }
+  return new Lab(116 * y - 16, 500 * (x - y), 200 * (y - z), o.opacity);
+}
+
+function gray(l, opacity) {
+  return new Lab(l, 0, 0, opacity == null ? 1 : opacity);
+}
+
+function lab(l, a, b, opacity) {
+  return arguments.length === 1 ? labConvert(l) : new Lab(l, a, b, opacity == null ? 1 : opacity);
+}
+
+function Lab(l, a, b, opacity) {
+  this.l = +l;
+  this.a = +a;
+  this.b = +b;
+  this.opacity = +opacity;
+}
+
+Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["default"])(Lab, lab, Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["extend"])(_color_js__WEBPACK_IMPORTED_MODULE_1__["Color"], {
+  brighter: function(k) {
+    return new Lab(this.l + K * (k == null ? 1 : k), this.a, this.b, this.opacity);
+  },
+  darker: function(k) {
+    return new Lab(this.l - K * (k == null ? 1 : k), this.a, this.b, this.opacity);
+  },
+  rgb: function() {
+    var y = (this.l + 16) / 116,
+        x = isNaN(this.a) ? y : y + this.a / 500,
+        z = isNaN(this.b) ? y : y - this.b / 200;
+    x = Xn * lab2xyz(x);
+    y = Yn * lab2xyz(y);
+    z = Zn * lab2xyz(z);
+    return new _color_js__WEBPACK_IMPORTED_MODULE_1__["Rgb"](
+      lrgb2rgb( 3.1338561 * x - 1.6168667 * y - 0.4906146 * z),
+      lrgb2rgb(-0.9787684 * x + 1.9161415 * y + 0.0334540 * z),
+      lrgb2rgb( 0.0719453 * x - 0.2289914 * y + 1.4052427 * z),
+      this.opacity
+    );
+  }
+}));
+
+function xyz2lab(t) {
+  return t > t3 ? Math.pow(t, 1 / 3) : t / t2 + t0;
+}
+
+function lab2xyz(t) {
+  return t > t1 ? t * t * t : t2 * (t - t0);
+}
+
+function lrgb2rgb(x) {
+  return 255 * (x <= 0.0031308 ? 12.92 * x : 1.055 * Math.pow(x, 1 / 2.4) - 0.055);
+}
+
+function rgb2lrgb(x) {
+  return (x /= 255) <= 0.04045 ? x / 12.92 : Math.pow((x + 0.055) / 1.055, 2.4);
+}
+
+function hclConvert(o) {
+  if (o instanceof Hcl) return new Hcl(o.h, o.c, o.l, o.opacity);
+  if (!(o instanceof Lab)) o = labConvert(o);
+  if (o.a === 0 && o.b === 0) return new Hcl(NaN, 0 < o.l && o.l < 100 ? 0 : NaN, o.l, o.opacity);
+  var h = Math.atan2(o.b, o.a) * _math_js__WEBPACK_IMPORTED_MODULE_2__["rad2deg"];
+  return new Hcl(h < 0 ? h + 360 : h, Math.sqrt(o.a * o.a + o.b * o.b), o.l, o.opacity);
+}
+
+function lch(l, c, h, opacity) {
+  return arguments.length === 1 ? hclConvert(l) : new Hcl(h, c, l, opacity == null ? 1 : opacity);
+}
+
+function hcl(h, c, l, opacity) {
+  return arguments.length === 1 ? hclConvert(h) : new Hcl(h, c, l, opacity == null ? 1 : opacity);
+}
+
+function Hcl(h, c, l, opacity) {
+  this.h = +h;
+  this.c = +c;
+  this.l = +l;
+  this.opacity = +opacity;
+}
+
+function hcl2lab(o) {
+  if (isNaN(o.h)) return new Lab(o.l, 0, 0, o.opacity);
+  var h = o.h * _math_js__WEBPACK_IMPORTED_MODULE_2__["deg2rad"];
+  return new Lab(o.l, Math.cos(h) * o.c, Math.sin(h) * o.c, o.opacity);
+}
+
+Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["default"])(Hcl, hcl, Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["extend"])(_color_js__WEBPACK_IMPORTED_MODULE_1__["Color"], {
+  brighter: function(k) {
+    return new Hcl(this.h, this.c, this.l + K * (k == null ? 1 : k), this.opacity);
+  },
+  darker: function(k) {
+    return new Hcl(this.h, this.c, this.l - K * (k == null ? 1 : k), this.opacity);
+  },
+  rgb: function() {
+    return hcl2lab(this).rgb();
+  }
+}));
+
+
+/***/ }),
+
 /***/ "01Eb":
 /*!*******************************************************!*\
   !*** ./src/core/common/palette/markers/svg-marker.ts ***!
@@ -1787,7 +1932,7 @@ Transition.prototype = transition.prototype = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".nui-rich-legend-tile {\n  position: relative;\n  width: 60px;\n  height: 100%;\n  line-height: 18px;\n}\n.nui-rich-legend-tile :empty {\n  display: none;\n}\n.nui-rich-legend-tile__tilebox {\n  width: 100%;\n  height: 100%;\n  background-color: var(--nui-color-bg-light,#fff);\n}\n.nui-rich-legend-tile__ellipsified {\n  max-width: 100%;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.nui-rich-legend-tile__tilebox-value {\n  text-align: right;\n  font-weight: 600;\n}\n.nui-rich-legend-tile__tilebox-value:not(:last-child) {\n  margin-bottom: -3px;\n}\n.nui-rich-legend-tile__tilebox-unit {\n  text-align: right;\n  font-size: 11px;\n}\n.nui-rich-legend-tile__tilebox-unit:not(:first-child) {\n  margin-top: -3px;\n}\n.nui-rich-legend-tile__point-marker,\n.nui-rich-legend-tile__icon {\n  position: absolute;\n  line-height: 0;\n  top: 50%;\n  pointer-events: none;\n}\n.nui-rich-legend-tile__point-marker {\n  right: 0;\n  transform: translate(50%, -50%);\n}\n.nui-rich-legend-tile__icon {\n  left: 0;\n  transform: translate(-50%, -50%);\n}\n.nui-rich-legend-tile--has-point-marker.nui-rich-legend-tile--series-has-additional-content {\n  margin-right: 5px;\n}\n.nui-rich-legend-tile--has-point-marker .nui-rich-legend-tile__tilebox {\n  padding-right: 5px;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJpY2gtbGVnZW5kLXRpbGUuY29tcG9uZW50Lmxlc3MiLCIuLi8uLi8uLi8uLi9ub2RlX21vZHVsZXMvQG5vdmEtdWkvYml0cy9zZGsvbGVzcy9taXhpbnMvY3NzLXZhcmlhYmxlcy5sZXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQU1BO0VBQ0ksa0JBQUE7RUFDQSxXQUFBO0VBQ0EsWUFBQTtFQUNBLGlCQUFBO0FBTEo7QUFPSTtFQUNJLGFBQUE7QUFMUjtBQVFJO0VBQ0ksV0FBQTtFQUNBLFlBQUE7RUNiSixnREFBQTtBRFFKO0FBU0k7RUFDSSxlQUFBO0VBQ0EsZ0JBQUE7RUFDQSx1QkFBQTtBQVBSO0FBVUk7RUFDSSxpQkFBQTtFQUNBLGdCQUFBO0FBUlI7QUFXSTtFQUNJLG1CQUFBO0FBVFI7QUFZSTtFQUNJLGlCQUFBO0VBQ0EsZUFBQTtBQVZSO0FBYUk7RUFDSSxnQkFBQTtBQVhSO0FBY0k7O0VBRUksa0JBQUE7RUFDQSxjQUFBO0VBQ0EsUUFBQTtFQUNBLG9CQUFBO0FBWlI7QUFlSTtFQUNJLFFBQUE7RUFDQSwrQkFBQTtBQWJSO0FBZ0JJO0VBQ0ksT0FBQTtFQUNBLGdDQUFBO0FBZFI7QUFpQkk7RUFDSSxpQkFBQTtBQWZSO0FBa0JJO0VBRVEsa0JBQUE7QUFqQloiLCJmaWxlIjoicmljaC1sZWdlbmQtdGlsZS5jb21wb25lbnQubGVzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgKHJlZmVyZW5jZSkgXCIuLi8uLi8uLi9zdHlsZXMubGVzc1wiO1xuQGltcG9ydCAocmVmZXJlbmNlKSBcIkBub3ZhLXVpL2JpdHMvc2RrL2xlc3MvbnVpLWZyYW1ld29yay12YXJpYWJsZXMubGVzc1wiO1xuQGltcG9ydCAocmVmZXJlbmNlKSBcIkBub3ZhLXVpL2JpdHMvc2RrL2xlc3MvbWl4aW5zLmxlc3NcIjtcblxuQG51aS1yaWNoLWxlZ2VuZC10aWxlLXdpZHRoOiA2MHB4O1xuXG4ubnVpLXJpY2gtbGVnZW5kLXRpbGUge1xuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICB3aWR0aDogQG51aS1yaWNoLWxlZ2VuZC10aWxlLXdpZHRoO1xuICAgIGhlaWdodDogMTAwJTtcbiAgICBsaW5lLWhlaWdodDogQG51aS1saW5lLWhlaWdodC1kZWZhdWx0O1xuXG4gICAgJiA6ZW1wdHkge1xuICAgICAgICBkaXNwbGF5OiBub25lO1xuICAgIH1cblxuICAgICZfX3RpbGVib3gge1xuICAgICAgICB3aWR0aDogMTAwJTtcbiAgICAgICAgaGVpZ2h0OiAxMDAlO1xuICAgICAgICAuc2V0Q3NzVmFyaWFibGUoYmFja2dyb3VuZC1jb2xvciwgbnVpLWNvbG9yLWJnLWxpZ2h0KTtcbiAgICB9XG5cbiAgICAmX19lbGxpcHNpZmllZCB7XG4gICAgICAgIG1heC13aWR0aDogMTAwJTtcbiAgICAgICAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgICAgICAgdGV4dC1vdmVyZmxvdzogZWxsaXBzaXM7XG4gICAgfVxuXG4gICAgJl9fdGlsZWJveC12YWx1ZSB7XG4gICAgICAgIHRleHQtYWxpZ246IHJpZ2h0O1xuICAgICAgICBmb250LXdlaWdodDogQG51aS1mb250LXdlaWdodC1zZW1pYm9sZDtcbiAgICB9XG5cbiAgICAmX190aWxlYm94LXZhbHVlOm5vdCg6bGFzdC1jaGlsZCkge1xuICAgICAgICBtYXJnaW4tYm90dG9tOiAtQG51aS1sZWdlbmQtc2VyaWVzLWNvbnRlbnQtbWFyZ2luO1xuICAgIH1cblxuICAgICZfX3RpbGVib3gtdW5pdCB7XG4gICAgICAgIHRleHQtYWxpZ246IHJpZ2h0O1xuICAgICAgICBmb250LXNpemU6IEBudWktZm9udC1zaXplLXNtYWxsO1xuICAgIH1cblxuICAgICZfX3RpbGVib3gtdW5pdDpub3QoOmZpcnN0LWNoaWxkKSB7XG4gICAgICAgIG1hcmdpbi10b3A6IC1AbnVpLWxlZ2VuZC1zZXJpZXMtY29udGVudC1tYXJnaW47XG4gICAgfVxuXG4gICAgJl9fcG9pbnQtbWFya2VyLFxuICAgICZfX2ljb24ge1xuICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgICAgIGxpbmUtaGVpZ2h0OiAwO1xuICAgICAgICB0b3A6IDUwJTtcbiAgICAgICAgcG9pbnRlci1ldmVudHM6IG5vbmU7XG4gICAgfVxuXG4gICAgJl9fcG9pbnQtbWFya2VyIHtcbiAgICAgICAgcmlnaHQ6IDA7XG4gICAgICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlKDUwJSwgLTUwJSk7XG4gICAgfVxuXG4gICAgJl9faWNvbiB7XG4gICAgICAgIGxlZnQ6IDA7XG4gICAgICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlKC01MCUsIC01MCUpO1xuICAgIH1cblxuICAgICYtLWhhcy1wb2ludC1tYXJrZXImLS1zZXJpZXMtaGFzLWFkZGl0aW9uYWwtY29udGVudCB7XG4gICAgICAgIG1hcmdpbi1yaWdodDogQG51aS1zcGFjZS14cztcbiAgICB9XG5cbiAgICAmLS1oYXMtcG9pbnQtbWFya2VyIHtcbiAgICAgICAgLm51aS1yaWNoLWxlZ2VuZC10aWxlX190aWxlYm94IHtcbiAgICAgICAgICAgIHBhZGRpbmctcmlnaHQ6IEBudWktc3BhY2UteHM7XG4gICAgICAgIH1cbiAgICB9XG59XG4iLCIuc2V0Q3NzVmFyaWFibGUoQHByb3BlcnR5LCBAdmFsdWUpe1xuICAgIEBldmFsdWF0ZWQgOiBcIkB7dmFsdWV9XCI7XG4gICAgLy90aGUgZG91YmxlIEAgZm9yY2VzIGEgaW5kaXJlY3Rpb24gZXZhbHVhdGlvbiwga2luZGEgbGlrZSBhIHBvaW50ZXJcbiAgICBAZmFsbGJhY2sgOiBAQGV2YWx1YXRlZDtcblxuICAgIEB7cHJvcGVydHl9OiB+XCJ2YXIoLS1Ae3ZhbHVlfSxAe2ZhbGxiYWNrfSlcIjtcbn1cbiJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = (".nui-rich-legend-tile {\n  position: relative;\n  width: 60px;\n  height: 100%;\n  line-height: 18px;\n}\n.nui-rich-legend-tile :empty {\n  display: none;\n}\n.nui-rich-legend-tile__tilebox {\n  width: 100%;\n  height: 100%;\n  padding: 0 5px;\n  background-color: var(--nui-color-bg-light,#fff);\n}\n.nui-rich-legend-tile__ellipsified {\n  max-width: 100%;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.nui-rich-legend-tile__tilebox-value {\n  text-align: right;\n  font-weight: 600;\n}\n.nui-rich-legend-tile__tilebox-value:not(:last-child) {\n  margin-bottom: -3px;\n}\n.nui-rich-legend-tile__tilebox-unit {\n  text-align: right;\n  font-size: 11px;\n}\n.nui-rich-legend-tile__tilebox-unit:not(:first-child) {\n  margin-top: -3px;\n}\n.nui-rich-legend-tile__point-marker,\n.nui-rich-legend-tile__icon {\n  position: absolute;\n  line-height: 0;\n  top: 50%;\n  pointer-events: none;\n}\n.nui-rich-legend-tile__point-marker {\n  right: 0;\n  transform: translate(50%, -50%);\n}\n.nui-rich-legend-tile__icon {\n  left: 0;\n  transform: translate(-50%, -50%);\n}\n.nui-rich-legend-tile--has-point-marker.nui-rich-legend-tile--series-has-additional-content {\n  margin-right: 5px;\n}\n.nui-rich-legend-tile--has-point-marker .nui-rich-legend-tile__tilebox {\n  padding-right: 7px;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJpY2gtbGVnZW5kLXRpbGUuY29tcG9uZW50Lmxlc3MiLCIuLi8uLi8uLi8uLi9ub2RlX21vZHVsZXMvQG5vdmEtdWkvYml0cy9zZGsvbGVzcy9taXhpbnMvY3NzLXZhcmlhYmxlcy5sZXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQU1BO0VBQ0ksa0JBQUE7RUFDQSxXQUFBO0VBQ0EsWUFBQTtFQUNBLGlCQUFBO0FBTEo7QUFPSTtFQUNJLGFBQUE7QUFMUjtBQVFJO0VBQ0ksV0FBQTtFQUNBLFlBQUE7RUFDQSxjQUFBO0VDZEosZ0RBQUE7QURTSjtBQVNJO0VBQ0ksZUFBQTtFQUNBLGdCQUFBO0VBQ0EsdUJBQUE7QUFQUjtBQVVJO0VBQ0ksaUJBQUE7RUFDQSxnQkFBQTtBQVJSO0FBV0k7RUFDSSxtQkFBQTtBQVRSO0FBWUk7RUFDSSxpQkFBQTtFQUNBLGVBQUE7QUFWUjtBQWFJO0VBQ0ksZ0JBQUE7QUFYUjtBQWNJOztFQUVJLGtCQUFBO0VBQ0EsY0FBQTtFQUNBLFFBQUE7RUFDQSxvQkFBQTtBQVpSO0FBZUk7RUFDSSxRQUFBO0VBQ0EsK0JBQUE7QUFiUjtBQWdCSTtFQUNJLE9BQUE7RUFDQSxnQ0FBQTtBQWRSO0FBaUJJO0VBQ0ksaUJBQUE7QUFmUjtBQWtCSTtFQUdRLGtCQUFBO0FBbEJaIiwiZmlsZSI6InJpY2gtbGVnZW5kLXRpbGUuY29tcG9uZW50Lmxlc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0IChyZWZlcmVuY2UpIFwiLi4vLi4vLi4vc3R5bGVzLmxlc3NcIjtcbkBpbXBvcnQgKHJlZmVyZW5jZSkgXCJAbm92YS11aS9iaXRzL3Nkay9sZXNzL251aS1mcmFtZXdvcmstdmFyaWFibGVzLmxlc3NcIjtcbkBpbXBvcnQgKHJlZmVyZW5jZSkgXCJAbm92YS11aS9iaXRzL3Nkay9sZXNzL21peGlucy5sZXNzXCI7XG5cbkBudWktcmljaC1sZWdlbmQtdGlsZS13aWR0aDogNjBweDtcblxuLm51aS1yaWNoLWxlZ2VuZC10aWxlIHtcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgd2lkdGg6IEBudWktcmljaC1sZWdlbmQtdGlsZS13aWR0aDtcbiAgICBoZWlnaHQ6IDEwMCU7XG4gICAgbGluZS1oZWlnaHQ6IEBudWktbGluZS1oZWlnaHQtZGVmYXVsdDtcblxuICAgICYgOmVtcHR5IHtcbiAgICAgICAgZGlzcGxheTogbm9uZTtcbiAgICB9XG5cbiAgICAmX190aWxlYm94IHtcbiAgICAgICAgd2lkdGg6IDEwMCU7XG4gICAgICAgIGhlaWdodDogMTAwJTtcbiAgICAgICAgcGFkZGluZzogMCBAbnVpLXNwYWNlLXhzO1xuICAgICAgICAuc2V0Q3NzVmFyaWFibGUoYmFja2dyb3VuZC1jb2xvciwgbnVpLWNvbG9yLWJnLWxpZ2h0KTtcbiAgICB9XG5cbiAgICAmX19lbGxpcHNpZmllZCB7XG4gICAgICAgIG1heC13aWR0aDogMTAwJTtcbiAgICAgICAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgICAgICAgdGV4dC1vdmVyZmxvdzogZWxsaXBzaXM7XG4gICAgfVxuXG4gICAgJl9fdGlsZWJveC12YWx1ZSB7XG4gICAgICAgIHRleHQtYWxpZ246IHJpZ2h0O1xuICAgICAgICBmb250LXdlaWdodDogQG51aS1mb250LXdlaWdodC1zZW1pYm9sZDtcbiAgICB9XG5cbiAgICAmX190aWxlYm94LXZhbHVlOm5vdCg6bGFzdC1jaGlsZCkge1xuICAgICAgICBtYXJnaW4tYm90dG9tOiAtQG51aS1sZWdlbmQtc2VyaWVzLWNvbnRlbnQtbWFyZ2luO1xuICAgIH1cblxuICAgICZfX3RpbGVib3gtdW5pdCB7XG4gICAgICAgIHRleHQtYWxpZ246IHJpZ2h0O1xuICAgICAgICBmb250LXNpemU6IEBudWktZm9udC1zaXplLXNtYWxsO1xuICAgIH1cblxuICAgICZfX3RpbGVib3gtdW5pdDpub3QoOmZpcnN0LWNoaWxkKSB7XG4gICAgICAgIG1hcmdpbi10b3A6IC1AbnVpLWxlZ2VuZC1zZXJpZXMtY29udGVudC1tYXJnaW47XG4gICAgfVxuXG4gICAgJl9fcG9pbnQtbWFya2VyLFxuICAgICZfX2ljb24ge1xuICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgICAgIGxpbmUtaGVpZ2h0OiAwO1xuICAgICAgICB0b3A6IDUwJTtcbiAgICAgICAgcG9pbnRlci1ldmVudHM6IG5vbmU7XG4gICAgfVxuXG4gICAgJl9fcG9pbnQtbWFya2VyIHtcbiAgICAgICAgcmlnaHQ6IDA7XG4gICAgICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlKDUwJSwgLTUwJSk7XG4gICAgfVxuXG4gICAgJl9faWNvbiB7XG4gICAgICAgIGxlZnQ6IDA7XG4gICAgICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlKC01MCUsIC01MCUpO1xuICAgIH1cblxuICAgICYtLWhhcy1wb2ludC1tYXJrZXImLS1zZXJpZXMtaGFzLWFkZGl0aW9uYWwtY29udGVudCB7XG4gICAgICAgIG1hcmdpbi1yaWdodDogQG51aS1zcGFjZS14cztcbiAgICB9XG5cbiAgICAmLS1oYXMtcG9pbnQtbWFya2VyIHtcbiAgICAgICAgLm51aS1yaWNoLWxlZ2VuZC10aWxlX190aWxlYm94IHtcbiAgICAgICAgICAgIC8vIHNwYWNlIGZvciBwb2ludC1tYXJrZXIgcGx1cyAycHggYnJlYXRoaW5nIHJvb20gZm9yIHRpbGVib3ggY29udGVudFxuICAgICAgICAgICAgcGFkZGluZy1yaWdodDogQG51aS1zcGFjZS14cyArIEBudWktc3BhY2UteHhzO1xuICAgICAgICB9XG4gICAgfVxufVxuIiwiLnNldENzc1ZhcmlhYmxlKEBwcm9wZXJ0eSwgQHZhbHVlKXtcbiAgICBAZXZhbHVhdGVkIDogXCJAe3ZhbHVlfVwiO1xuICAgIC8vdGhlIGRvdWJsZSBAIGZvcmNlcyBhIGluZGlyZWN0aW9uIGV2YWx1YXRpb24sIGtpbmRhIGxpa2UgYSBwb2ludGVyXG4gICAgQGZhbGxiYWNrIDogQEBldmFsdWF0ZWQ7XG5cbiAgICBAe3Byb3BlcnR5fTogflwidmFyKC0tQHt2YWx1ZX0sQHtmYWxsYmFja30pXCI7XG59XG4iXX0= */");
 
 /***/ }),
 
@@ -3304,6 +3449,400 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "3lC8":
+/*!***********************************************************************!*\
+  !*** ./node_modules/d3-transition/node_modules/d3-color/src/color.js ***!
+  \***********************************************************************/
+/*! exports provided: Color, darker, brighter, default, rgbConvert, rgb, Rgb, hslConvert, hsl */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Color", function() { return Color; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "darker", function() { return darker; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "brighter", function() { return brighter; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return color; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "rgbConvert", function() { return rgbConvert; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "rgb", function() { return rgb; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Rgb", function() { return Rgb; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hslConvert", function() { return hslConvert; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hsl", function() { return hsl; });
+/* harmony import */ var _define_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./define.js */ "V03s");
+
+
+function Color() {}
+
+var darker = 0.7;
+var brighter = 1 / darker;
+
+var reI = "\\s*([+-]?\\d+)\\s*",
+    reN = "\\s*([+-]?\\d*\\.?\\d+(?:[eE][+-]?\\d+)?)\\s*",
+    reP = "\\s*([+-]?\\d*\\.?\\d+(?:[eE][+-]?\\d+)?)%\\s*",
+    reHex = /^#([0-9a-f]{3,8})$/,
+    reRgbInteger = new RegExp("^rgb\\(" + [reI, reI, reI] + "\\)$"),
+    reRgbPercent = new RegExp("^rgb\\(" + [reP, reP, reP] + "\\)$"),
+    reRgbaInteger = new RegExp("^rgba\\(" + [reI, reI, reI, reN] + "\\)$"),
+    reRgbaPercent = new RegExp("^rgba\\(" + [reP, reP, reP, reN] + "\\)$"),
+    reHslPercent = new RegExp("^hsl\\(" + [reN, reP, reP] + "\\)$"),
+    reHslaPercent = new RegExp("^hsla\\(" + [reN, reP, reP, reN] + "\\)$");
+
+var named = {
+  aliceblue: 0xf0f8ff,
+  antiquewhite: 0xfaebd7,
+  aqua: 0x00ffff,
+  aquamarine: 0x7fffd4,
+  azure: 0xf0ffff,
+  beige: 0xf5f5dc,
+  bisque: 0xffe4c4,
+  black: 0x000000,
+  blanchedalmond: 0xffebcd,
+  blue: 0x0000ff,
+  blueviolet: 0x8a2be2,
+  brown: 0xa52a2a,
+  burlywood: 0xdeb887,
+  cadetblue: 0x5f9ea0,
+  chartreuse: 0x7fff00,
+  chocolate: 0xd2691e,
+  coral: 0xff7f50,
+  cornflowerblue: 0x6495ed,
+  cornsilk: 0xfff8dc,
+  crimson: 0xdc143c,
+  cyan: 0x00ffff,
+  darkblue: 0x00008b,
+  darkcyan: 0x008b8b,
+  darkgoldenrod: 0xb8860b,
+  darkgray: 0xa9a9a9,
+  darkgreen: 0x006400,
+  darkgrey: 0xa9a9a9,
+  darkkhaki: 0xbdb76b,
+  darkmagenta: 0x8b008b,
+  darkolivegreen: 0x556b2f,
+  darkorange: 0xff8c00,
+  darkorchid: 0x9932cc,
+  darkred: 0x8b0000,
+  darksalmon: 0xe9967a,
+  darkseagreen: 0x8fbc8f,
+  darkslateblue: 0x483d8b,
+  darkslategray: 0x2f4f4f,
+  darkslategrey: 0x2f4f4f,
+  darkturquoise: 0x00ced1,
+  darkviolet: 0x9400d3,
+  deeppink: 0xff1493,
+  deepskyblue: 0x00bfff,
+  dimgray: 0x696969,
+  dimgrey: 0x696969,
+  dodgerblue: 0x1e90ff,
+  firebrick: 0xb22222,
+  floralwhite: 0xfffaf0,
+  forestgreen: 0x228b22,
+  fuchsia: 0xff00ff,
+  gainsboro: 0xdcdcdc,
+  ghostwhite: 0xf8f8ff,
+  gold: 0xffd700,
+  goldenrod: 0xdaa520,
+  gray: 0x808080,
+  green: 0x008000,
+  greenyellow: 0xadff2f,
+  grey: 0x808080,
+  honeydew: 0xf0fff0,
+  hotpink: 0xff69b4,
+  indianred: 0xcd5c5c,
+  indigo: 0x4b0082,
+  ivory: 0xfffff0,
+  khaki: 0xf0e68c,
+  lavender: 0xe6e6fa,
+  lavenderblush: 0xfff0f5,
+  lawngreen: 0x7cfc00,
+  lemonchiffon: 0xfffacd,
+  lightblue: 0xadd8e6,
+  lightcoral: 0xf08080,
+  lightcyan: 0xe0ffff,
+  lightgoldenrodyellow: 0xfafad2,
+  lightgray: 0xd3d3d3,
+  lightgreen: 0x90ee90,
+  lightgrey: 0xd3d3d3,
+  lightpink: 0xffb6c1,
+  lightsalmon: 0xffa07a,
+  lightseagreen: 0x20b2aa,
+  lightskyblue: 0x87cefa,
+  lightslategray: 0x778899,
+  lightslategrey: 0x778899,
+  lightsteelblue: 0xb0c4de,
+  lightyellow: 0xffffe0,
+  lime: 0x00ff00,
+  limegreen: 0x32cd32,
+  linen: 0xfaf0e6,
+  magenta: 0xff00ff,
+  maroon: 0x800000,
+  mediumaquamarine: 0x66cdaa,
+  mediumblue: 0x0000cd,
+  mediumorchid: 0xba55d3,
+  mediumpurple: 0x9370db,
+  mediumseagreen: 0x3cb371,
+  mediumslateblue: 0x7b68ee,
+  mediumspringgreen: 0x00fa9a,
+  mediumturquoise: 0x48d1cc,
+  mediumvioletred: 0xc71585,
+  midnightblue: 0x191970,
+  mintcream: 0xf5fffa,
+  mistyrose: 0xffe4e1,
+  moccasin: 0xffe4b5,
+  navajowhite: 0xffdead,
+  navy: 0x000080,
+  oldlace: 0xfdf5e6,
+  olive: 0x808000,
+  olivedrab: 0x6b8e23,
+  orange: 0xffa500,
+  orangered: 0xff4500,
+  orchid: 0xda70d6,
+  palegoldenrod: 0xeee8aa,
+  palegreen: 0x98fb98,
+  paleturquoise: 0xafeeee,
+  palevioletred: 0xdb7093,
+  papayawhip: 0xffefd5,
+  peachpuff: 0xffdab9,
+  peru: 0xcd853f,
+  pink: 0xffc0cb,
+  plum: 0xdda0dd,
+  powderblue: 0xb0e0e6,
+  purple: 0x800080,
+  rebeccapurple: 0x663399,
+  red: 0xff0000,
+  rosybrown: 0xbc8f8f,
+  royalblue: 0x4169e1,
+  saddlebrown: 0x8b4513,
+  salmon: 0xfa8072,
+  sandybrown: 0xf4a460,
+  seagreen: 0x2e8b57,
+  seashell: 0xfff5ee,
+  sienna: 0xa0522d,
+  silver: 0xc0c0c0,
+  skyblue: 0x87ceeb,
+  slateblue: 0x6a5acd,
+  slategray: 0x708090,
+  slategrey: 0x708090,
+  snow: 0xfffafa,
+  springgreen: 0x00ff7f,
+  steelblue: 0x4682b4,
+  tan: 0xd2b48c,
+  teal: 0x008080,
+  thistle: 0xd8bfd8,
+  tomato: 0xff6347,
+  turquoise: 0x40e0d0,
+  violet: 0xee82ee,
+  wheat: 0xf5deb3,
+  white: 0xffffff,
+  whitesmoke: 0xf5f5f5,
+  yellow: 0xffff00,
+  yellowgreen: 0x9acd32
+};
+
+Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["default"])(Color, color, {
+  copy: function(channels) {
+    return Object.assign(new this.constructor, this, channels);
+  },
+  displayable: function() {
+    return this.rgb().displayable();
+  },
+  hex: color_formatHex, // Deprecated! Use color.formatHex.
+  formatHex: color_formatHex,
+  formatHsl: color_formatHsl,
+  formatRgb: color_formatRgb,
+  toString: color_formatRgb
+});
+
+function color_formatHex() {
+  return this.rgb().formatHex();
+}
+
+function color_formatHsl() {
+  return hslConvert(this).formatHsl();
+}
+
+function color_formatRgb() {
+  return this.rgb().formatRgb();
+}
+
+function color(format) {
+  var m, l;
+  format = (format + "").trim().toLowerCase();
+  return (m = reHex.exec(format)) ? (l = m[1].length, m = parseInt(m[1], 16), l === 6 ? rgbn(m) // #ff0000
+      : l === 3 ? new Rgb((m >> 8 & 0xf) | (m >> 4 & 0xf0), (m >> 4 & 0xf) | (m & 0xf0), ((m & 0xf) << 4) | (m & 0xf), 1) // #f00
+      : l === 8 ? rgba(m >> 24 & 0xff, m >> 16 & 0xff, m >> 8 & 0xff, (m & 0xff) / 0xff) // #ff000000
+      : l === 4 ? rgba((m >> 12 & 0xf) | (m >> 8 & 0xf0), (m >> 8 & 0xf) | (m >> 4 & 0xf0), (m >> 4 & 0xf) | (m & 0xf0), (((m & 0xf) << 4) | (m & 0xf)) / 0xff) // #f000
+      : null) // invalid hex
+      : (m = reRgbInteger.exec(format)) ? new Rgb(m[1], m[2], m[3], 1) // rgb(255, 0, 0)
+      : (m = reRgbPercent.exec(format)) ? new Rgb(m[1] * 255 / 100, m[2] * 255 / 100, m[3] * 255 / 100, 1) // rgb(100%, 0%, 0%)
+      : (m = reRgbaInteger.exec(format)) ? rgba(m[1], m[2], m[3], m[4]) // rgba(255, 0, 0, 1)
+      : (m = reRgbaPercent.exec(format)) ? rgba(m[1] * 255 / 100, m[2] * 255 / 100, m[3] * 255 / 100, m[4]) // rgb(100%, 0%, 0%, 1)
+      : (m = reHslPercent.exec(format)) ? hsla(m[1], m[2] / 100, m[3] / 100, 1) // hsl(120, 50%, 50%)
+      : (m = reHslaPercent.exec(format)) ? hsla(m[1], m[2] / 100, m[3] / 100, m[4]) // hsla(120, 50%, 50%, 1)
+      : named.hasOwnProperty(format) ? rgbn(named[format]) // eslint-disable-line no-prototype-builtins
+      : format === "transparent" ? new Rgb(NaN, NaN, NaN, 0)
+      : null;
+}
+
+function rgbn(n) {
+  return new Rgb(n >> 16 & 0xff, n >> 8 & 0xff, n & 0xff, 1);
+}
+
+function rgba(r, g, b, a) {
+  if (a <= 0) r = g = b = NaN;
+  return new Rgb(r, g, b, a);
+}
+
+function rgbConvert(o) {
+  if (!(o instanceof Color)) o = color(o);
+  if (!o) return new Rgb;
+  o = o.rgb();
+  return new Rgb(o.r, o.g, o.b, o.opacity);
+}
+
+function rgb(r, g, b, opacity) {
+  return arguments.length === 1 ? rgbConvert(r) : new Rgb(r, g, b, opacity == null ? 1 : opacity);
+}
+
+function Rgb(r, g, b, opacity) {
+  this.r = +r;
+  this.g = +g;
+  this.b = +b;
+  this.opacity = +opacity;
+}
+
+Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["default"])(Rgb, rgb, Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["extend"])(Color, {
+  brighter: function(k) {
+    k = k == null ? brighter : Math.pow(brighter, k);
+    return new Rgb(this.r * k, this.g * k, this.b * k, this.opacity);
+  },
+  darker: function(k) {
+    k = k == null ? darker : Math.pow(darker, k);
+    return new Rgb(this.r * k, this.g * k, this.b * k, this.opacity);
+  },
+  rgb: function() {
+    return this;
+  },
+  displayable: function() {
+    return (-0.5 <= this.r && this.r < 255.5)
+        && (-0.5 <= this.g && this.g < 255.5)
+        && (-0.5 <= this.b && this.b < 255.5)
+        && (0 <= this.opacity && this.opacity <= 1);
+  },
+  hex: rgb_formatHex, // Deprecated! Use color.formatHex.
+  formatHex: rgb_formatHex,
+  formatRgb: rgb_formatRgb,
+  toString: rgb_formatRgb
+}));
+
+function rgb_formatHex() {
+  return "#" + hex(this.r) + hex(this.g) + hex(this.b);
+}
+
+function rgb_formatRgb() {
+  var a = this.opacity; a = isNaN(a) ? 1 : Math.max(0, Math.min(1, a));
+  return (a === 1 ? "rgb(" : "rgba(")
+      + Math.max(0, Math.min(255, Math.round(this.r) || 0)) + ", "
+      + Math.max(0, Math.min(255, Math.round(this.g) || 0)) + ", "
+      + Math.max(0, Math.min(255, Math.round(this.b) || 0))
+      + (a === 1 ? ")" : ", " + a + ")");
+}
+
+function hex(value) {
+  value = Math.max(0, Math.min(255, Math.round(value) || 0));
+  return (value < 16 ? "0" : "") + value.toString(16);
+}
+
+function hsla(h, s, l, a) {
+  if (a <= 0) h = s = l = NaN;
+  else if (l <= 0 || l >= 1) h = s = NaN;
+  else if (s <= 0) h = NaN;
+  return new Hsl(h, s, l, a);
+}
+
+function hslConvert(o) {
+  if (o instanceof Hsl) return new Hsl(o.h, o.s, o.l, o.opacity);
+  if (!(o instanceof Color)) o = color(o);
+  if (!o) return new Hsl;
+  if (o instanceof Hsl) return o;
+  o = o.rgb();
+  var r = o.r / 255,
+      g = o.g / 255,
+      b = o.b / 255,
+      min = Math.min(r, g, b),
+      max = Math.max(r, g, b),
+      h = NaN,
+      s = max - min,
+      l = (max + min) / 2;
+  if (s) {
+    if (r === max) h = (g - b) / s + (g < b) * 6;
+    else if (g === max) h = (b - r) / s + 2;
+    else h = (r - g) / s + 4;
+    s /= l < 0.5 ? max + min : 2 - max - min;
+    h *= 60;
+  } else {
+    s = l > 0 && l < 1 ? 0 : h;
+  }
+  return new Hsl(h, s, l, o.opacity);
+}
+
+function hsl(h, s, l, opacity) {
+  return arguments.length === 1 ? hslConvert(h) : new Hsl(h, s, l, opacity == null ? 1 : opacity);
+}
+
+function Hsl(h, s, l, opacity) {
+  this.h = +h;
+  this.s = +s;
+  this.l = +l;
+  this.opacity = +opacity;
+}
+
+Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["default"])(Hsl, hsl, Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["extend"])(Color, {
+  brighter: function(k) {
+    k = k == null ? brighter : Math.pow(brighter, k);
+    return new Hsl(this.h, this.s, this.l * k, this.opacity);
+  },
+  darker: function(k) {
+    k = k == null ? darker : Math.pow(darker, k);
+    return new Hsl(this.h, this.s, this.l * k, this.opacity);
+  },
+  rgb: function() {
+    var h = this.h % 360 + (this.h < 0) * 360,
+        s = isNaN(h) || isNaN(this.s) ? 0 : this.s,
+        l = this.l,
+        m2 = l + (l < 0.5 ? l : 1 - l) * s,
+        m1 = 2 * l - m2;
+    return new Rgb(
+      hsl2rgb(h >= 240 ? h - 240 : h + 120, m1, m2),
+      hsl2rgb(h, m1, m2),
+      hsl2rgb(h < 120 ? h + 240 : h - 120, m1, m2),
+      this.opacity
+    );
+  },
+  displayable: function() {
+    return (0 <= this.s && this.s <= 1 || isNaN(this.s))
+        && (0 <= this.l && this.l <= 1)
+        && (0 <= this.opacity && this.opacity <= 1);
+  },
+  formatHsl: function() {
+    var a = this.opacity; a = isNaN(a) ? 1 : Math.max(0, Math.min(1, a));
+    return (a === 1 ? "hsl(" : "hsla(")
+        + (this.h || 0) + ", "
+        + (this.s || 0) * 100 + "%, "
+        + (this.l || 0) * 100 + "%"
+        + (a === 1 ? ")" : ", " + a + ")");
+  }
+}));
+
+/* From FvD 13.37, CSS Color Module Level 3 */
+function hsl2rgb(h, m1, m2) {
+  return (h < 60 ? m1 + (m2 - m1) * h / 60
+      : h < 180 ? m2
+      : h < 240 ? m1 + (m2 - m1) * (240 - h) / 60
+      : m1) * 255;
+}
+
+
+/***/ }),
+
 /***/ "3xmg":
 /*!**********************************************!*\
   !*** ./node_modules/d3-scale/src/ordinal.js ***!
@@ -3405,7 +3944,7 @@ function hasInnerScale(scale) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "rgbBasis", function() { return rgbBasis; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "rgbBasisClosed", function() { return rgbBasisClosed; });
-/* harmony import */ var d3_color__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3-color */ "Ij2O");
+/* harmony import */ var d3_color__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3-color */ "qXv/");
 /* harmony import */ var _basis_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./basis.js */ "yEp2");
 /* harmony import */ var _basisClosed_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./basisClosed.js */ "S83q");
 /* harmony import */ var _color_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./color.js */ "sFV2");
@@ -4223,7 +4762,7 @@ var polyInOut = (function custom(e) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var d3_color__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3-color */ "Ij2O");
+/* harmony import */ var d3_color__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3-color */ "qXv/");
 /* harmony import */ var d3_interpolate__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! d3-interpolate */ "pD2Y");
 
 
@@ -4468,7 +5007,7 @@ function tpmt(x) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var d3_color__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3-color */ "Ij2O");
+/* harmony import */ var d3_color__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3-color */ "qXv/");
 /* harmony import */ var _rgb_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./rgb.js */ "42CK");
 /* harmony import */ var _array_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./array.js */ "ZzDG");
 /* harmony import */ var _date_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./date.js */ "G21l");
@@ -9485,7 +10024,7 @@ function defaultLocale(definition) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return lab; });
-/* harmony import */ var d3_color__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3-color */ "Ij2O");
+/* harmony import */ var d3_color__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3-color */ "qXv/");
 /* harmony import */ var _color_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./color.js */ "sFV2");
 
 
@@ -11742,41 +12281,6 @@ ChartTooltipDirective = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])
 
 /***/ }),
 
-/***/ "Ij2O":
-/*!************************************************************************!*\
-  !*** ./node_modules/d3-interpolate/node_modules/d3-color/src/index.js ***!
-  \************************************************************************/
-/*! exports provided: color, rgb, hsl, lab, hcl, lch, gray, cubehelix */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _color_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./color.js */ "ozvG");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "color", function() { return _color_js__WEBPACK_IMPORTED_MODULE_0__["default"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "rgb", function() { return _color_js__WEBPACK_IMPORTED_MODULE_0__["rgb"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "hsl", function() { return _color_js__WEBPACK_IMPORTED_MODULE_0__["hsl"]; });
-
-/* harmony import */ var _lab_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./lab.js */ "iIvt");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "lab", function() { return _lab_js__WEBPACK_IMPORTED_MODULE_1__["default"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "hcl", function() { return _lab_js__WEBPACK_IMPORTED_MODULE_1__["hcl"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "lch", function() { return _lab_js__WEBPACK_IMPORTED_MODULE_1__["lch"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "gray", function() { return _lab_js__WEBPACK_IMPORTED_MODULE_1__["gray"]; });
-
-/* harmony import */ var _cubehelix_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./cubehelix.js */ "unCO");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cubehelix", function() { return _cubehelix_js__WEBPACK_IMPORTED_MODULE_2__["default"]; });
-
-
-
-
-
-
-/***/ }),
-
 /***/ "Isyg":
 /*!*********************************************!*\
   !*** ./src/core/common/palette/palettes.ts ***!
@@ -13835,7 +14339,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cubehelixLong", function() { return cubehelixLong; });
-/* harmony import */ var d3_color__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3-color */ "Ij2O");
+/* harmony import */ var d3_color__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3-color */ "qXv/");
 /* harmony import */ var _color_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./color.js */ "sFV2");
 
 
@@ -14109,6 +14613,85 @@ __webpack_require__.r(__webpack_exports__);
     return x;
   };
 });
+
+
+/***/ }),
+
+/***/ "Ov49":
+/*!***************************************************************************!*\
+  !*** ./node_modules/d3-transition/node_modules/d3-color/src/cubehelix.js ***!
+  \***************************************************************************/
+/*! exports provided: default, Cubehelix */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return cubehelix; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Cubehelix", function() { return Cubehelix; });
+/* harmony import */ var _define_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./define.js */ "V03s");
+/* harmony import */ var _color_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./color.js */ "3lC8");
+/* harmony import */ var _math_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./math.js */ "oV0g");
+
+
+
+
+var A = -0.14861,
+    B = +1.78277,
+    C = -0.29227,
+    D = -0.90649,
+    E = +1.97294,
+    ED = E * D,
+    EB = E * B,
+    BC_DA = B * C - D * A;
+
+function cubehelixConvert(o) {
+  if (o instanceof Cubehelix) return new Cubehelix(o.h, o.s, o.l, o.opacity);
+  if (!(o instanceof _color_js__WEBPACK_IMPORTED_MODULE_1__["Rgb"])) o = Object(_color_js__WEBPACK_IMPORTED_MODULE_1__["rgbConvert"])(o);
+  var r = o.r / 255,
+      g = o.g / 255,
+      b = o.b / 255,
+      l = (BC_DA * b + ED * r - EB * g) / (BC_DA + ED - EB),
+      bl = b - l,
+      k = (E * (g - l) - C * bl) / D,
+      s = Math.sqrt(k * k + bl * bl) / (E * l * (1 - l)), // NaN if l=0 or l=1
+      h = s ? Math.atan2(k, bl) * _math_js__WEBPACK_IMPORTED_MODULE_2__["rad2deg"] - 120 : NaN;
+  return new Cubehelix(h < 0 ? h + 360 : h, s, l, o.opacity);
+}
+
+function cubehelix(h, s, l, opacity) {
+  return arguments.length === 1 ? cubehelixConvert(h) : new Cubehelix(h, s, l, opacity == null ? 1 : opacity);
+}
+
+function Cubehelix(h, s, l, opacity) {
+  this.h = +h;
+  this.s = +s;
+  this.l = +l;
+  this.opacity = +opacity;
+}
+
+Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["default"])(Cubehelix, cubehelix, Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["extend"])(_color_js__WEBPACK_IMPORTED_MODULE_1__["Color"], {
+  brighter: function(k) {
+    k = k == null ? _color_js__WEBPACK_IMPORTED_MODULE_1__["brighter"] : Math.pow(_color_js__WEBPACK_IMPORTED_MODULE_1__["brighter"], k);
+    return new Cubehelix(this.h, this.s, this.l * k, this.opacity);
+  },
+  darker: function(k) {
+    k = k == null ? _color_js__WEBPACK_IMPORTED_MODULE_1__["darker"] : Math.pow(_color_js__WEBPACK_IMPORTED_MODULE_1__["darker"], k);
+    return new Cubehelix(this.h, this.s, this.l * k, this.opacity);
+  },
+  rgb: function() {
+    var h = isNaN(this.h) ? 0 : (this.h + 120) * _math_js__WEBPACK_IMPORTED_MODULE_2__["deg2rad"],
+        l = +this.l,
+        a = isNaN(this.s) ? 0 : this.s * l * (1 - l),
+        cosh = Math.cos(h),
+        sinh = Math.sin(h);
+    return new _color_js__WEBPACK_IMPORTED_MODULE_1__["Rgb"](
+      255 * (l + a * (A * cosh + B * sinh)),
+      255 * (l + a * (C * cosh + D * sinh)),
+      255 * (l + a * (E * cosh)),
+      this.opacity
+    );
+  }
+}));
 
 
 /***/ }),
@@ -17117,6 +17700,30 @@ function creatorFixed(fullname) {
 
 /***/ }),
 
+/***/ "V03s":
+/*!************************************************************************!*\
+  !*** ./node_modules/d3-transition/node_modules/d3-color/src/define.js ***!
+  \************************************************************************/
+/*! exports provided: default, extend */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "extend", function() { return extend; });
+/* harmony default export */ __webpack_exports__["default"] = (function(constructor, factory, prototype) {
+  constructor.prototype = factory.prototype = prototype;
+  prototype.constructor = constructor;
+});
+
+function extend(parent, definition) {
+  var prototype = Object.create(parent.prototype);
+  for (var key in definition) prototype[key] = definition[key];
+  return prototype;
+}
+
+
+/***/ }),
+
 /***/ "V183":
 /*!*******************************************!*\
   !*** ./node_modules/d3-array/src/mean.js ***!
@@ -18073,7 +18680,7 @@ ZoomPlugin.DEFAULT_CONFIG = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hclLong", function() { return hclLong; });
-/* harmony import */ var d3_color__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3-color */ "Ij2O");
+/* harmony import */ var d3_color__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3-color */ "qXv/");
 /* harmony import */ var _color_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./color.js */ "sFV2");
 
 
@@ -20058,7 +20665,7 @@ class BarAccessors extends _accessors_rectangle_accessors__WEBPACK_IMPORTED_MODU
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hslLong", function() { return hslLong; });
-/* harmony import */ var d3_color__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3-color */ "Ij2O");
+/* harmony import */ var d3_color__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3-color */ "qXv/");
 /* harmony import */ var _color_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./color.js */ "sFV2");
 
 
@@ -23787,151 +24394,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "iIvt":
-/*!**********************************************************************!*\
-  !*** ./node_modules/d3-interpolate/node_modules/d3-color/src/lab.js ***!
-  \**********************************************************************/
-/*! exports provided: gray, default, Lab, lch, hcl, Hcl */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "gray", function() { return gray; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return lab; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Lab", function() { return Lab; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "lch", function() { return lch; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hcl", function() { return hcl; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Hcl", function() { return Hcl; });
-/* harmony import */ var _define_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./define.js */ "xGXq");
-/* harmony import */ var _color_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./color.js */ "ozvG");
-/* harmony import */ var _math_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./math.js */ "uXcH");
-
-
-
-
-// https://observablehq.com/@mbostock/lab-and-rgb
-var K = 18,
-    Xn = 0.96422,
-    Yn = 1,
-    Zn = 0.82521,
-    t0 = 4 / 29,
-    t1 = 6 / 29,
-    t2 = 3 * t1 * t1,
-    t3 = t1 * t1 * t1;
-
-function labConvert(o) {
-  if (o instanceof Lab) return new Lab(o.l, o.a, o.b, o.opacity);
-  if (o instanceof Hcl) return hcl2lab(o);
-  if (!(o instanceof _color_js__WEBPACK_IMPORTED_MODULE_1__["Rgb"])) o = Object(_color_js__WEBPACK_IMPORTED_MODULE_1__["rgbConvert"])(o);
-  var r = rgb2lrgb(o.r),
-      g = rgb2lrgb(o.g),
-      b = rgb2lrgb(o.b),
-      y = xyz2lab((0.2225045 * r + 0.7168786 * g + 0.0606169 * b) / Yn), x, z;
-  if (r === g && g === b) x = z = y; else {
-    x = xyz2lab((0.4360747 * r + 0.3850649 * g + 0.1430804 * b) / Xn);
-    z = xyz2lab((0.0139322 * r + 0.0971045 * g + 0.7141733 * b) / Zn);
-  }
-  return new Lab(116 * y - 16, 500 * (x - y), 200 * (y - z), o.opacity);
-}
-
-function gray(l, opacity) {
-  return new Lab(l, 0, 0, opacity == null ? 1 : opacity);
-}
-
-function lab(l, a, b, opacity) {
-  return arguments.length === 1 ? labConvert(l) : new Lab(l, a, b, opacity == null ? 1 : opacity);
-}
-
-function Lab(l, a, b, opacity) {
-  this.l = +l;
-  this.a = +a;
-  this.b = +b;
-  this.opacity = +opacity;
-}
-
-Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["default"])(Lab, lab, Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["extend"])(_color_js__WEBPACK_IMPORTED_MODULE_1__["Color"], {
-  brighter: function(k) {
-    return new Lab(this.l + K * (k == null ? 1 : k), this.a, this.b, this.opacity);
-  },
-  darker: function(k) {
-    return new Lab(this.l - K * (k == null ? 1 : k), this.a, this.b, this.opacity);
-  },
-  rgb: function() {
-    var y = (this.l + 16) / 116,
-        x = isNaN(this.a) ? y : y + this.a / 500,
-        z = isNaN(this.b) ? y : y - this.b / 200;
-    x = Xn * lab2xyz(x);
-    y = Yn * lab2xyz(y);
-    z = Zn * lab2xyz(z);
-    return new _color_js__WEBPACK_IMPORTED_MODULE_1__["Rgb"](
-      lrgb2rgb( 3.1338561 * x - 1.6168667 * y - 0.4906146 * z),
-      lrgb2rgb(-0.9787684 * x + 1.9161415 * y + 0.0334540 * z),
-      lrgb2rgb( 0.0719453 * x - 0.2289914 * y + 1.4052427 * z),
-      this.opacity
-    );
-  }
-}));
-
-function xyz2lab(t) {
-  return t > t3 ? Math.pow(t, 1 / 3) : t / t2 + t0;
-}
-
-function lab2xyz(t) {
-  return t > t1 ? t * t * t : t2 * (t - t0);
-}
-
-function lrgb2rgb(x) {
-  return 255 * (x <= 0.0031308 ? 12.92 * x : 1.055 * Math.pow(x, 1 / 2.4) - 0.055);
-}
-
-function rgb2lrgb(x) {
-  return (x /= 255) <= 0.04045 ? x / 12.92 : Math.pow((x + 0.055) / 1.055, 2.4);
-}
-
-function hclConvert(o) {
-  if (o instanceof Hcl) return new Hcl(o.h, o.c, o.l, o.opacity);
-  if (!(o instanceof Lab)) o = labConvert(o);
-  if (o.a === 0 && o.b === 0) return new Hcl(NaN, 0 < o.l && o.l < 100 ? 0 : NaN, o.l, o.opacity);
-  var h = Math.atan2(o.b, o.a) * _math_js__WEBPACK_IMPORTED_MODULE_2__["rad2deg"];
-  return new Hcl(h < 0 ? h + 360 : h, Math.sqrt(o.a * o.a + o.b * o.b), o.l, o.opacity);
-}
-
-function lch(l, c, h, opacity) {
-  return arguments.length === 1 ? hclConvert(l) : new Hcl(h, c, l, opacity == null ? 1 : opacity);
-}
-
-function hcl(h, c, l, opacity) {
-  return arguments.length === 1 ? hclConvert(h) : new Hcl(h, c, l, opacity == null ? 1 : opacity);
-}
-
-function Hcl(h, c, l, opacity) {
-  this.h = +h;
-  this.c = +c;
-  this.l = +l;
-  this.opacity = +opacity;
-}
-
-function hcl2lab(o) {
-  if (isNaN(o.h)) return new Lab(o.l, 0, 0, o.opacity);
-  var h = o.h * _math_js__WEBPACK_IMPORTED_MODULE_2__["deg2rad"];
-  return new Lab(o.l, Math.cos(h) * o.c, Math.sin(h) * o.c, o.opacity);
-}
-
-Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["default"])(Hcl, hcl, Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["extend"])(_color_js__WEBPACK_IMPORTED_MODULE_1__["Color"], {
-  brighter: function(k) {
-    return new Hcl(this.h, this.c, this.l + K * (k == null ? 1 : k), this.opacity);
-  },
-  darker: function(k) {
-    return new Hcl(this.h, this.c, this.l - K * (k == null ? 1 : k), this.opacity);
-  },
-  rgb: function() {
-    return hcl2lab(this).rgb();
-  }
-}));
-
-
-/***/ }),
-
 /***/ "iPFw":
 /*!******************************************!*\
   !*** ./node_modules/d3-shape/src/pie.js ***!
@@ -26205,6 +26667,23 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "oV0g":
+/*!**********************************************************************!*\
+  !*** ./node_modules/d3-transition/node_modules/d3-color/src/math.js ***!
+  \**********************************************************************/
+/*! exports provided: deg2rad, rad2deg */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deg2rad", function() { return deg2rad; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "rad2deg", function() { return rad2deg; });
+var deg2rad = Math.PI / 180;
+var rad2deg = 180 / Math.PI;
+
+
+/***/ }),
+
 /***/ "oVWD":
 /*!************************************************!*\
   !*** ./src/renderers/radial/radial-grid-fn.ts ***!
@@ -26350,400 +26829,6 @@ __webpack_require__.r(__webpack_exports__);
       || (node.document && node) // node is a Window
       || node.defaultView; // node is a Document
 });
-
-
-/***/ }),
-
-/***/ "ozvG":
-/*!************************************************************************!*\
-  !*** ./node_modules/d3-interpolate/node_modules/d3-color/src/color.js ***!
-  \************************************************************************/
-/*! exports provided: Color, darker, brighter, default, rgbConvert, rgb, Rgb, hslConvert, hsl */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Color", function() { return Color; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "darker", function() { return darker; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "brighter", function() { return brighter; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return color; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "rgbConvert", function() { return rgbConvert; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "rgb", function() { return rgb; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Rgb", function() { return Rgb; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hslConvert", function() { return hslConvert; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hsl", function() { return hsl; });
-/* harmony import */ var _define_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./define.js */ "xGXq");
-
-
-function Color() {}
-
-var darker = 0.7;
-var brighter = 1 / darker;
-
-var reI = "\\s*([+-]?\\d+)\\s*",
-    reN = "\\s*([+-]?\\d*\\.?\\d+(?:[eE][+-]?\\d+)?)\\s*",
-    reP = "\\s*([+-]?\\d*\\.?\\d+(?:[eE][+-]?\\d+)?)%\\s*",
-    reHex = /^#([0-9a-f]{3,8})$/,
-    reRgbInteger = new RegExp("^rgb\\(" + [reI, reI, reI] + "\\)$"),
-    reRgbPercent = new RegExp("^rgb\\(" + [reP, reP, reP] + "\\)$"),
-    reRgbaInteger = new RegExp("^rgba\\(" + [reI, reI, reI, reN] + "\\)$"),
-    reRgbaPercent = new RegExp("^rgba\\(" + [reP, reP, reP, reN] + "\\)$"),
-    reHslPercent = new RegExp("^hsl\\(" + [reN, reP, reP] + "\\)$"),
-    reHslaPercent = new RegExp("^hsla\\(" + [reN, reP, reP, reN] + "\\)$");
-
-var named = {
-  aliceblue: 0xf0f8ff,
-  antiquewhite: 0xfaebd7,
-  aqua: 0x00ffff,
-  aquamarine: 0x7fffd4,
-  azure: 0xf0ffff,
-  beige: 0xf5f5dc,
-  bisque: 0xffe4c4,
-  black: 0x000000,
-  blanchedalmond: 0xffebcd,
-  blue: 0x0000ff,
-  blueviolet: 0x8a2be2,
-  brown: 0xa52a2a,
-  burlywood: 0xdeb887,
-  cadetblue: 0x5f9ea0,
-  chartreuse: 0x7fff00,
-  chocolate: 0xd2691e,
-  coral: 0xff7f50,
-  cornflowerblue: 0x6495ed,
-  cornsilk: 0xfff8dc,
-  crimson: 0xdc143c,
-  cyan: 0x00ffff,
-  darkblue: 0x00008b,
-  darkcyan: 0x008b8b,
-  darkgoldenrod: 0xb8860b,
-  darkgray: 0xa9a9a9,
-  darkgreen: 0x006400,
-  darkgrey: 0xa9a9a9,
-  darkkhaki: 0xbdb76b,
-  darkmagenta: 0x8b008b,
-  darkolivegreen: 0x556b2f,
-  darkorange: 0xff8c00,
-  darkorchid: 0x9932cc,
-  darkred: 0x8b0000,
-  darksalmon: 0xe9967a,
-  darkseagreen: 0x8fbc8f,
-  darkslateblue: 0x483d8b,
-  darkslategray: 0x2f4f4f,
-  darkslategrey: 0x2f4f4f,
-  darkturquoise: 0x00ced1,
-  darkviolet: 0x9400d3,
-  deeppink: 0xff1493,
-  deepskyblue: 0x00bfff,
-  dimgray: 0x696969,
-  dimgrey: 0x696969,
-  dodgerblue: 0x1e90ff,
-  firebrick: 0xb22222,
-  floralwhite: 0xfffaf0,
-  forestgreen: 0x228b22,
-  fuchsia: 0xff00ff,
-  gainsboro: 0xdcdcdc,
-  ghostwhite: 0xf8f8ff,
-  gold: 0xffd700,
-  goldenrod: 0xdaa520,
-  gray: 0x808080,
-  green: 0x008000,
-  greenyellow: 0xadff2f,
-  grey: 0x808080,
-  honeydew: 0xf0fff0,
-  hotpink: 0xff69b4,
-  indianred: 0xcd5c5c,
-  indigo: 0x4b0082,
-  ivory: 0xfffff0,
-  khaki: 0xf0e68c,
-  lavender: 0xe6e6fa,
-  lavenderblush: 0xfff0f5,
-  lawngreen: 0x7cfc00,
-  lemonchiffon: 0xfffacd,
-  lightblue: 0xadd8e6,
-  lightcoral: 0xf08080,
-  lightcyan: 0xe0ffff,
-  lightgoldenrodyellow: 0xfafad2,
-  lightgray: 0xd3d3d3,
-  lightgreen: 0x90ee90,
-  lightgrey: 0xd3d3d3,
-  lightpink: 0xffb6c1,
-  lightsalmon: 0xffa07a,
-  lightseagreen: 0x20b2aa,
-  lightskyblue: 0x87cefa,
-  lightslategray: 0x778899,
-  lightslategrey: 0x778899,
-  lightsteelblue: 0xb0c4de,
-  lightyellow: 0xffffe0,
-  lime: 0x00ff00,
-  limegreen: 0x32cd32,
-  linen: 0xfaf0e6,
-  magenta: 0xff00ff,
-  maroon: 0x800000,
-  mediumaquamarine: 0x66cdaa,
-  mediumblue: 0x0000cd,
-  mediumorchid: 0xba55d3,
-  mediumpurple: 0x9370db,
-  mediumseagreen: 0x3cb371,
-  mediumslateblue: 0x7b68ee,
-  mediumspringgreen: 0x00fa9a,
-  mediumturquoise: 0x48d1cc,
-  mediumvioletred: 0xc71585,
-  midnightblue: 0x191970,
-  mintcream: 0xf5fffa,
-  mistyrose: 0xffe4e1,
-  moccasin: 0xffe4b5,
-  navajowhite: 0xffdead,
-  navy: 0x000080,
-  oldlace: 0xfdf5e6,
-  olive: 0x808000,
-  olivedrab: 0x6b8e23,
-  orange: 0xffa500,
-  orangered: 0xff4500,
-  orchid: 0xda70d6,
-  palegoldenrod: 0xeee8aa,
-  palegreen: 0x98fb98,
-  paleturquoise: 0xafeeee,
-  palevioletred: 0xdb7093,
-  papayawhip: 0xffefd5,
-  peachpuff: 0xffdab9,
-  peru: 0xcd853f,
-  pink: 0xffc0cb,
-  plum: 0xdda0dd,
-  powderblue: 0xb0e0e6,
-  purple: 0x800080,
-  rebeccapurple: 0x663399,
-  red: 0xff0000,
-  rosybrown: 0xbc8f8f,
-  royalblue: 0x4169e1,
-  saddlebrown: 0x8b4513,
-  salmon: 0xfa8072,
-  sandybrown: 0xf4a460,
-  seagreen: 0x2e8b57,
-  seashell: 0xfff5ee,
-  sienna: 0xa0522d,
-  silver: 0xc0c0c0,
-  skyblue: 0x87ceeb,
-  slateblue: 0x6a5acd,
-  slategray: 0x708090,
-  slategrey: 0x708090,
-  snow: 0xfffafa,
-  springgreen: 0x00ff7f,
-  steelblue: 0x4682b4,
-  tan: 0xd2b48c,
-  teal: 0x008080,
-  thistle: 0xd8bfd8,
-  tomato: 0xff6347,
-  turquoise: 0x40e0d0,
-  violet: 0xee82ee,
-  wheat: 0xf5deb3,
-  white: 0xffffff,
-  whitesmoke: 0xf5f5f5,
-  yellow: 0xffff00,
-  yellowgreen: 0x9acd32
-};
-
-Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["default"])(Color, color, {
-  copy: function(channels) {
-    return Object.assign(new this.constructor, this, channels);
-  },
-  displayable: function() {
-    return this.rgb().displayable();
-  },
-  hex: color_formatHex, // Deprecated! Use color.formatHex.
-  formatHex: color_formatHex,
-  formatHsl: color_formatHsl,
-  formatRgb: color_formatRgb,
-  toString: color_formatRgb
-});
-
-function color_formatHex() {
-  return this.rgb().formatHex();
-}
-
-function color_formatHsl() {
-  return hslConvert(this).formatHsl();
-}
-
-function color_formatRgb() {
-  return this.rgb().formatRgb();
-}
-
-function color(format) {
-  var m, l;
-  format = (format + "").trim().toLowerCase();
-  return (m = reHex.exec(format)) ? (l = m[1].length, m = parseInt(m[1], 16), l === 6 ? rgbn(m) // #ff0000
-      : l === 3 ? new Rgb((m >> 8 & 0xf) | (m >> 4 & 0xf0), (m >> 4 & 0xf) | (m & 0xf0), ((m & 0xf) << 4) | (m & 0xf), 1) // #f00
-      : l === 8 ? rgba(m >> 24 & 0xff, m >> 16 & 0xff, m >> 8 & 0xff, (m & 0xff) / 0xff) // #ff000000
-      : l === 4 ? rgba((m >> 12 & 0xf) | (m >> 8 & 0xf0), (m >> 8 & 0xf) | (m >> 4 & 0xf0), (m >> 4 & 0xf) | (m & 0xf0), (((m & 0xf) << 4) | (m & 0xf)) / 0xff) // #f000
-      : null) // invalid hex
-      : (m = reRgbInteger.exec(format)) ? new Rgb(m[1], m[2], m[3], 1) // rgb(255, 0, 0)
-      : (m = reRgbPercent.exec(format)) ? new Rgb(m[1] * 255 / 100, m[2] * 255 / 100, m[3] * 255 / 100, 1) // rgb(100%, 0%, 0%)
-      : (m = reRgbaInteger.exec(format)) ? rgba(m[1], m[2], m[3], m[4]) // rgba(255, 0, 0, 1)
-      : (m = reRgbaPercent.exec(format)) ? rgba(m[1] * 255 / 100, m[2] * 255 / 100, m[3] * 255 / 100, m[4]) // rgb(100%, 0%, 0%, 1)
-      : (m = reHslPercent.exec(format)) ? hsla(m[1], m[2] / 100, m[3] / 100, 1) // hsl(120, 50%, 50%)
-      : (m = reHslaPercent.exec(format)) ? hsla(m[1], m[2] / 100, m[3] / 100, m[4]) // hsla(120, 50%, 50%, 1)
-      : named.hasOwnProperty(format) ? rgbn(named[format]) // eslint-disable-line no-prototype-builtins
-      : format === "transparent" ? new Rgb(NaN, NaN, NaN, 0)
-      : null;
-}
-
-function rgbn(n) {
-  return new Rgb(n >> 16 & 0xff, n >> 8 & 0xff, n & 0xff, 1);
-}
-
-function rgba(r, g, b, a) {
-  if (a <= 0) r = g = b = NaN;
-  return new Rgb(r, g, b, a);
-}
-
-function rgbConvert(o) {
-  if (!(o instanceof Color)) o = color(o);
-  if (!o) return new Rgb;
-  o = o.rgb();
-  return new Rgb(o.r, o.g, o.b, o.opacity);
-}
-
-function rgb(r, g, b, opacity) {
-  return arguments.length === 1 ? rgbConvert(r) : new Rgb(r, g, b, opacity == null ? 1 : opacity);
-}
-
-function Rgb(r, g, b, opacity) {
-  this.r = +r;
-  this.g = +g;
-  this.b = +b;
-  this.opacity = +opacity;
-}
-
-Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["default"])(Rgb, rgb, Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["extend"])(Color, {
-  brighter: function(k) {
-    k = k == null ? brighter : Math.pow(brighter, k);
-    return new Rgb(this.r * k, this.g * k, this.b * k, this.opacity);
-  },
-  darker: function(k) {
-    k = k == null ? darker : Math.pow(darker, k);
-    return new Rgb(this.r * k, this.g * k, this.b * k, this.opacity);
-  },
-  rgb: function() {
-    return this;
-  },
-  displayable: function() {
-    return (-0.5 <= this.r && this.r < 255.5)
-        && (-0.5 <= this.g && this.g < 255.5)
-        && (-0.5 <= this.b && this.b < 255.5)
-        && (0 <= this.opacity && this.opacity <= 1);
-  },
-  hex: rgb_formatHex, // Deprecated! Use color.formatHex.
-  formatHex: rgb_formatHex,
-  formatRgb: rgb_formatRgb,
-  toString: rgb_formatRgb
-}));
-
-function rgb_formatHex() {
-  return "#" + hex(this.r) + hex(this.g) + hex(this.b);
-}
-
-function rgb_formatRgb() {
-  var a = this.opacity; a = isNaN(a) ? 1 : Math.max(0, Math.min(1, a));
-  return (a === 1 ? "rgb(" : "rgba(")
-      + Math.max(0, Math.min(255, Math.round(this.r) || 0)) + ", "
-      + Math.max(0, Math.min(255, Math.round(this.g) || 0)) + ", "
-      + Math.max(0, Math.min(255, Math.round(this.b) || 0))
-      + (a === 1 ? ")" : ", " + a + ")");
-}
-
-function hex(value) {
-  value = Math.max(0, Math.min(255, Math.round(value) || 0));
-  return (value < 16 ? "0" : "") + value.toString(16);
-}
-
-function hsla(h, s, l, a) {
-  if (a <= 0) h = s = l = NaN;
-  else if (l <= 0 || l >= 1) h = s = NaN;
-  else if (s <= 0) h = NaN;
-  return new Hsl(h, s, l, a);
-}
-
-function hslConvert(o) {
-  if (o instanceof Hsl) return new Hsl(o.h, o.s, o.l, o.opacity);
-  if (!(o instanceof Color)) o = color(o);
-  if (!o) return new Hsl;
-  if (o instanceof Hsl) return o;
-  o = o.rgb();
-  var r = o.r / 255,
-      g = o.g / 255,
-      b = o.b / 255,
-      min = Math.min(r, g, b),
-      max = Math.max(r, g, b),
-      h = NaN,
-      s = max - min,
-      l = (max + min) / 2;
-  if (s) {
-    if (r === max) h = (g - b) / s + (g < b) * 6;
-    else if (g === max) h = (b - r) / s + 2;
-    else h = (r - g) / s + 4;
-    s /= l < 0.5 ? max + min : 2 - max - min;
-    h *= 60;
-  } else {
-    s = l > 0 && l < 1 ? 0 : h;
-  }
-  return new Hsl(h, s, l, o.opacity);
-}
-
-function hsl(h, s, l, opacity) {
-  return arguments.length === 1 ? hslConvert(h) : new Hsl(h, s, l, opacity == null ? 1 : opacity);
-}
-
-function Hsl(h, s, l, opacity) {
-  this.h = +h;
-  this.s = +s;
-  this.l = +l;
-  this.opacity = +opacity;
-}
-
-Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["default"])(Hsl, hsl, Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["extend"])(Color, {
-  brighter: function(k) {
-    k = k == null ? brighter : Math.pow(brighter, k);
-    return new Hsl(this.h, this.s, this.l * k, this.opacity);
-  },
-  darker: function(k) {
-    k = k == null ? darker : Math.pow(darker, k);
-    return new Hsl(this.h, this.s, this.l * k, this.opacity);
-  },
-  rgb: function() {
-    var h = this.h % 360 + (this.h < 0) * 360,
-        s = isNaN(h) || isNaN(this.s) ? 0 : this.s,
-        l = this.l,
-        m2 = l + (l < 0.5 ? l : 1 - l) * s,
-        m1 = 2 * l - m2;
-    return new Rgb(
-      hsl2rgb(h >= 240 ? h - 240 : h + 120, m1, m2),
-      hsl2rgb(h, m1, m2),
-      hsl2rgb(h < 120 ? h + 240 : h - 120, m1, m2),
-      this.opacity
-    );
-  },
-  displayable: function() {
-    return (0 <= this.s && this.s <= 1 || isNaN(this.s))
-        && (0 <= this.l && this.l <= 1)
-        && (0 <= this.opacity && this.opacity <= 1);
-  },
-  formatHsl: function() {
-    var a = this.opacity; a = isNaN(a) ? 1 : Math.max(0, Math.min(1, a));
-    return (a === 1 ? "hsl(" : "hsla(")
-        + (this.h || 0) + ", "
-        + (this.s || 0) * 100 + "%, "
-        + (this.l || 0) * 100 + "%"
-        + (a === 1 ? ")" : ", " + a + ")");
-  }
-}));
-
-/* From FvD 13.37, CSS Color Module Level 3 */
-function hsl2rgb(h, m1, m2) {
-  return (h < 60 ? m1 + (m2 - m1) * h / 60
-      : h < 180 ? m2
-      : h < 240 ? m1 + (m2 - m1) * (240 - h) / 60
-      : m1) * 255;
-}
 
 
 /***/ }),
@@ -27438,6 +27523,41 @@ __webpack_require__.r(__webpack_exports__);
 
   return new _index_js__WEBPACK_IMPORTED_MODULE_0__["Transition"](merges, this._parents, this._name, this._id);
 });
+
+
+/***/ }),
+
+/***/ "qXv/":
+/*!***********************************************************************!*\
+  !*** ./node_modules/d3-transition/node_modules/d3-color/src/index.js ***!
+  \***********************************************************************/
+/*! exports provided: color, rgb, hsl, lab, hcl, lch, gray, cubehelix */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _color_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./color.js */ "3lC8");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "color", function() { return _color_js__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "rgb", function() { return _color_js__WEBPACK_IMPORTED_MODULE_0__["rgb"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "hsl", function() { return _color_js__WEBPACK_IMPORTED_MODULE_0__["hsl"]; });
+
+/* harmony import */ var _lab_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./lab.js */ "/zD8");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "lab", function() { return _lab_js__WEBPACK_IMPORTED_MODULE_1__["default"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "hcl", function() { return _lab_js__WEBPACK_IMPORTED_MODULE_1__["hcl"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "lch", function() { return _lab_js__WEBPACK_IMPORTED_MODULE_1__["lch"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "gray", function() { return _lab_js__WEBPACK_IMPORTED_MODULE_1__["gray"]; });
+
+/* harmony import */ var _cubehelix_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./cubehelix.js */ "Ov49");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "cubehelix", function() { return _cubehelix_js__WEBPACK_IMPORTED_MODULE_2__["default"]; });
+
+
+
+
 
 
 /***/ }),
@@ -28230,14 +28350,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LegendSeriesComponent", function() { return LegendSeriesComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
 /* harmony import */ var _raw_loader_legend_series_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./legend-series.component.html */ "eA7p");
-/* harmony import */ var _legend_series_component_less__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./legend-series.component.less */ "sdkI");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var lodash_isEmpty__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! lodash/isEmpty */ "E+oP");
-/* harmony import */ var lodash_isEmpty__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(lodash_isEmpty__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _renderers_types__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../renderers/types */ "AbRU");
-/* harmony import */ var _legend_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../legend.component */ "QpXW");
-/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../types */ "srsU");
-
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var lodash_isEmpty__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lodash/isEmpty */ "E+oP");
+/* harmony import */ var lodash_isEmpty__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(lodash_isEmpty__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _renderers_types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../renderers/types */ "AbRU");
+/* harmony import */ var _legend_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../legend.component */ "QpXW");
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../types */ "srsU");
 
 
 
@@ -28257,7 +28375,7 @@ let LegendSeriesComponent = class LegendSeriesComponent {
         /**
          * Emits an event with a boolean value indicating a new selected status
          */
-        this.isSelectedChange = new _angular_core__WEBPACK_IMPORTED_MODULE_3__["EventEmitter"]();
+        this.isSelectedChange = new _angular_core__WEBPACK_IMPORTED_MODULE_2__["EventEmitter"]();
         this.isHorizontalClassApplied = false;
         this._active = false;
         this._interactive = false;
@@ -28293,13 +28411,13 @@ let LegendSeriesComponent = class LegendSeriesComponent {
         this._seriesRenderState = renderState;
     }
     get seriesRenderState() {
-        return this._seriesRenderState || _renderers_types__WEBPACK_IMPORTED_MODULE_5__["RenderState"].default;
+        return this._seriesRenderState || _renderers_types__WEBPACK_IMPORTED_MODULE_4__["RenderState"].default;
     }
     get isInteractiveClassApplied() {
         return this._interactive;
     }
     get isActiveClassApplied() {
-        return this._active && this.seriesRenderState !== _renderers_types__WEBPACK_IMPORTED_MODULE_5__["RenderState"].hidden;
+        return this._active && this.seriesRenderState !== _renderers_types__WEBPACK_IMPORTED_MODULE_4__["RenderState"].hidden;
     }
     ngAfterContentInit() {
         if (this.legend) {
@@ -28307,7 +28425,7 @@ let LegendSeriesComponent = class LegendSeriesComponent {
             this.icon = this.icon || this.legend.seriesIcon;
             this._active = this.legend.active;
             this.interactive = this.legend.interactive;
-            this.isHorizontalClassApplied = this.legend.orientation === _types__WEBPACK_IMPORTED_MODULE_7__["LegendOrientation"].horizontal;
+            this.isHorizontalClassApplied = this.legend.orientation === _types__WEBPACK_IMPORTED_MODULE_6__["LegendOrientation"].horizontal;
         }
     }
     /**
@@ -28322,7 +28440,7 @@ let LegendSeriesComponent = class LegendSeriesComponent {
      * @returns boolean indicating whether the series has a primary or secondary description
      */
     hasInputDescription() {
-        return !lodash_isEmpty__WEBPACK_IMPORTED_MODULE_4___default()(this.descriptionPrimary) || !lodash_isEmpty__WEBPACK_IMPORTED_MODULE_4___default()(this.descriptionSecondary);
+        return !lodash_isEmpty__WEBPACK_IMPORTED_MODULE_3___default()(this.descriptionPrimary) || !lodash_isEmpty__WEBPACK_IMPORTED_MODULE_3___default()(this.descriptionSecondary);
     }
     /**
      * @returns boolean indicating whether the series has a projected description
@@ -28332,35 +28450,33 @@ let LegendSeriesComponent = class LegendSeriesComponent {
     }
 };
 LegendSeriesComponent.ctorParameters = () => [
-    { type: _legend_component__WEBPACK_IMPORTED_MODULE_6__["LegendComponent"], decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Optional"] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Host"] }] }
+    { type: _legend_component__WEBPACK_IMPORTED_MODULE_5__["LegendComponent"], decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Optional"] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Host"] }] }
 ];
 LegendSeriesComponent.propDecorators = {
-    active: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }],
-    interactive: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }],
-    isSelected: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }],
-    isSelectedChange: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Output"] }],
-    descriptionPrimary: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }],
-    descriptionSecondary: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }],
-    icon: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }],
-    color: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }],
-    seriesRenderState: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }],
-    projectedDescription: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ViewChild"], args: ["projectedDescription",] }],
-    isInteractiveClassApplied: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["HostBinding"], args: [`class.${LEGEND_SERIES_CLASS_NAME}--interactive`,] }],
-    isHorizontalClassApplied: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["HostBinding"], args: [`class.${LEGEND_SERIES_CLASS_NAME}--horizontal`,] }],
-    isActiveClassApplied: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["HostBinding"], args: [`class.inverse`,] }],
-    onClick: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["HostListener"], args: ["click",] }]
+    active: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"] }],
+    interactive: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"] }],
+    isSelected: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"] }],
+    isSelectedChange: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Output"] }],
+    descriptionPrimary: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"] }],
+    descriptionSecondary: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"] }],
+    icon: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"] }],
+    color: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"] }],
+    seriesRenderState: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"] }],
+    projectedDescription: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["ViewChild"], args: ["projectedDescription",] }],
+    isInteractiveClassApplied: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["HostBinding"], args: [`class.${LEGEND_SERIES_CLASS_NAME}--interactive`,] }],
+    isHorizontalClassApplied: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["HostBinding"], args: [`class.${LEGEND_SERIES_CLASS_NAME}--horizontal`,] }],
+    isActiveClassApplied: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["HostBinding"], args: [`class.inverse`,] }],
+    onClick: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["HostListener"], args: ["click",] }]
 };
 LegendSeriesComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
         // eslint-disable-next-line
         host: { "class": LEGEND_SERIES_CLASS_NAME },
         selector: "nui-legend-series",
         template: _raw_loader_legend_series_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
-        encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ViewEncapsulation"].Emulated,
-        changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ChangeDetectionStrategy"].OnPush,
-        styles: [_legend_series_component_less__WEBPACK_IMPORTED_MODULE_2__["default"]]
+        changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_2__["ChangeDetectionStrategy"].OnPush,
     }),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_legend_component__WEBPACK_IMPORTED_MODULE_6__["LegendComponent"]])
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_legend_component__WEBPACK_IMPORTED_MODULE_5__["LegendComponent"]])
 ], LegendSeriesComponent);
 
 
@@ -28892,19 +29008,6 @@ var map = Array.prototype.map,
   };
 });
 
-
-/***/ }),
-
-/***/ "sdkI":
-/*!***************************************************************!*\
-  !*** ./src/legend/legend-series/legend-series.component.less ***!
-  \***************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (":host.nui-legend-series {\n  padding: 2px;\n  max-width: 250px;\n  cursor: default;\n  background-color: var(--nui-color-bg-content,#fff);\n}\n:host.nui-legend-series:not(.nui-legend-series--horizontal):not(:last-child) {\n  margin-bottom: 1px;\n}\n:host.nui-legend-series :host.nui-legend-series__tile-wrapper {\n  display: flex;\n  justify-content: center;\n}\n:host.nui-legend-series :host.nui-legend-series__tile {\n  display: flex;\n}\n:host.nui-legend-series--horizontal:not(:last-child) {\n  margin-right: 10px;\n}\n:host.nui-legend-series :empty {\n  display: none;\n}\n:host.nui-legend-series .description {\n  line-height: 18px;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  overflow: hidden;\n  padding-left: 5px;\n  padding-right: 5px;\n  min-width: 130px;\n}\n:host.nui-legend-series .description-container {\n  overflow: hidden;\n}\n:host.nui-legend-series .description-primary {\n  font-weight: 600;\n  color: var(--nui-color-text-default,#111);\n}\n:host.nui-legend-series .description-primary:not(:last-child) {\n  margin-bottom: -3px;\n}\n:host.nui-legend-series .description-secondary {\n  color: var(--nui-color-text-secondary,rgba(17, 17, 17, 0.6));\n}\n:host.nui-legend-series .description-secondary:not(:first-child) {\n  margin-top: -1px;\n}\n:host.nui-legend-series--interactive {\n  cursor: pointer;\n}\n:host.nui-legend-series--interactive .nui-legend-series__tile-wrapper {\n  position: relative;\n}\n:host.nui-legend-series--interactive .nui-legend-series__tile-wrapper .nui-legend-series__checkbox-wrapper {\n  align-self: center;\n  position: absolute;\n  visibility: hidden;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n:host.nui-legend-series--interactive .nui-legend-series__tile-wrapper .nui-legend-series__checkbox-mark {\n  border: solid 2px;\n  background: no-repeat 0 center;\n  border-color: var(--nui-color-active,#0079aa);\n  background-color: var(--nui-color-bg-content,#fff);\n  background-size: 16px;\n  border-radius: 3px;\n  min-width: 16px;\n  width: 16px;\n  height: 16px;\n  transition: background-color 0.3s, border-color 0.3s;\n}\n:host.nui-legend-series--interactive .nui-legend-series__tile-wrapper .nui-legend-series__checkbox-glyph {\n  width: 100%;\n  height: 100%;\n  background-size: 12px;\n  background-image: url(\"data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIKCSB2aWV3Qm94PSIwIDAgMjAgMjAiIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMjAgMjA7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS54dWktY2hlY2tib3gtZ2x5cGh7ZmlsbDpub25lO3N0cm9rZTojRkZGRkZGO3N0cm9rZS13aWR0aDozO3N0cm9rZS1taXRlcmxpbWl0OjEwO3N0cm9rZS1saW5lY2FwOnJvdW5kO30KPC9zdHlsZT4KPHBvbHlsaW5lIGNsYXNzPSJ4dWktY2hlY2tib3gtZ2x5cGgiIHBvaW50cz0iMTcsNCA4LDE1IDMsOSAiLz4KPC9zdmc+\");\n  display: none;\n}\n:host.nui-legend-series--interactive .nui-legend-series__tile-wrapper .nui-legend-series__checkbox--checked .nui-legend-series__checkbox-mark {\n  background-color: var(--nui-color-active,#0079aa);\n  border-color: var(--nui-color-active,#0079aa);\n}\n:host.nui-legend-series--interactive .nui-legend-series__tile-wrapper .nui-legend-series__checkbox--checked .nui-legend-series__checkbox-mark > .nui-legend-series__checkbox-glyph {\n  display: block;\n}\n:host.nui-legend-series--interactive .nui-legend-series--deselected .nui-legend-series__checkbox-wrapper,\n:host.nui-legend-series--interactive .nui-legend-series__tile-wrapper:hover .nui-legend-series__checkbox-wrapper {\n  visibility: visible;\n}\n:host.nui-legend-series--interactive .nui-legend-series--deselected .nui-legend-series__tile,\n:host.nui-legend-series--interactive .nui-legend-series__tile-wrapper:hover .nui-legend-series__tile {\n  visibility: hidden;\n}\n:host.nui-legend-series--interactive .nui-legend-series__tile-wrapper:hover {\n  background-color: var(--nui-color-bg-transparent-hover,rgba(17, 17, 17, 0.05));\n}\n:host.nui-legend-series--interactive:hover {\n  background-color: var(--nui-color-bg-light-hover,#f2f2f2);\n}\n:host.nui-legend-series--interactive:hover .nui-legend-series--deselected .nui-legend-series__tile-wrapper {\n  background-color: var(--nui-color-bg-transparent-hover,rgba(17, 17, 17, 0.05));\n}\n:host.nui-legend-series--interactive:not(:hover) .nui-legend-series--deselected .nui-legend-series__tile-wrapper {\n  background-color: var(--nui-color-bg-secondary,#fafafa);\n}\n:host.nui-legend-series:not(:hover) :host.nui-legend-series--state-hidden .description-container {\n  opacity: 0.3;\n}\n:host.nui-legend-series :host.nui-legend-series--state-deemphasized {\n  opacity: 0.3;\n}\n:host.description-min-width--unset .description {\n  min-width: unset;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImxlZ2VuZC1zZXJpZXMuY29tcG9uZW50Lmxlc3MiLCIuLi8uLi8uLi9ub2RlX21vZHVsZXMvQG5vdmEtdWkvYml0cy9zZGsvbGVzcy9taXhpbnMvY3NzLXZhcmlhYmxlcy5sZXNzIiwiLi4vLi4vLi4vbm9kZV9tb2R1bGVzL0Bub3ZhLXVpL2JpdHMvc2RrL2xlc3MvbWl4aW5zL2NoZWNrYm94Lmxlc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBUUk7RUFDSSxZQUFBO0VBQ0EsZ0JBQUE7RUFDQSxlQUFBO0VDTkosa0RBQUE7QURBSjtBQVNRO0VBQ0ksa0JBQUE7QUFQWjtBQVVRO0VBQ0ksYUFBQTtFQUNBLHVCQUFBO0FBUlo7QUFXUTtFQUNJLGFBQUE7QUFUWjtBQVlRO0VBQ0ksa0JBQUE7QUFWWjtBQWFRO0VBQ0ksYUFBQTtBQVhaO0FBY1E7RUFDSSxpQkFBQTtFQUNBLG1CQUFBO0VBQ0EsdUJBQUE7RUFDQSxnQkFBQTtFQUNBLGlCQUFBO0VBQ0Esa0JBQUE7RUFDQSxnQkFBQTtBQVpaO0FBY1k7RUFDSSxnQkFBQTtBQVpoQjtBQWVZO0VBQ0ksZ0JBQUE7RUM1Q1oseUNBQUE7QURnQ0o7QUFnQlk7RUFDSSxtQkFBQTtBQWRoQjtBQWlCWTtFQ3BEUiw0REFBQTtBRHNDSjtBQWtCWTtFQUNJLGdCQUFBO0FBaEJoQjtBQW9CUTtFQUNJLGVBQUE7QUFsQlo7QUFvQlk7RUFDSSxrQkFBQTtBQWxCaEI7QUFxQm9CO0VBQ0ksa0JBQUE7RUFDQSxrQkFBQTtFQUNBLGtCQUFBO0VBRUEsUUFBQTtFQUNBLFNBQUE7RUFDQSxnQ0FBQTtBQXBCeEI7QUF1Qm9CO0VFaEZoQixpQkFBQTtFQUNBLDhCQUFBO0VEQ0EsNkNBQUE7RUFBQSxrREFBQTtFQ0VBLHFCQUFBO0VBQ0Esa0JBQUE7RUFDQSxlQUFBO0VBQ0EsV0FBQTtFQUNBLFlBQUE7RUFDQSxvREFBQTtBRjRESjtBQWVvQjtFRXZFaEIsV0FBQTtFQUNBLFlBQUE7RUFDQSxxQkFBQTtFQUdBLG1yQkFBQTtFRm9Fb0IsYUFBQTtBQVZ4QjtBQWFvQjtFQ3ZGaEIsaURBQUE7RUFBQSw2Q0FBQTtBRDhFSjtBQVNvQjtFQU1ZLGNBQUE7QUFaaEM7QUFtQlk7O0VBR1EsbUJBQUE7QUFsQnBCO0FBZVk7O0VBT1Esa0JBQUE7QUFsQnBCO0FBc0JZO0VDL0dSLDhFQUFBO0FENEZKO0FBdUJZO0VDbkhSLHlEQUFBO0FEK0ZKO0FBb0JZO0VDbkhSLDhFQUFBO0FEa0dKO0FBMkJZO0VDN0hSLHVEQUFBO0FEcUdKO0FBaUNRO0VBRVEsWUFBQTtBQWhDaEI7QUFvQ1E7RUFDSSxZQUFBO0FBbENaO0FBc0NJO0VBRVEsZ0JBQUE7QUFyQ1oiLCJmaWxlIjoibGVnZW5kLXNlcmllcy5jb21wb25lbnQubGVzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgKHJlZmVyZW5jZSkgXCIuLi8uLi9zdHlsZXMubGVzc1wiO1xuQGltcG9ydCAocmVmZXJlbmNlKSBcIkBub3ZhLXVpL2JpdHMvc2RrL2xlc3MvbnVpLWZyYW1ld29yay12YXJpYWJsZXMubGVzc1wiO1xuQGltcG9ydCAocmVmZXJlbmNlKSBcIkBub3ZhLXVpL2JpdHMvc2RrL2xlc3MvbWl4aW5zLmxlc3NcIjtcblxuQG51aS1sZWdlbmQtc2VyaWVzLW1heC13aWR0aDogMjUwcHg7XG5AbnVpLWxlZ2VuZC1zZXJpZXMtZGVzY3JpcHRpb24tbWluLXdpZHRoOiAxMzBweDsgLy8gMTgwcHggZnJvbSBtb2NrdXBzIC0gNTBweCBmb3IgdGlsZVxuXG46aG9zdCB7XG4gICAgJi5udWktbGVnZW5kLXNlcmllcyB7XG4gICAgICAgIHBhZGRpbmc6IEBudWktc3BhY2UteHhzO1xuICAgICAgICBtYXgtd2lkdGg6IEBudWktbGVnZW5kLXNlcmllcy1tYXgtd2lkdGg7XG4gICAgICAgIGN1cnNvcjogZGVmYXVsdDsgLy8gdG8gcHJldmVudCB0ZXh0IHNlbGVjdGlvbiBjdXJzb3JcbiAgICAgICAgLnNldENzc1ZhcmlhYmxlKGJhY2tncm91bmQtY29sb3IsIG51aS1jb2xvci1iZy1jb250ZW50KTtcblxuICAgICAgICAmOm5vdCgubnVpLWxlZ2VuZC1zZXJpZXMtLWhvcml6b250YWwpOm5vdCg6bGFzdC1jaGlsZCkge1xuICAgICAgICAgICAgbWFyZ2luLWJvdHRvbTogMXB4O1xuICAgICAgICB9XG5cbiAgICAgICAgJiAmX190aWxlLXdyYXBwZXIge1xuICAgICAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICAgICAgICB9XG5cbiAgICAgICAgJiAmX190aWxlIHtcbiAgICAgICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgIH1cblxuICAgICAgICAmLS1ob3Jpem9udGFsOm5vdCg6bGFzdC1jaGlsZCkge1xuICAgICAgICAgICAgbWFyZ2luLXJpZ2h0OiBAbnVpLXNwYWNlLXNtO1xuICAgICAgICB9XG5cbiAgICAgICAgJiA6ZW1wdHkge1xuICAgICAgICAgICAgZGlzcGxheTogbm9uZTtcbiAgICAgICAgfVxuXG4gICAgICAgICYgLmRlc2NyaXB0aW9uIHtcbiAgICAgICAgICAgIGxpbmUtaGVpZ2h0OiBAbnVpLWxpbmUtaGVpZ2h0LWRlZmF1bHQ7XG4gICAgICAgICAgICB3aGl0ZS1zcGFjZTogbm93cmFwO1xuICAgICAgICAgICAgdGV4dC1vdmVyZmxvdzogZWxsaXBzaXM7XG4gICAgICAgICAgICBvdmVyZmxvdzogaGlkZGVuO1xuICAgICAgICAgICAgcGFkZGluZy1sZWZ0OiBAbnVpLXNwYWNlLXhzO1xuICAgICAgICAgICAgcGFkZGluZy1yaWdodDogQG51aS1zcGFjZS14cztcbiAgICAgICAgICAgIG1pbi13aWR0aDogQG51aS1sZWdlbmQtc2VyaWVzLWRlc2NyaXB0aW9uLW1pbi13aWR0aDtcblxuICAgICAgICAgICAgJi1jb250YWluZXIge1xuICAgICAgICAgICAgICAgIG92ZXJmbG93OiBoaWRkZW47XG4gICAgICAgICAgICB9XG5cbiAgICAgICAgICAgICYtcHJpbWFyeSB7XG4gICAgICAgICAgICAgICAgZm9udC13ZWlnaHQ6IEBudWktZm9udC13ZWlnaHQtc2VtaWJvbGQ7XG4gICAgICAgICAgICAgICAgLnNldENzc1ZhcmlhYmxlKGNvbG9yLCBudWktY29sb3ItdGV4dC1kZWZhdWx0KTtcbiAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgJi1wcmltYXJ5Om5vdCg6bGFzdC1jaGlsZCkge1xuICAgICAgICAgICAgICAgIG1hcmdpbi1ib3R0b206IC1AbnVpLWxlZ2VuZC1zZXJpZXMtY29udGVudC1tYXJnaW47XG4gICAgICAgICAgICB9XG5cbiAgICAgICAgICAgICYtc2Vjb25kYXJ5IHtcbiAgICAgICAgICAgICAgICAuc2V0Q3NzVmFyaWFibGUoY29sb3IsIG51aS1jb2xvci10ZXh0LXNlY29uZGFyeSk7XG4gICAgICAgICAgICB9XG5cbiAgICAgICAgICAgICYtc2Vjb25kYXJ5Om5vdCg6Zmlyc3QtY2hpbGQpIHtcbiAgICAgICAgICAgICAgICBtYXJnaW4tdG9wOiAtMXB4O1xuICAgICAgICAgICAgfVxuICAgICAgICB9XG5cbiAgICAgICAgJi0taW50ZXJhY3RpdmUge1xuICAgICAgICAgICAgY3Vyc29yOiBwb2ludGVyO1xuXG4gICAgICAgICAgICAmIC5udWktbGVnZW5kLXNlcmllc19fdGlsZS13cmFwcGVyIHtcbiAgICAgICAgICAgICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG5cbiAgICAgICAgICAgICAgICAubnVpLWxlZ2VuZC1zZXJpZXNfX2NoZWNrYm94IHtcbiAgICAgICAgICAgICAgICAgICAgJi13cmFwcGVyIHtcbiAgICAgICAgICAgICAgICAgICAgICAgIGFsaWduLXNlbGY6IGNlbnRlcjtcbiAgICAgICAgICAgICAgICAgICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICAgICAgICAgICAgICAgICAgICAgIHZpc2liaWxpdHk6IGhpZGRlbjtcblxuICAgICAgICAgICAgICAgICAgICAgICAgdG9wOiA1MCU7XG4gICAgICAgICAgICAgICAgICAgICAgICBsZWZ0OiA1MCU7XG4gICAgICAgICAgICAgICAgICAgICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcbiAgICAgICAgICAgICAgICAgICAgfVxuXG4gICAgICAgICAgICAgICAgICAgICYtbWFyayB7XG4gICAgICAgICAgICAgICAgICAgICAgICAubnVpLWNoZWNrYm94X19tYXJrKCk7XG4gICAgICAgICAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgICAgICAgICAmLWdseXBoIHtcbiAgICAgICAgICAgICAgICAgICAgICAgIC5udWktY2hlY2tib3hfX2dseXBoKCk7XG4gICAgICAgICAgICAgICAgICAgICAgICBkaXNwbGF5OiBub25lO1xuICAgICAgICAgICAgICAgICAgICB9XG5cbiAgICAgICAgICAgICAgICAgICAgJi0tY2hlY2tlZCB7XG4gICAgICAgICAgICAgICAgICAgICAgICAubnVpLWxlZ2VuZC1zZXJpZXNfX2NoZWNrYm94LW1hcmsge1xuICAgICAgICAgICAgICAgICAgICAgICAgICAgIC5zZXRDc3NWYXJpYWJsZShiYWNrZ3JvdW5kLWNvbG9yLCBudWktY29sb3ItYWN0aXZlKTtcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAuc2V0Q3NzVmFyaWFibGUoYm9yZGVyLWNvbG9yLCBudWktY29sb3ItYWN0aXZlKTtcblxuICAgICAgICAgICAgICAgICAgICAgICAgICAgID4gLm51aS1sZWdlbmQtc2VyaWVzX19jaGVja2JveC1nbHlwaCB7XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGRpc3BsYXk6IGJsb2NrO1xuICAgICAgICAgICAgICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgJiAubnVpLWxlZ2VuZC1zZXJpZXMtLWRlc2VsZWN0ZWQsXG4gICAgICAgICAgICAmIC5udWktbGVnZW5kLXNlcmllc19fdGlsZS13cmFwcGVyOmhvdmVyIHtcbiAgICAgICAgICAgICAgICAubnVpLWxlZ2VuZC1zZXJpZXNfX2NoZWNrYm94LXdyYXBwZXIge1xuICAgICAgICAgICAgICAgICAgICB2aXNpYmlsaXR5OiB2aXNpYmxlO1xuICAgICAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgICAgIC5udWktbGVnZW5kLXNlcmllc19fdGlsZSB7XG4gICAgICAgICAgICAgICAgICAgIHZpc2liaWxpdHk6IGhpZGRlbjtcbiAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICB9XG5cbiAgICAgICAgICAgICYgLm51aS1sZWdlbmQtc2VyaWVzX190aWxlLXdyYXBwZXI6aG92ZXIge1xuICAgICAgICAgICAgICAgIC5zZXRDc3NWYXJpYWJsZShiYWNrZ3JvdW5kLWNvbG9yLCBudWktY29sb3ItYmctdHJhbnNwYXJlbnQtaG92ZXIpO1xuICAgICAgICAgICAgfVxuXG4gICAgICAgICAgICAmOmhvdmVyIHtcbiAgICAgICAgICAgICAgICAuc2V0Q3NzVmFyaWFibGUoYmFja2dyb3VuZC1jb2xvciwgbnVpLWNvbG9yLWJnLWxpZ2h0LWhvdmVyKTtcblxuICAgICAgICAgICAgICAgIC5udWktbGVnZW5kLXNlcmllcy0tZGVzZWxlY3RlZCB7XG4gICAgICAgICAgICAgICAgICAgIC5udWktbGVnZW5kLXNlcmllc19fdGlsZS13cmFwcGVyIHtcbiAgICAgICAgICAgICAgICAgICAgICAgIC5zZXRDc3NWYXJpYWJsZShiYWNrZ3JvdW5kLWNvbG9yLCBudWktY29sb3ItYmctdHJhbnNwYXJlbnQtaG92ZXIpO1xuICAgICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgfVxuXG4gICAgICAgICAgICAmOm5vdCg6aG92ZXIpIHtcbiAgICAgICAgICAgICAgICAubnVpLWxlZ2VuZC1zZXJpZXMtLWRlc2VsZWN0ZWQge1xuICAgICAgICAgICAgICAgICAgICAubnVpLWxlZ2VuZC1zZXJpZXNfX3RpbGUtd3JhcHBlciB7XG4gICAgICAgICAgICAgICAgICAgICAgICAuc2V0Q3NzVmFyaWFibGUoYmFja2dyb3VuZC1jb2xvciwgbnVpLWNvbG9yLWJnLXNlY29uZGFyeSk7XG4gICAgICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICB9XG4gICAgICAgIH1cblxuICAgICAgICAmOm5vdCg6aG92ZXIpICYtLXN0YXRlLWhpZGRlbiB7XG4gICAgICAgICAgICAuZGVzY3JpcHRpb24tY29udGFpbmVyIHtcbiAgICAgICAgICAgICAgICBvcGFjaXR5OiBAbnVpLWxlZ2VuZC1kZWVtcGhhc2l6ZWQtb3BhY2l0eTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgfVxuXG4gICAgICAgICYgJi0tc3RhdGUtZGVlbXBoYXNpemVkIHtcbiAgICAgICAgICAgIG9wYWNpdHk6IEBudWktbGVnZW5kLWRlZW1waGFzaXplZC1vcGFjaXR5O1xuICAgICAgICB9XG4gICAgfVxuXG4gICAgJi5kZXNjcmlwdGlvbi1taW4td2lkdGgtLXVuc2V0IHtcbiAgICAgICAgLmRlc2NyaXB0aW9uIHtcbiAgICAgICAgICAgIG1pbi13aWR0aDogdW5zZXQ7XG4gICAgICAgIH1cbiAgICB9XG59XG4iLCIuc2V0Q3NzVmFyaWFibGUoQHByb3BlcnR5LCBAdmFsdWUpe1xuICAgIEBldmFsdWF0ZWQgOiBcIkB7dmFsdWV9XCI7XG4gICAgLy90aGUgZG91YmxlIEAgZm9yY2VzIGEgaW5kaXJlY3Rpb24gZXZhbHVhdGlvbiwga2luZGEgbGlrZSBhIHBvaW50ZXJcbiAgICBAZmFsbGJhY2sgOiBAQGV2YWx1YXRlZDtcblxuICAgIEB7cHJvcGVydHl9OiB+XCJ2YXIoLS1Ae3ZhbHVlfSxAe2ZhbGxiYWNrfSlcIjtcbn1cbiIsIkBpbXBvcnQgKHJlZmVyZW5jZSkgdXJsKCcuLi9udWktZnJhbWV3b3JrLXZhcmlhYmxlcy5sZXNzJyk7XG5cbi5udWktY2hlY2tib3hfX21hcmsoKSB7XG4gICAgYm9yZGVyOiBzb2xpZCBAbnVpLWxpbmUtbWVkaXVtO1xuICAgIGJhY2tncm91bmQ6IG5vLXJlcGVhdCAwIGNlbnRlcjtcbiAgICAuc2V0Q3NzVmFyaWFibGUoYm9yZGVyLWNvbG9yLCBudWktY29sb3ItYWN0aXZlKTtcbiAgICAuc2V0Q3NzVmFyaWFibGUoYmFja2dyb3VuZC1jb2xvciwgbnVpLWNvbG9yLWJnLWNvbnRlbnQpO1xuICAgIGJhY2tncm91bmQtc2l6ZTogQGljb24tc2l6ZS1kZWZhdWx0O1xuICAgIGJvcmRlci1yYWRpdXM6IEBudWktcmFkaXVzLWRlZmF1bHQ7XG4gICAgbWluLXdpZHRoOiBAaWNvbi1zaXplLWRlZmF1bHQ7XG4gICAgd2lkdGg6IEBpY29uLXNpemUtZGVmYXVsdDtcbiAgICBoZWlnaHQ6IEBpY29uLXNpemUtZGVmYXVsdDtcbiAgICB0cmFuc2l0aW9uOiBiYWNrZ3JvdW5kLWNvbG9yIDAuM3MsIGJvcmRlci1jb2xvciAwLjNzO1xufVxuXG4ubnVpLWNoZWNrYm94X19nbHlwaCgpIHtcbiAgICB3aWR0aDogMTAwJTtcbiAgICBoZWlnaHQ6IDEwMCU7XG4gICAgYmFja2dyb3VuZC1zaXplOiAoQGljb24tc2l6ZS1kZWZhdWx0IC0gKEBudWktbGluZS1tZWRpdW0gKiAyKSk7XG5cbiAgICAvLyBUb0RvOiBXZSBzaG91bGQgcmlkIG9mIGJhc2U2NCBjb2RlIGhlcmVcbiAgICBiYWNrZ3JvdW5kLWltYWdlOiB1cmwoXCJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBEOTRiV3dnZG1WeWMybHZiajBpTVM0d0lpQmxibU52WkdsdVp6MGlkWFJtTFRnaVB6NEtQSE4yWnlCMlpYSnphVzl1UFNJeExqRWlJR2xrUFNKTVlYbGxjbDh4SWlCNGJXeHVjejBpYUhSMGNEb3ZMM2QzZHk1M015NXZjbWN2TWpBd01DOXpkbWNpSUhodGJHNXpPbmhzYVc1clBTSm9kSFJ3T2k4dmQzZDNMbmN6TG05eVp5OHhPVGs1TDNoc2FXNXJJaUI0UFNJd2NIZ2lJSGs5SWpCd2VDSUtDU0IyYVdWM1FtOTRQU0l3SURBZ01qQWdNakFpSUhkcFpIUm9QU0l5TUNJZ2FHVnBaMmgwUFNJeU1DSWdjM1I1YkdVOUltVnVZV0pzWlMxaVlXTnJaM0p2ZFc1a09tNWxkeUF3SURBZ01qQWdNakE3SWlCNGJXdzZjM0JoWTJVOUluQnlaWE5sY25abElqNEtQSE4wZVd4bElIUjVjR1U5SW5SbGVIUXZZM056SWo0S0NTNTRkV2t0WTJobFkydGliM2d0WjJ4NWNHaDdabWxzYkRwdWIyNWxPM04wY205clpUb2pSa1pHUmtaR08zTjBjbTlyWlMxM2FXUjBhRG96TzNOMGNtOXJaUzF0YVhSbGNteHBiV2wwT2pFd08zTjBjbTlyWlMxc2FXNWxZMkZ3T25KdmRXNWtPMzBLUEM5emRIbHNaVDRLUEhCdmJIbHNhVzVsSUdOc1lYTnpQU0o0ZFdrdFkyaGxZMnRpYjNndFoyeDVjR2dpSUhCdmFXNTBjejBpTVRjc05DQTRMREUxSURNc09TQWlMejRLUEM5emRtYytcIik7XG59XG4iXX0= */");
 
 /***/ }),
 
@@ -29569,23 +29672,6 @@ function barAccessors(config, colorProvider, markerProvider) {
 
 /***/ }),
 
-/***/ "uXcH":
-/*!***********************************************************************!*\
-  !*** ./node_modules/d3-interpolate/node_modules/d3-color/src/math.js ***!
-  \***********************************************************************/
-/*! exports provided: deg2rad, rad2deg */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deg2rad", function() { return deg2rad; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "rad2deg", function() { return rad2deg; });
-var deg2rad = Math.PI / 180;
-var rad2deg = 180 / Math.PI;
-
-
-/***/ }),
-
 /***/ "uYNB":
 /*!********************************************************************!*\
   !*** ./src/chart-donut-content/chart-donut-content.component.less ***!
@@ -29698,85 +29784,6 @@ function invert(scale, coordinate) {
     }
     return [value, val];
 }
-
-
-/***/ }),
-
-/***/ "unCO":
-/*!****************************************************************************!*\
-  !*** ./node_modules/d3-interpolate/node_modules/d3-color/src/cubehelix.js ***!
-  \****************************************************************************/
-/*! exports provided: default, Cubehelix */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return cubehelix; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Cubehelix", function() { return Cubehelix; });
-/* harmony import */ var _define_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./define.js */ "xGXq");
-/* harmony import */ var _color_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./color.js */ "ozvG");
-/* harmony import */ var _math_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./math.js */ "uXcH");
-
-
-
-
-var A = -0.14861,
-    B = +1.78277,
-    C = -0.29227,
-    D = -0.90649,
-    E = +1.97294,
-    ED = E * D,
-    EB = E * B,
-    BC_DA = B * C - D * A;
-
-function cubehelixConvert(o) {
-  if (o instanceof Cubehelix) return new Cubehelix(o.h, o.s, o.l, o.opacity);
-  if (!(o instanceof _color_js__WEBPACK_IMPORTED_MODULE_1__["Rgb"])) o = Object(_color_js__WEBPACK_IMPORTED_MODULE_1__["rgbConvert"])(o);
-  var r = o.r / 255,
-      g = o.g / 255,
-      b = o.b / 255,
-      l = (BC_DA * b + ED * r - EB * g) / (BC_DA + ED - EB),
-      bl = b - l,
-      k = (E * (g - l) - C * bl) / D,
-      s = Math.sqrt(k * k + bl * bl) / (E * l * (1 - l)), // NaN if l=0 or l=1
-      h = s ? Math.atan2(k, bl) * _math_js__WEBPACK_IMPORTED_MODULE_2__["rad2deg"] - 120 : NaN;
-  return new Cubehelix(h < 0 ? h + 360 : h, s, l, o.opacity);
-}
-
-function cubehelix(h, s, l, opacity) {
-  return arguments.length === 1 ? cubehelixConvert(h) : new Cubehelix(h, s, l, opacity == null ? 1 : opacity);
-}
-
-function Cubehelix(h, s, l, opacity) {
-  this.h = +h;
-  this.s = +s;
-  this.l = +l;
-  this.opacity = +opacity;
-}
-
-Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["default"])(Cubehelix, cubehelix, Object(_define_js__WEBPACK_IMPORTED_MODULE_0__["extend"])(_color_js__WEBPACK_IMPORTED_MODULE_1__["Color"], {
-  brighter: function(k) {
-    k = k == null ? _color_js__WEBPACK_IMPORTED_MODULE_1__["brighter"] : Math.pow(_color_js__WEBPACK_IMPORTED_MODULE_1__["brighter"], k);
-    return new Cubehelix(this.h, this.s, this.l * k, this.opacity);
-  },
-  darker: function(k) {
-    k = k == null ? _color_js__WEBPACK_IMPORTED_MODULE_1__["darker"] : Math.pow(_color_js__WEBPACK_IMPORTED_MODULE_1__["darker"], k);
-    return new Cubehelix(this.h, this.s, this.l * k, this.opacity);
-  },
-  rgb: function() {
-    var h = isNaN(this.h) ? 0 : (this.h + 120) * _math_js__WEBPACK_IMPORTED_MODULE_2__["deg2rad"],
-        l = +this.l,
-        a = isNaN(this.s) ? 0 : this.s * l * (1 - l),
-        cosh = Math.cos(h),
-        sinh = Math.sin(h);
-    return new _color_js__WEBPACK_IMPORTED_MODULE_1__["Rgb"](
-      255 * (l + a * (A * cosh + B * sinh)),
-      255 * (l + a * (C * cosh + D * sinh)),
-      255 * (l + a * (E * cosh)),
-      this.opacity
-    );
-  }
-}));
 
 
 /***/ }),
@@ -31182,30 +31189,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "xGXq":
-/*!*************************************************************************!*\
-  !*** ./node_modules/d3-interpolate/node_modules/d3-color/src/define.js ***!
-  \*************************************************************************/
-/*! exports provided: default, extend */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "extend", function() { return extend; });
-/* harmony default export */ __webpack_exports__["default"] = (function(constructor, factory, prototype) {
-  constructor.prototype = factory.prototype = prototype;
-  prototype.constructor = constructor;
-});
-
-function extend(parent, definition) {
-  var prototype = Object.create(parent.prototype);
-  for (var key in definition) prototype[key] = definition[key];
-  return prototype;
-}
-
-
-/***/ }),
-
 /***/ "xJQu":
 /*!*************************************************!*\
   !*** ./node_modules/d3-shape/src/symbol/wye.js ***!
@@ -31536,7 +31519,7 @@ module.exports = sortBy;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"nui-rich-legend-tile\"\n     [class.nui-rich-legend-tile--has-point-marker]=\"rightEdge.children.length > 0\"\n     [class.nui-rich-legend-tile--series-has-additional-content]=\"seriesHasAdditionalContent\">\n    <div class=\"nui-rich-legend-tile__tilebox d-flex justify-content-center align-items-end flex-column px-3\"\n         [ngStyle]=\"{'background-color': backgroundColor}\"\n         [style.color]=\"color\">\n        <div *ngIf=\"hasInputValue(); else projectedTopContent\"\n             class=\"nui-rich-legend-tile__tilebox-value nui-rich-legend-tile__ellipsified\">\n            {{ value }}\n        </div>\n        <div *ngIf=\"hasInputUnitLabel(); else projectedBottomContent\"\n             class=\"nui-rich-legend-tile__tilebox-unit nui-rich-legend-tile__ellipsified\">\n            {{ unitLabel }}\n        </div>\n        <ng-content></ng-content>\n    </div>\n    <div class=\"nui-rich-legend-tile__icon\" #icon>\n        <ng-content select=\"[leftEdge]\"></ng-content>\n    </div>\n    <div class=\"nui-rich-legend-tile__point-marker\" #rightEdge>\n        <ng-content select=\"[rightEdge]\"></ng-content>\n    </div>\n</div>\n<ng-template #projectedTopContent>\n    <ng-content select=\"[top]\"></ng-content>\n</ng-template>\n<ng-template #projectedBottomContent>\n    <ng-content select=\"[bottom]\"></ng-content>\n</ng-template>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"nui-rich-legend-tile\"\n     [class.nui-rich-legend-tile--has-point-marker]=\"rightEdge.children.length > 0\"\n     [class.nui-rich-legend-tile--series-has-additional-content]=\"seriesHasAdditionalContent\">\n    <div class=\"nui-rich-legend-tile__tilebox d-flex justify-content-center align-items-end flex-column\"\n         [ngStyle]=\"{'background-color': backgroundColor}\"\n         [style.color]=\"color\">\n        <div *ngIf=\"hasInputValue(); else projectedTopContent\"\n             class=\"nui-rich-legend-tile__tilebox-value nui-rich-legend-tile__ellipsified\">\n            {{ value }}\n        </div>\n        <div *ngIf=\"hasInputUnitLabel(); else projectedBottomContent\"\n             class=\"nui-rich-legend-tile__tilebox-unit nui-rich-legend-tile__ellipsified\">\n            {{ unitLabel }}\n        </div>\n        <ng-content></ng-content>\n    </div>\n    <div class=\"nui-rich-legend-tile__icon\" #icon>\n        <ng-content select=\"[leftEdge]\"></ng-content>\n    </div>\n    <div class=\"nui-rich-legend-tile__point-marker\" #rightEdge>\n        <ng-content select=\"[rightEdge]\"></ng-content>\n    </div>\n</div>\n<ng-template #projectedTopContent>\n    <ng-content select=\"[top]\"></ng-content>\n</ng-template>\n<ng-template #projectedBottomContent>\n    <ng-content select=\"[bottom]\"></ng-content>\n</ng-template>\n");
 
 /***/ }),
 

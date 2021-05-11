@@ -85,6 +85,10 @@
                 <td class="col-md-9"><code>nui-stacked-percentage-area-chart</code></td>
             </tr>
 
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>../xy-chart.component.less</code></td>
+            </tr>
 
 
 
@@ -162,7 +166,7 @@
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#onLegendClick">onLegendClick</a>
+                                <a href="#onPrimaryDescClick">onPrimaryDescClick</a>
                             </li>
                         </ul>
                     </td>
@@ -187,7 +191,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/chart-types/stacked-percentage-area-chart.component.ts:24</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/chart-types/stacked-percentage-area-chart.component.ts:25</a></div>
                             </td>
                         </tr>
 
@@ -462,20 +466,20 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="onLegendClick"></a>
+                    <a name="onPrimaryDescClick"></a>
                     <span class="name">
                         <b>
                             <span class="modifier">Public</span>
-                            onLegendClick
+                            onPrimaryDescClick
                         </b>
-                        <a href="#onLegendClick"><span class="icon ion-ios-link"></span></a>
+                        <a href="#onPrimaryDescClick"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>onLegendClick(legendSeries: IChartAssistSeries<IAccessors>, event: MouseEvent)</code>
+                    <code>onPrimaryDescClick(event: MouseEvent, legendSeries: IChartAssistSeries<IAccessors>)</code>
                 </td>
             </tr>
 
@@ -509,9 +513,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>legendSeries</td>
+                                    <td>event</td>
                                     <td>
-                                            <code>IChartAssistSeries&lt;IAccessors&gt;</code>
+                                            <code>MouseEvent</code>
                                     </td>
 
                                     <td>
@@ -521,9 +525,9 @@
 
                                 </tr>
                                 <tr>
-                                    <td>event</td>
+                                    <td>legendSeries</td>
                                     <td>
-                                            <code>MouseEvent</code>
+                                            <code>IChartAssistSeries&lt;IAccessors&gt;</code>
                                     </td>
 
                                     <td>
@@ -580,7 +584,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/chart-types/stacked-percentage-area-chart.component.ts:24</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/chart-types/stacked-percentage-area-chart.component.ts:25</a></div>
                             </td>
                         </tr>
 
@@ -759,6 +763,7 @@ import { XYChartComponent } from &quot;../xy-chart.component&quot;;
 @Component({
     selector: &quot;nui-stacked-percentage-area-chart&quot;,
     templateUrl: &quot;../xy-chart.component.html&quot;,
+    styleUrls: [&quot;../xy-chart.component.less&quot;],
 })
 export class StackedPercentageAreaChartComponent extends XYChartComponent {
     public static lateLoadKey &#x3D; &quot;StackedPercentageAreaChartComponent&quot;;
@@ -797,7 +802,7 @@ export class StackedPercentageAreaChartComponent extends XYChartComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="nui-chart-layout h-100 px-3 py-3">    <div class="axis-label-left nui-text-small"><strong>{{configuration.leftAxisLabel}}</strong></div>    <div class="chart">        <nui-chart class="w-100" [chart]="chartAssist.chart"></nui-chart>    </div>    <div class="d-flex" *ngIf="hasLegend()"         [ngClass]="[legendShouldBeAlignedRight() ? \'legend scrollable\' : \'legend-bottom\']">        <nui-legend class="m-auto"                    [active]="chartAssist.isLegendActive"                    [interactive]="true"                    [orientation]="legendShouldBeAlignedRight() ? \'vertical\' : \'horizontal\'">            <nui-legend-series *ngFor="let legendSeries of chartAssist.legendSeriesSet; trackBy: chartAssist.seriesTrackByFn"                               [descriptionPrimary]="legendSeries.legendDescriptionPrimary"                               [descriptionSecondary]="legendSeries.legendDescriptionSecondary"                               [isSelected]="!chartAssist.isSeriesHidden(legendSeries.id)"                               (isSelectedChange)="chartAssist.toggleSeries(legendSeries.id, $event)"                               (mouseenter)="chartAssist.emphasizeSeries(legendSeries.id)"                               (mouseleave)="chartAssist.resetVisibleSeries()"                               [seriesRenderState]="chartAssist.renderStatesIndex[legendSeries.id]?.state"                               (click)="onLegendClick(legendSeries, $event)">                <nui-rich-legend-tile [value]="chartAssist.getHighlightedValue(legendSeries, \'y\', undefined, valueAccessorKey)"                                      [backgroundColor]="chartAssist.palette.standardColors.get(legendSeries.id)"                                      [color]="chartAssist.palette.textColors.get(legendSeries.id)">                    <nui-chart-marker rightEdge                                      [marker]="chartAssist.markers.get(legendSeries.id)"                                      [color]="chartAssist.palette.standardColors.get(legendSeries.id)">                    </nui-chart-marker>                </nui-rich-legend-tile>            </nui-legend-series>        </nui-legend>    </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="nui-chart-layout h-100 px-3 py-3">    <div class="axis-label-left nui-text-small"><strong>{{configuration.leftAxisLabel}}</strong></div>    <div class="chart">        <nui-chart class="w-100" [chart]="chartAssist.chart"></nui-chart>    </div>    <div class="d-flex" *ngIf="hasLegend()"                [ngClass]="[legendShouldBeAlignedRight() ? \'legend scrollable\' : \'legend-bottom\']">        <nui-legend class="m-auto"                    [active]="chartAssist.isLegendActive"                    [interactive]="true"                    [orientation]="legendShouldBeAlignedRight() ? \'vertical\' : \'horizontal\'">            <nui-legend-series                        class="xy-chart__legend-series"                        [ngClass]="\'xy-chart__legend-series--state-\' + chartAssist.renderStatesIndex[legendSeries.id]?.state"                        *ngFor="let legendSeries of chartAssist.legendSeriesSet; trackBy: chartAssist.seriesTrackByFn"                        [isSelected]="!chartAssist.isSeriesHidden(legendSeries.id)"                        (isSelectedChange)="chartAssist.toggleSeries(legendSeries.id, $event)"                        (mouseenter)="chartAssist.emphasizeSeries(legendSeries.id)"                        (mouseleave)="chartAssist.resetVisibleSeries()"                        [seriesRenderState]="chartAssist.renderStatesIndex[legendSeries.id]?.state">                <nui-rich-legend-tile [value]="chartAssist.getHighlightedValue(legendSeries, \'y\', \'tick\', valueAccessorKey)"                            [backgroundColor]="chartAssist.palette.standardColors.get(legendSeries.id)"                            [color]="chartAssist.palette.textColors.get(legendSeries.id)">                    <nui-chart-marker rightEdge                                [marker]="chartAssist.markers.get(legendSeries.id)"                                [color]="chartAssist.palette.standardColors.get(legendSeries.id)">                    </nui-chart-marker>                </nui-rich-legend-tile>                <div description class="description-container d-flex flex-column nui-text-small justify-content-center">                        <div *ngIf="!legendSeries.link"                            class="description description-primary"                            [ngClass]="{\'nui-text-link-small link\': seriesInteractive}"                            (click)="onPrimaryDescClick($event, legendSeries)">                                {{legendSeries.legendDescriptionPrimary}}                        </div>                        <a class="description description-primary nui-text-link-small link"                            (click)="$event.stopPropagation()"                            *ngIf="legendSeries.link"                            [href]="legendSeries.link"                            rel="noopener noreferrer"                            [title]="legendSeries.legendDescriptionPrimary">                                {{legendSeries.legendDescriptionPrimary}}                        </a>                        <div class="description description-secondary"                            *ngIf="!legendSeries.secondaryLink"                            [title]="legendSeries.legendDescriptionSecondary">                                {{legendSeries.legendDescriptionSecondary}}                        </div>                        <a class="description description-secondary nui-text-link-small link"                            (click)="$event.stopPropagation()"                            *ngIf="legendSeries.secondaryLink"                            [href]="legendSeries.secondaryLink"                            rel="noopener noreferrer"                            [title]="legendSeries.legendDescriptionSecondary">                            {{legendSeries.legendDescriptionSecondary}}                        </a>                </div>            </nui-legend-series>        </nui-legend>    </div></div></div>'
     var COMPONENTS = [{'name': 'AggregatorMetricSelectorConfigurationComponent', 'selector': 'nui-aggregator-configurator'},{'name': 'BackgroundColorRulesConfigurationComponent', 'selector': 'nui-background-color-rules-configuration'},{'name': 'ColorPickerComponent', 'selector': 'nui-color-picker'},{'name': 'ConfiguratorHeadingComponent', 'selector': 'nui-configurator-heading'},{'name': 'DashboardComponent', 'selector': 'nui-dashboard'},{'name': 'DashwizButtonsComponent', 'selector': 'nui-dashwiz-buttons'},{'name': 'DashwizComponent', 'selector': 'nui-dashwiz'},{'name': 'DashwizStepComponent', 'selector': 'nui-dashwiz-step'},{'name': 'DataSourceConfigurationComponent', 'selector': 'nui-data-source-configuration'},{'name': 'DataSourceConfigurationV2Component', 'selector': 'nui-data-source-configuration'},{'name': 'DescriptionConfigurationComponent', 'selector': 'nui-table-column-description-configuration'},{'name': 'DescriptionConfigurationV2Component', 'selector': 'nui-description-configuration-v2'},{'name': 'DonutContentConfigurationComponent', 'selector': 'nui-donut-content-configuration'},{'name': 'DonutContentPercentageConfigurationComponent', 'selector': 'nui-donut-content-configurator'},{'name': 'DonutContentPercentageFormatterComponent', 'selector': ''},{'name': 'DonutContentRawFormatterComponent', 'selector': ''},{'name': 'DonutContentSumFormatterComponent', 'selector': ''},{'name': 'DropAreaComponent', 'selector': 'nui-drop-area'},{'name': 'EmbeddedContentComponent', 'selector': 'nui-embedded-content'},{'name': 'EmbeddedContentConfigurationComponent', 'selector': 'nui-embedded-content-configuration'},{'name': 'EntityFormattingConfigurationComponent', 'selector': 'nui-entity-formatting-configuration'},{'name': 'FieldMapperAggregatorConfiguratorComponent', 'selector': 'nui-field-mapper-aggregator-configurator'},{'name': 'FormStackComponent', 'selector': 'nui-form-stack'},{'name': 'GroupingConfigurationComponent', 'selector': 'nui-grouping-configuration'},{'name': 'IconFormatterComponent', 'selector': ''},{'name': 'InfoMessageConfigurationComponent', 'selector': 'nui-info-message-configuration'},{'name': 'KpiComponent', 'selector': 'nui-kpi'},{'name': 'KpiDescriptionConfigurationComponent', 'selector': 'nui-kpi-description-configuration'},{'name': 'KpiTilesConfigurationComponent', 'selector': 'nui-kpi-tiles-configuration-component'},{'name': 'LineChartComponent', 'selector': 'nui-line-chart'},{'name': 'LinkConfiguratorComponent', 'selector': 'nui-link-configurator'},{'name': 'LinkFormatterComponent', 'selector': ''},{'name': 'ListGroupItemComponent', 'selector': 'nui-list-group-item'},{'name': 'ListLeafItemComponent', 'selector': 'nui-list-leaf-item'},{'name': 'ListNavigationBarComponent', 'selector': 'nui-navigation-bar'},{'name': 'ListWidgetComponent', 'selector': 'nui-list-widget'},{'name': 'LoadingComponent', 'selector': 'nui-loading'},{'name': 'PercentageFormatterComponent', 'selector': ''},{'name': 'PizzagnaComponent', 'selector': 'nui-pizzagna'},{'name': 'PresentationConfigurationComponent', 'selector': 'nui-table-column-presentation-configuration'},{'name': 'PresentationConfigurationV2Component', 'selector': 'nui-presentation-configuration-v2'},{'name': 'PreviewOverlayComponent', 'selector': 'nui-preview-overlay'},{'name': 'PreviewPlaceholderComponent', 'selector': 'nui-preview-placeholder'},{'name': 'ProportionalChartOptionsEditorComponent', 'selector': 'nui-proportional-chart-options-editor-component'},{'name': 'ProportionalChartOptionsEditorV2Component', 'selector': 'nui-proportional-chart-options-editor-v2-component'},{'name': 'ProportionalDonutContentComponent', 'selector': 'nui-proportional-donut-content'},{'name': 'RawFormatterComponent', 'selector': ''},{'name': 'RefresherConfigurationComponent', 'selector': 'nui-refresher-configuration'},{'name': 'RefreshRateConfiguratorComponent', 'selector': 'nui-refresh-rate-configurator'},{'name': 'SiUnitsFormatterComponent', 'selector': ''},{'name': 'StackComponent', 'selector': 'nui-stack'},{'name': 'StackedAreaChartComponent', 'selector': 'nui-stacked-area-chart'},{'name': 'StackedBarChartComponent', 'selector': 'nui-stacked-bar-chart'},{'name': 'StackedPercentageAreaChartComponent', 'selector': 'nui-stacked-percentage-area-chart'},{'name': 'StatusBarChartComponent', 'selector': 'nui-status-bar-chart'},{'name': 'StatusWithIconFormatterComponent', 'selector': ''},{'name': 'TableColumnConfigurationComponent', 'selector': 'nui-table-column-configuration'},{'name': 'TableColumnsConfigurationComponent', 'selector': 'nui-table-columns-configuration'},{'name': 'TableColumnsConfigurationV2Component', 'selector': 'nui-table-columns-configuration'},{'name': 'TableFiltersEditorComponent', 'selector': 'nui-table-filters-editor-component'},{'name': 'ThresholdsConfigurationComponent', 'selector': 'nui-thresholds-configuration'},{'name': 'TilesComponent', 'selector': 'nui-tiles'},{'name': 'TimeframeSelectionComponent', 'selector': 'nui-timeframe-selection'},{'name': 'TimeseriesMetadataConfigurationComponent', 'selector': 'nui-timeseries-metadata-configuration'},{'name': 'TimeseriesSeriesCollectionConfigurationComponent', 'selector': 'nui-timeseries-series-collection-configuration'},{'name': 'TimeseriesTileDescriptionConfigurationComponent', 'selector': 'nui-table-column-description-configuration'},{'name': 'TimeseriesTileIndicatorDataConfigurationComponent', 'selector': 'nui-timeseries-tile-indicator-data-configuration'},{'name': 'TitleAndDescriptionConfigurationComponent', 'selector': 'nui-title-and-description-configuration'},{'name': 'WidgetBodyComponent', 'selector': 'nui-widget-body'},{'name': 'WidgetBodyContentComponent', 'selector': 'nui-widget-body-content'},{'name': 'WidgetClonerComponent', 'selector': 'nui-widget-cloner'},{'name': 'WidgetComponent', 'selector': 'nui-widget'},{'name': 'WidgetConfiguratorSectionComponent', 'selector': 'nui-widget-configurator-section'},{'name': 'WidgetEditorComponent', 'selector': 'nui-widget-editor'},{'name': 'WidgetErrorComponent', 'selector': 'nui-widget-error'},{'name': 'WidgetHeaderComponent', 'selector': 'nui-widget-header'},{'name': 'WidgetSearchComponent', 'selector': 'nui-widget-search'}];
     var DIRECTIVES = [{'name': 'ComponentPortalDirective', 'selector': '[nuiComponentPortal]'},{'name': 'DelayedMousePresenceDetectionDirective', 'selector': '[nuiDelayedMousePresenceDetection]'},{'name': 'GridsterItemWidgetIdDirective', 'selector': '[nuiGridsterItemWidgetId]'},{'name': 'WidgetEditorDirective', 'selector': '[nuiWidgetEditor]'}];
     var ACTUAL_COMPONENT = {'name': 'StackedPercentageAreaChartComponent'};

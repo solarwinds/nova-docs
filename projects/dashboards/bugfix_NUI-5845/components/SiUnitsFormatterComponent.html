@@ -466,7 +466,7 @@ export class SiUnitsFormatterComponent implements OnChanges {
     constructor(public changeDetector: ChangeDetectorRef) {
     }
 
-    ngOnChanges(changes: SimpleChanges) {
+    ngOnChanges(changes: SimpleChanges): void {
         if (changes.data) {
             const { value } &#x3D; changes.data.currentValue;
 
@@ -476,14 +476,14 @@ export class SiUnitsFormatterComponent implements OnChanges {
         }
     }
 
-    protected processSiUnitsValue(value: string) {
+    protected processSiUnitsValue(value: string): void {
         const prefix &#x3D; this.getTransformPrefix(toNumber(value));
 
         this.value &#x3D; this.getTransformedValue(value, prefix);
         this.modifier &#x3D; prefix?.prefix;
     }
 
-    protected getTransformedValue(value: string, prefix: ISiUnitsPrefix | undefined) {
+    protected getTransformedValue(value: string, prefix: ISiUnitsPrefix | undefined): string {
         if (!prefix) { return value; }
 
         const transformed &#x3D; prefix.power !&#x3D;&#x3D; 1

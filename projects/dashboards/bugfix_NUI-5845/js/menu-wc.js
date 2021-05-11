@@ -350,13 +350,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/NuiDashboardsCommonModule.html" data-type="entity-link">NuiDashboardsCommonModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-NuiDashboardsCommonModule-b3e343f8f827991e3f2e09830f1211d9"' : 'data-target="#xs-components-links-module-NuiDashboardsCommonModule-b3e343f8f827991e3f2e09830f1211d9"' }>
+                                            'data-target="#components-links-module-NuiDashboardsCommonModule-28a6c85f4ad2aac1de024d49e6f0c9a4"' : 'data-target="#xs-components-links-module-NuiDashboardsCommonModule-28a6c85f4ad2aac1de024d49e6f0c9a4"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-NuiDashboardsCommonModule-b3e343f8f827991e3f2e09830f1211d9"' :
-                                            'id="xs-components-links-module-NuiDashboardsCommonModule-b3e343f8f827991e3f2e09830f1211d9"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-NuiDashboardsCommonModule-28a6c85f4ad2aac1de024d49e6f0c9a4"' :
+                                            'id="xs-components-links-module-NuiDashboardsCommonModule-28a6c85f4ad2aac1de024d49e6f0c9a4"' }>
                                             <li class="link">
                                                 <a href="components/PreviewOverlayComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">PreviewOverlayComponent</a>
@@ -364,6 +364,21 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                             <li class="link">
                                                 <a href="components/WidgetErrorComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">WidgetErrorComponent</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="chapter inner">
+                                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
+                                            'data-target="#pipes-links-module-NuiDashboardsCommonModule-28a6c85f4ad2aac1de024d49e6f0c9a4"' : 'data-target="#xs-pipes-links-module-NuiDashboardsCommonModule-28a6c85f4ad2aac1de024d49e6f0c9a4"' }>
+                                            <span class="icon ion-md-add"></span>
+                                            <span>Pipes</span>
+                                            <span class="icon ion-ios-arrow-down"></span>
+                                        </div>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="pipes-links-module-NuiDashboardsCommonModule-28a6c85f4ad2aac1de024d49e6f0c9a4"' :
+                                            'id="xs-pipes-links-module-NuiDashboardsCommonModule-28a6c85f4ad2aac1de024d49e6f0c9a4"' }>
+                                            <li class="link">
+                                                <a href="pipes/DashboardUnitConversionPipe.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">DashboardUnitConversionPipe</a>
                                             </li>
                                         </ul>
                                     </li>
@@ -1199,6 +1214,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="interfaces/ITimeseriesWidgetStatusData.html" data-type="entity-link">ITimeseriesWidgetStatusData</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/ITimeSpanOption.html" data-type="entity-link">ITimeSpanOption</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/IUrlInteractionHandlerProperties.html" data-type="entity-link">IUrlInteractionHandlerProperties</a>

@@ -78,7 +78,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = ":host {\n    ul {\n        padding-left: 40px;\n\n        li {\n            list-style: disc;\n        }\n    }\n    a {\n        cursor: pointer;\n    }\n}\n";
+      __webpack_exports__["default"] = "ul {\n    padding-left: 40px;\n\n    li {\n        list-style: disc;\n    }\n}\n";
       /***/
     },
 
