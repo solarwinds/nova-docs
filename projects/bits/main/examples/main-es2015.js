@@ -18302,7 +18302,7 @@ var UnitBase;
  * Unit display values used in unit conversion
  */
 const unitConversionConstants = {
-    generic: ["", "k", "M", "B", "T", "Qa", "Qi", "Sx", "Sp"],
+    generic: ["", "K", "M", "B", "T", "Qa", "Qi", "Sx", "Sp"],
     bytes: ["B", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"],
     bytesPerSecond: ["Bps", "kBps", "MBps", "GBps", "TBps", "PBps", "EBps", "ZBps", "YBps"],
     bitsPerSecond: ["bps", "kbps", "Mbps", "Gpbs", "Tbps", "Pbps", "Ebps", "Zbps", "Ybps"],
@@ -29438,6 +29438,7 @@ class UnitConversionService {
         return {
             value: strValue,
             order: resultOrder,
+            scale,
         };
     }
     /**
@@ -29469,8 +29470,9 @@ class UnitConversionService {
         if (!this.isValidNumber(conversion.value)) {
             return nanDisplay;
         }
-        const prefix = plusSign && parseInt(conversion.value, 10) > 0 ? "+" : "";
-        return `${prefix}${conversion.value}`;
+        const outputNumber = parseFloat(conversion.value);
+        const prefix = plusSign && outputNumber > 0 ? "+" : "";
+        return `${prefix}${outputNumber.toLocaleString(undefined, { maximumFractionDigits: conversion.scale })}`;
     }
     /**
      * Gets the converted unit display string

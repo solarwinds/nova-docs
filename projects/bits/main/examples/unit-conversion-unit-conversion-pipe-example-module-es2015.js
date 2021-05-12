@@ -199,7 +199,7 @@ UnitConversionPipeDocsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "code");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, "\"generic\"");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, " (e.g. 1k for 1000), ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, " (e.g. 1K for 1000), ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "code");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](14, "\"bytes\"");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();

@@ -33267,7 +33267,7 @@
 
 
       var unitConversionConstants = {
-        generic: ["", "k", "M", "B", "T", "Qa", "Qi", "Sx", "Sp"],
+        generic: ["", "K", "M", "B", "T", "Qa", "Qi", "Sx", "Sp"],
         bytes: ["B", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"],
         bytesPerSecond: ["Bps", "kBps", "MBps", "GBps", "TBps", "PBps", "EBps", "ZBps", "YBps"],
         bitsPerSecond: ["bps", "kbps", "Mbps", "Gpbs", "Tbps", "Pbps", "Ebps", "Zbps", "Ybps"],
@@ -55037,7 +55037,8 @@
 
             return {
               value: strValue,
-              order: resultOrder
+              order: resultOrder,
+              scale: scale
             };
           }
           /**
@@ -55081,8 +55082,11 @@
               return nanDisplay;
             }
 
-            var prefix = plusSign && parseInt(conversion.value, 10) > 0 ? "+" : "";
-            return "".concat(prefix).concat(conversion.value);
+            var outputNumber = parseFloat(conversion.value);
+            var prefix = plusSign && outputNumber > 0 ? "+" : "";
+            return "".concat(prefix).concat(outputNumber.toLocaleString(undefined, {
+              maximumFractionDigits: conversion.scale
+            }));
           }
           /**
            * Gets the converted unit display string

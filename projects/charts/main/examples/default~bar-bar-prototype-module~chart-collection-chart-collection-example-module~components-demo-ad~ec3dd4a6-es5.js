@@ -29357,7 +29357,7 @@
           _this71 = _super27.call(this, id);
 
           _this71.formatters.tick = function (value) {
-            return value + "";
+            return value === null || value === void 0 ? void 0 : value.toLocaleString();
           };
 
           return _this71;
