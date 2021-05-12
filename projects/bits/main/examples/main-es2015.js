@@ -8229,6 +8229,9 @@ class OverlayService {
     getOverlayRef() {
         return this.overlayRef;
     }
+    updateSize(size) {
+        this.overlayRef.updateSize(size);
+    }
     ngOnDestroy() {
         this.show$.complete();
         this.hide$.complete();
@@ -24406,6 +24409,9 @@ class OverlayComponent {
     getOverlayRef() {
         return this.overlayService.getOverlayRef();
     }
+    updateSize(size) {
+        this.overlayService.updateSize(size);
+    }
     /** Stream of clicks outside. */
     overlayClickOutside() {
         return this.eventBusService.getStream({ id: _constants_event_constants__WEBPACK_IMPORTED_MODULE_7__["DOCUMENT_CLICK_EVENT"] })
@@ -25469,6 +25475,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _option_key_control_service__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./option-key-control.service */ "Vaio");
 /* harmony import */ var _option_select_v2_option_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./option/select-v2-option.component */ "tpGn");
 /* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./types */ "lKV8");
+/* harmony import */ var _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/cdk/scrolling */ "vxfF");
+/* harmony import */ var resize_observer_polyfill__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! resize-observer-polyfill */ "bdgK");
+
+
 
 
 
@@ -25491,6 +25501,7 @@ const _c0 = ["input"];
 const DEFAULT_SELECT_OVERLAY_CONFIG = {
     panelClass: _overlay_constants__WEBPACK_IMPORTED_MODULE_10__["OVERLAY_WITH_POPUP_STYLES_CLASS"],
 };
+const V_SCROLL_HEIGHT_BUFFER = 10;
 // Will be renamed in scope of the NUI-5797
 // eslint-disable-next-line @angular-eslint/directive-class-suffix
 class BaseSelectV2 {
@@ -25575,6 +25586,7 @@ class BaseSelectV2 {
         }
         this.initKeyboardManager();
         this.defineDropdownContainer();
+        this.adjustDropdownOnVScrollResize();
     }
     /** Handles mousedown event */
     onMouseDown() {
@@ -25631,6 +25643,9 @@ class BaseSelectV2 {
         this.dropdown.toggle();
         this.setActiveItemOnDropdown();
         this.scrollToOption();
+        if (this.cdkVirtualScroll) {
+            this.cdkVirtualScroll.checkViewportSize();
+        }
     }
     /** Selects specific option and set its value to the model */
     selectOption(option) {
@@ -25686,6 +25701,9 @@ class BaseSelectV2 {
         }
         this.destroy$.next();
         this.destroy$.complete();
+        if (this.virtualScrollResizeObserver) {
+            this.virtualScrollResizeObserver.unobserve(this.cdkVirtualScroll.elementRef.nativeElement);
+        }
     }
     getValueFromOptions(options = this.selectedOptions) {
         var _a;
@@ -25792,13 +25810,36 @@ class BaseSelectV2 {
             resizeObserver.unobserve(this.elRef.nativeElement);
         });
     }
+    /**
+     * This helps to dynamically set minHeight for overlay to avoid issues with double
+     * scroll. Overlay minHeight should be bigger than cdkVirtualScroll container.
+     */
+    adjustDropdownOnVScrollResize() {
+        if (!this.cdkVirtualScroll) {
+            return;
+        }
+        const element = this.cdkVirtualScroll.elementRef.nativeElement;
+        const height = parseInt(element.style.height, 10);
+        const minHeight = Number.isNaN(height) ? 0 : height + V_SCROLL_HEIGHT_BUFFER;
+        this.dropdown.overlayConfig = Object.assign(Object.assign({}, this.overlayConfig), { minHeight });
+        this.virtualScrollResizeObserver = new resize_observer_polyfill__WEBPACK_IMPORTED_MODULE_17__["default"](entries => {
+            for (const entry of entries) {
+                const content = entry.contentRect;
+                const minHeight = content.height ? content.height + V_SCROLL_HEIGHT_BUFFER : 0;
+                this.dropdown.updateSize({ minHeight });
+            }
+        });
+        this.virtualScrollResizeObserver.observe(element);
+    }
 }
 BaseSelectV2.ɵfac = function BaseSelectV2_Factory(t) { return new (t || BaseSelectV2)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_option_key_control_service__WEBPACK_IMPORTED_MODULE_13__["OptionKeyControlService"]), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_2__["ChangeDetectorRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_2__["ElementRef"])); };
 BaseSelectV2.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineDirective"]({ type: BaseSelectV2, contentQueries: function BaseSelectV2_ContentQueries(rf, ctx, dirIndex) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵcontentQuery"](dirIndex, _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_16__["CdkVirtualScrollViewport"], 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵcontentQuery"](dirIndex, _option_select_v2_option_component__WEBPACK_IMPORTED_MODULE_14__["SelectV2OptionComponent"], 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵcontentQuery"](dirIndex, _overlay_constants__WEBPACK_IMPORTED_MODULE_10__["OVERLAY_ITEM"], 1);
     } if (rf & 2) {
         let _t;
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵloadQuery"]()) && (ctx.cdkVirtualScroll = _t.first);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵloadQuery"]()) && (ctx.options = _t);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵloadQuery"]()) && (ctx.allPopupItems = _t);
     } }, viewQuery: function BaseSelectV2_Query(rf, ctx) { if (rf & 1) {
