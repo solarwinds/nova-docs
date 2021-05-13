@@ -308,10 +308,6 @@ class SelectedItemsKeyControlService {
     onKeydown(event) {
         const caretPosition = event.target.selectionStart;
         const isKeyAllowed = this.isBackspace(event) || this.isLeftOrRightArrow(event);
-        if (event.code === "Enter" && this.activeItem) {
-            this.removeChipsByEnter();
-            return;
-        }
         if ((caretPosition !== 0) || (!this.activeItem && this.isRightArrow(event))) {
             return;
         }
@@ -410,11 +406,8 @@ class SelectedItemsKeyControlService {
         if (!lodash_isNil__WEBPACK_IMPORTED_MODULE_3___default()(this.selectedItemsKeyManager.activeItemIndex)) {
             this.calculateActiveSelectedItemIndex();
             this.combobox.deselectItem(this.selectedItemsKeyManager.activeItemIndex);
+            this.liveAnnouncer.announce(`${this.getActiveItemTitle} removed`);
         }
-    }
-    removeChipsByEnter() {
-        this.deselectItem();
-        this.liveAnnouncer.announce(`${this.getActiveItemTitle} removed`);
     }
     get getActiveItemTitle() {
         var _a;
@@ -12633,7 +12626,7 @@ QuickPickerComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdef
 /*!************************!*\
   !*** ./src/nui-api.ts ***!
   \************************/
-/*! exports provided: NuiButtonModule, NuiCheckboxModule, NuiCommonModule, NuiDividerModule, NuiIconModule, NuiMessageModule, NuiImageModule, NuiMenuModule, NuiPopupModule, NuiSwitchModule, NuiSelectModule, NuiSelectV2Module, NuiSpinnerModule, NuiTabsModule, NuiTextboxModule, NuiTooltipModule, NuiLayoutModule, NuiOverlayModule, NuiOverlayAdditionsModule, NuiBreadcrumbModule, NuiBusyModule, NuiChipsModule, NuiContentModule, NuiDatePickerModule, NuiDateTimePickerModule, NuiDialogModule, NuiExpanderModule, NuiFormFieldModule, NuiPaginatorModule, NuiPanelModule, NuiPopoverModule, NuiProgressModule, NuiRadioModule, NuiRepeatModule, NuiSearchModule, NuiSelectorModule, NuiSorterModule, NuiTableModule, NuiTimeFrameBarModule, NuiTimeFramePickerModule, NuiTimePickerModule, NuiToastModule, NuiToolbarModule, NuiValidationMessageModule, NuiWizardModule, NuiWizardV2Module, NuiDocsModule, ButtonSizeType, CheckboxChangeEvent, datePickerDefaults, datePickerDateFormats, NuiDndModule, DndDropTargetDirective, NuiDialogEvent, SrlcStage, NuiFormFieldControl, IconCategory, IconCategoryNamespace, IconStatus, IconSeverity, IconState, IconWidget, MenuActionType, PanelModes, PanelStates, SizeParameters, PanelBackgroundColor, PopoverOverlayPosition, RepeatSelectionMode, PaddingOptions, NUI_SELECT_V2_OPTION_PARENT_COMPONENT, SelectionType, CheckboxStatus, SorterDirection, SpinnerSize, ButtonIcon, DEFAULT_TABLE_HEADER_OFFSET, TABLE_ROW_HEIGHT, complexScrollStrategyFactory, TableVirtualScrollLinearDirective, TableVirtualScrollDirective, TableVirtualScrollHeaderPosition, TableStickyHeaderDirective, SliceRangePipe, ToolbarItemType, ToolbarItemDisplayStyle, TooltipDirective, ValidationMessageComponent, CustomValidationMessageComponent, wizardAnimations, WizardHorizontalComponent, WizardVerticalComponent, WizardStepV2Component, WizardDirective, WizardStepHeaderComponent, WizardStepLabelDirective, WizardStepFooterDirective, WizardFooterComponent, WizardStepperNextDirective, WizardStepperPreviousDirective, OVERLAY_CONTAINER_CLASS, OVERLAY_PANEL_CLASS, OVERLAY_DEFAULT_PRIORITY, OverlayPlacement, OverlayPosition, OverlayPositionService, getOverlayPositions, OVERLAY_ITEM, OVERLAY_CONTAINER, OVERLAY_WITH_POPUP_STYLES_CLASS, OVERLAY_ARROW_SIZE, OverlayUtilitiesService, OverlayCustomContainer, OverlayContainerService, POPUP_V2_VIEWPORT_MARGINS_DEFAULT, OverlayComponent, OverlayItemComponent, unitConversionToken, UnitBase, unitConversionConstants, imagesPresetToken, KEY_CODE, RESIZE_DEBOUNCE_TIME, DEMO_PATH_TOKEN, DEFAULT_INTERACTIVE_ELEMENTS, ResizeDirection, ResizeUnit, resizeDirectionHelpers, defaultFilters, NuiActiveDialog, SelectionModel, IEvent, EventDefinition, NuiValidators, LogLevel, NuiEnvironment, NUI_ENV_PROVIDER_FACTORY, NUI_ENV_PROVIDER, uuid, immutableSet, removeErrors, traverse, nameof */
+/*! exports provided: NuiButtonModule, NuiCheckboxModule, NuiCommonModule, NuiDividerModule, NuiIconModule, NuiMessageModule, NuiImageModule, NuiMenuModule, NuiPopupModule, NuiSwitchModule, NuiSelectModule, NuiSelectV2Module, NuiSpinnerModule, NuiTabsModule, NuiTextboxModule, NuiTooltipModule, NuiLayoutModule, NuiOverlayModule, NuiOverlayAdditionsModule, NuiBreadcrumbModule, NuiBusyModule, NuiChipsModule, NuiContentModule, NuiDatePickerModule, NuiDateTimePickerModule, NuiDialogModule, NuiExpanderModule, NuiFormFieldModule, NuiPaginatorModule, NuiPanelModule, NuiPopoverModule, NuiProgressModule, NuiRadioModule, NuiRepeatModule, NuiSearchModule, NuiSelectorModule, NuiSorterModule, NuiTableModule, NuiTimeFrameBarModule, NuiTimeFramePickerModule, NuiTimePickerModule, NuiToastModule, NuiToolbarModule, NuiValidationMessageModule, NuiWizardModule, NuiWizardV2Module, NuiDocsModule, ButtonSizeType, CheckboxChangeEvent, datePickerDefaults, datePickerDateFormats, NuiDndModule, DndDropTargetDirective, NuiDialogEvent, SrlcStage, NuiFormFieldControl, IconCategory, IconCategoryNamespace, IconStatus, IconSeverity, IconState, IconWidget, MenuActionType, PanelModes, PanelStates, SizeParameters, PanelBackgroundColor, PopoverOverlayPosition, RepeatSelectionMode, PaddingOptions, NUI_SELECT_V2_OPTION_PARENT_COMPONENT, ANNOUNCER_OPEN_MESSAGE, ANNOUNCER_CLOSE_MESSAGE, SelectionType, CheckboxStatus, SorterDirection, SpinnerSize, ButtonIcon, DEFAULT_TABLE_HEADER_OFFSET, TABLE_ROW_HEIGHT, complexScrollStrategyFactory, TableVirtualScrollLinearDirective, TableVirtualScrollDirective, TableVirtualScrollHeaderPosition, TableStickyHeaderDirective, SliceRangePipe, ToolbarItemType, ToolbarItemDisplayStyle, TooltipDirective, ValidationMessageComponent, CustomValidationMessageComponent, wizardAnimations, WizardHorizontalComponent, WizardVerticalComponent, WizardStepV2Component, WizardDirective, WizardStepHeaderComponent, WizardStepLabelDirective, WizardStepFooterDirective, WizardFooterComponent, WizardStepperNextDirective, WizardStepperPreviousDirective, OVERLAY_CONTAINER_CLASS, OVERLAY_PANEL_CLASS, OVERLAY_DEFAULT_PRIORITY, OverlayPlacement, OverlayPosition, OverlayPositionService, getOverlayPositions, OVERLAY_ITEM, OVERLAY_CONTAINER, OVERLAY_WITH_POPUP_STYLES_CLASS, OVERLAY_ARROW_SIZE, OverlayUtilitiesService, OverlayCustomContainer, OverlayContainerService, POPUP_V2_VIEWPORT_MARGINS_DEFAULT, OverlayComponent, OverlayItemComponent, unitConversionToken, UnitBase, unitConversionConstants, imagesPresetToken, KEY_CODE, RESIZE_DEBOUNCE_TIME, DEMO_PATH_TOKEN, DEFAULT_INTERACTIVE_ELEMENTS, ResizeDirection, ResizeUnit, resizeDirectionHelpers, defaultFilters, NuiActiveDialog, SelectionModel, IEvent, EventDefinition, NuiValidators, LogLevel, NuiEnvironment, NUI_ENV_PROVIDER_FACTORY, NUI_ENV_PROVIDER, uuid, immutableSet, removeErrors, traverse, nameof */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12827,6 +12820,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PaddingOptions", function() { return _lib_public_api__WEBPACK_IMPORTED_MODULE_47__["PaddingOptions"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "NUI_SELECT_V2_OPTION_PARENT_COMPONENT", function() { return _lib_public_api__WEBPACK_IMPORTED_MODULE_47__["NUI_SELECT_V2_OPTION_PARENT_COMPONENT"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ANNOUNCER_OPEN_MESSAGE", function() { return _lib_public_api__WEBPACK_IMPORTED_MODULE_47__["ANNOUNCER_OPEN_MESSAGE"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ANNOUNCER_CLOSE_MESSAGE", function() { return _lib_public_api__WEBPACK_IMPORTED_MODULE_47__["ANNOUNCER_CLOSE_MESSAGE"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SelectionType", function() { return _lib_public_api__WEBPACK_IMPORTED_MODULE_47__["SelectionType"]; });
 
@@ -17346,7 +17343,7 @@ var ToolbarItemDisplayStyle;
 /*!*******************************!*\
   !*** ./src/lib/public-api.ts ***!
   \*******************************/
-/*! exports provided: ButtonSizeType, CheckboxChangeEvent, datePickerDefaults, datePickerDateFormats, NuiDndModule, DndDropTargetDirective, NuiDialogEvent, SrlcStage, NuiFormFieldControl, IconCategory, IconCategoryNamespace, IconStatus, IconSeverity, IconState, IconWidget, MenuActionType, PanelModes, PanelStates, SizeParameters, PanelBackgroundColor, PopoverOverlayPosition, RepeatSelectionMode, PaddingOptions, NUI_SELECT_V2_OPTION_PARENT_COMPONENT, SelectionType, CheckboxStatus, SorterDirection, SpinnerSize, ButtonIcon, DEFAULT_TABLE_HEADER_OFFSET, TABLE_ROW_HEIGHT, complexScrollStrategyFactory, TableVirtualScrollLinearDirective, TableVirtualScrollDirective, TableVirtualScrollHeaderPosition, TableStickyHeaderDirective, SliceRangePipe, ToolbarItemType, ToolbarItemDisplayStyle, NuiTooltipModule, TooltipDirective, ValidationMessageComponent, CustomValidationMessageComponent, NuiWizardV2Module, wizardAnimations, WizardHorizontalComponent, WizardVerticalComponent, WizardStepV2Component, WizardDirective, WizardStepHeaderComponent, WizardStepLabelDirective, WizardStepFooterDirective, WizardFooterComponent, WizardStepperNextDirective, WizardStepperPreviousDirective, OVERLAY_CONTAINER_CLASS, OVERLAY_PANEL_CLASS, OVERLAY_DEFAULT_PRIORITY, OverlayPlacement, OverlayPosition, OverlayPositionService, getOverlayPositions, OVERLAY_ITEM, OVERLAY_CONTAINER, OVERLAY_WITH_POPUP_STYLES_CLASS, OVERLAY_ARROW_SIZE, OverlayUtilitiesService, OverlayCustomContainer, OverlayContainerService, POPUP_V2_VIEWPORT_MARGINS_DEFAULT, OverlayComponent, OverlayItemComponent */
+/*! exports provided: ButtonSizeType, CheckboxChangeEvent, datePickerDefaults, datePickerDateFormats, NuiDndModule, DndDropTargetDirective, NuiDialogEvent, SrlcStage, NuiFormFieldControl, IconCategory, IconCategoryNamespace, IconStatus, IconSeverity, IconState, IconWidget, MenuActionType, PanelModes, PanelStates, SizeParameters, PanelBackgroundColor, PopoverOverlayPosition, RepeatSelectionMode, PaddingOptions, NUI_SELECT_V2_OPTION_PARENT_COMPONENT, ANNOUNCER_OPEN_MESSAGE, ANNOUNCER_CLOSE_MESSAGE, SelectionType, CheckboxStatus, SorterDirection, SpinnerSize, ButtonIcon, DEFAULT_TABLE_HEADER_OFFSET, TABLE_ROW_HEIGHT, complexScrollStrategyFactory, TableVirtualScrollLinearDirective, TableVirtualScrollDirective, TableVirtualScrollHeaderPosition, TableStickyHeaderDirective, SliceRangePipe, ToolbarItemType, ToolbarItemDisplayStyle, NuiTooltipModule, TooltipDirective, ValidationMessageComponent, CustomValidationMessageComponent, NuiWizardV2Module, wizardAnimations, WizardHorizontalComponent, WizardVerticalComponent, WizardStepV2Component, WizardDirective, WizardStepHeaderComponent, WizardStepLabelDirective, WizardStepFooterDirective, WizardFooterComponent, WizardStepperNextDirective, WizardStepperPreviousDirective, OVERLAY_CONTAINER_CLASS, OVERLAY_PANEL_CLASS, OVERLAY_DEFAULT_PRIORITY, OverlayPlacement, OverlayPosition, OverlayPositionService, getOverlayPositions, OVERLAY_ITEM, OVERLAY_CONTAINER, OVERLAY_WITH_POPUP_STYLES_CLASS, OVERLAY_ARROW_SIZE, OverlayUtilitiesService, OverlayCustomContainer, OverlayContainerService, POPUP_V2_VIEWPORT_MARGINS_DEFAULT, OverlayComponent, OverlayItemComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17420,6 +17417,10 @@ __webpack_require__.r(__webpack_exports__);
 /* empty/unused harmony star reexport *//* harmony import */ var _select_v2_types__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./select-v2/types */ "lKV8");
 /* empty/unused harmony star reexport *//* harmony import */ var _select_v2_constants__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./select-v2/constants */ "gwHk");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "NUI_SELECT_V2_OPTION_PARENT_COMPONENT", function() { return _select_v2_constants__WEBPACK_IMPORTED_MODULE_21__["NUI_SELECT_V2_OPTION_PARENT_COMPONENT"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ANNOUNCER_OPEN_MESSAGE", function() { return _select_v2_constants__WEBPACK_IMPORTED_MODULE_21__["ANNOUNCER_OPEN_MESSAGE"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ANNOUNCER_CLOSE_MESSAGE", function() { return _select_v2_constants__WEBPACK_IMPORTED_MODULE_21__["ANNOUNCER_CLOSE_MESSAGE"]; });
 
 /* harmony import */ var _selector_public_api__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./selector/public-api */ "JFa6");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SelectionType", function() { return _selector_public_api__WEBPACK_IMPORTED_MODULE_22__["SelectionType"]; });
@@ -18748,6 +18749,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var lodash_isNil__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lodash/isNil */ "J2iB");
 /* harmony import */ var lodash_isNil__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(lodash_isNil__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./constants */ "gwHk");
+
 
 
 
@@ -18819,6 +18822,7 @@ class OptionKeyControlService {
         }
         if (event.keyCode === _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_1__["TAB"] || event.keyCode === _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_1__["ESCAPE"]) {
             this.popup.toggle();
+            this.announceDropdown(this.popup.showing);
         }
     }
     handleClosedKeyDown(event) {
@@ -18848,6 +18852,10 @@ class OptionKeyControlService {
         if (activeItem) {
             this.liveAnnouncer.announce(activeItem.value);
         }
+    }
+    announceDropdown(open) {
+        const message = open ? Object(_constants__WEBPACK_IMPORTED_MODULE_4__["ANNOUNCER_OPEN_MESSAGE"])(this.optionItems.length) : _constants__WEBPACK_IMPORTED_MODULE_4__["ANNOUNCER_CLOSE_MESSAGE"];
+        this.liveAnnouncer.announce(message);
     }
 }
 OptionKeyControlService.ɵfac = function OptionKeyControlService_Factory(t) { return new (t || OptionKeyControlService)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_0__["LiveAnnouncer"])); };
@@ -21206,7 +21214,7 @@ __webpack_require__.r(__webpack_exports__);
 /*!***************************!*\
   !*** ./src/public_api.ts ***!
   \***************************/
-/*! exports provided: NuiButtonModule, NuiCheckboxModule, NuiCommonModule, NuiDividerModule, NuiIconModule, NuiMessageModule, NuiImageModule, NuiMenuModule, NuiPopupModule, NuiSwitchModule, NuiSelectModule, NuiSelectV2Module, NuiSpinnerModule, NuiTabsModule, NuiTextboxModule, NuiTooltipModule, NuiLayoutModule, NuiOverlayModule, NuiOverlayAdditionsModule, NuiBreadcrumbModule, NuiBusyModule, NuiChipsModule, NuiContentModule, NuiDatePickerModule, NuiDateTimePickerModule, NuiDialogModule, NuiExpanderModule, NuiFormFieldModule, NuiPaginatorModule, NuiPanelModule, NuiPopoverModule, NuiProgressModule, NuiRadioModule, NuiRepeatModule, NuiSearchModule, NuiSelectorModule, NuiSorterModule, NuiTableModule, NuiTimeFrameBarModule, NuiTimeFramePickerModule, NuiTimePickerModule, NuiToastModule, NuiToolbarModule, NuiValidationMessageModule, NuiWizardModule, NuiWizardV2Module, NuiDocsModule, ButtonSizeType, CheckboxChangeEvent, datePickerDefaults, datePickerDateFormats, NuiDndModule, DndDropTargetDirective, NuiDialogEvent, SrlcStage, NuiFormFieldControl, IconCategory, IconCategoryNamespace, IconStatus, IconSeverity, IconState, IconWidget, MenuActionType, PanelModes, PanelStates, SizeParameters, PanelBackgroundColor, PopoverOverlayPosition, RepeatSelectionMode, PaddingOptions, NUI_SELECT_V2_OPTION_PARENT_COMPONENT, SelectionType, CheckboxStatus, SorterDirection, SpinnerSize, ButtonIcon, DEFAULT_TABLE_HEADER_OFFSET, TABLE_ROW_HEIGHT, complexScrollStrategyFactory, TableVirtualScrollLinearDirective, TableVirtualScrollDirective, TableVirtualScrollHeaderPosition, TableStickyHeaderDirective, SliceRangePipe, ToolbarItemType, ToolbarItemDisplayStyle, CustomValidationMessageComponent, wizardAnimations, WizardHorizontalComponent, WizardVerticalComponent, WizardStepV2Component, WizardDirective, WizardStepHeaderComponent, WizardStepLabelDirective, WizardStepFooterDirective, WizardFooterComponent, WizardStepperNextDirective, WizardStepperPreviousDirective, OVERLAY_CONTAINER_CLASS, OVERLAY_PANEL_CLASS, OVERLAY_DEFAULT_PRIORITY, OverlayPlacement, OverlayPosition, getOverlayPositions, OVERLAY_ITEM, OVERLAY_CONTAINER, OVERLAY_WITH_POPUP_STYLES_CLASS, OVERLAY_ARROW_SIZE, OverlayUtilitiesService, OverlayCustomContainer, POPUP_V2_VIEWPORT_MARGINS_DEFAULT, unitConversionToken, UnitBase, unitConversionConstants, imagesPresetToken, KEY_CODE, RESIZE_DEBOUNCE_TIME, DEFAULT_INTERACTIVE_ELEMENTS, ResizeDirection, ResizeUnit, resizeDirectionHelpers, defaultFilters, NuiActiveDialog, SelectionModel, IEvent, EventDefinition, NuiValidators, LogLevel, NuiEnvironment, NUI_ENV_PROVIDER_FACTORY, NUI_ENV_PROVIDER, uuid, immutableSet, removeErrors, traverse, nameof, BreadcrumbComponent, ContentComponent, ExpanderComponent, MessageComponent, DividerComponent, RadioComponent, RadioGroupComponent, CheckboxComponent, CheckboxGroupComponent, ChipComponent, ChipsComponent, ChipsOverflowComponent, IconComponent, SpinnerComponent, SwitchComponent, PaginatorComponent, ProgressComponent, PanelComponent, ButtonComponent, BusyComponent, ImageComponent, SearchComponent, TextboxComponent, RepeatItemComponent, RepeatComponent, MenuActionComponent, MenuComponent, MenuGroupComponent, MenuItemBaseComponent, MenuLinkComponent, MenuOptionComponent, MenuPopupComponent, MenuSwitchComponent, WizardStepComponent, WizardComponent, ToastComponent, PopupDeprecatedComponent, PopupToggleDirective, SelectorComponent, PopoverComponent, PopupComponent, PopoverModalComponent, SelectComponent, SelectV2OptionComponent, SelectV2OptionGroupComponent, ComboboxV2OptionHighlightDirective, OverlayItemComponent, OverlayComponent, ArrowComponent, SelectV2Component, ComboboxV2Component, MarkAsSelectedItemDirective, ComboboxComponent, BaseSelect, DatePickerComponent, TimePickerComponent, TimeFramePickerComponent, DateTimePickerComponent, SorterComponent, DialogComponent, NuiDialogRef, DialogHeaderComponent, DialogFooterComponent, DialogBackdropComponent, ConfirmationDialogComponent, TableComponent, TableFooterRowComponent, TableHeaderRowComponent, TableRowComponent, TableFooterRowDefDirective, TableRowDefDirective, TableHeaderRowDefDirective, CardComponent, CardGroupComponent, SheetComponent, SheetGroupComponent, TableHeaderCellComponent, TableFooterCellDefDirective, TableFooterCellDirective, TableHeaderCellDefDirective, TableColumnDefDirective, TableCellDirective, TableCellDefDirective, TableResizerDirective, ToolbarComponent, ToolbarGroupComponent, ToolbarItemComponent, ToolbarSplitterComponent, ValidationMessageComponent, TextboxNumberComponent, FormFieldComponent, TabGroupComponent, TabHeadingCustomTemplateRefDirective, TabHeadingDirective, TabComponent, ClipboardDirective, DraggableDirective, DroppableDirective, ResizeObserverDirective, ResizerDirective, ResizeDirective, SetFocusDirective, TooltipDirective, ZoomContentDirective, ThemeSwitcherComponent, ClickInterceptorDirective, MenuItemComponent, TabHeadingComponent, TabHeadingGroupComponent, TooltipComponent, LayoutResizerComponent, TimeFrameBarComponent, QuickPickerComponent, CopyTextComponent, ExampleWrapperComponent, ExampleCodeComponent, SrlcIndicatorComponent, HighlightPipe, LimitToPipe, TimeFrameFormatPipe, UnitConversionPipe, IconService, DragAndDropService, BreadcrumbStateService, NoopDataSourceService, DataSourceService, DataSourceFeatures, DataFilterService, DialogStackService, DialogService, DomUtilService, EdgeDetectionService, EventPropagationService, HistoryStorage, ListService, LoggerService, NotificationService, PositionService, SearchService, SelectorService, UtilService, TimeframeService, ToastContainerService, ToastService, ToastDirective, ThemeSwitchService, TransientCacheService, TableStateHandlerService, UnitConversionService, LocalFilteringDataSource, ClientSideDataSource, ServerSideDataSource, EventBusService, EventBus, MenuKeyControlService, VirtualViewportManager, OverlayContainerService, OverlayPositionService, OverlayService, DEMO_PATH_TOKEN, expand */
+/*! exports provided: NuiButtonModule, NuiCheckboxModule, NuiCommonModule, NuiDividerModule, NuiIconModule, NuiMessageModule, NuiImageModule, NuiMenuModule, NuiPopupModule, NuiSwitchModule, NuiSelectModule, NuiSelectV2Module, NuiSpinnerModule, NuiTabsModule, NuiTextboxModule, NuiTooltipModule, NuiLayoutModule, NuiOverlayModule, NuiOverlayAdditionsModule, NuiBreadcrumbModule, NuiBusyModule, NuiChipsModule, NuiContentModule, NuiDatePickerModule, NuiDateTimePickerModule, NuiDialogModule, NuiExpanderModule, NuiFormFieldModule, NuiPaginatorModule, NuiPanelModule, NuiPopoverModule, NuiProgressModule, NuiRadioModule, NuiRepeatModule, NuiSearchModule, NuiSelectorModule, NuiSorterModule, NuiTableModule, NuiTimeFrameBarModule, NuiTimeFramePickerModule, NuiTimePickerModule, NuiToastModule, NuiToolbarModule, NuiValidationMessageModule, NuiWizardModule, NuiWizardV2Module, NuiDocsModule, ButtonSizeType, CheckboxChangeEvent, datePickerDefaults, datePickerDateFormats, NuiDndModule, DndDropTargetDirective, NuiDialogEvent, SrlcStage, NuiFormFieldControl, IconCategory, IconCategoryNamespace, IconStatus, IconSeverity, IconState, IconWidget, MenuActionType, PanelModes, PanelStates, SizeParameters, PanelBackgroundColor, PopoverOverlayPosition, RepeatSelectionMode, PaddingOptions, NUI_SELECT_V2_OPTION_PARENT_COMPONENT, ANNOUNCER_OPEN_MESSAGE, ANNOUNCER_CLOSE_MESSAGE, SelectionType, CheckboxStatus, SorterDirection, SpinnerSize, ButtonIcon, DEFAULT_TABLE_HEADER_OFFSET, TABLE_ROW_HEIGHT, complexScrollStrategyFactory, TableVirtualScrollLinearDirective, TableVirtualScrollDirective, TableVirtualScrollHeaderPosition, TableStickyHeaderDirective, SliceRangePipe, ToolbarItemType, ToolbarItemDisplayStyle, CustomValidationMessageComponent, wizardAnimations, WizardHorizontalComponent, WizardVerticalComponent, WizardStepV2Component, WizardDirective, WizardStepHeaderComponent, WizardStepLabelDirective, WizardStepFooterDirective, WizardFooterComponent, WizardStepperNextDirective, WizardStepperPreviousDirective, OVERLAY_CONTAINER_CLASS, OVERLAY_PANEL_CLASS, OVERLAY_DEFAULT_PRIORITY, OverlayPlacement, OverlayPosition, getOverlayPositions, OVERLAY_ITEM, OVERLAY_CONTAINER, OVERLAY_WITH_POPUP_STYLES_CLASS, OVERLAY_ARROW_SIZE, OverlayUtilitiesService, OverlayCustomContainer, POPUP_V2_VIEWPORT_MARGINS_DEFAULT, unitConversionToken, UnitBase, unitConversionConstants, imagesPresetToken, KEY_CODE, RESIZE_DEBOUNCE_TIME, DEFAULT_INTERACTIVE_ELEMENTS, ResizeDirection, ResizeUnit, resizeDirectionHelpers, defaultFilters, NuiActiveDialog, SelectionModel, IEvent, EventDefinition, NuiValidators, LogLevel, NuiEnvironment, NUI_ENV_PROVIDER_FACTORY, NUI_ENV_PROVIDER, uuid, immutableSet, removeErrors, traverse, nameof, BreadcrumbComponent, ContentComponent, ExpanderComponent, MessageComponent, DividerComponent, RadioComponent, RadioGroupComponent, CheckboxComponent, CheckboxGroupComponent, ChipComponent, ChipsComponent, ChipsOverflowComponent, IconComponent, SpinnerComponent, SwitchComponent, PaginatorComponent, ProgressComponent, PanelComponent, ButtonComponent, BusyComponent, ImageComponent, SearchComponent, TextboxComponent, RepeatItemComponent, RepeatComponent, MenuActionComponent, MenuComponent, MenuGroupComponent, MenuItemBaseComponent, MenuLinkComponent, MenuOptionComponent, MenuPopupComponent, MenuSwitchComponent, WizardStepComponent, WizardComponent, ToastComponent, PopupDeprecatedComponent, PopupToggleDirective, SelectorComponent, PopoverComponent, PopupComponent, PopoverModalComponent, SelectComponent, SelectV2OptionComponent, SelectV2OptionGroupComponent, ComboboxV2OptionHighlightDirective, OverlayItemComponent, OverlayComponent, ArrowComponent, SelectV2Component, ComboboxV2Component, MarkAsSelectedItemDirective, ComboboxComponent, BaseSelect, DatePickerComponent, TimePickerComponent, TimeFramePickerComponent, DateTimePickerComponent, SorterComponent, DialogComponent, NuiDialogRef, DialogHeaderComponent, DialogFooterComponent, DialogBackdropComponent, ConfirmationDialogComponent, TableComponent, TableFooterRowComponent, TableHeaderRowComponent, TableRowComponent, TableFooterRowDefDirective, TableRowDefDirective, TableHeaderRowDefDirective, CardComponent, CardGroupComponent, SheetComponent, SheetGroupComponent, TableHeaderCellComponent, TableFooterCellDefDirective, TableFooterCellDirective, TableHeaderCellDefDirective, TableColumnDefDirective, TableCellDirective, TableCellDefDirective, TableResizerDirective, ToolbarComponent, ToolbarGroupComponent, ToolbarItemComponent, ToolbarSplitterComponent, ValidationMessageComponent, TextboxNumberComponent, FormFieldComponent, TabGroupComponent, TabHeadingCustomTemplateRefDirective, TabHeadingDirective, TabComponent, ClipboardDirective, DraggableDirective, DroppableDirective, ResizeObserverDirective, ResizerDirective, ResizeDirective, SetFocusDirective, TooltipDirective, ZoomContentDirective, ThemeSwitcherComponent, ClickInterceptorDirective, MenuItemComponent, TabHeadingComponent, TabHeadingGroupComponent, TooltipComponent, LayoutResizerComponent, TimeFrameBarComponent, QuickPickerComponent, CopyTextComponent, ExampleWrapperComponent, ExampleCodeComponent, SrlcIndicatorComponent, HighlightPipe, LimitToPipe, TimeFrameFormatPipe, UnitConversionPipe, IconService, DragAndDropService, BreadcrumbStateService, NoopDataSourceService, DataSourceService, DataSourceFeatures, DataFilterService, DialogStackService, DialogService, DomUtilService, EdgeDetectionService, EventPropagationService, HistoryStorage, ListService, LoggerService, NotificationService, PositionService, SearchService, SelectorService, UtilService, TimeframeService, ToastContainerService, ToastService, ToastDirective, ThemeSwitchService, TransientCacheService, TableStateHandlerService, UnitConversionService, LocalFilteringDataSource, ClientSideDataSource, ServerSideDataSource, EventBusService, EventBus, MenuKeyControlService, VirtualViewportManager, OverlayContainerService, OverlayPositionService, OverlayService, DEMO_PATH_TOKEN, expand */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -21353,6 +21361,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PaddingOptions", function() { return _nui_api__WEBPACK_IMPORTED_MODULE_0__["PaddingOptions"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "NUI_SELECT_V2_OPTION_PARENT_COMPONENT", function() { return _nui_api__WEBPACK_IMPORTED_MODULE_0__["NUI_SELECT_V2_OPTION_PARENT_COMPONENT"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ANNOUNCER_OPEN_MESSAGE", function() { return _nui_api__WEBPACK_IMPORTED_MODULE_0__["ANNOUNCER_OPEN_MESSAGE"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ANNOUNCER_CLOSE_MESSAGE", function() { return _nui_api__WEBPACK_IMPORTED_MODULE_0__["ANNOUNCER_CLOSE_MESSAGE"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SelectionType", function() { return _nui_api__WEBPACK_IMPORTED_MODULE_0__["SelectionType"]; });
 
@@ -25520,6 +25532,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/cdk/scrolling */ "vxfF");
 /* harmony import */ var resize_observer_polyfill__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! resize-observer-polyfill */ "bdgK");
 /* harmony import */ var _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/cdk/a11y */ "u47x");
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./constants */ "gwHk");
+
 
 
 
@@ -25652,6 +25666,7 @@ class BaseSelectV2 {
     onFocusIn() {
         if (this.isOpenOnFocus) {
             this.showDropdown();
+            this.announceDropdown(true);
         }
     }
     onWindowResize() {
@@ -25674,12 +25689,13 @@ class BaseSelectV2 {
         this.dropdown.show();
         this.setActiveItemOnDropdown();
         this.scrollToOption();
-        this.liveAnnouncer.announce(`${this.options.length} options available`);
+        this.announceDropdown(true);
     }
     /** Hides dropdown */
     hideDropdown() {
         if (!this.isDisabled) {
             this.dropdown.hide();
+            this.announceDropdown(false);
         }
     }
     /** Toggles dropdown */
@@ -25688,6 +25704,7 @@ class BaseSelectV2 {
             return;
         }
         this.dropdown.toggle();
+        this.announceDropdown(this.dropdown.showing);
         this.setActiveItemOnDropdown();
         this.scrollToOption();
         if (this.cdkVirtualScroll) {
@@ -25882,6 +25899,10 @@ class BaseSelectV2 {
         return !this.mouseDown && !this.manualDropdownControl
             && document.activeElement === this.inputElement.nativeElement;
     }
+    announceDropdown(open) {
+        const message = open ? Object(_constants__WEBPACK_IMPORTED_MODULE_19__["ANNOUNCER_OPEN_MESSAGE"])(this.options.length) : _constants__WEBPACK_IMPORTED_MODULE_19__["ANNOUNCER_CLOSE_MESSAGE"];
+        this.liveAnnouncer.announce(message);
+    }
 }
 BaseSelectV2.ɵfac = function BaseSelectV2_Factory(t) { return new (t || BaseSelectV2)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_option_key_control_service__WEBPACK_IMPORTED_MODULE_13__["OptionKeyControlService"]), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_2__["ChangeDetectorRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_2__["ElementRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_18__["LiveAnnouncer"])); };
 BaseSelectV2.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineDirective"]({ type: BaseSelectV2, contentQueries: function BaseSelectV2_ContentQueries(rf, ctx, dirIndex) { if (rf & 1) {
@@ -26033,16 +26054,20 @@ OverlayCustomContainer.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵ
 /*!****************************************!*\
   !*** ./src/lib/select-v2/constants.ts ***!
   \****************************************/
-/*! exports provided: NUI_SELECT_V2_OPTION_PARENT_COMPONENT */
+/*! exports provided: NUI_SELECT_V2_OPTION_PARENT_COMPONENT, ANNOUNCER_OPEN_MESSAGE, ANNOUNCER_CLOSE_MESSAGE */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NUI_SELECT_V2_OPTION_PARENT_COMPONENT", function() { return NUI_SELECT_V2_OPTION_PARENT_COMPONENT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ANNOUNCER_OPEN_MESSAGE", function() { return ANNOUNCER_OPEN_MESSAGE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ANNOUNCER_CLOSE_MESSAGE", function() { return ANNOUNCER_CLOSE_MESSAGE; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
 
 // Will be renamed in scope of the NUI-5797
 const NUI_SELECT_V2_OPTION_PARENT_COMPONENT = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["InjectionToken"]("NUI_SELECT_V2_OPTION_PARENT_COMPONENT");
+const ANNOUNCER_OPEN_MESSAGE = (optionsLength) => `${optionsLength} options available`;
+const ANNOUNCER_CLOSE_MESSAGE = "Dropdown closed";
 
 
 /***/ }),

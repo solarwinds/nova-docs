@@ -200,8 +200,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="81"
-                            class="link-to-prism">src/lib/select-v2/selected-items-key-control.service.ts:81</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="75"
+                            class="link-to-prism">src/lib/select-v2/selected-items-key-control.service.ts:75</a></div>
                 </td>
             </tr>
 
@@ -325,8 +325,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="77"
-                            class="link-to-prism">src/lib/select-v2/selected-items-key-control.service.ts:77</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="71"
+                            class="link-to-prism">src/lib/select-v2/selected-items-key-control.service.ts:71</a></div>
                 </td>
             </tr>
 
@@ -438,8 +438,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="73"
-                            class="link-to-prism">src/lib/select-v2/selected-items-key-control.service.ts:73</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="67"
+                            class="link-to-prism">src/lib/select-v2/selected-items-key-control.service.ts:67</a></div>
                 </td>
             </tr>
 
@@ -530,12 +530,6 @@ export class SelectedItemsKeyControlService {
     public onKeydown(event: KeyboardEvent) {
         const caretPosition &#x3D; (event.target as HTMLInputElement).selectionStart;
         const isKeyAllowed &#x3D; this.isBackspace(event) || this.isLeftOrRightArrow(event);
-
-        if(event.code &#x3D;&#x3D;&#x3D; &quot;Enter&quot; &amp;&amp; this.activeItem) {
-            this.removeChipsByEnter();
-
-            return;
-        }
 
         if ((caretPosition !&#x3D;&#x3D; 0) || (!this.activeItem &amp;&amp; this.isRightArrow(event))) {
             return;
@@ -663,12 +657,8 @@ export class SelectedItemsKeyControlService {
         if (!isNil(this.selectedItemsKeyManager.activeItemIndex)) {
             this.calculateActiveSelectedItemIndex();
             this.combobox.deselectItem(this.selectedItemsKeyManager.activeItemIndex);
+            this.liveAnnouncer.announce(&#x60;${this.getActiveItemTitle} removed&#x60;);
         }
-    }
-
-    private removeChipsByEnter(): void {
-        this.deselectItem();
-        this.liveAnnouncer.announce(&#x60;${this.getActiveItemTitle} removed&#x60;);
     }
 
     private get getActiveItemTitle(): string {
