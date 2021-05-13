@@ -45634,7 +45634,7 @@
         ngContentSelectors: _c1,
         decls: 1,
         vars: 0,
-        consts: [["cdk-portal", ""], [1, "nui-overlay", 3, "ngClass"]],
+        consts: [["cdk-portal", ""], ["id", "nui-overlay", 1, "nui-overlay", 3, "ngClass"]],
         template: function OverlayComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵprojectionDef"]();
@@ -46171,7 +46171,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.selectedItems = _t);
           }
         },
-        hostAttrs: ["role", "combobox", 1, "nui-combobox-v2"],
+        hostAttrs: ["role", "combobox", "aria-haspopup", "listbox", "aria-owns", "nui-overlay", 1, "nui-combobox-v2"],
         hostVars: 1,
         hostBindings: function ComboboxV2Component_HostBindings(rf, ctx) {
           if (rf & 2) {
@@ -46205,7 +46205,7 @@
         }]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInheritDefinitionFeature"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵNgOnChangesFeature"]],
         ngContentSelectors: _c1,
         decls: 8,
-        vars: 16,
+        vars: 17,
         consts: [[1, "w-100", "d-flex", "flex-wrap", "align-items-center", "pt-2"], ["type", "text", 1, "nui-combobox-v2__input", "pb-2", 3, "disabled", "ngModel", "placeholder", "ngModelChange", "input", "keydown", "click"], ["input", ""], ["tabindex", "-1", "nui-button", "", "class", "nui-combobox-v2__remove-value action", "icon", "remove", "type", "button", 3, "isEmpty", "nuiTooltip", "disabled", "click", 4, "ngIf"], ["tabindex", "-1", "nui-button", "", "type", "button", "icon", "caret-down", 1, "nui-combobox-v2__toggle", "action", 3, "isEmpty", "disabled", "click"], ["roleAttr", "listbox", 3, "toggleReference", "viewportMargin", "overlayConfig"], ["tabindex", "-1", "nui-button", "", "icon", "remove", "type", "button", 1, "nui-combobox-v2__remove-value", "action", 3, "isEmpty", "nuiTooltip", "disabled", "click"]],
         template: function ComboboxV2Component_Template(rf, ctx) {
           if (rf & 1) {
@@ -46255,13 +46255,15 @@
           }
 
           if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("role", ctx.multiselect && ctx.selectedOptions.length ? "list" : null);
+
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("has-error", ctx.isInErrorState);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("disabled", ctx.isDisabled)("ngModel", ctx.inputValue)("placeholder", ctx.placeholder);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-label", ctx.ariaLabel);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-label", ctx.ariaLabel || "input");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
