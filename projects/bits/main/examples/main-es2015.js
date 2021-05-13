@@ -6744,8 +6744,8 @@ should be set explicitly: `, el.nativeElement);
         };
     }
     getAriaLabel() {
-        const innerText = this.contentContainer.element.nativeElement.innerText;
-        return this._isContentEmpty ? this.icon : innerText.trim();
+        // In chrome once innerText gets touched in a native element this caused issues in table-sticky-header NUI-6033
+        return this._isContentEmpty ? this.icon : this.contentContainer.element.nativeElement.textContent.trim();
     }
     setIsContentEmptyValue() {
         const innerHTML = this.contentContainer.element.nativeElement.innerHTML;
