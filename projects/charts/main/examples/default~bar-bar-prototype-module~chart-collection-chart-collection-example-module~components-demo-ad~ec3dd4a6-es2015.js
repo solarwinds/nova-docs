@@ -4789,10 +4789,11 @@ class XYGrid extends _grid__WEBPACK_IMPORTED_MODULE_19__["Grid"] {
     /** See {@link IGrid#buildPlugins} */
     buildPlugins(chart) {
         const plugins = [];
-        if (this.config().interactive) {
-            plugins.push(new _plugins_mouse_interactive_area_plugin__WEBPACK_IMPORTED_MODULE_17__["MouseInteractiveAreaPlugin"](new _common_mouse_interactive_area__WEBPACK_IMPORTED_MODULE_11__["MouseInteractiveArea"](this.getLasagna().getContainer(), this.getInteractiveArea(), this.config().cursor)));
+        const config = this.config();
+        if (config.interactive) {
+            plugins.push(new _plugins_mouse_interactive_area_plugin__WEBPACK_IMPORTED_MODULE_17__["MouseInteractiveAreaPlugin"](new _common_mouse_interactive_area__WEBPACK_IMPORTED_MODULE_11__["MouseInteractiveArea"](this.getLasagna().getContainer(), this.getInteractiveArea(), config.cursor, config.dimension.margin)));
         }
-        if (this.config().interactionPlugins) {
+        if (config.interactionPlugins) {
             plugins.push(new _plugins_interaction_interaction_line_plugin__WEBPACK_IMPORTED_MODULE_16__["InteractionLinePlugin"]());
             plugins.push(new _plugins_interaction_interaction_label_plugin__WEBPACK_IMPORTED_MODULE_15__["InteractionLabelPlugin"]());
         }
@@ -5195,6 +5196,8 @@ class XYGrid extends _grid__WEBPACK_IMPORTED_MODULE_19__["Grid"] {
         d.outerHeight(oldOuterHeight);
         const tx = this.config().dimension.margin.left;
         const ty = this.config().dimension.margin.top;
+        // Note: This transform results in a firefox hack in MouseInteractiveArea in which
+        // the margins must be subtracted from the mouse event coordinates
         container.attr("transform", `translate(${tx}, ${ty})`);
     }
     fitBottomAxis(d) {
@@ -12277,11 +12280,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var d3_selection__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3-selection */ "/TIM");
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "qCKp");
 /* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../constants */ "he5r");
-/* harmony import */ var _renderers_bar_bar_renderer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../renderers/bar/bar-renderer */ "iC++");
-/* harmony import */ var _renderers_marker_utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../renderers/marker-utils */ "pm6l");
-/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./types */ "g1Zz");
-
-
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./types */ "g1Zz");
 
 
 
@@ -12290,13 +12289,15 @@ __webpack_require__.r(__webpack_exports__);
  * @ignore
  */
 class MouseInteractiveArea {
-    constructor(target, interactiveArea, cursor) {
+    constructor(target, interactiveArea, cursor, gridMargin) {
         this.target = target;
         this.interactiveArea = interactiveArea;
+        this.gridMargin = gridMargin;
         this.active = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"](false);
-        this.interaction = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"]({ type: _types__WEBPACK_IMPORTED_MODULE_5__["InteractionType"].Click, coordinates: { x: 0, y: 0 } });
+        this.interaction = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"]({ type: _types__WEBPACK_IMPORTED_MODULE_3__["InteractionType"].Click, coordinates: { x: 0, y: 0 } });
         this.isActive = false;
         this.onMouseInteraction = (interactionType) => {
+            var _a, _b;
             if (d3_selection__WEBPACK_IMPORTED_MODULE_0__["event"].target.classList.contains(_constants__WEBPACK_IMPORTED_MODULE_2__["IGNORE_INTERACTION_CLASS"])) {
                 return;
             }
@@ -12308,17 +12309,13 @@ class MouseInteractiveArea {
             // Hack from https://github.com/d3/d3-selection/issues/81#issuecomment-528321960
             if (isFirefox) {
                 // this works in Firefox
-                // the only problem is offsetX and offsetY return coordinates relative to originalTarget, that can be a "bar"
-                const classList = d3_selection__WEBPACK_IMPORTED_MODULE_0__["event"].originalTarget.classList;
-                if (classList.contains(_renderers_bar_bar_renderer__WEBPACK_IMPORTED_MODULE_3__["BarRenderer"].BAR_RECT_CLASS) || classList.contains(_renderers_marker_utils__WEBPACK_IMPORTED_MODULE_4__["MarkerUtils"].MARKER_PATH_CLASS)) {
-                    x = parseFloat(d3_selection__WEBPACK_IMPORTED_MODULE_0__["event"].originalTarget.attributes.x.value);
-                    y = parseFloat(d3_selection__WEBPACK_IMPORTED_MODULE_0__["event"].originalTarget.attributes.y.value);
-                }
-                let calculatedX = x + d3_selection__WEBPACK_IMPORTED_MODULE_0__["event"].offsetX;
+                // Note: Margin must be subtracted because of the transform that occurs in XYGrid.recalculateMargins
+                let calculatedX = x + d3_selection__WEBPACK_IMPORTED_MODULE_0__["event"].offsetX - (((_a = this.gridMargin) === null || _a === void 0 ? void 0 : _a.left) || 0);
                 // clamp output to right or left side of interactive area if necessary
                 calculatedX = calculatedX > interactiveAreaWidth ? interactiveAreaWidth : calculatedX;
                 x = calculatedX < 0 ? 0 : calculatedX;
-                let calculatedY = y + d3_selection__WEBPACK_IMPORTED_MODULE_0__["event"].offsetY;
+                // Note: Margin must be subtracted because of the transform that occurs in XYGrid.recalculateMargins
+                let calculatedY = y + d3_selection__WEBPACK_IMPORTED_MODULE_0__["event"].offsetY - (((_b = this.gridMargin) === null || _b === void 0 ? void 0 : _b.top) || 0);
                 // clamp output to top or bottom side of interactive area if necessary
                 calculatedY = calculatedY > interactiveAreaHeight ? interactiveAreaHeight : calculatedY;
                 y = calculatedY < 0 ? 0 : calculatedY;
@@ -12377,10 +12374,10 @@ class MouseInteractiveArea {
         this.target
             .on("mouseover", this.onMouseOver)
             .on("mouseout", this.onMouseOut)
-            .on(_types__WEBPACK_IMPORTED_MODULE_5__["InteractionType"].MouseDown, () => this.onMouseInteraction(_types__WEBPACK_IMPORTED_MODULE_5__["InteractionType"].MouseDown))
-            .on(_types__WEBPACK_IMPORTED_MODULE_5__["InteractionType"].MouseUp, () => this.onMouseInteraction(_types__WEBPACK_IMPORTED_MODULE_5__["InteractionType"].MouseUp))
-            .on(_types__WEBPACK_IMPORTED_MODULE_5__["InteractionType"].MouseMove, () => this.onMouseInteraction(_types__WEBPACK_IMPORTED_MODULE_5__["InteractionType"].MouseMove))
-            .on(_types__WEBPACK_IMPORTED_MODULE_5__["InteractionType"].Click, () => this.onMouseInteraction(_types__WEBPACK_IMPORTED_MODULE_5__["InteractionType"].Click));
+            .on(_types__WEBPACK_IMPORTED_MODULE_3__["InteractionType"].MouseDown, () => this.onMouseInteraction(_types__WEBPACK_IMPORTED_MODULE_3__["InteractionType"].MouseDown))
+            .on(_types__WEBPACK_IMPORTED_MODULE_3__["InteractionType"].MouseUp, () => this.onMouseInteraction(_types__WEBPACK_IMPORTED_MODULE_3__["InteractionType"].MouseUp))
+            .on(_types__WEBPACK_IMPORTED_MODULE_3__["InteractionType"].MouseMove, () => this.onMouseInteraction(_types__WEBPACK_IMPORTED_MODULE_3__["InteractionType"].MouseMove))
+            .on(_types__WEBPACK_IMPORTED_MODULE_3__["InteractionType"].Click, () => this.onMouseInteraction(_types__WEBPACK_IMPORTED_MODULE_3__["InteractionType"].Click));
     }
 }
 MouseInteractiveArea.CONTAINER_CLASS = "mouse-interactive-area";
