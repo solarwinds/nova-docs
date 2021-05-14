@@ -25901,8 +25901,12 @@ class BaseSelectV2 {
             && document.activeElement === this.inputElement.nativeElement;
     }
     announceDropdown(open) {
-        const message = open ? Object(_constants__WEBPACK_IMPORTED_MODULE_19__["ANNOUNCER_OPEN_MESSAGE"])(this.options.length) : _constants__WEBPACK_IMPORTED_MODULE_19__["ANNOUNCER_CLOSE_MESSAGE"];
-        this.liveAnnouncer.announce(message);
+        if (open) {
+            this.liveAnnouncer.announce(Object(_constants__WEBPACK_IMPORTED_MODULE_19__["ANNOUNCER_OPEN_MESSAGE"])(this.options.length));
+            return;
+        }
+        const msg = this.value ? `${this.value} selected ${_constants__WEBPACK_IMPORTED_MODULE_19__["ANNOUNCER_CLOSE_MESSAGE"]}` : _constants__WEBPACK_IMPORTED_MODULE_19__["ANNOUNCER_CLOSE_MESSAGE"];
+        this.liveAnnouncer.announce(msg);
     }
 }
 BaseSelectV2.ɵfac = function BaseSelectV2_Factory(t) { return new (t || BaseSelectV2)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_option_key_control_service__WEBPACK_IMPORTED_MODULE_13__["OptionKeyControlService"]), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_2__["ChangeDetectorRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_2__["ElementRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_18__["LiveAnnouncer"])); };
