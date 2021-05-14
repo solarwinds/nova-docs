@@ -647,7 +647,7 @@ export class DonutContentPercentageFormatterComponent implements OnChanges, OnIn
     }
 
     public getProperContentValue(): void {
-        this.chartContent &#x3D; parseFloat((this.getProperSeriesData() / this.sum * 100).toFixed(2)).toLocaleString() + &quot;%&quot;;
+        this.chartContent &#x3D; (this.getProperSeriesData() / this.sum * 100).toFixed(2) + &quot;%&quot;;
     }
 }
 </code></pre>

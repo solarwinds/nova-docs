@@ -448,8 +448,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="107"
-                            class="link-to-prism">src/services/unit-conversion.service.ts:107</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="111"
+                            class="link-to-prism">src/services/unit-conversion.service.ts:111</a></div>
                 </td>
             </tr>
 
@@ -537,15 +537,15 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getValueDisplay(conversion: <a href="../interfaces/IUnitConversionResult.html">IUnitConversionResult</a>, plusSign, nanDisplay: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    <code>getValueDisplay(conversion: <a href="../interfaces/IUnitConversionResult.html">IUnitConversionResult</a>, plusSign, nanDisplay: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, localize)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="89"
-                            class="link-to-prism">src/services/unit-conversion.service.ts:89</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="93"
+                            class="link-to-prism">src/services/unit-conversion.service.ts:93</a></div>
                 </td>
             </tr>
 
@@ -620,6 +620,25 @@
 
                                     <td>
                                         <p>The string to display in case the conversion result is NaN or Infinity</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>localize</td>
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>true</code>
+                                    </td>
+
+                                    <td>
+                                        <p>Whether to localize the value for display. Note: It&#39;s not recommended to localize values for
+the &quot;generic&quot; unit, e.g. &quot;1.1K&quot; for 1100, as the &quot;generic&quot; unit is currently not i18n friendly</p>
 
                                     </td>
                                 </tr>
@@ -722,7 +741,9 @@ export class UnitConversionService {
         const spacing &#x3D; unit !&#x3D;&#x3D; &quot;generic&quot; &amp;&amp; isValidNumber ? &quot; &quot; : &quot;&quot;;
         const unitDisplay &#x3D; isValidNumber ? this.getUnitDisplay(conversion, unit) : &quot;&quot;;
 
-        return &#x60;${this.getValueDisplay(conversion, plusSign, nanDisplay)}${spacing}${unitDisplay}&#x60;;
+        // The generic unit is not currently i18n friendly
+        const localizeValue &#x3D; unit !&#x3D;&#x3D; &quot;generic&quot;;
+        return &#x60;${this.getValueDisplay(conversion, plusSign, nanDisplay, localizeValue)}${spacing}${unitDisplay}&#x60;;
     }
 
     /**
@@ -731,17 +752,19 @@ export class UnitConversionService {
      * @param conversion The result of an invocation of this service&#x27;s convert method
      * @param plusSign Whether to prepend the display string with a &#x27;+&#x27;
      * @param nanDisplay The string to display in case the conversion result is NaN or Infinity
+     * @param localize Whether to localize the value for display. Note: It&#x27;s not recommended to localize values for
+     *                 the &quot;generic&quot; unit, e.g. &quot;1.1K&quot; for 1100, as the &quot;generic&quot; unit is currently not i18n friendly
      *
      * @returns {string} The converted value display string
      */
-    public getValueDisplay(conversion: IUnitConversionResult, plusSign &#x3D; false, nanDisplay &#x3D; &quot;---&quot;): string {
+    public getValueDisplay(conversion: IUnitConversionResult, plusSign &#x3D; false, nanDisplay &#x3D; &quot;---&quot;, localize &#x3D; true): string {
         if (!this.isValidNumber(conversion.value)) {
             return nanDisplay;
         }
 
-        const outputNumber &#x3D; parseFloat(conversion.value);
-        const prefix &#x3D; plusSign &amp;&amp; outputNumber &gt; 0 ? &quot;+&quot; : &quot;&quot;;
-        return &#x60;${prefix}${outputNumber.toLocaleString(undefined, { maximumFractionDigits: conversion.scale })}&#x60;;
+        const outputValue &#x3D; localize ? parseFloat(conversion.value).toLocaleString(undefined, { maximumFractionDigits: conversion.scale }) : conversion.value;
+        const prefix &#x3D; plusSign &amp;&amp; parseInt(conversion.value, 10) &gt; 0 ? &quot;+&quot; : &quot;&quot;;
+        return &#x60;${prefix}${outputValue}&#x60;;
     }
 
     /**

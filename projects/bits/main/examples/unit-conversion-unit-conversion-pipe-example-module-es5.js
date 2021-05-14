@@ -320,8 +320,8 @@
       UnitConversionPipeDocsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: UnitConversionPipeDocsComponent,
         selectors: [["ng-component"]],
-        decls: 74,
-        vars: 1,
+        decls: 76,
+        vars: 2,
         consts: [["href", "../pipes/UnitConversionPipe.html#info", "target", "_parent"], ["href", "../miscellaneous/typealiases.html#UnitOption", "target", "_blank"], ["type", "info", 3, "allowDismiss"], ["href", "../injectables/UnitConversionService.html", "target", "_blank"], ["filenamePrefix", "unit-conversion-pipe-basic", "exampleTitle", "Basic Usage"]],
         template: function UnitConversionPipeDocsComponent_Template(rf, ctx) {
           if (rf & 1) {
@@ -409,7 +409,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](30, ". If the pipe doesn't offer something that you need, such as separating the value and unit out into separate outputs, or you need to convert a value outside the context of a template, using the service directly may be a better option for you.\n");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](30, ". If the pipe doesn't offer something you need, such as separating the value and unit out into separate outputs or converting a value outside the context of a template, using the service directly may be a better option for you.\n");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -537,15 +537,25 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](72, "nui-example-wrapper", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](72, "nui-message", 2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](73, "unit-conversion-pipe-basic-example");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](73, " The pipe will localize the output for all supported units except the \"generic\" unit. Localization for the \"generic\" unit is not yet supported.\n");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](74, "nui-example-wrapper", 4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](75, "unit-conversion-pipe-basic-example");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
           }
 
           if (rf & 2) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](25);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("allowDismiss", false);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](47);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("allowDismiss", false);
           }

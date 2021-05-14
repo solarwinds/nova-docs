@@ -176,12 +176,8 @@ export class DashboardUnitConversionPipe implements PipeTransform {
     public transform &#x3D; (value: string | number | undefined): string &#x3D;&gt; {
         const valueAsNumber &#x3D; typeof value &#x3D;&#x3D;&#x3D; &quot;string&quot; ? parseFloat(value) : value;
 
-        if (valueAsNumber &#x3D;&#x3D;&#x3D; undefined || isNaN(valueAsNumber)) {
+        if (valueAsNumber &#x3D;&#x3D;&#x3D; undefined || isNaN(valueAsNumber) || valueAsNumber &lt; DEFAULT_UNIT_CONVERSION_THRESHOLD) {
             return value?.toString() || &quot;&quot;;
-        }
-
-        if (valueAsNumber &lt; DEFAULT_UNIT_CONVERSION_THRESHOLD) {
-            return valueAsNumber?.toLocaleString() || &quot;&quot;;
         }
 
         const conversion &#x3D; this.unitConversionService.convert(valueAsNumber, UnitBase.Standard, 1);

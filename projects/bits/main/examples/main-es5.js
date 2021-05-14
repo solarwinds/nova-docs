@@ -55061,8 +55061,10 @@
             var nanDisplay = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : "---";
             var isValidNumber = this.isValidNumber(conversion.value);
             var spacing = unit !== "generic" && isValidNumber ? " " : "";
-            var unitDisplay = isValidNumber ? this.getUnitDisplay(conversion, unit) : "";
-            return "".concat(this.getValueDisplay(conversion, plusSign, nanDisplay)).concat(spacing).concat(unitDisplay);
+            var unitDisplay = isValidNumber ? this.getUnitDisplay(conversion, unit) : ""; // The generic unit is not currently i18n friendly
+
+            var localizeValue = unit !== "generic";
+            return "".concat(this.getValueDisplay(conversion, plusSign, nanDisplay, localizeValue)).concat(spacing).concat(unitDisplay);
           }
           /**
            * Gets the converted value display string
@@ -55070,6 +55072,8 @@
            * @param conversion The result of an invocation of this service's convert method
            * @param plusSign Whether to prepend the display string with a '+'
            * @param nanDisplay The string to display in case the conversion result is NaN or Infinity
+           * @param localize Whether to localize the value for display. Note: It's not recommended to localize values for
+           *                 the "generic" unit, e.g. "1.1K" for 1100, as the "generic" unit is currently not i18n friendly
            *
            * @returns {string} The converted value display string
            */
@@ -55079,16 +55083,17 @@
           value: function getValueDisplay(conversion) {
             var plusSign = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
             var nanDisplay = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "---";
+            var localize = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : true;
 
             if (!this.isValidNumber(conversion.value)) {
               return nanDisplay;
             }
 
-            var outputNumber = parseFloat(conversion.value);
-            var prefix = plusSign && outputNumber > 0 ? "+" : "";
-            return "".concat(prefix).concat(outputNumber.toLocaleString(undefined, {
+            var outputValue = localize ? parseFloat(conversion.value).toLocaleString(undefined, {
               maximumFractionDigits: conversion.scale
-            }));
+            }) : conversion.value;
+            var prefix = plusSign && parseInt(conversion.value, 10) > 0 ? "+" : "";
+            return "".concat(prefix).concat(outputValue);
           }
           /**
            * Gets the converted unit display string
