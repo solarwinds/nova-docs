@@ -320,9 +320,9 @@
       UnitConversionPipeDocsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: UnitConversionPipeDocsComponent,
         selectors: [["ng-component"]],
-        decls: 78,
+        decls: 76,
         vars: 2,
-        consts: [["href", "../pipes/UnitConversionPipe.html#info", "target", "_parent"], ["href", "../miscellaneous/typealiases.html#UnitOption", "target", "_blank"], ["type", "warning", 3, "allowDismiss"], ["type", "info", 3, "allowDismiss"], ["href", "../injectables/UnitConversionService.html", "target", "_blank"], ["filenamePrefix", "unit-conversion-pipe-basic", "exampleTitle", "Basic Usage"]],
+        consts: [["href", "../pipes/UnitConversionPipe.html#info", "target", "_parent"], ["href", "../miscellaneous/typealiases.html#UnitOption", "target", "_blank"], ["type", "info", 3, "allowDismiss"], ["href", "../injectables/UnitConversionService.html", "target", "_blank"], ["filenamePrefix", "unit-conversion-pipe-basic", "exampleTitle", "Basic Usage"]],
         template: function UnitConversionPipeDocsComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
@@ -397,47 +397,35 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "nui-message", 2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "strong");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](26, " Under the hood, this pipe uses the ");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](27, "Note:");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](27, "code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](28, "a", 3);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](28, " The pipe will localize the output for all supported units except the \"generic\" unit. Localization for the \"generic\" unit is not yet supported.\n");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](29, "nui-message", 3);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](30, " Under the hood, this pipe uses the ");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](31, "code");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](32, "a", 4);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](33, "UnitConversionService");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](29, "UnitConversionService");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](34, ". If the pipe doesn't offer something that you need, such as separating the value and unit out into separate outputs, or you need to convert a value outside the context of a template, using the service directly may be a better option for you.\n");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](30, ". If the pipe doesn't offer something you need, such as separating the value and unit out into separate outputs or converting a value outside the context of a template, using the service directly may be a better option for you.\n");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](35, "h2");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](31, "h2");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](36, "Required Modules");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](32, "Required Modules");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](37, "ul");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](33, "ul");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](38, "li");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](34, "li");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](39, "code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](35, "code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](40, "NuiCommonModule");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](36, "NuiCommonModule");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -445,61 +433,73 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](41, "h2");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](37, "h2");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](42, "Basic Usage");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](38, "Basic Usage");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](39, "p");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](40, "To get started with using the pipe, take a look at the template source of the example below.");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](41, "h3");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](42, "Parameters");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](43, "p");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](44, "To get started with using the pipe, take a look at the template source of the example below.");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](44, "The pipe accepts the following parameters:");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](45, "h3");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](45, "ul");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](46, "Parameters");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](46, "li");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](47, "strong");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](47, "p");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](48, "The pipe accepts the following parameters:");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](48, "value");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](49, "ul");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](49, " - The value to be converted. ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](50, "li");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](51, "strong");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](52, "value");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](52, "scale");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](53, " - The value to be converted. ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](53, " - The decimal scale of the formatted value for specifying how many significant digits to display to the right of the decimal. Defaults to ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](54, "code");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](55, "0");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](54, "li");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](55, "strong");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](56, "scale");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](56, ". ");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](57, " - The decimal scale of the formatted value for specifying how many significant digits to display to the right of the decimal. Defaults to ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](57, "li");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](58, "code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](58, "strong");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](59, "0");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](59, "plusSign");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](60, ". ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](60, " - Boolean for specifying whether to prefix the output with a '+' when the source value is greater than zero. Defaults to false. ");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -507,51 +507,45 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](62, "strong");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](63, "plusSign");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](63, "unit");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](64, " - Boolean for specifying whether to prefix the output with a '+' when the source value is greater than zero. Defaults to false. ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](64, " - The basic unit to use for the conversion. Accepts arguments of type ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](65, "code");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](66, "a", 1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](67, "UnitOption");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](65, "li");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](66, "strong");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](67, "unit");
-
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](68, " - The basic unit to use for the conversion. Accepts arguments of type ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](68, ". Defaults to ");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](69, "code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](70, "a", 1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](70, "\"bytes\"");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](71, "UnitOption");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](71, ". ");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](72, ". Defaults to ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](72, "nui-message", 2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](73, "code");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](74, "\"bytes\"");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](73, " The pipe will localize the output for all supported units except the \"generic\" unit. Localization for the \"generic\" unit is not yet supported.\n");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](75, ". ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](74, "nui-example-wrapper", 4);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](76, "nui-example-wrapper", 5);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](77, "unit-conversion-pipe-basic-example");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](75, "unit-conversion-pipe-basic-example");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
           }
@@ -561,7 +555,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("allowDismiss", false);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](47);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("allowDismiss", false);
           }
