@@ -310,8 +310,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="71"
-                            class="link-to-prism">src/services/unit-conversion.service.ts:71</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="72"
+                            class="link-to-prism">src/services/unit-conversion.service.ts:72</a></div>
                 </td>
             </tr>
 
@@ -448,8 +448,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="105"
-                            class="link-to-prism">src/services/unit-conversion.service.ts:105</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="107"
+                            class="link-to-prism">src/services/unit-conversion.service.ts:107</a></div>
                 </td>
             </tr>
 
@@ -544,8 +544,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="88"
-                            class="link-to-prism">src/services/unit-conversion.service.ts:88</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="89"
+                            class="link-to-prism">src/services/unit-conversion.service.ts:89</a></div>
                 </td>
             </tr>
 
@@ -703,6 +703,7 @@ export class UnitConversionService {
         return {
             value: strValue,
             order: resultOrder,
+            scale,
         };
     }
 
@@ -738,8 +739,9 @@ export class UnitConversionService {
             return nanDisplay;
         }
 
-        const prefix &#x3D; plusSign &amp;&amp; parseInt(conversion.value, 10) &gt; 0 ? &quot;+&quot; : &quot;&quot;;
-        return &#x60;${prefix}${conversion.value}&#x60;;
+        const outputNumber &#x3D; parseFloat(conversion.value);
+        const prefix &#x3D; plusSign &amp;&amp; outputNumber &gt; 0 ? &quot;+&quot; : &quot;&quot;;
+        return &#x60;${prefix}${outputNumber.toLocaleString(undefined, { maximumFractionDigits: conversion.scale })}&#x60;;
     }
 
     /**

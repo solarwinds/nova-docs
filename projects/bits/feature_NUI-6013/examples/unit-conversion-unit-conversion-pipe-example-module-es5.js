@@ -359,7 +359,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, " (e.g. 1k for 1000), ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, " (e.g. 1K for 1000), ");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "code");
 

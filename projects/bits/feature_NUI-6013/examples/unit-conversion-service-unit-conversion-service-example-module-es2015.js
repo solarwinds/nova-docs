@@ -263,7 +263,7 @@ UnitConversionServiceDocsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODUL
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](64, "code");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](65, "\"generic\"");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](66, " (e.g. 1k for 1000), ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](66, " (e.g. 1K for 1000), ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](67, "code");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](68, "\"bytes\"");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();

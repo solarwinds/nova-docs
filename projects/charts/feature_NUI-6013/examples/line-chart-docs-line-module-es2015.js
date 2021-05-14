@@ -350,6 +350,87 @@ LineChartVisualTestComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__deco
 
 /***/ }),
 
+/***/ "VQsZ":
+/*!**********************************************************************************************************************************!*\
+  !*** ./examples/components/demo/chart-types/line/line-chart-with-large-values/line-chart-with-large-values.example.component.ts ***!
+  \**********************************************************************************************************************************/
+/*! exports provided: LineChartWithLargeValuesExampleComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LineChartWithLargeValuesExampleComponent", function() { return LineChartWithLargeValuesExampleComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _raw_loader_line_chart_with_large_values_example_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./line-chart-with-large-values.example.component.html */ "OMuH");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @nova-ui/charts */ "gKry");
+/* harmony import */ var moment_moment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! moment/moment */ "wd/R");
+/* harmony import */ var moment_moment__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(moment_moment__WEBPACK_IMPORTED_MODULE_4__);
+
+
+
+
+
+let LineChartWithLargeValuesExampleComponent = class LineChartWithLargeValuesExampleComponent {
+    constructor() {
+        this.chart = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["Chart"](new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["XYGrid"]());
+        this.chartAssist = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["ChartAssist"](this.chart);
+    }
+    ngOnInit() {
+        // providing chartAssist colors and markers to LineAccessors will share them with the line chart
+        const accessors = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["LineAccessors"](this.chartAssist.palette.standardColors, this.chartAssist.markers);
+        const renderer = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["LineRenderer"]();
+        const scales = {
+            x: new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["TimeScale"](),
+            y: new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["LinearScale"](),
+        };
+        const seriesSet = getData().map(d => (Object.assign(Object.assign({}, d), { accessors,
+            renderer,
+            scales })));
+        this.chart.getGrid().config().axis.left.fit = true;
+        // chart assist needs to be used to update data
+        this.chartAssist.update(seriesSet);
+    }
+};
+LineChartWithLargeValuesExampleComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
+        selector: "line-chart-with-large-values-example",
+        template: _raw_loader_line_chart_with_large_values_example_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
+    })
+], LineChartWithLargeValuesExampleComponent);
+
+/* Chart data */
+function getData() {
+    const format = "YYYY-MM-DDTHH:mm:ssZ";
+    return [
+        {
+            id: "series-1",
+            name: "Series 1",
+            data: [
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T15:14:29.909Z", format), y: 3000 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-27T15:14:29.909Z", format), y: 9500 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-29T15:14:29.909Z", format), y: 1500 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-31T15:14:29.909Z", format), y: 6000 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2017-01-03T15:14:29.909Z", format), y: 3500 },
+            ],
+        },
+        {
+            id: "series-2",
+            name: "Series 2",
+            data: [
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T15:14:29.909Z", format), y: 6000 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-27T15:14:29.909Z", format), y: 4000 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-29T15:14:29.909Z", format), y: 7000 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-31T15:14:29.909Z", format), y: 4500 },
+                { x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2017-01-03T15:14:29.909Z", format), y: 9000 },
+            ],
+        },
+    ];
+}
+
+
+/***/ }),
+
 /***/ "c9IB":
 /*!*****************************************************************************!*\
   !*** ./examples/components/demo/chart-types/line/chart-docs-line.module.ts ***!
@@ -376,8 +457,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _line_chart_visual_test_line_chart_visual_test_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./line-chart-visual-test/line-chart-visual-test.component */ "HNrN");
 /* harmony import */ var _line_chart_with_2y_axes_line_chart_with_2y_axes_example_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./line-chart-with-2y-axes/line-chart-with-2y-axes-example.component */ "A+Y2");
 /* harmony import */ var _line_chart_with_axis_labels_line_chart_with_axis_labels_example_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./line-chart-with-axis-labels/line-chart-with-axis-labels.example.component */ "9/Kd");
-/* harmony import */ var _line_chart_with_legend_line_chart_with_legend_example_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./line-chart-with-legend/line-chart-with-legend.example.component */ "ldeL");
-/* harmony import */ var _line_chart_with_rich_tile_legend_line_chart_with_rich_tile_legend_example_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./line-chart-with-rich-tile-legend/line-chart-with-rich-tile-legend.example.component */ "cEyI");
+/* harmony import */ var _line_chart_with_large_values_line_chart_with_large_values_example_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./line-chart-with-large-values/line-chart-with-large-values.example.component */ "VQsZ");
+/* harmony import */ var _line_chart_with_legend_line_chart_with_legend_example_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./line-chart-with-legend/line-chart-with-legend.example.component */ "ldeL");
+/* harmony import */ var _line_chart_with_rich_tile_legend_line_chart_with_rich_tile_legend_example_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./line-chart-with-rich-tile-legend/line-chart-with-rich-tile-legend.example.component */ "cEyI");
 
 
 
@@ -390,6 +472,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // eslint-disable-next-line max-len
+
 
 
 
@@ -486,12 +569,13 @@ ChartDocsLineModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
             _line_chart_basic_line_chart_basic_example_component__WEBPACK_IMPORTED_MODULE_8__["LineChartBasicExampleComponent"],
             _line_chart_test_line_chart_test_component__WEBPACK_IMPORTED_MODULE_12__["LineChartTestComponent"],
             _line_chart_visual_test_line_chart_visual_test_component__WEBPACK_IMPORTED_MODULE_13__["LineChartVisualTestComponent"],
-            _line_chart_with_legend_line_chart_with_legend_example_component__WEBPACK_IMPORTED_MODULE_16__["LineChartWithLegendExampleComponent"],
-            _line_chart_with_rich_tile_legend_line_chart_with_rich_tile_legend_example_component__WEBPACK_IMPORTED_MODULE_17__["LineChartWithRichTileLegendExampleComponent"],
+            _line_chart_with_legend_line_chart_with_legend_example_component__WEBPACK_IMPORTED_MODULE_17__["LineChartWithLegendExampleComponent"],
+            _line_chart_with_rich_tile_legend_line_chart_with_rich_tile_legend_example_component__WEBPACK_IMPORTED_MODULE_18__["LineChartWithRichTileLegendExampleComponent"],
             _line_chart_with_2y_axes_line_chart_with_2y_axes_example_component__WEBPACK_IMPORTED_MODULE_14__["LineChartWith2YAxesExampleComponent"],
             _line_chart_interrupted_basic_line_chart_interrupted_basic_example_component__WEBPACK_IMPORTED_MODULE_9__["LineChartInterruptedBasicExampleComponent"],
             _line_chart_interrupted_path_terminus_line_chart_interrupted_path_terminus_example_component__WEBPACK_IMPORTED_MODULE_11__["LineChartInterruptedPathTerminusExampleComponent"],
             _line_chart_interrupted_calculated_line_chart_interrupted_calculated_example_component__WEBPACK_IMPORTED_MODULE_10__["LineChartInterruptedCalculatedExampleComponent"],
+            _line_chart_with_large_values_line_chart_with_large_values_example_component__WEBPACK_IMPORTED_MODULE_16__["LineChartWithLargeValuesExampleComponent"],
         ],
         imports: [
             _common_demo_common_module__WEBPACK_IMPORTED_MODULE_6__["DemoCommonModule"],
@@ -1013,6 +1097,8 @@ var map = {
 	"./line-chart-with-2y-axes/line-chart-with-2y-axes-example.component.ts": "TxwX",
 	"./line-chart-with-axis-labels/line-chart-with-axis-labels.example.component.html": "5b7l",
 	"./line-chart-with-axis-labels/line-chart-with-axis-labels.example.component.ts": "IyFi",
+	"./line-chart-with-large-values/line-chart-with-large-values.example.component.html": "OMuH",
+	"./line-chart-with-large-values/line-chart-with-large-values.example.component.ts": "FULb",
 	"./line-chart-with-legend/line-chart-with-legend.example.component.html": "rG87",
 	"./line-chart-with-legend/line-chart-with-legend.example.component.ts": "2Waz",
 	"./line-chart-with-rich-tile-legend/line-chart-with-rich-tile-legend.example.component.html": "0X5f",

@@ -18556,7 +18556,7 @@ __webpack_require__.r(__webpack_exports__);
 class LinearScale extends _scale__WEBPACK_IMPORTED_MODULE_1__["Scale"] {
     constructor(id) {
         super(id);
-        this.formatters.tick = value => value + "";
+        this.formatters.tick = value => value === null || value === void 0 ? void 0 : value.toLocaleString();
     }
     createD3Scale() {
         return Object(d3_scale__WEBPACK_IMPORTED_MODULE_0__["scaleLinear"])();
