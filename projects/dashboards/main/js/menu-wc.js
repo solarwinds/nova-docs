@@ -1135,6 +1135,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/IProportionalWidgetConfig.html" data-type="entity-link">IProportionalWidgetConfig</a>
                             </li>
                             <li class="link">
+                                <a href="interfaces/IProportionalWidgetData.html" data-type="entity-link">IProportionalWidgetData</a>
+                            </li>
+                            <li class="link">
                                 <a href="interfaces/IProviderConfiguration.html" data-type="entity-link">IProviderConfiguration</a>
                             </li>
                             <li class="link">
