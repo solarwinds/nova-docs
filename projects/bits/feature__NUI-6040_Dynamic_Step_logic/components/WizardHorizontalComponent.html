@@ -52,7 +52,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/lib/wizard-v2/wizard-horizontal.component.ts</code>
+    <code>src/lib/wizard-v2/wizard-horizontal/wizard-horizontal.component.ts</code>
 </p>
 
 
@@ -110,7 +110,7 @@
 
             <tr>
                 <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>wizard.component.less</code></td>
+                <td class="col-md-9"><code>../wizard.component.less</code></td>
             </tr>
 
 
@@ -227,7 +227,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/lib/wizard-v2/wizard-horizontal.component.ts:43</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/lib/wizard-v2/wizard-horizontal/wizard-horizontal.component.ts:43</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -254,7 +254,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/lib/wizard-v2/wizard-horizontal.component.ts:38</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/lib/wizard-v2/wizard-horizontal/wizard-horizontal.component.ts:38</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -295,7 +295,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/lib/wizard-v2/wizard-horizontal.component.ts:31</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/lib/wizard-v2/wizard-horizontal/wizard-horizontal.component.ts:31</a></div>
                             </td>
                         </tr>
 
@@ -328,7 +328,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/lib/wizard-v2/wizard-horizontal.component.ts:29</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/lib/wizard-v2/wizard-horizontal/wizard-horizontal.component.ts:29</a></div>
                             </td>
                         </tr>
 
@@ -361,7 +361,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/lib/wizard-v2/wizard-horizontal.component.ts:32</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/lib/wizard-v2/wizard-horizontal/wizard-horizontal.component.ts:32</a></div>
                             </td>
                         </tr>
 
@@ -394,7 +394,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/lib/wizard-v2/wizard-horizontal.component.ts:30</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/lib/wizard-v2/wizard-horizontal/wizard-horizontal.component.ts:30</a></div>
                             </td>
                         </tr>
 
@@ -423,7 +423,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/lib/wizard-v2/wizard-horizontal.component.ts:34</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/lib/wizard-v2/wizard-horizontal/wizard-horizontal.component.ts:34</a></div>
                                 </td>
                             </tr>
 
@@ -434,7 +434,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/lib/wizard-v2/wizard-horizontal.component.ts:38</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/lib/wizard-v2/wizard-horizontal/wizard-horizontal.component.ts:38</a></div>
                                 </td>
                             </tr>
                     <tr>
@@ -485,14 +485,14 @@
 import {CdkStepper} from &quot;@angular/cdk/stepper&quot;;
 import {ChangeDetectionStrategy, Component, Input, ViewEncapsulation} from &quot;@angular/core&quot;;
 
-import {wizardAnimations} from &quot;./wizard-animations&quot;;
-import {WizardDirective} from &quot;./wizard-step.component&quot;;
+import {wizardAnimations} from &quot;../wizard-animations/wizard-animations&quot;;
+import { WizardDirective } from &quot;../wizard.directive&quot;;
 
 @Component({
     selector: &quot;nui-wizard-horizontal&quot;,
     exportAs: &quot;wizardHorizontal&quot;,
     templateUrl: &quot;wizard-horizontal.component.html&quot;,
-    styleUrls: [&quot;wizard.component.less&quot;],
+    styleUrls: [&quot;../wizard.component.less&quot;],
     host: {
         &quot;class&quot;: &quot;nui-wizard-horizontal-layout&quot;,
         &quot;[class.nui-wizard-label-position-end]&quot;: &quot;labelPosition &#x3D;&#x3D; &#x27;end&#x27;&quot;,
