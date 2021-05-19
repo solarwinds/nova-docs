@@ -209,7 +209,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/lib/wizard-v2/wizard-step.component.ts:59</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/lib/wizard-v2/wizard-step.component.ts:60</a></div>
                             </td>
                         </tr>
 
@@ -301,7 +301,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/lib/wizard-v2/wizard-step.component.ts:53</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/lib/wizard-v2/wizard-step.component.ts:54</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -337,8 +337,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="71"
-                            class="link-to-prism">src/lib/wizard-v2/wizard-step.component.ts:71</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="72"
+                            class="link-to-prism">src/lib/wizard-v2/wizard-step.component.ts:72</a></div>
                 </td>
             </tr>
 
@@ -434,7 +434,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/lib/wizard-v2/wizard-step.component.ts:59</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/lib/wizard-v2/wizard-step.component.ts:60</a></div>
                             </td>
                         </tr>
 
@@ -476,7 +476,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/lib/wizard-v2/wizard-step.component.ts:56</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/lib/wizard-v2/wizard-step.component.ts:57</a></div>
                             </td>
                         </tr>
 
@@ -510,6 +510,7 @@ import {
     forwardRef,
     Inject,
     Input,
+    OnDestroy,
     Optional,
     Output,
     QueryList,
@@ -520,7 +521,7 @@ import {
 } from &quot;@angular/core&quot;;
 import {FormControl, FormGroupDirective, NgForm} from &quot;@angular/forms&quot;;
 import {Subject} from &quot;rxjs&quot;;
-import {distinctUntilChanged, takeUntil} from &quot;rxjs/operators&quot;;
+import {distinctUntilChanged, startWith, takeUntil} from &quot;rxjs/operators&quot;;
 
 import {ErrorStateMatcher} from &quot;./error-state-matcher.provider&quot;;
 import {WizardStepFooterDirective} from &quot;./wizard-step-footer.directive&quot;;
@@ -578,11 +579,14 @@ export class WizardStepV2Component extends CdkStep implements ErrorStateMatcher 
 }
 
 @Directive({selector: &quot;[nuiWizard]&quot;, providers: [{provide: CdkStepper, useExisting: WizardDirective}]})
-export class WizardDirective extends CdkStepper implements AfterContentInit {
+export class WizardDirective extends CdkStepper implements AfterContentInit, OnDestroy {
     static ngAcceptInputTypeEditable: BooleanInput &#x3D; undefined;
     static ngAcceptInputTypeOptional: BooleanInput &#x3D; undefined;
     static ngAcceptInputTypeCompleted: BooleanInput &#x3D; undefined;
     static ngAcceptInputTypeHasError: BooleanInput &#x3D; undefined;
+
+    /** Override CdkStepper &#x27;steps&#x27; property to use WizardStepV2Component instead of CdkStep */
+    readonly steps: QueryList&lt;WizardStepV2Component&gt; &#x3D; new QueryList&lt;WizardStepV2Component&gt;();
 
     /** The list of step headers of the steps in the stepper. */
     @ViewChildren(WizardStepHeaderComponent) _stepHeader: QueryList&lt;WizardStepHeaderComponent&gt;;
@@ -590,13 +594,12 @@ export class WizardDirective extends CdkStepper implements AfterContentInit {
     @Output() readonly animationDone: EventEmitter&lt;void&gt; &#x3D; new EventEmitter&lt;void&gt;();
     /** Whether ripples should be disabled for the step headers. */
     @Input() disableRipple: boolean;
+
     /** Stream of animation &#x60;done&#x60; events when the body expands/collapses. */
     _animationDone &#x3D; new Subject&lt;AnimationEvent&gt;();
 
     /** Steps that the stepper holds. */
     @ContentChildren(WizardStepV2Component, {descendants: true}) _steps: QueryList&lt;WizardStepV2Component&gt;;
-    /** Override CdkStepper &#x27;steps&#x27; property to use WizardStepV2Component instead of CdkStep */
-    @ContentChildren(WizardStepV2Component, {descendants: true}) steps: QueryList&lt;WizardStepV2Component&gt;;
 
     /** The step that is selected. */
     @Input()
@@ -608,7 +611,13 @@ export class WizardDirective extends CdkStepper implements AfterContentInit {
         this.selectedIndex &#x3D; this.steps ? this.steps.toArray().indexOf(step) : -1;
     }
 
-    ngAfterContentInit() {
+    public ngAfterContentInit(): void {
+        this._steps.changes
+            .pipe(startWith(this._steps), takeUntil(this._destroyed))
+            .subscribe((steps: QueryList&lt;WizardStepV2Component&gt;) &#x3D;&gt; {
+                this.steps.reset(steps.filter(step &#x3D;&gt; step._stepper &#x3D;&#x3D;&#x3D; this));
+                this.steps.notifyOnChanges();
+            });
         this.steps.changes.pipe(takeUntil(this._destroyed))
             .subscribe(() &#x3D;&gt; this._stateChanged());
         this._animationDone.pipe(
@@ -624,9 +633,8 @@ export class WizardDirective extends CdkStepper implements AfterContentInit {
         });
     }
 
-    ngOnDestroy() {
-        this._destroyed.next();
-        this._destroyed.complete();
+    public ngOnDestroy(): void {
+        super.ngOnDestroy();
     }
 }
 </code></pre>

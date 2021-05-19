@@ -56973,6 +56973,9 @@
           _classCallCheck(this, WizardDirective);
 
           _this196 = _super40.apply(this, arguments);
+          /** Override CdkStepper 'steps' property to use WizardStepV2Component instead of CdkStep */
+
+          _this196.steps = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["QueryList"]();
           /** Event emitted when the current step is done transitioning in. */
 
           _this196.animationDone = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
@@ -56997,6 +57000,14 @@
           value: function ngAfterContentInit() {
             var _this197 = this;
 
+            this._steps.changes.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["startWith"])(this._steps), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["takeUntil"])(this._destroyed)).subscribe(function (steps) {
+              _this197.steps.reset(steps.filter(function (step) {
+                return step._stepper === _this197;
+              }));
+
+              _this197.steps.notifyOnChanges();
+            });
+
             this.steps.changes.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["takeUntil"])(this._destroyed)).subscribe(function () {
               return _this197._stateChanged();
             });
@@ -57015,9 +57026,7 @@
         }, {
           key: "ngOnDestroy",
           value: function ngOnDestroy() {
-            this._destroyed.next();
-
-            this._destroyed.complete();
+            _get(_getPrototypeOf(WizardDirective.prototype), "ngOnDestroy", this).call(this);
           }
         }]);
 
@@ -57039,15 +57048,12 @@
         contentQueries: function WizardDirective_ContentQueries(rf, ctx, dirIndex) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵcontentQuery"](dirIndex, WizardStepV2Component, 1);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵcontentQuery"](dirIndex, WizardStepV2Component, 1);
           }
 
           if (rf & 2) {
             var _t;
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx._steps = _t);
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx.steps = _t);
           }
         },
         viewQuery: function WizardDirective_Query(rf, ctx) {
