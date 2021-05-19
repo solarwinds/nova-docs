@@ -31715,7 +31715,7 @@ function DatePickerComponent_div_2_Template(rf, ctx) { if (rf & 1) {
 function DatePickerComponent_ng_template_5_Template(rf, ctx) { if (rf & 1) {
     const _r15 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "nui-date-picker-inner", 12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("update", function DatePickerComponent_ng_template_5_Template_nui_date_picker_inner_update_0_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r15); const ctx_r14 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r14.onUpdate($event); })("selectionDone", function DatePickerComponent_ng_template_5_Template_nui_date_picker_inner_selectionDone_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r15); const ctx_r16 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r16.overlay == null ? null : ctx_r16.overlay.hide(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("update", function DatePickerComponent_ng_template_5_Template_nui_date_picker_inner_update_0_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r15); const ctx_r14 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r14.onUpdate($event); })("selectionDone", function DatePickerComponent_ng_template_5_Template_nui_date_picker_inner_selectionDone_0_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r15); const ctx_r16 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r16.onSelectionDone($event); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "nui-day-picker", 13);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "nui-month-picker", 13);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "nui-year-picker", 13);
@@ -31801,7 +31801,7 @@ class DatePickerComponent {
             // and not keep its previous state.
             this.overlay.show$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["takeUntil"])(this.onDestroy$)).subscribe(_ => this._datePicker.refreshView());
             this.overlay.hide$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["takeUntil"])(this.onDestroy$)).subscribe(_ => {
-                const currentDateValid = moment_moment__WEBPACK_IMPORTED_MODULE_6___default()(this.value).isValid();
+                const currentDateValid = this.value.isValid();
                 if (!currentDateValid) {
                     this._datePicker.value = undefined;
                     this._datePicker.datepickerMode = "day";
@@ -31850,6 +31850,11 @@ class DatePickerComponent {
     }
     setErrorState(isInErrorState) {
         this.isInErrorState = isInErrorState;
+    }
+    onSelectionDone(value) {
+        var _a;
+        this.value = value;
+        (_a = this.overlay) === null || _a === void 0 ? void 0 : _a.hide();
     }
     updateTextboxValue(value = this._value) {
         if (!this.textbox || !value) {
