@@ -3494,6 +3494,7 @@
             componentType: DataSourceConfigurationComponent.lateLoadKey,
             properties: {
                 dataSourceProviders: [],
+                errorHandlingComponent: TableDataSourceErrorHandlingComponent.lateLoadKey,
             },
             providers: {
                 [WellKnownProviders.Converter]: {
@@ -4475,6 +4476,7 @@
     DashwizButtonsComponent,
     DataSourceConfigurationComponent,
     DataSourceConfigurationV2Component,
+    DataSourceErrorHandlingComponent,
     KpiTilesConfigurationComponent,
     EmbeddedContentConfigurationComponent,
     InfoMessageConfigurationComponent,
@@ -4486,6 +4488,7 @@
     TableColumnsConfigurationComponent,
     TableColumnsConfigurationV2Component,
     TableColumnConfigurationComponent,
+    TableDataSourceErrorHandlingComponent,
     DonutContentPercentageFormatterComponent,
     DonutContentPercentageConfigurationComponent,
     DonutContentSumFormatterComponent,
@@ -4547,33 +4550,18 @@
                         <td class="col-md-4">
                             <i>Default value : </i><code>[
     ...entryComponents,
-    DashwizButtonsComponent,
     DashwizComponent,
     DashwizStepComponent,
     WidgetEditorAccordionComponent,
-    WidgetConfiguratorSectionComponent,
-    DataSourceConfigurationComponent,
-    DataSourceConfigurationV2Component,
     ItemsDynamicComponent,
     ColorPickerComponent,
-    ConfiguratorComponent,
     ConfiguratorHeadingComponent,
-    WidgetConfiguratorSectionComponent,
-    WidgetEditorComponent,
-    WidgetClonerComponent,
     RefreshRateConfiguratorComponent,
     AddDataPipe,
     PizzagnaRootPipe,
     WidgetEditorAccordionFormStatePipe,
     WidgetConfiguratorSectionHeaderPipe,
     FormHeaderIconPipePipe,
-    GroupingConfigurationComponent,
-    EntityFormattingConfigurationComponent,
-    PercentageFormatterComponent,
-    ProportionalChartOptionsEditorV2Component,
-    DonutContentConfigurationComponent,
-    AggregatorMetricSelectorConfigurationComponent,
-    FieldMapperAggregatorConfiguratorComponent,
     DropAreaComponent,
 ]</code>
                         </td>

@@ -388,8 +388,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="42"
-                            class="link-to-prism">src/lib/components/layouts/base-layout.ts:42</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="43"
+                            class="link-to-prism">src/lib/components/layouts/base-layout.ts:43</a></div>
                 </td>
             </tr>
 
@@ -429,8 +429,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="47"
-                            class="link-to-prism">src/lib/components/layouts/base-layout.ts:47</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="48"
+                            class="link-to-prism">src/lib/components/layouts/base-layout.ts:48</a></div>
                 </td>
             </tr>
 
@@ -623,6 +623,7 @@ export abstract class BaseLayout implements IHasChangeDetector, OnChanges, DoChe
     public ngDoCheck(): void {
         if (this.checkNodeConfigs()) {
             this.updateNodeConfigs();
+            this.changeDetector.detectChanges();
         }
     }
 
