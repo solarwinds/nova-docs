@@ -18892,6 +18892,8 @@ __webpack_require__.r(__webpack_exports__);
 class WizardDirective extends _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_1__["CdkStepper"] {
     constructor() {
         super(...arguments);
+        /** Override CdkStepper 'steps' property to use WizardStepV2Component instead of CdkStep */
+        this.steps = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["QueryList"]();
         /** Event emitted when the current step is done transitioning in. */
         this.animationDone = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
         /** Event emitted when the selected step has changed. */
@@ -18907,6 +18909,12 @@ class WizardDirective extends _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_1__[
         this.selectedIndex = this.steps ? this.steps.toArray().indexOf(step) : -1;
     }
     ngAfterContentInit() {
+        this._steps.changes
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["startWith"])(this._steps), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeUntil"])(this._destroyed))
+            .subscribe((steps) => {
+            this.steps.reset(steps.filter(step => step._stepper === this));
+            this.steps.notifyOnChanges();
+        });
         this.steps.changes.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeUntil"])(this._destroyed))
             .subscribe(() => this._stateChanged());
         this._animationDone.pipe(
@@ -18919,6 +18927,9 @@ class WizardDirective extends _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_1__[
             }
         });
     }
+    ngOnDestroy() {
+        super.ngOnDestroy();
+    }
 }
 WizardDirective.ngAcceptInputTypeEditable = undefined;
 WizardDirective.ngAcceptInputTypeOptional = undefined;
@@ -18927,11 +18938,9 @@ WizardDirective.ngAcceptInputTypeHasError = undefined;
 WizardDirective.ɵfac = function WizardDirective_Factory(t) { return ɵWizardDirective_BaseFactory(t || WizardDirective); };
 WizardDirective.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({ type: WizardDirective, selectors: [["", "nuiWizard", ""]], contentQueries: function WizardDirective_ContentQueries(rf, ctx, dirIndex) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵcontentQuery"](dirIndex, _wizard_step_wizard_step_component__WEBPACK_IMPORTED_MODULE_5__["WizardStepV2Component"], 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵcontentQuery"](dirIndex, _wizard_step_wizard_step_component__WEBPACK_IMPORTED_MODULE_5__["WizardStepV2Component"], 1);
     } if (rf & 2) {
         let _t;
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx._steps = _t);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.steps = _t);
     } }, viewQuery: function WizardDirective_Query(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_wizard_step_header_wizard_step_header_component__WEBPACK_IMPORTED_MODULE_2__["WizardStepHeaderComponent"], 1);
     } if (rf & 2) {
