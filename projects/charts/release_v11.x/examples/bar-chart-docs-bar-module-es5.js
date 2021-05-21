@@ -1525,7 +1525,9 @@
               return d.y;
             };
 
-            var renderer = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["BarRenderer"]();
+            var renderer = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["BarRenderer"]({
+              highlightStrategy: new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["BarHighlightStrategy"]("x")
+            });
             var scales = {
               x: new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["TimeIntervalScale"](Object(moment_moment__WEBPACK_IMPORTED_MODULE_4__["duration"])(1, "days")),
               y: new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["LinearScale"]()

@@ -320,8 +320,8 @@
       UnitConversionPipeDocsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: UnitConversionPipeDocsComponent,
         selectors: [["ng-component"]],
-        decls: 74,
-        vars: 1,
+        decls: 76,
+        vars: 2,
         consts: [["href", "../pipes/UnitConversionPipe.html#info", "target", "_parent"], ["href", "../miscellaneous/typealiases.html#UnitOption", "target", "_blank"], ["type", "info", 3, "allowDismiss"], ["href", "../injectables/UnitConversionService.html", "target", "_blank"], ["filenamePrefix", "unit-conversion-pipe-basic", "exampleTitle", "Basic Usage"]],
         template: function UnitConversionPipeDocsComponent_Template(rf, ctx) {
           if (rf & 1) {
@@ -359,7 +359,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, " (e.g. 1k for 1000), ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, " (e.g. 1K for 1000), ");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "code");
 
@@ -409,7 +409,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](30, ". If the pipe doesn't offer something that you need, such as separating the value and unit out into separate outputs, or you need to convert a value outside the context of a template, using the service directly may be a better option for you.\n");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](30, ". If the pipe doesn't offer something you need, such as separating the value and unit out into separate outputs or converting a value outside the context of a template, using the service directly may be a better option for you.\n");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -537,9 +537,15 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](72, "nui-example-wrapper", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](72, "nui-message", 2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](73, "unit-conversion-pipe-basic-example");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](73, " The pipe will localize the output for all supported units except the \"generic\" unit. Localization for the \"generic\" unit is not yet supported.\n");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](74, "nui-example-wrapper", 4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](75, "unit-conversion-pipe-basic-example");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
           }
@@ -548,10 +554,14 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](25);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("allowDismiss", false);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](47);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("allowDismiss", false);
           }
         },
         directives: [_src_lib_message_message_component__WEBPACK_IMPORTED_MODULE_1__["MessageComponent"], _src_lib_docs_example_wrapper_example_wrapper_component__WEBPACK_IMPORTED_MODULE_2__["ExampleWrapperComponent"], _unit_conversion_basic_unit_conversion_pipe_basic_example_component__WEBPACK_IMPORTED_MODULE_3__["UnitConversionPipeBasicExampleComponent"]],
-        styles: ["[_nghost-%COMP%]   ul[_ngcontent-%COMP%] {\n  padding-left: 40px;\n}\n[_nghost-%COMP%]   ul[_ngcontent-%COMP%]   li[_ngcontent-%COMP%] {\n  list-style: disc;\n}\n[_nghost-%COMP%]   a[_ngcontent-%COMP%] {\n  cursor: pointer;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInVuaXQtY29udmVyc2lvbi1waXBlLWRvY3MuY29tcG9uZW50Lmxlc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFFUSxrQkFBQTtBQUFSO0FBRkE7RUFLWSxnQkFBQTtBQUFaO0FBTEE7RUFTUSxlQUFBO0FBRFIiLCJmaWxlIjoidW5pdC1jb252ZXJzaW9uLXBpcGUtZG9jcy5jb21wb25lbnQubGVzcyIsInNvdXJjZXNDb250ZW50IjpbIjpob3N0IHtcbiAgICB1bCB7XG4gICAgICAgIHBhZGRpbmctbGVmdDogNDBweDtcblxuICAgICAgICBsaSB7XG4gICAgICAgICAgICBsaXN0LXN0eWxlOiBkaXNjO1xuICAgICAgICB9XG4gICAgfVxuICAgIGEge1xuICAgICAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgfVxufVxuIl19 */"]
+        styles: ["ul[_ngcontent-%COMP%] {\n  padding-left: 40px;\n}\nul[_ngcontent-%COMP%]   li[_ngcontent-%COMP%] {\n  list-style: disc;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInVuaXQtY29udmVyc2lvbi1waXBlLWRvY3MuY29tcG9uZW50Lmxlc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxrQkFBQTtBQUNKO0FBRkE7RUFJUSxnQkFBQTtBQUNSIiwiZmlsZSI6InVuaXQtY29udmVyc2lvbi1waXBlLWRvY3MuY29tcG9uZW50Lmxlc3MiLCJzb3VyY2VzQ29udGVudCI6WyJ1bCB7XG4gICAgcGFkZGluZy1sZWZ0OiA0MHB4O1xuXG4gICAgbGkge1xuICAgICAgICBsaXN0LXN0eWxlOiBkaXNjO1xuICAgIH1cbn1cbiJdfQ== */"]
       });
       /***/
     }

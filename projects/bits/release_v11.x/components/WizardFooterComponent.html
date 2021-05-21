@@ -52,7 +52,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/lib/wizard-v2/wizard-footer.component.ts</code>
+    <code>src/lib/wizard-v2/wizard-footer/wizard-footer.component.ts</code>
 </p>
 
 
@@ -178,7 +178,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/lib/wizard-v2/wizard-footer.component.ts:21</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/lib/wizard-v2/wizard-footer/wizard-footer.component.ts:21</a></div>
                             </td>
                         </tr>
 
@@ -246,7 +246,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/lib/wizard-v2/wizard-footer.component.ts:21</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/lib/wizard-v2/wizard-footer/wizard-footer.component.ts:21</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -289,7 +289,7 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="42"
-                            class="link-to-prism">src/lib/wizard-v2/wizard-footer.component.ts:42</a></div>
+                            class="link-to-prism">src/lib/wizard-v2/wizard-footer/wizard-footer.component.ts:42</a></div>
                 </td>
             </tr>
 
@@ -330,7 +330,7 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="37"
-                            class="link-to-prism">src/lib/wizard-v2/wizard-footer.component.ts:37</a></div>
+                            class="link-to-prism">src/lib/wizard-v2/wizard-footer/wizard-footer.component.ts:37</a></div>
                 </td>
             </tr>
 
@@ -359,7 +359,7 @@ import {
     AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, Input, OnDestroy, ViewEncapsulation,
 } from &quot;@angular/core&quot;;
 
-import {WizardStepFooterDirective} from &quot;./wizard-step-footer.directive&quot;;
+import {WizardStepFooterDirective} from &quot;../wizard-step-footer.directive&quot;;
 
 @Component({
     selector: &quot;wizard-footer&quot;,
@@ -381,16 +381,16 @@ export class WizardFooterComponent implements FocusableOption, AfterViewInit, On
         private _elementRef: ElementRef&lt;HTMLElement&gt;
     ) {}
 
-    ngAfterViewInit() {
+    ngAfterViewInit(): void {
         this._focusMonitor.monitor(this._elementRef, true);
     }
 
-    ngOnDestroy() {
+    ngOnDestroy(): void {
         this._focusMonitor.stopMonitoring(this._elementRef);
     }
 
     /** Focuses the step footer. */
-    focus() {
+    focus(): void {
         this._focusMonitor.focusVia(this._elementRef, &quot;program&quot;);
     }
 

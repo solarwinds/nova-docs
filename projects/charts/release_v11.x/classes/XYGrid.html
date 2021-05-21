@@ -1056,8 +1056,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="262"
-                            class="link-to-prism">src/core/grid/xy-grid.ts:262</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="263"
+                            class="link-to-prism">src/core/grid/xy-grid.ts:263</a></div>
                 </td>
             </tr>
 
@@ -1099,8 +1099,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="323"
-                            class="link-to-prism">src/core/grid/xy-grid.ts:323</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="324"
+                            class="link-to-prism">src/core/grid/xy-grid.ts:324</a></div>
                 </td>
             </tr>
 
@@ -2436,12 +2436,13 @@ export class XYGrid extends Grid implements IGrid {
     public buildPlugins(chart: IChart): IChartPlugin[] {
         const plugins: IChartPlugin[] &#x3D; [];
 
-        if (this.config().interactive) {
+        const config &#x3D; this.config();
+        if (config.interactive) {
             plugins.push(new MouseInteractiveAreaPlugin(
-                new MouseInteractiveArea(this.getLasagna().getContainer(), this.getInteractiveArea(), this.config().cursor)));
+                new MouseInteractiveArea(this.getLasagna().getContainer(), this.getInteractiveArea(), config.cursor, config.dimension.margin)));
         }
 
-        if (this.config().interactionPlugins) {
+        if (config.interactionPlugins) {
             plugins.push(new InteractionLinePlugin());
             plugins.push(new InteractionLabelPlugin());
         }
@@ -2932,6 +2933,9 @@ export class XYGrid extends Grid implements IGrid {
 
         const tx &#x3D; this.config().dimension.margin.left;
         const ty &#x3D; this.config().dimension.margin.top;
+
+        // Note: This transform results in a firefox hack in MouseInteractiveArea in which
+        // the margins must be subtracted from the mouse event coordinates
         container.attr(&quot;transform&quot;, &#x60;translate(${tx}, ${ty})&#x60;);
     }
 

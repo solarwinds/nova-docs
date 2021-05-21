@@ -355,7 +355,7 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { IDataField, IDataFieldsConfig } from &quot;@nova-ui/bits&quot;;
-import { IAllAround } from &quot;@nova-ui/charts&quot;;
+import { IAllAround, IAccessors, IChartAssistSeries } from &quot;@nova-ui/charts&quot;;
 import { BehaviorSubject } from &quot;rxjs&quot;;
 
 import { IProportionalDonutContentAggregator } from &quot;../../functions/proportional-aggregators/types&quot;;
@@ -419,6 +419,10 @@ export interface IDonutContentConfig {
 
 export interface IProportionalDataFieldsConfig extends IDataFieldsConfig {
     chartSeriesDataFields$: BehaviorSubject&lt;IDataField[]&gt;;
+}
+
+export interface IProportionalWidgetData extends IChartAssistSeries&lt;IAccessors&gt; {
+    link?: string;
 }
 </code></pre>
     </div>
