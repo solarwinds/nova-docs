@@ -64,6 +64,12 @@
                             <a href="#ANIMATION_DELAY" title="src/lib/tooltip/tooltip.component.ts"><b>ANIMATION_DELAY</b>&nbsp;&nbsp;&nbsp;(src/.../tooltip.component.ts)</a>
                         </li>
                         <li>
+                            <a href="#ANNOUNCER_CLOSE_MESSAGE" title="src/lib/select-v2/constants.ts"><b>ANNOUNCER_CLOSE_MESSAGE</b>&nbsp;&nbsp;&nbsp;(src/.../constants.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#ANNOUNCER_OPEN_MESSAGE_SUFFIX" title="src/lib/select-v2/constants.ts"><b>ANNOUNCER_OPEN_MESSAGE_SUFFIX</b>&nbsp;&nbsp;&nbsp;(src/.../constants.ts)</a>
+                        </li>
+                        <li>
                             <a href="#containerPaddingsWithScroll" title="src/lib/paginator/paginator.component.ts"><b>containerPaddingsWithScroll</b>&nbsp;&nbsp;&nbsp;(src/.../paginator.component.ts)</a>
                         </li>
                         <li>
@@ -190,7 +196,10 @@
                             <a href="#unitConversionToken" title="src/constants/unit-conversion.constants.ts"><b>unitConversionToken</b>&nbsp;&nbsp;&nbsp;(src/.../unit-conversion.constants.ts)</a>
                         </li>
                         <li>
-                            <a href="#wizardAnimations" title="src/lib/wizard-v2/wizard-animations.ts"><b>wizardAnimations</b>&nbsp;&nbsp;&nbsp;(src/.../wizard-animations.ts)</a>
+                            <a href="#V_SCROLL_HEIGHT_BUFFER" title="src/lib/select-v2/base-select-v2.ts"><b>V_SCROLL_HEIGHT_BUFFER</b>&nbsp;&nbsp;&nbsp;(src/.../base-select-v2.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#wizardAnimations" title="src/lib/wizard-v2/wizard-animations/wizard-animations.ts"><b>wizardAnimations</b>&nbsp;&nbsp;&nbsp;(src/.../wizard-animations.ts)</a>
                         </li>
                     </ul>
                 </td>
@@ -344,6 +353,84 @@
 </div>
                     </td>
                 </tr>
+
+            </tbody>
+        </table>
+</section>
+    <h3>src/lib/select-v2/constants.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ANNOUNCER_CLOSE_MESSAGE"></a>
+                        <span class="name">
+                            <b>
+                            ANNOUNCER_CLOSE_MESSAGE</b>
+                            <a href="#ANNOUNCER_CLOSE_MESSAGE"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&quot;Dropdown closed&quot;</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ANNOUNCER_OPEN_MESSAGE_SUFFIX"></a>
+                        <span class="name">
+                            <b>
+                            ANNOUNCER_OPEN_MESSAGE_SUFFIX</b>
+                            <a href="#ANNOUNCER_OPEN_MESSAGE_SUFFIX"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&quot;options available&quot;</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="NUI_SELECT_V2_OPTION_PARENT_COMPONENT"></a>
+                        <span class="name">
+                            <b>
+                            NUI_SELECT_V2_OPTION_PARENT_COMPONENT</b>
+                            <a href="#NUI_SELECT_V2_OPTION_PARENT_COMPONENT"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new InjectionToken&lt;IOptionedComponent&gt;(&quot;NUI_SELECT_V2_OPTION_PARENT_COMPONENT&quot;)</code>
+                        </td>
+                    </tr>
+
 
             </tbody>
         </table>
@@ -570,6 +657,33 @@
                             <i>Default value : </i><code>{
     panelClass: OVERLAY_WITH_POPUP_STYLES_CLASS,
 }</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="V_SCROLL_HEIGHT_BUFFER"></a>
+                        <span class="name">
+                            <b>
+                            V_SCROLL_HEIGHT_BUFFER</b>
+                            <a href="#V_SCROLL_HEIGHT_BUFFER"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>10</code>
                         </td>
                     </tr>
 
@@ -1906,30 +2020,6 @@
             </tbody>
         </table>
 </section>
-    <h3>src/lib/select-v2/constants.ts</h3>
-    <section>
-    <h3></h3>        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="NUI_SELECT_V2_OPTION_PARENT_COMPONENT"></a>
-                        <span class="name">
-                            <b>
-                            NUI_SELECT_V2_OPTION_PARENT_COMPONENT</b>
-                            <a href="#NUI_SELECT_V2_OPTION_PARENT_COMPONENT"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>new InjectionToken&lt;IOptionedComponent&gt;(&quot;NUI_SELECT_V2_OPTION_PARENT_COMPONENT&quot;)</code>
-                        </td>
-                    </tr>
-
-
-            </tbody>
-        </table>
-</section>
     <h3>src/lib/overlay/constants.ts</h3>
     <section>
     <h3></h3>        <table class="table table-sm table-bordered">
@@ -2439,7 +2529,7 @@
                     <tr>
                         <td class="col-md-4">
                             <i>Default value : </i><code>{
-    generic: [&quot;&quot;, &quot;k&quot;, &quot;M&quot;, &quot;B&quot;, &quot;T&quot;, &quot;Qa&quot;, &quot;Qi&quot;, &quot;Sx&quot;, &quot;Sp&quot;],
+    generic: [&quot;&quot;, &quot;K&quot;, &quot;M&quot;, &quot;B&quot;, &quot;T&quot;, &quot;Qa&quot;, &quot;Qi&quot;, &quot;Sx&quot;, &quot;Sp&quot;],
     bytes: [&quot;B&quot;, &quot;KB&quot;, &quot;MB&quot;, &quot;GB&quot;, &quot;TB&quot;, &quot;PB&quot;, &quot;EB&quot;, &quot;ZB&quot;, &quot;YB&quot;],
     bytesPerSecond: [&quot;Bps&quot;, &quot;kBps&quot;, &quot;MBps&quot;, &quot;GBps&quot;, &quot;TBps&quot;, &quot;PBps&quot;, &quot;EBps&quot;, &quot;ZBps&quot;, &quot;YBps&quot;],
     bitsPerSecond: [&quot;bps&quot;, &quot;kbps&quot;, &quot;Mbps&quot;, &quot;Gpbs&quot;, &quot;Tbps&quot;, &quot;Pbps&quot;, &quot;Ebps&quot;, &quot;Zbps&quot;, &quot;Ybps&quot;],
@@ -2479,7 +2569,7 @@
             </tbody>
         </table>
 </section>
-    <h3>src/lib/wizard-v2/wizard-animations.ts</h3>
+    <h3>src/lib/wizard-v2/wizard-animations/wizard-animations.ts</h3>
     <section>
     <h3></h3>        <table class="table table-sm table-bordered">
             <tbody>
