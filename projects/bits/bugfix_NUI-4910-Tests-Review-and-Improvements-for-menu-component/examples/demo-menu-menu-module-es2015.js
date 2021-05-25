@@ -27,15 +27,19 @@ __webpack_require__.r(__webpack_exports__);
 class MenuVisualTestComponent {
     constructor() {
         this.itemsSource = [
-            { header: "Group 1", itemsSource: [
+            {
+                header: "Group 1",
+                itemsSource: [
                     { title: "Item 1", itemType: "action", action: this.actionDone },
                     { title: "Item 2", itemType: "action", action: () => alert("hello") },
                     { title: "Item 3", itemType: "action", action: this.actionWithParams.bind(this, 2) },
                     { title: "Item 4", itemType: "action", action: this.actionDone },
                     { title: "Item 5", itemType: "action", action: this.actionDone },
                     { title: "Item 6", itemType: "action", action: this.actionDone },
-                ] },
-            { itemsSource: [
+                ],
+            },
+            {
+                itemsSource: [
                     { title: "Item 7", itemType: "action", action: this.actionDone },
                     { title: "Item 8", itemType: "action", action: this.actionDone },
                     { title: "Item 9", itemType: "action", action: this.actionDone },
@@ -44,10 +48,13 @@ class MenuVisualTestComponent {
                     { title: "Item 12", itemType: "action", action: this.actionDone },
                     { title: "Item 13", itemType: "action", action: this.actionDone, disabled: true },
                     { title: "Item 14", itemType: "action", action: this.actionDone, itemClass: _nova_ui_bits__WEBPACK_IMPORTED_MODULE_0__["MenuActionType"].destructive },
-                ] },
+                ],
+            },
         ];
         this.itemsSourceVariations = [
-            { header: "section title", itemsSource: [
+            {
+                header: "section title",
+                itemsSource: [
                     { title: "Menu Item", itemType: "action", action: this.actionDone },
                     { title: "Hover me", itemType: "action", action: this.actionDone },
                     { title: "Selected menu item", isSelected: true },
@@ -57,9 +64,11 @@ class MenuVisualTestComponent {
                     { title: "Menu item with icon", itemType: "action", icon: "table" },
                     { title: "Link menu item", itemType: "link", url: "#button", disabled: true },
                     { title: "Export PDF", itemType: "link", icon: "export-pdf", url: "#button" },
-                ] },
+                ],
+            },
             {
-                header: "section 2 title", itemsSource: [
+                header: "section 2 title",
+                itemsSource: [
                     { title: "Menu Item1", itemType: "option", action: this.actionDone },
                     { title: "Menu Item2", itemType: "option", action: this.actionDone },
                     { title: "Menu Item3", itemType: "option", action: this.actionDone },
@@ -925,7 +934,7 @@ MenuAppendToBodyExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { Component } from \"@angular/core\";\nimport { IMenuGroup, MenuActionType } from \"@nova-ui/bits\";\n\n@Component({\n    selector: \"nui-menu-visual-test\",\n    templateUrl: \"./menu-visual-test.component.html\",\n})\nexport class MenuVisualTestComponent {\n\n    public itemsSource: IMenuGroup[] = [\n        {header: \"Group 1\", itemsSource: [\n            {title: \"Item 1\", itemType: \"action\", action: this.actionDone},\n            {title: \"Item 2\", itemType: \"action\", action: () => alert(\"hello\")},\n            {title: \"Item 3\", itemType: \"action\", action: this.actionWithParams.bind(this, 2)},\n            {title: \"Item 4\", itemType: \"action\", action: this.actionDone},\n            {title: \"Item 5\", itemType: \"action\", action: this.actionDone},\n            {title: \"Item 6\", itemType: \"action\", action: this.actionDone},\n        ]},\n        {itemsSource: [\n            {title: \"Item 7\", itemType: \"action\", action: this.actionDone},\n            {title: \"Item 8\", itemType: \"action\", action: this.actionDone},\n            {title: \"Item 9\", itemType: \"action\", action: this.actionDone},\n            {title: \"Item 10\", itemType: \"action\", action: this.actionDone},\n            {title: \"Item 11\", itemType: \"action\", action: this.actionDone},\n            {title: \"Item 12\", itemType: \"action\", action: this.actionDone},\n            {title: \"Item 13\", itemType: \"action\", action: this.actionDone, disabled: true},\n            {title: \"Item 14\", itemType: \"action\", action: this.actionDone, itemClass: MenuActionType.destructive},\n        ]},\n    ];\n\n    public itemsSourceVariations: IMenuGroup[] = [\n        {header: \"section title\", itemsSource: [\n            {title: \"Menu Item\", itemType: \"action\", action: this.actionDone},\n            {title: \"Hover me\", itemType: \"action\", action: this.actionDone},\n            {title: \"Selected menu item\", isSelected: true},\n            {title: \"Menu item\", itemType: \"switch\", checked: true},\n            {title: \"Menu disabled item with long text\", itemType: \"switch\", checked: false, disabled: true},\n            {title: \"Menu item with checkbox\", itemType: \"option\", disabled: true},\n            {title: \"Menu item with icon\", itemType: \"action\", icon: \"table\"},\n            {title: \"Link menu item\", itemType: \"link\", url: \"#button\", disabled: true},\n            {title: \"Export PDF\", itemType: \"link\", icon: \"export-pdf\", url: \"#button\"},\n        ]},\n        {\n            header: \"section 2 title\", itemsSource: [\n                {title: \"Menu Item1\", itemType: \"option\", action: this.actionDone},\n                {title: \"Menu Item2\", itemType: \"option\", action: this.actionDone},\n                {title: \"Menu Item3\", itemType: \"option\", action: this.actionDone},\n            ],\n        },\n    ];\n\n    public actionDone(): void {\n        console.log(\"Action Done\");\n    }\n\n    public actionWithParams(index: number) {\n        console.log(\"action\", this.itemsSource[0].itemsSource[index].title);\n    }\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import { Component } from \"@angular/core\";\nimport { IMenuGroup, MenuActionType } from \"@nova-ui/bits\";\n\n@Component({\n    selector: \"nui-menu-visual-test\",\n    templateUrl: \"./menu-visual-test.component.html\",\n})\nexport class MenuVisualTestComponent {\n\n    public itemsSource: IMenuGroup[] = [\n        {\n            header: \"Group 1\",\n            itemsSource: [\n                { title: \"Item 1\", itemType: \"action\", action: this.actionDone },\n                { title: \"Item 2\", itemType: \"action\", action: () => alert(\"hello\") },\n                { title: \"Item 3\", itemType: \"action\", action: this.actionWithParams.bind(this, 2) },\n                { title: \"Item 4\", itemType: \"action\", action: this.actionDone },\n                { title: \"Item 5\", itemType: \"action\", action: this.actionDone },\n                { title: \"Item 6\", itemType: \"action\", action: this.actionDone },\n            ],\n        },\n        {\n            itemsSource: [\n                { title: \"Item 7\", itemType: \"action\", action: this.actionDone },\n                { title: \"Item 8\", itemType: \"action\", action: this.actionDone },\n                { title: \"Item 9\", itemType: \"action\", action: this.actionDone },\n                { title: \"Item 10\", itemType: \"action\", action: this.actionDone },\n                { title: \"Item 11\", itemType: \"action\", action: this.actionDone },\n                { title: \"Item 12\", itemType: \"action\", action: this.actionDone },\n                { title: \"Item 13\", itemType: \"action\", action: this.actionDone, disabled: true },\n                { title: \"Item 14\", itemType: \"action\", action: this.actionDone, itemClass: MenuActionType.destructive },\n            ],\n        },\n    ];\n\n    public itemsSourceVariations: IMenuGroup[] = [\n        {\n            header: \"section title\",\n            itemsSource: [\n                { title: \"Menu Item\", itemType: \"action\", action: this.actionDone },\n                { title: \"Hover me\", itemType: \"action\", action: this.actionDone },\n                { title: \"Selected menu item\", isSelected: true },\n                { title: \"Menu item\", itemType: \"switch\", checked: true },\n                { title: \"Menu disabled item with long text\", itemType: \"switch\", checked: false, disabled: true },\n                { title: \"Menu item with checkbox\", itemType: \"option\", disabled: true },\n                { title: \"Menu item with icon\", itemType: \"action\", icon: \"table\" },\n                { title: \"Link menu item\", itemType: \"link\", url: \"#button\", disabled: true },\n                { title: \"Export PDF\", itemType: \"link\", icon: \"export-pdf\", url: \"#button\" },\n            ],\n        },\n        {\n            header: \"section 2 title\",\n            itemsSource: [\n                { title: \"Menu Item1\", itemType: \"option\", action: this.actionDone },\n                { title: \"Menu Item2\", itemType: \"option\", action: this.actionDone },\n                { title: \"Menu Item3\", itemType: \"option\", action: this.actionDone },\n            ],\n        },\n    ];\n\n    public actionDone(): void {\n        console.log(\"Action Done\");\n    }\n\n    public actionWithParams(index: number) {\n        console.log(\"action\", this.itemsSource[0].itemsSource[index].title);\n    }\n}\n");
 
 /***/ }),
 
