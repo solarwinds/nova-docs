@@ -17174,7 +17174,7 @@ TextboxNumberComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵd
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("nui-textbox--disabled", ctx.disabled)("has-error", ctx.hasError());
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("nui-textbox--disabled", ctx.disabled)("has-error", ctx.hasError() || ctx.isInErrorState);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngStyle", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction2"](17, _c1, ctx.customBoxWidth, ctx.customBoxWidth));
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
