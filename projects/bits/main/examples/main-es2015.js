@@ -5342,17 +5342,9 @@ function AppComponent_div_0_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](1, "nui-theme-switcher");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } }
-const hljs = __webpack_require__(/*! highlight.js/lib/core */ "ECCn");
 class AppComponent {
     constructor(themeSwitcherService) {
         this.themeSwitcherService = themeSwitcherService;
-    }
-    ngOnInit() {
-        hljs.registerLanguage("typescript", __webpack_require__(/*! highlight.js/lib/languages/typescript */ "r0Rl"));
-        hljs.registerLanguage("javascript", __webpack_require__(/*! highlight.js/lib/languages/javascript */ "TdF3"));
-        hljs.registerLanguage("xml", __webpack_require__(/*! highlight.js/lib/languages/xml */ "jctj"));
-        hljs.registerLanguage("json", __webpack_require__(/*! highlight.js/lib/languages/json */ "WtIr"));
-        hljs.registerLanguage("less", __webpack_require__(/*! highlight.js/lib/languages/less */ "GEZ5"));
     }
 }
 AppComponent.ɵfac = function AppComponent_Factory(t) { return new (t || AppComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_src_services_theme_switch_service__WEBPACK_IMPORTED_MODULE_0__["ThemeSwitchService"])); };
@@ -8794,6 +8786,7 @@ function ExampleWrapperComponent_div_7_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", !!ctx_r0.componentSources.less);
 } }
 const _c0 = ["*"];
+const hljs = __webpack_require__(/*! highlight.js/lib/core */ "ECCn");
 /**
  * @dynamic
  * @ignore
@@ -8807,6 +8800,11 @@ class ExampleWrapperComponent {
         this.showSource = false;
         this.availableThemes = ["light theme", "dark theme"];
         this.selectedTheme = this.availableThemes[0];
+        hljs.registerLanguage("typescript", __webpack_require__(/*! highlight.js/lib/languages/typescript */ "r0Rl"));
+        hljs.registerLanguage("javascript", __webpack_require__(/*! highlight.js/lib/languages/javascript */ "TdF3"));
+        hljs.registerLanguage("xml", __webpack_require__(/*! highlight.js/lib/languages/xml */ "jctj"));
+        hljs.registerLanguage("json", __webpack_require__(/*! highlight.js/lib/languages/json */ "WtIr"));
+        hljs.registerLanguage("less", __webpack_require__(/*! highlight.js/lib/languages/less */ "GEZ5"));
     }
     getTooltip() {
         return this.showSource ? "Hide source code" : "Show source code";
