@@ -17172,7 +17172,7 @@ TextboxNumberComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵd
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("nui-textbox--disabled", ctx.disabled)("has-error", ctx.hasError());
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("nui-textbox--disabled", ctx.disabled)("has-error", ctx.hasError() || ctx.isInErrorState);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngStyle", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction2"](17, _c1, ctx.customBoxWidth, ctx.customBoxWidth));
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
@@ -31623,10 +31623,10 @@ class NuiValidators {
      */
     static integer(unsigned = false) {
         const res = (control) => {
-            let integerRegex;
-            integerRegex = unsigned ? /^(0|[1-9]\d*)$/ : /^\-?(0|[1-9]\d*)$/;
+            const integerRegex = unsigned ? /^(0|[1-9]\d*)$/ : /^\-?(0|[1-9]\d*)$/;
             const errorObject = {
                 value: control.value,
+                invalidInteger: "Invalid integer value",
             };
             const valid = integerRegex.test(control.value);
             return valid ? null : errorObject;
