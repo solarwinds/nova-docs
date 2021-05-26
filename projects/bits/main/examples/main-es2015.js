@@ -3505,6 +3505,19 @@ class WizardComponent {
         const visibleStep = this.arraySteps[indexOfStep];
         visibleStep.hidden = false;
     }
+    resetStep(step) {
+        let index = this.arraySteps.findIndex((s) => s === step);
+        const length = this.arraySteps.length;
+        for (index; index < length; index++) {
+            const stepToReset = this.arraySteps[index];
+            stepToReset.visited = false;
+            stepToReset.complete = false;
+            stepToReset.icon = "step";
+        }
+        if (this.currentStep) {
+            this.currentStep.complete = false;
+        }
+    }
     goToStep(stepIndex) {
         this.selectStep(this.arraySteps[stepIndex]);
     }
