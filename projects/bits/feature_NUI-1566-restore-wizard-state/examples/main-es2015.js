@@ -18942,7 +18942,7 @@ class WizardDirective extends _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_1__[
     }
     ngAfterViewInit() {
         super.ngAfterViewInit();
-        if (this.stepsToRestore) {
+        if (this.state && this.state.steps) {
             this.restoreStepsState();
         }
     }
@@ -18951,17 +18951,21 @@ class WizardDirective extends _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_1__[
         super.ngOnDestroy();
     }
     restoreStepsState() {
-        const completed = [];
-        this.stepsToRestore.forEach((step, index) => {
+        var _a;
+        let lastCompletedIndex = -1;
+        const { steps } = this.state;
+        steps.forEach((step, index) => {
             const stepToRestore = this.steps.get(index);
+            if (step.stepControl && step.stepControl.invalid) {
+                return;
+            }
             if (stepToRestore && step.completed) {
                 stepToRestore.completed = step.completed;
-                completed.push(stepToRestore);
+                lastCompletedIndex++;
             }
         });
-        const len = completed.length;
-        if (len) {
-            completed[len - 1].select();
+        if (lastCompletedIndex > -1) {
+            (_a = this.steps.get(lastCompletedIndex)) === null || _a === void 0 ? void 0 : _a.select();
         }
         this["_changeDetectorRef"].detectChanges();
     }
@@ -18981,7 +18985,7 @@ WizardDirective.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDi
     } if (rf & 2) {
         let _t;
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx._stepHeader = _t);
-    } }, inputs: { disableRipple: "disableRipple", stepsToRestore: "stepsToRestore", selected: "selected" }, outputs: { animationDone: "animationDone", selectionChange: "selectionChange", wizardStepsStatusChanges: "wizardStepsStatusChanges" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵProvidersFeature"]([{ provide: _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_1__["CdkStepper"], useExisting: WizardDirective }]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInheritDefinitionFeature"]] });
+    } }, inputs: { disableRipple: "disableRipple", state: "state", selected: "selected" }, outputs: { animationDone: "animationDone", selectionChange: "selectionChange", wizardStepsStatusChanges: "wizardStepsStatusChanges" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵProvidersFeature"]([{ provide: _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_1__["CdkStepper"], useExisting: WizardDirective }]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInheritDefinitionFeature"]] });
 const ɵWizardDirective_BaseFactory = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetInheritedFactory"](WizardDirective);
 
 
