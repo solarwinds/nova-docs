@@ -8328,6 +8328,9 @@ class WizardStepV2Component extends _angular_cdk_stepper__WEBPACK_IMPORTED_MODUL
                 if (status === "INVALID") {
                     this.completed = false;
                 }
+                if (status === "VALID") {
+                    this.completed = true;
+                }
             });
         }
     }

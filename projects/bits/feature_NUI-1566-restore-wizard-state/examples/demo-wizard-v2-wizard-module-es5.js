@@ -1,5 +1,5 @@
 (function () {
-  var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10, _templateObject11, _templateObject12, _templateObject13, _templateObject14, _templateObject15, _templateObject16, _templateObject17, _templateObject18, _templateObject19, _templateObject20, _templateObject21, _templateObject22, _templateObject23, _templateObject24, _templateObject25, _templateObject26, _templateObject27, _templateObject28, _templateObject29, _templateObject30, _templateObject31, _templateObject32, _templateObject33, _templateObject34, _templateObject35, _templateObject36, _templateObject37, _templateObject38, _templateObject39, _templateObject40, _templateObject41, _templateObject42, _templateObject43, _templateObject44, _templateObject45, _templateObject46, _templateObject47, _templateObject48, _templateObject49, _templateObject50, _templateObject51, _templateObject52, _templateObject53, _templateObject54, _templateObject55, _templateObject56, _templateObject57, _templateObject58, _templateObject59, _templateObject60, _templateObject61, _templateObject62, _templateObject63, _templateObject64, _templateObject65, _templateObject66, _templateObject67, _templateObject68, _templateObject69, _templateObject70, _templateObject71, _templateObject72, _templateObject73, _templateObject74, _templateObject75, _templateObject76, _templateObject77, _templateObject78, _templateObject79, _templateObject80, _templateObject81, _templateObject82, _templateObject83, _templateObject84;
+  var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10, _templateObject11, _templateObject12, _templateObject13, _templateObject14, _templateObject15, _templateObject16, _templateObject17, _templateObject18, _templateObject19, _templateObject20, _templateObject21, _templateObject22, _templateObject23, _templateObject24, _templateObject25, _templateObject26, _templateObject27, _templateObject28, _templateObject29, _templateObject30, _templateObject31, _templateObject32, _templateObject33, _templateObject34, _templateObject35, _templateObject36, _templateObject37, _templateObject38, _templateObject39, _templateObject40, _templateObject41, _templateObject42, _templateObject43, _templateObject44, _templateObject45, _templateObject46, _templateObject47, _templateObject48, _templateObject49, _templateObject50, _templateObject51, _templateObject52, _templateObject53, _templateObject54, _templateObject55, _templateObject56, _templateObject57, _templateObject58, _templateObject59, _templateObject60, _templateObject61, _templateObject62, _templateObject63, _templateObject64, _templateObject65, _templateObject66, _templateObject67, _templateObject68, _templateObject69, _templateObject70, _templateObject71, _templateObject72, _templateObject73, _templateObject74, _templateObject75, _templateObject76, _templateObject77, _templateObject78, _templateObject79, _templateObject80, _templateObject81, _templateObject82, _templateObject83, _templateObject84, _templateObject85, _templateObject86, _templateObject87;
 
   function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
@@ -174,89 +174,131 @@
         }
       }
 
-      function WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_9_ng_container_0_Template(rf, ctx) {
+      function WizardRestoreStateExampleComponent_ng_template_0_form_1_nui_validation_message_9_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "nui-validation-message", 32);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](1, 34);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+      }
+
+      function WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_10_ng_container_0_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainer"](0);
         }
       }
 
-      function WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_9_ng_container_1_Template(rf, ctx) {
+      function WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_10_ng_container_1_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainer"](0);
         }
       }
 
-      function WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_9_Template(rf, ctx) {
-        if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_9_ng_container_0_Template, 1, 0, "ng-container", 34);
+      var _c14 = function _c14() {
+        return {
+          form: "personDetails"
+        };
+      };
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_9_ng_container_1_Template, 1, 0, "ng-container", 34);
+      function WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_10_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_10_ng_container_0_Template, 1, 0, "ng-container", 35);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_10_ng_container_1_Template, 1, 0, "ng-container", 36);
         }
 
         if (rf & 2) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          var _r15 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](35);
+          var _r18 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](38);
 
-          var _r13 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](33);
+          var _r16 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](36);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngTemplateOutlet", _r15);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngTemplateOutlet", _r18);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngTemplateOutlet", _r13);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngTemplateOutlet", _r16)("ngTemplateOutletContext", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](3, _c14));
         }
       }
 
-      function WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_15_ng_container_0_Template(rf, ctx) {
+      function WizardRestoreStateExampleComponent_ng_template_0_form_1_nui_validation_message_14_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "nui-validation-message", 32);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](1, 37);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+      }
+
+      function WizardRestoreStateExampleComponent_ng_template_0_form_1_nui_validation_message_17_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "nui-validation-message", 32);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](1, 38);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+      }
+
+      function WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_18_ng_container_0_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainer"](0);
         }
       }
 
-      function WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_15_ng_container_1_Template(rf, ctx) {
+      function WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_18_ng_container_1_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainer"](0);
         }
       }
 
-      function WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_15_ng_container_2_Template(rf, ctx) {
+      function WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_18_ng_container_2_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainer"](0);
         }
       }
 
-      function WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_15_Template(rf, ctx) {
-        if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_15_ng_container_0_Template, 1, 0, "ng-container", 34);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_15_ng_container_1_Template, 1, 0, "ng-container", 34);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_15_ng_container_2_Template, 1, 0, "ng-container", 34);
-        }
-
-        if (rf & 2) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-
-          var _r15 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](35);
-
-          var _r11 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](31);
-
-          var _r13 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](33);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngTemplateOutlet", _r15);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngTemplateOutlet", _r11);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngTemplateOutlet", _r13);
-        }
-      }
+      var _c19 = function _c19() {
+        return {
+          form: "organization"
+        };
+      };
 
       function WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_18_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_18_ng_container_0_Template, 1, 0, "ng-container", 35);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_18_ng_container_1_Template, 1, 0, "ng-container", 35);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_18_ng_container_2_Template, 1, 0, "ng-container", 36);
+        }
+
+        if (rf & 2) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+          var _r18 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](38);
+
+          var _r14 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](34);
+
+          var _r16 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](36);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngTemplateOutlet", _r18);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngTemplateOutlet", _r14);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngTemplateOutlet", _r16)("ngTemplateOutletContext", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](4, _c19));
+        }
+      }
+
+      function WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_21_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span");
 
@@ -266,80 +308,80 @@
         }
       }
 
-      function WizardRestoreStateExampleComponent_ng_template_0_form_1_nui_validation_message_21_Template(rf, ctx) {
+      function WizardRestoreStateExampleComponent_ng_template_0_form_1_nui_validation_message_24_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "nui-validation-message", 32);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](1, 35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](1, 39);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         }
       }
 
-      function WizardRestoreStateExampleComponent_ng_template_0_form_1_nui_validation_message_22_Template(rf, ctx) {
+      function WizardRestoreStateExampleComponent_ng_template_0_form_1_nui_validation_message_25_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "nui-validation-message", 36);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "nui-validation-message", 40);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](1, 37);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](1, 41);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         }
       }
 
-      function WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_29_ng_container_2_Template(rf, ctx) {
+      function WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_32_ng_container_2_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainer"](0);
         }
       }
 
-      function WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_29_ng_container_3_Template(rf, ctx) {
+      function WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_32_ng_container_3_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainer"](0);
         }
       }
 
-      var _c16 = function _c16() {
+      var _c24 = function _c24() {
         return ["contactDetails", "email"];
       };
 
-      function WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_29_Template(rf, ctx) {
+      function WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_32_Template(rf, ctx) {
         if (rf & 1) {
-          var _r25 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+          var _r28 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 38);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 42);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_29_Template_button_click_0_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r25);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_32_Template_button_click_0_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r28);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-            var _r6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](17);
+            var _r9 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](20);
 
-            var ctx_r24 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+            var ctx_r27 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
-            return ctx_r24.resetStep(_r6);
+            return ctx_r27.resetStep(_r9);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " Reset step ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_29_ng_container_2_Template, 1, 0, "ng-container", 34);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_32_ng_container_2_Template, 1, 0, "ng-container", 35);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_29_ng_container_3_Template, 1, 0, "ng-container", 34);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_32_ng_container_3_Template, 1, 0, "ng-container", 35);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "button", 39);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "button", 43);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_29_Template_button_click_4_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r25);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_32_Template_button_click_4_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r28);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-            var _r6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](17);
+            var _r9 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](20);
 
-            var ctx_r26 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+            var ctx_r29 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
-            return ctx_r26.completeWizard(_r6);
+            return ctx_r29.completeWizard(_r9);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, " Finish ");
@@ -350,29 +392,29 @@
         if (rf & 2) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          var _r15 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](35);
+          var _r18 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](38);
 
-          var _r11 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](31);
+          var _r14 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](34);
 
-          var ctx_r10 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+          var ctx_r13 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngTemplateOutlet", _r15);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngTemplateOutlet", _r18);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngTemplateOutlet", _r11);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngTemplateOutlet", _r14);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("disabled", ctx_r10.form.get(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](3, _c16)).invalid);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("disabled", ctx_r13.form.get(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](3, _c24)).invalid);
         }
       }
 
-      function WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_30_Template(rf, ctx) {
+      function WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_33_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 40);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 44);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " Previous ");
 
@@ -380,9 +422,21 @@
         }
       }
 
-      function WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_32_Template(rf, ctx) {
+      function WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_35_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 41);
+          var _r32 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 45);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_35_Template_button_click_0_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r32);
+
+            var form_r30 = ctx.form;
+
+            var ctx_r31 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
+
+            return ctx_r31.validateStep(form_r30);
+          });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Next");
 
@@ -390,18 +444,18 @@
         }
       }
 
-      function WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_34_Template(rf, ctx) {
+      function WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_37_Template(rf, ctx) {
         if (rf & 1) {
-          var _r28 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+          var _r34 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 42);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 46);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_34_Template_button_click_0_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r28);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_37_Template_button_click_0_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r34);
 
-            var ctx_r27 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
+            var ctx_r33 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](3);
 
-            return ctx_r27.closeDialog();
+            return ctx_r33.closeDialog();
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " Cancel ");
@@ -410,56 +464,52 @@
         }
       }
 
-      var _c17 = function _c17() {
+      var _c25 = function _c25() {
         return ["personDetails"];
       };
 
-      var _c18 = function _c18() {
+      var _c26 = function _c26() {
         return ["personDetails", "name"];
       };
 
-      var _c19 = function _c19() {
-        return ["user", "name"];
-      };
-
-      var _c20 = function _c20() {
+      var _c27 = function _c27() {
         return ["personDetails", "privacy"];
       };
 
-      var _c21 = function _c21() {
+      var _c28 = function _c28() {
         return ["organization"];
       };
 
-      var _c22 = function _c22() {
+      var _c29 = function _c29() {
         return ["organization", "title"];
       };
 
-      var _c23 = function _c23() {
+      var _c30 = function _c30() {
         return ["organization", "date"];
       };
 
-      var _c24 = function _c24() {
+      var _c31 = function _c31() {
         return ["contactDetails"];
       };
 
-      var _c25 = function _c25() {
+      var _c32 = function _c32() {
         return ["contactDetails", "options"];
       };
 
       function WizardRestoreStateExampleComponent_ng_template_0_form_1_Template(rf, ctx) {
         if (rf & 1) {
-          var _r30 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+          var _r36 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "form", 5);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "nui-wizard-horizontal", 6);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("wizardStepsStatusChanges", function WizardRestoreStateExampleComponent_ng_template_0_form_1_Template_nui_wizard_horizontal_wizardStepsStatusChanges_1_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r30);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r36);
 
-            var ctx_r29 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+            var ctx_r35 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
-            return ctx_r29.onWizardDestroy($event);
+            return ctx_r35.onWizardDestroy($event);
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "nui-wizard-step-v2", 7);
@@ -480,73 +530,79 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](9, WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_9_Template, 2, 2, "ng-template", 13);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](9, WizardRestoreStateExampleComponent_ng_template_0_form_1_nui_validation_message_9_Template, 2, 0, "nui-validation-message", 10);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "nui-wizard-step-v2", 14);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "nui-form-field", 15);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](12, "nui-textbox", 16);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "nui-form-field", 17);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](14, "nui-date-picker", 18);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](10, WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_10_Template, 2, 4, "ng-template", 13);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](15, WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_15_Template, 3, 3, "ng-template", 13);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "nui-wizard-step-v2", 14);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "nui-form-field", 15);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](13, "nui-textbox", 16);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](14, WizardRestoreStateExampleComponent_ng_template_0_form_1_nui_validation_message_14_Template, 2, 0, "nui-validation-message", 10);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "nui-form-field", 17);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](16, "nui-date-picker", 18);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](17, WizardRestoreStateExampleComponent_ng_template_0_form_1_nui_validation_message_17_Template, 2, 0, "nui-validation-message", 10);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](18, WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_18_Template, 3, 5, "ng-template", 13);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "nui-wizard-step-v2", 19, 20);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](21, WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_21_Template, 2, 0, "ng-template", 21);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "nui-form-field", 22);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](23, "nui-textbox", 23);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](24, WizardRestoreStateExampleComponent_ng_template_0_form_1_nui_validation_message_24_Template, 2, 0, "nui-validation-message", 10);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](25, WizardRestoreStateExampleComponent_ng_template_0_form_1_nui_validation_message_25_Template, 2, 0, "nui-validation-message", 24);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "nui-form-field", 25);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](27, "nui-select-v2", 26);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](28, "nui-select-v2-option", 27);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](29, "Item 1");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](30, "nui-select-v2-option", 28);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](31, "Item 2");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "nui-wizard-step-v2", 19, 20);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](18, WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_18_Template, 2, 0, "ng-template", 21);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "nui-form-field", 22);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](20, "nui-textbox", 23);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](21, WizardRestoreStateExampleComponent_ng_template_0_form_1_nui_validation_message_21_Template, 2, 0, "nui-validation-message", 10);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](22, WizardRestoreStateExampleComponent_ng_template_0_form_1_nui_validation_message_22_Template, 2, 0, "nui-validation-message", 24);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](32, WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_32_Template, 6, 4, "ng-template", 13);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "nui-form-field", 25);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](33, WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_33_Template, 2, 0, "ng-template", null, 29, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "nui-select-v2", 26);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](35, WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_35_Template, 2, 0, "ng-template", null, 30, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "nui-select-v2-option", 27);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](26, "Item 1");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](27, "nui-select-v2-option", 28);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](28, "Item 2");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](29, WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_29_Template, 6, 4, "ng-template", 13);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](30, WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_30_Template, 2, 0, "ng-template", null, 29, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](32, WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_32_Template, 2, 0, "ng-template", null, 30, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](34, WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_34_Template, 2, 0, "ng-template", null, 31, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](37, WizardRestoreStateExampleComponent_ng_template_0_form_1_ng_template_37_Template, 2, 0, "ng-template", null, 31, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -557,8 +613,11 @@
           var ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
           var tmp_4_0 = null;
+          var tmp_7_0 = null;
+          var tmp_10_0 = null;
           var tmp_12_0 = null;
-          var tmp_13_0 = null;
+          var tmp_15_0 = null;
+          var tmp_16_0 = null;
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("formGroup", ctx_r2.form);
 
@@ -568,75 +627,87 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("stepControl", ctx_r2.form.get(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](15, _c17)));
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("stepControl", ctx_r2.form.get(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](18, _c25)));
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("control", ctx_r2.form.get(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](16, _c18)));
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("control", ctx_r2.form.get(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](19, _c26)));
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", (tmp_4_0 = ctx_r2.form.get(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](17, _c19))) == null ? null : tmp_4_0.errors == null ? null : tmp_4_0.errors.required);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", (tmp_4_0 = ctx_r2.form.get(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](20, _c26))) == null ? null : tmp_4_0.errors == null ? null : tmp_4_0.errors.required);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("control", ctx_r2.form.get(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](18, _c20)));
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("control", ctx_r2.form.get(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](21, _c27)));
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", true);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("stepControl", ctx_r2.form.get(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](19, _c21)));
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("control", ctx_r2.form.get(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](20, _c22)));
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", (tmp_7_0 = ctx_r2.form.get(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](22, _c27))) == null ? null : tmp_7_0.errors == null ? null : tmp_7_0.errors.required);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("control", ctx_r2.form.get(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](21, _c23)));
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("stepControl", ctx_r2.form.get(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](23, _c28)));
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("stepControl", ctx_r2.form.get(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](22, _c24)));
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("control", ctx_r2.form.get(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](23, _c16)));
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("control", ctx_r2.form.get(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](24, _c29)));
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", (tmp_12_0 = ctx_r2.form.get(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](24, _c16))) == null ? null : tmp_12_0.errors == null ? null : tmp_12_0.errors.required);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", (tmp_10_0 = ctx_r2.form.get(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](25, _c29))) == null ? null : tmp_10_0.errors == null ? null : tmp_10_0.errors.required);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", (tmp_13_0 = ctx_r2.form.get(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](25, _c16))) == null ? null : tmp_13_0.errors == null ? null : tmp_13_0.errors.email);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("control", ctx_r2.form.get(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](26, _c30)));
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", (tmp_12_0 = ctx_r2.form.get(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](27, _c30))) == null ? null : tmp_12_0.errors == null ? null : tmp_12_0.errors.required);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("stepControl", ctx_r2.form.get(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](28, _c31)));
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("control", ctx_r2.form.get(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](29, _c24)));
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", (tmp_15_0 = ctx_r2.form.get(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](30, _c24))) == null ? null : tmp_15_0.errors == null ? null : tmp_15_0.errors.required);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("control", ctx_r2.form.get(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](26, _c25)));
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", (tmp_16_0 = ctx_r2.form.get(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](31, _c24))) == null ? null : tmp_16_0.errors == null ? null : tmp_16_0.errors.email);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("control", ctx_r2.form.get(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](32, _c32)));
         }
       }
 
       function WizardRestoreStateExampleComponent_ng_template_0_Template(rf, ctx) {
         if (rf & 1) {
-          var _r32 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+          var _r38 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "nui-dialog-header", 3);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("closed", function WizardRestoreStateExampleComponent_ng_template_0_Template_nui_dialog_header_closed_0_listener() {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r32);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r38);
 
-            var ctx_r31 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+            var ctx_r37 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-            return ctx_r31.closeDialog();
+            return ctx_r37.closeDialog();
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, WizardRestoreStateExampleComponent_ng_template_0_form_1_Template, 36, 27, "form", 4);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, WizardRestoreStateExampleComponent_ng_template_0_form_1_Template, 39, 33, "form", 4);
         }
 
         if (rf & 2) {
@@ -703,6 +774,13 @@
           key: "resetStep",
           value: function resetStep(step) {
             step.reset();
+          }
+        }, {
+          key: "validateStep",
+          value: function validateStep(formGroup) {
+            var _a;
+
+            (_a = this.form.get(formGroup)) === null || _a === void 0 ? void 0 : _a.markAllAsTouched();
           }
         }]);
 
@@ -782,27 +860,54 @@
             i18n_12 = $localize(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral([":\u241Ff0cfc81a3cf98503602b26d160e924777f03cbaf\u241F3208836223768257750: This is required "])));
           }
 
-          var i18n_14;
+          var i18n_15;
 
           if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-            var MSG_EXTERNAL_4650401672807616233$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_RESTORE_STATE_WIZARD_RESTORE_STATE_EXAMPLE_COMPONENT_TS____15 = goog.getMsg(" Invalid email ");
-            i18n_14 = MSG_EXTERNAL_4650401672807616233$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_RESTORE_STATE_WIZARD_RESTORE_STATE_EXAMPLE_COMPONENT_TS____15;
+            var MSG_EXTERNAL_3208836223768257750$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_RESTORE_STATE_WIZARD_RESTORE_STATE_EXAMPLE_COMPONENT_TS____16 = goog.getMsg(" This is required ");
+            i18n_15 = MSG_EXTERNAL_3208836223768257750$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_RESTORE_STATE_WIZARD_RESTORE_STATE_EXAMPLE_COMPONENT_TS____16;
           } else {
-            i18n_14 = $localize(_templateObject8 || (_templateObject8 = _taggedTemplateLiteral([":\u241F8a35a7091a6881fe2b61c13ce6c4c3fd6cbd797d\u241F4650401672807616233: Invalid email "])));
+            i18n_15 = $localize(_templateObject8 || (_templateObject8 = _taggedTemplateLiteral([":\u241Ff0cfc81a3cf98503602b26d160e924777f03cbaf\u241F3208836223768257750: This is required "])));
           }
 
-          return [["dialogWizard", ""], ["nui-button", "", "type", "button", 3, "click"], i18n_0, ["title", i18n_2, 3, "closed"], ["class", "dialog-body compact-mode", 3, "formGroup", 4, "ngIf"], [1, "dialog-body", "compact-mode", 3, "formGroup"], ["linear", "", 3, "state", "wizardStepsStatusChanges"], ["label", "Person Details", "formGroupName", "personDetails", 3, "stepControl"], ["caption", i18n_4, 1, "d-block", "mb-4", "mt-4", 3, "control"], ["formControlName", "name"], ["for", "required", 4, "ngIf"], [3, "control"], ["formControlName", "privacy", 3, "value"], ["wizardStepFooter", ""], ["label", "Organization", "formGroupName", "organization", 3, "stepControl"], ["caption", i18n_6, 1, "d-block", "mb-4", "mt-4", 3, "control"], ["formControlName", "title"], ["caption", "Date", 1, "d-block", "mt-4", 3, "control"], ["formControlName", "date"], ["formGroupName", "contactDetails", 3, "stepControl"], ["finalStep", ""], ["wizardStepLabel", ""], ["caption", i18n_8, 1, "d-block", "mb-4", "mt-4", 3, "control"], ["type", "email", "formControlName", "email"], ["for", "email", 4, "ngIf"], ["caption", "Select", 3, "control"], ["formControlName", "options"], ["value", "Item 1"], ["value", "Item 2"], ["wizardPrevious", ""], ["wizardNext", ""], ["wizardCancel", ""], ["for", "required"], i18n_10, [4, "ngTemplateOutlet"], i18n_12, ["for", "email"], i18n_14, ["nui-button", "", "type", "button", "displayStyle", "destructive", 3, "click"], ["type", "button", "nui-button", "", "displayStyle", "primary", 3, "disabled", "click"], ["type", "button", "nuiWizardPrevious", "", "nui-button", "", "icon", "caret-left"], ["nuiWizardNext", "", "type", "button", "nui-button", "", "displayStyle", "primary", "icon", "caret-right", "iconRight", "true"], ["type", "button", "nui-button", "", 3, "click"]];
+          var i18n_17;
+
+          if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+            var MSG_EXTERNAL_3208836223768257750$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_RESTORE_STATE_WIZARD_RESTORE_STATE_EXAMPLE_COMPONENT_TS____18 = goog.getMsg(" This is required ");
+            i18n_17 = MSG_EXTERNAL_3208836223768257750$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_RESTORE_STATE_WIZARD_RESTORE_STATE_EXAMPLE_COMPONENT_TS____18;
+          } else {
+            i18n_17 = $localize(_templateObject9 || (_templateObject9 = _taggedTemplateLiteral([":\u241Ff0cfc81a3cf98503602b26d160e924777f03cbaf\u241F3208836223768257750: This is required "])));
+          }
+
+          var i18n_20;
+
+          if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+            var MSG_EXTERNAL_3208836223768257750$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_RESTORE_STATE_WIZARD_RESTORE_STATE_EXAMPLE_COMPONENT_TS____21 = goog.getMsg(" This is required ");
+            i18n_20 = MSG_EXTERNAL_3208836223768257750$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_RESTORE_STATE_WIZARD_RESTORE_STATE_EXAMPLE_COMPONENT_TS____21;
+          } else {
+            i18n_20 = $localize(_templateObject10 || (_templateObject10 = _taggedTemplateLiteral([":\u241Ff0cfc81a3cf98503602b26d160e924777f03cbaf\u241F3208836223768257750: This is required "])));
+          }
+
+          var i18n_22;
+
+          if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+            var MSG_EXTERNAL_4650401672807616233$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_RESTORE_STATE_WIZARD_RESTORE_STATE_EXAMPLE_COMPONENT_TS____23 = goog.getMsg(" Invalid email ");
+            i18n_22 = MSG_EXTERNAL_4650401672807616233$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_RESTORE_STATE_WIZARD_RESTORE_STATE_EXAMPLE_COMPONENT_TS____23;
+          } else {
+            i18n_22 = $localize(_templateObject11 || (_templateObject11 = _taggedTemplateLiteral([":\u241F8a35a7091a6881fe2b61c13ce6c4c3fd6cbd797d\u241F4650401672807616233: Invalid email "])));
+          }
+
+          return [["dialogWizard", ""], ["nui-button", "", "type", "button", 3, "click"], i18n_0, ["title", i18n_2, 3, "closed"], ["class", "dialog-body compact-mode", 3, "formGroup", 4, "ngIf"], [1, "dialog-body", "compact-mode", 3, "formGroup"], ["linear", "", 3, "state", "wizardStepsStatusChanges"], ["label", "Person Details", "formGroupName", "personDetails", 3, "stepControl"], ["caption", i18n_4, 1, "d-block", "mb-4", "mt-4", 3, "control"], ["formControlName", "name"], ["for", "required", 4, "ngIf"], [3, "control"], ["formControlName", "privacy", 3, "value"], ["wizardStepFooter", ""], ["label", "Organization", "formGroupName", "organization", 3, "stepControl"], ["caption", i18n_6, 1, "d-block", "mb-4", "mt-4", 3, "control"], ["formControlName", "title"], ["caption", "Date", 1, "d-block", "mt-4", 3, "control"], ["formControlName", "date"], ["formGroupName", "contactDetails", 3, "stepControl"], ["finalStep", ""], ["wizardStepLabel", ""], ["caption", i18n_8, 1, "d-block", "mb-4", "mt-4", 3, "control"], ["type", "email", "formControlName", "email"], ["for", "email", 4, "ngIf"], ["caption", "Select", 3, "control"], ["formControlName", "options"], ["value", "Item 1"], ["value", "Item 2"], ["wizardPrevious", ""], ["wizardNext", ""], ["wizardCancel", ""], ["for", "required"], i18n_10, i18n_12, [4, "ngTemplateOutlet"], [4, "ngTemplateOutlet", "ngTemplateOutletContext"], i18n_15, i18n_17, i18n_20, ["for", "email"], i18n_22, ["nui-button", "", "type", "button", "displayStyle", "destructive", 3, "click"], ["type", "button", "nui-button", "", "displayStyle", "primary", 3, "disabled", "click"], ["type", "button", "nuiWizardPrevious", "", "nui-button", "", "icon", "caret-left"], ["nuiWizardNext", "", "type", "button", "nui-button", "", "displayStyle", "primary", "icon", "caret-right", "iconRight", "true", 3, "click"], ["type", "button", "nui-button", "", 3, "click"]];
         },
         template: function WizardRestoreStateExampleComponent_Template(rf, ctx) {
           if (rf & 1) {
-            var _r33 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+            var _r39 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, WizardRestoreStateExampleComponent_ng_template_0_Template, 2, 1, "ng-template", null, 0, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "button", 1);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function WizardRestoreStateExampleComponent_Template_button_click_2_listener() {
-              _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r33);
+              _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r39);
 
               var _r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](1);
 
@@ -1351,7 +1456,7 @@
         _createClass(WizardRemoveStepExampleComponent, [{
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            this.addStep(this.normalStep, $localize(_templateObject9 || (_templateObject9 = _taggedTemplateLiteral(["Normal step"]))));
+            this.addStep(this.normalStep, $localize(_templateObject12 || (_templateObject12 = _taggedTemplateLiteral(["Normal step"]))));
           }
         }, {
           key: "addStep",
@@ -1398,7 +1503,7 @@
             var MSG_EXTERNAL_1726131819944962604$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_REMOVE_STEP_WIZARD_REMOVE_STEP_EXAMPLE_COMPONENT_TS_2 = goog.getMsg(" Remove step dynamically ");
             i18n_1 = MSG_EXTERNAL_1726131819944962604$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_REMOVE_STEP_WIZARD_REMOVE_STEP_EXAMPLE_COMPONENT_TS_2;
           } else {
-            i18n_1 = $localize(_templateObject10 || (_templateObject10 = _taggedTemplateLiteral([":\u241F0204750c4ece2a4fc149e671dd2c3ba82298f9ac\u241F1726131819944962604: Remove step dynamically "])));
+            i18n_1 = $localize(_templateObject13 || (_templateObject13 = _taggedTemplateLiteral([":\u241F0204750c4ece2a4fc149e671dd2c3ba82298f9ac\u241F1726131819944962604: Remove step dynamically "])));
           }
 
           var i18n_3;
@@ -1407,7 +1512,7 @@
             var MSG_EXTERNAL_2900895229541262648$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_REMOVE_STEP_WIZARD_REMOVE_STEP_EXAMPLE_COMPONENT_TS__4 = goog.getMsg("Hi! I'm a step added dynamically using a TemplateRef by clicking a button from the first step !");
             i18n_3 = MSG_EXTERNAL_2900895229541262648$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_REMOVE_STEP_WIZARD_REMOVE_STEP_EXAMPLE_COMPONENT_TS__4;
           } else {
-            i18n_3 = $localize(_templateObject11 || (_templateObject11 = _taggedTemplateLiteral([":\u241F256cc8ce36c7ece03c014ef84736f10288179f3f\u241F2900895229541262648:Hi! I'm a step added dynamically using a TemplateRef by clicking a button from the first step !"])));
+            i18n_3 = $localize(_templateObject14 || (_templateObject14 = _taggedTemplateLiteral([":\u241F256cc8ce36c7ece03c014ef84736f10288179f3f\u241F2900895229541262648:Hi! I'm a step added dynamically using a TemplateRef by clicking a button from the first step !"])));
           }
 
           var i18n_5;
@@ -1416,7 +1521,7 @@
             var MSG_EXTERNAL_4074000604906025359$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_REMOVE_STEP_WIZARD_REMOVE_STEP_EXAMPLE_COMPONENT_TS__6 = goog.getMsg("Hi! You can add next step dynamically");
             i18n_5 = MSG_EXTERNAL_4074000604906025359$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_REMOVE_STEP_WIZARD_REMOVE_STEP_EXAMPLE_COMPONENT_TS__6;
           } else {
-            i18n_5 = $localize(_templateObject12 || (_templateObject12 = _taggedTemplateLiteral([":\u241F9dfa7b9ebe128bde7cab896a85986ebb450f99f7\u241F4074000604906025359:Hi! You can add next step dynamically"])));
+            i18n_5 = $localize(_templateObject15 || (_templateObject15 = _taggedTemplateLiteral([":\u241F9dfa7b9ebe128bde7cab896a85986ebb450f99f7\u241F4074000604906025359:Hi! You can add next step dynamically"])));
           }
 
           return [["wizard", ""], [4, "ngFor", "ngForOf"], ["dynamicStep", ""], ["normalStep", ""], [1, "d-flex"], [1, ""], [1, "nui-textbox--bold", 3, "ngStyle"], [3, "minValue"], ["number", ""], ["displayStyle", "destructive", "nui-button", "", "type", "button", 1, "ml-3", "h-25", "align-self-end", 3, "disabled", "click"], i18n_1, ["wizardStepLabel", ""], [4, "ngTemplateOutlet"], ["wizardStepFooter", ""], [4, "ngIf"], ["type", "button", "nuiWizardPrevious", "", "nui-button", "", "icon", "caret-left"], ["nuiWizardNext", "", "type", "button", "nui-button", "", "displayStyle", "primary", "icon", "caret-right", "iconRight", "true"], i18n_3, i18n_5, ["nui-button", "", "type", "button", 3, "click"]];
@@ -1636,7 +1741,7 @@
             var MSG_EXTERNAL_8373557087720397153$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_HORIZONTAL_LAYOUT_WIZARD_HORIZONTAL_EXAMPLE_COMPONENT_TS_1 = goog.getMsg("First step");
             i18n_0 = MSG_EXTERNAL_8373557087720397153$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_HORIZONTAL_LAYOUT_WIZARD_HORIZONTAL_EXAMPLE_COMPONENT_TS_1;
           } else {
-            i18n_0 = $localize(_templateObject13 || (_templateObject13 = _taggedTemplateLiteral([":\u241F9170783b7882b9260aea1a22ae5cf2407fa3e64f\u241F8373557087720397153:First step"])));
+            i18n_0 = $localize(_templateObject16 || (_templateObject16 = _taggedTemplateLiteral([":\u241F9170783b7882b9260aea1a22ae5cf2407fa3e64f\u241F8373557087720397153:First step"])));
           }
 
           var i18n_2;
@@ -1645,7 +1750,7 @@
             var MSG_EXTERNAL_8675920705208401217$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_HORIZONTAL_LAYOUT_WIZARD_HORIZONTAL_EXAMPLE_COMPONENT_TS_3 = goog.getMsg("This is the first step of our horizontal wizard");
             i18n_2 = MSG_EXTERNAL_8675920705208401217$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_HORIZONTAL_LAYOUT_WIZARD_HORIZONTAL_EXAMPLE_COMPONENT_TS_3;
           } else {
-            i18n_2 = $localize(_templateObject14 || (_templateObject14 = _taggedTemplateLiteral([":\u241Fc9bf00bfbb1b8a6e46eb4e43075cf64abecea307\u241F8675920705208401217:This is the first step of our horizontal wizard"])));
+            i18n_2 = $localize(_templateObject17 || (_templateObject17 = _taggedTemplateLiteral([":\u241Fc9bf00bfbb1b8a6e46eb4e43075cf64abecea307\u241F8675920705208401217:This is the first step of our horizontal wizard"])));
           }
 
           var i18n_4;
@@ -1654,7 +1759,7 @@
             var MSG_EXTERNAL_5385737502167048240$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_HORIZONTAL_LAYOUT_WIZARD_HORIZONTAL_EXAMPLE_COMPONENT_TS_5 = goog.getMsg("Final step");
             i18n_4 = MSG_EXTERNAL_5385737502167048240$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_HORIZONTAL_LAYOUT_WIZARD_HORIZONTAL_EXAMPLE_COMPONENT_TS_5;
           } else {
-            i18n_4 = $localize(_templateObject15 || (_templateObject15 = _taggedTemplateLiteral([":\u241F0de8f1dbd57123d294729d71fd278eaf936d4a2b\u241F5385737502167048240:Final step"])));
+            i18n_4 = $localize(_templateObject18 || (_templateObject18 = _taggedTemplateLiteral([":\u241F0de8f1dbd57123d294729d71fd278eaf936d4a2b\u241F5385737502167048240:Final step"])));
           }
 
           var i18n_6;
@@ -1663,7 +1768,7 @@
             var MSG_EXTERNAL_7100330853882173244$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_HORIZONTAL_LAYOUT_WIZARD_HORIZONTAL_EXAMPLE_COMPONENT_TS_7 = goog.getMsg("We finally reached our last step");
             i18n_6 = MSG_EXTERNAL_7100330853882173244$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_HORIZONTAL_LAYOUT_WIZARD_HORIZONTAL_EXAMPLE_COMPONENT_TS_7;
           } else {
-            i18n_6 = $localize(_templateObject16 || (_templateObject16 = _taggedTemplateLiteral([":\u241F414c233c4cbaae1a74728ed5d64304bbd36cdbe5\u241F7100330853882173244:We finally reached our last step"])));
+            i18n_6 = $localize(_templateObject19 || (_templateObject19 = _taggedTemplateLiteral([":\u241F414c233c4cbaae1a74728ed5d64304bbd36cdbe5\u241F7100330853882173244:We finally reached our last step"])));
           }
 
           return [["label", i18n_0], i18n_2, ["wizardStepFooter", ""], ["label", i18n_4], i18n_6, ["wizardPrevious", ""], ["wizardNext", ""], [4, "ngTemplateOutlet"], ["type", "button", "nuiWizardPrevious", "", "nui-button", "", "icon", "caret-left"], ["nuiWizardNext", "", "type", "button", "nui-button", "", "displayStyle", "primary", "icon", "caret-right", "iconRight", "true"]];
@@ -1907,7 +2012,7 @@
             var MSG_EXTERNAL_5890833044137447416$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_BUSY_WIZARD_BUSY_EXAMPLE_COMPONENT_TS_1 = goog.getMsg("Welcome!");
             i18n_0 = MSG_EXTERNAL_5890833044137447416$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_BUSY_WIZARD_BUSY_EXAMPLE_COMPONENT_TS_1;
           } else {
-            i18n_0 = $localize(_templateObject17 || (_templateObject17 = _taggedTemplateLiteral([":\u241F356501fb47a7de720e71263c3d1cce5d6e681c4b\u241F5890833044137447416:Welcome!"])));
+            i18n_0 = $localize(_templateObject20 || (_templateObject20 = _taggedTemplateLiteral([":\u241F356501fb47a7de720e71263c3d1cce5d6e681c4b\u241F5890833044137447416:Welcome!"])));
           }
 
           var i18n_2;
@@ -1916,7 +2021,7 @@
             var MSG_EXTERNAL_5530604904987545137$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_BUSY_WIZARD_BUSY_EXAMPLE_COMPONENT_TS_3 = goog.getMsg("Check box with help text");
             i18n_2 = MSG_EXTERNAL_5530604904987545137$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_BUSY_WIZARD_BUSY_EXAMPLE_COMPONENT_TS_3;
           } else {
-            i18n_2 = $localize(_templateObject18 || (_templateObject18 = _taggedTemplateLiteral([":\u241Fc42399c4f4c441cd575f6140076703ec297e247b\u241F5530604904987545137:Check box with help text"])));
+            i18n_2 = $localize(_templateObject21 || (_templateObject21 = _taggedTemplateLiteral([":\u241Fc42399c4f4c441cd575f6140076703ec297e247b\u241F5530604904987545137:Check box with help text"])));
           }
 
           var i18n_4;
@@ -1925,7 +2030,7 @@
             var MSG_EXTERNAL_829155627086234075$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_BUSY_WIZARD_BUSY_EXAMPLE_COMPONENT_TS_5 = goog.getMsg("This is some help text");
             i18n_4 = MSG_EXTERNAL_829155627086234075$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_BUSY_WIZARD_BUSY_EXAMPLE_COMPONENT_TS_5;
           } else {
-            i18n_4 = $localize(_templateObject19 || (_templateObject19 = _taggedTemplateLiteral([":\u241Fba785d6cbb33a003a3ce1d20077ba67264374284\u241F829155627086234075:This is some help text"])));
+            i18n_4 = $localize(_templateObject22 || (_templateObject22 = _taggedTemplateLiteral([":\u241Fba785d6cbb33a003a3ce1d20077ba67264374284\u241F829155627086234075:This is some help text"])));
           }
 
           var i18n_6;
@@ -1934,7 +2039,7 @@
             var MSG_EXTERNAL_4625037880137307880$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_BUSY_WIZARD_BUSY_EXAMPLE_COMPONENT_TS_7 = goog.getMsg("Check box with help text ");
             i18n_6 = MSG_EXTERNAL_4625037880137307880$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_BUSY_WIZARD_BUSY_EXAMPLE_COMPONENT_TS_7;
           } else {
-            i18n_6 = $localize(_templateObject20 || (_templateObject20 = _taggedTemplateLiteral([":\u241F024d88393c1563cabdfa0002d665402e5d1c2ee7\u241F4625037880137307880:Check box with help text "])));
+            i18n_6 = $localize(_templateObject23 || (_templateObject23 = _taggedTemplateLiteral([":\u241F024d88393c1563cabdfa0002d665402e5d1c2ee7\u241F4625037880137307880:Check box with help text "])));
           }
 
           var i18n_8;
@@ -1943,7 +2048,7 @@
             var MSG_EXTERNAL_3295360311351903086$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_BUSY_WIZARD_BUSY_EXAMPLE_COMPONENT_TS_9 = goog.getMsg("Plain checkbox ");
             i18n_8 = MSG_EXTERNAL_3295360311351903086$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_BUSY_WIZARD_BUSY_EXAMPLE_COMPONENT_TS_9;
           } else {
-            i18n_8 = $localize(_templateObject21 || (_templateObject21 = _taggedTemplateLiteral([":\u241F6f7c537fd525c525de94695e18592749f58f597b\u241F3295360311351903086:Plain checkbox "])));
+            i18n_8 = $localize(_templateObject24 || (_templateObject24 = _taggedTemplateLiteral([":\u241F6f7c537fd525c525de94695e18592749f58f597b\u241F3295360311351903086:Plain checkbox "])));
           }
 
           var i18n_10;
@@ -1952,7 +2057,7 @@
             var MSG_EXTERNAL_25258399261550967$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_BUSY_WIZARD_BUSY_EXAMPLE_COMPONENT_TS_11 = goog.getMsg("Data is loading from remote server...");
             i18n_10 = MSG_EXTERNAL_25258399261550967$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_BUSY_WIZARD_BUSY_EXAMPLE_COMPONENT_TS_11;
           } else {
-            i18n_10 = $localize(_templateObject22 || (_templateObject22 = _taggedTemplateLiteral([":\u241Fdc0a65d80c4379ceca3424563f96da6b49156f5c\u241F25258399261550967:Data is loading from remote server..."])));
+            i18n_10 = $localize(_templateObject25 || (_templateObject25 = _taggedTemplateLiteral([":\u241Fdc0a65d80c4379ceca3424563f96da6b49156f5c\u241F25258399261550967:Data is loading from remote server..."])));
           }
 
           var i18n_12;
@@ -1961,7 +2066,7 @@
             var MSG_EXTERNAL_5760615285289112280$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_BUSY_WIZARD_BUSY_EXAMPLE_COMPONENT_TS_13 = goog.getMsg("Toggle busy on current step");
             i18n_12 = MSG_EXTERNAL_5760615285289112280$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_BUSY_WIZARD_BUSY_EXAMPLE_COMPONENT_TS_13;
           } else {
-            i18n_12 = $localize(_templateObject23 || (_templateObject23 = _taggedTemplateLiteral([":\u241F4b5cefe4cdf44c6487b4f166461d54d331e7896d\u241F5760615285289112280:Toggle busy on current step"])));
+            i18n_12 = $localize(_templateObject26 || (_templateObject26 = _taggedTemplateLiteral([":\u241F4b5cefe4cdf44c6487b4f166461d54d331e7896d\u241F5760615285289112280:Toggle busy on current step"])));
           }
 
           return [["nui-busy", "", 1, "example-container", 3, "busy"], [1, "busy-content"], ["wizardStepLabel", ""], i18n_0, ["wizardStepFooter", ""], ["name", "nui-demo-checkbox", "title", i18n_2, "hint", i18n_4, "required", "true", 3, "value"], i18n_6, ["name", "nui-demo-checkbox-plain", 3, "checked", "value"], i18n_8, ["wizardPrevious", ""], ["wizardNext", ""], ["id", "nui-demo-spinner", "size", "large", "message", i18n_10], ["nui-button", "", "type", "button", "id", "nui-demo-busy-button", 3, "click"], i18n_12, [4, "ngTemplateOutlet"], ["type", "button", "nuiWizardPrevious", "", "nui-button", "", "icon", "caret-left"], ["nuiWizardNext", "", "type", "button", "nui-button", "", "displayStyle", "primary", "icon", "caret-right", "iconRight", "true"]];
@@ -2247,7 +2352,7 @@
             var MSG_EXTERNAL_8373557087720397153$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_FOOTER_WIZARD_CUSTOM_FOOTER_EXAMPLE_COMPONENT_TS_1 = goog.getMsg("First step");
             i18n_0 = MSG_EXTERNAL_8373557087720397153$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_FOOTER_WIZARD_CUSTOM_FOOTER_EXAMPLE_COMPONENT_TS_1;
           } else {
-            i18n_0 = $localize(_templateObject24 || (_templateObject24 = _taggedTemplateLiteral([":\u241F9170783b7882b9260aea1a22ae5cf2407fa3e64f\u241F8373557087720397153:First step"])));
+            i18n_0 = $localize(_templateObject27 || (_templateObject27 = _taggedTemplateLiteral([":\u241F9170783b7882b9260aea1a22ae5cf2407fa3e64f\u241F8373557087720397153:First step"])));
           }
 
           var i18n_2;
@@ -2256,7 +2361,7 @@
             var MSG_EXTERNAL_8675920705208401217$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_FOOTER_WIZARD_CUSTOM_FOOTER_EXAMPLE_COMPONENT_TS_3 = goog.getMsg("This is the first step of our horizontal wizard");
             i18n_2 = MSG_EXTERNAL_8675920705208401217$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_FOOTER_WIZARD_CUSTOM_FOOTER_EXAMPLE_COMPONENT_TS_3;
           } else {
-            i18n_2 = $localize(_templateObject25 || (_templateObject25 = _taggedTemplateLiteral([":\u241Fc9bf00bfbb1b8a6e46eb4e43075cf64abecea307\u241F8675920705208401217:This is the first step of our horizontal wizard"])));
+            i18n_2 = $localize(_templateObject28 || (_templateObject28 = _taggedTemplateLiteral([":\u241Fc9bf00bfbb1b8a6e46eb4e43075cf64abecea307\u241F8675920705208401217:This is the first step of our horizontal wizard"])));
           }
 
           var i18n_4;
@@ -2265,7 +2370,7 @@
             var MSG_EXTERNAL_5385737502167048240$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_FOOTER_WIZARD_CUSTOM_FOOTER_EXAMPLE_COMPONENT_TS_5 = goog.getMsg("Final step");
             i18n_4 = MSG_EXTERNAL_5385737502167048240$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_FOOTER_WIZARD_CUSTOM_FOOTER_EXAMPLE_COMPONENT_TS_5;
           } else {
-            i18n_4 = $localize(_templateObject26 || (_templateObject26 = _taggedTemplateLiteral([":\u241F0de8f1dbd57123d294729d71fd278eaf936d4a2b\u241F5385737502167048240:Final step"])));
+            i18n_4 = $localize(_templateObject29 || (_templateObject29 = _taggedTemplateLiteral([":\u241F0de8f1dbd57123d294729d71fd278eaf936d4a2b\u241F5385737502167048240:Final step"])));
           }
 
           var i18n_6;
@@ -2274,7 +2379,7 @@
             var MSG_EXTERNAL_7100330853882173244$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_FOOTER_WIZARD_CUSTOM_FOOTER_EXAMPLE_COMPONENT_TS_7 = goog.getMsg("We finally reached our last step");
             i18n_6 = MSG_EXTERNAL_7100330853882173244$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_FOOTER_WIZARD_CUSTOM_FOOTER_EXAMPLE_COMPONENT_TS_7;
           } else {
-            i18n_6 = $localize(_templateObject27 || (_templateObject27 = _taggedTemplateLiteral([":\u241F414c233c4cbaae1a74728ed5d64304bbd36cdbe5\u241F7100330853882173244:We finally reached our last step"])));
+            i18n_6 = $localize(_templateObject30 || (_templateObject30 = _taggedTemplateLiteral([":\u241F414c233c4cbaae1a74728ed5d64304bbd36cdbe5\u241F7100330853882173244:We finally reached our last step"])));
           }
 
           var i18n_8;
@@ -2283,7 +2388,7 @@
             var MSG_EXTERNAL_3668697390496092496$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_FOOTER_WIZARD_CUSTOM_FOOTER_EXAMPLE_COMPONENT_TS__9 = goog.getMsg("Custom button 1");
             i18n_8 = MSG_EXTERNAL_3668697390496092496$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_FOOTER_WIZARD_CUSTOM_FOOTER_EXAMPLE_COMPONENT_TS__9;
           } else {
-            i18n_8 = $localize(_templateObject28 || (_templateObject28 = _taggedTemplateLiteral([":\u241F96e3b7d5379a74e0cfd2a2afd2b82a1f24ad4085\u241F3668697390496092496:Custom button 1"])));
+            i18n_8 = $localize(_templateObject31 || (_templateObject31 = _taggedTemplateLiteral([":\u241F96e3b7d5379a74e0cfd2a2afd2b82a1f24ad4085\u241F3668697390496092496:Custom button 1"])));
           }
 
           var i18n_10;
@@ -2292,7 +2397,7 @@
             var MSG_EXTERNAL_5882938439796417832$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_FOOTER_WIZARD_CUSTOM_FOOTER_EXAMPLE_COMPONENT_TS__11 = goog.getMsg("This is some custom content added in the footer for our first step");
             i18n_10 = MSG_EXTERNAL_5882938439796417832$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_FOOTER_WIZARD_CUSTOM_FOOTER_EXAMPLE_COMPONENT_TS__11;
           } else {
-            i18n_10 = $localize(_templateObject29 || (_templateObject29 = _taggedTemplateLiteral([":\u241F14c7cd9caddd910b1fe744e22aea16613de15369\u241F5882938439796417832:This is some custom content added in the footer for our first step"])));
+            i18n_10 = $localize(_templateObject32 || (_templateObject32 = _taggedTemplateLiteral([":\u241F14c7cd9caddd910b1fe744e22aea16613de15369\u241F5882938439796417832:This is some custom content added in the footer for our first step"])));
           }
 
           var i18n_12;
@@ -2301,7 +2406,7 @@
             var MSG_EXTERNAL_42274725056941112$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_FOOTER_WIZARD_CUSTOM_FOOTER_EXAMPLE_COMPONENT_TS__13 = goog.getMsg("Custom button 2");
             i18n_12 = MSG_EXTERNAL_42274725056941112$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_FOOTER_WIZARD_CUSTOM_FOOTER_EXAMPLE_COMPONENT_TS__13;
           } else {
-            i18n_12 = $localize(_templateObject30 || (_templateObject30 = _taggedTemplateLiteral([":\u241Fb8e6835f3c34197445b33db7dd9a4daade3a9149\u241F42274725056941112:Custom button 2"])));
+            i18n_12 = $localize(_templateObject33 || (_templateObject33 = _taggedTemplateLiteral([":\u241Fb8e6835f3c34197445b33db7dd9a4daade3a9149\u241F42274725056941112:Custom button 2"])));
           }
 
           var i18n_14;
@@ -2310,7 +2415,7 @@
             var MSG_EXTERNAL_8428719337002417226$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_FOOTER_WIZARD_CUSTOM_FOOTER_EXAMPLE_COMPONENT_TS__15 = goog.getMsg("This is some custom content added in the footer for out second step");
             i18n_14 = MSG_EXTERNAL_8428719337002417226$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_FOOTER_WIZARD_CUSTOM_FOOTER_EXAMPLE_COMPONENT_TS__15;
           } else {
-            i18n_14 = $localize(_templateObject31 || (_templateObject31 = _taggedTemplateLiteral([":\u241Fe380bb9480efe4e0787f56afdc1874c83218d0d3\u241F8428719337002417226:This is some custom content added in the footer for out second step"])));
+            i18n_14 = $localize(_templateObject34 || (_templateObject34 = _taggedTemplateLiteral([":\u241Fe380bb9480efe4e0787f56afdc1874c83218d0d3\u241F8428719337002417226:This is some custom content added in the footer for out second step"])));
           }
 
           return [["label", i18n_0], i18n_2, ["wizardStepFooter", ""], ["label", i18n_4], i18n_6, ["wizardPrevious", ""], ["wizardNext", ""], [1, "custom-footer", "step_1"], [4, "ngTemplateOutlet"], ["nui-button", "", "type", "button", "icon", "add"], i18n_8, i18n_10, [1, "custom-footer", "step_2"], ["nui-button", "", "type", "button", "icon", "remove"], i18n_12, i18n_14, ["type", "button", "nuiWizardPrevious", "", "nui-button", "", "icon", "caret-left"], ["nuiWizardNext", "", "type", "button", "nui-button", "", "displayStyle", "primary", "icon", "caret-right", "iconRight", "true"]];
@@ -2903,7 +3008,7 @@
         _createClass(WizardDynamicExampleComponent, [{
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            this.addStep(this.dynamicTemplate1, $localize(_templateObject32 || (_templateObject32 = _taggedTemplateLiteral(["My first dynamic step"]))));
+            this.addStep(this.dynamicTemplate1, $localize(_templateObject35 || (_templateObject35 = _taggedTemplateLiteral(["My first dynamic step"]))));
           }
         }, {
           key: "toggleStep",
@@ -2950,7 +3055,7 @@
             var MSG_EXTERNAL_7057102079154255396$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_DYNAMIC_WIZARD_DYNAMIC_EXAMPLE_COMPONENT_TS_2 = goog.getMsg("Normal step");
             i18n_1 = MSG_EXTERNAL_7057102079154255396$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_DYNAMIC_WIZARD_DYNAMIC_EXAMPLE_COMPONENT_TS_2;
           } else {
-            i18n_1 = $localize(_templateObject33 || (_templateObject33 = _taggedTemplateLiteral([":\u241F4c3fab8d69b61816e7bdb18941b4f57a499c1618\u241F7057102079154255396:Normal step"])));
+            i18n_1 = $localize(_templateObject36 || (_templateObject36 = _taggedTemplateLiteral([":\u241F4c3fab8d69b61816e7bdb18941b4f57a499c1618\u241F7057102079154255396:Normal step"])));
           }
 
           var i18n_3;
@@ -2959,7 +3064,7 @@
             var MSG_EXTERNAL_4074000604906025359$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_DYNAMIC_WIZARD_DYNAMIC_EXAMPLE_COMPONENT_TS_4 = goog.getMsg("Hi! You can add next step dynamically");
             i18n_3 = MSG_EXTERNAL_4074000604906025359$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_DYNAMIC_WIZARD_DYNAMIC_EXAMPLE_COMPONENT_TS_4;
           } else {
-            i18n_3 = $localize(_templateObject34 || (_templateObject34 = _taggedTemplateLiteral([":\u241F9dfa7b9ebe128bde7cab896a85986ebb450f99f7\u241F4074000604906025359:Hi! You can add next step dynamically"])));
+            i18n_3 = $localize(_templateObject37 || (_templateObject37 = _taggedTemplateLiteral([":\u241F9dfa7b9ebe128bde7cab896a85986ebb450f99f7\u241F4074000604906025359:Hi! You can add next step dynamically"])));
           }
 
           var i18n_5;
@@ -2968,7 +3073,7 @@
             var MSG_EXTERNAL_7677587117161478042$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_DYNAMIC_WIZARD_DYNAMIC_EXAMPLE_COMPONENT_TS_6 = goog.getMsg("Added dynamically");
             i18n_5 = MSG_EXTERNAL_7677587117161478042$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_DYNAMIC_WIZARD_DYNAMIC_EXAMPLE_COMPONENT_TS_6;
           } else {
-            i18n_5 = $localize(_templateObject35 || (_templateObject35 = _taggedTemplateLiteral([":\u241Fe8b043308e5746251c9d64a33aa7c6050291d341\u241F7677587117161478042:Added dynamically"])));
+            i18n_5 = $localize(_templateObject38 || (_templateObject38 = _taggedTemplateLiteral([":\u241Fe8b043308e5746251c9d64a33aa7c6050291d341\u241F7677587117161478042:Added dynamically"])));
           }
 
           var i18n_7;
@@ -2977,7 +3082,7 @@
             var MSG_EXTERNAL_6832495856074687708$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_DYNAMIC_WIZARD_DYNAMIC_EXAMPLE_COMPONENT_TS__8 = goog.getMsg("Hi! I'm dynamic step that can be enabled/disabled programmatically via the toggle button under the wizard !");
             i18n_7 = MSG_EXTERNAL_6832495856074687708$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_DYNAMIC_WIZARD_DYNAMIC_EXAMPLE_COMPONENT_TS__8;
           } else {
-            i18n_7 = $localize(_templateObject36 || (_templateObject36 = _taggedTemplateLiteral([":\u241Fcf3947ced955759e4df64b8c7d22970f4dcb8162\u241F6832495856074687708:Hi! I'm dynamic step that can be enabled/disabled programmatically via the toggle button under the wizard !"])));
+            i18n_7 = $localize(_templateObject39 || (_templateObject39 = _taggedTemplateLiteral([":\u241Fcf3947ced955759e4df64b8c7d22970f4dcb8162\u241F6832495856074687708:Hi! I'm dynamic step that can be enabled/disabled programmatically via the toggle button under the wizard !"])));
           }
 
           var i18n_9;
@@ -2986,7 +3091,7 @@
             var MSG_EXTERNAL_8141490904213009277$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_DYNAMIC_WIZARD_DYNAMIC_EXAMPLE_COMPONENT_TS__10 = goog.getMsg("Hi! I'm dynamic step added automatically !");
             i18n_9 = MSG_EXTERNAL_8141490904213009277$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_DYNAMIC_WIZARD_DYNAMIC_EXAMPLE_COMPONENT_TS__10;
           } else {
-            i18n_9 = $localize(_templateObject37 || (_templateObject37 = _taggedTemplateLiteral([":\u241F09fdb1b71e257413350704f5b38b1149e15cca93\u241F8141490904213009277:Hi! I'm dynamic step added automatically !"])));
+            i18n_9 = $localize(_templateObject40 || (_templateObject40 = _taggedTemplateLiteral([":\u241F09fdb1b71e257413350704f5b38b1149e15cca93\u241F8141490904213009277:Hi! I'm dynamic step added automatically !"])));
           }
 
           var i18n_11;
@@ -2995,7 +3100,7 @@
             var MSG_EXTERNAL_6741901999086012076$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_DYNAMIC_WIZARD_DYNAMIC_EXAMPLE_COMPONENT_TS__12 = goog.getMsg("Hi! I'm dynamic step added automatically during ngAfterViewInit of this wizard using a TemplateRef!");
             i18n_11 = MSG_EXTERNAL_6741901999086012076$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_DYNAMIC_WIZARD_DYNAMIC_EXAMPLE_COMPONENT_TS__12;
           } else {
-            i18n_11 = $localize(_templateObject38 || (_templateObject38 = _taggedTemplateLiteral([":\u241Fdcc1be5be7d583d8da709807686db795b39e4e4d\u241F6741901999086012076:Hi! I'm dynamic step added automatically during ngAfterViewInit of this wizard using a TemplateRef!"])));
+            i18n_11 = $localize(_templateObject41 || (_templateObject41 = _taggedTemplateLiteral([":\u241Fdcc1be5be7d583d8da709807686db795b39e4e4d\u241F6741901999086012076:Hi! I'm dynamic step added automatically during ngAfterViewInit of this wizard using a TemplateRef!"])));
           }
 
           var i18n_13;
@@ -3004,7 +3109,7 @@
             var MSG_EXTERNAL_2900895229541262648$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_DYNAMIC_WIZARD_DYNAMIC_EXAMPLE_COMPONENT_TS__14 = goog.getMsg("Hi! I'm a step added dynamically using a TemplateRef by clicking a button from the first step !");
             i18n_13 = MSG_EXTERNAL_2900895229541262648$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_DYNAMIC_WIZARD_DYNAMIC_EXAMPLE_COMPONENT_TS__14;
           } else {
-            i18n_13 = $localize(_templateObject39 || (_templateObject39 = _taggedTemplateLiteral([":\u241F256cc8ce36c7ece03c014ef84736f10288179f3f\u241F2900895229541262648:Hi! I'm a step added dynamically using a TemplateRef by clicking a button from the first step !"])));
+            i18n_13 = $localize(_templateObject42 || (_templateObject42 = _taggedTemplateLiteral([":\u241F256cc8ce36c7ece03c014ef84736f10288179f3f\u241F2900895229541262648:Hi! I'm a step added dynamically using a TemplateRef by clicking a button from the first step !"])));
           }
 
           return [["wizardComponent", ""], ["label", i18n_1], i18n_3, ["nui-button", "", "type", "button", 3, "click"], ["wizardStepFooter", ""], ["label", i18n_5, 4, "ngIf"], ["ngProjectAs", "nui-wizard-step-v2", 5, ["nui-wizard-step-v2"], 4, "ngTemplateOutlet"], ["dynamicStepWithTemplate", ""], [4, "ngFor", "ngForOf"], ["dynamicTemplate1", ""], ["dynamicTemplate2", ""], ["wizardPrevious", ""], ["wizardNext", ""], [4, "ngTemplateOutlet"], ["label", i18n_5], ["wizardStepLabel", ""], i18n_7, ["ngProjectAs", "nui-wizard-step-v2", 5, ["nui-wizard-step-v2"]], i18n_9, i18n_11, i18n_13, ["type", "button", "nuiWizardPrevious", "", "nui-button", "", "icon", "caret-left"], ["nuiWizardNext", "", "type", "button", "nui-button", "", "displayStyle", "primary", "icon", "caret-right", "iconRight", "true"]];
@@ -3116,7 +3221,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<ng-template #dialogWizard>\n    <nui-dialog-header i18n-title\n                       title=\"Restore Wizard State\"\n                       (closed)=\"closeDialog()\">\n    </nui-dialog-header>\n    <form class=\"dialog-body compact-mode\"\n        [formGroup]=\"form\"\n          *ngIf=\"form\">\n        <nui-wizard-horizontal\n            linear\n            [state]=\"stateToRestore\"\n            (wizardStepsStatusChanges)=\"onWizardDestroy($event)\"\n        >\n            <nui-wizard-step-v2 label=\"Person Details\"\n                                formGroupName=\"personDetails\"\n                                [stepControl]=\"form.get(['personDetails'])\">\n                <nui-form-field [control]=\"form.get(['personDetails','name'])\"\n                                class=\"d-block mb-4 mt-4\"\n                                i18n-caption\n                                caption=\"Name\">\n                    <nui-textbox formControlName=\"name\"></nui-textbox>\n                    <nui-validation-message for=\"required\"\n                                            *ngIf=\"form.get(['user','name'])?.errors?.required\"\n                                            i18n>\n                        This is required\n                    </nui-validation-message>\n                </nui-form-field>\n\n                <nui-form-field [control]=\"form.get(['personDetails','privacy'])\">\n                    <nui-checkbox formControlName=\"privacy\" [value]=\"true\">\n                        Privacy Policy\n                    </nui-checkbox>\n                </nui-form-field>\n\n                <ng-template wizardStepFooter>\n                    <ng-container *ngTemplateOutlet=\"wizardCancel\"></ng-container>\n                    <ng-container *ngTemplateOutlet=\"wizardNext\"></ng-container>\n                </ng-template>\n            </nui-wizard-step-v2>\n\n            <nui-wizard-step-v2 label=\"Organization\"\n                                formGroupName=\"organization\"\n                                [stepControl]=\"form.get(['organization'])\">\n                <nui-form-field [control]=\"form.get(['organization', 'title'])\"\n                                class=\"d-block mb-4 mt-4\"\n                                i18n-caption\n                                caption=\"Organization\">\n                    <nui-textbox formControlName=\"title\"></nui-textbox>\n                    <nui-form-field caption=\"Date\"\n                                    class=\"d-block mt-4\"\n                                    [control]=\"form.get(['organization','date'])\">\n                        <nui-date-picker formControlName=\"date\" i18n></nui-date-picker>\n                    </nui-form-field>\n                    <ng-template wizardStepFooter>\n                        <ng-container *ngTemplateOutlet=\"wizardCancel\"></ng-container>\n                        <ng-container *ngTemplateOutlet=\"wizardPrevious\"></ng-container>\n                        <ng-container *ngTemplateOutlet=\"wizardNext\"></ng-container>\n                    </ng-template>\n                </nui-form-field>\n            </nui-wizard-step-v2>\n\n\n            <nui-wizard-step-v2 formGroupName=\"contactDetails\"\n                                [stepControl]=\"form.get(['contactDetails'])\"\n                                #finalStep>\n\n                <ng-template wizardStepLabel>\n                    <span>Contact Details</span>\n                </ng-template>\n\n                <nui-form-field [control]=\"form.get(['contactDetails','email'])\"\n                                class=\"d-block mb-4 mt-4\"\n                                i18n-caption\n                                caption=\"Email\">\n                    <nui-textbox type=\"email\" formControlName=\"email\"></nui-textbox>\n                    <nui-validation-message for=\"required\"\n                                            *ngIf=\"form.get(['contactDetails','email'])?.errors?.required\"\n                                            i18n>\n                        This is required\n                    </nui-validation-message>\n\n                    <nui-validation-message for=\"email\"\n                                            *ngIf=\"form.get(['contactDetails','email'])?.errors?.email\"\n                                            i18n>\n                        Invalid email\n                    </nui-validation-message>\n                </nui-form-field>\n\n                <nui-form-field caption=\"Select\"\n                    [control]=\"form.get(['contactDetails','options'])\">\n                    <nui-select-v2 formControlName=\"options\">\n                        <nui-select-v2-option value=\"Item 1\">Item 1</nui-select-v2-option>\n                        <nui-select-v2-option value=\"Item 2\">Item 2</nui-select-v2-option>\n                    </nui-select-v2>\n                </nui-form-field>\n\n                    <ng-template wizardStepFooter>\n                        <button nui-button\n                                type=\"button\"\n                                displayStyle=\"destructive\"\n                                (click)=\"resetStep(finalStep)\">\n                            Reset step\n                        </button>\n                        <ng-container *ngTemplateOutlet=\"wizardCancel\"></ng-container>\n                        <ng-container *ngTemplateOutlet=\"wizardPrevious\"></ng-container>\n                        <button type=\"button\"\n                                nui-button\n                                displayStyle=\"primary\"\n                                [disabled]=\"form.get(['contactDetails','email']).invalid\"\n                                (click)=\"completeWizard(finalStep)\"\n                        >\n                            Finish\n                        </button>\n                    </ng-template>\n            </nui-wizard-step-v2>\n\n            <ng-template #wizardPrevious>\n                <button type=\"button\" nuiWizardPrevious nui-button icon=\"caret-left\">\n                    Previous\n                </button>\n            </ng-template>\n\n            <ng-template #wizardNext>\n                <button nuiWizardNext\n                        type=\"button\"\n                        nui-button\n                        displayStyle=\"primary\"\n                        icon=\"caret-right\"\n                        iconRight=\"true\"\n                >Next</button>\n            </ng-template>\n\n            <ng-template #wizardCancel>\n                <button type=\"button\" nui-button (click)=\"closeDialog()\">\n                    Cancel\n                </button>\n            </ng-template>\n        </nui-wizard-horizontal>\n    </form>\n</ng-template>\n\n<button nui-button type=\"button\" (click)=\"openDialog(dialogWizard)\" i18n> Open dialog wizard</button>\n";
+      __webpack_exports__["default"] = "<ng-template #dialogWizard>\n    <nui-dialog-header i18n-title\n                       title=\"Restore Wizard State\"\n                       (closed)=\"closeDialog()\">\n    </nui-dialog-header>\n    <form class=\"dialog-body compact-mode\"\n        [formGroup]=\"form\"\n          *ngIf=\"form\">\n        <nui-wizard-horizontal\n            linear\n            [state]=\"stateToRestore\"\n            (wizardStepsStatusChanges)=\"onWizardDestroy($event)\"\n        >\n            <nui-wizard-step-v2 label=\"Person Details\"\n                                formGroupName=\"personDetails\"\n                                [stepControl]=\"form.get(['personDetails'])\">\n                <nui-form-field [control]=\"form.get(['personDetails','name'])\"\n                                class=\"d-block mb-4 mt-4\"\n                                i18n-caption\n                                caption=\"Name\">\n                    <nui-textbox formControlName=\"name\"></nui-textbox>\n                    <nui-validation-message for=\"required\"\n                                            *ngIf=\"form.get(['personDetails','name'])?.errors?.required\"\n                                            i18n>\n                        This is required\n                    </nui-validation-message>\n                </nui-form-field>\n\n                <nui-form-field [control]=\"form.get(['personDetails','privacy'])\">\n                    <nui-checkbox formControlName=\"privacy\" [value]=\"true\">\n                        Privacy Policy\n                    </nui-checkbox>\n\n                    <nui-validation-message for=\"required\"\n                                            *ngIf=\"form.get(['personDetails','privacy'])?.errors?.required\"\n                                            i18n>\n                        This is required\n                    </nui-validation-message>\n                </nui-form-field>\n\n                <ng-template wizardStepFooter>\n                    <ng-container *ngTemplateOutlet=\"wizardCancel\"></ng-container>\n                    <ng-container *ngTemplateOutlet=\"wizardNext; context: { form: 'personDetails' }\"></ng-container>\n                </ng-template>\n            </nui-wizard-step-v2>\n\n            <nui-wizard-step-v2 label=\"Organization\"\n                                formGroupName=\"organization\"\n                                [stepControl]=\"form.get(['organization'])\">\n                <nui-form-field [control]=\"form.get(['organization', 'title'])\"\n                                class=\"d-block mb-4 mt-4\"\n                                i18n-caption\n                                caption=\"Organization\">\n                    <nui-textbox formControlName=\"title\"></nui-textbox>\n                    <nui-validation-message for=\"required\"\n                                            *ngIf=\"form.get(['organization','title'])?.errors?.required\"\n                                            i18n>\n                        This is required\n                    </nui-validation-message>\n                </nui-form-field>\n                <nui-form-field caption=\"Date\"\n                                class=\"d-block mt-4\"\n                                [control]=\"form.get(['organization','date'])\">\n                    <nui-date-picker formControlName=\"date\" i18n></nui-date-picker>\n                    <nui-validation-message for=\"required\"\n                                            *ngIf=\"form.get(['organization','date'])?.errors?.required\"\n                                            i18n>\n                        This is required\n                    </nui-validation-message>\n                </nui-form-field>\n                    <ng-template wizardStepFooter>\n                        <ng-container *ngTemplateOutlet=\"wizardCancel\"></ng-container>\n                        <ng-container *ngTemplateOutlet=\"wizardPrevious\"></ng-container>\n                        <ng-container *ngTemplateOutlet=\"wizardNext; context: { form: 'organization' }\"></ng-container>\n                    </ng-template>\n            </nui-wizard-step-v2>\n\n            <nui-wizard-step-v2 formGroupName=\"contactDetails\"\n                                [stepControl]=\"form.get(['contactDetails'])\"\n                                #finalStep>\n\n                <ng-template wizardStepLabel>\n                    <span>Contact Details</span>\n                </ng-template>\n\n                <nui-form-field [control]=\"form.get(['contactDetails','email'])\"\n                                class=\"d-block mb-4 mt-4\"\n                                i18n-caption\n                                caption=\"Email\">\n                    <nui-textbox type=\"email\" formControlName=\"email\"></nui-textbox>\n                    <nui-validation-message for=\"required\"\n                                            *ngIf=\"form.get(['contactDetails','email'])?.errors?.required\"\n                                            i18n>\n                        This is required\n                    </nui-validation-message>\n\n                    <nui-validation-message for=\"email\"\n                                            *ngIf=\"form.get(['contactDetails','email'])?.errors?.email\"\n                                            i18n>\n                        Invalid email\n                    </nui-validation-message>\n                </nui-form-field>\n\n                <nui-form-field caption=\"Select\"\n                    [control]=\"form.get(['contactDetails','options'])\">\n                    <nui-select-v2 formControlName=\"options\">\n                        <nui-select-v2-option value=\"Item 1\">Item 1</nui-select-v2-option>\n                        <nui-select-v2-option value=\"Item 2\">Item 2</nui-select-v2-option>\n                    </nui-select-v2>\n                </nui-form-field>\n\n                    <ng-template wizardStepFooter>\n                        <button nui-button\n                                type=\"button\"\n                                displayStyle=\"destructive\"\n                                (click)=\"resetStep(finalStep)\">\n                            Reset step\n                        </button>\n                        <ng-container *ngTemplateOutlet=\"wizardCancel\"></ng-container>\n                        <ng-container *ngTemplateOutlet=\"wizardPrevious\"></ng-container>\n                        <button type=\"button\"\n                                nui-button\n                                displayStyle=\"primary\"\n                                [disabled]=\"form.get(['contactDetails','email']).invalid\"\n                                (click)=\"completeWizard(finalStep)\"\n                        >\n                            Finish\n                        </button>\n                    </ng-template>\n            </nui-wizard-step-v2>\n\n            <ng-template #wizardPrevious>\n                <button type=\"button\" nuiWizardPrevious nui-button icon=\"caret-left\">\n                    Previous\n                </button>\n            </ng-template>\n\n            <ng-template #wizardNext let-form=\"form\">\n                <button nuiWizardNext\n                        type=\"button\"\n                        nui-button\n                        displayStyle=\"primary\"\n                        icon=\"caret-right\"\n                        iconRight=\"true\"\n                        (click)=\"validateStep(form)\"\n                >Next</button>\n            </ng-template>\n\n            <ng-template #wizardCancel>\n                <button type=\"button\" nui-button (click)=\"closeDialog()\">\n                    Cancel\n                </button>\n            </ng-template>\n        </nui-wizard-horizontal>\n    </form>\n</ng-template>\n\n<button nui-button type=\"button\" (click)=\"openDialog(dialogWizard)\" i18n> Open dialog wizard</button>\n";
       /***/
     },
 
@@ -3946,7 +4051,7 @@
             var MSG_EXTERNAL_605334371811086804$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_LAYOUT_WIZARD_CUSTOM_EXAMPLE_COMPONENT_TS_4 = goog.getMsg("Person Details");
             i18n_3 = MSG_EXTERNAL_605334371811086804$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_LAYOUT_WIZARD_CUSTOM_EXAMPLE_COMPONENT_TS_4;
           } else {
-            i18n_3 = $localize(_templateObject40 || (_templateObject40 = _taggedTemplateLiteral([":\u241F5f59ef3c1033f37e26e42d4c34dbe3a6d59b26ca\u241F605334371811086804:Person Details"])));
+            i18n_3 = $localize(_templateObject43 || (_templateObject43 = _taggedTemplateLiteral([":\u241F5f59ef3c1033f37e26e42d4c34dbe3a6d59b26ca\u241F605334371811086804:Person Details"])));
           }
 
           var i18n_5;
@@ -3955,7 +4060,7 @@
             var MSG_EXTERNAL_8953033926734869941$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_LAYOUT_WIZARD_CUSTOM_EXAMPLE_COMPONENT_TS_6 = goog.getMsg("Name");
             i18n_5 = MSG_EXTERNAL_8953033926734869941$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_LAYOUT_WIZARD_CUSTOM_EXAMPLE_COMPONENT_TS_6;
           } else {
-            i18n_5 = $localize(_templateObject41 || (_templateObject41 = _taggedTemplateLiteral([":\u241Fcff1428d10d59d14e45edec3c735a27b5482db59\u241F8953033926734869941:Name"])));
+            i18n_5 = $localize(_templateObject44 || (_templateObject44 = _taggedTemplateLiteral([":\u241Fcff1428d10d59d14e45edec3c735a27b5482db59\u241F8953033926734869941:Name"])));
           }
 
           var i18n_7;
@@ -3964,7 +4069,7 @@
             var MSG_EXTERNAL_4120846771083210767$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_LAYOUT_WIZARD_CUSTOM_EXAMPLE_COMPONENT_TS_8 = goog.getMsg("Do you have Covid ?");
             i18n_7 = MSG_EXTERNAL_4120846771083210767$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_LAYOUT_WIZARD_CUSTOM_EXAMPLE_COMPONENT_TS_8;
           } else {
-            i18n_7 = $localize(_templateObject42 || (_templateObject42 = _taggedTemplateLiteral([":\u241F7b395bc36132043b976f1e141e04adcc5926d5a5\u241F4120846771083210767:Do you have Covid ?"])));
+            i18n_7 = $localize(_templateObject45 || (_templateObject45 = _taggedTemplateLiteral([":\u241F7b395bc36132043b976f1e141e04adcc5926d5a5\u241F4120846771083210767:Do you have Covid ?"])));
           }
 
           var i18n_9;
@@ -3973,7 +4078,7 @@
             var MSG_EXTERNAL_6277022918162857182$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_LAYOUT_WIZARD_CUSTOM_EXAMPLE_COMPONENT_TS_10 = goog.getMsg(" Diseases symptoms ");
             i18n_9 = MSG_EXTERNAL_6277022918162857182$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_LAYOUT_WIZARD_CUSTOM_EXAMPLE_COMPONENT_TS_10;
           } else {
-            i18n_9 = $localize(_templateObject43 || (_templateObject43 = _taggedTemplateLiteral([":\u241F375767ee70dccb99058f23ecedcc8c24405727ab\u241F6277022918162857182: Diseases symptoms "])));
+            i18n_9 = $localize(_templateObject46 || (_templateObject46 = _taggedTemplateLiteral([":\u241F375767ee70dccb99058f23ecedcc8c24405727ab\u241F6277022918162857182: Diseases symptoms "])));
           }
 
           var i18n_11;
@@ -3982,7 +4087,7 @@
             var MSG_EXTERNAL_7162433653691257124$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_LAYOUT_WIZARD_CUSTOM_EXAMPLE_COMPONENT_TS_12 = goog.getMsg("Disease Details");
             i18n_11 = MSG_EXTERNAL_7162433653691257124$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_LAYOUT_WIZARD_CUSTOM_EXAMPLE_COMPONENT_TS_12;
           } else {
-            i18n_11 = $localize(_templateObject44 || (_templateObject44 = _taggedTemplateLiteral([":\u241Ff757fa9193778f02fcaf6263ee76b78576ab6314\u241F7162433653691257124:Disease Details"])));
+            i18n_11 = $localize(_templateObject47 || (_templateObject47 = _taggedTemplateLiteral([":\u241Ff757fa9193778f02fcaf6263ee76b78576ab6314\u241F7162433653691257124:Disease Details"])));
           }
 
           var i18n_13;
@@ -3991,7 +4096,7 @@
             var MSG_EXTERNAL_5562779130499238810$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_LAYOUT_WIZARD_CUSTOM_EXAMPLE_COMPONENT_TS_14 = goog.getMsg("Contact Details");
             i18n_13 = MSG_EXTERNAL_5562779130499238810$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_LAYOUT_WIZARD_CUSTOM_EXAMPLE_COMPONENT_TS_14;
           } else {
-            i18n_13 = $localize(_templateObject45 || (_templateObject45 = _taggedTemplateLiteral([":\u241F43161dab615da78790ff6e28f5730e88b96e21e0\u241F5562779130499238810:Contact Details"])));
+            i18n_13 = $localize(_templateObject48 || (_templateObject48 = _taggedTemplateLiteral([":\u241F43161dab615da78790ff6e28f5730e88b96e21e0\u241F5562779130499238810:Contact Details"])));
           }
 
           var i18n_15;
@@ -4000,7 +4105,7 @@
             var MSG_EXTERNAL_4768749765465246664$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_LAYOUT_WIZARD_CUSTOM_EXAMPLE_COMPONENT_TS_16 = goog.getMsg("Email");
             i18n_15 = MSG_EXTERNAL_4768749765465246664$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_LAYOUT_WIZARD_CUSTOM_EXAMPLE_COMPONENT_TS_16;
           } else {
-            i18n_15 = $localize(_templateObject46 || (_templateObject46 = _taggedTemplateLiteral([":\u241F244aae9346da82b0922506c2d2581373a15641cc\u241F4768749765465246664:Email"])));
+            i18n_15 = $localize(_templateObject49 || (_templateObject49 = _taggedTemplateLiteral([":\u241F244aae9346da82b0922506c2d2581373a15641cc\u241F4768749765465246664:Email"])));
           }
 
           var i18n_17;
@@ -4009,7 +4114,7 @@
             var MSG_EXTERNAL_3262236020277300799$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_LAYOUT_WIZARD_CUSTOM_EXAMPLE_COMPONENT_TS_18 = goog.getMsg("Phone");
             i18n_17 = MSG_EXTERNAL_3262236020277300799$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_LAYOUT_WIZARD_CUSTOM_EXAMPLE_COMPONENT_TS_18;
           } else {
-            i18n_17 = $localize(_templateObject47 || (_templateObject47 = _taggedTemplateLiteral([":\u241F6934d8edd276d59e050006fe91b695ebad0218f8\u241F3262236020277300799:Phone"])));
+            i18n_17 = $localize(_templateObject50 || (_templateObject50 = _taggedTemplateLiteral([":\u241F6934d8edd276d59e050006fe91b695ebad0218f8\u241F3262236020277300799:Phone"])));
           }
 
           var i18n_19;
@@ -4018,7 +4123,7 @@
             var MSG_EXTERNAL_5385737502167048240$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_LAYOUT_WIZARD_CUSTOM_EXAMPLE_COMPONENT_TS_20 = goog.getMsg("Final step");
             i18n_19 = MSG_EXTERNAL_5385737502167048240$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_LAYOUT_WIZARD_CUSTOM_EXAMPLE_COMPONENT_TS_20;
           } else {
-            i18n_19 = $localize(_templateObject48 || (_templateObject48 = _taggedTemplateLiteral([":\u241F0de8f1dbd57123d294729d71fd278eaf936d4a2b\u241F5385737502167048240:Final step"])));
+            i18n_19 = $localize(_templateObject51 || (_templateObject51 = _taggedTemplateLiteral([":\u241F0de8f1dbd57123d294729d71fd278eaf936d4a2b\u241F5385737502167048240:Final step"])));
           }
 
           var i18n_21;
@@ -4027,7 +4132,7 @@
             var MSG_EXTERNAL_377085518119019498$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_LAYOUT_WIZARD_CUSTOM_EXAMPLE_COMPONENT_TS_22 = goog.getMsg("Thanks for your feedback and take care");
             i18n_21 = MSG_EXTERNAL_377085518119019498$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_LAYOUT_WIZARD_CUSTOM_EXAMPLE_COMPONENT_TS_22;
           } else {
-            i18n_21 = $localize(_templateObject49 || (_templateObject49 = _taggedTemplateLiteral([":\u241Fca65ee32ad20b154c3171aff463f489cbc528bf1\u241F377085518119019498:Thanks for your feedback and take care"])));
+            i18n_21 = $localize(_templateObject52 || (_templateObject52 = _taggedTemplateLiteral([":\u241Fca65ee32ad20b154c3171aff463f489cbc528bf1\u241F377085518119019498:Thanks for your feedback and take care"])));
           }
 
           var i18n_24;
@@ -4036,7 +4141,7 @@
             var MSG_EXTERNAL_3542042671420335679$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_LAYOUT_WIZARD_CUSTOM_EXAMPLE_COMPONENT_TS__25 = goog.getMsg("No");
             i18n_24 = MSG_EXTERNAL_3542042671420335679$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_LAYOUT_WIZARD_CUSTOM_EXAMPLE_COMPONENT_TS__25;
           } else {
-            i18n_24 = $localize(_templateObject50 || (_templateObject50 = _taggedTemplateLiteral([":\u241F3d3ae7deebc5949b0c1c78b9847886a94321d9fd\u241F3542042671420335679:No"])));
+            i18n_24 = $localize(_templateObject53 || (_templateObject53 = _taggedTemplateLiteral([":\u241F3d3ae7deebc5949b0c1c78b9847886a94321d9fd\u241F3542042671420335679:No"])));
           }
 
           var i18n_26;
@@ -4045,7 +4150,7 @@
             var MSG_EXTERNAL_4467323362722952678$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_LAYOUT_WIZARD_CUSTOM_EXAMPLE_COMPONENT_TS__27 = goog.getMsg("Unknown");
             i18n_26 = MSG_EXTERNAL_4467323362722952678$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_LAYOUT_WIZARD_CUSTOM_EXAMPLE_COMPONENT_TS__27;
           } else {
-            i18n_26 = $localize(_templateObject51 || (_templateObject51 = _taggedTemplateLiteral([":\u241Fe5d8bb389c702588877f039d72178f219453a72d\u241F4467323362722952678:Unknown"])));
+            i18n_26 = $localize(_templateObject54 || (_templateObject54 = _taggedTemplateLiteral([":\u241Fe5d8bb389c702588877f039d72178f219453a72d\u241F4467323362722952678:Unknown"])));
           }
 
           var i18n_28;
@@ -4054,7 +4159,7 @@
             var MSG_EXTERNAL_5777549257495630003$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_LAYOUT_WIZARD_CUSTOM_EXAMPLE_COMPONENT_TS__29 = goog.getMsg(" This is required ");
             i18n_28 = MSG_EXTERNAL_5777549257495630003$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_LAYOUT_WIZARD_CUSTOM_EXAMPLE_COMPONENT_TS__29;
           } else {
-            i18n_28 = $localize(_templateObject52 || (_templateObject52 = _taggedTemplateLiteral([":\u241F42b47c9df37297506ee0ddf14763cb0ddfa58ea6\u241F5777549257495630003: This is required "])));
+            i18n_28 = $localize(_templateObject55 || (_templateObject55 = _taggedTemplateLiteral([":\u241F42b47c9df37297506ee0ddf14763cb0ddfa58ea6\u241F5777549257495630003: This is required "])));
           }
 
           var i18n_30;
@@ -4063,7 +4168,7 @@
             var MSG_EXTERNAL_4051919749793167830$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_LAYOUT_WIZARD_CUSTOM_EXAMPLE_COMPONENT_TS__31 = goog.getMsg(" Minimum length is 3 ");
             i18n_30 = MSG_EXTERNAL_4051919749793167830$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_LAYOUT_WIZARD_CUSTOM_EXAMPLE_COMPONENT_TS__31;
           } else {
-            i18n_30 = $localize(_templateObject53 || (_templateObject53 = _taggedTemplateLiteral([":\u241Ff2b2fd6e0fe932b925f3ac59d2a9b6c7f1184730\u241F4051919749793167830: Minimum length is 3 "])));
+            i18n_30 = $localize(_templateObject56 || (_templateObject56 = _taggedTemplateLiteral([":\u241Ff2b2fd6e0fe932b925f3ac59d2a9b6c7f1184730\u241F4051919749793167830: Minimum length is 3 "])));
           }
 
           var i18n_32;
@@ -4072,7 +4177,7 @@
             var MSG_EXTERNAL_5777549257495630003$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_LAYOUT_WIZARD_CUSTOM_EXAMPLE_COMPONENT_TS__33 = goog.getMsg(" This is required ");
             i18n_32 = MSG_EXTERNAL_5777549257495630003$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_LAYOUT_WIZARD_CUSTOM_EXAMPLE_COMPONENT_TS__33;
           } else {
-            i18n_32 = $localize(_templateObject54 || (_templateObject54 = _taggedTemplateLiteral([":\u241F42b47c9df37297506ee0ddf14763cb0ddfa58ea6\u241F5777549257495630003: This is required "])));
+            i18n_32 = $localize(_templateObject57 || (_templateObject57 = _taggedTemplateLiteral([":\u241F42b47c9df37297506ee0ddf14763cb0ddfa58ea6\u241F5777549257495630003: This is required "])));
           }
 
           var i18n_34;
@@ -4081,7 +4186,7 @@
             var MSG_EXTERNAL_5739234873707288973$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_LAYOUT_WIZARD_CUSTOM_EXAMPLE_COMPONENT_TS__35 = goog.getMsg("When did you noticed your first symptoms ?");
             i18n_34 = MSG_EXTERNAL_5739234873707288973$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_LAYOUT_WIZARD_CUSTOM_EXAMPLE_COMPONENT_TS__35;
           } else {
-            i18n_34 = $localize(_templateObject55 || (_templateObject55 = _taggedTemplateLiteral([":\u241Fbcddbff8ba74b058149e57426d3e0e1bebaa5af2\u241F5739234873707288973:When did you noticed your first symptoms ?"])));
+            i18n_34 = $localize(_templateObject58 || (_templateObject58 = _taggedTemplateLiteral([":\u241Fbcddbff8ba74b058149e57426d3e0e1bebaa5af2\u241F5739234873707288973:When did you noticed your first symptoms ?"])));
           }
 
           var i18n_36;
@@ -4090,7 +4195,7 @@
             var MSG_EXTERNAL_4177329805747956962$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_LAYOUT_WIZARD_CUSTOM_EXAMPLE_COMPONENT_TS___37 = goog.getMsg("Disease Details for your Symptoms");
             i18n_36 = MSG_EXTERNAL_4177329805747956962$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_LAYOUT_WIZARD_CUSTOM_EXAMPLE_COMPONENT_TS___37;
           } else {
-            i18n_36 = $localize(_templateObject56 || (_templateObject56 = _taggedTemplateLiteral([":\u241F35a38f292530a0caf89578654f4946701ce21de1\u241F4177329805747956962:Disease Details for your Symptoms"])));
+            i18n_36 = $localize(_templateObject59 || (_templateObject59 = _taggedTemplateLiteral([":\u241F35a38f292530a0caf89578654f4946701ce21de1\u241F4177329805747956962:Disease Details for your Symptoms"])));
           }
 
           var i18n_38;
@@ -4099,7 +4204,7 @@
             var MSG_EXTERNAL_7318991029858475691$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_LAYOUT_WIZARD_CUSTOM_EXAMPLE_COMPONENT_TS___39 = goog.getMsg(" Date when disease manifested is required ");
             i18n_38 = MSG_EXTERNAL_7318991029858475691$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_LAYOUT_WIZARD_CUSTOM_EXAMPLE_COMPONENT_TS___39;
           } else {
-            i18n_38 = $localize(_templateObject57 || (_templateObject57 = _taggedTemplateLiteral([":\u241Fe3571ab256189bbeb2d67b21687b9c345a676c12\u241F7318991029858475691: Date when disease manifested is required "])));
+            i18n_38 = $localize(_templateObject60 || (_templateObject60 = _taggedTemplateLiteral([":\u241Fe3571ab256189bbeb2d67b21687b9c345a676c12\u241F7318991029858475691: Date when disease manifested is required "])));
           }
 
           var i18n_41;
@@ -4108,7 +4213,7 @@
             var MSG_EXTERNAL_5777549257495630003$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_LAYOUT_WIZARD_CUSTOM_EXAMPLE_COMPONENT_TS__42 = goog.getMsg(" This is required ");
             i18n_41 = MSG_EXTERNAL_5777549257495630003$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_LAYOUT_WIZARD_CUSTOM_EXAMPLE_COMPONENT_TS__42;
           } else {
-            i18n_41 = $localize(_templateObject58 || (_templateObject58 = _taggedTemplateLiteral([":\u241F42b47c9df37297506ee0ddf14763cb0ddfa58ea6\u241F5777549257495630003: This is required "])));
+            i18n_41 = $localize(_templateObject61 || (_templateObject61 = _taggedTemplateLiteral([":\u241F42b47c9df37297506ee0ddf14763cb0ddfa58ea6\u241F5777549257495630003: This is required "])));
           }
 
           var i18n_43;
@@ -4117,7 +4222,7 @@
             var MSG_EXTERNAL_8282537682490899422$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_LAYOUT_WIZARD_CUSTOM_EXAMPLE_COMPONENT_TS__44 = goog.getMsg(" Invalid email ");
             i18n_43 = MSG_EXTERNAL_8282537682490899422$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_CUSTOM_LAYOUT_WIZARD_CUSTOM_EXAMPLE_COMPONENT_TS__44;
           } else {
-            i18n_43 = $localize(_templateObject59 || (_templateObject59 = _taggedTemplateLiteral([":\u241Ff3a8cb1da2b4fad362bc53bd5b9118b9f26e6cbb\u241F8282537682490899422: Invalid email "])));
+            i18n_43 = $localize(_templateObject62 || (_templateObject62 = _taggedTemplateLiteral([":\u241Ff3a8cb1da2b4fad362bc53bd5b9118b9f26e6cbb\u241F8282537682490899422: Invalid email "])));
           }
 
           return [[3, "formGroup"], [3, "linear"], ["wizard", ""], ["summary", ""], [3, "show", "stacked", "percent", "showNumber"], [3, "ngSwitch"], [4, "ngSwitchCase"], [4, "ngSwitchDefault"], ["label", i18n_3, "formGroupName", "personDetails", 3, "stepControl"], ["caption", i18n_5, 3, "control"], ["formControlName", "name"], ["for", "required", 4, "ngIf"], ["for", "minlength", 4, "ngIf"], ["caption", i18n_7, 3, "control"], ["formControlName", "symptoms", 3, "indeterminate"], i18n_9, ["wizardStepFooter", ""], ["label", i18n_11, "formGroupName", "diseaseDetails", 3, "stepControl", 4, "ngIf"], ["label", i18n_13, "formGroupName", "contactDetails", 3, "stepControl"], ["caption", i18n_15, 3, "control"], ["type", "email", "formControlName", "email"], ["for", "email", 4, "ngIf"], ["caption", i18n_17, 3, "control"], ["type", "email", "formControlName", "phone"], ["label", i18n_19], i18n_21, ["wizardPrevious", ""], ["wizardNext", ""], i18n_24, i18n_26, ["for", "required"], i18n_28, ["for", "minlength"], i18n_30, i18n_32, [4, "ngTemplateOutlet"], ["label", i18n_11, "formGroupName", "diseaseDetails", 3, "stepControl"], ["wizardStepLabel", ""], ["caption", i18n_34, 3, "control"], ["formControlName", "date"], i18n_36, i18n_38, i18n_41, ["for", "email"], i18n_43, ["type", "button", "nui-button", "", 3, "click"], ["type", "button", "nuiWizardPrevious", "", "nui-button", "", "icon", "caret-left"], ["nuiWizardNext", "", "type", "button", "nui-button", "", "displayStyle", "primary", "icon", "caret-right", "iconRight", "true", 3, "click"]];
@@ -4413,7 +4518,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import { Component, Inject, OnInit, QueryList, TemplateRef } from \"@angular/core\";\nimport { FormBuilder, FormGroup, Validators } from \"@angular/forms\";\nimport { DialogService, IWizardState, NuiDialogRef, WizardStepV2Component } from \"@nova-ui/bits\";\n\n@Component({\n    selector: \"nui-wizard-restore-state-example\",\n    templateUrl: \"./wizard-restore-state.example.component.html\",\n})\nexport class WizardRestoreStateExampleComponent implements OnInit {\n    public form: FormGroup;\n    public activeDialog: NuiDialogRef;\n    public stateToRestore: IWizardState;\n\n    constructor(private formBuilder: FormBuilder,\n                @Inject(DialogService) private dialogService: DialogService) {}\n\n    ngOnInit(): void {\n        this.form = new FormGroup({\n            \"personDetails\": this.formBuilder.group({\n                \"name\": [\n                    \"\",\n                    [Validators.required, Validators.minLength(3)],\n                ],\n                \"privacy\": [false, [Validators.requiredTrue]],\n            }),\n            \"organization\": this.formBuilder.group({\n                \"title\": [\"\", [Validators.required]],\n                \"date\": [\"\", [Validators.required]],\n            }),\n            \"contactDetails\": this.formBuilder.group({\n                \"email\": [\"\", [Validators.required, Validators.email]],\n                \"options\": [\"\"],\n            }),\n        });\n    }\n\n    public openDialog(content: TemplateRef<string>): void {\n        this.activeDialog = this.dialogService.open(content, {size: \"lg\"});\n    }\n\n    public closeDialog(): void {\n        this.activeDialog.close();\n    }\n\n    public onWizardDestroy(steps: QueryList<WizardStepV2Component>): void {\n        this.stateToRestore = { steps };\n    }\n\n    public completeWizard(step: WizardStepV2Component): void {\n        step.completed = true;\n        this.activeDialog.close();\n    }\n\n    public resetStep(step: WizardStepV2Component): void {\n        step.reset();\n    }\n}\n";
+      __webpack_exports__["default"] = "import { Component, Inject, OnInit, QueryList, TemplateRef } from \"@angular/core\";\nimport { FormBuilder, FormGroup, Validators } from \"@angular/forms\";\nimport { DialogService, IWizardState, NuiDialogRef, WizardStepV2Component } from \"@nova-ui/bits\";\n\n@Component({\n    selector: \"nui-wizard-restore-state-example\",\n    templateUrl: \"./wizard-restore-state.example.component.html\",\n})\nexport class WizardRestoreStateExampleComponent implements OnInit {\n    public form: FormGroup;\n    public activeDialog: NuiDialogRef;\n    public stateToRestore: IWizardState;\n\n    constructor(private formBuilder: FormBuilder,\n                @Inject(DialogService) private dialogService: DialogService) {}\n\n    ngOnInit(): void {\n        this.form = new FormGroup({\n            \"personDetails\": this.formBuilder.group({\n                \"name\": [\n                    \"\",\n                    [Validators.required, Validators.minLength(3)],\n                ],\n                \"privacy\": [false, [Validators.requiredTrue]],\n            }),\n            \"organization\": this.formBuilder.group({\n                \"title\": [\"\", [Validators.required]],\n                \"date\": [\"\", [Validators.required]],\n            }),\n            \"contactDetails\": this.formBuilder.group({\n                \"email\": [\"\", [Validators.required, Validators.email]],\n                \"options\": [\"\"],\n            }),\n        });\n    }\n\n    public openDialog(content: TemplateRef<string>): void {\n        this.activeDialog = this.dialogService.open(content, {size: \"lg\"});\n    }\n\n    public closeDialog(): void {\n        this.activeDialog.close();\n    }\n\n    public onWizardDestroy(steps: QueryList<WizardStepV2Component>): void {\n        this.stateToRestore = { steps };\n    }\n\n    public completeWizard(step: WizardStepV2Component): void {\n        step.completed = true;\n        this.activeDialog.close();\n    }\n\n    public resetStep(step: WizardStepV2Component): void {\n        step.reset();\n    }\n\n    private validateStep(formGroup: string): void {\n        this.form.get(formGroup)?.markAllAsTouched();\n    }\n}\n";
       /***/
     },
 
@@ -4876,8 +4981,8 @@
           this.dialogService = dialogService;
           this.toastService = toastService;
           this.busy = false;
-          this.vegetables = [$localize(_templateObject60 || (_templateObject60 = _taggedTemplateLiteral(["Cabbage"]))), $localize(_templateObject61 || (_templateObject61 = _taggedTemplateLiteral(["Potato"]))), $localize(_templateObject62 || (_templateObject62 = _taggedTemplateLiteral(["Tomato"]))), $localize(_templateObject63 || (_templateObject63 = _taggedTemplateLiteral(["Carrot"])))];
-          this.selectedVegetables = [$localize(_templateObject64 || (_templateObject64 = _taggedTemplateLiteral(["Potato"]))), $localize(_templateObject65 || (_templateObject65 = _taggedTemplateLiteral(["Tomato"])))];
+          this.vegetables = [$localize(_templateObject63 || (_templateObject63 = _taggedTemplateLiteral(["Cabbage"]))), $localize(_templateObject64 || (_templateObject64 = _taggedTemplateLiteral(["Potato"]))), $localize(_templateObject65 || (_templateObject65 = _taggedTemplateLiteral(["Tomato"]))), $localize(_templateObject66 || (_templateObject66 = _taggedTemplateLiteral(["Carrot"])))];
+          this.selectedVegetables = [$localize(_templateObject67 || (_templateObject67 = _taggedTemplateLiteral(["Potato"]))), $localize(_templateObject68 || (_templateObject68 = _taggedTemplateLiteral(["Tomato"])))];
         }
 
         _createClass(WizardDialogExampleComponent, [{
@@ -4945,7 +5050,7 @@
             var MSG_EXTERNAL_6576529212829839238$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_DIALOG_WIZARD_DIALOG_EXAMPLE_COMPONENT_TS_2 = goog.getMsg(" Open dialog wizard\n");
             i18n_1 = MSG_EXTERNAL_6576529212829839238$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_DIALOG_WIZARD_DIALOG_EXAMPLE_COMPONENT_TS_2;
           } else {
-            i18n_1 = $localize(_templateObject66 || (_templateObject66 = _taggedTemplateLiteral([":\u241F3b7b7dc38a7e4341daf9a73684d37fe7bc08d2d1\u241F6576529212829839238: Open dialog wizard\n"])));
+            i18n_1 = $localize(_templateObject69 || (_templateObject69 = _taggedTemplateLiteral([":\u241F3b7b7dc38a7e4341daf9a73684d37fe7bc08d2d1\u241F6576529212829839238: Open dialog wizard\n"])));
           }
 
           var i18n_3;
@@ -4954,7 +5059,7 @@
             var MSG_EXTERNAL_2559467589081529119$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_DIALOG_WIZARD_DIALOG_EXAMPLE_COMPONENT_TS__4 = goog.getMsg("Wizard dialog");
             i18n_3 = MSG_EXTERNAL_2559467589081529119$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_DIALOG_WIZARD_DIALOG_EXAMPLE_COMPONENT_TS__4;
           } else {
-            i18n_3 = $localize(_templateObject67 || (_templateObject67 = _taggedTemplateLiteral([":\u241Fbfccc7449a42f7d944233041ac0d93921c543934\u241F2559467589081529119:Wizard dialog"])));
+            i18n_3 = $localize(_templateObject70 || (_templateObject70 = _taggedTemplateLiteral([":\u241Fbfccc7449a42f7d944233041ac0d93921c543934\u241F2559467589081529119:Wizard dialog"])));
           }
 
           var i18n_5;
@@ -4963,7 +5068,7 @@
             var MSG_EXTERNAL_8675920705208401217$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_DIALOG_WIZARD_DIALOG_EXAMPLE_COMPONENT_TS__6 = goog.getMsg("This is the first step of our horizontal wizard");
             i18n_5 = MSG_EXTERNAL_8675920705208401217$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_DIALOG_WIZARD_DIALOG_EXAMPLE_COMPONENT_TS__6;
           } else {
-            i18n_5 = $localize(_templateObject68 || (_templateObject68 = _taggedTemplateLiteral([":\u241Fc9bf00bfbb1b8a6e46eb4e43075cf64abecea307\u241F8675920705208401217:This is the first step of our horizontal wizard"])));
+            i18n_5 = $localize(_templateObject71 || (_templateObject71 = _taggedTemplateLiteral([":\u241Fc9bf00bfbb1b8a6e46eb4e43075cf64abecea307\u241F8675920705208401217:This is the first step of our horizontal wizard"])));
           }
 
           var i18n_7;
@@ -4972,7 +5077,7 @@
             var MSG_EXTERNAL_1639920997400045870$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_DIALOG_WIZARD_DIALOG_EXAMPLE_COMPONENT_TS__8 = goog.getMsg("This is the second step of our horizontal wizard");
             i18n_7 = MSG_EXTERNAL_1639920997400045870$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_DIALOG_WIZARD_DIALOG_EXAMPLE_COMPONENT_TS__8;
           } else {
-            i18n_7 = $localize(_templateObject69 || (_templateObject69 = _taggedTemplateLiteral([":\u241F4103bf2eee669374dca77d06d9203728047ffec4\u241F1639920997400045870:This is the second step of our horizontal wizard"])));
+            i18n_7 = $localize(_templateObject72 || (_templateObject72 = _taggedTemplateLiteral([":\u241F4103bf2eee669374dca77d06d9203728047ffec4\u241F1639920997400045870:This is the second step of our horizontal wizard"])));
           }
 
           var i18n_9;
@@ -4981,7 +5086,7 @@
             var MSG_EXTERNAL_7104742727847308533$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_DIALOG_WIZARD_DIALOG_EXAMPLE_COMPONENT_TS__10 = goog.getMsg("This is the third step of our horizontal wizard");
             i18n_9 = MSG_EXTERNAL_7104742727847308533$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_DIALOG_WIZARD_DIALOG_EXAMPLE_COMPONENT_TS__10;
           } else {
-            i18n_9 = $localize(_templateObject70 || (_templateObject70 = _taggedTemplateLiteral([":\u241F95e8f79c6ab835e5be1e96ec6afe816aba2d855e\u241F7104742727847308533:This is the third step of our horizontal wizard"])));
+            i18n_9 = $localize(_templateObject73 || (_templateObject73 = _taggedTemplateLiteral([":\u241F95e8f79c6ab835e5be1e96ec6afe816aba2d855e\u241F7104742727847308533:This is the third step of our horizontal wizard"])));
           }
 
           var i18n_11;
@@ -4990,7 +5095,7 @@
             var MSG_EXTERNAL_7100330853882173244$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_DIALOG_WIZARD_DIALOG_EXAMPLE_COMPONENT_TS__12 = goog.getMsg("We finally reached our last step");
             i18n_11 = MSG_EXTERNAL_7100330853882173244$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_DIALOG_WIZARD_DIALOG_EXAMPLE_COMPONENT_TS__12;
           } else {
-            i18n_11 = $localize(_templateObject71 || (_templateObject71 = _taggedTemplateLiteral([":\u241F414c233c4cbaae1a74728ed5d64304bbd36cdbe5\u241F7100330853882173244:We finally reached our last step"])));
+            i18n_11 = $localize(_templateObject74 || (_templateObject74 = _taggedTemplateLiteral([":\u241F414c233c4cbaae1a74728ed5d64304bbd36cdbe5\u241F7100330853882173244:We finally reached our last step"])));
           }
 
           var i18n_13;
@@ -4999,7 +5104,7 @@
             var MSG_EXTERNAL_25258399261550967$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_DIALOG_WIZARD_DIALOG_EXAMPLE_COMPONENT_TS__14 = goog.getMsg("Data is loading from remote server...");
             i18n_13 = MSG_EXTERNAL_25258399261550967$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_DIALOG_WIZARD_DIALOG_EXAMPLE_COMPONENT_TS__14;
           } else {
-            i18n_13 = $localize(_templateObject72 || (_templateObject72 = _taggedTemplateLiteral([":\u241Fdc0a65d80c4379ceca3424563f96da6b49156f5c\u241F25258399261550967:Data is loading from remote server..."])));
+            i18n_13 = $localize(_templateObject75 || (_templateObject75 = _taggedTemplateLiteral([":\u241Fdc0a65d80c4379ceca3424563f96da6b49156f5c\u241F25258399261550967:Data is loading from remote server..."])));
           }
 
           return [["dialogWizard", ""], ["nui-button", "", "type", "button", 3, "click"], i18n_1, ["nui-busy", "", 3, "busy"], [1, "busy-content"], ["title", i18n_3, 3, "closed"], [1, "dialog-body", "compact-mode"], ["wizardStepLabel", ""], i18n_5, ["wizardStepFooter", ""], i18n_7, i18n_9, i18n_11, ["wizardCancel", ""], ["wizardPrevious", ""], ["wizardNext", ""], ["size", "large", "message", i18n_13], ["type", "button", "nui-button", "", 3, "click"], [4, "ngTemplateOutlet"], ["type", "button", "nuiWizardPrevious", "", "nui-button", "", "icon", "caret-left"], ["nuiWizardNext", "", "type", "button", "nui-button", "", "displayStyle", "primary", "icon", "caret-right", "iconRight", "true"]];
@@ -5486,7 +5591,7 @@
             var MSG_EXTERNAL_6880797919794408969$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_ASYNC_VALIDATION_FORM_WIZARD_ASYNC_FORM_VALIDATION_EXAMPLE_COMPONENT_TS_2 = goog.getMsg("Async Validation is firing...");
             i18n_1 = MSG_EXTERNAL_6880797919794408969$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_ASYNC_VALIDATION_FORM_WIZARD_ASYNC_FORM_VALIDATION_EXAMPLE_COMPONENT_TS_2;
           } else {
-            i18n_1 = $localize(_templateObject73 || (_templateObject73 = _taggedTemplateLiteral([":\u241F7e71f76dbff7069dc125de76ad0d86ea6ffa286e\u241F6880797919794408969:Async Validation is firing..."])));
+            i18n_1 = $localize(_templateObject76 || (_templateObject76 = _taggedTemplateLiteral([":\u241F7e71f76dbff7069dc125de76ad0d86ea6ffa286e\u241F6880797919794408969:Async Validation is firing..."])));
           }
 
           var i18n_3;
@@ -5495,7 +5600,7 @@
             var MSG_EXTERNAL_8953033926734869941$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_ASYNC_VALIDATION_FORM_WIZARD_ASYNC_FORM_VALIDATION_EXAMPLE_COMPONENT_TS__4 = goog.getMsg("Name");
             i18n_3 = MSG_EXTERNAL_8953033926734869941$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_ASYNC_VALIDATION_FORM_WIZARD_ASYNC_FORM_VALIDATION_EXAMPLE_COMPONENT_TS__4;
           } else {
-            i18n_3 = $localize(_templateObject74 || (_templateObject74 = _taggedTemplateLiteral([":\u241Fcff1428d10d59d14e45edec3c735a27b5482db59\u241F8953033926734869941:Name"])));
+            i18n_3 = $localize(_templateObject77 || (_templateObject77 = _taggedTemplateLiteral([":\u241Fcff1428d10d59d14e45edec3c735a27b5482db59\u241F8953033926734869941:Name"])));
           }
 
           var i18n_5;
@@ -5504,7 +5609,7 @@
             var MSG_EXTERNAL_4768749765465246664$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_ASYNC_VALIDATION_FORM_WIZARD_ASYNC_FORM_VALIDATION_EXAMPLE_COMPONENT_TS__6 = goog.getMsg("Email");
             i18n_5 = MSG_EXTERNAL_4768749765465246664$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_ASYNC_VALIDATION_FORM_WIZARD_ASYNC_FORM_VALIDATION_EXAMPLE_COMPONENT_TS__6;
           } else {
-            i18n_5 = $localize(_templateObject75 || (_templateObject75 = _taggedTemplateLiteral([":\u241F244aae9346da82b0922506c2d2581373a15641cc\u241F4768749765465246664:Email"])));
+            i18n_5 = $localize(_templateObject78 || (_templateObject78 = _taggedTemplateLiteral([":\u241F244aae9346da82b0922506c2d2581373a15641cc\u241F4768749765465246664:Email"])));
           }
 
           var i18n_7;
@@ -5513,7 +5618,7 @@
             var MSG_EXTERNAL_3208836223768257750$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_ASYNC_VALIDATION_FORM_WIZARD_ASYNC_FORM_VALIDATION_EXAMPLE_COMPONENT_TS___8 = goog.getMsg(" This is required ");
             i18n_7 = MSG_EXTERNAL_3208836223768257750$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_ASYNC_VALIDATION_FORM_WIZARD_ASYNC_FORM_VALIDATION_EXAMPLE_COMPONENT_TS___8;
           } else {
-            i18n_7 = $localize(_templateObject76 || (_templateObject76 = _taggedTemplateLiteral([":\u241Ff0cfc81a3cf98503602b26d160e924777f03cbaf\u241F3208836223768257750: This is required "])));
+            i18n_7 = $localize(_templateObject79 || (_templateObject79 = _taggedTemplateLiteral([":\u241Ff0cfc81a3cf98503602b26d160e924777f03cbaf\u241F3208836223768257750: This is required "])));
           }
 
           var i18n_9;
@@ -5522,7 +5627,7 @@
             var MSG_EXTERNAL_3208836223768257750$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_ASYNC_VALIDATION_FORM_WIZARD_ASYNC_FORM_VALIDATION_EXAMPLE_COMPONENT_TS___10 = goog.getMsg(" This is required ");
             i18n_9 = MSG_EXTERNAL_3208836223768257750$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_ASYNC_VALIDATION_FORM_WIZARD_ASYNC_FORM_VALIDATION_EXAMPLE_COMPONENT_TS___10;
           } else {
-            i18n_9 = $localize(_templateObject77 || (_templateObject77 = _taggedTemplateLiteral([":\u241Ff0cfc81a3cf98503602b26d160e924777f03cbaf\u241F3208836223768257750: This is required "])));
+            i18n_9 = $localize(_templateObject80 || (_templateObject80 = _taggedTemplateLiteral([":\u241Ff0cfc81a3cf98503602b26d160e924777f03cbaf\u241F3208836223768257750: This is required "])));
           }
 
           var i18n_11;
@@ -5531,7 +5636,7 @@
             var MSG_EXTERNAL_4650401672807616233$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_ASYNC_VALIDATION_FORM_WIZARD_ASYNC_FORM_VALIDATION_EXAMPLE_COMPONENT_TS___12 = goog.getMsg(" Invalid email ");
             i18n_11 = MSG_EXTERNAL_4650401672807616233$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_ASYNC_VALIDATION_FORM_WIZARD_ASYNC_FORM_VALIDATION_EXAMPLE_COMPONENT_TS___12;
           } else {
-            i18n_11 = $localize(_templateObject78 || (_templateObject78 = _taggedTemplateLiteral([":\u241F8a35a7091a6881fe2b61c13ce6c4c3fd6cbd797d\u241F4650401672807616233: Invalid email "])));
+            i18n_11 = $localize(_templateObject81 || (_templateObject81 = _taggedTemplateLiteral([":\u241F8a35a7091a6881fe2b61c13ce6c4c3fd6cbd797d\u241F4650401672807616233: Invalid email "])));
           }
 
           return [["nui-busy", "", 3, "busy"], [3, "formGroup", 4, "ngIf"], ["size", "large", "message", i18n_1], [3, "formGroup"], ["linear", ""], ["wizard", ""], ["label", "Person Details", "formGroupName", "personDetails", 3, "stepControl"], ["caption", i18n_3, 3, "control"], ["formControlName", "name"], ["for", "required", 4, "ngIf"], ["wizardStepFooter", ""], ["formGroupName", "contactDetails", 3, "stepControl"], ["wizardStepLabel", ""], ["caption", i18n_5, 3, "control"], ["type", "email", "formControlName", "email"], ["for", "email", 4, "ngIf"], ["wizardPrevious", ""], ["wizardNext", ""], ["for", "required"], i18n_7, [4, "ngTemplateOutlet"], [3, "click"], i18n_9, ["for", "email"], i18n_11, ["type", "button", "nuiWizardPrevious", "", "nui-button", "", "icon", "caret-left"], ["nuiWizardNext", "", "type", "button", "nui-button", "", "displayStyle", "primary", "icon", "caret-right", "iconRight", "true", 3, "click"]];
@@ -6295,7 +6400,7 @@
             var MSG_EXTERNAL_8373557087720397153$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_VERTICAL_LAYOUT_WIZARD_VERTICAL_EXAMPLE_COMPONENT_TS_1 = goog.getMsg("First step");
             i18n_0 = MSG_EXTERNAL_8373557087720397153$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_VERTICAL_LAYOUT_WIZARD_VERTICAL_EXAMPLE_COMPONENT_TS_1;
           } else {
-            i18n_0 = $localize(_templateObject79 || (_templateObject79 = _taggedTemplateLiteral([":\u241F9170783b7882b9260aea1a22ae5cf2407fa3e64f\u241F8373557087720397153:First step"])));
+            i18n_0 = $localize(_templateObject82 || (_templateObject82 = _taggedTemplateLiteral([":\u241F9170783b7882b9260aea1a22ae5cf2407fa3e64f\u241F8373557087720397153:First step"])));
           }
 
           var i18n_2;
@@ -6304,7 +6409,7 @@
             var MSG_EXTERNAL_1790605907845599511$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_VERTICAL_LAYOUT_WIZARD_VERTICAL_EXAMPLE_COMPONENT_TS_3 = goog.getMsg("This is the first step of our vertical wizard");
             i18n_2 = MSG_EXTERNAL_1790605907845599511$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_VERTICAL_LAYOUT_WIZARD_VERTICAL_EXAMPLE_COMPONENT_TS_3;
           } else {
-            i18n_2 = $localize(_templateObject80 || (_templateObject80 = _taggedTemplateLiteral([":\u241F41fc079f61e9f8e64879f00ebfe934e2644ec8c5\u241F1790605907845599511:This is the first step of our vertical wizard"])));
+            i18n_2 = $localize(_templateObject83 || (_templateObject83 = _taggedTemplateLiteral([":\u241F41fc079f61e9f8e64879f00ebfe934e2644ec8c5\u241F1790605907845599511:This is the first step of our vertical wizard"])));
           }
 
           var i18n_4;
@@ -6313,7 +6418,7 @@
             var MSG_EXTERNAL_2997617654392962041$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_VERTICAL_LAYOUT_WIZARD_VERTICAL_EXAMPLE_COMPONENT_TS_5 = goog.getMsg("Second step");
             i18n_4 = MSG_EXTERNAL_2997617654392962041$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_VERTICAL_LAYOUT_WIZARD_VERTICAL_EXAMPLE_COMPONENT_TS_5;
           } else {
-            i18n_4 = $localize(_templateObject81 || (_templateObject81 = _taggedTemplateLiteral([":\u241Fb29f4fd21a1d511462918ede337438d03dab18e5\u241F2997617654392962041:Second step"])));
+            i18n_4 = $localize(_templateObject84 || (_templateObject84 = _taggedTemplateLiteral([":\u241Fb29f4fd21a1d511462918ede337438d03dab18e5\u241F2997617654392962041:Second step"])));
           }
 
           var i18n_6;
@@ -6322,7 +6427,7 @@
             var MSG_EXTERNAL_5513634356346903785$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_VERTICAL_LAYOUT_WIZARD_VERTICAL_EXAMPLE_COMPONENT_TS_7 = goog.getMsg("This is the second step of our vertical wizard");
             i18n_6 = MSG_EXTERNAL_5513634356346903785$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_VERTICAL_LAYOUT_WIZARD_VERTICAL_EXAMPLE_COMPONENT_TS_7;
           } else {
-            i18n_6 = $localize(_templateObject82 || (_templateObject82 = _taggedTemplateLiteral([":\u241F4a80cdb9c4f28e0387b7ed6a8489cfe9e6f6ca46\u241F5513634356346903785:This is the second step of our vertical wizard"])));
+            i18n_6 = $localize(_templateObject85 || (_templateObject85 = _taggedTemplateLiteral([":\u241F4a80cdb9c4f28e0387b7ed6a8489cfe9e6f6ca46\u241F5513634356346903785:This is the second step of our vertical wizard"])));
           }
 
           var i18n_8;
@@ -6331,7 +6436,7 @@
             var MSG_EXTERNAL_5385737502167048240$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_VERTICAL_LAYOUT_WIZARD_VERTICAL_EXAMPLE_COMPONENT_TS_9 = goog.getMsg("Final step");
             i18n_8 = MSG_EXTERNAL_5385737502167048240$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_VERTICAL_LAYOUT_WIZARD_VERTICAL_EXAMPLE_COMPONENT_TS_9;
           } else {
-            i18n_8 = $localize(_templateObject83 || (_templateObject83 = _taggedTemplateLiteral([":\u241F0de8f1dbd57123d294729d71fd278eaf936d4a2b\u241F5385737502167048240:Final step"])));
+            i18n_8 = $localize(_templateObject86 || (_templateObject86 = _taggedTemplateLiteral([":\u241F0de8f1dbd57123d294729d71fd278eaf936d4a2b\u241F5385737502167048240:Final step"])));
           }
 
           var i18n_10;
@@ -6340,7 +6445,7 @@
             var MSG_EXTERNAL_7100330853882173244$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_VERTICAL_LAYOUT_WIZARD_VERTICAL_EXAMPLE_COMPONENT_TS_11 = goog.getMsg("We finally reached our last step");
             i18n_10 = MSG_EXTERNAL_7100330853882173244$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_VERTICAL_LAYOUT_WIZARD_VERTICAL_EXAMPLE_COMPONENT_TS_11;
           } else {
-            i18n_10 = $localize(_templateObject84 || (_templateObject84 = _taggedTemplateLiteral([":\u241F414c233c4cbaae1a74728ed5d64304bbd36cdbe5\u241F7100330853882173244:We finally reached our last step"])));
+            i18n_10 = $localize(_templateObject87 || (_templateObject87 = _taggedTemplateLiteral([":\u241F414c233c4cbaae1a74728ed5d64304bbd36cdbe5\u241F7100330853882173244:We finally reached our last step"])));
           }
 
           return [["label", i18n_0], i18n_2, ["wizardStepFooter", ""], ["label", i18n_4], i18n_6, ["label", i18n_8], i18n_10, ["wizardPrevious", ""], ["wizardNext", ""], [4, "ngTemplateOutlet"], ["type", "button", "nuiWizardPrevious", "", "nui-button", "", "icon", "caret-left"], ["nuiWizardNext", "", "type", "button", "nui-button", "", "displayStyle", "primary", "icon", "caret-right", "iconRight", "true"]];
