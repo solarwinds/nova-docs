@@ -922,7 +922,7 @@ export class WizardDirective extends CdkStepper implements AfterContentInit, OnD
     }
 
     public ngAfterContentInit(): void {
-        this._icons.forEach(({name, templateRef}) &#x3D;&gt; this._iconOverrides[name] &#x3D; templateRef);
+        this._icons.forEach(({nuiWizardIcon, templateRef}) &#x3D;&gt; this._iconOverrides[nuiWizardIcon] &#x3D; templateRef);
         this._steps.changes
             .pipe(startWith(this._steps), takeUntil(this._destroyed))
             .subscribe((steps: QueryList&lt;WizardStepV2Component&gt;) &#x3D;&gt; {

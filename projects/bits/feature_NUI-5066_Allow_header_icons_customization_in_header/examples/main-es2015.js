@@ -9455,6 +9455,7 @@ function WizardVerticalComponent_div_1_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("footer", ctx_r1.selected.stepFooter);
 } }
+/**  ignore should be removed in scope of the NUI-6099 */
 /** @ignore */
 class WizardVerticalComponent extends _wizard_directive__WEBPACK_IMPORTED_MODULE_5__["WizardDirective"] {
     constructor(dir, changeDetectorRef, 
@@ -18921,7 +18922,7 @@ class WizardDirective extends _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_1__[
         this.selectedIndex = this.steps ? this.steps.toArray().indexOf(step) : -1;
     }
     ngAfterContentInit() {
-        this._icons.forEach(({ name, templateRef }) => this._iconOverrides[name] = templateRef);
+        this._icons.forEach(({ nuiWizardIcon, templateRef }) => this._iconOverrides[nuiWizardIcon] = templateRef);
         this._steps.changes
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["startWith"])(this._steps), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeUntil"])(this._destroyed))
             .subscribe((steps) => {
@@ -18999,14 +19000,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
 
 
-/** Template to be used to override the icons inside the step header. */
 class NuiWizardIconDirective {
     constructor(templateRef) {
         this.templateRef = templateRef;
     }
 }
 NuiWizardIconDirective.ɵfac = function NuiWizardIconDirective_Factory(t) { return new (t || NuiWizardIconDirective)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["TemplateRef"])); };
-NuiWizardIconDirective.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({ type: NuiWizardIconDirective, selectors: [["ng-template", "nuiWizardIcon", ""]], inputs: { name: ["nuiWizardIcon", "name"] } });
+NuiWizardIconDirective.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({ type: NuiWizardIconDirective, selectors: [["ng-template", "nuiWizardIcon", ""]], inputs: { nuiWizardIcon: "nuiWizardIcon" } });
 
 
 /***/ }),

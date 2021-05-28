@@ -58,13 +58,6 @@
             <code>src/lib/wizard-v2/wizard-icon.directive.ts</code>
         </p>
 
-            <p class="comment">
-                <h3>Description</h3>
-            </p>
-            <p class="comment">
-                <p>Template to be used to override the icons inside the step header. </p>
-
-            </p>
 
 
 
@@ -263,14 +256,14 @@ export interface MatStepperIconContext {
     active: boolean;
     optional: boolean;
 }
-/** Template to be used to override the icons inside the step header. */
+
 @Directive({
     selector: &quot;ng-template[nuiWizardIcon]&quot;,
 })
 export class NuiWizardIconDirective {
+
     /** Name of the icon to be overridden. */
-    // eslint-disable-next-line @angular-eslint/no-input-rename
-    @Input(&quot;nuiWizardIcon&quot;) name: StepState;
+    @Input() nuiWizardIcon: StepState;
 
     constructor(public templateRef: TemplateRef&lt;NuiWizardIconContext&gt;) {}
 }
