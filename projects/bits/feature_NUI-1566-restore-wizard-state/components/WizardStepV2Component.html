@@ -67,6 +67,8 @@
         <h3>Implements</h3>
     </p>
     <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                    <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
                     <code><a href="../injectables/ErrorStateMatcher.html" target="_self" >ErrorStateMatcher</a></code>
     </p>
 
@@ -209,7 +211,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/lib/wizard-v2/wizard-step/wizard-step.component.ts:52</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">src/lib/wizard-v2/wizard-step/wizard-step.component.ts:58</a></div>
                             </td>
                         </tr>
 
@@ -301,7 +303,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/lib/wizard-v2/wizard-step/wizard-step.component.ts:46</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/lib/wizard-v2/wizard-step/wizard-step.component.ts:50</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -337,8 +339,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="64"
-                            class="link-to-prism">src/lib/wizard-v2/wizard-step/wizard-step.component.ts:64</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="79"
+                            class="link-to-prism">src/lib/wizard-v2/wizard-step/wizard-step.component.ts:79</a></div>
                 </td>
             </tr>
 
@@ -434,7 +436,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/lib/wizard-v2/wizard-step/wizard-step.component.ts:52</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/lib/wizard-v2/wizard-step/wizard-step.component.ts:56</a></div>
                             </td>
                         </tr>
 
@@ -476,7 +478,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/lib/wizard-v2/wizard-step/wizard-step.component.ts:49</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/lib/wizard-v2/wizard-step/wizard-step.component.ts:53</a></div>
                             </td>
                         </tr>
 
@@ -509,6 +511,8 @@ import {
     forwardRef,
     Inject,
     Input,
+    OnDestroy,
+    OnInit,
     Optional,
     SkipSelf,
     TemplateRef,
@@ -519,6 +523,8 @@ import {FormControl, FormGroupDirective, NgForm} from &quot;@angular/forms&quot;
 import {ErrorStateMatcher} from &quot;../error-state-matcher.provider&quot;;
 import {WizardStepFooterDirective} from &quot;../wizard-step-footer.directive&quot;;
 import {WizardStepLabelDirective} from &quot;../wizard-step-label.directive&quot;;
+import { Subject } from &quot;rxjs&quot;;
+import { takeUntil } from &quot;rxjs/operators&quot;;
 
 @Component({
     selector: &quot;nui-wizard-step-v2&quot;,
@@ -539,7 +545,7 @@ import {WizardStepLabelDirective} from &quot;../wizard-step-label.directive&quot
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class WizardStepV2Component extends CdkStep implements ErrorStateMatcher {
+export class WizardStepV2Component extends CdkStep implements OnInit, OnDestroy, ErrorStateMatcher {
     @Input() template?: TemplateRef&lt;any&gt;;
 
     /** Content for step label given by &#x60;&lt;ng-template wizardStepLabel&gt;&#x60;. */
@@ -548,6 +554,8 @@ export class WizardStepV2Component extends CdkStep implements ErrorStateMatcher 
     /** Content for footer given by &#x60;&lt;ng-template wizardStepFooter&gt;&#x60;. */
     @ContentChild(WizardStepFooterDirective) stepFooter: WizardStepFooterDirective;
 
+    private destroy$ &#x3D; new Subject();
+
     constructor(
         private changeDetectorRef: ChangeDetectorRef,
         @Inject(forwardRef(() &#x3D;&gt; CdkStepper)) stepper: any,
@@ -555,6 +563,15 @@ export class WizardStepV2Component extends CdkStep implements ErrorStateMatcher 
         @Optional() @Inject(STEPPER_GLOBAL_OPTIONS) stepperOptions?: StepperOptions
     ) {
         super(stepper, stepperOptions);
+    }
+
+    ngOnInit(): void {
+        this.onControlStatusChanges();
+    }
+
+    ngOnDestroy(): void {
+        this.destroy$.next();
+        this.destroy$.complete();
     }
 
     /** Custom error state matcher that additionally checks for validity of interacted form. */
@@ -567,6 +584,16 @@ export class WizardStepV2Component extends CdkStep implements ErrorStateMatcher 
         const customErrorState &#x3D; !!(control?.invalid &amp;&amp; this.interacted);
 
         return originalErrorState || customErrorState;
+    }
+
+    private onControlStatusChanges(): void {
+        if (this.stepControl) {
+            this.stepControl.statusChanges.pipe(takeUntil(this.destroy$)).subscribe((status)  &#x3D;&gt; {
+                if (status &#x3D;&#x3D;&#x3D; &quot;INVALID&quot;) {
+                    this.completed &#x3D; false;
+                }
+            });
+        }
     }
 }
 </code></pre>
