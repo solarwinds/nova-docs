@@ -23843,11 +23843,14 @@ class MenuKeyControlService {
         // when opening menu key 'focus' should disappear from items
         if (this.menuOpenListener) {
             this.menuOpenListenerSubscription = this.menuOpenListener.subscribe(() => {
-                var _a, _b;
-                this.keyboardEventsManager.setFirstItemActive();
+                // Uncomment in the scope of NUI-6104
+                // this.keyboardEventsManager.setFirstItemActive();
+                // Remove this in the scope of NUI-6104 in favor of the line above
+                this.keyboardEventsManager.setActiveItem(-1);
                 this.live.announce(`
-                    ${this.keyControlItemsSource ? this.menuPopup.menuItems.length : this.menuItems.length} menu items available.
-                    Active item ${(_b = (_a = this.keyboardEventsManager) === null || _a === void 0 ? void 0 : _a.activeItem) === null || _b === void 0 ? void 0 : _b.menuItem.nativeElement.innerText}.`);
+                    ${this.keyControlItemsSource ? this.menuPopup.menuItems.length : this.menuItems.length} menu items available.`);
+                // Uncomment in the scope of NUI-6104 and adjust this to be the part of the announcer's string above
+                // Active item ${this.keyboardEventsManager?.activeItem?.menuItem.nativeElement.innerText}.`);
             });
         }
     }

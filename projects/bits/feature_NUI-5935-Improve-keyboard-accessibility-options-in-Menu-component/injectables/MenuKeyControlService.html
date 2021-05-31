@@ -245,8 +245,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="66"
-                            class="link-to-prism">src/lib/menu/menu-key-control.service.ts:66</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="72"
+                            class="link-to-prism">src/lib/menu/menu-key-control.service.ts:72</a></div>
                 </td>
             </tr>
 
@@ -286,8 +286,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="58"
-                            class="link-to-prism">src/lib/menu/menu-key-control.service.ts:58</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="64"
+                            class="link-to-prism">src/lib/menu/menu-key-control.service.ts:64</a></div>
                 </td>
             </tr>
 
@@ -397,8 +397,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="208"
-                            class="link-to-prism">src/lib/menu/menu-key-control.service.ts:208</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="214"
+                            class="link-to-prism">src/lib/menu/menu-key-control.service.ts:214</a></div>
                 </td>
             </tr>
 
@@ -438,8 +438,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="62"
-                            class="link-to-prism">src/lib/menu/menu-key-control.service.ts:62</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="68"
+                            class="link-to-prism">src/lib/menu/menu-key-control.service.ts:68</a></div>
                 </td>
             </tr>
 
@@ -874,10 +874,16 @@ export class MenuKeyControlService implements OnDestroy {
         // when opening menu key &#x27;focus&#x27; should disappear from items
         if (this.menuOpenListener) {
             this.menuOpenListenerSubscription &#x3D; this.menuOpenListener.subscribe(() &#x3D;&gt; {
-                this.keyboardEventsManager.setFirstItemActive();
+                // Uncomment in the scope of NUI-6104
+                // this.keyboardEventsManager.setFirstItemActive();
+
+                // Remove this in the scope of NUI-6104 in favor of the line above
+                this.keyboardEventsManager.setActiveItem(-1);
                 this.live.announce(&#x60;
-                    ${this.keyControlItemsSource ? this.menuPopup.menuItems.length : this.menuItems.length} menu items available.
-                    Active item ${this.keyboardEventsManager?.activeItem?.menuItem.nativeElement.innerText}.&#x60;);
+                    ${this.keyControlItemsSource ? this.menuPopup.menuItems.length : this.menuItems.length} menu items available.&#x60;);
+
+                // Uncomment in the scope of NUI-6104 and adjust this to be the part of the announcer&#x27;s string above
+                // Active item ${this.keyboardEventsManager?.activeItem?.menuItem.nativeElement.innerText}.&#x60;);
             });
         }
     }
