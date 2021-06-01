@@ -14900,6 +14900,20 @@ ContentComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineC
 
 /***/ }),
 
+/***/ "OYF7":
+/*!************************************!*\
+  !*** ./src/lib/wizard-v2/types.ts ***!
+  \************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+
+
+
+/***/ }),
+
 /***/ "OeXZ":
 /*!**********************************************!*\
   !*** ./demo/src/environments/environment.ts ***!
@@ -30489,6 +30503,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wizard_vertical_wizard_vertical_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./wizard-vertical/wizard-vertical.component */ "EEH9");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "WizardVerticalComponent", function() { return _wizard_vertical_wizard_vertical_component__WEBPACK_IMPORTED_MODULE_11__["WizardVerticalComponent"]; });
 
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./types */ "OYF7");
+/* empty/unused harmony star reexport */
 
 
 
