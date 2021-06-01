@@ -61,7 +61,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/lib/wizard-v2/public-api.ts</code>
+            <code>src/lib/wizard-v2/types.ts</code>
         </p>
 
 
@@ -79,7 +79,7 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                        <a href="#steps">steps</a>
+                                        <a href="#finished">finished</a>
                                 </li>
                             </ul>
                         </td>
@@ -96,13 +96,13 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="steps"></a>
-                                        <span class="name"><b>steps</b><a href="#steps"><span class="icon ion-ios-link"></span></a></span>
+                                        <a name="finished"></a>
+                                        <span class="name"><b>finished</b><a href="#finished"><span class="icon ion-ios-link"></span></a></span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>steps:         <code><a href="../components/WizardStepV2Component.html" target="_self" >QueryList&lt;WizardStepV2Component&gt;</a></code>
+                                        <code>finished:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -110,7 +110,7 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="../components/WizardStepV2Component.html" target="_self" >QueryList&lt;WizardStepV2Component&gt;</a></code>
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 
                                         </td>
                                     </tr>
@@ -126,24 +126,8 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { QueryList } from &quot;@angular/core&quot;;
-import { WizardStepV2Component } from &quot;./wizard-step/wizard-step.component&quot;;
-
-export * from &quot;./wizard.module&quot;;
-export * from &quot;./wizard.directive&quot;;
-export * from &quot;./wizard-step-footer.directive&quot;;
-export * from &quot;./wizard-step-label.directive&quot;;
-export * from &quot;./error-state-matcher.provider&quot;;
-export * from &quot;./wizard-animations/wizard-animations&quot;;
-export * from &quot;./wizard-button/wizard-button&quot;;
-export * from &quot;./wizard-footer/wizard-footer.component&quot;;
-export * from &quot;./wizard-horizontal/wizard-horizontal.component&quot;;
-export * from &quot;./wizard-step/wizard-step.component&quot;;
-export * from &quot;./wizard-step-header/wizard-step-header.component&quot;;
-export * from &quot;./wizard-vertical/wizard-vertical.component&quot;;
-
-export interface IWizardState {
-    steps: QueryList&lt;WizardStepV2Component&gt;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export interface IWizardState {
+    finished: boolean;
 }
 </code></pre>
     </div>

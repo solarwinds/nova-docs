@@ -18933,8 +18933,8 @@ class WizardDirective extends _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_1__[
         this.animationDone = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
         /** Event emitted when the selected step has changed. */
         this.selectionChange = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
-        /** Emit steps for ability restore them status later */
-        this.wizardStepsStatusChanges = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        /** Emits the completed wizard state on component destroy */
+        this.finished = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
         /** Stream of animation `done` events when the body expands/collapses. */
         this._animationDone = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
     }
@@ -18952,7 +18952,8 @@ class WizardDirective extends _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_1__[
             this.steps.reset(steps.filter(step => step._stepper === this));
             this.steps.notifyOnChanges();
         });
-        this.steps.changes.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeUntil"])(this._destroyed))
+        this.steps.changes
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeUntil"])(this._destroyed))
             .subscribe(() => this._stateChanged());
         this._animationDone.pipe(
         // This needs a `distinctUntilChanged` in order to avoid emitting the same event twice due
@@ -18965,33 +18966,34 @@ class WizardDirective extends _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_1__[
         });
     }
     ngAfterViewInit() {
+        var _a;
         super.ngAfterViewInit();
-        if (this.state && this.state.steps) {
-            this.restoreStepsState();
+        // Making sure there is at least one listener for the output to track the wizard's finished state
+        // This prevents users from using the input without the corresponding output, which may result in
+        // broken validation of the steps
+        if (((_a = this.state) === null || _a === void 0 ? void 0 : _a.finished) && this.finished.observers.length) {
+            this.restore();
         }
     }
     ngOnDestroy() {
-        this.wizardStepsStatusChanges.emit(this.steps);
+        this.finished.emit({
+            finished: this.allStepsCompleted,
+        });
         super.ngOnDestroy();
     }
-    restoreStepsState() {
-        var _a;
-        let lastCompletedIndex = -1;
-        const { steps } = this.state;
-        steps.forEach((step, index) => {
-            const stepToRestore = this.steps.get(index);
-            if (step.stepControl && step.stepControl.invalid) {
-                return;
-            }
-            if (stepToRestore && step.completed) {
-                stepToRestore.completed = step.completed;
-                lastCompletedIndex++;
+    // Restores the completed wizard to the last step
+    restore() {
+        this.steps.toArray().forEach(step => {
+            step.completed = true;
+            if (step === this.steps.last) {
+                step.select();
             }
         });
-        if (lastCompletedIndex > -1) {
-            (_a = this.steps.get(lastCompletedIndex)) === null || _a === void 0 ? void 0 : _a.select();
-        }
         this["_changeDetectorRef"].detectChanges();
+    }
+    get allStepsCompleted() {
+        const completed = this.steps.toArray().reduce((acc, step) => acc && step.completed, true);
+        return completed;
     }
 }
 WizardDirective.ngAcceptInputTypeEditable = undefined;
@@ -19009,7 +19011,9 @@ WizardDirective.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDi
     } if (rf & 2) {
         let _t;
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx._stepHeader = _t);
-    } }, inputs: { disableRipple: "disableRipple", state: "state", selected: "selected" }, outputs: { animationDone: "animationDone", selectionChange: "selectionChange", wizardStepsStatusChanges: "wizardStepsStatusChanges" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵProvidersFeature"]([{ provide: _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_1__["CdkStepper"], useExisting: WizardDirective }]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInheritDefinitionFeature"]] });
+    } }, inputs: { disableRipple: "disableRipple", state: "state", selected: "selected" }, outputs: { animationDone: "animationDone", selectionChange: "selectionChange", finished: "finished" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵProvidersFeature"]([
+            { provide: _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_1__["CdkStepper"], useExisting: WizardDirective },
+        ]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInheritDefinitionFeature"]] });
 const ɵWizardDirective_BaseFactory = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetInheritedFactory"](WizardDirective);
 
 
