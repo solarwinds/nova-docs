@@ -1,0 +1,948 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@nova-ui/bits documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">@nova-ui/bits documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Injectables</li>
+  <li>OptionKeyControlService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">API</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/lib/select-v2/option-key-control.service.ts</code>
+        </p>
+
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#liveAnnouncer">liveAnnouncer</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#optionItems">optionItems</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#popup">popup</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getActiveItemIndex">getActiveItemIndex</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#handleKeydown">handleKeydown</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#initKeyboardManager">initKeyboardManager</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#resetActiveItem">resetActiveItem</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#scrollToOption">scrollToOption</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#setActiveItem">setActiveItem</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#setFirstItemActive">setFirstItemActive</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#setSkipPredicate">setSkipPredicate</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(liveAnnouncer: LiveAnnouncer)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/lib/select-v2/option-key-control.service.ts:15</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>liveAnnouncer</td>
+                                                  
+                                                        <td>
+                                                                    <code>LiveAnnouncer</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getActiveItemIndex"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            getActiveItemIndex
+                        </b>
+                        <a href="#getActiveItemIndex"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getActiveItemIndex()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="40"
+                            class="link-to-prism">src/lib/select-v2/option-key-control.service.ts:40</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>number | null</code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="handleKeydown"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            handleKeydown
+                        </b>
+                        <a href="#handleKeydown"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>handleKeydown(event: KeyboardEvent)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="24"
+                            class="link-to-prism">src/lib/select-v2/option-key-control.service.ts:24</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+                                    <td>
+                                            <code>KeyboardEvent</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initKeyboardManager"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            initKeyboardManager
+                        </b>
+                        <a href="#initKeyboardManager"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>initKeyboardManager()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="20"
+                            class="link-to-prism">src/lib/select-v2/option-key-control.service.ts:20</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resetActiveItem"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            resetActiveItem
+                        </b>
+                        <a href="#resetActiveItem"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>resetActiveItem()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">src/lib/select-v2/option-key-control.service.ts:32</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="scrollToOption"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            scrollToOption
+                        </b>
+                        <a href="#scrollToOption"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>scrollToOption(options: ScrollIntoViewOptions)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="48"
+                            class="link-to-prism">src/lib/select-v2/option-key-control.service.ts:48</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>options</td>
+                                    <td>
+                                            <code>ScrollIntoViewOptions</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setActiveItem"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            setActiveItem
+                        </b>
+                        <a href="#setActiveItem"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>setActiveItem(option: T)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="28"
+                            class="link-to-prism">src/lib/select-v2/option-key-control.service.ts:28</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>option</td>
+                                    <td>
+                                            <code>T</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setFirstItemActive"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            setFirstItemActive
+                        </b>
+                        <a href="#setFirstItemActive"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>setFirstItemActive()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="36"
+                            class="link-to-prism">src/lib/select-v2/option-key-control.service.ts:36</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setSkipPredicate"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            setSkipPredicate
+                        </b>
+                        <a href="#setSkipPredicate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>setSkipPredicate(predicate: (option: T) => void)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="44"
+                            class="link-to-prism">src/lib/select-v2/option-key-control.service.ts:44</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>predicate</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="liveAnnouncer"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            liveAnnouncer</b>
+                            <a href="#liveAnnouncer"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>LiveAnnouncer</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/lib/select-v2/option-key-control.service.ts:17</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="optionItems"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            optionItems</b>
+                            <a href="#optionItems"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>QueryList&lt;T&gt;</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/lib/select-v2/option-key-control.service.ts:13</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="popup"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            popup</b>
+                            <a href="#popup"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/IOverlayComponent.html" target="_self" >IOverlayComponent</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/lib/select-v2/option-key-control.service.ts:12</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ActiveDescendantKeyManager, LiveAnnouncer } from &quot;@angular/cdk/a11y&quot;;
+import { DOWN_ARROW, ENTER, ESCAPE, PAGE_DOWN, PAGE_UP, TAB, UP_ARROW } from &quot;@angular/cdk/keycodes&quot;;
+import { Injectable, QueryList } from &quot;@angular/core&quot;;
+import isNil from &quot;lodash/isNil&quot;;
+
+import { IOption, IOverlayComponent } from &quot;../overlay/types&quot;;
+import { ANNOUNCER_CLOSE_MESSAGE, ANNOUNCER_OPEN_MESSAGE_SUFFIX } from &quot;./constants&quot;;
+import { KEYBOARD_CODE } from &quot;../../constants&quot;;
+
+@Injectable()
+export class OptionKeyControlService&lt;T extends IOption&gt; {
+    public popup: IOverlayComponent;
+    public optionItems: QueryList&lt;T&gt;;
+
+    private keyboardEventsManager: ActiveDescendantKeyManager&lt;T&gt;;
+
+    constructor(public liveAnnouncer: LiveAnnouncer) {
+    }
+
+    public initKeyboardManager(): void {
+        this.keyboardEventsManager &#x3D; new ActiveDescendantKeyManager(this.optionItems).withVerticalOrientation();
+    }
+
+    public handleKeydown(event: KeyboardEvent): void {
+        this.popup.showing ? this.handleOpenKeyDown(event) : this.handleClosedKeyDown(event);
+    }
+
+    public setActiveItem(option: T): void {
+        this.keyboardEventsManager?.setActiveItem(option);
+    }
+
+    public resetActiveItem(): void {
+        this.keyboardEventsManager.setActiveItem(-1);
+    }
+
+    public setFirstItemActive(): void {
+        this.keyboardEventsManager?.setFirstItemActive();
+    }
+
+    public getActiveItemIndex(): number | null {
+        return this.keyboardEventsManager.activeItemIndex;
+    }
+
+    public setSkipPredicate(predicate: (option: T) &#x3D;&gt; boolean) {
+        this.keyboardEventsManager.skipPredicate(predicate);
+    }
+
+    public scrollToOption(options: ScrollIntoViewOptions): void {
+        if (this.keyboardEventsManager.activeItem) {
+            // setTimeout is necessary because scrolling to the selected item should occur only when overlay rendered
+            setTimeout(() &#x3D;&gt; {
+                this.keyboardEventsManager.activeItem?.scrollIntoView(options);
+            });
+        }
+    }
+
+    private hasActiveItem(): boolean {
+        if (isNil(this.keyboardEventsManager.activeItemIndex)) {
+            throw new Error(&quot;ActiveItemIndex is not defined&quot;);
+        }
+        return Boolean(this.keyboardEventsManager.activeItem &amp;&amp; this.keyboardEventsManager.activeItemIndex &gt;&#x3D; 0);
+    }
+
+    private handleOpenKeyDown(event: KeyboardEvent): void {
+        switch (event.code) {
+            case KEYBOARD_CODE.ARROW_DOWN:
+            case KEYBOARD_CODE.ARROW_UP:
+                this.keyboardEventsManager.onKeydown(event);
+                this.announceNavigatedOption();
+                break;
+            case KEYBOARD_CODE.PAGE_UP:
+                event.preventDefault();
+                this.keyboardEventsManager.onKeydown(event);
+                this.keyboardEventsManager.setFirstItemActive();
+                break;
+            case KEYBOARD_CODE.PAGE_DOWN:
+                event.preventDefault();
+                this.keyboardEventsManager.onKeydown(event);
+                this.keyboardEventsManager.setLastItemActive();
+                break;
+        }
+
+        this.scrollToOption({ block: &quot;nearest&quot; });
+
+        // prevent closing on enter
+        if (!this.hasActiveItem() &amp;&amp; event.code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ENTER) {
+            event.preventDefault();
+        }
+
+        if (this.hasActiveItem() &amp;&amp; event.code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ENTER) {
+
+            if (!this.keyboardEventsManager.activeItem) {
+                throw new Error(&quot;ActiveItem is not defined&quot;);
+            }
+
+            // perform action in menu item(select, switch, check etc).
+            this.keyboardEventsManager.activeItem.element.nativeElement.click();
+        }
+
+        if (event.code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.TAB || event.code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ESCAPE) {
+            this.popup.toggle();
+            this.announceDropdown(this.popup.showing);
+        }
+    }
+
+    private handleClosedKeyDown(event: KeyboardEvent): void {
+        // prevent opening on enter and prevent scrolling page on key down/key up when focused
+        if (this.shouldBePrevented(event)) {
+            event.preventDefault();
+        }
+
+        if (event.code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ARROW_DOWN) {
+            this.popup.toggle();
+            this.scrollToOption({ block: &quot;center&quot; });
+        }
+    }
+
+    private shouldBePrevented(event: KeyboardEvent) {
+        return event.code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ARROW_DOWN || event.code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ARROW_UP
+            || event.code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ENTER;
+    }
+
+    private announceNavigatedOption(): void {
+        const activeItem &#x3D; this.keyboardEventsManager.activeItem;
+
+        if (activeItem) {
+            this.liveAnnouncer.announce((activeItem as any).value);
+        }
+    }
+
+    private announceDropdown(open: boolean) {
+        const message &#x3D; open ? &#x60;${this.optionItems.length} ${ANNOUNCER_OPEN_MESSAGE_SUFFIX}&#x60; : ANNOUNCER_CLOSE_MESSAGE;
+
+        this.liveAnnouncer.announce(message);
+    }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'OptionKeyControlService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
