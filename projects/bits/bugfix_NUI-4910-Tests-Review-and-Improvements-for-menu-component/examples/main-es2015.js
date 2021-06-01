@@ -3505,6 +3505,19 @@ class WizardComponent {
         const visibleStep = this.arraySteps[indexOfStep];
         visibleStep.hidden = false;
     }
+    resetStep(step) {
+        let index = this.arraySteps.findIndex((s) => s === step);
+        const length = this.arraySteps.length;
+        for (index; index < length; index++) {
+            const stepToReset = this.arraySteps[index];
+            stepToReset.visited = false;
+            stepToReset.complete = false;
+            stepToReset.icon = "step";
+        }
+        if (this.currentStep) {
+            this.currentStep.complete = false;
+        }
+    }
     goToStep(stepIndex) {
         this.selectStep(this.arraySteps[stepIndex]);
     }
@@ -5342,17 +5355,9 @@ function AppComponent_div_0_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](1, "nui-theme-switcher");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } }
-const hljs = __webpack_require__(/*! highlight.js/lib/core */ "ECCn");
 class AppComponent {
     constructor(themeSwitcherService) {
         this.themeSwitcherService = themeSwitcherService;
-    }
-    ngOnInit() {
-        hljs.registerLanguage("typescript", __webpack_require__(/*! highlight.js/lib/languages/typescript */ "r0Rl"));
-        hljs.registerLanguage("javascript", __webpack_require__(/*! highlight.js/lib/languages/javascript */ "TdF3"));
-        hljs.registerLanguage("xml", __webpack_require__(/*! highlight.js/lib/languages/xml */ "jctj"));
-        hljs.registerLanguage("json", __webpack_require__(/*! highlight.js/lib/languages/json */ "WtIr"));
-        hljs.registerLanguage("less", __webpack_require__(/*! highlight.js/lib/languages/less */ "GEZ5"));
     }
 }
 AppComponent.ɵfac = function AppComponent_Factory(t) { return new (t || AppComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_src_services_theme_switch_service__WEBPACK_IMPORTED_MODULE_0__["ThemeSwitchService"])); };
@@ -8794,6 +8799,7 @@ function ExampleWrapperComponent_div_7_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", !!ctx_r0.componentSources.less);
 } }
 const _c0 = ["*"];
+const hljs = __webpack_require__(/*! highlight.js/lib/core */ "ECCn");
 /**
  * @dynamic
  * @ignore
@@ -8807,6 +8813,11 @@ class ExampleWrapperComponent {
         this.showSource = false;
         this.availableThemes = ["light theme", "dark theme"];
         this.selectedTheme = this.availableThemes[0];
+        hljs.registerLanguage("typescript", __webpack_require__(/*! highlight.js/lib/languages/typescript */ "r0Rl"));
+        hljs.registerLanguage("javascript", __webpack_require__(/*! highlight.js/lib/languages/javascript */ "TdF3"));
+        hljs.registerLanguage("xml", __webpack_require__(/*! highlight.js/lib/languages/xml */ "jctj"));
+        hljs.registerLanguage("json", __webpack_require__(/*! highlight.js/lib/languages/json */ "WtIr"));
+        hljs.registerLanguage("less", __webpack_require__(/*! highlight.js/lib/languages/less */ "GEZ5"));
     }
     getTooltip() {
         return this.showSource ? "Hide source code" : "Show source code";
@@ -17174,7 +17185,7 @@ TextboxNumberComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵd
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("nui-textbox--disabled", ctx.disabled)("has-error", ctx.hasError());
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("nui-textbox--disabled", ctx.disabled)("has-error", ctx.hasError() || ctx.isInErrorState);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngStyle", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction2"](17, _c1, ctx.customBoxWidth, ctx.customBoxWidth));
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
@@ -31625,10 +31636,10 @@ class NuiValidators {
      */
     static integer(unsigned = false) {
         const res = (control) => {
-            let integerRegex;
-            integerRegex = unsigned ? /^(0|[1-9]\d*)$/ : /^\-?(0|[1-9]\d*)$/;
+            const integerRegex = unsigned ? /^(0|[1-9]\d*)$/ : /^\-?(0|[1-9]\d*)$/;
             const errorObject = {
                 value: control.value,
+                invalidInteger: "Invalid integer value",
             };
             const valid = integerRegex.test(control.value);
             return valid ? null : errorObject;
