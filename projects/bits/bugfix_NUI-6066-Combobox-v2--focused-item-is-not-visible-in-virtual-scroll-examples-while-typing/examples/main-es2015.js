@@ -18738,7 +18738,7 @@ class OptionKeyControlService {
     setSkipPredicate(predicate) {
         this.keyboardEventsManager.skipPredicate(predicate);
     }
-    scrollToOption(options) {
+    scrollToActiveItem(options) {
         if (this.keyboardEventsManager.activeItem) {
             // setTimeout is necessary because scrolling to the selected item should occur only when overlay rendered
             setTimeout(() => {
@@ -18771,7 +18771,7 @@ class OptionKeyControlService {
                 this.keyboardEventsManager.setLastItemActive();
                 break;
         }
-        this.scrollToOption({ block: "nearest" });
+        this.scrollToActiveItem({ block: "nearest" });
         // prevent closing on enter
         if (!this.hasActiveItem() && event.code === _constants__WEBPACK_IMPORTED_MODULE_4__["KEYBOARD_CODE"].ENTER) {
             event.preventDefault();
@@ -18795,7 +18795,7 @@ class OptionKeyControlService {
         }
         if (event.code === _constants__WEBPACK_IMPORTED_MODULE_4__["KEYBOARD_CODE"].ARROW_DOWN) {
             this.popup.toggle();
-            this.scrollToOption({ block: "center" });
+            this.scrollToActiveItem({ block: "center" });
         }
     }
     shouldBePrevented(event) {
@@ -24807,7 +24807,7 @@ class ComboboxV2Component extends _base_select_v2__WEBPACK_IMPORTED_MODULE_5__["
         this.optionsChanged().subscribe(() => {
             this.filterItems(this.inputValue.toString());
             // We need the active option to always stay visible during the options filtering.
-            this.optionKeyControlService.scrollToOption({ block: "start", behavior: "smooth" });
+            this.optionKeyControlService.scrollToActiveItem({ block: "start", behavior: "smooth" });
             this.cdRef.markForCheck();
         });
     }
