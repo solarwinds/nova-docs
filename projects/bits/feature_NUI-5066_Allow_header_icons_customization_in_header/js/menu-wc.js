@@ -395,9 +395,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     <a href="directives/WizardDirective.html" data-type="entity-link">WizardDirective</a>
                                 </li>
                                 <li class="link">
-                                    <a href="directives/WizardIconDirective.html" data-type="entity-link">WizardIconDirective</a>
-                                </li>
-                                <li class="link">
                                     <a href="directives/WizardStepFooterDirective.html" data-type="entity-link">WizardStepFooterDirective</a>
                                 </li>
                                 <li class="link">
@@ -831,9 +828,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="interfaces/IWizardWaitEvent.html" data-type="entity-link">IWizardWaitEvent</a>
-                            </li>
-                            <li class="link">
-                                <a href="interfaces/NuiWizardIconContext.html" data-type="entity-link">NuiWizardIconContext</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/Paginator.html" data-type="entity-link">Paginator</a>

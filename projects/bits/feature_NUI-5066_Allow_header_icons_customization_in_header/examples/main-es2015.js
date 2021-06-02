@@ -166,9 +166,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wizard_step_wizard_step_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./wizard-step/wizard-step.component */ "9Oqf");
 /* harmony import */ var _wizard_vertical_wizard_vertical_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./wizard-vertical/wizard-vertical.component */ "EEH9");
 /* harmony import */ var _wizard_directive__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./wizard.directive */ "WZ49");
-/* harmony import */ var _wizard_icon_directive__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./wizard-icon.directive */ "Wckn");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/core */ "fXoL");
-
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/core */ "fXoL");
 
 
 
@@ -187,12 +185,12 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiWizardV2Module {
 }
-NuiWizardV2Module.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_13__["ɵɵdefineNgModule"]({ type: NuiWizardV2Module });
-NuiWizardV2Module.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_13__["ɵɵdefineInjector"]({ factory: function NuiWizardV2Module_Factory(t) { return new (t || NuiWizardV2Module)(); }, providers: [_error_state_matcher_provider__WEBPACK_IMPORTED_MODULE_2__["ErrorStateMatcher"]], imports: [[
+NuiWizardV2Module.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵdefineNgModule"]({ type: NuiWizardV2Module });
+NuiWizardV2Module.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵdefineInjector"]({ factory: function NuiWizardV2Module_Factory(t) { return new (t || NuiWizardV2Module)(); }, providers: [_error_state_matcher_provider__WEBPACK_IMPORTED_MODULE_2__["ErrorStateMatcher"]], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
             _icon_icon_module__WEBPACK_IMPORTED_MODULE_1__["NuiIconModule"],
         ]] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_13__["ɵɵsetNgModuleScope"](NuiWizardV2Module, { declarations: [_wizard_horizontal_wizard_horizontal_component__WEBPACK_IMPORTED_MODULE_5__["WizardHorizontalComponent"],
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵsetNgModuleScope"](NuiWizardV2Module, { declarations: [_wizard_horizontal_wizard_horizontal_component__WEBPACK_IMPORTED_MODULE_5__["WizardHorizontalComponent"],
         _wizard_vertical_wizard_vertical_component__WEBPACK_IMPORTED_MODULE_10__["WizardVerticalComponent"],
         _wizard_step_header_wizard_step_header_component__WEBPACK_IMPORTED_MODULE_7__["WizardStepHeaderComponent"],
         _wizard_footer_wizard_footer_component__WEBPACK_IMPORTED_MODULE_4__["WizardFooterComponent"],
@@ -201,15 +199,13 @@ NuiWizardV2Module.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_13__["ɵɵdefin
         _wizard_step_label_directive__WEBPACK_IMPORTED_MODULE_8__["WizardStepLabelDirective"],
         _wizard_step_footer_directive__WEBPACK_IMPORTED_MODULE_6__["WizardStepFooterDirective"],
         _wizard_button_wizard_button__WEBPACK_IMPORTED_MODULE_3__["WizardStepperNextDirective"],
-        _wizard_button_wizard_button__WEBPACK_IMPORTED_MODULE_3__["WizardStepperPreviousDirective"],
-        _wizard_icon_directive__WEBPACK_IMPORTED_MODULE_12__["WizardIconDirective"]], imports: [_common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
+        _wizard_button_wizard_button__WEBPACK_IMPORTED_MODULE_3__["WizardStepperPreviousDirective"]], imports: [_common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
         _icon_icon_module__WEBPACK_IMPORTED_MODULE_1__["NuiIconModule"]], exports: [_wizard_horizontal_wizard_horizontal_component__WEBPACK_IMPORTED_MODULE_5__["WizardHorizontalComponent"],
         _wizard_vertical_wizard_vertical_component__WEBPACK_IMPORTED_MODULE_10__["WizardVerticalComponent"],
         _wizard_footer_wizard_footer_component__WEBPACK_IMPORTED_MODULE_4__["WizardFooterComponent"],
         _wizard_step_wizard_step_component__WEBPACK_IMPORTED_MODULE_9__["WizardStepV2Component"],
         _wizard_directive__WEBPACK_IMPORTED_MODULE_11__["WizardDirective"],
         _wizard_step_label_directive__WEBPACK_IMPORTED_MODULE_8__["WizardStepLabelDirective"],
-        _wizard_icon_directive__WEBPACK_IMPORTED_MODULE_12__["WizardIconDirective"],
         // next & previous directive to be applied on buttons in order to navigate
         // through the wizard steps
         _wizard_button_wizard_button__WEBPACK_IMPORTED_MODULE_3__["WizardStepperNextDirective"],
@@ -12569,7 +12565,7 @@ QuickPickerComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdef
 /*!************************!*\
   !*** ./src/nui-api.ts ***!
   \************************/
-/*! exports provided: NuiButtonModule, NuiCheckboxModule, NuiCommonModule, NuiDividerModule, NuiIconModule, NuiMessageModule, NuiImageModule, NuiMenuModule, NuiPopupModule, NuiSwitchModule, NuiSelectModule, NuiSelectV2Module, NuiSpinnerModule, NuiTabsModule, NuiTextboxModule, NuiTooltipModule, NuiLayoutModule, NuiOverlayModule, NuiOverlayAdditionsModule, NuiBreadcrumbModule, NuiBusyModule, NuiChipsModule, NuiContentModule, NuiDatePickerModule, NuiDateTimePickerModule, NuiDialogModule, NuiExpanderModule, NuiFormFieldModule, NuiPaginatorModule, NuiPanelModule, NuiPopoverModule, NuiProgressModule, NuiRadioModule, NuiRepeatModule, NuiSearchModule, NuiSelectorModule, NuiSorterModule, NuiTableModule, NuiTimeFrameBarModule, NuiTimeFramePickerModule, NuiTimePickerModule, NuiToastModule, NuiToolbarModule, NuiValidationMessageModule, NuiWizardModule, NuiWizardV2Module, NuiDocsModule, ButtonSizeType, CheckboxChangeEvent, datePickerDefaults, datePickerDateFormats, NuiDndModule, DndDropTargetDirective, NuiDialogEvent, SrlcStage, NuiFormFieldControl, IconCategory, IconCategoryNamespace, IconStatus, IconSeverity, IconState, IconWidget, MenuActionType, PanelModes, PanelStates, SizeParameters, PanelBackgroundColor, PopoverOverlayPosition, RepeatSelectionMode, PaddingOptions, NUI_SELECT_V2_OPTION_PARENT_COMPONENT, ANNOUNCER_OPEN_MESSAGE_SUFFIX, ANNOUNCER_CLOSE_MESSAGE, SelectionType, CheckboxStatus, SorterDirection, SpinnerSize, ButtonIcon, DEFAULT_TABLE_HEADER_OFFSET, TABLE_ROW_HEIGHT, complexScrollStrategyFactory, TableVirtualScrollLinearDirective, TableVirtualScrollDirective, TableVirtualScrollHeaderPosition, TableStickyHeaderDirective, SliceRangePipe, ToolbarItemType, ToolbarItemDisplayStyle, TooltipDirective, ValidationMessageComponent, CustomValidationMessageComponent, WizardDirective, WizardIconDirective, WizardStepFooterDirective, WizardStepLabelDirective, ErrorStateMatcher, wizardAnimations, WizardStepperNextDirective, WizardStepperPreviousDirective, WizardFooterComponent, WizardHorizontalComponent, WizardStepV2Component, WizardStepHeaderComponent, WizardVerticalComponent, OVERLAY_CONTAINER_CLASS, OVERLAY_PANEL_CLASS, OVERLAY_DEFAULT_PRIORITY, OverlayPlacement, OverlayPosition, OverlayPositionService, getOverlayPositions, OVERLAY_ITEM, OVERLAY_CONTAINER, OVERLAY_WITH_POPUP_STYLES_CLASS, OVERLAY_ARROW_SIZE, OverlayUtilitiesService, OverlayCustomContainer, OverlayContainerService, POPUP_V2_VIEWPORT_MARGINS_DEFAULT, OverlayComponent, OverlayItemComponent, unitConversionToken, UnitBase, unitConversionConstants, imagesPresetToken, KEY_CODE, KEYBOARD_CODE, RESIZE_DEBOUNCE_TIME, DEMO_PATH_TOKEN, DEFAULT_INTERACTIVE_ELEMENTS, ResizeDirection, ResizeUnit, resizeDirectionHelpers, defaultFilters, NuiActiveDialog, SelectionModel, IEvent, EventDefinition, NuiValidators, LogLevel, NuiEnvironment, NUI_ENV_PROVIDER_FACTORY, NUI_ENV_PROVIDER, uuid, immutableSet, removeErrors, traverse, nameof */
+/*! exports provided: NuiButtonModule, NuiCheckboxModule, NuiCommonModule, NuiDividerModule, NuiIconModule, NuiMessageModule, NuiImageModule, NuiMenuModule, NuiPopupModule, NuiSwitchModule, NuiSelectModule, NuiSelectV2Module, NuiSpinnerModule, NuiTabsModule, NuiTextboxModule, NuiTooltipModule, NuiLayoutModule, NuiOverlayModule, NuiOverlayAdditionsModule, NuiBreadcrumbModule, NuiBusyModule, NuiChipsModule, NuiContentModule, NuiDatePickerModule, NuiDateTimePickerModule, NuiDialogModule, NuiExpanderModule, NuiFormFieldModule, NuiPaginatorModule, NuiPanelModule, NuiPopoverModule, NuiProgressModule, NuiRadioModule, NuiRepeatModule, NuiSearchModule, NuiSelectorModule, NuiSorterModule, NuiTableModule, NuiTimeFrameBarModule, NuiTimeFramePickerModule, NuiTimePickerModule, NuiToastModule, NuiToolbarModule, NuiValidationMessageModule, NuiWizardModule, NuiWizardV2Module, NuiDocsModule, ButtonSizeType, CheckboxChangeEvent, datePickerDefaults, datePickerDateFormats, NuiDndModule, DndDropTargetDirective, NuiDialogEvent, SrlcStage, NuiFormFieldControl, IconCategory, IconCategoryNamespace, IconStatus, IconSeverity, IconState, IconWidget, MenuActionType, PanelModes, PanelStates, SizeParameters, PanelBackgroundColor, PopoverOverlayPosition, RepeatSelectionMode, PaddingOptions, NUI_SELECT_V2_OPTION_PARENT_COMPONENT, ANNOUNCER_OPEN_MESSAGE_SUFFIX, ANNOUNCER_CLOSE_MESSAGE, SelectionType, CheckboxStatus, SorterDirection, SpinnerSize, ButtonIcon, DEFAULT_TABLE_HEADER_OFFSET, TABLE_ROW_HEIGHT, complexScrollStrategyFactory, TableVirtualScrollLinearDirective, TableVirtualScrollDirective, TableVirtualScrollHeaderPosition, TableStickyHeaderDirective, SliceRangePipe, ToolbarItemType, ToolbarItemDisplayStyle, TooltipDirective, ValidationMessageComponent, CustomValidationMessageComponent, WizardDirective, WizardStepFooterDirective, WizardStepLabelDirective, ErrorStateMatcher, wizardAnimations, WizardStepperNextDirective, WizardStepperPreviousDirective, WizardFooterComponent, WizardHorizontalComponent, WizardStepV2Component, WizardStepHeaderComponent, WizardVerticalComponent, OVERLAY_CONTAINER_CLASS, OVERLAY_PANEL_CLASS, OVERLAY_DEFAULT_PRIORITY, OverlayPlacement, OverlayPosition, OverlayPositionService, getOverlayPositions, OVERLAY_ITEM, OVERLAY_CONTAINER, OVERLAY_WITH_POPUP_STYLES_CLASS, OVERLAY_ARROW_SIZE, OverlayUtilitiesService, OverlayCustomContainer, OverlayContainerService, POPUP_V2_VIEWPORT_MARGINS_DEFAULT, OverlayComponent, OverlayItemComponent, unitConversionToken, UnitBase, unitConversionConstants, imagesPresetToken, KEY_CODE, KEYBOARD_CODE, RESIZE_DEBOUNCE_TIME, DEMO_PATH_TOKEN, DEFAULT_INTERACTIVE_ELEMENTS, ResizeDirection, ResizeUnit, resizeDirectionHelpers, defaultFilters, NuiActiveDialog, SelectionModel, IEvent, EventDefinition, NuiValidators, LogLevel, NuiEnvironment, NUI_ENV_PROVIDER_FACTORY, NUI_ENV_PROVIDER, uuid, immutableSet, removeErrors, traverse, nameof */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12805,8 +12801,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CustomValidationMessageComponent", function() { return _lib_public_api__WEBPACK_IMPORTED_MODULE_47__["CustomValidationMessageComponent"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "WizardDirective", function() { return _lib_public_api__WEBPACK_IMPORTED_MODULE_47__["WizardDirective"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "WizardIconDirective", function() { return _lib_public_api__WEBPACK_IMPORTED_MODULE_47__["WizardIconDirective"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "WizardStepFooterDirective", function() { return _lib_public_api__WEBPACK_IMPORTED_MODULE_47__["WizardStepFooterDirective"]; });
 
@@ -17292,7 +17286,7 @@ var ToolbarItemDisplayStyle;
 /*!*******************************!*\
   !*** ./src/lib/public-api.ts ***!
   \*******************************/
-/*! exports provided: ButtonSizeType, CheckboxChangeEvent, datePickerDefaults, datePickerDateFormats, NuiDndModule, DndDropTargetDirective, NuiDialogEvent, SrlcStage, NuiFormFieldControl, IconCategory, IconCategoryNamespace, IconStatus, IconSeverity, IconState, IconWidget, MenuActionType, PanelModes, PanelStates, SizeParameters, PanelBackgroundColor, PopoverOverlayPosition, RepeatSelectionMode, PaddingOptions, NUI_SELECT_V2_OPTION_PARENT_COMPONENT, ANNOUNCER_OPEN_MESSAGE_SUFFIX, ANNOUNCER_CLOSE_MESSAGE, SelectionType, CheckboxStatus, SorterDirection, SpinnerSize, ButtonIcon, DEFAULT_TABLE_HEADER_OFFSET, TABLE_ROW_HEIGHT, complexScrollStrategyFactory, TableVirtualScrollLinearDirective, TableVirtualScrollDirective, TableVirtualScrollHeaderPosition, TableStickyHeaderDirective, SliceRangePipe, ToolbarItemType, ToolbarItemDisplayStyle, NuiTooltipModule, TooltipDirective, ValidationMessageComponent, CustomValidationMessageComponent, NuiWizardV2Module, WizardDirective, WizardIconDirective, WizardStepFooterDirective, WizardStepLabelDirective, ErrorStateMatcher, wizardAnimations, WizardStepperNextDirective, WizardStepperPreviousDirective, WizardFooterComponent, WizardHorizontalComponent, WizardStepV2Component, WizardStepHeaderComponent, WizardVerticalComponent, OVERLAY_CONTAINER_CLASS, OVERLAY_PANEL_CLASS, OVERLAY_DEFAULT_PRIORITY, OverlayPlacement, OverlayPosition, OverlayPositionService, getOverlayPositions, OVERLAY_ITEM, OVERLAY_CONTAINER, OVERLAY_WITH_POPUP_STYLES_CLASS, OVERLAY_ARROW_SIZE, OverlayUtilitiesService, OverlayCustomContainer, OverlayContainerService, POPUP_V2_VIEWPORT_MARGINS_DEFAULT, OverlayComponent, OverlayItemComponent */
+/*! exports provided: ButtonSizeType, CheckboxChangeEvent, datePickerDefaults, datePickerDateFormats, NuiDndModule, DndDropTargetDirective, NuiDialogEvent, SrlcStage, NuiFormFieldControl, IconCategory, IconCategoryNamespace, IconStatus, IconSeverity, IconState, IconWidget, MenuActionType, PanelModes, PanelStates, SizeParameters, PanelBackgroundColor, PopoverOverlayPosition, RepeatSelectionMode, PaddingOptions, NUI_SELECT_V2_OPTION_PARENT_COMPONENT, ANNOUNCER_OPEN_MESSAGE_SUFFIX, ANNOUNCER_CLOSE_MESSAGE, SelectionType, CheckboxStatus, SorterDirection, SpinnerSize, ButtonIcon, DEFAULT_TABLE_HEADER_OFFSET, TABLE_ROW_HEIGHT, complexScrollStrategyFactory, TableVirtualScrollLinearDirective, TableVirtualScrollDirective, TableVirtualScrollHeaderPosition, TableStickyHeaderDirective, SliceRangePipe, ToolbarItemType, ToolbarItemDisplayStyle, NuiTooltipModule, TooltipDirective, ValidationMessageComponent, CustomValidationMessageComponent, NuiWizardV2Module, WizardDirective, WizardStepFooterDirective, WizardStepLabelDirective, ErrorStateMatcher, wizardAnimations, WizardStepperNextDirective, WizardStepperPreviousDirective, WizardFooterComponent, WizardHorizontalComponent, WizardStepV2Component, WizardStepHeaderComponent, WizardVerticalComponent, OVERLAY_CONTAINER_CLASS, OVERLAY_PANEL_CLASS, OVERLAY_DEFAULT_PRIORITY, OverlayPlacement, OverlayPosition, OverlayPositionService, getOverlayPositions, OVERLAY_ITEM, OVERLAY_CONTAINER, OVERLAY_WITH_POPUP_STYLES_CLASS, OVERLAY_ARROW_SIZE, OverlayUtilitiesService, OverlayCustomContainer, OverlayContainerService, POPUP_V2_VIEWPORT_MARGINS_DEFAULT, OverlayComponent, OverlayItemComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17423,8 +17417,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "NuiWizardV2Module", function() { return _wizard_v2_public_api__WEBPACK_IMPORTED_MODULE_32__["NuiWizardV2Module"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "WizardDirective", function() { return _wizard_v2_public_api__WEBPACK_IMPORTED_MODULE_32__["WizardDirective"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "WizardIconDirective", function() { return _wizard_v2_public_api__WEBPACK_IMPORTED_MODULE_32__["WizardIconDirective"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "WizardStepFooterDirective", function() { return _wizard_v2_public_api__WEBPACK_IMPORTED_MODULE_32__["WizardStepFooterDirective"]; });
 
@@ -18892,8 +18884,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "qCKp");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "kU1M");
 /* harmony import */ var _wizard_step_wizard_step_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./wizard-step/wizard-step.component */ "9Oqf");
-/* harmony import */ var _wizard_icon_directive__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./wizard-icon.directive */ "Wckn");
-
 
 
 
@@ -18912,7 +18902,6 @@ class WizardDirective extends _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_1__[
         this.selectionChange = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
         /** Stream of animation `done` events when the body expands/collapses. */
         this._animationDone = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
-        this._iconOverrides = {};
     }
     /** The step that is selected. */
     get selected() {
@@ -18922,7 +18911,6 @@ class WizardDirective extends _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_1__[
         this.selectedIndex = this.steps ? this.steps.toArray().indexOf(step) : -1;
     }
     ngAfterContentInit() {
-        this._icons.forEach(({ stepState, templateRef }) => this._iconOverrides[stepState] = templateRef);
         this._steps.changes
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["startWith"])(this._steps), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeUntil"])(this._destroyed))
             .subscribe((steps) => {
@@ -18969,11 +18957,9 @@ WizardDirective.ngAcceptInputTypeHasError = undefined;
 WizardDirective.ɵfac = function WizardDirective_Factory(t) { return ɵWizardDirective_BaseFactory(t || WizardDirective); };
 WizardDirective.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({ type: WizardDirective, selectors: [["", "nuiWizard", ""]], contentQueries: function WizardDirective_ContentQueries(rf, ctx, dirIndex) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵcontentQuery"](dirIndex, _wizard_step_wizard_step_component__WEBPACK_IMPORTED_MODULE_5__["WizardStepV2Component"], 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵcontentQuery"](dirIndex, _wizard_icon_directive__WEBPACK_IMPORTED_MODULE_6__["WizardIconDirective"], 1);
     } if (rf & 2) {
         let _t;
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx._steps = _t);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx._icons = _t);
     } }, viewQuery: function WizardDirective_Query(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_wizard_step_header_wizard_step_header_component__WEBPACK_IMPORTED_MODULE_2__["WizardStepHeaderComponent"], 1);
     } if (rf & 2) {
@@ -18983,30 +18969,6 @@ WizardDirective.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDi
             { provide: _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_1__["CdkStepper"], useExisting: WizardDirective },
         ]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInheritDefinitionFeature"]] });
 const ɵWizardDirective_BaseFactory = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetInheritedFactory"](WizardDirective);
-
-
-/***/ }),
-
-/***/ "Wckn":
-/*!****************************************************!*\
-  !*** ./src/lib/wizard-v2/wizard-icon.directive.ts ***!
-  \****************************************************/
-/*! exports provided: WizardIconDirective */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WizardIconDirective", function() { return WizardIconDirective; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
-
-
-class WizardIconDirective {
-    constructor(templateRef) {
-        this.templateRef = templateRef;
-    }
-}
-WizardIconDirective.ɵfac = function WizardIconDirective_Factory(t) { return new (t || WizardIconDirective)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["TemplateRef"])); };
-WizardIconDirective.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({ type: WizardIconDirective, selectors: [["ng-template", "stepState", ""]], inputs: { stepState: "stepState" } });
 
 
 /***/ }),
@@ -19222,13 +19184,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function WizardStepHeaderComponent_ng_container_2_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainer"](0, 10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainer"](0, 7);
 } if (rf & 2) {
     const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngTemplateOutlet", ctx_r0._templateLabel().template);
 } }
 function WizardStepHeaderComponent_div_3_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 11);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 8);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 } if (rf & 2) {
@@ -19237,7 +19199,7 @@ function WizardStepHeaderComponent_div_3_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](ctx_r1.label);
 } }
 function WizardStepHeaderComponent_div_4_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 12);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 9);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 } if (rf & 2) {
@@ -19246,28 +19208,13 @@ function WizardStepHeaderComponent_div_4_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](ctx_r2.optionalLabel);
 } }
 function WizardStepHeaderComponent_div_5_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 10);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](ctx_r3.errorMessage);
-} }
-function WizardStepHeaderComponent_ng_container_9_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainer"](0, 14);
-} if (rf & 2) {
-    const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngTemplateOutlet", ctx_r4.iconOverrides[ctx_r4.state])("ngTemplateOutletContext", ctx_r4._getIconContext());
-} }
-function WizardStepHeaderComponent_ng_container_10_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainerStart"](0);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](1, "nui-icon", 15);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainerEnd"]();
-} if (rf & 2) {
-    const ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate"]("icon", ctx_r5._getDefaultIconForState(ctx_r5.state));
 } }
 class WizardStepHeaderComponent extends _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_1__["CdkStepHeader"] {
     constructor(_focusMonitor, _elementRef) {
@@ -19310,13 +19257,6 @@ class WizardStepHeaderComponent extends _angular_cdk_stepper__WEBPACK_IMPORTED_M
         }
         return returnedState;
     }
-    _getIconContext() {
-        return {
-            index: this.index,
-            active: this.active,
-            optional: this.optional,
-        };
-    }
     _getDefaultIconForState(state) {
         let returnedState = state;
         switch (state) {
@@ -19342,7 +19282,7 @@ class WizardStepHeaderComponent extends _angular_cdk_stepper__WEBPACK_IMPORTED_M
 WizardStepHeaderComponent.ɵfac = function WizardStepHeaderComponent_Factory(t) { return new (t || WizardStepHeaderComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_0__["FocusMonitor"]), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_2__["ElementRef"])); };
 WizardStepHeaderComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({ type: WizardStepHeaderComponent, selectors: [["wizard-step-header"]], hostAttrs: ["role", "tab", 1, "nui-wizard-step-header", "mat-focus-indicator"], hostVars: 8, hostBindings: function WizardStepHeaderComponent_HostBindings(rf, ctx) { if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵclassProp"]("nui-wizard-step-header--selected", ctx.selected)("nui-wizard-step-header--optional", ctx.optional)("nui-wizard-step-header--completed", ctx.state == "done")("nui-wizard-step-header--disabled", !ctx.completed);
-    } }, inputs: { state: "state", label: "label", optionalLabel: "optionalLabel", errorMessage: "errorMessage", index: "index", selected: "selected", completed: "completed", active: "active", optional: "optional", iconOverrides: "iconOverrides", disableRipple: "disableRipple" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵInheritDefinitionFeature"]], decls: 11, vars: 17, consts: [[1, "nui-step-header-ripple"], [1, "nui-wizard-step-label"], [3, "ngTemplateOutlet", 4, "ngIf"], ["class", "nui-wizard-step-text-label", 4, "ngIf"], ["class", "nui-step-optional", 4, "ngIf"], ["class", "nui-step-sub-label-error", 4, "ngIf"], [1, "nui-step-icon-content", 3, "ngSwitch"], [1, "nui-icon-container"], [3, "ngTemplateOutlet", "ngTemplateOutletContext", 4, "ngSwitchCase"], [4, "ngSwitchDefault"], [3, "ngTemplateOutlet"], [1, "nui-wizard-step-text-label"], [1, "nui-step-optional"], [1, "nui-step-sub-label-error"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"], [3, "icon"]], template: function WizardStepHeaderComponent_Template(rf, ctx) { if (rf & 1) {
+    } }, inputs: { state: "state", label: "label", optionalLabel: "optionalLabel", errorMessage: "errorMessage", index: "index", selected: "selected", completed: "completed", active: "active", optional: "optional", disableRipple: "disableRipple" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵInheritDefinitionFeature"]], decls: 9, vars: 16, consts: [[1, "nui-step-header-ripple"], [1, "nui-wizard-step-label"], [3, "ngTemplateOutlet", 4, "ngIf"], ["class", "nui-wizard-step-text-label", 4, "ngIf"], ["class", "nui-step-optional", 4, "ngIf"], ["class", "nui-step-sub-label-error", 4, "ngIf"], [3, "icon"], [3, "ngTemplateOutlet"], [1, "nui-wizard-step-text-label"], [1, "nui-step-optional"], [1, "nui-step-sub-label-error"]], template: function WizardStepHeaderComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, WizardStepHeaderComponent_ng_container_2_Template, 1, 1, "ng-container", 2);
@@ -19351,12 +19291,9 @@ WizardStepHeaderComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵ
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](5, WizardStepHeaderComponent_div_5_Template, 2, 1, "div", 5);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](6, "div");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](7, "div", 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](8, "span", 7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](9, WizardStepHeaderComponent_ng_container_9_Template, 1, 2, "ng-container", 8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](10, WizardStepHeaderComponent_ng_container_10_Template, 2, 1, "ng-container", 9);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainerStart"](7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](8, "nui-icon", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainerEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
@@ -19372,11 +19309,9 @@ WizardStepHeaderComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵ
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵclassMapInterpolate1"]("nui-step-icon-state-", ctx.state, " nui-wizard-step-icon");
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵclassProp"]("nui-wizard-step-header__icon--selected", ctx.selected);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngSwitch", !!(ctx.iconOverrides && ctx.iconOverrides[ctx.state]));
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngSwitchCase", true);
-    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_4__["NgIf"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgSwitch"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgSwitchCase"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgSwitchDefault"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgTemplateOutlet"], _icon_icon_component__WEBPACK_IMPORTED_MODULE_5__["IconComponent"]], styles: [".nui-wizard-step-header {\n  overflow: hidden;\n  outline: none;\n  cursor: pointer;\n  position: relative;\n  box-sizing: content-box;\n  -webkit-tap-highlight-color: transparent;\n  color: var(--nui-color-text-default,#111);\n  width: 145px;\n}\n.nui-wizard-step-header.nui-wizard-step-header--completed {\n  color: var(--nui-color-text-link,#0079aa);\n}\n.nui-wizard-step-header.nui-wizard-step-header--completed .nui-wizard-horizontal-line {\n  border: 10px red solid !important;\n  border-color: var(--nui-color-text-link,#0079aa);\n}\n.nui-wizard-step-header.nui-wizard-step-header--completed svg circle,\n.nui-wizard-step-header.nui-wizard-step-header--completed svg path {\n  fill: var(--nui-color-text-link,#0079aa);\n}\n.nui-wizard-step-header.nui-wizard-step-header--disabled {\n  pointer-events: none;\n  cursor: default;\n}\n.nui-step-optional,\n.nui-step-sub-label-error {\n  font-size: 12px;\n}\n.nui-wizard-step-icon {\n  border-radius: 50%;\n  height: 24px;\n  width: 24px;\n  flex-shrink: 0;\n  position: relative;\n}\n.nui-step-icon-content .nui-icon,\n.nui-wizard-step-icon .nui-icon {\n  position: relative;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n.nui-step-icon-content svg circle,\n.nui-wizard-step-icon svg circle,\n.nui-step-icon-content svg path,\n.nui-wizard-step-icon svg path {\n  fill: var(--nui-color-text-secondary,rgba(17, 17, 17, 0.6));\n}\n.nui-step-icon-content.nui-wizard-step-header__icon--selected svg circle,\n.nui-wizard-step-icon.nui-wizard-step-header__icon--selected svg circle,\n.nui-step-icon-content.nui-wizard-step-header__icon--selected svg path,\n.nui-wizard-step-icon.nui-wizard-step-header__icon--selected svg path {\n  fill: var(--nui-color-text-default,#111);\n}\n.nui-wizard-step-icon .nui-icon-container {\n  font-size: 16px;\n  height: 16px;\n  width: 16px;\n  position: relative;\n  top: 11px;\n}\n.nui-wizard-step-label {\n  display: inline-block;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  min-width: 50px;\n  vertical-align: middle;\n  color: var(--nui-color-text-secondary,rgba(17, 17, 17, 0.6));\n}\n.nui-wizard-step-text-label {\n  text-overflow: ellipsis;\n  overflow: hidden;\n}\n.nui-wizard-step-header .nui-step-header-ripple {\n  @include mat-fill;\n  pointer-events: none;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndpemFyZC1zdGVwLWhlYWRlci5jb21wb25lbnQubGVzcyIsIi4uLy4uLy4uL3N0eWxlcy9taXhpbnMvY3NzLXZhcmlhYmxlcy5sZXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUlBO0VBQ0ksZ0JBQUE7RUFDQSxhQUFBO0VBQ0EsZUFBQTtFQUNBLGtCQUFBO0VBQ0EsdUJBQUE7RUFDQSx3Q0FBQTtFQ0xBLHlDQUFBO0VET0EsWUFBQTtBQUhKO0FBTUk7RUNWQSx5Q0FBQTtBRE9KO0FBR0k7RUFJUSxpQ0FBQTtFQ2RSLGdEQUFBO0FEV0o7QUFESTs7RUNWQSx3Q0FBQTtBRGVKO0FBUUk7RUFDSSxvQkFBQTtFQUNBLGVBQUE7QUFOUjtBQVVBOztFQUNJLGVBQUE7QUFQSjtBQVVBO0VBQ0ksa0JBQUE7RUFDQSxZQUFBO0VBQ0EsV0FBQTtFQUNBLGNBQUE7RUFDQSxrQkFBQTtBQVJKO0FBV0E7O0VBSVEsa0JBQUE7RUFDQSxRQUFBO0VBQ0EsU0FBQTtFQUNBLGdDQUFBO0FBWFI7QUFJQTs7OztFQ3pDSSwyREFBQTtBRDJDSjtBQVlJOzs7O0VDdkRBLHdDQUFBO0FEaURKO0FBYUE7RUFDSSxlQUFBO0VBQ0EsWUFBQTtFQUNBLFdBQUE7RUFDQSxrQkFBQTtFQUNBLFNBQUE7QUFYSjtBQWNBO0VBQ0kscUJBQUE7RUFDQSxtQkFBQTtFQUNBLGdCQUFBO0VBQ0EsdUJBQUE7RUFDQSxlQUFBO0VBQ0Esc0JBQUE7RUM1RUEsNERBQUE7QURpRUo7QUFlQTtFQUNJLHVCQUFBO0VBQ0EsZ0JBQUE7QUFiSjtBQWdCQTtFQUNBLGlCQUFBO0VBQ0ksb0JBQUE7QUFkSiIsImZpbGUiOiJ3aXphcmQtc3RlcC1oZWFkZXIuY29tcG9uZW50Lmxlc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0IFwiLi4vd2l6YXJkLXZhcnNcIjtcbkBpbXBvcnQgKHJlZmVyZW5jZSkgXCIuLi8uLi8uLi9zdHlsZXMvbnVpLWZyYW1ld29yay12YXJpYWJsZXMubGVzc1wiO1xuQGltcG9ydCAocmVmZXJlbmNlKSBcIi4uLy4uLy4uL3N0eWxlcy9taXhpbnMubGVzc1wiO1xuXG4ubnVpLXdpemFyZC1zdGVwLWhlYWRlciB7XG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgICBvdXRsaW5lOiBub25lO1xuICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgYm94LXNpemluZzogY29udGVudC1ib3g7XG4gICAgLXdlYmtpdC10YXAtaGlnaGxpZ2h0LWNvbG9yOiB0cmFuc3BhcmVudDtcbiAgICAuc2V0Q3NzVmFyaWFibGUoY29sb3IsIG51aS1jb2xvci10ZXh0LWRlZmF1bHQpO1xuICAgIHdpZHRoOiBAd2l6YXJkLWxhYmVsLWhlYWRlci13aWR0aDtcblxuXG4gICAgJi5udWktd2l6YXJkLXN0ZXAtaGVhZGVyLS1jb21wbGV0ZWQge1xuICAgICAgICAuc2V0Q3NzVmFyaWFibGUoY29sb3IsIG51aS1jb2xvci10ZXh0LWxpbmspO1xuXG4gICAgICAgIC5udWktd2l6YXJkLWhvcml6b250YWwtbGluZSB7XG4gICAgICAgICAgICBib3JkZXI6IDEwcHggcmVkIHNvbGlkICFpbXBvcnRhbnQ7XG4gICAgICAgICAgICAuc2V0Q3NzVmFyaWFibGUoYm9yZGVyLWNvbG9yLCBudWktY29sb3ItdGV4dC1saW5rKTtcbiAgICAgICAgfVxuXG4gICAgICAgIHN2ZyBjaXJjbGUsIHN2ZyBwYXRoIHtcbiAgICAgICAgICAgIC5zZXRDc3NWYXJpYWJsZShmaWxsLCBudWktY29sb3ItdGV4dC1saW5rKTtcbiAgICAgICAgfVxuICAgIH1cblxuICAgICYubnVpLXdpemFyZC1zdGVwLWhlYWRlci0tZGlzYWJsZWQge1xuICAgICAgICBwb2ludGVyLWV2ZW50czogbm9uZTtcbiAgICAgICAgY3Vyc29yOiBkZWZhdWx0O1xuICAgIH1cbn1cblxuLm51aS1zdGVwLW9wdGlvbmFsLCAubnVpLXN0ZXAtc3ViLWxhYmVsLWVycm9yIHtcbiAgICBmb250LXNpemU6IEB3aXphcmQtc3RlcC1zdWItbGFiZWwtZm9udC1zaXplO1xufVxuXG4ubnVpLXdpemFyZC1zdGVwLWljb24ge1xuICAgIGJvcmRlci1yYWRpdXM6IDUwJTtcbiAgICBoZWlnaHQ6IEB3aXphcmQtbGFiZWwtaGVhZGVyLWhlaWdodDtcbiAgICB3aWR0aDogQHdpemFyZC1sYWJlbC1oZWFkZXItaGVpZ2h0O1xuICAgIGZsZXgtc2hyaW5rOiAwO1xuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbn1cblxuLm51aS1zdGVwLWljb24tY29udGVudCwgLm51aS13aXphcmQtc3RlcC1pY29uIHtcblxuICAgIC5udWktaWNvbiB7XG4gICAgICAgIC8vIFVzZSBhYnNvbHV0ZSBwb3NpdGlvbmluZyB0byBjZW50ZXIgdGhlIGNvbnRlbnQsIGJlY2F1c2UgaXQgd29ya3MgYmV0dGVyIHdpdGggdGV4dC5cbiAgICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgICAgICB0b3A6IDUwJTtcbiAgICAgICAgbGVmdDogNTAlO1xuICAgICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcbiAgICB9XG5cbiAgICBzdmcgY2lyY2xlLCBzdmcgcGF0aHtcbiAgICAgICAgLnNldENzc1ZhcmlhYmxlKGZpbGwsIG51aS1jb2xvci10ZXh0LXNlY29uZGFyeSk7ICAgIH1cblxuXG4gICAgJi5udWktd2l6YXJkLXN0ZXAtaGVhZGVyX19pY29uLS1zZWxlY3RlZCB7XG4gICAgICAgIHN2ZyBjaXJjbGUsIHN2ZyBwYXRoe1xuICAgICAgICAgICAgLnNldENzc1ZhcmlhYmxlKGZpbGwsIG51aS1jb2xvci10ZXh0LWRlZmF1bHQpO1xuICAgICAgICB9XG4gICAgfVxufVxuXG4ubnVpLXdpemFyZC1zdGVwLWljb24gLm51aS1pY29uLWNvbnRhaW5lciB7XG4gICAgZm9udC1zaXplOiBAaWNvbi1zaXplLWRlZmF1bHQ7XG4gICAgaGVpZ2h0OiBAaWNvbi1zaXplLWRlZmF1bHQ7XG4gICAgd2lkdGg6IEBpY29uLXNpemUtZGVmYXVsdDtcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgdG9wOiAxMXB4O1xufVxuXG4ubnVpLXdpemFyZC1zdGVwLWxhYmVsIHtcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gICAgd2hpdGUtc3BhY2U6IG5vd3JhcDtcbiAgICBvdmVyZmxvdzogaGlkZGVuO1xuICAgIHRleHQtb3ZlcmZsb3c6IGVsbGlwc2lzO1xuICAgIG1pbi13aWR0aDogQHdpemFyZC1sYWJlbC1taW4td2lkdGg7XG4gICAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcbiAgICAuc2V0Q3NzVmFyaWFibGUoY29sb3IsIG51aS1jb2xvci10ZXh0LXNlY29uZGFyeSlcbn1cblxuLm51aS13aXphcmQtc3RlcC10ZXh0LWxhYmVsIHtcbiAgICB0ZXh0LW92ZXJmbG93OiBlbGxpcHNpcztcbiAgICBvdmVyZmxvdzogaGlkZGVuO1xufVxuXG4ubnVpLXdpemFyZC1zdGVwLWhlYWRlciAubnVpLXN0ZXAtaGVhZGVyLXJpcHBsZSB7XG5AaW5jbHVkZSBtYXQtZmlsbDtcbiAgICBwb2ludGVyLWV2ZW50czogbm9uZTtcbn1cbiIsIi5zZXRDc3NWYXJpYWJsZShAcHJvcGVydHksIEB2YWx1ZSl7XG4gICAgQGV2YWx1YXRlZCA6IFwiQHt2YWx1ZX1cIjtcbiAgICAvL3RoZSBkb3VibGUgQCBmb3JjZXMgYSBpbmRpcmVjdGlvbiBldmFsdWF0aW9uLCBraW5kYSBsaWtlIGEgcG9pbnRlclxuICAgIEBmYWxsYmFjayA6IEBAZXZhbHVhdGVkO1xuXG4gICAgQHtwcm9wZXJ0eX06IH5cInZhcigtLUB7dmFsdWV9LEB7ZmFsbGJhY2t9KVwiO1xufVxuIl19 */"], encapsulation: 2, changeDetection: 0 });
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate"]("icon", ctx._getDefaultIconForState(ctx.state));
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_4__["NgIf"], _icon_icon_component__WEBPACK_IMPORTED_MODULE_5__["IconComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgTemplateOutlet"]], styles: [".nui-wizard-step-header {\n  overflow: hidden;\n  outline: none;\n  cursor: pointer;\n  position: relative;\n  box-sizing: content-box;\n  -webkit-tap-highlight-color: transparent;\n  color: var(--nui-color-text-default,#111);\n  width: 145px;\n}\n.nui-wizard-step-header.nui-wizard-step-header--completed {\n  color: var(--nui-color-text-link,#0079aa);\n}\n.nui-wizard-step-header.nui-wizard-step-header--completed .nui-wizard-horizontal-line {\n  border: 10px red solid !important;\n  border-color: var(--nui-color-text-link,#0079aa);\n}\n.nui-wizard-step-header.nui-wizard-step-header--completed svg circle,\n.nui-wizard-step-header.nui-wizard-step-header--completed svg path {\n  fill: var(--nui-color-text-link,#0079aa);\n}\n.nui-wizard-step-header.nui-wizard-step-header--disabled {\n  pointer-events: none;\n  cursor: default;\n}\n.nui-step-optional,\n.nui-step-sub-label-error {\n  font-size: 12px;\n}\n.nui-wizard-step-icon {\n  border-radius: 50%;\n  height: 24px;\n  width: 24px;\n  flex-shrink: 0;\n  position: relative;\n}\n.nui-step-icon-content .nui-icon,\n.nui-wizard-step-icon .nui-icon {\n  position: relative;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n.nui-step-icon-content svg circle,\n.nui-wizard-step-icon svg circle,\n.nui-step-icon-content svg path,\n.nui-wizard-step-icon svg path {\n  fill: var(--nui-color-text-secondary,rgba(17, 17, 17, 0.6));\n}\n.nui-step-icon-content.nui-wizard-step-header__icon--selected svg circle,\n.nui-wizard-step-icon.nui-wizard-step-header__icon--selected svg circle,\n.nui-step-icon-content.nui-wizard-step-header__icon--selected svg path,\n.nui-wizard-step-icon.nui-wizard-step-header__icon--selected svg path {\n  fill: var(--nui-color-text-default,#111);\n}\n.nui-wizard-step-icon .nui-icon-container {\n  font-size: 16px;\n  height: 16px;\n  width: 16px;\n  position: relative;\n  top: 11px;\n}\n.nui-wizard-step-label {\n  display: inline-block;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  min-width: 50px;\n  vertical-align: middle;\n  color: var(--nui-color-text-secondary,rgba(17, 17, 17, 0.6));\n}\n.nui-wizard-step-text-label {\n  text-overflow: ellipsis;\n  overflow: hidden;\n}\n.nui-wizard-step-header .nui-step-header-ripple {\n  @include mat-fill;\n  pointer-events: none;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndpemFyZC1zdGVwLWhlYWRlci5jb21wb25lbnQubGVzcyIsIi4uLy4uLy4uL3N0eWxlcy9taXhpbnMvY3NzLXZhcmlhYmxlcy5sZXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUlBO0VBQ0ksZ0JBQUE7RUFDQSxhQUFBO0VBQ0EsZUFBQTtFQUNBLGtCQUFBO0VBQ0EsdUJBQUE7RUFDQSx3Q0FBQTtFQ0xBLHlDQUFBO0VET0EsWUFBQTtBQUhKO0FBTUk7RUNWQSx5Q0FBQTtBRE9KO0FBR0k7RUFJUSxpQ0FBQTtFQ2RSLGdEQUFBO0FEV0o7QUFESTs7RUNWQSx3Q0FBQTtBRGVKO0FBUUk7RUFDSSxvQkFBQTtFQUNBLGVBQUE7QUFOUjtBQVVBOztFQUNJLGVBQUE7QUFQSjtBQVVBO0VBQ0ksa0JBQUE7RUFDQSxZQUFBO0VBQ0EsV0FBQTtFQUNBLGNBQUE7RUFDQSxrQkFBQTtBQVJKO0FBV0E7O0VBSVEsa0JBQUE7RUFDQSxRQUFBO0VBQ0EsU0FBQTtFQUNBLGdDQUFBO0FBWFI7QUFJQTs7OztFQ3pDSSwyREFBQTtBRDJDSjtBQVlJOzs7O0VDdkRBLHdDQUFBO0FEaURKO0FBYUE7RUFDSSxlQUFBO0VBQ0EsWUFBQTtFQUNBLFdBQUE7RUFDQSxrQkFBQTtFQUNBLFNBQUE7QUFYSjtBQWNBO0VBQ0kscUJBQUE7RUFDQSxtQkFBQTtFQUNBLGdCQUFBO0VBQ0EsdUJBQUE7RUFDQSxlQUFBO0VBQ0Esc0JBQUE7RUM1RUEsNERBQUE7QURpRUo7QUFlQTtFQUNJLHVCQUFBO0VBQ0EsZ0JBQUE7QUFiSjtBQWdCQTtFQUNBLGlCQUFBO0VBQ0ksb0JBQUE7QUFkSiIsImZpbGUiOiJ3aXphcmQtc3RlcC1oZWFkZXIuY29tcG9uZW50Lmxlc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0IFwiLi4vd2l6YXJkLXZhcnNcIjtcbkBpbXBvcnQgKHJlZmVyZW5jZSkgXCIuLi8uLi8uLi9zdHlsZXMvbnVpLWZyYW1ld29yay12YXJpYWJsZXMubGVzc1wiO1xuQGltcG9ydCAocmVmZXJlbmNlKSBcIi4uLy4uLy4uL3N0eWxlcy9taXhpbnMubGVzc1wiO1xuXG4ubnVpLXdpemFyZC1zdGVwLWhlYWRlciB7XG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgICBvdXRsaW5lOiBub25lO1xuICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgYm94LXNpemluZzogY29udGVudC1ib3g7XG4gICAgLXdlYmtpdC10YXAtaGlnaGxpZ2h0LWNvbG9yOiB0cmFuc3BhcmVudDtcbiAgICAuc2V0Q3NzVmFyaWFibGUoY29sb3IsIG51aS1jb2xvci10ZXh0LWRlZmF1bHQpO1xuICAgIHdpZHRoOiBAd2l6YXJkLWxhYmVsLWhlYWRlci13aWR0aDtcblxuXG4gICAgJi5udWktd2l6YXJkLXN0ZXAtaGVhZGVyLS1jb21wbGV0ZWQge1xuICAgICAgICAuc2V0Q3NzVmFyaWFibGUoY29sb3IsIG51aS1jb2xvci10ZXh0LWxpbmspO1xuXG4gICAgICAgIC5udWktd2l6YXJkLWhvcml6b250YWwtbGluZSB7XG4gICAgICAgICAgICBib3JkZXI6IDEwcHggcmVkIHNvbGlkICFpbXBvcnRhbnQ7XG4gICAgICAgICAgICAuc2V0Q3NzVmFyaWFibGUoYm9yZGVyLWNvbG9yLCBudWktY29sb3ItdGV4dC1saW5rKTtcbiAgICAgICAgfVxuXG4gICAgICAgIHN2ZyBjaXJjbGUsIHN2ZyBwYXRoIHtcbiAgICAgICAgICAgIC5zZXRDc3NWYXJpYWJsZShmaWxsLCBudWktY29sb3ItdGV4dC1saW5rKTtcbiAgICAgICAgfVxuICAgIH1cblxuICAgICYubnVpLXdpemFyZC1zdGVwLWhlYWRlci0tZGlzYWJsZWQge1xuICAgICAgICBwb2ludGVyLWV2ZW50czogbm9uZTtcbiAgICAgICAgY3Vyc29yOiBkZWZhdWx0O1xuICAgIH1cbn1cblxuLm51aS1zdGVwLW9wdGlvbmFsLCAubnVpLXN0ZXAtc3ViLWxhYmVsLWVycm9yIHtcbiAgICBmb250LXNpemU6IEB3aXphcmQtc3RlcC1zdWItbGFiZWwtZm9udC1zaXplO1xufVxuXG4ubnVpLXdpemFyZC1zdGVwLWljb24ge1xuICAgIGJvcmRlci1yYWRpdXM6IDUwJTtcbiAgICBoZWlnaHQ6IEB3aXphcmQtbGFiZWwtaGVhZGVyLWhlaWdodDtcbiAgICB3aWR0aDogQHdpemFyZC1sYWJlbC1oZWFkZXItaGVpZ2h0O1xuICAgIGZsZXgtc2hyaW5rOiAwO1xuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbn1cblxuLm51aS1zdGVwLWljb24tY29udGVudCwgLm51aS13aXphcmQtc3RlcC1pY29uIHtcblxuICAgIC5udWktaWNvbiB7XG4gICAgICAgIC8vIFVzZSBhYnNvbHV0ZSBwb3NpdGlvbmluZyB0byBjZW50ZXIgdGhlIGNvbnRlbnQsIGJlY2F1c2UgaXQgd29ya3MgYmV0dGVyIHdpdGggdGV4dC5cbiAgICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgICAgICB0b3A6IDUwJTtcbiAgICAgICAgbGVmdDogNTAlO1xuICAgICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcbiAgICB9XG5cbiAgICBzdmcgY2lyY2xlLCBzdmcgcGF0aHtcbiAgICAgICAgLnNldENzc1ZhcmlhYmxlKGZpbGwsIG51aS1jb2xvci10ZXh0LXNlY29uZGFyeSk7ICAgIH1cblxuXG4gICAgJi5udWktd2l6YXJkLXN0ZXAtaGVhZGVyX19pY29uLS1zZWxlY3RlZCB7XG4gICAgICAgIHN2ZyBjaXJjbGUsIHN2ZyBwYXRoe1xuICAgICAgICAgICAgLnNldENzc1ZhcmlhYmxlKGZpbGwsIG51aS1jb2xvci10ZXh0LWRlZmF1bHQpO1xuICAgICAgICB9XG4gICAgfVxufVxuXG4ubnVpLXdpemFyZC1zdGVwLWljb24gLm51aS1pY29uLWNvbnRhaW5lciB7XG4gICAgZm9udC1zaXplOiBAaWNvbi1zaXplLWRlZmF1bHQ7XG4gICAgaGVpZ2h0OiBAaWNvbi1zaXplLWRlZmF1bHQ7XG4gICAgd2lkdGg6IEBpY29uLXNpemUtZGVmYXVsdDtcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgdG9wOiAxMXB4O1xufVxuXG4ubnVpLXdpemFyZC1zdGVwLWxhYmVsIHtcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gICAgd2hpdGUtc3BhY2U6IG5vd3JhcDtcbiAgICBvdmVyZmxvdzogaGlkZGVuO1xuICAgIHRleHQtb3ZlcmZsb3c6IGVsbGlwc2lzO1xuICAgIG1pbi13aWR0aDogQHdpemFyZC1sYWJlbC1taW4td2lkdGg7XG4gICAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcbiAgICAuc2V0Q3NzVmFyaWFibGUoY29sb3IsIG51aS1jb2xvci10ZXh0LXNlY29uZGFyeSlcbn1cblxuLm51aS13aXphcmQtc3RlcC10ZXh0LWxhYmVsIHtcbiAgICB0ZXh0LW92ZXJmbG93OiBlbGxpcHNpcztcbiAgICBvdmVyZmxvdzogaGlkZGVuO1xufVxuXG4ubnVpLXdpemFyZC1zdGVwLWhlYWRlciAubnVpLXN0ZXAtaGVhZGVyLXJpcHBsZSB7XG5AaW5jbHVkZSBtYXQtZmlsbDtcbiAgICBwb2ludGVyLWV2ZW50czogbm9uZTtcbn1cbiIsIi5zZXRDc3NWYXJpYWJsZShAcHJvcGVydHksIEB2YWx1ZSl7XG4gICAgQGV2YWx1YXRlZCA6IFwiQHt2YWx1ZX1cIjtcbiAgICAvL3RoZSBkb3VibGUgQCBmb3JjZXMgYSBpbmRpcmVjdGlvbiBldmFsdWF0aW9uLCBraW5kYSBsaWtlIGEgcG9pbnRlclxuICAgIEBmYWxsYmFjayA6IEBAZXZhbHVhdGVkO1xuXG4gICAgQHtwcm9wZXJ0eX06IH5cInZhcigtLUB7dmFsdWV9LEB7ZmFsbGJhY2t9KVwiO1xufVxuIl19 */"], encapsulation: 2, changeDetection: 0 });
 
 
 /***/ }),
@@ -21275,7 +21210,7 @@ function WizardHorizontalComponent_div_1_Template(rf, ctx) { if (rf & 1) {
     const isLast_r5 = ctx.last;
     const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("tabIndex", ctx_r0.selectedIndex === i_r4 ? 0 : -1)("id", ctx_r0._getStepLabelId(i_r4))("index", i_r4)("state", ctx_r0.getStepState(i_r4, step_r3.state))("label", step_r3.stepLabel || step_r3.label)("selected", ctx_r0.selectedIndex === i_r4)("active", step_r3.completed || ctx_r0.selectedIndex === i_r4 || !ctx_r0.linear)("completed", step_r3.completed)("optional", step_r3.optional)("errorMessage", step_r3.errorMessage)("disableRipple", ctx_r0.disableRipple)("iconOverrides", ctx_r0._iconOverrides);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("tabIndex", ctx_r0.selectedIndex === i_r4 ? 0 : -1)("id", ctx_r0._getStepLabelId(i_r4))("index", i_r4)("state", ctx_r0.getStepState(i_r4, step_r3.state))("label", step_r3.stepLabel || step_r3.label)("selected", ctx_r0.selectedIndex === i_r4)("active", step_r3.completed || ctx_r0.selectedIndex === i_r4 || !ctx_r0.linear)("completed", step_r3.completed)("optional", step_r3.optional)("errorMessage", step_r3.errorMessage)("disableRipple", ctx_r0.disableRipple);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵattribute"]("aria-posinset", i_r4 + 1)("aria-setsize", ctx_r0.steps.length)("aria-controls", ctx_r0._getStepContentId(i_r4))("aria-selected", ctx_r0.selectedIndex == i_r4)("aria-label", step_r3.ariaLabel || null)("aria-labelledby", !step_r3.ariaLabel && step_r3.ariaLabelledby ? step_r3.ariaLabelledby : null);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", !isLast_r5);
@@ -21327,9 +21262,9 @@ WizardHorizontalComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵ
     } }, inputs: { selectedIndex: "selectedIndex", labelPosition: "labelPosition" }, exportAs: ["wizardHorizontal"], features: [_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵProvidersFeature"]([
             { provide: _wizard_directive__WEBPACK_IMPORTED_MODULE_2__["WizardDirective"], useExisting: WizardHorizontalComponent },
             { provide: _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_0__["CdkStepper"], useExisting: WizardHorizontalComponent },
-        ]), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵInheritDefinitionFeature"]], decls: 5, vars: 3, consts: [[1, "nui-wizard-horizontal-header-container"], ["class", "nui-step-header-wrapper", 4, "ngFor", "ngForOf"], [1, "nui-wizard-horizontal-content-container"], ["class", "nui-wizard-horizontal-content", "role", "tabpanel", 3, "id", 4, "ngFor", "ngForOf"], ["class", "nui-wizard-horizontal-footer-container", 4, "ngIf"], [1, "nui-step-header-wrapper"], [1, "nui-wizard-horizontal-header", 3, "tabIndex", "id", "index", "state", "label", "selected", "active", "completed", "optional", "errorMessage", "disableRipple", "iconOverrides", "click", "keydown"], ["class", "nui-wizard-horizontal-line", 3, "ngClass", 4, "ngIf"], [1, "nui-wizard-horizontal-line", 3, "ngClass"], ["role", "tabpanel", 1, "nui-wizard-horizontal-content", 3, "id"], [3, "ngTemplateOutlet"], [1, "nui-wizard-horizontal-footer-container"], [3, "footer"]], template: function WizardHorizontalComponent_Template(rf, ctx) { if (rf & 1) {
+        ]), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵInheritDefinitionFeature"]], decls: 5, vars: 3, consts: [[1, "nui-wizard-horizontal-header-container"], ["class", "nui-step-header-wrapper", 4, "ngFor", "ngForOf"], [1, "nui-wizard-horizontal-content-container"], ["class", "nui-wizard-horizontal-content", "role", "tabpanel", 3, "id", 4, "ngFor", "ngForOf"], ["class", "nui-wizard-horizontal-footer-container", 4, "ngIf"], [1, "nui-step-header-wrapper"], [1, "nui-wizard-horizontal-header", 3, "tabIndex", "id", "index", "state", "label", "selected", "active", "completed", "optional", "errorMessage", "disableRipple", "click", "keydown"], ["class", "nui-wizard-horizontal-line", 3, "ngClass", 4, "ngIf"], [1, "nui-wizard-horizontal-line", 3, "ngClass"], ["role", "tabpanel", 1, "nui-wizard-horizontal-content", 3, "id"], [3, "ngTemplateOutlet"], [1, "nui-wizard-horizontal-footer-container"], [3, "footer"]], template: function WizardHorizontalComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](1, WizardHorizontalComponent_div_1_Template, 3, 19, "div", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](1, WizardHorizontalComponent_div_1_Template, 3, 18, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](2, "div", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](3, WizardHorizontalComponent_div_3_Template, 2, 6, "div", 3);
@@ -21605,7 +21540,7 @@ __webpack_require__.r(__webpack_exports__);
 /*!***************************!*\
   !*** ./src/public_api.ts ***!
   \***************************/
-/*! exports provided: NuiButtonModule, NuiCheckboxModule, NuiCommonModule, NuiDividerModule, NuiIconModule, NuiMessageModule, NuiImageModule, NuiMenuModule, NuiPopupModule, NuiSwitchModule, NuiSelectModule, NuiSelectV2Module, NuiSpinnerModule, NuiTabsModule, NuiTextboxModule, NuiTooltipModule, NuiLayoutModule, NuiOverlayModule, NuiOverlayAdditionsModule, NuiBreadcrumbModule, NuiBusyModule, NuiChipsModule, NuiContentModule, NuiDatePickerModule, NuiDateTimePickerModule, NuiDialogModule, NuiExpanderModule, NuiFormFieldModule, NuiPaginatorModule, NuiPanelModule, NuiPopoverModule, NuiProgressModule, NuiRadioModule, NuiRepeatModule, NuiSearchModule, NuiSelectorModule, NuiSorterModule, NuiTableModule, NuiTimeFrameBarModule, NuiTimeFramePickerModule, NuiTimePickerModule, NuiToastModule, NuiToolbarModule, NuiValidationMessageModule, NuiWizardModule, NuiWizardV2Module, NuiDocsModule, ButtonSizeType, CheckboxChangeEvent, datePickerDefaults, datePickerDateFormats, NuiDndModule, DndDropTargetDirective, NuiDialogEvent, SrlcStage, NuiFormFieldControl, IconCategory, IconCategoryNamespace, IconStatus, IconSeverity, IconState, IconWidget, MenuActionType, PanelModes, PanelStates, SizeParameters, PanelBackgroundColor, PopoverOverlayPosition, RepeatSelectionMode, PaddingOptions, NUI_SELECT_V2_OPTION_PARENT_COMPONENT, ANNOUNCER_OPEN_MESSAGE_SUFFIX, ANNOUNCER_CLOSE_MESSAGE, SelectionType, CheckboxStatus, SorterDirection, SpinnerSize, ButtonIcon, DEFAULT_TABLE_HEADER_OFFSET, TABLE_ROW_HEIGHT, complexScrollStrategyFactory, TableVirtualScrollLinearDirective, TableVirtualScrollDirective, TableVirtualScrollHeaderPosition, TableStickyHeaderDirective, SliceRangePipe, ToolbarItemType, ToolbarItemDisplayStyle, CustomValidationMessageComponent, WizardDirective, WizardIconDirective, WizardStepFooterDirective, WizardStepLabelDirective, ErrorStateMatcher, wizardAnimations, WizardStepperNextDirective, WizardStepperPreviousDirective, WizardFooterComponent, WizardHorizontalComponent, WizardStepV2Component, WizardStepHeaderComponent, WizardVerticalComponent, OVERLAY_CONTAINER_CLASS, OVERLAY_PANEL_CLASS, OVERLAY_DEFAULT_PRIORITY, OverlayPlacement, OverlayPosition, getOverlayPositions, OVERLAY_ITEM, OVERLAY_CONTAINER, OVERLAY_WITH_POPUP_STYLES_CLASS, OVERLAY_ARROW_SIZE, OverlayUtilitiesService, OverlayCustomContainer, POPUP_V2_VIEWPORT_MARGINS_DEFAULT, unitConversionToken, UnitBase, unitConversionConstants, imagesPresetToken, KEY_CODE, KEYBOARD_CODE, RESIZE_DEBOUNCE_TIME, DEFAULT_INTERACTIVE_ELEMENTS, ResizeDirection, ResizeUnit, resizeDirectionHelpers, defaultFilters, NuiActiveDialog, SelectionModel, IEvent, EventDefinition, NuiValidators, LogLevel, NuiEnvironment, NUI_ENV_PROVIDER_FACTORY, NUI_ENV_PROVIDER, uuid, immutableSet, removeErrors, traverse, nameof, BreadcrumbComponent, ContentComponent, ExpanderComponent, MessageComponent, DividerComponent, RadioComponent, RadioGroupComponent, CheckboxComponent, CheckboxGroupComponent, ChipComponent, ChipsComponent, ChipsOverflowComponent, IconComponent, SpinnerComponent, SwitchComponent, PaginatorComponent, ProgressComponent, PanelComponent, ButtonComponent, BusyComponent, ImageComponent, SearchComponent, TextboxComponent, RepeatItemComponent, RepeatComponent, MenuActionComponent, MenuComponent, MenuGroupComponent, MenuItemBaseComponent, MenuLinkComponent, MenuOptionComponent, MenuPopupComponent, MenuSwitchComponent, WizardStepComponent, WizardComponent, ToastComponent, PopupDeprecatedComponent, PopupToggleDirective, SelectorComponent, PopoverComponent, PopupComponent, PopoverModalComponent, SelectComponent, SelectV2OptionComponent, SelectV2OptionGroupComponent, ComboboxV2OptionHighlightDirective, OverlayItemComponent, OverlayComponent, ArrowComponent, SelectV2Component, ComboboxV2Component, MarkAsSelectedItemDirective, ComboboxComponent, BaseSelect, DatePickerComponent, TimePickerComponent, TimeFramePickerComponent, DateTimePickerComponent, SorterComponent, DialogComponent, NuiDialogRef, DialogHeaderComponent, DialogFooterComponent, DialogBackdropComponent, ConfirmationDialogComponent, TableComponent, TableFooterRowComponent, TableHeaderRowComponent, TableRowComponent, TableFooterRowDefDirective, TableRowDefDirective, TableHeaderRowDefDirective, CardComponent, CardGroupComponent, SheetComponent, SheetGroupComponent, TableHeaderCellComponent, TableFooterCellDefDirective, TableFooterCellDirective, TableHeaderCellDefDirective, TableColumnDefDirective, TableCellDirective, TableCellDefDirective, TableResizerDirective, ToolbarComponent, ToolbarGroupComponent, ToolbarItemComponent, ToolbarSplitterComponent, ValidationMessageComponent, TextboxNumberComponent, FormFieldComponent, TabGroupComponent, TabHeadingCustomTemplateRefDirective, TabHeadingDirective, TabComponent, ClipboardDirective, DraggableDirective, DroppableDirective, ResizeObserverDirective, ResizerDirective, ResizeDirective, SetFocusDirective, TooltipDirective, ZoomContentDirective, ThemeSwitcherComponent, ClickInterceptorDirective, MenuItemComponent, TabHeadingComponent, TabHeadingGroupComponent, TooltipComponent, LayoutResizerComponent, TimeFrameBarComponent, QuickPickerComponent, CopyTextComponent, ExampleWrapperComponent, ExampleCodeComponent, SrlcIndicatorComponent, HighlightPipe, LimitToPipe, TimeFrameFormatPipe, UnitConversionPipe, IconService, DragAndDropService, BreadcrumbStateService, NoopDataSourceService, DataSourceService, DataSourceFeatures, DataFilterService, DialogStackService, DialogService, DomUtilService, EdgeDetectionService, EventPropagationService, HistoryStorage, ListService, LoggerService, NotificationService, PositionService, SearchService, SelectorService, UtilService, TimeframeService, ToastContainerService, ToastService, ToastDirective, ThemeSwitchService, TransientCacheService, TableStateHandlerService, UnitConversionService, LocalFilteringDataSource, ClientSideDataSource, ServerSideDataSource, EventBusService, EventBus, MenuKeyControlService, VirtualViewportManager, OverlayContainerService, OverlayPositionService, OverlayService, DEMO_PATH_TOKEN, expand */
+/*! exports provided: NuiButtonModule, NuiCheckboxModule, NuiCommonModule, NuiDividerModule, NuiIconModule, NuiMessageModule, NuiImageModule, NuiMenuModule, NuiPopupModule, NuiSwitchModule, NuiSelectModule, NuiSelectV2Module, NuiSpinnerModule, NuiTabsModule, NuiTextboxModule, NuiTooltipModule, NuiLayoutModule, NuiOverlayModule, NuiOverlayAdditionsModule, NuiBreadcrumbModule, NuiBusyModule, NuiChipsModule, NuiContentModule, NuiDatePickerModule, NuiDateTimePickerModule, NuiDialogModule, NuiExpanderModule, NuiFormFieldModule, NuiPaginatorModule, NuiPanelModule, NuiPopoverModule, NuiProgressModule, NuiRadioModule, NuiRepeatModule, NuiSearchModule, NuiSelectorModule, NuiSorterModule, NuiTableModule, NuiTimeFrameBarModule, NuiTimeFramePickerModule, NuiTimePickerModule, NuiToastModule, NuiToolbarModule, NuiValidationMessageModule, NuiWizardModule, NuiWizardV2Module, NuiDocsModule, ButtonSizeType, CheckboxChangeEvent, datePickerDefaults, datePickerDateFormats, NuiDndModule, DndDropTargetDirective, NuiDialogEvent, SrlcStage, NuiFormFieldControl, IconCategory, IconCategoryNamespace, IconStatus, IconSeverity, IconState, IconWidget, MenuActionType, PanelModes, PanelStates, SizeParameters, PanelBackgroundColor, PopoverOverlayPosition, RepeatSelectionMode, PaddingOptions, NUI_SELECT_V2_OPTION_PARENT_COMPONENT, ANNOUNCER_OPEN_MESSAGE_SUFFIX, ANNOUNCER_CLOSE_MESSAGE, SelectionType, CheckboxStatus, SorterDirection, SpinnerSize, ButtonIcon, DEFAULT_TABLE_HEADER_OFFSET, TABLE_ROW_HEIGHT, complexScrollStrategyFactory, TableVirtualScrollLinearDirective, TableVirtualScrollDirective, TableVirtualScrollHeaderPosition, TableStickyHeaderDirective, SliceRangePipe, ToolbarItemType, ToolbarItemDisplayStyle, CustomValidationMessageComponent, WizardDirective, WizardStepFooterDirective, WizardStepLabelDirective, ErrorStateMatcher, wizardAnimations, WizardStepperNextDirective, WizardStepperPreviousDirective, WizardFooterComponent, WizardHorizontalComponent, WizardStepV2Component, WizardStepHeaderComponent, WizardVerticalComponent, OVERLAY_CONTAINER_CLASS, OVERLAY_PANEL_CLASS, OVERLAY_DEFAULT_PRIORITY, OverlayPlacement, OverlayPosition, getOverlayPositions, OVERLAY_ITEM, OVERLAY_CONTAINER, OVERLAY_WITH_POPUP_STYLES_CLASS, OVERLAY_ARROW_SIZE, OverlayUtilitiesService, OverlayCustomContainer, POPUP_V2_VIEWPORT_MARGINS_DEFAULT, unitConversionToken, UnitBase, unitConversionConstants, imagesPresetToken, KEY_CODE, KEYBOARD_CODE, RESIZE_DEBOUNCE_TIME, DEFAULT_INTERACTIVE_ELEMENTS, ResizeDirection, ResizeUnit, resizeDirectionHelpers, defaultFilters, NuiActiveDialog, SelectionModel, IEvent, EventDefinition, NuiValidators, LogLevel, NuiEnvironment, NUI_ENV_PROVIDER_FACTORY, NUI_ENV_PROVIDER, uuid, immutableSet, removeErrors, traverse, nameof, BreadcrumbComponent, ContentComponent, ExpanderComponent, MessageComponent, DividerComponent, RadioComponent, RadioGroupComponent, CheckboxComponent, CheckboxGroupComponent, ChipComponent, ChipsComponent, ChipsOverflowComponent, IconComponent, SpinnerComponent, SwitchComponent, PaginatorComponent, ProgressComponent, PanelComponent, ButtonComponent, BusyComponent, ImageComponent, SearchComponent, TextboxComponent, RepeatItemComponent, RepeatComponent, MenuActionComponent, MenuComponent, MenuGroupComponent, MenuItemBaseComponent, MenuLinkComponent, MenuOptionComponent, MenuPopupComponent, MenuSwitchComponent, WizardStepComponent, WizardComponent, ToastComponent, PopupDeprecatedComponent, PopupToggleDirective, SelectorComponent, PopoverComponent, PopupComponent, PopoverModalComponent, SelectComponent, SelectV2OptionComponent, SelectV2OptionGroupComponent, ComboboxV2OptionHighlightDirective, OverlayItemComponent, OverlayComponent, ArrowComponent, SelectV2Component, ComboboxV2Component, MarkAsSelectedItemDirective, ComboboxComponent, BaseSelect, DatePickerComponent, TimePickerComponent, TimeFramePickerComponent, DateTimePickerComponent, SorterComponent, DialogComponent, NuiDialogRef, DialogHeaderComponent, DialogFooterComponent, DialogBackdropComponent, ConfirmationDialogComponent, TableComponent, TableFooterRowComponent, TableHeaderRowComponent, TableRowComponent, TableFooterRowDefDirective, TableRowDefDirective, TableHeaderRowDefDirective, CardComponent, CardGroupComponent, SheetComponent, SheetGroupComponent, TableHeaderCellComponent, TableFooterCellDefDirective, TableFooterCellDirective, TableHeaderCellDefDirective, TableColumnDefDirective, TableCellDirective, TableCellDefDirective, TableResizerDirective, ToolbarComponent, ToolbarGroupComponent, ToolbarItemComponent, ToolbarSplitterComponent, ValidationMessageComponent, TextboxNumberComponent, FormFieldComponent, TabGroupComponent, TabHeadingCustomTemplateRefDirective, TabHeadingDirective, TabComponent, ClipboardDirective, DraggableDirective, DroppableDirective, ResizeObserverDirective, ResizerDirective, ResizeDirective, SetFocusDirective, TooltipDirective, ZoomContentDirective, ThemeSwitcherComponent, ClickInterceptorDirective, MenuItemComponent, TabHeadingComponent, TabHeadingGroupComponent, TooltipComponent, LayoutResizerComponent, TimeFrameBarComponent, QuickPickerComponent, CopyTextComponent, ExampleWrapperComponent, ExampleCodeComponent, SrlcIndicatorComponent, HighlightPipe, LimitToPipe, TimeFrameFormatPipe, UnitConversionPipe, IconService, DragAndDropService, BreadcrumbStateService, NoopDataSourceService, DataSourceService, DataSourceFeatures, DataFilterService, DialogStackService, DialogService, DomUtilService, EdgeDetectionService, EventPropagationService, HistoryStorage, ListService, LoggerService, NotificationService, PositionService, SearchService, SelectorService, UtilService, TimeframeService, ToastContainerService, ToastService, ToastDirective, ThemeSwitchService, TransientCacheService, TableStateHandlerService, UnitConversionService, LocalFilteringDataSource, ClientSideDataSource, ServerSideDataSource, EventBusService, EventBus, MenuKeyControlService, VirtualViewportManager, OverlayContainerService, OverlayPositionService, OverlayService, DEMO_PATH_TOKEN, expand */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -21790,8 +21725,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CustomValidationMessageComponent", function() { return _nui_api__WEBPACK_IMPORTED_MODULE_0__["CustomValidationMessageComponent"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "WizardDirective", function() { return _nui_api__WEBPACK_IMPORTED_MODULE_0__["WizardDirective"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "WizardIconDirective", function() { return _nui_api__WEBPACK_IMPORTED_MODULE_0__["WizardIconDirective"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "WizardStepFooterDirective", function() { return _nui_api__WEBPACK_IMPORTED_MODULE_0__["WizardStepFooterDirective"]; });
 
@@ -30453,7 +30386,7 @@ ToolbarItemComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdef
 /*!*****************************************!*\
   !*** ./src/lib/wizard-v2/public-api.ts ***!
   \*****************************************/
-/*! exports provided: NuiWizardV2Module, WizardDirective, WizardIconDirective, WizardStepFooterDirective, WizardStepLabelDirective, ErrorStateMatcher, wizardAnimations, WizardStepperNextDirective, WizardStepperPreviousDirective, WizardFooterComponent, WizardHorizontalComponent, WizardStepV2Component, WizardStepHeaderComponent, WizardVerticalComponent */
+/*! exports provided: NuiWizardV2Module, WizardDirective, WizardStepFooterDirective, WizardStepLabelDirective, ErrorStateMatcher, wizardAnimations, WizardStepperNextDirective, WizardStepperPreviousDirective, WizardFooterComponent, WizardHorizontalComponent, WizardStepV2Component, WizardStepHeaderComponent, WizardVerticalComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -30464,41 +30397,37 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wizard_directive__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./wizard.directive */ "WZ49");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "WizardDirective", function() { return _wizard_directive__WEBPACK_IMPORTED_MODULE_1__["WizardDirective"]; });
 
-/* harmony import */ var _wizard_icon_directive__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./wizard-icon.directive */ "Wckn");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "WizardIconDirective", function() { return _wizard_icon_directive__WEBPACK_IMPORTED_MODULE_2__["WizardIconDirective"]; });
+/* harmony import */ var _wizard_step_footer_directive__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./wizard-step-footer.directive */ "ZSn2");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "WizardStepFooterDirective", function() { return _wizard_step_footer_directive__WEBPACK_IMPORTED_MODULE_2__["WizardStepFooterDirective"]; });
 
-/* harmony import */ var _wizard_step_footer_directive__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./wizard-step-footer.directive */ "ZSn2");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "WizardStepFooterDirective", function() { return _wizard_step_footer_directive__WEBPACK_IMPORTED_MODULE_3__["WizardStepFooterDirective"]; });
+/* harmony import */ var _wizard_step_label_directive__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./wizard-step-label.directive */ "JSul");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "WizardStepLabelDirective", function() { return _wizard_step_label_directive__WEBPACK_IMPORTED_MODULE_3__["WizardStepLabelDirective"]; });
 
-/* harmony import */ var _wizard_step_label_directive__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./wizard-step-label.directive */ "JSul");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "WizardStepLabelDirective", function() { return _wizard_step_label_directive__WEBPACK_IMPORTED_MODULE_4__["WizardStepLabelDirective"]; });
+/* harmony import */ var _error_state_matcher_provider__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./error-state-matcher.provider */ "8jD3");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ErrorStateMatcher", function() { return _error_state_matcher_provider__WEBPACK_IMPORTED_MODULE_4__["ErrorStateMatcher"]; });
 
-/* harmony import */ var _error_state_matcher_provider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./error-state-matcher.provider */ "8jD3");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ErrorStateMatcher", function() { return _error_state_matcher_provider__WEBPACK_IMPORTED_MODULE_5__["ErrorStateMatcher"]; });
+/* harmony import */ var _wizard_animations_wizard_animations__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./wizard-animations/wizard-animations */ "gid4");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "wizardAnimations", function() { return _wizard_animations_wizard_animations__WEBPACK_IMPORTED_MODULE_5__["wizardAnimations"]; });
 
-/* harmony import */ var _wizard_animations_wizard_animations__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./wizard-animations/wizard-animations */ "gid4");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "wizardAnimations", function() { return _wizard_animations_wizard_animations__WEBPACK_IMPORTED_MODULE_6__["wizardAnimations"]; });
+/* harmony import */ var _wizard_button_wizard_button__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./wizard-button/wizard-button */ "sp5V");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "WizardStepperNextDirective", function() { return _wizard_button_wizard_button__WEBPACK_IMPORTED_MODULE_6__["WizardStepperNextDirective"]; });
 
-/* harmony import */ var _wizard_button_wizard_button__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./wizard-button/wizard-button */ "sp5V");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "WizardStepperNextDirective", function() { return _wizard_button_wizard_button__WEBPACK_IMPORTED_MODULE_7__["WizardStepperNextDirective"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "WizardStepperPreviousDirective", function() { return _wizard_button_wizard_button__WEBPACK_IMPORTED_MODULE_6__["WizardStepperPreviousDirective"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "WizardStepperPreviousDirective", function() { return _wizard_button_wizard_button__WEBPACK_IMPORTED_MODULE_7__["WizardStepperPreviousDirective"]; });
+/* harmony import */ var _wizard_footer_wizard_footer_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./wizard-footer/wizard-footer.component */ "Gufs");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "WizardFooterComponent", function() { return _wizard_footer_wizard_footer_component__WEBPACK_IMPORTED_MODULE_7__["WizardFooterComponent"]; });
 
-/* harmony import */ var _wizard_footer_wizard_footer_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./wizard-footer/wizard-footer.component */ "Gufs");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "WizardFooterComponent", function() { return _wizard_footer_wizard_footer_component__WEBPACK_IMPORTED_MODULE_8__["WizardFooterComponent"]; });
+/* harmony import */ var _wizard_horizontal_wizard_horizontal_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./wizard-horizontal/wizard-horizontal.component */ "ZgeA");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "WizardHorizontalComponent", function() { return _wizard_horizontal_wizard_horizontal_component__WEBPACK_IMPORTED_MODULE_8__["WizardHorizontalComponent"]; });
 
-/* harmony import */ var _wizard_horizontal_wizard_horizontal_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./wizard-horizontal/wizard-horizontal.component */ "ZgeA");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "WizardHorizontalComponent", function() { return _wizard_horizontal_wizard_horizontal_component__WEBPACK_IMPORTED_MODULE_9__["WizardHorizontalComponent"]; });
+/* harmony import */ var _wizard_step_wizard_step_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./wizard-step/wizard-step.component */ "9Oqf");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "WizardStepV2Component", function() { return _wizard_step_wizard_step_component__WEBPACK_IMPORTED_MODULE_9__["WizardStepV2Component"]; });
 
-/* harmony import */ var _wizard_step_wizard_step_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./wizard-step/wizard-step.component */ "9Oqf");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "WizardStepV2Component", function() { return _wizard_step_wizard_step_component__WEBPACK_IMPORTED_MODULE_10__["WizardStepV2Component"]; });
+/* harmony import */ var _wizard_step_header_wizard_step_header_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./wizard-step-header/wizard-step-header.component */ "WuwZ");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "WizardStepHeaderComponent", function() { return _wizard_step_header_wizard_step_header_component__WEBPACK_IMPORTED_MODULE_10__["WizardStepHeaderComponent"]; });
 
-/* harmony import */ var _wizard_step_header_wizard_step_header_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./wizard-step-header/wizard-step-header.component */ "WuwZ");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "WizardStepHeaderComponent", function() { return _wizard_step_header_wizard_step_header_component__WEBPACK_IMPORTED_MODULE_11__["WizardStepHeaderComponent"]; });
-
-/* harmony import */ var _wizard_vertical_wizard_vertical_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./wizard-vertical/wizard-vertical.component */ "EEH9");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "WizardVerticalComponent", function() { return _wizard_vertical_wizard_vertical_component__WEBPACK_IMPORTED_MODULE_12__["WizardVerticalComponent"]; });
-
+/* harmony import */ var _wizard_vertical_wizard_vertical_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./wizard-vertical/wizard-vertical.component */ "EEH9");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "WizardVerticalComponent", function() { return _wizard_vertical_wizard_vertical_component__WEBPACK_IMPORTED_MODULE_11__["WizardVerticalComponent"]; });
 
 
 
