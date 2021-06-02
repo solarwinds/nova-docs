@@ -37,7 +37,7 @@
 
 <ol class="breadcrumb">
   <li>Directives</li>
-  <li>NuiWizardIconDirective</li>
+  <li>WizardIconDirective</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -68,7 +68,7 @@
 
                     <tr>
                         <td class="col-md-3">Selector</td>
-                        <td class="col-md-9"><code>ng-template[nuiWizardIcon]</code></td>
+                        <td class="col-md-9"><code>ng-template[stepState]</code></td>
                     </tr>
 
                 </tbody>
@@ -105,7 +105,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#nuiWizardIcon">nuiWizardIcon</a>
+                                <a href="#stepState">stepState</a>
                             </li>
                         </ul>
                     </td>
@@ -129,7 +129,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/lib/wizard-v2/wizard-icon.directive.ts:23</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/lib/wizard-v2/wizard-icon.directive.ts:17</a></div>
                             </td>
                         </tr>
 
@@ -173,8 +173,8 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="nuiWizardIcon"></a>
-                        <b>nuiWizardIcon</b>
+                        <a name="stepState"></a>
+                        <b>stepState</b>
                     </td>
                 </tr>
                 <tr>
@@ -185,7 +185,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/lib/wizard-v2/wizard-icon.directive.ts:23</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/lib/wizard-v2/wizard-icon.directive.ts:17</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -227,7 +227,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/lib/wizard-v2/wizard-icon.directive.ts:25</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/lib/wizard-v2/wizard-icon.directive.ts:19</a></div>
                             </td>
                         </tr>
 
@@ -251,19 +251,13 @@ export interface NuiWizardIconContext {
     optional: boolean;
 }
 
-export interface MatStepperIconContext {
-    index: number;
-    active: boolean;
-    optional: boolean;
-}
-
 @Directive({
-    selector: &quot;ng-template[nuiWizardIcon]&quot;,
+    selector: &quot;ng-template[stepState]&quot;,
 })
-export class NuiWizardIconDirective {
+export class WizardIconDirective {
 
     /** Name of the icon to be overridden. */
-    @Input() nuiWizardIcon: StepState;
+    @Input() stepState: StepState;
 
     constructor(public templateRef: TemplateRef&lt;NuiWizardIconContext&gt;) {}
 }
@@ -301,7 +295,7 @@ export class NuiWizardIconDirective {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'directive';
-            var COMPODOC_CURRENT_PAGE_URL = 'NuiWizardIconDirective.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'WizardIconDirective.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

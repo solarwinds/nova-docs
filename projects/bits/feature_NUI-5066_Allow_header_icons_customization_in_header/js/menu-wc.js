@@ -380,9 +380,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     <a href="directives/MarkAsSelectedItemDirective.html" data-type="entity-link">MarkAsSelectedItemDirective</a>
                                 </li>
                                 <li class="link">
-                                    <a href="directives/NuiWizardIconDirective.html" data-type="entity-link">NuiWizardIconDirective</a>
-                                </li>
-                                <li class="link">
                                     <a href="directives/TableStickyHeaderDirective.html" data-type="entity-link">TableStickyHeaderDirective</a>
                                 </li>
                                 <li class="link">
@@ -396,6 +393,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 </li>
                                 <li class="link">
                                     <a href="directives/WizardDirective.html" data-type="entity-link">WizardDirective</a>
+                                </li>
+                                <li class="link">
+                                    <a href="directives/WizardIconDirective.html" data-type="entity-link">WizardIconDirective</a>
                                 </li>
                                 <li class="link">
                                     <a href="directives/WizardStepFooterDirective.html" data-type="entity-link">WizardStepFooterDirective</a>
@@ -831,9 +831,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="interfaces/IWizardWaitEvent.html" data-type="entity-link">IWizardWaitEvent</a>
-                            </li>
-                            <li class="link">
-                                <a href="interfaces/MatStepperIconContext.html" data-type="entity-link">MatStepperIconContext</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/NuiWizardIconContext.html" data-type="entity-link">NuiWizardIconContext</a>
