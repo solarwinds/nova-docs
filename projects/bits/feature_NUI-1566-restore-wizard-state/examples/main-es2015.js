@@ -18959,6 +18959,11 @@ class WizardDirective extends _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_1__[
     set selected(step) {
         this.selectedIndex = this.steps ? this.steps.toArray().indexOf(step) : -1;
     }
+    ngOnChanges(changes) {
+        if (changes.state && changes.state.currentValue) {
+            this.state = changes.state.currentValue;
+        }
+    }
     ngAfterContentInit() {
         this._steps.changes
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["startWith"])(this._steps), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeUntil"])(this._destroyed))
@@ -18982,10 +18987,7 @@ class WizardDirective extends _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_1__[
     ngAfterViewInit() {
         var _a;
         super.ngAfterViewInit();
-        // Making sure there is at least one listener for the output to track the wizard's finished state
-        // This prevents users from using the input without the corresponding output, which may result in
-        // broken validation of the steps
-        if (((_a = this.state) === null || _a === void 0 ? void 0 : _a.finished) && this.finished.observers.length) {
+        if ((_a = this.state) === null || _a === void 0 ? void 0 : _a.finished) {
             this.restore();
         }
     }
@@ -19027,7 +19029,7 @@ WizardDirective.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDi
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx._stepHeader = _t);
     } }, inputs: { disableRipple: "disableRipple", state: "state", selected: "selected" }, outputs: { animationDone: "animationDone", selectionChange: "selectionChange", finished: "finished" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵProvidersFeature"]([
             { provide: _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_1__["CdkStepper"], useExisting: WizardDirective },
-        ]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInheritDefinitionFeature"]] });
+        ]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInheritDefinitionFeature"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵNgOnChangesFeature"]] });
 const ɵWizardDirective_BaseFactory = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetInheritedFactory"](WizardDirective);
 
 
