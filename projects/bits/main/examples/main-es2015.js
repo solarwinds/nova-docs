@@ -18776,6 +18776,15 @@ class OptionKeyControlService {
     setSkipPredicate(predicate) {
         this.keyboardEventsManager.skipPredicate(predicate);
     }
+    scrollToActiveItem(options) {
+        if (this.keyboardEventsManager.activeItem) {
+            // setTimeout is necessary because scrolling to the selected item should occur only when overlay rendered
+            setTimeout(() => {
+                var _a;
+                (_a = this.keyboardEventsManager.activeItem) === null || _a === void 0 ? void 0 : _a.scrollIntoView(options);
+            });
+        }
+    }
     hasActiveItem() {
         if (lodash_isNil__WEBPACK_IMPORTED_MODULE_2___default()(this.keyboardEventsManager.activeItemIndex)) {
             throw new Error("ActiveItemIndex is not defined");
@@ -18800,7 +18809,7 @@ class OptionKeyControlService {
                 this.keyboardEventsManager.setLastItemActive();
                 break;
         }
-        this.scrollToOption({ block: "nearest" });
+        this.scrollToActiveItem({ block: "nearest" });
         // prevent closing on enter
         if (!this.hasActiveItem() && event.code === _constants__WEBPACK_IMPORTED_MODULE_4__["KEYBOARD_CODE"].ENTER) {
             event.preventDefault();
@@ -18824,21 +18833,12 @@ class OptionKeyControlService {
         }
         if (event.code === _constants__WEBPACK_IMPORTED_MODULE_4__["KEYBOARD_CODE"].ARROW_DOWN) {
             this.popup.toggle();
-            this.scrollToOption({ block: "center" });
+            this.scrollToActiveItem({ block: "center" });
         }
     }
     shouldBePrevented(event) {
         return event.code === _constants__WEBPACK_IMPORTED_MODULE_4__["KEYBOARD_CODE"].ARROW_DOWN || event.code === _constants__WEBPACK_IMPORTED_MODULE_4__["KEYBOARD_CODE"].ARROW_UP
             || event.code === _constants__WEBPACK_IMPORTED_MODULE_4__["KEYBOARD_CODE"].ENTER;
-    }
-    scrollToOption(options) {
-        if (this.keyboardEventsManager.activeItem) {
-            // setTimeout is necessary because scrolling to the selected item should occur only when overlay rendered
-            setTimeout(() => {
-                var _a;
-                (_a = this.keyboardEventsManager.activeItem) === null || _a === void 0 ? void 0 : _a.scrollIntoView(options);
-            });
-        }
     }
     announceNavigatedOption() {
         const activeItem = this.keyboardEventsManager.activeItem;
@@ -24898,6 +24898,8 @@ class ComboboxV2Component extends _base_select_v2__WEBPACK_IMPORTED_MODULE_5__["
         // we check "selectedOptions" to be set per "value" again in "handleValueChange"
         this.optionsChanged().subscribe(() => {
             this.filterItems(this.inputValue.toString());
+            // We need the active option to always stay visible during the options filtering.
+            this.optionKeyControlService.scrollToActiveItem({ block: "start", behavior: "smooth" });
             this.cdRef.markForCheck();
         });
     }
