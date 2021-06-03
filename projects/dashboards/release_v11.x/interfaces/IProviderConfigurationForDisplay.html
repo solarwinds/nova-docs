@@ -139,6 +139,7 @@ import { GridsterItem } from &quot;angular-gridster2&quot;;
 import { Observable } from &quot;rxjs&quot;;
 
 import { LegendPlacement } from &quot;./components/types&quot;;
+import { IHeaderLinkProvider } from &quot;./components/widget/widget-header/types&quot;;
 import { IConfiguratorSource } from &quot;./configurator/services/types&quot;;
 
 /**
@@ -151,6 +152,7 @@ export const DASHBOARD_EVENT_BUS &#x3D; new InjectionToken&lt;EventBus&lt;Event&
 export const DATA_SOURCE &#x3D; new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(&quot;DATA_SOURCE&quot;);
 export const FORMATTERS_REGISTRY &#x3D; new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(&quot;FORMATTERS_REGISTRY&quot;);
 export const TEST_REGISTRY &#x3D; new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(&quot;TEST_REGISTRY&quot;);
+export const HEADER_LINK_PROVIDER &#x3D; new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(&quot;HEADER_LINK_PROVIDER&quot;);
 
 export type WidgetUpdateOperation &#x3D; (widget: IWidget, source: IConfiguratorSource) &#x3D;&gt; Observable&lt;IWidget&gt;;
 export type WidgetRemovalOperation &#x3D; (widgetId: string, source: IConfiguratorSource) &#x3D;&gt; Observable&lt;string&gt;;
