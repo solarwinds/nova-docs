@@ -116,6 +116,10 @@
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
+                                <a href="#scrollToActiveItem">scrollToActiveItem</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#setActiveItem">setActiveItem</a>
                             </li>
                             <li>
@@ -382,6 +386,78 @@
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="scrollToActiveItem"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            scrollToActiveItem
+                        </b>
+                        <a href="#scrollToActiveItem"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>scrollToActiveItem(options: ScrollIntoViewOptions)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="47"
+                            class="link-to-prism">src/lib/select-v2/option-key-control.service.ts:47</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>options</td>
+                                    <td>
+                                            <code>ScrollIntoViewOptions</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
                     </div>
                 </td>
             </tr>
@@ -714,6 +790,15 @@ export class OptionKeyControlService&lt;T extends IOption&gt; {
         this.keyboardEventsManager.skipPredicate(predicate);
     }
 
+    public scrollToActiveItem(options: ScrollIntoViewOptions): void {
+        if (this.keyboardEventsManager.activeItem) {
+            // setTimeout is necessary because scrolling to the selected item should occur only when overlay rendered
+            setTimeout(() &#x3D;&gt; {
+                this.keyboardEventsManager.activeItem?.scrollIntoView(options);
+            });
+        }
+    }
+
     private hasActiveItem(): boolean {
         if (isNil(this.keyboardEventsManager.activeItemIndex)) {
             throw new Error(&quot;ActiveItemIndex is not defined&quot;);
@@ -740,7 +825,7 @@ export class OptionKeyControlService&lt;T extends IOption&gt; {
                 break;
         }
 
-        this.scrollToOption({ block: &quot;nearest&quot; });
+        this.scrollToActiveItem({ block: &quot;nearest&quot; });
 
         // prevent closing on enter
         if (!this.hasActiveItem() &amp;&amp; event.code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ENTER) {
@@ -771,22 +856,13 @@ export class OptionKeyControlService&lt;T extends IOption&gt; {
 
         if (event.code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ARROW_DOWN) {
             this.popup.toggle();
-            this.scrollToOption({ block: &quot;center&quot; });
+            this.scrollToActiveItem({ block: &quot;center&quot; });
         }
     }
 
     private shouldBePrevented(event: KeyboardEvent) {
         return event.code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ARROW_DOWN || event.code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ARROW_UP
             || event.code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ENTER;
-    }
-
-    private scrollToOption(options: ScrollIntoViewOptions): void {
-        if (this.keyboardEventsManager.activeItem) {
-            // setTimeout is necessary because scrolling to the selected item should occur only when overlay rendered
-            setTimeout(() &#x3D;&gt; {
-                this.keyboardEventsManager.activeItem?.scrollIntoView(options);
-            });
-        }
     }
 
     private announceNavigatedOption(): void {
