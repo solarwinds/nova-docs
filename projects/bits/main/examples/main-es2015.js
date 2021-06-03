@@ -8261,7 +8261,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _error_state_matcher_provider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../error-state-matcher.provider */ "8jD3");
 /* harmony import */ var _wizard_step_footer_directive__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../wizard-step-footer.directive */ "ZSn2");
 /* harmony import */ var _wizard_step_label_directive__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../wizard-step-label.directive */ "JSul");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs */ "qCKp");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/operators */ "kU1M");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ "ofXK");
+
+
 
 
 
@@ -8300,6 +8304,14 @@ class WizardStepV2Component extends _angular_cdk_stepper__WEBPACK_IMPORTED_MODUL
         super(stepper, stepperOptions);
         this.changeDetectorRef = changeDetectorRef;
         this._errorStateMatcher = _errorStateMatcher;
+        this.destroy$ = new rxjs__WEBPACK_IMPORTED_MODULE_5__["Subject"]();
+    }
+    ngOnInit() {
+        this.onControlStatusChanges();
+    }
+    ngOnDestroy() {
+        this.destroy$.next();
+        this.destroy$.complete();
     }
     /** Custom error state matcher that additionally checks for validity of interacted form. */
     isErrorState(control, form) {
@@ -8309,6 +8321,18 @@ class WizardStepV2Component extends _angular_cdk_stepper__WEBPACK_IMPORTED_MODUL
         // interacting with the current form.
         const customErrorState = !!((control === null || control === void 0 ? void 0 : control.invalid) && this.interacted);
         return originalErrorState || customErrorState;
+    }
+    onControlStatusChanges() {
+        if (this.stepControl) {
+            this.stepControl.statusChanges.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["takeUntil"])(this.destroy$)).subscribe((status) => {
+                if (status === "INVALID") {
+                    this.completed = false;
+                }
+                if (status === "VALID") {
+                    this.completed = true;
+                }
+            });
+        }
     }
 }
 WizardStepV2Component.ɵfac = function WizardStepV2Component_Factory(t) { return new (t || WizardStepV2Component)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectorRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["forwardRef"])(() => _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_0__["CdkStepper"])), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_error_state_matcher_provider__WEBPACK_IMPORTED_MODULE_2__["ErrorStateMatcher"], 4), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_0__["STEPPER_GLOBAL_OPTIONS"], 8)); };
@@ -8325,7 +8349,7 @@ WizardStepV2Component.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵde
         ]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵInheritDefinitionFeature"]], ngContentSelectors: _c0, decls: 1, vars: 0, consts: [[4, "ngIf"], [4, "ngTemplateOutlet"]], template: function WizardStepV2Component_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojectionDef"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](0, WizardStepV2Component_ng_template_0_Template, 2, 2, "ng-template");
-    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_5__["NgIf"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgTemplateOutlet"]], styles: [".nui-step-label-selected {\n  font-weight: bold;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndpemFyZC1zdGVwLmNvbXBvbmVudC5sZXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksaUJBQUE7QUFDSiIsImZpbGUiOiJ3aXphcmQtc3RlcC5jb21wb25lbnQubGVzcyIsInNvdXJjZXNDb250ZW50IjpbIi5udWktc3RlcC1sYWJlbC1zZWxlY3RlZCB7XG4gICAgZm9udC13ZWlnaHQ6IGJvbGQ7XG59XG4iXX0= */"], encapsulation: 2, changeDetection: 0 });
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_7__["NgIf"], _angular_common__WEBPACK_IMPORTED_MODULE_7__["NgTemplateOutlet"]], styles: [".nui-step-label-selected {\n  font-weight: bold;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndpemFyZC1zdGVwLmNvbXBvbmVudC5sZXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksaUJBQUE7QUFDSiIsImZpbGUiOiJ3aXphcmQtc3RlcC5jb21wb25lbnQubGVzcyIsInNvdXJjZXNDb250ZW50IjpbIi5udWktc3RlcC1sYWJlbC1zZWxlY3RlZCB7XG4gICAgZm9udC13ZWlnaHQ6IGJvbGQ7XG59XG4iXX0= */"], encapsulation: 2, changeDetection: 0 });
 
 
 /***/ }),
@@ -14876,6 +14900,20 @@ ContentComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineC
 
 /***/ }),
 
+/***/ "OYF7":
+/*!************************************!*\
+  !*** ./src/lib/wizard-v2/types.ts ***!
+  \************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+
+
+
+/***/ }),
+
 /***/ "OeXZ":
 /*!**********************************************!*\
   !*** ./demo/src/environments/environment.ts ***!
@@ -18909,6 +18947,8 @@ class WizardDirective extends _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_1__[
         this.animationDone = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
         /** Event emitted when the selected step has changed. */
         this.selectionChange = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        /** Emits the completed wizard state on component destroy */
+        this.finished = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
         /** Stream of animation `done` events when the body expands/collapses. */
         this._animationDone = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
     }
@@ -18919,6 +18959,11 @@ class WizardDirective extends _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_1__[
     set selected(step) {
         this.selectedIndex = this.steps ? this.steps.toArray().indexOf(step) : -1;
     }
+    ngOnChanges(changes) {
+        if (changes.state && changes.state.currentValue) {
+            this.state = changes.state.currentValue;
+        }
+    }
     ngAfterContentInit() {
         this._steps.changes
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["startWith"])(this._steps), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeUntil"])(this._destroyed))
@@ -18926,7 +18971,8 @@ class WizardDirective extends _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_1__[
             this.steps.reset(steps.filter(step => step._stepper === this));
             this.steps.notifyOnChanges();
         });
-        this.steps.changes.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeUntil"])(this._destroyed))
+        this.steps.changes
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeUntil"])(this._destroyed))
             .subscribe(() => this._stateChanged());
         this._animationDone.pipe(
         // This needs a `distinctUntilChanged` in order to avoid emitting the same event twice due
@@ -18938,8 +18984,32 @@ class WizardDirective extends _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_1__[
             }
         });
     }
+    ngAfterViewInit() {
+        var _a;
+        super.ngAfterViewInit();
+        if ((_a = this.state) === null || _a === void 0 ? void 0 : _a.finished) {
+            this.restore();
+        }
+    }
     ngOnDestroy() {
+        this.finished.emit({
+            finished: this.allStepsCompleted,
+        });
         super.ngOnDestroy();
+    }
+    // Restores the completed wizard to the last step
+    restore() {
+        this.steps.toArray().forEach(step => {
+            step.completed = true;
+            if (step === this.steps.last) {
+                step.select();
+            }
+        });
+        this["_changeDetectorRef"].detectChanges();
+    }
+    get allStepsCompleted() {
+        const completed = this.steps.toArray().reduce((acc, step) => acc && step.completed, true);
+        return completed;
     }
 }
 WizardDirective.ngAcceptInputTypeEditable = undefined;
@@ -18957,7 +19027,9 @@ WizardDirective.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDi
     } if (rf & 2) {
         let _t;
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx._stepHeader = _t);
-    } }, inputs: { disableRipple: "disableRipple", selected: "selected" }, outputs: { animationDone: "animationDone", selectionChange: "selectionChange" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵProvidersFeature"]([{ provide: _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_1__["CdkStepper"], useExisting: WizardDirective }]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInheritDefinitionFeature"]] });
+    } }, inputs: { disableRipple: "disableRipple", state: "state", selected: "selected" }, outputs: { animationDone: "animationDone", selectionChange: "selectionChange", finished: "finished" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵProvidersFeature"]([
+            { provide: _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_1__["CdkStepper"], useExisting: WizardDirective },
+        ]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInheritDefinitionFeature"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵNgOnChangesFeature"]] });
 const ɵWizardDirective_BaseFactory = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetInheritedFactory"](WizardDirective);
 
 
@@ -30433,6 +30505,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wizard_vertical_wizard_vertical_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./wizard-vertical/wizard-vertical.component */ "EEH9");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "WizardVerticalComponent", function() { return _wizard_vertical_wizard_vertical_component__WEBPACK_IMPORTED_MODULE_11__["WizardVerticalComponent"]; });
 
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./types */ "OYF7");
+/* empty/unused harmony star reexport */
 
 
 
