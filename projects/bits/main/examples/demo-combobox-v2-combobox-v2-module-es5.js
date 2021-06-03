@@ -1,5 +1,5 @@
 (function () {
-  var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10, _templateObject11, _templateObject12, _templateObject13, _templateObject14, _templateObject15, _templateObject16, _templateObject17, _templateObject18, _templateObject19, _templateObject20, _templateObject21, _templateObject22, _templateObject23, _templateObject24, _templateObject25, _templateObject26, _templateObject27, _templateObject28, _templateObject29, _templateObject30, _templateObject31, _templateObject32, _templateObject33, _templateObject34, _templateObject35, _templateObject36, _templateObject37, _templateObject38, _templateObject39, _templateObject40, _templateObject41, _templateObject42, _templateObject43, _templateObject44, _templateObject45, _templateObject46, _templateObject47, _templateObject48, _templateObject49, _templateObject50, _templateObject51, _templateObject52, _templateObject53, _templateObject54, _templateObject55, _templateObject56, _templateObject57, _templateObject58, _templateObject59, _templateObject60, _templateObject61, _templateObject62, _templateObject63, _templateObject64, _templateObject65, _templateObject66, _templateObject67, _templateObject68, _templateObject69, _templateObject70, _templateObject71, _templateObject72, _templateObject73, _templateObject74, _templateObject75, _templateObject76, _templateObject77, _templateObject78, _templateObject79, _templateObject80, _templateObject81, _templateObject82, _templateObject83, _templateObject84, _templateObject85, _templateObject86, _templateObject87, _templateObject88, _templateObject89, _templateObject90, _templateObject91, _templateObject92, _templateObject93, _templateObject94, _templateObject95, _templateObject96;
+  var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10, _templateObject11, _templateObject12, _templateObject13, _templateObject14, _templateObject15, _templateObject16, _templateObject17, _templateObject18, _templateObject19, _templateObject20, _templateObject21, _templateObject22, _templateObject23, _templateObject24, _templateObject25, _templateObject26, _templateObject27, _templateObject28, _templateObject29, _templateObject30, _templateObject31, _templateObject32, _templateObject33, _templateObject34, _templateObject35, _templateObject36, _templateObject37, _templateObject38, _templateObject39, _templateObject40, _templateObject41, _templateObject42, _templateObject43, _templateObject44, _templateObject45, _templateObject46, _templateObject47, _templateObject48, _templateObject49, _templateObject50, _templateObject51, _templateObject52, _templateObject53, _templateObject54, _templateObject55, _templateObject56, _templateObject57, _templateObject58, _templateObject59, _templateObject60, _templateObject61, _templateObject62, _templateObject63, _templateObject64, _templateObject65, _templateObject66, _templateObject67, _templateObject68, _templateObject69, _templateObject70, _templateObject71, _templateObject72, _templateObject73, _templateObject74, _templateObject75, _templateObject76, _templateObject77, _templateObject78, _templateObject79, _templateObject80, _templateObject81, _templateObject82, _templateObject83, _templateObject84, _templateObject85, _templateObject86, _templateObject87, _templateObject88, _templateObject89, _templateObject90, _templateObject91, _templateObject92, _templateObject93, _templateObject94, _templateObject95, _templateObject96, _templateObject97;
 
   function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
@@ -116,61 +116,67 @@
       /* harmony import */
 
 
-      var _src_lib_overlay_overlay_item_overlay_item_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+      var _src_lib_icon_icon_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+      /*! ../../../../../../src/lib/icon/icon.component */
+      "45Bz");
+      /* harmony import */
+
+
+      var _src_lib_overlay_overlay_item_overlay_item_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
       /*! ../../../../../../src/lib/overlay/overlay-item/overlay-item.component */
       "WpiY");
       /* harmony import */
 
 
-      var _src_lib_chips_chip_chip_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
+      var _src_lib_chips_chip_chip_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
       /*! ../../../../../../src/lib/chips/chip/chip.component */
       "PEYr");
       /* harmony import */
 
 
-      var _src_lib_select_v2_mark_as_selected_item_directive__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
+      var _src_lib_select_v2_mark_as_selected_item_directive__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
       /*! ../../../../../../src/lib/select-v2/mark-as-selected-item.directive */
       "2vPf");
       /* harmony import */
 
 
-      var _src_lib_dialog_dialog_header_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
+      var _src_lib_dialog_dialog_header_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
       /*! ../../../../../../src/lib/dialog/dialog-header.component */
       "skCw");
       /* harmony import */
 
 
-      var _src_lib_dialog_dialog_footer_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
+      var _src_lib_dialog_dialog_footer_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(
       /*! ../../../../../../src/lib/dialog/dialog-footer.component */
       "NHEo");
       /* harmony import */
 
 
-      var _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(
+      var _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(
       /*! ../../../../../../src/lib/button/button.component */
       "6urz");
       /* harmony import */
 
 
-      var _src_lib_select_v2_select_select_v2_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(
+      var _src_lib_select_v2_select_select_v2_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(
       /*! ../../../../../../src/lib/select-v2/select/select-v2.component */
       "UpNd");
       /* harmony import */
 
 
-      var _src_lib_popover_popover_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(
+      var _src_lib_popover_popover_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(
       /*! ../../../../../../src/lib/popover/popover.component */
       "N1kL");
       /* harmony import */
 
 
-      var _src_lib_menu_menu_menu_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(
+      var _src_lib_menu_menu_menu_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(
       /*! ../../../../../../src/lib/menu/menu/menu.component */
       "JG2v");
       /* harmony import */
 
 
-      var _src_lib_menu_menu_item_menu_action_menu_action_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(
+      var _src_lib_menu_menu_item_menu_action_menu_action_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(
       /*! ../../../../../../src/lib/menu/menu-item/menu-action/menu-action.component */
       "6sIJ");
 
@@ -184,6 +190,8 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](1, "span", 50);
 
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](2, "nui-icon", 51);
+
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         }
 
@@ -194,7 +202,11 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("nuiComboboxV2OptionHighlight", item_r31);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("nuiComboboxV2OptionHighlight", item_r31.name);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("icon", item_r31.icon);
         }
       }
 
@@ -202,7 +214,7 @@
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-select-v2-option", 49);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](1, "span", 50);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](1, "span", 52);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         }
@@ -222,7 +234,7 @@
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-select-v2-option", 49);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](1, "span", 50);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](1, "span", 52);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         }
@@ -240,11 +252,11 @@
 
       function ComboboxV2TestExampleComponent_nui_select_v2_option_34_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-select-v2-option", 51);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-select-v2-option", 53);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "div", 52);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "div", 54);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](2, "span", 53);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](2, "span", 55);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
@@ -268,7 +280,7 @@
         if (rf & 1) {
           var _r36 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-overlay-item", 54);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-overlay-item", 56);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function ComboboxV2TestExampleComponent_nui_overlay_item_35_Template_nui_overlay_item_click_0_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r36);
@@ -298,9 +310,9 @@
 
       function ComboboxV2TestExampleComponent_div_37_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 55);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 57);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵi18n"](1, 56);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵi18n"](1, 58);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         }
@@ -310,7 +322,7 @@
         if (rf & 1) {
           var _r39 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-chip", 57);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-chip", 59);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("remove", function ComboboxV2TestExampleComponent_nui_chip_45_Template_nui_chip_remove_0_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r39);
@@ -340,9 +352,9 @@
 
       function ComboboxV2TestExampleComponent_nui_select_v2_option_46_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-select-v2-option", 58);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-select-v2-option", 60);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](1, "span", 53);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](1, "span", 55);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         }
@@ -362,7 +374,7 @@
         if (rf & 1) {
           var _r43 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-overlay-item", 54);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-overlay-item", 56);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function ComboboxV2TestExampleComponent_nui_overlay_item_47_Template_nui_overlay_item_click_0_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r43);
@@ -392,9 +404,9 @@
 
       function ComboboxV2TestExampleComponent_div_49_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 55);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 57);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵi18n"](1, 59);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵi18n"](1, 61);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         }
@@ -402,9 +414,9 @@
 
       function ComboboxV2TestExampleComponent_nui_select_v2_option_57_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-select-v2-option", 51);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-select-v2-option", 53);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](1, "span", 50);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](1, "span", 52);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         }
@@ -424,7 +436,7 @@
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-select-v2-option", 49);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](1, "span", 50);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](1, "span", 52);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         }
@@ -444,7 +456,7 @@
         if (rf & 1) {
           var _r48 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-chip", 57);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-chip", 59);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("remove", function ComboboxV2TestExampleComponent_nui_chip_75_Template_nui_chip_remove_0_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r48);
@@ -474,9 +486,9 @@
 
       function ComboboxV2TestExampleComponent_nui_select_v2_option_76_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-select-v2-option", 58);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-select-v2-option", 60);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](1, "span", 53);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](1, "span", 55);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         }
@@ -496,9 +508,9 @@
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "nui-select-v2-option", 58);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "nui-select-v2-option", 60);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](2, "span", 50);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](2, "span", 52);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
@@ -522,7 +534,7 @@
         if (rf & 1) {
           var _r55 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-chip", 57);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-chip", 59);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("remove", function ComboboxV2TestExampleComponent_nui_chip_97_Template_nui_chip_remove_0_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r55);
@@ -554,7 +566,7 @@
         if (rf & 1) {
           var _r59 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-select-v2-option", 60);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-select-v2-option", 62);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function ComboboxV2TestExampleComponent_nui_select_v2_option_98_Template_nui_select_v2_option_click_0_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r59);
@@ -566,7 +578,7 @@
             return ctx_r58.openInOverlay(_r29);
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](1, "span", 53);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](1, "span", 55);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         }
@@ -586,7 +598,7 @@
         if (rf & 1) {
           var _r64 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-dialog-header", 61);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-dialog-header", 63);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("closed", function ComboboxV2TestExampleComponent_ng_template_101_Template_nui_dialog_header_closed_0_listener() {
             var close_r60 = ctx.close;
@@ -595,11 +607,11 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "div", 62);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "div", 64);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "p");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵi18n"](3, 63);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵi18n"](3, 65);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
@@ -607,7 +619,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](4, "nui-dialog-footer");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "button", 64);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "button", 66);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function ComboboxV2TestExampleComponent_ng_template_101_Template_button_click_5_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r64);
@@ -620,11 +632,11 @@
             return close_r60();
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵi18n"](6, 65);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵi18n"](6, 67);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](7, "button", 66);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](7, "button", 68);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function ComboboxV2TestExampleComponent_ng_template_101_Template_button_click_7_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r64);
@@ -637,7 +649,7 @@
             return close_r60();
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵi18n"](8, 67);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵi18n"](8, 69);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
@@ -651,13 +663,13 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "span");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵi18n"](1, 82);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵi18n"](1, 84);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "div", 83);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "div", 85);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "button", 84);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "button", 86);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function ComboboxV2TestExampleComponent_ng_template_103_nui_select_v2_option_6_ng_template_12_Template_button_click_3_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r77);
@@ -667,11 +679,11 @@
             return ctx_r76.closePopover();
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵi18n"](4, 85);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵi18n"](4, 87);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "button", 86);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "button", 88);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function ComboboxV2TestExampleComponent_ng_template_103_nui_select_v2_option_6_ng_template_12_Template_button_click_5_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r77);
@@ -681,7 +693,7 @@
             return ctx_r78.closePopover();
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵi18n"](6, 87);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵi18n"](6, 89);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
@@ -691,7 +703,7 @@
 
       function ComboboxV2TestExampleComponent_ng_template_103_nui_select_v2_option_6_ng_template_14_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵi18n"](0, 88);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵi18n"](0, 90);
         }
       }
 
@@ -715,9 +727,9 @@
 
       function ComboboxV2TestExampleComponent_ng_template_103_nui_select_v2_option_6_nui_menu_16_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-menu", 89);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-menu", 91);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](1, ComboboxV2TestExampleComponent_ng_template_103_nui_select_v2_option_6_nui_menu_16_nui_menu_action_1_Template, 2, 1, "nui-menu-action", 90);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](1, ComboboxV2TestExampleComponent_ng_template_103_nui_select_v2_option_6_nui_menu_16_nui_menu_action_1_Template, 2, 1, "nui-menu-action", 92);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         }
@@ -737,9 +749,9 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-select-v2-option", 49);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "div", 52);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "div", 54);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "button", 64);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "button", 66);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function ComboboxV2TestExampleComponent_ng_template_103_nui_select_v2_option_6_Template_button_click_2_listener($event) {
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r82);
@@ -755,29 +767,29 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](4);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](5, "div", 72, 73);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](5, "div", 74, 75);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](7, "nui-popover", 74);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](7, "nui-popover", 76);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵi18n"](8, 75);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](9, "nui-popover", 76);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](10, "button", 77);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵi18n"](11, 78);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵi18n"](8, 77);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](9, "nui-popover", 78);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](10, "button", 79);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵi18n"](11, 80);
+
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](12, ComboboxV2TestExampleComponent_ng_template_103_nui_select_v2_option_6_ng_template_12_Template, 7, 0, "ng-template", null, 79, _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplateRefExtractor"]);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](14, ComboboxV2TestExampleComponent_ng_template_103_nui_select_v2_option_6_ng_template_14_Template, 1, 0, "ng-template", null, 80, _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplateRefExtractor"]);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](12, ComboboxV2TestExampleComponent_ng_template_103_nui_select_v2_option_6_ng_template_12_Template, 7, 0, "ng-template", null, 81, _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplateRefExtractor"]);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](16, ComboboxV2TestExampleComponent_ng_template_103_nui_select_v2_option_6_nui_menu_16_Template, 2, 1, "nui-menu", 81);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](14, ComboboxV2TestExampleComponent_ng_template_103_nui_select_v2_option_6_ng_template_14_Template, 1, 0, "ng-template", null, 82, _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplateRefExtractor"]);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](16, ComboboxV2TestExampleComponent_ng_template_103_nui_select_v2_option_6_nui_menu_16_Template, 2, 1, "nui-menu", 83);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
@@ -820,24 +832,24 @@
         if (rf & 1) {
           var _r85 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-dialog-header", 68);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-dialog-header", 70);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("closed", function ComboboxV2TestExampleComponent_ng_template_103_Template_nui_dialog_header_closed_0_listener() {
             var close_r66 = ctx.close;
             return close_r66();
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](1, "button", 69);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](1, "button", 71);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](2, "button", 70);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](2, "button", 72);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "div", 62);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "div", 64);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](4, "p");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "nui-select-v2", 71);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "nui-select-v2", 73);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](6, ComboboxV2TestExampleComponent_ng_template_103_nui_select_v2_option_6_Template, 17, 9, "nui-select-v2-option", 6);
 
@@ -851,7 +863,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](8, "nui-dialog-footer");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](9, "button", 64);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](9, "button", 66);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function ComboboxV2TestExampleComponent_ng_template_103_Template_button_click_9_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r85);
@@ -865,7 +877,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](11, "button", 66);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](11, "button", 68);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function ComboboxV2TestExampleComponent_ng_template_103_Template_button_click_11_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r85);
@@ -933,6 +945,16 @@
             length: 100
           }).map(function (_, i) {
             return $localize(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["Item ", ""])), i);
+          });
+          this.icons = ["check", "email", "execute"];
+          this.customizedItems = Array.from({
+            length: 100
+          }).map(function (_, i) {
+            return {
+              id: "value-".concat(i),
+              name: $localize(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["Item ", ""])), i),
+              icon: _this.getRandomIcon()
+            };
           });
           this.isComboboxDisabled = false;
           this.dataset = {
@@ -1009,7 +1031,7 @@
             }).map(function (_, i) {
               return {
                 id: "value-".concat(i),
-                name: $localize(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["Item ", ""])), i),
+                name: $localize(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["Item ", ""])), i),
                 disabled: isDisabled || i % 2 ? true : false
               };
             });
@@ -1091,8 +1113,8 @@
           key: "actionDone",
           value: function actionDone() {
             this.toastService.success({
-              message: $localize(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["Action Done!"]))),
-              title: $localize(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["Event"])))
+              message: $localize(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["Action Done!"]))),
+              title: $localize(_templateObject8 || (_templateObject8 = _taggedTemplateLiteral(["Event"])))
             });
             this.activeDialog.close();
           }
@@ -1100,8 +1122,8 @@
           key: "actionCanceled",
           value: function actionCanceled() {
             this.toastService.info({
-              message: $localize(_templateObject8 || (_templateObject8 = _taggedTemplateLiteral(["Action Cancelled!"]))),
-              title: $localize(_templateObject9 || (_templateObject9 = _taggedTemplateLiteral(["Event"])))
+              message: $localize(_templateObject9 || (_templateObject9 = _taggedTemplateLiteral(["Action Cancelled!"]))),
+              title: $localize(_templateObject10 || (_templateObject10 = _taggedTemplateLiteral(["Event"])))
             });
             this.activeDialog.close();
           }
@@ -1110,6 +1132,11 @@
           value: function onButtonClick(title) {
             title === "Action" ? this.actionDone() : this.actionCanceled();
             this.activeDialog.close();
+          }
+        }, {
+          key: "getRandomIcon",
+          value: function getRandomIcon() {
+            return this.icons[Math.round(Math.random() * 2)];
           }
         }, {
           key: "filterItems",
@@ -1157,7 +1184,7 @@
         },
         hostAttrs: [1, "combobox-container"],
         decls: 105,
-        vars: 64,
+        vars: 61,
         consts: function consts() {
           var i18n_3;
 
@@ -1165,7 +1192,7 @@
             var MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_TEST_COMBOBOX_V2_TEST_EXAMPLE_COMPONENT_TS_4 = goog.getMsg("Select Item");
             i18n_3 = MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_TEST_COMBOBOX_V2_TEST_EXAMPLE_COMPONENT_TS_4;
           } else {
-            i18n_3 = $localize(_templateObject10 || (_templateObject10 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
+            i18n_3 = $localize(_templateObject11 || (_templateObject11 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
           }
 
           var i18n_5;
@@ -1174,7 +1201,7 @@
             var MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_TEST_COMBOBOX_V2_TEST_EXAMPLE_COMPONENT_TS_6 = goog.getMsg("Select Item");
             i18n_5 = MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_TEST_COMBOBOX_V2_TEST_EXAMPLE_COMPONENT_TS_6;
           } else {
-            i18n_5 = $localize(_templateObject11 || (_templateObject11 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
+            i18n_5 = $localize(_templateObject12 || (_templateObject12 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
           }
 
           var i18n_7;
@@ -1183,7 +1210,7 @@
             var MSG_EXTERNAL_8999046125839025839$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_TEST_COMBOBOX_V2_TEST_EXAMPLE_COMPONENT_TS_8 = goog.getMsg(" This field is required ");
             i18n_7 = MSG_EXTERNAL_8999046125839025839$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_TEST_COMBOBOX_V2_TEST_EXAMPLE_COMPONENT_TS_8;
           } else {
-            i18n_7 = $localize(_templateObject12 || (_templateObject12 = _taggedTemplateLiteral([":\u241F8eb0e5b7a8ec1199d38c9e92ca26bd4b3aae7f2c\u241F8999046125839025839: This field is required "])));
+            i18n_7 = $localize(_templateObject13 || (_templateObject13 = _taggedTemplateLiteral([":\u241F8eb0e5b7a8ec1199d38c9e92ca26bd4b3aae7f2c\u241F8999046125839025839: This field is required "])));
           }
 
           var i18n_9;
@@ -1192,7 +1219,7 @@
             var MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_TEST_COMBOBOX_V2_TEST_EXAMPLE_COMPONENT_TS_10 = goog.getMsg("Select Item");
             i18n_9 = MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_TEST_COMBOBOX_V2_TEST_EXAMPLE_COMPONENT_TS_10;
           } else {
-            i18n_9 = $localize(_templateObject13 || (_templateObject13 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
+            i18n_9 = $localize(_templateObject14 || (_templateObject14 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
           }
 
           var i18n_11;
@@ -1201,7 +1228,7 @@
             var MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_TEST_COMBOBOX_V2_TEST_EXAMPLE_COMPONENT_TS_12 = goog.getMsg("Select Item");
             i18n_11 = MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_TEST_COMBOBOX_V2_TEST_EXAMPLE_COMPONENT_TS_12;
           } else {
-            i18n_11 = $localize(_templateObject14 || (_templateObject14 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
+            i18n_11 = $localize(_templateObject15 || (_templateObject15 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
           }
 
           var i18n_13;
@@ -1210,7 +1237,7 @@
             var MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_TEST_COMBOBOX_V2_TEST_EXAMPLE_COMPONENT_TS_14 = goog.getMsg("Select Item");
             i18n_13 = MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_TEST_COMBOBOX_V2_TEST_EXAMPLE_COMPONENT_TS_14;
           } else {
-            i18n_13 = $localize(_templateObject15 || (_templateObject15 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
+            i18n_13 = $localize(_templateObject16 || (_templateObject16 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
           }
 
           var i18n_15;
@@ -1219,7 +1246,7 @@
             var MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_TEST_COMBOBOX_V2_TEST_EXAMPLE_COMPONENT_TS_16 = goog.getMsg("Select Item");
             i18n_15 = MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_TEST_COMBOBOX_V2_TEST_EXAMPLE_COMPONENT_TS_16;
           } else {
-            i18n_15 = $localize(_templateObject16 || (_templateObject16 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
+            i18n_15 = $localize(_templateObject17 || (_templateObject17 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
           }
 
           var i18n_17;
@@ -1228,7 +1255,7 @@
             var MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_TEST_COMBOBOX_V2_TEST_EXAMPLE_COMPONENT_TS_18 = goog.getMsg("Select Item");
             i18n_17 = MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_TEST_COMBOBOX_V2_TEST_EXAMPLE_COMPONENT_TS_18;
           } else {
-            i18n_17 = $localize(_templateObject17 || (_templateObject17 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
+            i18n_17 = $localize(_templateObject18 || (_templateObject18 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
           }
 
           var i18n_19;
@@ -1237,7 +1264,7 @@
             var MSG_EXTERNAL_8369340007679658038$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_TEST_COMBOBOX_V2_TEST_EXAMPLE_COMPONENT_TS__20 = goog.getMsg("No other existing item available");
             i18n_19 = MSG_EXTERNAL_8369340007679658038$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_TEST_COMBOBOX_V2_TEST_EXAMPLE_COMPONENT_TS__20;
           } else {
-            i18n_19 = $localize(_templateObject18 || (_templateObject18 = _taggedTemplateLiteral([":\u241Fa13fa43d609e19a3057da12ceaba187af03aca4c\u241F8369340007679658038:No other existing item available"])));
+            i18n_19 = $localize(_templateObject19 || (_templateObject19 = _taggedTemplateLiteral([":\u241Fa13fa43d609e19a3057da12ceaba187af03aca4c\u241F8369340007679658038:No other existing item available"])));
           }
 
           var i18n_21;
@@ -1246,7 +1273,7 @@
             var MSG_EXTERNAL_8369340007679658038$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_TEST_COMBOBOX_V2_TEST_EXAMPLE_COMPONENT_TS__22 = goog.getMsg("No other existing item available");
             i18n_21 = MSG_EXTERNAL_8369340007679658038$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_TEST_COMBOBOX_V2_TEST_EXAMPLE_COMPONENT_TS__22;
           } else {
-            i18n_21 = $localize(_templateObject19 || (_templateObject19 = _taggedTemplateLiteral([":\u241Fa13fa43d609e19a3057da12ceaba187af03aca4c\u241F8369340007679658038:No other existing item available"])));
+            i18n_21 = $localize(_templateObject20 || (_templateObject20 = _taggedTemplateLiteral([":\u241Fa13fa43d609e19a3057da12ceaba187af03aca4c\u241F8369340007679658038:No other existing item available"])));
           }
 
           var i18n_23;
@@ -1255,7 +1282,7 @@
             var MSG_EXTERNAL_5892089246202495025$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_TEST_COMBOBOX_V2_TEST_EXAMPLE_COMPONENT_TS__24 = goog.getMsg("Dialog title");
             i18n_23 = MSG_EXTERNAL_5892089246202495025$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_TEST_COMBOBOX_V2_TEST_EXAMPLE_COMPONENT_TS__24;
           } else {
-            i18n_23 = $localize(_templateObject20 || (_templateObject20 = _taggedTemplateLiteral([":\u241Feeb379308b8767b98aa0d27308f4f8dd6b46e559\u241F5892089246202495025:Dialog title"])));
+            i18n_23 = $localize(_templateObject21 || (_templateObject21 = _taggedTemplateLiteral([":\u241Feeb379308b8767b98aa0d27308f4f8dd6b46e559\u241F5892089246202495025:Dialog title"])));
           }
 
           var i18n_25;
@@ -1264,7 +1291,7 @@
             var MSG_EXTERNAL_7188163738299238705$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_TEST_COMBOBOX_V2_TEST_EXAMPLE_COMPONENT_TS__26 = goog.getMsg(" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam maximus faucibus bibendum. Aenean feugiat interdum leo sed posuere. Etiam at pulvinar enim, nec interdum purus. Duis elit metus, lobortis vitae quam a, malesuada cursus quam. Duis vel lacinia purus. Maecenas eget arcu ac ante sagittis eleifend vel ut purus. Pellentesque sit amet semper ipsum, eu vulputate tortor. Aliquam vitae nisi augue. Duis non erat sit amet sem venenatis accumsan at ullamcorper lorem. Morbi non turpis nibh. ");
             i18n_25 = MSG_EXTERNAL_7188163738299238705$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_TEST_COMBOBOX_V2_TEST_EXAMPLE_COMPONENT_TS__26;
           } else {
-            i18n_25 = $localize(_templateObject21 || (_templateObject21 = _taggedTemplateLiteral([":\u241Ff62f9e2e728dea80e19b1e7a6f61424d55bab5ea\u241F7188163738299238705: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam maximus faucibus bibendum. Aenean feugiat interdum leo sed posuere. Etiam at pulvinar enim, nec interdum purus. Duis elit metus, lobortis vitae quam a, malesuada cursus quam. Duis vel lacinia purus. Maecenas eget arcu ac ante sagittis eleifend vel ut purus. Pellentesque sit amet semper ipsum, eu vulputate tortor. Aliquam vitae nisi augue. Duis non erat sit amet sem venenatis accumsan at ullamcorper lorem. Morbi non turpis nibh. "])));
+            i18n_25 = $localize(_templateObject22 || (_templateObject22 = _taggedTemplateLiteral([":\u241Ff62f9e2e728dea80e19b1e7a6f61424d55bab5ea\u241F7188163738299238705: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam maximus faucibus bibendum. Aenean feugiat interdum leo sed posuere. Etiam at pulvinar enim, nec interdum purus. Duis elit metus, lobortis vitae quam a, malesuada cursus quam. Duis vel lacinia purus. Maecenas eget arcu ac ante sagittis eleifend vel ut purus. Pellentesque sit amet semper ipsum, eu vulputate tortor. Aliquam vitae nisi augue. Duis non erat sit amet sem venenatis accumsan at ullamcorper lorem. Morbi non turpis nibh. "])));
           }
 
           var i18n_27;
@@ -1273,7 +1300,7 @@
             var MSG_EXTERNAL_7452095619502551190$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_TEST_COMBOBOX_V2_TEST_EXAMPLE_COMPONENT_TS__28 = goog.getMsg(" Cancel ");
             i18n_27 = MSG_EXTERNAL_7452095619502551190$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_TEST_COMBOBOX_V2_TEST_EXAMPLE_COMPONENT_TS__28;
           } else {
-            i18n_27 = $localize(_templateObject22 || (_templateObject22 = _taggedTemplateLiteral([":\u241Fbf844a41a29961b6dacc48a20eaf97bef0cf5013\u241F7452095619502551190: Cancel "])));
+            i18n_27 = $localize(_templateObject23 || (_templateObject23 = _taggedTemplateLiteral([":\u241Fbf844a41a29961b6dacc48a20eaf97bef0cf5013\u241F7452095619502551190: Cancel "])));
           }
 
           var i18n_29;
@@ -1282,7 +1309,7 @@
             var MSG_EXTERNAL_4946554391652567902$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_TEST_COMBOBOX_V2_TEST_EXAMPLE_COMPONENT_TS__30 = goog.getMsg(" Action ");
             i18n_29 = MSG_EXTERNAL_4946554391652567902$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_TEST_COMBOBOX_V2_TEST_EXAMPLE_COMPONENT_TS__30;
           } else {
-            i18n_29 = $localize(_templateObject23 || (_templateObject23 = _taggedTemplateLiteral([":\u241F01b5385da84ee4b609f8273d7ae56600c3fb3cbe\u241F4946554391652567902: Action "])));
+            i18n_29 = $localize(_templateObject24 || (_templateObject24 = _taggedTemplateLiteral([":\u241F01b5385da84ee4b609f8273d7ae56600c3fb3cbe\u241F4946554391652567902: Action "])));
           }
 
           var i18n_31;
@@ -1291,7 +1318,7 @@
             var MSG_EXTERNAL_167039734477168235$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_TEST_COMBOBOX_V2_TEST_EXAMPLE_COMPONENT_TS___32 = goog.getMsg(" Hover over me! ");
             i18n_31 = MSG_EXTERNAL_167039734477168235$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_TEST_COMBOBOX_V2_TEST_EXAMPLE_COMPONENT_TS___32;
           } else {
-            i18n_31 = $localize(_templateObject24 || (_templateObject24 = _taggedTemplateLiteral([":\u241Fe7d81531abf8afb5fb5df163bf0363eceb3fd6df\u241F167039734477168235: Hover over me! "])));
+            i18n_31 = $localize(_templateObject25 || (_templateObject25 = _taggedTemplateLiteral([":\u241Fe7d81531abf8afb5fb5df163bf0363eceb3fd6df\u241F167039734477168235: Hover over me! "])));
           }
 
           var i18n_33;
@@ -1300,7 +1327,7 @@
             var MSG_EXTERNAL_2225120696754473064$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_TEST_COMBOBOX_V2_TEST_EXAMPLE_COMPONENT_TS___34 = goog.getMsg("Modal Popover");
             i18n_33 = MSG_EXTERNAL_2225120696754473064$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_TEST_COMBOBOX_V2_TEST_EXAMPLE_COMPONENT_TS___34;
           } else {
-            i18n_33 = $localize(_templateObject25 || (_templateObject25 = _taggedTemplateLiteral([":\u241F2bb1310acc94ca030f411cf84e6cf45466547208\u241F2225120696754473064:Modal Popover"])));
+            i18n_33 = $localize(_templateObject26 || (_templateObject26 = _taggedTemplateLiteral([":\u241F2bb1310acc94ca030f411cf84e6cf45466547208\u241F2225120696754473064:Modal Popover"])));
           }
 
           var i18n_35;
@@ -1309,7 +1336,7 @@
             var MSG_EXTERNAL_525370094671006187$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_TEST_COMBOBOX_V2_TEST_EXAMPLE_COMPONENT_TS___36 = goog.getMsg(" Show modal popover ");
             i18n_35 = MSG_EXTERNAL_525370094671006187$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_TEST_COMBOBOX_V2_TEST_EXAMPLE_COMPONENT_TS___36;
           } else {
-            i18n_35 = $localize(_templateObject26 || (_templateObject26 = _taggedTemplateLiteral([":\u241Ff8e95c0ef397f32a2834f97791b7969e075e0079\u241F525370094671006187: Show modal popover "])));
+            i18n_35 = $localize(_templateObject27 || (_templateObject27 = _taggedTemplateLiteral([":\u241Ff8e95c0ef397f32a2834f97791b7969e075e0079\u241F525370094671006187: Show modal popover "])));
           }
 
           var i18n_37;
@@ -1318,7 +1345,7 @@
             var MSG_EXTERNAL_3280198363419758787$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_TEST_COMBOBOX_V2_TEST_EXAMPLE_COMPONENT_TS____38 = goog.getMsg("A modal popover can be used to grab the user's attention.");
             i18n_37 = MSG_EXTERNAL_3280198363419758787$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_TEST_COMBOBOX_V2_TEST_EXAMPLE_COMPONENT_TS____38;
           } else {
-            i18n_37 = $localize(_templateObject27 || (_templateObject27 = _taggedTemplateLiteral([":\u241F4bd5316f7df0a71ad3b1c125358dbcba1e601fbb\u241F3280198363419758787:A modal popover can be used to grab the user's attention."])));
+            i18n_37 = $localize(_templateObject28 || (_templateObject28 = _taggedTemplateLiteral([":\u241F4bd5316f7df0a71ad3b1c125358dbcba1e601fbb\u241F3280198363419758787:A modal popover can be used to grab the user's attention."])));
           }
 
           var i18n_39;
@@ -1327,7 +1354,7 @@
             var MSG_EXTERNAL_7819314041543176992$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_TEST_COMBOBOX_V2_TEST_EXAMPLE_COMPONENT_TS____40 = goog.getMsg("Close");
             i18n_39 = MSG_EXTERNAL_7819314041543176992$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_TEST_COMBOBOX_V2_TEST_EXAMPLE_COMPONENT_TS____40;
           } else {
-            i18n_39 = $localize(_templateObject28 || (_templateObject28 = _taggedTemplateLiteral([":\u241Ff4e529ae5ffd73001d1ff4bbdeeb0a72e342e5c8\u241F7819314041543176992:Close"])));
+            i18n_39 = $localize(_templateObject29 || (_templateObject29 = _taggedTemplateLiteral([":\u241Ff4e529ae5ffd73001d1ff4bbdeeb0a72e342e5c8\u241F7819314041543176992:Close"])));
           }
 
           var i18n_41;
@@ -1336,7 +1363,7 @@
             var MSG_EXTERNAL_9178182467454450952$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_TEST_COMBOBOX_V2_TEST_EXAMPLE_COMPONENT_TS____42 = goog.getMsg("Confirm");
             i18n_41 = MSG_EXTERNAL_9178182467454450952$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_TEST_COMBOBOX_V2_TEST_EXAMPLE_COMPONENT_TS____42;
           } else {
-            i18n_41 = $localize(_templateObject29 || (_templateObject29 = _taggedTemplateLiteral([":\u241F68e710782ccb5398b3acb8844caf0b199da2c3da\u241F9178182467454450952:Confirm"])));
+            i18n_41 = $localize(_templateObject30 || (_templateObject30 = _taggedTemplateLiteral([":\u241F68e710782ccb5398b3acb8844caf0b199da2c3da\u241F9178182467454450952:Confirm"])));
           }
 
           var i18n_43;
@@ -1345,10 +1372,10 @@
             var MSG_EXTERNAL_2702908186743920542$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_TEST_COMBOBOX_V2_TEST_EXAMPLE_COMPONENT_TS____44 = goog.getMsg(" I'm appended to a container! ");
             i18n_43 = MSG_EXTERNAL_2702908186743920542$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_TEST_COMBOBOX_V2_TEST_EXAMPLE_COMPONENT_TS____44;
           } else {
-            i18n_43 = $localize(_templateObject30 || (_templateObject30 = _taggedTemplateLiteral([":\u241F3f21ed67af406c27eed3fc212dd1e90089424459\u241F2702908186743920542: I'm appended to a container! "])));
+            i18n_43 = $localize(_templateObject31 || (_templateObject31 = _taggedTemplateLiteral([":\u241F3f21ed67af406c27eed3fc212dd1e90089424459\u241F2702908186743920542: I'm appended to a container! "])));
           }
 
-          return [["tabindex", "-1", 1, "focus-drop"], [1, "row", "mb-3", "justify-content-center"], [1, "row", "mb-3"], [1, "col"], ["placeholder", i18n_3, "id", "error", 3, "isInErrorState", "formControl", "overlayConfig"], ["comboboxError", ""], [3, "value", 4, "ngFor", "ngForOf"], [1, "nui-edge-definer", 3, "formGroup"], [3, "control"], ["placeholder", i18n_5, "formControlName", "combobox", "id", "form", 3, "overlayConfig"], ["comboboxReactive", ""], ["for", "required"], i18n_7, ["placeholder", i18n_9, "id", "basic", 3, "overlayConfig"], ["comboboxBasic", ""], ["placeholder", i18n_11, "id", "single", 3, "formControl", "overlayConfig"], ["comboboxSingle", ""], [3, "value", "isDisabled", 4, "ngFor", "ngForIndex", "ngForOf"], ["class", "nui-combobox-v2__create-option", 3, "click", 4, "ngIf"], ["class", "nui-combobox-v2__empty-search", 4, "ngIf"], ["id", "multi", 3, "placeholder", "formControl", "displayWith", "multiselect", "overlayConfig"], ["combobox", ""], ["selectedItems", ""], ["nuiMarkAsSelectedItem", "", "class", "ml-2", "closeButtonTooltip", "Remove", 3, "item", "remove", "mouseup", 4, "ngFor", "ngForOf"], ["class", "d-flex align-items-center", 3, "value", 4, "ngFor", "ngForOf"], [1, "row", "m-auto"], ["placeholder", i18n_13, "id", "disabled", 1, "flex-grow-1", 3, "isDisabled", "displayWith", "overlayConfig"], ["comboboxDisabled", ""], [3, "value", "isDisabled", 4, "ngFor", "ngForOf"], ["id", "trigger-disabled", 1, "ml-auto", 3, "click"], ["placeholder", i18n_15, "id", "removal", 3, "isRemoveValueEnabled", "overlayConfig"], ["comboboxValueRemoval", ""], [1, "w-100"], ["id", "custom-control", 3, "placeholder", "displayWith", "multiselect", "manualDropdownControl", "overlayConfig"], ["comboboxMultiDimensions", ""], ["id", "show", 1, "ml-3", 3, "click"], ["id", "hide", 1, "ml-3", 3, "click"], ["id", "toggle", 1, "ml-3", 3, "click"], ["placeholder", i18n_17, "id", "virtual-combobox", 3, "formControl", "overlayConfig", "isTypeaheadEnabled"], ["virtual", ""], ["itemSize", "30", 3, "minBufferPx", "maxBufferPx"], [4, "cdkVirtualFor", "cdkVirtualForOf"], ["tabindex", "-1", 1, "row", "mb-3", 2, "position", "fixed", "bottom", "0"], [1, "w-100", 3, "placeholder", "displayWith", "multiselect", "manualDropdownControl", "overlayConfig"], ["comboboxWithDialog", ""], ["class", "d-flex align-items-center", 3, "value", "click", 4, "ngFor", "ngForOf"], [1, "ml-3", 3, "click"], ["content", ""], ["headerButtonsContent", ""], [3, "value"], [3, "nuiComboboxV2OptionHighlight"], [3, "value", "isDisabled"], [1, "d-flex", "align-items-center"], [1, "mr-3", "nui-select-v2-option__label", 3, "nuiComboboxV2OptionHighlight"], [1, "nui-combobox-v2__create-option", 3, "click"], [1, "nui-combobox-v2__empty-search"], i18n_19, ["nuiMarkAsSelectedItem", "", "closeButtonTooltip", "Remove", 1, "ml-2", 3, "item", "remove", "mouseup"], [1, "d-flex", "align-items-center", 3, "value"], i18n_21, [1, "d-flex", "align-items-center", 3, "value", "click"], ["title", i18n_23, 3, "closed"], [1, "dialog-body"], i18n_25, ["nui-button", "", "type", "button", 3, "click"], i18n_27, ["nui-button", "", "type", "button", "displayStyle", "primary", 3, "click"], i18n_29, ["title", "Dialog title", 3, "closed"], ["nui-button", "", "type", "button", "displayStyle", "action", "icon", "fullscreen"], ["nui-button", "", "type", "button", "displayStyle", "action", "icon", "menu"], ["placeholder", "Select Item"], ["id", "nui-demo-popover-container"], ["popoverContainer", ""], ["id", "nui-demo-popover-with-container", 3, "container", "template"], i18n_31, ["popoverTitle", i18n_33, "trigger", "click", "placement", "right", 3, "template", "modal", "preventClosing", "closePopover"], ["nui-button", "", "type", "button", "id", "nui-demo-popover-modal"], i18n_35, ["popoverModal", ""], ["popoverWithContainerTemplate", ""], ["icon", "menu", 4, "ngIf"], i18n_37, [1, "mt-2", "d-flex", "justify-content-end"], ["id", "nui-demo-custom-close-popover", "nui-button", "", "type", "button", "displayStyle", "action", 3, "click"], i18n_39, ["nui-button", "", "type", "button", "displayStyle", "primary", 1, "ml-3", 3, "click"], i18n_41, i18n_43, ["icon", "menu"], [4, "ngFor", "ngForOf"]];
+          return [["tabindex", "-1", 1, "focus-drop"], [1, "row", "mb-3", "justify-content-center"], [1, "row", "mb-3"], [1, "col"], ["placeholder", i18n_3, "id", "error", 3, "isInErrorState", "displayWith", "formControl", "overlayConfig"], ["comboboxError", ""], [3, "value", 4, "ngFor", "ngForOf"], [1, "nui-edge-definer", 3, "formGroup"], [3, "control"], ["placeholder", i18n_5, "formControlName", "combobox", "id", "form", 3, "overlayConfig"], ["comboboxReactive", ""], ["for", "required"], i18n_7, ["placeholder", i18n_9, "id", "basic", 3, "overlayConfig"], ["comboboxBasic", ""], ["placeholder", i18n_11, "id", "single", 3, "formControl", "overlayConfig"], ["comboboxSingle", ""], [3, "value", "isDisabled", 4, "ngFor", "ngForIndex", "ngForOf"], ["class", "nui-combobox-v2__create-option", 3, "click", 4, "ngIf"], ["class", "nui-combobox-v2__empty-search", 4, "ngIf"], ["id", "multi", 3, "placeholder", "formControl", "multiselect", "overlayConfig"], ["combobox", ""], ["selectedItems", ""], ["nuiMarkAsSelectedItem", "", "class", "ml-2", "closeButtonTooltip", "Remove", 3, "item", "remove", "mouseup", 4, "ngFor", "ngForOf"], ["class", "d-flex align-items-center", 3, "value", 4, "ngFor", "ngForOf"], [1, "row", "m-auto"], ["placeholder", i18n_13, "id", "disabled", 1, "flex-grow-1", 3, "isDisabled", "overlayConfig"], ["comboboxDisabled", ""], [3, "value", "isDisabled", 4, "ngFor", "ngForOf"], ["id", "trigger-disabled", 1, "ml-auto", 3, "click"], ["placeholder", i18n_15, "id", "removal", 3, "isRemoveValueEnabled", "overlayConfig"], ["comboboxValueRemoval", ""], [1, "w-100"], ["id", "custom-control", 3, "placeholder", "multiselect", "manualDropdownControl", "overlayConfig"], ["comboboxMultiDimensions", ""], ["id", "show", 1, "ml-3", 3, "click"], ["id", "hide", 1, "ml-3", 3, "click"], ["id", "toggle", 1, "ml-3", 3, "click"], ["placeholder", i18n_17, "id", "virtual-combobox", 3, "formControl", "overlayConfig", "isTypeaheadEnabled"], ["virtual", ""], ["itemSize", "30", 3, "minBufferPx", "maxBufferPx"], [4, "cdkVirtualFor", "cdkVirtualForOf"], ["tabindex", "-1", 1, "row", "mb-3", 2, "position", "fixed", "bottom", "0"], [1, "w-100", 3, "placeholder", "multiselect", "manualDropdownControl", "overlayConfig"], ["comboboxWithDialog", ""], ["class", "d-flex align-items-center", 3, "value", "click", 4, "ngFor", "ngForOf"], [1, "ml-3", 3, "click"], ["content", ""], ["headerButtonsContent", ""], [3, "value"], [1, "mr-3", 3, "nuiComboboxV2OptionHighlight"], [3, "icon"], [3, "nuiComboboxV2OptionHighlight"], [3, "value", "isDisabled"], [1, "d-flex", "align-items-center"], [1, "mr-3", "nui-select-v2-option__label", 3, "nuiComboboxV2OptionHighlight"], [1, "nui-combobox-v2__create-option", 3, "click"], [1, "nui-combobox-v2__empty-search"], i18n_19, ["nuiMarkAsSelectedItem", "", "closeButtonTooltip", "Remove", 1, "ml-2", 3, "item", "remove", "mouseup"], [1, "d-flex", "align-items-center", 3, "value"], i18n_21, [1, "d-flex", "align-items-center", 3, "value", "click"], ["title", i18n_23, 3, "closed"], [1, "dialog-body"], i18n_25, ["nui-button", "", "type", "button", 3, "click"], i18n_27, ["nui-button", "", "type", "button", "displayStyle", "primary", 3, "click"], i18n_29, ["title", "Dialog title", 3, "closed"], ["nui-button", "", "type", "button", "displayStyle", "action", "icon", "fullscreen"], ["nui-button", "", "type", "button", "displayStyle", "action", "icon", "menu"], ["placeholder", "Select Item"], ["id", "nui-demo-popover-container"], ["popoverContainer", ""], ["id", "nui-demo-popover-with-container", 3, "container", "template"], i18n_31, ["popoverTitle", i18n_33, "trigger", "click", "placement", "right", 3, "template", "modal", "preventClosing", "closePopover"], ["nui-button", "", "type", "button", "id", "nui-demo-popover-modal"], i18n_35, ["popoverModal", ""], ["popoverWithContainerTemplate", ""], ["icon", "menu", 4, "ngIf"], i18n_37, [1, "mt-2", "d-flex", "justify-content-end"], ["id", "nui-demo-custom-close-popover", "nui-button", "", "type", "button", "displayStyle", "action", 3, "click"], i18n_39, ["nui-button", "", "type", "button", "displayStyle", "primary", 1, "ml-3", 3, "click"], i18n_41, i18n_43, ["icon", "menu"], [4, "ngFor", "ngForOf"]];
         },
         template: function ComboboxV2TestExampleComponent_Template(rf, ctx) {
           if (rf & 1) {
@@ -1378,7 +1405,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](8, "nui-combobox-v2", 4, 5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](10, ComboboxV2TestExampleComponent_nui_select_v2_option_10_Template, 2, 2, "nui-select-v2-option", 6);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](10, ComboboxV2TestExampleComponent_nui_select_v2_option_10_Template, 3, 3, "nui-select-v2-option", 6);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
@@ -1674,11 +1701,11 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("isInErrorState", !ctx.selectedItem)("formControl", ctx.comboboxControl)("overlayConfig", ctx.overlayConfig);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("isInErrorState", !ctx.selectedItem)("displayWith", ctx.displayFn)("formControl", ctx.comboboxControl)("overlayConfig", ctx.overlayConfig);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx.items);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx.customizedItems);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](4);
 
@@ -1714,15 +1741,15 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipeBind1"](36, 54, _r6.canCreateOption));
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipeBind1"](36, 51, _r6.canCreateOption));
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipeBind1"](38, 56, _r6.searchEmpty));
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipeBind1"](38, 53, _r6.searchEmpty));
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("placeholder", _r10.selectedOptions.length ? "" : "Select Items")("formControl", ctx.comboboxControlMulti)("displayWith", ctx.displayFn)("multiselect", true)("overlayConfig", ctx.overlayConfig);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("placeholder", _r10.selectedOptions.length ? "" : "Select Items")("formControl", ctx.comboboxControlMulti)("multiselect", true)("overlayConfig", ctx.overlayConfig);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
 
@@ -1734,15 +1761,15 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipeBind1"](48, 58, _r10.canCreateOption));
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipeBind1"](48, 55, _r10.canCreateOption));
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipeBind1"](50, 60, _r10.searchEmpty));
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipeBind1"](50, 57, _r10.searchEmpty));
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("isDisabled", ctx.isComboboxDisabled)("displayWith", ctx.displayFn)("overlayConfig", ctx.overlayConfig);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("isDisabled", ctx.isComboboxDisabled)("overlayConfig", ctx.overlayConfig);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
 
@@ -1762,7 +1789,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("placeholder", _r19.selectedOptions.length ? "" : "Select Items")("displayWith", ctx.displayFn)("multiselect", true)("manualDropdownControl", true)("overlayConfig", ctx.overlayConfig);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("placeholder", _r19.selectedOptions.length ? "" : "Select Items")("multiselect", true)("manualDropdownControl", true)("overlayConfig", ctx.overlayConfig);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
 
@@ -1784,11 +1811,11 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("cdkVirtualForOf", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipeBind1"](90, 62, ctx.filteredItems));
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("cdkVirtualForOf", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipeBind1"](90, 59, ctx.filteredItems));
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("placeholder", _r24.selectedOptions.length ? "" : "Select Items")("displayWith", ctx.displayFn)("multiselect", true)("manualDropdownControl", true)("overlayConfig", ctx.overlayConfig);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("placeholder", _r24.selectedOptions.length ? "" : "Select Items")("multiselect", true)("manualDropdownControl", true)("overlayConfig", ctx.overlayConfig);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
 
@@ -1799,7 +1826,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx.optionsMultiDimensions);
           }
         },
-        directives: [_src_lib_select_v2_combobox_v2_combobox_v2_component__WEBPACK_IMPORTED_MODULE_6__["ComboboxV2Component"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControlDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_7__["NgForOf"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroupDirective"], _src_lib_form_field_form_field_component__WEBPACK_IMPORTED_MODULE_8__["FormFieldComponent"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControlName"], _src_lib_validation_message_validation_message_component__WEBPACK_IMPORTED_MODULE_9__["ValidationMessageComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_7__["NgIf"], _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_0__["CdkVirtualScrollViewport"], _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_0__["CdkFixedSizeVirtualScroll"], _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_0__["CdkVirtualForOf"], _src_lib_select_v2_option_select_v2_option_component__WEBPACK_IMPORTED_MODULE_10__["SelectV2OptionComponent"], _src_lib_select_v2_combobox_v2_option_highlight_combobox_v2_option_highlight_directive__WEBPACK_IMPORTED_MODULE_11__["ComboboxV2OptionHighlightDirective"], _src_lib_overlay_overlay_item_overlay_item_component__WEBPACK_IMPORTED_MODULE_12__["OverlayItemComponent"], _src_lib_chips_chip_chip_component__WEBPACK_IMPORTED_MODULE_13__["ChipComponent"], _src_lib_select_v2_mark_as_selected_item_directive__WEBPACK_IMPORTED_MODULE_14__["MarkAsSelectedItemDirective"], _src_lib_dialog_dialog_header_component__WEBPACK_IMPORTED_MODULE_15__["DialogHeaderComponent"], _src_lib_dialog_dialog_footer_component__WEBPACK_IMPORTED_MODULE_16__["DialogFooterComponent"], _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_17__["ButtonComponent"], _src_lib_select_v2_select_select_v2_component__WEBPACK_IMPORTED_MODULE_18__["SelectV2Component"], _src_lib_popover_popover_component__WEBPACK_IMPORTED_MODULE_19__["PopoverComponent"], _src_lib_menu_menu_menu_component__WEBPACK_IMPORTED_MODULE_20__["MenuComponent"], _src_lib_menu_menu_item_menu_action_menu_action_component__WEBPACK_IMPORTED_MODULE_21__["MenuActionComponent"]],
+        directives: [_src_lib_select_v2_combobox_v2_combobox_v2_component__WEBPACK_IMPORTED_MODULE_6__["ComboboxV2Component"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControlDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_7__["NgForOf"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroupDirective"], _src_lib_form_field_form_field_component__WEBPACK_IMPORTED_MODULE_8__["FormFieldComponent"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControlName"], _src_lib_validation_message_validation_message_component__WEBPACK_IMPORTED_MODULE_9__["ValidationMessageComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_7__["NgIf"], _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_0__["CdkVirtualScrollViewport"], _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_0__["CdkFixedSizeVirtualScroll"], _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_0__["CdkVirtualForOf"], _src_lib_select_v2_option_select_v2_option_component__WEBPACK_IMPORTED_MODULE_10__["SelectV2OptionComponent"], _src_lib_select_v2_combobox_v2_option_highlight_combobox_v2_option_highlight_directive__WEBPACK_IMPORTED_MODULE_11__["ComboboxV2OptionHighlightDirective"], _src_lib_icon_icon_component__WEBPACK_IMPORTED_MODULE_12__["IconComponent"], _src_lib_overlay_overlay_item_overlay_item_component__WEBPACK_IMPORTED_MODULE_13__["OverlayItemComponent"], _src_lib_chips_chip_chip_component__WEBPACK_IMPORTED_MODULE_14__["ChipComponent"], _src_lib_select_v2_mark_as_selected_item_directive__WEBPACK_IMPORTED_MODULE_15__["MarkAsSelectedItemDirective"], _src_lib_dialog_dialog_header_component__WEBPACK_IMPORTED_MODULE_16__["DialogHeaderComponent"], _src_lib_dialog_dialog_footer_component__WEBPACK_IMPORTED_MODULE_17__["DialogFooterComponent"], _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_18__["ButtonComponent"], _src_lib_select_v2_select_select_v2_component__WEBPACK_IMPORTED_MODULE_19__["SelectV2Component"], _src_lib_popover_popover_component__WEBPACK_IMPORTED_MODULE_20__["PopoverComponent"], _src_lib_menu_menu_menu_component__WEBPACK_IMPORTED_MODULE_21__["MenuComponent"], _src_lib_menu_menu_item_menu_action_menu_action_component__WEBPACK_IMPORTED_MODULE_22__["MenuActionComponent"]],
         pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_7__["AsyncPipe"]],
         styles: [".active[_ngcontent-%COMP%] {\n  background-color: var(--nui-color-selected,rgba(0, 196, 210, 0.1));\n  outline: none;\n  z-index: 500;\n  box-shadow: inset 0 0 0 2px rgba(0, 196, 210, 0.5);\n}\nnui-chip[_ngcontent-%COMP%] {\n  display: inline-flex;\n  cursor: pointer;\n  margin-bottom: 5px;\n  border-radius: 9px;\n}\n.focus-drop[_ngcontent-%COMP%] {\n  height: 1px;\n  width: 1px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbWJvYm94LXYyLXRlc3QuZXhhbXBsZS5jb21wb25lbnQubGVzcyIsIi4uLy4uLy4uLy4uLy4uLy4uL3NyYy9zdHlsZXMvbWl4aW5zL2Nzcy12YXJpYWJsZXMubGVzcyIsIi4uLy4uLy4uLy4uLy4uLy4uL3NyYy9zdHlsZXMvbWl4aW5zL2ZvY3VzLmxlc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBR0E7RUNFSSxrRUFBQTtFQ0pBLGFBQUE7RUFFQSxZQUFBO0VBVUEsa0RBQUE7QUZSSjtBQUVBO0VBQ0ksb0JBQUE7RUFDQSxlQUFBO0VBQ0Esa0JBQUE7RUFDQSxrQkFBQTtBQUFKO0FBR0E7RUFDSSxXQUFBO0VBQ0EsVUFBQTtBQURKIiwiZmlsZSI6ImNvbWJvYm94LXYyLXRlc3QuZXhhbXBsZS5jb21wb25lbnQubGVzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgKHJlZmVyZW5jZSkgXCJudWktZnJhbWV3b3JrLXZhcmlhYmxlc1wiO1xuQGltcG9ydCAocmVmZXJlbmNlKSBcImNvbXBvbmVudHMvY29tYm9ib3gtdjItYWRkb25zLmxlc3NcIjtcblxuLmFjdGl2ZSB7XG4gICAgLmFjdGl2ZS1pdGVtKCk7XG59XG5cbm51aS1jaGlwIHtcbiAgICBkaXNwbGF5OiBpbmxpbmUtZmxleDtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgbWFyZ2luLWJvdHRvbTogNXB4O1xuICAgIGJvcmRlci1yYWRpdXM6IDlweDtcbn1cblxuLmZvY3VzLWRyb3Age1xuICAgIGhlaWdodDogMXB4O1xuICAgIHdpZHRoOiAxcHg7XG59XG4iLCIuc2V0Q3NzVmFyaWFibGUoQHByb3BlcnR5LCBAdmFsdWUpe1xuICAgIEBldmFsdWF0ZWQgOiBcIkB7dmFsdWV9XCI7XG4gICAgLy90aGUgZG91YmxlIEAgZm9yY2VzIGEgaW5kaXJlY3Rpb24gZXZhbHVhdGlvbiwga2luZGEgbGlrZSBhIHBvaW50ZXJcbiAgICBAZmFsbGJhY2sgOiBAQGV2YWx1YXRlZDtcblxuICAgIEB7cHJvcGVydHl9OiB+XCJ2YXIoLS1Ae3ZhbHVlfSxAe2ZhbGxiYWNrfSlcIjtcbn1cbiIsIi5mb2N1cy1vdXRsaW5lLWJhc2UoKSB7XG4gICAgb3V0bGluZTogbm9uZTtcbiAgICAvLyBUT0RPOiB3aWxsIGJlIHJlbW92ZWQgaW4gc2NvcGUgb2YgTlVJLTYxMDNcbiAgICB6LWluZGV4OiBAemluZGV4LWFjdGl2ZTtcbn1cblxuLmZvY3VzLW91dGxpbmUoKSB7XG4gICAgLmZvY3VzLW91dGxpbmUtYmFzZSgpO1xuICAgIGJveC1zaGFkb3c6IDAgMCAwIEBudWktbGluZS1tZWRpdW0gZmFkZShAbnVpLWNvbG9yLXNlbGVjdGVkLWNvbnRyYXN0LCA1MCUpO1xufVxuXG4uZm9jdXMtb3V0bGluZS1pbnNldCgpIHtcbiAgICAuZm9jdXMtb3V0bGluZS1iYXNlKCk7XG4gICAgYm94LXNoYWRvdzogaW5zZXQgMCAwIDAgQG51aS1saW5lLW1lZGl1bSBmYWRlKEBudWktY29sb3Itc2VsZWN0ZWQtY29udHJhc3QsIDUwJSk7XG59XG4iXX0= */"]
       });
@@ -1894,7 +1921,7 @@
         this.items = Array.from({
           length: 100
         }).map(function (_, i) {
-          return $localize(_templateObject31 || (_templateObject31 = _taggedTemplateLiteral(["Item ", ""])), i);
+          return $localize(_templateObject32 || (_templateObject32 = _taggedTemplateLiteral(["Item ", ""])), i);
         });
         this.comboboxControl = new _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControl"]();
         this.error = true;
@@ -1917,7 +1944,7 @@
             var MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_ERROR_COMBOBOX_V2_ERROR_EXAMPLE_COMPONENT_TS_1 = goog.getMsg("Select Item");
             i18n_0 = MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_ERROR_COMBOBOX_V2_ERROR_EXAMPLE_COMPONENT_TS_1;
           } else {
-            i18n_0 = $localize(_templateObject32 || (_templateObject32 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
+            i18n_0 = $localize(_templateObject33 || (_templateObject33 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
           }
 
           var i18n_2;
@@ -1926,7 +1953,7 @@
             var MSG_EXTERNAL_6222469594242551638$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_ERROR_COMBOBOX_V2_ERROR_EXAMPLE_COMPONENT_TS_3 = goog.getMsg(" Toggle error state\n");
             i18n_2 = MSG_EXTERNAL_6222469594242551638$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_ERROR_COMBOBOX_V2_ERROR_EXAMPLE_COMPONENT_TS_3;
           } else {
-            i18n_2 = $localize(_templateObject33 || (_templateObject33 = _taggedTemplateLiteral([":\u241F8be663d50519e814efd0a41e9f01c07ed108c259\u241F6222469594242551638: Toggle error state\n"])));
+            i18n_2 = $localize(_templateObject34 || (_templateObject34 = _taggedTemplateLiteral([":\u241F8be663d50519e814efd0a41e9f01c07ed108c259\u241F6222469594242551638: Toggle error state\n"])));
           }
 
           return [["placeholder", i18n_0, 1, "d-inline-flex", 2, "width", "50%", 3, "isInErrorState", "formControl"], ["combobox", ""], [3, "value", 4, "ngFor", "ngForOf"], [1, "d-inline-flex", 2, "padding-left", "15px", 3, "value", "valueChange"], i18n_2, [3, "value"], [1, "mr-3", 3, "nuiComboboxV2OptionHighlight"]];
@@ -2110,7 +2137,7 @@
         this.items = Array.from({
           length: 100
         }).map(function (_, i) {
-          return $localize(_templateObject34 || (_templateObject34 = _taggedTemplateLiteral(["Item ", ""])), i);
+          return $localize(_templateObject35 || (_templateObject35 = _taggedTemplateLiteral(["Item ", ""])), i);
         });
         this.comboboxControl = new _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControl"]();
       };
@@ -2132,7 +2159,7 @@
             var MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_REMOVE_VALUE_COMBOBOX_V2_REMOVE_VALUE_EXAMPLE_COMPONENT_TS_1 = goog.getMsg("Select Item");
             i18n_0 = MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_REMOVE_VALUE_COMBOBOX_V2_REMOVE_VALUE_EXAMPLE_COMPONENT_TS_1;
           } else {
-            i18n_0 = $localize(_templateObject35 || (_templateObject35 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
+            i18n_0 = $localize(_templateObject36 || (_templateObject36 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
           }
 
           return [["placeholder", i18n_0, 3, "formControl", "isRemoveValueEnabled"], ["combobox", ""], [3, "value", 4, "ngFor", "ngForOf"], [3, "value"], [3, "nuiComboboxV2OptionHighlight"]];
@@ -2176,7 +2203,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import { OverlayConfig } from \"@angular/cdk/overlay\";\nimport { CdkVirtualScrollViewport } from \"@angular/cdk/scrolling\";\nimport { AfterViewInit, Component, OnInit, TemplateRef, ViewChild } from \"@angular/core\";\nimport { FormBuilder, FormControl, FormGroup, Validators } from \"@angular/forms\";\nimport { ComboboxV2Component, DialogService, NuiDialogRef, OVERLAY_WITH_POPUP_STYLES_CLASS, ToastService } from \"@nova-ui/bits\";\nimport { Observable, of, Subject } from \"rxjs\";\nimport { delay, filter, takeUntil, tap } from \"rxjs/operators\";\n\ninterface IExampleItem {\n    id: string;\n    name: string;\n    icon?: string;\n    disabled?: boolean;\n}\n\nconst defaultContainerHeight: number = 300;\n\n@Component({\n    selector: \"nui-combobox-v2-test-example\",\n    templateUrl: \"combobox-v2-test.example.component.html\",\n    styleUrls: [\"combobox-v2-test.example.component.less\"],\n    host: { class: \"combobox-container\" },\n})\nexport class ComboboxV2TestExampleComponent implements OnInit, AfterViewInit {\n    public virtualItems = Array.from({ length: 100000 }).map((_, i) => $localize `Item ${i}`);\n    public filteredItems: Observable<any[]> = of([...this.virtualItems]);\n    public containerHeight: number = defaultContainerHeight;\n\n    private activeDialog: NuiDialogRef;\n    // Testing only\n    public overlayConfig: OverlayConfig = {\n        panelClass: [OVERLAY_WITH_POPUP_STYLES_CLASS, \"combobox-v2-test-pane\"],\n    };\n\n    // Data\n    public options = Array.from({ length: 3 }).map((_, i) => $localize `Item ${i}`);\n    public optionsMulti: IExampleItem[] = Array.from({ length: 3 }).map((_, i) =>\n        ({\n            id: `value-${i}`,\n            name: $localize `Item ${i}`,\n            disabled: i % 2 ? true : false,\n        }));\n    public optionsMultiDimensions = this.getOptions(50, false);\n    public items = Array.from({ length: 100 }).map((_, i) => $localize `Item ${i}`);\n    public selectedItem: IExampleItem;\n    public selectedSingleItem: IExampleItem;\n    public isComboboxDisabled = false;\n\n    public dataset = {\n        items: [\n            \"Item 1\",\n            \"Item 2\",\n            \"Item 3\",\n            \"Item 4\",\n            \"Item 5\",\n            \"Item 6\",\n            \"Item 7\",\n            \"Item 8\",\n            \"Item 9\",\n            \"Item 10\",\n            \"Item 11\",\n            \"Item 12\",\n            \"Item 13\",\n            \"Item 14\",\n            \"Item 15\",\n            \"Item 16\",\n            \"Item 17\",\n            \"Item 18\",\n            \"Item 19\",\n            \"Item 20\",\n        ],\n    };\n\n    // Form\n    public error: boolean = true;\n    public comboboxControl = new FormControl();\n    public comboboxControlSingle = new FormControl();\n    public comboboxControlMulti = new FormControl();\n    public fancyForm: FormGroup;\n\n    public closePopoverSubject: Subject<void> = new Subject<void>();\n\n    private destroy$: Subject<any> = new Subject<any>();\n    private scrollOffset: number = 0;\n\n    @ViewChild(CdkVirtualScrollViewport) private viewport: CdkVirtualScrollViewport;\n    @ViewChild(\"virtual\") private virtualCombobox: ComboboxV2Component;\n    @ViewChild(\"comboboxSingle\") public comboboxSingle: ComboboxV2Component;\n    @ViewChild(\"comboboxMultiDimensions\") public comboboxMultiDimensions: ComboboxV2Component;\n\n    constructor(private formBuilder: FormBuilder, private dialogService: DialogService, private toastService: ToastService) {}\n\n    public closePopover() {\n        this.closePopoverSubject.next();\n    }\n\n    public createOption(option: string) {\n        this.options.push(option);\n        this.comboboxControlSingle.setValue(option);\n    }\n\n    public createOptionMulti(optionName: string) {\n        const option = {\n            id: `value-${this.options.length}`,\n            name: optionName,\n        };\n\n        this.optionsMulti.push(option);\n        this.comboboxControlMulti.setValue([...(this.comboboxControlMulti.value || []), option]);\n    }\n\n    public displayFn(item: IExampleItem): string {\n        return item?.name || \"\";\n    }\n\n    public convertToChip(value: IExampleItem) {\n        return ({\n            id: value.id,\n            label: value.name,\n        });\n    }\n\n    public isInErrorState() {\n        return !!this.selectedItem;\n    }\n\n    public isDisabled(option: string) {\n        return !!(parseInt(option.slice(-1) , 10) % 2);\n    }\n\n    public getOptions(amount: number, isDisabled?: boolean) {\n        return Array.from({ length: amount }).map((_, i) =>\n            ({\n                id: `value-${i}`,\n                name: $localize `Item ${i}`,\n                disabled: isDisabled || i % 2 ? true : false,\n            }));\n    }\n\n    public showList(event: Event): void {\n        event.stopPropagation();\n        this.comboboxMultiDimensions.showDropdown();\n        this.comboboxMultiDimensions.inputElement.nativeElement.focus();\n    }\n\n    public hideList(event: Event): void {\n        event.stopPropagation();\n        this.comboboxMultiDimensions.hideDropdown();\n    }\n\n    public toggleList(event: Event): void {\n        event.stopPropagation();\n        this.comboboxMultiDimensions.toggleDropdown();\n        this.comboboxMultiDimensions.inputElement.nativeElement.focus();\n    }\n\n    ngOnInit() {\n        this.fancyForm = this.formBuilder.group({\n            combobox: this.formBuilder.control(\"\", Validators.required),\n        });\n\n        this.comboboxControl.valueChanges.pipe(takeUntil(this.destroy$)).subscribe(value => { this.selectedItem = value; });\n        this.comboboxControlSingle.valueChanges.pipe(takeUntil(this.destroy$)).subscribe(value => { this.selectedSingleItem = value; });\n    }\n\n    ngAfterViewInit() {\n        this.virtualCombobox.valueSelected.pipe(takeUntil(this.destroy$)).subscribe(() => {\n            this.scrollOffset = this.viewport.measureScrollOffset();\n        });\n\n        this.virtualCombobox.valueChanged.pipe(\n            filter(v => v !== undefined),\n            tap(v => this.filteredItems = of(this.filterItems(v as string))),\n            delay(0),\n            tap(this.calculateContainerHeight),\n            takeUntil(this.destroy$)\n        ).subscribe();\n    }\n\n    public open(content: TemplateRef<string>) {\n        this.activeDialog = this.dialogService.open(content, {size: \"sm\"});\n    }\n\n    public confirm(event: MouseEvent) {\n        event?.stopPropagation();\n        this.activeDialog = this.dialogService.confirm({\n            message: \"IS THIS SPARTA?\",\n            useOverlay: true,\n        });\n    }\n\n    public openInOverlay(content: TemplateRef<string>) {\n        this.activeDialog = this.dialogService.open(content, {size: \"lg\", useOverlay: true});\n    }\n\n    public actionDone(): void {\n        this.toastService.success({message: $localize `Action Done!`, title: $localize `Event`});\n        this.activeDialog.close();\n    }\n\n    public actionCanceled(): void {\n        this.toastService.info({message: $localize `Action Cancelled!`, title: $localize `Event`});\n        this.activeDialog.close();\n    }\n\n    public onButtonClick(title: string) {\n        title === \"Action\" ? this.actionDone() : this.actionCanceled();\n        this.activeDialog.close();\n    }\n\n    private filterItems(value: string): string[] {\n        if (!value) {\n            return this.virtualItems;\n        }\n        const filterValue = value?.toLowerCase();\n\n        return this.virtualItems.filter(option => option.toLowerCase().includes(filterValue));\n    }\n\n    private calculateContainerHeight = (): void => {\n        if (this.virtualCombobox.inputValue && (this.viewport.measureRenderedContentSize() < defaultContainerHeight)) {\n            this.containerHeight = this.viewport.measureRenderedContentSize();\n            return;\n        }\n        this.containerHeight = defaultContainerHeight;\n    }\n}\n";
+      __webpack_exports__["default"] = "import { OverlayConfig } from \"@angular/cdk/overlay\";\nimport { CdkVirtualScrollViewport } from \"@angular/cdk/scrolling\";\nimport { AfterViewInit, Component, OnInit, TemplateRef, ViewChild } from \"@angular/core\";\nimport { FormBuilder, FormControl, FormGroup, Validators } from \"@angular/forms\";\nimport { ComboboxV2Component, DialogService, NuiDialogRef, OVERLAY_WITH_POPUP_STYLES_CLASS, ToastService } from \"@nova-ui/bits\";\nimport { Observable, of, Subject } from \"rxjs\";\nimport { delay, filter, takeUntil, tap } from \"rxjs/operators\";\n\ninterface IExampleItem {\n    id: string;\n    name: string;\n    icon?: string;\n    disabled?: boolean;\n}\n\nconst defaultContainerHeight: number = 300;\n\n@Component({\n    selector: \"nui-combobox-v2-test-example\",\n    templateUrl: \"combobox-v2-test.example.component.html\",\n    styleUrls: [\"combobox-v2-test.example.component.less\"],\n    host: { class: \"combobox-container\" },\n})\nexport class ComboboxV2TestExampleComponent implements OnInit, AfterViewInit {\n    public virtualItems = Array.from({ length: 100000 }).map((_, i) => $localize `Item ${i}`);\n    public filteredItems: Observable<any[]> = of([...this.virtualItems]);\n    public containerHeight: number = defaultContainerHeight;\n\n    private activeDialog: NuiDialogRef;\n    // Testing only\n    public overlayConfig: OverlayConfig = {\n        panelClass: [OVERLAY_WITH_POPUP_STYLES_CLASS, \"combobox-v2-test-pane\"],\n    };\n\n    // Data\n    public options = Array.from({ length: 3 }).map((_, i) => $localize `Item ${i}`);\n    public optionsMulti: IExampleItem[] = Array.from({ length: 3 }).map((_, i) =>\n        ({\n            id: `value-${i}`,\n            name: $localize `Item ${i}`,\n            disabled: i % 2 ? true : false,\n        }));\n    public optionsMultiDimensions = this.getOptions(50, false);\n    public items = Array.from({ length: 100 }).map((_, i) => $localize `Item ${i}`);\n    public icons: any[] = [\"check\", \"email\", \"execute\"];\n    public customizedItems: IExampleItem[] = Array.from({ length: 100 }).map((_, i) =>\n        ({\n            id: `value-${i}`,\n            name: $localize `Item ${i}`,\n            icon: this.getRandomIcon(),\n        }));\n    public selectedItem: IExampleItem;\n    public selectedSingleItem: IExampleItem;\n    public isComboboxDisabled = false;\n\n    public dataset = {\n        items: [\n            \"Item 1\",\n            \"Item 2\",\n            \"Item 3\",\n            \"Item 4\",\n            \"Item 5\",\n            \"Item 6\",\n            \"Item 7\",\n            \"Item 8\",\n            \"Item 9\",\n            \"Item 10\",\n            \"Item 11\",\n            \"Item 12\",\n            \"Item 13\",\n            \"Item 14\",\n            \"Item 15\",\n            \"Item 16\",\n            \"Item 17\",\n            \"Item 18\",\n            \"Item 19\",\n            \"Item 20\",\n        ],\n    };\n\n    // Form\n    public error: boolean = true;\n    public comboboxControl = new FormControl();\n    public comboboxControlSingle = new FormControl();\n    public comboboxControlMulti = new FormControl();\n    public fancyForm: FormGroup;\n\n    public closePopoverSubject: Subject<void> = new Subject<void>();\n\n    private destroy$: Subject<any> = new Subject<any>();\n    private scrollOffset: number = 0;\n\n    @ViewChild(CdkVirtualScrollViewport) private viewport: CdkVirtualScrollViewport;\n    @ViewChild(\"virtual\") private virtualCombobox: ComboboxV2Component;\n    @ViewChild(\"comboboxSingle\") public comboboxSingle: ComboboxV2Component;\n    @ViewChild(\"comboboxMultiDimensions\") public comboboxMultiDimensions: ComboboxV2Component;\n\n    constructor(private formBuilder: FormBuilder, private dialogService: DialogService, private toastService: ToastService) {}\n\n    public closePopover() {\n        this.closePopoverSubject.next();\n    }\n\n    public createOption(option: string) {\n        this.options.push(option);\n        this.comboboxControlSingle.setValue(option);\n    }\n\n    public createOptionMulti(optionName: string) {\n        const option = {\n            id: `value-${this.options.length}`,\n            name: optionName,\n        };\n\n        this.optionsMulti.push(option);\n        this.comboboxControlMulti.setValue([...(this.comboboxControlMulti.value || []), option]);\n    }\n\n    public displayFn(item: IExampleItem): string {\n        return item?.name || \"\";\n    }\n\n    public convertToChip(value: IExampleItem) {\n        return ({\n            id: value.id,\n            label: value.name,\n        });\n    }\n\n    public isInErrorState() {\n        return !!this.selectedItem;\n    }\n\n    public isDisabled(option: string) {\n        return !!(parseInt(option.slice(-1) , 10) % 2);\n    }\n\n    public getOptions(amount: number, isDisabled?: boolean) {\n        return Array.from({ length: amount }).map((_, i) =>\n            ({\n                id: `value-${i}`,\n                name: $localize `Item ${i}`,\n                disabled: isDisabled || i % 2 ? true : false,\n            }));\n    }\n\n    public showList(event: Event): void {\n        event.stopPropagation();\n        this.comboboxMultiDimensions.showDropdown();\n        this.comboboxMultiDimensions.inputElement.nativeElement.focus();\n    }\n\n    public hideList(event: Event): void {\n        event.stopPropagation();\n        this.comboboxMultiDimensions.hideDropdown();\n    }\n\n    public toggleList(event: Event): void {\n        event.stopPropagation();\n        this.comboboxMultiDimensions.toggleDropdown();\n        this.comboboxMultiDimensions.inputElement.nativeElement.focus();\n    }\n\n    ngOnInit() {\n        this.fancyForm = this.formBuilder.group({\n            combobox: this.formBuilder.control(\"\", Validators.required),\n        });\n\n        this.comboboxControl.valueChanges.pipe(takeUntil(this.destroy$)).subscribe(value => { this.selectedItem = value; });\n        this.comboboxControlSingle.valueChanges.pipe(takeUntil(this.destroy$)).subscribe(value => { this.selectedSingleItem = value; });\n    }\n\n    ngAfterViewInit() {\n        this.virtualCombobox.valueSelected.pipe(takeUntil(this.destroy$)).subscribe(() => {\n            this.scrollOffset = this.viewport.measureScrollOffset();\n        });\n\n        this.virtualCombobox.valueChanged.pipe(\n            filter(v => v !== undefined),\n            tap(v => this.filteredItems = of(this.filterItems(v as string))),\n            delay(0),\n            tap(this.calculateContainerHeight),\n            takeUntil(this.destroy$)\n        ).subscribe();\n    }\n\n    public open(content: TemplateRef<string>) {\n        this.activeDialog = this.dialogService.open(content, {size: \"sm\"});\n    }\n\n    public confirm(event: MouseEvent) {\n        event?.stopPropagation();\n        this.activeDialog = this.dialogService.confirm({\n            message: \"IS THIS SPARTA?\",\n            useOverlay: true,\n        });\n    }\n\n    public openInOverlay(content: TemplateRef<string>) {\n        this.activeDialog = this.dialogService.open(content, {size: \"lg\", useOverlay: true});\n    }\n\n    public actionDone(): void {\n        this.toastService.success({message: $localize `Action Done!`, title: $localize `Event`});\n        this.activeDialog.close();\n    }\n\n    public actionCanceled(): void {\n        this.toastService.info({message: $localize `Action Cancelled!`, title: $localize `Event`});\n        this.activeDialog.close();\n    }\n\n    public onButtonClick(title: string) {\n        title === \"Action\" ? this.actionDone() : this.actionCanceled();\n        this.activeDialog.close();\n    }\n  \n    private getRandomIcon() {\n        return this.icons[Math.round(Math.random() * 2)];\n    }\n\n    private filterItems(value: string): string[] {\n        if (!value) {\n            return this.virtualItems;\n        }\n        const filterValue = value?.toLowerCase();\n\n        return this.virtualItems.filter(option => option.toLowerCase().includes(filterValue));\n    }\n\n    private calculateContainerHeight = (): void => {\n        if (this.virtualCombobox.inputValue && (this.viewport.measureRenderedContentSize() < defaultContainerHeight)) {\n            this.containerHeight = this.viewport.measureRenderedContentSize();\n            return;\n        }\n        this.containerHeight = defaultContainerHeight;\n    }\n}\n";
       /***/
     },
 
@@ -2563,7 +2590,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<!-- Focus drop is an invisible item which can be used to drop the focus state to the start of the page if needed -->\n<div class=\"focus-drop\" tabindex=\"-1\"></div>\n<div class=\"row mb-3 justify-content-center\">\n    <h1>\n        Combobox V2 Testing Page\n    </h1>\n</div>\n<div class=\"row mb-3\">\n    <div class=\"col\">\n        <h4>Error State</h4>\n        <nui-combobox-v2 [isInErrorState]=\"!selectedItem\"\n                          placeholder=\"Select Item\" i18n-placeholder\n                          [formControl]=\"comboboxControl\"\n                          id=\"error\"\n                          [overlayConfig]=\"overlayConfig\"\n                          #comboboxError>\n            <nui-select-v2-option *ngFor=\"let item of items\" [value]=\"item\">\n                <span [nuiComboboxV2OptionHighlight]=\"item\"></span>\n            </nui-select-v2-option>\n        </nui-combobox-v2>\n    </div>\n    <div class=\"col\">\n        <h4>Reactive form</h4>\n        <form [formGroup]=\"fancyForm\" class=\"nui-edge-definer\">\n            <nui-form-field [control]=\"fancyForm.controls['combobox']\">\n               <nui-combobox-v2 placeholder=\"Select Item\" i18n-placeholder\n                                formControlName=\"combobox\"\n                                id=\"form\"\n                                [overlayConfig]=\"overlayConfig\"\n                                #comboboxReactive>\n                    <nui-select-v2-option *ngFor=\"let item of items\" [value]=\"item\">\n                        <span [nuiComboboxV2OptionHighlight]=\"item\"></span>\n                    </nui-select-v2-option>\n                </nui-combobox-v2>\n                <nui-validation-message for=\"required\" i18n>\n                    This field is required\n                </nui-validation-message>\n            </nui-form-field>\n        </form>\n    </div>\n</div>\n<div class=\"row mb-3\">\n    <div class=\"col\">\n        <h4>Basic</h4>\n        <nui-combobox-v2 placeholder=\"Select Item\" i18n-placeholder\n                         id=\"basic\"\n                         [overlayConfig]=\"overlayConfig\"\n                         #comboboxBasic>\n            <nui-select-v2-option *ngFor=\"let item of items\" [value]=\"item\">\n                <span [nuiComboboxV2OptionHighlight]=\"item\"></span>\n            </nui-select-v2-option>\n        </nui-combobox-v2>\n    </div>\n</div>\n<div class=\"row mb-3\">\n    <div class=\"col\">\n        <h4>Single select with create option</h4>\n        <nui-combobox-v2 placeholder=\"Select Item\" i18n-placeholder\n                         [formControl]=\"comboboxControlSingle\"\n                         id=\"single\"\n                         [overlayConfig]=\"overlayConfig\"\n                         #comboboxSingle>\n            <nui-select-v2-option *ngFor=\"let option of options; index\" [value]=\"option\" [isDisabled]=\"isDisabled(option)\">\n                <div class=\"d-flex align-items-center\">\n                    <span class=\"mr-3 nui-select-v2-option__label\" [nuiComboboxV2OptionHighlight]=\"option\"></span>\n                </div>\n            </nui-select-v2-option>\n\n            <nui-overlay-item *ngIf=\"comboboxSingle.canCreateOption | async\" class=\"nui-combobox-v2__create-option\" (click)=\"createOption(comboboxSingle.inputValue)\">\n                Create option \"{{comboboxSingle.inputValue}}\"\n            </nui-overlay-item>\n            <div *ngIf=\"comboboxSingle.searchEmpty | async\" class=\"nui-combobox-v2__empty-search\" i18n>No other existing item available</div>\n        </nui-combobox-v2>\n    </div>\n    <div class=\"col\">\n        <h4>Multiselect with create option</h4>\n        <nui-combobox-v2 [placeholder]=\"combobox.selectedOptions.length ? '' : 'Select Items'\"\n                         [formControl]=\"comboboxControlMulti\"\n                         [displayWith]=\"displayFn\"\n                         [multiselect]=\"true\"\n                         [overlayConfig]=\"overlayConfig\"\n                         id=\"multi\"\n                         #combobox>\n\n            <ng-container selectedItems>\n                <nui-chip nuiMarkAsSelectedItem\n                          *ngFor=\"let item of combobox?.value\"\n                          class=\"ml-2\"\n                          closeButtonTooltip=\"Remove\"\n                          [item]=\"convertToChip(item)\"\n                          (remove)=\"combobox.deselectItem(item)\"\n                          (mouseup)=\"$event.stopPropagation()\">\n                </nui-chip>\n            </ng-container>\n\n            <nui-select-v2-option *ngFor=\"let option of optionsMulti\"\n                                  [value]=\"option\"\n                                  class=\"d-flex align-items-center\">\n                <span class=\"mr-3 nui-select-v2-option__label\" [nuiComboboxV2OptionHighlight]=\"option.name\"></span>\n            </nui-select-v2-option>\n\n            <nui-overlay-item *ngIf=\"combobox.canCreateOption | async\" class=\"nui-combobox-v2__create-option\" (click)=\"createOptionMulti(combobox.inputValue)\">\n                Create option \"{{combobox.inputValue}}\"\n            </nui-overlay-item>\n            <div *ngIf=\"combobox.searchEmpty | async\" class=\"nui-combobox-v2__empty-search\" i18n>No other existing item available</div>\n        </nui-combobox-v2>\n    </div>\n    <div class=\"col\">\n        <h4>Disabled combobox and items</h4>\n        <div class=\"row m-auto\">\n            <nui-combobox-v2 [isDisabled]=\"isComboboxDisabled\"\n                             placeholder=\"Select Item\" i18n-placeholder\n                             [displayWith]=\"displayFn\"\n                             id=\"disabled\"\n                             [overlayConfig]=\"overlayConfig\"\n                             class=\"flex-grow-1\"\n                             #comboboxDisabled>\n                <nui-select-v2-option *ngFor=\"let item of optionsMulti.slice()\" [value]=\"item\" [isDisabled]=\"item.disabled\">\n                    <span [nuiComboboxV2OptionHighlight]=\"item.name\"></span>\n                </nui-select-v2-option>\n            </nui-combobox-v2>\n            <button id=\"trigger-disabled\"\n                    (click)=\"isComboboxDisabled = !isComboboxDisabled\"\n                    class=\"ml-auto\">{{ isComboboxDisabled ? \"enable\" : \"disable\" }}</button>\n        </div>\n    </div>\n</div>\n<div class=\"row mb-3\">\n    <div class=\"col\">\n        <h4>Value removal</h4>\n        <nui-combobox-v2 placeholder=\"Select Item\" i18n-placeholder\n                         [isRemoveValueEnabled]=\"false\"\n                         id=\"removal\"\n                         [overlayConfig]=\"overlayConfig\"\n                         #comboboxValueRemoval>\n            <nui-select-v2-option *ngFor=\"let item of items\" [value]=\"item\">\n                <span [nuiComboboxV2OptionHighlight]=\"item\"></span>\n            </nui-select-v2-option>\n        </nui-combobox-v2>\n    </div>\n    <div class=\"col\">\n\n    </div>\n    <div class=\"col\">\n\n    </div>\n</div>\n<div class=\"row m-auto\">\n    <h4 class=\"w-100\">Multiselect with manual dropdown control</h4>\n        <nui-combobox-v2 [placeholder]=\"comboboxMultiDimensions.selectedOptions.length ? '' : 'Select Items'\"\n                         [displayWith]=\"displayFn\"\n                         [multiselect]=\"true\"\n                         [manualDropdownControl]=\"true\"\n                         id=\"custom-control\"\n                         [overlayConfig]=\"overlayConfig\"\n                         #comboboxMultiDimensions>\n    <ng-container selectedItems>\n        <nui-chip nuiMarkAsSelectedItem\n                    class=\"ml-2\"\n                    *ngFor=\"let item of comboboxMultiDimensions?.value\"\n                    closeButtonTooltip=\"Remove\"\n                    [item]=\"convertToChip(item)\"\n                    (remove)=\"comboboxMultiDimensions.deselectItem(item)\"\n                    (mouseup)=\"$event.stopPropagation()\">\n        </nui-chip>\n    </ng-container>\n    <nui-select-v2-option *ngFor=\"let option of optionsMultiDimensions\"\n        [value]=\"option\"\n        class=\"d-flex align-items-center\">\n      <span class=\"mr-3 nui-select-v2-option__label\" [nuiComboboxV2OptionHighlight]=\"option.name\"></span>\n  </nui-select-v2-option>\n</nui-combobox-v2>\n    <button id=\"show\" class=\"ml-3\" (click)=\"showList($event)\">Show</button>\n    <button id=\"hide\" class=\"ml-3\" (click)=\"hideList($event)\">Hide</button>\n    <button id=\"toggle\" class=\"ml-3\" (click)=\"toggleList($event)\">Toggle</button>\n</div>\n<div class=\"row m-auto\">\n    <h4 class=\"w-100\">Virtual scroll</h4>\n    <nui-combobox-v2 placeholder=\"Select Item\" i18n-placeholder\n                    #virtual\n                    id=\"virtual-combobox\"\n                    [formControl]=\"comboboxControl\"\n                    [overlayConfig]=\"overlayConfig\"\n                    [isTypeaheadEnabled]=\"false\">\n\n        <cdk-virtual-scroll-viewport itemSize=\"30\"\n                                    [minBufferPx]=\"300\"\n                                    [maxBufferPx]=\"600\"\n                                    [style.height.px]=\"containerHeight\">\n\n            <div *cdkVirtualFor=\"let item of filteredItems | async; index as i\">\n                <nui-select-v2-option [value]=\"item\" class=\"d-flex align-items-center\">\n                    <span [nuiComboboxV2OptionHighlight]=\"item\"></span>\n                </nui-select-v2-option>\n            </div>\n        </cdk-virtual-scroll-viewport>\n    </nui-combobox-v2>\n</div>\n\n<div class=\"row mb-3\" style=\"position: fixed; bottom: 0\" tabindex=\"-1\">\n    <h4 class=\"w-100\">Multiselect with manual dropdown control</h4>\n        <nui-combobox-v2 [placeholder]=\"comboboxWithDialog.selectedOptions.length ? '' : 'Select Items'\"\n                         [displayWith]=\"displayFn\"\n                         [multiselect]=\"true\"\n                         [manualDropdownControl]=\"true\"\n                         [overlayConfig]=\"overlayConfig\"\n                         class=\"w-100\"\n                         #comboboxWithDialog>\n\n            <ng-container selectedItems>\n                <nui-chip nuiMarkAsSelectedItem\n                            class=\"ml-2\"\n                            *ngFor=\"let item of comboboxWithDialog?.value\"\n                            closeButtonTooltip=\"Remove\"\n                            [item]=\"convertToChip(item)\"\n                            (remove)=\"comboboxWithDialog.deselectItem(item)\"\n                            (mouseup)=\"$event.stopPropagation()\">\n                </nui-chip>\n            </ng-container>\n\n            <nui-select-v2-option *ngFor=\"let option of optionsMultiDimensions\"\n                                  [value]=\"option\"\n                                  class=\"d-flex align-items-center\"\n                                  (click)=\"openInOverlay(headerButtonsContent)\">\n                <span class=\"mr-3 nui-select-v2-option__label\" [nuiComboboxV2OptionHighlight]=\"option.name\"></span>\n            </nui-select-v2-option>\n        </nui-combobox-v2>\n    <button class=\"ml-3\" (click)=\"comboboxWithDialog.toggleDropdown()\">Toggle</button>\n</div>\n\n<ng-template #content let-close=\"close\" let-dismiss=\"dismiss\">\n    <nui-dialog-header title=\"Dialog title\" i18n-title (closed)=\"close()\"></nui-dialog-header>\n    <div class=\"dialog-body\">\n        <p i18n>\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam maximus faucibus bibendum.\n            Aenean feugiat interdum leo sed posuere. Etiam at pulvinar enim, nec interdum purus.\n            Duis elit metus, lobortis vitae quam a, malesuada cursus quam. Duis vel lacinia purus.\n            Maecenas eget arcu ac ante sagittis eleifend vel ut purus.\n            Pellentesque sit amet semper ipsum, eu vulputate tortor. Aliquam vitae nisi augue.\n            Duis non erat sit amet sem venenatis accumsan at ullamcorper lorem. Morbi non turpis nibh.\n        </p>\n    </div>\n    <nui-dialog-footer>\n        <button nui-button type=\"button\" (click)=\"actionCanceled(); close()\" i18n>\n            Cancel\n        </button>\n        <button nui-button type=\"button\" displayStyle=\"primary\" (click)=\"actionDone(); close()\" i18n>\n            Action\n        </button>\n    </nui-dialog-footer>\n</ng-template>\n\n<ng-template  #headerButtonsContent let-close=\"close\">\n    <nui-dialog-header title=\"Dialog title\" (closed)=\"close()\">\n        <button nui-button type=\"button\" displayStyle=\"action\" icon=\"fullscreen\"></button>\n        <button nui-button type=\"button\" displayStyle=\"action\" icon=\"menu\"></button>\n    </nui-dialog-header>\n    <div class=\"dialog-body\">\n        <p>\n            <nui-select-v2 placeholder=\"Select Item\">\n                <nui-select-v2-option *ngFor=\"let item of dataset.items; let i = index;\" [value]=\"item\">\n                    <div class=\"d-flex align-items-center\">\n                        <button nui-button type=\"button\" (click)=\"confirm($event)\">boom!</button>\n                        {{item}}\n                        <div #popoverContainer id=\"nui-demo-popover-container\"></div>\n                        <nui-popover id=\"nui-demo-popover-with-container\"\n                                    [container]=\"popoverContainer\"\n                                    [template]=\"popoverWithContainerTemplate\"\n                                    i18n>\n                            Hover over me!\n                        </nui-popover>\n\n                        <nui-popover popoverTitle=\"Modal Popover\" i18n-popoverTitle\n                                    trigger=\"click\"\n                                    placement=\"right\"\n                                    [template]=\"popoverModal\"\n                                    [modal]=\"true\"\n                                    [preventClosing]=\"true\"\n                                    [closePopover]=\"closePopoverSubject\">\n                            <button nui-button type=\"button\" id=\"nui-demo-popover-modal\" i18n>\n                                Show modal popover\n                            </button>\n                        </nui-popover>\n\n                        <ng-template #popoverModal>\n                            <span i18n>A modal popover can be used to grab the user's attention.</span>\n                            <div class=\"mt-2 d-flex justify-content-end\">\n                                <button id=\"nui-demo-custom-close-popover\"\n                                        nui-button\n                                        type=\"button\"\n                                        displayStyle=\"action\"\n                                        (click)=\"closePopover()\" i18n>Close</button>\n                                <button nui-button\n                                        class=\"ml-3\"\n                                        type=\"button\"\n                                        displayStyle=\"primary\"\n                                        (click)=\"closePopover()\" i18n>Confirm</button>\n                            </div>\n                        </ng-template>\n\n                        <ng-template #popoverWithContainerTemplate i18n>\n                            I'm appended to a container!\n                        </ng-template>\n                        <nui-menu icon=\"menu\" *ngIf=\"!i\">\n                            <nui-menu-action *ngFor=\"let item of items\">\n                                {{item}}\n                            </nui-menu-action>\n                        </nui-menu>\n                    </div>\n                </nui-select-v2-option>\n            </nui-select-v2>\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam maximus faucibus bibendum.\n            Aenean feugiat interdum leo sed posuere. Etiam at pulvinar enim, nec interdum purus.\n            Duis elit metus, lobortis vitae quam a, malesuada cursus quam. Duis vel lacinia purus.\n            Maecenas eget arcu ac ante sagittis eleifend vel ut purus.\n            Pellentesque sit amet semper ipsum, eu vulputate tortor. Aliquam vitae nisi augue.\n            Duis non erat sit amet sem venenatis accumsan at ullamcorper lorem. Morbi non turpis nibh.\n        </p>\n    </div>\n    <nui-dialog-footer>\n        <button nui-button type=\"button\"\n                (click)=\"onButtonClick('Cancel')\">\n            Cancel\n        </button>\n        <button nui-button type=\"button\"\n                displayStyle=\"primary\"\n                (click)=\"onButtonClick('Action')\">\n            Action\n        </button>\n    </nui-dialog-footer>\n</ng-template>\n\n";
+      __webpack_exports__["default"] = "<!-- Focus drop is an invisible item which can be used to drop the focus state to the start of the page if needed -->\n<div class=\"focus-drop\" tabindex=\"-1\"></div>\n<div class=\"row mb-3 justify-content-center\">\n    <h1>\n        Combobox V2 Testing Page\n    </h1>\n</div>\n<div class=\"row mb-3\">\n    <div class=\"col\">\n        <h4>Error State</h4>\n        <nui-combobox-v2 [isInErrorState]=\"!selectedItem\"\n                          placeholder=\"Select Item\" i18n-placeholder\n                          [displayWith]=\"displayFn\"\n                          [formControl]=\"comboboxControl\"\n                          id=\"error\"\n                          [overlayConfig]=\"overlayConfig\"\n                          #comboboxError>\n            <nui-select-v2-option *ngFor=\"let item of customizedItems\" [value]=\"item\">\n                <span class=\"mr-3\" [nuiComboboxV2OptionHighlight]=\"item.name\"></span>\n                <nui-icon [icon]=\"item.icon\"></nui-icon>\n            </nui-select-v2-option>\n        </nui-combobox-v2>\n    </div>\n    <div class=\"col\">\n        <h4>Reactive form</h4>\n        <form [formGroup]=\"fancyForm\" class=\"nui-edge-definer\">\n            <nui-form-field [control]=\"fancyForm.controls['combobox']\">\n               <nui-combobox-v2 placeholder=\"Select Item\" i18n-placeholder\n                                formControlName=\"combobox\"\n                                id=\"form\"\n                                [overlayConfig]=\"overlayConfig\"\n                                #comboboxReactive>\n                    <nui-select-v2-option *ngFor=\"let item of items\" [value]=\"item\">\n                        <span [nuiComboboxV2OptionHighlight]=\"item\"></span>\n                    </nui-select-v2-option>\n                </nui-combobox-v2>\n                <nui-validation-message for=\"required\" i18n>\n                    This field is required\n                </nui-validation-message>\n            </nui-form-field>\n        </form>\n    </div>\n</div>\n<div class=\"row mb-3\">\n    <div class=\"col\">\n        <h4>Basic</h4>\n        <nui-combobox-v2 placeholder=\"Select Item\" i18n-placeholder\n                         id=\"basic\"\n                         [overlayConfig]=\"overlayConfig\"\n                         #comboboxBasic>\n            <nui-select-v2-option *ngFor=\"let item of items\" [value]=\"item\">\n                <span [nuiComboboxV2OptionHighlight]=\"item\"></span>\n            </nui-select-v2-option>\n        </nui-combobox-v2>\n    </div>\n</div>\n<div class=\"row mb-3\">\n    <div class=\"col\">\n        <h4>Single select with create option</h4>\n        <nui-combobox-v2 placeholder=\"Select Item\" i18n-placeholder\n                         [formControl]=\"comboboxControlSingle\"\n                         id=\"single\"\n                         [overlayConfig]=\"overlayConfig\"\n                         #comboboxSingle>\n            <nui-select-v2-option *ngFor=\"let option of options; index\" [value]=\"option\" [isDisabled]=\"isDisabled(option)\">\n                <div class=\"d-flex align-items-center\">\n                    <span class=\"mr-3 nui-select-v2-option__label\" [nuiComboboxV2OptionHighlight]=\"option\"></span>\n                </div>\n            </nui-select-v2-option>\n\n            <nui-overlay-item *ngIf=\"comboboxSingle.canCreateOption | async\" class=\"nui-combobox-v2__create-option\" (click)=\"createOption(comboboxSingle.inputValue)\">\n                Create option \"{{comboboxSingle.inputValue}}\"\n            </nui-overlay-item>\n            <div *ngIf=\"comboboxSingle.searchEmpty | async\" class=\"nui-combobox-v2__empty-search\" i18n>No other existing item available</div>\n        </nui-combobox-v2>\n    </div>\n    <div class=\"col\">\n        <h4>Multiselect with create option</h4>\n        <nui-combobox-v2 [placeholder]=\"combobox.selectedOptions.length ? '' : 'Select Items'\"\n                         [formControl]=\"comboboxControlMulti\"\n                         [multiselect]=\"true\"\n                         [overlayConfig]=\"overlayConfig\"\n                         id=\"multi\"\n                         #combobox>\n\n            <ng-container selectedItems>\n                <nui-chip nuiMarkAsSelectedItem\n                          *ngFor=\"let item of combobox?.value\"\n                          class=\"ml-2\"\n                          closeButtonTooltip=\"Remove\"\n                          [item]=\"convertToChip(item)\"\n                          (remove)=\"combobox.deselectItem(item)\"\n                          (mouseup)=\"$event.stopPropagation()\">\n                </nui-chip>\n            </ng-container>\n\n            <nui-select-v2-option *ngFor=\"let option of optionsMulti\"\n                                  [value]=\"option\"\n                                  class=\"d-flex align-items-center\">\n                <span class=\"mr-3 nui-select-v2-option__label\" [nuiComboboxV2OptionHighlight]=\"option.name\"></span>\n            </nui-select-v2-option>\n\n            <nui-overlay-item *ngIf=\"combobox.canCreateOption | async\" class=\"nui-combobox-v2__create-option\" (click)=\"createOptionMulti(combobox.inputValue)\">\n                Create option \"{{combobox.inputValue}}\"\n            </nui-overlay-item>\n            <div *ngIf=\"combobox.searchEmpty | async\" class=\"nui-combobox-v2__empty-search\" i18n>No other existing item available</div>\n        </nui-combobox-v2>\n    </div>\n    <div class=\"col\">\n        <h4>Disabled combobox and items</h4>\n        <div class=\"row m-auto\">\n            <nui-combobox-v2 [isDisabled]=\"isComboboxDisabled\"\n                             placeholder=\"Select Item\" i18n-placeholder\n                             id=\"disabled\"\n                             [overlayConfig]=\"overlayConfig\"\n                             class=\"flex-grow-1\"\n                             #comboboxDisabled>\n                <nui-select-v2-option *ngFor=\"let item of optionsMulti.slice()\" [value]=\"item\" [isDisabled]=\"item.disabled\">\n                    <span [nuiComboboxV2OptionHighlight]=\"item.name\"></span>\n                </nui-select-v2-option>\n            </nui-combobox-v2>\n            <button id=\"trigger-disabled\"\n                    (click)=\"isComboboxDisabled = !isComboboxDisabled\"\n                    class=\"ml-auto\">{{ isComboboxDisabled ? \"enable\" : \"disable\" }}</button>\n        </div>\n    </div>\n</div>\n<div class=\"row mb-3\">\n    <div class=\"col\">\n        <h4>Value removal</h4>\n        <nui-combobox-v2 placeholder=\"Select Item\" i18n-placeholder\n                         [isRemoveValueEnabled]=\"false\"\n                         id=\"removal\"\n                         [overlayConfig]=\"overlayConfig\"\n                         #comboboxValueRemoval>\n            <nui-select-v2-option *ngFor=\"let item of items\" [value]=\"item\">\n                <span [nuiComboboxV2OptionHighlight]=\"item\"></span>\n            </nui-select-v2-option>\n        </nui-combobox-v2>\n    </div>\n    <div class=\"col\">\n\n    </div>\n    <div class=\"col\">\n\n    </div>\n</div>\n<div class=\"row m-auto\">\n    <h4 class=\"w-100\">Multiselect with manual dropdown control</h4>\n        <nui-combobox-v2 [placeholder]=\"comboboxMultiDimensions.selectedOptions.length ? '' : 'Select Items'\"\n                         [multiselect]=\"true\"\n                         [manualDropdownControl]=\"true\"\n                         id=\"custom-control\"\n                         [overlayConfig]=\"overlayConfig\"\n                         #comboboxMultiDimensions>\n    <ng-container selectedItems>\n        <nui-chip nuiMarkAsSelectedItem\n                    class=\"ml-2\"\n                    *ngFor=\"let item of comboboxMultiDimensions?.value\"\n                    closeButtonTooltip=\"Remove\"\n                    [item]=\"convertToChip(item)\"\n                    (remove)=\"comboboxMultiDimensions.deselectItem(item)\"\n                    (mouseup)=\"$event.stopPropagation()\">\n        </nui-chip>\n    </ng-container>\n    <nui-select-v2-option *ngFor=\"let option of optionsMultiDimensions\"\n        [value]=\"option\"\n        class=\"d-flex align-items-center\">\n      <span class=\"mr-3 nui-select-v2-option__label\" [nuiComboboxV2OptionHighlight]=\"option.name\"></span>\n  </nui-select-v2-option>\n</nui-combobox-v2>\n    <button id=\"show\" class=\"ml-3\" (click)=\"showList($event)\">Show</button>\n    <button id=\"hide\" class=\"ml-3\" (click)=\"hideList($event)\">Hide</button>\n    <button id=\"toggle\" class=\"ml-3\" (click)=\"toggleList($event)\">Toggle</button>\n</div>\n<div class=\"row m-auto\">\n    <h4 class=\"w-100\">Virtual scroll</h4>\n    <nui-combobox-v2 placeholder=\"Select Item\" i18n-placeholder\n                    #virtual\n                    id=\"virtual-combobox\"\n                    [formControl]=\"comboboxControl\"\n                    [overlayConfig]=\"overlayConfig\"\n                    [isTypeaheadEnabled]=\"false\">\n\n        <cdk-virtual-scroll-viewport itemSize=\"30\"\n                                    [minBufferPx]=\"300\"\n                                    [maxBufferPx]=\"600\"\n                                    [style.height.px]=\"containerHeight\">\n\n            <div *cdkVirtualFor=\"let item of filteredItems | async; index as i\">\n                <nui-select-v2-option [value]=\"item\" class=\"d-flex align-items-center\">\n                    <span [nuiComboboxV2OptionHighlight]=\"item\"></span>\n                </nui-select-v2-option>\n            </div>\n        </cdk-virtual-scroll-viewport>\n    </nui-combobox-v2>\n</div>\n\n<div class=\"row mb-3\" style=\"position: fixed; bottom: 0\" tabindex=\"-1\">\n    <h4 class=\"w-100\">Multiselect with manual dropdown control</h4>\n        <nui-combobox-v2 [placeholder]=\"comboboxWithDialog.selectedOptions.length ? '' : 'Select Items'\"\n                         [multiselect]=\"true\"\n                         [manualDropdownControl]=\"true\"\n                         [overlayConfig]=\"overlayConfig\"\n                         class=\"w-100\"\n                         #comboboxWithDialog>\n\n            <ng-container selectedItems>\n                <nui-chip nuiMarkAsSelectedItem\n                            class=\"ml-2\"\n                            *ngFor=\"let item of comboboxWithDialog?.value\"\n                            closeButtonTooltip=\"Remove\"\n                            [item]=\"convertToChip(item)\"\n                            (remove)=\"comboboxWithDialog.deselectItem(item)\"\n                            (mouseup)=\"$event.stopPropagation()\">\n                </nui-chip>\n            </ng-container>\n\n            <nui-select-v2-option *ngFor=\"let option of optionsMultiDimensions\"\n                                  [value]=\"option\"\n                                  class=\"d-flex align-items-center\"\n                                  (click)=\"openInOverlay(headerButtonsContent)\">\n                <span class=\"mr-3 nui-select-v2-option__label\" [nuiComboboxV2OptionHighlight]=\"option.name\"></span>\n            </nui-select-v2-option>\n        </nui-combobox-v2>\n    <button class=\"ml-3\" (click)=\"comboboxWithDialog.toggleDropdown()\">Toggle</button>\n</div>\n\n<ng-template #content let-close=\"close\" let-dismiss=\"dismiss\">\n    <nui-dialog-header title=\"Dialog title\" i18n-title (closed)=\"close()\"></nui-dialog-header>\n    <div class=\"dialog-body\">\n        <p i18n>\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam maximus faucibus bibendum.\n            Aenean feugiat interdum leo sed posuere. Etiam at pulvinar enim, nec interdum purus.\n            Duis elit metus, lobortis vitae quam a, malesuada cursus quam. Duis vel lacinia purus.\n            Maecenas eget arcu ac ante sagittis eleifend vel ut purus.\n            Pellentesque sit amet semper ipsum, eu vulputate tortor. Aliquam vitae nisi augue.\n            Duis non erat sit amet sem venenatis accumsan at ullamcorper lorem. Morbi non turpis nibh.\n        </p>\n    </div>\n    <nui-dialog-footer>\n        <button nui-button type=\"button\" (click)=\"actionCanceled(); close()\" i18n>\n            Cancel\n        </button>\n        <button nui-button type=\"button\" displayStyle=\"primary\" (click)=\"actionDone(); close()\" i18n>\n            Action\n        </button>\n    </nui-dialog-footer>\n</ng-template>\n\n<ng-template  #headerButtonsContent let-close=\"close\">\n    <nui-dialog-header title=\"Dialog title\" (closed)=\"close()\">\n        <button nui-button type=\"button\" displayStyle=\"action\" icon=\"fullscreen\"></button>\n        <button nui-button type=\"button\" displayStyle=\"action\" icon=\"menu\"></button>\n    </nui-dialog-header>\n    <div class=\"dialog-body\">\n        <p>\n            <nui-select-v2 placeholder=\"Select Item\">\n                <nui-select-v2-option *ngFor=\"let item of dataset.items; let i = index;\" [value]=\"item\">\n                    <div class=\"d-flex align-items-center\">\n                        <button nui-button type=\"button\" (click)=\"confirm($event)\">boom!</button>\n                        {{item}}\n                        <div #popoverContainer id=\"nui-demo-popover-container\"></div>\n                        <nui-popover id=\"nui-demo-popover-with-container\"\n                                    [container]=\"popoverContainer\"\n                                    [template]=\"popoverWithContainerTemplate\"\n                                    i18n>\n                            Hover over me!\n                        </nui-popover>\n\n                        <nui-popover popoverTitle=\"Modal Popover\" i18n-popoverTitle\n                                    trigger=\"click\"\n                                    placement=\"right\"\n                                    [template]=\"popoverModal\"\n                                    [modal]=\"true\"\n                                    [preventClosing]=\"true\"\n                                    [closePopover]=\"closePopoverSubject\">\n                            <button nui-button type=\"button\" id=\"nui-demo-popover-modal\" i18n>\n                                Show modal popover\n                            </button>\n                        </nui-popover>\n\n                        <ng-template #popoverModal>\n                            <span i18n>A modal popover can be used to grab the user's attention.</span>\n                            <div class=\"mt-2 d-flex justify-content-end\">\n                                <button id=\"nui-demo-custom-close-popover\"\n                                        nui-button\n                                        type=\"button\"\n                                        displayStyle=\"action\"\n                                        (click)=\"closePopover()\" i18n>Close</button>\n                                <button nui-button\n                                        class=\"ml-3\"\n                                        type=\"button\"\n                                        displayStyle=\"primary\"\n                                        (click)=\"closePopover()\" i18n>Confirm</button>\n                            </div>\n                        </ng-template>\n\n                        <ng-template #popoverWithContainerTemplate i18n>\n                            I'm appended to a container!\n                        </ng-template>\n                        <nui-menu icon=\"menu\" *ngIf=\"!i\">\n                            <nui-menu-action *ngFor=\"let item of items\">\n                                {{item}}\n                            </nui-menu-action>\n                        </nui-menu>\n                    </div>\n                </nui-select-v2-option>\n            </nui-select-v2>\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam maximus faucibus bibendum.\n            Aenean feugiat interdum leo sed posuere. Etiam at pulvinar enim, nec interdum purus.\n            Duis elit metus, lobortis vitae quam a, malesuada cursus quam. Duis vel lacinia purus.\n            Maecenas eget arcu ac ante sagittis eleifend vel ut purus.\n            Pellentesque sit amet semper ipsum, eu vulputate tortor. Aliquam vitae nisi augue.\n            Duis non erat sit amet sem venenatis accumsan at ullamcorper lorem. Morbi non turpis nibh.\n        </p>\n    </div>\n    <nui-dialog-footer>\n        <button nui-button type=\"button\"\n                (click)=\"onButtonClick('Cancel')\">\n            Cancel\n        </button>\n        <button nui-button type=\"button\"\n                displayStyle=\"primary\"\n                (click)=\"onButtonClick('Action')\">\n            Action\n        </button>\n    </nui-dialog-footer>\n</ng-template>\n\n";
       /***/
     },
 
@@ -2678,7 +2705,7 @@
           }).map(function (_, i) {
             return {
               id: "value-".concat(i),
-              name: $localize(_templateObject36 || (_templateObject36 = _taggedTemplateLiteral(["Item ", ""])), i),
+              name: $localize(_templateObject37 || (_templateObject37 = _taggedTemplateLiteral(["Item ", ""])), i),
               disabled: Boolean(Math.round(Math.random()))
             };
           });
@@ -2713,7 +2740,7 @@
             var MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_DISABLED_COMBOBOX_V2_DISABLED_EXAMPLE_COMPONENT_TS_1 = goog.getMsg("Select Item");
             i18n_0 = MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_DISABLED_COMBOBOX_V2_DISABLED_EXAMPLE_COMPONENT_TS_1;
           } else {
-            i18n_0 = $localize(_templateObject37 || (_templateObject37 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
+            i18n_0 = $localize(_templateObject38 || (_templateObject38 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
           }
 
           var i18n_2;
@@ -2722,7 +2749,7 @@
             var MSG_EXTERNAL_5704424605088380008$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_DISABLED_COMBOBOX_V2_DISABLED_EXAMPLE_COMPONENT_TS_3 = goog.getMsg(" Toggle disabling\n");
             i18n_2 = MSG_EXTERNAL_5704424605088380008$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_DISABLED_COMBOBOX_V2_DISABLED_EXAMPLE_COMPONENT_TS_3;
           } else {
-            i18n_2 = $localize(_templateObject38 || (_templateObject38 = _taggedTemplateLiteral([":\u241F4fd336b63e20279fcb27a6a9db9e6c774507ccee\u241F5704424605088380008: Toggle disabling\n"])));
+            i18n_2 = $localize(_templateObject39 || (_templateObject39 = _taggedTemplateLiteral([":\u241F4fd336b63e20279fcb27a6a9db9e6c774507ccee\u241F5704424605088380008: Toggle disabling\n"])));
           }
 
           return [["placeholder", i18n_0, 1, "w-50", "d-inline-flex", 3, "isDisabled", "formControl", "displayWith"], ["combobox", ""], [3, "value", "isDisabled", 4, "ngFor", "ngForOf"], [1, "d-inline-flex", 2, "padding-left", "15px", 3, "value", "valueChange"], i18n_2, [3, "value", "isDisabled"], [1, "mr-3", 3, "nuiComboboxV2OptionHighlight"]];
@@ -2901,7 +2928,7 @@
           this.items = Array.from({
             length: 100000
           }).map(function (_, i) {
-            return $localize(_templateObject39 || (_templateObject39 = _taggedTemplateLiteral(["Item ", ""])), i);
+            return $localize(_templateObject40 || (_templateObject40 = _taggedTemplateLiteral(["Item ", ""])), i);
           });
           this.comboboxControl = new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]();
           this.filteredItems = Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["of"])(_toConsumableArray(this.items));
@@ -3001,7 +3028,7 @@
             var MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_VIRTUAL_SCROLL_COMBOBOX_V2_VIRTUAL_SCROLL_EXAMPLE_COMPONENT_TS_1 = goog.getMsg("Select Item");
             i18n_0 = MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_VIRTUAL_SCROLL_COMBOBOX_V2_VIRTUAL_SCROLL_EXAMPLE_COMPONENT_TS_1;
           } else {
-            i18n_0 = $localize(_templateObject40 || (_templateObject40 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
+            i18n_0 = $localize(_templateObject41 || (_templateObject41 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
           }
 
           return [["placeholder", i18n_0, 3, "formControl", "isTypeaheadEnabled"], ["combobox", ""], ["itemSize", "30", 3, "minBufferPx", "maxBufferPx"], [4, "cdkVirtualFor", "cdkVirtualForOf"], [1, "d-flex", "align-items-center", 3, "value"], [3, "nuiComboboxV2OptionHighlight"]];
@@ -3112,7 +3139,7 @@
         this.items = Array.from({
           length: 50
         }).map(function (_, i) {
-          return $localize(_templateObject41 || (_templateObject41 = _taggedTemplateLiteral(["Item ", ""])), i);
+          return $localize(_templateObject42 || (_templateObject42 = _taggedTemplateLiteral(["Item ", ""])), i);
         });
       };
 
@@ -3133,7 +3160,7 @@
             var MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_BASIC_COMBOBOX_V2_BASIC_EXAMPLE_COMPONENT_TS_1 = goog.getMsg("Select Item");
             i18n_0 = MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_BASIC_COMBOBOX_V2_BASIC_EXAMPLE_COMPONENT_TS_1;
           } else {
-            i18n_0 = $localize(_templateObject42 || (_templateObject42 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
+            i18n_0 = $localize(_templateObject43 || (_templateObject43 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
           }
 
           return [["placeholder", i18n_0], [3, "value", 4, "ngFor", "ngForOf"], [3, "value"]];
@@ -3397,7 +3424,7 @@
 
           this.items = [];
           this.multiselectItems = [];
-          this.itemSet = [[$localize(_templateObject43 || (_templateObject43 = _taggedTemplateLiteral(["Item 1"]))), $localize(_templateObject44 || (_templateObject44 = _taggedTemplateLiteral(["Item 2"]))), $localize(_templateObject45 || (_templateObject45 = _taggedTemplateLiteral(["Item 3"]))), $localize(_templateObject46 || (_templateObject46 = _taggedTemplateLiteral(["Item 4"])))], [$localize(_templateObject47 || (_templateObject47 = _taggedTemplateLiteral(["Item 3"]))), $localize(_templateObject48 || (_templateObject48 = _taggedTemplateLiteral(["Item 4"]))), $localize(_templateObject49 || (_templateObject49 = _taggedTemplateLiteral(["Item 5"]))), $localize(_templateObject50 || (_templateObject50 = _taggedTemplateLiteral(["Item 6"])))]];
+          this.itemSet = [[$localize(_templateObject44 || (_templateObject44 = _taggedTemplateLiteral(["Item 1"]))), $localize(_templateObject45 || (_templateObject45 = _taggedTemplateLiteral(["Item 2"]))), $localize(_templateObject46 || (_templateObject46 = _taggedTemplateLiteral(["Item 3"]))), $localize(_templateObject47 || (_templateObject47 = _taggedTemplateLiteral(["Item 4"])))], [$localize(_templateObject48 || (_templateObject48 = _taggedTemplateLiteral(["Item 3"]))), $localize(_templateObject49 || (_templateObject49 = _taggedTemplateLiteral(["Item 4"]))), $localize(_templateObject50 || (_templateObject50 = _taggedTemplateLiteral(["Item 5"]))), $localize(_templateObject51 || (_templateObject51 = _taggedTemplateLiteral(["Item 6"])))]];
           this.comboboxControl = new _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControl"]();
           this.multiselectControl = new _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControl"]();
         }
@@ -3447,7 +3474,7 @@
             var MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_OPTIONS_CHANGED_COMBOBOX_V2_OPTIONS_CHANGED_EXAMPLE_COMPONENT_TS_1 = goog.getMsg("Select Item");
             i18n_0 = MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_OPTIONS_CHANGED_COMBOBOX_V2_OPTIONS_CHANGED_EXAMPLE_COMPONENT_TS_1;
           } else {
-            i18n_0 = $localize(_templateObject51 || (_templateObject51 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
+            i18n_0 = $localize(_templateObject52 || (_templateObject52 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
           }
 
           var i18n_2;
@@ -3456,7 +3483,7 @@
             var MSG_EXTERNAL_6602753656016090774$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_OPTIONS_CHANGED_COMBOBOX_V2_OPTIONS_CHANGED_EXAMPLE_COMPONENT_TS_3 = goog.getMsg("Set items: 1, 2, 3, 4");
             i18n_2 = MSG_EXTERNAL_6602753656016090774$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_OPTIONS_CHANGED_COMBOBOX_V2_OPTIONS_CHANGED_EXAMPLE_COMPONENT_TS_3;
           } else {
-            i18n_2 = $localize(_templateObject52 || (_templateObject52 = _taggedTemplateLiteral([":\u241F88907de97f07da173cbae35e528068baaa303a9f\u241F6602753656016090774:Set items: 1, 2, 3, 4"])));
+            i18n_2 = $localize(_templateObject53 || (_templateObject53 = _taggedTemplateLiteral([":\u241F88907de97f07da173cbae35e528068baaa303a9f\u241F6602753656016090774:Set items: 1, 2, 3, 4"])));
           }
 
           var i18n_4;
@@ -3465,7 +3492,7 @@
             var MSG_EXTERNAL_3366342520245221259$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_OPTIONS_CHANGED_COMBOBOX_V2_OPTIONS_CHANGED_EXAMPLE_COMPONENT_TS_5 = goog.getMsg("Set items: 3, 4, 5, 6");
             i18n_4 = MSG_EXTERNAL_3366342520245221259$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_OPTIONS_CHANGED_COMBOBOX_V2_OPTIONS_CHANGED_EXAMPLE_COMPONENT_TS_5;
           } else {
-            i18n_4 = $localize(_templateObject53 || (_templateObject53 = _taggedTemplateLiteral([":\u241F546d7c2a5e1a2d4b895c66a8507f43a9800c1ef2\u241F3366342520245221259:Set items: 3, 4, 5, 6"])));
+            i18n_4 = $localize(_templateObject54 || (_templateObject54 = _taggedTemplateLiteral([":\u241F546d7c2a5e1a2d4b895c66a8507f43a9800c1ef2\u241F3366342520245221259:Set items: 3, 4, 5, 6"])));
           }
 
           var i18n_6;
@@ -3474,7 +3501,7 @@
             var MSG_EXTERNAL_6602753656016090774$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_OPTIONS_CHANGED_COMBOBOX_V2_OPTIONS_CHANGED_EXAMPLE_COMPONENT_TS_7 = goog.getMsg("Set items: 1, 2, 3, 4");
             i18n_6 = MSG_EXTERNAL_6602753656016090774$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_OPTIONS_CHANGED_COMBOBOX_V2_OPTIONS_CHANGED_EXAMPLE_COMPONENT_TS_7;
           } else {
-            i18n_6 = $localize(_templateObject54 || (_templateObject54 = _taggedTemplateLiteral([":\u241F88907de97f07da173cbae35e528068baaa303a9f\u241F6602753656016090774:Set items: 1, 2, 3, 4"])));
+            i18n_6 = $localize(_templateObject55 || (_templateObject55 = _taggedTemplateLiteral([":\u241F88907de97f07da173cbae35e528068baaa303a9f\u241F6602753656016090774:Set items: 1, 2, 3, 4"])));
           }
 
           var i18n_8;
@@ -3483,7 +3510,7 @@
             var MSG_EXTERNAL_3366342520245221259$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_OPTIONS_CHANGED_COMBOBOX_V2_OPTIONS_CHANGED_EXAMPLE_COMPONENT_TS_9 = goog.getMsg("Set items: 3, 4, 5, 6");
             i18n_8 = MSG_EXTERNAL_3366342520245221259$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_OPTIONS_CHANGED_COMBOBOX_V2_OPTIONS_CHANGED_EXAMPLE_COMPONENT_TS_9;
           } else {
-            i18n_8 = $localize(_templateObject55 || (_templateObject55 = _taggedTemplateLiteral([":\u241F546d7c2a5e1a2d4b895c66a8507f43a9800c1ef2\u241F3366342520245221259:Set items: 3, 4, 5, 6"])));
+            i18n_8 = $localize(_templateObject56 || (_templateObject56 = _taggedTemplateLiteral([":\u241F546d7c2a5e1a2d4b895c66a8507f43a9800c1ef2\u241F3366342520245221259:Set items: 3, 4, 5, 6"])));
           }
 
           return [["placeholder", i18n_0, 3, "formControl"], ["combobox", ""], [3, "value", 4, "ngFor", "ngForOf"], ["nui-button", "", "type", "button", "displayStyle", "action", 3, "click"], i18n_2, i18n_4, ["size", "medium"], [3, "formControl", "multiselect"], ["multiselect", ""], ["selectedItems", ""], ["nuiMarkAsSelectedItem", "", "class", "ml-2", "closeButtonTooltip", "Remove", 3, "item", "remove", "mouseup", 4, "ngFor", "ngForOf"], i18n_6, i18n_8, [3, "value"], [3, "nuiComboboxV2OptionHighlight"], ["nuiMarkAsSelectedItem", "", "closeButtonTooltip", "Remove", 1, "ml-2", 3, "item", "remove", "mouseup"]];
@@ -4026,7 +4053,7 @@
         this.items = Array.from({
           length: 100
         }).map(function (_, i) {
-          return $localize(_templateObject56 || (_templateObject56 = _taggedTemplateLiteral(["Item ", ""])), i);
+          return $localize(_templateObject57 || (_templateObject57 = _taggedTemplateLiteral(["Item ", ""])), i);
         });
         this.config = {
           panelClass: [_nova_ui_bits__WEBPACK_IMPORTED_MODULE_0__["OVERLAY_WITH_POPUP_STYLES_CLASS"], "nui-overlay-styling-demo-custom-class"]
@@ -4049,7 +4076,7 @@
             var MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_STYLING_COMBOBOX_V2_STYLING_EXAMPLE_COMPONENT_TS_1 = goog.getMsg("Select Item");
             i18n_0 = MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_STYLING_COMBOBOX_V2_STYLING_EXAMPLE_COMPONENT_TS_1;
           } else {
-            i18n_0 = $localize(_templateObject57 || (_templateObject57 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
+            i18n_0 = $localize(_templateObject58 || (_templateObject58 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
           }
 
           return [["placeholder", i18n_0, 2, "width", "50%", 3, "overlayConfig"], ["combobox", ""], [3, "value", 4, "ngFor", "ngForOf"], [3, "value"], [3, "nuiComboboxV2OptionHighlight"]];
@@ -4300,7 +4327,7 @@
           this.options = Array.from({
             length: 3
           }).map(function (_, i) {
-            return $localize(_templateObject58 || (_templateObject58 = _taggedTemplateLiteral(["Item ", ""])), i);
+            return $localize(_templateObject59 || (_templateObject59 = _taggedTemplateLiteral(["Item ", ""])), i);
           });
           this.comboboxControl = new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]();
         }
@@ -4345,7 +4372,7 @@
             var MSG_EXTERNAL_8369340007679658038$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_CREATE_OPTION_MULTISELECT_COMBOBOX_V2_CREATE_OPTION_MULTISELECT_EXAMPLE_COMPONENT_TS__1 = goog.getMsg("No other existing item available");
             i18n_0 = MSG_EXTERNAL_8369340007679658038$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_CREATE_OPTION_MULTISELECT_COMBOBOX_V2_CREATE_OPTION_MULTISELECT_EXAMPLE_COMPONENT_TS__1;
           } else {
-            i18n_0 = $localize(_templateObject59 || (_templateObject59 = _taggedTemplateLiteral([":\u241Fa13fa43d609e19a3057da12ceaba187af03aca4c\u241F8369340007679658038:No other existing item available"])));
+            i18n_0 = $localize(_templateObject60 || (_templateObject60 = _taggedTemplateLiteral([":\u241Fa13fa43d609e19a3057da12ceaba187af03aca4c\u241F8369340007679658038:No other existing item available"])));
           }
 
           return [[3, "placeholder", "formControl", "multiselect"], ["combobox", ""], ["selectedItems", ""], ["nuiMarkAsSelectedItem", "", "class", "ml-2", "closeButtonTooltip", "Remove", 3, "item", "remove", "mouseup", 4, "ngFor", "ngForOf"], ["class", "d-flex align-items-center", 3, "value", 4, "ngFor", "ngForOf"], ["class", "nui-combobox-v2__create-option", 3, "click", 4, "ngIf"], ["class", "nui-combobox-v2__empty-search", 4, "ngIf"], ["nuiMarkAsSelectedItem", "", "closeButtonTooltip", "Remove", 1, "ml-2", 3, "item", "remove", "mouseup"], [1, "d-flex", "align-items-center", 3, "value"], [3, "nuiComboboxV2OptionHighlight"], [1, "nui-combobox-v2__create-option", 3, "click"], [1, "nui-combobox-v2__empty-search"], i18n_0];
@@ -4491,7 +4518,7 @@
         this.items = Array.from({
           length: 100
         }).map(function (_, i) {
-          return $localize(_templateObject60 || (_templateObject60 = _taggedTemplateLiteral(["Item ", ""])), i);
+          return $localize(_templateObject61 || (_templateObject61 = _taggedTemplateLiteral(["Item ", ""])), i);
         });
         this.overlayConfig = {
           width: 300,
@@ -4518,7 +4545,7 @@
             var MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_OVERLAY_CONFIG_COMBOBOX_V2_OVERLAY_CONFIG_EXAMPLE_COMPONENT_TS_1 = goog.getMsg("Select Item");
             i18n_0 = MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_OVERLAY_CONFIG_COMBOBOX_V2_OVERLAY_CONFIG_EXAMPLE_COMPONENT_TS_1;
           } else {
-            i18n_0 = $localize(_templateObject61 || (_templateObject61 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
+            i18n_0 = $localize(_templateObject62 || (_templateObject62 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
           }
 
           return [["placeholder", i18n_0, 3, "formControl", "overlayConfig", "syncWidth"], ["combobox", ""], [3, "value", 4, "ngFor", "ngForOf"], [3, "value"], [3, "nuiComboboxV2OptionHighlight"]];
@@ -4773,7 +4800,7 @@
           this.items = Array.from({
             length: 50
           }).map(function (_, i) {
-            return $localize(_templateObject62 || (_templateObject62 = _taggedTemplateLiteral(["Item ", ""])), i);
+            return $localize(_templateObject63 || (_templateObject63 = _taggedTemplateLiteral(["Item ", ""])), i);
           });
           this.comboboxControl = new _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControl"]();
         }
@@ -4805,7 +4832,7 @@
             var MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_SETTING_VALUE_COMBOBOX_V2_SETTING_VALUE_EXAMPLE_COMPONENT_TS_1 = goog.getMsg("Select Item");
             i18n_0 = MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_SETTING_VALUE_COMBOBOX_V2_SETTING_VALUE_EXAMPLE_COMPONENT_TS_1;
           } else {
-            i18n_0 = $localize(_templateObject63 || (_templateObject63 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
+            i18n_0 = $localize(_templateObject64 || (_templateObject64 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
           }
 
           var i18n_2;
@@ -4814,7 +4841,7 @@
             var MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_SETTING_VALUE_COMBOBOX_V2_SETTING_VALUE_EXAMPLE_COMPONENT_TS_3 = goog.getMsg("Select Item");
             i18n_2 = MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_SETTING_VALUE_COMBOBOX_V2_SETTING_VALUE_EXAMPLE_COMPONENT_TS_3;
           } else {
-            i18n_2 = $localize(_templateObject64 || (_templateObject64 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
+            i18n_2 = $localize(_templateObject65 || (_templateObject65 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
           }
 
           return [["placeholder", i18n_0, 3, "value"], [3, "value", 4, "ngFor", "ngForOf"], ["placeholder", i18n_2, 3, "formControl"], [3, "value"]];
@@ -5025,10 +5052,10 @@
           this.items = Array.from({
             length: 100
           }).map(function (_, i) {
-            return $localize(_templateObject65 || (_templateObject65 = _taggedTemplateLiteral(["Item ", ""])), i);
+            return $localize(_templateObject66 || (_templateObject66 = _taggedTemplateLiteral(["Item ", ""])), i);
           });
           this.comboboxControl = new _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControl"]();
-          this.placeholder = $localize(_templateObject66 || (_templateObject66 = _taggedTemplateLiteral(["Select Item"])));
+          this.placeholder = $localize(_templateObject67 || (_templateObject67 = _taggedTemplateLiteral(["Select Item"])));
           this.destroy$ = new rxjs__WEBPACK_IMPORTED_MODULE_1__["Subject"]();
         }
 
@@ -5048,7 +5075,7 @@
         }, {
           key: "setModel",
           value: function setModel() {
-            this.comboboxControl.setValue([$localize(_templateObject67 || (_templateObject67 = _taggedTemplateLiteral(["Item 10"]))), $localize(_templateObject68 || (_templateObject68 = _taggedTemplateLiteral(["Item 12"]))), $localize(_templateObject69 || (_templateObject69 = _taggedTemplateLiteral(["Item 14"])))]);
+            this.comboboxControl.setValue([$localize(_templateObject68 || (_templateObject68 = _taggedTemplateLiteral(["Item 10"]))), $localize(_templateObject69 || (_templateObject69 = _taggedTemplateLiteral(["Item 12"]))), $localize(_templateObject70 || (_templateObject70 = _taggedTemplateLiteral(["Item 14"])))]);
           }
         }]);
 
@@ -5072,7 +5099,7 @@
             var MSG_EXTERNAL_103164820180529136$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_MULTISELECT_COMBOBOX_V2_MULTISELECT_EXAMPLE_COMPONENT_TS_1 = goog.getMsg("Set model");
             i18n_0 = MSG_EXTERNAL_103164820180529136$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_MULTISELECT_COMBOBOX_V2_MULTISELECT_EXAMPLE_COMPONENT_TS_1;
           } else {
-            i18n_0 = $localize(_templateObject70 || (_templateObject70 = _taggedTemplateLiteral([":\u241Fb0a98d3d9e4cac8d58b407e56eeaaf67681e9dfb\u241F103164820180529136:Set model"])));
+            i18n_0 = $localize(_templateObject71 || (_templateObject71 = _taggedTemplateLiteral([":\u241Fb0a98d3d9e4cac8d58b407e56eeaaf67681e9dfb\u241F103164820180529136:Set model"])));
           }
 
           return [[3, "placeholder", "formControl", "multiselect"], ["combobox", ""], ["selectedItems", ""], ["nuiMarkAsSelectedItem", "", "class", "ml-2", "closeButtonTooltip", "Remove", 3, "item", "remove", "mouseup", 4, "ngFor", "ngForOf"], [3, "value", 4, "ngFor", "ngForOf"], ["nui-button", "", "type", "button", "displayStyle", "action", 3, "click"], i18n_0, ["nuiMarkAsSelectedItem", "", "closeButtonTooltip", "Remove", 1, "ml-2", 3, "item", "remove", "mouseup"], [3, "value"], [1, "mr-3", 3, "nuiComboboxV2OptionHighlight"]];
@@ -5213,7 +5240,7 @@
           }).map(function (_, i) {
             return {
               id: "value-".concat(i),
-              name: $localize(_templateObject71 || (_templateObject71 = _taggedTemplateLiteral(["Item ", ""])), i)
+              name: $localize(_templateObject72 || (_templateObject72 = _taggedTemplateLiteral(["Item ", ""])), i)
             };
           });
           this.comboboxControl = new _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControl"]();
@@ -5265,7 +5292,7 @@
             var MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_CUSTOM_TYPEAHEAD_COMBOBOX_V2_CUSTOM_TYPEAHEAD_EXAMPLE_COMPONENT_TS_1 = goog.getMsg("Select Item");
             i18n_0 = MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_CUSTOM_TYPEAHEAD_COMBOBOX_V2_CUSTOM_TYPEAHEAD_EXAMPLE_COMPONENT_TS_1;
           } else {
-            i18n_0 = $localize(_templateObject72 || (_templateObject72 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
+            i18n_0 = $localize(_templateObject73 || (_templateObject73 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
           }
 
           return [["placeholder", i18n_0, 3, "formControl", "displayWith", "isTypeaheadEnabled"], ["combobox", ""], [3, "value", 4, "ngFor", "ngForOf"], [3, "value"], [3, "nuiComboboxV2OptionHighlight"]];
@@ -5528,7 +5555,7 @@
           this.items = Array.from({
             length: 50
           }).map(function (_, i) {
-            return $localize(_templateObject73 || (_templateObject73 = _taggedTemplateLiteral(["Item ", ""])), i);
+            return $localize(_templateObject74 || (_templateObject74 = _taggedTemplateLiteral(["Item ", ""])), i);
           });
           this.destroy$ = new rxjs__WEBPACK_IMPORTED_MODULE_1__["Subject"]();
         }
@@ -5581,7 +5608,7 @@
             var MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_GETTING_VALUE_COMBOBOX_V2_GETTING_VALUE_EXAMPLE_COMPONENT_TS_3 = goog.getMsg("Select Item");
             i18n_2 = MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_GETTING_VALUE_COMBOBOX_V2_GETTING_VALUE_EXAMPLE_COMPONENT_TS_3;
           } else {
-            i18n_2 = $localize(_templateObject74 || (_templateObject74 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
+            i18n_2 = $localize(_templateObject75 || (_templateObject75 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
           }
 
           var i18n_4;
@@ -5590,7 +5617,7 @@
             var MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_GETTING_VALUE_COMBOBOX_V2_GETTING_VALUE_EXAMPLE_COMPONENT_TS_5 = goog.getMsg("Select Item");
             i18n_4 = MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_GETTING_VALUE_COMBOBOX_V2_GETTING_VALUE_EXAMPLE_COMPONENT_TS_5;
           } else {
-            i18n_4 = $localize(_templateObject75 || (_templateObject75 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
+            i18n_4 = $localize(_templateObject76 || (_templateObject76 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
           }
 
           var i18n_6;
@@ -5599,7 +5626,7 @@
             var MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_GETTING_VALUE_COMBOBOX_V2_GETTING_VALUE_EXAMPLE_COMPONENT_TS_7 = goog.getMsg("Select Item");
             i18n_6 = MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_GETTING_VALUE_COMBOBOX_V2_GETTING_VALUE_EXAMPLE_COMPONENT_TS_7;
           } else {
-            i18n_6 = $localize(_templateObject76 || (_templateObject76 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
+            i18n_6 = $localize(_templateObject77 || (_templateObject77 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
           }
 
           return [["placeholder", i18n_2], ["comboboxValueExample", ""], [3, "value", 4, "ngFor", "ngForOf"], [1, "my-3"], ["placeholder", i18n_4], ["comboboxValueSelectedExample", ""], ["placeholder", i18n_6], ["comboboxValueChangedExample", ""], [3, "value"]];
@@ -5834,7 +5861,7 @@
           this.items = Array.from({
             length: 100
           }).map(function (_, i) {
-            return $localize(_templateObject77 || (_templateObject77 = _taggedTemplateLiteral(["Item ", ""])), i);
+            return $localize(_templateObject78 || (_templateObject78 = _taggedTemplateLiteral(["Item ", ""])), i);
           });
         }
 
@@ -5867,7 +5894,7 @@
             var MSG_EXTERNAL_4057674572904126532$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_REACTIVE_FORM_FIELD_COMBOBOX_V2_REACTIVE_FORM_FIELD_EXAMPLE_COMPONENT_TS_1 = goog.getMsg("Combobox");
             i18n_0 = MSG_EXTERNAL_4057674572904126532$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_REACTIVE_FORM_FIELD_COMBOBOX_V2_REACTIVE_FORM_FIELD_EXAMPLE_COMPONENT_TS_1;
           } else {
-            i18n_0 = $localize(_templateObject78 || (_templateObject78 = _taggedTemplateLiteral([":\u241F87214bc47494038695c4ef242cf20b73af4cd899\u241F4057674572904126532:Combobox"])));
+            i18n_0 = $localize(_templateObject79 || (_templateObject79 = _taggedTemplateLiteral([":\u241F87214bc47494038695c4ef242cf20b73af4cd899\u241F4057674572904126532:Combobox"])));
           }
 
           var i18n_2;
@@ -5876,7 +5903,7 @@
             var MSG_EXTERNAL_3367498155686111134$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_REACTIVE_FORM_FIELD_COMBOBOX_V2_REACTIVE_FORM_FIELD_EXAMPLE_COMPONENT_TS_3 = goog.getMsg("Some pretty long text with hint");
             i18n_2 = MSG_EXTERNAL_3367498155686111134$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_REACTIVE_FORM_FIELD_COMBOBOX_V2_REACTIVE_FORM_FIELD_EXAMPLE_COMPONENT_TS_3;
           } else {
-            i18n_2 = $localize(_templateObject79 || (_templateObject79 = _taggedTemplateLiteral([":\u241Fe157d4486793f15c2f27fb0f1011c4e2781f6936\u241F3367498155686111134:Some pretty long text with hint"])));
+            i18n_2 = $localize(_templateObject80 || (_templateObject80 = _taggedTemplateLiteral([":\u241Fe157d4486793f15c2f27fb0f1011c4e2781f6936\u241F3367498155686111134:Some pretty long text with hint"])));
           }
 
           var i18n_4;
@@ -5885,7 +5912,7 @@
             var MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_REACTIVE_FORM_FIELD_COMBOBOX_V2_REACTIVE_FORM_FIELD_EXAMPLE_COMPONENT_TS_5 = goog.getMsg("Select Item");
             i18n_4 = MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_REACTIVE_FORM_FIELD_COMBOBOX_V2_REACTIVE_FORM_FIELD_EXAMPLE_COMPONENT_TS_5;
           } else {
-            i18n_4 = $localize(_templateObject80 || (_templateObject80 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
+            i18n_4 = $localize(_templateObject81 || (_templateObject81 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
           }
 
           var i18n_6;
@@ -5894,7 +5921,7 @@
             var MSG_EXTERNAL_3149237552980170786$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_REACTIVE_FORM_FIELD_COMBOBOX_V2_REACTIVE_FORM_FIELD_EXAMPLE_COMPONENT_TS_7 = goog.getMsg(" This field is required ");
             i18n_6 = MSG_EXTERNAL_3149237552980170786$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_REACTIVE_FORM_FIELD_COMBOBOX_V2_REACTIVE_FORM_FIELD_EXAMPLE_COMPONENT_TS_7;
           } else {
-            i18n_6 = $localize(_templateObject81 || (_templateObject81 = _taggedTemplateLiteral([":\u241Fedc4fcd264a4bd6edce2df03111f9dcd9e32a620\u241F3149237552980170786: This field is required "])));
+            i18n_6 = $localize(_templateObject82 || (_templateObject82 = _taggedTemplateLiteral([":\u241Fedc4fcd264a4bd6edce2df03111f9dcd9e32a620\u241F3149237552980170786: This field is required "])));
           }
 
           return [[1, "nui-edge-definer", 3, "formGroup"], ["caption", i18n_0, "hint", i18n_2, "info", "text", 3, "control"], ["placeholder", i18n_4, "formControlName", "combobox"], ["combobox", ""], [3, "value", 4, "ngFor", "ngForOf"], ["for", "required"], i18n_6, [3, "value"], [3, "nuiComboboxV2OptionHighlight"]];
@@ -6110,7 +6137,7 @@
           this.options = Array.from({
             length: 3
           }).map(function (_, i) {
-            return $localize(_templateObject82 || (_templateObject82 = _taggedTemplateLiteral(["Item ", ""])), i);
+            return $localize(_templateObject83 || (_templateObject83 = _taggedTemplateLiteral(["Item ", ""])), i);
           });
           this.comboboxControl = new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]();
         }
@@ -6159,7 +6186,7 @@
             var MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_CREATE_OPTION_COMBOBOX_V2_CREATE_OPTION_EXAMPLE_COMPONENT_TS_2 = goog.getMsg("Select Item");
             i18n_1 = MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_CREATE_OPTION_COMBOBOX_V2_CREATE_OPTION_EXAMPLE_COMPONENT_TS_2;
           } else {
-            i18n_1 = $localize(_templateObject83 || (_templateObject83 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
+            i18n_1 = $localize(_templateObject84 || (_templateObject84 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
           }
 
           var i18n_3;
@@ -6168,7 +6195,7 @@
             var MSG_EXTERNAL_8369340007679658038$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_CREATE_OPTION_COMBOBOX_V2_CREATE_OPTION_EXAMPLE_COMPONENT_TS__4 = goog.getMsg("No other existing item available");
             i18n_3 = MSG_EXTERNAL_8369340007679658038$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_CREATE_OPTION_COMBOBOX_V2_CREATE_OPTION_EXAMPLE_COMPONENT_TS__4;
           } else {
-            i18n_3 = $localize(_templateObject84 || (_templateObject84 = _taggedTemplateLiteral([":\u241Fa13fa43d609e19a3057da12ceaba187af03aca4c\u241F8369340007679658038:No other existing item available"])));
+            i18n_3 = $localize(_templateObject85 || (_templateObject85 = _taggedTemplateLiteral([":\u241Fa13fa43d609e19a3057da12ceaba187af03aca4c\u241F8369340007679658038:No other existing item available"])));
           }
 
           return [["placeholder", i18n_1, 3, "formControl"], ["combobox", ""], [3, "value", 4, "ngFor", "ngForOf"], ["class", "nui-combobox-v2__create-option", 3, "click", 4, "ngIf"], ["class", "nui-combobox-v2__empty-search", 4, "ngIf"], [3, "value"], [1, "d-flex", "align-items-center"], [3, "nuiComboboxV2OptionHighlight"], [1, "nui-combobox-v2__create-option", 3, "click"], [1, "nui-combobox-v2__empty-search"], i18n_3];
@@ -8230,13 +8257,13 @@
             length: 10
           }).map(function (_, i) {
             return {
-              header: $localize(_templateObject85 || (_templateObject85 = _taggedTemplateLiteral(["Header line ", ""])), i + 1),
+              header: $localize(_templateObject86 || (_templateObject86 = _taggedTemplateLiteral(["Header line ", ""])), i + 1),
               items: Array.from({
                 length: getRandomNumberTo(5)
               }).map(function (v, n) {
                 return {
                   id: "value-".concat(i),
-                  name: $localize(_templateObject86 || (_templateObject86 = _taggedTemplateLiteral(["Item ", ""])), n + 1)
+                  name: $localize(_templateObject87 || (_templateObject87 = _taggedTemplateLiteral(["Item ", ""])), n + 1)
                 };
               })
             };
@@ -8271,7 +8298,7 @@
             var MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_GROUPED_OPTIONS_COMBOBOX_V2_GROUPED_OPTIONS_EXAMPLE_COMPONENT_TS_1 = goog.getMsg("Select Item");
             i18n_0 = MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_GROUPED_OPTIONS_COMBOBOX_V2_GROUPED_OPTIONS_EXAMPLE_COMPONENT_TS_1;
           } else {
-            i18n_0 = $localize(_templateObject87 || (_templateObject87 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
+            i18n_0 = $localize(_templateObject88 || (_templateObject88 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
           }
 
           return [["placeholder", i18n_0, 3, "formControl", "displayWith"], ["combobox", ""], [4, "ngFor", "ngForOf"], [1, "nui-select-v2-option-group--header"], [3, "value", 4, "ngFor", "ngForOf"], ["size", "extra-small", 4, "ngIf"], [3, "value"], [3, "nuiComboboxV2OptionHighlight"], ["size", "extra-small"]];
@@ -8441,7 +8468,7 @@
         this.items = Array.from({
           length: 50
         }).map(function (_, i) {
-          return $localize(_templateObject88 || (_templateObject88 = _taggedTemplateLiteral(["Item ", ""])), i);
+          return $localize(_templateObject89 || (_templateObject89 = _taggedTemplateLiteral(["Item ", ""])), i);
         });
         this.comboboxControl = new _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControl"]();
       };
@@ -8463,7 +8490,7 @@
             var MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_TYPEAHEAD_COMBOBOX_V2_TYPEAHEAD_EXAMPLE_COMPONENT_TS_1 = goog.getMsg("Select Item");
             i18n_0 = MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_TYPEAHEAD_COMBOBOX_V2_TYPEAHEAD_EXAMPLE_COMPONENT_TS_1;
           } else {
-            i18n_0 = $localize(_templateObject89 || (_templateObject89 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
+            i18n_0 = $localize(_templateObject90 || (_templateObject90 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
           }
 
           return [["placeholder", i18n_0, 3, "formControl"], [3, "value", 4, "ngFor", "ngForOf"], [3, "value"], [3, "nuiComboboxV2OptionHighlight"]];
@@ -8611,7 +8638,7 @@
           }).map(function (_, i) {
             return {
               id: "value-".concat(i),
-              name: $localize(_templateObject90 || (_templateObject90 = _taggedTemplateLiteral(["Item ", ""])), i),
+              name: $localize(_templateObject91 || (_templateObject91 = _taggedTemplateLiteral(["Item ", ""])), i),
               icon: _this8.getRandomIcon()
             };
           });
@@ -8650,7 +8677,7 @@
             var MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_CUSTOMIZE_OPTIONS_COMBOBOX_V2_CUSTOMIZE_OPTIONS_EXAMPLE_COMPONENT_TS_1 = goog.getMsg("Select Item");
             i18n_0 = MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_CUSTOMIZE_OPTIONS_COMBOBOX_V2_CUSTOMIZE_OPTIONS_EXAMPLE_COMPONENT_TS_1;
           } else {
-            i18n_0 = $localize(_templateObject91 || (_templateObject91 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
+            i18n_0 = $localize(_templateObject92 || (_templateObject92 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
           }
 
           return [["placeholder", i18n_0, 3, "formControl", "displayWith"], ["combobox", ""], [3, "value", 4, "ngFor", "ngForOf"], [3, "value"], [1, "mr-3", 3, "nuiComboboxV2OptionHighlight"], [3, "icon"]];
@@ -8834,7 +8861,7 @@
         this.items = Array.from({
           length: 100
         }).map(function (_, i) {
-          return $localize(_templateObject92 || (_templateObject92 = _taggedTemplateLiteral(["Item ", ""])), i);
+          return $localize(_templateObject93 || (_templateObject93 = _taggedTemplateLiteral(["Item ", ""])), i);
         });
       };
 
@@ -8855,7 +8882,7 @@
             var MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_INLINE_COMBOBOX_V2_INLINE_EXAMPLE_COMPONENT_TS_1 = goog.getMsg("Select Item");
             i18n_0 = MSG_EXTERNAL_8325381706328570325$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_INLINE_COMBOBOX_V2_INLINE_EXAMPLE_COMPONENT_TS_1;
           } else {
-            i18n_0 = $localize(_templateObject93 || (_templateObject93 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
+            i18n_0 = $localize(_templateObject94 || (_templateObject94 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
           }
 
           return [["placeholder", i18n_0, 1, "d-inline-flex", 2, "margin-right", "15px"], ["combobox", ""], [3, "value", 4, "ngFor", "ngForOf"], ["placeholder", "Select Item", 1, "d-inline-flex"], ["combobox2", ""], [3, "value"], [1, "mr-3", 3, "nuiComboboxV2OptionHighlight"]];
@@ -9364,10 +9391,10 @@
           this.items = Array.from({
             length: 100
           }).map(function (_, i) {
-            return $localize(_templateObject94 || (_templateObject94 = _taggedTemplateLiteral(["Item ", ""])), i);
+            return $localize(_templateObject95 || (_templateObject95 = _taggedTemplateLiteral(["Item ", ""])), i);
           });
           this.comboboxControl = new _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControl"]();
-          this.placeholder = $localize(_templateObject95 || (_templateObject95 = _taggedTemplateLiteral(["Select Item"])));
+          this.placeholder = $localize(_templateObject96 || (_templateObject96 = _taggedTemplateLiteral(["Select Item"])));
           this.handleClicksOutside = false;
           this.destroy$ = new rxjs__WEBPACK_IMPORTED_MODULE_2__["Subject"]();
         }
@@ -9454,7 +9481,7 @@
             var MSG_EXTERNAL_7190911341416824783$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_CUSTOM_CONTROL_COMBOBOX_V2_CUSTOM_CONTROL_EXAMPLE_COMPONENT_TS_2 = goog.getMsg(" Close on focus-out ");
             i18n_1 = MSG_EXTERNAL_7190911341416824783$$DEMO_SRC_COMPONENTS_DEMO_COMBOBOX_V2_COMBOBOX_V2_CUSTOM_CONTROL_COMBOBOX_V2_CUSTOM_CONTROL_EXAMPLE_COMPONENT_TS_2;
           } else {
-            i18n_1 = $localize(_templateObject96 || (_templateObject96 = _taggedTemplateLiteral([":\u241F5a845ece889b921123b84c73a01faa22aa7a0eac\u241F7190911341416824783: Close on focus-out "])));
+            i18n_1 = $localize(_templateObject97 || (_templateObject97 = _taggedTemplateLiteral([":\u241F5a845ece889b921123b84c73a01faa22aa7a0eac\u241F7190911341416824783: Close on focus-out "])));
           }
 
           return [[3, "placeholder", "formControl", "isTypeaheadEnabled", "multiselect", "manualDropdownControl"], ["combobox", ""], ["selectedItems", ""], ["nuiMarkAsSelectedItem", "", "class", "ml-2", "closeButtonTooltip", "Remove", 3, "item", "remove", 4, "ngFor", "ngForOf"], [3, "value", 4, "ngFor", "ngForOf"], [1, "ml-4", "d-flex", "w-75"], ["nui-button", "", "type", "button", 1, "mr-3", 3, "click"], ["show", ""], ["hide", ""], ["toggle", ""], [1, "d-flex", "align-items-center"], [3, "value", "valueChange"], i18n_1, ["nuiMarkAsSelectedItem", "", "closeButtonTooltip", "Remove", 1, "ml-2", 3, "item", "remove"], [3, "value"], [3, "nuiComboboxV2OptionHighlight"]];

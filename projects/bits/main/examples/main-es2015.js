@@ -24909,7 +24909,7 @@ class ComboboxV2Component extends _base_select_v2__WEBPACK_IMPORTED_MODULE_5__["
             this.dropdown.hide$.subscribe(() => {
                 const lastSelectedOption = this.getLastSelectedOption();
                 if (lastSelectedOption) {
-                    this.setInputValue(lastSelectedOption.viewValue);
+                    this.setInputValue(lastSelectedOption.value);
                     this.filterItems(this.inputValue.toString());
                     this.cdRef.markForCheck();
                 }
