@@ -23878,10 +23878,10 @@ SearchComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCo
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MenuKeyControlService", function() { return MenuKeyControlService; });
 /* harmony import */ var _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/cdk/a11y */ "u47x");
-/* harmony import */ var _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/cdk/keycodes */ "FtGj");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var lodash_isNull__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lodash/isNull */ "6qam");
-/* harmony import */ var lodash_isNull__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(lodash_isNull__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var lodash_isNull__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash/isNull */ "6qam");
+/* harmony import */ var lodash_isNull__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_isNull__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../constants */ "jxKE");
 /* harmony import */ var _menu_menu_item_menu_action_menu_action_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../menu/menu-item/menu-action/menu-action.component */ "6sIJ");
 /* harmony import */ var _menu_item_menu_item_menu_item_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./menu-item/menu-item/menu-item.component */ "fNSn");
 
@@ -23891,8 +23891,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 class MenuKeyControlService {
-    constructor() {
+    constructor(live) {
+        this.live = live;
         this.keyControlItemsSource = false;
     }
     set scrollContainer(container) {
@@ -23913,7 +23915,14 @@ class MenuKeyControlService {
         // when opening menu key 'focus' should disappear from items
         if (this.menuOpenListener) {
             this.menuOpenListenerSubscription = this.menuOpenListener.subscribe(() => {
+                // Uncomment in the scope of NUI-6104
+                // this.keyboardEventsManager.setFirstItemActive();
+                // Remove this in the scope of NUI-6104 in favor of the line above
                 this.keyboardEventsManager.setActiveItem(-1);
+                this.live.announce(`
+                    ${this.keyControlItemsSource ? this.menuPopup.menuItems.length : this.menuItems.length} menu items available.`);
+                // Uncomment in the scope of NUI-6104 and adjust this to be the part of the announcer's string above
+                // Active item ${this.keyboardEventsManager?.activeItem?.menuItem.nativeElement.innerText}.`);
             });
         }
     }
@@ -23947,34 +23956,41 @@ class MenuKeyControlService {
         return this.keyboardEventsManager.activeItem instanceof (_menu_menu_item_menu_action_menu_action_component__WEBPACK_IMPORTED_MODULE_4__["MenuActionComponent"] || _menu_item_menu_item_menu_item_component__WEBPACK_IMPORTED_MODULE_5__["MenuItemComponent"]);
     }
     hasActiveItem() {
-        if (lodash_isNull__WEBPACK_IMPORTED_MODULE_3___default()(this.keyboardEventsManager.activeItem) || lodash_isNull__WEBPACK_IMPORTED_MODULE_3___default()(this.keyboardEventsManager.activeItemIndex)) {
+        if (lodash_isNull__WEBPACK_IMPORTED_MODULE_2___default()(this.keyboardEventsManager.activeItem) || lodash_isNull__WEBPACK_IMPORTED_MODULE_2___default()(this.keyboardEventsManager.activeItemIndex)) {
             return false;
         }
         return this.keyboardEventsManager.activeItem && this.keyboardEventsManager.activeItemIndex >= 0;
     }
     handleOpenKeyDown(event) {
-        var _a;
-        if (event.keyCode === _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_1__["DOWN_ARROW"] || event.keyCode === _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_1__["UP_ARROW"]) {
+        var _a, _b, _c, _d;
+        if (event.code === _constants__WEBPACK_IMPORTED_MODULE_3__["KEYBOARD_CODE"].ARROW_DOWN || event.code === _constants__WEBPACK_IMPORTED_MODULE_3__["KEYBOARD_CODE"].ARROW_UP) {
             // passing the event to key manager so we get a change fired
             this.keyboardEventsManager.onKeydown(event);
+            this.announceCurrentItem();
         }
-        if (event.keyCode === _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_1__["PAGE_UP"]) {
+        if (event.code === _constants__WEBPACK_IMPORTED_MODULE_3__["KEYBOARD_CODE"].PAGE_UP || event.code === _constants__WEBPACK_IMPORTED_MODULE_3__["KEYBOARD_CODE"].HOME || (event.metaKey && event.code === _constants__WEBPACK_IMPORTED_MODULE_3__["KEYBOARD_CODE"].ARROW_UP)) {
             event.preventDefault();
             this.keyboardEventsManager.onKeydown(event);
             this.keyboardEventsManager.setFirstItemActive();
+            this.announceCurrentItem();
         }
-        if (event.keyCode === _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_1__["PAGE_DOWN"]) {
+        if (event.code === _constants__WEBPACK_IMPORTED_MODULE_3__["KEYBOARD_CODE"].PAGE_DOWN || event.code === _constants__WEBPACK_IMPORTED_MODULE_3__["KEYBOARD_CODE"].END || (event.metaKey && event.code === _constants__WEBPACK_IMPORTED_MODULE_3__["KEYBOARD_CODE"].ARROW_DOWN)) {
             event.preventDefault();
             this.keyboardEventsManager.onKeydown(event);
             this.keyboardEventsManager.setLastItemActive();
+            this.announceCurrentItem();
         }
+        // This keeps the active item visible within the visible area of the menu popup. In case there are disabled items in the list,
+        // this scrolls down to the nearest enabled item. Otherwise, the active item will "jump over" the disabled items and remain
+        // outside of the visible edge of the list.
+        (_c = (_b = (_a = this.keyboardEventsManager.activeItem) === null || _a === void 0 ? void 0 : _a.menuItem) === null || _b === void 0 ? void 0 : _b.nativeElement) === null || _c === void 0 ? void 0 : _c.scrollIntoView({ block: "nearest" });
         // prevent closing on enter
-        if (!this.hasActiveItem() && event.keyCode === _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_1__["ENTER"]) {
+        if (!this.hasActiveItem() && event.code === _constants__WEBPACK_IMPORTED_MODULE_3__["KEYBOARD_CODE"].ENTER) {
             event.preventDefault();
         }
-        if (this.hasActiveItem() && event.keyCode === _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_1__["ENTER"]) {
+        if (this.hasActiveItem() && event.code === _constants__WEBPACK_IMPORTED_MODULE_3__["KEYBOARD_CODE"].ENTER) {
             // perform action in menu item(select, switch, check etc).
-            (_a = this.keyboardEventsManager.activeItem) === null || _a === void 0 ? void 0 : _a.doAction(event);
+            (_d = this.keyboardEventsManager.activeItem) === null || _d === void 0 ? void 0 : _d.doAction(event);
             // closing items only if they are MenuAction or MenuItem, others should not close popup
             if (!this.shouldCloseOnEnter()) {
                 event.preventDefault();
@@ -23982,7 +23998,7 @@ class MenuKeyControlService {
             }
             this.popup.toggleOpened(event);
         }
-        if (event.keyCode === _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_1__["TAB"] || event.keyCode === _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_1__["ESCAPE"]) {
+        if (event.code === _constants__WEBPACK_IMPORTED_MODULE_3__["KEYBOARD_CODE"].TAB || event.code === _constants__WEBPACK_IMPORTED_MODULE_3__["KEYBOARD_CODE"].ESCAPE) {
             this.popup.toggleOpened(event);
         }
     }
@@ -23991,12 +24007,12 @@ class MenuKeyControlService {
         if (this.shouldBePrevented(event)) {
             event.preventDefault();
         }
-        if (event.keyCode === _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_1__["DOWN_ARROW"]) {
+        if (event.code === _constants__WEBPACK_IMPORTED_MODULE_3__["KEYBOARD_CODE"].ARROW_DOWN) {
             this.popup.toggleOpened(event);
         }
     }
     shouldBePrevented(event) {
-        return event.keyCode === _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_1__["DOWN_ARROW"] || event.keyCode === _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_1__["UP_ARROW"] || event.keyCode === _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_1__["ENTER"];
+        return event.code === _constants__WEBPACK_IMPORTED_MODULE_3__["KEYBOARD_CODE"].ARROW_DOWN || event.code === _constants__WEBPACK_IMPORTED_MODULE_3__["KEYBOARD_CODE"].ARROW_UP || event.code === _constants__WEBPACK_IMPORTED_MODULE_3__["KEYBOARD_CODE"].ENTER;
     }
     // functions to scroll items into view for ActiveDescendantKeyManager
     countGroupLabelsBeforeOption(optionIndex, options, optionGroups) {
@@ -24028,6 +24044,10 @@ class MenuKeyControlService {
         const labelCount = this.countGroupLabelsBeforeOption(activeOptionIndex, options.menuItems, options.menuGroups);
         options.scrollContainer.nativeElement.scrollTop = this.getOptionScrollPosition(activeOptionIndex + labelCount, options.menuItemHeight + 4, options.scrollContainer.nativeElement.scrollTop, 300);
     }
+    announceCurrentItem() {
+        var _a, _b;
+        this.live.announce(`Active item ${(_b = (_a = this.keyboardEventsManager) === null || _a === void 0 ? void 0 : _a.activeItem) === null || _b === void 0 ? void 0 : _b.menuItem.nativeElement.innerText}.`);
+    }
     ngOnDestroy() {
         if (this.keyboardEventsSubscription) {
             this.keyboardEventsSubscription.unsubscribe();
@@ -24037,8 +24057,8 @@ class MenuKeyControlService {
         }
     }
 }
-MenuKeyControlService.ɵfac = function MenuKeyControlService_Factory(t) { return new (t || MenuKeyControlService)(); };
-MenuKeyControlService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjectable"]({ token: MenuKeyControlService, factory: MenuKeyControlService.ɵfac });
+MenuKeyControlService.ɵfac = function MenuKeyControlService_Factory(t) { return new (t || MenuKeyControlService)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_0__["LiveAnnouncer"])); };
+MenuKeyControlService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({ token: MenuKeyControlService, factory: MenuKeyControlService.ɵfac });
 
 
 /***/ }),
@@ -33230,7 +33250,9 @@ var KEYBOARD_CODE;
     KEYBOARD_CODE["ARROW_UP"] = "ArrowUp";
     KEYBOARD_CODE["BACKSPACE"] = "Backspace";
     KEYBOARD_CODE["ENTER"] = "Enter";
+    KEYBOARD_CODE["END"] = "End";
     KEYBOARD_CODE["ESCAPE"] = "Escape";
+    KEYBOARD_CODE["HOME"] = "Home";
     KEYBOARD_CODE["PAGE_DOWN"] = "PageDown";
     KEYBOARD_CODE["PAGE_UP"] = "PageUp";
     KEYBOARD_CODE["SHIFT_LEFT"] = "ShiftLeft";
