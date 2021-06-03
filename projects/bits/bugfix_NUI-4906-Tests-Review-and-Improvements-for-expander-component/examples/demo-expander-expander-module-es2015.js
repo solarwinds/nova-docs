@@ -323,7 +323,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col\">\n            <nui-expander-basic-example></nui-expander-basic-example>\n            <hr />\n        </div>\n        <div class=\"col\">\n            <nui-expander-text-and-icon-example></nui-expander-text-and-icon-example>\n            <hr />\n        </div>\n        <div class=\"col\">\n            <nui-expander-custom-header-example></nui-expander-custom-header-example>\n            <hr />\n        </div>\n        <div class=\"col\">\n            <nui-expander-initially-expanded-example>\n                <nui-expander id=\"nui-demo-expander-initially-expanded\" header=\"Advanced Options\"></nui-expander>\n            </nui-expander-initially-expanded-example>\n        </div>\n        <div class=\"col\">\n            <nui-expander-open-change-example>\n                <nui-expander id=\"nui-demo-expander-open-change\" header=\"Advanced options\"></nui-expander>\n            </nui-expander-open-change-example>\n        </div>\n    </div>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col\">\n            <nui-expander-basic-example></nui-expander-basic-example>\n            <hr />\n        </div>\n        <div class=\"col\">\n            <nui-expander-text-and-icon-example></nui-expander-text-and-icon-example>\n            <hr />\n        </div>\n        <div class=\"col\">\n            <nui-expander-custom-header-example></nui-expander-custom-header-example>\n            <hr />\n        </div>\n        <div class=\"col\">\n            <nui-expander-initially-expanded-example></nui-expander-initially-expanded-example>\n        </div>\n        <div class=\"col\">\n            <nui-expander-open-change-example></nui-expander-open-change-example>\n        </div>\n    </div>\n</div>\n");
 
 /***/ }),
 
@@ -1133,9 +1133,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _expander_text_and_icon_expander_text_and_icon_example_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../expander-text-and-icon/expander-text-and-icon.example.component */ "Lh5B");
 /* harmony import */ var _expander_custom_header_expander_custom_header_example_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../expander-custom-header/expander-custom-header.example.component */ "0V5N");
 /* harmony import */ var _expander_initially_expanded_expander_initially_expanded_example_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../expander-initially-expanded/expander-initially-expanded.example.component */ "Xqgv");
-/* harmony import */ var _src_lib_expander_expander_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../../../src/lib/expander/expander.component */ "j4OC");
-/* harmony import */ var _expander_open_change_expander_open_change_example_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../expander-open-change/expander-open-change.example.component */ "EX9H");
-
+/* harmony import */ var _expander_open_change_expander_open_change_example_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../expander-open-change/expander-open-change.example.component */ "EX9H");
 
 
 
@@ -1163,7 +1161,7 @@ class ExpanderTestComponent {
     }
 }
 ExpanderTestComponent.ɵfac = function ExpanderTestComponent_Factory(t) { return new (t || ExpanderTestComponent)(); };
-ExpanderTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ExpanderTestComponent, selectors: [["expander-test"]], decls: 17, vars: 0, consts: [[1, "container"], [1, "row"], [1, "col"], ["id", "nui-demo-expander-initially-expanded", "header", "Advanced Options"], ["id", "nui-demo-expander-open-change", "header", "Advanced options"]], template: function ExpanderTestComponent_Template(rf, ctx) { if (rf & 1) {
+ExpanderTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ExpanderTestComponent, selectors: [["expander-test"]], decls: 15, vars: 0, consts: [[1, "container"], [1, "row"], [1, "col"]], template: function ExpanderTestComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
@@ -1179,18 +1177,14 @@ ExpanderTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵde
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](10, "hr");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "div", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "nui-expander-initially-expanded-example");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](13, "nui-expander", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](12, "nui-expander-initially-expanded-example");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "div", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "nui-expander-open-change-example");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](16, "nui-expander", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "div", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](14, "nui-expander-open-change-example");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    } }, directives: [_expander_basic_expander_basic_example_component__WEBPACK_IMPORTED_MODULE_1__["ExpanderBasicExampleComponent"], _expander_text_and_icon_expander_text_and_icon_example_component__WEBPACK_IMPORTED_MODULE_2__["ExpanderTextAndIconExampleComponent"], _expander_custom_header_expander_custom_header_example_component__WEBPACK_IMPORTED_MODULE_3__["ExpanderCustomHeaderExampleComponent"], _expander_initially_expanded_expander_initially_expanded_example_component__WEBPACK_IMPORTED_MODULE_4__["ExpanderInitiallyExpandedExampleComponent"], _src_lib_expander_expander_component__WEBPACK_IMPORTED_MODULE_5__["ExpanderComponent"], _expander_open_change_expander_open_change_example_component__WEBPACK_IMPORTED_MODULE_6__["ExpanderOpenChangeExampleComponent"]], encapsulation: 2 });
+    } }, directives: [_expander_basic_expander_basic_example_component__WEBPACK_IMPORTED_MODULE_1__["ExpanderBasicExampleComponent"], _expander_text_and_icon_expander_text_and_icon_example_component__WEBPACK_IMPORTED_MODULE_2__["ExpanderTextAndIconExampleComponent"], _expander_custom_header_expander_custom_header_example_component__WEBPACK_IMPORTED_MODULE_3__["ExpanderCustomHeaderExampleComponent"], _expander_initially_expanded_expander_initially_expanded_example_component__WEBPACK_IMPORTED_MODULE_4__["ExpanderInitiallyExpandedExampleComponent"], _expander_open_change_expander_open_change_example_component__WEBPACK_IMPORTED_MODULE_5__["ExpanderOpenChangeExampleComponent"]], encapsulation: 2 });
 
 
 /***/ }),
