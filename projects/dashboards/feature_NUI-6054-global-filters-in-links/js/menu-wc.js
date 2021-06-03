@@ -131,6 +131,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                             <li class="link for-chapter2">
                                                 <a href="additional-documentation/tutorials/widget-error-handling.html" data-type="entity-link" data-context="sub-entity" data-context-id="additional">Widget Error Handling</a>
                                             </li>
+                                            <li class="link for-chapter2">
+                                                <a href="additional-documentation/tutorials/dynamic-header-links.html" data-type="entity-link" data-context="sub-entity" data-context-id="additional">Dynamic Header Links</a>
+                                            </li>
                                         </ul>
                                     </li>
                                     <li class="chapter inner">
