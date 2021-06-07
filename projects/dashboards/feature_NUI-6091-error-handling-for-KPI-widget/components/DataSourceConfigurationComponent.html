@@ -668,8 +668,8 @@ data source properties, this step can be omitted.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="125"
-                            class="link-to-prism">src/lib/configurator/components/widgets/configurator-items/data-source-configuration/data-source-configuration.component.ts:125</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="127"
+                            class="link-to-prism">src/lib/configurator/components/widgets/configurator-items/data-source-configuration/data-source-configuration.component.ts:127</a></div>
                 </td>
             </tr>
 
@@ -1077,8 +1077,10 @@ export class DataSourceConfigurationComponent implements IHasChangeDetector, IHa
                         this.dataFieldIds.next(Object.keys(dataFieldIdsResult));
                     }
                 });
-
-            this.dataSource.applyFilters();
+            // This setTimeout is because the output of the data source might come faster than the data-source-error-component is initiated
+            setTimeout(() &#x3D;&gt; {
+                this.dataSource.applyFilters();
+            });
         } else {
             this.logger.warn(&quot;No provider found for id:&quot;, providerId);
         }

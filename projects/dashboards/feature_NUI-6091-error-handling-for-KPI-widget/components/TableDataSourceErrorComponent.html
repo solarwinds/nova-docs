@@ -68,7 +68,6 @@
     </p>
     <p class="comment">
                     <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
-                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
                     <code><a href="https://angular.io/api/core/OnChanges" target="_blank" >OnChanges</a></code>
     </p>
 
@@ -288,7 +287,7 @@
                             </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in         <code><a href="../components/DataSourceErrorComponent.html#source" target="_self" >DataSourceErrorComponent:27</a></code>
+                                    <div class="io-line">Defined in         <code><a href="../components/DataSourceErrorComponent.html#source" target="_self" >DataSourceErrorComponent:26</a></code>
 </div>
                             </td>
                         </tr>
@@ -319,7 +318,7 @@
                             </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in         <code><a href="../components/DataSourceErrorComponent.html#source" target="_self" >DataSourceErrorComponent:28</a></code>
+                                    <div class="io-line">Defined in         <code><a href="../components/DataSourceErrorComponent.html#source" target="_self" >DataSourceErrorComponent:27</a></code>
 </div>
                             </td>
                         </tr>
@@ -361,7 +360,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../components/DataSourceErrorComponent.html#source" target="_self" >DataSourceErrorComponent:55</a></code>
+                        <div class="io-line">Defined in         <code><a href="../components/DataSourceErrorComponent.html#source" target="_self" >DataSourceErrorComponent:46</a></code>
 </div>
                 </td>
             </tr>
@@ -472,7 +471,7 @@
                             </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in         <code><a href="../components/DataSourceErrorComponent.html#source" target="_self" >DataSourceErrorComponent:31</a></code>
+                                    <div class="io-line">Defined in         <code><a href="../components/DataSourceErrorComponent.html#source" target="_self" >DataSourceErrorComponent:30</a></code>
 </div>
                             </td>
                         </tr>
@@ -507,7 +506,7 @@
                             </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in         <code><a href="../components/DataSourceErrorComponent.html#source" target="_self" >DataSourceErrorComponent:38</a></code>
+                                    <div class="io-line">Defined in         <code><a href="../components/DataSourceErrorComponent.html#source" target="_self" >DataSourceErrorComponent:37</a></code>
 </div>
                             </td>
                         </tr>
@@ -542,7 +541,7 @@
                             </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in         <code><a href="../components/DataSourceErrorComponent.html#source" target="_self" >DataSourceErrorComponent:33</a></code>
+                                    <div class="io-line">Defined in         <code><a href="../components/DataSourceErrorComponent.html#source" target="_self" >DataSourceErrorComponent:32</a></code>
 </div>
                             </td>
                         </tr>
@@ -577,7 +576,7 @@
                             </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in         <code><a href="../components/DataSourceErrorComponent.html#source" target="_self" >DataSourceErrorComponent:30</a></code>
+                                    <div class="io-line">Defined in         <code><a href="../components/DataSourceErrorComponent.html#source" target="_self" >DataSourceErrorComponent:29</a></code>
 </div>
                             </td>
                         </tr>
@@ -617,7 +616,7 @@
                             </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in         <code><a href="../components/DataSourceErrorComponent.html#source" target="_self" >DataSourceErrorComponent:25</a></code>
+                                    <div class="io-line">Defined in         <code><a href="../components/DataSourceErrorComponent.html#source" target="_self" >DataSourceErrorComponent:24</a></code>
 </div>
                             </td>
                         </tr>
@@ -657,7 +656,7 @@
                             </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in         <code><a href="../components/DataSourceErrorComponent.html#source" target="_self" >DataSourceErrorComponent:32</a></code>
+                                    <div class="io-line">Defined in         <code><a href="../components/DataSourceErrorComponent.html#source" target="_self" >DataSourceErrorComponent:31</a></code>
 </div>
                             </td>
                         </tr>
@@ -689,17 +688,13 @@ import { IDataField } from &quot;@nova-ui/bits&quot;;
     templateUrl: &quot;./table-data-source-error.component.html&quot;,
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TableDataSourceErrorComponent extends DataSourceErrorComponent implements OnDestroy, OnInit, OnChanges {
+export class TableDataSourceErrorComponent extends DataSourceErrorComponent implements OnDestroy, OnChanges {
     public static lateLoadKey &#x3D; &quot;TableDataSourceErrorHandlingComponent&quot;;
 
     constructor(
         public changeDetector: ChangeDetectorRef
     ) {
         super(changeDetector);
-    }
-
-    ngOnInit() {
-        super.ngOnInit();
     }
 
     ngOnChanges(changes: SimpleChanges) {
