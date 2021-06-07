@@ -567,8 +567,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="250"
-                            class="link-to-prism">src/lib/select-v2/combobox-v2/combobox-v2.component.ts:250</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="252"
+                            class="link-to-prism">src/lib/select-v2/combobox-v2/combobox-v2.component.ts:252</a></div>
                 </td>
             </tr>
 
@@ -653,8 +653,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="201"
-                            class="link-to-prism">src/lib/select-v2/combobox-v2/combobox-v2.component.ts:201</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="203"
+                            class="link-to-prism">src/lib/select-v2/combobox-v2/combobox-v2.component.ts:203</a></div>
                 </td>
             </tr>
 
@@ -730,8 +730,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="219"
-                            class="link-to-prism">src/lib/select-v2/combobox-v2/combobox-v2.component.ts:219</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="221"
+                            class="link-to-prism">src/lib/select-v2/combobox-v2/combobox-v2.component.ts:221</a></div>
                 </td>
             </tr>
 
@@ -804,8 +804,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="160"
-                            class="link-to-prism">src/lib/select-v2/combobox-v2/combobox-v2.component.ts:160</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="162"
+                            class="link-to-prism">src/lib/select-v2/combobox-v2/combobox-v2.component.ts:162</a></div>
                 </td>
             </tr>
 
@@ -878,8 +878,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="148"
-                            class="link-to-prism">src/lib/select-v2/combobox-v2/combobox-v2.component.ts:148</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="150"
+                            class="link-to-prism">src/lib/select-v2/combobox-v2/combobox-v2.component.ts:150</a></div>
                 </td>
             </tr>
 
@@ -952,8 +952,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="179"
-                            class="link-to-prism">src/lib/select-v2/combobox-v2/combobox-v2.component.ts:179</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="181"
+                            class="link-to-prism">src/lib/select-v2/combobox-v2/combobox-v2.component.ts:181</a></div>
                 </td>
             </tr>
 
@@ -1026,8 +1026,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="235"
-                            class="link-to-prism">src/lib/select-v2/combobox-v2/combobox-v2.component.ts:235</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="237"
+                            class="link-to-prism">src/lib/select-v2/combobox-v2/combobox-v2.component.ts:237</a></div>
                 </td>
             </tr>
 
@@ -1069,8 +1069,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="173"
-                            class="link-to-prism">src/lib/select-v2/combobox-v2/combobox-v2.component.ts:173</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="175"
+                            class="link-to-prism">src/lib/select-v2/combobox-v2/combobox-v2.component.ts:175</a></div>
                 </td>
             </tr>
 
@@ -1112,8 +1112,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="243"
-                            class="link-to-prism">src/lib/select-v2/combobox-v2/combobox-v2.component.ts:243</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="245"
+                            class="link-to-prism">src/lib/select-v2/combobox-v2/combobox-v2.component.ts:245</a></div>
                 </td>
             </tr>
 
@@ -1438,7 +1438,7 @@ export class ComboboxV2Component extends BaseSelectV2 implements AfterContentIni
         super(optionKeyControlService, cdRef, elRef, liveAnnouncer);
     }
 
-    public ngAfterContentInit() {
+    public ngAfterContentInit(): void {
         this.clearValueButtonTooltip &#x3D; this.multiselect ? $localize &#x60;Remove all&#x60; : $localize &#x60;Remove&#x60;;
         // applying changes to content immediately after it was initialized (checked)
         // causes &quot;Expression has changed after it was checked&quot; error
@@ -1456,17 +1456,19 @@ export class ComboboxV2Component extends BaseSelectV2 implements AfterContentIni
         // we check &quot;selectedOptions&quot; to be set per &quot;value&quot; again in &quot;handleValueChange&quot;
         this.optionsChanged().subscribe(() &#x3D;&gt; {
             this.filterItems(this.inputValue.toString());
+            // We need the active option to always stay visible during the options filtering.
+            this.optionKeyControlService.scrollToActiveItem({block: &quot;start&quot;, behavior: &quot;smooth&quot;});
             this.cdRef.markForCheck();
         });
     }
 
-    public ngAfterViewInit() {
+    public ngAfterViewInit(): void {
         super.ngAfterViewInit();
         if (!this.multiselect) {
             this.dropdown.hide$.subscribe(() &#x3D;&gt; {
                 const lastSelectedOption &#x3D; this.getLastSelectedOption();
                 if (lastSelectedOption) {
-                    this.setInputValue(lastSelectedOption.viewValue);
+                    this.setInputValue(lastSelectedOption.value);
                     this.filterItems(this.inputValue.toString());
                     this.cdRef.markForCheck();
                 }
@@ -1474,12 +1476,12 @@ export class ComboboxV2Component extends BaseSelectV2 implements AfterContentIni
         }
     }
 
-    public ngOnChanges(changes: SimpleChanges) {
+    public ngOnChanges(changes: SimpleChanges): void {
         super.ngOnChanges(changes);
     }
 
     /** Handles behavior on mouseup event */
-    public onMouseUp(target: HTMLElement) {
+    public onMouseUp(target: HTMLElement): void {
         this.mouseDown &#x3D; false;
         if (!this.manualDropdownControl) {
             if (target !&#x3D;&#x3D; this.inputElement.nativeElement &amp;&amp; !this.dropdown.showing) {
@@ -1491,7 +1493,7 @@ export class ComboboxV2Component extends BaseSelectV2 implements AfterContentIni
     }
 
     /** Handles behavior on keydown event */
-    public onKeyDown(event: KeyboardEvent) {
+    public onKeyDown(event: KeyboardEvent): void {
         super.onKeyDown(event);
         this.selectedItemsKeyControlService.onKeydown(event);
 
@@ -1504,13 +1506,13 @@ export class ComboboxV2Component extends BaseSelectV2 implements AfterContentIni
     }
 
     /** Toggles dropdown and removes focus from Selected Items */
-    public toggleDropdown() {
+    public toggleDropdown(): void {
         super.toggleDropdown();
         this.selectedItemsKeyControlService.deactivateSelectedItems();
     }
 
     /** Selects specific option and set its value to the model */
-    public selectOption(option: SelectV2OptionComponent) {
+    public selectOption(option: SelectV2OptionComponent): void {
         if (option.outfiltered || option.isDisabled) {
             return;
         }
@@ -1532,7 +1534,7 @@ export class ComboboxV2Component extends BaseSelectV2 implements AfterContentIni
      * @param  {number} item            Deselect using index in multiselect values array
      * Deselects item from Selected Items by index or value
      */
-    public deselectItem(item: OptionValueType | number) {
+    public deselectItem(item: OptionValueType | number): void {
         let option: SelectV2OptionComponent | undefined;
 
         if (typeof item &#x3D;&#x3D;&#x3D; &quot;number&quot; &amp;&amp; this.multiselect) {
@@ -1550,7 +1552,7 @@ export class ComboboxV2Component extends BaseSelectV2 implements AfterContentIni
     }
 
     /** Handles behavior on Input value change */
-    public handleInput(inputValue: InputValueTypes) {
+    public handleInput(inputValue: InputValueTypes): void {
         if (!inputValue &amp;&amp; !this.multiselect) {
             this.clearValue();
             return;
@@ -1581,7 +1583,7 @@ export class ComboboxV2Component extends BaseSelectV2 implements AfterContentIni
     }
 
     /** Clears up Combobox to the initial value */
-    public clearValue(event?: Event, keepDropdown?: boolean) {
+    public clearValue(event?: Event, keepDropdown?: boolean): void {
         if (!this.isDisabled) {
             this.selectedOptions &#x3D; [];
             this.onTouched();
@@ -1602,7 +1604,7 @@ export class ComboboxV2Component extends BaseSelectV2 implements AfterContentIni
      * This can lead to memory leaks.
      * This is a safe guard for preventing memory leaks in derived classes.
      */
-    ngOnDestroy() {
+    ngOnDestroy(): void {
         super.ngOnDestroy();
     }
 

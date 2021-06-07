@@ -335,7 +335,7 @@
                 <td class="col-md-4">
 
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 
                     </div>
                 </td>
@@ -527,7 +527,7 @@ export class SelectedItemsKeyControlService {
         }
     }
 
-    public onKeydown(event: KeyboardEvent) {
+    public onKeydown(event: KeyboardEvent): void {
         const caretPosition &#x3D; (event.target as HTMLInputElement).selectionStart;
         const isKeyAllowed &#x3D; this.isBackspace(event) || this.isLeftOrRightArrow(event);
 
@@ -565,11 +565,11 @@ export class SelectedItemsKeyControlService {
         this.selectedItemsKeyManager.setLastItemActive();
     }
 
-    public isSelectedItemsActive() {
+    public isSelectedItemsActive(): boolean {
         return Boolean(this.activeItem);
     }
 
-    public deactivateSelectedItems() {
+    public deactivateSelectedItems(): void {
         this.selectedItemsKeyManager.setActiveItem(-1);
         this.activeSelectedItemIndex &#x3D; undefined;
     }
