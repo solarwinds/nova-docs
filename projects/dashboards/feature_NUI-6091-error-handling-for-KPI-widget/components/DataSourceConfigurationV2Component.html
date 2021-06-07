@@ -649,8 +649,8 @@ data source properties, this step can be omitted.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="170"
-                            class="link-to-prism">src/lib/configurator/components/widgets/configurator-items/data-source-configuration-v2/data-source-configuration-v2.component.ts:170</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="169"
+                            class="link-to-prism">src/lib/configurator/components/widgets/configurator-items/data-source-configuration-v2/data-source-configuration-v2.component.ts:169</a></div>
                 </td>
             </tr>
 
@@ -1046,8 +1046,7 @@ export class DataSourceConfigurationV2Component implements IHasChangeDetector, I
                     this.dataFieldIds.next(Object.keys(result.result || result));
                 });
             if ((this.dataSource as Partial&lt;IConfigurable&gt;).updateConfiguration) {
-                const configurableDataSource &#x3D; (this.dataSource as unknown as IConfigurable);
-                configurableDataSource.updateConfiguration(data.properties ?? {});
+                (this.dataSource as any).updateConfiguration(data.properties);
             }
             this.dataSource.applyFilters();
         } else {
