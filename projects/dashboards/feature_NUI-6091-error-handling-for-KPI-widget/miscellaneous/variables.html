@@ -217,9 +217,6 @@
                             <a href="#getKeyFromParam" title="src/lib/functions/parse-string-with-data.ts"><b>getKeyFromParam</b>&nbsp;&nbsp;&nbsp;(src/.../parse-string-with-data.ts)</a>
                         </li>
                         <li>
-                            <a href="#HEADER_LINK_PROVIDER" title="src/lib/types.ts"><b>HEADER_LINK_PROVIDER</b>&nbsp;&nbsp;&nbsp;(src/.../types.ts)</a>
-                        </li>
-                        <li>
                             <a href="#HTML_COLORS" title="src/lib/configurator/components/color-picker/HTMLcolors.ts"><b>HTML_COLORS</b>&nbsp;&nbsp;&nbsp;(src/.../HTMLcolors.ts)</a>
                         </li>
                         <li>
@@ -2261,27 +2258,6 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="HEADER_LINK_PROVIDER"></a>
-                        <span class="name">
-                            <b>
-                            HEADER_LINK_PROVIDER</b>
-                            <a href="#HEADER_LINK_PROVIDER"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(&quot;HEADER_LINK_PROVIDER&quot;)</code>
-                        </td>
-                    </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
                         <a name="PIZZAGNA_EVENT_BUS"></a>
                         <span class="name">
                             <b>
@@ -2845,7 +2821,7 @@
                         properties: {
                             // for the DataSourceConfigurationComponent, this defines the list of data sources to pick from
                             dataSourceProviders: [] as string[],
-                            errorHandlingComponent: DataSourceErrorComponent.lateLoadKey,
+                            errorHandlingComponent: DataSourceErrorHandlingComponent.lateLoadKey,
                         },
                         providers: {
                             // converter transforms the data source metadata between the widget and the form
@@ -3299,7 +3275,6 @@
             properties: {
                 // for the DataSourceConfigurationComponent, this defines the list of data sources to pick from
                 dataSourceProviders: [] as string[],
-                errorHandlingComponent: DataSourceErrorComponent.lateLoadKey,
             },
             providers: {
                 // converter transforms the data source metadata between the widget and the form
@@ -3520,7 +3495,7 @@
             componentType: DataSourceConfigurationComponent.lateLoadKey,
             properties: {
                 dataSourceProviders: [],
-                errorHandlingComponent: TableDataSourceErrorComponent.lateLoadKey,
+                errorHandlingComponent: TableDataSourceErrorHandlingComponent.lateLoadKey,
             },
             providers: {
                 [WellKnownProviders.Converter]: {
@@ -4502,7 +4477,7 @@
     DashwizButtonsComponent,
     DataSourceConfigurationComponent,
     DataSourceConfigurationV2Component,
-    DataSourceErrorComponent,
+    DataSourceErrorHandlingComponent,
     KpiTilesConfigurationComponent,
     EmbeddedContentConfigurationComponent,
     InfoMessageConfigurationComponent,
@@ -4514,7 +4489,7 @@
     TableColumnsConfigurationComponent,
     TableColumnsConfigurationV2Component,
     TableColumnConfigurationComponent,
-    TableDataSourceErrorComponent,
+    TableDataSourceErrorHandlingComponent,
     DonutContentPercentageFormatterComponent,
     DonutContentPercentageConfigurationComponent,
     DonutContentSumFormatterComponent,
@@ -6779,7 +6754,6 @@ This function represents the linear dependency (approximately).</p>
             properties: {
                 // for the DataSourceConfigurationComponent, this defines the list of data sources to pick from
                 dataSourceProviders: [] as string[],
-                errorHandlingComponent: DataSourceErrorComponent.lateLoadKey,
             },
             providers: {
                 // converter transforms the data source metadata between the widget and the form

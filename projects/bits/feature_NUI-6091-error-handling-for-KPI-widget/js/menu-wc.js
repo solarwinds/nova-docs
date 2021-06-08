@@ -827,9 +827,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/IWizardSelectionEvent.html" data-type="entity-link">IWizardSelectionEvent</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IWizardState.html" data-type="entity-link">IWizardState</a>
-                            </li>
-                            <li class="link">
                                 <a href="interfaces/IWizardStepComponent.html" data-type="entity-link">IWizardStepComponent</a>
                             </li>
                             <li class="link">

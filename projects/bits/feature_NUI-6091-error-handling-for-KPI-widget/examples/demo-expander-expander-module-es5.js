@@ -1,5 +1,5 @@
 (function () {
-  var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10, _templateObject11, _templateObject12, _templateObject13, _templateObject14, _templateObject15, _templateObject16, _templateObject17, _templateObject18, _templateObject19, _templateObject20, _templateObject21, _templateObject22, _templateObject23, _templateObject24;
+  var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10, _templateObject11, _templateObject12, _templateObject13, _templateObject14, _templateObject15, _templateObject16, _templateObject17, _templateObject18, _templateObject19, _templateObject20, _templateObject21;
 
   function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
@@ -331,7 +331,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "export * from \"./expander-basic/expander-basic.example.component\";\nexport * from \"./expander-docs/expander-docs.example.component\";\nexport * from \"./expander-custom-header/expander-custom-header.example.component\";\nexport * from \"./expander-header-text/expander-header-text.example.component\";\nexport * from \"./expander-text-and-icon/expander-text-and-icon.example.component\";\nexport * from \"./expander-initially-expanded/expander-initially-expanded.example.component\";\nexport * from \"./expander-open-change/expander-open-change.example.component\";\nexport * from \"./expander-without-border/expander-without-border.example.component\";\nexport * from \"./expander-visual-test/expander-visual-test.component\";\nexport * from \"./expander-test/expander-test.component\";\n";
+      __webpack_exports__["default"] = "export * from \"./expander-basic/expander-basic.example.component\";\nexport * from \"./expander-docs/expander-docs.example.component\";\nexport * from \"./expander-custom-header/expander-custom-header.example.component\";\nexport * from \"./expander-header-text/expander-header-text.example.component\";\nexport * from \"./expander-text-and-icon/expander-text-and-icon.example.component\";\nexport * from \"./expander-initially-expanded/expander-initially-expanded.example.component\";\nexport * from \"./expander-open-change/expander-open-change.example.component\";\nexport * from \"./expander-without-border/expander-without-border.example.component\";\nexport * from \"./expander-visual-test/expander-visual-test.component\";\n";
       /***/
     },
 
@@ -592,26 +592,6 @@
     },
 
     /***/
-    "RO5O":
-    /*!****************************************************************************************************************************!*\
-      !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/expander/expander-test/expander-test.component.html ***!
-      \****************************************************************************************************************************/
-
-    /*! exports provided: default */
-
-    /***/
-    function RO5O(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony default export */
-
-
-      __webpack_exports__["default"] = "<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col\">\n            <nui-expander-basic-example></nui-expander-basic-example>\n            <hr />\n        </div>\n        <div class=\"col\">\n            <nui-expander-text-and-icon-example></nui-expander-text-and-icon-example>\n            <hr />\n        </div>\n        <div class=\"col\">\n            <nui-expander-custom-header-example></nui-expander-custom-header-example>\n            <hr />\n        </div>\n        <div class=\"col\">\n            <nui-expander-initially-expanded-example></nui-expander-initially-expanded-example>\n        </div>\n        <div class=\"col\">\n            <nui-expander-open-change-example></nui-expander-open-change-example>\n        </div>\n    </div>\n</div>\n";
-      /***/
-    },
-
-    /***/
     "TNXm":
     /*!***********************************************************************************************************!*\
       !*** ./demo/src/components/demo/expander sync !./node_modules/raw-loader/dist/cjs.js .*\.(ts|html|less)$ ***!
@@ -634,8 +614,6 @@
         "./expander-initially-expanded/expander-initially-expanded.example.component.ts": "6kzh",
         "./expander-open-change/expander-open-change.example.component.html": "0VTe",
         "./expander-open-change/expander-open-change.example.component.ts": "fiK1",
-        "./expander-test/expander-test.component.html": "RO5O",
-        "./expander-test/expander-test.component.ts": "Zgli",
         "./expander-text-and-icon/expander-text-and-icon.example.component.html": "NGd+",
         "./expander-text-and-icon/expander-text-and-icon.example.component.ts": "isy5",
         "./expander-visual-test/expander-visual-test.component.html": "Zord",
@@ -761,26 +739,6 @@
     },
 
     /***/
-    "Zgli":
-    /*!**************************************************************************************************************************!*\
-      !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/expander/expander-test/expander-test.component.ts ***!
-      \**************************************************************************************************************************/
-
-    /*! exports provided: default */
-
-    /***/
-    function Zgli(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony default export */
-
-
-      __webpack_exports__["default"] = "import { Component } from \"@angular/core\";\nimport { IMenuGroup } from \"@nova-ui/bits\";\n\n@Component({\n    selector: \"expander-test\",\n    templateUrl: \"./expander-test.component.html\",\n})\n\nexport class ExpanderTestComponent {\n    public itemsSource: IMenuGroup[] = [\n        {\n            header: \"Group 1\", itemsSource: [\n                { title: $localize`Item 1`, itemType: \"action\", action: this.actionDone },\n                { title: $localize`Item 2`, itemType: \"action\", action: () => alert($localize`hello`) },\n            ],\n        },\n        {\n            itemsSource: [\n                { title: \"Item 3\" },\n            ],\n        },\n    ];\n    constructor() { }\n\n    public actionDone(): void {\n        console.log(\"Action Done\");\n    }\n}\n";
-      /***/
-    },
-
-    /***/
     "Zord":
     /*!******************************************************************************************************************************************!*\
       !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/expander/expander-visual-test/expander-visual-test.component.html ***!
@@ -816,7 +774,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import { NgModule } from \"@angular/core\";\nimport { RouterModule } from \"@angular/router\";\nimport {\n    DEMO_PATH_TOKEN,\n    NuiButtonModule,\n    NuiDocsModule,\n    NuiExpanderModule,\n    NuiMenuModule,\n    NuiMessageModule,\n    SrlcStage,\n} from \"@nova-ui/bits\";\n\nimport {\n    ExpanderBasicExampleComponent,\n    ExpanderCustomHeaderExampleComponent,\n    ExpanderDocsExampleComponent,\n    ExpanderHeaderTextExampleComponent,\n    ExpanderInitiallyExpandedExampleComponent,\n    ExpanderOpenChangeExampleComponent,\n    ExpanderTextAndIconExampleComponent,\n    ExpanderVisualTestComponent,\n    ExpanderWithoutBorderExampleComponent,\n    ExpanderTestComponent,\n} from \"./index\";\n\nconst routes = [\n    {\n        path: \"\",\n        component: ExpanderDocsExampleComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.ga,\n            },\n            showThemeSwitcher: true,\n        },\n    },\n    {\n        path: \"expander-visual-test\",\n        component: ExpanderVisualTestComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"expander-test\",\n        component: ExpanderTestComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n];\n\n@NgModule({\n    imports: [\n        NuiButtonModule,\n        NuiExpanderModule,\n        NuiMenuModule,\n        NuiMessageModule,\n        NuiDocsModule,\n        RouterModule.forChild(routes),\n    ],\n    declarations: [\n        ExpanderBasicExampleComponent,\n        ExpanderCustomHeaderExampleComponent,\n        ExpanderDocsExampleComponent,\n        ExpanderHeaderTextExampleComponent,\n        ExpanderInitiallyExpandedExampleComponent,\n        ExpanderTextAndIconExampleComponent,\n        ExpanderOpenChangeExampleComponent,\n        ExpanderWithoutBorderExampleComponent,\n        ExpanderVisualTestComponent,\n        ExpanderTestComponent,\n    ],\n    providers: [\n        {\n            provide: DEMO_PATH_TOKEN,\n            useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/),\n        },\n    ],\n    exports: [\n        RouterModule,\n    ],\n})\nexport class ExpanderModule {\n}\n";
+      __webpack_exports__["default"] = "import { NgModule } from \"@angular/core\";\nimport { RouterModule } from \"@angular/router\";\nimport {\n    DEMO_PATH_TOKEN,\n    NuiButtonModule,\n    NuiDocsModule,\n    NuiExpanderModule,\n    NuiMenuModule,\n    NuiMessageModule,\n    SrlcStage,\n} from \"@nova-ui/bits\";\n\nimport {\n    ExpanderBasicExampleComponent,\n    ExpanderCustomHeaderExampleComponent,\n    ExpanderDocsExampleComponent,\n    ExpanderHeaderTextExampleComponent,\n    ExpanderInitiallyExpandedExampleComponent,\n    ExpanderOpenChangeExampleComponent,\n    ExpanderTextAndIconExampleComponent,\n    ExpanderVisualTestComponent,\n    ExpanderWithoutBorderExampleComponent,\n} from \"./index\";\n\nconst routes = [\n    {\n        path: \"\",\n        component: ExpanderDocsExampleComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.ga,\n            },\n            showThemeSwitcher: true,\n        },\n    },\n    {\n        path: \"expander-visual-test\",\n        component: ExpanderVisualTestComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n];\n\n@NgModule({\n    imports: [\n        NuiButtonModule,\n        NuiExpanderModule,\n        NuiMenuModule,\n        NuiMessageModule,\n        NuiDocsModule,\n        RouterModule.forChild(routes),\n    ],\n    declarations: [\n        ExpanderBasicExampleComponent,\n        ExpanderCustomHeaderExampleComponent,\n        ExpanderDocsExampleComponent,\n        ExpanderHeaderTextExampleComponent,\n        ExpanderInitiallyExpandedExampleComponent,\n        ExpanderTextAndIconExampleComponent,\n        ExpanderOpenChangeExampleComponent,\n        ExpanderWithoutBorderExampleComponent,\n        ExpanderVisualTestComponent,\n    ],\n    providers: [\n        {\n            provide: DEMO_PATH_TOKEN,\n            useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/),\n        },\n    ],\n    exports: [\n        RouterModule,\n    ],\n})\nexport class ExpanderModule {\n}\n";
       /***/
     },
 
@@ -921,14 +879,6 @@
             "hideIndicator": true
           }
         }
-      }, {
-        path: "expander-test",
-        component: _index__WEBPACK_IMPORTED_MODULE_2__["ExpanderTestComponent"],
-        data: {
-          "srlc": {
-            "hideIndicator": true
-          }
-        }
       }];
 
       var ExpanderModule = function ExpanderModule() {
@@ -953,7 +903,7 @@
 
       (function () {
         (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵsetNgModuleScope"](ExpanderModule, {
-          declarations: [_index__WEBPACK_IMPORTED_MODULE_2__["ExpanderBasicExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_2__["ExpanderCustomHeaderExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_2__["ExpanderDocsExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_2__["ExpanderHeaderTextExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_2__["ExpanderInitiallyExpandedExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_2__["ExpanderTextAndIconExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_2__["ExpanderOpenChangeExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_2__["ExpanderWithoutBorderExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_2__["ExpanderVisualTestComponent"], _index__WEBPACK_IMPORTED_MODULE_2__["ExpanderTestComponent"]],
+          declarations: [_index__WEBPACK_IMPORTED_MODULE_2__["ExpanderBasicExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_2__["ExpanderCustomHeaderExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_2__["ExpanderDocsExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_2__["ExpanderHeaderTextExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_2__["ExpanderInitiallyExpandedExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_2__["ExpanderTextAndIconExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_2__["ExpanderOpenChangeExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_2__["ExpanderWithoutBorderExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_2__["ExpanderVisualTestComponent"]],
           imports: [_nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiButtonModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiExpanderModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiMenuModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiMessageModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiDocsModule"], _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]],
           exports: [_angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]]
         });
@@ -2066,165 +2016,12 @@
     },
 
     /***/
-    "wz/O":
-    /*!************************************************************************************!*\
-      !*** ./demo/src/components/demo/expander/expander-test/expander-test.component.ts ***!
-      \************************************************************************************/
-
-    /*! exports provided: ExpanderTestComponent */
-
-    /***/
-    function wzO(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "ExpanderTestComponent", function () {
-        return ExpanderTestComponent;
-      });
-      /* harmony import */
-
-
-      var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! @angular/core */
-      "fXoL");
-      /* harmony import */
-
-
-      var _expander_basic_expander_basic_example_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-      /*! ../expander-basic/expander-basic.example.component */
-      "sSlZ");
-      /* harmony import */
-
-
-      var _expander_text_and_icon_expander_text_and_icon_example_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-      /*! ../expander-text-and-icon/expander-text-and-icon.example.component */
-      "Lh5B");
-      /* harmony import */
-
-
-      var _expander_custom_header_expander_custom_header_example_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-      /*! ../expander-custom-header/expander-custom-header.example.component */
-      "0V5N");
-      /* harmony import */
-
-
-      var _expander_initially_expanded_expander_initially_expanded_example_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-      /*! ../expander-initially-expanded/expander-initially-expanded.example.component */
-      "Xqgv");
-      /* harmony import */
-
-
-      var _expander_open_change_expander_open_change_example_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
-      /*! ../expander-open-change/expander-open-change.example.component */
-      "EX9H");
-
-      var ExpanderTestComponent = /*#__PURE__*/function () {
-        function ExpanderTestComponent() {
-          _classCallCheck(this, ExpanderTestComponent);
-
-          this.itemsSource = [{
-            header: "Group 1",
-            itemsSource: [{
-              title: $localize(_templateObject22 || (_templateObject22 = _taggedTemplateLiteral(["Item 1"]))),
-              itemType: "action",
-              action: this.actionDone
-            }, {
-              title: $localize(_templateObject23 || (_templateObject23 = _taggedTemplateLiteral(["Item 2"]))),
-              itemType: "action",
-              action: function action() {
-                return alert($localize(_templateObject24 || (_templateObject24 = _taggedTemplateLiteral(["hello"]))));
-              }
-            }]
-          }, {
-            itemsSource: [{
-              title: "Item 3"
-            }]
-          }];
-        }
-
-        _createClass(ExpanderTestComponent, [{
-          key: "actionDone",
-          value: function actionDone() {
-            console.log("Action Done");
-          }
-        }]);
-
-        return ExpanderTestComponent;
-      }();
-
-      ExpanderTestComponent.ɵfac = function ExpanderTestComponent_Factory(t) {
-        return new (t || ExpanderTestComponent)();
-      };
-
-      ExpanderTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
-        type: ExpanderTestComponent,
-        selectors: [["expander-test"]],
-        decls: 15,
-        vars: 0,
-        consts: [[1, "container"], [1, "row"], [1, "col"]],
-        template: function ExpanderTestComponent_Template(rf, ctx) {
-          if (rf & 1) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "nui-expander-basic-example");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](4, "hr");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 2);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](6, "nui-expander-text-and-icon-example");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](7, "hr");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "div", 2);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](9, "nui-expander-custom-header-example");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](10, "hr");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "div", 2);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](12, "nui-expander-initially-expanded-example");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "div", 2);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](14, "nui-expander-open-change-example");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-          }
-        },
-        directives: [_expander_basic_expander_basic_example_component__WEBPACK_IMPORTED_MODULE_1__["ExpanderBasicExampleComponent"], _expander_text_and_icon_expander_text_and_icon_example_component__WEBPACK_IMPORTED_MODULE_2__["ExpanderTextAndIconExampleComponent"], _expander_custom_header_expander_custom_header_example_component__WEBPACK_IMPORTED_MODULE_3__["ExpanderCustomHeaderExampleComponent"], _expander_initially_expanded_expander_initially_expanded_example_component__WEBPACK_IMPORTED_MODULE_4__["ExpanderInitiallyExpandedExampleComponent"], _expander_open_change_expander_open_change_example_component__WEBPACK_IMPORTED_MODULE_5__["ExpanderOpenChangeExampleComponent"]],
-        encapsulation: 2
-      });
-      /***/
-    },
-
-    /***/
     "y46J":
     /*!****************************************************!*\
       !*** ./demo/src/components/demo/expander/index.ts ***!
       \****************************************************/
 
-    /*! exports provided: ExpanderBasicExampleComponent, ExpanderDocsExampleComponent, ExpanderCustomHeaderExampleComponent, ExpanderHeaderTextExampleComponent, ExpanderTextAndIconExampleComponent, ExpanderInitiallyExpandedExampleComponent, ExpanderOpenChangeExampleComponent, ExpanderWithoutBorderExampleComponent, ExpanderVisualTestComponent, ExpanderTestComponent */
+    /*! exports provided: ExpanderBasicExampleComponent, ExpanderDocsExampleComponent, ExpanderCustomHeaderExampleComponent, ExpanderHeaderTextExampleComponent, ExpanderTextAndIconExampleComponent, ExpanderInitiallyExpandedExampleComponent, ExpanderOpenChangeExampleComponent, ExpanderWithoutBorderExampleComponent, ExpanderVisualTestComponent */
 
     /***/
     function y46J(module, __webpack_exports__, __webpack_require__) {
@@ -2338,18 +2135,6 @@
 
       __webpack_require__.d(__webpack_exports__, "ExpanderVisualTestComponent", function () {
         return _expander_visual_test_expander_visual_test_component__WEBPACK_IMPORTED_MODULE_8__["ExpanderVisualTestComponent"];
-      });
-      /* harmony import */
-
-
-      var _expander_test_expander_test_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
-      /*! ./expander-test/expander-test.component */
-      "wz/O");
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "ExpanderTestComponent", function () {
-        return _expander_test_expander_test_component__WEBPACK_IMPORTED_MODULE_9__["ExpanderTestComponent"];
       });
       /***/
 

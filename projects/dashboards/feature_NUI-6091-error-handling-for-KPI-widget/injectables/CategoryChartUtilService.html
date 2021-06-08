@@ -440,7 +440,9 @@ export class CategoryChartUtilService {
                 gridFunction() {
                     return barGrid(this.config);
                 },
-                rendererFunction: () &#x3D;&gt; new BarRenderer({ highlightStrategy: new BarSeriesHighlightStrategy(&quot;y&quot;) }),
+                rendererFunction() {
+                    return new BarRenderer({ highlightStrategy: new BarSeriesHighlightStrategy(&quot;y&quot;) });
+                },
                 accessorFunction: barChartAccessors,
                 scaleFunction() {
                     return barScales(this.config);
@@ -451,7 +453,9 @@ export class CategoryChartUtilService {
                 gridFunction() {
                     return barGrid(this.config);
                 },
-                rendererFunction: () &#x3D;&gt; new BarRenderer({ highlightStrategy: new BarSeriesHighlightStrategy(&quot;x&quot;) }),
+                rendererFunction() {
+                    return new BarRenderer({ highlightStrategy: new BarSeriesHighlightStrategy(&quot;x&quot;) });
+                },
                 accessorFunction: barChartAccessors,
                 scaleFunction() {
                     return barScales(this.config);

@@ -154,9 +154,6 @@ var map = {
 	"./table-search/table-search.example.component.html": "aIRk",
 	"./table-search/table-search.example.component.less": "zNlO",
 	"./table-search/table-search.example.component.ts": "kJJM",
-	"./table-select-pinned-header/table-select-pinned-header.example.component.html": "uE97",
-	"./table-select-pinned-header/table-select-pinned-header.example.component.less": "mqSZ",
-	"./table-select-pinned-header/table-select-pinned-header.example.component.ts": "zWv6",
 	"./table-select/table-select.example.component.html": "PcpU",
 	"./table-select/table-select.example.component.ts": "6bWa",
 	"./table-selectable-toggle/table-selectable-toggle.example.component.html": "4Gnt",
@@ -722,7 +719,7 @@ TableVirtualScrollRealApiProgressTextFooterExampleComponent.ɵcmp = _angular_cor
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("export * from \"./table-docs/table-docs.example.component\";\nexport * from \"./table-basic/table-basic.example.component\";\nexport * from \"./table-pinned-header/table-pinned-header.example.component\";\nexport * from \"./table-cell-content-align/table-cell-content-align.example.component\";\nexport * from \"./table-cell-width-set/table-cell-width-set.example.component\";\nexport * from \"./table-row-clickable/table-row-clickable.example.component\";\nexport * from \"./table-row-height-set/table-row-height-set.example.component\";\nexport * from \"./table-reorder/table-reorder.example.component\";\nexport * from \"./table-pagination/table-pagination.example.component\";\nexport * from \"./table-columns-add-remove/table-columns-add-remove.example.component\";\nexport * from \"./table-search/table-search.example.component\";\nexport * from \"./table-sorting/table-sorting.example.component\";\nexport * from \"./table-resize/table-resize.example.component\";\nexport * from \"./table-select/table-select.example.component\";\nexport * from \"./table-selectable-toggle/table-selectable-toggle.example.component\";\nexport * from \"./table-test/table-test.component\";\nexport * from \"./table-visual-test/table-visual-test.example\";\nexport * from \"./table-virtual-scroll-real-api/table-virtual-scroll-real-api.example.component\";\nexport * from \"./table-virtual-scroll-steps-and-button/table-virtual-scroll-steps-and-button.example.component\";\nexport * from \"./table-virtual-scroll-select-sticky-header/table-virtual-scroll-select-sticky-header-example.component\";\nexport * from \"./table-virtual-scroll-sticky-header/table-virtual-scroll-sticky-header-example.component\";\nexport * from \"./table-virtual-scroll-real-api-progress-footer/table-virtual-scroll-real-api-progress-footer.example.component\";\nexport * from \"./table-virtual-scroll-real-api-progress-text-footer/table-virtual-scroll-real-api-progress-text-footer.example.component\";\nexport * from \"./table-virtual-scroll-real-api-minimalist/table-virtual-scroll-real-api-minimalist.example.component\";\nexport * from \"./table-search-with-select-and-pagination/table-search-with-select-and-pagination.example.component\";\nexport * from \"./table-select-pinned-header/table-select-pinned-header.example.component\";\n");
+/* harmony default export */ __webpack_exports__["default"] = ("export * from \"./table-docs/table-docs.example.component\";\nexport * from \"./table-basic/table-basic.example.component\";\nexport * from \"./table-pinned-header/table-pinned-header.example.component\";\nexport * from \"./table-cell-content-align/table-cell-content-align.example.component\";\nexport * from \"./table-cell-width-set/table-cell-width-set.example.component\";\nexport * from \"./table-row-clickable/table-row-clickable.example.component\";\nexport * from \"./table-row-height-set/table-row-height-set.example.component\";\nexport * from \"./table-reorder/table-reorder.example.component\";\nexport * from \"./table-pagination/table-pagination.example.component\";\nexport * from \"./table-columns-add-remove/table-columns-add-remove.example.component\";\nexport * from \"./table-search/table-search.example.component\";\nexport * from \"./table-sorting/table-sorting.example.component\";\nexport * from \"./table-resize/table-resize.example.component\";\nexport * from \"./table-select/table-select.example.component\";\nexport * from \"./table-selectable-toggle/table-selectable-toggle.example.component\";\nexport * from \"./table-test/table-test.component\";\nexport * from \"./table-visual-test/table-visual-test.example\";\nexport * from \"./table-virtual-scroll-real-api/table-virtual-scroll-real-api.example.component\";\nexport * from \"./table-virtual-scroll-steps-and-button/table-virtual-scroll-steps-and-button.example.component\";\nexport * from \"./table-virtual-scroll-select-sticky-header/table-virtual-scroll-select-sticky-header-example.component\";\nexport * from \"./table-virtual-scroll-sticky-header/table-virtual-scroll-sticky-header-example.component\";\nexport * from \"./table-virtual-scroll-real-api-progress-footer/table-virtual-scroll-real-api-progress-footer.example.component\";\nexport * from \"./table-virtual-scroll-real-api-progress-text-footer/table-virtual-scroll-real-api-progress-text-footer.example.component\";\nexport * from \"./table-virtual-scroll-real-api-minimalist/table-virtual-scroll-real-api-minimalist.example.component\";\nexport * from \"./table-search-with-select-and-pagination/table-search-with-select-and-pagination.example.component\";\n");
 
 /***/ }),
 
@@ -1012,7 +1009,7 @@ module.exports = baseSample;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\n    <details open>\n        <summary id=\"nui-visual-table-basic-summary\">Basic Usage</summary>\n        <nui-table-basic-example id=\"table-basic-usage\"></nui-table-basic-example>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-pinned-summary\">Pinned header</summary>\n        <nui-table-pinned-header-example id=\"table-pinned-header\"></nui-table-pinned-header-example>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-alignment-summary\">Column Alignment</summary>\n        <nui-table-cell-content-align-example id=\"table-column-alignment\"></nui-table-cell-content-align-example>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-row-denisty-tiny-summary\">Row Density (\"tiny\")</summary>\n        <nui-table-row-height-set id=\"table-row-density-tiny\"></nui-table-row-height-set>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-row-denisty-compact-summary\">Row Density (\"compact\")</summary>\n        <nui-table-row-height-set id=\"table-row-density-compact\" density=\"compact\"></nui-table-row-height-set>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-sorting-summary\">Sorting</summary>\n        <nui-table-sorting-example id=\"table-sorting\"></nui-table-sorting-example>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-custom-action-summary\">Custom actions</summary>\n        <nui-table-columns-add-remove-example id=\"table-custom-action\"></nui-table-columns-add-remove-example>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-column-size-summary\">Column resize</summary>\n        <nui-table-resize-example id=\"table-resizing\"></nui-table-resize-example>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-row-selection-summary\">Row selection in table</summary>\n        <nui-table-select id=\"table-selected-row\"></nui-table-select>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-select-pinned-header-summary\">Select Pinned Header</summary>\n        <nui-table-select-pinned-header-example id=\"table-select-pinned-header\"></nui-table-select-pinned-header-example>\n    </details>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\n    <details open>\n        <summary id=\"nui-visual-table-basic-summary\">Basic Usage</summary>\n        <nui-table-basic-example id=\"table-basic-usage\"></nui-table-basic-example>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-pinned-summary\">Pinned header</summary>\n        <nui-table-pinned-header-example id=\"table-pinned-header\"></nui-table-pinned-header-example>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-alignment-summary\">Column Alignment</summary>\n        <nui-table-cell-content-align-example id=\"table-column-alignment\"></nui-table-cell-content-align-example>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-row-denisty-tiny-summary\">Row Density (\"tiny\")</summary>\n        <nui-table-row-height-set id=\"table-row-density-tiny\"></nui-table-row-height-set>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-row-denisty-compact-summary\">Row Density (\"compact\")</summary>\n        <nui-table-row-height-set id=\"table-row-density-compact\" density=\"compact\"></nui-table-row-height-set>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-sorting-summary\">Sorting</summary>\n        <nui-table-sorting-example id=\"table-sorting\"></nui-table-sorting-example>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-custom-action-summary\">Custom actions</summary>\n        <nui-table-columns-add-remove-example id=\"table-custom-action\"></nui-table-columns-add-remove-example>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-column-size-summary\">Column resize</summary>\n        <nui-table-resize-example id=\"table-resizing\"></nui-table-resize-example>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-row-selection-summary\">Row selection in table</summary>\n        <nui-table-select id=\"table-selected-row\"></nui-table-select>\n    </details>\n</div>");
 
 /***/ }),
 
@@ -1736,7 +1733,6 @@ TableModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineInject
         _index__WEBPACK_IMPORTED_MODULE_4__["TableSearchExampleComponent"],
         _index__WEBPACK_IMPORTED_MODULE_4__["TableSelectableToggleExampleComponent"],
         _index__WEBPACK_IMPORTED_MODULE_4__["TableSelectExampleComponent"],
-        _index__WEBPACK_IMPORTED_MODULE_4__["TableSelectPinnedHeaderComponent"],
         _index__WEBPACK_IMPORTED_MODULE_4__["TableSortingExampleComponent"],
         _index__WEBPACK_IMPORTED_MODULE_4__["TableCellContentAlignComponent"],
         _index__WEBPACK_IMPORTED_MODULE_4__["TableTestComponent"],
@@ -8087,7 +8083,7 @@ __webpack_require__.r(__webpack_exports__);
 /*!*************************************************!*\
   !*** ./demo/src/components/demo/table/index.ts ***!
   \*************************************************/
-/*! exports provided: TableDocsComponent, TableRowSelectInstructionsComponent, TableBasicExampleComponent, TablePinnedHeaderComponent, TableCellContentAlignComponent, TableCellWidthSetExampleComponent, TableRowClickableExampleComponent, TableRowHeightSetExampleComponent, TableReorderExampleComponent, TablePaginationExampleComponent, TableColumnsAddRemoveExampleComponent, TableSearchExampleComponent, TableSortingExampleComponent, TableResizeExampleComponent, TableSelectExampleComponent, TableSelectableToggleExampleComponent, TableTestComponent, TableVisualTestComponent, TableVirtualScrollRealApiExampleComponent, RandomuserTableDataSource, TableVirtualScrollStepsAndButtonExampleComponent, TableVirtualScrollSelectStickyHeaderExampleComponent, TableVirtualScrollStickyHeaderExampleComponent, TableVirtualScrollRealApiProgressFooterExampleComponent, TableVirtualScrollRealApiProgressTextFooterExampleComponent, TableVirtualScrollRealApiMinimalistExampleComponent, TableSearchWithSelectAndPaginationComponent, TableSelectPinnedHeaderComponent */
+/*! exports provided: TableDocsComponent, TableRowSelectInstructionsComponent, TableBasicExampleComponent, TablePinnedHeaderComponent, TableCellContentAlignComponent, TableCellWidthSetExampleComponent, TableRowClickableExampleComponent, TableRowHeightSetExampleComponent, TableReorderExampleComponent, TablePaginationExampleComponent, TableColumnsAddRemoveExampleComponent, TableSearchExampleComponent, TableSortingExampleComponent, TableResizeExampleComponent, TableSelectExampleComponent, TableSelectableToggleExampleComponent, TableTestComponent, TableVisualTestComponent, TableVirtualScrollRealApiExampleComponent, RandomuserTableDataSource, TableVirtualScrollStepsAndButtonExampleComponent, TableVirtualScrollSelectStickyHeaderExampleComponent, TableVirtualScrollStickyHeaderExampleComponent, TableVirtualScrollRealApiProgressFooterExampleComponent, TableVirtualScrollRealApiProgressTextFooterExampleComponent, TableVirtualScrollRealApiMinimalistExampleComponent, TableSearchWithSelectAndPaginationComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8170,10 +8166,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony import */ var _table_search_with_select_and_pagination_table_search_with_select_and_pagination_example_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./table-search-with-select-and-pagination/table-search-with-select-and-pagination.example.component */ "PaBn");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TableSearchWithSelectAndPaginationComponent", function() { return _table_search_with_select_and_pagination_table_search_with_select_and_pagination_example_component__WEBPACK_IMPORTED_MODULE_24__["TableSearchWithSelectAndPaginationComponent"]; });
-
-/* harmony import */ var _table_select_pinned_header_table_select_pinned_header_example_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./table-select-pinned-header/table-select-pinned-header.example.component */ "lHWC");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TableSelectPinnedHeaderComponent", function() { return _table_select_pinned_header_table_select_pinned_header_example_component__WEBPACK_IMPORTED_MODULE_25__["TableSelectPinnedHeaderComponent"]; });
-
 
 
 
@@ -8956,431 +8948,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ("import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, ViewChild } from \"@angular/core\";\nimport { ClientSideDataSource, INovaFilteringOutputs, ISelection, PaginatorComponent, SelectionModel, SelectorService } from \"@nova-ui/bits\";\nimport { Subscription } from \"rxjs\";\n\ninterface IExampleTableModel {\n    position: number;\n    item: string;\n    description: string;\n    status: string;\n    location: string;\n}\n\n@Component({\n    selector: \"nui-table-selectable-toggle\",\n    providers: [ClientSideDataSource],\n    templateUrl: \"./table-selectable-toggle.example.component.html\",\n    changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class TableSelectableToggleExampleComponent implements AfterViewInit, OnDestroy {\n    public displayedColumns = [\"position\", \"item\", \"description\", \"status\", \"location\"];\n    public dataSource?: IExampleTableModel[] = [];\n    public paginationTotal?: number;\n    public selectedItems: IExampleTableModel[] = [];\n    public selectable = true;\n    public selection: ISelection = {\n        isAllPages: false,\n        include: [2, 3],\n        exclude: [\n        ],\n    };\n\n    @ViewChild(\"filteringPaginator\") filteringPaginator: PaginatorComponent;\n\n    private outputsSubscription: Subscription;\n\n    constructor(public dataSourceService: ClientSideDataSource<IExampleTableModel>,\n        public selectorService: SelectorService,\n        public changeDetector: ChangeDetectorRef) {\n    }\n\n    public ngAfterViewInit() {\n        this.dataSourceService.componentTree = {\n            paginator: {\n                componentInstance: this.filteringPaginator,\n            },\n        };\n        this.outputsSubscription = this.dataSourceService.outputsSubject.subscribe((data: INovaFilteringOutputs) => {\n            this.dataSource = data.repeat?.itemsSource;\n            this.paginationTotal = data.paginator?.total;\n            this.changeDetector.markForCheck();\n        });\n        this.applyFilters();\n    }\n\n    public changePagination($event: any) {\n        this.applyFilters();\n    }\n\n    public applyFilters() {\n        this.dataSourceService.setData(getData());\n        this.dataSourceService.applyFilters();\n    }\n\n    public ngOnDestroy() {\n        this.outputsSubscription.unsubscribe();\n    }\n\n    public trackBy(index: number, item: IExampleTableModel) {\n        return item.position;\n    }\n\n    public toggleSelectable() {\n        this.selectable = !this.selectable;\n        this.selection = new SelectionModel();\n    }\n}\n\n/** Table data */\nfunction getData(): IExampleTableModel[] {\n    return [\n        {\n            position: 1,\n            item: \"FOCUS-SVR-02258123\",\n            description: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\n            status: \"status_inactive\",\n            location: \"Brno\",\n        },\n        {\n            position: 2,\n            item: \"Man-LT-JYJ4AD5\",\n            description: \"Sed ut perspiciatis unde omnis iste natus error sit.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n        {\n            position: 3,\n            item: \"FOCUS-SVR-02258\",\n            description: \"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n        {\n            position: 4,\n            item: \"Man-LT-JYJ4AD5\",\n            description: \"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n        {\n            position: 5,\n            item: \"Man-LT-JYJ4AD5\",\n            description: \"Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n        {\n            position: 6,\n            item: \"Man-LT-JYJ4AD5\",\n            description: \"Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n        {\n            position: 7,\n            item: \"Man-LT-JYJ4AD5\",\n            description: \"Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n        {\n            position: 8,\n            item: \"Man-LT-JYJ4AD5\",\n            description: \"Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n        {\n            position: 9,\n            item: \"Man-LT-JYJ4AD5\",\n            description: \"Quis autem vel eum iure reprehenderit qui in ea voluptate.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n        {\n            position: 10,\n            item: \"Man-LT-JYJ4AD5\",\n            description: \"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n        {\n            position: 11,\n            item: \"FOCUS-SVR-111111\",\n            description: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\n            status: \"status_inactive\",\n            location: \"Brno\",\n        },\n        {\n            position: 12,\n            item: \"Man-LT-2222222\",\n            description: \"Sed ut perspiciatis unde omnis iste natus error sit.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n        {\n            position: 13,\n            item: \"FOCUS-SVR-333333\",\n            description: \"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n        {\n            position: 14,\n            item: \"Man-LT-444444\",\n            description: \"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n        {\n            position: 15,\n            item: \"Man-LT-555555\",\n            description: \"Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n        {\n            position: 16,\n            item: \"Man-LT-666666\",\n            description: \"Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n        {\n            position: 17,\n            item: \"Man-LT-777777\",\n            description: \"Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n        {\n            position: 18,\n            item: \"Man-LT-888888\",\n            description: \"Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n        {\n            position: 19,\n            item: \"Man-LT-999999\",\n            description: \"Quis autem vel eum iure reprehenderit qui in ea voluptate.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n        {\n            position: 20,\n            item: \"Man-LT-200000\",\n            description: \"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.\",\n            status: \"status_up\",\n            location: \"Brno\",\n        },\n    ];\n}\n");
-
-/***/ }),
-
-/***/ "lHWC":
-/*!*******************************************************************************************************************!*\
-  !*** ./demo/src/components/demo/table/table-select-pinned-header/table-select-pinned-header.example.component.ts ***!
-  \*******************************************************************************************************************/
-/*! exports provided: TableSelectPinnedHeaderComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TableSelectPinnedHeaderComponent", function() { return TableSelectPinnedHeaderComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _src_lib_table_table_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../src/lib/table/table.component */ "ey6q");
-/* harmony import */ var _src_lib_table_table_cell_table_column_def_directive__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-cell/table-column-def.directive */ "XeyC");
-/* harmony import */ var _src_lib_table_table_cell_table_header_cell_def_directive__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-cell/table-header-cell-def.directive */ "htGY");
-/* harmony import */ var _src_lib_table_table_cell_table_cell_def_directive__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-cell/table-cell-def.directive */ "/BSE");
-/* harmony import */ var _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-row/table-row.component */ "LFiI");
-/* harmony import */ var _src_lib_table_table_cell_table_header_cell_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-cell/table-header-cell.component */ "Ppt+");
-/* harmony import */ var _src_lib_table_table_cell_table_cell_directive__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-cell/table-cell.directive */ "jdPS");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common */ "ofXK");
-/* harmony import */ var _src_lib_icon_icon_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../../../../src/lib/icon/icon.component */ "45Bz");
-
-
-
-
-
-
-
-
-
-
-function TableSelectPinnedHeaderComponent_th_3_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "th", 14);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](1, 15);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-} }
-function TableSelectPinnedHeaderComponent_td_4_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "td", 16);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const element_r18 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", element_r18.position, "");
-} }
-function TableSelectPinnedHeaderComponent_th_6_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "th", 14);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](1, 17);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-} }
-function TableSelectPinnedHeaderComponent_td_7_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "td", 16);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const element_r19 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", element_r19.name, "");
-} }
-function TableSelectPinnedHeaderComponent_th_9_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "th", 14);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](1, 18);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-} }
-function TableSelectPinnedHeaderComponent_td_10_nui_icon_2_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "nui-icon", 21);
-} if (rf & 2) {
-    const icon_r22 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("icon", icon_r22);
-} }
-function TableSelectPinnedHeaderComponent_td_10_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "td", 16);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 19);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, TableSelectPinnedHeaderComponent_td_10_nui_icon_2_Template, 1, 1, "nui-icon", 20);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const element_r20 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", element_r20.features);
-} }
-function TableSelectPinnedHeaderComponent_th_12_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "th", 14);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](1, 22);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-} }
-function TableSelectPinnedHeaderComponent_td_13_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "td", 16);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const element_r23 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", element_r23.asset, "");
-} }
-function TableSelectPinnedHeaderComponent_th_15_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "th", 14);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](1, 23);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-} }
-function TableSelectPinnedHeaderComponent_td_16_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "td", 16);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const element_r24 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", element_r24.location, "");
-} }
-function TableSelectPinnedHeaderComponent_th_18_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "th", 14);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](1, 24);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-} }
-function TableSelectPinnedHeaderComponent_td_19_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "td", 16);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const element_r25 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", element_r25.status, "");
-} }
-function TableSelectPinnedHeaderComponent_th_21_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "th", 14);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](1, 25);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-} }
-function TableSelectPinnedHeaderComponent_td_22_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "td", 16);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const element_r26 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", element_r26.outages, "");
-} }
-function TableSelectPinnedHeaderComponent_th_24_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "th", 14);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](1, 26);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-} }
-function TableSelectPinnedHeaderComponent_td_25_ng_container_2_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](0);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "nui-icon", 28);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 29);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
-} if (rf & 2) {
-    const check_r29 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("icon", check_r29.icon);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](check_r29.num);
-} }
-function TableSelectPinnedHeaderComponent_td_25_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "td", 16);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 19);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, TableSelectPinnedHeaderComponent_td_25_ng_container_2_Template, 4, 2, "ng-container", 27);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const element_r27 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", element_r27.checks);
-} }
-function TableSelectPinnedHeaderComponent_tr_26_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "tr", 30);
-} }
-function TableSelectPinnedHeaderComponent_tr_27_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "tr", 31);
-} if (rf & 2) {
-    const row_r30 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("rowObject", row_r30);
-} }
-class TableSelectPinnedHeaderComponent {
-    constructor() {
-        this.displayedColumns = ["position", "name", "features", "asset", "location", "status", "outages", "checks"];
-        this.dataSource = getData();
-        this.selection = {
-            isAllPages: false,
-            include: [2, 3],
-            exclude: [],
-        };
-    }
-    trackBy(index, item) {
-        return item.position;
-    }
-}
-TableSelectPinnedHeaderComponent.ɵfac = function TableSelectPinnedHeaderComponent_Factory(t) { return new (t || TableSelectPinnedHeaderComponent)(); };
-TableSelectPinnedHeaderComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: TableSelectPinnedHeaderComponent, selectors: [["nui-table-select-pinned-header-example"]], decls: 28, vars: 7, consts: function () { let i18n_0; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-        const MSG_EXTERNAL_1345472093440723911$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECT_PINNED_HEADER_TABLE_SELECT_PINNED_HEADER_EXAMPLE_COMPONENT_TS__1 = goog.getMsg(" No.");
-        i18n_0 = MSG_EXTERNAL_1345472093440723911$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECT_PINNED_HEADER_TABLE_SELECT_PINNED_HEADER_EXAMPLE_COMPONENT_TS__1;
-    }
-    else {
-        i18n_0 = $localize `:␟333f0164082b9f12f63ca11438b2085d074a5b0f␟1345472093440723911: No.`;
-    } let i18n_2; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-        const MSG_EXTERNAL_5923354303687392819$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECT_PINNED_HEADER_TABLE_SELECT_PINNED_HEADER_EXAMPLE_COMPONENT_TS__3 = goog.getMsg(" Name");
-        i18n_2 = MSG_EXTERNAL_5923354303687392819$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECT_PINNED_HEADER_TABLE_SELECT_PINNED_HEADER_EXAMPLE_COMPONENT_TS__3;
-    }
-    else {
-        i18n_2 = $localize `:␟7b07cc6126aa22c8a3041963963e85a0791a7e40␟5923354303687392819: Name`;
-    } let i18n_4; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-        const MSG_EXTERNAL_4366791221426489252$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECT_PINNED_HEADER_TABLE_SELECT_PINNED_HEADER_EXAMPLE_COMPONENT_TS__5 = goog.getMsg(" Features");
-        i18n_4 = MSG_EXTERNAL_4366791221426489252$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECT_PINNED_HEADER_TABLE_SELECT_PINNED_HEADER_EXAMPLE_COMPONENT_TS__5;
-    }
-    else {
-        i18n_4 = $localize `:␟176794380c10213e5247f7350b40037bd3affcb3␟4366791221426489252: Features`;
-    } let i18n_6; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-        const MSG_EXTERNAL_6940950714946520886$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECT_PINNED_HEADER_TABLE_SELECT_PINNED_HEADER_EXAMPLE_COMPONENT_TS__7 = goog.getMsg(" Asset Class");
-        i18n_6 = MSG_EXTERNAL_6940950714946520886$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECT_PINNED_HEADER_TABLE_SELECT_PINNED_HEADER_EXAMPLE_COMPONENT_TS__7;
-    }
-    else {
-        i18n_6 = $localize `:␟c123012b555ee9898f49540288d43c3c606e27d6␟6940950714946520886: Asset Class`;
-    } let i18n_8; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-        const MSG_EXTERNAL_7598846418510631873$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECT_PINNED_HEADER_TABLE_SELECT_PINNED_HEADER_EXAMPLE_COMPONENT_TS__9 = goog.getMsg(" Location");
-        i18n_8 = MSG_EXTERNAL_7598846418510631873$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECT_PINNED_HEADER_TABLE_SELECT_PINNED_HEADER_EXAMPLE_COMPONENT_TS__9;
-    }
-    else {
-        i18n_8 = $localize `:␟4ed56c7c2b85b2b764c9853d121c291db3b70ed9␟7598846418510631873: Location`;
-    } let i18n_10; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-        const MSG_EXTERNAL_7043724726246657652$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECT_PINNED_HEADER_TABLE_SELECT_PINNED_HEADER_EXAMPLE_COMPONENT_TS__11 = goog.getMsg(" Status");
-        i18n_10 = MSG_EXTERNAL_7043724726246657652$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECT_PINNED_HEADER_TABLE_SELECT_PINNED_HEADER_EXAMPLE_COMPONENT_TS__11;
-    }
-    else {
-        i18n_10 = $localize `:␟f3ab141a02057a7853b9cde7dea17eef6811e27a␟7043724726246657652: Status`;
-    } let i18n_12; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-        const MSG_EXTERNAL_3645300875970966243$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECT_PINNED_HEADER_TABLE_SELECT_PINNED_HEADER_EXAMPLE_COMPONENT_TS__13 = goog.getMsg(" Outages");
-        i18n_12 = MSG_EXTERNAL_3645300875970966243$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECT_PINNED_HEADER_TABLE_SELECT_PINNED_HEADER_EXAMPLE_COMPONENT_TS__13;
-    }
-    else {
-        i18n_12 = $localize `:␟e81b7832d164ea9359f7937353f7dfc314064a3a␟3645300875970966243: Outages`;
-    } let i18n_14; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-        const MSG_EXTERNAL_7108392645161261297$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECT_PINNED_HEADER_TABLE_SELECT_PINNED_HEADER_EXAMPLE_COMPONENT_TS__15 = goog.getMsg(" Checks");
-        i18n_14 = MSG_EXTERNAL_7108392645161261297$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECT_PINNED_HEADER_TABLE_SELECT_PINNED_HEADER_EXAMPLE_COMPONENT_TS__15;
-    }
-    else {
-        i18n_14 = $localize `:␟fc6c8586d4f4fbce21310ff2a21da10de8c8a04b␟7108392645161261297: Checks`;
-    } return [[1, "nui-table__container", 2, "height", "300px"], ["nui-table", "", 3, "dataSource", "selection", "selectable", "trackBy", "selectionChange"], ["nuiColumnDef", "position"], ["nui-header-cell", "", 4, "nuiHeaderCellDef"], ["nui-cell", "", 4, "nuiCellDef"], ["nuiColumnDef", "name"], ["nuiColumnDef", "features"], ["nuiColumnDef", "asset"], ["nuiColumnDef", "location"], ["nuiColumnDef", "status"], ["nuiColumnDef", "outages"], ["nuiColumnDef", "checks"], ["nui-header-row", "", "stickyCssClass", "nui-table__sticky", "StickyDirection", "top", 4, "nuiHeaderRowDef", "nuiHeaderRowDefSticky"], ["nui-row", "", 3, "rowObject", 4, "nuiRowDef", "nuiRowDefColumns"], ["nui-header-cell", ""], i18n_0, ["nui-cell", ""], i18n_2, i18n_4, [1, "d-flex", "align-items-center"], ["class", "icon-margin", 3, "icon", 4, "ngFor", "ngForOf"], [1, "icon-margin", 3, "icon"], i18n_6, i18n_8, i18n_10, i18n_12, i18n_14, [4, "ngFor", "ngForOf"], [3, "icon"], [1, "ml-2"], ["nui-header-row", "", "stickyCssClass", "nui-table__sticky", "StickyDirection", "top"], ["nui-row", "", 3, "rowObject"]]; }, template: function TableSelectPinnedHeaderComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "table", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("selectionChange", function TableSelectPinnedHeaderComponent_Template_table_selectionChange_1_listener($event) { return ctx.selection = $event; });
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](2, 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, TableSelectPinnedHeaderComponent_th_3_Template, 2, 0, "th", 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, TableSelectPinnedHeaderComponent_td_4_Template, 2, 1, "td", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](5, 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](6, TableSelectPinnedHeaderComponent_th_6_Template, 2, 0, "th", 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](7, TableSelectPinnedHeaderComponent_td_7_Template, 2, 1, "td", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](8, 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](9, TableSelectPinnedHeaderComponent_th_9_Template, 2, 0, "th", 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](10, TableSelectPinnedHeaderComponent_td_10_Template, 3, 1, "td", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](11, 7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](12, TableSelectPinnedHeaderComponent_th_12_Template, 2, 0, "th", 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](13, TableSelectPinnedHeaderComponent_td_13_Template, 2, 1, "td", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](14, 8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](15, TableSelectPinnedHeaderComponent_th_15_Template, 2, 0, "th", 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](16, TableSelectPinnedHeaderComponent_td_16_Template, 2, 1, "td", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](17, 9);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](18, TableSelectPinnedHeaderComponent_th_18_Template, 2, 0, "th", 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](19, TableSelectPinnedHeaderComponent_td_19_Template, 2, 1, "td", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](20, 10);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](21, TableSelectPinnedHeaderComponent_th_21_Template, 2, 0, "th", 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](22, TableSelectPinnedHeaderComponent_td_22_Template, 2, 1, "td", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](23, 11);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](24, TableSelectPinnedHeaderComponent_th_24_Template, 2, 0, "th", 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](25, TableSelectPinnedHeaderComponent_td_25_Template, 3, 1, "td", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](26, TableSelectPinnedHeaderComponent_tr_26_Template, 1, 0, "tr", 12);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](27, TableSelectPinnedHeaderComponent_tr_27_Template, 1, 1, "tr", 13);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("dataSource", ctx.dataSource)("selection", ctx.selection)("selectable", true)("trackBy", ctx.trackBy);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](25);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("nuiHeaderRowDef", ctx.displayedColumns)("nuiHeaderRowDefSticky", true);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("nuiRowDefColumns", ctx.displayedColumns);
-    } }, directives: [_src_lib_table_table_component__WEBPACK_IMPORTED_MODULE_1__["TableComponent"], _src_lib_table_table_cell_table_column_def_directive__WEBPACK_IMPORTED_MODULE_2__["TableColumnDefDirective"], _src_lib_table_table_cell_table_header_cell_def_directive__WEBPACK_IMPORTED_MODULE_3__["TableHeaderCellDefDirective"], _src_lib_table_table_cell_table_cell_def_directive__WEBPACK_IMPORTED_MODULE_4__["TableCellDefDirective"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_5__["TableHeaderRowDefDirective"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_5__["TableRowDefDirective"], _src_lib_table_table_cell_table_header_cell_component__WEBPACK_IMPORTED_MODULE_6__["TableHeaderCellComponent"], _src_lib_table_table_cell_table_cell_directive__WEBPACK_IMPORTED_MODULE_7__["TableCellDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_8__["NgForOf"], _src_lib_icon_icon_component__WEBPACK_IMPORTED_MODULE_9__["IconComponent"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_5__["TableHeaderRowComponent"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_5__["TableRowComponent"]], styles: [".icon-margin[_ngcontent-%COMP%] {\n  margin-right: 5px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRhYmxlLXNlbGVjdC1waW5uZWQtaGVhZGVyLmV4YW1wbGUuY29tcG9uZW50Lmxlc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxpQkFBQTtBQUNKIiwiZmlsZSI6InRhYmxlLXNlbGVjdC1waW5uZWQtaGVhZGVyLmV4YW1wbGUuY29tcG9uZW50Lmxlc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuaWNvbi1tYXJnaW4ge1xuICAgIG1hcmdpbi1yaWdodDogNXB4O1xufSJdfQ== */"], changeDetection: 0 });
-/** Table data */
-function getData() {
-    return [
-        {
-            position: 1,
-            name: "FOCUS-SVR-02258",
-            features: ["remote-access-vpn-tunnel", "tools", "database", "orion-ape-backup", "patch-manager01"],
-            asset: "Workstation",
-            location: "Brno",
-            status: "Active",
-            outages: 52,
-            checks: [{
-                    icon: "status_up",
-                    num: 25,
-                }],
-        },
-        {
-            position: 2,
-            name: "Man-LT-JYJ4AD5",
-            features: ["remote-access-vpn-tunnel", "tools", "database", "orion-ape-backup", "patch-manager01"],
-            asset: "Workstation",
-            location: "Brno",
-            status: "Active",
-            outages: 3,
-            checks: [{
-                    icon: "status_critical",
-                    num: 25,
-                }],
-        },
-        {
-            position: 3,
-            name: "FOCUS-SVR-02258",
-            features: ["remote-access-vpn-tunnel", "tools", "database", "orion-ape-backup", "patch-manager01"],
-            asset: "Workstation",
-            location: "Brno",
-            status: "Active",
-            outages: 68,
-            checks: [{
-                    icon: "status_down",
-                    num: 25,
-                }],
-        },
-        {
-            position: 4,
-            name: "Man-LT-JYJ4AD5",
-            features: ["remote-access-vpn-tunnel", "tools", "database", "orion-ape-backup", "patch-manager01"],
-            asset: "Workstation",
-            location: "Brno",
-            status: "Active",
-            outages: 86,
-            checks: [{
-                    icon: "status_up",
-                    num: 25,
-                }],
-        },
-        {
-            position: 5,
-            name: "Man-LT-JYJ4AD5",
-            features: ["remote-access-vpn-tunnel", "tools", "database", "orion-ape-backup", "patch-manager01"],
-            asset: "Workstation",
-            location: "Brno",
-            status: "Active",
-            outages: 70,
-            checks: [{
-                    icon: "status_up",
-                    num: 25,
-                }],
-        },
-        {
-            position: 6,
-            name: "Man-LT-JYJ4AD5",
-            features: ["remote-access-vpn-tunnel", "tools", "database", "orion-ape-backup", "patch-manager01"],
-            asset: "Workstation",
-            location: "Brno",
-            status: "Active",
-            outages: 71,
-            checks: [{
-                    icon: "status_mixed",
-                    num: 25,
-                }],
-        },
-        {
-            position: 7,
-            name: "Man-LT-JYJ4AD5",
-            features: ["remote-access-vpn-tunnel", "tools", "database", "orion-ape-backup", "patch-manager01"],
-            asset: "Workstation",
-            location: "Brno",
-            status: "Active",
-            outages: 6,
-            checks: [{
-                    icon: "status_external",
-                    num: 25,
-                }],
-        },
-        {
-            position: 8,
-            name: "Man-LT-JYJ4AD5",
-            features: ["remote-access-vpn-tunnel", "tools", "database", "orion-ape-backup", "patch-manager01"],
-            asset: "Workstation",
-            location: "Brno",
-            status: "Active",
-            outages: 15,
-            checks: [{
-                    icon: "status_inactive",
-                    num: 25,
-                }],
-        },
-        {
-            position: 9,
-            name: "Man-LT-JYJ4AD5",
-            features: ["remote-access-vpn-tunnel", "tools", "database", "orion-ape-backup", "patch-manager01"],
-            asset: "Workstation",
-            location: "Brno",
-            status: "Active",
-            outages: 16,
-            checks: [{
-                    icon: "status_up",
-                    num: 25,
-                }],
-        },
-        {
-            position: 10,
-            name: "Man-LT-JYJ4AD5",
-            features: ["remote-access-vpn-tunnel", "tools", "database", "orion-ape-backup", "patch-manager01"],
-            asset: "Workstation",
-            location: "Brno",
-            status: "Active",
-            outages: 96,
-            checks: [{
-                    icon: "status_up",
-                    num: 25,
-                }],
-        },
-    ];
-}
-
 
 /***/ }),
 
@@ -10336,19 +9903,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "mqSZ":
-/*!***********************************************************************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/table/table-select-pinned-header/table-select-pinned-header.example.component.less ***!
-  \***********************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".icon-margin {\n    margin-right: 5px;\n}");
-
-/***/ }),
-
 /***/ "n8np":
 /*!*****************************************************************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/table/table-cell-content-align/table-cell-content-align.example.component.ts ***!
@@ -10858,8 +10412,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _table_columns_add_remove_table_columns_add_remove_example_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../table-columns-add-remove/table-columns-add-remove.example.component */ "Cox8");
 /* harmony import */ var _table_resize_table_resize_example_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../table-resize/table-resize.example.component */ "cZCA");
 /* harmony import */ var _table_select_table_select_example_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../table-select/table-select.example.component */ "YgYn");
-/* harmony import */ var _table_select_pinned_header_table_select_pinned_header_example_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../table-select-pinned-header/table-select-pinned-header.example.component */ "lHWC");
-
 
 
 
@@ -10872,7 +10424,7 @@ __webpack_require__.r(__webpack_exports__);
 class TableVisualTestComponent {
 }
 TableVisualTestComponent.ɵfac = function TableVisualTestComponent_Factory(t) { return new (t || TableVisualTestComponent)(); };
-TableVisualTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: TableVisualTestComponent, selectors: [["table-visual-test-example"]], decls: 41, vars: 0, consts: [[1, "container"], ["open", ""], ["id", "nui-visual-table-basic-summary"], ["id", "table-basic-usage"], ["id", "nui-visual-table-pinned-summary"], ["id", "table-pinned-header"], ["id", "nui-visual-table-alignment-summary"], ["id", "table-column-alignment"], ["id", "nui-visual-table-row-denisty-tiny-summary"], ["id", "table-row-density-tiny"], ["id", "nui-visual-table-row-denisty-compact-summary"], ["id", "table-row-density-compact", "density", "compact"], ["id", "nui-visual-table-sorting-summary"], ["id", "table-sorting"], ["id", "nui-visual-table-custom-action-summary"], ["id", "table-custom-action"], ["id", "nui-visual-table-column-size-summary"], ["id", "table-resizing"], ["id", "nui-visual-table-row-selection-summary"], ["id", "table-selected-row"], ["id", "nui-visual-table-select-pinned-header-summary"], ["id", "table-select-pinned-header"]], template: function TableVisualTestComponent_Template(rf, ctx) { if (rf & 1) {
+TableVisualTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: TableVisualTestComponent, selectors: [["table-visual-test-example"]], decls: 37, vars: 0, consts: [[1, "container"], ["open", ""], ["id", "nui-visual-table-basic-summary"], ["id", "table-basic-usage"], ["id", "nui-visual-table-pinned-summary"], ["id", "table-pinned-header"], ["id", "nui-visual-table-alignment-summary"], ["id", "table-column-alignment"], ["id", "nui-visual-table-row-denisty-tiny-summary"], ["id", "table-row-density-tiny"], ["id", "nui-visual-table-row-denisty-compact-summary"], ["id", "table-row-density-compact", "density", "compact"], ["id", "nui-visual-table-sorting-summary"], ["id", "table-sorting"], ["id", "nui-visual-table-custom-action-summary"], ["id", "table-custom-action"], ["id", "nui-visual-table-column-size-summary"], ["id", "table-resizing"], ["id", "nui-visual-table-row-selection-summary"], ["id", "table-selected-row"]], template: function TableVisualTestComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "details", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "summary", 2);
@@ -10928,14 +10480,8 @@ TableVisualTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵ�
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](36, "nui-table-select", 19);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](37, "details", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](38, "summary", 20);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](39, "Select Pinned Header");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](40, "nui-table-select-pinned-header-example", 21);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    } }, directives: [_table_basic_table_basic_example_component__WEBPACK_IMPORTED_MODULE_1__["TableBasicExampleComponent"], _table_pinned_header_table_pinned_header_example_component__WEBPACK_IMPORTED_MODULE_2__["TablePinnedHeaderComponent"], _table_cell_content_align_table_cell_content_align_example_component__WEBPACK_IMPORTED_MODULE_3__["TableCellContentAlignComponent"], _table_row_height_set_table_row_height_set_example_component__WEBPACK_IMPORTED_MODULE_4__["TableRowHeightSetExampleComponent"], _table_sorting_table_sorting_example_component__WEBPACK_IMPORTED_MODULE_5__["TableSortingExampleComponent"], _table_columns_add_remove_table_columns_add_remove_example_component__WEBPACK_IMPORTED_MODULE_6__["TableColumnsAddRemoveExampleComponent"], _table_resize_table_resize_example_component__WEBPACK_IMPORTED_MODULE_7__["TableResizeExampleComponent"], _table_select_table_select_example_component__WEBPACK_IMPORTED_MODULE_8__["TableSelectExampleComponent"], _table_select_pinned_header_table_select_pinned_header_example_component__WEBPACK_IMPORTED_MODULE_9__["TableSelectPinnedHeaderComponent"]], encapsulation: 2 });
+    } }, directives: [_table_basic_table_basic_example_component__WEBPACK_IMPORTED_MODULE_1__["TableBasicExampleComponent"], _table_pinned_header_table_pinned_header_example_component__WEBPACK_IMPORTED_MODULE_2__["TablePinnedHeaderComponent"], _table_cell_content_align_table_cell_content_align_example_component__WEBPACK_IMPORTED_MODULE_3__["TableCellContentAlignComponent"], _table_row_height_set_table_row_height_set_example_component__WEBPACK_IMPORTED_MODULE_4__["TableRowHeightSetExampleComponent"], _table_sorting_table_sorting_example_component__WEBPACK_IMPORTED_MODULE_5__["TableSortingExampleComponent"], _table_columns_add_remove_table_columns_add_remove_example_component__WEBPACK_IMPORTED_MODULE_6__["TableColumnsAddRemoveExampleComponent"], _table_resize_table_resize_example_component__WEBPACK_IMPORTED_MODULE_7__["TableResizeExampleComponent"], _table_select_table_select_example_component__WEBPACK_IMPORTED_MODULE_8__["TableSelectExampleComponent"]], encapsulation: 2 });
 
 
 /***/ }),
@@ -11533,19 +11079,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "uE97":
-/*!***********************************************************************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/table/table-select-pinned-header/table-select-pinned-header.example.component.html ***!
-  \***********************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"nui-table__container\" style=\"height: 300px\">\n    <table nui-table [dataSource]=\"dataSource\" [(selection)]=\"selection\" [selectable]=\"true\" [trackBy]=\"trackBy\">\n        <ng-container nuiColumnDef=\"position\">\n            <th nui-header-cell *nuiHeaderCellDef i18n> No.</th>\n            <td nui-cell *nuiCellDef=\"let element\"> {{element.position}}</td>\n        </ng-container>\n\n        <ng-container nuiColumnDef=\"name\">\n            <th nui-header-cell *nuiHeaderCellDef i18n> Name</th>\n            <td nui-cell *nuiCellDef=\"let element\"> {{element.name}}</td>\n        </ng-container>\n\n        <ng-container nuiColumnDef=\"features\">\n            <th nui-header-cell *nuiHeaderCellDef i18n> Features</th>\n            <td nui-cell *nuiCellDef=\"let element\" >\n                <div class=\"d-flex align-items-center\">\n                    <nui-icon *ngFor=\"let icon of element.features\"\n                          [icon]=\"icon\"\n                          class=\"icon-margin\"></nui-icon>\n                </div>\n            </td>\n        </ng-container>\n\n        <ng-container nuiColumnDef=\"asset\">\n            <th nui-header-cell *nuiHeaderCellDef i18n> Asset Class</th>\n            <td nui-cell *nuiCellDef=\"let element\"> {{element.asset}}</td>\n        </ng-container>\n\n        <ng-container nuiColumnDef=\"location\">\n            <th nui-header-cell *nuiHeaderCellDef i18n> Location</th>\n            <td nui-cell *nuiCellDef=\"let element\"> {{element.location}}</td>\n        </ng-container>\n\n        <ng-container nuiColumnDef=\"status\">\n            <th nui-header-cell *nuiHeaderCellDef i18n> Status</th>\n            <td nui-cell *nuiCellDef=\"let element\"> {{element.status}}</td>\n        </ng-container>\n\n        <ng-container nuiColumnDef=\"outages\">\n            <th nui-header-cell *nuiHeaderCellDef i18n> Outages</th>\n            <td nui-cell *nuiCellDef=\"let element\"> {{element.outages}}</td>\n        </ng-container>\n\n        <ng-container nuiColumnDef=\"checks\">\n            <th nui-header-cell *nuiHeaderCellDef i18n> Checks</th>\n            <td nui-cell *nuiCellDef=\"let element\">\n                <div class=\"d-flex align-items-center\">\n                    <ng-container *ngFor=\"let check of element.checks\">\n                        <nui-icon [icon]=\"check.icon\"></nui-icon>\n                        <div class=\"ml-2\">{{check.num}}</div>\n                    </ng-container>\n                </div>\n            </td>\n        </ng-container>\n        <tr nui-header-row *nuiHeaderRowDef=\"displayedColumns; sticky: true\" stickyCssClass=\"nui-table__sticky\" StickyDirection=\"top\"></tr>\n        <tr nui-row *nuiRowDef=\"let row; columns: displayedColumns;\" [rowObject]=\"row\"></tr>\n    </table>\n</div>\n");
-
-/***/ }),
-
 /***/ "uRoR":
 /*!*****************************************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/table/table-visual-test/table-visual-test.example.ts ***!
@@ -11623,7 +11156,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { ScrollingModule } from \"@angular/cdk/scrolling\";\nimport { DatePipe } from \"@angular/common\";\nimport { NgModule } from \"@angular/core\";\nimport { RouterModule } from \"@angular/router\";\nimport {\n    DEMO_PATH_TOKEN,\n    NuiButtonModule,\n    NuiCheckboxModule,\n    NuiDividerModule,\n    NuiDocsModule,\n    NuiExpanderModule,\n    NuiIconModule,\n    NuiMenuModule,\n    NuiMessageModule,\n    NuiPaginatorModule,\n    NuiProgressModule,\n    NuiSearchModule,\n    NuiSpinnerModule,\n    NuiSwitchModule,\n    NuiTableModule,\n    NuiTextboxModule,\n    SrlcStage,\n} from \"@nova-ui/bits\";\n\nimport {\n    TableBasicExampleComponent,\n    TableCellContentAlignComponent,\n    TableCellWidthSetExampleComponent,\n    TableColumnsAddRemoveExampleComponent,\n    TableDocsComponent,\n    TablePaginationExampleComponent,\n    TablePinnedHeaderComponent,\n    TableReorderExampleComponent,\n    TableResizeExampleComponent,\n    TableRowClickableExampleComponent,\n    TableRowHeightSetExampleComponent,\n    TableRowSelectInstructionsComponent,\n    TableSearchExampleComponent,\n    TableSearchWithSelectAndPaginationComponent,\n    TableSelectableToggleExampleComponent,\n    TableSelectExampleComponent,\n    TableSortingExampleComponent,\n    TableTestComponent,\n    TableVirtualScrollRealApiExampleComponent,\n    TableVirtualScrollRealApiMinimalistExampleComponent,\n    TableVirtualScrollRealApiProgressFooterExampleComponent,\n    TableVirtualScrollRealApiProgressTextFooterExampleComponent,\n    TableVirtualScrollSelectStickyHeaderExampleComponent,\n    TableVirtualScrollStepsAndButtonExampleComponent,\n    TableVirtualScrollStickyHeaderExampleComponent,\n    TableSelectPinnedHeaderComponent,\n    TableVisualTestComponent,\n} from \"./index\";\n\nconst routes = [\n    {\n        path: \"\",\n        component: TableDocsComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.ga,\n            },\n            showThemeSwitcher: true,\n        },\n    },\n    {\n        path: \"table-test\",\n        component: TableTestComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.ga,\n            },\n        },\n    },\n    {\n        path: \"basic\",\n        component: TableBasicExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"width-set\",\n        component: TableCellWidthSetExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"pagination\",\n        component: TablePaginationExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"search\",\n        component: TableSearchExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"height\",\n        component: TableRowHeightSetExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"custom-actions\",\n        component: TableColumnsAddRemoveExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"sorting\",\n        component: TableSortingExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"reorder\",\n        component: TableReorderExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"resize\",\n        component: TableResizeExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"selectable-toggle\",\n        component: TableSelectableToggleExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"select\",\n        component: TableSelectExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"visual-test\",\n        component: TableVisualTestComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"table-row-clickable\",\n        component: TableRowClickableExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"virtual-1\",\n        component: TableVirtualScrollRealApiExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"virtual-2\",\n        component: TableVirtualScrollRealApiMinimalistExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"step\",\n        component: TableVirtualScrollStepsAndButtonExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"sticky\",\n        component: TableVirtualScrollStickyHeaderExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"select-sticky\",\n        component: TableVirtualScrollSelectStickyHeaderExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n];\n\n@NgModule({\n    imports: [\n        NuiButtonModule,\n        NuiTableModule,\n        NuiDocsModule,\n        NuiPaginatorModule,\n        NuiSearchModule,\n        NuiSwitchModule,\n        NuiDividerModule,\n        NuiCheckboxModule,\n        NuiTextboxModule,\n        NuiMessageModule,\n        NuiExpanderModule,\n        NuiMenuModule,\n        NuiIconModule,\n        RouterModule.forChild(routes),\n        ScrollingModule,\n        NuiSpinnerModule,\n        NuiProgressModule,\n    ],\n    declarations: [\n        TableBasicExampleComponent,\n        TableCellWidthSetExampleComponent,\n        TableColumnsAddRemoveExampleComponent,\n        TableDocsComponent,\n        TablePaginationExampleComponent,\n        TablePinnedHeaderComponent,\n        TableReorderExampleComponent,\n        TableRowHeightSetExampleComponent,\n        TableRowClickableExampleComponent,\n        TableResizeExampleComponent,\n        TableSearchExampleComponent,\n        TableSelectableToggleExampleComponent,\n        TableSelectExampleComponent,\n        TableSelectPinnedHeaderComponent,\n        TableSortingExampleComponent,\n        TableCellContentAlignComponent,\n        TableTestComponent,\n        TableVisualTestComponent,\n        TableVirtualScrollRealApiExampleComponent,\n        TableVirtualScrollStepsAndButtonExampleComponent,\n        TableVirtualScrollRealApiProgressFooterExampleComponent,\n        TableVirtualScrollRealApiProgressTextFooterExampleComponent,\n        TableVirtualScrollRealApiMinimalistExampleComponent,\n        TableSearchWithSelectAndPaginationComponent,\n        TableVirtualScrollStickyHeaderExampleComponent,\n        TableVirtualScrollSelectStickyHeaderExampleComponent,\n        TableRowSelectInstructionsComponent,\n    ],\n    providers: [\n        DatePipe,\n        {\n            provide: DEMO_PATH_TOKEN,\n            useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/),\n        },\n    ],\n    exports: [\n        RouterModule,\n    ],\n})\nexport class TableModule {\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import { ScrollingModule } from \"@angular/cdk/scrolling\";\nimport { DatePipe } from \"@angular/common\";\nimport { NgModule } from \"@angular/core\";\nimport { RouterModule } from \"@angular/router\";\nimport {\n    DEMO_PATH_TOKEN,\n    NuiButtonModule,\n    NuiCheckboxModule,\n    NuiDividerModule,\n    NuiDocsModule,\n    NuiExpanderModule,\n    NuiIconModule,\n    NuiMenuModule,\n    NuiMessageModule,\n    NuiPaginatorModule,\n    NuiProgressModule,\n    NuiSearchModule,\n    NuiSpinnerModule,\n    NuiSwitchModule,\n    NuiTableModule,\n    NuiTextboxModule,\n    SrlcStage,\n} from \"@nova-ui/bits\";\n\nimport {\n    TableBasicExampleComponent,\n    TableCellContentAlignComponent,\n    TableCellWidthSetExampleComponent,\n    TableColumnsAddRemoveExampleComponent,\n    TableDocsComponent,\n    TablePaginationExampleComponent,\n    TablePinnedHeaderComponent,\n    TableReorderExampleComponent,\n    TableResizeExampleComponent,\n    TableRowClickableExampleComponent,\n    TableRowHeightSetExampleComponent,\n    TableRowSelectInstructionsComponent,\n    TableSearchExampleComponent,\n    TableSearchWithSelectAndPaginationComponent,\n    TableSelectableToggleExampleComponent,\n    TableSelectExampleComponent,\n    TableSortingExampleComponent,\n    TableTestComponent,\n    TableVirtualScrollRealApiExampleComponent,\n    TableVirtualScrollRealApiMinimalistExampleComponent,\n    TableVirtualScrollRealApiProgressFooterExampleComponent,\n    TableVirtualScrollRealApiProgressTextFooterExampleComponent,\n    TableVirtualScrollSelectStickyHeaderExampleComponent,\n    TableVirtualScrollStepsAndButtonExampleComponent,\n    TableVirtualScrollStickyHeaderExampleComponent,\n    TableVisualTestComponent,\n} from \"./index\";\n\nconst routes = [\n    {\n        path: \"\",\n        component: TableDocsComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.ga,\n            },\n            showThemeSwitcher: true,\n        },\n    },\n    {\n        path: \"table-test\",\n        component: TableTestComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.ga,\n            },\n        },\n    },\n    {\n        path: \"basic\",\n        component: TableBasicExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"width-set\",\n        component: TableCellWidthSetExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"pagination\",\n        component: TablePaginationExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"search\",\n        component: TableSearchExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"height\",\n        component: TableRowHeightSetExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"custom-actions\",\n        component: TableColumnsAddRemoveExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"sorting\",\n        component: TableSortingExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"reorder\",\n        component: TableReorderExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"resize\",\n        component: TableResizeExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"selectable-toggle\",\n        component: TableSelectableToggleExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"select\",\n        component: TableSelectExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"visual-test\",\n        component: TableVisualTestComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"table-row-clickable\",\n        component: TableRowClickableExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"virtual-1\",\n        component: TableVirtualScrollRealApiExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"virtual-2\",\n        component: TableVirtualScrollRealApiMinimalistExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"step\",\n        component: TableVirtualScrollStepsAndButtonExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"sticky\",\n        component: TableVirtualScrollStickyHeaderExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"select-sticky\",\n        component: TableVirtualScrollSelectStickyHeaderExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n];\n\n@NgModule({\n    imports: [\n        NuiButtonModule,\n        NuiTableModule,\n        NuiDocsModule,\n        NuiPaginatorModule,\n        NuiSearchModule,\n        NuiSwitchModule,\n        NuiDividerModule,\n        NuiCheckboxModule,\n        NuiTextboxModule,\n        NuiMessageModule,\n        NuiExpanderModule,\n        NuiMenuModule,\n        NuiIconModule,\n        RouterModule.forChild(routes),\n        ScrollingModule,\n        NuiSpinnerModule,\n        NuiProgressModule,\n    ],\n    declarations: [\n        TableBasicExampleComponent,\n        TableCellWidthSetExampleComponent,\n        TableColumnsAddRemoveExampleComponent,\n        TableDocsComponent,\n        TablePaginationExampleComponent,\n        TablePinnedHeaderComponent,\n        TableReorderExampleComponent,\n        TableRowHeightSetExampleComponent,\n        TableRowClickableExampleComponent,\n        TableResizeExampleComponent,\n        TableSearchExampleComponent,\n        TableSelectableToggleExampleComponent,\n        TableSelectExampleComponent,\n        TableSortingExampleComponent,\n        TableCellContentAlignComponent,\n        TableTestComponent,\n        TableVisualTestComponent,\n        TableVirtualScrollRealApiExampleComponent,\n        TableVirtualScrollStepsAndButtonExampleComponent,\n        TableVirtualScrollRealApiProgressFooterExampleComponent,\n        TableVirtualScrollRealApiProgressTextFooterExampleComponent,\n        TableVirtualScrollRealApiMinimalistExampleComponent,\n        TableSearchWithSelectAndPaginationComponent,\n        TableVirtualScrollStickyHeaderExampleComponent,\n        TableVirtualScrollSelectStickyHeaderExampleComponent,\n        TableRowSelectInstructionsComponent,\n    ],\n    providers: [\n        DatePipe,\n        {\n            provide: DEMO_PATH_TOKEN,\n            useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/),\n        },\n    ],\n    exports: [\n        RouterModule,\n    ],\n})\nexport class TableModule {\n}\n");
 
 /***/ }),
 
@@ -12401,19 +11934,6 @@ TableTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefin
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (".nui-searchable-table__search {\n    max-width: 350px;\n    margin-bottom: 5px;\n    margin-left: auto;\n}\n");
-
-/***/ }),
-
-/***/ "zWv6":
-/*!*********************************************************************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/table/table-select-pinned-header/table-select-pinned-header.example.component.ts ***!
-  \*********************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { ChangeDetectionStrategy, Component } from \"@angular/core\";\nimport { ISelection } from \"@nova-ui/bits\";\n\ninterface IExampleTableModel {\n    position: number;\n    name: string;\n    features: any;\n    asset: string;\n    location: string;\n    status: string;\n    outages: number;\n    checks: any;\n}\n\n@Component({\n    selector: \"nui-table-select-pinned-header-example\",\n    templateUrl: \"./table-select-pinned-header.example.component.html\",\n    styleUrls: [\"./table-select-pinned-header.example.component.less\"],\n    changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class TableSelectPinnedHeaderComponent {\n    public displayedColumns = [\"position\", \"name\", \"features\", \"asset\", \"location\", \"status\", \"outages\", \"checks\"];\n    public dataSource = getData();\n    public selection: ISelection = {\n        isAllPages: false,\n        include: [2, 3],\n        exclude: [ ],\n    };\n\n    public trackBy(index: number, item: IExampleTableModel): number {\n        return item.position;\n    }\n}\n\n/** Table data */\nfunction getData(): IExampleTableModel[] {\n    return [\n        {\n            position: 1,\n            name: \"FOCUS-SVR-02258\",\n            features: [\"remote-access-vpn-tunnel\", \"tools\", \"database\", \"orion-ape-backup\", \"patch-manager01\"],\n            asset: \"Workstation\",\n            location: \"Brno\",\n            status: \"Active\",\n            outages: 52,\n            checks: [{\n                icon: \"status_up\",\n                num: 25,\n            }],\n        },\n        {\n            position: 2,\n            name: \"Man-LT-JYJ4AD5\",\n            features: [\"remote-access-vpn-tunnel\", \"tools\", \"database\", \"orion-ape-backup\", \"patch-manager01\"],\n            asset: \"Workstation\",\n            location: \"Brno\",\n            status: \"Active\",\n            outages: 3,\n            checks: [{\n                icon: \"status_critical\",\n                num: 25,\n            }],\n        },\n        {\n            position: 3,\n            name: \"FOCUS-SVR-02258\",\n            features: [\"remote-access-vpn-tunnel\", \"tools\", \"database\", \"orion-ape-backup\", \"patch-manager01\"],\n            asset: \"Workstation\",\n            location: \"Brno\",\n            status: \"Active\",\n            outages: 68,\n            checks: [{\n                icon: \"status_down\",\n                num: 25,\n            }],\n        },\n        {\n            position: 4,\n            name: \"Man-LT-JYJ4AD5\",\n            features: [\"remote-access-vpn-tunnel\", \"tools\", \"database\", \"orion-ape-backup\", \"patch-manager01\"],\n            asset: \"Workstation\",\n            location: \"Brno\",\n            status: \"Active\",\n            outages: 86,\n            checks: [{\n                icon: \"status_up\",\n                num: 25,\n            }],\n        },\n        {\n            position: 5,\n            name: \"Man-LT-JYJ4AD5\",\n            features: [\"remote-access-vpn-tunnel\", \"tools\", \"database\", \"orion-ape-backup\", \"patch-manager01\"],\n            asset: \"Workstation\",\n            location: \"Brno\",\n            status: \"Active\",\n            outages: 70,\n            checks: [{\n                icon: \"status_up\",\n                num: 25,\n            }],\n        },\n        {\n            position: 6,\n            name: \"Man-LT-JYJ4AD5\",\n            features: [\"remote-access-vpn-tunnel\", \"tools\", \"database\", \"orion-ape-backup\", \"patch-manager01\"],\n            asset: \"Workstation\",\n            location: \"Brno\",\n            status: \"Active\",\n            outages: 71,\n            checks: [{\n                icon: \"status_mixed\",\n                num: 25,\n            }],\n        },\n        {\n            position: 7,\n            name: \"Man-LT-JYJ4AD5\",\n            features: [\"remote-access-vpn-tunnel\", \"tools\", \"database\", \"orion-ape-backup\", \"patch-manager01\"],\n            asset: \"Workstation\",\n            location: \"Brno\",\n            status: \"Active\",\n            outages: 6,\n            checks: [{\n                icon: \"status_external\",\n                num: 25,\n            }],\n        },\n        {\n            position: 8,\n            name: \"Man-LT-JYJ4AD5\",\n            features: [\"remote-access-vpn-tunnel\", \"tools\", \"database\", \"orion-ape-backup\", \"patch-manager01\"],\n            asset: \"Workstation\",\n            location: \"Brno\",\n            status: \"Active\",\n            outages: 15,\n            checks: [{\n                icon: \"status_inactive\",\n                num: 25,\n            }],\n        },\n        {\n            position: 9,\n            name: \"Man-LT-JYJ4AD5\",\n            features: [\"remote-access-vpn-tunnel\", \"tools\", \"database\", \"orion-ape-backup\", \"patch-manager01\"],\n            asset: \"Workstation\",\n            location: \"Brno\",\n            status: \"Active\",\n            outages: 16,\n            checks: [{\n                icon: \"status_up\",\n                num: 25,\n            }],\n        },\n        {\n            position: 10,\n            name: \"Man-LT-JYJ4AD5\",\n            features: [\"remote-access-vpn-tunnel\", \"tools\", \"database\", \"orion-ape-backup\", \"patch-manager01\"],\n            asset: \"Workstation\",\n            location: \"Brno\",\n            status: \"Active\",\n            outages: 96,\n            checks: [{\n                icon: \"status_up\",\n                num: 25,\n            }],\n        },\n    ];\n}\n");
 
 /***/ }),
 

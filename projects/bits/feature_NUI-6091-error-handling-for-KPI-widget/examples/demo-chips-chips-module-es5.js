@@ -81,14 +81,6 @@
           }
         }
       }, {
-        path: "chips-test",
-        component: _index__WEBPACK_IMPORTED_MODULE_2__["ChipsTestComponent"],
-        data: {
-          "srlc": {
-            "hideIndicator": true
-          }
-        }
-      }, {
         path: "custom-css",
         component: _index__WEBPACK_IMPORTED_MODULE_2__["ChipsCustomCssExampleComponent"],
         data: {
@@ -120,7 +112,7 @@
 
       (function () {
         (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵsetNgModuleScope"](ChipsModule, {
-          declarations: [_index__WEBPACK_IMPORTED_MODULE_2__["AutohideChipsExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_2__["BasicChipsExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_2__["ChipsDocsExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_2__["ChipsVisualTestComponent"], _index__WEBPACK_IMPORTED_MODULE_2__["ChipsTestComponent"], _index__WEBPACK_IMPORTED_MODULE_2__["GroupedChipsExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_2__["VerticalFlatChipsExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_2__["VerticalGroupedChipsExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_2__["ChipsOverflowExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_2__["ChipsCustomCssExampleComponent"]],
+          declarations: [_index__WEBPACK_IMPORTED_MODULE_2__["AutohideChipsExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_2__["BasicChipsExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_2__["ChipsDocsExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_2__["ChipsVisualTestComponent"], _index__WEBPACK_IMPORTED_MODULE_2__["GroupedChipsExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_2__["VerticalFlatChipsExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_2__["VerticalGroupedChipsExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_2__["ChipsOverflowExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_2__["ChipsCustomCssExampleComponent"]],
           imports: [_nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiChipsModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiPopoverModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiDocsModule"], _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiIconModule"]],
           exports: [_angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]]
         });
@@ -151,8 +143,6 @@
         "./chips-docs/chips-docs.example.component.ts": "As8a",
         "./chips-overflow/chips-overflow.example.component.html": "JXvR",
         "./chips-overflow/chips-overflow.example.component.ts": "zt6Z",
-        "./chips-test/chips-test.component.html": "qLQO",
-        "./chips-test/chips-test.component.ts": "nkx8",
         "./chips-visual-test/chips-visual-test.component.html": "zHwo",
         "./chips-visual-test/chips-visual-test.component.ts": "AfYg",
         "./chips.module.ts": "H1fG",
@@ -838,7 +828,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import { NgModule } from \"@angular/core\";\nimport { RouterModule } from \"@angular/router\";\nimport {\n    DEMO_PATH_TOKEN,\n    NuiChipsModule,\n    NuiDocsModule,\n    NuiIconModule,\n    NuiPopoverModule,\n    SrlcStage,\n} from \"@nova-ui/bits\";\n\nimport {\n    AutohideChipsExampleComponent,\n    BasicChipsExampleComponent,\n    ChipsCustomCssExampleComponent,\n    ChipsDocsExampleComponent,\n    ChipsOverflowExampleComponent,\n    ChipsVisualTestComponent,\n    ChipsTestComponent,\n    GroupedChipsExampleComponent,\n    VerticalFlatChipsExampleComponent,\n    VerticalGroupedChipsExampleComponent,\n} from \"./index\";\n\nconst routes = [\n    {\n        path: \"\",\n        component: ChipsDocsExampleComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.beta,\n            },\n            showThemeSwitcher: true,\n        },\n    },\n    {\n        path: \"overflow\",\n        component: ChipsOverflowExampleComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.beta,\n            },\n            showThemeSwitcher: true,\n        },\n    },\n    {\n        path: \"chips-visual-test\",\n        component: ChipsVisualTestComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"chips-test\",\n        component: ChipsTestComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"custom-css\",\n        component: ChipsCustomCssExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n];\n\n@NgModule({\n    imports: [\n        NuiChipsModule,\n        NuiPopoverModule,\n        NuiDocsModule,\n        RouterModule.forChild(routes),\n        NuiIconModule,\n    ],\n    declarations: [\n        AutohideChipsExampleComponent,\n        BasicChipsExampleComponent,\n        ChipsDocsExampleComponent,\n        ChipsVisualTestComponent,\n        ChipsTestComponent,\n        GroupedChipsExampleComponent,\n        VerticalFlatChipsExampleComponent,\n        VerticalGroupedChipsExampleComponent,\n        ChipsOverflowExampleComponent,\n        ChipsCustomCssExampleComponent,\n    ],\n    providers: [\n        {\n            provide: DEMO_PATH_TOKEN,\n            useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/),\n        },\n    ],\n    exports: [\n        RouterModule,\n    ],\n})\nexport class ChipsModule {\n}\n";
+      __webpack_exports__["default"] = "import { NgModule } from \"@angular/core\";\nimport { RouterModule } from \"@angular/router\";\nimport {\n    DEMO_PATH_TOKEN,\n    NuiChipsModule,\n    NuiDocsModule,\n    NuiIconModule,\n    NuiPopoverModule,\n    SrlcStage,\n} from \"@nova-ui/bits\";\n\nimport {\n    AutohideChipsExampleComponent,\n    BasicChipsExampleComponent,\n    ChipsCustomCssExampleComponent,\n    ChipsDocsExampleComponent,\n    ChipsOverflowExampleComponent,\n    ChipsVisualTestComponent,\n    GroupedChipsExampleComponent,\n    VerticalFlatChipsExampleComponent,\n    VerticalGroupedChipsExampleComponent,\n} from \"./index\";\n\nconst routes = [\n    {\n        path: \"\",\n        component: ChipsDocsExampleComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.beta,\n            },\n            showThemeSwitcher: true,\n        },\n    },\n    {\n        path: \"overflow\",\n        component: ChipsOverflowExampleComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.beta,\n            },\n            showThemeSwitcher: true,\n        },\n    },\n    {\n        path: \"chips-visual-test\",\n        component: ChipsVisualTestComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"custom-css\",\n        component: ChipsCustomCssExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n];\n\n@NgModule({\n    imports: [\n        NuiChipsModule,\n        NuiPopoverModule,\n        NuiDocsModule,\n        RouterModule.forChild(routes),\n        NuiIconModule,\n    ],\n    declarations: [\n        AutohideChipsExampleComponent,\n        BasicChipsExampleComponent,\n        ChipsDocsExampleComponent,\n        ChipsVisualTestComponent,\n        GroupedChipsExampleComponent,\n        VerticalFlatChipsExampleComponent,\n        VerticalGroupedChipsExampleComponent,\n        ChipsOverflowExampleComponent,\n        ChipsCustomCssExampleComponent,\n    ],\n    providers: [\n        {\n            provide: DEMO_PATH_TOKEN,\n            useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/),\n        },\n    ],\n    exports: [\n        RouterModule,\n    ],\n})\nexport class ChipsModule {\n}\n";
       /***/
     },
 
@@ -1254,12 +1244,6 @@
       var _src_lib_icon_icon_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! ../../../../../../src/lib/icon/icon.component */
       "45Bz");
-      /* harmony import */
-
-
-      var _chips_custom_css_chips_custom_css_example_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
-      /*! ../chips-custom-css/chips-custom-css.example.component */
-      "6MI3");
 
       var horizontalFlatItems = [{
         id: "flatId1",
@@ -1374,7 +1358,7 @@
       ChipsVisualTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({
         type: ChipsVisualTestComponent,
         selectors: [["nui-chips-visual-test"]],
-        decls: 38,
+        decls: 33,
         vars: 4,
         consts: function consts() {
           var i18n_0;
@@ -1523,20 +1507,6 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](32, "hr");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](33, "div");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](34, "h3");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](35, "Chips Custom Css");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](36, "nui-chips-custom-css-example");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](37, "hr");
-
             _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
           }
 
@@ -1558,7 +1528,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("itemsSource", ctx.verticalGroupedItemsSource);
           }
         },
-        directives: [_src_lib_chips_chips_component__WEBPACK_IMPORTED_MODULE_3__["ChipsComponent"], _chips_overflow_chips_overflow_example_component__WEBPACK_IMPORTED_MODULE_4__["ChipsOverflowExampleComponent"], _src_lib_chips_chip_chip_component__WEBPACK_IMPORTED_MODULE_5__["ChipComponent"], _src_lib_icon_icon_component__WEBPACK_IMPORTED_MODULE_6__["IconComponent"], _chips_custom_css_chips_custom_css_example_component__WEBPACK_IMPORTED_MODULE_7__["ChipsCustomCssExampleComponent"]],
+        directives: [_src_lib_chips_chips_component__WEBPACK_IMPORTED_MODULE_3__["ChipsComponent"], _chips_overflow_chips_overflow_example_component__WEBPACK_IMPORTED_MODULE_4__["ChipsOverflowExampleComponent"], _src_lib_chips_chip_chip_component__WEBPACK_IMPORTED_MODULE_5__["ChipComponent"], _src_lib_icon_icon_component__WEBPACK_IMPORTED_MODULE_6__["IconComponent"]],
         encapsulation: 2
       });
       /***/
@@ -1731,319 +1701,6 @@
     },
 
     /***/
-    "SEGS":
-    /*!***************************************************************************!*\
-      !*** ./demo/src/components/demo/chips/chips-test/chips-test.component.ts ***!
-      \***************************************************************************/
-
-    /*! exports provided: ChipsTestComponent */
-
-    /***/
-    function SEGS(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "ChipsTestComponent", function () {
-        return ChipsTestComponent;
-      });
-      /* harmony import */
-
-
-      var lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! lodash/cloneDeep */
-      "BkRI");
-      /* harmony import */
-
-
-      var lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_0__);
-      /* harmony import */
-
-
-      var lodash_pull__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-      /*! lodash/pull */
-      "hzCD");
-      /* harmony import */
-
-
-      var lodash_pull__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_pull__WEBPACK_IMPORTED_MODULE_1__);
-      /* harmony import */
-
-
-      var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-      /*! @angular/core */
-      "fXoL");
-      /* harmony import */
-
-
-      var _src_lib_chips_chips_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-      /*! ../../../../../../src/lib/chips/chips.component */
-      "JjEo");
-      /* harmony import */
-
-
-      var _chips_overflow_chips_overflow_example_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-      /*! ../chips-overflow/chips-overflow.example.component */
-      "IN9a");
-
-      var horizontalFlatItems = [{
-        id: "flatId1",
-        label: "Down"
-      }, {
-        id: "flatId2",
-        label: "Critical"
-      }, {
-        id: "flatId3",
-        label: "Warning"
-      }, {
-        id: "flatId4",
-        label: "Unknown"
-      }, {
-        id: "flatId5",
-        label: "Ok"
-      }];
-      var verticalFlatItems = [{
-        id: "flatId1",
-        label: "Down"
-      }, {
-        id: "flatId2",
-        label: "Critical"
-      }, {
-        id: "flatId3",
-        label: "Warning"
-      }, {
-        id: "flatId4",
-        label: "Unknown"
-      }, {
-        id: "flatId5",
-        label: "Ok"
-      }];
-      var groupedItems = [{
-        id: "statusGroupId",
-        label: "Status",
-        items: [{
-          id: "statusGroupItem1",
-          label: "Down"
-        }, {
-          id: "statusGroupItem2",
-          label: "Critical"
-        }, {
-          id: "statusGroupItem3",
-          label: "Warning"
-        }, {
-          id: "statusGroupItem4",
-          label: "Unknown"
-        }, {
-          id: "statusGroupItem5",
-          label: "Ok"
-        }]
-      }, {
-        id: "vendorGroupId",
-        label: "Vendor",
-        items: [{
-          id: "vendorGroupItem1",
-          label: "Cisco"
-        }, {
-          id: "vendorGroupItem2",
-          label: "Hewlett Packard"
-        }, {
-          id: "vendorGroupItem3",
-          label: "Uniper"
-        }]
-      }];
-
-      var ChipsTestComponent = /*#__PURE__*/function () {
-        function ChipsTestComponent() {
-          _classCallCheck(this, ChipsTestComponent);
-
-          this.horizontalFlatItemsSource = {
-            flatItems: horizontalFlatItems
-          };
-          this.horizontalGroupedItemsSource = {
-            groupedItems: lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_0___default()(groupedItems)
-          };
-          this.verticalFlatItemsSource = {
-            flatItems: verticalFlatItems
-          };
-          this.verticalGroupedItemsSource = {
-            groupedItems: lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_0___default()(groupedItems)
-          };
-        }
-
-        _createClass(ChipsTestComponent, [{
-          key: "onClear",
-          value: function onClear(event) {
-            lodash_pull__WEBPACK_IMPORTED_MODULE_1___default()(this.horizontalFlatItemsSource.flatItems || [], event.item);
-          }
-        }, {
-          key: "onClearVertical",
-          value: function onClearVertical(event) {
-            lodash_pull__WEBPACK_IMPORTED_MODULE_1___default()(this.verticalFlatItemsSource.flatItems || [], event.item);
-          }
-        }, {
-          key: "onClearGroup",
-          value: function onClearGroup(event) {
-            var _a;
-
-            lodash_pull__WEBPACK_IMPORTED_MODULE_1___default()(((_a = event.group) === null || _a === void 0 ? void 0 : _a.items) || [], event.item);
-          }
-        }, {
-          key: "onClearAll",
-          value: function onClearAll() {
-            this.verticalGroupedItemsSource.groupedItems = [];
-          }
-        }, {
-          key: "onClearAllVerticalFlat",
-          value: function onClearAllVerticalFlat() {
-            this.verticalFlatItemsSource.flatItems = [];
-          }
-        }]);
-
-        return ChipsTestComponent;
-      }();
-
-      ChipsTestComponent.ɵfac = function ChipsTestComponent_Factory(t) {
-        return new (t || ChipsTestComponent)();
-      };
-
-      ChipsTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({
-        type: ChipsTestComponent,
-        selectors: [["chips-test-component"]],
-        decls: 15,
-        vars: 12,
-        consts: [[1, "container"], ["id", "nui-demo-chips-flat-horizontal", 3, "autoHide", "itemsSource", "chipRemoved", "removeAll"], ["id", "nui-demo-chips-flat-vertical", "title", "Statuses", "orientation", "vertical", 3, "autoHide", "itemsSource", "chipRemoved", "removeAll"], ["id", "nui-demo-chips-grouped-horizontal", 3, "autoHide", "itemsSource", "chipRemoved", "removeAll"], ["id", "nui-demo-chips-vertical", "orientation", "vertical", 3, "autoHide", "itemsSource", "chipRemoved", "removeAll"], ["id", "nui-demo-chips-grouped-vertical", "title", "Filters", "orientation", "vertical", 3, "autoHide", "itemsSource", "chipRemoved", "removeAll"], ["id", "nui-demo-chips-autohide", 3, "autoHide", "itemsSource", "chipRemoved", "removeAll"], ["id", "nui-demo-chips-overflow"]],
-        template: function ChipsTestComponent_Template(rf, ctx) {
-          if (rf & 1) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 0);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](1, "div");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](2, "nui-chips", 1);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("chipRemoved", function ChipsTestComponent_Template_nui_chips_chipRemoved_2_listener($event) {
-              return ctx.onClear($event);
-            })("removeAll", function ChipsTestComponent_Template_nui_chips_removeAll_2_listener() {
-              return ctx.onClearAll();
-            });
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](3, "div");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](4, "nui-chips", 2);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("chipRemoved", function ChipsTestComponent_Template_nui_chips_chipRemoved_4_listener($event) {
-              return ctx.onClearVertical($event);
-            })("removeAll", function ChipsTestComponent_Template_nui_chips_removeAll_4_listener() {
-              return ctx.onClearAllVerticalFlat();
-            });
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](5, "div");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](6, "nui-chips", 3);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("chipRemoved", function ChipsTestComponent_Template_nui_chips_chipRemoved_6_listener($event) {
-              return ctx.onClearGroup($event);
-            })("removeAll", function ChipsTestComponent_Template_nui_chips_removeAll_6_listener() {
-              return ctx.onClearAll();
-            });
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](7, "div");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](8, "nui-chips", 4);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("chipRemoved", function ChipsTestComponent_Template_nui_chips_chipRemoved_8_listener($event) {
-              return ctx.onClearVertical($event);
-            })("removeAll", function ChipsTestComponent_Template_nui_chips_removeAll_8_listener() {
-              return ctx.onClearAllVerticalFlat();
-            });
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](9, "div");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](10, "nui-chips", 5);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("chipRemoved", function ChipsTestComponent_Template_nui_chips_chipRemoved_10_listener($event) {
-              return ctx.onClearGroup($event);
-            })("removeAll", function ChipsTestComponent_Template_nui_chips_removeAll_10_listener() {
-              return ctx.onClearAll();
-            });
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](11, "div");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](12, "nui-chips", 6);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("chipRemoved", function ChipsTestComponent_Template_nui_chips_chipRemoved_12_listener($event) {
-              return ctx.onClear($event);
-            })("removeAll", function ChipsTestComponent_Template_nui_chips_removeAll_12_listener() {
-              return ctx.onClearAll();
-            });
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](13, "div");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](14, "nui-chips-overflow-example", 7);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-          }
-
-          if (rf & 2) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("autoHide", true)("itemsSource", ctx.horizontalFlatItemsSource);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("autoHide", true)("itemsSource", ctx.verticalFlatItemsSource);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("autoHide", false)("itemsSource", ctx.horizontalGroupedItemsSource);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("autoHide", false)("itemsSource", ctx.verticalFlatItemsSource);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("autoHide", true)("itemsSource", ctx.verticalGroupedItemsSource);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("autoHide", false)("itemsSource", ctx.horizontalFlatItemsSource);
-          }
-        },
-        directives: [_src_lib_chips_chips_component__WEBPACK_IMPORTED_MODULE_3__["ChipsComponent"], _chips_overflow_chips_overflow_example_component__WEBPACK_IMPORTED_MODULE_4__["ChipsOverflowExampleComponent"]],
-        encapsulation: 2
-      });
-      /***/
-    },
-
-    /***/
     "UaJ5":
     /*!*******************************************************************************************************************************!*\
       !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/chips/grouped-chips/grouped-chips.example.component.ts ***!
@@ -2069,7 +1726,7 @@
       !*** ./demo/src/components/demo/chips/index.ts ***!
       \*************************************************/
 
-    /*! exports provided: ChipsDocsExampleComponent, BasicChipsExampleComponent, GroupedChipsExampleComponent, VerticalFlatChipsExampleComponent, VerticalGroupedChipsExampleComponent, AutohideChipsExampleComponent, ChipsVisualTestComponent, ChipsOverflowExampleComponent, ChipsCustomCssExampleComponent, ChipsTestComponent */
+    /*! exports provided: ChipsDocsExampleComponent, BasicChipsExampleComponent, GroupedChipsExampleComponent, VerticalFlatChipsExampleComponent, VerticalGroupedChipsExampleComponent, AutohideChipsExampleComponent, ChipsVisualTestComponent, ChipsOverflowExampleComponent, ChipsCustomCssExampleComponent */
 
     /***/
     function Ucvp(module, __webpack_exports__, __webpack_require__) {
@@ -2186,18 +1843,6 @@
       });
       /* empty/unused harmony star reexport */
 
-      /* harmony import */
-
-
-      var _chips_test_chips_test_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
-      /*! ./chips-test/chips-test.component */
-      "SEGS");
-      /* harmony reexport (safe) */
-
-
-      __webpack_require__.d(__webpack_exports__, "ChipsTestComponent", function () {
-        return _chips_test_chips_test_component__WEBPACK_IMPORTED_MODULE_9__["ChipsTestComponent"];
-      });
       /***/
 
     },
@@ -2857,7 +2502,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "export * from \"./chips-docs/chips-docs.example.component\";\nexport * from \"./basic-chips/basic-chips.example.component\";\nexport * from \"./grouped-chips/grouped-chips.example.component\";\nexport * from \"./vertical-flat-chips/vertical-flat-chips.example.component\";\nexport * from \"./vertical-grouped-chips/vertical-grouped-chips.example.component\";\nexport * from \"./autohide-chips/autohide-chips.example.component\";\nexport * from \"./chips-visual-test/chips-visual-test.component\";\nexport * from \"./chips-overflow/chips-overflow.example.component\";\nexport * from \"./chips-custom-css/chips-custom-css.example.component\";\nexport * from \"./chips-custom-css/chips-custom-css.example.component\";\nexport * from \"./chips-test/chips-test.component\";\n";
+      __webpack_exports__["default"] = "export * from \"./chips-docs/chips-docs.example.component\";\nexport * from \"./basic-chips/basic-chips.example.component\";\nexport * from \"./grouped-chips/grouped-chips.example.component\";\nexport * from \"./vertical-flat-chips/vertical-flat-chips.example.component\";\nexport * from \"./vertical-grouped-chips/vertical-grouped-chips.example.component\";\nexport * from \"./autohide-chips/autohide-chips.example.component\";\nexport * from \"./chips-visual-test/chips-visual-test.component\";\nexport * from \"./chips-overflow/chips-overflow.example.component\";\nexport * from \"./chips-custom-css/chips-custom-css.example.component\";\nexport * from \"./chips-custom-css/chips-custom-css.example.component\";\n";
       /***/
     },
 
@@ -2882,26 +2527,6 @@
     },
 
     /***/
-    "nkx8":
-    /*!*****************************************************************************************************************!*\
-      !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/chips/chips-test/chips-test.component.ts ***!
-      \*****************************************************************************************************************/
-
-    /*! exports provided: default */
-
-    /***/
-    function nkx8(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony default export */
-
-
-      __webpack_exports__["default"] = "import { Component } from \"@angular/core\";\nimport { IChipsGroup, IChipsItem, IChipsItemsSource } from \"@nova-ui/bits\";\nimport _cloneDeep from \"lodash/cloneDeep\";\nimport _pull from \"lodash/pull\";\n\nconst horizontalFlatItems: IChipsItem[] = [\n    {id: \"flatId1\", label: \"Down\"},\n    {id: \"flatId2\", label: \"Critical\"},\n    {id: \"flatId3\", label: \"Warning\"},\n    {id: \"flatId4\", label: \"Unknown\"},\n    {id: \"flatId5\", label: \"Ok\"},\n];\n\nconst verticalFlatItems: IChipsItem[] = [\n    {id: \"flatId1\", label: \"Down\"},\n    {id: \"flatId2\", label: \"Critical\"},\n    {id: \"flatId3\", label: \"Warning\"},\n    {id: \"flatId4\", label: \"Unknown\"},\n    {id: \"flatId5\", label: \"Ok\"},\n];\n\nconst groupedItems: IChipsGroup[] = [\n    {\n        id: \"statusGroupId\", label: \"Status\", items: [\n            {id: \"statusGroupItem1\", label: \"Down\"},\n            {id: \"statusGroupItem2\", label: \"Critical\"},\n            {id: \"statusGroupItem3\", label: \"Warning\"},\n            {id: \"statusGroupItem4\", label: \"Unknown\"},\n            {id: \"statusGroupItem5\", label: \"Ok\"}],\n    },\n    {\n        id: \"vendorGroupId\", label: \"Vendor\", items: [\n            {id: \"vendorGroupItem1\", label: \"Cisco\"},\n            {id: \"vendorGroupItem2\", label: \"Hewlett Packard\"},\n            {id: \"vendorGroupItem3\", label: \"Uniper\"}],\n    },\n];\n\n@Component({\n    selector: \"chips-test-component\",\n    templateUrl: \"./chips-test.component.html\",\n})\n\nexport class ChipsTestComponent {\n    public horizontalFlatItemsSource: IChipsItemsSource = {flatItems: horizontalFlatItems};\n    public horizontalGroupedItemsSource = {groupedItems: _cloneDeep(groupedItems)};\n    public verticalFlatItemsSource: IChipsItemsSource = {flatItems: verticalFlatItems};\n    public verticalGroupedItemsSource: IChipsItemsSource = {groupedItems: _cloneDeep(groupedItems)};\n\n    public onClear(event: { item: IChipsItem }) {\n        _pull(this.horizontalFlatItemsSource.flatItems || [], event.item);\n    }\n\n    public onClearVertical(event: { item: IChipsItem }) {\n        _pull(this.verticalFlatItemsSource.flatItems || [], event.item);\n    }\n\n    public onClearGroup(event: { item: IChipsItem, group?: IChipsGroup }) {\n        _pull(event.group?.items || [], event.item);\n    }\n\n    public onClearAll() {\n        this.verticalGroupedItemsSource.groupedItems = [];\n    }\n\n    public onClearAllVerticalFlat() {\n        this.verticalFlatItemsSource.flatItems = [];\n    }\n}\n";
-      /***/
-    },
-
-    /***/
     "oBAJ":
     /*!*********************************************************************************************************************************************!*\
       !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/chips/vertical-flat-chips/vertical-flat-chips.example.component.html ***!
@@ -2918,26 +2543,6 @@
 
 
       __webpack_exports__["default"] = "<div style=\"max-width: 300px\">\n    <nui-chips id=\"nui-demo-chips-flat-vertical\"\n               [itemsSource]=\"verticalFlatItemsSource\"\n               title=\"Statuses\" i18n-title\n               orientation=\"vertical\"\n               (chipRemoved)=\"onClear($event)\"\n               (removeAll)=\"onClearAll()\">\n    </nui-chips>\n</div>\n";
-      /***/
-    },
-
-    /***/
-    "qLQO":
-    /*!*******************************************************************************************************************!*\
-      !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/chips/chips-test/chips-test.component.html ***!
-      \*******************************************************************************************************************/
-
-    /*! exports provided: default */
-
-    /***/
-    function qLQO(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony default export */
-
-
-      __webpack_exports__["default"] = "<div class=\"container\">\n    <div>\n        <nui-chips id=\"nui-demo-chips-flat-horizontal\"\n                    [autoHide]=\"true\"\n                    [itemsSource]=\"horizontalFlatItemsSource\"\n                    (chipRemoved)=\"onClear($event)\"\n                    (removeAll)=\"onClearAll()\">\n        </nui-chips>\n    </div>\n\n    <div>\n        <nui-chips id=\"nui-demo-chips-flat-vertical\"\n                   [autoHide]=\"true\"\n                   title=\"Statuses\"\n                   [itemsSource]=\"verticalFlatItemsSource\"\n                   orientation=\"vertical\"\n                   (chipRemoved)=\"onClearVertical($event)\"\n                   (removeAll)=\"onClearAllVerticalFlat()\">\n        </nui-chips>\n    </div>\n\n    <div>\n        <nui-chips id=\"nui-demo-chips-grouped-horizontal\"\n                    [autoHide]=\"false\"\n                    [itemsSource]=\"horizontalGroupedItemsSource\"\n                    (chipRemoved)=\"onClearGroup($event)\"\n                    (removeAll)=\"onClearAll()\">\n        </nui-chips>\n    </div>\n\n    <div>\n        <nui-chips id=\"nui-demo-chips-vertical\"\n                    [autoHide]=\"false\"\n                    [itemsSource]=\"verticalFlatItemsSource\"\n                    orientation=\"vertical\"\n                    (chipRemoved)=\"onClearVertical($event)\"\n                    (removeAll)=\"onClearAllVerticalFlat()\">\n        </nui-chips>\n    </div>\n\n    <div>\n        <nui-chips id=\"nui-demo-chips-grouped-vertical\"\n                    [autoHide]=\"true\"\n                    title=\"Filters\"\n                    [itemsSource]=\"verticalGroupedItemsSource\"\n                    orientation=\"vertical\"\n                    (chipRemoved)=\"onClearGroup($event)\"\n                    (removeAll)=\"onClearAll()\">\n        </nui-chips>\n    </div>\n\n    <div>\n        <nui-chips id=\"nui-demo-chips-autohide\"\n           [autoHide]=\"false\"\n           [itemsSource]=\"horizontalFlatItemsSource\"\n           (chipRemoved)=\"onClear($event)\"\n           (removeAll)=\"onClearAll()\">\n        </nui-chips>\n    </div>\n \n    <div>\n        <nui-chips-overflow-example id=\"nui-demo-chips-overflow\"></nui-chips-overflow-example>\n    </div>\n</div>\n";
       /***/
     },
 
@@ -3257,7 +2862,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<div class=\"container\">\n    <div>\n        <h3>Basic chips</h3>\n        <nui-chips id=\"nui-demo-chips-flat-horizontal-visual\"\n                    [itemsSource]=\"horizontalFlatItemsSource\"\n                    (chipRemoved)=\"onClear($event)\"\n                    (removeAll)=\"onClearAll()\">\n        </nui-chips>\n    </div>\n    <hr/>\n\n    <div>\n        <h3>Chips grouped</h3>\n        <nui-chips id=\"nui-demo-chips-grouped-horizontal-visual\"\n                    [itemsSource]=\"horizontalGroupedItemsSource\"\n                    (chipRemoved)=\"onClearGroup($event)\"\n                    (removeAll)=\"onClearAll()\">\n        </nui-chips>\n    </div>\n    <hr/>\n\n    <div>\n        <h3>Chips vertical</h3>\n        <nui-chips id=\"nui-demo-chips-vertical-visual\"\n                    [itemsSource]=\"verticalFlatItemsSource\"\n                    title=\"Statuses\" i18n-title\n                    orientation=\"vertical\"\n                    (chipRemoved)=\"onClear($event)\"\n                    (removeAll)=\"onClearAll()\">\n        </nui-chips>\n    </div>\n    <hr/>\n\n    <div>\n        <h3>Chips vertical grouped</h3>\n        <nui-chips id=\"nui-demo-chips-grouped-vertical-visual\"\n                    [itemsSource]=\"verticalGroupedItemsSource\"\n                    title=\"Filters\" i18n-title\n                    orientation=\"vertical\"\n                    (chipRemoved)=\"onClear($event)\"\n                    (removeAll)=\"onClearAll()\">\n        </nui-chips>\n    </div>\n    <hr/>\n\n    <div>\n        <h3>Chips overflow</h3>\n        <nui-chips-overflow-example></nui-chips-overflow-example>\n    </div>\n    <hr/>\n\n    <div>\n        <h3>Chip content-projection</h3>\n        <nui-chip>Custom content <nui-icon class=\"ml-2\" iconSize=\"small\" icon=\"add\"></nui-icon></nui-chip>\n    </div>\n    <hr/>\n\n    <div>\n        <h3>Chips Custom Css</h3>\n        <nui-chips-custom-css-example></nui-chips-custom-css-example>\n    </div>\n    <hr/>\n</div>\n";
+      __webpack_exports__["default"] = "<div class=\"container\">\n    <div><h3>Basic chips</h3>\n        <nui-chips id=\"nui-demo-chips-flat-horizontal-visual\"\n                    [itemsSource]=\"horizontalFlatItemsSource\"\n                    (chipRemoved)=\"onClear($event)\"\n                    (removeAll)=\"onClearAll()\">\n        </nui-chips>\n    </div>\n    <hr/>\n\n    <div><h3>Chips grouped</h3>\n        <nui-chips id=\"nui-demo-chips-grouped-horizontal-visual\"\n                    [itemsSource]=\"horizontalGroupedItemsSource\"\n                    (chipRemoved)=\"onClearGroup($event)\"\n                    (removeAll)=\"onClearAll()\">\n        </nui-chips>\n    </div>\n    <hr/>\n\n    <div><h3>Chips vertical</h3>\n        <nui-chips id=\"nui-demo-chips-vertical-visual\"\n                    [itemsSource]=\"verticalFlatItemsSource\"\n                    title=\"Statuses\" i18n-title\n                    orientation=\"vertical\"\n                    (chipRemoved)=\"onClear($event)\"\n                    (removeAll)=\"onClearAll()\">\n        </nui-chips>\n    </div>\n    <hr/>\n\n    <div><h3>Chips vertical grouped</h3>\n        <nui-chips id=\"nui-demo-chips-grouped-vertical-visual\"\n                    [itemsSource]=\"verticalGroupedItemsSource\"\n                    title=\"Filters\" i18n-title\n                    orientation=\"vertical\"\n                    (chipRemoved)=\"onClear($event)\"\n                    (removeAll)=\"onClearAll()\">\n        </nui-chips>\n    </div>\n    <hr/>\n\n    <div><h3>Chips overflow</h3>\n        <nui-chips-overflow-example></nui-chips-overflow-example>\n    </div>\n    <hr/>\n\n    <div><h3>Chip content-projection</h3>\n        <nui-chip>Custom content <nui-icon class=\"ml-2\" iconSize=\"small\" icon=\"add\"></nui-icon></nui-chip>\n    </div>\n    <hr/>\n</div>\n";
       /***/
     },
 

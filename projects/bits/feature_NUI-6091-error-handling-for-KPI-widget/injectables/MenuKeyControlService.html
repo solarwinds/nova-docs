@@ -167,54 +167,6 @@
     </table>
 </section>
 
-            <section>
-    <h3 id="constructor">Constructor</h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-<code>constructor(live: LiveAnnouncer)</code>
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/lib/menu/menu-key-control.service.ts:34</a></div>
-                            </td>
-                        </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                            <div>
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>live</td>
-                                                  
-                                                        <td>
-                                                                    <code>LiveAnnouncer</code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-</section>
 
             <section>
     
@@ -245,8 +197,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="72"
-                            class="link-to-prism">src/lib/menu/menu-key-control.service.ts:72</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="61"
+                            class="link-to-prism">src/lib/menu/menu-key-control.service.ts:61</a></div>
                 </td>
             </tr>
 
@@ -286,8 +238,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="64"
-                            class="link-to-prism">src/lib/menu/menu-key-control.service.ts:64</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="53"
+                            class="link-to-prism">src/lib/menu/menu-key-control.service.ts:53</a></div>
                 </td>
             </tr>
 
@@ -358,8 +310,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="38"
-                            class="link-to-prism">src/lib/menu/menu-key-control.service.ts:38</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="36"
+                            class="link-to-prism">src/lib/menu/menu-key-control.service.ts:36</a></div>
                 </td>
             </tr>
 
@@ -397,8 +349,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="214"
-                            class="link-to-prism">src/lib/menu/menu-key-control.service.ts:214</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="191"
+                            class="link-to-prism">src/lib/menu/menu-key-control.service.ts:191</a></div>
                 </td>
             </tr>
 
@@ -438,8 +390,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="68"
-                            class="link-to-prism">src/lib/menu/menu-key-control.service.ts:68</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="57"
+                            class="link-to-prism">src/lib/menu/menu-key-control.service.ts:57</a></div>
                 </td>
             </tr>
 
@@ -825,11 +777,11 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ActiveDescendantKeyManager, LiveAnnouncer } from &quot;@angular/cdk/a11y&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ActiveDescendantKeyManager } from &quot;@angular/cdk/a11y&quot;;
+import { DOWN_ARROW, ENTER, ESCAPE, PAGE_DOWN, PAGE_UP, TAB, UP_ARROW } from &quot;@angular/cdk/keycodes&quot;;
 import { ElementRef, Injectable, OnDestroy, QueryList } from &quot;@angular/core&quot;;
 import isNull from &quot;lodash/isNull&quot;;
 import { Subject, Subscription } from &quot;rxjs&quot;;
-import { KEYBOARD_CODE } from &quot;../../constants&quot;;
 
 import { MenuActionComponent } from &quot;../menu/menu-item/menu-action/menu-action.component&quot;;
 import { MenuItemBaseComponent } from &quot;../menu/menu-item/menu-item/menu-item-base&quot;;
@@ -860,8 +812,6 @@ export class MenuKeyControlService implements OnDestroy {
     private keyboardEventsSubscription: Subscription;
     private _scrollContainer: ElementRef;
 
-    constructor(private live: LiveAnnouncer) {}
-
     public initKeyboardManager(): void {
         this.keyboardEventsManager &#x3D; this.keyControlItemsSource ?
             new ActiveDescendantKeyManager(this.menuPopup.menuItems).withVerticalOrientation() :
@@ -874,16 +824,7 @@ export class MenuKeyControlService implements OnDestroy {
         // when opening menu key &#x27;focus&#x27; should disappear from items
         if (this.menuOpenListener) {
             this.menuOpenListenerSubscription &#x3D; this.menuOpenListener.subscribe(() &#x3D;&gt; {
-                // Uncomment in the scope of NUI-6104
-                // this.keyboardEventsManager.setFirstItemActive();
-
-                // Remove this in the scope of NUI-6104 in favor of the line above
                 this.keyboardEventsManager.setActiveItem(-1);
-                this.live.announce(&#x60;
-                    ${this.keyControlItemsSource ? this.menuPopup.menuItems.length : this.menuItems.length} menu items available.&#x60;);
-
-                // Uncomment in the scope of NUI-6104 and adjust this to be the part of the announcer&#x27;s string above
-                // Active item ${this.keyboardEventsManager?.activeItem?.menuItem.nativeElement.innerText}.&#x60;);
             });
         }
     }
@@ -929,35 +870,27 @@ export class MenuKeyControlService implements OnDestroy {
     }
 
     private handleOpenKeyDown(event: KeyboardEvent): void {
-        if (event.code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ARROW_DOWN || event.code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ARROW_UP) {
+        if (event.keyCode &#x3D;&#x3D;&#x3D; DOWN_ARROW || event.keyCode &#x3D;&#x3D;&#x3D; UP_ARROW) {
             // passing the event to key manager so we get a change fired
             this.keyboardEventsManager.onKeydown(event);
-            this.announceCurrentItem();
         }
-        if (event.code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.PAGE_UP || event.code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.HOME  || (event.metaKey &amp;&amp; event.code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ARROW_UP)) {
+        if (event.keyCode &#x3D;&#x3D;&#x3D; PAGE_UP) {
             event.preventDefault();
             this.keyboardEventsManager.onKeydown(event);
             this.keyboardEventsManager.setFirstItemActive();
-            this.announceCurrentItem();
         }
-        if (event.code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.PAGE_DOWN || event.code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.END  || (event.metaKey &amp;&amp; event.code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ARROW_DOWN)) {
+        if (event.keyCode &#x3D;&#x3D;&#x3D; PAGE_DOWN) {
             event.preventDefault();
             this.keyboardEventsManager.onKeydown(event);
             this.keyboardEventsManager.setLastItemActive();
-            this.announceCurrentItem();
         }
 
-        // This keeps the active item visible within the visible area of the menu popup. In case there are disabled items in the list,
-        // this scrolls down to the nearest enabled item. Otherwise, the active item will &quot;jump over&quot; the disabled items and remain
-        // outside of the visible edge of the list.
-        this.keyboardEventsManager.activeItem?.menuItem?.nativeElement?.scrollIntoView({block: &quot;nearest&quot;});
-
         // prevent closing on enter
-        if (!this.hasActiveItem() &amp;&amp; event.code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ENTER) {
+        if (!this.hasActiveItem() &amp;&amp; event.keyCode &#x3D;&#x3D;&#x3D; ENTER) {
             event.preventDefault();
         }
 
-        if (this.hasActiveItem() &amp;&amp; event.code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ENTER) {
+        if (this.hasActiveItem() &amp;&amp; event.keyCode &#x3D;&#x3D;&#x3D; ENTER) {
             // perform action in menu item(select, switch, check etc).
             this.keyboardEventsManager.activeItem?.doAction(event);
             // closing items only if they are MenuAction or MenuItem, others should not close popup
@@ -967,7 +900,7 @@ export class MenuKeyControlService implements OnDestroy {
             }
             this.popup.toggleOpened(event);
         }
-        if (event.code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.TAB || event.code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ESCAPE) {
+        if (event.keyCode &#x3D;&#x3D;&#x3D; TAB || event.keyCode &#x3D;&#x3D;&#x3D; ESCAPE) {
             this.popup.toggleOpened(event);
         }
     }
@@ -978,13 +911,13 @@ export class MenuKeyControlService implements OnDestroy {
             event.preventDefault();
         }
 
-        if (event.code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ARROW_DOWN) {
+        if (event.keyCode &#x3D;&#x3D;&#x3D; DOWN_ARROW) {
             this.popup.toggleOpened(event);
         }
     }
 
     private shouldBePrevented(event: KeyboardEvent) {
-        return event.code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ARROW_DOWN || event.code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ARROW_UP || event.code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ENTER;
+        return event.keyCode &#x3D;&#x3D;&#x3D; DOWN_ARROW || event.keyCode &#x3D;&#x3D;&#x3D; UP_ARROW || event.keyCode &#x3D;&#x3D;&#x3D; ENTER;
     }
 
     // functions to scroll items into view for ActiveDescendantKeyManager
@@ -1032,10 +965,6 @@ export class MenuKeyControlService implements OnDestroy {
             options.scrollContainer.nativeElement.scrollTop,
             300
         );
-    }
-
-    private announceCurrentItem() {
-        this.live.announce(&#x60;Active item ${this.keyboardEventsManager?.activeItem?.menuItem.nativeElement.innerText}.&#x60;);
     }
 
     ngOnDestroy(): void {
