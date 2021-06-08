@@ -2845,7 +2845,7 @@
                         properties: {
                             // for the DataSourceConfigurationComponent, this defines the list of data sources to pick from
                             dataSourceProviders: [] as string[],
-                            errorHandlingComponent: DataSourceErrorComponent.lateLoadKey,
+                            errorComponent: DataSourceErrorComponent.lateLoadKey,
                         },
                         providers: {
                             // converter transforms the data source metadata between the widget and the form
@@ -3299,7 +3299,7 @@
             properties: {
                 // for the DataSourceConfigurationComponent, this defines the list of data sources to pick from
                 dataSourceProviders: [] as string[],
-                errorHandlingComponent: DataSourceErrorComponent.lateLoadKey,
+                errorComponent: DataSourceErrorComponent.lateLoadKey,
             },
             providers: {
                 // converter transforms the data source metadata between the widget and the form
@@ -3520,7 +3520,7 @@
             componentType: DataSourceConfigurationComponent.lateLoadKey,
             properties: {
                 dataSourceProviders: [],
-                errorHandlingComponent: TableDataSourceErrorComponent.lateLoadKey,
+                errorComponent: TableDataSourceErrorComponent.lateLoadKey,
             },
             providers: {
                 [WellKnownProviders.Converter]: {
@@ -6779,7 +6779,7 @@ This function represents the linear dependency (approximately).</p>
             properties: {
                 // for the DataSourceConfigurationComponent, this defines the list of data sources to pick from
                 dataSourceProviders: [] as string[],
-                errorHandlingComponent: DataSourceErrorComponent.lateLoadKey,
+                errorComponent: DataSourceErrorComponent.lateLoadKey,
             },
             providers: {
                 // converter transforms the data source metadata between the widget and the form

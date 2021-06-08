@@ -193,13 +193,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/NuiDashboardConfiguratorModule.html" data-type="entity-link">NuiDashboardConfiguratorModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-NuiDashboardConfiguratorModule-7d6e793d2a05dfdcb29dbd6f59501916"' : 'data-target="#xs-components-links-module-NuiDashboardConfiguratorModule-7d6e793d2a05dfdcb29dbd6f59501916"' }>
+                                            'data-target="#components-links-module-NuiDashboardConfiguratorModule-64f07e1eb71c00d39668c9663615afc1"' : 'data-target="#xs-components-links-module-NuiDashboardConfiguratorModule-64f07e1eb71c00d39668c9663615afc1"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-NuiDashboardConfiguratorModule-7d6e793d2a05dfdcb29dbd6f59501916"' :
-                                            'id="xs-components-links-module-NuiDashboardConfiguratorModule-7d6e793d2a05dfdcb29dbd6f59501916"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-NuiDashboardConfiguratorModule-64f07e1eb71c00d39668c9663615afc1"' :
+                                            'id="xs-components-links-module-NuiDashboardConfiguratorModule-64f07e1eb71c00d39668c9663615afc1"' }>
                                             <li class="link">
                                                 <a href="components/ColorPickerComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">ColorPickerComponent</a>
@@ -228,13 +228,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     </li>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#injectables-links-module-NuiDashboardConfiguratorModule-7d6e793d2a05dfdcb29dbd6f59501916"' : 'data-target="#xs-injectables-links-module-NuiDashboardConfiguratorModule-7d6e793d2a05dfdcb29dbd6f59501916"' }>
+                                        'data-target="#injectables-links-module-NuiDashboardConfiguratorModule-64f07e1eb71c00d39668c9663615afc1"' : 'data-target="#xs-injectables-links-module-NuiDashboardConfiguratorModule-64f07e1eb71c00d39668c9663615afc1"' }>
                                         <span class="icon ion-md-arrow-round-down"></span>
                                         <span>Injectables</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-NuiDashboardConfiguratorModule-7d6e793d2a05dfdcb29dbd6f59501916"' :
-                                        'id="xs-injectables-links-module-NuiDashboardConfiguratorModule-7d6e793d2a05dfdcb29dbd6f59501916"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-NuiDashboardConfiguratorModule-64f07e1eb71c00d39668c9663615afc1"' :
+                                        'id="xs-injectables-links-module-NuiDashboardConfiguratorModule-64f07e1eb71c00d39668c9663615afc1"' }>
                                         <li class="link">
                                             <a href="injectables/ConfiguratorHeadingService.html"
                                                 data-type="entity-link" data-context="sub-entity" data-context-id="modules" }>ConfiguratorHeadingService</a>
@@ -271,13 +271,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 </li>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#pipes-links-module-NuiDashboardConfiguratorModule-7d6e793d2a05dfdcb29dbd6f59501916"' : 'data-target="#xs-pipes-links-module-NuiDashboardConfiguratorModule-7d6e793d2a05dfdcb29dbd6f59501916"' }>
+                                            'data-target="#pipes-links-module-NuiDashboardConfiguratorModule-64f07e1eb71c00d39668c9663615afc1"' : 'data-target="#xs-pipes-links-module-NuiDashboardConfiguratorModule-64f07e1eb71c00d39668c9663615afc1"' }>
                                             <span class="icon ion-md-add"></span>
                                             <span>Pipes</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="pipes-links-module-NuiDashboardConfiguratorModule-7d6e793d2a05dfdcb29dbd6f59501916"' :
-                                            'id="xs-pipes-links-module-NuiDashboardConfiguratorModule-7d6e793d2a05dfdcb29dbd6f59501916"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="pipes-links-module-NuiDashboardConfiguratorModule-64f07e1eb71c00d39668c9663615afc1"' :
+                                            'id="xs-pipes-links-module-NuiDashboardConfiguratorModule-64f07e1eb71c00d39668c9663615afc1"' }>
                                             <li class="link">
                                                 <a href="pipes/AddDataPipe.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">AddDataPipe</a>

@@ -84,11 +84,11 @@
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#dataSourceFields">dataSourceFields</a>
+                                <a href="#dataSourceFields$">dataSourceFields$</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#error">error</a>
+                                <a href="#error$">error$</a>
                             </li>
                         </ul>
                     </td>
@@ -366,12 +366,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="dataSourceFields"></a>
+                        <a name="dataSourceFields$"></a>
                         <span class="name">
                             <b>
                                 <span class="modifier">Public</span>
-                            dataSourceFields</b>
-                            <a href="#dataSourceFields"><span class="icon ion-ios-link"></span></a>
+                            dataSourceFields$</b>
+                            <a href="#dataSourceFields$"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
@@ -399,12 +399,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="error"></a>
+                        <a name="error$"></a>
                         <span class="name">
                             <b>
                                 <span class="modifier">Public</span>
-                            error</b>
-                            <a href="#error"><span class="icon ion-ios-link"></span></a>
+                            error$</b>
+                            <a href="#error$"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
@@ -449,11 +449,11 @@ import isUndefined from &quot;lodash/isUndefined&quot;;
 export class ConfiguratorDataSourceManagerService implements OnDestroy {
 
     private onDestroy$: Subject&lt;void&gt; &#x3D; new Subject&lt;void&gt;();
-    private dataSourceCreated: Subject&lt;void&gt; &#x3D; new Subject&lt;void&gt;();
+    private dataSourceCreated$: Subject&lt;void&gt; &#x3D; new Subject&lt;void&gt;();
     public dataSource: IDataSource;
-    public error: Subject&lt;(IDataSourceError) | null&gt; &#x3D; new Subject&lt;IDataSourceError | null&gt;();
+    public error$: Subject&lt;(IDataSourceError) | null&gt; &#x3D; new Subject&lt;IDataSourceError | null&gt;();
     public busy$: BehaviorSubject&lt;boolean&gt; &#x3D; new BehaviorSubject&lt;boolean&gt;(false);
-    public dataSourceFields: BehaviorSubject&lt;(Array&lt;IDataField&gt;)&gt; &#x3D; new BehaviorSubject&lt;Array&lt;IDataField&gt;&gt;([]);
+    public dataSourceFields$: BehaviorSubject&lt;(Array&lt;IDataField&gt;)&gt; &#x3D; new BehaviorSubject&lt;Array&lt;IDataField&gt;&gt;([]);
 
     constructor(
         @Inject(PIZZAGNA_EVENT_BUS) private eventBus: EventBus&lt;IEvent&gt;,
@@ -468,23 +468,22 @@ export class ConfiguratorDataSourceManagerService implements OnDestroy {
 
         this.eventBus.subscribeUntil(DATA_SOURCE_OUTPUT, this.onDestroy$, (event: IEvent) &#x3D;&gt; {
             if (event.payload?.error) {
-                this.error.next(event.payload.error);
+                this.error$.next(event.payload.error);
             } else {
-                this.error.next(undefined);
+                this.error$.next(undefined);
                 const payload &#x3D; isUndefined(event.payload.result) ? event.payload : (event.payload.result || {});
                 if ( payload?.dataFields ) {
-                    this.dataSourceFields.next(payload.dataFields);
+                    this.dataSourceFields$.next(payload.dataFields);
                 }
             }
         });
     }
 
     onDataSourceCreated(dataSource: IDataSource): void {
-
         this.dataSource &#x3D; dataSource
-        this.dataSourceCreated.next();
+        this.dataSourceCreated$.next();
 
-        this.dataSource.busy?.pipe(takeUntil(this.dataSourceCreated)).subscribe((isBusy: boolean) &#x3D;&gt; {
+        this.dataSource.busy?.pipe(takeUntil(this.dataSourceCreated$)).subscribe((isBusy: boolean) &#x3D;&gt; {
             this.dashwizService?.component?.navigationControl.next({
                 busyState: {
                     busy: isBusy,
@@ -495,6 +494,7 @@ export class ConfiguratorDataSourceManagerService implements OnDestroy {
             this.busy$.next(isBusy)
         });
     }
+
     ngOnDestroy(): void {
         this.onDestroy$.next();
         this.onDestroy$.complete();
