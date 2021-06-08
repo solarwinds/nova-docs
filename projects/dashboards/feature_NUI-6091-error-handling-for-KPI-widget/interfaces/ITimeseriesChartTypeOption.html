@@ -168,6 +168,7 @@ import { TimeseriesChartPreset } from &quot;../../../../../components/timeseries
 import { LegendPlacement } from &quot;../../../../../components/types&quot;;
 import { PREVIEW_EVENT, REFRESH } from &quot;../../../../../services/types&quot;;
 import { IHasChangeDetector, IHasForm, PIZZAGNA_EVENT_BUS } from &quot;../../../../../types&quot;;
+import { ConfiguratorHeadingService } from &quot;../../../../services/configurator-heading.service&quot;;
 
 export interface ITimeseriesChartTypeOption {
     label: string;
@@ -208,6 +209,7 @@ export class TimeseriesMetadataConfigurationComponent implements IHasChangeDetec
     private destroy$ &#x3D; new Subject();
 
     constructor(public changeDetector: ChangeDetectorRef,
+                public configuratorHeading: ConfiguratorHeadingService,
                 private formBuilder: FormBuilder,
                 @Inject(PIZZAGNA_EVENT_BUS) private eventBus: EventBus&lt;IEvent&gt;) {
         this.form &#x3D; this.formBuilder.group({
