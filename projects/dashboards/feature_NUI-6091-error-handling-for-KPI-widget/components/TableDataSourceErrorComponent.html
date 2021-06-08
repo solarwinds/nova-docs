@@ -68,7 +68,6 @@
     </p>
     <p class="comment">
                     <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
-                    <code><a href="https://angular.io/api/core/OnChanges" target="_blank" >OnChanges</a></code>
     </p>
 
 
@@ -688,17 +687,13 @@ import { IDataField } from &quot;@nova-ui/bits&quot;;
     templateUrl: &quot;./table-data-source-error.component.html&quot;,
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TableDataSourceErrorComponent extends DataSourceErrorComponent implements OnDestroy, OnChanges {
+export class TableDataSourceErrorComponent extends DataSourceErrorComponent implements OnDestroy {
     public static lateLoadKey &#x3D; &quot;TableDataSourceErrorHandlingComponent&quot;;
 
     constructor(
         public changeDetector: ChangeDetectorRef
     ) {
         super(changeDetector);
-    }
-
-    ngOnChanges(changes: SimpleChanges) {
-        super.ngOnChanges(changes);
     }
 
     ngOnDestroy() {
