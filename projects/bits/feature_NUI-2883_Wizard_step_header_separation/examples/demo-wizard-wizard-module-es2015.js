@@ -777,30 +777,36 @@ WizardWithSeparateStepHeadingsExampleComponent.ɵcmp = _angular_core__WEBPACK_IM
     else {
         i18n_6 = $localize `:␟d7a43ef63786782c267d1cb586ed26f2399f75e8␟8407071165376949256:Heading for final step content`;
     } let i18n_8; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-        const MSG_EXTERNAL_2241508602425256033$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_WIZARD_WITH_SEPARATE_STEP_HEADINGS_WIZARD_WITH_SEPARATE_STEP_HEADINGS_EXAMPLE_COMPONENT_TS__9 = goog.getMsg("First");
-        i18n_8 = MSG_EXTERNAL_2241508602425256033$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_WIZARD_WITH_SEPARATE_STEP_HEADINGS_WIZARD_WITH_SEPARATE_STEP_HEADINGS_EXAMPLE_COMPONENT_TS__9;
+        const MSG_EXTERNAL_5385737502167048240$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_WIZARD_WITH_SEPARATE_STEP_HEADINGS_WIZARD_WITH_SEPARATE_STEP_HEADINGS_EXAMPLE_COMPONENT_TS_9 = goog.getMsg("Final step");
+        i18n_8 = MSG_EXTERNAL_5385737502167048240$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_WIZARD_WITH_SEPARATE_STEP_HEADINGS_WIZARD_WITH_SEPARATE_STEP_HEADINGS_EXAMPLE_COMPONENT_TS_9;
     }
     else {
-        i18n_8 = $localize `:␟f2f852318759c6396b5d3d17031d53817d7b38cc␟2241508602425256033:First`;
+        i18n_8 = $localize `:␟0de8f1dbd57123d294729d71fd278eaf936d4a2b␟5385737502167048240:Final step`;
     } let i18n_10; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-        const MSG_EXTERNAL_5530604904987545137$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_WIZARD_WITH_SEPARATE_STEP_HEADINGS_WIZARD_WITH_SEPARATE_STEP_HEADINGS_EXAMPLE_COMPONENT_TS__11 = goog.getMsg("Check box with help text");
-        i18n_10 = MSG_EXTERNAL_5530604904987545137$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_WIZARD_WITH_SEPARATE_STEP_HEADINGS_WIZARD_WITH_SEPARATE_STEP_HEADINGS_EXAMPLE_COMPONENT_TS__11;
+        const MSG_EXTERNAL_2241508602425256033$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_WIZARD_WITH_SEPARATE_STEP_HEADINGS_WIZARD_WITH_SEPARATE_STEP_HEADINGS_EXAMPLE_COMPONENT_TS__11 = goog.getMsg("First");
+        i18n_10 = MSG_EXTERNAL_2241508602425256033$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_WIZARD_WITH_SEPARATE_STEP_HEADINGS_WIZARD_WITH_SEPARATE_STEP_HEADINGS_EXAMPLE_COMPONENT_TS__11;
     }
     else {
-        i18n_10 = $localize `:␟c42399c4f4c441cd575f6140076703ec297e247b␟5530604904987545137:Check box with help text`;
+        i18n_10 = $localize `:␟f2f852318759c6396b5d3d17031d53817d7b38cc␟2241508602425256033:First`;
     } let i18n_12; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-        const MSG_EXTERNAL_829155627086234075$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_WIZARD_WITH_SEPARATE_STEP_HEADINGS_WIZARD_WITH_SEPARATE_STEP_HEADINGS_EXAMPLE_COMPONENT_TS__13 = goog.getMsg("This is some help text");
-        i18n_12 = MSG_EXTERNAL_829155627086234075$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_WIZARD_WITH_SEPARATE_STEP_HEADINGS_WIZARD_WITH_SEPARATE_STEP_HEADINGS_EXAMPLE_COMPONENT_TS__13;
+        const MSG_EXTERNAL_5530604904987545137$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_WIZARD_WITH_SEPARATE_STEP_HEADINGS_WIZARD_WITH_SEPARATE_STEP_HEADINGS_EXAMPLE_COMPONENT_TS__13 = goog.getMsg("Check box with help text");
+        i18n_12 = MSG_EXTERNAL_5530604904987545137$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_WIZARD_WITH_SEPARATE_STEP_HEADINGS_WIZARD_WITH_SEPARATE_STEP_HEADINGS_EXAMPLE_COMPONENT_TS__13;
     }
     else {
-        i18n_12 = $localize `:␟ba785d6cbb33a003a3ce1d20077ba67264374284␟829155627086234075:This is some help text`;
+        i18n_12 = $localize `:␟c42399c4f4c441cd575f6140076703ec297e247b␟5530604904987545137:Check box with help text`;
     } let i18n_14; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-        const MSG_EXTERNAL_7423534081684222193$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_WIZARD_WITH_SEPARATE_STEP_HEADINGS_WIZARD_WITH_SEPARATE_STEP_HEADINGS_EXAMPLE_COMPONENT_TS__15 = goog.getMsg("Check box with help text ");
-        i18n_14 = MSG_EXTERNAL_7423534081684222193$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_WIZARD_WITH_SEPARATE_STEP_HEADINGS_WIZARD_WITH_SEPARATE_STEP_HEADINGS_EXAMPLE_COMPONENT_TS__15;
+        const MSG_EXTERNAL_829155627086234075$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_WIZARD_WITH_SEPARATE_STEP_HEADINGS_WIZARD_WITH_SEPARATE_STEP_HEADINGS_EXAMPLE_COMPONENT_TS__15 = goog.getMsg("This is some help text");
+        i18n_14 = MSG_EXTERNAL_829155627086234075$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_WIZARD_WITH_SEPARATE_STEP_HEADINGS_WIZARD_WITH_SEPARATE_STEP_HEADINGS_EXAMPLE_COMPONENT_TS__15;
     }
     else {
-        i18n_14 = $localize `:␟afe4e37e44b987e90ca54c9344a8cec80dcbd337␟7423534081684222193:Check box with help text `;
-    } return [["step1", ""], ["step2", ""], ["id", "nui-demo-wizard", "finishText", i18n_0], ["id", "nui-demo-wizard-step", "title", i18n_2, "shortTitle", i18n_4, 3, "stepTemplate"], ["title", i18n_6, "shortTitle", "Final step", 3, "stepTemplate"], ["caption", i18n_8, "name", "nui-demo-textbox", "customBoxWidth", "150px", 3, "value", "textChange"], ["name", "nui-demo-checkbox", "title", i18n_10, "hint", i18n_12, "required", "true", 3, "value"], i18n_14]; }, template: function WizardWithSeparateStepHeadingsExampleComponent_Template(rf, ctx) { if (rf & 1) {
+        i18n_14 = $localize `:␟ba785d6cbb33a003a3ce1d20077ba67264374284␟829155627086234075:This is some help text`;
+    } let i18n_16; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+        const MSG_EXTERNAL_7423534081684222193$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_WIZARD_WITH_SEPARATE_STEP_HEADINGS_WIZARD_WITH_SEPARATE_STEP_HEADINGS_EXAMPLE_COMPONENT_TS__17 = goog.getMsg("Check box with help text ");
+        i18n_16 = MSG_EXTERNAL_7423534081684222193$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_WIZARD_WITH_SEPARATE_STEP_HEADINGS_WIZARD_WITH_SEPARATE_STEP_HEADINGS_EXAMPLE_COMPONENT_TS__17;
+    }
+    else {
+        i18n_16 = $localize `:␟afe4e37e44b987e90ca54c9344a8cec80dcbd337␟7423534081684222193:Check box with help text `;
+    } return [["step1", ""], ["step2", ""], ["id", "nui-demo-wizard", "finishText", i18n_0], ["id", "nui-demo-wizard-step", "title", i18n_2, "shortTitle", i18n_4, 3, "stepTemplate"], ["title", i18n_6, "shortTitle", i18n_8, 3, "stepTemplate"], ["caption", i18n_10, "name", "nui-demo-textbox", "customBoxWidth", "150px", 3, "value", "textChange"], ["name", "nui-demo-checkbox", "title", i18n_12, "hint", i18n_14, "required", "true", 3, "value"], i18n_16]; }, template: function WizardWithSeparateStepHeadingsExampleComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, WizardWithSeparateStepHeadingsExampleComponent_ng_template_0_Template, 1, 1, "ng-template", null, 0, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, WizardWithSeparateStepHeadingsExampleComponent_ng_template_2_Template, 2, 1, "ng-template", null, 1, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "nui-wizard", 2);
@@ -948,7 +954,7 @@ WizardDisabledExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1_
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ng-template #step1>\n    <nui-textbox\n        i18n-caption\n        caption=\"First\"\n        name=\"nui-demo-textbox\"\n        [value]=\"textboxValue\"\n        customBoxWidth=\"150px\"\n        (textChange)=\"onTextboxChange($event)\">\n    </nui-textbox>\n</ng-template>\n<ng-template #step2>\n    <nui-checkbox name=\"nui-demo-checkbox\"\n                  i18n-title\n                  title=\"Check box with help text\"\n                  i18n-hint\n                  hint=\"This is some help text\"\n                  required=\"true\"\n                  [value]=\"false\" i18n>Check box with help text\n    </nui-checkbox>\n</ng-template>\n\n<nui-wizard id=\"nui-demo-wizard\"\n            finishText=\"Finish\"\n            i18n-finishText>\n    <nui-wizard-step id=\"nui-demo-wizard-step\" i18n-title title=\"Heading for first step content\" i18n-shortTitle shortTitle=\"First step\" [stepTemplate]=\"step1\"></nui-wizard-step>\n    <nui-wizard-step i18n-title title=\"Heading for final step content\"  shortTitle=\"Final step\" [stepTemplate]=\"step2\"></nui-wizard-step>\n</nui-wizard>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ng-template #step1>\n    <nui-textbox\n        i18n-caption\n        caption=\"First\"\n        name=\"nui-demo-textbox\"\n        [value]=\"textboxValue\"\n        customBoxWidth=\"150px\"\n        (textChange)=\"onTextboxChange($event)\">\n    </nui-textbox>\n</ng-template>\n<ng-template #step2>\n    <nui-checkbox name=\"nui-demo-checkbox\"\n                  i18n-title\n                  title=\"Check box with help text\"\n                  i18n-hint\n                  hint=\"This is some help text\"\n                  required=\"true\"\n                  [value]=\"false\" i18n>Check box with help text\n    </nui-checkbox>\n</ng-template>\n\n<nui-wizard id=\"nui-demo-wizard\"\n            finishText=\"Finish\"\n            i18n-finishText>\n    <nui-wizard-step id=\"nui-demo-wizard-step\" i18n-title title=\"Heading for first step content\" i18n-shortTitle shortTitle=\"First step\" [stepTemplate]=\"step1\"></nui-wizard-step>\n    <nui-wizard-step i18n-title title=\"Heading for final step content\" i18n-shortTitle shortTitle=\"Final step\" [stepTemplate]=\"step2\"></nui-wizard-step>\n</nui-wizard>\n");
 
 /***/ }),
 
