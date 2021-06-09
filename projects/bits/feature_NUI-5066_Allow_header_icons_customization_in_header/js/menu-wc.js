@@ -821,10 +821,25 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/IVirtualViewportResetOptions.html" data-type="entity-link">IVirtualViewportResetOptions</a>
                             </li>
                             <li class="link">
+                                <a href="interfaces/IWizardConfig.html" data-type="entity-link">IWizardConfig</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/IWizardCurrentStepStatusIconConfig.html" data-type="entity-link">IWizardCurrentStepStatusIconConfig</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/IWizardIconStates.html" data-type="entity-link">IWizardIconStates</a>
+                            </li>
+                            <li class="link">
                                 <a href="interfaces/IWizardSelectionEvent.html" data-type="entity-link">IWizardSelectionEvent</a>
                             </li>
                             <li class="link">
+                                <a href="interfaces/IWizardState.html" data-type="entity-link">IWizardState</a>
+                            </li>
+                            <li class="link">
                                 <a href="interfaces/IWizardStepComponent.html" data-type="entity-link">IWizardStepComponent</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/IWizardStepStateIconConfig.html" data-type="entity-link">IWizardStepStateIconConfig</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/IWizardWaitEvent.html" data-type="entity-link">IWizardWaitEvent</a>
