@@ -84,11 +84,11 @@
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#dataSourceFields">dataSourceFields</a>
+                                <a href="#dataSourceFields$">dataSourceFields$</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#error">error</a>
+                                <a href="#error$">error$</a>
                             </li>
                         </ul>
                     </td>
@@ -104,6 +104,9 @@
                         <ul class="index-list">
                             <li>
                                 <a href="#ngOnDestroy">ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#onDataSourceCreated">onDataSourceCreated</a>
                             </li>
                         </ul>
                     </td>
@@ -205,8 +208,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="56"
-                            class="link-to-prism">src/lib/configurator/services/configurator-data-source-manager.service.ts:56</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="62"
+                            class="link-to-prism">src/lib/configurator/services/configurator-data-source-manager.service.ts:62</a></div>
                 </td>
             </tr>
 
@@ -217,6 +220,76 @@
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onDataSourceCreated"></a>
+                    <span class="name">
+                        <b>
+                            onDataSourceCreated
+                        </b>
+                        <a href="#onDataSourceCreated"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onDataSourceCreated(dataSource: IDataSource)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="46"
+                            class="link-to-prism">src/lib/configurator/services/configurator-data-source-manager.service.ts:46</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>dataSource</td>
+                                    <td>
+                                            <code>IDataSource</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
                     </div>
                 </td>
             </tr>
@@ -293,12 +366,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="dataSourceFields"></a>
+                        <a name="dataSourceFields$"></a>
                         <span class="name">
                             <b>
                                 <span class="modifier">Public</span>
-                            dataSourceFields</b>
-                            <a href="#dataSourceFields"><span class="icon ion-ios-link"></span></a>
+                            dataSourceFields$</b>
+                            <a href="#dataSourceFields$"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
@@ -326,12 +399,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="error"></a>
+                        <a name="error$"></a>
                         <span class="name">
                             <b>
                                 <span class="modifier">Public</span>
-                            error</b>
-                            <a href="#error"><span class="icon ion-ios-link"></span></a>
+                            error$</b>
+                            <a href="#error$"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
@@ -376,43 +449,49 @@ import isUndefined from &quot;lodash/isUndefined&quot;;
 export class ConfiguratorDataSourceManagerService implements OnDestroy {
 
     private onDestroy$: Subject&lt;void&gt; &#x3D; new Subject&lt;void&gt;();
-    private dataSourceCreated: Subject&lt;void&gt; &#x3D; new Subject&lt;void&gt;();
+    private dataSourceCreated$: Subject&lt;void&gt; &#x3D; new Subject&lt;void&gt;();
     public dataSource: IDataSource;
-    public error: Subject&lt;(IDataSourceError) | null&gt; &#x3D; new Subject&lt;IDataSourceError | null&gt;();
+    public error$: Subject&lt;(IDataSourceError) | null&gt; &#x3D; new Subject&lt;IDataSourceError | null&gt;();
     public busy$: BehaviorSubject&lt;boolean&gt; &#x3D; new BehaviorSubject&lt;boolean&gt;(false);
-    public dataSourceFields: BehaviorSubject&lt;(Array&lt;IDataField&gt;)&gt; &#x3D; new BehaviorSubject&lt;Array&lt;IDataField&gt;&gt;([]);
+    public dataSourceFields$: BehaviorSubject&lt;(Array&lt;IDataField&gt;)&gt; &#x3D; new BehaviorSubject&lt;Array&lt;IDataField&gt;&gt;([]);
 
-    constructor(@Inject(PIZZAGNA_EVENT_BUS) private eventBus: EventBus&lt;IEvent&gt;, private dashwizService: DashwizService) {
+    constructor(
+        @Inject(PIZZAGNA_EVENT_BUS) private eventBus: EventBus&lt;IEvent&gt;,
+        private dashwizService: DashwizService
+    ) {
         this.eventBus.subscribeUntil(DATA_SOURCE_CREATED, this.onDestroy$, (event: IEvent&lt;IDataSource&gt;) &#x3D;&gt; {
             if (!event.payload) {
                 return;
             }
-
-            this.dataSource &#x3D; event.payload;
-            this.dataSourceCreated.next();
-
-            this.dataSource.busy?.pipe(takeUntil(this.dataSourceCreated)).subscribe((isBusy: boolean) &#x3D;&gt; {
-                dashwizService?.component?.navigationControl.next({
-                    busyState: {
-                        busy: isBusy,
-                    },
-                    allowStepChange: !isBusy,
-                });
-
-                this.busy$.next(isBusy)
-            });
+            this.onDataSourceCreated(event.payload);
         });
 
         this.eventBus.subscribeUntil(DATA_SOURCE_OUTPUT, this.onDestroy$, (event: IEvent) &#x3D;&gt; {
             if (event.payload?.error) {
-                this.error.next(event.payload.error);
+                this.error$.next(event.payload.error);
             } else {
-                this.error.next(undefined);
+                this.error$.next(undefined);
                 const payload &#x3D; isUndefined(event.payload.result) ? event.payload : (event.payload.result || {});
                 if ( payload?.dataFields ) {
-                    this.dataSourceFields.next(payload.dataFields);
+                    this.dataSourceFields$.next(payload.dataFields);
                 }
             }
+        });
+    }
+
+    onDataSourceCreated(dataSource: IDataSource): void {
+        this.dataSource &#x3D; dataSource
+        this.dataSourceCreated$.next();
+
+        this.dataSource.busy?.pipe(takeUntil(this.dataSourceCreated$)).subscribe((isBusy: boolean) &#x3D;&gt; {
+            this.dashwizService?.component?.navigationControl.next({
+                busyState: {
+                    busy: isBusy,
+                },
+                allowStepChange: !isBusy,
+            });
+
+            this.busy$.next(isBusy)
         });
     }
 
