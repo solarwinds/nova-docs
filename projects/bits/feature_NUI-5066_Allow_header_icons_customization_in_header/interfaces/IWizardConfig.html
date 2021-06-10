@@ -79,7 +79,7 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                        <a href="#stepStateIcons">stepStateIcons</a>
+                                        <a href="#stepState">stepState</a>
                                 </li>
                             </ul>
                         </td>
@@ -101,7 +101,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/lib/wizard-v2/types.ts:7</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/lib/wizard-v2/types.ts:10</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -114,13 +114,13 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="stepStateIcons"></a>
-                                        <span class="name"><b>stepStateIcons</b><a href="#stepStateIcons"><span class="icon ion-ios-link"></span></a></span>
+                                        <a name="stepState"></a>
+                                        <span class="name"><b>stepState</b><a href="#stepState"><span class="icon ion-ios-link"></span></a></span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>stepStateIcons:         <code><a href="../interfaces/IWizardStepStateIconConfig.html" target="_self" >IWizardStepStateIconConfig</a></code>
+                                        <code>stepState:         <code><a href="../miscellaneous/typealiases.html#WizardStepStateConfig" target="_self" >WizardStepStateConfig</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -128,7 +128,7 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="../interfaces/IWizardStepStateIconConfig.html" target="_self" >IWizardStepStateIconConfig</a></code>
+                                            <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#WizardStepStateConfig" target="_self" >WizardStepStateConfig</a></code>
 
                                         </td>
                                     </tr>
@@ -144,26 +144,21 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export interface IWizardState {
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export type WizardIconStates &#x3D; &quot;active&quot; | &quot;visited&quot; | &quot;initial&quot; | &quot;error&quot; | string;
+export type WizardStepStateConfig &#x3D; Record&lt;WizardIconStates, IWizardStepStateConfig&gt;;
+
+export interface IWizardState {
     finished: boolean;
 }
 
 export interface IWizardConfig {
-    stepStateIcons: IWizardStepStateIconConfig;
+    stepState: WizardStepStateConfig;
     [key: string]: any;
 }
 
-export interface IWizardStepStateIconConfig {
-    icons?: Partial&lt;IWizardIconStates&gt;;
-    colors?: Partial&lt;IWizardIconStates&gt;;
-}
-
-export interface IWizardIconStates {
-    active: string;
-    visited: string;
-    initial: string;
-    error: string;
-    [key: string]: string;
+export interface IWizardStepStateConfig {
+    icon?: string;
+    color?: string;
 }
 </code></pre>
     </div>

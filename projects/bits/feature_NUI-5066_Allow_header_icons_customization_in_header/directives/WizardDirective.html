@@ -408,7 +408,7 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getStepState(i: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, stepState: StepState)</code>
+                    <code>getStepState(i: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
                 </td>
             </tr>
 
@@ -432,7 +432,6 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
-                                    <td>Default value</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -446,23 +445,6 @@
                                         No
                                     </td>
 
-                                    <td>
-                                    </td>
-
-                                </tr>
-                                <tr>
-                                    <td>stepState</td>
-                                    <td>
-                                            <code>StepState</code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-                                    <td>
-                                        <code>STEP_STATE.NUMBER</code>
-                                    </td>
 
                                 </tr>
                             </tbody>
@@ -967,12 +949,11 @@ export class WizardDirective extends CdkStepper implements OnChanges, AfterConte
         super.ngOnDestroy();
     }
 
-    public getStepState(i: number, stepState: StepState &#x3D; STEP_STATE.NUMBER): StepState {
+    public getStepState(i: number): StepState {
         const steps &#x3D; this.steps.toArray();
         const step &#x3D; steps[i];
         const isSelected &#x3D; steps.indexOf(this.selected) &#x3D;&#x3D;&#x3D; i;
 
-        // if (step._showError &amp;&amp; step.hasError &amp;&amp; !isSelected) {
         if (step.hasError &amp;&amp; isSelected) {
             return STEP_STATE.ERROR;
         }
@@ -981,11 +962,11 @@ export class WizardDirective extends CdkStepper implements OnChanges, AfterConte
             return STEP_STATE.EDIT
         }
 
-        if (steps[i].completed) {
+        if (step.completed) {
             return STEP_STATE.DONE
         }
 
-        return stepState;
+        return STEP_STATE.NUMBER;
     }
 
     // Restores the completed wizard to the last step

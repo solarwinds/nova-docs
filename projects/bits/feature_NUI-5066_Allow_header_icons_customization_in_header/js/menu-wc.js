@@ -824,12 +824,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/IWizardConfig.html" data-type="entity-link">IWizardConfig</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IWizardCurrentStepStatusIconConfig.html" data-type="entity-link">IWizardCurrentStepStatusIconConfig</a>
-                            </li>
-                            <li class="link">
-                                <a href="interfaces/IWizardIconStates.html" data-type="entity-link">IWizardIconStates</a>
-                            </li>
-                            <li class="link">
                                 <a href="interfaces/IWizardSelectionEvent.html" data-type="entity-link">IWizardSelectionEvent</a>
                             </li>
                             <li class="link">
@@ -839,7 +833,7 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/IWizardStepComponent.html" data-type="entity-link">IWizardStepComponent</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IWizardStepStateIconConfig.html" data-type="entity-link">IWizardStepStateIconConfig</a>
+                                <a href="interfaces/IWizardStepStateConfig.html" data-type="entity-link">IWizardStepStateConfig</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/IWizardWaitEvent.html" data-type="entity-link">IWizardWaitEvent</a>
