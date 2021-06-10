@@ -64,6 +64,13 @@
             <code>src/core/common/types.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Standard configuration for gauge threshold renderers</p>
+
+            </p>
 
 
         <section>
@@ -293,6 +300,9 @@ export interface IRadialRendererConfig extends IRendererConfig {
     enableDataPointHighlighting?: boolean;
 }
 
+/**
+ * Standard configuration for gauge threshold renderers
+ */
 export interface IGaugeThresholdsRendererConfig {
     /** The radius of each threshold marker */
     markerRadius?: StandardGaugeThresholdMarkerRadius | number;
