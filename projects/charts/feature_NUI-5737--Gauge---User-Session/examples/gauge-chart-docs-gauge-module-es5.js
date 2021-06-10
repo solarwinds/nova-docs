@@ -493,39 +493,45 @@
       var _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @nova-ui/charts */
       "gKry");
+      /* harmony import */
+
+
+      var lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! lodash/cloneDeep */
+      "BkRI");
+      /* harmony import */
+
+
+      var lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_4__);
 
       var GaugeVisualTestComponent = /*#__PURE__*/function () {
         function GaugeVisualTestComponent() {
           _classCallCheck(this, GaugeVisualTestComponent);
 
-          this.lowValue = 42;
-          this.mediumValue = 130;
-          this.highValue = 178;
           this.warningEnabled = true;
-          this.criticalEnabled = true;
+          this.gaugeConfigs = [this.getGaugeConfig(42), this.getGaugeConfig(130), this.getGaugeConfig(178)];
         }
 
         _createClass(GaugeVisualTestComponent, [{
           key: "getGaugeConfig",
           value: function getGaugeConfig(value) {
-            var gaugeConfig = {
+            return {
               value: value,
               max: 200,
               thresholds: _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["GaugeUtil"].createStandardThresholdConfigs(100, 158)
             };
-            gaugeConfig.thresholds[_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["StandardGaugeThresholdId"].Warning].enabled = this.warningEnabled;
-            gaugeConfig.thresholds[_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["StandardGaugeThresholdId"].Critical].enabled = this.criticalEnabled;
-            return gaugeConfig;
           }
         }, {
           key: "onWarningEnabledChange",
           value: function onWarningEnabledChange(enabled) {
+            var _this = this;
+
             this.warningEnabled = enabled;
-          }
-        }, {
-          key: "onCriticalEnabledChange",
-          value: function onCriticalEnabledChange(enabled) {
-            this.criticalEnabled = enabled;
+            this.gaugeConfigs = this.gaugeConfigs.map(function (c) {
+              var config = lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_4___default()(c);
+              config.thresholds[_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["StandardGaugeThresholdId"].Warning].enabled = _this.warningEnabled;
+              return config;
+            });
           }
         }]);
 

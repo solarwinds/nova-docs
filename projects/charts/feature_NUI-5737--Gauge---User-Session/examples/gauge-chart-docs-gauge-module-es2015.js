@@ -298,33 +298,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _raw_loader_gauge_visual_test_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./gauge-visual-test.component.html */ "m1aH");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @nova-ui/charts */ "gKry");
+/* harmony import */ var lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! lodash/cloneDeep */ "BkRI");
+/* harmony import */ var lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_4__);
+
 
 
 
 
 let GaugeVisualTestComponent = class GaugeVisualTestComponent {
     constructor() {
-        this.lowValue = 42;
-        this.mediumValue = 130;
-        this.highValue = 178;
         this.warningEnabled = true;
-        this.criticalEnabled = true;
+        this.gaugeConfigs = [this.getGaugeConfig(42), this.getGaugeConfig(130), this.getGaugeConfig(178)];
     }
     getGaugeConfig(value) {
-        const gaugeConfig = {
+        return {
             value,
             max: 200,
             thresholds: _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["GaugeUtil"].createStandardThresholdConfigs(100, 158),
         };
-        gaugeConfig.thresholds[_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["StandardGaugeThresholdId"].Warning].enabled = this.warningEnabled;
-        gaugeConfig.thresholds[_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["StandardGaugeThresholdId"].Critical].enabled = this.criticalEnabled;
-        return gaugeConfig;
     }
     onWarningEnabledChange(enabled) {
         this.warningEnabled = enabled;
-    }
-    onCriticalEnabledChange(enabled) {
-        this.criticalEnabled = enabled;
+        this.gaugeConfigs = this.gaugeConfigs.map(c => {
+            const config = lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_4___default()(c);
+            config.thresholds[_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["StandardGaugeThresholdId"].Warning].enabled = this.warningEnabled;
+            return config;
+        });
     }
 };
 GaugeVisualTestComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
