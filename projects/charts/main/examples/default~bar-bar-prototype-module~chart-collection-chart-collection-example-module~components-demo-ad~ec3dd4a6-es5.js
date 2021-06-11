@@ -9333,7 +9333,7 @@
               return this._height + marginsHeight;
             }
 
-            this._height = value - marginsHeight;
+            this._height = Math.max(value - marginsHeight, 0);
             return this;
           }
         }]);
@@ -43306,7 +43306,7 @@
 
             var renderingAreaAttrs = Object.assign(Object.assign({}, renderingAreaClipPathAttrs), {
               // Width correction needed to prevent interaction gap between right side of grid and the edge of the rendering area
-              "width": d.width() > 0 ? d.width() - (disableWidthCorrection ? 0 : Grid.RENDER_AREA_WIDTH_CORRECTION) : d.width()
+              "width": Math.max(0, d.width() - (disableWidthCorrection ? 0 : Grid.RENDER_AREA_WIDTH_CORRECTION))
             });
 
             _this95.renderingAreaClipPath.attrs(renderingAreaClipPathAttrs);
