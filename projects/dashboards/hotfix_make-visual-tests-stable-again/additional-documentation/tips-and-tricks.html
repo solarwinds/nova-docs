@@ -1,0 +1,131 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@nova-ui/dashboards documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">@nova-ui/dashboards documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content additional-page">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+<h1 id="tips-and-tricks">Tips and Tricks</h1>
+<h2 id="pizzagna-snapshot">Pizzagna Snapshot</h2>
+<p>To quickly see the state of any component&#39;s pizzagna within a dashboard, open the console output in the
+browser&#39;s dev tools. Then, hold CTRL + SHIFT while clicking the component you want to
+examine the pizzagna for. A snapshot of the pizzagna state will appear in the console showing the state 
+of the clicked component as well as the states of all its ascendants.</p>
+<p>Contained in each component state are the component&#39;s ID, type, instance, providers, and properties.</p>
+<p><strong>Note:</strong> This feature is currently only supported on Windows environments.</p>
+<h2 id="event-logging">Event Logging</h2>
+<p>While developing a dashboard, if you want to see a trace of all events going across a widget&#39;s event bus,
+add the <code>NOVA_EVENT_BUS_DEBUGGER</code> to the provider index on the widget&#39;s pizzagna root. This provider will
+output all events on the event bus&#39;s stream to the browser&#39;s dev tools console.</p>
+<div><pre class="line-numbers"><code class="language-json">{
+    id: &quot;widgetId&quot;,
+    type: &quot;kpi&quot;,
+    pizzagna: {
+        [PizzagnaLayer.Configuration]: {
+            [DEFAULT_PIZZAGNA_ROOT]: {
+                providers: {
+                    [WellKnownProviders.EventBusDebugger]: {
+                        providerId: NOVA_EVENT_BUS_DEBUGGER
+                    },
+                    ...
+                },
+                ...
+            },
+            ...
+        },
+        ...
+    },
+}</code></pre></div>
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'additional-page';
+            var COMPODOC_CURRENT_PAGE_URL = 'tips-and-tricks.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
