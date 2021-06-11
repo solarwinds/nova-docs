@@ -31023,9 +31023,6 @@ class ToolbarComponent {
     }
     onKeyDown(event) {
         const { code } = event;
-        // if (this.menuComponent && this.menuComponent.popup.isOpen) {
-        //     return;
-        // }
         if (code === _constants__WEBPACK_IMPORTED_MODULE_8__["KEYBOARD_CODE"].ARROW_LEFT || code === _constants__WEBPACK_IMPORTED_MODULE_8__["KEYBOARD_CODE"].ARROW_RIGHT) {
             this.isFocusFromOutside = false;
             event.preventDefault();

@@ -511,8 +511,8 @@ Use nui-toolbar-divider to display a vertical line between items.
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="197"
-                            class="link-to-prism">src/lib/toolbar/toolbar.component.ts:197</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="193"
+                            class="link-to-prism">src/lib/toolbar/toolbar.component.ts:193</a></div>
                 </td>
             </tr>
 
@@ -552,8 +552,8 @@ Use nui-toolbar-divider to display a vertical line between items.
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="186"
-                            class="link-to-prism">src/lib/toolbar/toolbar.component.ts:186</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="182"
+                            class="link-to-prism">src/lib/toolbar/toolbar.component.ts:182</a></div>
                 </td>
             </tr>
 
@@ -593,8 +593,8 @@ Use nui-toolbar-divider to display a vertical line between items.
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="146"
-                            class="link-to-prism">src/lib/toolbar/toolbar.component.ts:146</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="142"
+                            class="link-to-prism">src/lib/toolbar/toolbar.component.ts:142</a></div>
                 </td>
             </tr>
 
@@ -627,15 +627,15 @@ Use nui-toolbar-divider to display a vertical line between items.
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>onClickToolbarBtn(event: MouseEvent, commandItem: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                    <code>onClickToolbarBtn(event: MouseEvent, commandItem: ToolbarItemComponent)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="140"
-                            class="link-to-prism">src/lib/toolbar/toolbar.component.ts:140</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="136"
+                            class="link-to-prism">src/lib/toolbar/toolbar.component.ts:136</a></div>
                 </td>
             </tr>
 
@@ -669,7 +669,7 @@ Use nui-toolbar-divider to display a vertical line between items.
                                 <tr>
                                     <td>commandItem</td>
                                     <td>
-                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            <code>ToolbarItemComponent</code>
                                     </td>
 
                                     <td>
@@ -718,8 +718,8 @@ Use nui-toolbar-divider to display a vertical line between items.
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="167"
-                            class="link-to-prism">src/lib/toolbar/toolbar.component.ts:167</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="163"
+                            class="link-to-prism">src/lib/toolbar/toolbar.component.ts:163</a></div>
                 </td>
             </tr>
 
@@ -1112,7 +1112,7 @@ Use nui-toolbar-divider to display a vertical line between items.
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="207" class="link-to-prism">src/lib/toolbar/toolbar.component.ts:207</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="203" class="link-to-prism">src/lib/toolbar/toolbar.component.ts:203</a></div>
                                 </td>
                             </tr>
 
@@ -1134,7 +1134,7 @@ Use nui-toolbar-divider to display a vertical line between items.
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="211" class="link-to-prism">src/lib/toolbar/toolbar.component.ts:211</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="207" class="link-to-prism">src/lib/toolbar/toolbar.component.ts:207</a></div>
                                 </td>
                             </tr>
 
@@ -1244,10 +1244,6 @@ export class ToolbarComponent implements AfterViewInit, OnDestroy {
     onKeyDown(event: KeyboardEvent): void {
         const { code } &#x3D; event;
 
-        // if (this.menuComponent &amp;&amp; this.menuComponent.popup.isOpen) {
-        //     return;
-        // }
-
         if (code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ARROW_LEFT || code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ARROW_RIGHT) {
             this.isFocusFromOutside &#x3D; false;
             event.preventDefault();
@@ -1284,7 +1280,7 @@ export class ToolbarComponent implements AfterViewInit, OnDestroy {
         this.childrenSubscription.unsubscribe();
     }
 
-    public onClickToolbarBtn(event: MouseEvent, commandItem: any): void {
+    public onClickToolbarBtn(event: MouseEvent, commandItem: ToolbarItemComponent): void {
         event.stopPropagation();
         (event.target as HTMLButtonElement).focus();
         commandItem.actionDone.emit();
@@ -1417,7 +1413,7 @@ export class ToolbarComponent implements AfterViewInit, OnDestroy {
             return [];
         }
 
-        return Array.from(node.childNodes).filter((node) &#x3D;&gt; (node as any).tagName &#x3D;&#x3D;&#x3D; &quot;BUTTON&quot;) as HTMLButtonElement[];
+        return Array.from(node.childNodes).filter((node) &#x3D;&gt; (node as HTMLElement).tagName &#x3D;&#x3D;&#x3D; &quot;BUTTON&quot;) as HTMLButtonElement[];
     }
 
     private get dynamicContainer(): HTMLElement {
