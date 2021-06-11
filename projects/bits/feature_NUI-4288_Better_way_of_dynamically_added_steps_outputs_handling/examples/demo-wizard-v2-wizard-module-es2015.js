@@ -2788,7 +2788,7 @@ WizardCustomExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_4__[
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("export * from \"./wizard-docs/wizard-docs.component\";\nexport * from \"./wizard-horizontal-layout/wizard-horizontal-example.component\";\nexport * from \"./wizard-vertical-layout/wizard-vertical-example.component\";\nexport * from \"./wizard-custom-layout/wizard-custom-example.component\";\nexport * from \"./wizard-busy/wizard-busy.example.component\";\nexport * from \"./wizard-dialog/wizard-dialog.example.component\";\nexport * from \"./wizard-custom-footer/wizard-custom-footer-example.component\";\nexport * from \"./wizard-dynamic/wizard-dynamic.example.component\";\nexport * from \"./wizard-remove-step/wizard-remove-step-example.component\";\nexport * from \"./wizard-async-validation-form/wizard-async-form-validation.example.component\";\nexport * from \"./wizard-with-custom-icons/wizard-with-custom-icons-example.component\";\nexport * from \"./wizard-restore-state/wizard-restore-state.example.component\";\nexport * from \"./wizard-step-change-example/wizard-step-change-example.component\";\nexport * from \"./wizard-step-change-example/wizard-step-change-example.component\";\n");
+/* harmony default export */ __webpack_exports__["default"] = ("export * from \"./wizard-docs/wizard-docs.component\";\nexport * from \"./wizard-horizontal-layout/wizard-horizontal-example.component\";\nexport * from \"./wizard-vertical-layout/wizard-vertical-example.component\";\nexport * from \"./wizard-custom-layout/wizard-custom-example.component\";\nexport * from \"./wizard-busy/wizard-busy.example.component\";\nexport * from \"./wizard-dialog/wizard-dialog.example.component\";\nexport * from \"./wizard-custom-footer/wizard-custom-footer-example.component\";\nexport * from \"./wizard-dynamic/wizard-dynamic.example.component\";\nexport * from \"./wizard-remove-step/wizard-remove-step-example.component\";\nexport * from \"./wizard-async-validation-form/wizard-async-form-validation.example.component\";\nexport * from \"./wizard-with-custom-icons/wizard-with-custom-icons-example.component\";\nexport * from \"./wizard-restore-state/wizard-restore-state.example.component\";\nexport * from \"./wizard-step-change-example/wizard-step-change-example.component\";\n");
 
 /***/ }),
 
@@ -3499,7 +3499,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wizard_step_change_example_wizard_step_change_example_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./wizard-step-change-example/wizard-step-change-example.component */ "eHNd");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "WizardStepChangeExampleComponent", function() { return _wizard_step_change_example_wizard_step_change_example_component__WEBPACK_IMPORTED_MODULE_12__["WizardStepChangeExampleComponent"]; });
 
-/* empty/unused harmony star reexport */
 
 
 
