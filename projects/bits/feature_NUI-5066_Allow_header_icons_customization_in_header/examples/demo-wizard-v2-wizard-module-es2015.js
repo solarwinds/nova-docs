@@ -695,15 +695,15 @@ class WizardWithCustomIconsExampleComponent {
         this.secondStepIconConfig = {
             initial: {
                 icon: "execute",
-                color: "primary-blue",
+                iconColor: "primary-blue",
             },
             visited: {
                 icon: "star-full",
-                color: "light-blue",
+                iconColor: "light-blue",
             },
             active: {
                 icon: "star-full",
-                color: "orange",
+                iconColor: "orange",
             },
         };
     }
@@ -716,7 +716,7 @@ WizardWithCustomIconsExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MO
                     stepState: {
                         active: {
                             icon: "email",
-                            color: "orange",
+                            iconColor: "orange",
                         },
                     },
                 },
@@ -2963,7 +2963,7 @@ WizardDialogExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__[
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { Component } from \"@angular/core\";\nimport { IWizardConfig, WizardStepStateConfig, WIZARD_CONFIG } from \"@nova-ui/bits\";\n@Component({\n    selector: \"nui-wizard-with-custom-icons-example\",\n    templateUrl: \"./wizard-with-custom-icons-example.component.html\",\n    providers: [\n        {\n            provide: WIZARD_CONFIG,\n            useValue: {\n                stepState: {\n                    active: {\n                        icon: \"email\",\n                        color: \"orange\",\n                    },\n                },\n            } as IWizardConfig,\n        },\n    ],\n})\nexport class WizardWithCustomIconsExampleComponent {\n\n    public secondStepIconConfig: Partial<WizardStepStateConfig> = {\n        initial: {\n            icon: \"execute\",\n            color: \"primary-blue\",\n        },\n        visited: {\n            icon: \"star-full\",\n            color: \"light-blue\",\n        },\n        active: {\n            icon: \"star-full\",\n            color: \"orange\",\n        },\n    };\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import { Component } from \"@angular/core\";\nimport { IWizardConfig, WizardStepStateConfig, WIZARD_CONFIG } from \"@nova-ui/bits\";\n@Component({\n    selector: \"nui-wizard-with-custom-icons-example\",\n    templateUrl: \"./wizard-with-custom-icons-example.component.html\",\n    providers: [\n        {\n            provide: WIZARD_CONFIG,\n            useValue: {\n                stepState: {\n                    active: {\n                        icon: \"email\",\n                        iconColor: \"orange\",\n                    },\n                },\n            } as IWizardConfig,\n        },\n    ],\n})\nexport class WizardWithCustomIconsExampleComponent {\n\n    public secondStepIconConfig: Partial<WizardStepStateConfig> = {\n        initial: {\n            icon: \"execute\",\n            iconColor: \"primary-blue\",\n        },\n        visited: {\n            icon: \"star-full\",\n            iconColor: \"light-blue\",\n        },\n        active: {\n            icon: \"star-full\",\n            iconColor: \"orange\",\n        },\n    };\n}\n");
 
 /***/ }),
 

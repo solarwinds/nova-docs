@@ -80,11 +80,11 @@
                             <ul class="index-list">
                                 <li>
                                             <span class="modifier">Optional</span>
-                                        <a href="#color">color</a>
+                                        <a href="#icon">icon</a>
                                 </li>
                                 <li>
                                             <span class="modifier">Optional</span>
-                                        <a href="#icon">icon</a>
+                                        <a href="#iconColor">iconColor</a>
                                 </li>
                             </ul>
                         </td>
@@ -97,40 +97,6 @@
 
             <section>
                 <h3 id="inputs">Properties</h3>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <a name="color"></a>
-                                        <span class="name"><b>color</b><a href="#color"><span class="icon ion-ios-link"></span></a></span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <code>color:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-</code>
-                                    </td>
-                                </tr>
-
-
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Optional</i>
-                                        </td>
-                                    </tr>
-
-
-
-
-                        </tbody>
-                    </table>
                     <table class="table table-sm table-bordered">
                         <tbody>
                                 <tr>
@@ -165,13 +131,47 @@
 
                         </tbody>
                     </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="iconColor"></a>
+                                        <span class="name"><b>iconColor</b><a href="#iconColor"><span class="icon ion-ios-link"></span></a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>iconColor:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                        </tbody>
+                    </table>
             </section>
     </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export type WizardIconStates &#x3D; &quot;active&quot; | &quot;visited&quot; | &quot;initial&quot; | &quot;error&quot; | string;
-export type WizardStepStateConfig &#x3D; Record&lt;WizardIconStates, IWizardStepStateConfig&gt;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export type WizardStepState &#x3D; &quot;active&quot; | &quot;visited&quot; | &quot;initial&quot; | &quot;error&quot; | string;
+export type WizardStepStateConfig &#x3D; Record&lt;WizardStepState, IWizardStepStateConfig&gt;;
 
 export interface IWizardState {
     finished: boolean;
@@ -184,7 +184,7 @@ export interface IWizardConfig {
 
 export interface IWizardStepStateConfig {
     icon?: string;
-    color?: string;
+    iconColor?: string;
 }
 </code></pre>
     </div>
