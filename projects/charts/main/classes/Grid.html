@@ -1486,7 +1486,7 @@ export abstract class Grid implements IGrid {
         const renderingAreaAttrs &#x3D; {
             ...renderingAreaClipPathAttrs,
             // Width correction needed to prevent interaction gap between right side of grid and the edge of the rendering area
-            &quot;width&quot;: d.width() &gt; 0 ? d.width() - (disableWidthCorrection ? 0 : Grid.RENDER_AREA_WIDTH_CORRECTION) : d.width(),
+            &quot;width&quot;: Math.max(0, d.width() - (disableWidthCorrection ? 0 : Grid.RENDER_AREA_WIDTH_CORRECTION)),
         };
 
         this.renderingAreaClipPath.attrs(renderingAreaClipPathAttrs);
