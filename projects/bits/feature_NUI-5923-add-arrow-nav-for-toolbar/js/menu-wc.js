@@ -360,9 +360,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             <li class="link">
                                 <a href="components/WizardStepV2Component.html" data-type="entity-link">WizardStepV2Component</a>
                             </li>
-                            <li class="link">
-                                <a href="components/WizardVerticalComponent.html" data-type="entity-link">WizardVerticalComponent</a>
-                            </li>
                         </ul>
                     </li>
                         <li class="chapter">
@@ -521,6 +518,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 </li>
                                 <li class="link">
                                     <a href="injectables/ThemeSwitchService.html" data-type="entity-link">ThemeSwitchService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="injectables/ToolbarKeyboardService.html" data-type="entity-link">ToolbarKeyboardService</a>
                                 </li>
                                 <li class="link">
                                     <a href="injectables/UnitConversionService.html" data-type="entity-link">UnitConversionService</a>
@@ -824,6 +824,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/IVirtualViewportResetOptions.html" data-type="entity-link">IVirtualViewportResetOptions</a>
                             </li>
                             <li class="link">
+                                <a href="interfaces/IWizardConfig.html" data-type="entity-link">IWizardConfig</a>
+                            </li>
+                            <li class="link">
                                 <a href="interfaces/IWizardSelectionEvent.html" data-type="entity-link">IWizardSelectionEvent</a>
                             </li>
                             <li class="link">
@@ -831,6 +834,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="interfaces/IWizardStepComponent.html" data-type="entity-link">IWizardStepComponent</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/IWizardStepStateConfig.html" data-type="entity-link">IWizardStepStateConfig</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/IWizardWaitEvent.html" data-type="entity-link">IWizardWaitEvent</a>
