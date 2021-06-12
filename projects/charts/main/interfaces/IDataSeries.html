@@ -114,7 +114,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="166" class="link-to-prism">src/core/common/types.ts:166</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="170" class="link-to-prism">src/core/common/types.ts:170</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -353,22 +353,26 @@ export interface IRadialRendererConfig extends IRendererConfig {
 }
 
 /**
+ * Standard configuration for gauge threshold renderers
+ */
+export interface IGaugeThresholdsRendererConfig {
+    /** The radius of each threshold marker */
+    markerRadius?: StandardGaugeThresholdMarkerRadius | number;
+    /** Boolean indicating whether the renderer is enabled */
+    enabled?: boolean;
+}
+
+/**
  * @ignore
  * Configuration for the DonutGaugeThresholdsRenderer
  */
-export interface IDonutGaugeThresholdsRendererConfig extends IRadialRendererConfig {
-    /** The radius of each threshold marker */
-    markerRadius?: StandardGaugeThresholdMarkerRadius | number;
-}
+export interface IDonutGaugeThresholdsRendererConfig extends IRadialRendererConfig, IGaugeThresholdsRendererConfig {}
 
 /**
  * @ignore
  * Configuration for the LinearGaugeThresholdsRenderer
  */
-export interface ILinearGaugeThresholdsRendererConfig extends IRendererConfig {
-    /** The radius of each threshold marker */
-    markerRadius?: StandardGaugeThresholdMarkerRadius | number;
-}
+export interface ILinearGaugeThresholdsRendererConfig extends IRendererConfig, IGaugeThresholdsRendererConfig {}
 
 export interface ILinearScales {
     x: ScaleLinear&lt;number, number&gt;;

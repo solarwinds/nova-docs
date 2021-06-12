@@ -65,7 +65,7 @@
           key: "ngOnInit",
           value: function ngOnInit() {
             // Setting up the gauge config
-            var initialValue = 128;
+            var initialValue = 178;
             this.gaugeConfig = this.getGaugeConfig(initialValue); // Creating the chart
 
             this.chartAssist = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["ChartAssist"](new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["Chart"](Object(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["radialGrid"])()), _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["radial"]); // Adding the plugin for the inner content
@@ -95,8 +95,7 @@
             return {
               value: value,
               max: 200,
-              thresholds: [100, 158],
-              enableThresholdMarkers: true
+              thresholds: _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].createStandardThresholdConfigs(100, 158)
             };
           }
         }]);
@@ -348,6 +347,13 @@
         }
 
         _createClass(VerticalGaugeTesterComponent, [{
+          key: "ngOnChanges",
+          value: function ngOnChanges(changes) {
+            if (changes.gaugeConfig && !changes.gaugeConfig.firstChange) {
+              this.chartAssist.update(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.seriesSet, this.gaugeConfig));
+            }
+          }
+        }, {
           key: "ngOnInit",
           value: function ngOnInit() {
             var grid = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["XYGrid"](Object(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["linearGaugeGridConfig"])(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Vertical));
@@ -481,14 +487,29 @@
       var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! @angular/core */
       "fXoL");
+      /* harmony import */
+
+
+      var _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! @nova-ui/charts */
+      "gKry");
+      /* harmony import */
+
+
+      var lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! lodash/cloneDeep */
+      "BkRI");
+      /* harmony import */
+
+
+      var lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_4__);
 
       var GaugeVisualTestComponent = /*#__PURE__*/function () {
         function GaugeVisualTestComponent() {
           _classCallCheck(this, GaugeVisualTestComponent);
 
-          this.lowValue = 42;
-          this.mediumValue = 130;
-          this.highValue = 178;
+          this.warningEnabled = true;
+          this.gaugeConfigs = [this.getGaugeConfig(42), this.getGaugeConfig(130), this.getGaugeConfig(178)];
         }
 
         _createClass(GaugeVisualTestComponent, [{
@@ -497,9 +518,20 @@
             return {
               value: value,
               max: 200,
-              thresholds: [100, 158],
-              enableThresholdMarkers: true
+              thresholds: _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["GaugeUtil"].createStandardThresholdConfigs(100, 158)
             };
+          }
+        }, {
+          key: "onWarningEnabledChange",
+          value: function onWarningEnabledChange(enabled) {
+            var _this = this;
+
+            this.warningEnabled = enabled;
+            this.gaugeConfigs = this.gaugeConfigs.map(function (c) {
+              var config = lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_4___default()(c);
+              config.thresholds[_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["StandardGaugeThresholdId"].Warning].enabled = _this.warningEnabled;
+              return config;
+            });
           }
         }]);
 
@@ -569,6 +601,13 @@
         }
 
         _createClass(HorizontalGaugeTesterComponent, [{
+          key: "ngOnChanges",
+          value: function ngOnChanges(changes) {
+            if (changes.gaugeConfig && !changes.gaugeConfig.firstChange) {
+              this.chartAssist.update(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.seriesSet, this.gaugeConfig));
+            }
+          }
+        }, {
           key: "ngOnInit",
           value: function ngOnInit() {
             var grid = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["XYGrid"](Object(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["linearGaugeGridConfig"])(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Horizontal));
@@ -694,6 +733,13 @@
         }
 
         _createClass(DonutGaugeTesterComponent, [{
+          key: "ngOnChanges",
+          value: function ngOnChanges(changes) {
+            if (changes.gaugeConfig && !changes.gaugeConfig.firstChange) {
+              this.chartAssist.update(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.seriesSet, this.gaugeConfig));
+            }
+          }
+        }, {
           key: "ngOnInit",
           value: function ngOnInit() {
             this.chartAssist = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["ChartAssist"](new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["Chart"](Object(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["radialGrid"])()), _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["radial"]);
@@ -811,9 +857,7 @@
               value: value,
               max: 200,
               // Enabling the thresholds
-              thresholds: [100, 158],
-              // Enabling the threshold markers
-              enableThresholdMarkers: true
+              thresholds: _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].createStandardThresholdConfigs(100, 158)
             };
           }
         }]);
