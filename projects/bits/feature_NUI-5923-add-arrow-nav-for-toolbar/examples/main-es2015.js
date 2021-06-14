@@ -31100,7 +31100,7 @@ class ToolbarComponent {
             }
         });
         this.keyboardService.initService(this.toolbarContainer.nativeElement, this.menuComponent);
-        this.keyboardService.disableFocusForMoreBtn();
+        this.keyboardService.disableMoreBtnFocus();
     }
     ngOnDestroy() {
         this.childrenSubscription.unsubscribe();
@@ -32255,6 +32255,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
 
 
+var NavDirection;
+(function (NavDirection) {
+    NavDirection[NavDirection["LEFT"] = -1] = "LEFT";
+    NavDirection[NavDirection["RIGHT"] = 1] = "RIGHT";
+})(NavDirection || (NavDirection = {}));
 class ToolbarKeyboardService {
     constructor() {
         this.menuComponent = null;
@@ -32268,7 +32273,7 @@ class ToolbarKeyboardService {
             this.menuComponent = menu;
         }
     }
-    disableFocusForMoreBtn() {
+    disableMoreBtnFocus() {
         if (this.moreBtn) {
             this.moreBtn.setAttribute("tabindex", "-1");
         }
@@ -32286,10 +32291,10 @@ class ToolbarKeyboardService {
         if (!length) {
             return;
         }
-        const direction = code === _constants__WEBPACK_IMPORTED_MODULE_0__["KEYBOARD_CODE"].ARROW_RIGHT ? 1 : -1;
+        const direction = code === _constants__WEBPACK_IMPORTED_MODULE_0__["KEYBOARD_CODE"].ARROW_RIGHT ? NavDirection.RIGHT : NavDirection.LEFT;
         let nextIndex = buttons.findIndex((button) => button === document.activeElement) + direction;
         if (this.moreBtn && document.activeElement === this.moreBtn) {
-            this.navigateFormMoreBtn(direction, buttons);
+            this.navigateFromMoreBtn(direction, buttons);
             return;
         }
         if ((nextIndex >= length || nextIndex < 0) && this.moreBtn) {
@@ -32305,7 +32310,7 @@ class ToolbarKeyboardService {
         const button = buttons[nextIndex];
         button.focus();
     }
-    navigateFormMoreBtn(direction, buttons) {
+    navigateFromMoreBtn(direction, buttons) {
         if (this.menuComponent && this.menuComponent.popup) {
             this.menuComponent.popup.isOpen = false;
         }

@@ -100,7 +100,7 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#disableFocusForMoreBtn">disableFocusForMoreBtn</a>
+                                <a href="#disableMoreBtnFocus">disableMoreBtnFocus</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
@@ -132,28 +132,28 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="disableFocusForMoreBtn"></a>
+                    <a name="disableMoreBtnFocus"></a>
                     <span class="name">
                         <b>
                             <span class="modifier">Public</span>
-                            disableFocusForMoreBtn
+                            disableMoreBtnFocus
                         </b>
-                        <a href="#disableFocusForMoreBtn"><span class="icon ion-ios-link"></span></a>
+                        <a href="#disableMoreBtnFocus"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>disableFocusForMoreBtn()</code>
+                    <code>disableMoreBtnFocus()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="25"
-                            class="link-to-prism">src/lib/toolbar/toolbar-keyboard.service.ts:25</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="30"
+                            class="link-to-prism">src/lib/toolbar/toolbar-keyboard.service.ts:30</a></div>
                 </td>
             </tr>
 
@@ -193,8 +193,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="13"
-                            class="link-to-prism">src/lib/toolbar/toolbar-keyboard.service.ts:13</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="18"
+                            class="link-to-prism">src/lib/toolbar/toolbar-keyboard.service.ts:18</a></div>
                 </td>
             </tr>
 
@@ -277,8 +277,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="31"
-                            class="link-to-prism">src/lib/toolbar/toolbar-keyboard.service.ts:31</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="36"
+                            class="link-to-prism">src/lib/toolbar/toolbar-keyboard.service.ts:36</a></div>
                 </td>
             </tr>
 
@@ -352,7 +352,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/lib/toolbar/toolbar-keyboard.service.ts:7</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/lib/toolbar/toolbar-keyboard.service.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -385,7 +385,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/lib/toolbar/toolbar-keyboard.service.ts:11</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/lib/toolbar/toolbar-keyboard.service.ts:16</a></div>
                             </td>
                         </tr>
 
@@ -413,7 +413,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/lib/toolbar/toolbar-keyboard.service.ts:9</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/lib/toolbar/toolbar-keyboard.service.ts:14</a></div>
                             </td>
                         </tr>
 
@@ -429,6 +429,11 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &quot;@angular/core&quot;;
 import { KEYBOARD_CODE } from &quot;../../constants&quot;;
 import { MenuComponent } from &quot;../menu&quot;;
+
+enum NavDirection {
+    LEFT &#x3D; -1,
+    RIGHT &#x3D; 1,
+}
 
 @Injectable()
 export class ToolbarKeyboardService {
@@ -450,7 +455,7 @@ export class ToolbarKeyboardService {
         }
     }
 
-    public disableFocusForMoreBtn(): void {
+    public disableMoreBtnFocus(): void {
         if (this.moreBtn) {
             this.moreBtn.setAttribute(&quot;tabindex&quot;, &quot;-1&quot;);
         }
@@ -465,7 +470,7 @@ export class ToolbarKeyboardService {
         }
     }
 
-    private navigateByArrow(code: string): void {
+    private navigateByArrow(code: KEYBOARD_CODE): void {
         const buttons &#x3D; this.getButtons();
         const length &#x3D; buttons.length;
 
@@ -473,11 +478,11 @@ export class ToolbarKeyboardService {
             return;
         }
 
-        const direction &#x3D; code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ARROW_RIGHT ? 1 : -1;
+        const direction &#x3D; code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ARROW_RIGHT ? NavDirection.RIGHT : NavDirection.LEFT;
         let nextIndex &#x3D; buttons.findIndex((button) &#x3D;&gt; button &#x3D;&#x3D;&#x3D; document.activeElement) + direction;
 
         if (this.moreBtn &amp;&amp; document.activeElement &#x3D;&#x3D;&#x3D; this.moreBtn) {
-            this.navigateFormMoreBtn(direction, buttons);
+            this.navigateFromMoreBtn(direction, buttons);
 
             return;
         }
@@ -501,7 +506,7 @@ export class ToolbarKeyboardService {
         button.focus();
     }
 
-    private navigateFormMoreBtn(direction: number, buttons: HTMLButtonElement[]): void {
+    private navigateFromMoreBtn(direction: NavDirection, buttons: HTMLButtonElement[]): void {
         if (this.menuComponent &amp;&amp; this.menuComponent.popup) {
             this.menuComponent.popup.isOpen &#x3D; false;
         }
