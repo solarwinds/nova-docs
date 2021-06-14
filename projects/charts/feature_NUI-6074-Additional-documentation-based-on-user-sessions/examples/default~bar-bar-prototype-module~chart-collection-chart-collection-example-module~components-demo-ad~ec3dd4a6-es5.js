@@ -18222,7 +18222,7 @@
            * @param warningVal Value for the warning threshold
            * @param criticalVal Value for the critical threshold
            *
-           * @returns {GaugeThresholdDefs} The threshold configs
+           * @returns {IGaugeThresholdsConfig} The thresholds configuration
            */
 
         }, {

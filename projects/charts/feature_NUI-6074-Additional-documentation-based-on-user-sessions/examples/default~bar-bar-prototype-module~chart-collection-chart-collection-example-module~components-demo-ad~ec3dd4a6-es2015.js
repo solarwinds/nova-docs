@@ -11546,7 +11546,7 @@ class GaugeUtil {
      * @param warningVal Value for the warning threshold
      * @param criticalVal Value for the critical threshold
      *
-     * @returns {GaugeThresholdDefs} The threshold configs
+     * @returns {IGaugeThresholdsConfig} The thresholds configuration
      */
     static createStandardThresholdsConfig(warningVal, criticalVal) {
         // assigning to variable to prevent "Expression form not supported" error
