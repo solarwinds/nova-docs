@@ -18280,7 +18280,7 @@
            *
            * @param gaugeConfig The configuration for the gauge
            *
-           * @returns {Partial<IDataSeries<IAccessors, IGaugeThreshold>>} A partial IDataSeries object including the 'id' and 'data' properties of the thresholds
+           * @returns {Partial<IDataSeries<IAccessors, IGaugeThresholdDatum>>} A partial IDataSeries object including the 'id' and 'data' properties of the thresholds
            * series used for the the gauge's thresholds visualization
            */
 
