@@ -158,7 +158,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import { NgModule } from \"@angular/core\";\nimport { RouterModule, Routes } from \"@angular/router\";\nimport { DEMO_PATH_TOKEN, NuiDocsModule, NuiIconModule, NuiMessageModule } from \"@nova-ui/bits\";\nimport { NuiChartsModule } from \"@nova-ui/charts\";\n\nconst exampleRoutes: Routes = [\n    {\n        path: \"bar\",\n        loadChildren: () => import(\"./bar/chart-docs-bar.module\").then(m => m.ChartDocsBarModule),\n    },\n    {\n        path: \"bucketed-bar\",\n        loadChildren: () => import(\"./bucketed-bar/chart-docs-bucketed-bar.module\").then(m => m.ChartDocsBucketedBarModule),\n    },\n    {\n        path: \"line\",\n        loadChildren: () => import(\"./line/chart-docs-line.module\").then(m => m.ChartDocsLineModule),\n    },\n    {\n        path: \"pie-and-donut\",\n        loadChildren: () => import(\"./pie-and-donut/chart-docs-pie-and-donut.module\").then(m => m.ChartDocsPieAndDonutModule),\n    },\n    {\n        path: \"spark\",\n        loadChildren: () => import(\"./spark/chart-docs-spark.module\").then(m => m.ChartDocsSparkModule),\n    },\n    {\n        path: \"gauge\",\n        loadChildren: () => import(\"./gauge/chart-docs-gauge.module\").then(m => m.ChartDocsGaugeModule),\n    },\n    {\n        path: \"status\",\n        loadChildren: () => import(\"./status/chart-docs-status.module\").then(m => m.ChartDocsStatusModule),\n    },\n    {\n        path: \"waterfall\",\n        loadChildren: () => import(\"./waterfall/chart-docs-waterfall.module\").then(m => m.ChartDocsWaterfallModule),\n    },\n    {\n        path: \"area\",\n        loadChildren: () => import(\"./area/chart-docs-area.module\").then(m => m.ChartDocsAreaModule),\n    },\n];\n\n@NgModule({\n    declarations: [],\n    imports: [\n        NuiChartsModule,\n        NuiIconModule,\n        NuiDocsModule,\n        NuiMessageModule,\n        RouterModule.forChild(exampleRoutes),\n    ],\n    providers: [\n        { provide: DEMO_PATH_TOKEN, useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/) },\n    ],\n})\nexport class ChartDocsChartTypesModule {\n}\n";
+      __webpack_exports__["default"] = "import { NgModule } from \"@angular/core\";\nimport { RouterModule, Routes } from \"@angular/router\";\nimport { DEMO_PATH_TOKEN, NuiDocsModule, NuiIconModule, NuiMessageModule } from \"@nova-ui/bits\";\nimport { NuiChartsModule } from \"@nova-ui/charts\";\n\nconst exampleRoutes: Routes = [\n    {\n        path: \"bar\",\n        loadChildren: async () => import(\"./bar/chart-docs-bar.module\").then(m => m.ChartDocsBarModule),\n    },\n    {\n        path: \"bucketed-bar\",\n        loadChildren: async () => import(\"./bucketed-bar/chart-docs-bucketed-bar.module\").then(m => m.ChartDocsBucketedBarModule),\n    },\n    {\n        path: \"line\",\n        loadChildren: async () => import(\"./line/chart-docs-line.module\").then(m => m.ChartDocsLineModule),\n    },\n    {\n        path: \"pie-and-donut\",\n        loadChildren: async () => import(\"./pie-and-donut/chart-docs-pie-and-donut.module\").then(m => m.ChartDocsPieAndDonutModule),\n    },\n    {\n        path: \"spark\",\n        loadChildren: async () => import(\"./spark/chart-docs-spark.module\").then(m => m.ChartDocsSparkModule),\n    },\n    {\n        path: \"gauge\",\n        loadChildren: async () => import(\"./gauge/chart-docs-gauge.module\").then(m => m.ChartDocsGaugeModule),\n    },\n    {\n        path: \"status\",\n        loadChildren: async () => import(\"./status/chart-docs-status.module\").then(m => m.ChartDocsStatusModule),\n    },\n    {\n        path: \"waterfall\",\n        loadChildren: async () => import(\"./waterfall/chart-docs-waterfall.module\").then(m => m.ChartDocsWaterfallModule),\n    },\n    {\n        path: \"area\",\n        loadChildren: async () => import(\"./area/chart-docs-area.module\").then(m => m.ChartDocsAreaModule),\n    },\n];\n\n@NgModule({\n    declarations: [],\n    imports: [\n        NuiChartsModule,\n        NuiIconModule,\n        NuiDocsModule,\n        NuiMessageModule,\n        RouterModule.forChild(exampleRoutes),\n    ],\n    providers: [\n        { provide: DEMO_PATH_TOKEN, useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/) },\n    ],\n})\nexport class ChartDocsChartTypesModule {\n}\n";
       /***/
     },
 
@@ -435,101 +435,218 @@
       var exampleRoutes = [{
         path: "bar",
         loadChildren: function loadChildren() {
-          return Promise.all(
-          /*! import() | bar-chart-docs-bar-module */
-          [__webpack_require__.e("common"), __webpack_require__.e("bar-chart-docs-bar-module")]).then(__webpack_require__.bind(null,
-          /*! ./bar/chart-docs-bar.module */
-          "5xc8")).then(function (m) {
-            return m.ChartDocsBarModule;
-          });
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+            return regeneratorRuntime.wrap(function _callee$(_context) {
+              while (1) {
+                switch (_context.prev = _context.next) {
+                  case 0:
+                    return _context.abrupt("return", Promise.all(
+                    /*! import() | bar-chart-docs-bar-module */
+                    [__webpack_require__.e("common"), __webpack_require__.e("bar-chart-docs-bar-module")]).then(__webpack_require__.bind(null,
+                    /*! ./bar/chart-docs-bar.module */
+                    "5xc8")).then(function (m) {
+                      return m.ChartDocsBarModule;
+                    }));
+
+                  case 1:
+                  case "end":
+                    return _context.stop();
+                }
+              }
+            }, _callee);
+          }));
         }
       }, {
         path: "bucketed-bar",
         loadChildren: function loadChildren() {
-          return Promise.all(
-          /*! import() | bucketed-bar-chart-docs-bucketed-bar-module */
-          [__webpack_require__.e("common"), __webpack_require__.e("bucketed-bar-chart-docs-bucketed-bar-module")]).then(__webpack_require__.bind(null,
-          /*! ./bucketed-bar/chart-docs-bucketed-bar.module */
-          "kjNC")).then(function (m) {
-            return m.ChartDocsBucketedBarModule;
-          });
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+            return regeneratorRuntime.wrap(function _callee2$(_context2) {
+              while (1) {
+                switch (_context2.prev = _context2.next) {
+                  case 0:
+                    return _context2.abrupt("return", Promise.all(
+                    /*! import() | bucketed-bar-chart-docs-bucketed-bar-module */
+                    [__webpack_require__.e("common"), __webpack_require__.e("bucketed-bar-chart-docs-bucketed-bar-module")]).then(__webpack_require__.bind(null,
+                    /*! ./bucketed-bar/chart-docs-bucketed-bar.module */
+                    "kjNC")).then(function (m) {
+                      return m.ChartDocsBucketedBarModule;
+                    }));
+
+                  case 1:
+                  case "end":
+                    return _context2.stop();
+                }
+              }
+            }, _callee2);
+          }));
         }
       }, {
         path: "line",
         loadChildren: function loadChildren() {
-          return Promise.all(
-          /*! import() | line-chart-docs-line-module */
-          [__webpack_require__.e("common"), __webpack_require__.e("line-chart-docs-line-module")]).then(__webpack_require__.bind(null,
-          /*! ./line/chart-docs-line.module */
-          "c9IB")).then(function (m) {
-            return m.ChartDocsLineModule;
-          });
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
+            return regeneratorRuntime.wrap(function _callee3$(_context3) {
+              while (1) {
+                switch (_context3.prev = _context3.next) {
+                  case 0:
+                    return _context3.abrupt("return", Promise.all(
+                    /*! import() | line-chart-docs-line-module */
+                    [__webpack_require__.e("common"), __webpack_require__.e("line-chart-docs-line-module")]).then(__webpack_require__.bind(null,
+                    /*! ./line/chart-docs-line.module */
+                    "c9IB")).then(function (m) {
+                      return m.ChartDocsLineModule;
+                    }));
+
+                  case 1:
+                  case "end":
+                    return _context3.stop();
+                }
+              }
+            }, _callee3);
+          }));
         }
       }, {
         path: "pie-and-donut",
         loadChildren: function loadChildren() {
-          return Promise.all(
-          /*! import() | pie-and-donut-chart-docs-pie-and-donut-module */
-          [__webpack_require__.e("common"), __webpack_require__.e("pie-and-donut-chart-docs-pie-and-donut-module")]).then(__webpack_require__.bind(null,
-          /*! ./pie-and-donut/chart-docs-pie-and-donut.module */
-          "tvJs")).then(function (m) {
-            return m.ChartDocsPieAndDonutModule;
-          });
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
+            return regeneratorRuntime.wrap(function _callee4$(_context4) {
+              while (1) {
+                switch (_context4.prev = _context4.next) {
+                  case 0:
+                    return _context4.abrupt("return", Promise.all(
+                    /*! import() | pie-and-donut-chart-docs-pie-and-donut-module */
+                    [__webpack_require__.e("common"), __webpack_require__.e("pie-and-donut-chart-docs-pie-and-donut-module")]).then(__webpack_require__.bind(null,
+                    /*! ./pie-and-donut/chart-docs-pie-and-donut.module */
+                    "tvJs")).then(function (m) {
+                      return m.ChartDocsPieAndDonutModule;
+                    }));
+
+                  case 1:
+                  case "end":
+                    return _context4.stop();
+                }
+              }
+            }, _callee4);
+          }));
         }
       }, {
         path: "spark",
         loadChildren: function loadChildren() {
-          return __webpack_require__.e(
-          /*! import() | spark-chart-docs-spark-module */
-          "spark-chart-docs-spark-module").then(__webpack_require__.bind(null,
-          /*! ./spark/chart-docs-spark.module */
-          "+2hk")).then(function (m) {
-            return m.ChartDocsSparkModule;
-          });
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee5() {
+            return regeneratorRuntime.wrap(function _callee5$(_context5) {
+              while (1) {
+                switch (_context5.prev = _context5.next) {
+                  case 0:
+                    return _context5.abrupt("return", __webpack_require__.e(
+                    /*! import() | spark-chart-docs-spark-module */
+                    "spark-chart-docs-spark-module").then(__webpack_require__.bind(null,
+                    /*! ./spark/chart-docs-spark.module */
+                    "+2hk")).then(function (m) {
+                      return m.ChartDocsSparkModule;
+                    }));
+
+                  case 1:
+                  case "end":
+                    return _context5.stop();
+                }
+              }
+            }, _callee5);
+          }));
         }
       }, {
         path: "gauge",
         loadChildren: function loadChildren() {
-          return Promise.all(
-          /*! import() | gauge-chart-docs-gauge-module */
-          [__webpack_require__.e("common"), __webpack_require__.e("gauge-chart-docs-gauge-module")]).then(__webpack_require__.bind(null,
-          /*! ./gauge/chart-docs-gauge.module */
-          "yAut")).then(function (m) {
-            return m.ChartDocsGaugeModule;
-          });
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee6() {
+            return regeneratorRuntime.wrap(function _callee6$(_context6) {
+              while (1) {
+                switch (_context6.prev = _context6.next) {
+                  case 0:
+                    return _context6.abrupt("return", Promise.all(
+                    /*! import() | gauge-chart-docs-gauge-module */
+                    [__webpack_require__.e("common"), __webpack_require__.e("gauge-chart-docs-gauge-module")]).then(__webpack_require__.bind(null,
+                    /*! ./gauge/chart-docs-gauge.module */
+                    "yAut")).then(function (m) {
+                      return m.ChartDocsGaugeModule;
+                    }));
+
+                  case 1:
+                  case "end":
+                    return _context6.stop();
+                }
+              }
+            }, _callee6);
+          }));
         }
       }, {
         path: "status",
         loadChildren: function loadChildren() {
-          return Promise.all(
-          /*! import() | status-chart-docs-status-module */
-          [__webpack_require__.e("common"), __webpack_require__.e("status-chart-docs-status-module")]).then(__webpack_require__.bind(null,
-          /*! ./status/chart-docs-status.module */
-          "6p0O")).then(function (m) {
-            return m.ChartDocsStatusModule;
-          });
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee7() {
+            return regeneratorRuntime.wrap(function _callee7$(_context7) {
+              while (1) {
+                switch (_context7.prev = _context7.next) {
+                  case 0:
+                    return _context7.abrupt("return", Promise.all(
+                    /*! import() | status-chart-docs-status-module */
+                    [__webpack_require__.e("common"), __webpack_require__.e("status-chart-docs-status-module")]).then(__webpack_require__.bind(null,
+                    /*! ./status/chart-docs-status.module */
+                    "6p0O")).then(function (m) {
+                      return m.ChartDocsStatusModule;
+                    }));
+
+                  case 1:
+                  case "end":
+                    return _context7.stop();
+                }
+              }
+            }, _callee7);
+          }));
         }
       }, {
         path: "waterfall",
         loadChildren: function loadChildren() {
-          return Promise.all(
-          /*! import() | waterfall-chart-docs-waterfall-module */
-          [__webpack_require__.e("common"), __webpack_require__.e("waterfall-chart-docs-waterfall-module")]).then(__webpack_require__.bind(null,
-          /*! ./waterfall/chart-docs-waterfall.module */
-          "68rf")).then(function (m) {
-            return m.ChartDocsWaterfallModule;
-          });
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee8() {
+            return regeneratorRuntime.wrap(function _callee8$(_context8) {
+              while (1) {
+                switch (_context8.prev = _context8.next) {
+                  case 0:
+                    return _context8.abrupt("return", Promise.all(
+                    /*! import() | waterfall-chart-docs-waterfall-module */
+                    [__webpack_require__.e("common"), __webpack_require__.e("waterfall-chart-docs-waterfall-module")]).then(__webpack_require__.bind(null,
+                    /*! ./waterfall/chart-docs-waterfall.module */
+                    "68rf")).then(function (m) {
+                      return m.ChartDocsWaterfallModule;
+                    }));
+
+                  case 1:
+                  case "end":
+                    return _context8.stop();
+                }
+              }
+            }, _callee8);
+          }));
         }
       }, {
         path: "area",
         loadChildren: function loadChildren() {
-          return Promise.all(
-          /*! import() | area-chart-docs-area-module */
-          [__webpack_require__.e("common"), __webpack_require__.e("area-chart-docs-area-module")]).then(__webpack_require__.bind(null,
-          /*! ./area/chart-docs-area.module */
-          "V3MY")).then(function (m) {
-            return m.ChartDocsAreaModule;
-          });
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee9() {
+            return regeneratorRuntime.wrap(function _callee9$(_context9) {
+              while (1) {
+                switch (_context9.prev = _context9.next) {
+                  case 0:
+                    return _context9.abrupt("return", Promise.all(
+                    /*! import() | area-chart-docs-area-module */
+                    [__webpack_require__.e("common"), __webpack_require__.e("area-chart-docs-area-module")]).then(__webpack_require__.bind(null,
+                    /*! ./area/chart-docs-area.module */
+                    "V3MY")).then(function (m) {
+                      return m.ChartDocsAreaModule;
+                    }));
+
+                  case 1:
+                  case "end":
+                    return _context9.stop();
+                }
+              }
+            }, _callee9);
+          }));
         }
       }];
 
@@ -646,7 +763,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import { Component, OnInit } from \"@angular/core\";\nimport {\n    Chart,\n    ChartAssist,\n    ChartDonutContentPlugin,\n    DonutGaugeLabelsPlugin,\n    GaugeMode,\n    GaugeUtil,\n    IAccessors,\n    IChartAssistSeries,\n    IGaugeConfig,\n    radial,\n    radialGrid,\n} from \"@nova-ui/charts\";\n\n@Component({\n    selector: \"donut-gauge-with-content-example\",\n    templateUrl: \"./donut-gauge-with-content-example.component.html\",\n    styleUrls: [\"./donut-gauge-with-content-example.component.less\"],\n})\nexport class DonutGaugeWithContentExampleComponent implements OnInit {\n    public chartAssist: ChartAssist;\n    public contentPlugin: ChartDonutContentPlugin;\n    public gaugeConfig: IGaugeConfig;\n\n    private seriesSet: IChartAssistSeries<IAccessors>[];\n\n    public ngOnInit() {\n        // Setting up the gauge config\n        const initialValue = 128;\n        this.gaugeConfig = this.getGaugeConfig(initialValue);\n\n        // Creating the chart\n        this.chartAssist = new ChartAssist(new Chart(radialGrid()), radial);\n\n        // Adding the plugin for the inner content\n        this.contentPlugin = new ChartDonutContentPlugin();\n        this.chartAssist.chart.addPlugin(this.contentPlugin);\n\n        // Adding the labels plugin\n        this.chartAssist.chart.addPlugin(new DonutGaugeLabelsPlugin());\n\n        // Assembling the series\n        this.seriesSet = GaugeUtil.assembleSeriesSet(this.gaugeConfig, GaugeMode.Donut);\n\n        // Updating the chart\n        this.chartAssist.update(this.seriesSet);\n    }\n\n    public onValueChange(value: number) {\n        // Updating the gauge config\n        this.gaugeConfig = this.getGaugeConfig(value);\n\n        // Updating the series set with the new config\n        this.seriesSet = GaugeUtil.updateSeriesSet(this.seriesSet, this.gaugeConfig);\n\n        // Updating the chart with the updated series set\n        this.chartAssist.update(this.seriesSet);\n    }\n\n    private getGaugeConfig(value: number): IGaugeConfig {\n        return {\n            value,\n            max: 200,\n            thresholds: [100, 158],\n            enableThresholdMarkers: true,\n        };\n    }\n}\n";
+      __webpack_exports__["default"] = "import { Component, OnInit } from \"@angular/core\";\nimport {\n    Chart,\n    ChartAssist,\n    ChartDonutContentPlugin,\n    DonutGaugeLabelsPlugin,\n    GaugeMode,\n    GaugeUtil,\n    IAccessors,\n    IChartAssistSeries,\n    IGaugeConfig,\n    radial,\n    radialGrid,\n} from \"@nova-ui/charts\";\n\n@Component({\n    selector: \"donut-gauge-with-content-example\",\n    templateUrl: \"./donut-gauge-with-content-example.component.html\",\n    styleUrls: [\"./donut-gauge-with-content-example.component.less\"],\n})\nexport class DonutGaugeWithContentExampleComponent implements OnInit {\n    public chartAssist: ChartAssist;\n    public contentPlugin: ChartDonutContentPlugin;\n    public gaugeConfig: IGaugeConfig;\n\n    private seriesSet: IChartAssistSeries<IAccessors>[];\n\n    public ngOnInit(): void {\n        // Setting up the gauge config\n        const initialValue = 178;\n        this.gaugeConfig = this.getGaugeConfig(initialValue);\n\n        // Creating the chart\n        this.chartAssist = new ChartAssist(new Chart(radialGrid()), radial);\n\n        // Adding the plugin for the inner content\n        this.contentPlugin = new ChartDonutContentPlugin();\n        this.chartAssist.chart.addPlugin(this.contentPlugin);\n\n        // Adding the labels plugin\n        this.chartAssist.chart.addPlugin(new DonutGaugeLabelsPlugin());\n\n        // Assembling the series\n        this.seriesSet = GaugeUtil.assembleSeriesSet(this.gaugeConfig, GaugeMode.Donut);\n\n        // Updating the chart\n        this.chartAssist.update(this.seriesSet);\n    }\n\n    public onValueChange(value: number): void {\n        // Updating the gauge config\n        this.gaugeConfig = this.getGaugeConfig(value);\n\n        // Updating the series set with the new config\n        this.seriesSet = GaugeUtil.updateSeriesSet(this.seriesSet, this.gaugeConfig);\n\n        // Updating the chart with the updated series set\n        this.chartAssist.update(this.seriesSet);\n    }\n\n    private getGaugeConfig(value: number): IGaugeConfig {\n        return {\n            value,\n            max: 200,\n            thresholds: GaugeUtil.createStandardThresholdConfigs(100, 158),\n        };\n    }\n}\n";
       /***/
     },
 
@@ -1186,7 +1303,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import { NgModule } from \"@angular/core\";\nimport { FormsModule } from \"@angular/forms\";\nimport { RouterModule, Routes } from \"@angular/router\";\nimport { DEMO_PATH_TOKEN, NuiDocsModule, NuiIconModule, NuiMessageModule, SrlcStage } from \"@nova-ui/bits\";\nimport { NuiChartsModule } from \"@nova-ui/charts\";\n\nimport { DemoCommonModule } from \"../../common/demo-common.module\";\n\nimport { ChartDocsLineComponent } from \"./chart-docs-line.component\";\nimport { LineChartBasicExampleComponent } from \"./line-chart-basic/line-chart-basic.example.component\";\nimport { LineChartInterruptedBasicExampleComponent } from \"./line-chart-interrupted-basic/line-chart-interrupted-basic-example.component\";\nimport { LineChartInterruptedCalculatedExampleComponent } from \"./line-chart-interrupted-calculated/line-chart-interrupted-calculated-example.component\";\n// eslint-disable-next-line max-len\nimport { LineChartInterruptedPathTerminusExampleComponent } from \"./line-chart-interrupted-path-terminus/line-chart-interrupted-path-terminus-example.component\";\nimport { LineChartTestComponent } from \"./line-chart-test/line-chart-test.component\";\nimport { LineChartVisualTestComponent } from \"./line-chart-visual-test/line-chart-visual-test.component\";\nimport { LineChartWith2YAxesExampleComponent } from \"./line-chart-with-2y-axes/line-chart-with-2y-axes-example.component\";\nimport { LineChartWithAxisLabelsExampleComponent } from \"./line-chart-with-axis-labels/line-chart-with-axis-labels.example.component\";\nimport { LineChartWithLargeValuesExampleComponent } from \"./line-chart-with-large-values/line-chart-with-large-values.example.component\";\nimport { LineChartWithLegendExampleComponent } from \"./line-chart-with-legend/line-chart-with-legend.example.component\";\nimport { LineChartWithRichTileLegendExampleComponent } from \"./line-chart-with-rich-tile-legend/line-chart-with-rich-tile-legend.example.component\";\n\nconst exampleRoutes: Routes = [\n    {\n        path: \"\",\n        component: ChartDocsLineComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.beta,\n            },\n            showThemeSwitcher: true,\n        },\n    },\n    {\n        path: \"axis-labels\",\n        component: LineChartWithAxisLabelsExampleComponent,\n    },\n    {\n        path: \"two-y-axes\",\n        component: LineChartWith2YAxesExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"basic\",\n        component: LineChartBasicExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"interrupted\",\n        component: LineChartInterruptedBasicExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"interrupted-calculated\",\n        component: LineChartInterruptedCalculatedExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"interrupted-path-terminus\",\n        component: LineChartInterruptedPathTerminusExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"test\",\n        component: LineChartTestComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"visual-test\",\n        component: LineChartVisualTestComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n];\n\n@NgModule({\n    declarations: [\n        ChartDocsLineComponent,\n        LineChartWithAxisLabelsExampleComponent,\n        LineChartBasicExampleComponent,\n        LineChartTestComponent,\n        LineChartVisualTestComponent,\n        LineChartWithLegendExampleComponent,\n        LineChartWithRichTileLegendExampleComponent,\n        LineChartWith2YAxesExampleComponent,\n        LineChartInterruptedBasicExampleComponent,\n        LineChartInterruptedPathTerminusExampleComponent,\n        LineChartInterruptedCalculatedExampleComponent,\n        LineChartWithLargeValuesExampleComponent,\n    ],\n    imports: [\n        DemoCommonModule,\n        FormsModule,\n        NuiChartsModule,\n        NuiIconModule,\n        NuiDocsModule,\n        NuiMessageModule,\n        RouterModule.forChild(exampleRoutes),\n    ],\n    providers: [\n        { provide: DEMO_PATH_TOKEN, useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/) },\n    ],\n})\nexport class ChartDocsLineModule {\n}\n";
+      __webpack_exports__["default"] = "import { NgModule } from \"@angular/core\";\nimport { FormsModule } from \"@angular/forms\";\nimport { RouterModule, Routes } from \"@angular/router\";\nimport { DEMO_PATH_TOKEN, NuiDocsModule, NuiIconModule, NuiMessageModule, SrlcStage } from \"@nova-ui/bits\";\nimport { NuiChartsModule } from \"@nova-ui/charts\";\n\nimport { DemoCommonModule } from \"../../common/demo-common.module\";\n\nimport { ChartDocsLineComponent } from \"./chart-docs-line.component\";\nimport { LineChartBasicExampleComponent } from \"./line-chart-basic/line-chart-basic.example.component\";\nimport { LineChartInterruptedBasicExampleComponent } from \"./line-chart-interrupted-basic/line-chart-interrupted-basic-example.component\";\nimport { LineChartInterruptedCalculatedExampleComponent } from \"./line-chart-interrupted-calculated/line-chart-interrupted-calculated-example.component\";\n// eslint-disable-next-line max-len\nimport { LineChartInterruptedPathTerminusExampleComponent } from \"./line-chart-interrupted-path-terminus/line-chart-interrupted-path-terminus-example.component\";\nimport { LineChartTestComponent } from \"./line-chart-test/line-chart-test.component\";\nimport { LineChartVisualTestComponent } from \"./line-chart-visual-test/line-chart-visual-test.component\";\nimport { LineChartWith2YAxesExampleComponent } from \"./line-chart-with-2y-axes/line-chart-with-2y-axes-example.component\";\nimport { LineChartWithAxisLabelsExampleComponent } from \"./line-chart-with-axis-labels/line-chart-with-axis-labels.example.component\";\nimport { LineChartWithLargeValuesExampleComponent } from \"./line-chart-with-large-values/line-chart-with-large-values.example.component\";\nimport { LineChartWithLegendExampleComponent } from \"./line-chart-with-legend/line-chart-with-legend.example.component\";\nimport { LineChartWithRichTileLegendExampleComponent } from \"./line-chart-with-rich-tile-legend/line-chart-with-rich-tile-legend.example.component\";\n\nconst exampleRoutes: Routes = [\n    {\n        path: \"\",\n        component: ChartDocsLineComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.beta,\n            },\n            showThemeSwitcher: true,\n        },\n    },\n    {\n        path: \"axis-labels\",\n        component: LineChartWithAxisLabelsExampleComponent,\n    },\n    {\n        path: \"two-y-axes\",\n        component: LineChartWith2YAxesExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"basic\",\n        component: LineChartBasicExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"rich-legend-tile\",\n        component: LineChartWithRichTileLegendExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"interrupted\",\n        component: LineChartInterruptedBasicExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"interrupted-calculated\",\n        component: LineChartInterruptedCalculatedExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"interrupted-path-terminus\",\n        component: LineChartInterruptedPathTerminusExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"test\",\n        component: LineChartTestComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"visual-test\",\n        component: LineChartVisualTestComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n];\n\n@NgModule({\n    declarations: [\n        ChartDocsLineComponent,\n        LineChartWithAxisLabelsExampleComponent,\n        LineChartBasicExampleComponent,\n        LineChartTestComponent,\n        LineChartVisualTestComponent,\n        LineChartWithLegendExampleComponent,\n        LineChartWithRichTileLegendExampleComponent,\n        LineChartWith2YAxesExampleComponent,\n        LineChartInterruptedBasicExampleComponent,\n        LineChartInterruptedPathTerminusExampleComponent,\n        LineChartInterruptedCalculatedExampleComponent,\n        LineChartWithLargeValuesExampleComponent,\n    ],\n    imports: [\n        DemoCommonModule,\n        FormsModule,\n        NuiChartsModule,\n        NuiIconModule,\n        NuiDocsModule,\n        NuiMessageModule,\n        RouterModule.forChild(exampleRoutes),\n    ],\n    providers: [\n        { provide: DEMO_PATH_TOKEN, useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/) },\n    ],\n})\nexport class ChartDocsLineModule {\n}\n";
       /***/
     },
 
@@ -1546,7 +1663,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import { Component, Input, OnInit } from \"@angular/core\";\nimport {\n    Chart,\n    ChartAssist,\n    GaugeMode,\n    GaugeUtil,\n    IAccessors,\n    IChartAssistSeries,\n    IGaugeConfig,\n    linearGaugeGridConfig,\n    LinearGaugeLabelsPlugin,\n    stack,\n    XYGrid,\n    XYGridConfig,\n} from \"@nova-ui/charts\";\n\n@Component({\n    selector: \"horizontal-gauge-tester\",\n    templateUrl: \"./horizontal-gauge-tester.component.html\",\n    styleUrls: [\"./horizontal-gauge-tester.component.less\"],\n})\nexport class HorizontalGaugeTesterComponent implements OnInit {\n    @Input() public gaugeConfig: IGaugeConfig;\n\n    public chartAssist: ChartAssist;\n    public seriesSet: IChartAssistSeries<IAccessors>[];\n\n    public ngOnInit() {\n        const grid = new XYGrid(linearGaugeGridConfig(GaugeMode.Horizontal) as XYGridConfig);\n        const chart = new Chart(grid);\n\n        this.chartAssist = new ChartAssist(chart, stack);\n        this.chartAssist.chart.addPlugin(new LinearGaugeLabelsPlugin());\n\n        this.seriesSet = GaugeUtil.assembleSeriesSet(this.gaugeConfig, GaugeMode.Horizontal);\n        this.chartAssist.update(this.seriesSet);\n    }\n}\n";
+      __webpack_exports__["default"] = "import { Component, Input, OnChanges, OnInit } from \"@angular/core\";\nimport { ComponentChanges } from \"@nova-ui/bits\";\nimport {\n    Chart,\n    ChartAssist,\n    GaugeMode,\n    GaugeUtil,\n    IAccessors,\n    IChartAssistSeries,\n    IGaugeConfig,\n    linearGaugeGridConfig,\n    LinearGaugeLabelsPlugin,\n    stack,\n    XYGrid,\n    XYGridConfig,\n} from \"@nova-ui/charts\";\n\n@Component({\n    selector: \"horizontal-gauge-tester\",\n    templateUrl: \"./horizontal-gauge-tester.component.html\",\n    styleUrls: [\"./horizontal-gauge-tester.component.less\"],\n})\nexport class HorizontalGaugeTesterComponent implements OnInit, OnChanges {\n    @Input() public gaugeConfig: IGaugeConfig;\n\n    public chartAssist: ChartAssist;\n    public seriesSet: IChartAssistSeries<IAccessors>[];\n\n    public ngOnChanges(changes: ComponentChanges<HorizontalGaugeTesterComponent>): void {\n        if (changes.gaugeConfig && !changes.gaugeConfig.firstChange) {\n            this.chartAssist.update(GaugeUtil.updateSeriesSet(this.seriesSet, this.gaugeConfig));\n        }\n    }\n\n    public ngOnInit(): void {\n        const grid = new XYGrid(linearGaugeGridConfig(GaugeMode.Horizontal) as XYGridConfig);\n        const chart = new Chart(grid);\n\n        this.chartAssist = new ChartAssist(chart, stack);\n        this.chartAssist.chart.addPlugin(new LinearGaugeLabelsPlugin());\n\n        this.seriesSet = GaugeUtil.assembleSeriesSet(this.gaugeConfig, GaugeMode.Horizontal);\n        this.chartAssist.update(this.seriesSet);\n    }\n}\n";
       /***/
     },
 
@@ -2468,7 +2585,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import { Component, Input, OnInit } from \"@angular/core\";\nimport {\n    Chart,\n    ChartAssist,\n    GaugeMode,\n    GaugeUtil,\n    IAccessors,\n    IChartAssistSeries,\n    IGaugeConfig,\n    linearGaugeGridConfig,\n    LinearGaugeLabelsPlugin,\n    stack,\n    XYGrid,\n    XYGridConfig,\n} from \"@nova-ui/charts\";\n\n@Component({\n    selector: \"vertical-gauge-tester\",\n    templateUrl: \"./vertical-gauge-tester.component.html\",\n    styleUrls: [\"./vertical-gauge-tester.component.less\"],\n})\nexport class VerticalGaugeTesterComponent implements OnInit {\n    @Input() public gaugeConfig: IGaugeConfig;\n\n    public chartAssist: ChartAssist;\n    public seriesSet: IChartAssistSeries<IAccessors>[];\n\n    public ngOnInit() {\n        const grid = new XYGrid(linearGaugeGridConfig(GaugeMode.Vertical) as XYGridConfig);\n        const chart = new Chart(grid);\n\n        this.chartAssist = new ChartAssist(chart, stack);\n        this.chartAssist.chart.addPlugin(new LinearGaugeLabelsPlugin());\n\n        this.seriesSet = GaugeUtil.assembleSeriesSet(this.gaugeConfig, GaugeMode.Vertical);\n        this.chartAssist.update(this.seriesSet);\n    }\n}\n";
+      __webpack_exports__["default"] = "import { Component, Input, OnChanges, OnInit } from \"@angular/core\";\nimport { ComponentChanges } from \"@nova-ui/bits\";\nimport {\n    Chart,\n    ChartAssist,\n    GaugeMode,\n    GaugeUtil,\n    IAccessors,\n    IChartAssistSeries,\n    IGaugeConfig,\n    linearGaugeGridConfig,\n    LinearGaugeLabelsPlugin,\n    stack,\n    XYGrid,\n    XYGridConfig,\n} from \"@nova-ui/charts\";\n\n@Component({\n    selector: \"vertical-gauge-tester\",\n    templateUrl: \"./vertical-gauge-tester.component.html\",\n    styleUrls: [\"./vertical-gauge-tester.component.less\"],\n})\nexport class VerticalGaugeTesterComponent implements OnInit, OnChanges {\n    @Input() public gaugeConfig: IGaugeConfig;\n\n    public chartAssist: ChartAssist;\n    public seriesSet: IChartAssistSeries<IAccessors>[];\n\n    public ngOnChanges(changes: ComponentChanges<VerticalGaugeTesterComponent>): void {\n        if (changes.gaugeConfig && !changes.gaugeConfig.firstChange) {\n            this.chartAssist.update(GaugeUtil.updateSeriesSet(this.seriesSet, this.gaugeConfig));\n        }\n    }\n\n    public ngOnInit(): void {\n        const grid = new XYGrid(linearGaugeGridConfig(GaugeMode.Vertical) as XYGridConfig);\n        const chart = new Chart(grid);\n\n        this.chartAssist = new ChartAssist(chart, stack);\n        this.chartAssist.chart.addPlugin(new LinearGaugeLabelsPlugin());\n\n        this.seriesSet = GaugeUtil.assembleSeriesSet(this.gaugeConfig, GaugeMode.Vertical);\n        this.chartAssist.update(this.seriesSet);\n    }\n}\n";
       /***/
     },
 
@@ -2688,7 +2805,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<h1>Gauges</h1>\n<p>\n    Gauges can be an effective way to display a single metric value in visual form. And, Nova Charts provides the ability to create two types of gauges\n    (donut and linear) with the assistance of a utility class called <a href=\"../classes/GaugeUtil.html\" target=\"_blank\"><code>GaugeUtil</code></a>. The main\n    set of static methods provided by the <code>GaugeUtil</code> that get you most of the way towards a functioning gauge are:\n</p>\n<ul>\n    <li>\n        <code><a href=\"../classes/GaugeUtil.html#assembleSeriesSet\" target=\"_blank\">assembleSeriesSet</a></code>: assembles a gauge series set with all of the\n        standard requisite scales, renderers, accessors, etc. needed for creating a gauge visualization based on the provided\n        <code><a href=\"../interfaces/IGaugeConfig.html\" target=\"_blank\">IGaugeConfig</a></code> object and\n        <code><a href=\"../miscellaneous/enumerations.html#GaugeMode\" target=\"_blank\">GaugeMode</a></code>.\n    </li>\n    <li>\n        <code><a href=\"../classes/GaugeUtil.html#updateSeriesSet\" target=\"_blank\">updateSeriesSet</a></code>: updates a gauge series set with the latest value,\n        max value, thresholds, and color accessors based on the provided <code><a href=\"../interfaces/IGaugeConfig.html\" target=\"_blank\">IGaugeConfig</a></code> object.\n    </li>\n</ul>\n\n<h2>Donut Type</h2>\n<p>\n    A donut gauge is well suited for use cases that consist of a larger area to display a metric visualization such as a dashboard. For use cases, with a more\n    compact display area, consider the linear gauge type also documented on this page.\n</p>\n\n<h3>Basic Donut Usage</h3>\n<p>\n    From the Nova perspective, a donut gauge is basically the same as a\n    <a href=\"../additional-documentation/chart-types/pie-and-donut.html\" target=\"_parent\">donut chart</a> but with data series formatted in a way that will\n    result in a gauge visualization. To create a donut gauge, first instantiate a donut chart, and then update the chart with a series set generated by the\n    <code>GaugeUtil</code>'s\n    <code><a href=\"../classes/GaugeUtil.html#assembleSeriesSet\" target=\"_blank\">assembleSeriesSet</a></code> function. It takes an\n    <code><a href=\"../interfaces/IGaugeConfig.html\" target=\"_blank\">IGaugeConfig</a></code> object\n    containing a value and a max value for the gauge as the first argument and a\n    <code><a href=\"../miscellaneous/enumerations.html#GaugeMode\" target=\"_blank\">GaugeMode</a></code> value of <code>GaugeMode.Donut</code> for the second\n    argument. Later, you may optionally update the\n    gauge with a new value, max value, thresholds, or even a different color accessor using the <code>GaugeUtil</code>'s\n    <code><a href=\"../classes/GaugeUtil.html#updateSeriesSet\" target=\"_blank\">updateSeriesSet</a></code> function.\n</p>\n<nui-example-wrapper filenamePrefix=\"donut-gauge-basic-example\" exampleTitle=\"Basic Donut\">\n    <donut-gauge-basic-example></donut-gauge-basic-example>\n</nui-example-wrapper>\n\n<h3>Adding Donut Thresholds and Threshold Markers</h3>\n<p>\n    The next example adds thresholds and their associated colors, markers, and labels. To see the labels, hover your mouse over the arcs of the donut.\n</p>\n<p>\n    To add thresholds, specify an array of ordered numbers on the\n    <code><a href=\"../interfaces/IGaugeConfig.html#thresholds\" target=\"_blank\">thresholds</a></code> property of the\n    <code><a href=\"../interfaces/IGaugeConfig.html\" target=\"_blank\">IGaugeConfig</a></code> passed to the <code>GaugeUtil</code>'s\n    <code><a href=\"../classes/GaugeUtil.html#assembleSeriesSet\" target=\"_blank\">assembleSeriesSet</a></code>\n    function. Each number corresponds to a threshold. For instance <code>[25, 75]</code> indicates a warning threshold of 25 and a critical threshold of 75.\n    By default, Nova gauges provide a <a href=\"../classes/GaugeUtil.html#createDefaultQuantityColorAccessor\" target=\"_blank\">standard color accessor</a> for\n    the thresholds which outputs a yellow color for warning and a red color for critical. The\n    default color accessor can be overridden to handle any number of thresholds by setting a custom\n    <code><a href=\"../additional-documentation/advanced-usage/input-structure/data.html\" target=\"_parent\">DataAccessor</a></code> value for the\n    <code>IGaugeConfig</code> object's <code><a href=\"../interfaces/IGaugeConfig.html#quantityColorAccessor\" target=\"_blank\">quantityColorAccessor</a></code>\n    property. Additionally, if you need a color accessor that reverses the colors of the default color accessor so that high values are visualized as \"good\"\n    and low values are visualized as \"bad\", GaugeUtil has a convenience method for creating such a color accessor called\n    <code><a href=\"../classes/GaugeUtil.html#createReversedQuantityThresholdColorAccessor\" target=\"_blank\">createReversedQuantityThresholdColorAccessor</a></code>.\n    Similar to a custom color accessor, the return value of this method can be used on the <code>IGaugeConfig</code>'s <code>quantityColorAccessor</code> property.\n</p>\n<p>\n    To enable the threshold marker dots, set the\n    <code><a href=\"../interfaces/IGaugeConfig.html#enableThresholdMarkers\" target=\"_blank\">enableThresholdMarkers</a></code> property on the\n    <code>IGaugeConfig</code> object to <code>true</code>. And, to add labels for the markers, add a\n    <code><a href=\"../classes/DonutGaugeLabelsPlugin.html\" target=\"_blank\">DonutGaugeLabelsPlugin</a></code> instance to the chart.\n</p>\n<nui-example-wrapper filenamePrefix=\"donut-gauge-with-threshold-markers-example\" exampleTitle=\"Donut with Threshold Markers\">\n    <donut-gauge-with-threshold-markers-example></donut-gauge-with-threshold-markers-example>\n</nui-example-wrapper>\n\n<h3>Adding Donut Inner Content</h3>\n<p>\n    The process for adding inner content to the donut gauge is the same as that of the donut chart. The instructions for that can be found on\n    <a href=\"../additional-documentation/chart-types/pie-and-donut.html\" target=\"_parent\">this</a> page. But, for\n    a quick look at how to do it, see the example below.\n</p>\n<nui-example-wrapper filenamePrefix=\"donut-gauge-with-content-example\" exampleTitle=\"Donut with Inner Content\">\n    <donut-gauge-with-content-example></donut-gauge-with-content-example>\n</nui-example-wrapper>\n";
+      __webpack_exports__["default"] = "<h1>Gauges</h1>\n<p>\n    Gauges can be an effective way to display a single metric value in visual form. And, Nova Charts provides the ability to create two types of gauges\n    (donut and linear) with the assistance of a utility class called <a href=\"../classes/GaugeUtil.html\" target=\"_blank\"><code>GaugeUtil</code></a>. Two\n    primary methods provided by the <code>GaugeUtil</code> get you most of the way towards a functioning gauge:\n</p>\n<ul>\n    <li>\n        <code><a href=\"../classes/GaugeUtil.html#assembleSeriesSet\" target=\"_blank\">assembleSeriesSet</a></code>: assembles a gauge series set with all of the\n        standard scales, renderers, accessors, etc. needed for creating a gauge visualization based on the provided\n        <code><a href=\"../interfaces/IGaugeConfig.html\" target=\"_blank\">IGaugeConfig</a></code> object and\n        <code><a href=\"../miscellaneous/enumerations.html#GaugeMode\" target=\"_blank\">GaugeMode</a></code>.\n    </li>\n    <li>\n        <code><a href=\"../classes/GaugeUtil.html#updateSeriesSet\" target=\"_blank\">updateSeriesSet</a></code>: updates a gauge series set using\n        the provided <code><a href=\"../interfaces/IGaugeConfig.html\" target=\"_blank\">IGaugeConfig</a></code>.\n    </li>\n</ul>\n\n<h2>Donut Type</h2>\n<p>\n    A donut gauge is well suited for use cases that consist of a larger area to display a metric visualization such as a dashboard. For use cases, with a more\n    compact display area, consider the linear gauge type also documented on this page.\n</p>\n\n<h3>Basic Donut Usage</h3>\n<p>\n    From the Nova perspective, a donut gauge is basically the same as a\n    <a href=\"../additional-documentation/chart-types/pie-and-donut.html\" target=\"_parent\">donut chart</a> but with data series formatted in a way that will\n    result in a gauge-like visualization. To create a donut gauge, first instantiate a donut chart, and then update the chart with a series set generated by the\n    <code>GaugeUtil</code>'s\n    <code><a href=\"../classes/GaugeUtil.html#assembleSeriesSet\" target=\"_blank\">assembleSeriesSet</a></code> function which takes an\n    <code><a href=\"../interfaces/IGaugeConfig.html\" target=\"_blank\">IGaugeConfig</a></code> object\n    containing a value and a max value for the gauge as the first argument and a\n    <code><a href=\"../miscellaneous/enumerations.html#GaugeMode\" target=\"_blank\">GaugeMode</a></code> value of <code>GaugeMode.Donut</code> for the second\n    argument. Later, you may optionally update the\n    gauge with a new value, max value, and/or thresholds using the <code>GaugeUtil</code>'s\n    <code><a href=\"../classes/GaugeUtil.html#updateSeriesSet\" target=\"_blank\">updateSeriesSet</a></code> function.\n</p>\n<nui-example-wrapper filenamePrefix=\"donut-gauge-basic-example\" exampleTitle=\"Basic Donut\">\n    <donut-gauge-basic-example></donut-gauge-basic-example>\n</nui-example-wrapper>\n\n<h3>Adding Donut Thresholds and Threshold Markers</h3>\n<p>\n    The next example adds thresholds and associated colors, markers, and labels. To see the labels, hover your mouse over the arcs of the donut.\n</p>\n<p>\n    To add thresholds, specify an <code><a href=\"../interfaces/IGaugeThresholdConfigs.html\" target=\"_blank\">IGaugeThresholdConfigs</a></code> object on the\n    <code><a href=\"../interfaces/IGaugeConfig.html#thresholds\" target=\"_blank\">thresholds</a></code> property of the\n    <code><a href=\"../interfaces/IGaugeConfig.html\" target=\"_blank\">IGaugeConfig</a></code>. For an easy way to set this, <code>GaugeUtil</code> provides a\n    <code><a href=\"../classes/GaugeUtil.html#createStandardThresholdConfigs\" target=\"_blank\">createStandardThresholdConfigs</a></code> function that\n    generates a standard set of thresholds including \"warning\" and \"critical\" levels. And, to add the labels for the threshold markers, add a\n    <code><a href=\"../classes/DonutGaugeLabelsPlugin.html\" target=\"_blank\">DonutGaugeLabelsPlugin</a></code> instance to the chart.\n</p>\n<p>\n    By default, Nova gauges provide a <a href=\"../classes/GaugeUtil.html#createDefaultQuantityColorAccessor\" target=\"_blank\">standard color accessor</a> for\n    the thresholds which outputs the configured color of the active threshold. The default color accessor can be overridden if desired by setting a custom\n    <code><a href=\"../additional-documentation/advanced-usage/input-structure/data.html\" target=\"_parent\">DataAccessor</a></code> value for the\n    <code>IGaugeConfig</code> object's <code><a href=\"../interfaces/IGaugeConfig.html#quantityColorAccessor\" target=\"_blank\">quantityColorAccessor</a></code>\n    property.\n</p>\n<h4>Reversed Thresholds</h4>\n<p>\n    The default behavior of a Nova gauge is to treat quantity values that are greater than or equal to the threshold values as being triggered. If you want to\n    reverse that and have the gauge consider values that are less than or equal to the threshold values as being triggered, set the\n    <code>reversedThresholds</code> property on the <code>IGaugeConfig</code> object to <code>true</code>.\n</p>\n<p>\n    To display thresholds without the threshold marker dots, set the\n    <code><a href=\"../interfaces/IGaugeConfig.html#enableThresholdMarkers\" target=\"_blank\">disableThresholdMarkers</a></code> property on the\n    <code>IGaugeConfig</code> object to <code>true</code>.\n</p>\n<nui-example-wrapper filenamePrefix=\"donut-gauge-with-threshold-markers-example\" exampleTitle=\"Donut with Threshold Markers\">\n    <donut-gauge-with-threshold-markers-example></donut-gauge-with-threshold-markers-example>\n</nui-example-wrapper>\n\n<h3>Adding Donut Inner Content</h3>\n<p>\n    The process for adding inner content to the donut gauge is the same as that of the donut chart. The instructions for that can be found on\n    <a href=\"../additional-documentation/chart-types/pie-and-donut.html\" target=\"_parent\">this</a> page. But, for\n    a quick look at how to do it, see the example below.\n</p>\n<nui-example-wrapper filenamePrefix=\"donut-gauge-with-content-example\" exampleTitle=\"Donut with Inner Content\">\n    <donut-gauge-with-content-example></donut-gauge-with-content-example>\n</nui-example-wrapper>\n";
       /***/
     },
 
@@ -2928,7 +3045,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import { Component } from \"@angular/core\";\nimport { IGaugeConfig } from \"@nova-ui/charts\";\n\n@Component({\n    selector: \"gauge-visual-test\",\n    templateUrl: \"./gauge-visual-test.component.html\",\n})\nexport class GaugeVisualTestComponent {\n    public lowValue = 42;\n    public mediumValue = 130;\n    public highValue = 178;\n\n    public getGaugeConfig(value: number): IGaugeConfig {\n        return {\n            value,\n            max: 200,\n            thresholds: [100, 158],\n            enableThresholdMarkers: true,\n        };\n    }\n}\n";
+      __webpack_exports__["default"] = "import { Component } from \"@angular/core\";\nimport { GaugeUtil, IGaugeConfig, IGaugeThresholdConfigs, StandardGaugeThresholdId } from \"@nova-ui/charts\";\nimport cloneDeep from \"lodash/cloneDeep\"\n\n@Component({\n    selector: \"gauge-visual-test\",\n    templateUrl: \"./gauge-visual-test.component.html\",\n})\nexport class GaugeVisualTestComponent {\n    public warningEnabled = true;\n    public gaugeConfigs = [this.getGaugeConfig(42), this.getGaugeConfig(130), this.getGaugeConfig(178)];\n\n    public getGaugeConfig(value: number): IGaugeConfig {\n        return {\n            value,\n            max: 200,\n            thresholds: GaugeUtil.createStandardThresholdConfigs(100, 158),\n        };\n    }\n\n    public onWarningEnabledChange(enabled: boolean): void {\n        this.warningEnabled = enabled;\n        this.gaugeConfigs = this.gaugeConfigs.map(c => {\n            const config = cloneDeep(c);\n            (config.thresholds as IGaugeThresholdConfigs)[StandardGaugeThresholdId.Warning].enabled = this.warningEnabled;\n            return config;\n        });\n    }\n}\n";
       /***/
     },
 
@@ -3268,7 +3385,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import { Component, OnInit } from \"@angular/core\";\nimport {\n    Chart,\n    ChartAssist,\n    DonutGaugeLabelsPlugin,\n    GaugeMode,\n    GaugeUtil,\n    IAccessors,\n    IChartAssistSeries,\n    IDataSeries,\n    IGaugeConfig,\n    radial,\n    radialGrid,\n} from \"@nova-ui/charts\";\n\n@Component({\n    selector: \"donut-gauge-with-threshold-markers-example\",\n    templateUrl: \"./donut-gauge-with-threshold-markers-example.component.html\",\n    styleUrls: [\"./donut-gauge-with-threshold-markers-example.component.less\"],\n})\nexport class DonutGaugeWithThresholdMarkersExampleComponent implements OnInit {\n    public chartAssist: ChartAssist;\n    public gaugeConfig: IGaugeConfig;\n\n    private seriesSet: IChartAssistSeries<IAccessors>[];\n\n    public ngOnInit() {\n        // Setting up the gauge config\n        const initialValue = 128;\n        this.gaugeConfig = this.getGaugeConfig(initialValue);\n\n        // Creating the chart\n        this.chartAssist = new ChartAssist(new Chart(radialGrid()), radial);\n\n        // Adding the labels plugin\n        this.chartAssist.chart.addPlugin(new DonutGaugeLabelsPlugin());\n\n        // Assembling the series set\n        this.seriesSet = GaugeUtil.assembleSeriesSet(this.gaugeConfig, GaugeMode.Donut);\n\n        // Updating the chart\n        this.chartAssist.update(this.seriesSet);\n    }\n\n    public onValueChange(value: number) {\n        // Updating the gauge config\n        this.gaugeConfig = this.getGaugeConfig(value);\n\n        // Updating the series set with the new config\n        this.seriesSet = GaugeUtil.updateSeriesSet(this.seriesSet, this.gaugeConfig);\n\n        // Updating the chart with the updated series set\n        this.chartAssist.update(this.seriesSet);\n    }\n\n    private getGaugeConfig(value: number): IGaugeConfig {\n        return {\n            value,\n            max: 200,\n\n            // Enabling the thresholds\n            thresholds: [100, 158],\n\n            // Enabling the threshold markers\n            enableThresholdMarkers: true,\n\n            // ** Optional color accessor override **\n            // quantityColorAccessor: (data: any, i: number, series: number[], dataSeries: IDataSeries<IAccessors>) => {\n            //     if (this.gaugeConfig?.thresholds && this.gaugeConfig.thresholds[1] <= data.value) {\n            //         return \"purple\";\n            //     }\n            //     if (this.gaugeConfig?.thresholds && this.gaugeConfig.thresholds[0] <= data.value) {\n            //         return \"pink\";\n            //     }\n            //     return \"green\";\n            // },\n        };\n    }\n}\n";
+      __webpack_exports__["default"] = "import { Component, OnInit } from \"@angular/core\";\nimport {\n    Chart,\n    ChartAssist,\n    DonutGaugeLabelsPlugin,\n    GaugeMode,\n    GaugeUtil,\n    IAccessors,\n    IChartAssistSeries,\n    IGaugeConfig,\n    radial,\n    radialGrid,\n} from \"@nova-ui/charts\";\n\n@Component({\n    selector: \"donut-gauge-with-threshold-markers-example\",\n    templateUrl: \"./donut-gauge-with-threshold-markers-example.component.html\",\n    styleUrls: [\"./donut-gauge-with-threshold-markers-example.component.less\"],\n})\nexport class DonutGaugeWithThresholdMarkersExampleComponent implements OnInit {\n    public chartAssist: ChartAssist;\n    public gaugeConfig: IGaugeConfig;\n\n    private seriesSet: IChartAssistSeries<IAccessors>[];\n\n    public ngOnInit(): void {\n        // Setting up the gauge config\n        const initialValue = 128;\n        this.gaugeConfig = this.getGaugeConfig(initialValue);\n\n        // Creating the chart\n        this.chartAssist = new ChartAssist(new Chart(radialGrid()), radial);\n\n        // Adding the labels plugin\n        this.chartAssist.chart.addPlugin(new DonutGaugeLabelsPlugin());\n\n        // Assembling the series set\n        this.seriesSet = GaugeUtil.assembleSeriesSet(this.gaugeConfig, GaugeMode.Donut);\n\n        // Updating the chart\n        this.chartAssist.update(this.seriesSet);\n    }\n\n    public onValueChange(value: number): void {\n        // Updating the gauge config\n        this.gaugeConfig = this.getGaugeConfig(value);\n\n        // Updating the series set with the new config\n        this.seriesSet = GaugeUtil.updateSeriesSet(this.seriesSet, this.gaugeConfig);\n\n        // Updating the chart with the updated series set\n        this.chartAssist.update(this.seriesSet);\n    }\n\n    private getGaugeConfig(value: number): IGaugeConfig {\n        return {\n            value,\n            max: 200,\n\n            // Enabling the thresholds\n            thresholds: GaugeUtil.createStandardThresholdConfigs(100, 158),\n\n            // ** Optional color accessor override **\n            // quantityColorAccessor: (data: any, i: number, series: number[], dataSeries: IDataSeries<IAccessors>) => {\n            //     if (this.gaugeConfig?.thresholds && this.gaugeConfig.thresholds[1] <= data.value) {\n            //         return \"purple\";\n            //     }\n            //     if (this.gaugeConfig?.thresholds && this.gaugeConfig.thresholds[0] <= data.value) {\n            //         return \"pink\";\n            //     }\n            //     return \"green\";\n            // },\n        };\n    }\n}\n";
       /***/
     },
 
@@ -3388,7 +3505,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "\n<div class=\"container\">\n    <charts-test-harness>\n        <h3>Donut</h3>\n        <div class=\"d-flex justify-content-around\">\n            <donut-gauge-tester [gaugeConfig]=\"getGaugeConfig(lowValue)\" [size]=\"250\"></donut-gauge-tester>\n            <donut-gauge-tester [gaugeConfig]=\"getGaugeConfig(mediumValue)\" [size]=\"300\"></donut-gauge-tester>\n            <donut-gauge-tester id=\"visual-test-gauge-donut-high-value\" [gaugeConfig]=\"getGaugeConfig(highValue)\" [size]=\"350\"></donut-gauge-tester>\n        </div>\n        <h3>Horizontal</h3>\n        <div class=\"d-flex justify-content-around\">\n            <horizontal-gauge-tester [gaugeConfig]=\"getGaugeConfig(lowValue)\"></horizontal-gauge-tester>\n            <horizontal-gauge-tester id=\"visual-test-gauge-horizontal-medium-value\"  [gaugeConfig]=\"getGaugeConfig(mediumValue)\"></horizontal-gauge-tester>\n            <horizontal-gauge-tester [gaugeConfig]=\"getGaugeConfig(highValue)\"></horizontal-gauge-tester>\n        </div>\n        <h3>Vertical</h3>\n        <div class=\"d-flex justify-content-around\">\n            <vertical-gauge-tester id=\"visual-test-gauge-vertical-low-value\" [gaugeConfig]=\"getGaugeConfig(lowValue)\"></vertical-gauge-tester>\n            <vertical-gauge-tester [gaugeConfig]=\"getGaugeConfig(mediumValue)\"></vertical-gauge-tester>\n            <vertical-gauge-tester [gaugeConfig]=\"getGaugeConfig(highValue)\"></vertical-gauge-tester>\n        </div>\n    </charts-test-harness>\n</div>\n";
+      __webpack_exports__["default"] = "<div class=\"container\">\n    <charts-test-harness>\n        <h3>Donut</h3>\n        <div class=\"d-flex justify-content-around\">\n            <donut-gauge-tester [gaugeConfig]=\"gaugeConfigs[0]\" [size]=\"250\"></donut-gauge-tester>\n            <donut-gauge-tester [gaugeConfig]=\"gaugeConfigs[1]\" [size]=\"300\"></donut-gauge-tester>\n            <donut-gauge-tester id=\"visual-test-gauge-donut-high-value\" [gaugeConfig]=\"gaugeConfigs[2]\" [size]=\"350\"></donut-gauge-tester>\n        </div>\n        <h3>Horizontal</h3>\n        <div class=\"d-flex justify-content-around\">\n            <horizontal-gauge-tester [gaugeConfig]=\"gaugeConfigs[0]\"></horizontal-gauge-tester>\n            <horizontal-gauge-tester id=\"visual-test-gauge-horizontal-medium-value\" [gaugeConfig]=\"gaugeConfigs[1]\"></horizontal-gauge-tester>\n            <horizontal-gauge-tester [gaugeConfig]=\"gaugeConfigs[2]\"></horizontal-gauge-tester>\n        </div>\n        <h3>Vertical</h3>\n        <div class=\"d-flex justify-content-around\">\n            <vertical-gauge-tester id=\"visual-test-gauge-vertical-low-value\" [gaugeConfig]=\"gaugeConfigs[0]\"></vertical-gauge-tester>\n            <vertical-gauge-tester [gaugeConfig]=\"gaugeConfigs[1]\"></vertical-gauge-tester>\n            <vertical-gauge-tester [gaugeConfig]=\"gaugeConfigs[2]\"></vertical-gauge-tester>\n        </div>\n    </charts-test-harness>\n    <div class=\"column ml-3\">\n        <div class=\"d-flex align-items-center\">\n            <input id=\"enable-warning\"\n                   class=\"mb-2\"\n                   type=\"checkbox\"\n                   [ngModel]=\"warningEnabled\"\n                   (ngModelChange)=\"onWarningEnabledChange($event)\" />\n            <label class=\"px-3\" for=\"enable-warning\">Enable Warning</label>\n        </div>\n    </div>\n</div>\n";
       /***/
     },
 
@@ -3608,7 +3725,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import { Component, OnInit } from \"@angular/core\";\nimport {\n    Chart,\n    ChartAssist,\n    GaugeMode,\n    GaugeUtil,\n    IAccessors,\n    IChartAssistSeries,\n    IGaugeConfig,\n    radial,\n    radialGrid,\n} from \"@nova-ui/charts\";\n\n@Component({\n    selector: \"donut-gauge-basic-example\",\n    templateUrl: \"./donut-gauge-basic-example.component.html\",\n    styleUrls: [\"./donut-gauge-basic-example.component.less\"],\n})\nexport class DonutGaugeBasicExampleComponent implements OnInit {\n    public chartAssist: ChartAssist;\n    public gaugeConfig: IGaugeConfig;\n\n    private seriesSet: IChartAssistSeries<IAccessors>[];\n\n    public ngOnInit() {\n        // Setting up the gauge config\n        const initialValue = 128;\n        this.gaugeConfig = this.getGaugeConfig(initialValue);\n\n        // Creating the chart\n        this.chartAssist = new ChartAssist(new Chart(radialGrid()), radial);\n\n        // Assembling the series\n        this.seriesSet = GaugeUtil.assembleSeriesSet(this.gaugeConfig, GaugeMode.Donut);\n\n        // Updating the chart\n        this.chartAssist.update(this.seriesSet);\n    }\n\n    public onValueChange(value: number) {\n        // Updating the gauge config\n        this.gaugeConfig = this.getGaugeConfig(value);\n\n        // Updating the series set with the new config\n        this.seriesSet = GaugeUtil.updateSeriesSet(this.seriesSet, this.gaugeConfig);\n\n        // Updating the chart with the updated series set\n        this.chartAssist.update(this.seriesSet);\n    }\n\n    private getGaugeConfig(value: number): IGaugeConfig {\n        return {\n            value,\n            max: 200,\n        };\n    }\n}\n";
+      __webpack_exports__["default"] = "import { Component, OnInit } from \"@angular/core\";\nimport {\n    Chart,\n    ChartAssist,\n    GaugeMode,\n    GaugeUtil,\n    IAccessors,\n    IChartAssistSeries,\n    IGaugeConfig,\n    radial,\n    radialGrid,\n} from \"@nova-ui/charts\";\n\n@Component({\n    selector: \"donut-gauge-basic-example\",\n    templateUrl: \"./donut-gauge-basic-example.component.html\",\n    styleUrls: [\"./donut-gauge-basic-example.component.less\"],\n})\nexport class DonutGaugeBasicExampleComponent implements OnInit {\n    public chartAssist: ChartAssist;\n    public gaugeConfig: IGaugeConfig;\n\n    private seriesSet: IChartAssistSeries<IAccessors>[];\n\n    public ngOnInit(): void {\n        // Setting up the gauge config\n        const initialValue = 128;\n        this.gaugeConfig = this.getGaugeConfig(initialValue);\n\n        // Creating the chart\n        this.chartAssist = new ChartAssist(new Chart(radialGrid()), radial);\n\n        // Assembling the series\n        this.seriesSet = GaugeUtil.assembleSeriesSet(this.gaugeConfig, GaugeMode.Donut);\n\n        // Updating the chart\n        this.chartAssist.update(this.seriesSet);\n    }\n\n    public onValueChange(value: number): void {\n        // Updating the gauge config\n        this.gaugeConfig = this.getGaugeConfig(value);\n\n        // Updating the series set with the new config\n        this.seriesSet = GaugeUtil.updateSeriesSet(this.seriesSet, this.gaugeConfig);\n\n        // Updating the chart with the updated series set\n        this.chartAssist.update(this.seriesSet);\n    }\n\n    private getGaugeConfig(value: number): IGaugeConfig {\n        return {\n            value,\n            max: 200,\n        };\n    }\n}\n";
       /***/
     },
 
@@ -3788,7 +3905,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import { Component, Input, OnInit } from \"@angular/core\";\nimport {\n    Chart,\n    ChartAssist,\n    ChartDonutContentPlugin,\n    DonutGaugeLabelsPlugin,\n    GaugeMode,\n    GaugeUtil,\n    IAccessors,\n    IChartAssistSeries,\n    IGaugeConfig,\n    radial,\n    radialGrid,\n} from \"@nova-ui/charts\";\n\n@Component({\n    selector: \"donut-gauge-tester\",\n    templateUrl: \"./donut-gauge-tester.component.html\",\n    styleUrls: [\"./donut-gauge-tester.component.less\"],\n})\nexport class DonutGaugeTesterComponent implements OnInit {\n    @Input() public gaugeConfig: IGaugeConfig;\n    @Input() public size = 250;\n\n    public chartAssist: ChartAssist;\n    public contentPlugin: ChartDonutContentPlugin;\n    public seriesSet: IChartAssistSeries<IAccessors>[];\n\n    public ngOnInit() {\n        this.chartAssist = new ChartAssist(new Chart(radialGrid()), radial);\n        this.contentPlugin = new ChartDonutContentPlugin();\n        this.chartAssist.chart.addPlugin(this.contentPlugin);\n        this.chartAssist.chart.addPlugin(new DonutGaugeLabelsPlugin());\n\n        this.seriesSet = GaugeUtil.assembleSeriesSet(this.gaugeConfig, GaugeMode.Donut);\n        this.chartAssist.update(this.seriesSet);\n    }\n}\n";
+      __webpack_exports__["default"] = "import { Component, Input, OnChanges, OnInit } from \"@angular/core\";\nimport { ComponentChanges } from \"@nova-ui/bits\";\nimport {\n    Chart,\n    ChartAssist,\n    ChartDonutContentPlugin,\n    DonutGaugeLabelsPlugin,\n    GaugeMode,\n    GaugeUtil,\n    IAccessors,\n    IChartAssistSeries,\n    IGaugeConfig,\n    radial,\n    radialGrid,\n} from \"@nova-ui/charts\";\n\n@Component({\n    selector: \"donut-gauge-tester\",\n    templateUrl: \"./donut-gauge-tester.component.html\",\n    styleUrls: [\"./donut-gauge-tester.component.less\"],\n})\nexport class DonutGaugeTesterComponent implements OnInit, OnChanges {\n    @Input() public gaugeConfig: IGaugeConfig;\n    @Input() public size = 250;\n\n    public chartAssist: ChartAssist;\n    public contentPlugin: ChartDonutContentPlugin;\n    public seriesSet: IChartAssistSeries<IAccessors>[];\n\n    public ngOnChanges(changes: ComponentChanges<DonutGaugeTesterComponent>): void {\n        if (changes.gaugeConfig && !changes.gaugeConfig.firstChange) {\n            this.chartAssist.update(GaugeUtil.updateSeriesSet(this.seriesSet, this.gaugeConfig));\n        }\n    }\n\n    public ngOnInit(): void {\n        this.chartAssist = new ChartAssist(new Chart(radialGrid()), radial);\n        this.contentPlugin = new ChartDonutContentPlugin();\n        this.chartAssist.chart.addPlugin(this.contentPlugin);\n        this.chartAssist.chart.addPlugin(new DonutGaugeLabelsPlugin());\n\n        this.seriesSet = GaugeUtil.assembleSeriesSet(this.gaugeConfig, GaugeMode.Donut);\n        this.chartAssist.update(this.seriesSet);\n    }\n}\n";
       /***/
     },
 
@@ -3888,7 +4005,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import { Component, OnInit } from \"@angular/core\";\nimport {\n    Chart, ChartAssist, IChartSeries, ILineAccessors, IXYScales, LineAccessors, LinearScale, LineRenderer, LineSelectSeriesInteractionStrategy, TimeScale,\n    XYGrid,\n} from \"@nova-ui/charts\";\nimport moment from \"moment/moment\";\n\n@Component({\n    selector: \"nui-line-chart-with-rich-tile-legend-example\",\n    templateUrl: \"./line-chart-with-rich-tile-legend.example.component.html\",\n})\nexport class LineChartWithRichTileLegendExampleComponent implements OnInit {\n    public chart = new Chart(new XYGrid());\n    public chartAssist: ChartAssist = new ChartAssist(this.chart);\n\n    public ngOnInit() {\n        // providing chartAssist colors and markers to LineAccessors will share them with the line chart\n        const accessors = new LineAccessors(this.chartAssist.palette.standardColors, this.chartAssist.markers);\n        const renderer = new LineRenderer({\n            // for series interaction and ability to handle click configure renderer with interactionStrategy\n            interactionStrategy: new LineSelectSeriesInteractionStrategy(),\n        });\n        const scales: IXYScales = {\n            x: new TimeScale(),\n            y: new LinearScale(),\n        };\n\n        const seriesSet: IChartSeries<ILineAccessors>[] = getData().map(d => ({\n            ...d,\n            scales,\n            renderer,\n            accessors,\n        }));\n\n        // chart assist needs to be used to update data\n        this.chartAssist.update(seriesSet);\n    }\n}\n\n/* Chart data */\nfunction getData() {\n    const format = \"YYYY-MM-DDTHH:mm:ssZ\";\n\n    return [\n        {\n            id: \"series-1\",\n            name: \"Series 1\",\n            data: [\n                { x: moment(\"2016-12-25T15:14:29.909Z\", format), y: 30 },\n                { x: moment(\"2016-12-27T15:14:29.909Z\", format), y: 95 },\n                { x: moment(\"2016-12-29T15:14:29.909Z\", format), y: 15 },\n                { x: moment(\"2016-12-31T15:14:29.909Z\", format), y: 60 },\n                { x: moment(\"2017-01-03T15:14:29.909Z\", format), y: 35 },\n            ],\n        },\n        {\n            id: \"series-2\",\n            name: \"Series 2\",\n            data: [\n                { x: moment(\"2016-12-25T15:14:29.909Z\", format), y: 60 },\n                { x: moment(\"2016-12-27T15:14:29.909Z\", format), y: 40 },\n                { x: moment(\"2016-12-29T15:14:29.909Z\", format), y: 70 },\n                { x: moment(\"2016-12-31T15:14:29.909Z\", format), y: 45 },\n                { x: moment(\"2017-01-03T15:14:29.909Z\", format), y: 90 },\n            ],\n        },\n    ];\n}\n";
+      __webpack_exports__["default"] = "import { Component, OnInit } from \"@angular/core\";\nimport {\n    Chart, ChartAssist, IChartSeries, ILineAccessors, IXYScales, LineAccessors, LinearScale, LineRenderer, LineSelectSeriesInteractionStrategy, TimeScale,\n    XYGrid,\n} from \"@nova-ui/charts\";\nimport moment from \"moment/moment\";\n\n@Component({\n    selector: \"nui-line-chart-with-rich-tile-legend-example\",\n    templateUrl: \"./line-chart-with-rich-tile-legend.example.component.html\",\n})\nexport class LineChartWithRichTileLegendExampleComponent implements OnInit {\n    public chart = new Chart(new XYGrid());\n    public chartAssist: ChartAssist = new ChartAssist(this.chart);\n\n    public ngOnInit() {\n        // providing chartAssist colors and markers to LineAccessors will share them with the line chart\n        const accessors = new LineAccessors(this.chartAssist.palette.standardColors, this.chartAssist.markers);\n        const renderer = new LineRenderer({\n            // for series interaction and ability to handle click configure renderer with interactionStrategy\n            interactionStrategy: new LineSelectSeriesInteractionStrategy(),\n        });\n        const scales: IXYScales = {\n            x: new TimeScale(),\n            y: new LinearScale(),\n        };\n\n        const seriesSet: IChartSeries<ILineAccessors>[] = getData().map(d => ({\n            ...d,\n            scales,\n            renderer,\n            accessors,\n        }));\n\n        // chart assist needs to be used to update data\n        this.chartAssist.update(seriesSet);\n    }\n}\n\n/* Chart data */\nfunction getData() {\n    const format = \"YYYY-MM-DDTHH:mm:ssZ\";\n\n    return [\n        {\n            id: \"series-1\",\n            name: \"Series 1\",\n            data: [\n                { x: moment(\"2016-12-25T15:14:29.909Z\", format), y: 130 },\n                { x: moment(\"2016-12-27T15:14:29.909Z\", format), y: 195 },\n                { x: moment(\"2016-12-29T15:14:29.909Z\", format), y: 115 },\n                { x: moment(\"2016-12-31T15:14:29.909Z\", format), y: 160 },\n                { x: moment(\"2017-01-03T15:14:29.909Z\", format), y: 135 },\n            ],\n        },\n        {\n            id: \"series-2\",\n            name: \"Series 2\",\n            data: [\n                { x: moment(\"2016-12-25T15:14:29.909Z\", format), y: 60 },\n                { x: moment(\"2016-12-27T15:14:29.909Z\", format), y: 40 },\n                { x: moment(\"2016-12-29T15:14:29.909Z\", format), y: 70 },\n                { x: moment(\"2016-12-31T15:14:29.909Z\", format), y: 45 },\n                { x: moment(\"2017-01-03T15:14:29.909Z\", format), y: 90 },\n            ],\n        },\n    ];\n}\n";
       /***/
     },
 

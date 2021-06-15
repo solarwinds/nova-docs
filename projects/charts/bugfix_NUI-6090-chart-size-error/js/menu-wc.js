@@ -589,6 +589,12 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/IFormatters.html" data-type="entity-link">IFormatters</a>
                             </li>
                             <li class="link">
+                                <a href="interfaces/IGaugeThresholdsData.html" data-type="entity-link">IGaugeThresholdsData</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/IGaugeThresholdsRendererConfig.html" data-type="entity-link">IGaugeThresholdsRendererConfig</a>
+                            </li>
+                            <li class="link">
                                 <a href="interfaces/IGrid.html" data-type="entity-link">IGrid</a>
                             </li>
                             <li class="link">
