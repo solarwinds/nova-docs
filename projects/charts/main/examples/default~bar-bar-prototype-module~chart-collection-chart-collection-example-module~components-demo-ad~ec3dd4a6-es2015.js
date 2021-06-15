@@ -30163,6 +30163,9 @@ __webpack_require__.r(__webpack_exports__);
 function mergeDomains(domains, scale) {
     if (scale.isContinuous()) {
         const nonEmptyDomains = domains.filter(d => d !== _types__WEBPACK_IMPORTED_MODULE_3__["EMPTY_CONTINUOUS_DOMAIN"]);
+        if (nonEmptyDomains.length === 0) {
+            return _types__WEBPACK_IMPORTED_MODULE_3__["EMPTY_CONTINUOUS_DOMAIN"];
+        }
         const domainMin = Object(d3_array__WEBPACK_IMPORTED_MODULE_0__["min"])(nonEmptyDomains.filter(e => typeof e[0] !== undefined).map(e => e[0]));
         const domainMax = Object(d3_array__WEBPACK_IMPORTED_MODULE_0__["max"])(nonEmptyDomains.filter(e => typeof e[1] !== undefined).map(e => e[1]));
         return [domainMin, domainMax];

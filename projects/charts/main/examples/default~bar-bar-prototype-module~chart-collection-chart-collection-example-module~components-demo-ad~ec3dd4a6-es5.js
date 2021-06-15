@@ -47595,6 +47595,11 @@
           var nonEmptyDomains = domains.filter(function (d) {
             return d !== _types__WEBPACK_IMPORTED_MODULE_3__["EMPTY_CONTINUOUS_DOMAIN"];
           });
+
+          if (nonEmptyDomains.length === 0) {
+            return _types__WEBPACK_IMPORTED_MODULE_3__["EMPTY_CONTINUOUS_DOMAIN"];
+          }
+
           var domainMin = Object(d3_array__WEBPACK_IMPORTED_MODULE_0__["min"])(nonEmptyDomains.filter(function (e) {
             return typeof e[0] !== undefined;
           }).map(function (e) {
