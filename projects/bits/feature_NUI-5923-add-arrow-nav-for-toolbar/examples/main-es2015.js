@@ -30975,8 +30975,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const _c0 = ["menuComponent"];
-const _c1 = ["toolbarContainer"];
+const _c0 = ["toolbarContainer"];
+const _c1 = ["menuComponent"];
 const _c2 = ["toolbarButtons"];
 const _c3 = function (a0) { return { "nui-toolbar-primary-item": a0 }; };
 function ToolbarComponent_ng_template_3_ng_template_0_Template(rf, ctx) { if (rf & 1) {
@@ -31108,6 +31108,8 @@ class ToolbarComponent {
     }
     ngOnDestroy() {
         this.childrenSubscription.unsubscribe();
+        this.destroy$.next();
+        this.destroy$.complete();
     }
     onClickToolbarBtn(event, commandItem) {
         event.stopPropagation();
@@ -31185,7 +31187,7 @@ class ToolbarComponent {
                     this.menu.menuToggle.nativeElement.setAttribute("tabindex", "0");
                 }
                 else {
-                    // If at least one button is visible in the toolbar it should receive the focus fist upon navigating onto the toolbar
+                    // If at least one button is visible in the toolbar it should receive the focus first upon navigating onto the toolbar
                     this.menu.menuToggle.nativeElement.setAttribute("tabindex", "-1");
                 }
                 this.toolbarItems.push(this.menu.menuToggle.nativeElement);
@@ -31205,11 +31207,9 @@ ToolbarComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineC
     } }, viewQuery: function ToolbarComponent_Query(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_c0, 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_c1, 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_c0, 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_c2, 1);
     } if (rf & 2) {
         let _t;
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.menuComponent = _t.first);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.toolbarContainer = _t.first);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.menu = _t.first);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.toolbarButtons = _t);
