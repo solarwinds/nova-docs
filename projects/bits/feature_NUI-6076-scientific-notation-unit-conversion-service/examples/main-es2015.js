@@ -29907,14 +29907,17 @@ class UnitConversionService {
         let unitDisplay = isValidNumber ? this.getUnitDisplay(conversion, unit) : "";
         // The generic unit is not currently i18n friendly
         const localizeValue = unit !== "generic";
+        let displayValue;
         if (!unitDisplay && !(conversion.value === "NaN") && conversion.order) {
             const tempObj = Object.assign({}, conversion);
             tempObj.order = 0;
             unitDisplay = this.getUnitDisplay(tempObj, unit);
-            const prefix = plusSign && parseInt(conversion.value, 10) > 0 ? "+" : "";
-            return `${prefix}${conversion.scientificNotation}${spacing}${unitDisplay}`;
+            displayValue = this.getScientificDisplay(conversion, plusSign, nanDisplay);
         }
-        return `${this.getValueDisplay(conversion, plusSign, nanDisplay, localizeValue)}${spacing}${unitDisplay}`;
+        else {
+            displayValue = this.getValueDisplay(conversion, plusSign, nanDisplay, localizeValue);
+        }
+        return `${displayValue}${spacing}${unitDisplay}`;
     }
     /**
      * Gets the converted value display string
@@ -29948,6 +29951,21 @@ class UnitConversionService {
     }
     isValidNumber(value) {
         return !isNaN(parseFloat(value)) && isFinite(parseInt(value, 10));
+    }
+    /**
+     * Gets the converted value display string in scientific notation
+     *
+     * @param conversion The result of an invocation of this service's convert method
+     * @param plusSign Whether to prepend the display string with a '+'
+     * @param nanDisplay The string to display in case the conversion result is NaN or Infinity
+     *
+     * @returns {string} The converted value display string in scientific notation
+     */
+    getScientificDisplay(conversion, plusSign = false, nanDisplay = "---") {
+        if (!this.isValidNumber(conversion.value)) {
+            return nanDisplay;
+        }
+        return `${conversion.scientificNotation}`;
     }
 }
 UnitConversionService.ɵfac = function UnitConversionService_Factory(t) { return new (t || UnitConversionService)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_log_service__WEBPACK_IMPORTED_MODULE_1__["LoggerService"])); };
