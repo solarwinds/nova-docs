@@ -270,7 +270,7 @@ export class UnitConversionPipe implements PipeTransform {
     transform(value: any, scale: number &#x3D; 0, plusSign: boolean &#x3D; false, unit: UnitOption &#x3D; &quot;bytes&quot;): string {
         const base &#x3D; unit &#x3D;&#x3D;&#x3D; &quot;bytes&quot; ? UnitBase.Bytes : UnitBase.Standard;
         const result &#x3D; this.unitConversionService.convert(value as number, base, scale);
-
+        console.log(result);
         return this.unitConversionService.getFullDisplay(result, unit, plusSign);
     }
 }
