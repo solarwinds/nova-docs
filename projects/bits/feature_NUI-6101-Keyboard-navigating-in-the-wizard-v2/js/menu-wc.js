@@ -867,6 +867,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </div>
                             <ul class="links collapse " ${ isNormalMode ? 'id="pipes-links"' : 'id="xs-pipes-links"' }>
                                 <li class="link">
+                                    <a href="pipes/GetStep.html" data-type="entity-link">GetStep</a>
+                                </li>
+                                <li class="link">
                                     <a href="pipes/HighlightPipe.html" data-type="entity-link">HighlightPipe</a>
                                 </li>
                                 <li class="link">
