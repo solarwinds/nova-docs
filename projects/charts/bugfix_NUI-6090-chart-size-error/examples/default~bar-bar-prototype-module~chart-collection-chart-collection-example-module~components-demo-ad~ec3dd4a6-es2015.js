@@ -2859,11 +2859,11 @@ class ChartAssist {
     update(inputSeriesSet, updateLegend = true) {
         this.inputSeriesSet = inputSeriesSet;
         const processedSeriesSet = this.seriesProcessor(inputSeriesSet.map(series => (Object.assign(Object.assign({}, series), { data: series.data || [] }))));
-        const seriesSet = processedSeriesSet.map(s => this.populateProperties(s));
-        this.legendSeriesSet = seriesSet.filter(s => s.showInLegend);
+        this.legendSeriesSet = processedSeriesSet.filter(s => s.showInLegend || typeof s.showInLegend === "undefined");
         if (updateLegend) {
-            this.legendInteractionAssist.update(seriesSet);
+            this.legendInteractionAssist.update(processedSeriesSet);
         }
+        const seriesSet = processedSeriesSet.map(s => this.populateProperties(s));
         this.chart.update(seriesSet);
         this.publishRenderStates();
     }
@@ -2953,7 +2953,7 @@ class ChartAssist {
     }
     populateProperties(chartSeries) {
         var _a;
-        return Object.assign({ renderState: (_a = this.renderStatesIndex[chartSeries.id]) === null || _a === void 0 ? void 0 : _a.state }, chartAssistSeriesDefaults, chartSeries);
+        return Object.assign({ renderState: (_a = this.renderStatesIndex[chartSeries.id]) === null || _a === void 0 ? void 0 : _a.state }, chartSeries);
     }
 }
 class LegendInteractionAssist {
@@ -17750,9 +17750,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lodash_values__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! lodash/values */ "P/G1");
 /* harmony import */ var lodash_values__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(lodash_values__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _scales_helpers_domain__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./scales/helpers/domain */ "PhPe");
-/* harmony import */ var _scales_types__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./scales/types */ "41FX");
-/* harmony import */ var _renderers_types__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../renderers/types */ "AbRU");
-
+/* harmony import */ var _renderers_types__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../renderers/types */ "AbRU");
 
 
 
@@ -17802,13 +17800,10 @@ class DataManager {
         if (scale.domainCalculator) {
             const chartSeriesSet = this.chartSeriesSet
                 .filter(cs => cs.scales[scaleKey] === scale && !cs.renderer.config.ignoreForDomainCalculation)
-                .filter(c => c.renderState !== _renderers_types__WEBPACK_IMPORTED_MODULE_8__["RenderState"].hidden);
+                .filter(c => c.renderState !== _renderers_types__WEBPACK_IMPORTED_MODULE_7__["RenderState"].hidden);
             if (chartSeriesSet.length) {
                 const calculatedDomain = scale.domainCalculator(chartSeriesSet, scaleKey, scale);
                 Object(_scales_helpers_domain__WEBPACK_IMPORTED_MODULE_6__["domain"])(scale, calculatedDomain);
-            }
-            else if (scale.isContinuous()) {
-                Object(_scales_helpers_domain__WEBPACK_IMPORTED_MODULE_6__["domain"])(scale, _scales_types__WEBPACK_IMPORTED_MODULE_7__["EMPTY_CONTINUOUS_DOMAIN"]);
             }
         }
     }

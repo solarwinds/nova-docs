@@ -1718,13 +1718,13 @@ export class ChartAssist&lt;T &#x3D; IAccessors&gt; implements IChartAssist {
             data: series.data || [],
         })));
 
-        const seriesSet &#x3D; processedSeriesSet.map(s &#x3D;&gt; this.populateProperties(s));
-
-        this.legendSeriesSet &#x3D; seriesSet.filter(s &#x3D;&gt; s.showInLegend);
+        this.legendSeriesSet &#x3D; processedSeriesSet.filter(s &#x3D;&gt; s.showInLegend || typeof s.showInLegend &#x3D;&#x3D;&#x3D; &quot;undefined&quot;);
 
         if (updateLegend) {
-            this.legendInteractionAssist.update(seriesSet);
+            this.legendInteractionAssist.update(processedSeriesSet);
         }
+        const seriesSet &#x3D; processedSeriesSet.map(s &#x3D;&gt; this.populateProperties(s));
+
         this.chart.update(seriesSet);
 
         this.publishRenderStates();
@@ -1865,7 +1865,7 @@ export class ChartAssist&lt;T &#x3D; IAccessors&gt; implements IChartAssist {
     private populateProperties(chartSeries: IChartSeries&lt;IAccessors&gt;): IChartAssistSeries&lt;IAccessors&gt; {
         return Object.assign(
             { renderState: this.renderStatesIndex[chartSeries.id]?.state},
-            chartAssistSeriesDefaults, chartSeries);
+            chartSeries);
     }
 }
 

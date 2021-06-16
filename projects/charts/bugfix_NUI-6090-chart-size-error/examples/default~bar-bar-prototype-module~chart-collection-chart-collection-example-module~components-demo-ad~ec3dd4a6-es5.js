@@ -4724,17 +4724,17 @@
                 data: series.data || []
               });
             }));
-            var seriesSet = processedSeriesSet.map(function (s) {
-              return _this18.populateProperties(s);
-            });
-            this.legendSeriesSet = seriesSet.filter(function (s) {
-              return s.showInLegend;
+            this.legendSeriesSet = processedSeriesSet.filter(function (s) {
+              return s.showInLegend || typeof s.showInLegend === "undefined";
             });
 
             if (updateLegend) {
-              this.legendInteractionAssist.update(seriesSet);
+              this.legendInteractionAssist.update(processedSeriesSet);
             }
 
+            var seriesSet = processedSeriesSet.map(function (s) {
+              return _this18.populateProperties(s);
+            });
             this.chart.update(seriesSet);
             this.publishRenderStates();
           }
@@ -4854,7 +4854,7 @@
 
             return Object.assign({
               renderState: (_a = this.renderStatesIndex[chartSeries.id]) === null || _a === void 0 ? void 0 : _a.state
-            }, chartAssistSeriesDefaults, chartSeries);
+            }, chartSeries);
           }
         }], [{
           key: "getLabel",
@@ -28053,13 +28053,7 @@
       /* harmony import */
 
 
-      var _scales_types__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
-      /*! ./scales/types */
-      "41FX");
-      /* harmony import */
-
-
-      var _renderers_types__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      var _renderers_types__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! ../../renderers/types */
       "AbRU");
       /**
@@ -28134,14 +28128,12 @@
               var chartSeriesSet = this.chartSeriesSet.filter(function (cs) {
                 return cs.scales[scaleKey] === scale && !cs.renderer.config.ignoreForDomainCalculation;
               }).filter(function (c) {
-                return c.renderState !== _renderers_types__WEBPACK_IMPORTED_MODULE_8__["RenderState"].hidden;
+                return c.renderState !== _renderers_types__WEBPACK_IMPORTED_MODULE_7__["RenderState"].hidden;
               });
 
               if (chartSeriesSet.length) {
                 var calculatedDomain = scale.domainCalculator(chartSeriesSet, scaleKey, scale);
                 Object(_scales_helpers_domain__WEBPACK_IMPORTED_MODULE_6__["domain"])(scale, calculatedDomain);
-              } else if (scale.isContinuous()) {
-                Object(_scales_helpers_domain__WEBPACK_IMPORTED_MODULE_6__["domain"])(scale, _scales_types__WEBPACK_IMPORTED_MODULE_7__["EMPTY_CONTINUOUS_DOMAIN"]);
               }
             }
           }
