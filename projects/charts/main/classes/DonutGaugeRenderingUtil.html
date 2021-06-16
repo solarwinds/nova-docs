@@ -120,7 +120,7 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>generateThresholdArcData(data: IGaugeThreshold[])</code>
+                    <code>generateThresholdArcData(data: IGaugeThresholdDatum[])</code>
                 </td>
             </tr>
 
@@ -150,7 +150,7 @@
                                 <tr>
                                     <td>data</td>
                                     <td>
-                                            <code>IGaugeThreshold[]</code>
+                                            <code>IGaugeThresholdDatum[]</code>
                                     </td>
 
                                     <td>
@@ -188,10 +188,10 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { DefaultArcObject } from &quot;d3&quot;;
 import { pie } from &quot;d3-shape&quot;;
 
-import { IGaugeThreshold } from &quot;../../../gauge/types&quot;;
+import { IGaugeThresholdDatum } from &quot;../../../gauge/types&quot;;
 
 export class DonutGaugeRenderingUtil {
-    public static generateThresholdArcData(data: IGaugeThreshold[]): DefaultArcObject[] {
+    public static generateThresholdArcData(data: IGaugeThresholdDatum[]): DefaultArcObject[] {
         if (!data.length) {
             return [];
         }
@@ -209,10 +209,10 @@ export class DonutGaugeRenderingUtil {
         return thresholdsData;
     }
 
-    private static generateArcValues(data: IGaugeThreshold[]): number[] {
+    private static generateArcValues(data: IGaugeThresholdDatum[]): number[] {
         // arcs with a value of zero serve as the threshold points
         const arcData: number[] &#x3D; Array(data.length * 2 - 1).fill(0);
-        data.forEach((d: IGaugeThreshold, i: number) &#x3D;&gt; {
+        data.forEach((d: IGaugeThresholdDatum, i: number) &#x3D;&gt; {
             // arcs with a non-zero value serve as the space between the threshold points
             arcData[i * 2] &#x3D; i &#x3D;&#x3D;&#x3D; 0 ? d.value : d.value - data[i - 1].value;
         });

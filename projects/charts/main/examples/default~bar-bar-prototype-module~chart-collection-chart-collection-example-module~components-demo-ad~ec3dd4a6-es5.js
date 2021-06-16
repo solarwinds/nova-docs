@@ -17849,97 +17849,91 @@
       /* harmony import */
 
 
-      var _core_common_scales_linear_scale__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! ../core/common/scales/linear-scale */
-      "YYcv");
-      /* harmony import */
-
-
-      var _core_plugins_gauge_constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      var _core_plugins_gauge_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ../core/plugins/gauge/constants */
       "GXwZ");
       /* harmony import */
 
 
-      var _renderers_bar_accessors_horizontal_bar_accessors__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      var _renderers_bar_accessors_horizontal_bar_accessors__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ../renderers/bar/accessors/horizontal-bar-accessors */
       "rTqn");
       /* harmony import */
 
 
-      var _renderers_bar_accessors_vertical_bar_accessors__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      var _renderers_bar_accessors_vertical_bar_accessors__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! ../renderers/bar/accessors/vertical-bar-accessors */
       "mGqK");
       /* harmony import */
 
 
-      var _renderers_bar_bar_renderer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      var _renderers_bar_bar_renderer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! ../renderers/bar/bar-renderer */
       "iC++");
       /* harmony import */
 
 
-      var _renderers_bar_bar_scales__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      var _renderers_bar_bar_scales__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! ../renderers/bar/bar-scales */
       "sMd8");
       /* harmony import */
 
 
-      var _renderers_bar_linear_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      var _renderers_bar_linear_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! ../renderers/bar/linear-gauge-thresholds-renderer */
       "LkUO");
       /* harmony import */
 
 
-      var _renderers_radial_accessors_radial_accessors__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      var _renderers_radial_accessors_radial_accessors__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! ../renderers/radial/accessors/radial-accessors */
       "ZF6T");
       /* harmony import */
 
 
-      var _renderers_radial_gauge_donut_gauge_renderer_config__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      var _renderers_radial_gauge_donut_gauge_renderer_config__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! ../renderers/radial/gauge/donut-gauge-renderer-config */
       "JBZ3");
       /* harmony import */
 
 
-      var _renderers_radial_gauge_donut_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      var _renderers_radial_gauge_donut_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! ../renderers/radial/gauge/donut-gauge-thresholds-renderer */
       "MsLP");
       /* harmony import */
 
 
-      var _renderers_radial_radial_renderer__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+      var _renderers_radial_radial_renderer__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
       /*! ../renderers/radial/radial-renderer */
       "+mSY");
       /* harmony import */
 
 
-      var _renderers_radial_radial_scales__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+      var _renderers_radial_radial_scales__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
       /*! ../renderers/radial/radial-scales */
       "ftV1");
       /* harmony import */
 
 
-      var _constants__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+      var _constants__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
       /*! ./constants */
       "boxq");
       /* harmony import */
 
 
-      var _renderers_bar_linear_gauge_renderer_config__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
+      var _renderers_bar_linear_gauge_renderer_config__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
       /*! ../renderers/bar/linear-gauge-renderer-config */
       "wM+W");
       /* harmony import */
 
 
-      var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
+      var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
       /*! lodash/isUndefined */
       "TP7S");
       /* harmony import */
 
 
-      var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(lodash_isUndefined__WEBPACK_IMPORTED_MODULE_14__);
+      var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(lodash_isUndefined__WEBPACK_IMPORTED_MODULE_13__);
       /**
        * @ignore
        * Convenience utility to simplify gauge usage
@@ -18000,18 +17994,20 @@
             var clampedConfig = GaugeUtil.clampConfigToRange(gaugeConfig);
             var thresholdsData = GaugeUtil.generateThresholdsData(clampedConfig);
             var updatedSeriesSet = seriesSet.map(function (series) {
-              if (series.id === _constants__WEBPACK_IMPORTED_MODULE_12__["GAUGE_QUANTITY_SERIES_ID"]) {
+              var _a;
+
+              if (series.id === _constants__WEBPACK_IMPORTED_MODULE_11__["GAUGE_QUANTITY_SERIES_ID"]) {
                 return Object.assign(Object.assign({}, series), {
                   data: [{
                     category: GaugeUtil.DATA_CATEGORY,
                     value: clampedConfig.value
                   }],
                   activeThreshold: thresholdsData.activeThreshold,
-                  defaultColor: clampedConfig.defaultQuantityColor || _constants__WEBPACK_IMPORTED_MODULE_12__["StandardGaugeColor"].Ok
+                  defaultColor: clampedConfig.defaultQuantityColor || _constants__WEBPACK_IMPORTED_MODULE_11__["StandardGaugeColor"].Ok
                 });
               }
 
-              if (series.id === _constants__WEBPACK_IMPORTED_MODULE_12__["GAUGE_REMAINDER_SERIES_ID"]) {
+              if (series.id === _constants__WEBPACK_IMPORTED_MODULE_11__["GAUGE_REMAINDER_SERIES_ID"]) {
                 return Object.assign(Object.assign({}, series), {
                   data: [{
                     category: GaugeUtil.DATA_CATEGORY,
@@ -18020,8 +18016,8 @@
                 });
               }
 
-              if (series.id === _constants__WEBPACK_IMPORTED_MODULE_12__["GAUGE_THRESHOLD_MARKERS_SERIES_ID"]) {
-                series.renderer.config.enabled = !clampedConfig.disableThresholdMarkers;
+              if (series.id === _constants__WEBPACK_IMPORTED_MODULE_11__["GAUGE_THRESHOLD_MARKERS_SERIES_ID"]) {
+                series.renderer.config.enabled = !((_a = clampedConfig.thresholds) === null || _a === void 0 ? void 0 : _a.disableMarkers);
                 return Object.assign(Object.assign({}, series), thresholdsData);
               }
 
@@ -18055,17 +18051,17 @@
 
               if (remainderAccessors.data) {
                 remainderAccessors.data.color = gaugeConfig.remainderColorAccessor || function () {
-                  return _constants__WEBPACK_IMPORTED_MODULE_12__["StandardGaugeColor"].Remainder;
+                  return _constants__WEBPACK_IMPORTED_MODULE_11__["StandardGaugeColor"].Remainder;
                 };
               }
 
-              if (series.id === _constants__WEBPACK_IMPORTED_MODULE_12__["GAUGE_QUANTITY_SERIES_ID"]) {
+              if (series.id === _constants__WEBPACK_IMPORTED_MODULE_11__["GAUGE_QUANTITY_SERIES_ID"]) {
                 series.activeThreshold = activeThreshold;
-                series.defaultColor = gaugeConfig.defaultQuantityColor || _constants__WEBPACK_IMPORTED_MODULE_12__["StandardGaugeColor"].Ok;
+                series.defaultColor = gaugeConfig.defaultQuantityColor || _constants__WEBPACK_IMPORTED_MODULE_11__["StandardGaugeColor"].Ok;
               }
 
               return Object.assign(Object.assign({}, series), {
-                accessors: series.id === _constants__WEBPACK_IMPORTED_MODULE_12__["GAUGE_QUANTITY_SERIES_ID"] ? quantityAccessors : remainderAccessors,
+                accessors: series.id === _constants__WEBPACK_IMPORTED_MODULE_11__["GAUGE_QUANTITY_SERIES_ID"] ? quantityAccessors : remainderAccessors,
                 scales: scales,
                 renderer: mainRenderer
               });
@@ -18096,36 +18092,6 @@
               // instruct the stacked and radial preprocessors that the threshold data doesn't need to be mutated
               preprocess: false
             });
-          }
-          /**
-           * Sets the formatter to use for the threshold labels
-           *
-           * @param formatter The formatter to use for the threshold labels
-           * @param seriesSet The series set to apply the formatter to
-           * @param formatterName Optional name for the formatter
-           *
-           * @returns {IChartAssistSeries<IAccessors>[]} The series set as modified to use the provided formatter
-           */
-
-        }, {
-          key: "setThresholdLabelFormatter",
-          value: function setThresholdLabelFormatter(formatter, seriesSet) {
-            var formatterName = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : _core_plugins_gauge_constants__WEBPACK_IMPORTED_MODULE_1__["GAUGE_LABEL_FORMATTER_NAME_DEFAULT"];
-            var thresholdsSeries = seriesSet.find(function (series) {
-              return series.id === _constants__WEBPACK_IMPORTED_MODULE_12__["GAUGE_THRESHOLD_MARKERS_SERIES_ID"];
-            });
-
-            if (thresholdsSeries) {
-              var linearScale = Object.values(thresholdsSeries.scales).find(function (scale) {
-                return scale instanceof _core_common_scales_linear_scale__WEBPACK_IMPORTED_MODULE_0__["LinearScale"];
-              });
-
-              if (linearScale) {
-                linearScale.formatters[formatterName] = formatter;
-              }
-            }
-
-            return seriesSet;
           }
           /**
            * Generates the attributes required to instantiate a standard gauge in the specified mode
@@ -18163,61 +18129,73 @@
           value: function generateRenderingTools(gaugeConfig, mode) {
             var _renderingTools;
 
-            var renderingTools = (_renderingTools = {}, _defineProperty(_renderingTools, _constants__WEBPACK_IMPORTED_MODULE_12__["GaugeMode"].Donut, {
+            var renderingTools = (_renderingTools = {}, _defineProperty(_renderingTools, _constants__WEBPACK_IMPORTED_MODULE_11__["GaugeMode"].Donut, {
               mainRendererFunction: function mainRendererFunction() {
-                return new _renderers_radial_radial_renderer__WEBPACK_IMPORTED_MODULE_10__["RadialRenderer"](Object(_renderers_radial_gauge_donut_gauge_renderer_config__WEBPACK_IMPORTED_MODULE_8__["donutGaugeRendererConfig"])());
+                return new _renderers_radial_radial_renderer__WEBPACK_IMPORTED_MODULE_9__["RadialRenderer"](Object(_renderers_radial_gauge_donut_gauge_renderer_config__WEBPACK_IMPORTED_MODULE_7__["donutGaugeRendererConfig"])());
               },
               thresholdsRendererFunction: function thresholdsRendererFunction() {
-                return new _renderers_radial_gauge_donut_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_9__["DonutGaugeThresholdsRenderer"]({
-                  enabled: !gaugeConfig.disableThresholdMarkers
+                var _a;
+
+                return new _renderers_radial_gauge_donut_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_8__["DonutGaugeThresholdsRenderer"]({
+                  enabled: !((_a = gaugeConfig.thresholds) === null || _a === void 0 ? void 0 : _a.disableMarkers)
                 });
               },
               quantityAccessorFunction: function quantityAccessorFunction() {
-                return new _renderers_radial_accessors_radial_accessors__WEBPACK_IMPORTED_MODULE_7__["RadialAccessors"]();
+                return new _renderers_radial_accessors_radial_accessors__WEBPACK_IMPORTED_MODULE_6__["RadialAccessors"]();
               },
               remainderAccessorFunction: function remainderAccessorFunction() {
-                return new _renderers_radial_accessors_radial_accessors__WEBPACK_IMPORTED_MODULE_7__["RadialAccessors"]();
+                return new _renderers_radial_accessors_radial_accessors__WEBPACK_IMPORTED_MODULE_6__["RadialAccessors"]();
               },
               scaleFunction: function scaleFunction() {
-                return Object(_renderers_radial_radial_scales__WEBPACK_IMPORTED_MODULE_11__["radialScales"])();
+                var scales = Object(_renderers_radial_radial_scales__WEBPACK_IMPORTED_MODULE_10__["radialScales"])();
+                scales.r.formatters[_core_plugins_gauge_constants__WEBPACK_IMPORTED_MODULE_0__["GAUGE_LABEL_FORMATTER_NAME_DEFAULT"]] = gaugeConfig.labelFormatter;
+                return scales;
               }
-            }), _defineProperty(_renderingTools, _constants__WEBPACK_IMPORTED_MODULE_12__["GaugeMode"].Horizontal, {
+            }), _defineProperty(_renderingTools, _constants__WEBPACK_IMPORTED_MODULE_11__["GaugeMode"].Horizontal, {
               mainRendererFunction: function mainRendererFunction() {
-                return new _renderers_bar_bar_renderer__WEBPACK_IMPORTED_MODULE_4__["BarRenderer"](Object(_renderers_bar_linear_gauge_renderer_config__WEBPACK_IMPORTED_MODULE_13__["linearGaugeRendererConfig"])());
+                return new _renderers_bar_bar_renderer__WEBPACK_IMPORTED_MODULE_3__["BarRenderer"](Object(_renderers_bar_linear_gauge_renderer_config__WEBPACK_IMPORTED_MODULE_12__["linearGaugeRendererConfig"])());
               },
               thresholdsRendererFunction: function thresholdsRendererFunction() {
-                return new _renderers_bar_linear_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_6__["LinearGaugeThresholdsRenderer"]({
-                  enabled: !gaugeConfig.disableThresholdMarkers
+                var _a;
+
+                return new _renderers_bar_linear_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_5__["LinearGaugeThresholdsRenderer"]({
+                  enabled: !((_a = gaugeConfig.thresholds) === null || _a === void 0 ? void 0 : _a.disableMarkers)
                 });
               },
               quantityAccessorFunction: function quantityAccessorFunction() {
-                return new _renderers_bar_accessors_horizontal_bar_accessors__WEBPACK_IMPORTED_MODULE_2__["HorizontalBarAccessors"]();
+                return new _renderers_bar_accessors_horizontal_bar_accessors__WEBPACK_IMPORTED_MODULE_1__["HorizontalBarAccessors"]();
               },
               remainderAccessorFunction: function remainderAccessorFunction() {
-                return new _renderers_bar_accessors_horizontal_bar_accessors__WEBPACK_IMPORTED_MODULE_2__["HorizontalBarAccessors"]();
+                return new _renderers_bar_accessors_horizontal_bar_accessors__WEBPACK_IMPORTED_MODULE_1__["HorizontalBarAccessors"]();
               },
               scaleFunction: function scaleFunction() {
-                return Object(_renderers_bar_bar_scales__WEBPACK_IMPORTED_MODULE_5__["barScales"])({
+                var scales = Object(_renderers_bar_bar_scales__WEBPACK_IMPORTED_MODULE_4__["barScales"])({
                   horizontal: true
                 });
+                scales.x.formatters[_core_plugins_gauge_constants__WEBPACK_IMPORTED_MODULE_0__["GAUGE_LABEL_FORMATTER_NAME_DEFAULT"]] = gaugeConfig.labelFormatter;
+                return scales;
               }
-            }), _defineProperty(_renderingTools, _constants__WEBPACK_IMPORTED_MODULE_12__["GaugeMode"].Vertical, {
+            }), _defineProperty(_renderingTools, _constants__WEBPACK_IMPORTED_MODULE_11__["GaugeMode"].Vertical, {
               mainRendererFunction: function mainRendererFunction() {
-                return new _renderers_bar_bar_renderer__WEBPACK_IMPORTED_MODULE_4__["BarRenderer"](Object(_renderers_bar_linear_gauge_renderer_config__WEBPACK_IMPORTED_MODULE_13__["linearGaugeRendererConfig"])());
+                return new _renderers_bar_bar_renderer__WEBPACK_IMPORTED_MODULE_3__["BarRenderer"](Object(_renderers_bar_linear_gauge_renderer_config__WEBPACK_IMPORTED_MODULE_12__["linearGaugeRendererConfig"])());
               },
               thresholdsRendererFunction: function thresholdsRendererFunction() {
-                return new _renderers_bar_linear_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_6__["LinearGaugeThresholdsRenderer"]({
-                  enabled: !gaugeConfig.disableThresholdMarkers
+                var _a;
+
+                return new _renderers_bar_linear_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_5__["LinearGaugeThresholdsRenderer"]({
+                  enabled: !((_a = gaugeConfig.thresholds) === null || _a === void 0 ? void 0 : _a.disableMarkers)
                 });
               },
               quantityAccessorFunction: function quantityAccessorFunction() {
-                return new _renderers_bar_accessors_vertical_bar_accessors__WEBPACK_IMPORTED_MODULE_3__["VerticalBarAccessors"]();
+                return new _renderers_bar_accessors_vertical_bar_accessors__WEBPACK_IMPORTED_MODULE_2__["VerticalBarAccessors"]();
               },
               remainderAccessorFunction: function remainderAccessorFunction() {
-                return new _renderers_bar_accessors_vertical_bar_accessors__WEBPACK_IMPORTED_MODULE_3__["VerticalBarAccessors"]();
+                return new _renderers_bar_accessors_vertical_bar_accessors__WEBPACK_IMPORTED_MODULE_2__["VerticalBarAccessors"]();
               },
               scaleFunction: function scaleFunction() {
-                return Object(_renderers_bar_bar_scales__WEBPACK_IMPORTED_MODULE_5__["barScales"])();
+                var scales = Object(_renderers_bar_bar_scales__WEBPACK_IMPORTED_MODULE_4__["barScales"])();
+                scales.y.formatters[_core_plugins_gauge_constants__WEBPACK_IMPORTED_MODULE_0__["GAUGE_LABEL_FORMATTER_NAME_DEFAULT"]] = gaugeConfig.labelFormatter;
+                return scales;
               }
             }), _renderingTools);
             return renderingTools[mode];
@@ -18244,27 +18222,31 @@
            * @param warningVal Value for the warning threshold
            * @param criticalVal Value for the critical threshold
            *
-           * @returns {IGaugeThresholdConfigs} The threshold configs
+           * @returns {IGaugeThresholdsConfig} The thresholds configuration
            */
 
         }, {
-          key: "createStandardThresholdConfigs",
-          value: function createStandardThresholdConfigs(warningVal, criticalVal) {
-            var _configs;
+          key: "createStandardThresholdsConfig",
+          value: function createStandardThresholdsConfig(warningVal, criticalVal) {
+            var _definitions;
 
             // assigning to variable to prevent "Expression form not supported" error
-            var configs = (_configs = {}, _defineProperty(_configs, _constants__WEBPACK_IMPORTED_MODULE_12__["StandardGaugeThresholdId"].Warning, {
-              id: _constants__WEBPACK_IMPORTED_MODULE_12__["StandardGaugeThresholdId"].Warning,
-              value: warningVal,
-              enabled: true,
-              color: _constants__WEBPACK_IMPORTED_MODULE_12__["StandardGaugeColor"].Warning
-            }), _defineProperty(_configs, _constants__WEBPACK_IMPORTED_MODULE_12__["StandardGaugeThresholdId"].Critical, {
-              id: _constants__WEBPACK_IMPORTED_MODULE_12__["StandardGaugeThresholdId"].Critical,
-              value: criticalVal,
-              enabled: true,
-              color: _constants__WEBPACK_IMPORTED_MODULE_12__["StandardGaugeColor"].Critical
-            }), _configs);
-            return configs;
+            var config = {
+              definitions: (_definitions = {}, _defineProperty(_definitions, _constants__WEBPACK_IMPORTED_MODULE_11__["StandardGaugeThresholdId"].Warning, {
+                id: _constants__WEBPACK_IMPORTED_MODULE_11__["StandardGaugeThresholdId"].Warning,
+                value: warningVal,
+                enabled: true,
+                color: _constants__WEBPACK_IMPORTED_MODULE_11__["StandardGaugeColor"].Warning
+              }), _defineProperty(_definitions, _constants__WEBPACK_IMPORTED_MODULE_11__["StandardGaugeThresholdId"].Critical, {
+                id: _constants__WEBPACK_IMPORTED_MODULE_11__["StandardGaugeThresholdId"].Critical,
+                value: criticalVal,
+                enabled: true,
+                color: _constants__WEBPACK_IMPORTED_MODULE_11__["StandardGaugeColor"].Critical
+              }), _definitions),
+              reversed: false,
+              disableMarkers: false
+            };
+            return config;
           }
           /**
            * Generates quantity and remainder data in the format needed by the gauge visualization
@@ -18280,13 +18262,13 @@
           value: function generateQuantityAndRemainderData(gaugeConfig) {
             return [// category property is used for unifying the linear-style gauge visualization into a single bar stack
             {
-              id: _constants__WEBPACK_IMPORTED_MODULE_12__["GAUGE_QUANTITY_SERIES_ID"],
+              id: _constants__WEBPACK_IMPORTED_MODULE_11__["GAUGE_QUANTITY_SERIES_ID"],
               data: [{
                 category: GaugeUtil.DATA_CATEGORY,
                 value: gaugeConfig.value
               }]
             }, {
-              id: _constants__WEBPACK_IMPORTED_MODULE_12__["GAUGE_REMAINDER_SERIES_ID"],
+              id: _constants__WEBPACK_IMPORTED_MODULE_11__["GAUGE_REMAINDER_SERIES_ID"],
               data: [{
                 category: GaugeUtil.DATA_CATEGORY,
                 value: gaugeConfig.max - gaugeConfig.value
@@ -18298,7 +18280,7 @@
            *
            * @param gaugeConfig The configuration for the gauge
            *
-           * @returns {Partial<IDataSeries<IAccessors, IGaugeThreshold>>} A partial IDataSeries object including the 'id' and 'data' properties of the thresholds
+           * @returns {Partial<IDataSeries<IAccessors, IGaugeThresholdDatum>>} A partial IDataSeries object including the 'id' and 'data' properties of the thresholds
            * series used for the the gauge's thresholds visualization
            */
 
@@ -18314,7 +18296,7 @@
                 activeThreshold = _GaugeUtil$prepareThr.activeThreshold;
 
             return {
-              id: _constants__WEBPACK_IMPORTED_MODULE_12__["GAUGE_THRESHOLD_MARKERS_SERIES_ID"],
+              id: _constants__WEBPACK_IMPORTED_MODULE_11__["GAUGE_THRESHOLD_MARKERS_SERIES_ID"],
               data: [].concat(_toConsumableArray(thresholds), [// tack the max value onto the end (this is used for donut arc calculation)
               {
                 id: "max",
@@ -18336,19 +18318,23 @@
         }, {
           key: "prepareThresholdsData",
           value: function prepareThresholdsData(gaugeConfig) {
-            var thresholds = Object.values(gaugeConfig.thresholds || []).filter(function (threshold) {
+            var _a, _b;
+
+            var thresholds = Object.values(((_a = gaugeConfig.thresholds) === null || _a === void 0 ? void 0 : _a.definitions) || []).filter(function (threshold) {
               return threshold.enabled;
             }).map(function (threshold) {
+              var _a;
+
               return Object.assign(Object.assign({}, threshold), {
                 category: GaugeUtil.DATA_CATEGORY,
                 // threshold values are exclusive when in reversed mode, inclusive otherwise
-                hit: gaugeConfig.reversedThresholds ? threshold.value < gaugeConfig.value : threshold.value <= gaugeConfig.value
+                hit: ((_a = gaugeConfig.thresholds) === null || _a === void 0 ? void 0 : _a.reversed) ? threshold.value < gaugeConfig.value : threshold.value <= gaugeConfig.value
               });
             }).sort(function (a, b) {
               return a.value - b.value;
             });
-            var activeThreshold = gaugeConfig.reversedThresholds ? thresholds === null || thresholds === void 0 ? void 0 : thresholds.find(function (threshold) {
-              return !lodash_isUndefined__WEBPACK_IMPORTED_MODULE_14___default()(threshold.hit) && !threshold.hit;
+            var activeThreshold = ((_b = gaugeConfig.thresholds) === null || _b === void 0 ? void 0 : _b.reversed) ? thresholds === null || thresholds === void 0 ? void 0 : thresholds.find(function (threshold) {
+              return !lodash_isUndefined__WEBPACK_IMPORTED_MODULE_13___default()(threshold.hit) && !threshold.hit;
             }) : thresholds === null || thresholds === void 0 ? void 0 : thresholds.slice().reverse().find(function (threshold) {
               return threshold.hit;
             });
@@ -18360,6 +18346,8 @@
         }, {
           key: "clampConfigToRange",
           value: function clampConfigToRange(gaugeConfig) {
+            var _a;
+
             var value = gaugeConfig.value;
 
             if (gaugeConfig.value > gaugeConfig.max) {
@@ -18372,9 +18360,9 @@
               value = 0;
             }
 
-            var thresholds = gaugeConfig.thresholds || {};
-            Object.keys(thresholds || {}).forEach(function (thresholdId) {
-              var threshold = thresholds[thresholdId];
+            var thresholdDefs = ((_a = gaugeConfig.thresholds) === null || _a === void 0 ? void 0 : _a.definitions) || {};
+            Object.keys(thresholdDefs || {}).forEach(function (thresholdId) {
+              var threshold = thresholdDefs[thresholdId];
 
               if (threshold) {
                 if (threshold.value > gaugeConfig.max) {
@@ -18389,7 +18377,9 @@
               }
             });
             return Object.assign(Object.assign({}, gaugeConfig), {
-              thresholds: thresholds,
+              thresholds: Object.assign(Object.assign({}, gaugeConfig.thresholds), {
+                definitions: thresholdDefs
+              }),
               value: value
             });
           }
@@ -42814,12 +42804,18 @@
       /* harmony import */
 
 
-      var _xy_grid_config__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      var _dimension_config__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! ./dimension-config */
+      "7Ek6");
+      /* harmony import */
+
+
+      var _xy_grid_config__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! ./xy-grid-config */
       "o9ks");
       /**
        * @ignore
-       * Applies gauge specific grid configuration
+       * Assembles a linear-gauge-specific grid configuration
        *
        * @param mode vertical or horizontal
        * @param thickness the thickness of the gauge
@@ -42828,7 +42824,7 @@
 
       function linearGaugeGridConfig(mode) {
         var thickness = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : _gauge_constants__WEBPACK_IMPORTED_MODULE_0__["StandardLinearGaugeThickness"].Large;
-        var gridConfig = new _xy_grid_config__WEBPACK_IMPORTED_MODULE_1__["XYGridConfig"]();
+        var gridConfig = new _xy_grid_config__WEBPACK_IMPORTED_MODULE_2__["XYGridConfig"]();
         gridConfig.interactionPlugins = false;
         gridConfig.disableRenderAreaHeightCorrection = true;
         gridConfig.axis.bottom.visible = false;
@@ -42836,15 +42832,9 @@
         gridConfig.axis.left.visible = false;
         gridConfig.axis.left.gridTicks = false;
         gridConfig.borders.left.visible = false;
-        gridConfig.borders.bottom.visible = false;
-        gridConfig.dimension.padding.top = 0;
-        gridConfig.dimension.padding.right = 0;
-        gridConfig.dimension.padding.bottom = 0;
-        gridConfig.dimension.padding.left = 0;
-        gridConfig.dimension.margin.top = 0;
-        gridConfig.dimension.margin.right = 0;
-        gridConfig.dimension.margin.bottom = 0;
-        gridConfig.dimension.margin.left = 0;
+        gridConfig.borders.bottom.visible = false; // reset the dimension config with zero margins and zero padding
+
+        gridConfig.dimension = new _dimension_config__WEBPACK_IMPORTED_MODULE_1__["DimensionConfig"]();
 
         if (mode === _gauge_constants__WEBPACK_IMPORTED_MODULE_0__["GaugeMode"].Vertical) {
           gridConfig.dimension.autoWidth = false;
