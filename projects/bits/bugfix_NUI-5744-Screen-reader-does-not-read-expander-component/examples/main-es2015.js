@@ -24054,7 +24054,6 @@ class MenuKeyControlService {
             event.preventDefault();
         }
         if (event.code === _constants__WEBPACK_IMPORTED_MODULE_3__["KEYBOARD_CODE"].ARROW_DOWN) {
-            event.preventDefault();
             this.popup.toggleOpened(event);
         }
     }
