@@ -31181,15 +31181,11 @@ class ToolbarComponent {
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["takeUntil"])(this.destroy$))
             .subscribe((buttons) => {
             this.toolbarItems = buttons.toArray().slice().map(b => b["el"].nativeElement);
-            if (this.menu && this.menu.menuToggle) {
-                if (!buttons.length) {
-                    // In case all buttons are hidden within the Commands menu we want this menu to receive the focus
-                    this.menu.menuToggle.nativeElement.setAttribute("tabindex", "0");
-                }
-                else {
-                    // If at least one button is visible in the toolbar it should receive the focus first upon navigating onto the toolbar
-                    this.menu.menuToggle.nativeElement.setAttribute("tabindex", "-1");
-                }
+            if (this.menu) {
+                // In case all buttons are hidden within the Commands menu we want this menu to receive the focus
+                // If at least one button is visible in the toolbar it should receive the focus first upon navigating onto the toolbar
+                const tabIndex = buttons.length ? "-1" : "0";
+                this.menu.menuToggle.nativeElement.setAttribute("tabindex", tabIndex);
                 this.toolbarItems.push(this.menu.menuToggle.nativeElement);
             }
             this.keyboardService.setToolbarItems(this.toolbarItems);
