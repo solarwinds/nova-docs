@@ -2863,7 +2863,11 @@ class ChartAssist {
         if (updateLegend) {
             this.legendInteractionAssist.update(processedSeriesSet);
         }
-        const seriesSet = processedSeriesSet.map(s => this.populateProperties(s));
+        // add render states to the series for use in the chart
+        const seriesSet = processedSeriesSet.map(s => {
+            var _a;
+            return Object.assign({ renderState: (_a = this.renderStatesIndex[s.id]) === null || _a === void 0 ? void 0 : _a.state }, s);
+        });
         this.chart.update(seriesSet);
         this.publishRenderStates();
     }
@@ -2950,10 +2954,6 @@ class ChartAssist {
     }
     publishRenderStates() {
         this.chart.setSeriesStates(this.legendInteractionAssist.getSeriesStates());
-    }
-    populateProperties(chartSeries) {
-        var _a;
-        return Object.assign({ renderState: (_a = this.renderStatesIndex[chartSeries.id]) === null || _a === void 0 ? void 0 : _a.state }, chartSeries);
     }
 }
 class LegendInteractionAssist {
