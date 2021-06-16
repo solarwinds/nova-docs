@@ -4730,10 +4730,15 @@
 
             if (updateLegend) {
               this.legendInteractionAssist.update(processedSeriesSet);
-            }
+            } // add render states to the series for use in the chart
+
 
             var seriesSet = processedSeriesSet.map(function (s) {
-              return _this18.populateProperties(s);
+              var _a;
+
+              return Object.assign({
+                renderState: (_a = _this18.renderStatesIndex[s.id]) === null || _a === void 0 ? void 0 : _a.state
+              }, s);
             });
             this.chart.update(seriesSet);
             this.publishRenderStates();
@@ -4846,15 +4851,6 @@
           key: "publishRenderStates",
           value: function publishRenderStates() {
             this.chart.setSeriesStates(this.legendInteractionAssist.getSeriesStates());
-          }
-        }, {
-          key: "populateProperties",
-          value: function populateProperties(chartSeries) {
-            var _a;
-
-            return Object.assign({
-              renderState: (_a = this.renderStatesIndex[chartSeries.id]) === null || _a === void 0 ? void 0 : _a.state
-            }, chartSeries);
           }
         }], [{
           key: "getLabel",
