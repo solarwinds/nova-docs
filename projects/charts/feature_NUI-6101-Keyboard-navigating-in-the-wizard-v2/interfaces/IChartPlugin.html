@@ -145,8 +145,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="234"
-                            class="link-to-prism">src/core/common/types.ts:234</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="238"
+                            class="link-to-prism">src/core/common/types.ts:238</a></div>
                 </td>
             </tr>
 
@@ -186,8 +186,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="225"
-                            class="link-to-prism">src/core/common/types.ts:225</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="229"
+                            class="link-to-prism">src/core/common/types.ts:229</a></div>
                 </td>
             </tr>
 
@@ -227,8 +227,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="228"
-                            class="link-to-prism">src/core/common/types.ts:228</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="232"
+                            class="link-to-prism">src/core/common/types.ts:232</a></div>
                 </td>
             </tr>
 
@@ -268,8 +268,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="231"
-                            class="link-to-prism">src/core/common/types.ts:231</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="235"
+                            class="link-to-prism">src/core/common/types.ts:235</a></div>
                 </td>
             </tr>
 
@@ -443,22 +443,26 @@ export interface IRadialRendererConfig extends IRendererConfig {
 }
 
 /**
+ * Standard configuration for gauge threshold renderers
+ */
+export interface IGaugeThresholdsRendererConfig {
+    /** The radius of each threshold marker */
+    markerRadius?: StandardGaugeThresholdMarkerRadius | number;
+    /** Boolean indicating whether the renderer is enabled */
+    enabled?: boolean;
+}
+
+/**
  * @ignore
  * Configuration for the DonutGaugeThresholdsRenderer
  */
-export interface IDonutGaugeThresholdsRendererConfig extends IRadialRendererConfig {
-    /** The radius of each threshold marker */
-    markerRadius?: StandardGaugeThresholdMarkerRadius | number;
-}
+export interface IDonutGaugeThresholdsRendererConfig extends IRadialRendererConfig, IGaugeThresholdsRendererConfig {}
 
 /**
  * @ignore
  * Configuration for the LinearGaugeThresholdsRenderer
  */
-export interface ILinearGaugeThresholdsRendererConfig extends IRendererConfig {
-    /** The radius of each threshold marker */
-    markerRadius?: StandardGaugeThresholdMarkerRadius | number;
-}
+export interface ILinearGaugeThresholdsRendererConfig extends IRendererConfig, IGaugeThresholdsRendererConfig {}
 
 export interface ILinearScales {
     x: ScaleLinear&lt;number, number&gt;;

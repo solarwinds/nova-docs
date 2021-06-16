@@ -613,7 +613,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h2>Layout</h2>\n<h3>Horizontal Layout Wizard</h3>\n<p>\n    To use the horizontal wizard component, place a <code>nui-wizard-horizontal</code> element in your template and include one or more\n    <code><a href=\"../components/WizardStepComponent.html\" target=\"_blank\">nui-wizard-step-v2</a></code> elements as children of the\n    <code>nui-wizard-horizontal</code> element.\n</p>\n<nui-example-wrapper filenamePrefix=\"wizard-horizontal-layout\" exampleTitle=\"Horizontal Layout Wizard\">\n    <nui-wizard-horizontal-example></nui-wizard-horizontal-example>\n</nui-example-wrapper>\n\n<!--Will be updated in scope of the NUI-6099-->\n\n<!--<h3>Vertical Layout Wizard</h3>-->\n<!--<nui-example-wrapper filenamePrefix=\"wizard-vertical-layout\" exampleTitle=\"Vertical Layout Wizard\">-->\n<!--    <nui-wizard-vertical-example></nui-wizard-vertical-example>-->\n<!--</nui-example-wrapper>-->\n\n<h3>Usage with a dialog</h3>\n<p>You can pass an existing wizard component as content of the dialog window. </p>\n<p>You should insert wizard component in dialog body. </p>\n<nui-example-wrapper filenamePrefix=\"wizard-dialog\" exampleTitle=\"wizard in dialog\">\n    <nui-wizard-v2-dialog-example></nui-wizard-v2-dialog-example>\n</nui-example-wrapper>\n\n<h3>Busy step</h3>\n<p>You can make your step busy to forbid actions.</p>\n<nui-example-wrapper filenamePrefix=\"wizard-busy\" exampleTitle=\"wizard step busy\">\n    <nui-wizard-v2-busy-example></nui-wizard-v2-busy-example>\n</nui-example-wrapper>\n\n<h3>Custom footer</h3>\n<p>Customizing the footer layout content and style for each step is quite easy, as you can see in the example below:</p>\n<nui-example-wrapper filenamePrefix=\"wizard-custom-footer\" exampleTitle=\"Wizard with Custom Footer\">\n    <nui-wizard-custom-footer-example></nui-wizard-custom-footer-example>\n</nui-example-wrapper>\n\n<h3>Adding step dynamically</h3>\n<p>You are able to add wizard steps dynamically.</p>\n<nui-example-wrapper filenamePrefix=\"wizard-dynamic\" exampleTitle=\"wizard add dynamic step\">\n    <nui-wizard-dynamic-example></nui-wizard-dynamic-example>\n</nui-example-wrapper>\n\n<h3>Removing step</h3>\n<p>You are able to remove steps by index.</p>\n<nui-example-wrapper filenamePrefix=\"wizard-remove-step\" exampleTitle=\"wizard remove step\">\n    <nui-wizard-remove-step-example></nui-wizard-remove-step-example>\n</nui-example-wrapper>\n\n<!--TODO Fix Custom Layout Wizard in scope NUI-6112 -->\n<!--<h3>Custom Layout Wizard</h3>-->\n<!--<nui-example-wrapper filenamePrefix=\"wizard-custom-layout\" exampleTitle=\"Custom Layout Wizard\">-->\n<!--    <nui-wizard-custom-example></nui-wizard-custom-example>-->\n<!--</nui-example-wrapper>-->\n\n<h3>Async Form Validation</h3>\n<p>\n    To handle async validation check 'PENDING' status of WizardV2Step stepControl\n</p>\n<nui-example-wrapper filenamePrefix=\"wizard-async-form-validation\" exampleTitle=\"Async Form Validation\">\n    <nui-wizard-async-form-validation-example></nui-wizard-async-form-validation-example>\n</nui-example-wrapper>\n\n\n<h3>Wizard with custom step state icons</h3>\n<p>\n    The wizard step can be in four different states: <code>initial</code>, <code>selected</code>, <code>completed</code>, and <code>error</code>.\n    For each of these steps there is a corresponding icon in the header for a certain step, which dynamically changes along with the step state change.\n    It is possible to override the default set of step state icons and their colors, and there are two ways of doing that.\n</p>\n\n<ol>\n    <li>Global</li>\n    <li>Step Specific</li>\n</ol>\n\n<p><u>Global</u></p>\n<p>\n    Nova provides you with the <code>WIZARD_CONFIG</code> injection token, which allows you to override the default wizard settings in a global context. For instance, \n    set the necessary icons settings with this token on a module level to allow all wizards within a module to receive the same icon configuration.\n</p>\n<p><u>Step Specific</u></p>\n<p>\n    Use the <code>stepIconsConfig</code> input of the <code>nui-wizard-step-v2</code> component to pass the step icons config specifically to this step. It will \n    override the global settings for this particular step.\n</p>\n<nui-example-wrapper filenamePrefix=\"wizard-with-custom-icons-example\" exampleTitle=\"Wizard with custom icons\">\n    <nui-wizard-with-custom-icons-example></nui-wizard-with-custom-icons-example>\n</nui-example-wrapper>\n\n<h3>Restore Wizard State</h3>\n<p>\n    To restore wizard state you need to pass previous wizard steps as input\n</p>\n<nui-example-wrapper filenamePrefix=\"wizard-restore-state\" exampleTitle=\"Restore Wizard State\">\n    <nui-wizard-restore-state-example></nui-wizard-restore-state-example>\n</nui-example-wrapper>\n\n<h2>Keyboard interaction</h2>\n<ul>\n    <li><code>TAB/SHIFT+TAB</code> for focusing on the next/previous tabbable element</li>\n    <li><code>LEFT_ARROW/RIGHT_ARROW</code> for navigation on the previous/next step header</li>\n    <li><code>HOME/END</code> for focusing on the first/last step header</li>\n    <li><code>ENTER, SPACE</code> to select the step</li>\n</ul>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<h2>Layout</h2>\n<h3>Horizontal Layout Wizard</h3>\n<p>\n    To use the horizontal wizard component, place a <code>nui-wizard-horizontal</code> element in your template and include one or more\n    <code><a href=\"../components/WizardStepComponent.html\" target=\"_blank\">nui-wizard-step-v2</a></code> elements as children of the\n    <code>nui-wizard-horizontal</code> element.\n</p>\n<nui-example-wrapper filenamePrefix=\"wizard-horizontal-layout\" exampleTitle=\"Horizontal Layout Wizard\">\n    <nui-wizard-horizontal-example></nui-wizard-horizontal-example>\n</nui-example-wrapper>\n\n<!--Will be updated in scope of the NUI-6099-->\n\n<!--<h3>Vertical Layout Wizard</h3>-->\n<!--<nui-example-wrapper filenamePrefix=\"wizard-vertical-layout\" exampleTitle=\"Vertical Layout Wizard\">-->\n<!--    <nui-wizard-vertical-example></nui-wizard-vertical-example>-->\n<!--</nui-example-wrapper>-->\n\n<h3>Usage with a dialog</h3>\n<p>You can pass an existing wizard component as content of the dialog window. </p>\n<p>You should insert wizard component in dialog body. </p>\n<nui-example-wrapper filenamePrefix=\"wizard-dialog\" exampleTitle=\"wizard in dialog\">\n    <nui-wizard-v2-dialog-example></nui-wizard-v2-dialog-example>\n</nui-example-wrapper>\n\n<h3>Busy step</h3>\n<p>You can make your step busy to forbid actions.</p>\n<nui-example-wrapper filenamePrefix=\"wizard-busy\" exampleTitle=\"wizard step busy\">\n    <nui-wizard-v2-busy-example></nui-wizard-v2-busy-example>\n</nui-example-wrapper>\n\n<h3>Custom footer</h3>\n<p>Customizing the footer layout content and style for each step is quite easy, as you can see in the example below:</p>\n<nui-example-wrapper filenamePrefix=\"wizard-custom-footer\" exampleTitle=\"Wizard with Custom Footer\">\n    <nui-wizard-custom-footer-example></nui-wizard-custom-footer-example>\n</nui-example-wrapper>\n\n<h3>Adding step dynamically</h3>\n<p>You are able to add wizard steps dynamically.</p>\n<nui-example-wrapper filenamePrefix=\"wizard-dynamic\" exampleTitle=\"wizard add dynamic step\">\n    <nui-wizard-dynamic-example></nui-wizard-dynamic-example>\n</nui-example-wrapper>\n\n<h3>Removing step</h3>\n<p>You are able to remove steps by index.</p>\n<nui-example-wrapper filenamePrefix=\"wizard-remove-step\" exampleTitle=\"wizard remove step\">\n    <nui-wizard-remove-step-example></nui-wizard-remove-step-example>\n</nui-example-wrapper>\n\n<!--TODO Fix Custom Layout Wizard in scope NUI-6112 -->\n<!--<h3>Custom Layout Wizard</h3>-->\n<!--<nui-example-wrapper filenamePrefix=\"wizard-custom-layout\" exampleTitle=\"Custom Layout Wizard\">-->\n<!--    <nui-wizard-custom-example></nui-wizard-custom-example>-->\n<!--</nui-example-wrapper>-->\n\n<h3>Async Form Validation</h3>\n<p>\n    To handle async validation check 'PENDING' status of WizardV2Step stepControl\n</p>\n<nui-example-wrapper filenamePrefix=\"wizard-async-form-validation\" exampleTitle=\"Async Form Validation\">\n    <nui-wizard-async-form-validation-example></nui-wizard-async-form-validation-example>\n</nui-example-wrapper>\n\n\n<h3>Wizard with custom step state icons</h3>\n<p>\n    The wizard step can be in four different states: <code>initial</code>, <code>selected</code>, <code>completed</code>, and <code>error</code>.\n    For each of these steps there is a corresponding icon in the header for a certain step, which dynamically changes along with the step state change.\n    It is possible to override the default set of step state icons and their colors, and there are two ways of doing that.\n</p>\n\n<ol>\n    <li>Global</li>\n    <li>Step Specific</li>\n</ol>\n\n<p><u>Global</u></p>\n<p>\n    Nova provides you with the <code>WIZARD_CONFIG</code> injection token, which allows you to override the default wizard settings in a global context. For instance, \n    set the necessary icons settings with this token on a module level to allow all wizards within a module to receive the same icon configuration.\n</p>\n<p><u>Step Specific</u></p>\n<p>\n    Use the <code>stepIconsConfig</code> input of the <code>nui-wizard-step-v2</code> component to pass the step icons config specifically to this step. It will \n    override the global settings for this particular step.\n</p>\n<nui-example-wrapper filenamePrefix=\"wizard-with-custom-icons-example\" exampleTitle=\"Wizard with custom icons\">\n    <nui-wizard-with-custom-icons-example></nui-wizard-with-custom-icons-example>\n</nui-example-wrapper>\n\n<h3>Restore Wizard State</h3>\n<p>\n    To restore wizard state you need to pass previous wizard steps as input\n</p>\n<nui-example-wrapper filenamePrefix=\"wizard-restore-state\" exampleTitle=\"Restore Wizard State\">\n    <nui-wizard-restore-state-example></nui-wizard-restore-state-example>\n</nui-example-wrapper>\n\n<h3>Wizard Step Change Event Example</h3>\n<p>\n    You are able to subscribe when the selected step has changed.\n</p>\n<nui-example-wrapper filenamePrefix=\"wizard-step-change-example\" exampleTitle=\"Wizard Step Change\">\n    <nui-wizard-step-change-example></nui-wizard-step-change-example>\n</nui-example-wrapper>\n\n<h2>Keyboard interaction</h2>\n<ul>\n    <li><code>TAB/SHIFT+TAB</code> for focusing on the next/previous tabbable element</li>\n    <li><code>LEFT_ARROW/RIGHT_ARROW</code> for navigation on the previous/next step header</li>\n    <li><code>HOME/END</code> for focusing on the first/last step header</li>\n    <li><code>ENTER, SPACE</code> to select the step</li>\n</ul>\n");
 
 /***/ }),
 
@@ -973,7 +973,8 @@ WizardModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjec
         _index__WEBPACK_IMPORTED_MODULE_3__["WizardRemoveStepExampleComponent"],
         _index__WEBPACK_IMPORTED_MODULE_3__["WizardAsyncFormValidationExampleComponent"],
         _index__WEBPACK_IMPORTED_MODULE_3__["WizardWithCustomIconsExampleComponent"],
-        _index__WEBPACK_IMPORTED_MODULE_3__["WizardRestoreStateExampleComponent"]], imports: [_nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiButtonModule"],
+        _index__WEBPACK_IMPORTED_MODULE_3__["WizardRestoreStateExampleComponent"],
+        _index__WEBPACK_IMPORTED_MODULE_3__["WizardStepChangeExampleComponent"]], imports: [_nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiButtonModule"],
         _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiMessageModule"],
         _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiDocsModule"],
         _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiTextboxModule"],
@@ -1584,6 +1585,19 @@ WizardCustomFooterExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODUL
 
 /***/ }),
 
+/***/ "OrrU":
+/*!*******************************************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/wizard-v2/wizard-step-change-example/wizard-step-change-example.component.html ***!
+  \*******************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<nui-wizard-horizontal #wizard (selectionChange)=\"onSelectionChange($event)\">\n    <nui-wizard-step-v2 *ngFor=\"let step of steps; let i = index; let isLast = last\">\n        <ng-template wizardStepLabel>{{step.title}}</ng-template>\n        <ng-container *ngTemplateOutlet=\"step.templateRef\"></ng-container>\n        <ng-template wizardStepFooter>\n            <ng-container *ngIf=\"i !== 0\">\n                <button type=\"button\" nuiWizardPrevious nui-button icon=\"caret-left\">\n                    Previous\n                </button>\n            </ng-container>\n            <ng-container *ngIf=\"!isLast\">\n                <button nuiWizardNext\n                        type=\"button\"\n                        nui-button\n                        displayStyle=\"primary\"\n                        icon=\"caret-right\"\n                        iconRight=\"true\"\n                >Next</button>\n            </ng-container>\n        </ng-template>\n    </nui-wizard-step-v2>\n\n    <ng-template #dynamicStep>\n        <p i18n>Hi! I'm a step added dynamically using a TemplateRef by clicking a button from the first step !</p>\n    </ng-template>\n\n    <ng-template #normalStep>\n        <p i18n>Hi! You can add next step dynamically</p>\n\n        <button nui-button type=\"button\" (click)=\"addStep(dynamicStep)\">\n            Add dynamic step\n        </button>\n\n    </ng-template>\n</nui-wizard-horizontal>\n\n");
+
+/***/ }),
+
 /***/ "PL0w":
 /*!******************************************************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/wizard-v2/wizard-custom-layout/wizard-custom-example.component.ts ***!
@@ -1643,6 +1657,8 @@ var map = {
 	"./wizard-remove-step/wizard-remove-step-example.component.ts": "0dsp",
 	"./wizard-restore-state/wizard-restore-state.example.component.html": "gtxr",
 	"./wizard-restore-state/wizard-restore-state.example.component.ts": "knXS",
+	"./wizard-step-change-example/wizard-step-change-example.component.html": "OrrU",
+	"./wizard-step-change-example/wizard-step-change-example.component.ts": "z1B6",
 	"./wizard-vertical-layout/wizard-vertical-example.component.html": "A7H6",
 	"./wizard-vertical-layout/wizard-vertical-example.component.ts": "Cu7f",
 	"./wizard-with-custom-icons/wizard-with-custom-icons-example.component.html": "oZ+g",
@@ -1681,7 +1697,7 @@ webpackContext.id = "Ptpp";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { NgModule } from \"@angular/core\";\nimport { FormsModule, ReactiveFormsModule } from \"@angular/forms\";\nimport { RouterModule } from \"@angular/router\";\nimport {\n    DEMO_PATH_TOKEN,\n    NuiBusyModule,\n    NuiButtonModule,\n    NuiCheckboxModule,\n    NuiDatePickerModule,\n    NuiDialogModule,\n    NuiDocsModule,\n    NuiFormFieldModule,\n    NuiIconModule,\n    NuiMessageModule,\n    NuiProgressModule,\n    NuiRadioModule,\n    NuiSpinnerModule,\n    NuiTextboxModule,\n    NuiValidationMessageModule,\n    NuiWizardV2Module,\n    SrlcStage,\n    NuiSelectV2Module,\n    WIZARD_CONFIG,\n    IWizardConfig,\n    WIZARD_CONFIG_DEFAULT,\n} from \"@nova-ui/bits\";\n\nimport {\n    WizardBusyExampleComponent,\n    WizardCustomComponent,\n    WizardCustomExampleComponent,\n    WizardCustomFooterExampleComponent,\n    WizardDialogExampleComponent,\n    WizardDocsComponent,\n    WizardDynamicExampleComponent,\n    WizardHorizontalExampleComponent,\n    WizardRemoveStepExampleComponent,\n    WizardVerticalExampleComponent,\n    WizardAsyncFormValidationExampleComponent,\n    WizardWithCustomIconsExampleComponent,\n    WizardRestoreStateExampleComponent,\n} from \"./index\";\n\nconst routes = [\n    {\n        path: \"\",\n        component: WizardDocsComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.alpha,\n            },\n            showThemeSwitcher: true,\n        },\n    },\n];\n\n@NgModule({\n    imports: [\n        NuiButtonModule,\n        NuiMessageModule,\n        NuiDocsModule,\n        NuiTextboxModule,\n        NuiRadioModule,\n        NuiCheckboxModule,\n        NuiDialogModule,\n        NuiValidationMessageModule,\n        NuiFormFieldModule,\n        FormsModule,\n        ReactiveFormsModule,\n        RouterModule.forChild(routes),\n        NuiWizardV2Module,\n        NuiSpinnerModule,\n        NuiBusyModule,\n        NuiProgressModule,\n        NuiDatePickerModule,\n        NuiIconModule,\n        NuiSelectV2Module,\n    ],\n    declarations: [\n        WizardDocsComponent,\n        WizardHorizontalExampleComponent,\n        WizardVerticalExampleComponent,\n        WizardCustomExampleComponent,\n        WizardCustomComponent,\n        WizardDialogExampleComponent,\n        WizardBusyExampleComponent,\n        WizardCustomFooterExampleComponent,\n        WizardDynamicExampleComponent,\n        WizardRemoveStepExampleComponent,\n        WizardAsyncFormValidationExampleComponent,\n        WizardWithCustomIconsExampleComponent,\n        WizardRestoreStateExampleComponent,\n    ],\n    providers: [\n        {\n            provide: DEMO_PATH_TOKEN,\n            useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/),\n        },\n    ],\n    exports: [\n        RouterModule,\n    ],\n})\nexport class WizardModule {}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import { NgModule } from \"@angular/core\";\nimport { FormsModule, ReactiveFormsModule } from \"@angular/forms\";\nimport { RouterModule } from \"@angular/router\";\nimport {\n    DEMO_PATH_TOKEN,\n    NuiBusyModule,\n    NuiButtonModule,\n    NuiCheckboxModule,\n    NuiDatePickerModule,\n    NuiDialogModule,\n    NuiDocsModule,\n    NuiFormFieldModule,\n    NuiIconModule,\n    NuiMessageModule,\n    NuiProgressModule,\n    NuiRadioModule,\n    NuiSpinnerModule,\n    NuiTextboxModule,\n    NuiValidationMessageModule,\n    NuiWizardV2Module,\n    SrlcStage,\n    NuiSelectV2Module,\n    WIZARD_CONFIG,\n    IWizardConfig,\n    WIZARD_CONFIG_DEFAULT,\n} from \"@nova-ui/bits\";\n\nimport {\n    WizardBusyExampleComponent,\n    WizardCustomComponent,\n    WizardCustomExampleComponent,\n    WizardCustomFooterExampleComponent,\n    WizardDialogExampleComponent,\n    WizardDocsComponent,\n    WizardDynamicExampleComponent,\n    WizardHorizontalExampleComponent,\n    WizardRemoveStepExampleComponent,\n    WizardVerticalExampleComponent,\n    WizardAsyncFormValidationExampleComponent,\n    WizardWithCustomIconsExampleComponent,\n    WizardRestoreStateExampleComponent,\n    WizardStepChangeExampleComponent,\n} from \"./index\";\n\nconst routes = [\n    {\n        path: \"\",\n        component: WizardDocsComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.alpha,\n            },\n            showThemeSwitcher: true,\n        },\n    },\n];\n\n@NgModule({\n    imports: [\n        NuiButtonModule,\n        NuiMessageModule,\n        NuiDocsModule,\n        NuiTextboxModule,\n        NuiRadioModule,\n        NuiCheckboxModule,\n        NuiDialogModule,\n        NuiValidationMessageModule,\n        NuiFormFieldModule,\n        FormsModule,\n        ReactiveFormsModule,\n        RouterModule.forChild(routes),\n        NuiWizardV2Module,\n        NuiSpinnerModule,\n        NuiBusyModule,\n        NuiProgressModule,\n        NuiDatePickerModule,\n        NuiIconModule,\n        NuiSelectV2Module,\n    ],\n    declarations: [\n        WizardDocsComponent,\n        WizardHorizontalExampleComponent,\n        WizardVerticalExampleComponent,\n        WizardCustomExampleComponent,\n        WizardCustomComponent,\n        WizardDialogExampleComponent,\n        WizardBusyExampleComponent,\n        WizardCustomFooterExampleComponent,\n        WizardDynamicExampleComponent,\n        WizardRemoveStepExampleComponent,\n        WizardAsyncFormValidationExampleComponent,\n        WizardWithCustomIconsExampleComponent,\n        WizardRestoreStateExampleComponent,\n        WizardStepChangeExampleComponent,\n    ],\n    providers: [\n        {\n            provide: DEMO_PATH_TOKEN,\n            useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/),\n        },\n    ],\n    exports: [\n        RouterModule,\n    ],\n})\nexport class WizardModule {}\n");
 
 /***/ }),
 
@@ -1995,6 +2011,152 @@ WizardDynamicExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](11);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", !ctx.enableDynamicStepWithButton ? "Enable" : "Disable", " dynamic step w/button ");
     } }, directives: [_src_lib_wizard_v2_wizard_horizontal_wizard_horizontal_component__WEBPACK_IMPORTED_MODULE_1__["WizardHorizontalComponent"], _src_lib_wizard_v2_wizard_step_wizard_step_component__WEBPACK_IMPORTED_MODULE_2__["WizardStepV2Component"], _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_3__["ButtonComponent"], _src_lib_wizard_v2_wizard_step_footer_directive__WEBPACK_IMPORTED_MODULE_4__["WizardStepFooterDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgIf"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgTemplateOutlet"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgForOf"], _src_lib_wizard_v2_wizard_step_label_directive__WEBPACK_IMPORTED_MODULE_6__["WizardStepLabelDirective"], _src_lib_wizard_v2_wizard_button_wizard_button__WEBPACK_IMPORTED_MODULE_7__["WizardStepperPreviousDirective"], _src_lib_wizard_v2_wizard_button_wizard_button__WEBPACK_IMPORTED_MODULE_7__["WizardStepperNextDirective"]], encapsulation: 2 });
+
+
+/***/ }),
+
+/***/ "eHNd":
+/*!***************************************************************************************************************!*\
+  !*** ./demo/src/components/demo/wizard-v2/wizard-step-change-example/wizard-step-change-example.component.ts ***!
+  \***************************************************************************************************************/
+/*! exports provided: WizardStepChangeExampleComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WizardStepChangeExampleComponent", function() { return WizardStepChangeExampleComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @nova-ui/bits */ "b5Xb");
+/* harmony import */ var _src_lib_wizard_v2_wizard_horizontal_wizard_horizontal_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../src/lib/wizard-v2/wizard-horizontal/wizard-horizontal.component */ "ZgeA");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var _src_lib_wizard_v2_wizard_step_wizard_step_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../../src/lib/wizard-v2/wizard-step/wizard-step.component */ "9Oqf");
+/* harmony import */ var _src_lib_wizard_v2_wizard_step_label_directive__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../../../src/lib/wizard-v2/wizard-step-label.directive */ "JSul");
+/* harmony import */ var _src_lib_wizard_v2_wizard_step_footer_directive__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../../../src/lib/wizard-v2/wizard-step-footer.directive */ "ZSn2");
+/* harmony import */ var _src_lib_wizard_v2_wizard_button_wizard_button__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../../../../src/lib/wizard-v2/wizard-button/wizard-button */ "sp5V");
+/* harmony import */ var _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../../../../src/lib/button/button.component */ "6urz");
+
+
+
+
+
+
+
+
+
+
+
+const _c0 = ["normalStep"];
+function WizardStepChangeExampleComponent_nui_wizard_step_v2_2_ng_template_1_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](0);
+} if (rf & 2) {
+    const step_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](step_r6.title);
+} }
+function WizardStepChangeExampleComponent_nui_wizard_step_v2_2_ng_container_2_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainer"](0);
+} }
+function WizardStepChangeExampleComponent_nui_wizard_step_v2_2_ng_template_3_ng_container_0_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](0);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "button", 9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, " Previous ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
+} }
+function WizardStepChangeExampleComponent_nui_wizard_step_v2_2_ng_template_3_ng_container_1_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](0);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "button", 10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Next");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
+} }
+function WizardStepChangeExampleComponent_nui_wizard_step_v2_2_ng_template_3_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, WizardStepChangeExampleComponent_nui_wizard_step_v2_2_ng_template_3_ng_container_0_Template, 3, 0, "ng-container", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, WizardStepChangeExampleComponent_nui_wizard_step_v2_2_ng_template_3_ng_container_1_Template, 3, 0, "ng-container", 8);
+} if (rf & 2) {
+    const ctx_r15 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+    const i_r7 = ctx_r15.index;
+    const isLast_r8 = ctx_r15.last;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", i_r7 !== 0);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", !isLast_r8);
+} }
+function WizardStepChangeExampleComponent_nui_wizard_step_v2_2_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "nui-wizard-step-v2");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, WizardStepChangeExampleComponent_nui_wizard_step_v2_2_ng_template_1_Template, 1, 1, "ng-template", 5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, WizardStepChangeExampleComponent_nui_wizard_step_v2_2_ng_container_2_Template, 1, 0, "ng-container", 6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, WizardStepChangeExampleComponent_nui_wizard_step_v2_2_ng_template_3_Template, 2, 2, "ng-template", 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const step_r6 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngTemplateOutlet", step_r6.templateRef);
+} }
+function WizardStepChangeExampleComponent_ng_template_3_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](1, 11);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} }
+function WizardStepChangeExampleComponent_ng_template_5_Template(rf, ctx) { if (rf & 1) {
+    const _r17 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](1, 12);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "button", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function WizardStepChangeExampleComponent_ng_template_5_Template_button_click_2_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r17); const ctx_r16 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); const _r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](4); return ctx_r16.addStep(_r2); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, " Add dynamic step ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} }
+class WizardStepChangeExampleComponent {
+    constructor(toastService) {
+        this.toastService = toastService;
+        this.steps = [];
+    }
+    ngAfterViewInit() {
+        this.addStep(this.normalStep, $localize `Normal step`);
+    }
+    addStep(templateRef, title) {
+        this.steps.push({ title: title !== null && title !== void 0 ? title : `Dynamic Step`, templateRef: templateRef });
+    }
+    onSelectionChange($event) {
+        this.toastService.info({
+            title: $localize `Selected step changed.`,
+            message: $localize `You moved from step with index ${$event.previouslySelectedIndex} to step with index ${$event.selectedIndex}`,
+            options: {
+                timeOut: 5000,
+                extendedTimeOut: 2000,
+            },
+        });
+    }
+}
+WizardStepChangeExampleComponent.ɵfac = function WizardStepChangeExampleComponent_Factory(t) { return new (t || WizardStepChangeExampleComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["ToastService"])); };
+WizardStepChangeExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: WizardStepChangeExampleComponent, selectors: [["nui-wizard-step-change-example"]], viewQuery: function WizardStepChangeExampleComponent_Query(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_c0, 1);
+    } if (rf & 2) {
+        let _t;
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.normalStep = _t.first);
+    } }, decls: 7, vars: 1, consts: function () { let i18n_1; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+        const MSG_EXTERNAL_2900895229541262648$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_STEP_CHANGE_EXAMPLE_WIZARD_STEP_CHANGE_EXAMPLE_COMPONENT_TS__2 = goog.getMsg("Hi! I'm a step added dynamically using a TemplateRef by clicking a button from the first step !");
+        i18n_1 = MSG_EXTERNAL_2900895229541262648$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_STEP_CHANGE_EXAMPLE_WIZARD_STEP_CHANGE_EXAMPLE_COMPONENT_TS__2;
+    }
+    else {
+        i18n_1 = $localize `:␟256cc8ce36c7ece03c014ef84736f10288179f3f␟2900895229541262648:Hi! I'm a step added dynamically using a TemplateRef by clicking a button from the first step !`;
+    } let i18n_3; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+        const MSG_EXTERNAL_4074000604906025359$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_STEP_CHANGE_EXAMPLE_WIZARD_STEP_CHANGE_EXAMPLE_COMPONENT_TS__4 = goog.getMsg("Hi! You can add next step dynamically");
+        i18n_3 = MSG_EXTERNAL_4074000604906025359$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_STEP_CHANGE_EXAMPLE_WIZARD_STEP_CHANGE_EXAMPLE_COMPONENT_TS__4;
+    }
+    else {
+        i18n_3 = $localize `:␟9dfa7b9ebe128bde7cab896a85986ebb450f99f7␟4074000604906025359:Hi! You can add next step dynamically`;
+    } return [[3, "selectionChange"], ["wizard", ""], [4, "ngFor", "ngForOf"], ["dynamicStep", ""], ["normalStep", ""], ["wizardStepLabel", ""], [4, "ngTemplateOutlet"], ["wizardStepFooter", ""], [4, "ngIf"], ["type", "button", "nuiWizardPrevious", "", "nui-button", "", "icon", "caret-left"], ["nuiWizardNext", "", "type", "button", "nui-button", "", "displayStyle", "primary", "icon", "caret-right", "iconRight", "true"], i18n_1, i18n_3, ["nui-button", "", "type", "button", 3, "click"]]; }, template: function WizardStepChangeExampleComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "nui-wizard-horizontal", 0, 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("selectionChange", function WizardStepChangeExampleComponent_Template_nui_wizard_horizontal_selectionChange_0_listener($event) { return ctx.onSelectionChange($event); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, WizardStepChangeExampleComponent_nui_wizard_step_v2_2_Template, 4, 1, "nui-wizard-step-v2", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, WizardStepChangeExampleComponent_ng_template_3_Template, 2, 0, "ng-template", null, 3, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](5, WizardStepChangeExampleComponent_ng_template_5_Template, 4, 0, "ng-template", null, 4, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.steps);
+    } }, directives: [_src_lib_wizard_v2_wizard_horizontal_wizard_horizontal_component__WEBPACK_IMPORTED_MODULE_2__["WizardHorizontalComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgForOf"], _src_lib_wizard_v2_wizard_step_wizard_step_component__WEBPACK_IMPORTED_MODULE_4__["WizardStepV2Component"], _src_lib_wizard_v2_wizard_step_label_directive__WEBPACK_IMPORTED_MODULE_5__["WizardStepLabelDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgTemplateOutlet"], _src_lib_wizard_v2_wizard_step_footer_directive__WEBPACK_IMPORTED_MODULE_6__["WizardStepFooterDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgIf"], _src_lib_wizard_v2_wizard_button_wizard_button__WEBPACK_IMPORTED_MODULE_7__["WizardStepperPreviousDirective"], _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_8__["ButtonComponent"], _src_lib_wizard_v2_wizard_button_wizard_button__WEBPACK_IMPORTED_MODULE_7__["WizardStepperNextDirective"]], encapsulation: 2 });
 
 
 /***/ }),
@@ -2626,7 +2788,7 @@ WizardCustomExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_4__[
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("export * from \"./wizard-docs/wizard-docs.component\";\nexport * from \"./wizard-horizontal-layout/wizard-horizontal-example.component\";\nexport * from \"./wizard-vertical-layout/wizard-vertical-example.component\";\nexport * from \"./wizard-custom-layout/wizard-custom-example.component\";\nexport * from \"./wizard-busy/wizard-busy.example.component\";\nexport * from \"./wizard-dialog/wizard-dialog.example.component\";\nexport * from \"./wizard-custom-footer/wizard-custom-footer-example.component\";\nexport * from \"./wizard-dynamic/wizard-dynamic.example.component\";\nexport * from \"./wizard-remove-step/wizard-remove-step-example.component\";\nexport * from \"./wizard-async-validation-form/wizard-async-form-validation.example.component\";\nexport * from \"./wizard-with-custom-icons/wizard-with-custom-icons-example.component\";\nexport * from \"./wizard-restore-state/wizard-restore-state.example.component\";\n\n");
+/* harmony default export */ __webpack_exports__["default"] = ("export * from \"./wizard-docs/wizard-docs.component\";\nexport * from \"./wizard-horizontal-layout/wizard-horizontal-example.component\";\nexport * from \"./wizard-vertical-layout/wizard-vertical-example.component\";\nexport * from \"./wizard-custom-layout/wizard-custom-example.component\";\nexport * from \"./wizard-busy/wizard-busy.example.component\";\nexport * from \"./wizard-dialog/wizard-dialog.example.component\";\nexport * from \"./wizard-custom-footer/wizard-custom-footer-example.component\";\nexport * from \"./wizard-dynamic/wizard-dynamic.example.component\";\nexport * from \"./wizard-remove-step/wizard-remove-step-example.component\";\nexport * from \"./wizard-async-validation-form/wizard-async-form-validation.example.component\";\nexport * from \"./wizard-with-custom-icons/wizard-with-custom-icons-example.component\";\nexport * from \"./wizard-restore-state/wizard-restore-state.example.component\";\nexport * from \"./wizard-step-change-example/wizard-step-change-example.component\";\n");
 
 /***/ }),
 
@@ -3291,7 +3453,7 @@ __webpack_require__.r(__webpack_exports__);
 /*!*****************************************************!*\
   !*** ./demo/src/components/demo/wizard-v2/index.ts ***!
   \*****************************************************/
-/*! exports provided: WizardDocsComponent, WizardHorizontalExampleComponent, WizardVerticalExampleComponent, WizardCustomComponent, WizardCustomExampleComponent, WizardBusyExampleComponent, WizardDialogExampleComponent, WizardCustomFooterExampleComponent, WizardDynamicExampleComponent, WizardRemoveStepExampleComponent, WizardAsyncFormValidationExampleComponent, WizardWithCustomIconsExampleComponent, WizardRestoreStateExampleComponent */
+/*! exports provided: WizardDocsComponent, WizardHorizontalExampleComponent, WizardVerticalExampleComponent, WizardCustomComponent, WizardCustomExampleComponent, WizardBusyExampleComponent, WizardDialogExampleComponent, WizardCustomFooterExampleComponent, WizardDynamicExampleComponent, WizardRemoveStepExampleComponent, WizardAsyncFormValidationExampleComponent, WizardWithCustomIconsExampleComponent, WizardRestoreStateExampleComponent, WizardStepChangeExampleComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3334,6 +3496,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wizard_restore_state_wizard_restore_state_example_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./wizard-restore-state/wizard-restore-state.example.component */ "/QbS");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "WizardRestoreStateExampleComponent", function() { return _wizard_restore_state_wizard_restore_state_example_component__WEBPACK_IMPORTED_MODULE_11__["WizardRestoreStateExampleComponent"]; });
 
+/* harmony import */ var _wizard_step_change_example_wizard_step_change_example_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./wizard-step-change-example/wizard-step-change-example.component */ "eHNd");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "WizardStepChangeExampleComponent", function() { return _wizard_step_change_example_wizard_step_change_example_component__WEBPACK_IMPORTED_MODULE_12__["WizardStepChangeExampleComponent"]; });
+
+
 
 
 
@@ -3371,6 +3537,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wizard_async_validation_form_wizard_async_form_validation_example_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../wizard-async-validation-form/wizard-async-form-validation.example.component */ "mbzW");
 /* harmony import */ var _wizard_with_custom_icons_wizard_with_custom_icons_example_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../wizard-with-custom-icons/wizard-with-custom-icons-example.component */ "4Nvg");
 /* harmony import */ var _wizard_restore_state_wizard_restore_state_example_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../wizard-restore-state/wizard-restore-state.example.component */ "/QbS");
+/* harmony import */ var _wizard_step_change_example_wizard_step_change_example_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../wizard-step-change-example/wizard-step-change-example.component */ "eHNd");
+
 
 
 
@@ -3385,7 +3553,7 @@ __webpack_require__.r(__webpack_exports__);
 class WizardDocsComponent {
 }
 WizardDocsComponent.ɵfac = function WizardDocsComponent_Factory(t) { return new (t || WizardDocsComponent)(); };
-WizardDocsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: WizardDocsComponent, selectors: [["nui-wizard-v2-example"]], decls: 123, vars: 0, consts: [["href", "../components/WizardStepComponent.html", "target", "_blank"], ["filenamePrefix", "wizard-horizontal-layout", "exampleTitle", "Horizontal Layout Wizard"], ["filenamePrefix", "wizard-dialog", "exampleTitle", "wizard in dialog"], ["filenamePrefix", "wizard-busy", "exampleTitle", "wizard step busy"], ["filenamePrefix", "wizard-custom-footer", "exampleTitle", "Wizard with Custom Footer"], ["filenamePrefix", "wizard-dynamic", "exampleTitle", "wizard add dynamic step"], ["filenamePrefix", "wizard-remove-step", "exampleTitle", "wizard remove step"], ["filenamePrefix", "wizard-async-form-validation", "exampleTitle", "Async Form Validation"], ["filenamePrefix", "wizard-with-custom-icons-example", "exampleTitle", "Wizard with custom icons"], ["filenamePrefix", "wizard-restore-state", "exampleTitle", "Restore Wizard State"]], template: function WizardDocsComponent_Template(rf, ctx) { if (rf & 1) {
+WizardDocsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: WizardDocsComponent, selectors: [["nui-wizard-v2-example"]], decls: 129, vars: 0, consts: [["href", "../components/WizardStepComponent.html", "target", "_blank"], ["filenamePrefix", "wizard-horizontal-layout", "exampleTitle", "Horizontal Layout Wizard"], ["filenamePrefix", "wizard-dialog", "exampleTitle", "wizard in dialog"], ["filenamePrefix", "wizard-busy", "exampleTitle", "wizard step busy"], ["filenamePrefix", "wizard-custom-footer", "exampleTitle", "Wizard with Custom Footer"], ["filenamePrefix", "wizard-dynamic", "exampleTitle", "wizard add dynamic step"], ["filenamePrefix", "wizard-remove-step", "exampleTitle", "wizard remove step"], ["filenamePrefix", "wizard-async-form-validation", "exampleTitle", "Async Form Validation"], ["filenamePrefix", "wizard-with-custom-icons-example", "exampleTitle", "Wizard with custom icons"], ["filenamePrefix", "wizard-restore-state", "exampleTitle", "Restore Wizard State"], ["filenamePrefix", "wizard-step-change-example", "exampleTitle", "Wizard Step Change"]], template: function WizardDocsComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "h2");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Layout");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -3539,37 +3707,59 @@ WizardDocsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefi
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](102, "nui-example-wrapper", 9);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](103, "nui-wizard-restore-state-example");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](104, "h2");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](105, "Keyboard interaction");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](104, "h3");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](105, "Wizard Step Change Event Example");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](106, "ul");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](107, "li");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](108, "code");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](109, "TAB/SHIFT+TAB");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](106, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](107, " You are able to subscribe when the selected step has changed.\n");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](110, " for focusing on the next/previous tabbable element");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](108, "nui-example-wrapper", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](109, "nui-wizard-step-change-example");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](111, "li");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](112, "code");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](113, "LEFT_ARROW/RIGHT_ARROW");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](110, "h2");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](111, "Keyboard interaction");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](114, " for navigation on the previous/next step header");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](112, "ul");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](113, "li");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](114, "code");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](115, "TAB/SHIFT+TAB");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](115, "li");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](116, "code");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](117, "HOME/END");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](116, " for focusing on the next/previous tabbable element");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](118, " for focusing on the first/last step header");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](117, "li");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](118, "code");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](119, "LEFT_ARROW/RIGHT_ARROW");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](119, "li");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](120, "code");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](121, "ENTER, SPACE");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](120, " for navigation on the previous/next step header");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](122, " to select the step");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](121, "li");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](122, "code");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](123, "HOME/END");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](124, " for focusing on the first/last step header");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](125, "li");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](126, "code");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](127, "ENTER, SPACE");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](128, " to select the step");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    } }, directives: [_src_lib_docs_example_wrapper_example_wrapper_component__WEBPACK_IMPORTED_MODULE_1__["ExampleWrapperComponent"], _wizard_horizontal_layout_wizard_horizontal_example_component__WEBPACK_IMPORTED_MODULE_2__["WizardHorizontalExampleComponent"], _wizard_dialog_wizard_dialog_example_component__WEBPACK_IMPORTED_MODULE_3__["WizardDialogExampleComponent"], _wizard_busy_wizard_busy_example_component__WEBPACK_IMPORTED_MODULE_4__["WizardBusyExampleComponent"], _wizard_custom_footer_wizard_custom_footer_example_component__WEBPACK_IMPORTED_MODULE_5__["WizardCustomFooterExampleComponent"], _wizard_dynamic_wizard_dynamic_example_component__WEBPACK_IMPORTED_MODULE_6__["WizardDynamicExampleComponent"], _wizard_remove_step_wizard_remove_step_example_component__WEBPACK_IMPORTED_MODULE_7__["WizardRemoveStepExampleComponent"], _wizard_async_validation_form_wizard_async_form_validation_example_component__WEBPACK_IMPORTED_MODULE_8__["WizardAsyncFormValidationExampleComponent"], _wizard_with_custom_icons_wizard_with_custom_icons_example_component__WEBPACK_IMPORTED_MODULE_9__["WizardWithCustomIconsExampleComponent"], _wizard_restore_state_wizard_restore_state_example_component__WEBPACK_IMPORTED_MODULE_10__["WizardRestoreStateExampleComponent"]], encapsulation: 2 });
+    } }, directives: [_src_lib_docs_example_wrapper_example_wrapper_component__WEBPACK_IMPORTED_MODULE_1__["ExampleWrapperComponent"], _wizard_horizontal_layout_wizard_horizontal_example_component__WEBPACK_IMPORTED_MODULE_2__["WizardHorizontalExampleComponent"], _wizard_dialog_wizard_dialog_example_component__WEBPACK_IMPORTED_MODULE_3__["WizardDialogExampleComponent"], _wizard_busy_wizard_busy_example_component__WEBPACK_IMPORTED_MODULE_4__["WizardBusyExampleComponent"], _wizard_custom_footer_wizard_custom_footer_example_component__WEBPACK_IMPORTED_MODULE_5__["WizardCustomFooterExampleComponent"], _wizard_dynamic_wizard_dynamic_example_component__WEBPACK_IMPORTED_MODULE_6__["WizardDynamicExampleComponent"], _wizard_remove_step_wizard_remove_step_example_component__WEBPACK_IMPORTED_MODULE_7__["WizardRemoveStepExampleComponent"], _wizard_async_validation_form_wizard_async_form_validation_example_component__WEBPACK_IMPORTED_MODULE_8__["WizardAsyncFormValidationExampleComponent"], _wizard_with_custom_icons_wizard_with_custom_icons_example_component__WEBPACK_IMPORTED_MODULE_9__["WizardWithCustomIconsExampleComponent"], _wizard_restore_state_wizard_restore_state_example_component__WEBPACK_IMPORTED_MODULE_10__["WizardRestoreStateExampleComponent"], _wizard_step_change_example_wizard_step_change_example_component__WEBPACK_IMPORTED_MODULE_11__["WizardStepChangeExampleComponent"]], encapsulation: 2 });
 
+
+/***/ }),
+
+/***/ "z1B6":
+/*!*****************************************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/wizard-v2/wizard-step-change-example/wizard-step-change-example.component.ts ***!
+  \*****************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("import {\n    AfterViewInit,\n    Component,\n    TemplateRef,\n    ViewChild,\n} from \"@angular/core\";\n\nimport {StepperSelectionEvent} from \"@angular/cdk/stepper\";\nimport {ToastService} from \"@nova-ui/bits\";\n\ninterface IWizardStepData {\n    title: string;\n    templateRef: TemplateRef<string>;\n}\n\n@Component({\n    selector: \"nui-wizard-step-change-example\",\n    templateUrl: \"./wizard-step-change-example.component.html\",\n})\nexport class WizardStepChangeExampleComponent implements AfterViewInit {\n    public steps: IWizardStepData[] = [];\n\n    @ViewChild(\"normalStep\") normalStep: TemplateRef<string>;\n\n    constructor(private toastService: ToastService) {\n    }\n\n    public ngAfterViewInit(): void {\n        this.addStep(this.normalStep, $localize `Normal step`);\n    }\n\n    public addStep(templateRef: TemplateRef<string>, title?: string): void {\n        this.steps.push({title: title ?? `Dynamic Step`, templateRef: templateRef});\n    }\n\n\n    public onSelectionChange($event: StepperSelectionEvent): void {\n        this.toastService.info({\n            title: $localize `Selected step changed.`,\n            message: $localize `You moved from step with index ${$event.previouslySelectedIndex} to step with index ${$event.selectedIndex}`,\n            options: {\n                timeOut: 5000,\n                extendedTimeOut: 2000,\n            },\n        });\n    }\n}\n");
 
 /***/ }),
 
