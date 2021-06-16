@@ -32304,7 +32304,7 @@ class ToolbarKeyboardService {
         if (code === _constants__WEBPACK_IMPORTED_MODULE_0__["KEYBOARD_CODE"].ARROW_LEFT) {
             activeEl === first ? this.focusLast() : this.focusLeft(activeIndex);
         }
-        if (code === _constants__WEBPACK_IMPORTED_MODULE_0__["KEYBOARD_CODE"].ARROW_RIGHT) {
+        if (code === _constants__WEBPACK_IMPORTED_MODULE_0__["KEYBOARD_CODE"].ARROW_RIGHT && activeIndex !== -1) {
             activeEl === last ? first.focus() : this.focusRight(activeIndex);
         }
     }

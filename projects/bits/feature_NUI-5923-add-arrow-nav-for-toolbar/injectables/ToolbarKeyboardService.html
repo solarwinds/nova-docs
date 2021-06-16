@@ -281,7 +281,7 @@ export class ToolbarKeyboardService {
             activeEl &#x3D;&#x3D;&#x3D; first ? this.focusLast() : this.focusLeft(activeIndex);
         }
 
-        if (code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ARROW_RIGHT) {
+        if (code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ARROW_RIGHT &amp;&amp; activeIndex !&#x3D;&#x3D; -1) {
             activeEl &#x3D;&#x3D;&#x3D; last ? first.focus() : this.focusRight(activeIndex);
         }
     }
