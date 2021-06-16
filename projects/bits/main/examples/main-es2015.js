@@ -32115,7 +32115,8 @@ class DatePickerComponent {
             // and not keep its previous state.
             this.overlay.show$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["takeUntil"])(this.onDestroy$)).subscribe(_ => this._datePicker.refreshView());
             this.overlay.hide$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["takeUntil"])(this.onDestroy$)).subscribe(_ => {
-                const currentDateValid = this.value.isValid();
+                var _a;
+                const currentDateValid = (_a = this.value) === null || _a === void 0 ? void 0 : _a.isValid();
                 if (!currentDateValid) {
                     this._datePicker.value = undefined;
                     this._datePicker.datepickerMode = "day";

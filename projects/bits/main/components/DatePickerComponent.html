@@ -2028,7 +2028,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>    <code>ValidationErrors | null</code>
 
                     </div>
                     <div class="io-description">
@@ -2491,7 +2491,7 @@ import {
     ViewChild,
     ViewEncapsulation,
 } from &quot;@angular/core&quot;;
-import { ControlValueAccessor, FormControl, NG_VALIDATORS, NG_VALUE_ACCESSOR } from &quot;@angular/forms&quot;;
+import { ControlValueAccessor, FormControl, NG_VALIDATORS, NG_VALUE_ACCESSOR, ValidationErrors } from &quot;@angular/forms&quot;;
 import _defaults from &quot;lodash/defaults&quot;;
 import _isEqual from &quot;lodash/isEqual&quot;;
 import _isNil from &quot;lodash/isNil&quot;;
@@ -2646,7 +2646,7 @@ export class DatePickerComponent implements OnChanges, OnInit, ControlValueAcces
         private cd: ChangeDetectorRef
     ) {}
 
-    ngOnInit() {
+    ngOnInit(): void {
         _defaults(this, datePickerDefaults);
         this.selectedDate &#x3D; this._value;
         this.initDate &#x3D; this.value &amp;&amp; this.value.clone();
@@ -2670,13 +2670,13 @@ export class DatePickerComponent implements OnChanges, OnInit, ControlValueAcces
         this.onAppendToBodyChange(this.appendToBody);
     }
 
-    public ngOnChanges(changes: SimpleChanges) {
+    public ngOnChanges(changes: SimpleChanges): void {
         if (changes.appendToBody) {
             this.onAppendToBodyChange(changes.appendToBody.currentValue);
         }
     }
 
-    ngAfterViewInit() {
+    ngAfterViewInit(): void {
         this.calendarChanged &#x3D; this._datePicker.calendarMoved.subscribe((value: Moment) &#x3D;&gt; this.calendarNavigated.emit(value));
         this.updateTextboxValue();
         this.cd.detectChanges();
@@ -2691,7 +2691,7 @@ export class DatePickerComponent implements OnChanges, OnInit, ControlValueAcces
 
             this.overlay.show$.pipe(takeUntil(this.onDestroy$)).subscribe(_ &#x3D;&gt; this._datePicker.refreshView());
             this.overlay.hide$.pipe(takeUntil(this.onDestroy$)).subscribe(_ &#x3D;&gt; {
-                const currentDateValid &#x3D; this.value.isValid();
+                const currentDateValid &#x3D; this.value?.isValid();
                 if (!currentDateValid) {
                     this._datePicker.value &#x3D; undefined;
                     this._datePicker.datepickerMode &#x3D; &quot;day&quot;;
@@ -2700,7 +2700,7 @@ export class DatePickerComponent implements OnChanges, OnInit, ControlValueAcces
         }
     }
 
-    public updateTouchedState() {
+    public updateTouchedState(): void {
         setTimeout(() &#x3D;&gt; this.inputBlurred.emit(), 100);
         this.onTouched();
     }
@@ -2726,16 +2726,16 @@ export class DatePickerComponent implements OnChanges, OnInit, ControlValueAcces
         return this.isDisabled ? &quot;gray&quot; : &quot;primary-blue&quot;;
     }
 
-    public onChange(value: any) {}
+    public onChange(value: any): void {}
 
-    public onTouched() {}
+    public onTouched(): void {}
 
-    public validate(control: FormControl) {
+    public validate(control: FormControl): ValidationErrors | null {
         this.formControl &#x3D; control;
         return NuiValidators.dateFormat(control.value);
     }
 
-    public writeValue(value: any) {
+    public writeValue(value: any): void {
         this.value &#x3D; value;
     }
 
@@ -2755,7 +2755,7 @@ export class DatePickerComponent implements OnChanges, OnInit, ControlValueAcces
         this.isInErrorState &#x3D; isInErrorState;
     }
 
-    public onSelectionDone(value: Moment) {
+    public onSelectionDone(value: Moment): void {
         this.value &#x3D; value;
         this.overlay?.hide();
     }
@@ -2775,7 +2775,7 @@ export class DatePickerComponent implements OnChanges, OnInit, ControlValueAcces
         this.momentDateFormat &#x3D; isCustomFormatValid ? this.dateFormat : datePickerDefaults.dateFormat;
     }
 
-    ngOnDestroy() {
+    ngOnDestroy(): void {
         // The following resolves a known &#x27;Error during cleanup of component:&#x27; error during unit tests
         // Details: https://github.com/angular/angular/issues/17013
         if (this.calendarChanged) {
