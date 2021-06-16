@@ -3764,7 +3764,6 @@ class UnitConversionPipe {
     transform(value, scale = 0, plusSign = false, unit = "bytes") {
         const base = unit === "bytes" ? _constants_unit_conversion_constants__WEBPACK_IMPORTED_MODULE_0__["UnitBase"].Bytes : _constants_unit_conversion_constants__WEBPACK_IMPORTED_MODULE_0__["UnitBase"].Standard;
         const result = this.unitConversionService.convert(value, base, scale);
-        console.log(result);
         return this.unitConversionService.getFullDisplay(result, unit, plusSign);
     }
 }
@@ -17222,7 +17221,15 @@ class TextboxNumberComponent {
         }
     }
     isMetaKey(event) {
-        return event.ctrlKey || event.metaKey || event.code === "Backspace" || event.code === "Delete" || event.code === "Tab";
+        return (event.ctrlKey ||
+            event.metaKey ||
+            event.code === "Backspace" ||
+            event.code === "Delete" ||
+            event.code === "Tab" ||
+            event.code === "ArrowRight" ||
+            event.code === "ArrowLeft" ||
+            event.code === "ArrowUp" ||
+            event.code === "ArrowDown");
     }
 }
 TextboxNumberComponent.ɵfac = function TextboxNumberComponent_Factory(t) { return new (t || TextboxNumberComponent)(); };
