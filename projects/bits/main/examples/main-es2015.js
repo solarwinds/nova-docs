@@ -4044,9 +4044,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _overlay_constants__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../overlay/constants */ "3Ceo");
 /* harmony import */ var _overlay_overlay_component_overlay_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../overlay/overlay-component/overlay.component */ "eWZz");
 /* harmony import */ var _public_api__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./public-api */ "mU5N");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/common */ "ofXK");
-/* harmony import */ var _button_button_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../button/button.component */ "6urz");
-/* harmony import */ var _menu_menu_popup_menu_popup_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../menu/menu-popup/menu-popup.component */ "n6RG");
+/* harmony import */ var _sorter_keyboard_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./sorter-keyboard.service */ "NO0+");
+/* harmony import */ var _menu__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../menu */ "Lews");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var _button_button_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../button/button.component */ "6urz");
+/* harmony import */ var _menu_menu_popup_menu_popup_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../menu/menu-popup/menu-popup.component */ "n6RG");
+
+
+
 
 
 
@@ -4065,9 +4070,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const _c0 = ["popupArea"];
-const _c1 = ["toggleRef"];
+const _c1 = ["popup"];
+const _c2 = ["toggleRef"];
 function SorterComponent_label_1_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "label", 11);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "label", 12);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
@@ -4077,9 +4083,11 @@ function SorterComponent_label_1_Template(rf, ctx) { if (rf & 1) {
 } }
 // <example-url>./../examples/index.html#/sorter</example-url>
 class SorterComponent {
-    constructor(logger, el) {
+    constructor(logger, sorterKeyboardService, elRef, renderer) {
         this.logger = logger;
-        this.el = el;
+        this.sorterKeyboardService = sorterKeyboardService;
+        this.elRef = elRef;
+        this.renderer = renderer;
         this.appendToBody = false;
         this.sorterAction = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
         // mark this filter to be monitored by our datasource for any changes in order reset other filters(eg: pagination)
@@ -4096,6 +4104,7 @@ class SorterComponent {
             [_public_api__WEBPACK_IMPORTED_MODULE_10__["SorterDirection"].ascending]: "arrow-up",
             [_public_api__WEBPACK_IMPORTED_MODULE_10__["SorterDirection"].descending]: "arrow-down",
         };
+        this.menuKeyControlListeners = [];
     }
     ngOnInit() {
         this.onAppendToBodyChange(this.appendToBody);
@@ -4140,6 +4149,10 @@ class SorterComponent {
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["takeUntil"])(this.onDestroy$))
             .subscribe(_ => this.overlay.hide());
         this.updateOverlayWidth();
+        this.initKeyboardService();
+        this.menuKeyControlListeners.push(this.renderer.listen(this.elRef.nativeElement, "keydown", (event) => {
+            this.sorterKeyboardService.handleKeydown(event);
+        }));
     }
     select(item) {
         // perform update only if the new value actually changes
@@ -4189,8 +4202,13 @@ class SorterComponent {
             : `${this.getSelectedItemTitle()}. Sorter direction - ascending`;
     }
     ngOnDestroy() {
+        this.menuKeyControlListeners.forEach(listener => listener());
         this.onDestroy$.next();
         this.onDestroy$.complete();
+    }
+    toggleSorterMenu() {
+        this.overlay.toggle();
+        this.sorterKeyboardService.announceDropdown();
     }
     initSelectedItem() {
         var _a;
@@ -4225,19 +4243,26 @@ class SorterComponent {
     onAppendToBodyChange(appendToBody) {
         this.customContainer = appendToBody ? undefined : this.popupArea;
     }
+    initKeyboardService() {
+        var _a;
+        this.sorterKeyboardService.menuItems = (_a = this.menuPopup) === null || _a === void 0 ? void 0 : _a.menuItems;
+        this.sorterKeyboardService.overlay = this.overlay;
+        this.sorterKeyboardService.initKeyboardManager();
+    }
 }
-SorterComponent.ɵfac = function SorterComponent_Factory(t) { return new (t || SorterComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_log_service__WEBPACK_IMPORTED_MODULE_7__["LoggerService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"])); };
+SorterComponent.ɵfac = function SorterComponent_Factory(t) { return new (t || SorterComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_log_service__WEBPACK_IMPORTED_MODULE_7__["LoggerService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_sorter_keyboard_service__WEBPACK_IMPORTED_MODULE_11__["SorterKeyboardService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["Renderer2"])); };
 SorterComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: SorterComponent, selectors: [["nui-sorter"]], viewQuery: function SorterComponent_Query(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_c0, 3);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_overlay_overlay_component_overlay_component__WEBPACK_IMPORTED_MODULE_9__["OverlayComponent"], 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_c1, 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_c1, 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_c2, 3);
     } if (rf & 2) {
         let _t;
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.popupArea = _t.first);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.overlay = _t.first);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.menuPopup = _t.first);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.toggleRef = _t.first);
-    } }, hostAttrs: [1, "nui-sorter"], inputs: { appendToBody: "appendToBody", caption: "caption", itemsSource: "itemsSource", selectedItem: "selectedItem", sortDirection: "sortDirection" }, outputs: { sorterAction: "sorterAction" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵNgOnChangesFeature"]], decls: 14, vars: 8, consts: [["class", "nui-sorter__label", 4, "ngIf"], [1, "btn-group", "nui-sorter__popup"], [1, "d-inline-block"], ["toggleRef", ""], ["nui-button", "", "type", "button", 1, "nui-sorter__toggle-button", 3, "icon", "ariaLabel", "click"], [1, "nui-sorter__display-value"], ["nui-button", "", "type", "button", "ariaLabel", "Open Sorter Menu", "icon", "caret-down", 1, "nui-selector__toggle", 3, "click"], ["popupArea", ""], [3, "toggleReference", "overlayConfig", "customContainer"], ["overlay", ""], [3, "itemsSource", "menuItemClicked"], [1, "nui-sorter__label"]], template: function SorterComponent_Template(rf, ctx) { if (rf & 1) {
-        const _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    } }, hostAttrs: [1, "nui-sorter"], inputs: { appendToBody: "appendToBody", caption: "caption", itemsSource: "itemsSource", selectedItem: "selectedItem", sortDirection: "sortDirection" }, outputs: { sorterAction: "sorterAction" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵProvidersFeature"]([_sorter_keyboard_service__WEBPACK_IMPORTED_MODULE_11__["SorterKeyboardService"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵNgOnChangesFeature"]], decls: 15, vars: 8, consts: [["class", "nui-sorter__label", 4, "ngIf"], [1, "btn-group", "nui-sorter__popup"], [1, "d-inline-block"], ["toggleRef", ""], ["nui-button", "", "type", "button", 1, "nui-sorter__toggle-button", 3, "icon", "ariaLabel", "click"], [1, "nui-sorter__display-value"], ["nui-button", "", "type", "button", "ariaLabel", "Open Sorter Menu", "icon", "caret-down", 1, "nui-selector__toggle", 3, "click"], ["popupArea", ""], [3, "toggleReference", "overlayConfig", "customContainer"], ["overlay", ""], [3, "itemsSource", "menuItemClicked"], ["popup", ""], [1, "nui-sorter__label"]], template: function SorterComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, SorterComponent_label_1_Template, 2, 1, "label", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 1);
@@ -4249,13 +4274,13 @@ SorterComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCo
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "button", 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function SorterComponent_Template_button_click_8_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r4); const _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](12); return _r3.toggle(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function SorterComponent_Template_button_click_8_listener() { return ctx.toggleSorterMenu(); });
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](9, "div", null, 7);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "nui-overlay", 8, 9);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "nui-menu-popup", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "nui-menu-popup", 10, 11);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("menuItemClicked", function SorterComponent_Template_nui_menu_popup_menuItemClicked_13_listener($event) { return ctx.select($event); });
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -4272,7 +4297,7 @@ SorterComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCo
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("toggleReference", _r1)("overlayConfig", ctx.overlayConfig)("customContainer", ctx.customContainer);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("itemsSource", ctx.items);
-    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_11__["NgIf"], _button_button_component__WEBPACK_IMPORTED_MODULE_12__["ButtonComponent"], _overlay_overlay_component_overlay_component__WEBPACK_IMPORTED_MODULE_9__["OverlayComponent"], _menu_menu_popup_menu_popup_component__WEBPACK_IMPORTED_MODULE_13__["MenuPopupComponent"]], styles: [".nui .nui-sorter {\n  max-height: 30px;\n}\n.nui .nui-sorter .list-group {\n  margin: 5px 0;\n}\n.nui .nui-sorter__label {\n  display: block;\n}\n.nui .nui-sorter__popup {\n  display: flex;\n}\n.nui .nui-sorter__toggle-button.nui-button {\n  min-width: auto;\n}\n.nui .nui-sorter .nui-popup .nui-popup__area {\n  min-width: 100%;\n  border: none;\n}\n.nui .nui-sorter .nui-popup .nui-popup__area [popupAreaContent] {\n  padding: 0;\n}\n.nui .nui-sorter .nui-popup .nui-popup__area .nui-list .nui-list-item {\n  border: 0;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNvcnRlci5jb21wb25lbnQubGVzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFNQTtFQUNJLGdCQUFBO0FBTEo7QUFJQTtFQUlRLGFBQUE7QUFMUjtBQVFJO0VBQ0ksY0FBQTtBQU5SO0FBU0k7RUFDSSxhQUFBO0FBUFI7QUFVSTtFQUNJLGVBQUE7QUFSUjtBQVJBO0VBcUJZLGVBQUE7RUFDQSxZQUFBO0FBVlo7QUFaQTtFQXlCZ0IsVUFBQTtBQVZoQjtBQWZBO0VBNkJnQixTQUFBO0FBWGhCIiwiZmlsZSI6InNvcnRlci5jb21wb25lbnQubGVzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgKHJlZmVyZW5jZSkgdXJsKCcuLi8uLi9zdHlsZXMvbnVpLWZyYW1ld29yay12YXJpYWJsZXMubGVzcycpO1xuQGltcG9ydCAocmVmZXJlbmNlKSB1cmwoJy4uLy4uL3N0eWxlcy9udWktZnJhbWV3b3JrLWJhc2UubGVzcycpO1xuQGltcG9ydCAocmVmZXJlbmNlKSB1cmwoJy4uLy4uL3N0eWxlcy9taXhpbnMubGVzcycpO1xuXG5AbnVpLXNvcnRlci1ib3JkZXItd2lkdGg6IDFweDtcblxuLm51aSAubnVpLXNvcnRlciB7XG4gICAgbWF4LWhlaWdodDogMzBweDtcblxuICAgIC5saXN0LWdyb3VwIHtcbiAgICAgICAgbWFyZ2luOiA1cHggMDtcbiAgICB9XG5cbiAgICAmX19sYWJlbCB7XG4gICAgICAgIGRpc3BsYXk6IGJsb2NrO1xuICAgIH1cblxuICAgICZfX3BvcHVwIHtcbiAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICB9XG5cbiAgICAmX190b2dnbGUtYnV0dG9uLm51aS1idXR0b24ge1xuICAgICAgICBtaW4td2lkdGg6IGF1dG87XG4gICAgfVxuXG4gICAgLm51aS1wb3B1cCB7XG4gICAgICAgIC5udWktcG9wdXBfX2FyZWEge1xuICAgICAgICAgICAgbWluLXdpZHRoOiAxMDAlO1xuICAgICAgICAgICAgYm9yZGVyOiBub25lO1xuXG4gICAgICAgICAgICBbcG9wdXBBcmVhQ29udGVudF0ge1xuICAgICAgICAgICAgICAgIHBhZGRpbmc6IDA7XG4gICAgICAgICAgICB9XG5cbiAgICAgICAgICAgIC5udWktbGlzdCAubnVpLWxpc3QtaXRlbSB7XG4gICAgICAgICAgICAgICAgYm9yZGVyOiAwO1xuICAgICAgICAgICAgfVxuICAgICAgICB9XG4gICAgfVxufVxuXG4iXX0= */"], encapsulation: 2 });
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_13__["NgIf"], _button_button_component__WEBPACK_IMPORTED_MODULE_14__["ButtonComponent"], _overlay_overlay_component_overlay_component__WEBPACK_IMPORTED_MODULE_9__["OverlayComponent"], _menu_menu_popup_menu_popup_component__WEBPACK_IMPORTED_MODULE_15__["MenuPopupComponent"]], styles: [".nui .nui-sorter {\n  max-height: 30px;\n}\n.nui .nui-sorter .list-group {\n  margin: 5px 0;\n}\n.nui .nui-sorter__label {\n  display: block;\n}\n.nui .nui-sorter__popup {\n  display: flex;\n}\n.nui .nui-sorter__toggle-button.nui-button {\n  min-width: auto;\n}\n.nui .nui-sorter .nui-popup .nui-popup__area {\n  min-width: 100%;\n  border: none;\n}\n.nui .nui-sorter .nui-popup .nui-popup__area [popupAreaContent] {\n  padding: 0;\n}\n.nui .nui-sorter .nui-popup .nui-popup__area .nui-list .nui-list-item {\n  border: 0;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNvcnRlci5jb21wb25lbnQubGVzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFNQTtFQUNJLGdCQUFBO0FBTEo7QUFJQTtFQUlRLGFBQUE7QUFMUjtBQVFJO0VBQ0ksY0FBQTtBQU5SO0FBU0k7RUFDSSxhQUFBO0FBUFI7QUFVSTtFQUNJLGVBQUE7QUFSUjtBQVJBO0VBcUJZLGVBQUE7RUFDQSxZQUFBO0FBVlo7QUFaQTtFQXlCZ0IsVUFBQTtBQVZoQjtBQWZBO0VBNkJnQixTQUFBO0FBWGhCIiwiZmlsZSI6InNvcnRlci5jb21wb25lbnQubGVzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgKHJlZmVyZW5jZSkgdXJsKCcuLi8uLi9zdHlsZXMvbnVpLWZyYW1ld29yay12YXJpYWJsZXMubGVzcycpO1xuQGltcG9ydCAocmVmZXJlbmNlKSB1cmwoJy4uLy4uL3N0eWxlcy9udWktZnJhbWV3b3JrLWJhc2UubGVzcycpO1xuQGltcG9ydCAocmVmZXJlbmNlKSB1cmwoJy4uLy4uL3N0eWxlcy9taXhpbnMubGVzcycpO1xuXG5AbnVpLXNvcnRlci1ib3JkZXItd2lkdGg6IDFweDtcblxuLm51aSAubnVpLXNvcnRlciB7XG4gICAgbWF4LWhlaWdodDogMzBweDtcblxuICAgIC5saXN0LWdyb3VwIHtcbiAgICAgICAgbWFyZ2luOiA1cHggMDtcbiAgICB9XG5cbiAgICAmX19sYWJlbCB7XG4gICAgICAgIGRpc3BsYXk6IGJsb2NrO1xuICAgIH1cblxuICAgICZfX3BvcHVwIHtcbiAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICB9XG5cbiAgICAmX190b2dnbGUtYnV0dG9uLm51aS1idXR0b24ge1xuICAgICAgICBtaW4td2lkdGg6IGF1dG87XG4gICAgfVxuXG4gICAgLm51aS1wb3B1cCB7XG4gICAgICAgIC5udWktcG9wdXBfX2FyZWEge1xuICAgICAgICAgICAgbWluLXdpZHRoOiAxMDAlO1xuICAgICAgICAgICAgYm9yZGVyOiBub25lO1xuXG4gICAgICAgICAgICBbcG9wdXBBcmVhQ29udGVudF0ge1xuICAgICAgICAgICAgICAgIHBhZGRpbmc6IDA7XG4gICAgICAgICAgICB9XG5cbiAgICAgICAgICAgIC5udWktbGlzdCAubnVpLWxpc3QtaXRlbSB7XG4gICAgICAgICAgICAgICAgYm9yZGVyOiAwO1xuICAgICAgICAgICAgfVxuICAgICAgICB9XG4gICAgfVxufVxuXG4iXX0= */"], encapsulation: 2 });
 
 
 /***/ }),
@@ -14782,6 +14807,102 @@ DialogFooterComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵde
 
 /***/ }),
 
+/***/ "NO0+":
+/*!***************************************************!*\
+  !*** ./src/lib/sorter/sorter-keyboard.service.ts ***!
+  \***************************************************/
+/*! exports provided: SorterKeyboardService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SorterKeyboardService", function() { return SorterKeyboardService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/cdk/a11y */ "u47x");
+/* harmony import */ var lodash_isNull__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash/isNull */ "6qam");
+/* harmony import */ var lodash_isNull__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_isNull__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../constants */ "jxKE");
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./constants */ "XiH0");
+
+
+
+
+
+
+
+class SorterKeyboardService {
+    constructor(liveAnnouncer) {
+        this.liveAnnouncer = liveAnnouncer;
+    }
+    initKeyboardManager() {
+        this.keyboardEventsManager = new _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_1__["ListKeyManager"](this.menuItems).withVerticalOrientation();
+        // TODO Uncomment in the scope of NUI-6132
+        // this.keyboardEventsManager.setFirstItemActive();
+        // TODO Remove this in the scope of NUI-6132
+        this.keyboardEventsManager.setActiveItem(-1);
+    }
+    handleKeydown(event) {
+        this.overlay.showing ? this.handleOpenKeyDown(event) : this.handleClosedKeyDown(event);
+    }
+    getActiveItemIndex() {
+        return this.keyboardEventsManager.activeItemIndex;
+    }
+    announceDropdown() {
+        const message = this.overlay.showing ? `${this.menuItems.length} ${_constants__WEBPACK_IMPORTED_MODULE_4__["ANNOUNCER_OPEN_SORTER_LIST_MESSAGE_SUFFIX"]}` : _constants__WEBPACK_IMPORTED_MODULE_4__["ANNOUNCER_CLOSE_SORTER_LIST_MESSAGE"];
+        this.liveAnnouncer.announce(message);
+    }
+    handleOpenKeyDown(event) {
+        var _a, _b, _c;
+        (_a = this.keyboardEventsManager.activeItem) === null || _a === void 0 ? void 0 : _a.setInactiveStyles();
+        if (event.code === _constants__WEBPACK_IMPORTED_MODULE_3__["KEYBOARD_CODE"].ARROW_DOWN || event.code === _constants__WEBPACK_IMPORTED_MODULE_3__["KEYBOARD_CODE"].ARROW_UP) {
+            this.keyboardEventsManager.onKeydown(event);
+            this.announceCurrentItem();
+        }
+        // TODO Remove this in the scope of NUI-6132
+        // prevent closing on enter when item is not focused
+        if (!this.hasActiveItem() && event.code === _constants__WEBPACK_IMPORTED_MODULE_3__["KEYBOARD_CODE"].ENTER) {
+            event.preventDefault();
+        }
+        if (this.hasActiveItem() && event.code === _constants__WEBPACK_IMPORTED_MODULE_3__["KEYBOARD_CODE"].ENTER) {
+            event.preventDefault();
+            (_b = this.keyboardEventsManager.activeItem) === null || _b === void 0 ? void 0 : _b.menuItem.nativeElement.click();
+            // TODO Remove this in the scope of NUI-6132
+            this.keyboardEventsManager.setActiveItem(-1);
+        }
+        if (event.code === _constants__WEBPACK_IMPORTED_MODULE_3__["KEYBOARD_CODE"].TAB || event.code === _constants__WEBPACK_IMPORTED_MODULE_3__["KEYBOARD_CODE"].ESCAPE) {
+            this.overlay.hide();
+            this.announceDropdown();
+            // TODO Remove this in the scope of NUI-6132
+            this.keyboardEventsManager.setActiveItem(-1);
+        }
+        (_c = this.keyboardEventsManager.activeItem) === null || _c === void 0 ? void 0 : _c.setActiveStyles();
+    }
+    handleClosedKeyDown(event) {
+        // prevent scrolling page on key down/key up when sorter focused
+        if (this.shouldPreventDefault(event)) {
+            event.preventDefault();
+        }
+    }
+    hasActiveItem() {
+        if (lodash_isNull__WEBPACK_IMPORTED_MODULE_2___default()(this.keyboardEventsManager.activeItem) || lodash_isNull__WEBPACK_IMPORTED_MODULE_2___default()(this.keyboardEventsManager.activeItemIndex)) {
+            return false;
+        }
+        return this.keyboardEventsManager.activeItem && this.keyboardEventsManager.activeItemIndex >= 0;
+    }
+    shouldPreventDefault(event) {
+        return event.code === _constants__WEBPACK_IMPORTED_MODULE_3__["KEYBOARD_CODE"].ARROW_DOWN || event.code === _constants__WEBPACK_IMPORTED_MODULE_3__["KEYBOARD_CODE"].ARROW_UP;
+    }
+    announceCurrentItem() {
+        var _a, _b;
+        this.liveAnnouncer.announce(`Sort by ${(_b = (_a = this.keyboardEventsManager) === null || _a === void 0 ? void 0 : _a.activeItem) === null || _b === void 0 ? void 0 : _b.menuItem.nativeElement.innerText}.`);
+    }
+}
+SorterKeyboardService.ɵfac = function SorterKeyboardService_Factory(t) { return new (t || SorterKeyboardService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_1__["LiveAnnouncer"])); };
+SorterKeyboardService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: SorterKeyboardService, factory: SorterKeyboardService.ɵfac });
+
+
+/***/ }),
+
 /***/ "NT8K":
 /*!**************************************!*\
   !*** ./src/lib/layout/public-api.ts ***!
@@ -19487,6 +19608,23 @@ class TableColumnDefDirective extends _angular_cdk_table__WEBPACK_IMPORTED_MODUL
 }
 TableColumnDefDirective.ɵfac = function TableColumnDefDirective_Factory(t) { return new (t || TableColumnDefDirective)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_table_state_handler_service__WEBPACK_IMPORTED_MODULE_2__["TableStateHandlerService"])); };
 TableColumnDefDirective.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineDirective"]({ type: TableColumnDefDirective, selectors: [["", "nuiColumnDef", ""]], inputs: { name: ["nuiColumnDef", "name"], type: "type", columnWidth: "columnWidth" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵProvidersFeature"]([{ provide: _angular_cdk_table__WEBPACK_IMPORTED_MODULE_0__["CdkColumnDef"], useExisting: TableColumnDefDirective }]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵInheritDefinitionFeature"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵNgOnChangesFeature"]] });
+
+
+/***/ }),
+
+/***/ "XiH0":
+/*!*************************************!*\
+  !*** ./src/lib/sorter/constants.ts ***!
+  \*************************************/
+/*! exports provided: ANNOUNCER_OPEN_SORTER_LIST_MESSAGE_SUFFIX, ANNOUNCER_CLOSE_SORTER_LIST_MESSAGE */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ANNOUNCER_OPEN_SORTER_LIST_MESSAGE_SUFFIX", function() { return ANNOUNCER_OPEN_SORTER_LIST_MESSAGE_SUFFIX; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ANNOUNCER_CLOSE_SORTER_LIST_MESSAGE", function() { return ANNOUNCER_CLOSE_SORTER_LIST_MESSAGE; });
+const ANNOUNCER_OPEN_SORTER_LIST_MESSAGE_SUFFIX = "sorter items available";
+const ANNOUNCER_CLOSE_SORTER_LIST_MESSAGE = "Sorter menu closed";
 
 
 /***/ }),
