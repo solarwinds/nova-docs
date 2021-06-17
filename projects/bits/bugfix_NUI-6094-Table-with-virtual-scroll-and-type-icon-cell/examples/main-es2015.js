@@ -12645,6 +12645,9 @@ QuickPickerComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdef
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FIXED_WIDTH_CLASS", function() { return FIXED_WIDTH_CLASS; });
+/**
+ * Marker class for indicating that an element is intended to have a fixed width
+ */
 const FIXED_WIDTH_CLASS = "nui-fixed-width";
 
 
@@ -15465,8 +15468,12 @@ class TableHeaderCellComponent extends _angular_cdk_table__WEBPACK_IMPORTED_MODU
     get isIconCell() {
         return this.columnDef.type === "icon";
     }
+    /**
+     * Conditionally applies a fixed-width marker class for letting external entities
+     * know whether manual updates to the cell's width are allowed.
+     */
     get fixedWidth() {
-        return this.columnDef.type === "icon";
+        return this.isIconCell;
     }
     get shouldBeDarkOnSorting() {
         return this.sortingState.isColumnSorted;
