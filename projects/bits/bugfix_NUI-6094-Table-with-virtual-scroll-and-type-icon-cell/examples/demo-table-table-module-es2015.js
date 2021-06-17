@@ -2540,7 +2540,7 @@ TableVirtualScrollRealApiMinimalistExampleComponent.ɵcmp = _angular_core__WEBPA
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { CdkVirtualScrollViewport } from \"@angular/cdk/scrolling\";\nimport { AfterViewInit, ChangeDetectionStrategy, Component, TrackByFunction, ViewChild } from \"@angular/core\";\nimport { ClientSideDataSource, IFilteringOutputs, ISelection, SelectionModel } from \"@nova-ui/bits\";\nimport sample from \"lodash/sample\";\nimport { Observable } from \"rxjs\";\nimport { map, startWith, switchMap, tap } from \"rxjs/operators\";\n\ninterface IRandomUserTableModel {\n    no: number;\n    nameFirst: string;\n    nameLast: string;\n    city: string;\n    postcode: number;\n}\n\n@Component({\n    selector: \"nui-table-virtual-scroll-select-sticky-header-example\",\n    templateUrl: \"./table-virtual-scroll-select-sticky-header-example.component.html\",\n    changeDetection: ChangeDetectionStrategy.OnPush,\n    providers: [ClientSideDataSource],\n})\nexport class TableVirtualScrollSelectStickyHeaderExampleComponent implements AfterViewInit {\n    @ViewChild(CdkVirtualScrollViewport) public viewport: CdkVirtualScrollViewport;\n    // Note: Mock items list is used to fake that the data is already loaded\n    // and let CDK Viewport perform the scrolling on a known number of items\n    public placeholderItems: undefined[] = [];\n    public visibleItems$: Observable<IRandomUserTableModel[]>;\n    // The dynamically changed array of items to render by the table\n    public displayedColumns: string[] = [\"no\", \"nameFirst\", \"nameLast\", \"city\", \"postcode\"];\n    public itemSize: number = 40;\n    public selection: ISelection = new SelectionModel({ include: [1, 3, 5, 7, 9] });\n    // trackBy handler used to identify uniquely each item in the table\n    public trackByNo: TrackByFunction<IRandomUserTableModel> = (index: number, item: IRandomUserTableModel): number => item?.no;\n\n    constructor(public dataSourceService: ClientSideDataSource<IRandomUserTableModel>) {\n        // Note: Initiating data source with data to be displayed\n        this.dataSourceService.setData(generateUsers(100000));\n    }\n\n    public ngAfterViewInit(): void {\n        this.dataSourceService.componentTree = {\n            // Note: Using paginator as filter to be able to get specific range\n            paginator: {\n                componentInstance: {\n                    getFilters: () => ({\n                        value: this.viewport.getRenderedRange(),\n                    }),\n                },\n            },\n        };\n\n        // Note: Creating a stream of visible items to be bound to the table and increase the performance\n        this.visibleItems$ = this.viewport.renderedRangeStream.pipe(\n            startWith({ start: 0, end: 10 }),\n            // Note: On range change applying filters\n            tap(() => this.dataSourceService.applyFilters()),\n            // Subscribing to the filter results transforming and merging them into the stream\n            switchMap(() => this.dataSourceService.outputsSubject.pipe(\n                map((result: IFilteringOutputs) => {\n                    // Updating mock items list\n                    if (this.placeholderItems.length !== result.paginator.total) {\n                        this.placeholderItems = Array.from({ length: result.paginator.total });\n                    }\n                    // Mapping the values to array to be able to bind them to the table dataSource\n                    return result.repeat.itemsSource;\n                })\n            )));\n    }\n}\n\nconst PEOPLE = [\"Elena\", \"Madelyn\", \"Baggio\", \"Josh\", \"Lukas\", \"Blake\", \"Frantz\", \"Dima\", \"Serhii\", \"Vita\", \"Vlad\", \"Ivan\", \"Dumitru\"];\nconst CITIES = [\"Bucharest\", \"Kiev\", \"Austin\", \"Brno\", \"Frankfurt pe Main\", \"Sutton-under-Whitestonecliffe\", \"Vila Bela da Santíssima Trindade\"];\nfunction generateUsers(length: number): IRandomUserTableModel[] {\n    return Array.from({ length }).map((obj: unknown, id: number) => {\n        const personName = sample(PEOPLE) || PEOPLE[0];\n        return ({\n            no: id,\n            postcode: id * 1000000 * id,\n            city: sample(CITIES) || CITIES[0],\n            nameFirst: personName,\n            nameLast: \"UnknownLast\",\n        });\n    });\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import { CdkVirtualScrollViewport } from \"@angular/cdk/scrolling\";\nimport { AfterViewInit, ChangeDetectionStrategy, Component, TrackByFunction, ViewChild } from \"@angular/core\";\nimport { ClientSideDataSource, IFilteringOutputs, ISelection, SelectionModel } from \"@nova-ui/bits\";\nimport sample from \"lodash/sample\";\nimport { Observable } from \"rxjs\";\nimport { map, startWith, switchMap, tap } from \"rxjs/operators\";\n\ninterface IRandomUserTableModel {\n    no: number;\n    nameFirst: string;\n    nameLast: string;\n    city: string;\n    postcode: number;\n}\n\n@Component({\n    selector: \"nui-table-virtual-scroll-select-sticky-header-example\",\n    templateUrl: \"./table-virtual-scroll-select-sticky-header-example.component.html\",\n    changeDetection: ChangeDetectionStrategy.OnPush,\n    providers: [ClientSideDataSource],\n})\nexport class TableVirtualScrollSelectStickyHeaderExampleComponent implements AfterViewInit {\n    @ViewChild(CdkVirtualScrollViewport) public viewport: CdkVirtualScrollViewport;\n    // Note: Mock items list is used to fake that the data is already loaded\n    // and let CDK Viewport perform the scrolling on a known number of items\n    public placeholderItems: undefined[] = [];\n    public visibleItems$: Observable<IRandomUserTableModel[]>;\n    // The dynamically changed array of items to render by the table\n    public displayedColumns: string[] = [\"no\", \"nameFirst\", \"nameLast\", \"city\", \"postcode\"];\n    public itemSize: number = 40;\n    public selection: ISelection = new SelectionModel({ include: [1, 3, 5, 7, 9] });\n    // trackBy handler used to identify uniquely each item in the table\n    public trackByNo: TrackByFunction<IRandomUserTableModel> = (index: number, item: IRandomUserTableModel): number => item?.no;\n\n    constructor(public dataSourceService: ClientSideDataSource<IRandomUserTableModel>) {\n        // Note: Initiating data source with data to be displayed\n        this.dataSourceService.setData(generateUsers(100000));\n    }\n\n    public ngAfterViewInit(): void {\n        this.dataSourceService.componentTree = {\n            // Note: Using paginator as filter to be able to get specific range\n            paginator: {\n                componentInstance: {\n                    getFilters: () => ({\n                        value: this.viewport.getRenderedRange(),\n                    }),\n                },\n            },\n        };\n\n        // Note: Creating a stream of visible items to be bound to the table and increase the performance\n        this.visibleItems$ = this.viewport.renderedRangeStream.pipe(\n            startWith({ start: 0, end: 10 }),\n            // Note: On range change applying filters\n            tap(async () => this.dataSourceService.applyFilters()),\n            // Subscribing to the filter results transforming and merging them into the stream\n            switchMap(() => this.dataSourceService.outputsSubject.pipe(\n                map((result: IFilteringOutputs) => {\n                    // Updating mock items list\n                    if (this.placeholderItems.length !== result.paginator.total) {\n                        this.placeholderItems = Array.from({ length: result.paginator.total });\n                    }\n                    // Mapping the values to array to be able to bind them to the table dataSource\n                    return result.repeat.itemsSource;\n                })\n            )));\n    }\n}\n\nconst PEOPLE = [\"Elena\", \"Madelyn\", \"Baggio\", \"Josh\", \"Lukas\", \"Blake\", \"Frantz\", \"Dima\", \"Serhii\", \"Vita\", \"Vlad\", \"Ivan\", \"Dumitru\"];\nconst CITIES = [\"Bucharest\", \"Kiev\", \"Austin\", \"Brno\", \"Frankfurt pe Main\", \"Sutton-under-Whitestonecliffe\", \"Vila Bela da Santíssima Trindade\"];\nfunction generateUsers(length: number): IRandomUserTableModel[] {\n    return Array.from({ length }).map((obj: unknown, id: number) => {\n        const personName = sample(PEOPLE) || PEOPLE[0];\n        return ({\n            no: id,\n            postcode: id * 1000000 * id,\n            city: sample(CITIES) || CITIES[0],\n            nameFirst: personName,\n            nameLast: \"UnknownLast\",\n        });\n    });\n}\n");
 
 /***/ }),
 
@@ -7734,21 +7734,23 @@ function getData() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TableVirtualScrollSelectStickyHeaderExampleComponent", function() { return TableVirtualScrollSelectStickyHeaderExampleComponent; });
-/* harmony import */ var _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/cdk/scrolling */ "vxfF");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @nova-ui/bits */ "b5Xb");
-/* harmony import */ var lodash_sample__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lodash/sample */ "fTpD");
-/* harmony import */ var lodash_sample__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(lodash_sample__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "kU1M");
-/* harmony import */ var _src_lib_table_table_virtual_scroll_table_sticky_header_directive__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-virtual-scroll/table-sticky-header.directive */ "jAOl");
-/* harmony import */ var _src_lib_table_table_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../../../src/lib/table/table.component */ "ey6q");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ "ofXK");
-/* harmony import */ var _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-row/table-row.component */ "LFiI");
-/* harmony import */ var _src_lib_table_table_cell_table_column_def_directive__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-cell/table-column-def.directive */ "XeyC");
-/* harmony import */ var _src_lib_table_table_cell_table_header_cell_def_directive__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-cell/table-header-cell-def.directive */ "htGY");
-/* harmony import */ var _src_lib_table_table_cell_table_cell_def_directive__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-cell/table-cell-def.directive */ "/BSE");
-/* harmony import */ var _src_lib_table_table_cell_table_header_cell_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-cell/table-header-cell.component */ "Ppt+");
-/* harmony import */ var _src_lib_table_table_cell_table_cell_directive__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-cell/table-cell.directive */ "jdPS");
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/cdk/scrolling */ "vxfF");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @nova-ui/bits */ "b5Xb");
+/* harmony import */ var lodash_sample__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! lodash/sample */ "fTpD");
+/* harmony import */ var lodash_sample__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(lodash_sample__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs/operators */ "kU1M");
+/* harmony import */ var _src_lib_table_table_virtual_scroll_table_sticky_header_directive__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-virtual-scroll/table-sticky-header.directive */ "jAOl");
+/* harmony import */ var _src_lib_table_table_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../../../../src/lib/table/table.component */ "ey6q");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-row/table-row.component */ "LFiI");
+/* harmony import */ var _src_lib_table_table_cell_table_column_def_directive__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-cell/table-column-def.directive */ "XeyC");
+/* harmony import */ var _src_lib_table_table_cell_table_header_cell_def_directive__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-cell/table-header-cell-def.directive */ "htGY");
+/* harmony import */ var _src_lib_table_table_cell_table_cell_def_directive__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-cell/table-cell-def.directive */ "/BSE");
+/* harmony import */ var _src_lib_table_table_cell_table_header_cell_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-cell/table-header-cell.component */ "Ppt+");
+/* harmony import */ var _src_lib_table_table_cell_table_cell_directive__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-cell/table-cell.directive */ "jdPS");
+
 
 
 
@@ -7767,41 +7769,41 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function TableVirtualScrollSelectStickyHeaderExampleComponent_ng_container_4_th_1_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "th", 8);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "th", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const column_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]().$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"](" ", column_r3, "");
+    const column_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]().$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate1"](" ", column_r3, "");
 } }
 function TableVirtualScrollSelectStickyHeaderExampleComponent_ng_container_4_td_2_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "td", 9);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "td", 9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const element_r7 = ctx.$implicit;
-    const column_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]().$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](element_r7[column_r3]);
+    const column_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]().$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](element_r7[column_r3]);
 } }
 function TableVirtualScrollSelectStickyHeaderExampleComponent_ng_container_4_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementContainerStart"](0, 5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](1, TableVirtualScrollSelectStickyHeaderExampleComponent_ng_container_4_th_1_Template, 2, 1, "th", 6);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](2, TableVirtualScrollSelectStickyHeaderExampleComponent_ng_container_4_td_2_Template, 2, 1, "td", 7);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementContainerEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainerStart"](0, 5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](1, TableVirtualScrollSelectStickyHeaderExampleComponent_ng_container_4_th_1_Template, 2, 1, "th", 6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, TableVirtualScrollSelectStickyHeaderExampleComponent_ng_container_4_td_2_Template, 2, 1, "td", 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainerEnd"]();
 } if (rf & 2) {
     const column_r3 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("nuiColumnDef", column_r3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("nuiColumnDef", column_r3);
 } }
 function TableVirtualScrollSelectStickyHeaderExampleComponent_tr_5_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](0, "tr", 10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](0, "tr", 10);
 } }
 function TableVirtualScrollSelectStickyHeaderExampleComponent_ng_template_6_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](0, "tr", 11);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](0, "tr", 11);
 } if (rf & 2) {
     const context_r9 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("rowObject", context_r9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("rowObject", context_r9);
 } }
 class TableVirtualScrollSelectStickyHeaderExampleComponent {
     constructor(dataSourceService) {
@@ -7812,7 +7814,7 @@ class TableVirtualScrollSelectStickyHeaderExampleComponent {
         // The dynamically changed array of items to render by the table
         this.displayedColumns = ["no", "nameFirst", "nameLast", "city", "postcode"];
         this.itemSize = 40;
-        this.selection = new _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["SelectionModel"]({ include: [1, 3, 5, 7, 9] });
+        this.selection = new _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["SelectionModel"]({ include: [1, 3, 5, 7, 9] });
         // trackBy handler used to identify uniquely each item in the table
         this.trackByNo = (index, item) => item === null || item === void 0 ? void 0 : item.no;
         // Note: Initiating data source with data to be displayed
@@ -7830,11 +7832,11 @@ class TableVirtualScrollSelectStickyHeaderExampleComponent {
             },
         };
         // Note: Creating a stream of visible items to be bound to the table and increase the performance
-        this.visibleItems$ = this.viewport.renderedRangeStream.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["startWith"])({ start: 0, end: 10 }), 
+        this.visibleItems$ = this.viewport.renderedRangeStream.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["startWith"])({ start: 0, end: 10 }), 
         // Note: On range change applying filters
-        Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])(() => this.dataSourceService.applyFilters()), 
+        Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["tap"])(() => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () { return this.dataSourceService.applyFilters(); })), 
         // Subscribing to the filter results transforming and merging them into the stream
-        Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["switchMap"])(() => this.dataSourceService.outputsSubject.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])((result) => {
+        Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["switchMap"])(() => this.dataSourceService.outputsSubject.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["map"])((result) => {
             // Updating mock items list
             if (this.placeholderItems.length !== result.paginator.total) {
                 this.placeholderItems = Array.from({ length: result.paginator.total });
@@ -7844,51 +7846,51 @@ class TableVirtualScrollSelectStickyHeaderExampleComponent {
         }))));
     }
 }
-TableVirtualScrollSelectStickyHeaderExampleComponent.ɵfac = function TableVirtualScrollSelectStickyHeaderExampleComponent_Factory(t) { return new (t || TableVirtualScrollSelectStickyHeaderExampleComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["ClientSideDataSource"])); };
-TableVirtualScrollSelectStickyHeaderExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: TableVirtualScrollSelectStickyHeaderExampleComponent, selectors: [["nui-table-virtual-scroll-select-sticky-header-example"]], viewQuery: function TableVirtualScrollSelectStickyHeaderExampleComponent_Query(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵviewQuery"](_angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_0__["CdkVirtualScrollViewport"], 1);
+TableVirtualScrollSelectStickyHeaderExampleComponent.ɵfac = function TableVirtualScrollSelectStickyHeaderExampleComponent_Factory(t) { return new (t || TableVirtualScrollSelectStickyHeaderExampleComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["ClientSideDataSource"])); };
+TableVirtualScrollSelectStickyHeaderExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({ type: TableVirtualScrollSelectStickyHeaderExampleComponent, selectors: [["nui-table-virtual-scroll-select-sticky-header-example"]], viewQuery: function TableVirtualScrollSelectStickyHeaderExampleComponent_Query(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵviewQuery"](_angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__["CdkVirtualScrollViewport"], 1);
     } if (rf & 2) {
         let _t;
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx.viewport = _t.first);
-    } }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵProvidersFeature"]([_nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["ClientSideDataSource"]])], decls: 10, vars: 21, consts: [["tableStickyHeader", "", 1, "h-100", 3, "itemSize"], ["nui-table", "", 3, "dataSource", "trackBy", "sortable", "selectable", "selection", "selectionChange"], [3, "nuiColumnDef", 4, "ngFor", "ngForOf"], ["nui-header-row", "", 4, "nuiHeaderRowDef"], ["nuiRowDef", "", "cdkVirtualFor", "", 3, "nuiRowDefColumns", "cdkVirtualForOf", "cdkVirtualForTemplateCacheSize", "cdkVirtualForTrackBy"], [3, "nuiColumnDef"], ["nui-header-cell", "", 4, "nuiHeaderCellDef"], ["nui-cell", "", 4, "nuiCellDef"], ["nui-header-cell", ""], ["nui-cell", ""], ["nui-header-row", ""], ["nui-row", "", 3, "rowObject"]], template: function TableVirtualScrollSelectStickyHeaderExampleComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "cdk-virtual-scroll-viewport", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "table", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("selectionChange", function TableVirtualScrollSelectStickyHeaderExampleComponent_Template_table_selectionChange_2_listener($event) { return ctx.selection = $event; });
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipe"](3, "async");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](4, TableVirtualScrollSelectStickyHeaderExampleComponent_ng_container_4_Template, 3, 1, "ng-container", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](5, TableVirtualScrollSelectStickyHeaderExampleComponent_tr_5_Template, 1, 0, "tr", 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](6, TableVirtualScrollSelectStickyHeaderExampleComponent_ng_template_6_Template, 1, 1, "ng-template", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](7, "br");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipe"](9, "json");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵloadQuery"]()) && (ctx.viewport = _t.first);
+    } }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵProvidersFeature"]([_nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["ClientSideDataSource"]])], decls: 10, vars: 21, consts: [["tableStickyHeader", "", 1, "h-100", 3, "itemSize"], ["nui-table", "", 3, "dataSource", "trackBy", "sortable", "selectable", "selection", "selectionChange"], [3, "nuiColumnDef", 4, "ngFor", "ngForOf"], ["nui-header-row", "", 4, "nuiHeaderRowDef"], ["nuiRowDef", "", "cdkVirtualFor", "", 3, "nuiRowDefColumns", "cdkVirtualForOf", "cdkVirtualForTemplateCacheSize", "cdkVirtualForTrackBy"], [3, "nuiColumnDef"], ["nui-header-cell", "", 4, "nuiHeaderCellDef"], ["nui-cell", "", 4, "nuiCellDef"], ["nui-header-cell", ""], ["nui-cell", ""], ["nui-header-row", ""], ["nui-row", "", 3, "rowObject"]], template: function TableVirtualScrollSelectStickyHeaderExampleComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](1, "cdk-virtual-scroll-viewport", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](2, "table", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("selectionChange", function TableVirtualScrollSelectStickyHeaderExampleComponent_Template_table_selectionChange_2_listener($event) { return ctx.selection = $event; });
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipe"](3, "async");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](4, TableVirtualScrollSelectStickyHeaderExampleComponent_ng_container_4_Template, 3, 1, "ng-container", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](5, TableVirtualScrollSelectStickyHeaderExampleComponent_tr_5_Template, 1, 0, "tr", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](6, TableVirtualScrollSelectStickyHeaderExampleComponent_ng_template_6_Template, 1, 1, "ng-template", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](7, "br");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipe"](9, "json");
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵstyleProp"]("height", 400, "px")("max-width", 1300, "px");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("itemSize", ctx.itemSize);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("dataSource", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipeBind1"](3, 17, ctx.visibleItems$))("trackBy", ctx.trackByNo)("sortable", true)("selectable", true)("selection", ctx.selection);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx.displayedColumns);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("nuiHeaderRowDef", ctx.displayedColumns);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("nuiRowDefColumns", ctx.displayedColumns)("cdkVirtualForOf", ctx.placeholderItems)("cdkVirtualForTemplateCacheSize", 10)("cdkVirtualForTrackBy", ctx.trackByNo);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"]("\n", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipeBind1"](9, 19, ctx.selection), "\n");
-    } }, directives: [_angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_0__["CdkVirtualScrollViewport"], _src_lib_table_table_virtual_scroll_table_sticky_header_directive__WEBPACK_IMPORTED_MODULE_5__["TableStickyHeaderDirective"], _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_0__["CdkFixedSizeVirtualScroll"], _src_lib_table_table_component__WEBPACK_IMPORTED_MODULE_6__["TableComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_7__["NgForOf"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_8__["TableHeaderRowDefDirective"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_8__["TableRowDefDirective"], _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_0__["CdkVirtualForOf"], _src_lib_table_table_cell_table_column_def_directive__WEBPACK_IMPORTED_MODULE_9__["TableColumnDefDirective"], _src_lib_table_table_cell_table_header_cell_def_directive__WEBPACK_IMPORTED_MODULE_10__["TableHeaderCellDefDirective"], _src_lib_table_table_cell_table_cell_def_directive__WEBPACK_IMPORTED_MODULE_11__["TableCellDefDirective"], _src_lib_table_table_cell_table_header_cell_component__WEBPACK_IMPORTED_MODULE_12__["TableHeaderCellComponent"], _src_lib_table_table_cell_table_cell_directive__WEBPACK_IMPORTED_MODULE_13__["TableCellDirective"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_8__["TableHeaderRowComponent"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_8__["TableRowComponent"]], pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_7__["AsyncPipe"], _angular_common__WEBPACK_IMPORTED_MODULE_7__["JsonPipe"]], encapsulation: 2, changeDetection: 0 });
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵstyleProp"]("height", 400, "px")("max-width", 1300, "px");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("itemSize", ctx.itemSize);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("dataSource", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipeBind1"](3, 17, ctx.visibleItems$))("trackBy", ctx.trackByNo)("sortable", true)("selectable", true)("selection", ctx.selection);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx.displayedColumns);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("nuiHeaderRowDef", ctx.displayedColumns);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("nuiRowDefColumns", ctx.displayedColumns)("cdkVirtualForOf", ctx.placeholderItems)("cdkVirtualForTemplateCacheSize", 10)("cdkVirtualForTrackBy", ctx.trackByNo);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate1"]("\n", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipeBind1"](9, 19, ctx.selection), "\n");
+    } }, directives: [_angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__["CdkVirtualScrollViewport"], _src_lib_table_table_virtual_scroll_table_sticky_header_directive__WEBPACK_IMPORTED_MODULE_6__["TableStickyHeaderDirective"], _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__["CdkFixedSizeVirtualScroll"], _src_lib_table_table_component__WEBPACK_IMPORTED_MODULE_7__["TableComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_8__["NgForOf"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_9__["TableHeaderRowDefDirective"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_9__["TableRowDefDirective"], _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__["CdkVirtualForOf"], _src_lib_table_table_cell_table_column_def_directive__WEBPACK_IMPORTED_MODULE_10__["TableColumnDefDirective"], _src_lib_table_table_cell_table_header_cell_def_directive__WEBPACK_IMPORTED_MODULE_11__["TableHeaderCellDefDirective"], _src_lib_table_table_cell_table_cell_def_directive__WEBPACK_IMPORTED_MODULE_12__["TableCellDefDirective"], _src_lib_table_table_cell_table_header_cell_component__WEBPACK_IMPORTED_MODULE_13__["TableHeaderCellComponent"], _src_lib_table_table_cell_table_cell_directive__WEBPACK_IMPORTED_MODULE_14__["TableCellDirective"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_9__["TableHeaderRowComponent"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_9__["TableRowComponent"]], pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_8__["AsyncPipe"], _angular_common__WEBPACK_IMPORTED_MODULE_8__["JsonPipe"]], encapsulation: 2, changeDetection: 0 });
 const PEOPLE = ["Elena", "Madelyn", "Baggio", "Josh", "Lukas", "Blake", "Frantz", "Dima", "Serhii", "Vita", "Vlad", "Ivan", "Dumitru"];
 const CITIES = ["Bucharest", "Kiev", "Austin", "Brno", "Frankfurt pe Main", "Sutton-under-Whitestonecliffe", "Vila Bela da Santíssima Trindade"];
 function generateUsers(length) {
     return Array.from({ length }).map((obj, id) => {
-        const personName = lodash_sample__WEBPACK_IMPORTED_MODULE_3___default()(PEOPLE) || PEOPLE[0];
+        const personName = lodash_sample__WEBPACK_IMPORTED_MODULE_4___default()(PEOPLE) || PEOPLE[0];
         return ({
             no: id,
             postcode: id * 1000000 * id,
-            city: lodash_sample__WEBPACK_IMPORTED_MODULE_3___default()(CITIES) || CITIES[0],
+            city: lodash_sample__WEBPACK_IMPORTED_MODULE_4___default()(CITIES) || CITIES[0],
             nameFirst: personName,
             nameLast: "UnknownLast",
         });
