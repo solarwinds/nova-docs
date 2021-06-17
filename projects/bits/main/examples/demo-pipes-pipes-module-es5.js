@@ -198,7 +198,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = ".conversion {\n    font-size: 25px;\n    width: 150px;\n}\n";
+      __webpack_exports__["default"] = ".conversion {\n    font-size: 25px;\n    width: 160px;\n}\n";
       /***/
     },
 

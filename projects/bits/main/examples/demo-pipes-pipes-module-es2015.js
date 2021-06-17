@@ -126,7 +126,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".conversion {\n    font-size: 25px;\n    width: 150px;\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = (".conversion {\n    font-size: 25px;\n    width: 160px;\n}\n");
 
 /***/ }),
 

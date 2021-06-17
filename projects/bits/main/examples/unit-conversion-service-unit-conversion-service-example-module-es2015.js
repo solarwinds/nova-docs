@@ -164,7 +164,7 @@ __webpack_require__.r(__webpack_exports__);
 class UnitConversionServiceDocsComponent {
 }
 UnitConversionServiceDocsComponent.ɵfac = function UnitConversionServiceDocsComponent_Factory(t) { return new (t || UnitConversionServiceDocsComponent)(); };
-UnitConversionServiceDocsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: UnitConversionServiceDocsComponent, selectors: [["ng-component"]], decls: 116, vars: 4, consts: [["href", "../injectables/UnitConversionService.html#info", "target", "_parent"], ["type", "info", 3, "allowDismiss"], ["href", "../pipes/UnitConversionPipe.html", "target", "_blank"], ["href", "../miscellaneous/enumerations.html#UnitBase", "target", "_blank"], ["href", "../interfaces/IUnitConversionResult.html", "target", "_blank"], ["type", "warning", 3, "allowDismiss"], ["href", "../miscellaneous/typealiases.html#UnitOption", "target", "_blank"], ["filenamePrefix", "unit-conversion-service-basic", "exampleTitle", "Basic Usage"], ["filenamePrefix", "unit-conversion-service-separate-unit-display", "exampleTitle", "Separating the Value and Unit for Display"]], template: function UnitConversionServiceDocsComponent_Template(rf, ctx) { if (rf & 1) {
+UnitConversionServiceDocsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: UnitConversionServiceDocsComponent, selectors: [["ng-component"]], decls: 120, vars: 4, consts: [["href", "../injectables/UnitConversionService.html#info", "target", "_parent"], ["type", "info", 3, "allowDismiss"], ["href", "../pipes/UnitConversionPipe.html", "target", "_blank"], ["href", "../miscellaneous/enumerations.html#UnitBase", "target", "_blank"], ["href", "../interfaces/IUnitConversionResult.html", "target", "_blank"], ["type", "warning", 3, "allowDismiss"], ["href", "../miscellaneous/typealiases.html#UnitOption", "target", "_blank"], ["filenamePrefix", "unit-conversion-service-basic", "exampleTitle", "Basic Usage"], ["filenamePrefix", "unit-conversion-service-separate-unit-display", "exampleTitle", "Separating the Value and Unit for Display"]], template: function UnitConversionServiceDocsComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " The ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "code");
@@ -307,32 +307,38 @@ UnitConversionServiceDocsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODUL
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](96, "getUnitDisplay");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](97, " method.\n");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](97, " method. If you need to convert the value into scientific notation use the ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](98, "code");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](99, "a", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](100, "getScientificDisplay");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](98, "nui-message", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](99, "strong");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](100, "Note:");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](101, " The ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](102, "code");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](103, "getValueDisplay");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](101, " instead.\n");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](104, " method offers a ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](105, "code");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](106, "localize");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](102, "nui-message", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](103, "strong");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](104, "Note:");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](107, " parameter which defaults to ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](108, "code");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](109, "true");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](105, " The ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](106, "code");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](107, "getValueDisplay");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](110, ". However, if you're using the \"generic\" unit type, it's recommended to set this argument to ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](111, "code");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](112, "false");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](108, " method offers a ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](109, "code");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](110, "localize");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](113, " as localization is not yet supported for the \"generic\" unit.\n");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](111, " parameter which defaults to ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](112, "code");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](113, "true");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](114, "nui-example-wrapper", 8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](115, "unit-conversion-service-separate-unit-display-example");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](114, ". However, if you're using the \"generic\" unit type, it's recommended to set this argument to ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](115, "code");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](116, "false");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](117, " as localization is not yet supported for the \"generic\" unit.\n");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](118, "nui-example-wrapper", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](119, "unit-conversion-service-separate-unit-display-example");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
@@ -341,7 +347,7 @@ UnitConversionServiceDocsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODUL
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("allowDismiss", false);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](33);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("allowDismiss", false);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](19);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](23);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("allowDismiss", false);
     } }, directives: [_src_lib_message_message_component__WEBPACK_IMPORTED_MODULE_1__["MessageComponent"], _src_lib_docs_example_wrapper_example_wrapper_component__WEBPACK_IMPORTED_MODULE_2__["ExampleWrapperComponent"], _unit_conversion_service_basic_unit_conversion_service_basic_example_component__WEBPACK_IMPORTED_MODULE_3__["UnitConversionServiceBasicExampleComponent"], _unit_conversion_service_separate_unit_display_unit_conversion_service_separate_unit_display_example_component__WEBPACK_IMPORTED_MODULE_4__["UnitConversionServiceSeparateUnitDisplayExampleComponent"]], styles: ["ul[_ngcontent-%COMP%] {\n  padding-left: 40px;\n}\nul[_ngcontent-%COMP%]   li[_ngcontent-%COMP%] {\n  list-style: disc;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInVuaXQtY29udmVyc2lvbi1zZXJ2aWNlLWRvY3MuY29tcG9uZW50Lmxlc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxrQkFBQTtBQUNKO0FBRkE7RUFJUSxnQkFBQTtBQUNSIiwiZmlsZSI6InVuaXQtY29udmVyc2lvbi1zZXJ2aWNlLWRvY3MuY29tcG9uZW50Lmxlc3MiLCJzb3VyY2VzQ29udGVudCI6WyJ1bCB7XG4gICAgcGFkZGluZy1sZWZ0OiA0MHB4O1xuXG4gICAgbGkge1xuICAgICAgICBsaXN0LXN0eWxlOiBkaXNjO1xuICAgIH1cbn1cbiJdfQ== */"] });
 
@@ -390,8 +396,16 @@ class UnitConversionServiceSeparateUnitDisplayExampleComponent {
     onNumberChange(num) {
         this.num = num;
         const conversion = this.unitConversionService.convert(this.num, _nova_ui_bits__WEBPACK_IMPORTED_MODULE_0__["UnitBase"].Standard, 2);
-        this.valueDisplay = this.unitConversionService.getValueDisplay(conversion);
         this.unitDisplay = this.unitConversionService.getUnitDisplay(conversion, "hertz");
+        if (this.unitDisplay) {
+            this.valueDisplay = this.unitConversionService.getValueDisplay(conversion);
+        }
+        else {
+            // An undefined getUnitDisplay return value indicates the input value was too large to be converted,
+            // so the base unit and scientific notation can be used as fallbacks.
+            this.unitDisplay = this.unitConversionService.getUnitDisplayBaseValue("hertz");
+            this.valueDisplay = this.unitConversionService.getScientificDisplay(conversion);
+        }
     }
 }
 UnitConversionServiceSeparateUnitDisplayExampleComponent.ɵfac = function UnitConversionServiceSeparateUnitDisplayExampleComponent_Factory(t) { return new (t || UnitConversionServiceSeparateUnitDisplayExampleComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_nova_ui_bits__WEBPACK_IMPORTED_MODULE_0__["UnitConversionService"])); };
