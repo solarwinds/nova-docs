@@ -168,8 +168,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wizard_directive__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./wizard.directive */ "WZ49");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/common */ "ofXK");
-/* harmony import */ var _pipes_get_step_pipe__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../pipes/get-step.pipe */ "TqyC");
-
 
 
 
@@ -216,7 +214,7 @@ NuiWizardV2Module.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵdefin
         _wizard_button_wizard_button__WEBPACK_IMPORTED_MODULE_3__["WizardStepperPreviousDirective"],
         _wizard_step_header_wizard_step_header_component__WEBPACK_IMPORTED_MODULE_7__["WizardStepHeaderComponent"],
         _wizard_step_footer_directive__WEBPACK_IMPORTED_MODULE_6__["WizardStepFooterDirective"]] }); })();
-_angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵsetComponentScope"](_wizard_horizontal_wizard_horizontal_component__WEBPACK_IMPORTED_MODULE_5__["WizardHorizontalComponent"], [_angular_common__WEBPACK_IMPORTED_MODULE_13__["NgForOf"], _angular_common__WEBPACK_IMPORTED_MODULE_13__["NgIf"], _angular_common__WEBPACK_IMPORTED_MODULE_13__["NgClass"], _wizard_step_header_wizard_step_header_component__WEBPACK_IMPORTED_MODULE_7__["WizardStepHeaderComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_13__["NgTemplateOutlet"], _wizard_footer_wizard_footer_component__WEBPACK_IMPORTED_MODULE_4__["WizardFooterComponent"]], [_pipes_get_step_pipe__WEBPACK_IMPORTED_MODULE_14__["GetStep"]]);
+_angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵsetComponentScope"](_wizard_horizontal_wizard_horizontal_component__WEBPACK_IMPORTED_MODULE_5__["WizardHorizontalComponent"], [_angular_common__WEBPACK_IMPORTED_MODULE_13__["NgForOf"], _angular_common__WEBPACK_IMPORTED_MODULE_13__["NgIf"], _angular_common__WEBPACK_IMPORTED_MODULE_13__["NgClass"], _wizard_step_header_wizard_step_header_component__WEBPACK_IMPORTED_MODULE_7__["WizardStepHeaderComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_13__["NgTemplateOutlet"], _wizard_footer_wizard_footer_component__WEBPACK_IMPORTED_MODULE_4__["WizardFooterComponent"]], []);
 _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵsetComponentScope"](_wizard_vertical_wizard_vertical_component__WEBPACK_IMPORTED_MODULE_10__["WizardVerticalComponent"], [_angular_common__WEBPACK_IMPORTED_MODULE_13__["NgForOf"], _wizard_step_header_wizard_step_header_component__WEBPACK_IMPORTED_MODULE_7__["WizardStepHeaderComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_13__["NgTemplateOutlet"], _angular_common__WEBPACK_IMPORTED_MODULE_13__["NgIf"], _wizard_footer_wizard_footer_component__WEBPACK_IMPORTED_MODULE_4__["WizardFooterComponent"]], []);
 
 
@@ -6790,33 +6788,31 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pipes_limit_to_pipe__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../pipes/limit-to.pipe */ "Fsde");
 /* harmony import */ var _pipes_unit_conversion_pipe__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../pipes/unit-conversion.pipe */ "29HT");
 /* harmony import */ var _pipes_highlight_pipe__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../pipes/highlight.pipe */ "ZlWS");
-/* harmony import */ var _pipes_get_step_pipe__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../pipes/get-step.pipe */ "TqyC");
-/* harmony import */ var _services_dom_util_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../services/dom-util.service */ "uj+m");
-/* harmony import */ var _services_edge_detection_service__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../services/edge-detection.service */ "ibgH");
-/* harmony import */ var _services_event_bus_service__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../services/event-bus.service */ "oCSD");
-/* harmony import */ var _services_event_propagation_service__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../services/event-propagation.service */ "+0BR");
-/* harmony import */ var _services_history_storage__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../services/history-storage */ "YUul");
-/* harmony import */ var _services_log_service__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../services/log-service */ "eqCI");
-/* harmony import */ var _services_notification_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../services/notification-service */ "VCez");
-/* harmony import */ var _services_position_service__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../services/position.service */ "Q8/f");
-/* harmony import */ var _services_search_service__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../services/search.service */ "EaWR");
-/* harmony import */ var _services_transient_cache_service__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../services/transient-cache.service */ "02PJ");
-/* harmony import */ var _services_unit_conversion_service__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../services/unit-conversion.service */ "pi50");
-/* harmony import */ var _services_util_service__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../services/util.service */ "/e7+");
-/* harmony import */ var _directives_click_interceptor_click_interceptor_directive__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./directives/click-interceptor/click-interceptor.directive */ "qMZP");
-/* harmony import */ var _directives_clipboard_clipboard_directive__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./directives/clipboard/clipboard.directive */ "eJM4");
-/* harmony import */ var _directives_dragdrop_drag_and_drop_service__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./directives/dragdrop/drag-and-drop.service */ "Eh93");
-/* harmony import */ var _directives_dragdrop_draggable_directive__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./directives/dragdrop/draggable.directive */ "0TTj");
-/* harmony import */ var _directives_dragdrop_droppable_directive__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./directives/dragdrop/droppable.directive */ "GM/8");
-/* harmony import */ var _directives_resize_observer_resize_observer_directive__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./directives/resize-observer/resize-observer.directive */ "ujIh");
-/* harmony import */ var _directives_resize_resize_directive__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./directives/resize/resize.directive */ "F2yd");
-/* harmony import */ var _directives_resizer_resizer_directive__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./directives/resizer/resizer.directive */ "bA9B");
-/* harmony import */ var _directives_set_focus_set_focus_directive__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./directives/set-focus/set-focus.directive */ "IoYV");
-/* harmony import */ var _directives_zoom_content_zoom_content_directive__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./directives/zoom-content/zoom-content.directive */ "YDg1");
+/* harmony import */ var _services_dom_util_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../services/dom-util.service */ "uj+m");
+/* harmony import */ var _services_edge_detection_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../services/edge-detection.service */ "ibgH");
+/* harmony import */ var _services_event_bus_service__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../services/event-bus.service */ "oCSD");
+/* harmony import */ var _services_event_propagation_service__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../services/event-propagation.service */ "+0BR");
+/* harmony import */ var _services_history_storage__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../services/history-storage */ "YUul");
+/* harmony import */ var _services_log_service__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../services/log-service */ "eqCI");
+/* harmony import */ var _services_notification_service__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../services/notification-service */ "VCez");
+/* harmony import */ var _services_position_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../services/position.service */ "Q8/f");
+/* harmony import */ var _services_search_service__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../services/search.service */ "EaWR");
+/* harmony import */ var _services_transient_cache_service__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../services/transient-cache.service */ "02PJ");
+/* harmony import */ var _services_unit_conversion_service__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../services/unit-conversion.service */ "pi50");
+/* harmony import */ var _services_util_service__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../services/util.service */ "/e7+");
+/* harmony import */ var _directives_click_interceptor_click_interceptor_directive__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./directives/click-interceptor/click-interceptor.directive */ "qMZP");
+/* harmony import */ var _directives_clipboard_clipboard_directive__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./directives/clipboard/clipboard.directive */ "eJM4");
+/* harmony import */ var _directives_dragdrop_drag_and_drop_service__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./directives/dragdrop/drag-and-drop.service */ "Eh93");
+/* harmony import */ var _directives_dragdrop_draggable_directive__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./directives/dragdrop/draggable.directive */ "0TTj");
+/* harmony import */ var _directives_dragdrop_droppable_directive__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./directives/dragdrop/droppable.directive */ "GM/8");
+/* harmony import */ var _directives_resize_observer_resize_observer_directive__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./directives/resize-observer/resize-observer.directive */ "ujIh");
+/* harmony import */ var _directives_resize_resize_directive__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./directives/resize/resize.directive */ "F2yd");
+/* harmony import */ var _directives_resizer_resizer_directive__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./directives/resizer/resizer.directive */ "bA9B");
+/* harmony import */ var _directives_set_focus_set_focus_directive__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./directives/set-focus/set-focus.directive */ "IoYV");
+/* harmony import */ var _directives_zoom_content_zoom_content_directive__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./directives/zoom-content/zoom-content.directive */ "YDg1");
 /**
  * @ignore
  */
-
 
 
 
@@ -6857,53 +6853,51 @@ class NuiCommonModule {
 }
 NuiCommonModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({ type: NuiCommonModule });
 NuiCommonModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({ factory: function NuiCommonModule_Factory(t) { return new (t || NuiCommonModule)(); }, providers: [
-        _directives_dragdrop_drag_and_drop_service__WEBPACK_IMPORTED_MODULE_25__["DragAndDropService"],
-        _services_event_bus_service__WEBPACK_IMPORTED_MODULE_13__["EventBusService"],
+        _directives_dragdrop_drag_and_drop_service__WEBPACK_IMPORTED_MODULE_24__["DragAndDropService"],
+        _services_event_bus_service__WEBPACK_IMPORTED_MODULE_12__["EventBusService"],
         _environment__WEBPACK_IMPORTED_MODULE_5__["NUI_ENV_PROVIDER"],
-        _services_unit_conversion_service__WEBPACK_IMPORTED_MODULE_21__["UnitConversionService"],
-        _services_util_service__WEBPACK_IMPORTED_MODULE_22__["UtilService"],
-        _services_transient_cache_service__WEBPACK_IMPORTED_MODULE_20__["TransientCacheService"],
-        _services_search_service__WEBPACK_IMPORTED_MODULE_19__["SearchService"],
+        _services_unit_conversion_service__WEBPACK_IMPORTED_MODULE_20__["UnitConversionService"],
+        _services_util_service__WEBPACK_IMPORTED_MODULE_21__["UtilService"],
+        _services_transient_cache_service__WEBPACK_IMPORTED_MODULE_19__["TransientCacheService"],
+        _services_search_service__WEBPACK_IMPORTED_MODULE_18__["SearchService"],
         _angular_common__WEBPACK_IMPORTED_MODULE_0__["DatePipe"],
-        _services_position_service__WEBPACK_IMPORTED_MODULE_18__["PositionService"],
-        _services_notification_service__WEBPACK_IMPORTED_MODULE_17__["NotificationService"],
-        _services_event_propagation_service__WEBPACK_IMPORTED_MODULE_14__["EventPropagationService"],
-        _services_edge_detection_service__WEBPACK_IMPORTED_MODULE_12__["EdgeDetectionService"],
-        _services_log_service__WEBPACK_IMPORTED_MODULE_16__["LoggerService"],
-        _services_dom_util_service__WEBPACK_IMPORTED_MODULE_11__["DomUtilService"],
+        _services_position_service__WEBPACK_IMPORTED_MODULE_17__["PositionService"],
+        _services_notification_service__WEBPACK_IMPORTED_MODULE_16__["NotificationService"],
+        _services_event_propagation_service__WEBPACK_IMPORTED_MODULE_13__["EventPropagationService"],
+        _services_edge_detection_service__WEBPACK_IMPORTED_MODULE_11__["EdgeDetectionService"],
+        _services_log_service__WEBPACK_IMPORTED_MODULE_15__["LoggerService"],
+        _services_dom_util_service__WEBPACK_IMPORTED_MODULE_10__["DomUtilService"],
         _lib_selector_selector_service__WEBPACK_IMPORTED_MODULE_6__["SelectorService"],
-        _services_history_storage__WEBPACK_IMPORTED_MODULE_15__["HistoryStorage"],
+        _services_history_storage__WEBPACK_IMPORTED_MODULE_14__["HistoryStorage"],
         { provide: "windowObject", useValue: window },
         { provide: _constants_unit_conversion_constants__WEBPACK_IMPORTED_MODULE_4__["unitConversionToken"], useValue: _constants_unit_conversion_constants__WEBPACK_IMPORTED_MODULE_4__["unitConversionConstants"] },
         { provide: _constants_images_constants__WEBPACK_IMPORTED_MODULE_3__["imagesPresetToken"], useValue: _constants_images__WEBPACK_IMPORTED_MODULE_2__["imagesData"] },
     ], imports: [[
             _angular_common__WEBPACK_IMPORTED_MODULE_0__["CommonModule"],
         ], _angular_common__WEBPACK_IMPORTED_MODULE_0__["CommonModule"]] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](NuiCommonModule, { declarations: [_directives_click_interceptor_click_interceptor_directive__WEBPACK_IMPORTED_MODULE_23__["ClickInterceptorDirective"],
-        _directives_clipboard_clipboard_directive__WEBPACK_IMPORTED_MODULE_24__["ClipboardDirective"],
-        _directives_dragdrop_draggable_directive__WEBPACK_IMPORTED_MODULE_26__["DraggableDirective"],
-        _directives_dragdrop_droppable_directive__WEBPACK_IMPORTED_MODULE_27__["DroppableDirective"],
-        _directives_resize_resize_directive__WEBPACK_IMPORTED_MODULE_29__["ResizeDirective"],
-        _directives_resize_observer_resize_observer_directive__WEBPACK_IMPORTED_MODULE_28__["ResizeObserverDirective"],
-        _directives_resizer_resizer_directive__WEBPACK_IMPORTED_MODULE_30__["ResizerDirective"],
-        _directives_set_focus_set_focus_directive__WEBPACK_IMPORTED_MODULE_31__["SetFocusDirective"],
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](NuiCommonModule, { declarations: [_directives_click_interceptor_click_interceptor_directive__WEBPACK_IMPORTED_MODULE_22__["ClickInterceptorDirective"],
+        _directives_clipboard_clipboard_directive__WEBPACK_IMPORTED_MODULE_23__["ClipboardDirective"],
+        _directives_dragdrop_draggable_directive__WEBPACK_IMPORTED_MODULE_25__["DraggableDirective"],
+        _directives_dragdrop_droppable_directive__WEBPACK_IMPORTED_MODULE_26__["DroppableDirective"],
+        _directives_resize_resize_directive__WEBPACK_IMPORTED_MODULE_28__["ResizeDirective"],
+        _directives_resize_observer_resize_observer_directive__WEBPACK_IMPORTED_MODULE_27__["ResizeObserverDirective"],
+        _directives_resizer_resizer_directive__WEBPACK_IMPORTED_MODULE_29__["ResizerDirective"],
+        _directives_set_focus_set_focus_directive__WEBPACK_IMPORTED_MODULE_30__["SetFocusDirective"],
         _pipes_limit_to_pipe__WEBPACK_IMPORTED_MODULE_7__["LimitToPipe"],
         _pipes_highlight_pipe__WEBPACK_IMPORTED_MODULE_9__["HighlightPipe"],
-        _pipes_get_step_pipe__WEBPACK_IMPORTED_MODULE_10__["GetStep"],
         _pipes_unit_conversion_pipe__WEBPACK_IMPORTED_MODULE_8__["UnitConversionPipe"],
-        _directives_zoom_content_zoom_content_directive__WEBPACK_IMPORTED_MODULE_32__["ZoomContentDirective"]], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_0__["CommonModule"]], exports: [_angular_common__WEBPACK_IMPORTED_MODULE_0__["CommonModule"],
-        _directives_click_interceptor_click_interceptor_directive__WEBPACK_IMPORTED_MODULE_23__["ClickInterceptorDirective"],
-        _directives_clipboard_clipboard_directive__WEBPACK_IMPORTED_MODULE_24__["ClipboardDirective"],
-        _directives_dragdrop_draggable_directive__WEBPACK_IMPORTED_MODULE_26__["DraggableDirective"],
-        _directives_dragdrop_droppable_directive__WEBPACK_IMPORTED_MODULE_27__["DroppableDirective"],
-        _directives_resize_resize_directive__WEBPACK_IMPORTED_MODULE_29__["ResizeDirective"],
-        _directives_resize_observer_resize_observer_directive__WEBPACK_IMPORTED_MODULE_28__["ResizeObserverDirective"],
-        _directives_resizer_resizer_directive__WEBPACK_IMPORTED_MODULE_30__["ResizerDirective"],
-        _directives_set_focus_set_focus_directive__WEBPACK_IMPORTED_MODULE_31__["SetFocusDirective"],
+        _directives_zoom_content_zoom_content_directive__WEBPACK_IMPORTED_MODULE_31__["ZoomContentDirective"]], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_0__["CommonModule"]], exports: [_angular_common__WEBPACK_IMPORTED_MODULE_0__["CommonModule"],
+        _directives_click_interceptor_click_interceptor_directive__WEBPACK_IMPORTED_MODULE_22__["ClickInterceptorDirective"],
+        _directives_clipboard_clipboard_directive__WEBPACK_IMPORTED_MODULE_23__["ClipboardDirective"],
+        _directives_dragdrop_draggable_directive__WEBPACK_IMPORTED_MODULE_25__["DraggableDirective"],
+        _directives_dragdrop_droppable_directive__WEBPACK_IMPORTED_MODULE_26__["DroppableDirective"],
+        _directives_resize_resize_directive__WEBPACK_IMPORTED_MODULE_28__["ResizeDirective"],
+        _directives_resize_observer_resize_observer_directive__WEBPACK_IMPORTED_MODULE_27__["ResizeObserverDirective"],
+        _directives_resizer_resizer_directive__WEBPACK_IMPORTED_MODULE_29__["ResizerDirective"],
+        _directives_set_focus_set_focus_directive__WEBPACK_IMPORTED_MODULE_30__["SetFocusDirective"],
         _pipes_unit_conversion_pipe__WEBPACK_IMPORTED_MODULE_8__["UnitConversionPipe"],
         _pipes_highlight_pipe__WEBPACK_IMPORTED_MODULE_9__["HighlightPipe"],
-        _pipes_get_step_pipe__WEBPACK_IMPORTED_MODULE_10__["GetStep"],
-        _directives_zoom_content_zoom_content_directive__WEBPACK_IMPORTED_MODULE_32__["ZoomContentDirective"]] }); })();
+        _directives_zoom_content_zoom_content_directive__WEBPACK_IMPORTED_MODULE_31__["ZoomContentDirective"]] }); })();
 
 
 /***/ }),
@@ -17878,44 +17872,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "TqyC":
-/*!************************************!*\
-  !*** ./src/pipes/get-step.pipe.ts ***!
-  \************************************/
-/*! exports provided: GetStep */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GetStep", function() { return GetStep; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
-
-
-/**
- * GetStep pipe is used to get the wizard step by index
- *
- * __Parameters :__
- *
- *   index - the index of step
- *
- * __Usage :__
- *   steps | getStep:index
- *
- * __Example :__
- *   <code>{{ steps | getStep:3 }}</code>
- *
- */
-class GetStep {
-    transform(steps, index) {
-        return steps.get(index);
-    }
-}
-GetStep.ɵfac = function GetStep_Factory(t) { return new (t || GetStep)(); };
-GetStep.ɵpipe = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefinePipe"]({ name: "getStep", type: GetStep, pure: true });
-
-
-/***/ }),
-
 /***/ "UF9u":
 /*!*********************************!*\
   !*** ./src/lib/select/index.ts ***!
@@ -19034,6 +18990,7 @@ class WizardDirective extends _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_1__[
         super(...arguments);
         /** Override CdkStepper 'steps' property to use WizardStepV2Component instead of CdkStep */
         this.steps = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["QueryList"]();
+        this.stepsArray = [];
         /** Event emitted when the current step is done transitioning in. */
         this.animationDone = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
         /** Event emitted when the selected step has changed. */
@@ -19060,6 +19017,7 @@ class WizardDirective extends _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_1__[
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["startWith"])(this._steps), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeUntil"])(this._destroyed))
             .subscribe((steps) => {
             this.steps.reset(steps.filter(step => step._stepper === this));
+            this.stepsArray = this.steps.toArray();
             this.steps.notifyOnChanges();
         });
         this.steps.changes
@@ -21350,19 +21308,17 @@ __webpack_require__.r(__webpack_exports__);
 const _c0 = function (a0) { return { "nui-wizard-horizontal-line-completed": a0 }; };
 function WizardHorizontalComponent_div_1_div_1_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](0, "div", 8);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpipe"](1, "getStep");
 } if (rf & 2) {
     const ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
     const i_r4 = ctx_r7.index;
     const step_r3 = ctx_r7.$implicit;
     const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
-    let tmp_0_0 = null;
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction1"](4, _c0, ((tmp_0_0 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpipeBind2"](1, 1, ctx_r6.steps, i_r4 - 1)) == null ? null : tmp_0_0.completed) && step_r3.completed || ctx_r6.selectedIndex === i_r4));
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction1"](1, _c0, (ctx_r6.stepsArray[i_r4 - 1] == null ? null : ctx_r6.stepsArray[i_r4 - 1].completed) && step_r3.completed || ctx_r6.selectedIndex === i_r4));
 } }
 function WizardHorizontalComponent_div_1_Template(rf, ctx) { if (rf & 1) {
     const _r10 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](1, WizardHorizontalComponent_div_1_div_1_Template, 2, 6, "div", 6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](1, WizardHorizontalComponent_div_1_div_1_Template, 1, 3, "div", 6);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](2, "nui-wizard-step-header", 7);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function WizardHorizontalComponent_div_1_Template_nui_wizard_step_header_click_2_listener() { const step_r3 = ctx.$implicit; return step_r3.select(); })("keydown", function WizardHorizontalComponent_div_1_Template_nui_wizard_step_header_keydown_2_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r10); const ctx_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"](); return ctx_r9._onKeydown($event); });
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
@@ -21707,7 +21663,7 @@ __webpack_require__.r(__webpack_exports__);
 /*!***************************!*\
   !*** ./src/public_api.ts ***!
   \***************************/
-/*! exports provided: NuiButtonModule, NuiCheckboxModule, NuiCommonModule, NuiDividerModule, NuiIconModule, NuiMessageModule, NuiImageModule, NuiMenuModule, NuiPopupModule, NuiSwitchModule, NuiSelectModule, NuiSelectV2Module, NuiSpinnerModule, NuiTabsModule, NuiTextboxModule, NuiTooltipModule, NuiLayoutModule, NuiOverlayModule, NuiOverlayAdditionsModule, NuiBreadcrumbModule, NuiBusyModule, NuiChipsModule, NuiContentModule, NuiDatePickerModule, NuiDateTimePickerModule, NuiDialogModule, NuiExpanderModule, NuiFormFieldModule, NuiPaginatorModule, NuiPanelModule, NuiPopoverModule, NuiProgressModule, NuiRadioModule, NuiRepeatModule, NuiSearchModule, NuiSelectorModule, NuiSorterModule, NuiTableModule, NuiTimeFrameBarModule, NuiTimeFramePickerModule, NuiTimePickerModule, NuiToastModule, NuiToolbarModule, NuiValidationMessageModule, NuiWizardModule, NuiWizardV2Module, NuiDocsModule, ButtonSizeType, CheckboxChangeEvent, datePickerDefaults, datePickerDateFormats, NuiDndModule, DndDropTargetDirective, NuiDialogEvent, SrlcStage, NuiFormFieldControl, IconCategory, IconCategoryNamespace, IconStatus, IconSeverity, IconState, IconWidget, MenuActionType, PanelModes, PanelStates, SizeParameters, PanelBackgroundColor, PopoverOverlayPosition, RepeatSelectionMode, PaddingOptions, NUI_SELECT_V2_OPTION_PARENT_COMPONENT, ANNOUNCER_OPEN_MESSAGE_SUFFIX, ANNOUNCER_CLOSE_MESSAGE, SelectionType, CheckboxStatus, SorterDirection, SpinnerSize, ButtonIcon, DEFAULT_TABLE_HEADER_OFFSET, TABLE_ROW_HEIGHT, complexScrollStrategyFactory, TableVirtualScrollLinearDirective, TableVirtualScrollDirective, TableVirtualScrollHeaderPosition, TableStickyHeaderDirective, SliceRangePipe, ToolbarItemType, ToolbarItemDisplayStyle, CustomValidationMessageComponent, WizardDirective, WizardStepFooterDirective, WizardStepLabelDirective, ErrorStateMatcher, wizardAnimations, WizardStepperNextDirective, WizardStepperPreviousDirective, WizardFooterComponent, WizardHorizontalComponent, WizardStepV2Component, WizardStepHeaderComponent, WizardVerticalComponent, OVERLAY_CONTAINER_CLASS, OVERLAY_PANEL_CLASS, OVERLAY_DEFAULT_PRIORITY, OverlayPlacement, OverlayPosition, getOverlayPositions, OVERLAY_ITEM, OVERLAY_CONTAINER, OVERLAY_WITH_POPUP_STYLES_CLASS, OVERLAY_ARROW_SIZE, OverlayUtilitiesService, OverlayCustomContainer, POPUP_V2_VIEWPORT_MARGINS_DEFAULT, unitConversionToken, UnitBase, unitConversionConstants, imagesPresetToken, WIZARD_CONFIG, WIZARD_STEP_STATE_DEFAULT_CONFIG, WIZARD_CONFIG_DEFAULT, KEY_CODE, KEYBOARD_CODE, RESIZE_DEBOUNCE_TIME, DEFAULT_INTERACTIVE_ELEMENTS, ResizeDirection, ResizeUnit, resizeDirectionHelpers, defaultFilters, NuiActiveDialog, SelectionModel, IEvent, EventDefinition, NuiValidators, LogLevel, NuiEnvironment, NUI_ENV_PROVIDER_FACTORY, NUI_ENV_PROVIDER, uuid, immutableSet, removeErrors, traverse, nameof, BreadcrumbComponent, ContentComponent, ExpanderComponent, MessageComponent, DividerComponent, RadioComponent, RadioGroupComponent, CheckboxComponent, CheckboxGroupComponent, ChipComponent, ChipsComponent, ChipsOverflowComponent, IconComponent, SpinnerComponent, SwitchComponent, PaginatorComponent, ProgressComponent, PanelComponent, ButtonComponent, BusyComponent, ImageComponent, SearchComponent, TextboxComponent, RepeatItemComponent, RepeatComponent, MenuActionComponent, MenuComponent, MenuGroupComponent, MenuItemBaseComponent, MenuLinkComponent, MenuOptionComponent, MenuPopupComponent, MenuSwitchComponent, WizardStepComponent, WizardComponent, ToastComponent, PopupDeprecatedComponent, PopupToggleDirective, SelectorComponent, PopoverComponent, PopupComponent, PopoverModalComponent, SelectComponent, SelectV2OptionComponent, SelectV2OptionGroupComponent, ComboboxV2OptionHighlightDirective, OverlayItemComponent, OverlayComponent, ArrowComponent, SelectV2Component, ComboboxV2Component, MarkAsSelectedItemDirective, ComboboxComponent, BaseSelect, DatePickerComponent, TimePickerComponent, TimeFramePickerComponent, DateTimePickerComponent, SorterComponent, DialogComponent, NuiDialogRef, DialogHeaderComponent, DialogFooterComponent, DialogBackdropComponent, ConfirmationDialogComponent, TableComponent, TableFooterRowComponent, TableHeaderRowComponent, TableRowComponent, TableFooterRowDefDirective, TableRowDefDirective, TableHeaderRowDefDirective, CardComponent, CardGroupComponent, SheetComponent, SheetGroupComponent, TableHeaderCellComponent, TableFooterCellDefDirective, TableFooterCellDirective, TableHeaderCellDefDirective, TableColumnDefDirective, TableCellDirective, TableCellDefDirective, TableResizerDirective, ToolbarComponent, ToolbarGroupComponent, ToolbarItemComponent, ToolbarSplitterComponent, ValidationMessageComponent, TextboxNumberComponent, FormFieldComponent, TabGroupComponent, TabHeadingCustomTemplateRefDirective, TabHeadingDirective, TabComponent, ClipboardDirective, DraggableDirective, DroppableDirective, ResizeObserverDirective, ResizerDirective, ResizeDirective, SetFocusDirective, TooltipDirective, ZoomContentDirective, ThemeSwitcherComponent, ClickInterceptorDirective, MenuItemComponent, TabHeadingComponent, TabHeadingGroupComponent, TooltipComponent, LayoutResizerComponent, TimeFrameBarComponent, QuickPickerComponent, CopyTextComponent, ExampleWrapperComponent, ExampleCodeComponent, SrlcIndicatorComponent, GetStep, HighlightPipe, LimitToPipe, TimeFrameFormatPipe, UnitConversionPipe, IconService, DragAndDropService, BreadcrumbStateService, NoopDataSourceService, DataSourceService, DataSourceFeatures, DataFilterService, DialogStackService, DialogService, DomUtilService, EdgeDetectionService, EventPropagationService, HistoryStorage, ListService, LoggerService, NotificationService, PositionService, SearchService, SelectorService, UtilService, TimeframeService, ToastContainerService, ToastService, ToastDirective, ThemeSwitchService, TransientCacheService, TableStateHandlerService, UnitConversionService, LocalFilteringDataSource, ClientSideDataSource, ServerSideDataSource, EventBusService, EventBus, MenuKeyControlService, VirtualViewportManager, OverlayContainerService, OverlayPositionService, OverlayService, DEMO_PATH_TOKEN, expand */
+/*! exports provided: NuiButtonModule, NuiCheckboxModule, NuiCommonModule, NuiDividerModule, NuiIconModule, NuiMessageModule, NuiImageModule, NuiMenuModule, NuiPopupModule, NuiSwitchModule, NuiSelectModule, NuiSelectV2Module, NuiSpinnerModule, NuiTabsModule, NuiTextboxModule, NuiTooltipModule, NuiLayoutModule, NuiOverlayModule, NuiOverlayAdditionsModule, NuiBreadcrumbModule, NuiBusyModule, NuiChipsModule, NuiContentModule, NuiDatePickerModule, NuiDateTimePickerModule, NuiDialogModule, NuiExpanderModule, NuiFormFieldModule, NuiPaginatorModule, NuiPanelModule, NuiPopoverModule, NuiProgressModule, NuiRadioModule, NuiRepeatModule, NuiSearchModule, NuiSelectorModule, NuiSorterModule, NuiTableModule, NuiTimeFrameBarModule, NuiTimeFramePickerModule, NuiTimePickerModule, NuiToastModule, NuiToolbarModule, NuiValidationMessageModule, NuiWizardModule, NuiWizardV2Module, NuiDocsModule, ButtonSizeType, CheckboxChangeEvent, datePickerDefaults, datePickerDateFormats, NuiDndModule, DndDropTargetDirective, NuiDialogEvent, SrlcStage, NuiFormFieldControl, IconCategory, IconCategoryNamespace, IconStatus, IconSeverity, IconState, IconWidget, MenuActionType, PanelModes, PanelStates, SizeParameters, PanelBackgroundColor, PopoverOverlayPosition, RepeatSelectionMode, PaddingOptions, NUI_SELECT_V2_OPTION_PARENT_COMPONENT, ANNOUNCER_OPEN_MESSAGE_SUFFIX, ANNOUNCER_CLOSE_MESSAGE, SelectionType, CheckboxStatus, SorterDirection, SpinnerSize, ButtonIcon, DEFAULT_TABLE_HEADER_OFFSET, TABLE_ROW_HEIGHT, complexScrollStrategyFactory, TableVirtualScrollLinearDirective, TableVirtualScrollDirective, TableVirtualScrollHeaderPosition, TableStickyHeaderDirective, SliceRangePipe, ToolbarItemType, ToolbarItemDisplayStyle, CustomValidationMessageComponent, WizardDirective, WizardStepFooterDirective, WizardStepLabelDirective, ErrorStateMatcher, wizardAnimations, WizardStepperNextDirective, WizardStepperPreviousDirective, WizardFooterComponent, WizardHorizontalComponent, WizardStepV2Component, WizardStepHeaderComponent, WizardVerticalComponent, OVERLAY_CONTAINER_CLASS, OVERLAY_PANEL_CLASS, OVERLAY_DEFAULT_PRIORITY, OverlayPlacement, OverlayPosition, getOverlayPositions, OVERLAY_ITEM, OVERLAY_CONTAINER, OVERLAY_WITH_POPUP_STYLES_CLASS, OVERLAY_ARROW_SIZE, OverlayUtilitiesService, OverlayCustomContainer, POPUP_V2_VIEWPORT_MARGINS_DEFAULT, unitConversionToken, UnitBase, unitConversionConstants, imagesPresetToken, WIZARD_CONFIG, WIZARD_STEP_STATE_DEFAULT_CONFIG, WIZARD_CONFIG_DEFAULT, KEY_CODE, KEYBOARD_CODE, RESIZE_DEBOUNCE_TIME, DEFAULT_INTERACTIVE_ELEMENTS, ResizeDirection, ResizeUnit, resizeDirectionHelpers, defaultFilters, NuiActiveDialog, SelectionModel, IEvent, EventDefinition, NuiValidators, LogLevel, NuiEnvironment, NUI_ENV_PROVIDER_FACTORY, NUI_ENV_PROVIDER, uuid, immutableSet, removeErrors, traverse, nameof, BreadcrumbComponent, ContentComponent, ExpanderComponent, MessageComponent, DividerComponent, RadioComponent, RadioGroupComponent, CheckboxComponent, CheckboxGroupComponent, ChipComponent, ChipsComponent, ChipsOverflowComponent, IconComponent, SpinnerComponent, SwitchComponent, PaginatorComponent, ProgressComponent, PanelComponent, ButtonComponent, BusyComponent, ImageComponent, SearchComponent, TextboxComponent, RepeatItemComponent, RepeatComponent, MenuActionComponent, MenuComponent, MenuGroupComponent, MenuItemBaseComponent, MenuLinkComponent, MenuOptionComponent, MenuPopupComponent, MenuSwitchComponent, WizardStepComponent, WizardComponent, ToastComponent, PopupDeprecatedComponent, PopupToggleDirective, SelectorComponent, PopoverComponent, PopupComponent, PopoverModalComponent, SelectComponent, SelectV2OptionComponent, SelectV2OptionGroupComponent, ComboboxV2OptionHighlightDirective, OverlayItemComponent, OverlayComponent, ArrowComponent, SelectV2Component, ComboboxV2Component, MarkAsSelectedItemDirective, ComboboxComponent, BaseSelect, DatePickerComponent, TimePickerComponent, TimeFramePickerComponent, DateTimePickerComponent, SorterComponent, DialogComponent, NuiDialogRef, DialogHeaderComponent, DialogFooterComponent, DialogBackdropComponent, ConfirmationDialogComponent, TableComponent, TableFooterRowComponent, TableHeaderRowComponent, TableRowComponent, TableFooterRowDefDirective, TableRowDefDirective, TableHeaderRowDefDirective, CardComponent, CardGroupComponent, SheetComponent, SheetGroupComponent, TableHeaderCellComponent, TableFooterCellDefDirective, TableFooterCellDirective, TableHeaderCellDefDirective, TableColumnDefDirective, TableCellDirective, TableCellDefDirective, TableResizerDirective, ToolbarComponent, ToolbarGroupComponent, ToolbarItemComponent, ToolbarSplitterComponent, ValidationMessageComponent, TextboxNumberComponent, FormFieldComponent, TabGroupComponent, TabHeadingCustomTemplateRefDirective, TabHeadingDirective, TabComponent, ClipboardDirective, DraggableDirective, DroppableDirective, ResizeObserverDirective, ResizerDirective, ResizeDirective, SetFocusDirective, TooltipDirective, ZoomContentDirective, ThemeSwitcherComponent, ClickInterceptorDirective, MenuItemComponent, TabHeadingComponent, TabHeadingGroupComponent, TooltipComponent, LayoutResizerComponent, TimeFrameBarComponent, QuickPickerComponent, CopyTextComponent, ExampleWrapperComponent, ExampleCodeComponent, SrlcIndicatorComponent, HighlightPipe, LimitToPipe, TimeFrameFormatPipe, UnitConversionPipe, IconService, DragAndDropService, BreadcrumbStateService, NoopDataSourceService, DataSourceService, DataSourceFeatures, DataFilterService, DialogStackService, DialogService, DomUtilService, EdgeDetectionService, EventPropagationService, HistoryStorage, ListService, LoggerService, NotificationService, PositionService, SearchService, SelectorService, UtilService, TimeframeService, ToastContainerService, ToastService, ToastDirective, ThemeSwitchService, TransientCacheService, TableStateHandlerService, UnitConversionService, LocalFilteringDataSource, ClientSideDataSource, ServerSideDataSource, EventBusService, EventBus, MenuKeyControlService, VirtualViewportManager, OverlayContainerService, OverlayPositionService, OverlayService, DEMO_PATH_TOKEN, expand */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -22344,140 +22300,137 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lib_docs_srlc_indicator_srlc_indicator_component__WEBPACK_IMPORTED_MODULE_111__ = __webpack_require__(/*! ./lib/docs/srlc-indicator/srlc-indicator.component */ "oxoe");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SrlcIndicatorComponent", function() { return _lib_docs_srlc_indicator_srlc_indicator_component__WEBPACK_IMPORTED_MODULE_111__["SrlcIndicatorComponent"]; });
 
-/* harmony import */ var _pipes_get_step_pipe__WEBPACK_IMPORTED_MODULE_112__ = __webpack_require__(/*! ./pipes/get-step.pipe */ "TqyC");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "GetStep", function() { return _pipes_get_step_pipe__WEBPACK_IMPORTED_MODULE_112__["GetStep"]; });
+/* harmony import */ var _pipes_highlight_pipe__WEBPACK_IMPORTED_MODULE_112__ = __webpack_require__(/*! ./pipes/highlight.pipe */ "ZlWS");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "HighlightPipe", function() { return _pipes_highlight_pipe__WEBPACK_IMPORTED_MODULE_112__["HighlightPipe"]; });
 
-/* harmony import */ var _pipes_highlight_pipe__WEBPACK_IMPORTED_MODULE_113__ = __webpack_require__(/*! ./pipes/highlight.pipe */ "ZlWS");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "HighlightPipe", function() { return _pipes_highlight_pipe__WEBPACK_IMPORTED_MODULE_113__["HighlightPipe"]; });
+/* harmony import */ var _pipes_limit_to_pipe__WEBPACK_IMPORTED_MODULE_113__ = __webpack_require__(/*! ./pipes/limit-to.pipe */ "Fsde");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LimitToPipe", function() { return _pipes_limit_to_pipe__WEBPACK_IMPORTED_MODULE_113__["LimitToPipe"]; });
 
-/* harmony import */ var _pipes_limit_to_pipe__WEBPACK_IMPORTED_MODULE_114__ = __webpack_require__(/*! ./pipes/limit-to.pipe */ "Fsde");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LimitToPipe", function() { return _pipes_limit_to_pipe__WEBPACK_IMPORTED_MODULE_114__["LimitToPipe"]; });
+/* harmony import */ var _lib_time_frame_picker_time_frame_format_pipe__WEBPACK_IMPORTED_MODULE_114__ = __webpack_require__(/*! ./lib/time-frame-picker/time-frame-format.pipe */ "Y/g/");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TimeFrameFormatPipe", function() { return _lib_time_frame_picker_time_frame_format_pipe__WEBPACK_IMPORTED_MODULE_114__["TimeFrameFormatPipe"]; });
 
-/* harmony import */ var _lib_time_frame_picker_time_frame_format_pipe__WEBPACK_IMPORTED_MODULE_115__ = __webpack_require__(/*! ./lib/time-frame-picker/time-frame-format.pipe */ "Y/g/");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TimeFrameFormatPipe", function() { return _lib_time_frame_picker_time_frame_format_pipe__WEBPACK_IMPORTED_MODULE_115__["TimeFrameFormatPipe"]; });
+/* harmony import */ var _pipes_unit_conversion_pipe__WEBPACK_IMPORTED_MODULE_115__ = __webpack_require__(/*! ./pipes/unit-conversion.pipe */ "29HT");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UnitConversionPipe", function() { return _pipes_unit_conversion_pipe__WEBPACK_IMPORTED_MODULE_115__["UnitConversionPipe"]; });
 
-/* harmony import */ var _pipes_unit_conversion_pipe__WEBPACK_IMPORTED_MODULE_116__ = __webpack_require__(/*! ./pipes/unit-conversion.pipe */ "29HT");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UnitConversionPipe", function() { return _pipes_unit_conversion_pipe__WEBPACK_IMPORTED_MODULE_116__["UnitConversionPipe"]; });
+/* harmony import */ var _lib_icon_icon_service__WEBPACK_IMPORTED_MODULE_116__ = __webpack_require__(/*! ./lib/icon/icon.service */ "5pEO");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "IconService", function() { return _lib_icon_icon_service__WEBPACK_IMPORTED_MODULE_116__["IconService"]; });
 
-/* harmony import */ var _lib_icon_icon_service__WEBPACK_IMPORTED_MODULE_117__ = __webpack_require__(/*! ./lib/icon/icon.service */ "5pEO");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "IconService", function() { return _lib_icon_icon_service__WEBPACK_IMPORTED_MODULE_117__["IconService"]; });
+/* harmony import */ var _common_directives_dragdrop_drag_and_drop_service__WEBPACK_IMPORTED_MODULE_117__ = __webpack_require__(/*! ./common/directives/dragdrop/drag-and-drop.service */ "Eh93");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DragAndDropService", function() { return _common_directives_dragdrop_drag_and_drop_service__WEBPACK_IMPORTED_MODULE_117__["DragAndDropService"]; });
 
-/* harmony import */ var _common_directives_dragdrop_drag_and_drop_service__WEBPACK_IMPORTED_MODULE_118__ = __webpack_require__(/*! ./common/directives/dragdrop/drag-and-drop.service */ "Eh93");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DragAndDropService", function() { return _common_directives_dragdrop_drag_and_drop_service__WEBPACK_IMPORTED_MODULE_118__["DragAndDropService"]; });
+/* harmony import */ var _lib_breadcrumb_breadcrumb_state_service__WEBPACK_IMPORTED_MODULE_118__ = __webpack_require__(/*! ./lib/breadcrumb/breadcrumb-state.service */ "MhuO");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BreadcrumbStateService", function() { return _lib_breadcrumb_breadcrumb_state_service__WEBPACK_IMPORTED_MODULE_118__["BreadcrumbStateService"]; });
 
-/* harmony import */ var _lib_breadcrumb_breadcrumb_state_service__WEBPACK_IMPORTED_MODULE_119__ = __webpack_require__(/*! ./lib/breadcrumb/breadcrumb-state.service */ "MhuO");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BreadcrumbStateService", function() { return _lib_breadcrumb_breadcrumb_state_service__WEBPACK_IMPORTED_MODULE_119__["BreadcrumbStateService"]; });
+/* harmony import */ var _services_data_source_noop_data_source_service__WEBPACK_IMPORTED_MODULE_119__ = __webpack_require__(/*! ./services/data-source/noop-data-source.service */ "PIpY");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "NoopDataSourceService", function() { return _services_data_source_noop_data_source_service__WEBPACK_IMPORTED_MODULE_119__["NoopDataSourceService"]; });
 
-/* harmony import */ var _services_data_source_noop_data_source_service__WEBPACK_IMPORTED_MODULE_120__ = __webpack_require__(/*! ./services/data-source/noop-data-source.service */ "PIpY");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "NoopDataSourceService", function() { return _services_data_source_noop_data_source_service__WEBPACK_IMPORTED_MODULE_120__["NoopDataSourceService"]; });
+/* harmony import */ var _services_data_source_data_source_service__WEBPACK_IMPORTED_MODULE_120__ = __webpack_require__(/*! ./services/data-source/data-source.service */ "6NOy");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DataSourceService", function() { return _services_data_source_data_source_service__WEBPACK_IMPORTED_MODULE_120__["DataSourceService"]; });
 
-/* harmony import */ var _services_data_source_data_source_service__WEBPACK_IMPORTED_MODULE_121__ = __webpack_require__(/*! ./services/data-source/data-source.service */ "6NOy");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DataSourceService", function() { return _services_data_source_data_source_service__WEBPACK_IMPORTED_MODULE_121__["DataSourceService"]; });
+/* harmony import */ var _services_data_source_data_source_features__WEBPACK_IMPORTED_MODULE_121__ = __webpack_require__(/*! ./services/data-source/data-source-features */ "G454");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DataSourceFeatures", function() { return _services_data_source_data_source_features__WEBPACK_IMPORTED_MODULE_121__["DataSourceFeatures"]; });
 
-/* harmony import */ var _services_data_source_data_source_features__WEBPACK_IMPORTED_MODULE_122__ = __webpack_require__(/*! ./services/data-source/data-source-features */ "G454");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DataSourceFeatures", function() { return _services_data_source_data_source_features__WEBPACK_IMPORTED_MODULE_122__["DataSourceFeatures"]; });
+/* harmony import */ var _services_data_filter_service__WEBPACK_IMPORTED_MODULE_122__ = __webpack_require__(/*! ./services/data-filter.service */ "cq1f");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DataFilterService", function() { return _services_data_filter_service__WEBPACK_IMPORTED_MODULE_122__["DataFilterService"]; });
 
-/* harmony import */ var _services_data_filter_service__WEBPACK_IMPORTED_MODULE_123__ = __webpack_require__(/*! ./services/data-filter.service */ "cq1f");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DataFilterService", function() { return _services_data_filter_service__WEBPACK_IMPORTED_MODULE_123__["DataFilterService"]; });
+/* harmony import */ var _lib_dialog_dialog_stack_service__WEBPACK_IMPORTED_MODULE_123__ = __webpack_require__(/*! ./lib/dialog/dialog-stack.service */ "hPnp");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DialogStackService", function() { return _lib_dialog_dialog_stack_service__WEBPACK_IMPORTED_MODULE_123__["DialogStackService"]; });
 
-/* harmony import */ var _lib_dialog_dialog_stack_service__WEBPACK_IMPORTED_MODULE_124__ = __webpack_require__(/*! ./lib/dialog/dialog-stack.service */ "hPnp");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DialogStackService", function() { return _lib_dialog_dialog_stack_service__WEBPACK_IMPORTED_MODULE_124__["DialogStackService"]; });
+/* harmony import */ var _lib_dialog_dialog_service__WEBPACK_IMPORTED_MODULE_124__ = __webpack_require__(/*! ./lib/dialog/dialog.service */ "R6EM");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DialogService", function() { return _lib_dialog_dialog_service__WEBPACK_IMPORTED_MODULE_124__["DialogService"]; });
 
-/* harmony import */ var _lib_dialog_dialog_service__WEBPACK_IMPORTED_MODULE_125__ = __webpack_require__(/*! ./lib/dialog/dialog.service */ "R6EM");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DialogService", function() { return _lib_dialog_dialog_service__WEBPACK_IMPORTED_MODULE_125__["DialogService"]; });
+/* harmony import */ var _services_dom_util_service__WEBPACK_IMPORTED_MODULE_125__ = __webpack_require__(/*! ./services/dom-util.service */ "uj+m");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DomUtilService", function() { return _services_dom_util_service__WEBPACK_IMPORTED_MODULE_125__["DomUtilService"]; });
 
-/* harmony import */ var _services_dom_util_service__WEBPACK_IMPORTED_MODULE_126__ = __webpack_require__(/*! ./services/dom-util.service */ "uj+m");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DomUtilService", function() { return _services_dom_util_service__WEBPACK_IMPORTED_MODULE_126__["DomUtilService"]; });
+/* harmony import */ var _services_edge_detection_service__WEBPACK_IMPORTED_MODULE_126__ = __webpack_require__(/*! ./services/edge-detection.service */ "ibgH");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "EdgeDetectionService", function() { return _services_edge_detection_service__WEBPACK_IMPORTED_MODULE_126__["EdgeDetectionService"]; });
 
-/* harmony import */ var _services_edge_detection_service__WEBPACK_IMPORTED_MODULE_127__ = __webpack_require__(/*! ./services/edge-detection.service */ "ibgH");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "EdgeDetectionService", function() { return _services_edge_detection_service__WEBPACK_IMPORTED_MODULE_127__["EdgeDetectionService"]; });
+/* harmony import */ var _services_event_propagation_service__WEBPACK_IMPORTED_MODULE_127__ = __webpack_require__(/*! ./services/event-propagation.service */ "+0BR");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "EventPropagationService", function() { return _services_event_propagation_service__WEBPACK_IMPORTED_MODULE_127__["EventPropagationService"]; });
 
-/* harmony import */ var _services_event_propagation_service__WEBPACK_IMPORTED_MODULE_128__ = __webpack_require__(/*! ./services/event-propagation.service */ "+0BR");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "EventPropagationService", function() { return _services_event_propagation_service__WEBPACK_IMPORTED_MODULE_128__["EventPropagationService"]; });
+/* harmony import */ var _services_history_storage__WEBPACK_IMPORTED_MODULE_128__ = __webpack_require__(/*! ./services/history-storage */ "YUul");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "HistoryStorage", function() { return _services_history_storage__WEBPACK_IMPORTED_MODULE_128__["HistoryStorage"]; });
 
-/* harmony import */ var _services_history_storage__WEBPACK_IMPORTED_MODULE_129__ = __webpack_require__(/*! ./services/history-storage */ "YUul");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "HistoryStorage", function() { return _services_history_storage__WEBPACK_IMPORTED_MODULE_129__["HistoryStorage"]; });
+/* harmony import */ var _services_list_service__WEBPACK_IMPORTED_MODULE_129__ = __webpack_require__(/*! ./services/list.service */ "f9pT");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ListService", function() { return _services_list_service__WEBPACK_IMPORTED_MODULE_129__["ListService"]; });
 
-/* harmony import */ var _services_list_service__WEBPACK_IMPORTED_MODULE_130__ = __webpack_require__(/*! ./services/list.service */ "f9pT");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ListService", function() { return _services_list_service__WEBPACK_IMPORTED_MODULE_130__["ListService"]; });
+/* harmony import */ var _services_log_service__WEBPACK_IMPORTED_MODULE_130__ = __webpack_require__(/*! ./services/log-service */ "eqCI");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoggerService", function() { return _services_log_service__WEBPACK_IMPORTED_MODULE_130__["LoggerService"]; });
 
-/* harmony import */ var _services_log_service__WEBPACK_IMPORTED_MODULE_131__ = __webpack_require__(/*! ./services/log-service */ "eqCI");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoggerService", function() { return _services_log_service__WEBPACK_IMPORTED_MODULE_131__["LoggerService"]; });
+/* harmony import */ var _services_notification_service__WEBPACK_IMPORTED_MODULE_131__ = __webpack_require__(/*! ./services/notification-service */ "VCez");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "NotificationService", function() { return _services_notification_service__WEBPACK_IMPORTED_MODULE_131__["NotificationService"]; });
 
-/* harmony import */ var _services_notification_service__WEBPACK_IMPORTED_MODULE_132__ = __webpack_require__(/*! ./services/notification-service */ "VCez");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "NotificationService", function() { return _services_notification_service__WEBPACK_IMPORTED_MODULE_132__["NotificationService"]; });
+/* harmony import */ var _services_position_service__WEBPACK_IMPORTED_MODULE_132__ = __webpack_require__(/*! ./services/position.service */ "Q8/f");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PositionService", function() { return _services_position_service__WEBPACK_IMPORTED_MODULE_132__["PositionService"]; });
 
-/* harmony import */ var _services_position_service__WEBPACK_IMPORTED_MODULE_133__ = __webpack_require__(/*! ./services/position.service */ "Q8/f");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PositionService", function() { return _services_position_service__WEBPACK_IMPORTED_MODULE_133__["PositionService"]; });
+/* harmony import */ var _services_search_service__WEBPACK_IMPORTED_MODULE_133__ = __webpack_require__(/*! ./services/search.service */ "EaWR");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SearchService", function() { return _services_search_service__WEBPACK_IMPORTED_MODULE_133__["SearchService"]; });
 
-/* harmony import */ var _services_search_service__WEBPACK_IMPORTED_MODULE_134__ = __webpack_require__(/*! ./services/search.service */ "EaWR");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SearchService", function() { return _services_search_service__WEBPACK_IMPORTED_MODULE_134__["SearchService"]; });
+/* harmony import */ var _lib_selector_selector_service__WEBPACK_IMPORTED_MODULE_134__ = __webpack_require__(/*! ./lib/selector/selector.service */ "/7Tu");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SelectorService", function() { return _lib_selector_selector_service__WEBPACK_IMPORTED_MODULE_134__["SelectorService"]; });
 
-/* harmony import */ var _lib_selector_selector_service__WEBPACK_IMPORTED_MODULE_135__ = __webpack_require__(/*! ./lib/selector/selector.service */ "/7Tu");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SelectorService", function() { return _lib_selector_selector_service__WEBPACK_IMPORTED_MODULE_135__["SelectorService"]; });
+/* harmony import */ var _services_util_service__WEBPACK_IMPORTED_MODULE_135__ = __webpack_require__(/*! ./services/util.service */ "/e7+");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UtilService", function() { return _services_util_service__WEBPACK_IMPORTED_MODULE_135__["UtilService"]; });
 
-/* harmony import */ var _services_util_service__WEBPACK_IMPORTED_MODULE_136__ = __webpack_require__(/*! ./services/util.service */ "/e7+");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UtilService", function() { return _services_util_service__WEBPACK_IMPORTED_MODULE_136__["UtilService"]; });
+/* harmony import */ var _lib_time_frame_picker_services_timeframe_service__WEBPACK_IMPORTED_MODULE_136__ = __webpack_require__(/*! ./lib/time-frame-picker/services/timeframe.service */ "UsOw");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TimeframeService", function() { return _lib_time_frame_picker_services_timeframe_service__WEBPACK_IMPORTED_MODULE_136__["TimeframeService"]; });
 
-/* harmony import */ var _lib_time_frame_picker_services_timeframe_service__WEBPACK_IMPORTED_MODULE_137__ = __webpack_require__(/*! ./lib/time-frame-picker/services/timeframe.service */ "UsOw");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TimeframeService", function() { return _lib_time_frame_picker_services_timeframe_service__WEBPACK_IMPORTED_MODULE_137__["TimeframeService"]; });
+/* harmony import */ var _lib_toast_toast_container_service__WEBPACK_IMPORTED_MODULE_137__ = __webpack_require__(/*! ./lib/toast/toast-container.service */ "KUfU");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ToastContainerService", function() { return _lib_toast_toast_container_service__WEBPACK_IMPORTED_MODULE_137__["ToastContainerService"]; });
 
-/* harmony import */ var _lib_toast_toast_container_service__WEBPACK_IMPORTED_MODULE_138__ = __webpack_require__(/*! ./lib/toast/toast-container.service */ "KUfU");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ToastContainerService", function() { return _lib_toast_toast_container_service__WEBPACK_IMPORTED_MODULE_138__["ToastContainerService"]; });
+/* harmony import */ var _lib_toast_toast_service__WEBPACK_IMPORTED_MODULE_138__ = __webpack_require__(/*! ./lib/toast/toast.service */ "ZE6s");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ToastService", function() { return _lib_toast_toast_service__WEBPACK_IMPORTED_MODULE_138__["ToastService"]; });
 
-/* harmony import */ var _lib_toast_toast_service__WEBPACK_IMPORTED_MODULE_139__ = __webpack_require__(/*! ./lib/toast/toast.service */ "ZE6s");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ToastService", function() { return _lib_toast_toast_service__WEBPACK_IMPORTED_MODULE_139__["ToastService"]; });
+/* harmony import */ var _lib_toast_toast_directive__WEBPACK_IMPORTED_MODULE_139__ = __webpack_require__(/*! ./lib/toast/toast.directive */ "7UBN");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ToastDirective", function() { return _lib_toast_toast_directive__WEBPACK_IMPORTED_MODULE_139__["ToastDirective"]; });
 
-/* harmony import */ var _lib_toast_toast_directive__WEBPACK_IMPORTED_MODULE_140__ = __webpack_require__(/*! ./lib/toast/toast.directive */ "7UBN");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ToastDirective", function() { return _lib_toast_toast_directive__WEBPACK_IMPORTED_MODULE_140__["ToastDirective"]; });
+/* harmony import */ var _services_theme_switch_service__WEBPACK_IMPORTED_MODULE_140__ = __webpack_require__(/*! ./services/theme-switch.service */ "A2K5");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ThemeSwitchService", function() { return _services_theme_switch_service__WEBPACK_IMPORTED_MODULE_140__["ThemeSwitchService"]; });
 
-/* harmony import */ var _services_theme_switch_service__WEBPACK_IMPORTED_MODULE_141__ = __webpack_require__(/*! ./services/theme-switch.service */ "A2K5");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ThemeSwitchService", function() { return _services_theme_switch_service__WEBPACK_IMPORTED_MODULE_141__["ThemeSwitchService"]; });
+/* harmony import */ var _services_transient_cache_service__WEBPACK_IMPORTED_MODULE_141__ = __webpack_require__(/*! ./services/transient-cache.service */ "02PJ");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TransientCacheService", function() { return _services_transient_cache_service__WEBPACK_IMPORTED_MODULE_141__["TransientCacheService"]; });
 
-/* harmony import */ var _services_transient_cache_service__WEBPACK_IMPORTED_MODULE_142__ = __webpack_require__(/*! ./services/transient-cache.service */ "02PJ");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TransientCacheService", function() { return _services_transient_cache_service__WEBPACK_IMPORTED_MODULE_142__["TransientCacheService"]; });
+/* harmony import */ var _lib_table_table_state_handler_service__WEBPACK_IMPORTED_MODULE_142__ = __webpack_require__(/*! ./lib/table/table-state-handler.service */ "5uSY");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TableStateHandlerService", function() { return _lib_table_table_state_handler_service__WEBPACK_IMPORTED_MODULE_142__["TableStateHandlerService"]; });
 
-/* harmony import */ var _lib_table_table_state_handler_service__WEBPACK_IMPORTED_MODULE_143__ = __webpack_require__(/*! ./lib/table/table-state-handler.service */ "5uSY");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TableStateHandlerService", function() { return _lib_table_table_state_handler_service__WEBPACK_IMPORTED_MODULE_143__["TableStateHandlerService"]; });
+/* harmony import */ var _services_unit_conversion_service__WEBPACK_IMPORTED_MODULE_143__ = __webpack_require__(/*! ./services/unit-conversion.service */ "pi50");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UnitConversionService", function() { return _services_unit_conversion_service__WEBPACK_IMPORTED_MODULE_143__["UnitConversionService"]; });
 
-/* harmony import */ var _services_unit_conversion_service__WEBPACK_IMPORTED_MODULE_144__ = __webpack_require__(/*! ./services/unit-conversion.service */ "pi50");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UnitConversionService", function() { return _services_unit_conversion_service__WEBPACK_IMPORTED_MODULE_144__["UnitConversionService"]; });
+/* harmony import */ var _services_data_source_local_filtering_data_source_service__WEBPACK_IMPORTED_MODULE_144__ = __webpack_require__(/*! ./services/data-source/local-filtering-data-source.service */ "T91m");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LocalFilteringDataSource", function() { return _services_data_source_local_filtering_data_source_service__WEBPACK_IMPORTED_MODULE_144__["LocalFilteringDataSource"]; });
 
-/* harmony import */ var _services_data_source_local_filtering_data_source_service__WEBPACK_IMPORTED_MODULE_145__ = __webpack_require__(/*! ./services/data-source/local-filtering-data-source.service */ "T91m");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LocalFilteringDataSource", function() { return _services_data_source_local_filtering_data_source_service__WEBPACK_IMPORTED_MODULE_145__["LocalFilteringDataSource"]; });
+/* harmony import */ var _services_data_source_client_side_data_source_service__WEBPACK_IMPORTED_MODULE_145__ = __webpack_require__(/*! ./services/data-source/client-side-data-source.service */ "LRrp");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ClientSideDataSource", function() { return _services_data_source_client_side_data_source_service__WEBPACK_IMPORTED_MODULE_145__["ClientSideDataSource"]; });
 
-/* harmony import */ var _services_data_source_client_side_data_source_service__WEBPACK_IMPORTED_MODULE_146__ = __webpack_require__(/*! ./services/data-source/client-side-data-source.service */ "LRrp");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ClientSideDataSource", function() { return _services_data_source_client_side_data_source_service__WEBPACK_IMPORTED_MODULE_146__["ClientSideDataSource"]; });
+/* harmony import */ var _services_data_source_server_side_source_service__WEBPACK_IMPORTED_MODULE_146__ = __webpack_require__(/*! ./services/data-source/server-side-source.service */ "kCox");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ServerSideDataSource", function() { return _services_data_source_server_side_source_service__WEBPACK_IMPORTED_MODULE_146__["ServerSideDataSource"]; });
 
-/* harmony import */ var _services_data_source_server_side_source_service__WEBPACK_IMPORTED_MODULE_147__ = __webpack_require__(/*! ./services/data-source/server-side-source.service */ "kCox");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ServerSideDataSource", function() { return _services_data_source_server_side_source_service__WEBPACK_IMPORTED_MODULE_147__["ServerSideDataSource"]; });
+/* harmony import */ var _services_event_bus_service__WEBPACK_IMPORTED_MODULE_147__ = __webpack_require__(/*! ./services/event-bus.service */ "oCSD");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "EventBusService", function() { return _services_event_bus_service__WEBPACK_IMPORTED_MODULE_147__["EventBusService"]; });
 
-/* harmony import */ var _services_event_bus_service__WEBPACK_IMPORTED_MODULE_148__ = __webpack_require__(/*! ./services/event-bus.service */ "oCSD");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "EventBusService", function() { return _services_event_bus_service__WEBPACK_IMPORTED_MODULE_148__["EventBusService"]; });
+/* harmony import */ var _services_event_bus__WEBPACK_IMPORTED_MODULE_148__ = __webpack_require__(/*! ./services/event-bus */ "ABnD");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "EventBus", function() { return _services_event_bus__WEBPACK_IMPORTED_MODULE_148__["EventBus"]; });
 
-/* harmony import */ var _services_event_bus__WEBPACK_IMPORTED_MODULE_149__ = __webpack_require__(/*! ./services/event-bus */ "ABnD");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "EventBus", function() { return _services_event_bus__WEBPACK_IMPORTED_MODULE_149__["EventBus"]; });
+/* harmony import */ var _lib_menu_menu_key_control_service__WEBPACK_IMPORTED_MODULE_149__ = __webpack_require__(/*! ./lib/menu/menu-key-control.service */ "dfPS");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MenuKeyControlService", function() { return _lib_menu_menu_key_control_service__WEBPACK_IMPORTED_MODULE_149__["MenuKeyControlService"]; });
 
-/* harmony import */ var _lib_menu_menu_key_control_service__WEBPACK_IMPORTED_MODULE_150__ = __webpack_require__(/*! ./lib/menu/menu-key-control.service */ "dfPS");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MenuKeyControlService", function() { return _lib_menu_menu_key_control_service__WEBPACK_IMPORTED_MODULE_150__["MenuKeyControlService"]; });
+/* harmony import */ var _services_virtual_viewport_manager_service__WEBPACK_IMPORTED_MODULE_150__ = __webpack_require__(/*! ./services/virtual-viewport-manager.service */ "//6J");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VirtualViewportManager", function() { return _services_virtual_viewport_manager_service__WEBPACK_IMPORTED_MODULE_150__["VirtualViewportManager"]; });
 
-/* harmony import */ var _services_virtual_viewport_manager_service__WEBPACK_IMPORTED_MODULE_151__ = __webpack_require__(/*! ./services/virtual-viewport-manager.service */ "//6J");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VirtualViewportManager", function() { return _services_virtual_viewport_manager_service__WEBPACK_IMPORTED_MODULE_151__["VirtualViewportManager"]; });
+/* harmony import */ var _lib_overlay_overlay_container_service__WEBPACK_IMPORTED_MODULE_151__ = __webpack_require__(/*! ./lib/overlay/overlay-container.service */ "3ziF");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "OverlayContainerService", function() { return _lib_overlay_overlay_container_service__WEBPACK_IMPORTED_MODULE_151__["OverlayContainerService"]; });
 
-/* harmony import */ var _lib_overlay_overlay_container_service__WEBPACK_IMPORTED_MODULE_152__ = __webpack_require__(/*! ./lib/overlay/overlay-container.service */ "3ziF");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "OverlayContainerService", function() { return _lib_overlay_overlay_container_service__WEBPACK_IMPORTED_MODULE_152__["OverlayContainerService"]; });
+/* harmony import */ var _lib_overlay_overlay_position_service__WEBPACK_IMPORTED_MODULE_152__ = __webpack_require__(/*! ./lib/overlay/overlay-position.service */ "0VNr");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "OverlayPositionService", function() { return _lib_overlay_overlay_position_service__WEBPACK_IMPORTED_MODULE_152__["OverlayPositionService"]; });
 
-/* harmony import */ var _lib_overlay_overlay_position_service__WEBPACK_IMPORTED_MODULE_153__ = __webpack_require__(/*! ./lib/overlay/overlay-position.service */ "0VNr");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "OverlayPositionService", function() { return _lib_overlay_overlay_position_service__WEBPACK_IMPORTED_MODULE_153__["OverlayPositionService"]; });
+/* harmony import */ var _lib_overlay_overlay_service__WEBPACK_IMPORTED_MODULE_153__ = __webpack_require__(/*! ./lib/overlay/overlay.service */ "9JhE");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "OverlayService", function() { return _lib_overlay_overlay_service__WEBPACK_IMPORTED_MODULE_153__["OverlayService"]; });
 
-/* harmony import */ var _lib_overlay_overlay_service__WEBPACK_IMPORTED_MODULE_154__ = __webpack_require__(/*! ./lib/overlay/overlay.service */ "9JhE");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "OverlayService", function() { return _lib_overlay_overlay_service__WEBPACK_IMPORTED_MODULE_154__["OverlayService"]; });
+/* harmony import */ var _constants_path_constant__WEBPACK_IMPORTED_MODULE_154__ = __webpack_require__(/*! ./constants/path.constant */ "k2nG");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DEMO_PATH_TOKEN", function() { return _constants_path_constant__WEBPACK_IMPORTED_MODULE_154__["DEMO_PATH_TOKEN"]; });
 
-/* harmony import */ var _constants_path_constant__WEBPACK_IMPORTED_MODULE_155__ = __webpack_require__(/*! ./constants/path.constant */ "k2nG");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DEMO_PATH_TOKEN", function() { return _constants_path_constant__WEBPACK_IMPORTED_MODULE_155__["DEMO_PATH_TOKEN"]; });
-
-/* harmony import */ var _animations_expand__WEBPACK_IMPORTED_MODULE_156__ = __webpack_require__(/*! ./animations/expand */ "mQyC");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "expand", function() { return _animations_expand__WEBPACK_IMPORTED_MODULE_156__["expand"]; });
+/* harmony import */ var _animations_expand__WEBPACK_IMPORTED_MODULE_155__ = __webpack_require__(/*! ./animations/expand */ "mQyC");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "expand", function() { return _animations_expand__WEBPACK_IMPORTED_MODULE_155__["expand"]; });
 
 
 // Every component should be exported from here directly to avoid strange metadata aliasing
@@ -22595,7 +22548,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // Pipes
-
 
 
 
