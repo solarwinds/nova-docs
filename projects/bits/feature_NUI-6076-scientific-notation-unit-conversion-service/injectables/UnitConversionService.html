@@ -851,7 +851,7 @@ export class UnitConversionService {
         return {
             value: strValue,
             order: resultOrder,
-            scientificNotation: value?.toExponential(scale).toLocaleString(),
+            scientificNotation: value?.toExponential(scale),
             scale,
         };
     }
@@ -876,7 +876,7 @@ export class UnitConversionService {
 
         let displayValue: string;
 
-        if (!unitDisplay &amp;&amp; !(conversion.value &#x3D;&#x3D;&#x3D; &quot;NaN&quot;) &amp;&amp; conversion.order ) {
+        if (!unitDisplay &amp;&amp; isValidNumber &amp;&amp; conversion.order ) {
             const tempObj &#x3D; {
                 ...conversion,
             };
@@ -939,8 +939,9 @@ export class UnitConversionService {
         if (!this.isValidNumber(conversion.value)) {
             return nanDisplay;
         }
+        const prefix &#x3D; plusSign &amp;&amp; parseInt(conversion.value, 10) &gt; 0 ? &quot;+&quot; : &quot;&quot;;
 
-        return &#x60;${conversion.scientificNotation}&#x60;;
+        return &#x60;${prefix}${conversion.scientificNotation}&#x60;;
     }
 }
 </code></pre>

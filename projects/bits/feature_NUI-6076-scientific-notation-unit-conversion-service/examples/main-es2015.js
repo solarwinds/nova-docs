@@ -29889,7 +29889,7 @@ class UnitConversionService {
         return {
             value: strValue,
             order: resultOrder,
-            scientificNotation: value === null || value === void 0 ? void 0 : value.toExponential(scale).toLocaleString(),
+            scientificNotation: value === null || value === void 0 ? void 0 : value.toExponential(scale),
             scale,
         };
     }
@@ -29910,7 +29910,7 @@ class UnitConversionService {
         // The generic unit is not currently i18n friendly
         const localizeValue = unit !== "generic";
         let displayValue;
-        if (!unitDisplay && !(conversion.value === "NaN") && conversion.order) {
+        if (!unitDisplay && isValidNumber && conversion.order) {
             const tempObj = Object.assign({}, conversion);
             tempObj.order = 0;
             unitDisplay = this.getUnitDisplay(tempObj, unit);
@@ -29967,7 +29967,8 @@ class UnitConversionService {
         if (!this.isValidNumber(conversion.value)) {
             return nanDisplay;
         }
-        return `${conversion.scientificNotation}`;
+        const prefix = plusSign && parseInt(conversion.value, 10) > 0 ? "+" : "";
+        return `${prefix}${conversion.scientificNotation}`;
     }
 }
 UnitConversionService.ɵfac = function UnitConversionService_Factory(t) { return new (t || UnitConversionService)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_log_service__WEBPACK_IMPORTED_MODULE_1__["LoggerService"])); };
