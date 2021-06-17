@@ -178,7 +178,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import { NgModule } from \"@angular/core\";\nimport { RouterModule, Routes } from \"@angular/router\";\nimport { DEMO_PATH_TOKEN, NuiDocsModule, NuiIconModule, NuiMessageModule } from \"@nova-ui/bits\";\nimport { NuiChartsModule } from \"@nova-ui/charts\";\n\nconst exampleRoutes: Routes = [\n    {\n        path: \"bar\",\n        loadChildren: () => import(\"./bar/chart-docs-bar.module\").then(m => m.ChartDocsBarModule),\n    },\n    {\n        path: \"bucketed-bar\",\n        loadChildren: () => import(\"./bucketed-bar/chart-docs-bucketed-bar.module\").then(m => m.ChartDocsBucketedBarModule),\n    },\n    {\n        path: \"line\",\n        loadChildren: () => import(\"./line/chart-docs-line.module\").then(m => m.ChartDocsLineModule),\n    },\n    {\n        path: \"pie-and-donut\",\n        loadChildren: () => import(\"./pie-and-donut/chart-docs-pie-and-donut.module\").then(m => m.ChartDocsPieAndDonutModule),\n    },\n    {\n        path: \"spark\",\n        loadChildren: () => import(\"./spark/chart-docs-spark.module\").then(m => m.ChartDocsSparkModule),\n    },\n    {\n        path: \"gauge\",\n        loadChildren: () => import(\"./gauge/chart-docs-gauge.module\").then(m => m.ChartDocsGaugeModule),\n    },\n    {\n        path: \"status\",\n        loadChildren: () => import(\"./status/chart-docs-status.module\").then(m => m.ChartDocsStatusModule),\n    },\n    {\n        path: \"waterfall\",\n        loadChildren: () => import(\"./waterfall/chart-docs-waterfall.module\").then(m => m.ChartDocsWaterfallModule),\n    },\n    {\n        path: \"area\",\n        loadChildren: () => import(\"./area/chart-docs-area.module\").then(m => m.ChartDocsAreaModule),\n    },\n];\n\n@NgModule({\n    declarations: [],\n    imports: [\n        NuiChartsModule,\n        NuiIconModule,\n        NuiDocsModule,\n        NuiMessageModule,\n        RouterModule.forChild(exampleRoutes),\n    ],\n    providers: [\n        { provide: DEMO_PATH_TOKEN, useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/) },\n    ],\n})\nexport class ChartDocsChartTypesModule {\n}\n";
+      __webpack_exports__["default"] = "import { NgModule } from \"@angular/core\";\nimport { RouterModule, Routes } from \"@angular/router\";\nimport { DEMO_PATH_TOKEN, NuiDocsModule, NuiIconModule, NuiMessageModule } from \"@nova-ui/bits\";\nimport { NuiChartsModule } from \"@nova-ui/charts\";\n\nconst exampleRoutes: Routes = [\n    {\n        path: \"bar\",\n        loadChildren: async () => import(\"./bar/chart-docs-bar.module\").then(m => m.ChartDocsBarModule),\n    },\n    {\n        path: \"bucketed-bar\",\n        loadChildren: async () => import(\"./bucketed-bar/chart-docs-bucketed-bar.module\").then(m => m.ChartDocsBucketedBarModule),\n    },\n    {\n        path: \"line\",\n        loadChildren: async () => import(\"./line/chart-docs-line.module\").then(m => m.ChartDocsLineModule),\n    },\n    {\n        path: \"pie-and-donut\",\n        loadChildren: async () => import(\"./pie-and-donut/chart-docs-pie-and-donut.module\").then(m => m.ChartDocsPieAndDonutModule),\n    },\n    {\n        path: \"spark\",\n        loadChildren: async () => import(\"./spark/chart-docs-spark.module\").then(m => m.ChartDocsSparkModule),\n    },\n    {\n        path: \"gauge\",\n        loadChildren: async () => import(\"./gauge/chart-docs-gauge.module\").then(m => m.ChartDocsGaugeModule),\n    },\n    {\n        path: \"status\",\n        loadChildren: async () => import(\"./status/chart-docs-status.module\").then(m => m.ChartDocsStatusModule),\n    },\n    {\n        path: \"waterfall\",\n        loadChildren: async () => import(\"./waterfall/chart-docs-waterfall.module\").then(m => m.ChartDocsWaterfallModule),\n    },\n    {\n        path: \"area\",\n        loadChildren: async () => import(\"./area/chart-docs-area.module\").then(m => m.ChartDocsAreaModule),\n    },\n];\n\n@NgModule({\n    declarations: [],\n    imports: [\n        NuiChartsModule,\n        NuiIconModule,\n        NuiDocsModule,\n        NuiMessageModule,\n        RouterModule.forChild(exampleRoutes),\n    ],\n    providers: [\n        { provide: DEMO_PATH_TOKEN, useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/) },\n    ],\n})\nexport class ChartDocsChartTypesModule {\n}\n";
       /***/
     },
 
@@ -455,101 +455,218 @@
       var exampleRoutes = [{
         path: "bar",
         loadChildren: function loadChildren() {
-          return Promise.all(
-          /*! import() | bar-chart-docs-bar-module */
-          [__webpack_require__.e("common"), __webpack_require__.e("bar-chart-docs-bar-module")]).then(__webpack_require__.bind(null,
-          /*! ./bar/chart-docs-bar.module */
-          "5xc8")).then(function (m) {
-            return m.ChartDocsBarModule;
-          });
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+            return regeneratorRuntime.wrap(function _callee$(_context) {
+              while (1) {
+                switch (_context.prev = _context.next) {
+                  case 0:
+                    return _context.abrupt("return", Promise.all(
+                    /*! import() | bar-chart-docs-bar-module */
+                    [__webpack_require__.e("common"), __webpack_require__.e("bar-chart-docs-bar-module")]).then(__webpack_require__.bind(null,
+                    /*! ./bar/chart-docs-bar.module */
+                    "5xc8")).then(function (m) {
+                      return m.ChartDocsBarModule;
+                    }));
+
+                  case 1:
+                  case "end":
+                    return _context.stop();
+                }
+              }
+            }, _callee);
+          }));
         }
       }, {
         path: "bucketed-bar",
         loadChildren: function loadChildren() {
-          return Promise.all(
-          /*! import() | bucketed-bar-chart-docs-bucketed-bar-module */
-          [__webpack_require__.e("common"), __webpack_require__.e("bucketed-bar-chart-docs-bucketed-bar-module")]).then(__webpack_require__.bind(null,
-          /*! ./bucketed-bar/chart-docs-bucketed-bar.module */
-          "kjNC")).then(function (m) {
-            return m.ChartDocsBucketedBarModule;
-          });
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+            return regeneratorRuntime.wrap(function _callee2$(_context2) {
+              while (1) {
+                switch (_context2.prev = _context2.next) {
+                  case 0:
+                    return _context2.abrupt("return", Promise.all(
+                    /*! import() | bucketed-bar-chart-docs-bucketed-bar-module */
+                    [__webpack_require__.e("common"), __webpack_require__.e("bucketed-bar-chart-docs-bucketed-bar-module")]).then(__webpack_require__.bind(null,
+                    /*! ./bucketed-bar/chart-docs-bucketed-bar.module */
+                    "kjNC")).then(function (m) {
+                      return m.ChartDocsBucketedBarModule;
+                    }));
+
+                  case 1:
+                  case "end":
+                    return _context2.stop();
+                }
+              }
+            }, _callee2);
+          }));
         }
       }, {
         path: "line",
         loadChildren: function loadChildren() {
-          return Promise.all(
-          /*! import() | line-chart-docs-line-module */
-          [__webpack_require__.e("common"), __webpack_require__.e("line-chart-docs-line-module")]).then(__webpack_require__.bind(null,
-          /*! ./line/chart-docs-line.module */
-          "c9IB")).then(function (m) {
-            return m.ChartDocsLineModule;
-          });
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
+            return regeneratorRuntime.wrap(function _callee3$(_context3) {
+              while (1) {
+                switch (_context3.prev = _context3.next) {
+                  case 0:
+                    return _context3.abrupt("return", Promise.all(
+                    /*! import() | line-chart-docs-line-module */
+                    [__webpack_require__.e("common"), __webpack_require__.e("line-chart-docs-line-module")]).then(__webpack_require__.bind(null,
+                    /*! ./line/chart-docs-line.module */
+                    "c9IB")).then(function (m) {
+                      return m.ChartDocsLineModule;
+                    }));
+
+                  case 1:
+                  case "end":
+                    return _context3.stop();
+                }
+              }
+            }, _callee3);
+          }));
         }
       }, {
         path: "pie-and-donut",
         loadChildren: function loadChildren() {
-          return Promise.all(
-          /*! import() | pie-and-donut-chart-docs-pie-and-donut-module */
-          [__webpack_require__.e("common"), __webpack_require__.e("pie-and-donut-chart-docs-pie-and-donut-module")]).then(__webpack_require__.bind(null,
-          /*! ./pie-and-donut/chart-docs-pie-and-donut.module */
-          "tvJs")).then(function (m) {
-            return m.ChartDocsPieAndDonutModule;
-          });
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
+            return regeneratorRuntime.wrap(function _callee4$(_context4) {
+              while (1) {
+                switch (_context4.prev = _context4.next) {
+                  case 0:
+                    return _context4.abrupt("return", Promise.all(
+                    /*! import() | pie-and-donut-chart-docs-pie-and-donut-module */
+                    [__webpack_require__.e("common"), __webpack_require__.e("pie-and-donut-chart-docs-pie-and-donut-module")]).then(__webpack_require__.bind(null,
+                    /*! ./pie-and-donut/chart-docs-pie-and-donut.module */
+                    "tvJs")).then(function (m) {
+                      return m.ChartDocsPieAndDonutModule;
+                    }));
+
+                  case 1:
+                  case "end":
+                    return _context4.stop();
+                }
+              }
+            }, _callee4);
+          }));
         }
       }, {
         path: "spark",
         loadChildren: function loadChildren() {
-          return __webpack_require__.e(
-          /*! import() | spark-chart-docs-spark-module */
-          "spark-chart-docs-spark-module").then(__webpack_require__.bind(null,
-          /*! ./spark/chart-docs-spark.module */
-          "+2hk")).then(function (m) {
-            return m.ChartDocsSparkModule;
-          });
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee5() {
+            return regeneratorRuntime.wrap(function _callee5$(_context5) {
+              while (1) {
+                switch (_context5.prev = _context5.next) {
+                  case 0:
+                    return _context5.abrupt("return", __webpack_require__.e(
+                    /*! import() | spark-chart-docs-spark-module */
+                    "spark-chart-docs-spark-module").then(__webpack_require__.bind(null,
+                    /*! ./spark/chart-docs-spark.module */
+                    "+2hk")).then(function (m) {
+                      return m.ChartDocsSparkModule;
+                    }));
+
+                  case 1:
+                  case "end":
+                    return _context5.stop();
+                }
+              }
+            }, _callee5);
+          }));
         }
       }, {
         path: "gauge",
         loadChildren: function loadChildren() {
-          return Promise.all(
-          /*! import() | gauge-chart-docs-gauge-module */
-          [__webpack_require__.e("common"), __webpack_require__.e("gauge-chart-docs-gauge-module")]).then(__webpack_require__.bind(null,
-          /*! ./gauge/chart-docs-gauge.module */
-          "yAut")).then(function (m) {
-            return m.ChartDocsGaugeModule;
-          });
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee6() {
+            return regeneratorRuntime.wrap(function _callee6$(_context6) {
+              while (1) {
+                switch (_context6.prev = _context6.next) {
+                  case 0:
+                    return _context6.abrupt("return", Promise.all(
+                    /*! import() | gauge-chart-docs-gauge-module */
+                    [__webpack_require__.e("common"), __webpack_require__.e("gauge-chart-docs-gauge-module")]).then(__webpack_require__.bind(null,
+                    /*! ./gauge/chart-docs-gauge.module */
+                    "yAut")).then(function (m) {
+                      return m.ChartDocsGaugeModule;
+                    }));
+
+                  case 1:
+                  case "end":
+                    return _context6.stop();
+                }
+              }
+            }, _callee6);
+          }));
         }
       }, {
         path: "status",
         loadChildren: function loadChildren() {
-          return Promise.all(
-          /*! import() | status-chart-docs-status-module */
-          [__webpack_require__.e("common"), __webpack_require__.e("status-chart-docs-status-module")]).then(__webpack_require__.bind(null,
-          /*! ./status/chart-docs-status.module */
-          "6p0O")).then(function (m) {
-            return m.ChartDocsStatusModule;
-          });
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee7() {
+            return regeneratorRuntime.wrap(function _callee7$(_context7) {
+              while (1) {
+                switch (_context7.prev = _context7.next) {
+                  case 0:
+                    return _context7.abrupt("return", Promise.all(
+                    /*! import() | status-chart-docs-status-module */
+                    [__webpack_require__.e("common"), __webpack_require__.e("status-chart-docs-status-module")]).then(__webpack_require__.bind(null,
+                    /*! ./status/chart-docs-status.module */
+                    "6p0O")).then(function (m) {
+                      return m.ChartDocsStatusModule;
+                    }));
+
+                  case 1:
+                  case "end":
+                    return _context7.stop();
+                }
+              }
+            }, _callee7);
+          }));
         }
       }, {
         path: "waterfall",
         loadChildren: function loadChildren() {
-          return Promise.all(
-          /*! import() | waterfall-chart-docs-waterfall-module */
-          [__webpack_require__.e("common"), __webpack_require__.e("waterfall-chart-docs-waterfall-module")]).then(__webpack_require__.bind(null,
-          /*! ./waterfall/chart-docs-waterfall.module */
-          "68rf")).then(function (m) {
-            return m.ChartDocsWaterfallModule;
-          });
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee8() {
+            return regeneratorRuntime.wrap(function _callee8$(_context8) {
+              while (1) {
+                switch (_context8.prev = _context8.next) {
+                  case 0:
+                    return _context8.abrupt("return", Promise.all(
+                    /*! import() | waterfall-chart-docs-waterfall-module */
+                    [__webpack_require__.e("common"), __webpack_require__.e("waterfall-chart-docs-waterfall-module")]).then(__webpack_require__.bind(null,
+                    /*! ./waterfall/chart-docs-waterfall.module */
+                    "68rf")).then(function (m) {
+                      return m.ChartDocsWaterfallModule;
+                    }));
+
+                  case 1:
+                  case "end":
+                    return _context8.stop();
+                }
+              }
+            }, _callee8);
+          }));
         }
       }, {
         path: "area",
         loadChildren: function loadChildren() {
-          return Promise.all(
-          /*! import() | area-chart-docs-area-module */
-          [__webpack_require__.e("common"), __webpack_require__.e("area-chart-docs-area-module")]).then(__webpack_require__.bind(null,
-          /*! ./area/chart-docs-area.module */
-          "V3MY")).then(function (m) {
-            return m.ChartDocsAreaModule;
-          });
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee9() {
+            return regeneratorRuntime.wrap(function _callee9$(_context9) {
+              while (1) {
+                switch (_context9.prev = _context9.next) {
+                  case 0:
+                    return _context9.abrupt("return", Promise.all(
+                    /*! import() | area-chart-docs-area-module */
+                    [__webpack_require__.e("common"), __webpack_require__.e("area-chart-docs-area-module")]).then(__webpack_require__.bind(null,
+                    /*! ./area/chart-docs-area.module */
+                    "V3MY")).then(function (m) {
+                      return m.ChartDocsAreaModule;
+                    }));
+
+                  case 1:
+                  case "end":
+                    return _context9.stop();
+                }
+              }
+            }, _callee9);
+          }));
         }
       }];
 
@@ -1226,7 +1343,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import { NgModule } from \"@angular/core\";\nimport { FormsModule } from \"@angular/forms\";\nimport { RouterModule, Routes } from \"@angular/router\";\nimport { DEMO_PATH_TOKEN, NuiDocsModule, NuiIconModule, NuiMessageModule, SrlcStage } from \"@nova-ui/bits\";\nimport { NuiChartsModule } from \"@nova-ui/charts\";\n\nimport { DemoCommonModule } from \"../../common/demo-common.module\";\n\nimport { ChartDocsLineComponent } from \"./chart-docs-line.component\";\nimport { LineChartBasicExampleComponent } from \"./line-chart-basic/line-chart-basic.example.component\";\nimport { LineChartInterruptedBasicExampleComponent } from \"./line-chart-interrupted-basic/line-chart-interrupted-basic-example.component\";\nimport { LineChartInterruptedCalculatedExampleComponent } from \"./line-chart-interrupted-calculated/line-chart-interrupted-calculated-example.component\";\n// eslint-disable-next-line max-len\nimport { LineChartInterruptedPathTerminusExampleComponent } from \"./line-chart-interrupted-path-terminus/line-chart-interrupted-path-terminus-example.component\";\nimport { LineChartTestComponent } from \"./line-chart-test/line-chart-test.component\";\nimport { LineChartVisualTestComponent } from \"./line-chart-visual-test/line-chart-visual-test.component\";\nimport { LineChartWith2YAxesExampleComponent } from \"./line-chart-with-2y-axes/line-chart-with-2y-axes-example.component\";\nimport { LineChartWithAxisLabelsExampleComponent } from \"./line-chart-with-axis-labels/line-chart-with-axis-labels.example.component\";\nimport { LineChartWithLargeValuesExampleComponent } from \"./line-chart-with-large-values/line-chart-with-large-values.example.component\";\nimport { LineChartWithLegendExampleComponent } from \"./line-chart-with-legend/line-chart-with-legend.example.component\";\nimport { LineChartWithRichTileLegendExampleComponent } from \"./line-chart-with-rich-tile-legend/line-chart-with-rich-tile-legend.example.component\";\n\nconst exampleRoutes: Routes = [\n    {\n        path: \"\",\n        component: ChartDocsLineComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.beta,\n            },\n            showThemeSwitcher: true,\n        },\n    },\n    {\n        path: \"axis-labels\",\n        component: LineChartWithAxisLabelsExampleComponent,\n    },\n    {\n        path: \"two-y-axes\",\n        component: LineChartWith2YAxesExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"basic\",\n        component: LineChartBasicExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"interrupted\",\n        component: LineChartInterruptedBasicExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"interrupted-calculated\",\n        component: LineChartInterruptedCalculatedExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"interrupted-path-terminus\",\n        component: LineChartInterruptedPathTerminusExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"test\",\n        component: LineChartTestComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"visual-test\",\n        component: LineChartVisualTestComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n];\n\n@NgModule({\n    declarations: [\n        ChartDocsLineComponent,\n        LineChartWithAxisLabelsExampleComponent,\n        LineChartBasicExampleComponent,\n        LineChartTestComponent,\n        LineChartVisualTestComponent,\n        LineChartWithLegendExampleComponent,\n        LineChartWithRichTileLegendExampleComponent,\n        LineChartWith2YAxesExampleComponent,\n        LineChartInterruptedBasicExampleComponent,\n        LineChartInterruptedPathTerminusExampleComponent,\n        LineChartInterruptedCalculatedExampleComponent,\n        LineChartWithLargeValuesExampleComponent,\n    ],\n    imports: [\n        DemoCommonModule,\n        FormsModule,\n        NuiChartsModule,\n        NuiIconModule,\n        NuiDocsModule,\n        NuiMessageModule,\n        RouterModule.forChild(exampleRoutes),\n    ],\n    providers: [\n        { provide: DEMO_PATH_TOKEN, useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/) },\n    ],\n})\nexport class ChartDocsLineModule {\n}\n";
+      __webpack_exports__["default"] = "import { NgModule } from \"@angular/core\";\nimport { FormsModule } from \"@angular/forms\";\nimport { RouterModule, Routes } from \"@angular/router\";\nimport { DEMO_PATH_TOKEN, NuiDocsModule, NuiIconModule, NuiMessageModule, SrlcStage } from \"@nova-ui/bits\";\nimport { NuiChartsModule } from \"@nova-ui/charts\";\n\nimport { DemoCommonModule } from \"../../common/demo-common.module\";\n\nimport { ChartDocsLineComponent } from \"./chart-docs-line.component\";\nimport { LineChartBasicExampleComponent } from \"./line-chart-basic/line-chart-basic.example.component\";\nimport { LineChartInterruptedBasicExampleComponent } from \"./line-chart-interrupted-basic/line-chart-interrupted-basic-example.component\";\nimport { LineChartInterruptedCalculatedExampleComponent } from \"./line-chart-interrupted-calculated/line-chart-interrupted-calculated-example.component\";\n// eslint-disable-next-line max-len\nimport { LineChartInterruptedPathTerminusExampleComponent } from \"./line-chart-interrupted-path-terminus/line-chart-interrupted-path-terminus-example.component\";\nimport { LineChartTestComponent } from \"./line-chart-test/line-chart-test.component\";\nimport { LineChartVisualTestComponent } from \"./line-chart-visual-test/line-chart-visual-test.component\";\nimport { LineChartWith2YAxesExampleComponent } from \"./line-chart-with-2y-axes/line-chart-with-2y-axes-example.component\";\nimport { LineChartWithAxisLabelsExampleComponent } from \"./line-chart-with-axis-labels/line-chart-with-axis-labels.example.component\";\nimport { LineChartWithLargeValuesExampleComponent } from \"./line-chart-with-large-values/line-chart-with-large-values.example.component\";\nimport { LineChartWithLegendExampleComponent } from \"./line-chart-with-legend/line-chart-with-legend.example.component\";\nimport { LineChartWithRichTileLegendExampleComponent } from \"./line-chart-with-rich-tile-legend/line-chart-with-rich-tile-legend.example.component\";\n\nconst exampleRoutes: Routes = [\n    {\n        path: \"\",\n        component: ChartDocsLineComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.beta,\n            },\n            showThemeSwitcher: true,\n        },\n    },\n    {\n        path: \"axis-labels\",\n        component: LineChartWithAxisLabelsExampleComponent,\n    },\n    {\n        path: \"two-y-axes\",\n        component: LineChartWith2YAxesExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"basic\",\n        component: LineChartBasicExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"rich-legend-tile\",\n        component: LineChartWithRichTileLegendExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"interrupted\",\n        component: LineChartInterruptedBasicExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"interrupted-calculated\",\n        component: LineChartInterruptedCalculatedExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"interrupted-path-terminus\",\n        component: LineChartInterruptedPathTerminusExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"test\",\n        component: LineChartTestComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"visual-test\",\n        component: LineChartVisualTestComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n];\n\n@NgModule({\n    declarations: [\n        ChartDocsLineComponent,\n        LineChartWithAxisLabelsExampleComponent,\n        LineChartBasicExampleComponent,\n        LineChartTestComponent,\n        LineChartVisualTestComponent,\n        LineChartWithLegendExampleComponent,\n        LineChartWithRichTileLegendExampleComponent,\n        LineChartWith2YAxesExampleComponent,\n        LineChartInterruptedBasicExampleComponent,\n        LineChartInterruptedPathTerminusExampleComponent,\n        LineChartInterruptedCalculatedExampleComponent,\n        LineChartWithLargeValuesExampleComponent,\n    ],\n    imports: [\n        DemoCommonModule,\n        FormsModule,\n        NuiChartsModule,\n        NuiIconModule,\n        NuiDocsModule,\n        NuiMessageModule,\n        RouterModule.forChild(exampleRoutes),\n    ],\n    providers: [\n        { provide: DEMO_PATH_TOKEN, useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/) },\n    ],\n})\nexport class ChartDocsLineModule {\n}\n";
       /***/
     },
 
@@ -4077,7 +4194,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import { Component, OnInit } from \"@angular/core\";\nimport {\n    Chart, ChartAssist, IChartSeries, ILineAccessors, IXYScales, LineAccessors, LinearScale, LineRenderer, LineSelectSeriesInteractionStrategy, TimeScale,\n    XYGrid,\n} from \"@nova-ui/charts\";\nimport moment from \"moment/moment\";\n\n@Component({\n    selector: \"nui-line-chart-with-rich-tile-legend-example\",\n    templateUrl: \"./line-chart-with-rich-tile-legend.example.component.html\",\n})\nexport class LineChartWithRichTileLegendExampleComponent implements OnInit {\n    public chart = new Chart(new XYGrid());\n    public chartAssist: ChartAssist = new ChartAssist(this.chart);\n\n    public ngOnInit() {\n        // providing chartAssist colors and markers to LineAccessors will share them with the line chart\n        const accessors = new LineAccessors(this.chartAssist.palette.standardColors, this.chartAssist.markers);\n        const renderer = new LineRenderer({\n            // for series interaction and ability to handle click configure renderer with interactionStrategy\n            interactionStrategy: new LineSelectSeriesInteractionStrategy(),\n        });\n        const scales: IXYScales = {\n            x: new TimeScale(),\n            y: new LinearScale(),\n        };\n\n        const seriesSet: IChartSeries<ILineAccessors>[] = getData().map(d => ({\n            ...d,\n            scales,\n            renderer,\n            accessors,\n        }));\n\n        // chart assist needs to be used to update data\n        this.chartAssist.update(seriesSet);\n    }\n}\n\n/* Chart data */\nfunction getData() {\n    const format = \"YYYY-MM-DDTHH:mm:ssZ\";\n\n    return [\n        {\n            id: \"series-1\",\n            name: \"Series 1\",\n            data: [\n                { x: moment(\"2016-12-25T15:14:29.909Z\", format), y: 30 },\n                { x: moment(\"2016-12-27T15:14:29.909Z\", format), y: 95 },\n                { x: moment(\"2016-12-29T15:14:29.909Z\", format), y: 15 },\n                { x: moment(\"2016-12-31T15:14:29.909Z\", format), y: 60 },\n                { x: moment(\"2017-01-03T15:14:29.909Z\", format), y: 35 },\n            ],\n        },\n        {\n            id: \"series-2\",\n            name: \"Series 2\",\n            data: [\n                { x: moment(\"2016-12-25T15:14:29.909Z\", format), y: 60 },\n                { x: moment(\"2016-12-27T15:14:29.909Z\", format), y: 40 },\n                { x: moment(\"2016-12-29T15:14:29.909Z\", format), y: 70 },\n                { x: moment(\"2016-12-31T15:14:29.909Z\", format), y: 45 },\n                { x: moment(\"2017-01-03T15:14:29.909Z\", format), y: 90 },\n            ],\n        },\n    ];\n}\n";
+      __webpack_exports__["default"] = "import { Component, OnInit } from \"@angular/core\";\nimport {\n    Chart, ChartAssist, IChartSeries, ILineAccessors, IXYScales, LineAccessors, LinearScale, LineRenderer, LineSelectSeriesInteractionStrategy, TimeScale,\n    XYGrid,\n} from \"@nova-ui/charts\";\nimport moment from \"moment/moment\";\n\n@Component({\n    selector: \"nui-line-chart-with-rich-tile-legend-example\",\n    templateUrl: \"./line-chart-with-rich-tile-legend.example.component.html\",\n})\nexport class LineChartWithRichTileLegendExampleComponent implements OnInit {\n    public chart = new Chart(new XYGrid());\n    public chartAssist: ChartAssist = new ChartAssist(this.chart);\n\n    public ngOnInit() {\n        // providing chartAssist colors and markers to LineAccessors will share them with the line chart\n        const accessors = new LineAccessors(this.chartAssist.palette.standardColors, this.chartAssist.markers);\n        const renderer = new LineRenderer({\n            // for series interaction and ability to handle click configure renderer with interactionStrategy\n            interactionStrategy: new LineSelectSeriesInteractionStrategy(),\n        });\n        const scales: IXYScales = {\n            x: new TimeScale(),\n            y: new LinearScale(),\n        };\n\n        const seriesSet: IChartSeries<ILineAccessors>[] = getData().map(d => ({\n            ...d,\n            scales,\n            renderer,\n            accessors,\n        }));\n\n        // chart assist needs to be used to update data\n        this.chartAssist.update(seriesSet);\n    }\n}\n\n/* Chart data */\nfunction getData() {\n    const format = \"YYYY-MM-DDTHH:mm:ssZ\";\n\n    return [\n        {\n            id: \"series-1\",\n            name: \"Series 1\",\n            data: [\n                { x: moment(\"2016-12-25T15:14:29.909Z\", format), y: 130 },\n                { x: moment(\"2016-12-27T15:14:29.909Z\", format), y: 195 },\n                { x: moment(\"2016-12-29T15:14:29.909Z\", format), y: 115 },\n                { x: moment(\"2016-12-31T15:14:29.909Z\", format), y: 160 },\n                { x: moment(\"2017-01-03T15:14:29.909Z\", format), y: 135 },\n            ],\n        },\n        {\n            id: \"series-2\",\n            name: \"Series 2\",\n            data: [\n                { x: moment(\"2016-12-25T15:14:29.909Z\", format), y: 60 },\n                { x: moment(\"2016-12-27T15:14:29.909Z\", format), y: 40 },\n                { x: moment(\"2016-12-29T15:14:29.909Z\", format), y: 70 },\n                { x: moment(\"2016-12-31T15:14:29.909Z\", format), y: 45 },\n                { x: moment(\"2017-01-03T15:14:29.909Z\", format), y: 90 },\n            ],\n        },\n    ];\n}\n";
       /***/
     },
 

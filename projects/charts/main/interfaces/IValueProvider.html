@@ -118,8 +118,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="354"
-                            class="link-to-prism">src/core/common/types.ts:354</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="363"
+                            class="link-to-prism">src/core/common/types.ts:363</a></div>
                 </td>
             </tr>
 
@@ -188,8 +188,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="355"
-                            class="link-to-prism">src/core/common/types.ts:355</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="364"
+                            class="link-to-prism">src/core/common/types.ts:364</a></div>
                 </td>
             </tr>
 
@@ -398,11 +398,20 @@ export interface IChartSeries&lt;A extends IAccessors&gt; extends IDataSeries&lt
      * uses &#x27;x&#x27; and &#x27;y&#x27; as the keys for its scales.
      */
     scales: Scales;
+    /**
+     * Represents an emphasis/visibility state of this series
+     */
+    renderState?: RenderState;
 }
 
 export interface IChartAssistSeries&lt;A extends IAccessors&gt; extends IChartSeries&lt;A&gt; {
+    /**
+     * Whether this series should be shown in the legend
+     */
     showInLegend?: boolean;
-    renderState?: RenderState;
+    /**
+     * Whether this series should be preprocessed in the chart assist
+     */
     preprocess?: boolean;
 }
 

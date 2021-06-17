@@ -90,10 +90,6 @@
                                 </li>
                                 <li>
                                             <span class="modifier">Optional</span>
-                                        <a href="#renderState">renderState</a>
-                                </li>
-                                <li>
-                                            <span class="modifier">Optional</span>
                                         <a href="#showInLegend">showInLegend</a>
                                 </li>
                             </ul>
@@ -139,40 +135,12 @@
 
 
 
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <a name="renderState"></a>
-                                        <span class="name"><b>renderState</b><a href="#renderState"><span class="icon ion-ios-link"></span></a></span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <code>renderState:         <code><a href="../miscellaneous/enumerations.html#RenderState" target="_self" >RenderState</a></code>
-</code>
-                                    </td>
-                                </tr>
-
-
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="../miscellaneous/enumerations.html#RenderState" target="_self" >RenderState</a></code>
-
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Optional</i>
-                                        </td>
-                                    </tr>
-
-
-
-
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Whether this series should be preprocessed in the chart assist</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -207,6 +175,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Whether this series should be shown in the legend</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
@@ -401,11 +375,20 @@ export interface IChartSeries&lt;A extends IAccessors&gt; extends IDataSeries&lt
      * uses &#x27;x&#x27; and &#x27;y&#x27; as the keys for its scales.
      */
     scales: Scales;
+    /**
+     * Represents an emphasis/visibility state of this series
+     */
+    renderState?: RenderState;
 }
 
 export interface IChartAssistSeries&lt;A extends IAccessors&gt; extends IChartSeries&lt;A&gt; {
+    /**
+     * Whether this series should be shown in the legend
+     */
     showInLegend?: boolean;
-    renderState?: RenderState;
+    /**
+     * Whether this series should be preprocessed in the chart assist
+     */
     preprocess?: boolean;
 }
 

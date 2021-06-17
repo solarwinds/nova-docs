@@ -104,7 +104,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { NgModule } from \"@angular/core\";\nimport { RouterModule, Routes } from \"@angular/router\";\nimport { DEMO_PATH_TOKEN } from \"@nova-ui/bits\";\n\nconst exampleRoutes: Routes = [\n    {\n        path: \"tooltips\",\n        loadChildren: () => import(\"components/demo/plugins/tooltips/chart-docs-tooltips.module\").then(m => m.ChartDocsTooltipsModule),\n    },\n    {\n        path: \"popovers\",\n        loadChildren: () => import(\"components/demo/plugins/popovers/chart-docs-popovers.module\").then(m => m.ChartDocsPopoversModule),\n    },\n];\n\n@NgModule({\n    declarations: [],\n    imports: [\n        RouterModule.forChild(exampleRoutes),\n    ],\n    providers: [\n        { provide: DEMO_PATH_TOKEN, useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/) },\n    ],\n})\nexport class ChartDocsPluginsModule {\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import { NgModule } from \"@angular/core\";\nimport { RouterModule, Routes } from \"@angular/router\";\nimport { DEMO_PATH_TOKEN } from \"@nova-ui/bits\";\n\nconst exampleRoutes: Routes = [\n    {\n        path: \"tooltips\",\n        loadChildren: async () => import(\"components/demo/plugins/tooltips/chart-docs-tooltips.module\").then(m => m.ChartDocsTooltipsModule),\n    },\n    {\n        path: \"popovers\",\n        loadChildren: async () => import(\"components/demo/plugins/popovers/chart-docs-popovers.module\").then(m => m.ChartDocsPopoversModule),\n    },\n];\n\n@NgModule({\n    declarations: [],\n    imports: [\n        RouterModule.forChild(exampleRoutes),\n    ],\n    providers: [\n        { provide: DEMO_PATH_TOKEN, useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/) },\n    ],\n})\nexport class ChartDocsPluginsModule {\n}\n");
 
 /***/ }),
 
@@ -168,11 +168,11 @@ __webpack_require__.r(__webpack_exports__);
 const exampleRoutes = [
     {
         path: "tooltips",
-        loadChildren: () => Promise.all(/*! import() | components-demo-plugins-tooltips-chart-docs-tooltips-module */[__webpack_require__.e("default~bar-bar-prototype-module~chart-collection-chart-collection-example-module~components-demo-ad~ec3dd4a6"), __webpack_require__.e("common"), __webpack_require__.e("components-demo-plugins-tooltips-chart-docs-tooltips-module")]).then(__webpack_require__.bind(null, /*! components/demo/plugins/tooltips/chart-docs-tooltips.module */ "KBYt")).then(m => m.ChartDocsTooltipsModule),
+        loadChildren: () => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, function* () { return Promise.all(/*! import() | components-demo-plugins-tooltips-chart-docs-tooltips-module */[__webpack_require__.e("default~bar-bar-prototype-module~chart-collection-chart-collection-example-module~components-demo-ad~ec3dd4a6"), __webpack_require__.e("common"), __webpack_require__.e("components-demo-plugins-tooltips-chart-docs-tooltips-module")]).then(__webpack_require__.bind(null, /*! components/demo/plugins/tooltips/chart-docs-tooltips.module */ "KBYt")).then(m => m.ChartDocsTooltipsModule); }),
     },
     {
         path: "popovers",
-        loadChildren: () => Promise.all(/*! import() | components-demo-plugins-popovers-chart-docs-popovers-module */[__webpack_require__.e("default~bar-bar-prototype-module~chart-collection-chart-collection-example-module~components-demo-ad~ec3dd4a6"), __webpack_require__.e("common"), __webpack_require__.e("components-demo-plugins-popovers-chart-docs-popovers-module")]).then(__webpack_require__.bind(null, /*! components/demo/plugins/popovers/chart-docs-popovers.module */ "gZ1U")).then(m => m.ChartDocsPopoversModule),
+        loadChildren: () => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, function* () { return Promise.all(/*! import() | components-demo-plugins-popovers-chart-docs-popovers-module */[__webpack_require__.e("default~bar-bar-prototype-module~chart-collection-chart-collection-example-module~components-demo-ad~ec3dd4a6"), __webpack_require__.e("common"), __webpack_require__.e("components-demo-plugins-popovers-chart-docs-popovers-module")]).then(__webpack_require__.bind(null, /*! components/demo/plugins/popovers/chart-docs-popovers.module */ "gZ1U")).then(m => m.ChartDocsPopoversModule); }),
     },
 ];
 let ChartDocsPluginsModule = class ChartDocsPluginsModule {

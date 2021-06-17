@@ -409,8 +409,7 @@ export class ChartAssistRenderStateData implements IRenderStateData {
     }
 }
 
-export interface IRenderStatesIndex {
-    [seriesId: string]: ChartAssistRenderStateData;
+export interface IRenderStatesIndex extends Record&lt;string, ChartAssistRenderStateData&gt; {
 }
 </code></pre>
     </div>

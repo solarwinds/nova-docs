@@ -478,7 +478,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import { NgModule } from \"@angular/core\";\nimport { RouterModule, Routes } from \"@angular/router\";\nimport { DEMO_PATH_TOKEN, NuiDocsModule, NuiMessageModule } from \"@nova-ui/bits\";\nimport { NuiChartsModule } from \"@nova-ui/charts\";\n\nconst exampleRoutes: Routes = [\n    {\n        path: \"overview\",\n        loadChildren: () =>\n            import(\"components/demo/advanced-usage/accessors/overview/chart-docs-accessors-overview.module\").then(m => m.ChartDocsAccessorsOverviewModule),\n    },\n    {\n        path: \"data\",\n        loadChildren: () =>\n            import(\"components/demo/advanced-usage/accessors/data/chart-docs-accessors-data.module\").then(m => m.ChartDocsAccessorsDataModule),\n    },\n    {\n        path: \"colors\",\n        loadChildren: () =>\n            import(\"components/demo/advanced-usage/accessors/colors/chart-docs-accessors-colors.module\").then(m => m.ChartDocsAccessorsColorsModule),\n    },\n    {\n        path: \"markers\",\n        loadChildren: () =>\n            import(\"components/demo/advanced-usage/accessors/markers/chart-docs-accessors-markers.module\").then(m => m.ChartDocsAccessorsMarkersModule),\n    },\n];\n\n@NgModule({\n    declarations: [],\n    imports: [\n        NuiChartsModule,\n        NuiDocsModule,\n        NuiMessageModule,\n        RouterModule.forChild(exampleRoutes),\n    ],\n    providers: [\n        { provide: DEMO_PATH_TOKEN, useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/) },\n    ],\n})\nexport class ChartDocsAccessorsModule {\n}\n";
+      __webpack_exports__["default"] = "import { NgModule } from \"@angular/core\";\nimport { RouterModule, Routes } from \"@angular/router\";\nimport { DEMO_PATH_TOKEN, NuiDocsModule, NuiMessageModule } from \"@nova-ui/bits\";\nimport { NuiChartsModule } from \"@nova-ui/charts\";\n\nconst exampleRoutes: Routes = [\n    {\n        path: \"overview\",\n        loadChildren: async () =>\n            import(\"components/demo/advanced-usage/accessors/overview/chart-docs-accessors-overview.module\").then(m => m.ChartDocsAccessorsOverviewModule),\n    },\n    {\n        path: \"data\",\n        loadChildren: async () =>\n            import(\"components/demo/advanced-usage/accessors/data/chart-docs-accessors-data.module\").then(m => m.ChartDocsAccessorsDataModule),\n    },\n    {\n        path: \"colors\",\n        loadChildren: async () =>\n            import(\"components/demo/advanced-usage/accessors/colors/chart-docs-accessors-colors.module\").then(m => m.ChartDocsAccessorsColorsModule),\n    },\n    {\n        path: \"markers\",\n        loadChildren: async () =>\n            import(\"components/demo/advanced-usage/accessors/markers/chart-docs-accessors-markers.module\").then(m => m.ChartDocsAccessorsMarkersModule),\n    },\n];\n\n@NgModule({\n    declarations: [],\n    imports: [\n        NuiChartsModule,\n        NuiDocsModule,\n        NuiMessageModule,\n        RouterModule.forChild(exampleRoutes),\n    ],\n    providers: [\n        { provide: DEMO_PATH_TOKEN, useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/) },\n    ],\n})\nexport class ChartDocsAccessorsModule {\n}\n";
       /***/
     },
 
@@ -518,7 +518,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import { NgModule } from \"@angular/core\";\nimport { RouterModule, Routes } from \"@angular/router\";\nimport { DEMO_PATH_TOKEN, NuiDocsModule, SrlcStage } from \"@nova-ui/bits\";\nimport { NuiChartsModule } from \"@nova-ui/charts\";\n\nimport { ChartDocsScalesComponent } from \"./chart-docs-scales.component\";\n\nconst exampleRoutes: Routes = [\n    {\n        path: \"\",\n        component: ChartDocsScalesComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.beta,\n            },\n        },\n    },\n    {\n        path: \"domains\",\n        loadChildren: () => import(\"components/demo/advanced-usage/scales/domains/chart-docs-domains.module\").then(m => m.ChartDocsDomainsModule),\n    },\n    {\n        path: \"formatters\",\n        loadChildren: () => import(\"components/demo/advanced-usage/scales/formatters/chart-docs-formatters.module\").then(m => m.ChartDocsFormattersModule),\n    },\n];\n\n@NgModule({\n    declarations: [\n        ChartDocsScalesComponent,\n    ],\n    imports: [\n        NuiChartsModule,\n        NuiDocsModule,\n        RouterModule.forChild(exampleRoutes),\n    ],\n    providers: [\n        { provide: DEMO_PATH_TOKEN, useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/) },\n    ],\n})\nexport class ChartDocsScalesModule {\n}\n";
+      __webpack_exports__["default"] = "import { NgModule } from \"@angular/core\";\nimport { RouterModule, Routes } from \"@angular/router\";\nimport { DEMO_PATH_TOKEN, NuiDocsModule, SrlcStage } from \"@nova-ui/bits\";\nimport { NuiChartsModule } from \"@nova-ui/charts\";\n\nimport { ChartDocsScalesComponent } from \"./chart-docs-scales.component\";\n\nconst exampleRoutes: Routes = [\n    {\n        path: \"\",\n        component: ChartDocsScalesComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.beta,\n            },\n        },\n    },\n    {\n        path: \"domains\",\n        loadChildren: async () => import(\"components/demo/advanced-usage/scales/domains/chart-docs-domains.module\").then(m => m.ChartDocsDomainsModule),\n    },\n    {\n        path: \"formatters\",\n        loadChildren: async () => import(\"components/demo/advanced-usage/scales/formatters/chart-docs-formatters.module\")\n            .then(m => m.ChartDocsFormattersModule),\n    },\n];\n\n@NgModule({\n    declarations: [\n        ChartDocsScalesComponent,\n    ],\n    imports: [\n        NuiChartsModule,\n        NuiDocsModule,\n        RouterModule.forChild(exampleRoutes),\n    ],\n    providers: [\n        { provide: DEMO_PATH_TOKEN, useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/) },\n    ],\n})\nexport class ChartDocsScalesModule {\n}\n";
       /***/
     },
 
@@ -795,68 +795,146 @@
       var exampleRoutes = [{
         path: "accessors",
         loadChildren: function loadChildren() {
-          return __webpack_require__.e(
-          /*! import() | components-demo-advanced-usage-accessors-chart-docs-accessors-module */
-          "components-demo-advanced-usage-accessors-chart-docs-accessors-module").then(__webpack_require__.bind(null,
-          /*! components/demo/advanced-usage/accessors/chart-docs-accessors.module */
-          "VOXW")).then(function (m) {
-            return m.ChartDocsAccessorsModule;
-          });
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+            return regeneratorRuntime.wrap(function _callee$(_context) {
+              while (1) {
+                switch (_context.prev = _context.next) {
+                  case 0:
+                    return _context.abrupt("return", __webpack_require__.e(
+                    /*! import() | components-demo-advanced-usage-accessors-chart-docs-accessors-module */
+                    "components-demo-advanced-usage-accessors-chart-docs-accessors-module").then(__webpack_require__.bind(null,
+                    /*! components/demo/advanced-usage/accessors/chart-docs-accessors.module */
+                    "VOXW")).then(function (m) {
+                      return m.ChartDocsAccessorsModule;
+                    }));
+
+                  case 1:
+                  case "end":
+                    return _context.stop();
+                }
+              }
+            }, _callee);
+          }));
         }
       }, {
         path: "chart-setup",
         loadChildren: function loadChildren() {
-          return __webpack_require__.e(
-          /*! import() | components-demo-advanced-usage-chart-setup-chart-docs-chart-setup-module */
-          "components-demo-advanced-usage-chart-setup-chart-docs-chart-setup-module").then(__webpack_require__.bind(null,
-          /*! components/demo/advanced-usage/chart-setup/chart-docs-chart-setup.module */
-          "xb04")).then(function (m) {
-            return m.ChartDocsChartSetupModule;
-          });
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+            return regeneratorRuntime.wrap(function _callee2$(_context2) {
+              while (1) {
+                switch (_context2.prev = _context2.next) {
+                  case 0:
+                    return _context2.abrupt("return", __webpack_require__.e(
+                    /*! import() | components-demo-advanced-usage-chart-setup-chart-docs-chart-setup-module */
+                    "components-demo-advanced-usage-chart-setup-chart-docs-chart-setup-module").then(__webpack_require__.bind(null,
+                    /*! components/demo/advanced-usage/chart-setup/chart-docs-chart-setup.module */
+                    "xb04")).then(function (m) {
+                      return m.ChartDocsChartSetupModule;
+                    }));
+
+                  case 1:
+                  case "end":
+                    return _context2.stop();
+                }
+              }
+            }, _callee2);
+          }));
         }
       }, {
         path: "events",
         loadChildren: function loadChildren() {
-          return Promise.all(
-          /*! import() | components-demo-advanced-usage-events-chart-docs-events-module */
-          [__webpack_require__.e("common"), __webpack_require__.e("components-demo-advanced-usage-events-chart-docs-events-module")]).then(__webpack_require__.bind(null,
-          /*! components/demo/advanced-usage/events/chart-docs-events.module */
-          "w47B")).then(function (m) {
-            return m.ChartDocsEventsModule;
-          });
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
+            return regeneratorRuntime.wrap(function _callee3$(_context3) {
+              while (1) {
+                switch (_context3.prev = _context3.next) {
+                  case 0:
+                    return _context3.abrupt("return", Promise.all(
+                    /*! import() | components-demo-advanced-usage-events-chart-docs-events-module */
+                    [__webpack_require__.e("common"), __webpack_require__.e("components-demo-advanced-usage-events-chart-docs-events-module")]).then(__webpack_require__.bind(null,
+                    /*! components/demo/advanced-usage/events/chart-docs-events.module */
+                    "w47B")).then(function (m) {
+                      return m.ChartDocsEventsModule;
+                    }));
+
+                  case 1:
+                  case "end":
+                    return _context3.stop();
+                }
+              }
+            }, _callee3);
+          }));
         }
       }, {
         path: "grid-config",
         loadChildren: function loadChildren() {
-          return __webpack_require__.e(
-          /*! import() | components-demo-advanced-usage-grid-config-chart-docs-grid-config-module */
-          "components-demo-advanced-usage-grid-config-chart-docs-grid-config-module").then(__webpack_require__.bind(null,
-          /*! components/demo/advanced-usage/grid-config/chart-docs-grid-config.module */
-          "4SuK")).then(function (m) {
-            return m.ChartDocsGridConfigModule;
-          });
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
+            return regeneratorRuntime.wrap(function _callee4$(_context4) {
+              while (1) {
+                switch (_context4.prev = _context4.next) {
+                  case 0:
+                    return _context4.abrupt("return", __webpack_require__.e(
+                    /*! import() | components-demo-advanced-usage-grid-config-chart-docs-grid-config-module */
+                    "components-demo-advanced-usage-grid-config-chart-docs-grid-config-module").then(__webpack_require__.bind(null,
+                    /*! components/demo/advanced-usage/grid-config/chart-docs-grid-config.module */
+                    "4SuK")).then(function (m) {
+                      return m.ChartDocsGridConfigModule;
+                    }));
+
+                  case 1:
+                  case "end":
+                    return _context4.stop();
+                }
+              }
+            }, _callee4);
+          }));
         }
       }, {
         path: "legend",
         loadChildren: function loadChildren() {
-          return Promise.all(
-          /*! import() | components-demo-advanced-usage-legend-chart-docs-legend-example-module */
-          [__webpack_require__.e("common"), __webpack_require__.e("components-demo-advanced-usage-legend-chart-docs-legend-example-module")]).then(__webpack_require__.bind(null,
-          /*! components/demo/advanced-usage/legend/chart-docs-legend-example.module */
-          "o7g7")).then(function (m) {
-            return m.ChartDocsLegendExampleModule;
-          });
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee5() {
+            return regeneratorRuntime.wrap(function _callee5$(_context5) {
+              while (1) {
+                switch (_context5.prev = _context5.next) {
+                  case 0:
+                    return _context5.abrupt("return", Promise.all(
+                    /*! import() | components-demo-advanced-usage-legend-chart-docs-legend-example-module */
+                    [__webpack_require__.e("common"), __webpack_require__.e("components-demo-advanced-usage-legend-chart-docs-legend-example-module")]).then(__webpack_require__.bind(null,
+                    /*! components/demo/advanced-usage/legend/chart-docs-legend-example.module */
+                    "o7g7")).then(function (m) {
+                      return m.ChartDocsLegendExampleModule;
+                    }));
+
+                  case 1:
+                  case "end":
+                    return _context5.stop();
+                }
+              }
+            }, _callee5);
+          }));
         }
       }, {
         path: "scales",
         loadChildren: function loadChildren() {
-          return __webpack_require__.e(
-          /*! import() | components-demo-advanced-usage-scales-chart-docs-scales-module */
-          "components-demo-advanced-usage-scales-chart-docs-scales-module").then(__webpack_require__.bind(null,
-          /*! components/demo/advanced-usage/scales/chart-docs-scales.module */
-          "eqoo")).then(function (m) {
-            return m.ChartDocsScalesModule;
-          });
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee6() {
+            return regeneratorRuntime.wrap(function _callee6$(_context6) {
+              while (1) {
+                switch (_context6.prev = _context6.next) {
+                  case 0:
+                    return _context6.abrupt("return", __webpack_require__.e(
+                    /*! import() | components-demo-advanced-usage-scales-chart-docs-scales-module */
+                    "components-demo-advanced-usage-scales-chart-docs-scales-module").then(__webpack_require__.bind(null,
+                    /*! components/demo/advanced-usage/scales/chart-docs-scales.module */
+                    "eqoo")).then(function (m) {
+                      return m.ChartDocsScalesModule;
+                    }));
+
+                  case 1:
+                  case "end":
+                    return _context6.stop();
+                }
+              }
+            }, _callee6);
+          }));
         }
       }];
 
@@ -1882,7 +1960,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import { NgModule } from \"@angular/core\";\nimport { RouterModule, Routes } from \"@angular/router\";\nimport { DEMO_PATH_TOKEN, NuiDocsModule, NuiMessageModule } from \"@nova-ui/bits\";\nimport { NuiChartsModule } from \"@nova-ui/charts\";\n\nconst exampleRoutes: Routes = [\n    {\n        path: \"base-grid\",\n        loadChildren: () => import(\"components/demo/advanced-usage/grid-config/base-grid/chart-docs-base-grid.module\").then(m => m.ChartDocsBaseGridModule),\n    },\n];\n\n@NgModule({\n    declarations: [],\n    imports: [\n        NuiChartsModule,\n        NuiDocsModule,\n        NuiMessageModule,\n        RouterModule.forChild(exampleRoutes),\n    ],\n    providers: [\n        { provide: DEMO_PATH_TOKEN, useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/) },\n    ],\n})\nexport class ChartDocsGridConfigModule {\n}\n";
+      __webpack_exports__["default"] = "import { NgModule } from \"@angular/core\";\nimport { RouterModule, Routes } from \"@angular/router\";\nimport { DEMO_PATH_TOKEN, NuiDocsModule, NuiMessageModule } from \"@nova-ui/bits\";\nimport { NuiChartsModule } from \"@nova-ui/charts\";\n\nconst exampleRoutes: Routes = [\n    {\n        path: \"base-grid\",\n        loadChildren: async () => import(\"components/demo/advanced-usage/grid-config/base-grid/chart-docs-base-grid.module\")\n            .then(m => m.ChartDocsBaseGridModule),\n    },\n];\n\n@NgModule({\n    declarations: [],\n    imports: [\n        NuiChartsModule,\n        NuiDocsModule,\n        NuiMessageModule,\n        RouterModule.forChild(exampleRoutes),\n    ],\n    providers: [\n        { provide: DEMO_PATH_TOKEN, useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/) },\n    ],\n})\nexport class ChartDocsGridConfigModule {\n}\n";
       /***/
     },
 
@@ -2002,7 +2080,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import { NgModule } from \"@angular/core\";\nimport { RouterModule, Routes } from \"@angular/router\";\nimport { DEMO_PATH_TOKEN, NuiDocsModule, NuiMessageModule } from \"@nova-ui/bits\";\nimport { NuiChartsModule } from \"@nova-ui/charts\";\n\nconst exampleRoutes: Routes = [\n    {\n        path: \"accessors\",\n        loadChildren: () => import(\"components/demo/advanced-usage/accessors/chart-docs-accessors.module\").then(m => m.ChartDocsAccessorsModule),\n    },\n    {\n        path: \"chart-setup\",\n        loadChildren: () => import(\"components/demo/advanced-usage/chart-setup/chart-docs-chart-setup.module\").then(m => m.ChartDocsChartSetupModule),\n    },\n    {\n        path: \"events\",\n        loadChildren: () => import(\"components/demo/advanced-usage/events/chart-docs-events.module\").then(m => m.ChartDocsEventsModule),\n    },\n    {\n        path: \"grid-config\",\n        loadChildren: () => import(\"components/demo/advanced-usage/grid-config/chart-docs-grid-config.module\").then(m => m.ChartDocsGridConfigModule),\n    },\n    {\n        path: \"legend\",\n        loadChildren: () => import(\"components/demo/advanced-usage/legend/chart-docs-legend-example.module\").then(m => m.ChartDocsLegendExampleModule),\n    },\n    {\n        path: \"scales\",\n        loadChildren: () => import(\"components/demo/advanced-usage/scales/chart-docs-scales.module\").then(m => m.ChartDocsScalesModule),\n    },\n];\n\n@NgModule({\n    imports: [\n        NuiChartsModule,\n        NuiDocsModule,\n        NuiMessageModule,\n        RouterModule.forChild(exampleRoutes),\n    ],\n    providers: [\n        { provide: DEMO_PATH_TOKEN, useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/) },\n    ],\n})\nexport class ChartDocsAdvancedUsageModule {\n}\n";
+      __webpack_exports__["default"] = "import { NgModule } from \"@angular/core\";\nimport { RouterModule, Routes } from \"@angular/router\";\nimport { DEMO_PATH_TOKEN, NuiDocsModule, NuiMessageModule } from \"@nova-ui/bits\";\nimport { NuiChartsModule } from \"@nova-ui/charts\";\n\nconst exampleRoutes: Routes = [\n    {\n        path: \"accessors\",\n        loadChildren: async () => import(\"components/demo/advanced-usage/accessors/chart-docs-accessors.module\").then(m => m.ChartDocsAccessorsModule),\n    },\n    {\n        path: \"chart-setup\",\n        loadChildren: async () => import(\"components/demo/advanced-usage/chart-setup/chart-docs-chart-setup.module\").then(m => m.ChartDocsChartSetupModule),\n    },\n    {\n        path: \"events\",\n        loadChildren: async () => import(\"components/demo/advanced-usage/events/chart-docs-events.module\").then(m => m.ChartDocsEventsModule),\n    },\n    {\n        path: \"grid-config\",\n        loadChildren: async () => import(\"components/demo/advanced-usage/grid-config/chart-docs-grid-config.module\").then(m => m.ChartDocsGridConfigModule),\n    },\n    {\n        path: \"legend\",\n        loadChildren: async () => import(\"components/demo/advanced-usage/legend/chart-docs-legend-example.module\").then(m => m.ChartDocsLegendExampleModule),\n    },\n    {\n        path: \"scales\",\n        loadChildren: async () => import(\"components/demo/advanced-usage/scales/chart-docs-scales.module\").then(m => m.ChartDocsScalesModule),\n    },\n];\n\n@NgModule({\n    imports: [\n        NuiChartsModule,\n        NuiDocsModule,\n        NuiMessageModule,\n        RouterModule.forChild(exampleRoutes),\n    ],\n    providers: [\n        { provide: DEMO_PATH_TOKEN, useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/) },\n    ],\n})\nexport class ChartDocsAdvancedUsageModule {\n}\n";
       /***/
     },
 

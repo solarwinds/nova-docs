@@ -2859,11 +2859,15 @@ class ChartAssist {
     update(inputSeriesSet, updateLegend = true) {
         this.inputSeriesSet = inputSeriesSet;
         const processedSeriesSet = this.seriesProcessor(inputSeriesSet.map(series => (Object.assign(Object.assign({}, series), { data: series.data || [] }))));
-        const seriesSet = processedSeriesSet.map(s => this.applyDefaults(s));
-        this.legendSeriesSet = seriesSet.filter(s => s.showInLegend);
+        this.legendSeriesSet = processedSeriesSet.filter(s => s.showInLegend || typeof s.showInLegend === "undefined");
         if (updateLegend) {
-            this.legendInteractionAssist.update(seriesSet);
+            this.legendInteractionAssist.update(processedSeriesSet);
         }
+        // add render states to the series for use in the chart
+        const seriesSet = processedSeriesSet.map(s => {
+            var _a;
+            return Object.assign({ renderState: (_a = this.renderStatesIndex[s.id]) === null || _a === void 0 ? void 0 : _a.state }, s);
+        });
         this.chart.update(seriesSet);
         this.publishRenderStates();
     }
@@ -2950,9 +2954,6 @@ class ChartAssist {
     }
     publishRenderStates() {
         this.chart.setSeriesStates(this.legendInteractionAssist.getSeriesStates());
-    }
-    applyDefaults(chartSeries) {
-        return Object.assign({}, chartAssistSeriesDefaults, chartSeries);
     }
 }
 class LegendInteractionAssist {
@@ -17750,6 +17751,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lodash_values__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! lodash/values */ "P/G1");
 /* harmony import */ var lodash_values__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(lodash_values__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _scales_helpers_domain__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./scales/helpers/domain */ "PhPe");
+/* harmony import */ var _renderers_types__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../renderers/types */ "AbRU");
+
 
 
 
@@ -17796,7 +17799,9 @@ class DataManager {
             return;
         }
         if (scale.domainCalculator) {
-            const chartSeriesSet = this.chartSeriesSet.filter(cs => cs.scales[scaleKey] === scale && !cs.renderer.config.ignoreForDomainCalculation);
+            const chartSeriesSet = this.chartSeriesSet
+                .filter(cs => cs.scales[scaleKey] === scale && !cs.renderer.config.ignoreForDomainCalculation)
+                .filter(c => c.renderState !== _renderers_types__WEBPACK_IMPORTED_MODULE_7__["RenderState"].hidden);
             if (chartSeriesSet.length) {
                 const calculatedDomain = scale.domainCalculator(chartSeriesSet, scaleKey, scale);
                 Object(_scales_helpers_domain__WEBPACK_IMPORTED_MODULE_6__["domain"])(scale, calculatedDomain);
