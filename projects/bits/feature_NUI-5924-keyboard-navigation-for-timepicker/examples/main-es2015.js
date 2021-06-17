@@ -24466,8 +24466,7 @@ class TimePickerComponent {
         if (!this.overlay.showing || !document.activeElement) {
             return;
         }
-        const target = event.relatedTarget;
-        if (!this.containerEl.nativeElement.contains(target)) {
+        if (!this.containerEl.nativeElement.contains(event.relatedTarget)) {
             this.overlay.hide();
         }
     }
