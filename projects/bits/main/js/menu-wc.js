@@ -523,6 +523,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     <a href="injectables/ThemeSwitchService.html" data-type="entity-link">ThemeSwitchService</a>
                                 </li>
                                 <li class="link">
+                                    <a href="injectables/TimePickerKeyboardService.html" data-type="entity-link">TimePickerKeyboardService</a>
+                                </li>
+                                <li class="link">
                                     <a href="injectables/ToolbarKeyboardService.html" data-type="entity-link">ToolbarKeyboardService</a>
                                 </li>
                                 <li class="link">
