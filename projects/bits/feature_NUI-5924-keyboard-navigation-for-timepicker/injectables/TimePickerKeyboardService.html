@@ -236,8 +236,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="30"
-                            class="link-to-prism">src/lib/time-picker/time-picker-keyboard.service.ts:30</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="29"
+                            class="link-to-prism">src/lib/time-picker/time-picker-keyboard.service.ts:29</a></div>
                 </td>
             </tr>
 
@@ -349,7 +349,6 @@ export class TimePickerKeyboardService {
         this.popup &#x3D; popup;
         this.menuItems &#x3D; popup.menuItems.toArray();
         this.keyboardEventsManager &#x3D; new ActiveDescendantKeyManager&lt;MenuItemBaseComponent&gt;(this.menuItems);
-        this.keyboardEventsManager.setActiveItem(this.getSelectedIndex());
         this.menuTrigger &#x3D; trigger;
     }
 
@@ -373,8 +372,9 @@ export class TimePickerKeyboardService {
             this.keyboardEventsManager.activeItem?.doAction(event);
         }
 
-        if (code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.SPACE) {
+        if (code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.SPACE &amp;&amp; document.activeElement &#x3D;&#x3D;&#x3D; this.menuTrigger) {
             event.preventDefault();
+            this.overlay.toggle()
         }
     }
 
@@ -386,6 +386,7 @@ export class TimePickerKeyboardService {
         if (isInputTrigger || isIconTrigger) {
             event.preventDefault();
             this.overlay.show();
+            this.keyboardEventsManager.setActiveItem(this.getSelectedIndex());
             this.keyboardEventsManager.activeItem?.menuItem?.nativeElement?.scrollIntoView({ block: &quot;center&quot; });
         }
     }
@@ -427,7 +428,7 @@ export class TimePickerKeyboardService {
     }
 
     private getSelectedIndex(): number {
-        return this.popup.menuItems.toArray().findIndex((component) &#x3D;&gt; {
+        return this.menuItems.findIndex((component) &#x3D;&gt; {
             const parent &#x3D; component.menuItem.nativeElement.parentElement;
 
             return parent.classList.contains(&quot;nui-menu-item--selected&quot;);
