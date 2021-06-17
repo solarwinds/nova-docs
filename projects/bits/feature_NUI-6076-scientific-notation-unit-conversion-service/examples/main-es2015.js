@@ -29911,9 +29911,7 @@ class UnitConversionService {
         const localizeValue = unit !== "generic";
         let displayValue;
         if (!unitDisplay && isValidNumber && conversion.order) {
-            const tempObj = Object.assign({}, conversion);
-            tempObj.order = 0;
-            unitDisplay = this.getUnitDisplay(tempObj, unit);
+            unitDisplay = this.getUnitDisplayBaseValue(unit);
             displayValue = this.getScientificDisplay(conversion, plusSign, nanDisplay);
         }
         else {
@@ -29951,8 +29949,15 @@ class UnitConversionService {
     getUnitDisplay(conversion, unit) {
         return _constants__WEBPACK_IMPORTED_MODULE_0__["unitConversionConstants"][unit][conversion.order];
     }
-    isValidNumber(value) {
-        return !isNaN(parseFloat(value)) && isFinite(parseInt(value, 10));
+    /**
+     * Gets the base value of the converted unit
+     *
+     * @param unit The basic unit used in the conversion
+     *
+     * @returns {string} The first unit in the unitConversionConstant array
+     */
+    getUnitDisplayBaseValue(unit) {
+        return _constants__WEBPACK_IMPORTED_MODULE_0__["unitConversionConstants"][unit][0];
     }
     /**
      * Gets the converted value display string in scientific notation
@@ -29969,6 +29974,9 @@ class UnitConversionService {
         }
         const prefix = plusSign && parseInt(conversion.value, 10) > 0 ? "+" : "";
         return `${prefix}${conversion.scientificNotation}`;
+    }
+    isValidNumber(value) {
+        return !isNaN(parseFloat(value)) && isFinite(parseInt(value, 10));
     }
 }
 UnitConversionService.ɵfac = function UnitConversionService_Factory(t) { return new (t || UnitConversionService)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_log_service__WEBPACK_IMPORTED_MODULE_1__["LoggerService"])); };

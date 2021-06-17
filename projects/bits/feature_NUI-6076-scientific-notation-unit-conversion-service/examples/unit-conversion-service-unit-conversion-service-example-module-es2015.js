@@ -397,7 +397,10 @@ class UnitConversionServiceSeparateUnitDisplayExampleComponent {
         this.num = num;
         const conversion = this.unitConversionService.convert(this.num, _nova_ui_bits__WEBPACK_IMPORTED_MODULE_0__["UnitBase"].Standard, 2);
         this.unitDisplay = this.unitConversionService.getUnitDisplay(conversion, "hertz");
+        // An undefined getUnitDisplay return value indicates the input value was too large to be converted,
+        // so the base unit and scientific notation can be used as fallbacks.
         if (this.unitDisplay) {
+            this.unitDisplay = this.unitConversionService.getUnitDisplayBaseValue("hertz");
             this.valueDisplay = this.unitConversionService.getValueDisplay(conversion);
         }
         else {
