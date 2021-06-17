@@ -1,5 +1,5 @@
 (function () {
-  var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10, _templateObject11, _templateObject12, _templateObject13, _templateObject14, _templateObject15, _templateObject16, _templateObject17, _templateObject18, _templateObject19, _templateObject20, _templateObject21, _templateObject22, _templateObject23, _templateObject24, _templateObject25, _templateObject26, _templateObject27, _templateObject28, _templateObject29, _templateObject30, _templateObject31, _templateObject32, _templateObject33, _templateObject34, _templateObject35, _templateObject36, _templateObject37, _templateObject38, _templateObject39, _templateObject40, _templateObject41, _templateObject42, _templateObject43, _templateObject44, _templateObject45, _templateObject46, _templateObject47, _templateObject48, _templateObject49, _templateObject50, _templateObject51, _templateObject52, _templateObject53, _templateObject54, _templateObject55, _templateObject56, _templateObject57, _templateObject58, _templateObject59, _templateObject60, _templateObject61, _templateObject62, _templateObject63, _templateObject64, _templateObject65, _templateObject66, _templateObject67, _templateObject68, _templateObject69, _templateObject70, _templateObject71, _templateObject72, _templateObject73, _templateObject74, _templateObject75, _templateObject76, _templateObject77, _templateObject78, _templateObject79, _templateObject80, _templateObject81, _templateObject82, _templateObject83, _templateObject84, _templateObject85, _templateObject86, _templateObject87, _templateObject88, _templateObject89, _templateObject90, _templateObject91, _templateObject92, _templateObject93, _templateObject94, _templateObject95, _templateObject96, _templateObject97, _templateObject98, _templateObject99, _templateObject100, _templateObject101, _templateObject102, _templateObject103, _templateObject104, _templateObject105, _templateObject106, _templateObject107, _templateObject108, _templateObject109, _templateObject110, _templateObject111, _templateObject112, _templateObject113, _templateObject114, _templateObject115, _templateObject116, _templateObject117, _templateObject118, _templateObject119, _templateObject120, _templateObject121, _templateObject122, _templateObject123, _templateObject124, _templateObject125, _templateObject126, _templateObject127, _templateObject128, _templateObject129, _templateObject130, _templateObject131, _templateObject132, _templateObject133, _templateObject134, _templateObject135, _templateObject136, _templateObject137, _templateObject138, _templateObject139, _templateObject140, _templateObject141, _templateObject142, _templateObject143, _templateObject144, _templateObject145, _templateObject146, _templateObject147, _templateObject148, _templateObject149, _templateObject150, _templateObject151, _templateObject152, _templateObject153, _templateObject154, _templateObject155, _templateObject156, _templateObject157, _templateObject158, _templateObject159, _templateObject160, _templateObject161, _templateObject162, _templateObject163, _templateObject164, _templateObject165, _templateObject166, _templateObject167, _templateObject168, _templateObject169, _templateObject170, _templateObject171, _templateObject172, _templateObject173, _templateObject174, _templateObject175, _templateObject176, _templateObject177, _templateObject178, _templateObject179, _templateObject180, _templateObject181, _templateObject182, _templateObject183, _templateObject184, _templateObject185, _templateObject186, _templateObject187, _templateObject188, _templateObject189, _templateObject190, _templateObject191, _templateObject192;
+  var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10, _templateObject11, _templateObject12, _templateObject13, _templateObject14, _templateObject15, _templateObject16, _templateObject17, _templateObject18, _templateObject19, _templateObject20, _templateObject21, _templateObject22, _templateObject23, _templateObject24, _templateObject25, _templateObject26, _templateObject27, _templateObject28, _templateObject29, _templateObject30, _templateObject31, _templateObject32, _templateObject33, _templateObject34, _templateObject35, _templateObject36, _templateObject37, _templateObject38, _templateObject39, _templateObject40, _templateObject41, _templateObject42, _templateObject43, _templateObject44, _templateObject45, _templateObject46, _templateObject47, _templateObject48, _templateObject49, _templateObject50, _templateObject51, _templateObject52, _templateObject53, _templateObject54, _templateObject55, _templateObject56, _templateObject57, _templateObject58, _templateObject59, _templateObject60, _templateObject61, _templateObject62, _templateObject63, _templateObject64, _templateObject65, _templateObject66, _templateObject67, _templateObject68, _templateObject69, _templateObject70, _templateObject71, _templateObject72, _templateObject73, _templateObject74, _templateObject75, _templateObject76, _templateObject77, _templateObject78, _templateObject79, _templateObject80, _templateObject81, _templateObject82, _templateObject83, _templateObject84, _templateObject85, _templateObject86, _templateObject87, _templateObject88, _templateObject89, _templateObject90, _templateObject91, _templateObject92, _templateObject93, _templateObject94, _templateObject95, _templateObject96, _templateObject97, _templateObject98, _templateObject99, _templateObject100, _templateObject101, _templateObject102, _templateObject103, _templateObject104, _templateObject105, _templateObject106, _templateObject107, _templateObject108, _templateObject109, _templateObject110, _templateObject111, _templateObject112, _templateObject113, _templateObject114, _templateObject115, _templateObject116, _templateObject117, _templateObject118, _templateObject119, _templateObject120, _templateObject121, _templateObject122, _templateObject123, _templateObject124, _templateObject125, _templateObject126, _templateObject127, _templateObject128, _templateObject129, _templateObject130, _templateObject131, _templateObject132, _templateObject133, _templateObject134, _templateObject135, _templateObject136, _templateObject137, _templateObject138, _templateObject139, _templateObject140, _templateObject141, _templateObject142, _templateObject143, _templateObject144, _templateObject145, _templateObject146, _templateObject147, _templateObject148, _templateObject149, _templateObject150, _templateObject151, _templateObject152, _templateObject153, _templateObject154, _templateObject155, _templateObject156, _templateObject157, _templateObject158, _templateObject159, _templateObject160, _templateObject161, _templateObject162, _templateObject163, _templateObject164, _templateObject165, _templateObject166, _templateObject167, _templateObject168, _templateObject169, _templateObject170, _templateObject171, _templateObject172, _templateObject173, _templateObject174, _templateObject175, _templateObject176, _templateObject177, _templateObject178, _templateObject179, _templateObject180, _templateObject181, _templateObject182, _templateObject183, _templateObject184, _templateObject185, _templateObject186, _templateObject187, _templateObject188, _templateObject189, _templateObject190, _templateObject191, _templateObject192, _templateObject193;
 
   function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
@@ -216,6 +216,508 @@
     },
 
     /***/
+    "/Jns":
+    /*!*********************************************************************************************************************************************!*\
+      !*** ./demo/src/components/demo/table/table-virtual-scroll-sticky-header-test/table-virtual-scroll-sticky-header-test-example.component.ts ***!
+      \*********************************************************************************************************************************************/
+
+    /*! exports provided: TableVirtualScrollStickyHeaderTestExampleComponent */
+
+    /***/
+    function Jns(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "TableVirtualScrollStickyHeaderTestExampleComponent", function () {
+        return TableVirtualScrollStickyHeaderTestExampleComponent;
+      });
+      /* harmony import */
+
+
+      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! tslib */
+      "mrSG");
+      /* harmony import */
+
+
+      var _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/cdk/scrolling */
+      "vxfF");
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! @angular/core */
+      "fXoL");
+      /* harmony import */
+
+
+      var _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! @nova-ui/bits */
+      "b5Xb");
+      /* harmony import */
+
+
+      var lodash_sample__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! lodash/sample */
+      "fTpD");
+      /* harmony import */
+
+
+      var lodash_sample__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(lodash_sample__WEBPACK_IMPORTED_MODULE_4__);
+      /* harmony import */
+
+
+      var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! rxjs/operators */
+      "kU1M");
+      /* harmony import */
+
+
+      var _src_lib_switch_switch_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      /*! ../../../../../../src/lib/switch/switch.component */
+      "6CEj");
+      /* harmony import */
+
+
+      var _src_lib_table_table_virtual_scroll_table_sticky_header_directive__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      /*! ../../../../../../src/lib/table/table-virtual-scroll/table-sticky-header.directive */
+      "jAOl");
+      /* harmony import */
+
+
+      var _src_lib_table_table_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      /*! ../../../../../../src/lib/table/table.component */
+      "ey6q");
+      /* harmony import */
+
+
+      var _angular_common__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      /*! @angular/common */
+      "ofXK");
+      /* harmony import */
+
+
+      var _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+      /*! ../../../../../../src/lib/table/table-row/table-row.component */
+      "LFiI");
+      /* harmony import */
+
+
+      var _src_lib_table_table_cell_table_column_def_directive__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+      /*! ../../../../../../src/lib/table/table-cell/table-column-def.directive */
+      "XeyC");
+      /* harmony import */
+
+
+      var _src_lib_table_table_cell_table_header_cell_def_directive__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+      /*! ../../../../../../src/lib/table/table-cell/table-header-cell-def.directive */
+      "htGY");
+      /* harmony import */
+
+
+      var _src_lib_table_table_cell_table_cell_def_directive__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
+      /*! ../../../../../../src/lib/table/table-cell/table-cell-def.directive */
+      "/BSE");
+      /* harmony import */
+
+
+      var _src_lib_table_table_cell_table_header_cell_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
+      /*! ../../../../../../src/lib/table/table-cell/table-header-cell.component */
+      "Ppt+");
+      /* harmony import */
+
+
+      var _src_lib_icon_icon_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
+      /*! ../../../../../../src/lib/icon/icon.component */
+      "45Bz");
+      /* harmony import */
+
+
+      var _src_lib_table_table_cell_table_cell_directive__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
+      /*! ../../../../../../src/lib/table/table-cell/table-cell.directive */
+      "jdPS");
+
+      function TableVirtualScrollStickyHeaderTestExampleComponent_ng_container_8_th_1_span_1_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "span");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var column_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"](2).$implicit;
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](column_r3);
+        }
+      }
+
+      function TableVirtualScrollStickyHeaderTestExampleComponent_ng_container_8_th_1_ng_template_2_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 16);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](1, "nui-icon", 17);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        }
+      }
+
+      function TableVirtualScrollStickyHeaderTestExampleComponent_ng_container_8_th_1_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "th", 13);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](1, TableVirtualScrollStickyHeaderTestExampleComponent_ng_container_8_th_1_span_1_Template, 2, 1, "span", 14);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, TableVirtualScrollStickyHeaderTestExampleComponent_ng_container_8_th_1_ng_template_2_Template, 2, 0, "ng-template", null, 15, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var _r7 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](3);
+
+          var column_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]().$implicit;
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", column_r3 !== "icon")("ngIfElse", _r7);
+        }
+      }
+
+      function TableVirtualScrollStickyHeaderTestExampleComponent_ng_container_8_td_2_span_1_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "span");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var element_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]().$implicit;
+
+          var column_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]().$implicit;
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](element_r11[column_r3]);
+        }
+      }
+
+      function TableVirtualScrollStickyHeaderTestExampleComponent_ng_container_8_td_2_ng_template_2_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 16);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](1, "nui-icon", 20);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var element_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]().$implicit;
+
+          var column_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]().$implicit;
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("icon", element_r11[column_r3]);
+        }
+      }
+
+      function TableVirtualScrollStickyHeaderTestExampleComponent_ng_container_8_td_2_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "td", 18);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](1, TableVirtualScrollStickyHeaderTestExampleComponent_ng_container_8_td_2_span_1_Template, 2, 1, "span", 14);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, TableVirtualScrollStickyHeaderTestExampleComponent_ng_container_8_td_2_ng_template_2_Template, 2, 1, "ng-template", null, 19, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var _r13 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](3);
+
+          var column_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]().$implicit;
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", column_r3 !== "icon")("ngIfElse", _r13);
+        }
+      }
+
+      function TableVirtualScrollStickyHeaderTestExampleComponent_ng_container_8_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainerStart"](0, 10);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](1, TableVirtualScrollStickyHeaderTestExampleComponent_ng_container_8_th_1_Template, 4, 2, "th", 11);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, TableVirtualScrollStickyHeaderTestExampleComponent_ng_container_8_td_2_Template, 4, 2, "td", 12);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainerEnd"]();
+        }
+
+        if (rf & 2) {
+          var column_r3 = ctx.$implicit;
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("nuiColumnDef", column_r3)("type", column_r3 === "icon" ? "icon" : "default");
+        }
+      }
+
+      function TableVirtualScrollStickyHeaderTestExampleComponent_tr_9_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](0, "tr", 21);
+        }
+      }
+
+      function TableVirtualScrollStickyHeaderTestExampleComponent_ng_template_10_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](0, "tr", 22);
+        }
+
+        if (rf & 2) {
+          var context_r20 = ctx.$implicit;
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("rowObject", context_r20);
+        }
+      }
+
+      var TableVirtualScrollStickyHeaderTestExampleComponent = /*#__PURE__*/function () {
+        function TableVirtualScrollStickyHeaderTestExampleComponent(dataSourceService) {
+          _classCallCheck(this, TableVirtualScrollStickyHeaderTestExampleComponent);
+
+          this.dataSourceService = dataSourceService; // Note: Mock items list is used to fake that the data is already loaded
+          // and let CDK Viewport perform the scrolling on a known number of items
+
+          this.placeholderItems = []; // The dynamically changed array of items to render by the table
+
+          this.displayedColumns = ["no", "icon", "nameFirst", "nameLast", "city", "postcode"];
+          this.makeSticky = true;
+          this.itemSize = 40;
+          this.gridHeight = 400; // trackBy handler used to identify uniquely each item in the table
+
+          this.trackByNo = function (index, item) {
+            return item === null || item === void 0 ? void 0 : item.no;
+          }; // Note: Initiating data source with data to be displayed
+
+
+          this.dataSourceService.setData(generateUsers(100000));
+        }
+
+        _createClass(TableVirtualScrollStickyHeaderTestExampleComponent, [{
+          key: "ngAfterViewInit",
+          value: function ngAfterViewInit() {
+            var _this4 = this;
+
+            this.dataSourceService.componentTree = {
+              // Note: Using paginator as filter to be able to get specific range
+              paginator: {
+                componentInstance: {
+                  getFilters: function getFilters() {
+                    return {
+                      value: _this4.viewport.getRenderedRange()
+                    };
+                  }
+                }
+              }
+            }; // Note: Creating a stream of visible items to be bound to the table and increase the performance
+
+            this.visibleItems$ = this.viewport.renderedRangeStream.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["startWith"])({
+              start: 0,
+              end: 10
+            }), // Note: On range change applying filters
+            Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["tap"])(function () {
+              return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(_this4, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
+                return regeneratorRuntime.wrap(function _callee3$(_context3) {
+                  while (1) {
+                    switch (_context3.prev = _context3.next) {
+                      case 0:
+                        return _context3.abrupt("return", this.dataSourceService.applyFilters());
+
+                      case 1:
+                      case "end":
+                        return _context3.stop();
+                    }
+                  }
+                }, _callee3, this);
+              }));
+            }), // Subscribing to the filter results transforming and merging them into the stream
+            Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["switchMap"])(function () {
+              return _this4.dataSourceService.outputsSubject.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["map"])(function (result) {
+                // Updating mock items list
+                if (_this4.placeholderItems.length !== result.paginator.total) {
+                  _this4.placeholderItems = Array.from({
+                    length: result.paginator.total
+                  });
+                } // Mapping the values to array to be able to bind them to the table dataSource
+
+
+                return result.repeat.itemsSource;
+              }));
+            }));
+          } // Note: Used only for demo purposes
+
+        }, {
+          key: "updateStickyState",
+          value: function updateStickyState(state) {
+            this.stickyHeaderDirective.tableStickyHeader = state;
+            this.makeSticky = state;
+          }
+        }]);
+
+        return TableVirtualScrollStickyHeaderTestExampleComponent;
+      }();
+
+      TableVirtualScrollStickyHeaderTestExampleComponent.ɵfac = function TableVirtualScrollStickyHeaderTestExampleComponent_Factory(t) {
+        return new (t || TableVirtualScrollStickyHeaderTestExampleComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["ClientSideDataSource"]));
+      };
+
+      TableVirtualScrollStickyHeaderTestExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({
+        type: TableVirtualScrollStickyHeaderTestExampleComponent,
+        selectors: [["nui-table-virtual-scroll-sticky-header-test-example"]],
+        viewQuery: function TableVirtualScrollStickyHeaderTestExampleComponent_Query(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵviewQuery"](_angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__["CdkVirtualScrollViewport"], 1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵviewQuery"](_nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["TableStickyHeaderDirective"], 1);
+          }
+
+          if (rf & 2) {
+            var _t;
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵloadQuery"]()) && (ctx.viewport = _t.first);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵloadQuery"]()) && (ctx.stickyHeaderDirective = _t.first);
+          }
+        },
+        features: [_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵProvidersFeature"]([_nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["ClientSideDataSource"]])],
+        decls: 11,
+        vars: 17,
+        consts: function consts() {
+          var i18n_0;
+
+          if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+            var MSG_EXTERNAL_2717514595278786545$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_STICKY_HEADER_TEST_TABLE_VIRTUAL_SCROLL_STICKY_HEADER_TEST_EXAMPLE_COMPONENT_TS_1 = goog.getMsg(" {$interpolation} ", {
+              "interpolation": "\uFFFD0\uFFFD"
+            });
+            i18n_0 = MSG_EXTERNAL_2717514595278786545$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_STICKY_HEADER_TEST_TABLE_VIRTUAL_SCROLL_STICKY_HEADER_TEST_EXAMPLE_COMPONENT_TS_1;
+          } else {
+            i18n_0 = $localize(_templateObject || (_templateObject = _taggedTemplateLiteral([":\u241Fe85c9ef3064327671f6a2c1a07d2a9eb628df244\u241F2717514595278786545: ", ":INTERPOLATION: "])), "\uFFFD0\uFFFD");
+          }
+
+          return [[1, "row", "mb-2"], [1, "col-3"], [3, "value", "valueChange"], i18n_0, ["id", "nui-demo-table-sticky-header"], ["tableStickyHeader", "", 1, "h-100", 3, "itemSize"], ["nui-table", "", 3, "dataSource", "trackBy", "sortable"], [3, "nuiColumnDef", "type", 4, "ngFor", "ngForOf"], ["nui-header-row", "", 4, "nuiHeaderRowDef"], ["nuiRowDef", "", "cdkVirtualFor", "", 3, "nuiRowDefColumns", "cdkVirtualForOf", "cdkVirtualForTrackBy"], [3, "nuiColumnDef", "type"], ["nui-header-cell", "", 4, "nuiHeaderCellDef"], ["nui-cell", "", 4, "nuiCellDef"], ["nui-header-cell", ""], [4, "ngIf", "ngIfElse"], ["headerIcon", ""], [1, "d-flex", "align-items-center", "justify-content-center"], ["icon", "enable"], ["nui-cell", ""], ["icon", ""], [3, "icon"], ["nui-header-row", ""], ["nui-row", "", 3, "rowObject"]];
+        },
+        template: function TableVirtualScrollStickyHeaderTestExampleComponent_Template(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 0);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](1, "div", 1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](2, "nui-switch", 2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("valueChange", function TableVirtualScrollStickyHeaderTestExampleComponent_Template_nui_switch_valueChange_2_listener($event) {
+              return ctx.updateStickyState($event);
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵi18n"](3, 3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](4, "div", 4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](5, "cdk-virtual-scroll-viewport", 5);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](6, "table", 6);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipe"](7, "async");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](8, TableVirtualScrollStickyHeaderTestExampleComponent_ng_container_8_Template, 3, 2, "ng-container", 7);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](9, TableVirtualScrollStickyHeaderTestExampleComponent_tr_9_Template, 1, 0, "tr", 8);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](10, TableVirtualScrollStickyHeaderTestExampleComponent_ng_template_10_Template, 1, 1, "ng-template", 9);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+          }
+
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("value", ctx.makeSticky);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵi18nExp"](ctx.makeSticky ? "Sticky" : "Not Sticky");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵi18nApply"](3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵstyleProp"]("height", ctx.gridHeight, "px")("max-width", 1300, "px");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("itemSize", ctx.itemSize);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("dataSource", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipeBind1"](7, 15, ctx.visibleItems$))("trackBy", ctx.trackByNo)("sortable", true);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx.displayedColumns);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("nuiHeaderRowDef", ctx.displayedColumns);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("nuiRowDefColumns", ctx.displayedColumns)("cdkVirtualForOf", ctx.placeholderItems)("cdkVirtualForTrackBy", ctx.trackByNo);
+          }
+        },
+        directives: [_src_lib_switch_switch_component__WEBPACK_IMPORTED_MODULE_6__["SwitchComponent"], _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__["CdkVirtualScrollViewport"], _src_lib_table_table_virtual_scroll_table_sticky_header_directive__WEBPACK_IMPORTED_MODULE_7__["TableStickyHeaderDirective"], _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__["CdkFixedSizeVirtualScroll"], _src_lib_table_table_component__WEBPACK_IMPORTED_MODULE_8__["TableComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_9__["NgForOf"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_10__["TableHeaderRowDefDirective"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_10__["TableRowDefDirective"], _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__["CdkVirtualForOf"], _src_lib_table_table_cell_table_column_def_directive__WEBPACK_IMPORTED_MODULE_11__["TableColumnDefDirective"], _src_lib_table_table_cell_table_header_cell_def_directive__WEBPACK_IMPORTED_MODULE_12__["TableHeaderCellDefDirective"], _src_lib_table_table_cell_table_cell_def_directive__WEBPACK_IMPORTED_MODULE_13__["TableCellDefDirective"], _src_lib_table_table_cell_table_header_cell_component__WEBPACK_IMPORTED_MODULE_14__["TableHeaderCellComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_9__["NgIf"], _src_lib_icon_icon_component__WEBPACK_IMPORTED_MODULE_15__["IconComponent"], _src_lib_table_table_cell_table_cell_directive__WEBPACK_IMPORTED_MODULE_16__["TableCellDirective"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_10__["TableHeaderRowComponent"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_10__["TableRowComponent"]],
+        pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_9__["AsyncPipe"]],
+        encapsulation: 2,
+        changeDetection: 0
+      });
+      var PEOPLE = ["Elena", "Madelyn", "Baggio", "Josh", "Lukas", "Blake", "Frantz", "Dima", "Serhii", "Vita", "Vlad", "Ivan", "Dumitru"];
+      var CITIES = ["Bucharest", "Kiev", "Austin", "Brno", "Frankfurt pe Main", "Sutton-under-Whitestonecliffe", "Vila Bela da Santíssima Trindade"];
+
+      function generateUsers(length) {
+        return Array.from({
+          length: length
+        }).map(function (obj, id) {
+          var personName = lodash_sample__WEBPACK_IMPORTED_MODULE_4___default()(PEOPLE) || PEOPLE[0];
+          return {
+            no: id,
+            postcode: id * 1000000 * id,
+            city: lodash_sample__WEBPACK_IMPORTED_MODULE_4___default()(CITIES) || CITIES[0],
+            nameFirst: personName,
+            nameLast: "UnknownLast",
+            icon: lodash_sample__WEBPACK_IMPORTED_MODULE_4___default()(["status_up", "status_unplugged"]) || "status_up"
+          };
+        });
+      }
+      /***/
+
+    },
+
+    /***/
     "2BtM":
     /*!*******************************************************************************************************************************************************!*\
       !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/table/table-cell-content-align/table-cell-content-align.example.component.less ***!
@@ -312,6 +814,8 @@
         "./table-virtual-scroll-steps-and-button/table-virtual-scroll-steps-and-button.example.component.html": "RfHE",
         "./table-virtual-scroll-steps-and-button/table-virtual-scroll-steps-and-button.example.component.less": "SzYQ",
         "./table-virtual-scroll-steps-and-button/table-virtual-scroll-steps-and-button.example.component.ts": "2vJh",
+        "./table-virtual-scroll-sticky-header-test/table-virtual-scroll-sticky-header-test-example.component.html": "qNxL",
+        "./table-virtual-scroll-sticky-header-test/table-virtual-scroll-sticky-header-test-example.component.ts": "n2nk",
         "./table-virtual-scroll-sticky-header/table-virtual-scroll-sticky-header-example.component.html": "2hRV",
         "./table-virtual-scroll-sticky-header/table-virtual-scroll-sticky-header-example.component.ts": "lRzD",
         "./table-visual-test/table-visual-test.example.html": "9L1u",
@@ -380,7 +884,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<div class=\"row mb-2\">\n    <div class=\"col-3\">\n        <nui-switch [value]=\"makeSticky\" (valueChange)=\"updateStickyState($event)\" i18n>\n            {{makeSticky ? 'Sticky' : 'Not Sticky'}}\n        </nui-switch>\n    </div>\n</div>\n\n<div id=\"nui-demo-table-sticky-header\" [style.height.px]=\"gridHeight\" [style.max-width.px]=\"1300\">\n    <cdk-virtual-scroll-viewport tableStickyHeader class=\"h-100\" [itemSize]=\"itemSize\">\n\n        <!-- IMPORTANT Bind only visible rows to the table, otherwise, the table will render all rows in the DOM -->\n        <table nui-table [dataSource]=\"visibleItems$ | async\" [trackBy]=\"trackByNo\" [sortable]=\"true\">\n            <!--         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^  -->\n            <ng-container *ngFor=\"let column of displayedColumns\" [nuiColumnDef]=\"column\">\n                <th nui-header-cell *nuiHeaderCellDef> {{column}}</th>\n                <td nui-cell *nuiCellDef=\"let element\">{{element[column]}}</td>\n            </ng-container>\n\n            <tr nui-header-row *nuiHeaderRowDef=\"displayedColumns\"></tr>\n            <!-- IMPORTANT The actual difference between normal table and virtualized one-->\n            <!--∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨ -->\n            <ng-template nuiRowDef cdkVirtualFor\n                         let-context\n                         [nuiRowDefColumns]=\"displayedColumns\"\n                         [cdkVirtualForOf]=\"placeholderItems\"\n                         [cdkVirtualForTrackBy]=\"trackByNo\">\n                <tr nui-row [rowObject]=\"context\"></tr>\n            </ng-template>\n            <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->\n        </table>\n\n    </cdk-virtual-scroll-viewport>\n</div>\n";
+      __webpack_exports__["default"] = "<div class=\"row mb-2\">\n    <div class=\"col-3\">\n        <nui-switch [value]=\"makeSticky\" (valueChange)=\"updateStickyState($event)\" i18n>\n            {{makeSticky ? 'Sticky' : 'Not Sticky'}}\n        </nui-switch>\n    </div>\n</div>\n\n<div id=\"nui-demo-table-sticky-header\" [style.height.px]=\"gridHeight\" [style.max-width.px]=\"1300\">\n    <cdk-virtual-scroll-viewport tableStickyHeader class=\"h-100\" [itemSize]=\"itemSize\">\n\n        <!-- IMPORTANT Bind only visible rows to the table, otherwise, the table will render all rows in the DOM -->\n        <table nui-table [dataSource]=\"visibleItems$ | async\" [trackBy]=\"trackByNo\" [sortable]=\"true\">\n            <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->\n            <ng-container *ngFor=\"let column of displayedColumns\" [nuiColumnDef]=\"column\">\n                <th nui-header-cell *nuiHeaderCellDef> {{column}}</th>\n                <td nui-cell *nuiCellDef=\"let element\">{{element[column]}}</td>\n            </ng-container>\n\n            <tr nui-header-row *nuiHeaderRowDef=\"displayedColumns\"></tr>\n            <!-- IMPORTANT The actual difference between normal table and virtualized one-->\n            <!-- ∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨ -->\n            <ng-template nuiRowDef cdkVirtualFor\n                         let-context\n                         [nuiRowDefColumns]=\"displayedColumns\"\n                         [cdkVirtualForOf]=\"placeholderItems\"\n                         [cdkVirtualForTrackBy]=\"trackByNo\">\n                <tr nui-row [rowObject]=\"context\"></tr>\n            </ng-template>\n            <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->\n        </table>\n\n    </cdk-virtual-scroll-viewport>\n</div>\n";
       /***/
     },
 
@@ -939,16 +1443,16 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this4 = this;
+            var _this5 = this;
 
             this.dataSource.busy.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeUntil"])(this.onDestroy$)).subscribe(function (busy) {
-              _this4._isBusy = busy;
+              _this5._isBusy = busy;
             });
           }
         }, {
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this5 = this;
+            var _this6 = this;
 
             this.registerVirtualScroll();
             this.viewportManager // Note: Initializing viewportManager with the repeat's CDK Viewport Ref
@@ -960,20 +1464,20 @@
             }).pipe( // Note: In case we know the total number of items we can stop the stream when dataset end is reached
             // Otherwise we can let VirtualViewportManager to stop when last received page range will not match requested range
             Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])(function (range) {
-              return _this5.totalItems ? _this5.totalItems >= range.end : true;
+              return _this6.totalItems ? _this6.totalItems >= range.end : true;
             }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])(function (range) {
               // Note: Keeping backward compatibility with RandomuserTableDataSource which requires page number to be set by consumer
               // It also can be calculated directly on the Datasource level
-              _this5.dataSource.page = range.end / (range.end - range.start);
+              _this6.dataSource.page = range.end / (range.end - range.start);
 
-              _this5.dataSource.applyFilters();
+              _this6.dataSource.applyFilters();
             }), // Note: Using the same stream to subscribe to the outputsSubject and update the items list
             Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["switchMap"])(function () {
-              return _this5.dataSource.outputsSubject.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])(function (outputs) {
-                _this5._totalItems = outputs.totalItems;
-                _this5.users = outputs.repeat.itemsSource || [];
+              return _this6.dataSource.outputsSubject.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])(function (outputs) {
+                _this6._totalItems = outputs.totalItems;
+                _this6.users = outputs.repeat.itemsSource || [];
 
-                _this5.cd.detectChanges();
+                _this6.cd.detectChanges();
               }));
             }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeUntil"])(this.onDestroy$)).subscribe();
           }
@@ -1025,7 +1529,7 @@
             var MSG_EXTERNAL_1345472093440723911$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_TEXT_FOOTER_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_TEXT_FOOTER_EXAMPLE_COMPONENT_TS__1 = goog.getMsg(" No.");
             i18n_0 = MSG_EXTERNAL_1345472093440723911$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_TEXT_FOOTER_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_TEXT_FOOTER_EXAMPLE_COMPONENT_TS__1;
           } else {
-            i18n_0 = $localize(_templateObject || (_templateObject = _taggedTemplateLiteral([":\u241F333f0164082b9f12f63ca11438b2085d074a5b0f\u241F1345472093440723911: No."])));
+            i18n_0 = $localize(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral([":\u241F333f0164082b9f12f63ca11438b2085d074a5b0f\u241F1345472093440723911: No."])));
           }
 
           var i18n_2;
@@ -1034,7 +1538,7 @@
             var MSG_EXTERNAL_8357643335000303339$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_TEXT_FOOTER_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_TEXT_FOOTER_EXAMPLE_COMPONENT_TS__3 = goog.getMsg(" Title");
             i18n_2 = MSG_EXTERNAL_8357643335000303339$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_TEXT_FOOTER_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_TEXT_FOOTER_EXAMPLE_COMPONENT_TS__3;
           } else {
-            i18n_2 = $localize(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral([":\u241F952a1244074407cd841ce6253538e566581f10dd\u241F8357643335000303339: Title"])));
+            i18n_2 = $localize(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral([":\u241F952a1244074407cd841ce6253538e566581f10dd\u241F8357643335000303339: Title"])));
           }
 
           var i18n_4;
@@ -1043,7 +1547,7 @@
             var MSG_EXTERNAL_2860311194545881177$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_TEXT_FOOTER_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_TEXT_FOOTER_EXAMPLE_COMPONENT_TS__5 = goog.getMsg(" First Name");
             i18n_4 = MSG_EXTERNAL_2860311194545881177$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_TEXT_FOOTER_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_TEXT_FOOTER_EXAMPLE_COMPONENT_TS__5;
           } else {
-            i18n_4 = $localize(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral([":\u241Fba4a0caee703d6328fdb0d70380f541915451742\u241F2860311194545881177: First Name"])));
+            i18n_4 = $localize(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral([":\u241Fba4a0caee703d6328fdb0d70380f541915451742\u241F2860311194545881177: First Name"])));
           }
 
           var i18n_6;
@@ -1052,7 +1556,7 @@
             var MSG_EXTERNAL_1738284750176372142$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_TEXT_FOOTER_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_TEXT_FOOTER_EXAMPLE_COMPONENT_TS__7 = goog.getMsg(" Last Name");
             i18n_6 = MSG_EXTERNAL_1738284750176372142$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_TEXT_FOOTER_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_TEXT_FOOTER_EXAMPLE_COMPONENT_TS__7;
           } else {
-            i18n_6 = $localize(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral([":\u241F26b7649337e48ef3e3ccd71ea1a710dab5f7eb61\u241F1738284750176372142: Last Name"])));
+            i18n_6 = $localize(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral([":\u241F26b7649337e48ef3e3ccd71ea1a710dab5f7eb61\u241F1738284750176372142: Last Name"])));
           }
 
           var i18n_8;
@@ -1061,7 +1565,7 @@
             var MSG_EXTERNAL_2667859507116816026$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_TEXT_FOOTER_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_TEXT_FOOTER_EXAMPLE_COMPONENT_TS__9 = goog.getMsg(" Gender");
             i18n_8 = MSG_EXTERNAL_2667859507116816026$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_TEXT_FOOTER_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_TEXT_FOOTER_EXAMPLE_COMPONENT_TS__9;
           } else {
-            i18n_8 = $localize(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral([":\u241F8a4933776bdd10c9818e105e60d956769de4149f\u241F2667859507116816026: Gender"])));
+            i18n_8 = $localize(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral([":\u241F8a4933776bdd10c9818e105e60d956769de4149f\u241F2667859507116816026: Gender"])));
           }
 
           var i18n_10;
@@ -1070,7 +1574,7 @@
             var MSG_EXTERNAL_1456073909159321718$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_TEXT_FOOTER_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_TEXT_FOOTER_EXAMPLE_COMPONENT_TS__11 = goog.getMsg(" Country");
             i18n_10 = MSG_EXTERNAL_1456073909159321718$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_TEXT_FOOTER_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_TEXT_FOOTER_EXAMPLE_COMPONENT_TS__11;
           } else {
-            i18n_10 = $localize(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral([":\u241F0425e05bbff231ff83e71da0ecbf4e5aae0b02cf\u241F1456073909159321718: Country"])));
+            i18n_10 = $localize(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral([":\u241F0425e05bbff231ff83e71da0ecbf4e5aae0b02cf\u241F1456073909159321718: Country"])));
           }
 
           var i18n_12;
@@ -1079,7 +1583,7 @@
             var MSG_EXTERNAL_8764220957450565928$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_TEXT_FOOTER_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_TEXT_FOOTER_EXAMPLE_COMPONENT_TS__13 = goog.getMsg(" City");
             i18n_12 = MSG_EXTERNAL_8764220957450565928$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_TEXT_FOOTER_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_TEXT_FOOTER_EXAMPLE_COMPONENT_TS__13;
           } else {
-            i18n_12 = $localize(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral([":\u241F8ecca5416af6383f4ca3e66acf35eca90e690a3c\u241F8764220957450565928: City"])));
+            i18n_12 = $localize(_templateObject8 || (_templateObject8 = _taggedTemplateLiteral([":\u241F8ecca5416af6383f4ca3e66acf35eca90e690a3c\u241F8764220957450565928: City"])));
           }
 
           var i18n_14;
@@ -1088,7 +1592,7 @@
             var MSG_EXTERNAL_6046214701664071824$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_TEXT_FOOTER_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_TEXT_FOOTER_EXAMPLE_COMPONENT_TS__15 = goog.getMsg(" Postcode");
             i18n_14 = MSG_EXTERNAL_6046214701664071824$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_TEXT_FOOTER_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_TEXT_FOOTER_EXAMPLE_COMPONENT_TS__15;
           } else {
-            i18n_14 = $localize(_templateObject8 || (_templateObject8 = _taggedTemplateLiteral([":\u241F12219316a6afe56a50fe109f4ded8640e551d35a\u241F6046214701664071824: Postcode"])));
+            i18n_14 = $localize(_templateObject9 || (_templateObject9 = _taggedTemplateLiteral([":\u241F12219316a6afe56a50fe109f4ded8640e551d35a\u241F6046214701664071824: Postcode"])));
           }
 
           var i18n_16;
@@ -1097,7 +1601,7 @@
             var MSG_EXTERNAL_9117442902261307677$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_TEXT_FOOTER_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_TEXT_FOOTER_EXAMPLE_COMPONENT_TS__17 = goog.getMsg(" Email");
             i18n_16 = MSG_EXTERNAL_9117442902261307677$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_TEXT_FOOTER_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_TEXT_FOOTER_EXAMPLE_COMPONENT_TS__17;
           } else {
-            i18n_16 = $localize(_templateObject9 || (_templateObject9 = _taggedTemplateLiteral([":\u241Fa20a6d4a37afdd7b03a99c1673b6625e1bfd319b\u241F9117442902261307677: Email"])));
+            i18n_16 = $localize(_templateObject10 || (_templateObject10 = _taggedTemplateLiteral([":\u241Fa20a6d4a37afdd7b03a99c1673b6625e1bfd319b\u241F9117442902261307677: Email"])));
           }
 
           var i18n_18;
@@ -1106,7 +1610,7 @@
             var MSG_EXTERNAL_7006732017012080604$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_TEXT_FOOTER_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_TEXT_FOOTER_EXAMPLE_COMPONENT_TS__19 = goog.getMsg(" Cell");
             i18n_18 = MSG_EXTERNAL_7006732017012080604$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_TEXT_FOOTER_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_TEXT_FOOTER_EXAMPLE_COMPONENT_TS__19;
           } else {
-            i18n_18 = $localize(_templateObject10 || (_templateObject10 = _taggedTemplateLiteral([":\u241F714a2901dd3ebc87509d7e399a32d0c439fa6c39\u241F7006732017012080604: Cell"])));
+            i18n_18 = $localize(_templateObject11 || (_templateObject11 = _taggedTemplateLiteral([":\u241F714a2901dd3ebc87509d7e399a32d0c439fa6c39\u241F7006732017012080604: Cell"])));
           }
 
           return [[2, "border-color", "lightgrey"], ["tableVirtualScroll", "", 3, "rowHeight", "rowCount"], ["nui-table", "", 3, "dataSource", "resizable", "reorderable"], ["nuiColumnDef", "no", 3, "columnWidth"], ["nui-header-cell", "", 4, "nuiHeaderCellDef"], ["nui-cell", "", 4, "nuiCellDef"], ["nuiColumnDef", "nameTitle", 3, "columnWidth"], ["nuiColumnDef", "nameFirst", 3, "columnWidth"], ["nuiColumnDef", "nameLast", 3, "columnWidth"], ["nuiColumnDef", "gender", 3, "columnWidth"], ["nuiColumnDef", "country", 3, "columnWidth"], ["nuiColumnDef", "city", 3, "columnWidth"], ["nuiColumnDef", "postcode", 3, "columnWidth"], ["nuiColumnDef", "email", 3, "columnWidth"], ["nuiColumnDef", "cell", 3, "columnWidth"], ["nui-cell", "", "style", "overflow: visible", 4, "nuiCellDef"], ["nui-header-row", "", 4, "nuiHeaderRowDef", "nuiHeaderRowDefSticky"], ["nui-row", "", "density", "tiny", 4, "nuiRowDef", "nuiRowDefColumns"], [1, "d-flex", "justify-content-center", "align-items-center", "nui-demo-scrolling-footer"], [1, "h-100", "w-100"], [4, "ngIf", "ngIfElse"], ["defaultText", ""], ["nui-header-cell", ""], i18n_0, ["nui-cell", ""], i18n_2, i18n_4, i18n_6, i18n_8, i18n_10, i18n_12, i18n_14, i18n_16, i18n_18, ["nui-cell", "", 2, "overflow", "visible"], ["nui-header-row", ""], ["nui-row", "", "density", "tiny"], ["compactMode", "true", 3, "show"], [1, "d-flex", "justify-content-center", "align-items-center"], [1, "h-100", "d-flex", "justify-content-center", "align-items-center"], [1, "px-2"], [1, "pl-2"], ["endOfData", ""]];
@@ -1313,7 +1817,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "export * from \"./table-docs/table-docs.example.component\";\nexport * from \"./table-basic/table-basic.example.component\";\nexport * from \"./table-pinned-header/table-pinned-header.example.component\";\nexport * from \"./table-cell-content-align/table-cell-content-align.example.component\";\nexport * from \"./table-cell-width-set/table-cell-width-set.example.component\";\nexport * from \"./table-row-clickable/table-row-clickable.example.component\";\nexport * from \"./table-row-height-set/table-row-height-set.example.component\";\nexport * from \"./table-reorder/table-reorder.example.component\";\nexport * from \"./table-pagination/table-pagination.example.component\";\nexport * from \"./table-columns-add-remove/table-columns-add-remove.example.component\";\nexport * from \"./table-search/table-search.example.component\";\nexport * from \"./table-sorting/table-sorting.example.component\";\nexport * from \"./table-resize/table-resize.example.component\";\nexport * from \"./table-select/table-select.example.component\";\nexport * from \"./table-selectable-toggle/table-selectable-toggle.example.component\";\nexport * from \"./table-test/table-test.component\";\nexport * from \"./table-visual-test/table-visual-test.example\";\nexport * from \"./table-virtual-scroll-real-api/table-virtual-scroll-real-api.example.component\";\nexport * from \"./table-virtual-scroll-steps-and-button/table-virtual-scroll-steps-and-button.example.component\";\nexport * from \"./table-virtual-scroll-select-sticky-header/table-virtual-scroll-select-sticky-header-example.component\";\nexport * from \"./table-virtual-scroll-sticky-header/table-virtual-scroll-sticky-header-example.component\";\nexport * from \"./table-virtual-scroll-real-api-progress-footer/table-virtual-scroll-real-api-progress-footer.example.component\";\nexport * from \"./table-virtual-scroll-real-api-progress-text-footer/table-virtual-scroll-real-api-progress-text-footer.example.component\";\nexport * from \"./table-virtual-scroll-real-api-minimalist/table-virtual-scroll-real-api-minimalist.example.component\";\nexport * from \"./table-search-with-select-and-pagination/table-search-with-select-and-pagination.example.component\";\nexport * from \"./table-select-pinned-header/table-select-pinned-header.example.component\";\n";
+      __webpack_exports__["default"] = "export * from \"./table-docs/table-docs.example.component\";\nexport * from \"./table-basic/table-basic.example.component\";\nexport * from \"./table-pinned-header/table-pinned-header.example.component\";\nexport * from \"./table-cell-content-align/table-cell-content-align.example.component\";\nexport * from \"./table-cell-width-set/table-cell-width-set.example.component\";\nexport * from \"./table-row-clickable/table-row-clickable.example.component\";\nexport * from \"./table-row-height-set/table-row-height-set.example.component\";\nexport * from \"./table-reorder/table-reorder.example.component\";\nexport * from \"./table-pagination/table-pagination.example.component\";\nexport * from \"./table-columns-add-remove/table-columns-add-remove.example.component\";\nexport * from \"./table-search/table-search.example.component\";\nexport * from \"./table-sorting/table-sorting.example.component\";\nexport * from \"./table-resize/table-resize.example.component\";\nexport * from \"./table-select/table-select.example.component\";\nexport * from \"./table-selectable-toggle/table-selectable-toggle.example.component\";\nexport * from \"./table-test/table-test.component\";\nexport * from \"./table-visual-test/table-visual-test.example\";\nexport * from \"./table-virtual-scroll-real-api/table-virtual-scroll-real-api.example.component\";\nexport * from \"./table-virtual-scroll-steps-and-button/table-virtual-scroll-steps-and-button.example.component\";\nexport * from \"./table-virtual-scroll-select-sticky-header/table-virtual-scroll-select-sticky-header-example.component\";\nexport * from \"./table-virtual-scroll-sticky-header/table-virtual-scroll-sticky-header-example.component\";\nexport * from \"./table-virtual-scroll-sticky-header-test/table-virtual-scroll-sticky-header-test-example.component\";\nexport * from \"./table-virtual-scroll-real-api-progress-footer/table-virtual-scroll-real-api-progress-footer.example.component\";\nexport * from \"./table-virtual-scroll-real-api-progress-text-footer/table-virtual-scroll-real-api-progress-text-footer.example.component\";\nexport * from \"./table-virtual-scroll-real-api-minimalist/table-virtual-scroll-real-api-minimalist.example.component\";\nexport * from \"./table-search-with-select-and-pagination/table-search-with-select-and-pagination.example.component\";\nexport * from \"./table-select-pinned-header/table-select-pinned-header.example.component\";\n";
       /***/
     },
 
@@ -1447,19 +1951,19 @@
         var _super2 = _createSuper(RandomuserTableDataSource);
 
         function RandomuserTableDataSource() {
-          var _this6;
+          var _this7;
 
           _classCallCheck(this, RandomuserTableDataSource);
 
-          _this6 = _super2.apply(this, arguments);
-          _this6.url = "https://randomuser.me/api";
-          _this6.seed = "sw";
-          _this6.cache = Array.from({
+          _this7 = _super2.apply(this, arguments);
+          _this7.url = "https://randomuser.me/api";
+          _this7.seed = "sw";
+          _this7.cache = Array.from({
             length: 0
           });
-          _this6.page = 1;
-          _this6.busy = new rxjs__WEBPACK_IMPORTED_MODULE_2__["BehaviorSubject"](false);
-          return _this6;
+          _this7.page = 1;
+          _this7.busy = new rxjs__WEBPACK_IMPORTED_MODULE_2__["BehaviorSubject"](false);
+          return _this7;
         }
 
         _createClass(RandomuserTableDataSource, [{
@@ -1467,13 +1971,13 @@
           value: function getFilteredData(filters) {
             var _a, _b;
 
-            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
-              var _this7 = this;
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
+              var _this8 = this;
 
               var virtualScrollFilter, start, end;
-              return regeneratorRuntime.wrap(function _callee3$(_context3) {
+              return regeneratorRuntime.wrap(function _callee4$(_context4) {
                 while (1) {
-                  switch (_context3.prev = _context3.next) {
+                  switch (_context4.prev = _context4.next) {
                     case 0:
                       this.busy.next(true);
                       virtualScrollFilter = filters.virtualScroll && filters.virtualScroll.value;
@@ -1481,20 +1985,20 @@
                       end = virtualScrollFilter ? (_b = filters.virtualScroll) === null || _b === void 0 ? void 0 : _b.value.end : 0; // We're returning Promise with setTimeout here to make the response from the server longer, as the API being used sends responses
                       // almost immediately. We need it longer to be able the show the spinner component on data load
 
-                      return _context3.abrupt("return", new Promise(function (resolve) {
+                      return _context4.abrupt("return", new Promise(function (resolve) {
                         setTimeout(function () {
-                          _this7.getData(start, end).then(function (response) {
+                          _this8.getData(start, end).then(function (response) {
                             if (!response) {
                               return;
                             }
 
-                            _this7.cache = _this7.cache.concat(response.users);
+                            _this8.cache = _this8.cache.concat(response.users);
 
-                            _this7.dataSubject.next(_this7.cache);
+                            _this8.dataSubject.next(_this8.cache);
 
                             resolve({
                               repeat: {
-                                itemsSource: _this7.cache
+                                itemsSource: _this8.cache
                               },
                               // This API can return thousands of results, however doesn't return the max number of results,
                               // so we set the max number of result manually here.
@@ -1502,17 +2006,17 @@
                               start: response.start
                             });
 
-                            _this7.busy.next(false);
+                            _this8.busy.next(false);
                           });
                         }, 2000);
                       }));
 
                     case 5:
                     case "end":
-                      return _context3.stop();
+                      return _context4.stop();
                   }
                 }
-              }, _callee3, this);
+              }, _callee4, this);
             }));
           }
         }, {
@@ -1520,28 +2024,28 @@
           value: function getData() {
             var start = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
             var end = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 20;
-            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
-              var _this8 = this;
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee5() {
+              var _this9 = this;
 
               var response;
-              return regeneratorRuntime.wrap(function _callee4$(_context4) {
+              return regeneratorRuntime.wrap(function _callee5$(_context5) {
                 while (1) {
-                  switch (_context4.prev = _context4.next) {
+                  switch (_context5.prev = _context5.next) {
                     case 0:
-                      _context4.prev = 0;
-                      _context4.next = 3;
+                      _context5.prev = 0;
+                      _context5.next = 3;
                       return fetch("".concat(this.url, "/?page=").concat(this.page, "&results=").concat(end - start, "&seed=").concat(this.seed));
 
                     case 3:
-                      _context4.next = 5;
-                      return _context4.sent.json();
+                      _context5.next = 5;
+                      return _context5.sent.json();
 
                     case 5:
-                      response = _context4.sent;
-                      return _context4.abrupt("return", {
+                      response = _context5.sent;
+                      return _context5.abrupt("return", {
                         users: response === null || response === void 0 ? void 0 : response.results.map(function (result, i) {
                           return {
-                            no: _this8.cache.length + i + 1,
+                            no: _this9.cache.length + i + 1,
                             nameTitle: result.name.title,
                             nameFirst: result.name.first,
                             nameLast: result.name.last,
@@ -1558,16 +2062,16 @@
                       });
 
                     case 9:
-                      _context4.prev = 9;
-                      _context4.t0 = _context4["catch"](0);
+                      _context5.prev = 9;
+                      _context5.t0 = _context5["catch"](0);
                       console.error("Error responding from server. Please visit https://https://randomuser.me/ to see if it's available");
 
                     case 12:
                     case "end":
-                      return _context4.stop();
+                      return _context5.stop();
                   }
                 }
-              }, _callee4, this, [[0, 9]]);
+              }, _callee5, this, [[0, 9]]);
             }));
           }
         }]);
@@ -1798,7 +2302,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<div class=\"container\">\n    <details open>\n        <summary id=\"nui-visual-table-basic-summary\">Basic Usage</summary>\n        <nui-table-basic-example id=\"table-basic-usage\"></nui-table-basic-example>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-pinned-summary\">Pinned header</summary>\n        <nui-table-pinned-header-example id=\"table-pinned-header\"></nui-table-pinned-header-example>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-alignment-summary\">Column Alignment</summary>\n        <nui-table-cell-content-align-example id=\"table-column-alignment\"></nui-table-cell-content-align-example>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-row-denisty-tiny-summary\">Row Density (\"tiny\")</summary>\n        <nui-table-row-height-set id=\"table-row-density-tiny\"></nui-table-row-height-set>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-row-denisty-compact-summary\">Row Density (\"compact\")</summary>\n        <nui-table-row-height-set id=\"table-row-density-compact\" density=\"compact\"></nui-table-row-height-set>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-sorting-summary\">Sorting</summary>\n        <nui-table-sorting-example id=\"table-sorting\"></nui-table-sorting-example>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-custom-action-summary\">Custom actions</summary>\n        <nui-table-columns-add-remove-example id=\"table-custom-action\"></nui-table-columns-add-remove-example>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-column-size-summary\">Column resize</summary>\n        <nui-table-resize-example id=\"table-resizing\"></nui-table-resize-example>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-row-selection-summary\">Row selection in table</summary>\n        <nui-table-select id=\"table-selected-row\"></nui-table-select>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-select-pinned-header-summary\">Select Pinned Header</summary>\n        <nui-table-select-pinned-header-example id=\"table-select-pinned-header\"></nui-table-select-pinned-header-example>\n    </details>\n</div>";
+      __webpack_exports__["default"] = "<div class=\"container\">\n    <details open>\n        <summary id=\"nui-visual-table-basic-summary\">Basic Usage</summary>\n        <nui-table-basic-example id=\"table-basic-usage\"></nui-table-basic-example>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-pinned-summary\">Pinned header</summary>\n        <nui-table-pinned-header-example id=\"table-pinned-header\"></nui-table-pinned-header-example>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-alignment-summary\">Column Alignment</summary>\n        <nui-table-cell-content-align-example id=\"table-column-alignment\"></nui-table-cell-content-align-example>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-row-density-tiny-summary\">Row Density (\"tiny\")</summary>\n        <nui-table-row-height-set id=\"table-row-density-tiny\"></nui-table-row-height-set>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-row-density-compact-summary\">Row Density (\"compact\")</summary>\n        <nui-table-row-height-set id=\"table-row-density-compact\" density=\"compact\"></nui-table-row-height-set>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-sorting-summary\">Sorting</summary>\n        <nui-table-sorting-example id=\"table-sorting\"></nui-table-sorting-example>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-custom-action-summary\">Custom actions</summary>\n        <nui-table-columns-add-remove-example id=\"table-custom-action\"></nui-table-columns-add-remove-example>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-column-size-summary\">Column resize</summary>\n        <nui-table-resize-example id=\"table-resizing\"></nui-table-resize-example>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-row-selection-summary\">Row selection in table</summary>\n        <nui-table-select id=\"table-selected-row\"></nui-table-select>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-select-pinned-header-summary\">Select Pinned Header</summary>\n        <nui-table-select-pinned-header-example id=\"table-select-pinned-header\"></nui-table-select-pinned-header-example>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-virtual-scroll-sticky-header-summary\">Virtual Scroll Sticky Header</summary>\n        <nui-table-virtual-scroll-sticky-header-test-example></nui-table-virtual-scroll-sticky-header-test-example>\n    </details>\n</div>\n";
       /***/
     },
 
@@ -2436,7 +2940,7 @@
             var MSG_EXTERNAL_4985615836900499435$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_COLUMNS_ADD_REMOVE_TABLE_COLUMNS_ADD_REMOVE_EXAMPLE_COMPONENT_TS_1 = goog.getMsg(" Edit columns ");
             i18n_0 = MSG_EXTERNAL_4985615836900499435$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_COLUMNS_ADD_REMOVE_TABLE_COLUMNS_ADD_REMOVE_EXAMPLE_COMPONENT_TS_1;
           } else {
-            i18n_0 = $localize(_templateObject11 || (_templateObject11 = _taggedTemplateLiteral([":\u241F6fe5549e71336528a5de31c671558342b1efe833\u241F4985615836900499435: Edit columns "])));
+            i18n_0 = $localize(_templateObject12 || (_templateObject12 = _taggedTemplateLiteral([":\u241F6fe5549e71336528a5de31c671558342b1efe833\u241F4985615836900499435: Edit columns "])));
           }
 
           var i18n_2;
@@ -2445,7 +2949,7 @@
             var MSG_EXTERNAL_2408126496114120045$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_COLUMNS_ADD_REMOVE_TABLE_COLUMNS_ADD_REMOVE_EXAMPLE_COMPONENT_TS__3 = goog.getMsg("Edit columns");
             i18n_2 = MSG_EXTERNAL_2408126496114120045$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_COLUMNS_ADD_REMOVE_TABLE_COLUMNS_ADD_REMOVE_EXAMPLE_COMPONENT_TS__3;
           } else {
-            i18n_2 = $localize(_templateObject12 || (_templateObject12 = _taggedTemplateLiteral([":\u241F6f19e091c95a7783ed1a794a76800bfa2e580474\u241F2408126496114120045:Edit columns"])));
+            i18n_2 = $localize(_templateObject13 || (_templateObject13 = _taggedTemplateLiteral([":\u241F6f19e091c95a7783ed1a794a76800bfa2e580474\u241F2408126496114120045:Edit columns"])));
           }
 
           var i18n_4;
@@ -2454,7 +2958,7 @@
             var MSG_EXTERNAL_1465722133080575331$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_COLUMNS_ADD_REMOVE_TABLE_COLUMNS_ADD_REMOVE_EXAMPLE_COMPONENT_TS__5 = goog.getMsg("Available columns");
             i18n_4 = MSG_EXTERNAL_1465722133080575331$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_COLUMNS_ADD_REMOVE_TABLE_COLUMNS_ADD_REMOVE_EXAMPLE_COMPONENT_TS__5;
           } else {
-            i18n_4 = $localize(_templateObject13 || (_templateObject13 = _taggedTemplateLiteral([":\u241Fdd0306e460f34cf0d9c1f9da2c095b42c249a020\u241F1465722133080575331:Available columns"])));
+            i18n_4 = $localize(_templateObject14 || (_templateObject14 = _taggedTemplateLiteral([":\u241Fdd0306e460f34cf0d9c1f9da2c095b42c249a020\u241F1465722133080575331:Available columns"])));
           }
 
           var i18n_6;
@@ -2463,7 +2967,7 @@
             var MSG_EXTERNAL_1149997874969812833$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_COLUMNS_ADD_REMOVE_TABLE_COLUMNS_ADD_REMOVE_EXAMPLE_COMPONENT_TS__7 = goog.getMsg("Create new column");
             i18n_6 = MSG_EXTERNAL_1149997874969812833$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_COLUMNS_ADD_REMOVE_TABLE_COLUMNS_ADD_REMOVE_EXAMPLE_COMPONENT_TS__7;
           } else {
-            i18n_6 = $localize(_templateObject14 || (_templateObject14 = _taggedTemplateLiteral([":\u241Fea9e79c35aacc08d2b0ad15367a2bf5224c80cd4\u241F1149997874969812833:Create new column"])));
+            i18n_6 = $localize(_templateObject15 || (_templateObject15 = _taggedTemplateLiteral([":\u241Fea9e79c35aacc08d2b0ad15367a2bf5224c80cd4\u241F1149997874969812833:Create new column"])));
           }
 
           var i18n_8;
@@ -2472,7 +2976,7 @@
             var MSG_EXTERNAL_5721612456517589470$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_COLUMNS_ADD_REMOVE_TABLE_COLUMNS_ADD_REMOVE_EXAMPLE_COMPONENT_TS__9 = goog.getMsg("Enter new column title");
             i18n_8 = MSG_EXTERNAL_5721612456517589470$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_COLUMNS_ADD_REMOVE_TABLE_COLUMNS_ADD_REMOVE_EXAMPLE_COMPONENT_TS__9;
           } else {
-            i18n_8 = $localize(_templateObject15 || (_templateObject15 = _taggedTemplateLiteral([":\u241Fd024747bfabcb4f63763c5b931d6ac5840d26df0\u241F5721612456517589470:Enter new column title"])));
+            i18n_8 = $localize(_templateObject16 || (_templateObject16 = _taggedTemplateLiteral([":\u241Fd024747bfabcb4f63763c5b931d6ac5840d26df0\u241F5721612456517589470:Enter new column title"])));
           }
 
           var i18n_10;
@@ -2481,7 +2985,7 @@
             var MSG_EXTERNAL_8056937770550940393$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_COLUMNS_ADD_REMOVE_TABLE_COLUMNS_ADD_REMOVE_EXAMPLE_COMPONENT_TS__11 = goog.getMsg(" Add new column ");
             i18n_10 = MSG_EXTERNAL_8056937770550940393$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_COLUMNS_ADD_REMOVE_TABLE_COLUMNS_ADD_REMOVE_EXAMPLE_COMPONENT_TS__11;
           } else {
-            i18n_10 = $localize(_templateObject16 || (_templateObject16 = _taggedTemplateLiteral([":\u241F724b4d401f296839b85e79ddf32128342ee1f064\u241F8056937770550940393: Add new column "])));
+            i18n_10 = $localize(_templateObject17 || (_templateObject17 = _taggedTemplateLiteral([":\u241F724b4d401f296839b85e79ddf32128342ee1f064\u241F8056937770550940393: Add new column "])));
           }
 
           var i18n_12;
@@ -2490,7 +2994,7 @@
             var MSG_EXTERNAL_7413740698367559631$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_COLUMNS_ADD_REMOVE_TABLE_COLUMNS_ADD_REMOVE_EXAMPLE_COMPONENT_TS__13 = goog.getMsg(" Cancel ");
             i18n_12 = MSG_EXTERNAL_7413740698367559631$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_COLUMNS_ADD_REMOVE_TABLE_COLUMNS_ADD_REMOVE_EXAMPLE_COMPONENT_TS__13;
           } else {
-            i18n_12 = $localize(_templateObject17 || (_templateObject17 = _taggedTemplateLiteral([":\u241F0a08acf9503528341c28241d8d764ebc843c92f7\u241F7413740698367559631: Cancel "])));
+            i18n_12 = $localize(_templateObject18 || (_templateObject18 = _taggedTemplateLiteral([":\u241F0a08acf9503528341c28241d8d764ebc843c92f7\u241F7413740698367559631: Cancel "])));
           }
 
           var i18n_14;
@@ -2499,7 +3003,7 @@
             var MSG_EXTERNAL_7639014780203448203$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_COLUMNS_ADD_REMOVE_TABLE_COLUMNS_ADD_REMOVE_EXAMPLE_COMPONENT_TS__15 = goog.getMsg(" Update columns ");
             i18n_14 = MSG_EXTERNAL_7639014780203448203$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_COLUMNS_ADD_REMOVE_TABLE_COLUMNS_ADD_REMOVE_EXAMPLE_COMPONENT_TS__15;
           } else {
-            i18n_14 = $localize(_templateObject18 || (_templateObject18 = _taggedTemplateLiteral([":\u241Fb90a1c28cde3d4985f92f9b3d7476d4a13af3b94\u241F7639014780203448203: Update columns "])));
+            i18n_14 = $localize(_templateObject19 || (_templateObject19 = _taggedTemplateLiteral([":\u241Fb90a1c28cde3d4985f92f9b3d7476d4a13af3b94\u241F7639014780203448203: Update columns "])));
           }
 
           var i18n_16;
@@ -2508,7 +3012,7 @@
             var MSG_EXTERNAL_3498101055154698277$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_COLUMNS_ADD_REMOVE_TABLE_COLUMNS_ADD_REMOVE_EXAMPLE_COMPONENT_TS___17 = goog.getMsg("Select minimum 3 checkboxes!");
             i18n_16 = MSG_EXTERNAL_3498101055154698277$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_COLUMNS_ADD_REMOVE_TABLE_COLUMNS_ADD_REMOVE_EXAMPLE_COMPONENT_TS___17;
           } else {
-            i18n_16 = $localize(_templateObject19 || (_templateObject19 = _taggedTemplateLiteral([":\u241Faaf9b8331666795542f417fe39c78014513ca737\u241F3498101055154698277:Select minimum 3 checkboxes!"])));
+            i18n_16 = $localize(_templateObject20 || (_templateObject20 = _taggedTemplateLiteral([":\u241Faaf9b8331666795542f417fe39c78014513ca737\u241F3498101055154698277:Select minimum 3 checkboxes!"])));
           }
 
           var i18n_18;
@@ -2517,7 +3021,7 @@
             var MSG_EXTERNAL_819939608052680645$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_COLUMNS_ADD_REMOVE_TABLE_COLUMNS_ADD_REMOVE_EXAMPLE_COMPONENT_TS____19 = goog.getMsg("Add new row to the beginning");
             i18n_18 = MSG_EXTERNAL_819939608052680645$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_COLUMNS_ADD_REMOVE_TABLE_COLUMNS_ADD_REMOVE_EXAMPLE_COMPONENT_TS____19;
           } else {
-            i18n_18 = $localize(_templateObject20 || (_templateObject20 = _taggedTemplateLiteral([":\u241Fccaa74434f3e9afbd947ba7dcfd4283c63a3c3d3\u241F819939608052680645:Add new row to the beginning"])));
+            i18n_18 = $localize(_templateObject21 || (_templateObject21 = _taggedTemplateLiteral([":\u241Fccaa74434f3e9afbd947ba7dcfd4283c63a3c3d3\u241F819939608052680645:Add new row to the beginning"])));
           }
 
           var i18n_20;
@@ -2526,7 +3030,7 @@
             var MSG_EXTERNAL_8135428143356264715$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_COLUMNS_ADD_REMOVE_TABLE_COLUMNS_ADD_REMOVE_EXAMPLE_COMPONENT_TS____21 = goog.getMsg("Add new row to the end");
             i18n_20 = MSG_EXTERNAL_8135428143356264715$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_COLUMNS_ADD_REMOVE_TABLE_COLUMNS_ADD_REMOVE_EXAMPLE_COMPONENT_TS____21;
           } else {
-            i18n_20 = $localize(_templateObject21 || (_templateObject21 = _taggedTemplateLiteral([":\u241F53cce9a2c145d6dbc50a9bacd632a102e0736524\u241F8135428143356264715:Add new row to the end"])));
+            i18n_20 = $localize(_templateObject22 || (_templateObject22 = _taggedTemplateLiteral([":\u241F53cce9a2c145d6dbc50a9bacd632a102e0736524\u241F8135428143356264715:Add new row to the end"])));
           }
 
           var i18n_22;
@@ -2535,7 +3039,7 @@
             var MSG_EXTERNAL_2491995762085788112$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_COLUMNS_ADD_REMOVE_TABLE_COLUMNS_ADD_REMOVE_EXAMPLE_COMPONENT_TS____23 = goog.getMsg("Delete row");
             i18n_22 = MSG_EXTERNAL_2491995762085788112$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_COLUMNS_ADD_REMOVE_TABLE_COLUMNS_ADD_REMOVE_EXAMPLE_COMPONENT_TS____23;
           } else {
-            i18n_22 = $localize(_templateObject22 || (_templateObject22 = _taggedTemplateLiteral([":\u241F57233eabca09ff22e94d5810a9f0c9909b32dd86\u241F2491995762085788112:Delete row"])));
+            i18n_22 = $localize(_templateObject23 || (_templateObject23 = _taggedTemplateLiteral([":\u241F57233eabca09ff22e94d5810a9f0c9909b32dd86\u241F2491995762085788112:Delete row"])));
           }
 
           return [["id", "nui-demo-table-columns-add-remove", 1, "nui-edge-definer", "nui-table__container"], [1, "demo-options-section", "mb-3"], ["type", "button", "id", "nui-demo-table-columns-add-remove-edit-btn", "nui-button", "", "icon", "edit", 3, "click"], i18n_0, ["content", ""], ["nui-table", "", 3, "dataSource"], [3, "nuiColumnDef", 4, "ngFor", "ngForOf"], ["nui-header-row", "", 4, "nuiHeaderRowDef"], ["nui-row", "", 4, "nuiRowDef", "nuiRowDefColumns"], ["title", i18n_2, 3, "closed"], [3, "formGroup"], [1, "form-group"], [1, "dialog-body"], ["type", "critical", 3, "allowDismiss", 4, "ngIf"], i18n_4, ["id", "nui-demo-table-add-remove-checkboxes", "formControlName", "checkboxGroup", "required", "", 3, "values", "valuesChange"], ["class", "text-capitalize", 3, "value", "checked", 4, "ngFor", "ngForOf"], i18n_6, [1, "d-flex", "flex-row"], [1, "col"], ["id", "nui-demo-table-add-remove-new-column-textbox", "placeholder", i18n_8, 3, "value", "textChange"], [1, "col", "col-auto"], ["nui-button", "", "type", "button", "displayStyle", "default", "id", "nui-demo-table-add-remove-new-column-btn", 1, "ml-3", 3, "click"], i18n_10, ["nui-button", "", "type", "button", 3, "click"], i18n_12, ["nui-button", "", "type", "button", "id", "nui-demo-table-columns-add-remove-submit-btn", "displayStyle", "primary", 3, "disabled", "click"], i18n_14, ["type", "critical", 3, "allowDismiss"], i18n_16, [1, "text-capitalize", 3, "value", "checked"], [3, "nuiColumnDef"], ["nui-header-cell", "", "class", "text-capitalize", 4, "nuiHeaderCellDef"], ["nui-cell", "", 3, "overflow-visible", 4, "nuiCellDef"], ["nui-header-cell", "", 1, "text-capitalize"], ["nui-cell", ""], [4, "ngIf"], ["icon", "menu"], [3, "actionDone"], i18n_18, i18n_20, i18n_22, ["nui-header-row", ""], ["nui-row", ""]];
@@ -2909,6 +3413,14 @@
           }
         }
       }, {
+        path: "sticky-test",
+        component: _index__WEBPACK_IMPORTED_MODULE_4__["TableVirtualScrollStickyHeaderTestExampleComponent"],
+        data: {
+          "srlc": {
+            "hideIndicator": true
+          }
+        }
+      }, {
         path: "select-sticky",
         component: _index__WEBPACK_IMPORTED_MODULE_4__["TableVirtualScrollSelectStickyHeaderExampleComponent"],
         data: {
@@ -2940,7 +3452,7 @@
 
       (function () {
         (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵsetNgModuleScope"](TableModule, {
-          declarations: [_index__WEBPACK_IMPORTED_MODULE_4__["TableBasicExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableCellWidthSetExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableColumnsAddRemoveExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableDocsComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TablePaginationExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TablePinnedHeaderComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableReorderExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableRowHeightSetExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableRowClickableExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableResizeExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableSearchExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableSelectableToggleExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableSelectExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableSelectPinnedHeaderComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableSortingExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableCellContentAlignComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableTestComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableVisualTestComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableVirtualScrollRealApiExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableVirtualScrollStepsAndButtonExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableVirtualScrollRealApiProgressFooterExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableVirtualScrollRealApiProgressTextFooterExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableVirtualScrollRealApiMinimalistExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableSearchWithSelectAndPaginationComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableVirtualScrollStickyHeaderExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableVirtualScrollSelectStickyHeaderExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableRowSelectInstructionsComponent"]],
+          declarations: [_index__WEBPACK_IMPORTED_MODULE_4__["TableBasicExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableCellWidthSetExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableColumnsAddRemoveExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableDocsComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TablePaginationExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TablePinnedHeaderComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableReorderExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableRowHeightSetExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableRowClickableExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableResizeExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableSearchExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableSelectableToggleExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableSelectExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableSelectPinnedHeaderComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableSortingExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableCellContentAlignComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableTestComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableVisualTestComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableVirtualScrollRealApiExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableVirtualScrollStepsAndButtonExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableVirtualScrollRealApiProgressFooterExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableVirtualScrollRealApiProgressTextFooterExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableVirtualScrollRealApiMinimalistExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableSearchWithSelectAndPaginationComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableVirtualScrollStickyHeaderExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableVirtualScrollStickyHeaderTestExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableVirtualScrollSelectStickyHeaderExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_4__["TableRowSelectInstructionsComponent"]],
           imports: [_nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["NuiButtonModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["NuiTableModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["NuiDocsModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["NuiPaginatorModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["NuiSearchModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["NuiSwitchModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["NuiDividerModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["NuiCheckboxModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["NuiTextboxModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["NuiMessageModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["NuiExpanderModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["NuiMenuModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["NuiIconModule"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"], _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_0__["ScrollingModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["NuiSpinnerModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["NuiProgressModule"]],
           exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]]
         });
@@ -3504,58 +4016,58 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this9 = this;
+            var _this10 = this;
 
             this.dataSource.outputsSubject.subscribe(function (outputs) {
               if (outputs) {
-                _this9.users = outputs.repeat.itemsSource;
-                _this9._totalItems = outputs.totalItems;
-                _this9.totalPages = Math.floor(_this9._totalItems / _this9.range); // This condition handles the case when the number of items fetched is less than the viewport size.
+                _this10.users = outputs.repeat.itemsSource;
+                _this10._totalItems = outputs.totalItems;
+                _this10.totalPages = Math.floor(_this10._totalItems / _this10.range); // This condition handles the case when the number of items fetched is less than the viewport size.
                 // To have virtual scroll working, we need to prefetch the number of items missing to trigger the scrollbar.
 
-                if (_this9.users.length < Math.round(_this9.viewport.getViewportSize() / _this9.virtualDirective.rowHeight)) {
-                  _this9.prefetchedDsPageNumber++;
-                  _this9.dataSource.page = _this9.prefetchedDsPageNumber;
+                if (_this10.users.length < Math.round(_this10.viewport.getViewportSize() / _this10.virtualDirective.rowHeight)) {
+                  _this10.prefetchedDsPageNumber++;
+                  _this10.dataSource.page = _this10.prefetchedDsPageNumber;
 
-                  _this9.dataSource.applyFilters();
+                  _this10.dataSource.applyFilters();
                 }
 
-                _this9.cd.detectChanges();
+                _this10.cd.detectChanges();
               }
             });
             this.dataSource.busy.subscribe(function (busy) {
-              _this9._isBusy = busy;
+              _this10._isBusy = busy;
             });
           }
         }, {
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this10 = this;
+            var _this11 = this;
 
             this.registerVirtualScroll(); // Setting the items range to properly evaluate the virtual scroll viewport size
 
             this.virtualDirective.setMaxItems(this.range);
             this.viewport.renderedRangeStream.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeUntil"])(this.onDestroy$)).subscribe(function (value) {
               // There is no use to proceed if we've already fetched all the items
-              if (_this10.users.length === _this10._totalItems) {
+              if (_this11.users.length === _this11._totalItems) {
                 return;
               }
 
-              var page = Math.floor(value.end / _this10.range);
+              var page = Math.floor(value.end / _this11.range);
 
-              if (page > _this10.lastPageFetched && page <= _this10.totalPages) {
-                var start = page * _this10.range;
-                var end = start + _this10.range;
-                _this10.virtualScrollFilterValue = {
+              if (page > _this11.lastPageFetched && page <= _this11.totalPages) {
+                var start = page * _this11.range;
+                var end = start + _this11.range;
+                _this11.virtualScrollFilterValue = {
                   start: start,
                   end: end
                 };
-                _this10.lastPageFetched = page; // Due to a specificity of the chosen API, we explicitly send it the page number, because the API can
+                _this11.lastPageFetched = page; // Due to a specificity of the chosen API, we explicitly send it the page number, because the API can
                 // return data in pages. This can vary depending on the user's usecase
 
-                _this10.dataSource.page = _this10.prefetchedDsPageNumber + page;
+                _this11.dataSource.page = _this11.prefetchedDsPageNumber + page;
 
-                _this10.dataSource.applyFilters();
+                _this11.dataSource.applyFilters();
               }
             });
             this.dataSource.applyFilters();
@@ -3571,7 +4083,7 @@
         }, {
           key: "registerVirtualScroll",
           value: function registerVirtualScroll() {
-            var _this11 = this;
+            var _this12 = this;
 
             this.dataSource.registerComponent({
               virtualScroll: {
@@ -3579,7 +4091,7 @@
                   getFilters: function getFilters() {
                     return {
                       type: "virtualScroll",
-                      value: _this11.virtualScrollFilterValue
+                      value: _this12.virtualScrollFilterValue
                     };
                   }
                 }
@@ -3624,7 +4136,7 @@
             var MSG_EXTERNAL_1345472093440723911$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_MINIMALIST_TABLE_VIRTUAL_SCROLL_REAL_API_MINIMALIST_EXAMPLE_COMPONENT_TS__1 = goog.getMsg(" No.");
             i18n_0 = MSG_EXTERNAL_1345472093440723911$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_MINIMALIST_TABLE_VIRTUAL_SCROLL_REAL_API_MINIMALIST_EXAMPLE_COMPONENT_TS__1;
           } else {
-            i18n_0 = $localize(_templateObject23 || (_templateObject23 = _taggedTemplateLiteral([":\u241F333f0164082b9f12f63ca11438b2085d074a5b0f\u241F1345472093440723911: No."])));
+            i18n_0 = $localize(_templateObject24 || (_templateObject24 = _taggedTemplateLiteral([":\u241F333f0164082b9f12f63ca11438b2085d074a5b0f\u241F1345472093440723911: No."])));
           }
 
           var i18n_2;
@@ -3633,7 +4145,7 @@
             var MSG_EXTERNAL_8357643335000303339$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_MINIMALIST_TABLE_VIRTUAL_SCROLL_REAL_API_MINIMALIST_EXAMPLE_COMPONENT_TS__3 = goog.getMsg(" Title");
             i18n_2 = MSG_EXTERNAL_8357643335000303339$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_MINIMALIST_TABLE_VIRTUAL_SCROLL_REAL_API_MINIMALIST_EXAMPLE_COMPONENT_TS__3;
           } else {
-            i18n_2 = $localize(_templateObject24 || (_templateObject24 = _taggedTemplateLiteral([":\u241F952a1244074407cd841ce6253538e566581f10dd\u241F8357643335000303339: Title"])));
+            i18n_2 = $localize(_templateObject25 || (_templateObject25 = _taggedTemplateLiteral([":\u241F952a1244074407cd841ce6253538e566581f10dd\u241F8357643335000303339: Title"])));
           }
 
           var i18n_4;
@@ -3642,7 +4154,7 @@
             var MSG_EXTERNAL_2860311194545881177$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_MINIMALIST_TABLE_VIRTUAL_SCROLL_REAL_API_MINIMALIST_EXAMPLE_COMPONENT_TS__5 = goog.getMsg(" First Name");
             i18n_4 = MSG_EXTERNAL_2860311194545881177$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_MINIMALIST_TABLE_VIRTUAL_SCROLL_REAL_API_MINIMALIST_EXAMPLE_COMPONENT_TS__5;
           } else {
-            i18n_4 = $localize(_templateObject25 || (_templateObject25 = _taggedTemplateLiteral([":\u241Fba4a0caee703d6328fdb0d70380f541915451742\u241F2860311194545881177: First Name"])));
+            i18n_4 = $localize(_templateObject26 || (_templateObject26 = _taggedTemplateLiteral([":\u241Fba4a0caee703d6328fdb0d70380f541915451742\u241F2860311194545881177: First Name"])));
           }
 
           var i18n_6;
@@ -3651,7 +4163,7 @@
             var MSG_EXTERNAL_1738284750176372142$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_MINIMALIST_TABLE_VIRTUAL_SCROLL_REAL_API_MINIMALIST_EXAMPLE_COMPONENT_TS__7 = goog.getMsg(" Last Name");
             i18n_6 = MSG_EXTERNAL_1738284750176372142$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_MINIMALIST_TABLE_VIRTUAL_SCROLL_REAL_API_MINIMALIST_EXAMPLE_COMPONENT_TS__7;
           } else {
-            i18n_6 = $localize(_templateObject26 || (_templateObject26 = _taggedTemplateLiteral([":\u241F26b7649337e48ef3e3ccd71ea1a710dab5f7eb61\u241F1738284750176372142: Last Name"])));
+            i18n_6 = $localize(_templateObject27 || (_templateObject27 = _taggedTemplateLiteral([":\u241F26b7649337e48ef3e3ccd71ea1a710dab5f7eb61\u241F1738284750176372142: Last Name"])));
           }
 
           var i18n_8;
@@ -3660,7 +4172,7 @@
             var MSG_EXTERNAL_2667859507116816026$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_MINIMALIST_TABLE_VIRTUAL_SCROLL_REAL_API_MINIMALIST_EXAMPLE_COMPONENT_TS__9 = goog.getMsg(" Gender");
             i18n_8 = MSG_EXTERNAL_2667859507116816026$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_MINIMALIST_TABLE_VIRTUAL_SCROLL_REAL_API_MINIMALIST_EXAMPLE_COMPONENT_TS__9;
           } else {
-            i18n_8 = $localize(_templateObject27 || (_templateObject27 = _taggedTemplateLiteral([":\u241F8a4933776bdd10c9818e105e60d956769de4149f\u241F2667859507116816026: Gender"])));
+            i18n_8 = $localize(_templateObject28 || (_templateObject28 = _taggedTemplateLiteral([":\u241F8a4933776bdd10c9818e105e60d956769de4149f\u241F2667859507116816026: Gender"])));
           }
 
           var i18n_10;
@@ -3669,7 +4181,7 @@
             var MSG_EXTERNAL_1456073909159321718$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_MINIMALIST_TABLE_VIRTUAL_SCROLL_REAL_API_MINIMALIST_EXAMPLE_COMPONENT_TS__11 = goog.getMsg(" Country");
             i18n_10 = MSG_EXTERNAL_1456073909159321718$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_MINIMALIST_TABLE_VIRTUAL_SCROLL_REAL_API_MINIMALIST_EXAMPLE_COMPONENT_TS__11;
           } else {
-            i18n_10 = $localize(_templateObject28 || (_templateObject28 = _taggedTemplateLiteral([":\u241F0425e05bbff231ff83e71da0ecbf4e5aae0b02cf\u241F1456073909159321718: Country"])));
+            i18n_10 = $localize(_templateObject29 || (_templateObject29 = _taggedTemplateLiteral([":\u241F0425e05bbff231ff83e71da0ecbf4e5aae0b02cf\u241F1456073909159321718: Country"])));
           }
 
           var i18n_12;
@@ -3678,7 +4190,7 @@
             var MSG_EXTERNAL_8764220957450565928$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_MINIMALIST_TABLE_VIRTUAL_SCROLL_REAL_API_MINIMALIST_EXAMPLE_COMPONENT_TS__13 = goog.getMsg(" City");
             i18n_12 = MSG_EXTERNAL_8764220957450565928$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_MINIMALIST_TABLE_VIRTUAL_SCROLL_REAL_API_MINIMALIST_EXAMPLE_COMPONENT_TS__13;
           } else {
-            i18n_12 = $localize(_templateObject29 || (_templateObject29 = _taggedTemplateLiteral([":\u241F8ecca5416af6383f4ca3e66acf35eca90e690a3c\u241F8764220957450565928: City"])));
+            i18n_12 = $localize(_templateObject30 || (_templateObject30 = _taggedTemplateLiteral([":\u241F8ecca5416af6383f4ca3e66acf35eca90e690a3c\u241F8764220957450565928: City"])));
           }
 
           var i18n_14;
@@ -3687,7 +4199,7 @@
             var MSG_EXTERNAL_6046214701664071824$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_MINIMALIST_TABLE_VIRTUAL_SCROLL_REAL_API_MINIMALIST_EXAMPLE_COMPONENT_TS__15 = goog.getMsg(" Postcode");
             i18n_14 = MSG_EXTERNAL_6046214701664071824$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_MINIMALIST_TABLE_VIRTUAL_SCROLL_REAL_API_MINIMALIST_EXAMPLE_COMPONENT_TS__15;
           } else {
-            i18n_14 = $localize(_templateObject30 || (_templateObject30 = _taggedTemplateLiteral([":\u241F12219316a6afe56a50fe109f4ded8640e551d35a\u241F6046214701664071824: Postcode"])));
+            i18n_14 = $localize(_templateObject31 || (_templateObject31 = _taggedTemplateLiteral([":\u241F12219316a6afe56a50fe109f4ded8640e551d35a\u241F6046214701664071824: Postcode"])));
           }
 
           var i18n_16;
@@ -3696,7 +4208,7 @@
             var MSG_EXTERNAL_9117442902261307677$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_MINIMALIST_TABLE_VIRTUAL_SCROLL_REAL_API_MINIMALIST_EXAMPLE_COMPONENT_TS__17 = goog.getMsg(" Email");
             i18n_16 = MSG_EXTERNAL_9117442902261307677$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_MINIMALIST_TABLE_VIRTUAL_SCROLL_REAL_API_MINIMALIST_EXAMPLE_COMPONENT_TS__17;
           } else {
-            i18n_16 = $localize(_templateObject31 || (_templateObject31 = _taggedTemplateLiteral([":\u241Fa20a6d4a37afdd7b03a99c1673b6625e1bfd319b\u241F9117442902261307677: Email"])));
+            i18n_16 = $localize(_templateObject32 || (_templateObject32 = _taggedTemplateLiteral([":\u241Fa20a6d4a37afdd7b03a99c1673b6625e1bfd319b\u241F9117442902261307677: Email"])));
           }
 
           var i18n_18;
@@ -3705,7 +4217,7 @@
             var MSG_EXTERNAL_7006732017012080604$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_MINIMALIST_TABLE_VIRTUAL_SCROLL_REAL_API_MINIMALIST_EXAMPLE_COMPONENT_TS__19 = goog.getMsg(" Cell");
             i18n_18 = MSG_EXTERNAL_7006732017012080604$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_MINIMALIST_TABLE_VIRTUAL_SCROLL_REAL_API_MINIMALIST_EXAMPLE_COMPONENT_TS__19;
           } else {
-            i18n_18 = $localize(_templateObject32 || (_templateObject32 = _taggedTemplateLiteral([":\u241F714a2901dd3ebc87509d7e399a32d0c439fa6c39\u241F7006732017012080604: Cell"])));
+            i18n_18 = $localize(_templateObject33 || (_templateObject33 = _taggedTemplateLiteral([":\u241F714a2901dd3ebc87509d7e399a32d0c439fa6c39\u241F7006732017012080604: Cell"])));
           }
 
           return [[2, "border-color", "lightgrey"], ["tableVirtualScroll", "", 3, "rowHeight", "offset"], ["nui-table", "", 3, "dataSource", "resizable", "reorderable"], ["nuiColumnDef", "no", 3, "columnWidth"], ["nui-header-cell", "", 4, "nuiHeaderCellDef"], ["nui-cell", "", 4, "nuiCellDef"], ["nuiColumnDef", "nameTitle", 3, "columnWidth"], ["nuiColumnDef", "nameFirst", 3, "columnWidth"], ["nuiColumnDef", "nameLast", 3, "columnWidth"], ["nuiColumnDef", "gender", 3, "columnWidth"], ["nuiColumnDef", "country", 3, "columnWidth"], ["nuiColumnDef", "city", 3, "columnWidth"], ["nuiColumnDef", "postcode", 3, "columnWidth"], ["nuiColumnDef", "email", 3, "columnWidth"], ["nuiColumnDef", "cell", 3, "columnWidth"], ["nui-cell", "", "style", "overflow: visible", 4, "nuiCellDef"], ["nui-header-row", "", 4, "nuiHeaderRowDef", "nuiHeaderRowDefSticky"], ["nui-row", "", "density", "tiny", 4, "nuiRowDef", "nuiRowDefColumns"], ["style", "color: #767676; height: 20px;", "class", "d-flex justify-content-center align-items-center", 3, "max-width", 4, "ngIf"], ["nui-header-cell", ""], i18n_0, ["nui-cell", ""], i18n_2, i18n_4, i18n_6, i18n_8, i18n_10, i18n_12, i18n_14, i18n_16, i18n_18, ["nui-cell", "", 2, "overflow", "visible"], ["nui-header-row", ""], ["nui-row", "", "density", "tiny"], [1, "d-flex", "justify-content-center", "align-items-center", 2, "color", "#767676", "height", "20px"], [1, "h-100", "w-100"], [4, "ngIf"], ["compactMode", "true", 3, "show"]];
@@ -3900,7 +4412,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import { CdkVirtualScrollViewport } from \"@angular/cdk/scrolling\";\nimport { AfterViewInit, ChangeDetectionStrategy, Component, TrackByFunction, ViewChild } from \"@angular/core\";\nimport { ClientSideDataSource, IFilteringOutputs, ISelection, SelectionModel } from \"@nova-ui/bits\";\nimport sample from \"lodash/sample\";\nimport { Observable } from \"rxjs\";\nimport { map, startWith, switchMap, tap } from \"rxjs/operators\";\n\nimport { IRandomUserTableModel } from \"../index\";\n\n@Component({\n    selector: \"nui-table-virtual-scroll-select-sticky-header-example\",\n    templateUrl: \"./table-virtual-scroll-select-sticky-header-example.component.html\",\n    changeDetection: ChangeDetectionStrategy.OnPush,\n    providers: [ClientSideDataSource],\n})\nexport class TableVirtualScrollSelectStickyHeaderExampleComponent implements AfterViewInit {\n    @ViewChild(CdkVirtualScrollViewport) public viewport: CdkVirtualScrollViewport;\n    // Note: Mock items list is used to fake that the data is already loaded\n    // and let CDK Viewport perform the scrolling on a known number of items\n    public placeholderItems: undefined[] = [];\n    public visibleItems$: Observable<IRandomUserTableModel[]>;\n    // The dynamically changed array of items to render by the table\n    public displayedColumns: string[] = [\"no\", \"nameTitle\", \"nameFirst\", \"nameLast\", \"city\", \"postcode\"];\n    public itemSize: number = 40;\n    public selection: ISelection = new SelectionModel({ include: [1, 3, 5, 7, 9] });\n    // trackBy handler used to identify uniquely each item in the table\n    public trackByNo: TrackByFunction<IRandomUserTableModel> = (index, item) => item?.no;\n\n    constructor(public dataSourceService: ClientSideDataSource<IRandomUserTableModel>) {\n        // Note: Initiating data source with data to be displayed\n        this.dataSourceService.setData(generateUsers(100000));\n    }\n\n    public ngAfterViewInit() {\n        this.dataSourceService.componentTree = {\n            // Note: Using paginator as filter to be able to get specific range\n            paginator: {\n                componentInstance: {\n                    getFilters: () => ({\n                        value: this.viewport.getRenderedRange(),\n                    }),\n                },\n            },\n        };\n\n        // Note: Creating a stream of visible items to be bound to the table and increase the performance\n        this.visibleItems$ = this.viewport.renderedRangeStream.pipe(startWith({ start: 0, end: 10 }),\n            // Note: On range change applying filters\n                                                                    tap(() => this.dataSourceService.applyFilters()),\n            // Subscribing to the filter results transforming and merging them into the stream\n                                                                    switchMap(() => this.dataSourceService.outputsSubject.pipe(\n                                                                        map((result: IFilteringOutputs) => {\n                                                                            // Updating mock items list\n                                                                            if (this.placeholderItems.length !== result.paginator.total) {\n                                                                                this.placeholderItems = Array.from({ length: result.paginator.total });\n                                                                            }\n                                                                            // Mapping the values to array to be able to bind them to the table dataSource\n                                                                            return result.repeat.itemsSource;\n                                                                        })\n                                                                    )));\n    }\n}\n\nfunction generateUsers(length: number): IRandomUserTableModel[] {\n    return Array.from({ length }).map((obj: unknown, id: number) => {\n        const personName = sample([\"Josh\", \"Lukas\", \"Blake\", \"Frantz\", \"Dima\", \"Serhii\", \"Vita\", \"Vlad\", \"Ivan\", \"Dumitru\"]) || \"Josh\";\n        return ({\n            no: id,\n            postcode: id * 1000000 * id,\n            cell: \"0000\",\n            city: sample([\"Bucharest\", \"Kiev\", \"Austin\", \"Brno\", \"Frankfurt pe Main\", \"Sutton-under-Whitestonecliffe\", \"Vila Bela da Santíssima Trindade\"]) ||\n                \"Bucharest\",\n            country: \"Unknown\",\n            email: `${ personName.toLocaleLowerCase() }@@sw.com`,\n            gender: \"Unknown\",\n            nameFirst: personName,\n            nameLast: \"UnknownLast\",\n            nameTitle: \"Sir.\",\n        });\n    });\n}\n";
+      __webpack_exports__["default"] = "import { CdkVirtualScrollViewport } from \"@angular/cdk/scrolling\";\nimport { AfterViewInit, ChangeDetectionStrategy, Component, TrackByFunction, ViewChild } from \"@angular/core\";\nimport { ClientSideDataSource, IFilteringOutputs, ISelection, SelectionModel } from \"@nova-ui/bits\";\nimport sample from \"lodash/sample\";\nimport { Observable } from \"rxjs\";\nimport { map, startWith, switchMap, tap } from \"rxjs/operators\";\n\ninterface IRandomUserTableModel {\n    no: number;\n    nameFirst: string;\n    nameLast: string;\n    city: string;\n    postcode: number;\n}\n\n@Component({\n    selector: \"nui-table-virtual-scroll-select-sticky-header-example\",\n    templateUrl: \"./table-virtual-scroll-select-sticky-header-example.component.html\",\n    changeDetection: ChangeDetectionStrategy.OnPush,\n    providers: [ClientSideDataSource],\n})\nexport class TableVirtualScrollSelectStickyHeaderExampleComponent implements AfterViewInit {\n    @ViewChild(CdkVirtualScrollViewport) public viewport: CdkVirtualScrollViewport;\n    // Note: Mock items list is used to fake that the data is already loaded\n    // and let CDK Viewport perform the scrolling on a known number of items\n    public placeholderItems: undefined[] = [];\n    public visibleItems$: Observable<IRandomUserTableModel[]>;\n    // The dynamically changed array of items to render by the table\n    public displayedColumns: string[] = [\"no\", \"nameFirst\", \"nameLast\", \"city\", \"postcode\"];\n    public itemSize: number = 40;\n    public selection: ISelection = new SelectionModel({ include: [1, 3, 5, 7, 9] });\n    // trackBy handler used to identify uniquely each item in the table\n    public trackByNo: TrackByFunction<IRandomUserTableModel> = (index: number, item: IRandomUserTableModel): number => item?.no;\n\n    constructor(public dataSourceService: ClientSideDataSource<IRandomUserTableModel>) {\n        // Note: Initiating data source with data to be displayed\n        this.dataSourceService.setData(generateUsers(100000));\n    }\n\n    public ngAfterViewInit(): void {\n        this.dataSourceService.componentTree = {\n            // Note: Using paginator as filter to be able to get specific range\n            paginator: {\n                componentInstance: {\n                    getFilters: () => ({\n                        value: this.viewport.getRenderedRange(),\n                    }),\n                },\n            },\n        };\n\n        // Note: Creating a stream of visible items to be bound to the table and increase the performance\n        this.visibleItems$ = this.viewport.renderedRangeStream.pipe(\n            startWith({ start: 0, end: 10 }),\n            // Note: On range change applying filters\n            tap(async () => this.dataSourceService.applyFilters()),\n            // Subscribing to the filter results transforming and merging them into the stream\n            switchMap(() => this.dataSourceService.outputsSubject.pipe(\n                map((result: IFilteringOutputs) => {\n                    // Updating mock items list\n                    if (this.placeholderItems.length !== result.paginator.total) {\n                        this.placeholderItems = Array.from({ length: result.paginator.total });\n                    }\n                    // Mapping the values to array to be able to bind them to the table dataSource\n                    return result.repeat.itemsSource;\n                })\n            )));\n    }\n}\n\nconst PEOPLE = [\"Elena\", \"Madelyn\", \"Baggio\", \"Josh\", \"Lukas\", \"Blake\", \"Frantz\", \"Dima\", \"Serhii\", \"Vita\", \"Vlad\", \"Ivan\", \"Dumitru\"];\nconst CITIES = [\"Bucharest\", \"Kiev\", \"Austin\", \"Brno\", \"Frankfurt pe Main\", \"Sutton-under-Whitestonecliffe\", \"Vila Bela da Santíssima Trindade\"];\nfunction generateUsers(length: number): IRandomUserTableModel[] {\n    return Array.from({ length }).map((obj: unknown, id: number) => {\n        const personName = sample(PEOPLE) || PEOPLE[0];\n        return ({\n            no: id,\n            postcode: id * 1000000 * id,\n            city: sample(CITIES) || CITIES[0],\n            nameFirst: personName,\n            nameLast: \"UnknownLast\",\n        });\n    });\n}\n";
       /***/
     },
 
@@ -4291,7 +4803,7 @@
             var MSG_EXTERNAL_1345472093440723911$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_PINNED_HEADER_TABLE_PINNED_HEADER_EXAMPLE_COMPONENT_TS__1 = goog.getMsg(" No.");
             i18n_0 = MSG_EXTERNAL_1345472093440723911$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_PINNED_HEADER_TABLE_PINNED_HEADER_EXAMPLE_COMPONENT_TS__1;
           } else {
-            i18n_0 = $localize(_templateObject33 || (_templateObject33 = _taggedTemplateLiteral([":\u241F333f0164082b9f12f63ca11438b2085d074a5b0f\u241F1345472093440723911: No."])));
+            i18n_0 = $localize(_templateObject34 || (_templateObject34 = _taggedTemplateLiteral([":\u241F333f0164082b9f12f63ca11438b2085d074a5b0f\u241F1345472093440723911: No."])));
           }
 
           var i18n_2;
@@ -4300,7 +4812,7 @@
             var MSG_EXTERNAL_5923354303687392819$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_PINNED_HEADER_TABLE_PINNED_HEADER_EXAMPLE_COMPONENT_TS__3 = goog.getMsg(" Name");
             i18n_2 = MSG_EXTERNAL_5923354303687392819$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_PINNED_HEADER_TABLE_PINNED_HEADER_EXAMPLE_COMPONENT_TS__3;
           } else {
-            i18n_2 = $localize(_templateObject34 || (_templateObject34 = _taggedTemplateLiteral([":\u241F7b07cc6126aa22c8a3041963963e85a0791a7e40\u241F5923354303687392819: Name"])));
+            i18n_2 = $localize(_templateObject35 || (_templateObject35 = _taggedTemplateLiteral([":\u241F7b07cc6126aa22c8a3041963963e85a0791a7e40\u241F5923354303687392819: Name"])));
           }
 
           var i18n_4;
@@ -4309,7 +4821,7 @@
             var MSG_EXTERNAL_4366791221426489252$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_PINNED_HEADER_TABLE_PINNED_HEADER_EXAMPLE_COMPONENT_TS__5 = goog.getMsg(" Features");
             i18n_4 = MSG_EXTERNAL_4366791221426489252$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_PINNED_HEADER_TABLE_PINNED_HEADER_EXAMPLE_COMPONENT_TS__5;
           } else {
-            i18n_4 = $localize(_templateObject35 || (_templateObject35 = _taggedTemplateLiteral([":\u241F176794380c10213e5247f7350b40037bd3affcb3\u241F4366791221426489252: Features"])));
+            i18n_4 = $localize(_templateObject36 || (_templateObject36 = _taggedTemplateLiteral([":\u241F176794380c10213e5247f7350b40037bd3affcb3\u241F4366791221426489252: Features"])));
           }
 
           var i18n_6;
@@ -4318,7 +4830,7 @@
             var MSG_EXTERNAL_6940950714946520886$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_PINNED_HEADER_TABLE_PINNED_HEADER_EXAMPLE_COMPONENT_TS__7 = goog.getMsg(" Asset Class");
             i18n_6 = MSG_EXTERNAL_6940950714946520886$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_PINNED_HEADER_TABLE_PINNED_HEADER_EXAMPLE_COMPONENT_TS__7;
           } else {
-            i18n_6 = $localize(_templateObject36 || (_templateObject36 = _taggedTemplateLiteral([":\u241Fc123012b555ee9898f49540288d43c3c606e27d6\u241F6940950714946520886: Asset Class"])));
+            i18n_6 = $localize(_templateObject37 || (_templateObject37 = _taggedTemplateLiteral([":\u241Fc123012b555ee9898f49540288d43c3c606e27d6\u241F6940950714946520886: Asset Class"])));
           }
 
           var i18n_8;
@@ -4327,7 +4839,7 @@
             var MSG_EXTERNAL_7598846418510631873$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_PINNED_HEADER_TABLE_PINNED_HEADER_EXAMPLE_COMPONENT_TS__9 = goog.getMsg(" Location");
             i18n_8 = MSG_EXTERNAL_7598846418510631873$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_PINNED_HEADER_TABLE_PINNED_HEADER_EXAMPLE_COMPONENT_TS__9;
           } else {
-            i18n_8 = $localize(_templateObject37 || (_templateObject37 = _taggedTemplateLiteral([":\u241F4ed56c7c2b85b2b764c9853d121c291db3b70ed9\u241F7598846418510631873: Location"])));
+            i18n_8 = $localize(_templateObject38 || (_templateObject38 = _taggedTemplateLiteral([":\u241F4ed56c7c2b85b2b764c9853d121c291db3b70ed9\u241F7598846418510631873: Location"])));
           }
 
           var i18n_10;
@@ -4336,7 +4848,7 @@
             var MSG_EXTERNAL_7043724726246657652$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_PINNED_HEADER_TABLE_PINNED_HEADER_EXAMPLE_COMPONENT_TS__11 = goog.getMsg(" Status");
             i18n_10 = MSG_EXTERNAL_7043724726246657652$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_PINNED_HEADER_TABLE_PINNED_HEADER_EXAMPLE_COMPONENT_TS__11;
           } else {
-            i18n_10 = $localize(_templateObject38 || (_templateObject38 = _taggedTemplateLiteral([":\u241Ff3ab141a02057a7853b9cde7dea17eef6811e27a\u241F7043724726246657652: Status"])));
+            i18n_10 = $localize(_templateObject39 || (_templateObject39 = _taggedTemplateLiteral([":\u241Ff3ab141a02057a7853b9cde7dea17eef6811e27a\u241F7043724726246657652: Status"])));
           }
 
           var i18n_12;
@@ -4345,7 +4857,7 @@
             var MSG_EXTERNAL_3645300875970966243$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_PINNED_HEADER_TABLE_PINNED_HEADER_EXAMPLE_COMPONENT_TS__13 = goog.getMsg(" Outages");
             i18n_12 = MSG_EXTERNAL_3645300875970966243$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_PINNED_HEADER_TABLE_PINNED_HEADER_EXAMPLE_COMPONENT_TS__13;
           } else {
-            i18n_12 = $localize(_templateObject39 || (_templateObject39 = _taggedTemplateLiteral([":\u241Fe81b7832d164ea9359f7937353f7dfc314064a3a\u241F3645300875970966243: Outages"])));
+            i18n_12 = $localize(_templateObject40 || (_templateObject40 = _taggedTemplateLiteral([":\u241Fe81b7832d164ea9359f7937353f7dfc314064a3a\u241F3645300875970966243: Outages"])));
           }
 
           var i18n_14;
@@ -4354,7 +4866,7 @@
             var MSG_EXTERNAL_7108392645161261297$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_PINNED_HEADER_TABLE_PINNED_HEADER_EXAMPLE_COMPONENT_TS__15 = goog.getMsg(" Checks");
             i18n_14 = MSG_EXTERNAL_7108392645161261297$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_PINNED_HEADER_TABLE_PINNED_HEADER_EXAMPLE_COMPONENT_TS__15;
           } else {
-            i18n_14 = $localize(_templateObject40 || (_templateObject40 = _taggedTemplateLiteral([":\u241Ffc6c8586d4f4fbce21310ff2a21da10de8c8a04b\u241F7108392645161261297: Checks"])));
+            i18n_14 = $localize(_templateObject41 || (_templateObject41 = _taggedTemplateLiteral([":\u241Ffc6c8586d4f4fbce21310ff2a21da10de8c8a04b\u241F7108392645161261297: Checks"])));
           }
 
           return [[1, "nui-table__container", 2, "height", "300px"], ["nui-table", "", 3, "dataSource"], ["nuiColumnDef", "position"], ["nui-header-cell", "", 4, "nuiHeaderCellDef"], ["nui-cell", "", 4, "nuiCellDef"], ["nuiColumnDef", "name"], ["nuiColumnDef", "features"], ["nuiColumnDef", "asset"], ["nuiColumnDef", "location"], ["nuiColumnDef", "status"], ["nuiColumnDef", "outages"], ["nuiColumnDef", "checks"], ["nui-header-row", "", 4, "nuiHeaderRowDef", "nuiHeaderRowDefSticky"], ["nui-row", "", 4, "nuiRowDef", "nuiRowDefColumns"], ["nui-header-cell", ""], i18n_0, ["nui-cell", ""], i18n_2, i18n_4, [1, "d-flex", "align-items-center"], ["class", "icon-margin", 3, "icon", 4, "ngFor", "ngForOf"], [1, "icon-margin", 3, "icon"], i18n_6, i18n_8, i18n_10, i18n_12, i18n_14, [4, "ngFor", "ngForOf"], [3, "icon"], [1, "ml-2"], ["nui-header-row", ""], ["nui-row", ""]];
@@ -4888,7 +5400,7 @@
             var MSG_EXTERNAL_1345472093440723911$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_CELL_WIDTH_SET_TABLE_CELL_WIDTH_SET_EXAMPLE_COMPONENT_TS__1 = goog.getMsg(" No.");
             i18n_0 = MSG_EXTERNAL_1345472093440723911$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_CELL_WIDTH_SET_TABLE_CELL_WIDTH_SET_EXAMPLE_COMPONENT_TS__1;
           } else {
-            i18n_0 = $localize(_templateObject41 || (_templateObject41 = _taggedTemplateLiteral([":\u241F333f0164082b9f12f63ca11438b2085d074a5b0f\u241F1345472093440723911: No."])));
+            i18n_0 = $localize(_templateObject42 || (_templateObject42 = _taggedTemplateLiteral([":\u241F333f0164082b9f12f63ca11438b2085d074a5b0f\u241F1345472093440723911: No."])));
           }
 
           var i18n_2;
@@ -4897,7 +5409,7 @@
             var MSG_EXTERNAL_1466114336146187941$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_CELL_WIDTH_SET_TABLE_CELL_WIDTH_SET_EXAMPLE_COMPONENT_TS__3 = goog.getMsg(" Item");
             i18n_2 = MSG_EXTERNAL_1466114336146187941$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_CELL_WIDTH_SET_TABLE_CELL_WIDTH_SET_EXAMPLE_COMPONENT_TS__3;
           } else {
-            i18n_2 = $localize(_templateObject42 || (_templateObject42 = _taggedTemplateLiteral([":\u241F25089eb429c6d3c5693152e8f3683de49f7f9707\u241F1466114336146187941: Item"])));
+            i18n_2 = $localize(_templateObject43 || (_templateObject43 = _taggedTemplateLiteral([":\u241F25089eb429c6d3c5693152e8f3683de49f7f9707\u241F1466114336146187941: Item"])));
           }
 
           var i18n_4;
@@ -4906,7 +5418,7 @@
             var MSG_EXTERNAL_4556215123825736249$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_CELL_WIDTH_SET_TABLE_CELL_WIDTH_SET_EXAMPLE_COMPONENT_TS__5 = goog.getMsg(" Description");
             i18n_4 = MSG_EXTERNAL_4556215123825736249$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_CELL_WIDTH_SET_TABLE_CELL_WIDTH_SET_EXAMPLE_COMPONENT_TS__5;
           } else {
-            i18n_4 = $localize(_templateObject43 || (_templateObject43 = _taggedTemplateLiteral([":\u241F1966b0173d4a08be5ddb5cda1246d604fcd242c7\u241F4556215123825736249: Description"])));
+            i18n_4 = $localize(_templateObject44 || (_templateObject44 = _taggedTemplateLiteral([":\u241F1966b0173d4a08be5ddb5cda1246d604fcd242c7\u241F4556215123825736249: Description"])));
           }
 
           var i18n_6;
@@ -4915,7 +5427,7 @@
             var MSG_EXTERNAL_7598846418510631873$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_CELL_WIDTH_SET_TABLE_CELL_WIDTH_SET_EXAMPLE_COMPONENT_TS__7 = goog.getMsg(" Location");
             i18n_6 = MSG_EXTERNAL_7598846418510631873$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_CELL_WIDTH_SET_TABLE_CELL_WIDTH_SET_EXAMPLE_COMPONENT_TS__7;
           } else {
-            i18n_6 = $localize(_templateObject44 || (_templateObject44 = _taggedTemplateLiteral([":\u241F4ed56c7c2b85b2b764c9853d121c291db3b70ed9\u241F7598846418510631873: Location"])));
+            i18n_6 = $localize(_templateObject45 || (_templateObject45 = _taggedTemplateLiteral([":\u241F4ed56c7c2b85b2b764c9853d121c291db3b70ed9\u241F7598846418510631873: Location"])));
           }
 
           return [["id", "nui-demo-table-cell-width-set", 1, "nui-table__container"], [1, "demo-options-section", "mb-1"], ["id", "position-input", "customBoxWidth", "150px", 3, "value", "valueChange"], ["nui-table", "", 3, "dataSource"], ["nuiColumnDef", "position"], ["nui-header-cell", "", 3, "width", 4, "nuiHeaderCellDef"], ["nui-cell", "", 4, "nuiCellDef"], ["nuiColumnDef", "item"], ["nui-header-cell", "", 4, "nuiHeaderCellDef"], ["nuiColumnDef", "description"], ["nui-cell", "", 3, "tooltipText", 4, "nuiCellDef"], ["nuiColumnDef", "status", "type", "icon"], ["nuiColumnDef", "location"], ["nui-header-row", "", 4, "nuiHeaderRowDef"], ["nui-row", "", 4, "nuiRowDef", "nuiRowDefColumns"], ["nui-header-cell", ""], i18n_0, ["nui-cell", ""], i18n_2, i18n_4, ["nui-cell", "", 3, "tooltipText"], [1, "d-flex", "align-items-center"], ["icon", "enable"], [3, "icon"], i18n_6, ["nui-header-row", ""], ["nui-row", ""]];
@@ -5475,7 +5987,7 @@
             var MSG_EXTERNAL_1345472093440723911$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_ROW_HEIGHT_SET_TABLE_ROW_HEIGHT_SET_EXAMPLE_COMPONENT_TS__1 = goog.getMsg(" No.");
             i18n_0 = MSG_EXTERNAL_1345472093440723911$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_ROW_HEIGHT_SET_TABLE_ROW_HEIGHT_SET_EXAMPLE_COMPONENT_TS__1;
           } else {
-            i18n_0 = $localize(_templateObject45 || (_templateObject45 = _taggedTemplateLiteral([":\u241F333f0164082b9f12f63ca11438b2085d074a5b0f\u241F1345472093440723911: No."])));
+            i18n_0 = $localize(_templateObject46 || (_templateObject46 = _taggedTemplateLiteral([":\u241F333f0164082b9f12f63ca11438b2085d074a5b0f\u241F1345472093440723911: No."])));
           }
 
           var i18n_2;
@@ -5484,7 +5996,7 @@
             var MSG_EXTERNAL_5923354303687392819$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_ROW_HEIGHT_SET_TABLE_ROW_HEIGHT_SET_EXAMPLE_COMPONENT_TS__3 = goog.getMsg(" Name");
             i18n_2 = MSG_EXTERNAL_5923354303687392819$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_ROW_HEIGHT_SET_TABLE_ROW_HEIGHT_SET_EXAMPLE_COMPONENT_TS__3;
           } else {
-            i18n_2 = $localize(_templateObject46 || (_templateObject46 = _taggedTemplateLiteral([":\u241F7b07cc6126aa22c8a3041963963e85a0791a7e40\u241F5923354303687392819: Name"])));
+            i18n_2 = $localize(_templateObject47 || (_templateObject47 = _taggedTemplateLiteral([":\u241F7b07cc6126aa22c8a3041963963e85a0791a7e40\u241F5923354303687392819: Name"])));
           }
 
           var i18n_4;
@@ -5493,7 +6005,7 @@
             var MSG_EXTERNAL_6599364831830861985$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_ROW_HEIGHT_SET_TABLE_ROW_HEIGHT_SET_EXAMPLE_COMPONENT_TS__5 = goog.getMsg("Features");
             i18n_4 = MSG_EXTERNAL_6599364831830861985$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_ROW_HEIGHT_SET_TABLE_ROW_HEIGHT_SET_EXAMPLE_COMPONENT_TS__5;
           } else {
-            i18n_4 = $localize(_templateObject47 || (_templateObject47 = _taggedTemplateLiteral([":\u241F6cdb1fea93d77c07950c0c76c6e0ad79ebbef084\u241F6599364831830861985:Features"])));
+            i18n_4 = $localize(_templateObject48 || (_templateObject48 = _taggedTemplateLiteral([":\u241F6cdb1fea93d77c07950c0c76c6e0ad79ebbef084\u241F6599364831830861985:Features"])));
           }
 
           var i18n_6;
@@ -5502,7 +6014,7 @@
             var MSG_EXTERNAL_6940950714946520886$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_ROW_HEIGHT_SET_TABLE_ROW_HEIGHT_SET_EXAMPLE_COMPONENT_TS__7 = goog.getMsg(" Asset Class");
             i18n_6 = MSG_EXTERNAL_6940950714946520886$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_ROW_HEIGHT_SET_TABLE_ROW_HEIGHT_SET_EXAMPLE_COMPONENT_TS__7;
           } else {
-            i18n_6 = $localize(_templateObject48 || (_templateObject48 = _taggedTemplateLiteral([":\u241Fc123012b555ee9898f49540288d43c3c606e27d6\u241F6940950714946520886: Asset Class"])));
+            i18n_6 = $localize(_templateObject49 || (_templateObject49 = _taggedTemplateLiteral([":\u241Fc123012b555ee9898f49540288d43c3c606e27d6\u241F6940950714946520886: Asset Class"])));
           }
 
           var i18n_8;
@@ -5511,7 +6023,7 @@
             var MSG_EXTERNAL_7598846418510631873$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_ROW_HEIGHT_SET_TABLE_ROW_HEIGHT_SET_EXAMPLE_COMPONENT_TS__9 = goog.getMsg(" Location");
             i18n_8 = MSG_EXTERNAL_7598846418510631873$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_ROW_HEIGHT_SET_TABLE_ROW_HEIGHT_SET_EXAMPLE_COMPONENT_TS__9;
           } else {
-            i18n_8 = $localize(_templateObject49 || (_templateObject49 = _taggedTemplateLiteral([":\u241F4ed56c7c2b85b2b764c9853d121c291db3b70ed9\u241F7598846418510631873: Location"])));
+            i18n_8 = $localize(_templateObject50 || (_templateObject50 = _taggedTemplateLiteral([":\u241F4ed56c7c2b85b2b764c9853d121c291db3b70ed9\u241F7598846418510631873: Location"])));
           }
 
           var i18n_10;
@@ -5520,7 +6032,7 @@
             var MSG_EXTERNAL_5611592591303869712$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_ROW_HEIGHT_SET_TABLE_ROW_HEIGHT_SET_EXAMPLE_COMPONENT_TS__11 = goog.getMsg("Status");
             i18n_10 = MSG_EXTERNAL_5611592591303869712$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_ROW_HEIGHT_SET_TABLE_ROW_HEIGHT_SET_EXAMPLE_COMPONENT_TS__11;
           } else {
-            i18n_10 = $localize(_templateObject50 || (_templateObject50 = _taggedTemplateLiteral([":\u241F81b97b8ea996ad1e4f9fca8415021850214884b1\u241F5611592591303869712:Status"])));
+            i18n_10 = $localize(_templateObject51 || (_templateObject51 = _taggedTemplateLiteral([":\u241F81b97b8ea996ad1e4f9fca8415021850214884b1\u241F5611592591303869712:Status"])));
           }
 
           var i18n_12;
@@ -5529,7 +6041,7 @@
             var MSG_EXTERNAL_3645300875970966243$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_ROW_HEIGHT_SET_TABLE_ROW_HEIGHT_SET_EXAMPLE_COMPONENT_TS__13 = goog.getMsg(" Outages");
             i18n_12 = MSG_EXTERNAL_3645300875970966243$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_ROW_HEIGHT_SET_TABLE_ROW_HEIGHT_SET_EXAMPLE_COMPONENT_TS__13;
           } else {
-            i18n_12 = $localize(_templateObject51 || (_templateObject51 = _taggedTemplateLiteral([":\u241Fe81b7832d164ea9359f7937353f7dfc314064a3a\u241F3645300875970966243: Outages"])));
+            i18n_12 = $localize(_templateObject52 || (_templateObject52 = _taggedTemplateLiteral([":\u241Fe81b7832d164ea9359f7937353f7dfc314064a3a\u241F3645300875970966243: Outages"])));
           }
 
           var i18n_14;
@@ -5538,7 +6050,7 @@
             var MSG_EXTERNAL_86770805401291669$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_ROW_HEIGHT_SET_TABLE_ROW_HEIGHT_SET_EXAMPLE_COMPONENT_TS__15 = goog.getMsg("Checks");
             i18n_14 = MSG_EXTERNAL_86770805401291669$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_ROW_HEIGHT_SET_TABLE_ROW_HEIGHT_SET_EXAMPLE_COMPONENT_TS__15;
           } else {
-            i18n_14 = $localize(_templateObject52 || (_templateObject52 = _taggedTemplateLiteral([":\u241F3662d1d079624d13ee2e3027d0bb200fa403eef8\u241F86770805401291669:Checks"])));
+            i18n_14 = $localize(_templateObject53 || (_templateObject53 = _taggedTemplateLiteral([":\u241F3662d1d079624d13ee2e3027d0bb200fa403eef8\u241F86770805401291669:Checks"])));
           }
 
           return [["id", "nui-demo-table-row-height-set", 1, "nui-table__container"], ["nui-table", "", 3, "dataSource"], ["nuiColumnDef", "position"], ["nui-header-cell", "", 4, "nuiHeaderCellDef"], ["nui-cell", "", 4, "nuiCellDef"], ["nuiColumnDef", "name"], ["nuiColumnDef", "features"], ["nuiColumnDef", "asset"], ["nuiColumnDef", "location"], ["nuiColumnDef", "status", "type", "icon"], ["nuiColumnDef", "outages"], ["nuiColumnDef", "checks"], ["nui-header-row", "", 3, "density", 4, "nuiHeaderRowDef"], ["nui-row", "", 3, "density", 4, "nuiRowDef", "nuiRowDefColumns"], ["nui-header-cell", ""], i18n_0, ["nui-cell", ""], i18n_2, i18n_4, [1, "d-flex", "align-items-center"], ["class", "icon-margin", 3, "icon", 4, "ngFor", "ngForOf"], [1, "icon-margin", 3, "icon"], i18n_6, i18n_8, i18n_10, [1, "d-flex", "align-items-center", "justify-content-center"], [3, "icon"], i18n_12, i18n_14, [4, "ngFor", "ngForOf"], [1, "ml-2"], ["nui-header-row", "", 3, "density"], ["nui-row", "", 3, "density"]];
@@ -6246,58 +6758,58 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this12 = this;
+            var _this13 = this;
 
             this.dataSource.outputsSubject.subscribe(function (outputs) {
               if (outputs) {
-                _this12.users = outputs.repeat.itemsSource;
-                _this12._totalItems = outputs.totalItems;
-                _this12.totalPages = Math.floor(_this12._totalItems / _this12.range); // This condition handles the case when the number of items fetched is less than the viewport size.
+                _this13.users = outputs.repeat.itemsSource;
+                _this13._totalItems = outputs.totalItems;
+                _this13.totalPages = Math.floor(_this13._totalItems / _this13.range); // This condition handles the case when the number of items fetched is less than the viewport size.
                 // To have virtual scroll working, we need to prefetch the number of items missing to trigger the scrollbar.
 
-                if (_this12.users.length < Math.round(_this12.viewport.getViewportSize() / _this12.virtualDirective.rowHeight)) {
-                  _this12.prefetchedDsPageNumber++;
-                  _this12.dataSource.page = _this12.prefetchedDsPageNumber;
+                if (_this13.users.length < Math.round(_this13.viewport.getViewportSize() / _this13.virtualDirective.rowHeight)) {
+                  _this13.prefetchedDsPageNumber++;
+                  _this13.dataSource.page = _this13.prefetchedDsPageNumber;
 
-                  _this12.dataSource.applyFilters();
+                  _this13.dataSource.applyFilters();
                 }
 
-                _this12.cd.detectChanges();
+                _this13.cd.detectChanges();
               }
             });
             this.dataSource.busy.subscribe(function (busy) {
-              _this12._isBusy = busy;
+              _this13._isBusy = busy;
             });
           }
         }, {
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this13 = this;
+            var _this14 = this;
 
             this.registerVirtualScroll(); // Setting the items range to properly evaluate the virtual scroll viewport size
 
             this.virtualDirective.setMaxItems(this.range);
             this.viewport.renderedRangeStream.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeUntil"])(this.onDestroy$)).subscribe(function (value) {
               // There is no use to proceed if we've already fetched all the items
-              if (_this13.users.length === _this13._totalItems) {
+              if (_this14.users.length === _this14._totalItems) {
                 return;
               }
 
-              var page = Math.floor(value.end / _this13.range);
+              var page = Math.floor(value.end / _this14.range);
 
-              if (page > _this13.lastPageFetched && page <= _this13.totalPages) {
-                var start = page * _this13.range;
-                var end = start + _this13.range;
-                _this13.virtualScrollFilterValue = {
+              if (page > _this14.lastPageFetched && page <= _this14.totalPages) {
+                var start = page * _this14.range;
+                var end = start + _this14.range;
+                _this14.virtualScrollFilterValue = {
                   start: start,
                   end: end
                 };
-                _this13.lastPageFetched = page; // Due to a specificity of the chosen API, we explicitly send it the page number, because the API can
+                _this14.lastPageFetched = page; // Due to a specificity of the chosen API, we explicitly send it the page number, because the API can
                 // return data in pages. This can vary depending on the user's usecase
 
-                _this13.dataSource.page = _this13.prefetchedDsPageNumber + page;
+                _this14.dataSource.page = _this14.prefetchedDsPageNumber + page;
 
-                _this13.dataSource.applyFilters();
+                _this14.dataSource.applyFilters();
               }
             });
             this.dataSource.applyFilters();
@@ -6313,7 +6825,7 @@
         }, {
           key: "registerVirtualScroll",
           value: function registerVirtualScroll() {
-            var _this14 = this;
+            var _this15 = this;
 
             this.dataSource.registerComponent({
               virtualScroll: {
@@ -6321,7 +6833,7 @@
                   getFilters: function getFilters() {
                     return {
                       type: "virtualScroll",
-                      value: _this14.virtualScrollFilterValue
+                      value: _this15.virtualScrollFilterValue
                     };
                   }
                 }
@@ -6366,7 +6878,7 @@
             var MSG_EXTERNAL_1345472093440723911$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_FOOTER_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_FOOTER_EXAMPLE_COMPONENT_TS__1 = goog.getMsg(" No.");
             i18n_0 = MSG_EXTERNAL_1345472093440723911$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_FOOTER_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_FOOTER_EXAMPLE_COMPONENT_TS__1;
           } else {
-            i18n_0 = $localize(_templateObject53 || (_templateObject53 = _taggedTemplateLiteral([":\u241F333f0164082b9f12f63ca11438b2085d074a5b0f\u241F1345472093440723911: No."])));
+            i18n_0 = $localize(_templateObject54 || (_templateObject54 = _taggedTemplateLiteral([":\u241F333f0164082b9f12f63ca11438b2085d074a5b0f\u241F1345472093440723911: No."])));
           }
 
           var i18n_2;
@@ -6375,7 +6887,7 @@
             var MSG_EXTERNAL_8357643335000303339$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_FOOTER_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_FOOTER_EXAMPLE_COMPONENT_TS__3 = goog.getMsg(" Title");
             i18n_2 = MSG_EXTERNAL_8357643335000303339$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_FOOTER_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_FOOTER_EXAMPLE_COMPONENT_TS__3;
           } else {
-            i18n_2 = $localize(_templateObject54 || (_templateObject54 = _taggedTemplateLiteral([":\u241F952a1244074407cd841ce6253538e566581f10dd\u241F8357643335000303339: Title"])));
+            i18n_2 = $localize(_templateObject55 || (_templateObject55 = _taggedTemplateLiteral([":\u241F952a1244074407cd841ce6253538e566581f10dd\u241F8357643335000303339: Title"])));
           }
 
           var i18n_4;
@@ -6384,7 +6896,7 @@
             var MSG_EXTERNAL_2860311194545881177$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_FOOTER_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_FOOTER_EXAMPLE_COMPONENT_TS__5 = goog.getMsg(" First Name");
             i18n_4 = MSG_EXTERNAL_2860311194545881177$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_FOOTER_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_FOOTER_EXAMPLE_COMPONENT_TS__5;
           } else {
-            i18n_4 = $localize(_templateObject55 || (_templateObject55 = _taggedTemplateLiteral([":\u241Fba4a0caee703d6328fdb0d70380f541915451742\u241F2860311194545881177: First Name"])));
+            i18n_4 = $localize(_templateObject56 || (_templateObject56 = _taggedTemplateLiteral([":\u241Fba4a0caee703d6328fdb0d70380f541915451742\u241F2860311194545881177: First Name"])));
           }
 
           var i18n_6;
@@ -6393,7 +6905,7 @@
             var MSG_EXTERNAL_1738284750176372142$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_FOOTER_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_FOOTER_EXAMPLE_COMPONENT_TS__7 = goog.getMsg(" Last Name");
             i18n_6 = MSG_EXTERNAL_1738284750176372142$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_FOOTER_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_FOOTER_EXAMPLE_COMPONENT_TS__7;
           } else {
-            i18n_6 = $localize(_templateObject56 || (_templateObject56 = _taggedTemplateLiteral([":\u241F26b7649337e48ef3e3ccd71ea1a710dab5f7eb61\u241F1738284750176372142: Last Name"])));
+            i18n_6 = $localize(_templateObject57 || (_templateObject57 = _taggedTemplateLiteral([":\u241F26b7649337e48ef3e3ccd71ea1a710dab5f7eb61\u241F1738284750176372142: Last Name"])));
           }
 
           var i18n_8;
@@ -6402,7 +6914,7 @@
             var MSG_EXTERNAL_2667859507116816026$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_FOOTER_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_FOOTER_EXAMPLE_COMPONENT_TS__9 = goog.getMsg(" Gender");
             i18n_8 = MSG_EXTERNAL_2667859507116816026$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_FOOTER_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_FOOTER_EXAMPLE_COMPONENT_TS__9;
           } else {
-            i18n_8 = $localize(_templateObject57 || (_templateObject57 = _taggedTemplateLiteral([":\u241F8a4933776bdd10c9818e105e60d956769de4149f\u241F2667859507116816026: Gender"])));
+            i18n_8 = $localize(_templateObject58 || (_templateObject58 = _taggedTemplateLiteral([":\u241F8a4933776bdd10c9818e105e60d956769de4149f\u241F2667859507116816026: Gender"])));
           }
 
           var i18n_10;
@@ -6411,7 +6923,7 @@
             var MSG_EXTERNAL_1456073909159321718$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_FOOTER_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_FOOTER_EXAMPLE_COMPONENT_TS__11 = goog.getMsg(" Country");
             i18n_10 = MSG_EXTERNAL_1456073909159321718$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_FOOTER_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_FOOTER_EXAMPLE_COMPONENT_TS__11;
           } else {
-            i18n_10 = $localize(_templateObject58 || (_templateObject58 = _taggedTemplateLiteral([":\u241F0425e05bbff231ff83e71da0ecbf4e5aae0b02cf\u241F1456073909159321718: Country"])));
+            i18n_10 = $localize(_templateObject59 || (_templateObject59 = _taggedTemplateLiteral([":\u241F0425e05bbff231ff83e71da0ecbf4e5aae0b02cf\u241F1456073909159321718: Country"])));
           }
 
           var i18n_12;
@@ -6420,7 +6932,7 @@
             var MSG_EXTERNAL_8764220957450565928$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_FOOTER_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_FOOTER_EXAMPLE_COMPONENT_TS__13 = goog.getMsg(" City");
             i18n_12 = MSG_EXTERNAL_8764220957450565928$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_FOOTER_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_FOOTER_EXAMPLE_COMPONENT_TS__13;
           } else {
-            i18n_12 = $localize(_templateObject59 || (_templateObject59 = _taggedTemplateLiteral([":\u241F8ecca5416af6383f4ca3e66acf35eca90e690a3c\u241F8764220957450565928: City"])));
+            i18n_12 = $localize(_templateObject60 || (_templateObject60 = _taggedTemplateLiteral([":\u241F8ecca5416af6383f4ca3e66acf35eca90e690a3c\u241F8764220957450565928: City"])));
           }
 
           var i18n_14;
@@ -6429,7 +6941,7 @@
             var MSG_EXTERNAL_6046214701664071824$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_FOOTER_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_FOOTER_EXAMPLE_COMPONENT_TS__15 = goog.getMsg(" Postcode");
             i18n_14 = MSG_EXTERNAL_6046214701664071824$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_FOOTER_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_FOOTER_EXAMPLE_COMPONENT_TS__15;
           } else {
-            i18n_14 = $localize(_templateObject60 || (_templateObject60 = _taggedTemplateLiteral([":\u241F12219316a6afe56a50fe109f4ded8640e551d35a\u241F6046214701664071824: Postcode"])));
+            i18n_14 = $localize(_templateObject61 || (_templateObject61 = _taggedTemplateLiteral([":\u241F12219316a6afe56a50fe109f4ded8640e551d35a\u241F6046214701664071824: Postcode"])));
           }
 
           var i18n_16;
@@ -6438,7 +6950,7 @@
             var MSG_EXTERNAL_9117442902261307677$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_FOOTER_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_FOOTER_EXAMPLE_COMPONENT_TS__17 = goog.getMsg(" Email");
             i18n_16 = MSG_EXTERNAL_9117442902261307677$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_FOOTER_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_FOOTER_EXAMPLE_COMPONENT_TS__17;
           } else {
-            i18n_16 = $localize(_templateObject61 || (_templateObject61 = _taggedTemplateLiteral([":\u241Fa20a6d4a37afdd7b03a99c1673b6625e1bfd319b\u241F9117442902261307677: Email"])));
+            i18n_16 = $localize(_templateObject62 || (_templateObject62 = _taggedTemplateLiteral([":\u241Fa20a6d4a37afdd7b03a99c1673b6625e1bfd319b\u241F9117442902261307677: Email"])));
           }
 
           var i18n_18;
@@ -6447,7 +6959,7 @@
             var MSG_EXTERNAL_7006732017012080604$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_FOOTER_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_FOOTER_EXAMPLE_COMPONENT_TS__19 = goog.getMsg(" Cell");
             i18n_18 = MSG_EXTERNAL_7006732017012080604$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_FOOTER_TABLE_VIRTUAL_SCROLL_REAL_API_PROGRESS_FOOTER_EXAMPLE_COMPONENT_TS__19;
           } else {
-            i18n_18 = $localize(_templateObject62 || (_templateObject62 = _taggedTemplateLiteral([":\u241F714a2901dd3ebc87509d7e399a32d0c439fa6c39\u241F7006732017012080604: Cell"])));
+            i18n_18 = $localize(_templateObject63 || (_templateObject63 = _taggedTemplateLiteral([":\u241F714a2901dd3ebc87509d7e399a32d0c439fa6c39\u241F7006732017012080604: Cell"])));
           }
 
           return [[2, "border-color", "lightgrey"], ["tableVirtualScroll", "", 3, "rowHeight", "offset"], ["nui-table", "", 3, "dataSource", "resizable", "reorderable"], ["nuiColumnDef", "no", 3, "columnWidth"], ["nui-header-cell", "", 4, "nuiHeaderCellDef"], ["nui-cell", "", 4, "nuiCellDef"], ["nuiColumnDef", "nameTitle", 3, "columnWidth"], ["nuiColumnDef", "nameFirst", 3, "columnWidth"], ["nuiColumnDef", "nameLast", 3, "columnWidth"], ["nuiColumnDef", "gender", 3, "columnWidth"], ["nuiColumnDef", "country", 3, "columnWidth"], ["nuiColumnDef", "city", 3, "columnWidth"], ["nuiColumnDef", "postcode", 3, "columnWidth"], ["nuiColumnDef", "email", 3, "columnWidth"], ["nuiColumnDef", "cell", 3, "columnWidth"], ["nui-cell", "", "style", "overflow: visible", 4, "nuiCellDef"], ["nui-header-row", "", 4, "nuiHeaderRowDef", "nuiHeaderRowDefSticky"], ["nui-row", "", "density", "tiny", 4, "nuiRowDef", "nuiRowDefColumns"], [1, "d-flex", "justify-content-center", "align-items-center", "nui-demo-scrolling-footer"], [1, "h-100", "w-100"], [4, "ngIf", "ngIfElse"], ["defaultText", ""], ["nui-header-cell", ""], i18n_0, ["nui-cell", ""], i18n_2, i18n_4, i18n_6, i18n_8, i18n_10, i18n_12, i18n_14, i18n_16, i18n_18, ["nui-cell", "", 2, "overflow", "visible"], ["nui-header-row", ""], ["nui-row", "", "density", "tiny"], [3, "show", "helpText"], [1, "h-100", "d-flex", "justify-content-center", "align-items-center"], [1, "px-2"], [1, "pl-2"], ["endOfData", ""]];
@@ -7065,7 +7577,7 @@
             var MSG_EXTERNAL_1345472093440723911$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_BASIC_TABLE_BASIC_EXAMPLE_COMPONENT_TS__1 = goog.getMsg(" No.");
             i18n_0 = MSG_EXTERNAL_1345472093440723911$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_BASIC_TABLE_BASIC_EXAMPLE_COMPONENT_TS__1;
           } else {
-            i18n_0 = $localize(_templateObject63 || (_templateObject63 = _taggedTemplateLiteral([":\u241F333f0164082b9f12f63ca11438b2085d074a5b0f\u241F1345472093440723911: No."])));
+            i18n_0 = $localize(_templateObject64 || (_templateObject64 = _taggedTemplateLiteral([":\u241F333f0164082b9f12f63ca11438b2085d074a5b0f\u241F1345472093440723911: No."])));
           }
 
           var i18n_2;
@@ -7074,7 +7586,7 @@
             var MSG_EXTERNAL_5923354303687392819$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_BASIC_TABLE_BASIC_EXAMPLE_COMPONENT_TS__3 = goog.getMsg(" Name");
             i18n_2 = MSG_EXTERNAL_5923354303687392819$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_BASIC_TABLE_BASIC_EXAMPLE_COMPONENT_TS__3;
           } else {
-            i18n_2 = $localize(_templateObject64 || (_templateObject64 = _taggedTemplateLiteral([":\u241F7b07cc6126aa22c8a3041963963e85a0791a7e40\u241F5923354303687392819: Name"])));
+            i18n_2 = $localize(_templateObject65 || (_templateObject65 = _taggedTemplateLiteral([":\u241F7b07cc6126aa22c8a3041963963e85a0791a7e40\u241F5923354303687392819: Name"])));
           }
 
           var i18n_4;
@@ -7083,7 +7595,7 @@
             var MSG_EXTERNAL_4366791221426489252$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_BASIC_TABLE_BASIC_EXAMPLE_COMPONENT_TS__5 = goog.getMsg(" Features");
             i18n_4 = MSG_EXTERNAL_4366791221426489252$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_BASIC_TABLE_BASIC_EXAMPLE_COMPONENT_TS__5;
           } else {
-            i18n_4 = $localize(_templateObject65 || (_templateObject65 = _taggedTemplateLiteral([":\u241F176794380c10213e5247f7350b40037bd3affcb3\u241F4366791221426489252: Features"])));
+            i18n_4 = $localize(_templateObject66 || (_templateObject66 = _taggedTemplateLiteral([":\u241F176794380c10213e5247f7350b40037bd3affcb3\u241F4366791221426489252: Features"])));
           }
 
           var i18n_6;
@@ -7092,7 +7604,7 @@
             var MSG_EXTERNAL_6940950714946520886$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_BASIC_TABLE_BASIC_EXAMPLE_COMPONENT_TS__7 = goog.getMsg(" Asset Class");
             i18n_6 = MSG_EXTERNAL_6940950714946520886$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_BASIC_TABLE_BASIC_EXAMPLE_COMPONENT_TS__7;
           } else {
-            i18n_6 = $localize(_templateObject66 || (_templateObject66 = _taggedTemplateLiteral([":\u241Fc123012b555ee9898f49540288d43c3c606e27d6\u241F6940950714946520886: Asset Class"])));
+            i18n_6 = $localize(_templateObject67 || (_templateObject67 = _taggedTemplateLiteral([":\u241Fc123012b555ee9898f49540288d43c3c606e27d6\u241F6940950714946520886: Asset Class"])));
           }
 
           var i18n_8;
@@ -7101,7 +7613,7 @@
             var MSG_EXTERNAL_7598846418510631873$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_BASIC_TABLE_BASIC_EXAMPLE_COMPONENT_TS__9 = goog.getMsg(" Location");
             i18n_8 = MSG_EXTERNAL_7598846418510631873$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_BASIC_TABLE_BASIC_EXAMPLE_COMPONENT_TS__9;
           } else {
-            i18n_8 = $localize(_templateObject67 || (_templateObject67 = _taggedTemplateLiteral([":\u241F4ed56c7c2b85b2b764c9853d121c291db3b70ed9\u241F7598846418510631873: Location"])));
+            i18n_8 = $localize(_templateObject68 || (_templateObject68 = _taggedTemplateLiteral([":\u241F4ed56c7c2b85b2b764c9853d121c291db3b70ed9\u241F7598846418510631873: Location"])));
           }
 
           var i18n_10;
@@ -7110,7 +7622,7 @@
             var MSG_EXTERNAL_7043724726246657652$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_BASIC_TABLE_BASIC_EXAMPLE_COMPONENT_TS__11 = goog.getMsg(" Status");
             i18n_10 = MSG_EXTERNAL_7043724726246657652$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_BASIC_TABLE_BASIC_EXAMPLE_COMPONENT_TS__11;
           } else {
-            i18n_10 = $localize(_templateObject68 || (_templateObject68 = _taggedTemplateLiteral([":\u241Ff3ab141a02057a7853b9cde7dea17eef6811e27a\u241F7043724726246657652: Status"])));
+            i18n_10 = $localize(_templateObject69 || (_templateObject69 = _taggedTemplateLiteral([":\u241Ff3ab141a02057a7853b9cde7dea17eef6811e27a\u241F7043724726246657652: Status"])));
           }
 
           var i18n_12;
@@ -7119,7 +7631,7 @@
             var MSG_EXTERNAL_3645300875970966243$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_BASIC_TABLE_BASIC_EXAMPLE_COMPONENT_TS__13 = goog.getMsg(" Outages");
             i18n_12 = MSG_EXTERNAL_3645300875970966243$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_BASIC_TABLE_BASIC_EXAMPLE_COMPONENT_TS__13;
           } else {
-            i18n_12 = $localize(_templateObject69 || (_templateObject69 = _taggedTemplateLiteral([":\u241Fe81b7832d164ea9359f7937353f7dfc314064a3a\u241F3645300875970966243: Outages"])));
+            i18n_12 = $localize(_templateObject70 || (_templateObject70 = _taggedTemplateLiteral([":\u241Fe81b7832d164ea9359f7937353f7dfc314064a3a\u241F3645300875970966243: Outages"])));
           }
 
           var i18n_14;
@@ -7128,7 +7640,7 @@
             var MSG_EXTERNAL_7108392645161261297$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_BASIC_TABLE_BASIC_EXAMPLE_COMPONENT_TS__15 = goog.getMsg(" Checks");
             i18n_14 = MSG_EXTERNAL_7108392645161261297$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_BASIC_TABLE_BASIC_EXAMPLE_COMPONENT_TS__15;
           } else {
-            i18n_14 = $localize(_templateObject70 || (_templateObject70 = _taggedTemplateLiteral([":\u241Ffc6c8586d4f4fbce21310ff2a21da10de8c8a04b\u241F7108392645161261297: Checks"])));
+            i18n_14 = $localize(_templateObject71 || (_templateObject71 = _taggedTemplateLiteral([":\u241Ffc6c8586d4f4fbce21310ff2a21da10de8c8a04b\u241F7108392645161261297: Checks"])));
           }
 
           return [["id", "nui-demo-basic-table", 1, "nui-table__container"], ["nui-table", "", 2, "height", "100px", 3, "dataSource"], ["nuiColumnDef", "position"], ["nui-header-cell", "", 4, "nuiHeaderCellDef"], ["nui-cell", "", 4, "nuiCellDef"], ["nuiColumnDef", "name"], ["nuiColumnDef", "features"], ["nuiColumnDef", "asset"], ["nuiColumnDef", "location"], ["nuiColumnDef", "status"], ["nuiColumnDef", "outages"], ["nuiColumnDef", "checks"], ["nui-header-row", "", 4, "nuiHeaderRowDef"], ["nui-row", "", 4, "nuiRowDef", "nuiRowDefColumns"], ["nui-header-cell", ""], i18n_0, ["nui-cell", ""], i18n_2, i18n_4, [1, "d-flex", "align-items-center"], ["class", "icon-margin", 3, "icon", 4, "ngFor", "ngForOf"], [1, "icon-margin", 3, "icon"], i18n_6, i18n_8, i18n_10, i18n_12, i18n_14, [4, "ngFor", "ngForOf"], [3, "icon"], [1, "ml-2"], ["nui-header-row", ""], ["nui-row", ""]];
@@ -7703,7 +8215,7 @@
         _createClass(TableSearchWithSelectAndPaginationComponent, [{
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this15 = this;
+            var _this16 = this;
 
             this.dataSourceService.componentTree = {
               search: {
@@ -7716,11 +8228,11 @@
             this.outputsSubscription = this.dataSourceService.outputsSubject.subscribe(function (data) {
               var _a, _b;
 
-              _this15.dataSource = (_a = data.repeat) === null || _a === void 0 ? void 0 : _a.itemsSource;
-              _this15.paginationTotal = (_b = data.paginator) === null || _b === void 0 ? void 0 : _b.total;
+              _this16.dataSource = (_a = data.repeat) === null || _a === void 0 ? void 0 : _a.itemsSource;
+              _this16.paginationTotal = (_b = data.paginator) === null || _b === void 0 ? void 0 : _b.total;
             });
             this.searchSubscription = this.filteringSearch.inputChange.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["debounceTime"])(500)).subscribe(function () {
-              _this15.onSearch(undefined);
+              _this16.onSearch(undefined);
             });
             this.dataSourceService.applyFilters();
           }
@@ -7789,7 +8301,7 @@
             var MSG_EXTERNAL_1345472093440723911$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SEARCH_WITH_SELECT_AND_PAGINATION_TABLE_SEARCH_WITH_SELECT_AND_PAGINATION_EXAMPLE_COMPONENT_TS__4 = goog.getMsg(" No.");
             i18n_3 = MSG_EXTERNAL_1345472093440723911$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SEARCH_WITH_SELECT_AND_PAGINATION_TABLE_SEARCH_WITH_SELECT_AND_PAGINATION_EXAMPLE_COMPONENT_TS__4;
           } else {
-            i18n_3 = $localize(_templateObject71 || (_templateObject71 = _taggedTemplateLiteral([":\u241F333f0164082b9f12f63ca11438b2085d074a5b0f\u241F1345472093440723911: No."])));
+            i18n_3 = $localize(_templateObject72 || (_templateObject72 = _taggedTemplateLiteral([":\u241F333f0164082b9f12f63ca11438b2085d074a5b0f\u241F1345472093440723911: No."])));
           }
 
           var i18n_5;
@@ -7798,7 +8310,7 @@
             var MSG_EXTERNAL_5923354303687392819$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SEARCH_WITH_SELECT_AND_PAGINATION_TABLE_SEARCH_WITH_SELECT_AND_PAGINATION_EXAMPLE_COMPONENT_TS__6 = goog.getMsg(" Name");
             i18n_5 = MSG_EXTERNAL_5923354303687392819$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SEARCH_WITH_SELECT_AND_PAGINATION_TABLE_SEARCH_WITH_SELECT_AND_PAGINATION_EXAMPLE_COMPONENT_TS__6;
           } else {
-            i18n_5 = $localize(_templateObject72 || (_templateObject72 = _taggedTemplateLiteral([":\u241F7b07cc6126aa22c8a3041963963e85a0791a7e40\u241F5923354303687392819: Name"])));
+            i18n_5 = $localize(_templateObject73 || (_templateObject73 = _taggedTemplateLiteral([":\u241F7b07cc6126aa22c8a3041963963e85a0791a7e40\u241F5923354303687392819: Name"])));
           }
 
           var i18n_7;
@@ -7807,7 +8319,7 @@
             var MSG_EXTERNAL_4366791221426489252$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SEARCH_WITH_SELECT_AND_PAGINATION_TABLE_SEARCH_WITH_SELECT_AND_PAGINATION_EXAMPLE_COMPONENT_TS__8 = goog.getMsg(" Features");
             i18n_7 = MSG_EXTERNAL_4366791221426489252$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SEARCH_WITH_SELECT_AND_PAGINATION_TABLE_SEARCH_WITH_SELECT_AND_PAGINATION_EXAMPLE_COMPONENT_TS__8;
           } else {
-            i18n_7 = $localize(_templateObject73 || (_templateObject73 = _taggedTemplateLiteral([":\u241F176794380c10213e5247f7350b40037bd3affcb3\u241F4366791221426489252: Features"])));
+            i18n_7 = $localize(_templateObject74 || (_templateObject74 = _taggedTemplateLiteral([":\u241F176794380c10213e5247f7350b40037bd3affcb3\u241F4366791221426489252: Features"])));
           }
 
           var i18n_9;
@@ -7816,7 +8328,7 @@
             var MSG_EXTERNAL_6940950714946520886$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SEARCH_WITH_SELECT_AND_PAGINATION_TABLE_SEARCH_WITH_SELECT_AND_PAGINATION_EXAMPLE_COMPONENT_TS__10 = goog.getMsg(" Asset Class");
             i18n_9 = MSG_EXTERNAL_6940950714946520886$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SEARCH_WITH_SELECT_AND_PAGINATION_TABLE_SEARCH_WITH_SELECT_AND_PAGINATION_EXAMPLE_COMPONENT_TS__10;
           } else {
-            i18n_9 = $localize(_templateObject74 || (_templateObject74 = _taggedTemplateLiteral([":\u241Fc123012b555ee9898f49540288d43c3c606e27d6\u241F6940950714946520886: Asset Class"])));
+            i18n_9 = $localize(_templateObject75 || (_templateObject75 = _taggedTemplateLiteral([":\u241Fc123012b555ee9898f49540288d43c3c606e27d6\u241F6940950714946520886: Asset Class"])));
           }
 
           var i18n_11;
@@ -7825,7 +8337,7 @@
             var MSG_EXTERNAL_7598846418510631873$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SEARCH_WITH_SELECT_AND_PAGINATION_TABLE_SEARCH_WITH_SELECT_AND_PAGINATION_EXAMPLE_COMPONENT_TS__12 = goog.getMsg(" Location");
             i18n_11 = MSG_EXTERNAL_7598846418510631873$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SEARCH_WITH_SELECT_AND_PAGINATION_TABLE_SEARCH_WITH_SELECT_AND_PAGINATION_EXAMPLE_COMPONENT_TS__12;
           } else {
-            i18n_11 = $localize(_templateObject75 || (_templateObject75 = _taggedTemplateLiteral([":\u241F4ed56c7c2b85b2b764c9853d121c291db3b70ed9\u241F7598846418510631873: Location"])));
+            i18n_11 = $localize(_templateObject76 || (_templateObject76 = _taggedTemplateLiteral([":\u241F4ed56c7c2b85b2b764c9853d121c291db3b70ed9\u241F7598846418510631873: Location"])));
           }
 
           var i18n_13;
@@ -7834,7 +8346,7 @@
             var MSG_EXTERNAL_7043724726246657652$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SEARCH_WITH_SELECT_AND_PAGINATION_TABLE_SEARCH_WITH_SELECT_AND_PAGINATION_EXAMPLE_COMPONENT_TS__14 = goog.getMsg(" Status");
             i18n_13 = MSG_EXTERNAL_7043724726246657652$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SEARCH_WITH_SELECT_AND_PAGINATION_TABLE_SEARCH_WITH_SELECT_AND_PAGINATION_EXAMPLE_COMPONENT_TS__14;
           } else {
-            i18n_13 = $localize(_templateObject76 || (_templateObject76 = _taggedTemplateLiteral([":\u241Ff3ab141a02057a7853b9cde7dea17eef6811e27a\u241F7043724726246657652: Status"])));
+            i18n_13 = $localize(_templateObject77 || (_templateObject77 = _taggedTemplateLiteral([":\u241Ff3ab141a02057a7853b9cde7dea17eef6811e27a\u241F7043724726246657652: Status"])));
           }
 
           var i18n_15;
@@ -7843,7 +8355,7 @@
             var MSG_EXTERNAL_3645300875970966243$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SEARCH_WITH_SELECT_AND_PAGINATION_TABLE_SEARCH_WITH_SELECT_AND_PAGINATION_EXAMPLE_COMPONENT_TS__16 = goog.getMsg(" Outages");
             i18n_15 = MSG_EXTERNAL_3645300875970966243$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SEARCH_WITH_SELECT_AND_PAGINATION_TABLE_SEARCH_WITH_SELECT_AND_PAGINATION_EXAMPLE_COMPONENT_TS__16;
           } else {
-            i18n_15 = $localize(_templateObject77 || (_templateObject77 = _taggedTemplateLiteral([":\u241Fe81b7832d164ea9359f7937353f7dfc314064a3a\u241F3645300875970966243: Outages"])));
+            i18n_15 = $localize(_templateObject78 || (_templateObject78 = _taggedTemplateLiteral([":\u241Fe81b7832d164ea9359f7937353f7dfc314064a3a\u241F3645300875970966243: Outages"])));
           }
 
           var i18n_17;
@@ -7852,7 +8364,7 @@
             var MSG_EXTERNAL_7108392645161261297$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SEARCH_WITH_SELECT_AND_PAGINATION_TABLE_SEARCH_WITH_SELECT_AND_PAGINATION_EXAMPLE_COMPONENT_TS__18 = goog.getMsg(" Checks");
             i18n_17 = MSG_EXTERNAL_7108392645161261297$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SEARCH_WITH_SELECT_AND_PAGINATION_TABLE_SEARCH_WITH_SELECT_AND_PAGINATION_EXAMPLE_COMPONENT_TS__18;
           } else {
-            i18n_17 = $localize(_templateObject78 || (_templateObject78 = _taggedTemplateLiteral([":\u241Ffc6c8586d4f4fbce21310ff2a21da10de8c8a04b\u241F7108392645161261297: Checks"])));
+            i18n_17 = $localize(_templateObject79 || (_templateObject79 = _taggedTemplateLiteral([":\u241Ffc6c8586d4f4fbce21310ff2a21da10de8c8a04b\u241F7108392645161261297: Checks"])));
           }
 
           return [["id", "nui-demo-searchable-table", 1, "nui-table__container"], [1, "nui-searchable-table__search"], ["id", "nui-demo-searchable-table-search", 3, "value", "search", "cancel"], ["filteringSearch", ""], ["nui-table", "", 3, "dataSource", "selectable", "selection", "totalItems", "trackBy", "selectionChange"], ["filteringTable", ""], ["nuiColumnDef", "position"], ["nui-header-cell", "", 4, "nuiHeaderCellDef"], ["nui-cell", "", 4, "nuiCellDef"], ["nuiColumnDef", "name"], ["nuiColumnDef", "features"], ["nuiColumnDef", "asset"], ["nuiColumnDef", "location"], ["nuiColumnDef", "status"], ["nuiColumnDef", "outages"], ["nuiColumnDef", "checks"], ["nui-header-row", "", 4, "nuiHeaderRowDef"], ["nui-row", "", 3, "rowObject", "clickableRow", 4, "nuiRowDef", "nuiRowDefColumns"], ["id", "nui-demo-table-select-paginator", "activeClass", "active", "disabledClass", "disabled", "showPrevNext", "true", 3, "page", "pageSize", "total", "pagerAction"], ["filteringPaginator", ""], [1, "flex-row-container"], [1, "flex-independent-row-item"], ["nui-header-cell", ""], i18n_3, ["nui-cell", ""], i18n_5, i18n_7, ["class", "icon-margin", 3, "icon", 4, "ngFor", "ngForOf"], [1, "icon-margin", 3, "icon"], i18n_9, i18n_11, i18n_13, i18n_15, i18n_17, [4, "ngFor", "ngForOf"], [3, "icon"], ["nui-header-row", ""], ["nui-row", "", 3, "rowObject", "clickableRow"]];
@@ -8576,7 +9088,7 @@
         _createClass(TableSearchExampleComponent, [{
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this16 = this;
+            var _this17 = this;
 
             this.dataSourceService.componentTree = {
               search: {
@@ -8586,10 +9098,10 @@
             this.outputsSubscription = this.dataSourceService.outputsSubject.subscribe(function (data) {
               var _a;
 
-              _this16.dataSource = (_a = data.repeat) === null || _a === void 0 ? void 0 : _a.itemsSource;
+              _this17.dataSource = (_a = data.repeat) === null || _a === void 0 ? void 0 : _a.itemsSource;
             });
             this.searchSubscription = this.filteringSearch.inputChange.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["debounceTime"])(500)).subscribe(function () {
-              _this16.onSearch(undefined);
+              _this17.onSearch(undefined);
             });
             this.dataSourceService.applyFilters();
           }
@@ -8655,7 +9167,7 @@
             var MSG_EXTERNAL_1345472093440723911$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SEARCH_TABLE_SEARCH_EXAMPLE_COMPONENT_TS__3 = goog.getMsg(" No.");
             i18n_2 = MSG_EXTERNAL_1345472093440723911$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SEARCH_TABLE_SEARCH_EXAMPLE_COMPONENT_TS__3;
           } else {
-            i18n_2 = $localize(_templateObject79 || (_templateObject79 = _taggedTemplateLiteral([":\u241F333f0164082b9f12f63ca11438b2085d074a5b0f\u241F1345472093440723911: No."])));
+            i18n_2 = $localize(_templateObject80 || (_templateObject80 = _taggedTemplateLiteral([":\u241F333f0164082b9f12f63ca11438b2085d074a5b0f\u241F1345472093440723911: No."])));
           }
 
           var i18n_4;
@@ -8664,7 +9176,7 @@
             var MSG_EXTERNAL_5923354303687392819$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SEARCH_TABLE_SEARCH_EXAMPLE_COMPONENT_TS__5 = goog.getMsg(" Name");
             i18n_4 = MSG_EXTERNAL_5923354303687392819$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SEARCH_TABLE_SEARCH_EXAMPLE_COMPONENT_TS__5;
           } else {
-            i18n_4 = $localize(_templateObject80 || (_templateObject80 = _taggedTemplateLiteral([":\u241F7b07cc6126aa22c8a3041963963e85a0791a7e40\u241F5923354303687392819: Name"])));
+            i18n_4 = $localize(_templateObject81 || (_templateObject81 = _taggedTemplateLiteral([":\u241F7b07cc6126aa22c8a3041963963e85a0791a7e40\u241F5923354303687392819: Name"])));
           }
 
           var i18n_6;
@@ -8673,7 +9185,7 @@
             var MSG_EXTERNAL_4366791221426489252$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SEARCH_TABLE_SEARCH_EXAMPLE_COMPONENT_TS__7 = goog.getMsg(" Features");
             i18n_6 = MSG_EXTERNAL_4366791221426489252$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SEARCH_TABLE_SEARCH_EXAMPLE_COMPONENT_TS__7;
           } else {
-            i18n_6 = $localize(_templateObject81 || (_templateObject81 = _taggedTemplateLiteral([":\u241F176794380c10213e5247f7350b40037bd3affcb3\u241F4366791221426489252: Features"])));
+            i18n_6 = $localize(_templateObject82 || (_templateObject82 = _taggedTemplateLiteral([":\u241F176794380c10213e5247f7350b40037bd3affcb3\u241F4366791221426489252: Features"])));
           }
 
           var i18n_8;
@@ -8682,7 +9194,7 @@
             var MSG_EXTERNAL_6940950714946520886$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SEARCH_TABLE_SEARCH_EXAMPLE_COMPONENT_TS__9 = goog.getMsg(" Asset Class");
             i18n_8 = MSG_EXTERNAL_6940950714946520886$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SEARCH_TABLE_SEARCH_EXAMPLE_COMPONENT_TS__9;
           } else {
-            i18n_8 = $localize(_templateObject82 || (_templateObject82 = _taggedTemplateLiteral([":\u241Fc123012b555ee9898f49540288d43c3c606e27d6\u241F6940950714946520886: Asset Class"])));
+            i18n_8 = $localize(_templateObject83 || (_templateObject83 = _taggedTemplateLiteral([":\u241Fc123012b555ee9898f49540288d43c3c606e27d6\u241F6940950714946520886: Asset Class"])));
           }
 
           var i18n_10;
@@ -8691,7 +9203,7 @@
             var MSG_EXTERNAL_7598846418510631873$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SEARCH_TABLE_SEARCH_EXAMPLE_COMPONENT_TS__11 = goog.getMsg(" Location");
             i18n_10 = MSG_EXTERNAL_7598846418510631873$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SEARCH_TABLE_SEARCH_EXAMPLE_COMPONENT_TS__11;
           } else {
-            i18n_10 = $localize(_templateObject83 || (_templateObject83 = _taggedTemplateLiteral([":\u241F4ed56c7c2b85b2b764c9853d121c291db3b70ed9\u241F7598846418510631873: Location"])));
+            i18n_10 = $localize(_templateObject84 || (_templateObject84 = _taggedTemplateLiteral([":\u241F4ed56c7c2b85b2b764c9853d121c291db3b70ed9\u241F7598846418510631873: Location"])));
           }
 
           var i18n_12;
@@ -8700,7 +9212,7 @@
             var MSG_EXTERNAL_7043724726246657652$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SEARCH_TABLE_SEARCH_EXAMPLE_COMPONENT_TS__13 = goog.getMsg(" Status");
             i18n_12 = MSG_EXTERNAL_7043724726246657652$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SEARCH_TABLE_SEARCH_EXAMPLE_COMPONENT_TS__13;
           } else {
-            i18n_12 = $localize(_templateObject84 || (_templateObject84 = _taggedTemplateLiteral([":\u241Ff3ab141a02057a7853b9cde7dea17eef6811e27a\u241F7043724726246657652: Status"])));
+            i18n_12 = $localize(_templateObject85 || (_templateObject85 = _taggedTemplateLiteral([":\u241Ff3ab141a02057a7853b9cde7dea17eef6811e27a\u241F7043724726246657652: Status"])));
           }
 
           var i18n_14;
@@ -8709,7 +9221,7 @@
             var MSG_EXTERNAL_3645300875970966243$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SEARCH_TABLE_SEARCH_EXAMPLE_COMPONENT_TS__15 = goog.getMsg(" Outages");
             i18n_14 = MSG_EXTERNAL_3645300875970966243$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SEARCH_TABLE_SEARCH_EXAMPLE_COMPONENT_TS__15;
           } else {
-            i18n_14 = $localize(_templateObject85 || (_templateObject85 = _taggedTemplateLiteral([":\u241Fe81b7832d164ea9359f7937353f7dfc314064a3a\u241F3645300875970966243: Outages"])));
+            i18n_14 = $localize(_templateObject86 || (_templateObject86 = _taggedTemplateLiteral([":\u241Fe81b7832d164ea9359f7937353f7dfc314064a3a\u241F3645300875970966243: Outages"])));
           }
 
           var i18n_16;
@@ -8718,7 +9230,7 @@
             var MSG_EXTERNAL_7108392645161261297$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SEARCH_TABLE_SEARCH_EXAMPLE_COMPONENT_TS__17 = goog.getMsg(" Checks");
             i18n_16 = MSG_EXTERNAL_7108392645161261297$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SEARCH_TABLE_SEARCH_EXAMPLE_COMPONENT_TS__17;
           } else {
-            i18n_16 = $localize(_templateObject86 || (_templateObject86 = _taggedTemplateLiteral([":\u241Ffc6c8586d4f4fbce21310ff2a21da10de8c8a04b\u241F7108392645161261297: Checks"])));
+            i18n_16 = $localize(_templateObject87 || (_templateObject87 = _taggedTemplateLiteral([":\u241Ffc6c8586d4f4fbce21310ff2a21da10de8c8a04b\u241F7108392645161261297: Checks"])));
           }
 
           return [["id", "nui-demo-searchable-table", 1, "nui-table__container"], ["id", "nui-demo-searchable-table-checkbox", 3, "valueChange"], [1, "nui-searchable-table__search"], ["id", "nui-demo-searchable-table-search", 3, "value", "search", "cancel"], ["filteringSearch", ""], ["nui-table", "", 3, "dataSource"], ["filteringTable", ""], ["nuiColumnDef", "position"], ["nui-header-cell", "", 4, "nuiHeaderCellDef"], ["nui-cell", "", 4, "nuiCellDef"], ["nuiColumnDef", "name"], ["nuiColumnDef", "features"], ["nuiColumnDef", "asset"], ["nuiColumnDef", "location"], ["nuiColumnDef", "status"], ["nuiColumnDef", "outages"], ["nuiColumnDef", "checks"], ["nui-header-row", "", 4, "nuiHeaderRowDef"], ["nui-row", "", 4, "nuiRowDef", "nuiRowDefColumns"], ["nui-header-cell", ""], i18n_2, ["nui-cell", ""], i18n_4, i18n_6, ["class", "icon-margin", 3, "icon", 4, "ngFor", "ngForOf"], [1, "icon-margin", 3, "icon"], i18n_8, i18n_10, i18n_12, i18n_14, i18n_16, [4, "ngFor", "ngForOf"], [3, "icon"], ["nui-header-row", ""], ["nui-row", ""]];
@@ -9722,7 +10234,7 @@
             var MSG_EXTERNAL_1345472093440723911$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_CELL_CONTENT_ALIGN_TABLE_CELL_CONTENT_ALIGN_EXAMPLE_COMPONENT_TS__1 = goog.getMsg(" No.");
             i18n_0 = MSG_EXTERNAL_1345472093440723911$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_CELL_CONTENT_ALIGN_TABLE_CELL_CONTENT_ALIGN_EXAMPLE_COMPONENT_TS__1;
           } else {
-            i18n_0 = $localize(_templateObject87 || (_templateObject87 = _taggedTemplateLiteral([":\u241F333f0164082b9f12f63ca11438b2085d074a5b0f\u241F1345472093440723911: No."])));
+            i18n_0 = $localize(_templateObject88 || (_templateObject88 = _taggedTemplateLiteral([":\u241F333f0164082b9f12f63ca11438b2085d074a5b0f\u241F1345472093440723911: No."])));
           }
 
           var i18n_2;
@@ -9731,7 +10243,7 @@
             var MSG_EXTERNAL_5923354303687392819$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_CELL_CONTENT_ALIGN_TABLE_CELL_CONTENT_ALIGN_EXAMPLE_COMPONENT_TS__3 = goog.getMsg(" Name");
             i18n_2 = MSG_EXTERNAL_5923354303687392819$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_CELL_CONTENT_ALIGN_TABLE_CELL_CONTENT_ALIGN_EXAMPLE_COMPONENT_TS__3;
           } else {
-            i18n_2 = $localize(_templateObject88 || (_templateObject88 = _taggedTemplateLiteral([":\u241F7b07cc6126aa22c8a3041963963e85a0791a7e40\u241F5923354303687392819: Name"])));
+            i18n_2 = $localize(_templateObject89 || (_templateObject89 = _taggedTemplateLiteral([":\u241F7b07cc6126aa22c8a3041963963e85a0791a7e40\u241F5923354303687392819: Name"])));
           }
 
           var i18n_4;
@@ -9740,7 +10252,7 @@
             var MSG_EXTERNAL_6599364831830861985$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_CELL_CONTENT_ALIGN_TABLE_CELL_CONTENT_ALIGN_EXAMPLE_COMPONENT_TS__5 = goog.getMsg("Features");
             i18n_4 = MSG_EXTERNAL_6599364831830861985$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_CELL_CONTENT_ALIGN_TABLE_CELL_CONTENT_ALIGN_EXAMPLE_COMPONENT_TS__5;
           } else {
-            i18n_4 = $localize(_templateObject89 || (_templateObject89 = _taggedTemplateLiteral([":\u241F6cdb1fea93d77c07950c0c76c6e0ad79ebbef084\u241F6599364831830861985:Features"])));
+            i18n_4 = $localize(_templateObject90 || (_templateObject90 = _taggedTemplateLiteral([":\u241F6cdb1fea93d77c07950c0c76c6e0ad79ebbef084\u241F6599364831830861985:Features"])));
           }
 
           var i18n_6;
@@ -9749,7 +10261,7 @@
             var MSG_EXTERNAL_6940950714946520886$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_CELL_CONTENT_ALIGN_TABLE_CELL_CONTENT_ALIGN_EXAMPLE_COMPONENT_TS__7 = goog.getMsg(" Asset Class");
             i18n_6 = MSG_EXTERNAL_6940950714946520886$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_CELL_CONTENT_ALIGN_TABLE_CELL_CONTENT_ALIGN_EXAMPLE_COMPONENT_TS__7;
           } else {
-            i18n_6 = $localize(_templateObject90 || (_templateObject90 = _taggedTemplateLiteral([":\u241Fc123012b555ee9898f49540288d43c3c606e27d6\u241F6940950714946520886: Asset Class"])));
+            i18n_6 = $localize(_templateObject91 || (_templateObject91 = _taggedTemplateLiteral([":\u241Fc123012b555ee9898f49540288d43c3c606e27d6\u241F6940950714946520886: Asset Class"])));
           }
 
           var i18n_8;
@@ -9758,7 +10270,7 @@
             var MSG_EXTERNAL_7598846418510631873$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_CELL_CONTENT_ALIGN_TABLE_CELL_CONTENT_ALIGN_EXAMPLE_COMPONENT_TS__9 = goog.getMsg(" Location");
             i18n_8 = MSG_EXTERNAL_7598846418510631873$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_CELL_CONTENT_ALIGN_TABLE_CELL_CONTENT_ALIGN_EXAMPLE_COMPONENT_TS__9;
           } else {
-            i18n_8 = $localize(_templateObject91 || (_templateObject91 = _taggedTemplateLiteral([":\u241F4ed56c7c2b85b2b764c9853d121c291db3b70ed9\u241F7598846418510631873: Location"])));
+            i18n_8 = $localize(_templateObject92 || (_templateObject92 = _taggedTemplateLiteral([":\u241F4ed56c7c2b85b2b764c9853d121c291db3b70ed9\u241F7598846418510631873: Location"])));
           }
 
           var i18n_10;
@@ -9767,7 +10279,7 @@
             var MSG_EXTERNAL_7043724726246657652$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_CELL_CONTENT_ALIGN_TABLE_CELL_CONTENT_ALIGN_EXAMPLE_COMPONENT_TS__11 = goog.getMsg(" Status");
             i18n_10 = MSG_EXTERNAL_7043724726246657652$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_CELL_CONTENT_ALIGN_TABLE_CELL_CONTENT_ALIGN_EXAMPLE_COMPONENT_TS__11;
           } else {
-            i18n_10 = $localize(_templateObject92 || (_templateObject92 = _taggedTemplateLiteral([":\u241Ff3ab141a02057a7853b9cde7dea17eef6811e27a\u241F7043724726246657652: Status"])));
+            i18n_10 = $localize(_templateObject93 || (_templateObject93 = _taggedTemplateLiteral([":\u241Ff3ab141a02057a7853b9cde7dea17eef6811e27a\u241F7043724726246657652: Status"])));
           }
 
           var i18n_12;
@@ -9776,7 +10288,7 @@
             var MSG_EXTERNAL_3645300875970966243$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_CELL_CONTENT_ALIGN_TABLE_CELL_CONTENT_ALIGN_EXAMPLE_COMPONENT_TS__13 = goog.getMsg(" Outages");
             i18n_12 = MSG_EXTERNAL_3645300875970966243$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_CELL_CONTENT_ALIGN_TABLE_CELL_CONTENT_ALIGN_EXAMPLE_COMPONENT_TS__13;
           } else {
-            i18n_12 = $localize(_templateObject93 || (_templateObject93 = _taggedTemplateLiteral([":\u241Fe81b7832d164ea9359f7937353f7dfc314064a3a\u241F3645300875970966243: Outages"])));
+            i18n_12 = $localize(_templateObject94 || (_templateObject94 = _taggedTemplateLiteral([":\u241Fe81b7832d164ea9359f7937353f7dfc314064a3a\u241F3645300875970966243: Outages"])));
           }
 
           var i18n_14;
@@ -9785,7 +10297,7 @@
             var MSG_EXTERNAL_7108392645161261297$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_CELL_CONTENT_ALIGN_TABLE_CELL_CONTENT_ALIGN_EXAMPLE_COMPONENT_TS__15 = goog.getMsg(" Checks");
             i18n_14 = MSG_EXTERNAL_7108392645161261297$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_CELL_CONTENT_ALIGN_TABLE_CELL_CONTENT_ALIGN_EXAMPLE_COMPONENT_TS__15;
           } else {
-            i18n_14 = $localize(_templateObject94 || (_templateObject94 = _taggedTemplateLiteral([":\u241Ffc6c8586d4f4fbce21310ff2a21da10de8c8a04b\u241F7108392645161261297: Checks"])));
+            i18n_14 = $localize(_templateObject95 || (_templateObject95 = _taggedTemplateLiteral([":\u241Ffc6c8586d4f4fbce21310ff2a21da10de8c8a04b\u241F7108392645161261297: Checks"])));
           }
 
           return [["id", "nui-demo-table-cell-content-align", 1, "nui-table__container"], ["nui-table", "", 3, "dataSource"], ["nuiColumnDef", "position"], ["nui-header-cell", "", "alignment", "center", 4, "nuiHeaderCellDef"], ["nui-cell", "", "alignment", "center", 4, "nuiCellDef"], ["nuiColumnDef", "name"], ["nui-header-cell", "", 4, "nuiHeaderCellDef"], ["nui-cell", "", 4, "nuiCellDef"], ["nuiColumnDef", "features"], ["nuiColumnDef", "asset"], ["nuiColumnDef", "location"], ["nui-cell", "", "class", "align-to-top", 4, "nuiCellDef"], ["nuiColumnDef", "status", "type", "icon"], ["nuiColumnDef", "outages"], ["nui-cell", "", "class", "align-to-bottom", 4, "nuiCellDef"], ["nuiColumnDef", "checks"], ["nui-header-row", "", 4, "nuiHeaderRowDef"], ["nui-row", "", 4, "nuiRowDef", "nuiRowDefColumns"], ["nui-header-cell", "", "alignment", "center"], i18n_0, ["nui-cell", "", "alignment", "center"], ["nui-header-cell", ""], i18n_2, ["nui-cell", ""], i18n_4, [1, "d-flex", "align-items-center"], ["class", "icon-margin", 3, "icon", 4, "ngFor", "ngForOf"], [1, "icon-margin", 3, "icon"], i18n_6, i18n_8, ["nui-cell", "", 1, "align-to-top"], i18n_10, [1, "d-flex", "align-items-center", "justify-content-center"], [3, "icon"], i18n_12, ["nui-cell", "", 1, "align-to-bottom"], i18n_14, [4, "ngFor", "ngForOf"], [1, "ml-2"], ["nui-header-row", ""], ["nui-row", ""]];
@@ -9978,169 +10490,175 @@
       /* harmony import */
 
 
-      var _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! tslib */
+      "mrSG");
+      /* harmony import */
+
+
+      var _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! @angular/cdk/scrolling */
       "vxfF");
       /* harmony import */
 
 
-      var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! @angular/core */
       "fXoL");
       /* harmony import */
 
 
-      var _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      var _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @nova-ui/bits */
       "b5Xb");
       /* harmony import */
 
 
-      var lodash_sample__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      var lodash_sample__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! lodash/sample */
       "fTpD");
       /* harmony import */
 
 
-      var lodash_sample__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(lodash_sample__WEBPACK_IMPORTED_MODULE_3__);
+      var lodash_sample__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(lodash_sample__WEBPACK_IMPORTED_MODULE_4__);
       /* harmony import */
 
 
-      var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! rxjs/operators */
       "kU1M");
       /* harmony import */
 
 
-      var _src_lib_switch_switch_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      var _src_lib_switch_switch_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! ../../../../../../src/lib/switch/switch.component */
       "6CEj");
       /* harmony import */
 
 
-      var _src_lib_table_table_virtual_scroll_table_sticky_header_directive__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      var _src_lib_table_table_virtual_scroll_table_sticky_header_directive__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! ../../../../../../src/lib/table/table-virtual-scroll/table-sticky-header.directive */
       "jAOl");
       /* harmony import */
 
 
-      var _src_lib_table_table_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      var _src_lib_table_table_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! ../../../../../../src/lib/table/table.component */
       "ey6q");
       /* harmony import */
 
 
-      var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      var _angular_common__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
       /*! @angular/common */
       "ofXK");
       /* harmony import */
 
 
-      var _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      var _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
       /*! ../../../../../../src/lib/table/table-row/table-row.component */
       "LFiI");
       /* harmony import */
 
 
-      var _src_lib_table_table_cell_table_column_def_directive__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+      var _src_lib_table_table_cell_table_column_def_directive__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
       /*! ../../../../../../src/lib/table/table-cell/table-column-def.directive */
       "XeyC");
       /* harmony import */
 
 
-      var _src_lib_table_table_cell_table_header_cell_def_directive__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+      var _src_lib_table_table_cell_table_header_cell_def_directive__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
       /*! ../../../../../../src/lib/table/table-cell/table-header-cell-def.directive */
       "htGY");
       /* harmony import */
 
 
-      var _src_lib_table_table_cell_table_cell_def_directive__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+      var _src_lib_table_table_cell_table_cell_def_directive__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
       /*! ../../../../../../src/lib/table/table-cell/table-cell-def.directive */
       "/BSE");
       /* harmony import */
 
 
-      var _src_lib_table_table_cell_table_header_cell_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
+      var _src_lib_table_table_cell_table_header_cell_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
       /*! ../../../../../../src/lib/table/table-cell/table-header-cell.component */
       "Ppt+");
       /* harmony import */
 
 
-      var _src_lib_table_table_cell_table_cell_directive__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
+      var _src_lib_table_table_cell_table_cell_directive__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
       /*! ../../../../../../src/lib/table/table-cell/table-cell.directive */
       "jdPS");
 
       function TableVirtualScrollStickyHeaderExampleComponent_ng_container_8_th_1_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "th", 13);
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "th", 13);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
         }
 
         if (rf & 2) {
-          var column_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]().$implicit;
+          var column_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]().$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"](" ", column_r3, "");
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate1"](" ", column_r3, "");
         }
       }
 
       function TableVirtualScrollStickyHeaderExampleComponent_ng_container_8_td_2_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "td", 14);
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "td", 14);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
         }
 
         if (rf & 2) {
           var element_r7 = ctx.$implicit;
 
-          var column_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]().$implicit;
+          var column_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]().$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](element_r7[column_r3]);
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](element_r7[column_r3]);
         }
       }
 
       function TableVirtualScrollStickyHeaderExampleComponent_ng_container_8_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementContainerStart"](0, 10);
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainerStart"](0, 10);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](1, TableVirtualScrollStickyHeaderExampleComponent_ng_container_8_th_1_Template, 2, 1, "th", 11);
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](1, TableVirtualScrollStickyHeaderExampleComponent_ng_container_8_th_1_Template, 2, 1, "th", 11);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](2, TableVirtualScrollStickyHeaderExampleComponent_ng_container_8_td_2_Template, 2, 1, "td", 12);
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, TableVirtualScrollStickyHeaderExampleComponent_ng_container_8_td_2_Template, 2, 1, "td", 12);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementContainerEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainerEnd"]();
         }
 
         if (rf & 2) {
           var column_r3 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("nuiColumnDef", column_r3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("nuiColumnDef", column_r3);
         }
       }
 
       function TableVirtualScrollStickyHeaderExampleComponent_tr_9_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](0, "tr", 15);
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](0, "tr", 15);
         }
       }
 
       function TableVirtualScrollStickyHeaderExampleComponent_ng_template_10_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](0, "tr", 16);
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](0, "tr", 16);
         }
 
         if (rf & 2) {
           var context_r9 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("rowObject", context_r9);
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("rowObject", context_r9);
         }
       }
 
@@ -10153,7 +10671,7 @@
 
           this.placeholderItems = []; // The dynamically changed array of items to render by the table
 
-          this.displayedColumns = ["no", "nameTitle", "nameFirst", "nameLast", "city", "postcode"];
+          this.displayedColumns = ["no", "nameFirst", "nameLast", "city", "postcode"];
           this.makeSticky = true;
           this.itemSize = 40;
           this.gridHeight = 400; // trackBy handler used to identify uniquely each item in the table
@@ -10169,7 +10687,7 @@
         _createClass(TableVirtualScrollStickyHeaderExampleComponent, [{
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this17 = this;
+            var _this18 = this;
 
             this.dataSourceService.componentTree = {
               // Note: Using paginator as filter to be able to get specific range
@@ -10177,25 +10695,38 @@
                 componentInstance: {
                   getFilters: function getFilters() {
                     return {
-                      value: _this17.viewport.getRenderedRange()
+                      value: _this18.viewport.getRenderedRange()
                     };
                   }
                 }
               }
             }; // Note: Creating a stream of visible items to be bound to the table and increase the performance
 
-            this.visibleItems$ = this.viewport.renderedRangeStream.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["startWith"])({
+            this.visibleItems$ = this.viewport.renderedRangeStream.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["startWith"])({
               start: 0,
               end: 10
             }), // Note: On range change applying filters
-            Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])(function () {
-              return _this17.dataSourceService.applyFilters();
+            Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["tap"])(function () {
+              return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(_this18, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee6() {
+                return regeneratorRuntime.wrap(function _callee6$(_context6) {
+                  while (1) {
+                    switch (_context6.prev = _context6.next) {
+                      case 0:
+                        return _context6.abrupt("return", this.dataSourceService.applyFilters());
+
+                      case 1:
+                      case "end":
+                        return _context6.stop();
+                    }
+                  }
+                }, _callee6, this);
+              }));
             }), // Subscribing to the filter results transforming and merging them into the stream
-            Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["switchMap"])(function () {
-              return _this17.dataSourceService.outputsSubject.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (result) {
+            Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["switchMap"])(function () {
+              return _this18.dataSourceService.outputsSubject.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["map"])(function (result) {
                 // Updating mock items list
-                if (_this17.placeholderItems.length !== result.paginator.total) {
-                  _this17.placeholderItems = Array.from({
+                if (_this18.placeholderItems.length !== result.paginator.total) {
+                  _this18.placeholderItems = Array.from({
                     length: result.paginator.total
                   });
                 } // Mapping the values to array to be able to bind them to the table dataSource
@@ -10218,27 +10749,27 @@
       }();
 
       TableVirtualScrollStickyHeaderExampleComponent.ɵfac = function TableVirtualScrollStickyHeaderExampleComponent_Factory(t) {
-        return new (t || TableVirtualScrollStickyHeaderExampleComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["ClientSideDataSource"]));
+        return new (t || TableVirtualScrollStickyHeaderExampleComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["ClientSideDataSource"]));
       };
 
-      TableVirtualScrollStickyHeaderExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
+      TableVirtualScrollStickyHeaderExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({
         type: TableVirtualScrollStickyHeaderExampleComponent,
         selectors: [["nui-table-virtual-scroll-sticky-header-example"]],
         viewQuery: function TableVirtualScrollStickyHeaderExampleComponent_Query(rf, ctx) {
           if (rf & 1) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵviewQuery"](_angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_0__["CdkVirtualScrollViewport"], 1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵviewQuery"](_angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__["CdkVirtualScrollViewport"], 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵviewQuery"](_nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["TableStickyHeaderDirective"], 1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵviewQuery"](_nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["TableStickyHeaderDirective"], 1);
           }
 
           if (rf & 2) {
             var _t;
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx.viewport = _t.first);
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx.stickyHeaderDirective = _t.first);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵloadQuery"]()) && (ctx.viewport = _t.first);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵloadQuery"]()) && (ctx.stickyHeaderDirective = _t.first);
           }
         },
-        features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵProvidersFeature"]([_nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["ClientSideDataSource"]])],
+        features: [_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵProvidersFeature"]([_nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["ClientSideDataSource"]])],
         decls: 11,
         vars: 17,
         consts: function consts() {
@@ -10250,110 +10781,107 @@
             });
             i18n_0 = MSG_EXTERNAL_2717514595278786545$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_STICKY_HEADER_TABLE_VIRTUAL_SCROLL_STICKY_HEADER_EXAMPLE_COMPONENT_TS_1;
           } else {
-            i18n_0 = $localize(_templateObject95 || (_templateObject95 = _taggedTemplateLiteral([":\u241Fe85c9ef3064327671f6a2c1a07d2a9eb628df244\u241F2717514595278786545: ", ":INTERPOLATION: "])), "\uFFFD0\uFFFD");
+            i18n_0 = $localize(_templateObject96 || (_templateObject96 = _taggedTemplateLiteral([":\u241Fe85c9ef3064327671f6a2c1a07d2a9eb628df244\u241F2717514595278786545: ", ":INTERPOLATION: "])), "\uFFFD0\uFFFD");
           }
 
           return [[1, "row", "mb-2"], [1, "col-3"], [3, "value", "valueChange"], i18n_0, ["id", "nui-demo-table-sticky-header"], ["tableStickyHeader", "", 1, "h-100", 3, "itemSize"], ["nui-table", "", 3, "dataSource", "trackBy", "sortable"], [3, "nuiColumnDef", 4, "ngFor", "ngForOf"], ["nui-header-row", "", 4, "nuiHeaderRowDef"], ["nuiRowDef", "", "cdkVirtualFor", "", 3, "nuiRowDefColumns", "cdkVirtualForOf", "cdkVirtualForTrackBy"], [3, "nuiColumnDef"], ["nui-header-cell", "", 4, "nuiHeaderCellDef"], ["nui-cell", "", 4, "nuiCellDef"], ["nui-header-cell", ""], ["nui-cell", ""], ["nui-header-row", ""], ["nui-row", "", 3, "rowObject"]];
         },
         template: function TableVirtualScrollStickyHeaderExampleComponent_Template(rf, ctx) {
           if (rf & 1) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "div", 1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](1, "div", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "nui-switch", 2);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](2, "nui-switch", 2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("valueChange", function TableVirtualScrollStickyHeaderExampleComponent_Template_nui_switch_valueChange_2_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("valueChange", function TableVirtualScrollStickyHeaderExampleComponent_Template_nui_switch_valueChange_2_listener($event) {
               return ctx.updateStickyState($event);
             });
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵi18n"](3, 3);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵi18n"](3, 3);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](4, "div", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](4, "div", 4);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "cdk-virtual-scroll-viewport", 5);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](5, "cdk-virtual-scroll-viewport", 5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](6, "table", 6);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](6, "table", 6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipe"](7, "async");
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipe"](7, "async");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](8, TableVirtualScrollStickyHeaderExampleComponent_ng_container_8_Template, 3, 1, "ng-container", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](8, TableVirtualScrollStickyHeaderExampleComponent_ng_container_8_Template, 3, 1, "ng-container", 7);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](9, TableVirtualScrollStickyHeaderExampleComponent_tr_9_Template, 1, 0, "tr", 8);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](9, TableVirtualScrollStickyHeaderExampleComponent_tr_9_Template, 1, 0, "tr", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](10, TableVirtualScrollStickyHeaderExampleComponent_ng_template_10_Template, 1, 1, "ng-template", 9);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](10, TableVirtualScrollStickyHeaderExampleComponent_ng_template_10_Template, 1, 1, "ng-template", 9);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
           }
 
           if (rf & 2) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", ctx.makeSticky);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("value", ctx.makeSticky);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵi18nExp"](ctx.makeSticky ? "Sticky" : "Not Sticky");
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵi18nExp"](ctx.makeSticky ? "Sticky" : "Not Sticky");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵi18nApply"](3);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵi18nApply"](3);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵstyleProp"]("height", ctx.gridHeight, "px")("max-width", 1300, "px");
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵstyleProp"]("height", ctx.gridHeight, "px")("max-width", 1300, "px");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("itemSize", ctx.itemSize);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("itemSize", ctx.itemSize);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("dataSource", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipeBind1"](7, 15, ctx.visibleItems$))("trackBy", ctx.trackByNo)("sortable", true);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("dataSource", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipeBind1"](7, 15, ctx.visibleItems$))("trackBy", ctx.trackByNo)("sortable", true);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx.displayedColumns);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx.displayedColumns);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("nuiHeaderRowDef", ctx.displayedColumns);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("nuiHeaderRowDef", ctx.displayedColumns);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("nuiRowDefColumns", ctx.displayedColumns)("cdkVirtualForOf", ctx.placeholderItems)("cdkVirtualForTrackBy", ctx.trackByNo);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("nuiRowDefColumns", ctx.displayedColumns)("cdkVirtualForOf", ctx.placeholderItems)("cdkVirtualForTrackBy", ctx.trackByNo);
           }
         },
-        directives: [_src_lib_switch_switch_component__WEBPACK_IMPORTED_MODULE_5__["SwitchComponent"], _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_0__["CdkVirtualScrollViewport"], _src_lib_table_table_virtual_scroll_table_sticky_header_directive__WEBPACK_IMPORTED_MODULE_6__["TableStickyHeaderDirective"], _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_0__["CdkFixedSizeVirtualScroll"], _src_lib_table_table_component__WEBPACK_IMPORTED_MODULE_7__["TableComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_8__["NgForOf"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_9__["TableHeaderRowDefDirective"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_9__["TableRowDefDirective"], _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_0__["CdkVirtualForOf"], _src_lib_table_table_cell_table_column_def_directive__WEBPACK_IMPORTED_MODULE_10__["TableColumnDefDirective"], _src_lib_table_table_cell_table_header_cell_def_directive__WEBPACK_IMPORTED_MODULE_11__["TableHeaderCellDefDirective"], _src_lib_table_table_cell_table_cell_def_directive__WEBPACK_IMPORTED_MODULE_12__["TableCellDefDirective"], _src_lib_table_table_cell_table_header_cell_component__WEBPACK_IMPORTED_MODULE_13__["TableHeaderCellComponent"], _src_lib_table_table_cell_table_cell_directive__WEBPACK_IMPORTED_MODULE_14__["TableCellDirective"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_9__["TableHeaderRowComponent"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_9__["TableRowComponent"]],
-        pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_8__["AsyncPipe"]],
+        directives: [_src_lib_switch_switch_component__WEBPACK_IMPORTED_MODULE_6__["SwitchComponent"], _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__["CdkVirtualScrollViewport"], _src_lib_table_table_virtual_scroll_table_sticky_header_directive__WEBPACK_IMPORTED_MODULE_7__["TableStickyHeaderDirective"], _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__["CdkFixedSizeVirtualScroll"], _src_lib_table_table_component__WEBPACK_IMPORTED_MODULE_8__["TableComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_9__["NgForOf"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_10__["TableHeaderRowDefDirective"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_10__["TableRowDefDirective"], _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__["CdkVirtualForOf"], _src_lib_table_table_cell_table_column_def_directive__WEBPACK_IMPORTED_MODULE_11__["TableColumnDefDirective"], _src_lib_table_table_cell_table_header_cell_def_directive__WEBPACK_IMPORTED_MODULE_12__["TableHeaderCellDefDirective"], _src_lib_table_table_cell_table_cell_def_directive__WEBPACK_IMPORTED_MODULE_13__["TableCellDefDirective"], _src_lib_table_table_cell_table_header_cell_component__WEBPACK_IMPORTED_MODULE_14__["TableHeaderCellComponent"], _src_lib_table_table_cell_table_cell_directive__WEBPACK_IMPORTED_MODULE_15__["TableCellDirective"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_10__["TableHeaderRowComponent"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_10__["TableRowComponent"]],
+        pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_9__["AsyncPipe"]],
         encapsulation: 2,
         changeDetection: 0
       });
+      var PEOPLE = ["Elena", "Madelyn", "Baggio", "Josh", "Lukas", "Blake", "Frantz", "Dima", "Serhii", "Vita", "Vlad", "Ivan", "Dumitru"];
+      var CITIES = ["Bucharest", "Kiev", "Austin", "Brno", "Frankfurt pe Main", "Sutton-under-Whitestonecliffe", "Vila Bela da Santíssima Trindade"];
 
       function generateUsers(length) {
         return Array.from({
           length: length
         }).map(function (obj, id) {
-          var personName = lodash_sample__WEBPACK_IMPORTED_MODULE_3___default()(["Josh", "Lukas", "Blake", "Frantz", "Dima", "Serhii", "Vita", "Vlad", "Ivan", "Dumitru"]) || "Josh";
+          var personName = lodash_sample__WEBPACK_IMPORTED_MODULE_4___default()(PEOPLE) || PEOPLE[0];
           return {
             no: id,
             postcode: id * 1000000 * id,
-            cell: "0000",
-            city: lodash_sample__WEBPACK_IMPORTED_MODULE_3___default()(["Bucharest", "Kiev", "Austin", "Brno", "Frankfurt pe Main", "Sutton-under-Whitestonecliffe", "Vila Bela da Santíssima Trindade"]) || "Bucharest",
-            country: "Unknown",
-            email: "".concat(personName.toLocaleLowerCase(), "@@sw.com"),
-            gender: "Unknown",
+            city: lodash_sample__WEBPACK_IMPORTED_MODULE_4___default()(CITIES) || CITIES[0],
             nameFirst: personName,
-            nameLast: "UnknownLast",
-            nameTitle: "Sir."
+            nameLast: "UnknownLast"
           };
         });
       }
@@ -10754,7 +11282,7 @@
         _createClass(TableSelectExampleComponent, [{
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this18 = this;
+            var _this19 = this;
 
             this.dataSourceService.componentTree = {
               paginator: {
@@ -10764,8 +11292,8 @@
             this.outputsSubscription = this.dataSourceService.outputsSubject.subscribe(function (data) {
               var _a, _b;
 
-              _this18.dataSource = (_a = data.repeat) === null || _a === void 0 ? void 0 : _a.itemsSource;
-              _this18.paginationTotal = (_b = data.paginator) === null || _b === void 0 ? void 0 : _b.total;
+              _this19.dataSource = (_a = data.repeat) === null || _a === void 0 ? void 0 : _a.itemsSource;
+              _this19.paginationTotal = (_b = data.paginator) === null || _b === void 0 ? void 0 : _b.total;
             });
             this.applyFilters();
           }
@@ -10823,7 +11351,7 @@
             var MSG_EXTERNAL_1345472093440723911$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECT_TABLE_SELECT_EXAMPLE_COMPONENT_TS__2 = goog.getMsg(" No.");
             i18n_1 = MSG_EXTERNAL_1345472093440723911$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECT_TABLE_SELECT_EXAMPLE_COMPONENT_TS__2;
           } else {
-            i18n_1 = $localize(_templateObject96 || (_templateObject96 = _taggedTemplateLiteral([":\u241F333f0164082b9f12f63ca11438b2085d074a5b0f\u241F1345472093440723911: No."])));
+            i18n_1 = $localize(_templateObject97 || (_templateObject97 = _taggedTemplateLiteral([":\u241F333f0164082b9f12f63ca11438b2085d074a5b0f\u241F1345472093440723911: No."])));
           }
 
           var i18n_3;
@@ -10832,7 +11360,7 @@
             var MSG_EXTERNAL_1466114336146187941$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECT_TABLE_SELECT_EXAMPLE_COMPONENT_TS__4 = goog.getMsg(" Item");
             i18n_3 = MSG_EXTERNAL_1466114336146187941$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECT_TABLE_SELECT_EXAMPLE_COMPONENT_TS__4;
           } else {
-            i18n_3 = $localize(_templateObject97 || (_templateObject97 = _taggedTemplateLiteral([":\u241F25089eb429c6d3c5693152e8f3683de49f7f9707\u241F1466114336146187941: Item"])));
+            i18n_3 = $localize(_templateObject98 || (_templateObject98 = _taggedTemplateLiteral([":\u241F25089eb429c6d3c5693152e8f3683de49f7f9707\u241F1466114336146187941: Item"])));
           }
 
           var i18n_5;
@@ -10841,7 +11369,7 @@
             var MSG_EXTERNAL_4556215123825736249$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECT_TABLE_SELECT_EXAMPLE_COMPONENT_TS__6 = goog.getMsg(" Description");
             i18n_5 = MSG_EXTERNAL_4556215123825736249$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECT_TABLE_SELECT_EXAMPLE_COMPONENT_TS__6;
           } else {
-            i18n_5 = $localize(_templateObject98 || (_templateObject98 = _taggedTemplateLiteral([":\u241F1966b0173d4a08be5ddb5cda1246d604fcd242c7\u241F4556215123825736249: Description"])));
+            i18n_5 = $localize(_templateObject99 || (_templateObject99 = _taggedTemplateLiteral([":\u241F1966b0173d4a08be5ddb5cda1246d604fcd242c7\u241F4556215123825736249: Description"])));
           }
 
           var i18n_7;
@@ -10850,7 +11378,7 @@
             var MSG_EXTERNAL_7598846418510631873$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECT_TABLE_SELECT_EXAMPLE_COMPONENT_TS__8 = goog.getMsg(" Location");
             i18n_7 = MSG_EXTERNAL_7598846418510631873$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECT_TABLE_SELECT_EXAMPLE_COMPONENT_TS__8;
           } else {
-            i18n_7 = $localize(_templateObject99 || (_templateObject99 = _taggedTemplateLiteral([":\u241F4ed56c7c2b85b2b764c9853d121c291db3b70ed9\u241F7598846418510631873: Location"])));
+            i18n_7 = $localize(_templateObject100 || (_templateObject100 = _taggedTemplateLiteral([":\u241F4ed56c7c2b85b2b764c9853d121c291db3b70ed9\u241F7598846418510631873: Location"])));
           }
 
           return [["id", "nui-demo-table-select", 1, "nui-table__container"], ["nui-table", "", 3, "dataSource", "totalItems", "selection", "selectable", "trackBy", "selectionChange"], ["nuiColumnDef", "position"], ["nui-header-cell", "", 4, "nuiHeaderCellDef"], ["nui-cell", "", 4, "nuiCellDef"], ["nuiColumnDef", "item"], ["nuiColumnDef", "description"], ["nui-cell", "", 3, "tooltipText", 4, "nuiCellDef"], ["nuiColumnDef", "status", "type", "icon"], ["nuiColumnDef", "location"], ["nui-header-row", "", 4, "nuiHeaderRowDef"], ["nui-row", "", 3, "rowObject", 4, "nuiRowDef", "nuiRowDefColumns"], ["id", "nui-demo-table-select-paginator", "activeClass", "active", "disabledClass", "disabled", "showPrevNext", "true", 3, "page", "pageSize", "total", "pagerAction"], ["filteringPaginator", ""], [1, "flex-row-container"], [1, "flex-independent-row-item"], ["nui-header-cell", ""], i18n_1, ["nui-cell", ""], i18n_3, i18n_5, ["nui-cell", "", 3, "tooltipText"], [1, "d-flex", "align-items-center"], [3, "icon"], i18n_7, ["nui-header-row", ""], ["nui-row", "", 3, "rowObject"]];
@@ -11762,16 +12290,16 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this19 = this;
+            var _this20 = this;
 
             this.dataSource.busy.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["takeUntil"])(this.onDestroy$)).subscribe(function (busy) {
-              _this19._isBusy = busy;
+              _this20._isBusy = busy;
             });
           }
         }, {
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this20 = this;
+            var _this21 = this;
 
             this.registerVirtualScroll();
             this.viewportManager // Note: Initializing viewportManager with the repeat's CDK Viewport Ref
@@ -11783,16 +12311,16 @@
             }).pipe( // Note: In case we know the total number of items we can stop the stream when dataset end is reached
             // Otherwise we can let VirtualViewportManager to stop when last received page range will not match requested range
             Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["filter"])(function (range) {
-              return _this20.totalItems ? _this20.totalItems >= range.end : true;
+              return _this21.totalItems ? _this21.totalItems >= range.end : true;
             }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["tap"])(function () {
-              return _this20.dataSource.applyFilters();
+              return _this21.dataSource.applyFilters();
             }), // Note: Using the same stream to subscribe to the outputsSubject and update the items list
             Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["switchMap"])(function () {
-              return _this20.dataSource.outputsSubject.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["tap"])(function (outputs) {
-                _this20._totalItems = outputs.totalItems;
-                _this20.users = outputs.repeat.itemsSource || [];
+              return _this21.dataSource.outputsSubject.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["tap"])(function (outputs) {
+                _this21._totalItems = outputs.totalItems;
+                _this21.users = outputs.repeat.itemsSource || [];
 
-                _this20.cd.detectChanges();
+                _this21.cd.detectChanges();
               }));
             }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["takeUntil"])(this.onDestroy$)).subscribe();
           }
@@ -11846,7 +12374,7 @@
             });
             i18n_0 = MSG_EXTERNAL_299948609284975408$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_TABLE_VIRTUAL_SCROLL_REAL_API_EXAMPLE_COMPONENT_TS_1;
           } else {
-            i18n_0 = $localize(_templateObject100 || (_templateObject100 = _taggedTemplateLiteral([":\u241F56b6c3648cf7e13e13d2a4f21a55fd2b4c4689d5\u241F299948609284975408: ", ":INTERPOLATION: "])), "\uFFFD0\uFFFD");
+            i18n_0 = $localize(_templateObject101 || (_templateObject101 = _taggedTemplateLiteral([":\u241F56b6c3648cf7e13e13d2a4f21a55fd2b4c4689d5\u241F299948609284975408: ", ":INTERPOLATION: "])), "\uFFFD0\uFFFD");
           }
 
           var i18n_2;
@@ -11855,7 +12383,7 @@
             var MSG_EXTERNAL_1345472093440723911$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_TABLE_VIRTUAL_SCROLL_REAL_API_EXAMPLE_COMPONENT_TS__3 = goog.getMsg(" No.");
             i18n_2 = MSG_EXTERNAL_1345472093440723911$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_TABLE_VIRTUAL_SCROLL_REAL_API_EXAMPLE_COMPONENT_TS__3;
           } else {
-            i18n_2 = $localize(_templateObject101 || (_templateObject101 = _taggedTemplateLiteral([":\u241F333f0164082b9f12f63ca11438b2085d074a5b0f\u241F1345472093440723911: No."])));
+            i18n_2 = $localize(_templateObject102 || (_templateObject102 = _taggedTemplateLiteral([":\u241F333f0164082b9f12f63ca11438b2085d074a5b0f\u241F1345472093440723911: No."])));
           }
 
           var i18n_4;
@@ -11864,7 +12392,7 @@
             var MSG_EXTERNAL_8357643335000303339$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_TABLE_VIRTUAL_SCROLL_REAL_API_EXAMPLE_COMPONENT_TS__5 = goog.getMsg(" Title");
             i18n_4 = MSG_EXTERNAL_8357643335000303339$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_TABLE_VIRTUAL_SCROLL_REAL_API_EXAMPLE_COMPONENT_TS__5;
           } else {
-            i18n_4 = $localize(_templateObject102 || (_templateObject102 = _taggedTemplateLiteral([":\u241F952a1244074407cd841ce6253538e566581f10dd\u241F8357643335000303339: Title"])));
+            i18n_4 = $localize(_templateObject103 || (_templateObject103 = _taggedTemplateLiteral([":\u241F952a1244074407cd841ce6253538e566581f10dd\u241F8357643335000303339: Title"])));
           }
 
           var i18n_6;
@@ -11873,7 +12401,7 @@
             var MSG_EXTERNAL_2860311194545881177$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_TABLE_VIRTUAL_SCROLL_REAL_API_EXAMPLE_COMPONENT_TS__7 = goog.getMsg(" First Name");
             i18n_6 = MSG_EXTERNAL_2860311194545881177$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_TABLE_VIRTUAL_SCROLL_REAL_API_EXAMPLE_COMPONENT_TS__7;
           } else {
-            i18n_6 = $localize(_templateObject103 || (_templateObject103 = _taggedTemplateLiteral([":\u241Fba4a0caee703d6328fdb0d70380f541915451742\u241F2860311194545881177: First Name"])));
+            i18n_6 = $localize(_templateObject104 || (_templateObject104 = _taggedTemplateLiteral([":\u241Fba4a0caee703d6328fdb0d70380f541915451742\u241F2860311194545881177: First Name"])));
           }
 
           var i18n_8;
@@ -11882,7 +12410,7 @@
             var MSG_EXTERNAL_1738284750176372142$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_TABLE_VIRTUAL_SCROLL_REAL_API_EXAMPLE_COMPONENT_TS__9 = goog.getMsg(" Last Name");
             i18n_8 = MSG_EXTERNAL_1738284750176372142$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_TABLE_VIRTUAL_SCROLL_REAL_API_EXAMPLE_COMPONENT_TS__9;
           } else {
-            i18n_8 = $localize(_templateObject104 || (_templateObject104 = _taggedTemplateLiteral([":\u241F26b7649337e48ef3e3ccd71ea1a710dab5f7eb61\u241F1738284750176372142: Last Name"])));
+            i18n_8 = $localize(_templateObject105 || (_templateObject105 = _taggedTemplateLiteral([":\u241F26b7649337e48ef3e3ccd71ea1a710dab5f7eb61\u241F1738284750176372142: Last Name"])));
           }
 
           var i18n_10;
@@ -11891,7 +12419,7 @@
             var MSG_EXTERNAL_2667859507116816026$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_TABLE_VIRTUAL_SCROLL_REAL_API_EXAMPLE_COMPONENT_TS__11 = goog.getMsg(" Gender");
             i18n_10 = MSG_EXTERNAL_2667859507116816026$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_TABLE_VIRTUAL_SCROLL_REAL_API_EXAMPLE_COMPONENT_TS__11;
           } else {
-            i18n_10 = $localize(_templateObject105 || (_templateObject105 = _taggedTemplateLiteral([":\u241F8a4933776bdd10c9818e105e60d956769de4149f\u241F2667859507116816026: Gender"])));
+            i18n_10 = $localize(_templateObject106 || (_templateObject106 = _taggedTemplateLiteral([":\u241F8a4933776bdd10c9818e105e60d956769de4149f\u241F2667859507116816026: Gender"])));
           }
 
           var i18n_12;
@@ -11900,7 +12428,7 @@
             var MSG_EXTERNAL_1456073909159321718$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_TABLE_VIRTUAL_SCROLL_REAL_API_EXAMPLE_COMPONENT_TS__13 = goog.getMsg(" Country");
             i18n_12 = MSG_EXTERNAL_1456073909159321718$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_TABLE_VIRTUAL_SCROLL_REAL_API_EXAMPLE_COMPONENT_TS__13;
           } else {
-            i18n_12 = $localize(_templateObject106 || (_templateObject106 = _taggedTemplateLiteral([":\u241F0425e05bbff231ff83e71da0ecbf4e5aae0b02cf\u241F1456073909159321718: Country"])));
+            i18n_12 = $localize(_templateObject107 || (_templateObject107 = _taggedTemplateLiteral([":\u241F0425e05bbff231ff83e71da0ecbf4e5aae0b02cf\u241F1456073909159321718: Country"])));
           }
 
           var i18n_14;
@@ -11909,7 +12437,7 @@
             var MSG_EXTERNAL_8764220957450565928$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_TABLE_VIRTUAL_SCROLL_REAL_API_EXAMPLE_COMPONENT_TS__15 = goog.getMsg(" City");
             i18n_14 = MSG_EXTERNAL_8764220957450565928$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_TABLE_VIRTUAL_SCROLL_REAL_API_EXAMPLE_COMPONENT_TS__15;
           } else {
-            i18n_14 = $localize(_templateObject107 || (_templateObject107 = _taggedTemplateLiteral([":\u241F8ecca5416af6383f4ca3e66acf35eca90e690a3c\u241F8764220957450565928: City"])));
+            i18n_14 = $localize(_templateObject108 || (_templateObject108 = _taggedTemplateLiteral([":\u241F8ecca5416af6383f4ca3e66acf35eca90e690a3c\u241F8764220957450565928: City"])));
           }
 
           var i18n_16;
@@ -11918,7 +12446,7 @@
             var MSG_EXTERNAL_6046214701664071824$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_TABLE_VIRTUAL_SCROLL_REAL_API_EXAMPLE_COMPONENT_TS__17 = goog.getMsg(" Postcode");
             i18n_16 = MSG_EXTERNAL_6046214701664071824$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_TABLE_VIRTUAL_SCROLL_REAL_API_EXAMPLE_COMPONENT_TS__17;
           } else {
-            i18n_16 = $localize(_templateObject108 || (_templateObject108 = _taggedTemplateLiteral([":\u241F12219316a6afe56a50fe109f4ded8640e551d35a\u241F6046214701664071824: Postcode"])));
+            i18n_16 = $localize(_templateObject109 || (_templateObject109 = _taggedTemplateLiteral([":\u241F12219316a6afe56a50fe109f4ded8640e551d35a\u241F6046214701664071824: Postcode"])));
           }
 
           var i18n_18;
@@ -11927,7 +12455,7 @@
             var MSG_EXTERNAL_9117442902261307677$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_TABLE_VIRTUAL_SCROLL_REAL_API_EXAMPLE_COMPONENT_TS__19 = goog.getMsg(" Email");
             i18n_18 = MSG_EXTERNAL_9117442902261307677$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_TABLE_VIRTUAL_SCROLL_REAL_API_EXAMPLE_COMPONENT_TS__19;
           } else {
-            i18n_18 = $localize(_templateObject109 || (_templateObject109 = _taggedTemplateLiteral([":\u241Fa20a6d4a37afdd7b03a99c1673b6625e1bfd319b\u241F9117442902261307677: Email"])));
+            i18n_18 = $localize(_templateObject110 || (_templateObject110 = _taggedTemplateLiteral([":\u241Fa20a6d4a37afdd7b03a99c1673b6625e1bfd319b\u241F9117442902261307677: Email"])));
           }
 
           var i18n_20;
@@ -11936,7 +12464,7 @@
             var MSG_EXTERNAL_7006732017012080604$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_TABLE_VIRTUAL_SCROLL_REAL_API_EXAMPLE_COMPONENT_TS__21 = goog.getMsg(" Cell");
             i18n_20 = MSG_EXTERNAL_7006732017012080604$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_REAL_API_TABLE_VIRTUAL_SCROLL_REAL_API_EXAMPLE_COMPONENT_TS__21;
           } else {
-            i18n_20 = $localize(_templateObject110 || (_templateObject110 = _taggedTemplateLiteral([":\u241F714a2901dd3ebc87509d7e399a32d0c439fa6c39\u241F7006732017012080604: Cell"])));
+            i18n_20 = $localize(_templateObject111 || (_templateObject111 = _taggedTemplateLiteral([":\u241F714a2901dd3ebc87509d7e399a32d0c439fa6c39\u241F7006732017012080604: Cell"])));
           }
 
           return [[1, "mb-3"], [1, "row"], [1, "col-3"], [3, "value", "valueChange"], i18n_0, [2, "border-color", "lightgrey"], ["tableVirtualScroll", "", 3, "rowHeight", "rowCount"], ["nui-table", "", 3, "dataSource", "resizable", "reorderable"], ["nuiColumnDef", "no", 3, "columnWidth"], ["nui-header-cell", "", 4, "nuiHeaderCellDef"], ["nui-cell", "", 4, "nuiCellDef"], ["nuiColumnDef", "nameTitle", 3, "columnWidth"], ["nuiColumnDef", "nameFirst", 3, "columnWidth"], ["nuiColumnDef", "nameLast", 3, "columnWidth"], ["nuiColumnDef", "gender", 3, "columnWidth"], ["nuiColumnDef", "country", 3, "columnWidth"], ["nuiColumnDef", "city", 3, "columnWidth"], ["nuiColumnDef", "postcode", 3, "columnWidth"], ["nuiColumnDef", "email", 3, "columnWidth"], ["nuiColumnDef", "cell", 3, "columnWidth"], ["nui-cell", "", "style", "overflow: visible", 4, "nuiCellDef"], ["nui-header-row", "", 4, "nuiHeaderRowDef", "nuiHeaderRowDefSticky"], ["nui-row", "", "density", "tiny", 4, "nuiRowDef", "nuiRowDefColumns"], [4, "ngIf"], ["footer", ""], ["nui-header-cell", ""], i18n_2, ["nui-cell", ""], i18n_4, i18n_6, i18n_8, i18n_10, i18n_12, i18n_14, i18n_16, i18n_18, i18n_20, ["nui-cell", "", 2, "overflow", "visible"], ["nui-header-row", ""], ["nui-row", "", "density", "tiny"], [4, "ngTemplateOutlet"], [1, "nui-demo-scrolling-footer"], [1, "h-100", "w-100"], ["class", "d-flex justify-content-center align-items-center", 4, "ngIf", "ngIfElse"], ["defaultText", ""], [1, "d-flex", "justify-content-center", "align-items-center"], ["size", "small", 1, "mr-2", "d-inline-flex", 3, "show"], [1, "h-100", "d-flex", "justify-content-center", "align-items-center"], [1, "px-2"], [1, "pl-2"], [4, "ngIf", "ngIfElse"], ["endOfData", ""]];
@@ -12171,18 +12699,18 @@
         var _super3 = _createSuper(RandomuserTableDataSource);
 
         function RandomuserTableDataSource() {
-          var _this21;
+          var _this22;
 
           _classCallCheck(this, RandomuserTableDataSource);
 
-          _this21 = _super3.apply(this, arguments);
-          _this21.url = "https://randomuser.me/api";
-          _this21.seed = "sw";
-          _this21.cache = Array.from({
+          _this22 = _super3.apply(this, arguments);
+          _this22.url = "https://randomuser.me/api";
+          _this22.seed = "sw";
+          _this22.cache = Array.from({
             length: 0
           });
-          _this21.busy = new rxjs__WEBPACK_IMPORTED_MODULE_4__["BehaviorSubject"](false);
-          return _this21;
+          _this22.busy = new rxjs__WEBPACK_IMPORTED_MODULE_4__["BehaviorSubject"](false);
+          return _this22;
         }
 
         _createClass(RandomuserTableDataSource, [{
@@ -12190,13 +12718,13 @@
           value: function getFilteredData(filters) {
             var _a, _b;
 
-            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee5() {
-              var _this22 = this;
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee7() {
+              var _this23 = this;
 
               var virtualScrollFilter, start, end;
-              return regeneratorRuntime.wrap(function _callee5$(_context5) {
+              return regeneratorRuntime.wrap(function _callee7$(_context7) {
                 while (1) {
-                  switch (_context5.prev = _context5.next) {
+                  switch (_context7.prev = _context7.next) {
                     case 0:
                       this.busy.next(true);
                       virtualScrollFilter = filters.virtualScroll && filters.virtualScroll.value;
@@ -12204,20 +12732,20 @@
                       end = virtualScrollFilter ? (_b = filters.virtualScroll) === null || _b === void 0 ? void 0 : _b.value.end : 0; // We're returning Promise with setTimeout here to make the response from the server longer, as the API being used sends responses
                       // almost immediately. We need it longer to be able the show the spinner component on data load
 
-                      return _context5.abrupt("return", new Promise(function (resolve) {
+                      return _context7.abrupt("return", new Promise(function (resolve) {
                         setTimeout(function () {
-                          _this22.getData(start, end).then(function (response) {
+                          _this23.getData(start, end).then(function (response) {
                             if (!response) {
                               return;
                             }
 
-                            _this22.cache = _this22.cache.concat(response.users);
+                            _this23.cache = _this23.cache.concat(response.users);
 
-                            _this22.dataSubject.next(_this22.cache);
+                            _this23.dataSubject.next(_this23.cache);
 
                             resolve({
                               repeat: {
-                                itemsSource: _this22.cache
+                                itemsSource: _this23.cache
                               },
                               // This API can return thousands of results, however doesn't return the max number of results,
                               // so we set the max number of result manually here.
@@ -12225,17 +12753,17 @@
                               start: response.start
                             });
 
-                            _this22.busy.next(false);
+                            _this23.busy.next(false);
                           });
                         }, 2000);
                       }));
 
                     case 5:
                     case "end":
-                      return _context5.stop();
+                      return _context7.stop();
                   }
                 }
-              }, _callee5, this);
+              }, _callee7, this);
             }));
           }
         }, {
@@ -12243,29 +12771,29 @@
           value: function getData() {
             var start = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
             var end = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 20;
-            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee6() {
-              var _this23 = this;
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee8() {
+              var _this24 = this;
 
               var response, delta;
-              return regeneratorRuntime.wrap(function _callee6$(_context6) {
+              return regeneratorRuntime.wrap(function _callee8$(_context8) {
                 while (1) {
-                  switch (_context6.prev = _context6.next) {
+                  switch (_context8.prev = _context8.next) {
                     case 0:
                       delta = end - start;
-                      _context6.prev = 1;
-                      _context6.next = 4;
+                      _context8.prev = 1;
+                      _context8.next = 4;
                       return fetch("".concat(this.url, "/?page=").concat(end / delta, "&results=").concat(delta, "&seed=").concat(this.seed));
 
                     case 4:
-                      _context6.next = 6;
-                      return _context6.sent.json();
+                      _context8.next = 6;
+                      return _context8.sent.json();
 
                     case 6:
-                      response = _context6.sent;
-                      return _context6.abrupt("return", {
+                      response = _context8.sent;
+                      return _context8.abrupt("return", {
                         users: response === null || response === void 0 ? void 0 : response.results.map(function (result, i) {
                           return {
-                            no: _this23.cache.length + i + 1,
+                            no: _this24.cache.length + i + 1,
                             nameTitle: result.name.title,
                             nameFirst: result.name.first,
                             nameLast: result.name.last,
@@ -12282,16 +12810,16 @@
                       });
 
                     case 10:
-                      _context6.prev = 10;
-                      _context6.t0 = _context6["catch"](1);
+                      _context8.prev = 10;
+                      _context8.t0 = _context8["catch"](1);
                       console.error("Error responding from server. Please visit https://https://randomuser.me/ to see if it's available");
 
                     case 13:
                     case "end":
-                      return _context6.stop();
+                      return _context8.stop();
                   }
                 }
-              }, _callee6, this, [[1, 10]]);
+              }, _callee8, this, [[1, 10]]);
             }));
           }
         }]);
@@ -12712,7 +13240,7 @@
             var MSG_EXTERNAL_1345472093440723911$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_RESIZE_TABLE_RESIZE_EXAMPLE_COMPONENT_TS__1 = goog.getMsg(" No.");
             i18n_0 = MSG_EXTERNAL_1345472093440723911$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_RESIZE_TABLE_RESIZE_EXAMPLE_COMPONENT_TS__1;
           } else {
-            i18n_0 = $localize(_templateObject111 || (_templateObject111 = _taggedTemplateLiteral([":\u241F333f0164082b9f12f63ca11438b2085d074a5b0f\u241F1345472093440723911: No."])));
+            i18n_0 = $localize(_templateObject112 || (_templateObject112 = _taggedTemplateLiteral([":\u241F333f0164082b9f12f63ca11438b2085d074a5b0f\u241F1345472093440723911: No."])));
           }
 
           var i18n_2;
@@ -12721,7 +13249,7 @@
             var MSG_EXTERNAL_5923354303687392819$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_RESIZE_TABLE_RESIZE_EXAMPLE_COMPONENT_TS__3 = goog.getMsg(" Name");
             i18n_2 = MSG_EXTERNAL_5923354303687392819$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_RESIZE_TABLE_RESIZE_EXAMPLE_COMPONENT_TS__3;
           } else {
-            i18n_2 = $localize(_templateObject112 || (_templateObject112 = _taggedTemplateLiteral([":\u241F7b07cc6126aa22c8a3041963963e85a0791a7e40\u241F5923354303687392819: Name"])));
+            i18n_2 = $localize(_templateObject113 || (_templateObject113 = _taggedTemplateLiteral([":\u241F7b07cc6126aa22c8a3041963963e85a0791a7e40\u241F5923354303687392819: Name"])));
           }
 
           var i18n_4;
@@ -12730,7 +13258,7 @@
             var MSG_EXTERNAL_4366791221426489252$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_RESIZE_TABLE_RESIZE_EXAMPLE_COMPONENT_TS__5 = goog.getMsg(" Features");
             i18n_4 = MSG_EXTERNAL_4366791221426489252$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_RESIZE_TABLE_RESIZE_EXAMPLE_COMPONENT_TS__5;
           } else {
-            i18n_4 = $localize(_templateObject113 || (_templateObject113 = _taggedTemplateLiteral([":\u241F176794380c10213e5247f7350b40037bd3affcb3\u241F4366791221426489252: Features"])));
+            i18n_4 = $localize(_templateObject114 || (_templateObject114 = _taggedTemplateLiteral([":\u241F176794380c10213e5247f7350b40037bd3affcb3\u241F4366791221426489252: Features"])));
           }
 
           var i18n_6;
@@ -12739,7 +13267,7 @@
             var MSG_EXTERNAL_6940950714946520886$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_RESIZE_TABLE_RESIZE_EXAMPLE_COMPONENT_TS__7 = goog.getMsg(" Asset Class");
             i18n_6 = MSG_EXTERNAL_6940950714946520886$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_RESIZE_TABLE_RESIZE_EXAMPLE_COMPONENT_TS__7;
           } else {
-            i18n_6 = $localize(_templateObject114 || (_templateObject114 = _taggedTemplateLiteral([":\u241Fc123012b555ee9898f49540288d43c3c606e27d6\u241F6940950714946520886: Asset Class"])));
+            i18n_6 = $localize(_templateObject115 || (_templateObject115 = _taggedTemplateLiteral([":\u241Fc123012b555ee9898f49540288d43c3c606e27d6\u241F6940950714946520886: Asset Class"])));
           }
 
           var i18n_8;
@@ -12748,7 +13276,7 @@
             var MSG_EXTERNAL_7598846418510631873$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_RESIZE_TABLE_RESIZE_EXAMPLE_COMPONENT_TS__9 = goog.getMsg(" Location");
             i18n_8 = MSG_EXTERNAL_7598846418510631873$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_RESIZE_TABLE_RESIZE_EXAMPLE_COMPONENT_TS__9;
           } else {
-            i18n_8 = $localize(_templateObject115 || (_templateObject115 = _taggedTemplateLiteral([":\u241F4ed56c7c2b85b2b764c9853d121c291db3b70ed9\u241F7598846418510631873: Location"])));
+            i18n_8 = $localize(_templateObject116 || (_templateObject116 = _taggedTemplateLiteral([":\u241F4ed56c7c2b85b2b764c9853d121c291db3b70ed9\u241F7598846418510631873: Location"])));
           }
 
           var i18n_10;
@@ -12757,7 +13285,7 @@
             var MSG_EXTERNAL_3645300875970966243$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_RESIZE_TABLE_RESIZE_EXAMPLE_COMPONENT_TS__11 = goog.getMsg(" Outages");
             i18n_10 = MSG_EXTERNAL_3645300875970966243$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_RESIZE_TABLE_RESIZE_EXAMPLE_COMPONENT_TS__11;
           } else {
-            i18n_10 = $localize(_templateObject116 || (_templateObject116 = _taggedTemplateLiteral([":\u241Fe81b7832d164ea9359f7937353f7dfc314064a3a\u241F3645300875970966243: Outages"])));
+            i18n_10 = $localize(_templateObject117 || (_templateObject117 = _taggedTemplateLiteral([":\u241Fe81b7832d164ea9359f7937353f7dfc314064a3a\u241F3645300875970966243: Outages"])));
           }
 
           var i18n_12;
@@ -12766,7 +13294,7 @@
             var MSG_EXTERNAL_7108392645161261297$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_RESIZE_TABLE_RESIZE_EXAMPLE_COMPONENT_TS__13 = goog.getMsg(" Checks");
             i18n_12 = MSG_EXTERNAL_7108392645161261297$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_RESIZE_TABLE_RESIZE_EXAMPLE_COMPONENT_TS__13;
           } else {
-            i18n_12 = $localize(_templateObject117 || (_templateObject117 = _taggedTemplateLiteral([":\u241Ffc6c8586d4f4fbce21310ff2a21da10de8c8a04b\u241F7108392645161261297: Checks"])));
+            i18n_12 = $localize(_templateObject118 || (_templateObject118 = _taggedTemplateLiteral([":\u241Ffc6c8586d4f4fbce21310ff2a21da10de8c8a04b\u241F7108392645161261297: Checks"])));
           }
 
           return [["id", "nui-demo-resizable-table", 1, "nui-table__container"], ["nui-table", "", 3, "dataSource", "resizable", "sortable"], ["nuiColumnDef", "position", 3, "columnWidth"], ["nui-header-cell", "", 4, "nuiHeaderCellDef"], ["nui-cell", "", 4, "nuiCellDef"], ["nuiColumnDef", "name", 3, "columnWidth"], ["nuiColumnDef", "features"], ["nuiColumnDef", "asset"], ["nuiColumnDef", "location"], ["nuiColumnDef", "status", "type", "icon"], ["id", "nui-header-cell-icon", "nui-header-cell", "", 4, "nuiHeaderCellDef"], ["nuiColumnDef", "outages"], ["nuiColumnDef", "checks"], ["nui-header-cell", "", 3, "isColumnSortingDisabled", 4, "nuiHeaderCellDef"], ["nui-header-row", "", 4, "nuiHeaderRowDef"], ["nui-row", "", 4, "nuiRowDef", "nuiRowDefColumns"], ["nui-header-cell", ""], i18n_0, ["nui-cell", ""], i18n_2, i18n_4, [1, "d-flex", "align-items-center"], ["class", "mr-1", 3, "icon", 4, "ngFor", "ngForOf"], [1, "mr-1", 3, "icon"], i18n_6, i18n_8, ["id", "nui-header-cell-icon", "nui-header-cell", ""], ["icon", "enable"], [3, "icon"], i18n_10, ["nui-header-cell", "", 3, "isColumnSortingDisabled"], i18n_12, [4, "ngFor", "ngForOf"], [1, "ml-2"], ["nui-header-row", ""], ["nui-row", ""]];
@@ -12967,163 +13495,169 @@
       /* harmony import */
 
 
-      var _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! tslib */
+      "mrSG");
+      /* harmony import */
+
+
+      var _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! @angular/cdk/scrolling */
       "vxfF");
       /* harmony import */
 
 
-      var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! @angular/core */
       "fXoL");
       /* harmony import */
 
 
-      var _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      var _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @nova-ui/bits */
       "b5Xb");
       /* harmony import */
 
 
-      var lodash_sample__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      var lodash_sample__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! lodash/sample */
       "fTpD");
       /* harmony import */
 
 
-      var lodash_sample__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(lodash_sample__WEBPACK_IMPORTED_MODULE_3__);
+      var lodash_sample__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(lodash_sample__WEBPACK_IMPORTED_MODULE_4__);
       /* harmony import */
 
 
-      var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! rxjs/operators */
       "kU1M");
       /* harmony import */
 
 
-      var _src_lib_table_table_virtual_scroll_table_sticky_header_directive__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      var _src_lib_table_table_virtual_scroll_table_sticky_header_directive__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! ../../../../../../src/lib/table/table-virtual-scroll/table-sticky-header.directive */
       "jAOl");
       /* harmony import */
 
 
-      var _src_lib_table_table_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      var _src_lib_table_table_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! ../../../../../../src/lib/table/table.component */
       "ey6q");
       /* harmony import */
 
 
-      var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! @angular/common */
       "ofXK");
       /* harmony import */
 
 
-      var _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      var _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
       /*! ../../../../../../src/lib/table/table-row/table-row.component */
       "LFiI");
       /* harmony import */
 
 
-      var _src_lib_table_table_cell_table_column_def_directive__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      var _src_lib_table_table_cell_table_column_def_directive__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
       /*! ../../../../../../src/lib/table/table-cell/table-column-def.directive */
       "XeyC");
       /* harmony import */
 
 
-      var _src_lib_table_table_cell_table_header_cell_def_directive__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+      var _src_lib_table_table_cell_table_header_cell_def_directive__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
       /*! ../../../../../../src/lib/table/table-cell/table-header-cell-def.directive */
       "htGY");
       /* harmony import */
 
 
-      var _src_lib_table_table_cell_table_cell_def_directive__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+      var _src_lib_table_table_cell_table_cell_def_directive__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
       /*! ../../../../../../src/lib/table/table-cell/table-cell-def.directive */
       "/BSE");
       /* harmony import */
 
 
-      var _src_lib_table_table_cell_table_header_cell_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+      var _src_lib_table_table_cell_table_header_cell_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
       /*! ../../../../../../src/lib/table/table-cell/table-header-cell.component */
       "Ppt+");
       /* harmony import */
 
 
-      var _src_lib_table_table_cell_table_cell_directive__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
+      var _src_lib_table_table_cell_table_cell_directive__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
       /*! ../../../../../../src/lib/table/table-cell/table-cell.directive */
       "jdPS");
 
       function TableVirtualScrollSelectStickyHeaderExampleComponent_ng_container_4_th_1_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "th", 8);
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "th", 8);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
         }
 
         if (rf & 2) {
-          var column_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]().$implicit;
+          var column_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]().$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"](" ", column_r3, "");
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate1"](" ", column_r3, "");
         }
       }
 
       function TableVirtualScrollSelectStickyHeaderExampleComponent_ng_container_4_td_2_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "td", 9);
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "td", 9);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
         }
 
         if (rf & 2) {
           var element_r7 = ctx.$implicit;
 
-          var column_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]().$implicit;
+          var column_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]().$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](element_r7[column_r3]);
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](element_r7[column_r3]);
         }
       }
 
       function TableVirtualScrollSelectStickyHeaderExampleComponent_ng_container_4_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementContainerStart"](0, 5);
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainerStart"](0, 5);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](1, TableVirtualScrollSelectStickyHeaderExampleComponent_ng_container_4_th_1_Template, 2, 1, "th", 6);
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](1, TableVirtualScrollSelectStickyHeaderExampleComponent_ng_container_4_th_1_Template, 2, 1, "th", 6);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](2, TableVirtualScrollSelectStickyHeaderExampleComponent_ng_container_4_td_2_Template, 2, 1, "td", 7);
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, TableVirtualScrollSelectStickyHeaderExampleComponent_ng_container_4_td_2_Template, 2, 1, "td", 7);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementContainerEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainerEnd"]();
         }
 
         if (rf & 2) {
           var column_r3 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("nuiColumnDef", column_r3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("nuiColumnDef", column_r3);
         }
       }
 
       function TableVirtualScrollSelectStickyHeaderExampleComponent_tr_5_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](0, "tr", 10);
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](0, "tr", 10);
         }
       }
 
       function TableVirtualScrollSelectStickyHeaderExampleComponent_ng_template_6_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](0, "tr", 11);
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](0, "tr", 11);
         }
 
         if (rf & 2) {
           var context_r9 = ctx.$implicit;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("rowObject", context_r9);
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("rowObject", context_r9);
         }
       }
 
@@ -13136,9 +13670,9 @@
 
           this.placeholderItems = []; // The dynamically changed array of items to render by the table
 
-          this.displayedColumns = ["no", "nameTitle", "nameFirst", "nameLast", "city", "postcode"];
+          this.displayedColumns = ["no", "nameFirst", "nameLast", "city", "postcode"];
           this.itemSize = 40;
-          this.selection = new _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["SelectionModel"]({
+          this.selection = new _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["SelectionModel"]({
             include: [1, 3, 5, 7, 9]
           }); // trackBy handler used to identify uniquely each item in the table
 
@@ -13153,7 +13687,7 @@
         _createClass(TableVirtualScrollSelectStickyHeaderExampleComponent, [{
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this24 = this;
+            var _this25 = this;
 
             this.dataSourceService.componentTree = {
               // Note: Using paginator as filter to be able to get specific range
@@ -13161,25 +13695,38 @@
                 componentInstance: {
                   getFilters: function getFilters() {
                     return {
-                      value: _this24.viewport.getRenderedRange()
+                      value: _this25.viewport.getRenderedRange()
                     };
                   }
                 }
               }
             }; // Note: Creating a stream of visible items to be bound to the table and increase the performance
 
-            this.visibleItems$ = this.viewport.renderedRangeStream.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["startWith"])({
+            this.visibleItems$ = this.viewport.renderedRangeStream.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["startWith"])({
               start: 0,
               end: 10
             }), // Note: On range change applying filters
-            Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])(function () {
-              return _this24.dataSourceService.applyFilters();
+            Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["tap"])(function () {
+              return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(_this25, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee9() {
+                return regeneratorRuntime.wrap(function _callee9$(_context9) {
+                  while (1) {
+                    switch (_context9.prev = _context9.next) {
+                      case 0:
+                        return _context9.abrupt("return", this.dataSourceService.applyFilters());
+
+                      case 1:
+                      case "end":
+                        return _context9.stop();
+                    }
+                  }
+                }, _callee9, this);
+              }));
             }), // Subscribing to the filter results transforming and merging them into the stream
-            Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["switchMap"])(function () {
-              return _this24.dataSourceService.outputsSubject.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (result) {
+            Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["switchMap"])(function () {
+              return _this25.dataSourceService.outputsSubject.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["map"])(function (result) {
                 // Updating mock items list
-                if (_this24.placeholderItems.length !== result.paginator.total) {
-                  _this24.placeholderItems = Array.from({
+                if (_this25.placeholderItems.length !== result.paginator.total) {
+                  _this25.placeholderItems = Array.from({
                     length: result.paginator.total
                   });
                 } // Mapping the values to array to be able to bind them to the table dataSource
@@ -13195,110 +13742,107 @@
       }();
 
       TableVirtualScrollSelectStickyHeaderExampleComponent.ɵfac = function TableVirtualScrollSelectStickyHeaderExampleComponent_Factory(t) {
-        return new (t || TableVirtualScrollSelectStickyHeaderExampleComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["ClientSideDataSource"]));
+        return new (t || TableVirtualScrollSelectStickyHeaderExampleComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["ClientSideDataSource"]));
       };
 
-      TableVirtualScrollSelectStickyHeaderExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
+      TableVirtualScrollSelectStickyHeaderExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({
         type: TableVirtualScrollSelectStickyHeaderExampleComponent,
         selectors: [["nui-table-virtual-scroll-select-sticky-header-example"]],
         viewQuery: function TableVirtualScrollSelectStickyHeaderExampleComponent_Query(rf, ctx) {
           if (rf & 1) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵviewQuery"](_angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_0__["CdkVirtualScrollViewport"], 1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵviewQuery"](_angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__["CdkVirtualScrollViewport"], 1);
           }
 
           if (rf & 2) {
             var _t;
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx.viewport = _t.first);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵloadQuery"]()) && (ctx.viewport = _t.first);
           }
         },
-        features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵProvidersFeature"]([_nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["ClientSideDataSource"]])],
+        features: [_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵProvidersFeature"]([_nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["ClientSideDataSource"]])],
         decls: 10,
         vars: 21,
         consts: [["tableStickyHeader", "", 1, "h-100", 3, "itemSize"], ["nui-table", "", 3, "dataSource", "trackBy", "sortable", "selectable", "selection", "selectionChange"], [3, "nuiColumnDef", 4, "ngFor", "ngForOf"], ["nui-header-row", "", 4, "nuiHeaderRowDef"], ["nuiRowDef", "", "cdkVirtualFor", "", 3, "nuiRowDefColumns", "cdkVirtualForOf", "cdkVirtualForTemplateCacheSize", "cdkVirtualForTrackBy"], [3, "nuiColumnDef"], ["nui-header-cell", "", 4, "nuiHeaderCellDef"], ["nui-cell", "", 4, "nuiCellDef"], ["nui-header-cell", ""], ["nui-cell", ""], ["nui-header-row", ""], ["nui-row", "", 3, "rowObject"]],
         template: function TableVirtualScrollSelectStickyHeaderExampleComponent_Template(rf, ctx) {
           if (rf & 1) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div");
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "cdk-virtual-scroll-viewport", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](1, "cdk-virtual-scroll-viewport", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "table", 1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](2, "table", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("selectionChange", function TableVirtualScrollSelectStickyHeaderExampleComponent_Template_table_selectionChange_2_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("selectionChange", function TableVirtualScrollSelectStickyHeaderExampleComponent_Template_table_selectionChange_2_listener($event) {
               return ctx.selection = $event;
             });
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipe"](3, "async");
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipe"](3, "async");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](4, TableVirtualScrollSelectStickyHeaderExampleComponent_ng_container_4_Template, 3, 1, "ng-container", 2);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](4, TableVirtualScrollSelectStickyHeaderExampleComponent_ng_container_4_Template, 3, 1, "ng-container", 2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](5, TableVirtualScrollSelectStickyHeaderExampleComponent_tr_5_Template, 1, 0, "tr", 3);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](5, TableVirtualScrollSelectStickyHeaderExampleComponent_tr_5_Template, 1, 0, "tr", 3);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](6, TableVirtualScrollSelectStickyHeaderExampleComponent_ng_template_6_Template, 1, 1, "ng-template", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](6, TableVirtualScrollSelectStickyHeaderExampleComponent_ng_template_6_Template, 1, 1, "ng-template", 4);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](7, "br");
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](7, "br");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](8);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipe"](9, "json");
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipe"](9, "json");
           }
 
           if (rf & 2) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵstyleProp"]("height", 400, "px")("max-width", 1300, "px");
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵstyleProp"]("height", 400, "px")("max-width", 1300, "px");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("itemSize", ctx.itemSize);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("itemSize", ctx.itemSize);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("dataSource", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipeBind1"](3, 17, ctx.visibleItems$))("trackBy", ctx.trackByNo)("sortable", true)("selectable", true)("selection", ctx.selection);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("dataSource", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipeBind1"](3, 17, ctx.visibleItems$))("trackBy", ctx.trackByNo)("sortable", true)("selectable", true)("selection", ctx.selection);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx.displayedColumns);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx.displayedColumns);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("nuiHeaderRowDef", ctx.displayedColumns);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("nuiHeaderRowDef", ctx.displayedColumns);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("nuiRowDefColumns", ctx.displayedColumns)("cdkVirtualForOf", ctx.placeholderItems)("cdkVirtualForTemplateCacheSize", 10)("cdkVirtualForTrackBy", ctx.trackByNo);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("nuiRowDefColumns", ctx.displayedColumns)("cdkVirtualForOf", ctx.placeholderItems)("cdkVirtualForTemplateCacheSize", 10)("cdkVirtualForTrackBy", ctx.trackByNo);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"]("\n", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipeBind1"](9, 19, ctx.selection), "\n");
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate1"]("\n", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipeBind1"](9, 19, ctx.selection), "\n");
           }
         },
-        directives: [_angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_0__["CdkVirtualScrollViewport"], _src_lib_table_table_virtual_scroll_table_sticky_header_directive__WEBPACK_IMPORTED_MODULE_5__["TableStickyHeaderDirective"], _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_0__["CdkFixedSizeVirtualScroll"], _src_lib_table_table_component__WEBPACK_IMPORTED_MODULE_6__["TableComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_7__["NgForOf"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_8__["TableHeaderRowDefDirective"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_8__["TableRowDefDirective"], _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_0__["CdkVirtualForOf"], _src_lib_table_table_cell_table_column_def_directive__WEBPACK_IMPORTED_MODULE_9__["TableColumnDefDirective"], _src_lib_table_table_cell_table_header_cell_def_directive__WEBPACK_IMPORTED_MODULE_10__["TableHeaderCellDefDirective"], _src_lib_table_table_cell_table_cell_def_directive__WEBPACK_IMPORTED_MODULE_11__["TableCellDefDirective"], _src_lib_table_table_cell_table_header_cell_component__WEBPACK_IMPORTED_MODULE_12__["TableHeaderCellComponent"], _src_lib_table_table_cell_table_cell_directive__WEBPACK_IMPORTED_MODULE_13__["TableCellDirective"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_8__["TableHeaderRowComponent"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_8__["TableRowComponent"]],
-        pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_7__["AsyncPipe"], _angular_common__WEBPACK_IMPORTED_MODULE_7__["JsonPipe"]],
+        directives: [_angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__["CdkVirtualScrollViewport"], _src_lib_table_table_virtual_scroll_table_sticky_header_directive__WEBPACK_IMPORTED_MODULE_6__["TableStickyHeaderDirective"], _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__["CdkFixedSizeVirtualScroll"], _src_lib_table_table_component__WEBPACK_IMPORTED_MODULE_7__["TableComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_8__["NgForOf"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_9__["TableHeaderRowDefDirective"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_9__["TableRowDefDirective"], _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__["CdkVirtualForOf"], _src_lib_table_table_cell_table_column_def_directive__WEBPACK_IMPORTED_MODULE_10__["TableColumnDefDirective"], _src_lib_table_table_cell_table_header_cell_def_directive__WEBPACK_IMPORTED_MODULE_11__["TableHeaderCellDefDirective"], _src_lib_table_table_cell_table_cell_def_directive__WEBPACK_IMPORTED_MODULE_12__["TableCellDefDirective"], _src_lib_table_table_cell_table_header_cell_component__WEBPACK_IMPORTED_MODULE_13__["TableHeaderCellComponent"], _src_lib_table_table_cell_table_cell_directive__WEBPACK_IMPORTED_MODULE_14__["TableCellDirective"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_9__["TableHeaderRowComponent"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_9__["TableRowComponent"]],
+        pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_8__["AsyncPipe"], _angular_common__WEBPACK_IMPORTED_MODULE_8__["JsonPipe"]],
         encapsulation: 2,
         changeDetection: 0
       });
+      var PEOPLE = ["Elena", "Madelyn", "Baggio", "Josh", "Lukas", "Blake", "Frantz", "Dima", "Serhii", "Vita", "Vlad", "Ivan", "Dumitru"];
+      var CITIES = ["Bucharest", "Kiev", "Austin", "Brno", "Frankfurt pe Main", "Sutton-under-Whitestonecliffe", "Vila Bela da Santíssima Trindade"];
 
       function generateUsers(length) {
         return Array.from({
           length: length
         }).map(function (obj, id) {
-          var personName = lodash_sample__WEBPACK_IMPORTED_MODULE_3___default()(["Josh", "Lukas", "Blake", "Frantz", "Dima", "Serhii", "Vita", "Vlad", "Ivan", "Dumitru"]) || "Josh";
+          var personName = lodash_sample__WEBPACK_IMPORTED_MODULE_4___default()(PEOPLE) || PEOPLE[0];
           return {
             no: id,
             postcode: id * 1000000 * id,
-            cell: "0000",
-            city: lodash_sample__WEBPACK_IMPORTED_MODULE_3___default()(["Bucharest", "Kiev", "Austin", "Brno", "Frankfurt pe Main", "Sutton-under-Whitestonecliffe", "Vila Bela da Santíssima Trindade"]) || "Bucharest",
-            country: "Unknown",
-            email: "".concat(personName.toLocaleLowerCase(), "@@sw.com"),
-            gender: "Unknown",
+            city: lodash_sample__WEBPACK_IMPORTED_MODULE_4___default()(CITIES) || CITIES[0],
             nameFirst: personName,
-            nameLast: "UnknownLast",
-            nameTitle: "Sir."
+            nameLast: "UnknownLast"
           };
         });
       }
@@ -13757,7 +14301,7 @@
             var MSG_EXTERNAL_1345472093440723911$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_REORDER_TABLE_REORDER_EXAMPLE_COMPONENT_TS__1 = goog.getMsg(" No.");
             i18n_0 = MSG_EXTERNAL_1345472093440723911$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_REORDER_TABLE_REORDER_EXAMPLE_COMPONENT_TS__1;
           } else {
-            i18n_0 = $localize(_templateObject118 || (_templateObject118 = _taggedTemplateLiteral([":\u241F333f0164082b9f12f63ca11438b2085d074a5b0f\u241F1345472093440723911: No."])));
+            i18n_0 = $localize(_templateObject119 || (_templateObject119 = _taggedTemplateLiteral([":\u241F333f0164082b9f12f63ca11438b2085d074a5b0f\u241F1345472093440723911: No."])));
           }
 
           var i18n_2;
@@ -13766,7 +14310,7 @@
             var MSG_EXTERNAL_5923354303687392819$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_REORDER_TABLE_REORDER_EXAMPLE_COMPONENT_TS__3 = goog.getMsg(" Name");
             i18n_2 = MSG_EXTERNAL_5923354303687392819$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_REORDER_TABLE_REORDER_EXAMPLE_COMPONENT_TS__3;
           } else {
-            i18n_2 = $localize(_templateObject119 || (_templateObject119 = _taggedTemplateLiteral([":\u241F7b07cc6126aa22c8a3041963963e85a0791a7e40\u241F5923354303687392819: Name"])));
+            i18n_2 = $localize(_templateObject120 || (_templateObject120 = _taggedTemplateLiteral([":\u241F7b07cc6126aa22c8a3041963963e85a0791a7e40\u241F5923354303687392819: Name"])));
           }
 
           var i18n_4;
@@ -13775,7 +14319,7 @@
             var MSG_EXTERNAL_6599364831830861985$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_REORDER_TABLE_REORDER_EXAMPLE_COMPONENT_TS__5 = goog.getMsg("Features");
             i18n_4 = MSG_EXTERNAL_6599364831830861985$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_REORDER_TABLE_REORDER_EXAMPLE_COMPONENT_TS__5;
           } else {
-            i18n_4 = $localize(_templateObject120 || (_templateObject120 = _taggedTemplateLiteral([":\u241F6cdb1fea93d77c07950c0c76c6e0ad79ebbef084\u241F6599364831830861985:Features"])));
+            i18n_4 = $localize(_templateObject121 || (_templateObject121 = _taggedTemplateLiteral([":\u241F6cdb1fea93d77c07950c0c76c6e0ad79ebbef084\u241F6599364831830861985:Features"])));
           }
 
           var i18n_6;
@@ -13784,7 +14328,7 @@
             var MSG_EXTERNAL_6940950714946520886$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_REORDER_TABLE_REORDER_EXAMPLE_COMPONENT_TS__7 = goog.getMsg(" Asset Class");
             i18n_6 = MSG_EXTERNAL_6940950714946520886$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_REORDER_TABLE_REORDER_EXAMPLE_COMPONENT_TS__7;
           } else {
-            i18n_6 = $localize(_templateObject121 || (_templateObject121 = _taggedTemplateLiteral([":\u241Fc123012b555ee9898f49540288d43c3c606e27d6\u241F6940950714946520886: Asset Class"])));
+            i18n_6 = $localize(_templateObject122 || (_templateObject122 = _taggedTemplateLiteral([":\u241Fc123012b555ee9898f49540288d43c3c606e27d6\u241F6940950714946520886: Asset Class"])));
           }
 
           var i18n_8;
@@ -13793,7 +14337,7 @@
             var MSG_EXTERNAL_7598846418510631873$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_REORDER_TABLE_REORDER_EXAMPLE_COMPONENT_TS__9 = goog.getMsg(" Location");
             i18n_8 = MSG_EXTERNAL_7598846418510631873$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_REORDER_TABLE_REORDER_EXAMPLE_COMPONENT_TS__9;
           } else {
-            i18n_8 = $localize(_templateObject122 || (_templateObject122 = _taggedTemplateLiteral([":\u241F4ed56c7c2b85b2b764c9853d121c291db3b70ed9\u241F7598846418510631873: Location"])));
+            i18n_8 = $localize(_templateObject123 || (_templateObject123 = _taggedTemplateLiteral([":\u241F4ed56c7c2b85b2b764c9853d121c291db3b70ed9\u241F7598846418510631873: Location"])));
           }
 
           var i18n_10;
@@ -13802,7 +14346,7 @@
             var MSG_EXTERNAL_7043724726246657652$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_REORDER_TABLE_REORDER_EXAMPLE_COMPONENT_TS__11 = goog.getMsg(" Status");
             i18n_10 = MSG_EXTERNAL_7043724726246657652$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_REORDER_TABLE_REORDER_EXAMPLE_COMPONENT_TS__11;
           } else {
-            i18n_10 = $localize(_templateObject123 || (_templateObject123 = _taggedTemplateLiteral([":\u241Ff3ab141a02057a7853b9cde7dea17eef6811e27a\u241F7043724726246657652: Status"])));
+            i18n_10 = $localize(_templateObject124 || (_templateObject124 = _taggedTemplateLiteral([":\u241Ff3ab141a02057a7853b9cde7dea17eef6811e27a\u241F7043724726246657652: Status"])));
           }
 
           var i18n_12;
@@ -13811,7 +14355,7 @@
             var MSG_EXTERNAL_3645300875970966243$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_REORDER_TABLE_REORDER_EXAMPLE_COMPONENT_TS__13 = goog.getMsg(" Outages");
             i18n_12 = MSG_EXTERNAL_3645300875970966243$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_REORDER_TABLE_REORDER_EXAMPLE_COMPONENT_TS__13;
           } else {
-            i18n_12 = $localize(_templateObject124 || (_templateObject124 = _taggedTemplateLiteral([":\u241Fe81b7832d164ea9359f7937353f7dfc314064a3a\u241F3645300875970966243: Outages"])));
+            i18n_12 = $localize(_templateObject125 || (_templateObject125 = _taggedTemplateLiteral([":\u241Fe81b7832d164ea9359f7937353f7dfc314064a3a\u241F3645300875970966243: Outages"])));
           }
 
           var i18n_14;
@@ -13820,7 +14364,7 @@
             var MSG_EXTERNAL_7108392645161261297$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_REORDER_TABLE_REORDER_EXAMPLE_COMPONENT_TS__15 = goog.getMsg(" Checks");
             i18n_14 = MSG_EXTERNAL_7108392645161261297$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_REORDER_TABLE_REORDER_EXAMPLE_COMPONENT_TS__15;
           } else {
-            i18n_14 = $localize(_templateObject125 || (_templateObject125 = _taggedTemplateLiteral([":\u241Ffc6c8586d4f4fbce21310ff2a21da10de8c8a04b\u241F7108392645161261297: Checks"])));
+            i18n_14 = $localize(_templateObject126 || (_templateObject126 = _taggedTemplateLiteral([":\u241Ffc6c8586d4f4fbce21310ff2a21da10de8c8a04b\u241F7108392645161261297: Checks"])));
           }
 
           return [["id", "nui-demo-table-cell-reorder", 1, "nui-table__container"], ["nui-table", "", 3, "dataSource", "reorderable", "columnsOrderChange"], ["nuiColumnDef", "position"], ["nui-header-cell", "", 4, "nuiHeaderCellDef"], ["nui-cell", "", 4, "nuiCellDef"], ["nuiColumnDef", "name"], ["nuiColumnDef", "features"], ["nuiColumnDef", "asset"], ["nuiColumnDef", "location"], ["nuiColumnDef", "status", "type", "icon"], ["nuiColumnDef", "outages"], ["nuiColumnDef", "checks"], ["nui-header-row", "", 4, "nuiHeaderRowDef"], ["nui-row", "", 4, "nuiRowDef", "nuiRowDefColumns"], ["nui-header-cell", ""], i18n_0, ["nui-cell", ""], i18n_2, i18n_4, [1, "d-flex", "align-items-center"], ["class", "icon-margin", 3, "icon", 4, "ngFor", "ngForOf"], [1, "icon-margin", 3, "icon"], i18n_6, i18n_8, i18n_10, [1, "d-flex", "align-items-center", "justify-content-center"], [3, "icon"], i18n_12, i18n_14, [4, "ngFor", "ngForOf"], [1, "ml-2"], ["nui-header-row", ""], ["nui-row", ""]];
@@ -14064,7 +14608,7 @@
       !*** ./demo/src/components/demo/table/index.ts ***!
       \*************************************************/
 
-    /*! exports provided: TableDocsComponent, TableRowSelectInstructionsComponent, TableBasicExampleComponent, TablePinnedHeaderComponent, TableCellContentAlignComponent, TableCellWidthSetExampleComponent, TableRowClickableExampleComponent, TableRowHeightSetExampleComponent, TableReorderExampleComponent, TablePaginationExampleComponent, TableColumnsAddRemoveExampleComponent, TableSearchExampleComponent, TableSortingExampleComponent, TableResizeExampleComponent, TableSelectExampleComponent, TableSelectableToggleExampleComponent, TableTestComponent, TableVisualTestComponent, TableVirtualScrollRealApiExampleComponent, RandomuserTableDataSource, TableVirtualScrollStepsAndButtonExampleComponent, TableVirtualScrollSelectStickyHeaderExampleComponent, TableVirtualScrollStickyHeaderExampleComponent, TableVirtualScrollRealApiProgressFooterExampleComponent, TableVirtualScrollRealApiProgressTextFooterExampleComponent, TableVirtualScrollRealApiMinimalistExampleComponent, TableSearchWithSelectAndPaginationComponent, TableSelectPinnedHeaderComponent */
+    /*! exports provided: TableDocsComponent, TableRowSelectInstructionsComponent, TableBasicExampleComponent, TablePinnedHeaderComponent, TableCellContentAlignComponent, TableCellWidthSetExampleComponent, TableRowClickableExampleComponent, TableRowHeightSetExampleComponent, TableReorderExampleComponent, TablePaginationExampleComponent, TableColumnsAddRemoveExampleComponent, TableSearchExampleComponent, TableSortingExampleComponent, TableResizeExampleComponent, TableSelectExampleComponent, TableSelectableToggleExampleComponent, TableTestComponent, TableVisualTestComponent, TableVirtualScrollRealApiExampleComponent, RandomuserTableDataSource, TableVirtualScrollStepsAndButtonExampleComponent, TableVirtualScrollSelectStickyHeaderExampleComponent, TableVirtualScrollStickyHeaderExampleComponent, TableVirtualScrollStickyHeaderTestExampleComponent, TableVirtualScrollRealApiProgressFooterExampleComponent, TableVirtualScrollRealApiProgressTextFooterExampleComponent, TableVirtualScrollRealApiMinimalistExampleComponent, TableSearchWithSelectAndPaginationComponent, TableSelectPinnedHeaderComponent */
 
     /***/
     function gGfI(module, __webpack_exports__, __webpack_require__) {
@@ -14338,62 +14882,74 @@
       /* harmony import */
 
 
-      var _table_virtual_scroll_real_api_progress_footer_table_virtual_scroll_real_api_progress_footer_example_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(
+      var _table_virtual_scroll_sticky_header_test_table_virtual_scroll_sticky_header_test_example_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(
+      /*! ./table-virtual-scroll-sticky-header-test/table-virtual-scroll-sticky-header-test-example.component */
+      "/Jns");
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "TableVirtualScrollStickyHeaderTestExampleComponent", function () {
+        return _table_virtual_scroll_sticky_header_test_table_virtual_scroll_sticky_header_test_example_component__WEBPACK_IMPORTED_MODULE_21__["TableVirtualScrollStickyHeaderTestExampleComponent"];
+      });
+      /* harmony import */
+
+
+      var _table_virtual_scroll_real_api_progress_footer_table_virtual_scroll_real_api_progress_footer_example_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(
       /*! ./table-virtual-scroll-real-api-progress-footer/table-virtual-scroll-real-api-progress-footer.example.component */
       "Jv3n");
       /* harmony reexport (safe) */
 
 
       __webpack_require__.d(__webpack_exports__, "TableVirtualScrollRealApiProgressFooterExampleComponent", function () {
-        return _table_virtual_scroll_real_api_progress_footer_table_virtual_scroll_real_api_progress_footer_example_component__WEBPACK_IMPORTED_MODULE_21__["TableVirtualScrollRealApiProgressFooterExampleComponent"];
+        return _table_virtual_scroll_real_api_progress_footer_table_virtual_scroll_real_api_progress_footer_example_component__WEBPACK_IMPORTED_MODULE_22__["TableVirtualScrollRealApiProgressFooterExampleComponent"];
       });
       /* harmony import */
 
 
-      var _table_virtual_scroll_real_api_progress_text_footer_table_virtual_scroll_real_api_progress_text_footer_example_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(
+      var _table_virtual_scroll_real_api_progress_text_footer_table_virtual_scroll_real_api_progress_text_footer_example_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(
       /*! ./table-virtual-scroll-real-api-progress-text-footer/table-virtual-scroll-real-api-progress-text-footer.example.component */
       "34la");
       /* harmony reexport (safe) */
 
 
       __webpack_require__.d(__webpack_exports__, "TableVirtualScrollRealApiProgressTextFooterExampleComponent", function () {
-        return _table_virtual_scroll_real_api_progress_text_footer_table_virtual_scroll_real_api_progress_text_footer_example_component__WEBPACK_IMPORTED_MODULE_22__["TableVirtualScrollRealApiProgressTextFooterExampleComponent"];
+        return _table_virtual_scroll_real_api_progress_text_footer_table_virtual_scroll_real_api_progress_text_footer_example_component__WEBPACK_IMPORTED_MODULE_23__["TableVirtualScrollRealApiProgressTextFooterExampleComponent"];
       });
       /* harmony import */
 
 
-      var _table_virtual_scroll_real_api_minimalist_table_virtual_scroll_real_api_minimalist_example_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(
+      var _table_virtual_scroll_real_api_minimalist_table_virtual_scroll_real_api_minimalist_example_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(
       /*! ./table-virtual-scroll-real-api-minimalist/table-virtual-scroll-real-api-minimalist.example.component */
       "GE5v");
       /* harmony reexport (safe) */
 
 
       __webpack_require__.d(__webpack_exports__, "TableVirtualScrollRealApiMinimalistExampleComponent", function () {
-        return _table_virtual_scroll_real_api_minimalist_table_virtual_scroll_real_api_minimalist_example_component__WEBPACK_IMPORTED_MODULE_23__["TableVirtualScrollRealApiMinimalistExampleComponent"];
+        return _table_virtual_scroll_real_api_minimalist_table_virtual_scroll_real_api_minimalist_example_component__WEBPACK_IMPORTED_MODULE_24__["TableVirtualScrollRealApiMinimalistExampleComponent"];
       });
       /* harmony import */
 
 
-      var _table_search_with_select_and_pagination_table_search_with_select_and_pagination_example_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(
+      var _table_search_with_select_and_pagination_table_search_with_select_and_pagination_example_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(
       /*! ./table-search-with-select-and-pagination/table-search-with-select-and-pagination.example.component */
       "PaBn");
       /* harmony reexport (safe) */
 
 
       __webpack_require__.d(__webpack_exports__, "TableSearchWithSelectAndPaginationComponent", function () {
-        return _table_search_with_select_and_pagination_table_search_with_select_and_pagination_example_component__WEBPACK_IMPORTED_MODULE_24__["TableSearchWithSelectAndPaginationComponent"];
+        return _table_search_with_select_and_pagination_table_search_with_select_and_pagination_example_component__WEBPACK_IMPORTED_MODULE_25__["TableSearchWithSelectAndPaginationComponent"];
       });
       /* harmony import */
 
 
-      var _table_select_pinned_header_table_select_pinned_header_example_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(
+      var _table_select_pinned_header_table_select_pinned_header_example_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(
       /*! ./table-select-pinned-header/table-select-pinned-header.example.component */
       "lHWC");
       /* harmony reexport (safe) */
 
 
       __webpack_require__.d(__webpack_exports__, "TableSelectPinnedHeaderComponent", function () {
-        return _table_select_pinned_header_table_select_pinned_header_example_component__WEBPACK_IMPORTED_MODULE_25__["TableSelectPinnedHeaderComponent"];
+        return _table_select_pinned_header_table_select_pinned_header_example_component__WEBPACK_IMPORTED_MODULE_26__["TableSelectPinnedHeaderComponent"];
       });
       /***/
 
@@ -14802,13 +15358,13 @@
         }, {
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this25 = this;
+            var _this26 = this;
 
             this.dataSourceService.registerComponent(this.sortableTable.getFilterComponents());
             this.outputsSubscription = this.dataSourceService.outputsSubject.subscribe(function (data) {
               var _a;
 
-              _this25.dataSource = (_a = data.repeat) === null || _a === void 0 ? void 0 : _a.itemsSource;
+              _this26.dataSource = (_a = data.repeat) === null || _a === void 0 ? void 0 : _a.itemsSource;
             });
             this.dataSourceService.applyFilters();
           }
@@ -14850,7 +15406,7 @@
             var MSG_EXTERNAL_1345472093440723911$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SORTING_TABLE_SORTING_EXAMPLE_COMPONENT_TS__2 = goog.getMsg(" No.");
             i18n_1 = MSG_EXTERNAL_1345472093440723911$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SORTING_TABLE_SORTING_EXAMPLE_COMPONENT_TS__2;
           } else {
-            i18n_1 = $localize(_templateObject126 || (_templateObject126 = _taggedTemplateLiteral([":\u241F333f0164082b9f12f63ca11438b2085d074a5b0f\u241F1345472093440723911: No."])));
+            i18n_1 = $localize(_templateObject127 || (_templateObject127 = _taggedTemplateLiteral([":\u241F333f0164082b9f12f63ca11438b2085d074a5b0f\u241F1345472093440723911: No."])));
           }
 
           var i18n_3;
@@ -14859,7 +15415,7 @@
             var MSG_EXTERNAL_5923354303687392819$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SORTING_TABLE_SORTING_EXAMPLE_COMPONENT_TS__4 = goog.getMsg(" Name");
             i18n_3 = MSG_EXTERNAL_5923354303687392819$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SORTING_TABLE_SORTING_EXAMPLE_COMPONENT_TS__4;
           } else {
-            i18n_3 = $localize(_templateObject127 || (_templateObject127 = _taggedTemplateLiteral([":\u241F7b07cc6126aa22c8a3041963963e85a0791a7e40\u241F5923354303687392819: Name"])));
+            i18n_3 = $localize(_templateObject128 || (_templateObject128 = _taggedTemplateLiteral([":\u241F7b07cc6126aa22c8a3041963963e85a0791a7e40\u241F5923354303687392819: Name"])));
           }
 
           var i18n_5;
@@ -14868,7 +15424,7 @@
             var MSG_EXTERNAL_4366791221426489252$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SORTING_TABLE_SORTING_EXAMPLE_COMPONENT_TS__6 = goog.getMsg(" Features");
             i18n_5 = MSG_EXTERNAL_4366791221426489252$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SORTING_TABLE_SORTING_EXAMPLE_COMPONENT_TS__6;
           } else {
-            i18n_5 = $localize(_templateObject128 || (_templateObject128 = _taggedTemplateLiteral([":\u241F176794380c10213e5247f7350b40037bd3affcb3\u241F4366791221426489252: Features"])));
+            i18n_5 = $localize(_templateObject129 || (_templateObject129 = _taggedTemplateLiteral([":\u241F176794380c10213e5247f7350b40037bd3affcb3\u241F4366791221426489252: Features"])));
           }
 
           var i18n_7;
@@ -14877,7 +15433,7 @@
             var MSG_EXTERNAL_6940950714946520886$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SORTING_TABLE_SORTING_EXAMPLE_COMPONENT_TS__8 = goog.getMsg(" Asset Class");
             i18n_7 = MSG_EXTERNAL_6940950714946520886$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SORTING_TABLE_SORTING_EXAMPLE_COMPONENT_TS__8;
           } else {
-            i18n_7 = $localize(_templateObject129 || (_templateObject129 = _taggedTemplateLiteral([":\u241Fc123012b555ee9898f49540288d43c3c606e27d6\u241F6940950714946520886: Asset Class"])));
+            i18n_7 = $localize(_templateObject130 || (_templateObject130 = _taggedTemplateLiteral([":\u241Fc123012b555ee9898f49540288d43c3c606e27d6\u241F6940950714946520886: Asset Class"])));
           }
 
           var i18n_9;
@@ -14886,7 +15442,7 @@
             var MSG_EXTERNAL_7598846418510631873$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SORTING_TABLE_SORTING_EXAMPLE_COMPONENT_TS__10 = goog.getMsg(" Location");
             i18n_9 = MSG_EXTERNAL_7598846418510631873$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SORTING_TABLE_SORTING_EXAMPLE_COMPONENT_TS__10;
           } else {
-            i18n_9 = $localize(_templateObject130 || (_templateObject130 = _taggedTemplateLiteral([":\u241F4ed56c7c2b85b2b764c9853d121c291db3b70ed9\u241F7598846418510631873: Location"])));
+            i18n_9 = $localize(_templateObject131 || (_templateObject131 = _taggedTemplateLiteral([":\u241F4ed56c7c2b85b2b764c9853d121c291db3b70ed9\u241F7598846418510631873: Location"])));
           }
 
           var i18n_11;
@@ -14895,7 +15451,7 @@
             var MSG_EXTERNAL_7043724726246657652$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SORTING_TABLE_SORTING_EXAMPLE_COMPONENT_TS__12 = goog.getMsg(" Status");
             i18n_11 = MSG_EXTERNAL_7043724726246657652$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SORTING_TABLE_SORTING_EXAMPLE_COMPONENT_TS__12;
           } else {
-            i18n_11 = $localize(_templateObject131 || (_templateObject131 = _taggedTemplateLiteral([":\u241Ff3ab141a02057a7853b9cde7dea17eef6811e27a\u241F7043724726246657652: Status"])));
+            i18n_11 = $localize(_templateObject132 || (_templateObject132 = _taggedTemplateLiteral([":\u241Ff3ab141a02057a7853b9cde7dea17eef6811e27a\u241F7043724726246657652: Status"])));
           }
 
           var i18n_13;
@@ -14904,7 +15460,7 @@
             var MSG_EXTERNAL_3645300875970966243$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SORTING_TABLE_SORTING_EXAMPLE_COMPONENT_TS__14 = goog.getMsg(" Outages");
             i18n_13 = MSG_EXTERNAL_3645300875970966243$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SORTING_TABLE_SORTING_EXAMPLE_COMPONENT_TS__14;
           } else {
-            i18n_13 = $localize(_templateObject132 || (_templateObject132 = _taggedTemplateLiteral([":\u241Fe81b7832d164ea9359f7937353f7dfc314064a3a\u241F3645300875970966243: Outages"])));
+            i18n_13 = $localize(_templateObject133 || (_templateObject133 = _taggedTemplateLiteral([":\u241Fe81b7832d164ea9359f7937353f7dfc314064a3a\u241F3645300875970966243: Outages"])));
           }
 
           var i18n_15;
@@ -14913,7 +15469,7 @@
             var MSG_EXTERNAL_7108392645161261297$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SORTING_TABLE_SORTING_EXAMPLE_COMPONENT_TS__16 = goog.getMsg(" Checks");
             i18n_15 = MSG_EXTERNAL_7108392645161261297$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SORTING_TABLE_SORTING_EXAMPLE_COMPONENT_TS__16;
           } else {
-            i18n_15 = $localize(_templateObject133 || (_templateObject133 = _taggedTemplateLiteral([":\u241Ffc6c8586d4f4fbce21310ff2a21da10de8c8a04b\u241F7108392645161261297: Checks"])));
+            i18n_15 = $localize(_templateObject134 || (_templateObject134 = _taggedTemplateLiteral([":\u241Ffc6c8586d4f4fbce21310ff2a21da10de8c8a04b\u241F7108392645161261297: Checks"])));
           }
 
           return [["id", "nui-demo-sortable-table", 1, "nui-table__container"], ["nui-button", "", "type", "button", "id", "nui-demo-sortable-table-btn", 1, "mb-2", 3, "click"], [1, "mb-3"], ["nui-table", "", 3, "dataSource", "sortable", "sortedColumn", "sortOrderChanged"], ["sortableTable", ""], ["nuiColumnDef", "position"], ["nui-header-cell", "", 4, "nuiHeaderCellDef"], ["nui-cell", "", 4, "nuiCellDef"], ["nuiColumnDef", "name"], ["nuiColumnDef", "features"], ["nuiColumnDef", "asset"], ["nuiColumnDef", "location"], ["nuiColumnDef", "status"], ["nuiColumnDef", "outages"], ["nuiColumnDef", "checks"], ["nui-header-cell", "", 3, "isColumnSortingDisabled", 4, "nuiHeaderCellDef"], ["nui-header-row", "", 4, "nuiHeaderRowDef"], ["nui-row", "", 4, "nuiRowDef", "nuiRowDefColumns"], ["nui-header-cell", ""], i18n_1, ["nui-cell", ""], i18n_3, i18n_5, ["class", "icon-margin", 3, "icon", 4, "ngFor", "ngForOf"], [1, "icon-margin", 3, "icon"], i18n_7, i18n_9, i18n_11, i18n_13, ["nui-header-cell", "", 3, "isColumnSortingDisabled"], i18n_15, [4, "ngFor", "ngForOf"], [3, "icon"], ["nui-header-row", ""], ["nui-row", ""]];
@@ -15409,12 +15965,12 @@
         _createClass(TableRowClickableExampleComponent, [{
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this26 = this;
+            var _this27 = this;
 
             this.outputsSubscription = this.dataSourceService.outputsSubject.subscribe(function (data) {
               var _a;
 
-              _this26.dataSource = (_a = data.repeat) === null || _a === void 0 ? void 0 : _a.itemsSource;
+              _this27.dataSource = (_a = data.repeat) === null || _a === void 0 ? void 0 : _a.itemsSource;
             });
             this.applyFilters();
           }
@@ -15456,7 +16012,7 @@
             var MSG_EXTERNAL_1345472093440723911$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_ROW_CLICKABLE_TABLE_ROW_CLICKABLE_EXAMPLE_COMPONENT_TS__1 = goog.getMsg(" No.");
             i18n_0 = MSG_EXTERNAL_1345472093440723911$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_ROW_CLICKABLE_TABLE_ROW_CLICKABLE_EXAMPLE_COMPONENT_TS__1;
           } else {
-            i18n_0 = $localize(_templateObject134 || (_templateObject134 = _taggedTemplateLiteral([":\u241F333f0164082b9f12f63ca11438b2085d074a5b0f\u241F1345472093440723911: No."])));
+            i18n_0 = $localize(_templateObject135 || (_templateObject135 = _taggedTemplateLiteral([":\u241F333f0164082b9f12f63ca11438b2085d074a5b0f\u241F1345472093440723911: No."])));
           }
 
           var i18n_2;
@@ -15465,7 +16021,7 @@
             var MSG_EXTERNAL_4556215123825736249$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_ROW_CLICKABLE_TABLE_ROW_CLICKABLE_EXAMPLE_COMPONENT_TS__3 = goog.getMsg(" Description");
             i18n_2 = MSG_EXTERNAL_4556215123825736249$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_ROW_CLICKABLE_TABLE_ROW_CLICKABLE_EXAMPLE_COMPONENT_TS__3;
           } else {
-            i18n_2 = $localize(_templateObject135 || (_templateObject135 = _taggedTemplateLiteral([":\u241F1966b0173d4a08be5ddb5cda1246d604fcd242c7\u241F4556215123825736249: Description"])));
+            i18n_2 = $localize(_templateObject136 || (_templateObject136 = _taggedTemplateLiteral([":\u241F1966b0173d4a08be5ddb5cda1246d604fcd242c7\u241F4556215123825736249: Description"])));
           }
 
           var i18n_4;
@@ -15474,7 +16030,7 @@
             var MSG_EXTERNAL_7598846418510631873$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_ROW_CLICKABLE_TABLE_ROW_CLICKABLE_EXAMPLE_COMPONENT_TS__5 = goog.getMsg(" Location");
             i18n_4 = MSG_EXTERNAL_7598846418510631873$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_ROW_CLICKABLE_TABLE_ROW_CLICKABLE_EXAMPLE_COMPONENT_TS__5;
           } else {
-            i18n_4 = $localize(_templateObject136 || (_templateObject136 = _taggedTemplateLiteral([":\u241F4ed56c7c2b85b2b764c9853d121c291db3b70ed9\u241F7598846418510631873: Location"])));
+            i18n_4 = $localize(_templateObject137 || (_templateObject137 = _taggedTemplateLiteral([":\u241F4ed56c7c2b85b2b764c9853d121c291db3b70ed9\u241F7598846418510631873: Location"])));
           }
 
           return [["id", "nui-demo-table-select", 1, "nui-table__container"], ["nui-table", "", 3, "dataSource", "selection", "selectable", "trackBy", "selectionChange"], ["nuiColumnDef", "position"], ["nui-header-cell", "", 4, "nuiHeaderCellDef"], ["nui-cell", "", 4, "nuiCellDef"], ["nuiColumnDef", "description"], ["nui-cell", "", 3, "tooltipText", 4, "nuiCellDef"], ["nuiColumnDef", "status", "type", "icon"], ["nuiColumnDef", "location"], ["nuiColumnDef", "actions"], ["nui-header-row", "", 4, "nuiHeaderRowDef"], ["nui-row", "", 3, "rowObject", "clickableRow", 4, "nuiRowDef", "nuiRowDefColumns"], [1, "flex-row-container"], [1, "flex-independent-row-item"], ["nui-header-cell", ""], i18n_0, ["nui-cell", ""], i18n_2, ["nui-cell", "", 3, "tooltipText"], [1, "d-flex", "align-items-center"], [3, "icon"], i18n_4, ["target", "_blank", 3, "href"], ["nui-button", "", "type", "button"], ["nui-header-row", ""], ["nui-row", "", 3, "rowObject", "clickableRow"]];
@@ -16146,7 +16702,7 @@
             var MSG_EXTERNAL_1345472093440723911$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECT_PINNED_HEADER_TABLE_SELECT_PINNED_HEADER_EXAMPLE_COMPONENT_TS__1 = goog.getMsg(" No.");
             i18n_0 = MSG_EXTERNAL_1345472093440723911$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECT_PINNED_HEADER_TABLE_SELECT_PINNED_HEADER_EXAMPLE_COMPONENT_TS__1;
           } else {
-            i18n_0 = $localize(_templateObject137 || (_templateObject137 = _taggedTemplateLiteral([":\u241F333f0164082b9f12f63ca11438b2085d074a5b0f\u241F1345472093440723911: No."])));
+            i18n_0 = $localize(_templateObject138 || (_templateObject138 = _taggedTemplateLiteral([":\u241F333f0164082b9f12f63ca11438b2085d074a5b0f\u241F1345472093440723911: No."])));
           }
 
           var i18n_2;
@@ -16155,7 +16711,7 @@
             var MSG_EXTERNAL_5923354303687392819$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECT_PINNED_HEADER_TABLE_SELECT_PINNED_HEADER_EXAMPLE_COMPONENT_TS__3 = goog.getMsg(" Name");
             i18n_2 = MSG_EXTERNAL_5923354303687392819$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECT_PINNED_HEADER_TABLE_SELECT_PINNED_HEADER_EXAMPLE_COMPONENT_TS__3;
           } else {
-            i18n_2 = $localize(_templateObject138 || (_templateObject138 = _taggedTemplateLiteral([":\u241F7b07cc6126aa22c8a3041963963e85a0791a7e40\u241F5923354303687392819: Name"])));
+            i18n_2 = $localize(_templateObject139 || (_templateObject139 = _taggedTemplateLiteral([":\u241F7b07cc6126aa22c8a3041963963e85a0791a7e40\u241F5923354303687392819: Name"])));
           }
 
           var i18n_4;
@@ -16164,7 +16720,7 @@
             var MSG_EXTERNAL_4366791221426489252$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECT_PINNED_HEADER_TABLE_SELECT_PINNED_HEADER_EXAMPLE_COMPONENT_TS__5 = goog.getMsg(" Features");
             i18n_4 = MSG_EXTERNAL_4366791221426489252$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECT_PINNED_HEADER_TABLE_SELECT_PINNED_HEADER_EXAMPLE_COMPONENT_TS__5;
           } else {
-            i18n_4 = $localize(_templateObject139 || (_templateObject139 = _taggedTemplateLiteral([":\u241F176794380c10213e5247f7350b40037bd3affcb3\u241F4366791221426489252: Features"])));
+            i18n_4 = $localize(_templateObject140 || (_templateObject140 = _taggedTemplateLiteral([":\u241F176794380c10213e5247f7350b40037bd3affcb3\u241F4366791221426489252: Features"])));
           }
 
           var i18n_6;
@@ -16173,7 +16729,7 @@
             var MSG_EXTERNAL_6940950714946520886$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECT_PINNED_HEADER_TABLE_SELECT_PINNED_HEADER_EXAMPLE_COMPONENT_TS__7 = goog.getMsg(" Asset Class");
             i18n_6 = MSG_EXTERNAL_6940950714946520886$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECT_PINNED_HEADER_TABLE_SELECT_PINNED_HEADER_EXAMPLE_COMPONENT_TS__7;
           } else {
-            i18n_6 = $localize(_templateObject140 || (_templateObject140 = _taggedTemplateLiteral([":\u241Fc123012b555ee9898f49540288d43c3c606e27d6\u241F6940950714946520886: Asset Class"])));
+            i18n_6 = $localize(_templateObject141 || (_templateObject141 = _taggedTemplateLiteral([":\u241Fc123012b555ee9898f49540288d43c3c606e27d6\u241F6940950714946520886: Asset Class"])));
           }
 
           var i18n_8;
@@ -16182,7 +16738,7 @@
             var MSG_EXTERNAL_7598846418510631873$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECT_PINNED_HEADER_TABLE_SELECT_PINNED_HEADER_EXAMPLE_COMPONENT_TS__9 = goog.getMsg(" Location");
             i18n_8 = MSG_EXTERNAL_7598846418510631873$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECT_PINNED_HEADER_TABLE_SELECT_PINNED_HEADER_EXAMPLE_COMPONENT_TS__9;
           } else {
-            i18n_8 = $localize(_templateObject141 || (_templateObject141 = _taggedTemplateLiteral([":\u241F4ed56c7c2b85b2b764c9853d121c291db3b70ed9\u241F7598846418510631873: Location"])));
+            i18n_8 = $localize(_templateObject142 || (_templateObject142 = _taggedTemplateLiteral([":\u241F4ed56c7c2b85b2b764c9853d121c291db3b70ed9\u241F7598846418510631873: Location"])));
           }
 
           var i18n_10;
@@ -16191,7 +16747,7 @@
             var MSG_EXTERNAL_7043724726246657652$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECT_PINNED_HEADER_TABLE_SELECT_PINNED_HEADER_EXAMPLE_COMPONENT_TS__11 = goog.getMsg(" Status");
             i18n_10 = MSG_EXTERNAL_7043724726246657652$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECT_PINNED_HEADER_TABLE_SELECT_PINNED_HEADER_EXAMPLE_COMPONENT_TS__11;
           } else {
-            i18n_10 = $localize(_templateObject142 || (_templateObject142 = _taggedTemplateLiteral([":\u241Ff3ab141a02057a7853b9cde7dea17eef6811e27a\u241F7043724726246657652: Status"])));
+            i18n_10 = $localize(_templateObject143 || (_templateObject143 = _taggedTemplateLiteral([":\u241Ff3ab141a02057a7853b9cde7dea17eef6811e27a\u241F7043724726246657652: Status"])));
           }
 
           var i18n_12;
@@ -16200,7 +16756,7 @@
             var MSG_EXTERNAL_3645300875970966243$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECT_PINNED_HEADER_TABLE_SELECT_PINNED_HEADER_EXAMPLE_COMPONENT_TS__13 = goog.getMsg(" Outages");
             i18n_12 = MSG_EXTERNAL_3645300875970966243$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECT_PINNED_HEADER_TABLE_SELECT_PINNED_HEADER_EXAMPLE_COMPONENT_TS__13;
           } else {
-            i18n_12 = $localize(_templateObject143 || (_templateObject143 = _taggedTemplateLiteral([":\u241Fe81b7832d164ea9359f7937353f7dfc314064a3a\u241F3645300875970966243: Outages"])));
+            i18n_12 = $localize(_templateObject144 || (_templateObject144 = _taggedTemplateLiteral([":\u241Fe81b7832d164ea9359f7937353f7dfc314064a3a\u241F3645300875970966243: Outages"])));
           }
 
           var i18n_14;
@@ -16209,7 +16765,7 @@
             var MSG_EXTERNAL_7108392645161261297$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECT_PINNED_HEADER_TABLE_SELECT_PINNED_HEADER_EXAMPLE_COMPONENT_TS__15 = goog.getMsg(" Checks");
             i18n_14 = MSG_EXTERNAL_7108392645161261297$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECT_PINNED_HEADER_TABLE_SELECT_PINNED_HEADER_EXAMPLE_COMPONENT_TS__15;
           } else {
-            i18n_14 = $localize(_templateObject144 || (_templateObject144 = _taggedTemplateLiteral([":\u241Ffc6c8586d4f4fbce21310ff2a21da10de8c8a04b\u241F7108392645161261297: Checks"])));
+            i18n_14 = $localize(_templateObject145 || (_templateObject145 = _taggedTemplateLiteral([":\u241Ffc6c8586d4f4fbce21310ff2a21da10de8c8a04b\u241F7108392645161261297: Checks"])));
           }
 
           return [[1, "nui-table__container", 2, "height", "300px"], ["nui-table", "", 3, "dataSource", "selection", "selectable", "trackBy", "selectionChange"], ["nuiColumnDef", "position"], ["nui-header-cell", "", 4, "nuiHeaderCellDef"], ["nui-cell", "", 4, "nuiCellDef"], ["nuiColumnDef", "name"], ["nuiColumnDef", "features"], ["nuiColumnDef", "asset"], ["nuiColumnDef", "location"], ["nuiColumnDef", "status"], ["nuiColumnDef", "outages"], ["nuiColumnDef", "checks"], ["nui-header-row", "", "stickyCssClass", "nui-table__sticky", "StickyDirection", "top", 4, "nuiHeaderRowDef", "nuiHeaderRowDefSticky"], ["nui-row", "", 3, "rowObject", 4, "nuiRowDef", "nuiRowDefColumns"], ["nui-header-cell", ""], i18n_0, ["nui-cell", ""], i18n_2, i18n_4, [1, "d-flex", "align-items-center"], ["class", "icon-margin", 3, "icon", 4, "ngFor", "ngForOf"], [1, "icon-margin", 3, "icon"], i18n_6, i18n_8, i18n_10, i18n_12, i18n_14, [4, "ngFor", "ngForOf"], [3, "icon"], [1, "ml-2"], ["nui-header-row", "", "stickyCssClass", "nui-table__sticky", "StickyDirection", "top"], ["nui-row", "", 3, "rowObject"]];
@@ -16460,7 +17016,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import { CdkVirtualScrollViewport } from \"@angular/cdk/scrolling\";\nimport { AfterViewInit, ChangeDetectionStrategy, Component, TrackByFunction, ViewChild } from \"@angular/core\";\nimport {\n    ClientSideDataSource,\n    IFilteringOutputs,\n    TableStickyHeaderDirective,\n} from \"@nova-ui/bits\";\nimport sample from \"lodash/sample\";\nimport { Observable } from \"rxjs\";\nimport { map, startWith, switchMap, tap } from \"rxjs/operators\";\n\nimport { IRandomUserTableModel } from \"..\";\n\n@Component({\n    selector: \"nui-table-virtual-scroll-sticky-header-example\",\n    templateUrl: \"./table-virtual-scroll-sticky-header-example.component.html\",\n    changeDetection: ChangeDetectionStrategy.OnPush,\n    providers: [ClientSideDataSource],\n})\nexport class TableVirtualScrollStickyHeaderExampleComponent implements AfterViewInit {\n    @ViewChild(CdkVirtualScrollViewport) public viewport: CdkVirtualScrollViewport;\n    // Note: Used only for demo purposes\n    @ViewChild(TableStickyHeaderDirective) public stickyHeaderDirective: TableStickyHeaderDirective;\n\n    // Note: Mock items list is used to fake that the data is already loaded\n    // and let CDK Viewport perform the scrolling on a known number of items\n    public placeholderItems: undefined[] = [];\n    public visibleItems$: Observable<IRandomUserTableModel[]>;\n    // The dynamically changed array of items to render by the table\n    public displayedColumns: string[] = [\"no\", \"nameTitle\", \"nameFirst\", \"nameLast\", \"city\", \"postcode\"];\n\n    public makeSticky: boolean = true;\n    public itemSize: number = 40;\n    public gridHeight = 400;\n    // trackBy handler used to identify uniquely each item in the table\n    public trackByNo: TrackByFunction<IRandomUserTableModel> = (index, item) => item?.no;\n\n    constructor(public dataSourceService: ClientSideDataSource<IRandomUserTableModel>) {\n        // Note: Initiating data source with data to be displayed\n        this.dataSourceService.setData(generateUsers(100000));\n    }\n\n    public ngAfterViewInit() {\n        this.dataSourceService.componentTree = {\n            // Note: Using paginator as filter to be able to get specific range\n            paginator: {\n                componentInstance: {\n                    getFilters: () => ({\n                        value: this.viewport.getRenderedRange(),\n                    }),\n                },\n            },\n        };\n\n        // Note: Creating a stream of visible items to be bound to the table and increase the performance\n        this.visibleItems$ = this.viewport.renderedRangeStream.pipe(startWith({ start: 0, end: 10 }),\n            // Note: On range change applying filters\n                                                                    tap(() => this.dataSourceService.applyFilters()),\n            // Subscribing to the filter results transforming and merging them into the stream\n                                                                    switchMap(() => this.dataSourceService.outputsSubject.pipe(\n                                                                        map((result: IFilteringOutputs) => {\n                                                                            // Updating mock items list\n                                                                            if (this.placeholderItems.length !== result.paginator.total) {\n                                                                                this.placeholderItems = Array.from({ length: result.paginator.total });\n                                                                            }\n                                                                            // Mapping the values to array to be able to bind them to the table dataSource\n                                                                            return result.repeat.itemsSource;\n                                                                        })\n                                                                    )));\n    }\n\n    // Note: Used only for demo purposes\n    updateStickyState(state: boolean) {\n        this.stickyHeaderDirective.tableStickyHeader = state;\n        this.makeSticky = state;\n    }\n}\n\nfunction generateUsers(length: number): IRandomUserTableModel[] {\n    return Array.from({ length }).map((obj: unknown, id: number) => {\n        const personName = sample([\"Josh\", \"Lukas\", \"Blake\", \"Frantz\", \"Dima\", \"Serhii\", \"Vita\", \"Vlad\", \"Ivan\", \"Dumitru\"]) || \"Josh\";\n        return ({\n            no: id,\n            postcode: id * 1000000 * id,\n            cell: \"0000\",\n            city: sample([\"Bucharest\", \"Kiev\", \"Austin\", \"Brno\", \"Frankfurt pe Main\", \"Sutton-under-Whitestonecliffe\", \"Vila Bela da Santíssima Trindade\"]) ||\n                \"Bucharest\",\n            country: \"Unknown\",\n            email: `${ personName.toLocaleLowerCase() }@@sw.com`,\n            gender: \"Unknown\",\n            nameFirst: personName,\n            nameLast: \"UnknownLast\",\n            nameTitle: \"Sir.\",\n        });\n    });\n}\n";
+      __webpack_exports__["default"] = "import { CdkVirtualScrollViewport } from \"@angular/cdk/scrolling\";\nimport { AfterViewInit, ChangeDetectionStrategy, Component, TrackByFunction, ViewChild } from \"@angular/core\";\nimport {\n    ClientSideDataSource,\n    IFilteringOutputs,\n    TableStickyHeaderDirective,\n} from \"@nova-ui/bits\";\nimport sample from \"lodash/sample\";\nimport { Observable } from \"rxjs\";\nimport { map, startWith, switchMap, tap } from \"rxjs/operators\";\n\ninterface IRandomUserTableModel {\n    no: number;\n    nameFirst: string;\n    nameLast: string;\n    city: string;\n    postcode: number;\n}\n\n@Component({\n    selector: \"nui-table-virtual-scroll-sticky-header-example\",\n    templateUrl: \"./table-virtual-scroll-sticky-header-example.component.html\",\n    changeDetection: ChangeDetectionStrategy.OnPush,\n    providers: [ClientSideDataSource],\n})\nexport class TableVirtualScrollStickyHeaderExampleComponent implements AfterViewInit {\n    @ViewChild(CdkVirtualScrollViewport) public viewport: CdkVirtualScrollViewport;\n    // Note: Used only for demo purposes\n    @ViewChild(TableStickyHeaderDirective) public stickyHeaderDirective: TableStickyHeaderDirective;\n\n    // Note: Mock items list is used to fake that the data is already loaded\n    // and let CDK Viewport perform the scrolling on a known number of items\n    public placeholderItems: undefined[] = [];\n    public visibleItems$: Observable<IRandomUserTableModel[]>;\n    // The dynamically changed array of items to render by the table\n    public displayedColumns: string[] = [\"no\", \"nameFirst\", \"nameLast\", \"city\", \"postcode\"];\n\n    public makeSticky: boolean = true;\n    public itemSize: number = 40;\n    public gridHeight = 400;\n    // trackBy handler used to identify uniquely each item in the table\n    public trackByNo: TrackByFunction<IRandomUserTableModel> = (index: number, item: IRandomUserTableModel): number => item?.no;\n\n    constructor(public dataSourceService: ClientSideDataSource<IRandomUserTableModel>) {\n        // Note: Initiating data source with data to be displayed\n        this.dataSourceService.setData(generateUsers(100000));\n    }\n\n    public ngAfterViewInit(): void {\n        this.dataSourceService.componentTree = {\n            // Note: Using paginator as filter to be able to get specific range\n            paginator: {\n                componentInstance: {\n                    getFilters: () => ({\n                        value: this.viewport.getRenderedRange(),\n                    }),\n                },\n            },\n        };\n\n        // Note: Creating a stream of visible items to be bound to the table and increase the performance\n        this.visibleItems$ = this.viewport.renderedRangeStream.pipe(\n            startWith({ start: 0, end: 10 }),\n            // Note: On range change applying filters\n            tap(async () => this.dataSourceService.applyFilters()),\n            // Subscribing to the filter results transforming and merging them into the stream\n            switchMap(() => this.dataSourceService.outputsSubject.pipe(\n                map((result: IFilteringOutputs) => {\n                    // Updating mock items list\n                    if (this.placeholderItems.length !== result.paginator.total) {\n                        this.placeholderItems = Array.from({ length: result.paginator.total });\n                    }\n                    // Mapping the values to array to be able to bind them to the table dataSource\n                    return result.repeat.itemsSource;\n                })\n            )));\n    }\n\n    // Note: Used only for demo purposes\n    public updateStickyState(state: boolean): void {\n        this.stickyHeaderDirective.tableStickyHeader = state;\n        this.makeSticky = state;\n    }\n}\n\nconst PEOPLE = [\"Elena\", \"Madelyn\", \"Baggio\", \"Josh\", \"Lukas\", \"Blake\", \"Frantz\", \"Dima\", \"Serhii\", \"Vita\", \"Vlad\", \"Ivan\", \"Dumitru\"];\nconst CITIES = [\"Bucharest\", \"Kiev\", \"Austin\", \"Brno\", \"Frankfurt pe Main\", \"Sutton-under-Whitestonecliffe\", \"Vila Bela da Santíssima Trindade\"];\nfunction generateUsers(length: number): IRandomUserTableModel[] {\n    return Array.from({ length }).map((obj: unknown, id: number) => {\n        const personName = sample(PEOPLE) || PEOPLE[0];\n        return ({\n            no: id,\n            postcode: id * 1000000 * id,\n            city: sample(CITIES) || CITIES[0],\n            nameFirst: personName,\n            nameLast: \"UnknownLast\",\n        });\n    });\n}\n";
       /***/
     },
 
@@ -18135,6 +18691,26 @@
     },
 
     /***/
+    "n2nk":
+    /*!***********************************************************************************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/table/table-virtual-scroll-sticky-header-test/table-virtual-scroll-sticky-header-test-example.component.ts ***!
+      \***********************************************************************************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function n2nk(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "import { CdkVirtualScrollViewport } from \"@angular/cdk/scrolling\";\nimport { AfterViewInit, ChangeDetectionStrategy, Component, TrackByFunction, ViewChild } from \"@angular/core\";\nimport {\n    ClientSideDataSource,\n    IFilteringOutputs,\n    TableStickyHeaderDirective,\n} from \"@nova-ui/bits\";\nimport sample from \"lodash/sample\";\nimport { Observable } from \"rxjs\";\nimport { map, startWith, switchMap, tap } from \"rxjs/operators\";\n\ninterface IRandomUserTableModel {\n    no: number;\n    icon: string;\n    nameFirst: string;\n    nameLast: string;\n    city: string;\n    postcode: number;\n}\n\n@Component({\n    selector: \"nui-table-virtual-scroll-sticky-header-test-example\",\n    templateUrl: \"./table-virtual-scroll-sticky-header-test-example.component.html\",\n    changeDetection: ChangeDetectionStrategy.OnPush,\n    providers: [ClientSideDataSource],\n})\nexport class TableVirtualScrollStickyHeaderTestExampleComponent implements AfterViewInit {\n    @ViewChild(CdkVirtualScrollViewport) public viewport: CdkVirtualScrollViewport;\n    // Note: Used only for demo purposes\n    @ViewChild(TableStickyHeaderDirective) public stickyHeaderDirective: TableStickyHeaderDirective;\n\n    // Note: Mock items list is used to fake that the data is already loaded\n    // and let CDK Viewport perform the scrolling on a known number of items\n    public placeholderItems: undefined[] = [];\n    public visibleItems$: Observable<IRandomUserTableModel[]>;\n    // The dynamically changed array of items to render by the table\n    public displayedColumns: string[] = [\"no\", \"icon\", \"nameFirst\", \"nameLast\", \"city\", \"postcode\"];\n\n    public makeSticky: boolean = true;\n    public itemSize: number = 40;\n    public gridHeight = 400;\n    // trackBy handler used to identify uniquely each item in the table\n    public trackByNo: TrackByFunction<IRandomUserTableModel> = (index: number, item: IRandomUserTableModel): number => item?.no;\n\n    constructor(public dataSourceService: ClientSideDataSource<IRandomUserTableModel>) {\n        // Note: Initiating data source with data to be displayed\n        this.dataSourceService.setData(generateUsers(100000));\n    }\n\n    public ngAfterViewInit(): void {\n        this.dataSourceService.componentTree = {\n            // Note: Using paginator as filter to be able to get specific range\n            paginator: {\n                componentInstance: {\n                    getFilters: () => ({\n                        value: this.viewport.getRenderedRange(),\n                    }),\n                },\n            },\n        };\n\n        // Note: Creating a stream of visible items to be bound to the table and increase the performance\n        this.visibleItems$ = this.viewport.renderedRangeStream.pipe(\n            startWith({ start: 0, end: 10 }),\n            // Note: On range change applying filters\n            tap(async () => this.dataSourceService.applyFilters()),\n            // Subscribing to the filter results transforming and merging them into the stream\n            switchMap(() => this.dataSourceService.outputsSubject.pipe(\n                map((result: IFilteringOutputs) => {\n                    // Updating mock items list\n                    if (this.placeholderItems.length !== result.paginator.total) {\n                        this.placeholderItems = Array.from({ length: result.paginator.total });\n                    }\n                    // Mapping the values to array to be able to bind them to the table dataSource\n                    return result.repeat.itemsSource;\n                })\n            )));\n    }\n\n    // Note: Used only for demo purposes\n    public updateStickyState(state: boolean): void {\n        this.stickyHeaderDirective.tableStickyHeader = state;\n        this.makeSticky = state;\n    }\n}\n\nconst PEOPLE = [\"Elena\", \"Madelyn\", \"Baggio\", \"Josh\", \"Lukas\", \"Blake\", \"Frantz\", \"Dima\", \"Serhii\", \"Vita\", \"Vlad\", \"Ivan\", \"Dumitru\"];\nconst CITIES = [\"Bucharest\", \"Kiev\", \"Austin\", \"Brno\", \"Frankfurt pe Main\", \"Sutton-under-Whitestonecliffe\", \"Vila Bela da Santíssima Trindade\"];\nfunction generateUsers(length: number): IRandomUserTableModel[] {\n    return Array.from({ length }).map((obj: unknown, id: number) => {\n        const personName = sample(PEOPLE) || PEOPLE[0];\n        return ({\n            no: id,\n            postcode: id * 1000000 * id,\n            city: sample(CITIES) || CITIES[0],\n            nameFirst: personName,\n            nameLast: \"UnknownLast\",\n            icon: sample([\"status_up\", \"status_unplugged\"]) || \"status_up\",\n        });\n    });\n}\n";
+      /***/
+    },
+
+    /***/
     "n8np":
     /*!*****************************************************************************************************************************************************!*\
       !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/table/table-cell-content-align/table-cell-content-align.example.component.ts ***!
@@ -18457,7 +19033,7 @@
         _createClass(TableSelectableToggleExampleComponent, [{
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this27 = this;
+            var _this28 = this;
 
             this.dataSourceService.componentTree = {
               paginator: {
@@ -18467,10 +19043,10 @@
             this.outputsSubscription = this.dataSourceService.outputsSubject.subscribe(function (data) {
               var _a, _b;
 
-              _this27.dataSource = (_a = data.repeat) === null || _a === void 0 ? void 0 : _a.itemsSource;
-              _this27.paginationTotal = (_b = data.paginator) === null || _b === void 0 ? void 0 : _b.total;
+              _this28.dataSource = (_a = data.repeat) === null || _a === void 0 ? void 0 : _a.itemsSource;
+              _this28.paginationTotal = (_b = data.paginator) === null || _b === void 0 ? void 0 : _b.total;
 
-              _this27.changeDetector.markForCheck();
+              _this28.changeDetector.markForCheck();
             });
             this.applyFilters();
           }
@@ -18534,7 +19110,7 @@
             var MSG_EXTERNAL_1345472093440723911$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECTABLE_TOGGLE_TABLE_SELECTABLE_TOGGLE_EXAMPLE_COMPONENT_TS__2 = goog.getMsg(" No.");
             i18n_1 = MSG_EXTERNAL_1345472093440723911$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECTABLE_TOGGLE_TABLE_SELECTABLE_TOGGLE_EXAMPLE_COMPONENT_TS__2;
           } else {
-            i18n_1 = $localize(_templateObject145 || (_templateObject145 = _taggedTemplateLiteral([":\u241F333f0164082b9f12f63ca11438b2085d074a5b0f\u241F1345472093440723911: No."])));
+            i18n_1 = $localize(_templateObject146 || (_templateObject146 = _taggedTemplateLiteral([":\u241F333f0164082b9f12f63ca11438b2085d074a5b0f\u241F1345472093440723911: No."])));
           }
 
           var i18n_3;
@@ -18543,7 +19119,7 @@
             var MSG_EXTERNAL_1466114336146187941$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECTABLE_TOGGLE_TABLE_SELECTABLE_TOGGLE_EXAMPLE_COMPONENT_TS__4 = goog.getMsg(" Item");
             i18n_3 = MSG_EXTERNAL_1466114336146187941$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECTABLE_TOGGLE_TABLE_SELECTABLE_TOGGLE_EXAMPLE_COMPONENT_TS__4;
           } else {
-            i18n_3 = $localize(_templateObject146 || (_templateObject146 = _taggedTemplateLiteral([":\u241F25089eb429c6d3c5693152e8f3683de49f7f9707\u241F1466114336146187941: Item"])));
+            i18n_3 = $localize(_templateObject147 || (_templateObject147 = _taggedTemplateLiteral([":\u241F25089eb429c6d3c5693152e8f3683de49f7f9707\u241F1466114336146187941: Item"])));
           }
 
           var i18n_5;
@@ -18552,7 +19128,7 @@
             var MSG_EXTERNAL_4556215123825736249$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECTABLE_TOGGLE_TABLE_SELECTABLE_TOGGLE_EXAMPLE_COMPONENT_TS__6 = goog.getMsg(" Description");
             i18n_5 = MSG_EXTERNAL_4556215123825736249$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECTABLE_TOGGLE_TABLE_SELECTABLE_TOGGLE_EXAMPLE_COMPONENT_TS__6;
           } else {
-            i18n_5 = $localize(_templateObject147 || (_templateObject147 = _taggedTemplateLiteral([":\u241F1966b0173d4a08be5ddb5cda1246d604fcd242c7\u241F4556215123825736249: Description"])));
+            i18n_5 = $localize(_templateObject148 || (_templateObject148 = _taggedTemplateLiteral([":\u241F1966b0173d4a08be5ddb5cda1246d604fcd242c7\u241F4556215123825736249: Description"])));
           }
 
           var i18n_7;
@@ -18561,7 +19137,7 @@
             var MSG_EXTERNAL_7598846418510631873$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECTABLE_TOGGLE_TABLE_SELECTABLE_TOGGLE_EXAMPLE_COMPONENT_TS__8 = goog.getMsg(" Location");
             i18n_7 = MSG_EXTERNAL_7598846418510631873$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_SELECTABLE_TOGGLE_TABLE_SELECTABLE_TOGGLE_EXAMPLE_COMPONENT_TS__8;
           } else {
-            i18n_7 = $localize(_templateObject148 || (_templateObject148 = _taggedTemplateLiteral([":\u241F4ed56c7c2b85b2b764c9853d121c291db3b70ed9\u241F7598846418510631873: Location"])));
+            i18n_7 = $localize(_templateObject149 || (_templateObject149 = _taggedTemplateLiteral([":\u241F4ed56c7c2b85b2b764c9853d121c291db3b70ed9\u241F7598846418510631873: Location"])));
           }
 
           return [["id", "demo-table-selectable-toggle-btn", "nui-button", "", "type", "button", 3, "click"], ["id", "demo-table-selectable-toggle", 1, "nui-table__container"], ["nui-table", "", 3, "dataSource", "totalItems", "selection", "selectable", "trackBy", "selectionChange"], ["nuiColumnDef", "position"], ["nui-header-cell", "", 4, "nuiHeaderCellDef"], ["nui-cell", "", 4, "nuiCellDef"], ["nuiColumnDef", "item"], ["nuiColumnDef", "description"], ["nui-cell", "", 3, "tooltipText", 4, "nuiCellDef"], ["nuiColumnDef", "status", "type", "icon"], ["nuiColumnDef", "location"], ["nui-header-row", "", 4, "nuiHeaderRowDef"], ["nui-row", "", 3, "rowObject", "clickableRow", 4, "nuiRowDef", "nuiRowDefColumns"], ["id", "nui-demo-table-select-paginator", "activeClass", "active", "disabledClass", "disabled", "showPrevNext", "true", 3, "page", "pageSize", "total", "pagerAction"], ["filteringPaginator", ""], [1, "flex-row-container"], [1, "flex-independent-row-item"], ["nui-header-cell", ""], i18n_1, ["nui-cell", ""], i18n_3, i18n_5, ["nui-cell", "", 3, "tooltipText"], [1, "d-flex", "align-items-center"], [3, "icon"], i18n_7, ["nui-header-row", ""], ["nui-row", "", 3, "rowObject", "clickableRow"]];
@@ -18840,6 +19416,26 @@
     },
 
     /***/
+    "qNxL":
+    /*!*************************************************************************************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/table/table-virtual-scroll-sticky-header-test/table-virtual-scroll-sticky-header-test-example.component.html ***!
+      \*************************************************************************************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function qNxL(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "<div class=\"row mb-2\">\n    <div class=\"col-3\">\n        <nui-switch [value]=\"makeSticky\" (valueChange)=\"updateStickyState($event)\" i18n>\n            {{makeSticky ? 'Sticky' : 'Not Sticky'}}\n        </nui-switch>\n    </div>\n</div>\n\n<div id=\"nui-demo-table-sticky-header\" [style.height.px]=\"gridHeight\" [style.max-width.px]=\"1300\">\n    <cdk-virtual-scroll-viewport tableStickyHeader class=\"h-100\" [itemSize]=\"itemSize\">\n\n        <!-- IMPORTANT Bind only visible rows to the table, otherwise, the table will render all rows in the DOM -->\n        <table nui-table [dataSource]=\"visibleItems$ | async\" [trackBy]=\"trackByNo\" [sortable]=\"true\">\n            <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->\n            <ng-container *ngFor=\"let column of displayedColumns\" [nuiColumnDef]=\"column\" [type]=\"column === 'icon' ? 'icon' : 'default'\">\n                <th nui-header-cell *nuiHeaderCellDef>\n                    <span *ngIf=\"column !== 'icon'; else headerIcon\">{{column}}</span>\n                    <ng-template #headerIcon>\n                        <div class=\"d-flex align-items-center justify-content-center\">\n                            <nui-icon icon=\"enable\"></nui-icon>\n                        </div>\n                    </ng-template>\n                </th>\n                <td nui-cell *nuiCellDef=\"let element\">\n                    <span *ngIf=\"column !== 'icon'; else icon\">{{element[column]}}</span>\n                    <ng-template #icon>\n                        <div class=\"d-flex align-items-center justify-content-center\">\n                            <nui-icon [icon]=\"element[column]\"></nui-icon>\n                        </div>\n                    </ng-template>\n                </td>\n            </ng-container>\n\n            <tr nui-header-row *nuiHeaderRowDef=\"displayedColumns\"></tr>\n            <!-- IMPORTANT The actual difference between normal table and virtualized one-->\n            <!-- ∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨ -->\n            <ng-template nuiRowDef cdkVirtualFor\n                         let-context\n                         [nuiRowDefColumns]=\"displayedColumns\"\n                         [cdkVirtualForOf]=\"placeholderItems\"\n                         [cdkVirtualForTrackBy]=\"trackByNo\">\n                <tr nui-row [rowObject]=\"context\"></tr>\n            </ng-template>\n            <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->\n        </table>\n\n    </cdk-virtual-scroll-viewport>\n</div>\n";
+      /***/
+    },
+
+    /***/
     "rDK+":
     /*!***************************************************************************************************************************************************************************************!*\
       !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/table/table-virtual-scroll-real-api-minimalist/table-virtual-scroll-real-api-minimalist.example.component.less ***!
@@ -18998,6 +19594,12 @@
       var _table_select_pinned_header_table_select_pinned_header_example_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
       /*! ../table-select-pinned-header/table-select-pinned-header.example.component */
       "lHWC");
+      /* harmony import */
+
+
+      var _table_virtual_scroll_sticky_header_test_table_virtual_scroll_sticky_header_test_example_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+      /*! ../table-virtual-scroll-sticky-header-test/table-virtual-scroll-sticky-header-test-example.component */
+      "/Jns");
 
       var TableVisualTestComponent = function TableVisualTestComponent() {
         _classCallCheck(this, TableVisualTestComponent);
@@ -19010,9 +19612,9 @@
       TableVisualTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: TableVisualTestComponent,
         selectors: [["table-visual-test-example"]],
-        decls: 41,
+        decls: 45,
         vars: 0,
-        consts: [[1, "container"], ["open", ""], ["id", "nui-visual-table-basic-summary"], ["id", "table-basic-usage"], ["id", "nui-visual-table-pinned-summary"], ["id", "table-pinned-header"], ["id", "nui-visual-table-alignment-summary"], ["id", "table-column-alignment"], ["id", "nui-visual-table-row-denisty-tiny-summary"], ["id", "table-row-density-tiny"], ["id", "nui-visual-table-row-denisty-compact-summary"], ["id", "table-row-density-compact", "density", "compact"], ["id", "nui-visual-table-sorting-summary"], ["id", "table-sorting"], ["id", "nui-visual-table-custom-action-summary"], ["id", "table-custom-action"], ["id", "nui-visual-table-column-size-summary"], ["id", "table-resizing"], ["id", "nui-visual-table-row-selection-summary"], ["id", "table-selected-row"], ["id", "nui-visual-table-select-pinned-header-summary"], ["id", "table-select-pinned-header"]],
+        consts: [[1, "container"], ["open", ""], ["id", "nui-visual-table-basic-summary"], ["id", "table-basic-usage"], ["id", "nui-visual-table-pinned-summary"], ["id", "table-pinned-header"], ["id", "nui-visual-table-alignment-summary"], ["id", "table-column-alignment"], ["id", "nui-visual-table-row-density-tiny-summary"], ["id", "table-row-density-tiny"], ["id", "nui-visual-table-row-density-compact-summary"], ["id", "table-row-density-compact", "density", "compact"], ["id", "nui-visual-table-sorting-summary"], ["id", "table-sorting"], ["id", "nui-visual-table-custom-action-summary"], ["id", "table-custom-action"], ["id", "nui-visual-table-column-size-summary"], ["id", "table-resizing"], ["id", "nui-visual-table-row-selection-summary"], ["id", "table-selected-row"], ["id", "nui-visual-table-select-pinned-header-summary"], ["id", "table-select-pinned-header"], ["id", "nui-visual-table-virtual-scroll-sticky-header-summary"]],
         template: function TableVisualTestComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -19137,10 +19739,22 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](41, "details", 1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](42, "summary", 22);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](43, "Virtual Scroll Sticky Header");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](44, "nui-table-virtual-scroll-sticky-header-test-example");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
           }
         },
-        directives: [_table_basic_table_basic_example_component__WEBPACK_IMPORTED_MODULE_1__["TableBasicExampleComponent"], _table_pinned_header_table_pinned_header_example_component__WEBPACK_IMPORTED_MODULE_2__["TablePinnedHeaderComponent"], _table_cell_content_align_table_cell_content_align_example_component__WEBPACK_IMPORTED_MODULE_3__["TableCellContentAlignComponent"], _table_row_height_set_table_row_height_set_example_component__WEBPACK_IMPORTED_MODULE_4__["TableRowHeightSetExampleComponent"], _table_sorting_table_sorting_example_component__WEBPACK_IMPORTED_MODULE_5__["TableSortingExampleComponent"], _table_columns_add_remove_table_columns_add_remove_example_component__WEBPACK_IMPORTED_MODULE_6__["TableColumnsAddRemoveExampleComponent"], _table_resize_table_resize_example_component__WEBPACK_IMPORTED_MODULE_7__["TableResizeExampleComponent"], _table_select_table_select_example_component__WEBPACK_IMPORTED_MODULE_8__["TableSelectExampleComponent"], _table_select_pinned_header_table_select_pinned_header_example_component__WEBPACK_IMPORTED_MODULE_9__["TableSelectPinnedHeaderComponent"]],
+        directives: [_table_basic_table_basic_example_component__WEBPACK_IMPORTED_MODULE_1__["TableBasicExampleComponent"], _table_pinned_header_table_pinned_header_example_component__WEBPACK_IMPORTED_MODULE_2__["TablePinnedHeaderComponent"], _table_cell_content_align_table_cell_content_align_example_component__WEBPACK_IMPORTED_MODULE_3__["TableCellContentAlignComponent"], _table_row_height_set_table_row_height_set_example_component__WEBPACK_IMPORTED_MODULE_4__["TableRowHeightSetExampleComponent"], _table_sorting_table_sorting_example_component__WEBPACK_IMPORTED_MODULE_5__["TableSortingExampleComponent"], _table_columns_add_remove_table_columns_add_remove_example_component__WEBPACK_IMPORTED_MODULE_6__["TableColumnsAddRemoveExampleComponent"], _table_resize_table_resize_example_component__WEBPACK_IMPORTED_MODULE_7__["TableResizeExampleComponent"], _table_select_table_select_example_component__WEBPACK_IMPORTED_MODULE_8__["TableSelectExampleComponent"], _table_select_pinned_header_table_select_pinned_header_example_component__WEBPACK_IMPORTED_MODULE_9__["TableSelectPinnedHeaderComponent"], _table_virtual_scroll_sticky_header_test_table_virtual_scroll_sticky_header_test_example_component__WEBPACK_IMPORTED_MODULE_10__["TableVirtualScrollStickyHeaderTestExampleComponent"]],
         encapsulation: 2
       });
       /***/
@@ -19545,7 +20159,7 @@
         _createClass(TablePaginationExampleComponent, [{
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this28 = this;
+            var _this29 = this;
 
             this.dataSourceService.componentTree = {
               paginator: {
@@ -19555,8 +20169,8 @@
             this.outputsSubscription = this.dataSourceService.outputsSubject.subscribe(function (data) {
               var _a, _b;
 
-              _this28.dataSource = (_a = data.repeat) === null || _a === void 0 ? void 0 : _a.itemsSource;
-              _this28.paginationTotal = (_b = data.paginator) === null || _b === void 0 ? void 0 : _b.total;
+              _this29.dataSource = (_a = data.repeat) === null || _a === void 0 ? void 0 : _a.itemsSource;
+              _this29.paginationTotal = (_b = data.paginator) === null || _b === void 0 ? void 0 : _b.total;
             });
             this.dataSourceService.applyFilters();
           }
@@ -19603,7 +20217,7 @@
             var MSG_EXTERNAL_1345472093440723911$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_PAGINATION_TABLE_PAGINATION_EXAMPLE_COMPONENT_TS__2 = goog.getMsg(" No.");
             i18n_1 = MSG_EXTERNAL_1345472093440723911$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_PAGINATION_TABLE_PAGINATION_EXAMPLE_COMPONENT_TS__2;
           } else {
-            i18n_1 = $localize(_templateObject149 || (_templateObject149 = _taggedTemplateLiteral([":\u241F333f0164082b9f12f63ca11438b2085d074a5b0f\u241F1345472093440723911: No."])));
+            i18n_1 = $localize(_templateObject150 || (_templateObject150 = _taggedTemplateLiteral([":\u241F333f0164082b9f12f63ca11438b2085d074a5b0f\u241F1345472093440723911: No."])));
           }
 
           var i18n_3;
@@ -19612,7 +20226,7 @@
             var MSG_EXTERNAL_5923354303687392819$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_PAGINATION_TABLE_PAGINATION_EXAMPLE_COMPONENT_TS__4 = goog.getMsg(" Name");
             i18n_3 = MSG_EXTERNAL_5923354303687392819$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_PAGINATION_TABLE_PAGINATION_EXAMPLE_COMPONENT_TS__4;
           } else {
-            i18n_3 = $localize(_templateObject150 || (_templateObject150 = _taggedTemplateLiteral([":\u241F7b07cc6126aa22c8a3041963963e85a0791a7e40\u241F5923354303687392819: Name"])));
+            i18n_3 = $localize(_templateObject151 || (_templateObject151 = _taggedTemplateLiteral([":\u241F7b07cc6126aa22c8a3041963963e85a0791a7e40\u241F5923354303687392819: Name"])));
           }
 
           var i18n_5;
@@ -19621,7 +20235,7 @@
             var MSG_EXTERNAL_4366791221426489252$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_PAGINATION_TABLE_PAGINATION_EXAMPLE_COMPONENT_TS__6 = goog.getMsg(" Features");
             i18n_5 = MSG_EXTERNAL_4366791221426489252$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_PAGINATION_TABLE_PAGINATION_EXAMPLE_COMPONENT_TS__6;
           } else {
-            i18n_5 = $localize(_templateObject151 || (_templateObject151 = _taggedTemplateLiteral([":\u241F176794380c10213e5247f7350b40037bd3affcb3\u241F4366791221426489252: Features"])));
+            i18n_5 = $localize(_templateObject152 || (_templateObject152 = _taggedTemplateLiteral([":\u241F176794380c10213e5247f7350b40037bd3affcb3\u241F4366791221426489252: Features"])));
           }
 
           var i18n_7;
@@ -19630,7 +20244,7 @@
             var MSG_EXTERNAL_6940950714946520886$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_PAGINATION_TABLE_PAGINATION_EXAMPLE_COMPONENT_TS__8 = goog.getMsg(" Asset Class");
             i18n_7 = MSG_EXTERNAL_6940950714946520886$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_PAGINATION_TABLE_PAGINATION_EXAMPLE_COMPONENT_TS__8;
           } else {
-            i18n_7 = $localize(_templateObject152 || (_templateObject152 = _taggedTemplateLiteral([":\u241Fc123012b555ee9898f49540288d43c3c606e27d6\u241F6940950714946520886: Asset Class"])));
+            i18n_7 = $localize(_templateObject153 || (_templateObject153 = _taggedTemplateLiteral([":\u241Fc123012b555ee9898f49540288d43c3c606e27d6\u241F6940950714946520886: Asset Class"])));
           }
 
           var i18n_9;
@@ -19639,7 +20253,7 @@
             var MSG_EXTERNAL_7598846418510631873$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_PAGINATION_TABLE_PAGINATION_EXAMPLE_COMPONENT_TS__10 = goog.getMsg(" Location");
             i18n_9 = MSG_EXTERNAL_7598846418510631873$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_PAGINATION_TABLE_PAGINATION_EXAMPLE_COMPONENT_TS__10;
           } else {
-            i18n_9 = $localize(_templateObject153 || (_templateObject153 = _taggedTemplateLiteral([":\u241F4ed56c7c2b85b2b764c9853d121c291db3b70ed9\u241F7598846418510631873: Location"])));
+            i18n_9 = $localize(_templateObject154 || (_templateObject154 = _taggedTemplateLiteral([":\u241F4ed56c7c2b85b2b764c9853d121c291db3b70ed9\u241F7598846418510631873: Location"])));
           }
 
           var i18n_11;
@@ -19648,7 +20262,7 @@
             var MSG_EXTERNAL_7043724726246657652$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_PAGINATION_TABLE_PAGINATION_EXAMPLE_COMPONENT_TS__12 = goog.getMsg(" Status");
             i18n_11 = MSG_EXTERNAL_7043724726246657652$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_PAGINATION_TABLE_PAGINATION_EXAMPLE_COMPONENT_TS__12;
           } else {
-            i18n_11 = $localize(_templateObject154 || (_templateObject154 = _taggedTemplateLiteral([":\u241Ff3ab141a02057a7853b9cde7dea17eef6811e27a\u241F7043724726246657652: Status"])));
+            i18n_11 = $localize(_templateObject155 || (_templateObject155 = _taggedTemplateLiteral([":\u241Ff3ab141a02057a7853b9cde7dea17eef6811e27a\u241F7043724726246657652: Status"])));
           }
 
           var i18n_13;
@@ -19657,7 +20271,7 @@
             var MSG_EXTERNAL_3645300875970966243$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_PAGINATION_TABLE_PAGINATION_EXAMPLE_COMPONENT_TS__14 = goog.getMsg(" Outages");
             i18n_13 = MSG_EXTERNAL_3645300875970966243$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_PAGINATION_TABLE_PAGINATION_EXAMPLE_COMPONENT_TS__14;
           } else {
-            i18n_13 = $localize(_templateObject155 || (_templateObject155 = _taggedTemplateLiteral([":\u241Fe81b7832d164ea9359f7937353f7dfc314064a3a\u241F3645300875970966243: Outages"])));
+            i18n_13 = $localize(_templateObject156 || (_templateObject156 = _taggedTemplateLiteral([":\u241Fe81b7832d164ea9359f7937353f7dfc314064a3a\u241F3645300875970966243: Outages"])));
           }
 
           var i18n_15;
@@ -19666,7 +20280,7 @@
             var MSG_EXTERNAL_7108392645161261297$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_PAGINATION_TABLE_PAGINATION_EXAMPLE_COMPONENT_TS__16 = goog.getMsg(" Checks");
             i18n_15 = MSG_EXTERNAL_7108392645161261297$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_PAGINATION_TABLE_PAGINATION_EXAMPLE_COMPONENT_TS__16;
           } else {
-            i18n_15 = $localize(_templateObject156 || (_templateObject156 = _taggedTemplateLiteral([":\u241Ffc6c8586d4f4fbce21310ff2a21da10de8c8a04b\u241F7108392645161261297: Checks"])));
+            i18n_15 = $localize(_templateObject157 || (_templateObject157 = _taggedTemplateLiteral([":\u241Ffc6c8586d4f4fbce21310ff2a21da10de8c8a04b\u241F7108392645161261297: Checks"])));
           }
 
           return [["id", "nui-demo-pagination-table", 1, "nui-table__container"], ["nui-table", "", 3, "dataSource"], ["nuiColumnDef", "position"], ["nui-header-cell", "", 4, "nuiHeaderCellDef"], ["nui-cell", "", 4, "nuiCellDef"], ["nuiColumnDef", "name"], ["nuiColumnDef", "features"], ["nuiColumnDef", "asset"], ["nuiColumnDef", "location"], ["nuiColumnDef", "status"], ["nuiColumnDef", "outages"], ["nuiColumnDef", "checks"], ["nui-header-row", "", 4, "nuiHeaderRowDef"], ["nui-row", "", 4, "nuiRowDef", "nuiRowDefColumns"], ["id", "nui-demo-pagination-table-paginator", "activeClass", "active", "disabledClass", "disabled", "showPrevNext", "true", 3, "page", "pageSize", "total", "pagerAction"], ["filteringPaginator", ""], ["nui-header-cell", ""], i18n_1, ["nui-cell", ""], i18n_3, i18n_5, ["class", "icon-margin", 3, "icon", 4, "ngFor", "ngForOf"], [1, "icon-margin", 3, "icon"], i18n_7, i18n_9, i18n_11, i18n_13, i18n_15, [4, "ngFor", "ngForOf"], [3, "icon"], ["nui-header-row", ""], ["nui-row", ""]];
@@ -20175,7 +20789,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import { ScrollingModule } from \"@angular/cdk/scrolling\";\nimport { DatePipe } from \"@angular/common\";\nimport { NgModule } from \"@angular/core\";\nimport { RouterModule } from \"@angular/router\";\nimport {\n    DEMO_PATH_TOKEN,\n    NuiButtonModule,\n    NuiCheckboxModule,\n    NuiDividerModule,\n    NuiDocsModule,\n    NuiExpanderModule,\n    NuiIconModule,\n    NuiMenuModule,\n    NuiMessageModule,\n    NuiPaginatorModule,\n    NuiProgressModule,\n    NuiSearchModule,\n    NuiSpinnerModule,\n    NuiSwitchModule,\n    NuiTableModule,\n    NuiTextboxModule,\n    SrlcStage,\n} from \"@nova-ui/bits\";\n\nimport {\n    TableBasicExampleComponent,\n    TableCellContentAlignComponent,\n    TableCellWidthSetExampleComponent,\n    TableColumnsAddRemoveExampleComponent,\n    TableDocsComponent,\n    TablePaginationExampleComponent,\n    TablePinnedHeaderComponent,\n    TableReorderExampleComponent,\n    TableResizeExampleComponent,\n    TableRowClickableExampleComponent,\n    TableRowHeightSetExampleComponent,\n    TableRowSelectInstructionsComponent,\n    TableSearchExampleComponent,\n    TableSearchWithSelectAndPaginationComponent,\n    TableSelectableToggleExampleComponent,\n    TableSelectExampleComponent,\n    TableSortingExampleComponent,\n    TableTestComponent,\n    TableVirtualScrollRealApiExampleComponent,\n    TableVirtualScrollRealApiMinimalistExampleComponent,\n    TableVirtualScrollRealApiProgressFooterExampleComponent,\n    TableVirtualScrollRealApiProgressTextFooterExampleComponent,\n    TableVirtualScrollSelectStickyHeaderExampleComponent,\n    TableVirtualScrollStepsAndButtonExampleComponent,\n    TableVirtualScrollStickyHeaderExampleComponent,\n    TableSelectPinnedHeaderComponent,\n    TableVisualTestComponent,\n} from \"./index\";\n\nconst routes = [\n    {\n        path: \"\",\n        component: TableDocsComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.ga,\n            },\n            showThemeSwitcher: true,\n        },\n    },\n    {\n        path: \"table-test\",\n        component: TableTestComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.ga,\n            },\n        },\n    },\n    {\n        path: \"basic\",\n        component: TableBasicExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"width-set\",\n        component: TableCellWidthSetExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"pagination\",\n        component: TablePaginationExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"search\",\n        component: TableSearchExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"height\",\n        component: TableRowHeightSetExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"custom-actions\",\n        component: TableColumnsAddRemoveExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"sorting\",\n        component: TableSortingExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"reorder\",\n        component: TableReorderExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"resize\",\n        component: TableResizeExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"selectable-toggle\",\n        component: TableSelectableToggleExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"select\",\n        component: TableSelectExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"visual-test\",\n        component: TableVisualTestComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"table-row-clickable\",\n        component: TableRowClickableExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"virtual-1\",\n        component: TableVirtualScrollRealApiExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"virtual-2\",\n        component: TableVirtualScrollRealApiMinimalistExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"step\",\n        component: TableVirtualScrollStepsAndButtonExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"sticky\",\n        component: TableVirtualScrollStickyHeaderExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"select-sticky\",\n        component: TableVirtualScrollSelectStickyHeaderExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n];\n\n@NgModule({\n    imports: [\n        NuiButtonModule,\n        NuiTableModule,\n        NuiDocsModule,\n        NuiPaginatorModule,\n        NuiSearchModule,\n        NuiSwitchModule,\n        NuiDividerModule,\n        NuiCheckboxModule,\n        NuiTextboxModule,\n        NuiMessageModule,\n        NuiExpanderModule,\n        NuiMenuModule,\n        NuiIconModule,\n        RouterModule.forChild(routes),\n        ScrollingModule,\n        NuiSpinnerModule,\n        NuiProgressModule,\n    ],\n    declarations: [\n        TableBasicExampleComponent,\n        TableCellWidthSetExampleComponent,\n        TableColumnsAddRemoveExampleComponent,\n        TableDocsComponent,\n        TablePaginationExampleComponent,\n        TablePinnedHeaderComponent,\n        TableReorderExampleComponent,\n        TableRowHeightSetExampleComponent,\n        TableRowClickableExampleComponent,\n        TableResizeExampleComponent,\n        TableSearchExampleComponent,\n        TableSelectableToggleExampleComponent,\n        TableSelectExampleComponent,\n        TableSelectPinnedHeaderComponent,\n        TableSortingExampleComponent,\n        TableCellContentAlignComponent,\n        TableTestComponent,\n        TableVisualTestComponent,\n        TableVirtualScrollRealApiExampleComponent,\n        TableVirtualScrollStepsAndButtonExampleComponent,\n        TableVirtualScrollRealApiProgressFooterExampleComponent,\n        TableVirtualScrollRealApiProgressTextFooterExampleComponent,\n        TableVirtualScrollRealApiMinimalistExampleComponent,\n        TableSearchWithSelectAndPaginationComponent,\n        TableVirtualScrollStickyHeaderExampleComponent,\n        TableVirtualScrollSelectStickyHeaderExampleComponent,\n        TableRowSelectInstructionsComponent,\n    ],\n    providers: [\n        DatePipe,\n        {\n            provide: DEMO_PATH_TOKEN,\n            useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/),\n        },\n    ],\n    exports: [\n        RouterModule,\n    ],\n})\nexport class TableModule {\n}\n";
+      __webpack_exports__["default"] = "import { ScrollingModule } from \"@angular/cdk/scrolling\";\nimport { DatePipe } from \"@angular/common\";\nimport { NgModule } from \"@angular/core\";\nimport { RouterModule } from \"@angular/router\";\nimport {\n    DEMO_PATH_TOKEN,\n    NuiButtonModule,\n    NuiCheckboxModule,\n    NuiDividerModule,\n    NuiDocsModule,\n    NuiExpanderModule,\n    NuiIconModule,\n    NuiMenuModule,\n    NuiMessageModule,\n    NuiPaginatorModule,\n    NuiProgressModule,\n    NuiSearchModule,\n    NuiSpinnerModule,\n    NuiSwitchModule,\n    NuiTableModule,\n    NuiTextboxModule,\n    SrlcStage,\n} from \"@nova-ui/bits\";\n\nimport {\n    TableBasicExampleComponent,\n    TableCellContentAlignComponent,\n    TableCellWidthSetExampleComponent,\n    TableColumnsAddRemoveExampleComponent,\n    TableDocsComponent,\n    TablePaginationExampleComponent,\n    TablePinnedHeaderComponent,\n    TableReorderExampleComponent,\n    TableResizeExampleComponent,\n    TableRowClickableExampleComponent,\n    TableRowHeightSetExampleComponent,\n    TableRowSelectInstructionsComponent,\n    TableSearchExampleComponent,\n    TableSearchWithSelectAndPaginationComponent,\n    TableSelectableToggleExampleComponent,\n    TableSelectExampleComponent,\n    TableSelectPinnedHeaderComponent,\n    TableSortingExampleComponent,\n    TableTestComponent,\n    TableVirtualScrollRealApiExampleComponent,\n    TableVirtualScrollRealApiMinimalistExampleComponent,\n    TableVirtualScrollRealApiProgressFooterExampleComponent,\n    TableVirtualScrollRealApiProgressTextFooterExampleComponent,\n    TableVirtualScrollSelectStickyHeaderExampleComponent,\n    TableVirtualScrollStepsAndButtonExampleComponent,\n    TableVirtualScrollStickyHeaderExampleComponent,\n    TableVirtualScrollStickyHeaderTestExampleComponent,\n    TableVisualTestComponent,\n} from \"./index\";\n\nconst routes = [\n    {\n        path: \"\",\n        component: TableDocsComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.ga,\n            },\n            showThemeSwitcher: true,\n        },\n    },\n    {\n        path: \"table-test\",\n        component: TableTestComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.ga,\n            },\n        },\n    },\n    {\n        path: \"basic\",\n        component: TableBasicExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"width-set\",\n        component: TableCellWidthSetExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"pagination\",\n        component: TablePaginationExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"search\",\n        component: TableSearchExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"height\",\n        component: TableRowHeightSetExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"custom-actions\",\n        component: TableColumnsAddRemoveExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"sorting\",\n        component: TableSortingExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"reorder\",\n        component: TableReorderExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"resize\",\n        component: TableResizeExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"selectable-toggle\",\n        component: TableSelectableToggleExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"select\",\n        component: TableSelectExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"visual-test\",\n        component: TableVisualTestComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"table-row-clickable\",\n        component: TableRowClickableExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"virtual-1\",\n        component: TableVirtualScrollRealApiExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"virtual-2\",\n        component: TableVirtualScrollRealApiMinimalistExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"step\",\n        component: TableVirtualScrollStepsAndButtonExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"sticky\",\n        component: TableVirtualScrollStickyHeaderExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"sticky-test\",\n        component: TableVirtualScrollStickyHeaderTestExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"select-sticky\",\n        component: TableVirtualScrollSelectStickyHeaderExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n];\n\n@NgModule({\n    imports: [\n        NuiButtonModule,\n        NuiTableModule,\n        NuiDocsModule,\n        NuiPaginatorModule,\n        NuiSearchModule,\n        NuiSwitchModule,\n        NuiDividerModule,\n        NuiCheckboxModule,\n        NuiTextboxModule,\n        NuiMessageModule,\n        NuiExpanderModule,\n        NuiMenuModule,\n        NuiIconModule,\n        RouterModule.forChild(routes),\n        ScrollingModule,\n        NuiSpinnerModule,\n        NuiProgressModule,\n    ],\n    declarations: [\n        TableBasicExampleComponent,\n        TableCellWidthSetExampleComponent,\n        TableColumnsAddRemoveExampleComponent,\n        TableDocsComponent,\n        TablePaginationExampleComponent,\n        TablePinnedHeaderComponent,\n        TableReorderExampleComponent,\n        TableRowHeightSetExampleComponent,\n        TableRowClickableExampleComponent,\n        TableResizeExampleComponent,\n        TableSearchExampleComponent,\n        TableSelectableToggleExampleComponent,\n        TableSelectExampleComponent,\n        TableSelectPinnedHeaderComponent,\n        TableSortingExampleComponent,\n        TableCellContentAlignComponent,\n        TableTestComponent,\n        TableVisualTestComponent,\n        TableVirtualScrollRealApiExampleComponent,\n        TableVirtualScrollStepsAndButtonExampleComponent,\n        TableVirtualScrollRealApiProgressFooterExampleComponent,\n        TableVirtualScrollRealApiProgressTextFooterExampleComponent,\n        TableVirtualScrollRealApiMinimalistExampleComponent,\n        TableSearchWithSelectAndPaginationComponent,\n        TableVirtualScrollStickyHeaderExampleComponent,\n        TableVirtualScrollStickyHeaderTestExampleComponent,\n        TableVirtualScrollSelectStickyHeaderExampleComponent,\n        TableRowSelectInstructionsComponent,\n    ],\n    providers: [\n        DatePipe,\n        {\n            provide: DEMO_PATH_TOKEN,\n            useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/),\n        },\n    ],\n    exports: [\n        RouterModule,\n    ],\n})\nexport class TableModule {\n}\n";
       /***/
     },
 
@@ -21036,7 +21650,7 @@
         _createClass(TableTestComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this29 = this;
+            var _this30 = this;
 
             this.myForm = this.formBuilder.group({
               checkboxGroup: this.formBuilder.control(this.displayedColumnsCopy, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(3)])
@@ -21050,23 +21664,23 @@
               sortable: this.formBuilder.control(this.sortable)
             });
             this.optionsForm.valueChanges.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["debounceTime"])(500)).subscribe(function (value) {
-              _this29.alignment = value.alignment;
-              _this29.positionWidth = value.positionWidth;
-              _this29.density = value.density;
-              _this29.sortable = value.sortable;
-              _this29.resizable = value.resizable;
-              _this29.reorderable = value.reorderable;
+              _this30.alignment = value.alignment;
+              _this30.positionWidth = value.positionWidth;
+              _this30.density = value.density;
+              _this30.sortable = value.sortable;
+              _this30.resizable = value.resizable;
+              _this30.reorderable = value.reorderable;
             });
           }
         }, {
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee7() {
-              var _this30 = this;
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee10() {
+              var _this31 = this;
 
-              return regeneratorRuntime.wrap(function _callee7$(_context7) {
+              return regeneratorRuntime.wrap(function _callee10$(_context10) {
                 while (1) {
-                  switch (_context7.prev = _context7.next) {
+                  switch (_context10.prev = _context10.next) {
                     case 0:
                       this.dataSourceService.componentTree = {
                         paginator: {
@@ -21080,21 +21694,21 @@
                       this.outputsSubscription = this.dataSourceService.outputsSubject.subscribe(function (data) {
                         var _a, _b;
 
-                        _this30.dataSource = (_a = data.repeat) === null || _a === void 0 ? void 0 : _a.itemsSource;
-                        _this30.paginationTotal = (_b = data.paginator) === null || _b === void 0 ? void 0 : _b.total;
+                        _this31.dataSource = (_a = data.repeat) === null || _a === void 0 ? void 0 : _a.itemsSource;
+                        _this31.paginationTotal = (_b = data.paginator) === null || _b === void 0 ? void 0 : _b.total;
                       });
                       this.searchSubscription = this.filteringSearch.inputChange.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["debounceTime"])(500)).subscribe(function () {
-                        _this30.dataSourceService.applyFilters();
+                        _this31.dataSourceService.applyFilters();
                       });
-                      _context7.next = 6;
+                      _context10.next = 6;
                       return this.dataSourceService.applyFilters();
 
                     case 6:
                     case "end":
-                      return _context7.stop();
+                      return _context10.stop();
                   }
                 }
-              }, _callee7, this);
+              }, _callee10, this);
             }));
           }
         }, {
@@ -21105,39 +21719,39 @@
         }, {
           key: "onSearch",
           value: function onSearch(value) {
-            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee8() {
-              return regeneratorRuntime.wrap(function _callee8$(_context8) {
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee11() {
+              return regeneratorRuntime.wrap(function _callee11$(_context11) {
                 while (1) {
-                  switch (_context8.prev = _context8.next) {
+                  switch (_context11.prev = _context11.next) {
                     case 0:
-                      _context8.next = 2;
+                      _context11.next = 2;
                       return this.dataSourceService.applyFilters();
 
                     case 2:
                     case "end":
-                      return _context8.stop();
+                      return _context11.stop();
                   }
                 }
-              }, _callee8, this);
+              }, _callee11, this);
             }));
           }
         }, {
           key: "onSearchCancel",
           value: function onSearchCancel() {
-            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee9() {
-              return regeneratorRuntime.wrap(function _callee9$(_context9) {
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee12() {
+              return regeneratorRuntime.wrap(function _callee12$(_context12) {
                 while (1) {
-                  switch (_context9.prev = _context9.next) {
+                  switch (_context12.prev = _context12.next) {
                     case 0:
-                      _context9.next = 2;
+                      _context12.next = 2;
                       return this.dataSourceService.applyFilters();
 
                     case 2:
                     case "end":
-                      return _context9.stop();
+                      return _context12.stop();
                   }
                 }
-              }, _callee9, this);
+              }, _callee12, this);
             }));
           }
         }, {
@@ -21150,20 +21764,20 @@
         }, {
           key: "changePagination",
           value: function changePagination() {
-            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee10() {
-              return regeneratorRuntime.wrap(function _callee10$(_context10) {
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee13() {
+              return regeneratorRuntime.wrap(function _callee13$(_context13) {
                 while (1) {
-                  switch (_context10.prev = _context10.next) {
+                  switch (_context13.prev = _context13.next) {
                     case 0:
-                      _context10.next = 2;
+                      _context13.next = 2;
                       return this.dataSourceService.applyFilters();
 
                     case 2:
                     case "end":
-                      return _context10.stop();
+                      return _context13.stop();
                   }
                 }
-              }, _callee10, this);
+              }, _callee13, this);
             }));
           }
         }, {
@@ -21270,7 +21884,7 @@
             var MSG_EXTERNAL_5772127433285568792$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS_5 = goog.getMsg(" Table parameters ");
             i18n_4 = MSG_EXTERNAL_5772127433285568792$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS_5;
           } else {
-            i18n_4 = $localize(_templateObject157 || (_templateObject157 = _taggedTemplateLiteral([":\u241Fd259a5cfe568df279f8f23c18e8582f331ad5e20\u241F5772127433285568792: Table parameters "])));
+            i18n_4 = $localize(_templateObject158 || (_templateObject158 = _taggedTemplateLiteral([":\u241Fd259a5cfe568df279f8f23c18e8582f331ad5e20\u241F5772127433285568792: Table parameters "])));
           }
 
           var i18n_6;
@@ -21279,7 +21893,7 @@
             var MSG_EXTERNAL_4985615836900499435$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS_7 = goog.getMsg(" Edit columns ");
             i18n_6 = MSG_EXTERNAL_4985615836900499435$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS_7;
           } else {
-            i18n_6 = $localize(_templateObject158 || (_templateObject158 = _taggedTemplateLiteral([":\u241F6fe5549e71336528a5de31c671558342b1efe833\u241F4985615836900499435: Edit columns "])));
+            i18n_6 = $localize(_templateObject159 || (_templateObject159 = _taggedTemplateLiteral([":\u241F6fe5549e71336528a5de31c671558342b1efe833\u241F4985615836900499435: Edit columns "])));
           }
 
           var i18n_8;
@@ -21288,7 +21902,7 @@
             var MSG_EXTERNAL_1411763968419044459$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS_9 = goog.getMsg(" Toggle search by outages ");
             i18n_8 = MSG_EXTERNAL_1411763968419044459$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS_9;
           } else {
-            i18n_8 = $localize(_templateObject159 || (_templateObject159 = _taggedTemplateLiteral([":\u241Fd576216a4a50cff6756bddab3fa93b81cc8e2f93\u241F1411763968419044459: Toggle search by outages "])));
+            i18n_8 = $localize(_templateObject160 || (_templateObject160 = _taggedTemplateLiteral([":\u241Fd576216a4a50cff6756bddab3fa93b81cc8e2f93\u241F1411763968419044459: Toggle search by outages "])));
           }
 
           var i18n_10;
@@ -21297,7 +21911,7 @@
             var MSG_EXTERNAL_3337002790898405536$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS_11 = goog.getMsg("Disable features column for sorting");
             i18n_10 = MSG_EXTERNAL_3337002790898405536$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS_11;
           } else {
-            i18n_10 = $localize(_templateObject160 || (_templateObject160 = _taggedTemplateLiteral([":\u241Ff0cdcf0dde17b71278fe7759c99f6fe9157aa14b\u241F3337002790898405536:Disable features column for sorting"])));
+            i18n_10 = $localize(_templateObject161 || (_templateObject161 = _taggedTemplateLiteral([":\u241Ff0cdcf0dde17b71278fe7759c99f6fe9157aa14b\u241F3337002790898405536:Disable features column for sorting"])));
           }
 
           var i18n_12;
@@ -21306,7 +21920,7 @@
             var MSG_EXTERNAL_8363291180171434623$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__13 = goog.getMsg("Table parameters");
             i18n_12 = MSG_EXTERNAL_8363291180171434623$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__13;
           } else {
-            i18n_12 = $localize(_templateObject161 || (_templateObject161 = _taggedTemplateLiteral([":\u241F55d4cef22a65e0850dc95aa127f45e9df525f68f\u241F8363291180171434623:Table parameters"])));
+            i18n_12 = $localize(_templateObject162 || (_templateObject162 = _taggedTemplateLiteral([":\u241F55d4cef22a65e0850dc95aa127f45e9df525f68f\u241F8363291180171434623:Table parameters"])));
           }
 
           var i18n_14;
@@ -21315,7 +21929,7 @@
             var MSG_EXTERNAL_246781905578646665$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__15 = goog.getMsg("Change cells content alignment");
             i18n_14 = MSG_EXTERNAL_246781905578646665$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__15;
           } else {
-            i18n_14 = $localize(_templateObject162 || (_templateObject162 = _taggedTemplateLiteral([":\u241Fc1dfdaa9b9cd04a5e8604df0eeea9faed49acdc8\u241F246781905578646665:Change cells content alignment"])));
+            i18n_14 = $localize(_templateObject163 || (_templateObject163 = _taggedTemplateLiteral([":\u241Fc1dfdaa9b9cd04a5e8604df0eeea9faed49acdc8\u241F246781905578646665:Change cells content alignment"])));
           }
 
           var i18n_16;
@@ -21324,7 +21938,7 @@
             var MSG_EXTERNAL_96479540979750045$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__17 = goog.getMsg("Change rows density");
             i18n_16 = MSG_EXTERNAL_96479540979750045$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__17;
           } else {
-            i18n_16 = $localize(_templateObject163 || (_templateObject163 = _taggedTemplateLiteral([":\u241F2a4fe583915b73526b33437bba41a39aeddf6ee1\u241F96479540979750045:Change rows density"])));
+            i18n_16 = $localize(_templateObject164 || (_templateObject164 = _taggedTemplateLiteral([":\u241F2a4fe583915b73526b33437bba41a39aeddf6ee1\u241F96479540979750045:Change rows density"])));
           }
 
           var i18n_18;
@@ -21333,7 +21947,7 @@
             var MSG_EXTERNAL_8532151145041227661$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__19 = goog.getMsg("Change columns width");
             i18n_18 = MSG_EXTERNAL_8532151145041227661$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__19;
           } else {
-            i18n_18 = $localize(_templateObject164 || (_templateObject164 = _taggedTemplateLiteral([":\u241Ffe817864c1dc1742c09b858f6530b55b77cd07b5\u241F8532151145041227661:Change columns width"])));
+            i18n_18 = $localize(_templateObject165 || (_templateObject165 = _taggedTemplateLiteral([":\u241Ffe817864c1dc1742c09b858f6530b55b77cd07b5\u241F8532151145041227661:Change columns width"])));
           }
 
           var i18n_20;
@@ -21342,7 +21956,7 @@
             var MSG_EXTERNAL_8716342697541286006$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__21 = goog.getMsg(" Close ");
             i18n_20 = MSG_EXTERNAL_8716342697541286006$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__21;
           } else {
-            i18n_20 = $localize(_templateObject165 || (_templateObject165 = _taggedTemplateLiteral([":\u241Fabd523106b7164d5e101df33944bbf99a509f285\u241F8716342697541286006: Close "])));
+            i18n_20 = $localize(_templateObject166 || (_templateObject166 = _taggedTemplateLiteral([":\u241Fabd523106b7164d5e101df33944bbf99a509f285\u241F8716342697541286006: Close "])));
           }
 
           var i18n_22;
@@ -21351,7 +21965,7 @@
             var MSG_EXTERNAL_2408126496114120045$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__23 = goog.getMsg("Edit columns");
             i18n_22 = MSG_EXTERNAL_2408126496114120045$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__23;
           } else {
-            i18n_22 = $localize(_templateObject166 || (_templateObject166 = _taggedTemplateLiteral([":\u241F6f19e091c95a7783ed1a794a76800bfa2e580474\u241F2408126496114120045:Edit columns"])));
+            i18n_22 = $localize(_templateObject167 || (_templateObject167 = _taggedTemplateLiteral([":\u241F6f19e091c95a7783ed1a794a76800bfa2e580474\u241F2408126496114120045:Edit columns"])));
           }
 
           var i18n_24;
@@ -21360,7 +21974,7 @@
             var MSG_EXTERNAL_1465722133080575331$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__25 = goog.getMsg("Available columns");
             i18n_24 = MSG_EXTERNAL_1465722133080575331$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__25;
           } else {
-            i18n_24 = $localize(_templateObject167 || (_templateObject167 = _taggedTemplateLiteral([":\u241Fdd0306e460f34cf0d9c1f9da2c095b42c249a020\u241F1465722133080575331:Available columns"])));
+            i18n_24 = $localize(_templateObject168 || (_templateObject168 = _taggedTemplateLiteral([":\u241Fdd0306e460f34cf0d9c1f9da2c095b42c249a020\u241F1465722133080575331:Available columns"])));
           }
 
           var i18n_26;
@@ -21369,7 +21983,7 @@
             var MSG_EXTERNAL_1149997874969812833$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__27 = goog.getMsg("Create new column");
             i18n_26 = MSG_EXTERNAL_1149997874969812833$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__27;
           } else {
-            i18n_26 = $localize(_templateObject168 || (_templateObject168 = _taggedTemplateLiteral([":\u241Fea9e79c35aacc08d2b0ad15367a2bf5224c80cd4\u241F1149997874969812833:Create new column"])));
+            i18n_26 = $localize(_templateObject169 || (_templateObject169 = _taggedTemplateLiteral([":\u241Fea9e79c35aacc08d2b0ad15367a2bf5224c80cd4\u241F1149997874969812833:Create new column"])));
           }
 
           var i18n_28;
@@ -21378,7 +21992,7 @@
             var MSG_EXTERNAL_5721612456517589470$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__29 = goog.getMsg("Enter new column title");
             i18n_28 = MSG_EXTERNAL_5721612456517589470$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__29;
           } else {
-            i18n_28 = $localize(_templateObject169 || (_templateObject169 = _taggedTemplateLiteral([":\u241Fd024747bfabcb4f63763c5b931d6ac5840d26df0\u241F5721612456517589470:Enter new column title"])));
+            i18n_28 = $localize(_templateObject170 || (_templateObject170 = _taggedTemplateLiteral([":\u241Fd024747bfabcb4f63763c5b931d6ac5840d26df0\u241F5721612456517589470:Enter new column title"])));
           }
 
           var i18n_30;
@@ -21387,7 +22001,7 @@
             var MSG_EXTERNAL_8056937770550940393$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__31 = goog.getMsg(" Add new column ");
             i18n_30 = MSG_EXTERNAL_8056937770550940393$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__31;
           } else {
-            i18n_30 = $localize(_templateObject170 || (_templateObject170 = _taggedTemplateLiteral([":\u241F724b4d401f296839b85e79ddf32128342ee1f064\u241F8056937770550940393: Add new column "])));
+            i18n_30 = $localize(_templateObject171 || (_templateObject171 = _taggedTemplateLiteral([":\u241F724b4d401f296839b85e79ddf32128342ee1f064\u241F8056937770550940393: Add new column "])));
           }
 
           var i18n_32;
@@ -21396,7 +22010,7 @@
             var MSG_EXTERNAL_7413740698367559631$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__33 = goog.getMsg(" Cancel ");
             i18n_32 = MSG_EXTERNAL_7413740698367559631$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__33;
           } else {
-            i18n_32 = $localize(_templateObject171 || (_templateObject171 = _taggedTemplateLiteral([":\u241F0a08acf9503528341c28241d8d764ebc843c92f7\u241F7413740698367559631: Cancel "])));
+            i18n_32 = $localize(_templateObject172 || (_templateObject172 = _taggedTemplateLiteral([":\u241F0a08acf9503528341c28241d8d764ebc843c92f7\u241F7413740698367559631: Cancel "])));
           }
 
           var i18n_34;
@@ -21405,7 +22019,7 @@
             var MSG_EXTERNAL_7639014780203448203$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__35 = goog.getMsg(" Update columns ");
             i18n_34 = MSG_EXTERNAL_7639014780203448203$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__35;
           } else {
-            i18n_34 = $localize(_templateObject172 || (_templateObject172 = _taggedTemplateLiteral([":\u241Fb90a1c28cde3d4985f92f9b3d7476d4a13af3b94\u241F7639014780203448203: Update columns "])));
+            i18n_34 = $localize(_templateObject173 || (_templateObject173 = _taggedTemplateLiteral([":\u241Fb90a1c28cde3d4985f92f9b3d7476d4a13af3b94\u241F7639014780203448203: Update columns "])));
           }
 
           var i18n_36;
@@ -21414,7 +22028,7 @@
             var MSG_EXTERNAL_3498101055154698277$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS___37 = goog.getMsg("Select minimum 3 checkboxes!");
             i18n_36 = MSG_EXTERNAL_3498101055154698277$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS___37;
           } else {
-            i18n_36 = $localize(_templateObject173 || (_templateObject173 = _taggedTemplateLiteral([":\u241Faaf9b8331666795542f417fe39c78014513ca737\u241F3498101055154698277:Select minimum 3 checkboxes!"])));
+            i18n_36 = $localize(_templateObject174 || (_templateObject174 = _taggedTemplateLiteral([":\u241Faaf9b8331666795542f417fe39c78014513ca737\u241F3498101055154698277:Select minimum 3 checkboxes!"])));
           }
 
           var i18n_38;
@@ -21423,7 +22037,7 @@
             var MSG_EXTERNAL_4511235385998512563$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__39 = goog.getMsg("No.");
             i18n_38 = MSG_EXTERNAL_4511235385998512563$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__39;
           } else {
-            i18n_38 = $localize(_templateObject174 || (_templateObject174 = _taggedTemplateLiteral([":\u241F8675a724bb3952337aef7625c81b11e39a82d31b\u241F4511235385998512563:No."])));
+            i18n_38 = $localize(_templateObject175 || (_templateObject175 = _taggedTemplateLiteral([":\u241F8675a724bb3952337aef7625c81b11e39a82d31b\u241F4511235385998512563:No."])));
           }
 
           var i18n_40;
@@ -21432,7 +22046,7 @@
             var MSG_EXTERNAL_8953033926734869941$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__41 = goog.getMsg("Name");
             i18n_40 = MSG_EXTERNAL_8953033926734869941$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__41;
           } else {
-            i18n_40 = $localize(_templateObject175 || (_templateObject175 = _taggedTemplateLiteral([":\u241Fcff1428d10d59d14e45edec3c735a27b5482db59\u241F8953033926734869941:Name"])));
+            i18n_40 = $localize(_templateObject176 || (_templateObject176 = _taggedTemplateLiteral([":\u241Fcff1428d10d59d14e45edec3c735a27b5482db59\u241F8953033926734869941:Name"])));
           }
 
           var i18n_42;
@@ -21441,7 +22055,7 @@
             var MSG_EXTERNAL_6599364831830861985$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__43 = goog.getMsg("Features");
             i18n_42 = MSG_EXTERNAL_6599364831830861985$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__43;
           } else {
-            i18n_42 = $localize(_templateObject176 || (_templateObject176 = _taggedTemplateLiteral([":\u241F6cdb1fea93d77c07950c0c76c6e0ad79ebbef084\u241F6599364831830861985:Features"])));
+            i18n_42 = $localize(_templateObject177 || (_templateObject177 = _taggedTemplateLiteral([":\u241F6cdb1fea93d77c07950c0c76c6e0ad79ebbef084\u241F6599364831830861985:Features"])));
           }
 
           var i18n_44;
@@ -21450,7 +22064,7 @@
             var MSG_EXTERNAL_4574987680940794089$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__45 = goog.getMsg("Asset Class");
             i18n_44 = MSG_EXTERNAL_4574987680940794089$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__45;
           } else {
-            i18n_44 = $localize(_templateObject177 || (_templateObject177 = _taggedTemplateLiteral([":\u241F584c9433705e9bfdd2e7a9f0192690f453d36196\u241F4574987680940794089:Asset Class"])));
+            i18n_44 = $localize(_templateObject178 || (_templateObject178 = _taggedTemplateLiteral([":\u241F584c9433705e9bfdd2e7a9f0192690f453d36196\u241F4574987680940794089:Asset Class"])));
           }
 
           var i18n_46;
@@ -21459,7 +22073,7 @@
             var MSG_EXTERNAL_471816275243265264$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__47 = goog.getMsg("Location");
             i18n_46 = MSG_EXTERNAL_471816275243265264$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__47;
           } else {
-            i18n_46 = $localize(_templateObject178 || (_templateObject178 = _taggedTemplateLiteral([":\u241Fed31c09fd77c36238c13d83635f3fe5294c733d2\u241F471816275243265264:Location"])));
+            i18n_46 = $localize(_templateObject179 || (_templateObject179 = _taggedTemplateLiteral([":\u241Fed31c09fd77c36238c13d83635f3fe5294c733d2\u241F471816275243265264:Location"])));
           }
 
           var i18n_48;
@@ -21471,7 +22085,7 @@
             });
             i18n_48 = MSG_EXTERNAL_1339790904510203255$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__49;
           } else {
-            i18n_48 = $localize(_templateObject179 || (_templateObject179 = _taggedTemplateLiteral([":\u241F79868c1613d2d4a258888bf56100f576bf7908f8\u241F1339790904510203255:", ":START_TAG_NUI_ICON:", ":CLOSE_TAG_NUI_ICON:"])), "\uFFFD#2\uFFFD", "\uFFFD/#2\uFFFD");
+            i18n_48 = $localize(_templateObject180 || (_templateObject180 = _taggedTemplateLiteral([":\u241F79868c1613d2d4a258888bf56100f576bf7908f8\u241F1339790904510203255:", ":START_TAG_NUI_ICON:", ":CLOSE_TAG_NUI_ICON:"])), "\uFFFD#2\uFFFD", "\uFFFD/#2\uFFFD");
           }
 
           var i18n_50;
@@ -21480,7 +22094,7 @@
             var MSG_EXTERNAL_6839146054918474677$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__51 = goog.getMsg("Outages");
             i18n_50 = MSG_EXTERNAL_6839146054918474677$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__51;
           } else {
-            i18n_50 = $localize(_templateObject180 || (_templateObject180 = _taggedTemplateLiteral([":\u241Fd27fe2a77fbf58112bb91a4828a2c4cdfcaec83b\u241F6839146054918474677:Outages"])));
+            i18n_50 = $localize(_templateObject181 || (_templateObject181 = _taggedTemplateLiteral([":\u241Fd27fe2a77fbf58112bb91a4828a2c4cdfcaec83b\u241F6839146054918474677:Outages"])));
           }
 
           var i18n_52;
@@ -21489,7 +22103,7 @@
             var MSG_EXTERNAL_86770805401291669$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__53 = goog.getMsg("Checks");
             i18n_52 = MSG_EXTERNAL_86770805401291669$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_TEST_TABLE_TEST_COMPONENT_TS__53;
           } else {
-            i18n_52 = $localize(_templateObject181 || (_templateObject181 = _taggedTemplateLiteral([":\u241F3662d1d079624d13ee2e3027d0bb200fa403eef8\u241F86770805401291669:Checks"])));
+            i18n_52 = $localize(_templateObject182 || (_templateObject182 = _taggedTemplateLiteral([":\u241F3662d1d079624d13ee2e3027d0bb200fa403eef8\u241F86770805401291669:Checks"])));
           }
 
           return [[1, "nui-table__options"], [1, "demo-options-section"], ["type", "button", "id", "nui-demo-table-test-columns-table-parameters-btn", "nui-button", "", "icon", "edit", 3, "click"], i18n_4, ["parameters", ""], ["type", "button", "id", "nui-demo-table-test-columns-add-remove-edit-btn", "nui-button", "", "icon", "edit", 3, "click"], i18n_6, ["type", "button", "id", "nui-demo-table-test-limit-search-btn", "nui-button", "", 3, "click"], i18n_8, ["nui-button", "", "type", "button", "id", "nui-demo-table-test-disable-column-sorting-btn", 3, "click"], i18n_10, ["content", ""], [1, "nui-searchable-table__search"], ["id", "nui-demo-table-test-search", 3, "value", "search", "cancel"], ["filteringSearch", ""], ["id", "nui-test-table", 1, "nui-table__container"], ["nui-table", "", 3, "dataSource", "sortable", "resizable", "reorderable", "selectable", "totalItems", "sortOrderChanged", "columnsOrderChange"], ["testTable", "", "sortableTable", "", "filteringTable", ""], ["nuiColumnDef", "position", 3, "columnWidth"], ["nui-header-cell", "", 3, "alignment", 4, "nuiHeaderCellDef"], ["nui-cell", "", 3, "alignment", 4, "nuiCellDef"], ["nuiColumnDef", "name"], ["nuiColumnDef", "features"], ["nui-header-cell", "", 3, "isColumnSortingDisabled", "alignment", 4, "nuiHeaderCellDef"], ["nuiColumnDef", "asset"], ["nuiColumnDef", "location"], ["nuiColumnDef", "status", "type", "icon"], ["nui-header-cell", "", 4, "nuiHeaderCellDef"], ["nui-cell", "", 4, "nuiCellDef"], ["nuiColumnDef", "outages"], ["nuiColumnDef", "checks"], ["nui-header-row", "", 4, "nuiHeaderRowDef", "nuiHeaderRowDefSticky"], ["nui-row", "", 3, "density", "rowObject", 4, "nuiRowDef", "nuiRowDefColumns"], ["id", "nui-demo-table-test-paginator", "activeClass", "active", "disabledClass", "disabled", "showPrevNext", "true", 3, "page", "pageSize", "total", "pagerAction"], ["filteringPaginator", ""], ["title", i18n_12, 3, "closed"], [3, "formGroup"], [1, "form-group"], [1, "dialog-body"], ["formControlName", "reorderable"], ["formControlName", "resizable"], ["formControlName", "sortable"], i18n_14, ["id", "nui-demo-table-test-columns-alignment-select", "placeholder", "Select alignment", "formControlName", "alignment", 3, "itemsSource"], i18n_16, ["id", "nui-demo-table-test-columns-density-select", "placeholder", "Select row density", "formControlName", "density", 3, "itemsSource"], i18n_18, ["placeholder", "Set columns width", "id", "nui-demo-table-test-column-width", "formControlName", "positionWidth"], ["nui-button", "", "id", "nui-demo-table-test-columns-dialog-close-btn", "type", "button", "displayStyle", "primary", 3, "click"], i18n_20, ["title", i18n_22, 3, "closed"], ["type", "critical", 3, "allowDismiss", 4, "ngIf"], i18n_24, ["id", "nui-demo-table-test-add-remove-checkboxes", "formControlName", "checkboxGroup", "required", "", 3, "values", "valuesChange"], ["class", "text-capitalize", 3, "value", "checked", 4, "ngFor", "ngForOf"], i18n_26, [1, "d-flex", "flex-row"], [1, "col"], ["id", "nui-demo-table-test-add-remove-new-column-textbox", "placeholder", i18n_28, 3, "value", "textChange"], [1, "col", "col-auto"], ["nui-button", "", "type", "button", "displayStyle", "default", "id", "nui-demo-table-test-add-remove-new-column-btn", 1, "ml-3", 3, "click"], i18n_30, ["nui-button", "", "type", "button", 3, "click"], i18n_32, ["nui-button", "", "type", "button", "id", "nui-demo-table-test-columns-add-remove-submit-btn", "displayStyle", "primary", 3, "disabled", "click"], i18n_34, ["type", "critical", 3, "allowDismiss"], i18n_36, [1, "text-capitalize", 3, "value", "checked"], ["nui-header-cell", "", 3, "alignment"], i18n_38, ["nui-cell", "", 3, "alignment"], i18n_40, ["nui-header-cell", "", 3, "isColumnSortingDisabled", "alignment"], i18n_42, ["class", "icon-margin", 3, "icon", 4, "ngFor", "ngForOf"], [1, "icon-margin", 3, "icon"], i18n_44, i18n_46, ["nui-header-cell", ""], i18n_48, ["icon", "enable"], ["nui-cell", ""], [3, "icon"], i18n_50, i18n_52, [4, "ngFor", "ngForOf"], ["nui-header-row", ""], ["nui-row", "", 3, "density", "rowObject"]];
@@ -22413,16 +23027,16 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this31 = this;
+            var _this32 = this;
 
             this.dataSource.outputsSubject.subscribe(function (outputs) {
               if (outputs) {
-                _this31.users.next(outputs.repeat.itemsSource);
+                _this32.users.next(outputs.repeat.itemsSource);
 
-                _this31._loadedItems = outputs.itemsToLoad;
-                _this31.totalItems = outputs.totalItems;
+                _this32._loadedItems = outputs.itemsToLoad;
+                _this32.totalItems = outputs.totalItems;
 
-                _this31.dataSource.step.next(_this31.step);
+                _this32.dataSource.step.next(_this32.step);
                 /**
                  * Option 1:
                  * When Option 2 code snippet (see below) is commented out, and the following one is uncommented,
@@ -22439,22 +23053,22 @@
                  */
 
 
-                if (_this31.users.value.length < _this31.loadedItems) {
-                  var leftover = _this31.users.value.length - _this31.itemsToLoad * Math.round(_this31.users.value.length / _this31.itemsToLoad);
+                if (_this32.users.value.length < _this32.loadedItems) {
+                  var leftover = _this32.users.value.length - _this32.itemsToLoad * Math.round(_this32.users.value.length / _this32.itemsToLoad);
 
-                  if (_this31.step > Math.abs(leftover)) {
-                    _this31.dataSource.step.next(_this31.itemsToLoad % _this31.step);
+                  if (_this32.step > Math.abs(leftover)) {
+                    _this32.dataSource.step.next(_this32.itemsToLoad % _this32.step);
                   }
 
-                  _this31.dataSource.applyFilters();
+                  _this32.dataSource.applyFilters();
                 }
 
-                _this31.cd.detectChanges();
+                _this32.cd.detectChanges();
               }
             });
             this.dataSource.applyFilters();
             this.dataSource.busy.subscribe(function (busy) {
-              _this31._isBusy = busy;
+              _this32._isBusy = busy;
             });
           }
         }, {
@@ -22520,7 +23134,7 @@
             });
             i18n_0 = MSG_EXTERNAL_299948609284975408$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_EXAMPLE_COMPONENT_TS_1;
           } else {
-            i18n_0 = $localize(_templateObject182 || (_templateObject182 = _taggedTemplateLiteral([":\u241F56b6c3648cf7e13e13d2a4f21a55fd2b4c4689d5\u241F299948609284975408: ", ":INTERPOLATION: "])), "\uFFFD0\uFFFD");
+            i18n_0 = $localize(_templateObject183 || (_templateObject183 = _taggedTemplateLiteral([":\u241F56b6c3648cf7e13e13d2a4f21a55fd2b4c4689d5\u241F299948609284975408: ", ":INTERPOLATION: "])), "\uFFFD0\uFFFD");
           }
 
           var i18n_2;
@@ -22529,7 +23143,7 @@
             var MSG_EXTERNAL_1345472093440723911$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_EXAMPLE_COMPONENT_TS__3 = goog.getMsg(" No.");
             i18n_2 = MSG_EXTERNAL_1345472093440723911$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_EXAMPLE_COMPONENT_TS__3;
           } else {
-            i18n_2 = $localize(_templateObject183 || (_templateObject183 = _taggedTemplateLiteral([":\u241F333f0164082b9f12f63ca11438b2085d074a5b0f\u241F1345472093440723911: No."])));
+            i18n_2 = $localize(_templateObject184 || (_templateObject184 = _taggedTemplateLiteral([":\u241F333f0164082b9f12f63ca11438b2085d074a5b0f\u241F1345472093440723911: No."])));
           }
 
           var i18n_4;
@@ -22538,7 +23152,7 @@
             var MSG_EXTERNAL_8357643335000303339$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_EXAMPLE_COMPONENT_TS__5 = goog.getMsg(" Title");
             i18n_4 = MSG_EXTERNAL_8357643335000303339$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_EXAMPLE_COMPONENT_TS__5;
           } else {
-            i18n_4 = $localize(_templateObject184 || (_templateObject184 = _taggedTemplateLiteral([":\u241F952a1244074407cd841ce6253538e566581f10dd\u241F8357643335000303339: Title"])));
+            i18n_4 = $localize(_templateObject185 || (_templateObject185 = _taggedTemplateLiteral([":\u241F952a1244074407cd841ce6253538e566581f10dd\u241F8357643335000303339: Title"])));
           }
 
           var i18n_6;
@@ -22547,7 +23161,7 @@
             var MSG_EXTERNAL_2860311194545881177$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_EXAMPLE_COMPONENT_TS__7 = goog.getMsg(" First Name");
             i18n_6 = MSG_EXTERNAL_2860311194545881177$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_EXAMPLE_COMPONENT_TS__7;
           } else {
-            i18n_6 = $localize(_templateObject185 || (_templateObject185 = _taggedTemplateLiteral([":\u241Fba4a0caee703d6328fdb0d70380f541915451742\u241F2860311194545881177: First Name"])));
+            i18n_6 = $localize(_templateObject186 || (_templateObject186 = _taggedTemplateLiteral([":\u241Fba4a0caee703d6328fdb0d70380f541915451742\u241F2860311194545881177: First Name"])));
           }
 
           var i18n_8;
@@ -22556,7 +23170,7 @@
             var MSG_EXTERNAL_1738284750176372142$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_EXAMPLE_COMPONENT_TS__9 = goog.getMsg(" Last Name");
             i18n_8 = MSG_EXTERNAL_1738284750176372142$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_EXAMPLE_COMPONENT_TS__9;
           } else {
-            i18n_8 = $localize(_templateObject186 || (_templateObject186 = _taggedTemplateLiteral([":\u241F26b7649337e48ef3e3ccd71ea1a710dab5f7eb61\u241F1738284750176372142: Last Name"])));
+            i18n_8 = $localize(_templateObject187 || (_templateObject187 = _taggedTemplateLiteral([":\u241F26b7649337e48ef3e3ccd71ea1a710dab5f7eb61\u241F1738284750176372142: Last Name"])));
           }
 
           var i18n_10;
@@ -22565,7 +23179,7 @@
             var MSG_EXTERNAL_2667859507116816026$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_EXAMPLE_COMPONENT_TS__11 = goog.getMsg(" Gender");
             i18n_10 = MSG_EXTERNAL_2667859507116816026$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_EXAMPLE_COMPONENT_TS__11;
           } else {
-            i18n_10 = $localize(_templateObject187 || (_templateObject187 = _taggedTemplateLiteral([":\u241F8a4933776bdd10c9818e105e60d956769de4149f\u241F2667859507116816026: Gender"])));
+            i18n_10 = $localize(_templateObject188 || (_templateObject188 = _taggedTemplateLiteral([":\u241F8a4933776bdd10c9818e105e60d956769de4149f\u241F2667859507116816026: Gender"])));
           }
 
           var i18n_12;
@@ -22574,7 +23188,7 @@
             var MSG_EXTERNAL_1456073909159321718$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_EXAMPLE_COMPONENT_TS__13 = goog.getMsg(" Country");
             i18n_12 = MSG_EXTERNAL_1456073909159321718$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_EXAMPLE_COMPONENT_TS__13;
           } else {
-            i18n_12 = $localize(_templateObject188 || (_templateObject188 = _taggedTemplateLiteral([":\u241F0425e05bbff231ff83e71da0ecbf4e5aae0b02cf\u241F1456073909159321718: Country"])));
+            i18n_12 = $localize(_templateObject189 || (_templateObject189 = _taggedTemplateLiteral([":\u241F0425e05bbff231ff83e71da0ecbf4e5aae0b02cf\u241F1456073909159321718: Country"])));
           }
 
           var i18n_14;
@@ -22583,7 +23197,7 @@
             var MSG_EXTERNAL_8764220957450565928$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_EXAMPLE_COMPONENT_TS__15 = goog.getMsg(" City");
             i18n_14 = MSG_EXTERNAL_8764220957450565928$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_EXAMPLE_COMPONENT_TS__15;
           } else {
-            i18n_14 = $localize(_templateObject189 || (_templateObject189 = _taggedTemplateLiteral([":\u241F8ecca5416af6383f4ca3e66acf35eca90e690a3c\u241F8764220957450565928: City"])));
+            i18n_14 = $localize(_templateObject190 || (_templateObject190 = _taggedTemplateLiteral([":\u241F8ecca5416af6383f4ca3e66acf35eca90e690a3c\u241F8764220957450565928: City"])));
           }
 
           var i18n_16;
@@ -22592,7 +23206,7 @@
             var MSG_EXTERNAL_6046214701664071824$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_EXAMPLE_COMPONENT_TS__17 = goog.getMsg(" Postcode");
             i18n_16 = MSG_EXTERNAL_6046214701664071824$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_EXAMPLE_COMPONENT_TS__17;
           } else {
-            i18n_16 = $localize(_templateObject190 || (_templateObject190 = _taggedTemplateLiteral([":\u241F12219316a6afe56a50fe109f4ded8640e551d35a\u241F6046214701664071824: Postcode"])));
+            i18n_16 = $localize(_templateObject191 || (_templateObject191 = _taggedTemplateLiteral([":\u241F12219316a6afe56a50fe109f4ded8640e551d35a\u241F6046214701664071824: Postcode"])));
           }
 
           var i18n_18;
@@ -22601,7 +23215,7 @@
             var MSG_EXTERNAL_9117442902261307677$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_EXAMPLE_COMPONENT_TS__19 = goog.getMsg(" Email");
             i18n_18 = MSG_EXTERNAL_9117442902261307677$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_EXAMPLE_COMPONENT_TS__19;
           } else {
-            i18n_18 = $localize(_templateObject191 || (_templateObject191 = _taggedTemplateLiteral([":\u241Fa20a6d4a37afdd7b03a99c1673b6625e1bfd319b\u241F9117442902261307677: Email"])));
+            i18n_18 = $localize(_templateObject192 || (_templateObject192 = _taggedTemplateLiteral([":\u241Fa20a6d4a37afdd7b03a99c1673b6625e1bfd319b\u241F9117442902261307677: Email"])));
           }
 
           var i18n_20;
@@ -22610,7 +23224,7 @@
             var MSG_EXTERNAL_7006732017012080604$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_EXAMPLE_COMPONENT_TS__21 = goog.getMsg(" Cell");
             i18n_20 = MSG_EXTERNAL_7006732017012080604$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_TABLE_VIRTUAL_SCROLL_STEPS_AND_BUTTON_EXAMPLE_COMPONENT_TS__21;
           } else {
-            i18n_20 = $localize(_templateObject192 || (_templateObject192 = _taggedTemplateLiteral([":\u241F714a2901dd3ebc87509d7e399a32d0c439fa6c39\u241F7006732017012080604: Cell"])));
+            i18n_20 = $localize(_templateObject193 || (_templateObject193 = _taggedTemplateLiteral([":\u241F714a2901dd3ebc87509d7e399a32d0c439fa6c39\u241F7006732017012080604: Cell"])));
           }
 
           return [[1, "mb-3"], [1, "row"], [1, "col-3"], [3, "value", "valueChange"], i18n_0, [1, "h-100", 3, "itemSize", "tableStickyHeader"], ["viewport", ""], ["nui-table", "", 3, "dataSource", "resizable", "reorderable"], ["nuiColumnDef", "no", 3, "columnWidth"], ["nui-header-cell", "", 4, "nuiHeaderCellDef"], ["nui-cell", "", 4, "nuiCellDef"], ["nuiColumnDef", "nameTitle", 3, "columnWidth"], ["nuiColumnDef", "nameFirst", 3, "columnWidth"], ["nuiColumnDef", "nameLast", 3, "columnWidth"], ["nuiColumnDef", "gender", 3, "columnWidth"], ["nuiColumnDef", "country", 3, "columnWidth"], ["nuiColumnDef", "city", 3, "columnWidth"], ["nuiColumnDef", "postcode", 3, "columnWidth"], ["nuiColumnDef", "email", 3, "columnWidth"], ["nuiColumnDef", "cell", 3, "columnWidth"], ["nui-cell", "", "style", "overflow: visible", 4, "nuiCellDef"], ["nui-header-row", "", 4, "nuiHeaderRowDef"], ["nuiRowDef", "", "cdkVirtualFor", "", 3, "nuiRowDefColumns", "cdkVirtualForOf"], [4, "ngIf"], ["footer", ""], ["nui-header-cell", ""], i18n_2, ["nui-cell", ""], i18n_4, i18n_6, i18n_8, i18n_10, i18n_12, i18n_14, i18n_16, i18n_18, i18n_20, ["nui-cell", "", 2, "overflow", "visible"], ["nui-header-row", ""], ["nui-row", "", "density", "tiny"], [4, "ngTemplateOutlet"], [1, "nui-demo-scrolling-footer", "mt-1"], [1, "h-100", "w-100"], ["class", "d-flex justify-content-center align-items-center", 4, "ngIf", "ngIfElse"], ["defaultText", ""], [1, "d-flex", "justify-content-center", "align-items-center"], ["size", "small", 1, "mr-2", "d-inline-flex", 3, "show"], [1, "h-100", "d-flex", "justify-content-center", "align-items-center"], [1, "px-2"], [1, "pl-2"], [4, "ngIf", "ngIfElse"], ["class", "d-flex justify-content-center", 4, "ngIf"], ["endOfData", ""], [1, "d-flex", "justify-content-center"], ["btn", "", "nui-button", "", "type", "button", "size", "compact", "displayStyle", "action", 3, "click"]];

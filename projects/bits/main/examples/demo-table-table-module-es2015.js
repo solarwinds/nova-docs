@@ -98,6 +98,246 @@ RandomuserTableDataSource1.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_3__["
 
 /***/ }),
 
+/***/ "/Jns":
+/*!*********************************************************************************************************************************************!*\
+  !*** ./demo/src/components/demo/table/table-virtual-scroll-sticky-header-test/table-virtual-scroll-sticky-header-test-example.component.ts ***!
+  \*********************************************************************************************************************************************/
+/*! exports provided: TableVirtualScrollStickyHeaderTestExampleComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TableVirtualScrollStickyHeaderTestExampleComponent", function() { return TableVirtualScrollStickyHeaderTestExampleComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/cdk/scrolling */ "vxfF");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @nova-ui/bits */ "b5Xb");
+/* harmony import */ var lodash_sample__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! lodash/sample */ "fTpD");
+/* harmony import */ var lodash_sample__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(lodash_sample__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs/operators */ "kU1M");
+/* harmony import */ var _src_lib_switch_switch_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../../../src/lib/switch/switch.component */ "6CEj");
+/* harmony import */ var _src_lib_table_table_virtual_scroll_table_sticky_header_directive__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-virtual-scroll/table-sticky-header.directive */ "jAOl");
+/* harmony import */ var _src_lib_table_table_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../../../../src/lib/table/table.component */ "ey6q");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-row/table-row.component */ "LFiI");
+/* harmony import */ var _src_lib_table_table_cell_table_column_def_directive__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-cell/table-column-def.directive */ "XeyC");
+/* harmony import */ var _src_lib_table_table_cell_table_header_cell_def_directive__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-cell/table-header-cell-def.directive */ "htGY");
+/* harmony import */ var _src_lib_table_table_cell_table_cell_def_directive__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-cell/table-cell-def.directive */ "/BSE");
+/* harmony import */ var _src_lib_table_table_cell_table_header_cell_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-cell/table-header-cell.component */ "Ppt+");
+/* harmony import */ var _src_lib_icon_icon_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../../../../../../src/lib/icon/icon.component */ "45Bz");
+/* harmony import */ var _src_lib_table_table_cell_table_cell_directive__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-cell/table-cell.directive */ "jdPS");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function TableVirtualScrollStickyHeaderTestExampleComponent_ng_container_8_th_1_span_1_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "span");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const column_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"](2).$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](column_r3);
+} }
+function TableVirtualScrollStickyHeaderTestExampleComponent_ng_container_8_th_1_ng_template_2_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 16);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](1, "nui-icon", 17);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+} }
+function TableVirtualScrollStickyHeaderTestExampleComponent_ng_container_8_th_1_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "th", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](1, TableVirtualScrollStickyHeaderTestExampleComponent_ng_container_8_th_1_span_1_Template, 2, 1, "span", 14);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, TableVirtualScrollStickyHeaderTestExampleComponent_ng_container_8_th_1_ng_template_2_Template, 2, 0, "ng-template", null, 15, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const _r7 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](3);
+    const column_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]().$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", column_r3 !== "icon")("ngIfElse", _r7);
+} }
+function TableVirtualScrollStickyHeaderTestExampleComponent_ng_container_8_td_2_span_1_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "span");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const element_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]().$implicit;
+    const column_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]().$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](element_r11[column_r3]);
+} }
+function TableVirtualScrollStickyHeaderTestExampleComponent_ng_container_8_td_2_ng_template_2_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 16);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](1, "nui-icon", 20);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const element_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]().$implicit;
+    const column_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]().$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("icon", element_r11[column_r3]);
+} }
+function TableVirtualScrollStickyHeaderTestExampleComponent_ng_container_8_td_2_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "td", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](1, TableVirtualScrollStickyHeaderTestExampleComponent_ng_container_8_td_2_span_1_Template, 2, 1, "span", 14);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, TableVirtualScrollStickyHeaderTestExampleComponent_ng_container_8_td_2_ng_template_2_Template, 2, 1, "ng-template", null, 19, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const _r13 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](3);
+    const column_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]().$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", column_r3 !== "icon")("ngIfElse", _r13);
+} }
+function TableVirtualScrollStickyHeaderTestExampleComponent_ng_container_8_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainerStart"](0, 10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](1, TableVirtualScrollStickyHeaderTestExampleComponent_ng_container_8_th_1_Template, 4, 2, "th", 11);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, TableVirtualScrollStickyHeaderTestExampleComponent_ng_container_8_td_2_Template, 4, 2, "td", 12);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainerEnd"]();
+} if (rf & 2) {
+    const column_r3 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("nuiColumnDef", column_r3)("type", column_r3 === "icon" ? "icon" : "default");
+} }
+function TableVirtualScrollStickyHeaderTestExampleComponent_tr_9_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](0, "tr", 21);
+} }
+function TableVirtualScrollStickyHeaderTestExampleComponent_ng_template_10_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](0, "tr", 22);
+} if (rf & 2) {
+    const context_r20 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("rowObject", context_r20);
+} }
+class TableVirtualScrollStickyHeaderTestExampleComponent {
+    constructor(dataSourceService) {
+        this.dataSourceService = dataSourceService;
+        // Note: Mock items list is used to fake that the data is already loaded
+        // and let CDK Viewport perform the scrolling on a known number of items
+        this.placeholderItems = [];
+        // The dynamically changed array of items to render by the table
+        this.displayedColumns = ["no", "icon", "nameFirst", "nameLast", "city", "postcode"];
+        this.makeSticky = true;
+        this.itemSize = 40;
+        this.gridHeight = 400;
+        // trackBy handler used to identify uniquely each item in the table
+        this.trackByNo = (index, item) => item === null || item === void 0 ? void 0 : item.no;
+        // Note: Initiating data source with data to be displayed
+        this.dataSourceService.setData(generateUsers(100000));
+    }
+    ngAfterViewInit() {
+        this.dataSourceService.componentTree = {
+            // Note: Using paginator as filter to be able to get specific range
+            paginator: {
+                componentInstance: {
+                    getFilters: () => ({
+                        value: this.viewport.getRenderedRange(),
+                    }),
+                },
+            },
+        };
+        // Note: Creating a stream of visible items to be bound to the table and increase the performance
+        this.visibleItems$ = this.viewport.renderedRangeStream.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["startWith"])({ start: 0, end: 10 }), 
+        // Note: On range change applying filters
+        Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["tap"])(() => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () { return this.dataSourceService.applyFilters(); })), 
+        // Subscribing to the filter results transforming and merging them into the stream
+        Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["switchMap"])(() => this.dataSourceService.outputsSubject.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["map"])((result) => {
+            // Updating mock items list
+            if (this.placeholderItems.length !== result.paginator.total) {
+                this.placeholderItems = Array.from({ length: result.paginator.total });
+            }
+            // Mapping the values to array to be able to bind them to the table dataSource
+            return result.repeat.itemsSource;
+        }))));
+    }
+    // Note: Used only for demo purposes
+    updateStickyState(state) {
+        this.stickyHeaderDirective.tableStickyHeader = state;
+        this.makeSticky = state;
+    }
+}
+TableVirtualScrollStickyHeaderTestExampleComponent.ɵfac = function TableVirtualScrollStickyHeaderTestExampleComponent_Factory(t) { return new (t || TableVirtualScrollStickyHeaderTestExampleComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["ClientSideDataSource"])); };
+TableVirtualScrollStickyHeaderTestExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({ type: TableVirtualScrollStickyHeaderTestExampleComponent, selectors: [["nui-table-virtual-scroll-sticky-header-test-example"]], viewQuery: function TableVirtualScrollStickyHeaderTestExampleComponent_Query(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵviewQuery"](_angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__["CdkVirtualScrollViewport"], 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵviewQuery"](_nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["TableStickyHeaderDirective"], 1);
+    } if (rf & 2) {
+        let _t;
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵloadQuery"]()) && (ctx.viewport = _t.first);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵloadQuery"]()) && (ctx.stickyHeaderDirective = _t.first);
+    } }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵProvidersFeature"]([_nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["ClientSideDataSource"]])], decls: 11, vars: 17, consts: function () { let i18n_0; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+        const MSG_EXTERNAL_2717514595278786545$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_STICKY_HEADER_TEST_TABLE_VIRTUAL_SCROLL_STICKY_HEADER_TEST_EXAMPLE_COMPONENT_TS_1 = goog.getMsg(" {$interpolation} ", { "interpolation": "\uFFFD0\uFFFD" });
+        i18n_0 = MSG_EXTERNAL_2717514595278786545$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_STICKY_HEADER_TEST_TABLE_VIRTUAL_SCROLL_STICKY_HEADER_TEST_EXAMPLE_COMPONENT_TS_1;
+    }
+    else {
+        i18n_0 = $localize `:␟e85c9ef3064327671f6a2c1a07d2a9eb628df244␟2717514595278786545: ${"\uFFFD0\uFFFD"}:INTERPOLATION: `;
+    } return [[1, "row", "mb-2"], [1, "col-3"], [3, "value", "valueChange"], i18n_0, ["id", "nui-demo-table-sticky-header"], ["tableStickyHeader", "", 1, "h-100", 3, "itemSize"], ["nui-table", "", 3, "dataSource", "trackBy", "sortable"], [3, "nuiColumnDef", "type", 4, "ngFor", "ngForOf"], ["nui-header-row", "", 4, "nuiHeaderRowDef"], ["nuiRowDef", "", "cdkVirtualFor", "", 3, "nuiRowDefColumns", "cdkVirtualForOf", "cdkVirtualForTrackBy"], [3, "nuiColumnDef", "type"], ["nui-header-cell", "", 4, "nuiHeaderCellDef"], ["nui-cell", "", 4, "nuiCellDef"], ["nui-header-cell", ""], [4, "ngIf", "ngIfElse"], ["headerIcon", ""], [1, "d-flex", "align-items-center", "justify-content-center"], ["icon", "enable"], ["nui-cell", ""], ["icon", ""], [3, "icon"], ["nui-header-row", ""], ["nui-row", "", 3, "rowObject"]]; }, template: function TableVirtualScrollStickyHeaderTestExampleComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](1, "div", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](2, "nui-switch", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("valueChange", function TableVirtualScrollStickyHeaderTestExampleComponent_Template_nui_switch_valueChange_2_listener($event) { return ctx.updateStickyState($event); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵi18n"](3, 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](4, "div", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](5, "cdk-virtual-scroll-viewport", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](6, "table", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipe"](7, "async");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](8, TableVirtualScrollStickyHeaderTestExampleComponent_ng_container_8_Template, 3, 2, "ng-container", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](9, TableVirtualScrollStickyHeaderTestExampleComponent_tr_9_Template, 1, 0, "tr", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](10, TableVirtualScrollStickyHeaderTestExampleComponent_ng_template_10_Template, 1, 1, "ng-template", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("value", ctx.makeSticky);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵi18nExp"](ctx.makeSticky ? "Sticky" : "Not Sticky");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵi18nApply"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵstyleProp"]("height", ctx.gridHeight, "px")("max-width", 1300, "px");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("itemSize", ctx.itemSize);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("dataSource", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipeBind1"](7, 15, ctx.visibleItems$))("trackBy", ctx.trackByNo)("sortable", true);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx.displayedColumns);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("nuiHeaderRowDef", ctx.displayedColumns);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("nuiRowDefColumns", ctx.displayedColumns)("cdkVirtualForOf", ctx.placeholderItems)("cdkVirtualForTrackBy", ctx.trackByNo);
+    } }, directives: [_src_lib_switch_switch_component__WEBPACK_IMPORTED_MODULE_6__["SwitchComponent"], _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__["CdkVirtualScrollViewport"], _src_lib_table_table_virtual_scroll_table_sticky_header_directive__WEBPACK_IMPORTED_MODULE_7__["TableStickyHeaderDirective"], _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__["CdkFixedSizeVirtualScroll"], _src_lib_table_table_component__WEBPACK_IMPORTED_MODULE_8__["TableComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_9__["NgForOf"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_10__["TableHeaderRowDefDirective"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_10__["TableRowDefDirective"], _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__["CdkVirtualForOf"], _src_lib_table_table_cell_table_column_def_directive__WEBPACK_IMPORTED_MODULE_11__["TableColumnDefDirective"], _src_lib_table_table_cell_table_header_cell_def_directive__WEBPACK_IMPORTED_MODULE_12__["TableHeaderCellDefDirective"], _src_lib_table_table_cell_table_cell_def_directive__WEBPACK_IMPORTED_MODULE_13__["TableCellDefDirective"], _src_lib_table_table_cell_table_header_cell_component__WEBPACK_IMPORTED_MODULE_14__["TableHeaderCellComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_9__["NgIf"], _src_lib_icon_icon_component__WEBPACK_IMPORTED_MODULE_15__["IconComponent"], _src_lib_table_table_cell_table_cell_directive__WEBPACK_IMPORTED_MODULE_16__["TableCellDirective"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_10__["TableHeaderRowComponent"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_10__["TableRowComponent"]], pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_9__["AsyncPipe"]], encapsulation: 2, changeDetection: 0 });
+const PEOPLE = ["Elena", "Madelyn", "Baggio", "Josh", "Lukas", "Blake", "Frantz", "Dima", "Serhii", "Vita", "Vlad", "Ivan", "Dumitru"];
+const CITIES = ["Bucharest", "Kiev", "Austin", "Brno", "Frankfurt pe Main", "Sutton-under-Whitestonecliffe", "Vila Bela da Santíssima Trindade"];
+function generateUsers(length) {
+    return Array.from({ length }).map((obj, id) => {
+        const personName = lodash_sample__WEBPACK_IMPORTED_MODULE_4___default()(PEOPLE) || PEOPLE[0];
+        return ({
+            no: id,
+            postcode: id * 1000000 * id,
+            city: lodash_sample__WEBPACK_IMPORTED_MODULE_4___default()(CITIES) || CITIES[0],
+            nameFirst: personName,
+            nameLast: "UnknownLast",
+            icon: lodash_sample__WEBPACK_IMPORTED_MODULE_4___default()(["status_up", "status_unplugged"]) || "status_up",
+        });
+    });
+}
+
+
+/***/ }),
+
 /***/ "2BtM":
 /*!*******************************************************************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/table/table-cell-content-align/table-cell-content-align.example.component.less ***!
@@ -185,6 +425,8 @@ var map = {
 	"./table-virtual-scroll-steps-and-button/table-virtual-scroll-steps-and-button.example.component.html": "RfHE",
 	"./table-virtual-scroll-steps-and-button/table-virtual-scroll-steps-and-button.example.component.less": "SzYQ",
 	"./table-virtual-scroll-steps-and-button/table-virtual-scroll-steps-and-button.example.component.ts": "2vJh",
+	"./table-virtual-scroll-sticky-header-test/table-virtual-scroll-sticky-header-test-example.component.html": "qNxL",
+	"./table-virtual-scroll-sticky-header-test/table-virtual-scroll-sticky-header-test-example.component.ts": "n2nk",
 	"./table-virtual-scroll-sticky-header/table-virtual-scroll-sticky-header-example.component.html": "2hRV",
 	"./table-virtual-scroll-sticky-header/table-virtual-scroll-sticky-header-example.component.ts": "lRzD",
 	"./table-visual-test/table-visual-test.example.html": "9L1u",
@@ -236,7 +478,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"row mb-2\">\n    <div class=\"col-3\">\n        <nui-switch [value]=\"makeSticky\" (valueChange)=\"updateStickyState($event)\" i18n>\n            {{makeSticky ? 'Sticky' : 'Not Sticky'}}\n        </nui-switch>\n    </div>\n</div>\n\n<div id=\"nui-demo-table-sticky-header\" [style.height.px]=\"gridHeight\" [style.max-width.px]=\"1300\">\n    <cdk-virtual-scroll-viewport tableStickyHeader class=\"h-100\" [itemSize]=\"itemSize\">\n\n        <!-- IMPORTANT Bind only visible rows to the table, otherwise, the table will render all rows in the DOM -->\n        <table nui-table [dataSource]=\"visibleItems$ | async\" [trackBy]=\"trackByNo\" [sortable]=\"true\">\n            <!--         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^  -->\n            <ng-container *ngFor=\"let column of displayedColumns\" [nuiColumnDef]=\"column\">\n                <th nui-header-cell *nuiHeaderCellDef> {{column}}</th>\n                <td nui-cell *nuiCellDef=\"let element\">{{element[column]}}</td>\n            </ng-container>\n\n            <tr nui-header-row *nuiHeaderRowDef=\"displayedColumns\"></tr>\n            <!-- IMPORTANT The actual difference between normal table and virtualized one-->\n            <!--∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨ -->\n            <ng-template nuiRowDef cdkVirtualFor\n                         let-context\n                         [nuiRowDefColumns]=\"displayedColumns\"\n                         [cdkVirtualForOf]=\"placeholderItems\"\n                         [cdkVirtualForTrackBy]=\"trackByNo\">\n                <tr nui-row [rowObject]=\"context\"></tr>\n            </ng-template>\n            <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->\n        </table>\n\n    </cdk-virtual-scroll-viewport>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"row mb-2\">\n    <div class=\"col-3\">\n        <nui-switch [value]=\"makeSticky\" (valueChange)=\"updateStickyState($event)\" i18n>\n            {{makeSticky ? 'Sticky' : 'Not Sticky'}}\n        </nui-switch>\n    </div>\n</div>\n\n<div id=\"nui-demo-table-sticky-header\" [style.height.px]=\"gridHeight\" [style.max-width.px]=\"1300\">\n    <cdk-virtual-scroll-viewport tableStickyHeader class=\"h-100\" [itemSize]=\"itemSize\">\n\n        <!-- IMPORTANT Bind only visible rows to the table, otherwise, the table will render all rows in the DOM -->\n        <table nui-table [dataSource]=\"visibleItems$ | async\" [trackBy]=\"trackByNo\" [sortable]=\"true\">\n            <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->\n            <ng-container *ngFor=\"let column of displayedColumns\" [nuiColumnDef]=\"column\">\n                <th nui-header-cell *nuiHeaderCellDef> {{column}}</th>\n                <td nui-cell *nuiCellDef=\"let element\">{{element[column]}}</td>\n            </ng-container>\n\n            <tr nui-header-row *nuiHeaderRowDef=\"displayedColumns\"></tr>\n            <!-- IMPORTANT The actual difference between normal table and virtualized one-->\n            <!-- ∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨ -->\n            <ng-template nuiRowDef cdkVirtualFor\n                         let-context\n                         [nuiRowDefColumns]=\"displayedColumns\"\n                         [cdkVirtualForOf]=\"placeholderItems\"\n                         [cdkVirtualForTrackBy]=\"trackByNo\">\n                <tr nui-row [rowObject]=\"context\"></tr>\n            </ng-template>\n            <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->\n        </table>\n\n    </cdk-virtual-scroll-viewport>\n</div>\n");
 
 /***/ }),
 
@@ -722,7 +964,7 @@ TableVirtualScrollRealApiProgressTextFooterExampleComponent.ɵcmp = _angular_cor
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("export * from \"./table-docs/table-docs.example.component\";\nexport * from \"./table-basic/table-basic.example.component\";\nexport * from \"./table-pinned-header/table-pinned-header.example.component\";\nexport * from \"./table-cell-content-align/table-cell-content-align.example.component\";\nexport * from \"./table-cell-width-set/table-cell-width-set.example.component\";\nexport * from \"./table-row-clickable/table-row-clickable.example.component\";\nexport * from \"./table-row-height-set/table-row-height-set.example.component\";\nexport * from \"./table-reorder/table-reorder.example.component\";\nexport * from \"./table-pagination/table-pagination.example.component\";\nexport * from \"./table-columns-add-remove/table-columns-add-remove.example.component\";\nexport * from \"./table-search/table-search.example.component\";\nexport * from \"./table-sorting/table-sorting.example.component\";\nexport * from \"./table-resize/table-resize.example.component\";\nexport * from \"./table-select/table-select.example.component\";\nexport * from \"./table-selectable-toggle/table-selectable-toggle.example.component\";\nexport * from \"./table-test/table-test.component\";\nexport * from \"./table-visual-test/table-visual-test.example\";\nexport * from \"./table-virtual-scroll-real-api/table-virtual-scroll-real-api.example.component\";\nexport * from \"./table-virtual-scroll-steps-and-button/table-virtual-scroll-steps-and-button.example.component\";\nexport * from \"./table-virtual-scroll-select-sticky-header/table-virtual-scroll-select-sticky-header-example.component\";\nexport * from \"./table-virtual-scroll-sticky-header/table-virtual-scroll-sticky-header-example.component\";\nexport * from \"./table-virtual-scroll-real-api-progress-footer/table-virtual-scroll-real-api-progress-footer.example.component\";\nexport * from \"./table-virtual-scroll-real-api-progress-text-footer/table-virtual-scroll-real-api-progress-text-footer.example.component\";\nexport * from \"./table-virtual-scroll-real-api-minimalist/table-virtual-scroll-real-api-minimalist.example.component\";\nexport * from \"./table-search-with-select-and-pagination/table-search-with-select-and-pagination.example.component\";\nexport * from \"./table-select-pinned-header/table-select-pinned-header.example.component\";\n");
+/* harmony default export */ __webpack_exports__["default"] = ("export * from \"./table-docs/table-docs.example.component\";\nexport * from \"./table-basic/table-basic.example.component\";\nexport * from \"./table-pinned-header/table-pinned-header.example.component\";\nexport * from \"./table-cell-content-align/table-cell-content-align.example.component\";\nexport * from \"./table-cell-width-set/table-cell-width-set.example.component\";\nexport * from \"./table-row-clickable/table-row-clickable.example.component\";\nexport * from \"./table-row-height-set/table-row-height-set.example.component\";\nexport * from \"./table-reorder/table-reorder.example.component\";\nexport * from \"./table-pagination/table-pagination.example.component\";\nexport * from \"./table-columns-add-remove/table-columns-add-remove.example.component\";\nexport * from \"./table-search/table-search.example.component\";\nexport * from \"./table-sorting/table-sorting.example.component\";\nexport * from \"./table-resize/table-resize.example.component\";\nexport * from \"./table-select/table-select.example.component\";\nexport * from \"./table-selectable-toggle/table-selectable-toggle.example.component\";\nexport * from \"./table-test/table-test.component\";\nexport * from \"./table-visual-test/table-visual-test.example\";\nexport * from \"./table-virtual-scroll-real-api/table-virtual-scroll-real-api.example.component\";\nexport * from \"./table-virtual-scroll-steps-and-button/table-virtual-scroll-steps-and-button.example.component\";\nexport * from \"./table-virtual-scroll-select-sticky-header/table-virtual-scroll-select-sticky-header-example.component\";\nexport * from \"./table-virtual-scroll-sticky-header/table-virtual-scroll-sticky-header-example.component\";\nexport * from \"./table-virtual-scroll-sticky-header-test/table-virtual-scroll-sticky-header-test-example.component\";\nexport * from \"./table-virtual-scroll-real-api-progress-footer/table-virtual-scroll-real-api-progress-footer.example.component\";\nexport * from \"./table-virtual-scroll-real-api-progress-text-footer/table-virtual-scroll-real-api-progress-text-footer.example.component\";\nexport * from \"./table-virtual-scroll-real-api-minimalist/table-virtual-scroll-real-api-minimalist.example.component\";\nexport * from \"./table-search-with-select-and-pagination/table-search-with-select-and-pagination.example.component\";\nexport * from \"./table-select-pinned-header/table-select-pinned-header.example.component\";\n");
 
 /***/ }),
 
@@ -1012,7 +1254,7 @@ module.exports = baseSample;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\n    <details open>\n        <summary id=\"nui-visual-table-basic-summary\">Basic Usage</summary>\n        <nui-table-basic-example id=\"table-basic-usage\"></nui-table-basic-example>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-pinned-summary\">Pinned header</summary>\n        <nui-table-pinned-header-example id=\"table-pinned-header\"></nui-table-pinned-header-example>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-alignment-summary\">Column Alignment</summary>\n        <nui-table-cell-content-align-example id=\"table-column-alignment\"></nui-table-cell-content-align-example>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-row-denisty-tiny-summary\">Row Density (\"tiny\")</summary>\n        <nui-table-row-height-set id=\"table-row-density-tiny\"></nui-table-row-height-set>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-row-denisty-compact-summary\">Row Density (\"compact\")</summary>\n        <nui-table-row-height-set id=\"table-row-density-compact\" density=\"compact\"></nui-table-row-height-set>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-sorting-summary\">Sorting</summary>\n        <nui-table-sorting-example id=\"table-sorting\"></nui-table-sorting-example>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-custom-action-summary\">Custom actions</summary>\n        <nui-table-columns-add-remove-example id=\"table-custom-action\"></nui-table-columns-add-remove-example>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-column-size-summary\">Column resize</summary>\n        <nui-table-resize-example id=\"table-resizing\"></nui-table-resize-example>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-row-selection-summary\">Row selection in table</summary>\n        <nui-table-select id=\"table-selected-row\"></nui-table-select>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-select-pinned-header-summary\">Select Pinned Header</summary>\n        <nui-table-select-pinned-header-example id=\"table-select-pinned-header\"></nui-table-select-pinned-header-example>\n    </details>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\n    <details open>\n        <summary id=\"nui-visual-table-basic-summary\">Basic Usage</summary>\n        <nui-table-basic-example id=\"table-basic-usage\"></nui-table-basic-example>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-pinned-summary\">Pinned header</summary>\n        <nui-table-pinned-header-example id=\"table-pinned-header\"></nui-table-pinned-header-example>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-alignment-summary\">Column Alignment</summary>\n        <nui-table-cell-content-align-example id=\"table-column-alignment\"></nui-table-cell-content-align-example>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-row-density-tiny-summary\">Row Density (\"tiny\")</summary>\n        <nui-table-row-height-set id=\"table-row-density-tiny\"></nui-table-row-height-set>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-row-density-compact-summary\">Row Density (\"compact\")</summary>\n        <nui-table-row-height-set id=\"table-row-density-compact\" density=\"compact\"></nui-table-row-height-set>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-sorting-summary\">Sorting</summary>\n        <nui-table-sorting-example id=\"table-sorting\"></nui-table-sorting-example>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-custom-action-summary\">Custom actions</summary>\n        <nui-table-columns-add-remove-example id=\"table-custom-action\"></nui-table-columns-add-remove-example>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-column-size-summary\">Column resize</summary>\n        <nui-table-resize-example id=\"table-resizing\"></nui-table-resize-example>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-row-selection-summary\">Row selection in table</summary>\n        <nui-table-select id=\"table-selected-row\"></nui-table-select>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-select-pinned-header-summary\">Select Pinned Header</summary>\n        <nui-table-select-pinned-header-example id=\"table-select-pinned-header\"></nui-table-select-pinned-header-example>\n    </details>\n\n    <details open>\n        <summary id=\"nui-visual-table-virtual-scroll-sticky-header-summary\">Virtual Scroll Sticky Header</summary>\n        <nui-table-virtual-scroll-sticky-header-test-example></nui-table-virtual-scroll-sticky-header-test-example>\n    </details>\n</div>\n");
 
 /***/ }),
 
@@ -1686,6 +1928,15 @@ const routes = [
         },
     },
     {
+        path: "sticky-test",
+        component: _index__WEBPACK_IMPORTED_MODULE_4__["TableVirtualScrollStickyHeaderTestExampleComponent"],
+        data: {
+            "srlc": {
+                "hideIndicator": true,
+            },
+        },
+    },
+    {
         path: "select-sticky",
         component: _index__WEBPACK_IMPORTED_MODULE_4__["TableVirtualScrollSelectStickyHeaderExampleComponent"],
         data: {
@@ -1748,6 +1999,7 @@ TableModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineInject
         _index__WEBPACK_IMPORTED_MODULE_4__["TableVirtualScrollRealApiMinimalistExampleComponent"],
         _index__WEBPACK_IMPORTED_MODULE_4__["TableSearchWithSelectAndPaginationComponent"],
         _index__WEBPACK_IMPORTED_MODULE_4__["TableVirtualScrollStickyHeaderExampleComponent"],
+        _index__WEBPACK_IMPORTED_MODULE_4__["TableVirtualScrollStickyHeaderTestExampleComponent"],
         _index__WEBPACK_IMPORTED_MODULE_4__["TableVirtualScrollSelectStickyHeaderExampleComponent"],
         _index__WEBPACK_IMPORTED_MODULE_4__["TableRowSelectInstructionsComponent"]], imports: [_nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["NuiButtonModule"],
         _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["NuiTableModule"],
@@ -2288,7 +2540,7 @@ TableVirtualScrollRealApiMinimalistExampleComponent.ɵcmp = _angular_core__WEBPA
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { CdkVirtualScrollViewport } from \"@angular/cdk/scrolling\";\nimport { AfterViewInit, ChangeDetectionStrategy, Component, TrackByFunction, ViewChild } from \"@angular/core\";\nimport { ClientSideDataSource, IFilteringOutputs, ISelection, SelectionModel } from \"@nova-ui/bits\";\nimport sample from \"lodash/sample\";\nimport { Observable } from \"rxjs\";\nimport { map, startWith, switchMap, tap } from \"rxjs/operators\";\n\nimport { IRandomUserTableModel } from \"../index\";\n\n@Component({\n    selector: \"nui-table-virtual-scroll-select-sticky-header-example\",\n    templateUrl: \"./table-virtual-scroll-select-sticky-header-example.component.html\",\n    changeDetection: ChangeDetectionStrategy.OnPush,\n    providers: [ClientSideDataSource],\n})\nexport class TableVirtualScrollSelectStickyHeaderExampleComponent implements AfterViewInit {\n    @ViewChild(CdkVirtualScrollViewport) public viewport: CdkVirtualScrollViewport;\n    // Note: Mock items list is used to fake that the data is already loaded\n    // and let CDK Viewport perform the scrolling on a known number of items\n    public placeholderItems: undefined[] = [];\n    public visibleItems$: Observable<IRandomUserTableModel[]>;\n    // The dynamically changed array of items to render by the table\n    public displayedColumns: string[] = [\"no\", \"nameTitle\", \"nameFirst\", \"nameLast\", \"city\", \"postcode\"];\n    public itemSize: number = 40;\n    public selection: ISelection = new SelectionModel({ include: [1, 3, 5, 7, 9] });\n    // trackBy handler used to identify uniquely each item in the table\n    public trackByNo: TrackByFunction<IRandomUserTableModel> = (index, item) => item?.no;\n\n    constructor(public dataSourceService: ClientSideDataSource<IRandomUserTableModel>) {\n        // Note: Initiating data source with data to be displayed\n        this.dataSourceService.setData(generateUsers(100000));\n    }\n\n    public ngAfterViewInit() {\n        this.dataSourceService.componentTree = {\n            // Note: Using paginator as filter to be able to get specific range\n            paginator: {\n                componentInstance: {\n                    getFilters: () => ({\n                        value: this.viewport.getRenderedRange(),\n                    }),\n                },\n            },\n        };\n\n        // Note: Creating a stream of visible items to be bound to the table and increase the performance\n        this.visibleItems$ = this.viewport.renderedRangeStream.pipe(startWith({ start: 0, end: 10 }),\n            // Note: On range change applying filters\n                                                                    tap(() => this.dataSourceService.applyFilters()),\n            // Subscribing to the filter results transforming and merging them into the stream\n                                                                    switchMap(() => this.dataSourceService.outputsSubject.pipe(\n                                                                        map((result: IFilteringOutputs) => {\n                                                                            // Updating mock items list\n                                                                            if (this.placeholderItems.length !== result.paginator.total) {\n                                                                                this.placeholderItems = Array.from({ length: result.paginator.total });\n                                                                            }\n                                                                            // Mapping the values to array to be able to bind them to the table dataSource\n                                                                            return result.repeat.itemsSource;\n                                                                        })\n                                                                    )));\n    }\n}\n\nfunction generateUsers(length: number): IRandomUserTableModel[] {\n    return Array.from({ length }).map((obj: unknown, id: number) => {\n        const personName = sample([\"Josh\", \"Lukas\", \"Blake\", \"Frantz\", \"Dima\", \"Serhii\", \"Vita\", \"Vlad\", \"Ivan\", \"Dumitru\"]) || \"Josh\";\n        return ({\n            no: id,\n            postcode: id * 1000000 * id,\n            cell: \"0000\",\n            city: sample([\"Bucharest\", \"Kiev\", \"Austin\", \"Brno\", \"Frankfurt pe Main\", \"Sutton-under-Whitestonecliffe\", \"Vila Bela da Santíssima Trindade\"]) ||\n                \"Bucharest\",\n            country: \"Unknown\",\n            email: `${ personName.toLocaleLowerCase() }@@sw.com`,\n            gender: \"Unknown\",\n            nameFirst: personName,\n            nameLast: \"UnknownLast\",\n            nameTitle: \"Sir.\",\n        });\n    });\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import { CdkVirtualScrollViewport } from \"@angular/cdk/scrolling\";\nimport { AfterViewInit, ChangeDetectionStrategy, Component, TrackByFunction, ViewChild } from \"@angular/core\";\nimport { ClientSideDataSource, IFilteringOutputs, ISelection, SelectionModel } from \"@nova-ui/bits\";\nimport sample from \"lodash/sample\";\nimport { Observable } from \"rxjs\";\nimport { map, startWith, switchMap, tap } from \"rxjs/operators\";\n\ninterface IRandomUserTableModel {\n    no: number;\n    nameFirst: string;\n    nameLast: string;\n    city: string;\n    postcode: number;\n}\n\n@Component({\n    selector: \"nui-table-virtual-scroll-select-sticky-header-example\",\n    templateUrl: \"./table-virtual-scroll-select-sticky-header-example.component.html\",\n    changeDetection: ChangeDetectionStrategy.OnPush,\n    providers: [ClientSideDataSource],\n})\nexport class TableVirtualScrollSelectStickyHeaderExampleComponent implements AfterViewInit {\n    @ViewChild(CdkVirtualScrollViewport) public viewport: CdkVirtualScrollViewport;\n    // Note: Mock items list is used to fake that the data is already loaded\n    // and let CDK Viewport perform the scrolling on a known number of items\n    public placeholderItems: undefined[] = [];\n    public visibleItems$: Observable<IRandomUserTableModel[]>;\n    // The dynamically changed array of items to render by the table\n    public displayedColumns: string[] = [\"no\", \"nameFirst\", \"nameLast\", \"city\", \"postcode\"];\n    public itemSize: number = 40;\n    public selection: ISelection = new SelectionModel({ include: [1, 3, 5, 7, 9] });\n    // trackBy handler used to identify uniquely each item in the table\n    public trackByNo: TrackByFunction<IRandomUserTableModel> = (index: number, item: IRandomUserTableModel): number => item?.no;\n\n    constructor(public dataSourceService: ClientSideDataSource<IRandomUserTableModel>) {\n        // Note: Initiating data source with data to be displayed\n        this.dataSourceService.setData(generateUsers(100000));\n    }\n\n    public ngAfterViewInit(): void {\n        this.dataSourceService.componentTree = {\n            // Note: Using paginator as filter to be able to get specific range\n            paginator: {\n                componentInstance: {\n                    getFilters: () => ({\n                        value: this.viewport.getRenderedRange(),\n                    }),\n                },\n            },\n        };\n\n        // Note: Creating a stream of visible items to be bound to the table and increase the performance\n        this.visibleItems$ = this.viewport.renderedRangeStream.pipe(\n            startWith({ start: 0, end: 10 }),\n            // Note: On range change applying filters\n            tap(async () => this.dataSourceService.applyFilters()),\n            // Subscribing to the filter results transforming and merging them into the stream\n            switchMap(() => this.dataSourceService.outputsSubject.pipe(\n                map((result: IFilteringOutputs) => {\n                    // Updating mock items list\n                    if (this.placeholderItems.length !== result.paginator.total) {\n                        this.placeholderItems = Array.from({ length: result.paginator.total });\n                    }\n                    // Mapping the values to array to be able to bind them to the table dataSource\n                    return result.repeat.itemsSource;\n                })\n            )));\n    }\n}\n\nconst PEOPLE = [\"Elena\", \"Madelyn\", \"Baggio\", \"Josh\", \"Lukas\", \"Blake\", \"Frantz\", \"Dima\", \"Serhii\", \"Vita\", \"Vlad\", \"Ivan\", \"Dumitru\"];\nconst CITIES = [\"Bucharest\", \"Kiev\", \"Austin\", \"Brno\", \"Frankfurt pe Main\", \"Sutton-under-Whitestonecliffe\", \"Vila Bela da Santíssima Trindade\"];\nfunction generateUsers(length: number): IRandomUserTableModel[] {\n    return Array.from({ length }).map((obj: unknown, id: number) => {\n        const personName = sample(PEOPLE) || PEOPLE[0];\n        return ({\n            no: id,\n            postcode: id * 1000000 * id,\n            city: sample(CITIES) || CITIES[0],\n            nameFirst: personName,\n            nameLast: \"UnknownLast\",\n        });\n    });\n}\n");
 
 /***/ }),
 
@@ -5845,22 +6097,24 @@ function getData() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TableVirtualScrollStickyHeaderExampleComponent", function() { return TableVirtualScrollStickyHeaderExampleComponent; });
-/* harmony import */ var _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/cdk/scrolling */ "vxfF");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @nova-ui/bits */ "b5Xb");
-/* harmony import */ var lodash_sample__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lodash/sample */ "fTpD");
-/* harmony import */ var lodash_sample__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(lodash_sample__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "kU1M");
-/* harmony import */ var _src_lib_switch_switch_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../../../src/lib/switch/switch.component */ "6CEj");
-/* harmony import */ var _src_lib_table_table_virtual_scroll_table_sticky_header_directive__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-virtual-scroll/table-sticky-header.directive */ "jAOl");
-/* harmony import */ var _src_lib_table_table_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../../../../src/lib/table/table.component */ "ey6q");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common */ "ofXK");
-/* harmony import */ var _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-row/table-row.component */ "LFiI");
-/* harmony import */ var _src_lib_table_table_cell_table_column_def_directive__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-cell/table-column-def.directive */ "XeyC");
-/* harmony import */ var _src_lib_table_table_cell_table_header_cell_def_directive__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-cell/table-header-cell-def.directive */ "htGY");
-/* harmony import */ var _src_lib_table_table_cell_table_cell_def_directive__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-cell/table-cell-def.directive */ "/BSE");
-/* harmony import */ var _src_lib_table_table_cell_table_header_cell_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-cell/table-header-cell.component */ "Ppt+");
-/* harmony import */ var _src_lib_table_table_cell_table_cell_directive__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-cell/table-cell.directive */ "jdPS");
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/cdk/scrolling */ "vxfF");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @nova-ui/bits */ "b5Xb");
+/* harmony import */ var lodash_sample__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! lodash/sample */ "fTpD");
+/* harmony import */ var lodash_sample__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(lodash_sample__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs/operators */ "kU1M");
+/* harmony import */ var _src_lib_switch_switch_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../../../src/lib/switch/switch.component */ "6CEj");
+/* harmony import */ var _src_lib_table_table_virtual_scroll_table_sticky_header_directive__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-virtual-scroll/table-sticky-header.directive */ "jAOl");
+/* harmony import */ var _src_lib_table_table_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../../../../src/lib/table/table.component */ "ey6q");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-row/table-row.component */ "LFiI");
+/* harmony import */ var _src_lib_table_table_cell_table_column_def_directive__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-cell/table-column-def.directive */ "XeyC");
+/* harmony import */ var _src_lib_table_table_cell_table_header_cell_def_directive__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-cell/table-header-cell-def.directive */ "htGY");
+/* harmony import */ var _src_lib_table_table_cell_table_cell_def_directive__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-cell/table-cell-def.directive */ "/BSE");
+/* harmony import */ var _src_lib_table_table_cell_table_header_cell_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-cell/table-header-cell.component */ "Ppt+");
+/* harmony import */ var _src_lib_table_table_cell_table_cell_directive__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-cell/table-cell.directive */ "jdPS");
+
 
 
 
@@ -5880,41 +6134,41 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function TableVirtualScrollStickyHeaderExampleComponent_ng_container_8_th_1_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "th", 13);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "th", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const column_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]().$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"](" ", column_r3, "");
+    const column_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]().$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate1"](" ", column_r3, "");
 } }
 function TableVirtualScrollStickyHeaderExampleComponent_ng_container_8_td_2_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "td", 14);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "td", 14);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const element_r7 = ctx.$implicit;
-    const column_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]().$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](element_r7[column_r3]);
+    const column_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]().$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](element_r7[column_r3]);
 } }
 function TableVirtualScrollStickyHeaderExampleComponent_ng_container_8_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementContainerStart"](0, 10);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](1, TableVirtualScrollStickyHeaderExampleComponent_ng_container_8_th_1_Template, 2, 1, "th", 11);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](2, TableVirtualScrollStickyHeaderExampleComponent_ng_container_8_td_2_Template, 2, 1, "td", 12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementContainerEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainerStart"](0, 10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](1, TableVirtualScrollStickyHeaderExampleComponent_ng_container_8_th_1_Template, 2, 1, "th", 11);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, TableVirtualScrollStickyHeaderExampleComponent_ng_container_8_td_2_Template, 2, 1, "td", 12);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainerEnd"]();
 } if (rf & 2) {
     const column_r3 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("nuiColumnDef", column_r3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("nuiColumnDef", column_r3);
 } }
 function TableVirtualScrollStickyHeaderExampleComponent_tr_9_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](0, "tr", 15);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](0, "tr", 15);
 } }
 function TableVirtualScrollStickyHeaderExampleComponent_ng_template_10_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](0, "tr", 16);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](0, "tr", 16);
 } if (rf & 2) {
     const context_r9 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("rowObject", context_r9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("rowObject", context_r9);
 } }
 class TableVirtualScrollStickyHeaderExampleComponent {
     constructor(dataSourceService) {
@@ -5923,7 +6177,7 @@ class TableVirtualScrollStickyHeaderExampleComponent {
         // and let CDK Viewport perform the scrolling on a known number of items
         this.placeholderItems = [];
         // The dynamically changed array of items to render by the table
-        this.displayedColumns = ["no", "nameTitle", "nameFirst", "nameLast", "city", "postcode"];
+        this.displayedColumns = ["no", "nameFirst", "nameLast", "city", "postcode"];
         this.makeSticky = true;
         this.itemSize = 40;
         this.gridHeight = 400;
@@ -5944,11 +6198,11 @@ class TableVirtualScrollStickyHeaderExampleComponent {
             },
         };
         // Note: Creating a stream of visible items to be bound to the table and increase the performance
-        this.visibleItems$ = this.viewport.renderedRangeStream.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["startWith"])({ start: 0, end: 10 }), 
+        this.visibleItems$ = this.viewport.renderedRangeStream.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["startWith"])({ start: 0, end: 10 }), 
         // Note: On range change applying filters
-        Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])(() => this.dataSourceService.applyFilters()), 
+        Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["tap"])(() => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () { return this.dataSourceService.applyFilters(); })), 
         // Subscribing to the filter results transforming and merging them into the stream
-        Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["switchMap"])(() => this.dataSourceService.outputsSubject.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])((result) => {
+        Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["switchMap"])(() => this.dataSourceService.outputsSubject.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["map"])((result) => {
             // Updating mock items list
             if (this.placeholderItems.length !== result.paginator.total) {
                 this.placeholderItems = Array.from({ length: result.paginator.total });
@@ -5963,73 +6217,69 @@ class TableVirtualScrollStickyHeaderExampleComponent {
         this.makeSticky = state;
     }
 }
-TableVirtualScrollStickyHeaderExampleComponent.ɵfac = function TableVirtualScrollStickyHeaderExampleComponent_Factory(t) { return new (t || TableVirtualScrollStickyHeaderExampleComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["ClientSideDataSource"])); };
-TableVirtualScrollStickyHeaderExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: TableVirtualScrollStickyHeaderExampleComponent, selectors: [["nui-table-virtual-scroll-sticky-header-example"]], viewQuery: function TableVirtualScrollStickyHeaderExampleComponent_Query(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵviewQuery"](_angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_0__["CdkVirtualScrollViewport"], 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵviewQuery"](_nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["TableStickyHeaderDirective"], 1);
+TableVirtualScrollStickyHeaderExampleComponent.ɵfac = function TableVirtualScrollStickyHeaderExampleComponent_Factory(t) { return new (t || TableVirtualScrollStickyHeaderExampleComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["ClientSideDataSource"])); };
+TableVirtualScrollStickyHeaderExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({ type: TableVirtualScrollStickyHeaderExampleComponent, selectors: [["nui-table-virtual-scroll-sticky-header-example"]], viewQuery: function TableVirtualScrollStickyHeaderExampleComponent_Query(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵviewQuery"](_angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__["CdkVirtualScrollViewport"], 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵviewQuery"](_nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["TableStickyHeaderDirective"], 1);
     } if (rf & 2) {
         let _t;
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx.viewport = _t.first);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx.stickyHeaderDirective = _t.first);
-    } }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵProvidersFeature"]([_nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["ClientSideDataSource"]])], decls: 11, vars: 17, consts: function () { let i18n_0; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵloadQuery"]()) && (ctx.viewport = _t.first);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵloadQuery"]()) && (ctx.stickyHeaderDirective = _t.first);
+    } }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵProvidersFeature"]([_nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["ClientSideDataSource"]])], decls: 11, vars: 17, consts: function () { let i18n_0; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
         const MSG_EXTERNAL_2717514595278786545$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_STICKY_HEADER_TABLE_VIRTUAL_SCROLL_STICKY_HEADER_EXAMPLE_COMPONENT_TS_1 = goog.getMsg(" {$interpolation} ", { "interpolation": "\uFFFD0\uFFFD" });
         i18n_0 = MSG_EXTERNAL_2717514595278786545$$DEMO_SRC_COMPONENTS_DEMO_TABLE_TABLE_VIRTUAL_SCROLL_STICKY_HEADER_TABLE_VIRTUAL_SCROLL_STICKY_HEADER_EXAMPLE_COMPONENT_TS_1;
     }
     else {
         i18n_0 = $localize `:␟e85c9ef3064327671f6a2c1a07d2a9eb628df244␟2717514595278786545: ${"\uFFFD0\uFFFD"}:INTERPOLATION: `;
     } return [[1, "row", "mb-2"], [1, "col-3"], [3, "value", "valueChange"], i18n_0, ["id", "nui-demo-table-sticky-header"], ["tableStickyHeader", "", 1, "h-100", 3, "itemSize"], ["nui-table", "", 3, "dataSource", "trackBy", "sortable"], [3, "nuiColumnDef", 4, "ngFor", "ngForOf"], ["nui-header-row", "", 4, "nuiHeaderRowDef"], ["nuiRowDef", "", "cdkVirtualFor", "", 3, "nuiRowDefColumns", "cdkVirtualForOf", "cdkVirtualForTrackBy"], [3, "nuiColumnDef"], ["nui-header-cell", "", 4, "nuiHeaderCellDef"], ["nui-cell", "", 4, "nuiCellDef"], ["nui-header-cell", ""], ["nui-cell", ""], ["nui-header-row", ""], ["nui-row", "", 3, "rowObject"]]; }, template: function TableVirtualScrollStickyHeaderExampleComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "div", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "nui-switch", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("valueChange", function TableVirtualScrollStickyHeaderExampleComponent_Template_nui_switch_valueChange_2_listener($event) { return ctx.updateStickyState($event); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵi18n"](3, 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](4, "div", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "cdk-virtual-scroll-viewport", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](6, "table", 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipe"](7, "async");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](8, TableVirtualScrollStickyHeaderExampleComponent_ng_container_8_Template, 3, 1, "ng-container", 7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](9, TableVirtualScrollStickyHeaderExampleComponent_tr_9_Template, 1, 0, "tr", 8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](10, TableVirtualScrollStickyHeaderExampleComponent_ng_template_10_Template, 1, 1, "ng-template", 9);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](1, "div", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](2, "nui-switch", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("valueChange", function TableVirtualScrollStickyHeaderExampleComponent_Template_nui_switch_valueChange_2_listener($event) { return ctx.updateStickyState($event); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵi18n"](3, 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](4, "div", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](5, "cdk-virtual-scroll-viewport", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](6, "table", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipe"](7, "async");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](8, TableVirtualScrollStickyHeaderExampleComponent_ng_container_8_Template, 3, 1, "ng-container", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](9, TableVirtualScrollStickyHeaderExampleComponent_tr_9_Template, 1, 0, "tr", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](10, TableVirtualScrollStickyHeaderExampleComponent_ng_template_10_Template, 1, 1, "ng-template", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", ctx.makeSticky);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵi18nExp"](ctx.makeSticky ? "Sticky" : "Not Sticky");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵi18nApply"](3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵstyleProp"]("height", ctx.gridHeight, "px")("max-width", 1300, "px");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("itemSize", ctx.itemSize);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("dataSource", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipeBind1"](7, 15, ctx.visibleItems$))("trackBy", ctx.trackByNo)("sortable", true);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx.displayedColumns);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("nuiHeaderRowDef", ctx.displayedColumns);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("nuiRowDefColumns", ctx.displayedColumns)("cdkVirtualForOf", ctx.placeholderItems)("cdkVirtualForTrackBy", ctx.trackByNo);
-    } }, directives: [_src_lib_switch_switch_component__WEBPACK_IMPORTED_MODULE_5__["SwitchComponent"], _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_0__["CdkVirtualScrollViewport"], _src_lib_table_table_virtual_scroll_table_sticky_header_directive__WEBPACK_IMPORTED_MODULE_6__["TableStickyHeaderDirective"], _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_0__["CdkFixedSizeVirtualScroll"], _src_lib_table_table_component__WEBPACK_IMPORTED_MODULE_7__["TableComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_8__["NgForOf"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_9__["TableHeaderRowDefDirective"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_9__["TableRowDefDirective"], _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_0__["CdkVirtualForOf"], _src_lib_table_table_cell_table_column_def_directive__WEBPACK_IMPORTED_MODULE_10__["TableColumnDefDirective"], _src_lib_table_table_cell_table_header_cell_def_directive__WEBPACK_IMPORTED_MODULE_11__["TableHeaderCellDefDirective"], _src_lib_table_table_cell_table_cell_def_directive__WEBPACK_IMPORTED_MODULE_12__["TableCellDefDirective"], _src_lib_table_table_cell_table_header_cell_component__WEBPACK_IMPORTED_MODULE_13__["TableHeaderCellComponent"], _src_lib_table_table_cell_table_cell_directive__WEBPACK_IMPORTED_MODULE_14__["TableCellDirective"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_9__["TableHeaderRowComponent"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_9__["TableRowComponent"]], pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_8__["AsyncPipe"]], encapsulation: 2, changeDetection: 0 });
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("value", ctx.makeSticky);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵi18nExp"](ctx.makeSticky ? "Sticky" : "Not Sticky");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵi18nApply"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵstyleProp"]("height", ctx.gridHeight, "px")("max-width", 1300, "px");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("itemSize", ctx.itemSize);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("dataSource", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipeBind1"](7, 15, ctx.visibleItems$))("trackBy", ctx.trackByNo)("sortable", true);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx.displayedColumns);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("nuiHeaderRowDef", ctx.displayedColumns);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("nuiRowDefColumns", ctx.displayedColumns)("cdkVirtualForOf", ctx.placeholderItems)("cdkVirtualForTrackBy", ctx.trackByNo);
+    } }, directives: [_src_lib_switch_switch_component__WEBPACK_IMPORTED_MODULE_6__["SwitchComponent"], _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__["CdkVirtualScrollViewport"], _src_lib_table_table_virtual_scroll_table_sticky_header_directive__WEBPACK_IMPORTED_MODULE_7__["TableStickyHeaderDirective"], _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__["CdkFixedSizeVirtualScroll"], _src_lib_table_table_component__WEBPACK_IMPORTED_MODULE_8__["TableComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_9__["NgForOf"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_10__["TableHeaderRowDefDirective"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_10__["TableRowDefDirective"], _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__["CdkVirtualForOf"], _src_lib_table_table_cell_table_column_def_directive__WEBPACK_IMPORTED_MODULE_11__["TableColumnDefDirective"], _src_lib_table_table_cell_table_header_cell_def_directive__WEBPACK_IMPORTED_MODULE_12__["TableHeaderCellDefDirective"], _src_lib_table_table_cell_table_cell_def_directive__WEBPACK_IMPORTED_MODULE_13__["TableCellDefDirective"], _src_lib_table_table_cell_table_header_cell_component__WEBPACK_IMPORTED_MODULE_14__["TableHeaderCellComponent"], _src_lib_table_table_cell_table_cell_directive__WEBPACK_IMPORTED_MODULE_15__["TableCellDirective"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_10__["TableHeaderRowComponent"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_10__["TableRowComponent"]], pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_9__["AsyncPipe"]], encapsulation: 2, changeDetection: 0 });
+const PEOPLE = ["Elena", "Madelyn", "Baggio", "Josh", "Lukas", "Blake", "Frantz", "Dima", "Serhii", "Vita", "Vlad", "Ivan", "Dumitru"];
+const CITIES = ["Bucharest", "Kiev", "Austin", "Brno", "Frankfurt pe Main", "Sutton-under-Whitestonecliffe", "Vila Bela da Santíssima Trindade"];
 function generateUsers(length) {
     return Array.from({ length }).map((obj, id) => {
-        const personName = lodash_sample__WEBPACK_IMPORTED_MODULE_3___default()(["Josh", "Lukas", "Blake", "Frantz", "Dima", "Serhii", "Vita", "Vlad", "Ivan", "Dumitru"]) || "Josh";
+        const personName = lodash_sample__WEBPACK_IMPORTED_MODULE_4___default()(PEOPLE) || PEOPLE[0];
         return ({
             no: id,
             postcode: id * 1000000 * id,
-            cell: "0000",
-            city: lodash_sample__WEBPACK_IMPORTED_MODULE_3___default()(["Bucharest", "Kiev", "Austin", "Brno", "Frankfurt pe Main", "Sutton-under-Whitestonecliffe", "Vila Bela da Santíssima Trindade"]) ||
-                "Bucharest",
-            country: "Unknown",
-            email: `${personName.toLocaleLowerCase()}@@sw.com`,
-            gender: "Unknown",
+            city: lodash_sample__WEBPACK_IMPORTED_MODULE_4___default()(CITIES) || CITIES[0],
             nameFirst: personName,
             nameLast: "UnknownLast",
-            nameTitle: "Sir.",
         });
     });
 }
@@ -7484,21 +7734,23 @@ function getData() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TableVirtualScrollSelectStickyHeaderExampleComponent", function() { return TableVirtualScrollSelectStickyHeaderExampleComponent; });
-/* harmony import */ var _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/cdk/scrolling */ "vxfF");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @nova-ui/bits */ "b5Xb");
-/* harmony import */ var lodash_sample__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lodash/sample */ "fTpD");
-/* harmony import */ var lodash_sample__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(lodash_sample__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "kU1M");
-/* harmony import */ var _src_lib_table_table_virtual_scroll_table_sticky_header_directive__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-virtual-scroll/table-sticky-header.directive */ "jAOl");
-/* harmony import */ var _src_lib_table_table_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../../../src/lib/table/table.component */ "ey6q");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ "ofXK");
-/* harmony import */ var _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-row/table-row.component */ "LFiI");
-/* harmony import */ var _src_lib_table_table_cell_table_column_def_directive__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-cell/table-column-def.directive */ "XeyC");
-/* harmony import */ var _src_lib_table_table_cell_table_header_cell_def_directive__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-cell/table-header-cell-def.directive */ "htGY");
-/* harmony import */ var _src_lib_table_table_cell_table_cell_def_directive__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-cell/table-cell-def.directive */ "/BSE");
-/* harmony import */ var _src_lib_table_table_cell_table_header_cell_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-cell/table-header-cell.component */ "Ppt+");
-/* harmony import */ var _src_lib_table_table_cell_table_cell_directive__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-cell/table-cell.directive */ "jdPS");
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/cdk/scrolling */ "vxfF");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @nova-ui/bits */ "b5Xb");
+/* harmony import */ var lodash_sample__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! lodash/sample */ "fTpD");
+/* harmony import */ var lodash_sample__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(lodash_sample__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs/operators */ "kU1M");
+/* harmony import */ var _src_lib_table_table_virtual_scroll_table_sticky_header_directive__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-virtual-scroll/table-sticky-header.directive */ "jAOl");
+/* harmony import */ var _src_lib_table_table_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../../../../src/lib/table/table.component */ "ey6q");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-row/table-row.component */ "LFiI");
+/* harmony import */ var _src_lib_table_table_cell_table_column_def_directive__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-cell/table-column-def.directive */ "XeyC");
+/* harmony import */ var _src_lib_table_table_cell_table_header_cell_def_directive__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-cell/table-header-cell-def.directive */ "htGY");
+/* harmony import */ var _src_lib_table_table_cell_table_cell_def_directive__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-cell/table-cell-def.directive */ "/BSE");
+/* harmony import */ var _src_lib_table_table_cell_table_header_cell_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-cell/table-header-cell.component */ "Ppt+");
+/* harmony import */ var _src_lib_table_table_cell_table_cell_directive__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../../../../../src/lib/table/table-cell/table-cell.directive */ "jdPS");
+
 
 
 
@@ -7517,41 +7769,41 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function TableVirtualScrollSelectStickyHeaderExampleComponent_ng_container_4_th_1_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "th", 8);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "th", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const column_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]().$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"](" ", column_r3, "");
+    const column_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]().$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate1"](" ", column_r3, "");
 } }
 function TableVirtualScrollSelectStickyHeaderExampleComponent_ng_container_4_td_2_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "td", 9);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "td", 9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const element_r7 = ctx.$implicit;
-    const column_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]().$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](element_r7[column_r3]);
+    const column_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]().$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](element_r7[column_r3]);
 } }
 function TableVirtualScrollSelectStickyHeaderExampleComponent_ng_container_4_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementContainerStart"](0, 5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](1, TableVirtualScrollSelectStickyHeaderExampleComponent_ng_container_4_th_1_Template, 2, 1, "th", 6);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](2, TableVirtualScrollSelectStickyHeaderExampleComponent_ng_container_4_td_2_Template, 2, 1, "td", 7);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementContainerEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainerStart"](0, 5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](1, TableVirtualScrollSelectStickyHeaderExampleComponent_ng_container_4_th_1_Template, 2, 1, "th", 6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, TableVirtualScrollSelectStickyHeaderExampleComponent_ng_container_4_td_2_Template, 2, 1, "td", 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainerEnd"]();
 } if (rf & 2) {
     const column_r3 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("nuiColumnDef", column_r3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("nuiColumnDef", column_r3);
 } }
 function TableVirtualScrollSelectStickyHeaderExampleComponent_tr_5_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](0, "tr", 10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](0, "tr", 10);
 } }
 function TableVirtualScrollSelectStickyHeaderExampleComponent_ng_template_6_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](0, "tr", 11);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](0, "tr", 11);
 } if (rf & 2) {
     const context_r9 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("rowObject", context_r9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("rowObject", context_r9);
 } }
 class TableVirtualScrollSelectStickyHeaderExampleComponent {
     constructor(dataSourceService) {
@@ -7560,9 +7812,9 @@ class TableVirtualScrollSelectStickyHeaderExampleComponent {
         // and let CDK Viewport perform the scrolling on a known number of items
         this.placeholderItems = [];
         // The dynamically changed array of items to render by the table
-        this.displayedColumns = ["no", "nameTitle", "nameFirst", "nameLast", "city", "postcode"];
+        this.displayedColumns = ["no", "nameFirst", "nameLast", "city", "postcode"];
         this.itemSize = 40;
-        this.selection = new _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["SelectionModel"]({ include: [1, 3, 5, 7, 9] });
+        this.selection = new _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["SelectionModel"]({ include: [1, 3, 5, 7, 9] });
         // trackBy handler used to identify uniquely each item in the table
         this.trackByNo = (index, item) => item === null || item === void 0 ? void 0 : item.no;
         // Note: Initiating data source with data to be displayed
@@ -7580,11 +7832,11 @@ class TableVirtualScrollSelectStickyHeaderExampleComponent {
             },
         };
         // Note: Creating a stream of visible items to be bound to the table and increase the performance
-        this.visibleItems$ = this.viewport.renderedRangeStream.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["startWith"])({ start: 0, end: 10 }), 
+        this.visibleItems$ = this.viewport.renderedRangeStream.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["startWith"])({ start: 0, end: 10 }), 
         // Note: On range change applying filters
-        Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])(() => this.dataSourceService.applyFilters()), 
+        Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["tap"])(() => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () { return this.dataSourceService.applyFilters(); })), 
         // Subscribing to the filter results transforming and merging them into the stream
-        Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["switchMap"])(() => this.dataSourceService.outputsSubject.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])((result) => {
+        Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["switchMap"])(() => this.dataSourceService.outputsSubject.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["map"])((result) => {
             // Updating mock items list
             if (this.placeholderItems.length !== result.paginator.total) {
                 this.placeholderItems = Array.from({ length: result.paginator.total });
@@ -7594,57 +7846,53 @@ class TableVirtualScrollSelectStickyHeaderExampleComponent {
         }))));
     }
 }
-TableVirtualScrollSelectStickyHeaderExampleComponent.ɵfac = function TableVirtualScrollSelectStickyHeaderExampleComponent_Factory(t) { return new (t || TableVirtualScrollSelectStickyHeaderExampleComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["ClientSideDataSource"])); };
-TableVirtualScrollSelectStickyHeaderExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: TableVirtualScrollSelectStickyHeaderExampleComponent, selectors: [["nui-table-virtual-scroll-select-sticky-header-example"]], viewQuery: function TableVirtualScrollSelectStickyHeaderExampleComponent_Query(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵviewQuery"](_angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_0__["CdkVirtualScrollViewport"], 1);
+TableVirtualScrollSelectStickyHeaderExampleComponent.ɵfac = function TableVirtualScrollSelectStickyHeaderExampleComponent_Factory(t) { return new (t || TableVirtualScrollSelectStickyHeaderExampleComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["ClientSideDataSource"])); };
+TableVirtualScrollSelectStickyHeaderExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({ type: TableVirtualScrollSelectStickyHeaderExampleComponent, selectors: [["nui-table-virtual-scroll-select-sticky-header-example"]], viewQuery: function TableVirtualScrollSelectStickyHeaderExampleComponent_Query(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵviewQuery"](_angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__["CdkVirtualScrollViewport"], 1);
     } if (rf & 2) {
         let _t;
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx.viewport = _t.first);
-    } }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵProvidersFeature"]([_nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["ClientSideDataSource"]])], decls: 10, vars: 21, consts: [["tableStickyHeader", "", 1, "h-100", 3, "itemSize"], ["nui-table", "", 3, "dataSource", "trackBy", "sortable", "selectable", "selection", "selectionChange"], [3, "nuiColumnDef", 4, "ngFor", "ngForOf"], ["nui-header-row", "", 4, "nuiHeaderRowDef"], ["nuiRowDef", "", "cdkVirtualFor", "", 3, "nuiRowDefColumns", "cdkVirtualForOf", "cdkVirtualForTemplateCacheSize", "cdkVirtualForTrackBy"], [3, "nuiColumnDef"], ["nui-header-cell", "", 4, "nuiHeaderCellDef"], ["nui-cell", "", 4, "nuiCellDef"], ["nui-header-cell", ""], ["nui-cell", ""], ["nui-header-row", ""], ["nui-row", "", 3, "rowObject"]], template: function TableVirtualScrollSelectStickyHeaderExampleComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "cdk-virtual-scroll-viewport", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "table", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("selectionChange", function TableVirtualScrollSelectStickyHeaderExampleComponent_Template_table_selectionChange_2_listener($event) { return ctx.selection = $event; });
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipe"](3, "async");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](4, TableVirtualScrollSelectStickyHeaderExampleComponent_ng_container_4_Template, 3, 1, "ng-container", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](5, TableVirtualScrollSelectStickyHeaderExampleComponent_tr_5_Template, 1, 0, "tr", 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](6, TableVirtualScrollSelectStickyHeaderExampleComponent_ng_template_6_Template, 1, 1, "ng-template", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](7, "br");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipe"](9, "json");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵloadQuery"]()) && (ctx.viewport = _t.first);
+    } }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵProvidersFeature"]([_nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["ClientSideDataSource"]])], decls: 10, vars: 21, consts: [["tableStickyHeader", "", 1, "h-100", 3, "itemSize"], ["nui-table", "", 3, "dataSource", "trackBy", "sortable", "selectable", "selection", "selectionChange"], [3, "nuiColumnDef", 4, "ngFor", "ngForOf"], ["nui-header-row", "", 4, "nuiHeaderRowDef"], ["nuiRowDef", "", "cdkVirtualFor", "", 3, "nuiRowDefColumns", "cdkVirtualForOf", "cdkVirtualForTemplateCacheSize", "cdkVirtualForTrackBy"], [3, "nuiColumnDef"], ["nui-header-cell", "", 4, "nuiHeaderCellDef"], ["nui-cell", "", 4, "nuiCellDef"], ["nui-header-cell", ""], ["nui-cell", ""], ["nui-header-row", ""], ["nui-row", "", 3, "rowObject"]], template: function TableVirtualScrollSelectStickyHeaderExampleComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](1, "cdk-virtual-scroll-viewport", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](2, "table", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("selectionChange", function TableVirtualScrollSelectStickyHeaderExampleComponent_Template_table_selectionChange_2_listener($event) { return ctx.selection = $event; });
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipe"](3, "async");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](4, TableVirtualScrollSelectStickyHeaderExampleComponent_ng_container_4_Template, 3, 1, "ng-container", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](5, TableVirtualScrollSelectStickyHeaderExampleComponent_tr_5_Template, 1, 0, "tr", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](6, TableVirtualScrollSelectStickyHeaderExampleComponent_ng_template_6_Template, 1, 1, "ng-template", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](7, "br");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipe"](9, "json");
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵstyleProp"]("height", 400, "px")("max-width", 1300, "px");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("itemSize", ctx.itemSize);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("dataSource", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipeBind1"](3, 17, ctx.visibleItems$))("trackBy", ctx.trackByNo)("sortable", true)("selectable", true)("selection", ctx.selection);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx.displayedColumns);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("nuiHeaderRowDef", ctx.displayedColumns);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("nuiRowDefColumns", ctx.displayedColumns)("cdkVirtualForOf", ctx.placeholderItems)("cdkVirtualForTemplateCacheSize", 10)("cdkVirtualForTrackBy", ctx.trackByNo);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"]("\n", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipeBind1"](9, 19, ctx.selection), "\n");
-    } }, directives: [_angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_0__["CdkVirtualScrollViewport"], _src_lib_table_table_virtual_scroll_table_sticky_header_directive__WEBPACK_IMPORTED_MODULE_5__["TableStickyHeaderDirective"], _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_0__["CdkFixedSizeVirtualScroll"], _src_lib_table_table_component__WEBPACK_IMPORTED_MODULE_6__["TableComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_7__["NgForOf"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_8__["TableHeaderRowDefDirective"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_8__["TableRowDefDirective"], _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_0__["CdkVirtualForOf"], _src_lib_table_table_cell_table_column_def_directive__WEBPACK_IMPORTED_MODULE_9__["TableColumnDefDirective"], _src_lib_table_table_cell_table_header_cell_def_directive__WEBPACK_IMPORTED_MODULE_10__["TableHeaderCellDefDirective"], _src_lib_table_table_cell_table_cell_def_directive__WEBPACK_IMPORTED_MODULE_11__["TableCellDefDirective"], _src_lib_table_table_cell_table_header_cell_component__WEBPACK_IMPORTED_MODULE_12__["TableHeaderCellComponent"], _src_lib_table_table_cell_table_cell_directive__WEBPACK_IMPORTED_MODULE_13__["TableCellDirective"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_8__["TableHeaderRowComponent"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_8__["TableRowComponent"]], pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_7__["AsyncPipe"], _angular_common__WEBPACK_IMPORTED_MODULE_7__["JsonPipe"]], encapsulation: 2, changeDetection: 0 });
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵstyleProp"]("height", 400, "px")("max-width", 1300, "px");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("itemSize", ctx.itemSize);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("dataSource", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipeBind1"](3, 17, ctx.visibleItems$))("trackBy", ctx.trackByNo)("sortable", true)("selectable", true)("selection", ctx.selection);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx.displayedColumns);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("nuiHeaderRowDef", ctx.displayedColumns);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("nuiRowDefColumns", ctx.displayedColumns)("cdkVirtualForOf", ctx.placeholderItems)("cdkVirtualForTemplateCacheSize", 10)("cdkVirtualForTrackBy", ctx.trackByNo);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate1"]("\n", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipeBind1"](9, 19, ctx.selection), "\n");
+    } }, directives: [_angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__["CdkVirtualScrollViewport"], _src_lib_table_table_virtual_scroll_table_sticky_header_directive__WEBPACK_IMPORTED_MODULE_6__["TableStickyHeaderDirective"], _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__["CdkFixedSizeVirtualScroll"], _src_lib_table_table_component__WEBPACK_IMPORTED_MODULE_7__["TableComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_8__["NgForOf"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_9__["TableHeaderRowDefDirective"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_9__["TableRowDefDirective"], _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__["CdkVirtualForOf"], _src_lib_table_table_cell_table_column_def_directive__WEBPACK_IMPORTED_MODULE_10__["TableColumnDefDirective"], _src_lib_table_table_cell_table_header_cell_def_directive__WEBPACK_IMPORTED_MODULE_11__["TableHeaderCellDefDirective"], _src_lib_table_table_cell_table_cell_def_directive__WEBPACK_IMPORTED_MODULE_12__["TableCellDefDirective"], _src_lib_table_table_cell_table_header_cell_component__WEBPACK_IMPORTED_MODULE_13__["TableHeaderCellComponent"], _src_lib_table_table_cell_table_cell_directive__WEBPACK_IMPORTED_MODULE_14__["TableCellDirective"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_9__["TableHeaderRowComponent"], _src_lib_table_table_row_table_row_component__WEBPACK_IMPORTED_MODULE_9__["TableRowComponent"]], pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_8__["AsyncPipe"], _angular_common__WEBPACK_IMPORTED_MODULE_8__["JsonPipe"]], encapsulation: 2, changeDetection: 0 });
+const PEOPLE = ["Elena", "Madelyn", "Baggio", "Josh", "Lukas", "Blake", "Frantz", "Dima", "Serhii", "Vita", "Vlad", "Ivan", "Dumitru"];
+const CITIES = ["Bucharest", "Kiev", "Austin", "Brno", "Frankfurt pe Main", "Sutton-under-Whitestonecliffe", "Vila Bela da Santíssima Trindade"];
 function generateUsers(length) {
     return Array.from({ length }).map((obj, id) => {
-        const personName = lodash_sample__WEBPACK_IMPORTED_MODULE_3___default()(["Josh", "Lukas", "Blake", "Frantz", "Dima", "Serhii", "Vita", "Vlad", "Ivan", "Dumitru"]) || "Josh";
+        const personName = lodash_sample__WEBPACK_IMPORTED_MODULE_4___default()(PEOPLE) || PEOPLE[0];
         return ({
             no: id,
             postcode: id * 1000000 * id,
-            cell: "0000",
-            city: lodash_sample__WEBPACK_IMPORTED_MODULE_3___default()(["Bucharest", "Kiev", "Austin", "Brno", "Frankfurt pe Main", "Sutton-under-Whitestonecliffe", "Vila Bela da Santíssima Trindade"]) ||
-                "Bucharest",
-            country: "Unknown",
-            email: `${personName.toLocaleLowerCase()}@@sw.com`,
-            gender: "Unknown",
+            city: lodash_sample__WEBPACK_IMPORTED_MODULE_4___default()(CITIES) || CITIES[0],
             nameFirst: personName,
             nameLast: "UnknownLast",
-            nameTitle: "Sir.",
         });
     });
 }
@@ -8087,7 +8335,7 @@ __webpack_require__.r(__webpack_exports__);
 /*!*************************************************!*\
   !*** ./demo/src/components/demo/table/index.ts ***!
   \*************************************************/
-/*! exports provided: TableDocsComponent, TableRowSelectInstructionsComponent, TableBasicExampleComponent, TablePinnedHeaderComponent, TableCellContentAlignComponent, TableCellWidthSetExampleComponent, TableRowClickableExampleComponent, TableRowHeightSetExampleComponent, TableReorderExampleComponent, TablePaginationExampleComponent, TableColumnsAddRemoveExampleComponent, TableSearchExampleComponent, TableSortingExampleComponent, TableResizeExampleComponent, TableSelectExampleComponent, TableSelectableToggleExampleComponent, TableTestComponent, TableVisualTestComponent, TableVirtualScrollRealApiExampleComponent, RandomuserTableDataSource, TableVirtualScrollStepsAndButtonExampleComponent, TableVirtualScrollSelectStickyHeaderExampleComponent, TableVirtualScrollStickyHeaderExampleComponent, TableVirtualScrollRealApiProgressFooterExampleComponent, TableVirtualScrollRealApiProgressTextFooterExampleComponent, TableVirtualScrollRealApiMinimalistExampleComponent, TableSearchWithSelectAndPaginationComponent, TableSelectPinnedHeaderComponent */
+/*! exports provided: TableDocsComponent, TableRowSelectInstructionsComponent, TableBasicExampleComponent, TablePinnedHeaderComponent, TableCellContentAlignComponent, TableCellWidthSetExampleComponent, TableRowClickableExampleComponent, TableRowHeightSetExampleComponent, TableReorderExampleComponent, TablePaginationExampleComponent, TableColumnsAddRemoveExampleComponent, TableSearchExampleComponent, TableSortingExampleComponent, TableResizeExampleComponent, TableSelectExampleComponent, TableSelectableToggleExampleComponent, TableTestComponent, TableVisualTestComponent, TableVirtualScrollRealApiExampleComponent, RandomuserTableDataSource, TableVirtualScrollStepsAndButtonExampleComponent, TableVirtualScrollSelectStickyHeaderExampleComponent, TableVirtualScrollStickyHeaderExampleComponent, TableVirtualScrollStickyHeaderTestExampleComponent, TableVirtualScrollRealApiProgressFooterExampleComponent, TableVirtualScrollRealApiProgressTextFooterExampleComponent, TableVirtualScrollRealApiMinimalistExampleComponent, TableSearchWithSelectAndPaginationComponent, TableSelectPinnedHeaderComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8159,20 +8407,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _table_virtual_scroll_sticky_header_table_virtual_scroll_sticky_header_example_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./table-virtual-scroll-sticky-header/table-virtual-scroll-sticky-header-example.component */ "W8lV");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TableVirtualScrollStickyHeaderExampleComponent", function() { return _table_virtual_scroll_sticky_header_table_virtual_scroll_sticky_header_example_component__WEBPACK_IMPORTED_MODULE_20__["TableVirtualScrollStickyHeaderExampleComponent"]; });
 
-/* harmony import */ var _table_virtual_scroll_real_api_progress_footer_table_virtual_scroll_real_api_progress_footer_example_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./table-virtual-scroll-real-api-progress-footer/table-virtual-scroll-real-api-progress-footer.example.component */ "Jv3n");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TableVirtualScrollRealApiProgressFooterExampleComponent", function() { return _table_virtual_scroll_real_api_progress_footer_table_virtual_scroll_real_api_progress_footer_example_component__WEBPACK_IMPORTED_MODULE_21__["TableVirtualScrollRealApiProgressFooterExampleComponent"]; });
+/* harmony import */ var _table_virtual_scroll_sticky_header_test_table_virtual_scroll_sticky_header_test_example_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./table-virtual-scroll-sticky-header-test/table-virtual-scroll-sticky-header-test-example.component */ "/Jns");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TableVirtualScrollStickyHeaderTestExampleComponent", function() { return _table_virtual_scroll_sticky_header_test_table_virtual_scroll_sticky_header_test_example_component__WEBPACK_IMPORTED_MODULE_21__["TableVirtualScrollStickyHeaderTestExampleComponent"]; });
 
-/* harmony import */ var _table_virtual_scroll_real_api_progress_text_footer_table_virtual_scroll_real_api_progress_text_footer_example_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./table-virtual-scroll-real-api-progress-text-footer/table-virtual-scroll-real-api-progress-text-footer.example.component */ "34la");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TableVirtualScrollRealApiProgressTextFooterExampleComponent", function() { return _table_virtual_scroll_real_api_progress_text_footer_table_virtual_scroll_real_api_progress_text_footer_example_component__WEBPACK_IMPORTED_MODULE_22__["TableVirtualScrollRealApiProgressTextFooterExampleComponent"]; });
+/* harmony import */ var _table_virtual_scroll_real_api_progress_footer_table_virtual_scroll_real_api_progress_footer_example_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./table-virtual-scroll-real-api-progress-footer/table-virtual-scroll-real-api-progress-footer.example.component */ "Jv3n");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TableVirtualScrollRealApiProgressFooterExampleComponent", function() { return _table_virtual_scroll_real_api_progress_footer_table_virtual_scroll_real_api_progress_footer_example_component__WEBPACK_IMPORTED_MODULE_22__["TableVirtualScrollRealApiProgressFooterExampleComponent"]; });
 
-/* harmony import */ var _table_virtual_scroll_real_api_minimalist_table_virtual_scroll_real_api_minimalist_example_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./table-virtual-scroll-real-api-minimalist/table-virtual-scroll-real-api-minimalist.example.component */ "GE5v");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TableVirtualScrollRealApiMinimalistExampleComponent", function() { return _table_virtual_scroll_real_api_minimalist_table_virtual_scroll_real_api_minimalist_example_component__WEBPACK_IMPORTED_MODULE_23__["TableVirtualScrollRealApiMinimalistExampleComponent"]; });
+/* harmony import */ var _table_virtual_scroll_real_api_progress_text_footer_table_virtual_scroll_real_api_progress_text_footer_example_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./table-virtual-scroll-real-api-progress-text-footer/table-virtual-scroll-real-api-progress-text-footer.example.component */ "34la");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TableVirtualScrollRealApiProgressTextFooterExampleComponent", function() { return _table_virtual_scroll_real_api_progress_text_footer_table_virtual_scroll_real_api_progress_text_footer_example_component__WEBPACK_IMPORTED_MODULE_23__["TableVirtualScrollRealApiProgressTextFooterExampleComponent"]; });
 
-/* harmony import */ var _table_search_with_select_and_pagination_table_search_with_select_and_pagination_example_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./table-search-with-select-and-pagination/table-search-with-select-and-pagination.example.component */ "PaBn");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TableSearchWithSelectAndPaginationComponent", function() { return _table_search_with_select_and_pagination_table_search_with_select_and_pagination_example_component__WEBPACK_IMPORTED_MODULE_24__["TableSearchWithSelectAndPaginationComponent"]; });
+/* harmony import */ var _table_virtual_scroll_real_api_minimalist_table_virtual_scroll_real_api_minimalist_example_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./table-virtual-scroll-real-api-minimalist/table-virtual-scroll-real-api-minimalist.example.component */ "GE5v");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TableVirtualScrollRealApiMinimalistExampleComponent", function() { return _table_virtual_scroll_real_api_minimalist_table_virtual_scroll_real_api_minimalist_example_component__WEBPACK_IMPORTED_MODULE_24__["TableVirtualScrollRealApiMinimalistExampleComponent"]; });
 
-/* harmony import */ var _table_select_pinned_header_table_select_pinned_header_example_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./table-select-pinned-header/table-select-pinned-header.example.component */ "lHWC");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TableSelectPinnedHeaderComponent", function() { return _table_select_pinned_header_table_select_pinned_header_example_component__WEBPACK_IMPORTED_MODULE_25__["TableSelectPinnedHeaderComponent"]; });
+/* harmony import */ var _table_search_with_select_and_pagination_table_search_with_select_and_pagination_example_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./table-search-with-select-and-pagination/table-search-with-select-and-pagination.example.component */ "PaBn");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TableSearchWithSelectAndPaginationComponent", function() { return _table_search_with_select_and_pagination_table_search_with_select_and_pagination_example_component__WEBPACK_IMPORTED_MODULE_25__["TableSearchWithSelectAndPaginationComponent"]; });
+
+/* harmony import */ var _table_select_pinned_header_table_select_pinned_header_example_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./table-select-pinned-header/table-select-pinned-header.example.component */ "lHWC");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TableSelectPinnedHeaderComponent", function() { return _table_select_pinned_header_table_select_pinned_header_example_component__WEBPACK_IMPORTED_MODULE_26__["TableSelectPinnedHeaderComponent"]; });
+
 
 
 
@@ -9393,7 +9645,7 @@ function getData() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { CdkVirtualScrollViewport } from \"@angular/cdk/scrolling\";\nimport { AfterViewInit, ChangeDetectionStrategy, Component, TrackByFunction, ViewChild } from \"@angular/core\";\nimport {\n    ClientSideDataSource,\n    IFilteringOutputs,\n    TableStickyHeaderDirective,\n} from \"@nova-ui/bits\";\nimport sample from \"lodash/sample\";\nimport { Observable } from \"rxjs\";\nimport { map, startWith, switchMap, tap } from \"rxjs/operators\";\n\nimport { IRandomUserTableModel } from \"..\";\n\n@Component({\n    selector: \"nui-table-virtual-scroll-sticky-header-example\",\n    templateUrl: \"./table-virtual-scroll-sticky-header-example.component.html\",\n    changeDetection: ChangeDetectionStrategy.OnPush,\n    providers: [ClientSideDataSource],\n})\nexport class TableVirtualScrollStickyHeaderExampleComponent implements AfterViewInit {\n    @ViewChild(CdkVirtualScrollViewport) public viewport: CdkVirtualScrollViewport;\n    // Note: Used only for demo purposes\n    @ViewChild(TableStickyHeaderDirective) public stickyHeaderDirective: TableStickyHeaderDirective;\n\n    // Note: Mock items list is used to fake that the data is already loaded\n    // and let CDK Viewport perform the scrolling on a known number of items\n    public placeholderItems: undefined[] = [];\n    public visibleItems$: Observable<IRandomUserTableModel[]>;\n    // The dynamically changed array of items to render by the table\n    public displayedColumns: string[] = [\"no\", \"nameTitle\", \"nameFirst\", \"nameLast\", \"city\", \"postcode\"];\n\n    public makeSticky: boolean = true;\n    public itemSize: number = 40;\n    public gridHeight = 400;\n    // trackBy handler used to identify uniquely each item in the table\n    public trackByNo: TrackByFunction<IRandomUserTableModel> = (index, item) => item?.no;\n\n    constructor(public dataSourceService: ClientSideDataSource<IRandomUserTableModel>) {\n        // Note: Initiating data source with data to be displayed\n        this.dataSourceService.setData(generateUsers(100000));\n    }\n\n    public ngAfterViewInit() {\n        this.dataSourceService.componentTree = {\n            // Note: Using paginator as filter to be able to get specific range\n            paginator: {\n                componentInstance: {\n                    getFilters: () => ({\n                        value: this.viewport.getRenderedRange(),\n                    }),\n                },\n            },\n        };\n\n        // Note: Creating a stream of visible items to be bound to the table and increase the performance\n        this.visibleItems$ = this.viewport.renderedRangeStream.pipe(startWith({ start: 0, end: 10 }),\n            // Note: On range change applying filters\n                                                                    tap(() => this.dataSourceService.applyFilters()),\n            // Subscribing to the filter results transforming and merging them into the stream\n                                                                    switchMap(() => this.dataSourceService.outputsSubject.pipe(\n                                                                        map((result: IFilteringOutputs) => {\n                                                                            // Updating mock items list\n                                                                            if (this.placeholderItems.length !== result.paginator.total) {\n                                                                                this.placeholderItems = Array.from({ length: result.paginator.total });\n                                                                            }\n                                                                            // Mapping the values to array to be able to bind them to the table dataSource\n                                                                            return result.repeat.itemsSource;\n                                                                        })\n                                                                    )));\n    }\n\n    // Note: Used only for demo purposes\n    updateStickyState(state: boolean) {\n        this.stickyHeaderDirective.tableStickyHeader = state;\n        this.makeSticky = state;\n    }\n}\n\nfunction generateUsers(length: number): IRandomUserTableModel[] {\n    return Array.from({ length }).map((obj: unknown, id: number) => {\n        const personName = sample([\"Josh\", \"Lukas\", \"Blake\", \"Frantz\", \"Dima\", \"Serhii\", \"Vita\", \"Vlad\", \"Ivan\", \"Dumitru\"]) || \"Josh\";\n        return ({\n            no: id,\n            postcode: id * 1000000 * id,\n            cell: \"0000\",\n            city: sample([\"Bucharest\", \"Kiev\", \"Austin\", \"Brno\", \"Frankfurt pe Main\", \"Sutton-under-Whitestonecliffe\", \"Vila Bela da Santíssima Trindade\"]) ||\n                \"Bucharest\",\n            country: \"Unknown\",\n            email: `${ personName.toLocaleLowerCase() }@@sw.com`,\n            gender: \"Unknown\",\n            nameFirst: personName,\n            nameLast: \"UnknownLast\",\n            nameTitle: \"Sir.\",\n        });\n    });\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import { CdkVirtualScrollViewport } from \"@angular/cdk/scrolling\";\nimport { AfterViewInit, ChangeDetectionStrategy, Component, TrackByFunction, ViewChild } from \"@angular/core\";\nimport {\n    ClientSideDataSource,\n    IFilteringOutputs,\n    TableStickyHeaderDirective,\n} from \"@nova-ui/bits\";\nimport sample from \"lodash/sample\";\nimport { Observable } from \"rxjs\";\nimport { map, startWith, switchMap, tap } from \"rxjs/operators\";\n\ninterface IRandomUserTableModel {\n    no: number;\n    nameFirst: string;\n    nameLast: string;\n    city: string;\n    postcode: number;\n}\n\n@Component({\n    selector: \"nui-table-virtual-scroll-sticky-header-example\",\n    templateUrl: \"./table-virtual-scroll-sticky-header-example.component.html\",\n    changeDetection: ChangeDetectionStrategy.OnPush,\n    providers: [ClientSideDataSource],\n})\nexport class TableVirtualScrollStickyHeaderExampleComponent implements AfterViewInit {\n    @ViewChild(CdkVirtualScrollViewport) public viewport: CdkVirtualScrollViewport;\n    // Note: Used only for demo purposes\n    @ViewChild(TableStickyHeaderDirective) public stickyHeaderDirective: TableStickyHeaderDirective;\n\n    // Note: Mock items list is used to fake that the data is already loaded\n    // and let CDK Viewport perform the scrolling on a known number of items\n    public placeholderItems: undefined[] = [];\n    public visibleItems$: Observable<IRandomUserTableModel[]>;\n    // The dynamically changed array of items to render by the table\n    public displayedColumns: string[] = [\"no\", \"nameFirst\", \"nameLast\", \"city\", \"postcode\"];\n\n    public makeSticky: boolean = true;\n    public itemSize: number = 40;\n    public gridHeight = 400;\n    // trackBy handler used to identify uniquely each item in the table\n    public trackByNo: TrackByFunction<IRandomUserTableModel> = (index: number, item: IRandomUserTableModel): number => item?.no;\n\n    constructor(public dataSourceService: ClientSideDataSource<IRandomUserTableModel>) {\n        // Note: Initiating data source with data to be displayed\n        this.dataSourceService.setData(generateUsers(100000));\n    }\n\n    public ngAfterViewInit(): void {\n        this.dataSourceService.componentTree = {\n            // Note: Using paginator as filter to be able to get specific range\n            paginator: {\n                componentInstance: {\n                    getFilters: () => ({\n                        value: this.viewport.getRenderedRange(),\n                    }),\n                },\n            },\n        };\n\n        // Note: Creating a stream of visible items to be bound to the table and increase the performance\n        this.visibleItems$ = this.viewport.renderedRangeStream.pipe(\n            startWith({ start: 0, end: 10 }),\n            // Note: On range change applying filters\n            tap(async () => this.dataSourceService.applyFilters()),\n            // Subscribing to the filter results transforming and merging them into the stream\n            switchMap(() => this.dataSourceService.outputsSubject.pipe(\n                map((result: IFilteringOutputs) => {\n                    // Updating mock items list\n                    if (this.placeholderItems.length !== result.paginator.total) {\n                        this.placeholderItems = Array.from({ length: result.paginator.total });\n                    }\n                    // Mapping the values to array to be able to bind them to the table dataSource\n                    return result.repeat.itemsSource;\n                })\n            )));\n    }\n\n    // Note: Used only for demo purposes\n    public updateStickyState(state: boolean): void {\n        this.stickyHeaderDirective.tableStickyHeader = state;\n        this.makeSticky = state;\n    }\n}\n\nconst PEOPLE = [\"Elena\", \"Madelyn\", \"Baggio\", \"Josh\", \"Lukas\", \"Blake\", \"Frantz\", \"Dima\", \"Serhii\", \"Vita\", \"Vlad\", \"Ivan\", \"Dumitru\"];\nconst CITIES = [\"Bucharest\", \"Kiev\", \"Austin\", \"Brno\", \"Frankfurt pe Main\", \"Sutton-under-Whitestonecliffe\", \"Vila Bela da Santíssima Trindade\"];\nfunction generateUsers(length: number): IRandomUserTableModel[] {\n    return Array.from({ length }).map((obj: unknown, id: number) => {\n        const personName = sample(PEOPLE) || PEOPLE[0];\n        return ({\n            no: id,\n            postcode: id * 1000000 * id,\n            city: sample(CITIES) || CITIES[0],\n            nameFirst: personName,\n            nameLast: \"UnknownLast\",\n        });\n    });\n}\n");
 
 /***/ }),
 
@@ -10349,6 +10601,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "n2nk":
+/*!***********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/table/table-virtual-scroll-sticky-header-test/table-virtual-scroll-sticky-header-test-example.component.ts ***!
+  \***********************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("import { CdkVirtualScrollViewport } from \"@angular/cdk/scrolling\";\nimport { AfterViewInit, ChangeDetectionStrategy, Component, TrackByFunction, ViewChild } from \"@angular/core\";\nimport {\n    ClientSideDataSource,\n    IFilteringOutputs,\n    TableStickyHeaderDirective,\n} from \"@nova-ui/bits\";\nimport sample from \"lodash/sample\";\nimport { Observable } from \"rxjs\";\nimport { map, startWith, switchMap, tap } from \"rxjs/operators\";\n\ninterface IRandomUserTableModel {\n    no: number;\n    icon: string;\n    nameFirst: string;\n    nameLast: string;\n    city: string;\n    postcode: number;\n}\n\n@Component({\n    selector: \"nui-table-virtual-scroll-sticky-header-test-example\",\n    templateUrl: \"./table-virtual-scroll-sticky-header-test-example.component.html\",\n    changeDetection: ChangeDetectionStrategy.OnPush,\n    providers: [ClientSideDataSource],\n})\nexport class TableVirtualScrollStickyHeaderTestExampleComponent implements AfterViewInit {\n    @ViewChild(CdkVirtualScrollViewport) public viewport: CdkVirtualScrollViewport;\n    // Note: Used only for demo purposes\n    @ViewChild(TableStickyHeaderDirective) public stickyHeaderDirective: TableStickyHeaderDirective;\n\n    // Note: Mock items list is used to fake that the data is already loaded\n    // and let CDK Viewport perform the scrolling on a known number of items\n    public placeholderItems: undefined[] = [];\n    public visibleItems$: Observable<IRandomUserTableModel[]>;\n    // The dynamically changed array of items to render by the table\n    public displayedColumns: string[] = [\"no\", \"icon\", \"nameFirst\", \"nameLast\", \"city\", \"postcode\"];\n\n    public makeSticky: boolean = true;\n    public itemSize: number = 40;\n    public gridHeight = 400;\n    // trackBy handler used to identify uniquely each item in the table\n    public trackByNo: TrackByFunction<IRandomUserTableModel> = (index: number, item: IRandomUserTableModel): number => item?.no;\n\n    constructor(public dataSourceService: ClientSideDataSource<IRandomUserTableModel>) {\n        // Note: Initiating data source with data to be displayed\n        this.dataSourceService.setData(generateUsers(100000));\n    }\n\n    public ngAfterViewInit(): void {\n        this.dataSourceService.componentTree = {\n            // Note: Using paginator as filter to be able to get specific range\n            paginator: {\n                componentInstance: {\n                    getFilters: () => ({\n                        value: this.viewport.getRenderedRange(),\n                    }),\n                },\n            },\n        };\n\n        // Note: Creating a stream of visible items to be bound to the table and increase the performance\n        this.visibleItems$ = this.viewport.renderedRangeStream.pipe(\n            startWith({ start: 0, end: 10 }),\n            // Note: On range change applying filters\n            tap(async () => this.dataSourceService.applyFilters()),\n            // Subscribing to the filter results transforming and merging them into the stream\n            switchMap(() => this.dataSourceService.outputsSubject.pipe(\n                map((result: IFilteringOutputs) => {\n                    // Updating mock items list\n                    if (this.placeholderItems.length !== result.paginator.total) {\n                        this.placeholderItems = Array.from({ length: result.paginator.total });\n                    }\n                    // Mapping the values to array to be able to bind them to the table dataSource\n                    return result.repeat.itemsSource;\n                })\n            )));\n    }\n\n    // Note: Used only for demo purposes\n    public updateStickyState(state: boolean): void {\n        this.stickyHeaderDirective.tableStickyHeader = state;\n        this.makeSticky = state;\n    }\n}\n\nconst PEOPLE = [\"Elena\", \"Madelyn\", \"Baggio\", \"Josh\", \"Lukas\", \"Blake\", \"Frantz\", \"Dima\", \"Serhii\", \"Vita\", \"Vlad\", \"Ivan\", \"Dumitru\"];\nconst CITIES = [\"Bucharest\", \"Kiev\", \"Austin\", \"Brno\", \"Frankfurt pe Main\", \"Sutton-under-Whitestonecliffe\", \"Vila Bela da Santíssima Trindade\"];\nfunction generateUsers(length: number): IRandomUserTableModel[] {\n    return Array.from({ length }).map((obj: unknown, id: number) => {\n        const personName = sample(PEOPLE) || PEOPLE[0];\n        return ({\n            no: id,\n            postcode: id * 1000000 * id,\n            city: sample(CITIES) || CITIES[0],\n            nameFirst: personName,\n            nameLast: \"UnknownLast\",\n            icon: sample([\"status_up\", \"status_unplugged\"]) || \"status_up\",\n        });\n    });\n}\n");
+
+/***/ }),
+
 /***/ "n8np":
 /*!*****************************************************************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/table/table-cell-content-align/table-cell-content-align.example.component.ts ***!
@@ -10787,6 +11052,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "qNxL":
+/*!*************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/table/table-virtual-scroll-sticky-header-test/table-virtual-scroll-sticky-header-test-example.component.html ***!
+  \*************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"row mb-2\">\n    <div class=\"col-3\">\n        <nui-switch [value]=\"makeSticky\" (valueChange)=\"updateStickyState($event)\" i18n>\n            {{makeSticky ? 'Sticky' : 'Not Sticky'}}\n        </nui-switch>\n    </div>\n</div>\n\n<div id=\"nui-demo-table-sticky-header\" [style.height.px]=\"gridHeight\" [style.max-width.px]=\"1300\">\n    <cdk-virtual-scroll-viewport tableStickyHeader class=\"h-100\" [itemSize]=\"itemSize\">\n\n        <!-- IMPORTANT Bind only visible rows to the table, otherwise, the table will render all rows in the DOM -->\n        <table nui-table [dataSource]=\"visibleItems$ | async\" [trackBy]=\"trackByNo\" [sortable]=\"true\">\n            <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->\n            <ng-container *ngFor=\"let column of displayedColumns\" [nuiColumnDef]=\"column\" [type]=\"column === 'icon' ? 'icon' : 'default'\">\n                <th nui-header-cell *nuiHeaderCellDef>\n                    <span *ngIf=\"column !== 'icon'; else headerIcon\">{{column}}</span>\n                    <ng-template #headerIcon>\n                        <div class=\"d-flex align-items-center justify-content-center\">\n                            <nui-icon icon=\"enable\"></nui-icon>\n                        </div>\n                    </ng-template>\n                </th>\n                <td nui-cell *nuiCellDef=\"let element\">\n                    <span *ngIf=\"column !== 'icon'; else icon\">{{element[column]}}</span>\n                    <ng-template #icon>\n                        <div class=\"d-flex align-items-center justify-content-center\">\n                            <nui-icon [icon]=\"element[column]\"></nui-icon>\n                        </div>\n                    </ng-template>\n                </td>\n            </ng-container>\n\n            <tr nui-header-row *nuiHeaderRowDef=\"displayedColumns\"></tr>\n            <!-- IMPORTANT The actual difference between normal table and virtualized one-->\n            <!-- ∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨ -->\n            <ng-template nuiRowDef cdkVirtualFor\n                         let-context\n                         [nuiRowDefColumns]=\"displayedColumns\"\n                         [cdkVirtualForOf]=\"placeholderItems\"\n                         [cdkVirtualForTrackBy]=\"trackByNo\">\n                <tr nui-row [rowObject]=\"context\"></tr>\n            </ng-template>\n            <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->\n        </table>\n\n    </cdk-virtual-scroll-viewport>\n</div>\n");
+
+/***/ }),
+
 /***/ "rDK+":
 /*!***************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/table/table-virtual-scroll-real-api-minimalist/table-virtual-scroll-real-api-minimalist.example.component.less ***!
@@ -10859,6 +11137,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _table_resize_table_resize_example_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../table-resize/table-resize.example.component */ "cZCA");
 /* harmony import */ var _table_select_table_select_example_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../table-select/table-select.example.component */ "YgYn");
 /* harmony import */ var _table_select_pinned_header_table_select_pinned_header_example_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../table-select-pinned-header/table-select-pinned-header.example.component */ "lHWC");
+/* harmony import */ var _table_virtual_scroll_sticky_header_test_table_virtual_scroll_sticky_header_test_example_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../table-virtual-scroll-sticky-header-test/table-virtual-scroll-sticky-header-test-example.component */ "/Jns");
+
 
 
 
@@ -10872,7 +11152,7 @@ __webpack_require__.r(__webpack_exports__);
 class TableVisualTestComponent {
 }
 TableVisualTestComponent.ɵfac = function TableVisualTestComponent_Factory(t) { return new (t || TableVisualTestComponent)(); };
-TableVisualTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: TableVisualTestComponent, selectors: [["table-visual-test-example"]], decls: 41, vars: 0, consts: [[1, "container"], ["open", ""], ["id", "nui-visual-table-basic-summary"], ["id", "table-basic-usage"], ["id", "nui-visual-table-pinned-summary"], ["id", "table-pinned-header"], ["id", "nui-visual-table-alignment-summary"], ["id", "table-column-alignment"], ["id", "nui-visual-table-row-denisty-tiny-summary"], ["id", "table-row-density-tiny"], ["id", "nui-visual-table-row-denisty-compact-summary"], ["id", "table-row-density-compact", "density", "compact"], ["id", "nui-visual-table-sorting-summary"], ["id", "table-sorting"], ["id", "nui-visual-table-custom-action-summary"], ["id", "table-custom-action"], ["id", "nui-visual-table-column-size-summary"], ["id", "table-resizing"], ["id", "nui-visual-table-row-selection-summary"], ["id", "table-selected-row"], ["id", "nui-visual-table-select-pinned-header-summary"], ["id", "table-select-pinned-header"]], template: function TableVisualTestComponent_Template(rf, ctx) { if (rf & 1) {
+TableVisualTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: TableVisualTestComponent, selectors: [["table-visual-test-example"]], decls: 45, vars: 0, consts: [[1, "container"], ["open", ""], ["id", "nui-visual-table-basic-summary"], ["id", "table-basic-usage"], ["id", "nui-visual-table-pinned-summary"], ["id", "table-pinned-header"], ["id", "nui-visual-table-alignment-summary"], ["id", "table-column-alignment"], ["id", "nui-visual-table-row-density-tiny-summary"], ["id", "table-row-density-tiny"], ["id", "nui-visual-table-row-density-compact-summary"], ["id", "table-row-density-compact", "density", "compact"], ["id", "nui-visual-table-sorting-summary"], ["id", "table-sorting"], ["id", "nui-visual-table-custom-action-summary"], ["id", "table-custom-action"], ["id", "nui-visual-table-column-size-summary"], ["id", "table-resizing"], ["id", "nui-visual-table-row-selection-summary"], ["id", "table-selected-row"], ["id", "nui-visual-table-select-pinned-header-summary"], ["id", "table-select-pinned-header"], ["id", "nui-visual-table-virtual-scroll-sticky-header-summary"]], template: function TableVisualTestComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "details", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "summary", 2);
@@ -10934,8 +11214,14 @@ TableVisualTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵ�
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](40, "nui-table-select-pinned-header-example", 21);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](41, "details", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](42, "summary", 22);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](43, "Virtual Scroll Sticky Header");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    } }, directives: [_table_basic_table_basic_example_component__WEBPACK_IMPORTED_MODULE_1__["TableBasicExampleComponent"], _table_pinned_header_table_pinned_header_example_component__WEBPACK_IMPORTED_MODULE_2__["TablePinnedHeaderComponent"], _table_cell_content_align_table_cell_content_align_example_component__WEBPACK_IMPORTED_MODULE_3__["TableCellContentAlignComponent"], _table_row_height_set_table_row_height_set_example_component__WEBPACK_IMPORTED_MODULE_4__["TableRowHeightSetExampleComponent"], _table_sorting_table_sorting_example_component__WEBPACK_IMPORTED_MODULE_5__["TableSortingExampleComponent"], _table_columns_add_remove_table_columns_add_remove_example_component__WEBPACK_IMPORTED_MODULE_6__["TableColumnsAddRemoveExampleComponent"], _table_resize_table_resize_example_component__WEBPACK_IMPORTED_MODULE_7__["TableResizeExampleComponent"], _table_select_table_select_example_component__WEBPACK_IMPORTED_MODULE_8__["TableSelectExampleComponent"], _table_select_pinned_header_table_select_pinned_header_example_component__WEBPACK_IMPORTED_MODULE_9__["TableSelectPinnedHeaderComponent"]], encapsulation: 2 });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](44, "nui-table-virtual-scroll-sticky-header-test-example");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    } }, directives: [_table_basic_table_basic_example_component__WEBPACK_IMPORTED_MODULE_1__["TableBasicExampleComponent"], _table_pinned_header_table_pinned_header_example_component__WEBPACK_IMPORTED_MODULE_2__["TablePinnedHeaderComponent"], _table_cell_content_align_table_cell_content_align_example_component__WEBPACK_IMPORTED_MODULE_3__["TableCellContentAlignComponent"], _table_row_height_set_table_row_height_set_example_component__WEBPACK_IMPORTED_MODULE_4__["TableRowHeightSetExampleComponent"], _table_sorting_table_sorting_example_component__WEBPACK_IMPORTED_MODULE_5__["TableSortingExampleComponent"], _table_columns_add_remove_table_columns_add_remove_example_component__WEBPACK_IMPORTED_MODULE_6__["TableColumnsAddRemoveExampleComponent"], _table_resize_table_resize_example_component__WEBPACK_IMPORTED_MODULE_7__["TableResizeExampleComponent"], _table_select_table_select_example_component__WEBPACK_IMPORTED_MODULE_8__["TableSelectExampleComponent"], _table_select_pinned_header_table_select_pinned_header_example_component__WEBPACK_IMPORTED_MODULE_9__["TableSelectPinnedHeaderComponent"], _table_virtual_scroll_sticky_header_test_table_virtual_scroll_sticky_header_test_example_component__WEBPACK_IMPORTED_MODULE_10__["TableVirtualScrollStickyHeaderTestExampleComponent"]], encapsulation: 2 });
 
 
 /***/ }),
@@ -11623,7 +11909,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { ScrollingModule } from \"@angular/cdk/scrolling\";\nimport { DatePipe } from \"@angular/common\";\nimport { NgModule } from \"@angular/core\";\nimport { RouterModule } from \"@angular/router\";\nimport {\n    DEMO_PATH_TOKEN,\n    NuiButtonModule,\n    NuiCheckboxModule,\n    NuiDividerModule,\n    NuiDocsModule,\n    NuiExpanderModule,\n    NuiIconModule,\n    NuiMenuModule,\n    NuiMessageModule,\n    NuiPaginatorModule,\n    NuiProgressModule,\n    NuiSearchModule,\n    NuiSpinnerModule,\n    NuiSwitchModule,\n    NuiTableModule,\n    NuiTextboxModule,\n    SrlcStage,\n} from \"@nova-ui/bits\";\n\nimport {\n    TableBasicExampleComponent,\n    TableCellContentAlignComponent,\n    TableCellWidthSetExampleComponent,\n    TableColumnsAddRemoveExampleComponent,\n    TableDocsComponent,\n    TablePaginationExampleComponent,\n    TablePinnedHeaderComponent,\n    TableReorderExampleComponent,\n    TableResizeExampleComponent,\n    TableRowClickableExampleComponent,\n    TableRowHeightSetExampleComponent,\n    TableRowSelectInstructionsComponent,\n    TableSearchExampleComponent,\n    TableSearchWithSelectAndPaginationComponent,\n    TableSelectableToggleExampleComponent,\n    TableSelectExampleComponent,\n    TableSortingExampleComponent,\n    TableTestComponent,\n    TableVirtualScrollRealApiExampleComponent,\n    TableVirtualScrollRealApiMinimalistExampleComponent,\n    TableVirtualScrollRealApiProgressFooterExampleComponent,\n    TableVirtualScrollRealApiProgressTextFooterExampleComponent,\n    TableVirtualScrollSelectStickyHeaderExampleComponent,\n    TableVirtualScrollStepsAndButtonExampleComponent,\n    TableVirtualScrollStickyHeaderExampleComponent,\n    TableSelectPinnedHeaderComponent,\n    TableVisualTestComponent,\n} from \"./index\";\n\nconst routes = [\n    {\n        path: \"\",\n        component: TableDocsComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.ga,\n            },\n            showThemeSwitcher: true,\n        },\n    },\n    {\n        path: \"table-test\",\n        component: TableTestComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.ga,\n            },\n        },\n    },\n    {\n        path: \"basic\",\n        component: TableBasicExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"width-set\",\n        component: TableCellWidthSetExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"pagination\",\n        component: TablePaginationExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"search\",\n        component: TableSearchExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"height\",\n        component: TableRowHeightSetExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"custom-actions\",\n        component: TableColumnsAddRemoveExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"sorting\",\n        component: TableSortingExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"reorder\",\n        component: TableReorderExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"resize\",\n        component: TableResizeExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"selectable-toggle\",\n        component: TableSelectableToggleExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"select\",\n        component: TableSelectExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"visual-test\",\n        component: TableVisualTestComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"table-row-clickable\",\n        component: TableRowClickableExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"virtual-1\",\n        component: TableVirtualScrollRealApiExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"virtual-2\",\n        component: TableVirtualScrollRealApiMinimalistExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"step\",\n        component: TableVirtualScrollStepsAndButtonExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"sticky\",\n        component: TableVirtualScrollStickyHeaderExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"select-sticky\",\n        component: TableVirtualScrollSelectStickyHeaderExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n];\n\n@NgModule({\n    imports: [\n        NuiButtonModule,\n        NuiTableModule,\n        NuiDocsModule,\n        NuiPaginatorModule,\n        NuiSearchModule,\n        NuiSwitchModule,\n        NuiDividerModule,\n        NuiCheckboxModule,\n        NuiTextboxModule,\n        NuiMessageModule,\n        NuiExpanderModule,\n        NuiMenuModule,\n        NuiIconModule,\n        RouterModule.forChild(routes),\n        ScrollingModule,\n        NuiSpinnerModule,\n        NuiProgressModule,\n    ],\n    declarations: [\n        TableBasicExampleComponent,\n        TableCellWidthSetExampleComponent,\n        TableColumnsAddRemoveExampleComponent,\n        TableDocsComponent,\n        TablePaginationExampleComponent,\n        TablePinnedHeaderComponent,\n        TableReorderExampleComponent,\n        TableRowHeightSetExampleComponent,\n        TableRowClickableExampleComponent,\n        TableResizeExampleComponent,\n        TableSearchExampleComponent,\n        TableSelectableToggleExampleComponent,\n        TableSelectExampleComponent,\n        TableSelectPinnedHeaderComponent,\n        TableSortingExampleComponent,\n        TableCellContentAlignComponent,\n        TableTestComponent,\n        TableVisualTestComponent,\n        TableVirtualScrollRealApiExampleComponent,\n        TableVirtualScrollStepsAndButtonExampleComponent,\n        TableVirtualScrollRealApiProgressFooterExampleComponent,\n        TableVirtualScrollRealApiProgressTextFooterExampleComponent,\n        TableVirtualScrollRealApiMinimalistExampleComponent,\n        TableSearchWithSelectAndPaginationComponent,\n        TableVirtualScrollStickyHeaderExampleComponent,\n        TableVirtualScrollSelectStickyHeaderExampleComponent,\n        TableRowSelectInstructionsComponent,\n    ],\n    providers: [\n        DatePipe,\n        {\n            provide: DEMO_PATH_TOKEN,\n            useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/),\n        },\n    ],\n    exports: [\n        RouterModule,\n    ],\n})\nexport class TableModule {\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import { ScrollingModule } from \"@angular/cdk/scrolling\";\nimport { DatePipe } from \"@angular/common\";\nimport { NgModule } from \"@angular/core\";\nimport { RouterModule } from \"@angular/router\";\nimport {\n    DEMO_PATH_TOKEN,\n    NuiButtonModule,\n    NuiCheckboxModule,\n    NuiDividerModule,\n    NuiDocsModule,\n    NuiExpanderModule,\n    NuiIconModule,\n    NuiMenuModule,\n    NuiMessageModule,\n    NuiPaginatorModule,\n    NuiProgressModule,\n    NuiSearchModule,\n    NuiSpinnerModule,\n    NuiSwitchModule,\n    NuiTableModule,\n    NuiTextboxModule,\n    SrlcStage,\n} from \"@nova-ui/bits\";\n\nimport {\n    TableBasicExampleComponent,\n    TableCellContentAlignComponent,\n    TableCellWidthSetExampleComponent,\n    TableColumnsAddRemoveExampleComponent,\n    TableDocsComponent,\n    TablePaginationExampleComponent,\n    TablePinnedHeaderComponent,\n    TableReorderExampleComponent,\n    TableResizeExampleComponent,\n    TableRowClickableExampleComponent,\n    TableRowHeightSetExampleComponent,\n    TableRowSelectInstructionsComponent,\n    TableSearchExampleComponent,\n    TableSearchWithSelectAndPaginationComponent,\n    TableSelectableToggleExampleComponent,\n    TableSelectExampleComponent,\n    TableSelectPinnedHeaderComponent,\n    TableSortingExampleComponent,\n    TableTestComponent,\n    TableVirtualScrollRealApiExampleComponent,\n    TableVirtualScrollRealApiMinimalistExampleComponent,\n    TableVirtualScrollRealApiProgressFooterExampleComponent,\n    TableVirtualScrollRealApiProgressTextFooterExampleComponent,\n    TableVirtualScrollSelectStickyHeaderExampleComponent,\n    TableVirtualScrollStepsAndButtonExampleComponent,\n    TableVirtualScrollStickyHeaderExampleComponent,\n    TableVirtualScrollStickyHeaderTestExampleComponent,\n    TableVisualTestComponent,\n} from \"./index\";\n\nconst routes = [\n    {\n        path: \"\",\n        component: TableDocsComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.ga,\n            },\n            showThemeSwitcher: true,\n        },\n    },\n    {\n        path: \"table-test\",\n        component: TableTestComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.ga,\n            },\n        },\n    },\n    {\n        path: \"basic\",\n        component: TableBasicExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"width-set\",\n        component: TableCellWidthSetExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"pagination\",\n        component: TablePaginationExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"search\",\n        component: TableSearchExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"height\",\n        component: TableRowHeightSetExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"custom-actions\",\n        component: TableColumnsAddRemoveExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"sorting\",\n        component: TableSortingExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"reorder\",\n        component: TableReorderExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"resize\",\n        component: TableResizeExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"selectable-toggle\",\n        component: TableSelectableToggleExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"select\",\n        component: TableSelectExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"visual-test\",\n        component: TableVisualTestComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"table-row-clickable\",\n        component: TableRowClickableExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"virtual-1\",\n        component: TableVirtualScrollRealApiExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"virtual-2\",\n        component: TableVirtualScrollRealApiMinimalistExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"step\",\n        component: TableVirtualScrollStepsAndButtonExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"sticky\",\n        component: TableVirtualScrollStickyHeaderExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"sticky-test\",\n        component: TableVirtualScrollStickyHeaderTestExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"select-sticky\",\n        component: TableVirtualScrollSelectStickyHeaderExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n];\n\n@NgModule({\n    imports: [\n        NuiButtonModule,\n        NuiTableModule,\n        NuiDocsModule,\n        NuiPaginatorModule,\n        NuiSearchModule,\n        NuiSwitchModule,\n        NuiDividerModule,\n        NuiCheckboxModule,\n        NuiTextboxModule,\n        NuiMessageModule,\n        NuiExpanderModule,\n        NuiMenuModule,\n        NuiIconModule,\n        RouterModule.forChild(routes),\n        ScrollingModule,\n        NuiSpinnerModule,\n        NuiProgressModule,\n    ],\n    declarations: [\n        TableBasicExampleComponent,\n        TableCellWidthSetExampleComponent,\n        TableColumnsAddRemoveExampleComponent,\n        TableDocsComponent,\n        TablePaginationExampleComponent,\n        TablePinnedHeaderComponent,\n        TableReorderExampleComponent,\n        TableRowHeightSetExampleComponent,\n        TableRowClickableExampleComponent,\n        TableResizeExampleComponent,\n        TableSearchExampleComponent,\n        TableSelectableToggleExampleComponent,\n        TableSelectExampleComponent,\n        TableSelectPinnedHeaderComponent,\n        TableSortingExampleComponent,\n        TableCellContentAlignComponent,\n        TableTestComponent,\n        TableVisualTestComponent,\n        TableVirtualScrollRealApiExampleComponent,\n        TableVirtualScrollStepsAndButtonExampleComponent,\n        TableVirtualScrollRealApiProgressFooterExampleComponent,\n        TableVirtualScrollRealApiProgressTextFooterExampleComponent,\n        TableVirtualScrollRealApiMinimalistExampleComponent,\n        TableSearchWithSelectAndPaginationComponent,\n        TableVirtualScrollStickyHeaderExampleComponent,\n        TableVirtualScrollStickyHeaderTestExampleComponent,\n        TableVirtualScrollSelectStickyHeaderExampleComponent,\n        TableRowSelectInstructionsComponent,\n    ],\n    providers: [\n        DatePipe,\n        {\n            provide: DEMO_PATH_TOKEN,\n            useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/),\n        },\n    ],\n    exports: [\n        RouterModule,\n    ],\n})\nexport class TableModule {\n}\n");
 
 /***/ }),
 
