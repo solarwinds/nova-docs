@@ -24462,15 +24462,14 @@ class TimePickerComponent {
     onKeyDown(event) {
         this.keyboardService.onKeyDown(event);
     }
-    onFocusOut() {
+    onFocusOut(event) {
         if (!this.overlay.showing || !document.activeElement) {
             return;
         }
-        setTimeout(() => {
-            if (!this.containerEl.nativeElement.contains(document.activeElement)) {
-                this.overlay.hide();
-            }
-        }, 100);
+        const target = event.relatedTarget;
+        if (!this.containerEl.nativeElement.contains(target)) {
+            this.overlay.hide();
+        }
     }
     updateInnerModel(value) {
         setTimeout(() => this.inputBlurred.emit(), 100);
@@ -24615,7 +24614,7 @@ TimePickerComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefi
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.popup = _t.first);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.menuTrigger = _t.first);
     } }, hostBindings: function TimePickerComponent_HostBindings(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keydown", function TimePickerComponent_keydown_HostBindingHandler($event) { return ctx.onKeyDown($event); })("focusout", function TimePickerComponent_focusout_HostBindingHandler() { return ctx.onFocusOut(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keydown", function TimePickerComponent_keydown_HostBindingHandler($event) { return ctx.onKeyDown($event); })("focusout", function TimePickerComponent_focusout_HostBindingHandler($event) { return ctx.onFocusOut($event); });
     } }, inputs: { timeStep: "timeStep", isDisabled: "isDisabled", timeFormat: "timeFormat", preserveInsignificant: "preserveInsignificant", isInErrorState: "isInErrorState", ariaLabel: "ariaLabel", initEmpty: "initEmpty", appendToBody: "appendToBody", model: "model" }, outputs: { timeChanged: "timeChanged", inputBlurred: "inputBlurred" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵProvidersFeature"]([
             {
                 provide: _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NG_VALUE_ACCESSOR"],

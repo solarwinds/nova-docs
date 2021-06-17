@@ -748,7 +748,12 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>focusout()</code>
+                    <i>Arguments : </i><code>'$event' </code>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>focusout(event: FocusEvent)</code>
                 </td>
             </tr>
 
@@ -2638,17 +2643,17 @@ export class TimePickerComponent implements OnInit, OnDestroy, OnChanges, AfterV
         this.keyboardService.onKeyDown(event);
     }
 
-    @HostListener(&quot;focusout&quot;)
-    public onFocusOut(): void {
+    @HostListener(&quot;focusout&quot;, [&quot;$event&quot;])
+    public onFocusOut(event: FocusEvent): void {
         if (!this.overlay.showing || !document.activeElement) {
             return;
         }
 
-        setTimeout(() &#x3D;&gt; {
-            if (!this.containerEl.nativeElement.contains(document.activeElement)) {
-                this.overlay.hide();
-            }
-        }, 100);
+        const target &#x3D; event.relatedTarget as HTMLElement;
+
+        if (!this.containerEl.nativeElement.contains(target)) {
+            this.overlay.hide();
+        }
     }
 
     updateInnerModel(value: any) {
