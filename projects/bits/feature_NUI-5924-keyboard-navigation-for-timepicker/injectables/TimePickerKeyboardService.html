@@ -366,13 +366,18 @@ export class TimePickerKeyboardService {
             event.preventDefault();
             this.keyboardEventsManager.activeItem?.doAction(event);
         }
+
+        if (code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.SPACE) {
+            event.preventDefault();
+        }
     }
 
     private handleClosedMenu(event: KeyboardEvent): void {
         const { code } &#x3D; event;
         const isIconTrigger &#x3D; document.activeElement &#x3D;&#x3D;&#x3D; this.menuTrigger &amp;&amp; this.isOpenMenuCode(code as KEYBOARD_CODE);
+        const isInputTrigger &#x3D; document.activeElement !&#x3D;&#x3D; this.menuTrigger &amp;&amp; code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ARROW_DOWN;
 
-        if (code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ARROW_DOWN || isIconTrigger) {
+        if (isInputTrigger || isIconTrigger) {
             event.preventDefault();
             this.overlay.show();
             this.keyboardEventsManager.activeItem?.menuItem?.nativeElement?.scrollIntoView({ block: &quot;center&quot; });
@@ -424,7 +429,7 @@ export class TimePickerKeyboardService {
     }
 
     private isOpenMenuCode(code: KEYBOARD_CODE): boolean {
-        return code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ENTER ||  code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.SPACE || code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ARROW_DOWN;
+        return code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ENTER ||  code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.SPACE;
     }
 }
 </code></pre>
