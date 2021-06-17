@@ -91,9 +91,11 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#initService">initService</a>
                             </li>
                             <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#onKeyDown">onKeyDown</a>
                             </li>
                         </ul>
@@ -121,6 +123,7 @@
                     <a name="initService"></a>
                     <span class="name">
                         <b>
+                            <span class="modifier">Public</span>
                             initService
                         </b>
                         <a href="#initService"><span class="icon ion-ios-link"></span></a>
@@ -129,7 +132,8 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>initService(popup: <a href="../components/PopupComponent.html">MenuPopupComponent</a>, overlay: <a href="../components/OverlayComponent.html">OverlayComponent</a>, trigger: <a href="../undefineds/Element.html">HTMLElement</a>)</code>
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>initService(popup: <a href="../components/PopupComponent.html">MenuPopupComponent</a>, overlay: <a href="../components/OverlayComponent.html">OverlayComponent</a>, trigger: <a href="../undefineds/Element.html">HTMLElement</a>)</code>
                 </td>
             </tr>
 
@@ -215,6 +219,7 @@
                     <a name="onKeyDown"></a>
                     <span class="name">
                         <b>
+                            <span class="modifier">Public</span>
                             onKeyDown
                         </b>
                         <a href="#onKeyDown"><span class="icon ion-ios-link"></span></a>
@@ -223,7 +228,8 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>onKeyDown(event: KeyboardEvent)</code>
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onKeyDown(event: KeyboardEvent)</code>
                 </td>
             </tr>
 
@@ -334,7 +340,7 @@ export class TimePickerKeyboardService {
     private keyboardEventsManager: ActiveDescendantKeyManager&lt;MenuItemBaseComponent&gt;;
     private menuTrigger: HTMLElement;
 
-    initService(
+    public initService(
         popup: MenuPopupComponent,
         overlay: OverlayComponent,
         trigger: HTMLElement
@@ -347,7 +353,7 @@ export class TimePickerKeyboardService {
         this.menuTrigger &#x3D; trigger;
     }
 
-    onKeyDown(event: KeyboardEvent): void {
+    public onKeyDown(event: KeyboardEvent): void {
         this.overlay.showing ? this.handleOpenedMenu(event) : this.handleClosedMenu(event);
     }
 
@@ -366,13 +372,18 @@ export class TimePickerKeyboardService {
             event.preventDefault();
             this.keyboardEventsManager.activeItem?.doAction(event);
         }
+
+        if (code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.SPACE) {
+            event.preventDefault();
+        }
     }
 
     private handleClosedMenu(event: KeyboardEvent): void {
         const { code } &#x3D; event;
         const isIconTrigger &#x3D; document.activeElement &#x3D;&#x3D;&#x3D; this.menuTrigger &amp;&amp; this.isOpenMenuCode(code as KEYBOARD_CODE);
+        const isInputTrigger &#x3D; document.activeElement !&#x3D;&#x3D; this.menuTrigger &amp;&amp; code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ARROW_DOWN;
 
-        if (code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ARROW_DOWN || isIconTrigger) {
+        if (isInputTrigger || isIconTrigger) {
             event.preventDefault();
             this.overlay.show();
             this.keyboardEventsManager.activeItem?.menuItem?.nativeElement?.scrollIntoView({ block: &quot;center&quot; });
@@ -424,7 +435,7 @@ export class TimePickerKeyboardService {
     }
 
     private isOpenMenuCode(code: KEYBOARD_CODE): boolean {
-        return code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ENTER ||  code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.SPACE || code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ARROW_DOWN;
+        return code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ENTER ||  code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.SPACE;
     }
 }
 </code></pre>
