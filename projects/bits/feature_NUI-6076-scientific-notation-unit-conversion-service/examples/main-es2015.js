@@ -29954,7 +29954,7 @@ class UnitConversionService {
      *
      * @param unit The basic unit used in the conversion
      *
-     * @returns {string} The first unit in the unitConversionConstant array
+     * @returns {string} The abbreviation for the smallest unit of the provided UnitOption
      */
     getUnitDisplayBaseValue(unit) {
         return _constants__WEBPACK_IMPORTED_MODULE_0__["unitConversionConstants"][unit][0];
