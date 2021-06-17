@@ -21415,7 +21415,7 @@ class WizardHorizontalComponent extends _wizard_directive__WEBPACK_IMPORTED_MODU
         super.selectedIndex = value;
     }
     ngOnInit() {
-        // we should be checked the validity of previous steps
+        // Checking the validity of previous steps by default.
         this.linear = true;
     }
 }
