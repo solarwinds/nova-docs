@@ -1548,146 +1548,72 @@
       /* harmony import */
 
 
-      var _nova_ui_bits__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! @nova-ui/bits */
-      "b5Xb");
-      /* harmony import */
-
-
-      var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! @angular/core */
       "fXoL");
       /* harmony import */
 
 
-      var _panel_basic_panel_basic_example_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      var _panel_basic_panel_basic_example_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ../panel-basic/panel-basic.example.component */
       "HpYj");
       /* harmony import */
 
 
-      var _panel_collapse_panel_collapse_example_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      var _panel_collapse_panel_collapse_example_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! ../panel-collapse/panel-collapse.example.component */
       "7672");
       /* harmony import */
 
 
-      var _panel_float_panel_float_example_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      var _panel_float_panel_float_example_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! ../panel-float/panel-float.example.component */
       "rrpG");
       /* harmony import */
 
 
-      var _panel_resize_panel_resize_example_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      var _panel_resize_panel_resize_example_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! ../panel-resize/panel-resize.example.component */
       "v1nj");
       /* harmony import */
 
 
-      var _panel_hide_panel_hide_example_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      var _panel_hide_panel_hide_example_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! ../panel-hide/panel-hide.example.component */
       "pp2q");
 
-      var PanelTestComponent = /*#__PURE__*/function () {
-        function PanelTestComponent() {
-          _classCallCheck(this, PanelTestComponent);
-
-          this.isOn = true;
-          this.isCollapsible = true;
-          this.isCollapsed = false;
-          this.headerIcon = "filter";
-          this.headerIconCounter = 7;
-          this.displayFooter = true;
-          this.panelColor = _nova_ui_bits__WEBPACK_IMPORTED_MODULE_0__["PanelBackgroundColor"].colorBgSecondary;
-          this.heading = "No Padding Header";
-          this.itemsSource = [{
-            header: "section title",
-            itemsSource: [{
-              title: "Menu Item",
-              itemType: "action"
-            }, {
-              title: "Hover me",
-              itemType: "action"
-            }, {
-              title: "Selected menu item",
-              isSelected: true
-            }, {
-              title: "Menu item",
-              itemType: "switch",
-              checked: true
-            }, {
-              title: "Menu disabled item",
-              itemType: "switch",
-              checked: false,
-              disabled: true
-            }, {
-              title: "Menu item with checkbox",
-              itemType: "option",
-              disabled: true
-            }, {
-              title: "Menu item with icon",
-              itemType: "action",
-              icon: "table"
-            }, {
-              title: "Link menu item",
-              itemType: "link",
-              url: "#button",
-              disabled: true
-            }, {
-              title: "Export PDF",
-              itemType: "link",
-              icon: "export-pdf",
-              url: "#button"
-            }]
-          }];
-        }
-
-        _createClass(PanelTestComponent, [{
-          key: "toggleFooter",
-          value: function toggleFooter() {
-            this.displayFooter = !this.displayFooter;
-          }
-        }, {
-          key: "onCollapseChange",
-          value: function onCollapseChange($event) {
-            this.isCollapsed = $event;
-          }
-        }]);
-
-        return PanelTestComponent;
-      }();
+      var PanelTestComponent = function PanelTestComponent() {
+        _classCallCheck(this, PanelTestComponent);
+      };
 
       PanelTestComponent.ɵfac = function PanelTestComponent_Factory(t) {
         return new (t || PanelTestComponent)();
       };
 
-      PanelTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
+      PanelTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: PanelTestComponent,
         selectors: [["nui-panel-test"]],
-        inputs: {
-          isOn: "isOn"
-        },
         decls: 6,
         vars: 0,
         consts: [[1, "container"]],
         template: function PanelTestComponent_Template(rf, ctx) {
           if (rf & 1) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 0);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](1, "nui-panel-basic-example");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "nui-panel-basic-example");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](2, "nui-panel-collapse-example");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "nui-panel-collapse-example");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](3, "nui-panel-float-example");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "nui-panel-float-example");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](4, "nui-panel-resize-example");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](4, "nui-panel-resize-example");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](5, "nui-panel-hide-example");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](5, "nui-panel-hide-example");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
           }
         },
-        directives: [_panel_basic_panel_basic_example_component__WEBPACK_IMPORTED_MODULE_2__["PanelBasicExampleComponent"], _panel_collapse_panel_collapse_example_component__WEBPACK_IMPORTED_MODULE_3__["PanelCollapseExampleComponent"], _panel_float_panel_float_example_component__WEBPACK_IMPORTED_MODULE_4__["PanelFloatExampleComponent"], _panel_resize_panel_resize_example_component__WEBPACK_IMPORTED_MODULE_5__["PanelResizeExampleComponent"], _panel_hide_panel_hide_example_component__WEBPACK_IMPORTED_MODULE_6__["PanelHideExampleComponent"]],
+        directives: [_panel_basic_panel_basic_example_component__WEBPACK_IMPORTED_MODULE_1__["PanelBasicExampleComponent"], _panel_collapse_panel_collapse_example_component__WEBPACK_IMPORTED_MODULE_2__["PanelCollapseExampleComponent"], _panel_float_panel_float_example_component__WEBPACK_IMPORTED_MODULE_3__["PanelFloatExampleComponent"], _panel_resize_panel_resize_example_component__WEBPACK_IMPORTED_MODULE_4__["PanelResizeExampleComponent"], _panel_hide_panel_hide_example_component__WEBPACK_IMPORTED_MODULE_5__["PanelHideExampleComponent"]],
         encapsulation: 2
       });
       /***/
@@ -1729,7 +1655,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import { Component, Input } from \"@angular/core\";\nimport { IMenuGroup, PanelBackgroundColor } from \"@nova-ui/bits\";\n\n@Component({\n    selector: \"nui-panel-test\",\n    templateUrl: \"./panel-test.component.html\",\n})\n\nexport class PanelTestComponent {\n    @Input() isOn = true;\n    public isCollapsible = true;\n    public isCollapsed = false;\n    public headerIcon = \"filter\";\n    public headerIconCounter = 7;\n    public displayFooter = true;\n    public panelColor: PanelBackgroundColor = PanelBackgroundColor.colorBgSecondary;\n    public heading = \"No Padding Header\";\n    public itemsSource: IMenuGroup[] = [\n        {header: \"section title\", itemsSource: [\n            {title: \"Menu Item\", itemType: \"action\"},\n            {title: \"Hover me\", itemType: \"action\"},\n            {title: \"Selected menu item\", isSelected: true},\n            {title: \"Menu item\", itemType: \"switch\", checked: true},\n            {title: \"Menu disabled item\", itemType: \"switch\", checked: false, disabled: true},\n            {title: \"Menu item with checkbox\", itemType: \"option\", disabled: true},\n            {title: \"Menu item with icon\", itemType: \"action\", icon: \"table\"},\n            {title: \"Link menu item\", itemType: \"link\", url: \"#button\", disabled: true},\n            {title: \"Export PDF\", itemType: \"link\", icon: \"export-pdf\", url: \"#button\"},\n        ]},\n    ];\n\n    constructor() {}\n\n    public toggleFooter() {\n        this.displayFooter = !this.displayFooter;\n    }\n\n    public onCollapseChange($event: boolean) {\n        this.isCollapsed = $event;\n    }\n}\n";
+      __webpack_exports__["default"] = "import { Component, Input } from \"@angular/core\";\nimport { IMenuGroup, PanelBackgroundColor } from \"@nova-ui/bits\";\n\n@Component({\n    selector: \"nui-panel-test\",\n    templateUrl: \"./panel-test.component.html\",\n})\n\nexport class PanelTestComponent {\n    // @Input() isOn = true;\n    // public isCollapsible = true;\n    // public isCollapsed = false;\n    // public headerIcon = \"filter\";\n    // public headerIconCounter = 7;\n    // public displayFooter = true;\n    // public panelColor: PanelBackgroundColor = PanelBackgroundColor.colorBgSecondary;\n    // public heading = \"No Padding Header\";\n    // public itemsSource: IMenuGroup[] = [\n    //     {header: \"section title\", itemsSource: [\n    //         {title: \"Menu Item\", itemType: \"action\"},\n    //         {title: \"Hover me\", itemType: \"action\"},\n    //         {title: \"Selected menu item\", isSelected: true},\n    //         {title: \"Menu item\", itemType: \"switch\", checked: true},\n    //         {title: \"Menu disabled item\", itemType: \"switch\", checked: false, disabled: true},\n    //         {title: \"Menu item with checkbox\", itemType: \"option\", disabled: true},\n    //         {title: \"Menu item with icon\", itemType: \"action\", icon: \"table\"},\n    //         {title: \"Link menu item\", itemType: \"link\", url: \"#button\", disabled: true},\n    //         {title: \"Export PDF\", itemType: \"link\", icon: \"export-pdf\", url: \"#button\"},\n    //     ]},\n    // ];\n\n    // constructor() {}\n\n    // public toggleFooter() {\n    //     this.displayFooter = !this.displayFooter;\n    // }\n\n    // public onCollapseChange($event: boolean) {\n    //     this.isCollapsed = $event;\n    // }\n}\n";
       /***/
     },
 
