@@ -24016,6 +24016,7 @@ class MenuKeyControlService {
     }
     handleOpenKeyDown(event) {
         var _a, _b, _c, _d;
+        event.stopPropagation();
         if (event.code === _constants__WEBPACK_IMPORTED_MODULE_3__["KEYBOARD_CODE"].ARROW_DOWN || event.code === _constants__WEBPACK_IMPORTED_MODULE_3__["KEYBOARD_CODE"].ARROW_UP) {
             // passing the event to key manager so we get a change fired
             this.keyboardEventsManager.onKeydown(event);

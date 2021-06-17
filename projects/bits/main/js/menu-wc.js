@@ -511,6 +511,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     <a href="injectables/ServerSideDataSource.html" data-type="entity-link">ServerSideDataSource</a>
                                 </li>
                                 <li class="link">
+                                    <a href="injectables/SorterKeyboardService.html" data-type="entity-link">SorterKeyboardService</a>
+                                </li>
+                                <li class="link">
                                     <a href="injectables/TableStateHandlerService.html" data-type="entity-link">TableStateHandlerService</a>
                                 </li>
                                 <li class="link">
