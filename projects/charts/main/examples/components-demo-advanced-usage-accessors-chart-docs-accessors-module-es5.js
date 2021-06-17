@@ -116,46 +116,98 @@
       var exampleRoutes = [{
         path: "overview",
         loadChildren: function loadChildren() {
-          return __webpack_require__.e(
-          /*! import() | components-demo-advanced-usage-accessors-overview-chart-docs-accessors-overview-module */
-          "components-demo-advanced-usage-accessors-overview-chart-docs-accessors-overview-module").then(__webpack_require__.bind(null,
-          /*! components/demo/advanced-usage/accessors/overview/chart-docs-accessors-overview.module */
-          "/BjU")).then(function (m) {
-            return m.ChartDocsAccessorsOverviewModule;
-          });
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+            return regeneratorRuntime.wrap(function _callee$(_context) {
+              while (1) {
+                switch (_context.prev = _context.next) {
+                  case 0:
+                    return _context.abrupt("return", __webpack_require__.e(
+                    /*! import() | components-demo-advanced-usage-accessors-overview-chart-docs-accessors-overview-module */
+                    "components-demo-advanced-usage-accessors-overview-chart-docs-accessors-overview-module").then(__webpack_require__.bind(null,
+                    /*! components/demo/advanced-usage/accessors/overview/chart-docs-accessors-overview.module */
+                    "/BjU")).then(function (m) {
+                      return m.ChartDocsAccessorsOverviewModule;
+                    }));
+
+                  case 1:
+                  case "end":
+                    return _context.stop();
+                }
+              }
+            }, _callee);
+          }));
         }
       }, {
         path: "data",
         loadChildren: function loadChildren() {
-          return __webpack_require__.e(
-          /*! import() | components-demo-advanced-usage-accessors-data-chart-docs-accessors-data-module */
-          "components-demo-advanced-usage-accessors-data-chart-docs-accessors-data-module").then(__webpack_require__.bind(null,
-          /*! components/demo/advanced-usage/accessors/data/chart-docs-accessors-data.module */
-          "HRsf")).then(function (m) {
-            return m.ChartDocsAccessorsDataModule;
-          });
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+            return regeneratorRuntime.wrap(function _callee2$(_context2) {
+              while (1) {
+                switch (_context2.prev = _context2.next) {
+                  case 0:
+                    return _context2.abrupt("return", __webpack_require__.e(
+                    /*! import() | components-demo-advanced-usage-accessors-data-chart-docs-accessors-data-module */
+                    "components-demo-advanced-usage-accessors-data-chart-docs-accessors-data-module").then(__webpack_require__.bind(null,
+                    /*! components/demo/advanced-usage/accessors/data/chart-docs-accessors-data.module */
+                    "HRsf")).then(function (m) {
+                      return m.ChartDocsAccessorsDataModule;
+                    }));
+
+                  case 1:
+                  case "end":
+                    return _context2.stop();
+                }
+              }
+            }, _callee2);
+          }));
         }
       }, {
         path: "colors",
         loadChildren: function loadChildren() {
-          return __webpack_require__.e(
-          /*! import() | components-demo-advanced-usage-accessors-colors-chart-docs-accessors-colors-module */
-          "components-demo-advanced-usage-accessors-colors-chart-docs-accessors-colors-module").then(__webpack_require__.bind(null,
-          /*! components/demo/advanced-usage/accessors/colors/chart-docs-accessors-colors.module */
-          "25IG")).then(function (m) {
-            return m.ChartDocsAccessorsColorsModule;
-          });
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
+            return regeneratorRuntime.wrap(function _callee3$(_context3) {
+              while (1) {
+                switch (_context3.prev = _context3.next) {
+                  case 0:
+                    return _context3.abrupt("return", __webpack_require__.e(
+                    /*! import() | components-demo-advanced-usage-accessors-colors-chart-docs-accessors-colors-module */
+                    "components-demo-advanced-usage-accessors-colors-chart-docs-accessors-colors-module").then(__webpack_require__.bind(null,
+                    /*! components/demo/advanced-usage/accessors/colors/chart-docs-accessors-colors.module */
+                    "25IG")).then(function (m) {
+                      return m.ChartDocsAccessorsColorsModule;
+                    }));
+
+                  case 1:
+                  case "end":
+                    return _context3.stop();
+                }
+              }
+            }, _callee3);
+          }));
         }
       }, {
         path: "markers",
         loadChildren: function loadChildren() {
-          return __webpack_require__.e(
-          /*! import() | components-demo-advanced-usage-accessors-markers-chart-docs-accessors-markers-module */
-          "components-demo-advanced-usage-accessors-markers-chart-docs-accessors-markers-module").then(__webpack_require__.bind(null,
-          /*! components/demo/advanced-usage/accessors/markers/chart-docs-accessors-markers.module */
-          "TI39")).then(function (m) {
-            return m.ChartDocsAccessorsMarkersModule;
-          });
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
+            return regeneratorRuntime.wrap(function _callee4$(_context4) {
+              while (1) {
+                switch (_context4.prev = _context4.next) {
+                  case 0:
+                    return _context4.abrupt("return", __webpack_require__.e(
+                    /*! import() | components-demo-advanced-usage-accessors-markers-chart-docs-accessors-markers-module */
+                    "components-demo-advanced-usage-accessors-markers-chart-docs-accessors-markers-module").then(__webpack_require__.bind(null,
+                    /*! components/demo/advanced-usage/accessors/markers/chart-docs-accessors-markers.module */
+                    "TI39")).then(function (m) {
+                      return m.ChartDocsAccessorsMarkersModule;
+                    }));
+
+                  case 1:
+                  case "end":
+                    return _context4.stop();
+                }
+              }
+            }, _callee4);
+          }));
         }
       }];
 

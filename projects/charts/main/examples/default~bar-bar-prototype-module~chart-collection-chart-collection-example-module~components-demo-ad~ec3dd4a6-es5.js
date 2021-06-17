@@ -4724,17 +4724,22 @@
                 data: series.data || []
               });
             }));
-            var seriesSet = processedSeriesSet.map(function (s) {
-              return _this18.applyDefaults(s);
-            });
-            this.legendSeriesSet = seriesSet.filter(function (s) {
-              return s.showInLegend;
+            this.legendSeriesSet = processedSeriesSet.filter(function (s) {
+              return s.showInLegend || typeof s.showInLegend === "undefined";
             });
 
             if (updateLegend) {
-              this.legendInteractionAssist.update(seriesSet);
-            }
+              this.legendInteractionAssist.update(processedSeriesSet);
+            } // add render states to the series for use in the chart
 
+
+            var seriesSet = processedSeriesSet.map(function (s) {
+              var _a;
+
+              return Object.assign({
+                renderState: (_a = _this18.renderStatesIndex[s.id]) === null || _a === void 0 ? void 0 : _a.state
+              }, s);
+            });
             this.chart.update(seriesSet);
             this.publishRenderStates();
           }
@@ -4846,11 +4851,6 @@
           key: "publishRenderStates",
           value: function publishRenderStates() {
             this.chart.setSeriesStates(this.legendInteractionAssist.getSeriesStates());
-          }
-        }, {
-          key: "applyDefaults",
-          value: function applyDefaults(chartSeries) {
-            return Object.assign({}, chartAssistSeriesDefaults, chartSeries);
           }
         }], [{
           key: "getLabel",
@@ -28036,6 +28036,12 @@
       var _scales_helpers_domain__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! ./scales/helpers/domain */
       "PhPe");
+      /* harmony import */
+
+
+      var _renderers_types__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      /*! ../../renderers/types */
+      "AbRU");
       /**
        * @ignore
        *
@@ -28107,6 +28113,8 @@
             if (scale.domainCalculator) {
               var chartSeriesSet = this.chartSeriesSet.filter(function (cs) {
                 return cs.scales[scaleKey] === scale && !cs.renderer.config.ignoreForDomainCalculation;
+              }).filter(function (c) {
+                return c.renderState !== _renderers_types__WEBPACK_IMPORTED_MODULE_7__["RenderState"].hidden;
               });
 
               if (chartSeriesSet.length) {

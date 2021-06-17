@@ -784,79 +784,170 @@
       }, {
         path: "advanced-usage",
         loadChildren: function loadChildren() {
-          return Promise.all(
-          /*! import() | components-demo-advanced-usage-chart-docs-advanced-usage-module */
-          [__webpack_require__.e("default~bar-bar-prototype-module~chart-collection-chart-collection-example-module~components-demo-ad~ec3dd4a6"), __webpack_require__.e("components-demo-advanced-usage-chart-docs-advanced-usage-module")]).then(__webpack_require__.bind(null,
-          /*! components/demo/advanced-usage/chart-docs-advanced-usage.module */
-          "SW6y")).then(function (m) {
-            return m.ChartDocsAdvancedUsageModule;
-          });
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+            return regeneratorRuntime.wrap(function _callee$(_context) {
+              while (1) {
+                switch (_context.prev = _context.next) {
+                  case 0:
+                    return _context.abrupt("return", Promise.all(
+                    /*! import() | components-demo-advanced-usage-chart-docs-advanced-usage-module */
+                    [__webpack_require__.e("default~bar-bar-prototype-module~chart-collection-chart-collection-example-module~components-demo-ad~ec3dd4a6"), __webpack_require__.e("components-demo-advanced-usage-chart-docs-advanced-usage-module")]).then(__webpack_require__.bind(null,
+                    /*! components/demo/advanced-usage/chart-docs-advanced-usage.module */
+                    "SW6y")).then(function (m) {
+                      return m.ChartDocsAdvancedUsageModule;
+                    }));
+
+                  case 1:
+                  case "end":
+                    return _context.stop();
+                }
+              }
+            }, _callee);
+          }));
         }
       }, {
         path: "chart-types",
         loadChildren: function loadChildren() {
-          return Promise.all(
-          /*! import() | components-demo-chart-types-chart-docs-chart-types-module */
-          [__webpack_require__.e("default~bar-bar-prototype-module~chart-collection-chart-collection-example-module~components-demo-ad~ec3dd4a6"), __webpack_require__.e("components-demo-chart-types-chart-docs-chart-types-module")]).then(__webpack_require__.bind(null,
-          /*! components/demo/chart-types/chart-docs-chart-types.module */
-          "3azN")).then(function (m) {
-            return m.ChartDocsChartTypesModule;
-          });
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+            return regeneratorRuntime.wrap(function _callee2$(_context2) {
+              while (1) {
+                switch (_context2.prev = _context2.next) {
+                  case 0:
+                    return _context2.abrupt("return", Promise.all(
+                    /*! import() | components-demo-chart-types-chart-docs-chart-types-module */
+                    [__webpack_require__.e("default~bar-bar-prototype-module~chart-collection-chart-collection-example-module~components-demo-ad~ec3dd4a6"), __webpack_require__.e("components-demo-chart-types-chart-docs-chart-types-module")]).then(__webpack_require__.bind(null,
+                    /*! components/demo/chart-types/chart-docs-chart-types.module */
+                    "3azN")).then(function (m) {
+                      return m.ChartDocsChartTypesModule;
+                    }));
+
+                  case 1:
+                  case "end":
+                    return _context2.stop();
+                }
+              }
+            }, _callee2);
+          }));
         }
       }, {
         path: "time-frame-bar",
         loadChildren: function loadChildren() {
-          return Promise.all(
-          /*! import() | components-demo-time-frame-bar-chart-docs-time-frame-bar-module */
-          [__webpack_require__.e("default~bar-bar-prototype-module~chart-collection-chart-collection-example-module~components-demo-ad~ec3dd4a6"), __webpack_require__.e("common"), __webpack_require__.e("components-demo-time-frame-bar-chart-docs-time-frame-bar-module")]).then(__webpack_require__.bind(null,
-          /*! components/demo/time-frame-bar/chart-docs-time-frame-bar.module */
-          "LGh7")).then(function (m) {
-            return m.ChartDocsTimeFrameBarModule;
-          });
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
+            return regeneratorRuntime.wrap(function _callee3$(_context3) {
+              while (1) {
+                switch (_context3.prev = _context3.next) {
+                  case 0:
+                    return _context3.abrupt("return", Promise.all(
+                    /*! import() | components-demo-time-frame-bar-chart-docs-time-frame-bar-module */
+                    [__webpack_require__.e("default~bar-bar-prototype-module~chart-collection-chart-collection-example-module~components-demo-ad~ec3dd4a6"), __webpack_require__.e("common"), __webpack_require__.e("components-demo-time-frame-bar-chart-docs-time-frame-bar-module")]).then(__webpack_require__.bind(null,
+                    /*! components/demo/time-frame-bar/chart-docs-time-frame-bar.module */
+                    "LGh7")).then(function (m) {
+                      return m.ChartDocsTimeFrameBarModule;
+                    }));
+
+                  case 1:
+                  case "end":
+                    return _context3.stop();
+                }
+              }
+            }, _callee3);
+          }));
         }
       }, {
         path: "development",
         loadChildren: function loadChildren() {
-          return __webpack_require__.e(
-          /*! import() | components-demo-development-charts-development-module */
-          "components-demo-development-charts-development-module").then(__webpack_require__.bind(null,
-          /*! components/demo/development/charts-development.module */
-          "eExj")).then(function (m) {
-            return m.ChartsDevelopmentModule;
-          });
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
+            return regeneratorRuntime.wrap(function _callee4$(_context4) {
+              while (1) {
+                switch (_context4.prev = _context4.next) {
+                  case 0:
+                    return _context4.abrupt("return", __webpack_require__.e(
+                    /*! import() | components-demo-development-charts-development-module */
+                    "components-demo-development-charts-development-module").then(__webpack_require__.bind(null,
+                    /*! components/demo/development/charts-development.module */
+                    "eExj")).then(function (m) {
+                      return m.ChartsDevelopmentModule;
+                    }));
+
+                  case 1:
+                  case "end":
+                    return _context4.stop();
+                }
+              }
+            }, _callee4);
+          }));
         }
       }, {
         path: "layout",
         loadChildren: function loadChildren() {
-          return Promise.all(
-          /*! import() | components-demo-layout-chart-docs-layout-module */
-          [__webpack_require__.e("common"), __webpack_require__.e("components-demo-layout-chart-docs-layout-module")]).then(__webpack_require__.bind(null,
-          /*! components/demo/layout/chart-docs-layout.module */
-          "Kks0")).then(function (m) {
-            return m.ChartDocsLayoutModule;
-          });
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee5() {
+            return regeneratorRuntime.wrap(function _callee5$(_context5) {
+              while (1) {
+                switch (_context5.prev = _context5.next) {
+                  case 0:
+                    return _context5.abrupt("return", Promise.all(
+                    /*! import() | components-demo-layout-chart-docs-layout-module */
+                    [__webpack_require__.e("common"), __webpack_require__.e("components-demo-layout-chart-docs-layout-module")]).then(__webpack_require__.bind(null,
+                    /*! components/demo/layout/chart-docs-layout.module */
+                    "Kks0")).then(function (m) {
+                      return m.ChartDocsLayoutModule;
+                    }));
+
+                  case 1:
+                  case "end":
+                    return _context5.stop();
+                }
+              }
+            }, _callee5);
+          }));
         }
       }, {
         path: "plugins",
         loadChildren: function loadChildren() {
-          return __webpack_require__.e(
-          /*! import() | components-demo-plugins-chart-docs-plugins-module */
-          "components-demo-plugins-chart-docs-plugins-module").then(__webpack_require__.bind(null,
-          /*! components/demo/plugins/chart-docs-plugins.module */
-          "O5oh")).then(function (m) {
-            return m.ChartDocsPluginsModule;
-          });
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee6() {
+            return regeneratorRuntime.wrap(function _callee6$(_context6) {
+              while (1) {
+                switch (_context6.prev = _context6.next) {
+                  case 0:
+                    return _context6.abrupt("return", __webpack_require__.e(
+                    /*! import() | components-demo-plugins-chart-docs-plugins-module */
+                    "components-demo-plugins-chart-docs-plugins-module").then(__webpack_require__.bind(null,
+                    /*! components/demo/plugins/chart-docs-plugins.module */
+                    "O5oh")).then(function (m) {
+                      return m.ChartDocsPluginsModule;
+                    }));
+
+                  case 1:
+                  case "end":
+                    return _context6.stop();
+                }
+              }
+            }, _callee6);
+          }));
         }
       }, {
         path: "thresholds",
         loadChildren: function loadChildren() {
-          return Promise.all(
-          /*! import() | components-demo-thresholds-chart-docs-thresholds-module */
-          [__webpack_require__.e("default~bar-bar-prototype-module~chart-collection-chart-collection-example-module~components-demo-ad~ec3dd4a6"), __webpack_require__.e("common"), __webpack_require__.e("components-demo-thresholds-chart-docs-thresholds-module")]).then(__webpack_require__.bind(null,
-          /*! components/demo/thresholds/chart-docs-thresholds.module */
-          "Z9Re")).then(function (m) {
-            return m.ChartDocsThresholdsModule;
-          });
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee7() {
+            return regeneratorRuntime.wrap(function _callee7$(_context7) {
+              while (1) {
+                switch (_context7.prev = _context7.next) {
+                  case 0:
+                    return _context7.abrupt("return", Promise.all(
+                    /*! import() | components-demo-thresholds-chart-docs-thresholds-module */
+                    [__webpack_require__.e("default~bar-bar-prototype-module~chart-collection-chart-collection-example-module~components-demo-ad~ec3dd4a6"), __webpack_require__.e("common"), __webpack_require__.e("components-demo-thresholds-chart-docs-thresholds-module")]).then(__webpack_require__.bind(null,
+                    /*! components/demo/thresholds/chart-docs-thresholds.module */
+                    "Z9Re")).then(function (m) {
+                      return m.ChartDocsThresholdsModule;
+                    }));
+
+                  case 1:
+                  case "end":
+                    return _context7.stop();
+                }
+              }
+            }, _callee7);
+          }));
         }
       }];
 

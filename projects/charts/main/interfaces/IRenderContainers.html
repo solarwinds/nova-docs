@@ -87,7 +87,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="255" class="link-to-prism">src/core/common/types.ts:255</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="264" class="link-to-prism">src/core/common/types.ts:264</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -291,11 +291,20 @@ export interface IChartSeries&lt;A extends IAccessors&gt; extends IDataSeries&lt
      * uses &#x27;x&#x27; and &#x27;y&#x27; as the keys for its scales.
      */
     scales: Scales;
+    /**
+     * Represents an emphasis/visibility state of this series
+     */
+    renderState?: RenderState;
 }
 
 export interface IChartAssistSeries&lt;A extends IAccessors&gt; extends IChartSeries&lt;A&gt; {
+    /**
+     * Whether this series should be shown in the legend
+     */
     showInLegend?: boolean;
-    renderState?: RenderState;
+    /**
+     * Whether this series should be preprocessed in the chart assist
+     */
     preprocess?: boolean;
 }
 

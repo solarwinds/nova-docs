@@ -696,31 +696,31 @@ const appRoutes = [
     },
     {
         path: "advanced-usage",
-        loadChildren: () => Promise.all(/*! import() | components-demo-advanced-usage-chart-docs-advanced-usage-module */[__webpack_require__.e("default~bar-bar-prototype-module~chart-collection-chart-collection-example-module~components-demo-ad~ec3dd4a6"), __webpack_require__.e("components-demo-advanced-usage-chart-docs-advanced-usage-module")]).then(__webpack_require__.bind(null, /*! components/demo/advanced-usage/chart-docs-advanced-usage.module */ "SW6y")).then(m => m.ChartDocsAdvancedUsageModule),
+        loadChildren: () => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, function* () { return Promise.all(/*! import() | components-demo-advanced-usage-chart-docs-advanced-usage-module */[__webpack_require__.e("default~bar-bar-prototype-module~chart-collection-chart-collection-example-module~components-demo-ad~ec3dd4a6"), __webpack_require__.e("components-demo-advanced-usage-chart-docs-advanced-usage-module")]).then(__webpack_require__.bind(null, /*! components/demo/advanced-usage/chart-docs-advanced-usage.module */ "SW6y")).then(m => m.ChartDocsAdvancedUsageModule); }),
     },
     {
         path: "chart-types",
-        loadChildren: () => Promise.all(/*! import() | components-demo-chart-types-chart-docs-chart-types-module */[__webpack_require__.e("default~bar-bar-prototype-module~chart-collection-chart-collection-example-module~components-demo-ad~ec3dd4a6"), __webpack_require__.e("components-demo-chart-types-chart-docs-chart-types-module")]).then(__webpack_require__.bind(null, /*! components/demo/chart-types/chart-docs-chart-types.module */ "3azN")).then(m => m.ChartDocsChartTypesModule),
+        loadChildren: () => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, function* () { return Promise.all(/*! import() | components-demo-chart-types-chart-docs-chart-types-module */[__webpack_require__.e("default~bar-bar-prototype-module~chart-collection-chart-collection-example-module~components-demo-ad~ec3dd4a6"), __webpack_require__.e("components-demo-chart-types-chart-docs-chart-types-module")]).then(__webpack_require__.bind(null, /*! components/demo/chart-types/chart-docs-chart-types.module */ "3azN")).then(m => m.ChartDocsChartTypesModule); }),
     },
     {
         path: "time-frame-bar",
-        loadChildren: () => Promise.all(/*! import() | components-demo-time-frame-bar-chart-docs-time-frame-bar-module */[__webpack_require__.e("default~bar-bar-prototype-module~chart-collection-chart-collection-example-module~components-demo-ad~ec3dd4a6"), __webpack_require__.e("common"), __webpack_require__.e("components-demo-time-frame-bar-chart-docs-time-frame-bar-module")]).then(__webpack_require__.bind(null, /*! components/demo/time-frame-bar/chart-docs-time-frame-bar.module */ "LGh7")).then(m => m.ChartDocsTimeFrameBarModule),
+        loadChildren: () => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, function* () { return Promise.all(/*! import() | components-demo-time-frame-bar-chart-docs-time-frame-bar-module */[__webpack_require__.e("default~bar-bar-prototype-module~chart-collection-chart-collection-example-module~components-demo-ad~ec3dd4a6"), __webpack_require__.e("common"), __webpack_require__.e("components-demo-time-frame-bar-chart-docs-time-frame-bar-module")]).then(__webpack_require__.bind(null, /*! components/demo/time-frame-bar/chart-docs-time-frame-bar.module */ "LGh7")).then(m => m.ChartDocsTimeFrameBarModule); }),
     },
     {
         path: "development",
-        loadChildren: () => __webpack_require__.e(/*! import() | components-demo-development-charts-development-module */ "components-demo-development-charts-development-module").then(__webpack_require__.bind(null, /*! components/demo/development/charts-development.module */ "eExj")).then(m => m.ChartsDevelopmentModule),
+        loadChildren: () => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, function* () { return __webpack_require__.e(/*! import() | components-demo-development-charts-development-module */ "components-demo-development-charts-development-module").then(__webpack_require__.bind(null, /*! components/demo/development/charts-development.module */ "eExj")).then(m => m.ChartsDevelopmentModule); }),
     },
     {
         path: "layout",
-        loadChildren: () => Promise.all(/*! import() | components-demo-layout-chart-docs-layout-module */[__webpack_require__.e("common"), __webpack_require__.e("components-demo-layout-chart-docs-layout-module")]).then(__webpack_require__.bind(null, /*! components/demo/layout/chart-docs-layout.module */ "Kks0")).then(m => m.ChartDocsLayoutModule),
+        loadChildren: () => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, function* () { return Promise.all(/*! import() | components-demo-layout-chart-docs-layout-module */[__webpack_require__.e("common"), __webpack_require__.e("components-demo-layout-chart-docs-layout-module")]).then(__webpack_require__.bind(null, /*! components/demo/layout/chart-docs-layout.module */ "Kks0")).then(m => m.ChartDocsLayoutModule); }),
     },
     {
         path: "plugins",
-        loadChildren: () => __webpack_require__.e(/*! import() | components-demo-plugins-chart-docs-plugins-module */ "components-demo-plugins-chart-docs-plugins-module").then(__webpack_require__.bind(null, /*! components/demo/plugins/chart-docs-plugins.module */ "O5oh")).then(m => m.ChartDocsPluginsModule),
+        loadChildren: () => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, function* () { return __webpack_require__.e(/*! import() | components-demo-plugins-chart-docs-plugins-module */ "components-demo-plugins-chart-docs-plugins-module").then(__webpack_require__.bind(null, /*! components/demo/plugins/chart-docs-plugins.module */ "O5oh")).then(m => m.ChartDocsPluginsModule); }),
     },
     {
         path: "thresholds",
-        loadChildren: () => Promise.all(/*! import() | components-demo-thresholds-chart-docs-thresholds-module */[__webpack_require__.e("default~bar-bar-prototype-module~chart-collection-chart-collection-example-module~components-demo-ad~ec3dd4a6"), __webpack_require__.e("common"), __webpack_require__.e("components-demo-thresholds-chart-docs-thresholds-module")]).then(__webpack_require__.bind(null, /*! components/demo/thresholds/chart-docs-thresholds.module */ "Z9Re")).then(m => m.ChartDocsThresholdsModule),
+        loadChildren: () => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, function* () { return Promise.all(/*! import() | components-demo-thresholds-chart-docs-thresholds-module */[__webpack_require__.e("default~bar-bar-prototype-module~chart-collection-chart-collection-example-module~components-demo-ad~ec3dd4a6"), __webpack_require__.e("common"), __webpack_require__.e("components-demo-thresholds-chart-docs-thresholds-module")]).then(__webpack_require__.bind(null, /*! components/demo/thresholds/chart-docs-thresholds.module */ "Z9Re")).then(m => m.ChartDocsThresholdsModule); }),
     },
 ];
 let AppRoutingModule = class AppRoutingModule {
