@@ -1,5 +1,5 @@
 (function () {
-  var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10, _templateObject11, _templateObject12, _templateObject13, _templateObject14, _templateObject15, _templateObject16, _templateObject17, _templateObject18, _templateObject19, _templateObject20, _templateObject21, _templateObject22, _templateObject23, _templateObject24, _templateObject25, _templateObject26, _templateObject27, _templateObject28, _templateObject29, _templateObject30, _templateObject31, _templateObject32, _templateObject33, _templateObject34, _templateObject35, _templateObject36, _templateObject37, _templateObject38, _templateObject39, _templateObject40, _templateObject41, _templateObject42, _templateObject43, _templateObject44, _templateObject45, _templateObject46, _templateObject47, _templateObject48, _templateObject49, _templateObject50, _templateObject51;
+  var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10, _templateObject11, _templateObject12, _templateObject13, _templateObject14, _templateObject15, _templateObject16, _templateObject17, _templateObject18, _templateObject19, _templateObject20, _templateObject21, _templateObject22, _templateObject23, _templateObject24, _templateObject25, _templateObject26, _templateObject27, _templateObject28, _templateObject29, _templateObject30, _templateObject31, _templateObject32, _templateObject33, _templateObject34, _templateObject35, _templateObject36, _templateObject37, _templateObject38, _templateObject39, _templateObject40, _templateObject41, _templateObject42, _templateObject43, _templateObject44, _templateObject45;
 
   function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
@@ -683,7 +683,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import { Component, OnInit } from \"@angular/core\";\nimport { FormBuilder, FormGroup, Validators } from \"@angular/forms\";\nimport { CheckboxChangeEvent } from \"@nova-ui/bits\";\n\n@Component({\n    selector: \"nui-radio-group-test\",\n    templateUrl: \"./radio-group-test.component.html\",\n})\nexport class RadioGroupTestComponent implements OnInit {\n    public disabledForm: FormGroup;\n    public fancyForm: FormGroup;\n\n    public fruits = [$localize `Banana`, $localize `Orange`, $localize `Kiwi`, $localize `Papaya`];\n    public vegetables = [$localize `Cabbage`, $localize `Potato`, $localize `Tomato`, $localize `Carrot`];\n    public colors = [$localize `Red`, $localize `Green`, $localize `Blue`];\n    public colorHints = {\"Red\": $localize `hot color`, \"Green\": $localize `color of nature`, \"Blue\": $localize `color of sky`};\n\n    public selectedColor: string;\n    public selectedFruit: string;\n    public selectedFruitInline: string;\n\n    constructor(private formBuilder: FormBuilder) {}\n\n    public ngOnInit() {\n        this.disabledForm = this.formBuilder.group({\n            radioGroup: this.formBuilder.control({value: \"\", disabled: true}),\n        });\n        this.fancyForm = this.formBuilder.group({\n            radioGroup: this.formBuilder.control(this.vegetables[1], [\n                Validators.required,\n            ]),\n        });\n    }\n\n    public toggleDisabled(event: CheckboxChangeEvent) {\n        this.disabledForm.get(\"radioGroup\")?.[!event.target.checked ? \"enable\" : \"disable\"]();\n    }\n}\n";
+      __webpack_exports__["default"] = "import { Component, OnInit } from \"@angular/core\";\nimport { FormBuilder, FormGroup } from \"@angular/forms\";\nimport { CheckboxChangeEvent } from \"@nova-ui/bits\";\n\n@Component({\n    selector: \"nui-radio-group-test\",\n    templateUrl: \"./radio-group-test.component.html\",\n})\nexport class RadioGroupTestComponent implements OnInit {\n    public disabledForm: FormGroup;\n\n    public fruits = [$localize `Banana`, $localize `Orange`, $localize `Kiwi`, $localize `Papaya`];\n    public vegetables = [$localize `Cabbage`, $localize `Potato`, $localize `Tomato`, $localize `Carrot`];\n\n    public selectedFruit: string;\n    public selectedFruitInline: string;\n\n    constructor(private formBuilder: FormBuilder) {}\n\n    public ngOnInit() {\n        this.disabledForm = this.formBuilder.group({\n            radioGroup: this.formBuilder.control({value: \"\", disabled: true}),\n        });\n    }\n\n    public toggleDisabled(event: CheckboxChangeEvent) {\n        this.disabledForm.get(\"radioGroup\")?.[!event.target.checked ? \"enable\" : \"disable\"]();\n    }\n}\n";
       /***/
     },
 
@@ -1911,12 +1911,6 @@
           this.formBuilder = formBuilder;
           this.fruits = [$localize(_templateObject25 || (_templateObject25 = _taggedTemplateLiteral(["Banana"]))), $localize(_templateObject26 || (_templateObject26 = _taggedTemplateLiteral(["Orange"]))), $localize(_templateObject27 || (_templateObject27 = _taggedTemplateLiteral(["Kiwi"]))), $localize(_templateObject28 || (_templateObject28 = _taggedTemplateLiteral(["Papaya"])))];
           this.vegetables = [$localize(_templateObject29 || (_templateObject29 = _taggedTemplateLiteral(["Cabbage"]))), $localize(_templateObject30 || (_templateObject30 = _taggedTemplateLiteral(["Potato"]))), $localize(_templateObject31 || (_templateObject31 = _taggedTemplateLiteral(["Tomato"]))), $localize(_templateObject32 || (_templateObject32 = _taggedTemplateLiteral(["Carrot"])))];
-          this.colors = [$localize(_templateObject33 || (_templateObject33 = _taggedTemplateLiteral(["Red"]))), $localize(_templateObject34 || (_templateObject34 = _taggedTemplateLiteral(["Green"]))), $localize(_templateObject35 || (_templateObject35 = _taggedTemplateLiteral(["Blue"])))];
-          this.colorHints = {
-            "Red": $localize(_templateObject36 || (_templateObject36 = _taggedTemplateLiteral(["hot color"]))),
-            "Green": $localize(_templateObject37 || (_templateObject37 = _taggedTemplateLiteral(["color of nature"]))),
-            "Blue": $localize(_templateObject38 || (_templateObject38 = _taggedTemplateLiteral(["color of sky"])))
-          };
         }
 
         _createClass(RadioGroupTestComponent, [{
@@ -1927,9 +1921,6 @@
                 value: "",
                 disabled: true
               })
-            });
-            this.fancyForm = this.formBuilder.group({
-              radioGroup: this.formBuilder.control(this.vegetables[1], [_angular_forms__WEBPACK_IMPORTED_MODULE_0__["Validators"].required])
             });
           }
         }, {
@@ -2138,11 +2129,11 @@
           _classCallCheck(this, ValueChangeRadioGroupExampleComponent);
 
           this.toastService = toastService;
-          this.colors = [$localize(_templateObject39 || (_templateObject39 = _taggedTemplateLiteral(["Red"]))), $localize(_templateObject40 || (_templateObject40 = _taggedTemplateLiteral(["Green"]))), $localize(_templateObject41 || (_templateObject41 = _taggedTemplateLiteral(["Blue"])))];
+          this.colors = [$localize(_templateObject33 || (_templateObject33 = _taggedTemplateLiteral(["Red"]))), $localize(_templateObject34 || (_templateObject34 = _taggedTemplateLiteral(["Green"]))), $localize(_templateObject35 || (_templateObject35 = _taggedTemplateLiteral(["Blue"])))];
           this.colorHints = {
-            "Red": $localize(_templateObject42 || (_templateObject42 = _taggedTemplateLiteral(["hot color"]))),
-            "Green": $localize(_templateObject43 || (_templateObject43 = _taggedTemplateLiteral(["color of nature"]))),
-            "Blue": $localize(_templateObject44 || (_templateObject44 = _taggedTemplateLiteral(["color of sky"])))
+            "Red": $localize(_templateObject36 || (_templateObject36 = _taggedTemplateLiteral(["hot color"]))),
+            "Green": $localize(_templateObject37 || (_templateObject37 = _taggedTemplateLiteral(["color of nature"]))),
+            "Blue": $localize(_templateObject38 || (_templateObject38 = _taggedTemplateLiteral(["color of sky"])))
           };
         }
 
@@ -2150,7 +2141,7 @@
           key: "showSelected",
           value: function showSelected() {
             this.toastService.success({
-              message: $localize(_templateObject45 || (_templateObject45 = _taggedTemplateLiteral(["You selected ", ". Nice!"])), this.selectedColor)
+              message: $localize(_templateObject39 || (_templateObject39 = _taggedTemplateLiteral(["You selected ", ". Nice!"])), this.selectedColor)
             });
           }
         }]);
@@ -2176,7 +2167,7 @@
             });
             i18n_0 = MSG_EXTERNAL_9064383497908812977$$DEMO_SRC_COMPONENTS_DEMO_RADIO_GROUP_VALUE_CHANGE_RADIO_GROUP_VALUE_CHANGE_RADIO_GROUP_EXAMPLE_COMPONENT_TS_1;
           } else {
-            i18n_0 = $localize(_templateObject46 || (_templateObject46 = _taggedTemplateLiteral([":\u241F29f157c41e563e411cfa5dc0a3134f0bb4313b77\u241F9064383497908812977:Selected color: ", ":INTERPOLATION:"])), "\uFFFD0\uFFFD");
+            i18n_0 = $localize(_templateObject40 || (_templateObject40 = _taggedTemplateLiteral([":\u241F29f157c41e563e411cfa5dc0a3134f0bb4313b77\u241F9064383497908812977:Selected color: ", ":INTERPOLATION:"])), "\uFFFD0\uFFFD");
           }
 
           return [i18n_0, ["name", "color", 3, "value", "valueChange"], [3, "value", "hint", 4, "ngFor", "ngForOf"], [3, "value", "hint"]];
@@ -2285,7 +2276,7 @@
       var RadioGroupInlineExampleComponent = function RadioGroupInlineExampleComponent() {
         _classCallCheck(this, RadioGroupInlineExampleComponent);
 
-        this.fruits = [$localize(_templateObject47 || (_templateObject47 = _taggedTemplateLiteral(["Banana"]))), $localize(_templateObject48 || (_templateObject48 = _taggedTemplateLiteral(["Orange"]))), $localize(_templateObject49 || (_templateObject49 = _taggedTemplateLiteral(["Kiwi"]))), $localize(_templateObject50 || (_templateObject50 = _taggedTemplateLiteral(["Papaya"])))];
+        this.fruits = [$localize(_templateObject41 || (_templateObject41 = _taggedTemplateLiteral(["Banana"]))), $localize(_templateObject42 || (_templateObject42 = _taggedTemplateLiteral(["Orange"]))), $localize(_templateObject43 || (_templateObject43 = _taggedTemplateLiteral(["Kiwi"]))), $localize(_templateObject44 || (_templateObject44 = _taggedTemplateLiteral(["Papaya"])))];
       };
 
       RadioGroupInlineExampleComponent.ɵfac = function RadioGroupInlineExampleComponent_Factory(t) {
@@ -2306,7 +2297,7 @@
             });
             i18n_0 = MSG_EXTERNAL_8732319579184328444$$DEMO_SRC_COMPONENTS_DEMO_RADIO_GROUP_RADIO_GROUP_INLINE_RADIO_GROUP_INLINE_EXAMPLE_COMPONENT_TS_1;
           } else {
-            i18n_0 = $localize(_templateObject51 || (_templateObject51 = _taggedTemplateLiteral([":\u241F76fcbe97be58e408b35d13a78f727194e9b6688c\u241F8732319579184328444:Selected fruit: ", ":INTERPOLATION:"])), "\uFFFD0\uFFFD");
+            i18n_0 = $localize(_templateObject45 || (_templateObject45 = _taggedTemplateLiteral([":\u241F76fcbe97be58e408b35d13a78f727194e9b6688c\u241F8732319579184328444:Selected fruit: ", ":INTERPOLATION:"])), "\uFFFD0\uFFFD");
           }
 
           return [i18n_0, ["id", "fruit-radio-group-inline", "name", "fruit", 1, "nui-radio-group-inline", 3, "value", "valueChange"], [3, "value", "checked", 4, "ngFor", "ngForOf"], [3, "value", "checked"]];

@@ -384,7 +384,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { Component, OnInit } from \"@angular/core\";\nimport { FormBuilder, FormGroup, Validators } from \"@angular/forms\";\nimport { CheckboxChangeEvent } from \"@nova-ui/bits\";\n\n@Component({\n    selector: \"nui-radio-group-test\",\n    templateUrl: \"./radio-group-test.component.html\",\n})\nexport class RadioGroupTestComponent implements OnInit {\n    public disabledForm: FormGroup;\n    public fancyForm: FormGroup;\n\n    public fruits = [$localize `Banana`, $localize `Orange`, $localize `Kiwi`, $localize `Papaya`];\n    public vegetables = [$localize `Cabbage`, $localize `Potato`, $localize `Tomato`, $localize `Carrot`];\n    public colors = [$localize `Red`, $localize `Green`, $localize `Blue`];\n    public colorHints = {\"Red\": $localize `hot color`, \"Green\": $localize `color of nature`, \"Blue\": $localize `color of sky`};\n\n    public selectedColor: string;\n    public selectedFruit: string;\n    public selectedFruitInline: string;\n\n    constructor(private formBuilder: FormBuilder) {}\n\n    public ngOnInit() {\n        this.disabledForm = this.formBuilder.group({\n            radioGroup: this.formBuilder.control({value: \"\", disabled: true}),\n        });\n        this.fancyForm = this.formBuilder.group({\n            radioGroup: this.formBuilder.control(this.vegetables[1], [\n                Validators.required,\n            ]),\n        });\n    }\n\n    public toggleDisabled(event: CheckboxChangeEvent) {\n        this.disabledForm.get(\"radioGroup\")?.[!event.target.checked ? \"enable\" : \"disable\"]();\n    }\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import { Component, OnInit } from \"@angular/core\";\nimport { FormBuilder, FormGroup } from \"@angular/forms\";\nimport { CheckboxChangeEvent } from \"@nova-ui/bits\";\n\n@Component({\n    selector: \"nui-radio-group-test\",\n    templateUrl: \"./radio-group-test.component.html\",\n})\nexport class RadioGroupTestComponent implements OnInit {\n    public disabledForm: FormGroup;\n\n    public fruits = [$localize `Banana`, $localize `Orange`, $localize `Kiwi`, $localize `Papaya`];\n    public vegetables = [$localize `Cabbage`, $localize `Potato`, $localize `Tomato`, $localize `Carrot`];\n\n    public selectedFruit: string;\n    public selectedFruitInline: string;\n\n    constructor(private formBuilder: FormBuilder) {}\n\n    public ngOnInit() {\n        this.disabledForm = this.formBuilder.group({\n            radioGroup: this.formBuilder.control({value: \"\", disabled: true}),\n        });\n    }\n\n    public toggleDisabled(event: CheckboxChangeEvent) {\n        this.disabledForm.get(\"radioGroup\")?.[!event.target.checked ? \"enable\" : \"disable\"]();\n    }\n}\n");
 
 /***/ }),
 
@@ -990,17 +990,10 @@ class RadioGroupTestComponent {
         this.formBuilder = formBuilder;
         this.fruits = [$localize `Banana`, $localize `Orange`, $localize `Kiwi`, $localize `Papaya`];
         this.vegetables = [$localize `Cabbage`, $localize `Potato`, $localize `Tomato`, $localize `Carrot`];
-        this.colors = [$localize `Red`, $localize `Green`, $localize `Blue`];
-        this.colorHints = { "Red": $localize `hot color`, "Green": $localize `color of nature`, "Blue": $localize `color of sky` };
     }
     ngOnInit() {
         this.disabledForm = this.formBuilder.group({
             radioGroup: this.formBuilder.control({ value: "", disabled: true }),
-        });
-        this.fancyForm = this.formBuilder.group({
-            radioGroup: this.formBuilder.control(this.vegetables[1], [
-                _angular_forms__WEBPACK_IMPORTED_MODULE_0__["Validators"].required,
-            ]),
         });
     }
     toggleDisabled(event) {
