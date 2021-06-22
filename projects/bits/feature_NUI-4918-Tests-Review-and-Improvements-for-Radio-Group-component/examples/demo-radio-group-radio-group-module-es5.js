@@ -327,15 +327,15 @@
       /* harmony import */
 
 
-      var _src_lib_form_field_form_field_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-      /*! ../../../../../../src/lib/form-field/form-field.component */
-      "L5T1");
+      var _radio_group_in_form_radio_group_in_form_example_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! ../radio-group-in-form/radio-group-in-form.example.component */
+      "9LW3");
       /* harmony import */
 
 
-      var _radio_group_in_form_radio_group_in_form_example_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
-      /*! ../radio-group-in-form/radio-group-in-form.example.component */
-      "9LW3");
+      var _src_lib_form_field_form_field_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! ../../../../../../src/lib/form-field/form-field.component */
+      "L5T1");
 
       function RadioGroupVisualTestComponent_nui_radio_4_Template(rf, ctx) {
         if (rf & 1) {
@@ -401,7 +401,7 @@
         }
       }
 
-      function RadioGroupVisualTestComponent_nui_radio_19_Template(rf, ctx) {
+      function RadioGroupVisualTestComponent_nui_radio_23_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-radio", 13);
 
@@ -459,7 +459,7 @@
         selectors: [["nui-radio-group-visual-test"]],
         decls: 24,
         vars: 9,
-        consts: [[1, "container"], ["id", "fruit-radio-group", "name", "fruit", 3, "value", "valueChange"], [3, "value", "checked", "disabled", 4, "ngFor", "ngForOf"], ["id", "color-radio-group", "name", "color", 3, "value", "valueChange"], [3, "value", "hint", "disabled", "checked", 4, "ngFor", "ngForOf"], ["id", "inline-color-radio-group", "name", "color", 1, "nui-radio-group-inline", 3, "value", "valueChange"], [3, "formGroup"], ["caption", "Disabled Radio Group in form", 3, "control"], ["id", "fruit-radio-group-disabled", "formControlName", "radioGroup", "name", "fruit-disabled"], [3, "value", 4, "ngFor", "ngForOf"], ["id", "vegetable-radio-group"], [3, "value", "checked", "disabled"], [3, "value", "hint", "disabled", "checked"], [3, "value"]],
+        consts: [[1, "container"], ["id", "fruit-radio-group", "name", "fruit", 3, "value", "valueChange"], [3, "value", "checked", "disabled", 4, "ngFor", "ngForOf"], ["id", "color-radio-group", "name", "color", 3, "value", "valueChange"], [3, "value", "hint", "disabled", "checked", 4, "ngFor", "ngForOf"], ["id", "inline-color-radio-group", "name", "color", 1, "nui-radio-group-inline", 3, "value", "valueChange"], ["id", "vegetable-radio-group"], [3, "formGroup"], ["caption", "Disabled Radio Group in form", 3, "control"], ["id", "fruit-radio-group-disabled", "formControlName", "radioGroup", "name", "fruit-disabled"], [3, "value", 4, "ngFor", "ngForOf"], [3, "value", "checked", "disabled"], [3, "value", "hint", "disabled", "checked"], [3, "value"]],
         template: function RadioGroupVisualTestComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 0);
@@ -518,29 +518,29 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](15, "hr");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](16, "form", 6);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](16, "h3");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](17, "nui-form-field", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](17, "Part Of Form");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](18, "nui-radio-group", 8);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](19, RadioGroupVisualTestComponent_nui_radio_19_Template, 2, 2, "nui-radio", 9);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](18, "nui-radio-group-in-form-example", 6);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](19, "hr");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](20, "form", 7);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](21, "nui-form-field", 8);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](22, "nui-radio-group", 9);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](23, RadioGroupVisualTestComponent_nui_radio_23_Template, 2, 2, "nui-radio", 10);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](20, "hr");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](21, "h3");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](22, "Part Of Form");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](23, "nui-radio-group-in-form-example", 10);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
           }
@@ -570,7 +570,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx.colors);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](6);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("formGroup", ctx.disabledForm);
 
@@ -583,7 +583,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx.fruits);
           }
         },
-        directives: [_src_lib_radio_radio_group_component__WEBPACK_IMPORTED_MODULE_2__["RadioGroupComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgForOf"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormGroupDirective"], _src_lib_form_field_form_field_component__WEBPACK_IMPORTED_MODULE_4__["FormFieldComponent"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControlName"], _radio_group_in_form_radio_group_in_form_example_component__WEBPACK_IMPORTED_MODULE_5__["RadioGroupInFormExampleComponent"], _src_lib_radio_radio_group_component__WEBPACK_IMPORTED_MODULE_2__["RadioComponent"]],
+        directives: [_src_lib_radio_radio_group_component__WEBPACK_IMPORTED_MODULE_2__["RadioGroupComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgForOf"], _radio_group_in_form_radio_group_in_form_example_component__WEBPACK_IMPORTED_MODULE_4__["RadioGroupInFormExampleComponent"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormGroupDirective"], _src_lib_form_field_form_field_component__WEBPACK_IMPORTED_MODULE_5__["FormFieldComponent"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControlName"], _src_lib_radio_radio_group_component__WEBPACK_IMPORTED_MODULE_2__["RadioComponent"]],
         encapsulation: 2
       });
       /***/
@@ -899,7 +899,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<div class=\"container\">\n    <h3>Basic Radio Group</h3>\n    <nui-radio-group id=\"fruit-radio-group\"\n                    name=\"fruit\"\n                    [(value)]=\"selectedFruit\">\n        <nui-radio *ngFor=\"let fruit of fruits\"\n                    [value]=\"fruit\"\n                    [checked]=\"fruit === 'Orange'\"\n                    [disabled]=\"fruit === 'Kiwi'\">\n            {{fruit}}\n        </nui-radio>\n    </nui-radio-group>\n    <hr />\n\n    <h3>Radio Group with pre-selected option and hints</h3>\n    <nui-radio-group id=\"color-radio-group\"\n                    name=\"color\"\n                    [(value)]=\"selectedColor\">\n        <nui-radio *ngFor=\"let color of colors\"\n                    [value]=\"color\"\n                    [hint]=\"colorHints[color]\"\n                    [disabled]=\"color === 'Blue'\"\n                    [checked]=\"color === 'Green'\">\n            {{color}}\n        </nui-radio>\n    </nui-radio-group>\n    <hr />\n\n    <h3>Inline Horizontal Group</h3>\n    <nui-radio-group class=\"nui-radio-group-inline\"\n                    id=\"inline-color-radio-group\"\n                    name=\"color\"\n                    [(value)]=\"selectedColor\">\n        <nui-radio *ngFor=\"let color of colors\"\n                    [value]=\"color\"\n                    [hint]=\"colorHints[color]\"\n                    [disabled]=\"color === 'Red'\"\n                    [checked]=\"color === 'Green'\">\n            {{color}}\n        </nui-radio>\n    </nui-radio-group>\n    <hr />\n\n    <form [formGroup]=\"disabledForm\">\n        <nui-form-field caption=\"Disabled Radio Group in form\"\n                        [control]=\"disabledForm.controls['radioGroup']\">\n            <nui-radio-group id=\"fruit-radio-group-disabled\"\n                             formControlName=\"radioGroup\"\n                             name=\"fruit-disabled\">\n                <nui-radio *ngFor=\"let fruit of fruits\"\n                            [value]=\"fruit\">\n                    {{fruit}}\n                </nui-radio>\n            </nui-radio-group>\n        </nui-form-field>\n    </form>\n    <hr />\n\n    <h3>Part Of Form</h3>\n    <nui-radio-group-in-form-example id=\"vegetable-radio-group\"></nui-radio-group-in-form-example>\n</div>\n";
+      __webpack_exports__["default"] = "<div class=\"container\">\n    <h3>Basic Radio Group</h3>\n    <nui-radio-group id=\"fruit-radio-group\"\n                    name=\"fruit\"\n                    [(value)]=\"selectedFruit\">\n        <nui-radio *ngFor=\"let fruit of fruits\"\n                    [value]=\"fruit\"\n                    [checked]=\"fruit === 'Orange'\"\n                    [disabled]=\"fruit === 'Kiwi'\">\n            {{fruit}}\n        </nui-radio>\n    </nui-radio-group>\n    <hr />\n\n    <h3>Radio Group with pre-selected option and hints</h3>\n    <nui-radio-group id=\"color-radio-group\"\n                    name=\"color\"\n                    [(value)]=\"selectedColor\">\n        <nui-radio *ngFor=\"let color of colors\"\n                    [value]=\"color\"\n                    [hint]=\"colorHints[color]\"\n                    [disabled]=\"color === 'Blue'\"\n                    [checked]=\"color === 'Green'\">\n            {{color}}\n        </nui-radio>\n    </nui-radio-group>\n    <hr />\n\n    <h3>Inline Horizontal Group</h3>\n    <nui-radio-group class=\"nui-radio-group-inline\"\n                    id=\"inline-color-radio-group\"\n                    name=\"color\"\n                    [(value)]=\"selectedColor\">\n        <nui-radio *ngFor=\"let color of colors\"\n                    [value]=\"color\"\n                    [hint]=\"colorHints[color]\"\n                    [disabled]=\"color === 'Red'\"\n                    [checked]=\"color === 'Green'\">\n            {{color}}\n        </nui-radio>\n    </nui-radio-group>\n    <hr />\n\n    <h3>Part Of Form</h3>\n    <nui-radio-group-in-form-example id=\"vegetable-radio-group\"></nui-radio-group-in-form-example>\n    <hr />\n\n    <form [formGroup]=\"disabledForm\">\n        <nui-form-field caption=\"Disabled Radio Group in form\"\n                        [control]=\"disabledForm.controls['radioGroup']\">\n            <nui-radio-group id=\"fruit-radio-group-disabled\"\n                             formControlName=\"radioGroup\"\n                             name=\"fruit-disabled\">\n                <nui-radio *ngFor=\"let fruit of fruits\"\n                            [value]=\"fruit\">\n                    {{fruit}}\n                </nui-radio>\n            </nui-radio-group>\n        </nui-form-field>\n    </form>\n</div>\n";
       /***/
     },
 
