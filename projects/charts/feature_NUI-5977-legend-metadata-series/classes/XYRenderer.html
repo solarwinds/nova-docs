@@ -417,8 +417,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="14"
-                            class="link-to-prism">src/renderers/xy-renderer.ts:14</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="12"
+                            class="link-to-prism">src/renderers/xy-renderer.ts:12</a></div>
                 </td>
             </tr>
 
@@ -501,8 +501,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="32"
-                            class="link-to-prism">src/renderers/xy-renderer.ts:32</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="29"
+                            class="link-to-prism">src/renderers/xy-renderer.ts:29</a></div>
                 </td>
             </tr>
 
@@ -597,8 +597,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="18"
-                            class="link-to-prism">src/renderers/xy-renderer.ts:18</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="14"
+                            class="link-to-prism">src/renderers/xy-renderer.ts:14</a></div>
                 </td>
             </tr>
 
@@ -1751,14 +1751,10 @@ import { Subject } from &quot;rxjs&quot;;
 import isUndefined from &quot;lodash/isUndefined&quot;;
 import { DATA_POINT_INTERACTION_RESET } from &quot;../constants&quot;;
 import { UtilityService } from &quot;../core/common/utility.service&quot;;
-import { IXYAccessors } from &quot;./accessors/xy-accessors&quot;;
-
 
 export class XYRenderer&lt;TA extends IAccessors&gt; extends Renderer&lt;TA&gt; {
-
-    public draw(renderSeries: IRenderSeries&lt;TA&gt;, rendererSubject: Subject&lt;IRendererEventPayload&gt;): void {
-
-    }
+    // This is empty to allow this renderer to be used for series that represent metadata that may be shown in the legend but not visualized on the chart.
+    public draw(renderSeries: IRenderSeries&lt;TA&gt;, rendererSubject: Subject&lt;IRendererEventPayload&gt;): void {}
 
     public getDataPointPosition(dataSeries: IDataSeries&lt;TA&gt;, index: number, scales: Scales): IPosition | undefined {
         if (index &lt; 0 || index &gt;&#x3D; dataSeries.data.length) {
@@ -1774,8 +1770,9 @@ export class XYRenderer&lt;TA extends IAccessors&gt; extends Renderer&lt;TA&gt; 
             y: scales.y.convert(dataSeries.accessors.data.y(point, index, dataSeries.data, dataSeries)),
         };
     }
+
     public getDataPointIndex(series: IDataSeries&lt;TA&gt;, values: { [p: string]: any }, scales: Scales): number {
-        if (isUndefined(values.x)) {
+        if (!this.config.interactive || isUndefined(values.x)) {
             return DATA_POINT_INTERACTION_RESET;
         }
 

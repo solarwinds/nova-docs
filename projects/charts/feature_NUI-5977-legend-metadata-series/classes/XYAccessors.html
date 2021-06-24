@@ -69,7 +69,7 @@
                 <h3>Implements</h3>
             </p>
             <p class="comment">
-                            <code><a href="../interfaces/IAccessors.html" target="_self" >IAccessors</a></code>
+                            <code><a href="../interfaces/IXYAccessors.html" target="_self" >IXYAccessors</a></code>
             </p>
 
 
@@ -87,15 +87,7 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#colorProvider">colorProvider</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Public</span>
                                 <a href="#data">data</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Public</span>
-                                <a href="#markerProvider">markerProvider</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
@@ -114,92 +106,12 @@
     </table>
 </section>
 
-            <section>
-    <h3 id="constructor">Constructor</h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-<code>constructor(colorProvider, markerProvider)</code>
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/renderers/accessors/xy-accessors.ts:33</a></div>
-                            </td>
-                        </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                            <div>
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>colorProvider</td>
-                                                  
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>markerProvider</td>
-                                                  
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-</section>
 
             <section>
     
         <h3 id="inputs">
             Properties
         </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="colorProvider"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
-                            colorProvider</b>
-                            <a href="#colorProvider"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>defaultColorProvider()</code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/renderers/accessors/xy-accessors.ts:35</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
@@ -229,7 +141,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/renderers/accessors/xy-accessors.ts:29</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/renderers/accessors/xy-accessors.ts:30</a></div>
                             </td>
                         </tr>
 
@@ -239,33 +151,6 @@
 </div>
                     </td>
                 </tr>
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="markerProvider"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
-                            markerProvider</b>
-                            <a href="#markerProvider"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>defaultMarkerProvider()</code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/renderers/accessors/xy-accessors.ts:35</a></div>
-                            </td>
-                        </tr>
-
 
             </tbody>
         </table>
@@ -290,7 +175,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/renderers/accessors/xy-accessors.ts:33</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/renderers/accessors/xy-accessors.ts:34</a></div>
                             </td>
                         </tr>
 
@@ -311,6 +196,7 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { DataAccessor, IAccessors, SeriesAccessor } from &quot;../../core/common/types&quot;;
 import { defaultColorProvider, defaultMarkerProvider } from &quot;../../core/common/palette/default-providers&quot;;
+import { Renderer } from &quot;../../core/common/renderer&quot;;
 
 
 export interface IXYDataAccessors {
@@ -335,7 +221,7 @@ export interface IXYAccessors extends IAccessors {
     series: IXYSeriesAccessors;
 }
 
-export class XYAccessors implements IAccessors {
+export class XYAccessors implements IXYAccessors {
     /** The default data accessors for using with renderers deriving from XYRenderer */
     public data: IXYDataAccessors &#x3D; {
         x: (d: any) &#x3D;&gt; d.x,
@@ -343,15 +229,6 @@ export class XYAccessors implements IAccessors {
     };
     public series: IXYSeriesAccessors;
 
-    constructor(public colorProvider &#x3D; defaultColorProvider(), public markerProvider &#x3D; defaultMarkerProvider()) {
-
-        this.data.defined &#x3D; (d: any, i) &#x3D;&gt; d.hasOwnProperty(&quot;defined&quot;) ? d.defined : true;
-
-        this.series &#x3D; {
-            color: this.colorProvider ? this.colorProvider.get : undefined,
-            marker: this.markerProvider ? this.markerProvider.get : undefined,
-        };
-    }
 }
 </code></pre>
     </div>

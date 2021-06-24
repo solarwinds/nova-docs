@@ -12865,53 +12865,37 @@
       /* harmony import */
 
 
-      var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-      /*! lodash/isUndefined */
-      "TP7S");
-      /* harmony import */
-
-
-      var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(lodash_isUndefined__WEBPACK_IMPORTED_MODULE_3__);
-      /* harmony import */
-
-
-      var _constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      var _constants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! ../../constants */
       "he5r");
       /* harmony import */
 
 
-      var _core_common_scales_types__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      var _core_common_scales_types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! ../../core/common/scales/types */
       "41FX");
       /* harmony import */
 
 
-      var _core_common_utility_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
-      /*! ../../core/common/utility.service */
-      "TnLJ");
-      /* harmony import */
-
-
-      var _constants__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      var _constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! ../constants */
       "s8k4");
       /* harmony import */
 
 
-      var _marker_utils__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      var _marker_utils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! ../marker-utils */
       "pm6l");
       /* harmony import */
 
 
-      var _types__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      var _types__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! ../types */
       "AbRU");
       /* harmony import */
 
 
-      var _xy_renderer__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+      var _xy_renderer__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! ../xy-renderer */
       "EtOI");
       /**
@@ -12941,7 +12925,7 @@
             curveType: d3_shape__WEBPACK_IMPORTED_MODULE_1__["curveLinear"],
             interactive: true,
             areaClass: "nui-chart-area",
-            markerInteraction: _constants__WEBPACK_IMPORTED_MODULE_7__["DEFAULT_MARKER_INTERACTION_CONFIG"]
+            markerInteraction: _constants__WEBPACK_IMPORTED_MODULE_5__["DEFAULT_MARKER_INTERACTION_CONFIG"]
           }; // setting default values to the properties that were not set by user
 
           _this37.config = lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_2___default()(_this37.config, _this37.DEFAULT_CONFIG);
@@ -12955,7 +12939,7 @@
           value: function draw(renderSeries, rendererSubject) {
             var _a, _b, _c;
 
-            var target = renderSeries.containers[_types__WEBPACK_IMPORTED_MODULE_9__["RenderLayerName"].data];
+            var target = renderSeries.containers[_types__WEBPACK_IMPORTED_MODULE_7__["RenderLayerName"].data];
             var accessors = renderSeries.dataSeries.accessors;
             var path = target.select("path.".concat(this.config.areaClass));
 
@@ -13028,30 +13012,11 @@
             }).curve(this.config.curveType);
             path.attr("d", (_a = areaFunc(validatedData)) !== null && _a !== void 0 ? _a : "");
           }
-          /** See {@link Renderer#getDataPointIndex} */
-
-        }, {
-          key: "getDataPointIndex",
-          value: function getDataPointIndex(series, values, scales) {
-            if (lodash_isUndefined__WEBPACK_IMPORTED_MODULE_3___default()(values.x)) {
-              return _constants__WEBPACK_IMPORTED_MODULE_4__["DATA_POINT_INTERACTION_RESET"];
-            }
-
-            var index = _core_common_utility_service__WEBPACK_IMPORTED_MODULE_6__["UtilityService"].getClosestIndex(series.data, function (d, i) {
-              return series.accessors.data.x(d, i, series.data, series);
-            }, values.x);
-
-            if (lodash_isUndefined__WEBPACK_IMPORTED_MODULE_3___default()(index)) {
-              throw new Error("Unable to get data point index");
-            }
-
-            return index;
-          }
         }, {
           key: "getDomain",
           value: function getDomain(data, dataSeries, scaleName, scale) {
             if (!data || data.length === 0) {
-              return _core_common_scales_types__WEBPACK_IMPORTED_MODULE_5__["EMPTY_CONTINUOUS_DOMAIN"];
+              return _core_common_scales_types__WEBPACK_IMPORTED_MODULE_4__["EMPTY_CONTINUOUS_DOMAIN"];
             }
 
             var dataAccessors = dataSeries.accessors.data;
@@ -13073,7 +13038,7 @@
         }, {
           key: "getRequiredLayers",
           value: function getRequiredLayers() {
-            return [_constants__WEBPACK_IMPORTED_MODULE_4__["STANDARD_RENDER_LAYERS"][_types__WEBPACK_IMPORTED_MODULE_9__["RenderLayerName"].data], _constants__WEBPACK_IMPORTED_MODULE_4__["STANDARD_RENDER_LAYERS"][_types__WEBPACK_IMPORTED_MODULE_9__["RenderLayerName"].foreground]];
+            return [_constants__WEBPACK_IMPORTED_MODULE_3__["STANDARD_RENDER_LAYERS"][_types__WEBPACK_IMPORTED_MODULE_7__["RenderLayerName"].data], _constants__WEBPACK_IMPORTED_MODULE_3__["STANDARD_RENDER_LAYERS"][_types__WEBPACK_IMPORTED_MODULE_7__["RenderLayerName"].foreground]];
           }
           /**
            * Filters given dataset by domain of provided scale
@@ -13105,9 +13070,9 @@
               return;
             }
 
-            var container = renderSeries.containers[_types__WEBPACK_IMPORTED_MODULE_9__["RenderLayerName"].foreground];
+            var container = renderSeries.containers[_types__WEBPACK_IMPORTED_MODULE_7__["RenderLayerName"].foreground];
 
-            _marker_utils__WEBPACK_IMPORTED_MODULE_8__["MarkerUtils"].manageMarker(renderSeries.dataSeries, renderSeries.scales, dataPointIndex, container, rendererSubject, this.config.markerInteraction);
+            _marker_utils__WEBPACK_IMPORTED_MODULE_6__["MarkerUtils"].manageMarker(renderSeries.dataSeries, renderSeries.scales, dataPointIndex, container, rendererSubject, this.config.markerInteraction);
           }
         }, {
           key: "safetyCheck",
@@ -13117,7 +13082,7 @@
         }]);
 
         return AreaRenderer;
-      }(_xy_renderer__WEBPACK_IMPORTED_MODULE_10__["XYRenderer"]);
+      }(_xy_renderer__WEBPACK_IMPORTED_MODULE_8__["XYRenderer"]);
       /***/
 
     },
@@ -15248,7 +15213,8 @@
 
         _createClass(XYRenderer, [{
           key: "draw",
-          value: function draw(renderSeries, rendererSubject) {}
+          value: // This is empty to allow this renderer to be used for series that represent metadata that may be shown in the legend but not visualized on the chart.
+          function draw(renderSeries, rendererSubject) {}
         }, {
           key: "getDataPointPosition",
           value: function getDataPointPosition(dataSeries, index, scales) {
@@ -15272,7 +15238,7 @@
         }, {
           key: "getDataPointIndex",
           value: function getDataPointIndex(series, values, scales) {
-            if (lodash_isUndefined__WEBPACK_IMPORTED_MODULE_1___default()(values.x)) {
+            if (!this.config.interactive || lodash_isUndefined__WEBPACK_IMPORTED_MODULE_1___default()(values.x)) {
               return _constants__WEBPACK_IMPORTED_MODULE_2__["DATA_POINT_INTERACTION_RESET"];
             }
 
@@ -42123,9 +42089,18 @@
 
           _classCallCheck(this, LineAccessors);
 
-          _this94 = _super40.call(this, colorProvider, markerProvider);
+          _this94 = _super40.call(this);
           _this94.colorProvider = colorProvider;
           _this94.markerProvider = markerProvider;
+
+          _this94.data.defined = function (d, i) {
+            return d.hasOwnProperty("defined") ? d.defined : true;
+          };
+
+          _this94.series = {
+            color: _this94.colorProvider ? _this94.colorProvider.get : undefined,
+            marker: _this94.markerProvider ? _this94.markerProvider.get : undefined
+          };
           return _this94;
         }
 
@@ -42959,23 +42934,11 @@
       __webpack_require__.d(__webpack_exports__, "XYAccessors", function () {
         return XYAccessors;
       });
-      /* harmony import */
-
-
-      var _core_common_palette_default_providers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! ../../core/common/palette/default-providers */
-      "xori");
 
       var XYAccessors = function XYAccessors() {
-        var colorProvider = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : Object(_core_common_palette_default_providers__WEBPACK_IMPORTED_MODULE_0__["defaultColorProvider"])();
-        var markerProvider = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : Object(_core_common_palette_default_providers__WEBPACK_IMPORTED_MODULE_0__["defaultMarkerProvider"])();
-
         _classCallCheck(this, XYAccessors);
 
-        this.colorProvider = colorProvider;
-        this.markerProvider = markerProvider;
         /** The default data accessors for using with renderers deriving from XYRenderer */
-
         this.data = {
           x: function x(d) {
             return d.x;
@@ -42983,15 +42946,6 @@
           y: function y(d) {
             return d.y;
           }
-        };
-
-        this.data.defined = function (d, i) {
-          return d.hasOwnProperty("defined") ? d.defined : true;
-        };
-
-        this.series = {
-          color: this.colorProvider ? this.colorProvider.get : undefined,
-          marker: this.markerProvider ? this.markerProvider.get : undefined
         };
       };
       /***/

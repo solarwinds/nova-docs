@@ -638,17 +638,25 @@ LegendMetadataExampleComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__de
 ], LegendMetadataExampleComponent);
 
 function calculateAverageSeries(dataArr) {
+    var _a, _b, _c, _d, _e;
     let arrAverage = [];
-    const dataLength = dataArr[0].data.length;
+    const dataLength = (_b = (_a = dataArr[0].data) === null || _a === void 0 ? void 0 : _a.length) !== null && _b !== void 0 ? _b : 0;
     const numOfSeries = dataArr.length;
+    if (!dataArr.length) {
+        return {
+            id: "average",
+            name: "Average Speed",
+            data: [],
+        };
+    }
     for (let n = 0; n < dataLength; n++) {
         let avg = 0;
         for (let i = 0; i < dataArr.length; i++) {
             const series = dataArr[i];
-            avg += series.data[n].value;
+            avg += (_d = (_c = series === null || series === void 0 ? void 0 : series.data) === null || _c === void 0 ? void 0 : _c[n].value) !== null && _d !== void 0 ? _d : 0;
         }
         avg = avg / numOfSeries;
-        arrAverage.push({ x: dataArr[0].data[n].x, value: avg });
+        arrAverage.push({ x: (_e = dataArr[0].data) === null || _e === void 0 ? void 0 : _e[n].x, value: avg });
     }
     return {
         id: "average",

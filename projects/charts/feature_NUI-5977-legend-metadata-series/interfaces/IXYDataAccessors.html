@@ -104,7 +104,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/renderers/accessors/xy-accessors.ts:9</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/renderers/accessors/xy-accessors.ts:10</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -196,6 +196,7 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { DataAccessor, IAccessors, SeriesAccessor } from &quot;../../core/common/types&quot;;
 import { defaultColorProvider, defaultMarkerProvider } from &quot;../../core/common/palette/default-providers&quot;;
+import { Renderer } from &quot;../../core/common/renderer&quot;;
 
 
 export interface IXYDataAccessors {
@@ -220,7 +221,7 @@ export interface IXYAccessors extends IAccessors {
     series: IXYSeriesAccessors;
 }
 
-export class XYAccessors implements IAccessors {
+export class XYAccessors implements IXYAccessors {
     /** The default data accessors for using with renderers deriving from XYRenderer */
     public data: IXYDataAccessors &#x3D; {
         x: (d: any) &#x3D;&gt; d.x,
@@ -228,15 +229,6 @@ export class XYAccessors implements IAccessors {
     };
     public series: IXYSeriesAccessors;
 
-    constructor(public colorProvider &#x3D; defaultColorProvider(), public markerProvider &#x3D; defaultMarkerProvider()) {
-
-        this.data.defined &#x3D; (d: any, i) &#x3D;&gt; d.hasOwnProperty(&quot;defined&quot;) ? d.defined : true;
-
-        this.series &#x3D; {
-            color: this.colorProvider ? this.colorProvider.get : undefined,
-            marker: this.markerProvider ? this.markerProvider.get : undefined,
-        };
-    }
 }
 </code></pre>
     </div>
