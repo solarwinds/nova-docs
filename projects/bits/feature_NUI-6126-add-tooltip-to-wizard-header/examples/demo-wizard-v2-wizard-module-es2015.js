@@ -618,8 +618,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _src_lib_wizard_v2_wizard_step_footer_directive__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../src/lib/wizard-v2/wizard-step-footer.directive */ "ZSn2");
 /* harmony import */ var _src_lib_wizard_v2_wizard_step_label_directive__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../../src/lib/wizard-v2/wizard-step-label.directive */ "JSul");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ "ofXK");
-/* harmony import */ var _src_lib_wizard_v2_wizard_button_wizard_button__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../../../src/lib/wizard-v2/wizard-button/wizard-button */ "sp5V");
-/* harmony import */ var _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../../../../src/lib/button/button.component */ "6urz");
+/* harmony import */ var _src_lib_tooltip_tooltip_directive__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../../../src/lib/tooltip/tooltip.directive */ "mgRW");
+/* harmony import */ var _src_lib_wizard_v2_wizard_button_wizard_button__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../../../../src/lib/wizard-v2/wizard-button/wizard-button */ "sp5V");
+/* harmony import */ var _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../../../../src/lib/button/button.component */ "6urz");
+
 
 
 
@@ -632,14 +634,14 @@ function WizardTooltipExampleComponent_ng_template_6_ng_container_0_Template(rf,
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainer"](0);
 } }
 function WizardTooltipExampleComponent_ng_template_6_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, WizardTooltipExampleComponent_ng_template_6_ng_container_0_Template, 1, 0, "ng-container", 9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, WizardTooltipExampleComponent_ng_template_6_ng_container_0_Template, 1, 0, "ng-container", 8);
 } if (rf & 2) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
     const _r6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](16);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngTemplateOutlet", _r6);
 } }
 function WizardTooltipExampleComponent_ng_template_8_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span", 9);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "i");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Custom Label template");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -649,7 +651,7 @@ function WizardTooltipExampleComponent_ng_template_12_ng_container_0_Template(rf
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainer"](0);
 } }
 function WizardTooltipExampleComponent_ng_template_12_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, WizardTooltipExampleComponent_ng_template_12_ng_container_0_Template, 1, 0, "ng-container", 9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, WizardTooltipExampleComponent_ng_template_12_ng_container_0_Template, 1, 0, "ng-container", 8);
 } if (rf & 2) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
     const _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](14);
@@ -681,17 +683,17 @@ WizardTooltipExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__
     else {
         i18n_2 = $localize `:␟7158cde00f54624da124f314489b3ba50911558e␟3114667934996381093:Step with long header text`;
     } let i18n_4; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-        const MSG_EXTERNAL_3872307170053463605$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TOOLTIP_WIZARD_TOOLTIP_EXAMPLE_COMPONENT_TS_5 = goog.getMsg("Custom Label Template");
-        i18n_4 = MSG_EXTERNAL_3872307170053463605$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TOOLTIP_WIZARD_TOOLTIP_EXAMPLE_COMPONENT_TS_5;
+        const MSG_EXTERNAL_7100330853882173244$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TOOLTIP_WIZARD_TOOLTIP_EXAMPLE_COMPONENT_TS_5 = goog.getMsg("We finally reached our last step");
+        i18n_4 = MSG_EXTERNAL_7100330853882173244$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TOOLTIP_WIZARD_TOOLTIP_EXAMPLE_COMPONENT_TS_5;
     }
     else {
-        i18n_4 = $localize `:␟01a3b08811036e27ef07d764d37be31b37d2422f␟3872307170053463605:Custom Label Template`;
+        i18n_4 = $localize `:␟414c233c4cbaae1a74728ed5d64304bbd36cdbe5␟7100330853882173244:We finally reached our last step`;
     } let i18n_6; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-        const MSG_EXTERNAL_7100330853882173244$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TOOLTIP_WIZARD_TOOLTIP_EXAMPLE_COMPONENT_TS_7 = goog.getMsg("We finally reached our last step");
-        i18n_6 = MSG_EXTERNAL_7100330853882173244$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TOOLTIP_WIZARD_TOOLTIP_EXAMPLE_COMPONENT_TS_7;
+        const MSG_EXTERNAL_5934323026342022997$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TOOLTIP_WIZARD_TOOLTIP_EXAMPLE_COMPONENT_TS__7 = goog.getMsg("Custom Label template");
+        i18n_6 = MSG_EXTERNAL_5934323026342022997$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TOOLTIP_WIZARD_TOOLTIP_EXAMPLE_COMPONENT_TS__7;
     }
     else {
-        i18n_6 = $localize `:␟414c233c4cbaae1a74728ed5d64304bbd36cdbe5␟7100330853882173244:We finally reached our last step`;
+        i18n_6 = $localize `:␟3ce18a39b3d2dc5576f4928e6f1792d58ba2469e␟5934323026342022997:Custom Label template`;
     } let i18n_8; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
         const MSG_EXTERNAL_829281553034486983$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TOOLTIP_WIZARD_TOOLTIP_EXAMPLE_COMPONENT_TS__9 = goog.getMsg(" Previous ");
         i18n_8 = MSG_EXTERNAL_829281553034486983$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TOOLTIP_WIZARD_TOOLTIP_EXAMPLE_COMPONENT_TS__9;
@@ -704,7 +706,7 @@ WizardTooltipExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__
     }
     else {
         i18n_10 = $localize `:␟75db05d5e0bebee12a6a7b0e31ea09754d18d8fb␟7200802776192640190: Next `;
-    } return [["wizardComponent", ""], ["label", i18n_0], i18n_2, ["nuiWizardStepFooter", ""], ["tooltip", i18n_4], ["nuiWizardStepLabel", ""], i18n_6, ["wizardPrevious", ""], ["wizardNext", ""], [4, "ngTemplateOutlet"], ["type", "button", "nuiWizardPrevious", "", "nui-button", "", "icon", "caret-left"], i18n_8, ["nuiWizardNext", "", "type", "button", "nui-button", "", "displayStyle", "primary", "icon", "caret-right", "iconRight", "true"], i18n_10]; }, template: function WizardTooltipExampleComponent_Template(rf, ctx) { if (rf & 1) {
+    } return [["wizardComponent", ""], ["label", i18n_0], i18n_2, ["nuiWizardStepFooter", ""], ["nuiWizardStepLabel", ""], i18n_4, ["wizardPrevious", ""], ["wizardNext", ""], [4, "ngTemplateOutlet"], ["nuiTooltip", i18n_6], ["type", "button", "nuiWizardPrevious", "", "nui-button", "", "icon", "caret-left"], i18n_8, ["nuiWizardNext", "", "type", "button", "nui-button", "", "displayStyle", "primary", "icon", "caret-right", "iconRight", "true"], i18n_10]; }, template: function WizardTooltipExampleComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "nui-wizard-horizontal", null, 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "nui-wizard-step-v2", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "span");
@@ -713,18 +715,18 @@ WizardTooltipExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, ". ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](6, WizardTooltipExampleComponent_ng_template_6_Template, 1, 1, "ng-template", 3);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "nui-wizard-step-v2", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](8, WizardTooltipExampleComponent_ng_template_8_Template, 3, 0, "ng-template", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "nui-wizard-step-v2");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](8, WizardTooltipExampleComponent_ng_template_8_Template, 3, 0, "ng-template", 4);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "span");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](10, 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](10, 5);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, "! ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](12, WizardTooltipExampleComponent_ng_template_12_Template, 1, 1, "ng-template", 3);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](13, WizardTooltipExampleComponent_ng_template_13_Template, 2, 0, "ng-template", null, 7, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](15, WizardTooltipExampleComponent_ng_template_15_Template, 2, 0, "ng-template", null, 8, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](13, WizardTooltipExampleComponent_ng_template_13_Template, 2, 0, "ng-template", null, 6, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](15, WizardTooltipExampleComponent_ng_template_15_Template, 2, 0, "ng-template", null, 7, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    } }, directives: [_src_lib_wizard_v2_wizard_horizontal_wizard_horizontal_component__WEBPACK_IMPORTED_MODULE_1__["WizardHorizontalComponent"], _src_lib_wizard_v2_wizard_step_wizard_step_component__WEBPACK_IMPORTED_MODULE_2__["WizardStepV2Component"], _src_lib_wizard_v2_wizard_step_footer_directive__WEBPACK_IMPORTED_MODULE_3__["WizardStepFooterDirective"], _src_lib_wizard_v2_wizard_step_label_directive__WEBPACK_IMPORTED_MODULE_4__["WizardStepLabelDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgTemplateOutlet"], _src_lib_wizard_v2_wizard_button_wizard_button__WEBPACK_IMPORTED_MODULE_6__["WizardStepperPreviousDirective"], _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_7__["ButtonComponent"], _src_lib_wizard_v2_wizard_button_wizard_button__WEBPACK_IMPORTED_MODULE_6__["WizardStepperNextDirective"]], encapsulation: 2 });
+    } }, directives: [_src_lib_wizard_v2_wizard_horizontal_wizard_horizontal_component__WEBPACK_IMPORTED_MODULE_1__["WizardHorizontalComponent"], _src_lib_wizard_v2_wizard_step_wizard_step_component__WEBPACK_IMPORTED_MODULE_2__["WizardStepV2Component"], _src_lib_wizard_v2_wizard_step_footer_directive__WEBPACK_IMPORTED_MODULE_3__["WizardStepFooterDirective"], _src_lib_wizard_v2_wizard_step_label_directive__WEBPACK_IMPORTED_MODULE_4__["WizardStepLabelDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgTemplateOutlet"], _src_lib_tooltip_tooltip_directive__WEBPACK_IMPORTED_MODULE_6__["TooltipDirective"], _src_lib_wizard_v2_wizard_button_wizard_button__WEBPACK_IMPORTED_MODULE_7__["WizardStepperPreviousDirective"], _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_8__["ButtonComponent"], _src_lib_wizard_v2_wizard_button_wizard_button__WEBPACK_IMPORTED_MODULE_7__["WizardStepperNextDirective"]], encapsulation: 2 });
 
 
 /***/ }),
@@ -1085,6 +1087,7 @@ WizardModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjec
             _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiDatePickerModule"],
             _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiIconModule"],
             _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiSelectV2Module"],
+            _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiTooltipModule"],
         ], _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵsetNgModuleScope"](WizardModule, { declarations: [_index__WEBPACK_IMPORTED_MODULE_3__["WizardDocsComponent"],
         _index__WEBPACK_IMPORTED_MODULE_3__["WizardHorizontalExampleComponent"],
@@ -1116,7 +1119,8 @@ WizardModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjec
         _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiProgressModule"],
         _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiDatePickerModule"],
         _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiIconModule"],
-        _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiSelectV2Module"]], exports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]] }); })();
+        _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiSelectV2Module"],
+        _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiTooltipModule"]], exports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]] }); })();
 
 
 /***/ }),
@@ -1825,7 +1829,7 @@ webpackContext.id = "Ptpp";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<nui-wizard-horizontal #wizardComponent>\n\n    <!--  content of the 1st step -->\n    <nui-wizard-step-v2 i18n-label label=\"Very long header text. Very long header text\">\n        <!-- content of the current step -->\n        <span i18n>Step with long header text</span>.\n\n        <!-- content of the footer -->\n        <ng-template nuiWizardStepFooter>\n            <ng-container *ngTemplateOutlet=\"wizardNext\"></ng-container>\n        </ng-template>\n    </nui-wizard-step-v2>\n\n    <!--  Step with custom label template -->\n    <nui-wizard-step-v2 i18n-tooltip tooltip=\"Custom Label Template\">\n        <ng-template nuiWizardStepLabel>\n            <span><i>Custom Label template</i></span>\n        </ng-template>\n        <span i18n>We finally reached our last step</span>!\n        <!-- Notice how both label and footer can be placed anywhere in the content of wizard step -->\n        <ng-template nuiWizardStepFooter>\n            <ng-container *ngTemplateOutlet=\"wizardPrevious\"></ng-container>\n        </ng-template>\n    </nui-wizard-step-v2>\n\n    <ng-template #wizardPrevious>\n        <button i18n type=\"button\" nuiWizardPrevious nui-button icon=\"caret-left\">\n            Previous\n        </button>\n    </ng-template>\n\n    <ng-template #wizardNext>\n        <button nuiWizardNext\n                i18n\n                type=\"button\"\n                nui-button\n                displayStyle=\"primary\"\n                icon=\"caret-right\"\n                iconRight=\"true\">\n            Next\n        </button>\n    </ng-template>\n</nui-wizard-horizontal>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<nui-wizard-horizontal #wizardComponent>\n\n    <!--  content of the 1st step -->\n    <nui-wizard-step-v2 i18n-label label=\"Very long header text. Very long header text\">\n        <!-- content of the current step -->\n        <span i18n>Step with long header text</span>.\n\n        <!-- content of the footer -->\n        <ng-template nuiWizardStepFooter>\n            <ng-container *ngTemplateOutlet=\"wizardNext\"></ng-container>\n        </ng-template>\n    </nui-wizard-step-v2>\n\n    <!--  Step with custom label template -->\n    <nui-wizard-step-v2>\n        <ng-template nuiWizardStepLabel >\n            <span i18n-nuiTooltip nuiTooltip=\"Custom Label template\">\n                <i>Custom Label template</i>\n            </span>\n        </ng-template>\n        <span i18n>We finally reached our last step</span>!\n        <!-- Notice how both label and footer can be placed anywhere in the content of wizard step -->\n        <ng-template nuiWizardStepFooter>\n            <ng-container *ngTemplateOutlet=\"wizardPrevious\"></ng-container>\n        </ng-template>\n    </nui-wizard-step-v2>\n\n    <ng-template #wizardPrevious>\n        <button i18n type=\"button\" nuiWizardPrevious nui-button icon=\"caret-left\">\n            Previous\n        </button>\n    </ng-template>\n\n    <ng-template #wizardNext>\n        <button nuiWizardNext\n                i18n\n                type=\"button\"\n                nui-button\n                displayStyle=\"primary\"\n                icon=\"caret-right\"\n                iconRight=\"true\">\n            Next\n        </button>\n    </ng-template>\n</nui-wizard-horizontal>\n");
 
 /***/ }),
 
@@ -1838,7 +1842,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { NgModule } from \"@angular/core\";\nimport { FormsModule, ReactiveFormsModule } from \"@angular/forms\";\nimport { RouterModule } from \"@angular/router\";\nimport {\n    DEMO_PATH_TOKEN,\n    NuiBusyModule,\n    NuiButtonModule,\n    NuiCheckboxModule,\n    NuiDatePickerModule,\n    NuiDialogModule,\n    NuiDocsModule,\n    NuiFormFieldModule,\n    NuiIconModule,\n    NuiMessageModule,\n    NuiProgressModule,\n    NuiRadioModule,\n    NuiSpinnerModule,\n    NuiTextboxModule,\n    NuiValidationMessageModule,\n    NuiWizardV2Module,\n    SrlcStage,\n    NuiSelectV2Module,\n    WIZARD_CONFIG,\n    IWizardConfig,\n    WIZARD_CONFIG_DEFAULT,\n} from \"@nova-ui/bits\";\n\nimport {\n    WizardBusyExampleComponent,\n    WizardCustomComponent,\n    WizardCustomExampleComponent,\n    WizardCustomFooterExampleComponent,\n    WizardDialogExampleComponent,\n    WizardDocsComponent,\n    WizardDynamicExampleComponent,\n    WizardHorizontalExampleComponent,\n    WizardRemoveStepExampleComponent,\n    WizardVerticalExampleComponent,\n    WizardAsyncFormValidationExampleComponent,\n    WizardWithCustomIconsExampleComponent,\n    WizardRestoreStateExampleComponent,\n    WizardStepChangeExampleComponent,\n    WizardTooltipExampleComponent,\n} from \"./index\";\n\nconst routes = [\n    {\n        path: \"\",\n        component: WizardDocsComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.alpha,\n            },\n            showThemeSwitcher: true,\n        },\n    },\n];\n\n@NgModule({\n    imports: [\n        NuiButtonModule,\n        NuiMessageModule,\n        NuiDocsModule,\n        NuiTextboxModule,\n        NuiRadioModule,\n        NuiCheckboxModule,\n        NuiDialogModule,\n        NuiValidationMessageModule,\n        NuiFormFieldModule,\n        FormsModule,\n        ReactiveFormsModule,\n        RouterModule.forChild(routes),\n        NuiWizardV2Module,\n        NuiSpinnerModule,\n        NuiBusyModule,\n        NuiProgressModule,\n        NuiDatePickerModule,\n        NuiIconModule,\n        NuiSelectV2Module,\n    ],\n    declarations: [\n        WizardDocsComponent,\n        WizardHorizontalExampleComponent,\n        WizardVerticalExampleComponent,\n        WizardCustomExampleComponent,\n        WizardCustomComponent,\n        WizardDialogExampleComponent,\n        WizardBusyExampleComponent,\n        WizardCustomFooterExampleComponent,\n        WizardDynamicExampleComponent,\n        WizardRemoveStepExampleComponent,\n        WizardAsyncFormValidationExampleComponent,\n        WizardWithCustomIconsExampleComponent,\n        WizardRestoreStateExampleComponent,\n        WizardStepChangeExampleComponent,\n        WizardTooltipExampleComponent,\n    ],\n    providers: [\n        {\n            provide: DEMO_PATH_TOKEN,\n            useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/),\n        },\n    ],\n    exports: [\n        RouterModule,\n    ],\n})\nexport class WizardModule {}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import { NgModule } from \"@angular/core\";\nimport { FormsModule, ReactiveFormsModule } from \"@angular/forms\";\nimport { RouterModule } from \"@angular/router\";\nimport {\n    DEMO_PATH_TOKEN,\n    NuiBusyModule,\n    NuiButtonModule,\n    NuiCheckboxModule,\n    NuiDatePickerModule,\n    NuiDialogModule,\n    NuiDocsModule,\n    NuiFormFieldModule,\n    NuiIconModule,\n    NuiMessageModule,\n    NuiProgressModule,\n    NuiRadioModule,\n    NuiSpinnerModule,\n    NuiTextboxModule,\n    NuiValidationMessageModule,\n    NuiWizardV2Module,\n    SrlcStage,\n    NuiSelectV2Module,\n    WIZARD_CONFIG,\n    IWizardConfig,\n    WIZARD_CONFIG_DEFAULT, NuiTooltipModule,\n} from \"@nova-ui/bits\";\n\nimport {\n    WizardBusyExampleComponent,\n    WizardCustomComponent,\n    WizardCustomExampleComponent,\n    WizardCustomFooterExampleComponent,\n    WizardDialogExampleComponent,\n    WizardDocsComponent,\n    WizardDynamicExampleComponent,\n    WizardHorizontalExampleComponent,\n    WizardRemoveStepExampleComponent,\n    WizardVerticalExampleComponent,\n    WizardAsyncFormValidationExampleComponent,\n    WizardWithCustomIconsExampleComponent,\n    WizardRestoreStateExampleComponent,\n    WizardStepChangeExampleComponent,\n    WizardTooltipExampleComponent,\n} from \"./index\";\n\nconst routes = [\n    {\n        path: \"\",\n        component: WizardDocsComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.alpha,\n            },\n            showThemeSwitcher: true,\n        },\n    },\n];\n\n@NgModule({\n    imports: [\n        NuiButtonModule,\n        NuiMessageModule,\n        NuiDocsModule,\n        NuiTextboxModule,\n        NuiRadioModule,\n        NuiCheckboxModule,\n        NuiDialogModule,\n        NuiValidationMessageModule,\n        NuiFormFieldModule,\n        FormsModule,\n        ReactiveFormsModule,\n        RouterModule.forChild(routes),\n        NuiWizardV2Module,\n        NuiSpinnerModule,\n        NuiBusyModule,\n        NuiProgressModule,\n        NuiDatePickerModule,\n        NuiIconModule,\n        NuiSelectV2Module,\n        NuiTooltipModule,\n    ],\n    declarations: [\n        WizardDocsComponent,\n        WizardHorizontalExampleComponent,\n        WizardVerticalExampleComponent,\n        WizardCustomExampleComponent,\n        WizardCustomComponent,\n        WizardDialogExampleComponent,\n        WizardBusyExampleComponent,\n        WizardCustomFooterExampleComponent,\n        WizardDynamicExampleComponent,\n        WizardRemoveStepExampleComponent,\n        WizardAsyncFormValidationExampleComponent,\n        WizardWithCustomIconsExampleComponent,\n        WizardRestoreStateExampleComponent,\n        WizardStepChangeExampleComponent,\n        WizardTooltipExampleComponent,\n    ],\n    providers: [\n        {\n            provide: DEMO_PATH_TOKEN,\n            useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/),\n        },\n    ],\n    exports: [\n        RouterModule,\n    ],\n})\nexport class WizardModule {}\n");
 
 /***/ }),
 
