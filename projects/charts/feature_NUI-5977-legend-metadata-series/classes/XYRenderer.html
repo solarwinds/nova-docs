@@ -410,15 +410,15 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>draw(renderSeries: <a href="../classes/XYAccessors.html">IRenderSeries<IXYAccessors></a>, rendererSubject: <a href="../interfaces/IRendererEventPayload.html">Subject<IRendererEventPayload></a>)</code>
+                    <code>draw(renderSeries: <a href="../interfaces/IRenderSeries.html">IRenderSeries<TA></a>, rendererSubject: <a href="../interfaces/IRendererEventPayload.html">Subject<IRendererEventPayload></a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="13"
-                            class="link-to-prism">src/renderers/xy-renderer.ts:13</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="14"
+                            class="link-to-prism">src/renderers/xy-renderer.ts:14</a></div>
                 </td>
             </tr>
 
@@ -440,7 +440,7 @@
                                 <tr>
                                     <td>renderSeries</td>
                                     <td>
-                                                <code><a href="../classes/XYAccessors.html" target="_self" >IRenderSeries&lt;IXYAccessors&gt;</a></code>
+                                                <code><a href="../interfaces/IRenderSeries.html" target="_self" >IRenderSeries&lt;TA&gt;</a></code>
                                     </td>
 
                                     <td>
@@ -494,15 +494,15 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getDataPointIndex(series: IDataSeries<IXYAccessors>, values: literal type, scales: <a href="../classes/Scale.html">Scales</a>)</code>
+                    <code>getDataPointIndex(series: <a href="../interfaces/IDataSeries.html">IDataSeries<TA></a>, values: literal type, scales: <a href="../classes/Scale.html">Scales</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="31"
-                            class="link-to-prism">src/renderers/xy-renderer.ts:31</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">src/renderers/xy-renderer.ts:32</a></div>
                 </td>
             </tr>
 
@@ -524,7 +524,7 @@
                                 <tr>
                                     <td>series</td>
                                     <td>
-                                            <code>IDataSeries&lt;IXYAccessors&gt;</code>
+                                                <code><a href="../interfaces/IDataSeries.html" target="_self" >IDataSeries&lt;TA&gt;</a></code>
                                     </td>
 
                                     <td>
@@ -590,15 +590,15 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getDataPointPosition(dataSeries: <a href="../classes/DataSeries.html">IDataSeries<IAccessors></a>, index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, scales: <a href="../classes/Scale.html">Scales</a>)</code>
+                    <code>getDataPointPosition(dataSeries: <a href="../interfaces/IDataSeries.html">IDataSeries<TA></a>, index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, scales: <a href="../classes/Scale.html">Scales</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="17"
-                            class="link-to-prism">src/renderers/xy-renderer.ts:17</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="18"
+                            class="link-to-prism">src/renderers/xy-renderer.ts:18</a></div>
                 </td>
             </tr>
 
@@ -620,7 +620,7 @@
                                 <tr>
                                     <td>dataSeries</td>
                                     <td>
-                                                <code><a href="../classes/DataSeries.html" target="_self" >IDataSeries&lt;IAccessors&gt;</a></code>
+                                                <code><a href="../interfaces/IDataSeries.html" target="_self" >IDataSeries&lt;TA&gt;</a></code>
                                     </td>
 
                                     <td>
@@ -1751,15 +1751,16 @@ import { Subject } from &quot;rxjs&quot;;
 import isUndefined from &quot;lodash/isUndefined&quot;;
 import { DATA_POINT_INTERACTION_RESET } from &quot;../constants&quot;;
 import { UtilityService } from &quot;../core/common/utility.service&quot;;
+import { IXYAccessors } from &quot;./accessors/xy-accessors&quot;;
 
 
-export class XYRenderer&lt;IXYAccessors&gt; extends Renderer&lt;IXYAccessors&gt; {
+export class XYRenderer&lt;TA extends IAccessors&gt; extends Renderer&lt;TA&gt; {
 
-    public draw(renderSeries: IRenderSeries&lt;IXYAccessors&gt;, rendererSubject: Subject&lt;IRendererEventPayload&gt;): void {
+    public draw(renderSeries: IRenderSeries&lt;TA&gt;, rendererSubject: Subject&lt;IRendererEventPayload&gt;): void {
 
     }
 
-    public getDataPointPosition(dataSeries: IDataSeries&lt;IAccessors&gt;, index: number, scales: Scales): IPosition | undefined {
+    public getDataPointPosition(dataSeries: IDataSeries&lt;TA&gt;, index: number, scales: Scales): IPosition | undefined {
         if (index &lt; 0 || index &gt;&#x3D; dataSeries.data.length) {
             return undefined;
         }
@@ -1773,13 +1774,12 @@ export class XYRenderer&lt;IXYAccessors&gt; extends Renderer&lt;IXYAccessors&gt;
             y: scales.y.convert(dataSeries.accessors.data.y(point, index, dataSeries.data, dataSeries)),
         };
     }
-    public getDataPointIndex(series: IDataSeries&lt;IXYAccessors&gt;, values: { [p: string]: any }, scales: Scales): number {
+    public getDataPointIndex(series: IDataSeries&lt;TA&gt;, values: { [p: string]: any }, scales: Scales): number {
         if (isUndefined(values.x)) {
             return DATA_POINT_INTERACTION_RESET;
         }
 
-        // @ts-ignore
-        const index &#x3D; UtilityService.getClosestIndex(series.data, (d, i) &#x3D;&gt; series.accessors.data.x(d, i, series.data, series), values.x);
+        const index &#x3D; UtilityService.getClosestIndex(series.data, (d, i) &#x3D;&gt; series.accessors.data?.x?.(d, i, series.data, series), values.x);
 
         if (isUndefined(index)) {
             throw new Error(&quot;Unable to get data point index&quot;);

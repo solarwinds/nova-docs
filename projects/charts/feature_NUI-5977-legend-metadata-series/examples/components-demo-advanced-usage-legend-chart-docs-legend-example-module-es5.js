@@ -953,9 +953,10 @@
               x: new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["TimeScale"](),
               y: new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["LinearScale"]()
             };
-            var averageData = getAverage(getData()); // We are using a different renderer so the metadata does not effect the domain
+            var averageData = calculateAverageSeries(getData()); // We are using the base XYRenderer so the metadata does not get displayed on the chart.
+            // Set `ignoreForDomainCalculation` to true to prevent the metadata from affecting the domain.
 
-            var noopRenderer = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["XYRenderer"]({
+            var metaDataRenderer = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["XYRenderer"]({
               ignoreForDomainCalculation: true
             }); // Here we create an accessor for our average metadata
 
@@ -963,23 +964,14 @@
 
             avgAccessors.data.y = function (d) {
               return d.value;
-            }; // Same as above we are setting the numeric value we want to visualize
+            };
 
-
-            avgAccessors.data.y1 = avgAccessors.data.y; // Setting the color of the series to transparent so it doesn't render
-
-            avgAccessors.series.color = function () {
-              return "var(--nui-color-bg-transparent)";
-            }; // Deleting the markers so it doesn't place a marker on the chart
-
-
-            delete avgAccessors.series.marker;
             this.avgSeries = Object.assign(Object.assign({}, averageData), {
               accessors: avgAccessors,
-              renderer: noopRenderer,
+              renderer: metaDataRenderer,
               scales: scales,
-              showInLegend: false,
-              preprocess: false
+              // showInLegend is false because we manually add our own series
+              showInLegend: false
             }); // Here we assemble the complete chart series.
 
             var seriesSet = getData().map(function (d) {
@@ -1004,7 +996,7 @@
         template: _raw_loader_legend_metadata_example_component_html__WEBPACK_IMPORTED_MODULE_1__["default"]
       })], LegendMetadataExampleComponent);
 
-      function getAverage(dataArr) {
+      function calculateAverageSeries(dataArr) {
         var arrAverage = [];
         var dataLength = dataArr[0].data.length;
         var numOfSeries = dataArr.length;
