@@ -417,14 +417,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="12"
-                            class="link-to-prism">src/renderers/xy-renderer.ts:12</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="13"
+                            class="link-to-prism">src/renderers/xy-renderer.ts:13</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>See <a href="../classes/Renderer.html#draw">Renderer</a> </p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -501,14 +503,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="29"
-                            class="link-to-prism">src/renderers/xy-renderer.ts:29</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">src/renderers/xy-renderer.ts:32</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>See <a href="../classes/Renderer.html#getDataPointIndex">Renderer</a> </p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -597,14 +601,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="14"
-                            class="link-to-prism">src/renderers/xy-renderer.ts:14</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="16"
+                            class="link-to-prism">src/renderers/xy-renderer.ts:16</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>See <a href="../classes/Renderer.html#getDataPointPosition">Renderer</a> </p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -1754,8 +1760,10 @@ import { UtilityService } from &quot;../core/common/utility.service&quot;;
 
 export class XYRenderer&lt;TA extends IAccessors&gt; extends Renderer&lt;TA&gt; {
     // This is empty to allow this renderer to be used for series that represent metadata that may be shown in the legend but not visualized on the chart.
+    /** See {@link Renderer#draw} */
     public draw(renderSeries: IRenderSeries&lt;TA&gt;, rendererSubject: Subject&lt;IRendererEventPayload&gt;): void {}
 
+    /** See {@link Renderer#getDataPointPosition} */
     public getDataPointPosition(dataSeries: IDataSeries&lt;TA&gt;, index: number, scales: Scales): IPosition | undefined {
         if (index &lt; 0 || index &gt;&#x3D; dataSeries.data.length) {
             return undefined;
@@ -1771,6 +1779,7 @@ export class XYRenderer&lt;TA extends IAccessors&gt; extends Renderer&lt;TA&gt; 
         };
     }
 
+    /** See {@link Renderer#getDataPointIndex} */
     public getDataPointIndex(series: IDataSeries&lt;TA&gt;, values: { [p: string]: any }, scales: Scales): number {
         if (isUndefined(values.x)) {
             return DATA_POINT_INTERACTION_RESET;

@@ -15214,7 +15214,11 @@
         _createClass(XYRenderer, [{
           key: "draw",
           value: // This is empty to allow this renderer to be used for series that represent metadata that may be shown in the legend but not visualized on the chart.
+
+          /** See {@link Renderer#draw} */
           function draw(renderSeries, rendererSubject) {}
+          /** See {@link Renderer#getDataPointPosition} */
+
         }, {
           key: "getDataPointPosition",
           value: function getDataPointPosition(dataSeries, index, scales) {
@@ -15235,6 +15239,8 @@
               y: scales.y.convert(dataSeries.accessors.data.y(point, index, dataSeries.data, dataSeries))
             };
           }
+          /** See {@link Renderer#getDataPointIndex} */
+
         }, {
           key: "getDataPointIndex",
           value: function getDataPointIndex(series, values, scales) {
