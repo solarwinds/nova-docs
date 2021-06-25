@@ -235,9 +235,6 @@
                                 <li>
                                     <a href="#templateLabel">templateLabel</a>
                                 </li>
-                                <li>
-                                    <a href="#headerTooltip">headerTooltip</a>
-                                </li>
                             </ul>
                         </td>
                     </tr>
@@ -667,8 +664,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="113"
-                            class="link-to-prism">src/lib/wizard-v2/wizard-step-header/wizard-step-header.component.ts:113</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="112"
+                            class="link-to-prism">src/lib/wizard-v2/wizard-step-header/wizard-step-header.component.ts:112</a></div>
                 </td>
             </tr>
 
@@ -817,7 +814,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="118" class="link-to-prism">src/lib/wizard-v2/wizard-step-header/wizard-step-header.component.ts:118</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="117" class="link-to-prism">src/lib/wizard-v2/wizard-step-header/wizard-step-header.component.ts:117</a></div>
                                 </td>
                             </tr>
                     <tr>
@@ -850,7 +847,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="123" class="link-to-prism">src/lib/wizard-v2/wizard-step-header/wizard-step-header.component.ts:123</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="122" class="link-to-prism">src/lib/wizard-v2/wizard-step-header/wizard-step-header.component.ts:122</a></div>
                                 </td>
                             </tr>
                     <tr>
@@ -864,28 +861,6 @@
                                 </div>
                         </td>
                     </tr>
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="headerTooltip"></a>
-                        <span class="name"><b>headerTooltip</b><a href="#headerTooltip"><span class="icon ion-ios-link"></span></a></span>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <span class="accessor"><b>get</b><code>headerTooltip()</code></span>
-                    </td>
-                </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="127" class="link-to-prism">src/lib/wizard-v2/wizard-step-header/wizard-step-header.component.ts:127</a></div>
-                                </td>
-                            </tr>
 
             </tbody>
         </table>
@@ -998,7 +973,6 @@ export class WizardStepHeaderComponent extends CdkStepHeader implements AfterVie
 
     ngAfterViewInit(): void {
         this._focusMonitor.monitor(this._elementRef, true);
-        this.detectLongLabel();
     }
 
     ngOnDestroy(): void {
@@ -1018,14 +992,6 @@ export class WizardStepHeaderComponent extends CdkStepHeader implements AfterVie
     /** Returns WizardStepLabel if the label of given step is a template label. */
     public get templateLabel(): WizardStepLabelDirective | null {
         return this.label instanceof WizardStepLabelDirective ? this.label : null;
-    }
-
-    public get headerTooltip(): string {
-        if (this.stringLabel &amp;&amp; this.isLabelOverflow) {
-            return this.stringLabel as string;
-        }
-
-        return &quot;&quot;;
     }
 
     private updateStepStateConfig(stepStateConfig: WizardStepStateConfig) {
@@ -1063,7 +1029,7 @@ export class WizardStepHeaderComponent extends CdkStepHeader implements AfterVie
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="nui-step-header-ripple"></div><div class="nui-wizard-step-label"     [nuiTooltip]="headerTooltip"     [class.nui-wizard-step-header__label--active]="completed"     [class.nui-wizard-step-header__label--selected]="selected"     [class.nui-wizard-step-header__label--error]="stepState === \'error\'">    <!-- If there is a label template, use it. -->    <ng-container *ngIf="templateLabel" [ngTemplateOutlet]="templateLabel?.template"></ng-container>    <!-- If there is no label template, fall back to the text label. -->    <div #labelEl         class="nui-wizard-step-text-label"         *ngIf="stringLabel">        {{label}}    </div>    <div class="nui-step-optional" *ngIf="optional && stepState != \'error\'">{{optionalLabel}}</div>    <div class="nui-step-sub-label-error" *ngIf="stepState == \'error\'">{{errorMessage}}</div></div><div class="nui-wizard-step-icon nui-step-icon-state-{{stepState}}">    <div class="nui-wizard-step-icon-container">        <span class="nui-wizard-step-icon-content">            <ng-container>                <nui-icon [icon]="stepStateConfigMap[stepState].icon"                          [iconColor]="stepStateConfigMap[stepState].iconColor"></nui-icon>            </ng-container>        </span>    </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="nui-step-header-ripple"></div><div class="nui-wizard-step-label"     [nuiTooltip]="stringLabel ? stringLabel : \'\'"     [class.nui-wizard-step-header__label--active]="completed"     [class.nui-wizard-step-header__label--selected]="selected"     [class.nui-wizard-step-header__label--error]="stepState === \'error\'">    <!-- If there is a label template, use it. -->    <ng-container *ngIf="templateLabel" [ngTemplateOutlet]="templateLabel?.template"></ng-container>    <!-- If there is no label template, fall back to the text label. -->    <div #labelEl         class="nui-wizard-step-text-label"         *ngIf="stringLabel">        {{label}}    </div>    <div class="nui-step-optional" *ngIf="optional && stepState != \'error\'">{{optionalLabel}}</div>    <div class="nui-step-sub-label-error" *ngIf="stepState == \'error\'">{{errorMessage}}</div></div><div class="nui-wizard-step-icon nui-step-icon-state-{{stepState}}">    <div class="nui-wizard-step-icon-container">        <span class="nui-wizard-step-icon-content">            <ng-container>                <nui-icon [icon]="stepStateConfigMap[stepState].icon"                          [iconColor]="stepStateConfigMap[stepState].iconColor"></nui-icon>            </ng-container>        </span>    </div></div></div>'
     var COMPONENTS = [{'name': 'BreadcrumbComponent', 'selector': 'nui-breadcrumb'},{'name': 'BusyComponent', 'selector': '[nui-busy]'},{'name': 'ButtonComponent', 'selector': '[nui-button]'},{'name': 'CardComponent', 'selector': 'nui-card'},{'name': 'CardGroupComponent', 'selector': 'nui-card-group'},{'name': 'CheckboxComponent', 'selector': 'nui-checkbox'},{'name': 'CheckboxGroupComponent', 'selector': 'nui-checkbox-group'},{'name': 'ChipsComponent', 'selector': 'nui-chips'},{'name': 'ChipsOverflowComponent', 'selector': 'nui-chips-overflow'},{'name': 'ComboboxComponent', 'selector': 'nui-combobox'},{'name': 'ComboboxV2Component', 'selector': 'nui-combobox-v2'},{'name': 'CustomValidationMessageComponent', 'selector': 'nui-custom-validation-message'},{'name': 'DatePickerComponent', 'selector': 'nui-date-picker'},{'name': 'DateTimePickerComponent', 'selector': 'nui-date-time-picker'},{'name': 'DialogComponent', 'selector': 'nui-dialog-window'},{'name': 'ExpanderComponent', 'selector': 'nui-expander'},{'name': 'FormFieldComponent', 'selector': 'nui-form-field'},{'name': 'IconComponent', 'selector': 'nui-icon'},{'name': 'ImageComponent', 'selector': 'nui-image'},{'name': 'MenuComponent', 'selector': 'nui-menu'},{'name': 'MessageComponent', 'selector': 'nui-message'},{'name': 'OverlayComponent', 'selector': 'nui-overlay'},{'name': 'PaginatorComponent', 'selector': 'nui-paginator'},{'name': 'PanelComponent', 'selector': 'nui-panel'},{'name': 'PopoverComponent', 'selector': 'nui-popover'},{'name': 'PopupComponent', 'selector': 'nui-popup'},{'name': 'PopupDeprecatedComponent', 'selector': 'nui-popup-deprecated'},{'name': 'ProgressComponent', 'selector': 'nui-progress'},{'name': 'QuickPickerComponent', 'selector': 'nui-quick-picker'},{'name': 'RadioGroupComponent', 'selector': 'nui-radio-group'},{'name': 'RepeatComponent', 'selector': 'nui-repeat'},{'name': 'SearchComponent', 'selector': 'nui-search'},{'name': 'SelectComponent', 'selector': 'nui-select'},{'name': 'SelectV2Component', 'selector': 'nui-select-v2'},{'name': 'SheetComponent', 'selector': 'nui-sheet'},{'name': 'SheetGroupComponent', 'selector': 'nui-sheet-group'},{'name': 'SorterComponent', 'selector': 'nui-sorter'},{'name': 'SpinnerComponent', 'selector': 'nui-spinner'},{'name': 'SwitchComponent', 'selector': 'nui-switch'},{'name': 'TabHeadingGroupComponent', 'selector': 'nui-tab-heading-group'},{'name': 'TableComponent', 'selector': 'nui-table, table[nui-table]'},{'name': 'TextboxComponent', 'selector': 'nui-textbox'},{'name': 'TextboxNumberComponent', 'selector': 'nui-textbox-number'},{'name': 'TimeFrameBarComponent', 'selector': 'nui-time-frame-bar'},{'name': 'TimeFramePickerComponent', 'selector': 'nui-time-frame-picker'},{'name': 'TimePickerComponent', 'selector': 'nui-time-picker'},{'name': 'ToastComponent', 'selector': 'nui-toast-component'},{'name': 'ToolbarComponent', 'selector': 'nui-toolbar'},{'name': 'WizardComponent', 'selector': 'nui-wizard'},{'name': 'WizardFooterComponent', 'selector': 'wizard-footer'},{'name': 'WizardHorizontalComponent', 'selector': 'nui-wizard-horizontal'},{'name': 'WizardStepComponent', 'selector': 'nui-wizard-step'},{'name': 'WizardStepHeaderComponent', 'selector': 'nui-wizard-step-header'},{'name': 'WizardStepV2Component', 'selector': 'nui-wizard-step-v2'}];
     var DIRECTIVES = [{'name': 'ClickInterceptorDirective', 'selector': '[nuiClickInterceptor]'},{'name': 'DndDropTargetDirective', 'selector': '[cdkDropList][nuiDndDropTarget]'},{'name': 'MarkAsSelectedItemDirective', 'selector': '[nuiMarkAsSelectedItem]'},{'name': 'TableStickyHeaderDirective', 'selector': 'cdk-virtual-scroll-viewport[tableStickyHeader]'},{'name': 'TableVirtualScrollDirective', 'selector': '[tableVirtualScroll]:not([rowCount])'},{'name': 'TableVirtualScrollLinearDirective', 'selector': '[tableVirtualScroll]:not([offset])'},{'name': 'TooltipDirective', 'selector': '[nuiTooltip]'},{'name': 'WizardDirective', 'selector': '[nuiWizard]'},{'name': 'WizardStepFooterDirective', 'selector': '[nuiWizardStepFooter]'},{'name': 'WizardStepLabelDirective', 'selector': '[nuiWizardStepLabel]'},{'name': 'WizardStepperNextDirective', 'selector': 'button[nuiWizardNext]'},{'name': 'WizardStepperPreviousDirective', 'selector': 'button[nuiWizardPrevious]'}];
     var ACTUAL_COMPONENT = {'name': 'WizardStepHeaderComponent'};

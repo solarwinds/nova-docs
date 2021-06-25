@@ -19655,7 +19655,6 @@ class WizardStepHeaderComponent extends _angular_cdk_stepper__WEBPACK_IMPORTED_M
     }
     ngAfterViewInit() {
         this._focusMonitor.monitor(this._elementRef, true);
-        this.detectLongLabel();
     }
     ngOnDestroy() {
         this._focusMonitor.stopMonitoring(this._elementRef);
@@ -19671,12 +19670,6 @@ class WizardStepHeaderComponent extends _angular_cdk_stepper__WEBPACK_IMPORTED_M
     /** Returns WizardStepLabel if the label of given step is a template label. */
     get templateLabel() {
         return this.label instanceof _wizard_step_label_directive__WEBPACK_IMPORTED_MODULE_3__["WizardStepLabelDirective"] ? this.label : null;
-    }
-    get headerTooltip() {
-        if (this.stringLabel && this.isLabelOverflow) {
-            return this.stringLabel;
-        }
-        return "";
     }
     updateStepStateConfig(stepStateConfig) {
         this.wizardConfig.stepState = lodash_assign__WEBPACK_IMPORTED_MODULE_5___default()(Object.assign({}, this.wizardConfig.stepState), stepStateConfig);
@@ -19726,7 +19719,7 @@ WizardStepHeaderComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵ
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵclassProp"]("nui-wizard-step-header__label--active", ctx.completed)("nui-wizard-step-header__label--selected", ctx.selected)("nui-wizard-step-header__label--error", ctx.stepState === "error");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("nuiTooltip", ctx.headerTooltip);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("nuiTooltip", ctx.stringLabel ? ctx.stringLabel : "");
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", ctx.templateLabel);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
