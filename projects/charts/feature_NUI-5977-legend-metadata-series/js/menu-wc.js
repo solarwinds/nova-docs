@@ -748,9 +748,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/IValueThicknessAccessors.html" data-type="entity-link">IValueThicknessAccessors</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IXYAccessors.html" data-type="entity-link">IXYAccessors</a>
-                            </li>
-                            <li class="link">
                                 <a href="interfaces/IXYDataAccessors.html" data-type="entity-link">IXYDataAccessors</a>
                             </li>
                             <li class="link">
