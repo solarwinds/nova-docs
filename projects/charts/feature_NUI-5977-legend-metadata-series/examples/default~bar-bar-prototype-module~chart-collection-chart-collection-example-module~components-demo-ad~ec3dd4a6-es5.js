@@ -15239,7 +15239,7 @@
               y: scales.y.convert(dataSeries.accessors.data.y(point, index, dataSeries.data, dataSeries))
             };
           }
-          /** See {@link Renderer#getDataPointIndex} */
+          /** See {@link Renderer#getDataPointPosition} */
 
         }, {
           key: "getDataPointIndex",

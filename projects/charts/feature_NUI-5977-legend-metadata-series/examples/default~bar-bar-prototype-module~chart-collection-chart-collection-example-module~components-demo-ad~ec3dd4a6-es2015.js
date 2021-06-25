@@ -9556,7 +9556,7 @@ class XYRenderer extends _core_common_renderer__WEBPACK_IMPORTED_MODULE_0__["Ren
             y: scales.y.convert(dataSeries.accessors.data.y(point, index, dataSeries.data, dataSeries)),
         };
     }
-    /** See {@link Renderer#getDataPointIndex} */
+    /** See {@link Renderer#getDataPointPosition} */
     getDataPointIndex(series, values, scales) {
         if (lodash_isUndefined__WEBPACK_IMPORTED_MODULE_1___default()(values.x)) {
             return _constants__WEBPACK_IMPORTED_MODULE_2__["DATA_POINT_INTERACTION_RESET"];
