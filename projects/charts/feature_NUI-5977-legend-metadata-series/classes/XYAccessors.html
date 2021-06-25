@@ -65,6 +65,12 @@
 
 
 
+            <p class="comment">
+                <h3>Implements</h3>
+            </p>
+            <p class="comment">
+                            <code><a href="../interfaces/IAccessors.html" target="_self" >IAccessors</a></code>
+            </p>
 
 
             <section>
@@ -156,7 +162,7 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { DataAccessor } from &quot;../../core/common/types&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { DataAccessor, IAccessors } from &quot;../../core/common/types&quot;;
 
 export interface IXYDataAccessors {
     /** Accessor for value plotted on the &lt;code&gt;x&lt;/code&gt; coordinate */
@@ -167,7 +173,7 @@ export interface IXYDataAccessors {
     [key: string]: DataAccessor | undefined;
 }
 
-export class XYAccessors {
+export class XYAccessors implements IAccessors {
     /** The default data accessors for using with renderers deriving from XYRenderer */
     public data: IXYDataAccessors &#x3D; {
         x: (d: any) &#x3D;&gt; d.x,
