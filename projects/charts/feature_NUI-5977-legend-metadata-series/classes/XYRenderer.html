@@ -501,8 +501,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="29"
-                            class="link-to-prism">src/renderers/xy-renderer.ts:29</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="30"
+                            class="link-to-prism">src/renderers/xy-renderer.ts:30</a></div>
                 </td>
             </tr>
 
@@ -597,14 +597,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="14"
-                            class="link-to-prism">src/renderers/xy-renderer.ts:14</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="15"
+                            class="link-to-prism">src/renderers/xy-renderer.ts:15</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>See <a href="../classes/Renderer.html#getDataPointPosition">Renderer</a> </p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -1756,6 +1758,7 @@ export class XYRenderer&lt;TA extends IAccessors&gt; extends Renderer&lt;TA&gt; 
     // This is empty to allow this renderer to be used for series that represent metadata that may be shown in the legend but not visualized on the chart.
     public draw(renderSeries: IRenderSeries&lt;TA&gt;, rendererSubject: Subject&lt;IRendererEventPayload&gt;): void {}
 
+    /** See {@link Renderer#getDataPointPosition} */
     public getDataPointPosition(dataSeries: IDataSeries&lt;TA&gt;, index: number, scales: Scales): IPosition | undefined {
         if (index &lt; 0 || index &gt;&#x3D; dataSeries.data.length) {
             return undefined;

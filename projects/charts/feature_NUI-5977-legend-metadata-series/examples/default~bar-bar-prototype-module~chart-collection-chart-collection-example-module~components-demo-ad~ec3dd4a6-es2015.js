@@ -9540,6 +9540,7 @@ __webpack_require__.r(__webpack_exports__);
 class XYRenderer extends _core_common_renderer__WEBPACK_IMPORTED_MODULE_0__["Renderer"] {
     // This is empty to allow this renderer to be used for series that represent metadata that may be shown in the legend but not visualized on the chart.
     draw(renderSeries, rendererSubject) { }
+    /** See {@link Renderer#getDataPointPosition} */
     getDataPointPosition(dataSeries, index, scales) {
         var _a, _b;
         if (index < 0 || index >= dataSeries.data.length) {

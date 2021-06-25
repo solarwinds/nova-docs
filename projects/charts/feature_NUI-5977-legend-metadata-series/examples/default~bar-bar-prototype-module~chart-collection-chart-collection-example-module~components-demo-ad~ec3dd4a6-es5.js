@@ -15215,6 +15215,8 @@
           key: "draw",
           value: // This is empty to allow this renderer to be used for series that represent metadata that may be shown in the legend but not visualized on the chart.
           function draw(renderSeries, rendererSubject) {}
+          /** See {@link Renderer#getDataPointPosition} */
+
         }, {
           key: "getDataPointPosition",
           value: function getDataPointPosition(dataSeries, index, scales) {
