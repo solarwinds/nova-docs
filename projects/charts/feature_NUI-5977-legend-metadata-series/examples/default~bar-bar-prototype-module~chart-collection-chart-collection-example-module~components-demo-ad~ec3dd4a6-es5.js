@@ -31729,47 +31729,31 @@
       /* harmony import */
 
 
-      var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-      /*! lodash/isUndefined */
-      "TP7S");
-      /* harmony import */
-
-
-      var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2__);
-      /* harmony import */
-
-
-      var _constants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      var _constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! ../../constants */
       "he5r");
       /* harmony import */
 
 
-      var _core_common_utility_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-      /*! ../../core/common/utility.service */
-      "TnLJ");
-      /* harmony import */
-
-
-      var _constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      var _constants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! ../constants */
       "s8k4");
       /* harmony import */
 
 
-      var _marker_utils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      var _marker_utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! ../marker-utils */
       "pm6l");
       /* harmony import */
 
 
-      var _types__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      var _types__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! ../types */
       "AbRU");
       /* harmony import */
 
 
-      var _xy_renderer__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      var _xy_renderer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! ../xy-renderer */
       "EtOI");
       /**
@@ -31801,7 +31785,7 @@
             interactive: true,
             strokeStyle: "",
             strokeLinecap: "round",
-            markerInteraction: _constants__WEBPACK_IMPORTED_MODULE_5__["DEFAULT_MARKER_INTERACTION_CONFIG"],
+            markerInteraction: _constants__WEBPACK_IMPORTED_MODULE_3__["DEFAULT_MARKER_INTERACTION_CONFIG"],
             useEnhancedLineCaps: false,
             enhancedLineCap: {
               radius: 3
@@ -31819,7 +31803,7 @@
           function draw(renderSeries, rendererSubject) {
             var _a, _b, _c, _d, _e;
 
-            var target = renderSeries.containers[_types__WEBPACK_IMPORTED_MODULE_7__["RenderLayerName"].data];
+            var target = renderSeries.containers[_types__WEBPACK_IMPORTED_MODULE_5__["RenderLayerName"].data];
             var strokeValue = (_b = (_a = renderSeries.dataSeries.accessors.series).color) === null || _b === void 0 ? void 0 : _b.call(_a, renderSeries.dataSeries.id, renderSeries.dataSeries);
             var path = target.select("path.main");
 
@@ -31868,25 +31852,6 @@
               this.drawStandardLine(renderSeries, path);
             }
           }
-          /** See {@link Renderer#getDataPointIndex} */
-
-        }, {
-          key: "getDataPointIndex",
-          value: function getDataPointIndex(series, values, scales) {
-            if (!this.config.interactive || lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default()(values.x)) {
-              return _constants__WEBPACK_IMPORTED_MODULE_3__["DATA_POINT_INTERACTION_RESET"];
-            }
-
-            var index = _core_common_utility_service__WEBPACK_IMPORTED_MODULE_4__["UtilityService"].getClosestIndex(series.data, function (d, i) {
-              return series.accessors.data.x(d, i, series.data, series);
-            }, values.x);
-
-            if (lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default()(index)) {
-              throw new Error("Unable to get data point index");
-            }
-
-            return index;
-          }
           /** See {@link Renderer#highlightDataPoint} */
 
         }, {
@@ -31903,14 +31868,14 @@
               return;
             }
 
-            _marker_utils__WEBPACK_IMPORTED_MODULE_6__["MarkerUtils"].manageMarker(dataSeries, renderSeries.scales, dataPointIndex, renderSeries.containers[_types__WEBPACK_IMPORTED_MODULE_7__["RenderLayerName"].foreground], rendererSubject, this.config.markerInteraction);
+            _marker_utils__WEBPACK_IMPORTED_MODULE_4__["MarkerUtils"].manageMarker(dataSeries, renderSeries.scales, dataPointIndex, renderSeries.containers[_types__WEBPACK_IMPORTED_MODULE_5__["RenderLayerName"].foreground], rendererSubject, this.config.markerInteraction);
           }
           /** See {@link Renderer#getRequiredLayers} */
 
         }, {
           key: "getRequiredLayers",
           value: function getRequiredLayers() {
-            return [_constants__WEBPACK_IMPORTED_MODULE_3__["STANDARD_RENDER_LAYERS"][_types__WEBPACK_IMPORTED_MODULE_7__["RenderLayerName"].data], _constants__WEBPACK_IMPORTED_MODULE_3__["STANDARD_RENDER_LAYERS"][_types__WEBPACK_IMPORTED_MODULE_7__["RenderLayerName"].foreground], _constants__WEBPACK_IMPORTED_MODULE_3__["STANDARD_RENDER_LAYERS"][_types__WEBPACK_IMPORTED_MODULE_7__["RenderLayerName"].unclippedData]];
+            return [_constants__WEBPACK_IMPORTED_MODULE_2__["STANDARD_RENDER_LAYERS"][_types__WEBPACK_IMPORTED_MODULE_5__["RenderLayerName"].data], _constants__WEBPACK_IMPORTED_MODULE_2__["STANDARD_RENDER_LAYERS"][_types__WEBPACK_IMPORTED_MODULE_5__["RenderLayerName"].foreground], _constants__WEBPACK_IMPORTED_MODULE_2__["STANDARD_RENDER_LAYERS"][_types__WEBPACK_IMPORTED_MODULE_5__["RenderLayerName"].unclippedData]];
           }
           /** See {@link Renderer#getDataPointPosition} */
 
@@ -32000,7 +31965,7 @@
             }; // use an unclipped layer to ensure the line caps on the left and right sides of the chart don't get clipped
 
 
-            var lineCaps = renderSeries.containers[_types__WEBPACK_IMPORTED_MODULE_7__["RenderLayerName"].unclippedData].selectAll(".".concat(LineRenderer.LINE_CAP_CLASS_NAME)).data(definedData).attr("cx", updateCx).attr("cy", updateCy);
+            var lineCaps = renderSeries.containers[_types__WEBPACK_IMPORTED_MODULE_5__["RenderLayerName"].unclippedData].selectAll(".".concat(LineRenderer.LINE_CAP_CLASS_NAME)).data(definedData).attr("cx", updateCx).attr("cy", updateCy);
 
             lineCaps.enter().append("circle").attr("class", LineRenderer.LINE_CAP_CLASS_NAME).attr("r", (_a = this.config.enhancedLineCap) === null || _a === void 0 ? void 0 : _a.radius).attr("cx", updateCx).attr("cy", updateCy).style("stroke-width", (_b = this.config.enhancedLineCap) === null || _b === void 0 ? void 0 : _b.strokeWidth).style("fill", fill).style("stroke", (_c = this.config.enhancedLineCap) === null || _c === void 0 ? void 0 : _c.stroke);
             lineCaps.exit().remove();
@@ -32019,7 +31984,7 @@
         }]);
 
         return LineRenderer;
-      }(_xy_renderer__WEBPACK_IMPORTED_MODULE_8__["XYRenderer"]);
+      }(_xy_renderer__WEBPACK_IMPORTED_MODULE_6__["XYRenderer"]);
 
       LineRenderer.UNCLIPPED_DATA_LAYER_NAME = "unclipped-data";
       LineRenderer.LINE_CAP_CLASS_NAME = "nui-chart-line-cap";

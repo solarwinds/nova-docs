@@ -65,12 +65,6 @@
 
 
 
-            <p class="comment">
-                <h3>Implements</h3>
-            </p>
-            <p class="comment">
-                            <code><a href="../interfaces/IXYAccessors.html" target="_self" >IXYAccessors</a></code>
-            </p>
 
 
             <section>
@@ -221,7 +215,7 @@ export interface IXYAccessors extends IAccessors {
     series: IXYSeriesAccessors;
 }
 
-export class XYAccessors implements IXYAccessors {
+export class XYAccessors {
     /** The default data accessors for using with renderers deriving from XYRenderer */
     public data: IXYDataAccessors &#x3D; {
         x: (d: any) &#x3D;&gt; d.x,

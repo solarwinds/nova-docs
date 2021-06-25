@@ -953,7 +953,8 @@
               x: new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["TimeScale"](),
               y: new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["LinearScale"]()
             };
-            var averageData = calculateAverageSeries(getData()); // We are using the base XYRenderer so the metadata does not get displayed on the chart.
+            var dataSeries = getData();
+            var averageData = calculateAverageSeries(dataSeries); // We are using the base XYRenderer so the metadata does not get displayed on the chart.
             // Set `ignoreForDomainCalculation` to true to prevent the metadata from affecting the domain.
 
             var metaDataRenderer = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["XYRenderer"]({
@@ -974,7 +975,7 @@
               showInLegend: false
             }); // Here we assemble the complete chart series.
 
-            var seriesSet = getData().map(function (d) {
+            var seriesSet = dataSeries.map(function (d) {
               return Object.assign(Object.assign({}, d), {
                 accessors: accessors,
                 renderer: renderer,
@@ -996,41 +997,40 @@
         template: _raw_loader_legend_metadata_example_component_html__WEBPACK_IMPORTED_MODULE_1__["default"]
       })], LegendMetadataExampleComponent);
 
-      function calculateAverageSeries(dataArr) {
+      function calculateAverageSeries(seriesSet) {
         var _a, _b, _c, _d, _e;
 
         var arrAverage = [];
-        var dataLength = (_b = (_a = dataArr[0].data) === null || _a === void 0 ? void 0 : _a.length) !== null && _b !== void 0 ? _b : 0;
-        var numOfSeries = dataArr.length;
+        var dataLength = (_b = (_a = seriesSet[0].data) === null || _a === void 0 ? void 0 : _a.length) !== null && _b !== void 0 ? _b : 0;
+        var numOfSeries = seriesSet.length;
+        var averageSeries = {
+          id: "average",
+          name: "Average Speed",
+          data: []
+        };
 
-        if (!dataArr.length) {
-          return {
-            id: "average",
-            name: "Average Speed",
-            data: []
-          };
+        if (!seriesSet.length) {
+          return averageSeries;
         }
 
         for (var n = 0; n < dataLength; n++) {
           var avg = 0;
 
-          for (var i = 0; i < dataArr.length; i++) {
-            var series = dataArr[i];
+          for (var i = 0; i < seriesSet.length; i++) {
+            var series = seriesSet[i];
             avg += (_d = (_c = series === null || series === void 0 ? void 0 : series.data) === null || _c === void 0 ? void 0 : _c[n].value) !== null && _d !== void 0 ? _d : 0;
           }
 
           avg = avg / numOfSeries;
           arrAverage.push({
-            x: (_e = dataArr[0].data) === null || _e === void 0 ? void 0 : _e[n].x,
+            x: (_e = seriesSet[0].data) === null || _e === void 0 ? void 0 : _e[n].x,
             value: avg
           });
         }
 
-        return {
-          id: "average",
-          name: "Average Speed",
+        return Object.assign(Object.assign({}, averageSeries), {
           data: arrAverage
-        };
+        });
       }
       /* Chart data */
 

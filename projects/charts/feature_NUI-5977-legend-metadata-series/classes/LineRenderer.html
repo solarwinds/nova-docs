@@ -161,10 +161,6 @@
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#getDataPointIndex">getDataPointIndex</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Public</span>
                                 <a href="#getDataPointPosition">getDataPointPosition</a>
                             </li>
                             <li>
@@ -1051,104 +1047,6 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getDataPointIndex"></a>
-                    <span class="name">
-                        <b>
-                            <span class="modifier">Public</span>
-                            getDataPointIndex
-                        </b>
-                        <a href="#getDataPointIndex"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getDataPointIndex(series: IDataSeries<ILineAccessors>, values: literal type, scales: <a href="../classes/Scale.html">Scales</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="107"
-                            class="link-to-prism">src/renderers/line/line-renderer.ts:107</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>See <a href="../classes/Renderer.html#getDataPointIndex">Renderer</a> </p>
-</div>
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>series</td>
-                                    <td>
-                                            <code>IDataSeries&lt;ILineAccessors&gt;</code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>values</td>
-                                    <td>
-                                            <code>literal type</code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>scales</td>
-                                    <td>
-                                                <code><a href="../classes/Scale.html" target="_self" >Scales</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
                     <a name="getDataPointPosition"></a>
                     <span class="name">
                         <b>
@@ -1169,8 +1067,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="148"
-                            class="link-to-prism">src/renderers/line/line-renderer.ts:148</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="133"
+                            class="link-to-prism">src/renderers/line/line-renderer.ts:133</a></div>
                 </td>
             </tr>
 
@@ -1267,8 +1165,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="139"
-                            class="link-to-prism">src/renderers/line/line-renderer.ts:139</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="124"
+                            class="link-to-prism">src/renderers/line/line-renderer.ts:124</a></div>
                 </td>
             </tr>
 
@@ -1454,8 +1352,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="122"
-                            class="link-to-prism">src/renderers/line/line-renderer.ts:122</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="107"
+                            class="link-to-prism">src/renderers/line/line-renderer.ts:107</a></div>
                 </td>
             </tr>
 
@@ -4137,21 +4035,6 @@ export class LineRenderer extends XYRenderer&lt;ILineAccessors&gt; {
         } else {
             this.drawStandardLine(renderSeries, path);
         }
-    }
-
-    /** See {@link Renderer#getDataPointIndex} */
-    public getDataPointIndex(series: IDataSeries&lt;ILineAccessors&gt;, values: { [p: string]: any }, scales: Scales): number {
-        if (!this.config.interactive || isUndefined(values.x)) {
-            return DATA_POINT_INTERACTION_RESET;
-        }
-
-        const index &#x3D; UtilityService.getClosestIndex(series.data, (d, i) &#x3D;&gt; series.accessors.data.x(d, i, series.data, series), values.x);
-
-        if (isUndefined(index)) {
-            throw new Error(&quot;Unable to get data point index&quot;);
-        }
-
-        return index;
     }
 
     /** See {@link Renderer#highlightDataPoint} */
