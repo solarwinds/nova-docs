@@ -509,6 +509,8 @@
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>See <a href="../classes/Renderer.html#getDataPointPosition">Renderer</a> </p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -1774,6 +1776,7 @@ export class XYRenderer&lt;TA extends IAccessors&gt; extends Renderer&lt;TA&gt; 
         };
     }
 
+    /** See {@link Renderer#getDataPointPosition} */
     public getDataPointIndex(series: IDataSeries&lt;TA&gt;, values: { [p: string]: any }, scales: Scales): number {
         if (isUndefined(values.x)) {
             return DATA_POINT_INTERACTION_RESET;
