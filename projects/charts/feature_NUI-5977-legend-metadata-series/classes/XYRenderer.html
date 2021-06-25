@@ -503,15 +503,15 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="30"
-                            class="link-to-prism">src/renderers/xy-renderer.ts:30</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">src/renderers/xy-renderer.ts:32</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>See <a href="../classes/Renderer.html#getDataPointPosition">Renderer</a> </p>
+                    <div class="io-description"><p>See <a href="../classes/Renderer.html#getDataPointIndex">Renderer</a> </p>
 </div>
 
                     <div class="io-description">
@@ -601,8 +601,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="15"
-                            class="link-to-prism">src/renderers/xy-renderer.ts:15</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="16"
+                            class="link-to-prism">src/renderers/xy-renderer.ts:16</a></div>
                 </td>
             </tr>
 
@@ -1779,7 +1779,7 @@ export class XYRenderer&lt;TA extends IAccessors&gt; extends Renderer&lt;TA&gt; 
         };
     }
 
-    /** See {@link Renderer#getDataPointPosition} */
+    /** See {@link Renderer#getDataPointIndex} */
     public getDataPointIndex(series: IDataSeries&lt;TA&gt;, values: { [p: string]: any }, scales: Scales): number {
         if (isUndefined(values.x)) {
             return DATA_POINT_INTERACTION_RESET;

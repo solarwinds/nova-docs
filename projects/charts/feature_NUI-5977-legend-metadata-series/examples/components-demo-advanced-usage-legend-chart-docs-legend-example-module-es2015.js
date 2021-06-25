@@ -635,7 +635,7 @@ let LegendMetadataExampleComponent = class LegendMetadataExampleComponent {
 };
 LegendMetadataExampleComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
-        selector: "area-chart-stack-example",
+        selector: "nui-legend-metadata-example",
         template: _raw_loader_legend_metadata_example_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
     })
 ], LegendMetadataExampleComponent);
