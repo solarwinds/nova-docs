@@ -620,7 +620,9 @@ let LegendMetadataExampleComponent = class LegendMetadataExampleComponent {
         avgAccessors.data.y = (d) => d.value;
         this.avgSeries = Object.assign(Object.assign({}, averageData), { accessors: avgAccessors, renderer: metaDataRenderer, scales: scales, 
             // showInLegend is false because we manually add our own series
-            showInLegend: false });
+            showInLegend: false, 
+            // preprocess is false to let the area processor know it is already formatted properly
+            preprocess: false });
         // Here we assemble the complete chart series.
         let seriesSet = dataSeries.map(d => (Object.assign(Object.assign({}, d), { accessors,
             renderer,

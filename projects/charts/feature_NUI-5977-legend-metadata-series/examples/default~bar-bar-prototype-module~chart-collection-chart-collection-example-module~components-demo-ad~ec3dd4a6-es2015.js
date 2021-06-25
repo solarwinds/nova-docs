@@ -9555,7 +9555,7 @@ class XYRenderer extends _core_common_renderer__WEBPACK_IMPORTED_MODULE_0__["Ren
         };
     }
     getDataPointIndex(series, values, scales) {
-        if (!this.config.interactive || lodash_isUndefined__WEBPACK_IMPORTED_MODULE_1___default()(values.x)) {
+        if (lodash_isUndefined__WEBPACK_IMPORTED_MODULE_1___default()(values.x)) {
             return _constants__WEBPACK_IMPORTED_MODULE_2__["DATA_POINT_INTERACTION_RESET"];
         }
         const index = _core_common_utility_service__WEBPACK_IMPORTED_MODULE_3__["UtilityService"].getClosestIndex(series.data, (d, i) => { var _a, _b; return (_b = (_a = series.accessors.data) === null || _a === void 0 ? void 0 : _a.x) === null || _b === void 0 ? void 0 : _b.call(_a, d, i, series.data, series); }, values.x);

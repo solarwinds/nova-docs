@@ -15238,7 +15238,7 @@
         }, {
           key: "getDataPointIndex",
           value: function getDataPointIndex(series, values, scales) {
-            if (!this.config.interactive || lodash_isUndefined__WEBPACK_IMPORTED_MODULE_1___default()(values.x)) {
+            if (lodash_isUndefined__WEBPACK_IMPORTED_MODULE_1___default()(values.x)) {
               return _constants__WEBPACK_IMPORTED_MODULE_2__["DATA_POINT_INTERACTION_RESET"];
             }
 
