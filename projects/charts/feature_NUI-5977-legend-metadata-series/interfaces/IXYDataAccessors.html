@@ -104,7 +104,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/renderers/accessors/xy-accessors.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/renderers/accessors/xy-accessors.ts:7</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -194,10 +194,7 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { DataAccessor, IAccessors, SeriesAccessor } from &quot;../../core/common/types&quot;;
-import { defaultColorProvider, defaultMarkerProvider } from &quot;../../core/common/palette/default-providers&quot;;
-import { Renderer } from &quot;../../core/common/renderer&quot;;
-
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { DataAccessor, IAccessors } from &quot;../../core/common/types&quot;;
 
 export interface IXYDataAccessors {
     /** Accessor for value plotted on the &lt;code&gt;x&lt;/code&gt; coordinate */
@@ -207,23 +204,13 @@ export interface IXYDataAccessors {
     /** Additional custom keys to match the base interface */
     [key: string]: DataAccessor | undefined;
 }
-export interface IXYSeriesAccessors {
-    /** Color of the series */
-    color?: SeriesAccessor;
-    /** Marker for the series */
-    marker?: SeriesAccessor;
-    /** Additional custom keys to match the base interface */
-    [key: string]: SeriesAccessor | undefined;
-}
 
-export class XYAccessors {
+export class XYAccessors implements IAccessors {
     /** The default data accessors for using with renderers deriving from XYRenderer */
     public data: IXYDataAccessors &#x3D; {
         x: (d: any) &#x3D;&gt; d.x,
         y: (d: any) &#x3D;&gt; d.y,
     };
-    public series: IXYSeriesAccessors;
-
 }
 </code></pre>
     </div>

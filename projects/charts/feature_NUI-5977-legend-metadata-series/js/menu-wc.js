@@ -757,9 +757,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/IXYScales.html" data-type="entity-link">IXYScales</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IXYSeriesAccessors.html" data-type="entity-link">IXYSeriesAccessors</a>
-                            </li>
-                            <li class="link">
                                 <a href="interfaces/IZoneCrossPoint.html" data-type="entity-link">IZoneCrossPoint</a>
                             </li>
                             <li class="link">
