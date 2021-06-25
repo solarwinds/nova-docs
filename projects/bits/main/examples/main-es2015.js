@@ -9974,8 +9974,8 @@ const WIZARD_STEP_STATE_DEFAULT_CONFIG = {
         iconColor: "black",
     },
     error: {
-        icon: "severity_error",
-        iconColor: "red",
+        icon: "step-active",
+        iconColor: "black",
     },
 };
 const WIZARD_CONFIG_DEFAULT = {
