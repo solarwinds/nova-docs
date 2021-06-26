@@ -2229,7 +2229,7 @@
       !*** ./src/renderers/radial/public-api.ts ***!
       \********************************************/
 
-    /*! exports provided: radialPreprocessor, radial, DEFAULT_RADIAL_RENDERER_CONFIG, RadialRenderer, DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG, DonutGaugeThresholdsRenderer, donutGaugeRendererConfig, DonutGaugeRenderingUtil, PieRenderer, radialGrid, radialScales, RadialAccessors */
+    /*! exports provided: radialPreprocessor, radial, DEFAULT_RADIAL_RENDERER_CONFIG, RadialRenderer, DEFAULT_DONUT_GAUGE_THRESHOLDS_RENDERER_CONFIG, DonutGaugeThresholdsRenderer, donutGaugeRendererConfig, DonutGaugeRenderingUtil, PieRenderer, radialGrid, radialScales, RadialAccessors */
 
     /***/
     function yfn(module, __webpack_exports__, __webpack_require__) {
@@ -2281,8 +2281,8 @@
       /* harmony reexport (safe) */
 
 
-      __webpack_require__.d(__webpack_exports__, "DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG", function () {
-        return _gauge_donut_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_2__["DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG"];
+      __webpack_require__.d(__webpack_exports__, "DEFAULT_DONUT_GAUGE_THRESHOLDS_RENDERER_CONFIG", function () {
+        return _gauge_donut_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_2__["DEFAULT_DONUT_GAUGE_THRESHOLDS_RENDERER_CONFIG"];
       });
       /* harmony reexport (safe) */
 
@@ -13128,7 +13128,7 @@
       !*** ./src/core/public-api.ts ***!
       \********************************/
 
-    /*! exports provided: ChartPalette, MappedValueProvider, CHART_PALETTE_CS1, CHART_PALETTE_CS2, CHART_PALETTE_CS3, CHART_PALETTE_CS_S, CHART_PALETTE_CS_S_EXTENDED, CHART_MARKERS, ProcessedColorProvider, SequentialChartMarkerProvider, SequentialColorProvider, SequentialValueProvider, TextColorProvider, PathMarker, SvgMarker, defaultColorProvider, defaultPalette, defaultMarkerProvider, getColorValueByName, getAutomaticDomain, getAutomaticDomainWithIncludedInterval, getAutomaticDomainWithTicks, BandScale, PointScale, LinearScale, Scale, TimeScale, isDaylightSavingTime, TimeIntervalScale, datetimeFormatter, EMPTY_CONTINUOUS_DOMAIN, NORMALIZED_DOMAIN, isBandScale, hasInnerScale, NoopScale, convert, invert, ChartPlugin, DataManager, DataSeries, EventBus, InteractionType, Lasagna, MouseInteractiveArea, RenderEngine, Renderer, UtilityService, AxisConfig, BorderConfig, DimensionConfig, linearGaugeGridConfig, GridConfig, AreaGridConfig, BarGridConfig, BarHorizontalGridConfig, BarStatusGridConfig, sparkChartGridConfig, XYGridConfig, XYGrid, borderMidpoint, Grid, RadialGrid, ChartDonutContentPlugin, ChartPopoverPlugin, DonutGaugeLabelsPlugin, LinearGaugeLabelsPlugin, GAUGE_LABEL_FORMATTER_NAME_DEFAULT, GAUGE_LABELS_CONTAINER_CLASS, GAUGE_THRESHOLD_LABEL_CLASS, InteractionLabelPlugin, InteractionLinePlugin, MouseInteractiveAreaPlugin, RadialPopoverPlugin, RenderEnginePlugin, TOOLTIP_POSITION_OFFSET, getVerticalSetup, getHorizontalSetup, ChartTooltipsPlugin, RadialTooltipsPlugin, BarTooltipsPlugin, ZoomPlugin, ChartCollection, Chart, ChartAssist, LegendInteractionAssist, SparkChartAssist, ChartAssistEventType, ChartAssistRenderStateData, CssFilterId, GRAYSCALE_FILTER, GRAYSCALE_COLOR_MATRIX */
+    /*! exports provided: ChartPalette, MappedValueProvider, CHART_PALETTE_CS1, CHART_PALETTE_CS2, CHART_PALETTE_CS3, CHART_PALETTE_CS_S, CHART_PALETTE_CS_S_EXTENDED, CHART_MARKERS, ProcessedColorProvider, SequentialChartMarkerProvider, SequentialColorProvider, SequentialValueProvider, TextColorProvider, PathMarker, SvgMarker, defaultColorProvider, defaultPalette, defaultMarkerProvider, getColorValueByName, getAutomaticDomain, getAutomaticDomainWithIncludedInterval, getAutomaticDomainWithTicks, BandScale, PointScale, LinearScale, Scale, TimeScale, isDaylightSavingTime, TimeIntervalScale, datetimeFormatter, EMPTY_CONTINUOUS_DOMAIN, NORMALIZED_DOMAIN, isBandScale, hasInnerScale, NoopScale, convert, invert, ChartPlugin, DataManager, DataSeries, EventBus, InteractionType, Lasagna, MouseInteractiveArea, RenderEngine, Renderer, UtilityService, AxisConfig, BorderConfig, DimensionConfig, LINEAR_GAUGE_LABEL_CLEARANCE_DEFAULTS, linearGaugeGridConfig, DONUT_GAUGE_LABEL_CLEARANCE_DEFAULT, donutGaugeGridConfig, GridConfig, AreaGridConfig, BarGridConfig, BarHorizontalGridConfig, BarStatusGridConfig, sparkChartGridConfig, XYGridConfig, gaugeGrid, XYGrid, borderMidpoint, Grid, RadialGrid, ChartDonutContentPlugin, ChartPopoverPlugin, DonutGaugeLabelsPlugin, LinearGaugeLabelsPlugin, GAUGE_LABEL_FORMATTER_NAME_DEFAULT, GAUGE_LABELS_CONTAINER_CLASS, GAUGE_THRESHOLD_LABEL_CLASS, InteractionLabelPlugin, InteractionLinePlugin, MouseInteractiveAreaPlugin, RadialPopoverPlugin, RenderEnginePlugin, TOOLTIP_POSITION_OFFSET, getVerticalSetup, getHorizontalSetup, ChartTooltipsPlugin, RadialTooltipsPlugin, BarTooltipsPlugin, ZoomPlugin, ChartCollection, Chart, ChartAssist, LegendInteractionAssist, SparkChartAssist, ChartAssistEventType, ChartAssistRenderStateData, CssFilterId, GRAYSCALE_FILTER, GRAYSCALE_COLOR_MATRIX */
 
     /***/
     function DRhB(module, __webpack_exports__, __webpack_require__) {
@@ -13450,8 +13450,26 @@
       /* harmony reexport (safe) */
 
 
+      __webpack_require__.d(__webpack_exports__, "LINEAR_GAUGE_LABEL_CLEARANCE_DEFAULTS", function () {
+        return _grid_public_api__WEBPACK_IMPORTED_MODULE_1__["LINEAR_GAUGE_LABEL_CLEARANCE_DEFAULTS"];
+      });
+      /* harmony reexport (safe) */
+
+
       __webpack_require__.d(__webpack_exports__, "linearGaugeGridConfig", function () {
         return _grid_public_api__WEBPACK_IMPORTED_MODULE_1__["linearGaugeGridConfig"];
+      });
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "DONUT_GAUGE_LABEL_CLEARANCE_DEFAULT", function () {
+        return _grid_public_api__WEBPACK_IMPORTED_MODULE_1__["DONUT_GAUGE_LABEL_CLEARANCE_DEFAULT"];
+      });
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "donutGaugeGridConfig", function () {
+        return _grid_public_api__WEBPACK_IMPORTED_MODULE_1__["donutGaugeGridConfig"];
       });
       /* harmony reexport (safe) */
 
@@ -13494,6 +13512,12 @@
 
       __webpack_require__.d(__webpack_exports__, "XYGridConfig", function () {
         return _grid_public_api__WEBPACK_IMPORTED_MODULE_1__["XYGridConfig"];
+      });
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "gaugeGrid", function () {
+        return _grid_public_api__WEBPACK_IMPORTED_MODULE_1__["gaugeGrid"];
       });
       /* harmony reexport (safe) */
 
@@ -14689,7 +14713,7 @@
       !*** ./src/core/grid/public-api.ts ***!
       \*************************************/
 
-    /*! exports provided: AxisConfig, BorderConfig, DimensionConfig, linearGaugeGridConfig, GridConfig, AreaGridConfig, BarGridConfig, BarHorizontalGridConfig, BarStatusGridConfig, sparkChartGridConfig, XYGridConfig, XYGrid, borderMidpoint, Grid, RadialGrid */
+    /*! exports provided: AxisConfig, BorderConfig, DimensionConfig, LINEAR_GAUGE_LABEL_CLEARANCE_DEFAULTS, linearGaugeGridConfig, DONUT_GAUGE_LABEL_CLEARANCE_DEFAULT, donutGaugeGridConfig, GridConfig, AreaGridConfig, BarGridConfig, BarHorizontalGridConfig, BarStatusGridConfig, sparkChartGridConfig, XYGridConfig, gaugeGrid, XYGrid, borderMidpoint, Grid, RadialGrid */
 
     /***/
     function EMYG(module, __webpack_exports__, __webpack_require__) {
@@ -14723,8 +14747,26 @@
       /* harmony reexport (safe) */
 
 
+      __webpack_require__.d(__webpack_exports__, "LINEAR_GAUGE_LABEL_CLEARANCE_DEFAULTS", function () {
+        return _config_public_api__WEBPACK_IMPORTED_MODULE_0__["LINEAR_GAUGE_LABEL_CLEARANCE_DEFAULTS"];
+      });
+      /* harmony reexport (safe) */
+
+
       __webpack_require__.d(__webpack_exports__, "linearGaugeGridConfig", function () {
         return _config_public_api__WEBPACK_IMPORTED_MODULE_0__["linearGaugeGridConfig"];
+      });
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "DONUT_GAUGE_LABEL_CLEARANCE_DEFAULT", function () {
+        return _config_public_api__WEBPACK_IMPORTED_MODULE_0__["DONUT_GAUGE_LABEL_CLEARANCE_DEFAULT"];
+      });
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "donutGaugeGridConfig", function () {
+        return _config_public_api__WEBPACK_IMPORTED_MODULE_0__["donutGaugeGridConfig"];
       });
       /* harmony reexport (safe) */
 
@@ -14767,6 +14809,12 @@
 
       __webpack_require__.d(__webpack_exports__, "XYGridConfig", function () {
         return _config_public_api__WEBPACK_IMPORTED_MODULE_0__["XYGridConfig"];
+      });
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "gaugeGrid", function () {
+        return _config_public_api__WEBPACK_IMPORTED_MODULE_0__["gaugeGrid"];
       });
       /* harmony import */
 
@@ -15994,7 +16042,7 @@
       !*** ./src/renderers/public-api.ts ***!
       \*************************************/
 
-    /*! exports provided: THRESHOLDS_MAIN_CHART_RENDERER_CONFIG, THRESHOLDS_SUMMARY_RENDERER_CONFIG, DEFAULT_MARKER_INTERACTION_CONFIG, GAUGE_THRESHOLD_MARKER_CLASS, RenderState, RenderLayerName, XYRenderer, SideIndicatorAccessors, SideIndicatorRenderer, XYAccessors, NoopAccessors, RectangleAccessors, NoopRenderer, BarRenderer, stackedPreprocessor, stack, barGrid, barScales, BarAccessors, barAccessors, HorizontalBarAccessors, VerticalBarAccessors, StatusAccessors, statusAccessors, BarHighlightStrategy, BarSeriesHighlightStrategy, DEFAULT_LINEAR_GAUGE_THRESHOLDS_RENDERER_CONFIG, LinearGaugeThresholdsRenderer, radialPreprocessor, radial, DEFAULT_RADIAL_RENDERER_CONFIG, RadialRenderer, DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG, DonutGaugeThresholdsRenderer, donutGaugeRendererConfig, DonutGaugeRenderingUtil, PieRenderer, radialGrid, radialScales, RadialAccessors, calculateMissingData, LineSelectSeriesInteractionStrategy, LineAccessors, LineRenderer, MissingDataLineRendererConfig, areaGrid, AreaAccessors, AreaRenderer, stackedAreaPreprocessor, stackedArea, stackedPercentageAreaPreprocessor, stackedPercentageArea, calculateDomainValueCombinedTotals, applyStackMetadata, stackedAreaAccessors */
+    /*! exports provided: THRESHOLDS_MAIN_CHART_RENDERER_CONFIG, THRESHOLDS_SUMMARY_RENDERER_CONFIG, DEFAULT_MARKER_INTERACTION_CONFIG, GAUGE_THRESHOLD_MARKER_CLASS, RenderState, RenderLayerName, XYRenderer, SideIndicatorAccessors, SideIndicatorRenderer, XYAccessors, NoopAccessors, RectangleAccessors, NoopRenderer, BarRenderer, stackedPreprocessor, stack, barGrid, barScales, BarAccessors, barAccessors, HorizontalBarAccessors, VerticalBarAccessors, StatusAccessors, statusAccessors, BarHighlightStrategy, BarSeriesHighlightStrategy, DEFAULT_LINEAR_GAUGE_THRESHOLDS_RENDERER_CONFIG, LinearGaugeThresholdsRenderer, radialPreprocessor, radial, DEFAULT_RADIAL_RENDERER_CONFIG, RadialRenderer, DEFAULT_DONUT_GAUGE_THRESHOLDS_RENDERER_CONFIG, DonutGaugeThresholdsRenderer, donutGaugeRendererConfig, DonutGaugeRenderingUtil, PieRenderer, radialGrid, radialScales, RadialAccessors, calculateMissingData, LineSelectSeriesInteractionStrategy, LineAccessors, LineRenderer, MissingDataLineRendererConfig, areaGrid, AreaAccessors, AreaRenderer, stackedAreaPreprocessor, stackedArea, stackedPercentageAreaPreprocessor, stackedPercentageArea, calculateDomainValueCombinedTotals, applyStackMetadata, stackedAreaAccessors */
 
     /***/
     function Foqm(module, __webpack_exports__, __webpack_require__) {
@@ -16244,8 +16292,8 @@
       /* harmony reexport (safe) */
 
 
-      __webpack_require__.d(__webpack_exports__, "DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG", function () {
-        return _radial_public_api__WEBPACK_IMPORTED_MODULE_7__["DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG"];
+      __webpack_require__.d(__webpack_exports__, "DEFAULT_DONUT_GAUGE_THRESHOLDS_RENDERER_CONFIG", function () {
+        return _radial_public_api__WEBPACK_IMPORTED_MODULE_7__["DEFAULT_DONUT_GAUGE_THRESHOLDS_RENDERER_CONFIG"];
       });
       /* harmony reexport (safe) */
 
@@ -16831,20 +16879,17 @@
         return GAUGE_THRESHOLD_LABEL_CLASS;
       });
       /**
-       * @ignore
        * Default gauge label formatter name
        */
 
 
-      var GAUGE_LABEL_FORMATTER_NAME_DEFAULT = "label";
+      var GAUGE_LABEL_FORMATTER_NAME_DEFAULT = "gauge-label";
       /**
-       * @ignore
        * Gauge labels container class name
        */
 
       var GAUGE_LABELS_CONTAINER_CLASS = "gauge-labels";
       /**
-       * @ignore
        * Gauge threshold label class name
        */
 
@@ -17934,9 +17979,60 @@
 
 
       var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(lodash_isUndefined__WEBPACK_IMPORTED_MODULE_13__);
+      /* harmony import */
+
+
+      var _core_chart_assists_chart_assist__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
+      /*! ../core/chart-assists/chart-assist */
+      "2OGn");
+      /* harmony import */
+
+
+      var _renderers_radial_radial_preprocessor__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
+      /*! ../renderers/radial/radial-preprocessor */
+      "okm5");
+      /* harmony import */
+
+
+      var _renderers_bar_stacked_preprocessor__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
+      /*! ../renderers/bar/stacked-preprocessor */
+      "ehLA");
+      /* harmony import */
+
+
+      var _core_chart__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(
+      /*! ../core/chart */
+      "91EP");
+      /* harmony import */
+
+
+      var _core_grid_config_gauge_grid_fn__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(
+      /*! ../core/grid/config/gauge-grid-fn */
+      "Zwam");
+      /* harmony import */
+
+
+      var lodash_isEmpty__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(
+      /*! lodash/isEmpty */
+      "E+oP");
+      /* harmony import */
+
+
+      var lodash_isEmpty__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(lodash_isEmpty__WEBPACK_IMPORTED_MODULE_19__);
+      /* harmony import */
+
+
+      var _core_plugins_gauge_donut_gauge_labels_plugin__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(
+      /*! ../core/plugins/gauge/donut-gauge-labels-plugin */
+      "U0Ec");
+      /* harmony import */
+
+
+      var _core_plugins_gauge_linear_gauge_labels_plugin__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(
+      /*! ../core/plugins/gauge/linear-gauge-labels-plugin */
+      "hVbV");
       /**
-       * @ignore
-       * Convenience utility to simplify gauge usage
+       * Convenience utility for simplifying gauge usage
        */
 
 
@@ -17946,8 +18042,34 @@
         }
 
         _createClass(GaugeUtil, null, [{
-          key: "assembleSeriesSet",
+          key: "createChartAssist",
           value:
+          /**
+           * Creates a ChartAssist pre-configured based on the provided IGaugeConfig and GaugeMode
+           *
+           * @param gaugeConfig The gauge configuration
+           * @param mode The gauge mode
+           *
+           * @returns {ChartAssist} A pre-configured chart assist
+           */
+          function createChartAssist(gaugeConfig, mode) {
+            var _a, _b, _c, _d;
+
+            var grid = Object(_core_grid_config_gauge_grid_fn__WEBPACK_IMPORTED_MODULE_18__["gaugeGrid"])(gaugeConfig, mode);
+            var chart = new _core_chart__WEBPACK_IMPORTED_MODULE_17__["Chart"](grid);
+
+            if (!lodash_isEmpty__WEBPACK_IMPORTED_MODULE_19___default()((_a = gaugeConfig.thresholds) === null || _a === void 0 ? void 0 : _a.definitions) && !((_b = gaugeConfig.thresholds) === null || _b === void 0 ? void 0 : _b.disableMarkers)) {
+              if (mode === _constants__WEBPACK_IMPORTED_MODULE_11__["GaugeMode"].Donut) {
+                chart.addPlugin(new _core_plugins_gauge_donut_gauge_labels_plugin__WEBPACK_IMPORTED_MODULE_20__["DonutGaugeLabelsPlugin"]());
+              } else {
+                chart.addPlugin(new _core_plugins_gauge_linear_gauge_labels_plugin__WEBPACK_IMPORTED_MODULE_21__["LinearGaugeLabelsPlugin"]({
+                  flippedLabels: (_d = (_c = gaugeConfig.labels) === null || _c === void 0 ? void 0 : _c.flipped) !== null && _d !== void 0 ? _d : false
+                }));
+              }
+            }
+
+            return mode === _constants__WEBPACK_IMPORTED_MODULE_11__["GaugeMode"].Donut ? new _core_chart_assists_chart_assist__WEBPACK_IMPORTED_MODULE_14__["ChartAssist"](chart, _renderers_radial_radial_preprocessor__WEBPACK_IMPORTED_MODULE_15__["radial"]) : new _core_chart_assists_chart_assist__WEBPACK_IMPORTED_MODULE_14__["ChartAssist"](chart, _renderers_bar_stacked_preprocessor__WEBPACK_IMPORTED_MODULE_16__["stack"]);
+          }
           /**
            * Assembles a gauge series set with all of the standard scales, renderers, accessors, etc. needed for creating a gauge visualization
            *
@@ -17956,7 +18078,10 @@
            *
            * @returns {IChartAssistSeries<IAccessors>[]} The assembled series set
            */
-          function assembleSeriesSet(gaugeConfig, mode) {
+
+        }, {
+          key: "assembleSeriesSet",
+          value: function assembleSeriesSet(gaugeConfig, mode) {
             var _a, _b;
 
             gaugeConfig.value = (_a = gaugeConfig.value) !== null && _a !== void 0 ? _a : 0;
@@ -17994,7 +18119,7 @@
             var clampedConfig = GaugeUtil.clampConfigToRange(gaugeConfig);
             var thresholdsData = GaugeUtil.generateThresholdsData(clampedConfig);
             var updatedSeriesSet = seriesSet.map(function (series) {
-              var _a;
+              var _a, _b, _c;
 
               if (series.id === _constants__WEBPACK_IMPORTED_MODULE_11__["GAUGE_QUANTITY_SERIES_ID"]) {
                 return Object.assign(Object.assign({}, series), {
@@ -18018,6 +18143,7 @@
 
               if (series.id === _constants__WEBPACK_IMPORTED_MODULE_11__["GAUGE_THRESHOLD_MARKERS_SERIES_ID"]) {
                 series.renderer.config.enabled = !((_a = clampedConfig.thresholds) === null || _a === void 0 ? void 0 : _a.disableMarkers);
+                series.renderer.config.markerRadius = (_c = (_b = clampedConfig.thresholds) === null || _b === void 0 ? void 0 : _b.markerRadius) !== null && _c !== void 0 ? _c : _constants__WEBPACK_IMPORTED_MODULE_11__["StandardGaugeThresholdMarkerRadius"].Large;
                 return Object.assign(Object.assign({}, series), thresholdsData);
               }
 
@@ -18129,16 +18255,19 @@
           value: function generateRenderingTools(gaugeConfig, mode) {
             var _renderingTools;
 
+            var _a, _b, _c;
+
+            var thresholdsRendererConfig = {
+              enabled: !((_a = gaugeConfig.thresholds) === null || _a === void 0 ? void 0 : _a.disableMarkers),
+              markerRadius: (_b = gaugeConfig.thresholds) === null || _b === void 0 ? void 0 : _b.markerRadius
+            };
+            var labelFormatter = (_c = gaugeConfig.labels) === null || _c === void 0 ? void 0 : _c.formatter;
             var renderingTools = (_renderingTools = {}, _defineProperty(_renderingTools, _constants__WEBPACK_IMPORTED_MODULE_11__["GaugeMode"].Donut, {
               mainRendererFunction: function mainRendererFunction() {
                 return new _renderers_radial_radial_renderer__WEBPACK_IMPORTED_MODULE_9__["RadialRenderer"](Object(_renderers_radial_gauge_donut_gauge_renderer_config__WEBPACK_IMPORTED_MODULE_7__["donutGaugeRendererConfig"])());
               },
               thresholdsRendererFunction: function thresholdsRendererFunction() {
-                var _a;
-
-                return new _renderers_radial_gauge_donut_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_8__["DonutGaugeThresholdsRenderer"]({
-                  enabled: !((_a = gaugeConfig.thresholds) === null || _a === void 0 ? void 0 : _a.disableMarkers)
-                });
+                return new _renderers_radial_gauge_donut_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_8__["DonutGaugeThresholdsRenderer"](thresholdsRendererConfig);
               },
               quantityAccessorFunction: function quantityAccessorFunction() {
                 return new _renderers_radial_accessors_radial_accessors__WEBPACK_IMPORTED_MODULE_6__["RadialAccessors"]();
@@ -18148,7 +18277,7 @@
               },
               scaleFunction: function scaleFunction() {
                 var scales = Object(_renderers_radial_radial_scales__WEBPACK_IMPORTED_MODULE_10__["radialScales"])();
-                scales.r.formatters[_core_plugins_gauge_constants__WEBPACK_IMPORTED_MODULE_0__["GAUGE_LABEL_FORMATTER_NAME_DEFAULT"]] = gaugeConfig.labelFormatter;
+                scales.r.formatters[_core_plugins_gauge_constants__WEBPACK_IMPORTED_MODULE_0__["GAUGE_LABEL_FORMATTER_NAME_DEFAULT"]] = labelFormatter;
                 return scales;
               }
             }), _defineProperty(_renderingTools, _constants__WEBPACK_IMPORTED_MODULE_11__["GaugeMode"].Horizontal, {
@@ -18156,11 +18285,7 @@
                 return new _renderers_bar_bar_renderer__WEBPACK_IMPORTED_MODULE_3__["BarRenderer"](Object(_renderers_bar_linear_gauge_renderer_config__WEBPACK_IMPORTED_MODULE_12__["linearGaugeRendererConfig"])());
               },
               thresholdsRendererFunction: function thresholdsRendererFunction() {
-                var _a;
-
-                return new _renderers_bar_linear_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_5__["LinearGaugeThresholdsRenderer"]({
-                  enabled: !((_a = gaugeConfig.thresholds) === null || _a === void 0 ? void 0 : _a.disableMarkers)
-                });
+                return new _renderers_bar_linear_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_5__["LinearGaugeThresholdsRenderer"](thresholdsRendererConfig);
               },
               quantityAccessorFunction: function quantityAccessorFunction() {
                 return new _renderers_bar_accessors_horizontal_bar_accessors__WEBPACK_IMPORTED_MODULE_1__["HorizontalBarAccessors"]();
@@ -18172,7 +18297,7 @@
                 var scales = Object(_renderers_bar_bar_scales__WEBPACK_IMPORTED_MODULE_4__["barScales"])({
                   horizontal: true
                 });
-                scales.x.formatters[_core_plugins_gauge_constants__WEBPACK_IMPORTED_MODULE_0__["GAUGE_LABEL_FORMATTER_NAME_DEFAULT"]] = gaugeConfig.labelFormatter;
+                scales.x.formatters[_core_plugins_gauge_constants__WEBPACK_IMPORTED_MODULE_0__["GAUGE_LABEL_FORMATTER_NAME_DEFAULT"]] = labelFormatter;
                 return scales;
               }
             }), _defineProperty(_renderingTools, _constants__WEBPACK_IMPORTED_MODULE_11__["GaugeMode"].Vertical, {
@@ -18180,11 +18305,7 @@
                 return new _renderers_bar_bar_renderer__WEBPACK_IMPORTED_MODULE_3__["BarRenderer"](Object(_renderers_bar_linear_gauge_renderer_config__WEBPACK_IMPORTED_MODULE_12__["linearGaugeRendererConfig"])());
               },
               thresholdsRendererFunction: function thresholdsRendererFunction() {
-                var _a;
-
-                return new _renderers_bar_linear_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_5__["LinearGaugeThresholdsRenderer"]({
-                  enabled: !((_a = gaugeConfig.thresholds) === null || _a === void 0 ? void 0 : _a.disableMarkers)
-                });
+                return new _renderers_bar_linear_gauge_thresholds_renderer__WEBPACK_IMPORTED_MODULE_5__["LinearGaugeThresholdsRenderer"](thresholdsRendererConfig);
               },
               quantityAccessorFunction: function quantityAccessorFunction() {
                 return new _renderers_bar_accessors_vertical_bar_accessors__WEBPACK_IMPORTED_MODULE_2__["VerticalBarAccessors"]();
@@ -18194,7 +18315,7 @@
               },
               scaleFunction: function scaleFunction() {
                 var scales = Object(_renderers_bar_bar_scales__WEBPACK_IMPORTED_MODULE_4__["barScales"])();
-                scales.y.formatters[_core_plugins_gauge_constants__WEBPACK_IMPORTED_MODULE_0__["GAUGE_LABEL_FORMATTER_NAME_DEFAULT"]] = gaugeConfig.labelFormatter;
+                scales.y.formatters[_core_plugins_gauge_constants__WEBPACK_IMPORTED_MODULE_0__["GAUGE_LABEL_FORMATTER_NAME_DEFAULT"]] = labelFormatter;
                 return scales;
               }
             }), _renderingTools);
@@ -18244,7 +18365,8 @@
                 color: _constants__WEBPACK_IMPORTED_MODULE_11__["StandardGaugeColor"].Critical
               }), _definitions),
               reversed: false,
-              disableMarkers: false
+              disableMarkers: false,
+              markerRadius: _constants__WEBPACK_IMPORTED_MODULE_11__["StandardGaugeThresholdMarkerRadius"].Large
             };
             return config;
           }
@@ -18302,7 +18424,8 @@
                 id: "max",
                 enabled: true,
                 category: GaugeUtil.DATA_CATEGORY,
-                value: gaugeConfig.max
+                value: gaugeConfig.max,
+                color: ""
               }]),
               activeThreshold: activeThreshold
             };
@@ -20665,7 +20788,7 @@
       /*! ./bar-renderer */
       "iC++");
       /**
-       * @ignore Default configuration for Linear Gauge Thresholds Renderer
+       * Default configuration for Linear Gauge Thresholds Renderer
        */
 
 
@@ -20674,7 +20797,7 @@
         enabled: true
       };
       /**
-       * @ignore Renderer for drawing threshold level indicators for gauges
+       * Renderer for drawing threshold level indicators for gauges
        */
 
       var LinearGaugeThresholdsRenderer = /*#__PURE__*/function (_bar_renderer__WEBPAC) {
@@ -20978,7 +21101,7 @@
       !*** ./src/renderers/radial/gauge/donut-gauge-thresholds-renderer.ts ***!
       \***********************************************************************/
 
-    /*! exports provided: DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG, DonutGaugeThresholdsRenderer */
+    /*! exports provided: DEFAULT_DONUT_GAUGE_THRESHOLDS_RENDERER_CONFIG, DonutGaugeThresholdsRenderer */
 
     /***/
     function MsLP(module, __webpack_exports__, __webpack_require__) {
@@ -20988,8 +21111,8 @@
       /* harmony export (binding) */
 
 
-      __webpack_require__.d(__webpack_exports__, "DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG", function () {
-        return DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG;
+      __webpack_require__.d(__webpack_exports__, "DEFAULT_DONUT_GAUGE_THRESHOLDS_RENDERER_CONFIG", function () {
+        return DEFAULT_DONUT_GAUGE_THRESHOLDS_RENDERER_CONFIG;
       });
       /* harmony export (binding) */
 
@@ -21064,16 +21187,16 @@
 
       var lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_8__);
       /**
-       * @ignore Default configuration for Radial Gauge Thresholds Renderer
+       * Default configuration for DonutGaugeThresholdsRenderer
        */
 
 
-      var DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG = {
+      var DEFAULT_DONUT_GAUGE_THRESHOLDS_RENDERER_CONFIG = {
         markerRadius: _gauge_constants__WEBPACK_IMPORTED_MODULE_3__["StandardGaugeThresholdMarkerRadius"].Large,
         enabled: true
       };
       /**
-       * @ignore Renderer for drawing threshold level indicators for gauges
+       * Renderer for drawing threshold level markers for donut gauges
        */
 
       var DonutGaugeThresholdsRenderer = /*#__PURE__*/function (_radial_renderer__WEB2) {
@@ -21084,7 +21207,7 @@
         /**
          * Creates an instance of RadialGaugeThresholdsRenderer.
          * @param {IDonutGaugeThresholdsRendererConfig} [config]
-         * Renderer configuration object. Defaults to `DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG` constant value.
+         * Renderer configuration object. Defaults to `DEFAULT_DONUT_GAUGE_THRESHOLDS_RENDERER_CONFIG` constant value.
          */
         function DonutGaugeThresholdsRenderer() {
           var _this47;
@@ -21095,7 +21218,7 @@
 
           _this47 = _super14.call(this, config);
           _this47.config = config;
-          _this47.config = lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_1___default()(_this47.config, DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG);
+          _this47.config = lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_1___default()(_this47.config, DEFAULT_DONUT_GAUGE_THRESHOLDS_RENDERER_CONFIG);
           return _this47;
         }
         /** See {@link Renderer#draw} */
@@ -21147,7 +21270,7 @@
       !*** ./src/core/grid/config/public-api.ts ***!
       \********************************************/
 
-    /*! exports provided: AxisConfig, BorderConfig, DimensionConfig, linearGaugeGridConfig, GridConfig, AreaGridConfig, BarGridConfig, BarHorizontalGridConfig, BarStatusGridConfig, sparkChartGridConfig, XYGridConfig */
+    /*! exports provided: AxisConfig, BorderConfig, DimensionConfig, LINEAR_GAUGE_LABEL_CLEARANCE_DEFAULTS, linearGaugeGridConfig, DONUT_GAUGE_LABEL_CLEARANCE_DEFAULT, donutGaugeGridConfig, GridConfig, AreaGridConfig, BarGridConfig, BarHorizontalGridConfig, BarStatusGridConfig, sparkChartGridConfig, XYGridConfig, gaugeGrid */
 
     /***/
     function N24K(module, __webpack_exports__, __webpack_require__) {
@@ -21193,98 +21316,134 @@
       /* harmony import */
 
 
-      var _linear_gauge_grid_config__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-      /*! ./linear-gauge-grid-config */
-      "ps/X");
+      var _linear_gauge_grid_config_fn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! ./linear-gauge-grid-config-fn */
+      "vXYh");
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "LINEAR_GAUGE_LABEL_CLEARANCE_DEFAULTS", function () {
+        return _linear_gauge_grid_config_fn__WEBPACK_IMPORTED_MODULE_3__["LINEAR_GAUGE_LABEL_CLEARANCE_DEFAULTS"];
+      });
       /* harmony reexport (safe) */
 
 
       __webpack_require__.d(__webpack_exports__, "linearGaugeGridConfig", function () {
-        return _linear_gauge_grid_config__WEBPACK_IMPORTED_MODULE_3__["linearGaugeGridConfig"];
+        return _linear_gauge_grid_config_fn__WEBPACK_IMPORTED_MODULE_3__["linearGaugeGridConfig"];
       });
       /* harmony import */
 
 
-      var _grid_config__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      var _donut_gauge_grid_config_fn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! ./donut-gauge-grid-config-fn */
+      "hMnR");
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "DONUT_GAUGE_LABEL_CLEARANCE_DEFAULT", function () {
+        return _donut_gauge_grid_config_fn__WEBPACK_IMPORTED_MODULE_4__["DONUT_GAUGE_LABEL_CLEARANCE_DEFAULT"];
+      });
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "donutGaugeGridConfig", function () {
+        return _donut_gauge_grid_config_fn__WEBPACK_IMPORTED_MODULE_4__["donutGaugeGridConfig"];
+      });
+      /* harmony import */
+
+
+      var _grid_config__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! ./grid-config */
       "2p4j");
       /* harmony reexport (safe) */
 
 
       __webpack_require__.d(__webpack_exports__, "GridConfig", function () {
-        return _grid_config__WEBPACK_IMPORTED_MODULE_4__["GridConfig"];
+        return _grid_config__WEBPACK_IMPORTED_MODULE_5__["GridConfig"];
       });
       /* harmony import */
 
 
-      var _area_grid_config__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      var _area_grid_config__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! ./area-grid-config */
       "6l0q");
       /* harmony reexport (safe) */
 
 
       __webpack_require__.d(__webpack_exports__, "AreaGridConfig", function () {
-        return _area_grid_config__WEBPACK_IMPORTED_MODULE_5__["AreaGridConfig"];
+        return _area_grid_config__WEBPACK_IMPORTED_MODULE_6__["AreaGridConfig"];
       });
       /* harmony import */
 
 
-      var _bar_grid_config__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      var _bar_grid_config__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! ./bar-grid-config */
       "iPcs");
       /* harmony reexport (safe) */
 
 
       __webpack_require__.d(__webpack_exports__, "BarGridConfig", function () {
-        return _bar_grid_config__WEBPACK_IMPORTED_MODULE_6__["BarGridConfig"];
+        return _bar_grid_config__WEBPACK_IMPORTED_MODULE_7__["BarGridConfig"];
       });
       /* harmony import */
 
 
-      var _bar_horizontal_grid_config__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      var _bar_horizontal_grid_config__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! ./bar-horizontal-grid-config */
       "QSmH");
       /* harmony reexport (safe) */
 
 
       __webpack_require__.d(__webpack_exports__, "BarHorizontalGridConfig", function () {
-        return _bar_horizontal_grid_config__WEBPACK_IMPORTED_MODULE_7__["BarHorizontalGridConfig"];
+        return _bar_horizontal_grid_config__WEBPACK_IMPORTED_MODULE_8__["BarHorizontalGridConfig"];
       });
       /* harmony import */
 
 
-      var _bar_status_grid_config__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      var _bar_status_grid_config__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
       /*! ./bar-status-grid-config */
       "T8Nv");
       /* harmony reexport (safe) */
 
 
       __webpack_require__.d(__webpack_exports__, "BarStatusGridConfig", function () {
-        return _bar_status_grid_config__WEBPACK_IMPORTED_MODULE_8__["BarStatusGridConfig"];
+        return _bar_status_grid_config__WEBPACK_IMPORTED_MODULE_9__["BarStatusGridConfig"];
       });
       /* harmony import */
 
 
-      var _spark_chart_grid_config__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      var _spark_chart_grid_config__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
       /*! ./spark-chart-grid-config */
       "NLeO");
       /* harmony reexport (safe) */
 
 
       __webpack_require__.d(__webpack_exports__, "sparkChartGridConfig", function () {
-        return _spark_chart_grid_config__WEBPACK_IMPORTED_MODULE_9__["sparkChartGridConfig"];
+        return _spark_chart_grid_config__WEBPACK_IMPORTED_MODULE_10__["sparkChartGridConfig"];
       });
       /* harmony import */
 
 
-      var _xy_grid_config__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+      var _xy_grid_config__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
       /*! ./xy-grid-config */
       "o9ks");
       /* harmony reexport (safe) */
 
 
       __webpack_require__.d(__webpack_exports__, "XYGridConfig", function () {
-        return _xy_grid_config__WEBPACK_IMPORTED_MODULE_10__["XYGridConfig"];
+        return _xy_grid_config__WEBPACK_IMPORTED_MODULE_11__["XYGridConfig"];
+      });
+      /* harmony import */
+
+
+      var _gauge_grid_fn__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+      /*! ./gauge-grid-fn */
+      "Zwam");
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "gaugeGrid", function () {
+        return _gauge_grid_fn__WEBPACK_IMPORTED_MODULE_12__["gaugeGrid"];
       });
       /***/
 
@@ -25658,7 +25817,6 @@
       /*! ./constants */
       "GXwZ");
       /**
-       * @ignore
        * A chart plugin that handles the rendering of labels for a donut gauge
        */
 
@@ -25680,13 +25838,6 @@
           /** The default plugin configuration */
 
           _this55.DEFAULT_CONFIG = {
-            clearance: {
-              top: DonutGaugeLabelsPlugin.MARGIN_DEFAULT,
-              right: DonutGaugeLabelsPlugin.MARGIN_DEFAULT,
-              bottom: DonutGaugeLabelsPlugin.MARGIN_DEFAULT,
-              left: DonutGaugeLabelsPlugin.MARGIN_DEFAULT
-            },
-            applyClearance: true,
             padding: 5,
             formatterName: _constants__WEBPACK_IMPORTED_MODULE_11__["GAUGE_LABEL_FORMATTER_NAME_DEFAULT"],
             disableThresholdLabels: false
@@ -25706,7 +25857,6 @@
               order: _constants__WEBPACK_IMPORTED_MODULE_6__["STANDARD_RENDER_LAYERS"][_renderers_types__WEBPACK_IMPORTED_MODULE_9__["RenderLayerName"].data].order,
               clipped: false
             });
-            this.adjustGridMargin();
             this.chart.getEventBus().getStream(_constants__WEBPACK_IMPORTED_MODULE_6__["INTERACTION_DATA_POINTS_EVENT"]).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["takeUntil"])(this.destroy$)).subscribe(function (event) {
               var gaugeThresholdLabelsGroup = _this56.lasagnaLayer.select(".".concat(_constants__WEBPACK_IMPORTED_MODULE_11__["GAUGE_LABELS_CONTAINER_CLASS"]));
 
@@ -25831,14 +25981,6 @@
 
 
             return "central";
-          }
-        }, {
-          key: "adjustGridMargin",
-          value: function adjustGridMargin() {
-            if (this.config.applyClearance) {
-              var gridConfig = this.chart.getGrid().config();
-              gridConfig.dimension.margin = this.config.clearance;
-            }
           }
         }]);
 
@@ -30564,6 +30706,73 @@
     },
 
     /***/
+    "Zwam":
+    /*!***********************************************!*\
+      !*** ./src/core/grid/config/gauge-grid-fn.ts ***!
+      \***********************************************/
+
+    /*! exports provided: gaugeGrid */
+
+    /***/
+    function Zwam(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "gaugeGrid", function () {
+        return gaugeGrid;
+      });
+      /* harmony import */
+
+
+      var _gauge_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! ../../../gauge/constants */
+      "boxq");
+      /* harmony import */
+
+
+      var _xy_grid__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! ../xy-grid */
+      "6lnl");
+      /* harmony import */
+
+
+      var _radial_grid__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! ../radial-grid */
+      "TD7/");
+      /* harmony import */
+
+
+      var _linear_gauge_grid_config_fn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! ./linear-gauge-grid-config-fn */
+      "vXYh");
+      /* harmony import */
+
+
+      var _donut_gauge_grid_config_fn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! ./donut-gauge-grid-config-fn */
+      "hMnR");
+      /**
+       * Assembles a gauge-specific grid based on the specified gauge mode
+       *
+       * @param gaugeConfig The gauge's configuration
+       * @param mode vertical or horizontal
+       *
+       * @returns {XYGrid | RadialGrid} A gauge grid
+       */
+
+
+      function gaugeGrid(gaugeConfig, mode) {
+        var gridConfig = mode === _gauge_constants__WEBPACK_IMPORTED_MODULE_0__["GaugeMode"].Horizontal || mode === _gauge_constants__WEBPACK_IMPORTED_MODULE_0__["GaugeMode"].Vertical ? Object(_linear_gauge_grid_config_fn__WEBPACK_IMPORTED_MODULE_3__["linearGaugeGridConfig"])(gaugeConfig, mode) : Object(_donut_gauge_grid_config_fn__WEBPACK_IMPORTED_MODULE_4__["donutGaugeGridConfig"])(gaugeConfig);
+        return mode === _gauge_constants__WEBPACK_IMPORTED_MODULE_0__["GaugeMode"].Donut ? new _radial_grid__WEBPACK_IMPORTED_MODULE_2__["RadialGrid"]().config(gridConfig) : new _xy_grid__WEBPACK_IMPORTED_MODULE_1__["XYGrid"](gridConfig);
+      }
+      /***/
+
+    },
+
+    /***/
     "ZzDG":
     /*!**************************************************!*\
       !*** ./node_modules/d3-interpolate/src/array.js ***!
@@ -31208,7 +31417,6 @@
       var GAUGE_REMAINDER_SERIES_ID = "remainder";
       var GAUGE_THRESHOLD_MARKERS_SERIES_ID = "threshold-markers";
       /**
-       * @ignore
        * The visualization modes for a gauge
        */
 
@@ -31227,9 +31435,7 @@
       var StandardLinearGaugeThickness;
 
       (function (StandardLinearGaugeThickness) {
-        // Small may or may not be added as a standard thickness at some point
-        // Small = 5,
-        StandardLinearGaugeThickness[StandardLinearGaugeThickness["Medium"] = 10] = "Medium";
+        StandardLinearGaugeThickness[StandardLinearGaugeThickness["Small"] = 10] = "Small";
         StandardLinearGaugeThickness[StandardLinearGaugeThickness["Large"] = 15] = "Large";
       })(StandardLinearGaugeThickness || (StandardLinearGaugeThickness = {}));
       /**
@@ -34025,7 +34231,7 @@
       !*** ./src/public-api.ts ***!
       \***************************/
 
-    /*! exports provided: ChartTooltipDirective, ChartTooltipComponent, ChartDonutContentComponent, ChartTooltipsComponent, ChartPopoverComponent, ChartMarkerComponent, NuiChartsModule, ChartComponent, GAUGE_QUANTITY_SERIES_ID, GAUGE_REMAINDER_SERIES_ID, GAUGE_THRESHOLD_MARKERS_SERIES_ID, GaugeMode, StandardLinearGaugeThickness, StandardGaugeThresholdMarkerRadius, StandardGaugeThresholdId, StandardGaugeColor, GaugeUtil, ChartCollectionIdDirective, ChartCollectionService, ChartPalette, MappedValueProvider, CHART_PALETTE_CS1, CHART_PALETTE_CS2, CHART_PALETTE_CS3, CHART_PALETTE_CS_S, CHART_PALETTE_CS_S_EXTENDED, CHART_MARKERS, ProcessedColorProvider, SequentialChartMarkerProvider, SequentialColorProvider, SequentialValueProvider, TextColorProvider, PathMarker, SvgMarker, defaultColorProvider, defaultPalette, defaultMarkerProvider, getColorValueByName, getAutomaticDomain, getAutomaticDomainWithIncludedInterval, getAutomaticDomainWithTicks, BandScale, PointScale, LinearScale, Scale, TimeScale, isDaylightSavingTime, TimeIntervalScale, datetimeFormatter, EMPTY_CONTINUOUS_DOMAIN, NORMALIZED_DOMAIN, isBandScale, hasInnerScale, NoopScale, convert, invert, ChartPlugin, DataManager, DataSeries, EventBus, InteractionType, Lasagna, MouseInteractiveArea, RenderEngine, Renderer, UtilityService, AxisConfig, BorderConfig, DimensionConfig, linearGaugeGridConfig, GridConfig, AreaGridConfig, BarGridConfig, BarHorizontalGridConfig, BarStatusGridConfig, sparkChartGridConfig, XYGridConfig, XYGrid, borderMidpoint, Grid, RadialGrid, ChartDonutContentPlugin, ChartPopoverPlugin, DonutGaugeLabelsPlugin, LinearGaugeLabelsPlugin, GAUGE_LABEL_FORMATTER_NAME_DEFAULT, GAUGE_LABELS_CONTAINER_CLASS, GAUGE_THRESHOLD_LABEL_CLASS, InteractionLabelPlugin, InteractionLinePlugin, MouseInteractiveAreaPlugin, RadialPopoverPlugin, RenderEnginePlugin, TOOLTIP_POSITION_OFFSET, getVerticalSetup, getHorizontalSetup, ChartTooltipsPlugin, RadialTooltipsPlugin, BarTooltipsPlugin, ZoomPlugin, ChartCollection, Chart, ChartAssist, LegendInteractionAssist, SparkChartAssist, ChartAssistEventType, ChartAssistRenderStateData, CssFilterId, GRAYSCALE_FILTER, GRAYSCALE_COLOR_MATRIX, LEGEND_SERIES_CLASS_NAME, LegendSeriesComponent, BasicLegendTileComponent, RichLegendTileComponent, LegendComponent, THRESHOLDS_MAIN_CHART_RENDERER_CONFIG, THRESHOLDS_SUMMARY_RENDERER_CONFIG, DEFAULT_MARKER_INTERACTION_CONFIG, GAUGE_THRESHOLD_MARKER_CLASS, RenderState, RenderLayerName, XYRenderer, SideIndicatorAccessors, SideIndicatorRenderer, XYAccessors, NoopAccessors, RectangleAccessors, NoopRenderer, BarRenderer, stackedPreprocessor, stack, barGrid, barScales, BarAccessors, barAccessors, HorizontalBarAccessors, VerticalBarAccessors, StatusAccessors, statusAccessors, BarHighlightStrategy, BarSeriesHighlightStrategy, DEFAULT_LINEAR_GAUGE_THRESHOLDS_RENDERER_CONFIG, LinearGaugeThresholdsRenderer, radialPreprocessor, radial, DEFAULT_RADIAL_RENDERER_CONFIG, RadialRenderer, DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG, DonutGaugeThresholdsRenderer, donutGaugeRendererConfig, DonutGaugeRenderingUtil, PieRenderer, radialGrid, radialScales, RadialAccessors, calculateMissingData, LineSelectSeriesInteractionStrategy, LineAccessors, LineRenderer, MissingDataLineRendererConfig, areaGrid, AreaAccessors, AreaRenderer, stackedAreaPreprocessor, stackedArea, stackedPercentageAreaPreprocessor, stackedPercentageArea, calculateDomainValueCombinedTotals, applyStackMetadata, stackedAreaAccessors, MOUSE_ACTIVE_EVENT, INTERACTION_VALUES_ACTIVE_EVENT, INTERACTION_VALUES_EVENT, INTERACTION_COORDINATES_EVENT, HIGHLIGHT_DATA_POINT_EVENT, SELECT_DATA_POINT_EVENT, HIGHLIGHT_SERIES_EVENT, INTERACTION_SERIES_EVENT, INTERACTION_DATA_POINTS_EVENT, INTERACTION_DATA_POINT_EVENT, DESTROY_EVENT, SET_DOMAIN_EVENT, REFRESH_EVENT, CHART_VIEW_STATUS_EVENT, SERIES_STATE_CHANGE_EVENT, AXES_STYLE_CHANGE_EVENT, CHART_COMPONENT, STANDARD_RENDER_LAYERS, DATA_POINT_NOT_FOUND, DATA_POINT_INTERACTION_RESET, IGNORE_INTERACTION_CLASS, ZoneBoundary, ThresholdsService, thresholdsSummaryGridConfig, thresholdsTopGridConfig */
+    /*! exports provided: ChartTooltipDirective, ChartTooltipComponent, ChartDonutContentComponent, ChartTooltipsComponent, ChartPopoverComponent, ChartMarkerComponent, NuiChartsModule, ChartComponent, GAUGE_QUANTITY_SERIES_ID, GAUGE_REMAINDER_SERIES_ID, GAUGE_THRESHOLD_MARKERS_SERIES_ID, GaugeMode, StandardLinearGaugeThickness, StandardGaugeThresholdMarkerRadius, StandardGaugeThresholdId, StandardGaugeColor, GaugeUtil, ChartCollectionIdDirective, ChartCollectionService, ChartPalette, MappedValueProvider, CHART_PALETTE_CS1, CHART_PALETTE_CS2, CHART_PALETTE_CS3, CHART_PALETTE_CS_S, CHART_PALETTE_CS_S_EXTENDED, CHART_MARKERS, ProcessedColorProvider, SequentialChartMarkerProvider, SequentialColorProvider, SequentialValueProvider, TextColorProvider, PathMarker, SvgMarker, defaultColorProvider, defaultPalette, defaultMarkerProvider, getColorValueByName, getAutomaticDomain, getAutomaticDomainWithIncludedInterval, getAutomaticDomainWithTicks, BandScale, PointScale, LinearScale, Scale, TimeScale, isDaylightSavingTime, TimeIntervalScale, datetimeFormatter, EMPTY_CONTINUOUS_DOMAIN, NORMALIZED_DOMAIN, isBandScale, hasInnerScale, NoopScale, convert, invert, ChartPlugin, DataManager, DataSeries, EventBus, InteractionType, Lasagna, MouseInteractiveArea, RenderEngine, Renderer, UtilityService, AxisConfig, BorderConfig, DimensionConfig, LINEAR_GAUGE_LABEL_CLEARANCE_DEFAULTS, linearGaugeGridConfig, DONUT_GAUGE_LABEL_CLEARANCE_DEFAULT, donutGaugeGridConfig, GridConfig, AreaGridConfig, BarGridConfig, BarHorizontalGridConfig, BarStatusGridConfig, sparkChartGridConfig, XYGridConfig, gaugeGrid, XYGrid, borderMidpoint, Grid, RadialGrid, ChartDonutContentPlugin, ChartPopoverPlugin, DonutGaugeLabelsPlugin, LinearGaugeLabelsPlugin, GAUGE_LABEL_FORMATTER_NAME_DEFAULT, GAUGE_LABELS_CONTAINER_CLASS, GAUGE_THRESHOLD_LABEL_CLASS, InteractionLabelPlugin, InteractionLinePlugin, MouseInteractiveAreaPlugin, RadialPopoverPlugin, RenderEnginePlugin, TOOLTIP_POSITION_OFFSET, getVerticalSetup, getHorizontalSetup, ChartTooltipsPlugin, RadialTooltipsPlugin, BarTooltipsPlugin, ZoomPlugin, ChartCollection, Chart, ChartAssist, LegendInteractionAssist, SparkChartAssist, ChartAssistEventType, ChartAssistRenderStateData, CssFilterId, GRAYSCALE_FILTER, GRAYSCALE_COLOR_MATRIX, LEGEND_SERIES_CLASS_NAME, LegendSeriesComponent, BasicLegendTileComponent, RichLegendTileComponent, LegendComponent, THRESHOLDS_MAIN_CHART_RENDERER_CONFIG, THRESHOLDS_SUMMARY_RENDERER_CONFIG, DEFAULT_MARKER_INTERACTION_CONFIG, GAUGE_THRESHOLD_MARKER_CLASS, RenderState, RenderLayerName, XYRenderer, SideIndicatorAccessors, SideIndicatorRenderer, XYAccessors, NoopAccessors, RectangleAccessors, NoopRenderer, BarRenderer, stackedPreprocessor, stack, barGrid, barScales, BarAccessors, barAccessors, HorizontalBarAccessors, VerticalBarAccessors, StatusAccessors, statusAccessors, BarHighlightStrategy, BarSeriesHighlightStrategy, DEFAULT_LINEAR_GAUGE_THRESHOLDS_RENDERER_CONFIG, LinearGaugeThresholdsRenderer, radialPreprocessor, radial, DEFAULT_RADIAL_RENDERER_CONFIG, RadialRenderer, DEFAULT_DONUT_GAUGE_THRESHOLDS_RENDERER_CONFIG, DonutGaugeThresholdsRenderer, donutGaugeRendererConfig, DonutGaugeRenderingUtil, PieRenderer, radialGrid, radialScales, RadialAccessors, calculateMissingData, LineSelectSeriesInteractionStrategy, LineAccessors, LineRenderer, MissingDataLineRendererConfig, areaGrid, AreaAccessors, AreaRenderer, stackedAreaPreprocessor, stackedArea, stackedPercentageAreaPreprocessor, stackedPercentageArea, calculateDomainValueCombinedTotals, applyStackMetadata, stackedAreaAccessors, MOUSE_ACTIVE_EVENT, INTERACTION_VALUES_ACTIVE_EVENT, INTERACTION_VALUES_EVENT, INTERACTION_COORDINATES_EVENT, HIGHLIGHT_DATA_POINT_EVENT, SELECT_DATA_POINT_EVENT, HIGHLIGHT_SERIES_EVENT, INTERACTION_SERIES_EVENT, INTERACTION_DATA_POINTS_EVENT, INTERACTION_DATA_POINT_EVENT, DESTROY_EVENT, SET_DOMAIN_EVENT, REFRESH_EVENT, CHART_VIEW_STATUS_EVENT, SERIES_STATE_CHANGE_EVENT, AXES_STYLE_CHANGE_EVENT, CHART_COMPONENT, STANDARD_RENDER_LAYERS, DATA_POINT_NOT_FOUND, DATA_POINT_INTERACTION_RESET, IGNORE_INTERACTION_CLASS, ZoneBoundary, ThresholdsService, thresholdsSummaryGridConfig, thresholdsTopGridConfig */
 
     /***/
     function gKry(module, __webpack_exports__, __webpack_require__) {
@@ -34515,8 +34721,26 @@
       /* harmony reexport (safe) */
 
 
+      __webpack_require__.d(__webpack_exports__, "LINEAR_GAUGE_LABEL_CLEARANCE_DEFAULTS", function () {
+        return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["LINEAR_GAUGE_LABEL_CLEARANCE_DEFAULTS"];
+      });
+      /* harmony reexport (safe) */
+
+
       __webpack_require__.d(__webpack_exports__, "linearGaugeGridConfig", function () {
         return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["linearGaugeGridConfig"];
+      });
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "DONUT_GAUGE_LABEL_CLEARANCE_DEFAULT", function () {
+        return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["DONUT_GAUGE_LABEL_CLEARANCE_DEFAULT"];
+      });
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "donutGaugeGridConfig", function () {
+        return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["donutGaugeGridConfig"];
       });
       /* harmony reexport (safe) */
 
@@ -34559,6 +34783,12 @@
 
       __webpack_require__.d(__webpack_exports__, "XYGridConfig", function () {
         return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["XYGridConfig"];
+      });
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "gaugeGrid", function () {
+        return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["gaugeGrid"];
       });
       /* harmony reexport (safe) */
 
@@ -34995,8 +35225,8 @@
       /* harmony reexport (safe) */
 
 
-      __webpack_require__.d(__webpack_exports__, "DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG", function () {
-        return _renderers_public_api__WEBPACK_IMPORTED_MODULE_12__["DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG"];
+      __webpack_require__.d(__webpack_exports__, "DEFAULT_DONUT_GAUGE_THRESHOLDS_RENDERER_CONFIG", function () {
+        return _renderers_public_api__WEBPACK_IMPORTED_MODULE_12__["DEFAULT_DONUT_GAUGE_THRESHOLDS_RENDERER_CONFIG"];
       });
       /* harmony reexport (safe) */
 
@@ -35482,6 +35712,94 @@
 
         return entries;
       };
+      /***/
+
+    },
+
+    /***/
+    "hMnR":
+    /*!************************************************************!*\
+      !*** ./src/core/grid/config/donut-gauge-grid-config-fn.ts ***!
+      \************************************************************/
+
+    /*! exports provided: DONUT_GAUGE_LABEL_CLEARANCE_DEFAULT, donutGaugeGridConfig */
+
+    /***/
+    function hMnR(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "DONUT_GAUGE_LABEL_CLEARANCE_DEFAULT", function () {
+        return DONUT_GAUGE_LABEL_CLEARANCE_DEFAULT;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "donutGaugeGridConfig", function () {
+        return donutGaugeGridConfig;
+      });
+      /* harmony import */
+
+
+      var _grid_config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! ./grid-config */
+      "2p4j");
+      /* harmony import */
+
+
+      var lodash_isEmpty__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! lodash/isEmpty */
+      "E+oP");
+      /* harmony import */
+
+
+      var lodash_isEmpty__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_isEmpty__WEBPACK_IMPORTED_MODULE_1__);
+      /* harmony import */
+
+
+      var lodash_isNil__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! lodash/isNil */
+      "J2iB");
+      /* harmony import */
+
+
+      var lodash_isNil__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_isNil__WEBPACK_IMPORTED_MODULE_2__);
+      /**
+       * Default donut gauge margin for label clearance
+       */
+
+
+      var DONUT_GAUGE_LABEL_CLEARANCE_DEFAULT = 30;
+      /**
+       * Assembles a donut-gauge-specific grid configuration
+       *
+       * @param gaugeConfig The gauge configuration
+       *
+       * @returns {GridConfig} A donut gauge grid configuration
+       */
+
+      function donutGaugeGridConfig(gaugeConfig) {
+        var _a, _b, _c;
+
+        var gridConfig = new _grid_config__WEBPACK_IMPORTED_MODULE_0__["GridConfig"]();
+        gridConfig.interactive = false;
+
+        if (!lodash_isEmpty__WEBPACK_IMPORTED_MODULE_1___default()((_a = gaugeConfig.thresholds) === null || _a === void 0 ? void 0 : _a.definitions) && !((_b = gaugeConfig.thresholds) === null || _b === void 0 ? void 0 : _b.disableMarkers)) {
+          var labelClearanceConfig = (_c = gaugeConfig.labels) === null || _c === void 0 ? void 0 : _c.clearance;
+          var clearanceValue = !lodash_isNil__WEBPACK_IMPORTED_MODULE_2___default()(labelClearanceConfig) ? labelClearanceConfig : DONUT_GAUGE_LABEL_CLEARANCE_DEFAULT;
+          gridConfig.dimension.margin = {
+            top: clearanceValue,
+            right: clearanceValue,
+            bottom: clearanceValue,
+            left: clearanceValue
+          };
+        }
+
+        return gridConfig;
+      }
       /***/
 
     },
@@ -36257,7 +36575,6 @@
       /*! ../../../gauge/constants */
       "boxq");
       /**
-       * @ignore
        * A chart plugin that handles the rendering of labels for a donut gauge
        */
 
@@ -36279,17 +36596,10 @@
           /** The default plugin configuration */
 
           _this77.DEFAULT_CONFIG = {
-            clearance: {
-              top: 20,
-              right: 25,
-              bottom: 20,
-              left: 25
-            },
-            applyClearance: true,
             padding: 5,
             formatterName: _constants__WEBPACK_IMPORTED_MODULE_7__["GAUGE_LABEL_FORMATTER_NAME_DEFAULT"],
             disableThresholdLabels: false,
-            flipLabels: false
+            flippedLabels: false
           };
           _this77.destroy$ = new rxjs__WEBPACK_IMPORTED_MODULE_2__["Subject"]();
           _this77.isHorizontal = true;
@@ -36350,7 +36660,6 @@
           key: "updateDimensions",
           value: function updateDimensions() {
             this.updateData();
-            this.adjustGridMargin();
             this.drawThresholdLabels();
           }
         }, {
@@ -36420,13 +36729,13 @@
           value: function getLabelOffset() {
             var labelStart = 0;
 
-            if (!this.config.flipLabels) {
+            if (!this.config.flippedLabels) {
               var gridDimensions = this.chart.getGrid().config().dimension;
               labelStart = this.isHorizontal ? gridDimensions.height() : gridDimensions.width();
             }
 
             var padding = this.config.padding;
-            padding = this.config.flipLabels ? -padding : padding;
+            padding = this.config.flippedLabels ? -padding : padding;
             return labelStart + padding;
           }
         }, {
@@ -36436,36 +36745,16 @@
               return "middle";
             }
 
-            return this.config.flipLabels ? "end" : "start";
+            return this.config.flippedLabels ? "end" : "start";
           }
         }, {
           key: "getAlignmentBaseline",
           value: function getAlignmentBaseline() {
             if (this.isHorizontal) {
-              return this.config.flipLabels ? "text-after-edge" : "hanging";
+              return this.config.flippedLabels ? "text-after-edge" : "hanging";
             }
 
             return "central";
-          }
-        }, {
-          key: "adjustGridMargin",
-          value: function adjustGridMargin() {
-            var _a;
-
-            if (this.config.applyClearance) {
-              var gridConfig = this.chart.getGrid().config();
-              var marginToAdjust = this.getMarginToAdjust();
-              gridConfig.dimension.margin[marginToAdjust] = (_a = this.config.clearance) === null || _a === void 0 ? void 0 : _a[marginToAdjust];
-            }
-          }
-        }, {
-          key: "getMarginToAdjust",
-          value: function getMarginToAdjust() {
-            if (this.isHorizontal) {
-              return this.config.flipLabels ? "top" : "bottom";
-            }
-
-            return this.config.flipLabels ? "left" : "right";
           }
         }]);
 
@@ -42785,80 +43074,6 @@
     },
 
     /***/
-    "ps/X":
-    /*!**********************************************************!*\
-      !*** ./src/core/grid/config/linear-gauge-grid-config.ts ***!
-      \**********************************************************/
-
-    /*! exports provided: linearGaugeGridConfig */
-
-    /***/
-    function psX(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "linearGaugeGridConfig", function () {
-        return linearGaugeGridConfig;
-      });
-      /* harmony import */
-
-
-      var _gauge_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! ../../../gauge/constants */
-      "boxq");
-      /* harmony import */
-
-
-      var _dimension_config__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-      /*! ./dimension-config */
-      "7Ek6");
-      /* harmony import */
-
-
-      var _xy_grid_config__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-      /*! ./xy-grid-config */
-      "o9ks");
-      /**
-       * @ignore
-       * Assembles a linear-gauge-specific grid configuration
-       *
-       * @param mode vertical or horizontal
-       * @param thickness the thickness of the gauge
-       */
-
-
-      function linearGaugeGridConfig(mode) {
-        var thickness = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : _gauge_constants__WEBPACK_IMPORTED_MODULE_0__["StandardLinearGaugeThickness"].Large;
-        var gridConfig = new _xy_grid_config__WEBPACK_IMPORTED_MODULE_2__["XYGridConfig"]();
-        gridConfig.interactionPlugins = false;
-        gridConfig.disableRenderAreaHeightCorrection = true;
-        gridConfig.axis.bottom.visible = false;
-        gridConfig.axis.bottom.gridTicks = false;
-        gridConfig.axis.left.visible = false;
-        gridConfig.axis.left.gridTicks = false;
-        gridConfig.borders.left.visible = false;
-        gridConfig.borders.bottom.visible = false; // reset the dimension config with zero margins and zero padding
-
-        gridConfig.dimension = new _dimension_config__WEBPACK_IMPORTED_MODULE_1__["DimensionConfig"]();
-
-        if (mode === _gauge_constants__WEBPACK_IMPORTED_MODULE_0__["GaugeMode"].Vertical) {
-          gridConfig.dimension.autoWidth = false;
-          gridConfig.dimension.width(thickness);
-        } else {
-          gridConfig.dimension.autoHeight = false;
-          gridConfig.dimension.height(thickness);
-        }
-
-        return gridConfig;
-      }
-      /***/
-
-    },
-
-    /***/
     "q+nN":
     /*!*******************************************!*\
       !*** ./node_modules/d3-drag/src/index.js ***!
@@ -43264,8 +43479,8 @@
             var disableWidthCorrection = _this95.config().disableRenderAreaWidthCorrection;
 
             var renderingAreaClipPathAttrs = {
-              "width": d.width(),
-              "height": d.height() + (disableHeightCorrection ? 0 : Grid.RENDER_AREA_HEIGHT_CORRECTION)
+              "width": Math.max(0, d.width()),
+              "height": Math.max(0, d.height() + (disableHeightCorrection ? 0 : Grid.RENDER_AREA_HEIGHT_CORRECTION))
             };
 
             if (!disableHeightCorrection) {
@@ -44332,7 +44547,6 @@
         clickable: false
       };
       /**
-       * @ignore
        * Class name for gauge threshold markers
        */
 
@@ -47527,6 +47741,126 @@
         styles: [_basic_legend_tile_component_less__WEBPACK_IMPORTED_MODULE_2__["default"]]
       })], BasicLegendTileComponent);
       /***/
+    },
+
+    /***/
+    "vXYh":
+    /*!*************************************************************!*\
+      !*** ./src/core/grid/config/linear-gauge-grid-config-fn.ts ***!
+      \*************************************************************/
+
+    /*! exports provided: LINEAR_GAUGE_LABEL_CLEARANCE_DEFAULTS, linearGaugeGridConfig */
+
+    /***/
+    function vXYh(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "LINEAR_GAUGE_LABEL_CLEARANCE_DEFAULTS", function () {
+        return LINEAR_GAUGE_LABEL_CLEARANCE_DEFAULTS;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "linearGaugeGridConfig", function () {
+        return linearGaugeGridConfig;
+      });
+      /* harmony import */
+
+
+      var _gauge_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! ../../../gauge/constants */
+      "boxq");
+      /* harmony import */
+
+
+      var _dimension_config__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! ./dimension-config */
+      "7Ek6");
+      /* harmony import */
+
+
+      var _xy_grid_config__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! ./xy-grid-config */
+      "o9ks");
+      /* harmony import */
+
+
+      var lodash_isEmpty__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! lodash/isEmpty */
+      "E+oP");
+      /* harmony import */
+
+
+      var lodash_isEmpty__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(lodash_isEmpty__WEBPACK_IMPORTED_MODULE_3__);
+      /**
+       * Default clearance for linear gauge labels
+       */
+
+
+      var LINEAR_GAUGE_LABEL_CLEARANCE_DEFAULTS = {
+        top: 20,
+        right: 25,
+        bottom: 20,
+        left: 25
+      };
+      /**
+       * Assembles a linear-gauge-specific grid configuration
+       *
+       * @param gaugeConfig The gauge configuration
+       * @param mode vertical or horizontal
+       *
+       * @returns {XYGridConfig} A linear gauge grid configuration
+       */
+
+      function linearGaugeGridConfig(gaugeConfig, mode) {
+        var _a, _b, _c, _d, _e, _f;
+
+        var gridConfig = new _xy_grid_config__WEBPACK_IMPORTED_MODULE_2__["XYGridConfig"]();
+        gridConfig.interactionPlugins = false;
+        gridConfig.disableRenderAreaHeightCorrection = true;
+        gridConfig.axis.bottom.visible = false;
+        gridConfig.axis.bottom.gridTicks = false;
+        gridConfig.axis.left.visible = false;
+        gridConfig.axis.left.gridTicks = false;
+        gridConfig.borders.left.visible = false;
+        gridConfig.borders.bottom.visible = false; // reset the dimension config with zero margins and zero padding
+
+        gridConfig.dimension = new _dimension_config__WEBPACK_IMPORTED_MODULE_1__["DimensionConfig"](); // make room for the labels if needed
+
+        if (!lodash_isEmpty__WEBPACK_IMPORTED_MODULE_3___default()((_a = gaugeConfig.thresholds) === null || _a === void 0 ? void 0 : _a.definitions) && !((_b = gaugeConfig.thresholds) === null || _b === void 0 ? void 0 : _b.disableMarkers)) {
+          var marginToAdjust = getMarginToAdjust(mode, (_c = gaugeConfig.labels) === null || _c === void 0 ? void 0 : _c.flipped);
+          var clearance = (_e = (_d = gaugeConfig.labels) === null || _d === void 0 ? void 0 : _d.clearance) !== null && _e !== void 0 ? _e : LINEAR_GAUGE_LABEL_CLEARANCE_DEFAULTS[marginToAdjust];
+          gridConfig.dimension.margin[marginToAdjust] = clearance;
+        }
+
+        var thickness = (_f = gaugeConfig.linearThickness) !== null && _f !== void 0 ? _f : _gauge_constants__WEBPACK_IMPORTED_MODULE_0__["StandardLinearGaugeThickness"].Large;
+
+        if (mode === _gauge_constants__WEBPACK_IMPORTED_MODULE_0__["GaugeMode"].Vertical) {
+          gridConfig.dimension.autoWidth = false;
+          gridConfig.dimension.width(thickness);
+        } else {
+          gridConfig.dimension.autoHeight = false;
+          gridConfig.dimension.height(thickness);
+        }
+
+        return gridConfig;
+      }
+
+      function getMarginToAdjust(mode) {
+        var flipLabels = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+
+        if (mode === _gauge_constants__WEBPACK_IMPORTED_MODULE_0__["GaugeMode"].Horizontal) {
+          return flipLabels ? "top" : "bottom";
+        }
+
+        return flipLabels ? "left" : "right";
+      }
+      /***/
+
     },
 
     /***/

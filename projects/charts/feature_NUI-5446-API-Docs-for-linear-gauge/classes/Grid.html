@@ -1469,14 +1469,14 @@ export abstract class Grid implements IGrid {
     /**
      * Adjusts the grid&#x27;s rendering area and clip path based on the grid&#x27;s configured width and height
      */
-    protected adjustRenderingArea &#x3D; () &#x3D;&gt; {
+    protected adjustRenderingArea &#x3D; (): void &#x3D;&gt; {
         const d &#x3D; this.config().dimension;
         const disableHeightCorrection &#x3D; this.config().disableRenderAreaHeightCorrection;
         const disableWidthCorrection &#x3D; this.config().disableRenderAreaWidthCorrection;
 
         const renderingAreaClipPathAttrs &#x3D; {
-            &quot;width&quot;: d.width(),
-            &quot;height&quot;: d.height() + (disableHeightCorrection ? 0 : Grid.RENDER_AREA_HEIGHT_CORRECTION),
+            &quot;width&quot;: Math.max(0, d.width()),
+            &quot;height&quot;: Math.max(0, d.height() + (disableHeightCorrection ? 0 : Grid.RENDER_AREA_HEIGHT_CORRECTION)),
         } as any;
 
         if (!disableHeightCorrection) {

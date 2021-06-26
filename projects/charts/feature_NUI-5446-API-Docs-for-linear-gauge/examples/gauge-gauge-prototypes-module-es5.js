@@ -60,51 +60,52 @@
         function LinearGaugeHorizontalPrototypeComponent() {
           _classCallCheck(this, LinearGaugeHorizontalPrototypeComponent);
 
-          this.flipLabels = false;
+          this.rightMargin = 15;
+          this.leftMargin = 5;
         }
 
         _createClass(LinearGaugeHorizontalPrototypeComponent, [{
           key: "ngOnChanges",
           value: function ngOnChanges(changes) {
-            var _a;
+            var _a, _b, _c, _d, _e;
 
-            if (changes.thickness && !changes.thickness.firstChange || changes.flipLabels && !changes.flipLabels.firstChange) {
+            if (changes.gaugeConfig && !changes.gaugeConfig.firstChange) {
               var gridConfig = this.chartAssist.chart.getGrid().config();
+              gridConfig.dimension.height((_a = this.gaugeConfig.linearThickness) !== null && _a !== void 0 ? _a : 0);
+              var flippedLabels = (_c = (_b = this.gaugeConfig.labels) === null || _b === void 0 ? void 0 : _b.flipped) !== null && _c !== void 0 ? _c : false;
+              this.labelsPlugin.config.flippedLabels = flippedLabels; // update the margins to accommodate the label direction change
 
-              if (changes.thickness) {
-                gridConfig.dimension.height(this.thickness);
-              }
+              var disableMarkers = (_e = (_d = this.gaugeConfig.thresholds) === null || _d === void 0 ? void 0 : _d.disableMarkers) !== null && _e !== void 0 ? _e : false;
+              this.labelsPlugin.config.disableThresholdLabels = disableMarkers;
+              gridConfig.dimension.margin = {
+                top: 0,
+                right: disableMarkers ? 0 : this.rightMargin,
+                bottom: 0,
+                left: disableMarkers ? 0 : this.leftMargin
+              };
 
-              if (changes.flipLabels) {
-                this.labelsPlugin.config.flipLabels = this.flipLabels; // reset the margins to accommodate the label direction change
-
-                gridConfig.dimension.margin = {
-                  top: 0,
-                  right: 0,
-                  bottom: 0,
-                  left: 0
-                };
+              if (!disableMarkers) {
+                var marginToUpdate = flippedLabels ? "top" : "bottom";
+                gridConfig.dimension.margin[marginToUpdate] = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["LINEAR_GAUGE_LABEL_CLEARANCE_DEFAULTS"][marginToUpdate];
               }
 
               this.chartAssist.chart.updateDimensions();
-            }
-
-            if (changes.gaugeConfig && !changes.gaugeConfig.firstChange) {
-              this.labelsPlugin.config.disableThresholdLabels = (_a = this.gaugeConfig.thresholds) === null || _a === void 0 ? void 0 : _a.disableMarkers;
               this.chartAssist.update(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.seriesSet, this.gaugeConfig));
             }
           }
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var gridConfig = Object(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["linearGaugeGridConfig"])(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Horizontal, this.thickness);
-            gridConfig.dimension.margin.right = 15;
-            gridConfig.dimension.margin.left = 5;
+            var _a;
+
+            var gridConfig = Object(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["linearGaugeGridConfig"])(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Horizontal);
+            gridConfig.dimension.margin.right = this.rightMargin;
+            gridConfig.dimension.margin.left = this.leftMargin;
             var grid = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["XYGrid"](gridConfig);
             var chart = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["Chart"](grid);
             this.chartAssist = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["ChartAssist"](chart, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["stack"]);
             this.labelsPlugin = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["LinearGaugeLabelsPlugin"]({
-              flipLabels: this.flipLabels
+              flippedLabels: (_a = this.gaugeConfig.labels) === null || _a === void 0 ? void 0 : _a.flipped
             });
             this.chartAssist.chart.addPlugin(this.labelsPlugin);
             this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].assembleSeriesSet(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Horizontal);
@@ -116,13 +117,7 @@
       }();
 
       LinearGaugeHorizontalPrototypeComponent.propDecorators = {
-        thickness: [{
-          type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"]
-        }],
         gaugeConfig: [{
-          type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"]
-        }],
-        flipLabels: [{
           type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"]
         }]
       };
@@ -170,7 +165,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<div class=\"testing-region d-flex align-items-center justify-content-around\">\n    <donut-gauge-prototype [gaugeConfig]=\"gaugeConfig\" [size]=\"donutSize\" [annularGrowth]=\"annularGrowth\" [annularWidth]=\"thickness\">\n    </donut-gauge-prototype>\n    <linear-gauge-vertical-prototype [gaugeConfig]=\"gaugeConfig\" [thickness]=\"thickness\" [flipLabels]=\"flipLabels\"></linear-gauge-vertical-prototype>\n    <linear-gauge-horizontal-prototype [gaugeConfig]=\"gaugeConfig\" [thickness]=\"thickness\" [flipLabels]=\"flipLabels\"></linear-gauge-horizontal-prototype>\n</div>\n\n<div class=\"d-flex justify-content-center\">\n    <div class=\"column\">\n        <div class=\"mb-2\">\n            <nui-form-field caption=\"Donut Annular Growth\"\n                            hint=\"Set to zero to have the donut obey the manual thickness setting\"\n                            [showOptionalText]=\"false\">\n                <nui-textbox-number type=\"number\"\n                                    [(ngModel)]=\"annularGrowth\"\n                                    [minValue]=\"0\"\n                                    [step]=\"0.01\"\n                                    customBoxWidth=\"75px\"></nui-textbox-number>\n            </nui-form-field>\n        </div>\n        <div class=\"mb-2\">\n            <label for=\"donutSizeInput\">\n                Donut Size\n            </label>\n            <br />\n            <nui-textbox-number type=\"number\"\n                                [(ngModel)]=\"donutSize\"\n                                [minValue]=\"0\"\n                                [step]=\"25\"\n                                customBoxWidth=\"75px\"\n                                name=\"donutSizeInput\"></nui-textbox-number>\n        </div>\n    </div>\n    <div class=\"column ml-5\">\n        <div class=\"mb-2\">\n            <label for=\"valueInput\">\n                Value\n            </label>\n            <br />\n            <nui-textbox-number type=\"number\"\n                                [ngModel]=\"value\"\n                                (ngModelChange)=\"onValueChange($event)\"\n                                [minValue]=\"0\"\n                                [maxValue]=\"maxValue\"\n                                [step]=\"valueStep\"\n                                customBoxWidth=\"75px\"\n                                name=\"valueInput\"></nui-textbox-number>\n        </div>\n        <div class=\"mb-2\">\n            <label for=\"thicknessInput\">\n                Thickness\n            </label>\n            <br />\n            <nui-textbox-number type=\"number\"\n                                [(ngModel)]=\"thickness\"\n                                [minValue]=\"0\"\n                                customBoxWidth=\"75px\"\n                                name=\"thicknessInput\"></nui-textbox-number>\n        </div>\n        <div class=\"mb-2\">\n            <label for=\"lowThresholdInput\">\n                Low Threshold\n            </label>\n            <br />\n            <nui-textbox-number type=\"number\"\n                                [ngModel]=\"lowThreshold\"\n                                (ngModelChange)=\"onLowThresholdChange($event)\"\n                                [minValue]=\"0\"\n                                [maxValue]=\"highThreshold - valueStep\"\n                                [step]=\"valueStep\"\n                                customBoxWidth=\"75px\"\n                                name=\"lowThresholdInput\"></nui-textbox-number>\n        </div>\n        <div class=\"mb-2\">\n            <label for=\"highThresholdInput\">\n                High Threshold\n            </label>\n            <br />\n            <nui-textbox-number type=\"number\"\n                                [ngModel]=\"highThreshold\"\n                                (ngModelChange)=\"onHighThresholdChange($event)\"\n                                [minValue]=\"lowThreshold + valueStep\"\n                                [maxValue]=\"maxValue\"\n                                [step]=\"valueStep\"\n                                customBoxWidth=\"75px\"\n                                name=\"highThresholdInput\"></nui-textbox-number>\n        </div>\n    </div>\n    <div class=\"column ml-5\">\n        <div class=\"ml-3\">\n            <div class=\"d-flex align-items-center\">\n                <input id=\"enable-warning\"\n                       class=\"mb-2\"\n                       type=\"checkbox\"\n                       [ngModel]=\"warningEnabled\"\n                       (ngModelChange)=\"onWarningEnabledChange($event)\" />\n                <label class=\"px-3\" for=\"enable-warning\">Enable Warning</label>\n            </div>\n        </div>\n        <div class=\"ml-3\">\n            <div class=\"d-flex align-items-center\">\n                <input id=\"enable-critical\"\n                       class=\"mb-2\"\n                       type=\"checkbox\"\n                       [(ngModel)]=\"criticalEnabled\"\n                       (ngModelChange)=\"onCriticalEnabledChange($event)\" />\n                <label class=\"px-3\" for=\"enable-critical\">Enable Critical</label>\n            </div>\n        </div>\n        <div class=\"ml-3\">\n            <div class=\"d-flex align-items-center\">\n                <input class=\"mb-2\"\n                       type=\"checkbox\"\n                       id=\"enable-markers\"\n                       [ngModel]=\"enableThresholdMarkers\"\n                       (ngModelChange)=\"onEnableThresholdMarkersChange($event)\" />\n                <label class=\"px-3\" for=\"enable-markers\">Enable Markers</label>\n            </div>\n        </div>\n        <div class=\"ml-3\">\n            <div class=\"d-flex align-items-center\">\n                <input id=\"reversed\"\n                       class=\"mb-2\"\n                       type=\"checkbox\"\n                       [ngModel]=\"reversed\"\n                       (ngModelChange)=\"onReversedChange($event)\" />\n                <label class=\"px-3\" for=\"reversed\">Reversed</label>\n            </div>\n        </div>\n        <div class=\"ml-3\">\n            <div class=\"d-flex align-items-center\">\n                <input id=\"flip-labels\"\n                       class=\"mb-2\"\n                       type=\"checkbox\"\n                       [(ngModel)]=\"flipLabels\" />\n                <label class=\"px-3\" for=\"flip-labels\">Flip Labels</label>\n            </div>\n        </div>\n        <div class=\"ml-3\">\n            <div class=\"d-flex align-items-center\">\n                <input class=\"mb-2\"\n                       type=\"checkbox\"\n                       id=\"dark-theme\"\n                       [ngModel]=\"themeSwitcher.isDarkModeEnabledSubject | async\"\n                       (ngModelChange)=\"themeSwitcher.setDarkTheme($event)\" />\n                <label class=\"px-3\" for=\"dark-theme\">Dark Theme</label>\n            </div>\n        </div>\n    </div>\n</div>\n";
+      __webpack_exports__["default"] = "<div class=\"testing-region d-flex align-items-center justify-content-around\">\n    <donut-gauge-prototype [gaugeConfig]=\"gaugeConfig\" [size]=\"donutSize\" [annularGrowth]=\"annularGrowth\" [annularWidth]=\"thickness\">\n    </donut-gauge-prototype>\n    <linear-gauge-vertical-prototype [gaugeConfig]=\"gaugeConfig\"></linear-gauge-vertical-prototype>\n    <linear-gauge-horizontal-prototype [gaugeConfig]=\"gaugeConfig\"></linear-gauge-horizontal-prototype>\n</div>\n\n<div class=\"d-flex justify-content-center\">\n    <div class=\"column\">\n        <div class=\"mb-2\">\n            <nui-form-field caption=\"Donut Annular Growth\"\n                            hint=\"Set to zero to have the donut obey the manual thickness setting\"\n                            [showOptionalText]=\"false\">\n                <nui-textbox-number type=\"number\"\n                                    [(ngModel)]=\"annularGrowth\"\n                                    [minValue]=\"0\"\n                                    [step]=\"0.01\"\n                                    customBoxWidth=\"75px\"></nui-textbox-number>\n            </nui-form-field>\n        </div>\n        <div class=\"mb-2\">\n            <label for=\"donutSizeInput\">\n                Donut Size\n            </label>\n            <br />\n            <nui-textbox-number type=\"number\"\n                                [(ngModel)]=\"donutSize\"\n                                [minValue]=\"0\"\n                                [step]=\"25\"\n                                customBoxWidth=\"75px\"\n                                name=\"donutSizeInput\"></nui-textbox-number>\n        </div>\n    </div>\n    <div class=\"column ml-5\">\n        <div class=\"mb-2\">\n            <label for=\"valueInput\">\n                Value\n            </label>\n            <br />\n            <nui-textbox-number type=\"number\"\n                                [ngModel]=\"value\"\n                                (ngModelChange)=\"onValueChange($event)\"\n                                [minValue]=\"0\"\n                                [maxValue]=\"maxValue\"\n                                [step]=\"valueStep\"\n                                customBoxWidth=\"75px\"\n                                name=\"valueInput\"></nui-textbox-number>\n        </div>\n        <div class=\"mb-2\">\n            <label for=\"thicknessInput\">\n                Thickness\n            </label>\n            <br />\n            <nui-textbox-number type=\"number\"\n                                [ngModel]=\"thickness\"\n                                (ngModelChange)=\"onThicknessChange($event)\"\n                                [minValue]=\"0\"\n                                customBoxWidth=\"75px\"\n                                name=\"thicknessInput\"></nui-textbox-number>\n        </div>\n        <div class=\"mb-2\">\n            <label for=\"lowThresholdInput\">\n                Low Threshold\n            </label>\n            <br />\n            <nui-textbox-number type=\"number\"\n                                [ngModel]=\"lowThreshold\"\n                                (ngModelChange)=\"onLowThresholdChange($event)\"\n                                [minValue]=\"0\"\n                                [maxValue]=\"highThreshold - valueStep\"\n                                [step]=\"valueStep\"\n                                customBoxWidth=\"75px\"\n                                name=\"lowThresholdInput\"></nui-textbox-number>\n        </div>\n        <div class=\"mb-2\">\n            <label for=\"highThresholdInput\">\n                High Threshold\n            </label>\n            <br />\n            <nui-textbox-number type=\"number\"\n                                [ngModel]=\"highThreshold\"\n                                (ngModelChange)=\"onHighThresholdChange($event)\"\n                                [minValue]=\"lowThreshold + valueStep\"\n                                [maxValue]=\"maxValue\"\n                                [step]=\"valueStep\"\n                                customBoxWidth=\"75px\"\n                                name=\"highThresholdInput\"></nui-textbox-number>\n        </div>\n    </div>\n    <div class=\"column ml-5\">\n        <div class=\"ml-3\">\n            <div class=\"d-flex align-items-center\">\n                <input id=\"enable-warning\"\n                       class=\"mb-2\"\n                       type=\"checkbox\"\n                       [ngModel]=\"warningEnabled\"\n                       (ngModelChange)=\"onWarningEnabledChange($event)\" />\n                <label class=\"px-3\" for=\"enable-warning\">Warning Enabled</label>\n            </div>\n        </div>\n        <div class=\"ml-3\">\n            <div class=\"d-flex align-items-center\">\n                <input id=\"enable-critical\"\n                       class=\"mb-2\"\n                       type=\"checkbox\"\n                       [(ngModel)]=\"criticalEnabled\"\n                       (ngModelChange)=\"onCriticalEnabledChange($event)\" />\n                <label class=\"px-3\" for=\"enable-critical\">Critical Enabled</label>\n            </div>\n        </div>\n        <div class=\"ml-3\">\n            <div class=\"d-flex align-items-center\">\n                <input class=\"mb-2\"\n                       type=\"checkbox\"\n                       id=\"enable-markers\"\n                       [ngModel]=\"thresholdMarkersEnabled\"\n                       (ngModelChange)=\"onEnableThresholdMarkersChange($event)\" />\n                <label class=\"px-3\" for=\"enable-markers\">Markers Enabled</label>\n            </div>\n        </div>\n        <div class=\"ml-3\">\n            <div class=\"d-flex align-items-center\">\n                <input id=\"reversed\"\n                       class=\"mb-2\"\n                       type=\"checkbox\"\n                       [ngModel]=\"reversed\"\n                       (ngModelChange)=\"onReversedChange($event)\" />\n                <label class=\"px-3\" for=\"reversed\">Reversed</label>\n            </div>\n        </div>\n        <div class=\"ml-3\">\n            <div class=\"d-flex align-items-center\">\n                <input id=\"flip-labels\"\n                       class=\"mb-2\"\n                       type=\"checkbox\"\n                       [ngModel]=\"flipLabels\"\n                       (ngModelChange)=\"onFlippedChange($event)\" />\n                <label class=\"px-3\" for=\"flip-labels\">Flip Labels</label>\n            </div>\n        </div>\n        <div class=\"ml-3\">\n            <div class=\"d-flex align-items-center\">\n                <input class=\"mb-2\"\n                       type=\"checkbox\"\n                       id=\"dark-theme\"\n                       [ngModel]=\"themeSwitcher.isDarkModeEnabledSubject | async\"\n                       (ngModelChange)=\"themeSwitcher.setDarkTheme($event)\" />\n                <label class=\"px-3\" for=\"dark-theme\">Dark Theme</label>\n            </div>\n        </div>\n    </div>\n</div>\n";
       /***/
     },
 
@@ -265,7 +260,7 @@
           this.donutSize = 200;
           this.warningEnabled = true;
           this.criticalEnabled = true;
-          this.enableThresholdMarkers = true;
+          this.thresholdMarkersEnabled = true;
           this.reversed = false;
           this.flipLabels = false;
           this.lowThreshold = 1000;
@@ -298,9 +293,21 @@
             this.gaugeConfig = this.getGaugeConfig();
           }
         }, {
+          key: "onFlippedChange",
+          value: function onFlippedChange(flipped) {
+            this.flipLabels = flipped;
+            this.gaugeConfig = this.getGaugeConfig();
+          }
+        }, {
           key: "onValueChange",
           value: function onValueChange(value) {
             this.value = value;
+            this.gaugeConfig = this.getGaugeConfig();
+          }
+        }, {
+          key: "onThicknessChange",
+          value: function onThicknessChange(thickness) {
+            this.thickness = thickness;
             this.gaugeConfig = this.getGaugeConfig();
           }
         }, {
@@ -330,7 +337,7 @@
         }, {
           key: "onEnableThresholdMarkersChange",
           value: function onEnableThresholdMarkersChange(enabled) {
-            this.enableThresholdMarkers = enabled;
+            this.thresholdMarkersEnabled = enabled;
             this.gaugeConfig = this.getGaugeConfig();
           }
         }, {
@@ -341,7 +348,11 @@
               value: this.value,
               max: this.maxValue,
               thresholds: this.thresholds,
-              labelFormatter: this.labelFormatter
+              labels: {
+                formatter: this.labelFormatter,
+                flipped: this.flipLabels
+              },
+              linearThickness: this.thickness
             };
           }
         }, {
@@ -358,7 +369,7 @@
             this.thresholds.definitions[_nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["StandardGaugeThresholdId"].Warning].enabled = this.warningEnabled;
             this.thresholds.definitions[_nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["StandardGaugeThresholdId"].Critical].enabled = this.criticalEnabled;
             this.thresholds.reversed = this.reversed;
-            this.thresholds.disableMarkers = !this.enableThresholdMarkers;
+            this.thresholds.disableMarkers = !this.thresholdMarkersEnabled;
           }
         }]);
 
@@ -494,12 +505,14 @@
       var DonutGaugePrototypeComponent = /*#__PURE__*/function () {
         function DonutGaugePrototypeComponent() {
           _classCallCheck(this, DonutGaugePrototypeComponent);
+
+          this.labelClearance = 40;
         }
 
         _createClass(DonutGaugePrototypeComponent, [{
           key: "ngOnChanges",
           value: function ngOnChanges(changes) {
-            var _a;
+            var _a, _b;
 
             if (changes.size && !changes.size.firstChange || changes.annularWidth && !changes.annularWidth.firstChange || changes.annularGrowth && !changes.annularGrowth.firstChange) {
               this.updateDonutSize();
@@ -508,28 +521,35 @@
             }
 
             if (changes.gaugeConfig && !changes.gaugeConfig.firstChange) {
-              this.labelsPlugin.config.disableThresholdLabels = (_a = this.gaugeConfig.thresholds) === null || _a === void 0 ? void 0 : _a.disableMarkers;
+              var disableMarkers = (_b = (_a = this.gaugeConfig.thresholds) === null || _a === void 0 ? void 0 : _a.disableMarkers) !== null && _b !== void 0 ? _b : false;
+              this.labelsPlugin.config.disableThresholdLabels = disableMarkers;
+              var gridConfig = this.chartAssist.chart.getGrid().config();
+              var clearance = disableMarkers ? 0 : this.labelClearance;
+              gridConfig.dimension.margin = {
+                top: clearance,
+                right: clearance,
+                bottom: clearance,
+                left: clearance
+              };
+              this.chartAssist.chart.updateDimensions();
               this.chartAssist.update(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.seriesSet, this.gaugeConfig));
             }
           }
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var grid = Object(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["radialGrid"])();
+            var gaugeConfigWithLabelClearance = Object.assign(Object.assign({}, this.gaugeConfig), {
+              labels: Object.assign(Object.assign({}, this.gaugeConfig.labels), {
+                clearance: this.labelClearance
+              })
+            });
+            var grid = Object(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["gaugeGrid"])(gaugeConfigWithLabelClearance, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Donut);
             grid.config().dimension.autoHeight = false;
             grid.config().dimension.autoWidth = false;
             this.chartAssist = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["ChartAssist"](new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["Chart"](grid), _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["radial"]);
             this.contentPlugin = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["ChartDonutContentPlugin"]();
             this.chartAssist.chart.addPlugin(this.contentPlugin);
-            var labelConfig = {
-              clearance: {
-                top: 40,
-                right: 40,
-                bottom: 40,
-                left: 40
-              }
-            };
-            this.labelsPlugin = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["DonutGaugeLabelsPlugin"](labelConfig);
+            this.labelsPlugin = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["DonutGaugeLabelsPlugin"]();
             this.chartAssist.chart.addPlugin(this.labelsPlugin);
             this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].assembleSeriesSet(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Donut);
             this.updateDonutSize();
@@ -764,60 +784,60 @@
         function LinearGaugeVerticalPrototypeComponent() {
           _classCallCheck(this, LinearGaugeVerticalPrototypeComponent);
 
-          this.flipLabels = false;
+          // extra clearance for the longer labels generated by the formatter
+          this.labelClearance = 35;
+          this.staticMargin = 5;
         }
 
         _createClass(LinearGaugeVerticalPrototypeComponent, [{
           key: "ngOnChanges",
           value: function ngOnChanges(changes) {
-            var _a;
+            var _a, _b, _c, _d, _e;
 
-            if (changes.thickness && !changes.thickness.firstChange || changes.flipLabels && !changes.flipLabels.firstChange) {
+            if (changes.gaugeConfig && !changes.gaugeConfig.firstChange) {
               var gridConfig = this.chartAssist.chart.getGrid().config();
+              gridConfig.dimension.width((_a = this.gaugeConfig.linearThickness) !== null && _a !== void 0 ? _a : 0);
+              var flippedLabels = (_c = (_b = this.gaugeConfig.labels) === null || _b === void 0 ? void 0 : _b.flipped) !== null && _c !== void 0 ? _c : false;
+              var disableMarkers = (_e = (_d = this.gaugeConfig.thresholds) === null || _d === void 0 ? void 0 : _d.disableMarkers) !== null && _e !== void 0 ? _e : false;
+              this.labelsPlugin.config.flippedLabels = flippedLabels;
+              this.labelsPlugin.config.disableThresholdLabels = disableMarkers; // update the margins to accommodate the label direction change
 
-              if (changes.thickness) {
-                gridConfig.dimension.width(this.thickness);
-              }
+              var staticMargin = disableMarkers ? 0 : this.staticMargin;
+              gridConfig.dimension.margin = {
+                top: staticMargin,
+                right: 0,
+                bottom: staticMargin,
+                left: 0
+              };
 
-              if (changes.flipLabels) {
-                this.labelsPlugin.config.flipLabels = this.flipLabels; // reset the margins to accommodate the label direction change
-
-                gridConfig.dimension.margin = {
-                  top: 0,
-                  right: 0,
-                  bottom: 0,
-                  left: 0
-                };
+              if (!disableMarkers) {
+                var marginToUpdate = flippedLabels ? "left" : "right";
+                gridConfig.dimension.margin[marginToUpdate] = this.labelClearance;
               }
 
               this.chartAssist.chart.updateDimensions();
-            }
-
-            if (changes.gaugeConfig && !changes.gaugeConfig.firstChange) {
-              this.labelsPlugin.config.disableThresholdLabels = (_a = this.gaugeConfig.thresholds) === null || _a === void 0 ? void 0 : _a.disableMarkers;
               this.chartAssist.update(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.seriesSet, this.gaugeConfig));
             }
           }
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var gridConfig = Object(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["linearGaugeGridConfig"])(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Vertical, this.thickness);
-            gridConfig.dimension.margin.top = 5;
-            gridConfig.dimension.margin.bottom = 5;
+            var _a;
+
+            var gaugeConfigWithLabelClearance = Object.assign(Object.assign({}, this.gaugeConfig), {
+              labels: Object.assign(Object.assign({}, this.gaugeConfig.labels), {
+                clearance: this.labelClearance
+              })
+            });
+            var gridConfig = Object(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["linearGaugeGridConfig"])(gaugeConfigWithLabelClearance, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Vertical);
+            gridConfig.dimension.margin.top = this.staticMargin;
+            gridConfig.dimension.margin.bottom = this.staticMargin;
             var grid = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["XYGrid"](gridConfig);
             var chart = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["Chart"](grid);
             this.chartAssist = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["ChartAssist"](chart, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["stack"]);
-            var labelConfig = {
-              flipLabels: this.flipLabels,
-              // extra clearance for the longer labels generated by the formatter
-              clearance: {
-                top: 0,
-                right: 35,
-                bottom: 0,
-                left: 35
-              }
-            };
-            this.labelsPlugin = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["LinearGaugeLabelsPlugin"](labelConfig);
+            this.labelsPlugin = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["LinearGaugeLabelsPlugin"]({
+              flippedLabels: (_a = this.gaugeConfig.labels) === null || _a === void 0 ? void 0 : _a.flipped
+            });
             this.chartAssist.chart.addPlugin(this.labelsPlugin);
             this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].assembleSeriesSet(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Vertical);
             this.chartAssist.update(this.seriesSet);
@@ -828,13 +848,7 @@
       }();
 
       LinearGaugeVerticalPrototypeComponent.propDecorators = {
-        thickness: [{
-          type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"]
-        }],
         gaugeConfig: [{
-          type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"]
-        }],
-        flipLabels: [{
           type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"]
         }]
       };

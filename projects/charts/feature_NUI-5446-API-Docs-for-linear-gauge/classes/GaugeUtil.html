@@ -1,0 +1,1834 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@nova-ui/charts documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">@nova-ui/charts documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content class">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Classes</li>
+  <li>GaugeUtil</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">API</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/gauge/gauge-util.ts</code>
+        </p>
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Convenience utility for simplifying gauge usage</p>
+
+            </p>
+
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Static</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#DATA_CATEGORY">DATA_CATEGORY</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#assembleSeriesSet">assembleSeriesSet</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#createChartAssist">createChartAssist</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#createDefaultQuantityColorAccessor">createDefaultQuantityColorAccessor</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#createStandardThresholdsConfig">createStandardThresholdsConfig</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#generateQuantityAndRemainderData">generateQuantityAndRemainderData</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#generateQuantityAndRemainderSeriesSet">generateQuantityAndRemainderSeriesSet</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#generateRenderingAttributes">generateRenderingAttributes</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#generateRenderingTools">generateRenderingTools</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#generateThresholdsData">generateThresholdsData</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#generateThresholdSeries">generateThresholdSeries</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#prepareThresholdsData">prepareThresholdsData</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#updateSeriesSet">updateSeriesSet</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+            <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="DATA_CATEGORY"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Static</span>
+                                <span class="modifier">Readonly</span>
+                            DATA_CATEGORY</b>
+                            <a href="#DATA_CATEGORY"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&quot;gauge&quot;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">src/gauge/gauge-util.ts:76</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Value used for unifying the linear-style gauge visualization into a single bar stack </p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="assembleSeriesSet"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            assembleSeriesSet
+                        </b>
+                        <a href="#assembleSeriesSet"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>assembleSeriesSet(gaugeConfig: <a href="../interfaces/IGaugeConfig.html">IGaugeConfig</a>, mode: <a href="../undefineds/GaugeMode.html">GaugeMode</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="107"
+                            class="link-to-prism">src/gauge/gauge-util.ts:107</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Assembles a gauge series set with all of the standard scales, renderers, accessors, etc. needed for creating a gauge visualization</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>gaugeConfig</td>
+                                    <td>
+                                                <code><a href="../interfaces/IGaugeConfig.html" target="_self" >IGaugeConfig</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The configuration for the gauge</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>mode</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/enumerations.html#GaugeMode" target="_self" >GaugeMode</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The mode of the gauge (Donut, Horizontal, or Vertical)</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>IChartAssistSeries[]</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>The assembled series set</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createChartAssist"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            createChartAssist
+                        </b>
+                        <a href="#createChartAssist"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createChartAssist(gaugeConfig: <a href="../interfaces/IGaugeConfig.html">IGaugeConfig</a>, mode: <a href="../undefineds/GaugeMode.html">GaugeMode</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="86"
+                            class="link-to-prism">src/gauge/gauge-util.ts:86</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Creates a ChartAssist pre-configured based on the provided IGaugeConfig and GaugeMode</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>gaugeConfig</td>
+                                    <td>
+                                                <code><a href="../interfaces/IGaugeConfig.html" target="_self" >IGaugeConfig</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The gauge configuration</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>mode</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/enumerations.html#GaugeMode" target="_self" >GaugeMode</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The gauge mode</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/ChartAssist.html" target="_self" >ChartAssist</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>A pre-configured chart assist</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createDefaultQuantityColorAccessor"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            createDefaultQuantityColorAccessor
+                        </b>
+                        <a href="#createDefaultQuantityColorAccessor"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createDefaultQuantityColorAccessor()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="315"
+                            class="link-to-prism">src/gauge/gauge-util.ts:315</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Convenience function for creating a standard gauge quantity color accessor</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/typealiases.html#DataAccessor" target="_self" >DataAccessor</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>An accessor for determining the color to use for the quantity visualization</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createStandardThresholdsConfig"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            createStandardThresholdsConfig
+                        </b>
+                        <a href="#createStandardThresholdsConfig"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createStandardThresholdsConfig(warningVal: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, criticalVal: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="331"
+                            class="link-to-prism">src/gauge/gauge-util.ts:331</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Convenience function for creating a standard standard set of threshold configs. Includes configurations for warning and error thresholds.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>warningVal</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Value for the warning threshold</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>criticalVal</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Value for the critical threshold</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/IGaugeThresholdsConfig.html" target="_self" >IGaugeThresholdsConfig</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>The thresholds configuration</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="generateQuantityAndRemainderData"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            generateQuantityAndRemainderData
+                        </b>
+                        <a href="#generateQuantityAndRemainderData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>generateQuantityAndRemainderData(gaugeConfig: <a href="../interfaces/IGaugeConfig.html">IGaugeConfig</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="364"
+                            class="link-to-prism">src/gauge/gauge-util.ts:364</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Generates quantity and remainder data in the format needed by the gauge visualization</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>gaugeConfig</td>
+                                    <td>
+                                                <code><a href="../interfaces/IGaugeConfig.html" target="_self" >IGaugeConfig</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The configuration for the gauge</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Partial[]</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Array of partial IDataSeries objects including the &#39;id&#39; and &#39;data&#39; properties of the quantity and remainder
+series needed by the gauge visualization</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="generateQuantityAndRemainderSeriesSet"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            generateQuantityAndRemainderSeriesSet
+                        </b>
+                        <a href="#generateQuantityAndRemainderSeriesSet"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>generateQuantityAndRemainderSeriesSet(gaugeConfig: <a href="../interfaces/IGaugeConfig.html">IGaugeConfig</a>, renderingAttributes: IGaugeRenderingAttributes, activeThreshold?: <a href="../interfaces/IGaugeThresholdDatum.html">IGaugeThresholdDatum</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="180"
+                            class="link-to-prism">src/gauge/gauge-util.ts:180</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Generates a set of chart series used for visualizing the gauge&#39;s quantity and remainder data</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>gaugeConfig</td>
+                                    <td>
+                                                <code><a href="../interfaces/IGaugeConfig.html" target="_self" >IGaugeConfig</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The configuration for the gauge</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>renderingAttributes</td>
+                                    <td>
+                                            <code>IGaugeRenderingAttributes</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The attributes needed to visualized the thresholds</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>activeThreshold</td>
+                                    <td>
+                                                <code><a href="../interfaces/IGaugeThresholdDatum.html" target="_self" >IGaugeThresholdDatum</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                    <td>
+                                        <p>The currently active threshold</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>IChartAssistSeries[]</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>A set of chart series representing the quantity and remainder data</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="generateRenderingAttributes"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            generateRenderingAttributes
+                        </b>
+                        <a href="#generateRenderingAttributes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>generateRenderingAttributes(gaugeConfig: <a href="../interfaces/IGaugeConfig.html">IGaugeConfig</a>, mode: <a href="../undefineds/GaugeMode.html">GaugeMode</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="243"
+                            class="link-to-prism">src/gauge/gauge-util.ts:243</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Generates the attributes required to instantiate a standard gauge in the specified mode</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>gaugeConfig</td>
+                                    <td>
+                                                <code><a href="../interfaces/IGaugeConfig.html" target="_self" >IGaugeConfig</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The configuration for the gauge</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>mode</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/enumerations.html#GaugeMode" target="_self" >GaugeMode</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The mode of the gauge (Donut, Horizontal, or Vertical)</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>IGaugeRenderingAttributes</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>The attributes required to instantiate a gauge</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="generateRenderingTools"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            generateRenderingTools
+                        </b>
+                        <a href="#generateRenderingTools"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>generateRenderingTools(gaugeConfig: <a href="../interfaces/IGaugeConfig.html">IGaugeConfig</a>, mode: <a href="../undefineds/GaugeMode.html">GaugeMode</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="264"
+                            class="link-to-prism">src/gauge/gauge-util.ts:264</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Generates rendering tools for standard gauge attributes</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>gaugeConfig</td>
+                                    <td>
+                                                <code><a href="../interfaces/IGaugeConfig.html" target="_self" >IGaugeConfig</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The configuration for the gauge</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>mode</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/enumerations.html#GaugeMode" target="_self" >GaugeMode</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The mode of the gauge (Donut, Horizontal, or Vertical)</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>IGaugeRenderingTools</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>The rendering tools for standard gauge attributes</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="generateThresholdsData"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            generateThresholdsData
+                        </b>
+                        <a href="#generateThresholdsData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>generateThresholdsData(gaugeConfig: <a href="../interfaces/IGaugeConfig.html">IGaugeConfig</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="380"
+                            class="link-to-prism">src/gauge/gauge-util.ts:380</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Generates threshold data in the form needed by the gauge&#39;s thresholds visualization</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>gaugeConfig</td>
+                                    <td>
+                                                <code><a href="../interfaces/IGaugeConfig.html" target="_self" >IGaugeConfig</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The configuration for the gauge</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/DataSeries.html" target="_self" >Partial&lt;IDataSeries&lt;IAccessors, IGaugeThresholdDatum&gt;&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>A partial IDataSeries object including the &#39;id&#39; and &#39;data&#39; properties of the thresholds
+series used for the the gauge&#39;s thresholds visualization</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="generateThresholdSeries"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            generateThresholdSeries
+                        </b>
+                        <a href="#generateThresholdSeries"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>generateThresholdSeries(gaugeConfig: <a href="../interfaces/IGaugeConfig.html">IGaugeConfig</a>, renderingAttributes: IGaugeRenderingAttributes)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="221"
+                            class="link-to-prism">src/gauge/gauge-util.ts:221</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Generates a series for visualizing the gauge&#39;s thresholds</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>gaugeConfig</td>
+                                    <td>
+                                                <code><a href="../interfaces/IGaugeConfig.html" target="_self" >IGaugeConfig</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The configuration for the gauge</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>renderingAttributes</td>
+                                    <td>
+                                            <code>IGaugeRenderingAttributes</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The attributes needed to visualized the thresholds</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>IChartAssistSeries&lt;IAccessors&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>The threshold series</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="prepareThresholdsData"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            prepareThresholdsData
+                        </b>
+                        <a href="#prepareThresholdsData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>prepareThresholdsData(gaugeConfig: <a href="../interfaces/IGaugeConfig.html">IGaugeConfig</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="411"
+                            class="link-to-prism">src/gauge/gauge-util.ts:411</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Generates visualization-specific thresholds data based on the gauge&#39;s configuration</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>gaugeConfig</td>
+                                    <td>
+                                                <code><a href="../interfaces/IGaugeConfig.html" target="_self" >IGaugeConfig</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The gauge configuration</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/IGaugeThresholdsData.html" target="_self" >IGaugeThresholdsData</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Thresholds data modified for use by the gauge visualization</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateSeriesSet"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            updateSeriesSet
+                        </b>
+                        <a href="#updateSeriesSet"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateSeriesSet(seriesSet: IChartAssistSeries<IAccessors>[], gaugeConfig: <a href="../interfaces/IGaugeConfig.html">IGaugeConfig</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="138"
+                            class="link-to-prism">src/gauge/gauge-util.ts:138</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Updates the series set based on the provided configuration</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>seriesSet</td>
+                                    <td>
+                                            <code>IChartAssistSeries&lt;IAccessors&gt;[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The set of series to update</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>gaugeConfig</td>
+                                    <td>
+                                                <code><a href="../interfaces/IGaugeConfig.html" target="_self" >IGaugeConfig</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The configuration for the gauge</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>IChartAssistSeries[]</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>The updated series set</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { IRadialScales, Scales } from &quot;../core/common/scales/types&quot;;
+import { DataAccessor, IAccessors, IChartAssistSeries, IDataSeries, IGaugeThresholdsRendererConfig } from &quot;../core/common/types&quot;;
+import { GAUGE_LABEL_FORMATTER_NAME_DEFAULT } from &quot;../core/plugins/gauge/constants&quot;;
+import { HorizontalBarAccessors } from &quot;../renderers/bar/accessors/horizontal-bar-accessors&quot;;
+import { VerticalBarAccessors } from &quot;../renderers/bar/accessors/vertical-bar-accessors&quot;;
+import { BarRenderer } from &quot;../renderers/bar/bar-renderer&quot;;
+import { barScales } from &quot;../renderers/bar/bar-scales&quot;;
+import { LinearGaugeThresholdsRenderer } from &quot;../renderers/bar/linear-gauge-thresholds-renderer&quot;;
+import { RadialAccessors } from &quot;../renderers/radial/accessors/radial-accessors&quot;;
+import { donutGaugeRendererConfig } from &quot;../renderers/radial/gauge/donut-gauge-renderer-config&quot;;
+import { DonutGaugeThresholdsRenderer } from &quot;../renderers/radial/gauge/donut-gauge-thresholds-renderer&quot;;
+import { RadialRenderer } from &quot;../renderers/radial/radial-renderer&quot;;
+import { radialScales } from &quot;../renderers/radial/radial-scales&quot;;
+
+import {
+    GaugeMode,
+    GAUGE_QUANTITY_SERIES_ID,
+    GAUGE_REMAINDER_SERIES_ID,
+    GAUGE_THRESHOLD_MARKERS_SERIES_ID,
+    StandardGaugeColor,
+    StandardGaugeThresholdId,
+    StandardGaugeThresholdMarkerRadius,
+} from &quot;./constants&quot;;
+import { IGaugeConfig, IGaugeThresholdDatum, IGaugeThresholdDef, IGaugeThresholdsData, IGaugeThresholdsConfig } from &quot;./types&quot;;
+import { linearGaugeRendererConfig } from &quot;../renderers/bar/linear-gauge-renderer-config&quot;;
+import { Renderer } from &quot;../core/common/renderer&quot;;
+import isUndefined from &quot;lodash/isUndefined&quot;;
+import { ChartAssist } from &quot;../core/chart-assists/chart-assist&quot;;
+import { radial } from &quot;../renderers/radial/radial-preprocessor&quot;;
+import { stack } from &quot;../renderers/bar/stacked-preprocessor&quot;;
+import { Chart } from &quot;../core/chart&quot;;
+import { gaugeGrid } from &quot;../core/grid/config/gauge-grid-fn&quot;;
+import isEmpty from &quot;lodash/isEmpty&quot;;
+import { DonutGaugeLabelsPlugin } from &quot;../core/plugins/gauge/donut-gauge-labels-plugin&quot;;
+import { LinearGaugeLabelsPlugin } from &quot;../core/plugins/gauge/linear-gauge-labels-plugin&quot;;
+
+/**
+ * @ignore
+ * Attributes needed by a gauge
+ */
+export interface IGaugeRenderingAttributes {
+    /** Accessors for the gauge quantity segment */
+    quantityAccessors: IAccessors;
+    /** Accessors for the gauge remainder segment */
+    remainderAccessors: IAccessors;
+    /** Scales for the gauge */
+    scales: Scales;
+    /** Renderer for the primary gauge visualization */
+    mainRenderer: Renderer&lt;IAccessors&gt;;
+    /** Renderer for the gauge threshold visualization */
+    thresholdsRenderer: Renderer&lt;IAccessors&gt;;
+}
+
+/**
+ * @ignore
+ * Interface for an object that can be used to create the rendering attributes needed by a gauge
+ */
+export interface IGaugeRenderingTools {
+    /** Function for creating quantity accessors */
+    quantityAccessorFunction: () &#x3D;&gt; IAccessors;
+    /** Function for creating remainder accessors */
+    remainderAccessorFunction: () &#x3D;&gt; IAccessors;
+    /** Function for creating scales */
+    scaleFunction: () &#x3D;&gt; Scales | IRadialScales;
+    /** Function for creating a main renderer */
+    mainRendererFunction: () &#x3D;&gt; Renderer&lt;IAccessors&gt;;
+    /** Function for creating a thresholds renderer */
+    thresholdsRendererFunction: () &#x3D;&gt; Renderer&lt;IAccessors&gt;;
+}
+
+/**
+ * Convenience utility for simplifying gauge usage
+ */
+export class GaugeUtil {
+    /** Value used for unifying the linear-style gauge visualization into a single bar stack */
+    public static readonly DATA_CATEGORY &#x3D; &quot;gauge&quot;;
+
+    /**
+     * Creates a ChartAssist pre-configured based on the provided IGaugeConfig and GaugeMode
+     *
+     * @param gaugeConfig The gauge configuration
+     * @param mode The gauge mode
+     *
+     * @returns {ChartAssist} A pre-configured chart assist
+     */
+    public static createChartAssist(gaugeConfig: IGaugeConfig, mode: GaugeMode): ChartAssist {
+        const grid &#x3D; gaugeGrid(gaugeConfig, mode);
+        const chart &#x3D; new Chart(grid);
+        if (!isEmpty(gaugeConfig.thresholds?.definitions) &amp;&amp; !gaugeConfig.thresholds?.disableMarkers) {
+            if (mode &#x3D;&#x3D;&#x3D; GaugeMode.Donut) {
+                chart.addPlugin(new DonutGaugeLabelsPlugin())
+            } else {
+                chart.addPlugin(new LinearGaugeLabelsPlugin({ flippedLabels: gaugeConfig.labels?.flipped ?? false }));
+            }
+        }
+        return mode &#x3D;&#x3D;&#x3D; GaugeMode.Donut ? new ChartAssist(chart, radial) : new ChartAssist(chart, stack);
+    }
+
+    /**
+     * Assembles a gauge series set with all of the standard scales, renderers, accessors, etc. needed for creating a gauge visualization
+     *
+     * @param gaugeConfig The configuration for the gauge
+     * @param mode The mode of the gauge (Donut, Horizontal, or Vertical)
+     *
+     * @returns {IChartAssistSeries&lt;IAccessors&gt;[]} The assembled series set
+     */
+    public static assembleSeriesSet(gaugeConfig: IGaugeConfig, mode: GaugeMode): IChartAssistSeries&lt;IAccessors&gt;[] {
+        gaugeConfig.value &#x3D; gaugeConfig.value ?? 0;
+        gaugeConfig.max &#x3D; gaugeConfig.max ?? 0;
+        const clampedConfig &#x3D; GaugeUtil.clampConfigToRange(gaugeConfig);
+        const renderAttrs &#x3D; GaugeUtil.generateRenderingAttributes(clampedConfig, mode);
+        let thresholdsSeries: IChartAssistSeries&lt;IAccessors&lt;any&gt;&gt; | undefined;
+        let seriesSet: IChartAssistSeries&lt;IAccessors&gt;[] &#x3D; [];
+
+        if (clampedConfig.thresholds) {
+            thresholdsSeries &#x3D; GaugeUtil.generateThresholdSeries(clampedConfig, renderAttrs);
+            seriesSet.push(thresholdsSeries);
+        }
+
+        const quantityAndRemainderSeriesSet &#x3D; GaugeUtil.generateQuantityAndRemainderSeriesSet(clampedConfig, renderAttrs, thresholdsSeries?.activeThreshold);
+
+        seriesSet &#x3D; [
+            ...quantityAndRemainderSeriesSet,
+            ...seriesSet,
+        ] as IChartAssistSeries&lt;IAccessors&gt;[];
+
+        return seriesSet;
+    }
+
+    /**
+     * Updates the series set based on the provided configuration
+     *
+     * @param seriesSet The set of series to update
+     * @param gaugeConfig The configuration for the gauge
+     *
+     * @returns {IChartAssistSeries&lt;IAccessors&gt;[]} The updated series set
+     */
+    public static updateSeriesSet(seriesSet: IChartAssistSeries&lt;IAccessors&gt;[], gaugeConfig: IGaugeConfig): IChartAssistSeries&lt;IAccessors&gt;[] {
+        gaugeConfig.value &#x3D; gaugeConfig.value ?? 0;
+        gaugeConfig.max &#x3D; gaugeConfig.max ?? 0;
+        const clampedConfig &#x3D; GaugeUtil.clampConfigToRange(gaugeConfig);
+        const thresholdsData &#x3D; GaugeUtil.generateThresholdsData(clampedConfig);
+
+        const updatedSeriesSet &#x3D; seriesSet.map((series: IChartAssistSeries&lt;IAccessors&lt;any&gt;&gt;) &#x3D;&gt; {
+            if (series.id &#x3D;&#x3D;&#x3D; GAUGE_QUANTITY_SERIES_ID) {
+                return {
+                    ...series,
+                    data: [{ category: GaugeUtil.DATA_CATEGORY, value: clampedConfig.value }],
+                    activeThreshold: thresholdsData.activeThreshold,
+                    defaultColor: clampedConfig.defaultQuantityColor || StandardGaugeColor.Ok,
+                };
+            }
+
+            if (series.id &#x3D;&#x3D;&#x3D; GAUGE_REMAINDER_SERIES_ID) {
+                return { ...series, data: [{ category: GaugeUtil.DATA_CATEGORY, value: clampedConfig.max - clampedConfig.value }] };
+            }
+
+            if (series.id &#x3D;&#x3D;&#x3D; GAUGE_THRESHOLD_MARKERS_SERIES_ID) {
+                (series.renderer.config as IGaugeThresholdsRendererConfig).enabled &#x3D; !clampedConfig.thresholds?.disableMarkers;
+                (series.renderer.config as IGaugeThresholdsRendererConfig).markerRadius &#x3D;
+                    clampedConfig.thresholds?.markerRadius ?? StandardGaugeThresholdMarkerRadius.Large;
+                return { ...series, ...thresholdsData };
+            }
+
+            return series;
+        });
+
+        return updatedSeriesSet;
+    }
+
+    /**
+     * Generates a set of chart series used for visualizing the gauge&#x27;s quantity and remainder data
+     *
+     * @param gaugeConfig The configuration for the gauge
+     * @param renderingAttributes The attributes needed to visualized the thresholds
+     * @param activeThreshold The currently active threshold
+     *
+     * @returns {IChartAssistSeries&lt;IAccessors&lt;any&gt;&gt;[]} A set of chart series representing the quantity and remainder data
+     */
+    public static generateQuantityAndRemainderSeriesSet(
+        gaugeConfig: IGaugeConfig,
+        renderingAttributes: IGaugeRenderingAttributes,
+        activeThreshold?: IGaugeThresholdDatum
+    ): IChartAssistSeries&lt;IAccessors&lt;any&gt;&gt;[] {
+        // assigning to variable to prevent &quot;Lambda not supported&quot; error
+        const seriesSet &#x3D; GaugeUtil.generateQuantityAndRemainderData(gaugeConfig).map((series: Partial&lt;IDataSeries&lt;IAccessors&gt;&gt;) &#x3D;&gt; {
+            const { quantityAccessors, remainderAccessors, scales, mainRenderer } &#x3D; renderingAttributes;
+
+            if (quantityAccessors.data) {
+                quantityAccessors.data.color &#x3D; gaugeConfig.quantityColorAccessor || GaugeUtil.createDefaultQuantityColorAccessor();
+            }
+
+            if (remainderAccessors.data) {
+                remainderAccessors.data.color &#x3D; gaugeConfig.remainderColorAccessor || (() &#x3D;&gt; (StandardGaugeColor.Remainder));
+            }
+
+            if (series.id &#x3D;&#x3D;&#x3D; GAUGE_QUANTITY_SERIES_ID) {
+                series.activeThreshold &#x3D; activeThreshold;
+                series.defaultColor &#x3D; gaugeConfig.defaultQuantityColor || StandardGaugeColor.Ok;
+            }
+
+            return {
+                ...series,
+                accessors: series.id &#x3D;&#x3D;&#x3D; GAUGE_QUANTITY_SERIES_ID ? quantityAccessors : remainderAccessors,
+                scales,
+                renderer: mainRenderer,
+            } as IChartAssistSeries&lt;IAccessors&lt;any&gt;&gt;;
+        });
+
+        return seriesSet;
+    }
+
+    /**
+     * Generates a series for visualizing the gauge&#x27;s thresholds
+     *
+     * @param gaugeConfig The configuration for the gauge
+     * @param renderingAttributes The attributes needed to visualized the thresholds
+     *
+     * @returns {IChartAssistSeries&lt;IAccessors&gt;} The threshold series
+     */
+    public static generateThresholdSeries(gaugeConfig: IGaugeConfig, renderingAttributes: IGaugeRenderingAttributes): IChartAssistSeries&lt;IAccessors&gt; {
+        const { quantityAccessors, scales, thresholdsRenderer } &#x3D; renderingAttributes;
+        return {
+            ...GaugeUtil.generateThresholdsData(gaugeConfig),
+            accessors: quantityAccessors,
+            scales,
+            renderer: thresholdsRenderer,
+            // instruct the radial preprocessor to ignore the threshold series when calculating the donut arcs
+            excludeFromArcCalculation: true,
+            // instruct the stacked and radial preprocessors that the threshold data doesn&#x27;t need to be mutated
+            preprocess: false,
+        } as IChartAssistSeries&lt;IAccessors&gt;;
+    }
+
+    /**
+     * Generates the attributes required to instantiate a standard gauge in the specified mode
+     *
+     * @param gaugeConfig The configuration for the gauge
+     * @param mode The mode of the gauge (Donut, Horizontal, or Vertical)
+     *
+     * @returns {IGaugeRenderingAttributes} The attributes required to instantiate a gauge
+     */
+    public static generateRenderingAttributes(gaugeConfig: IGaugeConfig, mode: GaugeMode): IGaugeRenderingAttributes {
+        const renderTools &#x3D; GaugeUtil.generateRenderingTools(gaugeConfig, mode);
+        const renderAttrs: IGaugeRenderingAttributes &#x3D; {
+            quantityAccessors: renderTools.quantityAccessorFunction(),
+            remainderAccessors: renderTools.remainderAccessorFunction(),
+            mainRenderer: renderTools.mainRendererFunction(),
+            thresholdsRenderer: renderTools.thresholdsRendererFunction(),
+            scales: renderTools.scaleFunction(),
+        };
+
+        return renderAttrs;
+    }
+
+    /**
+     * Generates rendering tools for standard gauge attributes
+     *
+     * @param gaugeConfig The configuration for the gauge
+     * @param mode The mode of the gauge (Donut, Horizontal, or Vertical)
+     *
+     * @returns {IGaugeRenderingTools} The rendering tools for standard gauge attributes
+     */
+    public static generateRenderingTools(gaugeConfig: IGaugeConfig, mode: GaugeMode): IGaugeRenderingTools {
+        const thresholdsRendererConfig: IGaugeThresholdsRendererConfig &#x3D; {
+            enabled: !gaugeConfig.thresholds?.disableMarkers,
+            markerRadius: gaugeConfig.thresholds?.markerRadius,
+        };
+        const labelFormatter &#x3D; gaugeConfig.labels?.formatter;
+
+        const renderingTools: Record&lt;GaugeMode, IGaugeRenderingTools&gt; &#x3D; {
+            [GaugeMode.Donut]: {
+                mainRendererFunction: () &#x3D;&gt; new RadialRenderer(donutGaugeRendererConfig()),
+                thresholdsRendererFunction: () &#x3D;&gt; new DonutGaugeThresholdsRenderer(thresholdsRendererConfig),
+                quantityAccessorFunction: () &#x3D;&gt; new RadialAccessors(),
+                remainderAccessorFunction: () &#x3D;&gt; new RadialAccessors(),
+                scaleFunction: () &#x3D;&gt; {
+                    const scales &#x3D; radialScales();
+                    scales.r.formatters[GAUGE_LABEL_FORMATTER_NAME_DEFAULT] &#x3D; labelFormatter;
+                    return scales;
+                },
+            },
+            [GaugeMode.Horizontal]: {
+                mainRendererFunction: () &#x3D;&gt; new BarRenderer(linearGaugeRendererConfig()),
+                thresholdsRendererFunction: () &#x3D;&gt; new LinearGaugeThresholdsRenderer(thresholdsRendererConfig),
+                quantityAccessorFunction: () &#x3D;&gt; new HorizontalBarAccessors(),
+                remainderAccessorFunction: () &#x3D;&gt; new HorizontalBarAccessors(),
+                scaleFunction: () &#x3D;&gt; {
+                    const scales &#x3D; barScales({ horizontal: true });
+                    scales.x.formatters[GAUGE_LABEL_FORMATTER_NAME_DEFAULT] &#x3D; labelFormatter;
+                    return scales;
+                },
+            },
+            [GaugeMode.Vertical]: {
+                mainRendererFunction: () &#x3D;&gt; new BarRenderer(linearGaugeRendererConfig()),
+                thresholdsRendererFunction: () &#x3D;&gt; new LinearGaugeThresholdsRenderer(thresholdsRendererConfig),
+                quantityAccessorFunction: () &#x3D;&gt; new VerticalBarAccessors(),
+                remainderAccessorFunction: () &#x3D;&gt; new VerticalBarAccessors(),
+                scaleFunction: () &#x3D;&gt; {
+                    const scales &#x3D; barScales();
+                    scales.y.formatters[GAUGE_LABEL_FORMATTER_NAME_DEFAULT] &#x3D; labelFormatter;
+                    return scales;
+                },
+            },
+        }
+
+        return renderingTools[mode];
+    }
+
+    /**
+     * Convenience function for creating a standard gauge quantity color accessor
+     *
+     * @returns {DataAccessor} An accessor for determining the color to use for the quantity visualization
+     */
+    public static createDefaultQuantityColorAccessor(): DataAccessor {
+        // assigning to variable to prevent &quot;Lambda not supported&quot; error
+        const colorAccessor: DataAccessor &#x3D; (data: any, i: number, series: number[], dataSeries: IDataSeries&lt;IAccessors&gt;) &#x3D;&gt;
+            dataSeries.activeThreshold ? dataSeries.activeThreshold.color : dataSeries.defaultColor;
+
+        return colorAccessor;
+    }
+
+    /**
+     * Convenience function for creating a standard standard set of threshold configs. Includes configurations for warning and error thresholds.
+     *
+     * @param warningVal Value for the warning threshold
+     * @param criticalVal Value for the critical threshold
+     *
+     * @returns {IGaugeThresholdsConfig} The thresholds configuration
+     */
+    public static createStandardThresholdsConfig(warningVal: number, criticalVal: number): IGaugeThresholdsConfig {
+        // assigning to variable to prevent &quot;Expression form not supported&quot; error
+        const config &#x3D; {
+            definitions: {
+                [StandardGaugeThresholdId.Warning]: {
+                    id: StandardGaugeThresholdId.Warning,
+                    value: warningVal,
+                    enabled: true,
+                    color: StandardGaugeColor.Warning,
+                },
+                [StandardGaugeThresholdId.Critical]: {
+                    id: StandardGaugeThresholdId.Critical,
+                    value: criticalVal,
+                    enabled: true,
+                    color: StandardGaugeColor.Critical,
+                },
+            },
+            reversed: false,
+            disableMarkers: false,
+            markerRadius: StandardGaugeThresholdMarkerRadius.Large,
+        }
+
+        return config;
+    }
+
+    /**
+     * Generates quantity and remainder data in the format needed by the gauge visualization
+     *
+     * @param gaugeConfig The configuration for the gauge
+     *
+     * @returns {Partial&lt;IDataSeries&lt;IAccessors&gt;&gt;[]} Array of partial IDataSeries objects including the &#x27;id&#x27; and &#x27;data&#x27; properties of the quantity and remainder
+     * series needed by the gauge visualization
+     */
+    public static generateQuantityAndRemainderData(gaugeConfig: IGaugeConfig): Partial&lt;IDataSeries&lt;IAccessors&gt;&gt;[] {
+        return [
+            // category property is used for unifying the linear-style gauge visualization into a single bar stack
+            { id: GAUGE_QUANTITY_SERIES_ID, data: [{ category: GaugeUtil.DATA_CATEGORY, value: gaugeConfig.value }] },
+            { id: GAUGE_REMAINDER_SERIES_ID, data: [{ category: GaugeUtil.DATA_CATEGORY, value: gaugeConfig.max - gaugeConfig.value }] },
+        ];
+    }
+
+    /**
+     * Generates threshold data in the form needed by the gauge&#x27;s thresholds visualization
+     *
+     * @param gaugeConfig The configuration for the gauge
+     *
+     * @returns {Partial&lt;IDataSeries&lt;IAccessors, IGaugeThresholdDatum&gt;&gt;} A partial IDataSeries object including the &#x27;id&#x27; and &#x27;data&#x27; properties of the thresholds
+     * series used for the the gauge&#x27;s thresholds visualization
+     */
+    public static generateThresholdsData(gaugeConfig: IGaugeConfig): Partial&lt;IDataSeries&lt;IAccessors, IGaugeThresholdDatum&gt;&gt; {
+        if (!gaugeConfig.thresholds) {
+            throw new Error(&quot;Thresholds are not defined in the gauge config. Unable to generate threshold data.&quot;)
+        }
+
+        const { thresholds, activeThreshold } &#x3D; GaugeUtil.prepareThresholdsData(gaugeConfig);
+
+        return {
+            id: GAUGE_THRESHOLD_MARKERS_SERIES_ID,
+            data: [
+                ...thresholds,
+                // tack the max value onto the end (this is used for donut arc calculation)
+                {
+                    id: &quot;max&quot;,
+                    enabled: true,
+                    category: GaugeUtil.DATA_CATEGORY,
+                    value: gaugeConfig.max,
+                    color: &quot;&quot;,
+                },
+            ],
+            activeThreshold,
+        };
+    }
+
+    /**
+     * Generates visualization-specific thresholds data based on the gauge&#x27;s configuration
+     *
+     * @param gaugeConfig The gauge configuration
+     *
+     * @returns {IGaugeThresholdsData} Thresholds data modified for use by the gauge visualization
+     */
+    public static prepareThresholdsData(gaugeConfig: IGaugeConfig): IGaugeThresholdsData {
+        const thresholds: IGaugeThresholdDatum[] &#x3D; Object.values(gaugeConfig.thresholds?.definitions || [])
+            .filter((threshold: IGaugeThresholdDef) &#x3D;&gt; threshold.enabled)
+            .map((threshold: IGaugeThresholdDef) &#x3D;&gt; ({
+                ...threshold,
+                category: GaugeUtil.DATA_CATEGORY,
+                // threshold values are exclusive when in reversed mode, inclusive otherwise
+                hit: gaugeConfig.thresholds?.reversed ? threshold.value &lt; gaugeConfig.value : threshold.value &lt;&#x3D; gaugeConfig.value,
+            })).sort((a, b) &#x3D;&gt; a.value - b.value);
+
+        const activeThreshold: IGaugeThresholdDatum | undefined &#x3D; gaugeConfig.thresholds?.reversed ?
+            thresholds?.find(threshold &#x3D;&gt; !isUndefined(threshold.hit) &amp;&amp; !threshold.hit) :
+            thresholds?.slice().reverse().find(threshold &#x3D;&gt; threshold.hit);
+
+        return {
+            thresholds,
+            activeThreshold,
+        }
+    }
+
+    private static clampConfigToRange(gaugeConfig: IGaugeConfig): IGaugeConfig {
+        let value &#x3D; gaugeConfig.value;
+        if (gaugeConfig.value &gt; gaugeConfig.max) {
+            console.warn(&#x60;Configured gauge value ${gaugeConfig.value} is greater&#x60; +
+                &#x60;than configured max ${gaugeConfig.max}. Clamping value to ${gaugeConfig.max}.&#x60;);
+            value &#x3D; gaugeConfig.max;
+        }
+
+        if (gaugeConfig.value &lt; 0) {
+            console.warn(&#x60;Configured gauge value ${gaugeConfig.value} is less than 0. Clamping value to 0.&#x60;);
+            value &#x3D; 0;
+        }
+
+        const thresholdDefs &#x3D; gaugeConfig.thresholds?.definitions || {};
+        Object.keys(thresholdDefs || {}).forEach(thresholdId &#x3D;&gt; {
+            const threshold &#x3D; thresholdDefs[thresholdId];
+            if (threshold) {
+                if (threshold.value &gt; gaugeConfig.max) {
+                    console.warn(&#x60;Configured threshold value ${threshold.value} for threshold ${thresholdId} is greater&#x60; +
+                        &#x60;than configured max ${gaugeConfig.max}. Clamping value to ${gaugeConfig.max}.&#x60;);
+                    threshold.value &#x3D; gaugeConfig.max;
+                }
+
+                if (threshold.value &lt; 0) {
+                    console.warn(&#x60;Configured threshold value ${threshold.value} is less than 0. Clamping value to 0.&#x60;);
+                    threshold.value &#x3D; 0;
+                }
+            }
+        });
+
+        return {
+            ...gaugeConfig,
+            thresholds: {
+                ...gaugeConfig.thresholds,
+                definitions: thresholdDefs,
+            },
+            value,
+        };
+    }
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'GaugeUtil.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
