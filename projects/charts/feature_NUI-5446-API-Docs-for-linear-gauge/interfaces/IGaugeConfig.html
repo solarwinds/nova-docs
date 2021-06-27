@@ -102,11 +102,7 @@
                                 </li>
                                 <li>
                                             <span class="modifier">Optional</span>
-                                        <a href="#quantityColorAccessor">quantityColorAccessor</a>
-                                </li>
-                                <li>
-                                            <span class="modifier">Optional</span>
-                                        <a href="#remainderColorAccessor">remainderColorAccessor</a>
+                                        <a href="#remainderColor">remainderColor</a>
                                 </li>
                                 <li>
                                             <span class="modifier">Optional</span>
@@ -285,13 +281,13 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="quantityColorAccessor"></a>
-                                        <span class="name"><b>quantityColorAccessor</b><a href="#quantityColorAccessor"><span class="icon ion-ios-link"></span></a></span>
+                                        <a name="remainderColor"></a>
+                                        <span class="name"><b>remainderColor</b><a href="#remainderColor"><span class="icon ion-ios-link"></span></a></span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>quantityColorAccessor:         <code><a href="../miscellaneous/typealiases.html#DataAccessor" target="_self" >DataAccessor</a></code>
+                                        <code>remainderColor:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -299,7 +295,7 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#DataAccessor" target="_self" >DataAccessor</a></code>
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
                                         </td>
                                     </tr>
@@ -315,47 +311,7 @@
 
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-description"><p>Optional accessor for customizing the color to display for the quantity segment as each threshold is hit </p>
-</div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <a name="remainderColorAccessor"></a>
-                                        <span class="name"><b>remainderColorAccessor</b><a href="#remainderColorAccessor"><span class="icon ion-ios-link"></span></a></span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <code>remainderColorAccessor:         <code><a href="../miscellaneous/typealiases.html#DataAccessor" target="_self" >DataAccessor</a></code>
-</code>
-                                    </td>
-                                </tr>
-
-
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#DataAccessor" target="_self" >DataAccessor</a></code>
-
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Optional</i>
-                                        </td>
-                                    </tr>
-
-
-
-
-                            <tr>
-                                <td class="col-md-4">
-                                    <div class="io-description"><p>Optional accessor for customizing the color to display for the remainder segment </p>
+                                    <div class="io-description"><p>The color to display for the unfilled segment </p>
 </div>
                                 </td>
                             </tr>
@@ -441,8 +397,7 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { DataAccessor } from &quot;../core/common/types&quot;;
-import { Formatter } from &quot;../core/common/scales/types&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Formatter } from &quot;../core/common/scales/types&quot;;
 
 /**
  * Configuration for a gauge
@@ -452,16 +407,14 @@ export interface IGaugeConfig {
     value: number;
     /** The max value of the gauge */
     max: number;
-    /** The color to display for the quantity when no threshold is active */
-    defaultQuantityColor?: string;
     /** Optional threshold configuration */
     thresholds?: IGaugeThresholdsConfig;
     /** Optional configuration for value labels (currently only used for thresholds) */
     labels?: IGaugeLabelsConfig;
-    /** Optional accessor for customizing the color to display for the quantity segment as each threshold is hit */
-    quantityColorAccessor?: DataAccessor;
-    /** Optional accessor for customizing the color to display for the remainder segment */
-    remainderColorAccessor?: DataAccessor;
+    /** The color to display for the quantity when no threshold is active */
+    defaultQuantityColor?: string;
+    /** The color to display for the unfilled segment */
+    remainderColor?: string;
     /** Used for linear gauges; sets the thickness of the bar. */
     linearThickness?: number;
 }

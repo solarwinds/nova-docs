@@ -80,7 +80,7 @@
             // Updating the gauge config
             this.gaugeConfig = this.getGaugeConfig(value); // Updating the series set with the new config
 
-            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.seriesSet, this.gaugeConfig); // Updating the chart with the updated series set
+            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].update(this.seriesSet, this.gaugeConfig); // Updating the chart with the updated series set
 
             this.chartAssist.update(this.seriesSet);
           }
@@ -344,7 +344,7 @@
           key: "updateGauge",
           value: function updateGauge() {
             this.gaugeConfig = this.getGaugeConfig();
-            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.seriesSet, this.gaugeConfig);
+            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].update(this.seriesSet, this.gaugeConfig);
             this.chartAssist.update(this.seriesSet);
           }
         }, {
@@ -484,7 +484,7 @@
             // Updating the gauge config
             this.gaugeConfig = this.getGaugeConfig(value); // Updating the series set with the new config
 
-            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.seriesSet, this.gaugeConfig); // Updating the chart with the updated series set
+            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].update(this.seriesSet, this.gaugeConfig); // Updating the chart with the updated series set
 
             this.chartAssist.update(this.seriesSet);
           }
@@ -608,7 +608,7 @@
           key: "updateGauge",
           value: function updateGauge() {
             this.gaugeConfig = this.getGaugeConfig();
-            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.seriesSet, this.gaugeConfig);
+            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].update(this.seriesSet, this.gaugeConfig);
             this.chartAssist.update(this.seriesSet);
           }
         }, {
@@ -715,7 +715,7 @@
           key: "ngOnChanges",
           value: function ngOnChanges(changes) {
             if (changes.gaugeConfig && !changes.gaugeConfig.firstChange) {
-              this.chartAssist.update(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.seriesSet, this.gaugeConfig));
+              this.chartAssist.update(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].update(this.seriesSet, this.gaugeConfig));
             }
           }
         }, {
@@ -838,7 +838,7 @@
           key: "updateGauge",
           value: function updateGauge() {
             this.gaugeConfig = this.getGaugeConfig();
-            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.seriesSet, this.gaugeConfig);
+            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].update(this.seriesSet, this.gaugeConfig);
             this.chartAssist.update(this.seriesSet);
           }
         }, {
@@ -1148,7 +1148,7 @@
           key: "ngOnChanges",
           value: function ngOnChanges(changes) {
             if (changes.gaugeConfig && !changes.gaugeConfig.firstChange) {
-              this.chartAssist.update(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.seriesSet, this.gaugeConfig));
+              this.chartAssist.update(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].update(this.seriesSet, this.gaugeConfig));
             }
           }
         }, {
@@ -1277,7 +1277,7 @@
           key: "updateGauge",
           value: function updateGauge() {
             this.gaugeConfig = this.getGaugeConfig();
-            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.seriesSet, this.gaugeConfig);
+            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].update(this.seriesSet, this.gaugeConfig);
             this.chartAssist.update(this.seriesSet);
           }
         }, {
@@ -1382,7 +1382,7 @@
           key: "updateGauge",
           value: function updateGauge() {
             this.gaugeConfig = this.getGaugeConfig();
-            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.seriesSet, this.gaugeConfig);
+            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].update(this.seriesSet, this.gaugeConfig);
             this.chartAssist.update(this.seriesSet);
           }
         }, {
@@ -1505,7 +1505,7 @@
           key: "updateGauge",
           value: function updateGauge() {
             this.gaugeConfig = this.getGaugeConfig();
-            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.seriesSet, this.gaugeConfig);
+            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].update(this.seriesSet, this.gaugeConfig);
             this.chartAssist.update(this.seriesSet);
           }
         }, {
@@ -1620,7 +1620,7 @@
           key: "onValueChange",
           value: function onValueChange(value) {
             this.gaugeConfig = this.getGaugeConfig(value);
-            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.seriesSet, this.gaugeConfig);
+            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].update(this.seriesSet, this.gaugeConfig);
             this.chartAssist.update(this.seriesSet);
           }
         }, {
@@ -1724,7 +1724,7 @@
           key: "onValueChange",
           value: function onValueChange(value) {
             this.gaugeConfig = this.getGaugeConfig(value);
-            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.seriesSet, this.gaugeConfig);
+            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].update(this.seriesSet, this.gaugeConfig);
             this.chartAssist.update(this.seriesSet);
           }
         }, {
@@ -1850,7 +1850,7 @@
           key: "ngOnChanges",
           value: function ngOnChanges(changes) {
             if (changes.gaugeConfig && !changes.gaugeConfig.firstChange) {
-              this.chartAssist.update(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.seriesSet, this.gaugeConfig));
+              this.chartAssist.update(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].update(this.seriesSet, this.gaugeConfig));
             }
           }
         }, {
@@ -2281,7 +2281,7 @@
             // Updating the gauge config
             this.gaugeConfig = this.getGaugeConfig(value); // Updating the series set with the new config
 
-            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.seriesSet, this.gaugeConfig); // Updating the chart with the updated series set
+            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].update(this.seriesSet, this.gaugeConfig); // Updating the chart with the updated series set
 
             this.chartAssist.update(this.seriesSet);
           }

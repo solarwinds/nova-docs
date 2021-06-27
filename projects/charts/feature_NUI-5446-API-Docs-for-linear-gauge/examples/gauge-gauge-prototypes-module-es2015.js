@@ -46,7 +46,7 @@ let LinearGaugeHorizontalPrototypeComponent = class LinearGaugeHorizontalPrototy
                 gridConfig.dimension.margin[marginToUpdate] = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["LINEAR_GAUGE_LABEL_CLEARANCE_DEFAULTS"][marginToUpdate];
             }
             this.chartAssist.chart.updateDimensions();
-            this.chartAssist.update(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.seriesSet, this.gaugeConfig));
+            this.chartAssist.update(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].update(this.seriesSet, this.gaugeConfig));
         }
     }
     ngOnInit() {
@@ -333,7 +333,7 @@ let DonutGaugePrototypeComponent = class DonutGaugePrototypeComponent {
                 left: clearance,
             };
             this.chartAssist.chart.updateDimensions();
-            this.chartAssist.update(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.seriesSet, this.gaugeConfig));
+            this.chartAssist.update(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].update(this.seriesSet, this.gaugeConfig));
         }
     }
     ngOnInit() {
@@ -514,7 +514,7 @@ let LinearGaugeVerticalPrototypeComponent = class LinearGaugeVerticalPrototypeCo
                 gridConfig.dimension.margin[marginToUpdate] = this.labelClearance;
             }
             this.chartAssist.chart.updateDimensions();
-            this.chartAssist.update(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.seriesSet, this.gaugeConfig));
+            this.chartAssist.update(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].update(this.seriesSet, this.gaugeConfig));
         }
     }
     ngOnInit() {

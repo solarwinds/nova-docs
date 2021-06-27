@@ -18055,20 +18055,24 @@
           function createChartAssist(gaugeConfig, mode) {
             var _a, _b, _c, _d;
 
-            var grid = Object(_core_grid_config_gauge_grid_fn__WEBPACK_IMPORTED_MODULE_18__["gaugeGrid"])(gaugeConfig, mode);
-            var chart = new _core_chart__WEBPACK_IMPORTED_MODULE_17__["Chart"](grid);
+            var chart = new _core_chart__WEBPACK_IMPORTED_MODULE_17__["Chart"](Object(_core_grid_config_gauge_grid_fn__WEBPACK_IMPORTED_MODULE_18__["gaugeGrid"])(gaugeConfig, mode));
+            var enableLabels = !lodash_isEmpty__WEBPACK_IMPORTED_MODULE_19___default()((_a = gaugeConfig.thresholds) === null || _a === void 0 ? void 0 : _a.definitions) && !((_b = gaugeConfig.thresholds) === null || _b === void 0 ? void 0 : _b.disableMarkers);
 
-            if (!lodash_isEmpty__WEBPACK_IMPORTED_MODULE_19___default()((_a = gaugeConfig.thresholds) === null || _a === void 0 ? void 0 : _a.definitions) && !((_b = gaugeConfig.thresholds) === null || _b === void 0 ? void 0 : _b.disableMarkers)) {
-              if (mode === _constants__WEBPACK_IMPORTED_MODULE_11__["GaugeMode"].Donut) {
+            if (mode === _constants__WEBPACK_IMPORTED_MODULE_11__["GaugeMode"].Donut) {
+              if (enableLabels) {
                 chart.addPlugin(new _core_plugins_gauge_donut_gauge_labels_plugin__WEBPACK_IMPORTED_MODULE_20__["DonutGaugeLabelsPlugin"]());
-              } else {
-                chart.addPlugin(new _core_plugins_gauge_linear_gauge_labels_plugin__WEBPACK_IMPORTED_MODULE_21__["LinearGaugeLabelsPlugin"]({
-                  flippedLabels: (_d = (_c = gaugeConfig.labels) === null || _c === void 0 ? void 0 : _c.flipped) !== null && _d !== void 0 ? _d : false
-                }));
               }
+
+              return new _core_chart_assists_chart_assist__WEBPACK_IMPORTED_MODULE_14__["ChartAssist"](chart, _renderers_radial_radial_preprocessor__WEBPACK_IMPORTED_MODULE_15__["radial"]);
             }
 
-            return mode === _constants__WEBPACK_IMPORTED_MODULE_11__["GaugeMode"].Donut ? new _core_chart_assists_chart_assist__WEBPACK_IMPORTED_MODULE_14__["ChartAssist"](chart, _renderers_radial_radial_preprocessor__WEBPACK_IMPORTED_MODULE_15__["radial"]) : new _core_chart_assists_chart_assist__WEBPACK_IMPORTED_MODULE_14__["ChartAssist"](chart, _renderers_bar_stacked_preprocessor__WEBPACK_IMPORTED_MODULE_16__["stack"]);
+            if (enableLabels) {
+              chart.addPlugin(new _core_plugins_gauge_linear_gauge_labels_plugin__WEBPACK_IMPORTED_MODULE_21__["LinearGaugeLabelsPlugin"]({
+                flippedLabels: (_d = (_c = gaugeConfig.labels) === null || _c === void 0 ? void 0 : _c.flipped) !== null && _d !== void 0 ? _d : false
+              }));
+            }
+
+            return new _core_chart_assists_chart_assist__WEBPACK_IMPORTED_MODULE_14__["ChartAssist"](chart, _renderers_bar_stacked_preprocessor__WEBPACK_IMPORTED_MODULE_16__["stack"]);
           }
           /**
            * Assembles a gauge series set with all of the standard scales, renderers, accessors, etc. needed for creating a gauge visualization
@@ -18110,8 +18114,8 @@
            */
 
         }, {
-          key: "updateSeriesSet",
-          value: function updateSeriesSet(seriesSet, gaugeConfig) {
+          key: "update",
+          value: function update(seriesSet, gaugeConfig) {
             var _a, _b;
 
             gaugeConfig.value = (_a = gaugeConfig.value) !== null && _a !== void 0 ? _a : 0;
@@ -18172,12 +18176,14 @@
                   mainRenderer = renderingAttributes.mainRenderer;
 
               if (quantityAccessors.data) {
-                quantityAccessors.data.color = gaugeConfig.quantityColorAccessor || GaugeUtil.createDefaultQuantityColorAccessor();
+                quantityAccessors.data.color = function (data, i, series, dataSeries) {
+                  return dataSeries.activeThreshold ? dataSeries.activeThreshold.color : dataSeries.defaultColor;
+                };
               }
 
               if (remainderAccessors.data) {
-                remainderAccessors.data.color = gaugeConfig.remainderColorAccessor || function () {
-                  return _constants__WEBPACK_IMPORTED_MODULE_11__["StandardGaugeColor"].Remainder;
+                remainderAccessors.data.color = function () {
+                  return gaugeConfig.remainderColor || _constants__WEBPACK_IMPORTED_MODULE_11__["StandardGaugeColor"].Remainder;
                 };
               }
 
@@ -18320,22 +18326,6 @@
               }
             }), _renderingTools);
             return renderingTools[mode];
-          }
-          /**
-           * Convenience function for creating a standard gauge quantity color accessor
-           *
-           * @returns {DataAccessor} An accessor for determining the color to use for the quantity visualization
-           */
-
-        }, {
-          key: "createDefaultQuantityColorAccessor",
-          value: function createDefaultQuantityColorAccessor() {
-            // assigning to variable to prevent "Lambda not supported" error
-            var colorAccessor = function colorAccessor(data, i, series, dataSeries) {
-              return dataSeries.activeThreshold ? dataSeries.activeThreshold.color : dataSeries.defaultColor;
-            };
-
-            return colorAccessor;
           }
           /**
            * Convenience function for creating a standard standard set of threshold configs. Includes configurations for warning and error thresholds.
@@ -30755,18 +30745,21 @@
       /*! ./donut-gauge-grid-config-fn */
       "hMnR");
       /**
-       * Assembles a gauge-specific grid based on the specified gauge mode
+       * Assembles a gauge-specific grid
        *
        * @param gaugeConfig The gauge's configuration
        * @param mode vertical or horizontal
        *
-       * @returns {XYGrid | RadialGrid} A gauge grid
+       * @returns {XYGrid | RadialGrid} A gauge-specific grid
        */
 
 
       function gaugeGrid(gaugeConfig, mode) {
-        var gridConfig = mode === _gauge_constants__WEBPACK_IMPORTED_MODULE_0__["GaugeMode"].Horizontal || mode === _gauge_constants__WEBPACK_IMPORTED_MODULE_0__["GaugeMode"].Vertical ? Object(_linear_gauge_grid_config_fn__WEBPACK_IMPORTED_MODULE_3__["linearGaugeGridConfig"])(gaugeConfig, mode) : Object(_donut_gauge_grid_config_fn__WEBPACK_IMPORTED_MODULE_4__["donutGaugeGridConfig"])(gaugeConfig);
-        return mode === _gauge_constants__WEBPACK_IMPORTED_MODULE_0__["GaugeMode"].Donut ? new _radial_grid__WEBPACK_IMPORTED_MODULE_2__["RadialGrid"]().config(gridConfig) : new _xy_grid__WEBPACK_IMPORTED_MODULE_1__["XYGrid"](gridConfig);
+        if (mode === _gauge_constants__WEBPACK_IMPORTED_MODULE_0__["GaugeMode"].Donut) {
+          return new _radial_grid__WEBPACK_IMPORTED_MODULE_2__["RadialGrid"]().config(Object(_donut_gauge_grid_config_fn__WEBPACK_IMPORTED_MODULE_4__["donutGaugeGridConfig"])(gaugeConfig));
+        }
+
+        return new _xy_grid__WEBPACK_IMPORTED_MODULE_1__["XYGrid"](Object(_linear_gauge_grid_config_fn__WEBPACK_IMPORTED_MODULE_3__["linearGaugeGridConfig"])(gaugeConfig, mode));
       }
       /***/
 

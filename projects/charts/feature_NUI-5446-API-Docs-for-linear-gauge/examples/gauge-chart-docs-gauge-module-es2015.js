@@ -36,7 +36,7 @@ let DonutGaugeBasicExampleComponent = class DonutGaugeBasicExampleComponent {
         // Updating the gauge config
         this.gaugeConfig = this.getGaugeConfig(value);
         // Updating the series set with the new config
-        this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.seriesSet, this.gaugeConfig);
+        this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].update(this.seriesSet, this.gaugeConfig);
         // Updating the chart with the updated series set
         this.chartAssist.update(this.seriesSet);
     }
@@ -236,7 +236,7 @@ let DonutGaugeWithThresholdsExampleComponent = class DonutGaugeWithThresholdsExa
     }
     updateGauge() {
         this.gaugeConfig = this.getGaugeConfig();
-        this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.seriesSet, this.gaugeConfig);
+        this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].update(this.seriesSet, this.gaugeConfig);
         this.chartAssist.update(this.seriesSet);
     }
     getGaugeConfig() {
@@ -322,7 +322,7 @@ let VerticalGaugeBasicExampleComponent = class VerticalGaugeBasicExampleComponen
         // Updating the gauge config
         this.gaugeConfig = this.getGaugeConfig(value);
         // Updating the series set with the new config
-        this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.seriesSet, this.gaugeConfig);
+        this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].update(this.seriesSet, this.gaugeConfig);
         // Updating the chart with the updated series set
         this.chartAssist.update(this.seriesSet);
     }
@@ -401,7 +401,7 @@ let HorizontalGaugeThicknessAdjustmentExampleComponent = class HorizontalGaugeTh
     }
     updateGauge() {
         this.gaugeConfig = this.getGaugeConfig();
-        this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.seriesSet, this.gaugeConfig);
+        this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].update(this.seriesSet, this.gaugeConfig);
         this.chartAssist.update(this.seriesSet);
     }
     getGaugeConfig() {
@@ -463,7 +463,7 @@ __webpack_require__.r(__webpack_exports__);
 let VerticalGaugeTesterComponent = class VerticalGaugeTesterComponent {
     ngOnChanges(changes) {
         if (changes.gaugeConfig && !changes.gaugeConfig.firstChange) {
-            this.chartAssist.update(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.seriesSet, this.gaugeConfig));
+            this.chartAssist.update(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].update(this.seriesSet, this.gaugeConfig));
         }
     }
     ngOnInit() {
@@ -539,7 +539,7 @@ let DonutGaugeWithThresholdTogglingExampleComponent = class DonutGaugeWithThresh
     }
     updateGauge() {
         this.gaugeConfig = this.getGaugeConfig();
-        this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.seriesSet, this.gaugeConfig);
+        this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].update(this.seriesSet, this.gaugeConfig);
         this.chartAssist.update(this.seriesSet);
     }
     getGaugeConfig() {
@@ -720,7 +720,7 @@ __webpack_require__.r(__webpack_exports__);
 let HorizontalGaugeTesterComponent = class HorizontalGaugeTesterComponent {
     ngOnChanges(changes) {
         if (changes.gaugeConfig && !changes.gaugeConfig.firstChange) {
-            this.chartAssist.update(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.seriesSet, this.gaugeConfig));
+            this.chartAssist.update(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].update(this.seriesSet, this.gaugeConfig));
         }
     }
     ngOnInit() {
@@ -805,7 +805,7 @@ let HorizontalGaugeWithThresholdsExampleComponent = class HorizontalGaugeWithThr
     }
     updateGauge() {
         this.gaugeConfig = this.getGaugeConfig();
-        this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.seriesSet, this.gaugeConfig);
+        this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].update(this.seriesSet, this.gaugeConfig);
         this.chartAssist.update(this.seriesSet);
     }
     getGaugeConfig() {
@@ -869,7 +869,7 @@ let DonutGaugeWithoutThresholdMarkersExampleComponent = class DonutGaugeWithoutT
     }
     updateGauge() {
         this.gaugeConfig = this.getGaugeConfig();
-        this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.seriesSet, this.gaugeConfig);
+        this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].update(this.seriesSet, this.gaugeConfig);
         this.chartAssist.update(this.seriesSet);
     }
     getGaugeConfig() {
@@ -949,7 +949,7 @@ let DonutGaugeWithThresholdMarkerTogglingExampleComponent = class DonutGaugeWith
     }
     updateGauge() {
         this.gaugeConfig = this.getGaugeConfig();
-        this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.seriesSet, this.gaugeConfig);
+        this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].update(this.seriesSet, this.gaugeConfig);
         this.chartAssist.update(this.seriesSet);
     }
     getGaugeConfig() {
@@ -1018,7 +1018,7 @@ let DonutGaugeWithCustomThresholdLabelsExampleComponent = class DonutGaugeWithCu
     }
     onValueChange(value) {
         this.gaugeConfig = this.getGaugeConfig(value);
-        this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.seriesSet, this.gaugeConfig);
+        this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].update(this.seriesSet, this.gaugeConfig);
         this.chartAssist.update(this.seriesSet);
     }
     getGaugeConfig(value) {
@@ -1081,7 +1081,7 @@ let DonutGaugeWithContentExampleComponent = class DonutGaugeWithContentExampleCo
     }
     onValueChange(value) {
         this.gaugeConfig = this.getGaugeConfig(value);
-        this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.seriesSet, this.gaugeConfig);
+        this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].update(this.seriesSet, this.gaugeConfig);
         this.chartAssist.update(this.seriesSet);
     }
     getGaugeConfig(value) {
@@ -1156,7 +1156,7 @@ let DonutGaugeTesterComponent = class DonutGaugeTesterComponent {
     }
     ngOnChanges(changes) {
         if (changes.gaugeConfig && !changes.gaugeConfig.firstChange) {
-            this.chartAssist.update(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.seriesSet, this.gaugeConfig));
+            this.chartAssist.update(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].update(this.seriesSet, this.gaugeConfig));
         }
     }
     ngOnInit() {
@@ -1467,7 +1467,7 @@ let HorizontalGaugeBasicExampleComponent = class HorizontalGaugeBasicExampleComp
         // Updating the gauge config
         this.gaugeConfig = this.getGaugeConfig(value);
         // Updating the series set with the new config
-        this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.seriesSet, this.gaugeConfig);
+        this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].update(this.seriesSet, this.gaugeConfig);
         // Updating the chart with the updated series set
         this.chartAssist.update(this.seriesSet);
     }
