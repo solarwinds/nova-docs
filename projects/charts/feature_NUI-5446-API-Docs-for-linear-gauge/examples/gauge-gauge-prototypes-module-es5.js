@@ -514,8 +514,7 @@
             }
 
             if (changes.gaugeConfig && !changes.gaugeConfig.firstChange) {
-              var disableMarkers = (_b = (_a = this.gaugeConfig.thresholds) === null || _a === void 0 ? void 0 : _a.disableMarkers) !== null && _b !== void 0 ? _b : false;
-              this.labelsPlugin.config.disableThresholdLabels = disableMarkers;
+              this.labelsPlugin.config.disableThresholdLabels = (_b = (_a = this.gaugeConfig.thresholds) === null || _a === void 0 ? void 0 : _a.disableMarkers) !== null && _b !== void 0 ? _b : false;
               this.chartAssist.chart.updateDimensions();
               this.chartAssist.update(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].update(this.seriesSet, this.gaugeConfig));
             }
