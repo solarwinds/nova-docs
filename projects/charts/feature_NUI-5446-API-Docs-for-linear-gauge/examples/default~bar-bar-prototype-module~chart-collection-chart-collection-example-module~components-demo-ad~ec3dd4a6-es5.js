@@ -18035,6 +18035,8 @@
            *
            * @param gaugeConfig The gauge configuration
            * @param mode The gauge mode
+           * @param labelsPlugin Optional labels plugin for direct control of label configuration. If not provided, a plugin will
+           *                     be generated automatically.
            *
            * @returns {ChartAssist} A pre-configured chart assist
            */
