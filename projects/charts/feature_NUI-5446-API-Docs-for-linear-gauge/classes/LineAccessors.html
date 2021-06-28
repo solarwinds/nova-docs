@@ -105,7 +105,15 @@ kept in mind when configuring charts as it could cause potential color synchroni
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Public</span>
+                                <a href="#colorProvider">colorProvider</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#data">data</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#markerProvider">markerProvider</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
@@ -191,6 +199,33 @@ kept in mind when configuring charts as it could cause potential color synchroni
             <tbody>
                 <tr>
                     <td class="col-md-4">
+                        <a name="colorProvider"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            colorProvider</b>
+                            <a href="#colorProvider"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>defaultColorProvider()</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/renderers/line/line-accessors.ts:40</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
                         <a name="data"></a>
                         <span class="name">
                             <b>
@@ -209,6 +244,33 @@ kept in mind when configuring charts as it could cause potential color synchroni
                         <tr>
                             <td class="col-md-4">
                                     <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/renderers/line/line-accessors.ts:37</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="markerProvider"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            markerProvider</b>
+                            <a href="#markerProvider"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>defaultMarkerProvider()</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/renderers/line/line-accessors.ts:40</a></div>
                             </td>
                         </tr>
 
@@ -343,7 +405,7 @@ export class LineAccessors extends XYAccessors implements ILineAccessors {
     public data: ILineDataAccessors;
     public series: ILineSeriesAccessors;
 
-    constructor(private colorProvider &#x3D; defaultColorProvider(), private markerProvider &#x3D; defaultMarkerProvider()) {
+    constructor(public colorProvider &#x3D; defaultColorProvider(), public markerProvider &#x3D; defaultMarkerProvider()) {
         super();
 
         this.data.defined &#x3D; (d: any, i) &#x3D;&gt; d.hasOwnProperty(&quot;defined&quot;) ? d.defined : true;

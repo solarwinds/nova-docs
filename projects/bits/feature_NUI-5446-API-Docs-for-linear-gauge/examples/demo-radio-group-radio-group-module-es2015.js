@@ -182,7 +182,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var _src_lib_radio_radio_group_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../src/lib/radio/radio-group.component */ "lLUT");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "ofXK");
-/* harmony import */ var _src_lib_form_field_form_field_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../../src/lib/form-field/form-field.component */ "L5T1");
+/* harmony import */ var _radio_group_in_form_radio_group_in_form_example_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../radio-group-in-form/radio-group-in-form.example.component */ "9LW3");
+/* harmony import */ var _src_lib_form_field_form_field_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../../../src/lib/form-field/form-field.component */ "L5T1");
+
 
 
 
@@ -190,7 +192,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function RadioGroupVisualTestComponent_nui_radio_4_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-radio", 10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-radio", 11);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } if (rf & 2) {
@@ -200,7 +202,7 @@ function RadioGroupVisualTestComponent_nui_radio_4_Template(rf, ctx) { if (rf & 
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"](" ", fruit_r4, " ");
 } }
 function RadioGroupVisualTestComponent_nui_radio_9_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-radio", 11);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-radio", 12);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } if (rf & 2) {
@@ -211,7 +213,7 @@ function RadioGroupVisualTestComponent_nui_radio_9_Template(rf, ctx) { if (rf & 
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"](" ", color_r5, " ");
 } }
 function RadioGroupVisualTestComponent_nui_radio_14_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-radio", 11);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-radio", 12);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } if (rf & 2) {
@@ -221,8 +223,8 @@ function RadioGroupVisualTestComponent_nui_radio_14_Template(rf, ctx) { if (rf &
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"](" ", color_r6, " ");
 } }
-function RadioGroupVisualTestComponent_nui_radio_19_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-radio", 12);
+function RadioGroupVisualTestComponent_nui_radio_23_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-radio", 13);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } if (rf & 2) {
@@ -245,7 +247,7 @@ class RadioGroupVisualTestComponent {
     }
 }
 RadioGroupVisualTestComponent.ɵfac = function RadioGroupVisualTestComponent_Factory(t) { return new (t || RadioGroupVisualTestComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormBuilder"])); };
-RadioGroupVisualTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: RadioGroupVisualTestComponent, selectors: [["nui-radio-group-visual-test"]], decls: 20, vars: 9, consts: [[1, "container"], ["id", "fruit-radio-group", "name", "fruit", 3, "value", "valueChange"], [3, "value", "checked", "disabled", 4, "ngFor", "ngForOf"], ["id", "color-radio-group", "name", "color", 3, "value", "valueChange"], [3, "value", "hint", "disabled", "checked", 4, "ngFor", "ngForOf"], ["id", "inline-color-radio-group", "name", "color", 1, "nui-radio-group-inline", 3, "value", "valueChange"], [3, "formGroup"], ["caption", "Disabled Radio Group in form", 3, "control"], ["id", "fruit-radio-group-disabled", "formControlName", "radioGroup", "name", "fruit-disabled"], [3, "value", 4, "ngFor", "ngForOf"], [3, "value", "checked", "disabled"], [3, "value", "hint", "disabled", "checked"], [3, "value"]], template: function RadioGroupVisualTestComponent_Template(rf, ctx) { if (rf & 1) {
+RadioGroupVisualTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: RadioGroupVisualTestComponent, selectors: [["nui-radio-group-visual-test"]], decls: 24, vars: 9, consts: [[1, "container"], ["id", "fruit-radio-group", "name", "fruit", 3, "value", "valueChange"], [3, "value", "checked", "disabled", 4, "ngFor", "ngForOf"], ["id", "color-radio-group", "name", "color", 3, "value", "valueChange"], [3, "value", "hint", "disabled", "checked", 4, "ngFor", "ngForOf"], ["id", "inline-color-radio-group", "name", "color", 1, "nui-radio-group-inline", 3, "value", "valueChange"], ["id", "vegetable-radio-group"], [3, "formGroup"], ["caption", "Disabled Radio Group in form", 3, "control"], ["id", "fruit-radio-group-disabled", "formControlName", "radioGroup", "name", "fruit-disabled"], [3, "value", 4, "ngFor", "ngForOf"], [3, "value", "checked", "disabled"], [3, "value", "hint", "disabled", "checked"], [3, "value"]], template: function RadioGroupVisualTestComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "h3");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "Basic Radio Group");
@@ -271,10 +273,15 @@ RadioGroupVisualTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](14, RadioGroupVisualTestComponent_nui_radio_14_Template, 2, 5, "nui-radio", 4);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](15, "hr");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](16, "form", 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](17, "nui-form-field", 7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](18, "nui-radio-group", 8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](19, RadioGroupVisualTestComponent_nui_radio_19_Template, 2, 2, "nui-radio", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](16, "h3");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](17, "Part Of Form");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](18, "nui-radio-group-in-form-example", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](19, "hr");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](20, "form", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](21, "nui-form-field", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](22, "nui-radio-group", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](23, RadioGroupVisualTestComponent_nui_radio_23_Template, 2, 2, "nui-radio", 10);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
@@ -292,13 +299,13 @@ RadioGroupVisualTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", ctx.selectedColor);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx.colors);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](6);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("formGroup", ctx.disabledForm);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("control", ctx.disabledForm.controls["radioGroup"]);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx.fruits);
-    } }, directives: [_src_lib_radio_radio_group_component__WEBPACK_IMPORTED_MODULE_2__["RadioGroupComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgForOf"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormGroupDirective"], _src_lib_form_field_form_field_component__WEBPACK_IMPORTED_MODULE_4__["FormFieldComponent"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControlName"], _src_lib_radio_radio_group_component__WEBPACK_IMPORTED_MODULE_2__["RadioComponent"]], encapsulation: 2 });
+    } }, directives: [_src_lib_radio_radio_group_component__WEBPACK_IMPORTED_MODULE_2__["RadioGroupComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgForOf"], _radio_group_in_form_radio_group_in_form_example_component__WEBPACK_IMPORTED_MODULE_4__["RadioGroupInFormExampleComponent"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormGroupDirective"], _src_lib_form_field_form_field_component__WEBPACK_IMPORTED_MODULE_5__["FormFieldComponent"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControlName"], _src_lib_radio_radio_group_component__WEBPACK_IMPORTED_MODULE_2__["RadioComponent"]], encapsulation: 2 });
 
 
 /***/ }),
@@ -377,7 +384,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { Component, OnInit } from \"@angular/core\";\nimport { FormBuilder, FormGroup, Validators } from \"@angular/forms\";\nimport { CheckboxChangeEvent } from \"@nova-ui/bits\";\n\n@Component({\n    selector: \"nui-radio-group-test\",\n    templateUrl: \"./radio-group-test.component.html\",\n})\nexport class RadioGroupTestComponent implements OnInit {\n    public disabledForm: FormGroup;\n    public fancyForm: FormGroup;\n\n    public fruits = [$localize `Banana`, $localize `Orange`, $localize `Kiwi`, $localize `Papaya`];\n    public vegetables = [$localize `Cabbage`, $localize `Potato`, $localize `Tomato`, $localize `Carrot`];\n    public colors = [$localize `Red`, $localize `Green`, $localize `Blue`];\n    public colorHints = {\"Red\": $localize `hot color`, \"Green\": $localize `color of nature`, \"Blue\": $localize `color of sky`};\n\n    public selectedColor: string;\n    public selectedFruit: string;\n    public selectedFruitInline: string;\n\n    constructor(private formBuilder: FormBuilder) {}\n\n    public ngOnInit() {\n        this.disabledForm = this.formBuilder.group({\n            radioGroup: this.formBuilder.control({value: \"\", disabled: true}),\n        });\n        this.fancyForm = this.formBuilder.group({\n            radioGroup: this.formBuilder.control(this.vegetables[1], [\n                Validators.required,\n            ]),\n        });\n    }\n\n    public toggleDisabled(event: CheckboxChangeEvent) {\n        this.disabledForm.get(\"radioGroup\")?.[!event.target.checked ? \"enable\" : \"disable\"]();\n    }\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import { Component, OnInit } from \"@angular/core\";\nimport { FormBuilder, FormGroup } from \"@angular/forms\";\nimport { CheckboxChangeEvent } from \"@nova-ui/bits\";\n\n@Component({\n    selector: \"nui-radio-group-test\",\n    templateUrl: \"./radio-group-test.component.html\",\n})\nexport class RadioGroupTestComponent implements OnInit {\n    public disabledForm: FormGroup;\n\n    public fruits = [$localize `Banana`, $localize `Orange`, $localize `Kiwi`, $localize `Papaya`];\n    public vegetables = [$localize `Cabbage`, $localize `Potato`, $localize `Tomato`, $localize `Carrot`];\n\n    public selectedFruit: string;\n    public selectedFruitInline: string;\n\n    constructor(private formBuilder: FormBuilder) {}\n\n    public ngOnInit() {\n        this.disabledForm = this.formBuilder.group({\n            radioGroup: this.formBuilder.control({value: \"\", disabled: true}),\n        });\n    }\n\n    public toggleDisabled(event: CheckboxChangeEvent) {\n        this.disabledForm.get(\"radioGroup\")?.[!event.target.checked ? \"enable\" : \"disable\"]();\n    }\n}\n");
 
 /***/ }),
 
@@ -490,7 +497,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\n    <h3>Basic Radio Group</h3>\n    <nui-radio-group id=\"fruit-radio-group\"\n                    name=\"fruit\"\n                    [(value)]=\"selectedFruit\">\n        <nui-radio *ngFor=\"let fruit of fruits\"\n                    [value]=\"fruit\"\n                    [checked]=\"fruit === 'Orange'\"\n                    [disabled]=\"fruit === 'Kiwi'\">\n            {{fruit}}\n        </nui-radio>\n    </nui-radio-group>\n    <hr />\n\n    <h3>Radio Group with pre-selected option and hints</h3>\n    <nui-radio-group id=\"color-radio-group\"\n                    name=\"color\"\n                    [(value)]=\"selectedColor\">\n        <nui-radio *ngFor=\"let color of colors\"\n                    [value]=\"color\"\n                    [hint]=\"colorHints[color]\"\n                    [disabled]=\"color === 'Blue'\"\n                    [checked]=\"color === 'Green'\">\n            {{color}}\n        </nui-radio>\n    </nui-radio-group>\n    <hr />\n\n    <h3>Inline Horizontal Group</h3>\n    <nui-radio-group class=\"nui-radio-group-inline\"\n                    id=\"inline-color-radio-group\"\n                    name=\"color\"\n                    [(value)]=\"selectedColor\">\n        <nui-radio *ngFor=\"let color of colors\"\n                    [value]=\"color\"\n                    [hint]=\"colorHints[color]\"\n                    [disabled]=\"color === 'Red'\"\n                    [checked]=\"color === 'Green'\">\n            {{color}}\n        </nui-radio>\n    </nui-radio-group>\n    <hr />\n    <form [formGroup]=\"disabledForm\">\n        <nui-form-field caption=\"Disabled Radio Group in form\"\n                        [control]=\"disabledForm.controls['radioGroup']\">\n            <nui-radio-group id=\"fruit-radio-group-disabled\"\n                             formControlName=\"radioGroup\"\n                             name=\"fruit-disabled\">\n                <nui-radio *ngFor=\"let fruit of fruits\"\n                            [value]=\"fruit\">\n                    {{fruit}}\n                </nui-radio>\n            </nui-radio-group>\n        </nui-form-field>\n    </form>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\n    <h3>Basic Radio Group</h3>\n    <nui-radio-group id=\"fruit-radio-group\"\n                    name=\"fruit\"\n                    [(value)]=\"selectedFruit\">\n        <nui-radio *ngFor=\"let fruit of fruits\"\n                    [value]=\"fruit\"\n                    [checked]=\"fruit === 'Orange'\"\n                    [disabled]=\"fruit === 'Kiwi'\">\n            {{fruit}}\n        </nui-radio>\n    </nui-radio-group>\n    <hr />\n\n    <h3>Radio Group with pre-selected option and hints</h3>\n    <nui-radio-group id=\"color-radio-group\"\n                    name=\"color\"\n                    [(value)]=\"selectedColor\">\n        <nui-radio *ngFor=\"let color of colors\"\n                    [value]=\"color\"\n                    [hint]=\"colorHints[color]\"\n                    [disabled]=\"color === 'Blue'\"\n                    [checked]=\"color === 'Green'\">\n            {{color}}\n        </nui-radio>\n    </nui-radio-group>\n    <hr />\n\n    <h3>Inline Horizontal Group</h3>\n    <nui-radio-group class=\"nui-radio-group-inline\"\n                    id=\"inline-color-radio-group\"\n                    name=\"color\"\n                    [(value)]=\"selectedColor\">\n        <nui-radio *ngFor=\"let color of colors\"\n                    [value]=\"color\"\n                    [hint]=\"colorHints[color]\"\n                    [disabled]=\"color === 'Red'\"\n                    [checked]=\"color === 'Green'\">\n            {{color}}\n        </nui-radio>\n    </nui-radio-group>\n    <hr />\n\n    <h3>Part Of Form</h3>\n    <nui-radio-group-in-form-example id=\"vegetable-radio-group\"></nui-radio-group-in-form-example>\n    <hr />\n\n    <form [formGroup]=\"disabledForm\">\n        <nui-form-field caption=\"Disabled Radio Group in form\"\n                        [control]=\"disabledForm.controls['radioGroup']\">\n            <nui-radio-group id=\"fruit-radio-group-disabled\"\n                             formControlName=\"radioGroup\"\n                             name=\"fruit-disabled\">\n                <nui-radio *ngFor=\"let fruit of fruits\"\n                            [value]=\"fruit\">\n                    {{fruit}}\n                </nui-radio>\n            </nui-radio-group>\n        </nui-form-field>\n    </form>\n</div>\n");
 
 /***/ }),
 
@@ -950,8 +957,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _src_lib_radio_radio_group_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../src/lib/radio/radio-group.component */ "lLUT");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "ofXK");
 /* harmony import */ var _src_lib_form_field_form_field_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../../src/lib/form-field/form-field.component */ "L5T1");
-/* harmony import */ var _src_lib_validation_message_validation_message_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../../../src/lib/validation-message/validation-message.component */ "Dm7Q");
-/* harmony import */ var _src_lib_checkbox_checkbox_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../../../src/lib/checkbox/checkbox.component */ "Oh8U");
+/* harmony import */ var _src_lib_checkbox_checkbox_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../../../src/lib/checkbox/checkbox.component */ "Oh8U");
 
 
 
@@ -959,74 +965,35 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-function RadioGroupTestComponent_nui_radio_3_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-radio", 17);
+function RadioGroupTestComponent_nui_radio_2_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-radio", 8);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const fruit_r5 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", fruit_r5)("checked", fruit_r5 === "Orange")("disabled", fruit_r5 === "Banana");
+    const fruit_r2 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", fruit_r2)("checked", fruit_r2 === "Orange")("disabled", fruit_r2 === "Banana");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"](" ", fruit_r5, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"](" ", fruit_r2, " ");
 } }
-function RadioGroupTestComponent_nui_radio_7_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-radio", 18);
+function RadioGroupTestComponent_nui_radio_6_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-radio", 9);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const fruit_r6 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", fruit_r6)("checked", fruit_r6 === "Orange");
+    const vegetable_r3 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", vegetable_r3);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"](" ", fruit_r6, " ");
-} }
-function RadioGroupTestComponent_nui_radio_11_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-radio", 19);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const color_r7 = ctx.$implicit;
-    const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", color_r7)("checked", color_r7 === "Green")("hint", ctx_r2.colorHints[color_r7]);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"](" ", color_r7, " ");
-} }
-function RadioGroupTestComponent_nui_radio_15_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-radio", 20);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const vegetable_r8 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", vegetable_r8);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"](" ", vegetable_r8, " ");
-} }
-function RadioGroupTestComponent_nui_radio_21_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nui-radio", 20);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const vegetable_r9 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", vegetable_r9);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"](" ", vegetable_r9, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"](" ", vegetable_r3, " ");
 } }
 class RadioGroupTestComponent {
     constructor(formBuilder) {
         this.formBuilder = formBuilder;
         this.fruits = [$localize `Banana`, $localize `Orange`, $localize `Kiwi`, $localize `Papaya`];
         this.vegetables = [$localize `Cabbage`, $localize `Potato`, $localize `Tomato`, $localize `Carrot`];
-        this.colors = [$localize `Red`, $localize `Green`, $localize `Blue`];
-        this.colorHints = { "Red": $localize `hot color`, "Green": $localize `color of nature`, "Blue": $localize `color of sky` };
     }
     ngOnInit() {
         this.disabledForm = this.formBuilder.group({
             radioGroup: this.formBuilder.control({ value: "", disabled: true }),
-        });
-        this.fancyForm = this.formBuilder.group({
-            radioGroup: this.formBuilder.control(this.vegetables[1], [
-                _angular_forms__WEBPACK_IMPORTED_MODULE_0__["Validators"].required,
-            ]),
         });
     }
     toggleDisabled(event) {
@@ -1035,96 +1002,30 @@ class RadioGroupTestComponent {
     }
 }
 RadioGroupTestComponent.ɵfac = function RadioGroupTestComponent_Factory(t) { return new (t || RadioGroupTestComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormBuilder"])); };
-RadioGroupTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: RadioGroupTestComponent, selectors: [["nui-radio-group-test"]], decls: 24, vars: 16, consts: function () { let i18n_0; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-        const MSG_EXTERNAL_8732319579184328444$$DEMO_SRC_COMPONENTS_DEMO_RADIO_GROUP_RADIO_GROUP_TEST_RADIO_GROUP_TEST_COMPONENT_TS_1 = goog.getMsg("Selected fruit: {$interpolation}", { "interpolation": "\uFFFD0\uFFFD" });
-        i18n_0 = MSG_EXTERNAL_8732319579184328444$$DEMO_SRC_COMPONENTS_DEMO_RADIO_GROUP_RADIO_GROUP_TEST_RADIO_GROUP_TEST_COMPONENT_TS_1;
-    }
-    else {
-        i18n_0 = $localize `:␟76fcbe97be58e408b35d13a78f727194e9b6688c␟8732319579184328444:Selected fruit: ${"\uFFFD0\uFFFD"}:INTERPOLATION:`;
-    } let i18n_2; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-        const MSG_EXTERNAL_8592975869584089276$$DEMO_SRC_COMPONENTS_DEMO_RADIO_GROUP_RADIO_GROUP_TEST_RADIO_GROUP_TEST_COMPONENT_TS_3 = goog.getMsg("Selected fruit: {$interpolation}", { "interpolation": "\uFFFD0\uFFFD" });
-        i18n_2 = MSG_EXTERNAL_8592975869584089276$$DEMO_SRC_COMPONENTS_DEMO_RADIO_GROUP_RADIO_GROUP_TEST_RADIO_GROUP_TEST_COMPONENT_TS_3;
-    }
-    else {
-        i18n_2 = $localize `:␟443a70f17b28df3923b600fedfa307a29f0b6522␟8592975869584089276:Selected fruit: ${"\uFFFD0\uFFFD"}:INTERPOLATION:`;
-    } let i18n_4; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-        const MSG_EXTERNAL_9064383497908812977$$DEMO_SRC_COMPONENTS_DEMO_RADIO_GROUP_RADIO_GROUP_TEST_RADIO_GROUP_TEST_COMPONENT_TS_5 = goog.getMsg("Selected color: {$interpolation}", { "interpolation": "\uFFFD0\uFFFD" });
-        i18n_4 = MSG_EXTERNAL_9064383497908812977$$DEMO_SRC_COMPONENTS_DEMO_RADIO_GROUP_RADIO_GROUP_TEST_RADIO_GROUP_TEST_COMPONENT_TS_5;
-    }
-    else {
-        i18n_4 = $localize `:␟29f157c41e563e411cfa5dc0a3134f0bb4313b77␟9064383497908812977:Selected color: ${"\uFFFD0\uFFFD"}:INTERPOLATION:`;
-    } return [i18n_0, ["id", "fruit-radio-group", "name", "fruit", 3, "value", "valueChange"], [3, "value", "checked", "disabled", 4, "ngFor", "ngForOf"], i18n_2, ["id", "fruit-radio-group-inline", "name", "fruit-inline", 1, "nui-radio-group-inline", 3, "value", "valueChange"], [3, "value", "checked", 4, "ngFor", "ngForOf"], i18n_4, ["id", "color-radio-group", "name", "color", 3, "value", "valueChange"], [3, "value", "checked", "hint", 4, "ngFor", "ngForOf"], [3, "formGroup"], ["caption", "Radio Group", "hint", "Some pretty long text with hint", "info", "text", 3, "control"], ["id", "vegetable-radio-group", "formControlName", "radioGroup", "name", "vegetable", "required", ""], [3, "value", 4, "ngFor", "ngForOf"], ["for", "required"], ["caption", "Radio Group", 3, "control"], ["id", "disabled-radio-group", "formControlName", "radioGroup", "name", "vegetable"], ["id", "toggle-disabled-group-checkbox", 3, "checked", "valueChange"], [3, "value", "checked", "disabled"], [3, "value", "checked"], [3, "value", "checked", "hint"], [3, "value"]]; }, template: function RadioGroupTestComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "h1");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵi18n"](1, 0);
+RadioGroupTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: RadioGroupTestComponent, selectors: [["nui-radio-group-test"]], decls: 9, vars: 6, consts: [[1, "container"], ["id", "basic-radio-group", "name", "fruit", 3, "value", "valueChange"], [3, "value", "checked", "disabled", 4, "ngFor", "ngForOf"], [3, "formGroup"], ["caption", "Radio Group", 3, "control"], ["id", "disabled-radio-group", "formControlName", "radioGroup", "name", "vegetable"], [3, "value", 4, "ngFor", "ngForOf"], ["id", "toggle-disabled-group-checkbox", 3, "checked", "valueChange"], [3, "value", "checked", "disabled"], [3, "value"]], template: function RadioGroupTestComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "nui-radio-group", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("valueChange", function RadioGroupTestComponent_Template_nui_radio_group_valueChange_1_listener($event) { return ctx.selectedFruit = $event; });
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](2, RadioGroupTestComponent_nui_radio_2_Template, 2, 4, "nui-radio", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "nui-radio-group", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("valueChange", function RadioGroupTestComponent_Template_nui_radio_group_valueChange_2_listener($event) { return ctx.selectedFruit = $event; });
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](3, RadioGroupTestComponent_nui_radio_3_Template, 2, 4, "nui-radio", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](4, "h1");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵi18n"](5, 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](6, "nui-radio-group", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("valueChange", function RadioGroupTestComponent_Template_nui_radio_group_valueChange_6_listener($event) { return ctx.selectedFruitInline = $event; });
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](7, RadioGroupTestComponent_nui_radio_7_Template, 2, 3, "nui-radio", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](8, "h1");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵi18n"](9, 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](10, "nui-radio-group", 7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("valueChange", function RadioGroupTestComponent_Template_nui_radio_group_valueChange_10_listener($event) { return ctx.selectedColor = $event; });
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](11, RadioGroupTestComponent_nui_radio_11_Template, 2, 4, "nui-radio", 8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](12, "form", 9);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](13, "nui-form-field", 10);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](14, "nui-radio-group", 11);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](15, RadioGroupTestComponent_nui_radio_15_Template, 2, 2, "nui-radio", 12);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](16, "nui-validation-message", 13);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](17, " This is required. C'mon ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "form", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](4, "nui-form-field", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "nui-radio-group", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](6, RadioGroupTestComponent_nui_radio_6_Template, 2, 2, "nui-radio", 6);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](18, "form", 9);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](19, "nui-form-field", 14);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](20, "nui-radio-group", 15);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](21, RadioGroupTestComponent_nui_radio_21_Template, 2, 2, "nui-radio", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](7, "nui-checkbox", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("valueChange", function RadioGroupTestComponent_Template_nui_checkbox_valueChange_7_listener($event) { return ctx.toggleDisabled($event); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](8, " Disabled ");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](22, "nui-checkbox", 16);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("valueChange", function RadioGroupTestComponent_Template_nui_checkbox_valueChange_22_listener($event) { return ctx.toggleDisabled($event); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](23, "Disabled");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵi18nExp"](ctx.selectedFruit);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵi18nApply"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", ctx.selectedFruit);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx.fruits);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵi18nExp"](ctx.selectedFruitInline);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵi18nApply"](5);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", ctx.selectedFruitInline);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx.fruits);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵi18nExp"](ctx.selectedColor);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵi18nApply"](9);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", ctx.selectedColor);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx.colors);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("formGroup", ctx.fancyForm);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("control", ctx.fancyForm.controls["radioGroup"]);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx.vegetables);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("formGroup", ctx.disabledForm);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("control", ctx.disabledForm.controls["radioGroup"]);
@@ -1132,7 +1033,7 @@ RadioGroupTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵ
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx.vegetables);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("checked", true);
-    } }, directives: [_src_lib_radio_radio_group_component__WEBPACK_IMPORTED_MODULE_2__["RadioGroupComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgForOf"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormGroupDirective"], _src_lib_form_field_form_field_component__WEBPACK_IMPORTED_MODULE_4__["FormFieldComponent"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControlName"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["RequiredValidator"], _src_lib_validation_message_validation_message_component__WEBPACK_IMPORTED_MODULE_5__["ValidationMessageComponent"], _src_lib_checkbox_checkbox_component__WEBPACK_IMPORTED_MODULE_6__["CheckboxComponent"], _src_lib_radio_radio_group_component__WEBPACK_IMPORTED_MODULE_2__["RadioComponent"]], encapsulation: 2 });
+    } }, directives: [_src_lib_radio_radio_group_component__WEBPACK_IMPORTED_MODULE_2__["RadioGroupComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgForOf"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormGroupDirective"], _src_lib_form_field_form_field_component__WEBPACK_IMPORTED_MODULE_4__["FormFieldComponent"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControlName"], _src_lib_checkbox_checkbox_component__WEBPACK_IMPORTED_MODULE_5__["CheckboxComponent"], _src_lib_radio_radio_group_component__WEBPACK_IMPORTED_MODULE_2__["RadioComponent"]], encapsulation: 2 });
 
 
 /***/ }),
@@ -1146,7 +1047,7 @@ RadioGroupTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵ
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h1 i18n>Selected fruit: {{selectedFruit}}</h1>\n<nui-radio-group id=\"fruit-radio-group\"\n                 name=\"fruit\"\n                 [(value)]=\"selectedFruit\">\n    <nui-radio *ngFor=\"let fruit of fruits\"\n               [value]=\"fruit\"\n               [checked]=\"fruit === 'Orange'\"\n               [disabled]=\"fruit === 'Banana'\">\n        {{fruit}}\n    </nui-radio>\n</nui-radio-group>\n\n<h1 i18n>Selected fruit: {{selectedFruitInline}}</h1>\n<nui-radio-group id=\"fruit-radio-group-inline\"\n                 name=\"fruit-inline\"\n                 class=\"nui-radio-group-inline\"\n                 [(value)]=\"selectedFruitInline\">\n    <nui-radio *ngFor=\"let fruit of fruits\"\n                [value]=\"fruit\"\n                [checked]=\"fruit === 'Orange'\">\n        {{fruit}}\n    </nui-radio>\n</nui-radio-group>\n\n<h1 i18n>Selected color: {{selectedColor}}</h1>\n<nui-radio-group id=\"color-radio-group\"\n                 name=\"color\"\n                 [(value)]=\"selectedColor\">\n    <nui-radio *ngFor=\"let color of colors\"\n                [value]=\"color\"\n                [checked]=\"color === 'Green'\"\n                [hint]=\"colorHints[color]\">\n        {{color}}\n    </nui-radio>\n</nui-radio-group>\n\n<form [formGroup]=\"fancyForm\">\n    <nui-form-field caption=\"Radio Group\"\n                    hint=\"Some pretty long text with hint\"\n                    info=\"text\"\n                    [control]=\"fancyForm.controls['radioGroup']\">\n        <nui-radio-group id=\"vegetable-radio-group\"\n                         formControlName=\"radioGroup\"\n                         name=\"vegetable\" required>\n            <nui-radio *ngFor=\"let vegetable of vegetables\"\n                        [value]=\"vegetable\">\n                {{vegetable}}\n            </nui-radio>\n        </nui-radio-group>\n        <nui-validation-message for=\"required\">\n            This is required. C'mon\n        </nui-validation-message>\n    </nui-form-field>\n</form>\n\n<form [formGroup]=\"disabledForm\">\n    <nui-form-field caption=\"Radio Group\"\n                    [control]=\"disabledForm.controls['radioGroup']\">\n        <nui-radio-group id=\"disabled-radio-group\"\n                         formControlName=\"radioGroup\"\n                         name=\"vegetable\">\n            <nui-radio *ngFor=\"let vegetable of vegetables\"\n                        [value]=\"vegetable\">\n                {{vegetable}}\n            </nui-radio>\n        </nui-radio-group>\n    </nui-form-field>\n</form>\n<nui-checkbox id=\"toggle-disabled-group-checkbox\" [checked]=\"true\" (valueChange)=\"toggleDisabled($event)\">Disabled</nui-checkbox>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\n    <nui-radio-group id=\"basic-radio-group\"\n                    name=\"fruit\"\n                    [(value)]=\"selectedFruit\">\n        <nui-radio *ngFor=\"let fruit of fruits\"\n                    [value]=\"fruit\"\n                    [checked]=\"fruit === 'Orange'\"\n                    [disabled]=\"fruit === 'Banana'\">\n        {{fruit}}\n        </nui-radio>\n    </nui-radio-group>\n\n\n    <form [formGroup]=\"disabledForm\">\n        <nui-form-field caption=\"Radio Group\"\n                        [control]=\"disabledForm.controls['radioGroup']\">\n            <nui-radio-group id=\"disabled-radio-group\"\n                             formControlName=\"radioGroup\"\n                             name=\"vegetable\">\n                <nui-radio *ngFor=\"let vegetable of vegetables\"\n                            [value]=\"vegetable\">\n                    {{vegetable}}\n                </nui-radio>\n            </nui-radio-group>\n        </nui-form-field>\n    </form>\n    <nui-checkbox id=\"toggle-disabled-group-checkbox\"\n                [checked]=\"true\"\n                (valueChange)=\"toggleDisabled($event)\">\n                Disabled\n    </nui-checkbox>\n</div>\n");
 
 /***/ }),
 

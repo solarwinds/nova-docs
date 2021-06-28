@@ -165,9 +165,6 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#disableRipple">disableRipple</a>
-                            </li>
-                            <li>
                                 <a href="#selected">selected</a>
                             </li>
                             <li>
@@ -225,33 +222,6 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="disableRipple"></a>
-                        <b>disableRipple</b>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/lib/wizard-v2/wizard.directive.ts:53</a></div>
-                            </td>
-                        </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <div class="io-description"><p>Whether ripples should be disabled for the step headers. </p>
-</div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
                         <a name="selected"></a>
                         <b>selected</b>
                     </td>
@@ -264,7 +234,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="72" class="link-to-prism">src/lib/wizard-v2/wizard.directive.ts:72</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="70" class="link-to-prism">src/lib/wizard-v2/wizard.directive.ts:70</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -291,7 +261,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/lib/wizard-v2/wizard.directive.ts:56</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/lib/wizard-v2/wizard.directive.ts:54</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -348,7 +318,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/lib/wizard-v2/wizard.directive.ts:59</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/lib/wizard-v2/wizard.directive.ts:57</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -418,8 +388,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="130"
-                            class="link-to-prism">src/lib/wizard-v2/wizard.directive.ts:130</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="128"
+                            class="link-to-prism">src/lib/wizard-v2/wizard.directive.ts:128</a></div>
                 </td>
             </tr>
 
@@ -491,7 +461,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">src/lib/wizard-v2/wizard.directive.ts:65</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/lib/wizard-v2/wizard.directive.ts:63</a></div>
                             </td>
                         </tr>
 
@@ -533,7 +503,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/lib/wizard-v2/wizard.directive.ts:62</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/lib/wizard-v2/wizard.directive.ts:60</a></div>
                             </td>
                         </tr>
 
@@ -575,7 +545,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="68" class="link-to-prism">src/lib/wizard-v2/wizard.directive.ts:68</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="66" class="link-to-prism">src/lib/wizard-v2/wizard.directive.ts:66</a></div>
                             </td>
                         </tr>
 
@@ -814,7 +784,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">src/lib/wizard-v2/wizard.directive.ts:76</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">src/lib/wizard-v2/wizard.directive.ts:74</a></div>
                                 </td>
                             </tr>
                     <tr>
@@ -909,8 +879,6 @@ export class WizardDirective extends CdkStepper implements OnChanges, AfterConte
     @Output() readonly animationDone: EventEmitter&lt;void&gt; &#x3D; new EventEmitter&lt;void&gt;();
     /** Event emitted when the selected step has changed. */
     @Output() readonly selectionChange &#x3D; new EventEmitter&lt;StepperSelectionEvent&gt;();
-    /** Whether ripples should be disabled for the step headers. */
-    @Input() disableRipple: boolean;
 
     /** The state of the wizard */
     @Input() state: IWizardState;
