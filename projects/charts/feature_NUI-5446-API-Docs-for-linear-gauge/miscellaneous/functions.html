@@ -97,19 +97,10 @@
                             <a href="#domain" title="src/core/common/scales/helpers/domain.ts"><b>domain</b>&nbsp;&nbsp;&nbsp;(src/.../domain.ts)</a>
                         </li>
                         <li>
-                            <a href="#donutGaugeGridConfig" title="src/core/grid/config/donut-gauge-grid-config-fn.ts"><b>donutGaugeGridConfig</b>&nbsp;&nbsp;&nbsp;(src/.../donut-gauge-grid-config-fn.ts)</a>
-                        </li>
-                        <li>
                             <a href="#donutGaugeRendererConfig" title="src/renderers/radial/gauge/donut-gauge-renderer-config.ts"><b>donutGaugeRendererConfig</b>&nbsp;&nbsp;&nbsp;(src/.../donut-gauge-renderer-config.ts)</a>
                         </li>
                         <li>
-                            <a href="#gaugeGrid" title="src/core/grid/config/gauge-grid-fn.ts"><b>gaugeGrid</b>&nbsp;&nbsp;&nbsp;(src/.../gauge-grid-fn.ts)</a>
-                        </li>
-                        <li>
                             <a href="#getColorValueByName" title="src/core/common/palette/color.helper.ts"><b>getColorValueByName</b>&nbsp;&nbsp;&nbsp;(src/.../color.helper.ts)</a>
-                        </li>
-                        <li>
-                            <a href="#getMarginToAdjust" title="src/core/grid/config/linear-gauge-grid-config-fn.ts"><b>getMarginToAdjust</b>&nbsp;&nbsp;&nbsp;(src/.../linear-gauge-grid-config-fn.ts)</a>
                         </li>
                         <li>
                             <a href="#hasInnerScale" title="src/core/common/scales/types.ts"><b>hasInnerScale</b>&nbsp;&nbsp;&nbsp;(src/.../types.ts)</a>
@@ -1242,76 +1233,6 @@ using <a href="../interfaces/IBarChartConfig.html#horizontal">IBarChartConfig</a
             </tr>
         </tbody>
     </table>
-</section>    <h3>src/core/grid/config/donut-gauge-grid-config-fn.ts</h3>
-    <section>
-    <h3></h3>    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="donutGaugeGridConfig"></a>
-                    <span class="name">
-                        <b>
-                            donutGaugeGridConfig
-                        </b>
-                        <a href="#donutGaugeGridConfig"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>donutGaugeGridConfig(gaugeConfig)</code>
-                </td>
-            </tr>
-
-
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Assembles a donut-gauge-specific grid configuration</p>
-</div>
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Optional</td>
-                                    <td>Description</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>gaugeConfig</td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                    <td>
-                                        <p>The gauge configuration</p>
-
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../classes/GridConfig.html" target="_self" >GridConfig</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        <p>A donut gauge grid configuration</p>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
 </section>    <h3>src/renderers/radial/gauge/donut-gauge-renderer-config.ts</h3>
     <section>
     <h3></h3>    <table class="table table-sm table-bordered">
@@ -1349,89 +1270,6 @@ using <a href="../interfaces/IBarChartConfig.html#horizontal">IBarChartConfig</a
                     </div>
                     <div class="io-description">
                         <p>Standard renderer configuration for a gauge</p>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</section>    <h3>src/core/grid/config/gauge-grid-fn.ts</h3>
-    <section>
-    <h3></h3>    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="gaugeGrid"></a>
-                    <span class="name">
-                        <b>
-                            gaugeGrid
-                        </b>
-                        <a href="#gaugeGrid"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>gaugeGrid(gaugeConfig, mode)</code>
-                </td>
-            </tr>
-
-
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Assembles a gauge-specific grid</p>
-</div>
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Optional</td>
-                                    <td>Description</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>gaugeConfig</td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                    <td>
-                                        <p>The gauge&#39;s configuration</p>
-
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>mode</td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                    <td>
-                                        <p>vertical or horizontal</p>
-
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>    <code>XYGrid | RadialGrid</code>
-
-                    </div>
-                    <div class="io-description">
-                        <p>A gauge-specific grid</p>
 
                     </div>
                 </td>
@@ -1495,151 +1333,6 @@ using <a href="../interfaces/IBarChartConfig.html#horizontal">IBarChartConfig</a
                     </div>
                     <div class="io-description">
                         
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</section>    <h3>src/core/grid/config/linear-gauge-grid-config-fn.ts</h3>
-    <section>
-    <h3></h3>    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="getMarginToAdjust"></a>
-                    <span class="name">
-                        <b>
-                            getMarginToAdjust
-                        </b>
-                        <a href="#getMarginToAdjust"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>getMarginToAdjust(mode, flipLabels)</code>
-                </td>
-            </tr>
-
-
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>mode</td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>flipLabels</td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="linearGaugeGridConfig"></a>
-                    <span class="name">
-                        <b>
-                            linearGaugeGridConfig
-                        </b>
-                        <a href="#linearGaugeGridConfig"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>linearGaugeGridConfig(gaugeConfig, mode)</code>
-                </td>
-            </tr>
-
-
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Assembles a linear-gauge-specific grid configuration</p>
-</div>
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Optional</td>
-                                    <td>Description</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>gaugeConfig</td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                    <td>
-                                        <p>The gauge configuration</p>
-
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>mode</td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                    <td>
-                                        <p>vertical or horizontal</p>
-
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../classes/XYGridConfig.html" target="_self" >XYGridConfig</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        <p>A linear gauge grid configuration</p>
-
                     </div>
                 </td>
             </tr>
@@ -1969,6 +1662,89 @@ using <a href="../interfaces/IBarChartConfig.html#horizontal">IBarChartConfig</a
                     </div>
                     <div class="io-description">
                         
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>src/core/grid/config/linear-gauge-grid-config-fn.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="linearGaugeGridConfig"></a>
+                    <span class="name">
+                        <b>
+                            linearGaugeGridConfig
+                        </b>
+                        <a href="#linearGaugeGridConfig"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>linearGaugeGridConfig(mode, thickness)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Assembles a linear-gauge-specific grid configuration</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>mode</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>vertical or horizontal</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>thickness</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The thickness of the gauge</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/XYGridConfig.html" target="_self" >XYGridConfig</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>A linear gauge grid configuration</p>
+
                     </div>
                 </td>
             </tr>

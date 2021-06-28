@@ -83,12 +83,8 @@
                 bottom: 0,
                 left: disableMarkers ? 0 : this.leftMargin
               };
-
-              if (!disableMarkers) {
-                var marginToUpdate = flippedLabels ? "top" : "bottom";
-                gridConfig.dimension.margin[marginToUpdate] = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["LINEAR_GAUGE_LABEL_CLEARANCE_DEFAULTS"][marginToUpdate];
-              }
-
+              var marginToUpdate = flippedLabels ? "top" : "bottom";
+              gridConfig.dimension.margin[marginToUpdate] = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["LINEAR_GAUGE_LABEL_CLEARANCE_DEFAULTS"][marginToUpdate];
               this.chartAssist.chart.updateDimensions();
               this.chartAssist.update(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].update(this.seriesSet, this.gaugeConfig));
             }
@@ -98,16 +94,13 @@
           value: function ngOnInit() {
             var _a;
 
-            var gridConfig = Object(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["linearGaugeGridConfig"])(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Horizontal);
-            gridConfig.dimension.margin.right = this.rightMargin;
-            gridConfig.dimension.margin.left = this.leftMargin;
-            var grid = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["XYGrid"](gridConfig);
-            var chart = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["Chart"](grid);
-            this.chartAssist = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["ChartAssist"](chart, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["stack"]);
             this.labelsPlugin = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["LinearGaugeLabelsPlugin"]({
               flippedLabels: (_a = this.gaugeConfig.labels) === null || _a === void 0 ? void 0 : _a.flipped
             });
-            this.chartAssist.chart.addPlugin(this.labelsPlugin);
+            this.chartAssist = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].createChartAssist(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Horizontal, this.labelsPlugin);
+            var gridConfig = this.chartAssist.chart.getGrid().config();
+            gridConfig.dimension.margin.right = this.rightMargin;
+            gridConfig.dimension.margin.left = this.leftMargin;
             this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].assembleSeriesSet(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Horizontal);
             this.chartAssist.update(this.seriesSet);
           }
@@ -523,14 +516,6 @@
             if (changes.gaugeConfig && !changes.gaugeConfig.firstChange) {
               var disableMarkers = (_b = (_a = this.gaugeConfig.thresholds) === null || _a === void 0 ? void 0 : _a.disableMarkers) !== null && _b !== void 0 ? _b : false;
               this.labelsPlugin.config.disableThresholdLabels = disableMarkers;
-              var gridConfig = this.chartAssist.chart.getGrid().config();
-              var clearance = disableMarkers ? 0 : this.labelClearance;
-              gridConfig.dimension.margin = {
-                top: clearance,
-                right: clearance,
-                bottom: clearance,
-                left: clearance
-              };
               this.chartAssist.chart.updateDimensions();
               this.chartAssist.update(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].update(this.seriesSet, this.gaugeConfig));
             }
@@ -543,15 +528,14 @@
                 clearance: this.labelClearance
               })
             });
-            var grid = Object(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["gaugeGrid"])(gaugeConfigWithLabelClearance, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Donut);
-            grid.config().dimension.autoHeight = false;
-            grid.config().dimension.autoWidth = false;
-            this.chartAssist = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["ChartAssist"](new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["Chart"](grid), _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["radial"]);
+            this.labelsPlugin = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["DonutGaugeLabelsPlugin"]();
+            this.chartAssist = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].createChartAssist(gaugeConfigWithLabelClearance, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Donut, this.labelsPlugin);
+            var gridConfig = this.chartAssist.chart.getGrid().config();
+            gridConfig.dimension.autoHeight = false;
+            gridConfig.dimension.autoWidth = false;
             this.contentPlugin = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["ChartDonutContentPlugin"]();
             this.chartAssist.chart.addPlugin(this.contentPlugin);
-            this.labelsPlugin = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["DonutGaugeLabelsPlugin"]();
-            this.chartAssist.chart.addPlugin(this.labelsPlugin);
-            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].assembleSeriesSet(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Donut);
+            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].assembleSeriesSet(gaugeConfigWithLabelClearance, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Donut);
             this.updateDonutSize();
             this.updateAnnularAttributes();
             this.chartAssist.update(this.seriesSet);
@@ -809,12 +793,8 @@
                 bottom: staticMargin,
                 left: 0
               };
-
-              if (!disableMarkers) {
-                var marginToUpdate = flippedLabels ? "left" : "right";
-                gridConfig.dimension.margin[marginToUpdate] = this.labelClearance;
-              }
-
+              var marginToUpdate = flippedLabels ? "left" : "right";
+              gridConfig.dimension.margin[marginToUpdate] = this.labelClearance;
               this.chartAssist.chart.updateDimensions();
               this.chartAssist.update(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].update(this.seriesSet, this.gaugeConfig));
             }
@@ -829,17 +809,14 @@
                 clearance: this.labelClearance
               })
             });
-            var gridConfig = Object(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["linearGaugeGridConfig"])(gaugeConfigWithLabelClearance, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Vertical);
-            gridConfig.dimension.margin.top = this.staticMargin;
-            gridConfig.dimension.margin.bottom = this.staticMargin;
-            var grid = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["XYGrid"](gridConfig);
-            var chart = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["Chart"](grid);
-            this.chartAssist = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["ChartAssist"](chart, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["stack"]);
             this.labelsPlugin = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["LinearGaugeLabelsPlugin"]({
               flippedLabels: (_a = this.gaugeConfig.labels) === null || _a === void 0 ? void 0 : _a.flipped
             });
-            this.chartAssist.chart.addPlugin(this.labelsPlugin);
-            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].assembleSeriesSet(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Vertical);
+            this.chartAssist = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].createChartAssist(gaugeConfigWithLabelClearance, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Vertical, this.labelsPlugin);
+            var gridConfig = this.chartAssist.chart.getGrid().config();
+            gridConfig.dimension.margin.top = this.staticMargin;
+            gridConfig.dimension.margin.bottom = this.staticMargin;
+            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].assembleSeriesSet(gaugeConfigWithLabelClearance, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Vertical);
             this.chartAssist.update(this.seriesSet);
           }
         }]);
