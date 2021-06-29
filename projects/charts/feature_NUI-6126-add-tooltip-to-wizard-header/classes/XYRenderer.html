@@ -116,6 +116,14 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Public</span>
+                                <a href="#draw">draw</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getDataPointIndex">getDataPointIndex</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#getDataPointPosition">getDataPointPosition</a>
                             </li>
                             <li>
@@ -389,6 +397,190 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="draw"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            draw
+                        </b>
+                        <a href="#draw"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>draw(renderSeries: <a href="../interfaces/IRenderSeries.html">IRenderSeries<TA></a>, rendererSubject: <a href="../interfaces/IRendererEventPayload.html">Subject<IRendererEventPayload></a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="13"
+                            class="link-to-prism">src/renderers/xy-renderer.ts:13</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>See <a href="../classes/Renderer.html#draw">Renderer</a> </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>renderSeries</td>
+                                    <td>
+                                                <code><a href="../interfaces/IRenderSeries.html" target="_self" >IRenderSeries&lt;TA&gt;</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>rendererSubject</td>
+                                    <td>
+                                                <code><a href="../interfaces/IRendererEventPayload.html" target="_self" >Subject&lt;IRendererEventPayload&gt;</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getDataPointIndex"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            getDataPointIndex
+                        </b>
+                        <a href="#getDataPointIndex"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getDataPointIndex(series: <a href="../interfaces/IDataSeries.html">IDataSeries<TA></a>, values: literal type, scales: <a href="../classes/Scale.html">Scales</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">src/renderers/xy-renderer.ts:32</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>See <a href="../classes/Renderer.html#getDataPointIndex">Renderer</a> </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>series</td>
+                                    <td>
+                                                <code><a href="../interfaces/IDataSeries.html" target="_self" >IDataSeries&lt;TA&gt;</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>values</td>
+                                    <td>
+                                            <code>literal type</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>scales</td>
+                                    <td>
+                                                <code><a href="../classes/Scale.html" target="_self" >Scales</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="getDataPointPosition"></a>
                     <span class="name">
                         <b>
@@ -409,14 +601,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="7"
-                            class="link-to-prism">src/renderers/xy-renderer.ts:7</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="16"
+                            class="link-to-prism">src/renderers/xy-renderer.ts:16</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>See <a href="../classes/Renderer.html#getDataPointPosition">Renderer</a> </p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -1557,10 +1751,19 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Renderer } from &quot;../core/common/renderer&quot;;
 import { Scales } from &quot;../core/common/scales/types&quot;;
-import { IAccessors, IDataSeries, IPosition } from &quot;../core/common/types&quot;;
+import { IAccessors, IDataSeries, IPosition, IRendererEventPayload } from &quot;../core/common/types&quot;;
+import { IRenderSeries } from &quot;./types&quot;;
+import { Subject } from &quot;rxjs&quot;;
+import isUndefined from &quot;lodash/isUndefined&quot;;
+import { DATA_POINT_INTERACTION_RESET } from &quot;../constants&quot;;
+import { UtilityService } from &quot;../core/common/utility.service&quot;;
 
-export abstract class XYRenderer&lt;TA extends IAccessors&gt; extends Renderer&lt;TA&gt; {
+export class XYRenderer&lt;TA extends IAccessors&gt; extends Renderer&lt;TA&gt; {
+    // This is empty to allow this renderer to be used for series that represent metadata that may be shown in the legend but not visualized on the chart.
+    /** See {@link Renderer#draw} */
+    public draw(renderSeries: IRenderSeries&lt;TA&gt;, rendererSubject: Subject&lt;IRendererEventPayload&gt;): void {}
 
+    /** See {@link Renderer#getDataPointPosition} */
     public getDataPointPosition(dataSeries: IDataSeries&lt;TA&gt;, index: number, scales: Scales): IPosition | undefined {
         if (index &lt; 0 || index &gt;&#x3D; dataSeries.data.length) {
             return undefined;
@@ -1576,6 +1779,20 @@ export abstract class XYRenderer&lt;TA extends IAccessors&gt; extends Renderer&l
         };
     }
 
+    /** See {@link Renderer#getDataPointIndex} */
+    public getDataPointIndex(series: IDataSeries&lt;TA&gt;, values: { [p: string]: any }, scales: Scales): number {
+        if (isUndefined(values.x)) {
+            return DATA_POINT_INTERACTION_RESET;
+        }
+
+        const index &#x3D; UtilityService.getClosestIndex(series.data, (d, i) &#x3D;&gt; series.accessors.data?.x?.(d, i, series.data, series), values.x);
+
+        if (isUndefined(index)) {
+            throw new Error(&quot;Unable to get data point index&quot;);
+        }
+
+        return index;
+    }
 }
 </code></pre>
     </div>

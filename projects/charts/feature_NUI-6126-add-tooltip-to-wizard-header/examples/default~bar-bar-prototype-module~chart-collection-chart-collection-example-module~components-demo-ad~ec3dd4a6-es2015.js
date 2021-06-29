@@ -8023,17 +8023,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var d3_shape__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! d3-shape */ "8d86");
 /* harmony import */ var lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash/defaultsDeep */ "P4Tr");
 /* harmony import */ var lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lodash/isUndefined */ "TP7S");
-/* harmony import */ var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(lodash_isUndefined__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../constants */ "he5r");
-/* harmony import */ var _core_common_scales_types__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../core/common/scales/types */ "41FX");
-/* harmony import */ var _core_common_utility_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../core/common/utility.service */ "TnLJ");
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../constants */ "s8k4");
-/* harmony import */ var _marker_utils__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../marker-utils */ "pm6l");
-/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../types */ "AbRU");
-/* harmony import */ var _xy_renderer__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../xy-renderer */ "EtOI");
-
-
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../constants */ "he5r");
+/* harmony import */ var _core_common_scales_types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../core/common/scales/types */ "41FX");
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../constants */ "s8k4");
+/* harmony import */ var _marker_utils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../marker-utils */ "pm6l");
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../types */ "AbRU");
+/* harmony import */ var _xy_renderer__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../xy-renderer */ "EtOI");
 
 
 
@@ -8046,7 +8041,7 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * Renderer that is able to draw line chart
  */
-class AreaRenderer extends _xy_renderer__WEBPACK_IMPORTED_MODULE_10__["XYRenderer"] {
+class AreaRenderer extends _xy_renderer__WEBPACK_IMPORTED_MODULE_8__["XYRenderer"] {
     /**
      * Creates an instance of AreaRenderer.
      * @param {IAreaRendererConfig} [config={}] Renderer configuration object
@@ -8058,7 +8053,7 @@ class AreaRenderer extends _xy_renderer__WEBPACK_IMPORTED_MODULE_10__["XYRendere
             curveType: d3_shape__WEBPACK_IMPORTED_MODULE_1__["curveLinear"],
             interactive: true,
             areaClass: "nui-chart-area",
-            markerInteraction: _constants__WEBPACK_IMPORTED_MODULE_7__["DEFAULT_MARKER_INTERACTION_CONFIG"],
+            markerInteraction: _constants__WEBPACK_IMPORTED_MODULE_5__["DEFAULT_MARKER_INTERACTION_CONFIG"],
         };
         // setting default values to the properties that were not set by user
         this.config = lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_2___default()(this.config, this.DEFAULT_CONFIG);
@@ -8066,7 +8061,7 @@ class AreaRenderer extends _xy_renderer__WEBPACK_IMPORTED_MODULE_10__["XYRendere
     /** See {@link Renderer#draw} */
     draw(renderSeries, rendererSubject) {
         var _a, _b, _c;
-        const target = renderSeries.containers[_types__WEBPACK_IMPORTED_MODULE_9__["RenderLayerName"].data];
+        const target = renderSeries.containers[_types__WEBPACK_IMPORTED_MODULE_7__["RenderLayerName"].data];
         const accessors = renderSeries.dataSeries.accessors;
         let path = target.select(`path.${this.config.areaClass}`);
         if (path.empty()) {
@@ -8120,20 +8115,9 @@ class AreaRenderer extends _xy_renderer__WEBPACK_IMPORTED_MODULE_10__["XYRendere
             .curve(this.config.curveType);
         path.attr("d", (_a = areaFunc(validatedData)) !== null && _a !== void 0 ? _a : "");
     }
-    /** See {@link Renderer#getDataPointIndex} */
-    getDataPointIndex(series, values, scales) {
-        if (lodash_isUndefined__WEBPACK_IMPORTED_MODULE_3___default()(values.x)) {
-            return _constants__WEBPACK_IMPORTED_MODULE_4__["DATA_POINT_INTERACTION_RESET"];
-        }
-        const index = _core_common_utility_service__WEBPACK_IMPORTED_MODULE_6__["UtilityService"].getClosestIndex(series.data, (d, i) => series.accessors.data.x(d, i, series.data, series), values.x);
-        if (lodash_isUndefined__WEBPACK_IMPORTED_MODULE_3___default()(index)) {
-            throw new Error("Unable to get data point index");
-        }
-        return index;
-    }
     getDomain(data, dataSeries, scaleName, scale) {
         if (!data || data.length === 0) {
-            return _core_common_scales_types__WEBPACK_IMPORTED_MODULE_5__["EMPTY_CONTINUOUS_DOMAIN"];
+            return _core_common_scales_types__WEBPACK_IMPORTED_MODULE_4__["EMPTY_CONTINUOUS_DOMAIN"];
         }
         const dataAccessors = dataSeries.accessors.data;
         if (scaleName !== "x" && scaleName !== "y") {
@@ -8149,8 +8133,8 @@ class AreaRenderer extends _xy_renderer__WEBPACK_IMPORTED_MODULE_10__["XYRendere
     /** See {@link Renderer#getRequiredLayers} */
     getRequiredLayers() {
         return [
-            _constants__WEBPACK_IMPORTED_MODULE_4__["STANDARD_RENDER_LAYERS"][_types__WEBPACK_IMPORTED_MODULE_9__["RenderLayerName"].data],
-            _constants__WEBPACK_IMPORTED_MODULE_4__["STANDARD_RENDER_LAYERS"][_types__WEBPACK_IMPORTED_MODULE_9__["RenderLayerName"].foreground],
+            _constants__WEBPACK_IMPORTED_MODULE_3__["STANDARD_RENDER_LAYERS"][_types__WEBPACK_IMPORTED_MODULE_7__["RenderLayerName"].data],
+            _constants__WEBPACK_IMPORTED_MODULE_3__["STANDARD_RENDER_LAYERS"][_types__WEBPACK_IMPORTED_MODULE_7__["RenderLayerName"].foreground],
         ];
     }
     /**
@@ -8176,8 +8160,8 @@ class AreaRenderer extends _xy_renderer__WEBPACK_IMPORTED_MODULE_10__["XYRendere
         if (!accessors.series.marker || !this.config.interactive) {
             return;
         }
-        const container = renderSeries.containers[_types__WEBPACK_IMPORTED_MODULE_9__["RenderLayerName"].foreground];
-        _marker_utils__WEBPACK_IMPORTED_MODULE_8__["MarkerUtils"].manageMarker(renderSeries.dataSeries, renderSeries.scales, dataPointIndex, container, rendererSubject, this.config.markerInteraction);
+        const container = renderSeries.containers[_types__WEBPACK_IMPORTED_MODULE_7__["RenderLayerName"].foreground];
+        _marker_utils__WEBPACK_IMPORTED_MODULE_6__["MarkerUtils"].manageMarker(renderSeries.dataSeries, renderSeries.scales, dataPointIndex, container, rendererSubject, this.config.markerInteraction);
     }
     safetyCheck(value) {
         return isNaN(value) || typeof value === "undefined" ? 0 : value;
@@ -9545,8 +9529,19 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "XYRenderer", function() { return XYRenderer; });
 /* harmony import */ var _core_common_renderer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../core/common/renderer */ "//9L");
+/* harmony import */ var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash/isUndefined */ "TP7S");
+/* harmony import */ var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_isUndefined__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../constants */ "he5r");
+/* harmony import */ var _core_common_utility_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../core/common/utility.service */ "TnLJ");
+
+
+
 
 class XYRenderer extends _core_common_renderer__WEBPACK_IMPORTED_MODULE_0__["Renderer"] {
+    // This is empty to allow this renderer to be used for series that represent metadata that may be shown in the legend but not visualized on the chart.
+    /** See {@link Renderer#draw} */
+    draw(renderSeries, rendererSubject) { }
+    /** See {@link Renderer#getDataPointPosition} */
     getDataPointPosition(dataSeries, index, scales) {
         var _a, _b;
         if (index < 0 || index >= dataSeries.data.length) {
@@ -9560,6 +9555,17 @@ class XYRenderer extends _core_common_renderer__WEBPACK_IMPORTED_MODULE_0__["Ren
             x: scales.x.convert(dataSeries.accessors.data.x(point, index, dataSeries.data, dataSeries)),
             y: scales.y.convert(dataSeries.accessors.data.y(point, index, dataSeries.data, dataSeries)),
         };
+    }
+    /** See {@link Renderer#getDataPointIndex} */
+    getDataPointIndex(series, values, scales) {
+        if (lodash_isUndefined__WEBPACK_IMPORTED_MODULE_1___default()(values.x)) {
+            return _constants__WEBPACK_IMPORTED_MODULE_2__["DATA_POINT_INTERACTION_RESET"];
+        }
+        const index = _core_common_utility_service__WEBPACK_IMPORTED_MODULE_3__["UtilityService"].getClosestIndex(series.data, (d, i) => { var _a, _b; return (_b = (_a = series.accessors.data) === null || _a === void 0 ? void 0 : _a.x) === null || _b === void 0 ? void 0 : _b.call(_a, d, i, series.data, series); }, values.x);
+        if (lodash_isUndefined__WEBPACK_IMPORTED_MODULE_1___default()(index)) {
+            throw new Error("Unable to get data point index");
+        }
+        return index;
     }
 }
 
@@ -20224,16 +20230,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var d3_shape__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3-shape */ "8d86");
 /* harmony import */ var lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash/defaultsDeep */ "P4Tr");
 /* harmony import */ var lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_defaultsDeep__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash/isUndefined */ "TP7S");
-/* harmony import */ var lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../constants */ "he5r");
-/* harmony import */ var _core_common_utility_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../core/common/utility.service */ "TnLJ");
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../constants */ "s8k4");
-/* harmony import */ var _marker_utils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../marker-utils */ "pm6l");
-/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../types */ "AbRU");
-/* harmony import */ var _xy_renderer__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../xy-renderer */ "EtOI");
-
-
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../constants */ "he5r");
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../constants */ "s8k4");
+/* harmony import */ var _marker_utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../marker-utils */ "pm6l");
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../types */ "AbRU");
+/* harmony import */ var _xy_renderer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../xy-renderer */ "EtOI");
 
 
 
@@ -20244,7 +20245,7 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * Renderer that is able to draw line chart
  */
-class LineRenderer extends _xy_renderer__WEBPACK_IMPORTED_MODULE_8__["XYRenderer"] {
+class LineRenderer extends _xy_renderer__WEBPACK_IMPORTED_MODULE_6__["XYRenderer"] {
     /**
      * Creates an instance of LineRenderer.
      * @param {ILineRendererConfig} [config={}] Renderer configuration object
@@ -20258,7 +20259,7 @@ class LineRenderer extends _xy_renderer__WEBPACK_IMPORTED_MODULE_8__["XYRenderer
             interactive: true,
             strokeStyle: "",
             strokeLinecap: "round",
-            markerInteraction: _constants__WEBPACK_IMPORTED_MODULE_5__["DEFAULT_MARKER_INTERACTION_CONFIG"],
+            markerInteraction: _constants__WEBPACK_IMPORTED_MODULE_3__["DEFAULT_MARKER_INTERACTION_CONFIG"],
             useEnhancedLineCaps: false,
             enhancedLineCap: {
                 radius: 3,
@@ -20277,7 +20278,7 @@ class LineRenderer extends _xy_renderer__WEBPACK_IMPORTED_MODULE_8__["XYRenderer
     /** See {@link Renderer#draw} */
     draw(renderSeries, rendererSubject) {
         var _a, _b, _c, _d, _e;
-        const target = renderSeries.containers[_types__WEBPACK_IMPORTED_MODULE_7__["RenderLayerName"].data];
+        const target = renderSeries.containers[_types__WEBPACK_IMPORTED_MODULE_5__["RenderLayerName"].data];
         const strokeValue = (_b = (_a = renderSeries.dataSeries.accessors.series).color) === null || _b === void 0 ? void 0 : _b.call(_a, renderSeries.dataSeries.id, renderSeries.dataSeries);
         let path = target.select("path.main");
         if (path.empty()) {
@@ -20320,17 +20321,6 @@ class LineRenderer extends _xy_renderer__WEBPACK_IMPORTED_MODULE_8__["XYRenderer
             this.drawStandardLine(renderSeries, path);
         }
     }
-    /** See {@link Renderer#getDataPointIndex} */
-    getDataPointIndex(series, values, scales) {
-        if (!this.config.interactive || lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default()(values.x)) {
-            return _constants__WEBPACK_IMPORTED_MODULE_3__["DATA_POINT_INTERACTION_RESET"];
-        }
-        const index = _core_common_utility_service__WEBPACK_IMPORTED_MODULE_4__["UtilityService"].getClosestIndex(series.data, (d, i) => series.accessors.data.x(d, i, series.data, series), values.x);
-        if (lodash_isUndefined__WEBPACK_IMPORTED_MODULE_2___default()(index)) {
-            throw new Error("Unable to get data point index");
-        }
-        return index;
-    }
     /** See {@link Renderer#highlightDataPoint} */
     highlightDataPoint(renderSeries, dataPointIndex, rendererSubject) {
         if (!this.config.interactive) {
@@ -20341,14 +20331,14 @@ class LineRenderer extends _xy_renderer__WEBPACK_IMPORTED_MODULE_8__["XYRenderer
         if (!accessors.series.marker) {
             return;
         }
-        _marker_utils__WEBPACK_IMPORTED_MODULE_6__["MarkerUtils"].manageMarker(dataSeries, renderSeries.scales, dataPointIndex, renderSeries.containers[_types__WEBPACK_IMPORTED_MODULE_7__["RenderLayerName"].foreground], rendererSubject, this.config.markerInteraction);
+        _marker_utils__WEBPACK_IMPORTED_MODULE_4__["MarkerUtils"].manageMarker(dataSeries, renderSeries.scales, dataPointIndex, renderSeries.containers[_types__WEBPACK_IMPORTED_MODULE_5__["RenderLayerName"].foreground], rendererSubject, this.config.markerInteraction);
     }
     /** See {@link Renderer#getRequiredLayers} */
     getRequiredLayers() {
         return [
-            _constants__WEBPACK_IMPORTED_MODULE_3__["STANDARD_RENDER_LAYERS"][_types__WEBPACK_IMPORTED_MODULE_7__["RenderLayerName"].data],
-            _constants__WEBPACK_IMPORTED_MODULE_3__["STANDARD_RENDER_LAYERS"][_types__WEBPACK_IMPORTED_MODULE_7__["RenderLayerName"].foreground],
-            _constants__WEBPACK_IMPORTED_MODULE_3__["STANDARD_RENDER_LAYERS"][_types__WEBPACK_IMPORTED_MODULE_7__["RenderLayerName"].unclippedData],
+            _constants__WEBPACK_IMPORTED_MODULE_2__["STANDARD_RENDER_LAYERS"][_types__WEBPACK_IMPORTED_MODULE_5__["RenderLayerName"].data],
+            _constants__WEBPACK_IMPORTED_MODULE_2__["STANDARD_RENDER_LAYERS"][_types__WEBPACK_IMPORTED_MODULE_5__["RenderLayerName"].foreground],
+            _constants__WEBPACK_IMPORTED_MODULE_2__["STANDARD_RENDER_LAYERS"][_types__WEBPACK_IMPORTED_MODULE_5__["RenderLayerName"].unclippedData],
         ];
     }
     /** See {@link Renderer#getDataPointPosition} */
@@ -20412,7 +20402,7 @@ class LineRenderer extends _xy_renderer__WEBPACK_IMPORTED_MODULE_8__["XYRenderer
         const updateCx = (d, i) => renderSeries.scales.x.convert(accessors.data.x(d, i, dataSeries.data, dataSeries));
         const updateCy = (d, i) => renderSeries.scales.y.convert(accessors.data.y(d, i, dataSeries.data, dataSeries));
         // use an unclipped layer to ensure the line caps on the left and right sides of the chart don't get clipped
-        const lineCaps = renderSeries.containers[_types__WEBPACK_IMPORTED_MODULE_7__["RenderLayerName"].unclippedData].selectAll(`.${LineRenderer.LINE_CAP_CLASS_NAME}`)
+        const lineCaps = renderSeries.containers[_types__WEBPACK_IMPORTED_MODULE_5__["RenderLayerName"].unclippedData].selectAll(`.${LineRenderer.LINE_CAP_CLASS_NAME}`)
             .data(definedData)
             .attr("cx", updateCx)
             .attr("cy", updateCy);
@@ -31953,6 +31943,9 @@ function stackedAreaPreprocessor(chartSeriesSet, isVisible) {
     const baseAccessorKey = "x";
     const valueAccessorKey = "y";
     for (const chartSeries of chartSeriesSet) {
+        if (chartSeries.preprocess === false) {
+            continue;
+        }
         const baseAccessor = chartSeries.accessors.data[baseAccessorKey];
         const accessor0 = chartSeries.accessors.data[valueAccessorKey + "0"];
         const accessor1 = chartSeries.accessors.data[valueAccessorKey + "1"];
