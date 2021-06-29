@@ -1611,7 +1611,7 @@
             this.chartBottom = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["Chart"](new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["XYGrid"](bottomChartConfig()), {
               updateDomainForEmptySeries: true
             });
-            this.chartAssistBottom = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["ChartAssist"](this.chartBottom, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["stackedArea"]); // Area accessors let the renderer know how to access x and y domain data respectively from a chart's input data set(s).
+            this.chartAssistBottom = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["ChartAssist"](this.chartBottom, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["stackedArea"], this.chartAssistTop.palette, this.chartAssistTop.markers); // Area accessors let the renderer know how to access x and y domain data respectively from a chart's input data set(s).
 
             var accessors = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["AreaAccessors"](); // 'x' defines access for values in the data that correspond to the horizontal axis
 
@@ -1665,16 +1665,30 @@
                 accessors: accessors,
                 scales: scalesBottom
               });
-            });
-            scalesTop.y.domainCalculator = scalesTop.x.domainCalculator = Object(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["domainWithAuxiliarySeries"])(function () {
+            }); // We need to replace domain calculators to reflect series on both charts
+
+            var topChartDomainCalculator = Object(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["domainWithAuxiliarySeries"])(function () {
               return seriesSetBottom;
             }, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["getAutomaticDomain"]);
-            scalesBottom.y.domainCalculator = scalesBottom.x.domainCalculator = Object(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["domainWithAuxiliarySeries"])(function () {
+            scalesTop.y.domainCalculator = topChartDomainCalculator;
+            scalesTop.x.domainCalculator = topChartDomainCalculator;
+            var bottomChartDomainCalculator = Object(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["domainWithAuxiliarySeries"])(function () {
               return seriesSetTop;
             }, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["getAutomaticDomain"]);
+            scalesBottom.y.domainCalculator = bottomChartDomainCalculator;
+            scalesBottom.x.domainCalculator = bottomChartDomainCalculator;
             this.chartAssistTop.update(seriesSetTop);
             this.chartAssistBottom.update(seriesSetBottom);
           }
+          /**
+           * This function ensures the change in visibility of series is propagated to both charts. Chart that is directly associated with the series has to be
+           * invoked first.
+           *
+           * @param legendSeries
+           * @param value
+           * @param currentChartAssist
+           */
+
         }, {
           key: "onSelectedChange",
           value: function onSelectedChange(legendSeries, value, currentChartAssist) {

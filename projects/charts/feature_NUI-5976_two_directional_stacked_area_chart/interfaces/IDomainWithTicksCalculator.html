@@ -43,7 +43,7 @@
 
 <ol class="breadcrumb">
   <li>Interfaces</li>
-  <li>DomainCalculatorWithTicks</li>
+  <li>IDomainWithTicksCalculator</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -93,7 +93,7 @@
                             <ul class="index-list">
                                 <li>
                                             <span class="modifier">Optional</span>
-                                        <a href="#__domainWithTicks">__domainWithTicks</a>
+                                        <a href="#domainWithTicks">domainWithTicks</a>
                                 </li>
                             </ul>
                         </td>
@@ -110,13 +110,13 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="__domainWithTicks"></a>
-                                        <span class="name"><b>__domainWithTicks</b><a href="#__domainWithTicks"><span class="icon ion-ios-link"></span></a></span>
+                                        <a name="domainWithTicks"></a>
+                                        <span class="name"><b>domainWithTicks</b><a href="#domainWithTicks"><span class="icon ion-ios-link"></span></a></span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>__domainWithTicks:     <code></code>
+                                        <code>domainWithTicks:     <code></code>
 </code>
                                     </td>
                                 </tr>
@@ -152,13 +152,13 @@ export const NORMALIZED_DOMAIN &#x3D; [0, 1];
 export type DomainCalculator &#x3D; (chartSeriesSet: IChartSeries&lt;IAccessors&gt;[], scaleId: string, scale: IScale&lt;any&gt;) &#x3D;&gt; any[];
 
 /** Signature for a specific domain calculator that rounds domain to the closes tick */
-export interface DomainCalculatorWithTicks extends DomainCalculator {
-    __domainWithTicks?: true;
+export interface IDomainWithTicksCalculator extends DomainCalculator {
+    domainWithTicks?: true;
 }
 
 /** Type guard for the domain calculator with ticks */
-export function isDomainCalculatorWithTicks(obj: any): obj is DomainCalculatorWithTicks {
-    return !!obj.__domainWithTicks;
+export function isDomainWithTicksCalculator(obj: any): obj is IDomainWithTicksCalculator {
+    return !!obj.domainWithTicks;
 }
 
 /** Interface for scale formatters */
@@ -335,7 +335,7 @@ export function hasInnerScale(scale: any): scale is IHasInnerScale&lt;any&gt; {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
-            var COMPODOC_CURRENT_PAGE_URL = 'DomainCalculatorWithTicks.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'IDomainWithTicksCalculator.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

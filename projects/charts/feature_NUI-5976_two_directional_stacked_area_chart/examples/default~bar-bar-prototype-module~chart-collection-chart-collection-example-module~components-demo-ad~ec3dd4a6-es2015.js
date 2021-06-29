@@ -3367,14 +3367,14 @@ function ordinal() {
 /*!*****************************************!*\
   !*** ./src/core/common/scales/types.ts ***!
   \*****************************************/
-/*! exports provided: EMPTY_CONTINUOUS_DOMAIN, NORMALIZED_DOMAIN, isDomainCalculatorWithTicks, isBandScale, hasInnerScale */
+/*! exports provided: EMPTY_CONTINUOUS_DOMAIN, NORMALIZED_DOMAIN, isDomainWithTicksCalculator, isBandScale, hasInnerScale */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EMPTY_CONTINUOUS_DOMAIN", function() { return EMPTY_CONTINUOUS_DOMAIN; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NORMALIZED_DOMAIN", function() { return NORMALIZED_DOMAIN; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isDomainCalculatorWithTicks", function() { return isDomainCalculatorWithTicks; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isDomainWithTicksCalculator", function() { return isDomainWithTicksCalculator; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isBandScale", function() { return isBandScale; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hasInnerScale", function() { return hasInnerScale; });
 /** Domain for series with empty or null data */
@@ -3382,8 +3382,8 @@ const EMPTY_CONTINUOUS_DOMAIN = [0, 0];
 /** A reasonable non-data-driven domain for charts  */
 const NORMALIZED_DOMAIN = [0, 1];
 /** Type guard for the domain calculator with ticks */
-function isDomainCalculatorWithTicks(obj) {
-    return !!obj.__domainWithTicks;
+function isDomainWithTicksCalculator(obj) {
+    return !!obj.domainWithTicks;
 }
 function isBandScale(scale) {
     return typeof scale.bandwidth === "function";
@@ -4697,7 +4697,7 @@ class XYGrid extends _grid__WEBPACK_IMPORTED_MODULE_20__["Grid"] {
                         config = this.config().axis.bottom;
                         axisGenerator = d3_axis__WEBPACK_IMPORTED_MODULE_0__["axisBottom"];
                     }
-                    if (scale.domainCalculator && !Object(_common_scales_types__WEBPACK_IMPORTED_MODULE_15__["isDomainCalculatorWithTicks"])(scale.domainCalculator) && config.gridTicks) {
+                    if (scale.domainCalculator && !Object(_common_scales_types__WEBPACK_IMPORTED_MODULE_15__["isDomainWithTicksCalculator"])(scale.domainCalculator) && config.gridTicks) {
                         scale.__domainCalculatedWithTicks = true;
                         scale.domainCalculator = Object(_common_scales_domain_calculation_domain_with_ticks__WEBPACK_IMPORTED_MODULE_13__["getAutomaticDomainWithTicks"])(config, axisGenerator, scale.domainCalculator);
                     }
@@ -8178,7 +8178,7 @@ class AreaRenderer extends _xy_renderer__WEBPACK_IMPORTED_MODULE_8__["XYRenderer
 /*!********************************!*\
   !*** ./src/core/public-api.ts ***!
   \********************************/
-/*! exports provided: ChartPalette, MappedValueProvider, CHART_PALETTE_CS1, CHART_PALETTE_CS2, CHART_PALETTE_CS3, CHART_PALETTE_CS_S, CHART_PALETTE_CS_S_EXTENDED, CHART_MARKERS, ProcessedColorProvider, SequentialChartMarkerProvider, SequentialColorProvider, SequentialValueProvider, TextColorProvider, PathMarker, SvgMarker, defaultColorProvider, defaultPalette, defaultMarkerProvider, getColorValueByName, getAutomaticDomain, getAutomaticDomainWithIncludedInterval, getAutomaticDomainWithTicks, domainWithAuxiliarySeries, mergeDomains, BandScale, PointScale, LinearScale, Scale, TimeScale, isDaylightSavingTime, TimeIntervalScale, datetimeFormatter, EMPTY_CONTINUOUS_DOMAIN, NORMALIZED_DOMAIN, isDomainCalculatorWithTicks, isBandScale, hasInnerScale, NoopScale, convert, invert, ChartPlugin, DataManager, DataSeries, EventBus, InteractionType, Lasagna, MouseInteractiveArea, RenderEngine, Renderer, UtilityService, AxisConfig, BorderConfig, DimensionConfig, linearGaugeGridConfig, GridConfig, AreaGridConfig, BarGridConfig, BarHorizontalGridConfig, BarStatusGridConfig, sparkChartGridConfig, XYGridConfig, XYGrid, borderMidpoint, Grid, RadialGrid, ChartDonutContentPlugin, ChartPopoverPlugin, DonutGaugeLabelsPlugin, LinearGaugeLabelsPlugin, GAUGE_LABEL_FORMATTER_NAME_DEFAULT, GAUGE_LABELS_CONTAINER_CLASS, GAUGE_THRESHOLD_LABEL_CLASS, InteractionLabelPlugin, InteractionLinePlugin, MouseInteractiveAreaPlugin, RadialPopoverPlugin, RenderEnginePlugin, TOOLTIP_POSITION_OFFSET, getVerticalSetup, getHorizontalSetup, ChartTooltipsPlugin, RadialTooltipsPlugin, BarTooltipsPlugin, ZoomPlugin, ChartCollection, Chart, ChartAssist, LegendInteractionAssist, SparkChartAssist, ChartAssistEventType, ChartAssistRenderStateData, CssFilterId, GRAYSCALE_FILTER, GRAYSCALE_COLOR_MATRIX */
+/*! exports provided: ChartPalette, MappedValueProvider, CHART_PALETTE_CS1, CHART_PALETTE_CS2, CHART_PALETTE_CS3, CHART_PALETTE_CS_S, CHART_PALETTE_CS_S_EXTENDED, CHART_MARKERS, ProcessedColorProvider, SequentialChartMarkerProvider, SequentialColorProvider, SequentialValueProvider, TextColorProvider, PathMarker, SvgMarker, defaultColorProvider, defaultPalette, defaultMarkerProvider, getColorValueByName, getAutomaticDomain, getAutomaticDomainWithIncludedInterval, getAutomaticDomainWithTicks, domainWithAuxiliarySeries, mergeDomains, BandScale, PointScale, LinearScale, Scale, TimeScale, isDaylightSavingTime, TimeIntervalScale, datetimeFormatter, EMPTY_CONTINUOUS_DOMAIN, NORMALIZED_DOMAIN, isDomainWithTicksCalculator, isBandScale, hasInnerScale, NoopScale, convert, invert, ChartPlugin, DataManager, DataSeries, EventBus, InteractionType, Lasagna, MouseInteractiveArea, RenderEngine, Renderer, UtilityService, AxisConfig, BorderConfig, DimensionConfig, linearGaugeGridConfig, GridConfig, AreaGridConfig, BarGridConfig, BarHorizontalGridConfig, BarStatusGridConfig, sparkChartGridConfig, XYGridConfig, XYGrid, borderMidpoint, Grid, RadialGrid, ChartDonutContentPlugin, ChartPopoverPlugin, DonutGaugeLabelsPlugin, LinearGaugeLabelsPlugin, GAUGE_LABEL_FORMATTER_NAME_DEFAULT, GAUGE_LABELS_CONTAINER_CLASS, GAUGE_THRESHOLD_LABEL_CLASS, InteractionLabelPlugin, InteractionLinePlugin, MouseInteractiveAreaPlugin, RadialPopoverPlugin, RenderEnginePlugin, TOOLTIP_POSITION_OFFSET, getVerticalSetup, getHorizontalSetup, ChartTooltipsPlugin, RadialTooltipsPlugin, BarTooltipsPlugin, ZoomPlugin, ChartCollection, Chart, ChartAssist, LegendInteractionAssist, SparkChartAssist, ChartAssistEventType, ChartAssistRenderStateData, CssFilterId, GRAYSCALE_FILTER, GRAYSCALE_COLOR_MATRIX */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8252,7 +8252,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "NORMALIZED_DOMAIN", function() { return _common_public_api__WEBPACK_IMPORTED_MODULE_0__["NORMALIZED_DOMAIN"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "isDomainCalculatorWithTicks", function() { return _common_public_api__WEBPACK_IMPORTED_MODULE_0__["isDomainCalculatorWithTicks"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "isDomainWithTicksCalculator", function() { return _common_public_api__WEBPACK_IMPORTED_MODULE_0__["isDomainWithTicksCalculator"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "isBandScale", function() { return _common_public_api__WEBPACK_IMPORTED_MODULE_0__["isBandScale"]; });
 
@@ -16815,7 +16815,7 @@ function gatherCategories(chartSeriesSet, type = "category") {
 /*!**********************************************!*\
   !*** ./src/core/common/scales/public-api.ts ***!
   \**********************************************/
-/*! exports provided: getAutomaticDomain, getAutomaticDomainWithIncludedInterval, getAutomaticDomainWithTicks, domainWithAuxiliarySeries, mergeDomains, BandScale, PointScale, LinearScale, Scale, TimeScale, isDaylightSavingTime, TimeIntervalScale, datetimeFormatter, EMPTY_CONTINUOUS_DOMAIN, NORMALIZED_DOMAIN, isDomainCalculatorWithTicks, isBandScale, hasInnerScale, NoopScale, convert, invert */
+/*! exports provided: getAutomaticDomain, getAutomaticDomainWithIncludedInterval, getAutomaticDomainWithTicks, domainWithAuxiliarySeries, mergeDomains, BandScale, PointScale, LinearScale, Scale, TimeScale, isDaylightSavingTime, TimeIntervalScale, datetimeFormatter, EMPTY_CONTINUOUS_DOMAIN, NORMALIZED_DOMAIN, isDomainWithTicksCalculator, isBandScale, hasInnerScale, NoopScale, convert, invert */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16862,7 +16862,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "NORMALIZED_DOMAIN", function() { return _types__WEBPACK_IMPORTED_MODULE_11__["NORMALIZED_DOMAIN"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "isDomainCalculatorWithTicks", function() { return _types__WEBPACK_IMPORTED_MODULE_11__["isDomainCalculatorWithTicks"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "isDomainWithTicksCalculator", function() { return _types__WEBPACK_IMPORTED_MODULE_11__["isDomainWithTicksCalculator"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "isBandScale", function() { return _types__WEBPACK_IMPORTED_MODULE_11__["isBandScale"]; });
 
@@ -20933,7 +20933,7 @@ var days = day.range;
 /*!***************************************!*\
   !*** ./src/core/common/public-api.ts ***!
   \***************************************/
-/*! exports provided: ChartPalette, MappedValueProvider, CHART_PALETTE_CS1, CHART_PALETTE_CS2, CHART_PALETTE_CS3, CHART_PALETTE_CS_S, CHART_PALETTE_CS_S_EXTENDED, CHART_MARKERS, ProcessedColorProvider, SequentialChartMarkerProvider, SequentialColorProvider, SequentialValueProvider, TextColorProvider, PathMarker, SvgMarker, defaultColorProvider, defaultPalette, defaultMarkerProvider, getColorValueByName, getAutomaticDomain, getAutomaticDomainWithIncludedInterval, getAutomaticDomainWithTicks, domainWithAuxiliarySeries, mergeDomains, BandScale, PointScale, LinearScale, Scale, TimeScale, isDaylightSavingTime, TimeIntervalScale, datetimeFormatter, EMPTY_CONTINUOUS_DOMAIN, NORMALIZED_DOMAIN, isDomainCalculatorWithTicks, isBandScale, hasInnerScale, NoopScale, convert, invert, ChartPlugin, DataManager, DataSeries, EventBus, InteractionType, Lasagna, MouseInteractiveArea, RenderEngine, Renderer, UtilityService */
+/*! exports provided: ChartPalette, MappedValueProvider, CHART_PALETTE_CS1, CHART_PALETTE_CS2, CHART_PALETTE_CS3, CHART_PALETTE_CS_S, CHART_PALETTE_CS_S_EXTENDED, CHART_MARKERS, ProcessedColorProvider, SequentialChartMarkerProvider, SequentialColorProvider, SequentialValueProvider, TextColorProvider, PathMarker, SvgMarker, defaultColorProvider, defaultPalette, defaultMarkerProvider, getColorValueByName, getAutomaticDomain, getAutomaticDomainWithIncludedInterval, getAutomaticDomainWithTicks, domainWithAuxiliarySeries, mergeDomains, BandScale, PointScale, LinearScale, Scale, TimeScale, isDaylightSavingTime, TimeIntervalScale, datetimeFormatter, EMPTY_CONTINUOUS_DOMAIN, NORMALIZED_DOMAIN, isDomainWithTicksCalculator, isBandScale, hasInnerScale, NoopScale, convert, invert, ChartPlugin, DataManager, DataSeries, EventBus, InteractionType, Lasagna, MouseInteractiveArea, RenderEngine, Renderer, UtilityService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -21008,7 +21008,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "NORMALIZED_DOMAIN", function() { return _scales_public_api__WEBPACK_IMPORTED_MODULE_1__["NORMALIZED_DOMAIN"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "isDomainCalculatorWithTicks", function() { return _scales_public_api__WEBPACK_IMPORTED_MODULE_1__["isDomainCalculatorWithTicks"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "isDomainWithTicksCalculator", function() { return _scales_public_api__WEBPACK_IMPORTED_MODULE_1__["isDomainWithTicksCalculator"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "isBandScale", function() { return _scales_public_api__WEBPACK_IMPORTED_MODULE_1__["isBandScale"]; });
 
@@ -21734,7 +21734,7 @@ __webpack_require__.r(__webpack_exports__);
 /*!***************************!*\
   !*** ./src/public-api.ts ***!
   \***************************/
-/*! exports provided: ChartTooltipDirective, ChartTooltipComponent, ChartDonutContentComponent, ChartTooltipsComponent, ChartPopoverComponent, ChartMarkerComponent, NuiChartsModule, ChartComponent, GAUGE_QUANTITY_SERIES_ID, GAUGE_REMAINDER_SERIES_ID, GAUGE_THRESHOLD_MARKERS_SERIES_ID, GaugeMode, StandardLinearGaugeThickness, StandardGaugeThresholdMarkerRadius, StandardGaugeThresholdId, StandardGaugeColor, GaugeUtil, ChartCollectionIdDirective, ChartCollectionService, ChartPalette, MappedValueProvider, CHART_PALETTE_CS1, CHART_PALETTE_CS2, CHART_PALETTE_CS3, CHART_PALETTE_CS_S, CHART_PALETTE_CS_S_EXTENDED, CHART_MARKERS, ProcessedColorProvider, SequentialChartMarkerProvider, SequentialColorProvider, SequentialValueProvider, TextColorProvider, PathMarker, SvgMarker, defaultColorProvider, defaultPalette, defaultMarkerProvider, getColorValueByName, getAutomaticDomain, getAutomaticDomainWithIncludedInterval, getAutomaticDomainWithTicks, domainWithAuxiliarySeries, mergeDomains, BandScale, PointScale, LinearScale, Scale, TimeScale, isDaylightSavingTime, TimeIntervalScale, datetimeFormatter, EMPTY_CONTINUOUS_DOMAIN, NORMALIZED_DOMAIN, isDomainCalculatorWithTicks, isBandScale, hasInnerScale, NoopScale, convert, invert, ChartPlugin, DataManager, DataSeries, EventBus, InteractionType, Lasagna, MouseInteractiveArea, RenderEngine, Renderer, UtilityService, AxisConfig, BorderConfig, DimensionConfig, linearGaugeGridConfig, GridConfig, AreaGridConfig, BarGridConfig, BarHorizontalGridConfig, BarStatusGridConfig, sparkChartGridConfig, XYGridConfig, XYGrid, borderMidpoint, Grid, RadialGrid, ChartDonutContentPlugin, ChartPopoverPlugin, DonutGaugeLabelsPlugin, LinearGaugeLabelsPlugin, GAUGE_LABEL_FORMATTER_NAME_DEFAULT, GAUGE_LABELS_CONTAINER_CLASS, GAUGE_THRESHOLD_LABEL_CLASS, InteractionLabelPlugin, InteractionLinePlugin, MouseInteractiveAreaPlugin, RadialPopoverPlugin, RenderEnginePlugin, TOOLTIP_POSITION_OFFSET, getVerticalSetup, getHorizontalSetup, ChartTooltipsPlugin, RadialTooltipsPlugin, BarTooltipsPlugin, ZoomPlugin, ChartCollection, Chart, ChartAssist, LegendInteractionAssist, SparkChartAssist, ChartAssistEventType, ChartAssistRenderStateData, CssFilterId, GRAYSCALE_FILTER, GRAYSCALE_COLOR_MATRIX, LEGEND_SERIES_CLASS_NAME, LegendSeriesComponent, BasicLegendTileComponent, RichLegendTileComponent, LegendComponent, THRESHOLDS_MAIN_CHART_RENDERER_CONFIG, THRESHOLDS_SUMMARY_RENDERER_CONFIG, DEFAULT_MARKER_INTERACTION_CONFIG, GAUGE_THRESHOLD_MARKER_CLASS, RenderState, RenderLayerName, XYRenderer, SideIndicatorAccessors, SideIndicatorRenderer, XYAccessors, NoopAccessors, RectangleAccessors, NoopRenderer, BarRenderer, stackedPreprocessor, stack, barGrid, barScales, BarAccessors, barAccessors, HorizontalBarAccessors, VerticalBarAccessors, StatusAccessors, statusAccessors, BarHighlightStrategy, BarSeriesHighlightStrategy, DEFAULT_LINEAR_GAUGE_THRESHOLDS_RENDERER_CONFIG, LinearGaugeThresholdsRenderer, radialPreprocessor, radial, DEFAULT_RADIAL_RENDERER_CONFIG, RadialRenderer, DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG, DonutGaugeThresholdsRenderer, donutGaugeRendererConfig, DonutGaugeRenderingUtil, PieRenderer, radialGrid, radialScales, RadialAccessors, calculateMissingData, LineSelectSeriesInteractionStrategy, LineAccessors, LineRenderer, MissingDataLineRendererConfig, areaGrid, AreaAccessors, AreaRenderer, stackedAreaPreprocessor, stackedArea, stackedPercentageAreaPreprocessor, stackedPercentageArea, calculateDomainValueCombinedTotals, applyStackMetadata, stackedAreaAccessors, MOUSE_ACTIVE_EVENT, INTERACTION_VALUES_ACTIVE_EVENT, INTERACTION_VALUES_EVENT, INTERACTION_COORDINATES_EVENT, HIGHLIGHT_DATA_POINT_EVENT, SELECT_DATA_POINT_EVENT, HIGHLIGHT_SERIES_EVENT, INTERACTION_SERIES_EVENT, INTERACTION_DATA_POINTS_EVENT, INTERACTION_DATA_POINT_EVENT, DESTROY_EVENT, SET_DOMAIN_EVENT, REFRESH_EVENT, CHART_VIEW_STATUS_EVENT, SERIES_STATE_CHANGE_EVENT, AXES_STYLE_CHANGE_EVENT, CHART_COMPONENT, STANDARD_RENDER_LAYERS, DATA_POINT_NOT_FOUND, DATA_POINT_INTERACTION_RESET, IGNORE_INTERACTION_CLASS, ZoneBoundary, ThresholdsService, thresholdsSummaryGridConfig, thresholdsTopGridConfig */
+/*! exports provided: ChartTooltipDirective, ChartTooltipComponent, ChartDonutContentComponent, ChartTooltipsComponent, ChartPopoverComponent, ChartMarkerComponent, NuiChartsModule, ChartComponent, GAUGE_QUANTITY_SERIES_ID, GAUGE_REMAINDER_SERIES_ID, GAUGE_THRESHOLD_MARKERS_SERIES_ID, GaugeMode, StandardLinearGaugeThickness, StandardGaugeThresholdMarkerRadius, StandardGaugeThresholdId, StandardGaugeColor, GaugeUtil, ChartCollectionIdDirective, ChartCollectionService, ChartPalette, MappedValueProvider, CHART_PALETTE_CS1, CHART_PALETTE_CS2, CHART_PALETTE_CS3, CHART_PALETTE_CS_S, CHART_PALETTE_CS_S_EXTENDED, CHART_MARKERS, ProcessedColorProvider, SequentialChartMarkerProvider, SequentialColorProvider, SequentialValueProvider, TextColorProvider, PathMarker, SvgMarker, defaultColorProvider, defaultPalette, defaultMarkerProvider, getColorValueByName, getAutomaticDomain, getAutomaticDomainWithIncludedInterval, getAutomaticDomainWithTicks, domainWithAuxiliarySeries, mergeDomains, BandScale, PointScale, LinearScale, Scale, TimeScale, isDaylightSavingTime, TimeIntervalScale, datetimeFormatter, EMPTY_CONTINUOUS_DOMAIN, NORMALIZED_DOMAIN, isDomainWithTicksCalculator, isBandScale, hasInnerScale, NoopScale, convert, invert, ChartPlugin, DataManager, DataSeries, EventBus, InteractionType, Lasagna, MouseInteractiveArea, RenderEngine, Renderer, UtilityService, AxisConfig, BorderConfig, DimensionConfig, linearGaugeGridConfig, GridConfig, AreaGridConfig, BarGridConfig, BarHorizontalGridConfig, BarStatusGridConfig, sparkChartGridConfig, XYGridConfig, XYGrid, borderMidpoint, Grid, RadialGrid, ChartDonutContentPlugin, ChartPopoverPlugin, DonutGaugeLabelsPlugin, LinearGaugeLabelsPlugin, GAUGE_LABEL_FORMATTER_NAME_DEFAULT, GAUGE_LABELS_CONTAINER_CLASS, GAUGE_THRESHOLD_LABEL_CLASS, InteractionLabelPlugin, InteractionLinePlugin, MouseInteractiveAreaPlugin, RadialPopoverPlugin, RenderEnginePlugin, TOOLTIP_POSITION_OFFSET, getVerticalSetup, getHorizontalSetup, ChartTooltipsPlugin, RadialTooltipsPlugin, BarTooltipsPlugin, ZoomPlugin, ChartCollection, Chart, ChartAssist, LegendInteractionAssist, SparkChartAssist, ChartAssistEventType, ChartAssistRenderStateData, CssFilterId, GRAYSCALE_FILTER, GRAYSCALE_COLOR_MATRIX, LEGEND_SERIES_CLASS_NAME, LegendSeriesComponent, BasicLegendTileComponent, RichLegendTileComponent, LegendComponent, THRESHOLDS_MAIN_CHART_RENDERER_CONFIG, THRESHOLDS_SUMMARY_RENDERER_CONFIG, DEFAULT_MARKER_INTERACTION_CONFIG, GAUGE_THRESHOLD_MARKER_CLASS, RenderState, RenderLayerName, XYRenderer, SideIndicatorAccessors, SideIndicatorRenderer, XYAccessors, NoopAccessors, RectangleAccessors, NoopRenderer, BarRenderer, stackedPreprocessor, stack, barGrid, barScales, BarAccessors, barAccessors, HorizontalBarAccessors, VerticalBarAccessors, StatusAccessors, statusAccessors, BarHighlightStrategy, BarSeriesHighlightStrategy, DEFAULT_LINEAR_GAUGE_THRESHOLDS_RENDERER_CONFIG, LinearGaugeThresholdsRenderer, radialPreprocessor, radial, DEFAULT_RADIAL_RENDERER_CONFIG, RadialRenderer, DEFAULT_RADIAL_GAUGE_THRESHOLDS_RENDERER_CONFIG, DonutGaugeThresholdsRenderer, donutGaugeRendererConfig, DonutGaugeRenderingUtil, PieRenderer, radialGrid, radialScales, RadialAccessors, calculateMissingData, LineSelectSeriesInteractionStrategy, LineAccessors, LineRenderer, MissingDataLineRendererConfig, areaGrid, AreaAccessors, AreaRenderer, stackedAreaPreprocessor, stackedArea, stackedPercentageAreaPreprocessor, stackedPercentageArea, calculateDomainValueCombinedTotals, applyStackMetadata, stackedAreaAccessors, MOUSE_ACTIVE_EVENT, INTERACTION_VALUES_ACTIVE_EVENT, INTERACTION_VALUES_EVENT, INTERACTION_COORDINATES_EVENT, HIGHLIGHT_DATA_POINT_EVENT, SELECT_DATA_POINT_EVENT, HIGHLIGHT_SERIES_EVENT, INTERACTION_SERIES_EVENT, INTERACTION_DATA_POINTS_EVENT, INTERACTION_DATA_POINT_EVENT, DESTROY_EVENT, SET_DOMAIN_EVENT, REFRESH_EVENT, CHART_VIEW_STATUS_EVENT, SERIES_STATE_CHANGE_EVENT, AXES_STYLE_CHANGE_EVENT, CHART_COMPONENT, STANDARD_RENDER_LAYERS, DATA_POINT_NOT_FOUND, DATA_POINT_INTERACTION_RESET, IGNORE_INTERACTION_CLASS, ZoneBoundary, ThresholdsService, thresholdsSummaryGridConfig, thresholdsTopGridConfig */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -21856,7 +21856,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "NORMALIZED_DOMAIN", function() { return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["NORMALIZED_DOMAIN"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "isDomainCalculatorWithTicks", function() { return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["isDomainCalculatorWithTicks"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "isDomainWithTicksCalculator", function() { return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["isDomainWithTicksCalculator"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "isBandScale", function() { return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["isBandScale"]; });
 
@@ -32503,7 +32503,7 @@ const getAutomaticDomainWithTicks = (config, axisGenerator, domainCalculator) =>
         }
         return mergedDomains;
     };
-    result.__domainWithTicks = true;
+    result.domainWithTicks = true;
     return result;
 };
 

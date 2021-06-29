@@ -914,7 +914,7 @@ let AreaChartBiDirectionalStackedExampleComponent = class AreaChartBiDirectional
         this.chartTop = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["Chart"](new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["XYGrid"](topChartConfig()), { updateDomainForEmptySeries: true });
         this.chartAssistTop = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["ChartAssist"](this.chartTop, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["stackedArea"]);
         this.chartBottom = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["Chart"](new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["XYGrid"](bottomChartConfig()), { updateDomainForEmptySeries: true });
-        this.chartAssistBottom = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["ChartAssist"](this.chartBottom, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["stackedArea"]);
+        this.chartAssistBottom = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["ChartAssist"](this.chartBottom, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["stackedArea"], this.chartAssistTop.palette, this.chartAssistTop.markers);
         // Area accessors let the renderer know how to access x and y domain data respectively from a chart's input data set(s).
         const accessors = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["AreaAccessors"]();
         // 'x' defines access for values in the data that correspond to the horizontal axis
@@ -950,13 +950,24 @@ let AreaChartBiDirectionalStackedExampleComponent = class AreaChartBiDirectional
             accessors, scales: scalesTop })));
         const seriesSetBottom = getDataBottom().map(d => (Object.assign(Object.assign({}, d), { renderer,
             accessors, scales: scalesBottom })));
-        scalesTop.y.domainCalculator = scalesTop.x.domainCalculator =
-            Object(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["domainWithAuxiliarySeries"])(() => seriesSetBottom, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["getAutomaticDomain"]);
-        scalesBottom.y.domainCalculator = scalesBottom.x.domainCalculator =
-            Object(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["domainWithAuxiliarySeries"])(() => seriesSetTop, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["getAutomaticDomain"]);
+        // We need to replace domain calculators to reflect series on both charts
+        const topChartDomainCalculator = Object(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["domainWithAuxiliarySeries"])(() => seriesSetBottom, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["getAutomaticDomain"]);
+        scalesTop.y.domainCalculator = topChartDomainCalculator;
+        scalesTop.x.domainCalculator = topChartDomainCalculator;
+        const bottomChartDomainCalculator = Object(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["domainWithAuxiliarySeries"])(() => seriesSetTop, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["getAutomaticDomain"]);
+        scalesBottom.y.domainCalculator = bottomChartDomainCalculator;
+        scalesBottom.x.domainCalculator = bottomChartDomainCalculator;
         this.chartAssistTop.update(seriesSetTop);
         this.chartAssistBottom.update(seriesSetBottom);
     }
+    /**
+     * This function ensures the change in visibility of series is propagated to both charts. Chart that is directly associated with the series has to be
+     * invoked first.
+     *
+     * @param legendSeries
+     * @param value
+     * @param currentChartAssist
+     */
     onSelectedChange(legendSeries, value, currentChartAssist) {
         let chartAssists = [this.chartAssistTop, this.chartAssistBottom];
         if (currentChartAssist === this.chartAssistBottom) {

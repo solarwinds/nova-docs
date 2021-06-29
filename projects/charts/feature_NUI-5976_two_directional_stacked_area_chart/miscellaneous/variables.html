@@ -1798,8 +1798,8 @@ considered data set.</p>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>(config: IAxisConfig, axisGenerator: any, domainCalculator: DomainCalculator): DomainCalculator &#x3D;&gt; {
-    const result: DomainCalculatorWithTicks &#x3D; (chartSeriesSet: IChartSeries&lt;IAccessors&gt;[], scaleKey: string, scale: IScale&lt;any&gt;): any[] &#x3D;&gt; {
+                            <i>Default value : </i><code>(config: IAxisConfig, axisGenerator: any, domainCalculator: DomainCalculator): IDomainWithTicksCalculator  &#x3D;&gt; {
+    const result: IDomainWithTicksCalculator &#x3D; (chartSeriesSet: IChartSeries&lt;IAccessors&gt;[], scaleKey: string, scale: IScale&lt;any&gt;): any[] &#x3D;&gt; {
         const mergedDomains &#x3D; domainCalculator(chartSeriesSet, scaleKey, scale);
         const clonedScale &#x3D; cloneDeep(scale);
         domain(clonedScale, mergedDomains);
@@ -1817,7 +1817,7 @@ considered data set.</p>
         }
         return mergedDomains;
     };
-    result.__domainWithTicks &#x3D; true;
+    result.domainWithTicks &#x3D; true;
     return result;
 }</code>
                         </td>

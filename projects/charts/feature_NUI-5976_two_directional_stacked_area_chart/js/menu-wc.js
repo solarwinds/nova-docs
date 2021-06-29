@@ -487,9 +487,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </div>
                         <ul class="links collapse " ${ isNormalMode ? ' id="interfaces-links"' : 'id="xs-interfaces-links"' }>
                             <li class="link">
-                                <a href="interfaces/DomainCalculatorWithTicks.html" data-type="entity-link">DomainCalculatorWithTicks</a>
-                            </li>
-                            <li class="link">
                                 <a href="interfaces/IAccessors.html" data-type="entity-link">IAccessors</a>
                             </li>
                             <li class="link">
@@ -584,6 +581,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="interfaces/IDimensions.html" data-type="entity-link">IDimensions</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/IDomainWithTicksCalculator.html" data-type="entity-link">IDomainWithTicksCalculator</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/IElementPosition.html" data-type="entity-link">IElementPosition</a>
