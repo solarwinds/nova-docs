@@ -939,11 +939,11 @@ let AreaChartBiDirectionalStackedExampleComponent = class AreaChartBiDirectional
         // This example demonstrates a scenario with time on the X scale and a numeric value on the Y scale.
         const scalesTop = {
             x: xScale,
-            y: new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["LinearScale"]().reverse(),
+            y: new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["LinearScale"](),
         };
         const scalesBottom = {
             x: xScale,
-            y: new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["LinearScale"](),
+            y: new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["LinearScale"]().reverse(),
         };
         // Here we assemble the complete chart series.
         const seriesSetTop = getDataTop().map(d => (Object.assign(Object.assign({}, d), { renderer,

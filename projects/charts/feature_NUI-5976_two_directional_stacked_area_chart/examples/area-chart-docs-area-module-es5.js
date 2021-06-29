@@ -1645,11 +1645,11 @@
 
             var scalesTop = {
               x: xScale,
-              y: new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["LinearScale"]().reverse()
+              y: new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["LinearScale"]()
             };
             var scalesBottom = {
               x: xScale,
-              y: new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["LinearScale"]()
+              y: new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["LinearScale"]().reverse()
             }; // Here we assemble the complete chart series.
 
             var seriesSetTop = getDataTop().map(function (d) {
