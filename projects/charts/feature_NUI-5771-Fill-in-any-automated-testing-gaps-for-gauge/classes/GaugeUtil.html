@@ -141,6 +141,10 @@
                             </li>
                             <li>
                                     <span class="modifier">Static</span>
+                                <a href="#getMarginForLabelClearance">getMarginForLabelClearance</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
                                 <a href="#prepareThresholdsData">prepareThresholdsData</a>
                             </li>
                             <li>
@@ -236,8 +240,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="148"
-                            class="link-to-prism">src/gauge/gauge-util.ts:148</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="130"
+                            class="link-to-prism">src/gauge/gauge-util.ts:130</a></div>
                 </td>
             </tr>
 
@@ -445,8 +449,8 @@ be generated automatically.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="360"
-                            class="link-to-prism">src/gauge/gauge-util.ts:360</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="202"
+                            class="link-to-prism">src/gauge/gauge-util.ts:202</a></div>
                 </td>
             </tr>
 
@@ -541,8 +545,8 @@ be generated automatically.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="393"
-                            class="link-to-prism">src/gauge/gauge-util.ts:393</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="415"
+                            class="link-to-prism">src/gauge/gauge-util.ts:415</a></div>
                 </td>
             </tr>
 
@@ -622,8 +626,8 @@ series needed by the gauge visualization</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="221"
-                            class="link-to-prism">src/gauge/gauge-util.ts:221</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="276"
+                            class="link-to-prism">src/gauge/gauge-util.ts:276</a></div>
                 </td>
             </tr>
 
@@ -734,8 +738,8 @@ series needed by the gauge visualization</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="285"
-                            class="link-to-prism">src/gauge/gauge-util.ts:285</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="340"
+                            class="link-to-prism">src/gauge/gauge-util.ts:340</a></div>
                 </td>
             </tr>
 
@@ -830,8 +834,8 @@ series needed by the gauge visualization</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="306"
-                            class="link-to-prism">src/gauge/gauge-util.ts:306</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="361"
+                            class="link-to-prism">src/gauge/gauge-util.ts:361</a></div>
                 </td>
             </tr>
 
@@ -926,8 +930,8 @@ series needed by the gauge visualization</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="409"
-                            class="link-to-prism">src/gauge/gauge-util.ts:409</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="431"
+                            class="link-to-prism">src/gauge/gauge-util.ts:431</a></div>
                 </td>
             </tr>
 
@@ -1007,8 +1011,8 @@ series used for the the gauge&#39;s thresholds visualization</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="263"
-                            class="link-to-prism">src/gauge/gauge-util.ts:263</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="318"
+                            class="link-to-prism">src/gauge/gauge-util.ts:318</a></div>
                 </td>
             </tr>
 
@@ -1083,6 +1087,119 @@ series used for the the gauge&#39;s thresholds visualization</p>
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="getMarginForLabelClearance"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            getMarginForLabelClearance
+                        </b>
+                        <a href="#getMarginForLabelClearance"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getMarginForLabelClearance(gaugeConfig: <a href="../interfaces/IGaugeConfig.html">IGaugeConfig</a>, mode: <a href="../undefineds/GaugeMode.html">GaugeMode</a>, margin: <a href="../interfaces/IAllAround.html">IAllAround<number></a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="237"
+                            class="link-to-prism">src/gauge/gauge-util.ts:237</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Gets a new instance of the provided grid margin with updated values (if needed) to accommodate the label clearance specified
+in the provided gauge configuration</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>gaugeConfig</td>
+                                    <td>
+                                                <code><a href="../interfaces/IGaugeConfig.html" target="_self" >IGaugeConfig</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The gauge&#39;s configuration</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>mode</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/enumerations.html#GaugeMode" target="_self" >GaugeMode</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The mode of the gauge</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>margin</td>
+                                    <td>
+                                                <code><a href="../interfaces/IAllAround.html" target="_self" >IAllAround&lt;number&gt;</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The margin to update</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/IAllAround.html" target="_self" >IAllAround&lt;number&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>The updated margin</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="prepareThresholdsData"></a>
                     <span class="name">
                         <b>
@@ -1103,8 +1220,8 @@ series used for the the gauge&#39;s thresholds visualization</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="440"
-                            class="link-to-prism">src/gauge/gauge-util.ts:440</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="462"
+                            class="link-to-prism">src/gauge/gauge-util.ts:462</a></div>
                 </td>
             </tr>
 
@@ -1183,8 +1300,8 @@ series used for the the gauge&#39;s thresholds visualization</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="179"
-                            class="link-to-prism">src/gauge/gauge-util.ts:179</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="161"
+                            class="link-to-prism">src/gauge/gauge-util.ts:161</a></div>
                 </td>
             </tr>
 
@@ -1364,22 +1481,14 @@ export class GaugeUtil {
         labelsPlugin?: DonutGaugeLabelsPlugin | LinearGaugeLabelsPlugin
     ): ChartAssist {
         const grid &#x3D; (mode &#x3D;&#x3D;&#x3D; GaugeMode.Donut) ? radialGrid() : new XYGrid(linearGaugeGridConfig(mode, gaugeConfig.linearThickness));
+        const gridConfig &#x3D; grid.config();
         const chart &#x3D; new Chart(grid);
         const enableLabels &#x3D; !isEmpty(gaugeConfig.thresholds?.definitions) &amp;&amp; !gaugeConfig.thresholds?.disableMarkers;
 
         if (mode &#x3D;&#x3D;&#x3D; GaugeMode.Donut) {
             if (enableLabels) {
                 chart.addPlugin(labelsPlugin ?? new DonutGaugeLabelsPlugin());
-
-                // apply label clearances
-                const labelClearanceConfig &#x3D; gaugeConfig.labels?.clearance;
-                const clearance &#x3D; !isNil(labelClearanceConfig) ? labelClearanceConfig : DONUT_GAUGE_LABEL_CLEARANCE_DEFAULT;
-                grid.config().dimension.margin &#x3D; {
-                    top: clearance,
-                    right: clearance,
-                    bottom: clearance,
-                    left: clearance,
-                } as IAllAround&lt;number&gt;;
+                gridConfig.dimension.margin &#x3D; GaugeUtil.getMarginForLabelClearance(gaugeConfig, mode, gridConfig.dimension.margin);
             }
 
             return new ChartAssist(chart, radial);
@@ -1388,17 +1497,7 @@ export class GaugeUtil {
         if (enableLabels) {
             const flippedLabels &#x3D; !!gaugeConfig.labels?.flipped;
             chart.addPlugin(labelsPlugin ?? new LinearGaugeLabelsPlugin({ flippedLabels }));
-
-            // apply label clearance
-            let marginToAdjust: keyof IAllAround&lt;number&gt;;
-            if (mode &#x3D;&#x3D;&#x3D; GaugeMode.Horizontal) {
-                marginToAdjust &#x3D; flippedLabels ? &quot;top&quot; : &quot;bottom&quot;;
-            } else {
-                marginToAdjust &#x3D; flippedLabels ? &quot;left&quot; : &quot;right&quot;;
-            }
-
-            const clearance &#x3D; gaugeConfig.labels?.clearance ?? LINEAR_GAUGE_LABEL_CLEARANCE_DEFAULTS[marginToAdjust];
-            grid.config().dimension.margin[marginToAdjust] &#x3D; clearance;
+            gridConfig.dimension.margin &#x3D; GaugeUtil.getMarginForLabelClearance(gaugeConfig, mode, gridConfig.dimension.margin);
         }
 
         return new ChartAssist(chart, stack);
@@ -1474,6 +1573,79 @@ export class GaugeUtil {
         });
 
         return updatedSeriesSet;
+    }
+
+    /**
+     * Convenience function for creating a standard standard set of threshold configs. Includes configurations for warning and error thresholds.
+     *
+     * @param warningVal Value for the warning threshold
+     * @param criticalVal Value for the critical threshold
+     *
+     * @returns {IGaugeThresholdsConfig} The thresholds configuration
+     */
+    public static createStandardThresholdsConfig(warningVal: number, criticalVal: number): IGaugeThresholdsConfig {
+        // assigning to variable to prevent &quot;Expression form not supported&quot; error
+        const config &#x3D; {
+            definitions: {
+                [StandardGaugeThresholdId.Warning]: {
+                    id: StandardGaugeThresholdId.Warning,
+                    value: warningVal,
+                    enabled: true,
+                    color: StandardGaugeColor.Warning,
+                },
+                [StandardGaugeThresholdId.Critical]: {
+                    id: StandardGaugeThresholdId.Critical,
+                    value: criticalVal,
+                    enabled: true,
+                    color: StandardGaugeColor.Critical,
+                },
+            },
+            reversed: false,
+            disableMarkers: false,
+            markerRadius: StandardGaugeThresholdMarkerRadius.Large,
+        }
+
+        return config;
+    }
+
+    /**
+     * Gets a new instance of the provided grid margin with updated values (if needed) to accommodate the label clearance specified
+     * in the provided gauge configuration
+     *
+     * @param gaugeConfig The gauge&#x27;s configuration
+     * @param mode The mode of the gauge
+     * @param margin The margin to update
+     *
+     * @returns The updated margin
+     */
+    public static getMarginForLabelClearance(gaugeConfig: IGaugeConfig, mode: GaugeMode, margin: IAllAround&lt;number&gt;): IAllAround&lt;number&gt; {
+        if (mode &#x3D;&#x3D;&#x3D; GaugeMode.Donut) {
+            const labelClearanceConfig &#x3D; gaugeConfig.labels?.clearance;
+            const clearance &#x3D; !isNil(labelClearanceConfig) ? labelClearanceConfig : DONUT_GAUGE_LABEL_CLEARANCE_DEFAULT;
+
+            // on the radial grid the maximum margin value is used for all margins, so we use the max value here
+            const maxMargin &#x3D; Math.max(...Object.values(margin));
+            const marginValue &#x3D; maxMargin &gt; clearance ? maxMargin : clearance;
+
+            return {
+                top: marginValue,
+                right: marginValue,
+                bottom: marginValue,
+                left: marginValue,
+            }
+        }
+
+        let marginToAdjust: keyof IAllAround&lt;number&gt;;
+        const flippedLabels &#x3D; !!gaugeConfig.labels?.flipped;
+        if (mode &#x3D;&#x3D;&#x3D; GaugeMode.Horizontal) {
+            marginToAdjust &#x3D; flippedLabels ? &quot;top&quot; : &quot;bottom&quot;;
+        } else {
+            marginToAdjust &#x3D; flippedLabels ? &quot;left&quot; : &quot;right&quot;;
+        }
+
+        const clearance &#x3D; gaugeConfig.labels?.clearance ?? LINEAR_GAUGE_LABEL_CLEARANCE_DEFAULTS[marginToAdjust];
+        const marginValue &#x3D; Math.max(margin[marginToAdjust], clearance);
+        return { ...margin, [marginToAdjust]: marginValue }
     }
 
     /**
@@ -1614,39 +1786,6 @@ export class GaugeUtil {
         }
 
         return renderingTools[mode];
-    }
-
-    /**
-     * Convenience function for creating a standard standard set of threshold configs. Includes configurations for warning and error thresholds.
-     *
-     * @param warningVal Value for the warning threshold
-     * @param criticalVal Value for the critical threshold
-     *
-     * @returns {IGaugeThresholdsConfig} The thresholds configuration
-     */
-    public static createStandardThresholdsConfig(warningVal: number, criticalVal: number): IGaugeThresholdsConfig {
-        // assigning to variable to prevent &quot;Expression form not supported&quot; error
-        const config &#x3D; {
-            definitions: {
-                [StandardGaugeThresholdId.Warning]: {
-                    id: StandardGaugeThresholdId.Warning,
-                    value: warningVal,
-                    enabled: true,
-                    color: StandardGaugeColor.Warning,
-                },
-                [StandardGaugeThresholdId.Critical]: {
-                    id: StandardGaugeThresholdId.Critical,
-                    value: criticalVal,
-                    enabled: true,
-                    color: StandardGaugeColor.Critical,
-                },
-            },
-            reversed: false,
-            disableMarkers: false,
-            markerRadius: StandardGaugeThresholdMarkerRadius.Large,
-        }
-
-        return config;
     }
 
     /**
