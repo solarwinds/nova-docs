@@ -1,0 +1,982 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@nova-ui/dashboards documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">@nova-ui/dashboards documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>TableColumnConfigurationComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">API</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/lib/configurator/components/widgets/table/columns-editor-v2/column-configuration/table-column-configuration/table-column-configuration.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/forms/ControlValueAccessor" target="_blank" >ControlValueAccessor</a></code>
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">providers</td>
+                <td class="col-md-9">
+                                <code><a href="../components/TableColumnConfigurationComponent.html" target="_self" >{
+    provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() &#x3D;&gt; TableColumnConfigurationComponent), multi: true,
+}</a></code>
+                                <code><a href="../components/TableColumnConfigurationComponent.html" target="_self" >{
+    provide: NG_VALIDATORS, useExisting: forwardRef(() &#x3D;&gt; TableColumnConfigurationComponent), multi: true,
+}</a></code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>nui-table-column-configuration</code></td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./table-column-configuration.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#changeDetector">changeDetector</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#changeFn">changeFn</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#form">form</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#lateLoadKey">lateLoadKey</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#registerOnChange">registerOnChange</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#registerOnTouched">registerOnTouched</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#setDisabledState">setDisabledState</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#validate">validate</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#writeValue">writeValue</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#formControl">formControl</a>
+                            </li>
+                            <li>
+                                <a href="#isWidthMessageDisplayed">isWidthMessageDisplayed</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(formBuilder: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, changeDetector: <a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank">ChangeDetectorRef</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor-v2/column-configuration/table-column-configuration/table-column-configuration.component.ts:35</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>formBuilder</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/forms/FormBuilder" target="_blank" >FormBuilder</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>changeDetector</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank" >ChangeDetectorRef</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="formControl"></a>
+                        <b>formControl</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/forms/AbstractControl" target="_blank" >AbstractControl</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor-v2/column-configuration/table-column-configuration/table-column-configuration.component.ts:34</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isWidthMessageDisplayed"></a>
+                        <b>isWidthMessageDisplayed</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor-v2/column-configuration/table-column-configuration/table-column-configuration.component.ts:35</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="registerOnChange"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            registerOnChange
+                        </b>
+                        <a href="#registerOnChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>registerOnChange(fn: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="59"
+                            class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor-v2/column-configuration/table-column-configuration/table-column-configuration.component.ts:59</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>fn</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="registerOnTouched"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            registerOnTouched
+                        </b>
+                        <a href="#registerOnTouched"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>registerOnTouched(fn: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="63"
+                            class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor-v2/column-configuration/table-column-configuration/table-column-configuration.component.ts:63</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>fn</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setDisabledState"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            setDisabledState
+                        </b>
+                        <a href="#setDisabledState"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>setDisabledState(isDisabled: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="66"
+                            class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor-v2/column-configuration/table-column-configuration/table-column-configuration.component.ts:66</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>isDisabled</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="validate"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            validate
+                        </b>
+                        <a href="#validate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>validate(c: <a href="https://angular.io/api/forms/FormControl" target="_blank">FormControl</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="69"
+                            class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor-v2/column-configuration/table-column-configuration/table-column-configuration.component.ts:69</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>c</td>
+                                    <td>
+                                                <code><a href="https://angular.io/api/forms/FormControl" target="_blank" >FormControl</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>ValidationErrors | null</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="writeValue"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            writeValue
+                        </b>
+                        <a href="#writeValue"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>writeValue(obj: <a href="../interfaces/ITableWidgetColumnConfig.html">ITableWidgetColumnConfig</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="73"
+                            class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor-v2/column-configuration/table-column-configuration/table-column-configuration.component.ts:73</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>obj</td>
+                                    <td>
+                                                <code><a href="../interfaces/ITableWidgetColumnConfig.html" target="_self" >ITableWidgetColumnConfig</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="changeDetector"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            changeDetector</b>
+                            <a href="#changeDetector"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank" >ChangeDetectorRef</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor-v2/column-configuration/table-column-configuration/table-column-configuration.component.ts:37</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="changeFn"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            changeFn</b>
+                            <a href="#changeFn"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" target="_blank" >Function</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor-v2/column-configuration/table-column-configuration/table-column-configuration.component.ts:29</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="form"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            form</b>
+                            <a href="#form"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor-v2/column-configuration/table-column-configuration/table-column-configuration.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="lateLoadKey"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Static</span>
+                            lateLoadKey</b>
+                            <a href="#lateLoadKey"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&quot;TableColumnConfigurationComponent&quot;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor-v2/column-configuration/table-column-configuration/table-column-configuration.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ChangeDetectorRef, Component, forwardRef, Input, OnInit } from &quot;@angular/core&quot;;
+import { AbstractControl, ControlValueAccessor, FormBuilder, FormControl, FormGroup, NG_VALIDATORS, NG_VALUE_ACCESSOR, ValidationErrors } from &quot;@angular/forms&quot;;
+import { Subject } from &quot;rxjs&quot;;
+import { takeUntil } from &quot;rxjs/operators&quot;;
+
+import { ITableWidgetColumnConfig } from &quot;../../../../../../../components/table-widget/types&quot;;
+import { onMarkAsTouched } from &quot;../../../../../../../functions/on-mark-as-touched&quot;;
+
+@Component({
+    selector: &quot;nui-table-column-configuration&quot;,
+    templateUrl: &quot;./table-column-configuration.component.html&quot;,
+    providers: [
+        {
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: forwardRef(() &#x3D;&gt; TableColumnConfigurationComponent),
+            multi: true,
+        },
+        {
+            provide: NG_VALIDATORS,
+            useExisting: forwardRef(() &#x3D;&gt; TableColumnConfigurationComponent),
+            multi: true,
+        },
+    ],
+})
+export class TableColumnConfigurationComponent implements ControlValueAccessor, OnInit {
+    public static lateLoadKey &#x3D; &quot;TableColumnConfigurationComponent&quot;;
+
+    public form: FormGroup;
+    public changeFn: Function;
+
+    private onDestroy$ &#x3D; new Subject();
+    private input: ITableWidgetColumnConfig;
+
+    @Input() formControl: AbstractControl;
+    @Input() isWidthMessageDisplayed &#x3D; false;
+
+    constructor(private formBuilder: FormBuilder, public changeDetector: ChangeDetectorRef) {
+        this.form &#x3D; this.formBuilder.group({
+            description: this.formBuilder.control({}),
+            presentation: this.formBuilder.control({}),
+        });
+
+        this.form.valueChanges.pipe(takeUntil(this.onDestroy$)).subscribe((value) &#x3D;&gt; {
+            const newValue &#x3D; {
+                id: this.input?.id,
+                ...value.description,
+                formatter: value.presentation,
+            };
+            this.changeFn(newValue);
+        });
+    }
+
+    public ngOnInit(): void {
+        onMarkAsTouched(this.formControl, () &#x3D;&gt; {
+            this.form.markAllAsTouched();
+        });
+    }
+
+    public registerOnChange(fn: any): void {
+        this.changeFn &#x3D; fn;
+    }
+
+    public registerOnTouched(fn: any): void {
+    }
+
+    public setDisabledState(isDisabled: boolean): void {
+    }
+
+    public validate(c: FormControl): ValidationErrors | null {
+        return this.form.valid ? null : { &quot;error&quot;: &quot;error&quot; };
+    }
+
+    public writeValue(obj: ITableWidgetColumnConfig): void {
+        this.input &#x3D; obj;
+
+        this.form.setValue({
+            presentation: obj?.formatter || {},
+            description: obj,
+        }, { emitEvent: false });
+
+        this.changeDetector.markForCheck();
+    }
+
+    public ngOnDestroy(): void {
+        this.onDestroy$.next();
+        this.onDestroy$.complete();
+    }
+
+}
+</code></pre>
+    </div>
+
+
+
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div [formGroup]="form">    <nui-description-configuration-v2 [formControl]="form.controls[\'description\']"                                                   [isWidthMessageDisplayed]="isWidthMessageDisplayed">    </nui-description-configuration-v2>    <nui-presentation-configuration-v2 [formControl]="form.controls[\'presentation\']">    </nui-presentation-configuration-v2></div></div>'
+    var COMPONENTS = [{'name': 'AggregatorMetricSelectorConfigurationComponent', 'selector': 'nui-aggregator-configurator'},{'name': 'BackgroundColorRulesConfigurationComponent', 'selector': 'nui-background-color-rules-configuration'},{'name': 'ColorPickerComponent', 'selector': 'nui-color-picker'},{'name': 'ConfiguratorHeadingComponent', 'selector': 'nui-configurator-heading'},{'name': 'DashboardComponent', 'selector': 'nui-dashboard'},{'name': 'DashwizButtonsComponent', 'selector': 'nui-dashwiz-buttons'},{'name': 'DashwizComponent', 'selector': 'nui-dashwiz'},{'name': 'DashwizStepComponent', 'selector': 'nui-dashwiz-step'},{'name': 'DataSourceConfigurationComponent', 'selector': 'nui-data-source-configuration'},{'name': 'DataSourceConfigurationV2Component', 'selector': 'nui-data-source-configuration'},{'name': 'DataSourceErrorComponent', 'selector': 'nui-data-source-error'},{'name': 'DescriptionConfigurationComponent', 'selector': 'nui-table-column-description-configuration'},{'name': 'DescriptionConfigurationV2Component', 'selector': 'nui-description-configuration-v2'},{'name': 'DonutContentConfigurationComponent', 'selector': 'nui-donut-content-configuration'},{'name': 'DonutContentPercentageConfigurationComponent', 'selector': 'nui-donut-content-configurator'},{'name': 'DonutContentPercentageFormatterComponent', 'selector': ''},{'name': 'DonutContentRawFormatterComponent', 'selector': ''},{'name': 'DonutContentSumFormatterComponent', 'selector': ''},{'name': 'DropAreaComponent', 'selector': 'nui-drop-area'},{'name': 'EmbeddedContentComponent', 'selector': 'nui-embedded-content'},{'name': 'EmbeddedContentConfigurationComponent', 'selector': 'nui-embedded-content-configuration'},{'name': 'EntityFormattingConfigurationComponent', 'selector': 'nui-entity-formatting-configuration'},{'name': 'FieldMapperAggregatorConfiguratorComponent', 'selector': 'nui-field-mapper-aggregator-configurator'},{'name': 'FormStackComponent', 'selector': 'nui-form-stack'},{'name': 'GroupingConfigurationComponent', 'selector': 'nui-grouping-configuration'},{'name': 'IconFormatterComponent', 'selector': ''},{'name': 'InfoMessageConfigurationComponent', 'selector': 'nui-info-message-configuration'},{'name': 'KpiComponent', 'selector': 'nui-kpi'},{'name': 'KpiDescriptionConfigurationComponent', 'selector': 'nui-kpi-description-configuration'},{'name': 'KpiTilesConfigurationComponent', 'selector': 'nui-kpi-tiles-configuration-component'},{'name': 'LineChartComponent', 'selector': 'nui-line-chart'},{'name': 'LinkConfiguratorComponent', 'selector': 'nui-link-configurator'},{'name': 'LinkFormatterComponent', 'selector': ''},{'name': 'ListGroupItemComponent', 'selector': 'nui-list-group-item'},{'name': 'ListLeafItemComponent', 'selector': 'nui-list-leaf-item'},{'name': 'ListNavigationBarComponent', 'selector': 'nui-navigation-bar'},{'name': 'ListWidgetComponent', 'selector': 'nui-list-widget'},{'name': 'LoadingComponent', 'selector': 'nui-loading'},{'name': 'PercentageFormatterComponent', 'selector': ''},{'name': 'PizzagnaComponent', 'selector': 'nui-pizzagna'},{'name': 'PresentationConfigurationComponent', 'selector': 'nui-table-column-presentation-configuration'},{'name': 'PresentationConfigurationV2Component', 'selector': 'nui-presentation-configuration-v2'},{'name': 'PreviewOverlayComponent', 'selector': 'nui-preview-overlay'},{'name': 'PreviewPlaceholderComponent', 'selector': 'nui-preview-placeholder'},{'name': 'ProportionalChartOptionsEditorComponent', 'selector': 'nui-proportional-chart-options-editor-component'},{'name': 'ProportionalChartOptionsEditorV2Component', 'selector': 'nui-proportional-chart-options-editor-v2-component'},{'name': 'ProportionalDonutContentComponent', 'selector': 'nui-proportional-donut-content'},{'name': 'RawFormatterComponent', 'selector': ''},{'name': 'RefresherConfigurationComponent', 'selector': 'nui-refresher-configuration'},{'name': 'RefreshRateConfiguratorComponent', 'selector': 'nui-refresh-rate-configurator'},{'name': 'SiUnitsFormatterComponent', 'selector': ''},{'name': 'StackComponent', 'selector': 'nui-stack'},{'name': 'StackedAreaChartComponent', 'selector': 'nui-stacked-area-chart'},{'name': 'StackedBarChartComponent', 'selector': 'nui-stacked-bar-chart'},{'name': 'StackedPercentageAreaChartComponent', 'selector': 'nui-stacked-percentage-area-chart'},{'name': 'StatusBarChartComponent', 'selector': 'nui-status-bar-chart'},{'name': 'StatusWithIconFormatterComponent', 'selector': ''},{'name': 'TableColumnConfigurationComponent', 'selector': 'nui-table-column-configuration'},{'name': 'TableColumnsConfigurationComponent', 'selector': 'nui-table-columns-configuration'},{'name': 'TableColumnsConfigurationV2Component', 'selector': 'nui-table-columns-configuration'},{'name': 'TableDataSourceErrorComponent', 'selector': 'nui-table-data-source-error'},{'name': 'TableFiltersEditorComponent', 'selector': 'nui-table-filters-editor-component'},{'name': 'ThresholdsConfigurationComponent', 'selector': 'nui-thresholds-configuration'},{'name': 'TilesComponent', 'selector': 'nui-tiles'},{'name': 'TimeframeSelectionComponent', 'selector': 'nui-timeframe-selection'},{'name': 'TimeseriesMetadataConfigurationComponent', 'selector': 'nui-timeseries-metadata-configuration'},{'name': 'TimeseriesSeriesCollectionConfigurationComponent', 'selector': 'nui-timeseries-series-collection-configuration'},{'name': 'TimeseriesTileDescriptionConfigurationComponent', 'selector': 'nui-table-column-description-configuration'},{'name': 'TimeseriesTileIndicatorDataConfigurationComponent', 'selector': 'nui-timeseries-tile-indicator-data-configuration'},{'name': 'TitleAndDescriptionConfigurationComponent', 'selector': 'nui-title-and-description-configuration'},{'name': 'WidgetBodyComponent', 'selector': 'nui-widget-body'},{'name': 'WidgetBodyContentComponent', 'selector': 'nui-widget-body-content'},{'name': 'WidgetClonerComponent', 'selector': 'nui-widget-cloner'},{'name': 'WidgetComponent', 'selector': 'nui-widget'},{'name': 'WidgetConfiguratorSectionComponent', 'selector': 'nui-widget-configurator-section'},{'name': 'WidgetEditorComponent', 'selector': 'nui-widget-editor'},{'name': 'WidgetErrorComponent', 'selector': 'nui-widget-error'},{'name': 'WidgetHeaderComponent', 'selector': 'nui-widget-header'},{'name': 'WidgetSearchComponent', 'selector': 'nui-widget-search'}];
+    var DIRECTIVES = [{'name': 'ComponentPortalDirective', 'selector': '[nuiComponentPortal]'},{'name': 'DelayedMousePresenceDetectionDirective', 'selector': '[nuiDelayedMousePresenceDetection]'},{'name': 'GridsterItemWidgetIdDirective', 'selector': '[nuiGridsterItemWidgetId]'},{'name': 'WidgetEditorDirective', 'selector': '[nuiWidgetEditor]'}];
+    var ACTUAL_COMPONENT = {'name': 'TableColumnConfigurationComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'TableColumnConfigurationComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
