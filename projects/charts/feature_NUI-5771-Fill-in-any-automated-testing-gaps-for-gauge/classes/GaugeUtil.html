@@ -1383,7 +1383,7 @@ in the provided gauge configuration</p>
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { IRadialScales, Scales } from &quot;../core/common/scales/types&quot;;
-import { DataAccessor, IAccessors, IChartAssistSeries, IDataSeries, IGaugeThresholdsRendererConfig } from &quot;../core/common/types&quot;;
+import { IAccessors, IChartAssistSeries, IDataSeries, IGaugeThresholdsRendererConfig } from &quot;../core/common/types&quot;;
 import { GAUGE_LABEL_FORMATTER_NAME_DEFAULT } from &quot;../core/plugins/gauge/constants&quot;;
 import { HorizontalBarAccessors } from &quot;../renderers/bar/accessors/horizontal-bar-accessors&quot;;
 import { VerticalBarAccessors } from &quot;../renderers/bar/accessors/vertical-bar-accessors&quot;;
@@ -1616,7 +1616,7 @@ export class GaugeUtil {
      * @param mode The mode of the gauge
      * @param margin The margin to update
      *
-     * @returns The updated margin
+     * @returns {IAllAround&lt;number&gt;} The updated margin
      */
     public static getMarginForLabelClearance(gaugeConfig: IGaugeConfig, mode: GaugeMode, margin: IAllAround&lt;number&gt;): IAllAround&lt;number&gt; {
         if (mode &#x3D;&#x3D;&#x3D; GaugeMode.Donut) {
