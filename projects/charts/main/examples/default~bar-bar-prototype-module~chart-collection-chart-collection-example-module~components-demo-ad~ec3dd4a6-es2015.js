@@ -28337,7 +28337,6 @@ let LegendSeriesComponent = class LegendSeriesComponent {
         this.isSelectedChange = new _angular_core__WEBPACK_IMPORTED_MODULE_2__["EventEmitter"]();
         this.isHorizontalClassApplied = false;
         this._active = false;
-        this._interactive = false;
     }
     /**
      * Sets the series active status
@@ -28379,11 +28378,12 @@ let LegendSeriesComponent = class LegendSeriesComponent {
         return this._active && this.seriesRenderState !== _renderers_types__WEBPACK_IMPORTED_MODULE_4__["RenderState"].hidden;
     }
     ngAfterContentInit() {
+        var _a;
         if (this.legend) {
             this.legend.activeChanged.subscribe((active) => this._active = active);
             this.icon = this.icon || this.legend.seriesIcon;
             this._active = this.legend.active;
-            this.interactive = this.legend.interactive;
+            this.interactive = (_a = this.interactive) !== null && _a !== void 0 ? _a : this.legend.interactive;
             this.isHorizontalClassApplied = this.legend.orientation === _types__WEBPACK_IMPORTED_MODULE_6__["LegendOrientation"].horizontal;
         }
     }

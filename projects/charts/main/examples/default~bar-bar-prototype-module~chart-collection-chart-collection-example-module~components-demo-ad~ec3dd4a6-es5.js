@@ -44453,7 +44453,6 @@
           this.isSelectedChange = new _angular_core__WEBPACK_IMPORTED_MODULE_2__["EventEmitter"]();
           this.isHorizontalClassApplied = false;
           this._active = false;
-          this._interactive = false;
         }
         /**
          * Sets the series active status
@@ -44514,13 +44513,15 @@
           value: function ngAfterContentInit() {
             var _this98 = this;
 
+            var _a;
+
             if (this.legend) {
               this.legend.activeChanged.subscribe(function (active) {
                 return _this98._active = active;
               });
               this.icon = this.icon || this.legend.seriesIcon;
               this._active = this.legend.active;
-              this.interactive = this.legend.interactive;
+              this.interactive = (_a = this.interactive) !== null && _a !== void 0 ? _a : this.legend.interactive;
               this.isHorizontalClassApplied = this.legend.orientation === _types__WEBPACK_IMPORTED_MODULE_6__["LegendOrientation"].horizontal;
             }
           }

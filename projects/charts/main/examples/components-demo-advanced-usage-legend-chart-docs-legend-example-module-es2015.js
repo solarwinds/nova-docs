@@ -642,27 +642,27 @@ LegendMetadataExampleComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__de
 
 function calculateAverageSeries(seriesSet) {
     var _a, _b, _c, _d, _e;
-    let arrAverage = [];
-    const dataLength = (_b = (_a = seriesSet[0].data) === null || _a === void 0 ? void 0 : _a.length) !== null && _b !== void 0 ? _b : 0;
-    const numOfSeries = seriesSet.length;
     const averageSeries = {
         id: "average",
         name: "Average Speed",
         data: [],
     };
-    if (!seriesSet.length) {
+    const numSeries = seriesSet.length;
+    if (numSeries === 0) {
         return averageSeries;
     }
+    const data = [];
+    const dataLength = (_b = (_a = seriesSet[0].data) === null || _a === void 0 ? void 0 : _a.length) !== null && _b !== void 0 ? _b : 0;
     for (let n = 0; n < dataLength; n++) {
         let avg = 0;
-        for (let i = 0; i < seriesSet.length; i++) {
+        for (let i = 0; i < numSeries; i++) {
             const series = seriesSet[i];
             avg += (_d = (_c = series === null || series === void 0 ? void 0 : series.data) === null || _c === void 0 ? void 0 : _c[n].value) !== null && _d !== void 0 ? _d : 0;
         }
-        avg = avg / numOfSeries;
-        arrAverage.push({ x: (_e = seriesSet[0].data) === null || _e === void 0 ? void 0 : _e[n].x, value: avg });
+        avg = avg / numSeries;
+        data.push({ x: (_e = seriesSet[0].data) === null || _e === void 0 ? void 0 : _e[n].x, value: avg });
     }
-    return Object.assign(Object.assign({}, averageSeries), { data: arrAverage });
+    return Object.assign(Object.assign({}, averageSeries), { data });
 }
 /* Chart data */
 function getData() {
@@ -792,6 +792,12 @@ const legendRoutes = [
     {
         path: "metadata",
         component: _legend_metadata_legend_metadata_example_component__WEBPACK_IMPORTED_MODULE_18__["LegendMetadataExampleComponent"],
+        data: {
+            srlc: {
+                hideIndicator: true,
+            },
+            showThemeSwitcher: true,
+        },
     },
     {
         path: "visual-test",
