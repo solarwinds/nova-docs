@@ -737,7 +737,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n<div class=\"d-flex\">\n    <div class=\"conversion d-flex flex-column align-items-center justify-content-center\">\n        <div class=\"conversion__value\">{{ valueDisplay }}</div>\n        <!-- ngIf to hide the unit if the conversion result is determined to be NaN -->\n        <div *ngIf=\"unitDisplay\" class=\"conversion__unit\">{{ unitDisplay }}</div>\n    </div>\n</div>\n<hr>\n<nui-form-field class=\"d-block mt-5\"\n                caption=\"Hertz\"\n                [showOptionalText]=\"false\">\n    <nui-textbox-number type=\"number\"\n                        [ngModel]=\"num\"\n                        (ngModelChange)=\"onNumberChange($event)\"\n                        [minValue]=\"0\"\n                        [step]=\"10\"\n                        customBoxWidth=\"200px\"></nui-textbox-number>\n</nui-form-field>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("\n<div class=\"d-flex\">\n    <div class=\"conversion d-flex flex-column align-items-center justify-content-center\">\n        <div class=\"conversion__value\">{{ valueDisplay }}</div>\n        <!-- ngIf to hide the unit if the conversion result is determined to be NaN -->\n        <div *ngIf=\"unitDisplay\" class=\"conversion__unit\">{{ unitDisplay }}</div>\n    </div>\n</div>\n<hr>\n<nui-form-field class=\"d-block mt-5\"\n                caption=\"Hertz\" i18n-caption\n                [showOptionalText]=\"false\">\n    <nui-textbox-number type=\"number\"\n                        [ngModel]=\"num\"\n                        (ngModelChange)=\"onNumberChange($event)\"\n                        [minValue]=\"0\"\n                        [step]=\"10\"\n                        customBoxWidth=\"200px\"></nui-textbox-number>\n</nui-form-field>\n");
 
 /***/ }),
 
@@ -1533,7 +1533,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".conversion {\n    width: 80px;\n    height: 70px;\n\n    &__value {\n        font-size: 25px;\n    }\n\n    &__unit {\n        font-size: 15px;\n    }\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = (".conversion {\n    width: 110px;\n    height: 70px;\n\n    &__value {\n        font-size: 25px;\n    }\n\n    &__unit {\n        font-size: 15px;\n    }\n}\n");
 
 /***/ }),
 
@@ -2795,7 +2795,7 @@ DepreacatedDataSourceClientSideCustomSearchExampleComponent.ɵcmp = _angular_cor
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"conversion d-flex flex-column align-items-end\">\n    {{ conversionDisplay }}\n</div>\n<hr>\n<nui-form-field class=\"d-block mt-5\"\n                caption=\"Bytes\"\n                [showOptionalText]=\"false\">\n    <nui-textbox-number type=\"number\"\n                        [ngModel]=\"num\"\n                        (ngModelChange)=\"onNumberChange($event)\"\n                        [minValue]=\"0\"\n                        [step]=\"10\"\n                        customBoxWidth=\"200px\"></nui-textbox-number>\n</nui-form-field>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"conversion d-flex flex-column align-items-end\">\n    {{ conversionDisplay }}\n</div>\n<hr>\n<nui-form-field class=\"d-block mt-5\"\n                caption=\"Bytes\" i18n-caption\n                [showOptionalText]=\"false\">\n    <nui-textbox-number type=\"number\"\n                        [ngModel]=\"num\"\n                        (ngModelChange)=\"onNumberChange($event)\"\n                        [minValue]=\"0\"\n                        [step]=\"10\"\n                        customBoxWidth=\"200px\"></nui-textbox-number>\n</nui-form-field>\n");
 
 /***/ }),
 
@@ -4491,7 +4491,7 @@ DataSourceClientSideBasicExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTE
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".conversion {\n    font-size: 25px;\n    width: 130px;\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = (".conversion {\n    font-size: 25px;\n    width: 140px;\n}\n");
 
 /***/ }),
 

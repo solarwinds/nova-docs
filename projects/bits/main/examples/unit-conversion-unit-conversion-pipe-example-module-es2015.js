@@ -26,7 +26,13 @@ class UnitConversionPipeBasicExampleComponent {
     }
 }
 UnitConversionPipeBasicExampleComponent.ɵfac = function UnitConversionPipeBasicExampleComponent_Factory(t) { return new (t || UnitConversionPipeBasicExampleComponent)(); };
-UnitConversionPipeBasicExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: UnitConversionPipeBasicExampleComponent, selectors: [["unit-conversion-pipe-basic-example"]], decls: 6, vars: 10, consts: [[1, "conversion", "d-flex", "flex-column", "align-items-end"], ["caption", "Bits Per Second", 1, "d-block", "mt-5", 3, "showOptionalText"], ["type", "number", "customBoxWidth", "200px", 3, "ngModel", "minValue", "step", "ngModelChange"]], template: function UnitConversionPipeBasicExampleComponent_Template(rf, ctx) { if (rf & 1) {
+UnitConversionPipeBasicExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: UnitConversionPipeBasicExampleComponent, selectors: [["unit-conversion-pipe-basic-example"]], decls: 6, vars: 10, consts: function () { let i18n_0; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+        const MSG_EXTERNAL_8467319543633797159$$DEMO_SRC_COMPONENTS_DEMO_PIPES_UNIT_CONVERSION_UNIT_CONVERSION_BASIC_UNIT_CONVERSION_PIPE_BASIC_EXAMPLE_COMPONENT_TS_1 = goog.getMsg("Bits Per Second");
+        i18n_0 = MSG_EXTERNAL_8467319543633797159$$DEMO_SRC_COMPONENTS_DEMO_PIPES_UNIT_CONVERSION_UNIT_CONVERSION_BASIC_UNIT_CONVERSION_PIPE_BASIC_EXAMPLE_COMPONENT_TS_1;
+    }
+    else {
+        i18n_0 = $localize `:␟02bf2fbc12b46cc793444a412039837aebcd0b14␟8467319543633797159:Bits Per Second`;
+    } return [[1, "conversion", "d-flex", "flex-column", "align-items-end"], ["caption", i18n_0, 1, "d-block", "mt-5", 3, "showOptionalText"], ["type", "number", "customBoxWidth", "200px", 3, "ngModel", "minValue", "step", "ngModelChange"]]; }, template: function UnitConversionPipeBasicExampleComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](2, "unitConversion");
