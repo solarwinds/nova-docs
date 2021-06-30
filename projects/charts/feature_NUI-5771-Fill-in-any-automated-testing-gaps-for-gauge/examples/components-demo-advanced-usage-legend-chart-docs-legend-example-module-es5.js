@@ -1002,36 +1002,37 @@
       function calculateAverageSeries(seriesSet) {
         var _a, _b, _c, _d, _e;
 
-        var arrAverage = [];
-        var dataLength = (_b = (_a = seriesSet[0].data) === null || _a === void 0 ? void 0 : _a.length) !== null && _b !== void 0 ? _b : 0;
-        var numOfSeries = seriesSet.length;
         var averageSeries = {
           id: "average",
           name: "Average Speed",
           data: []
         };
+        var numSeries = seriesSet.length;
 
-        if (!seriesSet.length) {
+        if (numSeries === 0) {
           return averageSeries;
         }
+
+        var data = [];
+        var dataLength = (_b = (_a = seriesSet[0].data) === null || _a === void 0 ? void 0 : _a.length) !== null && _b !== void 0 ? _b : 0;
 
         for (var n = 0; n < dataLength; n++) {
           var avg = 0;
 
-          for (var i = 0; i < seriesSet.length; i++) {
+          for (var i = 0; i < numSeries; i++) {
             var series = seriesSet[i];
             avg += (_d = (_c = series === null || series === void 0 ? void 0 : series.data) === null || _c === void 0 ? void 0 : _c[n].value) !== null && _d !== void 0 ? _d : 0;
           }
 
-          avg = avg / numOfSeries;
-          arrAverage.push({
+          avg = avg / numSeries;
+          data.push({
             x: (_e = seriesSet[0].data) === null || _e === void 0 ? void 0 : _e[n].x,
             value: avg
           });
         }
 
         return Object.assign(Object.assign({}, averageSeries), {
-          data: arrAverage
+          data: data
         });
       }
       /* Chart data */
@@ -1294,7 +1295,13 @@
         component: _legend_rich_tile_content_projection_legend_rich_tile_content_projection_example_component__WEBPACK_IMPORTED_MODULE_13__["LegendRichTileContentProjectionExampleComponent"]
       }, {
         path: "metadata",
-        component: _legend_metadata_legend_metadata_example_component__WEBPACK_IMPORTED_MODULE_18__["LegendMetadataExampleComponent"]
+        component: _legend_metadata_legend_metadata_example_component__WEBPACK_IMPORTED_MODULE_18__["LegendMetadataExampleComponent"],
+        data: {
+          srlc: {
+            hideIndicator: true
+          },
+          showThemeSwitcher: true
+        }
       }, {
         path: "visual-test",
         component: _legend_visual_test_legend_visual_test_component__WEBPACK_IMPORTED_MODULE_17__["LegendVisualTestComponent"],
