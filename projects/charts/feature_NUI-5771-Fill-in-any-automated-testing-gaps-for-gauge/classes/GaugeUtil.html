@@ -545,8 +545,8 @@ be generated automatically.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="415"
-                            class="link-to-prism">src/gauge/gauge-util.ts:415</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="413"
+                            class="link-to-prism">src/gauge/gauge-util.ts:413</a></div>
                 </td>
             </tr>
 
@@ -626,8 +626,8 @@ series needed by the gauge visualization</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="276"
-                            class="link-to-prism">src/gauge/gauge-util.ts:276</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="274"
+                            class="link-to-prism">src/gauge/gauge-util.ts:274</a></div>
                 </td>
             </tr>
 
@@ -738,8 +738,8 @@ series needed by the gauge visualization</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="340"
-                            class="link-to-prism">src/gauge/gauge-util.ts:340</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="338"
+                            class="link-to-prism">src/gauge/gauge-util.ts:338</a></div>
                 </td>
             </tr>
 
@@ -834,8 +834,8 @@ series needed by the gauge visualization</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="361"
-                            class="link-to-prism">src/gauge/gauge-util.ts:361</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="359"
+                            class="link-to-prism">src/gauge/gauge-util.ts:359</a></div>
                 </td>
             </tr>
 
@@ -930,8 +930,8 @@ series needed by the gauge visualization</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="431"
-                            class="link-to-prism">src/gauge/gauge-util.ts:431</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="429"
+                            class="link-to-prism">src/gauge/gauge-util.ts:429</a></div>
                 </td>
             </tr>
 
@@ -1011,8 +1011,8 @@ series used for the the gauge&#39;s thresholds visualization</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="318"
-                            class="link-to-prism">src/gauge/gauge-util.ts:318</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="316"
+                            class="link-to-prism">src/gauge/gauge-util.ts:316</a></div>
                 </td>
             </tr>
 
@@ -1220,8 +1220,8 @@ in the provided gauge configuration</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="462"
-                            class="link-to-prism">src/gauge/gauge-util.ts:462</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="460"
+                            class="link-to-prism">src/gauge/gauge-util.ts:460</a></div>
                 </td>
             </tr>
 
@@ -1620,12 +1620,10 @@ export class GaugeUtil {
      */
     public static getMarginForLabelClearance(gaugeConfig: IGaugeConfig, mode: GaugeMode, margin: IAllAround&lt;number&gt;): IAllAround&lt;number&gt; {
         if (mode &#x3D;&#x3D;&#x3D; GaugeMode.Donut) {
-            const labelClearanceConfig &#x3D; gaugeConfig.labels?.clearance;
-            const clearance &#x3D; !isNil(labelClearanceConfig) ? labelClearanceConfig : DONUT_GAUGE_LABEL_CLEARANCE_DEFAULT;
+            const clearance &#x3D; gaugeConfig.labels?.clearance ?? DONUT_GAUGE_LABEL_CLEARANCE_DEFAULT;
 
             // on the radial grid the maximum margin value is used for all margins, so we use the max value here
-            const maxMargin &#x3D; Math.max(...Object.values(margin));
-            const marginValue &#x3D; maxMargin &gt; clearance ? maxMargin : clearance;
+            const marginValue &#x3D; Math.max(...Object.values(margin), clearance);
 
             return {
                 top: marginValue,

@@ -11362,12 +11362,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lodash_isEmpty__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(lodash_isEmpty__WEBPACK_IMPORTED_MODULE_18__);
 /* harmony import */ var _core_plugins_gauge_donut_gauge_labels_plugin__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../core/plugins/gauge/donut-gauge-labels-plugin */ "U0Ec");
 /* harmony import */ var _core_plugins_gauge_linear_gauge_labels_plugin__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../core/plugins/gauge/linear-gauge-labels-plugin */ "hVbV");
-/* harmony import */ var lodash_isNil__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! lodash/isNil */ "J2iB");
-/* harmony import */ var lodash_isNil__WEBPACK_IMPORTED_MODULE_21___default = /*#__PURE__*/__webpack_require__.n(lodash_isNil__WEBPACK_IMPORTED_MODULE_21__);
-/* harmony import */ var _renderers_radial_radial_grid_fn__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../renderers/radial/radial-grid-fn */ "oVWD");
-/* harmony import */ var _core_grid_xy_grid__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../core/grid/xy-grid */ "6lnl");
-/* harmony import */ var _core_grid_config_linear_gauge_grid_config_fn__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../core/grid/config/linear-gauge-grid-config-fn */ "vXYh");
-
+/* harmony import */ var _renderers_radial_radial_grid_fn__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../renderers/radial/radial-grid-fn */ "oVWD");
+/* harmony import */ var _core_grid_xy_grid__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../core/grid/xy-grid */ "6lnl");
+/* harmony import */ var _core_grid_config_linear_gauge_grid_config_fn__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../core/grid/config/linear-gauge-grid-config-fn */ "vXYh");
 
 
 
@@ -11408,7 +11405,7 @@ class GaugeUtil {
      */
     static createChartAssist(gaugeConfig, mode, labelsPlugin) {
         var _a, _b, _c;
-        const grid = (mode === _constants__WEBPACK_IMPORTED_MODULE_11__["GaugeMode"].Donut) ? Object(_renderers_radial_radial_grid_fn__WEBPACK_IMPORTED_MODULE_22__["radialGrid"])() : new _core_grid_xy_grid__WEBPACK_IMPORTED_MODULE_23__["XYGrid"](Object(_core_grid_config_linear_gauge_grid_config_fn__WEBPACK_IMPORTED_MODULE_24__["linearGaugeGridConfig"])(mode, gaugeConfig.linearThickness));
+        const grid = (mode === _constants__WEBPACK_IMPORTED_MODULE_11__["GaugeMode"].Donut) ? Object(_renderers_radial_radial_grid_fn__WEBPACK_IMPORTED_MODULE_21__["radialGrid"])() : new _core_grid_xy_grid__WEBPACK_IMPORTED_MODULE_22__["XYGrid"](Object(_core_grid_config_linear_gauge_grid_config_fn__WEBPACK_IMPORTED_MODULE_23__["linearGaugeGridConfig"])(mode, gaugeConfig.linearThickness));
         const gridConfig = grid.config();
         const chart = new _core_chart__WEBPACK_IMPORTED_MODULE_17__["Chart"](grid);
         const enableLabels = !lodash_isEmpty__WEBPACK_IMPORTED_MODULE_18___default()((_a = gaugeConfig.thresholds) === null || _a === void 0 ? void 0 : _a.definitions) && !((_b = gaugeConfig.thresholds) === null || _b === void 0 ? void 0 : _b.disableMarkers);
@@ -11526,13 +11523,11 @@ class GaugeUtil {
      * @returns {IAllAround<number>} The updated margin
      */
     static getMarginForLabelClearance(gaugeConfig, mode, margin) {
-        var _a, _b, _c, _d;
+        var _a, _b, _c, _d, _e;
         if (mode === _constants__WEBPACK_IMPORTED_MODULE_11__["GaugeMode"].Donut) {
-            const labelClearanceConfig = (_a = gaugeConfig.labels) === null || _a === void 0 ? void 0 : _a.clearance;
-            const clearance = !lodash_isNil__WEBPACK_IMPORTED_MODULE_21___default()(labelClearanceConfig) ? labelClearanceConfig : _constants__WEBPACK_IMPORTED_MODULE_11__["DONUT_GAUGE_LABEL_CLEARANCE_DEFAULT"];
+            const clearance = (_b = (_a = gaugeConfig.labels) === null || _a === void 0 ? void 0 : _a.clearance) !== null && _b !== void 0 ? _b : _constants__WEBPACK_IMPORTED_MODULE_11__["DONUT_GAUGE_LABEL_CLEARANCE_DEFAULT"];
             // on the radial grid the maximum margin value is used for all margins, so we use the max value here
-            const maxMargin = Math.max(...Object.values(margin));
-            const marginValue = maxMargin > clearance ? maxMargin : clearance;
+            const marginValue = Math.max(...Object.values(margin), clearance);
             return {
                 top: marginValue,
                 right: marginValue,
@@ -11541,14 +11536,14 @@ class GaugeUtil {
             };
         }
         let marginToAdjust;
-        const flippedLabels = !!((_b = gaugeConfig.labels) === null || _b === void 0 ? void 0 : _b.flipped);
+        const flippedLabels = !!((_c = gaugeConfig.labels) === null || _c === void 0 ? void 0 : _c.flipped);
         if (mode === _constants__WEBPACK_IMPORTED_MODULE_11__["GaugeMode"].Horizontal) {
             marginToAdjust = flippedLabels ? "top" : "bottom";
         }
         else {
             marginToAdjust = flippedLabels ? "left" : "right";
         }
-        const clearance = (_d = (_c = gaugeConfig.labels) === null || _c === void 0 ? void 0 : _c.clearance) !== null && _d !== void 0 ? _d : _constants__WEBPACK_IMPORTED_MODULE_11__["LINEAR_GAUGE_LABEL_CLEARANCE_DEFAULTS"][marginToAdjust];
+        const clearance = (_e = (_d = gaugeConfig.labels) === null || _d === void 0 ? void 0 : _d.clearance) !== null && _e !== void 0 ? _e : _constants__WEBPACK_IMPORTED_MODULE_11__["LINEAR_GAUGE_LABEL_CLEARANCE_DEFAULTS"][marginToAdjust];
         const marginValue = Math.max(margin[marginToAdjust], clearance);
         return Object.assign(Object.assign({}, margin), { [marginToAdjust]: marginValue });
     }
