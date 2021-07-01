@@ -783,7 +783,13 @@ export class TableStickyHeaderDirective implements AfterViewInit, OnDestroy {
             if (!fixedWidth) {
                 // Note: Assigning data cell width to the corresponding header column
                 // (using the style width if specified; otherwise, falling back to the offsetWidth)
-                headColumns[index].style.width &#x3D; cell.style.width || &#x60;${cell.offsetWidth}px&#x60;;
+                // Subtracting a magical 1 to account for the cell border
+                const cellWidth &#x3D; (parseInt(cell.style.width, 10) || cell.offsetWidth) - 1 + &quot;px&quot;;
+                const headStyle &#x3D; headColumns[index].style;
+
+                headStyle.width &#x3D;
+                    headStyle.minWidth &#x3D;
+                    headStyle.maxWidth &#x3D; cellWidth;
             }
         });
 
@@ -884,7 +890,7 @@ export class TableStickyHeaderDirective implements AfterViewInit, OnDestroy {
         const theadPlaceholder: Node &#x3D; this.headRef.cloneNode(true);
 
         // Note: making header invisible
-        this.renderer.setStyle(theadPlaceholder, &quot;visibility&quot;, &quot;collapse&quot;);
+        this.renderer.setStyle(theadPlaceholder, &quot;display&quot;, &quot;none&quot;);
         // Note: Adding an identifier for the header placeholder to avoid confusion
         this.renderer.addClass(theadPlaceholder, &quot;sticky-header-placeholder&quot;);
         // Note: Appending head placeholder to the table
