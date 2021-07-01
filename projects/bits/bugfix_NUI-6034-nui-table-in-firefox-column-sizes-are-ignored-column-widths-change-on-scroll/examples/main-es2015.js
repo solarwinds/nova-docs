@@ -15696,6 +15696,10 @@ class TableHeaderCellComponent extends _angular_cdk_table__WEBPACK_IMPORTED_MODU
     get isIconCell() {
         return this.columnDef.type === "icon";
     }
+    /**
+    * Conditionally applies a fixed-width marker class for letting external entities
+    * know whether manual updates to the cell's width are allowed.
+    */
     get fixedWidth() {
         return this.isIconCell || this._fixedWidth;
     }
@@ -27493,6 +27497,7 @@ class TableStickyHeaderDirective {
                 if (!fixedWidth) {
                     // Note: Assigning data cell width to the corresponding header column
                     // (using the style width if specified; otherwise, falling back to the offsetWidth)
+                    // Subtracting a magical 1 to account for the cell border
                     const cellWidth = (parseInt(cell.style.width, 10) || cell.offsetWidth) - 1 + "px";
                     const headStyle = headColumns[index].style;
                     headStyle.width =
