@@ -314,6 +314,36 @@ function getData() {
 
 /***/ }),
 
+/***/ "LpgA":
+/*!*****************************************************************************************************************************************************!*\
+  !*** ./examples/components/demo/chart-types/area/area-chart-bi-directional-stacked-test/area-chart-bi-directional-stacked-visual-test.component.ts ***!
+  \*****************************************************************************************************************************************************/
+/*! exports provided: AreaChartBiDirectionalStackedVisualTestComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AreaChartBiDirectionalStackedVisualTestComponent", function() { return AreaChartBiDirectionalStackedVisualTestComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
+
+
+let AreaChartBiDirectionalStackedVisualTestComponent = class AreaChartBiDirectionalStackedVisualTestComponent {
+};
+AreaChartBiDirectionalStackedVisualTestComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: "area-chart-bi-directional-stacked-visual-test",
+        template: `
+        <area-chart-bi-directional-stacked-test [inverted]="false"></area-chart-bi-directional-stacked-test>
+        <area-chart-bi-directional-stacked-test [inverted]="true"></area-chart-bi-directional-stacked-test>
+    `,
+    })
+], AreaChartBiDirectionalStackedVisualTestComponent);
+
+
+
+/***/ }),
+
 /***/ "QNbB":
 /*!*******************************************************************************************************************!*\
   !*** ./examples/components/demo/chart-types/area sync !./node_modules/raw-loader/dist/cjs.js .*\.(ts|html|less)$ ***!
@@ -324,6 +354,9 @@ function getData() {
 var map = {
 	"./area-chart-basic/area-chart-basic-example.component.html": "piB5",
 	"./area-chart-basic/area-chart-basic-example.component.ts": "MjEx",
+	"./area-chart-bi-directional-stacked-test/area-chart-bi-directional-stacked-test.component.html": "vA/m",
+	"./area-chart-bi-directional-stacked-test/area-chart-bi-directional-stacked-test.component.ts": "yWmf",
+	"./area-chart-bi-directional-stacked-test/area-chart-bi-directional-stacked-visual-test.component.ts": "6NCN",
 	"./area-chart-bi-directional-stacked/area-chart-bi-directional-stacked-example.component.html": "RZLy",
 	"./area-chart-bi-directional-stacked/area-chart-bi-directional-stacked-example.component.ts": "nX1H",
 	"./area-chart-bi-directional/area-chart-bi-directional-example.component.html": "gPTH",
@@ -517,14 +550,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @nova-ui/charts */ "gKry");
 /* harmony import */ var _common_demo_common_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../common/demo-common.module */ "s1Ul");
 /* harmony import */ var _area_chart_basic_area_chart_basic_example_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./area-chart-basic/area-chart-basic-example.component */ "DYV9");
-/* harmony import */ var _area_chart_bi_directional_area_chart_bi_directional_example_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./area-chart-bi-directional/area-chart-bi-directional-example.component */ "Y7S3");
-/* harmony import */ var _area_chart_stack_percentage_area_chart_stack_percentage_example_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./area-chart-stack-percentage/area-chart-stack-percentage-example.component */ "ThxX");
-/* harmony import */ var _area_chart_stack_area_chart_stack_example_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./area-chart-stack/area-chart-stack-example.component */ "HZac");
-/* harmony import */ var _area_chart_variable_baseline_area_chart_variable_baseline_example_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./area-chart-variable-baseline/area-chart-variable-baseline-example.component */ "WmF3");
-/* harmony import */ var _area_chart_vertical_area_chart_vertical_example_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./area-chart-vertical/area-chart-vertical-example.component */ "K2ZU");
-/* harmony import */ var _chart_docs_area_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./chart-docs-area.component */ "p8ED");
-/* harmony import */ var _test_area_chart_test_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./test/area-chart-test.component */ "17Qt");
-/* harmony import */ var _area_chart_bi_directional_stacked_area_chart_bi_directional_stacked_example_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./area-chart-bi-directional-stacked/area-chart-bi-directional-stacked-example.component */ "ZDyK");
+/* harmony import */ var _area_chart_bi_directional_stacked_test_area_chart_bi_directional_stacked_test_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./area-chart-bi-directional-stacked-test/area-chart-bi-directional-stacked-test.component */ "drqq");
+/* harmony import */ var _area_chart_bi_directional_stacked_test_area_chart_bi_directional_stacked_visual_test_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./area-chart-bi-directional-stacked-test/area-chart-bi-directional-stacked-visual-test.component */ "LpgA");
+/* harmony import */ var _area_chart_bi_directional_stacked_area_chart_bi_directional_stacked_example_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./area-chart-bi-directional-stacked/area-chart-bi-directional-stacked-example.component */ "ZDyK");
+/* harmony import */ var _area_chart_bi_directional_area_chart_bi_directional_example_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./area-chart-bi-directional/area-chart-bi-directional-example.component */ "Y7S3");
+/* harmony import */ var _area_chart_stack_percentage_area_chart_stack_percentage_example_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./area-chart-stack-percentage/area-chart-stack-percentage-example.component */ "ThxX");
+/* harmony import */ var _area_chart_stack_area_chart_stack_example_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./area-chart-stack/area-chart-stack-example.component */ "HZac");
+/* harmony import */ var _area_chart_variable_baseline_area_chart_variable_baseline_example_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./area-chart-variable-baseline/area-chart-variable-baseline-example.component */ "WmF3");
+/* harmony import */ var _area_chart_vertical_area_chart_vertical_example_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./area-chart-vertical/area-chart-vertical-example.component */ "K2ZU");
+/* harmony import */ var _chart_docs_area_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./chart-docs-area.component */ "p8ED");
+/* harmony import */ var _test_area_chart_test_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./test/area-chart-test.component */ "17Qt");
+
+
 
 
 
@@ -544,7 +581,7 @@ __webpack_require__.r(__webpack_exports__);
 const exampleRoutes = [
     {
         path: "",
-        component: _chart_docs_area_component__WEBPACK_IMPORTED_MODULE_13__["ChartDocsAreaComponent"],
+        component: _chart_docs_area_component__WEBPACK_IMPORTED_MODULE_16__["ChartDocsAreaComponent"],
         data: {
             srlc: {
                 stage: _nova_ui_bits__WEBPACK_IMPORTED_MODULE_4__["SrlcStage"].beta,
@@ -563,7 +600,7 @@ const exampleRoutes = [
     },
     {
         path: "bi-directional",
-        component: _area_chart_bi_directional_area_chart_bi_directional_example_component__WEBPACK_IMPORTED_MODULE_8__["AreaChartBiDirectionalExampleComponent"],
+        component: _area_chart_bi_directional_area_chart_bi_directional_example_component__WEBPACK_IMPORTED_MODULE_11__["AreaChartBiDirectionalExampleComponent"],
         data: {
             srlc: {
                 hideIndicator: true,
@@ -572,7 +609,7 @@ const exampleRoutes = [
     },
     {
         path: "variable-baseline",
-        component: _area_chart_variable_baseline_area_chart_variable_baseline_example_component__WEBPACK_IMPORTED_MODULE_11__["AreaChartVariableBaselineExampleComponent"],
+        component: _area_chart_variable_baseline_area_chart_variable_baseline_example_component__WEBPACK_IMPORTED_MODULE_14__["AreaChartVariableBaselineExampleComponent"],
         data: {
             srlc: {
                 hideIndicator: true,
@@ -581,7 +618,7 @@ const exampleRoutes = [
     },
     {
         path: "vertical",
-        component: _area_chart_vertical_area_chart_vertical_example_component__WEBPACK_IMPORTED_MODULE_12__["AreaChartVerticalExampleComponent"],
+        component: _area_chart_vertical_area_chart_vertical_example_component__WEBPACK_IMPORTED_MODULE_15__["AreaChartVerticalExampleComponent"],
         data: {
             srlc: {
                 hideIndicator: true,
@@ -590,7 +627,7 @@ const exampleRoutes = [
     },
     {
         path: "test",
-        component: _test_area_chart_test_component__WEBPACK_IMPORTED_MODULE_14__["AreaChartTestComponent"],
+        component: _test_area_chart_test_component__WEBPACK_IMPORTED_MODULE_17__["AreaChartTestComponent"],
         data: {
             srlc: {
                 hideIndicator: true,
@@ -599,7 +636,7 @@ const exampleRoutes = [
     },
     {
         path: "stacked",
-        component: _area_chart_stack_area_chart_stack_example_component__WEBPACK_IMPORTED_MODULE_10__["AreaChartStackExampleComponent"],
+        component: _area_chart_stack_area_chart_stack_example_component__WEBPACK_IMPORTED_MODULE_13__["AreaChartStackExampleComponent"],
         data: {
             srlc: {
                 hideIndicator: true,
@@ -608,7 +645,16 @@ const exampleRoutes = [
     },
     {
         path: "bi-directional-stacked",
-        component: _area_chart_bi_directional_stacked_area_chart_bi_directional_stacked_example_component__WEBPACK_IMPORTED_MODULE_15__["AreaChartBiDirectionalStackedExampleComponent"],
+        component: _area_chart_bi_directional_stacked_area_chart_bi_directional_stacked_example_component__WEBPACK_IMPORTED_MODULE_10__["AreaChartBiDirectionalStackedExampleComponent"],
+        data: {
+            srlc: {
+                hideIndicator: true,
+            },
+        },
+    },
+    {
+        path: "bi-directional-stacked-test",
+        component: _area_chart_bi_directional_stacked_test_area_chart_bi_directional_stacked_visual_test_component__WEBPACK_IMPORTED_MODULE_9__["AreaChartBiDirectionalStackedVisualTestComponent"],
         data: {
             srlc: {
                 hideIndicator: true,
@@ -621,15 +667,17 @@ let ChartDocsAreaModule = class ChartDocsAreaModule {
 ChartDocsAreaModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
         declarations: [
-            _chart_docs_area_component__WEBPACK_IMPORTED_MODULE_13__["ChartDocsAreaComponent"],
+            _chart_docs_area_component__WEBPACK_IMPORTED_MODULE_16__["ChartDocsAreaComponent"],
             _area_chart_basic_area_chart_basic_example_component__WEBPACK_IMPORTED_MODULE_7__["AreaChartBasicExampleComponent"],
-            _area_chart_bi_directional_area_chart_bi_directional_example_component__WEBPACK_IMPORTED_MODULE_8__["AreaChartBiDirectionalExampleComponent"],
-            _area_chart_bi_directional_stacked_area_chart_bi_directional_stacked_example_component__WEBPACK_IMPORTED_MODULE_15__["AreaChartBiDirectionalStackedExampleComponent"],
-            _area_chart_variable_baseline_area_chart_variable_baseline_example_component__WEBPACK_IMPORTED_MODULE_11__["AreaChartVariableBaselineExampleComponent"],
-            _area_chart_vertical_area_chart_vertical_example_component__WEBPACK_IMPORTED_MODULE_12__["AreaChartVerticalExampleComponent"],
-            _area_chart_stack_area_chart_stack_example_component__WEBPACK_IMPORTED_MODULE_10__["AreaChartStackExampleComponent"],
-            _area_chart_stack_percentage_area_chart_stack_percentage_example_component__WEBPACK_IMPORTED_MODULE_9__["AreaChartStackPercentageExampleComponent"],
-            _test_area_chart_test_component__WEBPACK_IMPORTED_MODULE_14__["AreaChartTestComponent"],
+            _area_chart_bi_directional_area_chart_bi_directional_example_component__WEBPACK_IMPORTED_MODULE_11__["AreaChartBiDirectionalExampleComponent"],
+            _area_chart_bi_directional_stacked_area_chart_bi_directional_stacked_example_component__WEBPACK_IMPORTED_MODULE_10__["AreaChartBiDirectionalStackedExampleComponent"],
+            _area_chart_variable_baseline_area_chart_variable_baseline_example_component__WEBPACK_IMPORTED_MODULE_14__["AreaChartVariableBaselineExampleComponent"],
+            _area_chart_vertical_area_chart_vertical_example_component__WEBPACK_IMPORTED_MODULE_15__["AreaChartVerticalExampleComponent"],
+            _area_chart_stack_area_chart_stack_example_component__WEBPACK_IMPORTED_MODULE_13__["AreaChartStackExampleComponent"],
+            _area_chart_stack_percentage_area_chart_stack_percentage_example_component__WEBPACK_IMPORTED_MODULE_12__["AreaChartStackPercentageExampleComponent"],
+            _test_area_chart_test_component__WEBPACK_IMPORTED_MODULE_17__["AreaChartTestComponent"],
+            _area_chart_bi_directional_stacked_test_area_chart_bi_directional_stacked_test_component__WEBPACK_IMPORTED_MODULE_8__["AreaChartBiDirectionalStackedTestComponent"],
+            _area_chart_bi_directional_stacked_test_area_chart_bi_directional_stacked_visual_test_component__WEBPACK_IMPORTED_MODULE_9__["AreaChartBiDirectionalStackedVisualTestComponent"],
         ],
         imports: [
             _common_demo_common_module__WEBPACK_IMPORTED_MODULE_6__["DemoCommonModule"],
@@ -906,12 +954,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let AreaChartBiDirectionalStackedExampleComponent = class AreaChartBiDirectionalStackedExampleComponent {
+    constructor(changeDetector) {
+        this.changeDetector = changeDetector;
+    }
     ngOnInit() {
         // areaGrid returns an XYGrid configured for displaying an area chart's axes and other grid elements.
-        this.chartTop = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["Chart"](new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["XYGrid"](topChartConfig()));
+        this.chartTop = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["Chart"](new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["XYGrid"](topChartConfig()), { updateDomainForEmptySeries: true });
         this.chartAssistTop = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["ChartAssist"](this.chartTop, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["stackedArea"]);
-        this.chartBottom = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["Chart"](new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["XYGrid"](bottomChartConfig()));
-        this.chartAssistBottom = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["ChartAssist"](this.chartBottom, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["stackedArea"]);
+        this.chartBottom = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["Chart"](new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["XYGrid"](bottomChartConfig()), { updateDomainForEmptySeries: true });
+        this.chartAssistBottom = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["ChartAssist"](this.chartBottom, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["stackedArea"], this.chartAssistTop.palette, this.chartAssistTop.markers);
         // Area accessors let the renderer know how to access x and y domain data respectively from a chart's input data set(s).
         const accessors = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["AreaAccessors"]();
         // 'x' defines access for values in the data that correspond to the horizontal axis
@@ -928,6 +979,7 @@ let AreaChartBiDirectionalStackedExampleComponent = class AreaChartBiDirectional
         // accessor so that each series is assigned a different marker shape from the same marker sequence.
         // Take a look also at the marker assignment for the second accessors instance below.
         accessors.series.marker = this.chartAssistTop.markers.get;
+        accessors.series.color = this.chartAssistTop.palette.standardColors.get;
         // The area renderer will make the chart look like an area chart.
         const renderer = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["AreaRenderer"]();
         const xScale = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["TimeScale"]();
@@ -942,19 +994,47 @@ let AreaChartBiDirectionalStackedExampleComponent = class AreaChartBiDirectional
             y: new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["LinearScale"]().reverse(),
         };
         // Here we assemble the complete chart series.
-        const seriesSetTop = getData().map(d => (Object.assign(Object.assign({}, d), { renderer,
+        const seriesSetTop = getDataTop().map(d => (Object.assign(Object.assign({}, d), { renderer,
             accessors, scales: scalesTop })));
-        this.chartAssistTop.update(seriesSetTop);
-        const seriesSetBottom = getData().map(d => (Object.assign(Object.assign({}, d), { renderer,
+        const seriesSetBottom = getDataBottom().map(d => (Object.assign(Object.assign({}, d), { renderer,
             accessors, scales: scalesBottom })));
+        // We need to replace domain calculators to reflect series on both charts
+        const topChartDomainCalculator = Object(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["domainWithAuxiliarySeries"])(() => seriesSetBottom, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["getAutomaticDomain"]);
+        scalesTop.y.domainCalculator = topChartDomainCalculator;
+        scalesTop.x.domainCalculator = topChartDomainCalculator;
+        const bottomChartDomainCalculator = Object(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["domainWithAuxiliarySeries"])(() => seriesSetTop, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["getAutomaticDomain"]);
+        scalesBottom.y.domainCalculator = bottomChartDomainCalculator;
+        scalesBottom.x.domainCalculator = bottomChartDomainCalculator;
+        this.chartAssistTop.update(seriesSetTop);
         this.chartAssistBottom.update(seriesSetBottom);
     }
+    /**
+     * This function ensures the change in visibility of series is propagated to both charts. Chart that is directly associated with the series has to be
+     * invoked first.
+     *
+     * @param legendSeries
+     * @param value
+     * @param currentChartAssist
+     */
+    onSelectedChange(legendSeries, value, currentChartAssist) {
+        let chartAssists = [this.chartAssistTop, this.chartAssistBottom];
+        if (currentChartAssist === this.chartAssistBottom) {
+            chartAssists = chartAssists.reverse();
+        }
+        for (const ca of chartAssists) {
+            ca.toggleSeries(legendSeries.id, value);
+        }
+    }
 };
+AreaChartBiDirectionalStackedExampleComponent.ctorParameters = () => [
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["ChangeDetectorRef"] }
+];
 AreaChartBiDirectionalStackedExampleComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
         selector: "area-chart-bi-directional-stacked-example",
         template: _raw_loader_area_chart_bi_directional_stacked_example_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
-    })
+    }),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_2__["ChangeDetectorRef"]])
 ], AreaChartBiDirectionalStackedExampleComponent);
 
 function topChartConfig(c = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["XYGridConfig"]()) {
@@ -969,11 +1049,11 @@ function bottomChartConfig(c = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__[
     return c;
 }
 /* Chart data */
-function getData() {
+function getDataTop() {
     const format = "YYYY-MM-DDTHH:mm:ssZ";
     return [
         {
-            id: "up",
+            id: "up1",
             name: "Up Speed",
             data: [
                 { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T11:45:29.909Z", format), value: 6 },
@@ -993,7 +1073,7 @@ function getData() {
             ],
         },
         {
-            id: "down",
+            id: "down1",
             name: "Dn Speed",
             data: [
                 { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T11:45:29.909Z", format), value: 12 },
@@ -1004,6 +1084,266 @@ function getData() {
                 { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T13:55:29.909Z", format), value: 23 },
                 { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T14:20:29.909Z", format), value: 12 },
                 { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T14:40:29.909Z", format), value: 70 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T15:00:29.909Z", format), value: 45 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T15:25:29.909Z", format), value: 50 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T15:45:29.909Z", format), value: 75 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T16:10:29.909Z", format), value: 50 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T16:30:29.909Z", format), value: 85 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T16:45:29.909Z", format), value: 55 },
+            ],
+        },
+    ];
+}
+function getDataBottom() {
+    const format = "YYYY-MM-DDTHH:mm:ssZ";
+    return [
+        {
+            id: "up2",
+            name: "Up Speed",
+            data: [
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T11:45:29.909Z", format), value: 6 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T12:10:29.909Z", format), value: 33 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T12:50:29.909Z", format), value: 15 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T13:15:29.909Z", format), value: 20 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T13:40:29.909Z", format), value: 30 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T13:55:29.909Z", format), value: 12 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T14:20:29.909Z", format), value: 6 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T14:40:29.909Z", format), value: 35 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T15:00:29.909Z", format), value: 23 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T15:25:29.909Z", format), value: 95 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T15:45:29.909Z", format), value: 38 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T16:10:29.909Z", format), value: 25 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T16:30:29.909Z", format), value: 43 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T16:45:29.909Z", format), value: 28 },
+            ],
+        },
+        {
+            id: "down2",
+            name: "Dn Speed",
+            data: [
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T11:45:29.909Z", format), value: 12 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T12:10:29.909Z", format), value: 65 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T12:50:29.909Z", format), value: 30 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T13:15:29.909Z", format), value: 40 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T13:40:29.909Z", format), value: 60 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T13:55:29.909Z", format), value: 23 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T14:20:29.909Z", format), value: 12 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T14:40:29.909Z", format), value: 250 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T15:00:29.909Z", format), value: 45 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T15:25:29.909Z", format), value: 50 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T15:45:29.909Z", format), value: 75 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T16:10:29.909Z", format), value: 50 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T16:30:29.909Z", format), value: 85 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T16:45:29.909Z", format), value: 55 },
+            ],
+        },
+    ];
+}
+
+
+/***/ }),
+
+/***/ "drqq":
+/*!**********************************************************************************************************************************************!*\
+  !*** ./examples/components/demo/chart-types/area/area-chart-bi-directional-stacked-test/area-chart-bi-directional-stacked-test.component.ts ***!
+  \**********************************************************************************************************************************************/
+/*! exports provided: AreaChartBiDirectionalStackedTestComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AreaChartBiDirectionalStackedTestComponent", function() { return AreaChartBiDirectionalStackedTestComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _raw_loader_area_chart_bi_directional_stacked_test_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./area-chart-bi-directional-stacked-test.component.html */ "vA/m");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @nova-ui/charts */ "gKry");
+/* harmony import */ var moment_moment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! moment/moment */ "wd/R");
+/* harmony import */ var moment_moment__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(moment_moment__WEBPACK_IMPORTED_MODULE_4__);
+
+
+
+
+
+let AreaChartBiDirectionalStackedTestComponent = class AreaChartBiDirectionalStackedTestComponent {
+    constructor(changeDetector) {
+        this.changeDetector = changeDetector;
+        this.inverted = false; // cave mode!
+    }
+    ngOnInit() {
+        // areaGrid returns an XYGrid configured for displaying an area chart's axes and other grid elements.
+        this.chartTop = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["Chart"](new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["XYGrid"](topChartConfig()), { updateDomainForEmptySeries: true });
+        this.chartAssistTop = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["ChartAssist"](this.chartTop, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["stackedArea"]);
+        this.chartBottom = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["Chart"](new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["XYGrid"](bottomChartConfig()), { updateDomainForEmptySeries: true });
+        this.chartAssistBottom = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["ChartAssist"](this.chartBottom, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["stackedArea"], this.chartAssistTop.palette, this.chartAssistTop.markers);
+        // Area accessors let the renderer know how to access x and y domain data respectively from a chart's input data set(s).
+        const accessors = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["AreaAccessors"]();
+        // 'x' defines access for values in the data that correspond to the horizontal axis
+        accessors.data.x = (d) => d.timeStamp;
+        // 'y0' defines the baseline, in other words, where the area starts
+        accessors.data.y0 = () => 0;
+        // 'y1' defines access to the numeric values we want to visualize, in other words, where the area ends
+        accessors.data.y1 = (d) => d.value;
+        // 'x' and 'y' accessors define the position of the marker. 'x' was already defined, so now we need to define 'y' as well.
+        // Notice that the 'y' is assigned the 'absoluteY1' accessor which takes into account areas that may be stacked below
+        // the current area and retrieves the absolute distance from the baseline to the area's value line.
+        accessors.data.y = accessors.data.absoluteY1;
+        // Even though we're using different accessor instances for each series, we want to use the same marker
+        // accessor so that each series is assigned a different marker shape from the same marker sequence.
+        // Take a look also at the marker assignment for the second accessors instance below.
+        accessors.series.marker = this.chartAssistTop.markers.get;
+        accessors.series.color = this.chartAssistTop.palette.standardColors.get;
+        // The area renderer will make the chart look like an area chart.
+        const renderer = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["AreaRenderer"]();
+        const xScale = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["TimeScale"]();
+        // In case of an area chart, the scale definitions are flexible.
+        // This test demonstrates a scenario with time on the X scale and a numeric value on the Y scale.
+        const scalesTop = {
+            x: xScale,
+            y: this.inverted ? new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["LinearScale"]().reverse() : new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["LinearScale"](),
+        };
+        const scalesBottom = {
+            x: xScale,
+            y: this.inverted ? new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["LinearScale"]() : new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["LinearScale"]().reverse(),
+        };
+        // Here we assemble the complete chart series.
+        const seriesSetTop = getDataTop().map(d => (Object.assign(Object.assign({}, d), { renderer,
+            accessors, scales: scalesTop })));
+        const seriesSetBottom = getDataBottom().map(d => (Object.assign(Object.assign({}, d), { renderer,
+            accessors, scales: scalesBottom })));
+        // We need to replace domain calculators to reflect series on both charts
+        const topChartDomainCalculator = Object(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["domainWithAuxiliarySeries"])(() => seriesSetBottom, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["getAutomaticDomain"]);
+        scalesTop.y.domainCalculator = topChartDomainCalculator;
+        scalesTop.x.domainCalculator = topChartDomainCalculator;
+        const bottomChartDomainCalculator = Object(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["domainWithAuxiliarySeries"])(() => seriesSetTop, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["getAutomaticDomain"]);
+        scalesBottom.y.domainCalculator = bottomChartDomainCalculator;
+        scalesBottom.x.domainCalculator = bottomChartDomainCalculator;
+        this.chartAssistTop.update(seriesSetTop);
+        this.chartAssistBottom.update(seriesSetBottom);
+    }
+    /**
+     * This function ensures the change in visibility of series is propagated to both charts. Chart that is directly associated with the series has to be
+     * invoked first.
+     *
+     * @param legendSeries
+     * @param value
+     * @param currentChartAssist
+     */
+    onSelectedChange(legendSeries, value, currentChartAssist) {
+        let chartAssists = [this.chartAssistTop, this.chartAssistBottom];
+        if (currentChartAssist === this.chartAssistBottom) {
+            chartAssists = chartAssists.reverse();
+        }
+        for (const ca of chartAssists) {
+            ca.toggleSeries(legendSeries.id, value);
+        }
+    }
+};
+AreaChartBiDirectionalStackedTestComponent.ctorParameters = () => [
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["ChangeDetectorRef"] }
+];
+AreaChartBiDirectionalStackedTestComponent.propDecorators = {
+    inverted: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"] }]
+};
+AreaChartBiDirectionalStackedTestComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
+        selector: "area-chart-bi-directional-stacked-test",
+        template: _raw_loader_area_chart_bi_directional_stacked_test_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
+    }),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_2__["ChangeDetectorRef"]])
+], AreaChartBiDirectionalStackedTestComponent);
+
+function topChartConfig(c = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["XYGridConfig"]()) {
+    c.dimension.margin.bottom = 0;
+    c.dimension.padding.bottom = 0;
+    c.borders.bottom.visible = false;
+    return c;
+}
+function bottomChartConfig(c = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["XYGridConfig"]()) {
+    c.dimension.padding.top = 0;
+    c.dimension.margin.top = 0;
+    return c;
+}
+/* Chart data */
+function getDataTop() {
+    const format = "YYYY-MM-DDTHH:mm:ssZ";
+    return [
+        {
+            id: "up1",
+            name: "Up Speed",
+            data: [
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T11:45:29.909Z", format), value: 6 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T12:10:29.909Z", format), value: 33 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T12:50:29.909Z", format), value: 15 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T13:15:29.909Z", format), value: 20 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T13:40:29.909Z", format), value: 30 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T13:55:29.909Z", format), value: 12 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T14:20:29.909Z", format), value: 6 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T14:40:29.909Z", format), value: 35 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T15:00:29.909Z", format), value: 23 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T15:25:29.909Z", format), value: 25 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T15:45:29.909Z", format), value: 38 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T16:10:29.909Z", format), value: 25 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T16:30:29.909Z", format), value: 43 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T16:45:29.909Z", format), value: 28 },
+            ],
+        },
+        {
+            id: "down1",
+            name: "Dn Speed",
+            data: [
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T11:45:29.909Z", format), value: 12 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T12:10:29.909Z", format), value: 65 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T12:50:29.909Z", format), value: 30 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T13:15:29.909Z", format), value: 40 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T13:40:29.909Z", format), value: 60 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T13:55:29.909Z", format), value: 23 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T14:20:29.909Z", format), value: 12 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T14:40:29.909Z", format), value: 70 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T15:00:29.909Z", format), value: 45 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T15:25:29.909Z", format), value: 50 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T15:45:29.909Z", format), value: 75 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T16:10:29.909Z", format), value: 50 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T16:30:29.909Z", format), value: 85 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T16:45:29.909Z", format), value: 55 },
+            ],
+        },
+    ];
+}
+function getDataBottom() {
+    const format = "YYYY-MM-DDTHH:mm:ssZ";
+    return [
+        {
+            id: "up2",
+            name: "Up Speed",
+            data: [
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T11:45:29.909Z", format), value: 6 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T12:10:29.909Z", format), value: 33 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T12:50:29.909Z", format), value: 15 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T13:15:29.909Z", format), value: 20 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T13:40:29.909Z", format), value: 30 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T13:55:29.909Z", format), value: 12 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T14:20:29.909Z", format), value: 6 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T14:40:29.909Z", format), value: 35 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T15:00:29.909Z", format), value: 23 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T15:25:29.909Z", format), value: 95 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T15:45:29.909Z", format), value: 38 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T16:10:29.909Z", format), value: 25 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T16:30:29.909Z", format), value: 43 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T16:45:29.909Z", format), value: 28 },
+            ],
+        },
+        {
+            id: "down2",
+            name: "Dn Speed",
+            data: [
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T11:45:29.909Z", format), value: 12 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T12:10:29.909Z", format), value: 65 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T12:50:29.909Z", format), value: 30 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T13:15:29.909Z", format), value: 40 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T13:40:29.909Z", format), value: 60 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T13:55:29.909Z", format), value: 23 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T14:20:29.909Z", format), value: 12 },
+                { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T14:40:29.909Z", format), value: 250 },
                 { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T15:00:29.909Z", format), value: 45 },
                 { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T15:25:29.909Z", format), value: 50 },
                 { timeStamp: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T15:45:29.909Z", format), value: 75 },

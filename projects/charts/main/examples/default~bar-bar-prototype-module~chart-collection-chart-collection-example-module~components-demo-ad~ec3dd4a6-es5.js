@@ -4565,17 +4565,11 @@
       var _types__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
       /*! ./types */
       "43k1");
-      /** @ignore */
-
-
-      var chartAssistSeriesDefaults = {
-        showInLegend: true,
-        preprocess: true
-      };
       /**
        * Helper class that helps to bootstrap a chart with legend, using data pre-processor.
        * It will use the most common settings.
        */
+
 
       var ChartAssist = /*#__PURE__*/function () {
         function ChartAssist(chart, seriesProcessor) {
@@ -5540,7 +5534,7 @@
       !*** ./src/core/common/scales/types.ts ***!
       \*****************************************/
 
-    /*! exports provided: EMPTY_CONTINUOUS_DOMAIN, NORMALIZED_DOMAIN, isBandScale, hasInnerScale */
+    /*! exports provided: EMPTY_CONTINUOUS_DOMAIN, NORMALIZED_DOMAIN, isDomainWithTicksCalculator, isBandScale, hasInnerScale */
 
     /***/
     function FX(module, __webpack_exports__, __webpack_require__) {
@@ -5562,6 +5556,12 @@
       /* harmony export (binding) */
 
 
+      __webpack_require__.d(__webpack_exports__, "isDomainWithTicksCalculator", function () {
+        return isDomainWithTicksCalculator;
+      });
+      /* harmony export (binding) */
+
+
       __webpack_require__.d(__webpack_exports__, "isBandScale", function () {
         return isBandScale;
       });
@@ -5578,6 +5578,11 @@
       /** A reasonable non-data-driven domain for charts  */
 
       var NORMALIZED_DOMAIN = [0, 1];
+      /** Type guard for the domain calculator with ticks */
+
+      function isDomainWithTicksCalculator(obj) {
+        return !!obj.domainWithTicks;
+      }
 
       function isBandScale(scale) {
         return typeof scale.bandwidth === "function";
@@ -7523,9 +7528,9 @@
       /* harmony import */
 
 
-      var _common_scales_domain_calculation_automatic_domain__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
-      /*! ../common/scales/domain-calculation/automatic-domain */
-      "LDCf");
+      var _common_scales_domain_calculation_domain_with_ticks__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
+      /*! ../common/scales/domain-calculation/domain-with-ticks */
+      "ztwP");
       /* harmony import */
 
 
@@ -7535,31 +7540,37 @@
       /* harmony import */
 
 
-      var _plugins_interaction_interaction_label_plugin__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
+      var _common_scales_types__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
+      /*! ../common/scales/types */
+      "41FX");
+      /* harmony import */
+
+
+      var _plugins_interaction_interaction_label_plugin__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
       /*! ../plugins/interaction/interaction-label-plugin */
       "UF3v");
       /* harmony import */
 
 
-      var _plugins_interaction_interaction_line_plugin__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
+      var _plugins_interaction_interaction_line_plugin__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(
       /*! ../plugins/interaction/interaction-line-plugin */
       "Ywc9");
       /* harmony import */
 
 
-      var _plugins_mouse_interactive_area_plugin__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(
+      var _plugins_mouse_interactive_area_plugin__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(
       /*! ../plugins/mouse-interactive-area-plugin */
       "/buC");
       /* harmony import */
 
 
-      var _config_xy_grid_config__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(
+      var _config_xy_grid_config__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(
       /*! ./config/xy-grid-config */
       "o9ks");
       /* harmony import */
 
 
-      var _grid__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(
+      var _grid__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(
       /*! ./grid */
       "qYyZ");
 
@@ -7586,7 +7597,7 @@
             return Math.abs(first - second) < 0.1;
           };
 
-          _this25.config(config || new _config_xy_grid_config__WEBPACK_IMPORTED_MODULE_18__["XYGridConfig"]());
+          _this25.config(config || new _config_xy_grid_config__WEBPACK_IMPORTED_MODULE_19__["XYGridConfig"]());
 
           return _this25;
         }
@@ -7694,9 +7705,9 @@
                     axisGenerator = d3_axis__WEBPACK_IMPORTED_MODULE_0__["axisBottom"];
                   }
 
-                  if (scale.domainCalculator === _common_scales_domain_calculation_automatic_domain__WEBPACK_IMPORTED_MODULE_13__["getAutomaticDomain"] && config.gridTicks) {
+                  if (scale.domainCalculator && !Object(_common_scales_types__WEBPACK_IMPORTED_MODULE_15__["isDomainWithTicksCalculator"])(scale.domainCalculator) && config.gridTicks) {
                     scale.__domainCalculatedWithTicks = true;
-                    scale.domainCalculator = Object(_common_scales_domain_calculation_automatic_domain__WEBPACK_IMPORTED_MODULE_13__["getAutomaticDomainWithTicks"])(config, axisGenerator);
+                    scale.domainCalculator = Object(_common_scales_domain_calculation_domain_with_ticks__WEBPACK_IMPORTED_MODULE_13__["getAutomaticDomainWithTicks"])(config, axisGenerator, scale.domainCalculator);
                   }
                 });
               });
@@ -7856,12 +7867,12 @@
             var config = this.config();
 
             if (config.interactive) {
-              plugins.push(new _plugins_mouse_interactive_area_plugin__WEBPACK_IMPORTED_MODULE_17__["MouseInteractiveAreaPlugin"](new _common_mouse_interactive_area__WEBPACK_IMPORTED_MODULE_11__["MouseInteractiveArea"](this.getLasagna().getContainer(), this.getInteractiveArea(), config.cursor, config.dimension.margin)));
+              plugins.push(new _plugins_mouse_interactive_area_plugin__WEBPACK_IMPORTED_MODULE_18__["MouseInteractiveAreaPlugin"](new _common_mouse_interactive_area__WEBPACK_IMPORTED_MODULE_11__["MouseInteractiveArea"](this.getLasagna().getContainer(), this.getInteractiveArea(), config.cursor, config.dimension.margin)));
             }
 
             if (config.interactionPlugins) {
-              plugins.push(new _plugins_interaction_interaction_line_plugin__WEBPACK_IMPORTED_MODULE_16__["InteractionLinePlugin"]());
-              plugins.push(new _plugins_interaction_interaction_label_plugin__WEBPACK_IMPORTED_MODULE_15__["InteractionLabelPlugin"]());
+              plugins.push(new _plugins_interaction_interaction_line_plugin__WEBPACK_IMPORTED_MODULE_17__["InteractionLinePlugin"]());
+              plugins.push(new _plugins_interaction_interaction_label_plugin__WEBPACK_IMPORTED_MODULE_16__["InteractionLabelPlugin"]());
             }
 
             return plugins;
@@ -8181,7 +8192,7 @@
         }, {
           key: "getOuterWidthDimensionCorrection",
           value: function getOuterWidthDimensionCorrection() {
-            return this.config().axis.bottom.visible ? _grid__WEBPACK_IMPORTED_MODULE_19__["Grid"].TICK_DIMENSION_CORRECTION : 0;
+            return this.config().axis.bottom.visible ? _grid__WEBPACK_IMPORTED_MODULE_20__["Grid"].TICK_DIMENSION_CORRECTION : 0;
           }
         }, {
           key: "handleMarginUpdate",
@@ -8423,7 +8434,7 @@
         }]);
 
         return XYGrid;
-      }(_grid__WEBPACK_IMPORTED_MODULE_19__["Grid"]);
+      }(_grid__WEBPACK_IMPORTED_MODULE_20__["Grid"]);
 
       XYGrid.TICK_LABEL_OVERFLOW_DEBOUNCE_INTERVAL = 200;
       /***/
@@ -10173,10 +10184,11 @@
       "yvTX");
 
       var Chart = /*#__PURE__*/function () {
-        function Chart(grid) {
+        function Chart(grid, configuration) {
           _classCallCheck(this, Chart);
 
           this.grid = grid;
+          this.configuration = configuration;
           this.eventBus = new _common_event_bus__WEBPACK_IMPORTED_MODULE_6__["EventBus"]();
           this.updateSubject = new rxjs__WEBPACK_IMPORTED_MODULE_2__["BehaviorSubject"]([]);
           this.updateDimensionsSubject = new rxjs__WEBPACK_IMPORTED_MODULE_2__["Subject"]();
@@ -10323,7 +10335,7 @@
         }, {
           key: "buildDataManager",
           value: function buildDataManager() {
-            return new _common_data_manager__WEBPACK_IMPORTED_MODULE_5__["DataManager"]();
+            return new _common_data_manager__WEBPACK_IMPORTED_MODULE_5__["DataManager"](this);
           }
         }, {
           key: "buildGrid",
@@ -13093,7 +13105,7 @@
       !*** ./src/core/public-api.ts ***!
       \********************************/
 
-    /*! exports provided: ChartPalette, MappedValueProvider, CHART_PALETTE_CS1, CHART_PALETTE_CS2, CHART_PALETTE_CS3, CHART_PALETTE_CS_S, CHART_PALETTE_CS_S_EXTENDED, CHART_MARKERS, ProcessedColorProvider, SequentialChartMarkerProvider, SequentialColorProvider, SequentialValueProvider, TextColorProvider, PathMarker, SvgMarker, defaultColorProvider, defaultPalette, defaultMarkerProvider, getColorValueByName, getAutomaticDomain, getAutomaticDomainWithIncludedInterval, getAutomaticDomainWithTicks, BandScale, PointScale, LinearScale, Scale, TimeScale, isDaylightSavingTime, TimeIntervalScale, datetimeFormatter, EMPTY_CONTINUOUS_DOMAIN, NORMALIZED_DOMAIN, isBandScale, hasInnerScale, NoopScale, convert, invert, ChartPlugin, DataManager, DataSeries, EventBus, InteractionType, Lasagna, MouseInteractiveArea, RenderEngine, Renderer, UtilityService, AxisConfig, BorderConfig, DimensionConfig, linearGaugeGridConfig, GridConfig, AreaGridConfig, BarGridConfig, BarHorizontalGridConfig, BarStatusGridConfig, sparkChartGridConfig, XYGridConfig, XYGrid, borderMidpoint, Grid, RadialGrid, ChartDonutContentPlugin, ChartPopoverPlugin, DonutGaugeLabelsPlugin, LinearGaugeLabelsPlugin, GAUGE_LABEL_FORMATTER_NAME_DEFAULT, GAUGE_LABELS_CONTAINER_CLASS, GAUGE_THRESHOLD_LABEL_CLASS, InteractionLabelPlugin, InteractionLinePlugin, MouseInteractiveAreaPlugin, RadialPopoverPlugin, RenderEnginePlugin, TOOLTIP_POSITION_OFFSET, getVerticalSetup, getHorizontalSetup, ChartTooltipsPlugin, RadialTooltipsPlugin, BarTooltipsPlugin, ZoomPlugin, ChartCollection, Chart, ChartAssist, LegendInteractionAssist, SparkChartAssist, ChartAssistEventType, ChartAssistRenderStateData, CssFilterId, GRAYSCALE_FILTER, GRAYSCALE_COLOR_MATRIX */
+    /*! exports provided: ChartPalette, MappedValueProvider, CHART_PALETTE_CS1, CHART_PALETTE_CS2, CHART_PALETTE_CS3, CHART_PALETTE_CS_S, CHART_PALETTE_CS_S_EXTENDED, CHART_MARKERS, ProcessedColorProvider, SequentialChartMarkerProvider, SequentialColorProvider, SequentialValueProvider, TextColorProvider, PathMarker, SvgMarker, defaultColorProvider, defaultPalette, defaultMarkerProvider, getColorValueByName, getAutomaticDomain, getAutomaticDomainWithIncludedInterval, getAutomaticDomainWithTicks, domainWithAuxiliarySeries, mergeDomains, BandScale, PointScale, LinearScale, Scale, TimeScale, isDaylightSavingTime, TimeIntervalScale, datetimeFormatter, EMPTY_CONTINUOUS_DOMAIN, NORMALIZED_DOMAIN, isDomainWithTicksCalculator, isBandScale, hasInnerScale, NoopScale, convert, invert, ChartPlugin, DataManager, DataSeries, EventBus, InteractionType, Lasagna, MouseInteractiveArea, RenderEngine, Renderer, UtilityService, AxisConfig, BorderConfig, DimensionConfig, linearGaugeGridConfig, GridConfig, AreaGridConfig, BarGridConfig, BarHorizontalGridConfig, BarStatusGridConfig, sparkChartGridConfig, XYGridConfig, XYGrid, borderMidpoint, Grid, RadialGrid, ChartDonutContentPlugin, ChartPopoverPlugin, DonutGaugeLabelsPlugin, LinearGaugeLabelsPlugin, GAUGE_LABEL_FORMATTER_NAME_DEFAULT, GAUGE_LABELS_CONTAINER_CLASS, GAUGE_THRESHOLD_LABEL_CLASS, InteractionLabelPlugin, InteractionLinePlugin, MouseInteractiveAreaPlugin, RadialPopoverPlugin, RenderEnginePlugin, TOOLTIP_POSITION_OFFSET, getVerticalSetup, getHorizontalSetup, ChartTooltipsPlugin, RadialTooltipsPlugin, BarTooltipsPlugin, ZoomPlugin, ChartCollection, Chart, ChartAssist, LegendInteractionAssist, SparkChartAssist, ChartAssistEventType, ChartAssistRenderStateData, CssFilterId, GRAYSCALE_FILTER, GRAYSCALE_COLOR_MATRIX */
 
     /***/
     function DRhB(module, __webpack_exports__, __webpack_require__) {
@@ -13241,6 +13253,18 @@
       /* harmony reexport (safe) */
 
 
+      __webpack_require__.d(__webpack_exports__, "domainWithAuxiliarySeries", function () {
+        return _common_public_api__WEBPACK_IMPORTED_MODULE_0__["domainWithAuxiliarySeries"];
+      });
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "mergeDomains", function () {
+        return _common_public_api__WEBPACK_IMPORTED_MODULE_0__["mergeDomains"];
+      });
+      /* harmony reexport (safe) */
+
+
       __webpack_require__.d(__webpack_exports__, "BandScale", function () {
         return _common_public_api__WEBPACK_IMPORTED_MODULE_0__["BandScale"];
       });
@@ -13297,6 +13321,12 @@
 
       __webpack_require__.d(__webpack_exports__, "NORMALIZED_DOMAIN", function () {
         return _common_public_api__WEBPACK_IMPORTED_MODULE_0__["NORMALIZED_DOMAIN"];
+      });
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "isDomainWithTicksCalculator", function () {
+        return _common_public_api__WEBPACK_IMPORTED_MODULE_0__["isDomainWithTicksCalculator"];
       });
       /* harmony reexport (safe) */
 
@@ -20089,7 +20119,7 @@
       !*** ./src/core/common/scales/domain-calculation/automatic-domain.ts ***!
       \***********************************************************************/
 
-    /*! exports provided: getAutomaticDomain, getAutomaticDomainWithIncludedInterval, getAutomaticDomainWithTicks */
+    /*! exports provided: getAutomaticDomain, getAutomaticDomainWithIncludedInterval */
 
     /***/
     function LDCf(module, __webpack_exports__, __webpack_require__) {
@@ -20108,42 +20138,20 @@
       __webpack_require__.d(__webpack_exports__, "getAutomaticDomainWithIncludedInterval", function () {
         return getAutomaticDomainWithIncludedInterval;
       });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "getAutomaticDomainWithTicks", function () {
-        return getAutomaticDomainWithTicks;
-      });
       /* harmony import */
 
 
-      var lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! lodash/cloneDeep */
-      "BkRI");
-      /* harmony import */
-
-
-      var lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_0__);
-      /* harmony import */
-
-
-      var lodash_indexOf__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      var lodash_indexOf__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! lodash/indexOf */
       "uoTU");
       /* harmony import */
 
 
-      var lodash_indexOf__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_indexOf__WEBPACK_IMPORTED_MODULE_1__);
+      var lodash_indexOf__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash_indexOf__WEBPACK_IMPORTED_MODULE_0__);
       /* harmony import */
 
 
-      var _helpers_domain__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-      /*! ../helpers/domain */
-      "PhPe");
-      /* harmony import */
-
-
-      var _merge_domains__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      var _merge_domains__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ./merge-domains */
       "vpY8");
       /** @ignore */
@@ -20168,7 +20176,7 @@
               result[scaleKey] = [];
             }
 
-            if (lodash_indexOf__WEBPACK_IMPORTED_MODULE_1___default()(result[scaleKey], scale) === -1) {
+            if (lodash_indexOf__WEBPACK_IMPORTED_MODULE_0___default()(result[scaleKey], scale) === -1) {
               result[scaleKey].push(scale);
             }
           }
@@ -20194,7 +20202,7 @@
           var filterScales = Object.keys(fixedDomains).reduce(function (result, next) {
             var seriesScale = cs.scales[next];
 
-            if (seriesScale && seriesScale.isContinuous() && lodash_indexOf__WEBPACK_IMPORTED_MODULE_1___default()(fixedDomains[next], seriesScale) !== -1) {
+            if (seriesScale && seriesScale.isContinuous() && lodash_indexOf__WEBPACK_IMPORTED_MODULE_0___default()(fixedDomains[next], seriesScale) !== -1) {
               result[next] = seriesScale;
             }
 
@@ -20202,7 +20210,7 @@
           }, {});
           return cs.renderer.getDomainOfFilteredData(cs, filterScales, scaleKey, cs.scales[scaleKey]);
         });
-        return Object(_merge_domains__WEBPACK_IMPORTED_MODULE_3__["mergeDomains"])(domains, scale);
+        return Object(_merge_domains__WEBPACK_IMPORTED_MODULE_1__["mergeDomains"])(domains, scale);
       };
       /**
        * Works like getAutomaticDomain, but also includes provided interval in the calculated result
@@ -20217,32 +20225,6 @@
         return function (chartSeriesSet, scaleId, scale) {
           var automaticDomain = getAutomaticDomain(chartSeriesSet, scaleId, scale);
           return [Math.min(automaticDomain[0], interval[0]), Math.max(automaticDomain[1], interval[1])];
-        };
-      };
-
-      var getAutomaticDomainWithTicks = function getAutomaticDomainWithTicks(config, axisGenerator) {
-        return function (chartSeriesSet, scaleKey, scale) {
-          var mergedDomains = getAutomaticDomain(chartSeriesSet, scaleKey, scale);
-          var clonedScale = lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_0___default()(scale);
-          Object(_helpers_domain__WEBPACK_IMPORTED_MODULE_2__["domain"])(clonedScale, mergedDomains);
-          var tickAxis = axisGenerator(clonedScale.d3Scale);
-          var ticks = tickAxis.scale().ticks(config.approximateTicks);
-
-          if (ticks.length <= 1) {
-            return mergedDomains;
-          }
-
-          var ticksAverage = ticks[1] - ticks[0];
-
-          if (ticks[0] > mergedDomains[0]) {
-            mergedDomains[0] = ticks[0] - ticksAverage;
-          }
-
-          if (ticks[ticks.length - 1] < mergedDomains[1]) {
-            mergedDomains[1] = ticks[ticks.length - 1] + ticksAverage;
-          }
-
-          return mergedDomains;
         };
       };
       /***/
@@ -26673,7 +26655,7 @@
       !*** ./src/core/common/scales/public-api.ts ***!
       \**********************************************/
 
-    /*! exports provided: getAutomaticDomain, getAutomaticDomainWithIncludedInterval, getAutomaticDomainWithTicks, BandScale, PointScale, LinearScale, Scale, TimeScale, isDaylightSavingTime, TimeIntervalScale, datetimeFormatter, EMPTY_CONTINUOUS_DOMAIN, NORMALIZED_DOMAIN, isBandScale, hasInnerScale, NoopScale, convert, invert */
+    /*! exports provided: getAutomaticDomain, getAutomaticDomainWithIncludedInterval, getAutomaticDomainWithTicks, domainWithAuxiliarySeries, mergeDomains, BandScale, PointScale, LinearScale, Scale, TimeScale, isDaylightSavingTime, TimeIntervalScale, datetimeFormatter, EMPTY_CONTINUOUS_DOMAIN, NORMALIZED_DOMAIN, isDomainWithTicksCalculator, isBandScale, hasInnerScale, NoopScale, convert, invert */
 
     /***/
     function UZfp(module, __webpack_exports__, __webpack_require__) {
@@ -26698,167 +26680,203 @@
       __webpack_require__.d(__webpack_exports__, "getAutomaticDomainWithIncludedInterval", function () {
         return _domain_calculation_automatic_domain__WEBPACK_IMPORTED_MODULE_0__["getAutomaticDomainWithIncludedInterval"];
       });
+      /* harmony import */
+
+
+      var _domain_calculation_domain_with_ticks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! ./domain-calculation/domain-with-ticks */
+      "ztwP");
       /* harmony reexport (safe) */
 
 
       __webpack_require__.d(__webpack_exports__, "getAutomaticDomainWithTicks", function () {
-        return _domain_calculation_automatic_domain__WEBPACK_IMPORTED_MODULE_0__["getAutomaticDomainWithTicks"];
+        return _domain_calculation_domain_with_ticks__WEBPACK_IMPORTED_MODULE_1__["getAutomaticDomainWithTicks"];
       });
       /* harmony import */
 
 
-      var _band_scale__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      var _domain_calculation_domain_with_auxiliary_series__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! ./domain-calculation/domain-with-auxiliary-series */
+      "wRT7");
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "domainWithAuxiliarySeries", function () {
+        return _domain_calculation_domain_with_auxiliary_series__WEBPACK_IMPORTED_MODULE_2__["domainWithAuxiliarySeries"];
+      });
+      /* harmony import */
+
+
+      var _domain_calculation_merge_domains__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! ./domain-calculation/merge-domains */
+      "vpY8");
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "mergeDomains", function () {
+        return _domain_calculation_merge_domains__WEBPACK_IMPORTED_MODULE_3__["mergeDomains"];
+      });
+      /* harmony import */
+
+
+      var _band_scale__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! ./band-scale */
       "UxMT");
       /* harmony reexport (safe) */
 
 
       __webpack_require__.d(__webpack_exports__, "BandScale", function () {
-        return _band_scale__WEBPACK_IMPORTED_MODULE_1__["BandScale"];
+        return _band_scale__WEBPACK_IMPORTED_MODULE_4__["BandScale"];
       });
       /* harmony import */
 
 
-      var _point_scale__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      var _point_scale__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! ./point-scale */
       "26S2");
       /* harmony reexport (safe) */
 
 
       __webpack_require__.d(__webpack_exports__, "PointScale", function () {
-        return _point_scale__WEBPACK_IMPORTED_MODULE_2__["PointScale"];
+        return _point_scale__WEBPACK_IMPORTED_MODULE_5__["PointScale"];
       });
       /* harmony import */
 
 
-      var _linear_scale__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      var _linear_scale__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! ./linear-scale */
       "YYcv");
       /* harmony reexport (safe) */
 
 
       __webpack_require__.d(__webpack_exports__, "LinearScale", function () {
-        return _linear_scale__WEBPACK_IMPORTED_MODULE_3__["LinearScale"];
+        return _linear_scale__WEBPACK_IMPORTED_MODULE_6__["LinearScale"];
       });
       /* harmony import */
 
 
-      var _scale__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      var _scale__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! ./scale */
       "7YSD");
       /* harmony reexport (safe) */
 
 
       __webpack_require__.d(__webpack_exports__, "Scale", function () {
-        return _scale__WEBPACK_IMPORTED_MODULE_4__["Scale"];
+        return _scale__WEBPACK_IMPORTED_MODULE_7__["Scale"];
       });
       /* harmony import */
 
 
-      var _time_scale__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      var _time_scale__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! ./time-scale */
       "mn3F");
       /* harmony reexport (safe) */
 
 
       __webpack_require__.d(__webpack_exports__, "TimeScale", function () {
-        return _time_scale__WEBPACK_IMPORTED_MODULE_5__["TimeScale"];
+        return _time_scale__WEBPACK_IMPORTED_MODULE_8__["TimeScale"];
       });
       /* harmony import */
 
 
-      var _time_interval_scale__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      var _time_interval_scale__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
       /*! ./time-interval-scale */
       "TjDh");
       /* harmony reexport (safe) */
 
 
       __webpack_require__.d(__webpack_exports__, "isDaylightSavingTime", function () {
-        return _time_interval_scale__WEBPACK_IMPORTED_MODULE_6__["isDaylightSavingTime"];
+        return _time_interval_scale__WEBPACK_IMPORTED_MODULE_9__["isDaylightSavingTime"];
       });
       /* harmony reexport (safe) */
 
 
       __webpack_require__.d(__webpack_exports__, "TimeIntervalScale", function () {
-        return _time_interval_scale__WEBPACK_IMPORTED_MODULE_6__["TimeIntervalScale"];
+        return _time_interval_scale__WEBPACK_IMPORTED_MODULE_9__["TimeIntervalScale"];
       });
       /* harmony import */
 
 
-      var _formatters_public_api__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      var _formatters_public_api__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
       /*! ./formatters/public-api */
       "TXTI");
       /* harmony reexport (safe) */
 
 
       __webpack_require__.d(__webpack_exports__, "datetimeFormatter", function () {
-        return _formatters_public_api__WEBPACK_IMPORTED_MODULE_7__["datetimeFormatter"];
+        return _formatters_public_api__WEBPACK_IMPORTED_MODULE_10__["datetimeFormatter"];
       });
       /* harmony import */
 
 
-      var _types__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      var _types__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
       /*! ./types */
       "41FX");
       /* harmony reexport (safe) */
 
 
       __webpack_require__.d(__webpack_exports__, "EMPTY_CONTINUOUS_DOMAIN", function () {
-        return _types__WEBPACK_IMPORTED_MODULE_8__["EMPTY_CONTINUOUS_DOMAIN"];
+        return _types__WEBPACK_IMPORTED_MODULE_11__["EMPTY_CONTINUOUS_DOMAIN"];
       });
       /* harmony reexport (safe) */
 
 
       __webpack_require__.d(__webpack_exports__, "NORMALIZED_DOMAIN", function () {
-        return _types__WEBPACK_IMPORTED_MODULE_8__["NORMALIZED_DOMAIN"];
+        return _types__WEBPACK_IMPORTED_MODULE_11__["NORMALIZED_DOMAIN"];
+      });
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "isDomainWithTicksCalculator", function () {
+        return _types__WEBPACK_IMPORTED_MODULE_11__["isDomainWithTicksCalculator"];
       });
       /* harmony reexport (safe) */
 
 
       __webpack_require__.d(__webpack_exports__, "isBandScale", function () {
-        return _types__WEBPACK_IMPORTED_MODULE_8__["isBandScale"];
+        return _types__WEBPACK_IMPORTED_MODULE_11__["isBandScale"];
       });
       /* harmony reexport (safe) */
 
 
       __webpack_require__.d(__webpack_exports__, "hasInnerScale", function () {
-        return _types__WEBPACK_IMPORTED_MODULE_8__["hasInnerScale"];
+        return _types__WEBPACK_IMPORTED_MODULE_11__["hasInnerScale"];
       });
       /* harmony import */
 
 
-      var _noop_scale__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      var _noop_scale__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
       /*! ./noop-scale */
       "hjzW");
       /* harmony reexport (safe) */
 
 
       __webpack_require__.d(__webpack_exports__, "NoopScale", function () {
-        return _noop_scale__WEBPACK_IMPORTED_MODULE_9__["NoopScale"];
+        return _noop_scale__WEBPACK_IMPORTED_MODULE_12__["NoopScale"];
       });
       /* harmony import */
 
 
-      var _helpers_convert__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+      var _helpers_convert__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
       /*! ./helpers/convert */
       "+wCZ");
       /* harmony reexport (safe) */
 
 
       __webpack_require__.d(__webpack_exports__, "convert", function () {
-        return _helpers_convert__WEBPACK_IMPORTED_MODULE_10__["convert"];
+        return _helpers_convert__WEBPACK_IMPORTED_MODULE_13__["convert"];
       });
       /* harmony import */
 
 
-      var _helpers_invert__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+      var _helpers_invert__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
       /*! ./helpers/invert */
       "ukHU");
       /* harmony reexport (safe) */
 
 
       __webpack_require__.d(__webpack_exports__, "invert", function () {
-        return _helpers_invert__WEBPACK_IMPORTED_MODULE_11__["invert"];
+        return _helpers_invert__WEBPACK_IMPORTED_MODULE_14__["invert"];
       });
       /***/
 
@@ -28171,15 +28189,15 @@
       /* harmony import */
 
 
-      var _scales_helpers_domain__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
-      /*! ./scales/helpers/domain */
-      "PhPe");
+      var _renderers_types__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      /*! ../../renderers/types */
+      "AbRU");
       /* harmony import */
 
 
-      var _renderers_types__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
-      /*! ../../renderers/types */
-      "AbRU");
+      var _scales_helpers_domain__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      /*! ./scales/helpers/domain */
+      "PhPe");
       /**
        * @ignore
        *
@@ -28188,9 +28206,10 @@
 
 
       var DataManager = /*#__PURE__*/function () {
-        function DataManager() {
+        function DataManager(chart) {
           _classCallCheck(this, DataManager);
 
+          this.chart = chart;
           this._chartSeriesSet = [];
           this.dataIndex = {};
           this._scalesIndexByKey = {};
@@ -28244,6 +28263,8 @@
         }, {
           key: "updateScaleDomain",
           value: function updateScaleDomain(scale, scaleKey) {
+            var _a, _b;
+
             if (scale.isDomainFixed) {
               return;
             }
@@ -28252,12 +28273,12 @@
               var chartSeriesSet = this.chartSeriesSet.filter(function (cs) {
                 return cs.scales[scaleKey] === scale && !cs.renderer.config.ignoreForDomainCalculation;
               }).filter(function (c) {
-                return c.renderState !== _renderers_types__WEBPACK_IMPORTED_MODULE_7__["RenderState"].hidden;
+                return c.renderState !== _renderers_types__WEBPACK_IMPORTED_MODULE_6__["RenderState"].hidden;
               });
 
-              if (chartSeriesSet.length) {
+              if (chartSeriesSet.length || ((_b = (_a = this.chart) === null || _a === void 0 ? void 0 : _a.configuration) === null || _b === void 0 ? void 0 : _b.updateDomainForEmptySeries)) {
                 var calculatedDomain = scale.domainCalculator(chartSeriesSet, scaleKey, scale);
-                Object(_scales_helpers_domain__WEBPACK_IMPORTED_MODULE_6__["domain"])(scale, calculatedDomain);
+                Object(_scales_helpers_domain__WEBPACK_IMPORTED_MODULE_7__["domain"])(scale, calculatedDomain);
               }
             }
           }
@@ -32830,7 +32851,7 @@
       !*** ./src/core/common/public-api.ts ***!
       \***************************************/
 
-    /*! exports provided: ChartPalette, MappedValueProvider, CHART_PALETTE_CS1, CHART_PALETTE_CS2, CHART_PALETTE_CS3, CHART_PALETTE_CS_S, CHART_PALETTE_CS_S_EXTENDED, CHART_MARKERS, ProcessedColorProvider, SequentialChartMarkerProvider, SequentialColorProvider, SequentialValueProvider, TextColorProvider, PathMarker, SvgMarker, defaultColorProvider, defaultPalette, defaultMarkerProvider, getColorValueByName, getAutomaticDomain, getAutomaticDomainWithIncludedInterval, getAutomaticDomainWithTicks, BandScale, PointScale, LinearScale, Scale, TimeScale, isDaylightSavingTime, TimeIntervalScale, datetimeFormatter, EMPTY_CONTINUOUS_DOMAIN, NORMALIZED_DOMAIN, isBandScale, hasInnerScale, NoopScale, convert, invert, ChartPlugin, DataManager, DataSeries, EventBus, InteractionType, Lasagna, MouseInteractiveArea, RenderEngine, Renderer, UtilityService */
+    /*! exports provided: ChartPalette, MappedValueProvider, CHART_PALETTE_CS1, CHART_PALETTE_CS2, CHART_PALETTE_CS3, CHART_PALETTE_CS_S, CHART_PALETTE_CS_S_EXTENDED, CHART_MARKERS, ProcessedColorProvider, SequentialChartMarkerProvider, SequentialColorProvider, SequentialValueProvider, TextColorProvider, PathMarker, SvgMarker, defaultColorProvider, defaultPalette, defaultMarkerProvider, getColorValueByName, getAutomaticDomain, getAutomaticDomainWithIncludedInterval, getAutomaticDomainWithTicks, domainWithAuxiliarySeries, mergeDomains, BandScale, PointScale, LinearScale, Scale, TimeScale, isDaylightSavingTime, TimeIntervalScale, datetimeFormatter, EMPTY_CONTINUOUS_DOMAIN, NORMALIZED_DOMAIN, isDomainWithTicksCalculator, isBandScale, hasInnerScale, NoopScale, convert, invert, ChartPlugin, DataManager, DataSeries, EventBus, InteractionType, Lasagna, MouseInteractiveArea, RenderEngine, Renderer, UtilityService */
 
     /***/
     function dKYZ(module, __webpack_exports__, __webpack_require__) {
@@ -32984,6 +33005,18 @@
       /* harmony reexport (safe) */
 
 
+      __webpack_require__.d(__webpack_exports__, "domainWithAuxiliarySeries", function () {
+        return _scales_public_api__WEBPACK_IMPORTED_MODULE_1__["domainWithAuxiliarySeries"];
+      });
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "mergeDomains", function () {
+        return _scales_public_api__WEBPACK_IMPORTED_MODULE_1__["mergeDomains"];
+      });
+      /* harmony reexport (safe) */
+
+
       __webpack_require__.d(__webpack_exports__, "BandScale", function () {
         return _scales_public_api__WEBPACK_IMPORTED_MODULE_1__["BandScale"];
       });
@@ -33040,6 +33073,12 @@
 
       __webpack_require__.d(__webpack_exports__, "NORMALIZED_DOMAIN", function () {
         return _scales_public_api__WEBPACK_IMPORTED_MODULE_1__["NORMALIZED_DOMAIN"];
+      });
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "isDomainWithTicksCalculator", function () {
+        return _scales_public_api__WEBPACK_IMPORTED_MODULE_1__["isDomainWithTicksCalculator"];
       });
       /* harmony reexport (safe) */
 
@@ -34152,7 +34191,7 @@
       !*** ./src/public-api.ts ***!
       \***************************/
 
-    /*! exports provided: ChartTooltipDirective, ChartTooltipComponent, ChartDonutContentComponent, ChartTooltipsComponent, ChartPopoverComponent, ChartMarkerComponent, NuiChartsModule, ChartComponent, GAUGE_QUANTITY_SERIES_ID, GAUGE_REMAINDER_SERIES_ID, GAUGE_THRESHOLD_MARKERS_SERIES_ID, GaugeMode, StandardLinearGaugeThickness, StandardGaugeThresholdMarkerRadius, StandardGaugeThresholdId, StandardGaugeColor, DONUT_GAUGE_LABEL_CLEARANCE_DEFAULT, LINEAR_GAUGE_LABEL_CLEARANCE_DEFAULTS, GaugeUtil, ChartCollectionIdDirective, ChartCollectionService, ChartPalette, MappedValueProvider, CHART_PALETTE_CS1, CHART_PALETTE_CS2, CHART_PALETTE_CS3, CHART_PALETTE_CS_S, CHART_PALETTE_CS_S_EXTENDED, CHART_MARKERS, ProcessedColorProvider, SequentialChartMarkerProvider, SequentialColorProvider, SequentialValueProvider, TextColorProvider, PathMarker, SvgMarker, defaultColorProvider, defaultPalette, defaultMarkerProvider, getColorValueByName, getAutomaticDomain, getAutomaticDomainWithIncludedInterval, getAutomaticDomainWithTicks, BandScale, PointScale, LinearScale, Scale, TimeScale, isDaylightSavingTime, TimeIntervalScale, datetimeFormatter, EMPTY_CONTINUOUS_DOMAIN, NORMALIZED_DOMAIN, isBandScale, hasInnerScale, NoopScale, convert, invert, ChartPlugin, DataManager, DataSeries, EventBus, InteractionType, Lasagna, MouseInteractiveArea, RenderEngine, Renderer, UtilityService, AxisConfig, BorderConfig, DimensionConfig, linearGaugeGridConfig, GridConfig, AreaGridConfig, BarGridConfig, BarHorizontalGridConfig, BarStatusGridConfig, sparkChartGridConfig, XYGridConfig, XYGrid, borderMidpoint, Grid, RadialGrid, ChartDonutContentPlugin, ChartPopoverPlugin, DonutGaugeLabelsPlugin, LinearGaugeLabelsPlugin, GAUGE_LABEL_FORMATTER_NAME_DEFAULT, GAUGE_LABELS_CONTAINER_CLASS, GAUGE_THRESHOLD_LABEL_CLASS, InteractionLabelPlugin, InteractionLinePlugin, MouseInteractiveAreaPlugin, RadialPopoverPlugin, RenderEnginePlugin, TOOLTIP_POSITION_OFFSET, getVerticalSetup, getHorizontalSetup, ChartTooltipsPlugin, RadialTooltipsPlugin, BarTooltipsPlugin, ZoomPlugin, ChartCollection, Chart, ChartAssist, LegendInteractionAssist, SparkChartAssist, ChartAssistEventType, ChartAssistRenderStateData, CssFilterId, GRAYSCALE_FILTER, GRAYSCALE_COLOR_MATRIX, LEGEND_SERIES_CLASS_NAME, LegendSeriesComponent, BasicLegendTileComponent, RichLegendTileComponent, LegendComponent, THRESHOLDS_MAIN_CHART_RENDERER_CONFIG, THRESHOLDS_SUMMARY_RENDERER_CONFIG, DEFAULT_MARKER_INTERACTION_CONFIG, GAUGE_THRESHOLD_MARKER_CLASS, RenderState, RenderLayerName, XYRenderer, SideIndicatorAccessors, SideIndicatorRenderer, XYAccessors, NoopAccessors, RectangleAccessors, NoopRenderer, BarRenderer, stackedPreprocessor, stack, barGrid, barScales, BarAccessors, barAccessors, HorizontalBarAccessors, VerticalBarAccessors, StatusAccessors, statusAccessors, BarHighlightStrategy, BarSeriesHighlightStrategy, DEFAULT_LINEAR_GAUGE_THRESHOLDS_RENDERER_CONFIG, LinearGaugeThresholdsRenderer, radialPreprocessor, radial, DEFAULT_RADIAL_RENDERER_CONFIG, RadialRenderer, DEFAULT_DONUT_GAUGE_THRESHOLDS_RENDERER_CONFIG, DonutGaugeThresholdsRenderer, donutGaugeRendererConfig, DonutGaugeRenderingUtil, PieRenderer, radialGrid, radialScales, RadialAccessors, calculateMissingData, LineSelectSeriesInteractionStrategy, LineAccessors, LineRenderer, MissingDataLineRendererConfig, areaGrid, AreaAccessors, AreaRenderer, stackedAreaPreprocessor, stackedArea, stackedPercentageAreaPreprocessor, stackedPercentageArea, calculateDomainValueCombinedTotals, applyStackMetadata, stackedAreaAccessors, MOUSE_ACTIVE_EVENT, INTERACTION_VALUES_ACTIVE_EVENT, INTERACTION_VALUES_EVENT, INTERACTION_COORDINATES_EVENT, HIGHLIGHT_DATA_POINT_EVENT, SELECT_DATA_POINT_EVENT, HIGHLIGHT_SERIES_EVENT, INTERACTION_SERIES_EVENT, INTERACTION_DATA_POINTS_EVENT, INTERACTION_DATA_POINT_EVENT, DESTROY_EVENT, SET_DOMAIN_EVENT, REFRESH_EVENT, CHART_VIEW_STATUS_EVENT, SERIES_STATE_CHANGE_EVENT, AXES_STYLE_CHANGE_EVENT, CHART_COMPONENT, STANDARD_RENDER_LAYERS, DATA_POINT_NOT_FOUND, DATA_POINT_INTERACTION_RESET, IGNORE_INTERACTION_CLASS, ZoneBoundary, ThresholdsService, thresholdsSummaryGridConfig, thresholdsTopGridConfig */
+    /*! exports provided: ChartTooltipDirective, ChartTooltipComponent, ChartDonutContentComponent, ChartTooltipsComponent, ChartPopoverComponent, ChartMarkerComponent, NuiChartsModule, ChartComponent, GAUGE_QUANTITY_SERIES_ID, GAUGE_REMAINDER_SERIES_ID, GAUGE_THRESHOLD_MARKERS_SERIES_ID, GaugeMode, StandardLinearGaugeThickness, StandardGaugeThresholdMarkerRadius, StandardGaugeThresholdId, StandardGaugeColor, DONUT_GAUGE_LABEL_CLEARANCE_DEFAULT, LINEAR_GAUGE_LABEL_CLEARANCE_DEFAULTS, GaugeUtil, ChartCollectionIdDirective, ChartCollectionService, ChartPalette, MappedValueProvider, CHART_PALETTE_CS1, CHART_PALETTE_CS2, CHART_PALETTE_CS3, CHART_PALETTE_CS_S, CHART_PALETTE_CS_S_EXTENDED, CHART_MARKERS, ProcessedColorProvider, SequentialChartMarkerProvider, SequentialColorProvider, SequentialValueProvider, TextColorProvider, PathMarker, SvgMarker, defaultColorProvider, defaultPalette, defaultMarkerProvider, getColorValueByName, getAutomaticDomain, getAutomaticDomainWithIncludedInterval, getAutomaticDomainWithTicks, domainWithAuxiliarySeries, mergeDomains, BandScale, PointScale, LinearScale, Scale, TimeScale, isDaylightSavingTime, TimeIntervalScale, datetimeFormatter, EMPTY_CONTINUOUS_DOMAIN, NORMALIZED_DOMAIN, isDomainWithTicksCalculator, isBandScale, hasInnerScale, NoopScale, convert, invert, ChartPlugin, DataManager, DataSeries, EventBus, InteractionType, Lasagna, MouseInteractiveArea, RenderEngine, Renderer, UtilityService, AxisConfig, BorderConfig, DimensionConfig, linearGaugeGridConfig, GridConfig, AreaGridConfig, BarGridConfig, BarHorizontalGridConfig, BarStatusGridConfig, sparkChartGridConfig, XYGridConfig, XYGrid, borderMidpoint, Grid, RadialGrid, ChartDonutContentPlugin, ChartPopoverPlugin, DonutGaugeLabelsPlugin, LinearGaugeLabelsPlugin, GAUGE_LABEL_FORMATTER_NAME_DEFAULT, GAUGE_LABELS_CONTAINER_CLASS, GAUGE_THRESHOLD_LABEL_CLASS, InteractionLabelPlugin, InteractionLinePlugin, MouseInteractiveAreaPlugin, RadialPopoverPlugin, RenderEnginePlugin, TOOLTIP_POSITION_OFFSET, getVerticalSetup, getHorizontalSetup, ChartTooltipsPlugin, RadialTooltipsPlugin, BarTooltipsPlugin, ZoomPlugin, ChartCollection, Chart, ChartAssist, LegendInteractionAssist, SparkChartAssist, ChartAssistEventType, ChartAssistRenderStateData, CssFilterId, GRAYSCALE_FILTER, GRAYSCALE_COLOR_MATRIX, LEGEND_SERIES_CLASS_NAME, LegendSeriesComponent, BasicLegendTileComponent, RichLegendTileComponent, LegendComponent, THRESHOLDS_MAIN_CHART_RENDERER_CONFIG, THRESHOLDS_SUMMARY_RENDERER_CONFIG, DEFAULT_MARKER_INTERACTION_CONFIG, GAUGE_THRESHOLD_MARKER_CLASS, RenderState, RenderLayerName, XYRenderer, SideIndicatorAccessors, SideIndicatorRenderer, XYAccessors, NoopAccessors, RectangleAccessors, NoopRenderer, BarRenderer, stackedPreprocessor, stack, barGrid, barScales, BarAccessors, barAccessors, HorizontalBarAccessors, VerticalBarAccessors, StatusAccessors, statusAccessors, BarHighlightStrategy, BarSeriesHighlightStrategy, DEFAULT_LINEAR_GAUGE_THRESHOLDS_RENDERER_CONFIG, LinearGaugeThresholdsRenderer, radialPreprocessor, radial, DEFAULT_RADIAL_RENDERER_CONFIG, RadialRenderer, DEFAULT_DONUT_GAUGE_THRESHOLDS_RENDERER_CONFIG, DonutGaugeThresholdsRenderer, donutGaugeRendererConfig, DonutGaugeRenderingUtil, PieRenderer, radialGrid, radialScales, RadialAccessors, calculateMissingData, LineSelectSeriesInteractionStrategy, LineAccessors, LineRenderer, MissingDataLineRendererConfig, areaGrid, AreaAccessors, AreaRenderer, stackedAreaPreprocessor, stackedArea, stackedPercentageAreaPreprocessor, stackedPercentageArea, calculateDomainValueCombinedTotals, applyStackMetadata, stackedAreaAccessors, MOUSE_ACTIVE_EVENT, INTERACTION_VALUES_ACTIVE_EVENT, INTERACTION_VALUES_EVENT, INTERACTION_COORDINATES_EVENT, HIGHLIGHT_DATA_POINT_EVENT, SELECT_DATA_POINT_EVENT, HIGHLIGHT_SERIES_EVENT, INTERACTION_SERIES_EVENT, INTERACTION_DATA_POINTS_EVENT, INTERACTION_DATA_POINT_EVENT, DESTROY_EVENT, SET_DOMAIN_EVENT, REFRESH_EVENT, CHART_VIEW_STATUS_EVENT, SERIES_STATE_CHANGE_EVENT, AXES_STYLE_CHANGE_EVENT, CHART_COMPONENT, STANDARD_RENDER_LAYERS, DATA_POINT_NOT_FOUND, DATA_POINT_INTERACTION_RESET, IGNORE_INTERACTION_CLASS, ZoneBoundary, ThresholdsService, thresholdsSummaryGridConfig, thresholdsTopGridConfig */
 
     /***/
     function gKry(module, __webpack_exports__, __webpack_require__) {
@@ -34486,6 +34525,18 @@
       /* harmony reexport (safe) */
 
 
+      __webpack_require__.d(__webpack_exports__, "domainWithAuxiliarySeries", function () {
+        return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["domainWithAuxiliarySeries"];
+      });
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "mergeDomains", function () {
+        return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["mergeDomains"];
+      });
+      /* harmony reexport (safe) */
+
+
       __webpack_require__.d(__webpack_exports__, "BandScale", function () {
         return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["BandScale"];
       });
@@ -34542,6 +34593,12 @@
 
       __webpack_require__.d(__webpack_exports__, "NORMALIZED_DOMAIN", function () {
         return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["NORMALIZED_DOMAIN"];
+      });
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "isDomainWithTicksCalculator", function () {
+        return _core_public_api__WEBPACK_IMPORTED_MODULE_10__["isDomainWithTicksCalculator"];
       });
       /* harmony reexport (safe) */
 
@@ -48675,6 +48732,42 @@
     },
 
     /***/
+    "wRT7":
+    /*!***********************************************************************************!*\
+      !*** ./src/core/common/scales/domain-calculation/domain-with-auxiliary-series.ts ***!
+      \***********************************************************************************/
+
+    /*! exports provided: domainWithAuxiliarySeries */
+
+    /***/
+    function wRT7(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "domainWithAuxiliarySeries", function () {
+        return domainWithAuxiliarySeries;
+      });
+      /**
+       * Domain calculator that adds given series to the domain calculation
+       *
+       * @param additionalSeriesFn this function returns series to be added
+       * @param domainCalculator
+       */
+
+
+      var domainWithAuxiliarySeries = function domainWithAuxiliarySeries(additionalSeriesFn, domainCalculator) {
+        return function (chartSeriesSet, scaleId, scale) {
+          return domainCalculator(additionalSeriesFn().concat(chartSeriesSet), scaleId, scale);
+        };
+      };
+      /***/
+
+    },
+
+    /***/
     "wjRQ":
     /*!*****************************************************************!*\
       !*** ./node_modules/d3-array/src/threshold/freedmanDiaconis.js ***!
@@ -51328,6 +51421,74 @@
 
         i.duration = S * 1000;
         return i;
+      };
+      /***/
+
+    },
+
+    /***/
+    "ztwP":
+    /*!************************************************************************!*\
+      !*** ./src/core/common/scales/domain-calculation/domain-with-ticks.ts ***!
+      \************************************************************************/
+
+    /*! exports provided: getAutomaticDomainWithTicks */
+
+    /***/
+    function ztwP(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "getAutomaticDomainWithTicks", function () {
+        return getAutomaticDomainWithTicks;
+      });
+      /* harmony import */
+
+
+      var lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! lodash/cloneDeep */
+      "BkRI");
+      /* harmony import */
+
+
+      var lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_0__);
+      /* harmony import */
+
+
+      var _helpers_domain__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! ../helpers/domain */
+      "PhPe");
+
+      var getAutomaticDomainWithTicks = function getAutomaticDomainWithTicks(config, axisGenerator, domainCalculator) {
+        var result = function result(chartSeriesSet, scaleKey, scale) {
+          var mergedDomains = domainCalculator(chartSeriesSet, scaleKey, scale);
+          var clonedScale = lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_0___default()(scale);
+          Object(_helpers_domain__WEBPACK_IMPORTED_MODULE_1__["domain"])(clonedScale, mergedDomains);
+          var tickAxis = axisGenerator(clonedScale.d3Scale);
+          var ticks = tickAxis.scale().ticks(config.approximateTicks);
+
+          if (ticks.length <= 1) {
+            return mergedDomains;
+          }
+
+          var ticksAverage = ticks[1] - ticks[0];
+
+          if (ticks[0] > mergedDomains[0]) {
+            mergedDomains[0] = ticks[0] - ticksAverage;
+          }
+
+          if (ticks[ticks.length - 1] < mergedDomains[1]) {
+            mergedDomains[1] = ticks[ticks.length - 1] + ticksAverage;
+          }
+
+          return mergedDomains;
+        };
+
+        result.domainWithTicks = true;
+        return result;
       };
       /***/
 

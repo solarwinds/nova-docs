@@ -562,6 +562,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/IChartAssistSeries.html" data-type="entity-link">IChartAssistSeries</a>
                             </li>
                             <li class="link">
+                                <a href="interfaces/IChartConfiguration.html" data-type="entity-link">IChartConfiguration</a>
+                            </li>
+                            <li class="link">
                                 <a href="interfaces/IChartEvent.html" data-type="entity-link">IChartEvent</a>
                             </li>
                             <li class="link">
@@ -596,6 +599,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="interfaces/IDimensions.html" data-type="entity-link">IDimensions</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/IDomainWithTicksCalculator.html" data-type="entity-link">IDomainWithTicksCalculator</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/IDonutGaugeThresholdsRendererConfig.html" data-type="entity-link">IDonutGaugeThresholdsRendererConfig</a>
