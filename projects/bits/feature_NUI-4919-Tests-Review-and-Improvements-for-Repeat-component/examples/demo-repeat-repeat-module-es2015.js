@@ -499,37 +499,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class RepeatVisualTestComponent {
-    constructor() {
-        this.colors = [
-            { color: $localize `blue` },
-            { color: $localize `green` },
-            { color: $localize `yellow` },
-            { color: $localize `cyan` },
-            { color: $localize `magenta` },
-            { color: $localize `black` },
-        ];
-        this.tabs = [
-            {
-                id: "tab1",
-                title: "No Content",
-            },
-            {
-                id: "tab2",
-                title: "Repeat VScroll",
-            },
-        ];
-        this.currentTabId = this.tabs[0].id;
-        this.colorIndex = 1;
-        // using css display rule instead of *ngIf to test RepeatComponent's IntersectionObserver
-        // (*ngIf would instantiate the test component only when the tab is selected instead of immediately on page load)
-        this.getTabDisplayMode = (tabId) => this.currentTabId === tabId ? "block" : "none";
-    }
-    addNewColor() {
-        this.colors.push({ color: `new color ${this.colorIndex++}` });
-    }
 }
 RepeatVisualTestComponent.ɵfac = function RepeatVisualTestComponent_Factory(t) { return new (t || RepeatVisualTestComponent)(); };
-RepeatVisualTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: RepeatVisualTestComponent, selectors: [["nui-repeat-visual-test"]], decls: 28, vars: 1, consts: [[1, "container"], ["id", "nui-demo-multi-disabled-items"], ["id", "nui-demo-multi-repeat-items"], ["id", "nui-demo-single-highlight"], ["id", "nui-demo-radio-selection", 3, "colors"], ["id", "nui-demo-single-required-selection"], ["id", "nui-demo-radio-non-required-selection"], ["id", "nui-demo-reorder-config"]], template: function RepeatVisualTestComponent_Template(rf, ctx) { if (rf & 1) {
+RepeatVisualTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: RepeatVisualTestComponent, selectors: [["nui-repeat-visual-test"]], decls: 28, vars: 0, consts: [[1, "container"], ["id", "nui-demo-multi-disabled-items"], ["id", "nui-demo-multi-repeat-items"], ["id", "nui-demo-single-highlight"], ["id", "nui-demo-radio-selection"], ["id", "nui-demo-single-required-selection"], ["id", "nui-demo-radio-non-required-selection"], ["id", "nui-demo-reorder-config"]], template: function RepeatVisualTestComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "h3");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Multiple Selection Mode with Disabled Items");
@@ -562,13 +534,10 @@ RepeatVisualTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵ
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](23, "nui-repeat-radio-with-non-required-selection-mode-example", 6);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](24, "hr");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "h3");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](26, "Repeat Item Customization");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](26, "Item-Specific Drag/Drop Behavior");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](27, "nui-repeat-reorder-config-example", 7);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](15);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("colors", ctx.colors);
     } }, directives: [_repeat_disabled_multi_selection_repeat_disabled_multi_selection_example_component__WEBPACK_IMPORTED_MODULE_1__["RepeatDisabledMultiSelectionExampleComponent"], _repeat_multi_selection_repeat_multi_selection_example_component__WEBPACK_IMPORTED_MODULE_2__["RepeatMultiSelectionExampleComponent"], _repeat_single_selection_mode_repeat_single_selection_mode_example_component__WEBPACK_IMPORTED_MODULE_3__["RepeatSingleSelectionModeExampleComponent"], _repeat_radio_selection_mode_repeat_radio_selection_mode_example_component__WEBPACK_IMPORTED_MODULE_4__["RepeatRadioSelectionModeExampleComponent"], _repeat_single_with_required_selection_mode_repeat_single_with_required_selection_mode_example_component__WEBPACK_IMPORTED_MODULE_5__["RepeatSingleWithRequiredSelectionModeExampleComponent"], _repeat_radio_with_non_required_selection_mode_repeat_radio_with_non_required_selection_mode_example_component__WEBPACK_IMPORTED_MODULE_6__["RepeatRadioWithNonRequiredSelectionModeExampleComponent"], _repeat_reorder_item_config_repeat_reorder_item_config_example_component__WEBPACK_IMPORTED_MODULE_7__["RepeatReorderItemConfigExampleComponent"]], encapsulation: 2 });
 
 
@@ -1948,7 +1917,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\n    <h3>Multiple Selection Mode with Disabled Items</h3>\n    <nui-repeat-disabled-multi-selection-example id=\"nui-demo-multi-disabled-items\"></nui-repeat-disabled-multi-selection-example>\n    <hr />\n    \n    <h3>Multiple Selection Mode Repeating Header from Template</h3>\n    <nui-repeat-multi-selection-example id=\"nui-demo-multi-repeat-items\"></nui-repeat-multi-selection-example>\n    <hr />\n\n    <h3>Single Selection Mode with Item Highlight</h3>\n    <nui-repeat-single-selection-mode-example id=\"nui-demo-single-highlight\"></nui-repeat-single-selection-mode-example>\n    <hr />\n\n    <h3>Single Selection Mode with Radio Buttons</h3>\n    <nui-repeat-radio-selection-mode-example [colors]=\"colors\" id=\"nui-demo-radio-selection\"></nui-repeat-radio-selection-mode-example>\n    <hr />\n\n    <h3>Required Single Selection Mode</h3>\n    <nui-repeat-single-with-required-selection-mode-example id=\"nui-demo-single-required-selection\"></nui-repeat-single-with-required-selection-mode-example>\n    <hr />\n\n    <h3>Non-Required Selection Mode with Radio Buttons</h3>\n    <nui-repeat-radio-with-non-required-selection-mode-example id=\"nui-demo-radio-non-required-selection\"></nui-repeat-radio-with-non-required-selection-mode-example>\n    <hr />\n\n    <h3>Repeat Item Customization</h3>\n    <nui-repeat-reorder-config-example id=\"nui-demo-reorder-config\"></nui-repeat-reorder-config-example>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\n    <h3>Multiple Selection Mode with Disabled Items</h3>\n    <nui-repeat-disabled-multi-selection-example id=\"nui-demo-multi-disabled-items\"></nui-repeat-disabled-multi-selection-example>\n    <hr />\n    \n    <h3>Multiple Selection Mode Repeating Header from Template</h3>\n    <nui-repeat-multi-selection-example id=\"nui-demo-multi-repeat-items\"></nui-repeat-multi-selection-example>\n    <hr />\n\n    <h3>Single Selection Mode with Item Highlight</h3>\n    <nui-repeat-single-selection-mode-example id=\"nui-demo-single-highlight\"></nui-repeat-single-selection-mode-example>\n    <hr />\n\n    <h3>Single Selection Mode with Radio Buttons</h3>\n    <nui-repeat-radio-selection-mode-example id=\"nui-demo-radio-selection\"></nui-repeat-radio-selection-mode-example>\n    <hr />\n\n    <h3>Required Single Selection Mode</h3>\n    <nui-repeat-single-with-required-selection-mode-example id=\"nui-demo-single-required-selection\"></nui-repeat-single-with-required-selection-mode-example>\n    <hr />\n\n    <h3>Non-Required Selection Mode with Radio Buttons</h3>\n    <nui-repeat-radio-with-non-required-selection-mode-example id=\"nui-demo-radio-non-required-selection\"></nui-repeat-radio-with-non-required-selection-mode-example>\n    <hr />\n\n    <h3>Item-Specific Drag/Drop Behavior</h3>\n    <nui-repeat-reorder-config-example id=\"nui-demo-reorder-config\"></nui-repeat-reorder-config-example>\n</div>\n");
 
 /***/ }),
 
@@ -1961,7 +1930,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { Component } from \"@angular/core\";\n\n@Component({\n    selector: \"nui-repeat-visual-test\",\n    templateUrl: \"./repeat-visual-test.component.html\",\n})\nexport class RepeatVisualTestComponent {\n    public colors = [\n        { color: $localize`blue` },\n        { color: $localize`green` },\n        { color: $localize`yellow` },\n        { color: $localize`cyan` },\n        { color: $localize`magenta` },\n        { color: $localize`black` },\n    ];\n\n    public tabs = [\n        {\n            id: \"tab1\",\n            title: \"No Content\",\n        },\n        {\n            id: \"tab2\",\n            title: \"Repeat VScroll\",\n        },\n    ];\n    public currentTabId = this.tabs[0].id;\n\n    private colorIndex: number = 1;\n\n    public addNewColor(): void {\n        this.colors.push(\n            { color: `new color ${this.colorIndex++}` }\n        );\n    }\n\n    // using css display rule instead of *ngIf to test RepeatComponent's IntersectionObserver\n    // (*ngIf would instantiate the test component only when the tab is selected instead of immediately on page load)\n    public getTabDisplayMode = (tabId: string) => this.currentTabId === tabId ? \"block\" : \"none\";\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import { Component } from \"@angular/core\";\n\n@Component({\n    selector: \"nui-repeat-visual-test\",\n    templateUrl: \"./repeat-visual-test.component.html\",\n})\nexport class RepeatVisualTestComponent {\n}\n");
 
 /***/ }),
 

@@ -1,5 +1,5 @@
 (function () {
-  var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10, _templateObject11, _templateObject12, _templateObject13, _templateObject14, _templateObject15, _templateObject16, _templateObject17, _templateObject18, _templateObject19, _templateObject20, _templateObject21, _templateObject22, _templateObject23, _templateObject24, _templateObject25, _templateObject26, _templateObject27, _templateObject28, _templateObject29, _templateObject30, _templateObject31, _templateObject32, _templateObject33, _templateObject34, _templateObject35, _templateObject36, _templateObject37, _templateObject38, _templateObject39, _templateObject40, _templateObject41, _templateObject42, _templateObject43, _templateObject44, _templateObject45, _templateObject46, _templateObject47, _templateObject48, _templateObject49, _templateObject50, _templateObject51, _templateObject52, _templateObject53, _templateObject54, _templateObject55, _templateObject56, _templateObject57, _templateObject58, _templateObject59, _templateObject60, _templateObject61, _templateObject62, _templateObject63, _templateObject64, _templateObject65, _templateObject66, _templateObject67, _templateObject68, _templateObject69, _templateObject70, _templateObject71, _templateObject72, _templateObject73, _templateObject74, _templateObject75, _templateObject76, _templateObject77, _templateObject78, _templateObject79, _templateObject80;
+  var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10, _templateObject11, _templateObject12, _templateObject13, _templateObject14, _templateObject15, _templateObject16, _templateObject17, _templateObject18, _templateObject19, _templateObject20, _templateObject21, _templateObject22, _templateObject23, _templateObject24, _templateObject25, _templateObject26, _templateObject27, _templateObject28, _templateObject29, _templateObject30, _templateObject31, _templateObject32, _templateObject33, _templateObject34, _templateObject35, _templateObject36, _templateObject37, _templateObject38, _templateObject39, _templateObject40, _templateObject41, _templateObject42, _templateObject43, _templateObject44, _templateObject45, _templateObject46, _templateObject47, _templateObject48, _templateObject49, _templateObject50, _templateObject51, _templateObject52, _templateObject53, _templateObject54, _templateObject55, _templateObject56, _templateObject57, _templateObject58, _templateObject59, _templateObject60, _templateObject61, _templateObject62, _templateObject63, _templateObject64, _templateObject65, _templateObject66, _templateObject67, _templateObject68, _templateObject69, _templateObject70, _templateObject71, _templateObject72, _templateObject73, _templateObject74;
 
   function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -874,52 +874,9 @@
       /*! ../repeat-reorder-item-config/repeat-reorder-item-config-example.component */
       "jhpo");
 
-      var RepeatVisualTestComponent = /*#__PURE__*/function () {
-        function RepeatVisualTestComponent() {
-          var _this = this;
-
-          _classCallCheck(this, RepeatVisualTestComponent);
-
-          this.colors = [{
-            color: $localize(_templateObject8 || (_templateObject8 = _taggedTemplateLiteral(["blue"])))
-          }, {
-            color: $localize(_templateObject9 || (_templateObject9 = _taggedTemplateLiteral(["green"])))
-          }, {
-            color: $localize(_templateObject10 || (_templateObject10 = _taggedTemplateLiteral(["yellow"])))
-          }, {
-            color: $localize(_templateObject11 || (_templateObject11 = _taggedTemplateLiteral(["cyan"])))
-          }, {
-            color: $localize(_templateObject12 || (_templateObject12 = _taggedTemplateLiteral(["magenta"])))
-          }, {
-            color: $localize(_templateObject13 || (_templateObject13 = _taggedTemplateLiteral(["black"])))
-          }];
-          this.tabs = [{
-            id: "tab1",
-            title: "No Content"
-          }, {
-            id: "tab2",
-            title: "Repeat VScroll"
-          }];
-          this.currentTabId = this.tabs[0].id;
-          this.colorIndex = 1; // using css display rule instead of *ngIf to test RepeatComponent's IntersectionObserver
-          // (*ngIf would instantiate the test component only when the tab is selected instead of immediately on page load)
-
-          this.getTabDisplayMode = function (tabId) {
-            return _this.currentTabId === tabId ? "block" : "none";
-          };
-        }
-
-        _createClass(RepeatVisualTestComponent, [{
-          key: "addNewColor",
-          value: function addNewColor() {
-            this.colors.push({
-              color: "new color ".concat(this.colorIndex++)
-            });
-          }
-        }]);
-
-        return RepeatVisualTestComponent;
-      }();
+      var RepeatVisualTestComponent = function RepeatVisualTestComponent() {
+        _classCallCheck(this, RepeatVisualTestComponent);
+      };
 
       RepeatVisualTestComponent.ɵfac = function RepeatVisualTestComponent_Factory(t) {
         return new (t || RepeatVisualTestComponent)();
@@ -929,8 +886,8 @@
         type: RepeatVisualTestComponent,
         selectors: [["nui-repeat-visual-test"]],
         decls: 28,
-        vars: 1,
-        consts: [[1, "container"], ["id", "nui-demo-multi-disabled-items"], ["id", "nui-demo-multi-repeat-items"], ["id", "nui-demo-single-highlight"], ["id", "nui-demo-radio-selection", 3, "colors"], ["id", "nui-demo-single-required-selection"], ["id", "nui-demo-radio-non-required-selection"], ["id", "nui-demo-reorder-config"]],
+        vars: 0,
+        consts: [[1, "container"], ["id", "nui-demo-multi-disabled-items"], ["id", "nui-demo-multi-repeat-items"], ["id", "nui-demo-single-highlight"], ["id", "nui-demo-radio-selection"], ["id", "nui-demo-single-required-selection"], ["id", "nui-demo-radio-non-required-selection"], ["id", "nui-demo-reorder-config"]],
         template: function RepeatVisualTestComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -997,19 +954,13 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "h3");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](26, "Repeat Item Customization");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](26, "Item-Specific Drag/Drop Behavior");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](27, "nui-repeat-reorder-config-example", 7);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-          }
-
-          if (rf & 2) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](15);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("colors", ctx.colors);
           }
         },
         directives: [_repeat_disabled_multi_selection_repeat_disabled_multi_selection_example_component__WEBPACK_IMPORTED_MODULE_1__["RepeatDisabledMultiSelectionExampleComponent"], _repeat_multi_selection_repeat_multi_selection_example_component__WEBPACK_IMPORTED_MODULE_2__["RepeatMultiSelectionExampleComponent"], _repeat_single_selection_mode_repeat_single_selection_mode_example_component__WEBPACK_IMPORTED_MODULE_3__["RepeatSingleSelectionModeExampleComponent"], _repeat_radio_selection_mode_repeat_radio_selection_mode_example_component__WEBPACK_IMPORTED_MODULE_4__["RepeatRadioSelectionModeExampleComponent"], _repeat_single_with_required_selection_mode_repeat_single_with_required_selection_mode_example_component__WEBPACK_IMPORTED_MODULE_5__["RepeatSingleWithRequiredSelectionModeExampleComponent"], _repeat_radio_with_non_required_selection_mode_repeat_radio_with_non_required_selection_mode_example_component__WEBPACK_IMPORTED_MODULE_6__["RepeatRadioWithNonRequiredSelectionModeExampleComponent"], _repeat_reorder_item_config_repeat_reorder_item_config_example_component__WEBPACK_IMPORTED_MODULE_7__["RepeatReorderItemConfigExampleComponent"]],
@@ -1242,7 +1193,7 @@
             var MSG_EXTERNAL_7787744411173974049$$DEMO_SRC_COMPONENTS_DEMO_REPEAT_REPEAT_REORDER_SIMPLE_REPEAT_REORDER_SIMPLE_EXAMPLE_COMPONENT_TS_1 = goog.getMsg("Draggable");
             i18n_0 = MSG_EXTERNAL_7787744411173974049$$DEMO_SRC_COMPONENTS_DEMO_REPEAT_REPEAT_REORDER_SIMPLE_REPEAT_REORDER_SIMPLE_EXAMPLE_COMPONENT_TS_1;
           } else {
-            i18n_0 = $localize(_templateObject14 || (_templateObject14 = _taggedTemplateLiteral([":\u241F1255f129e09ec6d9599c2a1bd648672b29f8b11c\u241F7787744411173974049:Draggable"])));
+            i18n_0 = $localize(_templateObject8 || (_templateObject8 = _taggedTemplateLiteral([":\u241F1255f129e09ec6d9599c2a1bd648672b29f8b11c\u241F7787744411173974049:Draggable"])));
           }
 
           var i18n_2;
@@ -1251,7 +1202,7 @@
             var MSG_EXTERNAL_4360297148371206752$$DEMO_SRC_COMPONENTS_DEMO_REPEAT_REPEAT_REORDER_SIMPLE_REPEAT_REORDER_SIMPLE_EXAMPLE_COMPONENT_TS_3 = goog.getMsg("Reorderable");
             i18n_2 = MSG_EXTERNAL_4360297148371206752$$DEMO_SRC_COMPONENTS_DEMO_REPEAT_REPEAT_REORDER_SIMPLE_REPEAT_REORDER_SIMPLE_EXAMPLE_COMPONENT_TS_3;
           } else {
-            i18n_2 = $localize(_templateObject15 || (_templateObject15 = _taggedTemplateLiteral([":\u241Fdf32e094404870ff0a70e9591fade8cf965325e9\u241F4360297148371206752:Reorderable"])));
+            i18n_2 = $localize(_templateObject9 || (_templateObject9 = _taggedTemplateLiteral([":\u241Fdf32e094404870ff0a70e9591fade8cf965325e9\u241F4360297148371206752:Reorderable"])));
           }
 
           var i18n_4;
@@ -1260,7 +1211,7 @@
             var MSG_EXTERNAL_4154827299995731954$$DEMO_SRC_COMPONENTS_DEMO_REPEAT_REPEAT_REORDER_SIMPLE_REPEAT_REORDER_SIMPLE_EXAMPLE_COMPONENT_TS_5 = goog.getMsg("Event data");
             i18n_4 = MSG_EXTERNAL_4154827299995731954$$DEMO_SRC_COMPONENTS_DEMO_REPEAT_REPEAT_REORDER_SIMPLE_REPEAT_REORDER_SIMPLE_EXAMPLE_COMPONENT_TS_5;
           } else {
-            i18n_4 = $localize(_templateObject16 || (_templateObject16 = _taggedTemplateLiteral([":\u241F949e293c4689f7a8364feb955bd298c3f8c421cf\u241F4154827299995731954:Event data"])));
+            i18n_4 = $localize(_templateObject10 || (_templateObject10 = _taggedTemplateLiteral([":\u241F949e293c4689f7a8364feb955bd298c3f8c421cf\u241F4154827299995731954:Event data"])));
           }
 
           return [[1, "d-flex"], [1, "p-2", 3, "value", "valueChange"], i18n_0, i18n_2, [3, "itemsSource", "repeatItemTemplateRef", "draggable", "reorderable", "itemsReordered", "draggableChange", "reorderableChange"], [1, "d-flex", "m-2"], i18n_4, [1, "ml-1"], ["repeatItemTemplate", ""]];
@@ -1639,17 +1590,17 @@
           _classCallCheck(this, RepeatSingleWithRequiredSelectionModeExampleComponent);
 
           this.colors = [{
-            color: $localize(_templateObject17 || (_templateObject17 = _taggedTemplateLiteral(["blue"])))
+            color: $localize(_templateObject11 || (_templateObject11 = _taggedTemplateLiteral(["blue"])))
           }, {
-            color: $localize(_templateObject18 || (_templateObject18 = _taggedTemplateLiteral(["green"])))
+            color: $localize(_templateObject12 || (_templateObject12 = _taggedTemplateLiteral(["green"])))
           }, {
-            color: $localize(_templateObject19 || (_templateObject19 = _taggedTemplateLiteral(["yellow"])))
+            color: $localize(_templateObject13 || (_templateObject13 = _taggedTemplateLiteral(["yellow"])))
           }, {
-            color: $localize(_templateObject20 || (_templateObject20 = _taggedTemplateLiteral(["cyan"])))
+            color: $localize(_templateObject14 || (_templateObject14 = _taggedTemplateLiteral(["cyan"])))
           }, {
-            color: $localize(_templateObject21 || (_templateObject21 = _taggedTemplateLiteral(["magenta"])))
+            color: $localize(_templateObject15 || (_templateObject15 = _taggedTemplateLiteral(["magenta"])))
           }, {
-            color: $localize(_templateObject22 || (_templateObject22 = _taggedTemplateLiteral(["black"])))
+            color: $localize(_templateObject16 || (_templateObject16 = _taggedTemplateLiteral(["black"])))
           }];
           this.selectedColors = [this.colors[1]];
           this.selectedMode = "singleWithRequiredSelection";
@@ -1681,7 +1632,7 @@
             var MSG_EXTERNAL_1517966227002077718$$DEMO_SRC_COMPONENTS_DEMO_REPEAT_REPEAT_SINGLE_WITH_REQUIRED_SELECTION_MODE_REPEAT_SINGLE_WITH_REQUIRED_SELECTION_MODE_EXAMPLE_COMPONENT_TS_1 = goog.getMsg("Selection:");
             i18n_0 = MSG_EXTERNAL_1517966227002077718$$DEMO_SRC_COMPONENTS_DEMO_REPEAT_REPEAT_SINGLE_WITH_REQUIRED_SELECTION_MODE_REPEAT_SINGLE_WITH_REQUIRED_SELECTION_MODE_EXAMPLE_COMPONENT_TS_1;
           } else {
-            i18n_0 = $localize(_templateObject23 || (_templateObject23 = _taggedTemplateLiteral([":\u241F4b13ecaace0a04d26567095f86b3c2079cf0c050\u241F1517966227002077718:Selection:"])));
+            i18n_0 = $localize(_templateObject17 || (_templateObject17 = _taggedTemplateLiteral([":\u241F4b13ecaace0a04d26567095f86b3c2079cf0c050\u241F1517966227002077718:Selection:"])));
           }
 
           return [["repeatItemTemplate", ""], [1, "example"], [1, "flex-row-container"], [1, "flex-independent-row-item", "simple-label"], i18n_0, [1, "flex-independent-row-item"], [3, "itemsSource", "selection", "selectionMode", "repeatItemTemplateRef", "selectionChange"]];
@@ -1861,20 +1812,20 @@
           _classCallCheck(this, RepeatDisabledMultiSelectionExampleComponent);
 
           this.colorsWithIsDisabledProperty = [{
-            color: $localize(_templateObject24 || (_templateObject24 = _taggedTemplateLiteral(["blue"]))),
+            color: $localize(_templateObject18 || (_templateObject18 = _taggedTemplateLiteral(["blue"]))),
             disabled: true
           }, {
-            color: $localize(_templateObject25 || (_templateObject25 = _taggedTemplateLiteral(["green"]))),
+            color: $localize(_templateObject19 || (_templateObject19 = _taggedTemplateLiteral(["green"]))),
             disabled: false
           }, {
-            color: $localize(_templateObject26 || (_templateObject26 = _taggedTemplateLiteral(["yellow"])))
+            color: $localize(_templateObject20 || (_templateObject20 = _taggedTemplateLiteral(["yellow"])))
           }, {
-            color: $localize(_templateObject27 || (_templateObject27 = _taggedTemplateLiteral(["cyan"])))
+            color: $localize(_templateObject21 || (_templateObject21 = _taggedTemplateLiteral(["cyan"])))
           }, {
-            color: $localize(_templateObject28 || (_templateObject28 = _taggedTemplateLiteral(["magenta"]))),
+            color: $localize(_templateObject22 || (_templateObject22 = _taggedTemplateLiteral(["magenta"]))),
             disabled: true
           }, {
-            color: $localize(_templateObject29 || (_templateObject29 = _taggedTemplateLiteral(["black"])))
+            color: $localize(_templateObject23 || (_templateObject23 = _taggedTemplateLiteral(["black"])))
           }];
           this.selectedColorsWithIsDisabledProperty = [this.colorsWithIsDisabledProperty[0], this.colorsWithIsDisabledProperty[5]];
         }
@@ -3036,17 +2987,17 @@
         _classCallCheck(this, RepeatSimpleExampleComponent);
 
         this.colors = [{
-          color: $localize(_templateObject30 || (_templateObject30 = _taggedTemplateLiteral(["blue"])))
+          color: $localize(_templateObject24 || (_templateObject24 = _taggedTemplateLiteral(["blue"])))
         }, {
-          color: $localize(_templateObject31 || (_templateObject31 = _taggedTemplateLiteral(["green"])))
+          color: $localize(_templateObject25 || (_templateObject25 = _taggedTemplateLiteral(["green"])))
         }, {
-          color: $localize(_templateObject32 || (_templateObject32 = _taggedTemplateLiteral(["yellow"])))
+          color: $localize(_templateObject26 || (_templateObject26 = _taggedTemplateLiteral(["yellow"])))
         }, {
-          color: $localize(_templateObject33 || (_templateObject33 = _taggedTemplateLiteral(["cyan"])))
+          color: $localize(_templateObject27 || (_templateObject27 = _taggedTemplateLiteral(["cyan"])))
         }, {
-          color: $localize(_templateObject34 || (_templateObject34 = _taggedTemplateLiteral(["magenta"])))
+          color: $localize(_templateObject28 || (_templateObject28 = _taggedTemplateLiteral(["magenta"])))
         }, {
-          color: $localize(_templateObject35 || (_templateObject35 = _taggedTemplateLiteral(["black"])))
+          color: $localize(_templateObject29 || (_templateObject29 = _taggedTemplateLiteral(["black"])))
         }];
       };
 
@@ -3166,17 +3117,17 @@
           _classCallCheck(this, RepeatMultiSelectionExampleComponent);
 
           this.colors = [{
-            color: $localize(_templateObject36 || (_templateObject36 = _taggedTemplateLiteral(["blue"])))
+            color: $localize(_templateObject30 || (_templateObject30 = _taggedTemplateLiteral(["blue"])))
           }, {
-            color: $localize(_templateObject37 || (_templateObject37 = _taggedTemplateLiteral(["green"])))
+            color: $localize(_templateObject31 || (_templateObject31 = _taggedTemplateLiteral(["green"])))
           }, {
-            color: $localize(_templateObject38 || (_templateObject38 = _taggedTemplateLiteral(["yellow"])))
+            color: $localize(_templateObject32 || (_templateObject32 = _taggedTemplateLiteral(["yellow"])))
           }, {
-            color: $localize(_templateObject39 || (_templateObject39 = _taggedTemplateLiteral(["cyan"])))
+            color: $localize(_templateObject33 || (_templateObject33 = _taggedTemplateLiteral(["cyan"])))
           }, {
-            color: $localize(_templateObject40 || (_templateObject40 = _taggedTemplateLiteral(["magenta"])))
+            color: $localize(_templateObject34 || (_templateObject34 = _taggedTemplateLiteral(["magenta"])))
           }, {
-            color: $localize(_templateObject41 || (_templateObject41 = _taggedTemplateLiteral(["black"])))
+            color: $localize(_templateObject35 || (_templateObject35 = _taggedTemplateLiteral(["black"])))
           }];
           this.narrowRowSelectedColors = [this.colors[2], this.colors[5]];
         }
@@ -3207,7 +3158,7 @@
             var MSG_EXTERNAL_1517966227002077718$$DEMO_SRC_COMPONENTS_DEMO_REPEAT_REPEAT_MULTI_SELECTION_REPEAT_MULTI_SELECTION_EXAMPLE_COMPONENT_TS_1 = goog.getMsg("Selection:");
             i18n_0 = MSG_EXTERNAL_1517966227002077718$$DEMO_SRC_COMPONENTS_DEMO_REPEAT_REPEAT_MULTI_SELECTION_REPEAT_MULTI_SELECTION_EXAMPLE_COMPONENT_TS_1;
           } else {
-            i18n_0 = $localize(_templateObject42 || (_templateObject42 = _taggedTemplateLiteral([":\u241F4b13ecaace0a04d26567095f86b3c2079cf0c050\u241F1517966227002077718:Selection:"])));
+            i18n_0 = $localize(_templateObject36 || (_templateObject36 = _taggedTemplateLiteral([":\u241F4b13ecaace0a04d26567095f86b3c2079cf0c050\u241F1517966227002077718:Selection:"])));
           }
 
           var i18n_2;
@@ -3216,7 +3167,7 @@
             var MSG_EXTERNAL_4316136150832846114$$DEMO_SRC_COMPONENTS_DEMO_REPEAT_REPEAT_MULTI_SELECTION_REPEAT_MULTI_SELECTION_EXAMPLE_COMPONENT_TS_3 = goog.getMsg("repeat header from template");
             i18n_2 = MSG_EXTERNAL_4316136150832846114$$DEMO_SRC_COMPONENTS_DEMO_REPEAT_REPEAT_MULTI_SELECTION_REPEAT_MULTI_SELECTION_EXAMPLE_COMPONENT_TS_3;
           } else {
-            i18n_2 = $localize(_templateObject43 || (_templateObject43 = _taggedTemplateLiteral([":\u241F4d3f86c55d6d0d37865042fdafc386eb9ec66380\u241F4316136150832846114:repeat header from template"])));
+            i18n_2 = $localize(_templateObject37 || (_templateObject37 = _taggedTemplateLiteral([":\u241F4d3f86c55d6d0d37865042fdafc386eb9ec66380\u241F4316136150832846114:repeat header from template"])));
           }
 
           return [["repeatItemTemplate", ""], [1, "example"], [1, "flex-row-container"], [1, "flex-independent-row-item", "simple-label"], i18n_0, ["id", "nui-demo-multiselect-values", 1, "flex-independent-row-item"], ["id", "nui-demo-multi-repeat", "selectionMode", "multi", 3, "itemsSource", "selection", "repeatItemTemplateRef", "selectionChange"], ["repeatHeaderTemplate", ""], [1, "template-header"], i18n_2];
@@ -3472,7 +3423,7 @@
             var MSG_EXTERNAL_7787744411173974049$$DEMO_SRC_COMPONENTS_DEMO_REPEAT_REPEAT_DRAG_SIMPLE_REPEAT_DRAG_SIMPLE_EXAMPLE_COMPONENT_TS_1 = goog.getMsg("Draggable");
             i18n_0 = MSG_EXTERNAL_7787744411173974049$$DEMO_SRC_COMPONENTS_DEMO_REPEAT_REPEAT_DRAG_SIMPLE_REPEAT_DRAG_SIMPLE_EXAMPLE_COMPONENT_TS_1;
           } else {
-            i18n_0 = $localize(_templateObject44 || (_templateObject44 = _taggedTemplateLiteral([":\u241F1255f129e09ec6d9599c2a1bd648672b29f8b11c\u241F7787744411173974049:Draggable"])));
+            i18n_0 = $localize(_templateObject38 || (_templateObject38 = _taggedTemplateLiteral([":\u241F1255f129e09ec6d9599c2a1bd648672b29f8b11c\u241F7787744411173974049:Draggable"])));
           }
 
           return [[1, "d-flex"], [1, "p-2", 3, "value", "valueChange"], i18n_0, [3, "itemsSource", "repeatItemTemplateRef", "draggable", "itemsReordered"], ["repeatItemTemplate", ""]];
@@ -3778,7 +3729,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<div class=\"container\">\n    <h3>Multiple Selection Mode with Disabled Items</h3>\n    <nui-repeat-disabled-multi-selection-example id=\"nui-demo-multi-disabled-items\"></nui-repeat-disabled-multi-selection-example>\n    <hr />\n    \n    <h3>Multiple Selection Mode Repeating Header from Template</h3>\n    <nui-repeat-multi-selection-example id=\"nui-demo-multi-repeat-items\"></nui-repeat-multi-selection-example>\n    <hr />\n\n    <h3>Single Selection Mode with Item Highlight</h3>\n    <nui-repeat-single-selection-mode-example id=\"nui-demo-single-highlight\"></nui-repeat-single-selection-mode-example>\n    <hr />\n\n    <h3>Single Selection Mode with Radio Buttons</h3>\n    <nui-repeat-radio-selection-mode-example [colors]=\"colors\" id=\"nui-demo-radio-selection\"></nui-repeat-radio-selection-mode-example>\n    <hr />\n\n    <h3>Required Single Selection Mode</h3>\n    <nui-repeat-single-with-required-selection-mode-example id=\"nui-demo-single-required-selection\"></nui-repeat-single-with-required-selection-mode-example>\n    <hr />\n\n    <h3>Non-Required Selection Mode with Radio Buttons</h3>\n    <nui-repeat-radio-with-non-required-selection-mode-example id=\"nui-demo-radio-non-required-selection\"></nui-repeat-radio-with-non-required-selection-mode-example>\n    <hr />\n\n    <h3>Repeat Item Customization</h3>\n    <nui-repeat-reorder-config-example id=\"nui-demo-reorder-config\"></nui-repeat-reorder-config-example>\n</div>\n";
+      __webpack_exports__["default"] = "<div class=\"container\">\n    <h3>Multiple Selection Mode with Disabled Items</h3>\n    <nui-repeat-disabled-multi-selection-example id=\"nui-demo-multi-disabled-items\"></nui-repeat-disabled-multi-selection-example>\n    <hr />\n    \n    <h3>Multiple Selection Mode Repeating Header from Template</h3>\n    <nui-repeat-multi-selection-example id=\"nui-demo-multi-repeat-items\"></nui-repeat-multi-selection-example>\n    <hr />\n\n    <h3>Single Selection Mode with Item Highlight</h3>\n    <nui-repeat-single-selection-mode-example id=\"nui-demo-single-highlight\"></nui-repeat-single-selection-mode-example>\n    <hr />\n\n    <h3>Single Selection Mode with Radio Buttons</h3>\n    <nui-repeat-radio-selection-mode-example id=\"nui-demo-radio-selection\"></nui-repeat-radio-selection-mode-example>\n    <hr />\n\n    <h3>Required Single Selection Mode</h3>\n    <nui-repeat-single-with-required-selection-mode-example id=\"nui-demo-single-required-selection\"></nui-repeat-single-with-required-selection-mode-example>\n    <hr />\n\n    <h3>Non-Required Selection Mode with Radio Buttons</h3>\n    <nui-repeat-radio-with-non-required-selection-mode-example id=\"nui-demo-radio-non-required-selection\"></nui-repeat-radio-with-non-required-selection-mode-example>\n    <hr />\n\n    <h3>Item-Specific Drag/Drop Behavior</h3>\n    <nui-repeat-reorder-config-example id=\"nui-demo-reorder-config\"></nui-repeat-reorder-config-example>\n</div>\n";
       /***/
     },
 
@@ -3798,7 +3749,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import { Component } from \"@angular/core\";\n\n@Component({\n    selector: \"nui-repeat-visual-test\",\n    templateUrl: \"./repeat-visual-test.component.html\",\n})\nexport class RepeatVisualTestComponent {\n    public colors = [\n        { color: $localize`blue` },\n        { color: $localize`green` },\n        { color: $localize`yellow` },\n        { color: $localize`cyan` },\n        { color: $localize`magenta` },\n        { color: $localize`black` },\n    ];\n\n    public tabs = [\n        {\n            id: \"tab1\",\n            title: \"No Content\",\n        },\n        {\n            id: \"tab2\",\n            title: \"Repeat VScroll\",\n        },\n    ];\n    public currentTabId = this.tabs[0].id;\n\n    private colorIndex: number = 1;\n\n    public addNewColor(): void {\n        this.colors.push(\n            { color: `new color ${this.colorIndex++}` }\n        );\n    }\n\n    // using css display rule instead of *ngIf to test RepeatComponent's IntersectionObserver\n    // (*ngIf would instantiate the test component only when the tab is selected instead of immediately on page load)\n    public getTabDisplayMode = (tabId: string) => this.currentTabId === tabId ? \"block\" : \"none\";\n}\n";
+      __webpack_exports__["default"] = "import { Component } from \"@angular/core\";\n\n@Component({\n    selector: \"nui-repeat-visual-test\",\n    templateUrl: \"./repeat-visual-test.component.html\",\n})\nexport class RepeatVisualTestComponent {\n}\n";
       /***/
     },
 
@@ -3867,17 +3818,17 @@
           _classCallCheck(this, RepeatReorderItemConfigExampleComponent);
 
           this.colors = [{
-            color: $localize(_templateObject45 || (_templateObject45 = _taggedTemplateLiteral(["blue"]))),
+            color: $localize(_templateObject39 || (_templateObject39 = _taggedTemplateLiteral(["blue"]))),
             description: "Should be draggable"
           }, {
-            color: $localize(_templateObject46 || (_templateObject46 = _taggedTemplateLiteral(["green"]))),
+            color: $localize(_templateObject40 || (_templateObject40 = _taggedTemplateLiteral(["green"]))),
             description: "Disabled with callback"
           }, {
-            color: $localize(_templateObject47 || (_templateObject47 = _taggedTemplateLiteral(["yellow"]))),
+            color: $localize(_templateObject41 || (_templateObject41 = _taggedTemplateLiteral(["yellow"]))),
             disabled: true,
             description: "Disabled with property"
           }, {
-            color: $localize(_templateObject48 || (_templateObject48 = _taggedTemplateLiteral(["orange"]))),
+            color: $localize(_templateObject42 || (_templateObject42 = _taggedTemplateLiteral(["orange"]))),
             disabled: false,
             description: "Enabled with property"
           }];
@@ -3885,11 +3836,11 @@
           this.reorderable = true;
           this.itemConfig = {
             isDraggable: function isDraggable(item) {
-              return item.color === $localize(_templateObject49 || (_templateObject49 = _taggedTemplateLiteral(["blue"]))) || item.color === $localize(_templateObject50 || (_templateObject50 = _taggedTemplateLiteral(["orange"])));
+              return item.color === $localize(_templateObject43 || (_templateObject43 = _taggedTemplateLiteral(["blue"]))) || item.color === $localize(_templateObject44 || (_templateObject44 = _taggedTemplateLiteral(["orange"])));
             },
             // Note: Using both cases to check if item is disabled, normally we should use only one method
             isDisabled: function isDisabled(item) {
-              return item.color === $localize(_templateObject51 || (_templateObject51 = _taggedTemplateLiteral(["green"]))) || item.disabled;
+              return item.color === $localize(_templateObject45 || (_templateObject45 = _taggedTemplateLiteral(["green"]))) || item.disabled;
             },
             trackBy: function trackBy(index, item) {
               return item.color;
@@ -3923,7 +3874,7 @@
             var MSG_EXTERNAL_112862472513390058$$DEMO_SRC_COMPONENTS_DEMO_REPEAT_REPEAT_REORDER_ITEM_CONFIG_REPEAT_REORDER_ITEM_CONFIG_EXAMPLE_COMPONENT_TS_1 = goog.getMsg("Dragging");
             i18n_0 = MSG_EXTERNAL_112862472513390058$$DEMO_SRC_COMPONENTS_DEMO_REPEAT_REPEAT_REORDER_ITEM_CONFIG_REPEAT_REORDER_ITEM_CONFIG_EXAMPLE_COMPONENT_TS_1;
           } else {
-            i18n_0 = $localize(_templateObject52 || (_templateObject52 = _taggedTemplateLiteral([":\u241F54af9ca8444cbfe277b0de1689f0f957e626df42\u241F112862472513390058:Dragging"])));
+            i18n_0 = $localize(_templateObject46 || (_templateObject46 = _taggedTemplateLiteral([":\u241F54af9ca8444cbfe277b0de1689f0f957e626df42\u241F112862472513390058:Dragging"])));
           }
 
           var i18n_2;
@@ -3932,7 +3883,7 @@
             var MSG_EXTERNAL_5232212981571205937$$DEMO_SRC_COMPONENTS_DEMO_REPEAT_REPEAT_REORDER_ITEM_CONFIG_REPEAT_REORDER_ITEM_CONFIG_EXAMPLE_COMPONENT_TS_3 = goog.getMsg("Reordering");
             i18n_2 = MSG_EXTERNAL_5232212981571205937$$DEMO_SRC_COMPONENTS_DEMO_REPEAT_REPEAT_REORDER_ITEM_CONFIG_REPEAT_REORDER_ITEM_CONFIG_EXAMPLE_COMPONENT_TS_3;
           } else {
-            i18n_2 = $localize(_templateObject53 || (_templateObject53 = _taggedTemplateLiteral([":\u241F48b8702bb4667bfda70f21fda6df338258722683\u241F5232212981571205937:Reordering"])));
+            i18n_2 = $localize(_templateObject47 || (_templateObject47 = _taggedTemplateLiteral([":\u241F48b8702bb4667bfda70f21fda6df338258722683\u241F5232212981571205937:Reordering"])));
           }
 
           return [[1, "d-flex"], [1, "p-2", 3, "value", "valueChange"], i18n_0, i18n_2, [3, "itemsSource", "repeatItemTemplateRef", "itemConfig", "draggable", "reorderable", "itemsReordered", "draggableChange", "reorderableChange"], ["repeatItemTemplate", ""]];
@@ -4138,19 +4089,19 @@
         _createClass(RepeatVirtualScrollComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this2 = this;
+            var _this = this;
 
             this.dataSource.busy.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])(function (val) {
-              _this2.isBusy = val;
+              _this.isBusy = val;
 
-              _this2.changeDetection.detectChanges();
+              _this.changeDetection.detectChanges();
             }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeUntil"])(this.destroy$)).subscribe();
           }
         }, {
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
             return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
-              var _this3 = this;
+              var _this2 = this;
 
               return regeneratorRuntime.wrap(function _callee$(_context) {
                 while (1) {
@@ -4173,23 +4124,23 @@
                       }).pipe( // Since we know the total number of items we can stop the stream when dataset end is reached
                       // Otherwise we can let VirtualViewportManager to stop when last received page range will not match requested range
                       Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])(function () {
-                        var items = _this3.listItems$.getValue();
+                        var items = _this2.listItems$.getValue();
 
-                        return !items.length || items.length < _this3.totalItems;
+                        return !items.length || items.length < _this2.totalItems;
                       }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])(function () {
-                        return _this3.applyFilters(false);
+                        return _this2.applyFilters(false);
                       }), // Note: Using the same stream to subscribe to the outputsSubject and update the items list
                       Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["switchMap"])(function () {
-                        return _this3.dataSource.outputsSubject.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])(function (data) {
+                        return _this2.dataSource.outputsSubject.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])(function (data) {
                           var _a, _b; // update the list of items to be rendered
 
 
                           var items = ((_a = data.repeat) === null || _a === void 0 ? void 0 : _a.itemsSource) || [];
-                          _this3.totalItems = (_b = data.repeat) === null || _b === void 0 ? void 0 : _b.itemsSource.length; // after receiving data we need to append it to our previous fetched results
+                          _this2.totalItems = (_b = data.repeat) === null || _b === void 0 ? void 0 : _b.itemsSource.length; // after receiving data we need to append it to our previous fetched results
 
-                          _this3.listItems$.next(_this3.listItems$.getValue().concat(items));
+                          _this2.listItems$.next(_this2.listItems$.getValue().concat(items));
 
-                          _this3.changeDetection.detectChanges();
+                          _this2.changeDetection.detectChanges();
                         }));
                       }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeUntil"])(this.destroy$)).subscribe();
 
@@ -4424,22 +4375,22 @@
 
       var RepeatTestComponent = /*#__PURE__*/function () {
         function RepeatTestComponent() {
-          var _this4 = this;
+          var _this3 = this;
 
           _classCallCheck(this, RepeatTestComponent);
 
           this.colors = [{
-            color: $localize(_templateObject54 || (_templateObject54 = _taggedTemplateLiteral(["blue"])))
+            color: $localize(_templateObject48 || (_templateObject48 = _taggedTemplateLiteral(["blue"])))
           }, {
-            color: $localize(_templateObject55 || (_templateObject55 = _taggedTemplateLiteral(["green"])))
+            color: $localize(_templateObject49 || (_templateObject49 = _taggedTemplateLiteral(["green"])))
           }, {
-            color: $localize(_templateObject56 || (_templateObject56 = _taggedTemplateLiteral(["yellow"])))
+            color: $localize(_templateObject50 || (_templateObject50 = _taggedTemplateLiteral(["yellow"])))
           }, {
-            color: $localize(_templateObject57 || (_templateObject57 = _taggedTemplateLiteral(["cyan"])))
+            color: $localize(_templateObject51 || (_templateObject51 = _taggedTemplateLiteral(["cyan"])))
           }, {
-            color: $localize(_templateObject58 || (_templateObject58 = _taggedTemplateLiteral(["magenta"])))
+            color: $localize(_templateObject52 || (_templateObject52 = _taggedTemplateLiteral(["magenta"])))
           }, {
-            color: $localize(_templateObject59 || (_templateObject59 = _taggedTemplateLiteral(["black"])))
+            color: $localize(_templateObject53 || (_templateObject53 = _taggedTemplateLiteral(["black"])))
           }];
           this.tabs = [{
             id: "tab1",
@@ -4453,7 +4404,7 @@
           // (*ngIf would instantiate the test component only when the tab is selected instead of immediately on page load)
 
           this.getTabDisplayMode = function (tabId) {
-            return _this4.currentTabId === tabId ? "block" : "none";
+            return _this3.currentTabId === tabId ? "block" : "none";
           };
         }
 
@@ -4653,19 +4604,19 @@
           _classCallCheck(this, RepeatRadioWithNonRequiredSelectionModeExampleComponent);
 
           this.colors = [{
-            color: $localize(_templateObject60 || (_templateObject60 = _taggedTemplateLiteral(["blue"]))),
+            color: $localize(_templateObject54 || (_templateObject54 = _taggedTemplateLiteral(["blue"]))),
             disabled: true
           }, {
-            color: $localize(_templateObject61 || (_templateObject61 = _taggedTemplateLiteral(["green"])))
+            color: $localize(_templateObject55 || (_templateObject55 = _taggedTemplateLiteral(["green"])))
           }, {
-            color: $localize(_templateObject62 || (_templateObject62 = _taggedTemplateLiteral(["yellow"]))),
+            color: $localize(_templateObject56 || (_templateObject56 = _taggedTemplateLiteral(["yellow"]))),
             disabled: true
           }, {
-            color: $localize(_templateObject63 || (_templateObject63 = _taggedTemplateLiteral(["cyan"])))
+            color: $localize(_templateObject57 || (_templateObject57 = _taggedTemplateLiteral(["cyan"])))
           }, {
-            color: $localize(_templateObject64 || (_templateObject64 = _taggedTemplateLiteral(["magenta"])))
+            color: $localize(_templateObject58 || (_templateObject58 = _taggedTemplateLiteral(["magenta"])))
           }, {
-            color: $localize(_templateObject65 || (_templateObject65 = _taggedTemplateLiteral(["black"])))
+            color: $localize(_templateObject59 || (_templateObject59 = _taggedTemplateLiteral(["black"])))
           }];
           this.selectedColors = [this.colors[1]];
           this.selectedMode = "radioWithNonRequiredSelection";
@@ -4697,7 +4648,7 @@
             var MSG_EXTERNAL_1517966227002077718$$DEMO_SRC_COMPONENTS_DEMO_REPEAT_REPEAT_RADIO_WITH_NON_REQUIRED_SELECTION_MODE_REPEAT_RADIO_WITH_NON_REQUIRED_SELECTION_MODE_EXAMPLE_COMPONENT_TS_1 = goog.getMsg("Selection:");
             i18n_0 = MSG_EXTERNAL_1517966227002077718$$DEMO_SRC_COMPONENTS_DEMO_REPEAT_REPEAT_RADIO_WITH_NON_REQUIRED_SELECTION_MODE_REPEAT_RADIO_WITH_NON_REQUIRED_SELECTION_MODE_EXAMPLE_COMPONENT_TS_1;
           } else {
-            i18n_0 = $localize(_templateObject66 || (_templateObject66 = _taggedTemplateLiteral([":\u241F4b13ecaace0a04d26567095f86b3c2079cf0c050\u241F1517966227002077718:Selection:"])));
+            i18n_0 = $localize(_templateObject60 || (_templateObject60 = _taggedTemplateLiteral([":\u241F4b13ecaace0a04d26567095f86b3c2079cf0c050\u241F1517966227002077718:Selection:"])));
           }
 
           return [["repeatItemTemplate", ""], [1, "example"], [1, "flex-row-container"], [1, "flex-independent-row-item", "simple-label"], i18n_0, ["id", "nui-demo-singleselect-nonrequired-value", 1, "flex-independent-row-item"], ["id", "nui-demo-radio-non-required-selection-repeat", 3, "itemsSource", "selection", "selectionMode", "repeatItemTemplateRef", "selectionChange"]];
@@ -4868,25 +4819,25 @@
 
           this.people = [{
             name: "Jo Smith",
-            level: $localize(_templateObject67 || (_templateObject67 = _taggedTemplateLiteral(["bronze"]))),
-            status: $localize(_templateObject68 || (_templateObject68 = _taggedTemplateLiteral(["active"])))
+            level: $localize(_templateObject61 || (_templateObject61 = _taggedTemplateLiteral(["bronze"]))),
+            status: $localize(_templateObject62 || (_templateObject62 = _taggedTemplateLiteral(["active"])))
           }, {
             name: "Claire Rogan",
-            level: $localize(_templateObject69 || (_templateObject69 = _taggedTemplateLiteral(["gold"]))),
-            status: $localize(_templateObject70 || (_templateObject70 = _taggedTemplateLiteral(["active"]))),
+            level: $localize(_templateObject63 || (_templateObject63 = _taggedTemplateLiteral(["gold"]))),
+            status: $localize(_templateObject64 || (_templateObject64 = _taggedTemplateLiteral(["active"]))),
             disabled: true
           }, {
             name: "Declan McGregor",
-            level: $localize(_templateObject71 || (_templateObject71 = _taggedTemplateLiteral(["platinum"]))),
-            status: $localize(_templateObject72 || (_templateObject72 = _taggedTemplateLiteral(["active"])))
+            level: $localize(_templateObject65 || (_templateObject65 = _taggedTemplateLiteral(["platinum"]))),
+            status: $localize(_templateObject66 || (_templateObject66 = _taggedTemplateLiteral(["active"])))
           }, {
             name: "Fergus O'Brien",
-            level: $localize(_templateObject73 || (_templateObject73 = _taggedTemplateLiteral(["bronze"]))),
-            status: $localize(_templateObject74 || (_templateObject74 = _taggedTemplateLiteral(["inactive"])))
+            level: $localize(_templateObject67 || (_templateObject67 = _taggedTemplateLiteral(["bronze"]))),
+            status: $localize(_templateObject68 || (_templateObject68 = _taggedTemplateLiteral(["inactive"])))
           }, {
             name: "Catriona Kildare",
-            level: $localize(_templateObject75 || (_templateObject75 = _taggedTemplateLiteral(["gold"]))),
-            status: $localize(_templateObject76 || (_templateObject76 = _taggedTemplateLiteral(["active"])))
+            level: $localize(_templateObject69 || (_templateObject69 = _taggedTemplateLiteral(["gold"]))),
+            status: $localize(_templateObject70 || (_templateObject70 = _taggedTemplateLiteral(["active"])))
           }];
           this.selectedPeople = [this.people[2]];
         }
@@ -4917,7 +4868,7 @@
             var MSG_EXTERNAL_1517966227002077718$$DEMO_SRC_COMPONENTS_DEMO_REPEAT_REPEAT_SINGLE_SELECTION_MODE_REPEAT_SINGLE_SELECTION_MODE_EXAMPLE_COMPONENT_TS_1 = goog.getMsg("Selection:");
             i18n_0 = MSG_EXTERNAL_1517966227002077718$$DEMO_SRC_COMPONENTS_DEMO_REPEAT_REPEAT_SINGLE_SELECTION_MODE_REPEAT_SINGLE_SELECTION_MODE_EXAMPLE_COMPONENT_TS_1;
           } else {
-            i18n_0 = $localize(_templateObject77 || (_templateObject77 = _taggedTemplateLiteral([":\u241F4b13ecaace0a04d26567095f86b3c2079cf0c050\u241F1517966227002077718:Selection:"])));
+            i18n_0 = $localize(_templateObject71 || (_templateObject71 = _taggedTemplateLiteral([":\u241F4b13ecaace0a04d26567095f86b3c2079cf0c050\u241F1517966227002077718:Selection:"])));
           }
 
           return [["repeatPeopleItemTemplate", ""], ["actionsContent", ""], [1, "example", "single-selection-example"], [1, "flex-row-container"], [1, "flex-independent-row-item", "simple-label"], i18n_0, ["id", "nui-demo-singleselect-value", 1, "flex-independent-row-item"], ["id", "nui-demo-single-repeat", "selectionMode", "single", 3, "itemsSource", "selection", "repeatItemTemplateRef", "actionsTemplateRef", "selectionChange"], ["css-class", "flex-row-item", "icon", "user", 2, "align-self", "start"], [1, "flex-row-item", "flex-column-container"], [1, "name-item"], [3, "ngClass"], [1, "status-item"], ["nui-button", "", "type", "button", "displayStyle", "action", "icon", "menu"], ["nui-button", "", "type", "button", "displayStyle", "action", "icon", "caret-right"]];
@@ -5207,7 +5158,7 @@
       var RepeatItemExampleComponent = function RepeatItemExampleComponent() {
         _classCallCheck(this, RepeatItemExampleComponent);
 
-        this.items = [$localize(_templateObject78 || (_templateObject78 = _taggedTemplateLiteral(["Item 1"]))), $localize(_templateObject79 || (_templateObject79 = _taggedTemplateLiteral(["Item 2"]))), $localize(_templateObject80 || (_templateObject80 = _taggedTemplateLiteral(["Item 3"])))];
+        this.items = [$localize(_templateObject72 || (_templateObject72 = _taggedTemplateLiteral(["Item 1"]))), $localize(_templateObject73 || (_templateObject73 = _taggedTemplateLiteral(["Item 2"]))), $localize(_templateObject74 || (_templateObject74 = _taggedTemplateLiteral(["Item 3"])))];
       };
 
       RepeatItemExampleComponent.ɵfac = function RepeatItemExampleComponent_Factory(t) {
