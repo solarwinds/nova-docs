@@ -987,7 +987,7 @@ let AreaChartBiDirectionalStackedExampleComponent = class AreaChartBiDirectional
         // This example demonstrates a scenario with time on the X scale and a numeric value on the Y scale.
         const scalesTop = {
             x: xScale,
-            // Use the standard scale orientation on the top chart to stack the chart's series in an upward direction starting at the bottom
+            // Use the standard y-axis scale orientation on the top chart to stack the chart's series in an upward direction starting at the bottom.
             y: new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["LinearScale"](),
         };
         const scalesBottom = {
@@ -995,12 +995,13 @@ let AreaChartBiDirectionalStackedExampleComponent = class AreaChartBiDirectional
             // Invoke 'reverse' on the bottom y-axis scale to stack the chart's series in a downward direction starting at the top.
             y: new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["LinearScale"]().reverse(),
         };
-        // Here we assemble the complete chart series for both charts.
+        // Here we assemble a complete chart series set for each chart.
         const seriesSetTop = getDataTop().map(d => (Object.assign(Object.assign({}, d), { renderer,
             accessors, scales: scalesTop })));
         const seriesSetBottom = getDataBottom().map(d => (Object.assign(Object.assign({}, d), { renderer,
             accessors, scales: scalesBottom })));
-        // We need to replace the default domain calculators to take into account the series on both charts
+        // We need to replace the default domain calculators to have each chart take the series
+        // on the opposite chart into account when calculating the domains.
         const topChartDomainCalculator = Object(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["domainWithAuxiliarySeries"])(() => seriesSetBottom, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["getAutomaticDomain"]);
         scalesTop.y.domainCalculator = topChartDomainCalculator;
         scalesTop.x.domainCalculator = topChartDomainCalculator;
@@ -1407,15 +1408,16 @@ let AreaChartBiDirectionalStackedInvertedExampleComponent = class AreaChartBiDir
         };
         const scalesBottom = {
             x: xScale,
-            // Use the standard scale orientation on the bottom chart to stack the chart's series in an upward direction starting at the bottom
+            // Use the standard y-axis scale orientation on the bottom chart to stack the chart's series in an upward direction starting at the bottom.
             y: new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["LinearScale"](),
         };
-        // Here we assemble the complete chart series for both charts.
+        // Here we assemble a complete chart series set for each chart.
         const seriesSetTop = getDataTop().map(d => (Object.assign(Object.assign({}, d), { renderer,
             accessors, scales: scalesTop })));
         const seriesSetBottom = getDataBottom().map(d => (Object.assign(Object.assign({}, d), { renderer,
             accessors, scales: scalesBottom })));
-        // We need to replace the default domain calculators to take into account the series on both charts
+        // We need to replace the default domain calculators to have each chart take the series
+        // on the opposite chart into account when calculating the domains.
         const topChartDomainCalculator = Object(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["domainWithAuxiliarySeries"])(() => seriesSetBottom, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["getAutomaticDomain"]);
         scalesTop.y.domainCalculator = topChartDomainCalculator;
         scalesTop.x.domainCalculator = topChartDomainCalculator;

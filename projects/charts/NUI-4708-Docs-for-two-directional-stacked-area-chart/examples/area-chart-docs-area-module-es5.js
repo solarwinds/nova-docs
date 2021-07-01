@@ -1707,14 +1707,14 @@
 
             var scalesTop = {
               x: xScale,
-              // Use the standard scale orientation on the top chart to stack the chart's series in an upward direction starting at the bottom
+              // Use the standard y-axis scale orientation on the top chart to stack the chart's series in an upward direction starting at the bottom.
               y: new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["LinearScale"]()
             };
             var scalesBottom = {
               x: xScale,
               // Invoke 'reverse' on the bottom y-axis scale to stack the chart's series in a downward direction starting at the top.
               y: new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["LinearScale"]().reverse()
-            }; // Here we assemble the complete chart series for both charts.
+            }; // Here we assemble a complete chart series set for each chart.
 
             var seriesSetTop = getDataTop().map(function (d) {
               return Object.assign(Object.assign({}, d), {
@@ -1729,7 +1729,8 @@
                 accessors: accessors,
                 scales: scalesBottom
               });
-            }); // We need to replace the default domain calculators to take into account the series on both charts
+            }); // We need to replace the default domain calculators to have each chart take the series
+            // on the opposite chart into account when calculating the domains.
 
             var topChartDomainCalculator = Object(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["domainWithAuxiliarySeries"])(function () {
               return seriesSetBottom;
@@ -2515,9 +2516,9 @@
             };
             var scalesBottom = {
               x: xScale,
-              // Use the standard scale orientation on the bottom chart to stack the chart's series in an upward direction starting at the bottom
+              // Use the standard y-axis scale orientation on the bottom chart to stack the chart's series in an upward direction starting at the bottom.
               y: new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["LinearScale"]()
-            }; // Here we assemble the complete chart series for both charts.
+            }; // Here we assemble a complete chart series set for each chart.
 
             var seriesSetTop = getDataTop().map(function (d) {
               return Object.assign(Object.assign({}, d), {
@@ -2532,7 +2533,8 @@
                 accessors: accessors,
                 scales: scalesBottom
               });
-            }); // We need to replace the default domain calculators to take into account the series on both charts
+            }); // We need to replace the default domain calculators to have each chart take the series
+            // on the opposite chart into account when calculating the domains.
 
             var topChartDomainCalculator = Object(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["domainWithAuxiliarySeries"])(function () {
               return seriesSetBottom;
