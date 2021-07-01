@@ -93,8 +93,6 @@
         }, {
           key: "configureMargins",
           value: function configureMargins() {
-            var _a;
-
             var gridConfig = this.chartAssist.chart.getGrid().config(); // set baseline margins
 
             gridConfig.dimension.margin = {
@@ -104,8 +102,7 @@
               left: 5
             }; // set clearance margin for threshold labels
 
-            var marginToUpdate = ((_a = this.gaugeConfig.labels) === null || _a === void 0 ? void 0 : _a.flipped) ? "top" : "bottom";
-            gridConfig.dimension.margin[marginToUpdate] = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["LINEAR_GAUGE_LABEL_CLEARANCE_DEFAULTS"][marginToUpdate];
+            gridConfig.dimension.margin = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].getMarginForLabelClearance(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Horizontal, gridConfig.dimension.margin);
           }
         }]);
 
@@ -806,8 +803,6 @@
         }, {
           key: "configureMargins",
           value: function configureMargins() {
-            var _a;
-
             var gridConfig = this.chartAssist.chart.getGrid().config(); // set baseline margins
 
             gridConfig.dimension.margin = {
@@ -817,8 +812,12 @@
               left: 5
             }; // set clearance margin for threshold labels
 
-            var marginToUpdate = ((_a = this.gaugeConfig.labels) === null || _a === void 0 ? void 0 : _a.flipped) ? "left" : "right";
-            gridConfig.dimension.margin[marginToUpdate] = this.labelClearance;
+            var gaugeConfigWithLabelClearance = Object.assign(Object.assign({}, this.gaugeConfig), {
+              labels: Object.assign(Object.assign({}, this.gaugeConfig.labels), {
+                clearance: this.labelClearance
+              })
+            });
+            gridConfig.dimension.margin = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].getMarginForLabelClearance(gaugeConfigWithLabelClearance, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Vertical, gridConfig.dimension.margin);
           }
         }]);
 

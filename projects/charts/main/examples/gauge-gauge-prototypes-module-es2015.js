@@ -43,7 +43,6 @@ let LinearGaugeHorizontalPrototypeComponent = class LinearGaugeHorizontalPrototy
         this.chartAssist.update(this.seriesSet);
     }
     configureMargins() {
-        var _a;
         const gridConfig = this.chartAssist.chart.getGrid().config();
         // set baseline margins
         gridConfig.dimension.margin = {
@@ -53,8 +52,7 @@ let LinearGaugeHorizontalPrototypeComponent = class LinearGaugeHorizontalPrototy
             left: 5,
         };
         // set clearance margin for threshold labels
-        const marginToUpdate = ((_a = this.gaugeConfig.labels) === null || _a === void 0 ? void 0 : _a.flipped) ? "top" : "bottom";
-        gridConfig.dimension.margin[marginToUpdate] = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["LINEAR_GAUGE_LABEL_CLEARANCE_DEFAULTS"][marginToUpdate];
+        gridConfig.dimension.margin = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].getMarginForLabelClearance(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Horizontal, gridConfig.dimension.margin);
     }
 };
 LinearGaugeHorizontalPrototypeComponent.propDecorators = {
@@ -497,7 +495,6 @@ let LinearGaugeVerticalPrototypeComponent = class LinearGaugeVerticalPrototypeCo
         this.chartAssist.update(this.seriesSet);
     }
     configureMargins() {
-        var _a;
         const gridConfig = this.chartAssist.chart.getGrid().config();
         // set baseline margins
         gridConfig.dimension.margin = {
@@ -507,8 +504,8 @@ let LinearGaugeVerticalPrototypeComponent = class LinearGaugeVerticalPrototypeCo
             left: 5,
         };
         // set clearance margin for threshold labels
-        const marginToUpdate = ((_a = this.gaugeConfig.labels) === null || _a === void 0 ? void 0 : _a.flipped) ? "left" : "right";
-        gridConfig.dimension.margin[marginToUpdate] = this.labelClearance;
+        const gaugeConfigWithLabelClearance = Object.assign(Object.assign({}, this.gaugeConfig), { labels: Object.assign(Object.assign({}, this.gaugeConfig.labels), { clearance: this.labelClearance }) });
+        gridConfig.dimension.margin = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].getMarginForLabelClearance(gaugeConfigWithLabelClearance, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Vertical, gridConfig.dimension.margin);
     }
 };
 LinearGaugeVerticalPrototypeComponent.propDecorators = {

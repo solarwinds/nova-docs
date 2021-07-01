@@ -11362,12 +11362,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lodash_isEmpty__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(lodash_isEmpty__WEBPACK_IMPORTED_MODULE_18__);
 /* harmony import */ var _core_plugins_gauge_donut_gauge_labels_plugin__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../core/plugins/gauge/donut-gauge-labels-plugin */ "U0Ec");
 /* harmony import */ var _core_plugins_gauge_linear_gauge_labels_plugin__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../core/plugins/gauge/linear-gauge-labels-plugin */ "hVbV");
-/* harmony import */ var lodash_isNil__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! lodash/isNil */ "J2iB");
-/* harmony import */ var lodash_isNil__WEBPACK_IMPORTED_MODULE_21___default = /*#__PURE__*/__webpack_require__.n(lodash_isNil__WEBPACK_IMPORTED_MODULE_21__);
-/* harmony import */ var _renderers_radial_radial_grid_fn__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../renderers/radial/radial-grid-fn */ "oVWD");
-/* harmony import */ var _core_grid_xy_grid__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../core/grid/xy-grid */ "6lnl");
-/* harmony import */ var _core_grid_config_linear_gauge_grid_config_fn__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../core/grid/config/linear-gauge-grid-config-fn */ "vXYh");
-
+/* harmony import */ var _renderers_radial_radial_grid_fn__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../renderers/radial/radial-grid-fn */ "oVWD");
+/* harmony import */ var _core_grid_xy_grid__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../core/grid/xy-grid */ "6lnl");
+/* harmony import */ var _core_grid_config_linear_gauge_grid_config_fn__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../core/grid/config/linear-gauge-grid-config-fn */ "vXYh");
 
 
 
@@ -11407,38 +11404,22 @@ class GaugeUtil {
      * @returns {ChartAssist} A pre-configured chart assist
      */
     static createChartAssist(gaugeConfig, mode, labelsPlugin) {
-        var _a, _b, _c, _d, _e, _f;
-        const grid = (mode === _constants__WEBPACK_IMPORTED_MODULE_11__["GaugeMode"].Donut) ? Object(_renderers_radial_radial_grid_fn__WEBPACK_IMPORTED_MODULE_22__["radialGrid"])() : new _core_grid_xy_grid__WEBPACK_IMPORTED_MODULE_23__["XYGrid"](Object(_core_grid_config_linear_gauge_grid_config_fn__WEBPACK_IMPORTED_MODULE_24__["linearGaugeGridConfig"])(mode, gaugeConfig.linearThickness));
+        var _a, _b, _c;
+        const grid = (mode === _constants__WEBPACK_IMPORTED_MODULE_11__["GaugeMode"].Donut) ? Object(_renderers_radial_radial_grid_fn__WEBPACK_IMPORTED_MODULE_21__["radialGrid"])() : new _core_grid_xy_grid__WEBPACK_IMPORTED_MODULE_22__["XYGrid"](Object(_core_grid_config_linear_gauge_grid_config_fn__WEBPACK_IMPORTED_MODULE_23__["linearGaugeGridConfig"])(mode, gaugeConfig.linearThickness));
+        const gridConfig = grid.config();
         const chart = new _core_chart__WEBPACK_IMPORTED_MODULE_17__["Chart"](grid);
         const enableLabels = !lodash_isEmpty__WEBPACK_IMPORTED_MODULE_18___default()((_a = gaugeConfig.thresholds) === null || _a === void 0 ? void 0 : _a.definitions) && !((_b = gaugeConfig.thresholds) === null || _b === void 0 ? void 0 : _b.disableMarkers);
         if (mode === _constants__WEBPACK_IMPORTED_MODULE_11__["GaugeMode"].Donut) {
             if (enableLabels) {
                 chart.addPlugin(labelsPlugin !== null && labelsPlugin !== void 0 ? labelsPlugin : new _core_plugins_gauge_donut_gauge_labels_plugin__WEBPACK_IMPORTED_MODULE_19__["DonutGaugeLabelsPlugin"]());
-                // apply label clearances
-                const labelClearanceConfig = (_c = gaugeConfig.labels) === null || _c === void 0 ? void 0 : _c.clearance;
-                const clearance = !lodash_isNil__WEBPACK_IMPORTED_MODULE_21___default()(labelClearanceConfig) ? labelClearanceConfig : _constants__WEBPACK_IMPORTED_MODULE_11__["DONUT_GAUGE_LABEL_CLEARANCE_DEFAULT"];
-                grid.config().dimension.margin = {
-                    top: clearance,
-                    right: clearance,
-                    bottom: clearance,
-                    left: clearance,
-                };
+                gridConfig.dimension.margin = GaugeUtil.getMarginForLabelClearance(gaugeConfig, mode, gridConfig.dimension.margin);
             }
             return new _core_chart_assists_chart_assist__WEBPACK_IMPORTED_MODULE_14__["ChartAssist"](chart, _renderers_radial_radial_preprocessor__WEBPACK_IMPORTED_MODULE_15__["radial"]);
         }
         if (enableLabels) {
-            const flippedLabels = !!((_d = gaugeConfig.labels) === null || _d === void 0 ? void 0 : _d.flipped);
+            const flippedLabels = !!((_c = gaugeConfig.labels) === null || _c === void 0 ? void 0 : _c.flipped);
             chart.addPlugin(labelsPlugin !== null && labelsPlugin !== void 0 ? labelsPlugin : new _core_plugins_gauge_linear_gauge_labels_plugin__WEBPACK_IMPORTED_MODULE_20__["LinearGaugeLabelsPlugin"]({ flippedLabels }));
-            // apply label clearance
-            let marginToAdjust;
-            if (mode === _constants__WEBPACK_IMPORTED_MODULE_11__["GaugeMode"].Horizontal) {
-                marginToAdjust = flippedLabels ? "top" : "bottom";
-            }
-            else {
-                marginToAdjust = flippedLabels ? "left" : "right";
-            }
-            const clearance = (_f = (_e = gaugeConfig.labels) === null || _e === void 0 ? void 0 : _e.clearance) !== null && _f !== void 0 ? _f : _constants__WEBPACK_IMPORTED_MODULE_11__["LINEAR_GAUGE_LABEL_CLEARANCE_DEFAULTS"][marginToAdjust];
-            grid.config().dimension.margin[marginToAdjust] = clearance;
+            gridConfig.dimension.margin = GaugeUtil.getMarginForLabelClearance(gaugeConfig, mode, gridConfig.dimension.margin);
         }
         return new _core_chart_assists_chart_assist__WEBPACK_IMPORTED_MODULE_14__["ChartAssist"](chart, _renderers_bar_stacked_preprocessor__WEBPACK_IMPORTED_MODULE_16__["stack"]);
     }
@@ -11499,6 +11480,72 @@ class GaugeUtil {
             return series;
         });
         return updatedSeriesSet;
+    }
+    /**
+     * Convenience function for creating a standard standard set of threshold configs. Includes configurations for warning and error thresholds.
+     *
+     * @param warningVal Value for the warning threshold
+     * @param criticalVal Value for the critical threshold
+     *
+     * @returns {IGaugeThresholdsConfig} The thresholds configuration
+     */
+    static createStandardThresholdsConfig(warningVal, criticalVal) {
+        // assigning to variable to prevent "Expression form not supported" error
+        const config = {
+            definitions: {
+                [_constants__WEBPACK_IMPORTED_MODULE_11__["StandardGaugeThresholdId"].Warning]: {
+                    id: _constants__WEBPACK_IMPORTED_MODULE_11__["StandardGaugeThresholdId"].Warning,
+                    value: warningVal,
+                    enabled: true,
+                    color: _constants__WEBPACK_IMPORTED_MODULE_11__["StandardGaugeColor"].Warning,
+                },
+                [_constants__WEBPACK_IMPORTED_MODULE_11__["StandardGaugeThresholdId"].Critical]: {
+                    id: _constants__WEBPACK_IMPORTED_MODULE_11__["StandardGaugeThresholdId"].Critical,
+                    value: criticalVal,
+                    enabled: true,
+                    color: _constants__WEBPACK_IMPORTED_MODULE_11__["StandardGaugeColor"].Critical,
+                },
+            },
+            reversed: false,
+            disableMarkers: false,
+            markerRadius: _constants__WEBPACK_IMPORTED_MODULE_11__["StandardGaugeThresholdMarkerRadius"].Large,
+        };
+        return config;
+    }
+    /**
+     * Gets a new instance of the provided grid margin with updated values (if needed) to accommodate the label clearance specified
+     * in the provided gauge configuration
+     *
+     * @param gaugeConfig The gauge's configuration
+     * @param mode The mode of the gauge
+     * @param margin The margin to update
+     *
+     * @returns {IAllAround<number>} The updated margin
+     */
+    static getMarginForLabelClearance(gaugeConfig, mode, margin) {
+        var _a, _b, _c, _d, _e;
+        if (mode === _constants__WEBPACK_IMPORTED_MODULE_11__["GaugeMode"].Donut) {
+            const clearance = (_b = (_a = gaugeConfig.labels) === null || _a === void 0 ? void 0 : _a.clearance) !== null && _b !== void 0 ? _b : _constants__WEBPACK_IMPORTED_MODULE_11__["DONUT_GAUGE_LABEL_CLEARANCE_DEFAULT"];
+            // on the radial grid the maximum margin value is used for all margins, so we use the max value here
+            const marginValue = Math.max(...Object.values(margin), clearance);
+            return {
+                top: marginValue,
+                right: marginValue,
+                bottom: marginValue,
+                left: marginValue,
+            };
+        }
+        let marginToAdjust;
+        const flippedLabels = !!((_c = gaugeConfig.labels) === null || _c === void 0 ? void 0 : _c.flipped);
+        if (mode === _constants__WEBPACK_IMPORTED_MODULE_11__["GaugeMode"].Horizontal) {
+            marginToAdjust = flippedLabels ? "top" : "bottom";
+        }
+        else {
+            marginToAdjust = flippedLabels ? "left" : "right";
+        }
+        const clearance = (_e = (_d = gaugeConfig.labels) === null || _d === void 0 ? void 0 : _d.clearance) !== null && _e !== void 0 ? _e : _constants__WEBPACK_IMPORTED_MODULE_11__["LINEAR_GAUGE_LABEL_CLEARANCE_DEFAULTS"][marginToAdjust];
+        const marginValue = Math.max(margin[marginToAdjust], clearance);
+        return Object.assign(Object.assign({}, margin), { [marginToAdjust]: marginValue });
     }
     /**
      * Generates a set of chart series used for visualizing the gauge's quantity and remainder data
@@ -11613,37 +11660,6 @@ class GaugeUtil {
             },
         };
         return renderingTools[mode];
-    }
-    /**
-     * Convenience function for creating a standard standard set of threshold configs. Includes configurations for warning and error thresholds.
-     *
-     * @param warningVal Value for the warning threshold
-     * @param criticalVal Value for the critical threshold
-     *
-     * @returns {IGaugeThresholdsConfig} The thresholds configuration
-     */
-    static createStandardThresholdsConfig(warningVal, criticalVal) {
-        // assigning to variable to prevent "Expression form not supported" error
-        const config = {
-            definitions: {
-                [_constants__WEBPACK_IMPORTED_MODULE_11__["StandardGaugeThresholdId"].Warning]: {
-                    id: _constants__WEBPACK_IMPORTED_MODULE_11__["StandardGaugeThresholdId"].Warning,
-                    value: warningVal,
-                    enabled: true,
-                    color: _constants__WEBPACK_IMPORTED_MODULE_11__["StandardGaugeColor"].Warning,
-                },
-                [_constants__WEBPACK_IMPORTED_MODULE_11__["StandardGaugeThresholdId"].Critical]: {
-                    id: _constants__WEBPACK_IMPORTED_MODULE_11__["StandardGaugeThresholdId"].Critical,
-                    value: criticalVal,
-                    enabled: true,
-                    color: _constants__WEBPACK_IMPORTED_MODULE_11__["StandardGaugeColor"].Critical,
-                },
-            },
-            reversed: false,
-            disableMarkers: false,
-            markerRadius: _constants__WEBPACK_IMPORTED_MODULE_11__["StandardGaugeThresholdMarkerRadius"].Large,
-        };
-        return config;
     }
     /**
      * Generates quantity and remainder data in the format needed by the gauge visualization
