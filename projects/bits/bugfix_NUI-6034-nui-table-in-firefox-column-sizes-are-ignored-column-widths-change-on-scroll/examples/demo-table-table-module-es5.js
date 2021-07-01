@@ -351,9 +351,9 @@
 
       function TableVirtualScrollStickyHeaderTestExampleComponent_ng_container_8_th_1_ng_template_2_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 16);
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 15);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](1, "nui-icon", 17);
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](1, "nui-icon", 16);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
         }
@@ -361,11 +361,11 @@
 
       function TableVirtualScrollStickyHeaderTestExampleComponent_ng_container_8_th_1_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "th", 13);
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "th", 12);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](1, TableVirtualScrollStickyHeaderTestExampleComponent_ng_container_8_th_1_span_1_Template, 2, 1, "span", 14);
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](1, TableVirtualScrollStickyHeaderTestExampleComponent_ng_container_8_th_1_span_1_Template, 2, 1, "span", 13);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, TableVirtualScrollStickyHeaderTestExampleComponent_ng_container_8_th_1_ng_template_2_Template, 2, 0, "ng-template", null, 15, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, TableVirtualScrollStickyHeaderTestExampleComponent_ng_container_8_th_1_ng_template_2_Template, 2, 0, "ng-template", null, 14, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
         }
@@ -403,9 +403,9 @@
 
       function TableVirtualScrollStickyHeaderTestExampleComponent_ng_container_8_td_2_ng_template_2_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 16);
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 15);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](1, "nui-icon", 20);
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](1, "nui-icon", 19);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
         }
@@ -423,11 +423,11 @@
 
       function TableVirtualScrollStickyHeaderTestExampleComponent_ng_container_8_td_2_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "td", 18);
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "td", 17);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](1, TableVirtualScrollStickyHeaderTestExampleComponent_ng_container_8_td_2_span_1_Template, 2, 1, "span", 14);
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](1, TableVirtualScrollStickyHeaderTestExampleComponent_ng_container_8_td_2_span_1_Template, 2, 1, "span", 13);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, TableVirtualScrollStickyHeaderTestExampleComponent_ng_container_8_td_2_ng_template_2_Template, 2, 1, "ng-template", null, 19, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, TableVirtualScrollStickyHeaderTestExampleComponent_ng_container_8_td_2_ng_template_2_Template, 2, 1, "ng-template", null, 18, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
         }
@@ -445,11 +445,11 @@
 
       function TableVirtualScrollStickyHeaderTestExampleComponent_ng_container_8_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainerStart"](0, 10);
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainerStart"](0, 9);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](1, TableVirtualScrollStickyHeaderTestExampleComponent_ng_container_8_th_1_Template, 4, 2, "th", 11);
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](1, TableVirtualScrollStickyHeaderTestExampleComponent_ng_container_8_th_1_Template, 4, 2, "th", 10);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, TableVirtualScrollStickyHeaderTestExampleComponent_ng_container_8_td_2_Template, 4, 2, "td", 12);
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, TableVirtualScrollStickyHeaderTestExampleComponent_ng_container_8_td_2_Template, 4, 2, "td", 11);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainerEnd"]();
         }
@@ -464,13 +464,13 @@
 
       function TableVirtualScrollStickyHeaderTestExampleComponent_tr_9_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](0, "tr", 21);
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](0, "tr", 20);
         }
       }
 
       function TableVirtualScrollStickyHeaderTestExampleComponent_ng_template_10_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](0, "tr", 22);
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](0, "tr", 21);
         }
 
         if (rf & 2) {
@@ -602,7 +602,7 @@
             i18n_0 = $localize(_templateObject || (_templateObject = _taggedTemplateLiteral([":\u241Fe85c9ef3064327671f6a2c1a07d2a9eb628df244\u241F2717514595278786545: ", ":INTERPOLATION: "])), "\uFFFD0\uFFFD");
           }
 
-          return [[1, "row", "mb-2"], [1, "col-3"], [3, "value", "valueChange"], i18n_0, ["id", "nui-demo-table-sticky-header-test"], ["tableStickyHeader", "", 1, "h-100", 3, "itemSize"], ["nui-table", "", 3, "dataSource", "trackBy", "sortable"], [3, "nuiColumnDef", "type", "columnWidth", 4, "ngFor", "ngForOf"], ["nui-header-row", "", 4, "nuiHeaderRowDef"], ["nuiRowDef", "", "cdkVirtualFor", "", 3, "nuiRowDefColumns", "cdkVirtualForOf", "cdkVirtualForTrackBy"], [3, "nuiColumnDef", "type", "columnWidth"], ["nui-header-cell", "", 4, "nuiHeaderCellDef"], ["nui-cell", "", 4, "nuiCellDef"], ["nui-header-cell", ""], [4, "ngIf", "ngIfElse"], ["headerIcon", ""], [1, "d-flex", "align-items-center", "justify-content-center"], ["icon", "enable"], ["nui-cell", ""], ["icon", ""], [3, "icon"], ["nui-header-row", ""], ["nui-row", "", 3, "rowObject"]];
+          return [[1, "row", "mb-2"], [1, "col-3"], [3, "value", "valueChange"], i18n_0, ["tableStickyHeader", "", 1, "h-100", 3, "itemSize"], ["nui-table", "", 3, "dataSource", "trackBy", "sortable"], [3, "nuiColumnDef", "type", "columnWidth", 4, "ngFor", "ngForOf"], ["nui-header-row", "", 4, "nuiHeaderRowDef"], ["nuiRowDef", "", "cdkVirtualFor", "", 3, "nuiRowDefColumns", "cdkVirtualForOf", "cdkVirtualForTrackBy"], [3, "nuiColumnDef", "type", "columnWidth"], ["nui-header-cell", "", 4, "nuiHeaderCellDef"], ["nui-cell", "", 4, "nuiCellDef"], ["nui-header-cell", ""], [4, "ngIf", "ngIfElse"], ["headerIcon", ""], [1, "d-flex", "align-items-center", "justify-content-center"], ["icon", "enable"], ["nui-cell", ""], ["icon", ""], [3, "icon"], ["nui-header-row", ""], ["nui-row", "", 3, "rowObject"]];
         },
         template: function TableVirtualScrollStickyHeaderTestExampleComponent_Template(rf, ctx) {
           if (rf & 1) {
@@ -624,19 +624,19 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](4, "div", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](4, "div");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](5, "cdk-virtual-scroll-viewport", 5);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](5, "cdk-virtual-scroll-viewport", 4);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](6, "table", 6);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](6, "table", 5);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipe"](7, "async");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](8, TableVirtualScrollStickyHeaderTestExampleComponent_ng_container_8_Template, 3, 3, "ng-container", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](8, TableVirtualScrollStickyHeaderTestExampleComponent_ng_container_8_Template, 3, 3, "ng-container", 6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](9, TableVirtualScrollStickyHeaderTestExampleComponent_tr_9_Template, 1, 0, "tr", 8);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](9, TableVirtualScrollStickyHeaderTestExampleComponent_tr_9_Template, 1, 0, "tr", 7);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](10, TableVirtualScrollStickyHeaderTestExampleComponent_ng_template_10_Template, 1, 1, "ng-template", 9);
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](10, TableVirtualScrollStickyHeaderTestExampleComponent_ng_template_10_Template, 1, 1, "ng-template", 8);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 
@@ -19456,7 +19456,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<div class=\"row mb-2\">\n    <div class=\"col-3\">\n        <nui-switch [value]=\"makeSticky\" (valueChange)=\"updateStickyState($event)\" i18n>\n            {{makeSticky ? 'Sticky' : 'Not Sticky'}}\n        </nui-switch>\n    </div>\n</div>\n\n<div id=\"nui-demo-table-sticky-header-test\" \n        [style.height.px]=\"gridHeight\" \n        [style.max-width.px]=\"1300\">\n    <cdk-virtual-scroll-viewport tableStickyHeader class=\"h-100\" [itemSize]=\"itemSize\">\n        <!-- IMPORTANT Bind only visible rows to the table, otherwise, the table will render all rows in the DOM -->\n        <table nui-table [dataSource]=\"visibleItems$ | async\" [trackBy]=\"trackByNo\" [sortable]=\"true\">\n            <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->\n            <ng-container *ngFor=\"let column of displayedColumns; let i = index\"\n                    [nuiColumnDef]=\"column\" \n                    [type]=\"column === 'icon' ? 'icon' : 'default'\" \n                    [columnWidth]=\"i >= 4 ? 120 : undefined\">\n                <th nui-header-cell *nuiHeaderCellDef>\n                    <span *ngIf=\"column !== 'icon'; else headerIcon\">{{column}}</span>\n                    <ng-template #headerIcon>\n                        <div class=\"d-flex align-items-center justify-content-center\">\n                            <nui-icon icon=\"enable\"></nui-icon>\n                        </div>\n                    </ng-template>\n                </th>\n                <td nui-cell *nuiCellDef=\"let element\">\n                    <span *ngIf=\"column !== 'icon'; else icon\">{{element[column]}}</span>\n                    <ng-template #icon>\n                        <div class=\"d-flex align-items-center justify-content-center\">\n                            <nui-icon [icon]=\"element[column]\"></nui-icon>\n                        </div>\n                    </ng-template>\n                </td>\n            </ng-container>\n\n            <tr nui-header-row *nuiHeaderRowDef=\"displayedColumns\"></tr>\n            <!-- IMPORTANT The actual difference between normal table and virtualized one-->\n            <!-- ∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨ -->\n            <ng-template nuiRowDef cdkVirtualFor\n                         let-context\n                         [nuiRowDefColumns]=\"displayedColumns\"\n                         [cdkVirtualForOf]=\"placeholderItems\"\n                         [cdkVirtualForTrackBy]=\"trackByNo\">\n                <tr nui-row [rowObject]=\"context\"></tr>\n            </ng-template>\n            <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->\n        </table>\n\n    </cdk-virtual-scroll-viewport>\n</div>\n";
+      __webpack_exports__["default"] = "<div class=\"row mb-2\">\n    <div class=\"col-3\">\n        <nui-switch [value]=\"makeSticky\" (valueChange)=\"updateStickyState($event)\" i18n>\n            {{makeSticky ? 'Sticky' : 'Not Sticky'}}\n        </nui-switch>\n    </div>\n</div>\n\n<div [style.height.px]=\"gridHeight\"\n        [style.max-width.px]=\"1300\">\n    <cdk-virtual-scroll-viewport tableStickyHeader class=\"h-100\" [itemSize]=\"itemSize\">\n        <!-- IMPORTANT Bind only visible rows to the table, otherwise, the table will render all rows in the DOM -->\n        <table nui-table [dataSource]=\"visibleItems$ | async\" [trackBy]=\"trackByNo\" [sortable]=\"true\">\n            <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->\n            <ng-container *ngFor=\"let column of displayedColumns; let i = index\"\n                    [nuiColumnDef]=\"column\" \n                    [type]=\"column === 'icon' ? 'icon' : 'default'\" \n                    [columnWidth]=\"i >= 4 ? 120 : undefined\">\n                <th nui-header-cell *nuiHeaderCellDef>\n                    <span *ngIf=\"column !== 'icon'; else headerIcon\">{{column}}</span>\n                    <ng-template #headerIcon>\n                        <div class=\"d-flex align-items-center justify-content-center\">\n                            <nui-icon icon=\"enable\"></nui-icon>\n                        </div>\n                    </ng-template>\n                </th>\n                <td nui-cell *nuiCellDef=\"let element\">\n                    <span *ngIf=\"column !== 'icon'; else icon\">{{element[column]}}</span>\n                    <ng-template #icon>\n                        <div class=\"d-flex align-items-center justify-content-center\">\n                            <nui-icon [icon]=\"element[column]\"></nui-icon>\n                        </div>\n                    </ng-template>\n                </td>\n            </ng-container>\n\n            <tr nui-header-row *nuiHeaderRowDef=\"displayedColumns\"></tr>\n            <!-- IMPORTANT The actual difference between normal table and virtualized one-->\n            <!-- ∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨∨ -->\n            <ng-template nuiRowDef cdkVirtualFor\n                         let-context\n                         [nuiRowDefColumns]=\"displayedColumns\"\n                         [cdkVirtualForOf]=\"placeholderItems\"\n                         [cdkVirtualForTrackBy]=\"trackByNo\">\n                <tr nui-row [rowObject]=\"context\"></tr>\n            </ng-template>\n            <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->\n        </table>\n\n    </cdk-virtual-scroll-viewport>\n</div>\n";
       /***/
     },
 
