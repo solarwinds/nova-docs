@@ -87,7 +87,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"conversion d-flex flex-column align-items-end\">\n    {{ num | unitConversion : 2 : false : \"bitsPerSecond\" }}\n</div>\n<hr>\n<nui-form-field class=\"d-block mt-5\"\n                caption=\"Bits Per Second\"\n                [showOptionalText]=\"false\">\n    <nui-textbox-number type=\"number\"\n                        [(ngModel)]=\"num\"\n                        [minValue]=\"0\"\n                        [step]=\"10\"\n                        customBoxWidth=\"200px\"></nui-textbox-number>\n</nui-form-field>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"conversion d-flex flex-column align-items-end\">\n    {{ num | unitConversion : 2 : false : \"bitsPerSecond\" }}\n</div>\n<hr>\n<nui-form-field class=\"d-block mt-5\"\n                caption=\"Bits Per Second\" i18n-caption\n                [showOptionalText]=\"false\">\n    <nui-textbox-number type=\"number\"\n                        [(ngModel)]=\"num\"\n                        [minValue]=\"0\"\n                        [step]=\"10\"\n                        customBoxWidth=\"200px\"></nui-textbox-number>\n</nui-form-field>\n");
 
 /***/ }),
 
