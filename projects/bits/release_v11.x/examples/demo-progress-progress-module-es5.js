@@ -71,6 +71,14 @@
             "hideIndicator": true
           }
         }
+      }, {
+        path: "progress-test",
+        component: _index__WEBPACK_IMPORTED_MODULE_2__["ProgressTestComponent"],
+        data: {
+          "srlc": {
+            "hideIndicator": true
+          }
+        }
       }];
 
       var ProgressModule = function ProgressModule() {
@@ -95,7 +103,7 @@
 
       (function () {
         (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵsetNgModuleScope"](ProgressModule, {
-          declarations: [_index__WEBPACK_IMPORTED_MODULE_2__["BasicProgressExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_2__["IndeterminateProgressExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_2__["ProgressCompactExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_2__["ProgressExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_2__["ProgressVisualTestComponent"], _index__WEBPACK_IMPORTED_MODULE_2__["ProgressWithHelpTemplateExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_2__["StackedHeaderProgressExampleComponent"]],
+          declarations: [_index__WEBPACK_IMPORTED_MODULE_2__["BasicProgressExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_2__["IndeterminateProgressExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_2__["ProgressCompactExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_2__["ProgressExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_2__["ProgressVisualTestComponent"], _index__WEBPACK_IMPORTED_MODULE_2__["ProgressTestComponent"], _index__WEBPACK_IMPORTED_MODULE_2__["ProgressWithHelpTemplateExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_2__["StackedHeaderProgressExampleComponent"]],
           imports: [_nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiButtonModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiProgressModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiMessageModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiDocsModule"], _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]],
           exports: [_angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]]
         });
@@ -612,7 +620,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "export { ProgressExampleComponent } from \"./progress-docs/progress-docs.example.component\";\nexport { BasicProgressExampleComponent } from \"./basic-progress/basic-progress.example.component\";\nexport { StackedHeaderProgressExampleComponent } from \"./stacked-header/stacked-header.example.component\";\nexport { IndeterminateProgressExampleComponent } from \"./indeterminate-progress/indeterminate-progress.example.component\";\nexport { ProgressVisualTestComponent } from \"./progress-visual-test/progress-visual-test.component\";\nexport { ProgressCompactExampleComponent } from \"./progress-compact/progress-compact.example.component\";\nexport { ProgressWithHelpTemplateExampleComponent } from \"./progress-with-help-template/progress-with-help-template-example.component\";\n";
+      __webpack_exports__["default"] = "export { ProgressExampleComponent } from \"./progress-docs/progress-docs.example.component\";\nexport { BasicProgressExampleComponent } from \"./basic-progress/basic-progress.example.component\";\nexport { StackedHeaderProgressExampleComponent } from \"./stacked-header/stacked-header.example.component\";\nexport { IndeterminateProgressExampleComponent } from \"./indeterminate-progress/indeterminate-progress.example.component\";\nexport { ProgressVisualTestComponent } from \"./progress-visual-test/progress-visual-test.component\";\nexport { ProgressTestComponent } from \"./progress-test/progress-test.component\";\nexport { ProgressCompactExampleComponent } from \"./progress-compact/progress-compact.example.component\";\nexport { ProgressWithHelpTemplateExampleComponent } from \"./progress-with-help-template/progress-with-help-template-example.component\";\n";
       /***/
     },
 
@@ -632,7 +640,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import { NgModule } from \"@angular/core\";\nimport { RouterModule } from \"@angular/router\";\nimport {\n    DEMO_PATH_TOKEN,\n    NuiButtonModule,\n    NuiDocsModule,\n    NuiMessageModule,\n    NuiProgressModule,\n    SrlcStage,\n} from \"@nova-ui/bits\";\n\nimport {\n    BasicProgressExampleComponent,\n    IndeterminateProgressExampleComponent,\n    ProgressCompactExampleComponent,\n    ProgressExampleComponent,\n    ProgressVisualTestComponent,\n    ProgressWithHelpTemplateExampleComponent,\n    StackedHeaderProgressExampleComponent,\n} from \"./index\";\n\nconst routes = [\n    {\n        path: \"\",\n        component: ProgressExampleComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.ga,\n            },\n            showThemeSwitcher: true,\n        },\n    },\n    {\n        path: \"progress-visual-test\",\n        component: ProgressVisualTestComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n];\n\n@NgModule({\n    imports: [\n        NuiButtonModule,\n        NuiProgressModule,\n        NuiMessageModule,\n        NuiDocsModule,\n        RouterModule.forChild(routes),\n    ],\n    declarations: [\n        BasicProgressExampleComponent,\n        IndeterminateProgressExampleComponent,\n        ProgressCompactExampleComponent,\n        ProgressExampleComponent,\n        ProgressVisualTestComponent,\n        ProgressWithHelpTemplateExampleComponent,\n        StackedHeaderProgressExampleComponent,\n    ],\n    providers: [\n        {\n            provide: DEMO_PATH_TOKEN,\n            useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/),\n        },\n    ],\n    exports: [\n        RouterModule,\n    ],\n})\nexport class ProgressModule {\n}\n";
+      __webpack_exports__["default"] = "import { NgModule } from \"@angular/core\";\nimport { RouterModule } from \"@angular/router\";\nimport {\n    DEMO_PATH_TOKEN,\n    NuiButtonModule,\n    NuiDocsModule,\n    NuiMessageModule,\n    NuiProgressModule,\n    SrlcStage,\n} from \"@nova-ui/bits\";\n\nimport {\n    BasicProgressExampleComponent,\n    IndeterminateProgressExampleComponent,\n    ProgressCompactExampleComponent,\n    ProgressExampleComponent,\n    ProgressVisualTestComponent,\n    ProgressTestComponent,\n    ProgressWithHelpTemplateExampleComponent,\n    StackedHeaderProgressExampleComponent,\n} from \"./index\";\n\nconst routes = [\n    {\n        path: \"\",\n        component: ProgressExampleComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.ga,\n            },\n            showThemeSwitcher: true,\n        },\n    },\n    {\n        path: \"progress-visual-test\",\n        component: ProgressVisualTestComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"progress-test\",\n        component: ProgressTestComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n];\n\n@NgModule({\n    imports: [\n        NuiButtonModule,\n        NuiProgressModule,\n        NuiMessageModule,\n        NuiDocsModule,\n        RouterModule.forChild(routes),\n    ],\n    declarations: [\n        BasicProgressExampleComponent,\n        IndeterminateProgressExampleComponent,\n        ProgressCompactExampleComponent,\n        ProgressExampleComponent,\n        ProgressVisualTestComponent,\n        ProgressTestComponent,\n        ProgressWithHelpTemplateExampleComponent,\n        StackedHeaderProgressExampleComponent,\n    ],\n    providers: [\n        {\n            provide: DEMO_PATH_TOKEN,\n            useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/),\n        },\n    ],\n    exports: [\n        RouterModule,\n    ],\n})\nexport class ProgressModule {\n}\n";
       /***/
     },
 
@@ -1113,6 +1121,8 @@
         "./progress-compact/progress-compact.example.component.ts": "8qdf",
         "./progress-docs/progress-docs.example.component.html": "eqow",
         "./progress-docs/progress-docs.example.component.ts": "bgV1",
+        "./progress-test/progress-test.component.html": "rmCn",
+        "./progress-test/progress-test.component.ts": "oFs4",
         "./progress-visual-test/progress-visual-test.component.html": "4eJT",
         "./progress-visual-test/progress-visual-test.component.ts": "EUBV",
         "./progress-with-help-template/progress-with-help-template-example.component.html": "eBzQ",
@@ -1686,12 +1696,32 @@
     },
 
     /***/
+    "oFs4":
+    /*!**************************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/progress/progress-test/progress-test.component.ts ***!
+      \**************************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function oFs4(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "import { Component } from \"@angular/core\";\n\n@Component({\n    selector: \"nui-progress-test\",\n    templateUrl: \"./progress-test.component.html\",\n})\nexport class ProgressTestComponent {\n    public show = false;\n    public percent = 50;\n    public isCanceled = false;\n\n    public startProgress() {\n        this.show = true;\n    }\n\n    public toggleProgress() {\n        this.show = !this.show;\n    }\n\n    public onCancel() {\n        this.isCanceled = true;\n        this.show = false;\n        this.percent = 0;\n    }\n}\n";
+      /***/
+    },
+
+    /***/
     "ol/H":
     /*!****************************************************!*\
       !*** ./demo/src/components/demo/progress/index.ts ***!
       \****************************************************/
 
-    /*! exports provided: ProgressExampleComponent, BasicProgressExampleComponent, StackedHeaderProgressExampleComponent, IndeterminateProgressExampleComponent, ProgressVisualTestComponent, ProgressCompactExampleComponent, ProgressWithHelpTemplateExampleComponent */
+    /*! exports provided: ProgressExampleComponent, BasicProgressExampleComponent, StackedHeaderProgressExampleComponent, IndeterminateProgressExampleComponent, ProgressVisualTestComponent, ProgressTestComponent, ProgressCompactExampleComponent, ProgressWithHelpTemplateExampleComponent */
 
     /***/
     function olH(module, __webpack_exports__, __webpack_require__) {
@@ -1761,29 +1791,159 @@
       /* harmony import */
 
 
-      var _progress_compact_progress_compact_example_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      var _progress_test_progress_test_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! ./progress-test/progress-test.component */
+      "v3M+");
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "ProgressTestComponent", function () {
+        return _progress_test_progress_test_component__WEBPACK_IMPORTED_MODULE_5__["ProgressTestComponent"];
+      });
+      /* harmony import */
+
+
+      var _progress_compact_progress_compact_example_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! ./progress-compact/progress-compact.example.component */
       "YAEd");
       /* harmony reexport (safe) */
 
 
       __webpack_require__.d(__webpack_exports__, "ProgressCompactExampleComponent", function () {
-        return _progress_compact_progress_compact_example_component__WEBPACK_IMPORTED_MODULE_5__["ProgressCompactExampleComponent"];
+        return _progress_compact_progress_compact_example_component__WEBPACK_IMPORTED_MODULE_6__["ProgressCompactExampleComponent"];
       });
       /* harmony import */
 
 
-      var _progress_with_help_template_progress_with_help_template_example_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      var _progress_with_help_template_progress_with_help_template_example_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! ./progress-with-help-template/progress-with-help-template-example.component */
       "3ILb");
       /* harmony reexport (safe) */
 
 
       __webpack_require__.d(__webpack_exports__, "ProgressWithHelpTemplateExampleComponent", function () {
-        return _progress_with_help_template_progress_with_help_template_example_component__WEBPACK_IMPORTED_MODULE_6__["ProgressWithHelpTemplateExampleComponent"];
+        return _progress_with_help_template_progress_with_help_template_example_component__WEBPACK_IMPORTED_MODULE_7__["ProgressWithHelpTemplateExampleComponent"];
       });
       /***/
 
+    },
+
+    /***/
+    "rmCn":
+    /*!****************************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/progress/progress-test/progress-test.component.html ***!
+      \****************************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function rmCn(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "<div class=\"container\">\n    <nui-indeterminate-progress-example></nui-indeterminate-progress-example>\n    <hr />\n    <nui-progress-compact-example id=\"nui-demo-compact-progress\"></nui-progress-compact-example>\n</div>";
+      /***/
+    },
+
+    /***/
+    "v3M+":
+    /*!************************************************************************************!*\
+      !*** ./demo/src/components/demo/progress/progress-test/progress-test.component.ts ***!
+      \************************************************************************************/
+
+    /*! exports provided: ProgressTestComponent */
+
+    /***/
+    function v3M(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "ProgressTestComponent", function () {
+        return ProgressTestComponent;
+      });
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! @angular/core */
+      "fXoL");
+      /* harmony import */
+
+
+      var _indeterminate_progress_indeterminate_progress_example_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! ../indeterminate-progress/indeterminate-progress.example.component */
+      "0b2H");
+      /* harmony import */
+
+
+      var _progress_compact_progress_compact_example_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! ../progress-compact/progress-compact.example.component */
+      "YAEd");
+
+      var ProgressTestComponent = /*#__PURE__*/function () {
+        function ProgressTestComponent() {
+          _classCallCheck(this, ProgressTestComponent);
+
+          this.show = false;
+          this.percent = 50;
+          this.isCanceled = false;
+        }
+
+        _createClass(ProgressTestComponent, [{
+          key: "startProgress",
+          value: function startProgress() {
+            this.show = true;
+          }
+        }, {
+          key: "toggleProgress",
+          value: function toggleProgress() {
+            this.show = !this.show;
+          }
+        }, {
+          key: "onCancel",
+          value: function onCancel() {
+            this.isCanceled = true;
+            this.show = false;
+            this.percent = 0;
+          }
+        }]);
+
+        return ProgressTestComponent;
+      }();
+
+      ProgressTestComponent.ɵfac = function ProgressTestComponent_Factory(t) {
+        return new (t || ProgressTestComponent)();
+      };
+
+      ProgressTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+        type: ProgressTestComponent,
+        selectors: [["nui-progress-test"]],
+        decls: 4,
+        vars: 0,
+        consts: [[1, "container"], ["id", "nui-demo-compact-progress"]],
+        template: function ProgressTestComponent_Template(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "nui-indeterminate-progress-example");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "hr");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "nui-progress-compact-example", 1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          }
+        },
+        directives: [_indeterminate_progress_indeterminate_progress_example_component__WEBPACK_IMPORTED_MODULE_1__["IndeterminateProgressExampleComponent"], _progress_compact_progress_compact_example_component__WEBPACK_IMPORTED_MODULE_2__["ProgressCompactExampleComponent"]],
+        encapsulation: 2
+      });
+      /***/
     },
 
     /***/

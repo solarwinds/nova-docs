@@ -53,6 +53,15 @@ const routes = [
         },
     },
     {
+        path: "panel-test",
+        component: _index__WEBPACK_IMPORTED_MODULE_2__["PanelTestComponent"],
+        data: {
+            "srlc": {
+                "hideIndicator": true,
+            },
+        },
+    },
+    {
         path: "basic",
         component: _index__WEBPACK_IMPORTED_MODULE_2__["PanelBasicExampleComponent"],
         data: {
@@ -131,7 +140,8 @@ PanelModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInject
         _index__WEBPACK_IMPORTED_MODULE_2__["PanelPositionExampleComponent"],
         _index__WEBPACK_IMPORTED_MODULE_2__["PanelResizeExampleComponent"],
         _index__WEBPACK_IMPORTED_MODULE_2__["PanelCollapseTopOrientedExampleComponent"],
-        _index__WEBPACK_IMPORTED_MODULE_2__["PanelVisualTestComponent"]], imports: [_nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiButtonModule"],
+        _index__WEBPACK_IMPORTED_MODULE_2__["PanelVisualTestComponent"],
+        _index__WEBPACK_IMPORTED_MODULE_2__["PanelTestComponent"]], imports: [_nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiButtonModule"],
         _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiPanelModule"],
         _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiDocsModule"],
         _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiMenuModule"],
@@ -817,6 +827,44 @@ PanelBasicExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["�
 
 /***/ }),
 
+/***/ "IJFn":
+/*!***************************************************************************!*\
+  !*** ./demo/src/components/demo/panel/panel-test/panel-test.component.ts ***!
+  \***************************************************************************/
+/*! exports provided: PanelTestComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PanelTestComponent", function() { return PanelTestComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _panel_basic_panel_basic_example_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../panel-basic/panel-basic.example.component */ "HpYj");
+/* harmony import */ var _panel_collapse_panel_collapse_example_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../panel-collapse/panel-collapse.example.component */ "7672");
+/* harmony import */ var _panel_float_panel_float_example_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../panel-float/panel-float.example.component */ "rrpG");
+/* harmony import */ var _panel_resize_panel_resize_example_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../panel-resize/panel-resize.example.component */ "v1nj");
+/* harmony import */ var _panel_hide_panel_hide_example_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../panel-hide/panel-hide.example.component */ "pp2q");
+
+
+
+
+
+
+class PanelTestComponent {
+}
+PanelTestComponent.ɵfac = function PanelTestComponent_Factory(t) { return new (t || PanelTestComponent)(); };
+PanelTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: PanelTestComponent, selectors: [["nui-panel-test"]], decls: 6, vars: 0, consts: [[1, "container"]], template: function PanelTestComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "nui-panel-basic-example");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "nui-panel-collapse-example");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "nui-panel-float-example");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](4, "nui-panel-resize-example");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](5, "nui-panel-hide-example");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    } }, directives: [_panel_basic_panel_basic_example_component__WEBPACK_IMPORTED_MODULE_1__["PanelBasicExampleComponent"], _panel_collapse_panel_collapse_example_component__WEBPACK_IMPORTED_MODULE_2__["PanelCollapseExampleComponent"], _panel_float_panel_float_example_component__WEBPACK_IMPORTED_MODULE_3__["PanelFloatExampleComponent"], _panel_resize_panel_resize_example_component__WEBPACK_IMPORTED_MODULE_4__["PanelResizeExampleComponent"], _panel_hide_panel_hide_example_component__WEBPACK_IMPORTED_MODULE_5__["PanelHideExampleComponent"]], encapsulation: 2 });
+
+
+/***/ }),
+
 /***/ "LGMO":
 /*!*********************************************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/panel/panel-position/panel-position.example.component.ts ***!
@@ -827,6 +875,19 @@ PanelBasicExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["�
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ("import { Component } from \"@angular/core\";\n\n@Component({\n    selector: \"nui-panel-position-example\",\n    templateUrl: \"./panel-position.example.component.html\",\n})\n\nexport class PanelPositionExampleComponent {}\n");
+
+/***/ }),
+
+/***/ "MG1z":
+/*!*****************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/panel/panel-test/panel-test.component.ts ***!
+  \*****************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("import { Component, Input } from \"@angular/core\";\nimport { IMenuGroup, PanelBackgroundColor } from \"@nova-ui/bits\";\n\n@Component({\n    selector: \"nui-panel-test\",\n    templateUrl: \"./panel-test.component.html\",\n})\n\nexport class PanelTestComponent {\n}\n");
 
 /***/ }),
 
@@ -853,6 +914,19 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ("<div style=\"height: 300px\">\n    <nui-panel id=\"nui-demo-resizable-panel\"\n               panelMode=\"collapsible\"\n               isResizable=\"true\"\n               heading=\"Header\"\n               i18n-heading\n               paneSize=\"20%\">\n        <div nuiPanelEmbeddedBody>\n            <div>\n                <p i18n>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quam nibh, tincidunt non massa\n                    quis, efficitur porttitor lacus. In quis tellus euismod, tincidunt libero quis, suscipit nunc.\n                    Nulla ac mattis tortor, quis iaculis sapien.</p>\n            </div>\n        </div>\n        <div>\n            <p i18n>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec efficitur rutrum lacus id vulputate.\n                Integer eu ex eu augue efficitur luctus quis ac elit. Nam odio est, iaculis nec varius id, congue\n                erat. Nullam mi lectus, gravida quis pretium sit amet, accumsan non elit. In tempus commodo sem ac\n                vulputate. Sed vel sagittis purus. Integer non ornare felis. Sed aliquam, purus et euismod\n                tincidunt, felis ligula fermentum mi, eget commodo nisl orci efficitur dui. Etiam interdum justo\n                magna consequat, vitae hendrerit mi aliquam. Sed non ex eu purus ornare lobortis tempus id est.\n                Aenean dictum at dui sit amet mollis. Phasellus mauris arcu, blandit id congue vitae, elementum\n                amet enim. Pellentesque et facilisis leo, sit amet rhoncus magna. Integer commodo lobortis arcu et\n                bibendum. Pellentesque sagittis magna sed tellus volutpat, sed eleifend justo ornare. Fusce\n                porttitor laoreet dui a mollis.</p>\n            </div>\n    </nui-panel>\n</div>\n");
+
+/***/ }),
+
+/***/ "QRrw":
+/*!*******************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/panel/panel-test/panel-test.component.html ***!
+  \*******************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\n    <nui-panel-basic-example></nui-panel-basic-example>\n\n    <nui-panel-collapse-example></nui-panel-collapse-example>\n\n    <nui-panel-float-example></nui-panel-float-example>\n\n    <nui-panel-resize-example></nui-panel-resize-example>\n\n    <nui-panel-hide-example></nui-panel-hide-example>\n</div>\n");
 
 /***/ }),
 
@@ -1915,6 +1989,8 @@ var map = {
 	"./panel-resize/panel-resize.example.component.ts": "eRuV",
 	"./panel-size/panel-size.example.component.html": "wUx3",
 	"./panel-size/panel-size.example.component.ts": "MgXE",
+	"./panel-test/panel-test.component.html": "QRrw",
+	"./panel-test/panel-test.component.ts": "MG1z",
 	"./panel-visual-test/panel-visual-test.component.html": "z/oI",
 	"./panel-visual-test/panel-visual-test.component.ts": "GxQ5",
 	"./panel.module.ts": "nB2A"
@@ -2085,7 +2161,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { NgModule } from \"@angular/core\";\nimport { RouterModule } from \"@angular/router\";\nimport {\n    DEMO_PATH_TOKEN,\n    NuiButtonModule,\n    NuiDocsModule,\n    NuiIconModule,\n    NuiMenuModule,\n    NuiMessageModule,\n    NuiPanelModule,\n    NuiSwitchModule,\n    SrlcStage,\n} from \"@nova-ui/bits\";\n\nimport {\n    PanelBasicExampleComponent,\n    PanelCollapseExampleComponent,\n    PanelCollapseOutsideControlExampleComponent,\n    PanelCollapseTopOrientedExampleComponent,\n    PanelCustomStylesExampleComponent,\n    PanelDocsExampleComponent,\n    PanelEmbeddedContentExampleComponent,\n    PanelFloatExampleComponent,\n    PanelHideExampleComponent,\n    PanelHideOutsideControlExampleComponent,\n    PanelHoverableExampleComponent,\n    PanelNestedExampleComponent,\n    PanelPositionExampleComponent,\n    PanelResizeExampleComponent,\n    PanelSizeExampleComponent,\n    PanelVisualTestComponent,\n} from \"./index\";\n\nconst routes = [\n    {\n        path: \"\",\n        component: PanelDocsExampleComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.ga,\n            },\n            showThemeSwitcher: true,\n        },\n    },\n    {\n        path: \"panel-visual-test\",\n        component: PanelVisualTestComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"basic\",\n        component: PanelBasicExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"collapsible\",\n        component: PanelCollapseExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"hidden\",\n        component: PanelHideExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"floating\",\n        component: PanelFloatExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"resize\",\n        component: PanelResizeExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n];\n\n@NgModule({\n    imports: [\n        NuiButtonModule,\n        NuiPanelModule,\n        NuiDocsModule,\n        NuiMenuModule,\n        NuiSwitchModule,\n        NuiIconModule,\n        NuiMessageModule,\n        RouterModule.forChild(routes),\n    ],\n    declarations: [\n        PanelBasicExampleComponent,\n        PanelCollapseExampleComponent,\n        PanelCollapseOutsideControlExampleComponent,\n        PanelSizeExampleComponent,\n        PanelEmbeddedContentExampleComponent,\n        PanelHoverableExampleComponent,\n        PanelCustomStylesExampleComponent,\n        PanelDocsExampleComponent,\n        PanelFloatExampleComponent,\n        PanelHideExampleComponent,\n        PanelHideOutsideControlExampleComponent,\n        PanelNestedExampleComponent,\n        PanelPositionExampleComponent,\n        PanelResizeExampleComponent,\n        PanelCollapseTopOrientedExampleComponent,\n        PanelVisualTestComponent,\n    ],\n    providers: [\n        {\n            provide: DEMO_PATH_TOKEN,\n            useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/),\n        },\n    ],\n    exports: [\n        RouterModule,\n    ],\n})\nexport class PanelModule {\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import { NgModule } from \"@angular/core\";\nimport { RouterModule } from \"@angular/router\";\nimport {\n    DEMO_PATH_TOKEN,\n    NuiButtonModule,\n    NuiDocsModule,\n    NuiIconModule,\n    NuiMenuModule,\n    NuiMessageModule,\n    NuiPanelModule,\n    NuiSwitchModule,\n    SrlcStage,\n} from \"@nova-ui/bits\";\n\nimport {\n    PanelBasicExampleComponent,\n    PanelCollapseExampleComponent,\n    PanelCollapseOutsideControlExampleComponent,\n    PanelCollapseTopOrientedExampleComponent,\n    PanelCustomStylesExampleComponent,\n    PanelDocsExampleComponent,\n    PanelEmbeddedContentExampleComponent,\n    PanelFloatExampleComponent,\n    PanelHideExampleComponent,\n    PanelHideOutsideControlExampleComponent,\n    PanelHoverableExampleComponent,\n    PanelNestedExampleComponent,\n    PanelPositionExampleComponent,\n    PanelResizeExampleComponent,\n    PanelSizeExampleComponent,\n    PanelVisualTestComponent,\n    PanelTestComponent,\n} from \"./index\";\n\nconst routes = [\n    {\n        path: \"\",\n        component: PanelDocsExampleComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.ga,\n            },\n            showThemeSwitcher: true,\n        },\n    },\n    {\n        path: \"panel-visual-test\",\n        component: PanelVisualTestComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"panel-test\",\n        component: PanelTestComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"basic\",\n        component: PanelBasicExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"collapsible\",\n        component: PanelCollapseExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"hidden\",\n        component: PanelHideExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"floating\",\n        component: PanelFloatExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"resize\",\n        component: PanelResizeExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n];\n\n@NgModule({\n    imports: [\n        NuiButtonModule,\n        NuiPanelModule,\n        NuiDocsModule,\n        NuiMenuModule,\n        NuiSwitchModule,\n        NuiIconModule,\n        NuiMessageModule,\n        RouterModule.forChild(routes),\n    ],\n    declarations: [\n        PanelBasicExampleComponent,\n        PanelCollapseExampleComponent,\n        PanelCollapseOutsideControlExampleComponent,\n        PanelSizeExampleComponent,\n        PanelEmbeddedContentExampleComponent,\n        PanelHoverableExampleComponent,\n        PanelCustomStylesExampleComponent,\n        PanelDocsExampleComponent,\n        PanelFloatExampleComponent,\n        PanelHideExampleComponent,\n        PanelHideOutsideControlExampleComponent,\n        PanelNestedExampleComponent,\n        PanelPositionExampleComponent,\n        PanelResizeExampleComponent,\n        PanelCollapseTopOrientedExampleComponent,\n        PanelVisualTestComponent,\n        PanelTestComponent,\n    ],\n    providers: [\n        {\n            provide: DEMO_PATH_TOKEN,\n            useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/),\n        },\n    ],\n    exports: [\n        RouterModule,\n    ],\n})\nexport class PanelModule {\n}\n");
 
 /***/ }),
 
@@ -2198,7 +2274,7 @@ __webpack_require__.r(__webpack_exports__);
 /*!*************************************************!*\
   !*** ./demo/src/components/demo/panel/index.ts ***!
   \*************************************************/
-/*! exports provided: PanelBasicExampleComponent, PanelCollapseExampleComponent, PanelCollapseOutsideControlExampleComponent, PanelDocsExampleComponent, PanelFloatExampleComponent, PanelHideExampleComponent, PanelHideOutsideControlExampleComponent, PanelPositionExampleComponent, PanelResizeExampleComponent, PanelCustomStylesExampleComponent, PanelEmbeddedContentExampleComponent, PanelHoverableExampleComponent, PanelNestedExampleComponent, PanelSizeExampleComponent, PanelCollapseTopOrientedExampleComponent, PanelVisualTestComponent */
+/*! exports provided: PanelBasicExampleComponent, PanelCollapseExampleComponent, PanelCollapseOutsideControlExampleComponent, PanelDocsExampleComponent, PanelFloatExampleComponent, PanelHideExampleComponent, PanelHideOutsideControlExampleComponent, PanelPositionExampleComponent, PanelResizeExampleComponent, PanelCustomStylesExampleComponent, PanelEmbeddedContentExampleComponent, PanelHoverableExampleComponent, PanelNestedExampleComponent, PanelSizeExampleComponent, PanelCollapseTopOrientedExampleComponent, PanelVisualTestComponent, PanelTestComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2250,6 +2326,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony import */ var _panel_visual_test_panel_visual_test_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./panel-visual-test/panel-visual-test.component */ "aops");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PanelVisualTestComponent", function() { return _panel_visual_test_panel_visual_test_component__WEBPACK_IMPORTED_MODULE_15__["PanelVisualTestComponent"]; });
+
+/* harmony import */ var _panel_test_panel_test_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./panel-test/panel-test.component */ "IJFn");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PanelTestComponent", function() { return _panel_test_panel_test_component__WEBPACK_IMPORTED_MODULE_16__["PanelTestComponent"]; });
+
 
 
 
@@ -2360,7 +2440,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("export * from \"./panel-basic/panel-basic.example.component\";\nexport * from \"./panel-collapse/panel-collapse.example.component\";\nexport * from \"./panel-collapse-outside-control/panel-collapse-outside-control.example.component\";\nexport * from \"./panel-docs/panel-docs.example.component\";\nexport * from \"./panel-float/panel-float.example.component\";\nexport * from \"./panel-hide/panel-hide.example.component\";\nexport * from \"./panel-hide-outside-control/panel-hide-outside-control.example.component\";\nexport * from \"./panel-position/panel-position.example.component\";\nexport * from \"./panel-resize/panel-resize.example.component\";\nexport * from \"./panel-custom-styles/panel-сustom-styles.example.component\";\nexport * from \"./panel-embedded-content/panel-embedded-content.example.component\";\nexport * from \"./panel-hoverable/panel-hoverable.example.component\";\nexport * from \"./panel-nested/panel-nested.example.component\";\nexport * from \"./panel-size/panel-size.example.component\";\nexport * from \"./panel-collapse-top-oriented/panel-collapse-top-oriented.example.component\";\nexport * from \"./panel-visual-test/panel-visual-test.component\";\n");
+/* harmony default export */ __webpack_exports__["default"] = ("export * from \"./panel-basic/panel-basic.example.component\";\nexport * from \"./panel-collapse/panel-collapse.example.component\";\nexport * from \"./panel-collapse-outside-control/panel-collapse-outside-control.example.component\";\nexport * from \"./panel-docs/panel-docs.example.component\";\nexport * from \"./panel-float/panel-float.example.component\";\nexport * from \"./panel-hide/panel-hide.example.component\";\nexport * from \"./panel-hide-outside-control/panel-hide-outside-control.example.component\";\nexport * from \"./panel-position/panel-position.example.component\";\nexport * from \"./panel-resize/panel-resize.example.component\";\nexport * from \"./panel-custom-styles/panel-сustom-styles.example.component\";\nexport * from \"./panel-embedded-content/panel-embedded-content.example.component\";\nexport * from \"./panel-hoverable/panel-hoverable.example.component\";\nexport * from \"./panel-nested/panel-nested.example.component\";\nexport * from \"./panel-size/panel-size.example.component\";\nexport * from \"./panel-collapse-top-oriented/panel-collapse-top-oriented.example.component\";\nexport * from \"./panel-visual-test/panel-visual-test.component\";\nexport * from \"./panel-test/panel-test.component\";\n");
 
 /***/ }),
 

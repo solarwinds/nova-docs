@@ -99,6 +99,7 @@
                                 <code><a href="../classes/NuiFormFieldControl.html" target="_self" >{
     provide: NuiFormFieldControl, useExisting: forwardRef(() &#x3D;&gt; TimePickerComponent), multi: true,
 }</a></code>
+                                <code><a href="../injectables/TimePickerKeyboardService.html" target="_self" >TimePickerKeyboardService</a></code>
                 </td>
             </tr>
 
@@ -144,6 +145,9 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#containerEl">containerEl</a>
+                            </li>
+                            <li>
                                     <span class="modifier">Public</span>
                                 <a href="#customContainer">customContainer</a>
                             </li>
@@ -158,6 +162,10 @@
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
+                                <a href="#menuTrigger">menuTrigger</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#onDestroy$">onDestroy$</a>
                             </li>
                             <li>
@@ -167,6 +175,10 @@
                             <li>
                                     <span class="modifier">Public</span>
                                 <a href="#overlayConfig">overlayConfig</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#popup">popup</a>
                             </li>
                             <li>
                                 <a href="#popupArea">popupArea</a>
@@ -319,6 +331,23 @@
                 </tr>
 
 
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>HostListeners</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#focusout">focusout</a>
+                            </li>
+                            <li>
+                                <a href="#keydown">keydown</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                     <tr>
                         <td class="col-md-4">
@@ -344,12 +373,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(elementRef: <a href="../undefineds/Element.html">ElementRef</a>)</code>
+<code>constructor(elementRef: <a href="../undefineds/Element.html">ElementRef</a>, keyboardService: <a href="../injectables/TimePickerKeyboardService.html">TimePickerKeyboardService</a>, cdr: <a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank">ChangeDetectorRef</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="108" class="link-to-prism">src/lib/time-picker/time-picker.component.ts:108</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="116" class="link-to-prism">src/lib/time-picker/time-picker.component.ts:116</a></div>
                             </td>
                         </tr>
 
@@ -371,6 +400,30 @@
                                                   
                                                         <td>
                                                                         <code><a href="../miscellaneous/typealiases.html#Element" target="_self" >ElementRef</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>keyboardService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/TimePickerKeyboardService.html" target="_self" >TimePickerKeyboardService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>cdr</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank" >ChangeDetectorRef</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -410,7 +463,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="72" class="link-to-prism">src/lib/time-picker/time-picker.component.ts:72</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="80" class="link-to-prism">src/lib/time-picker/time-picker.component.ts:80</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -442,7 +495,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="68" class="link-to-prism">src/lib/time-picker/time-picker.component.ts:68</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">src/lib/time-picker/time-picker.component.ts:76</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -469,7 +522,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="70" class="link-to-prism">src/lib/time-picker/time-picker.component.ts:70</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="78" class="link-to-prism">src/lib/time-picker/time-picker.component.ts:78</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -496,7 +549,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/lib/time-picker/time-picker.component.ts:60</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="68" class="link-to-prism">src/lib/time-picker/time-picker.component.ts:68</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -522,7 +575,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="66" class="link-to-prism">src/lib/time-picker/time-picker.component.ts:66</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">src/lib/time-picker/time-picker.component.ts:74</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -549,7 +602,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="75" class="link-to-prism">src/lib/time-picker/time-picker.component.ts:75</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="83" class="link-to-prism">src/lib/time-picker/time-picker.component.ts:83</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -569,7 +622,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="64" class="link-to-prism">src/lib/time-picker/time-picker.component.ts:64</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="72" class="link-to-prism">src/lib/time-picker/time-picker.component.ts:72</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -595,7 +648,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/lib/time-picker/time-picker.component.ts:62</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="70" class="link-to-prism">src/lib/time-picker/time-picker.component.ts:70</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -621,7 +674,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">src/lib/time-picker/time-picker.component.ts:58</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="66" class="link-to-prism">src/lib/time-picker/time-picker.component.ts:66</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -651,7 +704,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="92" class="link-to-prism">src/lib/time-picker/time-picker.component.ts:92</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="100" class="link-to-prism">src/lib/time-picker/time-picker.component.ts:100</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -672,14 +725,85 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="91" class="link-to-prism">src/lib/time-picker/time-picker.component.ts:91</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="99" class="link-to-prism">src/lib/time-picker/time-picker.component.ts:99</a></div>
                             </td>
                         </tr>
             </tbody>
         </table>
 </section>
 
+    <section>
+    <h3>HostListeners</h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="focusout"></a>
+                    <span class="name">
+                        <b>
+                            focusout
+                        </b>
+                        <a href="#focusout"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <i>Arguments : </i><code>'$event' </code>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>focusout(event: FocusEvent)</code>
+                </td>
+            </tr>
 
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="171"
+                            class="link-to-prism">src/lib/time-picker/time-picker.component.ts:171</a></div>
+                </td>
+            </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="keydown"></a>
+                    <span class="name">
+                        <b>
+                            keydown
+                        </b>
+                        <a href="#keydown"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <i>Arguments : </i><code>'$event' </code>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>keydown(event: KeyboardEvent)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="166"
+                            class="link-to-prism">src/lib/time-picker/time-picker.component.ts:166</a></div>
+                </td>
+            </tr>
+
+
+        </tbody>
+    </table>
+</section>
     <section>
     
     <h3 id="methods">
@@ -707,8 +831,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="198"
-                            class="link-to-prism">src/lib/time-picker/time-picker.component.ts:198</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="230"
+                            class="link-to-prism">src/lib/time-picker/time-picker.component.ts:230</a></div>
                 </td>
             </tr>
 
@@ -748,8 +872,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="265"
-                            class="link-to-prism">src/lib/time-picker/time-picker.component.ts:265</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="297"
+                            class="link-to-prism">src/lib/time-picker/time-picker.component.ts:297</a></div>
                 </td>
             </tr>
 
@@ -824,8 +948,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="224"
-                            class="link-to-prism">src/lib/time-picker/time-picker.component.ts:224</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="256"
+                            class="link-to-prism">src/lib/time-picker/time-picker.component.ts:256</a></div>
                 </td>
             </tr>
 
@@ -896,8 +1020,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="269"
-                            class="link-to-prism">src/lib/time-picker/time-picker.component.ts:269</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="301"
+                            class="link-to-prism">src/lib/time-picker/time-picker.component.ts:301</a></div>
                 </td>
             </tr>
 
@@ -937,8 +1061,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="240"
-                            class="link-to-prism">src/lib/time-picker/time-picker.component.ts:240</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="272"
+                            class="link-to-prism">src/lib/time-picker/time-picker.component.ts:272</a></div>
                 </td>
             </tr>
 
@@ -1033,8 +1157,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="247"
-                            class="link-to-prism">src/lib/time-picker/time-picker.component.ts:247</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="279"
+                            class="link-to-prism">src/lib/time-picker/time-picker.component.ts:279</a></div>
                 </td>
             </tr>
 
@@ -1074,8 +1198,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="236"
-                            class="link-to-prism">src/lib/time-picker/time-picker.component.ts:236</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="268"
+                            class="link-to-prism">src/lib/time-picker/time-picker.component.ts:268</a></div>
                 </td>
             </tr>
 
@@ -1144,8 +1268,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="149"
-                            class="link-to-prism">src/lib/time-picker/time-picker.component.ts:149</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="161"
+                            class="link-to-prism">src/lib/time-picker/time-picker.component.ts:161</a></div>
                 </td>
             </tr>
 
@@ -1216,8 +1340,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="202"
-                            class="link-to-prism">src/lib/time-picker/time-picker.component.ts:202</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="234"
+                            class="link-to-prism">src/lib/time-picker/time-picker.component.ts:234</a></div>
                 </td>
             </tr>
 
@@ -1286,8 +1410,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="151"
-                            class="link-to-prism">src/lib/time-picker/time-picker.component.ts:151</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="163"
+                            class="link-to-prism">src/lib/time-picker/time-picker.component.ts:163</a></div>
                 </td>
             </tr>
 
@@ -1325,8 +1449,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="186"
-                            class="link-to-prism">src/lib/time-picker/time-picker.component.ts:186</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="218"
+                            class="link-to-prism">src/lib/time-picker/time-picker.component.ts:218</a></div>
                 </td>
             </tr>
 
@@ -1395,8 +1519,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="190"
-                            class="link-to-prism">src/lib/time-picker/time-picker.component.ts:190</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="222"
+                            class="link-to-prism">src/lib/time-picker/time-picker.component.ts:222</a></div>
                 </td>
             </tr>
 
@@ -1467,8 +1591,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="214"
-                            class="link-to-prism">src/lib/time-picker/time-picker.component.ts:214</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="246"
+                            class="link-to-prism">src/lib/time-picker/time-picker.component.ts:246</a></div>
                 </td>
             </tr>
 
@@ -1508,8 +1632,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="206"
-                            class="link-to-prism">src/lib/time-picker/time-picker.component.ts:206</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="238"
+                            class="link-to-prism">src/lib/time-picker/time-picker.component.ts:238</a></div>
                 </td>
             </tr>
 
@@ -1578,8 +1702,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="194"
-                            class="link-to-prism">src/lib/time-picker/time-picker.component.ts:194</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="226"
+                            class="link-to-prism">src/lib/time-picker/time-picker.component.ts:226</a></div>
                 </td>
             </tr>
 
@@ -1648,8 +1772,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="182"
-                            class="link-to-prism">src/lib/time-picker/time-picker.component.ts:182</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="214"
+                            class="link-to-prism">src/lib/time-picker/time-picker.component.ts:214</a></div>
                 </td>
             </tr>
 
@@ -1720,8 +1844,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="261"
-                            class="link-to-prism">src/lib/time-picker/time-picker.component.ts:261</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="293"
+                            class="link-to-prism">src/lib/time-picker/time-picker.component.ts:293</a></div>
                 </td>
             </tr>
 
@@ -1759,8 +1883,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="153"
-                            class="link-to-prism">src/lib/time-picker/time-picker.component.ts:153</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="185"
+                            class="link-to-prism">src/lib/time-picker/time-picker.component.ts:185</a></div>
                 </td>
             </tr>
 
@@ -1829,8 +1953,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="177"
-                            class="link-to-prism">src/lib/time-picker/time-picker.component.ts:177</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="209"
+                            class="link-to-prism">src/lib/time-picker/time-picker.component.ts:209</a></div>
                 </td>
             </tr>
 
@@ -1887,6 +2011,42 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
+                        <a name="containerEl"></a>
+                        <span class="name">
+                            <b>
+                            containerEl</b>
+                            <a href="#containerEl"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#Element" target="_self" >ElementRef</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(&#x27;toggleRef&#x27;, {static: true})<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/lib/time-picker/time-picker.component.ts:61</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
                         <a name="customContainer"></a>
                         <span class="name">
                             <b>
@@ -1904,7 +2064,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="99" class="link-to-prism">src/lib/time-picker/time-picker.component.ts:99</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="107" class="link-to-prism">src/lib/time-picker/time-picker.component.ts:107</a></div>
                             </td>
                         </tr>
 
@@ -1933,7 +2093,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="98" class="link-to-prism">src/lib/time-picker/time-picker.component.ts:98</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="106" class="link-to-prism">src/lib/time-picker/time-picker.component.ts:106</a></div>
                             </td>
                         </tr>
 
@@ -1968,7 +2128,44 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="95" class="link-to-prism">src/lib/time-picker/time-picker.component.ts:95</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="103" class="link-to-prism">src/lib/time-picker/time-picker.component.ts:103</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="menuTrigger"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            menuTrigger</b>
+                            <a href="#menuTrigger"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#Element" target="_self" >ElementRef</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(&#x27;menuTrigger&#x27;, {read: ElementRef})<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="64" class="link-to-prism">src/lib/time-picker/time-picker.component.ts:64</a></div>
                             </td>
                         </tr>
 
@@ -1995,7 +2192,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="103" class="link-to-prism">src/lib/time-picker/time-picker.component.ts:103</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="111" class="link-to-prism">src/lib/time-picker/time-picker.component.ts:111</a></div>
                             </td>
                         </tr>
 
@@ -2032,7 +2229,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/lib/time-picker/time-picker.component.ts:56</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/lib/time-picker/time-picker.component.ts:62</a></div>
                             </td>
                         </tr>
 
@@ -2067,7 +2264,44 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="100" class="link-to-prism">src/lib/time-picker/time-picker.component.ts:100</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="108" class="link-to-prism">src/lib/time-picker/time-picker.component.ts:108</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="popup"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            popup</b>
+                            <a href="#popup"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../components/PopupComponent.html" target="_self" >MenuPopupComponent</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(&#x27;popup&#x27;)<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/lib/time-picker/time-picker.component.ts:63</a></div>
                             </td>
                         </tr>
 
@@ -2103,7 +2337,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/lib/time-picker/time-picker.component.ts:55</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/lib/time-picker/time-picker.component.ts:60</a></div>
                             </td>
                         </tr>
 
@@ -2139,7 +2373,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/lib/time-picker/time-picker.component.ts:54</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/lib/time-picker/time-picker.component.ts:59</a></div>
                             </td>
                         </tr>
 
@@ -2167,7 +2401,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="94" class="link-to-prism">src/lib/time-picker/time-picker.component.ts:94</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="102" class="link-to-prism">src/lib/time-picker/time-picker.component.ts:102</a></div>
                             </td>
                         </tr>
 
@@ -2197,7 +2431,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="79" class="link-to-prism">src/lib/time-picker/time-picker.component.ts:79</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="87" class="link-to-prism">src/lib/time-picker/time-picker.component.ts:87</a></div>
                                 </td>
                             </tr>
                     <tr>
@@ -2243,10 +2477,12 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { OverlayConfig } from &quot;@angular/cdk/overlay&quot;;
 import {
     AfterViewInit,
+    ChangeDetectorRef,
     Component,
     ElementRef,
     EventEmitter,
     forwardRef,
+    HostListener,
     Input,
     OnChanges,
     OnDestroy,
@@ -2270,6 +2506,8 @@ import { OVERLAY_WITH_POPUP_STYLES_CLASS } from &quot;../overlay/constants&quot;
 import { OverlayComponent } from &quot;../overlay/overlay-component/overlay.component&quot;;
 import { OverlayUtilitiesService } from &quot;../overlay/overlay-utilities.service&quot;;
 import { TextboxComponent } from &quot;../textbox/textbox.component&quot;;
+import { MenuPopupComponent } from &quot;../menu&quot;;
+import { TimePickerKeyboardService } from &quot;./time-picker-keyboard.service&quot;;
 
 // &lt;example-url&gt;./../examples/index.html#/time-picker&lt;/example-url&gt;&lt;br /&gt;
 
@@ -2287,6 +2525,7 @@ import { TextboxComponent } from &quot;../textbox/textbox.component&quot;;
             useExisting: forwardRef(() &#x3D;&gt; TimePickerComponent),
             multi: true,
         },
+        TimePickerKeyboardService,
     ],
     styleUrls: [&quot;./time-picker.component.less&quot;],
     encapsulation: ViewEncapsulation.None,
@@ -2295,7 +2534,10 @@ export class TimePickerComponent implements OnInit, OnDestroy, OnChanges, AfterV
 
     @ViewChild(&quot;date&quot;, {static: true}) textbox: TextboxComponent;
     @ViewChild(&quot;popupArea&quot;, {static: true}) popupArea: ElementRef;
+    @ViewChild(&quot;toggleRef&quot;, {static: true}) containerEl: ElementRef;
     @ViewChild(OverlayComponent) public overlay: OverlayComponent;
+    @ViewChild(&quot;popup&quot;) public popup: MenuPopupComponent;
+    @ViewChild(&quot;menuTrigger&quot;, { read: ElementRef }) public menuTrigger: ElementRef;
     /** sets a step (difference between item in picker) */
     @Input() timeStep &#x3D;  30;
     /** sets disable state of the timepicker */
@@ -2345,11 +2587,13 @@ export class TimePickerComponent implements OnInit, OnDestroy, OnChanges, AfterV
     public onDestroy$ &#x3D; new Subject&lt;void&gt;();
 
     protected popupUtilities: OverlayUtilitiesService &#x3D; new OverlayUtilitiesService();
-    
+
     private itemToSelect: any;
     private inputChanged: Subject&lt;string&gt; &#x3D; new Subject&lt;string&gt;();
 
-    constructor(private elementRef: ElementRef) {}
+    constructor(private elementRef: ElementRef,
+                private keyboardService: TimePickerKeyboardService,
+                private cdr: ChangeDetectorRef) {}
 
     public ngOnInit() {
         this.times &#x3D; this.generateTimeItems(this.timeStep);
@@ -2384,13 +2628,35 @@ export class TimePickerComponent implements OnInit, OnDestroy, OnChanges, AfterV
         this.overlay.clickOutside
             .pipe(takeUntil(this.onDestroy$))
             .subscribe(_ &#x3D;&gt; this.overlay.hide());
-        
+
         this.initPopupUtilities();
+        this.keyboardService.initService(this.popup, this.overlay, this.menuTrigger.nativeElement);
+        this.cdr.detectChanges();
     }
 
     onChange(value: any) {}
 
     onTouched() {}
+
+    @HostListener(&quot;keydown&quot;, [&quot;$event&quot;])
+    public onKeyDown(event: KeyboardEvent): void {
+        this.keyboardService.onKeyDown(event);
+    }
+
+    @HostListener(&quot;focusout&quot;, [&quot;$event&quot;])
+    public onFocusOut(event: FocusEvent): void {
+        if (!this.overlay.showing || !document.activeElement) {
+            return;
+        }
+
+        if (this.popupArea.nativeElement.contains(event.relatedTarget as HTMLElement)) {
+            return;
+        }
+
+        if (!this.containerEl.nativeElement.contains(event.relatedTarget as HTMLElement)) {
+            this.overlay.hide();
+        }
+    }
 
     updateInnerModel(value: any) {
         setTimeout(() &#x3D;&gt; this.inputBlurred.emit(), 100);
@@ -2560,9 +2826,9 @@ export class TimePickerComponent implements OnInit, OnDestroy, OnChanges, AfterV
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="nui-timepicker">    <div class="nui-timepicker__container" (click)="scrollToView()" #toggleRef>        <nui-textbox [disabled]="isDisabled"                    autocomplete="off"                    [class.nui-timepicker__input-disabled]="isDisabled"                    #date                    [isInErrorState]="isInErrorState"                    (textChange)="onInputActiveDateChanged($event)"                    (blurred)="updateInnerModel($event)"                    [ariaLabel]="ariaLabel">        </nui-textbox>        <nui-icon            class="nui-timepicker__icon"            icon="clock"            aria-hidden="true"            [iconColor]="getIconColor()"            (click)="focusOnForm()"></nui-icon>    </div>    <div #popupArea></div>    <nui-overlay #overlay                 [toggleReference]="toggleRef"                 [overlayConfig]="overlayConfig"                 [customContainer]="customContainer">                 <nui-menu-popup [itemsSource]="itemsSource" (menuItemClicked)="select($event)">                </nui-menu-popup>    </nui-overlay></div></div>'
-    var COMPONENTS = [{'name': 'BreadcrumbComponent', 'selector': 'nui-breadcrumb'},{'name': 'BusyComponent', 'selector': '[nui-busy]'},{'name': 'ButtonComponent', 'selector': '[nui-button]'},{'name': 'CardComponent', 'selector': 'nui-card'},{'name': 'CardGroupComponent', 'selector': 'nui-card-group'},{'name': 'CheckboxComponent', 'selector': 'nui-checkbox'},{'name': 'CheckboxGroupComponent', 'selector': 'nui-checkbox-group'},{'name': 'ChipsComponent', 'selector': 'nui-chips'},{'name': 'ChipsOverflowComponent', 'selector': 'nui-chips-overflow'},{'name': 'ComboboxComponent', 'selector': 'nui-combobox'},{'name': 'ComboboxV2Component', 'selector': 'nui-combobox-v2'},{'name': 'CustomValidationMessageComponent', 'selector': 'nui-custom-validation-message'},{'name': 'DatePickerComponent', 'selector': 'nui-date-picker'},{'name': 'DateTimePickerComponent', 'selector': 'nui-date-time-picker'},{'name': 'DialogComponent', 'selector': 'nui-dialog-window'},{'name': 'ExpanderComponent', 'selector': 'nui-expander'},{'name': 'FormFieldComponent', 'selector': 'nui-form-field'},{'name': 'IconComponent', 'selector': 'nui-icon'},{'name': 'ImageComponent', 'selector': 'nui-image'},{'name': 'MenuComponent', 'selector': 'nui-menu'},{'name': 'MessageComponent', 'selector': 'nui-message'},{'name': 'OverlayComponent', 'selector': 'nui-overlay'},{'name': 'PaginatorComponent', 'selector': 'nui-paginator'},{'name': 'PanelComponent', 'selector': 'nui-panel'},{'name': 'PopoverComponent', 'selector': 'nui-popover'},{'name': 'PopupComponent', 'selector': 'nui-popup'},{'name': 'PopupDeprecatedComponent', 'selector': 'nui-popup-deprecated'},{'name': 'ProgressComponent', 'selector': 'nui-progress'},{'name': 'QuickPickerComponent', 'selector': 'nui-quick-picker'},{'name': 'RadioGroupComponent', 'selector': 'nui-radio-group'},{'name': 'RepeatComponent', 'selector': 'nui-repeat'},{'name': 'SearchComponent', 'selector': 'nui-search'},{'name': 'SelectComponent', 'selector': 'nui-select'},{'name': 'SelectV2Component', 'selector': 'nui-select-v2'},{'name': 'SheetComponent', 'selector': 'nui-sheet'},{'name': 'SheetGroupComponent', 'selector': 'nui-sheet-group'},{'name': 'SorterComponent', 'selector': 'nui-sorter'},{'name': 'SpinnerComponent', 'selector': 'nui-spinner'},{'name': 'SwitchComponent', 'selector': 'nui-switch'},{'name': 'TabHeadingGroupComponent', 'selector': 'nui-tab-heading-group'},{'name': 'TableComponent', 'selector': 'nui-table, table[nui-table]'},{'name': 'TextboxComponent', 'selector': 'nui-textbox'},{'name': 'TextboxNumberComponent', 'selector': 'nui-textbox-number'},{'name': 'TimeFrameBarComponent', 'selector': 'nui-time-frame-bar'},{'name': 'TimeFramePickerComponent', 'selector': 'nui-time-frame-picker'},{'name': 'TimePickerComponent', 'selector': 'nui-time-picker'},{'name': 'ToastComponent', 'selector': 'nui-toast-component'},{'name': 'ToolbarComponent', 'selector': 'nui-toolbar'},{'name': 'WizardComponent', 'selector': 'nui-wizard'},{'name': 'WizardFooterComponent', 'selector': 'wizard-footer'},{'name': 'WizardHorizontalComponent', 'selector': 'nui-wizard-horizontal'},{'name': 'WizardStepComponent', 'selector': 'nui-wizard-step'},{'name': 'WizardStepHeaderComponent', 'selector': 'wizard-step-header'},{'name': 'WizardStepV2Component', 'selector': 'nui-wizard-step-v2'},{'name': 'WizardVerticalComponent', 'selector': 'nui-wizard-vertical'}];
-    var DIRECTIVES = [{'name': 'ClickInterceptorDirective', 'selector': '[nuiClickInterceptor]'},{'name': 'DndDropTargetDirective', 'selector': '[cdkDropList][nuiDndDropTarget]'},{'name': 'MarkAsSelectedItemDirective', 'selector': '[nuiMarkAsSelectedItem]'},{'name': 'TableStickyHeaderDirective', 'selector': 'cdk-virtual-scroll-viewport[tableStickyHeader]'},{'name': 'TableVirtualScrollDirective', 'selector': '[tableVirtualScroll]:not([rowCount])'},{'name': 'TableVirtualScrollLinearDirective', 'selector': '[tableVirtualScroll]:not([offset])'},{'name': 'TooltipDirective', 'selector': '[nuiTooltip]'},{'name': 'WizardDirective', 'selector': '[nuiWizard]'},{'name': 'WizardStepFooterDirective', 'selector': '[wizardStepFooter]'},{'name': 'WizardStepLabelDirective', 'selector': '[wizardStepLabel]'},{'name': 'WizardStepperNextDirective', 'selector': 'button[nuiWizardNext]'},{'name': 'WizardStepperPreviousDirective', 'selector': 'button[nuiWizardPrevious]'}];
+        var COMPONENT_TEMPLATE = '<div><div class="nui-timepicker">    <div class="nui-timepicker__container" (click)="scrollToView()" #toggleRef>        <nui-textbox [disabled]="isDisabled"                    autocomplete="off"                    [class.nui-timepicker__input-disabled]="isDisabled"                    #date                    [isInErrorState]="isInErrorState"                    (textChange)="onInputActiveDateChanged($event)"                    (blurred)="updateInnerModel($event)"                    [ariaLabel]="ariaLabel">        </nui-textbox>        <nui-icon            #menuTrigger            class="nui-timepicker__icon"            icon="clock"            tabindex="0"            (click)="focusOnForm()"            [iconColor]="getIconColor()">        </nui-icon>    </div>    <div #popupArea></div>    <nui-overlay #overlay                 [toggleReference]="toggleRef"                 [overlayConfig]="overlayConfig"                 [customContainer]="customContainer">                 <nui-menu-popup #popup                     [itemsSource]="itemsSource" (menuItemClicked)="select($event)">                </nui-menu-popup>    </nui-overlay></div></div>'
+    var COMPONENTS = [{'name': 'BreadcrumbComponent', 'selector': 'nui-breadcrumb'},{'name': 'BusyComponent', 'selector': '[nui-busy]'},{'name': 'ButtonComponent', 'selector': '[nui-button]'},{'name': 'CardComponent', 'selector': 'nui-card'},{'name': 'CardGroupComponent', 'selector': 'nui-card-group'},{'name': 'CheckboxComponent', 'selector': 'nui-checkbox'},{'name': 'CheckboxGroupComponent', 'selector': 'nui-checkbox-group'},{'name': 'ChipsComponent', 'selector': 'nui-chips'},{'name': 'ChipsOverflowComponent', 'selector': 'nui-chips-overflow'},{'name': 'ComboboxComponent', 'selector': 'nui-combobox'},{'name': 'ComboboxV2Component', 'selector': 'nui-combobox-v2'},{'name': 'CustomValidationMessageComponent', 'selector': 'nui-custom-validation-message'},{'name': 'DatePickerComponent', 'selector': 'nui-date-picker'},{'name': 'DateTimePickerComponent', 'selector': 'nui-date-time-picker'},{'name': 'DialogComponent', 'selector': 'nui-dialog-window'},{'name': 'ExpanderComponent', 'selector': 'nui-expander'},{'name': 'FormFieldComponent', 'selector': 'nui-form-field'},{'name': 'IconComponent', 'selector': 'nui-icon'},{'name': 'ImageComponent', 'selector': 'nui-image'},{'name': 'MenuComponent', 'selector': 'nui-menu'},{'name': 'MessageComponent', 'selector': 'nui-message'},{'name': 'OverlayComponent', 'selector': 'nui-overlay'},{'name': 'PaginatorComponent', 'selector': 'nui-paginator'},{'name': 'PanelComponent', 'selector': 'nui-panel'},{'name': 'PopoverComponent', 'selector': 'nui-popover'},{'name': 'PopupComponent', 'selector': 'nui-popup'},{'name': 'PopupDeprecatedComponent', 'selector': 'nui-popup-deprecated'},{'name': 'ProgressComponent', 'selector': 'nui-progress'},{'name': 'QuickPickerComponent', 'selector': 'nui-quick-picker'},{'name': 'RadioGroupComponent', 'selector': 'nui-radio-group'},{'name': 'RepeatComponent', 'selector': 'nui-repeat'},{'name': 'SearchComponent', 'selector': 'nui-search'},{'name': 'SelectComponent', 'selector': 'nui-select'},{'name': 'SelectV2Component', 'selector': 'nui-select-v2'},{'name': 'SheetComponent', 'selector': 'nui-sheet'},{'name': 'SheetGroupComponent', 'selector': 'nui-sheet-group'},{'name': 'SorterComponent', 'selector': 'nui-sorter'},{'name': 'SpinnerComponent', 'selector': 'nui-spinner'},{'name': 'SwitchComponent', 'selector': 'nui-switch'},{'name': 'TabHeadingGroupComponent', 'selector': 'nui-tab-heading-group'},{'name': 'TableComponent', 'selector': 'nui-table, table[nui-table]'},{'name': 'TextboxComponent', 'selector': 'nui-textbox'},{'name': 'TextboxNumberComponent', 'selector': 'nui-textbox-number'},{'name': 'TimeFrameBarComponent', 'selector': 'nui-time-frame-bar'},{'name': 'TimeFramePickerComponent', 'selector': 'nui-time-frame-picker'},{'name': 'TimePickerComponent', 'selector': 'nui-time-picker'},{'name': 'ToastComponent', 'selector': 'nui-toast-component'},{'name': 'ToolbarComponent', 'selector': 'nui-toolbar'},{'name': 'WizardComponent', 'selector': 'nui-wizard'},{'name': 'WizardFooterComponent', 'selector': 'wizard-footer'},{'name': 'WizardHorizontalComponent', 'selector': 'nui-wizard-horizontal'},{'name': 'WizardStepComponent', 'selector': 'nui-wizard-step'},{'name': 'WizardStepHeaderComponent', 'selector': 'nui-wizard-step-header'},{'name': 'WizardStepV2Component', 'selector': 'nui-wizard-step-v2'}];
+    var DIRECTIVES = [{'name': 'ClickInterceptorDirective', 'selector': '[nuiClickInterceptor]'},{'name': 'DndDropTargetDirective', 'selector': '[cdkDropList][nuiDndDropTarget]'},{'name': 'MarkAsSelectedItemDirective', 'selector': '[nuiMarkAsSelectedItem]'},{'name': 'TableStickyHeaderDirective', 'selector': 'cdk-virtual-scroll-viewport[tableStickyHeader]'},{'name': 'TableVirtualScrollDirective', 'selector': '[tableVirtualScroll]:not([rowCount])'},{'name': 'TableVirtualScrollLinearDirective', 'selector': '[tableVirtualScroll]:not([offset])'},{'name': 'TooltipDirective', 'selector': '[nuiTooltip]'},{'name': 'WizardDirective', 'selector': '[nuiWizard]'},{'name': 'WizardStepFooterDirective', 'selector': '[nuiWizardStepFooter]'},{'name': 'WizardStepLabelDirective', 'selector': '[nuiWizardStepLabel]'},{'name': 'WizardStepperNextDirective', 'selector': 'button[nuiWizardNext]'},{'name': 'WizardStepperPreviousDirective', 'selector': 'button[nuiWizardPrevious]'}];
     var ACTUAL_COMPONENT = {'name': 'TimePickerComponent'};
 </script>
 <script src="../js/tree.js"></script>

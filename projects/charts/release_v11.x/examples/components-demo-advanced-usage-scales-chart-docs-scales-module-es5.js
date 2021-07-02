@@ -172,24 +172,50 @@
       }, {
         path: "domains",
         loadChildren: function loadChildren() {
-          return __webpack_require__.e(
-          /*! import() | components-demo-advanced-usage-scales-domains-chart-docs-domains-module */
-          "components-demo-advanced-usage-scales-domains-chart-docs-domains-module").then(__webpack_require__.bind(null,
-          /*! components/demo/advanced-usage/scales/domains/chart-docs-domains.module */
-          "3q4r")).then(function (m) {
-            return m.ChartDocsDomainsModule;
-          });
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+            return regeneratorRuntime.wrap(function _callee$(_context) {
+              while (1) {
+                switch (_context.prev = _context.next) {
+                  case 0:
+                    return _context.abrupt("return", __webpack_require__.e(
+                    /*! import() | components-demo-advanced-usage-scales-domains-chart-docs-domains-module */
+                    "components-demo-advanced-usage-scales-domains-chart-docs-domains-module").then(__webpack_require__.bind(null,
+                    /*! components/demo/advanced-usage/scales/domains/chart-docs-domains.module */
+                    "3q4r")).then(function (m) {
+                      return m.ChartDocsDomainsModule;
+                    }));
+
+                  case 1:
+                  case "end":
+                    return _context.stop();
+                }
+              }
+            }, _callee);
+          }));
         }
       }, {
         path: "formatters",
         loadChildren: function loadChildren() {
-          return __webpack_require__.e(
-          /*! import() | components-demo-advanced-usage-scales-formatters-chart-docs-formatters-module */
-          "components-demo-advanced-usage-scales-formatters-chart-docs-formatters-module").then(__webpack_require__.bind(null,
-          /*! components/demo/advanced-usage/scales/formatters/chart-docs-formatters.module */
-          "82q9")).then(function (m) {
-            return m.ChartDocsFormattersModule;
-          });
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+            return regeneratorRuntime.wrap(function _callee2$(_context2) {
+              while (1) {
+                switch (_context2.prev = _context2.next) {
+                  case 0:
+                    return _context2.abrupt("return", __webpack_require__.e(
+                    /*! import() | components-demo-advanced-usage-scales-formatters-chart-docs-formatters-module */
+                    "components-demo-advanced-usage-scales-formatters-chart-docs-formatters-module").then(__webpack_require__.bind(null,
+                    /*! components/demo/advanced-usage/scales/formatters/chart-docs-formatters.module */
+                    "82q9")).then(function (m) {
+                      return m.ChartDocsFormattersModule;
+                    }));
+
+                  case 1:
+                  case "end":
+                    return _context2.stop();
+                }
+              }
+            }, _callee2);
+          }));
         }
       }];
 

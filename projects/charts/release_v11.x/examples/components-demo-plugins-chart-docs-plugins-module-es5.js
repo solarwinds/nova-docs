@@ -140,7 +140,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import { NgModule } from \"@angular/core\";\nimport { RouterModule, Routes } from \"@angular/router\";\nimport { DEMO_PATH_TOKEN } from \"@nova-ui/bits\";\n\nconst exampleRoutes: Routes = [\n    {\n        path: \"tooltips\",\n        loadChildren: () => import(\"components/demo/plugins/tooltips/chart-docs-tooltips.module\").then(m => m.ChartDocsTooltipsModule),\n    },\n    {\n        path: \"popovers\",\n        loadChildren: () => import(\"components/demo/plugins/popovers/chart-docs-popovers.module\").then(m => m.ChartDocsPopoversModule),\n    },\n];\n\n@NgModule({\n    declarations: [],\n    imports: [\n        RouterModule.forChild(exampleRoutes),\n    ],\n    providers: [\n        { provide: DEMO_PATH_TOKEN, useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/) },\n    ],\n})\nexport class ChartDocsPluginsModule {\n}\n";
+      __webpack_exports__["default"] = "import { NgModule } from \"@angular/core\";\nimport { RouterModule, Routes } from \"@angular/router\";\nimport { DEMO_PATH_TOKEN } from \"@nova-ui/bits\";\n\nconst exampleRoutes: Routes = [\n    {\n        path: \"tooltips\",\n        loadChildren: async () => import(\"components/demo/plugins/tooltips/chart-docs-tooltips.module\").then(m => m.ChartDocsTooltipsModule),\n    },\n    {\n        path: \"popovers\",\n        loadChildren: async () => import(\"components/demo/plugins/popovers/chart-docs-popovers.module\").then(m => m.ChartDocsPopoversModule),\n    },\n];\n\n@NgModule({\n    declarations: [],\n    imports: [\n        RouterModule.forChild(exampleRoutes),\n    ],\n    providers: [\n        { provide: DEMO_PATH_TOKEN, useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/) },\n    ],\n})\nexport class ChartDocsPluginsModule {\n}\n";
       /***/
     },
 
@@ -251,24 +251,50 @@
       var exampleRoutes = [{
         path: "tooltips",
         loadChildren: function loadChildren() {
-          return Promise.all(
-          /*! import() | components-demo-plugins-tooltips-chart-docs-tooltips-module */
-          [__webpack_require__.e("default~bar-bar-prototype-module~chart-collection-chart-collection-example-module~components-demo-ad~ec3dd4a6"), __webpack_require__.e("common"), __webpack_require__.e("components-demo-plugins-tooltips-chart-docs-tooltips-module")]).then(__webpack_require__.bind(null,
-          /*! components/demo/plugins/tooltips/chart-docs-tooltips.module */
-          "KBYt")).then(function (m) {
-            return m.ChartDocsTooltipsModule;
-          });
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+            return regeneratorRuntime.wrap(function _callee$(_context) {
+              while (1) {
+                switch (_context.prev = _context.next) {
+                  case 0:
+                    return _context.abrupt("return", Promise.all(
+                    /*! import() | components-demo-plugins-tooltips-chart-docs-tooltips-module */
+                    [__webpack_require__.e("default~bar-bar-prototype-module~chart-collection-chart-collection-example-module~components-demo-ad~ec3dd4a6"), __webpack_require__.e("common"), __webpack_require__.e("components-demo-plugins-tooltips-chart-docs-tooltips-module")]).then(__webpack_require__.bind(null,
+                    /*! components/demo/plugins/tooltips/chart-docs-tooltips.module */
+                    "KBYt")).then(function (m) {
+                      return m.ChartDocsTooltipsModule;
+                    }));
+
+                  case 1:
+                  case "end":
+                    return _context.stop();
+                }
+              }
+            }, _callee);
+          }));
         }
       }, {
         path: "popovers",
         loadChildren: function loadChildren() {
-          return Promise.all(
-          /*! import() | components-demo-plugins-popovers-chart-docs-popovers-module */
-          [__webpack_require__.e("default~bar-bar-prototype-module~chart-collection-chart-collection-example-module~components-demo-ad~ec3dd4a6"), __webpack_require__.e("common"), __webpack_require__.e("components-demo-plugins-popovers-chart-docs-popovers-module")]).then(__webpack_require__.bind(null,
-          /*! components/demo/plugins/popovers/chart-docs-popovers.module */
-          "gZ1U")).then(function (m) {
-            return m.ChartDocsPopoversModule;
-          });
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+            return regeneratorRuntime.wrap(function _callee2$(_context2) {
+              while (1) {
+                switch (_context2.prev = _context2.next) {
+                  case 0:
+                    return _context2.abrupt("return", Promise.all(
+                    /*! import() | components-demo-plugins-popovers-chart-docs-popovers-module */
+                    [__webpack_require__.e("default~bar-bar-prototype-module~chart-collection-chart-collection-example-module~components-demo-ad~ec3dd4a6"), __webpack_require__.e("common"), __webpack_require__.e("components-demo-plugins-popovers-chart-docs-popovers-module")]).then(__webpack_require__.bind(null,
+                    /*! components/demo/plugins/popovers/chart-docs-popovers.module */
+                    "gZ1U")).then(function (m) {
+                      return m.ChartDocsPopoversModule;
+                    }));
+
+                  case 1:
+                  case "end":
+                    return _context2.stop();
+                }
+              }
+            }, _callee2);
+          }));
         }
       }];
 

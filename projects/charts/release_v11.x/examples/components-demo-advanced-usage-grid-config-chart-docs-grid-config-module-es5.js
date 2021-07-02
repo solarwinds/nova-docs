@@ -55,13 +55,26 @@
       var exampleRoutes = [{
         path: "base-grid",
         loadChildren: function loadChildren() {
-          return __webpack_require__.e(
-          /*! import() | components-demo-advanced-usage-grid-config-base-grid-chart-docs-base-grid-module */
-          "components-demo-advanced-usage-grid-config-base-grid-chart-docs-base-grid-module").then(__webpack_require__.bind(null,
-          /*! components/demo/advanced-usage/grid-config/base-grid/chart-docs-base-grid.module */
-          "6WVA")).then(function (m) {
-            return m.ChartDocsBaseGridModule;
-          });
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+            return regeneratorRuntime.wrap(function _callee$(_context) {
+              while (1) {
+                switch (_context.prev = _context.next) {
+                  case 0:
+                    return _context.abrupt("return", __webpack_require__.e(
+                    /*! import() | components-demo-advanced-usage-grid-config-base-grid-chart-docs-base-grid-module */
+                    "components-demo-advanced-usage-grid-config-base-grid-chart-docs-base-grid-module").then(__webpack_require__.bind(null,
+                    /*! components/demo/advanced-usage/grid-config/base-grid/chart-docs-base-grid.module */
+                    "6WVA")).then(function (m) {
+                      return m.ChartDocsBaseGridModule;
+                    }));
+
+                  case 1:
+                  case "end":
+                    return _context.stop();
+                }
+              }
+            }, _callee);
+          }));
         }
       }];
 

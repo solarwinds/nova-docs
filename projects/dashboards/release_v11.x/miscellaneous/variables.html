@@ -2845,6 +2845,7 @@
                         properties: {
                             // for the DataSourceConfigurationComponent, this defines the list of data sources to pick from
                             dataSourceProviders: [] as string[],
+                            errorComponent: DataSourceErrorComponent.lateLoadKey,
                         },
                         providers: {
                             // converter transforms the data source metadata between the widget and the form
@@ -3298,6 +3299,7 @@
             properties: {
                 // for the DataSourceConfigurationComponent, this defines the list of data sources to pick from
                 dataSourceProviders: [] as string[],
+                errorComponent: DataSourceErrorComponent.lateLoadKey,
             },
             providers: {
                 // converter transforms the data source metadata between the widget and the form
@@ -3518,7 +3520,7 @@
             componentType: DataSourceConfigurationComponent.lateLoadKey,
             properties: {
                 dataSourceProviders: [],
-                errorHandlingComponent: TableDataSourceErrorHandlingComponent.lateLoadKey,
+                errorComponent: TableDataSourceErrorComponent.lateLoadKey,
             },
             providers: {
                 [WellKnownProviders.Converter]: {
@@ -4500,7 +4502,7 @@
     DashwizButtonsComponent,
     DataSourceConfigurationComponent,
     DataSourceConfigurationV2Component,
-    DataSourceErrorHandlingComponent,
+    DataSourceErrorComponent,
     KpiTilesConfigurationComponent,
     EmbeddedContentConfigurationComponent,
     InfoMessageConfigurationComponent,
@@ -4512,7 +4514,7 @@
     TableColumnsConfigurationComponent,
     TableColumnsConfigurationV2Component,
     TableColumnConfigurationComponent,
-    TableDataSourceErrorHandlingComponent,
+    TableDataSourceErrorComponent,
     DonutContentPercentageFormatterComponent,
     DonutContentPercentageConfigurationComponent,
     DonutContentSumFormatterComponent,
@@ -6777,6 +6779,7 @@ This function represents the linear dependency (approximately).</p>
             properties: {
                 // for the DataSourceConfigurationComponent, this defines the list of data sources to pick from
                 dataSourceProviders: [] as string[],
+                errorComponent: DataSourceErrorComponent.lateLoadKey,
             },
             providers: {
                 // converter transforms the data source metadata between the widget and the form
