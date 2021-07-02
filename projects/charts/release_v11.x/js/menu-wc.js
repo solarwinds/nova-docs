@@ -90,6 +90,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                             <li class="link for-chapter2">
                                                 <a href="additional-documentation/chart-types/spark.html" data-type="entity-link" data-context="sub-entity" data-context-id="additional">Spark</a>
                                             </li>
+                                            <li class="link for-chapter2">
+                                                <a href="additional-documentation/chart-types/gauge.html" data-type="entity-link" data-context="sub-entity" data-context-id="additional">Gauge</a>
+                                            </li>
                                         </ul>
                                     </li>
                                     <li class="chapter inner">
@@ -339,10 +342,19 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="classes/DimensionConfig.html" data-type="entity-link">DimensionConfig</a>
                             </li>
                             <li class="link">
+                                <a href="classes/DonutGaugeLabelsPlugin.html" data-type="entity-link">DonutGaugeLabelsPlugin</a>
+                            </li>
+                            <li class="link">
                                 <a href="classes/DonutGaugeRenderingUtil.html" data-type="entity-link">DonutGaugeRenderingUtil</a>
                             </li>
                             <li class="link">
+                                <a href="classes/DonutGaugeThresholdsRenderer.html" data-type="entity-link">DonutGaugeThresholdsRenderer</a>
+                            </li>
+                            <li class="link">
                                 <a href="classes/EventBus.html" data-type="entity-link">EventBus</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/GaugeUtil.html" data-type="entity-link">GaugeUtil</a>
                             </li>
                             <li class="link">
                                 <a href="classes/Grid.html" data-type="entity-link">Grid</a>
@@ -364,6 +376,12 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="classes/LineAccessors.html" data-type="entity-link">LineAccessors</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/LinearGaugeLabelsPlugin.html" data-type="entity-link">LinearGaugeLabelsPlugin</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/LinearGaugeThresholdsRenderer.html" data-type="entity-link">LinearGaugeThresholdsRenderer</a>
                             </li>
                             <li class="link">
                                 <a href="classes/LinearScale.html" data-type="entity-link">LinearScale</a>
@@ -544,6 +562,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/IChartAssistSeries.html" data-type="entity-link">IChartAssistSeries</a>
                             </li>
                             <li class="link">
+                                <a href="interfaces/IChartConfiguration.html" data-type="entity-link">IChartConfiguration</a>
+                            </li>
+                            <li class="link">
                                 <a href="interfaces/IChartEvent.html" data-type="entity-link">IChartEvent</a>
                             </li>
                             <li class="link">
@@ -580,6 +601,12 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/IDimensions.html" data-type="entity-link">IDimensions</a>
                             </li>
                             <li class="link">
+                                <a href="interfaces/IDomainWithTicksCalculator.html" data-type="entity-link">IDomainWithTicksCalculator</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/IDonutGaugeThresholdsRendererConfig.html" data-type="entity-link">IDonutGaugeThresholdsRendererConfig</a>
+                            </li>
+                            <li class="link">
                                 <a href="interfaces/IElementPosition.html" data-type="entity-link">IElementPosition</a>
                             </li>
                             <li class="link">
@@ -587,6 +614,30 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="interfaces/IFormatters.html" data-type="entity-link">IFormatters</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/IGaugeConfig.html" data-type="entity-link">IGaugeConfig</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/IGaugeLabelsConfig.html" data-type="entity-link">IGaugeLabelsConfig</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/IGaugeLabelsPluginConfig.html" data-type="entity-link">IGaugeLabelsPluginConfig</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/IGaugeThresholdDatum.html" data-type="entity-link">IGaugeThresholdDatum</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/IGaugeThresholdDef.html" data-type="entity-link">IGaugeThresholdDef</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/IGaugeThresholdsConfig.html" data-type="entity-link">IGaugeThresholdsConfig</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/IGaugeThresholdsData.html" data-type="entity-link">IGaugeThresholdsData</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/IGaugeThresholdsRendererConfig.html" data-type="entity-link">IGaugeThresholdsRendererConfig</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/IGrid.html" data-type="entity-link">IGrid</a>
@@ -620,6 +671,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="interfaces/ILineAccessors.html" data-type="entity-link">ILineAccessors</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/ILinearGaugeThresholdsRendererConfig.html" data-type="entity-link">ILinearGaugeThresholdsRendererConfig</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/ILinearScales.html" data-type="entity-link">ILinearScales</a>

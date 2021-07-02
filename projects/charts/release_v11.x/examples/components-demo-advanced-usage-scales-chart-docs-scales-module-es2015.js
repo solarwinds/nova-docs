@@ -114,11 +114,14 @@ const exampleRoutes = [
     },
     {
         path: "domains",
-        loadChildren: () => __webpack_require__.e(/*! import() | components-demo-advanced-usage-scales-domains-chart-docs-domains-module */ "components-demo-advanced-usage-scales-domains-chart-docs-domains-module").then(__webpack_require__.bind(null, /*! components/demo/advanced-usage/scales/domains/chart-docs-domains.module */ "3q4r")).then(m => m.ChartDocsDomainsModule),
+        loadChildren: () => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, function* () { return __webpack_require__.e(/*! import() | components-demo-advanced-usage-scales-domains-chart-docs-domains-module */ "components-demo-advanced-usage-scales-domains-chart-docs-domains-module").then(__webpack_require__.bind(null, /*! components/demo/advanced-usage/scales/domains/chart-docs-domains.module */ "3q4r")).then(m => m.ChartDocsDomainsModule); }),
     },
     {
         path: "formatters",
-        loadChildren: () => __webpack_require__.e(/*! import() | components-demo-advanced-usage-scales-formatters-chart-docs-formatters-module */ "components-demo-advanced-usage-scales-formatters-chart-docs-formatters-module").then(__webpack_require__.bind(null, /*! components/demo/advanced-usage/scales/formatters/chart-docs-formatters.module */ "82q9")).then(m => m.ChartDocsFormattersModule),
+        loadChildren: () => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, function* () {
+            return __webpack_require__.e(/*! import() | components-demo-advanced-usage-scales-formatters-chart-docs-formatters-module */ "components-demo-advanced-usage-scales-formatters-chart-docs-formatters-module").then(__webpack_require__.bind(null, /*! components/demo/advanced-usage/scales/formatters/chart-docs-formatters.module */ "82q9"))
+                .then(m => m.ChartDocsFormattersModule);
+        }),
     },
 ];
 let ChartDocsScalesModule = class ChartDocsScalesModule {

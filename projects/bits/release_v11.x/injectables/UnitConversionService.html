@@ -95,7 +95,15 @@
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
+                                <a href="#getScientificDisplay">getScientificDisplay</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#getUnitDisplay">getUnitDisplay</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getUnitDisplayBaseValue">getUnitDisplayBaseValue</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
@@ -310,8 +318,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="72"
-                            class="link-to-prism">src/services/unit-conversion.service.ts:72</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="78"
+                            class="link-to-prism">src/services/unit-conversion.service.ts:78</a></div>
                 </td>
             </tr>
 
@@ -428,6 +436,126 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="getScientificDisplay"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            getScientificDisplay
+                        </b>
+                        <a href="#getScientificDisplay"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getScientificDisplay(conversion: <a href="../interfaces/IUnitConversionResult.html">IUnitConversionResult</a>, plusSign, nanDisplay: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="149"
+                            class="link-to-prism">src/services/unit-conversion.service.ts:149</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Gets the converted value display string in scientific notation</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>conversion</td>
+                                    <td>
+                                                <code><a href="../interfaces/IUnitConversionResult.html" target="_self" >IUnitConversionResult</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        <p>The result of an invocation of this service&#39;s convert method</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>plusSign</td>
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>false</code>
+                                    </td>
+
+                                    <td>
+                                        <p>Whether to prepend the display string with a &#39;+&#39;</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>nanDisplay</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>&quot;---&quot;</code>
+                                    </td>
+
+                                    <td>
+                                        <p>The string to display in case the conversion result is NaN or Infinity</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>The converted value display string in scientific notation</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="getUnitDisplay"></a>
                     <span class="name">
                         <b>
@@ -448,8 +576,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="111"
-                            class="link-to-prism">src/services/unit-conversion.service.ts:111</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="126"
+                            class="link-to-prism">src/services/unit-conversion.service.ts:126</a></div>
                 </td>
             </tr>
 
@@ -524,6 +652,86 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="getUnitDisplayBaseValue"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            getUnitDisplayBaseValue
+                        </b>
+                        <a href="#getUnitDisplayBaseValue"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getUnitDisplayBaseValue(unit: <a href="../undefineds/UnitOption.html">UnitOption</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="137"
+                            class="link-to-prism">src/services/unit-conversion.service.ts:137</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Gets the base value of the converted unit</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>unit</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/typealiases.html#UnitOption" target="_self" >UnitOption</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The basic unit used in the conversion</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>The abbreviation for the smallest unit of the provided UnitOption</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="getValueDisplay"></a>
                     <span class="name">
                         <b>
@@ -544,8 +752,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="93"
-                            class="link-to-prism">src/services/unit-conversion.service.ts:93</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="108"
+                            class="link-to-prism">src/services/unit-conversion.service.ts:108</a></div>
                 </td>
             </tr>
 
@@ -699,8 +907,13 @@ export class UnitConversionService {
             resultOrder &#x3D; Math.floor(Math.log(Math.abs(value)) / Math.log(base));
             resultValue &#x3D; value / Math.pow(base, Math.floor(resultOrder));
 
-            if (value &gt; 0 &amp;&amp; value &lt; 1) {
-                this.logger.warn(&quot;unit conversion service does not support conversion to negative order of magnitude&quot;);
+            if (Math.abs(value) &gt; 0 &amp;&amp; Math.abs(value) &lt; 1) {
+                return {
+                    value: value.toFixed(scale),
+                    scientificNotation: value.toExponential(scale),
+                    order: 0,
+                    scale,
+                }
             }
 
             // fix the precision edge case
@@ -722,6 +935,7 @@ export class UnitConversionService {
         return {
             value: strValue,
             order: resultOrder,
+            scientificNotation: value?.toExponential(scale),
             scale,
         };
     }
@@ -739,11 +953,20 @@ export class UnitConversionService {
     public getFullDisplay(conversion: IUnitConversionResult, unit: UnitOption, plusSign &#x3D; false, nanDisplay &#x3D; &quot;---&quot;): string {
         const isValidNumber &#x3D; this.isValidNumber(conversion.value);
         const spacing &#x3D; unit !&#x3D;&#x3D; &quot;generic&quot; &amp;&amp; isValidNumber ? &quot; &quot; : &quot;&quot;;
-        const unitDisplay &#x3D; isValidNumber ? this.getUnitDisplay(conversion, unit) : &quot;&quot;;
+        let unitDisplay &#x3D; isValidNumber ? this.getUnitDisplay(conversion, unit) : &quot;&quot;;
 
         // The generic unit is not currently i18n friendly
         const localizeValue &#x3D; unit !&#x3D;&#x3D; &quot;generic&quot;;
-        return &#x60;${this.getValueDisplay(conversion, plusSign, nanDisplay, localizeValue)}${spacing}${unitDisplay}&#x60;;
+
+        let displayValue: string;
+
+        if (!unitDisplay &amp;&amp; isValidNumber &amp;&amp; conversion.order ) {
+            unitDisplay &#x3D; this.getUnitDisplayBaseValue(unit);
+            displayValue&#x3D; this.getScientificDisplay(conversion, plusSign, nanDisplay);
+        } else {
+            displayValue &#x3D; this.getValueDisplay(conversion, plusSign, nanDisplay, localizeValue)
+        }
+        return &#x60;${displayValue}${spacing}${unitDisplay}&#x60;;
     }
 
     /**
@@ -777,6 +1000,34 @@ export class UnitConversionService {
      */
     public getUnitDisplay(conversion: IUnitConversionResult, unit: UnitOption): string {
         return unitConversionConstants[unit][conversion.order];
+    }
+
+    /**
+     * Gets the base value of the converted unit
+     *
+     * @param unit The basic unit used in the conversion
+     *
+     * @returns {string} The abbreviation for the smallest unit of the provided UnitOption
+     */
+    public getUnitDisplayBaseValue(unit: UnitOption): string {
+        return unitConversionConstants[unit][0];
+    }
+    /**
+     * Gets the converted value display string in scientific notation
+     *
+     * @param conversion The result of an invocation of this service&#x27;s convert method
+     * @param plusSign Whether to prepend the display string with a &#x27;+&#x27;
+     * @param nanDisplay The string to display in case the conversion result is NaN or Infinity
+     *
+     * @returns {string} The converted value display string in scientific notation
+     */
+    public getScientificDisplay(conversion: IUnitConversionResult, plusSign &#x3D; false, nanDisplay &#x3D; &quot;---&quot;): string {
+        if (!this.isValidNumber(conversion.value)) {
+            return nanDisplay;
+        }
+        const prefix &#x3D; plusSign &amp;&amp; parseInt(conversion.value, 10) &gt; 0 ? &quot;+&quot; : &quot;&quot;;
+
+        return &#x60;${prefix}${conversion.scientificNotation}&#x60;;
     }
 
     private isValidNumber(value: any): boolean {

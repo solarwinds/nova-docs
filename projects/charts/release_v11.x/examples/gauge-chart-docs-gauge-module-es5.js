@@ -7,23 +7,43 @@
 
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["gauge-chart-docs-gauge-module"], {
     /***/
-    "6tuR":
-    /*!*********************************************************************************************************************!*\
-      !*** ./examples/components/demo/chart-types/gauge/donut-with-content/donut-gauge-with-content-example.component.ts ***!
-      \*********************************************************************************************************************/
+    "4TGt":
+    /*!************************************************************************************************************************************************!*\
+      !*** ./examples/components/demo/chart-types/gauge/linear/linear-thickness-adjustment/linear-gauge-thickness-adjustment-example.component.less ***!
+      \************************************************************************************************************************************************/
 
-    /*! exports provided: DonutGaugeWithContentExampleComponent */
+    /*! exports provided: default */
 
     /***/
-    function tuR(module, __webpack_exports__, __webpack_require__) {
+    function TGt(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = ".demo__inputs {\n  margin-right: 50px;\n}\n.demo__charts {\n  width: 255px;\n}\n.demo__vertical-chart {\n  height: 200px;\n}\n.demo__horizontal-chart {\n  width: 200px;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImxpbmVhci1nYXVnZS10aGlja25lc3MtYWRqdXN0bWVudC1leGFtcGxlLmNvbXBvbmVudC5sZXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksa0JBQUE7QUFDSjtBQUVBO0VBQ0ksWUFBQTtBQUFKO0FBSUE7RUFDSSxhQUFBO0FBRko7QUFNQTtFQUNJLFlBQUE7QUFKSiIsImZpbGUiOiJsaW5lYXItZ2F1Z2UtdGhpY2tuZXNzLWFkanVzdG1lbnQtZXhhbXBsZS5jb21wb25lbnQubGVzcyIsInNvdXJjZXNDb250ZW50IjpbIi5kZW1vX19pbnB1dHMge1xuICAgIG1hcmdpbi1yaWdodDogNTBweDtcbn1cblxuLmRlbW9fX2NoYXJ0cyB7XG4gICAgd2lkdGg6IDI1NXB4O1xufVxuXG4vLyBTZXR0aW5nIHRoZSBoZWlnaHQgb24gdGhlIGNoYXJ0IGVsZW1lbnQgZGV0ZXJtaW5lcyB0aGUgdmVydGljYWwgbGVuZ3RoIG9mIHRoZSBnYXVnZVxuLmRlbW9fX3ZlcnRpY2FsLWNoYXJ0IHtcbiAgICBoZWlnaHQ6IDIwMHB4O1xufVxuXG4vLyBTZXR0aW5nIHRoZSB3aWR0aCBvbiB0aGUgY2hhcnQgZWxlbWVudCBkZXRlcm1pbmVzIHRoZSBob3Jpem9udGFsIGxlbmd0aCBvZiB0aGUgZ2F1Z2Vcbi5kZW1vX19ob3Jpem9udGFsLWNoYXJ0IHtcbiAgICB3aWR0aDogMjAwcHg7XG59XG4iXX0= */";
+      /***/
+    },
+
+    /***/
+    "6gvS":
+    /*!*************************************************************************************************************!*\
+      !*** ./examples/components/demo/chart-types/gauge/donut/donut-basic/donut-gauge-basic-example.component.ts ***!
+      \*************************************************************************************************************/
+
+    /*! exports provided: DonutGaugeBasicExampleComponent */
+
+    /***/
+    function gvS(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
       /* harmony export (binding) */
 
 
-      __webpack_require__.d(__webpack_exports__, "DonutGaugeWithContentExampleComponent", function () {
-        return DonutGaugeWithContentExampleComponent;
+      __webpack_require__.d(__webpack_exports__, "DonutGaugeBasicExampleComponent", function () {
+        return DonutGaugeBasicExampleComponent;
       });
       /* harmony import */
 
@@ -34,15 +54,15 @@
       /* harmony import */
 
 
-      var _raw_loader_donut_gauge_with_content_example_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-      /*! raw-loader!./donut-gauge-with-content-example.component.html */
-      "2Th4");
+      var _raw_loader_donut_gauge_basic_example_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! raw-loader!./donut-gauge-basic-example.component.html */
+      "QUxe");
       /* harmony import */
 
 
-      var _donut_gauge_with_content_example_component_less__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-      /*! ./donut-gauge-with-content-example.component.less */
-      "W9mO");
+      var _donut_gauge_basic_example_component_less__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! ./donut-gauge-basic-example.component.less */
+      "Npi5");
       /* harmony import */
 
 
@@ -56,24 +76,19 @@
       /*! @nova-ui/charts */
       "gKry");
 
-      var DonutGaugeWithContentExampleComponent = /*#__PURE__*/function () {
-        function DonutGaugeWithContentExampleComponent() {
-          _classCallCheck(this, DonutGaugeWithContentExampleComponent);
+      var DonutGaugeBasicExampleComponent = /*#__PURE__*/function () {
+        function DonutGaugeBasicExampleComponent() {
+          _classCallCheck(this, DonutGaugeBasicExampleComponent);
         }
 
-        _createClass(DonutGaugeWithContentExampleComponent, [{
+        _createClass(DonutGaugeBasicExampleComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
             // Setting up the gauge config
             var initialValue = 128;
-            this.gaugeConfig = this.getGaugeConfig(initialValue); // Creating the chart
+            this.gaugeConfig = this.getGaugeConfig(initialValue); // Creating the chart assist
 
-            this.chartAssist = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["ChartAssist"](new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["Chart"](Object(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["radialGrid"])()), _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["radial"]); // Adding the plugin for the inner content
-
-            this.contentPlugin = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["ChartDonutContentPlugin"]();
-            this.chartAssist.chart.addPlugin(this.contentPlugin); // Adding the labels plugin
-
-            this.chartAssist.chart.addPlugin(new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["DonutGaugeLabelsPlugin"]()); // Assembling the series
+            this.chartAssist = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].createChartAssist(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Donut); // Assembling the series
 
             this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].assembleSeriesSet(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Donut); // Updating the chart
 
@@ -85,7 +100,7 @@
             // Updating the gauge config
             this.gaugeConfig = this.getGaugeConfig(value); // Updating the series set with the new config
 
-            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.seriesSet, this.gaugeConfig); // Updating the chart with the updated series set
+            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].update(this.seriesSet, this.gaugeConfig); // Updating the chart with the updated series set
 
             this.chartAssist.update(this.seriesSet);
           }
@@ -94,21 +109,39 @@
           value: function getGaugeConfig(value) {
             return {
               value: value,
-              max: 200,
-              thresholds: [100, 158],
-              enableThresholdMarkers: true
+              max: 200
             };
           }
         }]);
 
-        return DonutGaugeWithContentExampleComponent;
+        return DonutGaugeBasicExampleComponent;
       }();
 
-      DonutGaugeWithContentExampleComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
-        selector: "donut-gauge-with-content-example",
-        template: _raw_loader_donut_gauge_with_content_example_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
-        styles: [_donut_gauge_with_content_example_component_less__WEBPACK_IMPORTED_MODULE_2__["default"]]
-      })], DonutGaugeWithContentExampleComponent);
+      DonutGaugeBasicExampleComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
+        selector: "donut-gauge-basic-example",
+        template: _raw_loader_donut_gauge_basic_example_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
+        styles: [_donut_gauge_basic_example_component_less__WEBPACK_IMPORTED_MODULE_2__["default"]]
+      })], DonutGaugeBasicExampleComponent);
+      /***/
+    },
+
+    /***/
+    "6k7h":
+    /*!***************************************************************************************************************************************************!*\
+      !*** ./examples/components/demo/chart-types/gauge/donut/donut-with-threshold-toggling/donut-gauge-with-threshold-toggling-example.component.less ***!
+      \***************************************************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function k7h(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = ".demo__chart {\n  height: 250px;\n  width: 250px;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImRvbnV0LWdhdWdlLXdpdGgtdGhyZXNob2xkLXRvZ2dsaW5nLWV4YW1wbGUuY29tcG9uZW50Lmxlc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxhQUFBO0VBQ0EsWUFBQTtBQUNKIiwiZmlsZSI6ImRvbnV0LWdhdWdlLXdpdGgtdGhyZXNob2xkLXRvZ2dsaW5nLWV4YW1wbGUuY29tcG9uZW50Lmxlc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZGVtb19fY2hhcnQge1xuICAgIGhlaWdodDogMjUwcHg7XG4gICAgd2lkdGg6IDI1MHB4O1xufVxuIl19 */";
       /***/
     },
 
@@ -126,15 +159,39 @@
         "./chart-docs-gauge.component.html": "ZWN/",
         "./chart-docs-gauge.component.ts": "2DII",
         "./chart-docs-gauge.module.ts": "ZDgL",
-        "./donut-basic/donut-gauge-basic-example.component.html": "R/Os",
-        "./donut-basic/donut-gauge-basic-example.component.less": "ZVh5",
-        "./donut-basic/donut-gauge-basic-example.component.ts": "qaJP",
-        "./donut-with-content/donut-gauge-with-content-example.component.html": "2Th4",
-        "./donut-with-content/donut-gauge-with-content-example.component.less": "MnH5",
-        "./donut-with-content/donut-gauge-with-content-example.component.ts": "4fWi",
-        "./donut-with-threshold-markers/donut-gauge-with-threshold-markers-example.component.html": "yMj0",
-        "./donut-with-threshold-markers/donut-gauge-with-threshold-markers-example.component.less": "3me9",
-        "./donut-with-threshold-markers/donut-gauge-with-threshold-markers-example.component.ts": "k4Bf",
+        "./donut/donut-basic/donut-gauge-basic-example.component.html": "QUxe",
+        "./donut/donut-basic/donut-gauge-basic-example.component.less": "z2tb",
+        "./donut/donut-basic/donut-gauge-basic-example.component.ts": "mDnq",
+        "./donut/donut-with-content/donut-gauge-with-content-example.component.html": "dXgp",
+        "./donut/donut-with-content/donut-gauge-with-content-example.component.less": "91pg",
+        "./donut/donut-with-content/donut-gauge-with-content-example.component.ts": "/sCd",
+        "./donut/donut-with-custom-threshold-labels/donut-gauge-with-custom-threshold-labels-example.component.html": "G2WF",
+        "./donut/donut-with-custom-threshold-labels/donut-gauge-with-custom-threshold-labels-example.component.less": "Yu0q",
+        "./donut/donut-with-custom-threshold-labels/donut-gauge-with-custom-threshold-labels-example.component.ts": "r3Ox",
+        "./donut/donut-with-threshold-marker-toggling/donut-gauge-with-threshold-marker-toggling-example.component.html": "TW+J",
+        "./donut/donut-with-threshold-marker-toggling/donut-gauge-with-threshold-marker-toggling-example.component.less": "MV1o",
+        "./donut/donut-with-threshold-marker-toggling/donut-gauge-with-threshold-marker-toggling-example.component.ts": "19lF",
+        "./donut/donut-with-threshold-toggling/donut-gauge-with-threshold-toggling-example.component.html": "1oNZ",
+        "./donut/donut-with-threshold-toggling/donut-gauge-with-threshold-toggling-example.component.less": "2ZQm",
+        "./donut/donut-with-threshold-toggling/donut-gauge-with-threshold-toggling-example.component.ts": "ZvUs",
+        "./donut/donut-with-thresholds/donut-gauge-with-thresholds-example.component.html": "wSIz",
+        "./donut/donut-with-thresholds/donut-gauge-with-thresholds-example.component.less": "i4Pe",
+        "./donut/donut-with-thresholds/donut-gauge-with-thresholds-example.component.ts": "hSR7",
+        "./donut/donut-without-threshold-markers/donut-gauge-without-threshold-markers-example.component.html": "jp58",
+        "./donut/donut-without-threshold-markers/donut-gauge-without-threshold-markers-example.component.less": "J6rO",
+        "./donut/donut-without-threshold-markers/donut-gauge-without-threshold-markers-example.component.ts": "j5fe",
+        "./linear/horizontal-basic/horizontal-gauge-basic-example.component.html": "0Cj1",
+        "./linear/horizontal-basic/horizontal-gauge-basic-example.component.less": "IzSJ",
+        "./linear/horizontal-basic/horizontal-gauge-basic-example.component.ts": "uxvK",
+        "./linear/linear-thickness-adjustment/linear-gauge-thickness-adjustment-example.component.html": "BDzF",
+        "./linear/linear-thickness-adjustment/linear-gauge-thickness-adjustment-example.component.less": "Xr13",
+        "./linear/linear-thickness-adjustment/linear-gauge-thickness-adjustment-example.component.ts": "jmb1",
+        "./linear/linear-with-thresholds/linear-gauge-with-thresholds-example.component.html": "3dr6",
+        "./linear/linear-with-thresholds/linear-gauge-with-thresholds-example.component.less": "bakv",
+        "./linear/linear-with-thresholds/linear-gauge-with-thresholds-example.component.ts": "jRwM",
+        "./linear/vertical-basic/vertical-gauge-basic-example.component.html": "aI42",
+        "./linear/vertical-basic/vertical-gauge-basic-example.component.less": "6LbR",
+        "./linear/vertical-basic/vertical-gauge-basic-example.component.ts": "S5Pj",
         "./visual-test/donut/donut-gauge-tester.component.html": "3Isn",
         "./visual-test/donut/donut-gauge-tester.component.less": "WISq",
         "./visual-test/donut/donut-gauge-tester.component.ts": "wITR",
@@ -174,23 +231,43 @@
     },
 
     /***/
-    "CGFR":
-    /*!*******************************************************************************************************!*\
-      !*** ./examples/components/demo/chart-types/gauge/donut-basic/donut-gauge-basic-example.component.ts ***!
-      \*******************************************************************************************************/
+    "E0x5":
+    /*!**************************************************************************************************************************************!*\
+      !*** ./examples/components/demo/chart-types/gauge/linear/linear-with-thresholds/linear-gauge-with-thresholds-example.component.less ***!
+      \**************************************************************************************************************************************/
 
-    /*! exports provided: DonutGaugeBasicExampleComponent */
+    /*! exports provided: default */
 
     /***/
-    function CGFR(module, __webpack_exports__, __webpack_require__) {
+    function E0x5(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = ".demo__value-input {\n  margin-right: 50px;\n}\n.demo__vertical-chart {\n  height: 200px;\n}\n.demo__horizontal-chart {\n  width: 200px;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImxpbmVhci1nYXVnZS13aXRoLXRocmVzaG9sZHMtZXhhbXBsZS5jb21wb25lbnQubGVzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGtCQUFBO0FBQ0o7QUFHQTtFQUNJLGFBQUE7QUFESjtBQUtBO0VBQ0ksWUFBQTtBQUhKIiwiZmlsZSI6ImxpbmVhci1nYXVnZS13aXRoLXRocmVzaG9sZHMtZXhhbXBsZS5jb21wb25lbnQubGVzcyIsInNvdXJjZXNDb250ZW50IjpbIi5kZW1vX192YWx1ZS1pbnB1dCB7XG4gICAgbWFyZ2luLXJpZ2h0OiA1MHB4O1xufVxuXG4vLyBTZXR0aW5nIHRoZSBoZWlnaHQgb24gdGhlIGNoYXJ0IGVsZW1lbnQgZGV0ZXJtaW5lcyB0aGUgdmVydGljYWwgbGVuZ3RoIG9mIHRoZSBnYXVnZVxuLmRlbW9fX3ZlcnRpY2FsLWNoYXJ0IHtcbiAgICBoZWlnaHQ6IDIwMHB4O1xufVxuXG4vLyBTZXR0aW5nIHRoZSB3aWR0aCBvbiB0aGUgY2hhcnQgZWxlbWVudCBkZXRlcm1pbmVzIHRoZSBob3Jpem9udGFsIGxlbmd0aCBvZiB0aGUgZ2F1Z2Vcbi5kZW1vX19ob3Jpem9udGFsLWNoYXJ0IHtcbiAgICB3aWR0aDogMjAwcHg7XG59XG4iXX0= */";
+      /***/
+    },
+
+    /***/
+    "FLog":
+    /*!*********************************************************************************************************************************!*\
+      !*** ./examples/components/demo/chart-types/gauge/donut/donut-with-thresholds/donut-gauge-with-thresholds-example.component.ts ***!
+      \*********************************************************************************************************************************/
+
+    /*! exports provided: DonutGaugeWithThresholdsExampleComponent */
+
+    /***/
+    function FLog(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
       /* harmony export (binding) */
 
 
-      __webpack_require__.d(__webpack_exports__, "DonutGaugeBasicExampleComponent", function () {
-        return DonutGaugeBasicExampleComponent;
+      __webpack_require__.d(__webpack_exports__, "DonutGaugeWithThresholdsExampleComponent", function () {
+        return DonutGaugeWithThresholdsExampleComponent;
       });
       /* harmony import */
 
@@ -201,15 +278,15 @@
       /* harmony import */
 
 
-      var _raw_loader_donut_gauge_basic_example_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-      /*! raw-loader!./donut-gauge-basic-example.component.html */
-      "R/Os");
+      var _raw_loader_donut_gauge_with_thresholds_example_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! raw-loader!./donut-gauge-with-thresholds-example.component.html */
+      "wSIz");
       /* harmony import */
 
 
-      var _donut_gauge_basic_example_component_less__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-      /*! ./donut-gauge-basic-example.component.less */
-      "iHp2");
+      var _donut_gauge_with_thresholds_example_component_less__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! ./donut-gauge-with-thresholds-example.component.less */
+      "d39z");
       /* harmony import */
 
 
@@ -223,52 +300,113 @@
       /*! @nova-ui/charts */
       "gKry");
 
-      var DonutGaugeBasicExampleComponent = /*#__PURE__*/function () {
-        function DonutGaugeBasicExampleComponent() {
-          _classCallCheck(this, DonutGaugeBasicExampleComponent);
+      var DonutGaugeWithThresholdsExampleComponent = /*#__PURE__*/function () {
+        function DonutGaugeWithThresholdsExampleComponent() {
+          _classCallCheck(this, DonutGaugeWithThresholdsExampleComponent);
+
+          this.value = 178;
+          this.reversed = false;
+          this.lowThreshold = 100;
+          this.highThreshold = 158;
         }
 
-        _createClass(DonutGaugeBasicExampleComponent, [{
+        _createClass(DonutGaugeWithThresholdsExampleComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            // Setting up the gauge config
-            var initialValue = 128;
-            this.gaugeConfig = this.getGaugeConfig(initialValue); // Creating the chart
+            // Generating a standard set of thresholds with warning and critical levels
+            this.thresholds = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].createStandardThresholdsConfig(this.lowThreshold, this.highThreshold);
+            /**
+             * Optionally, instead of using the 'createStandardThresholdsConfig' function as above, you can manually create a thresholds
+             * config object like the following with as many or as few threshold definitions as you need.
+             */
+            // this.thresholds = {
+            //     definitions: {
+            //         [StandardGaugeThresholdId.Warning]: {
+            //             id: StandardGaugeThresholdId.Warning,
+            //             value: this.lowThreshold,
+            //             enabled: true,
+            //             color: StandardGaugeColor.Warning,
+            //         },
+            //         [StandardGaugeThresholdId.Critical]: {
+            //             id: StandardGaugeThresholdId.Critical,
+            //             value: this.highThreshold,
+            //             enabled: true,
+            //             color: StandardGaugeColor.Critical,
+            //         },
+            //     },
+            //     reversed: false,
+            //     disableMarkers: false,
+            //     markerRadius: StandardGaugeThresholdMarkerRadius.Large,
+            // };
 
-            this.chartAssist = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["ChartAssist"](new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["Chart"](Object(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["radialGrid"])()), _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["radial"]); // Assembling the series
-
-            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].assembleSeriesSet(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Donut); // Updating the chart
-
+            this.gaugeConfig = this.getGaugeConfig();
+            this.chartAssist = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].createChartAssist(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Donut);
+            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].assembleSeriesSet(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Donut);
             this.chartAssist.update(this.seriesSet);
           }
         }, {
           key: "onValueChange",
           value: function onValueChange(value) {
-            // Updating the gauge config
-            this.gaugeConfig = this.getGaugeConfig(value); // Updating the series set with the new config
+            this.value = value;
+            this.updateGauge();
+          }
+        }, {
+          key: "onReversedChange",
+          value: function onReversedChange(reversed) {
+            this.reversed = reversed;
+            this.thresholds.reversed = reversed; // swap the values of the warning and critical thresholds
 
-            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.seriesSet, this.gaugeConfig); // Updating the chart with the updated series set
-
+            this.thresholds.definitions[_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["StandardGaugeThresholdId"].Warning].value = this.reversed ? this.highThreshold : this.lowThreshold;
+            this.thresholds.definitions[_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["StandardGaugeThresholdId"].Critical].value = this.reversed ? this.lowThreshold : this.highThreshold;
+            this.updateGauge();
+          }
+        }, {
+          key: "updateGauge",
+          value: function updateGauge() {
+            this.gaugeConfig = this.getGaugeConfig();
+            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].update(this.seriesSet, this.gaugeConfig);
             this.chartAssist.update(this.seriesSet);
           }
         }, {
           key: "getGaugeConfig",
-          value: function getGaugeConfig(value) {
+          value: function getGaugeConfig() {
             return {
-              value: value,
-              max: 200
+              value: this.value,
+              max: 200,
+              // Enabling the thresholds
+              thresholds: this.thresholds
             };
           }
         }]);
 
-        return DonutGaugeBasicExampleComponent;
+        return DonutGaugeWithThresholdsExampleComponent;
       }();
 
-      DonutGaugeBasicExampleComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
-        selector: "donut-gauge-basic-example",
-        template: _raw_loader_donut_gauge_basic_example_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
-        styles: [_donut_gauge_basic_example_component_less__WEBPACK_IMPORTED_MODULE_2__["default"]]
-      })], DonutGaugeBasicExampleComponent);
+      DonutGaugeWithThresholdsExampleComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
+        selector: "donut-gauge-with-thresholds-example",
+        template: _raw_loader_donut_gauge_with_thresholds_example_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
+        styles: [_donut_gauge_with_thresholds_example_component_less__WEBPACK_IMPORTED_MODULE_2__["default"]]
+      })], DonutGaugeWithThresholdsExampleComponent);
+      /***/
+    },
+
+    /***/
+    "FQjS":
+    /*!*****************************************************************************************************************************!*\
+      !*** ./examples/components/demo/chart-types/gauge/donut/donut-with-content/donut-gauge-with-content-example.component.less ***!
+      \*****************************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function FQjS(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = ".demo__chart {\n  height: 250px;\n  width: 250px;\n}\n.demo__content-label {\n  line-height: 14px;\n  font-size: 11px;\n  font-weight: 400;\n  text-transform: uppercase;\n  color: var(--nui-color-text-secondary);\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImRvbnV0LWdhdWdlLXdpdGgtY29udGVudC1leGFtcGxlLmNvbXBvbmVudC5sZXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUVBO0VBQ0ksYUFBQTtFQUNBLFlBQUE7QUFESjtBQUlBO0VBQ0ksaUJBQUE7RUFDQSxlQUFBO0VBQ0EsZ0JBQUE7RUFDQSx5QkFBQTtFQUNBLHNDQUFBO0FBRkoiLCJmaWxlIjoiZG9udXQtZ2F1Z2Utd2l0aC1jb250ZW50LWV4YW1wbGUuY29tcG9uZW50Lmxlc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0IFwiQG5vdmEtdWkvYml0cy9zZGsvbGVzcy9udWktZnJhbWV3b3JrLXZhcmlhYmxlc1wiO1xuXG4uZGVtb19fY2hhcnQge1xuICAgIGhlaWdodDogMjUwcHg7XG4gICAgd2lkdGg6IDI1MHB4O1xufVxuXG4uZGVtb19fY29udGVudC1sYWJlbCB7XG4gICAgbGluZS1oZWlnaHQ6IEBudWktbGluZS1oZWlnaHQtc21hbGw7XG4gICAgZm9udC1zaXplOiBAbnVpLWZvbnQtc2l6ZS1zbWFsbDtcbiAgICBmb250LXdlaWdodDogQG51aS1mb250LXdlaWdodC1yZWd1bGFyO1xuICAgIHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7XG4gICAgY29sb3I6IHZhcigtLW51aS1jb2xvci10ZXh0LXNlY29uZGFyeSk7XG59XG4iXX0= */";
       /***/
     },
 
@@ -289,6 +427,401 @@
 
 
       __webpack_exports__["default"] = ".content-label {\n  line-height: 14px;\n  font-size: 11px;\n  font-weight: 400;\n  text-transform: uppercase;\n  color: var(--nui-color-text-secondary);\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImRvbnV0LWdhdWdlLXRlc3Rlci5jb21wb25lbnQubGVzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFFQTtFQUNJLGlCQUFBO0VBQ0EsZUFBQTtFQUNBLGdCQUFBO0VBQ0EseUJBQUE7RUFDQSxzQ0FBQTtBQURKIiwiZmlsZSI6ImRvbnV0LWdhdWdlLXRlc3Rlci5jb21wb25lbnQubGVzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgXCJAbm92YS11aS9iaXRzL3Nkay9sZXNzL251aS1mcmFtZXdvcmstdmFyaWFibGVzXCI7XG5cbi5jb250ZW50LWxhYmVsIHtcbiAgICBsaW5lLWhlaWdodDogMTRweDtcbiAgICBmb250LXNpemU6IDExcHg7XG4gICAgZm9udC13ZWlnaHQ6IDQwMDtcbiAgICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xuICAgIGNvbG9yOiB2YXIoLS1udWktY29sb3ItdGV4dC1zZWNvbmRhcnkpO1xufVxuIl19 */";
+      /***/
+    },
+
+    /***/
+    "Jef4":
+    /*!********************************************************************************************************************!*\
+      !*** ./examples/components/demo/chart-types/gauge/linear/vertical-basic/vertical-gauge-basic-example.component.ts ***!
+      \********************************************************************************************************************/
+
+    /*! exports provided: VerticalGaugeBasicExampleComponent */
+
+    /***/
+    function Jef4(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "VerticalGaugeBasicExampleComponent", function () {
+        return VerticalGaugeBasicExampleComponent;
+      });
+      /* harmony import */
+
+
+      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! tslib */
+      "mrSG");
+      /* harmony import */
+
+
+      var _raw_loader_vertical_gauge_basic_example_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! raw-loader!./vertical-gauge-basic-example.component.html */
+      "aI42");
+      /* harmony import */
+
+
+      var _vertical_gauge_basic_example_component_less__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! ./vertical-gauge-basic-example.component.less */
+      "bxQ0");
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! @angular/core */
+      "fXoL");
+      /* harmony import */
+
+
+      var _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! @nova-ui/charts */
+      "gKry");
+
+      var VerticalGaugeBasicExampleComponent = /*#__PURE__*/function () {
+        function VerticalGaugeBasicExampleComponent() {
+          _classCallCheck(this, VerticalGaugeBasicExampleComponent);
+        }
+
+        _createClass(VerticalGaugeBasicExampleComponent, [{
+          key: "ngOnInit",
+          value: function ngOnInit() {
+            // Setting up the gauge config
+            var initialValue = 64;
+            this.gaugeConfig = this.getGaugeConfig(initialValue); // Creating the chart assist
+
+            this.chartAssist = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].createChartAssist(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Vertical); // Assembling the series
+
+            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].assembleSeriesSet(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Vertical); // Updating the chart
+
+            this.chartAssist.update(this.seriesSet);
+          }
+        }, {
+          key: "onValueChange",
+          value: function onValueChange(value) {
+            // Updating the gauge config
+            this.gaugeConfig = this.getGaugeConfig(value); // Updating the series set with the new config
+
+            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].update(this.seriesSet, this.gaugeConfig); // Updating the chart with the updated series set
+
+            this.chartAssist.update(this.seriesSet);
+          }
+        }, {
+          key: "getGaugeConfig",
+          value: function getGaugeConfig(value) {
+            return {
+              value: value,
+              max: 100
+            };
+          }
+        }]);
+
+        return VerticalGaugeBasicExampleComponent;
+      }();
+
+      VerticalGaugeBasicExampleComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
+        selector: "vertical-gauge-basic-example",
+        template: _raw_loader_vertical_gauge_basic_example_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
+        styles: [_vertical_gauge_basic_example_component_less__WEBPACK_IMPORTED_MODULE_2__["default"]]
+      })], VerticalGaugeBasicExampleComponent);
+      /***/
+    },
+
+    /***/
+    "Jq9P":
+    /*!************************************************************************************************************************************!*\
+      !*** ./examples/components/demo/chart-types/gauge/linear/linear-with-thresholds/linear-gauge-with-thresholds-example.component.ts ***!
+      \************************************************************************************************************************************/
+
+    /*! exports provided: LinearGaugeWithThresholdsExampleComponent */
+
+    /***/
+    function Jq9P(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "LinearGaugeWithThresholdsExampleComponent", function () {
+        return LinearGaugeWithThresholdsExampleComponent;
+      });
+      /* harmony import */
+
+
+      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! tslib */
+      "mrSG");
+      /* harmony import */
+
+
+      var _raw_loader_linear_gauge_with_thresholds_example_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! raw-loader!./linear-gauge-with-thresholds-example.component.html */
+      "3dr6");
+      /* harmony import */
+
+
+      var _linear_gauge_with_thresholds_example_component_less__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! ./linear-gauge-with-thresholds-example.component.less */
+      "E0x5");
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! @angular/core */
+      "fXoL");
+      /* harmony import */
+
+
+      var _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! @nova-ui/charts */
+      "gKry");
+
+      var LinearGaugeWithThresholdsExampleComponent = /*#__PURE__*/function () {
+        function LinearGaugeWithThresholdsExampleComponent() {
+          _classCallCheck(this, LinearGaugeWithThresholdsExampleComponent);
+
+          this.value = 64;
+        }
+
+        _createClass(LinearGaugeWithThresholdsExampleComponent, [{
+          key: "ngOnInit",
+          value: function ngOnInit() {
+            // Generating a standard set of thresholds with warning and critical levels
+            this.thresholds = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].createStandardThresholdsConfig(50, 79);
+            /**
+             * Optionally, instead of using the 'createStandardThresholdsConfig' function as above, you can manually create a thresholds
+             * config object like the following with as many or as few threshold definitions as you need.
+             */
+            // this.thresholds = {
+            //     definitions: {
+            //         [StandardGaugeThresholdId.Warning]: {
+            //             id: StandardGaugeThresholdId.Warning,
+            //             value: 50,
+            //             enabled: true,
+            //             color: StandardGaugeColor.Warning,
+            //         },
+            //         [StandardGaugeThresholdId.Critical]: {
+            //             id: StandardGaugeThresholdId.Critical,
+            //             value: 79,
+            //             enabled: true,
+            //             color: StandardGaugeColor.Critical,
+            //         },
+            //     },
+            //     reversed: false,
+            //     disableMarkers: false,
+            //     markerRadius: StandardGaugeThresholdMarkerRadius.Large,
+            // };
+
+            this.gaugeConfig = this.getGaugeConfig(); // Creating the horizontal gauge
+
+            this.horizontalChartAssist = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].createChartAssist(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Horizontal);
+            this.horizontalSeriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].assembleSeriesSet(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Horizontal);
+            this.horizontalChartAssist.update(this.horizontalSeriesSet); // Creating the vertical gauge
+
+            this.verticalChartAssist = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].createChartAssist(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Vertical);
+            this.verticalSeriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].assembleSeriesSet(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Vertical);
+            this.verticalChartAssist.update(this.verticalSeriesSet);
+          }
+        }, {
+          key: "onValueChange",
+          value: function onValueChange(value) {
+            this.value = value;
+            this.updateGauges();
+          }
+        }, {
+          key: "updateGauges",
+          value: function updateGauges() {
+            this.gaugeConfig = this.getGaugeConfig(); // Updating the horizontal gauge
+
+            this.horizontalSeriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].update(this.horizontalSeriesSet, this.gaugeConfig);
+            this.horizontalChartAssist.update(this.horizontalSeriesSet); // Updating the vertical gauge
+
+            this.verticalSeriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].update(this.verticalSeriesSet, this.gaugeConfig);
+            this.verticalChartAssist.update(this.verticalSeriesSet);
+          }
+        }, {
+          key: "getGaugeConfig",
+          value: function getGaugeConfig() {
+            return {
+              value: this.value,
+              max: 100,
+              // Enabling the thresholds
+              thresholds: this.thresholds
+            };
+          }
+        }]);
+
+        return LinearGaugeWithThresholdsExampleComponent;
+      }();
+
+      LinearGaugeWithThresholdsExampleComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
+        selector: "linear-gauge-with-thresholds-example",
+        template: _raw_loader_linear_gauge_with_thresholds_example_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
+        styles: [_linear_gauge_with_thresholds_example_component_less__WEBPACK_IMPORTED_MODULE_2__["default"]]
+      })], LinearGaugeWithThresholdsExampleComponent);
+      /***/
+    },
+
+    /***/
+    "Npi5":
+    /*!***************************************************************************************************************!*\
+      !*** ./examples/components/demo/chart-types/gauge/donut/donut-basic/donut-gauge-basic-example.component.less ***!
+      \***************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function Npi5(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = ".demo__value-input {\n  margin-right: 40px;\n}\n.demo__chart {\n  height: 200px;\n  width: 200px;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImRvbnV0LWdhdWdlLWJhc2ljLWV4YW1wbGUuY29tcG9uZW50Lmxlc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxrQkFBQTtBQUNKO0FBRUE7RUFDSSxhQUFBO0VBQ0EsWUFBQTtBQUFKIiwiZmlsZSI6ImRvbnV0LWdhdWdlLWJhc2ljLWV4YW1wbGUuY29tcG9uZW50Lmxlc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZGVtb19fdmFsdWUtaW5wdXQge1xuICAgIG1hcmdpbi1yaWdodDogNDBweDtcbn1cblxuLmRlbW9fX2NoYXJ0IHtcbiAgICBoZWlnaHQ6IDIwMHB4O1xuICAgIHdpZHRoOiAyMDBweDtcbn1cbiJdfQ== */";
+      /***/
+    },
+
+    /***/
+    "NqMt":
+    /*!**********************************************************************************************************************************************!*\
+      !*** ./examples/components/demo/chart-types/gauge/linear/linear-thickness-adjustment/linear-gauge-thickness-adjustment-example.component.ts ***!
+      \**********************************************************************************************************************************************/
+
+    /*! exports provided: LinearGaugeThicknessAdjustmentExampleComponent */
+
+    /***/
+    function NqMt(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "LinearGaugeThicknessAdjustmentExampleComponent", function () {
+        return LinearGaugeThicknessAdjustmentExampleComponent;
+      });
+      /* harmony import */
+
+
+      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! tslib */
+      "mrSG");
+      /* harmony import */
+
+
+      var _raw_loader_linear_gauge_thickness_adjustment_example_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! raw-loader!./linear-gauge-thickness-adjustment-example.component.html */
+      "BDzF");
+      /* harmony import */
+
+
+      var _linear_gauge_thickness_adjustment_example_component_less__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! ./linear-gauge-thickness-adjustment-example.component.less */
+      "4TGt");
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! @angular/core */
+      "fXoL");
+      /* harmony import */
+
+
+      var _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! @nova-ui/charts */
+      "gKry");
+
+      var LinearGaugeThicknessAdjustmentExampleComponent = /*#__PURE__*/function () {
+        function LinearGaugeThicknessAdjustmentExampleComponent() {
+          _classCallCheck(this, LinearGaugeThicknessAdjustmentExampleComponent);
+
+          this.value = 64;
+          this.compact = true;
+          this.thresholds = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].createStandardThresholdsConfig(50, 79);
+        }
+
+        _createClass(LinearGaugeThicknessAdjustmentExampleComponent, [{
+          key: "ngOnInit",
+          value: function ngOnInit() {
+            // Setting the initial threshold marker radius
+            this.thresholds.markerRadius = this.compact ? _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["StandardGaugeThresholdMarkerRadius"].Small : _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["StandardGaugeThresholdMarkerRadius"].Large;
+            this.gaugeConfig = this.getGaugeConfig(); // Creating the horizontal gauge
+
+            this.horizontalChartAssist = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].createChartAssist(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Horizontal);
+            this.horizontalSeriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].assembleSeriesSet(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Horizontal);
+            this.horizontalChartAssist.update(this.horizontalSeriesSet); // Creating the vertical gauge
+
+            this.verticalChartAssist = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].createChartAssist(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Vertical);
+            this.verticalSeriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].assembleSeriesSet(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Vertical);
+            this.verticalChartAssist.update(this.verticalSeriesSet);
+          }
+        }, {
+          key: "onValueChange",
+          value: function onValueChange(value) {
+            this.value = value;
+            this.updateGauges();
+          }
+        }, {
+          key: "onCompactChange",
+          value: function onCompactChange(compact) {
+            this.compact = compact; // Adjusting the threshold marker radius
+
+            this.thresholds.markerRadius = this.compact ? _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["StandardGaugeThresholdMarkerRadius"].Small : _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["StandardGaugeThresholdMarkerRadius"].Large;
+            this.updateGauges(); // Updating the thickness
+
+            this.updateThickness();
+          }
+        }, {
+          key: "updateThickness",
+          value: function updateThickness() {
+            // Using standard thicknesses based on whether the gauge is in compact mode
+            var thickness = this.compact ? _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["StandardLinearGaugeThickness"].Small : _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["StandardLinearGaugeThickness"].Large; // Updating the horizontal gauge height with the desired gauge thickness in pixels
+
+            var horizontalGridConfig = this.horizontalChartAssist.chart.getGrid().config();
+            horizontalGridConfig.dimension.height(thickness);
+            this.horizontalChartAssist.chart.updateDimensions(); // Updating the vertical gauge width with the desired gauge thickness in pixels
+
+            var verticalGridConfig = this.verticalChartAssist.chart.getGrid().config();
+            verticalGridConfig.dimension.width(thickness);
+            this.verticalChartAssist.chart.updateDimensions();
+          }
+        }, {
+          key: "updateGauges",
+          value: function updateGauges() {
+            this.gaugeConfig = this.getGaugeConfig(); // Updating the horizontal gauge
+
+            this.horizontalSeriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].update(this.horizontalSeriesSet, this.gaugeConfig);
+            this.horizontalChartAssist.update(this.horizontalSeriesSet); // Updating the vertical gauge
+
+            this.verticalSeriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].update(this.verticalSeriesSet, this.gaugeConfig);
+            this.verticalChartAssist.update(this.verticalSeriesSet);
+          }
+        }, {
+          key: "getGaugeConfig",
+          value: function getGaugeConfig() {
+            return {
+              value: this.value,
+              max: 100,
+              thresholds: this.thresholds,
+              // Setting the initial thickness based on whether the gauge is in compact mode
+              // The 'createChartAssist' function uses this to configure the grid's dimensions
+              linearThickness: this.compact ? _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["StandardLinearGaugeThickness"].Small : _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["StandardLinearGaugeThickness"].Large
+            };
+          }
+        }]);
+
+        return LinearGaugeThicknessAdjustmentExampleComponent;
+      }();
+
+      LinearGaugeThicknessAdjustmentExampleComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
+        selector: "linear-gauge-thickness-adjustment-example",
+        template: _raw_loader_linear_gauge_thickness_adjustment_example_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
+        styles: [_linear_gauge_thickness_adjustment_example_component_less__WEBPACK_IMPORTED_MODULE_2__["default"]]
+      })], LinearGaugeThicknessAdjustmentExampleComponent);
       /***/
     },
 
@@ -348,12 +881,16 @@
         }
 
         _createClass(VerticalGaugeTesterComponent, [{
+          key: "ngOnChanges",
+          value: function ngOnChanges(changes) {
+            if (changes.gaugeConfig && !changes.gaugeConfig.firstChange) {
+              this.chartAssist.update(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].update(this.seriesSet, this.gaugeConfig));
+            }
+          }
+        }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var grid = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["XYGrid"](Object(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["linearGaugeGridConfig"])(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Vertical));
-            var chart = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["Chart"](grid);
-            this.chartAssist = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["ChartAssist"](chart, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["stack"]);
-            this.chartAssist.chart.addPlugin(new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["LinearGaugeLabelsPlugin"]());
+            this.chartAssist = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].createChartAssist(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Vertical);
             this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].assembleSeriesSet(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Vertical);
             this.chartAssist.update(this.seriesSet);
           }
@@ -372,6 +909,126 @@
         template: _raw_loader_vertical_gauge_tester_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
         styles: [_vertical_gauge_tester_component_less__WEBPACK_IMPORTED_MODULE_2__["default"]]
       })], VerticalGaugeTesterComponent);
+      /***/
+    },
+
+    /***/
+    "RsPz":
+    /*!*************************************************************************************************************************************************!*\
+      !*** ./examples/components/demo/chart-types/gauge/donut/donut-with-threshold-toggling/donut-gauge-with-threshold-toggling-example.component.ts ***!
+      \*************************************************************************************************************************************************/
+
+    /*! exports provided: DonutGaugeWithThresholdTogglingExampleComponent */
+
+    /***/
+    function RsPz(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "DonutGaugeWithThresholdTogglingExampleComponent", function () {
+        return DonutGaugeWithThresholdTogglingExampleComponent;
+      });
+      /* harmony import */
+
+
+      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! tslib */
+      "mrSG");
+      /* harmony import */
+
+
+      var _raw_loader_donut_gauge_with_threshold_toggling_example_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! raw-loader!./donut-gauge-with-threshold-toggling-example.component.html */
+      "1oNZ");
+      /* harmony import */
+
+
+      var _donut_gauge_with_threshold_toggling_example_component_less__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! ./donut-gauge-with-threshold-toggling-example.component.less */
+      "6k7h");
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! @angular/core */
+      "fXoL");
+      /* harmony import */
+
+
+      var _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! @nova-ui/charts */
+      "gKry");
+
+      var DonutGaugeWithThresholdTogglingExampleComponent = /*#__PURE__*/function () {
+        function DonutGaugeWithThresholdTogglingExampleComponent() {
+          _classCallCheck(this, DonutGaugeWithThresholdTogglingExampleComponent);
+
+          this.value = 178;
+          this.warningEnabled = true;
+          this.criticalEnabled = true; // Generating a standard set of thresholds with warning and critical levels
+
+          this.thresholds = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].createStandardThresholdsConfig(100, 158);
+        }
+
+        _createClass(DonutGaugeWithThresholdTogglingExampleComponent, [{
+          key: "ngOnInit",
+          value: function ngOnInit() {
+            this.gaugeConfig = this.getGaugeConfig();
+            this.chartAssist = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].createChartAssist(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Donut);
+            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].assembleSeriesSet(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Donut);
+            this.chartAssist.update(this.seriesSet);
+          }
+        }, {
+          key: "onValueChange",
+          value: function onValueChange(value) {
+            this.value = value;
+            this.updateGauge();
+          }
+        }, {
+          key: "onWarningEnabledChange",
+          value: function onWarningEnabledChange(enabled) {
+            this.warningEnabled = enabled; // Enabling or disabling the warning threshold
+
+            this.thresholds.definitions[_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["StandardGaugeThresholdId"].Warning].enabled = this.warningEnabled;
+            this.updateGauge();
+          }
+        }, {
+          key: "onCriticalEnabledChange",
+          value: function onCriticalEnabledChange(enabled) {
+            this.criticalEnabled = enabled; // Enabling or disabling the critical threshold
+
+            this.thresholds.definitions[_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["StandardGaugeThresholdId"].Critical].enabled = this.criticalEnabled;
+            this.updateGauge();
+          }
+        }, {
+          key: "updateGauge",
+          value: function updateGauge() {
+            this.gaugeConfig = this.getGaugeConfig();
+            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].update(this.seriesSet, this.gaugeConfig);
+            this.chartAssist.update(this.seriesSet);
+          }
+        }, {
+          key: "getGaugeConfig",
+          value: function getGaugeConfig() {
+            return {
+              value: this.value,
+              max: 200,
+              thresholds: this.thresholds
+            };
+          }
+        }]);
+
+        return DonutGaugeWithThresholdTogglingExampleComponent;
+      }();
+
+      DonutGaugeWithThresholdTogglingExampleComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
+        selector: "donut-gauge-with-threshold-toggling-example",
+        template: _raw_loader_donut_gauge_with_threshold_toggling_example_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
+        styles: [_donut_gauge_with_threshold_toggling_example_component_less__WEBPACK_IMPORTED_MODULE_2__["default"]]
+      })], DonutGaugeWithThresholdTogglingExampleComponent);
       /***/
     },
 
@@ -425,22 +1082,22 @@
     },
 
     /***/
-    "W9mO":
-    /*!***********************************************************************************************************************!*\
-      !*** ./examples/components/demo/chart-types/gauge/donut-with-content/donut-gauge-with-content-example.component.less ***!
-      \***********************************************************************************************************************/
+    "TPJA":
+    /*!*****************************************************************************************************************************************************************!*\
+      !*** ./examples/components/demo/chart-types/gauge/donut/donut-with-threshold-marker-toggling/donut-gauge-with-threshold-marker-toggling-example.component.less ***!
+      \*****************************************************************************************************************************************************************/
 
     /*! exports provided: default */
 
     /***/
-    function W9mO(module, __webpack_exports__, __webpack_require__) {
+    function TPJA(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = ".chart {\n  height: 250px;\n  width: 250px;\n}\n.content-label {\n  line-height: 14px;\n  font-size: 11px;\n  font-weight: 400;\n  text-transform: uppercase;\n  color: var(--nui-color-text-secondary);\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImRvbnV0LWdhdWdlLXdpdGgtY29udGVudC1leGFtcGxlLmNvbXBvbmVudC5sZXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUVBO0VBQ0ksYUFBQTtFQUNBLFlBQUE7QUFESjtBQUlBO0VBQ0ksaUJBQUE7RUFDQSxlQUFBO0VBQ0EsZ0JBQUE7RUFDQSx5QkFBQTtFQUNBLHNDQUFBO0FBRkoiLCJmaWxlIjoiZG9udXQtZ2F1Z2Utd2l0aC1jb250ZW50LWV4YW1wbGUuY29tcG9uZW50Lmxlc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0IFwiQG5vdmEtdWkvYml0cy9zZGsvbGVzcy9udWktZnJhbWV3b3JrLXZhcmlhYmxlc1wiO1xuXG4uY2hhcnQge1xuICAgIGhlaWdodDogMjUwcHg7XG4gICAgd2lkdGg6IDI1MHB4O1xufVxuXG4uY29udGVudC1sYWJlbCB7XG4gICAgbGluZS1oZWlnaHQ6IDE0cHg7XG4gICAgZm9udC1zaXplOiAxMXB4O1xuICAgIGZvbnQtd2VpZ2h0OiA0MDA7XG4gICAgdGV4dC10cmFuc2Zvcm06IHVwcGVyY2FzZTtcbiAgICBjb2xvcjogdmFyKC0tbnVpLWNvbG9yLXRleHQtc2Vjb25kYXJ5KTtcbn1cbiJdfQ== */";
+      __webpack_exports__["default"] = ".demo__chart {\n  height: 250px;\n  width: 250px;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImRvbnV0LWdhdWdlLXdpdGgtdGhyZXNob2xkLW1hcmtlci10b2dnbGluZy1leGFtcGxlLmNvbXBvbmVudC5sZXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksYUFBQTtFQUNBLFlBQUE7QUFDSiIsImZpbGUiOiJkb251dC1nYXVnZS13aXRoLXRocmVzaG9sZC1tYXJrZXItdG9nZ2xpbmctZXhhbXBsZS5jb21wb25lbnQubGVzcyIsInNvdXJjZXNDb250ZW50IjpbIi5kZW1vX19jaGFydCB7XG4gICAgaGVpZ2h0OiAyNTBweDtcbiAgICB3aWR0aDogMjUwcHg7XG59XG4iXX0= */";
       /***/
     },
 
@@ -481,14 +1138,29 @@
       var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! @angular/core */
       "fXoL");
+      /* harmony import */
+
+
+      var _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! @nova-ui/charts */
+      "gKry");
+      /* harmony import */
+
+
+      var lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! lodash/cloneDeep */
+      "BkRI");
+      /* harmony import */
+
+
+      var lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_4__);
 
       var GaugeVisualTestComponent = /*#__PURE__*/function () {
         function GaugeVisualTestComponent() {
           _classCallCheck(this, GaugeVisualTestComponent);
 
-          this.lowValue = 42;
-          this.mediumValue = 130;
-          this.highValue = 178;
+          this.warningEnabled = true;
+          this.gaugeConfigs = [this.getGaugeConfig(42), this.getGaugeConfig(130), this.getGaugeConfig(178)];
         }
 
         _createClass(GaugeVisualTestComponent, [{
@@ -497,9 +1169,22 @@
             return {
               value: value,
               max: 200,
-              thresholds: [100, 158],
-              enableThresholdMarkers: true
+              thresholds: _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["GaugeUtil"].createStandardThresholdsConfig(100, 158)
             };
+          }
+        }, {
+          key: "onWarningEnabledChange",
+          value: function onWarningEnabledChange(enabled) {
+            var _this = this;
+
+            this.warningEnabled = enabled;
+            this.gaugeConfigs = this.gaugeConfigs.map(function (c) {
+              var _a;
+
+              var config = lodash_cloneDeep__WEBPACK_IMPORTED_MODULE_4___default()(c);
+              ((_a = config.thresholds) === null || _a === void 0 ? void 0 : _a.definitions)[_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["StandardGaugeThresholdId"].Warning].enabled = _this.warningEnabled;
+              return config;
+            });
           }
         }]);
 
@@ -510,6 +1195,46 @@
         selector: "gauge-visual-test",
         template: _raw_loader_gauge_visual_test_component_html__WEBPACK_IMPORTED_MODULE_1__["default"]
       })], GaugeVisualTestComponent);
+      /***/
+    },
+
+    /***/
+    "bxQ0":
+    /*!**********************************************************************************************************************!*\
+      !*** ./examples/components/demo/chart-types/gauge/linear/vertical-basic/vertical-gauge-basic-example.component.less ***!
+      \**********************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function bxQ0(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = ".demo__value-input {\n  margin-right: 40px;\n}\n.demo__chart {\n  height: 200px;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInZlcnRpY2FsLWdhdWdlLWJhc2ljLWV4YW1wbGUuY29tcG9uZW50Lmxlc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxrQkFBQTtBQUNKO0FBR0E7RUFDSSxhQUFBO0FBREoiLCJmaWxlIjoidmVydGljYWwtZ2F1Z2UtYmFzaWMtZXhhbXBsZS5jb21wb25lbnQubGVzcyIsInNvdXJjZXNDb250ZW50IjpbIi5kZW1vX192YWx1ZS1pbnB1dCB7XG4gICAgbWFyZ2luLXJpZ2h0OiA0MHB4O1xufVxuXG4vLyBTZXR0aW5nIHRoZSBoZWlnaHQgb24gdGhlIGNoYXJ0IGVsZW1lbnQgZGV0ZXJtaW5lcyB0aGUgdmVydGljYWwgbGVuZ3RoIG9mIHRoZSBnYXVnZVxuLmRlbW9fX2NoYXJ0IHtcbiAgICBoZWlnaHQ6IDIwMHB4O1xufVxuIl19 */";
+      /***/
+    },
+
+    /***/
+    "d39z":
+    /*!***********************************************************************************************************************************!*\
+      !*** ./examples/components/demo/chart-types/gauge/donut/donut-with-thresholds/donut-gauge-with-thresholds-example.component.less ***!
+      \***********************************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function d39z(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = ".demo__chart {\n  height: 250px;\n  width: 250px;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImRvbnV0LWdhdWdlLXdpdGgtdGhyZXNob2xkcy1leGFtcGxlLmNvbXBvbmVudC5sZXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksYUFBQTtFQUNBLFlBQUE7QUFDSiIsImZpbGUiOiJkb251dC1nYXVnZS13aXRoLXRocmVzaG9sZHMtZXhhbXBsZS5jb21wb25lbnQubGVzcyIsInNvdXJjZXNDb250ZW50IjpbIi5kZW1vX19jaGFydCB7XG4gICAgaGVpZ2h0OiAyNTBweDtcbiAgICB3aWR0aDogMjUwcHg7XG59XG4iXX0= */";
       /***/
     },
 
@@ -569,12 +1294,16 @@
         }
 
         _createClass(HorizontalGaugeTesterComponent, [{
+          key: "ngOnChanges",
+          value: function ngOnChanges(changes) {
+            if (changes.gaugeConfig && !changes.gaugeConfig.firstChange) {
+              this.chartAssist.update(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].update(this.seriesSet, this.gaugeConfig));
+            }
+          }
+        }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var grid = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["XYGrid"](Object(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["linearGaugeGridConfig"])(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Horizontal));
-            var chart = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["Chart"](grid);
-            this.chartAssist = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["ChartAssist"](chart, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["stack"]);
-            this.chartAssist.chart.addPlugin(new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["LinearGaugeLabelsPlugin"]());
+            this.chartAssist = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].createChartAssist(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Horizontal);
             this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].assembleSeriesSet(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Horizontal);
             this.chartAssist.update(this.seriesSet);
           }
@@ -597,22 +1326,443 @@
     },
 
     /***/
-    "iHp2":
-    /*!*********************************************************************************************************!*\
-      !*** ./examples/components/demo/chart-types/gauge/donut-basic/donut-gauge-basic-example.component.less ***!
-      \*********************************************************************************************************/
+    "gpsY":
+    /*!*****************************************************************************************************************************************************!*\
+      !*** ./examples/components/demo/chart-types/gauge/donut/donut-without-threshold-markers/donut-gauge-without-threshold-markers-example.component.ts ***!
+      \*****************************************************************************************************************************************************/
+
+    /*! exports provided: DonutGaugeWithoutThresholdMarkersExampleComponent */
+
+    /***/
+    function gpsY(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "DonutGaugeWithoutThresholdMarkersExampleComponent", function () {
+        return DonutGaugeWithoutThresholdMarkersExampleComponent;
+      });
+      /* harmony import */
+
+
+      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! tslib */
+      "mrSG");
+      /* harmony import */
+
+
+      var _raw_loader_donut_gauge_without_threshold_markers_example_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! raw-loader!./donut-gauge-without-threshold-markers-example.component.html */
+      "jp58");
+      /* harmony import */
+
+
+      var _donut_gauge_without_threshold_markers_example_component_less__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! ./donut-gauge-without-threshold-markers-example.component.less */
+      "swUS");
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! @angular/core */
+      "fXoL");
+      /* harmony import */
+
+
+      var _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! @nova-ui/charts */
+      "gKry");
+
+      var DonutGaugeWithoutThresholdMarkersExampleComponent = /*#__PURE__*/function () {
+        function DonutGaugeWithoutThresholdMarkersExampleComponent() {
+          _classCallCheck(this, DonutGaugeWithoutThresholdMarkersExampleComponent);
+
+          this.value = 128;
+        }
+
+        _createClass(DonutGaugeWithoutThresholdMarkersExampleComponent, [{
+          key: "ngOnInit",
+          value: function ngOnInit() {
+            // Generating a standard set of thresholds with warning and critical levels
+            this.thresholds = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].createStandardThresholdsConfig(100, 158); // Turning off the markers
+
+            this.thresholds.disableMarkers = true;
+            this.gaugeConfig = this.getGaugeConfig();
+            this.chartAssist = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].createChartAssist(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Donut);
+            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].assembleSeriesSet(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Donut);
+            this.chartAssist.update(this.seriesSet);
+          }
+        }, {
+          key: "onValueChange",
+          value: function onValueChange(value) {
+            this.value = value;
+            this.updateGauge();
+          }
+        }, {
+          key: "updateGauge",
+          value: function updateGauge() {
+            this.gaugeConfig = this.getGaugeConfig();
+            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].update(this.seriesSet, this.gaugeConfig);
+            this.chartAssist.update(this.seriesSet);
+          }
+        }, {
+          key: "getGaugeConfig",
+          value: function getGaugeConfig() {
+            return {
+              value: this.value,
+              max: 200,
+              thresholds: this.thresholds
+            };
+          }
+        }]);
+
+        return DonutGaugeWithoutThresholdMarkersExampleComponent;
+      }();
+
+      DonutGaugeWithoutThresholdMarkersExampleComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
+        selector: "donut-gauge-without-threshold-markers-example",
+        template: _raw_loader_donut_gauge_without_threshold_markers_example_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
+        styles: [_donut_gauge_without_threshold_markers_example_component_less__WEBPACK_IMPORTED_MODULE_2__["default"]]
+      })], DonutGaugeWithoutThresholdMarkersExampleComponent);
+      /***/
+    },
+
+    /***/
+    "j2WA":
+    /*!***************************************************************************************************************************************************************!*\
+      !*** ./examples/components/demo/chart-types/gauge/donut/donut-with-threshold-marker-toggling/donut-gauge-with-threshold-marker-toggling-example.component.ts ***!
+      \***************************************************************************************************************************************************************/
+
+    /*! exports provided: DonutGaugeWithThresholdMarkerTogglingExampleComponent */
+
+    /***/
+    function j2WA(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "DonutGaugeWithThresholdMarkerTogglingExampleComponent", function () {
+        return DonutGaugeWithThresholdMarkerTogglingExampleComponent;
+      });
+      /* harmony import */
+
+
+      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! tslib */
+      "mrSG");
+      /* harmony import */
+
+
+      var _raw_loader_donut_gauge_with_threshold_marker_toggling_example_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! raw-loader!./donut-gauge-with-threshold-marker-toggling-example.component.html */
+      "TW+J");
+      /* harmony import */
+
+
+      var _donut_gauge_with_threshold_marker_toggling_example_component_less__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! ./donut-gauge-with-threshold-marker-toggling-example.component.less */
+      "TPJA");
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! @angular/core */
+      "fXoL");
+      /* harmony import */
+
+
+      var _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! @nova-ui/charts */
+      "gKry");
+
+      var DonutGaugeWithThresholdMarkerTogglingExampleComponent = /*#__PURE__*/function () {
+        function DonutGaugeWithThresholdMarkerTogglingExampleComponent() {
+          _classCallCheck(this, DonutGaugeWithThresholdMarkerTogglingExampleComponent);
+
+          this.value = 128;
+          this.markersEnabled = true;
+          this.labelsPlugin = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["DonutGaugeLabelsPlugin"](); // Generating a standard set of thresholds with warning and critical levels
+
+          this.thresholds = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].createStandardThresholdsConfig(100, 158);
+        }
+
+        _createClass(DonutGaugeWithThresholdMarkerTogglingExampleComponent, [{
+          key: "ngOnInit",
+          value: function ngOnInit() {
+            // Setting up the gauge config
+            this.gaugeConfig = this.getGaugeConfig(); // Setting up the chart assist with a local instance of the labels plugin for direct control of the label display
+
+            this.chartAssist = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].createChartAssist(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Donut, this.labelsPlugin); // Assembling the series
+
+            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].assembleSeriesSet(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Donut); // Updating the chart
+
+            this.chartAssist.update(this.seriesSet);
+          }
+        }, {
+          key: "onValueChange",
+          value: function onValueChange(value) {
+            this.value = value;
+            this.updateGauge();
+          }
+        }, {
+          key: "onMarkersEnabledChange",
+          value: function onMarkersEnabledChange(enabled) {
+            this.markersEnabled = enabled; // Enabling or disabling the threshold markers
+
+            this.thresholds.disableMarkers = !this.markersEnabled; // Enabling or disabling the threshold labels
+
+            this.labelsPlugin.config.disableThresholdLabels = !this.markersEnabled;
+            this.updateGauge();
+          }
+        }, {
+          key: "updateGauge",
+          value: function updateGauge() {
+            this.gaugeConfig = this.getGaugeConfig();
+            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].update(this.seriesSet, this.gaugeConfig);
+            this.chartAssist.update(this.seriesSet);
+          }
+        }, {
+          key: "getGaugeConfig",
+          value: function getGaugeConfig() {
+            return {
+              value: this.value,
+              max: 200,
+              thresholds: this.thresholds
+            };
+          }
+        }]);
+
+        return DonutGaugeWithThresholdMarkerTogglingExampleComponent;
+      }();
+
+      DonutGaugeWithThresholdMarkerTogglingExampleComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
+        selector: "donut-gauge-with-threshold-marker-toggling-example",
+        template: _raw_loader_donut_gauge_with_threshold_marker_toggling_example_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
+        styles: [_donut_gauge_with_threshold_marker_toggling_example_component_less__WEBPACK_IMPORTED_MODULE_2__["default"]]
+      })], DonutGaugeWithThresholdMarkerTogglingExampleComponent);
+      /***/
+    },
+
+    /***/
+    "lqKu":
+    /*!*************************************************************************************************************************************************************!*\
+      !*** ./examples/components/demo/chart-types/gauge/donut/donut-with-custom-threshold-labels/donut-gauge-with-custom-threshold-labels-example.component.less ***!
+      \*************************************************************************************************************************************************************/
 
     /*! exports provided: default */
 
     /***/
-    function iHp2(module, __webpack_exports__, __webpack_require__) {
+    function lqKu(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = ".chart {\n  height: 200px;\n  width: 200px;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImRvbnV0LWdhdWdlLWJhc2ljLWV4YW1wbGUuY29tcG9uZW50Lmxlc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxhQUFBO0VBQ0EsWUFBQTtBQUNKIiwiZmlsZSI6ImRvbnV0LWdhdWdlLWJhc2ljLWV4YW1wbGUuY29tcG9uZW50Lmxlc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuY2hhcnQge1xuICAgIGhlaWdodDogMjAwcHg7XG4gICAgd2lkdGg6IDIwMHB4O1xufVxuIl19 */";
+      __webpack_exports__["default"] = ".demo__chart {\n  height: 250px;\n  width: 250px;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImRvbnV0LWdhdWdlLXdpdGgtY3VzdG9tLXRocmVzaG9sZC1sYWJlbHMtZXhhbXBsZS5jb21wb25lbnQubGVzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGFBQUE7RUFDQSxZQUFBO0FBQ0oiLCJmaWxlIjoiZG9udXQtZ2F1Z2Utd2l0aC1jdXN0b20tdGhyZXNob2xkLWxhYmVscy1leGFtcGxlLmNvbXBvbmVudC5sZXNzIiwic291cmNlc0NvbnRlbnQiOlsiLmRlbW9fX2NoYXJ0IHtcbiAgICBoZWlnaHQ6IDI1MHB4O1xuICAgIHdpZHRoOiAyNTBweDtcbn1cbiJdfQ== */";
+      /***/
+    },
+
+    /***/
+    "mSgw":
+    /*!***********************************************************************************************************************************************************!*\
+      !*** ./examples/components/demo/chart-types/gauge/donut/donut-with-custom-threshold-labels/donut-gauge-with-custom-threshold-labels-example.component.ts ***!
+      \***********************************************************************************************************************************************************/
+
+    /*! exports provided: DonutGaugeWithCustomThresholdLabelsExampleComponent */
+
+    /***/
+    function mSgw(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "DonutGaugeWithCustomThresholdLabelsExampleComponent", function () {
+        return DonutGaugeWithCustomThresholdLabelsExampleComponent;
+      });
+      /* harmony import */
+
+
+      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! tslib */
+      "mrSG");
+      /* harmony import */
+
+
+      var _raw_loader_donut_gauge_with_custom_threshold_labels_example_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! raw-loader!./donut-gauge-with-custom-threshold-labels-example.component.html */
+      "G2WF");
+      /* harmony import */
+
+
+      var _donut_gauge_with_custom_threshold_labels_example_component_less__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! ./donut-gauge-with-custom-threshold-labels-example.component.less */
+      "lqKu");
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! @angular/core */
+      "fXoL");
+      /* harmony import */
+
+
+      var _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! @nova-ui/charts */
+      "gKry");
+
+      var DonutGaugeWithCustomThresholdLabelsExampleComponent = /*#__PURE__*/function () {
+        function DonutGaugeWithCustomThresholdLabelsExampleComponent() {
+          _classCallCheck(this, DonutGaugeWithCustomThresholdLabelsExampleComponent);
+
+          this.thresholds = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].createStandardThresholdsConfig(50, 75);
+        }
+
+        _createClass(DonutGaugeWithCustomThresholdLabelsExampleComponent, [{
+          key: "ngOnInit",
+          value: function ngOnInit() {
+            var initialValue = 40;
+            this.gaugeConfig = this.getGaugeConfig(initialValue);
+            this.chartAssist = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].createChartAssist(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Donut);
+            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].assembleSeriesSet(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Donut);
+            this.chartAssist.update(this.seriesSet);
+          }
+        }, {
+          key: "onValueChange",
+          value: function onValueChange(value) {
+            this.gaugeConfig = this.getGaugeConfig(value);
+            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].update(this.seriesSet, this.gaugeConfig);
+            this.chartAssist.update(this.seriesSet);
+          }
+        }, {
+          key: "getGaugeConfig",
+          value: function getGaugeConfig(value) {
+            return {
+              value: value,
+              max: 100,
+              thresholds: this.thresholds,
+              // Setting a custom label formatter
+              labels: {
+                formatter: function formatter(d) {
+                  return "".concat(d, "%");
+                }
+              }
+            };
+          }
+        }]);
+
+        return DonutGaugeWithCustomThresholdLabelsExampleComponent;
+      }();
+
+      DonutGaugeWithCustomThresholdLabelsExampleComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
+        selector: "donut-gauge-with-custom-threshold-labels-example",
+        template: _raw_loader_donut_gauge_with_custom_threshold_labels_example_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
+        styles: [_donut_gauge_with_custom_threshold_labels_example_component_less__WEBPACK_IMPORTED_MODULE_2__["default"]]
+      })], DonutGaugeWithCustomThresholdLabelsExampleComponent);
+      /***/
+    },
+
+    /***/
+    "opha":
+    /*!***************************************************************************************************************************!*\
+      !*** ./examples/components/demo/chart-types/gauge/donut/donut-with-content/donut-gauge-with-content-example.component.ts ***!
+      \***************************************************************************************************************************/
+
+    /*! exports provided: DonutGaugeWithContentExampleComponent */
+
+    /***/
+    function opha(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "DonutGaugeWithContentExampleComponent", function () {
+        return DonutGaugeWithContentExampleComponent;
+      });
+      /* harmony import */
+
+
+      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! tslib */
+      "mrSG");
+      /* harmony import */
+
+
+      var _raw_loader_donut_gauge_with_content_example_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! raw-loader!./donut-gauge-with-content-example.component.html */
+      "dXgp");
+      /* harmony import */
+
+
+      var _donut_gauge_with_content_example_component_less__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! ./donut-gauge-with-content-example.component.less */
+      "FQjS");
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! @angular/core */
+      "fXoL");
+      /* harmony import */
+
+
+      var _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! @nova-ui/charts */
+      "gKry");
+
+      var DonutGaugeWithContentExampleComponent = /*#__PURE__*/function () {
+        function DonutGaugeWithContentExampleComponent() {
+          _classCallCheck(this, DonutGaugeWithContentExampleComponent);
+
+          this.thresholds = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].createStandardThresholdsConfig(100, 158);
+        }
+
+        _createClass(DonutGaugeWithContentExampleComponent, [{
+          key: "ngOnInit",
+          value: function ngOnInit() {
+            var initialValue = 128;
+            this.gaugeConfig = this.getGaugeConfig(initialValue);
+            this.chartAssist = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].createChartAssist(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Donut); // Adding the plugin for the donut inner content
+
+            this.contentPlugin = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["ChartDonutContentPlugin"]();
+            this.chartAssist.chart.addPlugin(this.contentPlugin);
+            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].assembleSeriesSet(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Donut);
+            this.chartAssist.update(this.seriesSet);
+          }
+        }, {
+          key: "onValueChange",
+          value: function onValueChange(value) {
+            this.gaugeConfig = this.getGaugeConfig(value);
+            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].update(this.seriesSet, this.gaugeConfig);
+            this.chartAssist.update(this.seriesSet);
+          }
+        }, {
+          key: "getGaugeConfig",
+          value: function getGaugeConfig(value) {
+            return {
+              value: value,
+              max: 200,
+              thresholds: this.thresholds
+            };
+          }
+        }]);
+
+        return DonutGaugeWithContentExampleComponent;
+      }();
+
+      DonutGaugeWithContentExampleComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
+        selector: "donut-gauge-with-content-example",
+        template: _raw_loader_donut_gauge_with_content_example_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
+        styles: [_donut_gauge_with_content_example_component_less__WEBPACK_IMPORTED_MODULE_2__["default"]]
+      })], DonutGaugeWithContentExampleComponent);
       /***/
     },
 
@@ -633,6 +1783,26 @@
 
 
       __webpack_exports__["default"] = ".chart {\n  height: 200px;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInZlcnRpY2FsLWdhdWdlLXRlc3Rlci5jb21wb25lbnQubGVzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFFQTtFQUNJLGFBQUE7QUFESiIsImZpbGUiOiJ2ZXJ0aWNhbC1nYXVnZS10ZXN0ZXIuY29tcG9uZW50Lmxlc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0IFwiQG5vdmEtdWkvYml0cy9zZGsvbGVzcy9udWktZnJhbWV3b3JrLXZhcmlhYmxlc1wiO1xuXG4uY2hhcnQge1xuICAgIGhlaWdodDogMjAwcHg7XG59XG4iXX0= */";
+      /***/
+    },
+
+    /***/
+    "swUS":
+    /*!*******************************************************************************************************************************************************!*\
+      !*** ./examples/components/demo/chart-types/gauge/donut/donut-without-threshold-markers/donut-gauge-without-threshold-markers-example.component.less ***!
+      \*******************************************************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function swUS(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = ".demo__value-input {\n  margin-right: 40px;\n}\n.demo__chart {\n  height: 190px;\n  width: 190px;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImRvbnV0LWdhdWdlLXdpdGhvdXQtdGhyZXNob2xkLW1hcmtlcnMtZXhhbXBsZS5jb21wb25lbnQubGVzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGtCQUFBO0FBQ0o7QUFFQTtFQUNJLGFBQUE7RUFDQSxZQUFBO0FBQUoiLCJmaWxlIjoiZG9udXQtZ2F1Z2Utd2l0aG91dC10aHJlc2hvbGQtbWFya2Vycy1leGFtcGxlLmNvbXBvbmVudC5sZXNzIiwic291cmNlc0NvbnRlbnQiOlsiLmRlbW9fX3ZhbHVlLWlucHV0IHtcbiAgICBtYXJnaW4tcmlnaHQ6IDQwcHg7XG59XG5cbi5kZW1vX19jaGFydCB7XG4gICAgaGVpZ2h0OiAxOTBweDtcbiAgICB3aWR0aDogMTkwcHg7XG59XG4iXX0= */";
       /***/
     },
 
@@ -694,12 +1864,18 @@
         }
 
         _createClass(DonutGaugeTesterComponent, [{
+          key: "ngOnChanges",
+          value: function ngOnChanges(changes) {
+            if (changes.gaugeConfig && !changes.gaugeConfig.firstChange) {
+              this.chartAssist.update(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].update(this.seriesSet, this.gaugeConfig));
+            }
+          }
+        }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            this.chartAssist = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["ChartAssist"](new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["Chart"](Object(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["radialGrid"])()), _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["radial"]);
+            this.chartAssist = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].createChartAssist(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Donut);
             this.contentPlugin = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["ChartDonutContentPlugin"]();
             this.chartAssist.chart.addPlugin(this.contentPlugin);
-            this.chartAssist.chart.addPlugin(new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["DonutGaugeLabelsPlugin"]());
             this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].assembleSeriesSet(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Donut);
             this.chartAssist.update(this.seriesSet);
           }
@@ -725,107 +1901,22 @@
     },
 
     /***/
-    "vGhi":
-    /*!*****************************************************************************************************************************************!*\
-      !*** ./examples/components/demo/chart-types/gauge/donut-with-threshold-markers/donut-gauge-with-threshold-markers-example.component.ts ***!
-      \*****************************************************************************************************************************************/
+    "ucP/":
+    /*!**************************************************************************************************************************!*\
+      !*** ./examples/components/demo/chart-types/gauge/linear/horizontal-basic/horizontal-gauge-basic-example.component.less ***!
+      \**************************************************************************************************************************/
 
-    /*! exports provided: DonutGaugeWithThresholdMarkersExampleComponent */
+    /*! exports provided: default */
 
     /***/
-    function vGhi(module, __webpack_exports__, __webpack_require__) {
+    function ucP(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
-      /* harmony export (binding) */
+      /* harmony default export */
 
 
-      __webpack_require__.d(__webpack_exports__, "DonutGaugeWithThresholdMarkersExampleComponent", function () {
-        return DonutGaugeWithThresholdMarkersExampleComponent;
-      });
-      /* harmony import */
-
-
-      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! tslib */
-      "mrSG");
-      /* harmony import */
-
-
-      var _raw_loader_donut_gauge_with_threshold_markers_example_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-      /*! raw-loader!./donut-gauge-with-threshold-markers-example.component.html */
-      "yMj0");
-      /* harmony import */
-
-
-      var _donut_gauge_with_threshold_markers_example_component_less__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-      /*! ./donut-gauge-with-threshold-markers-example.component.less */
-      "y8io");
-      /* harmony import */
-
-
-      var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-      /*! @angular/core */
-      "fXoL");
-      /* harmony import */
-
-
-      var _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-      /*! @nova-ui/charts */
-      "gKry");
-
-      var DonutGaugeWithThresholdMarkersExampleComponent = /*#__PURE__*/function () {
-        function DonutGaugeWithThresholdMarkersExampleComponent() {
-          _classCallCheck(this, DonutGaugeWithThresholdMarkersExampleComponent);
-        }
-
-        _createClass(DonutGaugeWithThresholdMarkersExampleComponent, [{
-          key: "ngOnInit",
-          value: function ngOnInit() {
-            // Setting up the gauge config
-            var initialValue = 128;
-            this.gaugeConfig = this.getGaugeConfig(initialValue); // Creating the chart
-
-            this.chartAssist = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["ChartAssist"](new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["Chart"](Object(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["radialGrid"])()), _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["radial"]); // Adding the labels plugin
-
-            this.chartAssist.chart.addPlugin(new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["DonutGaugeLabelsPlugin"]()); // Assembling the series set
-
-            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].assembleSeriesSet(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Donut); // Updating the chart
-
-            this.chartAssist.update(this.seriesSet);
-          }
-        }, {
-          key: "onValueChange",
-          value: function onValueChange(value) {
-            // Updating the gauge config
-            this.gaugeConfig = this.getGaugeConfig(value); // Updating the series set with the new config
-
-            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].updateSeriesSet(this.seriesSet, this.gaugeConfig); // Updating the chart with the updated series set
-
-            this.chartAssist.update(this.seriesSet);
-          }
-        }, {
-          key: "getGaugeConfig",
-          value: function getGaugeConfig(value) {
-            return {
-              value: value,
-              max: 200,
-              // Enabling the thresholds
-              thresholds: [100, 158],
-              // Enabling the threshold markers
-              enableThresholdMarkers: true
-            };
-          }
-        }]);
-
-        return DonutGaugeWithThresholdMarkersExampleComponent;
-      }();
-
-      DonutGaugeWithThresholdMarkersExampleComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
-        selector: "donut-gauge-with-threshold-markers-example",
-        template: _raw_loader_donut_gauge_with_threshold_markers_example_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
-        styles: [_donut_gauge_with_threshold_markers_example_component_less__WEBPACK_IMPORTED_MODULE_2__["default"]]
-      })], DonutGaugeWithThresholdMarkersExampleComponent);
+      __webpack_exports__["default"] = ".demo__value-input {\n  margin-right: 40px;\n}\n.demo__chart {\n  width: 200px;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImhvcml6b250YWwtZ2F1Z2UtYmFzaWMtZXhhbXBsZS5jb21wb25lbnQubGVzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGtCQUFBO0FBQ0o7QUFHQTtFQUNJLFlBQUE7QUFESiIsImZpbGUiOiJob3Jpem9udGFsLWdhdWdlLWJhc2ljLWV4YW1wbGUuY29tcG9uZW50Lmxlc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZGVtb19fdmFsdWUtaW5wdXQge1xuICAgIG1hcmdpbi1yaWdodDogNDBweDtcbn1cblxuLy8gU2V0dGluZyB0aGUgd2lkdGggb24gdGhlIGNoYXJ0IGVsZW1lbnQgZGV0ZXJtaW5lcyB0aGUgaG9yaXpvbnRhbCBsZW5ndGggb2YgdGhlIGdhdWdlXG4uZGVtb19fY2hhcnQge1xuICAgIHdpZHRoOiAyMDBweDtcbn1cbiJdfQ== */";
       /***/
     },
 
@@ -846,26 +1937,6 @@
 
 
       __webpack_exports__["default"] = ".chart {\n  width: 200px;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImhvcml6b250YWwtZ2F1Z2UtdGVzdGVyLmNvbXBvbmVudC5sZXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUVBO0VBQ0ksWUFBQTtBQURKIiwiZmlsZSI6Imhvcml6b250YWwtZ2F1Z2UtdGVzdGVyLmNvbXBvbmVudC5sZXNzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCBcIkBub3ZhLXVpL2JpdHMvc2RrL2xlc3MvbnVpLWZyYW1ld29yay12YXJpYWJsZXNcIjtcblxuLmNoYXJ0IHtcbiAgICB3aWR0aDogMjAwcHg7XG59XG4iXX0= */";
-      /***/
-    },
-
-    /***/
-    "y8io":
-    /*!*******************************************************************************************************************************************!*\
-      !*** ./examples/components/demo/chart-types/gauge/donut-with-threshold-markers/donut-gauge-with-threshold-markers-example.component.less ***!
-      \*******************************************************************************************************************************************/
-
-    /*! exports provided: default */
-
-    /***/
-    function y8io(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony default export */
-
-
-      __webpack_exports__["default"] = ".chart {\n  height: 250px;\n  width: 250px;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImRvbnV0LWdhdWdlLXdpdGgtdGhyZXNob2xkLW1hcmtlcnMtZXhhbXBsZS5jb21wb25lbnQubGVzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGFBQUE7RUFDQSxZQUFBO0FBQ0oiLCJmaWxlIjoiZG9udXQtZ2F1Z2Utd2l0aC10aHJlc2hvbGQtbWFya2Vycy1leGFtcGxlLmNvbXBvbmVudC5sZXNzIiwic291cmNlc0NvbnRlbnQiOlsiLmNoYXJ0IHtcbiAgICBoZWlnaHQ6IDI1MHB4O1xuICAgIHdpZHRoOiAyNTBweDtcbn1cbiJdfQ== */";
       /***/
     },
 
@@ -963,27 +2034,80 @@
       /* harmony import */
 
 
-      var _donut_basic_donut_gauge_basic_example_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
-      /*! ./donut-basic/donut-gauge-basic-example.component */
-      "CGFR");
+      var _donut_donut_basic_donut_gauge_basic_example_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+      /*! ./donut/donut-basic/donut-gauge-basic-example.component */
+      "6gvS");
       /* harmony import */
 
 
-      var _donut_with_content_donut_gauge_with_content_example_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
-      /*! ./donut-with-content/donut-gauge-with-content-example.component */
-      "6tuR");
+      var _donut_donut_with_content_donut_gauge_with_content_example_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
+      /*! ./donut/donut-with-content/donut-gauge-with-content-example.component */
+      "opha");
       /* harmony import */
 
 
-      var _donut_with_threshold_markers_donut_gauge_with_threshold_markers_example_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
-      /*! ./donut-with-threshold-markers/donut-gauge-with-threshold-markers-example.component */
-      "vGhi");
+      var _donut_donut_with_thresholds_donut_gauge_with_thresholds_example_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
+      /*! ./donut/donut-with-thresholds/donut-gauge-with-thresholds-example.component */
+      "FLog");
+      /* harmony import */
+
+
+      var _donut_donut_with_threshold_toggling_donut_gauge_with_threshold_toggling_example_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
+      /*! ./donut/donut-with-threshold-toggling/donut-gauge-with-threshold-toggling-example.component */
+      "RsPz");
+      /* harmony import */
+
+
+      var _donut_donut_with_custom_threshold_labels_donut_gauge_with_custom_threshold_labels_example_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
+      /*! ./donut/donut-with-custom-threshold-labels/donut-gauge-with-custom-threshold-labels-example.component */
+      "mSgw");
+      /* harmony import */
+
+
+      var _linear_horizontal_basic_horizontal_gauge_basic_example_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(
+      /*! ./linear/horizontal-basic/horizontal-gauge-basic-example.component */
+      "yWOU");
+      /* harmony import */
+
+
+      var _linear_vertical_basic_vertical_gauge_basic_example_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(
+      /*! ./linear/vertical-basic/vertical-gauge-basic-example.component */
+      "Jef4");
+      /* harmony import */
+
+
+      var _donut_donut_without_threshold_markers_donut_gauge_without_threshold_markers_example_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(
+      /*! ./donut/donut-without-threshold-markers/donut-gauge-without-threshold-markers-example.component */
+      "gpsY");
+      /* harmony import */
+
+
+      var _donut_donut_with_threshold_marker_toggling_donut_gauge_with_threshold_marker_toggling_example_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(
+      /*! ./donut/donut-with-threshold-marker-toggling/donut-gauge-with-threshold-marker-toggling-example.component */
+      "j2WA");
+      /* harmony import */
+
+
+      var _linear_linear_with_thresholds_linear_gauge_with_thresholds_example_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(
+      /*! ./linear/linear-with-thresholds/linear-gauge-with-thresholds-example.component */
+      "Jq9P");
+      /* harmony import */
+
+
+      var _linear_linear_thickness_adjustment_linear_gauge_thickness_adjustment_example_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(
+      /*! ./linear/linear-thickness-adjustment/linear-gauge-thickness-adjustment-example.component */
+      "NqMt");
+      /* eslint-disable max-len */
+
 
       var exampleRoutes = [{
         path: "",
         component: _chart_docs_gauge_component__WEBPACK_IMPORTED_MODULE_7__["ChartDocsGaugeComponent"],
         data: {
-          showThemeSwitcher: true
+          showThemeSwitcher: true,
+          "srlc": {
+            "stage": _nova_ui_bits__WEBPACK_IMPORTED_MODULE_4__["SrlcStage"].ga
+          }
         }
       }, {
         path: "visual-test",
@@ -995,15 +2119,7 @@
         }
       }, {
         path: "donut-basic",
-        component: _donut_basic_donut_gauge_basic_example_component__WEBPACK_IMPORTED_MODULE_12__["DonutGaugeBasicExampleComponent"],
-        data: {
-          "srlc": {
-            "hideIndicator": true
-          }
-        }
-      }, {
-        path: "donut-with-threshold-markers",
-        component: _donut_with_threshold_markers_donut_gauge_with_threshold_markers_example_component__WEBPACK_IMPORTED_MODULE_14__["DonutGaugeWithThresholdMarkersExampleComponent"],
+        component: _donut_donut_basic_donut_gauge_basic_example_component__WEBPACK_IMPORTED_MODULE_12__["DonutGaugeBasicExampleComponent"],
         data: {
           "srlc": {
             "hideIndicator": true
@@ -1011,7 +2127,79 @@
         }
       }, {
         path: "donut-with-content",
-        component: _donut_with_content_donut_gauge_with_content_example_component__WEBPACK_IMPORTED_MODULE_13__["DonutGaugeWithContentExampleComponent"],
+        component: _donut_donut_with_content_donut_gauge_with_content_example_component__WEBPACK_IMPORTED_MODULE_13__["DonutGaugeWithContentExampleComponent"],
+        data: {
+          "srlc": {
+            "hideIndicator": true
+          }
+        }
+      }, {
+        path: "donut-with-custom-labels",
+        component: _donut_donut_with_custom_threshold_labels_donut_gauge_with_custom_threshold_labels_example_component__WEBPACK_IMPORTED_MODULE_16__["DonutGaugeWithCustomThresholdLabelsExampleComponent"],
+        data: {
+          "srlc": {
+            "hideIndicator": true
+          }
+        }
+      }, {
+        path: "donut-without-markers",
+        component: _donut_donut_without_threshold_markers_donut_gauge_without_threshold_markers_example_component__WEBPACK_IMPORTED_MODULE_19__["DonutGaugeWithoutThresholdMarkersExampleComponent"],
+        data: {
+          "srlc": {
+            "hideIndicator": true
+          }
+        }
+      }, {
+        path: "donut-with-marker-toggling",
+        component: _donut_donut_with_threshold_marker_toggling_donut_gauge_with_threshold_marker_toggling_example_component__WEBPACK_IMPORTED_MODULE_20__["DonutGaugeWithThresholdMarkerTogglingExampleComponent"],
+        data: {
+          "srlc": {
+            "hideIndicator": true
+          }
+        }
+      }, {
+        path: "donut-with-thresholds",
+        component: _donut_donut_with_thresholds_donut_gauge_with_thresholds_example_component__WEBPACK_IMPORTED_MODULE_14__["DonutGaugeWithThresholdsExampleComponent"],
+        data: {
+          "srlc": {
+            "hideIndicator": true
+          }
+        }
+      }, {
+        path: "donut-with-threshold-toggling",
+        component: _donut_donut_with_threshold_toggling_donut_gauge_with_threshold_toggling_example_component__WEBPACK_IMPORTED_MODULE_15__["DonutGaugeWithThresholdTogglingExampleComponent"],
+        data: {
+          "srlc": {
+            "hideIndicator": true
+          }
+        }
+      }, {
+        path: "horizontal-basic",
+        component: _linear_horizontal_basic_horizontal_gauge_basic_example_component__WEBPACK_IMPORTED_MODULE_17__["HorizontalGaugeBasicExampleComponent"],
+        data: {
+          "srlc": {
+            "hideIndicator": true
+          }
+        }
+      }, {
+        path: "vertical-basic",
+        component: _linear_vertical_basic_vertical_gauge_basic_example_component__WEBPACK_IMPORTED_MODULE_18__["VerticalGaugeBasicExampleComponent"],
+        data: {
+          "srlc": {
+            "hideIndicator": true
+          }
+        }
+      }, {
+        path: "linear-with-thresholds",
+        component: _linear_linear_with_thresholds_linear_gauge_with_thresholds_example_component__WEBPACK_IMPORTED_MODULE_21__["LinearGaugeWithThresholdsExampleComponent"],
+        data: {
+          "srlc": {
+            "hideIndicator": true
+          }
+        }
+      }, {
+        path: "linear-thickness",
+        component: _linear_linear_with_thresholds_linear_gauge_with_thresholds_example_component__WEBPACK_IMPORTED_MODULE_21__["LinearGaugeWithThresholdsExampleComponent"],
         data: {
           "srlc": {
             "hideIndicator": true
@@ -1024,8 +2212,8 @@
       };
 
       ChartDocsGaugeModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-        declarations: [_chart_docs_gauge_component__WEBPACK_IMPORTED_MODULE_7__["ChartDocsGaugeComponent"], _visual_test_gauge_visual_test_component__WEBPACK_IMPORTED_MODULE_8__["GaugeVisualTestComponent"], _visual_test_horizontal_horizontal_gauge_tester_component__WEBPACK_IMPORTED_MODULE_9__["HorizontalGaugeTesterComponent"], _visual_test_donut_donut_gauge_tester_component__WEBPACK_IMPORTED_MODULE_10__["DonutGaugeTesterComponent"], _donut_basic_donut_gauge_basic_example_component__WEBPACK_IMPORTED_MODULE_12__["DonutGaugeBasicExampleComponent"], _donut_with_content_donut_gauge_with_content_example_component__WEBPACK_IMPORTED_MODULE_13__["DonutGaugeWithContentExampleComponent"], _donut_with_threshold_markers_donut_gauge_with_threshold_markers_example_component__WEBPACK_IMPORTED_MODULE_14__["DonutGaugeWithThresholdMarkersExampleComponent"], _visual_test_vertical_vertical_gauge_tester_component__WEBPACK_IMPORTED_MODULE_11__["VerticalGaugeTesterComponent"]],
-        imports: [_common_demo_common_module__WEBPACK_IMPORTED_MODULE_6__["DemoCommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"], _nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["NuiChartsModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_4__["NuiCommonModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_4__["NuiFormFieldModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_4__["NuiIconModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_4__["NuiDocsModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_4__["NuiMessageModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_4__["NuiTextboxModule"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"].forChild(exampleRoutes)],
+        declarations: [_chart_docs_gauge_component__WEBPACK_IMPORTED_MODULE_7__["ChartDocsGaugeComponent"], _visual_test_gauge_visual_test_component__WEBPACK_IMPORTED_MODULE_8__["GaugeVisualTestComponent"], _linear_horizontal_basic_horizontal_gauge_basic_example_component__WEBPACK_IMPORTED_MODULE_17__["HorizontalGaugeBasicExampleComponent"], _linear_linear_with_thresholds_linear_gauge_with_thresholds_example_component__WEBPACK_IMPORTED_MODULE_21__["LinearGaugeWithThresholdsExampleComponent"], _visual_test_horizontal_horizontal_gauge_tester_component__WEBPACK_IMPORTED_MODULE_9__["HorizontalGaugeTesterComponent"], _visual_test_donut_donut_gauge_tester_component__WEBPACK_IMPORTED_MODULE_10__["DonutGaugeTesterComponent"], _donut_donut_basic_donut_gauge_basic_example_component__WEBPACK_IMPORTED_MODULE_12__["DonutGaugeBasicExampleComponent"], _donut_donut_with_content_donut_gauge_with_content_example_component__WEBPACK_IMPORTED_MODULE_13__["DonutGaugeWithContentExampleComponent"], _donut_donut_with_custom_threshold_labels_donut_gauge_with_custom_threshold_labels_example_component__WEBPACK_IMPORTED_MODULE_16__["DonutGaugeWithCustomThresholdLabelsExampleComponent"], _donut_donut_with_threshold_marker_toggling_donut_gauge_with_threshold_marker_toggling_example_component__WEBPACK_IMPORTED_MODULE_20__["DonutGaugeWithThresholdMarkerTogglingExampleComponent"], _donut_donut_without_threshold_markers_donut_gauge_without_threshold_markers_example_component__WEBPACK_IMPORTED_MODULE_19__["DonutGaugeWithoutThresholdMarkersExampleComponent"], _donut_donut_with_thresholds_donut_gauge_with_thresholds_example_component__WEBPACK_IMPORTED_MODULE_14__["DonutGaugeWithThresholdsExampleComponent"], _donut_donut_with_threshold_toggling_donut_gauge_with_threshold_toggling_example_component__WEBPACK_IMPORTED_MODULE_15__["DonutGaugeWithThresholdTogglingExampleComponent"], _linear_vertical_basic_vertical_gauge_basic_example_component__WEBPACK_IMPORTED_MODULE_18__["VerticalGaugeBasicExampleComponent"], _linear_linear_thickness_adjustment_linear_gauge_thickness_adjustment_example_component__WEBPACK_IMPORTED_MODULE_22__["LinearGaugeThicknessAdjustmentExampleComponent"], _visual_test_vertical_vertical_gauge_tester_component__WEBPACK_IMPORTED_MODULE_11__["VerticalGaugeTesterComponent"]],
+        imports: [_common_demo_common_module__WEBPACK_IMPORTED_MODULE_6__["DemoCommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"], _nova_ui_charts__WEBPACK_IMPORTED_MODULE_5__["NuiChartsModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_4__["NuiCheckboxModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_4__["NuiCommonModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_4__["NuiFormFieldModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_4__["NuiIconModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_4__["NuiDocsModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_4__["NuiMessageModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_4__["NuiTextboxModule"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"].forChild(exampleRoutes)],
         providers: [{
           provide: _nova_ui_bits__WEBPACK_IMPORTED_MODULE_4__["DEMO_PATH_TOKEN"],
           useFactory: function useFactory() {
@@ -1033,6 +2221,105 @@
           }
         }]
       })], ChartDocsGaugeModule);
+      /***/
+    },
+
+    /***/
+    "yWOU":
+    /*!************************************************************************************************************************!*\
+      !*** ./examples/components/demo/chart-types/gauge/linear/horizontal-basic/horizontal-gauge-basic-example.component.ts ***!
+      \************************************************************************************************************************/
+
+    /*! exports provided: HorizontalGaugeBasicExampleComponent */
+
+    /***/
+    function yWOU(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "HorizontalGaugeBasicExampleComponent", function () {
+        return HorizontalGaugeBasicExampleComponent;
+      });
+      /* harmony import */
+
+
+      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! tslib */
+      "mrSG");
+      /* harmony import */
+
+
+      var _raw_loader_horizontal_gauge_basic_example_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! raw-loader!./horizontal-gauge-basic-example.component.html */
+      "0Cj1");
+      /* harmony import */
+
+
+      var _horizontal_gauge_basic_example_component_less__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! ./horizontal-gauge-basic-example.component.less */
+      "ucP/");
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! @angular/core */
+      "fXoL");
+      /* harmony import */
+
+
+      var _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! @nova-ui/charts */
+      "gKry");
+
+      var HorizontalGaugeBasicExampleComponent = /*#__PURE__*/function () {
+        function HorizontalGaugeBasicExampleComponent() {
+          _classCallCheck(this, HorizontalGaugeBasicExampleComponent);
+        }
+
+        _createClass(HorizontalGaugeBasicExampleComponent, [{
+          key: "ngOnInit",
+          value: function ngOnInit() {
+            // Setting up the gauge config
+            var initialValue = 64;
+            this.gaugeConfig = this.getGaugeConfig(initialValue); // Creating the chart assist
+
+            this.chartAssist = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].createChartAssist(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Horizontal); // Assembling the series
+
+            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].assembleSeriesSet(this.gaugeConfig, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeMode"].Horizontal); // Updating the chart
+
+            this.chartAssist.update(this.seriesSet);
+          }
+        }, {
+          key: "onValueChange",
+          value: function onValueChange(value) {
+            // Updating the gauge config
+            this.gaugeConfig = this.getGaugeConfig(value); // Updating the series set with the new config
+
+            this.seriesSet = _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["GaugeUtil"].update(this.seriesSet, this.gaugeConfig); // Updating the chart with the updated series set
+
+            this.chartAssist.update(this.seriesSet);
+          }
+        }, {
+          key: "getGaugeConfig",
+          value: function getGaugeConfig(value) {
+            return {
+              value: value,
+              max: 100
+            };
+          }
+        }]);
+
+        return HorizontalGaugeBasicExampleComponent;
+      }();
+
+      HorizontalGaugeBasicExampleComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
+        selector: "horizontal-gauge-basic-example",
+        template: _raw_loader_horizontal_gauge_basic_example_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
+        styles: [_horizontal_gauge_basic_example_component_less__WEBPACK_IMPORTED_MODULE_2__["default"]]
+      })], HorizontalGaugeBasicExampleComponent);
       /***/
     }
   }]);

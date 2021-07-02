@@ -1,4 +1,8 @@
 (function () {
+  var _templateObject, _templateObject2;
+
+  function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
   function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
   function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -89,7 +93,18 @@
         selectors: [["unit-conversion-service-basic-example"]],
         decls: 5,
         vars: 5,
-        consts: [[1, "conversion", "d-flex", "flex-column", "align-items-end"], ["caption", "Bytes", 1, "d-block", "mt-5", 3, "showOptionalText"], ["type", "number", "customBoxWidth", "200px", 3, "ngModel", "minValue", "step", "ngModelChange"]],
+        consts: function consts() {
+          var i18n_0;
+
+          if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+            var MSG_EXTERNAL_2532651638721346732$$DEMO_SRC_COMPONENTS_DEMO_COMMON_UNIT_CONVERSION_SERVICE_UNIT_CONVERSION_SERVICE_BASIC_UNIT_CONVERSION_SERVICE_BASIC_EXAMPLE_COMPONENT_TS_1 = goog.getMsg("Bytes");
+            i18n_0 = MSG_EXTERNAL_2532651638721346732$$DEMO_SRC_COMPONENTS_DEMO_COMMON_UNIT_CONVERSION_SERVICE_UNIT_CONVERSION_SERVICE_BASIC_UNIT_CONVERSION_SERVICE_BASIC_EXAMPLE_COMPONENT_TS_1;
+          } else {
+            i18n_0 = $localize(_templateObject || (_templateObject = _taggedTemplateLiteral([":\u241F202089a05af9e72384c4fa73de07301dbf7c6062\u241F2532651638721346732:Bytes"])));
+          }
+
+          return [[1, "conversion", "d-flex", "flex-column", "align-items-end"], ["caption", i18n_0, 1, "d-block", "mt-5", 3, "showOptionalText"], ["type", "number", "customBoxWidth", "200px", 3, "ngModel", "minValue", "step", "ngModelChange"]];
+        },
         template: function UnitConversionServiceBasicExampleComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 0);
@@ -128,7 +143,7 @@
           }
         },
         directives: [_src_lib_form_field_form_field_component__WEBPACK_IMPORTED_MODULE_2__["FormFieldComponent"], _src_lib_textbox_textbox_number_textbox_number_component__WEBPACK_IMPORTED_MODULE_3__["TextboxNumberComponent"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["NgModel"]],
-        styles: [".conversion[_ngcontent-%COMP%] {\n  font-size: 25px;\n  width: 130px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInVuaXQtY29udmVyc2lvbi1zZXJ2aWNlLWJhc2ljLmV4YW1wbGUuY29tcG9uZW50Lmxlc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxlQUFBO0VBQ0EsWUFBQTtBQUNKIiwiZmlsZSI6InVuaXQtY29udmVyc2lvbi1zZXJ2aWNlLWJhc2ljLmV4YW1wbGUuY29tcG9uZW50Lmxlc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuY29udmVyc2lvbiB7XG4gICAgZm9udC1zaXplOiAyNXB4O1xuICAgIHdpZHRoOiAxMzBweDtcbn1cbiJdfQ== */"]
+        styles: [".conversion[_ngcontent-%COMP%] {\n  font-size: 25px;\n  width: 140px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInVuaXQtY29udmVyc2lvbi1zZXJ2aWNlLWJhc2ljLmV4YW1wbGUuY29tcG9uZW50Lmxlc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxlQUFBO0VBQ0EsWUFBQTtBQUNKIiwiZmlsZSI6InVuaXQtY29udmVyc2lvbi1zZXJ2aWNlLWJhc2ljLmV4YW1wbGUuY29tcG9uZW50Lmxlc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuY29udmVyc2lvbiB7XG4gICAgZm9udC1zaXplOiAyNXB4O1xuICAgIHdpZHRoOiAxNDBweDtcbn1cbiJdfQ== */"]
       });
       /***/
     },
@@ -316,7 +331,7 @@
       UnitConversionServiceDocsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: UnitConversionServiceDocsComponent,
         selectors: [["ng-component"]],
-        decls: 116,
+        decls: 120,
         vars: 4,
         consts: [["href", "../injectables/UnitConversionService.html#info", "target", "_parent"], ["type", "info", 3, "allowDismiss"], ["href", "../pipes/UnitConversionPipe.html", "target", "_blank"], ["href", "../miscellaneous/enumerations.html#UnitBase", "target", "_blank"], ["href", "../interfaces/IUnitConversionResult.html", "target", "_blank"], ["type", "warning", 3, "allowDismiss"], ["href", "../miscellaneous/typealiases.html#UnitOption", "target", "_blank"], ["filenamePrefix", "unit-conversion-service-basic", "exampleTitle", "Basic Usage"], ["filenamePrefix", "unit-conversion-service-separate-unit-display", "exampleTitle", "Separating the Value and Unit for Display"]],
         template: function UnitConversionServiceDocsComponent_Template(rf, ctx) {
@@ -605,57 +620,69 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](97, " method.\n");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](97, " method. If you need to convert the value into scientific notation use the ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](98, "code");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](99, "a", 0);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](100, "getScientificDisplay");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](98, "nui-message", 5);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](99, "strong");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](100, "Note:");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](101, " instead.\n");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](101, " The ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](102, "nui-message", 5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](102, "code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](103, "strong");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](103, "getValueDisplay");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](104, " method offers a ");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](105, "code");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](106, "localize");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](104, "Note:");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](107, " parameter which defaults to ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](105, " The ");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](108, "code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](106, "code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](109, "true");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](110, ". However, if you're using the \"generic\" unit type, it's recommended to set this argument to ");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](111, "code");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](112, "false");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](107, "getValueDisplay");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](113, " as localization is not yet supported for the \"generic\" unit.\n");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](108, " method offers a ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](109, "code");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](110, "localize");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](114, "nui-example-wrapper", 8);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](111, " parameter which defaults to ");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](115, "unit-conversion-service-separate-unit-display-example");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](112, "code");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](113, "true");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](114, ". However, if you're using the \"generic\" unit type, it's recommended to set this argument to ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](115, "code");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](116, "false");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](117, " as localization is not yet supported for the \"generic\" unit.\n");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](118, "nui-example-wrapper", 8);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](119, "unit-conversion-service-separate-unit-display-example");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
           }
@@ -673,7 +700,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("allowDismiss", false);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](19);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](23);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("allowDismiss", false);
           }
@@ -775,8 +802,16 @@
           value: function onNumberChange(num) {
             this.num = num;
             var conversion = this.unitConversionService.convert(this.num, _nova_ui_bits__WEBPACK_IMPORTED_MODULE_0__["UnitBase"].Standard, 2);
-            this.valueDisplay = this.unitConversionService.getValueDisplay(conversion);
             this.unitDisplay = this.unitConversionService.getUnitDisplay(conversion, "hertz");
+
+            if (this.unitDisplay) {
+              this.valueDisplay = this.unitConversionService.getValueDisplay(conversion);
+            } else {
+              // An undefined getUnitDisplay return value indicates the input value was too large to be converted,
+              // so the base unit and scientific notation can be used as fallbacks.
+              this.unitDisplay = this.unitConversionService.getUnitDisplayBaseValue("hertz");
+              this.valueDisplay = this.unitConversionService.getScientificDisplay(conversion);
+            }
           }
         }]);
 
@@ -792,7 +827,18 @@
         selectors: [["unit-conversion-service-separate-unit-display-example"]],
         decls: 8,
         vars: 6,
-        consts: [[1, "d-flex"], [1, "conversion", "d-flex", "flex-column", "align-items-center", "justify-content-center"], [1, "conversion__value"], ["class", "conversion__unit", 4, "ngIf"], ["caption", "Hertz", 1, "d-block", "mt-5", 3, "showOptionalText"], ["type", "number", "customBoxWidth", "200px", 3, "ngModel", "minValue", "step", "ngModelChange"], [1, "conversion__unit"]],
+        consts: function consts() {
+          var i18n_0;
+
+          if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+            var MSG_EXTERNAL_3843284836206601463$$DEMO_SRC_COMPONENTS_DEMO_COMMON_UNIT_CONVERSION_SERVICE_UNIT_CONVERSION_SERVICE_SEPARATE_UNIT_DISPLAY_UNIT_CONVERSION_SERVICE_SEPARATE_UNIT_DISPLAY_EXAMPLE_COMPONENT_TS_1 = goog.getMsg("Hertz");
+            i18n_0 = MSG_EXTERNAL_3843284836206601463$$DEMO_SRC_COMPONENTS_DEMO_COMMON_UNIT_CONVERSION_SERVICE_UNIT_CONVERSION_SERVICE_SEPARATE_UNIT_DISPLAY_UNIT_CONVERSION_SERVICE_SEPARATE_UNIT_DISPLAY_EXAMPLE_COMPONENT_TS_1;
+          } else {
+            i18n_0 = $localize(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral([":\u241F078a3217f0edacd1fd914514565f546ff501347e\u241F3843284836206601463:Hertz"])));
+          }
+
+          return [[1, "d-flex"], [1, "conversion", "d-flex", "flex-column", "align-items-center", "justify-content-center"], [1, "conversion__value"], ["class", "conversion__unit", 4, "ngIf"], ["caption", i18n_0, 1, "d-block", "mt-5", 3, "showOptionalText"], ["type", "number", "customBoxWidth", "200px", 3, "ngModel", "minValue", "step", "ngModelChange"], [1, "conversion__unit"]];
+        },
         template: function UnitConversionServiceSeparateUnitDisplayExampleComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 0);
@@ -845,7 +891,7 @@
           }
         },
         directives: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["NgIf"], _src_lib_form_field_form_field_component__WEBPACK_IMPORTED_MODULE_3__["FormFieldComponent"], _src_lib_textbox_textbox_number_textbox_number_component__WEBPACK_IMPORTED_MODULE_4__["TextboxNumberComponent"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["NgModel"]],
-        styles: [".conversion[_ngcontent-%COMP%] {\n  width: 80px;\n  height: 70px;\n}\n.conversion__value[_ngcontent-%COMP%] {\n  font-size: 25px;\n}\n.conversion__unit[_ngcontent-%COMP%] {\n  font-size: 15px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInVuaXQtY29udmVyc2lvbi1zZXJ2aWNlLXNlcGFyYXRlLXVuaXQtZGlzcGxheS5leGFtcGxlLmNvbXBvbmVudC5sZXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksV0FBQTtFQUNBLFlBQUE7QUFDSjtBQUNJO0VBQ0ksZUFBQTtBQUNSO0FBRUk7RUFDSSxlQUFBO0FBQVIiLCJmaWxlIjoidW5pdC1jb252ZXJzaW9uLXNlcnZpY2Utc2VwYXJhdGUtdW5pdC1kaXNwbGF5LmV4YW1wbGUuY29tcG9uZW50Lmxlc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuY29udmVyc2lvbiB7XG4gICAgd2lkdGg6IDgwcHg7XG4gICAgaGVpZ2h0OiA3MHB4O1xuXG4gICAgJl9fdmFsdWUge1xuICAgICAgICBmb250LXNpemU6IDI1cHg7XG4gICAgfVxuXG4gICAgJl9fdW5pdCB7XG4gICAgICAgIGZvbnQtc2l6ZTogMTVweDtcbiAgICB9XG59XG4iXX0= */"]
+        styles: [".conversion[_ngcontent-%COMP%] {\n  width: 110px;\n  height: 70px;\n}\n.conversion__value[_ngcontent-%COMP%] {\n  font-size: 25px;\n}\n.conversion__unit[_ngcontent-%COMP%] {\n  font-size: 15px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInVuaXQtY29udmVyc2lvbi1zZXJ2aWNlLXNlcGFyYXRlLXVuaXQtZGlzcGxheS5leGFtcGxlLmNvbXBvbmVudC5sZXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksWUFBQTtFQUNBLFlBQUE7QUFDSjtBQUNJO0VBQ0ksZUFBQTtBQUNSO0FBRUk7RUFDSSxlQUFBO0FBQVIiLCJmaWxlIjoidW5pdC1jb252ZXJzaW9uLXNlcnZpY2Utc2VwYXJhdGUtdW5pdC1kaXNwbGF5LmV4YW1wbGUuY29tcG9uZW50Lmxlc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuY29udmVyc2lvbiB7XG4gICAgd2lkdGg6IDExMHB4O1xuICAgIGhlaWdodDogNzBweDtcblxuICAgICZfX3ZhbHVlIHtcbiAgICAgICAgZm9udC1zaXplOiAyNXB4O1xuICAgIH1cblxuICAgICZfX3VuaXQge1xuICAgICAgICBmb250LXNpemU6IDE1cHg7XG4gICAgfVxufVxuIl19 */"]
       });
       /***/
     },

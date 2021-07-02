@@ -23,7 +23,10 @@ __webpack_require__.r(__webpack_exports__);
 const exampleRoutes = [
     {
         path: "base-grid",
-        loadChildren: () => __webpack_require__.e(/*! import() | components-demo-advanced-usage-grid-config-base-grid-chart-docs-base-grid-module */ "components-demo-advanced-usage-grid-config-base-grid-chart-docs-base-grid-module").then(__webpack_require__.bind(null, /*! components/demo/advanced-usage/grid-config/base-grid/chart-docs-base-grid.module */ "6WVA")).then(m => m.ChartDocsBaseGridModule),
+        loadChildren: () => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, function* () {
+            return __webpack_require__.e(/*! import() | components-demo-advanced-usage-grid-config-base-grid-chart-docs-base-grid-module */ "components-demo-advanced-usage-grid-config-base-grid-chart-docs-base-grid-module").then(__webpack_require__.bind(null, /*! components/demo/advanced-usage/grid-config/base-grid/chart-docs-base-grid.module */ "6WVA"))
+                .then(m => m.ChartDocsBaseGridModule);
+        }),
     },
 ];
 let ChartDocsGridConfigModule = class ChartDocsGridConfigModule {

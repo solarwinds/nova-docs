@@ -1,4 +1,16 @@
 (function () {
+  function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+  function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+  function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+  function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+  function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+  function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
   function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
   function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
@@ -310,6 +322,8 @@
         "./legend-horizontal/legend-horizontal.example.component.ts": "6SvY",
         "./legend-interactive/legend-interactive.example.component.html": "7x2n",
         "./legend-interactive/legend-interactive.example.component.ts": "+9tC",
+        "./legend-metadata/legend-metadata-example.component.html": "1QZF",
+        "./legend-metadata/legend-metadata-example.component.ts": "0C3L",
         "./legend-rich-tile-content-projection/legend-rich-tile-content-projection.example.component.html": "gjCY",
         "./legend-rich-tile-content-projection/legend-rich-tile-content-projection.example.component.less": "swLD",
         "./legend-rich-tile-content-projection/legend-rich-tile-content-projection.example.component.ts": "Ad9u",
@@ -858,6 +872,273 @@
     },
 
     /***/
+    "jKev":
+    /*!*************************************************************************************************************!*\
+      !*** ./examples/components/demo/advanced-usage/legend/legend-metadata/legend-metadata-example.component.ts ***!
+      \*************************************************************************************************************/
+
+    /*! exports provided: LegendMetadataExampleComponent */
+
+    /***/
+    function jKev(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "LegendMetadataExampleComponent", function () {
+        return LegendMetadataExampleComponent;
+      });
+      /* harmony import */
+
+
+      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! tslib */
+      "mrSG");
+      /* harmony import */
+
+
+      var _raw_loader_legend_metadata_example_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! raw-loader!./legend-metadata-example.component.html */
+      "1QZF");
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! @angular/core */
+      "fXoL");
+      /* harmony import */
+
+
+      var _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! @nova-ui/charts */
+      "gKry");
+      /* harmony import */
+
+
+      var moment_moment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! moment/moment */
+      "wd/R");
+      /* harmony import */
+
+
+      var moment_moment__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(moment_moment__WEBPACK_IMPORTED_MODULE_4__);
+
+      var LegendMetadataExampleComponent = /*#__PURE__*/function () {
+        function LegendMetadataExampleComponent() {
+          _classCallCheck(this, LegendMetadataExampleComponent);
+        }
+
+        _createClass(LegendMetadataExampleComponent, [{
+          key: "ngOnInit",
+          value: function ngOnInit() {
+            // areaGrid returns an XYGrid configured for displaying an area chart's axes and other grid elements.
+            this.chart = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["Chart"](Object(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["areaGrid"])()); // ChartAssist will use the preprocessor to stack the series' numeric values on the same progression domain
+
+            this.chartAssist = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["ChartAssist"](this.chart, _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["stackedArea"]); // Stacked Area accessors let the renderer know how to access x and y domain data respectively from a chart's input data set(s).
+
+            var accessors = Object(_nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["stackedAreaAccessors"])(); // 'y1' defines access to the numeric values we want to visualize.
+            // The items in the data array of this example have a property named 'value',so we'll use that.
+
+            accessors.data.y1 = function (d) {
+              return d.value;
+            }; // The area renderer will make the chart look like a area chart.
+
+
+            var renderer = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["AreaRenderer"](); // In case of a area chart, the scale definitions are flexible.
+            // This example demonstrates a scenario with time on the X scale and a numeric value on the Y scale.
+
+            var scales = {
+              x: new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["TimeScale"](),
+              y: new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["LinearScale"]()
+            };
+            var dataSeries = getData();
+            var averageData = calculateAverageSeries(dataSeries); // We are using the base XYRenderer so the metadata does not get displayed on the chart.
+            // Set `ignoreForDomainCalculation` to true to prevent the metadata from affecting the domain.
+
+            var metaDataRenderer = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["XYRenderer"]({
+              ignoreForDomainCalculation: true
+            }); // Here we create an accessor for our average metadata
+
+            var avgAccessors = new _nova_ui_charts__WEBPACK_IMPORTED_MODULE_3__["XYAccessors"](); // This is so the legend knows the value for the y
+
+            avgAccessors.data.y = function (d) {
+              return d.value;
+            };
+
+            this.avgSeries = Object.assign(Object.assign({}, averageData), {
+              accessors: avgAccessors,
+              renderer: metaDataRenderer,
+              scales: scales,
+              // showInLegend is false because we manually add our own series
+              showInLegend: false,
+              // preprocess is false to let the area processor know it is already formatted properly
+              preprocess: false
+            }); // Here we assemble the complete chart series.
+
+            var seriesSet = dataSeries.map(function (d) {
+              return Object.assign(Object.assign({}, d), {
+                accessors: accessors,
+                renderer: renderer,
+                scales: scales
+              });
+            }); // Combining both sets in an array of series
+
+            seriesSet = [].concat(_toConsumableArray(seriesSet), [this.avgSeries]); // Finally, pass the series set to the chart's update method
+
+            this.chartAssist.update(seriesSet);
+          }
+        }]);
+
+        return LegendMetadataExampleComponent;
+      }();
+
+      LegendMetadataExampleComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
+        selector: "nui-legend-metadata-example",
+        template: _raw_loader_legend_metadata_example_component_html__WEBPACK_IMPORTED_MODULE_1__["default"]
+      })], LegendMetadataExampleComponent);
+
+      function calculateAverageSeries(seriesSet) {
+        var _a, _b, _c, _d, _e;
+
+        var averageSeries = {
+          id: "average",
+          name: "Average Speed",
+          data: []
+        };
+        var numSeries = seriesSet.length;
+
+        if (numSeries === 0) {
+          return averageSeries;
+        }
+
+        var data = [];
+        var dataLength = (_b = (_a = seriesSet[0].data) === null || _a === void 0 ? void 0 : _a.length) !== null && _b !== void 0 ? _b : 0;
+
+        for (var n = 0; n < dataLength; n++) {
+          var avg = 0;
+
+          for (var i = 0; i < numSeries; i++) {
+            var series = seriesSet[i];
+            avg += (_d = (_c = series === null || series === void 0 ? void 0 : series.data) === null || _c === void 0 ? void 0 : _c[n].value) !== null && _d !== void 0 ? _d : 0;
+          }
+
+          avg = avg / numSeries;
+          data.push({
+            x: (_e = seriesSet[0].data) === null || _e === void 0 ? void 0 : _e[n].x,
+            value: avg
+          });
+        }
+
+        return Object.assign(Object.assign({}, averageSeries), {
+          data: data
+        });
+      }
+      /* Chart data */
+
+
+      function getData() {
+        var format = "YYYY-MM-DDTHH:mm:ssZ";
+        return [{
+          id: "series-1",
+          name: "Series 1",
+          data: [{
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T11:45:29.909Z", format),
+            value: 6
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T12:10:29.909Z", format),
+            value: 33
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T12:50:29.909Z", format),
+            value: 15
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T13:15:29.909Z", format),
+            value: 20
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T13:40:29.909Z", format),
+            value: 30
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T13:55:29.909Z", format),
+            value: 12
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T14:20:29.909Z", format),
+            value: 6
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T14:40:29.909Z", format),
+            value: 35
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T15:00:29.909Z", format),
+            value: 23
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T15:25:29.909Z", format),
+            value: 25
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T15:45:29.909Z", format),
+            value: 38
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T16:10:29.909Z", format),
+            value: 25
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T16:30:29.909Z", format),
+            value: 43
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T16:45:29.909Z", format),
+            value: 28
+          }]
+        }, {
+          id: "series-2",
+          name: "Series 2",
+          data: [{
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T11:45:29.909Z", format),
+            value: 12
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T12:10:29.909Z", format),
+            value: 65
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T12:50:29.909Z", format),
+            value: 30
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T13:15:29.909Z", format),
+            value: 40
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T13:40:29.909Z", format),
+            value: 60
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T13:55:29.909Z", format),
+            value: 23
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T14:20:29.909Z", format),
+            value: 12
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T14:40:29.909Z", format),
+            value: 70
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T15:00:29.909Z", format),
+            value: 45
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T15:25:29.909Z", format),
+            value: 50
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T15:45:29.909Z", format),
+            value: 75
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T16:10:29.909Z", format),
+            value: 50
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T16:30:29.909Z", format),
+            value: 85
+          }, {
+            x: moment_moment__WEBPACK_IMPORTED_MODULE_4___default()("2016-12-25T16:45:29.909Z", format),
+            value: 55
+          }]
+        }];
+      }
+      /***/
+
+    },
+
+    /***/
     "o7g7":
     /*!********************************************************************************************!*\
       !*** ./examples/components/demo/advanced-usage/legend/chart-docs-legend-example.module.ts ***!
@@ -984,6 +1265,12 @@
       var _legend_visual_test_legend_visual_test_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(
       /*! ./legend-visual-test/legend-visual-test.component */
       "WDE9");
+      /* harmony import */
+
+
+      var _legend_metadata_legend_metadata_example_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(
+      /*! ./legend-metadata/legend-metadata-example.component */
+      "jKev");
 
       var legendRoutes = [{
         path: "",
@@ -1007,6 +1294,15 @@
         path: "rich-tile-content-projection",
         component: _legend_rich_tile_content_projection_legend_rich_tile_content_projection_example_component__WEBPACK_IMPORTED_MODULE_13__["LegendRichTileContentProjectionExampleComponent"]
       }, {
+        path: "metadata",
+        component: _legend_metadata_legend_metadata_example_component__WEBPACK_IMPORTED_MODULE_18__["LegendMetadataExampleComponent"],
+        data: {
+          srlc: {
+            hideIndicator: true
+          },
+          showThemeSwitcher: true
+        }
+      }, {
         path: "visual-test",
         component: _legend_visual_test_legend_visual_test_component__WEBPACK_IMPORTED_MODULE_17__["LegendVisualTestComponent"],
         data: {
@@ -1021,7 +1317,7 @@
       };
 
       ChartDocsLegendExampleModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-        declarations: [_legend_active_legend_active_example_component__WEBPACK_IMPORTED_MODULE_6__["LegendActiveExampleComponent"], _legend_basic_legend_basic_example_component__WEBPACK_IMPORTED_MODULE_7__["LegendBasicExampleComponent"], _legend_compact_legend_compact_example_component__WEBPACK_IMPORTED_MODULE_8__["LegendCompactExampleComponent"], _legend_docs_legend_docs_example_component__WEBPACK_IMPORTED_MODULE_10__["LegendDocsExampleComponent"], _legend_horizontal_legend_horizontal_example_component__WEBPACK_IMPORTED_MODULE_11__["LegendHorizontalExampleComponent"], _legend_interactive_legend_interactive_example_component__WEBPACK_IMPORTED_MODULE_12__["LegendInteractiveExampleComponent"], _legend_rich_tile_legend_rich_tile_example_component__WEBPACK_IMPORTED_MODULE_14__["LegendRichTileExampleComponent"], _legend_test_legend_test_component__WEBPACK_IMPORTED_MODULE_15__["LegendTestExampleComponent"], _legend_text_color_legend_text_color_example_component__WEBPACK_IMPORTED_MODULE_16__["LegendTextColorExampleComponent"], _legend_visual_test_legend_visual_test_component__WEBPACK_IMPORTED_MODULE_17__["LegendVisualTestComponent"], _legend_description_content_projection_legend_description_projection_example_component__WEBPACK_IMPORTED_MODULE_9__["LegendDescriptionProjectionExampleComponent"], _legend_rich_tile_content_projection_legend_rich_tile_content_projection_example_component__WEBPACK_IMPORTED_MODULE_13__["LegendRichTileContentProjectionExampleComponent"]],
+        declarations: [_legend_active_legend_active_example_component__WEBPACK_IMPORTED_MODULE_6__["LegendActiveExampleComponent"], _legend_basic_legend_basic_example_component__WEBPACK_IMPORTED_MODULE_7__["LegendBasicExampleComponent"], _legend_compact_legend_compact_example_component__WEBPACK_IMPORTED_MODULE_8__["LegendCompactExampleComponent"], _legend_docs_legend_docs_example_component__WEBPACK_IMPORTED_MODULE_10__["LegendDocsExampleComponent"], _legend_horizontal_legend_horizontal_example_component__WEBPACK_IMPORTED_MODULE_11__["LegendHorizontalExampleComponent"], _legend_interactive_legend_interactive_example_component__WEBPACK_IMPORTED_MODULE_12__["LegendInteractiveExampleComponent"], _legend_rich_tile_legend_rich_tile_example_component__WEBPACK_IMPORTED_MODULE_14__["LegendRichTileExampleComponent"], _legend_test_legend_test_component__WEBPACK_IMPORTED_MODULE_15__["LegendTestExampleComponent"], _legend_text_color_legend_text_color_example_component__WEBPACK_IMPORTED_MODULE_16__["LegendTextColorExampleComponent"], _legend_visual_test_legend_visual_test_component__WEBPACK_IMPORTED_MODULE_17__["LegendVisualTestComponent"], _legend_description_content_projection_legend_description_projection_example_component__WEBPACK_IMPORTED_MODULE_9__["LegendDescriptionProjectionExampleComponent"], _legend_rich_tile_content_projection_legend_rich_tile_content_projection_example_component__WEBPACK_IMPORTED_MODULE_13__["LegendRichTileContentProjectionExampleComponent"], _legend_metadata_legend_metadata_example_component__WEBPACK_IMPORTED_MODULE_18__["LegendMetadataExampleComponent"]],
         imports: [_common_demo_common_module__WEBPACK_IMPORTED_MODULE_5__["DemoCommonModule"], _nova_ui_charts__WEBPACK_IMPORTED_MODULE_4__["NuiChartsModule"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forChild(legendRoutes), _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["NuiDocsModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["NuiIconModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["NuiButtonModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["NuiMessageModule"]],
         providers: [{
           provide: _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["DEMO_PATH_TOKEN"],

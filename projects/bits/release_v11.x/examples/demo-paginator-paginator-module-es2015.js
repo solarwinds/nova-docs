@@ -34,6 +34,8 @@ var map = {
 	"./paginator-hidden-prev-next/paginator-hidden-prev-next.example.component.ts": "7QHM",
 	"./paginator-styling/paginator-styling.example.component.html": "iMIT",
 	"./paginator-styling/paginator-styling.example.component.ts": "prms",
+	"./paginator-test/paginator-test.component.html": "Szgy",
+	"./paginator-test/paginator-test.component.ts": "LLCC",
 	"./paginator-virtual-scroll/paginator-virtual-scroll.example.component.html": "qidj",
 	"./paginator-virtual-scroll/paginator-virtual-scroll.example.component.ts": "LGph",
 	"./paginator-visibility/paginator-visibility.example.component.html": "ymQ6",
@@ -69,7 +71,7 @@ webpackContext.id = "3eXw";
 /*!*****************************************************!*\
   !*** ./demo/src/components/demo/paginator/index.ts ***!
   \*****************************************************/
-/*! exports provided: PaginatorExampleComponent, PaginatorAdjacentExampleComponent, PaginatorBasicExampleComponent, PaginatorCustomPageSetExampleComponent, PaginatorHiddenPrevNextExampleComponent, PaginatorStylingExampleComponent, PaginatorVirtualScrollExampleComponent, PaginatorVisibilityExampleComponent, PaginatorVisualTestComponent */
+/*! exports provided: PaginatorExampleComponent, PaginatorAdjacentExampleComponent, PaginatorBasicExampleComponent, PaginatorCustomPageSetExampleComponent, PaginatorHiddenPrevNextExampleComponent, PaginatorStylingExampleComponent, PaginatorVirtualScrollExampleComponent, PaginatorVisibilityExampleComponent, PaginatorVisualTestComponent, PaginatorTestComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -100,6 +102,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony import */ var _paginator_visual_test_paginator_visual_test_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./paginator-visual-test/paginator-visual-test.component */ "OBGh");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PaginatorVisualTestComponent", function() { return _paginator_visual_test_paginator_visual_test_component__WEBPACK_IMPORTED_MODULE_8__["PaginatorVisualTestComponent"]; });
+
+/* harmony import */ var _paginator_test_paginator_test_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./paginator-test/paginator-test.component */ "jlGC");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PaginatorTestComponent", function() { return _paginator_test_paginator_test_component__WEBPACK_IMPORTED_MODULE_9__["PaginatorTestComponent"]; });
+
 
 
 
@@ -162,7 +168,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { NgModule } from \"@angular/core\";\nimport { RouterModule } from \"@angular/router\";\nimport { DEMO_PATH_TOKEN, NuiDocsModule, NuiMessageModule, NuiPaginatorModule, SrlcStage } from \"@nova-ui/bits\";\n\nimport {\n    PaginatorAdjacentExampleComponent,\n    PaginatorBasicExampleComponent,\n    PaginatorCustomPageSetExampleComponent,\n    PaginatorExampleComponent,\n    PaginatorHiddenPrevNextExampleComponent,\n    PaginatorStylingExampleComponent,\n    PaginatorVirtualScrollExampleComponent,\n    PaginatorVisibilityExampleComponent,\n    PaginatorVisualTestComponent,\n} from \"./index\";\n\nconst routes = [\n    {\n        path: \"\",\n        component: PaginatorExampleComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.ga,\n            },\n            showThemeSwitcher: true,\n        },\n    },\n    {\n        path: \"paginator-visual-test\",\n        component: PaginatorVisualTestComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n];\n\n@NgModule({\n    imports: [\n        NuiPaginatorModule,\n        NuiDocsModule,\n        NuiMessageModule,\n        RouterModule.forChild(routes),\n    ],\n    declarations: [\n        PaginatorAdjacentExampleComponent,\n        PaginatorBasicExampleComponent,\n        PaginatorCustomPageSetExampleComponent,\n        PaginatorExampleComponent,\n        PaginatorHiddenPrevNextExampleComponent,\n        PaginatorStylingExampleComponent,\n        PaginatorVirtualScrollExampleComponent,\n        PaginatorVisibilityExampleComponent,\n        PaginatorVisualTestComponent,\n    ],\n    providers: [\n        {\n            provide: DEMO_PATH_TOKEN,\n            useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/),\n        },\n    ],\n    exports: [\n        RouterModule,\n    ],\n})\nexport class PaginatorModule {\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import { NgModule } from \"@angular/core\";\nimport { RouterModule } from \"@angular/router\";\nimport { DEMO_PATH_TOKEN, NuiDocsModule, NuiMessageModule, NuiPaginatorModule, SrlcStage } from \"@nova-ui/bits\";\n\nimport {\n    PaginatorAdjacentExampleComponent,\n    PaginatorBasicExampleComponent,\n    PaginatorCustomPageSetExampleComponent,\n    PaginatorExampleComponent,\n    PaginatorHiddenPrevNextExampleComponent,\n    PaginatorStylingExampleComponent,\n    PaginatorVirtualScrollExampleComponent,\n    PaginatorVisibilityExampleComponent,\n    PaginatorVisualTestComponent,\n    PaginatorTestComponent,\n} from \"./index\";\n\nconst routes = [\n    {\n        path: \"\",\n        component: PaginatorExampleComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.ga,\n            },\n            showThemeSwitcher: true,\n        },\n    },\n    {\n        path: \"paginator-visual-test\",\n        component: PaginatorVisualTestComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"paginator-test\",\n        component: PaginatorTestComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n];\n\n@NgModule({\n    imports: [\n        NuiPaginatorModule,\n        NuiDocsModule,\n        NuiMessageModule,\n        RouterModule.forChild(routes),\n    ],\n    declarations: [\n        PaginatorAdjacentExampleComponent,\n        PaginatorBasicExampleComponent,\n        PaginatorCustomPageSetExampleComponent,\n        PaginatorExampleComponent,\n        PaginatorHiddenPrevNextExampleComponent,\n        PaginatorStylingExampleComponent,\n        PaginatorVirtualScrollExampleComponent,\n        PaginatorVisibilityExampleComponent,\n        PaginatorVisualTestComponent,\n        PaginatorTestComponent,\n    ],\n    providers: [\n        {\n            provide: DEMO_PATH_TOKEN,\n            useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/),\n        },\n    ],\n    exports: [\n        RouterModule,\n    ],\n})\nexport class PaginatorModule {\n}\n");
 
 /***/ }),
 
@@ -247,6 +253,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "LLCC":
+/*!*****************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/paginator/paginator-test/paginator-test.component.ts ***!
+  \*****************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("import { Component } from \"@angular/core\";\n\n@Component({\n    selector: \"nui-paginator-test\",\n    templateUrl: \"./paginator-test.component.html\",\n})\nexport class PaginatorTestComponent {\n}\n");
+
+/***/ }),
+
 /***/ "Msq9":
 /*!*******************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/paginator/index.ts ***!
@@ -256,7 +275,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("export * from \"./paginator-docs/paginator-docs.example.component\";\nexport * from \"./paginator-adjacent/paginator-adjacent.example.component\";\nexport * from \"./paginator-basic/paginator-basic.example.component\";\nexport * from \"./paginator-custom-page-set/paginator-custom-page-set.example.component\";\nexport * from \"./paginator-hidden-prev-next/paginator-hidden-prev-next.example.component\";\nexport * from \"./paginator-styling/paginator-styling.example.component\";\nexport * from \"./paginator-virtual-scroll/paginator-virtual-scroll.example.component\";\nexport * from \"./paginator-visibility/paginator-visibility.example.component\";\nexport * from \"./paginator-visual-test/paginator-visual-test.component\";\n");
+/* harmony default export */ __webpack_exports__["default"] = ("export * from \"./paginator-docs/paginator-docs.example.component\";\nexport * from \"./paginator-adjacent/paginator-adjacent.example.component\";\nexport * from \"./paginator-basic/paginator-basic.example.component\";\nexport * from \"./paginator-custom-page-set/paginator-custom-page-set.example.component\";\nexport * from \"./paginator-hidden-prev-next/paginator-hidden-prev-next.example.component\";\nexport * from \"./paginator-styling/paginator-styling.example.component\";\nexport * from \"./paginator-virtual-scroll/paginator-virtual-scroll.example.component\";\nexport * from \"./paginator-visibility/paginator-visibility.example.component\";\nexport * from \"./paginator-visual-test/paginator-visual-test.component\";\nexport * from \"./paginator-test/paginator-test.component\";\n");
 
 /***/ }),
 
@@ -272,6 +291,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PaginatorVisualTestComponent", function() { return PaginatorVisualTestComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var _src_lib_paginator_paginator_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../src/lib/paginator/paginator.component */ "4E9B");
+/* harmony import */ var _paginator_virtual_scroll_paginator_virtual_scroll_example_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../paginator-virtual-scroll/paginator-virtual-scroll.example.component */ "IVQi");
+
 
 
 class PaginatorVisualTestComponent {
@@ -280,7 +301,7 @@ class PaginatorVisualTestComponent {
     }
 }
 PaginatorVisualTestComponent.ɵfac = function PaginatorVisualTestComponent_Factory(t) { return new (t || PaginatorVisualTestComponent)(); };
-PaginatorVisualTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: PaginatorVisualTestComponent, selectors: [["nui-paginator-visual-test"]], decls: 16, vars: 21, consts: [[1, "container"], ["id", "nui-visual-test-basic-paginator", 3, "page", "pageSize", "total"], ["id", "nui-visual-test-adjacent-paginator", 3, "page", "pageSize", "total", "adjacent"], ["id", "nui-visual-test-custom-page-set-paginator", 3, "page", "pageSize", "total", "adjacent", "pageSizeSet", "showPrevNext"], ["id", "nui-visual-test-paginator-styling", "activeClass", "nui-message-error", "dots", "\u00B0\u00B0\u00B0", 3, "page", "pageSize", "total"], ["id", "nui-visual-test-visibility-paginator", 3, "page", "pageSize", "total", "adjacent", "hideIfEmpty"]], template: function PaginatorVisualTestComponent_Template(rf, ctx) { if (rf & 1) {
+PaginatorVisualTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: PaginatorVisualTestComponent, selectors: [["nui-paginator-visual-test"]], decls: 19, vars: 21, consts: [[1, "container"], ["id", "nui-visual-test-basic-paginator", 3, "page", "pageSize", "total"], ["id", "nui-visual-test-adjacent-paginator", 3, "page", "pageSize", "total", "adjacent"], ["id", "nui-visual-test-custom-page-set-paginator", 3, "page", "pageSize", "total", "adjacent", "pageSizeSet", "showPrevNext"], ["id", "nui-visual-test-paginator-styling", "activeClass", "nui-message-error", "dots", "\u00B0\u00B0\u00B0", 3, "page", "pageSize", "total"], ["id", "nui-visual-test-visibility-paginator", 3, "page", "pageSize", "total", "adjacent", "hideIfEmpty"]], template: function PaginatorVisualTestComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "h3");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Basic Paginator");
@@ -302,6 +323,10 @@ PaginatorVisualTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__[
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](14, "Invisible Paginator");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](15, "nui-paginator", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "h3");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](17, "Paginator with Virtual Scroll");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](18, "nui-paginator-virtual-scroll-example");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
@@ -314,7 +339,7 @@ PaginatorVisualTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__[
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("page", 10)("pageSize", 25)("total", 1012);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("page", 0)("pageSize", 0)("total", 0)("adjacent", 1)("hideIfEmpty", true);
-    } }, directives: [_src_lib_paginator_paginator_component__WEBPACK_IMPORTED_MODULE_1__["PaginatorComponent"]], encapsulation: 2 });
+    } }, directives: [_src_lib_paginator_paginator_component__WEBPACK_IMPORTED_MODULE_1__["PaginatorComponent"], _paginator_virtual_scroll_paginator_virtual_scroll_example_component__WEBPACK_IMPORTED_MODULE_2__["PaginatorVirtualScrollExampleComponent"]], encapsulation: 2 });
 
 
 /***/ }),
@@ -355,6 +380,19 @@ PaginatorStylingExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ("<nui-paginator id=\"nui-demo-custom-page-size-set-paginator\"\n           [page]=\"10\"\n           [pageSize]=\"15\"\n           [total]=\"2080\"\n           [pageSizeSet]=\"customPageSizeSet\">\n</nui-paginator>\n");
+
+/***/ }),
+
+/***/ "Szgy":
+/*!*******************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/paginator/paginator-test/paginator-test.component.html ***!
+  \*******************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n<div class=\"container\">\n    <nui-paginator-basic-example></nui-paginator-basic-example>\n\n    <nui-paginator-adjacent-example></nui-paginator-adjacent-example>\n</div>\n");
 
 /***/ }),
 
@@ -465,6 +503,35 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "jlGC":
+/*!***************************************************************************************!*\
+  !*** ./demo/src/components/demo/paginator/paginator-test/paginator-test.component.ts ***!
+  \***************************************************************************************/
+/*! exports provided: PaginatorTestComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PaginatorTestComponent", function() { return PaginatorTestComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _paginator_basic_paginator_basic_example_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../paginator-basic/paginator-basic.example.component */ "dP1c");
+/* harmony import */ var _paginator_adjacent_paginator_adjacent_example_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../paginator-adjacent/paginator-adjacent.example.component */ "KJdG");
+
+
+
+class PaginatorTestComponent {
+}
+PaginatorTestComponent.ɵfac = function PaginatorTestComponent_Factory(t) { return new (t || PaginatorTestComponent)(); };
+PaginatorTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: PaginatorTestComponent, selectors: [["nui-paginator-test"]], decls: 3, vars: 0, consts: [[1, "container"]], template: function PaginatorTestComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "nui-paginator-basic-example");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "nui-paginator-adjacent-example");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    } }, directives: [_paginator_basic_paginator_basic_example_component__WEBPACK_IMPORTED_MODULE_1__["PaginatorBasicExampleComponent"], _paginator_adjacent_paginator_adjacent_example_component__WEBPACK_IMPORTED_MODULE_2__["PaginatorAdjacentExampleComponent"]], encapsulation: 2 });
+
+
+/***/ }),
+
 /***/ "llmp":
 /*!***************************************************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/paginator/paginator-basic/paginator-basic.example.component.ts ***!
@@ -539,7 +606,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n<div class=\"container\">\n        <h3>Basic Paginator</h3>\n        <nui-paginator id=\"nui-visual-test-basic-paginator\"\n                [page]=\"1\"\n                [pageSize]=\"10\"\n                [total]=\"1012\">\n        </nui-paginator>\n\n        <h3>Paginator Adjacent Page-Links</h3>\n        <nui-paginator id=\"nui-visual-test-adjacent-paginator\"\n                [page]=\"41\"\n                [pageSize]=\"25\"\n                [total]=\"1012\"\n                [adjacent]=\"2\">\n        </nui-paginator>\n\n        <h3>Paginator With Custom Page Set and Without Previous and Next Buttons</h3>\n        <nui-paginator id=\"nui-visual-test-custom-page-set-paginator\"\n                [page]=\"5\"\n                [pageSize]=\"2\"\n                [total]=\"18\"\n                [adjacent]=\"1\"\n                [pageSizeSet]=\"customPageSizeSet\"\n                [showPrevNext]=\"false\">\n        </nui-paginator>\n\n        <h3>Paginator With Custom Styling</h3>\n        <nui-paginator id=\"nui-visual-test-paginator-styling\"\n                [page]=\"10\"\n                [pageSize]=\"25\"\n                [total]=\"1012\"\n                activeClass=\"nui-message-error\"\n                dots=\"°°°\">\n        </nui-paginator>\n\n        <h3>Invisible Paginator</h3>\n        <nui-paginator id=\"nui-visual-test-visibility-paginator\"\n                       [page]=\"0\"\n                       [pageSize]=\"0\"\n                       [total]=\"0\"\n                       [adjacent]=\"1\"\n                       [hideIfEmpty]=\"true\">\n        </nui-paginator>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("\n<div class=\"container\">\n        <h3>Basic Paginator</h3>\n        <nui-paginator id=\"nui-visual-test-basic-paginator\"\n                [page]=\"1\"\n                [pageSize]=\"10\"\n                [total]=\"1012\">\n        </nui-paginator>\n\n        <h3>Paginator Adjacent Page-Links</h3>\n        <nui-paginator id=\"nui-visual-test-adjacent-paginator\"\n                [page]=\"41\"\n                [pageSize]=\"25\"\n                [total]=\"1012\"\n                [adjacent]=\"2\">\n        </nui-paginator>\n\n        <h3>Paginator With Custom Page Set and Without Previous and Next Buttons</h3>\n        <nui-paginator id=\"nui-visual-test-custom-page-set-paginator\"\n                [page]=\"5\"\n                [pageSize]=\"2\"\n                [total]=\"18\"\n                [adjacent]=\"1\"\n                [pageSizeSet]=\"customPageSizeSet\"\n                [showPrevNext]=\"false\">\n        </nui-paginator>\n\n        <h3>Paginator With Custom Styling</h3>\n        <nui-paginator id=\"nui-visual-test-paginator-styling\"\n                [page]=\"10\"\n                [pageSize]=\"25\"\n                [total]=\"1012\"\n                activeClass=\"nui-message-error\"\n                dots=\"°°°\">\n        </nui-paginator>\n\n        <h3>Invisible Paginator</h3>\n        <nui-paginator id=\"nui-visual-test-visibility-paginator\"\n                       [page]=\"0\"\n                       [pageSize]=\"0\"\n                       [total]=\"0\"\n                       [adjacent]=\"1\"\n                       [hideIfEmpty]=\"true\">\n        </nui-paginator>\n\n        <h3>Paginator with Virtual Scroll</h3>\n        <nui-paginator-virtual-scroll-example></nui-paginator-virtual-scroll-example>\n</div>\n");
 
 /***/ }),
 
@@ -805,6 +872,15 @@ const routes = [
             },
         },
     },
+    {
+        path: "paginator-test",
+        component: _index__WEBPACK_IMPORTED_MODULE_2__["PaginatorTestComponent"],
+        data: {
+            "srlc": {
+                "hideIndicator": true,
+            },
+        },
+    },
 ];
 class PaginatorModule {
 }
@@ -828,7 +904,8 @@ PaginatorModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineIn
         _index__WEBPACK_IMPORTED_MODULE_2__["PaginatorStylingExampleComponent"],
         _index__WEBPACK_IMPORTED_MODULE_2__["PaginatorVirtualScrollExampleComponent"],
         _index__WEBPACK_IMPORTED_MODULE_2__["PaginatorVisibilityExampleComponent"],
-        _index__WEBPACK_IMPORTED_MODULE_2__["PaginatorVisualTestComponent"]], imports: [_nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiPaginatorModule"],
+        _index__WEBPACK_IMPORTED_MODULE_2__["PaginatorVisualTestComponent"],
+        _index__WEBPACK_IMPORTED_MODULE_2__["PaginatorTestComponent"]], imports: [_nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiPaginatorModule"],
         _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiDocsModule"],
         _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["NuiMessageModule"], _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]], exports: [_angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]] }); })();
 

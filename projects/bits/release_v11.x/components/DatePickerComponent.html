@@ -2028,7 +2028,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>    <code>ValidationErrors | null</code>
 
                     </div>
                     <div class="io-description">
@@ -2491,7 +2491,7 @@ import {
     ViewChild,
     ViewEncapsulation,
 } from &quot;@angular/core&quot;;
-import { ControlValueAccessor, FormControl, NG_VALIDATORS, NG_VALUE_ACCESSOR } from &quot;@angular/forms&quot;;
+import { ControlValueAccessor, FormControl, NG_VALIDATORS, NG_VALUE_ACCESSOR, ValidationErrors } from &quot;@angular/forms&quot;;
 import _defaults from &quot;lodash/defaults&quot;;
 import _isEqual from &quot;lodash/isEqual&quot;;
 import _isNil from &quot;lodash/isNil&quot;;
@@ -2646,7 +2646,7 @@ export class DatePickerComponent implements OnChanges, OnInit, ControlValueAcces
         private cd: ChangeDetectorRef
     ) {}
 
-    ngOnInit() {
+    ngOnInit(): void {
         _defaults(this, datePickerDefaults);
         this.selectedDate &#x3D; this._value;
         this.initDate &#x3D; this.value &amp;&amp; this.value.clone();
@@ -2670,13 +2670,13 @@ export class DatePickerComponent implements OnChanges, OnInit, ControlValueAcces
         this.onAppendToBodyChange(this.appendToBody);
     }
 
-    public ngOnChanges(changes: SimpleChanges) {
+    public ngOnChanges(changes: SimpleChanges): void {
         if (changes.appendToBody) {
             this.onAppendToBodyChange(changes.appendToBody.currentValue);
         }
     }
 
-    ngAfterViewInit() {
+    ngAfterViewInit(): void {
         this.calendarChanged &#x3D; this._datePicker.calendarMoved.subscribe((value: Moment) &#x3D;&gt; this.calendarNavigated.emit(value));
         this.updateTextboxValue();
         this.cd.detectChanges();
@@ -2691,7 +2691,7 @@ export class DatePickerComponent implements OnChanges, OnInit, ControlValueAcces
 
             this.overlay.show$.pipe(takeUntil(this.onDestroy$)).subscribe(_ &#x3D;&gt; this._datePicker.refreshView());
             this.overlay.hide$.pipe(takeUntil(this.onDestroy$)).subscribe(_ &#x3D;&gt; {
-                const currentDateValid &#x3D; this.value.isValid();
+                const currentDateValid &#x3D; this.value?.isValid();
                 if (!currentDateValid) {
                     this._datePicker.value &#x3D; undefined;
                     this._datePicker.datepickerMode &#x3D; &quot;day&quot;;
@@ -2700,7 +2700,7 @@ export class DatePickerComponent implements OnChanges, OnInit, ControlValueAcces
         }
     }
 
-    public updateTouchedState() {
+    public updateTouchedState(): void {
         setTimeout(() &#x3D;&gt; this.inputBlurred.emit(), 100);
         this.onTouched();
     }
@@ -2726,16 +2726,16 @@ export class DatePickerComponent implements OnChanges, OnInit, ControlValueAcces
         return this.isDisabled ? &quot;gray&quot; : &quot;primary-blue&quot;;
     }
 
-    public onChange(value: any) {}
+    public onChange(value: any): void {}
 
-    public onTouched() {}
+    public onTouched(): void {}
 
-    public validate(control: FormControl) {
+    public validate(control: FormControl): ValidationErrors | null {
         this.formControl &#x3D; control;
         return NuiValidators.dateFormat(control.value);
     }
 
-    public writeValue(value: any) {
+    public writeValue(value: any): void {
         this.value &#x3D; value;
     }
 
@@ -2755,7 +2755,7 @@ export class DatePickerComponent implements OnChanges, OnInit, ControlValueAcces
         this.isInErrorState &#x3D; isInErrorState;
     }
 
-    public onSelectionDone(value: Moment) {
+    public onSelectionDone(value: Moment): void {
         this.value &#x3D; value;
         this.overlay?.hide();
     }
@@ -2775,7 +2775,7 @@ export class DatePickerComponent implements OnChanges, OnInit, ControlValueAcces
         this.momentDateFormat &#x3D; isCustomFormatValid ? this.dateFormat : datePickerDefaults.dateFormat;
     }
 
-    ngOnDestroy() {
+    ngOnDestroy(): void {
         // The following resolves a known &#x27;Error during cleanup of component:&#x27; error during unit tests
         // Details: https://github.com/angular/angular/issues/17013
         if (this.calendarChanged) {
@@ -2813,8 +2813,8 @@ export class DatePickerComponent implements OnChanges, OnInit, ControlValueAcces
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><div class="nui-datepicker">    <ng-container *ngIf="!inline">        <div #toggleRef             class="nui-datepicker__container"             [class.disabled]="isDisabled"             (click)="!isDisabled && overlay.toggle()">            <nui-textbox #date                         autocomplete="off"                         [disabled]="isDisabled"                         [isInErrorState]="isInErrorState"                         (textChange)="onInputActiveDateChanged($event)"                         (blurred)="updateTouchedState()"                         [ariaLabel]="ariaLabel">            </nui-textbox>            <nui-icon class="nui-datepicker__icon"                      icon="calendar"                      aria-hidden="true"                      [iconColor]="getIconColor()"></nui-icon>        </div>    <nui-overlay #overlay                 [toggleReference]="toggleRef"                 [overlayConfig]="overlayConfig"                 [customContainer]="customContainer">             <ng-container *ngTemplateOutlet="datePickerInner"></ng-container>    </nui-overlay>    </ng-container>    <div *ngIf="inline"><ng-container *ngTemplateOutlet="datePickerInner"></ng-container></div>    <div #popupArea></div></div><ng-template #datePickerInner>    <nui-date-picker-inner [preserveInsignificant]="preserveInsignificant"                           [selectedDate]="selectedDate"                           [inline]="inline"                           (update)="onUpdate($event)"                           (selectionDone)="onSelectionDone($event)"                           [locale]="locale"                           [datepickerMode]="datepickerMode"                           [initDate]="initDate"                           [minDate]="minDate"                           [maxDate]="maxDate"                           [minMode]="minMode"                           [maxMode]="maxMode"                           [showWeeks]="showWeeks"                           [dateFormat]="dateFormat"                           [formatDay]="formatDay"                           [formatMonth]="formatMonth"                           [formatYear]="formatYear"                           [formatDayHeader]="formatDayHeader"                           [formatDayTitle]="formatDayTitle"                           [formatMonthTitle]="formatMonthTitle"                           [startingDay]="startingDay"                           [yearRange]="yearRange"                           [disabledDates]="disabledDates"                           [onlyCurrentMonth]="onlyCurrentMonth"                           [handleTimezone]="handleTimezone"                           [value]="value"                           >        <nui-day-picker tabindex="0"></nui-day-picker>        <nui-month-picker tabindex="0"></nui-month-picker>        <nui-year-picker tabindex="0"></nui-year-picker>    </nui-date-picker-inner></ng-template></div>'
-    var COMPONENTS = [{'name': 'BreadcrumbComponent', 'selector': 'nui-breadcrumb'},{'name': 'BusyComponent', 'selector': '[nui-busy]'},{'name': 'ButtonComponent', 'selector': '[nui-button]'},{'name': 'CardComponent', 'selector': 'nui-card'},{'name': 'CardGroupComponent', 'selector': 'nui-card-group'},{'name': 'CheckboxComponent', 'selector': 'nui-checkbox'},{'name': 'CheckboxGroupComponent', 'selector': 'nui-checkbox-group'},{'name': 'ChipsComponent', 'selector': 'nui-chips'},{'name': 'ChipsOverflowComponent', 'selector': 'nui-chips-overflow'},{'name': 'ComboboxComponent', 'selector': 'nui-combobox'},{'name': 'ComboboxV2Component', 'selector': 'nui-combobox-v2'},{'name': 'CustomValidationMessageComponent', 'selector': 'nui-custom-validation-message'},{'name': 'DatePickerComponent', 'selector': 'nui-date-picker'},{'name': 'DateTimePickerComponent', 'selector': 'nui-date-time-picker'},{'name': 'DialogComponent', 'selector': 'nui-dialog-window'},{'name': 'ExpanderComponent', 'selector': 'nui-expander'},{'name': 'FormFieldComponent', 'selector': 'nui-form-field'},{'name': 'IconComponent', 'selector': 'nui-icon'},{'name': 'ImageComponent', 'selector': 'nui-image'},{'name': 'MenuComponent', 'selector': 'nui-menu'},{'name': 'MessageComponent', 'selector': 'nui-message'},{'name': 'OverlayComponent', 'selector': 'nui-overlay'},{'name': 'PaginatorComponent', 'selector': 'nui-paginator'},{'name': 'PanelComponent', 'selector': 'nui-panel'},{'name': 'PopoverComponent', 'selector': 'nui-popover'},{'name': 'PopupComponent', 'selector': 'nui-popup'},{'name': 'PopupDeprecatedComponent', 'selector': 'nui-popup-deprecated'},{'name': 'ProgressComponent', 'selector': 'nui-progress'},{'name': 'QuickPickerComponent', 'selector': 'nui-quick-picker'},{'name': 'RadioGroupComponent', 'selector': 'nui-radio-group'},{'name': 'RepeatComponent', 'selector': 'nui-repeat'},{'name': 'SearchComponent', 'selector': 'nui-search'},{'name': 'SelectComponent', 'selector': 'nui-select'},{'name': 'SelectV2Component', 'selector': 'nui-select-v2'},{'name': 'SheetComponent', 'selector': 'nui-sheet'},{'name': 'SheetGroupComponent', 'selector': 'nui-sheet-group'},{'name': 'SorterComponent', 'selector': 'nui-sorter'},{'name': 'SpinnerComponent', 'selector': 'nui-spinner'},{'name': 'SwitchComponent', 'selector': 'nui-switch'},{'name': 'TabHeadingGroupComponent', 'selector': 'nui-tab-heading-group'},{'name': 'TableComponent', 'selector': 'nui-table, table[nui-table]'},{'name': 'TextboxComponent', 'selector': 'nui-textbox'},{'name': 'TextboxNumberComponent', 'selector': 'nui-textbox-number'},{'name': 'TimeFrameBarComponent', 'selector': 'nui-time-frame-bar'},{'name': 'TimeFramePickerComponent', 'selector': 'nui-time-frame-picker'},{'name': 'TimePickerComponent', 'selector': 'nui-time-picker'},{'name': 'ToastComponent', 'selector': 'nui-toast-component'},{'name': 'ToolbarComponent', 'selector': 'nui-toolbar'},{'name': 'WizardComponent', 'selector': 'nui-wizard'},{'name': 'WizardFooterComponent', 'selector': 'wizard-footer'},{'name': 'WizardHorizontalComponent', 'selector': 'nui-wizard-horizontal'},{'name': 'WizardStepComponent', 'selector': 'nui-wizard-step'},{'name': 'WizardStepHeaderComponent', 'selector': 'wizard-step-header'},{'name': 'WizardStepV2Component', 'selector': 'nui-wizard-step-v2'},{'name': 'WizardVerticalComponent', 'selector': 'nui-wizard-vertical'}];
-    var DIRECTIVES = [{'name': 'ClickInterceptorDirective', 'selector': '[nuiClickInterceptor]'},{'name': 'DndDropTargetDirective', 'selector': '[cdkDropList][nuiDndDropTarget]'},{'name': 'MarkAsSelectedItemDirective', 'selector': '[nuiMarkAsSelectedItem]'},{'name': 'TableStickyHeaderDirective', 'selector': 'cdk-virtual-scroll-viewport[tableStickyHeader]'},{'name': 'TableVirtualScrollDirective', 'selector': '[tableVirtualScroll]:not([rowCount])'},{'name': 'TableVirtualScrollLinearDirective', 'selector': '[tableVirtualScroll]:not([offset])'},{'name': 'TooltipDirective', 'selector': '[nuiTooltip]'},{'name': 'WizardDirective', 'selector': '[nuiWizard]'},{'name': 'WizardStepFooterDirective', 'selector': '[wizardStepFooter]'},{'name': 'WizardStepLabelDirective', 'selector': '[wizardStepLabel]'},{'name': 'WizardStepperNextDirective', 'selector': 'button[nuiWizardNext]'},{'name': 'WizardStepperPreviousDirective', 'selector': 'button[nuiWizardPrevious]'}];
+    var COMPONENTS = [{'name': 'BreadcrumbComponent', 'selector': 'nui-breadcrumb'},{'name': 'BusyComponent', 'selector': '[nui-busy]'},{'name': 'ButtonComponent', 'selector': '[nui-button]'},{'name': 'CardComponent', 'selector': 'nui-card'},{'name': 'CardGroupComponent', 'selector': 'nui-card-group'},{'name': 'CheckboxComponent', 'selector': 'nui-checkbox'},{'name': 'CheckboxGroupComponent', 'selector': 'nui-checkbox-group'},{'name': 'ChipsComponent', 'selector': 'nui-chips'},{'name': 'ChipsOverflowComponent', 'selector': 'nui-chips-overflow'},{'name': 'ComboboxComponent', 'selector': 'nui-combobox'},{'name': 'ComboboxV2Component', 'selector': 'nui-combobox-v2'},{'name': 'CustomValidationMessageComponent', 'selector': 'nui-custom-validation-message'},{'name': 'DatePickerComponent', 'selector': 'nui-date-picker'},{'name': 'DateTimePickerComponent', 'selector': 'nui-date-time-picker'},{'name': 'DialogComponent', 'selector': 'nui-dialog-window'},{'name': 'ExpanderComponent', 'selector': 'nui-expander'},{'name': 'FormFieldComponent', 'selector': 'nui-form-field'},{'name': 'IconComponent', 'selector': 'nui-icon'},{'name': 'ImageComponent', 'selector': 'nui-image'},{'name': 'MenuComponent', 'selector': 'nui-menu'},{'name': 'MessageComponent', 'selector': 'nui-message'},{'name': 'OverlayComponent', 'selector': 'nui-overlay'},{'name': 'PaginatorComponent', 'selector': 'nui-paginator'},{'name': 'PanelComponent', 'selector': 'nui-panel'},{'name': 'PopoverComponent', 'selector': 'nui-popover'},{'name': 'PopupComponent', 'selector': 'nui-popup'},{'name': 'PopupDeprecatedComponent', 'selector': 'nui-popup-deprecated'},{'name': 'ProgressComponent', 'selector': 'nui-progress'},{'name': 'QuickPickerComponent', 'selector': 'nui-quick-picker'},{'name': 'RadioGroupComponent', 'selector': 'nui-radio-group'},{'name': 'RepeatComponent', 'selector': 'nui-repeat'},{'name': 'SearchComponent', 'selector': 'nui-search'},{'name': 'SelectComponent', 'selector': 'nui-select'},{'name': 'SelectV2Component', 'selector': 'nui-select-v2'},{'name': 'SheetComponent', 'selector': 'nui-sheet'},{'name': 'SheetGroupComponent', 'selector': 'nui-sheet-group'},{'name': 'SorterComponent', 'selector': 'nui-sorter'},{'name': 'SpinnerComponent', 'selector': 'nui-spinner'},{'name': 'SwitchComponent', 'selector': 'nui-switch'},{'name': 'TabHeadingGroupComponent', 'selector': 'nui-tab-heading-group'},{'name': 'TableComponent', 'selector': 'nui-table, table[nui-table]'},{'name': 'TextboxComponent', 'selector': 'nui-textbox'},{'name': 'TextboxNumberComponent', 'selector': 'nui-textbox-number'},{'name': 'TimeFrameBarComponent', 'selector': 'nui-time-frame-bar'},{'name': 'TimeFramePickerComponent', 'selector': 'nui-time-frame-picker'},{'name': 'TimePickerComponent', 'selector': 'nui-time-picker'},{'name': 'ToastComponent', 'selector': 'nui-toast-component'},{'name': 'ToolbarComponent', 'selector': 'nui-toolbar'},{'name': 'WizardComponent', 'selector': 'nui-wizard'},{'name': 'WizardFooterComponent', 'selector': 'wizard-footer'},{'name': 'WizardHorizontalComponent', 'selector': 'nui-wizard-horizontal'},{'name': 'WizardStepComponent', 'selector': 'nui-wizard-step'},{'name': 'WizardStepHeaderComponent', 'selector': 'nui-wizard-step-header'},{'name': 'WizardStepV2Component', 'selector': 'nui-wizard-step-v2'}];
+    var DIRECTIVES = [{'name': 'ClickInterceptorDirective', 'selector': '[nuiClickInterceptor]'},{'name': 'DndDropTargetDirective', 'selector': '[cdkDropList][nuiDndDropTarget]'},{'name': 'MarkAsSelectedItemDirective', 'selector': '[nuiMarkAsSelectedItem]'},{'name': 'TableStickyHeaderDirective', 'selector': 'cdk-virtual-scroll-viewport[tableStickyHeader]'},{'name': 'TableVirtualScrollDirective', 'selector': '[tableVirtualScroll]:not([rowCount])'},{'name': 'TableVirtualScrollLinearDirective', 'selector': '[tableVirtualScroll]:not([offset])'},{'name': 'TooltipDirective', 'selector': '[nuiTooltip]'},{'name': 'WizardDirective', 'selector': '[nuiWizard]'},{'name': 'WizardStepFooterDirective', 'selector': '[nuiWizardStepFooter]'},{'name': 'WizardStepLabelDirective', 'selector': '[nuiWizardStepLabel]'},{'name': 'WizardStepperNextDirective', 'selector': 'button[nuiWizardNext]'},{'name': 'WizardStepperPreviousDirective', 'selector': 'button[nuiWizardPrevious]'}];
     var ACTUAL_COMPONENT = {'name': 'DatePickerComponent'};
 </script>
 <script src="../js/tree.js"></script>

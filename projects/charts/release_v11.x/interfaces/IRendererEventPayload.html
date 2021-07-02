@@ -289,22 +289,24 @@ export interface IRadialRendererConfig extends IRendererConfig {
 }
 
 /**
- * @ignore
- * Configuration for the DonutGaugeThresholdsRenderer
+ * Standard configuration for gauge threshold renderers
  */
-export interface IDonutGaugeThresholdsRendererConfig extends IRadialRendererConfig {
+export interface IGaugeThresholdsRendererConfig {
     /** The radius of each threshold marker */
     markerRadius?: StandardGaugeThresholdMarkerRadius | number;
+    /** Boolean indicating whether the renderer is enabled */
+    enabled?: boolean;
 }
 
 /**
- * @ignore
+ * Configuration for the DonutGaugeThresholdsRenderer
+ */
+export interface IDonutGaugeThresholdsRendererConfig extends IRadialRendererConfig, IGaugeThresholdsRendererConfig {}
+
+/**
  * Configuration for the LinearGaugeThresholdsRenderer
  */
-export interface ILinearGaugeThresholdsRendererConfig extends IRendererConfig {
-    /** The radius of each threshold marker */
-    markerRadius?: StandardGaugeThresholdMarkerRadius | number;
-}
+export interface ILinearGaugeThresholdsRendererConfig extends IRendererConfig, IGaugeThresholdsRendererConfig {}
 
 export interface ILinearScales {
     x: ScaleLinear&lt;number, number&gt;;
@@ -360,11 +362,20 @@ export interface IChartSeries&lt;A extends IAccessors&gt; extends IDataSeries&lt
      * uses &#x27;x&#x27; and &#x27;y&#x27; as the keys for its scales.
      */
     scales: Scales;
+    /**
+     * Represents an emphasis/visibility state of this series
+     */
+    renderState?: RenderState;
 }
 
 export interface IChartAssistSeries&lt;A extends IAccessors&gt; extends IChartSeries&lt;A&gt; {
+    /**
+     * Whether this series should be shown in the legend
+     */
     showInLegend?: boolean;
-    renderState?: RenderState;
+    /**
+     * Whether this series should be preprocessed in the chart assist
+     */
     preprocess?: boolean;
 }
 
@@ -375,6 +386,7 @@ export interface IChartMarker {
 
 export interface IChart {
     target?: D3Selection&lt;SVGSVGElement&gt;;
+    configuration?: IChartConfiguration;
     getEventBus(): EventBus&lt;IChartEvent&gt;;
     getDataManager(): DataManager;
     getRenderEngine(): RenderEngine;
@@ -386,6 +398,10 @@ export interface IChart {
     updateDimensions(): void;
     setSeriesStates(renderStateData: IRenderStateData[]): void;
     destroy(): void;
+}
+
+export interface IChartConfiguration {
+    updateDomainForEmptySeries?: boolean;
 }
 
 /** @ignore */

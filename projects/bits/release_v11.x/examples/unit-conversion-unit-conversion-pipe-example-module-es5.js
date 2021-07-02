@@ -1,4 +1,8 @@
 (function () {
+  var _templateObject;
+
+  function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
   function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["unit-conversion-unit-conversion-pipe-example-module"], {
@@ -67,7 +71,18 @@
         selectors: [["unit-conversion-pipe-basic-example"]],
         decls: 6,
         vars: 10,
-        consts: [[1, "conversion", "d-flex", "flex-column", "align-items-end"], ["caption", "Bits Per Second", 1, "d-block", "mt-5", 3, "showOptionalText"], ["type", "number", "customBoxWidth", "200px", 3, "ngModel", "minValue", "step", "ngModelChange"]],
+        consts: function consts() {
+          var i18n_0;
+
+          if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+            var MSG_EXTERNAL_8467319543633797159$$DEMO_SRC_COMPONENTS_DEMO_PIPES_UNIT_CONVERSION_UNIT_CONVERSION_BASIC_UNIT_CONVERSION_PIPE_BASIC_EXAMPLE_COMPONENT_TS_1 = goog.getMsg("Bits Per Second");
+            i18n_0 = MSG_EXTERNAL_8467319543633797159$$DEMO_SRC_COMPONENTS_DEMO_PIPES_UNIT_CONVERSION_UNIT_CONVERSION_BASIC_UNIT_CONVERSION_PIPE_BASIC_EXAMPLE_COMPONENT_TS_1;
+          } else {
+            i18n_0 = $localize(_templateObject || (_templateObject = _taggedTemplateLiteral([":\u241F02bf2fbc12b46cc793444a412039837aebcd0b14\u241F8467319543633797159:Bits Per Second"])));
+          }
+
+          return [[1, "conversion", "d-flex", "flex-column", "align-items-end"], ["caption", i18n_0, 1, "d-block", "mt-5", 3, "showOptionalText"], ["type", "number", "customBoxWidth", "200px", 3, "ngModel", "minValue", "step", "ngModelChange"]];
+        },
         template: function UnitConversionPipeBasicExampleComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -109,7 +124,7 @@
         },
         directives: [_src_lib_form_field_form_field_component__WEBPACK_IMPORTED_MODULE_1__["FormFieldComponent"], _src_lib_textbox_textbox_number_textbox_number_component__WEBPACK_IMPORTED_MODULE_2__["TextboxNumberComponent"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NgModel"]],
         pipes: [_src_pipes_unit_conversion_pipe__WEBPACK_IMPORTED_MODULE_4__["UnitConversionPipe"]],
-        styles: [".conversion[_ngcontent-%COMP%] {\n  font-size: 25px;\n  width: 150px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInVuaXQtY29udmVyc2lvbi1waXBlLWJhc2ljLmV4YW1wbGUuY29tcG9uZW50Lmxlc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxlQUFBO0VBQ0EsWUFBQTtBQUNKIiwiZmlsZSI6InVuaXQtY29udmVyc2lvbi1waXBlLWJhc2ljLmV4YW1wbGUuY29tcG9uZW50Lmxlc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuY29udmVyc2lvbiB7XG4gICAgZm9udC1zaXplOiAyNXB4O1xuICAgIHdpZHRoOiAxNTBweDtcbn1cbiJdfQ== */"]
+        styles: [".conversion[_ngcontent-%COMP%] {\n  font-size: 25px;\n  width: 160px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInVuaXQtY29udmVyc2lvbi1waXBlLWJhc2ljLmV4YW1wbGUuY29tcG9uZW50Lmxlc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxlQUFBO0VBQ0EsWUFBQTtBQUNKIiwiZmlsZSI6InVuaXQtY29udmVyc2lvbi1waXBlLWJhc2ljLmV4YW1wbGUuY29tcG9uZW50Lmxlc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuY29udmVyc2lvbiB7XG4gICAgZm9udC1zaXplOiAyNXB4O1xuICAgIHdpZHRoOiAxNjBweDtcbn1cbiJdfQ== */"]
       });
       /***/
     },

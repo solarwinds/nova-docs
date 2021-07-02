@@ -3202,7 +3202,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import { Component, OnInit } from \"@angular/core\";\nimport { FormControl } from \"@angular/forms\";\nimport { Observable } from \"rxjs\";\nimport { map, startWith } from \"rxjs/operators\";\n\ninterface IExampleItem {\n    id: string;\n    name: string;\n}\n@Component({\n    selector: \"nui-combobox-v2-custom-typeahead-example\",\n    templateUrl: \"combobox-v2-custom-typeahead.example.component.html\",\n    host: { class: \"combobox-container\" },\n})\nexport class ComboboxV2CustomTypeaheadExampleComponent implements OnInit {\n    public items: IExampleItem[] = Array.from({ length: 100 }).map((_, i) =>\n        ({\n            id: `value-${i}`,\n            name: $localize `Item ${i}`,\n        }));\n    public comboboxControl = new FormControl();\n    public filteredItems$: Observable<any[]>;\n\n    ngOnInit() {\n        this.filteredItems$ = this.comboboxControl.valueChanges.pipe(\n            startWith(\"\"),\n            map((value) => value?.name || value),\n            map((name) =>\n                name ? this.filterItems(name) : this.items.slice()\n            )\n        );\n    }\n\n    public displayFn(item: IExampleItem): string {\n        return item?.name || \"\";\n    }\n\n    private filterItems(value: string): IExampleItem[] {\n        const filterValue = value.toLowerCase();\n\n        return this.items.filter(option => option.name.toLowerCase().includes(filterValue));\n    }\n}\n";
+      __webpack_exports__["default"] = "import { Component } from \"@angular/core\";\nimport { FormControl } from \"@angular/forms\";\nimport { Subject } from \"rxjs\";\n\ninterface IExampleItem {\n    id: string;\n    name: string;\n}\n@Component({\n    selector: \"nui-combobox-v2-custom-typeahead-example\",\n    templateUrl: \"combobox-v2-custom-typeahead.example.component.html\",\n    host: { class: \"combobox-container\" },\n})\nexport class ComboboxV2CustomTypeaheadExampleComponent {\n    public items: IExampleItem[] = Array.from({ length: 100 }).map((_, i) =>\n        ({\n            id: `value-${i}`,\n            name: $localize `Item ${i}`,\n        }));\n\n    public comboboxControl = new FormControl();\n\n    // Use this in the template with async pipe to dynamically render the filtered items\n    public filteredItems$: Subject<any[]> = new Subject<any[]>();\n\n    public onValueChange(value: any): void {\n        // Please be aware that there is a known issue (NUI-6131) which results in the\n        // entire set of items appearing in the filtering results on input value set and change\n\n        // Once the combobox input changes the new value is emitted.\n        // Use this value to filter out the array of items\n        value\n            ? this.filteredItems$.next(this.filterItems(String(value)))\n            : this.filteredItems$.next(this.items.slice())\n    }\n\n    public displayFn(item: IExampleItem): string {\n        return item?.name || \"\";\n    }\n\n    // For the sake of the example, the filtering is quite simple.\n    // It filters out the combobox items depending on the user input.\n    private filterItems(value: string): IExampleItem[] {\n        const filterValue = value.toLowerCase();\n\n        return this.items.filter(option => option.name.toLowerCase().includes(filterValue));\n    }\n}\n";
       /***/
     },
 
@@ -3262,7 +3262,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<nui-combobox-v2 placeholder=\"Select Item\" i18n-placeholder\n    [formControl]=\"comboboxControl\"\n    [displayWith]=\"displayFn\"\n    [isTypeaheadEnabled]=\"false\"\n    #combobox>\n    <nui-select-v2-option *ngFor=\"let item of filteredItems$ | async\" [value]=\"item\">\n        <span [nuiComboboxV2OptionHighlight]=\"item.name\"></span>\n    </nui-select-v2-option>\n</nui-combobox-v2>\n";
+      __webpack_exports__["default"] = "<nui-combobox-v2 placeholder=\"Select Item\" i18n-placeholder\n                 [formControl]=\"comboboxControl\"\n                 [displayWith]=\"displayFn\"\n                 [isTypeaheadEnabled]=\"false\"\n                 (valueChanged)=\"onValueChange($event)\"\n                 #combobox>\n    <nui-select-v2-option *ngFor=\"let item of filteredItems$ | async\" [value]=\"item\">\n        <span [nuiComboboxV2OptionHighlight]=\"item.name\"></span>\n    </nui-select-v2-option>\n</nui-combobox-v2>\n";
       /***/
     },
 
@@ -5177,9 +5177,9 @@
       /* harmony import */
 
 
-      var rxjs_operators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-      /*! rxjs/operators */
-      "kU1M");
+      var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! rxjs */
+      "qCKp");
       /* harmony import */
 
 
@@ -5243,25 +5243,27 @@
               name: $localize(_templateObject72 || (_templateObject72 = _taggedTemplateLiteral(["Item ", ""])), i)
             };
           });
-          this.comboboxControl = new _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControl"]();
+          this.comboboxControl = new _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControl"](); // Use this in the template with async pipe to dynamically render the filtered items
+
+          this.filteredItems$ = new rxjs__WEBPACK_IMPORTED_MODULE_1__["Subject"]();
         }
 
         _createClass(ComboboxV2CustomTypeaheadExampleComponent, [{
-          key: "ngOnInit",
-          value: function ngOnInit() {
-            var _this6 = this;
-
-            this.filteredItems$ = this.comboboxControl.valueChanges.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["startWith"])(""), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (value) {
-              return (value === null || value === void 0 ? void 0 : value.name) || value;
-            }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (name) {
-              return name ? _this6.filterItems(name) : _this6.items.slice();
-            }));
+          key: "onValueChange",
+          value: function onValueChange(value) {
+            // Please be aware that there is a known issue (NUI-6131) which results in the
+            // entire set of items appearing in the filtering results on input value set and change
+            // Once the combobox input changes the new value is emitted.
+            // Use this value to filter out the array of items
+            value ? this.filteredItems$.next(this.filterItems(String(value))) : this.filteredItems$.next(this.items.slice());
           }
         }, {
           key: "displayFn",
           value: function displayFn(item) {
             return (item === null || item === void 0 ? void 0 : item.name) || "";
-          }
+          } // For the sake of the example, the filtering is quite simple.
+          // It filters out the combobox items depending on the user input.
+
         }, {
           key: "filterItems",
           value: function filterItems(value) {
@@ -5295,11 +5297,15 @@
             i18n_0 = $localize(_templateObject73 || (_templateObject73 = _taggedTemplateLiteral([":\u241F42daf87f19836ef3d1b8f58a5cf93e2c43b82c1c\u241F8325381706328570325:Select Item"])));
           }
 
-          return [["placeholder", i18n_0, 3, "formControl", "displayWith", "isTypeaheadEnabled"], ["combobox", ""], [3, "value", 4, "ngFor", "ngForOf"], [3, "value"], [3, "nuiComboboxV2OptionHighlight"]];
+          return [["placeholder", i18n_0, 3, "formControl", "displayWith", "isTypeaheadEnabled", "valueChanged"], ["combobox", ""], [3, "value", 4, "ngFor", "ngForOf"], [3, "value"], [3, "nuiComboboxV2OptionHighlight"]];
         },
         template: function ComboboxV2CustomTypeaheadExampleComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "nui-combobox-v2", 0, 1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("valueChanged", function ComboboxV2CustomTypeaheadExampleComponent_Template_nui_combobox_v2_valueChanged_0_listener($event) {
+              return ctx.onValueChange($event);
+            });
 
             _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, ComboboxV2CustomTypeaheadExampleComponent_nui_select_v2_option_2_Template, 2, 2, "nui-select-v2-option", 2);
 
@@ -5563,13 +5569,13 @@
         _createClass(ComboboxV2GettingValueExampleComponent, [{
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this7 = this;
+            var _this6 = this;
 
             this.comboboxValueSelectedExample.valueSelected.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["tap"])(function (value) {
-              return _this7.comboboxValueSelectedValue = value;
+              return _this6.comboboxValueSelectedValue = value;
             }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["takeUntil"])(this.destroy$)).subscribe();
             this.comboboxValueChangedExample.valueChanged.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["tap"])(function (value) {
-              return _this7.comboboxValueChangedValue = value;
+              return _this6.comboboxValueChangedValue = value;
             }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["takeUntil"])(this.destroy$)).subscribe();
           }
         }]);
@@ -8628,7 +8634,7 @@
 
       var ComboboxV2CustomizeOptionsExampleComponent = /*#__PURE__*/function () {
         function ComboboxV2CustomizeOptionsExampleComponent() {
-          var _this8 = this;
+          var _this7 = this;
 
           _classCallCheck(this, ComboboxV2CustomizeOptionsExampleComponent);
 
@@ -8639,7 +8645,7 @@
             return {
               id: "value-".concat(i),
               name: $localize(_templateObject91 || (_templateObject91 = _taggedTemplateLiteral(["Item ", ""])), i),
-              icon: _this8.getRandomIcon()
+              icon: _this7.getRandomIcon()
             };
           });
           this.comboboxControl = new _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControl"]();
@@ -9402,11 +9408,11 @@
         _createClass(ComboboxV2CustomControlExampleComponent, [{
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this9 = this;
+            var _this8 = this;
 
             this.combobox.clickOutsideDropdown.subscribe(function () {
-              if (_this9.handleClicksOutside) {
-                _this9.combobox.hideDropdown();
+              if (_this8.handleClicksOutside) {
+                _this8.combobox.hideDropdown();
               }
             });
           }

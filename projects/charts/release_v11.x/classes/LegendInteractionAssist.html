@@ -146,7 +146,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="310" class="link-to-prism">src/core/chart-assists/chart-assist.ts:310</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="314" class="link-to-prism">src/core/chart-assists/chart-assist.ts:314</a></div>
                             </td>
                         </tr>
 
@@ -215,7 +215,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="310" class="link-to-prism">src/core/chart-assists/chart-assist.ts:310</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="314" class="link-to-prism">src/core/chart-assists/chart-assist.ts:314</a></div>
                             </td>
                         </tr>
 
@@ -253,8 +253,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="384"
-                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:384</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="388"
+                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:388</a></div>
                 </td>
             </tr>
 
@@ -325,8 +325,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="331"
-                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:331</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="335"
+                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:335</a></div>
                 </td>
             </tr>
 
@@ -366,8 +366,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="335"
-                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:335</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="339"
+                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:339</a></div>
                 </td>
             </tr>
 
@@ -438,8 +438,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="390"
-                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:390</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="394"
+                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:394</a></div>
                 </td>
             </tr>
 
@@ -479,8 +479,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="360"
-                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:360</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="364"
+                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:364</a></div>
                 </td>
             </tr>
 
@@ -570,8 +570,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="374"
-                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:374</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="378"
+                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:378</a></div>
                 </td>
             </tr>
 
@@ -661,8 +661,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="315"
-                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:315</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="319"
+                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:319</a></div>
                 </td>
             </tr>
 
@@ -722,13 +722,18 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import each from &quot;lodash/each&quot;;
 import keyBy from &quot;lodash/keyBy&quot;;
 import values from &quot;lodash/values&quot;;
-import { Observable, of, Subject, Subscription } from &quot;rxjs&quot;;
-import { filter, map, switchMap, takeUntil } from &quot;rxjs/operators&quot;;
+import {Observable, of, Subject, Subscription} from &quot;rxjs&quot;;
+import {filter, map, switchMap, takeUntil} from &quot;rxjs/operators&quot;;
 
-import { DESTROY_EVENT, HIGHLIGHT_SERIES_EVENT, INTERACTION_DATA_POINTS_EVENT, MOUSE_ACTIVE_EVENT } from &quot;../../constants&quot;;
-import { RenderState } from &quot;../../renderers/types&quot;;
-import { EventBus } from &quot;../common/event-bus&quot;;
-import { defaultMarkerProvider, defaultPalette } from &quot;../common/palette/default-providers&quot;;
+import {
+    DESTROY_EVENT,
+    HIGHLIGHT_SERIES_EVENT,
+    INTERACTION_DATA_POINTS_EVENT,
+    MOUSE_ACTIVE_EVENT,
+} from &quot;../../constants&quot;;
+import {RenderState} from &quot;../../renderers/types&quot;;
+import {EventBus} from &quot;../common/event-bus&quot;;
+import {defaultMarkerProvider, defaultPalette} from &quot;../common/palette/default-providers&quot;;
 import {
     IAccessors,
     IChart,
@@ -745,13 +750,13 @@ import {
     IValueProvider,
 } from &quot;../common/types&quot;;
 
-import { ChartAssistEventType, ChartAssistRenderStateData, IChartAssist, IChartAssistEvent, IRenderStatesIndex } from &quot;./types&quot;;
-
-/** @ignore */
-const chartAssistSeriesDefaults: Partial&lt;IChartAssistSeries&lt;IAccessors&gt;&gt; &#x3D; {
-    showInLegend: true,
-    preprocess: true,
-};
+import {
+    ChartAssistEventType,
+    ChartAssistRenderStateData,
+    IChartAssist,
+    IChartAssistEvent,
+    IRenderStatesIndex,
+} from &quot;./types&quot;;
 
 /**
  * Helper class that helps to bootstrap a chart with legend, using data pre-processor.
@@ -874,13 +879,16 @@ export class ChartAssist&lt;T &#x3D; IAccessors&gt; implements IChartAssist {
             data: series.data || [],
         })));
 
-        const seriesSet &#x3D; processedSeriesSet.map(s &#x3D;&gt; this.applyDefaults(s));
-
-        this.legendSeriesSet &#x3D; seriesSet.filter(s &#x3D;&gt; s.showInLegend);
+        this.legendSeriesSet &#x3D; processedSeriesSet.filter(s &#x3D;&gt; s.showInLegend || typeof s.showInLegend &#x3D;&#x3D;&#x3D; &quot;undefined&quot;);
 
         if (updateLegend) {
-            this.legendInteractionAssist.update(seriesSet);
+            this.legendInteractionAssist.update(processedSeriesSet);
         }
+        // add render states to the series for use in the chart
+        const seriesSet &#x3D; processedSeriesSet.map(s &#x3D;&gt; Object.assign(
+            { renderState: this.renderStatesIndex[s.id]?.state },
+            s));
+
         this.chart.update(seriesSet);
 
         this.publishRenderStates();
@@ -1016,10 +1024,6 @@ export class ChartAssist&lt;T &#x3D; IAccessors&gt; implements IChartAssist {
 
     private publishRenderStates(): void {
         this.chart.setSeriesStates(this.legendInteractionAssist.getSeriesStates());
-    }
-
-    private applyDefaults(chartSeries: IChartSeries&lt;IAccessors&gt;): IChartAssistSeries&lt;IAccessors&gt; {
-        return Object.assign({}, chartAssistSeriesDefaults, chartSeries);
     }
 }
 

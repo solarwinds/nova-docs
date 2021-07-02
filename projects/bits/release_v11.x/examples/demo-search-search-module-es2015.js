@@ -652,7 +652,7 @@ webpackContext.id = "YvYQ";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { Component } from \"@angular/core\";\n\n\n@Component({\n    selector: \"nui-search-example\",\n    templateUrl: \"./search-test.example.component.html\",\n})\nexport class SearchTestExampleComponent {\n    public active = false;\n    public captureFocus = true;\n    public name = \"example-name\";\n    public placeholder = \"Placeholder\";\n    public searchKey: string;\n    public stringToSearch = `\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec efficitur rutrum lacus id vulputate.\n        Integer eu ex eu augue efficitur luctus quis ac elit. Nam odio est, iaculis nec varius id, congue erat.\n        Nullam mi lectus, gravida quis pretium sit amet, accumsan non elit. In tempus commodo sem ac vulputate.\n        Sed vel sagittis purus. Integer non ornare felis. Sed aliquam, purus et euismod tincidunt, felis ligula\n        fermentum mi, eget commodo nisl orci efficitur dui. Etiam interdum justo magna consequat, vitae\n        hendrerit mi aliquam. Sed non ex eu purus ornare lobortis tempus id est. Aenean dictum at dui sit amet mollis.\n        Phasellus mauris arcu, blandit id congue vitae, elementum amet enim.\n        Pellentesque et facilisis leo, sit amet rhoncus magna. Integer commodo lobortis arcu et bibendum.\n        Pellentesque sagittis magna sed tellus volutpat, sed eleifend justo ornare.\n        Fusce porttitor laoreet dui a mollis.\n    `;\n    public value: string;\n\n    public interval = 2000;\n\n    public onCancel(value: string) {\n        this.value = \"\";\n        this.searchKey = \"\";\n    }\n\n    public onFocusChange(event: boolean) {\n        this.captureFocus = event;\n    }\n\n    public onInputChange(value: string) {\n        this.value = value;\n    }\n\n    public onPlaceholderValueChange(event: string) {\n        this.placeholder = event;\n    }\n\n    public onSearch(value: string) {\n        this.doSearch(value);\n    }\n\n    public setFocus() {\n        this.captureFocus = true;\n        setTimeout(() => {\n            this.captureFocus = false;\n        }, this.interval);\n    }\n\n    private doSearch(value: string) {\n        this.searchKey = value;\n    }\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import { Component } from \"@angular/core\";\n\n\n@Component({\n    selector: \"nui-search-example\",\n    templateUrl: \"./search-test.example.component.html\",\n})\nexport class SearchTestExampleComponent {\n    public active = false;\n    public captureFocus = true;\n    public name = \"example-name\";\n    public searchKey: string;\n    public stringToSearch = `\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec efficitur rutrum lacus id vulputate.\n        Integer eu ex eu augue efficitur luctus quis ac elit. Nam odio est, iaculis nec varius id, congue erat.\n        Nullam mi lectus, gravida quis pretium sit amet, accumsan non elit. In tempus commodo sem ac vulputate.\n        Sed vel sagittis purus. Integer non ornare felis. Sed aliquam, purus et euismod tincidunt, felis ligula\n        fermentum mi, eget commodo nisl orci efficitur dui. Etiam interdum justo magna consequat, vitae\n        hendrerit mi aliquam. Sed non ex eu purus ornare lobortis tempus id est. Aenean dictum at dui sit amet mollis.\n        Phasellus mauris arcu, blandit id congue vitae, elementum amet enim.\n        Pellentesque et facilisis leo, sit amet rhoncus magna. Integer commodo lobortis arcu et bibendum.\n        Pellentesque sagittis magna sed tellus volutpat, sed eleifend justo ornare.\n        Fusce porttitor laoreet dui a mollis.\n    `;\n    public value: string;\n\n    public interval = 2000;\n\n    public onCancel(value: string) {\n        this.value = \"\";\n        this.searchKey = \"\";\n    }\n\n    public onFocusChange(event: boolean) {\n        this.captureFocus = event;\n    }\n\n    public onInputChange(value: string) {\n        this.value = value;\n    }\n\n    public onSearch(value: string) {\n        this.doSearch(value);\n    }\n\n    public setFocus() {\n        this.captureFocus = true;\n        setTimeout(() => {\n            this.captureFocus = false;\n        }, this.interval);\n    }\n\n    private doSearch(value: string) {\n        this.searchKey = value;\n    }\n}\n");
 
 /***/ }),
 
@@ -715,10 +715,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var _src_lib_search_search_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../src/lib/search/search.component */ "dYN2");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
-/* harmony import */ var _src_lib_textbox_textbox_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../src/lib/textbox/textbox.component */ "nOFM");
-/* harmony import */ var _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../../src/lib/button/button.component */ "6urz");
-/* harmony import */ var _src_pipes_highlight_pipe__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../../../src/pipes/highlight.pipe */ "ZlWS");
-
+/* harmony import */ var _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../src/lib/button/button.component */ "6urz");
+/* harmony import */ var _src_pipes_highlight_pipe__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../../src/pipes/highlight.pipe */ "ZlWS");
 
 
 
@@ -729,7 +727,6 @@ class SearchTestExampleComponent {
         this.active = false;
         this.captureFocus = true;
         this.name = "example-name";
-        this.placeholder = "Placeholder";
         this.stringToSearch = `
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec efficitur rutrum lacus id vulputate.
         Integer eu ex eu augue efficitur luctus quis ac elit. Nam odio est, iaculis nec varius id, congue erat.
@@ -754,9 +751,6 @@ class SearchTestExampleComponent {
     onInputChange(value) {
         this.value = value;
     }
-    onPlaceholderValueChange(event) {
-        this.placeholder = event;
-    }
     onSearch(value) {
         this.doSearch(value);
     }
@@ -771,7 +765,7 @@ class SearchTestExampleComponent {
     }
 }
 SearchTestExampleComponent.ɵfac = function SearchTestExampleComponent_Factory(t) { return new (t || SearchTestExampleComponent)(); };
-SearchTestExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: SearchTestExampleComponent, selectors: [["nui-search-example"]], decls: 21, vars: 11, consts: [["id", "nui-demo-search", 3, "name", "value", "placeholder", "captureFocus", "focusChange", "inputChange", "search", "cancel"], [3, "innerHTML"], ["customBoxWidth", "150px", 3, "value", "textChange"], ["nui-button", "", "type", "button", "id", "nui-demo-search-set-focus-btn", "displayStyle", "default", 3, "click"]], template: function SearchTestExampleComponent_Template(rf, ctx) { if (rf & 1) {
+SearchTestExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: SearchTestExampleComponent, selectors: [["nui-search-example"]], decls: 18, vars: 9, consts: [["id", "nui-demo-search", 3, "name", "value", "captureFocus", "focusChange", "inputChange", "search", "cancel"], [3, "innerHTML"], ["nui-button", "", "type", "button", "id", "nui-demo-search-set-focus-btn", "displayStyle", "default", 3, "click"]], template: function SearchTestExampleComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "nui-search", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("focusChange", function SearchTestExampleComponent_Template_nui_search_focusChange_0_listener($event) { return ctx.onFocusChange($event); })("inputChange", function SearchTestExampleComponent_Template_nui_search_inputChange_0_listener($event) { return ctx.onInputChange($event); })("search", function SearchTestExampleComponent_Template_nui_search_search_0_listener($event) { return ctx.onSearch($event); })("cancel", function SearchTestExampleComponent_Template_nui_search_cancel_0_listener($event) { return ctx.onCancel($event); });
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -788,38 +782,30 @@ SearchTestExampleComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["�
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, "Input parameters:");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "form");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "code");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, " placeholder ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "div");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "div");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "code");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](13, " captureFocus ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "nui-textbox", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("textChange", function SearchTestExampleComponent_Template_nui_textbox_textChange_12_listener($event) { return ctx.onPlaceholderValueChange($event); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "div");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "div");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "code");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](16, " captureFocus ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "span");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](18);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "span");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](15);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "button", 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function SearchTestExampleComponent_Template_button_click_19_listener() { return ctx.setFocus(); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](20);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "button", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function SearchTestExampleComponent_Template_button_click_16_listener() { return ctx.setFocus(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](17);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("name", ctx.name)("value", ctx.value)("placeholder", ctx.placeholder)("captureFocus", ctx.captureFocus);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("name", ctx.name)("value", ctx.value)("captureFocus", ctx.captureFocus);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("innerHTML", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind2"](6, 8, ctx.stringToSearch, ctx.searchKey), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeHtml"]);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", ctx.placeholder);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("innerHTML", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind2"](6, 6, ctx.stringToSearch, ctx.searchKey), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeHtml"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](10);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" : ", ctx.captureFocus ? "true" : "false", "");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" Set Focus for ", ctx.interval / 1000, " sec. ");
-    } }, directives: [_src_lib_search_search_component__WEBPACK_IMPORTED_MODULE_1__["SearchComponent"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgForm"], _src_lib_textbox_textbox_component__WEBPACK_IMPORTED_MODULE_3__["TextboxComponent"], _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_4__["ButtonComponent"]], pipes: [_src_pipes_highlight_pipe__WEBPACK_IMPORTED_MODULE_5__["HighlightPipe"]], encapsulation: 2 });
+    } }, directives: [_src_lib_search_search_component__WEBPACK_IMPORTED_MODULE_1__["SearchComponent"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgForm"], _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_3__["ButtonComponent"]], pipes: [_src_pipes_highlight_pipe__WEBPACK_IMPORTED_MODULE_4__["HighlightPipe"]], encapsulation: 2 });
 
 
 /***/ }),
@@ -846,7 +832,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<nui-search id=\"nui-demo-search\"\n            [name]=\"name\"\n            [value]=\"value\"\n            [placeholder]=\"placeholder\"\n            [captureFocus]=\"captureFocus\"\n            (focusChange)=\"onFocusChange($event)\"\n            (inputChange)=\"onInputChange($event)\"\n            (search)=\"onSearch($event)\"\n            (cancel)=\"onCancel($event)\">\n</nui-search>\n<div>\n    <h3>Search Result:</h3>\n    <div>\n        <p [innerHTML]=\"stringToSearch | nuiHighlight: searchKey\"></p>\n    </div>\n</div>\n<h4>Input parameters:</h4>\n<form>\n    <code> placeholder </code>\n    <nui-textbox [value]=\"placeholder\"\n                 (textChange)=\"onPlaceholderValueChange($event)\"\n                 customBoxWidth=\"150px\">\n    </nui-textbox>\n    <div>\n        <div>\n            <code> captureFocus </code>\n            <span> : {{captureFocus ? 'true' : 'false'}}</span>\n        </div>\n        <button nui-button type=\"button\"\n                           id=\"nui-demo-search-set-focus-btn\"\n                           displayStyle=\"default\"\n                           (click)=\"setFocus()\">\n            Set Focus for {{interval/1000}} sec.\n        </button>\n    </div>\n</form>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<nui-search id=\"nui-demo-search\"\n            [name]=\"name\"\n            [value]=\"value\"\n            [captureFocus]=\"captureFocus\"\n            (focusChange)=\"onFocusChange($event)\"\n            (inputChange)=\"onInputChange($event)\"\n            (search)=\"onSearch($event)\"\n            (cancel)=\"onCancel($event)\">\n</nui-search>\n<div>\n    <h3>Search Result:</h3>\n    <div>\n        <p [innerHTML]=\"stringToSearch | nuiHighlight: searchKey\"></p>\n    </div>\n</div>\n<h4>Input parameters:</h4>\n<form>\n    <div>\n        <div>\n            <code> captureFocus </code>\n            <span> : {{captureFocus ? 'true' : 'false'}}</span>\n        </div>\n        <button nui-button type=\"button\"\n                           id=\"nui-demo-search-set-focus-btn\"\n                           displayStyle=\"default\"\n                           (click)=\"setFocus()\">\n            Set Focus for {{interval/1000}} sec.\n        </button>\n    </div>\n</form>\n");
 
 /***/ }),
 

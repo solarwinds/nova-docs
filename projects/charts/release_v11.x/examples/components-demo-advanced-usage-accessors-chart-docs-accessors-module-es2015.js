@@ -78,19 +78,19 @@ __webpack_require__.r(__webpack_exports__);
 const exampleRoutes = [
     {
         path: "overview",
-        loadChildren: () => __webpack_require__.e(/*! import() | components-demo-advanced-usage-accessors-overview-chart-docs-accessors-overview-module */ "components-demo-advanced-usage-accessors-overview-chart-docs-accessors-overview-module").then(__webpack_require__.bind(null, /*! components/demo/advanced-usage/accessors/overview/chart-docs-accessors-overview.module */ "/BjU")).then(m => m.ChartDocsAccessorsOverviewModule),
+        loadChildren: () => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, function* () { return __webpack_require__.e(/*! import() | components-demo-advanced-usage-accessors-overview-chart-docs-accessors-overview-module */ "components-demo-advanced-usage-accessors-overview-chart-docs-accessors-overview-module").then(__webpack_require__.bind(null, /*! components/demo/advanced-usage/accessors/overview/chart-docs-accessors-overview.module */ "/BjU")).then(m => m.ChartDocsAccessorsOverviewModule); }),
     },
     {
         path: "data",
-        loadChildren: () => __webpack_require__.e(/*! import() | components-demo-advanced-usage-accessors-data-chart-docs-accessors-data-module */ "components-demo-advanced-usage-accessors-data-chart-docs-accessors-data-module").then(__webpack_require__.bind(null, /*! components/demo/advanced-usage/accessors/data/chart-docs-accessors-data.module */ "HRsf")).then(m => m.ChartDocsAccessorsDataModule),
+        loadChildren: () => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, function* () { return __webpack_require__.e(/*! import() | components-demo-advanced-usage-accessors-data-chart-docs-accessors-data-module */ "components-demo-advanced-usage-accessors-data-chart-docs-accessors-data-module").then(__webpack_require__.bind(null, /*! components/demo/advanced-usage/accessors/data/chart-docs-accessors-data.module */ "HRsf")).then(m => m.ChartDocsAccessorsDataModule); }),
     },
     {
         path: "colors",
-        loadChildren: () => __webpack_require__.e(/*! import() | components-demo-advanced-usage-accessors-colors-chart-docs-accessors-colors-module */ "components-demo-advanced-usage-accessors-colors-chart-docs-accessors-colors-module").then(__webpack_require__.bind(null, /*! components/demo/advanced-usage/accessors/colors/chart-docs-accessors-colors.module */ "25IG")).then(m => m.ChartDocsAccessorsColorsModule),
+        loadChildren: () => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, function* () { return __webpack_require__.e(/*! import() | components-demo-advanced-usage-accessors-colors-chart-docs-accessors-colors-module */ "components-demo-advanced-usage-accessors-colors-chart-docs-accessors-colors-module").then(__webpack_require__.bind(null, /*! components/demo/advanced-usage/accessors/colors/chart-docs-accessors-colors.module */ "25IG")).then(m => m.ChartDocsAccessorsColorsModule); }),
     },
     {
         path: "markers",
-        loadChildren: () => __webpack_require__.e(/*! import() | components-demo-advanced-usage-accessors-markers-chart-docs-accessors-markers-module */ "components-demo-advanced-usage-accessors-markers-chart-docs-accessors-markers-module").then(__webpack_require__.bind(null, /*! components/demo/advanced-usage/accessors/markers/chart-docs-accessors-markers.module */ "TI39")).then(m => m.ChartDocsAccessorsMarkersModule),
+        loadChildren: () => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(void 0, void 0, void 0, function* () { return __webpack_require__.e(/*! import() | components-demo-advanced-usage-accessors-markers-chart-docs-accessors-markers-module */ "components-demo-advanced-usage-accessors-markers-chart-docs-accessors-markers-module").then(__webpack_require__.bind(null, /*! components/demo/advanced-usage/accessors/markers/chart-docs-accessors-markers.module */ "TI39")).then(m => m.ChartDocsAccessorsMarkersModule); }),
     },
 ];
 let ChartDocsAccessorsModule = class ChartDocsAccessorsModule {

@@ -1469,14 +1469,14 @@ export abstract class Grid implements IGrid {
     /**
      * Adjusts the grid&#x27;s rendering area and clip path based on the grid&#x27;s configured width and height
      */
-    protected adjustRenderingArea &#x3D; () &#x3D;&gt; {
+    protected adjustRenderingArea &#x3D; (): void &#x3D;&gt; {
         const d &#x3D; this.config().dimension;
         const disableHeightCorrection &#x3D; this.config().disableRenderAreaHeightCorrection;
         const disableWidthCorrection &#x3D; this.config().disableRenderAreaWidthCorrection;
 
         const renderingAreaClipPathAttrs &#x3D; {
-            &quot;width&quot;: d.width(),
-            &quot;height&quot;: d.height() + (disableHeightCorrection ? 0 : Grid.RENDER_AREA_HEIGHT_CORRECTION),
+            &quot;width&quot;: Math.max(0, d.width()),
+            &quot;height&quot;: Math.max(0, d.height() + (disableHeightCorrection ? 0 : Grid.RENDER_AREA_HEIGHT_CORRECTION)),
         } as any;
 
         if (!disableHeightCorrection) {
@@ -1486,7 +1486,7 @@ export abstract class Grid implements IGrid {
         const renderingAreaAttrs &#x3D; {
             ...renderingAreaClipPathAttrs,
             // Width correction needed to prevent interaction gap between right side of grid and the edge of the rendering area
-            &quot;width&quot;: d.width() &gt; 0 ? d.width() - (disableWidthCorrection ? 0 : Grid.RENDER_AREA_WIDTH_CORRECTION) : d.width(),
+            &quot;width&quot;: Math.max(0, d.width() - (disableWidthCorrection ? 0 : Grid.RENDER_AREA_WIDTH_CORRECTION)),
         };
 
         this.renderingAreaClipPath.attrs(renderingAreaClipPathAttrs);
