@@ -168,7 +168,6 @@
 import _includes from &quot;lodash/includes&quot;;
 import _isNil from &quot;lodash/isNil&quot;;
 import _isNumber from &quot;lodash/isNumber&quot;;
-import {ReplaySubject} from &quot;rxjs&quot;;
 import { Subject } from &quot;rxjs&quot;;
 
 import { ISelection, ISelectorState } from &quot;../../services/public-api&quot;;
@@ -191,7 +190,7 @@ export const enum DropAlignment {
 
 export interface ITableState {
     columnAlignments: { [key: string]: string };
-    columnsWidths: { [key: string]: { width: number, fixed?: boolean } };
+    columnsWidths: { [key: string]: { width: number, autoCalculated?: boolean } };
     columns: string[];
     sortedColumn?: ISortedItem;
     widthCalculationPerformed: boolean;
@@ -239,7 +238,7 @@ export class TableStateHandlerService {
     public dataSourceChanged &#x3D; new Subject&lt;Array&lt;any&gt;&gt;();
     public selectionChanged &#x3D; new Subject&lt;ISelection&gt;();
     public selectableChanged &#x3D; new Subject&lt;boolean&gt;();
-    public columnWidthSubject &#x3D; new ReplaySubject&lt;void&gt;(1);
+    public columnWidthSubject &#x3D; new Subject&lt;void&gt;();
     public stickyHeaderChangedSubject &#x3D; new Subject&lt;void&gt;();
 
     private _reorderable: boolean;
@@ -418,10 +417,6 @@ export class TableStateHandlerService {
         return this._selection;
     }
 
-    public getColumnWidthFixed(column: string): boolean {
-        return this.state.columnsWidths[column].fixed || false;
-    }
-
     get trackBy(): TrackByFunction&lt;any&gt; {
         return this._trackBy || DEFAULT_TRACK_BY;
     }
@@ -452,9 +447,8 @@ export class TableStateHandlerService {
      * @param width The new width of the column
      *
      */
-    public setColumnWidth(column: string, width: number, fixed &#x3D; false): void {
-        this.state.columnsWidths[column] &#x3D; { width, fixed };
-
+    public setColumnWidth(column: string, width: number): void {
+        this.state.columnsWidths[column] &#x3D; { width };
         this.columnWidthSubject.next();
     }
 
