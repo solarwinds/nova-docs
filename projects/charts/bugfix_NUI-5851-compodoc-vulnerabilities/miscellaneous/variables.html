@@ -112,6 +112,9 @@
                             <a href="#DESTROY_EVENT" title="src/constants.ts"><b>DESTROY_EVENT</b>&nbsp;&nbsp;&nbsp;(src/.../constants.ts)</a>
                         </li>
                         <li>
+                            <a href="#domainWithAuxiliarySeries" title="src/core/common/scales/domain-calculation/domain-with-auxiliary-series.ts"><b>domainWithAuxiliarySeries</b>&nbsp;&nbsp;&nbsp;(src/.../domain-with-auxiliary-series.ts)</a>
+                        </li>
+                        <li>
                             <a href="#DONUT_GAUGE_LABEL_CLEARANCE_DEFAULT" title="src/gauge/constants.ts"><b>DONUT_GAUGE_LABEL_CLEARANCE_DEFAULT</b>&nbsp;&nbsp;&nbsp;(src/.../constants.ts)</a>
                         </li>
                         <li>
@@ -151,7 +154,7 @@
                             <a href="#getAutomaticDomainWithIncludedInterval" title="src/core/common/scales/domain-calculation/automatic-domain.ts"><b>getAutomaticDomainWithIncludedInterval</b>&nbsp;&nbsp;&nbsp;(src/.../automatic-domain.ts)</a>
                         </li>
                         <li>
-                            <a href="#getAutomaticDomainWithTicks" title="src/core/common/scales/domain-calculation/automatic-domain.ts"><b>getAutomaticDomainWithTicks</b>&nbsp;&nbsp;&nbsp;(src/.../automatic-domain.ts)</a>
+                            <a href="#getAutomaticDomainWithTicks" title="src/core/common/scales/domain-calculation/domain-with-ticks.ts"><b>getAutomaticDomainWithTicks</b>&nbsp;&nbsp;&nbsp;(src/.../domain-with-ticks.ts)</a>
                         </li>
                         <li>
                             <a href="#GRAYSCALE_COLOR_MATRIX" title="src/core/types.ts"><b>GRAYSCALE_COLOR_MATRIX</b>&nbsp;&nbsp;&nbsp;(src/.../types.ts)</a>
@@ -1643,6 +1646,38 @@ on the source element for the tooltip position starting with EAST and going cloc
             </tbody>
         </table>
 </section>
+    <h3>src/core/common/scales/domain-calculation/domain-with-auxiliary-series.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="domainWithAuxiliarySeries"></a>
+                        <span class="name">
+                            <b>
+                            domainWithAuxiliarySeries</b>
+                            <a href="#domainWithAuxiliarySeries"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>(additionalSeriesFn: () &#x3D;&gt; IChartSeries&lt;any&gt;[], domainCalculator: DomainCalculator) &#x3D;&gt;
+    (chartSeriesSet: IChartSeries&lt;any&gt;[], scaleId: string, scale: IScale&lt;any&gt;) &#x3D;&gt;
+        domainCalculator(additionalSeriesFn().concat(chartSeriesSet), scaleId, scale)</code>
+                        </td>
+                    </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Domain calculator that adds given series to the domain calculation</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+</section>
     <h3>src/gauge/constants.ts</h3>
     <section>
     <h3></h3>        <table class="table table-sm table-bordered">
@@ -2054,7 +2089,10 @@ considered data set.</p>
 
             </tbody>
         </table>
-        <table class="table table-sm table-bordered">
+</section>
+    <h3>src/core/common/scales/domain-calculation/domain-with-ticks.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
                     <td class="col-md-4">
@@ -2068,9 +2106,9 @@ considered data set.</p>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>(config: IAxisConfig, axisGenerator: any): DomainCalculator &#x3D;&gt;
-    (chartSeriesSet: IChartSeries&lt;IAccessors&gt;[], scaleKey: string, scale: IScale&lt;any&gt;): any[] &#x3D;&gt; {
-        const mergedDomains &#x3D; getAutomaticDomain(chartSeriesSet, scaleKey, scale);
+                            <i>Default value : </i><code>(config: IAxisConfig, axisGenerator: any, domainCalculator: DomainCalculator): IDomainWithTicksCalculator  &#x3D;&gt; {
+    const result: IDomainWithTicksCalculator &#x3D; (chartSeriesSet: IChartSeries&lt;IAccessors&gt;[], scaleKey: string, scale: IScale&lt;any&gt;): any[] &#x3D;&gt; {
+        const mergedDomains &#x3D; domainCalculator(chartSeriesSet, scaleKey, scale);
         const clonedScale &#x3D; cloneDeep(scale);
         domain(clonedScale, mergedDomains);
         const tickAxis: any &#x3D; axisGenerator(clonedScale.d3Scale);
@@ -2086,7 +2124,10 @@ considered data set.</p>
             mergedDomains[1] &#x3D; ticks[ticks.length - 1] + ticksAverage;
         }
         return mergedDomains;
-    }</code>
+    };
+    result.domainWithTicks &#x3D; true;
+    return result;
+}</code>
                         </td>
                     </tr>
 

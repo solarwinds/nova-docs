@@ -118,8 +118,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="361"
-                            class="link-to-prism">src/core/common/types.ts:361</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="366"
+                            class="link-to-prism">src/core/common/types.ts:366</a></div>
                 </td>
             </tr>
 
@@ -188,8 +188,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="362"
-                            class="link-to-prism">src/core/common/types.ts:362</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="367"
+                            class="link-to-prism">src/core/common/types.ts:367</a></div>
                 </td>
             </tr>
 
@@ -420,6 +420,7 @@ export interface IChartMarker {
 
 export interface IChart {
     target?: D3Selection&lt;SVGSVGElement&gt;;
+    configuration?: IChartConfiguration;
     getEventBus(): EventBus&lt;IChartEvent&gt;;
     getDataManager(): DataManager;
     getRenderEngine(): RenderEngine;
@@ -431,6 +432,10 @@ export interface IChart {
     updateDimensions(): void;
     setSeriesStates(renderStateData: IRenderStateData[]): void;
     destroy(): void;
+}
+
+export interface IChartConfiguration {
+    updateDomainForEmptySeries?: boolean;
 }
 
 /** @ignore */

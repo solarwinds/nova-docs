@@ -134,6 +134,14 @@
             "hideIndicator": true
           }
         }
+      }, {
+        path: "repeat-visual-test",
+        component: _index__WEBPACK_IMPORTED_MODULE_3__["RepeatVisualTestComponent"],
+        data: {
+          "srlc": {
+            "hideIndicator": true
+          }
+        }
       }];
 
       var RepeatModule = function RepeatModule() {
@@ -159,7 +167,7 @@
 
       (function () {
         (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵsetNgModuleScope"](RepeatModule, {
-          declarations: [_index__WEBPACK_IMPORTED_MODULE_3__["RepeatExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatItemExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatDisabledMultiSelectionExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatMultiSelectionExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatRadioSelectionModeExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatRadioWithNonRequiredSelectionModeExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatSimpleExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatDragSimpleExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatReorderSimpleExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatDragPreviewExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatSingleSelectionModeExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatSingleWithRequiredSelectionModeExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatTestComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatReorderItemConfigExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatDragHandleExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatVirtualScrollComponent"]],
+          declarations: [_index__WEBPACK_IMPORTED_MODULE_3__["RepeatExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatItemExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatDisabledMultiSelectionExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatMultiSelectionExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatRadioSelectionModeExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatRadioWithNonRequiredSelectionModeExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatSimpleExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatDragSimpleExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatReorderSimpleExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatDragPreviewExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatSingleSelectionModeExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatSingleWithRequiredSelectionModeExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatTestComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatVisualTestComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatReorderItemConfigExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatDragHandleExampleComponent"], _index__WEBPACK_IMPORTED_MODULE_3__["RepeatVirtualScrollComponent"]],
           imports: [_nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiButtonModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiRepeatModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiSwitchModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiMessageModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiDocsModule"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"], _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_0__["ScrollingModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiProgressModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiSearchModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiFormFieldModule"], _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["NuiTabsModule"]],
           exports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]]
         });
@@ -800,6 +808,169 @@
     },
 
     /***/
+    "E4Ut":
+    /*!********************************************************************************************!*\
+      !*** ./demo/src/components/demo/repeat/repeat-visual-test/repeat-visual-test.component.ts ***!
+      \********************************************************************************************/
+
+    /*! exports provided: RepeatVisualTestComponent */
+
+    /***/
+    function E4Ut(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "RepeatVisualTestComponent", function () {
+        return RepeatVisualTestComponent;
+      });
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! @angular/core */
+      "fXoL");
+      /* harmony import */
+
+
+      var _repeat_disabled_multi_selection_repeat_disabled_multi_selection_example_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! ../repeat-disabled-multi-selection/repeat-disabled-multi-selection.example.component */
+      "PWlR");
+      /* harmony import */
+
+
+      var _repeat_multi_selection_repeat_multi_selection_example_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! ../repeat-multi-selection/repeat-multi-selection.example.component */
+      "Xav+");
+      /* harmony import */
+
+
+      var _repeat_single_selection_mode_repeat_single_selection_mode_example_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! ../repeat-single-selection-mode/repeat-single-selection-mode.example.component */
+      "umK5");
+      /* harmony import */
+
+
+      var _repeat_radio_selection_mode_repeat_radio_selection_mode_example_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! ../repeat-radio-selection-mode/repeat-radio-selection-mode.example.component */
+      "1aNH");
+      /* harmony import */
+
+
+      var _repeat_single_with_required_selection_mode_repeat_single_with_required_selection_mode_example_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! ../repeat-single-with-required-selection-mode/repeat-single-with-required-selection-mode.example.component */
+      "PEhs");
+      /* harmony import */
+
+
+      var _repeat_radio_with_non_required_selection_mode_repeat_radio_with_non_required_selection_mode_example_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      /*! ../repeat-radio-with-non-required-selection-mode/repeat-radio-with-non-required-selection-mode.example.component */
+      "ubTL");
+      /* harmony import */
+
+
+      var _repeat_reorder_item_config_repeat_reorder_item_config_example_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      /*! ../repeat-reorder-item-config/repeat-reorder-item-config-example.component */
+      "jhpo");
+
+      var RepeatVisualTestComponent = function RepeatVisualTestComponent() {
+        _classCallCheck(this, RepeatVisualTestComponent);
+      };
+
+      RepeatVisualTestComponent.ɵfac = function RepeatVisualTestComponent_Factory(t) {
+        return new (t || RepeatVisualTestComponent)();
+      };
+
+      RepeatVisualTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+        type: RepeatVisualTestComponent,
+        selectors: [["nui-repeat-visual-test"]],
+        decls: 28,
+        vars: 0,
+        consts: [[1, "container"], ["id", "nui-demo-multi-disabled-items"], ["id", "nui-demo-multi-repeat-items"], ["id", "nui-demo-single-highlight"], ["id", "nui-demo-radio-selection"], ["id", "nui-demo-single-required-selection"], ["id", "nui-demo-radio-non-required-selection"], ["id", "nui-demo-reorder-config"]],
+        template: function RepeatVisualTestComponent_Template(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "h3");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Multiple Selection Mode with Disabled Items");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "nui-repeat-disabled-multi-selection-example", 1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](4, "hr");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "h3");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "Multiple Selection Mode Repeating Header from Template");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](7, "nui-repeat-multi-selection-example", 2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](8, "hr");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "h3");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, "Single Selection Mode with Item Highlight");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](11, "nui-repeat-single-selection-mode-example", 3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](12, "hr");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "h3");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](14, "Single Selection Mode with Radio Buttons");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](15, "nui-repeat-radio-selection-mode-example", 4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](16, "hr");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "h3");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](18, "Required Single Selection Mode");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](19, "nui-repeat-single-with-required-selection-mode-example", 5);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](20, "hr");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "h3");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](22, "Non-Required Selection Mode with Radio Buttons");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](23, "nui-repeat-radio-with-non-required-selection-mode-example", 6);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](24, "hr");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "h3");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](26, "Item-Specific Drag/Drop Behavior");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](27, "nui-repeat-reorder-config-example", 7);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          }
+        },
+        directives: [_repeat_disabled_multi_selection_repeat_disabled_multi_selection_example_component__WEBPACK_IMPORTED_MODULE_1__["RepeatDisabledMultiSelectionExampleComponent"], _repeat_multi_selection_repeat_multi_selection_example_component__WEBPACK_IMPORTED_MODULE_2__["RepeatMultiSelectionExampleComponent"], _repeat_single_selection_mode_repeat_single_selection_mode_example_component__WEBPACK_IMPORTED_MODULE_3__["RepeatSingleSelectionModeExampleComponent"], _repeat_radio_selection_mode_repeat_radio_selection_mode_example_component__WEBPACK_IMPORTED_MODULE_4__["RepeatRadioSelectionModeExampleComponent"], _repeat_single_with_required_selection_mode_repeat_single_with_required_selection_mode_example_component__WEBPACK_IMPORTED_MODULE_5__["RepeatSingleWithRequiredSelectionModeExampleComponent"], _repeat_radio_with_non_required_selection_mode_repeat_radio_with_non_required_selection_mode_example_component__WEBPACK_IMPORTED_MODULE_6__["RepeatRadioWithNonRequiredSelectionModeExampleComponent"], _repeat_reorder_item_config_repeat_reorder_item_config_example_component__WEBPACK_IMPORTED_MODULE_7__["RepeatReorderItemConfigExampleComponent"]],
+        encapsulation: 2
+      });
+      /***/
+    },
+
+    /***/
     "Ej2c":
     /*!****************************************************************************************************************************************!*\
       !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/repeat/repeat-virtual-scroll/repeat-virtual-scroll.component.ts ***!
@@ -835,7 +1006,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "export * from \"./repeat-docs/repeat-docs.example.component\";\nexport * from \"./repeat-simple/repeat-simple.example.component\";\nexport * from \"./repeat-multi-selection/repeat-multi-selection.example.component\";\nexport * from \"./repeat-disabled-multi-selection/repeat-disabled-multi-selection.example.component\";\nexport * from \"./repeat-single-selection-mode/repeat-single-selection-mode.example.component\";\nexport * from \"./repeat-radio-selection-mode/repeat-radio-selection-mode.example.component\";\nexport * from \"./repeat-radio-with-non-required-selection-mode/repeat-radio-with-non-required-selection-mode.example.component\";\nexport * from \"./repeat-single-with-required-selection-mode/repeat-single-with-required-selection-mode.example.component\";\nexport * from \"./repeat-item/repeat-item.example.component\";\nexport * from \"./repeat-reorder-simple/repeat-reorder-simple-example.component\";\nexport * from \"./repeat-drag-simple/repeat-drag-simple.example.component\";\nexport * from \"./repeat-drag-handle/repeat-drag-handle.example.component\";\nexport * from \"./repeat-drag-preview/repeat-drag-preview.example.component\";\nexport * from \"./repeat-reorder-item-config/repeat-reorder-item-config-example.component\";\nexport * from \"./repeat-virtual-scroll/repeat-virtual-scroll.component\";\nexport * from \"./repeat-test/repeat-test.component\";\n";
+      __webpack_exports__["default"] = "export * from \"./repeat-docs/repeat-docs.example.component\";\nexport * from \"./repeat-simple/repeat-simple.example.component\";\nexport * from \"./repeat-multi-selection/repeat-multi-selection.example.component\";\nexport * from \"./repeat-disabled-multi-selection/repeat-disabled-multi-selection.example.component\";\nexport * from \"./repeat-single-selection-mode/repeat-single-selection-mode.example.component\";\nexport * from \"./repeat-radio-selection-mode/repeat-radio-selection-mode.example.component\";\nexport * from \"./repeat-radio-with-non-required-selection-mode/repeat-radio-with-non-required-selection-mode.example.component\";\nexport * from \"./repeat-single-with-required-selection-mode/repeat-single-with-required-selection-mode.example.component\";\nexport * from \"./repeat-item/repeat-item.example.component\";\nexport * from \"./repeat-reorder-simple/repeat-reorder-simple-example.component\";\nexport * from \"./repeat-drag-simple/repeat-drag-simple.example.component\";\nexport * from \"./repeat-drag-handle/repeat-drag-handle.example.component\";\nexport * from \"./repeat-drag-preview/repeat-drag-preview.example.component\";\nexport * from \"./repeat-reorder-item-config/repeat-reorder-item-config-example.component\";\nexport * from \"./repeat-virtual-scroll/repeat-virtual-scroll.component\";\nexport * from \"./repeat-test/repeat-test.component\";\nexport * from \"./repeat-visual-test/repeat-visual-test.component\";\n";
       /***/
     },
 
@@ -1144,7 +1315,7 @@
       !*** ./demo/src/components/demo/repeat/index.ts ***!
       \**************************************************/
 
-    /*! exports provided: RepeatExampleComponent, RepeatSimpleExampleComponent, RepeatMultiSelectionExampleComponent, RepeatDisabledMultiSelectionExampleComponent, RepeatSingleSelectionModeExampleComponent, RepeatRadioSelectionModeExampleComponent, RepeatRadioWithNonRequiredSelectionModeExampleComponent, RepeatSingleWithRequiredSelectionModeExampleComponent, RepeatItemExampleComponent, RepeatReorderSimpleExampleComponent, RepeatDragSimpleExampleComponent, RepeatDragHandleExampleComponent, RepeatDragPreviewExampleComponent, RepeatReorderItemConfigExampleComponent, RepeatVirtualScrollComponent, RepeatTestComponent */
+    /*! exports provided: RepeatExampleComponent, RepeatSimpleExampleComponent, RepeatMultiSelectionExampleComponent, RepeatDisabledMultiSelectionExampleComponent, RepeatSingleSelectionModeExampleComponent, RepeatRadioSelectionModeExampleComponent, RepeatRadioWithNonRequiredSelectionModeExampleComponent, RepeatSingleWithRequiredSelectionModeExampleComponent, RepeatItemExampleComponent, RepeatReorderSimpleExampleComponent, RepeatDragSimpleExampleComponent, RepeatDragHandleExampleComponent, RepeatDragPreviewExampleComponent, RepeatReorderItemConfigExampleComponent, RepeatVirtualScrollComponent, RepeatTestComponent, RepeatVisualTestComponent */
 
     /***/
     function PDB5(module, __webpack_exports__, __webpack_require__) {
@@ -1342,6 +1513,18 @@
 
       __webpack_require__.d(__webpack_exports__, "RepeatTestComponent", function () {
         return _repeat_test_repeat_test_component__WEBPACK_IMPORTED_MODULE_15__["RepeatTestComponent"];
+      });
+      /* harmony import */
+
+
+      var _repeat_visual_test_repeat_visual_test_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
+      /*! ./repeat-visual-test/repeat-visual-test.component */
+      "E4Ut");
+      /* harmony reexport (safe) */
+
+
+      __webpack_require__.d(__webpack_exports__, "RepeatVisualTestComponent", function () {
+        return _repeat_visual_test_repeat_visual_test_component__WEBPACK_IMPORTED_MODULE_16__["RepeatVisualTestComponent"];
       });
       /***/
 
@@ -3126,6 +3309,8 @@
         "./repeat-virtual-scroll/repeat-virtual-scroll.component.less": "fuGm",
         "./repeat-virtual-scroll/repeat-virtual-scroll.component.ts": "Ej2c",
         "./repeat-virtual-scroll/types.ts": "Sm2L",
+        "./repeat-visual-test/repeat-visual-test.component.html": "ggum",
+        "./repeat-visual-test/repeat-visual-test.component.ts": "irLm",
         "./repeat.module.ts": "vUEW"
       };
 
@@ -3526,6 +3711,46 @@
 
 
       __webpack_exports__["default"] = "import {Component, ViewEncapsulation} from \"@angular/core\";\nimport {IItemsReorderedEvent} from \"@nova-ui/bits\";\n\ntype Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;\ninterface ISortingOrderTrimmedData extends Omit<IItemsReorderedEvent, \"item\"|\"dropListRef\"> {}\n@Component({\n    selector: \"nui-repeat-reorder-simple-example\",\n    templateUrl: \"./repeat-reorder-simple-example.component.html\",\n    encapsulation: ViewEncapsulation.None,\n})\nexport class RepeatReorderSimpleExampleComponent {\n    public companies: string[] = [\"Adobe\", \"IBM\", \"Dell\", \"Microsoft\"];\n\n    public draggable: boolean = true;\n    public reorderable: boolean = true;\n    public droppedEventData: ISortingOrderTrimmedData;\n\n    public onItemsReordered(event: IItemsReorderedEvent<string>): void {\n        // update items according to the new order\n        this.companies = event.currentState;\n\n        // copy all event proprieties except the CdkDrag & CdkDropList references\n        const {item, dropListRef, ...rest} = event;\n        this.droppedEventData = rest;\n\n        console.log(event);\n    }\n}\n";
+      /***/
+    },
+
+    /***/
+    "ggum":
+    /*!************************************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/repeat/repeat-visual-test/repeat-visual-test.component.html ***!
+      \************************************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function ggum(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "<div class=\"container\">\n    <h3>Multiple Selection Mode with Disabled Items</h3>\n    <nui-repeat-disabled-multi-selection-example id=\"nui-demo-multi-disabled-items\"></nui-repeat-disabled-multi-selection-example>\n    <hr />\n    \n    <h3>Multiple Selection Mode Repeating Header from Template</h3>\n    <nui-repeat-multi-selection-example id=\"nui-demo-multi-repeat-items\"></nui-repeat-multi-selection-example>\n    <hr />\n\n    <h3>Single Selection Mode with Item Highlight</h3>\n    <nui-repeat-single-selection-mode-example id=\"nui-demo-single-highlight\"></nui-repeat-single-selection-mode-example>\n    <hr />\n\n    <h3>Single Selection Mode with Radio Buttons</h3>\n    <nui-repeat-radio-selection-mode-example id=\"nui-demo-radio-selection\"></nui-repeat-radio-selection-mode-example>\n    <hr />\n\n    <h3>Required Single Selection Mode</h3>\n    <nui-repeat-single-with-required-selection-mode-example id=\"nui-demo-single-required-selection\"></nui-repeat-single-with-required-selection-mode-example>\n    <hr />\n\n    <h3>Non-Required Selection Mode with Radio Buttons</h3>\n    <nui-repeat-radio-with-non-required-selection-mode-example id=\"nui-demo-radio-non-required-selection\"></nui-repeat-radio-with-non-required-selection-mode-example>\n    <hr />\n\n    <h3>Item-Specific Drag/Drop Behavior</h3>\n    <nui-repeat-reorder-config-example id=\"nui-demo-reorder-config\"></nui-repeat-reorder-config-example>\n</div>\n";
+      /***/
+    },
+
+    /***/
+    "irLm":
+    /*!**********************************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./demo/src/components/demo/repeat/repeat-visual-test/repeat-visual-test.component.ts ***!
+      \**********************************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function irLm(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "import { Component } from \"@angular/core\";\n\n@Component({\n    selector: \"nui-repeat-visual-test\",\n    templateUrl: \"./repeat-visual-test.component.html\",\n})\nexport class RepeatVisualTestComponent {\n}\n";
       /***/
     },
 
@@ -4725,7 +4950,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import { ScrollingModule } from \"@angular/cdk/scrolling\";\nimport { NgModule } from \"@angular/core\";\nimport { RouterModule } from \"@angular/router\";\nimport {\n    DEMO_PATH_TOKEN,\n    NuiButtonModule,\n    NuiDocsModule,\n    NuiFormFieldModule,\n    NuiMessageModule, NuiProgressModule,\n    NuiRepeatModule,\n    NuiSearchModule,\n    NuiSwitchModule,\n    NuiTabsModule,\n    SrlcStage,\n} from \"@nova-ui/bits\";\n\nimport {\n    RepeatDisabledMultiSelectionExampleComponent,\n    RepeatDragHandleExampleComponent,\n    RepeatDragPreviewExampleComponent,\n    RepeatDragSimpleExampleComponent,\n    RepeatExampleComponent,\n    RepeatItemExampleComponent,\n    RepeatMultiSelectionExampleComponent,\n    RepeatRadioSelectionModeExampleComponent,\n    RepeatRadioWithNonRequiredSelectionModeExampleComponent,\n    RepeatReorderItemConfigExampleComponent,\n    RepeatReorderSimpleExampleComponent,\n    RepeatSimpleExampleComponent,\n    RepeatSingleSelectionModeExampleComponent,\n    RepeatSingleWithRequiredSelectionModeExampleComponent,\n    RepeatTestComponent,\n    RepeatVirtualScrollComponent,\n} from \"./index\";\n\nconst routes = [\n    {\n        path: \"\",\n        component: RepeatExampleComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.ga,\n            },\n            showThemeSwitcher: true,\n        },\n    },\n    {\n        path: \"repeat-item\",\n        component: RepeatItemExampleComponent,\n    },\n    {\n        path: \"repeat-test\",\n        component: RepeatTestComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n];\n\n@NgModule({\n    imports: [\n        NuiButtonModule,\n        NuiRepeatModule,\n        NuiSwitchModule,\n        NuiMessageModule,\n        NuiDocsModule,\n        RouterModule.forChild(routes),\n        ScrollingModule,\n        NuiProgressModule,\n        NuiSearchModule,\n        NuiFormFieldModule,\n        NuiTabsModule,\n    ],\n    declarations: [\n        RepeatExampleComponent,\n        RepeatItemExampleComponent,\n        RepeatDisabledMultiSelectionExampleComponent,\n        RepeatMultiSelectionExampleComponent,\n        RepeatRadioSelectionModeExampleComponent,\n        RepeatRadioWithNonRequiredSelectionModeExampleComponent,\n        RepeatSimpleExampleComponent,\n        RepeatDragSimpleExampleComponent,\n        RepeatReorderSimpleExampleComponent,\n        RepeatDragPreviewExampleComponent,\n        RepeatSingleSelectionModeExampleComponent,\n        RepeatSingleWithRequiredSelectionModeExampleComponent,\n        RepeatTestComponent,\n        RepeatReorderItemConfigExampleComponent,\n        RepeatDragHandleExampleComponent,\n        RepeatVirtualScrollComponent,\n    ],\n    providers: [\n        {\n            provide: DEMO_PATH_TOKEN,\n            useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/),\n        },\n    ],\n    exports: [\n        RouterModule,\n    ],\n})\nexport class RepeatModule {\n}\n";
+      __webpack_exports__["default"] = "import { ScrollingModule } from \"@angular/cdk/scrolling\";\nimport { NgModule } from \"@angular/core\";\nimport { RouterModule } from \"@angular/router\";\nimport {\n    DEMO_PATH_TOKEN,\n    NuiButtonModule,\n    NuiDocsModule,\n    NuiFormFieldModule,\n    NuiMessageModule,\n    NuiProgressModule,\n    NuiRepeatModule,\n    NuiSearchModule,\n    NuiSwitchModule,\n    NuiTabsModule,\n    SrlcStage,\n} from \"@nova-ui/bits\";\n\nimport {\n    RepeatDisabledMultiSelectionExampleComponent,\n    RepeatDragHandleExampleComponent,\n    RepeatDragPreviewExampleComponent,\n    RepeatDragSimpleExampleComponent,\n    RepeatExampleComponent,\n    RepeatItemExampleComponent,\n    RepeatMultiSelectionExampleComponent,\n    RepeatRadioSelectionModeExampleComponent,\n    RepeatRadioWithNonRequiredSelectionModeExampleComponent,\n    RepeatReorderItemConfigExampleComponent,\n    RepeatReorderSimpleExampleComponent,\n    RepeatSimpleExampleComponent,\n    RepeatSingleSelectionModeExampleComponent,\n    RepeatSingleWithRequiredSelectionModeExampleComponent,\n    RepeatTestComponent,\n    RepeatVisualTestComponent,\n    RepeatVirtualScrollComponent,\n} from \"./index\";\n\nconst routes = [\n    {\n        path: \"\",\n        component: RepeatExampleComponent,\n        data: {\n            \"srlc\": {\n                \"stage\": SrlcStage.ga,\n            },\n            showThemeSwitcher: true,\n        },\n    },\n    {\n        path: \"repeat-item\",\n        component: RepeatItemExampleComponent,\n    },\n    {\n        path: \"repeat-test\",\n        component: RepeatTestComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"repeat-visual-test\",\n        component: RepeatVisualTestComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n];\n\n@NgModule({\n    imports: [\n        NuiButtonModule,\n        NuiRepeatModule,\n        NuiSwitchModule,\n        NuiMessageModule,\n        NuiDocsModule,\n        RouterModule.forChild(routes),\n        ScrollingModule,\n        NuiProgressModule,\n        NuiSearchModule,\n        NuiFormFieldModule,\n        NuiTabsModule,\n    ],\n    declarations: [\n        RepeatExampleComponent,\n        RepeatItemExampleComponent,\n        RepeatDisabledMultiSelectionExampleComponent,\n        RepeatMultiSelectionExampleComponent,\n        RepeatRadioSelectionModeExampleComponent,\n        RepeatRadioWithNonRequiredSelectionModeExampleComponent,\n        RepeatSimpleExampleComponent,\n        RepeatDragSimpleExampleComponent,\n        RepeatReorderSimpleExampleComponent,\n        RepeatDragPreviewExampleComponent,\n        RepeatSingleSelectionModeExampleComponent,\n        RepeatSingleWithRequiredSelectionModeExampleComponent,\n        RepeatTestComponent,\n        RepeatVisualTestComponent,\n        RepeatReorderItemConfigExampleComponent,\n        RepeatDragHandleExampleComponent,\n        RepeatVirtualScrollComponent,\n    ],\n    providers: [\n        {\n            provide: DEMO_PATH_TOKEN,\n            useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/),\n        },\n    ],\n    exports: [\n        RouterModule,\n    ],\n})\nexport class RepeatModule {\n}\n";
       /***/
     },
 
