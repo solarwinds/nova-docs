@@ -102,13 +102,14 @@
         _classCallCheck(this, ChipsModule);
       };
 
+      ChipsModule.ɵfac = function ChipsModule_Factory(t) {
+        return new (t || ChipsModule)();
+      };
+
       ChipsModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({
         type: ChipsModule
       });
       ChipsModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({
-        factory: function ChipsModule_Factory(t) {
-          return new (t || ChipsModule)();
-        },
         providers: [{
           provide: _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["DEMO_PATH_TOKEN"],
           useFactory: function useFactory() {

@@ -8226,13 +8226,14 @@
         _classCallCheck(this, DialogModule);
       };
 
+      DialogModule.ɵfac = function DialogModule_Factory(t) {
+        return new (t || DialogModule)();
+      };
+
       DialogModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({
         type: DialogModule
       });
       DialogModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({
-        factory: function DialogModule_Factory(t) {
-          return new (t || DialogModule)();
-        },
         providers: [{
           provide: _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["DEMO_PATH_TOKEN"],
           useFactory: function useFactory() {

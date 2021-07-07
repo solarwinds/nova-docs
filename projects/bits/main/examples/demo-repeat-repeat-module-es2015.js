@@ -83,8 +83,9 @@ const routes = [
 ];
 class RepeatModule {
 }
+RepeatModule.ɵfac = function RepeatModule_Factory(t) { return new (t || RepeatModule)(); };
 RepeatModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineNgModule"]({ type: RepeatModule });
-RepeatModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjector"]({ factory: function RepeatModule_Factory(t) { return new (t || RepeatModule)(); }, providers: [
+RepeatModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjector"]({ providers: [
         {
             provide: _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["DEMO_PATH_TOKEN"],
             useFactory: () => __webpack_require__("XxfH"),

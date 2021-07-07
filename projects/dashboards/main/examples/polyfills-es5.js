@@ -1,5 +1,5 @@
 (function () {
-  function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+  function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
   function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
@@ -7471,12 +7471,21 @@
       !*** ./node_modules/@angular/localize/fesm2015/init.js ***!
       \*********************************************************/
 
-    /*! no static exports found */
+    /*! exports provided: $localize */
 
     /***/
-    function NDB(module, exports) {
+    function NDB(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "$localize", function () {
+        return $localize;
+      });
       /**
-       * @license Angular v11.2.4
+       * @license Angular v11.2.14
        * (c) 2010-2021 Google LLC. https://angular.io/
        * License: MIT
        */
@@ -7488,6 +7497,8 @@
        * Use of this source code is governed by an MIT-style license that can be
        * found in the LICENSE file at https://angular.io/license
        */
+
+
       var __globalThis = typeof globalThis !== 'undefined' && globalThis;
 
       var __window = typeof window !== 'undefined' && window;
@@ -7531,7 +7542,7 @@
        * ```
        *
        * This format is the same as that used for `i18n` markers in Angular templates. See the
-       * [Angular 18n guide](guide/i18n#template-translations).
+       * [Angular 18n guide](guide/i18n#mark-text-for-translations).
        *
        * **Naming placeholders**
        *
@@ -7595,9 +7606,13 @@
        * the original template literal string without applying any translations to the parts. This
        * version is used during development or where there is no need to translate the localized
        * template literals.
+       *
        * @param messageParts a collection of the static parts of the template string.
        * @param expressions a collection of the values of each placeholder in the template string.
        * @returns the translated string, with the `messageParts` and `expressions` interleaved together.
+       *
+       * @globalApi
+       * @publicApi
        */
 
 

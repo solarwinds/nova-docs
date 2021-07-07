@@ -123,8 +123,9 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiDatePickerModule {
 }
+NuiDatePickerModule.ɵfac = function NuiDatePickerModule_Factory(t) { return new (t || NuiDatePickerModule)(); };
 NuiDatePickerModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdefineNgModule"]({ type: NuiDatePickerModule });
-NuiDatePickerModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdefineInjector"]({ factory: function NuiDatePickerModule_Factory(t) { return new (t || NuiDatePickerModule)(); }, providers: [], imports: [[
+NuiDatePickerModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdefineInjector"]({ providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
             _textbox_textbox_module__WEBPACK_IMPORTED_MODULE_4__["NuiTextboxModule"],
             _icon_icon_module__WEBPACK_IMPORTED_MODULE_2__["NuiIconModule"],
@@ -189,8 +190,9 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiWizardV2Module {
 }
+NuiWizardV2Module.ɵfac = function NuiWizardV2Module_Factory(t) { return new (t || NuiWizardV2Module)(); };
 NuiWizardV2Module.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_13__["ɵɵdefineNgModule"]({ type: NuiWizardV2Module });
-NuiWizardV2Module.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_13__["ɵɵdefineInjector"]({ factory: function NuiWizardV2Module_Factory(t) { return new (t || NuiWizardV2Module)(); }, providers: [_error_state_matcher_provider__WEBPACK_IMPORTED_MODULE_2__["ErrorStateMatcher"]], imports: [[
+NuiWizardV2Module.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_13__["ɵɵdefineInjector"]({ providers: [_error_state_matcher_provider__WEBPACK_IMPORTED_MODULE_2__["ErrorStateMatcher"]], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
             _icon_icon_module__WEBPACK_IMPORTED_MODULE_1__["NuiIconModule"],
             _tooltip_tooltip_module__WEBPACK_IMPORTED_MODULE_12__["NuiTooltipModule"],
@@ -826,8 +828,9 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiTimePickerModule {
 }
+NuiTimePickerModule.ɵfac = function NuiTimePickerModule_Factory(t) { return new (t || NuiTimePickerModule)(); };
 NuiTimePickerModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineNgModule"]({ type: NuiTimePickerModule });
-NuiTimePickerModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjector"]({ factory: function NuiTimePickerModule_Factory(t) { return new (t || NuiTimePickerModule)(); }, providers: [], imports: [[
+NuiTimePickerModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjector"]({ providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
             _textbox_textbox_module__WEBPACK_IMPORTED_MODULE_4__["NuiTextboxModule"],
             _icon_icon_module__WEBPACK_IMPORTED_MODULE_1__["NuiIconModule"],
@@ -3160,8 +3163,9 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiDialogModule {
 }
+NuiDialogModule.ɵfac = function NuiDialogModule_Factory(t) { return new (t || NuiDialogModule)(); };
 NuiDialogModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdefineNgModule"]({ type: NuiDialogModule });
-NuiDialogModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdefineInjector"]({ factory: function NuiDialogModule_Factory(t) { return new (t || NuiDialogModule)(); }, providers: [
+NuiDialogModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdefineInjector"]({ providers: [
         _dialog_service__WEBPACK_IMPORTED_MODULE_10__["DialogService"],
         _dialog_stack_service__WEBPACK_IMPORTED_MODULE_8__["DialogStackService"],
     ], imports: [[
@@ -3204,8 +3208,9 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiDndModule {
 }
+NuiDndModule.ɵfac = function NuiDndModule_Factory(t) { return new (t || NuiDndModule)(); };
 NuiDndModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineNgModule"]({ type: NuiDndModule });
-NuiDndModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({ factory: function NuiDndModule_Factory(t) { return new (t || NuiDndModule)(); }, imports: [[
+NuiDndModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({ imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
         ]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵsetNgModuleScope"](NuiDndModule, { declarations: [_dnd_drop_target_directive__WEBPACK_IMPORTED_MODULE_1__["DndDropTargetDirective"]], imports: [_common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"]], exports: [_dnd_drop_target_directive__WEBPACK_IMPORTED_MODULE_1__["DndDropTargetDirective"]] }); })();
@@ -3863,8 +3868,9 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiImageModule {
 }
+NuiImageModule.ɵfac = function NuiImageModule_Factory(t) { return new (t || NuiImageModule)(); };
 NuiImageModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineNgModule"]({ type: NuiImageModule });
-NuiImageModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({ factory: function NuiImageModule_Factory(t) { return new (t || NuiImageModule)(); }, providers: [], imports: [[
+NuiImageModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({ providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
         ]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵsetNgModuleScope"](NuiImageModule, { declarations: [_image_component__WEBPACK_IMPORTED_MODULE_1__["ImageComponent"]], imports: [_common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"]], exports: [_image_component__WEBPACK_IMPORTED_MODULE_1__["ImageComponent"]] }); })();
@@ -5632,8 +5638,9 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiPaginatorModule {
 }
+NuiPaginatorModule.ɵfac = function NuiPaginatorModule_Factory(t) { return new (t || NuiPaginatorModule)(); };
 NuiPaginatorModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineNgModule"]({ type: NuiPaginatorModule });
-NuiPaginatorModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjector"]({ factory: function NuiPaginatorModule_Factory(t) { return new (t || NuiPaginatorModule)(); }, providers: [], imports: [[
+NuiPaginatorModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjector"]({ providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_1__["NuiCommonModule"],
             _popup_popup_module__WEBPACK_IMPORTED_MODULE_3__["NuiPopupModule"],
             _button_button_module__WEBPACK_IMPORTED_MODULE_2__["NuiButtonModule"],
@@ -6249,8 +6256,9 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiWizardModule {
 }
+NuiWizardModule.ɵfac = function NuiWizardModule_Factory(t) { return new (t || NuiWizardModule)(); };
 NuiWizardModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefineNgModule"]({ type: NuiWizardModule });
-NuiWizardModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefineInjector"]({ factory: function NuiWizardModule_Factory(t) { return new (t || NuiWizardModule)(); }, providers: [], imports: [[
+NuiWizardModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefineInjector"]({ providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
             _button_button_module__WEBPACK_IMPORTED_MODULE_2__["NuiButtonModule"],
             _busy_busy_module__WEBPACK_IMPORTED_MODULE_1__["NuiBusyModule"],
@@ -6880,8 +6888,9 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiCommonModule {
 }
+NuiCommonModule.ɵfac = function NuiCommonModule_Factory(t) { return new (t || NuiCommonModule)(); };
 NuiCommonModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({ type: NuiCommonModule });
-NuiCommonModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({ factory: function NuiCommonModule_Factory(t) { return new (t || NuiCommonModule)(); }, providers: [
+NuiCommonModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({ providers: [
         _directives_dragdrop_drag_and_drop_service__WEBPACK_IMPORTED_MODULE_24__["DragAndDropService"],
         _services_event_bus_service__WEBPACK_IMPORTED_MODULE_12__["EventBusService"],
         _environment__WEBPACK_IMPORTED_MODULE_5__["NUI_ENV_PROVIDER"],
@@ -6954,8 +6963,9 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiExpanderModule {
 }
+NuiExpanderModule.ɵfac = function NuiExpanderModule_Factory(t) { return new (t || NuiExpanderModule)(); };
 NuiExpanderModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({ type: NuiExpanderModule });
-NuiExpanderModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({ factory: function NuiExpanderModule_Factory(t) { return new (t || NuiExpanderModule)(); }, providers: [], imports: [[
+NuiExpanderModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({ providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
             _icon_icon_module__WEBPACK_IMPORTED_MODULE_1__["NuiIconModule"],
         ]] });
@@ -7393,8 +7403,9 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiDateTimePickerModule {
 }
+NuiDateTimePickerModule.ɵfac = function NuiDateTimePickerModule_Factory(t) { return new (t || NuiDateTimePickerModule)(); };
 NuiDateTimePickerModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineNgModule"]({ type: NuiDateTimePickerModule });
-NuiDateTimePickerModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjector"]({ factory: function NuiDateTimePickerModule_Factory(t) { return new (t || NuiDateTimePickerModule)(); }, providers: [], imports: [[
+NuiDateTimePickerModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjector"]({ providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
             _date_picker_date_picker_module__WEBPACK_IMPORTED_MODULE_1__["NuiDatePickerModule"],
             _time_picker_time_picker_module__WEBPACK_IMPORTED_MODULE_2__["NuiTimePickerModule"],
@@ -8032,8 +8043,9 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiRepeatModule {
 }
+NuiRepeatModule.ɵfac = function NuiRepeatModule_Factory(t) { return new (t || NuiRepeatModule)(); };
 NuiRepeatModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefineNgModule"]({ type: NuiRepeatModule });
-NuiRepeatModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefineInjector"]({ factory: function NuiRepeatModule_Factory(t) { return new (t || NuiRepeatModule)(); }, providers: [], imports: [[
+NuiRepeatModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefineInjector"]({ providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_2__["NuiCommonModule"],
             _checkbox_checkbox_module__WEBPACK_IMPORTED_MODULE_3__["NuiCheckboxModule"],
             _radio_radio_module__WEBPACK_IMPORTED_MODULE_4__["NuiRadioModule"],
@@ -8479,7 +8491,7 @@ WizardStepV2Component.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵde
         let _t;
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx.stepLabel = _t.first);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx.stepFooter = _t.first);
-    } }, inputs: { template: "template", stepStateConfig: "stepStateConfig" }, exportAs: ["nuiWizardStep"], features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵProvidersFeature"]([
+    } }, inputs: { template: "template", stepStateConfig: "stepStateConfig", stepIndex: "stepIndex" }, exportAs: ["nuiWizardStep"], features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵProvidersFeature"]([
             { provide: _error_state_matcher_provider__WEBPACK_IMPORTED_MODULE_2__["ErrorStateMatcher"], useExisting: WizardStepV2Component },
             { provide: _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_0__["CdkStep"], useExisting: WizardStepV2Component },
         ]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵInheritDefinitionFeature"]], ngContentSelectors: _c0, decls: 1, vars: 0, consts: [[4, "ngIf"], [4, "ngTemplateOutlet"]], template: function WizardStepV2Component_Template(rf, ctx) { if (rf & 1) {
@@ -8547,8 +8559,9 @@ __webpack_require__.r(__webpack_exports__);
 
 class NuiDemoModule {
 }
+NuiDemoModule.ɵfac = function NuiDemoModule_Factory(t) { return new (t || NuiDemoModule)(); };
 NuiDemoModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({ type: NuiDemoModule, bootstrap: [_components_app_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]] });
-NuiDemoModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({ factory: function NuiDemoModule_Factory(t) { return new (t || NuiDemoModule)(); }, providers: [
+NuiDemoModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({ providers: [
         { provide: _angular_core__WEBPACK_IMPORTED_MODULE_1__["TRANSLATIONS_FORMAT"], useValue: "xlf" },
         { provide: _angular_core__WEBPACK_IMPORTED_MODULE_1__["TRANSLATIONS"], useValue: _environments_environment__WEBPACK_IMPORTED_MODULE_7__["translationLibrary"] },
     ], imports: [[
@@ -9045,8 +9058,9 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiDividerModule {
 }
+NuiDividerModule.ɵfac = function NuiDividerModule_Factory(t) { return new (t || NuiDividerModule)(); };
 NuiDividerModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineNgModule"]({ type: NuiDividerModule });
-NuiDividerModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({ factory: function NuiDividerModule_Factory(t) { return new (t || NuiDividerModule)(); }, providers: [], imports: [[
+NuiDividerModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({ providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
         ]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵsetNgModuleScope"](NuiDividerModule, { declarations: [_divider_component__WEBPACK_IMPORTED_MODULE_1__["DividerComponent"]], imports: [_common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"]], exports: [_divider_component__WEBPACK_IMPORTED_MODULE_1__["DividerComponent"]] }); })();
@@ -9100,8 +9114,9 @@ __webpack_require__.r(__webpack_exports__);
 // Will be renamed in scope of the NUI-5797
 class NuiSelectV2Module {
 }
+NuiSelectV2Module.ɵfac = function NuiSelectV2Module_Factory(t) { return new (t || NuiSelectV2Module)(); };
 NuiSelectV2Module.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵdefineNgModule"]({ type: NuiSelectV2Module });
-NuiSelectV2Module.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵdefineInjector"]({ factory: function NuiSelectV2Module_Factory(t) { return new (t || NuiSelectV2Module)(); }, providers: [], imports: [[
+NuiSelectV2Module.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵdefineInjector"]({ providers: [], imports: [[
             _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
             _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_0__["OverlayModule"],
             _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_1__["PortalModule"],
@@ -9598,8 +9613,8 @@ function WizardVerticalComponent_div_0_Template(rf, ctx) { if (rf & 1) {
     const isLast_r4 = ctx.last;
     const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("tabIndex", ctx_r0._getFocusIndex() == i_r3 ? 0 : -1)("id", ctx_r0._getStepLabelId(i_r3))("index", i_r3)("stepState", ctx_r0._getIndicatorType(i_r3, step_r2.state))("label", step_r2.stepLabel || step_r2.label)("selected", ctx_r0.selectedIndex === i_r3)("active", step_r2.completed || ctx_r0.selectedIndex === i_r3 || !ctx_r0.linear)("optional", step_r2.optional)("errorMessage", step_r2.errorMessage);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵattribute"]("aria-posinset", i_r3 + 1)("aria-setsize", ctx_r0.steps.length)("aria-controls", ctx_r0._getStepContentId(i_r3))("aria-selected", ctx_r0.selectedIndex === i_r3)("aria-label", step_r2.ariaLabel || null)("aria-labelledby", !step_r2.ariaLabel && step_r2.ariaLabelledby ? step_r2.ariaLabelledby : null);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("tabIndex", ctx_r0._getFocusIndex() == i_r3 ? 0 : -1)("id", ctx_r0.labelIds[i_r3])("index", i_r3)("label", step_r2.stepLabel || step_r2.label)("selected", ctx_r0.selectedIndex === i_r3)("active", step_r2.completed || ctx_r0.selectedIndex === i_r3 || !ctx_r0.linear)("errorMessage", step_r2.errorMessage);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵattribute"]("aria-posinset", i_r3 + 1)("aria-setsize", ctx_r0.steps.length)("aria-controls", ctx_r0.stepContentIds[i_r3])("aria-selected", ctx_r0.selectedIndex === i_r3)("aria-label", step_r2.ariaLabel || null)("aria-labelledby", !step_r2.ariaLabel && step_r2.ariaLabelledby ? step_r2.ariaLabelledby : null);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵclassProp"]("nui-wizard-vertical-line", !isLast_r4);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
@@ -9641,8 +9656,8 @@ WizardVerticalComponent.ɵfac = function WizardVerticalComponent_Factory(t) { re
 WizardVerticalComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({ type: WizardVerticalComponent, selectors: [["nui-wizard-vertical"]], hostAttrs: ["aria-orientation", "vertical", "role", "tablist", 1, "nui-wizard-vertical-layout"], inputs: { selectedIndex: "selectedIndex" }, exportAs: ["wizardVertical"], features: [_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵProvidersFeature"]([
             { provide: _wizard_directive__WEBPACK_IMPORTED_MODULE_5__["WizardDirective"], useExisting: WizardVerticalComponent },
             { provide: _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_1__["CdkStepper"], useExisting: WizardVerticalComponent },
-        ]), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵInheritDefinitionFeature"]], decls: 2, vars: 2, consts: [["class", "nui-wizard-vertical-header-container", 4, "ngFor", "ngForOf"], ["class", "nui-wizard-vertical-footer-container", 4, "ngIf"], [1, "nui-wizard-vertical-header-container"], [1, "nui-wizard-vertical-header", 3, "tabIndex", "id", "index", "stepState", "label", "selected", "active", "optional", "errorMessage", "click", "keydown"], [1, "nui-wizard-vertical-content-container"], ["role", "tabpanel", 1, "nui-wizard-vertical-content", 3, "id"], [1, "nui-wizard-vertical-content"], [3, "ngTemplateOutlet"], [1, "nui-wizard-vertical-footer-container"], [3, "footer"]], template: function WizardVerticalComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](0, WizardVerticalComponent_div_0_Template, 6, 23, "div", 0);
+        ]), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵInheritDefinitionFeature"]], decls: 2, vars: 2, consts: [["class", "nui-wizard-vertical-header-container", 4, "ngFor", "ngForOf"], ["class", "nui-wizard-vertical-footer-container", 4, "ngIf"], [1, "nui-wizard-vertical-header-container"], [1, "nui-wizard-vertical-header", 3, "tabIndex", "id", "index", "label", "selected", "active", "errorMessage", "click", "keydown"], [1, "nui-wizard-vertical-content-container"], ["role", "tabpanel", 1, "nui-wizard-vertical-content", 3, "id"], [1, "nui-wizard-vertical-content"], [3, "ngTemplateOutlet"], [1, "nui-wizard-vertical-footer-container"], [3, "footer"]], template: function WizardVerticalComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](0, WizardVerticalComponent_div_0_Template, 6, 21, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](1, WizardVerticalComponent_div_1_Template, 2, 1, "div", 1);
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngForOf", ctx.steps);
@@ -10586,8 +10601,9 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiBusyModule {
 }
+NuiBusyModule.ɵfac = function NuiBusyModule_Factory(t) { return new (t || NuiBusyModule)(); };
 NuiBusyModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({ type: NuiBusyModule });
-NuiBusyModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({ factory: function NuiBusyModule_Factory(t) { return new (t || NuiBusyModule)(); }, providers: [], imports: [[
+NuiBusyModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({ providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
             _spinner_spinner_module__WEBPACK_IMPORTED_MODULE_1__["NuiSpinnerModule"],
         ]] });
@@ -11058,8 +11074,9 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiSwitchModule {
 }
+NuiSwitchModule.ɵfac = function NuiSwitchModule_Factory(t) { return new (t || NuiSwitchModule)(); };
 NuiSwitchModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineNgModule"]({ type: NuiSwitchModule });
-NuiSwitchModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({ factory: function NuiSwitchModule_Factory(t) { return new (t || NuiSwitchModule)(); }, providers: [], imports: [[
+NuiSwitchModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({ providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
         ]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵsetNgModuleScope"](NuiSwitchModule, { declarations: [_switch_component__WEBPACK_IMPORTED_MODULE_1__["SwitchComponent"]], imports: [_common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"]], exports: [_switch_component__WEBPACK_IMPORTED_MODULE_1__["SwitchComponent"]] }); })();
@@ -11094,8 +11111,9 @@ __webpack_require__.r(__webpack_exports__);
 // Don't ignore this module (component children need to be kept separate in the docs)
 class NuiLayoutModule {
 }
+NuiLayoutModule.ɵfac = function NuiLayoutModule_Factory(t) { return new (t || NuiLayoutModule)(); };
 NuiLayoutModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineNgModule"]({ type: NuiLayoutModule });
-NuiLayoutModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjector"]({ factory: function NuiLayoutModule_Factory(t) { return new (t || NuiLayoutModule)(); }, providers: [], imports: [[
+NuiLayoutModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjector"]({ providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
         ]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵsetNgModuleScope"](NuiLayoutModule, { declarations: [_sheet_sheet_component__WEBPACK_IMPORTED_MODULE_5__["SheetComponent"], _sheet_group_sheet_group_component__WEBPACK_IMPORTED_MODULE_4__["SheetGroupComponent"], _card_card_component__WEBPACK_IMPORTED_MODULE_2__["CardComponent"], _card_group_card_group_component__WEBPACK_IMPORTED_MODULE_1__["CardGroupComponent"], _layout_resizer_layout_resizer_component__WEBPACK_IMPORTED_MODULE_3__["LayoutResizerComponent"]], imports: [_common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"]], exports: [_sheet_sheet_component__WEBPACK_IMPORTED_MODULE_5__["SheetComponent"],
@@ -11132,8 +11150,9 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiMessageModule {
 }
+NuiMessageModule.ɵfac = function NuiMessageModule_Factory(t) { return new (t || NuiMessageModule)(); };
 NuiMessageModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineNgModule"]({ type: NuiMessageModule });
-NuiMessageModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjector"]({ factory: function NuiMessageModule_Factory(t) { return new (t || NuiMessageModule)(); }, providers: [], imports: [[
+NuiMessageModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjector"]({ providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
             _lib_icon_icon_module__WEBPACK_IMPORTED_MODULE_2__["NuiIconModule"],
             _lib_button_button_module__WEBPACK_IMPORTED_MODULE_1__["NuiButtonModule"],
@@ -11178,8 +11197,9 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiTabsModule {
 }
+NuiTabsModule.ɵfac = function NuiTabsModule_Factory(t) { return new (t || NuiTabsModule)(); };
 NuiTabsModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵdefineNgModule"]({ type: NuiTabsModule });
-NuiTabsModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵdefineInjector"]({ factory: function NuiTabsModule_Factory(t) { return new (t || NuiTabsModule)(); }, imports: [[
+NuiTabsModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵdefineInjector"]({ imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
             _icon_icon_module__WEBPACK_IMPORTED_MODULE_1__["NuiIconModule"],
         ]] });
@@ -11763,8 +11783,9 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiSelectorModule {
 }
+NuiSelectorModule.ɵfac = function NuiSelectorModule_Factory(t) { return new (t || NuiSelectorModule)(); };
 NuiSelectorModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineNgModule"]({ type: NuiSelectorModule });
-NuiSelectorModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjector"]({ factory: function NuiSelectorModule_Factory(t) { return new (t || NuiSelectorModule)(); }, providers: [], imports: [[
+NuiSelectorModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjector"]({ providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
             _checkbox_checkbox_module__WEBPACK_IMPORTED_MODULE_2__["NuiCheckboxModule"],
             _menu_menu_module__WEBPACK_IMPORTED_MODULE_3__["NuiMenuModule"],
@@ -15082,8 +15103,9 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiButtonModule {
 }
+NuiButtonModule.ɵfac = function NuiButtonModule_Factory(t) { return new (t || NuiButtonModule)(); };
 NuiButtonModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({ type: NuiButtonModule });
-NuiButtonModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({ factory: function NuiButtonModule_Factory(t) { return new (t || NuiButtonModule)(); }, providers: [], imports: [[
+NuiButtonModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({ providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
             _icon_icon_module__WEBPACK_IMPORTED_MODULE_1__["NuiIconModule"],
         ]] });
@@ -15130,8 +15152,9 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiTimeFrameBarModule {
 }
+NuiTimeFrameBarModule.ɵfac = function NuiTimeFrameBarModule_Factory(t) { return new (t || NuiTimeFrameBarModule)(); };
 NuiTimeFrameBarModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdefineNgModule"]({ type: NuiTimeFrameBarModule });
-NuiTimeFrameBarModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdefineInjector"]({ factory: function NuiTimeFrameBarModule_Factory(t) { return new (t || NuiTimeFrameBarModule)(); }, providers: [], imports: [[
+NuiTimeFrameBarModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdefineInjector"]({ providers: [], imports: [[
             _button_button_module__WEBPACK_IMPORTED_MODULE_1__["NuiButtonModule"],
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
             _date_picker_date_picker_module__WEBPACK_IMPORTED_MODULE_2__["NuiDatePickerModule"],
@@ -18913,8 +18936,9 @@ const appRoutes = [
 ];
 class AppRoutingModule {
 }
+AppRoutingModule.ɵfac = function AppRoutingModule_Factory(t) { return new (t || AppRoutingModule)(); };
 AppRoutingModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({ type: AppRoutingModule });
-AppRoutingModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({ factory: function AppRoutingModule_Factory(t) { return new (t || AppRoutingModule)(); }, imports: [[
+AppRoutingModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({ imports: [[
             _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"].forRoot(appRoutes, { useHash: true, relativeLinkResolution: "legacy" }),
         ], _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](AppRoutingModule, { imports: [_angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]], exports: [_angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]] }); })();
@@ -19030,8 +19054,9 @@ __webpack_require__.r(__webpack_exports__);
 /** @ignore @deprecated in v11 SelectComponent and ComboboxComponent in this module have been deprecated in favor of SelectV2Component and ComboboxV2Component which can be imported from SelectV2Module */
 class NuiSelectModule {
 }
+NuiSelectModule.ɵfac = function NuiSelectModule_Factory(t) { return new (t || NuiSelectModule)(); };
 NuiSelectModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdefineNgModule"]({ type: NuiSelectModule });
-NuiSelectModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdefineInjector"]({ factory: function NuiSelectModule_Factory(t) { return new (t || NuiSelectModule)(); }, providers: [], imports: [[
+NuiSelectModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdefineInjector"]({ providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_1__["NuiCommonModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_0__["ReactiveFormsModule"],
             _popup_popup_module__WEBPACK_IMPORTED_MODULE_5__["NuiPopupModule"],
@@ -19220,8 +19245,9 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiToolbarModule {
 }
+NuiToolbarModule.ɵfac = function NuiToolbarModule_Factory(t) { return new (t || NuiToolbarModule)(); };
 NuiToolbarModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdefineNgModule"]({ type: NuiToolbarModule });
-NuiToolbarModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdefineInjector"]({ factory: function NuiToolbarModule_Factory(t) { return new (t || NuiToolbarModule)(); }, providers: [], imports: [[
+NuiToolbarModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdefineInjector"]({ providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
             _icon_icon_module__WEBPACK_IMPORTED_MODULE_3__["NuiIconModule"],
             _menu_menu_module__WEBPACK_IMPORTED_MODULE_4__["NuiMenuModule"],
@@ -19300,6 +19326,7 @@ class WizardDirective extends _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_1__[
             this.steps.reset(steps.filter(step => step._stepper === this));
             this.stepsArray = this.steps.toArray();
             this.steps.notifyOnChanges();
+            this.setIds();
         });
         this.steps.changes
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["takeUntil"])(this._destroyed))
@@ -19327,21 +19354,6 @@ class WizardDirective extends _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_1__[
         });
         super.ngOnDestroy();
     }
-    getStepState(i) {
-        const steps = this.steps.toArray();
-        const step = steps[i];
-        const isSelected = steps.indexOf(this.selected) === i;
-        if (step.hasError && isSelected) {
-            return _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_1__["STEP_STATE"].ERROR;
-        }
-        if (isSelected) {
-            return _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_1__["STEP_STATE"].EDIT;
-        }
-        if (step.completed) {
-            return _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_1__["STEP_STATE"].DONE;
-        }
-        return _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_1__["STEP_STATE"].NUMBER;
-    }
     // Restores the completed wizard to the last step
     restore() {
         this.steps.toArray().forEach(step => {
@@ -19355,6 +19367,10 @@ class WizardDirective extends _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_1__[
     get allStepsCompleted() {
         const completed = this.steps.toArray().reduce((acc, step) => acc && step.completed, true);
         return completed;
+    }
+    setIds() {
+        this.labelIds = this.stepsArray.map((step, index) => this._getStepLabelId(index));
+        this.stepContentIds = this.stepsArray.map((step, index) => this._getStepContentId(index));
     }
 }
 WizardDirective.ngAcceptInputTypeEditable = undefined;
@@ -19431,8 +19447,9 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiDocsModule {
 }
+NuiDocsModule.ɵfac = function NuiDocsModule_Factory(t) { return new (t || NuiDocsModule)(); };
 NuiDocsModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_17__["ɵɵdefineNgModule"]({ type: NuiDocsModule });
-NuiDocsModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_17__["ɵɵdefineInjector"]({ factory: function NuiDocsModule_Factory(t) { return new (t || NuiDocsModule)(); }, imports: [[
+NuiDocsModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_17__["ɵɵdefineInjector"]({ imports: [[
             _angular_common__WEBPACK_IMPORTED_MODULE_0__["CommonModule"],
             _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"],
             _common_common_module__WEBPACK_IMPORTED_MODULE_2__["NuiCommonModule"],
@@ -19500,8 +19517,9 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiOverlayModule {
 }
+NuiOverlayModule.ɵfac = function NuiOverlayModule_Factory(t) { return new (t || NuiOverlayModule)(); };
 NuiOverlayModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineNgModule"]({ type: NuiOverlayModule });
-NuiOverlayModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineInjector"]({ factory: function NuiOverlayModule_Factory(t) { return new (t || NuiOverlayModule)(); }, providers: [_overlay_position_service__WEBPACK_IMPORTED_MODULE_4__["OverlayPositionService"]], imports: [[
+NuiOverlayModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineInjector"]({ providers: [_overlay_position_service__WEBPACK_IMPORTED_MODULE_4__["OverlayPositionService"]], imports: [[
             _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_0__["OverlayModule"],
             _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_1__["PortalModule"],
             _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
@@ -19583,9 +19601,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _constants_wizard_constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../constants/wizard.constants */ "EIbi");
 /* harmony import */ var lodash_assign__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! lodash/assign */ "3OWR");
 /* harmony import */ var lodash_assign__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(lodash_assign__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _tooltip_tooltip_directive__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../tooltip/tooltip.directive */ "mgRW");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ "ofXK");
-/* harmony import */ var _icon_icon_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../icon/icon.component */ "45Bz");
+/* harmony import */ var _wizard_step_wizard_step_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../wizard-step/wizard-step.component */ "9Oqf");
+/* harmony import */ var _tooltip_tooltip_directive__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../tooltip/tooltip.directive */ "mgRW");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var _icon_icon_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../icon/icon.component */ "45Bz");
+
 
 
 
@@ -19649,6 +19669,7 @@ class WizardStepHeaderComponent extends _angular_cdk_stepper__WEBPACK_IMPORTED_M
             this.updateStepStateConfig((_b = changes === null || changes === void 0 ? void 0 : changes.stepStateConfig) === null || _b === void 0 ? void 0 : _b.currentValue);
             this.createStepStateConfigMap();
         }
+        this.stepState = this.getStepState(this.step);
     }
     ngAfterViewInit() {
         this._focusMonitor.monitor(this._elementRef, true);
@@ -19680,11 +19701,24 @@ class WizardStepHeaderComponent extends _angular_cdk_stepper__WEBPACK_IMPORTED_M
             [_angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_1__["STEP_STATE"].ERROR]: (_d = this.wizardConfig.stepState) === null || _d === void 0 ? void 0 : _d.error,
         };
     }
+    getStepState(step) {
+        const isSelected = this.selected;
+        if (step.hasError && isSelected) {
+            return _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_1__["STEP_STATE"].ERROR;
+        }
+        if (isSelected) {
+            return _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_1__["STEP_STATE"].EDIT;
+        }
+        if (step.completed) {
+            return _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_1__["STEP_STATE"].DONE;
+        }
+        return _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_1__["STEP_STATE"].NUMBER;
+    }
 }
 WizardStepHeaderComponent.ɵfac = function WizardStepHeaderComponent_Factory(t) { return new (t || WizardStepHeaderComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_0__["FocusMonitor"]), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_2__["ElementRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_constants_wizard_constants__WEBPACK_IMPORTED_MODULE_4__["WIZARD_CONFIG"], 8)); };
 WizardStepHeaderComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({ type: WizardStepHeaderComponent, selectors: [["nui-wizard-step-header"]], hostAttrs: ["role", "tab", 1, "nui-wizard-step-header"], hostVars: 6, hostBindings: function WizardStepHeaderComponent_HostBindings(rf, ctx) { if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵclassProp"]("nui-wizard-step-header--selected", ctx.selected)("nui-wizard-step-header--optional", ctx.optional)("nui-wizard-step-header--completed", ctx.stepState === "done");
-    } }, inputs: { stepState: "stepState", stepStateConfig: "stepStateConfig", label: "label", optionalLabel: "optionalLabel", errorMessage: "errorMessage", index: "index", selected: "selected", completed: "completed", active: "active", optional: "optional" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵInheritDefinitionFeature"], _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵNgOnChangesFeature"]], decls: 10, vars: 16, consts: [[1, "nui-wizard-step-header__label", 3, "nuiTooltip"], [3, "ngTemplateOutlet", 4, "ngIf"], ["class", "nui-wizard-step-header__text-label", 4, "ngIf"], ["class", "nui-wizard-step-header__label--optional", 4, "ngIf"], ["class", "nui-wizard-step-header__label--error", 4, "ngIf"], [1, "nui-wizard-step-header-icon-container"], [1, "nui-wizard-step-header-icon-content"], [3, "icon", "iconColor"], [3, "ngTemplateOutlet"], [1, "nui-wizard-step-header__text-label"], [1, "nui-wizard-step-header__label--optional"], [1, "nui-wizard-step-header__label--error"]], template: function WizardStepHeaderComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵclassProp"]("nui-wizard-step-header--selected", ctx.selected)("nui-wizard-step-header--optional", ctx.step.optional)("nui-wizard-step-header--completed", ctx.stepState === "done");
+    } }, inputs: { stepStateConfig: "stepStateConfig", label: "label", optionalLabel: "optionalLabel", errorMessage: "errorMessage", index: "index", selected: "selected", active: "active", step: "step" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵInheritDefinitionFeature"], _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵNgOnChangesFeature"]], decls: 10, vars: 16, consts: [[1, "nui-wizard-step-header__label", 3, "nuiTooltip"], [3, "ngTemplateOutlet", 4, "ngIf"], ["class", "nui-wizard-step-header__text-label", 4, "ngIf"], ["class", "nui-wizard-step-header__label--optional", 4, "ngIf"], ["class", "nui-wizard-step-header__label--error", 4, "ngIf"], [1, "nui-wizard-step-header-icon-container"], [1, "nui-wizard-step-header-icon-content"], [3, "icon", "iconColor"], [3, "ngTemplateOutlet"], [1, "nui-wizard-step-header__text-label"], [1, "nui-wizard-step-header__label--optional"], [1, "nui-wizard-step-header__label--error"]], template: function WizardStepHeaderComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](1, WizardStepHeaderComponent_ng_container_1_Template, 1, 1, "ng-container", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, WizardStepHeaderComponent_div_2_Template, 2, 1, "div", 2);
@@ -19701,21 +19735,21 @@ WizardStepHeaderComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵ
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵclassProp"]("nui-wizard-step-header__label--active", ctx.completed)("nui-wizard-step-header__label--selected", ctx.selected)("nui-wizard-step-header__label--error", ctx.stepState === "error");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵclassProp"]("nui-wizard-step-header__label--active", ctx.step.completed)("nui-wizard-step-header__label--selected", ctx.selected)("nui-wizard-step-header__label--error", ctx.stepState === "error");
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("nuiTooltip", ctx.stringLabel ? ctx.stringLabel : "");
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", ctx.templateLabel);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", ctx.stringLabel);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", ctx.optional && ctx.stepState != "error");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", ctx.step.optional && ctx.stepState != "error");
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", ctx.stepState == "error");
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵclassMapInterpolate1"]("nui-wizard-step-header-icon nui-step-header-icon-state--", ctx.stepState, "");
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](4);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("icon", ctx.stepStateConfigMap[ctx.stepState].icon)("iconColor", ctx.stepStateConfigMap[ctx.stepState].iconColor);
-    } }, directives: [_tooltip_tooltip_directive__WEBPACK_IMPORTED_MODULE_6__["TooltipDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_7__["NgIf"], _icon_icon_component__WEBPACK_IMPORTED_MODULE_8__["IconComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_7__["NgTemplateOutlet"]], styles: [".nui-wizard-step-header {\n  overflow: hidden;\n  outline: none;\n  cursor: pointer;\n  position: relative;\n  color: var(--nui-color-text-default,#111);\n  width: 145px;\n}\n.nui-wizard-step-header--completed {\n  color: var(--nui-color-text-link,#0079aa);\n}\n.nui-wizard-step-header:focus {\n  outline: none;\n  box-shadow: inset 0 0 0 2px rgba(0, 196, 210, 0.5);\n  border-radius: 3px;\n}\n.nui-wizard-step-header:focus:not(:focus-visible) {\n  box-shadow: unset;\n  border-radius: unset;\n}\n.nui-wizard-step-header-icon {\n  height: 16px;\n  width: 16px;\n  position: relative;\n}\n.nui-wizard-step-header-icon-content {\n  font-size: 16px;\n  height: 16px;\n  width: 16px;\n  position: relative;\n  top: 4px;\n}\n.nui-wizard-step-header-icon-container .nui-icon {\n  position: relative;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n.nui-wizard-step-header__label {\n  display: inline-block;\n  min-width: 50px;\n  max-width: 130px;\n  vertical-align: middle;\n  padding-bottom: 5px;\n  line-height: 14px;\n  font-size: 11px;\n  white-space: nowrap;\n  overflow: hidden;\n  -ms-text-overflow: ellipsis;\n  text-overflow: ellipsis;\n  color: var(--nui-color-text-secondary,rgba(17, 17, 17, 0.6));\n}\n.nui-wizard-step-header__label--active {\n  color: var(--nui-color-text-link,#0079aa);\n}\n.nui-wizard-step-header__label--selected {\n  color: var(--nui-color-text-default,#111);\n}\n.nui-wizard-step-header__text-label {\n  white-space: nowrap;\n  overflow: hidden;\n  -ms-text-overflow: ellipsis;\n  text-overflow: ellipsis;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndpemFyZC1zdGVwLWhlYWRlci5jb21wb25lbnQubGVzcyIsIi4uLy4uLy4uL3N0eWxlcy9taXhpbnMvY3NzLXZhcmlhYmxlcy5sZXNzIiwiLi4vLi4vLi4vc3R5bGVzL251aS1mcmFtZXdvcmstdHlwb2dyYXBoeS5sZXNzIiwiLi4vLi4vLi4vc3R5bGVzL21peGlucy90ZXh0LW92ZXJmbG93Lmxlc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBS0E7RUFDSSxnQkFBQTtFQUNBLGFBQUE7RUFDQSxlQUFBO0VBQ0Esa0JBQUE7RUNKQSx5Q0FBQTtFRE1BLFlBQUE7QUFKSjtBQU1JO0VDUkEseUNBQUE7QURLSjtBQU9JO0VBRUksYUFBQTtFQUNBLGtEQUFBO0VBQ0Esa0JBQUE7QUFOUjtBQVNJO0VBQ0ksaUJBQUE7RUFDQSxvQkFBQTtBQVBSO0FBVUk7RUFDSSxZQUFBO0VBQ0EsV0FBQTtFQUNBLGtCQUFBO0FBUlI7QUFVUTtFQUNJLGVBQUE7RUFDQSxZQUFBO0VBQ0EsV0FBQTtFQUNBLGtCQUFBO0VBQ0EsUUFBQTtBQVJaO0FBV1E7RUFHUSxrQkFBQTtFQUNBLFFBQUE7RUFDQSxTQUFBO0VBQ0EsZ0NBQUE7QUFYaEI7QUFnQkk7RUFDSSxxQkFBQTtFQUNBLGVBQUE7RUFDQSxnQkFBQTtFQUNBLHNCQUFBO0VBQ0EsbUJBQUE7RUVyREosaUJBQUE7RUFDQSxlQUFBO0VDR0EsbUJBQUE7RUFDQSxnQkFBQTtFQUNBLDJCQUFBO0VBRUEsdUJBQUE7RUZSQSw0REFBQTtBRCtDSjtBQVdRO0VDMURKLHlDQUFBO0FEa0RKO0FBWVE7RUM5REoseUNBQUE7QURxREo7QUFjSTtFRy9EQSxtQkFBQTtFQUNBLGdCQUFBO0VBQ0EsMkJBQUE7RUFFQSx1QkFBQTtBSG9ESiIsImZpbGUiOiJ3aXphcmQtc3RlcC1oZWFkZXIuY29tcG9uZW50Lmxlc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0IFwiLi4vd2l6YXJkLXZhcnNcIjtcbkBpbXBvcnQgKHJlZmVyZW5jZSkgXCIuLi8uLi8uLi9zdHlsZXMvbnVpLWZyYW1ld29yay12YXJpYWJsZXMubGVzc1wiO1xuQGltcG9ydCAocmVmZXJlbmNlKSBcIi4uLy4uLy4uL3N0eWxlcy9taXhpbnMubGVzc1wiO1xuQGltcG9ydCAocmVmZXJlbmNlKSBcIi4uLy4uLy4uL3N0eWxlcy9udWktZnJhbWV3b3JrLXR5cG9ncmFwaHkubGVzc1wiO1xuXG4ubnVpLXdpemFyZC1zdGVwLWhlYWRlciB7XG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgICBvdXRsaW5lOiBub25lO1xuICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgLnNldENzc1ZhcmlhYmxlKGNvbG9yLCBudWktY29sb3ItdGV4dC1kZWZhdWx0KTtcbiAgICB3aWR0aDogQHdpemFyZC1sYWJlbC1oZWFkZXItd2lkdGg7XG5cbiAgICAmLS1jb21wbGV0ZWQge1xuICAgICAgICAuc2V0Q3NzVmFyaWFibGUoY29sb3IsIG51aS1jb2xvci10ZXh0LWxpbmspO1xuICAgIH1cblxuICAgICY6Zm9jdXMge1xuICAgICAgICAvLyBUT0RPOiBzd2l0Y2ggYmFjayB0byBtaXhpbiAuZm9jdXMtb3V0bGluZSgpIHdoZW4gei1pbmRleCBpcyByZW1vdmVkIGluIHRoZSBzY29wZSBvZiBOVUktNjEwM1xuICAgICAgICBvdXRsaW5lOiBub25lO1xuICAgICAgICBib3gtc2hhZG93OiBpbnNldCAwIDAgMCBAbnVpLWxpbmUtbWVkaXVtIGZhZGUoQG51aS1jb2xvci1zZWxlY3RlZC1jb250cmFzdCwgNTAlKTtcbiAgICAgICAgYm9yZGVyLXJhZGl1czogQG51aS1yYWRpdXMtZGVmYXVsdDtcbiAgICB9XG5cbiAgICAmOmZvY3VzOm5vdCg6Zm9jdXMtdmlzaWJsZSkge1xuICAgICAgICBib3gtc2hhZG93OiB1bnNldDtcbiAgICAgICAgYm9yZGVyLXJhZGl1czogdW5zZXQ7XG4gICAgfVxuXG4gICAgJi1pY29uIHtcbiAgICAgICAgaGVpZ2h0OiBAaWNvbi1zaXplLWRlZmF1bHQ7XG4gICAgICAgIHdpZHRoOiBAaWNvbi1zaXplLWRlZmF1bHQ7XG4gICAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcblxuICAgICAgICAmLWNvbnRlbnQge1xuICAgICAgICAgICAgZm9udC1zaXplOiBAaWNvbi1zaXplLWRlZmF1bHQ7XG4gICAgICAgICAgICBoZWlnaHQ6IEBpY29uLXNpemUtZGVmYXVsdDtcbiAgICAgICAgICAgIHdpZHRoOiBAaWNvbi1zaXplLWRlZmF1bHQ7XG4gICAgICAgICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgICAgICAgICB0b3A6IDRweDtcbiAgICAgICAgfVxuXG4gICAgICAgICYtY29udGFpbmVyIHtcbiAgICAgICAgICAgIC5udWktaWNvbiB7XG4gICAgICAgICAgICAgICAgLy8gVXNlIGFic29sdXRlIHBvc2l0aW9uaW5nIHRvIGNlbnRlciB0aGUgY29udGVudCwgYmVjYXVzZSBpdCB3b3JrcyBiZXR0ZXIgd2l0aCB0ZXh0LlxuICAgICAgICAgICAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICAgICAgICAgICAgICB0b3A6IDUwJTtcbiAgICAgICAgICAgICAgICBsZWZ0OiA1MCU7XG4gICAgICAgICAgICAgICAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTUwJSwgLTUwJSk7XG4gICAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICB9XG5cbiAgICAmX19sYWJlbCB7XG4gICAgICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgICAgICAgbWluLXdpZHRoOiBAd2l6YXJkLWxhYmVsLW1pbi13aWR0aDtcbiAgICAgICAgbWF4LXdpZHRoOiAoQHdpemFyZC1sYWJlbC1oZWFkZXItd2lkdGggLSBAbnVpLXNwYWNlLW1kKTtcbiAgICAgICAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcbiAgICAgICAgcGFkZGluZy1ib3R0b206IEBudWktc3BhY2UteHM7XG4gICAgICAgIC5udWktdGV4dC1zaXplKHNtYWxsKTtcbiAgICAgICAgLnRleHQtb3ZlcmZsb3coZWxsaXBzaXMpO1xuICAgICAgICAuc2V0Q3NzVmFyaWFibGUoY29sb3IsIG51aS1jb2xvci10ZXh0LXNlY29uZGFyeSk7XG5cbiAgICAgICAgJi0tYWN0aXZlIHtcbiAgICAgICAgICAgIC5zZXRDc3NWYXJpYWJsZShjb2xvciwgbnVpLWNvbG9yLXRleHQtbGluayk7XG4gICAgICAgIH1cblxuICAgICAgICAmLS1zZWxlY3RlZCB7XG4gICAgICAgICAgICAuc2V0Q3NzVmFyaWFibGUoY29sb3IsIG51aS1jb2xvci10ZXh0LWRlZmF1bHQpO1xuICAgICAgICB9XG4gICAgfVxuXG4gICAgJl9fdGV4dC1sYWJlbCB7XG4gICAgICAgIC50ZXh0LW92ZXJmbG93KGVsbGlwc2lzKTtcbiAgICB9XG59XG4iLCIuc2V0Q3NzVmFyaWFibGUoQHByb3BlcnR5LCBAdmFsdWUpe1xuICAgIEBldmFsdWF0ZWQgOiBcIkB7dmFsdWV9XCI7XG4gICAgLy90aGUgZG91YmxlIEAgZm9yY2VzIGEgaW5kaXJlY3Rpb24gZXZhbHVhdGlvbiwga2luZGEgbGlrZSBhIHBvaW50ZXJcbiAgICBAZmFsbGJhY2sgOiBAQGV2YWx1YXRlZDtcblxuICAgIEB7cHJvcGVydHl9OiB+XCJ2YXIoLS1Ae3ZhbHVlfSxAe2ZhbGxiYWNrfSlcIjtcbn1cbiIsIkBpbXBvcnQgKHJlZmVyZW5jZSkgXCJudWktZnJhbWV3b3JrLXZhcmlhYmxlcy5sZXNzXCI7XG5AaW1wb3J0IChyZWZlcmVuY2UpIFwibWl4aW5zLmxlc3NcIjtcblxuLyogZm9udC1zaXplICovXG4ubnVpLXRleHQtc2l6ZShAc2l6ZTogZGVmYXVsdCkge1xuICAgIGxpbmUtaGVpZ2h0OiB+XCJAe251aS1saW5lLWhlaWdodC1Ae3NpemV9fVwiO1xuICAgIGZvbnQtc2l6ZTogflwiQHtudWktZm9udC1zaXplLUB7c2l6ZX19XCI7XG59XG4vKiBmb250LXNpemUgZW5kcyAqL1xuXG4ubnVpLXRleHQtcGFnZSgpIHtcbiAgICAubnVpLXRleHQtc2l6ZShoZXJvKTtcbiAgICBmb250LXdlaWdodDogQG51aS1mb250LXdlaWdodC1zZW1pYm9sZDtcbiAgICAuc2V0Q3NzVmFyaWFibGUoY29sb3IsIG51aS1jb2xvci10ZXh0LWRlZmF1bHQpO1xufVxuXG4ubnVpLXRleHQtd2lkZ2V0KCkge1xuICAgIC5udWktdGV4dC1zaXplKGJpZyk7XG4gICAgZm9udC13ZWlnaHQ6IEBudWktZm9udC13ZWlnaHQtc2VtaWJvbGQ7XG4gICAgLnNldENzc1ZhcmlhYmxlKGNvbG9yLCBudWktY29sb3ItdGV4dC1kZWZhdWx0KTtcbn1cblxuLm51aS10ZXh0LXBhbmVsKEBjb2xvciwgQGNvbG9yTmFtZSkge1xuICAgIC5udWktdGV4dC1zaXplKGRlZmF1bHQpO1xuICAgIGZvbnQtd2VpZ2h0OiBAbnVpLWZvbnQtd2VpZ2h0LXNlbWlib2xkO1xuICAgIHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7XG4gICAgY29sb3I6IEBjb2xvcjtcbiAgICBjb2xvcjogflwidmFyKC0tQHtjb2xvck5hbWV9LEB7Y29sb3J9KVwiO1xufVxuXG4ubnVpLXRleHQtbGFiZWwoQGNvbG9yLCBAY29sb3JOYW1lKSB7XG4gICAgLm51aS10ZXh0LXNpemUoZGVmYXVsdCk7XG4gICAgZm9udC13ZWlnaHQ6IEBudWktZm9udC13ZWlnaHQtc2VtaWJvbGQ7XG4gICAgY29sb3I6IEBjb2xvcjtcbiAgICBjb2xvcjogflwidmFyKC0tQHtjb2xvck5hbWV9LEB7Y29sb3J9KVwiO1xufVxuXG4ubnVpLXRleHQtZGVmYXVsdChAY29sb3IsIEBjb2xvck5hbWUpIHtcbiAgICAubnVpLXRleHQtc2l6ZShkZWZhdWx0KTtcbiAgICBmb250LXdlaWdodDogQG51aS1mb250LXdlaWdodC1yZWd1bGFyO1xuICAgIGNvbG9yOiBAY29sb3I7XG4gICAgY29sb3I6IH5cInZhcigtLUB7Y29sb3JOYW1lfSxAe2NvbG9yfSlcIjtcbn1cblxuLm51aS10ZXh0LXNlY29uZGFyeShAY29sb3IsIEBjb2xvck5hbWUpIHtcbiAgICAubnVpLXRleHQtc2l6ZShkZWZhdWx0KTtcbiAgICBmb250LXdlaWdodDogQG51aS1mb250LXdlaWdodC1yZWd1bGFyO1xuICAgIGNvbG9yOiBAY29sb3I7XG4gICAgY29sb3I6IH5cInZhcigtLUB7Y29sb3JOYW1lfSxAe2NvbG9yfSlcIjtcbn1cblxuLm51aS10ZXh0LXRpdGxlLXNlY29uZGFyeShAY29sb3IsIEBjb2xvck5hbWUpIHtcbiAgICAubnVpLXRleHQtc2l6ZShzbWFsbCk7XG4gICAgZm9udC13ZWlnaHQ6IEBudWktZm9udC13ZWlnaHQtcmVndWxhcjtcbiAgICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xuICAgIGNvbG9yOiBAY29sb3I7XG4gICAgY29sb3I6IH5cInZhcigtLUB7Y29sb3JOYW1lfSxAe2NvbG9yfSlcIjtcbn1cblxuLm51aS10ZXh0LXNtYWxsKEBjb2xvciwgQGNvbG9yTmFtZSkge1xuICAgIC5udWktdGV4dC1zaXplKHNtYWxsKTtcbiAgICBmb250LXdlaWdodDogQG51aS1mb250LXdlaWdodC1yZWd1bGFyO1xuICAgIGNvbG9yOiBAY29sb3I7XG4gICAgY29sb3I6IH5cInZhcigtLUB7Y29sb3JOYW1lfSxAe2NvbG9yfSlcIjtcbn1cblxuLy8gVGhpcyBtaXhpbiBpcyBkZXByZWNhdGVkLiBVc2UgbnVpLXRleHQtc21hbGwoKSBpbnN0ZWFkXG4ubnVpLXRleHQtaGludChAY29sb3IsIEBjb2xvck5hbWUpICB7XG4gICAgLm51aS10ZXh0LXNpemUoc21hbGwpO1xuICAgIGZvbnQtd2VpZ2h0OiBAbnVpLWZvbnQtd2VpZ2h0LXJlZ3VsYXI7XG4gICAgY29sb3I6IEBjb2xvcjtcbiAgICBjb2xvcjogflwidmFyKC0tQHtjb2xvck5hbWV9LEB7Y29sb3J9KVwiO1xufVxuXG4ubnVpLXRleHQtaG92ZXJhYmxlKCkge1xuICAgIHRleHQtZGVjb3JhdGlvbi1saW5lOiB1bmRlcmxpbmU7XG4gICAgdGV4dC1kZWNvcmF0aW9uLXN0eWxlOiBkb3R0ZWQ7XG59XG5cbi5udWktdGV4dC1zbWFsbC1zZWNvbmRhcnkoKSB7XG4gICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtc2Vjb25kYXJ5KTtcbn1cblxuLy9zZW1hbnRpYyBzdHlsZXNcbi5udWktdGV4dCB7XG4gICAgJi1kaXNhYmxlZCB7XG4gICAgICAgIC5udWktdGV4dC1kZWZhdWx0KEBudWktY29sb3ItdGV4dC1kaXNhYmxlZCwgbnVpLWNvbG9yLXRleHQtZGlzYWJsZWQpO1xuICAgIH1cbiAgICAmLXByb2R1Y3Qge1xuICAgICAgICAubnVpLXRleHQtc2l6ZShoZXJvKTtcbiAgICAgICAgZm9udC1mYW1pbHk6IEBmb250LWZhbWlseS1yb2JvdG87XG4gICAgICAgIGZvbnQtd2VpZ2h0OiBAbnVpLWZvbnQtd2VpZ2h0LWJvbGQ7XG4gICAgICAgIC5zZXRDc3NWYXJpYWJsZShjb2xvciwgbnVpLWNvbG9yLXRleHQtbGlnaHQpO1xuICAgIH1cblxuICAgICYtcGFnZSB7XG4gICAgICAgIC5udWktdGV4dC1wYWdlKCk7XG5cbiAgICAgICAgJi0taG92ZXJhYmxlIHtcbiAgICAgICAgICAgIC5udWktdGV4dC1wYWdlKCk7XG4gICAgICAgICAgICAubnVpLXRleHQtaG92ZXJhYmxlKCk7XG4gICAgICAgIH1cbiAgICB9XG5cbiAgICAmLXdpZGdldCB7XG4gICAgICAgIC5udWktdGV4dC13aWRnZXQoKTtcblxuICAgICAgICAmLS1ob3ZlcmFibGUge1xuICAgICAgICAgICAgLm51aS10ZXh0LXdpZGdldCgpO1xuICAgICAgICAgICAgLm51aS10ZXh0LWhvdmVyYWJsZSgpO1xuICAgICAgICB9XG4gICAgfVxuXG4gICAgJi1wYW5lbCB7XG4gICAgICAgIC5udWktdGV4dC1wYW5lbChAbnVpLWNvbG9yLXRleHQtZGVmYXVsdCxudWktY29sb3ItdGV4dC1kZWZhdWx0KTtcbiAgICB9XG5cbiAgICAmLXBhbmVsLS1pbnZlcnNlIHtcbiAgICAgICAgLm51aS10ZXh0LXBhbmVsKEBudWktY29sb3ItdGV4dC1pbnZlcnNlLG51aS1jb2xvci10ZXh0LWludmVyc2UpO1xuICAgIH1cblxuICAgICYtcGFuZWwtLWhvdmVyYWJsZSB7XG4gICAgICAgIC5udWktdGV4dC1wYW5lbChAbnVpLWNvbG9yLXRleHQtZGVmYXVsdCxudWktY29sb3ItdGV4dC1kZWZhdWx0KTtcbiAgICAgICAgLm51aS10ZXh0LWhvdmVyYWJsZSgpO1xuICAgIH1cblxuICAgICYtcGFuZWwtLWRhcmtiZyB7XG4gICAgICAgIC5udWktdGV4dC1wYW5lbChAbnVpLWNvbG9yLXRleHQtbGlnaHQsbnVpLWNvbG9yLXRleHQtbGlnaHQpO1xuICAgIH1cblxuICAgICYtcGFuZWwtLWRhcmtiZy0taG92ZXJhYmxlIHtcbiAgICAgICAgLm51aS10ZXh0LXBhbmVsKEBudWktY29sb3ItdGV4dC1saWdodCxudWktY29sb3ItdGV4dC1saWdodCk7XG4gICAgICAgIC5udWktdGV4dC1ob3ZlcmFibGUoKTtcbiAgICB9XG5cbiAgICAmLWxhYmVsIHtcbiAgICAgICAgLm51aS10ZXh0LWxhYmVsKEBudWktY29sb3ItdGV4dC1kZWZhdWx0LG51aS1jb2xvci10ZXh0LWRlZmF1bHQpO1xuICAgIH1cblxuICAgICYtbGFiZWwtLWludmVyc2Uge1xuICAgICAgICAubnVpLXRleHQtbGFiZWwoQG51aS1jb2xvci10ZXh0LWludmVyc2UsbnVpLWNvbG9yLXRleHQtaW52ZXJzZSk7XG4gICAgfVxuXG4gICAgJi1sYWJlbC0taG92ZXJhYmxlIHtcbiAgICAgICAgLm51aS10ZXh0LWxhYmVsKEBudWktY29sb3ItdGV4dC1kZWZhdWx0LG51aS1jb2xvci10ZXh0LWRlZmF1bHQpO1xuICAgICAgICAubnVpLXRleHQtaG92ZXJhYmxlKCk7XG4gICAgfVxuXG4gICAgJi1sYWJlbC0tZGFya2JnIHtcbiAgICAgICAgLm51aS10ZXh0LWxhYmVsKEBudWktY29sb3ItdGV4dC1saWdodCxudWktY29sb3ItdGV4dC1saWdodCk7XG4gICAgfVxuXG4gICAgJi1sYWJlbC0tZGFya2JnLS1ob3ZlcmFibGUge1xuICAgICAgICAubnVpLXRleHQtbGFiZWwoQG51aS1jb2xvci10ZXh0LWxpZ2h0LG51aS1jb2xvci10ZXh0LWxpZ2h0KTtcbiAgICAgICAgLm51aS10ZXh0LWhvdmVyYWJsZSgpO1xuICAgIH1cblxuICAgICYtZGVmYXVsdCB7XG4gICAgICAgIC5udWktdGV4dC1kZWZhdWx0KEBudWktY29sb3ItdGV4dC1kZWZhdWx0LG51aS1jb2xvci10ZXh0LWRlZmF1bHQpO1xuICAgIH1cblxuICAgICYtZGVmYXVsdC0taW52ZXJzZSB7XG4gICAgICAgIC5udWktdGV4dC1kZWZhdWx0KEBudWktY29sb3ItdGV4dC1pbnZlcnNlLG51aS1jb2xvci10ZXh0LWludmVyc2UpO1xuICAgIH1cblxuICAgICYtZGVmYXVsdC0taW52ZXJzZS1zZWxlY3RlZCB7XG4gICAgICAgIC5udWktdGV4dC1kZWZhdWx0KEBudWktY29sb3ItdGV4dC1oaWdobGlnaHQtcGxhdGZvcm1fYmFyLG51aS1jb2xvci10ZXh0LWhpZ2hsaWdodC1wbGF0Zm9ybV9iYXIpO1xuICAgIH1cblxuICAgICYtZGVmYXVsdC0taG92ZXJhYmxlIHtcbiAgICAgICAgLm51aS10ZXh0LWRlZmF1bHQoQG51aS1jb2xvci10ZXh0LWRlZmF1bHQsbnVpLWNvbG9yLXRleHQtZGVmYXVsdCk7XG4gICAgICAgIC5udWktdGV4dC1ob3ZlcmFibGUoKTtcbiAgICB9XG5cbiAgICAmLWRlZmF1bHQtLWRhcmtiZyB7XG4gICAgICAgIC5udWktdGV4dC1kZWZhdWx0KEBudWktY29sb3ItdGV4dC1saWdodCxudWktY29sb3ItdGV4dC1saWdodCk7XG4gICAgfVxuICAgICYtZGVmYXVsdC0tZGFya2JnLS1ob3ZlcmFibGUge1xuICAgICAgICAubnVpLXRleHQtZGVmYXVsdChAbnVpLWNvbG9yLXRleHQtbGlnaHQsbnVpLWNvbG9yLXRleHQtbGlnaHQpO1xuICAgICAgICAubnVpLXRleHQtaG92ZXJhYmxlKCk7XG4gICAgfVxuXG4gICAgJi1kZWZhdWx0LS1kYXJrYmctc2VsZWN0ZWQge1xuICAgICAgICAubnVpLXRleHQtZGVmYXVsdChAbnVpLWNvbG9yLXRleHQtaGlnaGxpZ2h0LXBsYXRmb3JtX2JhcixudWktY29sb3ItdGV4dC1oaWdobGlnaHQtcGxhdGZvcm1fYmFyKTtcbiAgICB9XG5cbiAgICAmLWRlZmF1bHQtLWRhcmtiZy1zZWxlY3RlZC0taG92ZXJhYmxlIHtcbiAgICAgICAgLm51aS10ZXh0LWRlZmF1bHQoQG51aS1jb2xvci10ZXh0LWhpZ2hsaWdodC1wbGF0Zm9ybV9iYXIsbnVpLWNvbG9yLXRleHQtaGlnaGxpZ2h0LXBsYXRmb3JtX2Jhcik7XG4gICAgICAgIC5udWktdGV4dC1ob3ZlcmFibGUoKTtcbiAgICB9XG5cbiAgICAmLXNlY29uZGFyeSB7XG4gICAgICAgIC5udWktdGV4dC1zZWNvbmRhcnkoQG51aS1jb2xvci10ZXh0LXNlY29uZGFyeSxudWktY29sb3ItdGV4dC1zZWNvbmRhcnkpO1xuICAgIH1cblxuICAgICYtc2Vjb25kYXJ5LS1pbnZlcnNlIHtcbiAgICAgICAgLm51aS10ZXh0LXNlY29uZGFyeShAbnVpLWNvbG9yLXRleHQtaW52ZXJzZS1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtaW52ZXJzZS1zZWNvbmRhcnkpO1xuICAgIH1cblxuICAgICYtc2Vjb25kYXJ5LS1ob3ZlcmFibGUge1xuICAgICAgICAubnVpLXRleHQtc2Vjb25kYXJ5KEBudWktY29sb3ItdGV4dC1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtc2Vjb25kYXJ5KTtcbiAgICAgICAgLm51aS10ZXh0LWhvdmVyYWJsZSgpO1xuICAgIH1cblxuICAgICYtc2Vjb25kYXJ5LS1kYXJrYmcge1xuICAgICAgICAubnVpLXRleHQtc2Vjb25kYXJ5KEBudWktY29sb3ItdGV4dC1saWdodC1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtbGlnaHQtc2Vjb25kYXJ5KTtcbiAgICB9XG5cbiAgICAmLXNlY29uZGFyeS0tZGFya2JnLS1ob3ZlcmFibGUge1xuICAgICAgICAubnVpLXRleHQtc2Vjb25kYXJ5KEBudWktY29sb3ItdGV4dC1saWdodC1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtbGlnaHQtc2Vjb25kYXJ5KTtcbiAgICAgICAgLm51aS10ZXh0LWhvdmVyYWJsZSgpO1xuICAgIH1cblxuICAgICYtc2Vjb25kYXJ5LS1kaXNhYmxlZCB7XG4gICAgICAgIC5udWktdGV4dC1zZWNvbmRhcnkoQG51aS1jb2xvci10ZXh0LWRpc2FibGVkLG51aS1jb2xvci10ZXh0LWRpc2FibGVkKTtcbiAgICB9XG5cbiAgICAmLXNlY29uZGFyeS0tZGlzYWJsZWQtLWhvdmVyYWJsZSB7XG4gICAgICAgIC5udWktdGV4dC1zZWNvbmRhcnkoQG51aS1jb2xvci10ZXh0LWRpc2FibGVkLG51aS1jb2xvci10ZXh0LWRpc2FibGVkKTtcbiAgICAgICAgLm51aS10ZXh0LWhvdmVyYWJsZSgpO1xuICAgIH1cblxuICAgICYtbGluayB7XG4gICAgICAgIC5udWktdGV4dC1zaXplKGRlZmF1bHQpO1xuICAgICAgICBmb250LXdlaWdodDogQG51aS1mb250LXdlaWdodC1yZWd1bGFyO1xuICAgICAgICAuc2V0Q3NzVmFyaWFibGUoY29sb3IsIG51aS1jb2xvci10ZXh0LWxpbmspO1xuICAgIH1cbiAgICAmLWxpbms6aG92ZXIge1xuICAgICAgICB0ZXh0LWRlY29yYXRpb246IHVuZGVybGluZTtcbiAgICB9XG5cbiAgICAmLWxpbmstc21hbGwge1xuICAgICAgICAubnVpLXRleHQtc2l6ZShzbWFsbCk7XG4gICAgICAgIGZvbnQtd2VpZ2h0OiBAbnVpLWZvbnQtd2VpZ2h0LXJlZ3VsYXI7XG4gICAgICAgIC5zZXRDc3NWYXJpYWJsZShjb2xvciwgbnVpLWNvbG9yLXRleHQtbGluayk7XG4gICAgfVxuICAgICYtbGluay1zbWFsbDpob3ZlciB7XG4gICAgICAgIHRleHQtZGVjb3JhdGlvbjogdW5kZXJsaW5lO1xuICAgIH1cblxuICAgICYtc291cmNlLWNvZGUge1xuICAgICAgICAubnVpLXRleHQtc2l6ZShkZWZhdWx0KTtcbiAgICAgICAgZm9udC1mYW1pbHk6IEBmb250LWZhbWlseS1zb3VyY2UtY29kZS1wcm87XG4gICAgICAgIGZvbnQtd2VpZ2h0OiBAbnVpLWZvbnQtd2VpZ2h0LXJlZ3VsYXI7XG5cbiAgICAgICAgJi1zZWNvbmRhcnkge1xuICAgICAgICAgICAgLm51aS10ZXh0LXNpemUoZGVmYXVsdCk7XG4gICAgICAgICAgICBmb250LWZhbWlseTogQGZvbnQtZmFtaWx5LXNvdXJjZS1jb2RlLXBybztcbiAgICAgICAgICAgIGZvbnQtd2VpZ2h0OiBAbnVpLWZvbnQtd2VpZ2h0LXJlZ3VsYXI7XG4gICAgICAgICAgICAuc2V0Q3NzVmFyaWFibGUoY29sb3IsIG51aS1jb2xvci10ZXh0LXNlY29uZGFyeSk7XG4gICAgICAgIH1cbiAgICB9XG5cbiAgICAmLXRpdGxlLXNlY29uZGFyeSB7XG4gICAgICAgIC5udWktdGV4dC10aXRsZS1zZWNvbmRhcnkoQG51aS1jb2xvci10ZXh0LXNlY29uZGFyeSxudWktY29sb3ItdGV4dC1zZWNvbmRhcnkpO1xuICAgIH1cblxuICAgICYtdGl0bGUtc2Vjb25kYXJ5LS1pbnZlcnNlIHtcbiAgICAgICAgLm51aS10ZXh0LXRpdGxlLXNlY29uZGFyeShAbnVpLWNvbG9yLXRleHQtaW52ZXJzZS1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtaW52ZXJzZS1zZWNvbmRhcnkpO1xuICAgIH1cblxuICAgICYtdGl0bGUtc2Vjb25kYXJ5LS1kYXJrYmcge1xuICAgICAgICAubnVpLXRleHQtdGl0bGUtc2Vjb25kYXJ5KEBudWktY29sb3ItdGV4dC1saWdodC1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtbGlnaHQtc2Vjb25kYXJ5KTtcbiAgICB9XG5cbiAgICAmLXNtYWxsIHtcbiAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1kZWZhdWx0LG51aS1jb2xvci10ZXh0LWRlZmF1bHQpO1xuICAgIH1cblxuICAgICYtc21hbGwtc2Vjb25kYXJ5IHtcbiAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtc2Vjb25kYXJ5KTtcblxuICAgICAgICAmLS1ob3ZlcmFibGUge1xuICAgICAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtc2Vjb25kYXJ5KTtcbiAgICAgICAgICAgIC5udWktdGV4dC1ob3ZlcmFibGUoKTtcbiAgICAgICAgfVxuICAgIH1cblxuICAgICYtc21hbGwtc2Vjb25kYXJ5LS1pbnZlcnNlIHtcbiAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1pbnZlcnNlLXNlY29uZGFyeSxudWktY29sb3ItdGV4dC1pbnZlcnNlLXNlY29uZGFyeSk7XG5cbiAgICAgICAgJi0taG92ZXJhYmxlIHtcbiAgICAgICAgICAgIC5udWktdGV4dC1zbWFsbChAbnVpLWNvbG9yLXRleHQtaW52ZXJzZS1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtaW52ZXJzZS1zZWNvbmRhcnkpO1xuICAgICAgICAgICAgLm51aS10ZXh0LWhvdmVyYWJsZSgpO1xuICAgICAgICB9XG4gICAgfVxuXG4gICAgJi1zbWFsbC0taW52ZXJzZSB7XG4gICAgICAgIC5udWktdGV4dC1zbWFsbChAbnVpLWNvbG9yLXRleHQtaW52ZXJzZSxudWktY29sb3ItdGV4dC1pbnZlcnNlKTtcblxuICAgICAgICAmLS1ob3ZlcmFibGUge1xuICAgICAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1pbnZlcnNlLG51aS1jb2xvci10ZXh0LWludmVyc2UpO1xuICAgICAgICAgICAgLm51aS10ZXh0LWhvdmVyYWJsZSgpO1xuICAgICAgICB9XG4gICAgfVxuXG4gICAgJi1zbWFsbC0taG92ZXJhYmxlIHtcbiAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1kZWZhdWx0LG51aS1jb2xvci10ZXh0LWRlZmF1bHQpO1xuICAgICAgICAubnVpLXRleHQtaG92ZXJhYmxlKCk7XG4gICAgfVxuXG4gICAgJi1zbWFsbC0tZGFya2JnIHtcbiAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1saWdodCwgbnVpLWNvbG9yLXRleHQtbGlnaHQpO1xuICAgIH1cblxuICAgICYtc21hbGwtLWRhcmtiZy0taG92ZXJhYmxlIHtcbiAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1saWdodCwgbnVpLWNvbG9yLXRleHQtbGlnaHQpO1xuICAgICAgICAubnVpLXRleHQtaG92ZXJhYmxlKCk7XG4gICAgfVxuXG4gICAgJi1zbWFsbC0tZGlzYWJsZWQge1xuICAgICAgICAubnVpLXRleHQtc21hbGwoQG51aS1jb2xvci10ZXh0LWRpc2FibGVkLG51aS1jb2xvci10ZXh0LWRpc2FibGVkKTtcbiAgICB9XG5cbiAgICAmLXNtYWxsLS1kaXNhYmxlZC0taG92ZXJhYmxlIHtcbiAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1kaXNhYmxlZCxudWktY29sb3ItdGV4dC1kaXNhYmxlZCk7XG4gICAgICAgIC5udWktdGV4dC1ob3ZlcmFibGUoKTtcbiAgICB9XG5cbiAgICAvLyBgbnVpLXRleHQtaGludGAgc3R5bGVzIGFyZSBkZXByZWNhdGVkLiBVc2UgYG51aS10ZXh0LXNtYWxsLXNlY29uZGFyeWAgaW5zdGVhZC5cbiAgICAmLWhpbnQge1xuICAgICAgICAubnVpLXRleHQtaGludChAbnVpLWNvbG9yLXRleHQtc2Vjb25kYXJ5LG51aS1jb2xvci10ZXh0LXNlY29uZGFyeSk7XG4gICAgfVxuXG4gICAgJi1oaW50LS1ob3ZlcmFibGUge1xuICAgICAgICAubnVpLXRleHQtaGludChAbnVpLWNvbG9yLXRleHQtc2Vjb25kYXJ5LG51aS1jb2xvci10ZXh0LXNlY29uZGFyeSk7XG4gICAgICAgIC5udWktdGV4dC1ob3ZlcmFibGUoKTtcbiAgICB9XG5cbiAgICAmLWhpbnQtLWRhcmtiZyB7XG4gICAgICAgIC5udWktdGV4dC1oaW50KEBudWktY29sb3ItdGV4dC1saWdodC1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtbGlnaHQtc2Vjb25kYXJ5KTtcbiAgICB9XG5cbiAgICAmLWhpbnQtLWRhcmtiZy0taG92ZXJhYmxlIHtcbiAgICAgICAgLm51aS10ZXh0LWhpbnQoQG51aS1jb2xvci10ZXh0LWxpZ2h0LXNlY29uZGFyeSxudWktY29sb3ItdGV4dC1saWdodC1zZWNvbmRhcnkpO1xuICAgICAgICAubnVpLXRleHQtaG92ZXJhYmxlKCk7XG4gICAgfVxuXG4gICAgJi12YWxpZGF0aW9uIHtcbiAgICAgICAgLm51aS10ZXh0LXNpemUoc21hbGwpO1xuICAgICAgICBmb250LXdlaWdodDogQG51aS1mb250LXdlaWdodC1zZW1pYm9sZDtcbiAgICAgICAgLnNldENzc1ZhcmlhYmxlKGNvbG9yLCBudWktY29sb3ItdGV4dC1jcml0aWNhbCk7XG4gICAgfVxuXG4gICAgJi1lbGxpcHNpcyB7XG4gICAgICAgIC50ZXh0LW92ZXJmbG93KGVsbGlwc2lzKTtcbiAgICB9XG59XG5cbiIsIi8vIFRleHQgb3ZlcmZsb3dcbi8vIFJlcXVpcmVzIGlubGluZS1ibG9jayBvciBibG9jayBmb3IgcHJvcGVyIHN0eWxpbmdcblxuLy8gVE9ETzogUkVNT1ZFIExFR0FDWSBCT09UU1RSQVAgTUlYSU5cbi50ZXh0LW92ZXJmbG93KCkge1xuICAudGV4dC1vdmVyZmxvdygnZWxsaXBzaXMnKTtcbn1cblxuLnRleHQtb3ZlcmZsb3coQG92ZXJmbG93KSB7XG4gICAgd2hpdGUtc3BhY2U6bm93cmFwO1xuICAgIG92ZXJmbG93OmhpZGRlbjtcbiAgICAtbXMtdGV4dC1vdmVyZmxvdzogQG92ZXJmbG93O1xuICAgIC1vLXRleHQtb3ZlcmZsb3c6IEBvdmVyZmxvdztcbiAgICB0ZXh0LW92ZXJmbG93OiBAb3ZlcmZsb3c7XG59XG4iXX0= */"], encapsulation: 2, changeDetection: 0 });
+    } }, directives: [_tooltip_tooltip_directive__WEBPACK_IMPORTED_MODULE_7__["TooltipDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_8__["NgIf"], _icon_icon_component__WEBPACK_IMPORTED_MODULE_9__["IconComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_8__["NgTemplateOutlet"]], styles: [".nui-wizard-step-header {\n  overflow: hidden;\n  outline: none;\n  cursor: pointer;\n  position: relative;\n  color: var(--nui-color-text-default,#111);\n  width: 145px;\n}\n.nui-wizard-step-header--completed {\n  color: var(--nui-color-text-link,#0079aa);\n}\n.nui-wizard-step-header:focus {\n  outline: none;\n  box-shadow: inset 0 0 0 2px rgba(0, 196, 210, 0.5);\n  border-radius: 3px;\n}\n.nui-wizard-step-header:focus:not(:focus-visible) {\n  box-shadow: unset;\n  border-radius: unset;\n}\n.nui-wizard-step-header-icon {\n  height: 16px;\n  width: 16px;\n  position: relative;\n}\n.nui-wizard-step-header-icon-content {\n  font-size: 16px;\n  height: 16px;\n  width: 16px;\n  position: relative;\n  top: 4px;\n}\n.nui-wizard-step-header-icon-container .nui-icon {\n  position: relative;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}\n.nui-wizard-step-header__label {\n  display: inline-block;\n  min-width: 50px;\n  max-width: 130px;\n  vertical-align: middle;\n  padding-bottom: 5px;\n  line-height: 14px;\n  font-size: 11px;\n  white-space: nowrap;\n  overflow: hidden;\n  -ms-text-overflow: ellipsis;\n  text-overflow: ellipsis;\n  color: var(--nui-color-text-secondary,rgba(17, 17, 17, 0.6));\n}\n.nui-wizard-step-header__label--active {\n  color: var(--nui-color-text-link,#0079aa);\n}\n.nui-wizard-step-header__label--selected {\n  color: var(--nui-color-text-default,#111);\n}\n.nui-wizard-step-header__text-label {\n  white-space: nowrap;\n  overflow: hidden;\n  -ms-text-overflow: ellipsis;\n  text-overflow: ellipsis;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndpemFyZC1zdGVwLWhlYWRlci5jb21wb25lbnQubGVzcyIsIi4uLy4uLy4uL3N0eWxlcy9taXhpbnMvY3NzLXZhcmlhYmxlcy5sZXNzIiwiLi4vLi4vLi4vc3R5bGVzL251aS1mcmFtZXdvcmstdHlwb2dyYXBoeS5sZXNzIiwiLi4vLi4vLi4vc3R5bGVzL21peGlucy90ZXh0LW92ZXJmbG93Lmxlc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBS0E7RUFDSSxnQkFBQTtFQUNBLGFBQUE7RUFDQSxlQUFBO0VBQ0Esa0JBQUE7RUNKQSx5Q0FBQTtFRE1BLFlBQUE7QUFKSjtBQU1JO0VDUkEseUNBQUE7QURLSjtBQU9JO0VBRUksYUFBQTtFQUNBLGtEQUFBO0VBQ0Esa0JBQUE7QUFOUjtBQVNJO0VBQ0ksaUJBQUE7RUFDQSxvQkFBQTtBQVBSO0FBVUk7RUFDSSxZQUFBO0VBQ0EsV0FBQTtFQUNBLGtCQUFBO0FBUlI7QUFVUTtFQUNJLGVBQUE7RUFDQSxZQUFBO0VBQ0EsV0FBQTtFQUNBLGtCQUFBO0VBQ0EsUUFBQTtBQVJaO0FBV1E7RUFHUSxrQkFBQTtFQUNBLFFBQUE7RUFDQSxTQUFBO0VBQ0EsZ0NBQUE7QUFYaEI7QUFnQkk7RUFDSSxxQkFBQTtFQUNBLGVBQUE7RUFDQSxnQkFBQTtFQUNBLHNCQUFBO0VBQ0EsbUJBQUE7RUVyREosaUJBQUE7RUFDQSxlQUFBO0VDR0EsbUJBQUE7RUFDQSxnQkFBQTtFQUNBLDJCQUFBO0VBRUEsdUJBQUE7RUZSQSw0REFBQTtBRCtDSjtBQVdRO0VDMURKLHlDQUFBO0FEa0RKO0FBWVE7RUM5REoseUNBQUE7QURxREo7QUFjSTtFRy9EQSxtQkFBQTtFQUNBLGdCQUFBO0VBQ0EsMkJBQUE7RUFFQSx1QkFBQTtBSG9ESiIsImZpbGUiOiJ3aXphcmQtc3RlcC1oZWFkZXIuY29tcG9uZW50Lmxlc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0IFwiLi4vd2l6YXJkLXZhcnNcIjtcbkBpbXBvcnQgKHJlZmVyZW5jZSkgXCIuLi8uLi8uLi9zdHlsZXMvbnVpLWZyYW1ld29yay12YXJpYWJsZXMubGVzc1wiO1xuQGltcG9ydCAocmVmZXJlbmNlKSBcIi4uLy4uLy4uL3N0eWxlcy9taXhpbnMubGVzc1wiO1xuQGltcG9ydCAocmVmZXJlbmNlKSBcIi4uLy4uLy4uL3N0eWxlcy9udWktZnJhbWV3b3JrLXR5cG9ncmFwaHkubGVzc1wiO1xuXG4ubnVpLXdpemFyZC1zdGVwLWhlYWRlciB7XG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgICBvdXRsaW5lOiBub25lO1xuICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgLnNldENzc1ZhcmlhYmxlKGNvbG9yLCBudWktY29sb3ItdGV4dC1kZWZhdWx0KTtcbiAgICB3aWR0aDogQHdpemFyZC1sYWJlbC1oZWFkZXItd2lkdGg7XG5cbiAgICAmLS1jb21wbGV0ZWQge1xuICAgICAgICAuc2V0Q3NzVmFyaWFibGUoY29sb3IsIG51aS1jb2xvci10ZXh0LWxpbmspO1xuICAgIH1cblxuICAgICY6Zm9jdXMge1xuICAgICAgICAvLyBUT0RPOiBzd2l0Y2ggYmFjayB0byBtaXhpbiAuZm9jdXMtb3V0bGluZSgpIHdoZW4gei1pbmRleCBpcyByZW1vdmVkIGluIHRoZSBzY29wZSBvZiBOVUktNjEwM1xuICAgICAgICBvdXRsaW5lOiBub25lO1xuICAgICAgICBib3gtc2hhZG93OiBpbnNldCAwIDAgMCBAbnVpLWxpbmUtbWVkaXVtIGZhZGUoQG51aS1jb2xvci1zZWxlY3RlZC1jb250cmFzdCwgNTAlKTtcbiAgICAgICAgYm9yZGVyLXJhZGl1czogQG51aS1yYWRpdXMtZGVmYXVsdDtcbiAgICB9XG5cbiAgICAmOmZvY3VzOm5vdCg6Zm9jdXMtdmlzaWJsZSkge1xuICAgICAgICBib3gtc2hhZG93OiB1bnNldDtcbiAgICAgICAgYm9yZGVyLXJhZGl1czogdW5zZXQ7XG4gICAgfVxuXG4gICAgJi1pY29uIHtcbiAgICAgICAgaGVpZ2h0OiBAaWNvbi1zaXplLWRlZmF1bHQ7XG4gICAgICAgIHdpZHRoOiBAaWNvbi1zaXplLWRlZmF1bHQ7XG4gICAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcblxuICAgICAgICAmLWNvbnRlbnQge1xuICAgICAgICAgICAgZm9udC1zaXplOiBAaWNvbi1zaXplLWRlZmF1bHQ7XG4gICAgICAgICAgICBoZWlnaHQ6IEBpY29uLXNpemUtZGVmYXVsdDtcbiAgICAgICAgICAgIHdpZHRoOiBAaWNvbi1zaXplLWRlZmF1bHQ7XG4gICAgICAgICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgICAgICAgICB0b3A6IDRweDtcbiAgICAgICAgfVxuXG4gICAgICAgICYtY29udGFpbmVyIHtcbiAgICAgICAgICAgIC5udWktaWNvbiB7XG4gICAgICAgICAgICAgICAgLy8gVXNlIGFic29sdXRlIHBvc2l0aW9uaW5nIHRvIGNlbnRlciB0aGUgY29udGVudCwgYmVjYXVzZSBpdCB3b3JrcyBiZXR0ZXIgd2l0aCB0ZXh0LlxuICAgICAgICAgICAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICAgICAgICAgICAgICB0b3A6IDUwJTtcbiAgICAgICAgICAgICAgICBsZWZ0OiA1MCU7XG4gICAgICAgICAgICAgICAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTUwJSwgLTUwJSk7XG4gICAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICB9XG5cbiAgICAmX19sYWJlbCB7XG4gICAgICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgICAgICAgbWluLXdpZHRoOiBAd2l6YXJkLWxhYmVsLW1pbi13aWR0aDtcbiAgICAgICAgbWF4LXdpZHRoOiAoQHdpemFyZC1sYWJlbC1oZWFkZXItd2lkdGggLSBAbnVpLXNwYWNlLW1kKTtcbiAgICAgICAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcbiAgICAgICAgcGFkZGluZy1ib3R0b206IEBudWktc3BhY2UteHM7XG4gICAgICAgIC5udWktdGV4dC1zaXplKHNtYWxsKTtcbiAgICAgICAgLnRleHQtb3ZlcmZsb3coZWxsaXBzaXMpO1xuICAgICAgICAuc2V0Q3NzVmFyaWFibGUoY29sb3IsIG51aS1jb2xvci10ZXh0LXNlY29uZGFyeSk7XG5cbiAgICAgICAgJi0tYWN0aXZlIHtcbiAgICAgICAgICAgIC5zZXRDc3NWYXJpYWJsZShjb2xvciwgbnVpLWNvbG9yLXRleHQtbGluayk7XG4gICAgICAgIH1cblxuICAgICAgICAmLS1zZWxlY3RlZCB7XG4gICAgICAgICAgICAuc2V0Q3NzVmFyaWFibGUoY29sb3IsIG51aS1jb2xvci10ZXh0LWRlZmF1bHQpO1xuICAgICAgICB9XG4gICAgfVxuXG4gICAgJl9fdGV4dC1sYWJlbCB7XG4gICAgICAgIC50ZXh0LW92ZXJmbG93KGVsbGlwc2lzKTtcbiAgICB9XG59XG4iLCIuc2V0Q3NzVmFyaWFibGUoQHByb3BlcnR5LCBAdmFsdWUpe1xuICAgIEBldmFsdWF0ZWQgOiBcIkB7dmFsdWV9XCI7XG4gICAgLy90aGUgZG91YmxlIEAgZm9yY2VzIGEgaW5kaXJlY3Rpb24gZXZhbHVhdGlvbiwga2luZGEgbGlrZSBhIHBvaW50ZXJcbiAgICBAZmFsbGJhY2sgOiBAQGV2YWx1YXRlZDtcblxuICAgIEB7cHJvcGVydHl9OiB+XCJ2YXIoLS1Ae3ZhbHVlfSxAe2ZhbGxiYWNrfSlcIjtcbn1cbiIsIkBpbXBvcnQgKHJlZmVyZW5jZSkgXCJudWktZnJhbWV3b3JrLXZhcmlhYmxlcy5sZXNzXCI7XG5AaW1wb3J0IChyZWZlcmVuY2UpIFwibWl4aW5zLmxlc3NcIjtcblxuLyogZm9udC1zaXplICovXG4ubnVpLXRleHQtc2l6ZShAc2l6ZTogZGVmYXVsdCkge1xuICAgIGxpbmUtaGVpZ2h0OiB+XCJAe251aS1saW5lLWhlaWdodC1Ae3NpemV9fVwiO1xuICAgIGZvbnQtc2l6ZTogflwiQHtudWktZm9udC1zaXplLUB7c2l6ZX19XCI7XG59XG4vKiBmb250LXNpemUgZW5kcyAqL1xuXG4ubnVpLXRleHQtcGFnZSgpIHtcbiAgICAubnVpLXRleHQtc2l6ZShoZXJvKTtcbiAgICBmb250LXdlaWdodDogQG51aS1mb250LXdlaWdodC1zZW1pYm9sZDtcbiAgICAuc2V0Q3NzVmFyaWFibGUoY29sb3IsIG51aS1jb2xvci10ZXh0LWRlZmF1bHQpO1xufVxuXG4ubnVpLXRleHQtd2lkZ2V0KCkge1xuICAgIC5udWktdGV4dC1zaXplKGJpZyk7XG4gICAgZm9udC13ZWlnaHQ6IEBudWktZm9udC13ZWlnaHQtc2VtaWJvbGQ7XG4gICAgLnNldENzc1ZhcmlhYmxlKGNvbG9yLCBudWktY29sb3ItdGV4dC1kZWZhdWx0KTtcbn1cblxuLm51aS10ZXh0LXBhbmVsKEBjb2xvciwgQGNvbG9yTmFtZSkge1xuICAgIC5udWktdGV4dC1zaXplKGRlZmF1bHQpO1xuICAgIGZvbnQtd2VpZ2h0OiBAbnVpLWZvbnQtd2VpZ2h0LXNlbWlib2xkO1xuICAgIHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7XG4gICAgY29sb3I6IEBjb2xvcjtcbiAgICBjb2xvcjogflwidmFyKC0tQHtjb2xvck5hbWV9LEB7Y29sb3J9KVwiO1xufVxuXG4ubnVpLXRleHQtbGFiZWwoQGNvbG9yLCBAY29sb3JOYW1lKSB7XG4gICAgLm51aS10ZXh0LXNpemUoZGVmYXVsdCk7XG4gICAgZm9udC13ZWlnaHQ6IEBudWktZm9udC13ZWlnaHQtc2VtaWJvbGQ7XG4gICAgY29sb3I6IEBjb2xvcjtcbiAgICBjb2xvcjogflwidmFyKC0tQHtjb2xvck5hbWV9LEB7Y29sb3J9KVwiO1xufVxuXG4ubnVpLXRleHQtZGVmYXVsdChAY29sb3IsIEBjb2xvck5hbWUpIHtcbiAgICAubnVpLXRleHQtc2l6ZShkZWZhdWx0KTtcbiAgICBmb250LXdlaWdodDogQG51aS1mb250LXdlaWdodC1yZWd1bGFyO1xuICAgIGNvbG9yOiBAY29sb3I7XG4gICAgY29sb3I6IH5cInZhcigtLUB7Y29sb3JOYW1lfSxAe2NvbG9yfSlcIjtcbn1cblxuLm51aS10ZXh0LXNlY29uZGFyeShAY29sb3IsIEBjb2xvck5hbWUpIHtcbiAgICAubnVpLXRleHQtc2l6ZShkZWZhdWx0KTtcbiAgICBmb250LXdlaWdodDogQG51aS1mb250LXdlaWdodC1yZWd1bGFyO1xuICAgIGNvbG9yOiBAY29sb3I7XG4gICAgY29sb3I6IH5cInZhcigtLUB7Y29sb3JOYW1lfSxAe2NvbG9yfSlcIjtcbn1cblxuLm51aS10ZXh0LXRpdGxlLXNlY29uZGFyeShAY29sb3IsIEBjb2xvck5hbWUpIHtcbiAgICAubnVpLXRleHQtc2l6ZShzbWFsbCk7XG4gICAgZm9udC13ZWlnaHQ6IEBudWktZm9udC13ZWlnaHQtcmVndWxhcjtcbiAgICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xuICAgIGNvbG9yOiBAY29sb3I7XG4gICAgY29sb3I6IH5cInZhcigtLUB7Y29sb3JOYW1lfSxAe2NvbG9yfSlcIjtcbn1cblxuLm51aS10ZXh0LXNtYWxsKEBjb2xvciwgQGNvbG9yTmFtZSkge1xuICAgIC5udWktdGV4dC1zaXplKHNtYWxsKTtcbiAgICBmb250LXdlaWdodDogQG51aS1mb250LXdlaWdodC1yZWd1bGFyO1xuICAgIGNvbG9yOiBAY29sb3I7XG4gICAgY29sb3I6IH5cInZhcigtLUB7Y29sb3JOYW1lfSxAe2NvbG9yfSlcIjtcbn1cblxuLy8gVGhpcyBtaXhpbiBpcyBkZXByZWNhdGVkLiBVc2UgbnVpLXRleHQtc21hbGwoKSBpbnN0ZWFkXG4ubnVpLXRleHQtaGludChAY29sb3IsIEBjb2xvck5hbWUpICB7XG4gICAgLm51aS10ZXh0LXNpemUoc21hbGwpO1xuICAgIGZvbnQtd2VpZ2h0OiBAbnVpLWZvbnQtd2VpZ2h0LXJlZ3VsYXI7XG4gICAgY29sb3I6IEBjb2xvcjtcbiAgICBjb2xvcjogflwidmFyKC0tQHtjb2xvck5hbWV9LEB7Y29sb3J9KVwiO1xufVxuXG4ubnVpLXRleHQtaG92ZXJhYmxlKCkge1xuICAgIHRleHQtZGVjb3JhdGlvbi1saW5lOiB1bmRlcmxpbmU7XG4gICAgdGV4dC1kZWNvcmF0aW9uLXN0eWxlOiBkb3R0ZWQ7XG59XG5cbi5udWktdGV4dC1zbWFsbC1zZWNvbmRhcnkoKSB7XG4gICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtc2Vjb25kYXJ5KTtcbn1cblxuLy9zZW1hbnRpYyBzdHlsZXNcbi5udWktdGV4dCB7XG4gICAgJi1kaXNhYmxlZCB7XG4gICAgICAgIC5udWktdGV4dC1kZWZhdWx0KEBudWktY29sb3ItdGV4dC1kaXNhYmxlZCwgbnVpLWNvbG9yLXRleHQtZGlzYWJsZWQpO1xuICAgIH1cbiAgICAmLXByb2R1Y3Qge1xuICAgICAgICAubnVpLXRleHQtc2l6ZShoZXJvKTtcbiAgICAgICAgZm9udC1mYW1pbHk6IEBmb250LWZhbWlseS1yb2JvdG87XG4gICAgICAgIGZvbnQtd2VpZ2h0OiBAbnVpLWZvbnQtd2VpZ2h0LWJvbGQ7XG4gICAgICAgIC5zZXRDc3NWYXJpYWJsZShjb2xvciwgbnVpLWNvbG9yLXRleHQtbGlnaHQpO1xuICAgIH1cblxuICAgICYtcGFnZSB7XG4gICAgICAgIC5udWktdGV4dC1wYWdlKCk7XG5cbiAgICAgICAgJi0taG92ZXJhYmxlIHtcbiAgICAgICAgICAgIC5udWktdGV4dC1wYWdlKCk7XG4gICAgICAgICAgICAubnVpLXRleHQtaG92ZXJhYmxlKCk7XG4gICAgICAgIH1cbiAgICB9XG5cbiAgICAmLXdpZGdldCB7XG4gICAgICAgIC5udWktdGV4dC13aWRnZXQoKTtcblxuICAgICAgICAmLS1ob3ZlcmFibGUge1xuICAgICAgICAgICAgLm51aS10ZXh0LXdpZGdldCgpO1xuICAgICAgICAgICAgLm51aS10ZXh0LWhvdmVyYWJsZSgpO1xuICAgICAgICB9XG4gICAgfVxuXG4gICAgJi1wYW5lbCB7XG4gICAgICAgIC5udWktdGV4dC1wYW5lbChAbnVpLWNvbG9yLXRleHQtZGVmYXVsdCxudWktY29sb3ItdGV4dC1kZWZhdWx0KTtcbiAgICB9XG5cbiAgICAmLXBhbmVsLS1pbnZlcnNlIHtcbiAgICAgICAgLm51aS10ZXh0LXBhbmVsKEBudWktY29sb3ItdGV4dC1pbnZlcnNlLG51aS1jb2xvci10ZXh0LWludmVyc2UpO1xuICAgIH1cblxuICAgICYtcGFuZWwtLWhvdmVyYWJsZSB7XG4gICAgICAgIC5udWktdGV4dC1wYW5lbChAbnVpLWNvbG9yLXRleHQtZGVmYXVsdCxudWktY29sb3ItdGV4dC1kZWZhdWx0KTtcbiAgICAgICAgLm51aS10ZXh0LWhvdmVyYWJsZSgpO1xuICAgIH1cblxuICAgICYtcGFuZWwtLWRhcmtiZyB7XG4gICAgICAgIC5udWktdGV4dC1wYW5lbChAbnVpLWNvbG9yLXRleHQtbGlnaHQsbnVpLWNvbG9yLXRleHQtbGlnaHQpO1xuICAgIH1cblxuICAgICYtcGFuZWwtLWRhcmtiZy0taG92ZXJhYmxlIHtcbiAgICAgICAgLm51aS10ZXh0LXBhbmVsKEBudWktY29sb3ItdGV4dC1saWdodCxudWktY29sb3ItdGV4dC1saWdodCk7XG4gICAgICAgIC5udWktdGV4dC1ob3ZlcmFibGUoKTtcbiAgICB9XG5cbiAgICAmLWxhYmVsIHtcbiAgICAgICAgLm51aS10ZXh0LWxhYmVsKEBudWktY29sb3ItdGV4dC1kZWZhdWx0LG51aS1jb2xvci10ZXh0LWRlZmF1bHQpO1xuICAgIH1cblxuICAgICYtbGFiZWwtLWludmVyc2Uge1xuICAgICAgICAubnVpLXRleHQtbGFiZWwoQG51aS1jb2xvci10ZXh0LWludmVyc2UsbnVpLWNvbG9yLXRleHQtaW52ZXJzZSk7XG4gICAgfVxuXG4gICAgJi1sYWJlbC0taG92ZXJhYmxlIHtcbiAgICAgICAgLm51aS10ZXh0LWxhYmVsKEBudWktY29sb3ItdGV4dC1kZWZhdWx0LG51aS1jb2xvci10ZXh0LWRlZmF1bHQpO1xuICAgICAgICAubnVpLXRleHQtaG92ZXJhYmxlKCk7XG4gICAgfVxuXG4gICAgJi1sYWJlbC0tZGFya2JnIHtcbiAgICAgICAgLm51aS10ZXh0LWxhYmVsKEBudWktY29sb3ItdGV4dC1saWdodCxudWktY29sb3ItdGV4dC1saWdodCk7XG4gICAgfVxuXG4gICAgJi1sYWJlbC0tZGFya2JnLS1ob3ZlcmFibGUge1xuICAgICAgICAubnVpLXRleHQtbGFiZWwoQG51aS1jb2xvci10ZXh0LWxpZ2h0LG51aS1jb2xvci10ZXh0LWxpZ2h0KTtcbiAgICAgICAgLm51aS10ZXh0LWhvdmVyYWJsZSgpO1xuICAgIH1cblxuICAgICYtZGVmYXVsdCB7XG4gICAgICAgIC5udWktdGV4dC1kZWZhdWx0KEBudWktY29sb3ItdGV4dC1kZWZhdWx0LG51aS1jb2xvci10ZXh0LWRlZmF1bHQpO1xuICAgIH1cblxuICAgICYtZGVmYXVsdC0taW52ZXJzZSB7XG4gICAgICAgIC5udWktdGV4dC1kZWZhdWx0KEBudWktY29sb3ItdGV4dC1pbnZlcnNlLG51aS1jb2xvci10ZXh0LWludmVyc2UpO1xuICAgIH1cblxuICAgICYtZGVmYXVsdC0taW52ZXJzZS1zZWxlY3RlZCB7XG4gICAgICAgIC5udWktdGV4dC1kZWZhdWx0KEBudWktY29sb3ItdGV4dC1oaWdobGlnaHQtcGxhdGZvcm1fYmFyLG51aS1jb2xvci10ZXh0LWhpZ2hsaWdodC1wbGF0Zm9ybV9iYXIpO1xuICAgIH1cblxuICAgICYtZGVmYXVsdC0taG92ZXJhYmxlIHtcbiAgICAgICAgLm51aS10ZXh0LWRlZmF1bHQoQG51aS1jb2xvci10ZXh0LWRlZmF1bHQsbnVpLWNvbG9yLXRleHQtZGVmYXVsdCk7XG4gICAgICAgIC5udWktdGV4dC1ob3ZlcmFibGUoKTtcbiAgICB9XG5cbiAgICAmLWRlZmF1bHQtLWRhcmtiZyB7XG4gICAgICAgIC5udWktdGV4dC1kZWZhdWx0KEBudWktY29sb3ItdGV4dC1saWdodCxudWktY29sb3ItdGV4dC1saWdodCk7XG4gICAgfVxuICAgICYtZGVmYXVsdC0tZGFya2JnLS1ob3ZlcmFibGUge1xuICAgICAgICAubnVpLXRleHQtZGVmYXVsdChAbnVpLWNvbG9yLXRleHQtbGlnaHQsbnVpLWNvbG9yLXRleHQtbGlnaHQpO1xuICAgICAgICAubnVpLXRleHQtaG92ZXJhYmxlKCk7XG4gICAgfVxuXG4gICAgJi1kZWZhdWx0LS1kYXJrYmctc2VsZWN0ZWQge1xuICAgICAgICAubnVpLXRleHQtZGVmYXVsdChAbnVpLWNvbG9yLXRleHQtaGlnaGxpZ2h0LXBsYXRmb3JtX2JhcixudWktY29sb3ItdGV4dC1oaWdobGlnaHQtcGxhdGZvcm1fYmFyKTtcbiAgICB9XG5cbiAgICAmLWRlZmF1bHQtLWRhcmtiZy1zZWxlY3RlZC0taG92ZXJhYmxlIHtcbiAgICAgICAgLm51aS10ZXh0LWRlZmF1bHQoQG51aS1jb2xvci10ZXh0LWhpZ2hsaWdodC1wbGF0Zm9ybV9iYXIsbnVpLWNvbG9yLXRleHQtaGlnaGxpZ2h0LXBsYXRmb3JtX2Jhcik7XG4gICAgICAgIC5udWktdGV4dC1ob3ZlcmFibGUoKTtcbiAgICB9XG5cbiAgICAmLXNlY29uZGFyeSB7XG4gICAgICAgIC5udWktdGV4dC1zZWNvbmRhcnkoQG51aS1jb2xvci10ZXh0LXNlY29uZGFyeSxudWktY29sb3ItdGV4dC1zZWNvbmRhcnkpO1xuICAgIH1cblxuICAgICYtc2Vjb25kYXJ5LS1pbnZlcnNlIHtcbiAgICAgICAgLm51aS10ZXh0LXNlY29uZGFyeShAbnVpLWNvbG9yLXRleHQtaW52ZXJzZS1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtaW52ZXJzZS1zZWNvbmRhcnkpO1xuICAgIH1cblxuICAgICYtc2Vjb25kYXJ5LS1ob3ZlcmFibGUge1xuICAgICAgICAubnVpLXRleHQtc2Vjb25kYXJ5KEBudWktY29sb3ItdGV4dC1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtc2Vjb25kYXJ5KTtcbiAgICAgICAgLm51aS10ZXh0LWhvdmVyYWJsZSgpO1xuICAgIH1cblxuICAgICYtc2Vjb25kYXJ5LS1kYXJrYmcge1xuICAgICAgICAubnVpLXRleHQtc2Vjb25kYXJ5KEBudWktY29sb3ItdGV4dC1saWdodC1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtbGlnaHQtc2Vjb25kYXJ5KTtcbiAgICB9XG5cbiAgICAmLXNlY29uZGFyeS0tZGFya2JnLS1ob3ZlcmFibGUge1xuICAgICAgICAubnVpLXRleHQtc2Vjb25kYXJ5KEBudWktY29sb3ItdGV4dC1saWdodC1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtbGlnaHQtc2Vjb25kYXJ5KTtcbiAgICAgICAgLm51aS10ZXh0LWhvdmVyYWJsZSgpO1xuICAgIH1cblxuICAgICYtc2Vjb25kYXJ5LS1kaXNhYmxlZCB7XG4gICAgICAgIC5udWktdGV4dC1zZWNvbmRhcnkoQG51aS1jb2xvci10ZXh0LWRpc2FibGVkLG51aS1jb2xvci10ZXh0LWRpc2FibGVkKTtcbiAgICB9XG5cbiAgICAmLXNlY29uZGFyeS0tZGlzYWJsZWQtLWhvdmVyYWJsZSB7XG4gICAgICAgIC5udWktdGV4dC1zZWNvbmRhcnkoQG51aS1jb2xvci10ZXh0LWRpc2FibGVkLG51aS1jb2xvci10ZXh0LWRpc2FibGVkKTtcbiAgICAgICAgLm51aS10ZXh0LWhvdmVyYWJsZSgpO1xuICAgIH1cblxuICAgICYtbGluayB7XG4gICAgICAgIC5udWktdGV4dC1zaXplKGRlZmF1bHQpO1xuICAgICAgICBmb250LXdlaWdodDogQG51aS1mb250LXdlaWdodC1yZWd1bGFyO1xuICAgICAgICAuc2V0Q3NzVmFyaWFibGUoY29sb3IsIG51aS1jb2xvci10ZXh0LWxpbmspO1xuICAgIH1cbiAgICAmLWxpbms6aG92ZXIge1xuICAgICAgICB0ZXh0LWRlY29yYXRpb246IHVuZGVybGluZTtcbiAgICB9XG5cbiAgICAmLWxpbmstc21hbGwge1xuICAgICAgICAubnVpLXRleHQtc2l6ZShzbWFsbCk7XG4gICAgICAgIGZvbnQtd2VpZ2h0OiBAbnVpLWZvbnQtd2VpZ2h0LXJlZ3VsYXI7XG4gICAgICAgIC5zZXRDc3NWYXJpYWJsZShjb2xvciwgbnVpLWNvbG9yLXRleHQtbGluayk7XG4gICAgfVxuICAgICYtbGluay1zbWFsbDpob3ZlciB7XG4gICAgICAgIHRleHQtZGVjb3JhdGlvbjogdW5kZXJsaW5lO1xuICAgIH1cblxuICAgICYtc291cmNlLWNvZGUge1xuICAgICAgICAubnVpLXRleHQtc2l6ZShkZWZhdWx0KTtcbiAgICAgICAgZm9udC1mYW1pbHk6IEBmb250LWZhbWlseS1zb3VyY2UtY29kZS1wcm87XG4gICAgICAgIGZvbnQtd2VpZ2h0OiBAbnVpLWZvbnQtd2VpZ2h0LXJlZ3VsYXI7XG5cbiAgICAgICAgJi1zZWNvbmRhcnkge1xuICAgICAgICAgICAgLm51aS10ZXh0LXNpemUoZGVmYXVsdCk7XG4gICAgICAgICAgICBmb250LWZhbWlseTogQGZvbnQtZmFtaWx5LXNvdXJjZS1jb2RlLXBybztcbiAgICAgICAgICAgIGZvbnQtd2VpZ2h0OiBAbnVpLWZvbnQtd2VpZ2h0LXJlZ3VsYXI7XG4gICAgICAgICAgICAuc2V0Q3NzVmFyaWFibGUoY29sb3IsIG51aS1jb2xvci10ZXh0LXNlY29uZGFyeSk7XG4gICAgICAgIH1cbiAgICB9XG5cbiAgICAmLXRpdGxlLXNlY29uZGFyeSB7XG4gICAgICAgIC5udWktdGV4dC10aXRsZS1zZWNvbmRhcnkoQG51aS1jb2xvci10ZXh0LXNlY29uZGFyeSxudWktY29sb3ItdGV4dC1zZWNvbmRhcnkpO1xuICAgIH1cblxuICAgICYtdGl0bGUtc2Vjb25kYXJ5LS1pbnZlcnNlIHtcbiAgICAgICAgLm51aS10ZXh0LXRpdGxlLXNlY29uZGFyeShAbnVpLWNvbG9yLXRleHQtaW52ZXJzZS1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtaW52ZXJzZS1zZWNvbmRhcnkpO1xuICAgIH1cblxuICAgICYtdGl0bGUtc2Vjb25kYXJ5LS1kYXJrYmcge1xuICAgICAgICAubnVpLXRleHQtdGl0bGUtc2Vjb25kYXJ5KEBudWktY29sb3ItdGV4dC1saWdodC1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtbGlnaHQtc2Vjb25kYXJ5KTtcbiAgICB9XG5cbiAgICAmLXNtYWxsIHtcbiAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1kZWZhdWx0LG51aS1jb2xvci10ZXh0LWRlZmF1bHQpO1xuICAgIH1cblxuICAgICYtc21hbGwtc2Vjb25kYXJ5IHtcbiAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtc2Vjb25kYXJ5KTtcblxuICAgICAgICAmLS1ob3ZlcmFibGUge1xuICAgICAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtc2Vjb25kYXJ5KTtcbiAgICAgICAgICAgIC5udWktdGV4dC1ob3ZlcmFibGUoKTtcbiAgICAgICAgfVxuICAgIH1cblxuICAgICYtc21hbGwtc2Vjb25kYXJ5LS1pbnZlcnNlIHtcbiAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1pbnZlcnNlLXNlY29uZGFyeSxudWktY29sb3ItdGV4dC1pbnZlcnNlLXNlY29uZGFyeSk7XG5cbiAgICAgICAgJi0taG92ZXJhYmxlIHtcbiAgICAgICAgICAgIC5udWktdGV4dC1zbWFsbChAbnVpLWNvbG9yLXRleHQtaW52ZXJzZS1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtaW52ZXJzZS1zZWNvbmRhcnkpO1xuICAgICAgICAgICAgLm51aS10ZXh0LWhvdmVyYWJsZSgpO1xuICAgICAgICB9XG4gICAgfVxuXG4gICAgJi1zbWFsbC0taW52ZXJzZSB7XG4gICAgICAgIC5udWktdGV4dC1zbWFsbChAbnVpLWNvbG9yLXRleHQtaW52ZXJzZSxudWktY29sb3ItdGV4dC1pbnZlcnNlKTtcblxuICAgICAgICAmLS1ob3ZlcmFibGUge1xuICAgICAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1pbnZlcnNlLG51aS1jb2xvci10ZXh0LWludmVyc2UpO1xuICAgICAgICAgICAgLm51aS10ZXh0LWhvdmVyYWJsZSgpO1xuICAgICAgICB9XG4gICAgfVxuXG4gICAgJi1zbWFsbC0taG92ZXJhYmxlIHtcbiAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1kZWZhdWx0LG51aS1jb2xvci10ZXh0LWRlZmF1bHQpO1xuICAgICAgICAubnVpLXRleHQtaG92ZXJhYmxlKCk7XG4gICAgfVxuXG4gICAgJi1zbWFsbC0tZGFya2JnIHtcbiAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1saWdodCwgbnVpLWNvbG9yLXRleHQtbGlnaHQpO1xuICAgIH1cblxuICAgICYtc21hbGwtLWRhcmtiZy0taG92ZXJhYmxlIHtcbiAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1saWdodCwgbnVpLWNvbG9yLXRleHQtbGlnaHQpO1xuICAgICAgICAubnVpLXRleHQtaG92ZXJhYmxlKCk7XG4gICAgfVxuXG4gICAgJi1zbWFsbC0tZGlzYWJsZWQge1xuICAgICAgICAubnVpLXRleHQtc21hbGwoQG51aS1jb2xvci10ZXh0LWRpc2FibGVkLG51aS1jb2xvci10ZXh0LWRpc2FibGVkKTtcbiAgICB9XG5cbiAgICAmLXNtYWxsLS1kaXNhYmxlZC0taG92ZXJhYmxlIHtcbiAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1kaXNhYmxlZCxudWktY29sb3ItdGV4dC1kaXNhYmxlZCk7XG4gICAgICAgIC5udWktdGV4dC1ob3ZlcmFibGUoKTtcbiAgICB9XG5cbiAgICAvLyBgbnVpLXRleHQtaGludGAgc3R5bGVzIGFyZSBkZXByZWNhdGVkLiBVc2UgYG51aS10ZXh0LXNtYWxsLXNlY29uZGFyeWAgaW5zdGVhZC5cbiAgICAmLWhpbnQge1xuICAgICAgICAubnVpLXRleHQtaGludChAbnVpLWNvbG9yLXRleHQtc2Vjb25kYXJ5LG51aS1jb2xvci10ZXh0LXNlY29uZGFyeSk7XG4gICAgfVxuXG4gICAgJi1oaW50LS1ob3ZlcmFibGUge1xuICAgICAgICAubnVpLXRleHQtaGludChAbnVpLWNvbG9yLXRleHQtc2Vjb25kYXJ5LG51aS1jb2xvci10ZXh0LXNlY29uZGFyeSk7XG4gICAgICAgIC5udWktdGV4dC1ob3ZlcmFibGUoKTtcbiAgICB9XG5cbiAgICAmLWhpbnQtLWRhcmtiZyB7XG4gICAgICAgIC5udWktdGV4dC1oaW50KEBudWktY29sb3ItdGV4dC1saWdodC1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtbGlnaHQtc2Vjb25kYXJ5KTtcbiAgICB9XG5cbiAgICAmLWhpbnQtLWRhcmtiZy0taG92ZXJhYmxlIHtcbiAgICAgICAgLm51aS10ZXh0LWhpbnQoQG51aS1jb2xvci10ZXh0LWxpZ2h0LXNlY29uZGFyeSxudWktY29sb3ItdGV4dC1saWdodC1zZWNvbmRhcnkpO1xuICAgICAgICAubnVpLXRleHQtaG92ZXJhYmxlKCk7XG4gICAgfVxuXG4gICAgJi12YWxpZGF0aW9uIHtcbiAgICAgICAgLm51aS10ZXh0LXNpemUoc21hbGwpO1xuICAgICAgICBmb250LXdlaWdodDogQG51aS1mb250LXdlaWdodC1zZW1pYm9sZDtcbiAgICAgICAgLnNldENzc1ZhcmlhYmxlKGNvbG9yLCBudWktY29sb3ItdGV4dC1jcml0aWNhbCk7XG4gICAgfVxuXG4gICAgJi1lbGxpcHNpcyB7XG4gICAgICAgIC50ZXh0LW92ZXJmbG93KGVsbGlwc2lzKTtcbiAgICB9XG59XG5cbiIsIi8vIFRleHQgb3ZlcmZsb3dcbi8vIFJlcXVpcmVzIGlubGluZS1ibG9jayBvciBibG9jayBmb3IgcHJvcGVyIHN0eWxpbmdcblxuLy8gVE9ETzogUkVNT1ZFIExFR0FDWSBCT09UU1RSQVAgTUlYSU5cbi50ZXh0LW92ZXJmbG93KCkge1xuICAudGV4dC1vdmVyZmxvdygnZWxsaXBzaXMnKTtcbn1cblxuLnRleHQtb3ZlcmZsb3coQG92ZXJmbG93KSB7XG4gICAgd2hpdGUtc3BhY2U6bm93cmFwO1xuICAgIG92ZXJmbG93OmhpZGRlbjtcbiAgICAtbXMtdGV4dC1vdmVyZmxvdzogQG92ZXJmbG93O1xuICAgIC1vLXRleHQtb3ZlcmZsb3c6IEBvdmVyZmxvdztcbiAgICB0ZXh0LW92ZXJmbG93OiBAb3ZlcmZsb3c7XG59XG4iXX0= */"], encapsulation: 2, changeDetection: 0 });
 
 
 /***/ }),
@@ -21630,8 +21664,8 @@ function WizardHorizontalComponent_div_1_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", !isFirst_r5);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("tabIndex", ctx_r0.selectedIndex === i_r4 ? 0 : -1)("id", ctx_r0._getStepLabelId(i_r4))("index", i_r4)("stepState", ctx_r0.getStepState(i_r4))("stepStateConfig", step_r3.stepStateConfig)("label", step_r3.stepLabel || step_r3.label)("selected", ctx_r0.selectedIndex === i_r4)("active", step_r3.completed || ctx_r0.selectedIndex === i_r4 || !ctx_r0.linear)("completed", step_r3.completed)("optional", step_r3.optional)("errorMessage", step_r3.errorMessage);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵattribute"]("aria-posinset", i_r4 + 1)("aria-setsize", ctx_r0.steps.length)("aria-controls", ctx_r0._getStepContentId(i_r4))("aria-selected", ctx_r0.selectedIndex == i_r4)("aria-label", step_r3.ariaLabel || null)("aria-labelledby", !step_r3.ariaLabel && step_r3.ariaLabelledby ? step_r3.ariaLabelledby : null);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("tabIndex", ctx_r0.selectedIndex === i_r4 ? 0 : -1)("id", ctx_r0.labelIds[i_r4])("index", i_r4)("stepStateConfig", step_r3.stepStateConfig)("label", step_r3.stepLabel || step_r3.label)("selected", ctx_r0.selectedIndex === i_r4)("active", step_r3.completed || ctx_r0.selectedIndex === i_r4 || !ctx_r0.linear)("step", step_r3)("errorMessage", step_r3.errorMessage);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵattribute"]("aria-posinset", i_r4 + 1)("aria-setsize", ctx_r0.steps.length)("aria-controls", ctx_r0.stepContentIds[i_r4])("aria-selected", ctx_r0.selectedIndex == i_r4)("aria-label", step_r3.ariaLabel || null)("aria-labelledby", !step_r3.ariaLabel && step_r3.ariaLabelledby ? step_r3.ariaLabelledby : null);
 } }
 function WizardHorizontalComponent_div_3_Template(rf, ctx) { if (rf & 1) {
     const _r14 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
@@ -21684,9 +21718,9 @@ WizardHorizontalComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵ
     } }, inputs: { selectedIndex: "selectedIndex", labelPosition: "labelPosition" }, exportAs: ["wizardHorizontal"], features: [_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵProvidersFeature"]([
             { provide: _wizard_directive__WEBPACK_IMPORTED_MODULE_2__["WizardDirective"], useExisting: WizardHorizontalComponent },
             { provide: _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_0__["CdkStepper"], useExisting: WizardHorizontalComponent },
-        ]), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵInheritDefinitionFeature"]], decls: 5, vars: 3, consts: [[1, "nui-wizard-horizontal-header-container"], ["class", "nui-wizard-horizontal-header-wrapper", 4, "ngFor", "ngForOf"], [1, "nui-wizard-horizontal-content-container"], ["class", "nui-wizard-horizontal-content", "role", "tabpanel", 3, "id", 4, "ngFor", "ngForOf"], ["class", "nui-wizard-horizontal-footer-container", 4, "ngIf"], [1, "nui-wizard-horizontal-header-wrapper"], ["class", "nui-wizard-horizontal__step-connector-line", 3, "ngClass", 4, "ngIf"], [1, "nui-wizard-horizontal-header", 3, "tabIndex", "id", "index", "stepState", "stepStateConfig", "label", "selected", "active", "completed", "optional", "errorMessage", "click", "keydown"], [1, "nui-wizard-horizontal__step-connector-line", 3, "ngClass"], ["role", "tabpanel", 1, "nui-wizard-horizontal-content", 3, "id"], [3, "ngTemplateOutlet"], [1, "nui-wizard-horizontal-footer-container"], [3, "footer"]], template: function WizardHorizontalComponent_Template(rf, ctx) { if (rf & 1) {
+        ]), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵInheritDefinitionFeature"]], decls: 5, vars: 3, consts: [[1, "nui-wizard-horizontal-header-container"], ["class", "nui-wizard-horizontal-header-wrapper", 4, "ngFor", "ngForOf"], [1, "nui-wizard-horizontal-content-container"], ["class", "nui-wizard-horizontal-content", "role", "tabpanel", 3, "id", 4, "ngFor", "ngForOf"], ["class", "nui-wizard-horizontal-footer-container", 4, "ngIf"], [1, "nui-wizard-horizontal-header-wrapper"], ["class", "nui-wizard-horizontal__step-connector-line", 3, "ngClass", 4, "ngIf"], [1, "nui-wizard-horizontal-header", 3, "tabIndex", "id", "index", "stepStateConfig", "label", "selected", "active", "step", "errorMessage", "click", "keydown"], [1, "nui-wizard-horizontal__step-connector-line", 3, "ngClass"], ["role", "tabpanel", 1, "nui-wizard-horizontal-content", 3, "id"], [3, "ngTemplateOutlet"], [1, "nui-wizard-horizontal-footer-container"], [3, "footer"]], template: function WizardHorizontalComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](1, WizardHorizontalComponent_div_1_Template, 3, 18, "div", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](1, WizardHorizontalComponent_div_1_Template, 3, 16, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](2, "div", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](3, WizardHorizontalComponent_div_3_Template, 2, 5, "div", 3);
@@ -23567,8 +23601,9 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiContentModule {
 }
+NuiContentModule.ɵfac = function NuiContentModule_Factory(t) { return new (t || NuiContentModule)(); };
 NuiContentModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineNgModule"]({ type: NuiContentModule });
-NuiContentModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({ factory: function NuiContentModule_Factory(t) { return new (t || NuiContentModule)(); }, providers: [], imports: [[
+NuiContentModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({ providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
         ]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵsetNgModuleScope"](NuiContentModule, { declarations: [_content_component__WEBPACK_IMPORTED_MODULE_1__["ContentComponent"]], imports: [_common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"]], exports: [_content_component__WEBPACK_IMPORTED_MODULE_1__["ContentComponent"]] }); })();
@@ -23862,8 +23897,9 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiRadioModule {
 }
+NuiRadioModule.ɵfac = function NuiRadioModule_Factory(t) { return new (t || NuiRadioModule)(); };
 NuiRadioModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineNgModule"]({ type: NuiRadioModule });
-NuiRadioModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({ factory: function NuiRadioModule_Factory(t) { return new (t || NuiRadioModule)(); }, providers: [], imports: [[
+NuiRadioModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({ providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
         ]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵsetNgModuleScope"](NuiRadioModule, { declarations: [_radio_group_component__WEBPACK_IMPORTED_MODULE_1__["RadioComponent"],
@@ -25885,8 +25921,9 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiFormFieldModule {
 }
+NuiFormFieldModule.ɵfac = function NuiFormFieldModule_Factory(t) { return new (t || NuiFormFieldModule)(); };
 NuiFormFieldModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineNgModule"]({ type: NuiFormFieldModule });
-NuiFormFieldModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjector"]({ factory: function NuiFormFieldModule_Factory(t) { return new (t || NuiFormFieldModule)(); }, providers: [], imports: [[
+NuiFormFieldModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjector"]({ providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
             _icon_icon_module__WEBPACK_IMPORTED_MODULE_1__["NuiIconModule"],
             _popover_popover_module__WEBPACK_IMPORTED_MODULE_2__["NuiPopoverModule"],
@@ -26042,8 +26079,9 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiTimeFramePickerModule {
 }
+NuiTimeFramePickerModule.ɵfac = function NuiTimeFramePickerModule_Factory(t) { return new (t || NuiTimeFramePickerModule)(); };
 NuiTimeFramePickerModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefineNgModule"]({ type: NuiTimeFramePickerModule });
-NuiTimeFramePickerModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefineInjector"]({ factory: function NuiTimeFramePickerModule_Factory(t) { return new (t || NuiTimeFramePickerModule)(); }, providers: [_services_timeframe_service__WEBPACK_IMPORTED_MODULE_4__["TimeframeService"]], imports: [[
+NuiTimeFramePickerModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefineInjector"]({ providers: [_services_timeframe_service__WEBPACK_IMPORTED_MODULE_4__["TimeframeService"]], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
             _menu_menu_module__WEBPACK_IMPORTED_MODULE_2__["NuiMenuModule"],
             _date_time_picker_date_time_picker_module__WEBPACK_IMPORTED_MODULE_1__["NuiDateTimePickerModule"],
@@ -26993,8 +27031,9 @@ __webpack_require__.r(__webpack_exports__);
 /** @ignore */
 class NuiTooltipModule {
 }
+NuiTooltipModule.ɵfac = function NuiTooltipModule_Factory(t) { return new (t || NuiTooltipModule)(); };
 NuiTooltipModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineNgModule"]({ type: NuiTooltipModule });
-NuiTooltipModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjector"]({ factory: function NuiTooltipModule_Factory(t) { return new (t || NuiTooltipModule)(); }, imports: [[
+NuiTooltipModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjector"]({ imports: [[
             _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_0__["A11yModule"],
             _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
             _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_1__["OverlayModule"],
@@ -27406,8 +27445,9 @@ __webpack_require__.r(__webpack_exports__);
 
 class PopupAdapterModule {
 }
+PopupAdapterModule.ɵfac = function PopupAdapterModule_Factory(t) { return new (t || PopupAdapterModule)(); };
 PopupAdapterModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineNgModule"]({ type: PopupAdapterModule });
-PopupAdapterModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjector"]({ factory: function PopupAdapterModule_Factory(t) { return new (t || PopupAdapterModule)(); }, imports: [[
+PopupAdapterModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjector"]({ imports: [[
             _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
             _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_0__["PortalModule"],
             _select_v2_select_v2_module__WEBPACK_IMPORTED_MODULE_4__["NuiSelectV2Module"],
@@ -28073,8 +28113,9 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiMenuModule {
 }
+NuiMenuModule.ɵfac = function NuiMenuModule_Factory(t) { return new (t || NuiMenuModule)(); };
 NuiMenuModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_15__["ɵɵdefineNgModule"]({ type: NuiMenuModule });
-NuiMenuModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_15__["ɵɵdefineInjector"]({ factory: function NuiMenuModule_Factory(t) { return new (t || NuiMenuModule)(); }, imports: [[
+NuiMenuModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_15__["ɵɵdefineInjector"]({ imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
             _button_button_module__WEBPACK_IMPORTED_MODULE_1__["NuiButtonModule"],
             _checkbox_checkbox_module__WEBPACK_IMPORTED_MODULE_2__["NuiCheckboxModule"],
@@ -28800,8 +28841,9 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiSpinnerModule {
 }
+NuiSpinnerModule.ɵfac = function NuiSpinnerModule_Factory(t) { return new (t || NuiSpinnerModule)(); };
 NuiSpinnerModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineNgModule"]({ type: NuiSpinnerModule });
-NuiSpinnerModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjector"]({ factory: function NuiSpinnerModule_Factory(t) { return new (t || NuiSpinnerModule)(); }, providers: [], imports: [[
+NuiSpinnerModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjector"]({ providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
             _button_button_module__WEBPACK_IMPORTED_MODULE_1__["NuiButtonModule"],
             _tooltip_tooltip_module__WEBPACK_IMPORTED_MODULE_2__["NuiTooltipModule"],
@@ -28834,8 +28876,9 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiOverlayAdditionsModule {
 }
+NuiOverlayAdditionsModule.ɵfac = function NuiOverlayAdditionsModule_Factory(t) { return new (t || NuiOverlayAdditionsModule)(); };
 NuiOverlayAdditionsModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineNgModule"]({ type: NuiOverlayAdditionsModule });
-NuiOverlayAdditionsModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({ factory: function NuiOverlayAdditionsModule_Factory(t) { return new (t || NuiOverlayAdditionsModule)(); } });
+NuiOverlayAdditionsModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({});
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵsetNgModuleScope"](NuiOverlayAdditionsModule, { declarations: [_overlay_item_overlay_item_component__WEBPACK_IMPORTED_MODULE_1__["OverlayItemComponent"],
         _arrow_component_overlay_arrow_component__WEBPACK_IMPORTED_MODULE_0__["OverlayArrowComponent"]], exports: [_overlay_item_overlay_item_component__WEBPACK_IMPORTED_MODULE_1__["OverlayItemComponent"],
         _arrow_component_overlay_arrow_component__WEBPACK_IMPORTED_MODULE_0__["OverlayArrowComponent"]] }); })();
@@ -29229,8 +29272,9 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiIconModule {
 }
+NuiIconModule.ɵfac = function NuiIconModule_Factory(t) { return new (t || NuiIconModule)(); };
 NuiIconModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({ type: NuiIconModule });
-NuiIconModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({ factory: function NuiIconModule_Factory(t) { return new (t || NuiIconModule)(); }, providers: [_icon_service__WEBPACK_IMPORTED_MODULE_2__["IconService"]], imports: [[
+NuiIconModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({ providers: [_icon_service__WEBPACK_IMPORTED_MODULE_2__["IconService"]], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
         ]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵsetNgModuleScope"](NuiIconModule, { declarations: [_icon_component__WEBPACK_IMPORTED_MODULE_1__["IconComponent"]], imports: [_common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"]], exports: [_icon_component__WEBPACK_IMPORTED_MODULE_1__["IconComponent"]] }); })();
@@ -29505,8 +29549,9 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiSorterModule {
 }
+NuiSorterModule.ɵfac = function NuiSorterModule_Factory(t) { return new (t || NuiSorterModule)(); };
 NuiSorterModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineNgModule"]({ type: NuiSorterModule });
-NuiSorterModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineInjector"]({ factory: function NuiSorterModule_Factory(t) { return new (t || NuiSorterModule)(); }, providers: [], imports: [[
+NuiSorterModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineInjector"]({ providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
             _menu_menu_module__WEBPACK_IMPORTED_MODULE_2__["NuiMenuModule"],
             _button_button_module__WEBPACK_IMPORTED_MODULE_1__["NuiButtonModule"],
@@ -29776,8 +29821,9 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiValidationMessageModule {
 }
+NuiValidationMessageModule.ɵfac = function NuiValidationMessageModule_Factory(t) { return new (t || NuiValidationMessageModule)(); };
 NuiValidationMessageModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineNgModule"]({ type: NuiValidationMessageModule });
-NuiValidationMessageModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjector"]({ factory: function NuiValidationMessageModule_Factory(t) { return new (t || NuiValidationMessageModule)(); }, providers: [], imports: [[
+NuiValidationMessageModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjector"]({ providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
             _icon_icon_module__WEBPACK_IMPORTED_MODULE_1__["NuiIconModule"],
         ]] });
@@ -29963,8 +30009,9 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiPopoverModule {
 }
+NuiPopoverModule.ɵfac = function NuiPopoverModule_Factory(t) { return new (t || NuiPopoverModule)(); };
 NuiPopoverModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineNgModule"]({ type: NuiPopoverModule });
-NuiPopoverModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjector"]({ factory: function NuiPopoverModule_Factory(t) { return new (t || NuiPopoverModule)(); }, providers: [], imports: [[
+NuiPopoverModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjector"]({ providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
             _icon_icon_module__WEBPACK_IMPORTED_MODULE_1__["NuiIconModule"],
             _overlay_overlay_module__WEBPACK_IMPORTED_MODULE_3__["NuiOverlayModule"],
@@ -30879,8 +30926,9 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiPopupModule {
 }
+NuiPopupModule.ɵfac = function NuiPopupModule_Factory(t) { return new (t || NuiPopupModule)(); };
 NuiPopupModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineNgModule"]({ type: NuiPopupModule });
-NuiPopupModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjector"]({ factory: function NuiPopupModule_Factory(t) { return new (t || NuiPopupModule)(); }, imports: [[
+NuiPopupModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjector"]({ imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
             _popup_adapter_popup_adapter_module__WEBPACK_IMPORTED_MODULE_2__["PopupAdapterModule"],
         ]] });
@@ -31027,8 +31075,9 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiPanelModule {
 }
+NuiPanelModule.ɵfac = function NuiPanelModule_Factory(t) { return new (t || NuiPanelModule)(); };
 NuiPanelModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({ type: NuiPanelModule });
-NuiPanelModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({ factory: function NuiPanelModule_Factory(t) { return new (t || NuiPanelModule)(); }, providers: [], imports: [[
+NuiPanelModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({ providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
             _button_button_module__WEBPACK_IMPORTED_MODULE_1__["NuiButtonModule"],
         ]] });
@@ -32087,8 +32136,9 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiSearchModule {
 }
+NuiSearchModule.ɵfac = function NuiSearchModule_Factory(t) { return new (t || NuiSearchModule)(); };
 NuiSearchModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineNgModule"]({ type: NuiSearchModule });
-NuiSearchModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineInjector"]({ factory: function NuiSearchModule_Factory(t) { return new (t || NuiSearchModule)(); }, providers: [], imports: [[
+NuiSearchModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineInjector"]({ providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_1__["NuiCommonModule"],
             _spinner_spinner_module__WEBPACK_IMPORTED_MODULE_3__["NuiSpinnerModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormsModule"],
@@ -32197,8 +32247,9 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiCheckboxModule {
 }
+NuiCheckboxModule.ɵfac = function NuiCheckboxModule_Factory(t) { return new (t || NuiCheckboxModule)(); };
 NuiCheckboxModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({ type: NuiCheckboxModule });
-NuiCheckboxModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({ factory: function NuiCheckboxModule_Factory(t) { return new (t || NuiCheckboxModule)(); }, providers: [], imports: [[
+NuiCheckboxModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({ providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
         ]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵsetNgModuleScope"](NuiCheckboxModule, { declarations: [_checkbox_component__WEBPACK_IMPORTED_MODULE_2__["CheckboxComponent"],
@@ -32294,8 +32345,9 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiToastModule {
 }
+NuiToastModule.ɵfac = function NuiToastModule_Factory(t) { return new (t || NuiToastModule)(); };
 NuiToastModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵdefineNgModule"]({ type: NuiToastModule });
-NuiToastModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵdefineInjector"]({ factory: function NuiToastModule_Factory(t) { return new (t || NuiToastModule)(); }, providers: [
+NuiToastModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵdefineInjector"]({ providers: [
         _toast_service__WEBPACK_IMPORTED_MODULE_6__["ToastService"],
         _toast_container_service__WEBPACK_IMPORTED_MODULE_3__["ToastContainerService"],
         { provide: _toast_servicebase__WEBPACK_IMPORTED_MODULE_7__["ToastServiceBase"], useExisting: _toast_service__WEBPACK_IMPORTED_MODULE_6__["ToastService"] },
@@ -33859,8 +33911,9 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiProgressModule {
 }
+NuiProgressModule.ɵfac = function NuiProgressModule_Factory(t) { return new (t || NuiProgressModule)(); };
 NuiProgressModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineNgModule"]({ type: NuiProgressModule });
-NuiProgressModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjector"]({ factory: function NuiProgressModule_Factory(t) { return new (t || NuiProgressModule)(); }, providers: [], imports: [[
+NuiProgressModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjector"]({ providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
             _button_button_module__WEBPACK_IMPORTED_MODULE_1__["NuiButtonModule"],
             _tooltip_tooltip_module__WEBPACK_IMPORTED_MODULE_2__["NuiTooltipModule"],
@@ -34484,8 +34537,9 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiBreadcrumbModule {
 }
+NuiBreadcrumbModule.ɵfac = function NuiBreadcrumbModule_Factory(t) { return new (t || NuiBreadcrumbModule)(); };
 NuiBreadcrumbModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineNgModule"]({ type: NuiBreadcrumbModule });
-NuiBreadcrumbModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjector"]({ factory: function NuiBreadcrumbModule_Factory(t) { return new (t || NuiBreadcrumbModule)(); }, providers: [_breadcrumb_state_service__WEBPACK_IMPORTED_MODULE_2__["BreadcrumbStateService"]], imports: [[
+NuiBreadcrumbModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjector"]({ providers: [_breadcrumb_state_service__WEBPACK_IMPORTED_MODULE_2__["BreadcrumbStateService"]], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
             _icon_icon_module__WEBPACK_IMPORTED_MODULE_1__["NuiIconModule"],
         ]] });
@@ -34524,8 +34578,9 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiChipsModule {
 }
+NuiChipsModule.ɵfac = function NuiChipsModule_Factory(t) { return new (t || NuiChipsModule)(); };
 NuiChipsModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineNgModule"]({ type: NuiChipsModule });
-NuiChipsModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjector"]({ factory: function NuiChipsModule_Factory(t) { return new (t || NuiChipsModule)(); }, providers: [], imports: [[
+NuiChipsModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjector"]({ providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"],
             _icon_icon_module__WEBPACK_IMPORTED_MODULE_1__["NuiIconModule"],
             _tooltip_tooltip_module__WEBPACK_IMPORTED_MODULE_2__["NuiTooltipModule"],
@@ -34749,8 +34804,9 @@ const DECLARATIONS_EXPORTS = [
  */
 class NuiTableModule {
 }
+NuiTableModule.ɵfac = function NuiTableModule_Factory(t) { return new (t || NuiTableModule)(); };
 NuiTableModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({ type: NuiTableModule });
-NuiTableModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({ factory: function NuiTableModule_Factory(t) { return new (t || NuiTableModule)(); }, providers: [], imports: [[
+NuiTableModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({ providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_2__["NuiCommonModule"],
             _select_select_module__WEBPACK_IMPORTED_MODULE_5__["NuiSelectModule"],
             _selector_selector_module__WEBPACK_IMPORTED_MODULE_6__["NuiSelectorModule"],
@@ -34835,8 +34891,9 @@ __webpack_require__.r(__webpack_exports__);
  */
 class NuiTextboxModule {
 }
+NuiTextboxModule.ɵfac = function NuiTextboxModule_Factory(t) { return new (t || NuiTextboxModule)(); };
 NuiTextboxModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefineNgModule"]({ type: NuiTextboxModule });
-NuiTextboxModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefineInjector"]({ factory: function NuiTextboxModule_Factory(t) { return new (t || NuiTextboxModule)(); }, providers: [], imports: [[
+NuiTextboxModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefineInjector"]({ providers: [], imports: [[
             _common_common_module__WEBPACK_IMPORTED_MODULE_1__["NuiCommonModule"],
             _spinner_spinner_module__WEBPACK_IMPORTED_MODULE_4__["NuiSpinnerModule"],
             _button_button_module__WEBPACK_IMPORTED_MODULE_2__["NuiButtonModule"],

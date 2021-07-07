@@ -990,13 +990,14 @@
         _classCallCheck(this, ThemingModule);
       };
 
+      ThemingModule.ɵfac = function ThemingModule_Factory(t) {
+        return new (t || ThemingModule)();
+      };
+
       ThemingModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineNgModule"]({
         type: ThemingModule
       });
       ThemingModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineInjector"]({
-        factory: function ThemingModule_Factory(t) {
-          return new (t || ThemingModule)();
-        },
         providers: [{
           provide: _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["DEMO_PATH_TOKEN"],
           useFactory: function useFactory() {

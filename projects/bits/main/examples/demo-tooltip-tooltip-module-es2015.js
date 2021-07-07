@@ -669,8 +669,9 @@ const routes = [
 ];
 class TooltipDemoModule {
 }
+TooltipDemoModule.ɵfac = function TooltipDemoModule_Factory(t) { return new (t || TooltipDemoModule)(); };
 TooltipDemoModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({ type: TooltipDemoModule });
-TooltipDemoModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({ factory: function TooltipDemoModule_Factory(t) { return new (t || TooltipDemoModule)(); }, providers: [
+TooltipDemoModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({ providers: [
         {
             provide: _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["DEMO_PATH_TOKEN"],
             useFactory: () => __webpack_require__("RvtI"),
