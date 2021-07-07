@@ -1616,7 +1616,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<h2>Layout</h2>\n<h3>Horizontal Layout Wizard</h3>\n<p>\n    To use the horizontal wizard component, place a <code>nui-wizard-horizontal</code> element in your template and include one or more\n    <code><a href=\"../components/WizardStepComponent.html\" target=\"_blank\">nui-wizard-step-v2</a></code> elements as children of the\n    <code>nui-wizard-horizontal</code> element.\n</p>\n<nui-example-wrapper filenamePrefix=\"wizard-horizontal-layout\" exampleTitle=\"Horizontal Layout Wizard\">\n    <nui-wizard-horizontal-example></nui-wizard-horizontal-example>\n</nui-example-wrapper>\n\n<h3>Wizard with confirmation dialog</h3>\n<p>\n    It may be a good idea to ask a user whether they really want to quit a wizard, e.g.if they decide to hit `Cancel` while some of the wizard step fields are already filled in. This example reflects this use case and shows how one can add a confirmation dialog to make a user decide whether they really want to quit or stay where they are and continue. \n</p>\n<nui-example-wrapper filenamePrefix=\"wizard-with-confirmation-dialog-on-cancel\" exampleTitle=\"Wizard with confirmation dialog on cancel\">\n    <nui-wizard-with-confirmation-dialog-on-cancel-example></nui-wizard-with-confirmation-dialog-on-cancel-example>\n</nui-example-wrapper>\n\n<!--Will be updated in scope of the NUI-6099-->\n\n<!--<h3>Vertical Layout Wizard</h3>-->\n<!--<nui-example-wrapper filenamePrefix=\"wizard-vertical-layout\" exampleTitle=\"Vertical Layout Wizard\">-->\n<!--    <nui-wizard-vertical-example></nui-wizard-vertical-example>-->\n<!--</nui-example-wrapper>-->\n\n<h3>Usage with a dialog</h3>\n<p>You can pass an existing wizard component as content of the dialog window. </p>\n<p>You should insert wizard component in dialog body. </p>\n<nui-example-wrapper filenamePrefix=\"wizard-dialog\" exampleTitle=\"wizard in dialog\">\n    <nui-wizard-v2-dialog-example></nui-wizard-v2-dialog-example>\n</nui-example-wrapper>\n\n<h3>Busy step</h3>\n<p>You can make your step busy to forbid actions.</p>\n<nui-example-wrapper filenamePrefix=\"wizard-busy\" exampleTitle=\"wizard step busy\">\n    <nui-wizard-v2-busy-example></nui-wizard-v2-busy-example>\n</nui-example-wrapper>\n\n<h3>Custom footer</h3>\n<p>Customizing the footer layout content and style for each step is quite easy, as you can see in the example below:</p>\n<nui-example-wrapper filenamePrefix=\"wizard-custom-footer\" exampleTitle=\"Wizard with Custom Footer\">\n    <nui-wizard-custom-footer-example></nui-wizard-custom-footer-example>\n</nui-example-wrapper>\n\n<h3>Adding step dynamically</h3>\n<p>You are able to add wizard steps dynamically.</p>\n<nui-example-wrapper filenamePrefix=\"wizard-dynamic\" exampleTitle=\"wizard add dynamic step\">\n    <nui-wizard-dynamic-example></nui-wizard-dynamic-example>\n</nui-example-wrapper>\n\n<h3>Removing step</h3>\n<p>You are able to remove steps by index.</p>\n<nui-example-wrapper filenamePrefix=\"wizard-remove-step\" exampleTitle=\"wizard remove step\">\n    <nui-wizard-remove-step-example></nui-wizard-remove-step-example>\n</nui-example-wrapper>\n\n<!--TODO Fix Custom Layout Wizard in scope NUI-6112 -->\n<!--<h3>Custom Layout Wizard</h3>-->\n<!--<nui-example-wrapper filenamePrefix=\"wizard-custom-layout\" exampleTitle=\"Custom Layout Wizard\">-->\n<!--    <nui-wizard-custom-example></nui-wizard-custom-example>-->\n<!--</nui-example-wrapper>-->\n\n<!-- <h3>Async Form Validation</h3>\n<p>\n    To handle async validation check 'PENDING' status of WizardV2Step stepControl\n</p>\n<nui-example-wrapper filenamePrefix=\"wizard-async-form-validation\" exampleTitle=\"Async Form Validation\">\n    <nui-wizard-async-form-validation-example></nui-wizard-async-form-validation-example>\n</nui-example-wrapper> -->\n\n<!--<h3>Async Form Validation</h3>-->\n<!--<p>-->\n<!--    To handle async validation check 'PENDING' status of WizardV2Step stepControl-->\n<!--</p>-->\n<!--<nui-example-wrapper filenamePrefix=\"wizard-async-form-validation\" exampleTitle=\"Async Form Validation\">-->\n<!--    <nui-wizard-async-form-validation-example></nui-wizard-async-form-validation-example>-->\n<!--</nui-example-wrapper>-->\n\n\n<h3>Wizard with custom step state icons</h3>\n<p>\n    The wizard step can be in four different states: <code>initial</code>, <code>selected</code>, <code>completed</code>, and <code>error</code>.\n    For each of these steps there is a corresponding icon in the header for a certain step, which dynamically changes along with the step state change.\n    It is possible to override the default set of step state icons and their colors, and there are two ways of doing that.\n</p>\n\n<ol>\n    <li>Global</li>\n    <li>Step Specific</li>\n</ol>\n\n<p><u>Global</u></p>\n<p>\n    Nova provides you with the <code>WIZARD_CONFIG</code> injection token, which allows you to override the default wizard settings in a global context. For instance,\n    set the necessary icons settings with this token on a module level to allow all wizards within a module to receive the same icon configuration.\n</p>\n<p><u>Step Specific</u></p>\n<p>\n    Use the <code>stepIconsConfig</code> input of the <code>nui-wizard-step-v2</code> component to pass the step icons config specifically to this step. It will\n    override the global settings for this particular step.\n</p>\n<nui-example-wrapper filenamePrefix=\"wizard-with-custom-icons-example\" exampleTitle=\"Wizard with custom icons\">\n    <nui-wizard-with-custom-icons-example></nui-wizard-with-custom-icons-example>\n</nui-example-wrapper>\n\n<h3>Restore Wizard State</h3>\n<p>\n    To restore wizard state you need to pass previous wizard steps as input\n</p>\n<nui-example-wrapper filenamePrefix=\"wizard-restore-state\" exampleTitle=\"Restore Wizard State\">\n    <nui-wizard-restore-state-example></nui-wizard-restore-state-example>\n</nui-example-wrapper> \n\n<h3>Wizard Step Change Event Example</h3>\n<p>\n    You are able to subscribe when the selected step has changed.\n</p>\n<nui-example-wrapper filenamePrefix=\"wizard-step-change-example\" exampleTitle=\"Wizard Step Change\">\n    <nui-wizard-step-change-example></nui-wizard-step-change-example>\n</nui-example-wrapper> \n\n<h3>Responsive Header</h3>\n<p>\n    Want some responsiveness? We've got some\n</p>\n<nui-example-wrapper filenamePrefix=\"nui-wizard-responsive-header-example\" exampleTitle=\"Wizard Header Responsiveness\">\n    <nui-wizard-responsive-header-example></nui-wizard-responsive-header-example>\n</nui-example-wrapper>\n\n<h3>Wizard Tooltip</h3>\n<p>\n    We always show tooltip for string label. If you use custom template for label or don't want to see tooltip\n    you could define it inside content projection.\n</p>\n<nui-example-wrapper filenamePrefix=\"wizard-tooltip-example\" exampleTitle=\"Wizard Tooltip\">\n    <nui-wizard-tooltip-example></nui-wizard-tooltip-example>\n</nui-example-wrapper>\n\n<h2>Keyboard interaction</h2>\n<ul>\n    <li><code>TAB/SHIFT+TAB</code> for focusing on the next/previous tabbable element</li>\n    <li><code>LEFT_ARROW/RIGHT_ARROW</code> for navigation on the previous/next step header</li>\n    <li><code>HOME/END</code> for focusing on the first/last step header</li>\n    <li><code>ENTER, SPACE</code> to select the step</li>\n</ul>\n";
+      __webpack_exports__["default"] = "<h2>Layout</h2>\n<h3>Horizontal Layout Wizard</h3>\n<p>\n    To use the horizontal wizard component, place a <code>nui-wizard-horizontal</code> element in your template and include one or more\n    <code><a href=\"../components/WizardStepComponent.html\" target=\"_blank\">nui-wizard-step-v2</a></code> elements as children of the\n    <code>nui-wizard-horizontal</code> element.\n</p>\n<nui-example-wrapper filenamePrefix=\"wizard-horizontal-layout\" exampleTitle=\"Horizontal Layout Wizard\">\n    <nui-wizard-horizontal-example></nui-wizard-horizontal-example>\n</nui-example-wrapper>\n\n<h3>Wizard with confirmation dialog</h3>\n<p>\n    It may be a good idea to ask a user whether they really want to quit a wizard, e.g.if they decide to hit `Cancel` while some of the wizard step fields are already filled in. This example reflects this use case and shows how one can add a confirmation dialog to make a user decide whether they really want to quit or stay where they are and continue. \n</p>\n<nui-example-wrapper filenamePrefix=\"wizard-with-confirmation-dialog-on-cancel\" exampleTitle=\"Wizard with confirmation dialog on cancel\">\n    <nui-wizard-with-confirmation-dialog-on-cancel-example></nui-wizard-with-confirmation-dialog-on-cancel-example>\n</nui-example-wrapper>\n\n<!--Will be updated in scope of the NUI-6099-->\n\n<!--<h3>Vertical Layout Wizard</h3>-->\n<!--<nui-example-wrapper filenamePrefix=\"wizard-vertical-layout\" exampleTitle=\"Vertical Layout Wizard\">-->\n<!--    <nui-wizard-vertical-example></nui-wizard-vertical-example>-->\n<!--</nui-example-wrapper>-->\n\n<h3>Usage with a dialog</h3>\n<p>You can pass an existing wizard component as content of the dialog window. </p>\n<p>You should insert wizard component in dialog body. </p>\n<nui-example-wrapper filenamePrefix=\"wizard-dialog\" exampleTitle=\"wizard in dialog\">\n    <nui-wizard-v2-dialog-example></nui-wizard-v2-dialog-example>\n</nui-example-wrapper>\n\n<h3>Busy step</h3>\n<p>You can make your step busy to forbid actions.</p>\n<nui-example-wrapper filenamePrefix=\"wizard-busy\" exampleTitle=\"wizard step busy\">\n    <nui-wizard-v2-busy-example></nui-wizard-v2-busy-example>\n</nui-example-wrapper>\n\n<h3>Custom footer</h3>\n<p>Customizing the footer layout content and style for each step is quite easy, as you can see in the example below:</p>\n<nui-example-wrapper filenamePrefix=\"wizard-custom-footer\" exampleTitle=\"Wizard with Custom Footer\">\n    <nui-wizard-custom-footer-example></nui-wizard-custom-footer-example>\n</nui-example-wrapper>\n\n<h3>Adding step dynamically</h3>\n<p>You are able to add wizard steps dynamically.</p>\n<nui-example-wrapper filenamePrefix=\"wizard-dynamic\" exampleTitle=\"wizard add dynamic step\">\n    <nui-wizard-dynamic-example></nui-wizard-dynamic-example>\n</nui-example-wrapper>\n\n<h3>Removing step</h3>\n<p>You are able to remove steps by index.</p>\n<nui-example-wrapper filenamePrefix=\"wizard-remove-step\" exampleTitle=\"wizard remove step\">\n    <nui-wizard-remove-step-example></nui-wizard-remove-step-example>\n</nui-example-wrapper>\n\n<!--TODO Fix Custom Layout Wizard in scope NUI-6112 -->\n<!--<h3>Custom Layout Wizard</h3>-->\n<!--<nui-example-wrapper filenamePrefix=\"wizard-custom-layout\" exampleTitle=\"Custom Layout Wizard\">-->\n<!--    <nui-wizard-custom-example></nui-wizard-custom-example>-->\n<!--</nui-example-wrapper>-->\n\n<h3>Async Form Validation</h3>\n<p>\n    To handle async validation check 'PENDING' status of WizardV2Step stepControl\n</p>\n<nui-example-wrapper filenamePrefix=\"wizard-async-form-validation\" exampleTitle=\"Async Form Validation\">\n    <nui-wizard-async-form-validation-example></nui-wizard-async-form-validation-example>\n</nui-example-wrapper>\n\n<!--<h3>Async Form Validation</h3>-->\n<!--<p>-->\n<!--    To handle async validation check 'PENDING' status of WizardV2Step stepControl-->\n<!--</p>-->\n<!--<nui-example-wrapper filenamePrefix=\"wizard-async-form-validation\" exampleTitle=\"Async Form Validation\">-->\n<!--    <nui-wizard-async-form-validation-example></nui-wizard-async-form-validation-example>-->\n<!--</nui-example-wrapper>-->\n\n\n<h3>Wizard with custom step state icons</h3>\n<p>\n    The wizard step can be in four different states: <code>initial</code>, <code>selected</code>, <code>completed</code>, and <code>error</code>.\n    For each of these steps there is a corresponding icon in the header for a certain step, which dynamically changes along with the step state change.\n    It is possible to override the default set of step state icons and their colors, and there are two ways of doing that.\n</p>\n\n<ol>\n    <li>Global</li>\n    <li>Step Specific</li>\n</ol>\n\n<p><u>Global</u></p>\n<p>\n    Nova provides you with the <code>WIZARD_CONFIG</code> injection token, which allows you to override the default wizard settings in a global context. For instance,\n    set the necessary icons settings with this token on a module level to allow all wizards within a module to receive the same icon configuration.\n</p>\n<p><u>Step Specific</u></p>\n<p>\n    Use the <code>stepIconsConfig</code> input of the <code>nui-wizard-step-v2</code> component to pass the step icons config specifically to this step. It will\n    override the global settings for this particular step.\n</p>\n<nui-example-wrapper filenamePrefix=\"wizard-with-custom-icons-example\" exampleTitle=\"Wizard with custom icons\">\n    <nui-wizard-with-custom-icons-example></nui-wizard-with-custom-icons-example>\n</nui-example-wrapper>\n\n<h3>Restore Wizard State</h3>\n<p>\n    To restore wizard state you need to pass previous wizard steps as input\n</p>\n<nui-example-wrapper filenamePrefix=\"wizard-restore-state\" exampleTitle=\"Restore Wizard State\">\n    <nui-wizard-restore-state-example></nui-wizard-restore-state-example>\n</nui-example-wrapper> \n\n<h3>Wizard Step Change Event Example</h3>\n<p>\n    You are able to subscribe when the selected step has changed.\n</p>\n<nui-example-wrapper filenamePrefix=\"wizard-step-change-example\" exampleTitle=\"Wizard Step Change\">\n    <nui-wizard-step-change-example></nui-wizard-step-change-example>\n</nui-example-wrapper> \n\n<h3>Responsive Header</h3>\n<p>\n    Want some responsiveness? We've got some\n</p>\n<nui-example-wrapper filenamePrefix=\"nui-wizard-responsive-header-example\" exampleTitle=\"Wizard Header Responsiveness\">\n    <nui-wizard-responsive-header-example></nui-wizard-responsive-header-example>\n</nui-example-wrapper>\n\n<h3>Wizard Tooltip</h3>\n<p>\n    We always show tooltip for string label. If you use custom template for label or don't want to see tooltip\n    you could define it inside content projection.\n</p>\n<nui-example-wrapper filenamePrefix=\"wizard-tooltip-example\" exampleTitle=\"Wizard Tooltip\">\n    <nui-wizard-tooltip-example></nui-wizard-tooltip-example>\n</nui-example-wrapper>\n\n<h2>Keyboard interaction</h2>\n<ul>\n    <li><code>TAB/SHIFT+TAB</code> for focusing on the next/previous tabbable element</li>\n    <li><code>LEFT_ARROW/RIGHT_ARROW</code> for navigation on the previous/next step header</li>\n    <li><code>HOME/END</code> for focusing on the first/last step header</li>\n    <li><code>ENTER, SPACE</code> to select the step</li>\n</ul>\n";
       /***/
     },
 
@@ -8998,31 +8998,37 @@
       /* harmony import */
 
 
-      var _wizard_with_custom_icons_wizard_with_custom_icons_example_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      var _wizard_async_validation_form_wizard_async_form_validation_example_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      /*! ../wizard-async-validation-form/wizard-async-form-validation.example.component */
+      "mbzW");
+      /* harmony import */
+
+
+      var _wizard_with_custom_icons_wizard_with_custom_icons_example_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
       /*! ../wizard-with-custom-icons/wizard-with-custom-icons-example.component */
       "4Nvg");
       /* harmony import */
 
 
-      var _wizard_restore_state_wizard_restore_state_example_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+      var _wizard_restore_state_wizard_restore_state_example_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
       /*! ../wizard-restore-state/wizard-restore-state.example.component */
       "/QbS");
       /* harmony import */
 
 
-      var _wizard_step_change_example_wizard_step_change_example_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+      var _wizard_step_change_example_wizard_step_change_example_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
       /*! ../wizard-step-change-example/wizard-step-change-example.component */
       "eHNd");
       /* harmony import */
 
 
-      var _wizard_responsive_header_wizard_responsive_header_example_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+      var _wizard_responsive_header_wizard_responsive_header_example_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
       /*! ../wizard-responsive-header/wizard-responsive-header-example.component */
       "ripU");
       /* harmony import */
 
 
-      var _wizard_tooltip_wizard_tooltip_example_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
+      var _wizard_tooltip_wizard_tooltip_example_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
       /*! ../wizard-tooltip/wizard-tooltip-example.component */
       "2HkB");
 
@@ -9037,9 +9043,9 @@
       WizardDocsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: WizardDocsComponent,
         selectors: [["nui-wizard-v2-example"]],
-        decls: 141,
+        decls: 147,
         vars: 0,
-        consts: [["href", "../components/WizardStepComponent.html", "target", "_blank"], ["filenamePrefix", "wizard-horizontal-layout", "exampleTitle", "Horizontal Layout Wizard"], ["filenamePrefix", "wizard-with-confirmation-dialog-on-cancel", "exampleTitle", "Wizard with confirmation dialog on cancel"], ["filenamePrefix", "wizard-dialog", "exampleTitle", "wizard in dialog"], ["filenamePrefix", "wizard-busy", "exampleTitle", "wizard step busy"], ["filenamePrefix", "wizard-custom-footer", "exampleTitle", "Wizard with Custom Footer"], ["filenamePrefix", "wizard-dynamic", "exampleTitle", "wizard add dynamic step"], ["filenamePrefix", "wizard-remove-step", "exampleTitle", "wizard remove step"], ["filenamePrefix", "wizard-with-custom-icons-example", "exampleTitle", "Wizard with custom icons"], ["filenamePrefix", "wizard-restore-state", "exampleTitle", "Restore Wizard State"], ["filenamePrefix", "wizard-step-change-example", "exampleTitle", "Wizard Step Change"], ["filenamePrefix", "nui-wizard-responsive-header-example", "exampleTitle", "Wizard Header Responsiveness"], ["filenamePrefix", "wizard-tooltip-example", "exampleTitle", "Wizard Tooltip"]],
+        consts: [["href", "../components/WizardStepComponent.html", "target", "_blank"], ["filenamePrefix", "wizard-horizontal-layout", "exampleTitle", "Horizontal Layout Wizard"], ["filenamePrefix", "wizard-with-confirmation-dialog-on-cancel", "exampleTitle", "Wizard with confirmation dialog on cancel"], ["filenamePrefix", "wizard-dialog", "exampleTitle", "wizard in dialog"], ["filenamePrefix", "wizard-busy", "exampleTitle", "wizard step busy"], ["filenamePrefix", "wizard-custom-footer", "exampleTitle", "Wizard with Custom Footer"], ["filenamePrefix", "wizard-dynamic", "exampleTitle", "wizard add dynamic step"], ["filenamePrefix", "wizard-remove-step", "exampleTitle", "wizard remove step"], ["filenamePrefix", "wizard-async-form-validation", "exampleTitle", "Async Form Validation"], ["filenamePrefix", "wizard-with-custom-icons-example", "exampleTitle", "Wizard with custom icons"], ["filenamePrefix", "wizard-restore-state", "exampleTitle", "Restore Wizard State"], ["filenamePrefix", "wizard-step-change-example", "exampleTitle", "Wizard Step Change"], ["filenamePrefix", "nui-wizard-responsive-header-example", "exampleTitle", "Wizard Header Responsiveness"], ["filenamePrefix", "wizard-tooltip-example", "exampleTitle", "Wizard Tooltip"]],
         template: function WizardDocsComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "h2");
@@ -9210,258 +9216,276 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](56, "h3");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](57, "Wizard with custom step state icons");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](57, "Async Form Validation");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](58, "p");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](59, " The wizard step can be in four different states: ");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](60, "code");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](61, "initial");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](59, " To handle async validation check 'PENDING' status of WizardV2Step stepControl\n");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](62, ", ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](60, "nui-example-wrapper", 8);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](63, "code");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](64, "selected");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](61, "nui-wizard-async-form-validation-example");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](65, ", ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](62, "h3");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](63, "Wizard with custom step state icons");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](64, "p");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](65, " The wizard step can be in four different states: ");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](66, "code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](67, "completed");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](67, "initial");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](68, ", and ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](68, ", ");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](69, "code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](70, "error");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](70, "selected");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](71, ". For each of these steps there is a corresponding icon in the header for a certain step, which dynamically changes along with the step state change. It is possible to override the default set of step state icons and their colors, and there are two ways of doing that.\n");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](71, ", ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](72, "code");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](73, "completed");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](72, "ol");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](74, ", and ");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](73, "li");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](75, "code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](74, "Global");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](75, "li");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](76, "Step Specific");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](76, "error");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](77, "p");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](78, "u");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](79, "Global");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](77, ". For each of these steps there is a corresponding icon in the header for a certain step, which dynamically changes along with the step state change. It is possible to override the default set of step state icons and their colors, and there are two ways of doing that.\n");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](78, "ol");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](80, "p");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](79, "li");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](81, " Nova provides you with the ");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](82, "code");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](83, "WIZARD_CONFIG");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](80, "Global");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](84, " injection token, which allows you to override the default wizard settings in a global context. For instance, set the necessary icons settings with this token on a module level to allow all wizards within a module to receive the same icon configuration.\n");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](81, "li");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](85, "p");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](86, "u");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](87, "Step Specific");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](82, "Step Specific");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](88, "p");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](83, "p");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](89, " Use the ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](84, "u");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](90, "code");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](91, "stepIconsConfig");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](85, "Global");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](92, " input of the ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](93, "code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](86, "p");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](94, "nui-wizard-step-v2");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](87, " Nova provides you with the ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](88, "code");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](89, "WIZARD_CONFIG");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](95, " component to pass the step icons config specifically to this step. It will override the global settings for this particular step.\n");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](90, " injection token, which allows you to override the default wizard settings in a global context. For instance, set the necessary icons settings with this token on a module level to allow all wizards within a module to receive the same icon configuration.\n");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](96, "nui-example-wrapper", 8);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](91, "p");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](97, "nui-wizard-with-custom-icons-example");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](92, "u");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](98, "h3");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](99, "Restore Wizard State");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](93, "Step Specific");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](100, "p");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](101, " To restore wizard state you need to pass previous wizard steps as input\n");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](94, "p");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](95, " Use the ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](96, "code");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](97, "stepIconsConfig");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](98, " input of the ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](99, "code");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](100, "nui-wizard-step-v2");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](101, " component to pass the step icons config specifically to this step. It will override the global settings for this particular step.\n");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](102, "nui-example-wrapper", 9);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](103, "nui-wizard-restore-state-example");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](103, "nui-wizard-with-custom-icons-example");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](104, "h3");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](105, "Wizard Step Change Event Example");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](105, "Restore Wizard State");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](106, "p");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](107, " You are able to subscribe when the selected step has changed.\n");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](107, " To restore wizard state you need to pass previous wizard steps as input\n");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](108, "nui-example-wrapper", 10);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](109, "nui-wizard-step-change-example");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](109, "nui-wizard-restore-state-example");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](110, "h3");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](111, "Responsive Header");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](111, "Wizard Step Change Event Example");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](112, "p");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](113, " Want some responsiveness? We've got some\n");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](113, " You are able to subscribe when the selected step has changed.\n");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](114, "nui-example-wrapper", 11);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](115, "nui-wizard-responsive-header-example");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](115, "nui-wizard-step-change-example");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](116, "h3");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](117, "Wizard Tooltip");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](117, "Responsive Header");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](118, "p");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](119, " We always show tooltip for string label. If you use custom template for label or don't want to see tooltip you could define it inside content projection.\n");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](119, " Want some responsiveness? We've got some\n");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](120, "nui-example-wrapper", 12);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](121, "nui-wizard-tooltip-example");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](121, "nui-wizard-responsive-header-example");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](122, "h2");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](122, "h3");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](123, "Keyboard interaction");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](124, "ul");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](125, "li");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](126, "code");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](127, "TAB/SHIFT+TAB");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](123, "Wizard Tooltip");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](128, " for focusing on the next/previous tabbable element");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](124, "p");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](125, " We always show tooltip for string label. If you use custom template for label or don't want to see tooltip you could define it inside content projection.\n");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](129, "li");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](126, "nui-example-wrapper", 13);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](130, "code");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](131, "LEFT_ARROW/RIGHT_ARROW");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](127, "nui-wizard-tooltip-example");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](132, " for navigation on the previous/next step header");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](128, "h2");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](129, "Keyboard interaction");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](133, "li");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](130, "ul");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](134, "code");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](131, "li");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](135, "HOME/END");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](132, "code");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](136, " for focusing on the first/last step header");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](133, "TAB/SHIFT+TAB");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](137, "li");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](138, "code");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](139, "ENTER, SPACE");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](134, " for focusing on the next/previous tabbable element");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](140, " to select the step");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](135, "li");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](136, "code");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](137, "LEFT_ARROW/RIGHT_ARROW");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](138, " for navigation on the previous/next step header");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](139, "li");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](140, "code");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](141, "HOME/END");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](142, " for focusing on the first/last step header");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](143, "li");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](144, "code");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](145, "ENTER, SPACE");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](146, " to select the step");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
           }
         },
-        directives: [_src_lib_docs_example_wrapper_example_wrapper_component__WEBPACK_IMPORTED_MODULE_1__["ExampleWrapperComponent"], _wizard_horizontal_layout_wizard_horizontal_example_component__WEBPACK_IMPORTED_MODULE_2__["WizardHorizontalExampleComponent"], _wizard_with_confirmation_dialog_on_cancel_wizard_with_confirmation_dialog_on_cancel_component__WEBPACK_IMPORTED_MODULE_3__["WizardWithConfirmationDialogOnCancelComponent"], _wizard_dialog_wizard_dialog_example_component__WEBPACK_IMPORTED_MODULE_4__["WizardDialogExampleComponent"], _wizard_busy_wizard_busy_example_component__WEBPACK_IMPORTED_MODULE_5__["WizardBusyExampleComponent"], _wizard_custom_footer_wizard_custom_footer_example_component__WEBPACK_IMPORTED_MODULE_6__["WizardCustomFooterExampleComponent"], _wizard_dynamic_wizard_dynamic_example_component__WEBPACK_IMPORTED_MODULE_7__["WizardDynamicExampleComponent"], _wizard_remove_step_wizard_remove_step_example_component__WEBPACK_IMPORTED_MODULE_8__["WizardRemoveStepExampleComponent"], _wizard_with_custom_icons_wizard_with_custom_icons_example_component__WEBPACK_IMPORTED_MODULE_9__["WizardWithCustomIconsExampleComponent"], _wizard_restore_state_wizard_restore_state_example_component__WEBPACK_IMPORTED_MODULE_10__["WizardRestoreStateExampleComponent"], _wizard_step_change_example_wizard_step_change_example_component__WEBPACK_IMPORTED_MODULE_11__["WizardStepChangeExampleComponent"], _wizard_responsive_header_wizard_responsive_header_example_component__WEBPACK_IMPORTED_MODULE_12__["WizardResponsiveHeaderExampleComponent"], _wizard_tooltip_wizard_tooltip_example_component__WEBPACK_IMPORTED_MODULE_13__["WizardTooltipExampleComponent"]],
+        directives: [_src_lib_docs_example_wrapper_example_wrapper_component__WEBPACK_IMPORTED_MODULE_1__["ExampleWrapperComponent"], _wizard_horizontal_layout_wizard_horizontal_example_component__WEBPACK_IMPORTED_MODULE_2__["WizardHorizontalExampleComponent"], _wizard_with_confirmation_dialog_on_cancel_wizard_with_confirmation_dialog_on_cancel_component__WEBPACK_IMPORTED_MODULE_3__["WizardWithConfirmationDialogOnCancelComponent"], _wizard_dialog_wizard_dialog_example_component__WEBPACK_IMPORTED_MODULE_4__["WizardDialogExampleComponent"], _wizard_busy_wizard_busy_example_component__WEBPACK_IMPORTED_MODULE_5__["WizardBusyExampleComponent"], _wizard_custom_footer_wizard_custom_footer_example_component__WEBPACK_IMPORTED_MODULE_6__["WizardCustomFooterExampleComponent"], _wizard_dynamic_wizard_dynamic_example_component__WEBPACK_IMPORTED_MODULE_7__["WizardDynamicExampleComponent"], _wizard_remove_step_wizard_remove_step_example_component__WEBPACK_IMPORTED_MODULE_8__["WizardRemoveStepExampleComponent"], _wizard_async_validation_form_wizard_async_form_validation_example_component__WEBPACK_IMPORTED_MODULE_9__["WizardAsyncFormValidationExampleComponent"], _wizard_with_custom_icons_wizard_with_custom_icons_example_component__WEBPACK_IMPORTED_MODULE_10__["WizardWithCustomIconsExampleComponent"], _wizard_restore_state_wizard_restore_state_example_component__WEBPACK_IMPORTED_MODULE_11__["WizardRestoreStateExampleComponent"], _wizard_step_change_example_wizard_step_change_example_component__WEBPACK_IMPORTED_MODULE_12__["WizardStepChangeExampleComponent"], _wizard_responsive_header_wizard_responsive_header_example_component__WEBPACK_IMPORTED_MODULE_13__["WizardResponsiveHeaderExampleComponent"], _wizard_tooltip_wizard_tooltip_example_component__WEBPACK_IMPORTED_MODULE_14__["WizardTooltipExampleComponent"]],
         encapsulation: 2
       });
       /***/
