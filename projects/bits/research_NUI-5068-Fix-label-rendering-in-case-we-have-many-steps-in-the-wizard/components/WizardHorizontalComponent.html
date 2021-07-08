@@ -1134,7 +1134,7 @@ export class WizardHorizontalComponent extends WizardDirective implements OnInit
         }
     }
 
-    private checkDynamicSteps() {
+    private checkDynamicSteps(): void {
         if (this.stepsArray.length &gt; this.stepsCachedArray.length) {
             this.dynamicSteps &#x3D; without(this.stepsArray, ...this.stepsCachedArray);
         }
@@ -1153,7 +1153,7 @@ export class WizardHorizontalComponent extends WizardDirective implements OnInit
         }
     }
 
-    private checkHeadingsView() {
+    private checkHeadingsView(): void {
         this.checkHeaderWidth();
         this.checkHeaderPaddings();
         this.getWidthsForCalculations();
@@ -1166,13 +1166,13 @@ export class WizardHorizontalComponent extends WizardDirective implements OnInit
         }
     }
 
-    private checkHeaderWidth() {
+    private checkHeaderWidth(): void {
         if (!this.stepHeaderWidth) {
             this.stepHeaderWidth &#x3D; this.stepHeaders.first?._elementRef?.nativeElement?.getBoundingClientRect().width || 0;
         }
     }
 
-    private getWidthsForCalculations() {
+    private getWidthsForCalculations(): void {
         this.headerContainerWidth &#x3D; this.headerContainer.nativeElement?.getBoundingClientRect().width;
         this.allHeadersWidth &#x3D; this.stepHeaderWidth * this.steps.length;
     }
@@ -1185,15 +1185,15 @@ export class WizardHorizontalComponent extends WizardDirective implements OnInit
         this.isInResponsiveMode &#x3D; !!this.overflownStepsStart.length || !!this.overflownStepsEnd.length;
     }
 
-    private takeLastAddFirst(source: Array&lt;any&gt;, target: Array&lt;any&gt;) {
+    private takeLastAddFirst(source: Array&lt;any&gt;, target: Array&lt;any&gt;): void {
         target.unshift(source.splice(-1, 1)[0]);
     }
 
-    private takeFirstAddLast(source: Array&lt;any&gt;, target: Array&lt;any&gt;) {
+    private takeFirstAddLast(source: Array&lt;any&gt;, target: Array&lt;any&gt;): void {
         target.push(source.splice(0, 1)[0]);
     }
 
-    private onContainerResize(entry: ResizeObserverEntry) {
+    private onContainerResize(entry: ResizeObserverEntry): void {
         this.checkOverflow();
 
         const newWidth &#x3D; entry.contentRect.width;
