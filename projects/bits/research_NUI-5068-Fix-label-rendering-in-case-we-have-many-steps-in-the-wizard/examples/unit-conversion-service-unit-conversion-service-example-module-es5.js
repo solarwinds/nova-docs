@@ -243,13 +243,14 @@
         _classCallCheck(this, UnitConversionServiceExampleModule);
       };
 
+      UnitConversionServiceExampleModule.ɵfac = function UnitConversionServiceExampleModule_Factory(t) {
+        return new (t || UnitConversionServiceExampleModule)();
+      };
+
       UnitConversionServiceExampleModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineNgModule"]({
         type: UnitConversionServiceExampleModule
       });
       UnitConversionServiceExampleModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjector"]({
-        factory: function UnitConversionServiceExampleModule_Factory(t) {
-          return new (t || UnitConversionServiceExampleModule)();
-        },
         providers: [{
           provide: _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["DEMO_PATH_TOKEN"],
           useFactory: function useFactory() {

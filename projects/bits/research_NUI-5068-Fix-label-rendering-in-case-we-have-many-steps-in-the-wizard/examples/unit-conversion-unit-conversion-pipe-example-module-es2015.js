@@ -140,8 +140,9 @@ const routes = [
 ];
 class UnitConversionPipeExampleModule {
 }
+UnitConversionPipeExampleModule.ɵfac = function UnitConversionPipeExampleModule_Factory(t) { return new (t || UnitConversionPipeExampleModule)(); };
 UnitConversionPipeExampleModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineNgModule"]({ type: UnitConversionPipeExampleModule });
-UnitConversionPipeExampleModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineInjector"]({ factory: function UnitConversionPipeExampleModule_Factory(t) { return new (t || UnitConversionPipeExampleModule)(); }, providers: [
+UnitConversionPipeExampleModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineInjector"]({ providers: [
         {
             provide: _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["DEMO_PATH_TOKEN"],
             useFactory: () => __webpack_require__("RLsK"),

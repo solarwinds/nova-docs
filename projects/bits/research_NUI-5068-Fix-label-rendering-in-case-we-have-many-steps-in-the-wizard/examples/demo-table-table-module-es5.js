@@ -3431,13 +3431,14 @@
         _classCallCheck(this, TableModule);
       };
 
+      TableModule.ɵfac = function TableModule_Factory(t) {
+        return new (t || TableModule)();
+      };
+
       TableModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineNgModule"]({
         type: TableModule
       });
       TableModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineInjector"]({
-        factory: function TableModule_Factory(t) {
-          return new (t || TableModule)();
-        },
         providers: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["DatePipe"], {
           provide: _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["DEMO_PATH_TOKEN"],
           useFactory: function useFactory() {

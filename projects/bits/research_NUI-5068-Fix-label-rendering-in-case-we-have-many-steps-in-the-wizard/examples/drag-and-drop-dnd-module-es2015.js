@@ -588,8 +588,9 @@ const routes = [
 ];
 class DndModule {
 }
+DndModule.ɵfac = function DndModule_Factory(t) { return new (t || DndModule)(); };
 DndModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_13__["ɵɵdefineNgModule"]({ type: DndModule });
-DndModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_13__["ɵɵdefineInjector"]({ factory: function DndModule_Factory(t) { return new (t || DndModule)(); }, providers: [
+DndModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_13__["ɵɵdefineInjector"]({ providers: [
         {
             provide: _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["DEMO_PATH_TOKEN"],
             useFactory: () => __webpack_require__("8cFS"),

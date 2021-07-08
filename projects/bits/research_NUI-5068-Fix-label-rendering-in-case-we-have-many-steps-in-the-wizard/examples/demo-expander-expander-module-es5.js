@@ -935,13 +935,14 @@
         _classCallCheck(this, ExpanderModule);
       };
 
+      ExpanderModule.ɵfac = function ExpanderModule_Factory(t) {
+        return new (t || ExpanderModule)();
+      };
+
       ExpanderModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({
         type: ExpanderModule
       });
       ExpanderModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({
-        factory: function ExpanderModule_Factory(t) {
-          return new (t || ExpanderModule)();
-        },
         providers: [{
           provide: _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["DEMO_PATH_TOKEN"],
           useFactory: function useFactory() {

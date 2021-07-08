@@ -2075,13 +2075,14 @@
         _classCallCheck(this, MenuModule);
       };
 
+      MenuModule.ɵfac = function MenuModule_Factory(t) {
+        return new (t || MenuModule)();
+      };
+
       MenuModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({
         type: MenuModule
       });
       MenuModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({
-        factory: function MenuModule_Factory(t) {
-          return new (t || MenuModule)();
-        },
         providers: [{
           provide: _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["DEMO_PATH_TOKEN"],
           useFactory: function useFactory() {
