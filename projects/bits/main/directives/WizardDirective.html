@@ -201,6 +201,9 @@
                                 <li>
                                     <a href="#selected">selected</a>
                                 </li>
+                                <li>
+                                    <a href="#allStepsCompleted">allStepsCompleted</a>
+                                </li>
                             </ul>
                         </td>
                     </tr>
@@ -806,6 +809,28 @@
                     </tr>
             </tbody>
         </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="allStepsCompleted"></a>
+                        <span class="name"><b>allStepsCompleted</b><a href="#allStepsCompleted"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>allStepsCompleted()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="133" class="link-to-prism">src/lib/wizard-v2/wizard.directive.ts:133</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
 </section>
 
     </div>
@@ -944,6 +969,12 @@ export class WizardDirective extends CdkStepper implements OnChanges, AfterConte
         super.ngOnDestroy();
     }
 
+    public get allStepsCompleted(): boolean {
+        const completed: boolean &#x3D; this.steps.toArray().reduce((acc: boolean, step: WizardStepV2Component) &#x3D;&gt; acc &amp;&amp; step.completed, true);
+
+        return completed;
+    }
+
     // Restores the completed wizard to the last step
     private restore(): void {
         this.steps.toArray().forEach(step &#x3D;&gt; {
@@ -955,12 +986,6 @@ export class WizardDirective extends CdkStepper implements OnChanges, AfterConte
         });
 
         this[&quot;_changeDetectorRef&quot;].detectChanges();
-    }
-
-    private get allStepsCompleted(): boolean {
-        const completed: boolean &#x3D; this.steps.toArray().reduce((acc: boolean, step: WizardStepV2Component) &#x3D;&gt; acc &amp;&amp; step.completed, true);
-
-        return completed;
     }
 
     private setIds(): void {

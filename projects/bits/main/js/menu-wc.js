@@ -352,6 +352,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="components/WizardHorizontalComponent.html" data-type="entity-link">WizardHorizontalComponent</a>
                             </li>
                             <li class="link">
+                                <a href="components/WizardOverflowComponent.html" data-type="entity-link">WizardOverflowComponent</a>
+                            </li>
+                            <li class="link">
                                 <a href="components/WizardStepComponent.html" data-type="entity-link">WizardStepComponent</a>
                             </li>
                             <li class="link">
