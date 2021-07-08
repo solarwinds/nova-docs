@@ -30,8 +30,9 @@ const routes = [{
     }];
 class ContentModule {
 }
+ContentModule.ɵfac = function ContentModule_Factory(t) { return new (t || ContentModule)(); };
 ContentModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({ type: ContentModule });
-ContentModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({ factory: function ContentModule_Factory(t) { return new (t || ContentModule)(); }, providers: [
+ContentModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({ providers: [
         {
             provide: _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["DEMO_PATH_TOKEN"],
             useFactory: () => __webpack_require__("kKHq"),

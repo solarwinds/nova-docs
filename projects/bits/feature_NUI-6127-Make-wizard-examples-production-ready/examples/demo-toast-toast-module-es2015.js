@@ -1190,8 +1190,9 @@ const routes = [
 ];
 class ToastModule {
 }
+ToastModule.ɵfac = function ToastModule_Factory(t) { return new (t || ToastModule)(); };
 ToastModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineNgModule"]({ type: ToastModule });
-ToastModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineInjector"]({ factory: function ToastModule_Factory(t) { return new (t || ToastModule)(); }, providers: [
+ToastModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineInjector"]({ providers: [
         {
             provide: _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["DEMO_PATH_TOKEN"],
             useFactory: () => __webpack_require__("l6xF"),

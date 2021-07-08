@@ -106,13 +106,14 @@
         _classCallCheck(this, HighlightModule);
       };
 
+      HighlightModule.ɵfac = function HighlightModule_Factory(t) {
+        return new (t || HighlightModule)();
+      };
+
       HighlightModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineNgModule"]({
         type: HighlightModule
       });
       HighlightModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjector"]({
-        factory: function HighlightModule_Factory(t) {
-          return new (t || HighlightModule)();
-        },
         providers: [{
           provide: _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["DEMO_PATH_TOKEN"],
           useFactory: function useFactory() {

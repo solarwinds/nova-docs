@@ -7,7 +7,7 @@
 
   function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
-  function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+  function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
 
   function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
 
@@ -132,13 +132,14 @@
         _classCallCheck(this, DragDropDemoModule);
       };
 
+      DragDropDemoModule.ɵfac = function DragDropDemoModule_Factory(t) {
+        return new (t || DragDropDemoModule)();
+      };
+
       DragDropDemoModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineNgModule"]({
         type: DragDropDemoModule
       });
       DragDropDemoModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineInjector"]({
-        factory: function DragDropDemoModule_Factory(t) {
-          return new (t || DragDropDemoModule)();
-        },
         providers: [{
           provide: _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["DEMO_PATH_TOKEN"],
           useFactory: function useFactory() {
@@ -880,13 +881,14 @@
         _classCallCheck(this, NuiFileDropExampleModule);
       };
 
+      NuiFileDropExampleModule.ɵfac = function NuiFileDropExampleModule_Factory(t) {
+        return new (t || NuiFileDropExampleModule)();
+      };
+
       NuiFileDropExampleModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineNgModule"]({
         type: NuiFileDropExampleModule
       });
       NuiFileDropExampleModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({
-        factory: function NuiFileDropExampleModule_Factory(t) {
-          return new (t || NuiFileDropExampleModule)();
-        },
         providers: [],
         imports: [[_nova_ui_bits__WEBPACK_IMPORTED_MODULE_0__["NuiCommonModule"]]]
       });

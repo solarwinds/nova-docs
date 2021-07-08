@@ -57,7 +57,7 @@ module.exports = function (done, value) {
 /*!*************************************************************!*\
   !*** ./node_modules/@angular/compiler/fesm2015/compiler.js ***!
   \*************************************************************/
-/*! exports provided: AST, ASTWithName, ASTWithSource, AbsoluteSourceSpan, AotCompiler, AotSummaryResolver, ArrayType, AssertNotNull, AstMemoryEfficientTransformer, AstPath, AstTransformer, AttrAst, Attribute, Binary, BinaryOperator, BinaryOperatorExpr, BindingPipe, BoundDirectivePropertyAst, BoundElementProperty, BoundElementPropertyAst, BoundEventAst, BoundTextAst, BuiltinMethod, BuiltinType, BuiltinTypeName, BuiltinVar, CONTENT_ATTR, CUSTOM_ELEMENTS_SCHEMA, CastExpr, Chain, ClassField, ClassMethod, ClassStmt, CommaExpr, Comment, CompileDirectiveMetadata, CompileMetadataResolver, CompileNgModuleMetadata, CompilePipeMetadata, CompileReflector, CompileShallowModuleMetadata, CompileStylesheetMetadata, CompileSummaryKind, CompileTemplateMetadata, CompiledStylesheet, CompilerConfig, Conditional, ConditionalExpr, ConstantPool, CssSelector, DEFAULT_INTERPOLATION_CONFIG, DYNAMIC_TYPE, DeclareFunctionStmt, DeclareVarStmt, DirectiveAst, DirectiveNormalizer, DirectiveResolver, DomElementSchemaRegistry, EOF, ERROR_COMPONENT_TYPE, Element, ElementAst, ElementSchemaRegistry, EmbeddedTemplateAst, EmitterVisitorContext, EmptyExpr, Expansion, ExpansionCase, Expression, ExpressionBinding, ExpressionStatement, ExpressionType, ExternalExpr, ExternalReference, Extractor, FunctionCall, FunctionExpr, GeneratedFile, HOST_ATTR, HtmlParser, HtmlTagDefinition, I18NHtmlParser, Identifiers, IfStmt, ImplicitReceiver, InstantiateExpr, Interpolation, InterpolationConfig, InvokeFunctionExpr, InvokeMethodExpr, IvyParser, JSDocComment, JitCompiler, JitEvaluator, JitSummaryResolver, KeyedRead, KeyedWrite, LeadingComment, Lexer, LiteralArray, LiteralArrayExpr, LiteralExpr, LiteralMap, LiteralMapExpr, LiteralPrimitive, LocalizedString, MapType, MessageBundle, MethodCall, NAMED_ENTITIES, NGSP_UNICODE, NONE_TYPE, NO_ERRORS_SCHEMA, NgContentAst, NgModuleCompiler, NgModuleResolver, NodeWithI18n, NonNullAssert, NotExpr, NullTemplateVisitor, ParseError, ParseErrorLevel, ParseLocation, ParseSourceFile, ParseSourceSpan, ParseSpan, ParseTreeResult, ParsedEvent, ParsedProperty, ParsedPropertyType, ParsedVariable, Parser, ParserError, PipeResolver, PrefixNot, PropertyRead, PropertyWrite, ProviderAst, ProviderAstType, ProviderMeta, Quote, R3BoundTarget, R3FactoryTarget, R3Identifiers, R3ResolvedDependencyType, R3TargetBinder, ReadKeyExpr, ReadPropExpr, ReadVarExpr, RecursiveAstVisitor, RecursiveTemplateAstVisitor, RecursiveVisitor, ReferenceAst, ResolvedStaticSymbol, ResourceLoader, ReturnStatement, STRING_TYPE, SafeMethodCall, SafePropertyRead, SelectorContext, SelectorListContext, SelectorMatcher, Serializer, SplitInterpolation, Statement, StaticReflector, StaticSymbol, StaticSymbolCache, StaticSymbolResolver, StmtModifier, StyleCompiler, StylesCompileDependency, SummaryResolver, TagContentType, TaggedTemplateExpr, TemplateBindingParseResult, TemplateLiteral, TemplateLiteralElement, TemplateParseError, TemplateParseResult, TemplateParser, Text, TextAst, ThisReceiver, ThrowStmt, TmplAstBoundAttribute, TmplAstBoundEvent, TmplAstBoundText, TmplAstContent, TmplAstElement, TmplAstIcu, TmplAstRecursiveVisitor, TmplAstReference, TmplAstTemplate, TmplAstText, TmplAstTextAttribute, TmplAstVariable, Token, TokenType, TransitiveCompileNgModuleMetadata, TreeError, TryCatchStmt, Type, TypeScriptEmitter, TypeofExpr, Unary, UnaryOperator, UnaryOperatorExpr, UrlResolver, VERSION, VariableAst, VariableBinding, Version, ViewCompiler, WrappedNodeExpr, WriteKeyExpr, WritePropExpr, WriteVarExpr, Xliff, Xliff2, Xmb, XmlParser, Xtb, _ParseAST, analyzeAndValidateNgModules, analyzeFile, analyzeFileForInjectables, analyzeNgModules, collectExternalReferences, compileComponentFromMetadata, compileDeclareComponentFromMetadata, compileDeclareDirectiveFromMetadata, compileDeclarePipeFromMetadata, compileDirectiveFromMetadata, compileFactoryFunction, compileInjectable, compileInjector, compileNgModule, compilePipeFromMetadata, componentFactoryName, computeMsgId, core, createAotCompiler, createAotUrlResolver, createElementCssSelector, createLoweredSymbol, createOfflineCompileUrlResolver, createUrlResolverWithoutPackagePrefix, debugOutputAstAsTypeScript, devOnlyGuardedExpression, findNode, flatten, formattedError, getHtmlTagDefinition, getNsPrefix, getParseErrors, getSafePropertyAccessString, getUrlScheme, hostViewClassName, identifierModuleUrl, identifierName, isEmptyExpression, isFormattedError, isIdentifier, isLoweredSymbol, isNgContainer, isNgContent, isNgTemplate, isQuote, isSyntaxError, jsDocComment, leadingComment, literalMap, makeBindingParser, mergeAnalyzedFiles, mergeNsAndName, ngModuleJitUrl, parseHostBindings, parseTemplate, preserveWhitespacesDefault, publishFacade, r3JitTypeSourceSpan, removeSummaryDuplicates, rendererTypeName, sanitizeIdentifier, sharedStylesheetJitUrl, splitClasses, splitNsName, syntaxError, templateJitUrl, templateSourceUrl, templateVisitAll, toTypeScript, tokenName, tokenReference, typeSourceSpan, unescapeIdentifier, unwrapResolvedMetadata, verifyHostBindings, viewClassName, visitAll */
+/*! exports provided: AST, ASTWithName, ASTWithSource, AbsoluteSourceSpan, AotCompiler, AotSummaryResolver, ArrayType, AssertNotNull, AstMemoryEfficientTransformer, AstPath, AstTransformer, AttrAst, Attribute, Binary, BinaryOperator, BinaryOperatorExpr, BindingPipe, BoundDirectivePropertyAst, BoundElementProperty, BoundElementPropertyAst, BoundEventAst, BoundTextAst, BuiltinMethod, BuiltinType, BuiltinTypeName, BuiltinVar, CONTENT_ATTR, CUSTOM_ELEMENTS_SCHEMA, CastExpr, Chain, ClassField, ClassMethod, ClassStmt, CommaExpr, Comment, CompileDirectiveMetadata, CompileMetadataResolver, CompileNgModuleMetadata, CompilePipeMetadata, CompileReflector, CompileShallowModuleMetadata, CompileStylesheetMetadata, CompileSummaryKind, CompileTemplateMetadata, CompiledStylesheet, CompilerConfig, Conditional, ConditionalExpr, ConstantPool, CssSelector, DEFAULT_INTERPOLATION_CONFIG, DYNAMIC_TYPE, DeclareFunctionStmt, DeclareVarStmt, DirectiveAst, DirectiveNormalizer, DirectiveResolver, DomElementSchemaRegistry, EOF, ERROR_COMPONENT_TYPE, Element, ElementAst, ElementSchemaRegistry, EmbeddedTemplateAst, EmitterVisitorContext, EmptyExpr, Expansion, ExpansionCase, Expression, ExpressionBinding, ExpressionStatement, ExpressionType, ExternalExpr, ExternalReference, Extractor, FunctionCall, FunctionExpr, GeneratedFile, HOST_ATTR, HtmlParser, HtmlTagDefinition, I18NHtmlParser, Identifiers, IfStmt, ImplicitReceiver, InstantiateExpr, Interpolation, InterpolationConfig, InvokeFunctionExpr, InvokeMethodExpr, IvyParser, JSDocComment, JitCompiler, JitEvaluator, JitSummaryResolver, KeyedRead, KeyedWrite, LeadingComment, Lexer, LiteralArray, LiteralArrayExpr, LiteralExpr, LiteralMap, LiteralMapExpr, LiteralPrimitive, LocalizedString, MapType, MessageBundle, MethodCall, NAMED_ENTITIES, NGSP_UNICODE, NONE_TYPE, NO_ERRORS_SCHEMA, NgContentAst, NgModuleCompiler, NgModuleResolver, NodeWithI18n, NonNullAssert, NotExpr, NullTemplateVisitor, ParseError, ParseErrorLevel, ParseLocation, ParseSourceFile, ParseSourceSpan, ParseSpan, ParseTreeResult, ParsedEvent, ParsedProperty, ParsedPropertyType, ParsedVariable, Parser, ParserError, PipeResolver, PrefixNot, PropertyRead, PropertyWrite, ProviderAst, ProviderAstType, ProviderMeta, Quote, R3BoundTarget, R3FactoryTarget, R3Identifiers, R3ResolvedDependencyType, R3TargetBinder, ReadKeyExpr, ReadPropExpr, ReadVarExpr, RecursiveAstVisitor, RecursiveTemplateAstVisitor, RecursiveVisitor, ReferenceAst, ResolvedStaticSymbol, ResourceLoader, ReturnStatement, STRING_TYPE, SafeMethodCall, SafePropertyRead, SelectorContext, SelectorListContext, SelectorMatcher, Serializer, SplitInterpolation, Statement, StaticReflector, StaticSymbol, StaticSymbolCache, StaticSymbolResolver, StmtModifier, StyleCompiler, StylesCompileDependency, SummaryResolver, TagContentType, TaggedTemplateExpr, TemplateBindingParseResult, TemplateLiteral, TemplateLiteralElement, TemplateParseError, TemplateParseResult, TemplateParser, Text, TextAst, ThisReceiver, ThrowStmt, TmplAstBoundAttribute, TmplAstBoundEvent, TmplAstBoundText, TmplAstContent, TmplAstElement, TmplAstIcu, TmplAstRecursiveVisitor, TmplAstReference, TmplAstTemplate, TmplAstText, TmplAstTextAttribute, TmplAstVariable, Token, TokenType, TransitiveCompileNgModuleMetadata, TreeError, TryCatchStmt, Type, TypeScriptEmitter, TypeofExpr, Unary, UnaryOperator, UnaryOperatorExpr, UrlResolver, VERSION, VariableAst, VariableBinding, Version, ViewCompiler, WrappedNodeExpr, WriteKeyExpr, WritePropExpr, WriteVarExpr, Xliff, Xliff2, Xmb, XmlParser, Xtb, _ParseAST, analyzeAndValidateNgModules, analyzeFile, analyzeFileForInjectables, analyzeNgModules, collectExternalReferences, compileComponentFromMetadata, compileDeclareComponentFromMetadata, compileDeclareDirectiveFromMetadata, compileDeclarePipeFromMetadata, compileDirectiveFromMetadata, compileFactoryFunction, compileInjectable, compileInjector, compileNgModule, compilePipeFromMetadata, componentFactoryName, computeMsgId, core, createAotCompiler, createAotUrlResolver, createElementCssSelector, createLoweredSymbol, createOfflineCompileUrlResolver, createUrlResolverWithoutPackagePrefix, debugOutputAstAsTypeScript, devOnlyGuardedExpression, findNode, flatten, formattedError, getHtmlTagDefinition, getMissingNgModuleMetadataErrorData, getNsPrefix, getParseErrors, getSafePropertyAccessString, getUrlScheme, hostViewClassName, identifierModuleUrl, identifierName, isEmptyExpression, isFormattedError, isIdentifier, isLoweredSymbol, isNgContainer, isNgContent, isNgTemplate, isQuote, isSyntaxError, jsDocComment, leadingComment, literalMap, makeBindingParser, mergeAnalyzedFiles, mergeNsAndName, ngModuleJitUrl, parseHostBindings, parseTemplate, preserveWhitespacesDefault, publishFacade, r3JitTypeSourceSpan, removeSummaryDuplicates, rendererTypeName, sanitizeIdentifier, sharedStylesheetJitUrl, splitClasses, splitNsName, syntaxError, templateJitUrl, templateSourceUrl, templateVisitAll, toTypeScript, tokenName, tokenReference, typeSourceSpan, unescapeIdentifier, unwrapResolvedMetadata, verifyHostBindings, viewClassName, visitAll */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -96,7 +96,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClassMethod", function() { return ClassMethod; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClassStmt", function() { return ClassStmt; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CommaExpr", function() { return CommaExpr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Comment", function() { return Comment; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Comment", function() { return Comment$1; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CompileDirectiveMetadata", function() { return CompileDirectiveMetadata; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CompileMetadataResolver", function() { return CompileMetadataResolver; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CompileNgModuleMetadata", function() { return CompileNgModuleMetadata; });
@@ -316,6 +316,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "flatten", function() { return flatten; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "formattedError", function() { return formattedError; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getHtmlTagDefinition", function() { return getHtmlTagDefinition; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getMissingNgModuleMetadataErrorData", function() { return getMissingNgModuleMetadataErrorData; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getNsPrefix", function() { return getNsPrefix; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getParseErrors", function() { return getParseErrors; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getSafePropertyAccessString", function() { return getSafePropertyAccessString; });
@@ -364,7 +365,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "viewClassName", function() { return viewClassName; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "visitAll", function() { return visitAll$1; });
 /**
- * @license Angular v11.2.4
+ * @license Angular v11.2.14
  * (c) 2010-2021 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -4045,10 +4046,6 @@ Identifiers$1.InheritDefinitionFeature = { name: 'ɵɵInheritDefinitionFeature',
 Identifiers$1.CopyDefinitionFeature = { name: 'ɵɵCopyDefinitionFeature', moduleName: CORE$1 };
 Identifiers$1.ProvidersFeature = { name: 'ɵɵProvidersFeature', moduleName: CORE$1 };
 Identifiers$1.listener = { name: 'ɵɵlistener', moduleName: CORE$1 };
-Identifiers$1.getFactoryOf = {
-    name: 'ɵɵgetFactoryOf',
-    moduleName: CORE$1,
-};
 Identifiers$1.getInheritedFactory = {
     name: 'ɵɵgetInheritedFactory',
     moduleName: CORE$1,
@@ -4877,6 +4874,21 @@ function wrapReference(value) {
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
+/**
+ * This is an R3 `Node`-like wrapper for a raw `html.Comment` node. We do not currently
+ * require the implementation of a visitor for Comments as they are only collected at
+ * the top-level of the R3 AST, and only if `Render3ParseOptions['collectCommentNodes']`
+ * is true.
+ */
+class Comment {
+    constructor(value, sourceSpan) {
+        this.value = value;
+        this.sourceSpan = sourceSpan;
+    }
+    visit(_visitor) {
+        throw new Error('visit() not implemented for Comment');
+    }
+}
 class Text {
     constructor(value, sourceSpan) {
         this.value = value;
@@ -6500,7 +6512,6 @@ var R3FactoryDelegateType;
 (function (R3FactoryDelegateType) {
     R3FactoryDelegateType[R3FactoryDelegateType["Class"] = 0] = "Class";
     R3FactoryDelegateType[R3FactoryDelegateType["Function"] = 1] = "Function";
-    R3FactoryDelegateType[R3FactoryDelegateType["Factory"] = 2] = "Factory";
 })(R3FactoryDelegateType || (R3FactoryDelegateType = {}));
 var R3FactoryTarget;
 (function (R3FactoryTarget) {
@@ -6588,19 +6599,7 @@ function compileFactoryFunction(meta) {
         body.push(ifStmt(t, [ctorStmt], [r.set(nonCtorExpr).toStmt()]));
         return r;
     }
-    if (isDelegatedMetadata(meta) && meta.delegateType === R3FactoryDelegateType.Factory) {
-        const delegateFactory = variable(`ɵ${meta.name}_BaseFactory`);
-        const getFactoryOf = importExpr(Identifiers$1.getFactoryOf);
-        if (meta.delegate.isEquivalent(meta.internalType)) {
-            throw new Error(`Illegal state: compiling factory that delegates to itself`);
-        }
-        const delegateFactoryStmt = delegateFactory.set(getFactoryOf.callFn([meta.delegate])).toDeclStmt(INFERRED_TYPE, [
-            StmtModifier.Exported, StmtModifier.Final
-        ]);
-        statements.push(delegateFactoryStmt);
-        retExpr = makeConditionalFactory(delegateFactory.callFn([]));
-    }
-    else if (isDelegatedMetadata(meta)) {
+    if (isDelegatedMetadata(meta)) {
         // This type is created with a delegated factory. If a type parameter is not specified, call
         // the factory instead.
         const delegateArgs = injectDependencies(meta.delegateDeps, meta.injectFn, meta.target === R3FactoryTarget.Pipe);
@@ -7676,24 +7675,6 @@ class R3JitReflector {
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-function mapEntry(key, value) {
-    return { key, value, quoted: false };
-}
-function mapLiteral(obj, quoted = false) {
-    return literalMap(Object.keys(obj).map(key => ({
-        key,
-        quoted,
-        value: obj[key],
-    })));
-}
-
-/**
- * @license
- * Copyright Google LLC All Rights Reserved.
- *
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
- */
 /**
  * Construct an `R3NgModuleDef` for the given `R3NgModuleMetadata`.
  */
@@ -7777,18 +7758,7 @@ function generateSetNgModuleScopeCall(meta) {
     return iifeCall.toStmt();
 }
 function compileInjector(meta) {
-    const result = compileFactoryFunction({
-        name: meta.name,
-        type: meta.type,
-        internalType: meta.internalType,
-        typeArgumentCount: 0,
-        deps: meta.deps,
-        injectFn: Identifiers$1.inject,
-        target: R3FactoryTarget.NgModule,
-    });
-    const definitionMap = {
-        factory: result.factory,
-    };
+    const definitionMap = {};
     if (meta.providers !== null) {
         definitionMap.providers = meta.providers;
     }
@@ -7797,34 +7767,7 @@ function compileInjector(meta) {
     }
     const expression = importExpr(Identifiers$1.defineInjector).callFn([mapToMapExpression(definitionMap)]);
     const type = new ExpressionType(importExpr(Identifiers$1.InjectorDef, [new ExpressionType(meta.type.type)]));
-    return { expression, type, statements: result.statements };
-}
-// TODO(alxhub): integrate this with `compileNgModule`. Currently the two are separate operations.
-function compileNgModuleFromRender2(ctx, ngModule, injectableCompiler) {
-    const className = identifierName(ngModule.type);
-    const rawImports = ngModule.rawImports ? [ngModule.rawImports] : [];
-    const rawExports = ngModule.rawExports ? [ngModule.rawExports] : [];
-    const injectorDefArg = mapLiteral({
-        'factory': injectableCompiler.factoryFor({ type: ngModule.type, symbol: ngModule.type.reference }, ctx),
-        'providers': convertMetaToOutput(ngModule.rawProviders, ctx),
-        'imports': convertMetaToOutput([...rawImports, ...rawExports], ctx),
-    });
-    const injectorDef = importExpr(Identifiers$1.defineInjector).callFn([injectorDefArg]);
-    ctx.statements.push(new ClassStmt(
-    /* name */ className, 
-    /* parent */ null, 
-    /* fields */ [new ClassField(
-        /* name */ 'ɵinj', 
-        /* type */ INFERRED_TYPE, 
-        /* modifiers */ [StmtModifier.Static], 
-        /* initializer */ injectorDef)], 
-    /* getters */ [], 
-    /* constructorMethod */ new ClassMethod(null, [], []), 
-    /* methods */ []));
-}
-function accessExportScope(module) {
-    const selectorScope = new ReadPropExpr(module, 'ɵmod');
-    return new ReadPropExpr(selectorScope, 'exported');
+    return { expression, type };
 }
 function tupleTypeOf(exp) {
     const types = exp.map(ref => typeofExpr(ref.type));
@@ -7859,52 +7802,6 @@ function createPipeType(metadata) {
         typeWithParameters(metadata.type.type, metadata.typeArgumentCount),
         new ExpressionType(new LiteralExpr(metadata.pipeName)),
     ]));
-}
-/**
- * Write a pipe definition to the output context.
- */
-function compilePipeFromRender2(outputCtx, pipe, reflector) {
-    const name = identifierName(pipe.type);
-    if (!name) {
-        return error(`Cannot resolve the name of ${pipe.type}`);
-    }
-    const type = outputCtx.importExpr(pipe.type.reference);
-    const metadata = {
-        name,
-        type: wrapReference(type),
-        internalType: type,
-        pipeName: pipe.name,
-        typeArgumentCount: 0,
-        deps: dependenciesFromGlobalMetadata(pipe.type, outputCtx, reflector),
-        pure: pipe.pure,
-    };
-    const res = compilePipeFromMetadata(metadata);
-    const factoryRes = compileFactoryFunction(Object.assign(Object.assign({}, metadata), { injectFn: Identifiers$1.directiveInject, target: R3FactoryTarget.Pipe }));
-    const definitionField = outputCtx.constantPool.propertyNameOf(3 /* Pipe */);
-    const ngFactoryDefStatement = new ClassStmt(
-    /* name */ name, 
-    /* parent */ null, 
-    /* fields */
-    [new ClassField(
-        /* name */ 'ɵfac', 
-        /* type */ INFERRED_TYPE, 
-        /* modifiers */ [StmtModifier.Static], 
-        /* initializer */ factoryRes.factory)], 
-    /* getters */ [], 
-    /* constructorMethod */ new ClassMethod(null, [], []), 
-    /* methods */ []);
-    const pipeDefStatement = new ClassStmt(
-    /* name */ name, 
-    /* parent */ null, 
-    /* fields */ [new ClassField(
-        /* name */ definitionField, 
-        /* type */ INFERRED_TYPE, 
-        /* modifiers */ [StmtModifier.Static], 
-        /* initializer */ res.expression)], 
-    /* getters */ [], 
-    /* constructorMethod */ new ClassMethod(null, [], []), 
-    /* methods */ []);
-    outputCtx.statements.push(ngFactoryDefStatement, pipeDefStatement);
 }
 
 /**
@@ -9877,6 +9774,34 @@ class ShadowCss {
                 rule.selector.startsWith('@page') || rule.selector.startsWith('@document')) {
                 content = this._scopeSelectors(rule.content, scopeSelector, hostSelector);
             }
+            else if (rule.selector.startsWith('@font-face')) {
+                content = this._stripScopingSelectors(rule.content, scopeSelector, hostSelector);
+            }
+            return new CssRule(selector, content);
+        });
+    }
+    /**
+     * Handle a css text that is within a rule that should not contain scope selectors by simply
+     * removing them! An example of such a rule is `@font-face`.
+     *
+     * `@font-face` rules cannot contain nested selectors. Nor can they be nested under a selector.
+     * Normally this would be a syntax error by the author of the styles. But in some rare cases, such
+     * as importing styles from a library, and applying `:host ::ng-deep` to the imported styles, we
+     * can end up with broken css if the imported styles happen to contain @font-face rules.
+     *
+     * For example:
+     *
+     * ```
+     * :host ::ng-deep {
+     *   import 'some/lib/containing/font-face';
+     * }
+     * ```
+     */
+    _stripScopingSelectors(cssText, scopeSelector, hostSelector) {
+        return processRules(cssText, rule => {
+            const selector = rule.selector.replace(_shadowDeepSelectors, ' ')
+                .replace(_polyfillHostNoCombinatorRe, ' ');
+            const content = this._scopeSelectors(rule.content, scopeSelector, hostSelector);
             return new CssRule(selector, content);
         });
     }
@@ -10181,6 +10106,7 @@ function escapeBlocks(input, charPairs, placeholder) {
  */
 function combineHostContextSelectors(contextSelectors, otherSelectors) {
     const hostMarker = _polyfillHostNoCombinator;
+    _polyfillHostRe.lastIndex = 0; // reset the regex to ensure we get an accurate test
     const otherSelectorsHasHost = _polyfillHostRe.test(otherSelectors);
     // If there are no context selectors then just output a host marker
     if (contextSelectors.length === 0) {
@@ -10435,7 +10361,7 @@ class Element$1 extends NodeWithI18n {
         return visitor.visitElement(this, context);
     }
 }
-class Comment {
+class Comment$1 {
     constructor(value, sourceSpan) {
         this.value = value;
         this.sourceSpan = sourceSpan;
@@ -11523,7 +11449,7 @@ class _TreeBuilder {
         const text = this._advanceIf(TokenType.RAW_TEXT);
         this._advanceIf(TokenType.COMMENT_END);
         const value = text != null ? text.parts[0].trim() : null;
-        this._addToParent(new Comment(value, token.sourceSpan));
+        this._addToParent(new Comment$1(value, token.sourceSpan));
     }
     _consumeExpansion(token) {
         const switchValue = this._advance();
@@ -14319,7 +14245,11 @@ class StylingBuilder {
         if (isEmptyExpression(value)) {
             return null;
         }
-        name = normalizePropName(name);
+        // CSS custom properties are case-sensitive so we shouldn't normalize them.
+        // See: https://www.w3.org/TR/css-variables-1/#defining-variables
+        if (!isCssCustomProperty(name)) {
+            name = hyphenate(name);
+        }
         const { property, hasOverrideFlag, suffix: bindingSuffix } = parseProperty(name);
         suffix = typeof suffix === 'string' && suffix.length !== 0 ? suffix : bindingSuffix;
         const entry = { name: property, suffix: suffix, value, sourceSpan, hasOverrideFlag };
@@ -14343,9 +14273,6 @@ class StylingBuilder {
         const { property, hasOverrideFlag } = parseProperty(name);
         const entry = { name: property, value, sourceSpan, hasOverrideFlag, suffix: null };
         if (isMapBased) {
-            if (this._classMapInput) {
-                throw new Error('[class] and [className] bindings cannot be used on the same element simultaneously');
-            }
             this._classMapInput = entry;
         }
         else {
@@ -14667,8 +14594,12 @@ function getStylePropInterpolationExpression(interpolation) {
             return Identifiers$1.stylePropInterpolateV;
     }
 }
-function normalizePropName(prop) {
-    return hyphenate(prop);
+/**
+ * Checks whether property name is a custom CSS property.
+ * See: https://www.w3.org/TR/css-variables-1
+ */
+function isCssCustomProperty(name) {
+    return name.startsWith('--');
 }
 
 /**
@@ -16215,6 +16146,24 @@ class IvySimpleExpressionChecker extends RecursiveAstVisitor$1 {
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
+function mapEntry(key, value) {
+    return { key, value, quoted: false };
+}
+function mapLiteral(obj, quoted = false) {
+    return literalMap(Object.keys(obj).map(key => ({
+        key,
+        quoted,
+        value: obj[key],
+    })));
+}
+
+/**
+ * @license
+ * Copyright Google LLC All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
 // =================================================================================================
 // =================================================================================================
 // =========== S T O P   -  S T O P   -  S T O P   -  S T O P   -  S T O P   -  S T O P  ===========
@@ -16773,26 +16722,33 @@ const BINDING_DELIMS = {
     EVENT: { start: '(', end: ')' },
 };
 const TEMPLATE_ATTR_PREFIX$2 = '*';
-function htmlAstToRender3Ast(htmlNodes, bindingParser) {
-    const transformer = new HtmlAstToIvyAst(bindingParser);
+function htmlAstToRender3Ast(htmlNodes, bindingParser, options) {
+    const transformer = new HtmlAstToIvyAst(bindingParser, options);
     const ivyNodes = visitAll$1(transformer, htmlNodes);
     // Errors might originate in either the binding parser or the html to ivy transformer
     const allErrors = bindingParser.errors.concat(transformer.errors);
-    return {
+    const result = {
         nodes: ivyNodes,
         errors: allErrors,
         styleUrls: transformer.styleUrls,
         styles: transformer.styles,
-        ngContentSelectors: transformer.ngContentSelectors,
+        ngContentSelectors: transformer.ngContentSelectors
     };
+    if (options.collectCommentNodes) {
+        result.commentNodes = transformer.commentNodes;
+    }
+    return result;
 }
 class HtmlAstToIvyAst {
-    constructor(bindingParser) {
+    constructor(bindingParser, options) {
         this.bindingParser = bindingParser;
+        this.options = options;
         this.errors = [];
         this.styles = [];
         this.styleUrls = [];
         this.ngContentSelectors = [];
+        // This array will be populated if `Render3ParseOptions['collectCommentNodes']` is true
+        this.commentNodes = [];
         this.inI18nBlock = false;
     }
     // HTML visitor
@@ -16961,6 +16917,9 @@ class HtmlAstToIvyAst {
         return null;
     }
     visitComment(comment) {
+        if (this.options.collectCommentNodes) {
+            this.commentNodes.push(new Comment(comment.value || '', comment.sourceSpan));
+        }
         return null;
     }
     // convert view engine `ParsedProperty` to a format suitable for IVY
@@ -17152,7 +17111,7 @@ function isEmptyTextNode(node) {
     return node instanceof Text$3 && node.value.trim().length == 0;
 }
 function isCommentNode(node) {
-    return node instanceof Comment;
+    return node instanceof Comment$1;
 }
 function textContents(node) {
     if (node.children.length !== 1 || !(node.children[0] instanceof Text$3)) {
@@ -19730,7 +19689,7 @@ function parseTemplate(template, templateUrl, options = {}) {
     const parseResult = htmlParser.parse(template, templateUrl, Object.assign(Object.assign({ leadingTriviaChars: LEADING_TRIVIA_CHARS }, options), { tokenizeExpansionForms: true }));
     if (!options.alwaysAttemptHtmlToR3AstConversion && parseResult.errors &&
         parseResult.errors.length > 0) {
-        return {
+        const parsedTemplate = {
             interpolationConfig,
             preserveWhitespaces,
             template,
@@ -19742,6 +19701,10 @@ function parseTemplate(template, templateUrl, options = {}) {
             styles: [],
             ngContentSelectors: []
         };
+        if (options.collectCommentNodes) {
+            parsedTemplate.commentNodes = [];
+        }
+        return parsedTemplate;
     }
     let rootNodes = parseResult.rootNodes;
     // process i18n meta information (scan attributes, generate ids)
@@ -19752,7 +19715,7 @@ function parseTemplate(template, templateUrl, options = {}) {
     const i18nMetaResult = i18nMetaVisitor.visitAllWithErrors(rootNodes);
     if (!options.alwaysAttemptHtmlToR3AstConversion && i18nMetaResult.errors &&
         i18nMetaResult.errors.length > 0) {
-        return {
+        const parsedTemplate = {
             interpolationConfig,
             preserveWhitespaces,
             template,
@@ -19764,6 +19727,10 @@ function parseTemplate(template, templateUrl, options = {}) {
             styles: [],
             ngContentSelectors: []
         };
+        if (options.collectCommentNodes) {
+            parsedTemplate.commentNodes = [];
+        }
+        return parsedTemplate;
     }
     rootNodes = i18nMetaResult.rootNodes;
     if (!preserveWhitespaces) {
@@ -19776,9 +19743,9 @@ function parseTemplate(template, templateUrl, options = {}) {
             rootNodes = visitAll$1(new I18nMetaVisitor(interpolationConfig, /* keepI18nAttrs */ false), rootNodes);
         }
     }
-    const { nodes, errors, styleUrls, styles, ngContentSelectors } = htmlAstToRender3Ast(rootNodes, bindingParser);
+    const { nodes, errors, styleUrls, styles, ngContentSelectors, commentNodes } = htmlAstToRender3Ast(rootNodes, bindingParser, { collectCommentNodes: !!options.collectCommentNodes });
     errors.push(...parseResult.errors, ...i18nMetaResult.errors);
-    return {
+    const parsedTemplate = {
         interpolationConfig,
         preserveWhitespaces,
         errors: errors.length > 0 ? errors : null,
@@ -19790,6 +19757,10 @@ function parseTemplate(template, templateUrl, options = {}) {
         styles,
         ngContentSelectors
     };
+    if (options.collectCommentNodes) {
+        parsedTemplate.commentNodes = commentNodes;
+    }
+    return parsedTemplate;
 }
 const elementRegistry = new DomElementSchemaRegistry();
 /**
@@ -19902,7 +19873,6 @@ function createClosureModeGuard() {
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-const EMPTY_ARRAY = [];
 // This regex matches any binding names that contain the "attr." prefix, e.g. "attr.required"
 // If there is a match, the first matching group will contain the attribute name to bind.
 const ATTR_REGEX = /attr\.([^\]]+)/;
@@ -20100,92 +20070,6 @@ function compileDeclarationList(list, mode) {
             const resolvedList = list.callMethod('map', [importExpr(Identifiers$1.resolveForwardRef)]);
             return fn([], [new ReturnStatement(resolvedList)]);
     }
-}
-/**
- * A wrapper around `compileDirective` which depends on render2 global analysis data as its input
- * instead of the `R3DirectiveMetadata`.
- *
- * `R3DirectiveMetadata` is computed from `CompileDirectiveMetadata` and other statically reflected
- * information.
- */
-function compileDirectiveFromRender2(outputCtx, directive, reflector, bindingParser) {
-    const name = identifierName(directive.type);
-    name || error(`Cannot resolver the name of ${directive.type}`);
-    const definitionField = outputCtx.constantPool.propertyNameOf(1 /* Directive */);
-    const meta = directiveMetadataFromGlobalMetadata(directive, outputCtx, reflector);
-    const res = compileDirectiveFromMetadata(meta, outputCtx.constantPool, bindingParser);
-    const factoryRes = compileFactoryFunction(Object.assign(Object.assign({}, meta), { injectFn: Identifiers$1.directiveInject, target: R3FactoryTarget.Directive }));
-    const ngFactoryDefStatement = new ClassStmt(name, null, [new ClassField('ɵfac', INFERRED_TYPE, [StmtModifier.Static], factoryRes.factory)], [], new ClassMethod(null, [], []), []);
-    const directiveDefStatement = new ClassStmt(name, null, [new ClassField(definitionField, INFERRED_TYPE, [StmtModifier.Static], res.expression)], [], new ClassMethod(null, [], []), []);
-    // Create the partial class to be merged with the actual class.
-    outputCtx.statements.push(ngFactoryDefStatement, directiveDefStatement);
-}
-/**
- * A wrapper around `compileComponent` which depends on render2 global analysis data as its input
- * instead of the `R3DirectiveMetadata`.
- *
- * `R3ComponentMetadata` is computed from `CompileDirectiveMetadata` and other statically reflected
- * information.
- */
-function compileComponentFromRender2(outputCtx, component, render3Ast, reflector, bindingParser, directiveTypeBySel, pipeTypeByName) {
-    const name = identifierName(component.type);
-    name || error(`Cannot resolver the name of ${component.type}`);
-    const definitionField = outputCtx.constantPool.propertyNameOf(2 /* Component */);
-    const summary = component.toSummary();
-    // Compute the R3ComponentMetadata from the CompileDirectiveMetadata
-    const meta = Object.assign(Object.assign({}, directiveMetadataFromGlobalMetadata(component, outputCtx, reflector)), { selector: component.selector, template: { nodes: render3Ast.nodes, ngContentSelectors: render3Ast.ngContentSelectors }, directives: [], pipes: typeMapToExpressionMap(pipeTypeByName, outputCtx), viewQueries: queriesFromGlobalMetadata(component.viewQueries, outputCtx), declarationListEmitMode: 0 /* Direct */, styles: (summary.template && summary.template.styles) || EMPTY_ARRAY, encapsulation: (summary.template && summary.template.encapsulation) || ViewEncapsulation.Emulated, interpolation: DEFAULT_INTERPOLATION_CONFIG, animations: null, viewProviders: component.viewProviders.length > 0 ? new WrappedNodeExpr(component.viewProviders) : null, relativeContextFilePath: '', i18nUseExternalIds: true });
-    const res = compileComponentFromMetadata(meta, outputCtx.constantPool, bindingParser);
-    const factoryRes = compileFactoryFunction(Object.assign(Object.assign({}, meta), { injectFn: Identifiers$1.directiveInject, target: R3FactoryTarget.Directive }));
-    const ngFactoryDefStatement = new ClassStmt(name, null, [new ClassField('ɵfac', INFERRED_TYPE, [StmtModifier.Static], factoryRes.factory)], [], new ClassMethod(null, [], []), []);
-    const componentDefStatement = new ClassStmt(name, null, [new ClassField(definitionField, INFERRED_TYPE, [StmtModifier.Static], res.expression)], [], new ClassMethod(null, [], []), []);
-    // Create the partial class to be merged with the actual class.
-    outputCtx.statements.push(ngFactoryDefStatement, componentDefStatement);
-}
-/**
- * Compute `R3DirectiveMetadata` given `CompileDirectiveMetadata` and a `CompileReflector`.
- */
-function directiveMetadataFromGlobalMetadata(directive, outputCtx, reflector) {
-    // The global-analysis based Ivy mode in ngc is no longer utilized/supported.
-    throw new Error('unsupported');
-}
-/**
- * Convert `CompileQueryMetadata` into `R3QueryMetadata`.
- */
-function queriesFromGlobalMetadata(queries, outputCtx) {
-    return queries.map(query => {
-        let read = null;
-        if (query.read && query.read.identifier) {
-            read = outputCtx.importExpr(query.read.identifier.reference);
-        }
-        return {
-            propertyName: query.propertyName,
-            first: query.first,
-            predicate: selectorsFromGlobalMetadata(query.selectors, outputCtx),
-            descendants: query.descendants,
-            read,
-            emitDistinctChangesOnly: !!query.emitDistinctChangesOnly,
-            static: !!query.static
-        };
-    });
-}
-/**
- * Convert `CompileTokenMetadata` for query selectors into either an expression for a predicate
- * type, or a list of string predicates.
- */
-function selectorsFromGlobalMetadata(selectors, outputCtx) {
-    if (selectors.length > 1 || (selectors.length == 1 && selectors[0].value)) {
-        const selectorStrings = selectors.map(value => value.value);
-        selectorStrings.some(value => !value) &&
-            error('Found a type among the string selectors expected');
-        return outputCtx.constantPool.getConstLiteral(literalArr(selectorStrings.map(value => literal(value))));
-    }
-    if (selectors.length == 1) {
-        const first = selectors[0];
-        if (first.identifier) {
-            return outputCtx.importExpr(first.identifier.reference);
-        }
-    }
-    error('Unexpected query form');
 }
 function prepareQueryParams(query, constantPool) {
     const parameters = [getQueryPredicate(query, constantPool), literal(toQueryFlags(query))];
@@ -20515,11 +20399,6 @@ function metadataAsSummary(meta) {
     };
     // clang-format on
 }
-function typeMapToExpressionMap(map, outputCtx) {
-    // Convert each map entry into another entry where the value is an expression importing the type.
-    const entries = Array.from(map).map(([key, type]) => [key, outputCtx.importExpr(type)]);
-    return new Map(entries);
-}
 const HOST_REG_EXP$1 = /^(?:\[([^\]]+)\])|(?:\(([^\)]+)\))$/;
 function parseHostBindings(host) {
     const attributes = {};
@@ -20668,12 +20547,11 @@ class CompilerFacadeImpl {
             name: facade.name,
             type: wrapReference$1(facade.type),
             internalType: new WrappedNodeExpr(facade.type),
-            deps: convertR3DependencyMetadataArray(facade.deps),
             providers: new WrappedNodeExpr(facade.providers),
             imports: facade.imports.map(i => new WrappedNodeExpr(i)),
         };
         const res = compileInjector(meta);
-        return this.jitExpression(res.expression, angularCoreEnv, sourceMapUrl, res.statements);
+        return this.jitExpression(res.expression, angularCoreEnv, sourceMapUrl, []);
     }
     compileNgModule(angularCoreEnv, sourceMapUrl, facade) {
         const meta = {
@@ -21001,7 +20879,7 @@ function publishFacade(global) {
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-const VERSION$1 = new Version('11.2.4');
+const VERSION$1 = new Version('11.2.14');
 
 /**
  * @license
@@ -21781,7 +21659,7 @@ class _Visitor$2 {
             return;
         }
         const startIndex = this._msgCountAtSectionStart;
-        const significantChildren = directChildren.reduce((count, node) => count + (node instanceof Comment ? 0 : 1), 0);
+        const significantChildren = directChildren.reduce((count, node) => count + (node instanceof Comment$1 ? 0 : 1), 0);
         if (significantChildren == 1) {
             for (let i = this._messages.length - 1; i >= startIndex; i--) {
                 const ast = this._messages[i].nodes;
@@ -21798,10 +21676,10 @@ class _Visitor$2 {
     }
 }
 function _isOpeningComment(n) {
-    return !!(n instanceof Comment && n.value && n.value.startsWith('i18n'));
+    return !!(n instanceof Comment$1 && n.value && n.value.startsWith('i18n'));
 }
 function _isClosingComment(n) {
-    return !!(n instanceof Comment && n.value && n.value === '/i18n');
+    return !!(n instanceof Comment$1 && n.value && n.value === '/i18n');
 }
 function _getI18nAttr(p) {
     return p.attrs.find(attr => attr.name === _I18N_ATTR) || null;
@@ -23077,6 +22955,11 @@ function getHookName(hook) {
  * found in the LICENSE file at https://angular.io/license
  */
 const ERROR_COMPONENT_TYPE = 'ngComponentType';
+const MISSING_NG_MODULE_METADATA_ERROR_DATA = 'ngMissingNgModuleMetadataErrorData';
+function getMissingNgModuleMetadataErrorData(error) {
+    var _a;
+    return (_a = error[MISSING_NG_MODULE_METADATA_ERROR_DATA]) !== null && _a !== void 0 ? _a : null;
+}
 // Design notes:
 // - don't lazily create metadata:
 //   For some metadata, we need to do async work sometimes,
@@ -23544,7 +23427,16 @@ class CompileMetadataResolver {
                     const importedModuleSummary = this.getNgModuleSummary(importedModuleType, alreadyCollecting);
                     alreadyCollecting.delete(importedModuleType);
                     if (!importedModuleSummary) {
-                        this._reportError(syntaxError(`Unexpected ${this._getTypeDescriptor(importedType)} '${stringifyType(importedType)}' imported by the module '${stringifyType(moduleType)}'. Please add a @NgModule annotation.`), moduleType);
+                        const err = syntaxError(`Unexpected ${this._getTypeDescriptor(importedType)} '${stringifyType(importedType)}' imported by the module '${stringifyType(moduleType)}'. Please add a @NgModule annotation.`);
+                        // If possible, record additional context for this error to enable more useful
+                        // diagnostics on the compiler side.
+                        if (importedType instanceof StaticSymbol) {
+                            err[MISSING_NG_MODULE_METADATA_ERROR_DATA] = {
+                                fileName: importedType.filePath,
+                                className: importedType.name,
+                            };
+                        }
+                        this._reportError(err, moduleType);
                         return;
                     }
                     importedModules.push(importedModuleSummary);
@@ -27254,70 +27146,6 @@ class AotCompiler {
         }
         return messageBundle;
     }
-    emitAllPartialModules({ ngModuleByPipeOrDirective, files }, r3Files) {
-        const contextMap = new Map();
-        const getContext = (fileName) => {
-            if (!contextMap.has(fileName)) {
-                contextMap.set(fileName, this._createOutputContext(fileName));
-            }
-            return contextMap.get(fileName);
-        };
-        files.forEach(file => this._compilePartialModule(file.fileName, ngModuleByPipeOrDirective, file.directives, file.pipes, file.ngModules, file.injectables, getContext(file.fileName)));
-        r3Files.forEach(file => this._compileShallowModules(file.fileName, file.shallowModules, getContext(file.fileName)));
-        return Array.from(contextMap.values())
-            .map(context => ({
-            fileName: context.genFilePath,
-            statements: [...context.constantPool.statements, ...context.statements],
-        }));
-    }
-    _compileShallowModules(fileName, shallowModules, context) {
-        shallowModules.forEach(module => compileNgModuleFromRender2(context, module, this._injectableCompiler));
-    }
-    _compilePartialModule(fileName, ngModuleByPipeOrDirective, directives, pipes, ngModules, injectables, context) {
-        const errors = [];
-        const schemaRegistry = new DomElementSchemaRegistry();
-        const hostBindingParser = new BindingParser(this._templateParser.expressionParser, DEFAULT_INTERPOLATION_CONFIG, schemaRegistry, [], errors);
-        // Process all components and directives
-        directives.forEach(directiveType => {
-            const directiveMetadata = this._metadataResolver.getDirectiveMetadata(directiveType);
-            if (directiveMetadata.isComponent) {
-                const module = ngModuleByPipeOrDirective.get(directiveType);
-                module ||
-                    error(`Cannot determine the module for component '${identifierName(directiveMetadata.type)}'`);
-                let htmlAst = directiveMetadata.template.htmlAst;
-                const preserveWhitespaces = directiveMetadata.template.preserveWhitespaces;
-                if (!preserveWhitespaces) {
-                    htmlAst = removeWhitespaces(htmlAst);
-                }
-                const render3Ast = htmlAstToRender3Ast(htmlAst.rootNodes, hostBindingParser);
-                // Map of StaticType by directive selectors
-                const directiveTypeBySel = new Map();
-                const directives = module.transitiveModule.directives.map(dir => this._metadataResolver.getDirectiveSummary(dir.reference));
-                directives.forEach(directive => {
-                    if (directive.selector) {
-                        directiveTypeBySel.set(directive.selector, directive.type.reference);
-                    }
-                });
-                // Map of StaticType by pipe names
-                const pipeTypeByName = new Map();
-                const pipes = module.transitiveModule.pipes.map(pipe => this._metadataResolver.getPipeSummary(pipe.reference));
-                pipes.forEach(pipe => {
-                    pipeTypeByName.set(pipe.name, pipe.type.reference);
-                });
-                compileComponentFromRender2(context, directiveMetadata, render3Ast, this.reflector, hostBindingParser, directiveTypeBySel, pipeTypeByName);
-            }
-            else {
-                compileDirectiveFromRender2(context, directiveMetadata, this.reflector, hostBindingParser);
-            }
-        });
-        pipes.forEach(pipeType => {
-            const pipeMetadata = this._metadataResolver.getPipeMetadata(pipeType);
-            if (pipeMetadata) {
-                compilePipeFromRender2(context, pipeMetadata, this.reflector);
-            }
-        });
-        injectables.forEach(injectable => this._injectableCompiler.compile(injectable, context));
-    }
     emitAllPartialModules2(files) {
         // Using reduce like this is a select many pattern (where map is a select pattern)
         return files.reduce((r, file) => {
@@ -30537,7 +30365,7 @@ function compileDeclareDirectiveFromMetadata(meta) {
  */
 function createDirectiveDefinitionMap(meta) {
     const definitionMap = new DefinitionMap();
-    definitionMap.set('version', literal('11.2.4'));
+    definitionMap.set('version', literal('11.2.14'));
     // e.g. `type: MyDirective`
     definitionMap.set('type', meta.internalType);
     // e.g. `selector: 'some-dir'`
@@ -30758,7 +30586,7 @@ function compileDeclarePipeFromMetadata(meta) {
  */
 function createPipeDefinitionMap(meta) {
     const definitionMap = new DefinitionMap();
-    definitionMap.set('version', literal('11.2.4'));
+    definitionMap.set('version', literal('11.2.14'));
     definitionMap.set('ngImport', importExpr(Identifiers$1.core));
     // e.g. `type: MyPipe`
     definitionMap.set('type', meta.internalType);
@@ -31736,11 +31564,14 @@ module.exports = __webpack_require__(/*! ./_descriptors */ "nh4g") ? function (o
 /*!*********************************************************!*\
   !*** ./node_modules/@angular/localize/fesm2015/init.js ***!
   \*********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: $localize */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "$localize", function() { return $localize; });
 /**
- * @license Angular v11.2.4
+ * @license Angular v11.2.14
  * (c) 2010-2021 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -31792,7 +31623,7 @@ const _global = __globalThis || __global || __window || __self;
  * ```
  *
  * This format is the same as that used for `i18n` markers in Angular templates. See the
- * [Angular 18n guide](guide/i18n#template-translations).
+ * [Angular 18n guide](guide/i18n#mark-text-for-translations).
  *
  * **Naming placeholders**
  *
@@ -31856,9 +31687,13 @@ const _global = __globalThis || __global || __window || __self;
  * the original template literal string without applying any translations to the parts. This
  * version is used during development or where there is no need to translate the localized
  * template literals.
+ *
  * @param messageParts a collection of the static parts of the template string.
  * @param expressions a collection of the values of each placeholder in the template string.
  * @returns the translated string, with the `messageParts` and `expressions` interleaved together.
+ *
+ * @globalApi
+ * @publicApi
  */
 const $localize = function (messageParts, ...expressions) {
     if ($localize.translate) {
@@ -31936,6 +31771,8 @@ function findEndOfBlock(cooked, raw) {
  */
 // Attach $localize to the global context, as a side-effect of this module.
 _global.$localize = $localize;
+
+
 //# sourceMappingURL=init.js.map
 
 
@@ -32891,7 +32728,6 @@ metadata.exp({ hasMetadata: function hasMetadata(metadataKey, target /* , target
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_localize_init__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/localize/init */ "N/DB");
-/* harmony import */ var _angular_localize_init__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_localize_init__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var core_js_es7_reflect__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/es7/reflect */ "FZcq");
 /* harmony import */ var core_js_es7_reflect__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_es7_reflect__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var zone_js_dist_zone__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! zone.js/dist/zone */ "pDpN");
@@ -36344,7 +36180,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ɵcomputeMsgId", function() { return _angular_compiler__WEBPACK_IMPORTED_MODULE_0__["computeMsgId"]; });
 
 /**
- * @license Angular v11.2.4
+ * @license Angular v11.2.14
  * (c) 2010-2021 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -36687,21 +36523,43 @@ function describeMessage(message) {
  */
 
 /**
- * Load translations for `$localize`.
+ * Load translations for use by `$localize`, if doing runtime translation.
  *
- * The given `translations` are processed and added to a lookup based on their `MessageId`.
- * A new translation will overwrite a previous translation if it has the same `MessageId`.
+ * If the `$localize` tagged strings are not going to be replaced at compiled time, it is possible
+ * to load a set of translations that will be applied to the `$localize` tagged strings at runtime,
+ * in the browser.
  *
- * * If a message is generated by the Angular compiler from an `i18n` marker in a template, the
- *   `MessageId` is passed through to the `$localize` call as a custom `MessageId`. The `MessageId`
- *   will match what is extracted into translation files.
+ * Loading a new translation will overwrite a previous translation if it has the same `MessageId`.
  *
- * * If the translation is from a call to `$localize` in application code, and no custom `MessageId`
- *   is provided, then the `MessageId` can be generated by passing the tagged string message-parts
- *   to the `parseMessage()` function (not currently public API).
+ * Note that `$localize` messages are only processed once, when the tagged string is first
+ * encountered, and does not provide dynamic language changing without refreshing the browser.
+ * Loading new translations later in the application life-cycle will not change the translated text
+ * of messages that have already been translated.
  *
+ * The message IDs and translations are in the same format as that rendered to "simple JSON"
+ * translation files when extracting messages. In particular, placeholders in messages are rendered
+ * using the `{$PLACEHOLDER_NAME}` syntax. For example the message from the following template:
+ *
+ * ```html
+ * <div i18n>pre<span>inner-pre<b>bold</b>inner-post</span>post</div>
+ * ```
+ *
+ * would have the following form in the `translations` map:
+ *
+ * ```ts
+ * {
+ *   "2932901491976224757":
+ *      "pre{$START_TAG_SPAN}inner-pre{$START_BOLD_TEXT}bold{$CLOSE_BOLD_TEXT}inner-post{$CLOSE_TAG_SPAN}post"
+ * }
+ * ```
+ *
+ * @param translations A map from message ID to translated message.
+ *
+ * These messages are processed and added to a lookup based on their `MessageId`.
+ *
+ * @see `clearTranslations()` for removing translations loaded using this function.
+ * @see `$localize` for tagging messages as needing to be translated.
  * @publicApi
- *
  */
 function loadTranslations(translations) {
     // Ensure the translate function exists
@@ -36716,7 +36574,12 @@ function loadTranslations(translations) {
     });
 }
 /**
- * Remove all translations for `$localize`.
+ * Remove all translations for `$localize`, if doing runtime translation.
+ *
+ * All translations that had been loading into memory using `loadTranslations()` will be removed.
+ *
+ * @see `loadTranslations()` for loading translations at runtime.
+ * @see `$localize` for tagging messages as needing to be translated.
  *
  * @publicApi
  */

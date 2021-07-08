@@ -64,8 +64,9 @@ const routes = [{
     }];
 class SelectorModule {
 }
+SelectorModule.ɵfac = function SelectorModule_Factory(t) { return new (t || SelectorModule)(); };
 SelectorModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({ type: SelectorModule });
-SelectorModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({ factory: function SelectorModule_Factory(t) { return new (t || SelectorModule)(); }, providers: [
+SelectorModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({ providers: [
         {
             provide: _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["DEMO_PATH_TOKEN"],
             useFactory: () => __webpack_require__("jhUJ"),

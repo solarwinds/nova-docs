@@ -336,8 +336,9 @@ const routes = [
 ];
 class TagModule {
 }
+TagModule.ɵfac = function TagModule_Factory(t) { return new (t || TagModule)(); };
 TagModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdefineNgModule"]({ type: TagModule });
-TagModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdefineInjector"]({ factory: function TagModule_Factory(t) { return new (t || TagModule)(); }, providers: [
+TagModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdefineInjector"]({ providers: [
         {
             provide: _nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["DEMO_PATH_TOKEN"],
             useFactory: () => __webpack_require__("F0ul"),

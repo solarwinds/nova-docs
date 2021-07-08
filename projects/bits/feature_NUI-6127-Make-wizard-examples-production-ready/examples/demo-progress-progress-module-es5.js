@@ -85,13 +85,14 @@
         _classCallCheck(this, ProgressModule);
       };
 
+      ProgressModule.ɵfac = function ProgressModule_Factory(t) {
+        return new (t || ProgressModule)();
+      };
+
       ProgressModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({
         type: ProgressModule
       });
       ProgressModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({
-        factory: function ProgressModule_Factory(t) {
-          return new (t || ProgressModule)();
-        },
         providers: [{
           provide: _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["DEMO_PATH_TOKEN"],
           useFactory: function useFactory() {

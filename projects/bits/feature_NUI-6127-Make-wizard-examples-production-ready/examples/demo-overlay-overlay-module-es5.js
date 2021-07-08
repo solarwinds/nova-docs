@@ -2839,13 +2839,14 @@
         _classCallCheck(this, OverlayModule);
       };
 
+      OverlayModule.ɵfac = function OverlayModule_Factory(t) {
+        return new (t || OverlayModule)();
+      };
+
       OverlayModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineNgModule"]({
         type: OverlayModule
       });
       OverlayModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineInjector"]({
-        factory: function OverlayModule_Factory(t) {
-          return new (t || OverlayModule)();
-        },
         providers: [{
           provide: _nova_ui_bits__WEBPACK_IMPORTED_MODULE_3__["DEMO_PATH_TOKEN"],
           useFactory: function useFactory() {
