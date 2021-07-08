@@ -1,0 +1,40 @@
+@import "nui-framework-palette.less";
+@import '../../assets/styles/variables.less';
+
+:host {
+  display: flex;
+  align-items: center;
+  height: @header-height;
+  padding: 0 @header-gap;
+  background-color: @white;
+  border-bottom: @header-border-width solid @border-color;
+}
+
+.logo {
+  img{
+    width: @header-elements-gap;
+  }
+}
+
+.select-wrapper {
+  margin: 0 @header-elements-gap;
+  width: @select-width;
+}
+
+nav .nui-button {
+  border-radius: 0;
+
+  &:first-child {
+    border-radius: @button-border-radius 0 0 @button-border-radius;
+  }
+
+  &:last-child {
+    border-radius: 0 @button-border-radius @button-border-radius 0;
+  }
+
+  &--active.btn-primary {
+    background-color: @cyan;
+  }
+}
+
+
