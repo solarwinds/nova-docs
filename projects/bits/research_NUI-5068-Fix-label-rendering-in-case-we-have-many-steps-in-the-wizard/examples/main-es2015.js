@@ -21842,8 +21842,8 @@ function WizardHorizontalComponent_div_6_Template(rf, ctx) { if (rf & 1) {
     const step_r33 = ctx.$implicit;
     const i_r34 = ctx.index;
     const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("@stepTransition", ctx_r4._getAnimationDirection(i_r34))("id", ctx_r4._getStepContentId(i_r34));
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵattribute"]("aria-labelledby", ctx_r4._getStepLabelId(i_r34))("aria-expanded", ctx_r4.selectedIndex === i_r34);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("@stepTransition", ctx_r4._getAnimationDirection(i_r34))("id", ctx_r4.stepContentIds[i_r34]);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵattribute"]("aria-labelledby", ctx_r4.labelIds[i_r34])("aria-expanded", ctx_r4.selectedIndex === i_r34);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngTemplateOutlet", step_r33.content);
 } }
@@ -21990,11 +21990,11 @@ class WizardHorizontalComponent extends _wizard_directive__WEBPACK_IMPORTED_MODU
                     // This covers an edge case with the saved wizard state. It can happen that the active element
                     // appears inside the hidden list of items, when the dynamnic steps are re-added.
                     // We make it visible again by retrieving it back to the visible items array
-                    if (this.overflownStepsStart.length && !this.isCurrentStepVisible) {
-                        do {
+                    if (this.overflownStepsStart.length) {
+                        while (!this.isCurrentStepVisible) {
                             this.takeLastAddFirst(this.overflownStepsStart, this.visibleSteps);
                             this.takeLastAddFirst(this.visibleSteps, this.overflownStepsEnd);
-                        } while (!this.isCurrentStepVisible);
+                        }
                     }
                 }
                 else {
