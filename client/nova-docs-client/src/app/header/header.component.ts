@@ -12,15 +12,7 @@ import {Observable} from "rxjs";
 
 export interface IProject {
   branches: Array<IBranch>;
-  featureBranches: Array<IBranch>;
-  hasDevelop: number;
-  hasMain: number;
-  hasMaster: number;
-  latestRelease: IBranch;
   name: string;
-  otherBranches: Array<IBranch>;
-  releaseBranches: Array<IBranch>;
-  displayBranches: Array<IBranch>;
 }
 
 export interface IBranch {
@@ -73,7 +65,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   private setActiveProject(projects: Array<IProject>): void {
     if (!location.hash || location.hash === "#/") {
       this.activeProject = projects[0];
-      this.selectedBranch = this.activeProject.displayBranches[0].name;
+      this.selectedBranch = this.activeProject.branches[0].name;
       this.openDocs(this.activeProject, this.selectedBranch);
     } else {
       const hashArray = location.hash.split('/');

@@ -4,8 +4,8 @@
   </div>
   <div class="select-wrapper">
     <nui-select-v2 #select [value]="selectedBranch">
-      <nui-select-v2-option *ngFor="let branch of activeProject?.displayBranches" [value]="branch.name">
-        {{branch.name}}
+      <nui-select-v2-option *ngFor="let branch of activeProject?.branches; let first = first;" [value]="branch.name">
+        {{branch.name}} {{first ? "(latest)" : ""}}
       </nui-select-v2-option>
     </nui-select-v2>
   </div>

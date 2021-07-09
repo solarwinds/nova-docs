@@ -1,31 +1,17 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {IProject} from "../app/header/header.component";
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AppService {
-  private _iframeUrl: string = '';
+  private PROJECT_URL = "/api/projects";
 
   constructor(private http: HttpClient) { }
 
-  public getIframeUrl() {
-    return this._iframeUrl;
+  public getProjects(): Observable<Array<IProject>> {
+    return this.http.get<IProject[]>(this.PROJECT_URL);
   }
-
-  public setIframeUrl(url: string) {
-    this._iframeUrl = url;
-  }
-
-  getProjects() {
-    return this.http.get<IProject[]>("/api/projects").pipe(
-
-    );
-  }
-
-  getBranches() {
-
-  }
-
 }
