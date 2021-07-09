@@ -26103,7 +26103,8 @@ const _c1 = ["caption", "colgroup, col"];
 /** @dynamic */
 class TableComponent extends _angular_cdk_table__WEBPACK_IMPORTED_MODULE_4__["CdkTable"] {
     constructor(_differs, _changeDetectorRef, _elementRef, role, _dir, tableStateHandlerService, document, platform, viewRepeater, coalescedStyleScheduler, viewportRuler, stickyPositioningListener) {
-        // the parameters that were added to the constructor were optional before v12
+        // The _ViewRepeater and _CoalescedStyleScheduler parameters were optional before Angular v12.
+        // They're included here for compatibility with Angular v12 and later.
         super(_differs, _changeDetectorRef, _elementRef, role, _dir, document, platform, viewRepeater, coalescedStyleScheduler, undefined, undefined);
         this._differs = _differs;
         this._changeDetectorRef = _changeDetectorRef;
@@ -26120,9 +26121,10 @@ class TableComponent extends _angular_cdk_table__WEBPACK_IMPORTED_MODULE_4__["Cd
         this.sortOrderChanged = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
         this.selectionChange = new _angular_core__WEBPACK_IMPORTED_MODULE_6__["EventEmitter"]();
         this.layoutFixed = false;
-        // v12 is changing the order of the last two parameters compared to v11. They deprecated the optionality of the last parameter, but the one before
-        // the last one is still optional, so they switched the order. Us trying to be compatible with both v11 and v12 had to take this path to make sure
-        // both values are assigned properly. These fields are inaccessible / readonly, so that's why we had to perform the `any` cast.
+        // Angular v12 is changing the order of the last two parameters compared to v11.
+        // They deprecated the optionality of the last parameter, but the one before the last one is still optional, so they switched the order.
+        // Us trying to be compatible with both v11 and v12 had to take this path to make sure both values are assigned properly.
+        // These fields are inaccessible / readonly, so that's why we had to perform the `any` cast.
         this._viewportRuler = viewportRuler;
         this._stickyPositioningListener = stickyPositioningListener;
     }

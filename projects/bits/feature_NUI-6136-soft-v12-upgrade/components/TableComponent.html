@@ -763,8 +763,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="132"
-                            class="link-to-prism">src/lib/table/table.component.ts:132</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="134"
+                            class="link-to-prism">src/lib/table/table.component.ts:134</a></div>
                 </td>
             </tr>
 
@@ -804,8 +804,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="152"
-                            class="link-to-prism">src/lib/table/table.component.ts:152</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="154"
+                            class="link-to-prism">src/lib/table/table.component.ts:154</a></div>
                 </td>
             </tr>
 
@@ -1140,15 +1140,17 @@ export class TableComponent&lt;T&gt; extends CdkTable&lt;T&gt; implements OnInit
                 viewportRuler: ViewportRuler,
                 @Optional() @SkipSelf() @Inject(STICKY_POSITIONING_LISTENER) stickyPositioningListener: StickyPositioningListener
     ) {
-        // the parameters that were added to the constructor were optional before v12
+        // The _ViewRepeater and _CoalescedStyleScheduler parameters were optional before Angular v12.
+        // They&#x27;re included here for compatibility with Angular v12 and later.
         super(
             _differs, _changeDetectorRef, _elementRef, role, _dir, document, platform,
             viewRepeater, coalescedStyleScheduler, undefined, undefined
         );
 
-        // v12 is changing the order of the last two parameters compared to v11. They deprecated the optionality of the last parameter, but the one before
-        // the last one is still optional, so they switched the order. Us trying to be compatible with both v11 and v12 had to take this path to make sure
-        // both values are assigned properly. These fields are inaccessible / readonly, so that&#x27;s why we had to perform the &#x60;any&#x60; cast.
+        // Angular v12 is changing the order of the last two parameters compared to v11.
+        // They deprecated the optionality of the last parameter, but the one before the last one is still optional, so they switched the order.
+        // Us trying to be compatible with both v11 and v12 had to take this path to make sure both values are assigned properly.
+        // These fields are inaccessible / readonly, so that&#x27;s why we had to perform the &#x60;any&#x60; cast.
         (this as any)._viewportRuler &#x3D; viewportRuler;
         (this as any)._stickyPositioningListener &#x3D; stickyPositioningListener;
     }
