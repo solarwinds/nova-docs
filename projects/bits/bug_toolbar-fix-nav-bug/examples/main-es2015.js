@@ -31438,9 +31438,7 @@ function ToolbarComponent_nui_menu_4_ng_template_2_Template(rf, ctx) { if (rf & 
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", menuGroup_r17.items);
 } }
 function ToolbarComponent_nui_menu_4_Template(rf, ctx) { if (rf & 1) {
-    const _r22 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "nui-menu", 11, 12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("focusout", function ToolbarComponent_nui_menu_4_Template_nui_menu_focusout_0_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r22); const ctx_r21 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r21.onFocusFromMenuOut($event); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, ToolbarComponent_nui_menu_4_ng_template_2_Template, 2, 2, "ng-template", 3);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
@@ -31583,15 +31581,6 @@ class ToolbarComponent {
     get destructiveIsLastItem() {
         return this.groups.last.items.last.displayStyle !== _public_api__WEBPACK_IMPORTED_MODULE_5__["ToolbarItemDisplayStyle"].destructive;
     }
-    /* TODO: hotfix */
-    onFocusFromMenuOut(event) {
-        const { relatedTarget } = event;
-        const isClickOnActionBtn = relatedTarget && relatedTarget.classList
-            && relatedTarget.classList.contains("nui-menu-item__action");
-        if (!isClickOnActionBtn) {
-            this.menu.popup.isOpen = false;
-        }
-    }
     subscribeToToolbarStepsChanges() {
         this.toolbarButtons.changes
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["takeUntil"])(this.destroy$))
@@ -31604,7 +31593,7 @@ class ToolbarComponent {
                 this.menu.menuToggle.nativeElement.setAttribute("tabindex", tabIndex);
                 this.toolbarItems.push(this.menu.menuToggle.nativeElement);
             }
-            this.keyboardService.setToolbarItems(this.toolbarItems);
+            this.keyboardService.setToolbarItems(this.toolbarItems, this.menu);
         });
     }
 }
@@ -31629,7 +31618,7 @@ ToolbarComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineC
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("keydown", function ToolbarComponent_keydown_HostBindingHandler($event) { return ctx.onKeyDown($event); });
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("nui-toolbar--active", ctx.selectionEnabled)("nui-toolbar--shadowed", ctx.boxShadow);
-    } }, inputs: { selectionEnabled: "selectionEnabled", selectedItems: "selectedItems", boxShadow: "boxShadow" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵProvidersFeature"]([_toolbar_keyboard_service__WEBPACK_IMPORTED_MODULE_9__["ToolbarKeyboardService"]])], ngContentSelectors: _c5, decls: 9, vars: 3, consts: [["nuiResizeObserver", "", 1, "nui-toolbar-content", "d-flex", "flex-row", "align-items-center", "justify-content-between", 3, "containerResize"], ["toolbarContainer", ""], [1, "nui-toolbar-content__dynamic", "d-flex", "flex-row", "flex-shrink-0"], ["ngFor", "", 3, "ngForOf"], ["displayStyle", "action", 3, "title", "focusout", 4, "ngIf"], [1, "nui-toolbar-content__embedded", "d-flex"], [4, "ngIf"], ["class", "flex-shrink-0", "isVertical", "true", "size", "extra-small", 4, "ngIf"], ["nui-button", "", "type", "button", 3, "tabindex", "displayStyle", "ngClass", "icon", "click"], ["toolbarButtons", ""], ["isVertical", "true", "size", "extra-small", 1, "flex-shrink-0"], ["displayStyle", "action", 3, "title", "focusout"], ["menuComponent", ""], [3, "header"], [3, "type", "icon", "click"], [1, "nui-toolbar-content__select", "d-flex", "align-items-center", "flex-shrink-0"]], template: function ToolbarComponent_Template(rf, ctx) { if (rf & 1) {
+    } }, inputs: { selectionEnabled: "selectionEnabled", selectedItems: "selectedItems", boxShadow: "boxShadow" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵProvidersFeature"]([_toolbar_keyboard_service__WEBPACK_IMPORTED_MODULE_9__["ToolbarKeyboardService"]])], ngContentSelectors: _c5, decls: 9, vars: 3, consts: [["nuiResizeObserver", "", 1, "nui-toolbar-content", "d-flex", "flex-row", "align-items-center", "justify-content-between", 3, "containerResize"], ["toolbarContainer", ""], [1, "nui-toolbar-content__dynamic", "d-flex", "flex-row", "flex-shrink-0"], ["ngFor", "", 3, "ngForOf"], ["displayStyle", "action", 3, "title", 4, "ngIf"], [1, "nui-toolbar-content__embedded", "d-flex"], [4, "ngIf"], ["class", "flex-shrink-0", "isVertical", "true", "size", "extra-small", 4, "ngIf"], ["nui-button", "", "type", "button", 3, "tabindex", "displayStyle", "ngClass", "icon", "click"], ["toolbarButtons", ""], ["isVertical", "true", "size", "extra-small", 1, "flex-shrink-0"], ["displayStyle", "action", 3, "title"], ["menuComponent", ""], [3, "header"], [3, "type", "icon", "click"], [1, "nui-toolbar-content__select", "d-flex", "align-items-center", "flex-shrink-0"]], template: function ToolbarComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"](_c4);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0, 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("containerResize", function ToolbarComponent_Template_div_containerResize_0_listener() { return ctx.moveToolbarItems(); });
@@ -32699,14 +32688,18 @@ class ToolbarKeyboardService {
     constructor() {
         this.toolbarItems = [];
     }
-    setToolbarItems(items) {
+    setToolbarItems(items, menu) {
         this.toolbarItems = items;
+        this.menu = menu ? menu : null;
     }
     onKeyDown(event) {
         const { code } = event;
         if (code === _constants__WEBPACK_IMPORTED_MODULE_0__["KEYBOARD_CODE"].ARROW_LEFT || code === _constants__WEBPACK_IMPORTED_MODULE_0__["KEYBOARD_CODE"].ARROW_RIGHT) {
             event.preventDefault();
             this.navigateByArrow(code);
+        }
+        if (code === _constants__WEBPACK_IMPORTED_MODULE_0__["KEYBOARD_CODE"].TAB && (this.menu && this.menu.popup.isOpen)) {
+            this.menu.popup.isOpen = false;
         }
     }
     navigateByArrow(code) {
@@ -32718,7 +32711,13 @@ class ToolbarKeyboardService {
             activeEl === first ? this.focusLast() : this.focusLeft(activeIndex);
         }
         if (code === _constants__WEBPACK_IMPORTED_MODULE_0__["KEYBOARD_CODE"].ARROW_RIGHT && activeIndex !== -1) {
-            activeEl === last ? first.focus() : this.focusRight(activeIndex);
+            activeEl === last ? this.focusFirst() : this.focusRight(activeIndex);
+        }
+    }
+    focusFirst() {
+        this.toolbarItems[0].focus();
+        if (this.menu && this.menu.popup.isOpen) {
+            this.menu.popup.isOpen = false;
         }
     }
     focusLast() {
@@ -32731,6 +32730,9 @@ class ToolbarKeyboardService {
     focusLeft(index) {
         var _a;
         (_a = this.toolbarItems[index - 1]) === null || _a === void 0 ? void 0 : _a.focus();
+        if (this.menu && this.menu.popup.isOpen) {
+            this.menu.popup.isOpen = false;
+        }
     }
 }
 ToolbarKeyboardService.ɵfac = function ToolbarKeyboardService_Factory(t) { return new (t || ToolbarKeyboardService)(); };
