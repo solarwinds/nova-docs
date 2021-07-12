@@ -116,6 +116,8 @@
                 <td class="col-md-3">providers</td>
                 <td class="col-md-9">
                                 <code><a href="../injectables/TableStateHandlerService.html" target="_self" >TableStateHandlerService</a></code>
+                                <code><a href="../interfaces/Repeat.html" target="_self" >{ provide: _VIEW_REPEATER_STRATEGY, useClass: _DisposeViewRepeaterStrategy }</a></code>
+                            <code>{ provide: _COALESCED_STYLE_SCHEDULER, useClass: _CoalescedStyleScheduler }</code>
                 </td>
             </tr>
 
@@ -294,12 +296,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(_differs: <a href="https://angular.io/api/core/IterableDiffers" target="_blank">IterableDiffers</a>, _changeDetectorRef: <a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank">ChangeDetectorRef</a>, _elementRef: <a href="../undefineds/Element.html">ElementRef<any></a>, role: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, _dir: Directionality, tableStateHandlerService: <a href="../injectables/TableStateHandlerService.html">TableStateHandlerService</a>, document: Document, platform: Platform)</code>
+<code>constructor(_differs: <a href="https://angular.io/api/core/IterableDiffers" target="_blank">IterableDiffers</a>, _changeDetectorRef: <a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank">ChangeDetectorRef</a>, _elementRef: <a href="../undefineds/Element.html">ElementRef<any></a>, role: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, _dir: Directionality, tableStateHandlerService: <a href="../injectables/TableStateHandlerService.html">TableStateHandlerService</a>, document: Document, platform: Platform, viewRepeater: <a href="../interfaces/Repeat.html">_ViewRepeater<T | RenderRow<T> | RowContext<T>></a>, coalescedStyleScheduler: _CoalescedStyleScheduler, viewportRuler: ViewportRuler, stickyPositioningListener: StickyPositioningListener)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="87" class="link-to-prism">src/lib/table/table.component.ts:87</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="104" class="link-to-prism">src/lib/table/table.component.ts:104</a></div>
                             </td>
                         </tr>
 
@@ -412,6 +414,54 @@
                                                     </td>
                                                     
                                                 </tr>
+                                                <tr>
+                                                        <td>viewRepeater</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../interfaces/Repeat.html" target="_self" >_ViewRepeater&lt;T | RenderRow&lt;T&gt; | RowContext&lt;T&gt;&gt;</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>coalescedStyleScheduler</td>
+                                                  
+                                                        <td>
+                                                                    <code>_CoalescedStyleScheduler</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>viewportRuler</td>
+                                                  
+                                                        <td>
+                                                                    <code>ViewportRuler</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>stickyPositioningListener</td>
+                                                  
+                                                        <td>
+                                                                    <code>StickyPositioningListener</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
                                         </tbody>
                                     </table>
                             </div>
@@ -439,7 +489,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="66" class="link-to-prism">src/lib/table/table.component.ts:66</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="82" class="link-to-prism">src/lib/table/table.component.ts:82</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -459,7 +509,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/lib/table/table.component.ts:59</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="75" class="link-to-prism">src/lib/table/table.component.ts:75</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -479,7 +529,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/lib/table/table.component.ts:61</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="77" class="link-to-prism">src/lib/table/table.component.ts:77</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -499,7 +549,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/lib/table/table.component.ts:62</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="78" class="link-to-prism">src/lib/table/table.component.ts:78</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -520,7 +570,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="73" class="link-to-prism">src/lib/table/table.component.ts:73</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="90" class="link-to-prism">src/lib/table/table.component.ts:90</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -540,7 +590,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/lib/table/table.component.ts:60</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">src/lib/table/table.component.ts:76</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -561,7 +611,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">src/lib/table/table.component.ts:74</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="91" class="link-to-prism">src/lib/table/table.component.ts:91</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -582,7 +632,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/lib/table/table.component.ts:63</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="79" class="link-to-prism">src/lib/table/table.component.ts:79</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -606,7 +656,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">src/lib/table/table.component.ts:76</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="93" class="link-to-prism">src/lib/table/table.component.ts:93</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -627,7 +677,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="78" class="link-to-prism">src/lib/table/table.component.ts:78</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="95" class="link-to-prism">src/lib/table/table.component.ts:95</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -648,7 +698,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="77" class="link-to-prism">src/lib/table/table.component.ts:77</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="94" class="link-to-prism">src/lib/table/table.component.ts:94</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -674,7 +724,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="86" class="link-to-prism">src/lib/table/table.component.ts:86</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="103" class="link-to-prism">src/lib/table/table.component.ts:103</a></div>
                             </td>
                         </tr>
 
@@ -713,8 +763,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="100"
-                            class="link-to-prism">src/lib/table/table.component.ts:100</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="134"
+                            class="link-to-prism">src/lib/table/table.component.ts:134</a></div>
                 </td>
             </tr>
 
@@ -754,8 +804,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="120"
-                            class="link-to-prism">src/lib/table/table.component.ts:120</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="154"
+                            class="link-to-prism">src/lib/table/table.component.ts:154</a></div>
                 </td>
             </tr>
 
@@ -829,7 +879,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="81" class="link-to-prism">src/lib/table/table.component.ts:81</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="98" class="link-to-prism">src/lib/table/table.component.ts:98</a></div>
                             </td>
                         </tr>
 
@@ -857,7 +907,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="80" class="link-to-prism">src/lib/table/table.component.ts:80</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="97" class="link-to-prism">src/lib/table/table.component.ts:97</a></div>
                             </td>
                         </tr>
 
@@ -895,7 +945,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="87" class="link-to-prism">src/lib/table/table.component.ts:87</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="104" class="link-to-prism">src/lib/table/table.component.ts:104</a></div>
                             </td>
                         </tr>
 
@@ -925,7 +975,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="69" class="link-to-prism">src/lib/table/table.component.ts:69</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="86" class="link-to-prism">src/lib/table/table.component.ts:86</a></div>
                                 </td>
                             </tr>
                     <tr>
@@ -973,9 +1023,18 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Directionality } from &quot;@angular/cdk/bidi&quot;;
+import { _DisposeViewRepeaterStrategy, _VIEW_REPEATER_STRATEGY, _ViewRepeater } from &quot;@angular/cdk/collections&quot;;
 import { Platform } from &quot;@angular/cdk/platform&quot;;
-import { CdkVirtualForOf } from &quot;@angular/cdk/scrolling&quot;;
-import { CdkTable, CDK_TABLE_TEMPLATE } from &quot;@angular/cdk/table&quot;;
+import { CdkVirtualForOf, ViewportRuler } from &quot;@angular/cdk/scrolling&quot;;
+import {
+    _COALESCED_STYLE_SCHEDULER,
+    _CoalescedStyleScheduler,
+    CDK_TABLE_TEMPLATE,
+    CdkTable,
+    STICKY_POSITIONING_LISTENER,
+    StickyPositioningListener,
+} from &quot;@angular/cdk/table&quot;;
+import { RenderRow, RowContext } from &quot;@angular/cdk/table/table&quot;;
 import { DOCUMENT } from &quot;@angular/common&quot;;
 import {
     AfterContentInit,
@@ -983,7 +1042,8 @@ import {
     Attribute,
     ChangeDetectionStrategy,
     ChangeDetectorRef,
-    Component, ContentChild,
+    Component,
+    ContentChild,
     ElementRef,
     EventEmitter,
     HostBinding,
@@ -993,7 +1053,9 @@ import {
     OnChanges,
     OnDestroy,
     OnInit,
+    Optional,
     Output,
+    SkipSelf,
     ViewEncapsulation,
 } from &quot;@angular/core&quot;;
 import _isEqual from &quot;lodash/isEqual&quot;;
@@ -1024,7 +1086,11 @@ interface TableRowData {
         &quot;class&quot;: &quot;nui-table__table&quot;,
     },
     changeDetection: ChangeDetectionStrategy.OnPush,
-    providers: [TableStateHandlerService],
+    providers: [
+        TableStateHandlerService,
+        { provide: _VIEW_REPEATER_STRATEGY, useClass: _DisposeViewRepeaterStrategy },
+        { provide: _COALESCED_STYLE_SCHEDULER, useClass: _CoalescedStyleScheduler },
+    ],
     styleUrls: [&quot;./table.component.less&quot;],
     encapsulation: ViewEncapsulation.None,
 })
@@ -1040,6 +1106,7 @@ export class TableComponent&lt;T&gt; extends CdkTable&lt;T&gt; implements OnInit
     get dataSource(): T[] {
         return super.dataSource as any;
     }
+
     set dataSource(value: T[]) {
         super.dataSource &#x3D; value as any;
     }
@@ -1067,8 +1134,25 @@ export class TableComponent&lt;T&gt; extends CdkTable&lt;T&gt; implements OnInit
                 protected _dir: Directionality,
                 private tableStateHandlerService: TableStateHandlerService,
                 @Inject(DOCUMENT) private document: Document,
-                private platform: Platform) {
-        super(_differs, _changeDetectorRef, _elementRef, role, _dir, document, platform);
+                private platform: Platform,
+                @Inject(_VIEW_REPEATER_STRATEGY) viewRepeater: _ViewRepeater&lt;T, RenderRow&lt;T&gt;, RowContext&lt;T&gt;&gt;,
+                @Inject(_COALESCED_STYLE_SCHEDULER) coalescedStyleScheduler: _CoalescedStyleScheduler,
+                viewportRuler: ViewportRuler,
+                @Optional() @SkipSelf() @Inject(STICKY_POSITIONING_LISTENER) stickyPositioningListener: StickyPositioningListener
+    ) {
+        // The _ViewRepeater and _CoalescedStyleScheduler parameters were optional before Angular v12.
+        // They&#x27;re included here for compatibility with Angular v12 and later.
+        super(
+            _differs, _changeDetectorRef, _elementRef, role, _dir, document, platform,
+            viewRepeater, coalescedStyleScheduler, undefined, undefined
+        );
+
+        // Angular v12 is changing the order of the last two parameters compared to v11.
+        // They deprecated the optionality of the last parameter, but the one before the last one is still optional, so they switched the order.
+        // Us trying to be compatible with both v11 and v12 had to take this path to make sure both values are assigned properly.
+        // These fields are inaccessible / readonly, so that&#x27;s why we had to perform the &#x60;any&#x60; cast.
+        (this as any)._viewportRuler &#x3D; viewportRuler;
+        (this as any)._stickyPositioningListener &#x3D; stickyPositioningListener;
     }
 
     public getFilterComponents(): IFilteringParticipants {

@@ -80,7 +80,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/lib/table/table.component.ts:38</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/lib/table/table.component.ts:50</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -92,9 +92,18 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Directionality } from &quot;@angular/cdk/bidi&quot;;
+import { _DisposeViewRepeaterStrategy, _VIEW_REPEATER_STRATEGY, _ViewRepeater } from &quot;@angular/cdk/collections&quot;;
 import { Platform } from &quot;@angular/cdk/platform&quot;;
-import { CdkVirtualForOf } from &quot;@angular/cdk/scrolling&quot;;
-import { CdkTable, CDK_TABLE_TEMPLATE } from &quot;@angular/cdk/table&quot;;
+import { CdkVirtualForOf, ViewportRuler } from &quot;@angular/cdk/scrolling&quot;;
+import {
+    _COALESCED_STYLE_SCHEDULER,
+    _CoalescedStyleScheduler,
+    CDK_TABLE_TEMPLATE,
+    CdkTable,
+    STICKY_POSITIONING_LISTENER,
+    StickyPositioningListener,
+} from &quot;@angular/cdk/table&quot;;
+import { RenderRow, RowContext } from &quot;@angular/cdk/table/table&quot;;
 import { DOCUMENT } from &quot;@angular/common&quot;;
 import {
     AfterContentInit,
@@ -102,7 +111,8 @@ import {
     Attribute,
     ChangeDetectionStrategy,
     ChangeDetectorRef,
-    Component, ContentChild,
+    Component,
+    ContentChild,
     ElementRef,
     EventEmitter,
     HostBinding,
@@ -112,7 +122,9 @@ import {
     OnChanges,
     OnDestroy,
     OnInit,
+    Optional,
     Output,
+    SkipSelf,
     ViewEncapsulation,
 } from &quot;@angular/core&quot;;
 import _isEqual from &quot;lodash/isEqual&quot;;
@@ -143,7 +155,11 @@ interface TableRowData {
         &quot;class&quot;: &quot;nui-table__table&quot;,
     },
     changeDetection: ChangeDetectionStrategy.OnPush,
-    providers: [TableStateHandlerService],
+    providers: [
+        TableStateHandlerService,
+        { provide: _VIEW_REPEATER_STRATEGY, useClass: _DisposeViewRepeaterStrategy },
+        { provide: _COALESCED_STYLE_SCHEDULER, useClass: _CoalescedStyleScheduler },
+    ],
     styleUrls: [&quot;./table.component.less&quot;],
     encapsulation: ViewEncapsulation.None,
 })
@@ -159,6 +175,7 @@ export class TableComponent&lt;T&gt; extends CdkTable&lt;T&gt; implements OnInit
     get dataSource(): T[] {
         return super.dataSource as any;
     }
+
     set dataSource(value: T[]) {
         super.dataSource &#x3D; value as any;
     }
@@ -186,8 +203,25 @@ export class TableComponent&lt;T&gt; extends CdkTable&lt;T&gt; implements OnInit
                 protected _dir: Directionality,
                 private tableStateHandlerService: TableStateHandlerService,
                 @Inject(DOCUMENT) private document: Document,
-                private platform: Platform) {
-        super(_differs, _changeDetectorRef, _elementRef, role, _dir, document, platform);
+                private platform: Platform,
+                @Inject(_VIEW_REPEATER_STRATEGY) viewRepeater: _ViewRepeater&lt;T, RenderRow&lt;T&gt;, RowContext&lt;T&gt;&gt;,
+                @Inject(_COALESCED_STYLE_SCHEDULER) coalescedStyleScheduler: _CoalescedStyleScheduler,
+                viewportRuler: ViewportRuler,
+                @Optional() @SkipSelf() @Inject(STICKY_POSITIONING_LISTENER) stickyPositioningListener: StickyPositioningListener
+    ) {
+        // The _ViewRepeater and _CoalescedStyleScheduler parameters were optional before Angular v12.
+        // They&#x27;re included here for compatibility with Angular v12 and later.
+        super(
+            _differs, _changeDetectorRef, _elementRef, role, _dir, document, platform,
+            viewRepeater, coalescedStyleScheduler, undefined, undefined
+        );
+
+        // Angular v12 is changing the order of the last two parameters compared to v11.
+        // They deprecated the optionality of the last parameter, but the one before the last one is still optional, so they switched the order.
+        // Us trying to be compatible with both v11 and v12 had to take this path to make sure both values are assigned properly.
+        // These fields are inaccessible / readonly, so that&#x27;s why we had to perform the &#x60;any&#x60; cast.
+        (this as any)._viewportRuler &#x3D; viewportRuler;
+        (this as any)._stickyPositioningListener &#x3D; stickyPositioningListener;
     }
 
     public getFilterComponents(): IFilteringParticipants {
