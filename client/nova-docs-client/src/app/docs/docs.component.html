@@ -1,1 +1,1 @@
-<iframe [src]="safeUrl" #iframe (load)="updateHash()"></iframe>
+<iframe [src]="url | safe" #iframe (load)="updateHash()"></iframe>

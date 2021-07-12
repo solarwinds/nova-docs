@@ -17,6 +17,7 @@ app.set('view engine', 'hbs');
 app.use((req, res, next) => {
     const corsWhitelist = [
         'http://run.plnkr.co',
+        'http://localhost:4200',
     ];
     if (corsWhitelist.indexOf(req.headers.origin) !== -1) {
         res.header('Access-Control-Allow-Origin', req.headers.origin);

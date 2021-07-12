@@ -1,27 +1,23 @@
-import {Component, ElementRef, Input, OnChanges, SimpleChanges, ViewChild} from '@angular/core';
-import {DomSanitizer, SafeUrl} from "@angular/platform-browser";
+import {ChangeDetectionStrategy, Component, ElementRef, Input, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'nui-docs',
   templateUrl: './docs.component.html',
-  styleUrls: ['./docs.component.less']
+  styleUrls: ['./docs.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DocsComponent implements OnChanges {
-  public safeUrl: SafeUrl = "" as SafeUrl;
+export class DocsComponent {
 
-  @ViewChild("iframe") private iframe?: ElementRef
+  @ViewChild("iframe") private iframe: ElementRef;
 
   @Input() public url: string = "";
 
-  constructor(public sanitizer: DomSanitizer) { }
-
-  public ngOnChanges(changes: SimpleChanges): void {
-    if(changes.url && !changes.firstChange) {
-      this.safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.url);
-    }
-  }
+  constructor() {}
 
   public updateHash(): void {
-    window.location.href = `#${this.iframe?.nativeElement.contentWindow.location.href.replace(window.location.origin, '')}`;
+    const iframeCopy = {...this.iframe}
+    const iframeLocation = iframeCopy.nativeElement.contentWindow.location;
+
+    window.location.href = `#${iframeLocation.href?.replace(iframeLocation.origin, '')}`;
   }
 }

@@ -33,6 +33,10 @@
                 "./node_modules/@nova-ui/bits/sdk/less"
               ]
             },
+            "allowedCommonJsDependencies": [
+              "lodash",
+              "@nova-ui/bits"
+            ],
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": [

@@ -1,15 +1,26 @@
 import { TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { Component } from "@angular/core";
 
-describe('AppComponent', () => {
+@Component({
+  selector: 'nui-header',
+  template: ''
+})
+class HeaderStubComponent {}
+
+@Component({
+  selector: 'nui-docs',
+  template: ''
+})
+class DocsStubComponent {}
+
+describe('AppComponent >', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
       declarations: [
-        AppComponent
+        AppComponent,
+        HeaderStubComponent,
+        DocsStubComponent,
       ],
     }).compileComponents();
   });
@@ -20,16 +31,11 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'nova-docs-client'`, () => {
+  it('should assign url', () => {
     const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('nova-docs-client');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('nova-docs-client app is running!');
+    const component = fixture.componentInstance;
+    const url = "http://example.com"
+    component.setIframeUrl(url);
+    expect(expect(component.url).toBe(url));
   });
 });

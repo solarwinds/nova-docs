@@ -4,20 +4,23 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { DocsComponent } from './docs/docs.component';
-import {NuiButtonModule, NuiSelectV2Module} from "@nova-ui/bits";
+import {NuiButtonModule, NuiSelectV2Module, NuiToastModule} from "@nova-ui/bits";
 import {HttpClientModule} from "@angular/common/http";
+import {SafePipe} from "../pipes/safe.pipe";
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    DocsComponent
+    DocsComponent,
+    SafePipe,
   ],
   imports: [
     BrowserModule,
     NuiSelectV2Module,
     NuiButtonModule,
     HttpClientModule,
+    NuiToastModule,
   ],
   providers: [
     {provide: TRANSLATIONS_FORMAT, useValue: "xlf"},
