@@ -125,8 +125,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="16"
-                            class="link-to-prism">src/lib/toolbar/toolbar-keyboard.service.ts:16</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="15"
+                            class="link-to-prism">src/lib/toolbar/toolbar-keyboard.service.ts:15</a></div>
                 </td>
             </tr>
 
@@ -197,8 +197,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="11"
-                            class="link-to-prism">src/lib/toolbar/toolbar-keyboard.service.ts:11</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="10"
+                            class="link-to-prism">src/lib/toolbar/toolbar-keyboard.service.ts:10</a></div>
                 </td>
             </tr>
 
@@ -270,12 +270,11 @@ import { MenuComponent } from &quot;../menu&quot;;
 @Injectable()
 export class ToolbarKeyboardService {
     private toolbarItems: HTMLElement[] &#x3D; [];
-
-    private menu: MenuComponent | null;
+    private menu: MenuComponent | undefined;
 
     public setToolbarItems(items: HTMLElement[], menu?: MenuComponent): void {
         this.toolbarItems &#x3D; items;
-        this.menu &#x3D; menu ? menu : null;
+        this.menu &#x3D; menu;
     }
 
     public onKeyDown(event: KeyboardEvent): void {
@@ -286,8 +285,8 @@ export class ToolbarKeyboardService {
             this.navigateByArrow(code);
         }
 
-        if (code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.TAB &amp;&amp; (this.menu &amp;&amp; this.menu.popup.isOpen)) {
-            this.menu.popup.isOpen &#x3D; false;
+        if (code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.TAB) {
+            this.closeMenuIfOpened();
         }
     }
 
@@ -308,10 +307,7 @@ export class ToolbarKeyboardService {
 
     private focusFirst(): void {
         this.toolbarItems[0].focus();
-
-        if (this.menu &amp;&amp; this.menu.popup.isOpen) {
-            this.menu.popup.isOpen &#x3D; false;
-        }
+        this.closeMenuIfOpened();
     }
 
     private focusLast(): void {
@@ -324,8 +320,11 @@ export class ToolbarKeyboardService {
 
     private focusLeft(index: number) {
         this.toolbarItems[index - 1]?.focus();
+        this.closeMenuIfOpened();
+    }
 
-        if (this.menu &amp;&amp; this.menu.popup.isOpen) {
+    private closeMenuIfOpened() {
+        if (this.menu &amp;&amp; this.menu?.popup?.isOpen) {
             this.menu.popup.isOpen &#x3D; false;
         }
     }

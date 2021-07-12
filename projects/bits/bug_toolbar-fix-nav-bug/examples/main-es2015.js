@@ -32690,7 +32690,7 @@ class ToolbarKeyboardService {
     }
     setToolbarItems(items, menu) {
         this.toolbarItems = items;
-        this.menu = menu ? menu : null;
+        this.menu = menu;
     }
     onKeyDown(event) {
         const { code } = event;
@@ -32698,8 +32698,8 @@ class ToolbarKeyboardService {
             event.preventDefault();
             this.navigateByArrow(code);
         }
-        if (code === _constants__WEBPACK_IMPORTED_MODULE_0__["KEYBOARD_CODE"].TAB && (this.menu && this.menu.popup.isOpen)) {
-            this.menu.popup.isOpen = false;
+        if (code === _constants__WEBPACK_IMPORTED_MODULE_0__["KEYBOARD_CODE"].TAB) {
+            this.closeMenuIfOpened();
         }
     }
     navigateByArrow(code) {
@@ -32716,9 +32716,7 @@ class ToolbarKeyboardService {
     }
     focusFirst() {
         this.toolbarItems[0].focus();
-        if (this.menu && this.menu.popup.isOpen) {
-            this.menu.popup.isOpen = false;
-        }
+        this.closeMenuIfOpened();
     }
     focusLast() {
         this.toolbarItems[this.toolbarItems.length - 1].focus();
@@ -32730,7 +32728,11 @@ class ToolbarKeyboardService {
     focusLeft(index) {
         var _a;
         (_a = this.toolbarItems[index - 1]) === null || _a === void 0 ? void 0 : _a.focus();
-        if (this.menu && this.menu.popup.isOpen) {
+        this.closeMenuIfOpened();
+    }
+    closeMenuIfOpened() {
+        var _a, _b;
+        if (this.menu && ((_b = (_a = this.menu) === null || _a === void 0 ? void 0 : _a.popup) === null || _b === void 0 ? void 0 : _b.isOpen)) {
             this.menu.popup.isOpen = false;
         }
     }
