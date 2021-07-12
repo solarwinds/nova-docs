@@ -24,13 +24,17 @@ router.get('/projects', function (req, res) {
         }).map(branch => { return {project: project, name: branch}; });
     }
 
+    function getReleaseVersion(releaseBranch) {
+        return Math.floor(+releaseBranch.name.slice(releaseBranch.name.indexOf('v') + 1 , releaseBranch.name.indexOf('x') - 1));
+    }
+
     function getReleaseBranches(project, branches) {
         const releaseBranches = getBranchInfo(project, branches, ["release"]);
         return (releaseBranches === undefined || releaseBranches.length === 0) ?
             [] :
             releaseBranches.reverse().sort(function (a, b) {
-                const releaseVersionA = Math.floor(+a.name.slice(a.name.indexOf('v') + 1 , a.name.indexOf('x') - 1));
-                const releaseVersionB = Math.floor(+b.name.slice(b.name.indexOf('v') + 1 , b.name.indexOf('x') - 1));
+                const releaseVersionA = getReleaseVersion(a);
+                const releaseVersionB = getReleaseVersion(b);
 
                 if (releaseVersionA > releaseVersionB) {
                     return -1;

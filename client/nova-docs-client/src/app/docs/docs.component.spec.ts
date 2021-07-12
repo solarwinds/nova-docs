@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DocsComponent } from './docs.component';
+import {SafePipe} from "../../pipes/safe.pipe";
 
 describe('DocsComponent', () => {
   let component: DocsComponent;
@@ -8,7 +9,7 @@ describe('DocsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DocsComponent ]
+      declarations: [ DocsComponent, SafePipe ],
     })
     .compileComponents();
   });
