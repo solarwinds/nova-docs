@@ -31855,7 +31855,7 @@ function ToolbarComponent_nui_menu_4_ng_template_2_Template(rf, ctx) { if (rf & 
 function ToolbarComponent_nui_menu_4_Template(rf, ctx) { if (rf & 1) {
     const _r22 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "nui-menu", 11, 12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("focusout", function ToolbarComponent_nui_menu_4_Template_nui_menu_focusout_0_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r22); const ctx_r21 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r21.onFocusFromMenuOut($event); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("focusout", function ToolbarComponent_nui_menu_4_Template_nui_menu_focusout_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r22); const _r15 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](1); return _r15.popup.isOpen = false; });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, ToolbarComponent_nui_menu_4_ng_template_2_Template, 2, 2, "ng-template", 3);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
@@ -31997,15 +31997,6 @@ class ToolbarComponent {
     }
     get destructiveIsLastItem() {
         return this.groups.last.items.last.displayStyle !== _public_api__WEBPACK_IMPORTED_MODULE_5__["ToolbarItemDisplayStyle"].destructive;
-    }
-    /* TODO: hotfix */
-    onFocusFromMenuOut(event) {
-        const { relatedTarget } = event;
-        const isClickOnActionBtn = relatedTarget && relatedTarget.classList
-            && relatedTarget.classList.contains("nui-menu-item__action");
-        if (!isClickOnActionBtn) {
-            this.menu.popup.isOpen = false;
-        }
     }
     subscribeToToolbarStepsChanges() {
         this.toolbarButtons.changes
