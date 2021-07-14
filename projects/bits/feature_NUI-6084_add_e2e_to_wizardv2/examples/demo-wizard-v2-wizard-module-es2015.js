@@ -609,7 +609,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!--Horizontal Wizard-->\n<div class=\"container\">\n    <nui-wizard-horizontal id=\"nui-wizard-v2-horizontal\">\n\n        <!--Step 1-->\n        <nui-wizard-step-v2 label=\"Step1\">\n            Step 1\n\n            <ng-template nuiWizardStepFooter>\n                <ng-container *ngTemplateOutlet=\"wizardNext\"></ng-container>\n            </ng-template>\n        </nui-wizard-step-v2>\n\n        <!--Step 2-->\n        <nui-wizard-step-v2 label=\"Step2\">\n            Step 2\n\n            <ng-template nuiWizardStepFooter>\n                <ng-container *ngTemplateOutlet=\"wizardPrevious\"></ng-container>\n                <ng-container *ngTemplateOutlet=\"wizardNext\"></ng-container>\n            </ng-template>\n        </nui-wizard-step-v2>\n\n        <!--Step 3-->\n        <nui-wizard-step-v2 label=\"Step3\">\n            Step 3\n            <ng-template nuiWizardStepFooter>\n                <ng-container *ngTemplateOutlet=\"wizardPrevious\"></ng-container>\n                <ng-container *ngTemplateOutlet=\"wizardNext\"></ng-container>\n            </ng-template>\n        </nui-wizard-step-v2>\n\n        <ng-template #wizardPrevious>\n            <button type=\"button\"\n                    class=\"previous\"\n                    nuiWizardPrevious\n                    nui-button\n                    icon=\"caret-left\">\n                Back\n            </button>\n        </ng-template>\n\n        <ng-template #wizardNext>\n            <button nuiWizardNext\n                    class=\"next\"\n                    type=\"button\"\n                    nui-button\n                    displayStyle=\"primary\"\n                    icon=\"caret-right\"\n                    iconRight=\"true\"\n            >Next</button>\n        </ng-template>\n    </nui-wizard-horizontal>\n</div>\n\n<!--Dialog Wizard-->\n<div class=\"container\">\n    <ng-template #dialogWizard>\n        <div nuiResizeObserver #dialog>\n            <div nui-busy [busy]=\"busy\" id=\"nui-busy\">\n                <div class=\"busy-content\">\n                    <nui-dialog-header i18n-title title=\"Wizard dialog\" (closed)=\"closeDialog()\"></nui-dialog-header>\n                    <div class=\"dialog-body compact-mode\">\n                        <nui-wizard-horizontal #wizard\n                                            id=\"nui-wizard-v2-horizontal-dialog\"\n                                           [state]=\"state\"\n                                           (finished)=\"saveState($event)\"\n                        >\n\n                            <!--  This defines the first step of the wizard -->\n                            <nui-wizard-step-v2 label=\"Completed\">\n\n                                <!-- the current step content -->\n                                <div class=\"step-content-wrapper\">\n                                    <span i18n>This is the first step of our horizontal wizard</span>.\n                                </div>\n                                <!-- content of the footer -->\n                                <ng-template nuiWizardStepFooter>\n                                    <button class=\"busy-btn\"\n                                        type=\"button\"\n                                        nui-button\n                                        (click)=\"toggleBusy()\">\n                                            Toggle busy\n                                    </button>\n                                    <ng-container *ngTemplateOutlet=\"wizardCancelDialog\"></ng-container>\n                                    <ng-container *ngTemplateOutlet=\"wizardNextDialog\"></ng-container>\n                                </ng-template>\n                            </nui-wizard-step-v2>\n\n                            <nui-wizard-step-v2 label=\"Active\">\n\n                                <div class=\"step-content-wrapper\">\n                                    <span i18n>This is the second step of our horizontal wizard</span>.\n                                </div>\n                                <ng-template nuiWizardStepFooter>\n                                    <ng-container *ngTemplateOutlet=\"wizardCancelDialog\"></ng-container>\n                                    <ng-container *ngTemplateOutlet=\"wizardPreviousDialog\"></ng-container>\n                                    <ng-container *ngTemplateOutlet=\"wizardNextDialog\"></ng-container>\n                                </ng-template>\n                            </nui-wizard-step-v2>\n\n                            <nui-wizard-step-v2 label=\"Not Visited\">\n\n                                <div class=\"step-content-wrapper\">\n                                    <span i18n>This is the third step of our horizontal wizard</span>\n                                </div>\n\n                                <ng-template nuiWizardStepFooter>\n                                    <ng-container *ngTemplateOutlet=\"wizardCancelDialog\"></ng-container>\n                                    <ng-container *ngTemplateOutlet=\"wizardPreviousDialog\"></ng-container>\n                                    <ng-container *ngTemplateOutlet=\"wizardNextDialog\"></ng-container>\n                                </ng-template>\n                            </nui-wizard-step-v2>\n\n                            <nui-wizard-step-v2 label=\"Summary\" #finalStep>\n                                <div class=\"step-content-wrapper\">\n                                    <span i18n>We finally reached our last step</span>\n                                </div>\n                                <ng-template nuiWizardStepFooter>\n                                    <ng-container *ngTemplateOutlet=\"wizardCancelDialog\"></ng-container>\n                                    <ng-container *ngTemplateOutlet=\"wizardPreviousDialog\"></ng-container>\n                                    <button class=\"complete\"\n                                        type=\"button\"\n                                        nui-button\n                                        displayStyle=\"primary\"\n                                        (click)=\"completeWizard(finalStep)\"\n                                    >\n                                        Finish\n                                    </button>\n                                </ng-template>\n                            </nui-wizard-step-v2>\n\n                            <ng-template #wizardCancelDialog>\n                                <button class=\"cancel\"\n                                        type=\"button\"\n                                        displayStyle=\"action\"\n                                        nui-button\n                                        (click)=\"openConfirmationOverlay(overlay, wizard)\">\n                                    Cancel\n                                </button>\n                            </ng-template>\n\n                            <ng-template #wizardPreviousDialog>\n                                <button type=\"button\"\n                                    nuiWizardPrevious\n                                    nui-button\n                                    icon=\"caret-left\">\n                                    Back\n                                </button>\n                            </ng-template>\n\n                            <ng-template #wizardNextDialog>\n                                <button nuiWizardNext\n                                        class=\"next\"\n                                        type=\"button\"\n                                        nui-button\n                                        displayStyle=\"primary\"\n                                        icon=\"caret-right\"\n                                        iconRight=\"true\"\n                                >Next</button>\n                            </ng-template>\n                        </nui-wizard-horizontal>\n                    </div>\n                </div>\n                <nui-spinner size=\"large\" i18n-message message=\"Data is loading from remote server...\"></nui-spinner>\n            </div>\n        </div>\n        <nui-overlay #overlay [toggleReference]=\"dialog\">\n            <div class=\"overlay-class\">\n                <div class=\"overlay-content\">\n                    <div class=\"header\">\n                        Really want to leave?\n                    </div>\n                    <div class=\"body\">\n                        <p i18n>\n                            There is at least one accomplished step within this wizard.\n                            Are you sure you want to leave?\n                        </p>\n                    </div>\n                    <div class=\"footer\">\n                        <button nui-button displayStyle=\"action\" type=\"button\" (click)=\"overlay.hide()\">Cancel</button>\n                        <button nui-button type=\"button\" (click)=\"overlay.hide(); closeDialog()\">Leave</button>\n                    </div>\n                </div>\n            </div>\n        </nui-overlay>\n    </ng-template>\n\n    <button id=\"nui-wizard-dialog-trigger\"\n        nui-button\n        type=\"button\"\n        (click)=\"openDialog(dialogWizard)\"\n        i18n>\n        Open dialog wizard\n    </button>\n</div>\n\n<!--Wizard Dynamic Step-->\n<div class=\"container\">\n    <nui-wizard-horizontal id=\"nui-wizard-horizontal-dynamic\">\n        <!--Static step-->\n        <nui-wizard-step-v2 i18n-label label=\"Normal step\">\n            <div class=\"p-5\">\n                <p i18n>Hi! You can add next step dynamically</p>\n\n                <button (click)=\"addStep(dynamicTemplate2)\" class=\"add\" nui-button type=\"button\">\n                    Add dynamic step w/template\n                </button>\n            </div>\n\n            <ng-template nuiWizardStepFooter>\n                <ng-container *ngTemplateOutlet=\"wizardNextDynamic\"></ng-container>\n            </ng-template>\n        </nui-wizard-step-v2>\n\n        <ng-container *ngTemplateOutlet=\"dynamicStepWithTemplate\" ngProjectAs=\"nui-wizard-step-v2\"></ng-container>\n        <ng-template #dynamicStepWithTemplate>\n            <nui-wizard-step-v2>\n                <ng-template nuiWizardStepLabel>Dynamic w/template</ng-template>\n                <p class=\"m-5\" i18n>Hi! I'm dynamic step added automatically!</p>\n\n                <ng-template nuiWizardStepFooter>\n                    <ng-container *ngTemplateOutlet=\"wizardPreviousDynamic\"></ng-container>\n                    <ng-container *ngTemplateOutlet=\"wizardNextDynamic\"></ng-container>\n                </ng-template>\n            </nui-wizard-step-v2>\n        </ng-template>\n\n        <nui-wizard-step-v2 *ngFor=\"let step of steps; let isLast = last\">\n            <ng-template nuiWizardStepLabel>{{step.title}}</ng-template>\n            <ng-container *ngTemplateOutlet=\"step.templateRef\"></ng-container>\n            <ng-template nuiWizardStepFooter>\n                <ng-container *ngTemplateOutlet=\"wizardPreviousDynamic\"></ng-container>\n                <ng-container *ngTemplateOutlet=\"!isLast && wizardNextDynamic\"></ng-container>\n            </ng-template>\n        </nui-wizard-step-v2>\n\n        <ng-template #dynamicTemplate1>\n            <p class=\"m-5\" i18n>Hi! I'm dynamic step added automatically during ngAfterViewInit of this wizard using a TemplateRef!</p>\n        </ng-template>\n\n        <ng-template #dynamicTemplate2>\n            <p class=\"m-5\" i18n>Hi! I'm a step added dynamically using a TemplateRef by clicking a button from the first step !</p>\n        </ng-template>\n\n        <ng-template #wizardPreviousDynamic>\n            <button icon=\"caret-left\" nui-button nuiWizardPrevious type=\"button\">\n                Back\n            </button>\n        </ng-template>\n\n        <ng-template #wizardNextDynamic>\n            <button displayStyle=\"primary\"\n                    icon=\"caret-right\"\n                    iconRight=\"true\"\n                    nui-button\n                    nuiWizardNext\n                    type=\"button\"\n            >Next</button>\n        </ng-template>\n    </nui-wizard-horizontal>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<!--Horizontal Wizard-->\n<div class=\"container\">\n    <nui-wizard-horizontal id=\"nui-wizard-v2-horizontal\">\n\n        <!--Step 1-->\n        <nui-wizard-step-v2 label=\"Step1\">\n            Step 1\n\n            <ng-template nuiWizardStepFooter>\n                <ng-container *ngTemplateOutlet=\"wizardNext\"></ng-container>\n            </ng-template>\n        </nui-wizard-step-v2>\n\n        <!--Step 2-->\n        <nui-wizard-step-v2 label=\"Step2\">\n            Step 2\n\n            <ng-template nuiWizardStepFooter>\n                <ng-container *ngTemplateOutlet=\"wizardPrevious\"></ng-container>\n                <ng-container *ngTemplateOutlet=\"wizardNext\"></ng-container>\n            </ng-template>\n        </nui-wizard-step-v2>\n\n        <!--Step 3-->\n        <nui-wizard-step-v2 label=\"Step3\">\n            Step 3\n            <ng-template nuiWizardStepFooter>\n                <ng-container *ngTemplateOutlet=\"wizardPrevious\"></ng-container>\n                <ng-container *ngTemplateOutlet=\"wizardNext\"></ng-container>\n            </ng-template>\n        </nui-wizard-step-v2>\n\n        <ng-template #wizardPrevious>\n            <button type=\"button\"\n                    class=\"previous\"\n                    nuiWizardPrevious\n                    nui-button\n                    icon=\"caret-left\">\n                Back\n            </button>\n        </ng-template>\n\n        <ng-template #wizardNext>\n            <button nuiWizardNext\n                    class=\"next\"\n                    type=\"button\"\n                    nui-button\n                    displayStyle=\"primary\"\n                    icon=\"caret-right\"\n                    iconRight=\"true\"\n            >Next</button>\n        </ng-template>\n    </nui-wizard-horizontal>\n</div>\n\n<!--Dialog Wizard-->\n<div class=\"container\">\n    <ng-template #dialogWizard>\n        <div nuiResizeObserver #dialog>\n            <div nui-busy [busy]=\"busy\" id=\"nui-busy\">\n                <div class=\"busy-content\">\n                    <nui-dialog-header i18n-title title=\"Wizard dialog\" (closed)=\"closeDialog()\"></nui-dialog-header>\n                    <div class=\"dialog-body compact-mode\">\n                        <nui-wizard-horizontal #wizard\n                                            id=\"nui-wizard-v2-horizontal-dialog\"\n                                           [state]=\"state\"\n                                           (finished)=\"saveState($event)\"\n                        >\n\n                            <!--  This defines the first step of the wizard -->\n                            <nui-wizard-step-v2 label=\"Completed\">\n\n                                <!-- the current step content -->\n                                <div class=\"step-content-wrapper\">\n                                    <span i18n>This is the first step of our horizontal wizard</span>.\n                                </div>\n                                <!-- content of the footer -->\n                                <ng-template nuiWizardStepFooter>\n                                    <button class=\"busy-btn\"\n                                        type=\"button\"\n                                        nui-button\n                                        (click)=\"toggleBusy()\">\n                                            Toggle busy\n                                    </button>\n                                    <ng-container *ngTemplateOutlet=\"wizardCancelDialog\"></ng-container>\n                                    <ng-container *ngTemplateOutlet=\"wizardNextDialog\"></ng-container>\n                                </ng-template>\n                            </nui-wizard-step-v2>\n\n                            <nui-wizard-step-v2 label=\"Active\">\n\n                                <div class=\"step-content-wrapper\">\n                                    <span i18n>This is the second step of our horizontal wizard</span>.\n                                </div>\n                                <ng-template nuiWizardStepFooter>\n                                    <ng-container *ngTemplateOutlet=\"wizardCancelDialog\"></ng-container>\n                                    <ng-container *ngTemplateOutlet=\"wizardPreviousDialog\"></ng-container>\n                                    <ng-container *ngTemplateOutlet=\"wizardNextDialog\"></ng-container>\n                                </ng-template>\n                            </nui-wizard-step-v2>\n\n                            <nui-wizard-step-v2 label=\"Not Visited\">\n\n                                <div class=\"step-content-wrapper\">\n                                    <span i18n>This is the third step of our horizontal wizard</span>\n                                </div>\n\n                                <ng-template nuiWizardStepFooter>\n                                    <ng-container *ngTemplateOutlet=\"wizardCancelDialog\"></ng-container>\n                                    <ng-container *ngTemplateOutlet=\"wizardPreviousDialog\"></ng-container>\n                                    <ng-container *ngTemplateOutlet=\"wizardNextDialog\"></ng-container>\n                                </ng-template>\n                            </nui-wizard-step-v2>\n\n                            <nui-wizard-step-v2 label=\"Summary\" #finalStep>\n                                <div class=\"step-content-wrapper\">\n                                    <span i18n>We finally reached our last step</span>\n                                </div>\n                                <ng-template nuiWizardStepFooter>\n                                    <ng-container *ngTemplateOutlet=\"wizardCancelDialog\"></ng-container>\n                                    <ng-container *ngTemplateOutlet=\"wizardPreviousDialog\"></ng-container>\n                                    <button class=\"complete\"\n                                        type=\"button\"\n                                        nui-button\n                                        displayStyle=\"primary\"\n                                        (click)=\"completeWizard(finalStep)\"\n                                    >\n                                        Finish\n                                    </button>\n                                </ng-template>\n                            </nui-wizard-step-v2>\n\n                            <ng-template #wizardCancelDialog>\n                                <button class=\"cancel\"\n                                        type=\"button\"\n                                        displayStyle=\"action\"\n                                        nui-button\n                                        (click)=\"openConfirmationOverlay(overlay, wizard)\">\n                                    Cancel\n                                </button>\n                            </ng-template>\n\n                            <ng-template #wizardPreviousDialog>\n                                <button type=\"button\"\n                                    nuiWizardPrevious\n                                    nui-button\n                                    icon=\"caret-left\">\n                                    Back\n                                </button>\n                            </ng-template>\n\n                            <ng-template #wizardNextDialog>\n                                <button nuiWizardNext\n                                        class=\"next\"\n                                        type=\"button\"\n                                        nui-button\n                                        displayStyle=\"primary\"\n                                        icon=\"caret-right\"\n                                        iconRight=\"true\"\n                                >Next</button>\n                            </ng-template>\n                        </nui-wizard-horizontal>\n                    </div>\n                </div>\n                <nui-spinner size=\"large\" i18n-message message=\"Data is loading from remote server...\"></nui-spinner>\n            </div>\n        </div>\n        <nui-overlay #overlay [toggleReference]=\"dialog\">\n            <div class=\"overlay-class\">\n                <div class=\"overlay-content\">\n                    <div class=\"header\">\n                        Really want to leave?\n                    </div>\n                    <div class=\"body\">\n                        <p i18n>\n                            There is at least one accomplished step within this wizard.\n                            Are you sure you want to leave?\n                        </p>\n                    </div>\n                    <div class=\"footer\">\n                        <button nui-button displayStyle=\"action\" type=\"button\" (click)=\"overlay.hide()\">Cancel</button>\n                        <button nui-button type=\"button\" (click)=\"overlay.hide(); closeDialog()\">Leave</button>\n                    </div>\n                </div>\n            </div>\n        </nui-overlay>\n    </ng-template>\n\n    <button id=\"nui-wizard-dialog-trigger\"\n        nui-button\n        type=\"button\"\n        (click)=\"openDialog(dialogWizard)\"\n        i18n>\n        Open dialog wizard\n    </button>\n</div>\n\n<!--Wizard Dynamic Step-->\n<div class=\"container\">\n    <nui-wizard-horizontal #wizardDynamic id=\"nui-wizard-horizontal-dynamic\">\n        <nui-wizard-step-v2 *ngFor=\"let step of steps; let i = index; let isLast = last\">\n            <ng-template nuiWizardStepLabel>{{step.title + \" (\" + i + \")\"}}</ng-template>\n            <ng-container *ngTemplateOutlet=\"step.templateRef\"></ng-container>\n            <ng-template nuiWizardStepFooter>\n                <ng-container *ngIf=\"i !== 0\">\n                    <button icon=\"caret-left\" nui-button nuiWizardPrevious type=\"button\">\n                        Back\n                    </button>\n                </ng-container>\n                <ng-container *ngIf=\"!isLast\">\n                    <button displayStyle=\"primary\"\n                            icon=\"caret-right\"\n                            iconRight=\"true\"\n                            nui-button\n                            nuiWizardNext\n                            type=\"button\"\n                    >Next</button>\n                </ng-container>\n            </ng-template>\n        </nui-wizard-step-v2>\n\n        <ng-template #dynamicStep>\n            <p class=\"m-5\" i18n>Hi! I'm a step added dynamically using a TemplateRef by clicking a button from the first step !</p>\n        </ng-template>\n\n        <ng-template #normalStep>\n            <div class=\"p-5\">\n                <p i18n>Hi! You can add next step dynamically</p>\n\n                <button (click)=\"addStep(dynamicStep)\" class=\"add\" nui-button type=\"button\">\n                    Add dynamic step w/template\n                </button>\n            </div>\n        </ng-template>\n    </nui-wizard-horizontal>\n    <div class=\"d-flex\">\n        <div>\n            <span [ngStyle]=\"{ 'font-weight': 'bold' }\" class=\"nui-textbox--bold\">Step index to remove</span> <br>\n            <nui-textbox-number #number [minValue]=\"1\" [value]=\"1\"></nui-textbox-number>\n        </div>\n        <button (click)=\"removeStep(+number.value)\"\n            [disabled]=\"+number.value < 1\"\n            class=\"ml-3 h-25 align-self-end\"\n            displayStyle=\"destructive\" i18n\n            id=\"nui-remove-wizard-step-button\"\n            nui-button\n            type=\"button\">\n            Remove step dynamically\n        </button>\n    </div>\n</div>\n\n<!--Wizard Remove Step-->\n");
 
 /***/ }),
 
@@ -3562,12 +3562,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _src_lib_wizard_v2_wizard_step_footer_directive__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../../../src/lib/wizard-v2/wizard-step-footer.directive */ "ZSn2");
 /* harmony import */ var _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../../../../src/lib/button/button.component */ "6urz");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common */ "ofXK");
-/* harmony import */ var _src_lib_wizard_v2_wizard_button_wizard_button__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../../../../src/lib/wizard-v2/wizard-button/wizard-button */ "sp5V");
-/* harmony import */ var _src_lib_busy_busy_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../../../../../src/lib/busy/busy.component */ "3XPh");
-/* harmony import */ var _src_lib_dialog_dialog_header_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../../../../../src/lib/dialog/dialog-header.component */ "skCw");
-/* harmony import */ var _src_lib_spinner_spinner_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../../../../../src/lib/spinner/spinner.component */ "NFOm");
-/* harmony import */ var _src_lib_overlay_overlay_component_overlay_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../../../../../src/lib/overlay/overlay-component/overlay.component */ "eWZz");
-/* harmony import */ var _src_lib_wizard_v2_wizard_step_label_directive__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../../../../../src/lib/wizard-v2/wizard-step-label.directive */ "JSul");
+/* harmony import */ var _src_lib_textbox_textbox_number_textbox_number_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../../../../src/lib/textbox/textbox-number/textbox-number.component */ "ShSb");
+/* harmony import */ var _src_lib_wizard_v2_wizard_button_wizard_button__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../../../../../src/lib/wizard-v2/wizard-button/wizard-button */ "sp5V");
+/* harmony import */ var _src_lib_busy_busy_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../../../../../src/lib/busy/busy.component */ "3XPh");
+/* harmony import */ var _src_lib_dialog_dialog_header_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../../../../../src/lib/dialog/dialog-header.component */ "skCw");
+/* harmony import */ var _src_lib_spinner_spinner_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../../../../../src/lib/spinner/spinner.component */ "NFOm");
+/* harmony import */ var _src_lib_overlay_overlay_component_overlay_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../../../../../src/lib/overlay/overlay-component/overlay.component */ "eWZz");
+/* harmony import */ var _src_lib_wizard_v2_wizard_step_label_directive__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../../../../../../src/lib/wizard-v2/wizard-step-label.directive */ "JSul");
 
 
 
@@ -3585,11 +3586,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+const _c0 = ["normalStep"];
 function WizardTestComponent_ng_template_4_ng_container_0_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainer"](0);
 } }
 function WizardTestComponent_ng_template_4_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, WizardTestComponent_ng_template_4_ng_container_0_Template, 1, 0, "ng-container", 23);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, WizardTestComponent_ng_template_4_ng_container_0_Template, 1, 0, "ng-container", 22);
 } if (rf & 2) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
     const _r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](14);
@@ -3602,8 +3605,8 @@ function WizardTestComponent_ng_template_7_ng_container_1_Template(rf, ctx) { if
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainer"](0);
 } }
 function WizardTestComponent_ng_template_7_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, WizardTestComponent_ng_template_7_ng_container_0_Template, 1, 0, "ng-container", 23);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, WizardTestComponent_ng_template_7_ng_container_1_Template, 1, 0, "ng-container", 23);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, WizardTestComponent_ng_template_7_ng_container_0_Template, 1, 0, "ng-container", 22);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, WizardTestComponent_ng_template_7_ng_container_1_Template, 1, 0, "ng-container", 22);
 } if (rf & 2) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
     const _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](12);
@@ -3619,8 +3622,8 @@ function WizardTestComponent_ng_template_10_ng_container_1_Template(rf, ctx) { i
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainer"](0);
 } }
 function WizardTestComponent_ng_template_10_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, WizardTestComponent_ng_template_10_ng_container_0_Template, 1, 0, "ng-container", 23);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, WizardTestComponent_ng_template_10_ng_container_1_Template, 1, 0, "ng-container", 23);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, WizardTestComponent_ng_template_10_ng_container_0_Template, 1, 0, "ng-container", 22);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, WizardTestComponent_ng_template_10_ng_container_1_Template, 1, 0, "ng-container", 22);
 } if (rf & 2) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
     const _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](12);
@@ -3630,12 +3633,12 @@ function WizardTestComponent_ng_template_10_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngTemplateOutlet", _r5);
 } }
 function WizardTestComponent_ng_template_11_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 24);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 23);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " Back ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } }
 function WizardTestComponent_ng_template_13_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 25);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 24);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Next");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } }
@@ -3646,21 +3649,21 @@ function WizardTestComponent_ng_template_16_ng_template_13_ng_container_3_Templa
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainer"](0);
 } }
 function WizardTestComponent_ng_template_16_ng_template_13_Template(rf, ctx) { if (rf & 1) {
-    const _r44 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 58);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function WizardTestComponent_ng_template_16_ng_template_13_Template_button_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r44); const ctx_r43 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2); return ctx_r43.toggleBusy(); });
+    const _r38 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 57);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function WizardTestComponent_ng_template_16_ng_template_13_Template_button_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r38); const ctx_r37 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2); return ctx_r37.toggleBusy(); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " Toggle busy ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, WizardTestComponent_ng_template_16_ng_template_13_ng_container_2_Template, 1, 0, "ng-container", 23);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, WizardTestComponent_ng_template_16_ng_template_13_ng_container_3_Template, 1, 0, "ng-container", 23);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, WizardTestComponent_ng_template_16_ng_template_13_ng_container_2_Template, 1, 0, "ng-container", 22);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, WizardTestComponent_ng_template_16_ng_template_13_ng_container_3_Template, 1, 0, "ng-container", 22);
 } if (rf & 2) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-    const _r34 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](32);
-    const _r38 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](36);
+    const _r28 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](32);
+    const _r32 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](36);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngTemplateOutlet", _r34);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngTemplateOutlet", _r28);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngTemplateOutlet", _r38);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngTemplateOutlet", _r32);
 } }
 function WizardTestComponent_ng_template_16_ng_template_19_ng_container_0_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainer"](0);
@@ -3672,19 +3675,19 @@ function WizardTestComponent_ng_template_16_ng_template_19_ng_container_2_Templa
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainer"](0);
 } }
 function WizardTestComponent_ng_template_16_ng_template_19_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, WizardTestComponent_ng_template_16_ng_template_19_ng_container_0_Template, 1, 0, "ng-container", 23);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, WizardTestComponent_ng_template_16_ng_template_19_ng_container_1_Template, 1, 0, "ng-container", 23);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, WizardTestComponent_ng_template_16_ng_template_19_ng_container_2_Template, 1, 0, "ng-container", 23);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, WizardTestComponent_ng_template_16_ng_template_19_ng_container_0_Template, 1, 0, "ng-container", 22);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, WizardTestComponent_ng_template_16_ng_template_19_ng_container_1_Template, 1, 0, "ng-container", 22);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, WizardTestComponent_ng_template_16_ng_template_19_ng_container_2_Template, 1, 0, "ng-container", 22);
 } if (rf & 2) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-    const _r34 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](32);
-    const _r36 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](34);
-    const _r38 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](36);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngTemplateOutlet", _r34);
+    const _r28 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](32);
+    const _r30 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](34);
+    const _r32 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](36);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngTemplateOutlet", _r28);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngTemplateOutlet", _r36);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngTemplateOutlet", _r30);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngTemplateOutlet", _r38);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngTemplateOutlet", _r32);
 } }
 function WizardTestComponent_ng_template_16_ng_template_24_ng_container_0_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainer"](0);
@@ -3696,19 +3699,19 @@ function WizardTestComponent_ng_template_16_ng_template_24_ng_container_2_Templa
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainer"](0);
 } }
 function WizardTestComponent_ng_template_16_ng_template_24_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, WizardTestComponent_ng_template_16_ng_template_24_ng_container_0_Template, 1, 0, "ng-container", 23);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, WizardTestComponent_ng_template_16_ng_template_24_ng_container_1_Template, 1, 0, "ng-container", 23);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, WizardTestComponent_ng_template_16_ng_template_24_ng_container_2_Template, 1, 0, "ng-container", 23);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, WizardTestComponent_ng_template_16_ng_template_24_ng_container_0_Template, 1, 0, "ng-container", 22);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, WizardTestComponent_ng_template_16_ng_template_24_ng_container_1_Template, 1, 0, "ng-container", 22);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, WizardTestComponent_ng_template_16_ng_template_24_ng_container_2_Template, 1, 0, "ng-container", 22);
 } if (rf & 2) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-    const _r34 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](32);
-    const _r36 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](34);
-    const _r38 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](36);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngTemplateOutlet", _r34);
+    const _r28 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](32);
+    const _r30 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](34);
+    const _r32 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](36);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngTemplateOutlet", _r28);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngTemplateOutlet", _r36);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngTemplateOutlet", _r30);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngTemplateOutlet", _r38);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngTemplateOutlet", _r32);
 } }
 function WizardTestComponent_ng_template_16_ng_template_30_ng_container_0_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainer"](0);
@@ -3717,110 +3720,110 @@ function WizardTestComponent_ng_template_16_ng_template_30_ng_container_1_Templa
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainer"](0);
 } }
 function WizardTestComponent_ng_template_16_ng_template_30_Template(rf, ctx) { if (rf & 1) {
-    const _r54 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, WizardTestComponent_ng_template_16_ng_template_30_ng_container_0_Template, 1, 0, "ng-container", 23);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, WizardTestComponent_ng_template_16_ng_template_30_ng_container_1_Template, 1, 0, "ng-container", 23);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "button", 59);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function WizardTestComponent_ng_template_16_ng_template_30_Template_button_click_2_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r54); _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); const _r32 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](26); const ctx_r53 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r53.completeWizard(_r32); });
+    const _r48 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, WizardTestComponent_ng_template_16_ng_template_30_ng_container_0_Template, 1, 0, "ng-container", 22);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, WizardTestComponent_ng_template_16_ng_template_30_ng_container_1_Template, 1, 0, "ng-container", 22);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "button", 58);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function WizardTestComponent_ng_template_16_ng_template_30_Template_button_click_2_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r48); _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); const _r26 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](26); const ctx_r47 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r47.completeWizard(_r26); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, " Finish ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-    const _r34 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](32);
-    const _r36 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](34);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngTemplateOutlet", _r34);
+    const _r28 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](32);
+    const _r30 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](34);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngTemplateOutlet", _r28);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngTemplateOutlet", _r36);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngTemplateOutlet", _r30);
 } }
 function WizardTestComponent_ng_template_16_ng_template_31_Template(rf, ctx) { if (rf & 1) {
-    const _r56 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 60);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function WizardTestComponent_ng_template_16_ng_template_31_Template_button_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r56); _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); const _r40 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](39); const _r28 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](7); const ctx_r55 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r55.openConfirmationOverlay(_r40, _r28); });
+    const _r50 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 59);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function WizardTestComponent_ng_template_16_ng_template_31_Template_button_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r50); _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); const _r34 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](39); const _r22 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](7); const ctx_r49 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r49.openConfirmationOverlay(_r34, _r22); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " Cancel ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } }
 function WizardTestComponent_ng_template_16_ng_template_33_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 61);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 60);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " Back ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } }
 function WizardTestComponent_ng_template_16_ng_template_35_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 25);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 24);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Next");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } }
 function WizardTestComponent_ng_template_16_Template(rf, ctx) { if (rf & 1) {
-    const _r58 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 26, 27);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 28);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 29);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "nui-dialog-header", 30);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("closed", function WizardTestComponent_ng_template_16_Template_nui_dialog_header_closed_4_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r58); const ctx_r57 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r57.closeDialog(); });
+    const _r52 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 25, 26);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 27);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 28);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "nui-dialog-header", 29);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("closed", function WizardTestComponent_ng_template_16_Template_nui_dialog_header_closed_4_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r52); const ctx_r51 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r51.closeDialog(); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 31);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "nui-wizard-horizontal", 32, 33);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("finished", function WizardTestComponent_ng_template_16_Template_nui_wizard_horizontal_finished_6_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r58); const ctx_r59 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r59.saveState($event); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "nui-wizard-step-v2", 34);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "div", 35);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 30);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "nui-wizard-horizontal", 31, 32);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("finished", function WizardTestComponent_ng_template_16_Template_nui_wizard_horizontal_finished_6_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r52); const ctx_r53 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r53.saveState($event); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "nui-wizard-step-v2", 33);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "div", 34);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "span");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](11, 36);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](11, 35);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, ". ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](13, WizardTestComponent_ng_template_16_ng_template_13_Template, 4, 2, "ng-template", 3);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "nui-wizard-step-v2", 37);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "div", 35);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "nui-wizard-step-v2", 36);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "div", 34);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "span");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](17, 38);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](17, 37);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](18, ". ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](19, WizardTestComponent_ng_template_16_ng_template_19_Template, 3, 3, "ng-template", 3);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "nui-wizard-step-v2", 39);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "div", 35);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "nui-wizard-step-v2", 38);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "div", 34);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "span");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](23, 40);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](23, 39);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](24, WizardTestComponent_ng_template_16_ng_template_24_Template, 3, 3, "ng-template", 3);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "nui-wizard-step-v2", 41, 42);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](27, "div", 35);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "nui-wizard-step-v2", 40, 41);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](27, "div", 34);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](28, "span");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](29, 43);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](29, 42);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](30, WizardTestComponent_ng_template_16_ng_template_30_Template, 4, 2, "ng-template", 3);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](31, WizardTestComponent_ng_template_16_ng_template_31_Template, 2, 0, "ng-template", null, 44, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](33, WizardTestComponent_ng_template_16_ng_template_33_Template, 2, 0, "ng-template", null, 45, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](35, WizardTestComponent_ng_template_16_ng_template_35_Template, 2, 0, "ng-template", null, 46, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](31, WizardTestComponent_ng_template_16_ng_template_31_Template, 2, 0, "ng-template", null, 43, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](33, WizardTestComponent_ng_template_16_ng_template_33_Template, 2, 0, "ng-template", null, 44, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](35, WizardTestComponent_ng_template_16_ng_template_35_Template, 2, 0, "ng-template", null, 45, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](37, "nui-spinner", 47);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](37, "nui-spinner", 46);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](38, "nui-overlay", 48, 49);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](40, "div", 50);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](41, "div", 51);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](42, "div", 52);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](38, "nui-overlay", 47, 48);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](40, "div", 49);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](41, "div", 50);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](42, "div", 51);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](43, " Really want to leave? ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](44, "div", 53);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](44, "div", 52);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](45, "p");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](46, 54);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](46, 53);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](47, "div", 55);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](48, "button", 56);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function WizardTestComponent_ng_template_16_Template_button_click_48_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r58); const _r40 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](39); return _r40.hide(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](47, "div", 54);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](48, "button", 55);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function WizardTestComponent_ng_template_16_Template_button_click_48_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r52); const _r34 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](39); return _r34.hide(); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](49, "Cancel");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](50, "button", 57);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function WizardTestComponent_ng_template_16_Template_button_click_50_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r58); const _r40 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](39); const ctx_r61 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); _r40.hide(); return ctx_r61.closeDialog(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](50, "button", 56);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function WizardTestComponent_ng_template_16_Template_button_click_50_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r52); const _r34 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](39); const ctx_r55 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); _r34.hide(); return ctx_r55.closeDialog(); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](51, "Leave");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -3828,115 +3831,80 @@ function WizardTestComponent_ng_template_16_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const _r27 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](1);
+    const _r21 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](1);
     const ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("busy", ctx_r8.busy);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("state", ctx_r8.state);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](32);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("toggleReference", _r27);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("toggleReference", _r21);
 } }
-function WizardTestComponent_ng_template_28_ng_container_0_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainer"](0);
-} }
-function WizardTestComponent_ng_template_28_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, WizardTestComponent_ng_template_28_ng_container_0_Template, 1, 0, "ng-container", 23);
-} if (rf & 2) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-    const _r20 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](40);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngTemplateOutlet", _r20);
-} }
-function WizardTestComponent_ng_container_29_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainer"](0, 62);
-} }
-function WizardTestComponent_ng_template_30_ng_template_1_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](0, "Dynamic w/template");
-} }
-function WizardTestComponent_ng_template_30_ng_template_4_ng_container_0_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainer"](0);
-} }
-function WizardTestComponent_ng_template_30_ng_template_4_ng_container_1_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainer"](0);
-} }
-function WizardTestComponent_ng_template_30_ng_template_4_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, WizardTestComponent_ng_template_30_ng_template_4_ng_container_0_Template, 1, 0, "ng-container", 23);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, WizardTestComponent_ng_template_30_ng_template_4_ng_container_1_Template, 1, 0, "ng-container", 23);
-} if (rf & 2) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
-    const _r18 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](38);
-    const _r20 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](40);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngTemplateOutlet", _r18);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngTemplateOutlet", _r20);
-} }
-function WizardTestComponent_ng_template_30_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "nui-wizard-step-v2");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, WizardTestComponent_ng_template_30_ng_template_1_Template, 1, 0, "ng-template", 63);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "p", 64);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](3, 65);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, WizardTestComponent_ng_template_30_ng_template_4_Template, 2, 2, "ng-template", 3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-} }
-function WizardTestComponent_nui_wizard_step_v2_32_ng_template_1_Template(rf, ctx) { if (rf & 1) {
+function WizardTestComponent_nui_wizard_step_v2_23_ng_template_1_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](0);
 } if (rf & 2) {
-    const step_r67 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](step_r67.title);
+    const ctx_r62 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+    const step_r56 = ctx_r62.$implicit;
+    const i_r57 = ctx_r62.index;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](step_r56.title + " (" + i_r57 + ")");
 } }
-function WizardTestComponent_nui_wizard_step_v2_32_ng_container_2_Template(rf, ctx) { if (rf & 1) {
+function WizardTestComponent_nui_wizard_step_v2_23_ng_container_2_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainer"](0);
 } }
-function WizardTestComponent_nui_wizard_step_v2_32_ng_template_3_ng_container_0_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainer"](0);
+function WizardTestComponent_nui_wizard_step_v2_23_ng_template_3_ng_container_0_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](0);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "button", 63);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, " Back ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
 } }
-function WizardTestComponent_nui_wizard_step_v2_32_ng_template_3_ng_container_1_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainer"](0);
+function WizardTestComponent_nui_wizard_step_v2_23_ng_template_3_ng_container_1_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](0);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "button", 64);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Next");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
 } }
-function WizardTestComponent_nui_wizard_step_v2_32_ng_template_3_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, WizardTestComponent_nui_wizard_step_v2_32_ng_template_3_ng_container_0_Template, 1, 0, "ng-container", 23);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, WizardTestComponent_nui_wizard_step_v2_32_ng_template_3_ng_container_1_Template, 1, 0, "ng-container", 23);
+function WizardTestComponent_nui_wizard_step_v2_23_ng_template_3_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, WizardTestComponent_nui_wizard_step_v2_23_ng_template_3_ng_container_0_Template, 3, 0, "ng-container", 62);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, WizardTestComponent_nui_wizard_step_v2_23_ng_template_3_ng_container_1_Template, 3, 0, "ng-container", 62);
 } if (rf & 2) {
-    const isLast_r68 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().last;
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-    const _r18 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](38);
-    const _r20 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](40);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngTemplateOutlet", _r18);
+    const ctx_r65 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+    const i_r57 = ctx_r65.index;
+    const isLast_r58 = ctx_r65.last;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", i_r57 !== 0);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngTemplateOutlet", !isLast_r68 && _r20);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", !isLast_r58);
 } }
-function WizardTestComponent_nui_wizard_step_v2_32_Template(rf, ctx) { if (rf & 1) {
+function WizardTestComponent_nui_wizard_step_v2_23_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "nui-wizard-step-v2");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, WizardTestComponent_nui_wizard_step_v2_32_ng_template_1_Template, 1, 1, "ng-template", 63);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, WizardTestComponent_nui_wizard_step_v2_32_ng_container_2_Template, 1, 0, "ng-container", 23);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, WizardTestComponent_nui_wizard_step_v2_32_ng_template_3_Template, 2, 2, "ng-template", 3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, WizardTestComponent_nui_wizard_step_v2_23_ng_template_1_Template, 1, 1, "ng-template", 61);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, WizardTestComponent_nui_wizard_step_v2_23_ng_container_2_Template, 1, 0, "ng-container", 22);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, WizardTestComponent_nui_wizard_step_v2_23_ng_template_3_Template, 2, 2, "ng-template", 3);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const step_r67 = ctx.$implicit;
+    const step_r56 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngTemplateOutlet", step_r67.templateRef);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngTemplateOutlet", step_r56.templateRef);
 } }
-function WizardTestComponent_ng_template_33_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p", 64);
+function WizardTestComponent_ng_template_24_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p", 65);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](1, 66);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } }
-function WizardTestComponent_ng_template_35_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p", 64);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](1, 67);
+function WizardTestComponent_ng_template_26_Template(rf, ctx) { if (rf & 1) {
+    const _r67 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 67);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "p");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](2, 68);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "button", 69);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function WizardTestComponent_ng_template_26_Template_button_click_3_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r67); const ctx_r66 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); const _r11 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](25); return ctx_r66.addStep(_r11); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, " Add dynamic step w/template ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } }
-function WizardTestComponent_ng_template_37_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 68);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " Back ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-} }
-function WizardTestComponent_ng_template_39_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 69);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Next");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-} }
+const _c23 = function () { return { "font-weight": "bold" }; };
 class WizardTestComponent {
     constructor(dialogService) {
         this.dialogService = dialogService;
@@ -3946,6 +3914,9 @@ class WizardTestComponent {
         this.vegetables = [$localize `Cabbage`, $localize `Potato`, $localize `Tomato`, $localize `Carrot`];
         this.selectedVegetables = [$localize `Potato`, $localize `Tomato`];
         this.steps = [];
+    }
+    ngAfterViewInit() {
+        this.addStep(this.normalStep);
     }
     isChecked(vegetable) {
         return this.selectedVegetables.indexOf(vegetable) > -1;
@@ -4010,6 +3981,9 @@ class WizardTestComponent {
     addStep(templateRef, title) {
         this.steps.push({ title: title !== null && title !== void 0 ? title : `Dynamic Step ${this.steps.length + 1}`, templateRef: templateRef });
     }
+    removeStep(index = 1) {
+        this.steps.splice(index, 1);
+    }
     updateOverlayDimensions(overlay) {
         var _a;
         (_a = this.overlayRef) === null || _a === void 0 ? void 0 : _a.updateSize({
@@ -4019,86 +3993,79 @@ class WizardTestComponent {
     }
 }
 WizardTestComponent.ɵfac = function WizardTestComponent_Factory(t) { return new (t || WizardTestComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_nova_ui_bits__WEBPACK_IMPORTED_MODULE_2__["DialogService"])); };
-WizardTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: WizardTestComponent, selectors: [["nui-wizard-test"]], decls: 41, vars: 2, consts: function () { let i18n_0; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-        const MSG_EXTERNAL_1425660698121707290$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TEST_WIZARD_TEST_COMPONENT_TS_1 = goog.getMsg(" Open dialog wizard ");
-        i18n_0 = MSG_EXTERNAL_1425660698121707290$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TEST_WIZARD_TEST_COMPONENT_TS_1;
+WizardTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: WizardTestComponent, selectors: [["nui-wizard-test"]], viewQuery: function WizardTestComponent_Query(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_c0, 1);
+    } if (rf & 2) {
+        let _t;
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.normalStep = _t.first);
+    } }, decls: 37, vars: 6, consts: function () { let i18n_1; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+        const MSG_EXTERNAL_1425660698121707290$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TEST_WIZARD_TEST_COMPONENT_TS_2 = goog.getMsg(" Open dialog wizard ");
+        i18n_1 = MSG_EXTERNAL_1425660698121707290$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TEST_WIZARD_TEST_COMPONENT_TS_2;
     }
     else {
-        i18n_0 = $localize `:␟77f660c4226b349e38df06dafc8acf072d23c322␟1425660698121707290: Open dialog wizard `;
-    } let i18n_2; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-        const MSG_EXTERNAL_7057102079154255396$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TEST_WIZARD_TEST_COMPONENT_TS_3 = goog.getMsg("Normal step");
-        i18n_2 = MSG_EXTERNAL_7057102079154255396$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TEST_WIZARD_TEST_COMPONENT_TS_3;
+        i18n_1 = $localize `:␟77f660c4226b349e38df06dafc8acf072d23c322␟1425660698121707290: Open dialog wizard `;
+    } let i18n_3; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+        const MSG_EXTERNAL_5325204974309668516$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TEST_WIZARD_TEST_COMPONENT_TS_4 = goog.getMsg(" Remove step dynamically ");
+        i18n_3 = MSG_EXTERNAL_5325204974309668516$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TEST_WIZARD_TEST_COMPONENT_TS_4;
     }
     else {
-        i18n_2 = $localize `:␟4c3fab8d69b61816e7bdb18941b4f57a499c1618␟7057102079154255396:Normal step`;
-    } let i18n_4; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-        const MSG_EXTERNAL_4074000604906025359$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TEST_WIZARD_TEST_COMPONENT_TS_5 = goog.getMsg("Hi! You can add next step dynamically");
-        i18n_4 = MSG_EXTERNAL_4074000604906025359$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TEST_WIZARD_TEST_COMPONENT_TS_5;
+        i18n_3 = $localize `:␟46ad66f9cbd2cc1570b6f0bf6b142194c841d785␟5325204974309668516: Remove step dynamically `;
+    } let i18n_5; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+        const MSG_EXTERNAL_2559467589081529119$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TEST_WIZARD_TEST_COMPONENT_TS__6 = goog.getMsg("Wizard dialog");
+        i18n_5 = MSG_EXTERNAL_2559467589081529119$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TEST_WIZARD_TEST_COMPONENT_TS__6;
     }
     else {
-        i18n_4 = $localize `:␟9dfa7b9ebe128bde7cab896a85986ebb450f99f7␟4074000604906025359:Hi! You can add next step dynamically`;
-    } let i18n_6; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-        const MSG_EXTERNAL_2559467589081529119$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TEST_WIZARD_TEST_COMPONENT_TS__7 = goog.getMsg("Wizard dialog");
-        i18n_6 = MSG_EXTERNAL_2559467589081529119$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TEST_WIZARD_TEST_COMPONENT_TS__7;
+        i18n_5 = $localize `:␟bfccc7449a42f7d944233041ac0d93921c543934␟2559467589081529119:Wizard dialog`;
+    } let i18n_7; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+        const MSG_EXTERNAL_8675920705208401217$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TEST_WIZARD_TEST_COMPONENT_TS__8 = goog.getMsg("This is the first step of our horizontal wizard");
+        i18n_7 = MSG_EXTERNAL_8675920705208401217$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TEST_WIZARD_TEST_COMPONENT_TS__8;
     }
     else {
-        i18n_6 = $localize `:␟bfccc7449a42f7d944233041ac0d93921c543934␟2559467589081529119:Wizard dialog`;
-    } let i18n_8; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-        const MSG_EXTERNAL_8675920705208401217$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TEST_WIZARD_TEST_COMPONENT_TS__9 = goog.getMsg("This is the first step of our horizontal wizard");
-        i18n_8 = MSG_EXTERNAL_8675920705208401217$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TEST_WIZARD_TEST_COMPONENT_TS__9;
+        i18n_7 = $localize `:␟c9bf00bfbb1b8a6e46eb4e43075cf64abecea307␟8675920705208401217:This is the first step of our horizontal wizard`;
+    } let i18n_9; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+        const MSG_EXTERNAL_1639920997400045870$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TEST_WIZARD_TEST_COMPONENT_TS__10 = goog.getMsg("This is the second step of our horizontal wizard");
+        i18n_9 = MSG_EXTERNAL_1639920997400045870$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TEST_WIZARD_TEST_COMPONENT_TS__10;
     }
     else {
-        i18n_8 = $localize `:␟c9bf00bfbb1b8a6e46eb4e43075cf64abecea307␟8675920705208401217:This is the first step of our horizontal wizard`;
-    } let i18n_10; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-        const MSG_EXTERNAL_1639920997400045870$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TEST_WIZARD_TEST_COMPONENT_TS__11 = goog.getMsg("This is the second step of our horizontal wizard");
-        i18n_10 = MSG_EXTERNAL_1639920997400045870$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TEST_WIZARD_TEST_COMPONENT_TS__11;
+        i18n_9 = $localize `:␟4103bf2eee669374dca77d06d9203728047ffec4␟1639920997400045870:This is the second step of our horizontal wizard`;
+    } let i18n_11; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+        const MSG_EXTERNAL_7104742727847308533$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TEST_WIZARD_TEST_COMPONENT_TS__12 = goog.getMsg("This is the third step of our horizontal wizard");
+        i18n_11 = MSG_EXTERNAL_7104742727847308533$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TEST_WIZARD_TEST_COMPONENT_TS__12;
     }
     else {
-        i18n_10 = $localize `:␟4103bf2eee669374dca77d06d9203728047ffec4␟1639920997400045870:This is the second step of our horizontal wizard`;
-    } let i18n_12; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-        const MSG_EXTERNAL_7104742727847308533$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TEST_WIZARD_TEST_COMPONENT_TS__13 = goog.getMsg("This is the third step of our horizontal wizard");
-        i18n_12 = MSG_EXTERNAL_7104742727847308533$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TEST_WIZARD_TEST_COMPONENT_TS__13;
+        i18n_11 = $localize `:␟95e8f79c6ab835e5be1e96ec6afe816aba2d855e␟7104742727847308533:This is the third step of our horizontal wizard`;
+    } let i18n_13; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+        const MSG_EXTERNAL_7100330853882173244$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TEST_WIZARD_TEST_COMPONENT_TS__14 = goog.getMsg("We finally reached our last step");
+        i18n_13 = MSG_EXTERNAL_7100330853882173244$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TEST_WIZARD_TEST_COMPONENT_TS__14;
     }
     else {
-        i18n_12 = $localize `:␟95e8f79c6ab835e5be1e96ec6afe816aba2d855e␟7104742727847308533:This is the third step of our horizontal wizard`;
-    } let i18n_14; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-        const MSG_EXTERNAL_7100330853882173244$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TEST_WIZARD_TEST_COMPONENT_TS__15 = goog.getMsg("We finally reached our last step");
-        i18n_14 = MSG_EXTERNAL_7100330853882173244$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TEST_WIZARD_TEST_COMPONENT_TS__15;
+        i18n_13 = $localize `:␟414c233c4cbaae1a74728ed5d64304bbd36cdbe5␟7100330853882173244:We finally reached our last step`;
+    } let i18n_15; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+        const MSG_EXTERNAL_25258399261550967$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TEST_WIZARD_TEST_COMPONENT_TS__16 = goog.getMsg("Data is loading from remote server...");
+        i18n_15 = MSG_EXTERNAL_25258399261550967$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TEST_WIZARD_TEST_COMPONENT_TS__16;
     }
     else {
-        i18n_14 = $localize `:␟414c233c4cbaae1a74728ed5d64304bbd36cdbe5␟7100330853882173244:We finally reached our last step`;
-    } let i18n_16; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-        const MSG_EXTERNAL_25258399261550967$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TEST_WIZARD_TEST_COMPONENT_TS__17 = goog.getMsg("Data is loading from remote server...");
-        i18n_16 = MSG_EXTERNAL_25258399261550967$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TEST_WIZARD_TEST_COMPONENT_TS__17;
+        i18n_15 = $localize `:␟dc0a65d80c4379ceca3424563f96da6b49156f5c␟25258399261550967:Data is loading from remote server...`;
+    } let i18n_17; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+        const MSG_EXTERNAL_4815583230274647557$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TEST_WIZARD_TEST_COMPONENT_TS__18 = goog.getMsg(" There is at least one accomplished step within this wizard. Are you sure you want to leave? ");
+        i18n_17 = MSG_EXTERNAL_4815583230274647557$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TEST_WIZARD_TEST_COMPONENT_TS__18;
     }
     else {
-        i18n_16 = $localize `:␟dc0a65d80c4379ceca3424563f96da6b49156f5c␟25258399261550967:Data is loading from remote server...`;
-    } let i18n_18; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-        const MSG_EXTERNAL_4815583230274647557$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TEST_WIZARD_TEST_COMPONENT_TS__19 = goog.getMsg(" There is at least one accomplished step within this wizard. Are you sure you want to leave? ");
-        i18n_18 = MSG_EXTERNAL_4815583230274647557$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TEST_WIZARD_TEST_COMPONENT_TS__19;
+        i18n_17 = $localize `:␟d884250594f6ce32e7bb97f32fd4ea321c89963e␟4815583230274647557: There is at least one accomplished step within this wizard. Are you sure you want to leave? `;
+    } let i18n_19; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+        const MSG_EXTERNAL_2900895229541262648$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TEST_WIZARD_TEST_COMPONENT_TS__20 = goog.getMsg("Hi! I'm a step added dynamically using a TemplateRef by clicking a button from the first step !");
+        i18n_19 = MSG_EXTERNAL_2900895229541262648$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TEST_WIZARD_TEST_COMPONENT_TS__20;
     }
     else {
-        i18n_18 = $localize `:␟d884250594f6ce32e7bb97f32fd4ea321c89963e␟4815583230274647557: There is at least one accomplished step within this wizard. Are you sure you want to leave? `;
-    } let i18n_20; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-        const MSG_EXTERNAL_8902866676882267310$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TEST_WIZARD_TEST_COMPONENT_TS__21 = goog.getMsg("Hi! I'm dynamic step added automatically!");
-        i18n_20 = MSG_EXTERNAL_8902866676882267310$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TEST_WIZARD_TEST_COMPONENT_TS__21;
+        i18n_19 = $localize `:␟256cc8ce36c7ece03c014ef84736f10288179f3f␟2900895229541262648:Hi! I'm a step added dynamically using a TemplateRef by clicking a button from the first step !`;
+    } let i18n_21; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+        const MSG_EXTERNAL_4074000604906025359$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TEST_WIZARD_TEST_COMPONENT_TS__22 = goog.getMsg("Hi! You can add next step dynamically");
+        i18n_21 = MSG_EXTERNAL_4074000604906025359$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TEST_WIZARD_TEST_COMPONENT_TS__22;
     }
     else {
-        i18n_20 = $localize `:␟2d747f63c6c233b9fb7b10782dcf2ee72b616af9␟8902866676882267310:Hi! I'm dynamic step added automatically!`;
-    } let i18n_22; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-        const MSG_EXTERNAL_6741901999086012076$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TEST_WIZARD_TEST_COMPONENT_TS__23 = goog.getMsg("Hi! I'm dynamic step added automatically during ngAfterViewInit of this wizard using a TemplateRef!");
-        i18n_22 = MSG_EXTERNAL_6741901999086012076$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TEST_WIZARD_TEST_COMPONENT_TS__23;
-    }
-    else {
-        i18n_22 = $localize `:␟dcc1be5be7d583d8da709807686db795b39e4e4d␟6741901999086012076:Hi! I'm dynamic step added automatically during ngAfterViewInit of this wizard using a TemplateRef!`;
-    } let i18n_24; if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-        const MSG_EXTERNAL_2900895229541262648$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TEST_WIZARD_TEST_COMPONENT_TS__25 = goog.getMsg("Hi! I'm a step added dynamically using a TemplateRef by clicking a button from the first step !");
-        i18n_24 = MSG_EXTERNAL_2900895229541262648$$DEMO_SRC_COMPONENTS_DEMO_WIZARD_V2_WIZARD_TEST_WIZARD_TEST_COMPONENT_TS__25;
-    }
-    else {
-        i18n_24 = $localize `:␟256cc8ce36c7ece03c014ef84736f10288179f3f␟2900895229541262648:Hi! I'm a step added dynamically using a TemplateRef by clicking a button from the first step !`;
-    } return [[1, "container"], ["id", "nui-wizard-v2-horizontal"], ["label", "Step1"], ["nuiWizardStepFooter", ""], ["label", "Step2"], ["label", "Step3"], ["wizardPrevious", ""], ["wizardNext", ""], ["dialogWizard", ""], ["id", "nui-wizard-dialog-trigger", "nui-button", "", "type", "button", 3, "click"], i18n_0, ["id", "nui-wizard-horizontal-dynamic"], ["label", i18n_2], [1, "p-5"], i18n_4, ["nui-button", "", "type", "button", 1, "add", 3, "click"], ["ngProjectAs", "nui-wizard-step-v2", 5, ["nui-wizard-step-v2"], 4, "ngTemplateOutlet"], ["dynamicStepWithTemplate", ""], [4, "ngFor", "ngForOf"], ["dynamicTemplate1", ""], ["dynamicTemplate2", ""], ["wizardPreviousDynamic", ""], ["wizardNextDynamic", ""], [4, "ngTemplateOutlet"], ["type", "button", "nuiWizardPrevious", "", "nui-button", "", "icon", "caret-left", 1, "previous"], ["nuiWizardNext", "", "type", "button", "nui-button", "", "displayStyle", "primary", "icon", "caret-right", "iconRight", "true", 1, "next"], ["nuiResizeObserver", ""], ["dialog", ""], ["nui-busy", "", "id", "nui-busy", 3, "busy"], [1, "busy-content"], ["title", i18n_6, 3, "closed"], [1, "dialog-body", "compact-mode"], ["id", "nui-wizard-v2-horizontal-dialog", 3, "state", "finished"], ["wizard", ""], ["label", "Completed"], [1, "step-content-wrapper"], i18n_8, ["label", "Active"], i18n_10, ["label", "Not Visited"], i18n_12, ["label", "Summary"], ["finalStep", ""], i18n_14, ["wizardCancelDialog", ""], ["wizardPreviousDialog", ""], ["wizardNextDialog", ""], ["size", "large", "message", i18n_16], [3, "toggleReference"], ["overlay", ""], [1, "overlay-class"], [1, "overlay-content"], [1, "header"], [1, "body"], i18n_18, [1, "footer"], ["nui-button", "", "displayStyle", "action", "type", "button", 3, "click"], ["nui-button", "", "type", "button", 3, "click"], ["type", "button", "nui-button", "", 1, "busy-btn", 3, "click"], ["type", "button", "nui-button", "", "displayStyle", "primary", 1, "complete", 3, "click"], ["type", "button", "displayStyle", "action", "nui-button", "", 1, "cancel", 3, "click"], ["type", "button", "nuiWizardPrevious", "", "nui-button", "", "icon", "caret-left"], ["ngProjectAs", "nui-wizard-step-v2", 5, ["nui-wizard-step-v2"]], ["nuiWizardStepLabel", ""], [1, "m-5"], i18n_20, i18n_22, i18n_24, ["icon", "caret-left", "nui-button", "", "nuiWizardPrevious", "", "type", "button"], ["displayStyle", "primary", "icon", "caret-right", "iconRight", "true", "nui-button", "", "nuiWizardNext", "", "type", "button"]]; }, template: function WizardTestComponent_Template(rf, ctx) { if (rf & 1) {
-        const _r76 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+        i18n_21 = $localize `:␟9dfa7b9ebe128bde7cab896a85986ebb450f99f7␟4074000604906025359:Hi! You can add next step dynamically`;
+    } return [[1, "container"], ["id", "nui-wizard-v2-horizontal"], ["label", "Step1"], ["nuiWizardStepFooter", ""], ["label", "Step2"], ["label", "Step3"], ["wizardPrevious", ""], ["wizardNext", ""], ["dialogWizard", ""], ["id", "nui-wizard-dialog-trigger", "nui-button", "", "type", "button", 3, "click"], i18n_1, ["id", "nui-wizard-horizontal-dynamic"], ["wizardDynamic", ""], [4, "ngFor", "ngForOf"], ["dynamicStep", ""], ["normalStep", ""], [1, "d-flex"], [1, "nui-textbox--bold", 3, "ngStyle"], [3, "minValue", "value"], ["number", ""], ["displayStyle", "destructive", "id", "nui-remove-wizard-step-button", "nui-button", "", "type", "button", 1, "ml-3", "h-25", "align-self-end", 3, "disabled", "click"], i18n_3, [4, "ngTemplateOutlet"], ["type", "button", "nuiWizardPrevious", "", "nui-button", "", "icon", "caret-left", 1, "previous"], ["nuiWizardNext", "", "type", "button", "nui-button", "", "displayStyle", "primary", "icon", "caret-right", "iconRight", "true", 1, "next"], ["nuiResizeObserver", ""], ["dialog", ""], ["nui-busy", "", "id", "nui-busy", 3, "busy"], [1, "busy-content"], ["title", i18n_5, 3, "closed"], [1, "dialog-body", "compact-mode"], ["id", "nui-wizard-v2-horizontal-dialog", 3, "state", "finished"], ["wizard", ""], ["label", "Completed"], [1, "step-content-wrapper"], i18n_7, ["label", "Active"], i18n_9, ["label", "Not Visited"], i18n_11, ["label", "Summary"], ["finalStep", ""], i18n_13, ["wizardCancelDialog", ""], ["wizardPreviousDialog", ""], ["wizardNextDialog", ""], ["size", "large", "message", i18n_15], [3, "toggleReference"], ["overlay", ""], [1, "overlay-class"], [1, "overlay-content"], [1, "header"], [1, "body"], i18n_17, [1, "footer"], ["nui-button", "", "displayStyle", "action", "type", "button", 3, "click"], ["nui-button", "", "type", "button", 3, "click"], ["type", "button", "nui-button", "", 1, "busy-btn", 3, "click"], ["type", "button", "nui-button", "", "displayStyle", "primary", 1, "complete", 3, "click"], ["type", "button", "displayStyle", "action", "nui-button", "", 1, "cancel", 3, "click"], ["type", "button", "nuiWizardPrevious", "", "nui-button", "", "icon", "caret-left"], ["nuiWizardStepLabel", ""], [4, "ngIf"], ["icon", "caret-left", "nui-button", "", "nuiWizardPrevious", "", "type", "button"], ["displayStyle", "primary", "icon", "caret-right", "iconRight", "true", "nui-button", "", "nuiWizardNext", "", "type", "button"], [1, "m-5"], i18n_19, [1, "p-5"], i18n_21, ["nui-button", "", "type", "button", 1, "add", 3, "click"]]; }, template: function WizardTestComponent_Template(rf, ctx) { if (rf & 1) {
+        const _r68 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "nui-wizard-horizontal", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "nui-wizard-step-v2", 2);
@@ -4120,40 +4087,41 @@ WizardTestComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefi
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](16, WizardTestComponent_ng_template_16_Template, 52, 3, "ng-template", null, 8, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "button", 9);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function WizardTestComponent_Template_button_click_18_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r76); const _r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](17); return ctx.openDialog(_r7); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function WizardTestComponent_Template_button_click_18_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r68); const _r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](17); return ctx.openDialog(_r7); });
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](19, 10);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "div", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "nui-wizard-horizontal", 11);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "nui-wizard-step-v2", 12);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "div", 13);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](25, 14);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "nui-wizard-horizontal", 11, 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](23, WizardTestComponent_nui_wizard_step_v2_23_Template, 4, 1, "nui-wizard-step-v2", 13);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](24, WizardTestComponent_ng_template_24_Template, 2, 0, "ng-template", null, 14, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](26, WizardTestComponent_ng_template_26_Template, 5, 0, "ng-template", null, 15, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "button", 15);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function WizardTestComponent_Template_button_click_26_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r76); const _r16 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](36); return ctx.addStep(_r16); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](27, " Add dynamic step w/template ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](28, "div", 16);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](29, "div");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](30, "span", 17);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](31, "Step index to remove");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](32, "br");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](33, "nui-textbox-number", 18, 19);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](28, WizardTestComponent_ng_template_28_Template, 1, 1, "ng-template", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](35, "button", 20);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function WizardTestComponent_Template_button_click_35_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r68); const _r15 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](34); return ctx.removeStep(+_r15.value); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵi18n"](36, 21);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](29, WizardTestComponent_ng_container_29_Template, 1, 0, "ng-container", 16);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](30, WizardTestComponent_ng_template_30_Template, 5, 0, "ng-template", null, 17, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](32, WizardTestComponent_nui_wizard_step_v2_32_Template, 4, 1, "nui-wizard-step-v2", 18);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](33, WizardTestComponent_ng_template_33_Template, 2, 0, "ng-template", null, 19, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](35, WizardTestComponent_ng_template_35_Template, 2, 0, "ng-template", null, 20, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](37, WizardTestComponent_ng_template_37_Template, 2, 0, "ng-template", null, 21, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](39, WizardTestComponent_ng_template_39_Template, 2, 0, "ng-template", null, 22, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
-        const _r11 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](31);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](29);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngTemplateOutlet", _r11);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+        const _r15 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](34);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](23);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.steps);
-    } }, directives: [_src_lib_wizard_v2_wizard_horizontal_wizard_horizontal_component__WEBPACK_IMPORTED_MODULE_4__["WizardHorizontalComponent"], _src_lib_wizard_v2_wizard_step_wizard_step_component__WEBPACK_IMPORTED_MODULE_5__["WizardStepV2Component"], _src_lib_wizard_v2_wizard_step_footer_directive__WEBPACK_IMPORTED_MODULE_6__["WizardStepFooterDirective"], _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_7__["ButtonComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_8__["NgTemplateOutlet"], _angular_common__WEBPACK_IMPORTED_MODULE_8__["NgForOf"], _src_lib_wizard_v2_wizard_button_wizard_button__WEBPACK_IMPORTED_MODULE_9__["WizardStepperPreviousDirective"], _src_lib_wizard_v2_wizard_button_wizard_button__WEBPACK_IMPORTED_MODULE_9__["WizardStepperNextDirective"], _src_lib_busy_busy_component__WEBPACK_IMPORTED_MODULE_10__["BusyComponent"], _src_lib_dialog_dialog_header_component__WEBPACK_IMPORTED_MODULE_11__["DialogHeaderComponent"], _src_lib_spinner_spinner_component__WEBPACK_IMPORTED_MODULE_12__["SpinnerComponent"], _src_lib_overlay_overlay_component_overlay_component__WEBPACK_IMPORTED_MODULE_13__["OverlayComponent"], _src_lib_wizard_v2_wizard_step_label_directive__WEBPACK_IMPORTED_MODULE_14__["WizardStepLabelDirective"]], styles: [".step-content-wrapper[_ngcontent-%COMP%] {\n  padding: 15px;\n}\n.overlay-class[_ngcontent-%COMP%] {\n  display: flex;\n  height: 100%;\n  background-color: var(--nui-color-overlay-busy,rgba(255, 255, 255, 0.9));\n}\n.overlay-content[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  max-width: 460px;\n  margin: auto;\n  padding: 30px;\n  background-color: var(--nui-color-bg-content,#fff);\n}\n.overlay-content[_ngcontent-%COMP%]   .header[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: center;\n  margin-bottom: 15px;\n  line-height: 22px;\n  font-size: 16px;\n  font-weight: 600;\n  color: var(--nui-color-text-default,#111);\n}\n.overlay-content[_ngcontent-%COMP%]   .body[_ngcontent-%COMP%] {\n  display: flex;\n  text-align: center;\n  line-height: 18px;\n  font-size: 13px;\n}\n.overlay-content[_ngcontent-%COMP%]   .footer[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n}\n.overlay-content[_ngcontent-%COMP%]   .footer[_ngcontent-%COMP%]   button[displayStyle=\"action\"][_ngcontent-%COMP%] {\n  margin-right: 15px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndpemFyZC10ZXN0Lmxlc3MiLCIuLi8uLi8uLi8uLi8uLi8uLi9zcmMvc3R5bGVzL21peGlucy9jc3MtdmFyaWFibGVzLmxlc3MiLCIuLi8uLi8uLi8uLi8uLi8uLi9zcmMvc3R5bGVzL251aS1mcmFtZXdvcmstdHlwb2dyYXBoeS5sZXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUtBO0VBQ0ksYUFBQTtBQUpKO0FBUUk7RUFDSSxhQUFBO0VBQ0EsWUFBQTtFQ1BKLHdFQUFBO0FERUo7QUFTSTtFQUNJLGFBQUE7RUFDQSxzQkFBQTtFQUNBLHVCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxZQUFBO0VBQ0EsYUFBQTtFQ2pCSixrREFBQTtBRFdKO0FBQUk7RUFVUSxhQUFBO0VBQ0EsdUJBQUE7RUFDQSxtQkFBQTtFRXZCUixpQkFBQTtFQUNBLGVBQUE7RUFZQSxnQkFBQTtFRGJBLHlDQUFBO0FEb0JKO0FBVEk7RUFpQlEsYUFBQTtFQUNBLGtCQUFBO0VFN0JSLGlCQUFBO0VBQ0EsZUFBQTtBRnlCSjtBQWZJO0VBdUJRLGFBQUE7RUFDQSxtQkFBQTtFQUNBLHVCQUFBO0FBTFo7QUFwQkk7RUE0Qlksa0JBQUE7QUFMaEIiLCJmaWxlIjoid2l6YXJkLXRlc3QubGVzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgKHJlZmVyZW5jZSkgXCJudWktZnJhbWV3b3JrLWNvbG9yc1wiO1xuQGltcG9ydCAocmVmZXJlbmNlKSBcIm51aS1mcmFtZXdvcmstc3BhY2VzXCI7XG5AaW1wb3J0IChyZWZlcmVuY2UpIFwibnVpLWZyYW1ld29yay10eXBvZ3JhcGh5XCI7XG5cblxuLnN0ZXAtY29udGVudC13cmFwcGVyIHtcbiAgICBwYWRkaW5nOiBAbnVpLXNwYWNlLW1kO1xufVxuXG4ub3ZlcmxheSB7XG4gICAgJi1jbGFzcyB7XG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgIGhlaWdodDogMTAwJTtcbiAgICAgICAgLnNldENzc1ZhcmlhYmxlKGJhY2tncm91bmQtY29sb3IsIG51aS1jb2xvci1vdmVybGF5LWJ1c3kpO1xuICAgIH1cblxuICAgICYtY29udGVudCB7XG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gICAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICAgICAgICBtYXgtd2lkdGg6IDQ2MHB4O1xuICAgICAgICBtYXJnaW46IGF1dG87XG4gICAgICAgIHBhZGRpbmc6IChAbnVpLXNwYWNlLW1kICogMik7XG4gICAgICAgIC5zZXRDc3NWYXJpYWJsZShiYWNrZ3JvdW5kLWNvbG9yLCBudWktY29sb3ItYmctY29udGVudCk7XG5cbiAgICAgICAgLmhlYWRlciB7XG4gICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgICAgICAgICBtYXJnaW4tYm90dG9tOiBAbnVpLXNwYWNlLW1kO1xuICAgICAgICAgICAgLm51aS10ZXh0LXdpZGdldCgpO1xuICAgICAgICB9XG5cbiAgICAgICAgLmJvZHkge1xuICAgICAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICAgICAgICAgIC5udWktdGV4dC1zaXplKGRlZmF1bHQpO1xuICAgICAgICB9XG5cbiAgICAgICAgLmZvb3RlciB7XG4gICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICAgICAgZmxleC1kaXJlY3Rpb246IHJvdztcbiAgICAgICAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuXG4gICAgICAgICAgICBidXR0b25bZGlzcGxheVN0eWxlPVwiYWN0aW9uXCJdIHtcbiAgICAgICAgICAgICAgICBtYXJnaW4tcmlnaHQ6IEBudWktc3BhY2UtbWQ7XG4gICAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICB9XG59XG4iLCIuc2V0Q3NzVmFyaWFibGUoQHByb3BlcnR5LCBAdmFsdWUpe1xuICAgIEBldmFsdWF0ZWQgOiBcIkB7dmFsdWV9XCI7XG4gICAgLy90aGUgZG91YmxlIEAgZm9yY2VzIGEgaW5kaXJlY3Rpb24gZXZhbHVhdGlvbiwga2luZGEgbGlrZSBhIHBvaW50ZXJcbiAgICBAZmFsbGJhY2sgOiBAQGV2YWx1YXRlZDtcblxuICAgIEB7cHJvcGVydHl9OiB+XCJ2YXIoLS1Ae3ZhbHVlfSxAe2ZhbGxiYWNrfSlcIjtcbn1cbiIsIkBpbXBvcnQgKHJlZmVyZW5jZSkgXCJudWktZnJhbWV3b3JrLXZhcmlhYmxlcy5sZXNzXCI7XG5AaW1wb3J0IChyZWZlcmVuY2UpIFwibWl4aW5zLmxlc3NcIjtcblxuLyogZm9udC1zaXplICovXG4ubnVpLXRleHQtc2l6ZShAc2l6ZTogZGVmYXVsdCkge1xuICAgIGxpbmUtaGVpZ2h0OiB+XCJAe251aS1saW5lLWhlaWdodC1Ae3NpemV9fVwiO1xuICAgIGZvbnQtc2l6ZTogflwiQHtudWktZm9udC1zaXplLUB7c2l6ZX19XCI7XG59XG4vKiBmb250LXNpemUgZW5kcyAqL1xuXG4ubnVpLXRleHQtcGFnZSgpIHtcbiAgICAubnVpLXRleHQtc2l6ZShoZXJvKTtcbiAgICBmb250LXdlaWdodDogQG51aS1mb250LXdlaWdodC1zZW1pYm9sZDtcbiAgICAuc2V0Q3NzVmFyaWFibGUoY29sb3IsIG51aS1jb2xvci10ZXh0LWRlZmF1bHQpO1xufVxuXG4ubnVpLXRleHQtd2lkZ2V0KCkge1xuICAgIC5udWktdGV4dC1zaXplKGJpZyk7XG4gICAgZm9udC13ZWlnaHQ6IEBudWktZm9udC13ZWlnaHQtc2VtaWJvbGQ7XG4gICAgLnNldENzc1ZhcmlhYmxlKGNvbG9yLCBudWktY29sb3ItdGV4dC1kZWZhdWx0KTtcbn1cblxuLm51aS10ZXh0LXBhbmVsKEBjb2xvciwgQGNvbG9yTmFtZSkge1xuICAgIC5udWktdGV4dC1zaXplKGRlZmF1bHQpO1xuICAgIGZvbnQtd2VpZ2h0OiBAbnVpLWZvbnQtd2VpZ2h0LXNlbWlib2xkO1xuICAgIHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7XG4gICAgY29sb3I6IEBjb2xvcjtcbiAgICBjb2xvcjogflwidmFyKC0tQHtjb2xvck5hbWV9LEB7Y29sb3J9KVwiO1xufVxuXG4ubnVpLXRleHQtbGFiZWwoQGNvbG9yLCBAY29sb3JOYW1lKSB7XG4gICAgLm51aS10ZXh0LXNpemUoZGVmYXVsdCk7XG4gICAgZm9udC13ZWlnaHQ6IEBudWktZm9udC13ZWlnaHQtc2VtaWJvbGQ7XG4gICAgY29sb3I6IEBjb2xvcjtcbiAgICBjb2xvcjogflwidmFyKC0tQHtjb2xvck5hbWV9LEB7Y29sb3J9KVwiO1xufVxuXG4ubnVpLXRleHQtZGVmYXVsdChAY29sb3IsIEBjb2xvck5hbWUpIHtcbiAgICAubnVpLXRleHQtc2l6ZShkZWZhdWx0KTtcbiAgICBmb250LXdlaWdodDogQG51aS1mb250LXdlaWdodC1yZWd1bGFyO1xuICAgIGNvbG9yOiBAY29sb3I7XG4gICAgY29sb3I6IH5cInZhcigtLUB7Y29sb3JOYW1lfSxAe2NvbG9yfSlcIjtcbn1cblxuLm51aS10ZXh0LXNlY29uZGFyeShAY29sb3IsIEBjb2xvck5hbWUpIHtcbiAgICAubnVpLXRleHQtc2l6ZShkZWZhdWx0KTtcbiAgICBmb250LXdlaWdodDogQG51aS1mb250LXdlaWdodC1yZWd1bGFyO1xuICAgIGNvbG9yOiBAY29sb3I7XG4gICAgY29sb3I6IH5cInZhcigtLUB7Y29sb3JOYW1lfSxAe2NvbG9yfSlcIjtcbn1cblxuLm51aS10ZXh0LXRpdGxlLXNlY29uZGFyeShAY29sb3IsIEBjb2xvck5hbWUpIHtcbiAgICAubnVpLXRleHQtc2l6ZShzbWFsbCk7XG4gICAgZm9udC13ZWlnaHQ6IEBudWktZm9udC13ZWlnaHQtcmVndWxhcjtcbiAgICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xuICAgIGNvbG9yOiBAY29sb3I7XG4gICAgY29sb3I6IH5cInZhcigtLUB7Y29sb3JOYW1lfSxAe2NvbG9yfSlcIjtcbn1cblxuLm51aS10ZXh0LXNtYWxsKEBjb2xvciwgQGNvbG9yTmFtZSkge1xuICAgIC5udWktdGV4dC1zaXplKHNtYWxsKTtcbiAgICBmb250LXdlaWdodDogQG51aS1mb250LXdlaWdodC1yZWd1bGFyO1xuICAgIGNvbG9yOiBAY29sb3I7XG4gICAgY29sb3I6IH5cInZhcigtLUB7Y29sb3JOYW1lfSxAe2NvbG9yfSlcIjtcbn1cblxuLy8gVGhpcyBtaXhpbiBpcyBkZXByZWNhdGVkLiBVc2UgbnVpLXRleHQtc21hbGwoKSBpbnN0ZWFkXG4ubnVpLXRleHQtaGludChAY29sb3IsIEBjb2xvck5hbWUpICB7XG4gICAgLm51aS10ZXh0LXNpemUoc21hbGwpO1xuICAgIGZvbnQtd2VpZ2h0OiBAbnVpLWZvbnQtd2VpZ2h0LXJlZ3VsYXI7XG4gICAgY29sb3I6IEBjb2xvcjtcbiAgICBjb2xvcjogflwidmFyKC0tQHtjb2xvck5hbWV9LEB7Y29sb3J9KVwiO1xufVxuXG4ubnVpLXRleHQtaG92ZXJhYmxlKCkge1xuICAgIHRleHQtZGVjb3JhdGlvbi1saW5lOiB1bmRlcmxpbmU7XG4gICAgdGV4dC1kZWNvcmF0aW9uLXN0eWxlOiBkb3R0ZWQ7XG59XG5cbi5udWktdGV4dC1zbWFsbC1zZWNvbmRhcnkoKSB7XG4gICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtc2Vjb25kYXJ5KTtcbn1cblxuLy9zZW1hbnRpYyBzdHlsZXNcbi5udWktdGV4dCB7XG4gICAgJi1kaXNhYmxlZCB7XG4gICAgICAgIC5udWktdGV4dC1kZWZhdWx0KEBudWktY29sb3ItdGV4dC1kaXNhYmxlZCwgbnVpLWNvbG9yLXRleHQtZGlzYWJsZWQpO1xuICAgIH1cbiAgICAmLXByb2R1Y3Qge1xuICAgICAgICAubnVpLXRleHQtc2l6ZShoZXJvKTtcbiAgICAgICAgZm9udC1mYW1pbHk6IEBmb250LWZhbWlseS1yb2JvdG87XG4gICAgICAgIGZvbnQtd2VpZ2h0OiBAbnVpLWZvbnQtd2VpZ2h0LWJvbGQ7XG4gICAgICAgIC5zZXRDc3NWYXJpYWJsZShjb2xvciwgbnVpLWNvbG9yLXRleHQtbGlnaHQpO1xuICAgIH1cblxuICAgICYtcGFnZSB7XG4gICAgICAgIC5udWktdGV4dC1wYWdlKCk7XG5cbiAgICAgICAgJi0taG92ZXJhYmxlIHtcbiAgICAgICAgICAgIC5udWktdGV4dC1wYWdlKCk7XG4gICAgICAgICAgICAubnVpLXRleHQtaG92ZXJhYmxlKCk7XG4gICAgICAgIH1cbiAgICB9XG5cbiAgICAmLXdpZGdldCB7XG4gICAgICAgIC5udWktdGV4dC13aWRnZXQoKTtcblxuICAgICAgICAmLS1ob3ZlcmFibGUge1xuICAgICAgICAgICAgLm51aS10ZXh0LXdpZGdldCgpO1xuICAgICAgICAgICAgLm51aS10ZXh0LWhvdmVyYWJsZSgpO1xuICAgICAgICB9XG4gICAgfVxuXG4gICAgJi1wYW5lbCB7XG4gICAgICAgIC5udWktdGV4dC1wYW5lbChAbnVpLWNvbG9yLXRleHQtZGVmYXVsdCxudWktY29sb3ItdGV4dC1kZWZhdWx0KTtcbiAgICB9XG5cbiAgICAmLXBhbmVsLS1pbnZlcnNlIHtcbiAgICAgICAgLm51aS10ZXh0LXBhbmVsKEBudWktY29sb3ItdGV4dC1pbnZlcnNlLG51aS1jb2xvci10ZXh0LWludmVyc2UpO1xuICAgIH1cblxuICAgICYtcGFuZWwtLWhvdmVyYWJsZSB7XG4gICAgICAgIC5udWktdGV4dC1wYW5lbChAbnVpLWNvbG9yLXRleHQtZGVmYXVsdCxudWktY29sb3ItdGV4dC1kZWZhdWx0KTtcbiAgICAgICAgLm51aS10ZXh0LWhvdmVyYWJsZSgpO1xuICAgIH1cblxuICAgICYtcGFuZWwtLWRhcmtiZyB7XG4gICAgICAgIC5udWktdGV4dC1wYW5lbChAbnVpLWNvbG9yLXRleHQtbGlnaHQsbnVpLWNvbG9yLXRleHQtbGlnaHQpO1xuICAgIH1cblxuICAgICYtcGFuZWwtLWRhcmtiZy0taG92ZXJhYmxlIHtcbiAgICAgICAgLm51aS10ZXh0LXBhbmVsKEBudWktY29sb3ItdGV4dC1saWdodCxudWktY29sb3ItdGV4dC1saWdodCk7XG4gICAgICAgIC5udWktdGV4dC1ob3ZlcmFibGUoKTtcbiAgICB9XG5cbiAgICAmLWxhYmVsIHtcbiAgICAgICAgLm51aS10ZXh0LWxhYmVsKEBudWktY29sb3ItdGV4dC1kZWZhdWx0LG51aS1jb2xvci10ZXh0LWRlZmF1bHQpO1xuICAgIH1cblxuICAgICYtbGFiZWwtLWludmVyc2Uge1xuICAgICAgICAubnVpLXRleHQtbGFiZWwoQG51aS1jb2xvci10ZXh0LWludmVyc2UsbnVpLWNvbG9yLXRleHQtaW52ZXJzZSk7XG4gICAgfVxuXG4gICAgJi1sYWJlbC0taG92ZXJhYmxlIHtcbiAgICAgICAgLm51aS10ZXh0LWxhYmVsKEBudWktY29sb3ItdGV4dC1kZWZhdWx0LG51aS1jb2xvci10ZXh0LWRlZmF1bHQpO1xuICAgICAgICAubnVpLXRleHQtaG92ZXJhYmxlKCk7XG4gICAgfVxuXG4gICAgJi1sYWJlbC0tZGFya2JnIHtcbiAgICAgICAgLm51aS10ZXh0LWxhYmVsKEBudWktY29sb3ItdGV4dC1saWdodCxudWktY29sb3ItdGV4dC1saWdodCk7XG4gICAgfVxuXG4gICAgJi1sYWJlbC0tZGFya2JnLS1ob3ZlcmFibGUge1xuICAgICAgICAubnVpLXRleHQtbGFiZWwoQG51aS1jb2xvci10ZXh0LWxpZ2h0LG51aS1jb2xvci10ZXh0LWxpZ2h0KTtcbiAgICAgICAgLm51aS10ZXh0LWhvdmVyYWJsZSgpO1xuICAgIH1cblxuICAgICYtZGVmYXVsdCB7XG4gICAgICAgIC5udWktdGV4dC1kZWZhdWx0KEBudWktY29sb3ItdGV4dC1kZWZhdWx0LG51aS1jb2xvci10ZXh0LWRlZmF1bHQpO1xuICAgIH1cblxuICAgICYtZGVmYXVsdC0taW52ZXJzZSB7XG4gICAgICAgIC5udWktdGV4dC1kZWZhdWx0KEBudWktY29sb3ItdGV4dC1pbnZlcnNlLG51aS1jb2xvci10ZXh0LWludmVyc2UpO1xuICAgIH1cblxuICAgICYtZGVmYXVsdC0taW52ZXJzZS1zZWxlY3RlZCB7XG4gICAgICAgIC5udWktdGV4dC1kZWZhdWx0KEBudWktY29sb3ItdGV4dC1oaWdobGlnaHQtcGxhdGZvcm1fYmFyLG51aS1jb2xvci10ZXh0LWhpZ2hsaWdodC1wbGF0Zm9ybV9iYXIpO1xuICAgIH1cblxuICAgICYtZGVmYXVsdC0taG92ZXJhYmxlIHtcbiAgICAgICAgLm51aS10ZXh0LWRlZmF1bHQoQG51aS1jb2xvci10ZXh0LWRlZmF1bHQsbnVpLWNvbG9yLXRleHQtZGVmYXVsdCk7XG4gICAgICAgIC5udWktdGV4dC1ob3ZlcmFibGUoKTtcbiAgICB9XG5cbiAgICAmLWRlZmF1bHQtLWRhcmtiZyB7XG4gICAgICAgIC5udWktdGV4dC1kZWZhdWx0KEBudWktY29sb3ItdGV4dC1saWdodCxudWktY29sb3ItdGV4dC1saWdodCk7XG4gICAgfVxuICAgICYtZGVmYXVsdC0tZGFya2JnLS1ob3ZlcmFibGUge1xuICAgICAgICAubnVpLXRleHQtZGVmYXVsdChAbnVpLWNvbG9yLXRleHQtbGlnaHQsbnVpLWNvbG9yLXRleHQtbGlnaHQpO1xuICAgICAgICAubnVpLXRleHQtaG92ZXJhYmxlKCk7XG4gICAgfVxuXG4gICAgJi1kZWZhdWx0LS1kYXJrYmctc2VsZWN0ZWQge1xuICAgICAgICAubnVpLXRleHQtZGVmYXVsdChAbnVpLWNvbG9yLXRleHQtaGlnaGxpZ2h0LXBsYXRmb3JtX2JhcixudWktY29sb3ItdGV4dC1oaWdobGlnaHQtcGxhdGZvcm1fYmFyKTtcbiAgICB9XG5cbiAgICAmLWRlZmF1bHQtLWRhcmtiZy1zZWxlY3RlZC0taG92ZXJhYmxlIHtcbiAgICAgICAgLm51aS10ZXh0LWRlZmF1bHQoQG51aS1jb2xvci10ZXh0LWhpZ2hsaWdodC1wbGF0Zm9ybV9iYXIsbnVpLWNvbG9yLXRleHQtaGlnaGxpZ2h0LXBsYXRmb3JtX2Jhcik7XG4gICAgICAgIC5udWktdGV4dC1ob3ZlcmFibGUoKTtcbiAgICB9XG5cbiAgICAmLXNlY29uZGFyeSB7XG4gICAgICAgIC5udWktdGV4dC1zZWNvbmRhcnkoQG51aS1jb2xvci10ZXh0LXNlY29uZGFyeSxudWktY29sb3ItdGV4dC1zZWNvbmRhcnkpO1xuICAgIH1cblxuICAgICYtc2Vjb25kYXJ5LS1pbnZlcnNlIHtcbiAgICAgICAgLm51aS10ZXh0LXNlY29uZGFyeShAbnVpLWNvbG9yLXRleHQtaW52ZXJzZS1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtaW52ZXJzZS1zZWNvbmRhcnkpO1xuICAgIH1cblxuICAgICYtc2Vjb25kYXJ5LS1ob3ZlcmFibGUge1xuICAgICAgICAubnVpLXRleHQtc2Vjb25kYXJ5KEBudWktY29sb3ItdGV4dC1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtc2Vjb25kYXJ5KTtcbiAgICAgICAgLm51aS10ZXh0LWhvdmVyYWJsZSgpO1xuICAgIH1cblxuICAgICYtc2Vjb25kYXJ5LS1kYXJrYmcge1xuICAgICAgICAubnVpLXRleHQtc2Vjb25kYXJ5KEBudWktY29sb3ItdGV4dC1saWdodC1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtbGlnaHQtc2Vjb25kYXJ5KTtcbiAgICB9XG5cbiAgICAmLXNlY29uZGFyeS0tZGFya2JnLS1ob3ZlcmFibGUge1xuICAgICAgICAubnVpLXRleHQtc2Vjb25kYXJ5KEBudWktY29sb3ItdGV4dC1saWdodC1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtbGlnaHQtc2Vjb25kYXJ5KTtcbiAgICAgICAgLm51aS10ZXh0LWhvdmVyYWJsZSgpO1xuICAgIH1cblxuICAgICYtc2Vjb25kYXJ5LS1kaXNhYmxlZCB7XG4gICAgICAgIC5udWktdGV4dC1zZWNvbmRhcnkoQG51aS1jb2xvci10ZXh0LWRpc2FibGVkLG51aS1jb2xvci10ZXh0LWRpc2FibGVkKTtcbiAgICB9XG5cbiAgICAmLXNlY29uZGFyeS0tZGlzYWJsZWQtLWhvdmVyYWJsZSB7XG4gICAgICAgIC5udWktdGV4dC1zZWNvbmRhcnkoQG51aS1jb2xvci10ZXh0LWRpc2FibGVkLG51aS1jb2xvci10ZXh0LWRpc2FibGVkKTtcbiAgICAgICAgLm51aS10ZXh0LWhvdmVyYWJsZSgpO1xuICAgIH1cblxuICAgICYtbGluayB7XG4gICAgICAgIC5udWktdGV4dC1zaXplKGRlZmF1bHQpO1xuICAgICAgICBmb250LXdlaWdodDogQG51aS1mb250LXdlaWdodC1yZWd1bGFyO1xuICAgICAgICAuc2V0Q3NzVmFyaWFibGUoY29sb3IsIG51aS1jb2xvci10ZXh0LWxpbmspO1xuICAgIH1cbiAgICAmLWxpbms6aG92ZXIge1xuICAgICAgICB0ZXh0LWRlY29yYXRpb246IHVuZGVybGluZTtcbiAgICB9XG5cbiAgICAmLWxpbmstc21hbGwge1xuICAgICAgICAubnVpLXRleHQtc2l6ZShzbWFsbCk7XG4gICAgICAgIGZvbnQtd2VpZ2h0OiBAbnVpLWZvbnQtd2VpZ2h0LXJlZ3VsYXI7XG4gICAgICAgIC5zZXRDc3NWYXJpYWJsZShjb2xvciwgbnVpLWNvbG9yLXRleHQtbGluayk7XG4gICAgfVxuICAgICYtbGluay1zbWFsbDpob3ZlciB7XG4gICAgICAgIHRleHQtZGVjb3JhdGlvbjogdW5kZXJsaW5lO1xuICAgIH1cblxuICAgICYtc291cmNlLWNvZGUge1xuICAgICAgICAubnVpLXRleHQtc2l6ZShkZWZhdWx0KTtcbiAgICAgICAgZm9udC1mYW1pbHk6IEBmb250LWZhbWlseS1zb3VyY2UtY29kZS1wcm87XG4gICAgICAgIGZvbnQtd2VpZ2h0OiBAbnVpLWZvbnQtd2VpZ2h0LXJlZ3VsYXI7XG5cbiAgICAgICAgJi1zZWNvbmRhcnkge1xuICAgICAgICAgICAgLm51aS10ZXh0LXNpemUoZGVmYXVsdCk7XG4gICAgICAgICAgICBmb250LWZhbWlseTogQGZvbnQtZmFtaWx5LXNvdXJjZS1jb2RlLXBybztcbiAgICAgICAgICAgIGZvbnQtd2VpZ2h0OiBAbnVpLWZvbnQtd2VpZ2h0LXJlZ3VsYXI7XG4gICAgICAgICAgICAuc2V0Q3NzVmFyaWFibGUoY29sb3IsIG51aS1jb2xvci10ZXh0LXNlY29uZGFyeSk7XG4gICAgICAgIH1cbiAgICB9XG5cbiAgICAmLXRpdGxlLXNlY29uZGFyeSB7XG4gICAgICAgIC5udWktdGV4dC10aXRsZS1zZWNvbmRhcnkoQG51aS1jb2xvci10ZXh0LXNlY29uZGFyeSxudWktY29sb3ItdGV4dC1zZWNvbmRhcnkpO1xuICAgIH1cblxuICAgICYtdGl0bGUtc2Vjb25kYXJ5LS1pbnZlcnNlIHtcbiAgICAgICAgLm51aS10ZXh0LXRpdGxlLXNlY29uZGFyeShAbnVpLWNvbG9yLXRleHQtaW52ZXJzZS1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtaW52ZXJzZS1zZWNvbmRhcnkpO1xuICAgIH1cblxuICAgICYtdGl0bGUtc2Vjb25kYXJ5LS1kYXJrYmcge1xuICAgICAgICAubnVpLXRleHQtdGl0bGUtc2Vjb25kYXJ5KEBudWktY29sb3ItdGV4dC1saWdodC1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtbGlnaHQtc2Vjb25kYXJ5KTtcbiAgICB9XG5cbiAgICAmLXNtYWxsIHtcbiAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1kZWZhdWx0LG51aS1jb2xvci10ZXh0LWRlZmF1bHQpO1xuICAgIH1cblxuICAgICYtc21hbGwtc2Vjb25kYXJ5IHtcbiAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtc2Vjb25kYXJ5KTtcblxuICAgICAgICAmLS1ob3ZlcmFibGUge1xuICAgICAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtc2Vjb25kYXJ5KTtcbiAgICAgICAgICAgIC5udWktdGV4dC1ob3ZlcmFibGUoKTtcbiAgICAgICAgfVxuICAgIH1cblxuICAgICYtc21hbGwtc2Vjb25kYXJ5LS1pbnZlcnNlIHtcbiAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1pbnZlcnNlLXNlY29uZGFyeSxudWktY29sb3ItdGV4dC1pbnZlcnNlLXNlY29uZGFyeSk7XG5cbiAgICAgICAgJi0taG92ZXJhYmxlIHtcbiAgICAgICAgICAgIC5udWktdGV4dC1zbWFsbChAbnVpLWNvbG9yLXRleHQtaW52ZXJzZS1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtaW52ZXJzZS1zZWNvbmRhcnkpO1xuICAgICAgICAgICAgLm51aS10ZXh0LWhvdmVyYWJsZSgpO1xuICAgICAgICB9XG4gICAgfVxuXG4gICAgJi1zbWFsbC0taW52ZXJzZSB7XG4gICAgICAgIC5udWktdGV4dC1zbWFsbChAbnVpLWNvbG9yLXRleHQtaW52ZXJzZSxudWktY29sb3ItdGV4dC1pbnZlcnNlKTtcblxuICAgICAgICAmLS1ob3ZlcmFibGUge1xuICAgICAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1pbnZlcnNlLG51aS1jb2xvci10ZXh0LWludmVyc2UpO1xuICAgICAgICAgICAgLm51aS10ZXh0LWhvdmVyYWJsZSgpO1xuICAgICAgICB9XG4gICAgfVxuXG4gICAgJi1zbWFsbC0taG92ZXJhYmxlIHtcbiAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1kZWZhdWx0LG51aS1jb2xvci10ZXh0LWRlZmF1bHQpO1xuICAgICAgICAubnVpLXRleHQtaG92ZXJhYmxlKCk7XG4gICAgfVxuXG4gICAgJi1zbWFsbC0tZGFya2JnIHtcbiAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1saWdodCwgbnVpLWNvbG9yLXRleHQtbGlnaHQpO1xuICAgIH1cblxuICAgICYtc21hbGwtLWRhcmtiZy0taG92ZXJhYmxlIHtcbiAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1saWdodCwgbnVpLWNvbG9yLXRleHQtbGlnaHQpO1xuICAgICAgICAubnVpLXRleHQtaG92ZXJhYmxlKCk7XG4gICAgfVxuXG4gICAgJi1zbWFsbC0tZGlzYWJsZWQge1xuICAgICAgICAubnVpLXRleHQtc21hbGwoQG51aS1jb2xvci10ZXh0LWRpc2FibGVkLG51aS1jb2xvci10ZXh0LWRpc2FibGVkKTtcbiAgICB9XG5cbiAgICAmLXNtYWxsLS1kaXNhYmxlZC0taG92ZXJhYmxlIHtcbiAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1kaXNhYmxlZCxudWktY29sb3ItdGV4dC1kaXNhYmxlZCk7XG4gICAgICAgIC5udWktdGV4dC1ob3ZlcmFibGUoKTtcbiAgICB9XG5cbiAgICAvLyBgbnVpLXRleHQtaGludGAgc3R5bGVzIGFyZSBkZXByZWNhdGVkLiBVc2UgYG51aS10ZXh0LXNtYWxsLXNlY29uZGFyeWAgaW5zdGVhZC5cbiAgICAmLWhpbnQge1xuICAgICAgICAubnVpLXRleHQtaGludChAbnVpLWNvbG9yLXRleHQtc2Vjb25kYXJ5LG51aS1jb2xvci10ZXh0LXNlY29uZGFyeSk7XG4gICAgfVxuXG4gICAgJi1oaW50LS1ob3ZlcmFibGUge1xuICAgICAgICAubnVpLXRleHQtaGludChAbnVpLWNvbG9yLXRleHQtc2Vjb25kYXJ5LG51aS1jb2xvci10ZXh0LXNlY29uZGFyeSk7XG4gICAgICAgIC5udWktdGV4dC1ob3ZlcmFibGUoKTtcbiAgICB9XG5cbiAgICAmLWhpbnQtLWRhcmtiZyB7XG4gICAgICAgIC5udWktdGV4dC1oaW50KEBudWktY29sb3ItdGV4dC1saWdodC1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtbGlnaHQtc2Vjb25kYXJ5KTtcbiAgICB9XG5cbiAgICAmLWhpbnQtLWRhcmtiZy0taG92ZXJhYmxlIHtcbiAgICAgICAgLm51aS10ZXh0LWhpbnQoQG51aS1jb2xvci10ZXh0LWxpZ2h0LXNlY29uZGFyeSxudWktY29sb3ItdGV4dC1saWdodC1zZWNvbmRhcnkpO1xuICAgICAgICAubnVpLXRleHQtaG92ZXJhYmxlKCk7XG4gICAgfVxuXG4gICAgJi12YWxpZGF0aW9uIHtcbiAgICAgICAgLm51aS10ZXh0LXNpemUoc21hbGwpO1xuICAgICAgICBmb250LXdlaWdodDogQG51aS1mb250LXdlaWdodC1zZW1pYm9sZDtcbiAgICAgICAgLnNldENzc1ZhcmlhYmxlKGNvbG9yLCBudWktY29sb3ItdGV4dC1jcml0aWNhbCk7XG4gICAgfVxuXG4gICAgJi1lbGxpcHNpcyB7XG4gICAgICAgIC50ZXh0LW92ZXJmbG93KGVsbGlwc2lzKTtcbiAgICB9XG59XG5cbiJdfQ== */"] });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngStyle", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](5, _c23));
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("minValue", 1)("value", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("disabled", +_r15.value < 1);
+    } }, directives: [_src_lib_wizard_v2_wizard_horizontal_wizard_horizontal_component__WEBPACK_IMPORTED_MODULE_4__["WizardHorizontalComponent"], _src_lib_wizard_v2_wizard_step_wizard_step_component__WEBPACK_IMPORTED_MODULE_5__["WizardStepV2Component"], _src_lib_wizard_v2_wizard_step_footer_directive__WEBPACK_IMPORTED_MODULE_6__["WizardStepFooterDirective"], _src_lib_button_button_component__WEBPACK_IMPORTED_MODULE_7__["ButtonComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_8__["NgForOf"], _angular_common__WEBPACK_IMPORTED_MODULE_8__["NgStyle"], _src_lib_textbox_textbox_number_textbox_number_component__WEBPACK_IMPORTED_MODULE_9__["TextboxNumberComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_8__["NgTemplateOutlet"], _src_lib_wizard_v2_wizard_button_wizard_button__WEBPACK_IMPORTED_MODULE_10__["WizardStepperPreviousDirective"], _src_lib_wizard_v2_wizard_button_wizard_button__WEBPACK_IMPORTED_MODULE_10__["WizardStepperNextDirective"], _src_lib_busy_busy_component__WEBPACK_IMPORTED_MODULE_11__["BusyComponent"], _src_lib_dialog_dialog_header_component__WEBPACK_IMPORTED_MODULE_12__["DialogHeaderComponent"], _src_lib_spinner_spinner_component__WEBPACK_IMPORTED_MODULE_13__["SpinnerComponent"], _src_lib_overlay_overlay_component_overlay_component__WEBPACK_IMPORTED_MODULE_14__["OverlayComponent"], _src_lib_wizard_v2_wizard_step_label_directive__WEBPACK_IMPORTED_MODULE_15__["WizardStepLabelDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_8__["NgIf"]], styles: [".step-content-wrapper[_ngcontent-%COMP%] {\n  padding: 15px;\n}\n.overlay-class[_ngcontent-%COMP%] {\n  display: flex;\n  height: 100%;\n  background-color: var(--nui-color-overlay-busy,rgba(255, 255, 255, 0.9));\n}\n.overlay-content[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  max-width: 460px;\n  margin: auto;\n  padding: 30px;\n  background-color: var(--nui-color-bg-content,#fff);\n}\n.overlay-content[_ngcontent-%COMP%]   .header[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: center;\n  margin-bottom: 15px;\n  line-height: 22px;\n  font-size: 16px;\n  font-weight: 600;\n  color: var(--nui-color-text-default,#111);\n}\n.overlay-content[_ngcontent-%COMP%]   .body[_ngcontent-%COMP%] {\n  display: flex;\n  text-align: center;\n  line-height: 18px;\n  font-size: 13px;\n}\n.overlay-content[_ngcontent-%COMP%]   .footer[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n}\n.overlay-content[_ngcontent-%COMP%]   .footer[_ngcontent-%COMP%]   button[displayStyle=\"action\"][_ngcontent-%COMP%] {\n  margin-right: 15px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndpemFyZC10ZXN0Lmxlc3MiLCIuLi8uLi8uLi8uLi8uLi8uLi9zcmMvc3R5bGVzL21peGlucy9jc3MtdmFyaWFibGVzLmxlc3MiLCIuLi8uLi8uLi8uLi8uLi8uLi9zcmMvc3R5bGVzL251aS1mcmFtZXdvcmstdHlwb2dyYXBoeS5sZXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUtBO0VBQ0ksYUFBQTtBQUpKO0FBUUk7RUFDSSxhQUFBO0VBQ0EsWUFBQTtFQ1BKLHdFQUFBO0FERUo7QUFTSTtFQUNJLGFBQUE7RUFDQSxzQkFBQTtFQUNBLHVCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxZQUFBO0VBQ0EsYUFBQTtFQ2pCSixrREFBQTtBRFdKO0FBQUk7RUFVUSxhQUFBO0VBQ0EsdUJBQUE7RUFDQSxtQkFBQTtFRXZCUixpQkFBQTtFQUNBLGVBQUE7RUFZQSxnQkFBQTtFRGJBLHlDQUFBO0FEb0JKO0FBVEk7RUFpQlEsYUFBQTtFQUNBLGtCQUFBO0VFN0JSLGlCQUFBO0VBQ0EsZUFBQTtBRnlCSjtBQWZJO0VBdUJRLGFBQUE7RUFDQSxtQkFBQTtFQUNBLHVCQUFBO0FBTFo7QUFwQkk7RUE0Qlksa0JBQUE7QUFMaEIiLCJmaWxlIjoid2l6YXJkLXRlc3QubGVzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgKHJlZmVyZW5jZSkgXCJudWktZnJhbWV3b3JrLWNvbG9yc1wiO1xuQGltcG9ydCAocmVmZXJlbmNlKSBcIm51aS1mcmFtZXdvcmstc3BhY2VzXCI7XG5AaW1wb3J0IChyZWZlcmVuY2UpIFwibnVpLWZyYW1ld29yay10eXBvZ3JhcGh5XCI7XG5cblxuLnN0ZXAtY29udGVudC13cmFwcGVyIHtcbiAgICBwYWRkaW5nOiBAbnVpLXNwYWNlLW1kO1xufVxuXG4ub3ZlcmxheSB7XG4gICAgJi1jbGFzcyB7XG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgIGhlaWdodDogMTAwJTtcbiAgICAgICAgLnNldENzc1ZhcmlhYmxlKGJhY2tncm91bmQtY29sb3IsIG51aS1jb2xvci1vdmVybGF5LWJ1c3kpO1xuICAgIH1cblxuICAgICYtY29udGVudCB7XG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gICAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICAgICAgICBtYXgtd2lkdGg6IDQ2MHB4O1xuICAgICAgICBtYXJnaW46IGF1dG87XG4gICAgICAgIHBhZGRpbmc6IChAbnVpLXNwYWNlLW1kICogMik7XG4gICAgICAgIC5zZXRDc3NWYXJpYWJsZShiYWNrZ3JvdW5kLWNvbG9yLCBudWktY29sb3ItYmctY29udGVudCk7XG5cbiAgICAgICAgLmhlYWRlciB7XG4gICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgICAgICAgICBtYXJnaW4tYm90dG9tOiBAbnVpLXNwYWNlLW1kO1xuICAgICAgICAgICAgLm51aS10ZXh0LXdpZGdldCgpO1xuICAgICAgICB9XG5cbiAgICAgICAgLmJvZHkge1xuICAgICAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICAgICAgICAgIC5udWktdGV4dC1zaXplKGRlZmF1bHQpO1xuICAgICAgICB9XG5cbiAgICAgICAgLmZvb3RlciB7XG4gICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICAgICAgZmxleC1kaXJlY3Rpb246IHJvdztcbiAgICAgICAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuXG4gICAgICAgICAgICBidXR0b25bZGlzcGxheVN0eWxlPVwiYWN0aW9uXCJdIHtcbiAgICAgICAgICAgICAgICBtYXJnaW4tcmlnaHQ6IEBudWktc3BhY2UtbWQ7XG4gICAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICB9XG59XG4iLCIuc2V0Q3NzVmFyaWFibGUoQHByb3BlcnR5LCBAdmFsdWUpe1xuICAgIEBldmFsdWF0ZWQgOiBcIkB7dmFsdWV9XCI7XG4gICAgLy90aGUgZG91YmxlIEAgZm9yY2VzIGEgaW5kaXJlY3Rpb24gZXZhbHVhdGlvbiwga2luZGEgbGlrZSBhIHBvaW50ZXJcbiAgICBAZmFsbGJhY2sgOiBAQGV2YWx1YXRlZDtcblxuICAgIEB7cHJvcGVydHl9OiB+XCJ2YXIoLS1Ae3ZhbHVlfSxAe2ZhbGxiYWNrfSlcIjtcbn1cbiIsIkBpbXBvcnQgKHJlZmVyZW5jZSkgXCJudWktZnJhbWV3b3JrLXZhcmlhYmxlcy5sZXNzXCI7XG5AaW1wb3J0IChyZWZlcmVuY2UpIFwibWl4aW5zLmxlc3NcIjtcblxuLyogZm9udC1zaXplICovXG4ubnVpLXRleHQtc2l6ZShAc2l6ZTogZGVmYXVsdCkge1xuICAgIGxpbmUtaGVpZ2h0OiB+XCJAe251aS1saW5lLWhlaWdodC1Ae3NpemV9fVwiO1xuICAgIGZvbnQtc2l6ZTogflwiQHtudWktZm9udC1zaXplLUB7c2l6ZX19XCI7XG59XG4vKiBmb250LXNpemUgZW5kcyAqL1xuXG4ubnVpLXRleHQtcGFnZSgpIHtcbiAgICAubnVpLXRleHQtc2l6ZShoZXJvKTtcbiAgICBmb250LXdlaWdodDogQG51aS1mb250LXdlaWdodC1zZW1pYm9sZDtcbiAgICAuc2V0Q3NzVmFyaWFibGUoY29sb3IsIG51aS1jb2xvci10ZXh0LWRlZmF1bHQpO1xufVxuXG4ubnVpLXRleHQtd2lkZ2V0KCkge1xuICAgIC5udWktdGV4dC1zaXplKGJpZyk7XG4gICAgZm9udC13ZWlnaHQ6IEBudWktZm9udC13ZWlnaHQtc2VtaWJvbGQ7XG4gICAgLnNldENzc1ZhcmlhYmxlKGNvbG9yLCBudWktY29sb3ItdGV4dC1kZWZhdWx0KTtcbn1cblxuLm51aS10ZXh0LXBhbmVsKEBjb2xvciwgQGNvbG9yTmFtZSkge1xuICAgIC5udWktdGV4dC1zaXplKGRlZmF1bHQpO1xuICAgIGZvbnQtd2VpZ2h0OiBAbnVpLWZvbnQtd2VpZ2h0LXNlbWlib2xkO1xuICAgIHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7XG4gICAgY29sb3I6IEBjb2xvcjtcbiAgICBjb2xvcjogflwidmFyKC0tQHtjb2xvck5hbWV9LEB7Y29sb3J9KVwiO1xufVxuXG4ubnVpLXRleHQtbGFiZWwoQGNvbG9yLCBAY29sb3JOYW1lKSB7XG4gICAgLm51aS10ZXh0LXNpemUoZGVmYXVsdCk7XG4gICAgZm9udC13ZWlnaHQ6IEBudWktZm9udC13ZWlnaHQtc2VtaWJvbGQ7XG4gICAgY29sb3I6IEBjb2xvcjtcbiAgICBjb2xvcjogflwidmFyKC0tQHtjb2xvck5hbWV9LEB7Y29sb3J9KVwiO1xufVxuXG4ubnVpLXRleHQtZGVmYXVsdChAY29sb3IsIEBjb2xvck5hbWUpIHtcbiAgICAubnVpLXRleHQtc2l6ZShkZWZhdWx0KTtcbiAgICBmb250LXdlaWdodDogQG51aS1mb250LXdlaWdodC1yZWd1bGFyO1xuICAgIGNvbG9yOiBAY29sb3I7XG4gICAgY29sb3I6IH5cInZhcigtLUB7Y29sb3JOYW1lfSxAe2NvbG9yfSlcIjtcbn1cblxuLm51aS10ZXh0LXNlY29uZGFyeShAY29sb3IsIEBjb2xvck5hbWUpIHtcbiAgICAubnVpLXRleHQtc2l6ZShkZWZhdWx0KTtcbiAgICBmb250LXdlaWdodDogQG51aS1mb250LXdlaWdodC1yZWd1bGFyO1xuICAgIGNvbG9yOiBAY29sb3I7XG4gICAgY29sb3I6IH5cInZhcigtLUB7Y29sb3JOYW1lfSxAe2NvbG9yfSlcIjtcbn1cblxuLm51aS10ZXh0LXRpdGxlLXNlY29uZGFyeShAY29sb3IsIEBjb2xvck5hbWUpIHtcbiAgICAubnVpLXRleHQtc2l6ZShzbWFsbCk7XG4gICAgZm9udC13ZWlnaHQ6IEBudWktZm9udC13ZWlnaHQtcmVndWxhcjtcbiAgICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xuICAgIGNvbG9yOiBAY29sb3I7XG4gICAgY29sb3I6IH5cInZhcigtLUB7Y29sb3JOYW1lfSxAe2NvbG9yfSlcIjtcbn1cblxuLm51aS10ZXh0LXNtYWxsKEBjb2xvciwgQGNvbG9yTmFtZSkge1xuICAgIC5udWktdGV4dC1zaXplKHNtYWxsKTtcbiAgICBmb250LXdlaWdodDogQG51aS1mb250LXdlaWdodC1yZWd1bGFyO1xuICAgIGNvbG9yOiBAY29sb3I7XG4gICAgY29sb3I6IH5cInZhcigtLUB7Y29sb3JOYW1lfSxAe2NvbG9yfSlcIjtcbn1cblxuLy8gVGhpcyBtaXhpbiBpcyBkZXByZWNhdGVkLiBVc2UgbnVpLXRleHQtc21hbGwoKSBpbnN0ZWFkXG4ubnVpLXRleHQtaGludChAY29sb3IsIEBjb2xvck5hbWUpICB7XG4gICAgLm51aS10ZXh0LXNpemUoc21hbGwpO1xuICAgIGZvbnQtd2VpZ2h0OiBAbnVpLWZvbnQtd2VpZ2h0LXJlZ3VsYXI7XG4gICAgY29sb3I6IEBjb2xvcjtcbiAgICBjb2xvcjogflwidmFyKC0tQHtjb2xvck5hbWV9LEB7Y29sb3J9KVwiO1xufVxuXG4ubnVpLXRleHQtaG92ZXJhYmxlKCkge1xuICAgIHRleHQtZGVjb3JhdGlvbi1saW5lOiB1bmRlcmxpbmU7XG4gICAgdGV4dC1kZWNvcmF0aW9uLXN0eWxlOiBkb3R0ZWQ7XG59XG5cbi5udWktdGV4dC1zbWFsbC1zZWNvbmRhcnkoKSB7XG4gICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtc2Vjb25kYXJ5KTtcbn1cblxuLy9zZW1hbnRpYyBzdHlsZXNcbi5udWktdGV4dCB7XG4gICAgJi1kaXNhYmxlZCB7XG4gICAgICAgIC5udWktdGV4dC1kZWZhdWx0KEBudWktY29sb3ItdGV4dC1kaXNhYmxlZCwgbnVpLWNvbG9yLXRleHQtZGlzYWJsZWQpO1xuICAgIH1cbiAgICAmLXByb2R1Y3Qge1xuICAgICAgICAubnVpLXRleHQtc2l6ZShoZXJvKTtcbiAgICAgICAgZm9udC1mYW1pbHk6IEBmb250LWZhbWlseS1yb2JvdG87XG4gICAgICAgIGZvbnQtd2VpZ2h0OiBAbnVpLWZvbnQtd2VpZ2h0LWJvbGQ7XG4gICAgICAgIC5zZXRDc3NWYXJpYWJsZShjb2xvciwgbnVpLWNvbG9yLXRleHQtbGlnaHQpO1xuICAgIH1cblxuICAgICYtcGFnZSB7XG4gICAgICAgIC5udWktdGV4dC1wYWdlKCk7XG5cbiAgICAgICAgJi0taG92ZXJhYmxlIHtcbiAgICAgICAgICAgIC5udWktdGV4dC1wYWdlKCk7XG4gICAgICAgICAgICAubnVpLXRleHQtaG92ZXJhYmxlKCk7XG4gICAgICAgIH1cbiAgICB9XG5cbiAgICAmLXdpZGdldCB7XG4gICAgICAgIC5udWktdGV4dC13aWRnZXQoKTtcblxuICAgICAgICAmLS1ob3ZlcmFibGUge1xuICAgICAgICAgICAgLm51aS10ZXh0LXdpZGdldCgpO1xuICAgICAgICAgICAgLm51aS10ZXh0LWhvdmVyYWJsZSgpO1xuICAgICAgICB9XG4gICAgfVxuXG4gICAgJi1wYW5lbCB7XG4gICAgICAgIC5udWktdGV4dC1wYW5lbChAbnVpLWNvbG9yLXRleHQtZGVmYXVsdCxudWktY29sb3ItdGV4dC1kZWZhdWx0KTtcbiAgICB9XG5cbiAgICAmLXBhbmVsLS1pbnZlcnNlIHtcbiAgICAgICAgLm51aS10ZXh0LXBhbmVsKEBudWktY29sb3ItdGV4dC1pbnZlcnNlLG51aS1jb2xvci10ZXh0LWludmVyc2UpO1xuICAgIH1cblxuICAgICYtcGFuZWwtLWhvdmVyYWJsZSB7XG4gICAgICAgIC5udWktdGV4dC1wYW5lbChAbnVpLWNvbG9yLXRleHQtZGVmYXVsdCxudWktY29sb3ItdGV4dC1kZWZhdWx0KTtcbiAgICAgICAgLm51aS10ZXh0LWhvdmVyYWJsZSgpO1xuICAgIH1cblxuICAgICYtcGFuZWwtLWRhcmtiZyB7XG4gICAgICAgIC5udWktdGV4dC1wYW5lbChAbnVpLWNvbG9yLXRleHQtbGlnaHQsbnVpLWNvbG9yLXRleHQtbGlnaHQpO1xuICAgIH1cblxuICAgICYtcGFuZWwtLWRhcmtiZy0taG92ZXJhYmxlIHtcbiAgICAgICAgLm51aS10ZXh0LXBhbmVsKEBudWktY29sb3ItdGV4dC1saWdodCxudWktY29sb3ItdGV4dC1saWdodCk7XG4gICAgICAgIC5udWktdGV4dC1ob3ZlcmFibGUoKTtcbiAgICB9XG5cbiAgICAmLWxhYmVsIHtcbiAgICAgICAgLm51aS10ZXh0LWxhYmVsKEBudWktY29sb3ItdGV4dC1kZWZhdWx0LG51aS1jb2xvci10ZXh0LWRlZmF1bHQpO1xuICAgIH1cblxuICAgICYtbGFiZWwtLWludmVyc2Uge1xuICAgICAgICAubnVpLXRleHQtbGFiZWwoQG51aS1jb2xvci10ZXh0LWludmVyc2UsbnVpLWNvbG9yLXRleHQtaW52ZXJzZSk7XG4gICAgfVxuXG4gICAgJi1sYWJlbC0taG92ZXJhYmxlIHtcbiAgICAgICAgLm51aS10ZXh0LWxhYmVsKEBudWktY29sb3ItdGV4dC1kZWZhdWx0LG51aS1jb2xvci10ZXh0LWRlZmF1bHQpO1xuICAgICAgICAubnVpLXRleHQtaG92ZXJhYmxlKCk7XG4gICAgfVxuXG4gICAgJi1sYWJlbC0tZGFya2JnIHtcbiAgICAgICAgLm51aS10ZXh0LWxhYmVsKEBudWktY29sb3ItdGV4dC1saWdodCxudWktY29sb3ItdGV4dC1saWdodCk7XG4gICAgfVxuXG4gICAgJi1sYWJlbC0tZGFya2JnLS1ob3ZlcmFibGUge1xuICAgICAgICAubnVpLXRleHQtbGFiZWwoQG51aS1jb2xvci10ZXh0LWxpZ2h0LG51aS1jb2xvci10ZXh0LWxpZ2h0KTtcbiAgICAgICAgLm51aS10ZXh0LWhvdmVyYWJsZSgpO1xuICAgIH1cblxuICAgICYtZGVmYXVsdCB7XG4gICAgICAgIC5udWktdGV4dC1kZWZhdWx0KEBudWktY29sb3ItdGV4dC1kZWZhdWx0LG51aS1jb2xvci10ZXh0LWRlZmF1bHQpO1xuICAgIH1cblxuICAgICYtZGVmYXVsdC0taW52ZXJzZSB7XG4gICAgICAgIC5udWktdGV4dC1kZWZhdWx0KEBudWktY29sb3ItdGV4dC1pbnZlcnNlLG51aS1jb2xvci10ZXh0LWludmVyc2UpO1xuICAgIH1cblxuICAgICYtZGVmYXVsdC0taW52ZXJzZS1zZWxlY3RlZCB7XG4gICAgICAgIC5udWktdGV4dC1kZWZhdWx0KEBudWktY29sb3ItdGV4dC1oaWdobGlnaHQtcGxhdGZvcm1fYmFyLG51aS1jb2xvci10ZXh0LWhpZ2hsaWdodC1wbGF0Zm9ybV9iYXIpO1xuICAgIH1cblxuICAgICYtZGVmYXVsdC0taG92ZXJhYmxlIHtcbiAgICAgICAgLm51aS10ZXh0LWRlZmF1bHQoQG51aS1jb2xvci10ZXh0LWRlZmF1bHQsbnVpLWNvbG9yLXRleHQtZGVmYXVsdCk7XG4gICAgICAgIC5udWktdGV4dC1ob3ZlcmFibGUoKTtcbiAgICB9XG5cbiAgICAmLWRlZmF1bHQtLWRhcmtiZyB7XG4gICAgICAgIC5udWktdGV4dC1kZWZhdWx0KEBudWktY29sb3ItdGV4dC1saWdodCxudWktY29sb3ItdGV4dC1saWdodCk7XG4gICAgfVxuICAgICYtZGVmYXVsdC0tZGFya2JnLS1ob3ZlcmFibGUge1xuICAgICAgICAubnVpLXRleHQtZGVmYXVsdChAbnVpLWNvbG9yLXRleHQtbGlnaHQsbnVpLWNvbG9yLXRleHQtbGlnaHQpO1xuICAgICAgICAubnVpLXRleHQtaG92ZXJhYmxlKCk7XG4gICAgfVxuXG4gICAgJi1kZWZhdWx0LS1kYXJrYmctc2VsZWN0ZWQge1xuICAgICAgICAubnVpLXRleHQtZGVmYXVsdChAbnVpLWNvbG9yLXRleHQtaGlnaGxpZ2h0LXBsYXRmb3JtX2JhcixudWktY29sb3ItdGV4dC1oaWdobGlnaHQtcGxhdGZvcm1fYmFyKTtcbiAgICB9XG5cbiAgICAmLWRlZmF1bHQtLWRhcmtiZy1zZWxlY3RlZC0taG92ZXJhYmxlIHtcbiAgICAgICAgLm51aS10ZXh0LWRlZmF1bHQoQG51aS1jb2xvci10ZXh0LWhpZ2hsaWdodC1wbGF0Zm9ybV9iYXIsbnVpLWNvbG9yLXRleHQtaGlnaGxpZ2h0LXBsYXRmb3JtX2Jhcik7XG4gICAgICAgIC5udWktdGV4dC1ob3ZlcmFibGUoKTtcbiAgICB9XG5cbiAgICAmLXNlY29uZGFyeSB7XG4gICAgICAgIC5udWktdGV4dC1zZWNvbmRhcnkoQG51aS1jb2xvci10ZXh0LXNlY29uZGFyeSxudWktY29sb3ItdGV4dC1zZWNvbmRhcnkpO1xuICAgIH1cblxuICAgICYtc2Vjb25kYXJ5LS1pbnZlcnNlIHtcbiAgICAgICAgLm51aS10ZXh0LXNlY29uZGFyeShAbnVpLWNvbG9yLXRleHQtaW52ZXJzZS1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtaW52ZXJzZS1zZWNvbmRhcnkpO1xuICAgIH1cblxuICAgICYtc2Vjb25kYXJ5LS1ob3ZlcmFibGUge1xuICAgICAgICAubnVpLXRleHQtc2Vjb25kYXJ5KEBudWktY29sb3ItdGV4dC1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtc2Vjb25kYXJ5KTtcbiAgICAgICAgLm51aS10ZXh0LWhvdmVyYWJsZSgpO1xuICAgIH1cblxuICAgICYtc2Vjb25kYXJ5LS1kYXJrYmcge1xuICAgICAgICAubnVpLXRleHQtc2Vjb25kYXJ5KEBudWktY29sb3ItdGV4dC1saWdodC1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtbGlnaHQtc2Vjb25kYXJ5KTtcbiAgICB9XG5cbiAgICAmLXNlY29uZGFyeS0tZGFya2JnLS1ob3ZlcmFibGUge1xuICAgICAgICAubnVpLXRleHQtc2Vjb25kYXJ5KEBudWktY29sb3ItdGV4dC1saWdodC1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtbGlnaHQtc2Vjb25kYXJ5KTtcbiAgICAgICAgLm51aS10ZXh0LWhvdmVyYWJsZSgpO1xuICAgIH1cblxuICAgICYtc2Vjb25kYXJ5LS1kaXNhYmxlZCB7XG4gICAgICAgIC5udWktdGV4dC1zZWNvbmRhcnkoQG51aS1jb2xvci10ZXh0LWRpc2FibGVkLG51aS1jb2xvci10ZXh0LWRpc2FibGVkKTtcbiAgICB9XG5cbiAgICAmLXNlY29uZGFyeS0tZGlzYWJsZWQtLWhvdmVyYWJsZSB7XG4gICAgICAgIC5udWktdGV4dC1zZWNvbmRhcnkoQG51aS1jb2xvci10ZXh0LWRpc2FibGVkLG51aS1jb2xvci10ZXh0LWRpc2FibGVkKTtcbiAgICAgICAgLm51aS10ZXh0LWhvdmVyYWJsZSgpO1xuICAgIH1cblxuICAgICYtbGluayB7XG4gICAgICAgIC5udWktdGV4dC1zaXplKGRlZmF1bHQpO1xuICAgICAgICBmb250LXdlaWdodDogQG51aS1mb250LXdlaWdodC1yZWd1bGFyO1xuICAgICAgICAuc2V0Q3NzVmFyaWFibGUoY29sb3IsIG51aS1jb2xvci10ZXh0LWxpbmspO1xuICAgIH1cbiAgICAmLWxpbms6aG92ZXIge1xuICAgICAgICB0ZXh0LWRlY29yYXRpb246IHVuZGVybGluZTtcbiAgICB9XG5cbiAgICAmLWxpbmstc21hbGwge1xuICAgICAgICAubnVpLXRleHQtc2l6ZShzbWFsbCk7XG4gICAgICAgIGZvbnQtd2VpZ2h0OiBAbnVpLWZvbnQtd2VpZ2h0LXJlZ3VsYXI7XG4gICAgICAgIC5zZXRDc3NWYXJpYWJsZShjb2xvciwgbnVpLWNvbG9yLXRleHQtbGluayk7XG4gICAgfVxuICAgICYtbGluay1zbWFsbDpob3ZlciB7XG4gICAgICAgIHRleHQtZGVjb3JhdGlvbjogdW5kZXJsaW5lO1xuICAgIH1cblxuICAgICYtc291cmNlLWNvZGUge1xuICAgICAgICAubnVpLXRleHQtc2l6ZShkZWZhdWx0KTtcbiAgICAgICAgZm9udC1mYW1pbHk6IEBmb250LWZhbWlseS1zb3VyY2UtY29kZS1wcm87XG4gICAgICAgIGZvbnQtd2VpZ2h0OiBAbnVpLWZvbnQtd2VpZ2h0LXJlZ3VsYXI7XG5cbiAgICAgICAgJi1zZWNvbmRhcnkge1xuICAgICAgICAgICAgLm51aS10ZXh0LXNpemUoZGVmYXVsdCk7XG4gICAgICAgICAgICBmb250LWZhbWlseTogQGZvbnQtZmFtaWx5LXNvdXJjZS1jb2RlLXBybztcbiAgICAgICAgICAgIGZvbnQtd2VpZ2h0OiBAbnVpLWZvbnQtd2VpZ2h0LXJlZ3VsYXI7XG4gICAgICAgICAgICAuc2V0Q3NzVmFyaWFibGUoY29sb3IsIG51aS1jb2xvci10ZXh0LXNlY29uZGFyeSk7XG4gICAgICAgIH1cbiAgICB9XG5cbiAgICAmLXRpdGxlLXNlY29uZGFyeSB7XG4gICAgICAgIC5udWktdGV4dC10aXRsZS1zZWNvbmRhcnkoQG51aS1jb2xvci10ZXh0LXNlY29uZGFyeSxudWktY29sb3ItdGV4dC1zZWNvbmRhcnkpO1xuICAgIH1cblxuICAgICYtdGl0bGUtc2Vjb25kYXJ5LS1pbnZlcnNlIHtcbiAgICAgICAgLm51aS10ZXh0LXRpdGxlLXNlY29uZGFyeShAbnVpLWNvbG9yLXRleHQtaW52ZXJzZS1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtaW52ZXJzZS1zZWNvbmRhcnkpO1xuICAgIH1cblxuICAgICYtdGl0bGUtc2Vjb25kYXJ5LS1kYXJrYmcge1xuICAgICAgICAubnVpLXRleHQtdGl0bGUtc2Vjb25kYXJ5KEBudWktY29sb3ItdGV4dC1saWdodC1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtbGlnaHQtc2Vjb25kYXJ5KTtcbiAgICB9XG5cbiAgICAmLXNtYWxsIHtcbiAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1kZWZhdWx0LG51aS1jb2xvci10ZXh0LWRlZmF1bHQpO1xuICAgIH1cblxuICAgICYtc21hbGwtc2Vjb25kYXJ5IHtcbiAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtc2Vjb25kYXJ5KTtcblxuICAgICAgICAmLS1ob3ZlcmFibGUge1xuICAgICAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtc2Vjb25kYXJ5KTtcbiAgICAgICAgICAgIC5udWktdGV4dC1ob3ZlcmFibGUoKTtcbiAgICAgICAgfVxuICAgIH1cblxuICAgICYtc21hbGwtc2Vjb25kYXJ5LS1pbnZlcnNlIHtcbiAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1pbnZlcnNlLXNlY29uZGFyeSxudWktY29sb3ItdGV4dC1pbnZlcnNlLXNlY29uZGFyeSk7XG5cbiAgICAgICAgJi0taG92ZXJhYmxlIHtcbiAgICAgICAgICAgIC5udWktdGV4dC1zbWFsbChAbnVpLWNvbG9yLXRleHQtaW52ZXJzZS1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtaW52ZXJzZS1zZWNvbmRhcnkpO1xuICAgICAgICAgICAgLm51aS10ZXh0LWhvdmVyYWJsZSgpO1xuICAgICAgICB9XG4gICAgfVxuXG4gICAgJi1zbWFsbC0taW52ZXJzZSB7XG4gICAgICAgIC5udWktdGV4dC1zbWFsbChAbnVpLWNvbG9yLXRleHQtaW52ZXJzZSxudWktY29sb3ItdGV4dC1pbnZlcnNlKTtcblxuICAgICAgICAmLS1ob3ZlcmFibGUge1xuICAgICAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1pbnZlcnNlLG51aS1jb2xvci10ZXh0LWludmVyc2UpO1xuICAgICAgICAgICAgLm51aS10ZXh0LWhvdmVyYWJsZSgpO1xuICAgICAgICB9XG4gICAgfVxuXG4gICAgJi1zbWFsbC0taG92ZXJhYmxlIHtcbiAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1kZWZhdWx0LG51aS1jb2xvci10ZXh0LWRlZmF1bHQpO1xuICAgICAgICAubnVpLXRleHQtaG92ZXJhYmxlKCk7XG4gICAgfVxuXG4gICAgJi1zbWFsbC0tZGFya2JnIHtcbiAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1saWdodCwgbnVpLWNvbG9yLXRleHQtbGlnaHQpO1xuICAgIH1cblxuICAgICYtc21hbGwtLWRhcmtiZy0taG92ZXJhYmxlIHtcbiAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1saWdodCwgbnVpLWNvbG9yLXRleHQtbGlnaHQpO1xuICAgICAgICAubnVpLXRleHQtaG92ZXJhYmxlKCk7XG4gICAgfVxuXG4gICAgJi1zbWFsbC0tZGlzYWJsZWQge1xuICAgICAgICAubnVpLXRleHQtc21hbGwoQG51aS1jb2xvci10ZXh0LWRpc2FibGVkLG51aS1jb2xvci10ZXh0LWRpc2FibGVkKTtcbiAgICB9XG5cbiAgICAmLXNtYWxsLS1kaXNhYmxlZC0taG92ZXJhYmxlIHtcbiAgICAgICAgLm51aS10ZXh0LXNtYWxsKEBudWktY29sb3ItdGV4dC1kaXNhYmxlZCxudWktY29sb3ItdGV4dC1kaXNhYmxlZCk7XG4gICAgICAgIC5udWktdGV4dC1ob3ZlcmFibGUoKTtcbiAgICB9XG5cbiAgICAvLyBgbnVpLXRleHQtaGludGAgc3R5bGVzIGFyZSBkZXByZWNhdGVkLiBVc2UgYG51aS10ZXh0LXNtYWxsLXNlY29uZGFyeWAgaW5zdGVhZC5cbiAgICAmLWhpbnQge1xuICAgICAgICAubnVpLXRleHQtaGludChAbnVpLWNvbG9yLXRleHQtc2Vjb25kYXJ5LG51aS1jb2xvci10ZXh0LXNlY29uZGFyeSk7XG4gICAgfVxuXG4gICAgJi1oaW50LS1ob3ZlcmFibGUge1xuICAgICAgICAubnVpLXRleHQtaGludChAbnVpLWNvbG9yLXRleHQtc2Vjb25kYXJ5LG51aS1jb2xvci10ZXh0LXNlY29uZGFyeSk7XG4gICAgICAgIC5udWktdGV4dC1ob3ZlcmFibGUoKTtcbiAgICB9XG5cbiAgICAmLWhpbnQtLWRhcmtiZyB7XG4gICAgICAgIC5udWktdGV4dC1oaW50KEBudWktY29sb3ItdGV4dC1saWdodC1zZWNvbmRhcnksbnVpLWNvbG9yLXRleHQtbGlnaHQtc2Vjb25kYXJ5KTtcbiAgICB9XG5cbiAgICAmLWhpbnQtLWRhcmtiZy0taG92ZXJhYmxlIHtcbiAgICAgICAgLm51aS10ZXh0LWhpbnQoQG51aS1jb2xvci10ZXh0LWxpZ2h0LXNlY29uZGFyeSxudWktY29sb3ItdGV4dC1saWdodC1zZWNvbmRhcnkpO1xuICAgICAgICAubnVpLXRleHQtaG92ZXJhYmxlKCk7XG4gICAgfVxuXG4gICAgJi12YWxpZGF0aW9uIHtcbiAgICAgICAgLm51aS10ZXh0LXNpemUoc21hbGwpO1xuICAgICAgICBmb250LXdlaWdodDogQG51aS1mb250LXdlaWdodC1zZW1pYm9sZDtcbiAgICAgICAgLnNldENzc1ZhcmlhYmxlKGNvbG9yLCBudWktY29sb3ItdGV4dC1jcml0aWNhbCk7XG4gICAgfVxuXG4gICAgJi1lbGxpcHNpcyB7XG4gICAgICAgIC50ZXh0LW92ZXJmbG93KGVsbGlwc2lzKTtcbiAgICB9XG59XG5cbiJdfQ== */"] });
 
 
 /***/ }),
@@ -5602,7 +5570,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import {\n    Component, Inject, TemplateRef,\n} from \"@angular/core\";\nimport { Subject } from \"rxjs\";\nimport { FlexibleConnectedPositionStrategy, OverlayRef } from \"@angular/cdk/overlay\";\nimport {\n    DialogService,\n    IWizardState,\n    NuiDialogRef,\n    OverlayComponent,\n    WizardHorizontalComponent,\n    WizardStepV2Component,\n} from \"@nova-ui/bits\";\nimport { takeUntil } from \"rxjs/operators\";\n\ninterface IWizardStepData {\n    title: string;\n    templateRef: TemplateRef<string>;\n}\n\n@Component({\n    selector: \"nui-wizard-test\",\n    templateUrl: \"./wizard-test.component.html\",\n    styleUrls: [\"./wizard-test.less\"],\n})\nexport class WizardTestComponent {\n    public onDestroy$ = new Subject<void>();\n    public overlayTriggered$ = new Subject<void>();\n\n    private overlayRef: OverlayRef;\n    public busy: boolean = false;\n    public activeDialog: NuiDialogRef;\n\n    constructor(@Inject(DialogService) private dialogService: DialogService) {}\n\n    public vegetables = [$localize `Cabbage`, $localize `Potato`, $localize `Tomato`, $localize `Carrot`];\n    public selectedVegetables = [$localize `Potato`, $localize `Tomato`];\n    public state: IWizardState;\n    public steps: IWizardStepData[] = [];\n\n    public isChecked(vegetable: string): boolean {\n        return this.selectedVegetables.indexOf(vegetable) > -1;\n    }\n\n    public valuesChanged(values: any[]): void {\n        this.selectedVegetables = [...values];\n    }\n\n    public openDialog(content: TemplateRef<string>): void {\n        this.activeDialog = this.dialogService.open(content, {\n            size: \"lg\",\n            windowClass: \"active-dialog\",\n        });\n    }\n\n    public closeDialog(): void {\n        this.activeDialog.close();\n    }\n\n    public toggleBusy(): void {\n        this.busy = !this.busy;\n        setTimeout(() => {\n            this.busy = false;\n        }, 3000);\n    }\n\n\n    public openConfirmationOverlay(overlay: OverlayComponent, wizard: WizardHorizontalComponent): void {\n        if (wizard.selectedIndex === 0) {\n            this.closeDialog();\n            return;\n        }\n\n        this.overlayTriggered$.next();\n        overlay.toggle();\n\n        this.overlayRef = overlay.getOverlayRef();\n        (this.overlayRef.getConfig().positionStrategy as FlexibleConnectedPositionStrategy).withPositions([{\n            originX: \"start\",\n            originY: \"top\",\n            overlayX: \"start\",\n            overlayY: \"top\",\n        }]);\n        this.updateOverlayDimensions(overlay);\n        this.activeDialog?.closed$.pipe(\n            takeUntil(this.overlayTriggered$),\n            takeUntil(this.onDestroy$)).subscribe(() => overlay.hide());\n    }\n\n    public open(content: TemplateRef<string>): void {\n        this.activeDialog = this.dialogService.open(content, {size: \"lg\", backdrop: \"static\", useOverlay: true});\n    }\n\n    public actionDone(): void {\n        this.activeDialog.close();\n    }\n\n    public onContainerResize(overlay: OverlayComponent): void {\n        this.updateOverlayDimensions(overlay);\n    }\n\n    public ngOnDestroy(): void {\n        this.onDestroy$.next();\n        this.onDestroy$.complete();\n        this.overlayTriggered$.complete();\n    }\n\n    public saveState(state: IWizardState): void {\n        this.state = state;\n    }\n\n    public completeWizard(step: WizardStepV2Component): void {\n        step.completed = true;\n        this.activeDialog.close();\n    }\n\n    public addStep(templateRef: TemplateRef<string>, title?: string): void {\n        this.steps.push({ title: title ?? `Dynamic Step ${this.steps.length + 1}`, templateRef: templateRef });\n    }\n\n    private updateOverlayDimensions(overlay: OverlayComponent): void {\n        this.overlayRef?.updateSize({\n            width: overlay.toggleReference.getBoundingClientRect().width,\n            height: overlay.toggleReference.getBoundingClientRect().height,\n        });\n    }\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import {\n    AfterViewInit,\n    Component,\n    Inject,\n    TemplateRef,\n    ViewChild,\n} from \"@angular/core\";\nimport { Subject } from \"rxjs\";\nimport { FlexibleConnectedPositionStrategy, OverlayRef } from \"@angular/cdk/overlay\";\nimport {\n    DialogService,\n    IWizardState,\n    NuiDialogRef,\n    OverlayComponent,\n    WizardHorizontalComponent,\n    WizardStepV2Component,\n} from \"@nova-ui/bits\";\nimport { takeUntil } from \"rxjs/operators\";\n\ninterface IWizardStepData {\n    title: string;\n    templateRef: TemplateRef<string>;\n}\n\n@Component({\n    selector: \"nui-wizard-test\",\n    templateUrl: \"./wizard-test.component.html\",\n    styleUrls: [\"./wizard-test.less\"],\n})\nexport class WizardTestComponent implements AfterViewInit{\n    public onDestroy$ = new Subject<void>();\n    public overlayTriggered$ = new Subject<void>();\n\n    private overlayRef: OverlayRef;\n    public busy: boolean = false;\n    public activeDialog: NuiDialogRef;\n\n    constructor(@Inject(DialogService) private dialogService: DialogService) {}\n\n    public vegetables = [$localize `Cabbage`, $localize `Potato`, $localize `Tomato`, $localize `Carrot`];\n    public selectedVegetables = [$localize `Potato`, $localize `Tomato`];\n    public state: IWizardState;\n    public steps: IWizardStepData[] = [];\n\n    @ViewChild(\"normalStep\") normalStep: TemplateRef<string>;\n\n    ngAfterViewInit(): void {\n        this.addStep(this.normalStep);\n    }\n\n    public isChecked(vegetable: string): boolean {\n        return this.selectedVegetables.indexOf(vegetable) > -1;\n    }\n\n    public valuesChanged(values: any[]): void {\n        this.selectedVegetables = [...values];\n    }\n\n    public openDialog(content: TemplateRef<string>): void {\n        this.activeDialog = this.dialogService.open(content, {\n            size: \"lg\",\n            windowClass: \"active-dialog\",\n        });\n    }\n\n    public closeDialog(): void {\n        this.activeDialog.close();\n    }\n\n    public toggleBusy(): void {\n        this.busy = !this.busy;\n        setTimeout(() => {\n            this.busy = false;\n        }, 3000);\n    }\n\n\n    public openConfirmationOverlay(overlay: OverlayComponent, wizard: WizardHorizontalComponent): void {\n        if (wizard.selectedIndex === 0) {\n            this.closeDialog();\n            return;\n        }\n\n        this.overlayTriggered$.next();\n        overlay.toggle();\n\n        this.overlayRef = overlay.getOverlayRef();\n        (this.overlayRef.getConfig().positionStrategy as FlexibleConnectedPositionStrategy).withPositions([{\n            originX: \"start\",\n            originY: \"top\",\n            overlayX: \"start\",\n            overlayY: \"top\",\n        }]);\n        this.updateOverlayDimensions(overlay);\n        this.activeDialog?.closed$.pipe(\n            takeUntil(this.overlayTriggered$),\n            takeUntil(this.onDestroy$)).subscribe(() => overlay.hide());\n    }\n\n    public open(content: TemplateRef<string>): void {\n        this.activeDialog = this.dialogService.open(content, {size: \"lg\", backdrop: \"static\", useOverlay: true});\n    }\n\n    public actionDone(): void {\n        this.activeDialog.close();\n    }\n\n    public onContainerResize(overlay: OverlayComponent): void {\n        this.updateOverlayDimensions(overlay);\n    }\n\n    public ngOnDestroy(): void {\n        this.onDestroy$.next();\n        this.onDestroy$.complete();\n        this.overlayTriggered$.complete();\n    }\n\n    public saveState(state: IWizardState): void {\n        this.state = state;\n    }\n\n    public completeWizard(step: WizardStepV2Component): void {\n        step.completed = true;\n        this.activeDialog.close();\n    }\n\n    public addStep(templateRef: TemplateRef<string>, title?: string): void {\n        this.steps.push({ title: title ?? `Dynamic Step ${this.steps.length + 1}`, templateRef: templateRef });\n    }\n\n    public removeStep(index = 1): void {\n        this.steps.splice(index, 1);\n    }\n\n    private updateOverlayDimensions(overlay: OverlayComponent): void {\n        this.overlayRef?.updateSize({\n            width: overlay.toggleReference.getBoundingClientRect().width,\n            height: overlay.toggleReference.getBoundingClientRect().height,\n        });\n    }\n}\n");
 
 /***/ }),
 
