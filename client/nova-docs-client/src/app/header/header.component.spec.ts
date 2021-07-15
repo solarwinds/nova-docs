@@ -71,8 +71,8 @@ describe('HeaderComponent >', () => {
     expect(component.selectedBranch).toBeTruthy();
   })
 
-  it('should open particular project', () => {
-    component.openDocs(mockedProjects[0])
-    expect(component.activeProject).toEqual(mockedProjects[0]);
-  })
+  // it('should open particular project', () => {
+  //   component.openDocs(mockedProjects[0])
+  //   expect(component.activeProject).toEqual(mockedProjects[0]);
+  // })
 });

@@ -35,7 +35,7 @@ describe('AppComponent >', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const component = fixture.componentInstance;
     const url = "http://example.com"
-    component.setIframeUrl(url);
-    expect(expect(component.url).toBe(url));
+    component.setSelectedUrl(url);
+    expect(expect(component.selectedUrl).toBe(url));
   });
 });

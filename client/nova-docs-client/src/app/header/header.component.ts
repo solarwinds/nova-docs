@@ -3,6 +3,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   EventEmitter,
+  HostListener,
   Inject,
   OnInit,
   Output,
@@ -34,9 +35,15 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   public selectedBranch: string = "";
   private host = environment.production ? "" : environment.apiUrl;
 
+  @HostListener('window:hashchange', ['$event'])
+  private onHashChange(): void {
+    this.parseBrowserUrl(this.projects);
+  }
+
   @ViewChild("select") public select: SelectV2Component;
 
-  @Output() selectedUrl = new EventEmitter<string>();
+  @Output() emitSelectedUrl = new EventEmitter<string>();
+  @Output() emitParsedUrl = new EventEmitter<string>();
 
   constructor(private appService: AppService,
               @Inject(ToastService) private toastService: IToastService) { };
@@ -57,7 +64,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
     this.activeProject = project;
     this.selectedBranch = branchName;
     const url = `${this.host}/${project.name}/${branchName}`
-    this.selectedUrl.emit(url);
+    this.emitSelectedUrl.emit(url);
   }
 
   private getProjects(): void {
@@ -74,11 +81,15 @@ export class HeaderComponent implements OnInit, AfterViewInit {
       this.selectedBranch = this.activeProject.branches[0].name;
       this.openDocs(this.activeProject, this.selectedBranch);
     } else {
-      const arrayFromHash = location.hash.split('/');
-      this.activeProject = projects.find((project: IProject) => project.name === arrayFromHash[1]) || projects[0];
-      this.selectedBranch = this.activeProject.branches.find((branch: IBranch) => branch.name === arrayFromHash[2])?.name || this.activeProject.branches[0].name;
-      const convertedUrl = `${window.location.origin}/${location.hash.replace("#/", "")}`;
-      this.selectedUrl.emit(convertedUrl);
+      this.parseBrowserUrl(projects)
     }
+  }
+
+  private parseBrowserUrl(projects: Array<IProject>): void {
+    const arrayFromHash = location.hash.split('/');
+    this.activeProject = projects.find((project: IProject) => project.name === arrayFromHash[1]) || projects[0];
+    this.selectedBranch = this.activeProject.branches.find((branch: IBranch) => branch.name === arrayFromHash[2])?.name || this.activeProject.branches[0].name;
+    const convertedUrl = `${window.location.origin}/${location.hash.replace("#/", "")}`;
+    this.emitParsedUrl.emit(convertedUrl);
   }
 }

@@ -29,28 +29,47 @@ __webpack_require__.r(__webpack_exports__);
 const _c0 = ["iframe"];
 class DocsComponent {
     constructor() {
-        this.url = "";
+        this.selectedUrl = "";
+        this.parsedUrl = "";
+        this.iframeUrl = "";
+    }
+    ngOnChanges(changes) {
+        if (changes.parsedUrl && this.compareUrls(changes.parsedUrl)) {
+            if (this.iframe) {
+                this.iframe.nativeElement.contentWindow.location.replace(changes.parsedUrl.currentValue);
+            }
+        }
+        if (changes.selectedUrl && this.compareUrls(changes.selectedUrl)) {
+            if (this.iframe) {
+                this.iframe.nativeElement.contentWindow.location.href = changes.selectedUrl.currentValue;
+            }
+        }
     }
     updateHash() {
+        const iframeLocation = this.iframe.nativeElement.contentWindow.location.href;
+        const iframeLocationOrigin = this.iframe.nativeElement.contentWindow.location.origin;
+        if (window.location.hash !== `#${iframeLocation === null || iframeLocation === void 0 ? void 0 : iframeLocation.replace(iframeLocationOrigin, '')}`) {
+            window.location.replace(`${iframeLocationOrigin}#${iframeLocation === null || iframeLocation === void 0 ? void 0 : iframeLocation.replace(iframeLocationOrigin, '')}`);
+        }
+    }
+    compareUrls(url) {
         var _a;
-        const iframeCopy = Object.assign({}, this.iframe);
-        const iframeLocation = iframeCopy.nativeElement.contentWindow.location;
-        window.location.href = `#${(_a = iframeLocation.href) === null || _a === void 0 ? void 0 : _a.replace(iframeLocation.origin, '')}`;
+        return url.previousValue !== url.currentValue && url.currentValue !== ((_a = this.iframe) === null || _a === void 0 ? void 0 : _a.nativeElement.contentWindow.location.href);
     }
 }
 DocsComponent.ɵfac = function DocsComponent_Factory(t) { return new (t || DocsComponent)(); };
 DocsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: DocsComponent, selectors: [["nui-docs"]], viewQuery: function DocsComponent_Query(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_c0, 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_c0, 3);
     } if (rf & 2) {
         let _t;
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.iframe = _t.first);
-    } }, inputs: { url: "url" }, decls: 3, vars: 3, consts: [[3, "src", "load"], ["iframe", ""]], template: function DocsComponent_Template(rf, ctx) { if (rf & 1) {
+    } }, inputs: { selectedUrl: "selectedUrl", parsedUrl: "parsedUrl" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵNgOnChangesFeature"]], decls: 3, vars: 3, consts: [[3, "src", "load"], ["iframe", ""]], template: function DocsComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "iframe", 0, 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("load", function DocsComponent_Template_iframe_load_0_listener() { return ctx.updateHash(); });
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](2, "safe");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("src", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](2, 1, ctx.url), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeResourceUrl"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("src", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](2, 1, ctx.iframeUrl), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeResourceUrl"]);
     } }, pipes: [_pipes_safe_pipe__WEBPACK_IMPORTED_MODULE_1__["SafePipe"]], styles: ["[_nghost-%COMP%] {\n  position: absolute;\n  top: 80px;\n  width: 100vw;\n  height: calc(100vh - 80px);\n}\niframe[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 100%;\n  border: none;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImRvY3MuY29tcG9uZW50Lmxlc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBRUE7RUFDRSxrQkFBQTtFQUNBLFNBQUE7RUFDQSxZQUFBO0VBQ0EsMEJBQUE7QUFERjtBQUlBO0VBQ0UsV0FBQTtFQUNBLFlBQUE7RUFDQSxZQUFBO0FBRkYiLCJmaWxlIjoiZG9jcy5jb21wb25lbnQubGVzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgJy4uLy4uL2Fzc2V0cy9zdHlsZXMvdmFyaWFibGVzLmxlc3MnO1xuXG46aG9zdHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB0b3A6IEBoZWFkZXItaGVpZ2h0O1xuICB3aWR0aDogMTAwdnc7XG4gIGhlaWdodDogY2FsYygxMDB2aCAtIEBoZWFkZXItaGVpZ2h0KTtcbn1cblxuaWZyYW1le1xuICB3aWR0aDogMTAwJTtcbiAgaGVpZ2h0OiAxMDAlO1xuICBib3JkZXI6IG5vbmU7XG59XG4iXX0= */"], changeDetection: 0 });
 
 
@@ -405,21 +424,25 @@ __webpack_require__.r(__webpack_exports__);
 
 class AppComponent {
     constructor() {
-        this.url = ``;
+        this.selectedUrl = ``;
+        this.parsedUrl = ``;
     }
-    setIframeUrl($event) {
-        this.url = `${$event}`;
+    setSelectedUrl($event) {
+        this.selectedUrl = $event;
+    }
+    setParsedUrl($event) {
+        this.parsedUrl = $event;
     }
 }
 AppComponent.ɵfac = function AppComponent_Factory(t) { return new (t || AppComponent)(); };
-AppComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: AppComponent, selectors: [["app-root"]], decls: 2, vars: 1, consts: [[3, "selectedUrl"], [3, "url"]], template: function AppComponent_Template(rf, ctx) { if (rf & 1) {
+AppComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: AppComponent, selectors: [["app-root"]], decls: 2, vars: 2, consts: [[3, "emitSelectedUrl", "emitParsedUrl"], [3, "parsedUrl", "selectedUrl"]], template: function AppComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "nui-header", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("selectedUrl", function AppComponent_Template_nui_header_selectedUrl_0_listener($event) { return ctx.setIframeUrl($event); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("emitSelectedUrl", function AppComponent_Template_nui_header_emitSelectedUrl_0_listener($event) { return ctx.setSelectedUrl($event); })("emitParsedUrl", function AppComponent_Template_nui_header_emitParsedUrl_0_listener($event) { return ctx.setParsedUrl($event); });
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "nui-docs", 1);
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("url", ctx.url);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("parsedUrl", ctx.parsedUrl)("selectedUrl", ctx.selectedUrl);
     } }, directives: [_header_header_component__WEBPACK_IMPORTED_MODULE_1__["HeaderComponent"], _docs_docs_component__WEBPACK_IMPORTED_MODULE_2__["DocsComponent"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJhcHAuY29tcG9uZW50Lmxlc3MifQ== */"], changeDetection: 0 });
 
 
@@ -562,7 +585,11 @@ class HeaderComponent {
         this.activeProject = {};
         this.selectedBranch = "";
         this.host = _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].production ? "" : _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].apiUrl;
-        this.selectedUrl = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        this.emitSelectedUrl = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        this.emitParsedUrl = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+    }
+    onHashChange() {
+        this.parseBrowserUrl(this.projects);
     }
     ;
     ngOnInit() {
@@ -579,7 +606,7 @@ class HeaderComponent {
         this.activeProject = project;
         this.selectedBranch = branchName;
         const url = `${this.host}/${project.name}/${branchName}`;
-        this.selectedUrl.emit(url);
+        this.emitSelectedUrl.emit(url);
     }
     getProjects() {
         this.appService.getProjects().subscribe(projects => {
@@ -588,19 +615,22 @@ class HeaderComponent {
         }, error => this.toastService.error({ title: error.message }));
     }
     setActiveProject(projects) {
-        var _a;
         if (!location.hash || location.hash === "#/" || location.hash === "#") {
             this.activeProject = projects[0];
             this.selectedBranch = this.activeProject.branches[0].name;
             this.openDocs(this.activeProject, this.selectedBranch);
         }
         else {
-            const arrayFromHash = location.hash.split('/');
-            this.activeProject = projects.find((project) => project.name === arrayFromHash[1]) || projects[0];
-            this.selectedBranch = ((_a = this.activeProject.branches.find((branch) => branch.name === arrayFromHash[2])) === null || _a === void 0 ? void 0 : _a.name) || this.activeProject.branches[0].name;
-            const convertedUrl = `${window.location.origin}/${location.hash.replace("#/", "")}`;
-            this.selectedUrl.emit(convertedUrl);
+            this.parseBrowserUrl(projects);
         }
+    }
+    parseBrowserUrl(projects) {
+        var _a;
+        const arrayFromHash = location.hash.split('/');
+        this.activeProject = projects.find((project) => project.name === arrayFromHash[1]) || projects[0];
+        this.selectedBranch = ((_a = this.activeProject.branches.find((branch) => branch.name === arrayFromHash[2])) === null || _a === void 0 ? void 0 : _a.name) || this.activeProject.branches[0].name;
+        const convertedUrl = `${window.location.origin}/${location.hash.replace("#/", "")}`;
+        this.emitParsedUrl.emit(convertedUrl);
     }
 }
 HeaderComponent.ɵfac = function HeaderComponent_Factory(t) { return new (t || HeaderComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_app_service__WEBPACK_IMPORTED_MODULE_3__["AppService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["ToastService"])); };
@@ -609,7 +639,9 @@ HeaderComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCo
     } if (rf & 2) {
         let _t;
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.select = _t.first);
-    } }, outputs: { selectedUrl: "selectedUrl" }, decls: 8, vars: 3, consts: [[1, "logo"], ["src", "../../assets/images/nova-logo.svg", "alt", "logo"], [1, "select-wrapper"], [3, "value"], ["select", ""], [3, "value", 4, "ngFor", "ngForOf"], ["type", "button", "nui-button", "", 3, "displayStyle", "ngClass", "click", 4, "ngFor", "ngForOf"], ["type", "button", "nui-button", "", 3, "displayStyle", "ngClass", "click"]], template: function HeaderComponent_Template(rf, ctx) { if (rf & 1) {
+    } }, hostBindings: function HeaderComponent_HostBindings(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("hashchange", function HeaderComponent_hashchange_HostBindingHandler($event) { return ctx.onHashChange($event); }, false, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresolveWindow"]);
+    } }, outputs: { emitSelectedUrl: "emitSelectedUrl", emitParsedUrl: "emitParsedUrl" }, decls: 8, vars: 3, consts: [[1, "logo"], ["src", "../../assets/images/nova-logo.svg", "alt", "logo"], [1, "select-wrapper"], [3, "value"], ["select", ""], [3, "value", 4, "ngFor", "ngForOf"], ["type", "button", "nui-button", "", 3, "displayStyle", "ngClass", "click", 4, "ngFor", "ngForOf"], ["type", "button", "nui-button", "", 3, "displayStyle", "ngClass", "click"]], template: function HeaderComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "img", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();

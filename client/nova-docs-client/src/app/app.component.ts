@@ -7,9 +7,14 @@ import {ChangeDetectionStrategy, Component} from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
-  public url: string = ``;
+  public selectedUrl: string = ``;
+  public parsedUrl: string= ``;
 
-  public setIframeUrl($event: string): void {
-    this.url = `${$event}`;
+  public setSelectedUrl($event: string): void {
+    this.selectedUrl = $event;
+  }
+
+  public setParsedUrl($event: string): void {
+    this.parsedUrl = $event;
   }
 }

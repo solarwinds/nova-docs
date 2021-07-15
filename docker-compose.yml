@@ -4,7 +4,7 @@ services:
     build: .
     environment:
       - PORT=80
-    ports: 
+    ports:
       - "80:80"
     volumes:
       - ./projects:/usr/src/app/projects
