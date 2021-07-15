@@ -5,45 +5,46 @@ var path = require("path");
 var _ = require("lodash");
 
 /* GET project listing. */
-router.get('/projects', function (req, res, next) {
+router.get('/projects', function (req, res) {
     const hierarchy = [];
-    const projects = fs.readdirSync("./projects");    
+    const projects = fs.readdirSync("./projects");
     projects.forEach((p)=> {
         const branches = fs.readdirSync(path.join("./projects", p));
         hierarchy.push({
             name: p,
-            hasMaster: getBranchInfo(p, branches, ["master"]).length,
-            hasDevelop: getBranchInfo(p, branches, ["develop"]).length,
-            hasMain: getBranchInfo(p, branches, ["main"]).length,
-            featureBranches: getBranchInfo(p, branches, ["feature", "UIF-"]),
-            releaseBranches: getReleaseBranches(p, branches),
-            latestRelease: getLatestRelease(p, branches),
-            otherBranches: getBranchInfo(p, branches, [], ["master", "develop", "main", "feature", "UIF-", "release"]),
-            branches: getBranchInfo(p, branches, [], ["master", "develop", "main"])
+            branches: [...getReleaseBranches(p, branches),  ...getBranchInfo(p, branches, ["main"]) ]
         });
     });
 
     function getBranchInfo(project, branches, branchTokens, exlusionTokens=[]) {
         return branches.filter(branch => {
-            return (branchTokens.length === 0 || 
+            return (branchTokens.length === 0 ||
             _.find(branchTokens, (token) => branch.startsWith(token)) !== undefined) &&
             _.find(exlusionTokens, (exToken) => branch.startsWith(exToken)) === undefined;
         }).map(branch => { return {project: project, name: branch}; });
-    };
+    }
+
+    function getReleaseVersion(releaseBranch) {
+        return Math.floor(+releaseBranch.name.slice(releaseBranch.name.indexOf('v') + 1 , releaseBranch.name.indexOf('x') - 1));
+    }
 
     function getReleaseBranches(project, branches) {
         const releaseBranches = getBranchInfo(project, branches, ["release"]);
-        return (releaseBranches === undefined || releaseBranches.length === 0) ? 
-            [] : 
-            releaseBranches.sort().reverse();
-    };
+        return (releaseBranches === undefined || releaseBranches.length === 0) ?
+            [] :
+            releaseBranches.reverse().sort(function (a, b) {
+                const releaseVersionA = getReleaseVersion(a);
+                const releaseVersionB = getReleaseVersion(b);
 
-    function getLatestRelease(project, branches) {
-        const releaseBranches = getReleaseBranches(project, branches);
-        return releaseBranches.length === 0 ? 
-            undefined : 
-            releaseBranches[0];
-    };
+                if (releaseVersionA > releaseVersionB) {
+                    return -1;
+                }
+                if (releaseVersionA < releaseVersionB) {
+                    return 1;
+                }
+                return 0;
+            });
+    }
 
     res.send(hierarchy);
 });

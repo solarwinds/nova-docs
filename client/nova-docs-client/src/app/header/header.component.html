@@ -1,0 +1,23 @@
+
+  <div class="logo">
+    <img src="../../assets/images/nova-logo.svg" alt="logo">
+  </div>
+  <div class="select-wrapper">
+    <nui-select-v2 #select [value]="selectedBranch">
+      <nui-select-v2-option *ngFor="let branch of activeProject?.branches; let first = first;" [value]="branch.name">
+        {{branch.name}} {{first ? "(latest)" : ""}}
+      </nui-select-v2-option>
+    </nui-select-v2>
+  </div>
+  <nav>
+    <button
+      *ngFor="let project of projects"
+      type="button"
+      nui-button [displayStyle]=" activeProject.name === project.name ? 'primary': ''"
+      [ngClass]="{'nui-button--active': activeProject.name === project.name}"
+      (click)="openDocs(project)"> {{project.name}}
+    </button>
+  </nav>
+
+
+
