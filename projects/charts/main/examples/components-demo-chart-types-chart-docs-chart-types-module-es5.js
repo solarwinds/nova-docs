@@ -23,6 +23,26 @@
     },
 
     /***/
+    "+Sq9":
+    /*!***************************************************************************************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/donut/donut-with-threshold-toggling/donut-gauge-with-threshold-toggling.example.component.ts ***!
+      \***************************************************************************************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function Sq9(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "import { Component, OnInit } from \"@angular/core\";\nimport {\n    ChartAssist,\n    GaugeMode,\n    GaugeUtil,\n    IAccessors,\n    IChartAssistSeries,\n    IGaugeConfig,\n    IGaugeThresholdsConfig,\n    StandardGaugeThresholdId,\n} from \"@nova-ui/charts\";\n\n@Component({\n    selector: \"donut-gauge-with-threshold-toggling-example\",\n    templateUrl: \"./donut-gauge-with-threshold-toggling.example.component.html\",\n    styleUrls: [\"./donut-gauge-with-threshold-toggling.example.component.less\"],\n})\nexport class DonutGaugeWithThresholdTogglingExampleComponent implements OnInit {\n    public chartAssist: ChartAssist;\n    public value = 178;\n    public gaugeConfig: IGaugeConfig;\n    public warningEnabled = true;\n    public criticalEnabled = true;\n\n    private seriesSet: IChartAssistSeries<IAccessors>[];\n\n    // Generating a standard set of thresholds with warning and critical levels\n    private thresholds: IGaugeThresholdsConfig = GaugeUtil.createStandardThresholdsConfig(100, 158);\n\n    public ngOnInit(): void {\n        this.gaugeConfig = this.getGaugeConfig();\n        this.chartAssist = GaugeUtil.createChartAssist(this.gaugeConfig, GaugeMode.Donut);\n\n        this.seriesSet = GaugeUtil.assembleSeriesSet(this.gaugeConfig, GaugeMode.Donut);\n        this.chartAssist.update(this.seriesSet);\n    }\n\n    public onValueChange(value: number): void {\n        this.value = value;\n        this.updateGauge();\n    }\n\n    public onWarningEnabledChange(enabled: boolean): void {\n        this.warningEnabled = enabled;\n\n        // Enabling or disabling the warning threshold\n        this.thresholds.definitions[StandardGaugeThresholdId.Warning].enabled = this.warningEnabled;\n\n        this.updateGauge();\n    }\n\n    public onCriticalEnabledChange(enabled: boolean): void {\n        this.criticalEnabled = enabled;\n\n        // Enabling or disabling the critical threshold\n        this.thresholds.definitions[StandardGaugeThresholdId.Critical].enabled = this.criticalEnabled;\n\n        this.updateGauge();\n    }\n\n    private updateGauge() {\n        this.gaugeConfig = this.getGaugeConfig();\n        this.seriesSet = GaugeUtil.update(this.seriesSet, this.gaugeConfig);\n        this.chartAssist.update(this.seriesSet);\n    }\n\n    private getGaugeConfig(): IGaugeConfig {\n        return {\n            value: this.value,\n            max: 200,\n            thresholds: this.thresholds,\n        };\n    }\n}\n";
+      /***/
+    },
+
+    /***/
     "/7IX":
     /*!****************************************************************************************************************************************************************!*\
       !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/bucketed-bar/bar-chart-percentage/bar-chart-percentage.example.component.ts ***!
@@ -63,46 +83,6 @@
     },
 
     /***/
-    "/sCd":
-    /*!*****************************************************************************************************************************************************************!*\
-      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/donut/donut-with-content/donut-gauge-with-content-example.component.ts ***!
-      \*****************************************************************************************************************************************************************/
-
-    /*! exports provided: default */
-
-    /***/
-    function sCd(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony default export */
-
-
-      __webpack_exports__["default"] = "import { Component, OnInit } from \"@angular/core\";\nimport {\n    ChartAssist,\n    ChartDonutContentPlugin,\n    GaugeMode,\n    GaugeUtil,\n    IAccessors,\n    IChartAssistSeries,\n    IGaugeConfig,\n    IGaugeThresholdsConfig,\n} from \"@nova-ui/charts\";\n\n@Component({\n    selector: \"donut-gauge-with-content-example\",\n    templateUrl: \"./donut-gauge-with-content-example.component.html\",\n    styleUrls: [\"./donut-gauge-with-content-example.component.less\"],\n})\nexport class DonutGaugeWithContentExampleComponent implements OnInit {\n    public chartAssist: ChartAssist;\n    public contentPlugin: ChartDonutContentPlugin;\n    public gaugeConfig: IGaugeConfig;\n\n    private seriesSet: IChartAssistSeries<IAccessors>[];\n    private thresholds: IGaugeThresholdsConfig = GaugeUtil.createStandardThresholdsConfig(100, 158);\n\n    public ngOnInit(): void {\n        const initialValue = 128;\n        this.gaugeConfig = this.getGaugeConfig(initialValue);\n        this.chartAssist = GaugeUtil.createChartAssist(this.gaugeConfig, GaugeMode.Donut);\n\n        // Adding the plugin for the donut inner content\n        this.contentPlugin = new ChartDonutContentPlugin();\n        this.chartAssist.chart.addPlugin(this.contentPlugin);\n\n        this.seriesSet = GaugeUtil.assembleSeriesSet(this.gaugeConfig, GaugeMode.Donut);\n        this.chartAssist.update(this.seriesSet);\n    }\n\n    public onValueChange(value: number): void {\n        this.gaugeConfig = this.getGaugeConfig(value);\n        this.seriesSet = GaugeUtil.update(this.seriesSet, this.gaugeConfig);\n        this.chartAssist.update(this.seriesSet);\n    }\n\n    private getGaugeConfig(value: number): IGaugeConfig {\n        return {\n            value,\n            max: 200,\n            thresholds: this.thresholds,\n        };\n    }\n}\n";
-      /***/
-    },
-
-    /***/
-    "0Cj1":
-    /*!****************************************************************************************************************************************************************!*\
-      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/linear/horizontal-basic/horizontal-gauge-basic-example.component.html ***!
-      \****************************************************************************************************************************************************************/
-
-    /*! exports provided: default */
-
-    /***/
-    function Cj1(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony default export */
-
-
-      __webpack_exports__["default"] = "<div class=\"d-flex justify-content-center align-items-center flex-wrap\">\n    <nui-form-field class=\"mb-5 demo__value-input\"\n                    caption=\"Value\" i18n-caption\n                    [showOptionalText]=\"false\">\n        <nui-textbox-number type=\"number\"\n                            [ngModel]=\"gaugeConfig.value\"\n                            (ngModelChange)=\"onValueChange($event)\"\n                            [minValue]=\"0\"\n                            [maxValue]=\"gaugeConfig.max\"\n                            customBoxWidth=\"75px\"></nui-textbox-number>\n    </nui-form-field>\n    <nui-chart class=\"demo__chart\" [chart]=\"chartAssist.chart\"></nui-chart>\n</div>\n";
-      /***/
-    },
-
-    /***/
     "0Gka":
     /*!**********************************************************************************************************************************************************************************!*\
       !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/bucketed-bar/bar-chart-stacked-horizontal/bar-chart-stacked-horizontal.example.component.html ***!
@@ -119,6 +99,26 @@
 
 
       __webpack_exports__["default"] = "<div class=\"nui-chart-layout\">\n    <div class=\"axis-label-left nui-text-small\"><strong i18n>Network Traffic, Mbps</strong></div>\n    <div class=\"chart\">\n        <nui-chart class=\"w-100\" [chart]=\"chartAssist.chart\"></nui-chart>\n    </div>\n    <div class=\"legend-bottom\">\n        <nui-legend [interactive]=\"false\"\n                    orientation=\"horizontal\"\n                    (mouseleave)=\"chartAssist.resetVisibleSeries()\">\n            <nui-legend-series *ngFor=\"let legendSeries of chartAssist.legendSeriesSet; trackBy: chartAssist.seriesTrackByFn\"\n                               [descriptionPrimary]=\"legendSeries.name\"\n                               (mouseenter)=\"chartAssist.emphasizeSeries(legendSeries.id)\">\n                <nui-basic-legend-tile>\n                    <nui-chart-marker\n                        [drawLine]=\"false\"\n                        [marker]=\"chartAssist.markers.get(legendSeries.id)\"\n                        [color]=\"chartAssist.palette.standardColors.get(legendSeries.id)\">\n                    </nui-chart-marker>\n                </nui-basic-legend-tile>\n            </nui-legend-series>\n        </nui-legend>\n    </div>\n</div>\n\n\n<nui-chart-tooltips [plugin]=\"tooltipsPlugin\" [template]=\"tooltipTemplate\"></nui-chart-tooltips>\n\n<ng-template let-dataPoint=\"dataPoint\"\n             #tooltipTemplate>\n    <div class=\"p-1 d-flex align-items-center\">\n        <nui-chart-marker [marker]=\"chartAssist.markers.get(dataPoint.seriesId)\"\n                          [color]=\"chartAssist.palette.standardColors.get(dataPoint.seriesId)\"></nui-chart-marker>\n        <span class=\"pl-2\">{{dataPoint.data.value}}</span>\n    </div>\n</ng-template>\n";
+      /***/
+    },
+
+    /***/
+    "0JNq":
+    /*!*****************************************************************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/donut/donut-with-content/donut-gauge-with-content.example.component.ts ***!
+      \*****************************************************************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function JNq(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "import { Component, OnInit } from \"@angular/core\";\nimport {\n    ChartAssist,\n    ChartDonutContentPlugin,\n    GaugeMode,\n    GaugeUtil,\n    IAccessors,\n    IChartAssistSeries,\n    IGaugeConfig,\n    IGaugeThresholdsConfig,\n} from \"@nova-ui/charts\";\n\n@Component({\n    selector: \"donut-gauge-with-content-example\",\n    templateUrl: \"./donut-gauge-with-content.example.component.html\",\n    styleUrls: [\"./donut-gauge-with-content.example.component.less\"],\n})\nexport class DonutGaugeWithContentExampleComponent implements OnInit {\n    public chartAssist: ChartAssist;\n    public contentPlugin: ChartDonutContentPlugin;\n    public gaugeConfig: IGaugeConfig;\n\n    private seriesSet: IChartAssistSeries<IAccessors>[];\n    private thresholds: IGaugeThresholdsConfig = GaugeUtil.createStandardThresholdsConfig(100, 158);\n\n    public ngOnInit(): void {\n        const initialValue = 128;\n        this.gaugeConfig = this.getGaugeConfig(initialValue);\n        this.chartAssist = GaugeUtil.createChartAssist(this.gaugeConfig, GaugeMode.Donut);\n\n        // Adding the plugin for the donut inner content\n        this.contentPlugin = new ChartDonutContentPlugin();\n        this.chartAssist.chart.addPlugin(this.contentPlugin);\n\n        this.seriesSet = GaugeUtil.assembleSeriesSet(this.gaugeConfig, GaugeMode.Donut);\n        this.chartAssist.update(this.seriesSet);\n    }\n\n    public onValueChange(value: number): void {\n        this.gaugeConfig = this.getGaugeConfig(value);\n        this.seriesSet = GaugeUtil.update(this.seriesSet, this.gaugeConfig);\n        this.chartAssist.update(this.seriesSet);\n    }\n\n    private getGaugeConfig(value: number): IGaugeConfig {\n        return {\n            value,\n            max: 200,\n            thresholds: this.thresholds,\n        };\n    }\n}\n";
       /***/
     },
 
@@ -203,26 +203,6 @@
     },
 
     /***/
-    "19lF":
-    /*!*****************************************************************************************************************************************************************************************************!*\
-      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/donut/donut-with-threshold-marker-toggling/donut-gauge-with-threshold-marker-toggling-example.component.ts ***!
-      \*****************************************************************************************************************************************************************************************************/
-
-    /*! exports provided: default */
-
-    /***/
-    function lF(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony default export */
-
-
-      __webpack_exports__["default"] = "import { Component, OnInit } from \"@angular/core\";\nimport {\n    ChartAssist,\n    DonutGaugeLabelsPlugin,\n    GaugeMode,\n    GaugeUtil,\n    IAccessors,\n    IChartAssistSeries,\n    IGaugeConfig,\n    IGaugeThresholdsConfig,\n} from \"@nova-ui/charts\";\n\n@Component({\n    selector: \"donut-gauge-with-threshold-marker-toggling-example\",\n    templateUrl: \"./donut-gauge-with-threshold-marker-toggling-example.component.html\",\n    styleUrls: [\"./donut-gauge-with-threshold-marker-toggling-example.component.less\"],\n})\nexport class DonutGaugeWithThresholdMarkerTogglingExampleComponent implements OnInit {\n    public chartAssist: ChartAssist;\n    public value = 128;\n    public gaugeConfig: IGaugeConfig;\n    public markersEnabled = true;\n    public labelsPlugin = new DonutGaugeLabelsPlugin();\n\n    private seriesSet: IChartAssistSeries<IAccessors>[];\n\n    // Generating a standard set of thresholds with warning and critical levels\n    private thresholds: IGaugeThresholdsConfig = GaugeUtil.createStandardThresholdsConfig(100, 158);\n\n    public ngOnInit(): void {\n        // Setting up the gauge config\n        this.gaugeConfig = this.getGaugeConfig();\n\n        // Setting up the chart assist with a local instance of the labels plugin for direct control of the label display\n        this.chartAssist = GaugeUtil.createChartAssist(this.gaugeConfig, GaugeMode.Donut, this.labelsPlugin);\n\n        // Assembling the series\n        this.seriesSet = GaugeUtil.assembleSeriesSet(this.gaugeConfig, GaugeMode.Donut);\n\n        // Updating the chart\n        this.chartAssist.update(this.seriesSet);\n    }\n\n    public onValueChange(value: number): void {\n        this.value = value;\n        this.updateGauge();\n    }\n\n    public onMarkersEnabledChange(enabled: boolean): void {\n        this.markersEnabled = enabled;\n\n        // Enabling or disabling the threshold markers\n        this.thresholds.disableMarkers = !this.markersEnabled;\n\n        // Enabling or disabling the threshold labels\n        this.labelsPlugin.config.disableThresholdLabels = !this.markersEnabled;\n\n        this.updateGauge();\n    }\n\n    private updateGauge() {\n        this.gaugeConfig = this.getGaugeConfig();\n        this.seriesSet = GaugeUtil.update(this.seriesSet, this.gaugeConfig);\n        this.chartAssist.update(this.seriesSet);\n    }\n\n    private getGaugeConfig(): IGaugeConfig {\n        return {\n            value: this.value,\n            max: 200,\n            thresholds: this.thresholds,\n        };\n    }\n}\n";
-      /***/
-    },
-
-    /***/
     "1Aus":
     /*!***********************************************************************************************************************************************************!*\
       !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/bar/bar-chart-with-legend/bar-chart-with-legend.example.component.html ***!
@@ -243,22 +223,22 @@
     },
 
     /***/
-    "1oNZ":
-    /*!*****************************************************************************************************************************************************************************************!*\
-      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/donut/donut-with-threshold-toggling/donut-gauge-with-threshold-toggling-example.component.html ***!
-      \*****************************************************************************************************************************************************************************************/
+    "1p5v":
+    /*!*****************************************************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/donut/donut-basic/donut-gauge-basic.example.component.less ***!
+      \*****************************************************************************************************************************************************/
 
     /*! exports provided: default */
 
     /***/
-    function oNZ(module, __webpack_exports__, __webpack_require__) {
+    function p5v(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<div class=\"d-flex align-items-center justify-content-center flex-wrap\">\n    <div class=\"d-flex flex-column align-items-left mr-5\">\n        <nui-form-field class=\"d-block mb-5\"\n                        caption=\"Value\" i18n-caption\n                        [showOptionalText]=\"false\">\n            <nui-textbox-number type=\"number\"\n                                [ngModel]=\"value\"\n                                (ngModelChange)=\"onValueChange($event)\"\n                                [minValue]=\"0\"\n                                [maxValue]=\"gaugeConfig.max\"\n                                customBoxWidth=\"75px\"></nui-textbox-number>\n        </nui-form-field>\n        <nui-checkbox class=\"mb-2\"\n                      [ngModel]=\"warningEnabled\"\n                      (ngModelChange)=\"onWarningEnabledChange($event)\"\n                      i18n>\n            Warning Enabled\n        </nui-checkbox>\n        <nui-checkbox [ngModel]=\"criticalEnabled\"\n                      (ngModelChange)=\"onCriticalEnabledChange($event)\"\n                      i18n>\n            Critical Enabled\n        </nui-checkbox>\n    </div>\n    <nui-chart class=\"demo__chart\" [chart]=\"chartAssist.chart\"></nui-chart>\n</div>\n";
+      __webpack_exports__["default"] = ".demo__value-input {\n    margin-right: 40px;\n}\n\n.demo__chart {\n    height: 200px;\n    width: 200px;\n}\n";
       /***/
     },
 
@@ -339,26 +319,6 @@
 
 
       __webpack_exports__["default"] = "import { Component, OnInit } from \"@angular/core\";\nimport {\n    Chart, ChartAssist, IChartSeries, ILineAccessors, IXYScales, LineAccessors, LinearScale, LineRenderer, TimeScale, XYGrid,\n} from \"@nova-ui/charts\";\nimport moment from \"moment/moment\";\n\n@Component({\n    selector: \"nui-line-chart-with-legend-example\",\n    templateUrl: \"./line-chart-with-legend.example.component.html\",\n})\nexport class LineChartWithLegendExampleComponent implements OnInit {\n    public chart = new Chart(new XYGrid());\n    public chartAssist: ChartAssist = new ChartAssist(this.chart);\n\n    public ngOnInit() {\n        // providing chartAssist colors and markers to LineAccessors will share them with the line chart\n        const accessors = new LineAccessors(this.chartAssist.palette.standardColors, this.chartAssist.markers);\n        const renderer = new LineRenderer();\n        const scales: IXYScales = {\n            x: new TimeScale(),\n            y: new LinearScale(),\n        };\n\n        const seriesSet: IChartSeries<ILineAccessors>[] = getData().map(d => ({\n            ...d,\n            scales,\n            renderer,\n            accessors,\n        }));\n\n        // chart assist needs to be used to update data\n        this.chartAssist.update(seriesSet);\n    }\n}\n\n/* Chart data */\nfunction getData() {\n    const format = \"YYYY-MM-DDTHH:mm:ssZ\";\n\n    return [\n        {\n            id: \"series-1\",\n            name: \"Series 1\",\n            data: [\n                { x: moment(\"2016-12-25T15:14:29.909Z\", format), y: 30 },\n                { x: moment(\"2016-12-27T15:14:29.909Z\", format), y: 95 },\n                { x: moment(\"2016-12-29T15:14:29.909Z\", format), y: 15 },\n                { x: moment(\"2016-12-31T15:14:29.909Z\", format), y: 60 },\n                { x: moment(\"2017-01-03T15:14:29.909Z\", format), y: 35 },\n            ],\n        },\n        {\n            id: \"series-2\",\n            name: \"Series 2\",\n            data: [\n                { x: moment(\"2016-12-25T15:14:29.909Z\", format), y: 60 },\n                { x: moment(\"2016-12-27T15:14:29.909Z\", format), y: 40 },\n                { x: moment(\"2016-12-29T15:14:29.909Z\", format), y: 70 },\n                { x: moment(\"2016-12-31T15:14:29.909Z\", format), y: 45 },\n                { x: moment(\"2017-01-03T15:14:29.909Z\", format), y: 90 },\n            ],\n        },\n    ];\n}\n";
-      /***/
-    },
-
-    /***/
-    "2ZQm":
-    /*!*****************************************************************************************************************************************************************************************!*\
-      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/donut/donut-with-threshold-toggling/donut-gauge-with-threshold-toggling-example.component.less ***!
-      \*****************************************************************************************************************************************************************************************/
-
-    /*! exports provided: default */
-
-    /***/
-    function ZQm(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony default export */
-
-
-      __webpack_exports__["default"] = ".demo__chart {\n    height: 250px;\n    width: 250px;\n}\n";
       /***/
     },
 
@@ -768,26 +728,6 @@
     },
 
     /***/
-    "3dr6":
-    /*!****************************************************************************************************************************************************************************!*\
-      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/linear/linear-with-thresholds/linear-gauge-with-thresholds-example.component.html ***!
-      \****************************************************************************************************************************************************************************/
-
-    /*! exports provided: default */
-
-    /***/
-    function dr6(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony default export */
-
-
-      __webpack_exports__["default"] = "<div class=\"d-flex justify-content-center align-items-center flex-wrap\">\n    <nui-form-field class=\"d-block mb-5 demo__value-input\"\n                    caption=\"Value\" i18n-caption\n                    [showOptionalText]=\"false\">\n        <nui-textbox-number type=\"number\"\n                            [ngModel]=\"value\"\n                            (ngModelChange)=\"onValueChange($event)\"\n                            [minValue]=\"0\"\n                            [maxValue]=\"gaugeConfig.max\"\n                            customBoxWidth=\"75px\"></nui-textbox-number>\n    </nui-form-field>\n    <div class=\"d-flex justify-content-between align-items-center\">\n        <nui-chart class=\"demo__vertical-chart\" [chart]=\"verticalChartAssist.chart\"></nui-chart>\n        <nui-chart class=\"ml-5 demo__horizontal-chart\" [chart]=\"horizontalChartAssist.chart\"></nui-chart>\n    </div>\n</div>\n";
-      /***/
-    },
-
-    /***/
     "4H1E":
     /*!***********************************************************************************************************************************************!*\
       !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/waterfall/waterfall-test/waterfall-chart-test.component.ts ***!
@@ -868,6 +808,26 @@
     },
 
     /***/
+    "61+u":
+    /*!****************************************************************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/linear/horizontal-basic/horizontal-gauge-basic.example.component.html ***!
+      \****************************************************************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function u(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "<div class=\"d-flex justify-content-center align-items-center flex-wrap\">\n    <nui-form-field class=\"mb-5 demo__value-input\"\n                    caption=\"Value\" i18n-caption\n                    [showOptionalText]=\"false\">\n        <nui-textbox-number type=\"number\"\n                            [ngModel]=\"gaugeConfig.value\"\n                            (ngModelChange)=\"onValueChange($event)\"\n                            [minValue]=\"0\"\n                            [maxValue]=\"gaugeConfig.max\"\n                            customBoxWidth=\"75px\"></nui-textbox-number>\n    </nui-form-field>\n    <nui-chart class=\"demo__chart\" [chart]=\"chartAssist.chart\"></nui-chart>\n</div>\n";
+      /***/
+    },
+
+    /***/
     "61M4":
     /*!************************************************************************************************************************************************************************************!*\
       !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/bucketed-bar/bar-chart-test/grouped-horizontal/grouped-horizontal-bar-chart-test.component.html ***!
@@ -908,26 +868,6 @@
     },
 
     /***/
-    "6LbR":
-    /*!************************************************************************************************************************************************************!*\
-      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/linear/vertical-basic/vertical-gauge-basic-example.component.less ***!
-      \************************************************************************************************************************************************************/
-
-    /*! exports provided: default */
-
-    /***/
-    function LbR(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony default export */
-
-
-      __webpack_exports__["default"] = ".demo__value-input {\n    margin-right: 40px;\n}\n\n// Setting the height on the chart element determines the vertical length of the gauge\n.demo__chart {\n    height: 200px;\n}\n";
-      /***/
-    },
-
-    /***/
     "6NCN":
     /*!*******************************************************************************************************************************************************************************************!*\
       !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/area/area-chart-bi-directional-stacked-test/area-chart-bi-directional-stacked-visual-test.component.ts ***!
@@ -944,6 +884,46 @@
 
 
       __webpack_exports__["default"] = "import { Component } from \"@angular/core\";\n\n@Component({\n    selector: \"area-chart-bi-directional-stacked-visual-test\",\n    template: `\n        <area-chart-bi-directional-stacked-test [inverted]=\"false\"></area-chart-bi-directional-stacked-test>\n        <area-chart-bi-directional-stacked-test [inverted]=\"true\"></area-chart-bi-directional-stacked-test>\n    `,\n})\nexport class AreaChartBiDirectionalStackedVisualTestComponent {\n}\n";
+      /***/
+    },
+
+    /***/
+    "6TMf":
+    /*!***************************************************************************************************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/donut/donut-with-custom-threshold-labels/donut-gauge-with-custom-threshold-labels.example.component.less ***!
+      \***************************************************************************************************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function TMf(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = ".demo__chart {\n    height: 250px;\n    width: 250px;\n}\n";
+      /***/
+    },
+
+    /***/
+    "6YN8":
+    /*!*************************************************************************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/donut/donut-with-thresholds/donut-gauge-with-thresholds.example.component.html ***!
+      \*************************************************************************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function YN8(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "<div class=\"d-flex align-items-center justify-content-center flex-wrap\">\n    <div class=\"d-flex flex-column align-items-left mr-5\">\n        <nui-form-field class=\"d-block mb-5\"\n                        caption=\"Value\" i18n-caption\n                        [showOptionalText]=\"false\">\n            <nui-textbox-number type=\"number\"\n                                [ngModel]=\"value\"\n                                (ngModelChange)=\"onValueChange($event)\"\n                                [minValue]=\"0\"\n                                [maxValue]=\"gaugeConfig.max\"\n                                customBoxWidth=\"75px\"></nui-textbox-number>\n        </nui-form-field>\n        <nui-checkbox [ngModel]=\"reversed\"\n                      (ngModelChange)=\"onReversedChange($event)\"\n                      i18n>\n            Reversed Thresholds\n        </nui-checkbox>\n    </div>\n    <nui-chart class=\"demo__chart\" [chart]=\"chartAssist.chart\"></nui-chart>\n</div>\n";
       /***/
     },
 
@@ -1004,6 +984,26 @@
 
 
       __webpack_exports__["default"] = "<div class=\"nui-chart-layout\">\n    <div class=\"chart\">\n        <nui-chart class=\"w-100\" [chart]=\"chartAssist.chart\"></nui-chart>\n    </div>\n    <div class=\"legend\">\n        <nui-legend [active]=\"chartAssist.isLegendActive\"\n                    [interactive]=\"false\"\n                    (mouseleave)=\"chartAssist.resetVisibleSeries()\">\n            <nui-legend-series *ngFor=\"let legendSeries of chartAssist.legendSeriesSet; trackBy: chartAssist.seriesTrackByFn\"\n                               [descriptionPrimary]=\"legendSeries['name'] | titlecase\"\n                               [seriesRenderState]=\"chartAssist.renderStatesIndex[legendSeries.id]?.state\"\n                               (mouseenter)=\"chartAssist.emphasizeSeries(legendSeries.id)\"\n                               [isSelected]=\"!chartAssist.isSeriesHidden(legendSeries.id)\"\n                               (isSelectedChange)=\"chartAssist.toggleSeries(legendSeries.id, $event)\">\n                <nui-rich-legend-tile [value]=\"legendSeries.data[0]?.value\"\n                                      backgroundColor=\"transparent\">\n                </nui-rich-legend-tile>\n                <nui-icon [icon]=\"'status_' + legendSeries['name']\"></nui-icon>\n            </nui-legend-series>\n        </nui-legend>\n    </div>\n</div>\n";
+      /***/
+    },
+
+    /***/
+    "84yw":
+    /*!**************************************************************************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/linear/linear-with-thresholds/linear-gauge-with-thresholds.example.component.ts ***!
+      \**************************************************************************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function yw(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "import { Component, OnInit } from \"@angular/core\";\nimport {\n    ChartAssist,\n    GaugeMode,\n    GaugeUtil,\n    IAccessors,\n    IChartAssistSeries,\n    IGaugeConfig,\n    IGaugeThresholdsConfig,\n} from \"@nova-ui/charts\";\n\n@Component({\n    selector: \"linear-gauge-with-thresholds-example\",\n    templateUrl: \"./linear-gauge-with-thresholds.example.component.html\",\n    styleUrls: [\"./linear-gauge-with-thresholds.example.component.less\"],\n})\nexport class LinearGaugeWithThresholdsExampleComponent implements OnInit {\n    public horizontalChartAssist: ChartAssist;\n    public verticalChartAssist: ChartAssist;\n    public gaugeConfig: IGaugeConfig;\n    public value = 64;\n\n    private thresholds: IGaugeThresholdsConfig;\n    private horizontalSeriesSet: IChartAssistSeries<IAccessors>[];\n    private verticalSeriesSet: IChartAssistSeries<IAccessors>[];\n\n    public ngOnInit(): void {\n        // Generating a standard set of thresholds with warning and critical levels\n        this.thresholds = GaugeUtil.createStandardThresholdsConfig(50, 79);\n\n        /**\n         * Optionally, instead of using the 'createStandardThresholdsConfig' function as above, you can manually create a thresholds\n         * config object like the following with as many or as few threshold definitions as you need.\n         */\n        // this.thresholds = {\n        //     definitions: {\n        //         [StandardGaugeThresholdId.Warning]: {\n        //             id: StandardGaugeThresholdId.Warning,\n        //             value: 50,\n        //             enabled: true,\n        //             color: StandardGaugeColor.Warning,\n        //         },\n        //         [StandardGaugeThresholdId.Critical]: {\n        //             id: StandardGaugeThresholdId.Critical,\n        //             value: 79,\n        //             enabled: true,\n        //             color: StandardGaugeColor.Critical,\n        //         },\n        //     },\n        //     reversed: false,\n        //     disableMarkers: false,\n        //     markerRadius: StandardGaugeThresholdMarkerRadius.Large,\n        // };\n\n        this.gaugeConfig = this.getGaugeConfig();\n\n        // Creating the horizontal gauge\n        this.horizontalChartAssist = GaugeUtil.createChartAssist(this.gaugeConfig, GaugeMode.Horizontal);\n        this.horizontalSeriesSet = GaugeUtil.assembleSeriesSet(this.gaugeConfig, GaugeMode.Horizontal);\n        this.horizontalChartAssist.update(this.horizontalSeriesSet);\n\n        // Creating the vertical gauge\n        this.verticalChartAssist = GaugeUtil.createChartAssist(this.gaugeConfig, GaugeMode.Vertical);\n        this.verticalSeriesSet = GaugeUtil.assembleSeriesSet(this.gaugeConfig, GaugeMode.Vertical);\n        this.verticalChartAssist.update(this.verticalSeriesSet);\n    }\n\n    public onValueChange(value: number): void {\n        this.value = value;\n        this.updateGauges();\n    }\n\n    private updateGauges() {\n        this.gaugeConfig = this.getGaugeConfig();\n\n        // Updating the horizontal gauge\n        this.horizontalSeriesSet = GaugeUtil.update(this.horizontalSeriesSet, this.gaugeConfig);\n        this.horizontalChartAssist.update(this.horizontalSeriesSet);\n\n        // Updating the vertical gauge\n        this.verticalSeriesSet = GaugeUtil.update(this.verticalSeriesSet, this.gaugeConfig);\n        this.verticalChartAssist.update(this.verticalSeriesSet);\n    }\n\n    private getGaugeConfig(): IGaugeConfig {\n        return {\n            value: this.value,\n            max: 100,\n\n            // Enabling the thresholds\n            thresholds: this.thresholds,\n        };\n    }\n}\n";
       /***/
     },
 
@@ -1104,26 +1104,6 @@
 
 
       __webpack_exports__["default"] = "<nui-chart class=\"d-flex\" [chart]=\"chart\"></nui-chart>\n";
-      /***/
-    },
-
-    /***/
-    "91pg":
-    /*!*******************************************************************************************************************************************************************!*\
-      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/donut/donut-with-content/donut-gauge-with-content-example.component.less ***!
-      \*******************************************************************************************************************************************************************/
-
-    /*! exports provided: default */
-
-    /***/
-    function pg(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony default export */
-
-
-      __webpack_exports__["default"] = "@import \"@nova-ui/bits/sdk/less/nui-framework-variables\";\n\n.demo__chart {\n    height: 250px;\n    width: 250px;\n}\n\n.demo__content-label {\n    line-height: @nui-line-height-small;\n    font-size: @nui-font-size-small;\n    font-weight: @nui-font-weight-regular;\n    text-transform: uppercase;\n    color: var(--nui-color-text-secondary);\n}\n";
       /***/
     },
 
@@ -1248,26 +1228,6 @@
     },
 
     /***/
-    "BDzF":
-    /*!**************************************************************************************************************************************************************************************!*\
-      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/linear/linear-thickness-adjustment/linear-gauge-thickness-adjustment-example.component.html ***!
-      \**************************************************************************************************************************************************************************************/
-
-    /*! exports provided: default */
-
-    /***/
-    function BDzF(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony default export */
-
-
-      __webpack_exports__["default"] = "<div class=\"d-flex justify-content-center align-items-center flex-wrap\">\n    <div class=\"demo__inputs\">\n        <nui-form-field class=\"d-block mb-5\"\n                        caption=\"Value\" i18n-caption\n                        [showOptionalText]=\"false\">\n            <nui-textbox-number type=\"number\"\n                                [ngModel]=\"value\"\n                                (ngModelChange)=\"onValueChange($event)\"\n                                [minValue]=\"0\"\n                                [maxValue]=\"gaugeConfig.max\"\n                                customBoxWidth=\"75px\"></nui-textbox-number>\n        </nui-form-field>\n        <nui-checkbox class=\"d-block mb-5\"\n                      [ngModel]=\"compact\"\n                      (ngModelChange)=\"onCompactChange($event)\"\n                      i18n>\n            Compact Thickness\n        </nui-checkbox>\n    </div>\n    <div class=\"demo__charts d-flex justify-content-between align-items-center\">\n        <nui-chart class=\"demo__vertical-chart\" [chart]=\"verticalChartAssist.chart\"></nui-chart>\n        <nui-chart class=\"ml-5 demo__horizontal-chart\" [chart]=\"horizontalChartAssist.chart\"></nui-chart>\n    </div>\n</div>\n";
-      /***/
-    },
-
-    /***/
     "Bhj1":
     /*!**********************************************************************************************************************************************************************************************!*\
       !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/bucketed-bar/bar-chart-test/basic-stacked-horizontal/basic-stacked-horizontal-bar-chart-test.component.ts ***!
@@ -1364,6 +1324,26 @@
 
 
       __webpack_exports__["default"] = "import { Component, OnInit } from \"@angular/core\";\nimport {\n    barAccessors,\n    barGrid,\n    BarHighlightStrategy,\n    BarRenderer,\n    Chart,\n    LinearScale,\n    Scales,\n    TimeIntervalScale,\n} from \"@nova-ui/charts\";\nimport moment, { duration } from \"moment/moment\";\n\n@Component({\n    selector: \"nui-bar-chart-time-interval-example\",\n    templateUrl: \"./bar-chart-time-interval.example.component.html\",\n})\nexport class BarChartTimeIntervalExampleComponent implements OnInit {\n    public chart = new Chart(barGrid());\n\n    ngOnInit(): void {\n        const accessors = barAccessors();\n        accessors.data.category = (d) => d.x;\n        accessors.data.value = (d) => d.y;\n\n        const renderer = new BarRenderer({ highlightStrategy: new BarHighlightStrategy(\"x\") });\n\n        const scales: Scales = {\n            x: new TimeIntervalScale(duration(1, \"days\")),\n            y: new LinearScale(),\n        };\n\n        this.chart.update(getData().map(s => ({\n            ...s,\n            accessors,\n            renderer,\n            scales,\n        })));\n    }\n}\n\n/* Chart data */\nfunction getData() {\n    const format = \"YYYY-MM-DDTHH\";\n\n    return [\n        {\n            id: \"series-1\",\n            name: \"Series 1\",\n            data: [\n                {x: moment(\"2020-07-01T0\", format).toDate(), y: 30},\n                {x: moment(\"2020-07-02T0\", format).toDate(), y: 95},\n                {x: moment(\"2020-07-03T0\", format).toDate(), y: 15},\n                {x: moment(\"2020-07-04T0\", format).toDate(), y: 60},\n                {x: moment(\"2020-07-05T0\", format).toDate(), y: 35},\n            ],\n        },\n    ];\n}\n";
+      /***/
+    },
+
+    /***/
+    "EDkH":
+    /*!**************************************************************************************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/linear/linear-thickness-adjustment/linear-gauge-thickness-adjustment.example.component.less ***!
+      \**************************************************************************************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function EDkH(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = ".demo__inputs {\n    margin-right: 50px;\n}\n\n.demo__charts {\n    width: 255px;\n}\n\n// Setting the height on the chart element determines the vertical length of the gauge\n.demo__vertical-chart {\n    height: 200px;\n}\n\n// Setting the width on the chart element determines the horizontal length of the gauge\n.demo__horizontal-chart {\n    width: 200px;\n}\n";
       /***/
     },
 
@@ -1468,26 +1448,6 @@
     },
 
     /***/
-    "G2WF":
-    /*!***************************************************************************************************************************************************************************************************!*\
-      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/donut/donut-with-custom-threshold-labels/donut-gauge-with-custom-threshold-labels-example.component.html ***!
-      \***************************************************************************************************************************************************************************************************/
-
-    /*! exports provided: default */
-
-    /***/
-    function G2WF(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony default export */
-
-
-      __webpack_exports__["default"] = "<div class=\"d-flex align-items-center justify-content-center flex-wrap\">\n    <div class=\"d-flex flex-column align-items-left mr-5\">\n        <nui-form-field class=\"d-block mb-5\"\n                        caption=\"Value\" i18n-caption\n                        [showOptionalText]=\"false\">\n            <nui-textbox-number type=\"number\"\n                                [ngModel]=\"gaugeConfig.value\"\n                                (ngModelChange)=\"onValueChange($event)\"\n                                [minValue]=\"0\"\n                                [maxValue]=\"gaugeConfig.max\"\n                                customBoxWidth=\"75px\"></nui-textbox-number>\n        </nui-form-field>\n    </div>\n    <nui-chart class=\"demo__chart\" [chart]=\"chartAssist.chart\"></nui-chart>\n</div>\n";
-      /***/
-    },
-
-    /***/
     "HO4h":
     /*!***********************************************************************************************************************************!*\
       !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/bar/bar-chart-test/bar-chart-test.component.ts ***!
@@ -1588,6 +1548,26 @@
     },
 
     /***/
+    "IcHH":
+    /*!*******************************************************************************************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/donut/donut-without-threshold-markers/donut-gauge-without-threshold-markers.example.component.ts ***!
+      \*******************************************************************************************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function IcHH(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "import { Component, OnInit } from \"@angular/core\";\nimport {\n    ChartAssist,\n    GaugeMode,\n    GaugeUtil,\n    IAccessors,\n    IChartAssistSeries,\n    IGaugeConfig,\n    IGaugeThresholdsConfig,\n} from \"@nova-ui/charts\";\n\n@Component({\n    selector: \"donut-gauge-without-threshold-markers-example\",\n    templateUrl: \"./donut-gauge-without-threshold-markers.example.component.html\",\n    styleUrls: [\"./donut-gauge-without-threshold-markers.example.component.less\"],\n})\nexport class DonutGaugeWithoutThresholdMarkersExampleComponent implements OnInit {\n    public chartAssist: ChartAssist;\n    public value = 128;\n    public gaugeConfig: IGaugeConfig;\n\n    private thresholds: IGaugeThresholdsConfig;\n    private seriesSet: IChartAssistSeries<IAccessors>[];\n\n    public ngOnInit(): void {\n        // Generating a standard set of thresholds with warning and critical levels\n        this.thresholds= GaugeUtil.createStandardThresholdsConfig(100, 158);\n\n        // Turning off the markers\n        this.thresholds.disableMarkers = true;\n\n        this.gaugeConfig = this.getGaugeConfig();\n        this.chartAssist = GaugeUtil.createChartAssist(this.gaugeConfig, GaugeMode.Donut);\n\n        this.seriesSet = GaugeUtil.assembleSeriesSet(this.gaugeConfig, GaugeMode.Donut);\n        this.chartAssist.update(this.seriesSet);\n    }\n\n    public onValueChange(value: number): void {\n        this.value = value;\n        this.updateGauge();\n    }\n\n    private updateGauge() {\n        this.gaugeConfig = this.getGaugeConfig();\n        this.seriesSet = GaugeUtil.update(this.seriesSet, this.gaugeConfig);\n        this.chartAssist.update(this.seriesSet);\n    }\n\n    private getGaugeConfig(): IGaugeConfig {\n        return {\n            value: this.value,\n            max: 200,\n            thresholds: this.thresholds,\n        };\n    }\n}\n";
+      /***/
+    },
+
+    /***/
     "IlQ7":
     /*!*************************************************************************************************************************************!*\
       !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/pie-and-donut/chart-docs-pie-and-donut.module.ts ***!
@@ -1644,46 +1624,6 @@
 
 
       __webpack_exports__["default"] = "import { Component, OnInit } from \"@angular/core\";\nimport {\n    Chart, ChartAssist, IChartSeries, ILineAccessors, IXYScales, LineAccessors, LinearScale, LineRenderer, TimeScale, XYGrid,\n} from \"@nova-ui/charts\";\nimport moment from \"moment/moment\";\n\n@Component({\n    selector: \"line-chart-with-axis-labels-example\",\n    templateUrl: \"./line-chart-with-axis-labels.example.component.html\",\n})\nexport class LineChartWithAxisLabelsExampleComponent implements OnInit {\n    public chart = new Chart(new XYGrid());\n\n    public chartAssist: ChartAssist = new ChartAssist(this.chart);\n\n    public ngOnInit() {\n        // providing chartAssist colors and markers to LineAccessors will share them with the line chart\n        const accessors = new LineAccessors(this.chartAssist.palette.standardColors, this.chartAssist.markers);\n        const renderer = new LineRenderer();\n        const scales: IXYScales = {\n            x: new TimeScale(),\n            y: new LinearScale(),\n        };\n\n        const seriesSet: IChartSeries<ILineAccessors>[] = getData().map(d => ({\n            ...d,\n            accessors,\n            renderer,\n            scales,\n        }));\n\n        // chart assist needs to be used to update data\n        this.chartAssist.update(seriesSet);\n    }\n}\n\n/* Chart data */\nfunction getData() {\n    const format = \"YYYY-MM-DDTHH:mm:ssZ\";\n\n    return [\n        {\n            id: \"series-1\",\n            name: \"Series 1\",\n            data: [\n                { x: moment(\"2016-12-25T15:14:29.909Z\", format), y: 30 },\n                { x: moment(\"2016-12-27T15:14:29.909Z\", format), y: 95 },\n                { x: moment(\"2016-12-29T15:14:29.909Z\", format), y: 15 },\n                { x: moment(\"2016-12-31T15:14:29.909Z\", format), y: 60 },\n                { x: moment(\"2017-01-03T15:14:29.909Z\", format), y: 35 },\n            ],\n        },\n        {\n            id: \"series-2\",\n            name: \"Series 2\",\n            data: [\n                { x: moment(\"2016-12-25T15:14:29.909Z\", format), y: 60 },\n                { x: moment(\"2016-12-27T15:14:29.909Z\", format), y: 40 },\n                { x: moment(\"2016-12-29T15:14:29.909Z\", format), y: 70 },\n                { x: moment(\"2016-12-31T15:14:29.909Z\", format), y: 45 },\n                { x: moment(\"2017-01-03T15:14:29.909Z\", format), y: 90 },\n            ],\n        },\n    ];\n}\n";
-      /***/
-    },
-
-    /***/
-    "IzSJ":
-    /*!****************************************************************************************************************************************************************!*\
-      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/linear/horizontal-basic/horizontal-gauge-basic-example.component.less ***!
-      \****************************************************************************************************************************************************************/
-
-    /*! exports provided: default */
-
-    /***/
-    function IzSJ(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony default export */
-
-
-      __webpack_exports__["default"] = ".demo__value-input {\n    margin-right: 40px;\n}\n\n// Setting the width on the chart element determines the horizontal length of the gauge\n.demo__chart {\n    width: 200px;\n}\n";
-      /***/
-    },
-
-    /***/
-    "J6rO":
-    /*!*********************************************************************************************************************************************************************************************!*\
-      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/donut/donut-without-threshold-markers/donut-gauge-without-threshold-markers-example.component.less ***!
-      \*********************************************************************************************************************************************************************************************/
-
-    /*! exports provided: default */
-
-    /***/
-    function J6rO(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony default export */
-
-
-      __webpack_exports__["default"] = ".demo__value-input {\n    margin-right: 40px;\n}\n\n.demo__chart {\n    height: 190px;\n    width: 190px;\n}\n";
       /***/
     },
 
@@ -1768,15 +1708,15 @@
     },
 
     /***/
-    "MV1o":
-    /*!*******************************************************************************************************************************************************************************************************!*\
-      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/donut/donut-with-threshold-marker-toggling/donut-gauge-with-threshold-marker-toggling-example.component.less ***!
-      \*******************************************************************************************************************************************************************************************************/
+    "LeOk":
+    /*!*************************************************************************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/donut/donut-with-thresholds/donut-gauge-with-thresholds.example.component.less ***!
+      \*************************************************************************************************************************************************************************/
 
     /*! exports provided: default */
 
     /***/
-    function MV1o(module, __webpack_exports__, __webpack_require__) {
+    function LeOk(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -1784,6 +1724,46 @@
 
 
       __webpack_exports__["default"] = ".demo__chart {\n    height: 250px;\n    width: 250px;\n}\n";
+      /***/
+    },
+
+    /***/
+    "LvBy":
+    /*!*****************************************************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/donut/donut-basic/donut-gauge-basic.example.component.html ***!
+      \*****************************************************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function LvBy(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "<div class=\"d-flex align-items-center justify-content-center flex-wrap\">\n    <nui-form-field class=\"d-block mb-5 demo__value-input\"\n                    caption=\"Value\" i18n-caption\n                    [showOptionalText]=\"false\">\n        <nui-textbox-number type=\"number\"\n                            [ngModel]=\"gaugeConfig.value\"\n                            (ngModelChange)=\"onValueChange($event)\"\n                            [minValue]=\"0\"\n                            [maxValue]=\"gaugeConfig.max\"\n                            customBoxWidth=\"75px\"></nui-textbox-number>\n    </nui-form-field>\n    <nui-chart class=\"demo__chart\" [chart]=\"chartAssist.chart\"></nui-chart>\n</div>\n";
+      /***/
+    },
+
+    /***/
+    "MWUs":
+    /*!****************************************************************************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/linear/linear-with-thresholds/linear-gauge-with-thresholds.example.component.less ***!
+      \****************************************************************************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function MWUs(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = ".demo__value-input {\n    margin-right: 50px;\n}\n\n// Setting the height on the chart element determines the vertical length of the gauge\n.demo__vertical-chart {\n    height: 200px;\n}\n\n// Setting the width on the chart element determines the horizontal length of the gauge\n.demo__horizontal-chart {\n    width: 200px;\n}\n";
       /***/
     },
 
@@ -1924,6 +1904,26 @@
 
 
       __webpack_exports__["default"] = "<div class=\"chart mb-5\">\n    <div [style.margin-left.px]=\"rowSize + iconSize\" #gridChartPlaceholder></div>\n    <div cdkDropList class=\"example-list\" (cdkDropListDropped)=\"drop($event)\">\n        <div *ngFor=\"let item of listItems; let i = index; let first = first\" class=\"d-flex flex-row align-items-center waterfall-chart-list-item\" cdkDrag>\n            <nui-icon icon=\"{{item.icon}}\" class=\"p-1\"></nui-icon>\n            <div style=\"overflow: hidden;\" [style.width.px]=\"rowSize\" class=\"p-1\">\n                <span>{{item.url}}</span>\n            </div>\n            <div class=\"d-flex\">\n                <div class=\"d-flex h-100\" *ngIf=\"first\"></div>\n                <nui-chart class=\"d-flex\" [chart]=\"item.chart\" nuiChartCollectionId=\"1\"></nui-chart>\n            </div>\n        </div>\n    </div>\n</div>\n\n<ng-template #templatePortalGrid>\n    <nui-chart class=\"d-flex\" [chart]=\"gridChart\" nuiChartCollectionId=\"1\"></nui-chart>\n</ng-template>\n";
+      /***/
+    },
+
+    /***/
+    "Nn4a":
+    /*!***************************************************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/donut/donut-basic/donut-gauge-basic.example.component.ts ***!
+      \***************************************************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function Nn4a(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "import { Component, OnInit } from \"@angular/core\";\nimport {\n    ChartAssist,\n    GaugeMode,\n    GaugeUtil,\n    IAccessors,\n    IChartAssistSeries,\n    IGaugeConfig,\n} from \"@nova-ui/charts\";\n\n@Component({\n    selector: \"donut-gauge-basic-example\",\n    templateUrl: \"./donut-gauge-basic.example.component.html\",\n    styleUrls: [\"./donut-gauge-basic.example.component.less\"],\n})\nexport class DonutGaugeBasicExampleComponent implements OnInit {\n    public chartAssist: ChartAssist;\n    public gaugeConfig: IGaugeConfig;\n\n    private seriesSet: IChartAssistSeries<IAccessors>[];\n\n    public ngOnInit(): void {\n        // Setting up the gauge config\n        const initialValue = 128;\n        this.gaugeConfig = this.getGaugeConfig(initialValue);\n\n        // Creating the chart assist\n        this.chartAssist = GaugeUtil.createChartAssist(this.gaugeConfig, GaugeMode.Donut);\n\n        // Assembling the series\n        this.seriesSet = GaugeUtil.assembleSeriesSet(this.gaugeConfig, GaugeMode.Donut);\n\n        // Updating the chart\n        this.chartAssist.update(this.seriesSet);\n    }\n\n    public onValueChange(value: number): void {\n        // Updating the gauge config\n        this.gaugeConfig = this.getGaugeConfig(value);\n\n        // Updating the series set with the new config\n        this.seriesSet = GaugeUtil.update(this.seriesSet, this.gaugeConfig);\n\n        // Updating the chart with the updated series set\n        this.chartAssist.update(this.seriesSet);\n    }\n\n    private getGaugeConfig(value: number): IGaugeConfig {\n        return {\n            value,\n            max: 200,\n\n            /**\n             * Optionally customize the default quantity color (defaults to StandardGaugeColor.Ok)\n             */\n\n            // defaultQuantityColor: \"var(--nui-color-semantic-ok)\",\n        };\n    }\n}\n";
       /***/
     },
 
@@ -2169,39 +2169,39 @@
         "./gauge/chart-docs-gauge.component.html": "ZWN/",
         "./gauge/chart-docs-gauge.component.ts": "2DII",
         "./gauge/chart-docs-gauge.module.ts": "ZDgL",
-        "./gauge/donut/donut-basic/donut-gauge-basic-example.component.html": "QUxe",
-        "./gauge/donut/donut-basic/donut-gauge-basic-example.component.less": "z2tb",
-        "./gauge/donut/donut-basic/donut-gauge-basic-example.component.ts": "mDnq",
-        "./gauge/donut/donut-with-content/donut-gauge-with-content-example.component.html": "dXgp",
-        "./gauge/donut/donut-with-content/donut-gauge-with-content-example.component.less": "91pg",
-        "./gauge/donut/donut-with-content/donut-gauge-with-content-example.component.ts": "/sCd",
-        "./gauge/donut/donut-with-custom-threshold-labels/donut-gauge-with-custom-threshold-labels-example.component.html": "G2WF",
-        "./gauge/donut/donut-with-custom-threshold-labels/donut-gauge-with-custom-threshold-labels-example.component.less": "Yu0q",
-        "./gauge/donut/donut-with-custom-threshold-labels/donut-gauge-with-custom-threshold-labels-example.component.ts": "r3Ox",
-        "./gauge/donut/donut-with-threshold-marker-toggling/donut-gauge-with-threshold-marker-toggling-example.component.html": "TW+J",
-        "./gauge/donut/donut-with-threshold-marker-toggling/donut-gauge-with-threshold-marker-toggling-example.component.less": "MV1o",
-        "./gauge/donut/donut-with-threshold-marker-toggling/donut-gauge-with-threshold-marker-toggling-example.component.ts": "19lF",
-        "./gauge/donut/donut-with-threshold-toggling/donut-gauge-with-threshold-toggling-example.component.html": "1oNZ",
-        "./gauge/donut/donut-with-threshold-toggling/donut-gauge-with-threshold-toggling-example.component.less": "2ZQm",
-        "./gauge/donut/donut-with-threshold-toggling/donut-gauge-with-threshold-toggling-example.component.ts": "ZvUs",
-        "./gauge/donut/donut-with-thresholds/donut-gauge-with-thresholds-example.component.html": "wSIz",
-        "./gauge/donut/donut-with-thresholds/donut-gauge-with-thresholds-example.component.less": "i4Pe",
-        "./gauge/donut/donut-with-thresholds/donut-gauge-with-thresholds-example.component.ts": "hSR7",
-        "./gauge/donut/donut-without-threshold-markers/donut-gauge-without-threshold-markers-example.component.html": "jp58",
-        "./gauge/donut/donut-without-threshold-markers/donut-gauge-without-threshold-markers-example.component.less": "J6rO",
-        "./gauge/donut/donut-without-threshold-markers/donut-gauge-without-threshold-markers-example.component.ts": "j5fe",
-        "./gauge/linear/horizontal-basic/horizontal-gauge-basic-example.component.html": "0Cj1",
-        "./gauge/linear/horizontal-basic/horizontal-gauge-basic-example.component.less": "IzSJ",
-        "./gauge/linear/horizontal-basic/horizontal-gauge-basic-example.component.ts": "uxvK",
-        "./gauge/linear/linear-thickness-adjustment/linear-gauge-thickness-adjustment-example.component.html": "BDzF",
-        "./gauge/linear/linear-thickness-adjustment/linear-gauge-thickness-adjustment-example.component.less": "Xr13",
-        "./gauge/linear/linear-thickness-adjustment/linear-gauge-thickness-adjustment-example.component.ts": "jmb1",
-        "./gauge/linear/linear-with-thresholds/linear-gauge-with-thresholds-example.component.html": "3dr6",
-        "./gauge/linear/linear-with-thresholds/linear-gauge-with-thresholds-example.component.less": "bakv",
-        "./gauge/linear/linear-with-thresholds/linear-gauge-with-thresholds-example.component.ts": "jRwM",
-        "./gauge/linear/vertical-basic/vertical-gauge-basic-example.component.html": "aI42",
-        "./gauge/linear/vertical-basic/vertical-gauge-basic-example.component.less": "6LbR",
-        "./gauge/linear/vertical-basic/vertical-gauge-basic-example.component.ts": "S5Pj",
+        "./gauge/donut/donut-basic/donut-gauge-basic.example.component.html": "LvBy",
+        "./gauge/donut/donut-basic/donut-gauge-basic.example.component.less": "1p5v",
+        "./gauge/donut/donut-basic/donut-gauge-basic.example.component.ts": "Nn4a",
+        "./gauge/donut/donut-with-content/donut-gauge-with-content.example.component.html": "z8Cb",
+        "./gauge/donut/donut-with-content/donut-gauge-with-content.example.component.less": "Ylwx",
+        "./gauge/donut/donut-with-content/donut-gauge-with-content.example.component.ts": "0JNq",
+        "./gauge/donut/donut-with-custom-threshold-labels/donut-gauge-with-custom-threshold-labels.example.component.html": "Zzgk",
+        "./gauge/donut/donut-with-custom-threshold-labels/donut-gauge-with-custom-threshold-labels.example.component.less": "6TMf",
+        "./gauge/donut/donut-with-custom-threshold-labels/donut-gauge-with-custom-threshold-labels.example.component.ts": "j72X",
+        "./gauge/donut/donut-with-threshold-marker-toggling/donut-gauge-with-threshold-marker-toggling.example.component.html": "eTJD",
+        "./gauge/donut/donut-with-threshold-marker-toggling/donut-gauge-with-threshold-marker-toggling.example.component.less": "ROqj",
+        "./gauge/donut/donut-with-threshold-marker-toggling/donut-gauge-with-threshold-marker-toggling.example.component.ts": "Tgb2",
+        "./gauge/donut/donut-with-threshold-toggling/donut-gauge-with-threshold-toggling.example.component.html": "prE6",
+        "./gauge/donut/donut-with-threshold-toggling/donut-gauge-with-threshold-toggling.example.component.less": "RODt",
+        "./gauge/donut/donut-with-threshold-toggling/donut-gauge-with-threshold-toggling.example.component.ts": "+Sq9",
+        "./gauge/donut/donut-with-thresholds/donut-gauge-with-thresholds.example.component.html": "6YN8",
+        "./gauge/donut/donut-with-thresholds/donut-gauge-with-thresholds.example.component.less": "LeOk",
+        "./gauge/donut/donut-with-thresholds/donut-gauge-with-thresholds.example.component.ts": "xbL6",
+        "./gauge/donut/donut-without-threshold-markers/donut-gauge-without-threshold-markers.example.component.html": "oWCq",
+        "./gauge/donut/donut-without-threshold-markers/donut-gauge-without-threshold-markers.example.component.less": "oZgo",
+        "./gauge/donut/donut-without-threshold-markers/donut-gauge-without-threshold-markers.example.component.ts": "IcHH",
+        "./gauge/linear/horizontal-basic/horizontal-gauge-basic.example.component.html": "61+u",
+        "./gauge/linear/horizontal-basic/horizontal-gauge-basic.example.component.less": "vdeH",
+        "./gauge/linear/horizontal-basic/horizontal-gauge-basic.example.component.ts": "axmd",
+        "./gauge/linear/linear-thickness-adjustment/linear-gauge-thickness-adjustment.example.component.html": "uiEO",
+        "./gauge/linear/linear-thickness-adjustment/linear-gauge-thickness-adjustment.example.component.less": "EDkH",
+        "./gauge/linear/linear-thickness-adjustment/linear-gauge-thickness-adjustment.example.component.ts": "nZIx",
+        "./gauge/linear/linear-with-thresholds/linear-gauge-with-thresholds.example.component.html": "RcBz",
+        "./gauge/linear/linear-with-thresholds/linear-gauge-with-thresholds.example.component.less": "MWUs",
+        "./gauge/linear/linear-with-thresholds/linear-gauge-with-thresholds.example.component.ts": "84yw",
+        "./gauge/linear/vertical-basic/vertical-gauge-basic.example.component.html": "Xdhv",
+        "./gauge/linear/vertical-basic/vertical-gauge-basic.example.component.less": "ziUA",
+        "./gauge/linear/vertical-basic/vertical-gauge-basic.example.component.ts": "fN0t",
         "./gauge/visual-test/donut/donut-gauge-tester.component.html": "3Isn",
         "./gauge/visual-test/donut/donut-gauge-tester.component.less": "WISq",
         "./gauge/visual-test/donut/donut-gauge-tester.component.ts": "wITR",
@@ -2379,26 +2379,6 @@
     },
 
     /***/
-    "QUxe":
-    /*!*****************************************************************************************************************************************************!*\
-      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/donut/donut-basic/donut-gauge-basic-example.component.html ***!
-      \*****************************************************************************************************************************************************/
-
-    /*! exports provided: default */
-
-    /***/
-    function QUxe(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony default export */
-
-
-      __webpack_exports__["default"] = "<div class=\"d-flex align-items-center justify-content-center flex-wrap\">\n    <nui-form-field class=\"d-block mb-5 demo__value-input\"\n                    caption=\"Value\" i18n-caption\n                    [showOptionalText]=\"false\">\n        <nui-textbox-number type=\"number\"\n                            [ngModel]=\"gaugeConfig.value\"\n                            (ngModelChange)=\"onValueChange($event)\"\n                            [minValue]=\"0\"\n                            [maxValue]=\"gaugeConfig.max\"\n                            customBoxWidth=\"75px\"></nui-textbox-number>\n    </nui-form-field>\n    <nui-chart class=\"demo__chart\" [chart]=\"chartAssist.chart\"></nui-chart>\n</div>\n";
-      /***/
-    },
-
-    /***/
     "QoLo":
     /*!********************************************************************************************************************************************************!*\
       !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/visual-test/horizontal/horizontal-gauge-tester.component.less ***!
@@ -2439,6 +2419,46 @@
     },
 
     /***/
+    "RODt":
+    /*!*****************************************************************************************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/donut/donut-with-threshold-toggling/donut-gauge-with-threshold-toggling.example.component.less ***!
+      \*****************************************************************************************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function RODt(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = ".demo__chart {\n    height: 250px;\n    width: 250px;\n}\n";
+      /***/
+    },
+
+    /***/
+    "ROqj":
+    /*!*******************************************************************************************************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/donut/donut-with-threshold-marker-toggling/donut-gauge-with-threshold-marker-toggling.example.component.less ***!
+      \*******************************************************************************************************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function ROqj(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = ".demo__chart {\n    height: 250px;\n    width: 250px;\n}\n";
+      /***/
+    },
+
+    /***/
     "RZLy":
     /*!************************************************************************************************************************************************************************************!*\
       !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/area/area-chart-bi-directional-stacked/area-chart-bi-directional-stacked-example.component.html ***!
@@ -2455,6 +2475,26 @@
 
 
       __webpack_exports__["default"] = "<div class=\"nui-chart-layout\">\n    <div class=\"axis-label-left\" i18n>Ingress/Egress</div>\n    <div class=\"chart\">\n        <!-- Set the 'nuiChartCollectionId' directive to the same value on each chart for mirroring interaction events such as hover. -->\n        <nui-chart class=\"w-100\" [chart]=\"chartAssistTop.chart\" nuiChartCollectionId=\"bi-di-stacked-area\"></nui-chart>\n    </div>\n    <div class=\"legend\">\n        <ng-container *ngTemplateOutlet=\"legend; context: { chartAssist: chartAssistTop}\"></ng-container>\n    </div>\n</div>\n<div class=\"nui-chart-layout\">\n    <div class=\"chart\">\n        <!-- Set the 'nuiChartCollectionId' directive to the same value on each chart for mirroring interaction events such as hover. -->\n        <nui-chart class=\"w-100\" [chart]=\"chartAssistBottom.chart\" nuiChartCollectionId=\"bi-di-stacked-area\"></nui-chart>\n    </div>\n    <div class=\"legend\">\n        <ng-container *ngTemplateOutlet=\"legend; context: { chartAssist: chartAssistBottom}\"></ng-container>\n    </div>\n</div>\n\n<ng-template #legend let-chartAssist=\"chartAssist\">\n    <nui-legend seriesUnitLabel=\"GB\" i18n-seriesUnitLabel\n                [active]=\"chartAssist.isLegendActive\"\n                [interactive]=\"true\"\n                (mouseleave)=\"chartAssist.resetVisibleSeries()\">\n        <nui-legend-series *ngFor=\"let legendSeries of chartAssist.legendSeriesSet; trackBy: chartAssist.seriesTrackByFn\"\n                           [descriptionPrimary]=\"legendSeries['name']\"\n                           (mouseenter)=\"chartAssist.emphasizeSeries(legendSeries.id)\"\n                           [seriesRenderState]=\"chartAssist.renderStatesIndex[legendSeries.id]?.state\"\n                           [isSelected]=\"!chartAssist.isSeriesHidden(legendSeries.id)\"\n                           (isSelectedChange)=\"onSelectedChange(legendSeries, $event, chartAssist)\">\n\n            <!-- Specify the 'tick' formatter to display positive values for both series in the legend. -->\n            <!-- Specify the 'y1' data accessor to let the chart assist know how to access the data for the legend. -->\n            <nui-rich-legend-tile [value]=\"chartAssist.getHighlightedValue(legendSeries, 'y', 'tick', 'y1')\"\n                                  [backgroundColor]=\"chartAssist.palette.standardColors.get(legendSeries.id)\"\n                                  [color]=\"chartAssist.palette.textColors.get(legendSeries.id)\">\n                <nui-chart-marker rightEdge\n                                  [marker]=\"chartAssist.markers.get(legendSeries.id)\"\n                                  [color]=\"chartAssist.palette.standardColors.get(legendSeries.id)\">\n                </nui-chart-marker>\n            </nui-rich-legend-tile>\n        </nui-legend-series>\n    </nui-legend>\n</ng-template>\n";
+      /***/
+    },
+
+    /***/
+    "RcBz":
+    /*!****************************************************************************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/linear/linear-with-thresholds/linear-gauge-with-thresholds.example.component.html ***!
+      \****************************************************************************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function RcBz(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "<div class=\"d-flex justify-content-center align-items-center flex-wrap\">\n    <nui-form-field class=\"d-block mb-5 demo__value-input\"\n                    caption=\"Value\" i18n-caption\n                    [showOptionalText]=\"false\">\n        <nui-textbox-number type=\"number\"\n                            [ngModel]=\"value\"\n                            (ngModelChange)=\"onValueChange($event)\"\n                            [minValue]=\"0\"\n                            [maxValue]=\"gaugeConfig.max\"\n                            customBoxWidth=\"75px\"></nui-textbox-number>\n    </nui-form-field>\n    <div class=\"d-flex justify-content-between align-items-center\">\n        <nui-chart class=\"demo__vertical-chart\" [chart]=\"verticalChartAssist.chart\"></nui-chart>\n        <nui-chart class=\"ml-5 demo__horizontal-chart\" [chart]=\"horizontalChartAssist.chart\"></nui-chart>\n    </div>\n</div>\n";
       /***/
     },
 
@@ -2479,26 +2519,6 @@
     },
 
     /***/
-    "S5Pj":
-    /*!**********************************************************************************************************************************************************!*\
-      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/linear/vertical-basic/vertical-gauge-basic-example.component.ts ***!
-      \**********************************************************************************************************************************************************/
-
-    /*! exports provided: default */
-
-    /***/
-    function S5Pj(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony default export */
-
-
-      __webpack_exports__["default"] = "import { Component, OnInit } from \"@angular/core\";\nimport {\n    ChartAssist,\n    GaugeMode,\n    GaugeUtil,\n    IAccessors,\n    IChartAssistSeries,\n    IGaugeConfig,\n} from \"@nova-ui/charts\";\n\n@Component({\n    selector: \"vertical-gauge-basic-example\",\n    templateUrl: \"./vertical-gauge-basic-example.component.html\",\n    styleUrls: [\"./vertical-gauge-basic-example.component.less\"],\n})\nexport class VerticalGaugeBasicExampleComponent implements OnInit {\n    public chartAssist: ChartAssist;\n    public gaugeConfig: IGaugeConfig;\n\n    private seriesSet: IChartAssistSeries<IAccessors>[];\n\n    public ngOnInit(): void {\n        // Setting up the gauge config\n        const initialValue = 64;\n        this.gaugeConfig = this.getGaugeConfig(initialValue);\n\n        // Creating the chart assist\n        this.chartAssist = GaugeUtil.createChartAssist(this.gaugeConfig, GaugeMode.Vertical);\n\n        // Assembling the series\n        this.seriesSet = GaugeUtil.assembleSeriesSet(this.gaugeConfig, GaugeMode.Vertical);\n\n        // Updating the chart\n        this.chartAssist.update(this.seriesSet);\n    }\n\n    public onValueChange(value: number): void {\n        // Updating the gauge config\n        this.gaugeConfig = this.getGaugeConfig(value);\n\n        // Updating the series set with the new config\n        this.seriesSet = GaugeUtil.update(this.seriesSet, this.gaugeConfig);\n\n        // Updating the chart with the updated series set\n        this.chartAssist.update(this.seriesSet);\n    }\n\n    private getGaugeConfig(value: number): IGaugeConfig {\n        return {\n            value,\n            max: 100,\n\n            /**\n             * Optionally customize the default quantity color (defaults to StandardGaugeColor.Ok)\n             */\n\n            // defaultQuantityColor: \"var(--nui-color-semantic-ok)\",\n        };\n    }\n}\n";
-      /***/
-    },
-
-    /***/
     "T5W4":
     /*!************************************************************************************************************************************************************!*\
       !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/bucketed-bar/bar-chart-stacked/bar-chart-stacked.example.component.html ***!
@@ -2519,26 +2539,6 @@
     },
 
     /***/
-    "TW+J":
-    /*!*******************************************************************************************************************************************************************************************************!*\
-      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/donut/donut-with-threshold-marker-toggling/donut-gauge-with-threshold-marker-toggling-example.component.html ***!
-      \*******************************************************************************************************************************************************************************************************/
-
-    /*! exports provided: default */
-
-    /***/
-    function TWJ(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony default export */
-
-
-      __webpack_exports__["default"] = "<div class=\"d-flex align-items-center justify-content-center flex-wrap\">\n    <div class=\"d-flex flex-column align-items-left mr-5\">\n        <nui-form-field class=\"d-block mb-5\"\n                        caption=\"Value\" i18n-caption\n                        [showOptionalText]=\"false\">\n            <nui-textbox-number type=\"number\"\n                                [ngModel]=\"value\"\n                                (ngModelChange)=\"onValueChange($event)\"\n                                [minValue]=\"0\"\n                                [maxValue]=\"gaugeConfig.max\"\n                                customBoxWidth=\"75px\"></nui-textbox-number>\n        </nui-form-field>\n        <nui-checkbox [ngModel]=\"markersEnabled\"\n                      (ngModelChange)=\"onMarkersEnabledChange($event)\"\n                      i18n>\n            Markers Enabled\n        </nui-checkbox>\n    </div>\n    <nui-chart class=\"demo__chart\" [chart]=\"chartAssist.chart\"></nui-chart>\n</div>\n";
-      /***/
-    },
-
-    /***/
     "TdCo":
     /*!**********************************************************************************************************************!*\
       !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/area/chart-docs-area.component.ts ***!
@@ -2555,6 +2555,26 @@
 
 
       __webpack_exports__["default"] = "import { Component } from \"@angular/core\";\n\n@Component({\n    selector: \"nui-chart-docs-area\",\n    templateUrl: \"./chart-docs-area.component.html\",\n})\nexport class ChartDocsAreaComponent {\n}\n";
+      /***/
+    },
+
+    /***/
+    "Tgb2":
+    /*!*****************************************************************************************************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/donut/donut-with-threshold-marker-toggling/donut-gauge-with-threshold-marker-toggling.example.component.ts ***!
+      \*****************************************************************************************************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function Tgb2(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "import { Component, OnInit } from \"@angular/core\";\nimport {\n    ChartAssist,\n    DonutGaugeLabelsPlugin,\n    GaugeMode,\n    GaugeUtil,\n    IAccessors,\n    IChartAssistSeries,\n    IGaugeConfig,\n    IGaugeThresholdsConfig,\n} from \"@nova-ui/charts\";\n\n@Component({\n    selector: \"donut-gauge-with-threshold-marker-toggling-example\",\n    templateUrl: \"./donut-gauge-with-threshold-marker-toggling.example.component.html\",\n    styleUrls: [\"./donut-gauge-with-threshold-marker-toggling.example.component.less\"],\n})\nexport class DonutGaugeWithThresholdMarkerTogglingExampleComponent implements OnInit {\n    public chartAssist: ChartAssist;\n    public value = 128;\n    public gaugeConfig: IGaugeConfig;\n    public markersEnabled = true;\n    public labelsPlugin = new DonutGaugeLabelsPlugin();\n\n    private seriesSet: IChartAssistSeries<IAccessors>[];\n\n    // Generating a standard set of thresholds with warning and critical levels\n    private thresholds: IGaugeThresholdsConfig = GaugeUtil.createStandardThresholdsConfig(100, 158);\n\n    public ngOnInit(): void {\n        // Setting up the gauge config\n        this.gaugeConfig = this.getGaugeConfig();\n\n        // Setting up the chart assist with a local instance of the labels plugin for direct control of the label display\n        this.chartAssist = GaugeUtil.createChartAssist(this.gaugeConfig, GaugeMode.Donut, this.labelsPlugin);\n\n        // Assembling the series\n        this.seriesSet = GaugeUtil.assembleSeriesSet(this.gaugeConfig, GaugeMode.Donut);\n\n        // Updating the chart\n        this.chartAssist.update(this.seriesSet);\n    }\n\n    public onValueChange(value: number): void {\n        this.value = value;\n        this.updateGauge();\n    }\n\n    public onMarkersEnabledChange(enabled: boolean): void {\n        this.markersEnabled = enabled;\n\n        // Enabling or disabling the threshold markers\n        this.thresholds.disableMarkers = !this.markersEnabled;\n\n        // Enabling or disabling the threshold labels\n        this.labelsPlugin.config.disableThresholdLabels = !this.markersEnabled;\n\n        this.updateGauge();\n    }\n\n    private updateGauge() {\n        this.gaugeConfig = this.getGaugeConfig();\n        this.seriesSet = GaugeUtil.update(this.seriesSet, this.gaugeConfig);\n        this.chartAssist.update(this.seriesSet);\n    }\n\n    private getGaugeConfig(): IGaugeConfig {\n        return {\n            value: this.value,\n            max: 200,\n            thresholds: this.thresholds,\n        };\n    }\n}\n";
       /***/
     },
 
@@ -2939,22 +2959,22 @@
     },
 
     /***/
-    "Xr13":
-    /*!**************************************************************************************************************************************************************************************!*\
-      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/linear/linear-thickness-adjustment/linear-gauge-thickness-adjustment-example.component.less ***!
-      \**************************************************************************************************************************************************************************************/
+    "Xdhv":
+    /*!************************************************************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/linear/vertical-basic/vertical-gauge-basic.example.component.html ***!
+      \************************************************************************************************************************************************************/
 
     /*! exports provided: default */
 
     /***/
-    function Xr13(module, __webpack_exports__, __webpack_require__) {
+    function Xdhv(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = ".demo__inputs {\n    margin-right: 50px;\n}\n\n.demo__charts {\n    width: 255px;\n}\n\n// Setting the height on the chart element determines the vertical length of the gauge\n.demo__vertical-chart {\n    height: 200px;\n}\n\n// Setting the width on the chart element determines the horizontal length of the gauge\n.demo__horizontal-chart {\n    width: 200px;\n}\n";
+      __webpack_exports__["default"] = "<div class=\"d-flex align-items-center justify-content-center flex-wrap\">\n    <nui-form-field class=\"d-block mb-5 demo__value-input\"\n                    caption=\"Value\" i18n-caption\n                    [showOptionalText]=\"false\">\n        <nui-textbox-number type=\"number\"\n                            [ngModel]=\"gaugeConfig.value\"\n                            (ngModelChange)=\"onValueChange($event)\"\n                            [minValue]=\"0\"\n                            [maxValue]=\"gaugeConfig.max\"\n                            customBoxWidth=\"75px\"></nui-textbox-number>\n    </nui-form-field>\n    <nui-chart class=\"demo__chart\" [chart]=\"chartAssist.chart\"></nui-chart>\n</div>\n";
       /***/
     },
 
@@ -3039,22 +3059,22 @@
     },
 
     /***/
-    "Yu0q":
-    /*!***************************************************************************************************************************************************************************************************!*\
-      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/donut/donut-with-custom-threshold-labels/donut-gauge-with-custom-threshold-labels-example.component.less ***!
-      \***************************************************************************************************************************************************************************************************/
+    "Ylwx":
+    /*!*******************************************************************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/donut/donut-with-content/donut-gauge-with-content.example.component.less ***!
+      \*******************************************************************************************************************************************************************/
 
     /*! exports provided: default */
 
     /***/
-    function Yu0q(module, __webpack_exports__, __webpack_require__) {
+    function Ylwx(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = ".demo__chart {\n    height: 250px;\n    width: 250px;\n}\n";
+      __webpack_exports__["default"] = "@import \"@nova-ui/bits/sdk/less/nui-framework-variables\";\n\n.demo__chart {\n    height: 250px;\n    width: 250px;\n}\n\n.demo__content-label {\n    line-height: @nui-line-height-small;\n    font-size: @nui-font-size-small;\n    font-weight: @nui-font-weight-regular;\n    text-transform: uppercase;\n    color: var(--nui-color-text-secondary);\n}\n";
       /***/
     },
 
@@ -3094,7 +3114,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "/* eslint-disable max-len */\nimport { NgModule } from \"@angular/core\";\nimport { FormsModule } from \"@angular/forms\";\nimport { RouterModule, Routes } from \"@angular/router\";\nimport {\n    DEMO_PATH_TOKEN,\n    NuiCheckboxModule,\n    NuiCommonModule,\n    NuiDocsModule,\n    NuiFormFieldModule,\n    NuiIconModule,\n    NuiMessageModule,\n    NuiTextboxModule,\n    SrlcStage,\n} from \"@nova-ui/bits\";\nimport { NuiChartsModule } from \"@nova-ui/charts\";\n\nimport { DemoCommonModule } from \"../../common/demo-common.module\";\n\nimport { ChartDocsGaugeComponent } from \"./chart-docs-gauge.component\";\nimport { GaugeVisualTestComponent } from \"./visual-test/gauge-visual-test.component\";\nimport { HorizontalGaugeTesterComponent } from \"./visual-test/horizontal/horizontal-gauge-tester.component\";\nimport { DonutGaugeTesterComponent } from \"./visual-test/donut/donut-gauge-tester.component\";\nimport { VerticalGaugeTesterComponent } from \"./visual-test/vertical/vertical-gauge-tester.component\";\nimport { DonutGaugeBasicExampleComponent } from \"./donut/donut-basic/donut-gauge-basic-example.component\";\nimport { DonutGaugeWithContentExampleComponent } from \"./donut/donut-with-content/donut-gauge-with-content-example.component\";\nimport { DonutGaugeWithThresholdsExampleComponent } from \"./donut/donut-with-thresholds/donut-gauge-with-thresholds-example.component\";\nimport { DonutGaugeWithThresholdTogglingExampleComponent } from \"./donut/donut-with-threshold-toggling/donut-gauge-with-threshold-toggling-example.component\";\nimport { DonutGaugeWithCustomThresholdLabelsExampleComponent } from \"./donut/donut-with-custom-threshold-labels/donut-gauge-with-custom-threshold-labels-example.component\";\nimport { HorizontalGaugeBasicExampleComponent } from \"./linear/horizontal-basic/horizontal-gauge-basic-example.component\";\nimport { VerticalGaugeBasicExampleComponent } from \"./linear/vertical-basic/vertical-gauge-basic-example.component\";\nimport { DonutGaugeWithoutThresholdMarkersExampleComponent } from \"./donut/donut-without-threshold-markers/donut-gauge-without-threshold-markers-example.component\";\nimport { DonutGaugeWithThresholdMarkerTogglingExampleComponent } from \"./donut/donut-with-threshold-marker-toggling/donut-gauge-with-threshold-marker-toggling-example.component\";\nimport { LinearGaugeWithThresholdsExampleComponent } from \"./linear/linear-with-thresholds/linear-gauge-with-thresholds-example.component\";\nimport { LinearGaugeThicknessAdjustmentExampleComponent } from \"./linear/linear-thickness-adjustment/linear-gauge-thickness-adjustment-example.component\";\n\nconst exampleRoutes: Routes = [\n    {\n        path: \"\",\n        component: ChartDocsGaugeComponent,\n        data: {\n            showThemeSwitcher: true,\n            \"srlc\": {\n                \"stage\": SrlcStage.ga,\n            },\n        },\n    },\n    {\n        path: \"visual-test\",\n        component: GaugeVisualTestComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"donut-basic\",\n        component: DonutGaugeBasicExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"donut-with-content\",\n        component: DonutGaugeWithContentExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"donut-with-custom-labels\",\n        component: DonutGaugeWithCustomThresholdLabelsExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"donut-without-markers\",\n        component: DonutGaugeWithoutThresholdMarkersExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"donut-with-marker-toggling\",\n        component: DonutGaugeWithThresholdMarkerTogglingExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"donut-with-thresholds\",\n        component: DonutGaugeWithThresholdsExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"donut-with-threshold-toggling\",\n        component: DonutGaugeWithThresholdTogglingExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"horizontal-basic\",\n        component: HorizontalGaugeBasicExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"vertical-basic\",\n        component: VerticalGaugeBasicExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"linear-with-thresholds\",\n        component: LinearGaugeWithThresholdsExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"linear-thickness\",\n        component: LinearGaugeWithThresholdsExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n];\n\n@NgModule({\n    declarations: [\n        ChartDocsGaugeComponent,\n        GaugeVisualTestComponent,\n        HorizontalGaugeBasicExampleComponent,\n        LinearGaugeWithThresholdsExampleComponent,\n        HorizontalGaugeTesterComponent,\n        DonutGaugeTesterComponent,\n        DonutGaugeBasicExampleComponent,\n        DonutGaugeWithContentExampleComponent,\n        DonutGaugeWithCustomThresholdLabelsExampleComponent,\n        DonutGaugeWithThresholdMarkerTogglingExampleComponent,\n        DonutGaugeWithoutThresholdMarkersExampleComponent,\n        DonutGaugeWithThresholdsExampleComponent,\n        DonutGaugeWithThresholdTogglingExampleComponent,\n        VerticalGaugeBasicExampleComponent,\n        LinearGaugeThicknessAdjustmentExampleComponent,\n        VerticalGaugeTesterComponent,\n    ],\n    imports: [\n        DemoCommonModule,\n        FormsModule,\n        NuiChartsModule,\n        NuiCheckboxModule,\n        NuiCommonModule,\n        NuiFormFieldModule,\n        NuiIconModule,\n        NuiDocsModule,\n        NuiMessageModule,\n        NuiTextboxModule,\n        RouterModule.forChild(exampleRoutes),\n    ],\n    providers: [\n        { provide: DEMO_PATH_TOKEN, useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/) },\n    ],\n})\nexport class ChartDocsGaugeModule {\n}\n";
+      __webpack_exports__["default"] = "/* eslint-disable max-len */\nimport { NgModule } from \"@angular/core\";\nimport { FormsModule } from \"@angular/forms\";\nimport { RouterModule, Routes } from \"@angular/router\";\nimport {\n    DEMO_PATH_TOKEN,\n    NuiCheckboxModule,\n    NuiCommonModule,\n    NuiDocsModule,\n    NuiFormFieldModule,\n    NuiIconModule,\n    NuiMessageModule,\n    NuiTextboxModule,\n    SrlcStage,\n} from \"@nova-ui/bits\";\nimport { NuiChartsModule } from \"@nova-ui/charts\";\n\nimport { DemoCommonModule } from \"../../common/demo-common.module\";\n\nimport { ChartDocsGaugeComponent } from \"./chart-docs-gauge.component\";\nimport { GaugeVisualTestComponent } from \"./visual-test/gauge-visual-test.component\";\nimport { HorizontalGaugeTesterComponent } from \"./visual-test/horizontal/horizontal-gauge-tester.component\";\nimport { DonutGaugeTesterComponent } from \"./visual-test/donut/donut-gauge-tester.component\";\nimport { VerticalGaugeTesterComponent } from \"./visual-test/vertical/vertical-gauge-tester.component\";\nimport { DonutGaugeBasicExampleComponent } from \"./donut/donut-basic/donut-gauge-basic.example.component\";\nimport { DonutGaugeWithContentExampleComponent } from \"./donut/donut-with-content/donut-gauge-with-content.example.component\";\nimport { DonutGaugeWithThresholdsExampleComponent } from \"./donut/donut-with-thresholds/donut-gauge-with-thresholds.example.component\";\nimport { DonutGaugeWithThresholdTogglingExampleComponent } from \"./donut/donut-with-threshold-toggling/donut-gauge-with-threshold-toggling.example.component\";\nimport { DonutGaugeWithCustomThresholdLabelsExampleComponent } from \"./donut/donut-with-custom-threshold-labels/donut-gauge-with-custom-threshold-labels.example.component\";\nimport { HorizontalGaugeBasicExampleComponent } from \"./linear/horizontal-basic/horizontal-gauge-basic.example.component\";\nimport { VerticalGaugeBasicExampleComponent } from \"./linear/vertical-basic/vertical-gauge-basic.example.component\";\nimport { DonutGaugeWithoutThresholdMarkersExampleComponent } from \"./donut/donut-without-threshold-markers/donut-gauge-without-threshold-markers.example.component\";\nimport { DonutGaugeWithThresholdMarkerTogglingExampleComponent } from \"./donut/donut-with-threshold-marker-toggling/donut-gauge-with-threshold-marker-toggling.example.component\";\nimport { LinearGaugeWithThresholdsExampleComponent } from \"./linear/linear-with-thresholds/linear-gauge-with-thresholds.example.component\";\nimport { LinearGaugeThicknessAdjustmentExampleComponent } from \"./linear/linear-thickness-adjustment/linear-gauge-thickness-adjustment.example.component\";\n\nconst exampleRoutes: Routes = [\n    {\n        path: \"\",\n        component: ChartDocsGaugeComponent,\n        data: {\n            showThemeSwitcher: true,\n            \"srlc\": {\n                \"stage\": SrlcStage.ga,\n            },\n        },\n    },\n    {\n        path: \"visual-test\",\n        component: GaugeVisualTestComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"donut-basic\",\n        component: DonutGaugeBasicExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"donut-with-content\",\n        component: DonutGaugeWithContentExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"donut-with-custom-labels\",\n        component: DonutGaugeWithCustomThresholdLabelsExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"donut-without-markers\",\n        component: DonutGaugeWithoutThresholdMarkersExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"donut-with-marker-toggling\",\n        component: DonutGaugeWithThresholdMarkerTogglingExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"donut-with-thresholds\",\n        component: DonutGaugeWithThresholdsExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"donut-with-threshold-toggling\",\n        component: DonutGaugeWithThresholdTogglingExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"horizontal-basic\",\n        component: HorizontalGaugeBasicExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"vertical-basic\",\n        component: VerticalGaugeBasicExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"linear-with-thresholds\",\n        component: LinearGaugeWithThresholdsExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n    {\n        path: \"linear-thickness\",\n        component: LinearGaugeWithThresholdsExampleComponent,\n        data: {\n            \"srlc\": {\n                \"hideIndicator\": true,\n            },\n        },\n    },\n];\n\n@NgModule({\n    declarations: [\n        ChartDocsGaugeComponent,\n        GaugeVisualTestComponent,\n        HorizontalGaugeBasicExampleComponent,\n        LinearGaugeWithThresholdsExampleComponent,\n        HorizontalGaugeTesterComponent,\n        DonutGaugeTesterComponent,\n        DonutGaugeBasicExampleComponent,\n        DonutGaugeWithContentExampleComponent,\n        DonutGaugeWithCustomThresholdLabelsExampleComponent,\n        DonutGaugeWithThresholdMarkerTogglingExampleComponent,\n        DonutGaugeWithoutThresholdMarkersExampleComponent,\n        DonutGaugeWithThresholdsExampleComponent,\n        DonutGaugeWithThresholdTogglingExampleComponent,\n        VerticalGaugeBasicExampleComponent,\n        LinearGaugeThicknessAdjustmentExampleComponent,\n        VerticalGaugeTesterComponent,\n    ],\n    imports: [\n        DemoCommonModule,\n        FormsModule,\n        NuiChartsModule,\n        NuiCheckboxModule,\n        NuiCommonModule,\n        NuiFormFieldModule,\n        NuiIconModule,\n        NuiDocsModule,\n        NuiMessageModule,\n        NuiTextboxModule,\n        RouterModule.forChild(exampleRoutes),\n    ],\n    providers: [\n        { provide: DEMO_PATH_TOKEN, useFactory: () => (<any>require).context(`!!raw-loader!./`, true, /.*\\.(ts|html|less)$/) },\n    ],\n})\nexport class ChartDocsGaugeModule {\n}\n";
       /***/
     },
 
@@ -3114,27 +3134,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<h1>Gauges</h1>\n<p>\n    Gauges can be an effective way to display a single metric value in visual form. And, Nova Charts provides the ability to create two types of gauges\n    (donut and linear) with the assistance of a utility class called <a href=\"../classes/GaugeUtil.html\" target=\"_blank\"><code>GaugeUtil</code></a>.\n    <strong>Three\n        key methods</strong> provided by the <code>GaugeUtil</code> will get you most of the way towards a functioning gauge:\n</p>\n<ul>\n    <li>\n        <code><a href=\"../classes/GaugeUtil.html#createChartAssist\" target=\"_blank\">createChartAssist</a></code>: can be used to generate a\n        <code><a href=\"../classes/ChartAssist.html\" target=\"_blank\">ChartAssist</a></code> that's\n        pre-configured based on the specified <code><a href=\"../interfaces/IGaugeConfig.html\" target=\"_blank\">IGaugeConfig</a></code> and\n        <code><a href=\"../miscellaneous/enumerations.html#GaugeMode\" target=\"_blank\">GaugeMode</a></code> arguments. The ChartAssist\n        handles any necessary pre-processing of the data series to a format that can be used for displaying each of the supported gauge modes.\n    </li>\n    <li>\n        <code><a href=\"../classes/GaugeUtil.html#assembleSeriesSet\" target=\"_blank\">assembleSeriesSet</a></code>: assembles a gauge series set with all of the\n        scales, renderers, accessors, etc. needed for creating a gauge visualization based on the specified\n        <code><a href=\"../interfaces/IGaugeConfig.html\" target=\"_blank\">IGaugeConfig</a></code> and\n        <code><a href=\"../miscellaneous/enumerations.html#GaugeMode\" target=\"_blank\">GaugeMode</a></code> arguments.\n    </li>\n    <li>\n        <code><a href=\"../classes/GaugeUtil.html#update\" target=\"_blank\">update</a></code>: updates a gauge series set using\n        the specified <code><a href=\"../interfaces/IChartAssistSeries.html\" target=\"_blank\">IChartAssistSeries</a></code> array and\n        <code><a href=\"../interfaces/IGaugeConfig.html\" target=\"_blank\">IGaugeConfig</a></code> arguments.\n    </li>\n</ul>\n<h2>Basic Steps</h2>\n<ol>\n    <li>\n        Create a <code><a href=\"../classes/ChartAssist.html\" target=\"_blank\">ChartAssist</a></code> using <code>GaugeUtil</code>'s\n        <code><a href=\"../classes/GaugeUtil.html#createChartAssist\" target=\"_blank\">createChartAssist</a></code> function.\n    </li>\n    <li>\n        Update the <code>ChartAssist</code>'s associated chart instance with a series set generated by the <code>GaugeUtil</code>'s\n        <code><a href=\"../classes/GaugeUtil.html#assembleSeriesSet\" target=\"_blank\">assembleSeriesSet</a></code> function.\n    </li>\n    <li>\n        Optionally, at any time after gauge instantiation, update the\n        gauge with a new value, max value, or other configuration changes using the <code>GaugeUtil</code>'s\n        <code><a href=\"../classes/GaugeUtil.html#update\" target=\"_blank\">update</a></code> function.\n    </li>\n</ol>\n\n<h2>Donut Gauge</h2>\n<p>\n    A <strong>donut gauge</strong> is a specialized <a href=\"../additional-documentation/chart-types/pie-and-donut.html\" target=\"_parent\">donut chart</a> with\n    data formatted in a way that results in a gauge-like visualization. It's well-suited for use cases in which there's ample room to display a relatively large\n    visualization. For use cases with a more compact display area, consider the <strong>linear gauge</strong> whose documentation can be found further down\n    on this page.\n</p>\n\n<h3>Basic Usage</h3>\n<p>\n    Take a look at the source expander of the example below for details on how to instantiate a basic donut gauge.\n</p>\n<nui-example-wrapper filenamePrefix=\"donut-gauge-basic-example\" exampleTitle=\"Basic Donut\">\n    <donut-gauge-basic-example></donut-gauge-basic-example>\n</nui-example-wrapper>\n\n<h3>Thresholds</h3>\n<p>\n    To add thresholds to a gauge, specify a value of type\n    <code><a href=\"../interfaces/IGaugeThresholdsConfig.html\" target=\"_blank\">IGaugeThresholdsConfig</a></code>\n    on the <code><a href=\"../interfaces/IGaugeConfig.html#thresholds\" target=\"_blank\">thresholds</a></code> property of the\n    <code><a href=\"../interfaces/IGaugeConfig.html\" target=\"_blank\">IGaugeConfig</a></code>. For an easy way to assemble an <code>IGaugeThresholdsConfig</code>\n    object, <code>GaugeUtil</code> provides a\n    <code><a href=\"../classes/GaugeUtil.html#createStandardThresholdsConfig\" target=\"_blank\">createStandardThresholdsConfig</a></code> function.\n    The <code><a href=\"../interfaces/IGaugeThresholdsConfig.html#definitions\" target=\"_blank\">definitions</a></code> property of the function's output includes\n    standard threshold definitions for \"warning\" and \"critical\" levels. You can either use the\n    <code>createStandardThresholdsConfig</code> convenience function or construct your own threshold configuration with as many or few threshold definitions as\n    you need.\n</p>\n<h4>Definitions</h4>\n<p>\n    The <code><a href=\"../interfaces/IGaugeThresholdsConfig.html#definitions\" target=\"_blank\">definitions</a></code> property of\n    <code>IGaugeThresholdsConfig</code> is organized with an <em>id-to-threshold</em> mapping for easy access. Each\n    threshold definition is of type <code><a href=\"../interfaces/IGaugeThresholdDef.html\" target=\"_blank\">IGaugeThresholdDef</a></code> and has an\n    <code>id</code> property with the same value used in the mapping. The <code>id</code>'s for common thresholds are standardized\n    in the <code><a href=\"../miscellaneous/enumerations.html#StandardGaugeThresholdId\" target=\"_blank\">StandardGaugeThresholdId</a></code> enum which has\n    <code>Warning</code> and <code>Critical</code> members. Additional properties of the threshold definition include <code>value</code>,\n    <code>color</code>, and <code>enabled</code>.\n</p>\n<h4>Colors</h4>\n<p>\n    As mentioned above, the <code>IGaugeThresholdsConfig</code> return value of the\n    <code><a href=\"../classes/GaugeUtil.html#createStandardThresholdsConfig\" target=\"_blank\">createStandardThresholdsConfig</a></code> function has a\n    <code><a href=\"../interfaces/IGaugeThresholdsConfig.html#definitions\" target=\"_blank\">definitions</a></code> property with a standard set of\n    threshold definitions. Each of these definitions has a\n    <code><a href=\"../interfaces/IGaugeThresholdDef.html#color\" target=\"_blank\">color</a></code> property that's used as the threshold's display color when it's\n    triggered. By default, the function sets the warning threshold to yellow and the critical to red. You can modify the display colors for these and any custom\n    thresholds using this property.\n</p>\n<h4>Labels</h4>\n<p>\n    When threshold definitions are provided on the <code>thresholds</code> property of the <code>IGaugeConfig</code>, the GaugeUtil's\n    <code><a href=\"../classes/GaugeUtil.html#createChartAssist\" target=\"_blank\">createChartAssist</a></code> function\n    automatically adds a <code><a href=\"../classes/DonutGaugeLabelsPlugin.html\" target=\"_blank\">DonutGaugeLabelsPlugin</a></code> instance to the chart which\n    displays labels for the threshold markers on mouse hover. If you'd like to provide a custom formatter for the labels, take a look at the\n    <strong>label customization</strong> example on this page for details on how to do that.\n</p>\n<nui-message type=\"info\" [allowDismiss]=\"false\">\n    <strong>Note:</strong> If the display strings for your labels are too long to fit within the default grid margins, you can specify a custom clearance value\n    in pixels on the <code><a href=\"../interfaces/IGaugeLabelsConfig.html#clearance\" target=\"_blank\">clearance</a></code> property of the\n    <code><a href=\"../interfaces/IGaugeConfig.html\" target=\"_blank\">IGaugeConfig</a></code>'s\n    <code><a href=\"../interfaces/IGaugeConfig.html#labels\" target=\"_blank\">labels</a></code> property. This will ensure that the grid margins are at minimum\n    the clearance value specified. For the donut gauge, the clearance is applied to all margins; for the linear gauge, the clearance is applied only to the side\n    on which the labels appear.\n</nui-message>\n<h4>Reversed Thresholds</h4>\n<p>\n    The default behavior of a Nova gauge is to treat quantity values that are greater than or equal to the threshold values as being triggered. If you want to\n    reverse that and have the gauge treat quantity values that are less than or equal to the threshold values as triggered, set the\n    <code><a href=\"../interfaces/IGaugeThresholdsConfig.html#reversed\" target=\"_blank\">reversed</a></code> property on the\n    <code><a href=\"../interfaces/IGaugeThresholdsConfig.html\" target=\"_blank\">IGaugeThresholdsConfig</a></code>\n    object to <code>true</code>.\n</p>\n<nui-example-wrapper filenamePrefix=\"donut-gauge-with-thresholds-example\" exampleTitle=\"Donut with Thresholds\">\n    <donut-gauge-with-thresholds-example></donut-gauge-with-thresholds-example>\n</nui-example-wrapper>\n\n<h4>Turning Off the Threshold Markers</h4>\n<h5>Omitting the Markers</h5>\n<p>\n    If you want to disable the threshold markers, it's likely you'll want to omit them entirely rather than instantiating them in a disabled state ready to\n    be toggled on later. The following example achieves this by setting the\n    <code><a href=\"../interfaces/IGaugeThresholdsConfig.html#disableMarkers\" target=\"_blank\">disableMarkers</a></code> property on the\n    <code>IGaugeThresholdsConfig</code> object to <code>true</code> before invoking the GaugeUtil's\n    <code><a href=\"../classes/GaugeUtil.html#createChartAssist\" target=\"_blank\">createChartAssist</a></code> function. For toggling the markers on and off\n    dynamically, take a look at the <strong>Dynamic Marker Toggling</strong> example.\n</p>\n<nui-example-wrapper filenamePrefix=\"donut-gauge-without-threshold-markers-example\" exampleTitle=\"Statically Omitted Threshold Markers\">\n    <donut-gauge-without-threshold-markers-example></donut-gauge-without-threshold-markers-example>\n</nui-example-wrapper>\n\n<h5>Dynamic Marker Toggling</h5>\n<p>\n    If you want to dynamically toggle the threshold marker dots and labels, take a look at the code in the source expander of the following example in which\n    a local instance of the <code><a href=\"../classes/DonutGaugeLabelsPlugin.html\" target=\"_blank\">DonutGaugeLabelsPlugin</a></code> is passed to\n    the optional labelsPlugin parameter of the <code><a href=\"../classes/GaugeUtil.html#createChartAssist\" target=\"_blank\">createChartAssist</a></code> function.\n    This allows for direct configuration and control of the <code>DonutGaugeLabelsPlugin</code> instance.\n</p>\n<p>\n    Similar to the example above, the markers are toggled by updating the\n    <code><a href=\"../interfaces/IGaugeThresholdsConfig.html#disableMarkers\" target=\"_blank\">disableMarkers</a></code> property on the\n    <code>IGaugeThresholdsConfig</code> object. And, dynamic toggling of the threshold labels is achieved by setting the\n    <code><a href=\"../interfaces/IGaugeLabelsPluginConfig.html#disableThresholdLabels\" target=\"_blank\">disableThresholdLabels</a></code> property on the label\n    plugin's <code>config</code> object.\n</p>\n<nui-example-wrapper filenamePrefix=\"donut-gauge-with-threshold-marker-toggling-example\" exampleTitle=\"Dynamic Threshold Marker Toggling\">\n    <donut-gauge-with-threshold-marker-toggling-example></donut-gauge-with-threshold-marker-toggling-example>\n</nui-example-wrapper>\n\n<h4>Enabling/Disabling Thresholds</h4>\n<p>\n    To toggle individual thresholds on or off, use the ID of a threshold to access the corresponding threshold definition on the\n    <code><a href=\"../interfaces/IGaugeThresholdsConfig.html#definitions\" target=\"_blank\">definitions</a></code>\n    property of the <code><a href=\"../interfaces/IGaugeThresholdsConfig.html\" target=\"_blank\">IGaugeThresholdsConfig</a></code> object, and set the\n    <code><a href=\"../interfaces/IGaugeThresholdDef.html#enabled\" target=\"_blank\">enabled</a></code> property on the threshold definition accordingly.\n</p>\n<nui-example-wrapper filenamePrefix=\"donut-gauge-with-threshold-toggling-example\" exampleTitle=\"Donut with Threshold Toggling\">\n    <donut-gauge-with-threshold-toggling-example></donut-gauge-with-threshold-toggling-example>\n</nui-example-wrapper>\n\n<h4>Customizing the Threshold Label Formatter</h4>\n<p>\n    To customize the format of the labels shown when the mouse is hovered over the gauge, set the\n    <code><a href=\"../interfaces/IGaugeLabelsConfig.html#formatter\" target=\"_blank\">formatter</a></code> property on the\n    <code><a href=\"../interfaces/IGaugeConfig.html#labels\" target=\"_blank\">labels</a></code> property of the\n    <code><a href=\"../interfaces/IGaugeConfig.html\" target=\"_blank\">IGaugeConfig</a></code>\n    with a function of type\n    <code><a href=\"../miscellaneous/typealiases.html#Formatter\" target=\"_blank\">Formatter&lt;string&gt;</a></code>. The function should take a string as the raw\n    data argument and return a string with your customized formatting. The following example transforms the raw threshold values to a percentage format.\n</p>\n<nui-example-wrapper filenamePrefix=\"donut-gauge-with-custom-threshold-labels-example\" exampleTitle=\"Donut with Custom Threshold Labels\">\n    <donut-gauge-with-custom-threshold-labels-example></donut-gauge-with-custom-threshold-labels-example>\n</nui-example-wrapper>\n\n<h3>Adding Inner Content</h3>\n<p>\n    The steps for adding inner content to the donut gauge are the same as that of the donut chart. More detailed instructions for that can be found\n    <a href=\"../additional-documentation/chart-types/pie-and-donut.html\" target=\"_parent\">here</a>. But, for a quick look at how to do it, see the example\n    below.\n</p>\n<nui-example-wrapper filenamePrefix=\"donut-gauge-with-content-example\" exampleTitle=\"Donut with Inner Content\">\n    <donut-gauge-with-content-example></donut-gauge-with-content-example>\n</nui-example-wrapper>\n\n<h2>Linear Gauges</h2>\n<p>\n    If you need to display a gauge visualization in a more compact display area, Nova supports both horizontal and vertical linear gauges which may be a better\n    fit for narrow spaces than the donut gauge.\n</p>\n<h3>Basic Horizontal</h3>\n<p>\n    Take a look at the source expander of the example below for details on how to instantiate a basic horizontal gauge.\n</p>\n<nui-example-wrapper filenamePrefix=\"horizontal-gauge-basic-example\" exampleTitle=\"Basic Horizontal Gauge\">\n    <horizontal-gauge-basic-example></horizontal-gauge-basic-example>\n</nui-example-wrapper>\n\n<h3>Basic Vertical</h3>\n<p>\n    Take a look at the source expander of the example below for details on how to instantiate a basic vertical gauge.\n</p>\n<nui-example-wrapper filenamePrefix=\"vertical-gauge-basic-example\" exampleTitle=\"Basic Vertical Gauge\">\n    <vertical-gauge-basic-example></vertical-gauge-basic-example>\n</nui-example-wrapper>\n\n<h3>Linear with Thresholds</h3>\n<p>\n    The steps for enabling/reversing thresholds and omitting/toggling threshold markers and labels is basically the same for the linear gauge as it is for the\n    donut gauge. The only difference lies in the dynamic toggling of the labels (if needed) in which the linear gauge uses the\n    <code><a href=\"../classes/LinearGaugeLabelsPlugin.html\" target=\"_blank\">LinearGaugeLabelsPlugin</a></code> instead of the\n    <code>DonutGaugeLabelsPlugin</code>. If label toggling isn't needed, you can ignore this fact and simply use the GaugeUtil's\n    <code><a href=\"../classes/GaugeUtil.html#createChartAssist\" target=\"_blank\">createChartAssist</a></code>\n    function which will add the labels plugin to the gauge automatically unless the\n    <code><a href=\"../interfaces/IGaugeThresholdsConfig.html#disableMarkers\" target=\"_blank\">disableMarkers</a></code> property on the\n    <code><a href=\"../interfaces/IGaugeThresholdsConfig.html\" target=\"_blank\">IGaugeThresholdsConfig</a></code> is set to <code>true</code>. For instructions\n    on how to dynamically toggle the threshold markers and labels, take a look at the <strong>Dynamic Marker Toggling</strong> example in the\n    <strong>Donut Gauge</strong> section above.\n</p>\n<nui-example-wrapper filenamePrefix=\"linear-gauge-with-thresholds-example\" exampleTitle=\"Linear Gauge with Thresholds\">\n    <linear-gauge-with-thresholds-example></linear-gauge-with-thresholds-example>\n</nui-example-wrapper>\n\n<h3>Configuring Thickness</h3>\n<p>\n    The linear gauge supports any thickness, but Nova provides two standard ones (<code>Small</code> and <code>Large</code>) via the\n    <code><a href=\"../miscellaneous/enumerations.html#StandardLinearGaugeThickness\" target=\"_blank\">StandardLinearGaugeThickness</a></code> enum.\n    The enum members or any number value can be assigned to the\n    <code><a href=\"../interfaces/IGaugeConfig.html#linearThickness\" target=\"_blank\">linearThickness</a></code> property on the\n    <code><a href=\"../interfaces/IGaugeConfig.html\" target=\"_blank\">IGaugeConfig</a></code>\n    in order to set the thickness of the gauge. Additionally, the radius of the threshold markers can be specified on the\n    <code><a href=\"../interfaces/IGaugeThresholdsConfig.html#markerRadius\" target=\"_blank\">markerRadius</a></code> property of the\n    <code><a href=\"../interfaces/IGaugeThresholdsConfig.html\" target=\"_blank\">IGaugeThresholdsConfig</a></code>. Although any number value can be used for the\n    marker radius, Nova provides two standard sizes (<code>Small</code> and <code>Large</code>) for this property via the\n    <code><a href=\"../miscellaneous/enumerations.html#StandardGaugeThresholdMarkerRadius\" target=\"_blank\">StandardGaugeThresholdMarkerRadius</a></code> enum.\n</p>\n<nui-example-wrapper filenamePrefix=\"linear-gauge-thickness-adjustment-example\" exampleTitle=\"Configuring Linear Gauge Thickness\">\n    <linear-gauge-thickness-adjustment-example></linear-gauge-thickness-adjustment-example>\n</nui-example-wrapper>\n";
-      /***/
-    },
-
-    /***/
-    "ZvUs":
-    /*!***************************************************************************************************************************************************************************************!*\
-      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/donut/donut-with-threshold-toggling/donut-gauge-with-threshold-toggling-example.component.ts ***!
-      \***************************************************************************************************************************************************************************************/
-
-    /*! exports provided: default */
-
-    /***/
-    function ZvUs(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony default export */
-
-
-      __webpack_exports__["default"] = "import { Component, OnInit } from \"@angular/core\";\nimport {\n    ChartAssist,\n    GaugeMode,\n    GaugeUtil,\n    IAccessors,\n    IChartAssistSeries,\n    IGaugeConfig,\n    IGaugeThresholdsConfig,\n    StandardGaugeThresholdId,\n} from \"@nova-ui/charts\";\n\n@Component({\n    selector: \"donut-gauge-with-threshold-toggling-example\",\n    templateUrl: \"./donut-gauge-with-threshold-toggling-example.component.html\",\n    styleUrls: [\"./donut-gauge-with-threshold-toggling-example.component.less\"],\n})\nexport class DonutGaugeWithThresholdTogglingExampleComponent implements OnInit {\n    public chartAssist: ChartAssist;\n    public value = 178;\n    public gaugeConfig: IGaugeConfig;\n    public warningEnabled = true;\n    public criticalEnabled = true;\n\n    private seriesSet: IChartAssistSeries<IAccessors>[];\n\n    // Generating a standard set of thresholds with warning and critical levels\n    private thresholds: IGaugeThresholdsConfig = GaugeUtil.createStandardThresholdsConfig(100, 158);\n\n    public ngOnInit(): void {\n        this.gaugeConfig = this.getGaugeConfig();\n        this.chartAssist = GaugeUtil.createChartAssist(this.gaugeConfig, GaugeMode.Donut);\n\n        this.seriesSet = GaugeUtil.assembleSeriesSet(this.gaugeConfig, GaugeMode.Donut);\n        this.chartAssist.update(this.seriesSet);\n    }\n\n    public onValueChange(value: number): void {\n        this.value = value;\n        this.updateGauge();\n    }\n\n    public onWarningEnabledChange(enabled: boolean): void {\n        this.warningEnabled = enabled;\n\n        // Enabling or disabling the warning threshold\n        this.thresholds.definitions[StandardGaugeThresholdId.Warning].enabled = this.warningEnabled;\n\n        this.updateGauge();\n    }\n\n    public onCriticalEnabledChange(enabled: boolean): void {\n        this.criticalEnabled = enabled;\n\n        // Enabling or disabling the critical threshold\n        this.thresholds.definitions[StandardGaugeThresholdId.Critical].enabled = this.criticalEnabled;\n\n        this.updateGauge();\n    }\n\n    private updateGauge() {\n        this.gaugeConfig = this.getGaugeConfig();\n        this.seriesSet = GaugeUtil.update(this.seriesSet, this.gaugeConfig);\n        this.chartAssist.update(this.seriesSet);\n    }\n\n    private getGaugeConfig(): IGaugeConfig {\n        return {\n            value: this.value,\n            max: 200,\n            thresholds: this.thresholds,\n        };\n    }\n}\n";
+      __webpack_exports__["default"] = "<h1>Gauges</h1>\n<p>\n    Gauges can be an effective way to display a single metric value in visual form. And, Nova Charts provides the ability to create two types of gauges\n    (donut and linear) with the assistance of a utility class called <a href=\"../classes/GaugeUtil.html\" target=\"_blank\"><code>GaugeUtil</code></a>.\n    <strong>Three\n        key methods</strong> provided by the <code>GaugeUtil</code> will get you most of the way towards a functioning gauge:\n</p>\n<ul>\n    <li>\n        <code><a href=\"../classes/GaugeUtil.html#createChartAssist\" target=\"_blank\">createChartAssist</a></code>: can be used to generate a\n        <code><a href=\"../classes/ChartAssist.html\" target=\"_blank\">ChartAssist</a></code> that's\n        pre-configured based on the specified <code><a href=\"../interfaces/IGaugeConfig.html\" target=\"_blank\">IGaugeConfig</a></code> and\n        <code><a href=\"../miscellaneous/enumerations.html#GaugeMode\" target=\"_blank\">GaugeMode</a></code> arguments. The ChartAssist\n        handles any necessary pre-processing of the data series to a format that can be used for displaying each of the supported gauge modes.\n    </li>\n    <li>\n        <code><a href=\"../classes/GaugeUtil.html#assembleSeriesSet\" target=\"_blank\">assembleSeriesSet</a></code>: assembles a gauge series set with all of the\n        scales, renderers, accessors, etc. needed for creating a gauge visualization based on the specified\n        <code><a href=\"../interfaces/IGaugeConfig.html\" target=\"_blank\">IGaugeConfig</a></code> and\n        <code><a href=\"../miscellaneous/enumerations.html#GaugeMode\" target=\"_blank\">GaugeMode</a></code> arguments.\n    </li>\n    <li>\n        <code><a href=\"../classes/GaugeUtil.html#update\" target=\"_blank\">update</a></code>: updates a gauge series set using\n        the specified <code><a href=\"../interfaces/IChartAssistSeries.html\" target=\"_blank\">IChartAssistSeries</a></code> array and\n        <code><a href=\"../interfaces/IGaugeConfig.html\" target=\"_blank\">IGaugeConfig</a></code> arguments.\n    </li>\n</ul>\n<h2>Basic Steps</h2>\n<ol>\n    <li>\n        Create a <code><a href=\"../classes/ChartAssist.html\" target=\"_blank\">ChartAssist</a></code> using <code>GaugeUtil</code>'s\n        <code><a href=\"../classes/GaugeUtil.html#createChartAssist\" target=\"_blank\">createChartAssist</a></code> function.\n    </li>\n    <li>\n        Update the <code>ChartAssist</code>'s associated chart instance with a series set generated by the <code>GaugeUtil</code>'s\n        <code><a href=\"../classes/GaugeUtil.html#assembleSeriesSet\" target=\"_blank\">assembleSeriesSet</a></code> function.\n    </li>\n    <li>\n        Optionally, at any time after gauge instantiation, update the\n        gauge with a new value, max value, or other configuration changes using the <code>GaugeUtil</code>'s\n        <code><a href=\"../classes/GaugeUtil.html#update\" target=\"_blank\">update</a></code> function.\n    </li>\n</ol>\n\n<h2>Donut Gauge</h2>\n<p>\n    A <strong>donut gauge</strong> is a specialized <a href=\"../additional-documentation/chart-types/pie-and-donut.html\" target=\"_parent\">donut chart</a> with\n    data formatted in a way that results in a gauge-like visualization. It's well-suited for use cases in which there's ample room to display a relatively large\n    visualization. For use cases with a more compact display area, consider the <strong>linear gauge</strong> whose documentation can be found further down\n    on this page.\n</p>\n\n<h3>Basic Usage</h3>\n<p>\n    Take a look at the source expander of the example below for details on how to instantiate a basic donut gauge.\n</p>\n<nui-example-wrapper filenamePrefix=\"donut-gauge-basic\" exampleTitle=\"Basic Donut\">\n    <donut-gauge-basic-example></donut-gauge-basic-example>\n</nui-example-wrapper>\n\n<h3>Thresholds</h3>\n<p>\n    To add thresholds to a gauge, specify a value of type\n    <code><a href=\"../interfaces/IGaugeThresholdsConfig.html\" target=\"_blank\">IGaugeThresholdsConfig</a></code>\n    on the <code><a href=\"../interfaces/IGaugeConfig.html#thresholds\" target=\"_blank\">thresholds</a></code> property of the\n    <code><a href=\"../interfaces/IGaugeConfig.html\" target=\"_blank\">IGaugeConfig</a></code>. For an easy way to assemble an <code>IGaugeThresholdsConfig</code>\n    object, <code>GaugeUtil</code> provides a\n    <code><a href=\"../classes/GaugeUtil.html#createStandardThresholdsConfig\" target=\"_blank\">createStandardThresholdsConfig</a></code> function.\n    The <code><a href=\"../interfaces/IGaugeThresholdsConfig.html#definitions\" target=\"_blank\">definitions</a></code> property of the function's output includes\n    standard threshold definitions for \"warning\" and \"critical\" levels. You can either use the\n    <code>createStandardThresholdsConfig</code> convenience function or construct your own threshold configuration with as many or few threshold definitions as\n    you need.\n</p>\n<h4>Definitions</h4>\n<p>\n    The <code><a href=\"../interfaces/IGaugeThresholdsConfig.html#definitions\" target=\"_blank\">definitions</a></code> property of\n    <code>IGaugeThresholdsConfig</code> is organized with an <em>id-to-threshold</em> mapping for easy access. Each\n    threshold definition is of type <code><a href=\"../interfaces/IGaugeThresholdDef.html\" target=\"_blank\">IGaugeThresholdDef</a></code> and has an\n    <code>id</code> property with the same value used in the mapping. The <code>id</code>'s for common thresholds are standardized\n    in the <code><a href=\"../miscellaneous/enumerations.html#StandardGaugeThresholdId\" target=\"_blank\">StandardGaugeThresholdId</a></code> enum which has\n    <code>Warning</code> and <code>Critical</code> members. Additional properties of the threshold definition include <code>value</code>,\n    <code>color</code>, and <code>enabled</code>.\n</p>\n<h4>Colors</h4>\n<p>\n    As mentioned above, the <code>IGaugeThresholdsConfig</code> return value of the\n    <code><a href=\"../classes/GaugeUtil.html#createStandardThresholdsConfig\" target=\"_blank\">createStandardThresholdsConfig</a></code> function has a\n    <code><a href=\"../interfaces/IGaugeThresholdsConfig.html#definitions\" target=\"_blank\">definitions</a></code> property with a standard set of\n    threshold definitions. Each of these definitions has a\n    <code><a href=\"../interfaces/IGaugeThresholdDef.html#color\" target=\"_blank\">color</a></code> property that's used as the threshold's display color when it's\n    triggered. By default, the function sets the warning threshold to yellow and the critical to red. You can modify the display colors for these and any custom\n    thresholds using this property.\n</p>\n<h4>Labels</h4>\n<p>\n    When threshold definitions are provided on the <code>thresholds</code> property of the <code>IGaugeConfig</code>, the GaugeUtil's\n    <code><a href=\"../classes/GaugeUtil.html#createChartAssist\" target=\"_blank\">createChartAssist</a></code> function\n    automatically adds a <code><a href=\"../classes/DonutGaugeLabelsPlugin.html\" target=\"_blank\">DonutGaugeLabelsPlugin</a></code> instance to the chart which\n    displays labels for the threshold markers on mouse hover. If you'd like to provide a custom formatter for the labels, take a look at the\n    <strong>label customization</strong> example on this page for details on how to do that.\n</p>\n<nui-message type=\"info\" [allowDismiss]=\"false\">\n    <strong>Note:</strong> If the display strings for your labels are too long to fit within the default grid margins, you can specify a custom clearance value\n    in pixels on the <code><a href=\"../interfaces/IGaugeLabelsConfig.html#clearance\" target=\"_blank\">clearance</a></code> property of the\n    <code><a href=\"../interfaces/IGaugeConfig.html\" target=\"_blank\">IGaugeConfig</a></code>'s\n    <code><a href=\"../interfaces/IGaugeConfig.html#labels\" target=\"_blank\">labels</a></code> property. This will ensure that the grid margins are at minimum\n    the clearance value specified. For the donut gauge, the clearance is applied to all margins; for the linear gauge, the clearance is applied only to the side\n    on which the labels appear.\n</nui-message>\n<h4>Reversed Thresholds</h4>\n<p>\n    The default behavior of a Nova gauge is to treat quantity values that are greater than or equal to the threshold values as being triggered. If you want to\n    reverse that and have the gauge treat quantity values that are less than or equal to the threshold values as triggered, set the\n    <code><a href=\"../interfaces/IGaugeThresholdsConfig.html#reversed\" target=\"_blank\">reversed</a></code> property on the\n    <code><a href=\"../interfaces/IGaugeThresholdsConfig.html\" target=\"_blank\">IGaugeThresholdsConfig</a></code>\n    object to <code>true</code>.\n</p>\n<nui-example-wrapper filenamePrefix=\"donut-gauge-with-thresholds\" exampleTitle=\"Donut with Thresholds\">\n    <donut-gauge-with-thresholds-example></donut-gauge-with-thresholds-example>\n</nui-example-wrapper>\n\n<h4>Turning Off the Threshold Markers</h4>\n<h5>Omitting the Markers</h5>\n<p>\n    If you want to disable the threshold markers, it's likely you'll want to omit them entirely rather than instantiating them in a disabled state ready to\n    be toggled on later. The following example achieves this by setting the\n    <code><a href=\"../interfaces/IGaugeThresholdsConfig.html#disableMarkers\" target=\"_blank\">disableMarkers</a></code> property on the\n    <code>IGaugeThresholdsConfig</code> object to <code>true</code> before invoking the GaugeUtil's\n    <code><a href=\"../classes/GaugeUtil.html#createChartAssist\" target=\"_blank\">createChartAssist</a></code> function. For toggling the markers on and off\n    dynamically, take a look at the <strong>Dynamic Marker Toggling</strong> example.\n</p>\n<nui-example-wrapper filenamePrefix=\"donut-gauge-without-threshold-markers\" exampleTitle=\"Statically Omitted Threshold Markers\">\n    <donut-gauge-without-threshold-markers-example></donut-gauge-without-threshold-markers-example>\n</nui-example-wrapper>\n\n<h5>Dynamic Marker Toggling</h5>\n<p>\n    If you want to dynamically toggle the threshold marker dots and labels, take a look at the code in the source expander of the following example in which\n    a local instance of the <code><a href=\"../classes/DonutGaugeLabelsPlugin.html\" target=\"_blank\">DonutGaugeLabelsPlugin</a></code> is passed to\n    the optional labelsPlugin parameter of the <code><a href=\"../classes/GaugeUtil.html#createChartAssist\" target=\"_blank\">createChartAssist</a></code> function.\n    This allows for direct configuration and control of the <code>DonutGaugeLabelsPlugin</code> instance.\n</p>\n<p>\n    Similar to the example above, the markers are toggled by updating the\n    <code><a href=\"../interfaces/IGaugeThresholdsConfig.html#disableMarkers\" target=\"_blank\">disableMarkers</a></code> property on the\n    <code>IGaugeThresholdsConfig</code> object. And, dynamic toggling of the threshold labels is achieved by setting the\n    <code><a href=\"../interfaces/IGaugeLabelsPluginConfig.html#disableThresholdLabels\" target=\"_blank\">disableThresholdLabels</a></code> property on the label\n    plugin's <code>config</code> object.\n</p>\n<nui-example-wrapper filenamePrefix=\"donut-gauge-with-threshold-marker-toggling\" exampleTitle=\"Dynamic Threshold Marker Toggling\">\n    <donut-gauge-with-threshold-marker-toggling-example></donut-gauge-with-threshold-marker-toggling-example>\n</nui-example-wrapper>\n\n<h4>Enabling/Disabling Thresholds</h4>\n<p>\n    To toggle individual thresholds on or off, use the ID of a threshold to access the corresponding threshold definition on the\n    <code><a href=\"../interfaces/IGaugeThresholdsConfig.html#definitions\" target=\"_blank\">definitions</a></code>\n    property of the <code><a href=\"../interfaces/IGaugeThresholdsConfig.html\" target=\"_blank\">IGaugeThresholdsConfig</a></code> object, and set the\n    <code><a href=\"../interfaces/IGaugeThresholdDef.html#enabled\" target=\"_blank\">enabled</a></code> property on the threshold definition accordingly.\n</p>\n<nui-example-wrapper filenamePrefix=\"donut-gauge-with-threshold-toggling\" exampleTitle=\"Donut with Threshold Toggling\">\n    <donut-gauge-with-threshold-toggling-example></donut-gauge-with-threshold-toggling-example>\n</nui-example-wrapper>\n\n<h4>Customizing the Threshold Label Formatter</h4>\n<p>\n    To customize the format of the labels shown when the mouse is hovered over the gauge, set the\n    <code><a href=\"../interfaces/IGaugeLabelsConfig.html#formatter\" target=\"_blank\">formatter</a></code> property on the\n    <code><a href=\"../interfaces/IGaugeConfig.html#labels\" target=\"_blank\">labels</a></code> property of the\n    <code><a href=\"../interfaces/IGaugeConfig.html\" target=\"_blank\">IGaugeConfig</a></code>\n    with a function of type\n    <code><a href=\"../miscellaneous/typealiases.html#Formatter\" target=\"_blank\">Formatter&lt;string&gt;</a></code>. The function should take a string as the raw\n    data argument and return a string with your customized formatting. The following example transforms the raw threshold values to a percentage format.\n</p>\n<nui-example-wrapper filenamePrefix=\"donut-gauge-with-custom-threshold-labels\" exampleTitle=\"Donut with Custom Threshold Labels\">\n    <donut-gauge-with-custom-threshold-labels-example></donut-gauge-with-custom-threshold-labels-example>\n</nui-example-wrapper>\n\n<h3>Adding Inner Content</h3>\n<p>\n    The steps for adding inner content to the donut gauge are the same as that of the donut chart. More detailed instructions for that can be found\n    <a href=\"../additional-documentation/chart-types/pie-and-donut.html\" target=\"_parent\">here</a>. But, for a quick look at how to do it, see the example\n    below.\n</p>\n<nui-example-wrapper filenamePrefix=\"donut-gauge-with-content\" exampleTitle=\"Donut with Inner Content\">\n    <donut-gauge-with-content-example></donut-gauge-with-content-example>\n</nui-example-wrapper>\n\n<h2>Linear Gauges</h2>\n<p>\n    If you need to display a gauge visualization in a more compact display area, Nova supports both horizontal and vertical linear gauges which may be a better\n    fit for narrow spaces than the donut gauge.\n</p>\n<h3>Basic Horizontal</h3>\n<p>\n    Take a look at the source expander of the example below for details on how to instantiate a basic horizontal gauge.\n</p>\n<nui-example-wrapper filenamePrefix=\"horizontal-gauge-basic\" exampleTitle=\"Basic Horizontal Gauge\">\n    <horizontal-gauge-basic-example></horizontal-gauge-basic-example>\n</nui-example-wrapper>\n\n<h3>Basic Vertical</h3>\n<p>\n    Take a look at the source expander of the example below for details on how to instantiate a basic vertical gauge.\n</p>\n<nui-example-wrapper filenamePrefix=\"vertical-gauge-basic\" exampleTitle=\"Basic Vertical Gauge\">\n    <vertical-gauge-basic-example></vertical-gauge-basic-example>\n</nui-example-wrapper>\n\n<h3>Linear with Thresholds</h3>\n<p>\n    The steps for enabling/reversing thresholds and omitting/toggling threshold markers and labels is basically the same for the linear gauge as it is for the\n    donut gauge. The only difference lies in the dynamic toggling of the labels (if needed) in which the linear gauge uses the\n    <code><a href=\"../classes/LinearGaugeLabelsPlugin.html\" target=\"_blank\">LinearGaugeLabelsPlugin</a></code> instead of the\n    <code>DonutGaugeLabelsPlugin</code>. If label toggling isn't needed, you can ignore this fact and simply use the GaugeUtil's\n    <code><a href=\"../classes/GaugeUtil.html#createChartAssist\" target=\"_blank\">createChartAssist</a></code>\n    function which will add the labels plugin to the gauge automatically unless the\n    <code><a href=\"../interfaces/IGaugeThresholdsConfig.html#disableMarkers\" target=\"_blank\">disableMarkers</a></code> property on the\n    <code><a href=\"../interfaces/IGaugeThresholdsConfig.html\" target=\"_blank\">IGaugeThresholdsConfig</a></code> is set to <code>true</code>. For instructions\n    on how to dynamically toggle the threshold markers and labels, take a look at the <strong>Dynamic Marker Toggling</strong> example in the\n    <strong>Donut Gauge</strong> section above.\n</p>\n<nui-example-wrapper filenamePrefix=\"linear-gauge-with-thresholds\" exampleTitle=\"Linear Gauge with Thresholds\">\n    <linear-gauge-with-thresholds-example></linear-gauge-with-thresholds-example>\n</nui-example-wrapper>\n\n<h3>Configuring Thickness</h3>\n<p>\n    The linear gauge supports any thickness, but Nova provides two standard ones (<code>Small</code> and <code>Large</code>) via the\n    <code><a href=\"../miscellaneous/enumerations.html#StandardLinearGaugeThickness\" target=\"_blank\">StandardLinearGaugeThickness</a></code> enum.\n    The enum members or any number value can be assigned to the\n    <code><a href=\"../interfaces/IGaugeConfig.html#linearThickness\" target=\"_blank\">linearThickness</a></code> property on the\n    <code><a href=\"../interfaces/IGaugeConfig.html\" target=\"_blank\">IGaugeConfig</a></code>\n    in order to set the thickness of the gauge. Additionally, the radius of the threshold markers can be specified on the\n    <code><a href=\"../interfaces/IGaugeThresholdsConfig.html#markerRadius\" target=\"_blank\">markerRadius</a></code> property of the\n    <code><a href=\"../interfaces/IGaugeThresholdsConfig.html\" target=\"_blank\">IGaugeThresholdsConfig</a></code>. Although any number value can be used for the\n    marker radius, Nova provides two standard sizes (<code>Small</code> and <code>Large</code>) for this property via the\n    <code><a href=\"../miscellaneous/enumerations.html#StandardGaugeThresholdMarkerRadius\" target=\"_blank\">StandardGaugeThresholdMarkerRadius</a></code> enum.\n</p>\n<nui-example-wrapper filenamePrefix=\"linear-gauge-thickness-adjustment\" exampleTitle=\"Configuring Linear Gauge Thickness\">\n    <linear-gauge-thickness-adjustment-example></linear-gauge-thickness-adjustment-example>\n</nui-example-wrapper>\n";
       /***/
     },
 
@@ -3155,6 +3155,26 @@
 
 
       __webpack_exports__["default"] = "import { Component, OnInit } from \"@angular/core\";\nimport { barAccessors, barGrid, BarRenderer, barScales, Chart, IBarChartConfig } from \"@nova-ui/charts\";\n\n@Component({\n    selector: \"nui-bar-chart-example\",\n    templateUrl: \"./bar-chart.example.component.html\",\n})\nexport class BarChartExampleComponent implements OnInit {\n    // this configuration passed to barGrid, barAccessors, barScales determines the orientation of the bar chart\n    public config = { horizontal: false } as IBarChartConfig;\n\n    public chart = new Chart(barGrid(this.config));\n\n    ngOnInit() {\n        const accessors = barAccessors(this.config);\n        const renderer = new BarRenderer();\n        const scales = barScales(this.config);\n\n        this.chart.update(getData().map(s => ({\n            ...s,\n            accessors,\n            renderer,\n            scales,\n        })));\n    }\n}\n\n/* Chart data */\nfunction getData() {\n    return [\n        { id: \"chrome\", name: \"Chrome\", data: [66] },\n        { id: \"safari\", name: \"Safari\", data: [14] },\n        { id: \"firefox\", name: \"Firefox\", data: [5] },\n        { id: \"uc \", name: \"UC Browser\", data: [4] },\n        { id: \"opera\", name: \"Opera\", data: [3] },\n        { id: \"other\", name: \"Other\", data: [5] },\n    ];\n}\n";
+      /***/
+    },
+
+    /***/
+    "Zzgk":
+    /*!***************************************************************************************************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/donut/donut-with-custom-threshold-labels/donut-gauge-with-custom-threshold-labels.example.component.html ***!
+      \***************************************************************************************************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function Zzgk(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "<div class=\"d-flex align-items-center justify-content-center flex-wrap\">\n    <div class=\"d-flex flex-column align-items-left mr-5\">\n        <nui-form-field class=\"d-block mb-5\"\n                        caption=\"Value\" i18n-caption\n                        [showOptionalText]=\"false\">\n            <nui-textbox-number type=\"number\"\n                                [ngModel]=\"gaugeConfig.value\"\n                                (ngModelChange)=\"onValueChange($event)\"\n                                [minValue]=\"0\"\n                                [maxValue]=\"gaugeConfig.max\"\n                                customBoxWidth=\"75px\"></nui-textbox-number>\n        </nui-form-field>\n    </div>\n    <nui-chart class=\"demo__chart\" [chart]=\"chartAssist.chart\"></nui-chart>\n</div>\n";
       /***/
     },
 
@@ -3199,26 +3219,6 @@
     },
 
     /***/
-    "aI42":
-    /*!************************************************************************************************************************************************************!*\
-      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/linear/vertical-basic/vertical-gauge-basic-example.component.html ***!
-      \************************************************************************************************************************************************************/
-
-    /*! exports provided: default */
-
-    /***/
-    function aI42(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony default export */
-
-
-      __webpack_exports__["default"] = "<div class=\"d-flex align-items-center justify-content-center flex-wrap\">\n    <nui-form-field class=\"d-block mb-5 demo__value-input\"\n                    caption=\"Value\" i18n-caption\n                    [showOptionalText]=\"false\">\n        <nui-textbox-number type=\"number\"\n                            [ngModel]=\"gaugeConfig.value\"\n                            (ngModelChange)=\"onValueChange($event)\"\n                            [minValue]=\"0\"\n                            [maxValue]=\"gaugeConfig.max\"\n                            customBoxWidth=\"75px\"></nui-textbox-number>\n    </nui-form-field>\n    <nui-chart class=\"demo__chart\" [chart]=\"chartAssist.chart\"></nui-chart>\n</div>\n";
-      /***/
-    },
-
-    /***/
     "ahTr":
     /*!******************************************************************************************************************************************************!*\
       !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/area/area-chart-vertical/area-chart-vertical-example.component.ts ***!
@@ -3259,22 +3259,22 @@
     },
 
     /***/
-    "bakv":
-    /*!****************************************************************************************************************************************************************************!*\
-      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/linear/linear-with-thresholds/linear-gauge-with-thresholds-example.component.less ***!
-      \****************************************************************************************************************************************************************************/
+    "axmd":
+    /*!**************************************************************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/linear/horizontal-basic/horizontal-gauge-basic.example.component.ts ***!
+      \**************************************************************************************************************************************************************/
 
     /*! exports provided: default */
 
     /***/
-    function bakv(module, __webpack_exports__, __webpack_require__) {
+    function axmd(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = ".demo__value-input {\n    margin-right: 50px;\n}\n\n// Setting the height on the chart element determines the vertical length of the gauge\n.demo__vertical-chart {\n    height: 200px;\n}\n\n// Setting the width on the chart element determines the horizontal length of the gauge\n.demo__horizontal-chart {\n    width: 200px;\n}\n";
+      __webpack_exports__["default"] = "import { Component, OnInit } from \"@angular/core\";\nimport {\n    ChartAssist,\n    GaugeMode,\n    GaugeUtil,\n    IAccessors,\n    IChartAssistSeries,\n    IGaugeConfig,\n} from \"@nova-ui/charts\";\n\n@Component({\n    selector: \"horizontal-gauge-basic-example\",\n    templateUrl: \"./horizontal-gauge-basic.example.component.html\",\n    styleUrls: [\"./horizontal-gauge-basic.example.component.less\"],\n})\nexport class HorizontalGaugeBasicExampleComponent implements OnInit {\n    public chartAssist: ChartAssist;\n    public gaugeConfig: IGaugeConfig;\n\n    private seriesSet: IChartAssistSeries<IAccessors>[];\n\n    public ngOnInit(): void {\n        // Setting up the gauge config\n        const initialValue = 64;\n        this.gaugeConfig = this.getGaugeConfig(initialValue);\n\n        // Creating the chart assist\n        this.chartAssist = GaugeUtil.createChartAssist(this.gaugeConfig, GaugeMode.Horizontal);\n\n        // Assembling the series\n        this.seriesSet = GaugeUtil.assembleSeriesSet(this.gaugeConfig, GaugeMode.Horizontal);\n\n        // Updating the chart\n        this.chartAssist.update(this.seriesSet);\n    }\n\n    public onValueChange(value: number): void {\n        // Updating the gauge config\n        this.gaugeConfig = this.getGaugeConfig(value);\n\n        // Updating the series set with the new config\n        this.seriesSet = GaugeUtil.update(this.seriesSet, this.gaugeConfig);\n\n        // Updating the chart with the updated series set\n        this.chartAssist.update(this.seriesSet);\n    }\n\n    private getGaugeConfig(value: number): IGaugeConfig {\n        return {\n            value,\n            max: 100,\n\n            /**\n             * Optionally customize the default quantity color (defaults to StandardGaugeColor.Ok)\n             */\n\n            // defaultQuantityColor: \"var(--nui-color-semantic-ok)\",\n        };\n    }\n}\n";
       /***/
     },
 
@@ -3419,26 +3419,6 @@
     },
 
     /***/
-    "dXgp":
-    /*!*******************************************************************************************************************************************************************!*\
-      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/donut/donut-with-content/donut-gauge-with-content-example.component.html ***!
-      \*******************************************************************************************************************************************************************/
-
-    /*! exports provided: default */
-
-    /***/
-    function dXgp(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony default export */
-
-
-      __webpack_exports__["default"] = "<div class=\"d-flex align-items-center justify-content-center flex-wrap\">\n    <nui-form-field class=\"d-block mr-5\"\n                    caption=\"Value\" i18n-caption\n                    [showOptionalText]=\"false\">\n        <nui-textbox-number type=\"number\"\n                            [ngModel]=\"gaugeConfig.value\"\n                            (ngModelChange)=\"onValueChange($event)\"\n                            [minValue]=\"0\"\n                            [maxValue]=\"gaugeConfig.max\"\n                            customBoxWidth=\"75px\"></nui-textbox-number>\n    </nui-form-field>\n    <div class=\"d-flex\">\n        <nui-chart class=\"demo__chart\" [chart]=\"chartAssist.chart\"></nui-chart>\n\n        <!-- Inner content template -->\n        <nui-chart-donut-content style=\"position: absolute;\"\n                                 [plugin]=\"contentPlugin\">\n            <div class=\"h-100 w-100 d-flex flex-column justify-content-center align-items-center text-center\">\n                <div class=\"d-inline-block\" nuiZoomContent [zoomRatio]=\"0.65\">\n                    {{gaugeConfig.value | number:'1.0-0'}}\n                </div>\n                <div class=\"demo__content-label\" i18n>Network Latency</div>\n                <div class=\"demo__content-label\" i18n>(ms)</div>\n            </div>\n        </nui-chart-donut-content>\n    </div>\n</div>\n";
-      /***/
-    },
-
-    /***/
     "e7Ie":
     /*!************************************************************************************************************************!*\
       !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/area/chart-docs-area.component.html ***!
@@ -3455,6 +3435,46 @@
 
 
       __webpack_exports__["default"] = "<h1>Area Charts</h1>\n\n<p>\n    An area chart visualization can be thought of as a hybrid between a line and a bar chart.\n    Similar to a line chart, an area chart shows how the numeric values of one or more series change\n    over the progression of another variable, usually time. And, similar to a bar chart, an area chart\n    consists of a shaded area between a baseline (typically zero) and the line representing the\n    numeric values.\n</p>\n<p>\n    In real world scenarios, using an area chart visualization may make the most sense if you want to\n    compare quantities between two or more series by stacking them one on top of another. If, on the\n    other hand, you only have a single series to visualize, it may be more practical to use just a simple\n    bar or line chart, depending of course on what you want to communicate about the data. With that in\n    mind, the first example on this page does show, for simplicity's sake, a single series visualized as\n    an area.\n</p>\n\n<h2>Basic Usage</h2>\n<p>\n    To create a simple area chart, the basic elements you need are much the same as those of a\n    <a href=\"../additional-documentation/chart-types/line.html\" target=\"_parent\">line chart</a>. The main\n    differences in usage lie in the use of\n    <code><a href=\"../classes/AreaRenderer.html\" target=\"_blank\">AreaRenderer</a></code> instead of\n    <code><a href=\"../classes/LineRenderer.html\" target=\"_blank\">LineRenderer</a></code>\n    and in the configuration of the data accessors implemented by the\n    <code><a href=\"../classes/AreaAccessors.html\" target=\"_blank\">AreaAccessors</a></code> class.\n    When instantiating the <code>AreaRenderer</code>, you can optionally pass a configuration object of type\n    <code><a href=\"../interfaces/IAreaRendererConfig.html\" target=\"_blank\">IAreaRendererConfig</a></code>\n    to make certain modifications to the behavior of the chart.\n</p>\n<nui-message type=\"info\" [allowDismiss]=\"false\">\n    As with other chart types, this first example implements an area chart without the aid of a\n    <code><a href=\"../classes/ChartAssist.html\" target=\"_blank\">ChartAssist</a></code> since it doesn't\n    need to either process the stacking of multiple series or handle interaction with an external\n    component such as a legend. Subsequent examples that include series stacking or legend interaction\n    will make use of a <code>ChartAssist</code> instance to handle those tasks.\n</nui-message>\n<nui-example-wrapper filenamePrefix=\"area-chart-basic-example\"\n                     exampleTitle=\"Basic Usage\">\n    <area-chart-basic-example></area-chart-basic-example>\n</nui-example-wrapper>\n<p>\n    In the example above, we create an instance of\n    <code><a href=\"../classes/AreaAccessors.html\" target=\"_blank\">AreaAccessors</a></code> and configure\n    it to work specifically with the data being fed into the chart. For the standard, horizontally\n    oriented area chart we provide implementation-specific definitions for the following accessors:\n</p>\n<ul>\n    <li>\n        An <code>x</code> accessor for values in the data that correspond to the horizontal axis. Again,\n        this is typically a datetime value. This value is also used as a coordinate for the data point marker.\n    </li>\n    <li>\n        A <code>y</code> accessor for values to be used as the <code>y</code> coordinate for the\n        data point marker. The <code>y</code> accessor is assigned the <code>absoluteY1</code> accessor\n        which takes into account areas that may be stacked below the current area and retrieves the absolute\n        distance from the baseline to the area's value line.\n    </li>\n    <li>\n        A <code>y0</code> accessor for the baseline on the vertical axis which, in this particular case,\n        will always return the typical baseline value of zero.\n    </li>\n    <li>\n        A <code>y1</code> accessor for the value line on the vertical axis that provides access to the\n        numeric values we want to visualize in the data.\n    </li>\n</ul>\n<p>\n    <strong>Note:</strong> For a vertically oriented chart in which the progression runs along the y\n    axis, you can configure the opposite accessors from those above, i.e. <code>y</code>,\n    <code>x0</code>, and <code>x1</code>, but with the same corresponding implementations.\n</p>\n<p>\n    In addition to data access, the\n    <code><a href=\"../classes/AreaAccessors.html\" target=\"_blank\">AreaAccessors</a></code> indicate what\n    color and marker symbol the chart should use for each series visualization. For additional\n    information about chart setup, take a look at\n    <a href=\"../../additional-documentation/advanced-usage/chart.html\" target=\"_parent\">this</a> page.\n</p>\n<p>\n    To instantiate a grid that conforms to UX guidelines for area visualizations, we invoke the\n    <code><a href=\"../miscellaneous/functions.html#areaGrid\" target=\"_blank\">areaGrid</a></code>\n    function and pass the result to the\n    <code><a href=\"../classes/Chart.html#constructor\" target=\"_blank\">Chart</a></code> constructor.\n</p>\n\n<h2>Stacked</h2>\n<p>\n    As mentioned above, an area chart may be an ideal option if you want to compare a progression of\n    quantities between two or more series. In that case, you'll likely want to display the series in\n    a stacked formation, and the easiest way to do that is to pass the\n    <code><a href=\"../miscellaneous/functions.html#stackedArea\" target=\"_blank\">stackedArea</a></code>\n    preprocessor to an instance of the previously mentioned\n    <code><a href=\"../classes/ChartAssist.html\" target=\"_blank\">ChartAssist</a></code> which will use\n    the preprocessor to stack the series' numeric values on the same progression domain.\n</p>\n<p>\n    <strong>Note:</strong> The <code>absoluteY1</code> accessor is assigned to the <code>y</code> accessor\n    to position data point markers in the stacked series correctly.\n</p>\n<nui-example-wrapper filenamePrefix=\"area-chart-stack-example\"\n                     exampleTitle=\"Stacked\">\n    <area-chart-stack-example></area-chart-stack-example>\n</nui-example-wrapper>\n\n<h2>Unstacked or Overlapping Areas</h2>\n<p>\n    The use of an unstacked or overlapping area visualization is generally discouraged for a few key\n    reasons:\n</p>\n<ul>\n    <li>\n        Area charts are typically expected to be stacked, and the main benefit this configuration\n        provides is that it can help the user to visualize a total value's progression over time along\n        with a running breakdown of subgroup contributions to that total. If, however, the areas are\n        unstacked, the total value visualization is obviously absent. And, the user may consequently find\n        it more difficult to discern a comparison of each group's contribution to their sum.\n    </li>\n    <li>\n        Colors generated by the combination of overlapping areas are inherently not represented in the\n        legend which can create unnecessary mental strain on the user as they try to determine what\n        metrics in the legend correspond to the overlapping values.\n    </li>\n    <li>\n        If subgroup values along the progression never intersect, the visualization can be easily\n        mistaken for a stacked area.\n    </li>\n</ul>\n<p>\n    If you're considering implementing an unstacked area chart, it's a good idea to consider these\n    and other potential drawbacks. While making your considerations, it's possible you'll determine\n    that implementing a\n    <a href=\"../additional-documentation/chart-types/line.html\" target=\"_parent\">line chart</a>\n    instead will result in a better overall experience for your users. If however you find that your use\n    case is extra, super special, and you really, really need an unstacked area chart, please contact the\n    Nova team so that we can show you how to assemble the visualization. Additionally, please consult\n    with Nova Design System leadership before proceeding so that they can work with you to provide the\n    best solution possible.\n</p>\n\n<h2>Stacked Percentage</h2>\n<p>\n    Stacked percentage area charts are similar to standard stacked area charts in that they facilitate\n    the comparison of quantities between two or more series across the progression of another variable.\n    The difference is that a stacked percentage area chart visualizes each quantity in relation to the\n    sum of all quantities along that progression. It can be thought of as a pie chart with an added\n    dimension, usually time, in which you can see what portion of the sum total each data point\n    represents over a given period of time.\n</p>\n<p>\n    Because of the similarities to standard stacked area charts, the usage for a stacked percentage chart\n    is much the same but with a minor difference. Instead of passing the <code>stackedArea</code>\n    preprocessor to the <code><a href=\"../classes/ChartAssist.html\" target=\"_blank\">ChartAssist</a></code>,\n    you pass the\n    <code><a href=\"../miscellaneous/functions.html#stackedPercentageArea\" target=\"_blank\">stackedPercentageArea</a></code>\n    preprocessor which will not only stack the series' numeric values on the same progression domain but\n    will also vertically scale each series area as a percentage of the sum of all corresponding series\n    values.\n</p>\n<nui-example-wrapper filenamePrefix=\"area-chart-stack-percentage-example\"\n                     exampleTitle=\"Stacked Percentage\">\n    <area-chart-stack-percentage-example></area-chart-stack-percentage-example>\n</nui-example-wrapper>\n\n<h2>Variable Baseline</h2>\n<p>\n    Sometimes the baseline of an area chart isn't fixed at zero. If you have a use case in which the\n    baseline varies with each data point, you can set the <code>y0</code> accessor to provide access to\n    the value in the data to be used as the baseline. In the following example, the data contains\n    <code>start</code> and <code>end</code> properties that are used as the <code>y0</code> and\n    <code>y1</code> values respectively.\n</p>\n<nui-example-wrapper filenamePrefix=\"area-chart-variable-baseline-example\"\n                     exampleTitle=\"Variable Baseline\">\n    <area-chart-variable-baseline-example></area-chart-variable-baseline-example>\n</nui-example-wrapper>\n\n<h2>Bi-Directional</h2>\n<h3>Single Metric Per Direction</h3>\n<p>\n    To display a progression of two correlated values on opposite sides of a baseline, you can implement\n    a data accessor that flips the values of one series from positive to negative. In this example, the\n    positive values for download speed are flipped to negative in that series's <code>y1</code> data\n    accessor. Additionally, the example implements a y-scale \"tick\" formatter to display positive values\n    for the axis ticks below the zero baseline and in the legend.\n</p>\n<nui-example-wrapper filenamePrefix=\"area-chart-bi-directional-example\"\n                     exampleTitle=\"Bi-Directional\">\n    <area-chart-bi-directional-example></area-chart-bi-directional-example>\n</nui-example-wrapper>\n\n<h3>Stacked</h3>\n<p>\n    If you need to visualize more than one metric per direction, you can set up a bi-directional stacked chart.\n    The following example demonstrates this by creating two chart instances, each with its own data but acting\n    as a single visualization. The series on the bottom chart are stacked in a downward direction by invoking\n    the <code><a href=\"../classes/LinearScale.html#reverse\" target=\"_blank\">reverse</a></code> method on the chart's y-axis\n    <code><a href=\"../classes/LinearScale.html\" target=\"_blank\">LinearScale</a></code>. For additional details, take a look at\n    the code and comments in the example's source expander.\n</p>\n<nui-example-wrapper filenamePrefix=\"area-chart-bi-directional-stacked-example\"\n                     exampleTitle=\"Bi-Directional Stacked\">\n    <area-chart-bi-directional-stacked-example></area-chart-bi-directional-stacked-example>\n</nui-example-wrapper>\n\n<h3>Inverted Stacked</h3>\n<p>\n    To invert the direction of each stack, you can invoke the\n    <code><a href=\"../classes/LinearScale.html#reverse\" target=\"_blank\">reverse</a></code> method on the y-axis\n    <code><a href=\"../classes/LinearScale.html\" target=\"_blank\">LinearScale</a></code> of the top chart\n    instead of the one on the bottom chart. The following example demonstrates\n    how to do this. For details, take a look at the code and comments in the example's source expander.\n</p>\n<nui-example-wrapper filenamePrefix=\"area-chart-bi-directional-stacked-inverted-example\"\n                     exampleTitle=\"Inverted Bi-Directional Stacked\">\n    <area-chart-bi-directional-stacked-inverted-example></area-chart-bi-directional-stacked-inverted-example>\n</nui-example-wrapper>\n";
+      /***/
+    },
+
+    /***/
+    "eTJD":
+    /*!*******************************************************************************************************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/donut/donut-with-threshold-marker-toggling/donut-gauge-with-threshold-marker-toggling.example.component.html ***!
+      \*******************************************************************************************************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function eTJD(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "<div class=\"d-flex align-items-center justify-content-center flex-wrap\">\n    <div class=\"d-flex flex-column align-items-left mr-5\">\n        <nui-form-field class=\"d-block mb-5\"\n                        caption=\"Value\" i18n-caption\n                        [showOptionalText]=\"false\">\n            <nui-textbox-number type=\"number\"\n                                [ngModel]=\"value\"\n                                (ngModelChange)=\"onValueChange($event)\"\n                                [minValue]=\"0\"\n                                [maxValue]=\"gaugeConfig.max\"\n                                customBoxWidth=\"75px\"></nui-textbox-number>\n        </nui-form-field>\n        <nui-checkbox [ngModel]=\"markersEnabled\"\n                      (ngModelChange)=\"onMarkersEnabledChange($event)\"\n                      i18n>\n            Markers Enabled\n        </nui-checkbox>\n    </div>\n    <nui-chart class=\"demo__chart\" [chart]=\"chartAssist.chart\"></nui-chart>\n</div>\n";
+      /***/
+    },
+
+    /***/
+    "fN0t":
+    /*!**********************************************************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/linear/vertical-basic/vertical-gauge-basic.example.component.ts ***!
+      \**********************************************************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function fN0t(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "import { Component, OnInit } from \"@angular/core\";\nimport {\n    ChartAssist,\n    GaugeMode,\n    GaugeUtil,\n    IAccessors,\n    IChartAssistSeries,\n    IGaugeConfig,\n} from \"@nova-ui/charts\";\n\n@Component({\n    selector: \"vertical-gauge-basic-example\",\n    templateUrl: \"./vertical-gauge-basic.example.component.html\",\n    styleUrls: [\"./vertical-gauge-basic.example.component.less\"],\n})\nexport class VerticalGaugeBasicExampleComponent implements OnInit {\n    public chartAssist: ChartAssist;\n    public gaugeConfig: IGaugeConfig;\n\n    private seriesSet: IChartAssistSeries<IAccessors>[];\n\n    public ngOnInit(): void {\n        // Setting up the gauge config\n        const initialValue = 64;\n        this.gaugeConfig = this.getGaugeConfig(initialValue);\n\n        // Creating the chart assist\n        this.chartAssist = GaugeUtil.createChartAssist(this.gaugeConfig, GaugeMode.Vertical);\n\n        // Assembling the series\n        this.seriesSet = GaugeUtil.assembleSeriesSet(this.gaugeConfig, GaugeMode.Vertical);\n\n        // Updating the chart\n        this.chartAssist.update(this.seriesSet);\n    }\n\n    public onValueChange(value: number): void {\n        // Updating the gauge config\n        this.gaugeConfig = this.getGaugeConfig(value);\n\n        // Updating the series set with the new config\n        this.seriesSet = GaugeUtil.update(this.seriesSet, this.gaugeConfig);\n\n        // Updating the chart with the updated series set\n        this.chartAssist.update(this.seriesSet);\n    }\n\n    private getGaugeConfig(value: number): IGaugeConfig {\n        return {\n            value,\n            max: 100,\n\n            /**\n             * Optionally customize the default quantity color (defaults to StandardGaugeColor.Ok)\n             */\n\n            // defaultQuantityColor: \"var(--nui-color-semantic-ok)\",\n        };\n    }\n}\n";
       /***/
     },
 
@@ -3639,26 +3659,6 @@
     },
 
     /***/
-    "hSR7":
-    /*!***********************************************************************************************************************************************************************!*\
-      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/donut/donut-with-thresholds/donut-gauge-with-thresholds-example.component.ts ***!
-      \***********************************************************************************************************************************************************************/
-
-    /*! exports provided: default */
-
-    /***/
-    function hSR7(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony default export */
-
-
-      __webpack_exports__["default"] = "import { Component, OnInit } from \"@angular/core\";\nimport {\n    ChartAssist,\n    GaugeMode,\n    GaugeUtil,\n    IAccessors,\n    IChartAssistSeries,\n    IGaugeConfig,\n    IGaugeThresholdsConfig,\n    StandardGaugeThresholdId,\n} from \"@nova-ui/charts\";\n\n@Component({\n    selector: \"donut-gauge-with-thresholds-example\",\n    templateUrl: \"./donut-gauge-with-thresholds-example.component.html\",\n    styleUrls: [\"./donut-gauge-with-thresholds-example.component.less\"],\n})\nexport class DonutGaugeWithThresholdsExampleComponent implements OnInit {\n    public chartAssist: ChartAssist;\n    public gaugeConfig: IGaugeConfig;\n    public value = 178;\n    public reversed = false;\n\n    private thresholds: IGaugeThresholdsConfig;\n    private seriesSet: IChartAssistSeries<IAccessors>[];\n\n    private lowThreshold = 100;\n    private highThreshold = 158;\n\n    public ngOnInit(): void {\n        // Generating a standard set of thresholds with warning and critical levels\n        this.thresholds = GaugeUtil.createStandardThresholdsConfig(this.lowThreshold, this.highThreshold);\n\n        /**\n         * Optionally, instead of using the 'createStandardThresholdsConfig' function as above, you can manually create a thresholds\n         * config object like the following with as many or as few threshold definitions as you need.\n         */\n        // this.thresholds = {\n        //     definitions: {\n        //         [StandardGaugeThresholdId.Warning]: {\n        //             id: StandardGaugeThresholdId.Warning,\n        //             value: this.lowThreshold,\n        //             enabled: true,\n        //             color: StandardGaugeColor.Warning,\n        //         },\n        //         [StandardGaugeThresholdId.Critical]: {\n        //             id: StandardGaugeThresholdId.Critical,\n        //             value: this.highThreshold,\n        //             enabled: true,\n        //             color: StandardGaugeColor.Critical,\n        //         },\n        //     },\n        //     reversed: false,\n        //     disableMarkers: false,\n        //     markerRadius: StandardGaugeThresholdMarkerRadius.Large,\n        // };\n\n        this.gaugeConfig = this.getGaugeConfig();\n        this.chartAssist = GaugeUtil.createChartAssist(this.gaugeConfig, GaugeMode.Donut);\n\n        this.seriesSet = GaugeUtil.assembleSeriesSet(this.gaugeConfig, GaugeMode.Donut);\n        this.chartAssist.update(this.seriesSet);\n    }\n\n    public onValueChange(value: number): void {\n        this.value = value;\n        this.updateGauge();\n    }\n\n    public onReversedChange(reversed: boolean): void {\n        this.reversed = reversed;\n        this.thresholds.reversed = reversed;\n\n        // swap the values of the warning and critical thresholds\n        this.thresholds.definitions[StandardGaugeThresholdId.Warning].value = this.reversed ? this.highThreshold : this.lowThreshold;\n        this.thresholds.definitions[StandardGaugeThresholdId.Critical].value = this.reversed ? this.lowThreshold : this.highThreshold;\n\n        this.updateGauge();\n    }\n\n    private updateGauge() {\n        this.gaugeConfig = this.getGaugeConfig();\n        this.seriesSet = GaugeUtil.update(this.seriesSet, this.gaugeConfig);\n        this.chartAssist.update(this.seriesSet);\n    }\n\n    private getGaugeConfig(): IGaugeConfig {\n        return {\n            value: this.value,\n            max: 200,\n\n            // Enabling the thresholds\n            thresholds: this.thresholds,\n        };\n    }\n}\n";
-      /***/
-    },
-
-    /***/
     "i0Gj":
     /*!******************************************************************************************************************************************************************************************!*\
       !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/bucketed-bar/bar-chart-test/basic-stacked-vertical/basic-stacked-vertical-bar-chart-test.component.ts ***!
@@ -3675,26 +3675,6 @@
 
 
       __webpack_exports__["default"] = "import { Component, OnInit } from \"@angular/core\";\nimport {\n    BandScale, barAccessors, barGrid, BarHighlightStrategy, BarRenderer, Chart, ChartAssist, InteractionLabelPlugin, LinearScale, Scales, stack,\n} from \"@nova-ui/charts\";\n\n@Component({\n    selector: \"nui-basic-stacked-vertical-bar-chart-test\",\n    templateUrl: \"./basic-stacked-vertical-bar-chart-test.component.html\",\n})\n\nexport class BasicStackedVerticalBarChartTestComponent implements OnInit {\n    public chartAssist: ChartAssist;\n\n    ngOnInit() {\n        const chart = new Chart(barGrid());\n\n        // We're manually adding Interaction Label plugin (without Interaction Line plugin) to have only label\n        chart.addPlugin(new InteractionLabelPlugin());\n        this.chartAssist = new ChartAssist(chart, stack);\n\n        const accessors = barAccessors();\n        // This matches field in data by which chart preprocessor will gather categories to build stacks\n        accessors.data.category = (data: any) => data.name;\n\n        const renderer = new BarRenderer({ highlightStrategy: new BarHighlightStrategy(\"x\") });\n\n        const scales: Scales = {\n            x: new BandScale(),\n            y: new LinearScale(),\n        };\n\n        const seriesSet = getData().map(d => ({\n            ...d,\n            accessors,\n            renderer,\n            scales,\n        }));\n\n        this.chartAssist.update(seriesSet);\n    }\n}\n\n/* Chart data */\nfunction getData() {\n    return [\n        {\n            \"id\": \"Brno\",\n            \"name\": \"Brno\",\n            \"data\": [\n                {\n                    \"name\": \"Q1 2018\",\n                    \"value\": 167,\n                },\n                {\n                    \"name\": \"Q2 2018 LONG NAME TEST LONG NAME TEST LONG NAME TEST\",\n                    \"value\": 122,\n                },\n                {\n                    \"name\": \"Q3 2018\",\n                    \"value\": 141,\n                },\n                {\n                    \"name\": \"Q4 2018\",\n                    \"value\": 66,\n                },\n            ],\n        },\n        {\n            \"id\": \"Austin\",\n            \"name\": \"Austin\",\n            \"data\": [\n                {\n                    \"name\": \"Q1 2018\",\n                    \"value\": 167,\n                },\n                // Please note the fact that not all categories are required to be present in every data point.\n                // Sparse data is ok too.\n                // {\n                //     \"name\": \"Q2 2018 LONG NAME TEST LONG NAME TEST LONG NAME TEST\",\n                //     \"value\": 198,\n                // },\n                {\n                    \"name\": \"Q3 2018\",\n                    \"value\": 208,\n                },\n                {\n                    \"name\": \"Q4 2018\",\n                    \"value\": 233,\n                },\n            ],\n        },\n        {\n            \"id\": \"Edinburgh\",\n            \"name\": \"Edinburgh\",\n            \"data\": [\n                {\n                    \"name\": \"Q1 2018\",\n                    \"value\": 167,\n                },\n                {\n                    \"name\": \"Q2 2018 LONG NAME TEST LONG NAME TEST LONG NAME TEST\",\n                    \"value\": 15,\n                },\n                {\n                    \"name\": \"Q3 2018\",\n                    \"value\": 208,\n                },\n                {\n                    \"name\": \"Q4 2018\",\n                    \"value\": 123,\n                },\n            ],\n        },\n        {\n            \"id\": \"Newcastle\",\n            \"name\": \"Newcastle\",\n            \"data\": [\n                {\n                    \"name\": \"Q1 2018\",\n                    \"value\": 11,\n                },\n                {\n                    \"name\": \"Q2 2018 LONG NAME TEST LONG NAME TEST LONG NAME TEST\",\n                    \"value\": 99,\n                },\n                {\n                    \"name\": \"Q3 2018\",\n                    \"value\": 17,\n                },\n                {\n                    \"name\": \"Q4 2018\",\n                    \"value\": 25,\n                },\n            ],\n        },\n        {\n            \"id\": \"Kyiv\",\n            \"name\": \"Kyiv\",\n            \"data\": [\n                {\n                    \"name\": \"Q1 2018\",\n                    \"value\": 121,\n                },\n                {\n                    \"name\": \"Q2 2018 LONG NAME TEST LONG NAME TEST LONG NAME TEST\",\n                    \"value\": 222,\n                },\n                {\n                    \"name\": \"Q3 2018\",\n                    \"value\": 319,\n                },\n                {\n                    \"name\": \"Q4 2018\",\n                    \"value\": 328,\n                },\n            ],\n        },\n    ];\n}\n";
-      /***/
-    },
-
-    /***/
-    "i4Pe":
-    /*!*************************************************************************************************************************************************************************!*\
-      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/donut/donut-with-thresholds/donut-gauge-with-thresholds-example.component.less ***!
-      \*************************************************************************************************************************************************************************/
-
-    /*! exports provided: default */
-
-    /***/
-    function i4Pe(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony default export */
-
-
-      __webpack_exports__["default"] = ".demo__chart {\n    height: 250px;\n    width: 250px;\n}\n";
       /***/
     },
 
@@ -3719,26 +3699,6 @@
     },
 
     /***/
-    "j5fe":
-    /*!*******************************************************************************************************************************************************************************************!*\
-      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/donut/donut-without-threshold-markers/donut-gauge-without-threshold-markers-example.component.ts ***!
-      \*******************************************************************************************************************************************************************************************/
-
-    /*! exports provided: default */
-
-    /***/
-    function j5fe(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony default export */
-
-
-      __webpack_exports__["default"] = "import { Component, OnInit } from \"@angular/core\";\nimport {\n    ChartAssist,\n    GaugeMode,\n    GaugeUtil,\n    IAccessors,\n    IChartAssistSeries,\n    IGaugeConfig,\n    IGaugeThresholdsConfig,\n} from \"@nova-ui/charts\";\n\n@Component({\n    selector: \"donut-gauge-without-threshold-markers-example\",\n    templateUrl: \"./donut-gauge-without-threshold-markers-example.component.html\",\n    styleUrls: [\"./donut-gauge-without-threshold-markers-example.component.less\"],\n})\nexport class DonutGaugeWithoutThresholdMarkersExampleComponent implements OnInit {\n    public chartAssist: ChartAssist;\n    public value = 128;\n    public gaugeConfig: IGaugeConfig;\n\n    private thresholds: IGaugeThresholdsConfig;\n    private seriesSet: IChartAssistSeries<IAccessors>[];\n\n    public ngOnInit(): void {\n        // Generating a standard set of thresholds with warning and critical levels\n        this.thresholds= GaugeUtil.createStandardThresholdsConfig(100, 158);\n\n        // Turning off the markers\n        this.thresholds.disableMarkers = true;\n\n        this.gaugeConfig = this.getGaugeConfig();\n        this.chartAssist = GaugeUtil.createChartAssist(this.gaugeConfig, GaugeMode.Donut);\n\n        this.seriesSet = GaugeUtil.assembleSeriesSet(this.gaugeConfig, GaugeMode.Donut);\n        this.chartAssist.update(this.seriesSet);\n    }\n\n    public onValueChange(value: number): void {\n        this.value = value;\n        this.updateGauge();\n    }\n\n    private updateGauge() {\n        this.gaugeConfig = this.getGaugeConfig();\n        this.seriesSet = GaugeUtil.update(this.seriesSet, this.gaugeConfig);\n        this.chartAssist.update(this.seriesSet);\n    }\n\n    private getGaugeConfig(): IGaugeConfig {\n        return {\n            value: this.value,\n            max: 200,\n            thresholds: this.thresholds,\n        };\n    }\n}\n";
-      /***/
-    },
-
-    /***/
     "j71K":
     /*!*******************************************************************************************************************************************************!*\
       !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/bar/bar-chart-horizontal/bar-chart-horizontal.example.component.ts ***!
@@ -3759,6 +3719,26 @@
     },
 
     /***/
+    "j72X":
+    /*!*************************************************************************************************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/donut/donut-with-custom-threshold-labels/donut-gauge-with-custom-threshold-labels.example.component.ts ***!
+      \*************************************************************************************************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function j72X(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "import { Component, OnInit } from \"@angular/core\";\nimport {\n    ChartAssist,\n    GaugeMode,\n    GaugeUtil,\n    IAccessors,\n    IChartAssistSeries,\n    IGaugeConfig,\n    IGaugeThresholdsConfig,\n} from \"@nova-ui/charts\";\n\n@Component({\n    selector: \"donut-gauge-with-custom-threshold-labels-example\",\n    templateUrl: \"./donut-gauge-with-custom-threshold-labels.example.component.html\",\n    styleUrls: [\"./donut-gauge-with-custom-threshold-labels.example.component.less\"],\n})\nexport class DonutGaugeWithCustomThresholdLabelsExampleComponent implements OnInit {\n    public chartAssist: ChartAssist;\n    public gaugeConfig: IGaugeConfig;\n\n    private seriesSet: IChartAssistSeries<IAccessors>[];\n    private thresholds: IGaugeThresholdsConfig = GaugeUtil.createStandardThresholdsConfig(50, 75);\n\n    public ngOnInit(): void {\n        const initialValue = 40;\n        this.gaugeConfig = this.getGaugeConfig(initialValue);\n        this.chartAssist = GaugeUtil.createChartAssist(this.gaugeConfig, GaugeMode.Donut);\n\n        this.seriesSet = GaugeUtil.assembleSeriesSet(this.gaugeConfig, GaugeMode.Donut);\n        this.chartAssist.update(this.seriesSet);\n    }\n\n    public onValueChange(value: number): void {\n        this.gaugeConfig = this.getGaugeConfig(value);\n        this.seriesSet = GaugeUtil.update(this.seriesSet, this.gaugeConfig);\n        this.chartAssist.update(this.seriesSet);\n    }\n\n    private getGaugeConfig(value: number): IGaugeConfig {\n        return {\n            value,\n            max: 100,\n            thresholds: this.thresholds,\n\n            // Setting a custom label formatter\n            labels: {\n                formatter: (d: string) => `${d}%`,\n\n                /**\n                 * Optionally specify a custom clearance in pixels for the labels if the\n                 * display strings are too long to fit within the default grid margins.\n                 */\n\n                // clearance: 35,\n            },\n        };\n    }\n}\n";
+      /***/
+    },
+
+    /***/
     "j9Gm":
     /*!*********************************************************************************************************************************************************!*\
       !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/bar/bar-chart-with-legend/bar-chart-with-legend.example.component.ts ***!
@@ -3775,26 +3755,6 @@
 
 
       __webpack_exports__["default"] = "import { Component, OnInit } from \"@angular/core\";\nimport { barAccessors, barGrid, BarRenderer, barScales, BarSeriesHighlightStrategy, Chart, ChartAssist } from \"@nova-ui/charts\";\n\n@Component({\n    selector: \"nui-bar-chart-with-legend-example\",\n    templateUrl: \"./bar-chart-with-legend.example.component.html\",\n})\nexport class BarChartWithLegendExampleComponent implements OnInit {\n    public barConfig = { horizontal: false };\n\n    // the usage of ChartAssist helps with connecting the chart with the legend\n    public chartAssist = new ChartAssist(new Chart(barGrid(this.barConfig)));\n\n    ngOnInit() {\n        const accessors = barAccessors(this.barConfig, this.chartAssist.palette.standardColors);\n        const renderer = new BarRenderer({\n            // highlightStrategy determines how the bar chart should manage highlighting.\n            // BarSeriesHighlightStrategy emphasizes the entire series on hovering a single bar,\n            // which also triggers emphasis on the legend tile.\n            highlightStrategy: new BarSeriesHighlightStrategy(\"x\" /* \"x\" determines which scale the highlight should be driven by */),\n        });\n        const scales = barScales(this.barConfig);\n\n        // it is important to update the chart via the chartAssist so that the legend is also updated\n        this.chartAssist.update(getData().map(s => ({\n            ...s,\n            accessors,\n            scales,\n            renderer,\n        })));\n    }\n}\n\n/* Chart data */\nfunction getData() {\n    return [\n        { id: \"chrome\", name: \"Chrome\", data: [66] },\n        { id: \"safari\", name: \"Safari\", data: [14] },\n        { id: \"firefox\", name: \"Firefox\", data: [5] },\n        { id: \"uc\", name: \"UC Browser\", data: [4] },\n        { id: \"opera\", name: \"Opera\", data: [3] },\n        { id: \"other\", name: \"Other\", data: [5] },\n    ];\n}\n";
-      /***/
-    },
-
-    /***/
-    "jRwM":
-    /*!**************************************************************************************************************************************************************************!*\
-      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/linear/linear-with-thresholds/linear-gauge-with-thresholds-example.component.ts ***!
-      \**************************************************************************************************************************************************************************/
-
-    /*! exports provided: default */
-
-    /***/
-    function jRwM(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony default export */
-
-
-      __webpack_exports__["default"] = "import { Component, OnInit } from \"@angular/core\";\nimport {\n    ChartAssist,\n    GaugeMode,\n    GaugeUtil,\n    IAccessors,\n    IChartAssistSeries,\n    IGaugeConfig,\n    IGaugeThresholdsConfig,\n} from \"@nova-ui/charts\";\n\n@Component({\n    selector: \"linear-gauge-with-thresholds-example\",\n    templateUrl: \"./linear-gauge-with-thresholds-example.component.html\",\n    styleUrls: [\"./linear-gauge-with-thresholds-example.component.less\"],\n})\nexport class LinearGaugeWithThresholdsExampleComponent implements OnInit {\n    public horizontalChartAssist: ChartAssist;\n    public verticalChartAssist: ChartAssist;\n    public gaugeConfig: IGaugeConfig;\n    public value = 64;\n\n    private thresholds: IGaugeThresholdsConfig;\n    private horizontalSeriesSet: IChartAssistSeries<IAccessors>[];\n    private verticalSeriesSet: IChartAssistSeries<IAccessors>[];\n\n    public ngOnInit(): void {\n        // Generating a standard set of thresholds with warning and critical levels\n        this.thresholds = GaugeUtil.createStandardThresholdsConfig(50, 79);\n\n        /**\n         * Optionally, instead of using the 'createStandardThresholdsConfig' function as above, you can manually create a thresholds\n         * config object like the following with as many or as few threshold definitions as you need.\n         */\n        // this.thresholds = {\n        //     definitions: {\n        //         [StandardGaugeThresholdId.Warning]: {\n        //             id: StandardGaugeThresholdId.Warning,\n        //             value: 50,\n        //             enabled: true,\n        //             color: StandardGaugeColor.Warning,\n        //         },\n        //         [StandardGaugeThresholdId.Critical]: {\n        //             id: StandardGaugeThresholdId.Critical,\n        //             value: 79,\n        //             enabled: true,\n        //             color: StandardGaugeColor.Critical,\n        //         },\n        //     },\n        //     reversed: false,\n        //     disableMarkers: false,\n        //     markerRadius: StandardGaugeThresholdMarkerRadius.Large,\n        // };\n\n        this.gaugeConfig = this.getGaugeConfig();\n\n        // Creating the horizontal gauge\n        this.horizontalChartAssist = GaugeUtil.createChartAssist(this.gaugeConfig, GaugeMode.Horizontal);\n        this.horizontalSeriesSet = GaugeUtil.assembleSeriesSet(this.gaugeConfig, GaugeMode.Horizontal);\n        this.horizontalChartAssist.update(this.horizontalSeriesSet);\n\n        // Creating the vertical gauge\n        this.verticalChartAssist = GaugeUtil.createChartAssist(this.gaugeConfig, GaugeMode.Vertical);\n        this.verticalSeriesSet = GaugeUtil.assembleSeriesSet(this.gaugeConfig, GaugeMode.Vertical);\n        this.verticalChartAssist.update(this.verticalSeriesSet);\n    }\n\n    public onValueChange(value: number): void {\n        this.value = value;\n        this.updateGauges();\n    }\n\n    private updateGauges() {\n        this.gaugeConfig = this.getGaugeConfig();\n\n        // Updating the horizontal gauge\n        this.horizontalSeriesSet = GaugeUtil.update(this.horizontalSeriesSet, this.gaugeConfig);\n        this.horizontalChartAssist.update(this.horizontalSeriesSet);\n\n        // Updating the vertical gauge\n        this.verticalSeriesSet = GaugeUtil.update(this.verticalSeriesSet, this.gaugeConfig);\n        this.verticalChartAssist.update(this.verticalSeriesSet);\n    }\n\n    private getGaugeConfig(): IGaugeConfig {\n        return {\n            value: this.value,\n            max: 100,\n\n            // Enabling the thresholds\n            thresholds: this.thresholds,\n        };\n    }\n}\n";
       /***/
     },
 
@@ -3835,46 +3795,6 @@
 
 
       __webpack_exports__["default"] = "<div class=\"d-flex flex-column\">\n    <div class=\"d-flex flex-fill w-100 h-100\">\n        <nui-chart class=\"w-100\" [chart]=\"chartAssist.chart\"></nui-chart>\n        <div class=\"d-flex flex-column pl-2\">\n            <nui-legend [active]=\"chartAssist.isLegendActive\">\n                <nui-legend-series [descriptionPrimary]=\"legendLabel$ | async | titlecase\"\n                                   descriptionSecondary=\"Secondary Text\" i18n-descriptionSecondary>\n                    <div class=\"custom-legend-tile d-flex justify-content-center align-items-center\" [ngStyle]=\"{backgroundColor: legendBackground$ | async}\">\n                        <nui-chart-marker [marker]=\"legendIcon$ | async\"></nui-chart-marker>\n                    </div>\n                </nui-legend-series>\n            </nui-legend>\n        </div>\n    </div>\n</div>\n";
-      /***/
-    },
-
-    /***/
-    "jmb1":
-    /*!************************************************************************************************************************************************************************************!*\
-      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/linear/linear-thickness-adjustment/linear-gauge-thickness-adjustment-example.component.ts ***!
-      \************************************************************************************************************************************************************************************/
-
-    /*! exports provided: default */
-
-    /***/
-    function jmb1(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony default export */
-
-
-      __webpack_exports__["default"] = "import { Component, OnInit } from \"@angular/core\";\nimport {\n    ChartAssist,\n    GaugeMode,\n    GaugeUtil,\n    IAccessors,\n    IChartAssistSeries,\n    IGaugeConfig,\n    IGaugeThresholdsConfig,\n    StandardGaugeThresholdMarkerRadius,\n    StandardLinearGaugeThickness,\n} from \"@nova-ui/charts\";\n\n@Component({\n    selector: \"linear-gauge-thickness-adjustment-example\",\n    templateUrl: \"./linear-gauge-thickness-adjustment-example.component.html\",\n    styleUrls: [\"./linear-gauge-thickness-adjustment-example.component.less\"],\n})\nexport class LinearGaugeThicknessAdjustmentExampleComponent implements OnInit {\n    public gaugeConfig: IGaugeConfig;\n    public horizontalChartAssist: ChartAssist;\n    public verticalChartAssist: ChartAssist;\n\n    public value = 64;\n    public compact = true;\n\n    private horizontalSeriesSet: IChartAssistSeries<IAccessors>[];\n    private verticalSeriesSet: IChartAssistSeries<IAccessors>[];\n\n    private thresholds: IGaugeThresholdsConfig = GaugeUtil.createStandardThresholdsConfig(50, 79);\n\n    public ngOnInit(): void {\n        // Setting the initial threshold marker radius\n        this.thresholds.markerRadius = this.compact ? StandardGaugeThresholdMarkerRadius.Small : StandardGaugeThresholdMarkerRadius.Large;\n\n        this.gaugeConfig = this.getGaugeConfig();\n\n        // Creating the horizontal gauge\n        this.horizontalChartAssist = GaugeUtil.createChartAssist(this.gaugeConfig, GaugeMode.Horizontal);\n        this.horizontalSeriesSet = GaugeUtil.assembleSeriesSet(this.gaugeConfig, GaugeMode.Horizontal);\n        this.horizontalChartAssist.update(this.horizontalSeriesSet);\n\n        // Creating the vertical gauge\n        this.verticalChartAssist = GaugeUtil.createChartAssist(this.gaugeConfig, GaugeMode.Vertical);\n        this.verticalSeriesSet = GaugeUtil.assembleSeriesSet(this.gaugeConfig, GaugeMode.Vertical);\n        this.verticalChartAssist.update(this.verticalSeriesSet);\n    }\n\n    public onValueChange(value: number): void {\n        this.value = value;\n        this.updateGauges();\n    }\n\n    public onCompactChange(compact: boolean): void {\n        this.compact = compact;\n\n        // Adjusting the threshold marker radius\n        this.thresholds.markerRadius = this.compact ? StandardGaugeThresholdMarkerRadius.Small : StandardGaugeThresholdMarkerRadius.Large;\n        this.updateGauges();\n\n        // Updating the thickness\n        this.updateThickness();\n    }\n\n    private updateThickness() {\n        // Using standard thicknesses based on whether the gauge is in compact mode\n        const thickness = this.compact ? StandardLinearGaugeThickness.Small : StandardLinearGaugeThickness.Large;\n\n        // Updating the horizontal gauge height with the desired gauge thickness in pixels\n        const horizontalGridConfig = this.horizontalChartAssist.chart.getGrid().config();\n        horizontalGridConfig.dimension.height(thickness);\n        this.horizontalChartAssist.chart.updateDimensions();\n\n        // Updating the vertical gauge width with the desired gauge thickness in pixels\n        const verticalGridConfig = this.verticalChartAssist.chart.getGrid().config();\n        verticalGridConfig.dimension.width(thickness);\n        this.verticalChartAssist.chart.updateDimensions();\n    }\n\n    private updateGauges() {\n        this.gaugeConfig = this.getGaugeConfig();\n\n        // Updating the horizontal gauge\n        this.horizontalSeriesSet = GaugeUtil.update(this.horizontalSeriesSet, this.gaugeConfig);\n        this.horizontalChartAssist.update(this.horizontalSeriesSet);\n\n        // Updating the vertical gauge\n        this.verticalSeriesSet = GaugeUtil.update(this.verticalSeriesSet, this.gaugeConfig);\n        this.verticalChartAssist.update(this.verticalSeriesSet);\n    }\n\n    private getGaugeConfig(): IGaugeConfig {\n        return {\n            value: this.value,\n            max: 100,\n            thresholds: this.thresholds,\n\n            // Setting the initial thickness based on whether the gauge is in compact mode\n            // The 'createChartAssist' function uses this to configure the grid's dimensions\n            linearThickness: this.compact ? StandardLinearGaugeThickness.Small : StandardLinearGaugeThickness.Large,\n        };\n    }\n}\n";
-      /***/
-    },
-
-    /***/
-    "jp58":
-    /*!*********************************************************************************************************************************************************************************************!*\
-      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/donut/donut-without-threshold-markers/donut-gauge-without-threshold-markers-example.component.html ***!
-      \*********************************************************************************************************************************************************************************************/
-
-    /*! exports provided: default */
-
-    /***/
-    function jp58(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony default export */
-
-
-      __webpack_exports__["default"] = "<div class=\"d-flex align-items-center justify-content-center flex-wrap\">\n    <nui-form-field class=\"d-block mb-5 demo__value-input\"\n                    caption=\"Value\" i18n-caption\n                    [showOptionalText]=\"false\">\n        <nui-textbox-number type=\"number\"\n                            [ngModel]=\"value\"\n                            (ngModelChange)=\"onValueChange($event)\"\n                            [minValue]=\"0\"\n                            [maxValue]=\"gaugeConfig.max\"\n                            customBoxWidth=\"75px\"></nui-textbox-number>\n    </nui-form-field>\n    <nui-chart class=\"demo__chart\" [chart]=\"chartAssist.chart\"></nui-chart>\n</div>\n";
       /***/
     },
 
@@ -4019,26 +3939,6 @@
     },
 
     /***/
-    "mDnq":
-    /*!***************************************************************************************************************************************************!*\
-      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/donut/donut-basic/donut-gauge-basic-example.component.ts ***!
-      \***************************************************************************************************************************************************/
-
-    /*! exports provided: default */
-
-    /***/
-    function mDnq(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony default export */
-
-
-      __webpack_exports__["default"] = "import { Component, OnInit } from \"@angular/core\";\nimport {\n    ChartAssist,\n    GaugeMode,\n    GaugeUtil,\n    IAccessors,\n    IChartAssistSeries,\n    IGaugeConfig,\n} from \"@nova-ui/charts\";\n\n@Component({\n    selector: \"donut-gauge-basic-example\",\n    templateUrl: \"./donut-gauge-basic-example.component.html\",\n    styleUrls: [\"./donut-gauge-basic-example.component.less\"],\n})\nexport class DonutGaugeBasicExampleComponent implements OnInit {\n    public chartAssist: ChartAssist;\n    public gaugeConfig: IGaugeConfig;\n\n    private seriesSet: IChartAssistSeries<IAccessors>[];\n\n    public ngOnInit(): void {\n        // Setting up the gauge config\n        const initialValue = 128;\n        this.gaugeConfig = this.getGaugeConfig(initialValue);\n\n        // Creating the chart assist\n        this.chartAssist = GaugeUtil.createChartAssist(this.gaugeConfig, GaugeMode.Donut);\n\n        // Assembling the series\n        this.seriesSet = GaugeUtil.assembleSeriesSet(this.gaugeConfig, GaugeMode.Donut);\n\n        // Updating the chart\n        this.chartAssist.update(this.seriesSet);\n    }\n\n    public onValueChange(value: number): void {\n        // Updating the gauge config\n        this.gaugeConfig = this.getGaugeConfig(value);\n\n        // Updating the series set with the new config\n        this.seriesSet = GaugeUtil.update(this.seriesSet, this.gaugeConfig);\n\n        // Updating the chart with the updated series set\n        this.chartAssist.update(this.seriesSet);\n    }\n\n    private getGaugeConfig(value: number): IGaugeConfig {\n        return {\n            value,\n            max: 200,\n\n            /**\n             * Optionally customize the default quantity color (defaults to StandardGaugeColor.Ok)\n             */\n\n            // defaultQuantityColor: \"var(--nui-color-semantic-ok)\",\n        };\n    }\n}\n";
-      /***/
-    },
-
-    /***/
     "mcih":
     /*!*******************************************************************************************************************************************!*\
       !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/pie-and-donut/pie-chart/pie-chart.example.component.ts ***!
@@ -4119,6 +4019,26 @@
     },
 
     /***/
+    "nZIx":
+    /*!************************************************************************************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/linear/linear-thickness-adjustment/linear-gauge-thickness-adjustment.example.component.ts ***!
+      \************************************************************************************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function nZIx(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "import { Component, OnInit } from \"@angular/core\";\nimport {\n    ChartAssist,\n    GaugeMode,\n    GaugeUtil,\n    IAccessors,\n    IChartAssistSeries,\n    IGaugeConfig,\n    IGaugeThresholdsConfig,\n    StandardGaugeThresholdMarkerRadius,\n    StandardLinearGaugeThickness,\n} from \"@nova-ui/charts\";\n\n@Component({\n    selector: \"linear-gauge-thickness-adjustment-example\",\n    templateUrl: \"./linear-gauge-thickness-adjustment.example.component.html\",\n    styleUrls: [\"./linear-gauge-thickness-adjustment.example.component.less\"],\n})\nexport class LinearGaugeThicknessAdjustmentExampleComponent implements OnInit {\n    public gaugeConfig: IGaugeConfig;\n    public horizontalChartAssist: ChartAssist;\n    public verticalChartAssist: ChartAssist;\n\n    public value = 64;\n    public compact = true;\n\n    private horizontalSeriesSet: IChartAssistSeries<IAccessors>[];\n    private verticalSeriesSet: IChartAssistSeries<IAccessors>[];\n\n    private thresholds: IGaugeThresholdsConfig = GaugeUtil.createStandardThresholdsConfig(50, 79);\n\n    public ngOnInit(): void {\n        // Setting the initial threshold marker radius\n        this.thresholds.markerRadius = this.compact ? StandardGaugeThresholdMarkerRadius.Small : StandardGaugeThresholdMarkerRadius.Large;\n\n        this.gaugeConfig = this.getGaugeConfig();\n\n        // Creating the horizontal gauge\n        this.horizontalChartAssist = GaugeUtil.createChartAssist(this.gaugeConfig, GaugeMode.Horizontal);\n        this.horizontalSeriesSet = GaugeUtil.assembleSeriesSet(this.gaugeConfig, GaugeMode.Horizontal);\n        this.horizontalChartAssist.update(this.horizontalSeriesSet);\n\n        // Creating the vertical gauge\n        this.verticalChartAssist = GaugeUtil.createChartAssist(this.gaugeConfig, GaugeMode.Vertical);\n        this.verticalSeriesSet = GaugeUtil.assembleSeriesSet(this.gaugeConfig, GaugeMode.Vertical);\n        this.verticalChartAssist.update(this.verticalSeriesSet);\n    }\n\n    public onValueChange(value: number): void {\n        this.value = value;\n        this.updateGauges();\n    }\n\n    public onCompactChange(compact: boolean): void {\n        this.compact = compact;\n\n        // Adjusting the threshold marker radius\n        this.thresholds.markerRadius = this.compact ? StandardGaugeThresholdMarkerRadius.Small : StandardGaugeThresholdMarkerRadius.Large;\n        this.updateGauges();\n\n        // Updating the thickness\n        this.updateThickness();\n    }\n\n    private updateThickness() {\n        // Using standard thicknesses based on whether the gauge is in compact mode\n        const thickness = this.compact ? StandardLinearGaugeThickness.Small : StandardLinearGaugeThickness.Large;\n\n        // Updating the horizontal gauge height with the desired gauge thickness in pixels\n        const horizontalGridConfig = this.horizontalChartAssist.chart.getGrid().config();\n        horizontalGridConfig.dimension.height(thickness);\n        this.horizontalChartAssist.chart.updateDimensions();\n\n        // Updating the vertical gauge width with the desired gauge thickness in pixels\n        const verticalGridConfig = this.verticalChartAssist.chart.getGrid().config();\n        verticalGridConfig.dimension.width(thickness);\n        this.verticalChartAssist.chart.updateDimensions();\n    }\n\n    private updateGauges() {\n        this.gaugeConfig = this.getGaugeConfig();\n\n        // Updating the horizontal gauge\n        this.horizontalSeriesSet = GaugeUtil.update(this.horizontalSeriesSet, this.gaugeConfig);\n        this.horizontalChartAssist.update(this.horizontalSeriesSet);\n\n        // Updating the vertical gauge\n        this.verticalSeriesSet = GaugeUtil.update(this.verticalSeriesSet, this.gaugeConfig);\n        this.verticalChartAssist.update(this.verticalSeriesSet);\n    }\n\n    private getGaugeConfig(): IGaugeConfig {\n        return {\n            value: this.value,\n            max: 100,\n            thresholds: this.thresholds,\n\n            // Setting the initial thickness based on whether the gauge is in compact mode\n            // The 'createChartAssist' function uses this to configure the grid's dimensions\n            linearThickness: this.compact ? StandardLinearGaugeThickness.Small : StandardLinearGaugeThickness.Large,\n        };\n    }\n}\n";
+      /***/
+    },
+
+    /***/
     "nuLn":
     /*!**********************************************************************************************************************************************************************!*\
       !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/waterfall/waterfall-advanced-charts/waterfall-chart-advanced.example.component.ts ***!
@@ -4135,6 +4055,46 @@
 
 
       __webpack_exports__["default"] = "import { CdkDragDrop, moveItemInArray } from \"@angular/cdk/drag-drop\";\nimport {\n    ConnectionPositionPair,\n    Overlay,\n    OverlayPositionBuilder,\n    OverlayRef,\n    PositionStrategy,\n    ScrollStrategyOptions,\n} from \"@angular/cdk/overlay\";\nimport { TemplatePortal } from \"@angular/cdk/portal\";\nimport {\n    AfterViewInit,\n    Component,\n    ElementRef,\n    HostListener,\n    OnInit,\n    TemplateRef,\n    ViewChild,\n    ViewContainerRef,\n} from \"@angular/core\";\nimport {\n    BandScale,\n    BarHighlightStrategy,\n    BarRenderer,\n    BarStatusGridConfig,\n    Chart,\n    ChartPalette,\n    CHART_PALETTE_CS1,\n    HorizontalBarAccessors,\n    ISetDomainEventPayload,\n    LinearScale,\n    MappedValueProvider,\n    NoopAccessors,\n    NoopRenderer,\n    SET_DOMAIN_EVENT,\n    XYGrid,\n    XYGridConfig,\n    ZoomPlugin,\n} from \"@nova-ui/charts\";\n\n/**\n * This is here just to test a prototype of angular component, that will use new chart core\n *\n * @ignore\n */\n@Component({\n    selector: \"nui-waterfall-chart-advanced-example\",\n    templateUrl: \"./waterfall-chart-advanced.example.component.html\",\n    styleUrls: [\"./waterfall-chart-advanced.example.component.less\"],\n})\nexport class WaterfallChartAdvancedComponent implements AfterViewInit, OnInit {\n    // Declaring chart config for charts in series\n    private seriesChartConfig = new BarStatusGridConfig({showBottomAxis: false});\n\n    // Icon and row sizes are used to properly place cdk overlay with grid over the chart\n    public iconSize: number = 20;\n    public rowSize: number = 200;\n\n    public palette = new ChartPalette(new MappedValueProvider<string>({\n        \"connect\": CHART_PALETTE_CS1[0],\n        \"dns\": CHART_PALETTE_CS1[1],\n        \"send\": CHART_PALETTE_CS1[2],\n        \"ttfb\": CHART_PALETTE_CS1[3],\n        \"cdownload\": CHART_PALETTE_CS1[4],\n    }));\n\n    public gridChart = new Chart(new XYGrid());\n\n    // We need both to properly handle portal and positioning for the cdk overlay\n    public positionStrategy: PositionStrategy;\n    public templatePortal: TemplatePortal<any>;\n    public listItems = getData(this.seriesChartConfig);\n\n    private scales: { x: LinearScale, y: BandScale };\n    private overlayRef: OverlayRef;\n\n    @ViewChild(\"templatePortalGrid\") templatePortalGrid: TemplateRef<any>;\n    @ViewChild(\"gridChartPlaceholder\") gridChartPlaceholder: ElementRef;\n\n    // This listener updates the grid position to follow the chart if client size changes on user interaction with the page.\n    // In case client size changes dynamically another solution is needed.\n    @HostListener(\"document:click\")\n    public updateGridPosition() {\n        this.overlayRef.updatePosition();\n    }\n\n    constructor(private overlay: Overlay,\n                private overlayPositionBuilder: OverlayPositionBuilder,\n                private _viewContainerRef: ViewContainerRef,\n                private scrollStrategyOptions: ScrollStrategyOptions) {\n    }\n\n    public ngOnInit() {\n        this.gridChart.addPlugin(new ZoomPlugin());\n\n        this.gridChart.getEventBus().getStream(SET_DOMAIN_EVENT).subscribe((event) => {\n            const payload = <ISetDomainEventPayload>event.data;\n            this.listItems.forEach(item => {\n                this.scales.x.fixDomain(payload[this.scales.x.id]);\n                item.chart.updateDimensions();\n            });\n        });\n    }\n\n    public ngAfterViewInit() {\n        // Here you configure the template portal and overlay\n\n        this.templatePortal = new TemplatePortal(this.templatePortalGrid, this._viewContainerRef);\n        const positions: ConnectionPositionPair[] =\n            [\n                {\n                    originX: \"start\",\n                    originY: \"top\",\n                    overlayX: \"start\",\n                    overlayY: \"top\",\n                },\n                {\n                    originX: \"start\",\n                    originY: \"top\",\n                    overlayX: \"start\",\n                    overlayY: \"top\",\n                },\n            ];\n\n        this.positionStrategy = this.overlay.position()\n            .flexibleConnectedTo(this.gridChartPlaceholder)\n            .withPositions(positions)\n            .withPush(false);\n\n        this.overlayRef = this.overlay.create({\n            positionStrategy: this.positionStrategy,\n            scrollStrategy: this.scrollStrategyOptions.reposition(),\n        });\n\n        const bandScale = new BandScale();\n        const linearScale = new LinearScale();\n        linearScale.fixDomain([0, 1000]);\n        bandScale.fixDomain([\"cat1\"]);\n\n        // Here you handle scales, assign colors via data accessors, and format series\n\n        this.scales = {\n            x: linearScale,\n            y: bandScale,\n        };\n        this.scales.x.formatters.tick = (value: number) => `${Number(value / 1000).toFixed(1)}s`;\n        const renderer = new BarRenderer({highlightStrategy: new BarHighlightStrategy(\"x\")});\n        const accessors = new HorizontalBarAccessors();\n        accessors.data.color = (d: any) => this.palette.standardColors.get(d.type);\n\n        let commonWidth = 0;\n\n        this.listItems.forEach(item => {\n            const seriesSet = [\n                {\n                    id: \"series-1\",\n                    name: \"Series 1\",\n                    data: item.data.map(d => ({\n                        value: d.end - d.start,\n                        start: d.start,\n                        end: d.end,\n                        category: \"cat1\",\n                        type: d.type,\n                    })),\n                    accessors,\n                    scales: this.scales,\n                    renderer,\n                }];\n\n            item.chart.update(seriesSet);\n\n            commonWidth = item.chart.getGrid().config().dimension.width(); // TODO: executed n times\n\n        });\n\n        // Here you configure grid\n\n        const config = this.gridChart.getGrid().config() as XYGridConfig;\n        // This handles the automatic resize of the grid depending on the number of series\n        // We also use the height defined by BarStatusGridConfig() at the very top for each chart in series.\n        config.dimension.height(this.listItems.length * this.seriesChartConfig.dimension.height());\n        config.dimension.width(commonWidth);\n        config.dimension.autoHeight = false; // We must disable this option to let the grid to properly adjust\n        config.axis.left.visible = false;\n        config.axis.left.gridTicks = false;\n        config.axis.bottom.gridTicks = true;\n\n        this.gridChart.update([\n            {\n                id: \"i am grid\",\n                name: \"i am grid\",\n                data: [],\n                accessors: new NoopAccessors(),\n                scales: this.scales,\n                renderer: new NoopRenderer(),\n            },\n        ]);\n\n        this.gridChart.updateDimensions();\n\n        this.overlayRef.attach(this.templatePortal);\n    }\n\n    drop(event: CdkDragDrop<string[]>) {\n        moveItemInArray(this.listItems, event.previousIndex, event.currentIndex);\n    }\n}\n\nfunction getData(config: XYGridConfig) {\n    return [\n        {\n            url: \"http://www.google.com\",\n            size: 924, // in Bytes\n            icon: \"xml-file\",\n            chart: new Chart(new XYGrid(config)),\n            data: [\n                {\n                    type: \"connect\",\n                    start: 0, // in ms\n                    end: 22,\n                },\n                {\n                    type: \"dns\",\n                    start: 22,\n                    end: 39,\n                },\n                {\n                    type: \"send\",\n                    start: 39,\n                    end: 59,\n                },\n                {\n                    type: \"ttfb\",\n                    start: 59,\n                    end: 109,\n                },\n                {\n                    type: \"cdownload\",\n                    start: 109,\n                    end: 178,\n                },\n            ],\n        }, {\n            url: \"http://www2.google.com\",\n            size: 924, // in Bytes\n            icon: \"xml-file\",\n            chart: new Chart(new XYGrid(config)),\n            data: [\n                {\n                    type: \"connect\",\n                    start: 0, // in ms\n                    end: 22,\n                },\n                {\n                    type: \"dns\",\n                    start: 22,\n                    end: 39,\n                },\n                {\n                    type: \"send\",\n                    start: 39,\n                    end: 59,\n                },\n                {\n                    type: \"ttfb\",\n                    start: 59,\n                    end: 109,\n                },\n                {\n                    type: \"cdownload\",\n                    start: 109,\n                    end: 788,\n                },\n            ],\n        },\n        {\n            url: \"http://www.google.com/cat.png\",\n            size: 3333, // in Bytes\n            icon: \"image\",\n            chart: new Chart(new XYGrid(config)),\n            data: [\n                {\n                    type: \"connect\",\n                    start: 178, // in ms\n                    end: 222,\n                },\n                {\n                    type: \"dns\",\n                    start: 222,\n                    end: 239,\n                },\n                {\n                    type: \"send\",\n                    start: 239,\n                    end: 259,\n                },\n                {\n                    type: \"ttfb\",\n                    start: 259,\n                    end: 309,\n                },\n                {\n                    type: \"cdownload\",\n                    start: 309,\n                    end: 578,\n                },\n            ],\n        },\n        {\n            url: \"http://www.google.com/revenge.png\",\n            size: 3333, // in Bytes\n            icon: \"image\",\n            chart: new Chart(new XYGrid(config)),\n            data: [\n                {\n                    type: \"connect\",\n                    start: 578, // in ms\n                    end: 590,\n                },\n                {\n                    type: \"dns\",\n                    start: 590,\n                    end: 799,\n                },\n                {\n                    type: \"send\",\n                    start: 799,\n                    end: 888,\n                },\n                {\n                    type: \"ttfb\",\n                    start: 888,\n                    end: 900,\n                },\n                {\n                    type: \"cdownload\",\n                    start: 900,\n                    end: 990,\n                },\n            ],\n        },\n    ];\n}\n";
+      /***/
+    },
+
+    /***/
+    "oWCq":
+    /*!*********************************************************************************************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/donut/donut-without-threshold-markers/donut-gauge-without-threshold-markers.example.component.html ***!
+      \*********************************************************************************************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function oWCq(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "<div class=\"d-flex align-items-center justify-content-center flex-wrap\">\n    <nui-form-field class=\"d-block mb-5 demo__value-input\"\n                    caption=\"Value\" i18n-caption\n                    [showOptionalText]=\"false\">\n        <nui-textbox-number type=\"number\"\n                            [ngModel]=\"value\"\n                            (ngModelChange)=\"onValueChange($event)\"\n                            [minValue]=\"0\"\n                            [maxValue]=\"gaugeConfig.max\"\n                            customBoxWidth=\"75px\"></nui-textbox-number>\n    </nui-form-field>\n    <nui-chart class=\"demo__chart\" [chart]=\"chartAssist.chart\"></nui-chart>\n</div>\n";
+      /***/
+    },
+
+    /***/
+    "oZgo":
+    /*!*********************************************************************************************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/donut/donut-without-threshold-markers/donut-gauge-without-threshold-markers.example.component.less ***!
+      \*********************************************************************************************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function oZgo(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = ".demo__value-input {\n    margin-right: 40px;\n}\n\n.demo__chart {\n    height: 190px;\n    width: 190px;\n}\n";
       /***/
     },
 
@@ -4199,6 +4159,26 @@
     },
 
     /***/
+    "prE6":
+    /*!*****************************************************************************************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/donut/donut-with-threshold-toggling/donut-gauge-with-threshold-toggling.example.component.html ***!
+      \*****************************************************************************************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function prE6(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "<div class=\"d-flex align-items-center justify-content-center flex-wrap\">\n    <div class=\"d-flex flex-column align-items-left mr-5\">\n        <nui-form-field class=\"d-block mb-5\"\n                        caption=\"Value\" i18n-caption\n                        [showOptionalText]=\"false\">\n            <nui-textbox-number type=\"number\"\n                                [ngModel]=\"value\"\n                                (ngModelChange)=\"onValueChange($event)\"\n                                [minValue]=\"0\"\n                                [maxValue]=\"gaugeConfig.max\"\n                                customBoxWidth=\"75px\"></nui-textbox-number>\n        </nui-form-field>\n        <nui-checkbox class=\"mb-2\"\n                      [ngModel]=\"warningEnabled\"\n                      (ngModelChange)=\"onWarningEnabledChange($event)\"\n                      i18n>\n            Warning Enabled\n        </nui-checkbox>\n        <nui-checkbox [ngModel]=\"criticalEnabled\"\n                      (ngModelChange)=\"onCriticalEnabledChange($event)\"\n                      i18n>\n            Critical Enabled\n        </nui-checkbox>\n    </div>\n    <nui-chart class=\"demo__chart\" [chart]=\"chartAssist.chart\"></nui-chart>\n</div>\n";
+      /***/
+    },
+
+    /***/
     "psX6":
     /*!****************************************************************************************************************************************************************************************!*\
       !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/bucketed-bar/bar-chart-test/proportional-vertical/proportional-vertical-bar-chart-test.component.ts ***!
@@ -4235,26 +4215,6 @@
 
 
       __webpack_exports__["default"] = "import { Component, OnInit } from \"@angular/core\";\nimport {\n    BandScale, barAccessors, barGrid, BarHighlightStrategy, BarRenderer, Chart, ChartAssist, InteractionLabelPlugin, INTERACTION_DATA_POINTS_EVENT, LinearScale,\n    Scales,\n    SELECT_DATA_POINT_EVENT,\n} from \"@nova-ui/charts\";\n\n@Component({\n    selector: \"nui-grouped-vertical-bar-chart-test\",\n    templateUrl: \"./grouped-vertical-bar-chart-test.component.html\",\n})\n\nexport class GroupedVerticalBarChartTestComponent implements OnInit {\n    public chartAssist: ChartAssist;\n    public accessors = barAccessors();\n\n    ngOnInit() {\n        const chart = new Chart(barGrid());\n\n        // We're manually adding Interaction Label plugin (without Interaction Line plugin) to have only label\n        chart.addPlugin(new InteractionLabelPlugin());\n\n        const bandScale = new BandScale();\n        bandScale.padding(0.25);\n        bandScale.innerScale = new BandScale();\n\n        const linearScale = new LinearScale();\n        const renderer = new BarRenderer({ highlightStrategy: new BarHighlightStrategy(\"x\") });\n\n        this.accessors.data.category = (data: any) => [data.name, data.subCategory];\n\n        this.chartAssist = new ChartAssist(chart);\n\n        const scales: Scales = {\n            x: bandScale,\n            y: linearScale,\n        };\n\n        const mappedSeries = getData().map(d => ({\n            ...d,\n            accessors: this.accessors,\n            renderer,\n            scales,\n        }));\n\n        // Sample events that can be used in order to handle click or highlighting of certain status\n        chart.getEventBus().getStream(INTERACTION_DATA_POINTS_EVENT).subscribe(console.log);\n        chart.getEventBus().getStream(SELECT_DATA_POINT_EVENT).subscribe(console.log);\n\n        this.chartAssist.update(mappedSeries);\n    }\n}\n\n/* Chart data */\nfunction getData() {\n    return [\n        {\n            \"id\": \"Brno\",\n            \"name\": \"Brno\",\n            \"data\": [\n                {\n                    \"name\": \"Q1 2018\",\n                    \"subCategory\": \"Brno\",\n                    \"value\": 167,\n                },\n                {\n                    \"name\": \"Q2 2018\",\n                    \"subCategory\": \"Brno\",\n                    \"value\": 122,\n                },\n                {\n                    \"name\": \"Q3 2018\",\n                    \"subCategory\": \"Brno\",\n                    \"value\": 141,\n                },\n                {\n                    \"name\": \"Q4 2018\",\n                    \"subCategory\": \"Brno\",\n                    \"value\": 66,\n                },\n            ],\n        },\n        {\n            \"id\": \"Austin\",\n            \"name\": \"Austin\",\n            \"data\": [\n                {\n                    \"name\": \"Q1 2018\",\n                    \"subCategory\": \"Austin\",\n                    \"value\": 167,\n                },\n                {\n                    \"name\": \"Q2 2018\",\n                    \"subCategory\": \"Austin\",\n                    \"value\": 198,\n                },\n                {\n                    \"name\": \"Q3 2018\",\n                    \"subCategory\": \"Austin\",\n                    \"value\": 208,\n                },\n                {\n                    \"name\": \"Q4 2018\",\n                    \"subCategory\": \"Austin\",\n                    \"value\": 233,\n                },\n            ],\n        },\n        {\n            \"id\": \"Edinburgh\",\n            \"name\": \"Edinburgh\",\n            \"data\": [\n                {\n                    \"name\": \"Q1 2018\",\n                    \"subCategory\": \"Edinburgh\",\n                    \"value\": 167,\n                },\n                // sparse data is handled as well\n                // {\n                //     \"name\": \"Q2 2018\",\n                //     \"subCategory\": \"Edinburgh\",\n                //     \"value\": 15,\n                // },\n                {\n                    \"name\": \"Q3 2018\",\n                    \"subCategory\": \"Edinburgh\",\n                    \"value\": 208,\n                },\n                {\n                    \"name\": \"Q4 2018\",\n                    \"subCategory\": \"Edinburgh\",\n                    \"value\": 123,\n                },\n            ],\n        },\n        {\n            \"id\": \"Newcastle\",\n            \"name\": \"Newcastle\",\n            \"data\": [\n                {\n                    \"name\": \"Q1 2018\",\n                    \"subCategory\": \"Newcastle\",\n                    \"value\": 11,\n                },\n                {\n                    \"name\": \"Q2 2018\",\n                    \"subCategory\": \"Newcastle\",\n                    \"value\": 99,\n                },\n                {\n                    \"name\": \"Q3 2018\",\n                    \"subCategory\": \"Newcastle\",\n                    \"value\": 17,\n                },\n                {\n                    \"name\": \"Q4 2018\",\n                    \"subCategory\": \"Newcastle\",\n                    \"value\": 25,\n                },\n            ],\n        },\n        {\n            \"id\": \"Kyiv\",\n            \"name\": \"Kyiv\",\n            \"data\": [\n                {\n                    \"name\": \"Q1 2018\",\n                    \"subCategory\": \"Kyiv\",\n                    \"value\": 121,\n                },\n                {\n                    \"name\": \"Q2 2018\",\n                    \"subCategory\": \"Kyiv\",\n                    \"value\": 222,\n                },\n                {\n                    \"name\": \"Q3 2018\",\n                    \"subCategory\": \"Kyiv\",\n                    \"value\": 319,\n                },\n                {\n                    \"name\": \"Q4 2018\",\n                    \"subCategory\": \"Kyiv\",\n                    \"value\": 328,\n                },\n            ],\n        },\n    ];\n}\n";
-      /***/
-    },
-
-    /***/
-    "r3Ox":
-    /*!*************************************************************************************************************************************************************************************************!*\
-      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/donut/donut-with-custom-threshold-labels/donut-gauge-with-custom-threshold-labels-example.component.ts ***!
-      \*************************************************************************************************************************************************************************************************/
-
-    /*! exports provided: default */
-
-    /***/
-    function r3Ox(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony default export */
-
-
-      __webpack_exports__["default"] = "import { Component, OnInit } from \"@angular/core\";\nimport {\n    ChartAssist,\n    GaugeMode,\n    GaugeUtil,\n    IAccessors,\n    IChartAssistSeries,\n    IGaugeConfig,\n    IGaugeThresholdsConfig,\n} from \"@nova-ui/charts\";\n\n@Component({\n    selector: \"donut-gauge-with-custom-threshold-labels-example\",\n    templateUrl: \"./donut-gauge-with-custom-threshold-labels-example.component.html\",\n    styleUrls: [\"./donut-gauge-with-custom-threshold-labels-example.component.less\"],\n})\nexport class DonutGaugeWithCustomThresholdLabelsExampleComponent implements OnInit {\n    public chartAssist: ChartAssist;\n    public gaugeConfig: IGaugeConfig;\n\n    private seriesSet: IChartAssistSeries<IAccessors>[];\n    private thresholds: IGaugeThresholdsConfig = GaugeUtil.createStandardThresholdsConfig(50, 75);\n\n    public ngOnInit(): void {\n        const initialValue = 40;\n        this.gaugeConfig = this.getGaugeConfig(initialValue);\n        this.chartAssist = GaugeUtil.createChartAssist(this.gaugeConfig, GaugeMode.Donut);\n\n        this.seriesSet = GaugeUtil.assembleSeriesSet(this.gaugeConfig, GaugeMode.Donut);\n        this.chartAssist.update(this.seriesSet);\n    }\n\n    public onValueChange(value: number): void {\n        this.gaugeConfig = this.getGaugeConfig(value);\n        this.seriesSet = GaugeUtil.update(this.seriesSet, this.gaugeConfig);\n        this.chartAssist.update(this.seriesSet);\n    }\n\n    private getGaugeConfig(value: number): IGaugeConfig {\n        return {\n            value,\n            max: 100,\n            thresholds: this.thresholds,\n\n            // Setting a custom label formatter\n            labels: {\n                formatter: (d: string) => `${d}%`,\n\n                /**\n                 * Optionally specify a custom clearance in pixels for the labels if the\n                 * display strings are too long to fit within the default grid margins.\n                 */\n\n                // clearance: 35,\n            },\n        };\n    }\n}\n";
       /***/
     },
 
@@ -4359,22 +4319,22 @@
     },
 
     /***/
-    "uxvK":
-    /*!**************************************************************************************************************************************************************!*\
-      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/linear/horizontal-basic/horizontal-gauge-basic-example.component.ts ***!
-      \**************************************************************************************************************************************************************/
+    "uiEO":
+    /*!**************************************************************************************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/linear/linear-thickness-adjustment/linear-gauge-thickness-adjustment.example.component.html ***!
+      \**************************************************************************************************************************************************************************************/
 
     /*! exports provided: default */
 
     /***/
-    function uxvK(module, __webpack_exports__, __webpack_require__) {
+    function uiEO(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "import { Component, OnInit } from \"@angular/core\";\nimport {\n    ChartAssist,\n    GaugeMode,\n    GaugeUtil,\n    IAccessors,\n    IChartAssistSeries,\n    IGaugeConfig,\n} from \"@nova-ui/charts\";\n\n@Component({\n    selector: \"horizontal-gauge-basic-example\",\n    templateUrl: \"./horizontal-gauge-basic-example.component.html\",\n    styleUrls: [\"./horizontal-gauge-basic-example.component.less\"],\n})\nexport class HorizontalGaugeBasicExampleComponent implements OnInit {\n    public chartAssist: ChartAssist;\n    public gaugeConfig: IGaugeConfig;\n\n    private seriesSet: IChartAssistSeries<IAccessors>[];\n\n    public ngOnInit(): void {\n        // Setting up the gauge config\n        const initialValue = 64;\n        this.gaugeConfig = this.getGaugeConfig(initialValue);\n\n        // Creating the chart assist\n        this.chartAssist = GaugeUtil.createChartAssist(this.gaugeConfig, GaugeMode.Horizontal);\n\n        // Assembling the series\n        this.seriesSet = GaugeUtil.assembleSeriesSet(this.gaugeConfig, GaugeMode.Horizontal);\n\n        // Updating the chart\n        this.chartAssist.update(this.seriesSet);\n    }\n\n    public onValueChange(value: number): void {\n        // Updating the gauge config\n        this.gaugeConfig = this.getGaugeConfig(value);\n\n        // Updating the series set with the new config\n        this.seriesSet = GaugeUtil.update(this.seriesSet, this.gaugeConfig);\n\n        // Updating the chart with the updated series set\n        this.chartAssist.update(this.seriesSet);\n    }\n\n    private getGaugeConfig(value: number): IGaugeConfig {\n        return {\n            value,\n            max: 100,\n\n            /**\n             * Optionally customize the default quantity color (defaults to StandardGaugeColor.Ok)\n             */\n\n            // defaultQuantityColor: \"var(--nui-color-semantic-ok)\",\n        };\n    }\n}\n";
+      __webpack_exports__["default"] = "<div class=\"d-flex justify-content-center align-items-center flex-wrap\">\n    <div class=\"demo__inputs\">\n        <nui-form-field class=\"d-block mb-5\"\n                        caption=\"Value\" i18n-caption\n                        [showOptionalText]=\"false\">\n            <nui-textbox-number type=\"number\"\n                                [ngModel]=\"value\"\n                                (ngModelChange)=\"onValueChange($event)\"\n                                [minValue]=\"0\"\n                                [maxValue]=\"gaugeConfig.max\"\n                                customBoxWidth=\"75px\"></nui-textbox-number>\n        </nui-form-field>\n        <nui-checkbox class=\"d-block mb-5\"\n                      [ngModel]=\"compact\"\n                      (ngModelChange)=\"onCompactChange($event)\"\n                      i18n>\n            Compact Thickness\n        </nui-checkbox>\n    </div>\n    <div class=\"demo__charts d-flex justify-content-between align-items-center\">\n        <nui-chart class=\"demo__vertical-chart\" [chart]=\"verticalChartAssist.chart\"></nui-chart>\n        <nui-chart class=\"ml-5 demo__horizontal-chart\" [chart]=\"horizontalChartAssist.chart\"></nui-chart>\n    </div>\n</div>\n";
       /***/
     },
 
@@ -4459,6 +4419,26 @@
     },
 
     /***/
+    "vdeH":
+    /*!****************************************************************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/linear/horizontal-basic/horizontal-gauge-basic.example.component.less ***!
+      \****************************************************************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function vdeH(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = ".demo__value-input {\n    margin-right: 40px;\n}\n\n// Setting the width on the chart element determines the horizontal length of the gauge\n.demo__chart {\n    width: 200px;\n}\n";
+      /***/
+    },
+
+    /***/
     "wITR":
     /*!********************************************************************************************************************************************!*\
       !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/visual-test/donut/donut-gauge-tester.component.ts ***!
@@ -4495,26 +4475,6 @@
 
 
       __webpack_exports__["default"] = "import { Component, OnInit } from \"@angular/core\";\nimport {\n    barAccessors, barGrid, BarHighlightStrategy, BarRenderer, barScales, BarTooltipsPlugin, Chart, ChartAssist, IBarChartConfig, InteractionLabelPlugin,\n} from \"@nova-ui/charts\";\n\n@Component({\n    selector: \"nui-bar-chart-grouped-example\",\n    templateUrl: \"./bar-chart-grouped.example.component.html\",\n})\nexport class BarChartGroupedExampleComponent implements OnInit {\n    public chartAssist: ChartAssist;\n    public tooltipsPlugin = new BarTooltipsPlugin();\n    public config = { grouped: true, horizontal: false } as IBarChartConfig;\n\n    ngOnInit() {\n        const chart = new Chart(barGrid(this.config));\n        this.chartAssist = new ChartAssist(chart);\n\n        // We're manually adding Interaction Label plugin (without Interaction Line plugin) to have only label\n        chart.addPlugin(new InteractionLabelPlugin());\n        chart.addPlugin(this.tooltipsPlugin);\n\n        // 1. Call the convenience function to create bar chart scales. Like this:\n        const scales = barScales(this.config);\n\n        const renderer = new BarRenderer({ highlightStrategy: new BarHighlightStrategy(\"x\") });\n\n        // 2. Make your category accessor to return the value like [ category, subCategory ]\n        const accessors = barAccessors(this.config);\n        accessors.data.category = (data, i, series, dataSeries) => [data.name, dataSeries.name];\n\n        this.chartAssist.update(getData().map(s => ({\n            ...s,\n            accessors,\n            renderer,\n            scales,\n        })));\n    }\n}\n\n/* Chart data */\nfunction getData() {\n    return [\n        {\n            \"id\": \"Brno\",\n            \"name\": \"Brno\",\n            \"data\": [\n                { \"name\": \"Q1 2018\", \"value\": 167 },\n                { \"name\": \"Q2 2018\", \"value\": 122 },\n                { \"name\": \"Q3 2018\", \"value\": 141 },\n                { \"name\": \"Q4 2018\", \"value\": 66 },\n            ],\n        },\n        {\n            \"id\": \"Austin\",\n            \"name\": \"Austin\",\n            \"data\": [\n                { \"name\": \"Q1 2018\", \"value\": 167 },\n                { \"name\": \"Q2 2018\", \"value\": 198 },\n                { \"name\": \"Q3 2018\", \"value\": 208 },\n                { \"name\": \"Q4 2018\", \"value\": 233 },\n            ],\n        },\n        {\n            \"id\": \"Edinburgh\",\n            \"name\": \"Edinburgh\",\n            \"data\": [\n                { \"name\": \"Q1 2018\", \"value\": 167 },\n                // sparse data is handled as well\n                // { \"name\": \"Q2 2018\", \"value\": 15 },\n                { \"name\": \"Q3 2018\", \"value\": 208 },\n                { \"name\": \"Q4 2018\", \"value\": 123 },\n            ],\n        },\n        {\n            \"id\": \"Newcastle\",\n            \"name\": \"Newcastle\",\n            \"data\": [\n                { \"name\": \"Q1 2018\", \"value\": 11 },\n                { \"name\": \"Q2 2018\", \"value\": 99 },\n                { \"name\": \"Q3 2018\", \"value\": 17 },\n                { \"name\": \"Q4 2018\", \"value\": 25 },\n            ],\n        },\n        {\n            \"id\": \"Kyiv\",\n            \"name\": \"Kyiv\",\n            \"data\": [\n                { \"name\": \"Q1 2018\", \"value\": 121 },\n                { \"name\": \"Q2 2018\", \"value\": 222 },\n                { \"name\": \"Q3 2018\", \"value\": 319 },\n                { \"name\": \"Q4 2018\", \"value\": 328 },\n            ],\n        },\n    ];\n}\n";
-      /***/
-    },
-
-    /***/
-    "wSIz":
-    /*!*************************************************************************************************************************************************************************!*\
-      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/donut/donut-with-thresholds/donut-gauge-with-thresholds-example.component.html ***!
-      \*************************************************************************************************************************************************************************/
-
-    /*! exports provided: default */
-
-    /***/
-    function wSIz(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony default export */
-
-
-      __webpack_exports__["default"] = "<div class=\"d-flex align-items-center justify-content-center flex-wrap\">\n    <div class=\"d-flex flex-column align-items-left mr-5\">\n        <nui-form-field class=\"d-block mb-5\"\n                        caption=\"Value\" i18n-caption\n                        [showOptionalText]=\"false\">\n            <nui-textbox-number type=\"number\"\n                                [ngModel]=\"value\"\n                                (ngModelChange)=\"onValueChange($event)\"\n                                [minValue]=\"0\"\n                                [maxValue]=\"gaugeConfig.max\"\n                                customBoxWidth=\"75px\"></nui-textbox-number>\n        </nui-form-field>\n        <nui-checkbox [ngModel]=\"reversed\"\n                      (ngModelChange)=\"onReversedChange($event)\"\n                      i18n>\n            Reversed Thresholds\n        </nui-checkbox>\n    </div>\n    <nui-chart class=\"demo__chart\" [chart]=\"chartAssist.chart\"></nui-chart>\n</div>\n";
       /***/
     },
 
@@ -4595,6 +4555,26 @@
 
 
       __webpack_exports__["default"] = "import { Component, OnInit } from \"@angular/core\";\nimport {\n    Chart, ChartAssist, IChartSeries, ILineAccessors, IXYScales, LineAccessors, LinearScale, LineRenderer, LineSelectSeriesInteractionStrategy, TimeScale,\n    XYGrid,\n} from \"@nova-ui/charts\";\nimport moment from \"moment/moment\";\n\n@Component({\n    selector: \"nui-line-chart-with-rich-tile-legend-example\",\n    templateUrl: \"./line-chart-with-rich-tile-legend.example.component.html\",\n})\nexport class LineChartWithRichTileLegendExampleComponent implements OnInit {\n    public chart = new Chart(new XYGrid());\n    public chartAssist: ChartAssist = new ChartAssist(this.chart);\n\n    public ngOnInit() {\n        // providing chartAssist colors and markers to LineAccessors will share them with the line chart\n        const accessors = new LineAccessors(this.chartAssist.palette.standardColors, this.chartAssist.markers);\n        const renderer = new LineRenderer({\n            // for series interaction and ability to handle click configure renderer with interactionStrategy\n            interactionStrategy: new LineSelectSeriesInteractionStrategy(),\n        });\n        const scales: IXYScales = {\n            x: new TimeScale(),\n            y: new LinearScale(),\n        };\n\n        const seriesSet: IChartSeries<ILineAccessors>[] = getData().map(d => ({\n            ...d,\n            scales,\n            renderer,\n            accessors,\n        }));\n\n        // chart assist needs to be used to update data\n        this.chartAssist.update(seriesSet);\n    }\n}\n\n/* Chart data */\nfunction getData() {\n    const format = \"YYYY-MM-DDTHH:mm:ssZ\";\n\n    return [\n        {\n            id: \"series-1\",\n            name: \"Series 1\",\n            data: [\n                { x: moment(\"2016-12-25T15:14:29.909Z\", format), y: 130 },\n                { x: moment(\"2016-12-27T15:14:29.909Z\", format), y: 195 },\n                { x: moment(\"2016-12-29T15:14:29.909Z\", format), y: 115 },\n                { x: moment(\"2016-12-31T15:14:29.909Z\", format), y: 160 },\n                { x: moment(\"2017-01-03T15:14:29.909Z\", format), y: 135 },\n            ],\n        },\n        {\n            id: \"series-2\",\n            name: \"Series 2\",\n            data: [\n                { x: moment(\"2016-12-25T15:14:29.909Z\", format), y: 60 },\n                { x: moment(\"2016-12-27T15:14:29.909Z\", format), y: 40 },\n                { x: moment(\"2016-12-29T15:14:29.909Z\", format), y: 70 },\n                { x: moment(\"2016-12-31T15:14:29.909Z\", format), y: 45 },\n                { x: moment(\"2017-01-03T15:14:29.909Z\", format), y: 90 },\n            ],\n        },\n    ];\n}\n";
+      /***/
+    },
+
+    /***/
+    "xbL6":
+    /*!***********************************************************************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/donut/donut-with-thresholds/donut-gauge-with-thresholds.example.component.ts ***!
+      \***********************************************************************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function xbL6(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "import { Component, OnInit } from \"@angular/core\";\nimport {\n    ChartAssist,\n    GaugeMode,\n    GaugeUtil,\n    IAccessors,\n    IChartAssistSeries,\n    IGaugeConfig,\n    IGaugeThresholdsConfig,\n    StandardGaugeThresholdId,\n} from \"@nova-ui/charts\";\n\n@Component({\n    selector: \"donut-gauge-with-thresholds-example\",\n    templateUrl: \"./donut-gauge-with-thresholds.example.component.html\",\n    styleUrls: [\"./donut-gauge-with-thresholds.example.component.less\"],\n})\nexport class DonutGaugeWithThresholdsExampleComponent implements OnInit {\n    public chartAssist: ChartAssist;\n    public gaugeConfig: IGaugeConfig;\n    public value = 178;\n    public reversed = false;\n\n    private thresholds: IGaugeThresholdsConfig;\n    private seriesSet: IChartAssistSeries<IAccessors>[];\n\n    private lowThreshold = 100;\n    private highThreshold = 158;\n\n    public ngOnInit(): void {\n        // Generating a standard set of thresholds with warning and critical levels\n        this.thresholds = GaugeUtil.createStandardThresholdsConfig(this.lowThreshold, this.highThreshold);\n\n        /**\n         * Optionally, instead of using the 'createStandardThresholdsConfig' function as above, you can manually create a thresholds\n         * config object like the following with as many or as few threshold definitions as you need.\n         */\n        // this.thresholds = {\n        //     definitions: {\n        //         [StandardGaugeThresholdId.Warning]: {\n        //             id: StandardGaugeThresholdId.Warning,\n        //             value: this.lowThreshold,\n        //             enabled: true,\n        //             color: StandardGaugeColor.Warning,\n        //         },\n        //         [StandardGaugeThresholdId.Critical]: {\n        //             id: StandardGaugeThresholdId.Critical,\n        //             value: this.highThreshold,\n        //             enabled: true,\n        //             color: StandardGaugeColor.Critical,\n        //         },\n        //     },\n        //     reversed: false,\n        //     disableMarkers: false,\n        //     markerRadius: StandardGaugeThresholdMarkerRadius.Large,\n        // };\n\n        this.gaugeConfig = this.getGaugeConfig();\n        this.chartAssist = GaugeUtil.createChartAssist(this.gaugeConfig, GaugeMode.Donut);\n\n        this.seriesSet = GaugeUtil.assembleSeriesSet(this.gaugeConfig, GaugeMode.Donut);\n        this.chartAssist.update(this.seriesSet);\n    }\n\n    public onValueChange(value: number): void {\n        this.value = value;\n        this.updateGauge();\n    }\n\n    public onReversedChange(reversed: boolean): void {\n        this.reversed = reversed;\n        this.thresholds.reversed = reversed;\n\n        // swap the values of the warning and critical thresholds\n        this.thresholds.definitions[StandardGaugeThresholdId.Warning].value = this.reversed ? this.highThreshold : this.lowThreshold;\n        this.thresholds.definitions[StandardGaugeThresholdId.Critical].value = this.reversed ? this.lowThreshold : this.highThreshold;\n\n        this.updateGauge();\n    }\n\n    private updateGauge() {\n        this.gaugeConfig = this.getGaugeConfig();\n        this.seriesSet = GaugeUtil.update(this.seriesSet, this.gaugeConfig);\n        this.chartAssist.update(this.seriesSet);\n    }\n\n    private getGaugeConfig(): IGaugeConfig {\n        return {\n            value: this.value,\n            max: 200,\n\n            // Enabling the thresholds\n            thresholds: this.thresholds,\n        };\n    }\n}\n";
       /***/
     },
 
@@ -4699,22 +4679,22 @@
     },
 
     /***/
-    "z2tb":
-    /*!*****************************************************************************************************************************************************!*\
-      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/donut/donut-basic/donut-gauge-basic-example.component.less ***!
-      \*****************************************************************************************************************************************************/
+    "z8Cb":
+    /*!*******************************************************************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/donut/donut-with-content/donut-gauge-with-content.example.component.html ***!
+      \*******************************************************************************************************************************************************************/
 
     /*! exports provided: default */
 
     /***/
-    function z2tb(module, __webpack_exports__, __webpack_require__) {
+    function z8Cb(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = ".demo__value-input {\n    margin-right: 40px;\n}\n\n.demo__chart {\n    height: 200px;\n    width: 200px;\n}\n";
+      __webpack_exports__["default"] = "<div class=\"d-flex align-items-center justify-content-center flex-wrap\">\n    <nui-form-field class=\"d-block mr-5\"\n                    caption=\"Value\" i18n-caption\n                    [showOptionalText]=\"false\">\n        <nui-textbox-number type=\"number\"\n                            [ngModel]=\"gaugeConfig.value\"\n                            (ngModelChange)=\"onValueChange($event)\"\n                            [minValue]=\"0\"\n                            [maxValue]=\"gaugeConfig.max\"\n                            customBoxWidth=\"75px\"></nui-textbox-number>\n    </nui-form-field>\n    <div class=\"d-flex\">\n        <nui-chart class=\"demo__chart\" [chart]=\"chartAssist.chart\"></nui-chart>\n\n        <!-- Inner content template -->\n        <nui-chart-donut-content style=\"position: absolute;\"\n                                 [plugin]=\"contentPlugin\">\n            <div class=\"h-100 w-100 d-flex flex-column justify-content-center align-items-center text-center\">\n                <div class=\"d-inline-block\" nuiZoomContent [zoomRatio]=\"0.65\">\n                    {{gaugeConfig.value | number:'1.0-0'}}\n                </div>\n                <div class=\"demo__content-label\" i18n>Network Latency</div>\n                <div class=\"demo__content-label\" i18n>(ms)</div>\n            </div>\n        </nui-chart-donut-content>\n    </div>\n</div>\n";
       /***/
     },
 
@@ -4775,6 +4755,26 @@
 
 
       __webpack_exports__["default"] = "import { Component } from \"@angular/core\";\n\n@Component({\n    selector: \"area-chart-test\",\n    templateUrl: \"./area-chart-test.component.html\",\n})\nexport class AreaChartTestComponent {\n\n}\n";
+      /***/
+    },
+
+    /***/
+    "ziUA":
+    /*!************************************************************************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./examples/components/demo/chart-types/gauge/linear/vertical-basic/vertical-gauge-basic.example.component.less ***!
+      \************************************************************************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function ziUA(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = ".demo__value-input {\n    margin-right: 40px;\n}\n\n// Setting the height on the chart element determines the vertical length of the gauge\n.demo__chart {\n    height: 200px;\n}\n";
       /***/
     },
 

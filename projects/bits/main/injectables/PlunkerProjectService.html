@@ -202,8 +202,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="66"
-                            class="link-to-prism">src/lib/docs/example-wrapper/plunker-project.service.ts:66</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="75"
+                            class="link-to-prism">src/lib/docs/example-wrapper/plunker-project.service.ts:75</a></div>
                 </td>
             </tr>
 
@@ -252,7 +252,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>        <code><a href="../miscellaneous/typealiases.html#Element" target="_self" >HTMLInputElement</a></code>
 
                     </div>
                     <div class="io-description">
@@ -286,8 +286,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="61"
-                            class="link-to-prism">src/lib/docs/example-wrapper/plunker-project.service.ts:61</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="70"
+                            class="link-to-prism">src/lib/docs/example-wrapper/plunker-project.service.ts:70</a></div>
                 </td>
             </tr>
 
@@ -296,7 +296,7 @@
                 <td class="col-md-4">
 
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>        <code><a href="../miscellaneous/typealiases.html#Element" target="_self" >HTMLInputElement</a></code>
 
                     </div>
                 </td>
@@ -327,8 +327,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="53"
-                            class="link-to-prism">src/lib/docs/example-wrapper/plunker-project.service.ts:53</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="62"
+                            class="link-to-prism">src/lib/docs/example-wrapper/plunker-project.service.ts:62</a></div>
                 </td>
             </tr>
 
@@ -337,7 +337,7 @@
                 <td class="col-md-4">
 
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>        <code><a href="../miscellaneous/typealiases.html#Element" target="_self" >HTMLInputElement</a></code>
 
                     </div>
                 </td>
@@ -368,8 +368,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="57"
-                            class="link-to-prism">src/lib/docs/example-wrapper/plunker-project.service.ts:57</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="66"
+                            class="link-to-prism">src/lib/docs/example-wrapper/plunker-project.service.ts:66</a></div>
                 </td>
             </tr>
 
@@ -378,7 +378,7 @@
                 <td class="col-md-4">
 
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>        <code><a href="../miscellaneous/typealiases.html#Element" target="_self" >HTMLInputElement</a></code>
 
                     </div>
                 </td>
@@ -402,7 +402,7 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>open(prefix: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, sources: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, translations?: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                    <code>open(prefix: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, sources: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, translations?: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
                 </td>
             </tr>
 
@@ -432,7 +432,7 @@
                                 <tr>
                                     <td>prefix</td>
                                     <td>
-                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                     </td>
 
                                     <td>
@@ -502,18 +502,27 @@ export class PlunkerProjectService {
         private plunkerFiles: PlunkerFiles
     ) {}
 
-    public open(prefix: any, sources: any, translations?: any) {
+    public open(prefix: string, sources: any, translations?: any): void {
         const form: HTMLFormElement &#x3D; this.document.createElement(&quot;form&quot;);
 
         const modifySources &#x3D; (source: string) &#x3D;&gt;
             // Handle non-existent less references that are just killing plunker
-            source.replace(/^.*@import \(reference\).*$/mg, &quot;// NUI LESS VARIABLES ARE NOT SUPPORTED YET&quot;);
+            source.replace(/^.*@import \(reference\).*$/mg, &quot;/* NUI LESS VARIABLES ARE NOT SUPPORTED YET */&quot;);
+
+        // HACK FOR HANDLING FILENAME VARIATION: We&#x27;re only appending &#x27;.example&#x27; to the prefix if the component doesn&#x27;t already
+        // have &#x27;-example&#x27; in its prefix. The presence of &#x27;-example&#x27; in the prefix indicates that the component doesn&#x27;t
+        // follow the convention of having a &#x27;.example&#x27; substring in its filenames. The &#x27;.example&#x27; substring is normally
+        // used in determining the filename prefix to use for the example wrapper&#x27;s code sources.
+        const hyphenExampleSubstr &#x3D; &quot;-example&quot;;
+        const hyphenExampleSubstrFound &#x3D; (prefix.indexOf(hyphenExampleSubstr) + hyphenExampleSubstr.length) &#x3D;&#x3D;&#x3D; prefix.length;
+        const modifiedPrefix &#x3D; &#x60;${prefix}${hyphenExampleSubstrFound ? &quot;&quot; : &quot;.example&quot;}&#x60;
+        // END HACK
 
         // example files
         Object.keys(sources).forEach( key &#x3D;&gt; {
             form.append(
                 this.formInput(
-                    &#x60;${prefix}.example.component&#x60;,
+                    &#x60;${modifiedPrefix}.component&#x60;,
                     key,
                     modifySources(sources[key])
                 )
@@ -527,7 +536,7 @@ export class PlunkerProjectService {
         form.append(this.getMainTSInput());
         form.append(this.getConfigJSInput());
         form.append(this.getIndexHTMLInput());
-        form.append(this.getAppComponentTSInput(prefix, sources.ts));
+        form.append(this.getAppComponentTSInput(modifiedPrefix, sources.ts));
 
         form.style.display &#x3D; &quot;none&quot;;
         form.setAttribute(&quot;method&quot;, &quot;post&quot;);
@@ -539,20 +548,20 @@ export class PlunkerProjectService {
         form.remove();
     }
 
-    public getIndexHTMLInput() {
-        return this.formInput(&quot;index&quot;, &quot;html&quot;, this.plunkerFiles.getIndexFile(this.getBranchName()));
+    public getIndexHTMLInput(): HTMLInputElement {
+        return this.formInput(&quot;index&quot;, &quot;html&quot;, this.plunkerFiles.getIndexFile());
     }
 
-    public getMainTSInput() {
+    public getMainTSInput(): HTMLInputElement {
         return this.formInput(&quot;main&quot;, &quot;ts&quot;, this.plunkerFiles.getMainFile());
     }
 
-    public getConfigJSInput() {
+    public getConfigJSInput(): HTMLInputElement {
 
-        return this.formInput(&quot;config&quot;, &quot;js&quot;, this.plunkerFiles.getSystemjsConfigFile(this.getBranchName()));
+        return this.formInput(&quot;config&quot;, &quot;js&quot;, this.plunkerFiles.getSystemJsConfigFile());
     }
 
-    public getAppComponentTSInput(filePrefix: string, fileContent: string) {
+    public getAppComponentTSInput(filePrefix: string, fileContent: string): HTMLInputElement {
         const className: string | undefined &#x3D; this.getClassName(fileContent);
         const selectorName: string | undefined &#x3D; this.getSelectorName(fileContent);
 
@@ -567,17 +576,13 @@ export class PlunkerProjectService {
         return this.formInput(&quot;app&quot;, &quot;ts&quot;, this.plunkerFiles.getAppFile(filePrefix, className, selectorName));
     }
 
-    private getBranchName() {
-        return this.document.location.pathname.split(&quot;/&quot;)[2] || &quot;develop&quot;;
-    }
+    private formInput(prefixName: string, extName: string, content: string): HTMLInputElement {
+        const inputEl: HTMLInputElement &#x3D; this.document.createElement(&quot;input&quot;);
+        inputEl.setAttribute(&quot;type&quot;, &quot;hidden&quot;);
+        inputEl.setAttribute(&quot;name&quot;, &#x60;files[${prefixName}.${extName}]&#x60;);
+        inputEl.setAttribute(&quot;value&quot;, &#x60;${content}&#x60;);
 
-    private formInput(prefixName: string, extName: string, content: string) {
-        const inputIndex: HTMLInputElement &#x3D; this.document.createElement(&quot;input&quot;);
-        inputIndex.setAttribute(&quot;type&quot;, &quot;hidden&quot;);
-        inputIndex.setAttribute(&quot;name&quot;, &#x60;files[${prefixName}.${extName}]&#x60;);
-        inputIndex.setAttribute(&quot;value&quot;, &#x60;${content}&#x60;);
-
-        return inputIndex;
+        return inputEl;
     }
 
     private getClassName(fileContent: string): string | undefined {
