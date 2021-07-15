@@ -125,8 +125,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="12"
-                            class="link-to-prism">src/lib/toolbar/toolbar-keyboard.service.ts:12</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="15"
+                            class="link-to-prism">src/lib/toolbar/toolbar-keyboard.service.ts:15</a></div>
                 </td>
             </tr>
 
@@ -190,15 +190,15 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>setToolbarItems(items: <a href="../undefineds/Element.html">HTMLElement[]</a>)</code>
+                    <code>setToolbarItems(items: <a href="../undefineds/Element.html">HTMLElement[]</a>, menu?: <a href="../components/MenuComponent.html">MenuComponent</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="8"
-                            class="link-to-prism">src/lib/toolbar/toolbar-keyboard.service.ts:8</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="10"
+                            class="link-to-prism">src/lib/toolbar/toolbar-keyboard.service.ts:10</a></div>
                 </td>
             </tr>
 
@@ -229,6 +229,18 @@
 
 
                                 </tr>
+                                <tr>
+                                    <td>menu</td>
+                                    <td>
+                                                <code><a href="../components/MenuComponent.html" target="_self" >MenuComponent</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -253,13 +265,16 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &quot;@angular/core&quot;;
 import { KEYBOARD_CODE } from &quot;../../constants&quot;;
+import { MenuComponent } from &quot;../menu&quot;;
 
 @Injectable()
 export class ToolbarKeyboardService {
     private toolbarItems: HTMLElement[] &#x3D; [];
+    private menu: MenuComponent | undefined;
 
-    public setToolbarItems(items: HTMLElement[]): void {
+    public setToolbarItems(items: HTMLElement[], menu?: MenuComponent): void {
         this.toolbarItems &#x3D; items;
+        this.menu &#x3D; menu;
     }
 
     public onKeyDown(event: KeyboardEvent): void {
@@ -268,6 +283,10 @@ export class ToolbarKeyboardService {
         if (code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ARROW_LEFT || code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ARROW_RIGHT) {
             event.preventDefault();
             this.navigateByArrow(code);
+        }
+
+        if (code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.TAB) {
+            this.closeMenuIfOpened();
         }
     }
 
@@ -282,8 +301,13 @@ export class ToolbarKeyboardService {
         }
 
         if (code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ARROW_RIGHT &amp;&amp; activeIndex !&#x3D;&#x3D; -1) {
-            activeEl &#x3D;&#x3D;&#x3D; last ? first.focus() : this.focusRight(activeIndex);
+            activeEl &#x3D;&#x3D;&#x3D; last ? this.focusFirst() : this.focusRight(activeIndex);
         }
+    }
+
+    private focusFirst(): void {
+        this.toolbarItems[0].focus();
+        this.closeMenuIfOpened();
     }
 
     private focusLast(): void {
@@ -296,6 +320,13 @@ export class ToolbarKeyboardService {
 
     private focusLeft(index: number) {
         this.toolbarItems[index - 1]?.focus();
+        this.closeMenuIfOpened();
+    }
+
+    private closeMenuIfOpened() {
+        if (this.menu &amp;&amp; this.menu?.popup?.isOpen) {
+            this.menu.popup.isOpen &#x3D; false;
+        }
     }
 }
 </code></pre>
