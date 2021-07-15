@@ -8454,6 +8454,7 @@ function WizardStepV2Component_ng_template_0_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx_r0.template);
 } }
 const _c0 = ["*"];
+/** @ignore */
 class WizardStepV2Component extends _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_0__["CdkStep"] {
     constructor(changeDetectorRef, stepper, _errorStateMatcher, stepperOptions) {
         super(stepper, stepperOptions);
@@ -11027,6 +11028,7 @@ function WizardFooterComponent_ng_container_0_Template(rf, ctx) { if (rf & 1) {
     const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngTemplateOutlet", ctx_r0._templateFooter().template);
 } }
+/** @ignore */
 class WizardFooterComponent {
     constructor(_focusMonitor, _elementRef) {
         this._focusMonitor = _focusMonitor;
@@ -16750,6 +16752,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+/** @ignore */
 class WizardOverflowComponent {
     constructor(el) {
         this.el = el;
@@ -18980,7 +18983,7 @@ const appRoutes = [
     },
     {
         path: "wizard-v2",
-        loadChildren: () => __webpack_require__.e(/*! import() | demo-wizard-v2-wizard-module */ "demo-wizard-v2-wizard-module").then(__webpack_require__.bind(null, /*! ../demo/wizard-v2/wizard.module */ "EyYP")).then(m => m.WizardModule),
+        loadChildren: () => __webpack_require__.e(/*! import() | demo-wizard-v2-wizard-v2-module */ "demo-wizard-v2-wizard-v2-module").then(__webpack_require__.bind(null, /*! ../demo/wizard-v2/wizard-v2.module */ "Il+P")).then(m => m.WizardV2Module),
     },
     {
         path: "", redirectTo: "common", pathMatch: "full",
@@ -19702,6 +19705,7 @@ function WizardStepHeaderComponent_div_4_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](ctx_r3.errorMessage);
 } }
+/** @ignore */
 class WizardStepHeaderComponent extends _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_1__["CdkStepHeader"] {
     constructor(_focusMonitor, _elementRef, config) {
         super(_elementRef);
@@ -21872,6 +21876,7 @@ function WizardHorizontalComponent_ng_template_8_Template(rf, ctx) { if (rf & 1)
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("tabIndex", ctx_r7.selectedIndex === i_r37 ? 0 : -1)("id", ctx_r7.labelIds[i_r37])("index", i_r37)("stepStateConfig", step_r36.stepStateConfig)("label", step_r36.stepLabel || step_r36.label)("selected", ctx_r7.selectedIndex === i_r37)("active", step_r36.completed || ctx_r7.selectedIndex === i_r37 || !ctx_r7.linear)("step", step_r36)("errorMessage", step_r36.errorMessage);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵattribute"]("aria-posinset", i_r37 + 1)("aria-setsize", steps_r35.length)("aria-controls", ctx_r7.stepContentIds[i_r37])("aria-selected", ctx_r7.selectedIndex == i_r37)("aria-label", step_r36.ariaLabel || null)("aria-labelledby", !step_r36.ariaLabel && step_r36.ariaLabelledby ? step_r36.ariaLabelledby : null);
 } }
+// <example-url>./../examples/index.html#/wizard-v2</example-url>
 class WizardHorizontalComponent extends _wizard_directive__WEBPACK_IMPORTED_MODULE_8__["WizardDirective"] {
     constructor(dir, cdRef, el, zone) {
         super(dir, cdRef, el);
@@ -31710,7 +31715,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
 
 
-/** Button that moves to the next step in a stepper workflow. */
+/** Button that moves to the next step in a stepper workflow.
+ * @ignore
+*/
 class WizardStepperNextDirective extends _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_0__["CdkStepperNext"] {
 }
 WizardStepperNextDirective.ɵfac = function WizardStepperNextDirective_Factory(t) { return ɵWizardStepperNextDirective_BaseFactory(t || WizardStepperNextDirective); };
@@ -31718,7 +31725,9 @@ WizardStepperNextDirective.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_1__["�
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵhostProperty"]("type", ctx.type);
     } }, inputs: { type: "type" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵInheritDefinitionFeature"]] });
 const ɵWizardStepperNextDirective_BaseFactory = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetInheritedFactory"](WizardStepperNextDirective);
-/** Button that moves to the previous step in a stepper workflow. */
+/** Button that moves to the previous step in a stepper workflow.
+ * @ignore
+*/
 class WizardStepperPreviousDirective extends _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_0__["CdkStepperPrevious"] {
 }
 WizardStepperPreviousDirective.ɵfac = function WizardStepperPreviousDirective_Factory(t) { return ɵWizardStepperPreviousDirective_BaseFactory(t || WizardStepperPreviousDirective); };
