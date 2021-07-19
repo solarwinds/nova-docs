@@ -8,14 +8,13 @@ import {environment} from "../environments/environment";
   providedIn: 'root'
 })
 export class AppService {
-  private apiUrl = environment.production ? '' : environment.apiUrl;
-
   private PROJECT_URL: string = "/api/projects";
 
   constructor(private http: HttpClient) { }
 
   public getProjects(): Observable<Array<IProject>> {
-    const url = this.apiUrl + this.PROJECT_URL
+    const url = environment.apiUrl + this.PROJECT_URL;
+
     return this.http.get<IProject[]>(url);
   }
 }

@@ -33,7 +33,6 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   public projects: IProject[] = [];
   public activeProject: IProject = {} as IProject;
   public selectedBranch: string = "";
-  private host = environment.production ? "" : environment.apiUrl;
 
   @HostListener('window:hashchange', ['$event'])
   private onHashChange(): void {
@@ -63,7 +62,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   public openDocs(project: IProject, branchName: string = this.selectedBranch): void {
     this.activeProject = project;
     this.selectedBranch = branchName;
-    const url = `${this.host}/${project.name}/${branchName}`
+    const url = `${environment.apiUrl}/${project.name}/${branchName}`;
     this.emitSelectedUrl.emit(url);
   }
 
@@ -72,7 +71,29 @@ export class HeaderComponent implements OnInit, AfterViewInit {
         this.projects = projects;
         this.setActiveProject(projects);
       },
-      error => this.toastService.error({ title: error.message }));
+      error => {
+        this.toastService.error({title: error.message});
+        this.projects = [
+          {"name":"bits","branches":[
+            {"project":"bits","name":"release_v11.x"},
+            {"project":"bits","name":"release_v11.4.x"},
+            {"project":"bits","name":"release_v11.2.x"},
+            {"project":"bits","name":"release_v9.x"},
+            {"project":"bits","name":"main"}]},
+          {"name":"charts","branches":[
+            {"project":"charts","name":"release_v11.x"},
+            {"project":"charts","name":"release_v11.4.x"},
+            {"project":"charts","name":"release_v11.2.x"},
+            {"project":"charts","name":"release_v9.x"},
+            {"project":"charts","name":"main"}]},
+          {"name":"dashboards","branches":[
+            {"project":"dashboards","name":"release_v11.x"},
+            {"project":"dashboards","name":"release_v11.4.x"},
+            {"project":"dashboards","name":"release_v11.2.x"},
+            {"project":"dashboards","name":"release_v9.x"},
+            {"project":"dashboards","name":"main"}]}]
+        this.setActiveProject(this.projects);
+      });
   }
 
   private setActiveProject(projects: Array<IProject>): void {
@@ -86,10 +107,12 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   }
 
   private parseBrowserUrl(projects: Array<IProject>): void {
-    const arrayFromHash = location.hash.split('/');
-    this.activeProject = projects.find((project: IProject) => project.name === arrayFromHash[1]) || projects[0];
-    this.selectedBranch = this.activeProject.branches.find((branch: IBranch) => branch.name === arrayFromHash[2])?.name || this.activeProject.branches[0].name;
-    const convertedUrl = `${window.location.origin}/${location.hash.replace("#/", "")}`;
+    const arrayFromHash = location.hash.split('/').slice(1);
+    this.activeProject = projects.find((project: IProject) => project.name === arrayFromHash[0]) || projects[0];
+    this.selectedBranch = this.activeProject.branches.find((branch: IBranch) => branch.name === arrayFromHash[1])?.name || this.activeProject.branches[0].name;
+    arrayFromHash.splice(0,2, this.activeProject.name, this.selectedBranch);
+
+    const convertedUrl = `${window.location.origin}/${arrayFromHash.join('/')}`;
     this.emitParsedUrl.emit(convertedUrl);
   }
 }

@@ -40,9 +40,9 @@ app.use('/api', projects);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  const err = new Error('Not Found');
+  const err = new Error("Page not found");
   err.status = 404;
-  next(err);
+  next(err.message);
 });
 
 // error handlers
@@ -51,6 +51,7 @@ app.use(function(req, res, next) {
 // will print stacktrace
 if (app.get('env') === 'development') {
   app.use(function(err, req, res) {
+      console.log('ERROR')
     res.status(err.status || 500);
     res.render('error', {
       message: err.message,
@@ -62,7 +63,9 @@ if (app.get('env') === 'development') {
 // production error handler
 // no stacktraces leaked to user
 app.use(function(err, req, res) {
-  res.status(err.status || 500);
+    console.log('ERROR')
+
+    res.status(err.status || 500);
   res.render('error', {
     message: err.message,
     error: {}

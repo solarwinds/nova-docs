@@ -49,7 +49,7 @@ export class DocsComponent implements OnChanges{
   }
 
   private compareUrls(url: SimpleChange): boolean {
-    return url.previousValue !== url.currentValue && url.currentValue !== this.iframe?.nativeElement.contentWindow.location.href
+    return url.previousValue !== url.currentValue && url.currentValue !== this.iframe?.nativeElement.contentWindow.location.href;
   }
 
 }
