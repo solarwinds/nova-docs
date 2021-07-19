@@ -8,6 +8,7 @@ import {
   SimpleChanges,
   ViewChild
 } from '@angular/core';
+import {environment} from "../../environments/environment";
 
 @Component({
   selector: 'nui-docs',
@@ -42,9 +43,8 @@ export class DocsComponent implements OnChanges{
   public updateHash(): void {
     const iframeLocation = this.iframe.nativeElement.contentWindow.location.href;
     const iframeLocationOrigin = this.iframe.nativeElement.contentWindow.location.origin;
-
-    if(window.location.hash !==`#${iframeLocation?.replace(iframeLocationOrigin, '')}`) {
-      window.location.replace(`${iframeLocationOrigin}#${iframeLocation?.replace(iframeLocationOrigin, '')}`);
+    if(window.location.hash !==`#${iframeLocation?.replace(iframeLocationOrigin, '')}` && iframeLocationOrigin) {
+      window.location.replace(`${environment.apiUrl}#${iframeLocation?.replace(iframeLocationOrigin, '')}`);
     }
   }
 
