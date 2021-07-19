@@ -106,12 +106,14 @@ export class HeaderComponent implements OnInit, AfterViewInit {
     }
   }
 
-  private parseBrowserUrl(projects: Array<IProject>): void {
+  private parseBrowserUrl(projects: Array<IProject>): void | undefined {
     const arrayFromHash = location.hash.split('/').slice(1);
     this.activeProject = projects.find((project: IProject) => project.name === arrayFromHash[0]) || projects[0];
+    if(!this.activeProject) {
+      return;
+    }
     this.selectedBranch = this.activeProject.branches.find((branch: IBranch) => branch.name === arrayFromHash[1])?.name || this.activeProject.branches[0].name;
     arrayFromHash.splice(0,2, this.activeProject.name, this.selectedBranch);
-
     const convertedUrl = `${window.location.origin}/${arrayFromHash.join('/')}`;
     this.emitParsedUrl.emit(convertedUrl);
   }

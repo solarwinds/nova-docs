@@ -42,8 +42,9 @@ export class DocsComponent implements OnChanges{
   public updateHash(): void {
     const iframeLocation = this.iframe.nativeElement.contentWindow.location.href;
     const iframeLocationOrigin = this.iframe.nativeElement.contentWindow.location.origin;
-    if(window.location.hash !==`#${iframeLocation?.replace(iframeLocationOrigin, '')}` && iframeLocationOrigin) {
-      window.location.replace(`#${iframeLocation?.replace(iframeLocationOrigin, '')}`);
+    const iframeRoot = iframeLocation?.replace(iframeLocationOrigin, '')
+    if (window.location.hash !==`#${iframeRoot}` && iframeLocationOrigin && iframeRoot.length > 0) {
+      window.location.replace(`#${iframeRoot}`);
     }
   }
 
