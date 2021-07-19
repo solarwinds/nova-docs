@@ -124,12 +124,6 @@
                             <a href="#focusableElementsCSSSelector" title="src/services/tab-navigation.service.ts"><b>focusableElementsCSSSelector</b>&nbsp;&nbsp;&nbsp;(src/.../tab-navigation.service.ts)</a>
                         </li>
                         <li>
-                            <a href="#hljs" title="src/lib/docs/example-code/example-code.component.ts"><b>hljs</b>&nbsp;&nbsp;&nbsp;(src/.../example-code.component.ts)</a>
-                        </li>
-                        <li>
-                            <a href="#hljs" title="src/lib/docs/example-wrapper/example-wrapper.component.ts"><b>hljs</b>&nbsp;&nbsp;&nbsp;(src/.../example-wrapper.component.ts)</a>
-                        </li>
-                        <li>
                             <a href="#icons" title="src/lib/icon/icons.ts"><b>icons</b>&nbsp;&nbsp;&nbsp;(src/.../icons.ts)</a>
                         </li>
                         <li>
@@ -221,9 +215,6 @@
                         </li>
                         <li>
                             <a href="#WIZARD_STEP_STATE_DEFAULT_CONFIG" title="src/constants/wizard.constants.ts"><b>WIZARD_STEP_STATE_DEFAULT_CONFIG</b>&nbsp;&nbsp;&nbsp;(src/.../wizard.constants.ts)</a>
-                        </li>
-                        <li>
-                            <a href="#wizardAnimations" title="src/lib/wizard-v2/wizard-animations/wizard-animations.ts"><b>wizardAnimations</b>&nbsp;&nbsp;&nbsp;(src/.../wizard-animations.ts)</a>
                         </li>
                     </ul>
                 </td>
@@ -1183,54 +1174,6 @@
                     <tr>
                         <td class="col-md-4">
                             <i>Default value : </i><code>&quot;[tabindex], button, a, input:not([type&#x3D;hidden])&quot;</code>
-                        </td>
-                    </tr>
-
-
-            </tbody>
-        </table>
-</section>
-    <h3>src/lib/docs/example-code/example-code.component.ts</h3>
-    <section>
-    <h3></h3>        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="hljs"></a>
-                        <span class="name">
-                            <b>
-                            hljs</b>
-                            <a href="#hljs"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>require(&quot;highlight.js/lib/core&quot;)</code>
-                        </td>
-                    </tr>
-
-
-            </tbody>
-        </table>
-</section>
-    <h3>src/lib/docs/example-wrapper/example-wrapper.component.ts</h3>
-    <section>
-    <h3></h3>        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="hljs"></a>
-                        <span class="name">
-                            <b>
-                            hljs</b>
-                            <a href="#hljs"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>require(&quot;highlight.js/lib/core&quot;)</code>
                         </td>
                     </tr>
 
@@ -2827,58 +2770,6 @@
                         </td>
                     </tr>
 
-
-            </tbody>
-        </table>
-</section>
-    <h3>src/lib/wizard-v2/wizard-animations/wizard-animations.ts</h3>
-    <section>
-    <h3></h3>        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="wizardAnimations"></a>
-                        <span class="name">
-                            <b>
-                            wizardAnimations</b>
-                            <a href="#wizardAnimations"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>    <code>literal type</code>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>{
-    /** Animation that transitions the step along the X axis in a horizontal stepper. */
-    horizontalStepTransition: trigger(&quot;stepTransition&quot;, [
-        state(&quot;previous&quot;, style({transform: &quot;translate3d(-100%, 0, 0)&quot;, visibility: &quot;hidden&quot;})),
-        state(&quot;current&quot;, style({transform: &quot;none&quot;, visibility: &quot;visible&quot;})),
-        state(&quot;next&quot;, style({transform: &quot;translate3d(100%, 0, 0)&quot;, visibility: &quot;hidden&quot;})),
-        transition(&quot;* &#x3D;&gt; *&quot;, animate(&quot;500ms cubic-bezier(0.35, 0, 0.25, 1)&quot;)),
-    ]),
-
-    /** Animation that transitions the step along the Y axis in a vertical stepper. */
-    verticalStepTransition: trigger(&quot;stepTransition&quot;, [
-        state(&quot;previous&quot;, style({height: &quot;0px&quot;, visibility: &quot;hidden&quot;})),
-        state(&quot;next&quot;, style({height: &quot;0px&quot;, visibility: &quot;hidden&quot;})),
-        state(&quot;current&quot;, style({height: &quot;*&quot;, visibility: &quot;visible&quot;})),
-        transition(&quot;* &lt;&#x3D;&gt; current&quot;, animate(&quot;225ms cubic-bezier(0.4, 0.0, 0.2, 1)&quot;)),
-    ]),
-}</code>
-                        </td>
-                    </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <div class="io-description"><p>Animations used by the steppers.</p>
-</div>
-                    </td>
-                </tr>
 
             </tbody>
         </table>

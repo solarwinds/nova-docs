@@ -346,19 +346,10 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="components/WizardComponent.html" data-type="entity-link">WizardComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/WizardFooterComponent.html" data-type="entity-link">WizardFooterComponent</a>
-                            </li>
-                            <li class="link">
                                 <a href="components/WizardHorizontalComponent.html" data-type="entity-link">WizardHorizontalComponent</a>
                             </li>
                             <li class="link">
                                 <a href="components/WizardStepComponent.html" data-type="entity-link">WizardStepComponent</a>
-                            </li>
-                            <li class="link">
-                                <a href="components/WizardStepHeaderComponent.html" data-type="entity-link">WizardStepHeaderComponent</a>
-                            </li>
-                            <li class="link">
-                                <a href="components/WizardStepV2Component.html" data-type="entity-link">WizardStepV2Component</a>
                             </li>
                         </ul>
                     </li>
@@ -399,12 +390,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 </li>
                                 <li class="link">
                                     <a href="directives/WizardStepLabelDirective.html" data-type="entity-link">WizardStepLabelDirective</a>
-                                </li>
-                                <li class="link">
-                                    <a href="directives/WizardStepperNextDirective.html" data-type="entity-link">WizardStepperNextDirective</a>
-                                </li>
-                                <li class="link">
-                                    <a href="directives/WizardStepperPreviousDirective.html" data-type="entity-link">WizardStepperPreviousDirective</a>
                                 </li>
                             </ul>
                         </li>

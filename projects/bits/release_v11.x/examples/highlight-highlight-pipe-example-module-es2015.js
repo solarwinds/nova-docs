@@ -102,8 +102,9 @@ const routes = [
 ];
 class HighlightPipeExampleModule {
 }
+HighlightPipeExampleModule.ɵfac = function HighlightPipeExampleModule_Factory(t) { return new (t || HighlightPipeExampleModule)(); };
 HighlightPipeExampleModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineNgModule"]({ type: HighlightPipeExampleModule });
-HighlightPipeExampleModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjector"]({ factory: function HighlightPipeExampleModule_Factory(t) { return new (t || HighlightPipeExampleModule)(); }, providers: [
+HighlightPipeExampleModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjector"]({ providers: [
         {
             provide: _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["DEMO_PATH_TOKEN"],
             useFactory: () => __webpack_require__("w4eR"),

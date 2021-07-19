@@ -39,8 +39,9 @@ const routes = [
 ];
 class ConvenienceModule {
 }
+ConvenienceModule.ɵfac = function ConvenienceModule_Factory(t) { return new (t || ConvenienceModule)(); };
 ConvenienceModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({ type: ConvenienceModule });
-ConvenienceModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({ factory: function ConvenienceModule_Factory(t) { return new (t || ConvenienceModule)(); }, imports: [[
+ConvenienceModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({ imports: [[
             _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"].forChild(routes),
         ], _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵsetNgModuleScope"](ConvenienceModule, { declarations: [_index__WEBPACK_IMPORTED_MODULE_2__["SummaryComponent"]], imports: [_angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]], exports: [_angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]] }); })();

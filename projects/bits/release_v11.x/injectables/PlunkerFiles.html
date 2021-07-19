@@ -75,16 +75,20 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#getAppFile">getAppFile</a>
                             </li>
                             <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#getIndexFile">getIndexFile</a>
                             </li>
                             <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#getMainFile">getMainFile</a>
                             </li>
                             <li>
-                                <a href="#getSystemjsConfigFile">getSystemjsConfigFile</a>
+                                    <span class="modifier">Public</span>
+                                <a href="#getSystemJsConfigFile">getSystemJsConfigFile</a>
                             </li>
                         </ul>
                     </td>
@@ -113,6 +117,7 @@
                         <a name="getAppFile"></a>
                         <span class="name">
                             <b>
+                                <span class="modifier">Public</span>
                             getAppFile</b>
                             <a href="#getAppFile"><span class="icon ion-ios-link"></span></a>
                         </span>
@@ -125,7 +130,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/lib/docs/example-wrapper/plunker-files.ts:8</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="5" class="link-to-prism">src/lib/docs/example-wrapper/plunker-files.ts:5</a></div>
                             </td>
                         </tr>
 
@@ -139,6 +144,7 @@
                         <a name="getIndexFile"></a>
                         <span class="name">
                             <b>
+                                <span class="modifier">Public</span>
                             getIndexFile</b>
                             <a href="#getIndexFile"><span class="icon ion-ios-link"></span></a>
                         </span>
@@ -151,7 +157,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="259" class="link-to-prism">src/lib/docs/example-wrapper/plunker-files.ts:259</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="361" class="link-to-prism">src/lib/docs/example-wrapper/plunker-files.ts:361</a></div>
                             </td>
                         </tr>
 
@@ -165,6 +171,7 @@
                         <a name="getMainFile"></a>
                         <span class="name">
                             <b>
+                                <span class="modifier">Public</span>
                             getMainFile</b>
                             <a href="#getMainFile"><span class="icon ion-ios-link"></span></a>
                         </span>
@@ -177,7 +184,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="252" class="link-to-prism">src/lib/docs/example-wrapper/plunker-files.ts:252</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="355" class="link-to-prism">src/lib/docs/example-wrapper/plunker-files.ts:355</a></div>
                             </td>
                         </tr>
 
@@ -188,11 +195,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="getSystemjsConfigFile"></a>
+                        <a name="getSystemJsConfigFile"></a>
                         <span class="name">
                             <b>
-                            getSystemjsConfigFile</b>
-                            <a href="#getSystemjsConfigFile"><span class="icon ion-ios-link"></span></a>
+                                <span class="modifier">Public</span>
+                            getSystemJsConfigFile</b>
+                            <a href="#getSystemJsConfigFile"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
@@ -203,7 +211,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/lib/docs/example-wrapper/plunker-files.ts:55</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="158" class="link-to-prism">src/lib/docs/example-wrapper/plunker-files.ts:158</a></div>
                             </td>
                         </tr>
 
@@ -218,15 +226,10 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &quot;@angular/core&quot;;
 
-@Injectable({providedIn: &quot;root&quot;})
+@Injectable({ providedIn: &quot;root&quot; })
 export class PlunkerFiles {
-
-    private includeCharts &#x3D; true;
-
-    getAppFile &#x3D; (filePrefix: string, className: string, selector: string) &#x3D;&gt; &#x60;
-import {
+    public getAppFile &#x3D; (filePrefix: string, className: string, selector: string): string &#x3D;&gt; &#x60;import {
     Component,
-    MissingTranslationStrategy,
     NgModule,
     TRANSLATIONS,
     TRANSLATIONS_FORMAT
@@ -237,10 +240,64 @@ import { FormsModule, ReactiveFormsModule } from &#x27;@angular/forms&#x27;;
 import { HttpClientModule } from &#x27;@angular/common/http&#x27;;
 import &#x27;@angular/localize&#x27;;
 
-import { NuiModule } from &#x27;@nova-ui/bits&#x27;;
-${ this.includeCharts ? &quot;import { NuiChartsModule } from &#x27;@nova-ui/charts&#x27;;&quot; : &quot;&quot;}
+// Note: It&#x27;s likely that most of these modules imported from Nova aren&#x27;t
+// necessary for your implementation. They&#x27;re included here to allow Nova&#x27;s
+// plunker usage to work with all of the existing Nova components. If
+// you&#x27;re copy/pasting this code, be sure to remove the ones you don&#x27;t need in
+// order to avoid unnecessarily including them in your app&#x27;s deployed package.
+import {
+    NuiButtonModule,
+    NuiCheckboxModule,
+    NuiCommonModule,
+    NuiDividerModule,
+    NuiIconModule,
+    NuiMessageModule,
+    NuiImageModule,
+    NuiMenuModule,
+    NuiPopupModule,
+    NuiSwitchModule,
+    NuiSelectModule,
+    NuiSelectV2Module,
+    NuiSpinnerModule,
+    NuiTabsModule,
+    NuiTextboxModule,
+    NuiTooltipModule,
+    NuiLayoutModule,
+    NuiOverlayModule,
+    NuiOverlayAdditionsModule,
+    NuiBreadcrumbModule,
+    NuiBusyModule,
+    NuiChipsModule,
+    NuiContentModule,
+    NuiDatePickerModule,
+    NuiDateTimePickerModule,
+    NuiDialogModule,
+    NuiExpanderModule,
+    NuiFormFieldModule,
+    NuiPaginatorModule,
+    NuiPanelModule,
+    NuiPopoverModule,
+    NuiProgressModule,
+    NuiRadioModule,
+    NuiRepeatModule,
+    NuiSearchModule,
+    NuiSelectorModule,
+    NuiSorterModule,
+    NuiTableModule,
+    NuiTimeFrameBarModule,
+    NuiTimeFramePickerModule,
+    NuiTimePickerModule,
+    NuiToastModule,
+    NuiToolbarModule,
+    NuiValidationMessageModule,
+    NuiWizardModule,
+    NuiWizardV2Module,
+} from &#x27;@nova-ui/bits&#x27;;
 
-import { ${className} } from &#x27;./${filePrefix}.example.component&#x27;;
+import { NuiChartsModule } from &#x27;@nova-ui/charts&#x27;;
+import { NuiDashboardsModule, NuiDashboardConfiguratorModule } from &#x27;@nova-ui/dashboards&#x27;;
+
+import { ${className} } from &#x27;./${filePrefix}.component&#x27;;
 
 import { translations } from &#x27;./translations&#x27;;
 
@@ -258,8 +315,62 @@ export class App {
 }
 
 @NgModule({
-    imports: [BrowserModule, BrowserAnimationsModule, FormsModule, ReactiveFormsModule, HttpClientModule,
-              NuiModule${ this.includeCharts ? &quot;, NuiChartsModule&quot; : &quot;&quot;}],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        FormsModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        NuiChartsModule,
+        NuiDashboardsModule,
+        NuiDashboardConfiguratorModule,
+        NuiButtonModule,
+        NuiCheckboxModule,
+        NuiCommonModule,
+        NuiDividerModule,
+        NuiIconModule,
+        NuiMessageModule,
+        NuiImageModule,
+        NuiMenuModule,
+        NuiPopupModule,
+        NuiSwitchModule,
+        NuiSelectModule,
+        NuiSelectV2Module,
+        NuiSpinnerModule,
+        NuiTabsModule,
+        NuiTextboxModule,
+        NuiTooltipModule,
+        NuiLayoutModule,
+        NuiOverlayModule,
+        NuiOverlayAdditionsModule,
+        NuiBreadcrumbModule,
+        NuiBusyModule,
+        NuiChipsModule,
+        NuiContentModule,
+        NuiDatePickerModule,
+        NuiDateTimePickerModule,
+        NuiDialogModule,
+        NuiExpanderModule,
+        NuiFormFieldModule,
+        NuiPaginatorModule,
+        NuiPanelModule,
+        NuiPopoverModule,
+        NuiProgressModule,
+        NuiRadioModule,
+        NuiRepeatModule,
+        NuiSearchModule,
+        NuiSelectorModule,
+        NuiSorterModule,
+        NuiTableModule,
+        NuiTimeFrameBarModule,
+        NuiTimeFramePickerModule,
+        NuiTimePickerModule,
+        NuiToastModule,
+        NuiToolbarModule,
+        NuiValidationMessageModule,
+        NuiWizardModule,
+        NuiWizardV2Module,
+    ],
     declarations: [App, ${className}],
     bootstrap: [App],
     providers: [
@@ -270,9 +381,8 @@ export class App {
 export class AppModule {}
 &#x60;
 
-    getSystemjsConfigFile &#x3D; (branchName: string) &#x3D;&gt; &#x60;
-var ver &#x3D; {
-    ng: &#x27;9.0.0&#x27;
+    public getSystemJsConfigFile &#x3D; (): string &#x3D;&gt; &#x60;var ver &#x3D; {
+    ng: &#x27;11.0.0&#x27;
 };
 
 System.config({
@@ -319,6 +429,8 @@ System.config({
         &#x27;@angular/cdk/overlay&#x27;: &#x27;npm:@angular/cdk@&#x27; + ver.ng + &#x27;/bundles/cdk-overlay.umd.js&#x27;,
         &#x27;@angular/cdk/portal&#x27;: &#x27;npm:@angular/cdk@&#x27; + ver.ng + &#x27;/bundles/cdk-portal.umd.js&#x27;,
         &#x27;@angular/cdk/drag-drop&#x27;: &#x27;npm:@angular/cdk@&#x27; + ver.ng + &#x27;/bundles/cdk-drag-drop.umd.js&#x27;,
+        &#x27;@angular/cdk/stepper&#x27;: &#x27;npm:@angular/cdk@&#x27; + ver.ng + &#x27;/bundles/cdk-stepper.umd.js&#x27;,
+        &#x27;angular-gridster2&#x27;: &#x27;npm:angular-gridster2@^&#x27; + ver.ng,
         &#x27;resize-observer-polyfill&#x27;: &#x27;npm:resize-observer-polyfill@1.5.1/dist/ResizeObserver.js&#x27;,
 
         &#x27;rxjs&#x27;: &#x27;npm:rxjs@6.5.2&#x27;,
@@ -327,8 +439,7 @@ System.config({
         &#x27;moment&#x27;: &#x27;npm:moment@2.24.0/moment.js&#x27;,
         &#x27;moment/moment&#x27;: &#x27;npm:moment@2.24.0/moment.js&#x27;,
 
-
-        &#x27;highlight.js&#x27;: &#x27;npm:highlight.js@9.12.0/lib/index.js&#x27;,
+        &#x27;highlight.js/lib&#x27;: &#x27;npm:highlight.js@^10.6.0/lib&#x27;,
         &#x27;lodash&#x27;: &#x27;npm:lodash@4.17.11&#x27;,
         &quot;lodash/assign&quot;: &quot;npm:lodash@4.17.11/assign.js&quot;,
         &quot;lodash/capitalize&quot;: &quot;npm:lodash@4.17.11/capitalize.js&quot;,
@@ -426,9 +537,9 @@ System.config({
         &quot;d3-shape&quot;: &quot;npm:d3@5.9.2&quot;,
         &quot;d3-selection-multi&quot;: &quot;npm:d3-selection-multi&quot;,
 
-        &#x27;@nova-ui/bits&#x27;: &#x27;http://apollo-docs.swdev.local/nova-bits/${branchName}/dist/bundles/nova-ui-bits.umd.js&#x27;,
-        &#x27;@nova-ui/charts&#x27;: &#x27;http://apollo-docs.swdev.local/nova-charts/${branchName}/dist/bundles/nova-ui-charts.umd.js&#x27;,
-        &#x27;@nova-ui/dashboards&#x27;: &#x27;http://apollo-docs.swdev.local/nova-dashboards/${branchName}/dist/bundles/nova-ui-dashboards.umd.js&#x27;,
+        &#x27;@nova-ui/bits&#x27;: &#x27;npm:@nova-ui/bits@latest&#x27;,
+        &#x27;@nova-ui/charts&#x27;: &#x27;npm:@nova-ui/charts@latest&#x27;,
+        &#x27;@nova-ui/dashboards&#x27;: &#x27;npm:@nova-ui/dashboards@latest&#x27;,
     },
     packages: {
         app: {
@@ -467,35 +578,38 @@ System.config({
 });
 &#x60;
 
-    getMainFile &#x3D; () &#x3D;&gt; &#x60;
-import {platformBrowserDynamic} from &#x27;@angular/platform-browser-dynamic&#x27;;
+    public getMainFile &#x3D; (): string &#x3D;&gt; &#x60;import {platformBrowserDynamic} from &#x27;@angular/platform-browser-dynamic&#x27;;
 import {AppModule} from &#x27;./app&#x27;;
 
 platformBrowserDynamic().bootstrapModule(AppModule);
 &#x60;
 
-    getIndexFile &#x3D; (branchName: string) &#x3D;&gt; &#x60;&lt;!DOCTYPE html&gt;
+    public getIndexFile &#x3D; (): string &#x3D;&gt; &#x60;&lt;!DOCTYPE html&gt;
 &lt;html class&#x3D;&quot;nui&quot;&gt;
 
-&lt;head&gt;
-    &lt;base href&#x3D;&quot;.&quot; /&gt;
-    &lt;title&gt;Nova bits demo&lt;/title&gt;
-    &lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;http://apollo-docs.swdev.local/nova-bits/${branchName}/dist/bundles/css/styles.css&quot; /&gt;
-    ${this.includeCharts ? &#x60;&lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;http://apollo-docs.swdev.local/nova-charts/${branchName}/dist/bundles/css/styles.css&quot; /&gt;&#x60; : &quot;&quot;}
-    &lt;script src&#x3D;&quot;https://unpkg.com/core-js@^2.4.1/client/shim.js&quot;&gt;&lt;/script&gt;
-    &lt;script src&#x3D;&quot;https://unpkg.com/zone.js@^0.8.25/dist/zone.js&quot;&gt;&lt;/script&gt;
-    &lt;script src&#x3D;&quot;https://unpkg.com/zone.js@^0.8.25/dist/long-stack-trace-zone.js&quot;&gt;&lt;/script&gt;
-    &lt;script src&#x3D;&quot;https://unpkg.com/reflect-metadata@^0.1.8/Reflect.js&quot;&gt;&lt;/script&gt;
-    &lt;script src&#x3D;&quot;https://unpkg.com/systemjs@^0.19.40/dist/system.js&quot;&gt;&lt;/script&gt;
-    &lt;script src&#x3D;&quot;config.js&quot;&gt;&lt;/script&gt;
-    &lt;script&gt;
-        System.import(&#x27;app&#x27;).catch(console.error.bind(console));
-    &lt;/script&gt;
-&lt;/head&gt;
+    &lt;head&gt;
+        &lt;base href&#x3D;&quot;.&quot; /&gt;
+        &lt;title&gt;Nova Demo&lt;/title&gt;
+        &lt;link rel&#x3D;&quot;stylesheet&quot;
+              href&#x3D;&quot;https://unpkg.com/@nova-ui/bits@latest/bundles/css/styles.css&quot;
+        /&gt;
+        &lt;link rel&#x3D;&quot;stylesheet&quot;
+              href&#x3D;&quot;https://unpkg.com/@nova-ui/charts@latest/bundles/css/styles.css&quot;
+        /&gt;
+        &lt;script src&#x3D;&quot;https://unpkg.com/core-js@^2.4.1/client/shim.js&quot;&gt;&lt;/script&gt;
+        &lt;script src&#x3D;&quot;https://unpkg.com/zone.js@^0.8.25/dist/zone.js&quot;&gt;&lt;/script&gt;
+        &lt;script src&#x3D;&quot;https://unpkg.com/zone.js@^0.8.25/dist/long-stack-trace-zone.js&quot;&gt;&lt;/script&gt;
+        &lt;script src&#x3D;&quot;https://unpkg.com/reflect-metadata@^0.1.8/Reflect.js&quot;&gt;&lt;/script&gt;
+        &lt;script src&#x3D;&quot;https://unpkg.com/systemjs@^0.19.40/dist/system.js&quot;&gt;&lt;/script&gt;
+        &lt;script src&#x3D;&quot;config.js&quot;&gt;&lt;/script&gt;
+        &lt;script&gt;
+            System.import(&#x27;app&#x27;).catch(console.error.bind(console));
+        &lt;/script&gt;
+    &lt;/head&gt;
 
-&lt;body&gt;
-&lt;my-app&gt;loading...&lt;/my-app&gt;
-&lt;/body&gt;
+    &lt;body&gt;
+        &lt;my-app&gt;Loading...&lt;/my-app&gt;
+    &lt;/body&gt;
 
 &lt;/html&gt;
 &#x60;

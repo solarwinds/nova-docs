@@ -211,13 +211,14 @@
         _classCallCheck(this, TimeFrameBarModule);
       };
 
+      TimeFrameBarModule.ɵfac = function TimeFrameBarModule_Factory(t) {
+        return new (t || TimeFrameBarModule)();
+      };
+
       TimeFrameBarModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefineNgModule"]({
         type: TimeFrameBarModule
       });
       TimeFrameBarModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefineInjector"]({
-        factory: function TimeFrameBarModule_Factory(t) {
-          return new (t || TimeFrameBarModule)();
-        },
         providers: [{
           provide: _nova_ui_bits__WEBPACK_IMPORTED_MODULE_1__["DEMO_PATH_TOKEN"],
           useFactory: function useFactory() {
