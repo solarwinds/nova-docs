@@ -14984,16 +14984,14 @@ class SpinnerComponent {
         this.cancel = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
     }
     set size(val) {
-        const sizes = Object.keys(_public_api__WEBPACK_IMPORTED_MODULE_3__["SpinnerSize"]).map((key) => _public_api__WEBPACK_IMPORTED_MODULE_3__["SpinnerSize"][key]);
-        const index = sizes.indexOf(val);
-        if (index < 0) {
-            this.logger.warn(`Allowed sizes for nui-spinner are ${sizes.join(", ")}. ` +
-                `Default is ${SpinnerComponent.defaultSize}.`);
-            this._size = SpinnerComponent.defaultSize;
-        }
-        else {
+        const sizes = Object.values(_public_api__WEBPACK_IMPORTED_MODULE_3__["SpinnerSize"]);
+        if (sizes.includes(val)) {
             this._size = val;
+            return;
         }
+        this.logger.warn(`Allowed sizes for nui-spinner are ${sizes.join(", ")}. ` +
+            `Default is ${SpinnerComponent.defaultSize}.`);
+        this._size = SpinnerComponent.defaultSize;
     }
     get size() {
         return this._size || SpinnerComponent.defaultSize;
@@ -24641,7 +24639,7 @@ WizardStepComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefi
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngTemplateOutlet", ctx.stepTemplate);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("percent", ctx.busyConfig.percent || 0)("allowCancel", ctx.busyConfig.allowCancel || false)("message", ctx.busyConfig.message || "");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("percent", ctx.busyConfig.percent)("allowCancel", ctx.busyConfig.allowCancel)("message", ctx.busyConfig.message);
     } }, directives: [_busy_busy_component__WEBPACK_IMPORTED_MODULE_2__["BusyComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgClass"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgTemplateOutlet"], _spinner_spinner_component__WEBPACK_IMPORTED_MODULE_4__["SpinnerComponent"]], encapsulation: 2 });
 
 
