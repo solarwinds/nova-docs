@@ -14984,16 +14984,14 @@ class SpinnerComponent {
         this.cancel = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
     }
     set size(val) {
-        const sizes = Object.keys(_public_api__WEBPACK_IMPORTED_MODULE_3__["SpinnerSize"]).map((key) => _public_api__WEBPACK_IMPORTED_MODULE_3__["SpinnerSize"][key]);
-        const index = sizes.indexOf(val);
-        if (index < 0) {
-            this.logger.warn(`Allowed sizes for nui-spinner are ${sizes.join(", ")}. ` +
-                `Default is ${SpinnerComponent.defaultSize}.`);
-            this._size = SpinnerComponent.defaultSize;
-        }
-        else {
+        const sizes = Object.values(_public_api__WEBPACK_IMPORTED_MODULE_3__["SpinnerSize"]);
+        if (sizes.includes(val)) {
             this._size = val;
+            return;
         }
+        this.logger.warn(`Allowed sizes for nui-spinner are ${sizes.join(", ")}. ` +
+            `Default is ${SpinnerComponent.defaultSize}.`);
+        this._size = SpinnerComponent.defaultSize;
     }
     get size() {
         return this._size || SpinnerComponent.defaultSize;
