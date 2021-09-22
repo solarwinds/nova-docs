@@ -411,7 +411,7 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://angular.io/api/core/ElementRef" target="_blank" >ElementRef</a></code>
+                        <i>Type : </i>    <code>TemplateRef&lt;any&gt;</code>
 
                     </td>
                 </tr>
@@ -918,13 +918,13 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
     Component,
-    ElementRef,
     EventEmitter,
     Input,
     OnChanges,
     OnInit,
     Output,
     SimpleChanges,
+    TemplateRef,
 } from &quot;@angular/core&quot;;
 import { IBusyConfig, SpinnerSize } from &quot;@nova-ui/bits&quot;;
 
@@ -942,7 +942,7 @@ export class DashwizStepComponent implements IDashwizStepComponent, OnInit, OnCh
     /**
      * Template for step.
      */
-    @Input() public stepTemplate: ElementRef;
+    @Input() public stepTemplate?: TemplateRef&lt;any&gt;;
     /**
      * Check is form inside step valid.
      */
@@ -1000,11 +1000,11 @@ export class DashwizStepComponent implements IDashwizStepComponent, OnInit, OnCh
 
     constructor() { }
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.nextText &#x3D; this.nextText || $localize &#x60;Next&#x60;;
     }
 
-    public ngOnChanges(changes: SimpleChanges) {
+    public ngOnChanges(changes: SimpleChanges): void {
         if (changes[&quot;stepControl&quot;]) {
             this.valid.emit(this.stepControl);
         }
@@ -1028,13 +1028,13 @@ export class DashwizStepComponent implements IDashwizStepComponent, OnInit, OnCh
         this.next.emit(event);
     }
 
-    public applyEnteringStep &#x3D; () &#x3D;&gt; {
+    public applyEnteringStep &#x3D; (): void &#x3D;&gt; {
         this.active &#x3D; true;
         this.icon &#x3D; &quot;step-active&quot;;
         this.iconColor &#x3D; &quot;black&quot;;
     }
 
-    public applyExitingStep &#x3D; () &#x3D;&gt; {
+    public applyExitingStep &#x3D; (): void &#x3D;&gt; {
         this.active &#x3D; false;
         this.visited &#x3D; true;
         this.icon &#x3D; &quot;step-complete&quot;;

@@ -9863,7 +9863,7 @@ export class App {
 export class AppModule {}
 `;
         this.getSystemJsConfigFile = () => `var ver = {
-    ng: '11.0.0'
+    ng: '^11.0.0'
 };
 
 System.config({
@@ -9911,7 +9911,7 @@ System.config({
         '@angular/cdk/portal': 'npm:@angular/cdk@' + ver.ng + '/bundles/cdk-portal.umd.js',
         '@angular/cdk/drag-drop': 'npm:@angular/cdk@' + ver.ng + '/bundles/cdk-drag-drop.umd.js',
         '@angular/cdk/stepper': 'npm:@angular/cdk@' + ver.ng + '/bundles/cdk-stepper.umd.js',
-        'angular-gridster2': 'npm:angular-gridster2@^' + ver.ng,
+        'angular-gridster2': 'npm:angular-gridster2@' + ver.ng,
         'resize-observer-polyfill': 'npm:resize-observer-polyfill@1.5.1/dist/ResizeObserver.js',
 
         'rxjs': 'npm:rxjs@6.5.2',
@@ -14984,16 +14984,14 @@ class SpinnerComponent {
         this.cancel = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
     }
     set size(val) {
-        const sizes = Object.keys(_public_api__WEBPACK_IMPORTED_MODULE_3__["SpinnerSize"]).map((key) => _public_api__WEBPACK_IMPORTED_MODULE_3__["SpinnerSize"][key]);
-        const index = sizes.indexOf(val);
-        if (index < 0) {
-            this.logger.warn(`Allowed sizes for nui-spinner are ${sizes.join(", ")}. ` +
-                `Default is ${SpinnerComponent.defaultSize}.`);
-            this._size = SpinnerComponent.defaultSize;
-        }
-        else {
+        const sizes = Object.values(_public_api__WEBPACK_IMPORTED_MODULE_3__["SpinnerSize"]);
+        if (sizes.includes(val)) {
             this._size = val;
+            return;
         }
+        this.logger.warn(`Allowed sizes for nui-spinner are ${sizes.join(", ")}. ` +
+            `Default is ${SpinnerComponent.defaultSize}.`);
+        this._size = SpinnerComponent.defaultSize;
     }
     get size() {
         return this._size || SpinnerComponent.defaultSize;

@@ -919,12 +919,12 @@ export class SpinnerComponent implements OnChanges, OnDestroy {
 
     @HostBinding(&quot;attr.aria-valuenow&quot;) ariaValueNow: string | undefined;
 
-    @Input() public percent: number;
+    @Input() public percent?: number;
     @Input() public show &#x3D; false;
     @Input() public delay &#x3D; 250;
-    @Input() public allowCancel: boolean;
-    @Input() public message: string;
-    @Input() public helpText: string;
+    @Input() public allowCancel?: boolean;
+    @Input() public message?: string;
+    @Input() public helpText?: string;
 
     /**
      * Input to set aria label text
@@ -935,18 +935,18 @@ export class SpinnerComponent implements OnChanges, OnDestroy {
 
 
     @Input() public set size(val: SpinnerSize) {
-        const sizes: string[] &#x3D; Object.keys(SpinnerSize).map((key: string) &#x3D;&gt; SpinnerSize[&lt;keyof typeof SpinnerSize&gt;key]);
-        const index &#x3D; sizes.indexOf(val);
+        const sizes &#x3D; Object.values(SpinnerSize);
 
-        if (index &lt; 0) {
-            this.logger.warn(
-                &#x60;Allowed sizes for nui-spinner are ${sizes.join(&quot;, &quot;)}. &#x60; +
-                &#x60;Default is ${SpinnerComponent.defaultSize}.&#x60;);
-
-            this._size &#x3D; SpinnerComponent.defaultSize;
-        } else {
+        if (sizes.includes(val)) {
             this._size &#x3D; val;
+            return;
         }
+
+        this.logger.warn(
+            &#x60;Allowed sizes for nui-spinner are ${sizes.join(&quot;, &quot;)}. &#x60; +
+            &#x60;Default is ${SpinnerComponent.defaultSize}.&#x60;);
+
+        this._size &#x3D; SpinnerComponent.defaultSize;
     }
 
     public get size() {

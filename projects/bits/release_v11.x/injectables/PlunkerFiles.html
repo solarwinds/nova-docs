@@ -382,7 +382,7 @@ export class AppModule {}
 &#x60;
 
     public getSystemJsConfigFile &#x3D; (): string &#x3D;&gt; &#x60;var ver &#x3D; {
-    ng: &#x27;11.0.0&#x27;
+    ng: &#x27;^11.0.0&#x27;
 };
 
 System.config({
@@ -430,7 +430,7 @@ System.config({
         &#x27;@angular/cdk/portal&#x27;: &#x27;npm:@angular/cdk@&#x27; + ver.ng + &#x27;/bundles/cdk-portal.umd.js&#x27;,
         &#x27;@angular/cdk/drag-drop&#x27;: &#x27;npm:@angular/cdk@&#x27; + ver.ng + &#x27;/bundles/cdk-drag-drop.umd.js&#x27;,
         &#x27;@angular/cdk/stepper&#x27;: &#x27;npm:@angular/cdk@&#x27; + ver.ng + &#x27;/bundles/cdk-stepper.umd.js&#x27;,
-        &#x27;angular-gridster2&#x27;: &#x27;npm:angular-gridster2@^&#x27; + ver.ng,
+        &#x27;angular-gridster2&#x27;: &#x27;npm:angular-gridster2@&#x27; + ver.ng,
         &#x27;resize-observer-polyfill&#x27;: &#x27;npm:resize-observer-polyfill@1.5.1/dist/ResizeObserver.js&#x27;,
 
         &#x27;rxjs&#x27;: &#x27;npm:rxjs@6.5.2&#x27;,
