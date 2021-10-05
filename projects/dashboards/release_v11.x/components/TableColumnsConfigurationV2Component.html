@@ -534,8 +534,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="167"
-                            class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor-v2/table-columns-configuration-v2.component.ts:167</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="177"
+                            class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor-v2/table-columns-configuration-v2.component.ts:177</a></div>
                 </td>
             </tr>
 
@@ -575,8 +575,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="279"
-                            class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor-v2/table-columns-configuration-v2.component.ts:279</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="289"
+                            class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor-v2/table-columns-configuration-v2.component.ts:289</a></div>
                 </td>
             </tr>
 
@@ -647,8 +647,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="275"
-                            class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor-v2/table-columns-configuration-v2.component.ts:275</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="285"
+                            class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor-v2/table-columns-configuration-v2.component.ts:285</a></div>
                 </td>
             </tr>
 
@@ -760,8 +760,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="258"
-                            class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor-v2/table-columns-configuration-v2.component.ts:258</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="268"
+                            class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor-v2/table-columns-configuration-v2.component.ts:268</a></div>
                 </td>
             </tr>
 
@@ -844,8 +844,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="176"
-                            class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor-v2/table-columns-configuration-v2.component.ts:176</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="186"
+                            class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor-v2/table-columns-configuration-v2.component.ts:186</a></div>
                 </td>
             </tr>
 
@@ -885,8 +885,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="268"
-                            class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor-v2/table-columns-configuration-v2.component.ts:268</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="278"
+                            class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor-v2/table-columns-configuration-v2.component.ts:278</a></div>
                 </td>
             </tr>
 
@@ -957,8 +957,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="180"
-                            class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor-v2/table-columns-configuration-v2.component.ts:180</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="190"
+                            class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor-v2/table-columns-configuration-v2.component.ts:190</a></div>
                 </td>
             </tr>
 
@@ -1029,8 +1029,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="163"
-                            class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor-v2/table-columns-configuration-v2.component.ts:163</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="173"
+                            class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor-v2/table-columns-configuration-v2.component.ts:173</a></div>
                 </td>
             </tr>
 
@@ -1549,7 +1549,7 @@ import {
     SimpleChanges,
     ViewEncapsulation,
 } from &quot;@angular/core&quot;;
-import { FormArray, FormBuilder, FormControl, FormGroup } from &quot;@angular/forms&quot;;
+import { AbstractControl, FormArray, FormBuilder, FormControl, FormGroup } from &quot;@angular/forms&quot;;
 import { DialogService, EventBus, IDataField, IDataSource, IEvent, uuid } from &quot;@nova-ui/bits&quot;;
 import isUndefined from &quot;lodash/isUndefined&quot;;
 import values from &quot;lodash/values&quot;;
@@ -1689,6 +1689,16 @@ export class TableColumnsConfigurationV2Component implements OnInit, IHasForm, O
         cols.controls &#x3D; columns.map(c &#x3D;&gt; {
             const fc &#x3D; new FormControl(c);
             fc.setParent(cols);
+
+            // Nova&#x27;s markAsTouched function gets attached to formControl during init of TableColumnConfigurationComponent,
+            // must be pass to newly created formControl here otherwise gets lost and column validation doesn&#x27;t get triggered.
+            const colControl &#x3D; cols.controls.find(
+                (cControl: AbstractControl) &#x3D;&gt; cControl.value.id &#x3D;&#x3D;&#x3D; c.id
+            );
+            if (colControl) {
+                fc.markAsTouched &#x3D; colControl.markAsTouched;
+            }
+
             return fc;
         });
         cols.updateValueAndValidity({ emitEvent });
