@@ -675,7 +675,11 @@ Valid ONLY for the component ids which have parent in the their own id!</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Checks whether given form has a field that should be visually marked as invalid</p>
+                    <div class="io-description"><p>Checks whether given form has a field that should be visually marked as invalid.
+Form is not in an error state if it&#39;s untouched even if it&#39;s invalid at that moment,
+a user must first interact with the form before it can be considered as invalid.
+&#39;invalid&#39; form property should not be used for the purpose of this function,
+it can be affected by its children form statuses, which can be considered as valid (untouched).</p>
 </div>
 
                     <div class="io-description">
