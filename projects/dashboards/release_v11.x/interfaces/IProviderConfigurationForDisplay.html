@@ -135,12 +135,6 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ChangeDetectorRef, EventEmitter, InjectionToken, Injector, StaticProvider } from &quot;@angular/core&quot;;
 import { AbstractControl, FormGroup } from &quot;@angular/forms&quot;;
 import { EventBus } from &quot;@nova-ui/bits&quot;;
-import { GridsterItem } from &quot;angular-gridster2&quot;;
-import { Observable } from &quot;rxjs&quot;;
-
-import { LegendPlacement } from &quot;./components/types&quot;;
-import { IHeaderLinkProvider } from &quot;./components/widget/widget-header/types&quot;;
-import { IConfiguratorSource } from &quot;./configurator/services/types&quot;;
 
 /**
  * Same as Partial&lt;T&gt; but goes deeper and makes all of its properties and sub-properties Partial&lt;T&gt;.
@@ -154,13 +148,8 @@ export const FORMATTERS_REGISTRY &#x3D; new InjectionToken&lt;EventBus&lt;Event&
 export const TEST_REGISTRY &#x3D; new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(&quot;TEST_REGISTRY&quot;);
 export const HEADER_LINK_PROVIDER &#x3D; new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(&quot;HEADER_LINK_PROVIDER&quot;);
 
-export type WidgetUpdateOperation &#x3D; (widget: IWidget, source: IConfiguratorSource) &#x3D;&gt; Observable&lt;IWidget&gt;;
-export type WidgetRemovalOperation &#x3D; (widgetId: string, source: IConfiguratorSource) &#x3D;&gt; Observable&lt;string&gt;;
 
-export interface IDashboardPersistenceHandler {
-    trySubmit?: WidgetUpdateOperation;
-    tryRemove?: WidgetRemovalOperation;
-}
+
 
 export enum WellKnownProviders {
     DataSource &#x3D; &quot;dataSource&quot;,
@@ -222,23 +211,6 @@ export interface IPortalEnvironment {
     injector?: Injector;
 }
 
-export interface IDashboard {
-    widgets: IWidgets;
-    positions: Record&lt;string, GridsterItem&gt;;
-}
-
-export interface IDashboardBelowFoldLazyLoadingConfig {
-    enabled: boolean;
-    configuration?: {
-        // reloads widgets if they were already loaded but then disappeared from the view
-        reloadWidgetsOnScroll: boolean;
-    };
-}
-
-export interface IWidgets {
-    [key: string]: IWidget;
-}
-
 export interface IPizzagnaLayer extends Record&lt;string, DeepPartial&lt;IComponentConfiguration&gt;&gt; {
 }
 
@@ -248,33 +220,6 @@ export interface IPizzagna extends Record&lt;string, IPizzagnaLayer&gt; {
 export interface IPizza extends Record&lt;string, IComponentConfiguration&gt; {
 }
 
-export interface IWidget {
-    id: string;
-    type: string;
-    version?: number;
-    pizzagna: IPizzagna;
-    metadata?: IWidgetMetadata;
-}
-
-export interface IWidgetMetadata extends Record&lt;string, any&gt; {
-    /**
-     * Set this to true to communicate to the widget cloner that the widget requires
-     * further configuration before it can be placed on the dashboard.
-     */
-    needsConfiguration?: boolean;
-}
-
-export interface IWidgetTypeDefinition {
-    configurator?: IPizzagna;
-    widget: IPizzagna;
-    /**
-     * Paths to various important values in pizzagnas - this should be coupled with respective pizzagnas in v10 - NUI-5829
-     */
-    paths?: {
-        widget?: Record&lt;string, string&gt;;
-        configurator?: Record&lt;string, string&gt;;
-    };
-}
 
 /**
  * Interface for components that can be dynamically refreshed from the outside using the changeDetector
@@ -320,25 +265,11 @@ export enum AccordionState {
     DEFAULT &#x3D; &quot;default&quot;,
 }
 
-export interface ILegendPlacementOption {
-    id: LegendPlacement;
-    label: string;
-}
-
 export enum HttpStatusCode {
     Unknown &#x3D; &quot;0&quot;,
     Ok &#x3D; &quot;200&quot;,
     Forbidden &#x3D; &quot;403&quot;,
     NotFound &#x3D; &quot;404&quot;,
-}
-
-/**
- * The properties for widget error display
- */
-export interface IWidgetErrorDisplayProperties {
-    image: string;
-    title: string;
-    description: string;
 }
 
 export interface IPaletteColor {

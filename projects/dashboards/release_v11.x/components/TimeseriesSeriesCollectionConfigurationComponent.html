@@ -900,12 +900,13 @@ export class TimeseriesSeriesCollectionConfigurationComponent implements IHasCha
     }
 
     public addSeries() {
-        // @ts-ignore: Types of property &#x27;selectedSeriesId&#x27; are incompatible.
         this.onItemsChange([
+            // @ts-ignore: Types of property &#x27;selectedSeriesId&#x27; are incompatible.
             ...this.series,
             {
                 id: uuid(&quot;series&quot;),
                 // TODO: Provide selectedSeriesId value that corresponds to it&#x27;s type which is string
+                // @ts-ignore: Types of property &#x27;selectedSeriesId&#x27; are incompatible.
                 selectedSeriesId: null,
             },
         ]);

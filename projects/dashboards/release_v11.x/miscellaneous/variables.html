@@ -154,7 +154,7 @@
                             <a href="#DEFAULT_REFRESH_INTERVAL" title="src/lib/components/providers/types.ts"><b>DEFAULT_REFRESH_INTERVAL</b>&nbsp;&nbsp;&nbsp;(src/.../types.ts)</a>
                         </li>
                         <li>
-                            <a href="#DEFAULT_TABLE_FORMATTERS" title="src/lib/widget-types/table/table-configurator.ts"><b>DEFAULT_TABLE_FORMATTERS</b>&nbsp;&nbsp;&nbsp;(src/.../table-configurator.ts)</a>
+                            <a href="#DEFAULT_TABLE_FORMATTERS" title="src/lib/widget-types/table/default-table-formatters.ts"><b>DEFAULT_TABLE_FORMATTERS</b>&nbsp;&nbsp;&nbsp;(src/.../default-table-formatters.ts)</a>
                         </li>
                         <li>
                             <a href="#DEFAULT_UNIT_CONVERSION_THRESHOLD" title="src/lib/common/constants.ts"><b>DEFAULT_UNIT_CONVERSION_THRESHOLD</b>&nbsp;&nbsp;&nbsp;(src/.../constants.ts)</a>
@@ -3380,7 +3380,7 @@
             </tbody>
         </table>
 </section>
-    <h3>src/lib/widget-types/table/table-configurator.ts</h3>
+    <h3>src/lib/widget-types/table/default-table-formatters.ts</h3>
     <section>
     <h3></h3>        <table class="table table-sm table-bordered">
             <tbody>
@@ -3403,171 +3403,31 @@
                     <tr>
                         <td class="col-md-4">
                             <i>Default value : </i><code>[
-    {
-        componentType: RawFormatterComponent.lateLoadKey,
-        label: $localize&#x60;No Formatter&#x60;,
-        dataTypes: {
-            // @ts-ignore
-            value: null,
-        },
-    },
-    {
-        componentType: LinkFormatterComponent.lateLoadKey,
-        label: $localize&#x60;Link&#x60;,
-        configurationComponent: &quot;LinkConfiguratorComponent&quot;,
-        dataTypes: {
-            value: &quot;label&quot;,
-            link: &quot;link&quot;,
-        },
-    },
-    {
-        componentType: IconFormatterComponent.lateLoadKey,
-        label: $localize&#x60;Icon&#x60;,
-        dataTypes: {
-            value: &quot;string&quot;,
-        },
-    },
+  {
+      componentType: RawFormatterComponent.lateLoadKey,
+      label: $localize&#x60;No Formatter&#x60;,
+      dataTypes: {
+          // @ts-ignore
+          value: null,
+      },
+  },
+  {
+      componentType: LinkFormatterComponent.lateLoadKey,
+      label: $localize&#x60;Link&#x60;,
+      configurationComponent: &quot;LinkConfiguratorComponent&quot;,
+      dataTypes: {
+          value: &quot;label&quot;,
+          link: &quot;link&quot;,
+      },
+  },
+  {
+      componentType: IconFormatterComponent.lateLoadKey,
+      label: $localize&#x60;Icon&#x60;,
+      dataTypes: {
+          value: &quot;string&quot;,
+      },
+  },
 ]</code>
-                        </td>
-                    </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="tableConfigurator"></a>
-                        <span class="name">
-                            <b>
-                            tableConfigurator</b>
-                            <a href="#tableConfigurator"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="../interfaces/IPizzagna.html" target="_self" >IPizzagna</a></code>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>{
-    [PizzagnaLayer.Structure]: {
-        [DEFAULT_PIZZAGNA_ROOT]: {
-            // base layout of the configurator - all form components referenced herein will be stacked in a column
-            id: DEFAULT_PIZZAGNA_ROOT,
-            componentType: FormStackComponent.lateLoadKey,
-            properties: {
-                elementClass: &quot;flex-grow-1 overflow-auto nui-scroll-shadows&quot;,
-                // references to other components laid out in this form
-                nodes: [&quot;presentation&quot;, &quot;dataAndCalculations&quot;, &quot;columns&quot;],
-            },
-            providers: {
-                [WellKnownProviders.FormattersRegistry]: {
-                    providerId: NOVA_TABLE_FORMATTERS_REGISTRY,
-                },
-                [WellKnownProviders.DataSourceManager]: {
-                    providerId: NOVA_CONFIGURATOR_DATA_SOURCE_MANAGER,
-                },
-            },
-        },
-        // /presentation
-        presentation: {
-            id: &quot;presentation&quot;,
-            componentType: WidgetConfiguratorSectionComponent.lateLoadKey,
-            properties: {
-                headerText: $localize&#x60;Presentation&#x60;,
-                // references to other components laid out in this form
-                nodes: [&quot;titleAndDescription&quot;, &quot;filters&quot;],
-            },
-        },
-        // /presentation/titleAndDescription
-        titleAndDescription: {
-            id: &quot;titleAndDescription&quot;,
-            componentType: TitleAndDescriptionConfigurationComponent.lateLoadKey,
-            providers: {
-                [WellKnownProviders.Converter]: {
-                    providerId: NOVA_TITLE_AND_DESCRIPTION_CONVERTER,
-                },
-            },
-        },
-        // /presentation/filters - configuration of built-in filters like search, sorting and pagination
-        filters: {
-            id: &quot;filters&quot;,
-            componentType: TableFiltersEditorComponent.lateLoadKey,
-            providers: {
-                [WellKnownProviders.Converter]: {
-                    providerId: NOVA_TABLE_FILTERS_CONVERTER,
-                },
-            },
-        },
-        refresher: REFRESHER_CONFIGURATOR,
-        // /dataAndCalculations
-        dataAndCalculations: {
-            id: &quot;dataAndCalculations&quot;,
-            componentType: WidgetConfiguratorSectionComponent.lateLoadKey,
-            properties: {
-                headerText: $localize&#x60;Data and Calculations&#x60;,
-                nodes: [&quot;dataSource&quot;],
-            },
-        },
-        // /dataAndCalculations/dataSource
-        dataSource: {
-            id: &quot;dataSource&quot;,
-            componentType: DataSourceConfigurationComponent.lateLoadKey,
-            properties: {
-                dataSourceProviders: [],
-                errorComponent: TableDataSourceErrorComponent.lateLoadKey,
-            },
-            providers: {
-                [WellKnownProviders.Converter]: {
-                    providerId: NOVA_GENERIC_CONVERTER,
-                    properties: {
-                        formParts: [
-                            {
-                                previewPath: &quot;table.providers.dataSource&quot;,
-                                // TODO: Remove &#x27;properties&#x27; key in v10 - NUI-5831
-                                keys: [&quot;providerId&quot;, &quot;properties&quot;],
-                            },
-                            {
-                                previewPath: &quot;table.providers.adapter.properties.dataSource&quot;,
-                                keys: [&quot;properties&quot;],
-                            },
-                        ],
-                    },
-                },
-            },
-        },
-        // A very important part of this configuration form is the &#x27;columns&#x27; section. It manages the configuration of columns and formatters that are used
-        // to display data in this table. Every column has multiple properties associated with it like: label, width, formatter and how to map incoming data
-        // into the formatter.
-        columns: {
-            id: &quot;columns&quot;,
-            componentType: TableColumnsConfigurationV2Component.lateLoadKey,
-            properties: {
-                // Deprecated (see TableColumnsConfigurationV2Component.template)
-                template: [
-                    {},
-                    {
-                        properties: {
-                            formatters: DEFAULT_TABLE_FORMATTERS,
-                        },
-                    },
-                ],
-            },
-            providers: {
-                [WellKnownProviders.Converter]: {
-                    // this specialized converter does all the work with building the complex forms for every column of the table and mapping the data back
-                    // to the widget configuration that builds the table component from the individual column configurations
-                    providerId: NOVA_TABLE_COLUMNS_CONVERTER,
-                },
-            },
-        },
-    },
-}</code>
                         </td>
                     </tr>
 
@@ -6321,6 +6181,149 @@ This function represents the linear dependency (approximately).</p>
     },
     widget: tableWidget,
     configurator: tableConfigurator,
+}</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+    <h3>src/lib/widget-types/table/table-configurator.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="tableConfigurator"></a>
+                        <span class="name">
+                            <b>
+                            tableConfigurator</b>
+                            <a href="#tableConfigurator"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/IPizzagna.html" target="_self" >IPizzagna</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{
+    [PizzagnaLayer.Structure]: {
+        [DEFAULT_PIZZAGNA_ROOT]: {
+            // base layout of the configurator - all form components referenced herein will be stacked in a column
+            id: DEFAULT_PIZZAGNA_ROOT,
+            componentType: FormStackComponent.lateLoadKey,
+            properties: {
+                elementClass: &quot;flex-grow-1 overflow-auto nui-scroll-shadows&quot;,
+                // references to other components laid out in this form
+                nodes: [&quot;presentation&quot;, &quot;dataAndCalculations&quot;, &quot;columns&quot;],
+            },
+            providers: {
+                [WellKnownProviders.FormattersRegistry]: {
+                    providerId: NOVA_TABLE_FORMATTERS_REGISTRY,
+                },
+                [WellKnownProviders.DataSourceManager]: {
+                    providerId: NOVA_CONFIGURATOR_DATA_SOURCE_MANAGER,
+                },
+            },
+        },
+        // /presentation
+        presentation: {
+            id: &quot;presentation&quot;,
+            componentType: WidgetConfiguratorSectionComponent.lateLoadKey,
+            properties: {
+                headerText: $localize&#x60;Presentation&#x60;,
+                // references to other components laid out in this form
+                nodes: [&quot;titleAndDescription&quot;, &quot;filters&quot;],
+            },
+        },
+        // /presentation/titleAndDescription
+        titleAndDescription: {
+            id: &quot;titleAndDescription&quot;,
+            componentType: TitleAndDescriptionConfigurationComponent.lateLoadKey,
+            providers: {
+                [WellKnownProviders.Converter]: {
+                    providerId: NOVA_TITLE_AND_DESCRIPTION_CONVERTER,
+                },
+            },
+        },
+        // /presentation/filters - configuration of built-in filters like search, sorting and pagination
+        filters: {
+            id: &quot;filters&quot;,
+            componentType: TableFiltersEditorComponent.lateLoadKey,
+            providers: {
+                [WellKnownProviders.Converter]: {
+                    providerId: NOVA_TABLE_FILTERS_CONVERTER,
+                },
+            },
+        },
+        refresher: REFRESHER_CONFIGURATOR,
+        // /dataAndCalculations
+        dataAndCalculations: {
+            id: &quot;dataAndCalculations&quot;,
+            componentType: WidgetConfiguratorSectionComponent.lateLoadKey,
+            properties: {
+                headerText: $localize&#x60;Data and Calculations&#x60;,
+                nodes: [&quot;dataSource&quot;],
+            },
+        },
+        // /dataAndCalculations/dataSource
+        dataSource: {
+            id: &quot;dataSource&quot;,
+            componentType: DataSourceConfigurationComponent.lateLoadKey,
+            properties: {
+                dataSourceProviders: [],
+                errorComponent: TableDataSourceErrorComponent.lateLoadKey,
+            },
+            providers: {
+                [WellKnownProviders.Converter]: {
+                    providerId: NOVA_GENERIC_CONVERTER,
+                    properties: {
+                        formParts: [
+                            {
+                                previewPath: &quot;table.providers.dataSource&quot;,
+                                // TODO: Remove &#x27;properties&#x27; key in v10 - NUI-5831
+                                keys: [&quot;providerId&quot;, &quot;properties&quot;],
+                            },
+                            {
+                                previewPath: &quot;table.providers.adapter.properties.dataSource&quot;,
+                                keys: [&quot;properties&quot;],
+                            },
+                        ],
+                    },
+                },
+            },
+        },
+        // A very important part of this configuration form is the &#x27;columns&#x27; section. It manages the configuration of columns and formatters that are used
+        // to display data in this table. Every column has multiple properties associated with it like: label, width, formatter and how to map incoming data
+        // into the formatter.
+        columns: {
+            id: &quot;columns&quot;,
+            componentType: TableColumnsConfigurationV2Component.lateLoadKey,
+            properties: {
+                // Deprecated (see TableColumnsConfigurationV2Component.template)
+                template: [
+                    {},
+                    {
+                        properties: {
+                            formatters: DEFAULT_TABLE_FORMATTERS,
+                        },
+                    },
+                ],
+            },
+            providers: {
+                [WellKnownProviders.Converter]: {
+                    // this specialized converter does all the work with building the complex forms for every column of the table and mapping the data back
+                    // to the widget configuration that builds the table component from the individual column configurations
+                    providerId: NOVA_TABLE_COLUMNS_CONVERTER,
+                },
+            },
+        },
+    },
 }</code>
                         </td>
                     </tr>

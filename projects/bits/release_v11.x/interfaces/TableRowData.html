@@ -80,7 +80,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/lib/table/table.component.ts:50</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/lib/table/table.component.ts:55</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -92,7 +92,11 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Directionality } from &quot;@angular/cdk/bidi&quot;;
-import { _DisposeViewRepeaterStrategy, _VIEW_REPEATER_STRATEGY, _ViewRepeater } from &quot;@angular/cdk/collections&quot;;
+import {
+    _DisposeViewRepeaterStrategy,
+    _VIEW_REPEATER_STRATEGY,
+    _ViewRepeater,
+} from &quot;@angular/cdk/collections&quot;;
 import { Platform } from &quot;@angular/cdk/platform&quot;;
 import { CdkVirtualForOf, ViewportRuler } from &quot;@angular/cdk/scrolling&quot;;
 import {
@@ -100,10 +104,11 @@ import {
     _CoalescedStyleScheduler,
     CDK_TABLE_TEMPLATE,
     CdkTable,
+    RenderRow,
+    RowContext,
     STICKY_POSITIONING_LISTENER,
     StickyPositioningListener,
 } from &quot;@angular/cdk/table&quot;;
-import { RenderRow, RowContext } from &quot;@angular/cdk/table/table&quot;;
 import { DOCUMENT } from &quot;@angular/common&quot;;
 import {
     AfterContentInit,
@@ -152,19 +157,26 @@ interface TableRowData {
     template: CDK_TABLE_TEMPLATE,
     exportAs: &quot;nuiTable&quot;,
     host: {
-        &quot;class&quot;: &quot;nui-table__table&quot;,
+        class: &quot;nui-table__table&quot;,
     },
     changeDetection: ChangeDetectionStrategy.OnPush,
     providers: [
         TableStateHandlerService,
-        { provide: _VIEW_REPEATER_STRATEGY, useClass: _DisposeViewRepeaterStrategy },
-        { provide: _COALESCED_STYLE_SCHEDULER, useClass: _CoalescedStyleScheduler },
+        {
+            provide: _VIEW_REPEATER_STRATEGY,
+            useClass: _DisposeViewRepeaterStrategy,
+        },
+        {
+            provide: _COALESCED_STYLE_SCHEDULER,
+            useClass: _CoalescedStyleScheduler,
+        },
     ],
     styleUrls: [&quot;./table.component.less&quot;],
     encapsulation: ViewEncapsulation.None,
 })
-
-export class TableComponent&lt;T&gt; extends CdkTable&lt;T&gt; implements OnInit, AfterViewInit, AfterContentInit, OnDestroy, OnChanges {
+export class TableComponent&lt;T&gt;
+    extends CdkTable&lt;T&gt;
+    implements OnInit, AfterViewInit, AfterContentInit, OnDestroy, OnChanges {
     @Input() reorderable &#x3D; false;
     @Input() sortable &#x3D; false;
     @Input() resizable &#x3D; false;
@@ -196,76 +208,89 @@ export class TableComponent&lt;T&gt; extends CdkTable&lt;T&gt; implements OnInit
     @HostBinding(&quot;class.nui-table__table-fixed&quot;) layoutFixed &#x3D; false;
     @ContentChild(CdkVirtualForOf) public virtualFor?: CdkVirtualForOf&lt;unknown&gt;;
 
-    constructor(protected _differs: IterableDiffers,
-                protected _changeDetectorRef: ChangeDetectorRef,
-                protected _elementRef: ElementRef&lt;any&gt;,
-                @Attribute(&quot;role&quot;) role: string,
-                protected _dir: Directionality,
-                private tableStateHandlerService: TableStateHandlerService,
-                @Inject(DOCUMENT) private document: Document,
-                private platform: Platform,
-                @Inject(_VIEW_REPEATER_STRATEGY) viewRepeater: _ViewRepeater&lt;T, RenderRow&lt;T&gt;, RowContext&lt;T&gt;&gt;,
-                @Inject(_COALESCED_STYLE_SCHEDULER) coalescedStyleScheduler: _CoalescedStyleScheduler,
-                viewportRuler: ViewportRuler,
-                @Optional() @SkipSelf() @Inject(STICKY_POSITIONING_LISTENER) stickyPositioningListener: StickyPositioningListener
+    constructor(
+        protected _differs: IterableDiffers,
+        protected _changeDetectorRef: ChangeDetectorRef,
+        protected _elementRef: ElementRef&lt;any&gt;,
+        @Attribute(&quot;role&quot;) role: string,
+        protected _dir: Directionality,
+        private tableStateHandlerService: TableStateHandlerService,
+        @Inject(DOCUMENT) private document: Document,
+        private platform: Platform,
+        @Inject(_VIEW_REPEATER_STRATEGY)
+        viewRepeater: _ViewRepeater&lt;T, RenderRow&lt;T&gt;, RowContext&lt;T&gt;&gt;,
+        @Inject(_COALESCED_STYLE_SCHEDULER)
+        coalescedStyleScheduler: _CoalescedStyleScheduler,
+        viewportRuler: ViewportRuler,
+        @Optional()
+        @SkipSelf()
+        @Inject(STICKY_POSITIONING_LISTENER)
+        stickyPositioningListener: StickyPositioningListener
     ) {
         // The _ViewRepeater and _CoalescedStyleScheduler parameters were optional before Angular v12.
         // They&#x27;re included here for compatibility with Angular v12 and later.
         super(
-            _differs, _changeDetectorRef, _elementRef, role, _dir, document, platform,
-            viewRepeater, coalescedStyleScheduler, undefined, undefined
+            _differs,
+            _changeDetectorRef,
+            _elementRef,
+            role,
+            _dir,
+            document,
+            platform,
+            viewRepeater,
+            coalescedStyleScheduler,
+            viewportRuler,
+            stickyPositioningListener
         );
-
-        // Angular v12 is changing the order of the last two parameters compared to v11.
-        // They deprecated the optionality of the last parameter, but the one before the last one is still optional, so they switched the order.
-        // Us trying to be compatible with both v11 and v12 had to take this path to make sure both values are assigned properly.
-        // These fields are inaccessible / readonly, so that&#x27;s why we had to perform the &#x60;any&#x60; cast.
-        (this as any)._viewportRuler &#x3D; viewportRuler;
-        (this as any)._stickyPositioningListener &#x3D; stickyPositioningListener;
     }
 
     public getFilterComponents(): IFilteringParticipants {
-        return !this.sortable ? {} : {
-            sorter: {
-                componentInstance: {
-                    // mark this filter to be monitored by our datasource for any changes in order reset other filters(eg: pagination)
-                    // before any new search is performed
-                    detectFilterChanges: true,
-                    getFilters: () &#x3D;&gt;
-                        ({
+        return !this.sortable
+            ? {}
+            : {
+                sorter: {
+                    componentInstance: {
+                        // mark this filter to be monitored by our datasource for any changes in order reset other filters(eg: pagination)
+                        // before any new search is performed
+                        detectFilterChanges: true,
+                        getFilters: () &#x3D;&gt; ({
                             type: &quot;sorter&quot;,
                             value: {
                                 sortBy: this.sortBy,
                                 direction: this.sortDirection,
                             },
                         }),
+                    },
                 },
-            },
-        };
+            };
     }
 
-    public getPreselectedItems(items: any[]) {
+    public getPreselectedItems(items: T[]): T[] {
         return this.dataSource.filter((item) &#x3D;&gt; _some(items, item));
     }
 
     // using on changes hook for datasource because if we use pagination,
     // datasource changes when we change page and rows should know about this
-    ngOnChanges(changes: ComponentChanges&lt;TableComponent&lt;T&gt;&gt;) {
+    ngOnChanges(changes: ComponentChanges&lt;TableComponent&lt;T&gt;&gt;): void {
         if (changes.resizable) {
-            this.tableStateHandlerService.resizable &#x3D; changes.resizable.currentValue;
+            this.tableStateHandlerService.resizable &#x3D;
+                changes.resizable.currentValue;
             this.layoutFixed &#x3D; changes.resizable.currentValue;
         }
         if (changes.reorderable) {
-            this.tableStateHandlerService.reorderable &#x3D; changes.reorderable.currentValue;
+            this.tableStateHandlerService.reorderable &#x3D;
+                changes.reorderable.currentValue;
         }
         if (changes.sortable) {
-            this.tableStateHandlerService.sortable &#x3D; changes.sortable.currentValue;
+            this.tableStateHandlerService.sortable &#x3D;
+                changes.sortable.currentValue;
         }
         if (changes.dataSource) {
             this.onDataSourceChange(changes.dataSource.currentValue);
         }
         if (changes.selectable) {
-            this.tableStateHandlerService.selectable &#x3D; changes.selectable.currentValue;
+            this.tableStateHandlerService.selectable &#x3D;
+                changes.selectable.currentValue;
         }
         if (changes.selection &amp;&amp; !changes.selection.isFirstChange()) {
             this.changeSelection(changes.selection.currentValue);
@@ -274,40 +299,46 @@ export class TableComponent&lt;T&gt; extends CdkTable&lt;T&gt; implements OnInit
             this.handleSortedColumn(changes.sortedColumn.currentValue);
         }
         if (changes.trackBy) {
-            this.tableStateHandlerService.trackBy &#x3D; changes.trackBy.currentValue;
+            this.tableStateHandlerService.trackBy &#x3D;
+                changes.trackBy.currentValue;
         }
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
         super.ngOnInit();
-        const dataSet &#x3D; (this.dataSource as Array&lt;T&gt;);
+        const dataSet &#x3D; this.dataSource as Array&lt;T&gt;;
         const firstRow: TableRowData &#x3D; dataSet &amp;&amp; dataSet[0];
         const columns &#x3D; _keys(firstRow);
         this.tableStateHandlerService.tableColumns &#x3D; columns;
 
-        columns.forEach(column &#x3D;&gt; {
-            const alignment &#x3D; this.tableStateHandlerService.defineAlignment(firstRow[column]);
+        columns.forEach((column) &#x3D;&gt; {
+            const alignment &#x3D; this.tableStateHandlerService.defineAlignment(
+                firstRow[column]
+            );
             this.tableStateHandlerService.setAlignment(column, alignment);
         });
 
         if (this.resizable) {
-            const parentWidth &#x3D; this._elementRef.nativeElement.parentElement.getBoundingClientRect().width;
+            const parentWidth &#x3D;
+                this._elementRef.nativeElement.parentElement.getBoundingClientRect()
+                    .width;
             this.layoutFixed &#x3D; true;
             this.tableStateHandlerService.tableParentWidth &#x3D; parentWidth;
         }
 
         if (this.sortable) {
-            this.tableSortingSubscription &#x3D; this.tableStateHandlerService.sortingState.subscribe(
-                (sortedColumn: ISortedItem) &#x3D;&gt; {
-                    this.sortDirection &#x3D; sortedColumn.direction;
-                    this.sortBy &#x3D; sortedColumn.sortBy;
+            this.tableSortingSubscription &#x3D;
+                this.tableStateHandlerService.sortingState.subscribe(
+                    (sortedColumn: ISortedItem) &#x3D;&gt; {
+                        this.sortDirection &#x3D; sortedColumn.direction;
+                        this.sortBy &#x3D; sortedColumn.sortBy;
 
-                    // emit only if the data is really changed
-                    if (!_isEqual(sortedColumn, this.sortedColumn)) {
-                        this.sortOrderChanged.emit(sortedColumn);
+                        // emit only if the data is really changed
+                        if (!_isEqual(sortedColumn, this.sortedColumn)) {
+                            this.sortOrderChanged.emit(sortedColumn);
+                        }
                     }
-                }
-            );
+                );
 
             if (this.sortedColumn) {
                 this.handleSortedColumn(this.sortedColumn);
@@ -315,27 +346,36 @@ export class TableComponent&lt;T&gt; extends CdkTable&lt;T&gt; implements OnInit
         }
 
         if (this.reorderable) {
-            this.tableColumnsSubscription &#x3D; this.tableStateHandlerService.columnsState.subscribe((tableColumns: string[]) &#x3D;&gt; {
-                this.columnsOrderChange.emit(tableColumns);
-            });
+            this.tableColumnsSubscription &#x3D;
+                this.tableStateHandlerService.columnsState.subscribe(
+                    (tableColumns: string[]) &#x3D;&gt; {
+                        this.columnsOrderChange.emit(tableColumns);
+                    }
+                );
         }
 
         if (this.selectable) {
-            this.stickyChangedSubscription &#x3D; this.tableStateHandlerService.stickyHeaderChangedSubject.subscribe(() &#x3D;&gt; {
-                // calling cdk method to update sticky styles
-                this.updateStickyHeaderRowStyles();
-            });
+            this.stickyChangedSubscription &#x3D;
+                this.tableStateHandlerService.stickyHeaderChangedSubject.subscribe(
+                    () &#x3D;&gt; {
+                        // calling cdk method to update sticky styles
+                        this.updateStickyHeaderRowStyles();
+                    }
+                );
         }
     }
 
-    public ngAfterViewInit() {
+    public ngAfterViewInit(): void {
         // moved this from ngOnInit since we might emit the selectionChange event
         // before our component is actually ready and it might cause problems
         // if we try to manually trigger change detection in a parent component
         if (this.selectable) {
-            this.selectionChangedSubscription &#x3D; this.tableStateHandlerService.selectionChanged.subscribe((selection: ISelection) &#x3D;&gt; {
-                this.selectionChange.emit(selection);
-            });
+            this.selectionChangedSubscription &#x3D;
+                this.tableStateHandlerService.selectionChanged.subscribe(
+                    (selection: ISelection) &#x3D;&gt; {
+                        this.selectionChange.emit(selection);
+                    }
+                );
 
             if (this.selection) {
                 this.changeSelection(this.selection);
@@ -345,7 +385,9 @@ export class TableComponent&lt;T&gt; extends CdkTable&lt;T&gt; implements OnInit
 
     private changeSelection(selectedItems: ISelection) {
         this.tableStateHandlerService.selection &#x3D; selectedItems;
-        this.tableStateHandlerService.selectionChanged.next(this.tableStateHandlerService.selection);
+        this.tableStateHandlerService.selectionChanged.next(
+            this.tableStateHandlerService.selection
+        );
     }
 
     private handleSortedColumn(sortedColumn: ISortedItem) {
@@ -359,11 +401,12 @@ export class TableComponent&lt;T&gt; extends CdkTable&lt;T&gt; implements OnInit
         }
         const changedDataSource &#x3D; ds ? ds : [];
         // if no totalItems specified, we assume that there is only one page
-        this.tableStateHandlerService.totalItems &#x3D; this.totalItems || changedDataSource.length;
+        this.tableStateHandlerService.totalItems &#x3D;
+            this.totalItems || changedDataSource.length;
         this.tableStateHandlerService.changeDataSource(changedDataSource);
     }
 
-    ngOnDestroy() {
+    ngOnDestroy(): void {
         if (this.tableSortingSubscription) {
             this.tableSortingSubscription.unsubscribe();
         }

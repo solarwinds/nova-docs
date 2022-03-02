@@ -136,7 +136,9 @@
 import { ComponentRef } from &quot;@angular/core&quot;;
 
 import { DashboardComponent } from &quot;../../components/dashboard/dashboard.component&quot;;
-import { IPizzagna, IWidget, WidgetUpdateOperation } from &quot;../../types&quot;;
+import { IPizzagna } from &quot;../../types&quot;;
+import { IWidget } from &quot;../../components/widget/types&quot;;
+import { Observable } from &quot;rxjs&quot;;
 
 export interface IComponentPortalBundle&lt;T&gt; {
     portal: ComponentPortal&lt;T&gt;;
@@ -168,6 +170,9 @@ export interface ISerializableTimeframe {
     selectedPresetId?: string;
     title?: string;
 }
+
+export type WidgetUpdateOperation &#x3D; (widget: IWidget, source: IConfiguratorSource) &#x3D;&gt; Observable&lt;IWidget&gt;;
+export type WidgetRemovalOperation &#x3D; (widgetId: string, source: IConfiguratorSource) &#x3D;&gt; Observable&lt;string&gt;;
 </code></pre>
     </div>
 </div>
