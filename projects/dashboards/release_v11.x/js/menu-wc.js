@@ -958,9 +958,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/IDashwizButtonsComponent.html" data-type="entity-link">IDashwizButtonsComponent</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IDashwizComponent.html" data-type="entity-link">IDashwizComponent</a>
-                            </li>
-                            <li class="link">
                                 <a href="interfaces/IDashwizStepComponent.html" data-type="entity-link">IDashwizStepComponent</a>
                             </li>
                             <li class="link">

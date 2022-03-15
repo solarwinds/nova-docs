@@ -192,6 +192,7 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { AfterViewInit, ChangeDetectorRef, Directive, ElementRef, HostBinding, Input, NgZone, OnChanges, OnDestroy, SimpleChanges } from &quot;@angular/core&quot;;
 import isFinite from &quot;lodash/isFinite&quot;;
+import ResizeObserver from &quot;resize-observer-polyfill&quot;;
 import { BehaviorSubject, Subject } from &quot;rxjs&quot;;
 import { takeUntil } from &quot;rxjs/operators&quot;;
 
@@ -220,7 +221,7 @@ export class ZoomContentDirective implements OnDestroy, AfterViewInit, OnChanges
 
     @HostBinding(&quot;style.padding&quot;)
     public scalePadding: string &#x3D; &quot;0&quot;;
-
+    
     // Zoom inputs
     @Input() public zoomRatio &#x3D; 0.9;
     @Input() public minZoomDifference &#x3D; 0.1;

@@ -162,10 +162,9 @@
 import { FormBuilder, FormGroup, Validators } from &quot;@angular/forms&quot;;
 
 import { IProportionalWidgetChartEditorOptions, ProportionalWidgetChartTypes } from &quot;../../../../../components/proportional-widget/types&quot;;
-import { IFormatterDefinition } from &quot;../../../../../components/types&quot;;
+import { IFormatterDefinition, LegendPlacement } from &quot;../../../../../components/types&quot;;
 import { IHasChangeDetector, IHasForm, IProperties } from &quot;../../../../../types&quot;;
 import { ConfiguratorHeadingService } from &quot;../../../../services/configurator-heading.service&quot;;
-import { LegendPlacement } from &quot;../../../../../widget-types/common/widget/legend&quot;;
 
 type ChartTypeNamesMap &#x3D; { [key in ProportionalWidgetChartTypes]: string };
 const proportionalWidgetChartTypesNamesMap: ChartTypeNamesMap &#x3D; {

@@ -61,7 +61,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/lib/components/widget/types.ts</code>
+            <code>src/lib/types.ts</code>
         </p>
 
 
@@ -208,49 +208,227 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { IPizzagna } from &quot;../../types&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ChangeDetectorRef, EventEmitter, InjectionToken, Injector, StaticProvider } from &quot;@angular/core&quot;;
+import { AbstractControl, FormGroup } from &quot;@angular/forms&quot;;
+import { EventBus } from &quot;@nova-ui/bits&quot;;
+import { GridsterItem } from &quot;angular-gridster2&quot;;
+import { Observable } from &quot;rxjs&quot;;
+
+import { LegendPlacement } from &quot;./components/types&quot;;
+import { IHeaderLinkProvider } from &quot;./components/widget/widget-header/types&quot;;
+import { IConfiguratorSource } from &quot;./configurator/services/types&quot;;
+
+/**
+ * Same as Partial&lt;T&gt; but goes deeper and makes all of its properties and sub-properties Partial&lt;T&gt;.
+ */
+export type DeepPartial&lt;T&gt; &#x3D; T extends object ? { [K in keyof T]?: DeepPartial&lt;T[K]&gt; } : T;
+
+export const PIZZAGNA_EVENT_BUS &#x3D; new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(&quot;PIZZAGNA_EVENT_BUS&quot;);
+export const DASHBOARD_EVENT_BUS &#x3D; new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(&quot;DASHBOARD_EVENT_BUS&quot;);
+export const DATA_SOURCE &#x3D; new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(&quot;DATA_SOURCE&quot;);
+export const FORMATTERS_REGISTRY &#x3D; new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(&quot;FORMATTERS_REGISTRY&quot;);
+export const TEST_REGISTRY &#x3D; new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(&quot;TEST_REGISTRY&quot;);
+export const HEADER_LINK_PROVIDER &#x3D; new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(&quot;HEADER_LINK_PROVIDER&quot;);
+
+export type WidgetUpdateOperation &#x3D; (widget: IWidget, source: IConfiguratorSource) &#x3D;&gt; Observable&lt;IWidget&gt;;
+export type WidgetRemovalOperation &#x3D; (widgetId: string, source: IConfiguratorSource) &#x3D;&gt; Observable&lt;string&gt;;
+
+export interface IDashboardPersistenceHandler {
+    trySubmit?: WidgetUpdateOperation;
+    tryRemove?: WidgetRemovalOperation;
+}
+
+export enum WellKnownProviders {
+    DataSource &#x3D; &quot;dataSource&quot;,
+    Adapter &#x3D; &quot;adapter&quot;,
+    Converter &#x3D; &quot;converter&quot;,
+    Broadcaster &#x3D; &quot;broadcaster&quot;,
+    Refresher &#x3D; &quot;refresher&quot;,
+    EventProxy &#x3D; &quot;eventProxy&quot;,
+    LoadingAdapter &#x3D; &quot;loadingAdapter&quot;,
+    ContentFallbackAdapter &#x3D; &quot;contentFallbackAdapter&quot;,
+    InteractionHandler &#x3D; &quot;interactionHandler&quot;,
+    EventBusDebugger &#x3D; &quot;eventBusDebugger&quot;,
+    KpiColorPrioritizer &#x3D; &quot;kpiColorPrioritizer&quot;,
+    FormattersRegistry &#x3D; &quot;formattersRegistry&quot;,
+    DataSourceManager &#x3D; &quot;dataSourceManager&quot;,
+}
+
+export enum WellKnownPathKey {
+    Root &#x3D; &quot;root&quot;,
+    DataSourceConfigComponentType &#x3D; &quot;dataSourceConfigComponentType&quot;,
+    TileDescriptionConfigComponentType &#x3D; &quot;tileDescriptionConfigComponentType&quot;,
+    DataSourceProviders &#x3D; &quot;dataSourceProviders&quot;,
+    Formatters &#x3D; &quot;formatters&quot;,
+    TileDescriptionBackgroundColors &#x3D; &quot;tileDescriptionBackgroundColors&quot;,
+    TileBackgroundColorRulesBackgroundColors &#x3D; &quot;tileBackgroundColorRulesBackgroundColors&quot;,
+}
+
+export enum WellKnownDataSourceFeatures {
+    Interactivity &#x3D; &quot;interactivity&quot;,
+    DisableTableColumnGeneration &#x3D; &quot;disableTableColumnGeneration&quot;,
+}
+
+export interface IProperties extends Record&lt;string, any&gt; {
+}
+
+export interface IProviderProperties extends IProperties {
+    /** This is property is set by the component portal directive to give providers self-awareness they need to update properties in pizzagna. */
+    providerKey?: string;
+}
+
+export interface IComponentConfiguration {
+    id: string;
+    componentType: string;
+    providers?: Record&lt;string, IProviderConfiguration&gt;;
+    properties?: IProperties;
+}
+
+export interface IProviderConfiguration {
+    providerId: string;
+    properties?: IProviderProperties;
+}
+
+export interface IProviderConfigurationForDisplay extends IProviderConfiguration {
+    label: string;
+}
+
+export interface IPortalEnvironment {
+    providers?: StaticProvider[];
+    injector?: Injector;
+}
+
+export interface IDashboard {
+    widgets: IWidgets;
+    positions: Record&lt;string, GridsterItem&gt;;
+}
+
+export interface IDashboardBelowFoldLazyLoadingConfig {
+    enabled: boolean;
+    configuration?: {
+        // reloads widgets if they were already loaded but then disappeared from the view
+        reloadWidgetsOnScroll: boolean;
+    };
+}
 
 export interface IWidgets {
-  [key: string]: IWidget;
+    [key: string]: IWidget;
+}
+
+export interface IPizzagnaLayer extends Record&lt;string, DeepPartial&lt;IComponentConfiguration&gt;&gt; {
+}
+
+export interface IPizzagna extends Record&lt;string, IPizzagnaLayer&gt; {
+}
+
+export interface IPizza extends Record&lt;string, IComponentConfiguration&gt; {
 }
 
 export interface IWidget {
-  id: string;
-  type: string;
-  version?: number;
-  pizzagna: IPizzagna;
-  metadata?: IWidgetMetadata;
+    id: string;
+    type: string;
+    version?: number;
+    pizzagna: IPizzagna;
+    metadata?: IWidgetMetadata;
 }
 
 export interface IWidgetMetadata extends Record&lt;string, any&gt; {
-  /**
-   * Set this to true to communicate to the widget cloner that the widget requires
-   * further configuration before it can be placed on the dashboard.
-   */
-  needsConfiguration?: boolean;
+    /**
+     * Set this to true to communicate to the widget cloner that the widget requires
+     * further configuration before it can be placed on the dashboard.
+     */
+    needsConfiguration?: boolean;
 }
 
 export interface IWidgetTypeDefinition {
-  configurator?: IPizzagna;
-  widget: IPizzagna;
-  /**
-   * Paths to various important values in pizzagnas - this should be coupled with respective pizzagnas in v10 - NUI-5829
-   */
-  paths?: {
-      widget?: Record&lt;string, string&gt;;
-      configurator?: Record&lt;string, string&gt;;
-  };
+    configurator?: IPizzagna;
+    widget: IPizzagna;
+    /**
+     * Paths to various important values in pizzagnas - this should be coupled with respective pizzagnas in v10 - NUI-5829
+     */
+    paths?: {
+        widget?: Record&lt;string, string&gt;;
+        configurator?: Record&lt;string, string&gt;;
+    };
+}
+
+/**
+ * Interface for components that can be dynamically refreshed from the outside using the changeDetector
+ */
+export interface IHasChangeDetector {
+    changeDetector: ChangeDetectorRef;
+}
+
+/**
+ * Interface for components that expose a form
+ */
+export interface IHasForm&lt;T extends AbstractControl &#x3D; FormGroup&gt; {
+    form: T;
+    formReady: EventEmitter&lt;T&gt;;
+}
+
+/**
+ * Interface for providers that require the related component info
+ */
+export interface IHasComponent&lt;T &#x3D; any&gt; {
+    setComponent(component: T, componentId: string): void;
+}
+
+/**
+ * Interface for configurable providers
+ */
+export interface IConfigurable {
+    providerKey?: string;
+    setComponent?: (component: any, componentId: string) &#x3D;&gt; void;
+    // TODO: BREAKING rename to &#x27;updateProperties&#x27; in v12 - NUI-5828
+    updateConfiguration(properties: IProperties): void;
+}
+
+export enum PizzagnaLayer {
+    Structure &#x3D; &quot;structure&quot;,
+    Configuration &#x3D; &quot;configuration&quot;,
+    Data &#x3D; &quot;data&quot;,
+}
+
+export enum AccordionState {
+    CRITICAL &#x3D; &quot;critical&quot;,
+    WARNING &#x3D; &quot;warning&quot;,
+    DEFAULT &#x3D; &quot;default&quot;,
+}
+
+export interface ILegendPlacementOption {
+    id: LegendPlacement;
+    label: string;
+}
+
+export enum HttpStatusCode {
+    Unknown &#x3D; &quot;0&quot;,
+    Ok &#x3D; &quot;200&quot;,
+    Forbidden &#x3D; &quot;403&quot;,
+    NotFound &#x3D; &quot;404&quot;,
 }
 
 /**
  * The properties for widget error display
  */
- export interface IWidgetErrorDisplayProperties {
-  image: string;
-  title: string;
-  description: string;
+export interface IWidgetErrorDisplayProperties {
+    image: string;
+    title: string;
+    description: string;
 }
 
+export interface IPaletteColor {
+    color: string;
+    label: string;
+}
+
+export type ComparatorFn &#x3D; (a: any, b: any) &#x3D;&gt; boolean;
+export type ComparatorTypes &#x3D; &quot;&gt;&quot; | &quot;&gt;&#x3D;&quot; | &quot;&#x3D;&#x3D;&quot; | &quot;&lt;&quot; | &quot;&lt;&#x3D;&quot;;
+export interface IBackgroundColorComparator {
+    comparatorFn: ComparatorFn;
+    label?: string;
+}
+export interface IComparatorsDict extends Partial&lt;Record&lt;ComparatorTypes | string, IBackgroundColorComparator&gt;&gt; {}
 </code></pre>
     </div>
 </div>

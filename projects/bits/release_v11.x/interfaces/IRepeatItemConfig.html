@@ -208,8 +208,8 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {CdkDrag, DropListRef} from &quot;@angular/cdk/drag-drop&quot;;
-import {TrackByFunction} from &quot;@angular/core&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { CdkDrag, DropListRef } from &quot;@angular/cdk/drag-drop&quot;;
+import { TrackByFunction } from &quot;@angular/core&quot;;
 
 export enum RepeatSelectionMode {
     multi &#x3D; &quot;multi&quot;,
@@ -240,7 +240,7 @@ export interface ITypedRepeatItem {
 
 export type IRepeatItem &#x3D; ITypedRepeatItem | any;
 
-export interface IRepeatItemConfig&lt;T extends IRepeatItem &#x3D; IRepeatItem&gt; {
+export interface IRepeatItemConfig&lt;T &#x3D; IRepeatItem&gt; {
     isDisabled?: (params: T) &#x3D;&gt; boolean;
     isDraggable?: (params: T) &#x3D;&gt; boolean;
     trackBy?: TrackByFunction&lt;T&gt;;
