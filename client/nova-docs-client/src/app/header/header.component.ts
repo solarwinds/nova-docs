@@ -77,18 +77,21 @@ export class HeaderComponent implements OnInit, AfterViewInit {
         this.toastService.error({title: error.message});
         this.projects = [
           {"name":"bits","branches":[
+            {"project":"bits","name":"release_v12.x"},
             {"project":"bits","name":"release_v11.x"},
             {"project":"bits","name":"release_v11.4.x"},
             {"project":"bits","name":"release_v11.2.x"},
             {"project":"bits","name":"release_v9.x"},
             {"project":"bits","name":"main"}]},
           {"name":"charts","branches":[
+            {"project":"charts","name":"release_v12.x"},
             {"project":"charts","name":"release_v11.x"},
             {"project":"charts","name":"release_v11.4.x"},
             {"project":"charts","name":"release_v11.2.x"},
             {"project":"charts","name":"release_v9.x"},
             {"project":"charts","name":"main"}]},
           {"name":"dashboards","branches":[
+            {"project":"dashboards","name":"release_v12.x"},
             {"project":"dashboards","name":"release_v11.x"},
             {"project":"dashboards","name":"release_v11.4.x"},
             {"project":"dashboards","name":"release_v11.2.x"},
