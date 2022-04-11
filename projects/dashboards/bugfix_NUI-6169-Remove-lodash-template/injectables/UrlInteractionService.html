@@ -195,30 +195,13 @@
 export class UrlInteractionService {
     public template(url: string, data: any): string{
         const regex &#x3D; new RegExp(/(\$\{[a-zA-Z0-9.]*\})/g)
-        let propertyArray: string[] &#x3D; [];
-        
-        let interpolations &#x3D; url.match(regex) || [];
-        if (interpolations.length &#x3D;&#x3D;&#x3D; 0) {
-            return url;
-        }
-
-        interpolations.forEach(element &#x3D;&gt; {
-            propertyArray.push(element.slice(2,-1))
-        });
-
-        let evaluatedUrl &#x3D; url;
-        for (let i &#x3D; 0; i &lt; propertyArray.length; i++) {
-            const evaluation &#x3D; this.evaluate(propertyArray[i].split(&quot;.&quot;), data);
-            evaluatedUrl &#x3D; evaluatedUrl.replace(interpolations[i], evaluation)
-        }
-
-        return evaluatedUrl;
+        return url.replace(regex, (captured) &#x3D;&gt; this.evaluate(captured, data));
     }
 
-    private evaluate(properties: string[], data: any): string {
+    private evaluate(expresion: string, data: any): string {
         let result &#x3D; data;
 
-        properties.forEach(element &#x3D;&gt; {
+        expresion.slice(2,-1).split(&quot;.&quot;).forEach(element &#x3D;&gt; {
             result &#x3D; result[element];
         });
 
