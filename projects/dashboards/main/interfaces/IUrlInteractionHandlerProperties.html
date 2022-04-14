@@ -172,7 +172,7 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Inject, Injectable } from &quot;@angular/core&quot;;
 import { EventBus, IEvent, LoggerService } from &quot;@nova-ui/bits&quot;;
-import template from &quot;lodash/template&quot;;
+import { UrlInteractionService } from &quot;./../../../services/url-interaction.service&quot;;
 
 import { PIZZAGNA_EVENT_BUS } from &quot;../../../types&quot;;
 
@@ -189,14 +189,10 @@ export class WindowObject extends Window {
 
 @Injectable()
 export class UrlInteractionHandler extends InteractionHandler&lt;IUrlInteractionHandlerProperties, any&gt; {
-
-    private templateOptions &#x3D; {
-        evaluate: null as unknown as RegExp, // disable javascript evaluation in provided url
-    };
-
     constructor(@Inject(PIZZAGNA_EVENT_BUS) eventBus: EventBus&lt;IEvent&gt;,
                 @Inject(&quot;windowObject&quot;) private window: WindowObject,
-                private logger: LoggerService) {
+                private logger: LoggerService,
+                private urlInteractionService: UrlInteractionService) {
         super(eventBus);
     }
 
@@ -205,7 +201,7 @@ export class UrlInteractionHandler extends InteractionHandler&lt;IUrlInteraction
             this.logger.warn(&quot;The target url has not been defined.&quot;);
             return;
         }
-        const href &#x3D; template(this.properties.url, this.templateOptions)({ &quot;data&quot;: interaction.data });
+        const href &#x3D; this.urlInteractionService.template(this.properties.url, { &quot;data&quot;: interaction.data })
 
         // if the link evaluates as empty, then don&#x27;t go anywhere
         if (!href) {
@@ -218,7 +214,6 @@ export class UrlInteractionHandler extends InteractionHandler&lt;IUrlInteraction
             this.window.location.href &#x3D; href;
         }
     }
-
 }
 </code></pre>
     </div>
