@@ -199,13 +199,7 @@ export class UrlInteractionService {
     }
 
     private evaluate(expresion: string[], data: any): string {
-        let result &#x3D; data;
-
-        expresion.forEach(element &#x3D;&gt; {
-            result &#x3D; result[element];
-        });
-
-        return result;
+        return expresion.reduce((result, item) &#x3D;&gt; result[item], data)
     }
 }
 </code></pre>
