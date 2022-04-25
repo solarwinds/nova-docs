@@ -849,6 +849,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     <a href="injectables/UrlInteractionHandler.html" data-type="entity-link">UrlInteractionHandler</a>
                                 </li>
                                 <li class="link">
+                                    <a href="injectables/UrlInteractionService.html" data-type="entity-link">UrlInteractionService</a>
+                                </li>
+                                <li class="link">
                                     <a href="injectables/VirtualScrollFeatureAddonService.html" data-type="entity-link">VirtualScrollFeatureAddonService</a>
                                 </li>
                                 <li class="link">
