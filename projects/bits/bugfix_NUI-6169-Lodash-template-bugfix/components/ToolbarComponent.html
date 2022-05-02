@@ -1,0 +1,1527 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@nova-ui/bits documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">@nova-ui/bits documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>ToolbarComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#example" role="tab" id="example-tab" data-toggle="tab" data-link="example">Overview</a>
+        </li>
+        <li >
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">API</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade " id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/lib/toolbar/toolbar.component.ts</code>
+</p>
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>NUI wrapper for toolbar control. It groups toolbar items (nui-toolbar-item),
+which can be aligned to the left or to the right side of the bar. Items are aligned to the left by default.
+Use nui-toolbar-splitter to determine the place where the right alignment starts.
+Use nui-toolbar-divider to display a vertical line between items.
+<example-url>./../examples/index.html#/toolbar</example-url></p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/AfterViewInit" target="_blank" >AfterViewInit</a></code>
+                    <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+            <tr>
+                <td class="col-md-3">encapsulation</td>
+                <td class="col-md-9"><code>ViewEncapsulation.None</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">host</td>
+                <td class="col-md-9"><code>{<br>}</code></td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">providers</td>
+                <td class="col-md-9">
+                                <code><a href="../injectables/ToolbarKeyboardService.html" target="_self" >ToolbarKeyboardService</a></code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>nui-toolbar</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./toolbar.component.less</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./toolbar.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#allItemsHidden">allItemsHidden</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#commandGroups">commandGroups</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#commandsTitle">commandsTitle</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#element">element</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#groups">groups</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#items">items</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#menu">menu</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#menuGroups">menuGroups</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#moreTitle">moreTitle</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#showMenu">showMenu</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#toolbarButtons">toolbarButtons</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#toolbarContainer">toolbarContainer</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#handleSelectionState">handleSelectionState</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#makeAllItemsVisible">makeAllItemsVisible</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#moveToolbarItems">moveToolbarItems</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#onClickToolbarBtn">onClickToolbarBtn</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#splitToolbarItems">splitToolbarItems</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#boxShadow">boxShadow</a>
+                            </li>
+                            <li>
+                                <a href="#selectedItems">selectedItems</a>
+                            </li>
+                            <li>
+                                <a href="#selectionEnabled">selectionEnabled</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>HostListeners</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#keydown">keydown</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#menuTitle">menuTitle</a>
+                                </li>
+                                <li>
+                                    <a href="#destructiveIsLastItem">destructiveIsLastItem</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(element: <a href="../undefineds/Element.html">ElementRef</a>, changeDetector: <a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank">ChangeDetectorRef</a>, logger: LoggerService, ngZone: <a href="https://angular.io/api/core/NgZone" target="_blank">NgZone</a>, keyboardService: <a href="../injectables/ToolbarKeyboardService.html">ToolbarKeyboardService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="93" class="link-to-prism">src/lib/toolbar/toolbar.component.ts:93</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>element</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../miscellaneous/typealiases.html#Element" target="_self" >ElementRef</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>changeDetector</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank" >ChangeDetectorRef</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>logger</td>
+                                                  
+                                                        <td>
+                                                                    <code>LoggerService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>ngZone</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/core/NgZone" target="_blank" >NgZone</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>keyboardService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ToolbarKeyboardService.html" target="_self" >ToolbarKeyboardService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="boxShadow"></a>
+                        <b>boxShadow</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">src/lib/toolbar/toolbar.component.ts:76</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectedItems"></a>
+                        <b>selectedItems</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/IToolbarSelectionState.html" target="_self" >IToolbarSelectionState</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="72" class="link-to-prism">src/lib/toolbar/toolbar.component.ts:72</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>In selection mode allows to show current selected item and total of selected items</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectionEnabled"></a>
+                        <b>selectionEnabled</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="68" class="link-to-prism">src/lib/toolbar/toolbar.component.ts:68</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section>
+    <h3>HostListeners</h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="keydown"></a>
+                    <span class="name">
+                        <b>
+                            keydown
+                        </b>
+                        <a href="#keydown"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <i>Arguments : </i><code>'$event' </code>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>keydown(event: KeyboardEvent)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="102"
+                            class="link-to-prism">src/lib/toolbar/toolbar.component.ts:102</a></div>
+                </td>
+            </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="handleSelectionState"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            handleSelectionState
+                        </b>
+                        <a href="#handleSelectionState"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>handleSelectionState()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="194"
+                            class="link-to-prism">src/lib/toolbar/toolbar.component.ts:194</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="makeAllItemsVisible"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            makeAllItemsVisible
+                        </b>
+                        <a href="#makeAllItemsVisible"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>makeAllItemsVisible()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="183"
+                            class="link-to-prism">src/lib/toolbar/toolbar.component.ts:183</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="moveToolbarItems"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            moveToolbarItems
+                        </b>
+                        <a href="#moveToolbarItems"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>moveToolbarItems()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="143"
+                            class="link-to-prism">src/lib/toolbar/toolbar.component.ts:143</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onClickToolbarBtn"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            onClickToolbarBtn
+                        </b>
+                        <a href="#onClickToolbarBtn"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onClickToolbarBtn(event: MouseEvent, commandItem: ToolbarItemComponent)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="137"
+                            class="link-to-prism">src/lib/toolbar/toolbar.component.ts:137</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+                                    <td>
+                                            <code>MouseEvent</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>commandItem</td>
+                                    <td>
+                                            <code>ToolbarItemComponent</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="splitToolbarItems"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            splitToolbarItems
+                        </b>
+                        <a href="#splitToolbarItems"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>splitToolbarItems()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="164"
+                            class="link-to-prism">src/lib/toolbar/toolbar.component.ts:164</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="allItemsHidden"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            allItemsHidden</b>
+                            <a href="#allItemsHidden"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="85" class="link-to-prism">src/lib/toolbar/toolbar.component.ts:85</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="commandGroups"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            commandGroups</b>
+                            <a href="#commandGroups"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/IToolbarGroupContent.html" target="_self" >IToolbarGroupContent[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="82" class="link-to-prism">src/lib/toolbar/toolbar.component.ts:82</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="commandsTitle"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            commandsTitle</b>
+                            <a href="#commandsTitle"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>$localize &#x60;Commands&#x60;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="86" class="link-to-prism">src/lib/toolbar/toolbar.component.ts:86</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="element"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            element</b>
+                            <a href="#element"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#Element" target="_self" >ElementRef</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="95" class="link-to-prism">src/lib/toolbar/toolbar.component.ts:95</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="groups"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            groups</b>
+                            <a href="#groups"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>QueryList&lt;ToolbarGroupComponent&gt;</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ContentChildren(ToolbarGroupComponent)<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">src/lib/toolbar/toolbar.component.ts:58</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="items"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            items</b>
+                            <a href="#items"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>QueryList&lt;ToolbarItemComponent&gt;</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ContentChildren(ToolbarItemComponent, {descendants: true})<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/lib/toolbar/toolbar.component.ts:61</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="menu"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            menu</b>
+                            <a href="#menu"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../components/MenuComponent.html" target="_self" >MenuComponent</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(&#x27;menuComponent&#x27;)<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="80" class="link-to-prism">src/lib/toolbar/toolbar.component.ts:80</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="menuGroups"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            menuGroups</b>
+                            <a href="#menuGroups"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/IToolbarGroupContent.html" target="_self" >IToolbarGroupContent[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="83" class="link-to-prism">src/lib/toolbar/toolbar.component.ts:83</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="moreTitle"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            moreTitle</b>
+                            <a href="#moreTitle"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>$localize &#x60;More&#x60;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="87" class="link-to-prism">src/lib/toolbar/toolbar.component.ts:87</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="showMenu"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            showMenu</b>
+                            <a href="#showMenu"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>true</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="84" class="link-to-prism">src/lib/toolbar/toolbar.component.ts:84</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="toolbarButtons"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            toolbarButtons</b>
+                            <a href="#toolbarButtons"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../components/ButtonComponent.html" target="_self" >QueryList&lt;ButtonComponent&gt;</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChildren(&#x27;toolbarButtons&#x27;)<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="81" class="link-to-prism">src/lib/toolbar/toolbar.component.ts:81</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="toolbarContainer"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            toolbarContainer</b>
+                            <a href="#toolbarContainer"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#Element" target="_self" >ElementRef</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(&#x27;toolbarContainer&#x27;)<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="79" class="link-to-prism">src/lib/toolbar/toolbar.component.ts:79</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="menuTitle"></a>
+                        <span class="name"><b>menuTitle</b><a href="#menuTitle"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>menuTitle()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="204" class="link-to-prism">src/lib/toolbar/toolbar.component.ts:204</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="destructiveIsLastItem"></a>
+                        <span class="name"><b>destructiveIsLastItem</b><a href="#destructiveIsLastItem"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>destructiveIsLastItem()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="208" class="link-to-prism">src/lib/toolbar/toolbar.component.ts:208</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+    AfterViewInit,
+    ChangeDetectorRef,
+    Component,
+    ContentChildren,
+    ElementRef,
+    HostBinding,
+    HostListener,
+    Input,
+    NgZone,
+    OnDestroy,
+    QueryList,
+    ViewChild,
+    ViewChildren,
+    ViewEncapsulation,
+} from &quot;@angular/core&quot;;
+import _isEmpty from &quot;lodash/isEmpty&quot;;
+import { merge, Subject, Subscription } from &quot;rxjs&quot;;
+import { debounceTime, take, takeUntil } from &quot;rxjs/operators&quot;;
+
+import { LoggerService } from &quot;../../services/log-service&quot;;
+
+import {
+    IToolbarGroupContent,
+    IToolbarSelectionState,
+    ToolbarItemDisplayStyle,
+    ToolbarItemType,
+} from &quot;./public-api&quot;;
+import { ToolbarGroupComponent } from &quot;./toolbar-group.component&quot;;
+import { ToolbarItemComponent } from &quot;./toolbar-item.component&quot;;
+import { MenuComponent } from &quot;../menu&quot;;
+import { ToolbarKeyboardService } from &quot;./toolbar-keyboard.service&quot;;
+import { ButtonComponent } from &quot;../button/button.component&quot;;
+
+/**
+ * NUI wrapper for toolbar control. It groups toolbar items (nui-toolbar-item),
+ * which can be aligned to the left or to the right side of the bar. Items are aligned to the left by default.
+ * Use nui-toolbar-splitter to determine the place where the right alignment starts.
+ * Use nui-toolbar-divider to display a vertical line between items.
+ * &lt;example-url&gt;./../examples/index.html#/toolbar&lt;/example-url&gt;
+ */
+
+@Component({
+    selector: &quot;nui-toolbar&quot;,
+    templateUrl: &quot;./toolbar.component.html&quot;,
+    host: {
+        &quot;class&quot;: &quot;nui-toolbar nui-strip-layout nui-flex-container&quot;,
+        &quot;role&quot;: &quot;toolbar&quot;,
+    },
+    styleUrls: [&quot;./toolbar.component.less&quot;],
+    encapsulation: ViewEncapsulation.None,
+    providers: [ToolbarKeyboardService],
+})
+
+export class ToolbarComponent implements AfterViewInit, OnDestroy {
+
+    @ContentChildren(ToolbarGroupComponent)
+    public groups: QueryList&lt;ToolbarGroupComponent&gt;;
+
+    @ContentChildren(ToolbarItemComponent, {descendants: true})
+    public items: QueryList&lt;ToolbarItemComponent&gt;;
+
+    @Input()
+    /**
+     * selectionEnabled: boolean which allows to show selected section
+     */
+    @HostBinding(&quot;class.nui-toolbar--active&quot;)
+    public selectionEnabled: boolean;
+    /**
+     * In selection mode allows to show current selected item and total of selected items
+     */
+    @Input() public selectedItems: IToolbarSelectionState;
+
+    @Input()
+    @HostBinding(&quot;class.nui-toolbar--shadowed&quot;)
+    public boxShadow: boolean &#x3D; true;
+
+    @ViewChild(&quot;toolbarContainer&quot;)
+    public toolbarContainer: ElementRef;
+    @ViewChild(&quot;menuComponent&quot;) public menu: MenuComponent;
+    @ViewChildren(&quot;toolbarButtons&quot;) public toolbarButtons: QueryList&lt;ButtonComponent&gt;;
+    public commandGroups: IToolbarGroupContent[] &#x3D; [];
+    public menuGroups: IToolbarGroupContent[] &#x3D; [];
+    public showMenu &#x3D; true;
+    public allItemsHidden &#x3D; false;
+    public commandsTitle &#x3D; $localize &#x60;Commands&#x60;;
+    public moreTitle &#x3D; $localize &#x60;More&#x60;;
+
+    private lastChildBorder: number;
+    private toolbarItems: HTMLElement[] &#x3D; [];
+    private childrenSubscription: Subscription;
+    private destructiveItems: any[];
+    private destroy$: Subject&lt;void&gt; &#x3D; new Subject&lt;void&gt;();
+
+    constructor(public element: ElementRef,
+                private changeDetector: ChangeDetectorRef,
+                private logger: LoggerService,
+                private ngZone: NgZone,
+                private keyboardService: ToolbarKeyboardService) {}
+
+    @HostListener(&quot;keydown&quot;, [&quot;$event&quot;])
+    onKeyDown(event: KeyboardEvent): void {
+        this.keyboardService.onKeyDown(event);
+    }
+
+    ngAfterViewInit() {
+        this.splitToolbarItems();
+        this.childrenSubscription &#x3D; merge(this.groups.changes, this.items.changes).pipe(debounceTime(20)).subscribe(() &#x3D;&gt; {
+            // timeout is needed for updating actual querylist. without it splitToolbarItems won&#x27;t get new element in groups&#x27; arrays
+            setTimeout(() &#x3D;&gt; {
+                this.splitToolbarItems();
+            }, 0);
+        });
+        this.ngZone.onStable.asObservable().pipe(take(1))
+            .subscribe(() &#x3D;&gt; {
+                this.moveToolbarItems();
+            });
+        this.destructiveItems &#x3D; [];
+        this.groups.forEach((group: ToolbarGroupComponent) &#x3D;&gt; {
+            const isDestructiveItem &#x3D; group.items.filter((item: ToolbarItemComponent) &#x3D;&gt; item.displayStyle &#x3D;&#x3D;&#x3D; ToolbarItemDisplayStyle.destructive);
+            if (isDestructiveItem.length) {
+                this.destructiveItems.push(isDestructiveItem);
+                if (this.destructiveItems.length &#x3D;&#x3D;&#x3D; 1 &amp;&amp; this.destructiveIsLastItem || this.destructiveItems.length &gt; 1) {
+                    this.logger.error(&quot;Only one tool-bar-item with type destructive may be defined, and it must be the last item in last group&quot;);
+                }
+            }
+        });
+        this.subscribeToToolbarStepsChanges();
+    }
+
+    ngOnDestroy() {
+        this.childrenSubscription.unsubscribe();
+        this.destroy$.next();
+        this.destroy$.complete();
+    }
+
+    public onClickToolbarBtn(event: MouseEvent, commandItem: ToolbarItemComponent): void {
+        event.stopPropagation();
+        (event.target as HTMLButtonElement).focus();
+        commandItem.actionDone.emit();
+    }
+
+    public moveToolbarItems() {
+        this.makeAllItemsVisible();
+
+        const containerBorder &#x3D; Math.floor(this.toolbarContainer.nativeElement.getBoundingClientRect().right);
+        this.lastChildBorder &#x3D; Math.floor(this.toolbarContainer.nativeElement.lastElementChild.getBoundingClientRect().right);
+
+        while (containerBorder &lt; this.lastChildBorder &amp;&amp; this.commandGroups.length &gt; 0) {
+            this.commandGroups.forEach((group: IToolbarGroupContent, ind: number, groups: IToolbarGroupContent[]) &#x3D;&gt; {
+                if (ind &#x3D;&#x3D;&#x3D; groups.length - 1) {
+                    group.items.forEach((item: ToolbarItemComponent, index: number, items: ToolbarItemComponent[]) &#x3D;&gt; {
+                        if (index &#x3D;&#x3D;&#x3D; items.length - 1) {
+                            item.menuHidden &#x3D; true;
+                        }
+                    });
+                }
+            });
+            this.splitToolbarItems();
+            this.lastChildBorder &#x3D; Math.floor(this.toolbarContainer.nativeElement.lastElementChild.getBoundingClientRect().right);
+        }
+    }
+
+    public splitToolbarItems() {
+        this.commandGroups &#x3D; [];
+        this.menuGroups &#x3D; [];
+        this.groups.forEach((group: ToolbarGroupComponent) &#x3D;&gt; {
+            const commandGroupItems &#x3D; group.items.filter((item: ToolbarItemComponent) &#x3D;&gt; item.menuHidden &#x3D;&#x3D;&#x3D; false);
+            const menuGroupItems &#x3D; group.items.filter((item: ToolbarItemComponent) &#x3D;&gt; item.menuHidden &#x3D;&#x3D;&#x3D; true);
+
+            if (commandGroupItems.length) {
+                this.commandGroups.push({items: commandGroupItems});
+            }
+            if (menuGroupItems.length) {
+                this.menuGroups.push({items: menuGroupItems, title: group.title});
+            }
+        });
+        this.showMenu &#x3D; this.menuGroups.length &gt; 0;
+        this.allItemsHidden &#x3D; this.commandGroups.length &#x3D;&#x3D;&#x3D; 0;
+        this.changeDetector.detectChanges();
+    }
+
+    public makeAllItemsVisible() {
+        this.groups.forEach((group: ToolbarGroupComponent) &#x3D;&gt; {
+            group.items.forEach((item: ToolbarItemComponent) &#x3D;&gt; {
+                if (item.type &#x3D;&#x3D;&#x3D; ToolbarItemType.primary) {
+                    item.menuHidden &#x3D; false;
+                }
+            });
+        });
+        this.splitToolbarItems();
+    }
+
+    public handleSelectionState() {
+        if (this.selectionEnabled) {
+            if (!_isEmpty(this.selectedItems)) {
+                const itemSelected &#x3D; $localize &#x60;${this.selectedItems.current} of ${this.selectedItems.total} selected&#x60;;
+                const allItemSelected &#x3D; $localize &#x60;All ${this.selectedItems.total} selected&#x60;;
+                return this.selectedItems.current &#x3D;&#x3D;&#x3D; this.selectedItems.total ? allItemSelected : itemSelected;
+            }
+        }
+    }
+
+    public get menuTitle() {
+        return this.allItemsHidden ? this.commandsTitle : this.moreTitle;
+    }
+
+    public get destructiveIsLastItem() {
+        return this.groups.last.items.last.displayStyle !&#x3D;&#x3D; ToolbarItemDisplayStyle.destructive;
+    }
+
+    private subscribeToToolbarStepsChanges(): void {
+        this.toolbarButtons.changes
+            .pipe(takeUntil(this.destroy$))
+            .subscribe((buttons: QueryList&lt;ButtonComponent&gt;) &#x3D;&gt; {
+                this.toolbarItems &#x3D; buttons.toArray().slice().map(b &#x3D;&gt; b[&quot;el&quot;].nativeElement as HTMLElement);
+
+                if (this.menu) {
+                    // In case all buttons are hidden within the Commands menu we want this menu to receive the focus
+                    // If at least one button is visible in the toolbar it should receive the focus first upon navigating onto the toolbar
+                    const tabIndex &#x3D; buttons.length ? &quot;-1&quot; : &quot;0&quot;;
+
+                    this.menu.menuToggle.nativeElement.setAttribute(&quot;tabindex&quot;, tabIndex);
+                    this.toolbarItems.push(this.menu.menuToggle.nativeElement);
+                }
+
+                this.keyboardService.setToolbarItems(this.toolbarItems, this.menu);
+            });
+    }
+}
+</code></pre>
+    </div>
+
+
+
+
+    <div class="tab-pane fade active in" id="c-example">
+            <iframe class="exampleContainer" src="./../examples/index.html#/toolbar">
+                <p>no-iframes</p>
+            </iframe>
+    </div>
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="nui-toolbar-content d-flex flex-row align-items-center justify-content-between"     nuiResizeObserver     (containerResize)="moveToolbarItems()"     #toolbarContainer>    <div class="nui-toolbar-content__dynamic d-flex flex-row flex-shrink-0">        <ng-template ngFor let-i="index" let-commandGroup let-last="last" [ngForOf]="commandGroups">            <ng-template ngFor let-commandItem let-j="index" [ngForOf]="commandGroup.items">                <!-- (!i && !j) is used for set focusable state to first element first group -->                <button nui-button type="button"                        #toolbarButtons                        [tabindex]="(!i && !j) ? 0 : -1"                        (click)="onClickToolbarBtn($event, commandItem)"                        [displayStyle]="commandItem.displayStyle === \'main\' ? \'primary\' : commandItem.displayStyle"                        [ngClass]="{\'nui-toolbar-primary-item\': commandItem.displayStyle === \'main\'}"                        [icon]="commandItem.icon">                    <span>{{commandItem.title}}</span>                </button>            </ng-template>            <nui-divider *ngIf="!last || showMenu" class="flex-shrink-0" isVertical="true" size="extra-small"></nui-divider>        </ng-template>        <nui-menu displayStyle="action"                  #menuComponent                  [title]="menuTitle"                  *ngIf="showMenu">            <ng-template ngFor let-menuGroup [ngForOf]="menuGroups">                <nui-menu-group [header]="menuGroup.title">                    <ng-template ngFor let-menuItem [ngForOf]="menuGroup.items">                        <nui-menu-action [type]="menuItem.isDestructive ? \'destructive\' : \'default\'"                                         [icon]="menuItem.icon"                                         (click)="menuItem.actionDone.emit()">{{menuItem.title}}                        </nui-menu-action>                    </ng-template>                </nui-menu-group>            </ng-template>        </nui-menu>    </div>    <div class="nui-toolbar-content__embedded d-flex">        <ng-container *ngIf="selectionEnabled">            <div class="nui-toolbar-content__select d-flex align-items-center flex-shrink-0">{{handleSelectionState()}}</div>        </ng-container>        <ng-content></ng-content>        <ng-content select=".nui-toolbar-embedded" ></ng-content>    </div></div></div>'
+    var COMPONENTS = [{'name': 'BreadcrumbComponent', 'selector': 'nui-breadcrumb'},{'name': 'BusyComponent', 'selector': '[nui-busy]'},{'name': 'ButtonComponent', 'selector': '[nui-button]'},{'name': 'CardComponent', 'selector': 'nui-card'},{'name': 'CardGroupComponent', 'selector': 'nui-card-group'},{'name': 'CheckboxComponent', 'selector': 'nui-checkbox'},{'name': 'CheckboxGroupComponent', 'selector': 'nui-checkbox-group'},{'name': 'ChipsComponent', 'selector': 'nui-chips'},{'name': 'ChipsOverflowComponent', 'selector': 'nui-chips-overflow'},{'name': 'ComboboxComponent', 'selector': 'nui-combobox'},{'name': 'ComboboxV2Component', 'selector': 'nui-combobox-v2'},{'name': 'CustomValidationMessageComponent', 'selector': 'nui-custom-validation-message'},{'name': 'DatePickerComponent', 'selector': 'nui-date-picker'},{'name': 'DateTimePickerComponent', 'selector': 'nui-date-time-picker'},{'name': 'DialogComponent', 'selector': 'nui-dialog-window'},{'name': 'ExpanderComponent', 'selector': 'nui-expander'},{'name': 'FormFieldComponent', 'selector': 'nui-form-field'},{'name': 'IconComponent', 'selector': 'nui-icon'},{'name': 'ImageComponent', 'selector': 'nui-image'},{'name': 'MenuComponent', 'selector': 'nui-menu'},{'name': 'MessageComponent', 'selector': 'nui-message'},{'name': 'OverlayComponent', 'selector': 'nui-overlay'},{'name': 'PaginatorComponent', 'selector': 'nui-paginator'},{'name': 'PanelComponent', 'selector': 'nui-panel'},{'name': 'PopoverComponent', 'selector': 'nui-popover'},{'name': 'PopupComponent', 'selector': 'nui-popup'},{'name': 'PopupDeprecatedComponent', 'selector': 'nui-popup-deprecated'},{'name': 'ProgressComponent', 'selector': 'nui-progress'},{'name': 'QuickPickerComponent', 'selector': 'nui-quick-picker'},{'name': 'RadioGroupComponent', 'selector': 'nui-radio-group'},{'name': 'RepeatComponent', 'selector': 'nui-repeat'},{'name': 'SearchComponent', 'selector': 'nui-search'},{'name': 'SelectComponent', 'selector': 'nui-select'},{'name': 'SelectV2Component', 'selector': 'nui-select-v2'},{'name': 'SheetComponent', 'selector': 'nui-sheet'},{'name': 'SheetGroupComponent', 'selector': 'nui-sheet-group'},{'name': 'SorterComponent', 'selector': 'nui-sorter'},{'name': 'SpinnerComponent', 'selector': 'nui-spinner'},{'name': 'SwitchComponent', 'selector': 'nui-switch'},{'name': 'TabHeadingGroupComponent', 'selector': 'nui-tab-heading-group'},{'name': 'TableComponent', 'selector': 'nui-table, table[nui-table]'},{'name': 'TextboxComponent', 'selector': 'nui-textbox'},{'name': 'TextboxNumberComponent', 'selector': 'nui-textbox-number'},{'name': 'TimeFrameBarComponent', 'selector': 'nui-time-frame-bar'},{'name': 'TimeFramePickerComponent', 'selector': 'nui-time-frame-picker'},{'name': 'TimePickerComponent', 'selector': 'nui-time-picker'},{'name': 'ToastComponent', 'selector': 'nui-toast-component'},{'name': 'ToolbarComponent', 'selector': 'nui-toolbar'},{'name': 'WizardComponent', 'selector': 'nui-wizard'},{'name': 'WizardHorizontalComponent', 'selector': 'nui-wizard-horizontal'},{'name': 'WizardStepComponent', 'selector': 'nui-wizard-step'}];
+    var DIRECTIVES = [{'name': 'ClickInterceptorDirective', 'selector': '[nuiClickInterceptor]'},{'name': 'DndDropTargetDirective', 'selector': '[cdkDropList][nuiDndDropTarget]'},{'name': 'MarkAsSelectedItemDirective', 'selector': '[nuiMarkAsSelectedItem]'},{'name': 'TableStickyHeaderDirective', 'selector': 'cdk-virtual-scroll-viewport[tableStickyHeader]'},{'name': 'TableVirtualScrollDirective', 'selector': '[tableVirtualScroll]:not([rowCount])'},{'name': 'TableVirtualScrollLinearDirective', 'selector': '[tableVirtualScroll]:not([offset])'},{'name': 'TooltipDirective', 'selector': '[nuiTooltip]'},{'name': 'WizardDirective', 'selector': '[nuiWizard]'},{'name': 'WizardStepFooterDirective', 'selector': '[nuiWizardStepFooter]'},{'name': 'WizardStepLabelDirective', 'selector': '[nuiWizardStepLabel]'}];
+    var ACTUAL_COMPONENT = {'name': 'ToolbarComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ToolbarComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
