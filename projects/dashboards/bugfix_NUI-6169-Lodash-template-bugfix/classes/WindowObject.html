@@ -89,6 +89,7 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Inject, Injectable } from &quot;@angular/core&quot;;
 import { EventBus, IEvent, LoggerService } from &quot;@nova-ui/bits&quot;;
 import { UrlInteractionService } from &quot;./../../../services/url-interaction.service&quot;;
+import { TableFormatterRegistryService } from &quot;./../../../services/table-formatter-registry.service&quot;;
 
 import { PIZZAGNA_EVENT_BUS } from &quot;../../../types&quot;;
 
@@ -105,12 +106,11 @@ export class WindowObject extends Window {
 
 @Injectable()
 export class UrlInteractionHandler extends InteractionHandler&lt;IUrlInteractionHandlerProperties, any&gt; {
-    private urlInteractionService: UrlInteractionService
     constructor(@Inject(PIZZAGNA_EVENT_BUS) eventBus: EventBus&lt;IEvent&gt;,
                 @Inject(&quot;windowObject&quot;) private window: WindowObject,
-                private logger: LoggerService) {
+                private logger: LoggerService,
+                private urlInteractionService: UrlInteractionService) {
         super(eventBus);
-        this.urlInteractionService &#x3D; new UrlInteractionService();
     }
 
     protected handleInteraction(interaction: IInteractionPayload&lt;any&gt;) {

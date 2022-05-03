@@ -698,9 +698,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="classes/TimeseriesDataSourceAdapter.html" data-type="entity-link">TimeseriesDataSourceAdapter</a>
                             </li>
                             <li class="link">
-                                <a href="classes/UrlInteractionService.html" data-type="entity-link">UrlInteractionService</a>
-                            </li>
-                            <li class="link">
                                 <a href="classes/WindowObject.html" data-type="entity-link">WindowObject</a>
                             </li>
                         </ul>
@@ -850,6 +847,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 </li>
                                 <li class="link">
                                     <a href="injectables/UrlInteractionHandler.html" data-type="entity-link">UrlInteractionHandler</a>
+                                </li>
+                                <li class="link">
+                                    <a href="injectables/UrlInteractionService.html" data-type="entity-link">UrlInteractionService</a>
                                 </li>
                                 <li class="link">
                                     <a href="injectables/VirtualScrollFeatureAddonService.html" data-type="entity-link">VirtualScrollFeatureAddonService</a>
