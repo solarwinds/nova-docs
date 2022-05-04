@@ -125,7 +125,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="87" class="link-to-prism">src/lib/services/provider-registry.service.ts:87</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="88" class="link-to-prism">src/lib/services/provider-registry.service.ts:88</a></div>
                             </td>
                         </tr>
 
@@ -192,8 +192,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="242"
-                            class="link-to-prism">src/lib/services/provider-registry.service.ts:242</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="243"
+                            class="link-to-prism">src/lib/services/provider-registry.service.ts:243</a></div>
                 </td>
             </tr>
 
@@ -264,8 +264,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="251"
-                            class="link-to-prism">src/lib/services/provider-registry.service.ts:251</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="252"
+                            class="link-to-prism">src/lib/services/provider-registry.service.ts:252</a></div>
                 </td>
             </tr>
 
@@ -348,8 +348,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="238"
-                            class="link-to-prism">src/lib/services/provider-registry.service.ts:238</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="239"
+                            class="link-to-prism">src/lib/services/provider-registry.service.ts:239</a></div>
                 </td>
             </tr>
 
@@ -428,7 +428,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="87" class="link-to-prism">src/lib/services/provider-registry.service.ts:87</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="88" class="link-to-prism">src/lib/services/provider-registry.service.ts:88</a></div>
                             </td>
                         </tr>
 
@@ -521,6 +521,7 @@ import {
     NOVA_URL_INTERACTION_HANDLER,
     NOVA_VIRTUAL_VIEWPORT_MANAGER,
 } from &quot;./types&quot;;
+import { UrlInteractionService } from &quot;./url-interaction.service&quot;;
 import { WidgetConfigurationService } from &quot;./widget-configuration.service&quot;;
 import { WidgetToDashboardEventProxyService } from &quot;./widget-to-dashboard-event-proxy.service&quot;;
 
@@ -642,7 +643,7 @@ export class ProviderRegistryService {
             },
             [NOVA_URL_INTERACTION_HANDLER]: {
                 provide: UrlInteractionHandler,
-                deps: [PIZZAGNA_EVENT_BUS, &quot;windowObject&quot;, LoggerService],
+                deps: [PIZZAGNA_EVENT_BUS, &quot;windowObject&quot;, LoggerService, UrlInteractionService],
             },
             [NOVA_EVENT_BUS_DEBUGGER]: {
                 provide: EventBusDebugger,
