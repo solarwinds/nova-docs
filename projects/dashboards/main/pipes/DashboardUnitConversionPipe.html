@@ -155,7 +155,7 @@ Conversions are applied for values 10000 or greater</p>
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Pipe, PipeTransform } from &quot;@angular/core&quot;;
-import { UnitBase, UnitConversionService } from &quot;@nova-ui/bits&quot;;
+import { UnitBase, UnitConversionService, UnitOption } from &quot;@nova-ui/bits&quot;;
 import { DEFAULT_UNIT_CONVERSION_THRESHOLD } from &quot;../constants&quot;;
 
 /**
@@ -173,15 +173,15 @@ export class DashboardUnitConversionPipe implements PipeTransform {
      *
      * @returns The string representation of the converted value
      */
-    public transform &#x3D; (value: string | number | undefined): string &#x3D;&gt; {
+    public transform &#x3D; (value: string | number | undefined, units: UnitOption &#x3D; &quot;generic&quot;): string &#x3D;&gt; {
         const valueAsNumber &#x3D; typeof value &#x3D;&#x3D;&#x3D; &quot;string&quot; ? parseFloat(value) : value;
 
         if (valueAsNumber &#x3D;&#x3D;&#x3D; undefined || isNaN(valueAsNumber) || valueAsNumber &lt; DEFAULT_UNIT_CONVERSION_THRESHOLD) {
             return value?.toString() || &quot;&quot;;
         }
 
-        const conversion &#x3D; this.unitConversionService.convert(valueAsNumber, UnitBase.Standard, 1);
-        return this.unitConversionService.getFullDisplay(conversion, &quot;generic&quot;);
+        const conversion &#x3D; this.unitConversionService.convert(valueAsNumber, (units &#x3D;&#x3D;&#x3D; &quot;bytes&quot;) ? UnitBase.Bytes : UnitBase.Standard, 1);
+        return this.unitConversionService.getFullDisplay(conversion, units);
     }
 }
 </code></pre>

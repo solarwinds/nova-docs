@@ -165,7 +165,7 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ITimeFramePresetDictionary } from &quot;@nova-ui/bits&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ITimeFramePresetDictionary, UnitOption } from &quot;@nova-ui/bits&quot;;
 
 import { IProperties } from &quot;../../types&quot;;
 import { LegendPlacement } from &quot;../../widget-types/common/widget/legend&quot;;
@@ -180,6 +180,7 @@ export interface ITimeseriesWidgetConfig {
     chartColors?: string[]; // might go under the &#x27;chart&#x27; configuration
     preset: TimeseriesChartPreset;
     scales: ITimeseriesScalesConfig;
+    units: UnitOption;
 }
 
 export interface ITimeseriesWidgetSeries {
