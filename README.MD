@@ -13,3 +13,5 @@ To ease local development there are two main commands:
 As for the latter command, you will need docker on your machine.
 If you don't have it, please refer to mini-guide in DOCKER.MD file.
 If you're a developer, check out the DEVELOPMENT.MD file to find some useful tips.
+
+Redteam: testing to see if this edit is saved.
