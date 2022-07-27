@@ -173,7 +173,7 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getScale(scaleConfig: <a href="../interfaces/ITimeseriesScaleConfig.html">ITimeseriesScaleConfig</a>)</code>
+                    <code>getScale(scaleConfig: <a href="../interfaces/ITimeseriesScaleConfig.html">ITimeseriesScaleConfig</a>, units: UnitOption)</code>
                 </td>
             </tr>
 
@@ -206,6 +206,18 @@
                                     <td>scaleConfig</td>
                                     <td>
                                                 <code><a href="../interfaces/ITimeseriesScaleConfig.html" target="_self" >ITimeseriesScaleConfig</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>units</td>
+                                    <td>
+                                            <code>UnitOption</code>
                                     </td>
 
                                     <td>
@@ -323,7 +335,7 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &quot;@angular/core&quot;;
-import { UnitConversionService } from &quot;@nova-ui/bits&quot;;
+import { UnitConversionService, UnitOption } from &quot;@nova-ui/bits&quot;;
 import { IScale, LinearScale, TimeIntervalScale, TimeScale } from &quot;@nova-ui/charts&quot;;
 import { duration } from &quot;moment/moment&quot;;
 import { DashboardUnitConversionPipe } from &quot;../../common/pipes/dashboard-unit-conversion-pipe&quot;;
@@ -346,7 +358,7 @@ export class TimeseriesScalesService {
      *
      * @param scaleConfig
      */
-    public getScale(scaleConfig: ITimeseriesScaleConfig): IScale&lt;any&gt; {
+    public getScale(scaleConfig: ITimeseriesScaleConfig, units: UnitOption): IScale&lt;any&gt; {
         let scale: IScale&lt;any&gt;;
 
         switch (scaleConfig.type) {
@@ -356,7 +368,7 @@ export class TimeseriesScalesService {
             }
             case TimeseriesScaleType.Linear: {
                 scale &#x3D; new LinearScale();
-                scale.formatters.tick &#x3D; this.unitConversionPipe.transform;
+                scale.formatters.tick &#x3D; (value: string | number | undefined) &#x3D;&gt; this.unitConversionPipe.transform(value, units);
                 break;
             }
             case TimeseriesScaleType.TimeInterval: {
