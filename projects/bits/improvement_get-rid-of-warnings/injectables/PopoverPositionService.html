@@ -1,0 +1,722 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@nova-ui/bits documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">@nova-ui/bits documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Injectables</li>
+  <li >PopoverPositionService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">API</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/lib/popover/popover-position.service.ts</code>
+        </p>
+
+
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getConnectedPositions" >getConnectedPositions</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#possiblePositionsForPlacement" >possiblePositionsForPlacement</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#setPopoverOffset" >setPopoverOffset</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/lib/popover/popover-position.service.ts:31</a></div>
+                            </td>
+                        </tr>
+
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getConnectedPositions"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>getConnectedPositions</b></span>
+                        <a href="#getConnectedPositions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getConnectedPositions(positions: PopoverOverlayPosition[])</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="133"
+                            class="link-to-prism">src/lib/popover/popover-position.service.ts:133</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>positions</td>
+                                    <td>
+                                            <code>PopoverOverlayPosition[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>ConnectedPosition[]</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="possiblePositionsForPlacement"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>possiblePositionsForPlacement</b></span>
+                        <a href="#possiblePositionsForPlacement"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>possiblePositionsForPlacement(placement: <a href="../undefineds/PopoverPlacement.html" target="_self">PopoverPlacement</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="94"
+                            class="link-to-prism">src/lib/popover/popover-position.service.ts:94</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>placement</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/typealiases.html#PopoverPlacement" target="_self" >PopoverPlacement</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>ConnectedPosition[]</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setPopoverOffset"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>setPopoverOffset</b></span>
+                        <a href="#setPopoverOffset"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>setPopoverOffset(panelClass: string | string[], elRefHeight: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, overlayRefElement: <a href="../undefineds/Element.html" target="_self">HTMLElement</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="37"
+                            class="link-to-prism">src/lib/popover/popover-position.service.ts:37</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>panelClass</td>
+                                    <td>
+                                            <code>string | string[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>elRefHeight</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>overlayRefElement</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/typealiases.html#Element" target="_self" >HTMLElement</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ConnectedPosition } from &quot;@angular/cdk/overlay&quot;;
+import { Injectable } from &quot;@angular/core&quot;;
+
+import { OVERLAY_ARROW_SIZE } from &quot;../overlay/constants&quot;;
+
+import { PopoverOverlayPosition, PopoverPlacement } from &quot;./public-api&quot;;
+
+enum PopoverOverlayPlacement {
+    Left &#x3D; &quot;left&quot;,
+    Right &#x3D; &quot;right&quot;,
+    Top &#x3D; &quot;top&quot;,
+    Bottom &#x3D; &quot;bottom&quot;,
+}
+
+enum PanelClass {
+    overlayLeftTop &#x3D; &quot;overlay-left-top&quot;,
+    overlayLeftBottom &#x3D; &quot;overlay-left-bottom&quot;,
+    overlayRightTop &#x3D; &quot;overlay-right-top&quot;,
+    overlayRightBottom &#x3D; &quot;overlay-right-bottom&quot;,
+    overlayTopLeft &#x3D; &quot;overlay-top-left&quot;,
+    overlayTopRight &#x3D; &quot;overlay-top-right&quot;,
+    overlayBottomLeft &#x3D; &quot;overlay-bottom-left&quot;,
+    overlayBottomRight &#x3D; &quot;overlay-bottom-right&quot;,
+}
+
+@Injectable()
+export class PopoverPositionService {
+    private readonly popoverPositions: Record&lt;
+        PopoverOverlayPosition,
+        ConnectedPosition
+    &gt;;
+
+    constructor() {
+        this.popoverPositions &#x3D; getPopoverPositions();
+    }
+
+    public setPopoverOffset(
+        panelClass: string | string[],
+        elRefHeight: number,
+        overlayRefElement: HTMLElement
+    ): void {
+        const ARROW_SIZE &#x3D; OVERLAY_ARROW_SIZE;
+        const popoverOffsetY &#x3D; this.calculateOffsetY(elRefHeight);
+
+        if (Array.isArray(panelClass)) {
+            panelClass &#x3D; this.getPopoverPositionPanelClass(panelClass);
+        }
+
+        if (!panelClass) {
+            return;
+        }
+
+        overlayRefElement.style.marginLeft &#x3D; &quot;&quot;;
+        overlayRefElement.style.marginTop &#x3D; &quot;&quot;;
+        overlayRefElement.style.marginBottom &#x3D; &quot;&quot;;
+        overlayRefElement.style.marginRight &#x3D; &quot;&quot;;
+
+        switch (panelClass) {
+            case PanelClass.overlayLeftTop:
+                overlayRefElement.style.marginRight &#x3D; ARROW_SIZE + &quot;px&quot;;
+                overlayRefElement.style.marginBottom &#x3D; -popoverOffsetY + &quot;px&quot;;
+                break;
+            case PanelClass.overlayLeftBottom:
+                overlayRefElement.style.marginRight &#x3D; ARROW_SIZE + &quot;px&quot;;
+                overlayRefElement.style.marginTop &#x3D; -popoverOffsetY + &quot;px&quot;;
+                break;
+            case PanelClass.overlayRightTop:
+                overlayRefElement.style.marginLeft &#x3D; ARROW_SIZE + &quot;px&quot;;
+                overlayRefElement.style.marginBottom &#x3D; -popoverOffsetY + &quot;px&quot;;
+                break;
+            case PanelClass.overlayRightBottom:
+                overlayRefElement.style.marginLeft &#x3D; ARROW_SIZE + &quot;px&quot;;
+                overlayRefElement.style.marginTop &#x3D; -popoverOffsetY + &quot;px&quot;;
+                break;
+            case PanelClass.overlayTopLeft:
+                overlayRefElement.style.marginRight &#x3D; -2 * ARROW_SIZE + &quot;px&quot;;
+                overlayRefElement.style.marginBottom &#x3D; ARROW_SIZE + &quot;px&quot;;
+                break;
+            case PanelClass.overlayTopRight:
+                overlayRefElement.style.marginLeft &#x3D; -2 * ARROW_SIZE + &quot;px&quot;;
+                overlayRefElement.style.marginBottom &#x3D; ARROW_SIZE + &quot;px&quot;;
+                break;
+            case PanelClass.overlayBottomLeft:
+                overlayRefElement.style.marginRight &#x3D; -2 * ARROW_SIZE + &quot;px&quot;;
+                overlayRefElement.style.marginTop &#x3D; ARROW_SIZE + &quot;px&quot;;
+                break;
+            case PanelClass.overlayBottomRight:
+                overlayRefElement.style.marginLeft &#x3D; -2 * ARROW_SIZE + &quot;px&quot;;
+                overlayRefElement.style.marginTop &#x3D; ARROW_SIZE + &quot;px&quot;;
+                break;
+        }
+    }
+
+    public possiblePositionsForPlacement(
+        placement: PopoverPlacement
+    ): ConnectedPosition[] {
+        const possiblePositions: ConnectedPosition[] &#x3D; [];
+
+        switch (placement) {
+            case PopoverOverlayPlacement.Left:
+                possiblePositions.push(
+                    ...this.getPositionsForPlacement(
+                        PopoverOverlayPlacement.Left
+                    )
+                );
+                break;
+            case PopoverOverlayPlacement.Right:
+                possiblePositions.push(
+                    ...this.getPositionsForPlacement(
+                        PopoverOverlayPlacement.Right
+                    )
+                );
+                break;
+            case PopoverOverlayPlacement.Top:
+                possiblePositions.push(
+                    ...this.getPositionsForPlacement(
+                        PopoverOverlayPlacement.Top
+                    )
+                );
+                break;
+            case PopoverOverlayPlacement.Bottom:
+                possiblePositions.push(
+                    ...this.getPositionsForPlacement(
+                        PopoverOverlayPlacement.Bottom
+                    )
+                );
+                break;
+        }
+
+        return possiblePositions;
+    }
+
+    public getConnectedPositions(
+        positions: PopoverOverlayPosition[]
+    ): ConnectedPosition[] {
+        return positions.map(
+            (positionName: PopoverOverlayPosition) &#x3D;&gt;
+                this.popoverPositions[positionName]
+        );
+    }
+
+    /**
+     * Returns all possible positions for a placement
+     * Eg: left &#x3D;&gt; [OVERLAY_POSITIONS[centerLeft], OVERLAY_POSITIONS[topLeft], OVERLAY_POSITIONS[bottomLeft]]
+     *
+     * @param placement
+     * @returns ConnectedPosition[]
+     */
+    private getPositionsForPlacement(
+        placement: PopoverOverlayPlacement
+    ): ConnectedPosition[] {
+        let possiblePositionNames: PopoverOverlayPosition[] &#x3D; [];
+        switch (placement) {
+            case PopoverOverlayPlacement.Left:
+                possiblePositionNames &#x3D; [
+                    PopoverOverlayPosition.leftBottom,
+                    PopoverOverlayPosition.leftTop,
+                    PopoverOverlayPosition.rightBottom,
+                    PopoverOverlayPosition.rightTop,
+                ];
+                break;
+
+            case PopoverOverlayPlacement.Right:
+                possiblePositionNames &#x3D; [
+                    PopoverOverlayPosition.rightBottom,
+                    PopoverOverlayPosition.rightTop,
+                    PopoverOverlayPosition.leftBottom,
+                    PopoverOverlayPosition.leftTop,
+                ];
+                break;
+
+            case PopoverOverlayPlacement.Top:
+                possiblePositionNames &#x3D; [
+                    PopoverOverlayPosition.topRight,
+                    PopoverOverlayPosition.topLeft,
+                    PopoverOverlayPosition.bottomRight,
+                    PopoverOverlayPosition.bottomLeft,
+                ];
+                break;
+
+            case PopoverOverlayPlacement.Bottom:
+                possiblePositionNames &#x3D; [
+                    PopoverOverlayPosition.bottomRight,
+                    PopoverOverlayPosition.bottomLeft,
+                    PopoverOverlayPosition.topRight,
+                    PopoverOverlayPosition.topLeft,
+                ];
+                break;
+        }
+
+        return this.getConnectedPositions(possiblePositionNames);
+    }
+
+    private getPopoverPositionPanelClass(panelClass: string[]): string {
+        let result;
+        for (const panelClassKey in PanelClass) {
+            if (PanelClass.hasOwnProperty(panelClassKey)) {
+                result &#x3D; panelClass.find((i) &#x3D;&gt; i &#x3D;&#x3D;&#x3D; panelClassKey);
+            }
+        }
+        return result || &quot;&quot;;
+    }
+
+    private calculateOffsetY(elRefHeight: number): number {
+        const ARROW_CENTER_POSITION_PX &#x3D; 20;
+        if (!elRefHeight) {
+            return 5;
+        }
+        return ARROW_CENTER_POSITION_PX - elRefHeight / 2;
+    }
+}
+
+export function getPopoverPositions(): Record&lt;
+    PopoverOverlayPosition,
+    ConnectedPosition
+&gt; {
+    return {
+        [PopoverOverlayPosition.topLeft]: {
+            panelClass: &quot;overlay-top-left&quot;,
+            originX: &quot;center&quot;,
+            originY: &quot;top&quot;,
+            overlayX: &quot;end&quot;,
+            overlayY: &quot;bottom&quot;,
+        },
+        [PopoverOverlayPosition.bottomLeft]: {
+            panelClass: &quot;overlay-bottom-left&quot;,
+            originX: &quot;center&quot;,
+            originY: &quot;bottom&quot;,
+            overlayX: &quot;end&quot;,
+            overlayY: &quot;top&quot;,
+        },
+        [PopoverOverlayPosition.topRight]: {
+            panelClass: &quot;overlay-top-right&quot;,
+            originX: &quot;center&quot;,
+            originY: &quot;top&quot;,
+            overlayX: &quot;start&quot;,
+            overlayY: &quot;bottom&quot;,
+        },
+        [PopoverOverlayPosition.bottomRight]: {
+            panelClass: &quot;overlay-bottom-right&quot;,
+            originX: &quot;center&quot;,
+            originY: &quot;bottom&quot;,
+            overlayX: &quot;start&quot;,
+            overlayY: &quot;top&quot;,
+        },
+        [PopoverOverlayPosition.leftTop]: {
+            panelClass: &quot;overlay-left-top&quot;,
+            originX: &quot;start&quot;,
+            originY: &quot;bottom&quot;,
+            overlayX: &quot;end&quot;,
+            overlayY: &quot;bottom&quot;,
+        },
+        [PopoverOverlayPosition.leftBottom]: {
+            panelClass: &quot;overlay-left-bottom&quot;,
+            originX: &quot;start&quot;,
+            originY: &quot;top&quot;,
+            overlayX: &quot;end&quot;,
+            overlayY: &quot;top&quot;,
+        },
+        [PopoverOverlayPosition.rightTop]: {
+            panelClass: &quot;overlay-right-top&quot;,
+            originX: &quot;end&quot;,
+            originY: &quot;bottom&quot;,
+            overlayX: &quot;start&quot;,
+            overlayY: &quot;bottom&quot;,
+        },
+        [PopoverOverlayPosition.rightBottom]: {
+            panelClass: &quot;overlay-right-bottom&quot;,
+            originX: &quot;end&quot;,
+            originY: &quot;top&quot;,
+            overlayX: &quot;start&quot;,
+            overlayY: &quot;top&quot;,
+        },
+    };
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'PopoverPositionService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
