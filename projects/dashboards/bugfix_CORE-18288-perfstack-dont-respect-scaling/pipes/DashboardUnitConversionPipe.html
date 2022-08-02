@@ -176,11 +176,11 @@ export class DashboardUnitConversionPipe implements PipeTransform {
     public transform &#x3D; (
         value: string | number | undefined,
         units: UnitOption &#x3D; &quot;generic&quot;,
-        defaultThreshhold: number &#x3D; DEFAULT_UNIT_CONVERSION_THRESHOLD
+        defaultThreshold: number &#x3D; DEFAULT_UNIT_CONVERSION_THRESHOLD
     ): string &#x3D;&gt; {
         const valueAsNumber &#x3D; typeof value &#x3D;&#x3D;&#x3D; &quot;string&quot; ? parseFloat(value) : value;
 
-        if (valueAsNumber &#x3D;&#x3D;&#x3D; undefined || isNaN(valueAsNumber) || valueAsNumber &lt; defaultThreshhold) {
+        if (valueAsNumber &#x3D;&#x3D;&#x3D; undefined || isNaN(valueAsNumber) || valueAsNumber &lt; defaultThreshold) {
             return value?.toString() || &quot;&quot;;
         }
 
