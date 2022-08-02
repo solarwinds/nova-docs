@@ -335,7 +335,7 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &quot;@angular/core&quot;;
-import { UnitConversionService, UnitOption } from &quot;@nova-ui/bits&quot;;
+import { UnitBase, UnitConversionService, UnitOption } from &quot;@nova-ui/bits&quot;;
 import { IScale, LinearScale, TimeIntervalScale, TimeScale } from &quot;@nova-ui/charts&quot;;
 import { duration } from &quot;moment/moment&quot;;
 import { DashboardUnitConversionPipe } from &quot;../../common/pipes/dashboard-unit-conversion-pipe&quot;;
@@ -368,7 +368,7 @@ export class TimeseriesScalesService {
             }
             case TimeseriesScaleType.Linear: {
                 scale &#x3D; new LinearScale();
-                scale.formatters.tick &#x3D; (value: string | number | undefined) &#x3D;&gt; this.unitConversionPipe.transform(value, units);
+                scale.formatters.tick &#x3D; (value: string | number | undefined) &#x3D;&gt; this.unitConversionPipe.transform(value, units, UnitBase.Standard);
                 break;
             }
             case TimeseriesScaleType.TimeInterval: {
