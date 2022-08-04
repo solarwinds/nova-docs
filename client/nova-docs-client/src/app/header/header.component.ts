@@ -1,20 +1,20 @@
 import {
-  AfterViewInit,
   ChangeDetectionStrategy,
   Component,
   EventEmitter,
   HostListener,
-  Inject,
   OnInit,
   Output,
-  ViewChild
-} from '@angular/core';
-import {AppService} from "../../services/app.service";
-import {IToastService, SelectV2Component, ToastService} from "@nova-ui/bits";
-import {environment} from "../../environments/environment";
+} from "@angular/core";
+
+import { OptionValueType, ToastService } from "@nova-ui/bits";
+import { LocationService } from "src/services/location.service";
+
+import { environment } from "../../environments/environment";
+import { AppService } from "../../services/app.service";
 
 export interface IProject {
-  branches: Array<IBranch>;
+  branches: readonly IBranch[];
   name: string;
 }
 
@@ -23,100 +23,139 @@ export interface IBranch {
   name: string;
 }
 
+const fallbackProjectsData: readonly IProject[] = Object.freeze([
+  {
+    name: "bits",
+    branches: [{ project: "bits", name: "main" }],
+  },
+  {
+    name: "charts",
+    branches: [{ project: "charts", name: "main" }],
+  },
+  {
+    name: "dashboards",
+    branches: [{ project: "dashboards", name: "main" }],
+  },
+]);
+
+const firstOption = (
+  value: OptionValueType | OptionValueType[]
+): OptionValueType => (Array.isArray(value) ? value[0] ?? null : value);
+
+const optionValueToString = (value: OptionValueType): string =>
+  typeof value === "string" ? value : value?.id ?? "";
+
 @Component({
-  selector: 'nui-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.less'],
+  selector: "app-header",
+  templateUrl: "./header.component.html",
+  styleUrls: ["./header.component.less"],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HeaderComponent implements OnInit, AfterViewInit {
-  public projects: IProject[] = [];
-  public activeProject: IProject = {} as IProject;
-  public selectedBranch: string = "";
+export class HeaderComponent implements OnInit {
+  constructor(
+    private appService: AppService,
+    private toastService: ToastService,
+    private locationService: LocationService
+  ) {}
 
-  @HostListener('window:hashchange', ['$event'])
-  private onHashChange(e: any): void {
-    if(this.projects.length) {
-      this.parseBrowserUrl(this.projects);
-    }
-  }
-
-  @ViewChild("select") public select: SelectV2Component;
+  public projects: readonly IProject[] = [];
+  public activeProject?: IProject;
+  public selectedBranch = "";
 
   @Output() emitSelectedUrl = new EventEmitter<string>();
   @Output() emitParsedUrl = new EventEmitter<string>();
 
-  constructor(private appService: AppService,
-              @Inject(ToastService) private toastService: IToastService) { };
-
-  public ngOnInit(): void {
-    this.getProjects();
-  }
-
-  public ngAfterViewInit(): void {
-    if (this.select)  {
-      this.select.valueSelected.subscribe((branch: string) => {
-        this.openDocs(this.activeProject, branch);
-      })
+  @HostListener("window:hashchange", ["$event"])
+  public onHashChange(): void {
+    if (this.projects.length) {
+      this.pickProjectByUrl(this.locationService.getAppPath());
     }
   }
 
-  public openDocs(project: IProject, branchName: string = this.selectedBranch): void {
+  public ngOnInit(): void {
+    this.loadProjects();
+  }
+
+  public onSelectBranch(selected: OptionValueType | OptionValueType[]): void {
+    if (!this.activeProject) {
+      return;
+    }
+    const branch = optionValueToString(firstOption(selected));
+    this.openDocs(this.activeProject, branch);
+  }
+
+  public openDocs(
+    project: IProject | undefined,
+    branchName: string = this.selectedBranch
+  ): void {
+    const resetSuffix = this.activeProject?.name !== project?.name;
     this.activeProject = project;
     this.selectedBranch = branchName;
-    const url = `${environment.apiUrl}/${project.name}/${branchName}`;
+    if (!project || !branchName) {
+      return;
+    }
+    const url = this.locationService.formatDocPath({
+      root: environment.apiUrl,
+      project: project.name,
+      branch: branchName,
+      resetSuffix,
+    });
     this.emitSelectedUrl.emit(url);
   }
 
-  private getProjects(): void {
-    this.appService.getProjects().subscribe(projects => {
-        this.projects = projects;
-        this.setActiveProject(projects);
-      },
-      error => {
-        this.toastService.error({title: error.message});
-        this.projects = [
-          {"name":"bits","branches":[
-            {"project":"bits","name":"release_v12.x"},
-            {"project":"bits","name":"release_v11.x"},
-            {"project":"bits","name":"release_v11.4.x"},
-            {"project":"bits","name":"release_v11.2.x"},
-            {"project":"bits","name":"release_v9.x"},
-            {"project":"bits","name":"main"}]},
-          {"name":"charts","branches":[
-            {"project":"charts","name":"release_v12.x"},
-            {"project":"charts","name":"release_v11.x"},
-            {"project":"charts","name":"release_v11.4.x"},
-            {"project":"charts","name":"release_v11.2.x"},
-            {"project":"charts","name":"release_v9.x"},
-            {"project":"charts","name":"main"}]},
-          {"name":"dashboards","branches":[
-            {"project":"dashboards","name":"release_v12.x"},
-            {"project":"dashboards","name":"release_v11.x"},
-            {"project":"dashboards","name":"release_v11.4.x"},
-            {"project":"dashboards","name":"release_v11.2.x"},
-            {"project":"dashboards","name":"release_v9.x"},
-            {"project":"dashboards","name":"main"}]}]
-        this.setActiveProject(this.projects);
+  private async loadProjects(): Promise<void> {
+    try {
+      const projects = await this.appService.getProjects();
+      this.projects = projects;
+      this.setActiveProject();
+    } catch (error) {
+      const message = error instanceof Error ? error.message : String(error);
+      this.toastService.error({
+        title: message,
       });
-  }
-
-  private setActiveProject(projects: Array<IProject>): void {
-    if (!location.hash || location.hash === "#/" || location.hash === "#") {
-      this.activeProject = projects[0];
-      this.selectedBranch = this.activeProject.branches[0].name;
-      this.openDocs(this.activeProject, this.selectedBranch);
-    } else {
-      this.parseBrowserUrl(projects)
+      this.projects = fallbackProjectsData;
+      this.setActiveProject();
     }
   }
 
-  private parseBrowserUrl(projects: Array<IProject>): void | undefined {
-    const arrayFromHash = location.hash.split('/').slice(1);
-    this.activeProject = projects.find((project: IProject) => project.name === arrayFromHash[0]) || projects[0];
-    this.selectedBranch = this.activeProject.branches.find((branch: IBranch) => branch.name === arrayFromHash[1])?.name || this.activeProject.branches[0].name;
-    arrayFromHash.splice(0,2, this.activeProject.name, this.selectedBranch);
-    const convertedUrl = `${window.location.origin}/${arrayFromHash.join('/')}`;
+  private setActiveProject(): void {
+    const appPath = this.locationService.getAppPath();
+    if (!appPath.length) {
+      this.setDefaultProject();
+    } else {
+      this.pickProjectByUrl(appPath);
+    }
+  }
+
+  private setDefaultProject(): void {
+    const projects = this.projects;
+    const activeProject = projects[0];
+    const selectedBranch = activeProject?.branches[0]?.name ?? "";
+    this.openDocs(activeProject, selectedBranch);
+  }
+
+  private pickProjectByUrl(appPath: readonly string[]): void {
+    const projects = this.projects;
+    const [projectId, branchId, ...path] = appPath;
+    const activeProject =
+      projects.find((project: IProject) => project.name === projectId) ??
+      projects[0];
+    if (!activeProject) {
+      this.openDocs(undefined, undefined);
+      return;
+    }
+    const selectedBranch =
+      activeProject?.branches.find(
+        (branch: IBranch) => branch.name === branchId
+      )?.name ??
+      activeProject?.branches[0]?.name ??
+      "";
+    const convertedUrl = this.locationService.formatDocPath({
+      root: environment.apiUrl,
+      project: activeProject.name,
+      branch: selectedBranch,
+    });
     this.emitParsedUrl.emit(convertedUrl);
+    this.openDocs(activeProject, selectedBranch);
   }
 }

@@ -1,4 +1,4 @@
-Hello friend!
+Hello, friend!
 
 If you're a developer that needs to fix something, you'll find the docker-compose file
 quite useful, as you can adjust it to your needs (but don't forget to not commit such adjustments).
@@ -24,7 +24,7 @@ services:
     volumes: <- link local folders to container FS
       - ./projects:/usr/src/app/projects
 
-Where: 
+Where:
     - build - tells that image is local and needs to be built instead of pulling it from registry
     and dot says that the context for build is this folder.
     - environment - list ov env variables that would be accessible inside of container
