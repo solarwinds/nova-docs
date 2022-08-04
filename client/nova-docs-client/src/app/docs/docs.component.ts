@@ -6,51 +6,82 @@ import {
   OnChanges,
   SimpleChange,
   SimpleChanges,
-  ViewChild
-} from '@angular/core';
+  ViewChild,
+} from "@angular/core";
+import { LoggerService } from "@nova-ui/bits";
 
 @Component({
-  selector: 'nui-docs',
-  templateUrl: './docs.component.html',
-  styleUrls: ['./docs.component.less'],
+  selector: "app-docs",
+  templateUrl: "./docs.component.html",
+  styleUrls: ["./docs.component.less"],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DocsComponent implements OnChanges{
-  @ViewChild("iframe", {static: true}) private iframe: ElementRef;
+export class DocsComponent implements OnChanges {
+  @ViewChild("iframe", { static: true })
+  private iframe?: ElementRef<HTMLIFrameElement>;
 
-  @Input() public selectedUrl: string = "";
-  @Input() public parsedUrl: string = "";
+  @Input() public selectedUrl = "";
+  @Input() public parsedUrl = "";
 
-  public iframeUrl: string = "";
+  public iframeUrl = "";
 
-  constructor() {}
+  constructor(private logger: LoggerService) {}
+
+  private withActiveFrame(
+    callback: (elFrame: HTMLIFrameElement, location: Location) => void
+  ): void {
+    if (!this.iframe) {
+      return;
+    }
+
+    const elFrame = this.iframe.nativeElement;
+    const location = elFrame.contentWindow?.location;
+
+    if (!location) {
+      return;
+    }
+
+    try {
+      callback(elFrame, location);
+    } catch (error) {
+      this.logger.error(error);
+    }
+  }
 
   public ngOnChanges(changes: SimpleChanges): void {
-    if(changes.parsedUrl && this.compareUrls(changes.parsedUrl)) {
-      if(this.iframe ){
-        this.iframe.nativeElement.contentWindow.location.replace(changes.parsedUrl.currentValue);
+    this.withActiveFrame((elFrame, location) => {
+      if (changes.parsedUrl && this.compareUrls(changes.parsedUrl, location)) {
+        location.replace(changes.parsedUrl.currentValue);
       }
-    }
-
-    if(changes.selectedUrl && this.compareUrls(changes.selectedUrl)) {
-      if(this.iframe){
-        this.iframe.nativeElement.contentWindow.location.href = changes.selectedUrl.currentValue;
+      if (
+        changes.selectedUrl &&
+        this.compareUrls(changes.selectedUrl, location)
+      ) {
+        location.href = changes.selectedUrl.currentValue;
       }
-    }
+    });
   }
 
   public updateHash(): void {
-    const iframeLocation = this.iframe.nativeElement.contentWindow.location.href;
-    const iframeLocationOrigin = this.iframe.nativeElement.contentWindow.location.origin;
-    const iframeRoot = iframeLocation?.replace(iframeLocationOrigin, '');
+    this.withActiveFrame((elFrame, location) => {
+      const iframeLocation = location.href;
+      const iframeLocationOrigin = location.origin;
+      const iframeRoot = iframeLocation?.replace(iframeLocationOrigin, "");
 
-    if (window.location.hash !==`#${iframeRoot}` && iframeLocationOrigin && iframeRoot !== "about:blank") {
-      window.location.replace(`#${iframeRoot}`);
-    }
+      if (
+        window.location.hash !== `#${iframeRoot}` &&
+        iframeLocationOrigin &&
+        iframeRoot !== "about:blank"
+      ) {
+        window.location.replace(`#${iframeRoot}`);
+      }
+    });
   }
 
-  private compareUrls(url: SimpleChange): boolean {
-    return url.previousValue !== url.currentValue && url.currentValue !== this.iframe?.nativeElement.contentWindow.location.href;
+  private compareUrls(url: SimpleChange, location: Location): boolean {
+    return (
+      url.previousValue !== url.currentValue &&
+      url.currentValue !== location.href
+    );
   }
-
 }

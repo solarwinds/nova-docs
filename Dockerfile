@@ -1,15 +1,17 @@
-FROM node:boron
-
-RUN echo "registry=http://dev-brn-art-02.swdev.local:8081/artifactory/api/npm/npm" > /root/.npmrc
+FROM node:gallium-alpine
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 COPY . /usr/src/app/
-RUN npm install
+
+# RUN echo "registry=http://artifactory.solarwinds.com:443/artifactory/api/npm/npm" > /root/.npmrc
+RUN node -v && npm -v
+RUN npm -g i pnpm@7.5.2
+RUN pnpm i
 
 EXPOSE 8080
 
 USER root
 
-CMD [ "npm", "start" ]
+CMD [ "npm", "run", "build-and-start" ]

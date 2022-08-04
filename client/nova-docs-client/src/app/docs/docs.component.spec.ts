@@ -1,17 +1,16 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { DocsComponent } from './docs.component';
-import {SafePipe} from "../../pipes/safe.pipe";
+import { DocsComponent } from "./docs.component";
+import { SafePipe } from "../../pipes/safe.pipe";
 
-describe('DocsComponent', () => {
+describe("DocsComponent", () => {
   let component: DocsComponent;
   let fixture: ComponentFixture<DocsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DocsComponent, SafePipe ],
-    })
-    .compileComponents();
+      declarations: [DocsComponent, SafePipe],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('DocsComponent', () => {
     component = fixture.componentInstance;
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
