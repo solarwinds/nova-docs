@@ -63,6 +63,12 @@
                 <code><a href="../injectables/FormatterConfiguratorComponent.html" target="_self" >FormatterConfiguratorComponent</a></code>
     </p>
 
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="../interfaces/IHasChangeDetector.html" target="_self" >IHasChangeDetector</a></code>
+    </p>
 
 
 <section>
@@ -158,6 +164,10 @@
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
+                                <a href="#initForm">initForm</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#mapDropdownItems">mapDropdownItems</a>
                             </li>
                         </ul>
@@ -183,7 +193,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor/column-configuration/presentation-configuration/portals/link-configurator/link-configurator.component.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor/column-configuration/presentation-configuration/portals/link-configurator/link-configurator.component.ts:16</a></div>
                             </td>
                         </tr>
 
@@ -266,6 +276,47 @@
     <h3 id="methods">
         Methods
     </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initForm"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            initForm
+                        </b>
+                        <a href="#initForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>initForm()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="25"
+                            class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor/column-configuration/presentation-configuration/portals/link-configurator/link-configurator.component.ts:25</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
@@ -394,7 +445,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor/column-configuration/presentation-configuration/portals/link-configurator/link-configurator.component.ts:13</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor/column-configuration/presentation-configuration/portals/link-configurator/link-configurator.component.ts:16</a></div>
                             </td>
                         </tr>
 
@@ -588,8 +639,9 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ChangeDetectorRef, Component } from &quot;@angular/core&quot;;
-import { FormBuilder } from &quot;@angular/forms&quot;;
+import { FormBuilder, Validators } from &quot;@angular/forms&quot;;
 import { LoggerService } from &quot;@nova-ui/bits&quot;;
+import { IHasChangeDetector } from  &quot;../../../../../../../../../../../src/lib/types&quot;;
 import { ConfiguratorHeadingService } from &quot;../../../../../../../../services/configurator-heading.service&quot;;
 
 import { FormatterConfiguratorComponent } from &quot;../formatter-configurator.component&quot;;
@@ -598,8 +650,10 @@ import { FormatterConfiguratorComponent } from &quot;../formatter-configurator.c
     selector: &quot;nui-link-configurator&quot;,
     templateUrl: &quot;./link-configurator.component.html&quot;,
 })
-export class LinkConfiguratorComponent extends FormatterConfiguratorComponent {
-    static lateLoadKey &#x3D; &quot;LinkConfiguratorComponent&quot;;
+export class LinkConfiguratorComponent
+      extends FormatterConfiguratorComponent
+      implements IHasChangeDetector {
+    public static lateLoadKey &#x3D; &quot;LinkConfiguratorComponent&quot;;
 
     constructor(changeDetector: ChangeDetectorRef,
                 configuratorHeading: ConfiguratorHeadingService,
@@ -607,6 +661,24 @@ export class LinkConfiguratorComponent extends FormatterConfiguratorComponent {
                 logger: LoggerService) {
         super(changeDetector, configuratorHeading, formBuilder, logger);
     }
+
+    public initForm(): void {
+        const dataFieldForm: Record&lt;string, any&gt; &#x3D; {
+            link: [null, Validators.required],
+            value: [null, Validators.required],
+        };
+
+        this.form &#x3D; this.formBuilder.group({
+          dataFieldIds: this.formBuilder.group(dataFieldForm),
+        });
+
+        this.form.addControl(
+          &quot;target&quot;,
+          this.formBuilder.control(false, [])
+        );
+
+        this.formReady.emit(this.form);
+      }
 }
 </code></pre>
     </div>
@@ -621,7 +693,7 @@ export class LinkConfiguratorComponent extends FormatterConfiguratorComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div [formGroup]="form">    <div formGroupName="dataFieldIds">        <div class="mb-4">            <nui-form-field caption="Label"                            i18n-caption                            class="mb-3"                            [control]="dataFieldIds.controls[\'value\']">                 <nui-select-v2 formControlName="value">                    <nui-select-v2-option *ngFor="let itemValue of dropdownItems.value" [value]="itemValue.id">                        {{itemValue.label}}                    </nui-select-v2-option>                </nui-select-v2>                <nui-validation-message for="required" i18n>                    This field is required                </nui-validation-message>            </nui-form-field>        </div>        <div>            <nui-form-field caption="URL"                            i18n-caption                            class="mb-3"                            [control]="dataFieldIds.controls[\'link\']">                <nui-select-v2 formControlName="link">                    <nui-select-v2-option *ngFor="let itemLink of dropdownItems.link" [value]="itemLink.id">                        {{itemLink.label}}                    </nui-select-v2-option>                </nui-select-v2>                <nui-validation-message for="required" i18n>                    This field is required                </nui-validation-message>            </nui-form-field>        </div>    </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div [formGroup]="form">    <div formGroupName="dataFieldIds">        <div class="mb-4">            <nui-form-field caption="Label"                            i18n-caption="label field caption| the entity field to be selected for the html label property"                            class="mb-3"                            [control]="dataFieldIds.controls[\'value\']">                 <nui-select-v2 formControlName="value">                    <nui-select-v2-option *ngFor="let itemValue of dropdownItems.value" [value]="itemValue.id">                        {{itemValue.label}}                    </nui-select-v2-option>                </nui-select-v2>                <nui-validation-message for="required" i18n>                    This field is required                </nui-validation-message>            </nui-form-field>        </div>        <div>            <nui-form-field caption="URL"                            i18n-caption="url field caption| the entity field to be selected for the url html property"                            class="mb-3"                            [control]="dataFieldIds.controls[\'link\']">                <nui-select-v2 formControlName="link">                    <nui-select-v2-option *ngFor="let itemLink of dropdownItems.link" [value]="itemLink.id">                        {{itemLink.label}}                    </nui-select-v2-option>                </nui-select-v2>                <nui-validation-message for="required" i18n>                    This field is required                </nui-validation-message>            </nui-form-field>        </div>    </div>    <div>        <nui-form-field caption="Open in the same window"                        i18n-caption="form field caption|switch configuring whether formatted link should open in new window/tab"                        class="mb-3"                        [control]="form.controls[\'target\']">            <nui-switch id="nui-switch-target" formControlName="target">            </nui-switch>        </nui-form-field>    </div></div></div>'
     var COMPONENTS = [{'name': 'AggregatorMetricSelectorConfigurationComponent', 'selector': 'nui-aggregator-configurator'},{'name': 'BackgroundColorRulesConfigurationComponent', 'selector': 'nui-background-color-rules-configuration'},{'name': 'ColorPickerComponent', 'selector': 'nui-color-picker'},{'name': 'ConfiguratorHeadingComponent', 'selector': 'nui-configurator-heading'},{'name': 'DashboardComponent', 'selector': 'nui-dashboard'},{'name': 'DashwizButtonsComponent', 'selector': 'nui-dashwiz-buttons'},{'name': 'DashwizComponent', 'selector': 'nui-dashwiz'},{'name': 'DashwizStepComponent', 'selector': 'nui-dashwiz-step'},{'name': 'DataSourceConfigurationComponent', 'selector': 'nui-data-source-configuration'},{'name': 'DataSourceConfigurationV2Component', 'selector': 'nui-data-source-configuration'},{'name': 'DataSourceErrorComponent', 'selector': 'nui-data-source-error'},{'name': 'DescriptionConfigurationComponent', 'selector': 'nui-table-column-description-configuration'},{'name': 'DescriptionConfigurationV2Component', 'selector': 'nui-description-configuration-v2'},{'name': 'DonutContentConfigurationComponent', 'selector': 'nui-donut-content-configuration'},{'name': 'DonutContentPercentageConfigurationComponent', 'selector': 'nui-donut-content-configurator'},{'name': 'DonutContentPercentageFormatterComponent', 'selector': ''},{'name': 'DonutContentRawFormatterComponent', 'selector': ''},{'name': 'DonutContentSumFormatterComponent', 'selector': ''},{'name': 'DropAreaComponent', 'selector': 'nui-drop-area'},{'name': 'EmbeddedContentComponent', 'selector': 'nui-embedded-content'},{'name': 'EmbeddedContentConfigurationComponent', 'selector': 'nui-embedded-content-configuration'},{'name': 'EntityFormattingConfigurationComponent', 'selector': 'nui-entity-formatting-configuration'},{'name': 'FieldMapperAggregatorConfiguratorComponent', 'selector': 'nui-field-mapper-aggregator-configurator'},{'name': 'FormStackComponent', 'selector': 'nui-form-stack'},{'name': 'GroupingConfigurationComponent', 'selector': 'nui-grouping-configuration'},{'name': 'IconFormatterComponent', 'selector': ''},{'name': 'InfoMessageConfigurationComponent', 'selector': 'nui-info-message-configuration'},{'name': 'KpiComponent', 'selector': 'nui-kpi'},{'name': 'KpiDescriptionConfigurationComponent', 'selector': 'nui-kpi-description-configuration'},{'name': 'KpiTilesConfigurationComponent', 'selector': 'nui-kpi-tiles-configuration-component'},{'name': 'LineChartComponent', 'selector': 'nui-line-chart'},{'name': 'LinkConfiguratorComponent', 'selector': 'nui-link-configurator'},{'name': 'LinkFormatterComponent', 'selector': ''},{'name': 'ListGroupItemComponent', 'selector': 'nui-list-group-item'},{'name': 'ListLeafItemComponent', 'selector': 'nui-list-leaf-item'},{'name': 'ListNavigationBarComponent', 'selector': 'nui-navigation-bar'},{'name': 'ListWidgetComponent', 'selector': 'nui-list-widget'},{'name': 'LoadingComponent', 'selector': 'nui-loading'},{'name': 'PercentageFormatterComponent', 'selector': ''},{'name': 'PizzagnaComponent', 'selector': 'nui-pizzagna'},{'name': 'PresentationConfigurationComponent', 'selector': 'nui-table-column-presentation-configuration'},{'name': 'PresentationConfigurationV2Component', 'selector': 'nui-presentation-configuration-v2'},{'name': 'PreviewOverlayComponent', 'selector': 'nui-preview-overlay'},{'name': 'PreviewPlaceholderComponent', 'selector': 'nui-preview-placeholder'},{'name': 'ProportionalChartOptionsEditorComponent', 'selector': 'nui-proportional-chart-options-editor-component'},{'name': 'ProportionalChartOptionsEditorV2Component', 'selector': 'nui-proportional-chart-options-editor-v2-component'},{'name': 'ProportionalDonutContentComponent', 'selector': 'nui-proportional-donut-content'},{'name': 'RawFormatterComponent', 'selector': ''},{'name': 'RefresherConfigurationComponent', 'selector': 'nui-refresher-configuration'},{'name': 'RefreshRateConfiguratorComponent', 'selector': 'nui-refresh-rate-configurator'},{'name': 'SiUnitsFormatterComponent', 'selector': ''},{'name': 'StackComponent', 'selector': 'nui-stack'},{'name': 'StackedAreaChartComponent', 'selector': 'nui-stacked-area-chart'},{'name': 'StackedBarChartComponent', 'selector': 'nui-stacked-bar-chart'},{'name': 'StackedPercentageAreaChartComponent', 'selector': 'nui-stacked-percentage-area-chart'},{'name': 'StatusBarChartComponent', 'selector': 'nui-status-bar-chart'},{'name': 'StatusWithIconFormatterComponent', 'selector': ''},{'name': 'TableColumnConfigurationComponent', 'selector': 'nui-table-column-configuration'},{'name': 'TableColumnsConfigurationComponent', 'selector': 'nui-table-columns-configuration'},{'name': 'TableColumnsConfigurationV2Component', 'selector': 'nui-table-columns-configuration'},{'name': 'TableDataSourceErrorComponent', 'selector': 'nui-table-data-source-error'},{'name': 'TableFiltersEditorComponent', 'selector': 'nui-table-filters-editor-component'},{'name': 'ThresholdsConfigurationComponent', 'selector': 'nui-thresholds-configuration'},{'name': 'TilesComponent', 'selector': 'nui-tiles'},{'name': 'TimeframeSelectionComponent', 'selector': 'nui-timeframe-selection'},{'name': 'TimeseriesMetadataConfigurationComponent', 'selector': 'nui-timeseries-metadata-configuration'},{'name': 'TimeseriesSeriesCollectionConfigurationComponent', 'selector': 'nui-timeseries-series-collection-configuration'},{'name': 'TimeseriesTileDescriptionConfigurationComponent', 'selector': 'nui-table-column-description-configuration'},{'name': 'TimeseriesTileIndicatorDataConfigurationComponent', 'selector': 'nui-timeseries-tile-indicator-data-configuration'},{'name': 'TitleAndDescriptionConfigurationComponent', 'selector': 'nui-title-and-description-configuration'},{'name': 'WidgetBodyComponent', 'selector': 'nui-widget-body'},{'name': 'WidgetBodyContentComponent', 'selector': 'nui-widget-body-content'},{'name': 'WidgetClonerComponent', 'selector': 'nui-widget-cloner'},{'name': 'WidgetComponent', 'selector': 'nui-widget'},{'name': 'WidgetConfiguratorSectionComponent', 'selector': 'nui-widget-configurator-section'},{'name': 'WidgetEditorComponent', 'selector': 'nui-widget-editor'},{'name': 'WidgetErrorComponent', 'selector': 'nui-widget-error'},{'name': 'WidgetHeaderComponent', 'selector': 'nui-widget-header'},{'name': 'WidgetSearchComponent', 'selector': 'nui-widget-search'}];
     var DIRECTIVES = [{'name': 'ComponentPortalDirective', 'selector': '[nuiComponentPortal]'},{'name': 'DelayedMousePresenceDetectionDirective', 'selector': '[nuiDelayedMousePresenceDetection]'},{'name': 'GridsterItemWidgetIdDirective', 'selector': '[nuiGridsterItemWidgetId]'},{'name': 'WidgetEditorDirective', 'selector': '[nuiWidgetEditor]'}];
     var ACTUAL_COMPONENT = {'name': 'LinkConfiguratorComponent'};
