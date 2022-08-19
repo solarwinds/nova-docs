@@ -1,0 +1,173 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@nova-ui/dashboards documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	      <link rel="stylesheet" href="./styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="./" class="navbar-brand">@nova-ui/dashboards documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content getting-started">
+                   <div class="content-data">
+
+<h1 id="dashboards-overview">Dashboards Overview</h1>
+<p>Nova Dashboards is a framework designed to provide feature developers with a common solution for 
+presenting data coming from various sources within a single view, as well as a set of predefined widget 
+visualizations that are 100% configuration-driven and designed specifically to conform to the Nova Design 
+Language (NDL).</p>
+<p>Even though NDL-prescriptive features are provided out of the box, the framework and its set of widgets 
+are made to be flexible! Individual parts of it can be overridden, and custom widgets can be implemented 
+without an inordinate amount of effort. However, as with any flexible framework, it&#39;s important to 
+remember that the more customizations you create, the more initial work and maintenance effort you&#39;ll 
+absorb into your product&#39;s code base. </p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>The consumer app must be Angular-based</li>
+<li>Your development environment includes Node.js®, a package manager such as npm, and the Angular CLI</li>
+<li>Your package manager registries are set</li>
+<li>Nova Bits has been installed using the following command:<div><pre class="line-numbers"><code class="language-sh">$ ng add &#64;nova-ui/bits</code></pre></div>If needed, further instructions for Bits installation can be found 
+<a href="https://nova-ui.solarwinds.io/bits/release_v12.x/" target="_blank">here</a>.</li>
+</ul>
+<h4 id="installing-nodejs-and-npm">Installing NodeJS and npm</h4>
+<p>To check your version of NodeJS, run node -v in a terminal/console window.
+To get NodeJS which comes prepackaged with npm, go to <a href="https://nodejs.org/en/" target="_blank">nodejs.org</a>.</p>
+<h4 id="installing-angular-cli">Installing Angular CLI</h4>
+<p>The Angular CLI is a command-line interface tool that you can use to initialize, develop, scaffold and 
+maintain Angular applications. </p>
+<p>You may want to check first whether it&#39;s already installed by running the following command: </p>
+<div><pre class="line-numbers"><code class="language-none">ng --version</code></pre></div><p>If you want to install it globally, run the following command: </p>
+<div><pre class="line-numbers"><code class="language-none">npm install -g &#64;angular/cli</code></pre></div><h2 id="setup-options">Setup Options</h2>
+<h4 id="automated-installation-and-setup-using-the-angular-cli">Automated Installation and Setup Using the Angular CLI</h4>
+<p>The following schematics command will get dashboards ready for consumption in your project:</p>
+<div><pre class="line-numbers"><code class="language-sh">$ ng add &#64;nova-ui/dashboards</code></pre></div><p>Tasks performed by this command:</p>
+<ul>
+<li>Adds the <code>@nova-ui/dashboards</code> package and its associated dependencies to your package.json</li>
+<li>Performs an <code>npm install</code></li>
+<li>Adds the necessary imports to your app&#39;s main module</li>
+<li>Adds the necessary style definitions to your app&#39;s angular.json file.</li>
+</ul>
+<h4 id="manual-installation-and-setup">Manual Installation and Setup</h4>
+<p>Install with npm:</p>
+<div><pre class="line-numbers"><code class="language-sh">$ npm install angular-gridster2
+$ npm install d3
+$ npm install d3-selection-multi
+$ npm install &#64;nova-ui/charts
+$ npm install &#64;nova-ui/dashboards</code></pre></div><p>Once all dependencies and project files are downloaded, add NuiDashboardsModule and 
+BrowserAnimationsModule to your main Angular module&#39;s imports:</p>
+<div><pre class="line-numbers"><code class="language-js">import { BrowserAnimationsModule } from &#39;&#64;angular/platform-browser/animations&#39;;
+import { NuiDashboardsModule } from &quot;&#64;nova-ui/dashboards&quot;;
+
+&#64;NgModule({
+    imports: [
+        BrowserAnimationsModule,
+        NuiDashboardsModule,
+    ]
+})</code></pre></div><p>Finally, since some of the predefined widget types provided by Nova Dashboards have charts, your app must 
+include the Nova Charts style definitions. To add them, modify your app&#39;s angular.json with the following 
+addition to the styles source paths:</p>
+<div><pre class="line-numbers"><code class="language-json">&quot;architect&quot;: {
+   &quot;build&quot;: {
+      &quot;options&quot;: {
+          &quot;styles&quot;: [
+             &quot;./node_modules/&#64;nova-ui/charts/bundles/css/styles.css&quot;
+             ...
+          ],
+          ...
+       }     
+   }
+}</code></pre></div><h2 id="start-implementing-your-dashboards">Start Implementing Your Dashboards</h2>
+<p>An <strong>overview</strong> of Nova Dashboards is available 
+<a href="https://nova-ui.solarwinds.io/dashboards/release_v12.x/additional-documentation/overview.html">here</a>,
+but if you&#39;d prefer to dive right in, you can start with our <strong>Hello, Dashboards!</strong> tutorial 
+<a href="https://nova-ui.solarwinds.io/dashboards/release_v12.x/additional-documentation/tutorials/hello-dashboards.html">here</a>.</p>
+<br>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
+            var COMPODOC_CURRENT_PAGE_URL = 'index.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="./js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="./js/menu-wc.js" defer></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+       <script src="./js/libs/zepto.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
