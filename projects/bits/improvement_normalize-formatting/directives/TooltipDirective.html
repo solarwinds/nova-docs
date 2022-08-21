@@ -1,0 +1,1234 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@nova-ui/bits documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">@nova-ui/bits documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content directive">
+                   <div class="content-data">
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Directives</li>
+  <li>TooltipDirective</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#example" role="tab" id="example-tab" data-toggle="tab" data-link="example">Overview</a>
+        </li>
+        <li >
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">API</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade " id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/lib/tooltip/tooltip.directive.ts</code>
+        </p>
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p><example-url>./../examples/index.html#/tooltip</example-url></p>
+
+            </p>
+
+            <p class="comment">
+                <h3>Implements</h3>
+            </p>
+            <p class="comment">
+                            <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
+            </p>
+
+            <p class="comment">
+                <h3>Example</h3>
+            </p>
+            <div class="io-description">
+            </div>
+
+        <section>
+            <h3>Metadata</h3>
+            <table class="table table-sm table-hover">
+                <tbody>
+                    <tr>
+                        <td class="col-md-3">Providers</td>
+                        <td class="col-md-9">
+                            <code>
+                                OverlayPositionService
+                            </code>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="col-md-3">Selector</td>
+                        <td class="col-md-9"><code>[nuiTooltip]</code></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </section>
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#_tooltipInstance">_tooltipInstance</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#_handleKeydown">_handleKeydown</a>
+                            </li>
+                            <li>
+                                <a href="#_handleTouchend">_handleTouchend</a>
+                            </li>
+                            <li>
+                                <a href="#_isTooltipVisible">_isTooltipVisible</a>
+                            </li>
+                            <li>
+                                <a href="#hide">hide</a>
+                            </li>
+                            <li>
+                                <a href="#show">show</a>
+                            </li>
+                            <li>
+                                <a href="#toggle">toggle</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#nuiTooltip">nuiTooltip</a>
+                            </li>
+                            <li>
+                                <a href="#nuiTooltipDisabled">nuiTooltipDisabled</a>
+                            </li>
+                            <li>
+                                <a href="#tooltipPlacement">tooltipPlacement</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#position">position</a>
+                                </li>
+                                <li>
+                                    <a href="#disabled">disabled</a>
+                                </li>
+                                <li>
+                                    <a href="#message">message</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(_elementRef: <a href="../undefineds/Element.html">ElementRef<HTMLElement></a>, _viewContainerRef: <a href="https://angular.io/api/core/ViewContainerRef" target="_blank">ViewContainerRef</a>, _ngZone: <a href="https://angular.io/api/core/NgZone" target="_blank">NgZone</a>, _ariaDescriber: AriaDescriber, _focusMonitor: FocusMonitor, resolver: <a href="https://angular.io/api/core/ComponentFactoryResolver" target="_blank">ComponentFactoryResolver</a>, overlayPositionService: <a href="../injectables/OverlayPositionService.html">OverlayPositionService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="103" class="link-to-prism">src/lib/tooltip/tooltip.directive.ts:103</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>_elementRef</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../miscellaneous/typealiases.html#Element" target="_self" >ElementRef&lt;HTMLElement&gt;</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_viewContainerRef</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/core/ViewContainerRef" target="_blank" >ViewContainerRef</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_ngZone</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/core/NgZone" target="_blank" >NgZone</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_ariaDescriber</td>
+                                                  
+                                                        <td>
+                                                                    <code>AriaDescriber</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_focusMonitor</td>
+                                                  
+                                                        <td>
+                                                                    <code>FocusMonitor</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>resolver</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/core/ComponentFactoryResolver" target="_blank" >ComponentFactoryResolver</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>overlayPositionService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/OverlayPositionService.html" target="_self" >OverlayPositionService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="nuiTooltip"></a>
+                        <b>nuiTooltip</b>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">src/lib/tooltip/tooltip.directive.ts:74</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>The message to be displayed in the tooltip </p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="nuiTooltipDisabled"></a>
+                        <b>nuiTooltipDisabled</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">src/lib/tooltip/tooltip.directive.ts:58</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Disables the display of the tooltip. </p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="tooltipPlacement"></a>
+                        <b>tooltipPlacement</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#TooltipPosition" target="_self" >TooltipPosition</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/lib/tooltip/tooltip.directive.ts:46</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Allows the user to define the position of the tooltip relative to the parent element </p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_handleKeydown"></a>
+                    <span class="name">
+                        <b>
+                            _handleKeydown
+                        </b>
+                        <a href="#_handleKeydown"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>_handleKeydown(e: KeyboardEvent)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="207"
+                            class="link-to-prism">src/lib/tooltip/tooltip.directive.ts:207</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Handles the keydown events on the host element. </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>e</td>
+                                    <td>
+                                            <code>KeyboardEvent</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_handleTouchend"></a>
+                    <span class="name">
+                        <b>
+                            _handleTouchend
+                        </b>
+                        <a href="#_handleTouchend"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>_handleTouchend()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="220"
+                            class="link-to-prism">src/lib/tooltip/tooltip.directive.ts:220</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Handles the touchend events on the host element. </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_isTooltipVisible"></a>
+                    <span class="name">
+                        <b>
+                            _isTooltipVisible
+                        </b>
+                        <a href="#_isTooltipVisible"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>_isTooltipVisible()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="202"
+                            class="link-to-prism">src/lib/tooltip/tooltip.directive.ts:202</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Returns true if the tooltip is currently visible to the user </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="hide"></a>
+                    <span class="name">
+                        <b>
+                            hide
+                        </b>
+                        <a href="#hide"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>hide()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="191"
+                            class="link-to-prism">src/lib/tooltip/tooltip.directive.ts:191</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Hides the tooltip </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="show"></a>
+                    <span class="name">
+                        <b>
+                            show
+                        </b>
+                        <a href="#show"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>show()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="166"
+                            class="link-to-prism">src/lib/tooltip/tooltip.directive.ts:166</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Shows the tooltip if not disabled or empty </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggle"></a>
+                    <span class="name">
+                        <b>
+                            toggle
+                        </b>
+                        <a href="#toggle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggle()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="197"
+                            class="link-to-prism">src/lib/tooltip/tooltip.directive.ts:197</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Shows/hides the tooltip </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="_tooltipInstance"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Optional</span>
+                            _tooltipInstance</b>
+                            <a href="#_tooltipInstance"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>TooltipComponent</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/lib/tooltip/tooltip.directive.ts:39</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="position"></a>
+                        <span class="name"><b>position</b><a href="#position"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>position(value)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/lib/tooltip/tooltip.directive.ts:49</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>value</td>
+                                                    
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="disabled"></a>
+                        <span class="name"><b>disabled</b><a href="#disabled"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>disabled(value)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/lib/tooltip/tooltip.directive.ts:61</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>value</td>
+                                                    
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="message"></a>
+                        <span class="name"><b>message</b><a href="#message"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>message(value: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="77" class="link-to-prism">src/lib/tooltip/tooltip.directive.ts:77</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>value</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { AriaDescriber, FocusMonitor } from &quot;@angular/cdk/a11y&quot;;
+import { coerceBooleanProperty } from &quot;@angular/cdk/coercion&quot;;
+import { ESCAPE, hasModifierKey } from &quot;@angular/cdk/keycodes&quot;;
+import {
+    ComponentFactoryResolver,
+    Directive,
+    ElementRef,
+    Input,
+    NgZone,
+    OnDestroy,
+    ViewContainerRef,
+} from &quot;@angular/core&quot;;
+import { Subject } from &quot;rxjs&quot;;
+import { takeUntil } from &quot;rxjs/operators&quot;;
+
+import { OverlayPositionService } from &quot;../overlay/overlay-position.service&quot;;
+import { OverlayPlacement } from &quot;../overlay/types&quot;;
+
+import { TooltipPosition } from &quot;./public-api&quot;;
+import { TooltipComponent } from &quot;./tooltip.component&quot;;
+
+/**
+ * &lt;example-url&gt;./../examples/index.html#/tooltip&lt;/example-url&gt;
+ *
+ * @dynamic
+ */
+
+@Directive({
+    selector: &quot;[nuiTooltip]&quot;,
+    exportAs: &quot;nuiTooltip&quot;,
+    host: {
+        &quot;(longpress)&quot;: &quot;show()&quot;,
+        &quot;(keydown)&quot;: &quot;_handleKeydown($event)&quot;,
+        &quot;(touchend)&quot;: &quot;_handleTouchend()&quot;,
+    },
+    providers: [OverlayPositionService],
+})
+export class TooltipDirective implements OnDestroy {
+    _tooltipInstance?: TooltipComponent;
+
+    private _position: TooltipPosition &#x3D; &quot;top&quot;;
+    private _disabled: boolean &#x3D; false;
+
+    /** Allows the user to define the position of the tooltip relative to the parent element */
+    @Input(&quot;tooltipPlacement&quot;)
+    get position(): TooltipPosition {
+        return this._position;
+    }
+    set position(value: TooltipPosition) {
+        if (value !&#x3D;&#x3D; this._position) {
+            this._position &#x3D; value;
+            this.updateOverlayPositions();
+        }
+    }
+
+    /** Disables the display of the tooltip. */
+    @Input(&quot;nuiTooltipDisabled&quot;)
+    get disabled(): boolean {
+        return this._disabled;
+    }
+    set disabled(value) {
+        this._disabled &#x3D; coerceBooleanProperty(value);
+
+        // If tooltip is disabled, hide immediately.
+        if (this._disabled) {
+            this.hide();
+        }
+    }
+
+    private _message &#x3D; &quot;&quot;;
+
+    /** The message to be displayed in the tooltip */
+    @Input(&quot;nuiTooltip&quot;)
+    get message() {
+        return this._message;
+    }
+    set message(value: string) {
+        this._ariaDescriber.removeDescription(
+            this._elementRef.nativeElement,
+            this._message
+        );
+
+        // If the message is not a string (e.g. number), convert it to a string and trim it.
+        this._message &#x3D; value !&#x3D; null ? &#x60;${value}&#x60;.trim() : &quot;&quot;;
+
+        if (!this._message &amp;&amp; this._isTooltipVisible()) {
+            this.hide();
+        } else {
+            this._updateTooltipMessage();
+            this._ariaDescriber.describe(
+                this._elementRef.nativeElement,
+                this.message
+            );
+        }
+    }
+
+    private _manualListeners &#x3D; new Map&lt;
+        string,
+        EventListenerOrEventListenerObject
+    &gt;();
+
+    /** Emits when the component is destroyed. */
+    private readonly _destroyed &#x3D; new Subject&lt;void&gt;();
+
+    constructor(
+        private _elementRef: ElementRef&lt;HTMLElement&gt;,
+        private _viewContainerRef: ViewContainerRef,
+        private _ngZone: NgZone,
+        private _ariaDescriber: AriaDescriber,
+        private _focusMonitor: FocusMonitor,
+        private resolver: ComponentFactoryResolver,
+        private overlayPositionService: OverlayPositionService
+    ) {
+        this.overlayPositionService.setOverlayPositionConfig({
+            arrowSize: 10,
+            arrowPadding: 0,
+        });
+        const element: HTMLElement &#x3D; _elementRef.nativeElement;
+
+        this._manualListeners
+            .set(&quot;mouseenter&quot;, () &#x3D;&gt; this.show())
+            .set(&quot;mouseleave&quot;, () &#x3D;&gt; this.hide());
+
+        this._manualListeners.forEach((listener, event) &#x3D;&gt;
+            element.addEventListener(event, listener)
+        );
+
+        _focusMonitor
+            .monitor(_elementRef)
+            .pipe(takeUntil(this._destroyed))
+            .subscribe((origin) &#x3D;&gt; {
+                // Note that the focus monitor runs outside the Angular zone.
+                if (!origin) {
+                    _ngZone.run(() &#x3D;&gt; this.hide());
+                } else if (origin &#x3D;&#x3D;&#x3D; &quot;keyboard&quot;) {
+                    _ngZone.run(() &#x3D;&gt; this.show());
+                }
+            });
+    }
+
+    /**
+     * Dispose the tooltip when destroyed.
+     */
+    ngOnDestroy() {
+        if (this._tooltipInstance) {
+            this._tooltipInstance &#x3D; undefined;
+        }
+
+        // Clean up the event listeners set in the constructor
+        this._manualListeners.forEach((listener, event) &#x3D;&gt; {
+            this._elementRef.nativeElement.removeEventListener(event, listener);
+        });
+        this._manualListeners.clear();
+
+        this._destroyed.next();
+        this._destroyed.complete();
+
+        this._ariaDescriber.removeDescription(
+            this._elementRef.nativeElement,
+            this.message
+        );
+        this._focusMonitor.stopMonitoring(this._elementRef);
+    }
+
+    /** Shows the tooltip if not disabled or empty */
+    show(): void {
+        if (!this.canShowTooltip()) {
+            return;
+        }
+
+        if (!this._tooltipInstance) {
+            this.createTooltipComponent();
+            this._updateTooltipMessage();
+
+            // wait till overlay view init
+            setTimeout(() &#x3D;&gt; {
+                // added this check here, because of the manual-trigger-example in docs.
+                // &quot;Disabled&quot; attribute is set after 1st &quot;show&quot; is triggered and it should hide the tooltip.
+                // That&#x27;s why inside setTimeout operation there&#x27;s one more check if it&#x27;s disabled.
+                if (!this.canShowTooltip()) {
+                    return;
+                }
+                this._tooltipInstance?.show();
+            });
+        } else {
+            this._tooltipInstance?.show();
+        }
+    }
+
+    /** Hides the tooltip */
+    hide(): void {
+        // without setTimeout, sometimes &#x27;hide&#x27; is called before &#x27;show&#x27;, because show has setTimeout for it&#x27;s own reasons.
+        setTimeout(() &#x3D;&gt; this._tooltipInstance?.hide());
+    }
+
+    /** Shows/hides the tooltip */
+    toggle(): void {
+        this._isTooltipVisible() ? this.hide() : this.show();
+    }
+
+    /** Returns true if the tooltip is currently visible to the user */
+    _isTooltipVisible(): boolean {
+        return !!this._tooltipInstance &amp;&amp; this._tooltipInstance.isVisible();
+    }
+
+    /** Handles the keydown events on the host element. */
+    _handleKeydown(e: KeyboardEvent) {
+        if (
+            this._isTooltipVisible() &amp;&amp;
+            e.keyCode &#x3D;&#x3D;&#x3D; ESCAPE &amp;&amp;
+            !hasModifierKey(e)
+        ) {
+            e.preventDefault();
+            e.stopPropagation();
+            this.hide();
+        }
+    }
+
+    /** Handles the touchend events on the host element. */
+    _handleTouchend() {
+        this.hide();
+    }
+
+    private createTooltipComponent() {
+        const componentFactory &#x3D;
+            this.resolver.resolveComponentFactory(TooltipComponent);
+        const tooltipComponentRef &#x3D;
+            this._viewContainerRef.createComponent(componentFactory);
+        this._tooltipInstance &#x3D; tooltipComponentRef.instance;
+        this._tooltipInstance.toggleReference &#x3D; this._elementRef;
+        this._tooltipInstance.possiblePositions &#x3D;
+            this.overlayPositionService.getPossiblePositionsForPlacement(
+                this.position as OverlayPlacement
+            );
+    }
+
+    private updateOverlayPositions() {
+        if (!this._tooltipInstance) {
+            return;
+        }
+
+        const possiblePositions &#x3D;
+            this.overlayPositionService.getPossiblePositionsForPlacement(
+                this.position as OverlayPlacement
+            );
+        this._tooltipInstance.updatePossiblePositions(possiblePositions);
+    }
+
+    /** Updates the tooltip message and repositions the overlay according to the new message length */
+    private _updateTooltipMessage() {
+        if (this._tooltipInstance) {
+            this._tooltipInstance.message &#x3D; this.message;
+        }
+    }
+
+    private canShowTooltip() {
+        return !(this.disabled || !this.message || this._isTooltipVisible());
+    }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade active in" id="c-example">
+            <iframe class="exampleContainer" src="./../examples/index.html#/tooltip">
+                <p>no-iframes</p>
+            </iframe>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'directive';
+            var COMPODOC_CURRENT_PAGE_URL = 'TooltipDirective.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

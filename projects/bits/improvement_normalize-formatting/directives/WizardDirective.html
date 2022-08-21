@@ -1,0 +1,1086 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@nova-ui/bits documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">@nova-ui/bits documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content directive">
+                   <div class="content-data">
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Directives</li>
+  <li>WizardDirective</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">API</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/lib/wizard-v2/wizard.directive.ts</code>
+        </p>
+
+
+            <p class="comment">
+                <h3>Implements</h3>
+            </p>
+            <p class="comment">
+                            <code><a href="https://angular.io/api/core/OnChanges" target="_blank" >OnChanges</a></code>
+                            <code><a href="https://angular.io/api/core/AfterContentInit" target="_blank" >AfterContentInit</a></code>
+                            <code><a href="https://angular.io/api/core/AfterViewInit" target="_blank" >AfterViewInit</a></code>
+                            <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
+            </p>
+
+
+        <section>
+            <h3>Metadata</h3>
+            <table class="table table-sm table-hover">
+                <tbody>
+                    <tr>
+                        <td class="col-md-3">Providers</td>
+                        <td class="col-md-9">
+                            <code>
+                                { provide: CdkStepper, useExisting: WizardDirective }
+                            </code>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="col-md-3">Selector</td>
+                        <td class="col-md-9"><code>[nuiWizard]</code></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </section>
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#_animationDone">_animationDone</a>
+                            </li>
+                            <li>
+                                <a href="#_stepHeader">_stepHeader</a>
+                            </li>
+                            <li>
+                                <a href="#_steps">_steps</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#labelIds">labelIds</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#ngAcceptInputTypeCompleted">ngAcceptInputTypeCompleted</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#ngAcceptInputTypeEditable">ngAcceptInputTypeEditable</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#ngAcceptInputTypeHasError">ngAcceptInputTypeHasError</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#ngAcceptInputTypeOptional">ngAcceptInputTypeOptional</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#stepContentIds">stepContentIds</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#steps">steps</a>
+                            </li>
+                            <li>
+                                <a href="#stepsArray">stepsArray</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#selected">selected</a>
+                            </li>
+                            <li>
+                                <a href="#state">state</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#animationDone">animationDone</a>
+                            </li>
+                            <li>
+                                <a href="#finished">finished</a>
+                            </li>
+                            <li>
+                                <a href="#selectionChange">selectionChange</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#selected">selected</a>
+                                </li>
+                                <li>
+                                    <a href="#allStepsCompleted">allStepsCompleted</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+
+            <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selected"></a>
+                        <b>selected</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>WizardStepV2Component</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="80" class="link-to-prism">src/lib/wizard-v2/wizard.directive.ts:80</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>The step that is selected. </p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="state"></a>
+                        <b>state</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/IWizardState.html" target="_self" >IWizardState</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/lib/wizard-v2/wizard.directive.ts:61</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>The state of the wizard </p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+            <section>
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="animationDone"></a>
+                        <b>animationDone</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>EventEmitter&lt;void&gt;</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/lib/wizard-v2/wizard.directive.ts:54</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Event emitted when the current step is done transitioning in. </p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="finished"></a>
+                        <b>finished</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/IWizardState.html" target="_self" >EventEmitter&lt;IWizardState&gt;</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="64" class="link-to-prism">src/lib/wizard-v2/wizard.directive.ts:64</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Emits the completed wizard state on component destroy </p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectionChange"></a>
+                        <b>selectionChange</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/lib/wizard-v2/wizard.directive.ts:57</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Event emitted when the selected step has changed. </p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+            <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="_animationDone"></a>
+                        <span class="name">
+                            <b>
+                            _animationDone</b>
+                            <a href="#_animationDone"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new Subject&lt;AnimationEvent&gt;()</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="72" class="link-to-prism">src/lib/wizard-v2/wizard.directive.ts:72</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Stream of animation <code>done</code> events when the body expands/collapses. </p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="_stepHeader"></a>
+                        <span class="name">
+                            <b>
+                            _stepHeader</b>
+                            <a href="#_stepHeader"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>QueryList&lt;WizardStepHeaderComponent&gt;</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChildren(WizardStepHeaderComponent)<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="69" class="link-to-prism">src/lib/wizard-v2/wizard.directive.ts:69</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>The list of step headers of the steps in the stepper. </p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="_steps"></a>
+                        <span class="name">
+                            <b>
+                            _steps</b>
+                            <a href="#_steps"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>QueryList&lt;WizardStepV2Component&gt;</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ContentChildren(WizardStepV2Component, {descendants: true})<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">src/lib/wizard-v2/wizard.directive.ts:76</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Steps that the stepper holds. </p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="labelIds"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            labelIds</b>
+                            <a href="#labelIds"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>string[]</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/lib/wizard-v2/wizard.directive.ts:48</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Uniq labels ids </p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngAcceptInputTypeCompleted"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Static</span>
+                            ngAcceptInputTypeCompleted</b>
+                            <a href="#ngAcceptInputTypeCompleted"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>BooleanInput</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>undefined</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/lib/wizard-v2/wizard.directive.ts:38</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngAcceptInputTypeEditable"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Static</span>
+                            ngAcceptInputTypeEditable</b>
+                            <a href="#ngAcceptInputTypeEditable"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>BooleanInput</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>undefined</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/lib/wizard-v2/wizard.directive.ts:36</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngAcceptInputTypeHasError"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Static</span>
+                            ngAcceptInputTypeHasError</b>
+                            <a href="#ngAcceptInputTypeHasError"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>BooleanInput</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>undefined</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/lib/wizard-v2/wizard.directive.ts:39</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngAcceptInputTypeOptional"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Static</span>
+                            ngAcceptInputTypeOptional</b>
+                            <a href="#ngAcceptInputTypeOptional"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>BooleanInput</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>undefined</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/lib/wizard-v2/wizard.directive.ts:37</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="stepContentIds"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            stepContentIds</b>
+                            <a href="#stepContentIds"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>string[]</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/lib/wizard-v2/wizard.directive.ts:51</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Uniq step content ids </p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="steps"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Readonly</span>
+                            steps</b>
+                            <a href="#steps"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>QueryList&lt;WizardStepV2Component&gt;</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new QueryList&lt;WizardStepV2Component&gt;()</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/lib/wizard-v2/wizard.directive.ts:42</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Override CdkStepper &#39;steps&#39; property to use WizardStepV2Component instead of CdkStep </p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="stepsArray"></a>
+                        <span class="name">
+                            <b>
+                            stepsArray</b>
+                            <a href="#stepsArray"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Array&lt;WizardStepV2Component&gt;</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/lib/wizard-v2/wizard.directive.ts:45</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selected"></a>
+                        <span class="name"><b>selected</b><a href="#selected"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>selected(step)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="86" class="link-to-prism">src/lib/wizard-v2/wizard.directive.ts:86</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>step</td>
+                                                    
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="allStepsCompleted"></a>
+                        <span class="name"><b>allStepsCompleted</b><a href="#allStepsCompleted"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>allStepsCompleted()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="147" class="link-to-prism">src/lib/wizard-v2/wizard.directive.ts:147</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+    AfterContentInit,
+    AfterViewInit,
+    ContentChildren,
+    Directive,
+    EventEmitter,
+    Input,
+    OnChanges,
+    OnDestroy,
+    Output,
+    QueryList,
+    SimpleChanges,
+    ViewChildren,
+} from &quot;@angular/core&quot;;
+import {
+    CdkStepper,
+    StepContentPositionState,
+    StepperSelectionEvent,
+} from &quot;@angular/cdk/stepper&quot;;
+import { BooleanInput } from &quot;@angular/cdk/coercion&quot;;
+import { WizardStepHeaderComponent } from &quot;./wizard-step-header/wizard-step-header.component&quot;;
+import { Subject } from &quot;rxjs&quot;;
+import { AnimationEvent } from &quot;@angular/animations&quot;;
+import { distinctUntilChanged, startWith, takeUntil } from &quot;rxjs/operators&quot;;
+import { WizardStepV2Component } from &quot;./wizard-step/wizard-step.component&quot;;
+import { IWizardState } from &quot;./types&quot;;
+
+@Directive({
+    selector: &quot;[nuiWizard]&quot;,
+    providers: [{ provide: CdkStepper, useExisting: WizardDirective }],
+})
+export class WizardDirective
+    extends CdkStepper
+    implements OnChanges, AfterContentInit, AfterViewInit, OnDestroy
+{
+    static ngAcceptInputTypeEditable: BooleanInput &#x3D; undefined;
+    static ngAcceptInputTypeOptional: BooleanInput &#x3D; undefined;
+    static ngAcceptInputTypeCompleted: BooleanInput &#x3D; undefined;
+    static ngAcceptInputTypeHasError: BooleanInput &#x3D; undefined;
+
+    /** Override CdkStepper &#x27;steps&#x27; property to use WizardStepV2Component instead of CdkStep */
+    readonly steps: QueryList&lt;WizardStepV2Component&gt; &#x3D;
+        new QueryList&lt;WizardStepV2Component&gt;();
+
+    stepsArray: Array&lt;WizardStepV2Component&gt; &#x3D; [];
+
+    /** Uniq labels ids */
+    public labelIds: string[];
+
+    /** Uniq step content ids */
+    public stepContentIds: string[];
+
+    /** Event emitted when the current step is done transitioning in. */
+    @Output() readonly animationDone: EventEmitter&lt;void&gt; &#x3D;
+        new EventEmitter&lt;void&gt;();
+    /** Event emitted when the selected step has changed. */
+    @Output() readonly selectionChange &#x3D;
+        new EventEmitter&lt;StepperSelectionEvent&gt;();
+
+    /** The state of the wizard */
+    @Input() state: IWizardState;
+
+    /** Emits the completed wizard state on component destroy */
+    @Output() readonly finished: EventEmitter&lt;IWizardState&gt; &#x3D;
+        new EventEmitter&lt;IWizardState&gt;();
+
+    /** The list of step headers of the steps in the stepper. */
+    @ViewChildren(WizardStepHeaderComponent)
+    _stepHeader: QueryList&lt;WizardStepHeaderComponent&gt;;
+
+    /** Stream of animation &#x60;done&#x60; events when the body expands/collapses. */
+    _animationDone &#x3D; new Subject&lt;AnimationEvent&gt;();
+
+    /** Steps that the stepper holds. */
+    @ContentChildren(WizardStepV2Component, { descendants: true })
+    _steps: QueryList&lt;WizardStepV2Component&gt;;
+
+    /** The step that is selected. */
+    @Input()
+    get selected(): WizardStepV2Component {
+        return this.steps.toArray()[
+            this.selectedIndex
+        ] as WizardStepV2Component;
+    }
+
+    set selected(step: WizardStepV2Component) {
+        this.selectedIndex &#x3D; this.steps
+            ? this.steps.toArray().indexOf(step)
+            : -1;
+    }
+
+    public ngOnChanges(changes: SimpleChanges): void {
+        if (changes.state &amp;&amp; changes.state.currentValue) {
+            this.state &#x3D; changes.state.currentValue;
+        }
+    }
+
+    public ngAfterContentInit(): void {
+        this._steps.changes
+            .pipe(startWith(this._steps), takeUntil(this._destroyed))
+            .subscribe((steps: QueryList&lt;WizardStepV2Component&gt;) &#x3D;&gt; {
+                this.steps.reset(
+                    steps.filter((step) &#x3D;&gt; step._stepper &#x3D;&#x3D;&#x3D; this)
+                );
+                this.stepsArray &#x3D; this.steps.toArray();
+                this.steps.notifyOnChanges();
+                this.setIds();
+            });
+
+        this.steps.changes
+            .pipe(takeUntil(this._destroyed))
+            .subscribe(() &#x3D;&gt; this._stateChanged());
+
+        this._animationDone
+            .pipe(
+                // This needs a &#x60;distinctUntilChanged&#x60; in order to avoid emitting the same event twice due
+                // to a bug in animations where the &#x60;.done&#x60; callback gets invoked twice on some browsers.
+                // See https://github.com/angular/angular/issues/24084
+                distinctUntilChanged(
+                    (x, y) &#x3D;&gt;
+                        x.fromState &#x3D;&#x3D;&#x3D; y.fromState &amp;&amp; x.toState &#x3D;&#x3D;&#x3D; y.toState
+                ),
+                takeUntil(this._destroyed)
+            )
+            .subscribe((event) &#x3D;&gt; {
+                if ((event.toState as StepContentPositionState) &#x3D;&#x3D;&#x3D; &quot;current&quot;) {
+                    this.animationDone.emit();
+                }
+            });
+    }
+
+    public ngAfterViewInit(): void {
+        super.ngAfterViewInit();
+
+        if (this.state?.finished) {
+            this.restore();
+        }
+    }
+
+    public ngOnDestroy(): void {
+        this.finished.emit({
+            finished: this.allStepsCompleted,
+        });
+        super.ngOnDestroy();
+    }
+
+    public get allStepsCompleted(): boolean {
+        const completed: boolean &#x3D; this.steps
+            .toArray()
+            .reduce(
+                (acc: boolean, step: WizardStepV2Component) &#x3D;&gt;
+                    acc &amp;&amp; step.completed,
+                true
+            );
+
+        return completed;
+    }
+
+    // Restores the completed wizard to the last step
+    private restore(): void {
+        this.steps.toArray().forEach((step) &#x3D;&gt; {
+            step.completed &#x3D; true;
+
+            if (step &#x3D;&#x3D;&#x3D; this.steps.last) {
+                step.select();
+            }
+        });
+
+        this[&quot;_changeDetectorRef&quot;].detectChanges();
+    }
+
+    private setIds(): void {
+        this.labelIds &#x3D; this.stepsArray.map((step, index) &#x3D;&gt;
+            this._getStepLabelId(index)
+        );
+        this.stepContentIds &#x3D; this.stepsArray.map((step, index) &#x3D;&gt;
+            this._getStepContentId(index)
+        );
+    }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'directive';
+            var COMPODOC_CURRENT_PAGE_URL = 'WizardDirective.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
