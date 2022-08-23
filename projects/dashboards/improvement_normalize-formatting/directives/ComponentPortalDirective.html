@@ -179,7 +179,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/lib/pizzagna/directives/component-portal/component-portal.directive.ts:49</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/lib/pizzagna/directives/component-portal/component-portal.directive.ts:50</a></div>
                             </td>
                         </tr>
 
@@ -283,7 +283,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/lib/pizzagna/directives/component-portal/component-portal.directive.ts:36</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/lib/pizzagna/directives/component-portal/component-portal.directive.ts:37</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -304,7 +304,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/lib/pizzagna/directives/component-portal/component-portal.directive.ts:37</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/lib/pizzagna/directives/component-portal/component-portal.directive.ts:38</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -325,7 +325,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/lib/pizzagna/directives/component-portal/component-portal.directive.ts:40</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/lib/pizzagna/directives/component-portal/component-portal.directive.ts:41</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -346,7 +346,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/lib/pizzagna/directives/component-portal/component-portal.directive.ts:38</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/lib/pizzagna/directives/component-portal/component-portal.directive.ts:39</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -367,7 +367,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/lib/pizzagna/directives/component-portal/component-portal.directive.ts:39</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/lib/pizzagna/directives/component-portal/component-portal.directive.ts:40</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -391,7 +391,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/lib/pizzagna/directives/component-portal/component-portal.directive.ts:42</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/lib/pizzagna/directives/component-portal/component-portal.directive.ts:43</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -428,8 +428,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="116"
-                            class="link-to-prism">src/lib/pizzagna/directives/component-portal/component-portal.directive.ts:116</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="117"
+                            class="link-to-prism">src/lib/pizzagna/directives/component-portal/component-portal.directive.ts:117</a></div>
                 </td>
             </tr>
 
@@ -503,7 +503,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/lib/pizzagna/directives/component-portal/component-portal.directive.ts:44</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/lib/pizzagna/directives/component-portal/component-portal.directive.ts:45</a></div>
                             </td>
                         </tr>
 
@@ -534,12 +534,13 @@ import {
     SimpleChanges,
     StaticProvider,
 } from &quot;@angular/core&quot;;
-import { IEvent, LoggerService } from &quot;@nova-ui/bits&quot;;
 import isArray from &quot;lodash/isArray&quot;;
 import values from &quot;lodash/values&quot;;
 import xor from &quot;lodash/xor&quot;;
 import { ReplaySubject, Subject, Subscription } from &quot;rxjs&quot;;
 import { takeUntil } from &quot;rxjs/operators&quot;;
+
+import { IEvent, LoggerService } from &quot;@nova-ui/bits&quot;;
 
 import { ProviderRegistryService } from &quot;../../../services/provider-registry.service&quot;;
 import { IConfigurable, IProviderConfiguration } from &quot;../../../types&quot;;
@@ -739,7 +740,6 @@ export class ComponentPortalDirective
                 // TODO: Why do we pass null to the injectFlags parameter?
                 const injections &#x3D; portalInjector.get(
                     registeredProvider.provide,
-                    // @ts-ignore
                     null,
                     // @ts-ignore
                     null

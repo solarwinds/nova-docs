@@ -171,7 +171,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/core/plugins/gauge/linear-gauge-labels-plugin.ts:42</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/core/plugins/gauge/linear-gauge-labels-plugin.ts:41</a></div>
                             </td>
                         </tr>
 
@@ -240,7 +240,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/core/plugins/gauge/linear-gauge-labels-plugin.ts:44</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/core/plugins/gauge/linear-gauge-labels-plugin.ts:43</a></div>
                             </td>
                         </tr>
 
@@ -278,7 +278,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/core/plugins/gauge/linear-gauge-labels-plugin.ts:32</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/core/plugins/gauge/linear-gauge-labels-plugin.ts:31</a></div>
                             </td>
                         </tr>
 
@@ -357,8 +357,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="83"
-                            class="link-to-prism">src/core/plugins/gauge/linear-gauge-labels-plugin.ts:83</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="82"
+                            class="link-to-prism">src/core/plugins/gauge/linear-gauge-labels-plugin.ts:82</a></div>
                 </td>
             </tr>
 
@@ -398,8 +398,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="49"
-                            class="link-to-prism">src/core/plugins/gauge/linear-gauge-labels-plugin.ts:49</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="48"
+                            class="link-to-prism">src/core/plugins/gauge/linear-gauge-labels-plugin.ts:48</a></div>
                 </td>
             </tr>
 
@@ -439,8 +439,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="73"
-                            class="link-to-prism">src/core/plugins/gauge/linear-gauge-labels-plugin.ts:73</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="72"
+                            class="link-to-prism">src/core/plugins/gauge/linear-gauge-labels-plugin.ts:72</a></div>
                 </td>
             </tr>
 
@@ -480,8 +480,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="78"
-                            class="link-to-prism">src/core/plugins/gauge/linear-gauge-labels-plugin.ts:78</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="77"
+                            class="link-to-prism">src/core/plugins/gauge/linear-gauge-labels-plugin.ts:77</a></div>
                 </td>
             </tr>
 
@@ -695,14 +695,17 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import defaultsDeep from &quot;lodash/defaultsDeep&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import cloneDeep from &quot;lodash/cloneDeep&quot;;
+import defaultsDeep from &quot;lodash/defaultsDeep&quot;;
 import isUndefined from &quot;lodash/isUndefined&quot;;
 import { Subject } from &quot;rxjs&quot;;
 import { takeUntil } from &quot;rxjs/operators&quot;;
 
 import { MOUSE_ACTIVE_EVENT, STANDARD_RENDER_LAYERS } from &quot;../../../constants&quot;;
+import { GAUGE_THRESHOLD_MARKERS_SERIES_ID } from &quot;../../../gauge/constants&quot;;
 import { RenderLayerName } from &quot;../../../renderers/types&quot;;
 import { ChartPlugin } from &quot;../../common/chart-plugin&quot;;
+import { LinearScale } from &quot;../../common/scales/linear-scale&quot;;
 import {
     D3Selection,
     IAccessors,
@@ -710,16 +713,12 @@ import {
     IChartSeries,
     IDataSeries,
 } from &quot;../../common/types&quot;;
-
 import {
     GAUGE_LABELS_CONTAINER_CLASS,
     GAUGE_LABEL_FORMATTER_NAME_DEFAULT,
     GAUGE_THRESHOLD_LABEL_CLASS,
 } from &quot;./constants&quot;;
-import cloneDeep from &quot;lodash/cloneDeep&quot;;
 import { IGaugeLabelsPluginConfig } from &quot;./types&quot;;
-import { LinearScale } from &quot;../../common/scales/linear-scale&quot;;
-import { GAUGE_THRESHOLD_MARKERS_SERIES_ID } from &quot;../../../gauge/constants&quot;;
 
 /**
  * A chart plugin that handles the rendering of labels for a donut gauge

@@ -1382,25 +1382,40 @@ in the provided gauge configuration</p>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { IRadialScales, Scales } from &quot;../core/common/scales/types&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import isEmpty from &quot;lodash/isEmpty&quot;;
+import isNil from &quot;lodash/isNil&quot;;
+import isUndefined from &quot;lodash/isUndefined&quot;;
+
+import { Chart } from &quot;../core/chart&quot;;
+import { ChartAssist } from &quot;../core/chart-assists/chart-assist&quot;;
+import { Renderer } from &quot;../core/common/renderer&quot;;
+import { IRadialScales, Scales } from &quot;../core/common/scales/types&quot;;
 import {
     IAccessors,
     IChartAssistSeries,
     IDataSeries,
     IGaugeThresholdsRendererConfig,
 } from &quot;../core/common/types&quot;;
+import { linearGaugeGridConfig } from &quot;../core/grid/config/linear-gauge-grid-config-fn&quot;;
+import { IAllAround } from &quot;../core/grid/types&quot;;
+import { XYGrid } from &quot;../core/grid/xy-grid&quot;;
 import { GAUGE_LABEL_FORMATTER_NAME_DEFAULT } from &quot;../core/plugins/gauge/constants&quot;;
+import { DonutGaugeLabelsPlugin } from &quot;../core/plugins/gauge/donut-gauge-labels-plugin&quot;;
+import { LinearGaugeLabelsPlugin } from &quot;../core/plugins/gauge/linear-gauge-labels-plugin&quot;;
 import { HorizontalBarAccessors } from &quot;../renderers/bar/accessors/horizontal-bar-accessors&quot;;
 import { VerticalBarAccessors } from &quot;../renderers/bar/accessors/vertical-bar-accessors&quot;;
 import { BarRenderer } from &quot;../renderers/bar/bar-renderer&quot;;
 import { barScales } from &quot;../renderers/bar/bar-scales&quot;;
+import { linearGaugeRendererConfig } from &quot;../renderers/bar/linear-gauge-renderer-config&quot;;
 import { LinearGaugeThresholdsRenderer } from &quot;../renderers/bar/linear-gauge-thresholds-renderer&quot;;
+import { stack } from &quot;../renderers/bar/stacked-preprocessor&quot;;
 import { RadialAccessors } from &quot;../renderers/radial/accessors/radial-accessors&quot;;
 import { donutGaugeRendererConfig } from &quot;../renderers/radial/gauge/donut-gauge-renderer-config&quot;;
 import { DonutGaugeThresholdsRenderer } from &quot;../renderers/radial/gauge/donut-gauge-thresholds-renderer&quot;;
+import { radialGrid } from &quot;../renderers/radial/radial-grid-fn&quot;;
+import { radial } from &quot;../renderers/radial/radial-preprocessor&quot;;
 import { RadialRenderer } from &quot;../renderers/radial/radial-renderer&quot;;
 import { radialScales } from &quot;../renderers/radial/radial-scales&quot;;
-
 import {
     DONUT_GAUGE_LABEL_CLEARANCE_DEFAULT,
     GaugeMode,
@@ -1419,21 +1434,6 @@ import {
     IGaugeThresholdsData,
     IGaugeThresholdsConfig,
 } from &quot;./types&quot;;
-import { linearGaugeRendererConfig } from &quot;../renderers/bar/linear-gauge-renderer-config&quot;;
-import { Renderer } from &quot;../core/common/renderer&quot;;
-import isUndefined from &quot;lodash/isUndefined&quot;;
-import { ChartAssist } from &quot;../core/chart-assists/chart-assist&quot;;
-import { radial } from &quot;../renderers/radial/radial-preprocessor&quot;;
-import { stack } from &quot;../renderers/bar/stacked-preprocessor&quot;;
-import { Chart } from &quot;../core/chart&quot;;
-import isEmpty from &quot;lodash/isEmpty&quot;;
-import { DonutGaugeLabelsPlugin } from &quot;../core/plugins/gauge/donut-gauge-labels-plugin&quot;;
-import { LinearGaugeLabelsPlugin } from &quot;../core/plugins/gauge/linear-gauge-labels-plugin&quot;;
-import isNil from &quot;lodash/isNil&quot;;
-import { IAllAround } from &quot;../core/grid/types&quot;;
-import { radialGrid } from &quot;../renderers/radial/radial-grid-fn&quot;;
-import { XYGrid } from &quot;../core/grid/xy-grid&quot;;
-import { linearGaugeGridConfig } from &quot;../core/grid/config/linear-gauge-grid-config-fn&quot;;
 
 /**
  * @ignore

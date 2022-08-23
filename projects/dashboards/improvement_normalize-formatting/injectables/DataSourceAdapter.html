@@ -392,15 +392,16 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Inject, Injectable, OnDestroy, Optional } from &quot;@angular/core&quot;;
+import isUndefined from &quot;lodash/isUndefined&quot;;
+import { Subject } from &quot;rxjs&quot;;
+import { takeUntil } from &quot;rxjs/operators&quot;;
+
 import {
     EventBus,
     IDataSource,
     IEvent,
     IFilteringOutputs,
 } from &quot;@nova-ui/bits&quot;;
-import isUndefined from &quot;lodash/isUndefined&quot;;
-import { Subject } from &quot;rxjs&quot;;
-import { takeUntil } from &quot;rxjs/operators&quot;;
 
 import {
     DATA_SOURCE_DESTROYED,
@@ -419,7 +420,6 @@ import {
     PizzagnaLayer,
     PIZZAGNA_EVENT_BUS,
 } from &quot;../../types&quot;;
-
 import {
     IComponentIdPayload,
     IDataSourceBusyPayload,

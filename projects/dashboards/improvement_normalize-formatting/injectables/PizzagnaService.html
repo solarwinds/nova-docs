@@ -815,10 +815,11 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Inject, Injectable } from &quot;@angular/core&quot;;
-import { EventBus, IEvent, immutableSet } from &quot;@nova-ui/bits&quot;;
 import isArray from &quot;lodash/isArray&quot;;
 import omit from &quot;lodash/omit&quot;;
 import { ReplaySubject } from &quot;rxjs&quot;;
+
+import { EventBus, IEvent, immutableSet } from &quot;@nova-ui/bits&quot;;
 
 import { ISetPropertyPayload, SET_PROPERTY_VALUE } from &quot;../../services/types&quot;;
 import {
@@ -832,7 +833,6 @@ import {
     getPizzagnaPropertyPath,
     IPizzagnaProperty,
 } from &quot;../functions/get-pizzagna-property-path&quot;;
-
 import { DynamicComponentCreator } from &quot;./dynamic-component-creator.service&quot;;
 
 /**

@@ -279,6 +279,9 @@
     OnInit,
     Optional,
 } from &quot;@angular/core&quot;;
+import { merge, Subject } from &quot;rxjs&quot;;
+import { takeUntil } from &quot;rxjs/operators&quot;;
+
 import {
     EventBus,
     IconService,
@@ -305,8 +308,6 @@ import {
     TimeIntervalScale,
     ZoomPlugin,
 } from &quot;@nova-ui/charts&quot;;
-import { merge, Subject } from &quot;rxjs&quot;;
-import { takeUntil } from &quot;rxjs/operators&quot;;
 
 import { SET_TIMEFRAME } from &quot;../../../../services/types&quot;;
 import { DATA_SOURCE, PIZZAGNA_EVENT_BUS } from &quot;../../../../types&quot;;

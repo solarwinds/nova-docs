@@ -131,7 +131,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/lib/configurator/services/configurator-data-source-manager.service.ts:23</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/lib/configurator/services/configurator-data-source-manager.service.ts:24</a></div>
                             </td>
                         </tr>
 
@@ -208,8 +208,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="77"
-                            class="link-to-prism">src/lib/configurator/services/configurator-data-source-manager.service.ts:77</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="78"
+                            class="link-to-prism">src/lib/configurator/services/configurator-data-source-manager.service.ts:78</a></div>
                 </td>
             </tr>
 
@@ -247,8 +247,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="59"
-                            class="link-to-prism">src/lib/configurator/services/configurator-data-source-manager.service.ts:59</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="60"
+                            class="link-to-prism">src/lib/configurator/services/configurator-data-source-manager.service.ts:60</a></div>
                 </td>
             </tr>
 
@@ -329,7 +329,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/lib/configurator/services/configurator-data-source-manager.service.ts:19</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/lib/configurator/services/configurator-data-source-manager.service.ts:20</a></div>
                             </td>
                         </tr>
 
@@ -357,7 +357,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/lib/configurator/services/configurator-data-source-manager.service.ts:16</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/lib/configurator/services/configurator-data-source-manager.service.ts:17</a></div>
                             </td>
                         </tr>
 
@@ -390,7 +390,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/lib/configurator/services/configurator-data-source-manager.service.ts:22</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/lib/configurator/services/configurator-data-source-manager.service.ts:23</a></div>
                             </td>
                         </tr>
 
@@ -423,7 +423,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/lib/configurator/services/configurator-data-source-manager.service.ts:17</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/lib/configurator/services/configurator-data-source-manager.service.ts:18</a></div>
                             </td>
                         </tr>
 
@@ -437,15 +437,16 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Inject, Injectable, OnDestroy } from &quot;@angular/core&quot;;
-import { EventBus, IDataField, IDataSource, IEvent } from &quot;@nova-ui/bits&quot;;
+import isUndefined from &quot;lodash/isUndefined&quot;;
 import { BehaviorSubject, Subject } from &quot;rxjs&quot;;
 import { takeUntil } from &quot;rxjs/operators&quot;;
+
+import { EventBus, IDataField, IDataSource, IEvent } from &quot;@nova-ui/bits&quot;;
 
 import { IDataSourceError } from &quot;../../components/providers/types&quot;;
 import { PIZZAGNA_EVENT_BUS } from &quot;../../types&quot;;
 import { DashwizService } from &quot;../components/wizard/dashwiz/dashwiz.service&quot;;
 import { DATA_SOURCE_CREATED, DATA_SOURCE_OUTPUT } from &quot;../types&quot;;
-import isUndefined from &quot;lodash/isUndefined&quot;;
 
 @Injectable()
 export class ConfiguratorDataSourceManagerService implements OnDestroy {

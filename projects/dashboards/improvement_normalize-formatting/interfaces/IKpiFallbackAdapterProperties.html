@@ -133,10 +133,11 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Inject, Injectable, OnDestroy } from &quot;@angular/core&quot;;
-import { EventBus, IEvent } from &quot;@nova-ui/bits&quot;;
 import isEmpty from &quot;lodash/isEmpty&quot;;
 import uniq from &quot;lodash/uniq&quot;;
 import { takeUntil } from &quot;rxjs/operators&quot;;
+
+import { EventBus, IEvent } from &quot;@nova-ui/bits&quot;;
 
 import { DATA_SOURCE_DESTROYED } from &quot;../../configurator/types&quot;;
 import { PizzagnaService } from &quot;../../pizzagna/services/pizzagna.service&quot;;
@@ -148,7 +149,6 @@ import {
     PizzagnaLayer,
     PIZZAGNA_EVENT_BUS,
 } from &quot;../../types&quot;;
-
 import { StatusContentFallbackAdapter } from &quot;./status-content-fallback-adapter&quot;;
 import { IComponentIdPayload, IDataSourceOutputPayload } from &quot;./types&quot;;
 

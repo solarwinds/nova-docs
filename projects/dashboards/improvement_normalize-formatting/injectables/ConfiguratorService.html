@@ -400,18 +400,18 @@
     RendererFactory2,
 } from &quot;@angular/core&quot;;
 import { NavigationEnd, Router } from &quot;@angular/router&quot;;
-import { LoggerService, uuid } from &quot;@nova-ui/bits&quot;;
 import cloneDeep from &quot;lodash/cloneDeep&quot;;
 import isFunction from &quot;lodash/isFunction&quot;;
 import { EMPTY, Observable, of, Subject } from &quot;rxjs&quot;;
 import { catchError, filter, switchMap, takeUntil } from &quot;rxjs/operators&quot;;
 
+import { LoggerService, uuid } from &quot;@nova-ui/bits&quot;;
+
 import { DashboardComponent } from &quot;../../components/dashboard/dashboard.component&quot;;
-import { WidgetTypesService } from &quot;../../services/widget-types.service&quot;;
 import { IWidget } from &quot;../../components/widget/types&quot;;
 import { WidgetUpdateOperation } from &quot;../../configurator/services/types&quot;;
+import { WidgetTypesService } from &quot;../../services/widget-types.service&quot;;
 import { ConfiguratorComponent } from &quot;../components/configurator/configurator.component&quot;;
-
 import { IConfigurator, IConfiguratorSource } from &quot;./types&quot;;
 
 @Injectable()

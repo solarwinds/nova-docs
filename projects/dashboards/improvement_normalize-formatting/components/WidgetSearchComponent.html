@@ -674,13 +674,13 @@
     Optional,
     SimpleChanges,
 } from &quot;@angular/core&quot;;
-import { EventBus, IDataSource, IEvent } from &quot;@nova-ui/bits&quot;;
 import { Subject, Subscription } from &quot;rxjs&quot;;
 import { debounceTime, takeUntil } from &quot;rxjs/operators&quot;;
 
+import { EventBus, IDataSource, IEvent } from &quot;@nova-ui/bits&quot;;
+
 import { REFRESH, WIDGET_SEARCH } from &quot;../../services/types&quot;;
 import { DATA_SOURCE, PIZZAGNA_EVENT_BUS } from &quot;../../types&quot;;
-
 import { ISearchOnKeyUp, IWidgetSearchConfiguration } from &quot;./types&quot;;
 
 @Component({

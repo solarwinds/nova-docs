@@ -735,13 +735,13 @@
     ViewChild,
 } from &quot;@angular/core&quot;;
 import { FormBuilder, FormGroup, Validators } from &quot;@angular/forms&quot;;
-import { LoggerService } from &quot;@nova-ui/bits&quot;;
 import { combineLatest, Subject } from &quot;rxjs&quot;;
 import { filter, takeUntil, tap } from &quot;rxjs/operators&quot;;
 
+import { LoggerService } from &quot;@nova-ui/bits&quot;;
+
 import { RefresherSettingsService } from &quot;../../../../../components/providers/refresher-settings.service&quot;;
 import { IHasChangeDetector, IHasForm } from &quot;../../../../../types&quot;;
-
 import { RefreshRateConfiguratorComponent } from &quot;./refresh-rate-configurator/refresh-rate-configurator.component&quot;;
 import {
     TimeUnit,

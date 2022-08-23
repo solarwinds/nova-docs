@@ -1145,7 +1145,6 @@ import {
     ViewChildren,
     ViewEncapsulation,
 } from &quot;@angular/core&quot;;
-import { EventBus, immutableSet } from &quot;@nova-ui/bits&quot;;
 import {
     GridsterComponent,
     GridsterConfig,
@@ -1155,6 +1154,8 @@ import {
 } from &quot;angular-gridster2&quot;;
 import _defaultsDeep from &quot;lodash/defaultsDeep&quot;;
 
+import { EventBus, immutableSet } from &quot;@nova-ui/bits&quot;;
+
 import {
     DASHBOARD_EDIT_MODE,
     WIDGET_POSITION_CHANGE,
@@ -1163,9 +1164,8 @@ import {
 import { IWidgetEvent } from &quot;../../services/widget-to-dashboard-event-proxy.service&quot;;
 import { DASHBOARD_EVENT_BUS } from &quot;../../types&quot;;
 import { IWidget } from &quot;../widget/types&quot;;
-import { IDashboard, IDashboardBelowFoldLazyLoadingConfig } from &quot;./types&quot;;
-
 import { DEFAULT_GRIDSTER_CONFIG } from &quot;./default-gridster-config&quot;;
+import { IDashboard, IDashboardBelowFoldLazyLoadingConfig } from &quot;./types&quot;;
 
 @Component({
     selector: &quot;nui-dashboard&quot;,

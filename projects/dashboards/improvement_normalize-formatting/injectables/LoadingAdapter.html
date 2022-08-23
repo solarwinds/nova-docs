@@ -293,15 +293,15 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Inject, Injectable, OnDestroy } from &quot;@angular/core&quot;;
-import { EventBus, IEvent } from &quot;@nova-ui/bits&quot;;
 import isEmpty from &quot;lodash/isEmpty&quot;;
 import { Subject } from &quot;rxjs&quot;;
 import { takeUntil } from &quot;rxjs/operators&quot;;
 
+import { EventBus, IEvent } from &quot;@nova-ui/bits&quot;;
+
 import { PizzagnaService } from &quot;../../pizzagna/services/pizzagna.service&quot;;
 import { DATA_SOURCE_BUSY } from &quot;../../services/types&quot;;
 import { IHasComponent, PizzagnaLayer, PIZZAGNA_EVENT_BUS } from &quot;../../types&quot;;
-
 import { IDataSourceBusyPayload } from &quot;./types&quot;;
 
 @Injectable()

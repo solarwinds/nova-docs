@@ -504,10 +504,11 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Inject, Injectable } from &quot;@angular/core&quot;;
-import { EventBus, IEvent } from &quot;@nova-ui/bits&quot;;
 import isArray from &quot;lodash/isArray&quot;;
 import { BehaviorSubject, Subject } from &quot;rxjs&quot;;
 import { distinctUntilChanged, filter, takeUntil, tap } from &quot;rxjs/operators&quot;;
+
+import { EventBus, IEvent } from &quot;@nova-ui/bits&quot;;
 
 import { IPizzagnaProperty } from &quot;../../pizzagna/functions/get-pizzagna-property-path&quot;;
 import { PizzagnaService } from &quot;../../pizzagna/services/pizzagna.service&quot;;
@@ -517,7 +518,6 @@ import {
     PizzagnaLayer,
     PIZZAGNA_EVENT_BUS,
 } from &quot;../../types&quot;;
-
 import { IBroker, IBrokerUserConfig, IBrokerValue } from &quot;./types&quot;;
 
 @Injectable()

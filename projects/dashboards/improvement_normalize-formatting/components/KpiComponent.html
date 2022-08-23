@@ -815,6 +815,8 @@
     SimpleChanges,
     ViewEncapsulation,
 } from &quot;@angular/core&quot;;
+import _isNil from &quot;lodash/isNil&quot;;
+
 import { EventBus, IDataSource, IEvent } from &quot;@nova-ui/bits&quot;;
 
 import { mapDataToFormatterProperties } from &quot;../../functions/map-data-to-formatter-properties&quot;;
@@ -826,14 +828,12 @@ import {
     WellKnownDataSourceFeatures,
 } from &quot;../../types&quot;;
 import { IBroker } from &quot;../providers/types&quot;;
-
 import {
     IKpiConfiguration,
     IKpiData,
     IKpiFormatterProperties,
     IKpiFormattersConfiguration,
 } from &quot;./types&quot;;
-import _isNil from &quot;lodash/isNil&quot;;
 
 @Component({
     selector: &quot;nui-kpi&quot;,

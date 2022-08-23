@@ -172,7 +172,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/lib/configurator/services/converters/timeseries/timeseries-series-converter.service.ts:39</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/lib/configurator/services/converters/timeseries/timeseries-series-converter.service.ts:40</a></div>
                             </td>
                         </tr>
 
@@ -263,8 +263,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="156"
-                            class="link-to-prism">src/lib/configurator/services/converters/timeseries/timeseries-series-converter.service.ts:156</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="157"
+                            class="link-to-prism">src/lib/configurator/services/converters/timeseries/timeseries-series-converter.service.ts:157</a></div>
                 </td>
             </tr>
 
@@ -304,8 +304,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="228"
-                            class="link-to-prism">src/lib/configurator/services/converters/timeseries/timeseries-series-converter.service.ts:228</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="229"
+                            class="link-to-prism">src/lib/configurator/services/converters/timeseries/timeseries-series-converter.service.ts:229</a></div>
                 </td>
             </tr>
 
@@ -345,8 +345,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="187"
-                            class="link-to-prism">src/lib/configurator/services/converters/timeseries/timeseries-series-converter.service.ts:187</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="188"
+                            class="link-to-prism">src/lib/configurator/services/converters/timeseries/timeseries-series-converter.service.ts:188</a></div>
                 </td>
             </tr>
 
@@ -1023,13 +1023,14 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { AfterViewInit, Inject, Injectable, OnDestroy } from &quot;@angular/core&quot;;
 import { FormGroup } from &quot;@angular/forms&quot;;
-import { EventBus, IEvent, immutableSet } from &quot;@nova-ui/bits&quot;;
 import get from &quot;lodash/get&quot;;
 import isEmpty from &quot;lodash/isEmpty&quot;;
 import isEqual from &quot;lodash/isEqual&quot;;
 import isUndefined from &quot;lodash/isUndefined&quot;;
 import { combineLatest, Subject } from &quot;rxjs&quot;;
 import { distinctUntilChanged, map, takeUntil } from &quot;rxjs/operators&quot;;
+
+import { EventBus, IEvent, immutableSet } from &quot;@nova-ui/bits&quot;;
 
 import { IDataSourceOutput } from &quot;../../../../components/providers/types&quot;;
 import {

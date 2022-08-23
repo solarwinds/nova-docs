@@ -446,13 +446,6 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Inject, Optional } from &quot;@angular/core&quot;;
-import {
-    EventBus,
-    IDataSource,
-    IEvent,
-    IFilteringOutputs,
-    VirtualViewportManager,
-} from &quot;@nova-ui/bits&quot;;
 import { merge, Observable, zip } from &quot;rxjs&quot;;
 import {
     debounceTime,
@@ -462,6 +455,14 @@ import {
     tap,
 } from &quot;rxjs/operators&quot;;
 
+import {
+    EventBus,
+    IDataSource,
+    IEvent,
+    IFilteringOutputs,
+    VirtualViewportManager,
+} from &quot;@nova-ui/bits&quot;;
+
 import { PizzagnaService } from &quot;../../pizzagna/services/pizzagna.service&quot;;
 import { REFRESH, SCROLL_NEXT_PAGE, WIDGET_READY } from &quot;../../services/types&quot;;
 import {
@@ -470,7 +471,6 @@ import {
     PizzagnaLayer,
     PIZZAGNA_EVENT_BUS,
 } from &quot;../../types&quot;;
-
 import { DataSourceAdapter } from &quot;./data-source-adapter&quot;;
 
 export class TableDataSourceAdapter&lt;

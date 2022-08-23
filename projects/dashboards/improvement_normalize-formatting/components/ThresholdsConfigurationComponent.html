@@ -679,14 +679,14 @@ when setTimeout is removed this hack can be removed as well</p>
     SimpleChanges,
 } from &quot;@angular/core&quot;;
 import { FormBuilder, FormGroup, Validators } from &quot;@angular/forms&quot;;
-import { LoggerService } from &quot;@nova-ui/bits&quot;;
 import includes from &quot;lodash/includes&quot;;
 import _isNil from &quot;lodash/isNil&quot;;
 import { Subject } from &quot;rxjs&quot;;
 import { takeUntil } from &quot;rxjs/operators&quot;;
 
-import { IHasChangeDetector, IHasForm } from &quot;../../../../../types&quot;;
+import { LoggerService } from &quot;@nova-ui/bits&quot;;
 
+import { IHasChangeDetector, IHasForm } from &quot;../../../../../types&quot;;
 import { thresholdsValidator } from &quot;./thresholds-validator&quot;;
 
 @Component({

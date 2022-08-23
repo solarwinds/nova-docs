@@ -185,7 +185,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/status-bar-chart/status-bar-chart.component.ts:61</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/status-bar-chart/status-bar-chart.component.ts:62</a></div>
                             </td>
                         </tr>
 
@@ -304,8 +304,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="75"
-                            class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/status-bar-chart/status-bar-chart.component.ts:75</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="76"
+                            class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/status-bar-chart/status-bar-chart.component.ts:76</a></div>
                 </td>
             </tr>
 
@@ -391,7 +391,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="67" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/status-bar-chart/status-bar-chart.component.ts:67</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="68" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/status-bar-chart/status-bar-chart.component.ts:68</a></div>
                             </td>
                         </tr>
 
@@ -419,7 +419,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/status-bar-chart/status-bar-chart.component.ts:57</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/status-bar-chart/status-bar-chart.component.ts:58</a></div>
                             </td>
                         </tr>
 
@@ -452,7 +452,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/status-bar-chart/status-bar-chart.component.ts:58</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/status-bar-chart/status-bar-chart.component.ts:59</a></div>
                             </td>
                         </tr>
 
@@ -485,7 +485,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/status-bar-chart/status-bar-chart.component.ts:55</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/status-bar-chart/status-bar-chart.component.ts:56</a></div>
                             </td>
                         </tr>
 
@@ -513,7 +513,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="66" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/status-bar-chart/status-bar-chart.component.ts:66</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="67" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/status-bar-chart/status-bar-chart.component.ts:67</a></div>
                             </td>
                         </tr>
 
@@ -533,6 +533,9 @@
     OnInit,
     Optional,
 } from &quot;@angular/core&quot;;
+import { merge, Subject } from &quot;rxjs&quot;;
+import { takeUntil } from &quot;rxjs/operators&quot;;
+
 import {
     EventBus,
     IconService,
@@ -559,8 +562,6 @@ import {
     TimeIntervalScale,
     ZoomPlugin,
 } from &quot;@nova-ui/charts&quot;;
-import { merge, Subject } from &quot;rxjs&quot;;
-import { takeUntil } from &quot;rxjs/operators&quot;;
 
 import { SET_TIMEFRAME } from &quot;../../../../services/types&quot;;
 import { DATA_SOURCE, PIZZAGNA_EVENT_BUS } from &quot;../../../../types&quot;;

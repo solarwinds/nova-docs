@@ -782,8 +782,9 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { AfterViewInit, Inject, Injectable, OnDestroy } from &quot;@angular/core&quot;;
 import { FormGroup } from &quot;@angular/forms&quot;;
-import { EventBus, IEvent } from &quot;@nova-ui/bits&quot;;
 import { Subject } from &quot;rxjs&quot;;
+
+import { EventBus, IEvent } from &quot;@nova-ui/bits&quot;;
 
 import { PizzagnaService } from &quot;../../../pizzagna/services/pizzagna.service&quot;;
 import {
@@ -792,7 +793,6 @@ import {
 } from &quot;../../../services/types&quot;;
 import { IPizzagna, IPizzagnaLayer, PIZZAGNA_EVENT_BUS } from &quot;../../../types&quot;;
 import { PreviewService } from &quot;../preview.service&quot;;
-
 import { IConfiguratorConverter } from &quot;./types&quot;;
 
 @Injectable()

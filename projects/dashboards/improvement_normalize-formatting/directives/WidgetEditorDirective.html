@@ -235,6 +235,7 @@ import { Subject } from &quot;rxjs&quot;;
 import { switchMap, takeUntil } from &quot;rxjs/operators&quot;;
 
 import { DashboardComponent } from &quot;../../components/dashboard/dashboard.component&quot;;
+import { IDashboardPersistenceHandler } from &quot;../../components/dashboard/types&quot;;
 import {
     IConfiguratorSource,
     IWidgetEditor,
@@ -243,7 +244,6 @@ import { WidgetEditorService } from &quot;../../configurator/services/widget-edi
 import { WIDGET_EDIT, WIDGET_REMOVE } from &quot;../../services/types&quot;;
 import { WidgetRemovalService } from &quot;../../services/widget-removal.service&quot;;
 import { WidgetTypesService } from &quot;../../services/widget-types.service&quot;;
-import { IDashboardPersistenceHandler } from &quot;../../components/dashboard/types&quot;;
 
 @Directive({
     selector: &quot;[nuiWidgetEditor]&quot;,

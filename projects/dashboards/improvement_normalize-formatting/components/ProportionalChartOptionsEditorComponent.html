@@ -555,8 +555,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="112"
-                            class="link-to-prism">src/lib/configurator/components/widgets/proportional/chart-options-editor/proportional-chart-options-editor.component.ts:112</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="109"
+                            class="link-to-prism">src/lib/configurator/components/widgets/proportional/chart-options-editor/proportional-chart-options-editor.component.ts:109</a></div>
                 </td>
             </tr>
 
@@ -596,8 +596,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="118"
-                            class="link-to-prism">src/lib/configurator/components/widgets/proportional/chart-options-editor/proportional-chart-options-editor.component.ts:118</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="115"
+                            class="link-to-prism">src/lib/configurator/components/widgets/proportional/chart-options-editor/proportional-chart-options-editor.component.ts:115</a></div>
                 </td>
             </tr>
 
@@ -637,8 +637,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="126"
-                            class="link-to-prism">src/lib/configurator/components/widgets/proportional/chart-options-editor/proportional-chart-options-editor.component.ts:126</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="123"
+                            class="link-to-prism">src/lib/configurator/components/widgets/proportional/chart-options-editor/proportional-chart-options-editor.component.ts:123</a></div>
                 </td>
             </tr>
 
@@ -678,8 +678,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="198"
-                            class="link-to-prism">src/lib/configurator/components/widgets/proportional/chart-options-editor/proportional-chart-options-editor.component.ts:198</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="195"
+                            class="link-to-prism">src/lib/configurator/components/widgets/proportional/chart-options-editor/proportional-chart-options-editor.component.ts:195</a></div>
                 </td>
             </tr>
 
@@ -1147,7 +1147,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="106" class="link-to-prism">src/lib/configurator/components/widgets/proportional/chart-options-editor/proportional-chart-options-editor.component.ts:106</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="103" class="link-to-prism">src/lib/configurator/components/widgets/proportional/chart-options-editor/proportional-chart-options-editor.component.ts:103</a></div>
                                 </td>
                             </tr>
 
@@ -1181,8 +1181,8 @@ import {
     IHasForm,
     IProperties,
 } from &quot;../../../../../types&quot;;
-import { ConfiguratorHeadingService } from &quot;../../../../services/configurator-heading.service&quot;;
 import { LegendPlacement } from &quot;../../../../../widget-types/common/widget/legend&quot;;
+import { ConfiguratorHeadingService } from &quot;../../../../services/configurator-heading.service&quot;;
 
 type ChartTypeNamesMap &#x3D; { [key in ProportionalWidgetChartTypes]: string };
 const proportionalWidgetChartTypesNamesMap: ChartTypeNamesMap &#x3D; {
@@ -1255,10 +1255,7 @@ export class ProportionalChartOptionsEditorComponent
         ) {
             this.cachedChartOptionsViewModels &#x3D; (
                 this.chartOptions?.chartTypes || []
-            ).map((value) &#x3D;&gt; ({
-                label: this.chartTypeNamesMap[value],
-                value,
-            }));
+            ).map((value) &#x3D;&gt; ({ label: this.chartTypeNamesMap[value], value }));
         }
         return this.cachedChartOptionsViewModels;
     }

@@ -1766,11 +1766,12 @@
     ViewChildren,
     ViewContainerRef,
 } from &quot;@angular/core&quot;;
-import { IBusyConfig, IEvent, LoggerService } from &quot;@nova-ui/bits&quot;;
 import find from &quot;lodash/find&quot;;
 import findIndex from &quot;lodash/findIndex&quot;;
 import isUndefined from &quot;lodash/isUndefined&quot;;
 import { BehaviorSubject } from &quot;rxjs&quot;;
+
+import { IBusyConfig, IEvent, LoggerService } from &quot;@nova-ui/bits&quot;;
 
 import { DashwizStepComponent } from &quot;../dashwiz-step/dashwiz-step.component&quot;;
 import {
@@ -1779,7 +1780,6 @@ import {
     IDashwizStepNavigatedEvent,
     IDashwizWaitEvent,
 } from &quot;../types&quot;;
-
 import { DashwizButtonsComponent } from &quot;./dashwiz-buttons.component&quot;;
 import { DashwizService } from &quot;./dashwiz.service&quot;;
 import { IDashwizComponent } from &quot;./model&quot;;
