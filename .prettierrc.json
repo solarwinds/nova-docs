@@ -1,0 +1,22 @@
+{
+  "overrides": [
+    {
+      "files": "*",
+      "options": {
+        "proseWrap": "always",
+        "semi": true,
+        "singleQuote": false,
+        "tabWidth": 2,
+        "useTabs": false
+      }
+    },
+    {
+      "files": ["*.json", "*.code-workspace"],
+      "options": {
+        "jsonRecursiveSort": true,
+        "parser": "json"
+      }
+    }
+  ],
+  "plugins": ["prettier-plugin-sort-json"]
+}

@@ -1,0 +1,26 @@
+{
+  "folders": [
+    {
+      "name": "[express] nova-docs",
+      "path": "."
+    },
+    {
+      "name": "[ng] nova-docs-client",
+      "path": "nova-docs-client"
+    }
+  ],
+  "settings": {
+    "prettier.configPath": ".prettierrc.json",
+    "search.exclude": {
+      "**/*.code-search": true,
+      "**/bower_components": true,
+      "**/node_modules": true,
+      "client": true,
+      "projects": true
+    },
+    "workbench.colorCustomizations": {
+      "activityBar.background": "#406",
+      "titleBar.activeBackground": "#406"
+    }
+  }
+}

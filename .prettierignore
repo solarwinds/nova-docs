@@ -1,0 +1,7 @@
+.angular
+client
+client-dev
+coverage
+node_modules
+projects
+pnpm-lock.yaml
