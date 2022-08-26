@@ -1,9 +1,9 @@
 {
-  "$schema": "node_modules/@angular/cli/lib/config/schema.json",
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
     "analytics": "425af659-c30d-41d3-b8bb-b397b43e8c4a",
     "defaultCollection": "@angular-eslint/schematics",
-    "packageManager": "pnpm"
+    "packageManager": "yarn"
   },
   "defaultProject": "nova-docs-client",
   "newProjectRoot": "projects",
