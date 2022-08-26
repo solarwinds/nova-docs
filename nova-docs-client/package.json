@@ -43,7 +43,6 @@
     "moment-timezone": "^0.5.34",
     "npm": "^7.24.2",
     "npm-run-all": "^4.1.5",
-    "protractor": "~7.0.0",
     "ts-node": "^10.9.1",
     "typescript": "~4.6.4"
   },
@@ -51,7 +50,7 @@
   "private": true,
   "resolutions": {
     "core-js": "3.23.5",
-    "uuid": "7.0.2"
+    "uuid": "8.3.2"
   },
   "scripts": {
     "assemble": "run-s prettier-check lint build:prod",
