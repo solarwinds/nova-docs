@@ -160,7 +160,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/lib/dnd/dnd-drop-target.directive.ts:51</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">src/lib/dnd/dnd-drop-target.directive.ts:65</a></div>
                             </td>
                         </tr>
 
@@ -240,7 +240,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/lib/dnd/dnd-drop-target.directive.ts:31</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/lib/dnd/dnd-drop-target.directive.ts:42</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -276,7 +276,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/lib/dnd/dnd-drop-target.directive.ts:34</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/lib/dnd/dnd-drop-target.directive.ts:45</a></div>
                             </td>
                         </tr>
 
@@ -312,7 +312,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/lib/dnd/dnd-drop-target.directive.ts:29</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/lib/dnd/dnd-drop-target.directive.ts:40</a></div>
                             </td>
                         </tr>
 
@@ -340,7 +340,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/lib/dnd/dnd-drop-target.directive.ts:33</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/lib/dnd/dnd-drop-target.directive.ts:44</a></div>
                             </td>
                         </tr>
 
@@ -369,7 +369,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/lib/dnd/dnd-drop-target.directive.ts:40</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/lib/dnd/dnd-drop-target.directive.ts:51</a></div>
                                 </td>
                             </tr>
 
@@ -391,7 +391,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/lib/dnd/dnd-drop-target.directive.ts:49</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/lib/dnd/dnd-drop-target.directive.ts:63</a></div>
                                 </td>
                             </tr>
 
@@ -415,7 +415,16 @@ import {
     Renderer2,
 } from &quot;@angular/core&quot;;
 import { combineLatest, fromEvent, merge, Observable, of, Subject } from &quot;rxjs&quot;;
-import { distinctUntilChanged, map, mapTo, shareReplay, startWith, switchMap, takeUntil, tap } from &quot;rxjs/operators&quot;;
+import {
+    distinctUntilChanged,
+    map,
+    mapTo,
+    shareReplay,
+    startWith,
+    switchMap,
+    takeUntil,
+    tap,
+} from &quot;rxjs/operators&quot;;
 
 @Directive({
     selector: &quot;[cdkDropList][nuiDndDropTarget]&quot;,
@@ -425,13 +434,15 @@ import { distinctUntilChanged, map, mapTo, shareReplay, startWith, switchMap, ta
         // to let the user customize drop zone only via css
         &quot;[class.nui-dnd-dropzone]&quot;: &quot;true&quot;,
         &quot;[class.nui-dnd-dropzone--active]&quot;: &quot;isDropZoneActive&quot;,
-        &quot;[class.nui-dnd-dropzone--drop-allowed]&quot;: &quot;isDropZoneActive &amp;&amp; canLastDragItemBeDropped&quot;,
-        &quot;[class.nui-dnd-dropzone--drop-not-allowed]&quot;: &quot;isDropZoneActive &amp;&amp; canLastDragItemBeDropped &#x3D;&#x3D;&#x3D; false&quot;,
+        &quot;[class.nui-dnd-dropzone--drop-allowed]&quot;:
+            &quot;isDropZoneActive &amp;&amp; canLastDragItemBeDropped&quot;,
+        &quot;[class.nui-dnd-dropzone--drop-not-allowed]&quot;:
+            &quot;isDropZoneActive &amp;&amp; canLastDragItemBeDropped &#x3D;&#x3D;&#x3D; false&quot;,
     },
 })
 export class DndDropTargetDirective implements AfterContentInit, OnDestroy {
-
-    @ContentChildren(CdkDrag, {descendants: true}) draggables: QueryList&lt;CdkDrag&gt;;
+    @ContentChildren(CdkDrag, { descendants: true })
+    draggables: QueryList&lt;CdkDrag&gt;;
 
     @Input() canBeDropped: (item: any, dropListRef?: CdkDropList) &#x3D;&gt; boolean;
 
@@ -445,7 +456,10 @@ export class DndDropTargetDirective implements AfterContentInit, OnDestroy {
     public get isDropZoneActive(): boolean {
         // Using cdk default isReceiving and isDragging (When the item is assigned without drop to dropList,
         // isReceiving returns false, and we replace it with isDragging to maintain the expected behavior.)
-        return this.targetDropList._dropListRef.isReceiving() || this.targetDropList._dropListRef.isDragging();
+        return (
+            this.targetDropList._dropListRef.isReceiving() ||
+            this.targetDropList._dropListRef.isDragging()
+        );
     }
 
     private _canLastDragItemBeDropped: boolean;
@@ -456,17 +470,34 @@ export class DndDropTargetDirective implements AfterContentInit, OnDestroy {
     }
 
     // canDrop primitive value is used for the host element class binding
-    constructor(private targetDropList: CdkDropList, private renderer: Renderer2, hostElement: ElementRef) {
-
-        const mouseEnter$: Observable&lt;unknown&gt; &#x3D; fromEvent(hostElement.nativeElement, &quot;mouseenter&quot;);
+    constructor(
+        private targetDropList: CdkDropList,
+        private renderer: Renderer2,
+        hostElement: ElementRef
+    ) {
+        const mouseEnter$: Observable&lt;unknown&gt; &#x3D; fromEvent(
+            hostElement.nativeElement,
+            &quot;mouseenter&quot;
+        );
         // Cdk bug fix: When an item is dragged outside of the container but not into another container,
         // the placeholder is not removed. So, to fix this, we&#x27;re removing the placeholder if the user&#x27;s mouse
         // cursor leaves the container.
-        const mouseLeave$: Observable&lt;unknown&gt; &#x3D; fromEvent(hostElement.nativeElement, &quot;mouseleave&quot;);
+        const mouseLeave$: Observable&lt;unknown&gt; &#x3D; fromEvent(
+            hostElement.nativeElement,
+            &quot;mouseleave&quot;
+        );
 
         // Events streams for switching the drop zone state.
-        const showDropZoneTrigger$: Observable&lt;unknown&gt; &#x3D; merge(mouseEnter$, this.itemDragStarted$, this.targetDropList.entered);
-        const hideDropZoneTrigger$: Observable&lt;unknown&gt; &#x3D; merge(mouseLeave$, this.targetDropList.dropped, this.targetDropList.exited);
+        const showDropZoneTrigger$: Observable&lt;unknown&gt; &#x3D; merge(
+            mouseEnter$,
+            this.itemDragStarted$,
+            this.targetDropList.entered
+        );
+        const hideDropZoneTrigger$: Observable&lt;unknown&gt; &#x3D; merge(
+            mouseLeave$,
+            this.targetDropList.dropped,
+            this.targetDropList.exited
+        );
 
         // Main placeholder stream that decides to show/hide drop zone
         this.showDropZone$ &#x3D; merge(
@@ -476,18 +507,23 @@ export class DndDropTargetDirective implements AfterContentInit, OnDestroy {
 
         // Merging observables to obtain reliable draggedItem reference
         const draggedItem$: Observable&lt;CdkDrag&gt; &#x3D; merge(
-            this.targetDropList.entered.pipe(map(event &#x3D;&gt; event.item)),
+            this.targetDropList.entered.pipe(map((event) &#x3D;&gt; event.item)),
             this.itemDragStarted$
         ).pipe(shareReplay());
 
         // Drop zone state stream used to return the result of the predicate provided by user.
         // Here we&#x27;re taking the current moving item in case the drop zone is active to be able to execute the callback.
-        this.canLastDragItemBeDropped$ &#x3D; combineLatest&lt;Observable&lt;boolean&gt;, Observable&lt;CdkDrag&gt;&gt;([this.showDropZone$, draggedItem$]).pipe(
+        this.canLastDragItemBeDropped$ &#x3D; combineLatest&lt;
+            Observable&lt;boolean&gt;,
+            Observable&lt;CdkDrag&gt;
+        &gt;([this.showDropZone$, draggedItem$]).pipe(
             switchMap(([showDropZone, drag]) &#x3D;&gt; {
                 let result: boolean &#x3D; false;
                 if (showDropZone) {
                     const ACCEPT_ALL_ITEMS: boolean &#x3D; true;
-                    result &#x3D; this.canBeDropped?.(drag.data, this.targetDropList) ?? ACCEPT_ALL_ITEMS;
+                    result &#x3D;
+                        this.canBeDropped?.(drag.data, this.targetDropList) ??
+                        ACCEPT_ALL_ITEMS;
                 }
                 this._canLastDragItemBeDropped &#x3D; result;
                 return of(result);
@@ -498,18 +534,28 @@ export class DndDropTargetDirective implements AfterContentInit, OnDestroy {
 
         // If consumer will not subscribe in the template to canDrop$ we should set proper classes anyway.
         // That&#x27;s why we&#x27;re subscribing also here, the number of observables will remain the same because of shareReplay
-        this.canLastDragItemBeDropped$.pipe(takeUntil(this._destroy$)).subscribe();
+        this.canLastDragItemBeDropped$
+            .pipe(takeUntil(this._destroy$))
+            .subscribe();
     }
 
     public ngAfterContentInit(): void {
         // Using this to provide current draggable item reference that is needed for predicate validation
         // cdkDropList is not throwing any event on dragStart, then we should subscribe to dragStartEventEmitter from item
-        this.draggables.changes.pipe(
-            startWith(this.draggables.toArray()),
-            switchMap((items: CdkDrag[]) &#x3D;&gt; merge&lt;CdkDragStart&gt;(...items.map((drag: CdkDrag) &#x3D;&gt; drag.started))),
-            tap((item: CdkDragStart) &#x3D;&gt; this.itemDragStarted$.next(item.source)),
-            takeUntil(this._destroy$)
-        ).subscribe();
+        this.draggables.changes
+            .pipe(
+                startWith(this.draggables.toArray()),
+                switchMap((items: CdkDrag[]) &#x3D;&gt;
+                    merge&lt;CdkDragStart&gt;(
+                        ...items.map((drag: CdkDrag) &#x3D;&gt; drag.started)
+                    )
+                ),
+                tap((item: CdkDragStart) &#x3D;&gt;
+                    this.itemDragStarted$.next(item.source)
+                ),
+                takeUntil(this._destroy$)
+            )
+            .subscribe();
     }
 
     public ngOnDestroy(): void {

@@ -164,11 +164,18 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { animate, state, style, transition, trigger } from &quot;@angular/animations&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+    animate,
+    state,
+    style,
+    transition,
+    trigger,
+} from &quot;@angular/animations&quot;;
 
 type KnownAnimationEventStates &#x3D; &quot;void&quot; | true | false;
 
-export interface TypedAnimationEvent extends Omit&lt;AnimationEvent, &quot;toState&quot; | &quot;fromState&quot;&gt; {
+export interface TypedAnimationEvent
+    extends Omit&lt;AnimationEvent, &quot;toState&quot; | &quot;fromState&quot;&gt; {
     toState: KnownAnimationEventStates;
     fromState: KnownAnimationEventStates;
 }
@@ -177,8 +184,8 @@ export const fadeIn &#x3D; [
     // boring fade-in/fade-out opacity animation.
     trigger(&quot;fadeIn&quot;, [
         // anything other than true is hidden
-        state(&quot;*&quot;, style({opacity: 0})),
-        state(&quot;true&quot;, style({opacity: 1})),
+        state(&quot;*&quot;, style({ opacity: 0 })),
+        state(&quot;true&quot;, style({ opacity: 1 })),
 
         transition(&quot;* &lt;&#x3D;&gt; *&quot;, animate(&quot;.2s ease-in-out&quot;)),
     ]),

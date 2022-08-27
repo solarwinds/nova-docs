@@ -214,18 +214,19 @@ import { Pipe, PipeTransform } from &quot;@angular/core&quot;;
 
 import { nameof } from &quot;../../../functions/nameof&quot;;
 
-@Pipe({name: &quot;sliceRange&quot;, pure: false})
+@Pipe({ name: &quot;sliceRange&quot;, pure: false })
 export class SliceRangePipe implements PipeTransform {
     slicePipe: SlicePipe &#x3D; new SlicePipe();
     transform(value: unknown[], range: ListRange): unknown[] {
-
-        if (!range.hasOwnProperty(nameof&lt;ListRange&gt;(&quot;start&quot;)) || !range.hasOwnProperty(nameof&lt;ListRange&gt;(&quot;end&quot;))) {
+        if (
+            !range.hasOwnProperty(nameof&lt;ListRange&gt;(&quot;start&quot;)) ||
+            !range.hasOwnProperty(nameof&lt;ListRange&gt;(&quot;end&quot;))
+        ) {
             throw new Error(&quot;Invalid range provided&quot;);
         }
 
         return this.slicePipe.transform(value, range.start, range.end);
     }
-
 }
 </code></pre>
     </div>

@@ -110,8 +110,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="14"
-                            class="link-to-prism">src/lib/configurator/pipe/pizzagna-root.pipe.ts:14</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="13"
+                            class="link-to-prism">src/lib/configurator/pipe/pizzagna-root.pipe.ts:13</a></div>
                 </td>
             </tr>
 
@@ -184,23 +184,28 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Pipe, PipeTransform } from &quot;@angular/core&quot;;
 
-import { WidgetTypesService } from &quot;../../services/widget-types.service&quot;;
 import { IWidget } from &quot;../../components/widget/types&quot;;
+import { WidgetTypesService } from &quot;../../services/widget-types.service&quot;;
 
 @Pipe({
     name: &quot;nuiPizzagnaRoot&quot;,
     pure: true,
 })
 export class PizzagnaRootPipe implements PipeTransform {
-    constructor(private widgetTypesService: WidgetTypesService) {
-    }
+    constructor(private widgetTypesService: WidgetTypesService) {}
 
-    public transform(widget: IWidget | null, key: &quot;configurator&quot; | &quot;widget&quot; &#x3D; &quot;widget&quot;) {
+    public transform(
+        widget: IWidget | null,
+        key: &quot;configurator&quot; | &quot;widget&quot; &#x3D; &quot;widget&quot;
+    ) {
         if (!widget?.type) {
             return null;
         }
 
-        const widgetType &#x3D; this.widgetTypesService.getWidgetType(widget.type, widget.version);
+        const widgetType &#x3D; this.widgetTypesService.getWidgetType(
+            widget.type,
+            widget.version
+        );
 
         return widgetType.paths?.[key]?.root;
     }

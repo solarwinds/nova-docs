@@ -188,11 +188,19 @@ import isNil from &quot;lodash/isNil&quot;;
 
 @Pipe({ name: &quot;nuiAddData&quot; })
 export class AddDataPipe implements PipeTransform {
-    transform(origin: object | Array&lt;any&gt; | undefined, value: any, key?: string): object | Array&lt;any&gt; | any[] | undefined {
-        if (isNil(origin)) { return; }
+    transform(
+        origin: object | Array&lt;any&gt; | undefined,
+        value: any,
+        key?: string
+    ): object | Array&lt;any&gt; | any[] | undefined {
+        if (isNil(origin)) {
+            return;
+        }
 
         if (isArray(origin)) {
-            if (!value) { return origin; }
+            if (!value) {
+                return origin;
+            }
 
             const newArr &#x3D; [...origin];
             newArr.push(value);
@@ -200,7 +208,8 @@ export class AddDataPipe implements PipeTransform {
             return newArr;
         }
 
-        const computedKey: string &#x3D; typeof key &#x3D;&#x3D;&#x3D; &quot;undefined&quot; ? &quot;undefined&quot; : key;
+        const computedKey: string &#x3D;
+            typeof key &#x3D;&#x3D;&#x3D; &quot;undefined&quot; ? &quot;undefined&quot; : key;
         return Object.assign({}, origin, { [computedKey]: value });
     }
 }

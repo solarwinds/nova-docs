@@ -171,25 +171,29 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { GridsterItem } from &quot;angular-gridster2&quot;;
+
+import {
+    WidgetUpdateOperation,
+    WidgetRemovalOperation,
+} from &quot;../../configurator/services/types&quot;;
 import { IWidgets } from &quot;../widget/types&quot;;
-import { WidgetUpdateOperation, WidgetRemovalOperation } from &quot;../../configurator/services/types&quot;
 
 export interface IDashboard {
-  widgets: IWidgets;
-  positions: Record&lt;string, GridsterItem&gt;;
+    widgets: IWidgets;
+    positions: Record&lt;string, GridsterItem&gt;;
 }
 
 export interface IDashboardBelowFoldLazyLoadingConfig {
-  enabled: boolean;
-  configuration?: {
-      // reloads widgets if they were already loaded but then disappeared from the view
-      reloadWidgetsOnScroll: boolean;
-  };
+    enabled: boolean;
+    configuration?: {
+        // reloads widgets if they were already loaded but then disappeared from the view
+        reloadWidgetsOnScroll: boolean;
+    };
 }
 
 export interface IDashboardPersistenceHandler {
-  trySubmit?: WidgetUpdateOperation;
-  tryRemove?: WidgetRemovalOperation;
+    trySubmit?: WidgetUpdateOperation;
+    tryRemove?: WidgetRemovalOperation;
 }
 </code></pre>
     </div>

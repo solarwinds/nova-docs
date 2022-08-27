@@ -85,27 +85,42 @@
 
             <tr>
                 <td class="col-md-3">styles</td>
-                <td class="col-md-9"><code>.status-icon-formatter {display: grid; grid-template-columns: 50px auto  minmax(114px, 1fr);} </code></td>
+                <td class="col-md-9"><code>
+            .status-icon-formatter {
+                display: grid;
+                grid-template-columns: 50px auto minmax(114px, 1fr);
+            }
+        </code></td>
             </tr>
 
             <tr>
                 <td class="col-md-3">template</td>
                 <td class="col-md-9"><pre class="line-numbers"><code class="language-html">&lt;ng-container *ngIf&#x3D;&quot;isValid&quot;&gt;
-    &lt;div class&#x3D;&quot;nui-text-label align-items-center status-icon-formatter&quot;&gt;
-
-        &lt;span class&#x3D;&quot;nui-text-ellipsis text-right pl-3&quot;&gt;{{ data.data }}&lt;/span&gt;
-        &lt;nui-icon [icon]&#x3D;&quot;data.icon&quot; class&#x3D;&quot;nui-icon nui-icon-line-height mx-2&quot;&gt;&lt;/nui-icon&gt;
+    &lt;div
+        class&#x3D;&quot;nui-text-label align-items-center status-icon-formatter&quot;
+    &gt;
+        &lt;span class&#x3D;&quot;nui-text-ellipsis text-right pl-3&quot;&gt;{{
+            data.data
+        }}&lt;/span&gt;
+        &lt;nui-icon
+            [icon]&#x3D;&quot;data.icon&quot;
+            class&#x3D;&quot;nui-icon nui-icon-line-height mx-2&quot;
+        &gt;&lt;/nui-icon&gt;
         &lt;div *ngIf&#x3D;&quot;data?.link; else noLink&quot;&gt;
-                &lt;a class&#x3D;&quot;nui-text-link-small nui-text-ellipsis link&quot;
-                    (click)&#x3D;&quot;$event.stopPropagation()&quot;
-                    [href]&#x3D;&quot;data?.link&quot;
-                    rel&#x3D;&quot;noopener noreferrer&quot;
-                    [title]&#x3D;&quot;data.name&quot;&gt;
-                        {{ data.name }}
-                &lt;/a&gt;
+            &lt;a
+                class&#x3D;&quot;nui-text-link-small nui-text-ellipsis link&quot;
+                (click)&#x3D;&quot;$event.stopPropagation()&quot;
+                [href]&#x3D;&quot;data?.link&quot;
+                rel&#x3D;&quot;noopener noreferrer&quot;
+                [title]&#x3D;&quot;data.name&quot;
+            &gt;
+                {{ data.name }}
+            &lt;/a&gt;
         &lt;/div&gt;
         &lt;ng-template #noLink&gt;
-        &lt;span class&#x3D;&quot;nui-text-ellipsis&quot; [style.font-size.px]&#x3D;&quot;11&quot;&gt;{{data.name}}&lt;/span&gt;
+            &lt;span class&#x3D;&quot;nui-text-ellipsis&quot; [style.font-size.px]&#x3D;&quot;11&quot;&gt;{{
+                data.name
+            }}&lt;/span&gt;
         &lt;/ng-template&gt;
     &lt;/div&gt;
 &lt;/ng-container&gt;
@@ -186,7 +201,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/lib/configurator/components/formatters/status-with-icon-formatter/status-with-icon-formatter.component.ts:35</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/lib/configurator/components/formatters/status-with-icon-formatter/status-with-icon-formatter.component.ts:49</a></div>
                             </td>
                         </tr>
 
@@ -242,7 +257,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/lib/configurator/components/formatters/status-with-icon-formatter/status-with-icon-formatter.component.ts:40</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/lib/configurator/components/formatters/status-with-icon-formatter/status-with-icon-formatter.component.ts:54</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -278,7 +293,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/lib/configurator/components/formatters/status-with-icon-formatter/status-with-icon-formatter.component.ts:37</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/lib/configurator/components/formatters/status-with-icon-formatter/status-with-icon-formatter.component.ts:51</a></div>
                             </td>
                         </tr>
 
@@ -311,7 +326,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/lib/configurator/components/formatters/status-with-icon-formatter/status-with-icon-formatter.component.ts:39</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/lib/configurator/components/formatters/status-with-icon-formatter/status-with-icon-formatter.component.ts:53</a></div>
                             </td>
                         </tr>
 
@@ -344,7 +359,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/lib/configurator/components/formatters/status-with-icon-formatter/status-with-icon-formatter.component.ts:35</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/lib/configurator/components/formatters/status-with-icon-formatter/status-with-icon-formatter.component.ts:49</a></div>
                             </td>
                         </tr>
 
@@ -357,52 +372,73 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
-    ChangeDetectorRef,
-    Component,
-    Input,
-    OnChanges,
-} from &quot;@angular/core&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ChangeDetectorRef, Component, Input, OnChanges } from &quot;@angular/core&quot;;
 
 import { IHasChangeDetector } from &quot;../../../../types&quot;;
 
 @Component({
     template: &#x60;
         &lt;ng-container *ngIf&#x3D;&quot;isValid&quot;&gt;
-            &lt;div class&#x3D;&quot;nui-text-label align-items-center status-icon-formatter&quot;&gt;
-                
-                &lt;span class&#x3D;&quot;nui-text-ellipsis text-right pl-3&quot;&gt;{{ data.data }}&lt;/span&gt;
-                &lt;nui-icon [icon]&#x3D;&quot;data.icon&quot; class&#x3D;&quot;nui-icon nui-icon-line-height mx-2&quot;&gt;&lt;/nui-icon&gt;
+            &lt;div
+                class&#x3D;&quot;nui-text-label align-items-center status-icon-formatter&quot;
+            &gt;
+                &lt;span class&#x3D;&quot;nui-text-ellipsis text-right pl-3&quot;&gt;{{
+                    data.data
+                }}&lt;/span&gt;
+                &lt;nui-icon
+                    [icon]&#x3D;&quot;data.icon&quot;
+                    class&#x3D;&quot;nui-icon nui-icon-line-height mx-2&quot;
+                &gt;&lt;/nui-icon&gt;
                 &lt;div *ngIf&#x3D;&quot;data?.link; else noLink&quot;&gt;
-                        &lt;a class&#x3D;&quot;nui-text-link-small nui-text-ellipsis link&quot;
-                            (click)&#x3D;&quot;$event.stopPropagation()&quot;
-                            [href]&#x3D;&quot;data?.link&quot;
-                            rel&#x3D;&quot;noopener noreferrer&quot;
-                            [title]&#x3D;&quot;data.name&quot;&gt;
-                                {{ data.name }}
-                        &lt;/a&gt;
+                    &lt;a
+                        class&#x3D;&quot;nui-text-link-small nui-text-ellipsis link&quot;
+                        (click)&#x3D;&quot;$event.stopPropagation()&quot;
+                        [href]&#x3D;&quot;data?.link&quot;
+                        rel&#x3D;&quot;noopener noreferrer&quot;
+                        [title]&#x3D;&quot;data.name&quot;
+                    &gt;
+                        {{ data.name }}
+                    &lt;/a&gt;
                 &lt;/div&gt;
                 &lt;ng-template #noLink&gt;
-                &lt;span class&#x3D;&quot;nui-text-ellipsis&quot; [style.font-size.px]&#x3D;&quot;11&quot;&gt;{{data.name}}&lt;/span&gt;
+                    &lt;span class&#x3D;&quot;nui-text-ellipsis&quot; [style.font-size.px]&#x3D;&quot;11&quot;&gt;{{
+                        data.name
+                    }}&lt;/span&gt;
                 &lt;/ng-template&gt;
             &lt;/div&gt;
         &lt;/ng-container&gt;
     &#x60;,
-    styles: [&#x60;.status-icon-formatter {display: grid; grid-template-columns: 50px auto  minmax(114px, 1fr);} &#x60;],
+    styles: [
+        &#x60;
+            .status-icon-formatter {
+                display: grid;
+                grid-template-columns: 50px auto minmax(114px, 1fr);
+            }
+        &#x60;,
+    ],
 })
-export class StatusWithIconFormatterComponent implements OnChanges, IHasChangeDetector {
+export class StatusWithIconFormatterComponent
+    implements OnChanges, IHasChangeDetector
+{
     static lateLoadKey &#x3D; &quot;StatusWithIconFormatterComponent&quot;;
 
-    constructor(public changeDetector: ChangeDetectorRef) { }
+    constructor(public changeDetector: ChangeDetectorRef) {}
 
     public isValid: boolean &#x3D; false;
-    @Input() data: {name: string, icon: string, data: number[], link?: string};
+    @Input() data: {
+        name: string;
+        icon: string;
+        data: number[];
+        link?: string;
+    };
 
     ngOnChanges() {
-        this.isValid &#x3D; !!(this.data
-            &amp;&amp; this.data.icon
-            &amp;&amp; this.data.name
-            &amp;&amp; this.data.data);
+        this.isValid &#x3D; !!(
+            this.data &amp;&amp;
+            this.data.icon &amp;&amp;
+            this.data.name &amp;&amp;
+            this.data.data
+        );
     }
 }
 </code></pre>
@@ -418,7 +454,7 @@ export class StatusWithIconFormatterComponent implements OnChanges, IHasChangeDe
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><ng-container *ngIf="isValid">    <div class="nui-text-label align-items-center status-icon-formatter">        <span class="nui-text-ellipsis text-right pl-3">{{ data.data }}</span>        <nui-icon [icon]="data.icon" class="nui-icon nui-icon-line-height mx-2"></nui-icon>        <div *ngIf="data?.link; else noLink">                <a class="nui-text-link-small nui-text-ellipsis link"                    (click)="$event.stopPropagation()"                    [href]="data?.link"                    rel="noopener noreferrer"                    [title]="data.name">                        {{ data.name }}                </a>        </div>        <ng-template #noLink>        <span class="nui-text-ellipsis" [style.font-size.px]="11">{{data.name}}</span>        </ng-template>    </div></ng-container></div>'
+        var COMPONENT_TEMPLATE = '<div><ng-container *ngIf="isValid">    <div        class="nui-text-label align-items-center status-icon-formatter"    >        <span class="nui-text-ellipsis text-right pl-3">{{            data.data        }}</span>        <nui-icon            [icon]="data.icon"            class="nui-icon nui-icon-line-height mx-2"        ></nui-icon>        <div *ngIf="data?.link; else noLink">            <a                class="nui-text-link-small nui-text-ellipsis link"                (click)="$event.stopPropagation()"                [href]="data?.link"                rel="noopener noreferrer"                [title]="data.name"            >                {{ data.name }}            </a>        </div>        <ng-template #noLink>            <span class="nui-text-ellipsis" [style.font-size.px]="11">{{                data.name            }}</span>        </ng-template>    </div></ng-container></div>'
     var COMPONENTS = [{'name': 'AggregatorMetricSelectorConfigurationComponent', 'selector': 'nui-aggregator-configurator'},{'name': 'BackgroundColorRulesConfigurationComponent', 'selector': 'nui-background-color-rules-configuration'},{'name': 'ColorPickerComponent', 'selector': 'nui-color-picker'},{'name': 'ConfiguratorHeadingComponent', 'selector': 'nui-configurator-heading'},{'name': 'DashboardComponent', 'selector': 'nui-dashboard'},{'name': 'DashwizButtonsComponent', 'selector': 'nui-dashwiz-buttons'},{'name': 'DashwizComponent', 'selector': 'nui-dashwiz'},{'name': 'DashwizStepComponent', 'selector': 'nui-dashwiz-step'},{'name': 'DataSourceConfigurationComponent', 'selector': 'nui-data-source-configuration'},{'name': 'DataSourceConfigurationV2Component', 'selector': 'nui-data-source-configuration'},{'name': 'DataSourceErrorComponent', 'selector': 'nui-data-source-error'},{'name': 'DescriptionConfigurationComponent', 'selector': 'nui-table-column-description-configuration'},{'name': 'DescriptionConfigurationV2Component', 'selector': 'nui-description-configuration-v2'},{'name': 'DonutContentConfigurationComponent', 'selector': 'nui-donut-content-configuration'},{'name': 'DonutContentPercentageConfigurationComponent', 'selector': 'nui-donut-content-configurator'},{'name': 'DonutContentPercentageFormatterComponent', 'selector': ''},{'name': 'DonutContentRawFormatterComponent', 'selector': ''},{'name': 'DonutContentSumFormatterComponent', 'selector': ''},{'name': 'DropAreaComponent', 'selector': 'nui-drop-area'},{'name': 'EmbeddedContentComponent', 'selector': 'nui-embedded-content'},{'name': 'EmbeddedContentConfigurationComponent', 'selector': 'nui-embedded-content-configuration'},{'name': 'EntityFormattingConfigurationComponent', 'selector': 'nui-entity-formatting-configuration'},{'name': 'FieldMapperAggregatorConfiguratorComponent', 'selector': 'nui-field-mapper-aggregator-configurator'},{'name': 'FormStackComponent', 'selector': 'nui-form-stack'},{'name': 'GroupingConfigurationComponent', 'selector': 'nui-grouping-configuration'},{'name': 'IconFormatterComponent', 'selector': ''},{'name': 'InfoMessageConfigurationComponent', 'selector': 'nui-info-message-configuration'},{'name': 'KpiComponent', 'selector': 'nui-kpi'},{'name': 'KpiDescriptionConfigurationComponent', 'selector': 'nui-kpi-description-configuration'},{'name': 'KpiTilesConfigurationComponent', 'selector': 'nui-kpi-tiles-configuration-component'},{'name': 'LineChartComponent', 'selector': 'nui-line-chart'},{'name': 'LinkConfiguratorComponent', 'selector': 'nui-link-configurator'},{'name': 'LinkFormatterComponent', 'selector': ''},{'name': 'ListGroupItemComponent', 'selector': 'nui-list-group-item'},{'name': 'ListLeafItemComponent', 'selector': 'nui-list-leaf-item'},{'name': 'ListNavigationBarComponent', 'selector': 'nui-navigation-bar'},{'name': 'ListWidgetComponent', 'selector': 'nui-list-widget'},{'name': 'LoadingComponent', 'selector': 'nui-loading'},{'name': 'PercentageFormatterComponent', 'selector': ''},{'name': 'PizzagnaComponent', 'selector': 'nui-pizzagna'},{'name': 'PresentationConfigurationComponent', 'selector': 'nui-table-column-presentation-configuration'},{'name': 'PresentationConfigurationV2Component', 'selector': 'nui-presentation-configuration-v2'},{'name': 'PreviewOverlayComponent', 'selector': 'nui-preview-overlay'},{'name': 'PreviewPlaceholderComponent', 'selector': 'nui-preview-placeholder'},{'name': 'ProportionalChartOptionsEditorComponent', 'selector': 'nui-proportional-chart-options-editor-component'},{'name': 'ProportionalChartOptionsEditorV2Component', 'selector': 'nui-proportional-chart-options-editor-v2-component'},{'name': 'ProportionalDonutContentComponent', 'selector': 'nui-proportional-donut-content'},{'name': 'RawFormatterComponent', 'selector': ''},{'name': 'RefresherConfigurationComponent', 'selector': 'nui-refresher-configuration'},{'name': 'RefreshRateConfiguratorComponent', 'selector': 'nui-refresh-rate-configurator'},{'name': 'SiUnitsFormatterComponent', 'selector': ''},{'name': 'StackComponent', 'selector': 'nui-stack'},{'name': 'StackedAreaChartComponent', 'selector': 'nui-stacked-area-chart'},{'name': 'StackedBarChartComponent', 'selector': 'nui-stacked-bar-chart'},{'name': 'StackedPercentageAreaChartComponent', 'selector': 'nui-stacked-percentage-area-chart'},{'name': 'StatusBarChartComponent', 'selector': 'nui-status-bar-chart'},{'name': 'StatusWithIconFormatterComponent', 'selector': ''},{'name': 'TableColumnConfigurationComponent', 'selector': 'nui-table-column-configuration'},{'name': 'TableColumnsConfigurationComponent', 'selector': 'nui-table-columns-configuration'},{'name': 'TableColumnsConfigurationV2Component', 'selector': 'nui-table-columns-configuration'},{'name': 'TableDataSourceErrorComponent', 'selector': 'nui-table-data-source-error'},{'name': 'TableFiltersEditorComponent', 'selector': 'nui-table-filters-editor-component'},{'name': 'ThresholdsConfigurationComponent', 'selector': 'nui-thresholds-configuration'},{'name': 'TilesComponent', 'selector': 'nui-tiles'},{'name': 'TimeframeSelectionComponent', 'selector': 'nui-timeframe-selection'},{'name': 'TimeseriesMetadataConfigurationComponent', 'selector': 'nui-timeseries-metadata-configuration'},{'name': 'TimeseriesSeriesCollectionConfigurationComponent', 'selector': 'nui-timeseries-series-collection-configuration'},{'name': 'TimeseriesTileDescriptionConfigurationComponent', 'selector': 'nui-table-column-description-configuration'},{'name': 'TimeseriesTileIndicatorDataConfigurationComponent', 'selector': 'nui-timeseries-tile-indicator-data-configuration'},{'name': 'TitleAndDescriptionConfigurationComponent', 'selector': 'nui-title-and-description-configuration'},{'name': 'WidgetBodyComponent', 'selector': 'nui-widget-body'},{'name': 'WidgetBodyContentComponent', 'selector': 'nui-widget-body-content'},{'name': 'WidgetClonerComponent', 'selector': 'nui-widget-cloner'},{'name': 'WidgetComponent', 'selector': 'nui-widget'},{'name': 'WidgetConfiguratorSectionComponent', 'selector': 'nui-widget-configurator-section'},{'name': 'WidgetEditorComponent', 'selector': 'nui-widget-editor'},{'name': 'WidgetErrorComponent', 'selector': 'nui-widget-error'},{'name': 'WidgetHeaderComponent', 'selector': 'nui-widget-header'},{'name': 'WidgetSearchComponent', 'selector': 'nui-widget-search'}];
     var DIRECTIVES = [{'name': 'ComponentPortalDirective', 'selector': '[nuiComponentPortal]'},{'name': 'DelayedMousePresenceDetectionDirective', 'selector': '[nuiDelayedMousePresenceDetection]'},{'name': 'GridsterItemWidgetIdDirective', 'selector': '[nuiGridsterItemWidgetId]'},{'name': 'WidgetEditorDirective', 'selector': '[nuiWidgetEditor]'}];
     var ACTUAL_COMPONENT = {'name': 'StatusWithIconFormatterComponent'};

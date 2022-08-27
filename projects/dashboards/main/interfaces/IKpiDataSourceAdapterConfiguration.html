@@ -128,14 +128,17 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { DecimalPipe } from &quot;@angular/common&quot;;
 import { Inject, Optional } from &quot;@angular/core&quot;;
-import { EventBus, IDataSource, IEvent } from &quot;@nova-ui/bits&quot;;
 import _isNil from &quot;lodash/isNil&quot;;
 
-import { IKpiThresholdsConfig, KpiWidgetThresholdColors } from &quot;../../configurator/components/widgets/kpi/types&quot;;
+import { EventBus, IDataSource, IEvent } from &quot;@nova-ui/bits&quot;;
+
+import {
+    IKpiThresholdsConfig,
+    KpiWidgetThresholdColors,
+} from &quot;../../configurator/components/widgets/kpi/types&quot;;
 import { PizzagnaService } from &quot;../../pizzagna/services/pizzagna.service&quot;;
 import { DATA_SOURCE, PIZZAGNA_EVENT_BUS } from &quot;../../types&quot;;
 import { IKpiData } from &quot;../kpi-widget/types&quot;;
-
 import { DataSourceAdapter } from &quot;./data-source-adapter&quot;;
 
 export interface IKpiDataSourceAdapterConfiguration {
@@ -145,10 +148,12 @@ export interface IKpiDataSourceAdapterConfiguration {
 export class KpiDataSourceAdapter extends DataSourceAdapter&lt;IKpiData&gt; {
     private thresholds: IKpiThresholdsConfig;
 
-    constructor(@Inject(PIZZAGNA_EVENT_BUS) eventBus: EventBus&lt;IEvent&gt;,
+    constructor(
+        @Inject(PIZZAGNA_EVENT_BUS) eventBus: EventBus&lt;IEvent&gt;,
         @Optional() @Inject(DATA_SOURCE) dataSource: IDataSource,
-                                            pizzagnaService: PizzagnaService,
-        private numberPipe: DecimalPipe) {
+        pizzagnaService: PizzagnaService,
+        private numberPipe: DecimalPipe
+    ) {
         super(eventBus, dataSource, pizzagnaService);
     }
 
@@ -164,15 +169,22 @@ export class KpiDataSourceAdapter extends DataSourceAdapter&lt;IKpiData&gt; {
         return this.processNumberFormat(processedValue);
     }
 
-
     public setComponent(component: any, componentId: string) {
         if (componentId) {
             this.componentId &#x3D; componentId;
         }
     }
 
-    private getThresholdColor(thresholdsConfig: IKpiThresholdsConfig, indicatorData: IKpiData, defaultColor: string | undefined) {
-        const thresholdChecks &#x3D; this.getThresholdChecks(thresholdsConfig, indicatorData, thresholdsConfig.reversedThresholds);
+    private getThresholdColor(
+        thresholdsConfig: IKpiThresholdsConfig,
+        indicatorData: IKpiData,
+        defaultColor: string | undefined
+    ) {
+        const thresholdChecks &#x3D; this.getThresholdChecks(
+            thresholdsConfig,
+            indicatorData,
+            thresholdsConfig.reversedThresholds
+        );
         if (thresholdChecks.warningCheck) {
             return KpiWidgetThresholdColors.Warning;
         }
@@ -182,24 +194,46 @@ export class KpiDataSourceAdapter extends DataSourceAdapter&lt;IKpiData&gt; {
         return defaultColor;
     }
 
-    private getThresholdChecks(indicatorConfig: IKpiThresholdsConfig, indicatorData: IKpiData, isReversed: boolean) {
+    private getThresholdChecks(
+        indicatorConfig: IKpiThresholdsConfig,
+        indicatorData: IKpiData,
+        isReversed: boolean
+    ) {
         const warningThreshold &#x3D; indicatorConfig.warningThresholdValue;
         const criticalThreshold &#x3D; indicatorConfig.criticalThresholdValue;
-        const reversedWarningCheck &#x3D; !_isNil(warningThreshold) &amp;&amp; (indicatorData.value &lt;&#x3D; warningThreshold) &amp;&amp; (indicatorData.value &gt; criticalThreshold);
+        const reversedWarningCheck &#x3D;
+            !_isNil(warningThreshold) &amp;&amp;
+            indicatorData.value &lt;&#x3D; warningThreshold &amp;&amp;
+            indicatorData.value &gt; criticalThreshold;
         const reversedCriticalCheck &#x3D; indicatorData.value &lt;&#x3D; criticalThreshold;
-        const normalWarningCheck &#x3D; !_isNil(warningThreshold) &amp;&amp; (indicatorData.value &gt;&#x3D; warningThreshold) &amp;&amp; (indicatorData.value &lt; criticalThreshold);
+        const normalWarningCheck &#x3D;
+            !_isNil(warningThreshold) &amp;&amp;
+            indicatorData.value &gt;&#x3D; warningThreshold &amp;&amp;
+            indicatorData.value &lt; criticalThreshold;
         const normalCriticalCheck &#x3D; indicatorData.value &gt;&#x3D; criticalThreshold;
         return {
-            warningCheck: isReversed ? reversedWarningCheck : normalWarningCheck,
-            criticalCheck: isReversed ? reversedCriticalCheck : normalCriticalCheck,
+            warningCheck: isReversed
+                ? reversedWarningCheck
+                : normalWarningCheck,
+            criticalCheck: isReversed
+                ? reversedCriticalCheck
+                : normalCriticalCheck,
         };
     }
 
     private processThresholds(data: IKpiData) {
-        if (!data || !this.thresholds?.showThresholds || typeof data.value !&#x3D;&#x3D; &quot;number&quot;) {
+        if (
+            !data ||
+            !this.thresholds?.showThresholds ||
+            typeof data.value !&#x3D;&#x3D; &quot;number&quot;
+        ) {
             return data;
         }
-        const thresholdColor &#x3D; this.getThresholdColor(this.thresholds, data, data.backgroundColor);
+        const thresholdColor &#x3D; this.getThresholdColor(
+            this.thresholds,
+            data,
+            data.backgroundColor
+        );
         return {
             ...data,
             backgroundColor: thresholdColor,
@@ -210,7 +244,10 @@ export class KpiDataSourceAdapter extends DataSourceAdapter&lt;IKpiData&gt; {
         if (typeof data?.value !&#x3D;&#x3D; &quot;number&quot; || !data?.numberFormat) {
             return data;
         }
-        const numValue &#x3D; this.numberPipe.transform(data.value, data.numberFormat);
+        const numValue &#x3D; this.numberPipe.transform(
+            data.value,
+            data.numberFormat
+        );
         return {
             ...data,
             value: numValue,

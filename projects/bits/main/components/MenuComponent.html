@@ -288,7 +288,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="99" class="link-to-prism">src/lib/menu/menu/menu.component.ts:99</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="101" class="link-to-prism">src/lib/menu/menu/menu.component.ts:101</a></div>
                             </td>
                         </tr>
 
@@ -674,8 +674,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="158"
-                            class="link-to-prism">src/lib/menu/menu/menu.component.ts:158</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="167"
+                            class="link-to-prism">src/lib/menu/menu/menu.component.ts:167</a></div>
                 </td>
             </tr>
 
@@ -715,8 +715,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="142"
-                            class="link-to-prism">src/lib/menu/menu/menu.component.ts:142</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="151"
+                            class="link-to-prism">src/lib/menu/menu/menu.component.ts:151</a></div>
                 </td>
             </tr>
 
@@ -756,8 +756,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="146"
-                            class="link-to-prism">src/lib/menu/menu/menu.component.ts:146</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="155"
+                            class="link-to-prism">src/lib/menu/menu/menu.component.ts:155</a></div>
                 </td>
             </tr>
 
@@ -797,8 +797,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="150"
-                            class="link-to-prism">src/lib/menu/menu/menu.component.ts:150</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="159"
+                            class="link-to-prism">src/lib/menu/menu/menu.component.ts:159</a></div>
                 </td>
             </tr>
 
@@ -869,8 +869,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="154"
-                            class="link-to-prism">src/lib/menu/menu/menu.component.ts:154</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="163"
+                            class="link-to-prism">src/lib/menu/menu/menu.component.ts:163</a></div>
                 </td>
             </tr>
 
@@ -988,7 +988,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="93" class="link-to-prism">src/lib/menu/menu/menu.component.ts:93</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="95" class="link-to-prism">src/lib/menu/menu/menu.component.ts:95</a></div>
                             </td>
                         </tr>
 
@@ -1025,7 +1025,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="92" class="link-to-prism">src/lib/menu/menu/menu.component.ts:92</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="93" class="link-to-prism">src/lib/menu/menu/menu.component.ts:93</a></div>
                             </td>
                         </tr>
 
@@ -1088,7 +1088,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="95" class="link-to-prism">src/lib/menu/menu/menu.component.ts:95</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="97" class="link-to-prism">src/lib/menu/menu/menu.component.ts:97</a></div>
                             </td>
                         </tr>
 
@@ -1124,7 +1124,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="96" class="link-to-prism">src/lib/menu/menu/menu.component.ts:96</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="98" class="link-to-prism">src/lib/menu/menu/menu.component.ts:98</a></div>
                             </td>
                         </tr>
 
@@ -1161,7 +1161,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="94" class="link-to-prism">src/lib/menu/menu/menu.component.ts:94</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="96" class="link-to-prism">src/lib/menu/menu/menu.component.ts:96</a></div>
                             </td>
                         </tr>
 
@@ -1210,7 +1210,7 @@ import { IMenuGroup } from &quot;../public-api&quot;;
 @Component({
     selector: &quot;nui-menu&quot;,
     host: {
-        &quot;class&quot;: &quot;nui-menu&quot;,
+        class: &quot;nui-menu&quot;,
         &quot;[attr.aria-label]&quot;: &quot;title || ariaLabel&quot;,
     },
     templateUrl: &quot;./menu.component.html&quot;,
@@ -1265,17 +1265,21 @@ export class MenuComponent implements AfterViewInit, OnChanges, OnDestroy {
 
     public menuOpenStream &#x3D; new Subject&lt;boolean&gt;();
     // Only menu that resolves *ngIf on &lt;ng-content&gt; with these menuItems can correctly get ContentChildren
-    @ContentChildren(MenuItemBaseComponent, {descendants: true}) public menuItems: QueryList&lt;MenuItemBaseComponent&gt;;
-    @ContentChildren(MenuGroupComponent) public menuGroups: QueryList&lt;MenuGroupComponent&gt;;
+    @ContentChildren(MenuItemBaseComponent, { descendants: true })
+    public menuItems: QueryList&lt;MenuItemBaseComponent&gt;;
+    @ContentChildren(MenuGroupComponent)
+    public menuGroups: QueryList&lt;MenuGroupComponent&gt;;
     @ViewChild(PopupComponent) public popup: PopupComponent;
     @ViewChild(MenuPopupComponent) menuPopup: MenuPopupComponent;
     @ViewChild(&quot;menuToggle&quot;, { read: ElementRef }) menuToggle: ElementRef;
 
     private menuKeyControlListeners: Function[] &#x3D; [];
     private focusMonitorSubscription: Subscription;
-    constructor(private keyControlService: MenuKeyControlService,
-                private renderer: Renderer2,
-                private focusMonitor: FocusMonitor) {}
+    constructor(
+        private keyControlService: MenuKeyControlService,
+        private renderer: Renderer2,
+        private focusMonitor: FocusMonitor
+    ) {}
 
     public ngOnChanges(changes: SimpleChanges): void {
         if (changes[&quot;size&quot;]) {
@@ -1286,7 +1290,6 @@ export class MenuComponent implements AfterViewInit, OnChanges, OnDestroy {
         if (changes[&quot;displayStyle&quot;]) {
             this.iconColor &#x3D; this.displayStyle &#x3D;&#x3D;&#x3D; &quot;primary&quot; ? &quot;white&quot; : &quot;&quot;;
         }
-
     }
 
     ngAfterViewInit() {
@@ -1296,23 +1299,29 @@ export class MenuComponent implements AfterViewInit, OnChanges, OnDestroy {
         this.keyControlService.initKeyboardManager();
         // listening to events for key-control
         this.menuKeyControlListeners.push(
-            this.renderer.listen(this.menuToggle.nativeElement, &quot;keydown&quot;, (event: KeyboardEvent) &#x3D;&gt; {
-                if (!this.popup.popupToggle.disabled) {
-                    this.keyControlService.handleKeydown(event);
+            this.renderer.listen(
+                this.menuToggle.nativeElement,
+                &quot;keydown&quot;,
+                (event: KeyboardEvent) &#x3D;&gt; {
+                    if (!this.popup.popupToggle.disabled) {
+                        this.keyControlService.handleKeydown(event);
+                    }
                 }
-            })
+            )
         );
         // opening menu on focusin
         // The FocusMonitor is an injectable service that can be used to listen for changes in the focus state of an element.
         // It&#x27;s more powerful than just listening for focus or blur events because it tells you how the element was focused
         // (via mouse, keyboard, touch, or programmatically).
-        this.focusMonitorSubscription &#x3D; this.focusMonitor.monitor(this.menuToggle.nativeElement).subscribe((origin: FocusOrigin) &#x3D;&gt; {
-            if (origin &#x3D;&#x3D;&#x3D; &quot;keyboard&quot;) {
-                if (!this.popup.popupToggle.disabled) {
-                    this.popup.toggleOpened(new FocusEvent(&quot;focusin&quot;));
+        this.focusMonitorSubscription &#x3D; this.focusMonitor
+            .monitor(this.menuToggle.nativeElement)
+            .subscribe((origin: FocusOrigin) &#x3D;&gt; {
+                if (origin &#x3D;&#x3D;&#x3D; &quot;keyboard&quot;) {
+                    if (!this.popup.popupToggle.disabled) {
+                        this.popup.toggleOpened(new FocusEvent(&quot;focusin&quot;));
+                    }
                 }
-            }
-        });
+            });
     }
 
     public isMenuCompact() {
@@ -1346,7 +1355,7 @@ export class MenuComponent implements AfterViewInit, OnChanges, OnDestroy {
     }
 
     ngOnDestroy(): void {
-        this.menuKeyControlListeners.forEach(listener &#x3D;&gt; listener());
+        this.menuKeyControlListeners.forEach((listener) &#x3D;&gt; listener());
         this.focusMonitorSubscription.unsubscribe();
     }
 }
@@ -1368,7 +1377,7 @@ export class MenuComponent implements AfterViewInit, OnChanges, OnDestroy {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><nui-popup [class.nui-menu--compact]="isMenuCompact()"           (opened)="onMenuOpen()"           [appendToBody]="appendToBody"           [width]="widthOfPopup"           [contextClass]="contextClass + \' nui-menu-popup-host\'">    <button #menuToggle            nui-button            nuiPopupToggle            [disabled]="isDisabled"            aria-haspopup="true"            type="button"            (blur)="onBlur($event)"            [displayStyle]="displayStyle"            [size]="size"            [icon]="icon"            [iconRight]="isTitlePresent()"            class="menu-button no-shadow"            [isEmpty]="!isTitlePresent()">        <span>{{title}}</span>    </button>    <div popupAreaContent>        <nui-menu-popup *ngIf="itemsSource" [itemsSource]="itemsSource" [size]="size"></nui-menu-popup>        <ng-content *ngIf="!itemsSource"></ng-content>    </div></nui-popup></div>'
+        var COMPONENT_TEMPLATE = '<div><nui-popup    [class.nui-menu--compact]="isMenuCompact()"    (opened)="onMenuOpen()"    [appendToBody]="appendToBody"    [width]="widthOfPopup"    [contextClass]="contextClass + \' nui-menu-popup-host\'">    <button        #menuToggle        nui-button        nuiPopupToggle        [disabled]="isDisabled"        aria-haspopup="true"        type="button"        (blur)="onBlur($event)"        [displayStyle]="displayStyle"        [size]="size"        [icon]="icon"        [iconRight]="isTitlePresent()"        class="menu-button no-shadow"        [isEmpty]="!isTitlePresent()"    >        <span>{{ title }}</span>    </button>    <div popupAreaContent>        <nui-menu-popup            *ngIf="itemsSource"            [itemsSource]="itemsSource"            [size]="size"        ></nui-menu-popup>        <ng-content *ngIf="!itemsSource"></ng-content>    </div></nui-popup></div>'
     var COMPONENTS = [{'name': 'BreadcrumbComponent', 'selector': 'nui-breadcrumb'},{'name': 'BusyComponent', 'selector': '[nui-busy]'},{'name': 'ButtonComponent', 'selector': '[nui-button]'},{'name': 'CardComponent', 'selector': 'nui-card'},{'name': 'CardGroupComponent', 'selector': 'nui-card-group'},{'name': 'CheckboxComponent', 'selector': 'nui-checkbox'},{'name': 'CheckboxGroupComponent', 'selector': 'nui-checkbox-group'},{'name': 'ChipsComponent', 'selector': 'nui-chips'},{'name': 'ChipsOverflowComponent', 'selector': 'nui-chips-overflow'},{'name': 'ComboboxComponent', 'selector': 'nui-combobox'},{'name': 'ComboboxV2Component', 'selector': 'nui-combobox-v2'},{'name': 'CustomValidationMessageComponent', 'selector': 'nui-custom-validation-message'},{'name': 'DatePickerComponent', 'selector': 'nui-date-picker'},{'name': 'DateTimePickerComponent', 'selector': 'nui-date-time-picker'},{'name': 'DialogComponent', 'selector': 'nui-dialog-window'},{'name': 'ExpanderComponent', 'selector': 'nui-expander'},{'name': 'FormFieldComponent', 'selector': 'nui-form-field'},{'name': 'IconComponent', 'selector': 'nui-icon'},{'name': 'ImageComponent', 'selector': 'nui-image'},{'name': 'MenuComponent', 'selector': 'nui-menu'},{'name': 'MessageComponent', 'selector': 'nui-message'},{'name': 'OverlayComponent', 'selector': 'nui-overlay'},{'name': 'PaginatorComponent', 'selector': 'nui-paginator'},{'name': 'PanelComponent', 'selector': 'nui-panel'},{'name': 'PopoverComponent', 'selector': 'nui-popover'},{'name': 'PopupComponent', 'selector': 'nui-popup'},{'name': 'PopupDeprecatedComponent', 'selector': 'nui-popup-deprecated'},{'name': 'ProgressComponent', 'selector': 'nui-progress'},{'name': 'QuickPickerComponent', 'selector': 'nui-quick-picker'},{'name': 'RadioGroupComponent', 'selector': 'nui-radio-group'},{'name': 'RepeatComponent', 'selector': 'nui-repeat'},{'name': 'SearchComponent', 'selector': 'nui-search'},{'name': 'SelectComponent', 'selector': 'nui-select'},{'name': 'SelectV2Component', 'selector': 'nui-select-v2'},{'name': 'SheetComponent', 'selector': 'nui-sheet'},{'name': 'SheetGroupComponent', 'selector': 'nui-sheet-group'},{'name': 'SorterComponent', 'selector': 'nui-sorter'},{'name': 'SpinnerComponent', 'selector': 'nui-spinner'},{'name': 'SwitchComponent', 'selector': 'nui-switch'},{'name': 'TabHeadingGroupComponent', 'selector': 'nui-tab-heading-group'},{'name': 'TableComponent', 'selector': 'nui-table, table[nui-table]'},{'name': 'TextboxComponent', 'selector': 'nui-textbox'},{'name': 'TextboxNumberComponent', 'selector': 'nui-textbox-number'},{'name': 'TimeFrameBarComponent', 'selector': 'nui-time-frame-bar'},{'name': 'TimeFramePickerComponent', 'selector': 'nui-time-frame-picker'},{'name': 'TimePickerComponent', 'selector': 'nui-time-picker'},{'name': 'ToastComponent', 'selector': 'nui-toast-component'},{'name': 'ToolbarComponent', 'selector': 'nui-toolbar'},{'name': 'WizardComponent', 'selector': 'nui-wizard'},{'name': 'WizardHorizontalComponent', 'selector': 'nui-wizard-horizontal'},{'name': 'WizardStepComponent', 'selector': 'nui-wizard-step'}];
     var DIRECTIVES = [{'name': 'ClickInterceptorDirective', 'selector': '[nuiClickInterceptor]'},{'name': 'DndDropTargetDirective', 'selector': '[cdkDropList][nuiDndDropTarget]'},{'name': 'MarkAsSelectedItemDirective', 'selector': '[nuiMarkAsSelectedItem]'},{'name': 'TableStickyHeaderDirective', 'selector': 'cdk-virtual-scroll-viewport[tableStickyHeader]'},{'name': 'TableVirtualScrollDirective', 'selector': '[tableVirtualScroll]:not([rowCount])'},{'name': 'TableVirtualScrollLinearDirective', 'selector': '[tableVirtualScroll]:not([offset])'},{'name': 'TooltipDirective', 'selector': '[nuiTooltip]'},{'name': 'WizardDirective', 'selector': '[nuiWizard]'},{'name': 'WizardStepFooterDirective', 'selector': '[nuiWizardStepFooter]'},{'name': 'WizardStepLabelDirective', 'selector': '[nuiWizardStepLabel]'}];
     var ACTUAL_COMPONENT = {'name': 'MenuComponent'};

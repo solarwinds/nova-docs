@@ -141,7 +141,7 @@ It needs to be configured with the events that need transmission each way.</p>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/lib/services/widget-to-dashboard-event-proxy.service.ts:46</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/lib/services/widget-to-dashboard-event-proxy.service.ts:53</a></div>
                             </td>
                         </tr>
 
@@ -256,8 +256,8 @@ It needs to be configured with the events that need transmission each way.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="83"
-                            class="link-to-prism">src/lib/services/widget-to-dashboard-event-proxy.service.ts:83</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="96"
+                            class="link-to-prism">src/lib/services/widget-to-dashboard-event-proxy.service.ts:96</a></div>
                 </td>
             </tr>
 
@@ -328,8 +328,8 @@ It needs to be configured with the events that need transmission each way.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="79"
-                            class="link-to-prism">src/lib/services/widget-to-dashboard-event-proxy.service.ts:79</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="92"
+                            class="link-to-prism">src/lib/services/widget-to-dashboard-event-proxy.service.ts:92</a></div>
                 </td>
             </tr>
 
@@ -400,8 +400,8 @@ It needs to be configured with the events that need transmission each way.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="55"
-                            class="link-to-prism">src/lib/services/widget-to-dashboard-event-proxy.service.ts:55</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="66"
+                            class="link-to-prism">src/lib/services/widget-to-dashboard-event-proxy.service.ts:66</a></div>
                 </td>
             </tr>
 
@@ -441,8 +441,8 @@ It needs to be configured with the events that need transmission each way.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="60"
-                            class="link-to-prism">src/lib/services/widget-to-dashboard-event-proxy.service.ts:60</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="71"
+                            class="link-to-prism">src/lib/services/widget-to-dashboard-event-proxy.service.ts:71</a></div>
                 </td>
             </tr>
 
@@ -513,8 +513,8 @@ It needs to be configured with the events that need transmission each way.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="64"
-                            class="link-to-prism">src/lib/services/widget-to-dashboard-event-proxy.service.ts:64</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="75"
+                            class="link-to-prism">src/lib/services/widget-to-dashboard-event-proxy.service.ts:75</a></div>
                 </td>
             </tr>
 
@@ -588,7 +588,7 @@ It needs to be configured with the events that need transmission each way.</p>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/lib/services/widget-to-dashboard-event-proxy.service.ts:46</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/lib/services/widget-to-dashboard-event-proxy.service.ts:53</a></div>
                             </td>
                         </tr>
 
@@ -602,15 +602,21 @@ It needs to be configured with the events that need transmission each way.</p>
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Inject, Injectable, OnDestroy, Optional } from &quot;@angular/core&quot;;
-import { EventBus, IEvent, IEventDefinition } from &quot;@nova-ui/bits&quot;;
 import keyBy from &quot;lodash/keyBy&quot;;
 import uniq from &quot;lodash/uniq&quot;;
 import { Subject, Subscription } from &quot;rxjs&quot;;
 import { takeUntil } from &quot;rxjs/operators&quot;;
 
-import { PizzagnaService } from &quot;../pizzagna/services/pizzagna.service&quot;;
-import { DASHBOARD_EVENT_BUS, IConfigurable, IProperties, PizzagnaLayer, PIZZAGNA_EVENT_BUS } from &quot;../types&quot;;
+import { EventBus, IEvent, IEventDefinition } from &quot;@nova-ui/bits&quot;;
 
+import { PizzagnaService } from &quot;../pizzagna/services/pizzagna.service&quot;;
+import {
+    DASHBOARD_EVENT_BUS,
+    IConfigurable,
+    IProperties,
+    PizzagnaLayer,
+    PIZZAGNA_EVENT_BUS,
+} from &quot;../types&quot;;
 import { EventRegistryService } from &quot;./event-registry.service&quot;;
 import { WidgetConfigurationService } from &quot;./widget-configuration.service&quot;;
 
@@ -637,8 +643,9 @@ export interface IWidgetToDashboardEventProxyConfiguration extends IProperties {
  * It needs to be configured with the events that need transmission each way.
  */
 @Injectable()
-export class WidgetToDashboardEventProxyService implements IConfigurable, OnDestroy {
-
+export class WidgetToDashboardEventProxyService
+    implements IConfigurable, OnDestroy
+{
     private upstreamSubscriptions: Record&lt;string, Subscription&gt; &#x3D; {};
     private downstreamSubscriptions: Record&lt;string, Subscription&gt; &#x3D; {};
     private destroy$ &#x3D; new Subject();
@@ -648,12 +655,16 @@ export class WidgetToDashboardEventProxyService implements IConfigurable, OnDest
     private downstreams?: string[];
     public providerKey: string;
 
-    constructor(@Inject(PIZZAGNA_EVENT_BUS) private pizzagnaBus: EventBus&lt;IEvent&gt;,
-                @Optional() @Inject(DASHBOARD_EVENT_BUS) private dashboardBus: EventBus&lt;IEvent&gt;,
-                @Optional() private widgetConfigurationService: WidgetConfigurationService,
-                private eventRegistry: EventRegistryService,
-                private pizzagnaService: PizzagnaService) {
-    }
+    constructor(
+        @Inject(PIZZAGNA_EVENT_BUS) private pizzagnaBus: EventBus&lt;IEvent&gt;,
+        @Optional()
+        @Inject(DASHBOARD_EVENT_BUS)
+        private dashboardBus: EventBus&lt;IEvent&gt;,
+        @Optional()
+        private widgetConfigurationService: WidgetConfigurationService,
+        private eventRegistry: EventRegistryService,
+        private pizzagnaService: PizzagnaService
+    ) {}
 
     public ngOnDestroy(): void {
         this.destroy$.next();
@@ -664,7 +675,9 @@ export class WidgetToDashboardEventProxyService implements IConfigurable, OnDest
         this.component &#x3D; component;
     }
 
-    public updateConfiguration(properties: IWidgetToDashboardEventProxyConfiguration): void {
+    public updateConfiguration(
+        properties: IWidgetToDashboardEventProxyConfiguration
+    ): void {
         this.providerKey &#x3D; properties.providerKey;
         this.upstreams &#x3D; properties.upstreams;
         this.downstreams &#x3D; properties.downstreams;
@@ -687,7 +700,10 @@ export class WidgetToDashboardEventProxyService implements IConfigurable, OnDest
         this.addStream(stream, &quot;downstreams&quot;);
     }
 
-    private addStream(stream: IEventDefinition, streamKey: &quot;upstreams&quot; | &quot;downstreams&quot;) {
+    private addStream(
+        stream: IEventDefinition,
+        streamKey: &quot;upstreams&quot; | &quot;downstreams&quot;
+    ) {
         const streams &#x3D; uniq((this[streamKey] || []).concat(stream.id));
         this[streamKey] &#x3D; streams;
 
@@ -695,12 +711,15 @@ export class WidgetToDashboardEventProxyService implements IConfigurable, OnDest
             return;
         }
 
-        this.pizzagnaService.setProperty({
-            componentId: this.component.componentId,
-            pizzagnaKey: PizzagnaLayer.Data,
-            providerKey: this.providerKey,
-            propertyPath: [streamKey],
-        }, streams);
+        this.pizzagnaService.setProperty(
+            {
+                componentId: this.component.componentId,
+                pizzagnaKey: PizzagnaLayer.Data,
+                providerKey: this.providerKey,
+                propertyPath: [streamKey],
+            },
+            streams
+        );
     }
 
     private registerUpstreamSubscriptions(...upstreams: string[]) {
@@ -708,13 +727,19 @@ export class WidgetToDashboardEventProxyService implements IConfigurable, OnDest
             return;
         }
 
-        this.registerSubscriptions(upstreams, this.upstreamSubscriptions, this.pizzagnaBus,
-                                   (stream: IEventDefinition, event: IEvent) &#x3D;&gt; {
-                                       // add widgetId to all events passed to the dashboard
-                                       const widgetId &#x3D; this.widgetConfigurationService.getWidget().id;
+        this.registerSubscriptions(
+            upstreams,
+            this.upstreamSubscriptions,
+            this.pizzagnaBus,
+            (stream: IEventDefinition, event: IEvent) &#x3D;&gt; {
+                // add widgetId to all events passed to the dashboard
+                const widgetId &#x3D; this.widgetConfigurationService.getWidget().id;
 
-                                       this.dashboardBus.getStream(stream).next(&lt;any&gt;Object.assign({}, event, { widgetId }));
-                                   });
+                this.dashboardBus
+                    .getStream(stream)
+                    .next(&lt;any&gt;Object.assign({}, event, { widgetId }));
+            }
+        );
     }
 
     private registerDownstreamSubscriptions(...downstreams: string[]) {
@@ -722,19 +747,32 @@ export class WidgetToDashboardEventProxyService implements IConfigurable, OnDest
             return;
         }
 
-        this.registerSubscriptions(downstreams, this.downstreamSubscriptions, this.dashboardBus,
-                                   (stream: IEventDefinition, event: IWidgetEvent) &#x3D;&gt; {
-                                       // pass only events that have matching widgetId or a widgetId that is not defined
-                                       const widgetId &#x3D; this.widgetConfigurationService.getWidget().id;
-                                       if (typeof event.widgetId &#x3D;&#x3D;&#x3D; &quot;undefined&quot; || widgetId &#x3D;&#x3D;&#x3D; event.widgetId) {
-                                           this.pizzagnaBus.getStream(stream).next(event);
-                                       }
-                                   });
+        this.registerSubscriptions(
+            downstreams,
+            this.downstreamSubscriptions,
+            this.dashboardBus,
+            (stream: IEventDefinition, event: IWidgetEvent) &#x3D;&gt; {
+                // pass only events that have matching widgetId or a widgetId that is not defined
+                const widgetId &#x3D; this.widgetConfigurationService.getWidget().id;
+                if (
+                    typeof event.widgetId &#x3D;&#x3D;&#x3D; &quot;undefined&quot; ||
+                    widgetId &#x3D;&#x3D;&#x3D; event.widgetId
+                ) {
+                    this.pizzagnaBus.getStream(stream).next(event);
+                }
+            }
+        );
     }
 
-    private registerSubscriptions(streams: string[] &#x3D; [], subscriptions: Record&lt;string, Subscription&gt;, sourceBus: EventBus&lt;IEvent&gt;,
-                                  handleEvent: (stream: IEventDefinition, event: IEvent) &#x3D;&gt; void) {
-        const streamsIndex: Record&lt;string, string&gt; | null &#x3D; streams ? keyBy(streams, x &#x3D;&gt; x) : null;
+    private registerSubscriptions(
+        streams: string[] &#x3D; [],
+        subscriptions: Record&lt;string, Subscription&gt;,
+        sourceBus: EventBus&lt;IEvent&gt;,
+        handleEvent: (stream: IEventDefinition, event: IEvent) &#x3D;&gt; void
+    ) {
+        const streamsIndex: Record&lt;string, string&gt; | null &#x3D; streams
+            ? keyBy(streams, (x) &#x3D;&gt; x)
+            : null;
 
         // remove subscriptions that are not valid anymore
         for (const streamId of Object.keys(subscriptions)) {
@@ -745,9 +783,12 @@ export class WidgetToDashboardEventProxyService implements IConfigurable, OnDest
         }
 
         // add subscriptions that were not registered before
-        for (const streamId of Object.keys(streamsIndex ?? {}).filter(s &#x3D;&gt; !subscriptions[s])) {
+        for (const streamId of Object.keys(streamsIndex ?? {}).filter(
+            (s) &#x3D;&gt; !subscriptions[s]
+        )) {
             const eventDefinition &#x3D; this.eventRegistry.getEvent(streamId);
-            subscriptions[streamId] &#x3D; sourceBus.getStream(eventDefinition)
+            subscriptions[streamId] &#x3D; sourceBus
+                .getStream(eventDefinition)
                 .pipe(takeUntil(this.destroy$))
                 .subscribe((event: IEvent) &#x3D;&gt; {
                     handleEvent(eventDefinition, event);

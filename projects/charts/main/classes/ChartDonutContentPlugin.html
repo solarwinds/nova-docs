@@ -189,7 +189,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/core/plugins/chart-donut-content-plugin.ts:17</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/core/plugins/chart-donut-content-plugin.ts:16</a></div>
                             </td>
                         </tr>
 
@@ -222,7 +222,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/core/plugins/chart-donut-content-plugin.ts:14</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/core/plugins/chart-donut-content-plugin.ts:13</a></div>
                             </td>
                         </tr>
 
@@ -262,7 +262,7 @@
                             </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in         <code><a href="../classes/ChartPlugin.html#source" target="_self" >ChartPlugin:7</a></code>
+                                    <div class="io-line">Defined in         <code><a href="../classes/ChartPlugin.html#source" target="_self" >ChartPlugin:6</a></code>
 </div>
                             </td>
                         </tr>
@@ -301,8 +301,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="40"
-                            class="link-to-prism">src/core/plugins/chart-donut-content-plugin.ts:40</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="50"
+                            class="link-to-prism">src/core/plugins/chart-donut-content-plugin.ts:50</a></div>
                 </td>
             </tr>
 
@@ -342,8 +342,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="24"
-                            class="link-to-prism">src/core/plugins/chart-donut-content-plugin.ts:24</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="23"
+                            class="link-to-prism">src/core/plugins/chart-donut-content-plugin.ts:23</a></div>
                 </td>
             </tr>
 
@@ -389,7 +389,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/ChartPlugin.html#source" target="_self" >ChartPlugin:15</a></code>
+                        <div class="io-line">Defined in         <code><a href="../classes/ChartPlugin.html#source" target="_self" >ChartPlugin:14</a></code>
 </div>
                 </td>
             </tr>
@@ -436,7 +436,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/ChartPlugin.html#source" target="_self" >ChartPlugin:9</a></code>
+                        <div class="io-line">Defined in         <code><a href="../classes/ChartPlugin.html#source" target="_self" >ChartPlugin:8</a></code>
 </div>
                 </td>
             </tr>
@@ -483,7 +483,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/ChartPlugin.html#source" target="_self" >ChartPlugin:11</a></code>
+                        <div class="io-line">Defined in         <code><a href="../classes/ChartPlugin.html#source" target="_self" >ChartPlugin:10</a></code>
 </div>
                 </td>
             </tr>
@@ -530,7 +530,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/ChartPlugin.html#source" target="_self" >ChartPlugin:13</a></code>
+                        <div class="io-line">Defined in         <code><a href="../classes/ChartPlugin.html#source" target="_self" >ChartPlugin:12</a></code>
 </div>
                 </td>
             </tr>
@@ -562,12 +562,11 @@ import { Subject } from &quot;rxjs&quot;;
 
 import { RadialRenderer } from &quot;../../renderers/radial/radial-renderer&quot;;
 import { ChartPlugin } from &quot;../common/chart-plugin&quot;;
-
 import { IElementPosition } from &quot;./types&quot;;
 
 /**
-* This plugin calculates new size and position for content inside donut chart
-*/
+ * This plugin calculates new size and position for content inside donut chart
+ */
 export class ChartDonutContentPlugin extends ChartPlugin {
     /** Subject for getting updates on the content position */
     public contentPositionUpdateSubject &#x3D; new Subject&lt;IElementPosition&gt;();
@@ -581,12 +580,23 @@ export class ChartDonutContentPlugin extends ChartPlugin {
     };
 
     public updateDimensions() {
-        const radius &#x3D; this.chart.getDataManager().chartSeriesSet.reduce((prev: number | undefined, current) &#x3D;&gt; {
-            if (current.renderer instanceof RadialRenderer &amp;&amp; !isUndefined(prev)) {
-                return Math.min(prev, current.renderer.getInnerRadius(current.scales.r.range(), current.data.length - 1));
-            }
-            return prev;
-        }, Infinity);
+        const radius &#x3D; this.chart
+            .getDataManager()
+            .chartSeriesSet.reduce((prev: number | undefined, current) &#x3D;&gt; {
+                if (
+                    current.renderer instanceof RadialRenderer &amp;&amp;
+                    !isUndefined(prev)
+                ) {
+                    return Math.min(
+                        prev,
+                        current.renderer.getInnerRadius(
+                            current.scales.r.range(),
+                            current.data.length - 1
+                        )
+                    );
+                }
+                return prev;
+            }, Infinity);
 
         if (isUndefined(radius)) {
             throw new Error(&quot;Radius is undefined&quot;);
@@ -601,10 +611,13 @@ export class ChartDonutContentPlugin extends ChartPlugin {
     }
 
     private getContentPosition(areaSize: number): IElementPosition {
-        const basics &#x3D; [this.chart.getGrid().config().dimension.outerHeight() / 2, this.chart.getGrid().config().dimension.outerWidth() / 2];
+        const basics &#x3D; [
+            this.chart.getGrid().config().dimension.outerHeight() / 2,
+            this.chart.getGrid().config().dimension.outerWidth() / 2,
+        ];
         return {
-            top: basics[0] - (areaSize / Math.sqrt(2)),
-            left: basics[1] - (areaSize / Math.sqrt(2)),
+            top: basics[0] - areaSize / Math.sqrt(2),
+            left: basics[1] - areaSize / Math.sqrt(2),
             width: areaSize * Math.sqrt(2),
             height: areaSize * Math.sqrt(2),
         };

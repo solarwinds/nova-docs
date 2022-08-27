@@ -332,7 +332,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/chart-popover/chart-popover.component.ts:41</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/chart-popover/chart-popover.component.ts:43</a></div>
                             </td>
                         </tr>
 
@@ -395,9 +395,10 @@
     TemplateRef,
     ViewChild,
 } from &quot;@angular/core&quot;;
-import { PopoverComponent } from &quot;@nova-ui/bits&quot;;
 import { Subject } from &quot;rxjs&quot;;
 import { takeUntil } from &quot;rxjs/operators&quot;;
+
+import { PopoverComponent } from &quot;@nova-ui/bits&quot;;
 
 import { IDataPointsPayload } from &quot;../core/common/types&quot;;
 import { ChartPopoverPlugin } from &quot;../core/plugins/chart-popover-plugin&quot;;
@@ -409,7 +410,6 @@ import { IElementPosition } from &quot;../core/plugins/types&quot;;
     styleUrls: [&quot;./chart-popover.component.less&quot;],
 })
 export class ChartPopoverComponent implements OnChanges, OnInit, OnDestroy {
-
     @Input() plugin: ChartPopoverPlugin;
 
     @Input() template: TemplateRef&lt;any&gt;;
@@ -421,7 +421,10 @@ export class ChartPopoverComponent implements OnChanges, OnInit, OnDestroy {
     private destroy$ &#x3D; new Subject();
     private initPlugin$ &#x3D; new Subject();
 
-    constructor(private changeDetector: ChangeDetectorRef, public element: ElementRef) { }
+    constructor(
+        private changeDetector: ChangeDetectorRef,
+        public element: ElementRef
+    ) {}
 
     public ngOnChanges(changes: SimpleChanges) {
         if (changes.plugin &amp;&amp; !changes.plugin.isFirstChange()) {
@@ -442,25 +445,24 @@ export class ChartPopoverComponent implements OnChanges, OnInit, OnDestroy {
     private initPlugin() {
         this.initPlugin$.next();
 
-        this.plugin?.openPopoverSubject.pipe(
-            takeUntil(this.initPlugin$),
-            takeUntil(this.destroy$)
-        ).subscribe(() &#x3D;&gt; {
-            this.changeDetector.markForCheck();
-        });
+        this.plugin?.openPopoverSubject
+            .pipe(takeUntil(this.initPlugin$), takeUntil(this.destroy$))
+            .subscribe(() &#x3D;&gt; {
+                this.changeDetector.markForCheck();
+            });
 
-        this.plugin?.updatePositionSubject.pipe(
-            takeUntil(this.initPlugin$),
-            takeUntil(this.destroy$)
-        ).subscribe((position: IElementPosition) &#x3D;&gt; {
-            this.popover?.resetSize();
-            // calculating a width offset to position the popover&#x27;s host element at the midpoint of the popover target
-            const widthOffset &#x3D; position.width / 2;
-            this.element.nativeElement.style.left &#x3D; position.left + widthOffset + &quot;px&quot;;
-            this.element.nativeElement.style.top &#x3D; position.top + &quot;px&quot;;
-            this.popover?.updatePosition();
-            this.update.next(this.plugin?.dataPoints);
-        });
+        this.plugin?.updatePositionSubject
+            .pipe(takeUntil(this.initPlugin$), takeUntil(this.destroy$))
+            .subscribe((position: IElementPosition) &#x3D;&gt; {
+                this.popover?.resetSize();
+                // calculating a width offset to position the popover&#x27;s host element at the midpoint of the popover target
+                const widthOffset &#x3D; position.width / 2;
+                this.element.nativeElement.style.left &#x3D;
+                    position.left + widthOffset + &quot;px&quot;;
+                this.element.nativeElement.style.top &#x3D; position.top + &quot;px&quot;;
+                this.popover?.updatePosition();
+                this.update.next(this.plugin?.dataPoints);
+            });
     }
 }
 </code></pre>
@@ -476,7 +478,7 @@ export class ChartPopoverComponent implements OnChanges, OnInit, OnDestroy {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div *ngIf="plugin && plugin.dataPoints">    <nui-popover class="chart-popover__popover"                 trigger="openPopoverSubject"                 placement="top"                 [unlimited]="true"                 [template]="popoverTemplate"                 [openPopover]="plugin.openPopoverSubject"                 [closePopover]="plugin.closePopoverSubject"                 [hasPadding]="false"                 [container]="element.nativeElement"                 [style.height.px]="plugin.popoverTargetPosition.height"                 [withGrowAfterOpen]="true">    </nui-popover>    <ng-template #popoverTemplate>        <ng-container *ngTemplateOutlet="template; context: {dataPoints:plugin.dataPoints}"></ng-container>    </ng-template></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div *ngIf="plugin && plugin.dataPoints">    <nui-popover        class="chart-popover__popover"        trigger="openPopoverSubject"        placement="top"        [unlimited]="true"        [template]="popoverTemplate"        [openPopover]="plugin.openPopoverSubject"        [closePopover]="plugin.closePopoverSubject"        [hasPadding]="false"        [container]="element.nativeElement"        [style.height.px]="plugin.popoverTargetPosition.height"        [withGrowAfterOpen]="true"    >    </nui-popover>    <ng-template #popoverTemplate>        <ng-container            *ngTemplateOutlet="                template;                context: { dataPoints: plugin.dataPoints }            "        ></ng-container>    </ng-template></div></div>'
     var COMPONENTS = [{'name': 'BasicLegendTileComponent', 'selector': 'nui-basic-legend-tile'},{'name': 'ChartComponent', 'selector': 'nui-chart'},{'name': 'ChartDonutContentComponent', 'selector': 'nui-chart-donut-content'},{'name': 'ChartMarkerComponent', 'selector': 'nui-chart-marker'},{'name': 'ChartPopoverComponent', 'selector': 'nui-chart-popover'},{'name': 'ChartTooltipComponent', 'selector': 'nui-chart-tooltip'},{'name': 'ChartTooltipsComponent', 'selector': 'nui-chart-tooltips'},{'name': 'LegendComponent', 'selector': 'nui-legend'},{'name': 'LegendSeriesComponent', 'selector': 'nui-legend-series'},{'name': 'RichLegendTileComponent', 'selector': 'nui-rich-legend-tile'}];
     var DIRECTIVES = [{'name': 'ChartCollectionIdDirective', 'selector': '[nuiChartCollectionId]'}];
     var ACTUAL_COMPONENT = {'name': 'ChartPopoverComponent'};

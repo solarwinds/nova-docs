@@ -211,7 +211,7 @@ It keeps track of already given colors to given entities to avoid conflicts.</p>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/core/common/palette/mapped-value-provider.ts:13</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/core/common/palette/mapped-value-provider.ts:15</a></div>
                             </td>
                         </tr>
 
@@ -249,8 +249,8 @@ It keeps track of already given colors to given entities to avoid conflicts.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="16"
-                            class="link-to-prism">src/core/common/palette/mapped-value-provider.ts:16</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="18"
+                            class="link-to-prism">src/core/common/palette/mapped-value-provider.ts:18</a></div>
                 </td>
             </tr>
 
@@ -283,16 +283,17 @@ It keeps track of already given colors to given entities to avoid conflicts.</p>
  * It keeps track of already given colors to given entities to avoid conflicts.
  */
 export class MappedValueProvider&lt;T&gt; implements IValueProvider&lt;T&gt; {
-
-    constructor(private valueMap: { [key: string]: T }, private defaultValue?: T) {
+    constructor(
+        private valueMap: { [key: string]: T },
+        private defaultValue?: T
+    ) {
         this.reset();
     }
 
     public get &#x3D; (entityId: string): T | undefined &#x3D;&gt;
-        this.valueMap[entityId] || this.defaultValue
+        this.valueMap[entityId] || this.defaultValue;
 
-    public reset(): void {
-    }
+    public reset(): void {}
 }
 </code></pre>
     </div>

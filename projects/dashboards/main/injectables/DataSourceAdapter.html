@@ -125,7 +125,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/lib/components/providers/data-source-adapter.ts:21</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/lib/components/providers/data-source-adapter.ts:45</a></div>
                             </td>
                         </tr>
 
@@ -216,8 +216,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="66"
-                            class="link-to-prism">src/lib/components/providers/data-source-adapter.ts:66</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="97"
+                            class="link-to-prism">src/lib/components/providers/data-source-adapter.ts:97</a></div>
                 </td>
             </tr>
 
@@ -257,8 +257,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="79"
-                            class="link-to-prism">src/lib/components/providers/data-source-adapter.ts:79</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="114"
+                            class="link-to-prism">src/lib/components/providers/data-source-adapter.ts:114</a></div>
                 </td>
             </tr>
 
@@ -341,7 +341,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/lib/components/providers/data-source-adapter.ts:24</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/lib/components/providers/data-source-adapter.ts:49</a></div>
                             </td>
                         </tr>
 
@@ -378,7 +378,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/lib/components/providers/data-source-adapter.ts:23</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/lib/components/providers/data-source-adapter.ts:48</a></div>
                             </td>
                         </tr>
 
@@ -392,20 +392,44 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Inject, Injectable, OnDestroy, Optional } from &quot;@angular/core&quot;;
-import { EventBus, IDataSource, IEvent, IFilteringOutputs } from &quot;@nova-ui/bits&quot;;
 import isUndefined from &quot;lodash/isUndefined&quot;;
 import { Subject } from &quot;rxjs&quot;;
 import { takeUntil } from &quot;rxjs/operators&quot;;
 
-import { DATA_SOURCE_DESTROYED, DATA_SOURCE_OUTPUT } from &quot;../../configurator/types&quot;;
-import { PizzagnaService } from &quot;../../pizzagna/services/pizzagna.service&quot;;
-import { DATA_SOURCE_BUSY, DATA_SOURCE_INVOKED, REFRESH } from &quot;../../services/types&quot;;
-import { DATA_SOURCE, IConfigurable, IProperties, PizzagnaLayer, PIZZAGNA_EVENT_BUS } from &quot;../../types&quot;;
+import {
+    EventBus,
+    IDataSource,
+    IEvent,
+    IFilteringOutputs,
+} from &quot;@nova-ui/bits&quot;;
 
-import { IComponentIdPayload, IDataSourceBusyPayload, IDataSourceOutput } from &quot;./types&quot;;
+import {
+    DATA_SOURCE_DESTROYED,
+    DATA_SOURCE_OUTPUT,
+} from &quot;../../configurator/types&quot;;
+import { PizzagnaService } from &quot;../../pizzagna/services/pizzagna.service&quot;;
+import {
+    DATA_SOURCE_BUSY,
+    DATA_SOURCE_INVOKED,
+    REFRESH,
+} from &quot;../../services/types&quot;;
+import {
+    DATA_SOURCE,
+    IConfigurable,
+    IProperties,
+    PizzagnaLayer,
+    PIZZAGNA_EVENT_BUS,
+} from &quot;../../types&quot;;
+import {
+    IComponentIdPayload,
+    IDataSourceBusyPayload,
+    IDataSourceOutput,
+} from &quot;./types&quot;;
 
 @Injectable()
-export class DataSourceAdapter&lt;T extends IFilteringOutputs &#x3D; IFilteringOutputs&gt; implements IConfigurable, OnDestroy {
+export class DataSourceAdapter&lt;T extends IFilteringOutputs &#x3D; IFilteringOutputs&gt;
+    implements IConfigurable, OnDestroy
+{
     protected componentId: string;
     protected lastValue: T;
     protected destroy$ &#x3D; new Subject();
@@ -413,9 +437,11 @@ export class DataSourceAdapter&lt;T extends IFilteringOutputs &#x3D; IFilteringO
 
     private propertyPath: string;
 
-    constructor(@Inject(PIZZAGNA_EVENT_BUS) public eventBus: EventBus&lt;IEvent&gt;,
-                @Optional() @Inject(DATA_SOURCE) public dataSource: IDataSource&lt;T&gt;,
-                protected pizzagnaService: PizzagnaService) {
+    constructor(
+        @Inject(PIZZAGNA_EVENT_BUS) public eventBus: EventBus&lt;IEvent&gt;,
+        @Optional() @Inject(DATA_SOURCE) public dataSource: IDataSource&lt;T&gt;,
+        protected pizzagnaService: PizzagnaService
+    ) {
         if (!this.dataSource) {
             return;
         }
@@ -423,7 +449,9 @@ export class DataSourceAdapter&lt;T extends IFilteringOutputs &#x3D; IFilteringO
 
         this.dataSource.outputsSubject
             .pipe(takeUntil(this.destroy$))
-            .subscribe((event: T | IDataSourceOutput&lt;T&gt;) &#x3D;&gt; this.handleDataSourceUpdate(event));
+            .subscribe((event: T | IDataSourceOutput&lt;T&gt;) &#x3D;&gt;
+                this.handleDataSourceUpdate(event)
+            );
 
         if (this.dataSource.busy) {
             this.dataSource.busy
@@ -440,7 +468,8 @@ export class DataSourceAdapter&lt;T extends IFilteringOutputs &#x3D; IFilteringO
     }
 
     protected setupRefreshListener(): void {
-        this.eventBus.getStream(REFRESH)
+        this.eventBus
+            .getStream(REFRESH)
             .pipe(takeUntil(this.destroy$))
             .subscribe(() &#x3D;&gt; this.handleRefresh());
     }
@@ -453,16 +482,22 @@ export class DataSourceAdapter&lt;T extends IFilteringOutputs &#x3D; IFilteringO
     protected handleDataSourceUpdate(value: T | IDataSourceOutput&lt;T&gt;) {
         this.lastValue &#x3D; isUndefined(value?.result) ? value : value?.result;
         this.updateOutput(this.lastValue);
-        this.eventBus.getStream(DATA_SOURCE_OUTPUT).next({ payload: { componentId: this.componentId, ...value } });
+        this.eventBus
+            .getStream(DATA_SOURCE_OUTPUT)
+            .next({ payload: { componentId: this.componentId, ...value } });
     }
 
     public ngOnDestroy(): void {
         this.updateOutput(undefined);
 
-        const destroyedEvent: IEvent&lt;IComponentIdPayload&gt; &#x3D; { payload: { componentId: this.componentId } };
+        const destroyedEvent: IEvent&lt;IComponentIdPayload&gt; &#x3D; {
+            payload: { componentId: this.componentId },
+        };
         this.eventBus.getStream(DATA_SOURCE_DESTROYED).next(destroyedEvent);
 
-        const busyEvent: IEvent&lt;IDataSourceBusyPayload&gt; &#x3D; { payload: { componentId: this.componentId, busy: false } };
+        const busyEvent: IEvent&lt;IDataSourceBusyPayload&gt; &#x3D; {
+            payload: { componentId: this.componentId, busy: false },
+        };
         this.eventBus.getStream(DATA_SOURCE_BUSY).next(busyEvent);
 
         this.destroy$.next();
@@ -490,9 +525,12 @@ export class DataSourceAdapter&lt;T extends IFilteringOutputs &#x3D; IFilteringO
         const dataSourceConfiguration &#x3D; properties?.dataSource?.properties;
         if (this.dataSourceConfiguration !&#x3D;&#x3D; dataSourceConfiguration) {
             this.dataSourceConfiguration &#x3D; dataSourceConfiguration;
-            const configurableDataSource &#x3D; (this.dataSource as unknown as IConfigurable);
+            const configurableDataSource &#x3D; this
+                .dataSource as unknown as IConfigurable;
             if (configurableDataSource?.updateConfiguration) {
-                configurableDataSource.updateConfiguration(properties.dataSource?.properties);
+                configurableDataSource.updateConfiguration(
+                    properties.dataSource?.properties
+                );
             }
             this.eventBus.getStream(REFRESH).next();
         }
@@ -500,18 +538,24 @@ export class DataSourceAdapter&lt;T extends IFilteringOutputs &#x3D; IFilteringO
         // check if this is the first call of updateConfiguration and there is no dataSource configuration present in the incoming properties
         // This results in two initial invocations of the data source, and we should eventually remove it. But, currently,
         // widgets sometimes rely on it in order to display their initial data.
-        if (typeof this.dataSourceConfiguration &#x3D;&#x3D;&#x3D; &quot;undefined&quot; &amp;&amp; typeof dataSourceConfiguration &#x3D;&#x3D;&#x3D; &quot;undefined&quot;) {
+        if (
+            typeof this.dataSourceConfiguration &#x3D;&#x3D;&#x3D; &quot;undefined&quot; &amp;&amp;
+            typeof dataSourceConfiguration &#x3D;&#x3D;&#x3D; &quot;undefined&quot;
+        ) {
             // using a setTimeout here to give configurable data sources time to receive their configurations before they&#x27;re invoked
             setTimeout(() &#x3D;&gt; this.eventBus.getStream(REFRESH).next());
         }
     }
 
     protected updateOutput(value: T | undefined) {
-        this.pizzagnaService.setProperty({
-            pizzagnaKey: PizzagnaLayer.Data,
-            componentId: this.componentId,
-            propertyPath: [this.propertyPath],
-        }, this.processOutput(value));
+        this.pizzagnaService.setProperty(
+            {
+                pizzagnaKey: PizzagnaLayer.Data,
+                componentId: this.componentId,
+                propertyPath: [this.propertyPath],
+            },
+            this.processOutput(value)
+        );
     }
 
     protected processOutput(value: T | undefined): T | undefined {

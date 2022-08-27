@@ -127,7 +127,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="103" class="link-to-prism">src/services/public-api.ts:103</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="108" class="link-to-prism">src/services/public-api.ts:108</a></div>
                             </td>
                         </tr>
 
@@ -155,7 +155,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="104" class="link-to-prism">src/services/public-api.ts:104</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="109" class="link-to-prism">src/services/public-api.ts:109</a></div>
                             </td>
                         </tr>
 
@@ -211,7 +211,10 @@ export interface IEdgeDetectionProperties {
     height: number;
 }
 export interface IEdgeDetectionService {
-    canBe(basePointElement: Element, placedElement: Element): IEdgeDetectionResult;
+    canBe(
+        basePointElement: Element,
+        placedElement: Element
+    ): IEdgeDetectionResult;
 }
 
 export interface IEdgeDefinerMeasurements {
@@ -223,10 +226,12 @@ export interface IEdgeDefinerMeasurements {
 }
 
 export interface ISearchService {
-    search(items: any[],
-           properties: string[],
-           searchValue: any,
-           dateFormat?: string): any[];
+    search(
+        items: any[],
+        properties: string[],
+        searchValue: any,
+        dateFormat?: string
+    ): any[];
 }
 
 export interface INotificationService {
@@ -286,14 +291,15 @@ export interface IEventDefinition&lt;T &#x3D; any&gt; {
 }
 
 export class EventDefinition&lt;T&gt; implements IEventDefinition&lt;IEvent&lt;T&gt;&gt; {
-    constructor(public id: string, public subjectFactory?: () &#x3D;&gt; Subject&lt;IEvent&lt;T&gt;&gt;) {
-    }
+    constructor(
+        public id: string,
+        public subjectFactory?: () &#x3D;&gt; Subject&lt;IEvent&lt;T&gt;&gt;
+    ) {}
 
     public toString() {
         return this.id;
     }
 }
-
 
 export interface IVirtualPageConfig {
     /**
@@ -312,7 +318,8 @@ export interface IVirtualPageConfig {
 /**
  * VirtualViewportManager reset configuration options
  */
-export interface IVirtualViewportResetOptions extends Required&lt;Pick&lt;IVirtualPageConfig, &quot;emitFirstPage&quot;&gt;&gt; {
+export interface IVirtualViewportResetOptions
+    extends Required&lt;Pick&lt;IVirtualPageConfig, &quot;emitFirstPage&quot;&gt;&gt; {
     /**
      * Set this boolean to false if the first batch of data will be loaded/requested
      * externally by a different entity (ex. search, sort, etc.).

@@ -164,10 +164,11 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {ElementRef, Injectable} from &quot;@angular/core&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ElementRef, Injectable } from &quot;@angular/core&quot;;
 import isNull from &quot;lodash/isNull&quot;;
 
-export const focusableElementsCSSSelector &#x3D; &quot;[tabindex], button, a, input:not([type&#x3D;hidden])&quot;;
+export const focusableElementsCSSSelector &#x3D;
+    &quot;[tabindex], button, a, input:not([type&#x3D;hidden])&quot;;
 
 interface IFocusableElement {
     nativeElement: Element;
@@ -206,7 +207,7 @@ export class TabNavigationService implements ITabNavigationService {
     public restoreTabNavigation() {
         // dom manipulation to restore the tabIndex for the cached elements
         // and remove the tabIndex for those who didn&#x27;t had it at all
-        this.tabFocusableElements.forEach(e &#x3D;&gt; {
+        this.tabFocusableElements.forEach((e) &#x3D;&gt; {
             if (e?.tabIndex?.length) {
                 e.nativeElement.setAttribute(&quot;tabindex&quot;, e.tabIndex);
             } else {
@@ -215,7 +216,6 @@ export class TabNavigationService implements ITabNavigationService {
         });
     }
 }
-
 </code></pre>
     </div>
 </div>

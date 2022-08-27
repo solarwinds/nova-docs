@@ -125,7 +125,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/common/directives/click-interceptor/click-interceptor.directive.ts:25</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/common/directives/click-interceptor/click-interceptor.directive.ts:27</a></div>
                             </td>
                         </tr>
 
@@ -233,10 +233,12 @@ export class ClickInterceptorDirective {
     @HostListener(&quot;click&quot;, [&quot;$event&quot;])
     catchClick(event: MouseEvent) {
         event.stopPropagation();
-        this.eventBusService.getStream({id: DOCUMENT_CLICK_EVENT}).next(event);
+        this.eventBusService
+            .getStream({ id: DOCUMENT_CLICK_EVENT })
+            .next(event);
     }
 
-    constructor(private eventBusService: EventBusService) { }
+    constructor(private eventBusService: EventBusService) {}
 }
 </code></pre>
     </div>

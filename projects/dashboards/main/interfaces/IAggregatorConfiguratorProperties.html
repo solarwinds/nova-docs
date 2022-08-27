@@ -105,7 +105,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/lib/configurator/components/widgets/proportional/aggregators-configurators/aggregator-configurator/aggregator-configurator.component.ts:9</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/lib/configurator/components/widgets/proportional/aggregators-configurators/aggregator-configurator/aggregator-configurator.component.ts:21</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -182,8 +182,20 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, ViewChild } from &quot;@angular/core&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+    ChangeDetectionStrategy,
+    ChangeDetectorRef,
+    Component,
+    EventEmitter,
+    Input,
+    OnChanges,
+    OnInit,
+    Output,
+    SimpleChanges,
+    ViewChild,
+} from &quot;@angular/core&quot;;
 import { FormBuilder, FormGroup } from &quot;@angular/forms&quot;;
+
 import { IDataField, LoggerService, SelectV2Component } from &quot;@nova-ui/bits&quot;;
 
 import { IHasChangeDetector } from &quot;../../../../../../types&quot;;
@@ -199,7 +211,9 @@ export interface IAggregatorConfiguratorProperties {
     templateUrl: &quot;./aggregator-configurator.component.html&quot;,
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AggregatorMetricSelectorConfigurationComponent implements OnInit, OnChanges, IHasChangeDetector {
+export class AggregatorMetricSelectorConfigurationComponent
+    implements OnInit, OnChanges, IHasChangeDetector
+{
     static lateLoadKey &#x3D; &quot;AggregatorMetricSelectorConfigurationComponent&quot;;
 
     @Input() public metrics: IDataField[];
@@ -214,10 +228,11 @@ export class AggregatorMetricSelectorConfigurationComponent implements OnInit, O
     @ViewChild(&quot;metricsSelect&quot;)
     public meticsSelect: SelectV2Component;
 
-    constructor(public changeDetector: ChangeDetectorRef,
+    constructor(
+        public changeDetector: ChangeDetectorRef,
         protected formBuilder: FormBuilder,
         protected logger: LoggerService
-    ) { }
+    ) {}
 
     ngOnInit(): void {
         this.formReady.emit(this.form);
@@ -225,11 +240,17 @@ export class AggregatorMetricSelectorConfigurationComponent implements OnInit, O
 
     ngOnChanges(changes: SimpleChanges) {
         if (changes.activeMetricId) {
-            this.form.get(&quot;activeMetricId&quot;)?.setValue(changes.activeMetricId.currentValue);
+            this.form
+                .get(&quot;activeMetricId&quot;)
+                ?.setValue(changes.activeMetricId.currentValue);
 
-            const currentMetricConfig &#x3D; this.metrics.find(m &#x3D;&gt; m.id &#x3D;&#x3D;&#x3D; changes.activeMetricId.currentValue);
+            const currentMetricConfig &#x3D; this.metrics.find(
+                (m) &#x3D;&gt; m.id &#x3D;&#x3D;&#x3D; changes.activeMetricId.currentValue
+            );
             if (!currentMetricConfig) {
-                this.logger.warn(&#x60;AggregatorMetricSelectorConfigurationComponent: No metric found for id: ${changes.activeMetricId.currentValue}&#x60;);
+                this.logger.warn(
+                    &#x60;AggregatorMetricSelectorConfigurationComponent: No metric found for id: ${changes.activeMetricId.currentValue}&#x60;
+                );
             }
         }
     }
@@ -238,7 +259,6 @@ export class AggregatorMetricSelectorConfigurationComponent implements OnInit, O
         this.form.controls[&quot;activeMetricId&quot;].reset();
         this.meticsSelect.hideDropdown();
     }
-
 }
 </code></pre>
     </div>

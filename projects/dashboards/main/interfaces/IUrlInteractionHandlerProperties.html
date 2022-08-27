@@ -171,28 +171,37 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Inject, Injectable } from &quot;@angular/core&quot;;
+
 import { EventBus, IEvent, LoggerService } from &quot;@nova-ui/bits&quot;;
-import { UrlInteractionService } from &quot;./../../../services/url-interaction.service&quot;;
 
 import { PIZZAGNA_EVENT_BUS } from &quot;../../../types&quot;;
+import { UrlInteractionService } from &quot;./../../../services/url-interaction.service&quot;;
+import {
+    IInteractionHandlerProperties,
+    IInteractionPayload,
+    InteractionHandler,
+} from &quot;./interaction-handler&quot;;
 
-import { IInteractionHandlerProperties, IInteractionPayload, InteractionHandler } from &quot;./interaction-handler&quot;;
-
-export interface IUrlInteractionHandlerProperties extends IInteractionHandlerProperties {
+export interface IUrlInteractionHandlerProperties
+    extends IInteractionHandlerProperties {
     url: string;
     newWindow?: boolean;
 }
 
 // Window is an interface, so it fails when used in constructor parameters for AoT
-export class WindowObject extends Window {
-}
+export class WindowObject extends Window {}
 
 @Injectable()
-export class UrlInteractionHandler extends InteractionHandler&lt;IUrlInteractionHandlerProperties, any&gt; {
-    constructor(@Inject(PIZZAGNA_EVENT_BUS) eventBus: EventBus&lt;IEvent&gt;,
-                @Inject(&quot;windowObject&quot;) private window: WindowObject,
-                private logger: LoggerService,
-                private urlInteractionService: UrlInteractionService) {
+export class UrlInteractionHandler extends InteractionHandler&lt;
+    IUrlInteractionHandlerProperties,
+    any
+&gt; {
+    constructor(
+        @Inject(PIZZAGNA_EVENT_BUS) eventBus: EventBus&lt;IEvent&gt;,
+        @Inject(&quot;windowObject&quot;) private window: WindowObject,
+        private logger: LoggerService,
+        private urlInteractionService: UrlInteractionService
+    ) {
         super(eventBus);
     }
 
@@ -201,7 +210,9 @@ export class UrlInteractionHandler extends InteractionHandler&lt;IUrlInteraction
             this.logger.warn(&quot;The target url has not been defined.&quot;);
             return;
         }
-        const href &#x3D; this.urlInteractionService.template(this.properties.url, { &quot;data&quot;: interaction.data })
+        const href &#x3D; this.urlInteractionService.template(this.properties.url, {
+            data: interaction.data,
+        });
 
         // if the link evaluates as empty, then don&#x27;t go anywhere
         if (!href) {

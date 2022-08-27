@@ -552,11 +552,11 @@
     /***************************************************************************************************
      *  Paths to important settings in this type definition
      ***************************************************************************************************/
-    &quot;paths&quot;: {
-        &quot;widget&quot;: {
+    paths: {
+        widget: {
             [WellKnownPathKey.Root]: DEFAULT_PIZZAGNA_ROOT,
         },
-        &quot;configurator&quot;: {
+        configurator: {
             [WellKnownPathKey.Root]: DEFAULT_PIZZAGNA_ROOT,
             // this points at the component type you need to change if you want to change the component for data source configuration
             [WellKnownPathKey.DataSourceConfigComponentType]: &#x60;${dataSourceConfiguratorTemplatePath}.componentType&#x60;,
@@ -573,11 +573,11 @@
     /***************************************************************************************************
      *  Widget section describes the structural part of the KPI widget
      ***************************************************************************************************/
-    &quot;widget&quot;: kpiWidget,
+    widget: kpiWidget,
     /***************************************************************************************************
      *  Configurator section describes the form that is used to configure the widget
      ***************************************************************************************************/
-    &quot;configurator&quot;: kpiConfigurator,
+    configurator: kpiConfigurator,
 }</code>
                         </td>
                     </tr>
@@ -695,18 +695,18 @@
                     <tr>
                         <td class="col-md-4">
                             <i>Default value : </i><code>[
-    $localize &#x60;Down&#x60;,
-    $localize &#x60;Down Light&#x60;,
-    $localize &#x60;Critical&#x60;,
-    $localize &#x60;Critical Light&#x60;,
-    $localize &#x60;Warning&#x60;,
-    $localize &#x60;Warning Light&#x60;,
-    $localize &#x60;Unknown&#x60;,
-    $localize &#x60;Unknown Light&#x60;,
-    $localize &#x60;Ok&#x60;,
-    $localize &#x60;Ok Light&#x60;,
-    $localize &#x60;Info&#x60;,
-    $localize &#x60;Info Light&#x60;,
+    $localize&#x60;Down&#x60;,
+    $localize&#x60;Down Light&#x60;,
+    $localize&#x60;Critical&#x60;,
+    $localize&#x60;Critical Light&#x60;,
+    $localize&#x60;Warning&#x60;,
+    $localize&#x60;Warning Light&#x60;,
+    $localize&#x60;Unknown&#x60;,
+    $localize&#x60;Unknown Light&#x60;,
+    $localize&#x60;Ok&#x60;,
+    $localize&#x60;Ok Light&#x60;,
+    $localize&#x60;Info&#x60;,
+    $localize&#x60;Info Light&#x60;,
 ]</code>
                         </td>
                     </tr>
@@ -735,36 +735,36 @@
                     <tr>
                         <td class="col-md-4">
                             <i>Default value : </i><code>[
-    $localize &#x60;Blue&#x60;,
-    $localize &#x60;Blue Light&#x60;,
-    $localize &#x60;Blue Dark&#x60;,
-    $localize &#x60;Pink&#x60;,
-    $localize &#x60;Pink Light&#x60;,
-    $localize &#x60;Pink Dark&#x60;,
-    $localize &#x60;Sea Green&#x60;,
-    $localize &#x60;Sea Green Light&#x60;,
-    $localize &#x60;Sea Green Dark&#x60;,
-    $localize &#x60;Violet&#x60;,
-    $localize &#x60;Violet Light&#x60;,
-    $localize &#x60;Violet Dark&#x60;,
-    $localize &#x60;Lime Green&#x60;,
-    $localize &#x60;Lime Green Light&#x60;,
-    $localize &#x60;Lime Green Dark&#x60;,
-    $localize &#x60;Orange&#x60;,
-    $localize &#x60;Orange Light&#x60;,
-    $localize &#x60;Orange Dark&#x60;,
-    $localize &#x60;Ultramarine&#x60;,
-    $localize &#x60;Ultramarine Light&#x60;,
-    $localize &#x60;Ultramarine Dark&#x60;,
-    $localize &#x60;Bordeaux&#x60;,
-    $localize &#x60;Bordeaux Light&#x60;,
-    $localize &#x60;Bordeaux Dark&#x60;,
-    $localize &#x60;Ochroid&#x60;,
-    $localize &#x60;Ochroid Light&#x60;,
-    $localize &#x60;Ochroid Dark&#x60;,
-    $localize &#x60;Anthracite&#x60;,
-    $localize &#x60;Anthracite Light&#x60;,
-    $localize &#x60;Anthracite Dark&#x60;,
+    $localize&#x60;Blue&#x60;,
+    $localize&#x60;Blue Light&#x60;,
+    $localize&#x60;Blue Dark&#x60;,
+    $localize&#x60;Pink&#x60;,
+    $localize&#x60;Pink Light&#x60;,
+    $localize&#x60;Pink Dark&#x60;,
+    $localize&#x60;Sea Green&#x60;,
+    $localize&#x60;Sea Green Light&#x60;,
+    $localize&#x60;Sea Green Dark&#x60;,
+    $localize&#x60;Violet&#x60;,
+    $localize&#x60;Violet Light&#x60;,
+    $localize&#x60;Violet Dark&#x60;,
+    $localize&#x60;Lime Green&#x60;,
+    $localize&#x60;Lime Green Light&#x60;,
+    $localize&#x60;Lime Green Dark&#x60;,
+    $localize&#x60;Orange&#x60;,
+    $localize&#x60;Orange Light&#x60;,
+    $localize&#x60;Orange Dark&#x60;,
+    $localize&#x60;Ultramarine&#x60;,
+    $localize&#x60;Ultramarine Light&#x60;,
+    $localize&#x60;Ultramarine Dark&#x60;,
+    $localize&#x60;Bordeaux&#x60;,
+    $localize&#x60;Bordeaux Light&#x60;,
+    $localize&#x60;Bordeaux Dark&#x60;,
+    $localize&#x60;Ochroid&#x60;,
+    $localize&#x60;Ochroid Light&#x60;,
+    $localize&#x60;Ochroid Dark&#x60;,
+    $localize&#x60;Anthracite&#x60;,
+    $localize&#x60;Anthracite Light&#x60;,
+    $localize&#x60;Anthracite Dark&#x60;,
 ]</code>
                         </td>
                     </tr>
@@ -792,9 +792,13 @@
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>zipObject([...CHART_PALETTE_CS3, ...CHART_PALETTE_CS_S_EXTENDED],
-                                                                      [...CHART_PALETTE_CS3_ALTERNATIVE_NAMES,
-                                                                       ...CHART_PALETTE_CS_S_EXTENDED_ALTERNATIVE_NAMES])</code>
+                            <i>Default value : </i><code>zipObject(
+    [...CHART_PALETTE_CS3, ...CHART_PALETTE_CS_S_EXTENDED],
+    [
+        ...CHART_PALETTE_CS3_ALTERNATIVE_NAMES,
+        ...CHART_PALETTE_CS_S_EXTENDED_ALTERNATIVE_NAMES,
+    ]
+)</code>
                         </td>
                     </tr>
 
@@ -815,11 +819,13 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>[...CHART_PALETTE_CS3, ...CHART_PALETTE_CS_S_EXTENDED].map(color &#x3D;&gt;
-    ({
-        color,
-        label: chartPaletteColorMap[color],
-    }))</code>
+                            <i>Default value : </i><code>[
+    ...CHART_PALETTE_CS3,
+    ...CHART_PALETTE_CS_S_EXTENDED,
+].map((color) &#x3D;&gt; ({
+    color,
+    label: chartPaletteColorMap[color],
+}))</code>
                         </td>
                     </tr>
 
@@ -906,10 +912,7 @@
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>[
-    PreviewOverlayComponent,
-    WidgetErrorComponent,
-]</code>
+                            <i>Default value : </i><code>[PreviewOverlayComponent, WidgetErrorComponent]</code>
                         </td>
                     </tr>
 
@@ -957,7 +960,10 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>new EventDefinition(&quot;DASHBOARD_EDIT_MODE&quot;, () &#x3D;&gt; new ReplaySubject&lt;IEvent&gt;(1))</code>
+                            <i>Default value : </i><code>new EventDefinition(
+    &quot;DASHBOARD_EDIT_MODE&quot;,
+    () &#x3D;&gt; new ReplaySubject&lt;IEvent&gt;(1)
+)</code>
                         </td>
                     </tr>
 
@@ -978,7 +984,9 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>new EventDefinition&lt;IDataSourceBusyPayload&gt;(&quot;DATA_SOURCE_BUSY&quot;)</code>
+                            <i>Default value : </i><code>new EventDefinition&lt;IDataSourceBusyPayload&gt;(
+    &quot;DATA_SOURCE_BUSY&quot;
+)</code>
                         </td>
                     </tr>
 
@@ -2100,7 +2108,9 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>new EventDefinition(&quot;WIDGET_POSITION_CHANGE&quot;)</code>
+                            <i>Default value : </i><code>new EventDefinition(
+    &quot;WIDGET_POSITION_CHANGE&quot;
+)</code>
                         </td>
                     </tr>
 
@@ -2184,7 +2194,10 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>new EventDefinition(&quot;WIDGET_SEARCH&quot;, () &#x3D;&gt; new BehaviorSubject&lt;IEvent&gt;({ payload: &quot;&quot; }))</code>
+                            <i>Default value : </i><code>new EventDefinition(
+    &quot;WIDGET_SEARCH&quot;,
+    () &#x3D;&gt; new BehaviorSubject&lt;IEvent&gt;({ payload: &quot;&quot; })
+)</code>
                         </td>
                     </tr>
 
@@ -2208,7 +2221,9 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(&quot;DASHBOARD_EVENT_BUS&quot;)</code>
+                            <i>Default value : </i><code>new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(
+    &quot;DASHBOARD_EVENT_BUS&quot;
+)</code>
                         </td>
                     </tr>
 
@@ -2250,7 +2265,9 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(&quot;FORMATTERS_REGISTRY&quot;)</code>
+                            <i>Default value : </i><code>new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(
+    &quot;FORMATTERS_REGISTRY&quot;
+)</code>
                         </td>
                     </tr>
 
@@ -2271,7 +2288,9 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(&quot;HEADER_LINK_PROVIDER&quot;)</code>
+                            <i>Default value : </i><code>new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(
+    &quot;HEADER_LINK_PROVIDER&quot;
+)</code>
                         </td>
                     </tr>
 
@@ -2292,7 +2311,9 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(&quot;PIZZAGNA_EVENT_BUS&quot;)</code>
+                            <i>Default value : </i><code>new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(
+    &quot;PIZZAGNA_EVENT_BUS&quot;
+)</code>
                         </td>
                     </tr>
 
@@ -2313,7 +2334,9 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(&quot;TEST_REGISTRY&quot;)</code>
+                            <i>Default value : </i><code>new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(
+    &quot;TEST_REGISTRY&quot;
+)</code>
                         </td>
                     </tr>
 
@@ -2471,7 +2494,10 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>new EventDefinition(&quot;DATA_SOURCE_CREATED&quot;, () &#x3D;&gt; new BehaviorSubject&lt;IEvent&gt;({payload: undefined}))</code>
+                            <i>Default value : </i><code>new EventDefinition(
+    &quot;DATA_SOURCE_CREATED&quot;,
+    () &#x3D;&gt; new BehaviorSubject&lt;IEvent&gt;({ payload: undefined })
+)</code>
                         </td>
                     </tr>
 
@@ -2492,7 +2518,9 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>new EventDefinition(&quot;DATA_SOURCE_DESTROYED&quot;)</code>
+                            <i>Default value : </i><code>new EventDefinition(
+    &quot;DATA_SOURCE_DESTROYED&quot;
+)</code>
                         </td>
                     </tr>
 
@@ -2513,7 +2541,10 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>new EventDefinition(&quot;DATA_SOURCE_OUTPUT&quot;, () &#x3D;&gt; new ReplaySubject&lt;IEvent&gt;(1))</code>
+                            <i>Default value : </i><code>new EventDefinition(
+    &quot;DATA_SOURCE_OUTPUT&quot;,
+    () &#x3D;&gt; new ReplaySubject&lt;IEvent&gt;(1)
+)</code>
                         </td>
                     </tr>
 
@@ -2777,10 +2808,7 @@
             properties: {
                 elementClass: &quot;flex-grow-1 overflow-auto nui-scroll-shadows&quot;,
                 // references to other components laid out in this form
-                nodes: [
-                    &quot;presentation&quot;,
-                    &quot;tiles&quot;,
-                ],
+                nodes: [&quot;presentation&quot;, &quot;tiles&quot;],
             },
             providers: {
                 [WellKnownProviders.FormattersRegistry]: {
@@ -2800,7 +2828,8 @@
         // /presentation/titleAndDescription
         titleAndDescription: {
             id: &quot;titleAndDescription&quot;,
-            componentType: TitleAndDescriptionConfigurationComponent.lateLoadKey,
+            componentType:
+                TitleAndDescriptionConfigurationComponent.lateLoadKey,
             providers: {
                 converter: {
                     providerId: NOVA_TITLE_AND_DESCRIPTION_CONVERTER,
@@ -2818,10 +2847,13 @@
                     {
                         // KPI tile description (label, color, etc.) configuration section
                         id: &quot;description&quot;,
-                        componentType: KpiDescriptionConfigurationComponent.lateLoadKey,
+                        componentType:
+                            KpiDescriptionConfigurationComponent.lateLoadKey,
                         properties: {
                             configurableUnits: true,
-                            backgroundColors: [...DEFAULT_KPI_BACKGROUND_COLORS],
+                            backgroundColors: [
+                                ...DEFAULT_KPI_BACKGROUND_COLORS,
+                            ],
                         },
                         providers: {
                             // converter transforms the data between the widget and the form
@@ -2830,8 +2862,13 @@
                                 properties: {
                                     formParts: [
                                         {
-                                            previewPath: &quot;properties.widgetData&quot;,
-                                            keys: [&quot;label&quot;, &quot;backgroundColor&quot;, &quot;units&quot;],
+                                            previewPath:
+                                                &quot;properties.widgetData&quot;,
+                                            keys: [
+                                                &quot;label&quot;,
+                                                &quot;backgroundColor&quot;,
+                                                &quot;units&quot;,
+                                            ],
                                         },
                                     ],
                                 },
@@ -2841,11 +2878,13 @@
                     {
                         // data source configuration section
                         id: &quot;dataSource&quot;,
-                        componentType: DataSourceConfigurationComponent.lateLoadKey,
+                        componentType:
+                            DataSourceConfigurationComponent.lateLoadKey,
                         properties: {
                             // for the DataSourceConfigurationComponent, this defines the list of data sources to pick from
                             dataSourceProviders: [] as string[],
-                            errorComponent: DataSourceErrorComponent.lateLoadKey,
+                            errorComponent:
+                                DataSourceErrorComponent.lateLoadKey,
                         },
                         providers: {
                             // converter transforms the data source metadata between the widget and the form
@@ -2861,7 +2900,8 @@
                                         },
                                         {
                                             // this component updates &#x27;properties&#x27; of &#x27;dataSource&#x27; via an adapter
-                                            previewPath: &quot;providers.adapter.properties.dataSource&quot;,
+                                            previewPath:
+                                                &quot;providers.adapter.properties.dataSource&quot;,
                                             keys: [&quot;properties&quot;],
                                         },
                                     ],
@@ -2874,7 +2914,9 @@
                                         {
                                             trackOn: &quot;component&quot;,
                                             key: &quot;dataFieldIds&quot;,
-                                            paths: [&quot;data.{parentComponentId}/formatting.properties.dataFieldIds&quot;],
+                                            paths: [
+                                                &quot;data.{parentComponentId}/formatting.properties.dataFieldIds&quot;,
+                                            ],
                                         },
                                     ] as IBroadcasterConfig[],
                                 },
@@ -2884,7 +2926,8 @@
                     {
                         // thresholds configuration section
                         id: &quot;thresholds&quot;,
-                        componentType: ThresholdsConfigurationComponent.lateLoadKey,
+                        componentType:
+                            ThresholdsConfigurationComponent.lateLoadKey,
                         providers: {
                             // converter transforms the data between the widget and the form
                             [WellKnownProviders.Converter]: {
@@ -2893,7 +2936,8 @@
                                     formParts: [
                                         {
                                             // this component updates &#x60;thresholds&#x60; properties of &#x60;adapter&#x60;
-                                            previewPath: &quot;providers.adapter.properties.thresholds&quot;,
+                                            previewPath:
+                                                &quot;providers.adapter.properties.thresholds&quot;,
                                             keys: [
                                                 &quot;criticalThresholdValue&quot;,
                                                 &quot;warningThresholdValue&quot;,
@@ -2908,9 +2952,12 @@
                     },
                     {
                         id: &quot;backgroundColorRules&quot;,
-                        componentType: BackgroundColorRulesConfigurationComponent.lateLoadKey,
+                        componentType:
+                            BackgroundColorRulesConfigurationComponent.lateLoadKey,
                         properties: {
-                            backgroundColors: [...DEFAULT_KPI_BACKGROUND_COLORS],
+                            backgroundColors: [
+                                ...DEFAULT_KPI_BACKGROUND_COLORS,
+                            ],
                         },
                         providers: {
                             [WellKnownProviders.Converter]: {
@@ -2918,7 +2965,8 @@
                                 properties: {
                                     formParts: [
                                         {
-                                            previewPath: &quot;providers.kpiColorPrioritizer.properties&quot;,
+                                            previewPath:
+                                                &quot;providers.kpiColorPrioritizer.properties&quot;,
                                             keys: [&quot;rules&quot;],
                                         },
                                     ],
@@ -2928,14 +2976,16 @@
                     },
                     {
                         id: &quot;formatting&quot;,
-                        componentType: PresentationConfigurationComponent.lateLoadKey,
+                        componentType:
+                            PresentationConfigurationComponent.lateLoadKey,
                         providers: {
                             [WellKnownProviders.Converter]: {
                                 providerId: NOVA_KPI_SECTION_CONVERTER,
                                 properties: {
                                     formParts: [
                                         {
-                                            previewPath: &quot;properties.configuration.formatters.Value&quot;,
+                                            previewPath:
+                                                &quot;properties.configuration.formatters.Value&quot;,
                                             keys: [&quot;formatter&quot;],
                                         },
                                     ],
@@ -2949,7 +2999,8 @@
                             // Set default formatter to the configuration section as RawFormatterComponent.
                             // In case Kpi doesn&#x27;t use the formatters yet, it will be overridden with default formatter value on first save
                             formatter: {
-                                componentType: RawFormatterComponent.lateLoadKey,
+                                componentType:
+                                    RawFormatterComponent.lateLoadKey,
                                 properties: {
                                     dataFieldIds: {
                                         value: &quot;value&quot;,
@@ -3039,7 +3090,7 @@
     },
     {
         componentType: StatusWithIconFormatterComponent.lateLoadKey,
-        &quot;label&quot;: $localize&#x60;Status With Icon&#x60;,
+        label: $localize&#x60;Status With Icon&#x60;,
         dataTypes: {
             // @ts-ignore
             value: null,
@@ -3047,13 +3098,12 @@
     },
     {
         componentType: LinkFormatterComponent.lateLoadKey,
-        &quot;label&quot;: $localize&#x60;Link&#x60;,
+        label: $localize&#x60;Link&#x60;,
         dataTypes: {
             // @ts-ignore
             value: null,
         },
     },
-
 ]</code>
                         </td>
                     </tr>
@@ -3082,28 +3132,31 @@
                     <tr>
                         <td class="col-md-4">
                             <i>Default value : </i><code>[
-    {
-        aggregatorType: sumAggregator.aggregatorType,
-        label: &quot;Sum Aggregator&quot;,
-        fn: sumAggregator,
-        configurationComponent: AggregatorMetricSelectorConfigurationComponent.lateLoadKey,
-    },
-    {
-        aggregatorType: percentageAggregator.aggregatorType,
-        label: &quot;Percentage Aggregator&quot;,
-        fn: percentageAggregator,
-        properties: {
-            base100: true,
-        } as IPercentageAggregatorProperties,
-        configurationComponent: AggregatorMetricSelectorConfigurationComponent.lateLoadKey,
-    },
-    {
-        aggregatorType: fieldMapper.aggregatorType,
-        label: &quot;Field Mapper Aggregator&quot;,
-        fn: fieldMapper,
-        configurationComponent: FieldMapperAggregatorConfiguratorComponent.lateLoadKey,
-    },
-]</code>
+        {
+            aggregatorType: sumAggregator.aggregatorType,
+            label: &quot;Sum Aggregator&quot;,
+            fn: sumAggregator,
+            configurationComponent:
+                AggregatorMetricSelectorConfigurationComponent.lateLoadKey,
+        },
+        {
+            aggregatorType: percentageAggregator.aggregatorType,
+            label: &quot;Percentage Aggregator&quot;,
+            fn: percentageAggregator,
+            properties: {
+                base100: true,
+            } as IPercentageAggregatorProperties,
+            configurationComponent:
+                AggregatorMetricSelectorConfigurationComponent.lateLoadKey,
+        },
+        {
+            aggregatorType: fieldMapper.aggregatorType,
+            label: &quot;Field Mapper Aggregator&quot;,
+            fn: fieldMapper,
+            configurationComponent:
+                FieldMapperAggregatorConfiguratorComponent.lateLoadKey,
+        },
+    ]</code>
                         </td>
                     </tr>
 
@@ -3220,7 +3273,8 @@
         // /presentation/titleAndDescription
         titleAndDescription: {
             id: &quot;titleAndDescription&quot;,
-            componentType: TitleAndDescriptionConfigurationComponent.lateLoadKey,
+            componentType:
+                TitleAndDescriptionConfigurationComponent.lateLoadKey,
             providers: {
                 [WellKnownProviders.Converter]: {
                     providerId: NOVA_TITLE_AND_DESCRIPTION_CONVERTER,
@@ -3233,7 +3287,12 @@
             componentType: ProportionalChartOptionsEditorComponent.lateLoadKey,
             properties: {
                 chartOptions: {
-                    chartTypes: [&quot;PieChart&quot;, &quot;DonutChart&quot;, &quot;VerticalBarChart&quot;, &quot;HorizontalBarChart&quot;],
+                    chartTypes: [
+                        &quot;PieChart&quot;,
+                        &quot;DonutChart&quot;,
+                        &quot;VerticalBarChart&quot;,
+                        &quot;HorizontalBarChart&quot;,
+                    ],
                     legendPlacementOptions: [
                         {
                             id: LegendPlacement.None,
@@ -3250,27 +3309,32 @@
                     ],
                     contentFormatters: [
                         {
-                            componentType: DonutContentRawFormatterComponent.lateLoadKey,
-                            &quot;label&quot;: $localize&#x60;Raw&#x60;,
+                            componentType:
+                                DonutContentRawFormatterComponent.lateLoadKey,
+                            label: $localize&#x60;Raw&#x60;,
                         },
                         {
-                            componentType: DonutContentSumFormatterComponent.lateLoadKey,
-                            &quot;label&quot;: $localize&#x60;Sum&#x60;,
+                            componentType:
+                                DonutContentSumFormatterComponent.lateLoadKey,
+                            label: $localize&#x60;Sum&#x60;,
                         },
                         {
-                            componentType: DonutContentPercentageFormatterComponent.lateLoadKey,
-                            &quot;label&quot;: $localize&#x60;Percentage&#x60;,
-                            configurationComponent: &quot;DonutContentPercentageConfigurationComponent&quot;,
+                            componentType:
+                                DonutContentPercentageFormatterComponent.lateLoadKey,
+                            label: $localize&#x60;Percentage&#x60;,
+                            configurationComponent:
+                                &quot;DonutContentPercentageConfigurationComponent&quot;,
                         },
                     ] as IFormatterDefinition[],
                     legendFormatters: [
                         {
-                            componentType: StatusWithIconFormatterComponent.lateLoadKey,
-                            &quot;label&quot;: $localize&#x60;Status With Icon&#x60;,
+                            componentType:
+                                StatusWithIconFormatterComponent.lateLoadKey,
+                            label: $localize&#x60;Status With Icon&#x60;,
                         },
                         {
                             componentType: LinkFormatterComponent.lateLoadKey,
-                            &quot;label&quot;: $localize&#x60;Link&#x60;,
+                            label: $localize&#x60;Link&#x60;,
                         },
                     ] as IFormatterDefinition[],
                 },
@@ -3278,7 +3342,8 @@
             providers: {
                 // converter transforms the chart options data between the widget and the form
                 [WellKnownProviders.Converter]: {
-                    providerId: NOVA_PROPORTIONAL_WIDGET_CHART_OPTIONS_CONVERTER,
+                    providerId:
+                        NOVA_PROPORTIONAL_WIDGET_CHART_OPTIONS_CONVERTER,
                 },
             },
         },
@@ -3315,7 +3380,8 @@
                             },
                             {
                                 // this component updates the &#x27;properties&#x27; of the &#x27;dataSource&#x27; via an adapter
-                                previewPath: &quot;chart.providers.adapter.properties.dataSource&quot;,
+                                previewPath:
+                                    &quot;chart.providers.adapter.properties.dataSource&quot;,
                                 keys: [&quot;properties&quot;],
                             },
                         ],
@@ -3328,7 +3394,9 @@
                             {
                                 trackOn: &quot;component&quot;,
                                 key: &quot;dsOutput&quot;,
-                                paths: [&quot;data.chartOptionsEditor.properties.dsOutput&quot;],
+                                paths: [
+                                    &quot;data.chartOptionsEditor.properties.dsOutput&quot;,
+                                ],
                             },
                         ] as IBroadcasterConfig[],
                     },
@@ -3403,30 +3471,30 @@
                     <tr>
                         <td class="col-md-4">
                             <i>Default value : </i><code>[
-  {
-      componentType: RawFormatterComponent.lateLoadKey,
-      label: $localize&#x60;No Formatter&#x60;,
-      dataTypes: {
-          // @ts-ignore
-          value: null,
-      },
-  },
-  {
-      componentType: LinkFormatterComponent.lateLoadKey,
-      label: $localize&#x60;Link&#x60;,
-      configurationComponent: &quot;LinkConfiguratorComponent&quot;,
-      dataTypes: {
-          value: &quot;label&quot;,
-          link: &quot;link&quot;,
-      },
-  },
-  {
-      componentType: IconFormatterComponent.lateLoadKey,
-      label: $localize&#x60;Icon&#x60;,
-      dataTypes: {
-          value: &quot;string&quot;,
-      },
-  },
+    {
+        componentType: RawFormatterComponent.lateLoadKey,
+        label: $localize&#x60;No Formatter&#x60;,
+        dataTypes: {
+            // @ts-ignore
+            value: null,
+        },
+    },
+    {
+        componentType: LinkFormatterComponent.lateLoadKey,
+        label: $localize&#x60;Link&#x60;,
+        configurationComponent: &quot;LinkConfiguratorComponent&quot;,
+        dataTypes: {
+            value: &quot;label&quot;,
+            link: &quot;link&quot;,
+        },
+    },
+    {
+        componentType: IconFormatterComponent.lateLoadKey,
+        label: $localize&#x60;Icon&#x60;,
+        dataTypes: {
+            value: &quot;string&quot;,
+        },
+    },
 ]</code>
                         </td>
                     </tr>
@@ -3550,8 +3618,13 @@
                 properties: {
                     formParts: [
                         {
-                            previewPath: &quot;chart.properties.configuration.chartOptions&quot;,
-                            keys: [&quot;type&quot;, &quot;legendPlacement&quot;, &quot;legendFormatter&quot;],
+                            previewPath:
+                                &quot;chart.properties.configuration.chartOptions&quot;,
+                            keys: [
+                                &quot;type&quot;,
+                                &quot;legendPlacement&quot;,
+                                &quot;legendFormatter&quot;,
+                            ],
                         },
                         // {
                         //     previewPath: &quot;chart.properties.configuration&quot;,
@@ -3567,7 +3640,9 @@
                         {
                             trackOn: &quot;component&quot;,
                             key: &quot;chartTypeChanged$&quot;,
-                            paths: [&quot;data.donutContentConfiguration.properties.chartType&quot;],
+                            paths: [
+                                &quot;data.donutContentConfiguration.properties.chartType&quot;,
+                            ],
                         },
                     ] as IBroadcasterConfig[],
                 },
@@ -3585,7 +3660,8 @@
                 properties: {
                     formParts: [
                         {
-                            previewPath: &quot;chart.properties.configuration.chartOptions.donutContentConfig&quot;,
+                            previewPath:
+                                &quot;chart.properties.configuration.chartOptions.donutContentConfig&quot;,
                             keys: [&quot;formatter&quot;, &quot;aggregator&quot;],
                         },
                     ],
@@ -3627,24 +3703,25 @@
     /***************************************************************************************************
      *  Paths to important settings in this type definition
      ***************************************************************************************************/
-    &quot;paths&quot;: {
-        &quot;widget&quot;: {
+    paths: {
+        widget: {
             [WellKnownPathKey.Root]: DEFAULT_PIZZAGNA_ROOT,
         },
-        &quot;configurator&quot;: {
+        configurator: {
             [WellKnownPathKey.Root]: DEFAULT_PIZZAGNA_ROOT,
             // for the default data source configuration component, this changes the list of data sources to pick from
-            [WellKnownPathKey.DataSourceProviders]: &quot;dataSource.properties.dataSourceProviders&quot;,
+            [WellKnownPathKey.DataSourceProviders]:
+                &quot;dataSource.properties.dataSourceProviders&quot;,
         },
     },
     /***************************************************************************************************
      *  Widget section describes the structural part of the KPI widget
      ***************************************************************************************************/
-    &quot;widget&quot;: drilldownWidget,
+    widget: drilldownWidget,
     /***************************************************************************************************
      *  Configurator section describes the form that is used to configure the widget
      ***************************************************************************************************/
-    &quot;configurator&quot;: drilldownConfigurator,
+    configurator: drilldownConfigurator,
 }</code>
                         </td>
                     </tr>
@@ -3692,10 +3769,7 @@
             properties: {
                 elementClass: &quot;flex-grow-1 overflow-auto nui-scroll-shadows&quot;,
                 // references to other components laid out in this form
-                nodes: [
-                    &quot;presentation&quot;,
-                    &quot;dataAndCalculations&quot;,
-                ],
+                nodes: [&quot;presentation&quot;, &quot;dataAndCalculations&quot;],
             },
         },
         // /presentation
@@ -3710,7 +3784,8 @@
         // /presentation/titleAndDescription
         titleAndDescription: {
             id: &quot;titleAndDescription&quot;,
-            componentType: TitleAndDescriptionConfigurationComponent.lateLoadKey,
+            componentType:
+                TitleAndDescriptionConfigurationComponent.lateLoadKey,
             providers: {
                 converter: {
                     providerId: NOVA_TITLE_AND_DESCRIPTION_CONVERTER,
@@ -3841,12 +3916,7 @@
             componentType: StackComponent.lateLoadKey,
             properties: {
                 // these values reference other components in this structure
-                nodes: [
-                    &quot;header&quot;,
-                    &quot;loading&quot;,
-                    &quot;search&quot;,
-                    &quot;body&quot;,
-                ],
+                nodes: [&quot;header&quot;, &quot;loading&quot;, &quot;search&quot;, &quot;body&quot;],
             },
             providers: {
                 // event proxy manages the transmission of events between widget and dashboard
@@ -3877,10 +3947,7 @@
             componentType: StackComponent.lateLoadKey,
             properties: {
                 // these values reference other components in this configuration
-                nodes: [
-                    &quot;navigationBar&quot;,
-                    &quot;listWidget&quot;,
-                ],
+                nodes: [&quot;navigationBar&quot;, &quot;listWidget&quot;],
             },
         },
         navigationBar: {
@@ -3890,7 +3957,7 @@
         listWidget: {
             id: &quot;listWidget&quot;,
             componentType: ListWidgetComponent.lateLoadKey,
-            providers: { },
+            providers: {},
             properties: {
                 elementClass: &quot;w-100 p-3&quot;,
             },
@@ -3968,15 +4035,13 @@
             id: &quot;dataSource&quot;,
             componentType: &quot;DataSourceConfigurationComponent&quot;,
             properties: {
-                dataSourceProviders: [
-                    &quot;WIDGET_TABLE_DATA_SOURCE&quot;,
-                ],
+                dataSourceProviders: [&quot;WIDGET_TABLE_DATA_SOURCE&quot;],
             },
             providers: {
                 DATA_SOURCE_CONVERTER: {
                     providerId: &quot;DATA_SOURCE_CONVERTER&quot;,
                     properties: {
-                        &quot;componentName&quot;: &quot;table&quot;,
+                        componentName: &quot;table&quot;,
                     },
                 },
             },
@@ -4032,15 +4097,15 @@
     type: &quot;table&quot;,
     pizzagna: {
         [PizzagnaLayer.Configuration]: {
-            &quot;header&quot;: {
+            header: {
                 properties: {
                     title: &quot;Table Widget!&quot;,
                     subtitle: &quot;Basic table widget&quot;,
                 },
             },
-            &quot;table&quot;: {
+            table: {
                 providers: {
-                    &quot;dataSource&quot;: {
+                    dataSource: {
                         providerId: &quot;WIDGET_TABLE_DATA_SOURCE&quot;,
                     },
                 },
@@ -4106,22 +4171,22 @@
     /***************************************************************************************************
      *  Paths to important settings in this type definition
      ***************************************************************************************************/
-    &quot;paths&quot;: {
-        &quot;widget&quot;: {
+    paths: {
+        widget: {
             [WellKnownPathKey.Root]: DEFAULT_PIZZAGNA_ROOT,
         },
-        &quot;configurator&quot;: {
+        configurator: {
             [WellKnownPathKey.Root]: DEFAULT_PIZZAGNA_ROOT,
         },
     },
     /***************************************************************************************************
      *  Widget section describes the structural part of the widget
      ***************************************************************************************************/
-    &quot;widget&quot;: embeddedContentWidget,
+    widget: embeddedContentWidget,
     /***************************************************************************************************
      *  Configurator section describes the form that is used to configure the widget
      ***************************************************************************************************/
-    &quot;configurator&quot;: embeddedContentConfigurator,
+    configurator: embeddedContentConfigurator,
 }</code>
                         </td>
                     </tr>
@@ -4169,10 +4234,7 @@
             properties: {
                 elementClass: &quot;flex-grow-1 overflow-auto nui-scroll-shadows&quot;,
                 // references to other components laid out in this form
-                nodes: [
-                    &quot;presentation&quot;,
-                    &quot;customConfig&quot;,
-                ],
+                nodes: [&quot;presentation&quot;, &quot;customConfig&quot;],
             },
         },
         // /presentation
@@ -4187,7 +4249,8 @@
         // /presentation/titleAndDescription
         titleAndDescription: {
             id: &quot;titleAndDescription&quot;,
-            componentType: TitleAndDescriptionConfigurationComponent.lateLoadKey,
+            componentType:
+                TitleAndDescriptionConfigurationComponent.lateLoadKey,
             providers: {
                 converter: {
                     providerId: NOVA_TITLE_AND_DESCRIPTION_CONVERTER,
@@ -4209,8 +4272,9 @@
             componentType: EmbeddedContentConfigurationComponent.lateLoadKey,
             properties: {
                 messageComponent: {
-                    componentType: InfoMessageConfigurationComponent.lateLoadKey,
-                    properties:  {
+                    componentType:
+                        InfoMessageConfigurationComponent.lateLoadKey,
+                    properties: {
                         emphasizeText: &quot;Some content may not work as expected.&quot;,
                         generalText: &#x60;Web pages embedded in a widget may not be able to open popup windows or may experience formatting problems.
                                     If you supply your own HTML, dangerous content like scripts will be removed.&#x60;,
@@ -4287,11 +4351,7 @@
                 [WellKnownProviders.EventProxy]: EVENT_PROXY,
             },
             properties: {
-                nodes: [
-                    &quot;header&quot;,
-                    &quot;loading&quot;,
-                    &quot;body&quot;,
-                ],
+                nodes: [&quot;header&quot;, &quot;loading&quot;, &quot;body&quot;],
             },
         },
         // widget header
@@ -4741,21 +4801,28 @@ error configuration node defined in the widget structure.</p>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>(origin, properties?: IFieldMapperAggregatorProperties) &#x3D;&gt; {
-        const chartSeriesDataFieldId &#x3D; properties?.chartSeriesDataFieldId || &quot;data[0]&quot;;
+                            <i>Default value : </i><code>(
+    origin,
+    properties?: IFieldMapperAggregatorProperties
+) &#x3D;&gt; {
+    const chartSeriesDataFieldId &#x3D;
+        properties?.chartSeriesDataFieldId || &quot;data[0]&quot;;
 
-        let metric: any &#x3D; origin[0];
-        if (properties?.activeMetricId) {
-            metric &#x3D; origin.find(entry &#x3D;&gt; entry.id &#x3D;&#x3D;&#x3D; properties?.activeMetricId);
+    let metric: any &#x3D; origin[0];
+    if (properties?.activeMetricId) {
+        metric &#x3D; origin.find(
+            (entry) &#x3D;&gt; entry.id &#x3D;&#x3D;&#x3D; properties?.activeMetricId
+        );
 
-            if (!metric) {
-                console.warn(&#x60;No metric with id: ${properties?.activeMetricId} found. Taking first available.&#x60;);
-            }
+        if (!metric) {
+            console.warn(
+                &#x60;No metric with id: ${properties?.activeMetricId} found. Taking first available.&#x60;
+            );
         }
+    }
 
-        return get(metric, chartSeriesDataFieldId);
-
-    }</code>
+    return get(metric, chartSeriesDataFieldId);
+}</code>
                         </td>
                     </tr>
 
@@ -4779,7 +4846,8 @@ error configuration node defined in the widget structure.</p>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>(tilesAmount: number) &#x3D;&gt; 0.25 * tilesAmount + 0.7</code>
+                            <i>Default value : </i><code>(tilesAmount: number) &#x3D;&gt;
+    0.25 * tilesAmount + 0.7</code>
                         </td>
                     </tr>
 
@@ -4811,7 +4879,8 @@ This function represents the linear dependency (approximately).</p>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>(entry: string): string &#x3D;&gt; entry.replace(paramsRegex, &quot;&quot;)</code>
+                            <i>Default value : </i><code>(entry: string): string &#x3D;&gt;
+    entry.replace(paramsRegex, &quot;&quot;)</code>
                         </td>
                     </tr>
 
@@ -5068,11 +5137,7 @@ This function represents the linear dependency (approximately).</p>
                 [WellKnownProviders.EventProxy]: EVENT_PROXY,
             },
             properties: {
-                nodes: [
-                    &quot;header&quot;,
-                    &quot;loading&quot;,
-                    &quot;body&quot;,
-                ],
+                nodes: [&quot;header&quot;, &quot;loading&quot;, &quot;body&quot;],
             },
         },
         // widget header
@@ -5094,7 +5159,10 @@ This function represents the linear dependency (approximately).</p>
          * The first argument corresponds to the main content node key.
          * The second argument is the id of the adapter responsible for activating fallback content in case of an error.
          */
-        ...widgetBodyContentNodes(&quot;tiles&quot;, NOVA_KPI_STATUS_CONTENT_FALLBACK_ADAPTER),
+        ...widgetBodyContentNodes(
+            &quot;tiles&quot;,
+            NOVA_KPI_STATUS_CONTENT_FALLBACK_ADAPTER
+        ),
 
         // the main content node specifying a component that manages layout of the KPI tiles in a CSS grid
         tiles: {
@@ -5104,25 +5172,23 @@ This function represents the linear dependency (approximately).</p>
                 elementClass: &quot;flex-grow-1 pt-2 px-3 pb-3 w-100&quot;,
                 template: {
                     componentType: KpiComponent.lateLoadKey,
-                    &quot;providers&quot;: {
+                    providers: {
                         [WellKnownProviders.KpiColorPrioritizer]: {
-                            &quot;providerId&quot;: NOVA_KPI_COLOR_PRIORITIZER,
-                            &quot;properties&quot;: {
-                            },
+                            providerId: NOVA_KPI_COLOR_PRIORITIZER,
+                            properties: {},
                         } as IProviderConfiguration,
                         [WellKnownProviders.Adapter]: {
-                            &quot;providerId&quot;: NOVA_KPI_DATASOURCE_ADAPTER,
-                            &quot;properties&quot;: {
-                                &quot;propertyPath&quot;: &quot;widgetData&quot;,
+                            providerId: NOVA_KPI_DATASOURCE_ADAPTER,
+                            properties: {
+                                propertyPath: &quot;widgetData&quot;,
                             },
                         } as IProviderConfiguration,
                     },
-                    &quot;properties&quot;: {
-                        &quot;elementClass&quot;: &quot;flex-grow-1&quot;,
+                    properties: {
+                        elementClass: &quot;flex-grow-1&quot;,
                     },
                 },
             },
-
         },
     },
     [PizzagnaLayer.Configuration]: {
@@ -5229,88 +5295,88 @@ This function represents the linear dependency (approximately).</p>
                         <td class="col-md-4">
                             <i>Default value : </i><code>[
     {
-        &quot;componentType&quot;: &quot;KpiComponent&quot;,
-        &quot;providers&quot;: {
-            &quot;kpiColorPrioritizer&quot;: {
-                &quot;providerId&quot;: &quot;NOVA_KPI_COLOR_PRIORITIZER&quot;,
-                &quot;properties&quot;: {
-                    &quot;rules&quot;: [
+        componentType: &quot;KpiComponent&quot;,
+        providers: {
+            kpiColorPrioritizer: {
+                providerId: &quot;NOVA_KPI_COLOR_PRIORITIZER&quot;,
+                properties: {
+                    rules: [
                         {
-                            &quot;comparisonType&quot;: &quot;&gt;&quot;,
-                            &quot;value&quot;: 2,
-                            &quot;color&quot;: &quot;var(--nui-color-chart-four)&quot;,
+                            comparisonType: &quot;&gt;&quot;,
+                            value: 2,
+                            color: &quot;var(--nui-color-chart-four)&quot;,
                         },
                         {
-                            &quot;comparisonType&quot;: &quot;&#x3D;&#x3D;&quot;,
-                            &quot;value&quot;: 1.5,
-                            &quot;color&quot;: &quot;var(--nui-color-chart-seven)&quot;,
+                            comparisonType: &quot;&#x3D;&#x3D;&quot;,
+                            value: 1.5,
+                            color: &quot;var(--nui-color-chart-seven)&quot;,
                         },
                         {
-                            &quot;comparisonType&quot;: &quot;&lt;&quot;,
-                            &quot;value&quot;: 1,
-                            &quot;color&quot;: &quot;var(--nui-color-chart-one)&quot;,
+                            comparisonType: &quot;&lt;&quot;,
+                            value: 1,
+                            color: &quot;var(--nui-color-chart-one)&quot;,
                         },
                     ],
                 },
             },
-            &quot;adapter&quot;: {
-                &quot;providerId&quot;: &quot;NOVA_KPI_DATASOURCE_ADAPTER&quot;,
-                &quot;properties&quot;: {
-                    &quot;propertyPath&quot;: &quot;widgetData&quot;,
+            adapter: {
+                providerId: &quot;NOVA_KPI_DATASOURCE_ADAPTER&quot;,
+                properties: {
+                    propertyPath: &quot;widgetData&quot;,
                 },
             },
-            &quot;dataSource&quot;: {
-                &quot;providerId&quot;: &quot;AcmeKpiDataSource&quot;,
+            dataSource: {
+                providerId: &quot;AcmeKpiDataSource&quot;,
             },
         },
-        &quot;id&quot;: &quot;kpi1&quot;,
-        &quot;properties&quot;: {
-            &quot;elementClass&quot;: &quot;flex-grow-1&quot;,
-            &quot;widgetData&quot;: {
-                &quot;id&quot;: &quot;totalStorage&quot;,
-                &quot;value&quot;: 0,
-                &quot;label&quot;: &quot;Total storage&quot;,
-                &quot;units&quot;: &quot;TB&quot;,
-                &quot;backgroundColor&quot;: &quot;blue&quot;,
+        id: &quot;kpi1&quot;,
+        properties: {
+            elementClass: &quot;flex-grow-1&quot;,
+            widgetData: {
+                id: &quot;totalStorage&quot;,
+                value: 0,
+                label: &quot;Total storage&quot;,
+                units: &quot;TB&quot;,
+                backgroundColor: &quot;blue&quot;,
             },
         },
     },
     {
-        &quot;componentType&quot;: &quot;KpiComponent&quot;,
-        &quot;providers&quot;: {
-            &quot;kpiColorPrioritizer&quot;: {
-                &quot;providerId&quot;: &quot;NOVA_KPI_COLOR_PRIORITIZER&quot;,
-                &quot;properties&quot;: {
-                    &quot;rules&quot;: [
+        componentType: &quot;KpiComponent&quot;,
+        providers: {
+            kpiColorPrioritizer: {
+                providerId: &quot;NOVA_KPI_COLOR_PRIORITIZER&quot;,
+                properties: {
+                    rules: [
                         {
-                            &quot;comparisonType&quot;: &quot;&#x3D;&#x3D;&quot;,
-                            &quot;value&quot;: 0,
-                            &quot;color&quot;: &quot;red&quot;,
+                            comparisonType: &quot;&#x3D;&#x3D;&quot;,
+                            value: 0,
+                            color: &quot;red&quot;,
                         },
                     ],
                 },
             },
-            &quot;adapter&quot;: {
-                &quot;providerId&quot;: &quot;NOVA_KPI_DATASOURCE_ADAPTER&quot;,
-                &quot;properties&quot;: {
-                    &quot;propertyPath&quot;: &quot;widgetData&quot;,
+            adapter: {
+                providerId: &quot;NOVA_KPI_DATASOURCE_ADAPTER&quot;,
+                properties: {
+                    propertyPath: &quot;widgetData&quot;,
                 },
             },
-            &quot;dataSource&quot;: {
-                &quot;providerId&quot;: &quot;AcmeKpiDataSource2&quot;,
-                &quot;properties&quot;: {
-                    &quot;numberFormat&quot;: &quot;1.1-1&quot;,
+            dataSource: {
+                providerId: &quot;AcmeKpiDataSource2&quot;,
+                properties: {
+                    numberFormat: &quot;1.1-1&quot;,
                 },
             },
         },
-        &quot;id&quot;: &quot;kpi2&quot;,
-        &quot;properties&quot;: {
-            &quot;elementClass&quot;: &quot;flex-grow-1&quot;,
-            &quot;widgetData&quot;: {
-                &quot;id&quot;: &quot;downloadSpeed&quot;,
-                &quot;value&quot;: 0,
-                &quot;label&quot;: &quot;Download SUPER DUPER VERY LONG STRING Speed&quot;,
-                &quot;units&quot;: &quot;MB/S&quot;,
+        id: &quot;kpi2&quot;,
+        properties: {
+            elementClass: &quot;flex-grow-1&quot;,
+            widgetData: {
+                id: &quot;downloadSpeed&quot;,
+                value: 0,
+                label: &quot;Download SUPER DUPER VERY LONG STRING Speed&quot;,
+                units: &quot;MB/S&quot;,
             },
         },
     },
@@ -5343,62 +5409,62 @@ This function represents the linear dependency (approximately).</p>
                         <td class="col-md-4">
                             <i>Default value : </i><code>[
     {
-        &quot;id&quot;: &quot;kpi1&quot;,
-        &quot;providers&quot;: {
-            &quot;dataSource&quot;: {
-                &quot;providerId&quot;: &quot;AcmeKpiDataSource&quot;,
+        id: &quot;kpi1&quot;,
+        providers: {
+            dataSource: {
+                providerId: &quot;AcmeKpiDataSource&quot;,
             },
-            &quot;kpiColorPrioritizer&quot;: {
-                &quot;providerId&quot;: &quot;NOVA_KPI_COLOR_PRIORITIZER&quot;,
-                &quot;properties&quot;: {
-                    &quot;rules&quot;: [
+            kpiColorPrioritizer: {
+                providerId: &quot;NOVA_KPI_COLOR_PRIORITIZER&quot;,
+                properties: {
+                    rules: [
                         {
-                            &quot;comparisonType&quot;: &quot;&gt;&quot;,
-                            &quot;value&quot;: 2,
-                            &quot;color&quot;: &quot;var(--nui-color-chart-four)&quot;,
+                            comparisonType: &quot;&gt;&quot;,
+                            value: 2,
+                            color: &quot;var(--nui-color-chart-four)&quot;,
                         },
                         {
-                            &quot;comparisonType&quot;: &quot;&#x3D;&#x3D;&quot;,
-                            &quot;value&quot;: 1.5,
-                            &quot;color&quot;: &quot;var(--nui-color-chart-seven)&quot;,
+                            comparisonType: &quot;&#x3D;&#x3D;&quot;,
+                            value: 1.5,
+                            color: &quot;var(--nui-color-chart-seven)&quot;,
                         },
                         {
-                            &quot;comparisonType&quot;: &quot;&lt;&quot;,
-                            &quot;value&quot;: 1,
-                            &quot;color&quot;: &quot;var(--nui-color-chart-one)&quot;,
+                            comparisonType: &quot;&lt;&quot;,
+                            value: 1,
+                            color: &quot;var(--nui-color-chart-one)&quot;,
                         },
                     ],
                 },
             },
         },
-        &quot;properties&quot;: {
-            &quot;elementClass&quot;: &quot;flex-grow-1&quot;,
-            &quot;widgetData&quot;: {
-                &quot;id&quot;: &quot;totalStorage&quot;,
-                &quot;value&quot;: 0,
-                &quot;label&quot;: &quot;Total storage&quot;,
-                &quot;units&quot;: &quot;TB&quot;,
-                &quot;backgroundColor&quot;: &quot;blue&quot;,
+        properties: {
+            elementClass: &quot;flex-grow-1&quot;,
+            widgetData: {
+                id: &quot;totalStorage&quot;,
+                value: 0,
+                label: &quot;Total storage&quot;,
+                units: &quot;TB&quot;,
+                backgroundColor: &quot;blue&quot;,
             },
         },
     },
     {
-        &quot;id&quot;: &quot;kpi2&quot;,
-        &quot;providers&quot;: {
-            &quot;dataSource&quot;: {
-                &quot;providerId&quot;: &quot;AcmeKpiDataSource2&quot;,
-                &quot;properties&quot;: {
-                    &quot;numberFormat&quot;: &quot;1.1-1&quot;,
+        id: &quot;kpi2&quot;,
+        providers: {
+            dataSource: {
+                providerId: &quot;AcmeKpiDataSource2&quot;,
+                properties: {
+                    numberFormat: &quot;1.1-1&quot;,
                 },
             },
         },
-        &quot;properties&quot;: {
-            &quot;elementClass&quot;: &quot;flex-grow-1&quot;,
-            &quot;widgetData&quot;: {
-                &quot;id&quot;: &quot;downloadSpeed&quot;,
-                &quot;value&quot;: 0,
-                &quot;label&quot;: &quot;Download SUPER DUPER VERY LONG STRING Speed&quot;,
-                &quot;units&quot;: &quot;MB/S&quot;,
+        properties: {
+            elementClass: &quot;flex-grow-1&quot;,
+            widgetData: {
+                id: &quot;downloadSpeed&quot;,
+                value: 0,
+                label: &quot;Download SUPER DUPER VERY LONG STRING Speed&quot;,
+                units: &quot;MB/S&quot;,
             },
         },
     },
@@ -5432,46 +5498,46 @@ This function represents the linear dependency (approximately).</p>
                             <i>Default value : </i><code>[
     {
         componentType: &quot;KpiComponent&quot;,
-        &quot;providers&quot;: {
+        providers: {
             kpiColorPrioritizer: {
-                &quot;providerId&quot;: &quot;NOVA_KPI_COLOR_PRIORITIZER&quot;,
-                &quot;properties&quot;: {
-                    &quot;rules&quot;: [
+                providerId: &quot;NOVA_KPI_COLOR_PRIORITIZER&quot;,
+                properties: {
+                    rules: [
                         {
-                            &quot;comparisonType&quot;: &quot;&#x3D;&#x3D;&quot;,
-                            &quot;value&quot;: 0,
-                            &quot;color&quot;: &quot;red&quot;,
+                            comparisonType: &quot;&#x3D;&#x3D;&quot;,
+                            value: 0,
+                            color: &quot;red&quot;,
                         },
                     ],
                 },
             },
             adapter: {
-                &quot;providerId&quot;: &quot;NOVA_KPI_DATASOURCE_ADAPTER&quot;,
-                &quot;properties&quot;: {
-                    &quot;propertyPath&quot;: &quot;widgetData&quot;,
+                providerId: &quot;NOVA_KPI_DATASOURCE_ADAPTER&quot;,
+                properties: {
+                    propertyPath: &quot;widgetData&quot;,
                 },
             },
         },
     },
     {
         componentType: &quot;KpiComponent&quot;,
-        &quot;providers&quot;: {
+        providers: {
             kpiColorPrioritizer: {
-                &quot;providerId&quot;: &quot;NOVA_KPI_COLOR_PRIORITIZER&quot;,
-                &quot;properties&quot;: {
-                    &quot;rules&quot;: [
+                providerId: &quot;NOVA_KPI_COLOR_PRIORITIZER&quot;,
+                properties: {
+                    rules: [
                         {
-                            &quot;comparisonType&quot;: &quot;&#x3D;&#x3D;&quot;,
-                            &quot;value&quot;: 0,
-                            &quot;color&quot;: &quot;red&quot;,
+                            comparisonType: &quot;&#x3D;&#x3D;&quot;,
+                            value: 0,
+                            color: &quot;red&quot;,
                         },
                     ],
                 },
             },
             adapter: {
-                &quot;providerId&quot;: &quot;NOVA_KPI_DATASOURCE_ADAPTER&quot;,
-                &quot;properties&quot;: {
-                    &quot;propertyPath&quot;: &quot;widgetData&quot;,
+                providerId: &quot;NOVA_KPI_DATASOURCE_ADAPTER&quot;,
+                properties: {
+                    propertyPath: &quot;widgetData&quot;,
                 },
             },
         },
@@ -5501,8 +5567,8 @@ This function represents the linear dependency (approximately).</p>
                     <tr>
                         <td class="col-md-4">
                             <i>Default value : </i><code>{
-    markForCheck: () &#x3D;&gt; { },
-    detectChanges: () &#x3D;&gt; { },
+    markForCheck: () &#x3D;&gt; {},
+    detectChanges: () &#x3D;&gt; {},
 } as ChangeDetectorRef</code>
                         </td>
                     </tr>
@@ -5525,10 +5591,10 @@ This function represents the linear dependency (approximately).</p>
                     <tr>
                         <td class="col-md-4">
                             <i>Default value : </i><code>{
-    info: () &#x3D;&gt; { },
-    debug: () &#x3D;&gt; { },
-    warn: () &#x3D;&gt; { },
-    error: () &#x3D;&gt; { },
+    info: () &#x3D;&gt; {},
+    debug: () &#x3D;&gt; {},
+    warn: () &#x3D;&gt; {},
+    error: () &#x3D;&gt; {},
 } as LoggerService</code>
                         </td>
                     </tr>
@@ -5559,26 +5625,29 @@ This function represents the linear dependency (approximately).</p>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>(origin, properties?: IPercentageAggregatorProperties) &#x3D;&gt; {
-    const data &#x3D; origin.map(v &#x3D;&gt; v.data[0]);
+                            <i>Default value : </i><code>(
+    origin,
+    properties?: IPercentageAggregatorProperties
+) &#x3D;&gt; {
+    const data &#x3D; origin.map((v) &#x3D;&gt; v.data[0]);
     const { activeMetricId, base100 } &#x3D; properties || {};
 
     const summed &#x3D; sum(data);
 
     let metric &#x3D; data[0];
     if (activeMetricId) {
-        metric &#x3D; origin.find(entry &#x3D;&gt; entry.id &#x3D;&#x3D;&#x3D; activeMetricId)?.data[0];
+        metric &#x3D; origin.find((entry) &#x3D;&gt; entry.id &#x3D;&#x3D;&#x3D; activeMetricId)?.data[0];
 
         if (!metric) {
-            console.warn(&#x60;No metric with id: ${activeMetricId} found. Taking first available.&#x60;);
+            console.warn(
+                &#x60;No metric with id: ${activeMetricId} found. Taking first available.&#x60;
+            );
         }
     }
 
     const percentage &#x3D; metric / summed;
 
-    let finalValue &#x3D; base100
-        ? percentage * 100
-        : percentage;
+    let finalValue &#x3D; base100 ? percentage * 100 : percentage;
     // round to 2 digits on fractional part
     finalValue &#x3D; Math.round(finalValue * 100) / 100;
 
@@ -5622,10 +5691,10 @@ This function represents the linear dependency (approximately).</p>
                         <td class="col-md-4">
                             <i>Default value : </i><code>{
     paths: {
-        &quot;widget&quot;: {
+        widget: {
             [WellKnownPathKey.Root]: DEFAULT_PIZZAGNA_ROOT,
         },
-        &quot;configurator&quot;: {
+        configurator: {
             [WellKnownPathKey.Root]: DEFAULT_PIZZAGNA_ROOT,
         },
     },
@@ -5635,10 +5704,7 @@ This function represents the linear dependency (approximately).</p>
                 id: DEFAULT_PIZZAGNA_ROOT,
                 componentType: StackComponent.lateLoadKey,
                 properties: {
-                    nodes: [
-                        &quot;header&quot;,
-                        &quot;body&quot;,
-                    ],
+                    nodes: [&quot;header&quot;, &quot;body&quot;],
                 },
             },
             header: WIDGET_HEADER,
@@ -5690,28 +5756,31 @@ This function represents the linear dependency (approximately).</p>
     /***************************************************************************************************
      *  Paths to important settings in this type definition
      ***************************************************************************************************/
-    &quot;paths&quot;: {
-        &quot;widget&quot;: {
+    paths: {
+        widget: {
             [WellKnownPathKey.Root]: DEFAULT_PIZZAGNA_ROOT,
         },
-        &quot;configurator&quot;: {
+        configurator: {
             [WellKnownPathKey.Root]: DEFAULT_PIZZAGNA_ROOT,
             // this points at the component type you need to change if you want to change the component for data source configuration
-            [WellKnownPathKey.DataSourceConfigComponentType]: &quot;dataSource.componentType&quot;,
+            [WellKnownPathKey.DataSourceConfigComponentType]:
+                &quot;dataSource.componentType&quot;,
             // for the default data source configuration component, this changes the list of data sources to pick from
-            [WellKnownPathKey.DataSourceProviders]: &quot;dataSource.properties.dataSourceProviders&quot;,
+            [WellKnownPathKey.DataSourceProviders]:
+                &quot;dataSource.properties.dataSourceProviders&quot;,
             // this is where donut content chart formatters are defined
-            [WellKnownPathKey.Formatters]: &quot;chartOptionsEditor.properties.chartOptions.contentFormatters&quot;,
+            [WellKnownPathKey.Formatters]:
+                &quot;chartOptionsEditor.properties.chartOptions.contentFormatters&quot;,
         },
     },
     /***************************************************************************************************
      *  Widget section describes the structural part of the proportional widget
      ***************************************************************************************************/
-    &quot;widget&quot;: proportionalWidget,
+    widget: proportionalWidget,
     /***************************************************************************************************
      *  Configuration section describes the form that is used to configure the widget
      ***************************************************************************************************/
-    &quot;configurator&quot;: proportionalConfigurator,
+    configurator: proportionalConfigurator,
 }</code>
                         </td>
                     </tr>
@@ -5758,11 +5827,7 @@ This function represents the linear dependency (approximately).</p>
             componentType: StackComponent.lateLoadKey,
             properties: {
                 // these values reference other components in this structure
-                nodes: [
-                    &quot;header&quot;,
-                    &quot;loading&quot;,
-                    &quot;body&quot;,
-                ],
+                nodes: [&quot;header&quot;, &quot;loading&quot;, &quot;body&quot;],
             },
             providers: {
                 // When enabled, this provider emits the REFRESH event on the pizzagna event bus every X seconds
@@ -5784,7 +5849,6 @@ This function represents the linear dependency (approximately).</p>
             },
         },
 
-
         // retrieving the definitions for the body content nodes. the argument corresponds to the main content node key
         ...widgetBodyContentNodes(&quot;chart&quot;),
 
@@ -5802,7 +5866,8 @@ This function represents the linear dependency (approximately).</p>
                 },
             },
             properties: {
-                elementClass: &quot;d-flex flex-grow-1 justify-content-center overflow-auto&quot;,
+                elementClass:
+                    &quot;d-flex flex-grow-1 justify-content-center overflow-auto&quot;,
             },
         },
     },
@@ -5896,7 +5961,11 @@ This function represents the linear dependency (approximately).</p>
                 formParts: [
                     {
                         previewPath: &#x60;${DEFAULT_PIZZAGNA_ROOT}.providers.refresher.properties&#x60;,
-                        keys: [&quot;enabled&quot;, &quot;interval&quot;, &quot;overrideDefaultSettings&quot;],
+                        keys: [
+                            &quot;enabled&quot;,
+                            &quot;interval&quot;,
+                            &quot;overrideDefaultSettings&quot;,
+                        ],
                     },
                 ],
             },
@@ -6120,18 +6189,23 @@ This function represents the linear dependency (approximately).</p>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>(origin, properties?) &#x3D;&gt; {
-        const { activeMetricId } &#x3D; properties || {};
+                            <i>Default value : </i><code>(
+    origin,
+    properties?
+) &#x3D;&gt; {
+    const { activeMetricId } &#x3D; properties || {};
 
-        if (activeMetricId) {
-            const activeMetric &#x3D; origin.find(entry &#x3D;&gt; entry.id &#x3D;&#x3D;&#x3D; activeMetricId);
-            if (activeMetric) {
-                return activeMetric.data[0];
-            }
+    if (activeMetricId) {
+        const activeMetric &#x3D; origin.find(
+            (entry) &#x3D;&gt; entry.id &#x3D;&#x3D;&#x3D; activeMetricId
+        );
+        if (activeMetric) {
+            return activeMetric.data[0];
         }
+    }
 
-        return sum(origin.map(entry &#x3D;&gt; entry.data[0])).toString();
-    }</code>
+    return sum(origin.map((entry) &#x3D;&gt; entry.data[0])).toString();
+}</code>
                         </td>
                     </tr>
 
@@ -6168,15 +6242,18 @@ This function represents the linear dependency (approximately).</p>
                     <tr>
                         <td class="col-md-4">
                             <i>Default value : </i><code>{
-    &quot;paths&quot;: {
-        &quot;widget&quot;: {
+    paths: {
+        widget: {
             [WellKnownPathKey.Root]: DEFAULT_PIZZAGNA_ROOT,
         },
-        &quot;configurator&quot;: {
+        configurator: {
             [WellKnownPathKey.Root]: DEFAULT_PIZZAGNA_ROOT,
-            [WellKnownPathKey.DataSourceConfigComponentType]: &quot;dataSource.componentType&quot;,
-            [WellKnownPathKey.DataSourceProviders]: &quot;dataSource.properties.dataSourceProviders&quot;,
-            [WellKnownPathKey.Formatters]: &quot;columns.properties.template[1].properties.formatters&quot;,
+            [WellKnownPathKey.DataSourceConfigComponentType]:
+                &quot;dataSource.componentType&quot;,
+            [WellKnownPathKey.DataSourceProviders]:
+                &quot;dataSource.properties.dataSourceProviders&quot;,
+            [WellKnownPathKey.Formatters]:
+                &quot;columns.properties.template[1].properties.formatters&quot;,
         },
     },
     widget: tableWidget,
@@ -6244,7 +6321,8 @@ This function represents the linear dependency (approximately).</p>
         // /presentation/titleAndDescription
         titleAndDescription: {
             id: &quot;titleAndDescription&quot;,
-            componentType: TitleAndDescriptionConfigurationComponent.lateLoadKey,
+            componentType:
+                TitleAndDescriptionConfigurationComponent.lateLoadKey,
             providers: {
                 [WellKnownProviders.Converter]: {
                     providerId: NOVA_TITLE_AND_DESCRIPTION_CONVERTER,
@@ -6290,7 +6368,8 @@ This function represents the linear dependency (approximately).</p>
                                 keys: [&quot;providerId&quot;, &quot;properties&quot;],
                             },
                             {
-                                previewPath: &quot;table.providers.adapter.properties.dataSource&quot;,
+                                previewPath:
+                                    &quot;table.providers.adapter.properties.dataSource&quot;,
                                 keys: [&quot;properties&quot;],
                             },
                         ],
@@ -6373,11 +6452,7 @@ This function represents the linear dependency (approximately).</p>
                 },
             },
             properties: {
-                nodes: [
-                    &quot;header&quot;,
-                    &quot;loading&quot;,
-                    &quot;body&quot;,
-                ],
+                nodes: [&quot;header&quot;, &quot;loading&quot;, &quot;body&quot;],
             },
         },
         // widget header
@@ -6392,7 +6467,6 @@ This function represents the linear dependency (approximately).</p>
                 elementClass: &quot;overflow-auto&quot;,
             },
         },
-
 
         // retrieving the definitions for the body content nodes. the argument corresponds to the main content node key
         ...widgetBodyContentNodes(&quot;table&quot;),
@@ -6413,7 +6487,7 @@ This function represents the linear dependency (approximately).</p>
                         totalItemsPath: &quot;totalItems&quot;,
                     },
                 },
-                &quot;virtualViewportManager&quot;: {
+                virtualViewportManager: {
                     providerId: NOVA_VIRTUAL_VIEWPORT_MANAGER,
                 },
             },
@@ -6490,7 +6564,6 @@ This function represents the linear dependency (approximately).</p>
         throw new Error(&quot;warningThresholdValue formControl is not defined&quot;);
     }
     removeErrors(warning, &quot;min&quot;, &quot;max&quot;);
-
 
     if (show?.value) {
         if (_isNil(warning.value)) {
@@ -6642,26 +6715,28 @@ This function represents the linear dependency (approximately).</p>
     /***************************************************************************************************
      *  Paths to important settings in this type definition
      ***************************************************************************************************/
-    &quot;paths&quot;: {
-        &quot;widget&quot;: {
+    paths: {
+        widget: {
             [WellKnownPathKey.Root]: DEFAULT_PIZZAGNA_ROOT,
         },
-        &quot;configurator&quot;: {
+        configurator: {
             [WellKnownPathKey.Root]: DEFAULT_PIZZAGNA_ROOT,
             // this points at the component type you need to change if you want to change the component for data source configuration
-            [WellKnownPathKey.DataSourceConfigComponentType]: &quot;dataSource.componentType&quot;,
+            [WellKnownPathKey.DataSourceConfigComponentType]:
+                &quot;dataSource.componentType&quot;,
             // for the default data source configuration component, this changes the list of data sources to pick from
-            [WellKnownPathKey.DataSourceProviders]: &quot;dataSource.properties.dataSourceProviders&quot;,
+            [WellKnownPathKey.DataSourceProviders]:
+                &quot;dataSource.properties.dataSourceProviders&quot;,
         },
     },
     /***************************************************************************************************
      *  Widget section describes the structural part of the Timeseries widget
      ***************************************************************************************************/
-    &quot;widget&quot;: timeseriesWidget,
+    widget: timeseriesWidget,
     /***************************************************************************************************
      *  Configurator section describes the form that is used to configure the widget
      ***************************************************************************************************/
-    &quot;configurator&quot;: timeseriesConfigurator,
+    configurator: timeseriesConfigurator,
 }</code>
                         </td>
                     </tr>
@@ -6709,11 +6784,7 @@ This function represents the linear dependency (approximately).</p>
             properties: {
                 elementClass: &quot;flex-grow-1 overflow-auto nui-scroll-shadows&quot;,
                 // references to other components laid out in this form
-                nodes: [
-                    &quot;presentation&quot;,
-                    &quot;dataAndCalculations&quot;,
-                    &quot;series&quot;,
-                ],
+                nodes: [&quot;presentation&quot;, &quot;dataAndCalculations&quot;, &quot;series&quot;],
             },
         },
         // /presentation
@@ -6722,16 +6793,14 @@ This function represents the linear dependency (approximately).</p>
             componentType: WidgetConfiguratorSectionComponent.lateLoadKey,
             properties: {
                 headerText: $localize&#x60;Presentation&#x60;,
-                nodes: [
-                    &quot;titleAndDescription&quot;,
-                    &quot;timeseriesMetadata&quot;,
-                ],
+                nodes: [&quot;titleAndDescription&quot;, &quot;timeseriesMetadata&quot;],
             },
         },
         // /presentation/titleAndDescription
         titleAndDescription: {
             id: &quot;titleAndDescription&quot;,
-            componentType: TitleAndDescriptionConfigurationComponent.lateLoadKey,
+            componentType:
+                TitleAndDescriptionConfigurationComponent.lateLoadKey,
             providers: {
                 [WellKnownProviders.Converter]: {
                     providerId: NOVA_TITLE_AND_DESCRIPTION_CONVERTER,
@@ -6798,7 +6867,8 @@ This function represents the linear dependency (approximately).</p>
                             },
                             {
                                 // this component updates &#x27;properties&#x27; of &#x27;dataSource&#x27; via an adapter
-                                previewPath: &quot;chart.providers.adapter.properties.dataSource&quot;,
+                                previewPath:
+                                    &quot;chart.providers.adapter.properties.dataSource&quot;,
                                 keys: [&quot;properties&quot;],
                             },
                         ] as IConverterFormPartsProperties[],
@@ -6809,7 +6879,8 @@ This function represents the linear dependency (approximately).</p>
         // /series
         series: {
             id: &quot;series&quot;,
-            componentType: TimeseriesSeriesCollectionConfigurationComponent.lateLoadKey,
+            componentType:
+                TimeseriesSeriesCollectionConfigurationComponent.lateLoadKey,
             providers: {
                 // converter transforms the data between the widget and the form
                 [WellKnownProviders.Converter]: {
@@ -6822,7 +6893,8 @@ This function represents the linear dependency (approximately).</p>
                     {
                         // series description (label) configuration section
                         id: &quot;description&quot;,
-                        componentType: TimeseriesTileDescriptionConfigurationComponent.lateLoadKey,
+                        componentType:
+                            TimeseriesTileDescriptionConfigurationComponent.lateLoadKey,
                         providers: {
                             // converter transforms the data between the widget and the form
                             [WellKnownProviders.Converter]: {
@@ -6831,7 +6903,8 @@ This function represents the linear dependency (approximately).</p>
                                     formParts: [
                                         {
                                             // this component updates &#x27;label&#x27; of &#x27;series&#x27; via an adapter
-                                            previewPath: &quot;chart.providers.adapter.properties.series&quot;,
+                                            previewPath:
+                                                &quot;chart.providers.adapter.properties.series&quot;,
                                             keys: [&quot;label&quot;],
                                         },
                                     ] as IConverterFormPartsProperties[],
@@ -6842,11 +6915,13 @@ This function represents the linear dependency (approximately).</p>
                     {
                         // indicator data configuration section
                         id: &quot;indicatorData&quot;,
-                        componentType: TimeseriesTileIndicatorDataConfigurationComponent.lateLoadKey,
+                        componentType:
+                            TimeseriesTileIndicatorDataConfigurationComponent.lateLoadKey,
                         providers: {
                             // converter transforms the data such as the selected series between the widget and the form
                             [WellKnownProviders.Converter]: {
-                                providerId: NOVA_TIMESERIES_TILE_INDICATOR_DATA_CONVERTER,
+                                providerId:
+                                    NOVA_TIMESERIES_TILE_INDICATOR_DATA_CONVERTER,
                             } as IProviderConfiguration,
                         },
                     },
@@ -6898,11 +6973,7 @@ This function represents the linear dependency (approximately).</p>
             },
             properties: {
                 // these values reference other components in this structure
-                nodes: [
-                    &quot;header&quot;,
-                    &quot;loading&quot;,
-                    &quot;body&quot;,
-                ],
+                nodes: [&quot;header&quot;, &quot;loading&quot;, &quot;body&quot;],
             },
         },
         // widget header
@@ -6918,7 +6989,6 @@ This function represents the linear dependency (approximately).</p>
             },
         },
 
-
         // retrieving the definitions for the body content nodes. the argument corresponds to the main content node key
         ...widgetBodyContentNodes(&quot;mainContent&quot;),
 
@@ -6927,10 +6997,7 @@ This function represents the linear dependency (approximately).</p>
             componentType: StackComponent.lateLoadKey,
             properties: {
                 // these values reference other components in this configuration
-                nodes: [
-                    &quot;timeframeSelection&quot;,
-                    &quot;chart&quot;,
-                ],
+                nodes: [&quot;timeframeSelection&quot;, &quot;chart&quot;],
             },
         },
         // component that filters the widget&#x27;s timeseries data by timeframe
@@ -6943,15 +7010,18 @@ This function represents the linear dependency (approximately).</p>
             id: &quot;chart&quot;,
             componentType: TimeseriesWidgetComponent.lateLoadKey,
             properties: {
-                elementClass: &quot;d-flex flex-column justify-content-center h-100 overflow-auto&quot;,
+                elementClass:
+                    &quot;d-flex flex-column justify-content-center h-100 overflow-auto&quot;,
                 configuration: {
                     preset: TimeseriesChartPreset.Line,
                     // this scales configuration defines default scale types for the chart
                     scales: {
-                        y: { // linear numeric scale for the y axis
+                        y: {
+                            // linear numeric scale for the y axis
                             type: TimeseriesScaleType.Linear,
                         } as ITimeseriesScaleConfig,
-                        x: { // continuous time scale for the x axis
+                        x: {
+                            // continuous time scale for the x axis
                             type: TimeseriesScaleType.Time,
                         } as ITimeseriesScaleConfig,
                     },

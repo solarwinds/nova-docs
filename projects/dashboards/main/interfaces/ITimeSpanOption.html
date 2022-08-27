@@ -158,16 +158,32 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ChangeDetectorRef, Component, EventEmitter, Inject, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from &quot;@angular/core&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+    ChangeDetectorRef,
+    Component,
+    EventEmitter,
+    Inject,
+    Input,
+    OnChanges,
+    OnDestroy,
+    OnInit,
+    Output,
+    SimpleChanges,
+} from &quot;@angular/core&quot;;
 import { FormBuilder, FormGroup, Validators } from &quot;@angular/forms&quot;;
-import { EventBus, IEvent } from &quot;@nova-ui/bits&quot;;
 import { Subject } from &quot;rxjs&quot;;
 import { takeUntil } from &quot;rxjs/operators&quot;;
 
+import { EventBus, IEvent } from &quot;@nova-ui/bits&quot;;
+
 import { TimeseriesChartPreset } from &quot;../../../../../components/timeseries-widget/types&quot;;
-import { LegendPlacement } from &quot;../../../../../widget-types/common/widget/legend&quot;;
 import { PREVIEW_EVENT, REFRESH } from &quot;../../../../../services/types&quot;;
-import { IHasChangeDetector, IHasForm, PIZZAGNA_EVENT_BUS } from &quot;../../../../../types&quot;;
+import {
+    IHasChangeDetector,
+    IHasForm,
+    PIZZAGNA_EVENT_BUS,
+} from &quot;../../../../../types&quot;;
+import { LegendPlacement } from &quot;../../../../../widget-types/common/widget/legend&quot;;
 import { ConfiguratorHeadingService } from &quot;../../../../services/configurator-heading.service&quot;;
 
 export interface ITimeseriesChartTypeOption {
@@ -185,7 +201,9 @@ export interface ITimeSpanOption {
     templateUrl: &quot;./timeseries-metadata-configuration.component.html&quot;,
     styleUrls: [&quot;./timeseries-metadata-configuration.component.less&quot;],
 })
-export class TimeseriesMetadataConfigurationComponent implements IHasChangeDetector, IHasForm, OnInit, OnChanges, OnDestroy {
+export class TimeseriesMetadataConfigurationComponent
+    implements IHasChangeDetector, IHasForm, OnInit, OnChanges, OnDestroy
+{
     static lateLoadKey &#x3D; &quot;TimeseriesMetadataConfigurationComponent&quot;;
 
     @Input() legendPlacements: LegendPlacement[] &#x3D; [];
@@ -195,11 +213,17 @@ export class TimeseriesMetadataConfigurationComponent implements IHasChangeDetec
     @Input() leftAxisLabel: string;
     @Input() preset: TimeseriesChartPreset;
     @Input() availableChartTypes: ITimeseriesChartTypeOption[] &#x3D; [
-        {label: $localize&#x60;Line&#x60;, value: TimeseriesChartPreset.Line},
-        {label: $localize&#x60;Stacked area&#x60;, value: TimeseriesChartPreset.StackedArea},
-        {label: $localize&#x60;Stacked % area&#x60;, value: TimeseriesChartPreset.StackedPercentageArea},
-        {label: $localize&#x60;Bar&#x60;, value: TimeseriesChartPreset.StackedBar},
-        {label: $localize&#x60;Status&#x60;, value: TimeseriesChartPreset.StatusBar},
+        { label: $localize&#x60;Line&#x60;, value: TimeseriesChartPreset.Line },
+        {
+            label: $localize&#x60;Stacked area&#x60;,
+            value: TimeseriesChartPreset.StackedArea,
+        },
+        {
+            label: $localize&#x60;Stacked % area&#x60;,
+            value: TimeseriesChartPreset.StackedPercentageArea,
+        },
+        { label: $localize&#x60;Bar&#x60;, value: TimeseriesChartPreset.StackedBar },
+        { label: $localize&#x60;Status&#x60;, value: TimeseriesChartPreset.StatusBar },
     ];
 
     @Output() formReady &#x3D; new EventEmitter&lt;FormGroup&gt;();
@@ -208,10 +232,12 @@ export class TimeseriesMetadataConfigurationComponent implements IHasChangeDetec
 
     private destroy$ &#x3D; new Subject();
 
-    constructor(public changeDetector: ChangeDetectorRef,
-                public configuratorHeading: ConfiguratorHeadingService,
-                private formBuilder: FormBuilder,
-                @Inject(PIZZAGNA_EVENT_BUS) private eventBus: EventBus&lt;IEvent&gt;) {
+    constructor(
+        public changeDetector: ChangeDetectorRef,
+        public configuratorHeading: ConfiguratorHeadingService,
+        private formBuilder: FormBuilder,
+        @Inject(PIZZAGNA_EVENT_BUS) private eventBus: EventBus&lt;IEvent&gt;
+    ) {
         this.form &#x3D; this.formBuilder.group({
             leftAxisLabel: [&quot;&quot;],
             startingTimespan: [null, Validators.required],
@@ -221,12 +247,15 @@ export class TimeseriesMetadataConfigurationComponent implements IHasChangeDetec
     }
 
     public ngOnInit(): void {
-        this.form.get(&quot;startingTimespan&quot;)?.valueChanges
-            .pipe(takeUntil(this.destroy$))
+        this.form
+            .get(&quot;startingTimespan&quot;)
+            ?.valueChanges.pipe(takeUntil(this.destroy$))
             .subscribe((value) &#x3D;&gt; {
                 // this is to wait until the value of &#x27;startingTimespan&#x27; is converted to the preview
                 setTimeout(() &#x3D;&gt; {
-                    this.eventBus.next(PREVIEW_EVENT, {payload: {id: REFRESH}});
+                    this.eventBus.next(PREVIEW_EVENT, {
+                        payload: { id: REFRESH },
+                    });
                 });
             });
 
@@ -237,19 +266,27 @@ export class TimeseriesMetadataConfigurationComponent implements IHasChangeDetec
         const startingTimespanControl &#x3D; this.form.get(&quot;startingTimespan&quot;);
 
         if (changes.leftAxisLabel) {
-            this.form.get(&quot;leftAxisLabel&quot;)?.setValue(this.leftAxisLabel, {emitEvent: false});
+            this.form
+                .get(&quot;leftAxisLabel&quot;)
+                ?.setValue(this.leftAxisLabel, { emitEvent: false });
         }
 
         if (changes.startingTimespan) {
-            startingTimespanControl?.setValue(this.startingTimespan, {emitEvent: false});
+            startingTimespanControl?.setValue(this.startingTimespan, {
+                emitEvent: false,
+            });
         }
 
         if (changes.legendPlacement) {
-            this.form.get(&quot;legendPlacement&quot;)?.setValue(this.legendPlacement, {emitEvent: false});
+            this.form
+                .get(&quot;legendPlacement&quot;)
+                ?.setValue(this.legendPlacement, { emitEvent: false });
         }
 
         if (changes.preset) {
-            this.form.get(&quot;preset&quot;)?.setValue(this.preset, {emitEvent: false});
+            this.form
+                .get(&quot;preset&quot;)
+                ?.setValue(this.preset, { emitEvent: false });
         }
 
         if (changes.timeSpans) {
@@ -261,9 +298,14 @@ export class TimeseriesMetadataConfigurationComponent implements IHasChangeDetec
 
     public getSecondaryText() {
         const startingTimespan &#x3D; this.form.controls[&quot;startingTimespan&quot;].value;
-        const forTimeframe &#x3D; (startingTimespan &amp;&amp; startingTimespan.name) || $localize&#x60;No timespan&#x60;;
-        const forLegend &#x3D; this.form.controls[&quot;legendPlacement&quot;].value || $localize&#x60;No legend&#x60;;
-        const forAxisLabel &#x3D; this.form.controls[&quot;leftAxisLabel&quot;].value || $localize&#x60;No y-axis label&#x60;;
+        const forTimeframe &#x3D;
+            (startingTimespan &amp;&amp; startingTimespan.name) ||
+            $localize&#x60;No timespan&#x60;;
+        const forLegend &#x3D;
+            this.form.controls[&quot;legendPlacement&quot;].value || $localize&#x60;No legend&#x60;;
+        const forAxisLabel &#x3D;
+            this.form.controls[&quot;leftAxisLabel&quot;].value ||
+            $localize&#x60;No y-axis label&#x60;;
         return &#x60;${forTimeframe}, ${forLegend}, ${forAxisLabel}&#x60;;
     }
 

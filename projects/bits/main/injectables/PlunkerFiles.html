@@ -157,7 +157,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="361" class="link-to-prism">src/lib/docs/example-wrapper/plunker-files.ts:361</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="366" class="link-to-prism">src/lib/docs/example-wrapper/plunker-files.ts:366</a></div>
                             </td>
                         </tr>
 
@@ -184,7 +184,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="355" class="link-to-prism">src/lib/docs/example-wrapper/plunker-files.ts:355</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="359" class="link-to-prism">src/lib/docs/example-wrapper/plunker-files.ts:359</a></div>
                             </td>
                         </tr>
 
@@ -211,7 +211,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="158" class="link-to-prism">src/lib/docs/example-wrapper/plunker-files.ts:158</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="162" class="link-to-prism">src/lib/docs/example-wrapper/plunker-files.ts:162</a></div>
                             </td>
                         </tr>
 
@@ -228,7 +228,11 @@
 
 @Injectable({ providedIn: &quot;root&quot; })
 export class PlunkerFiles {
-    public getAppFile &#x3D; (filePrefix: string, className: string, selector: string): string &#x3D;&gt; &#x60;import {
+    public getAppFile &#x3D; (
+        filePrefix: string,
+        className: string,
+        selector: string
+    ): string &#x3D;&gt; &#x60;import {
     Component,
     NgModule,
     TRANSLATIONS,
@@ -379,7 +383,7 @@ export class App {
     ],
 })
 export class AppModule {}
-&#x60;
+&#x60;;
 
     public getSystemJsConfigFile &#x3D; (): string &#x3D;&gt; &#x60;var ver &#x3D; {
     ng: &#x27;^11.0.0&#x27;
@@ -576,13 +580,14 @@ System.config({
         },
     }
 });
-&#x60;
+&#x60;;
 
-    public getMainFile &#x3D; (): string &#x3D;&gt; &#x60;import {platformBrowserDynamic} from &#x27;@angular/platform-browser-dynamic&#x27;;
+    public getMainFile &#x3D;
+        (): string &#x3D;&gt; &#x60;import {platformBrowserDynamic} from &#x27;@angular/platform-browser-dynamic&#x27;;
 import {AppModule} from &#x27;./app&#x27;;
 
 platformBrowserDynamic().bootstrapModule(AppModule);
-&#x60;
+&#x60;;
 
     public getIndexFile &#x3D; (): string &#x3D;&gt; &#x60;&lt;!DOCTYPE html&gt;
 &lt;html class&#x3D;&quot;nui&quot;&gt;
@@ -612,7 +617,7 @@ platformBrowserDynamic().bootstrapModule(AppModule);
     &lt;/body&gt;
 
 &lt;/html&gt;
-&#x60;
+&#x60;;
 }
 </code></pre>
     </div>

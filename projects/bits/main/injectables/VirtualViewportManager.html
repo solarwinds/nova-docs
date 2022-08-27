@@ -157,8 +157,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="76"
-                            class="link-to-prism">src/services/virtual-viewport-manager.service.ts:76</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="81"
+                            class="link-to-prism">src/services/virtual-viewport-manager.service.ts:81</a></div>
                 </td>
             </tr>
 
@@ -198,8 +198,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="55"
-                            class="link-to-prism">src/services/virtual-viewport-manager.service.ts:55</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="56"
+                            class="link-to-prism">src/services/virtual-viewport-manager.service.ts:56</a></div>
                 </td>
             </tr>
 
@@ -280,8 +280,8 @@ It is requiring pageSize prop to be set to delegate responsibility of pagination
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="89"
-                            class="link-to-prism">src/services/virtual-viewport-manager.service.ts:89</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="94"
+                            class="link-to-prism">src/services/virtual-viewport-manager.service.ts:94</a></div>
                 </td>
             </tr>
 
@@ -365,8 +365,8 @@ we can prevent default behaviour of emitting firstPageEvent and let user to set 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="29"
-                            class="link-to-prism">src/services/virtual-viewport-manager.service.ts:29</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="28"
+                            class="link-to-prism">src/services/virtual-viewport-manager.service.ts:28</a></div>
                 </td>
             </tr>
 
@@ -445,7 +445,7 @@ we can prevent default behaviour of emitting firstPageEvent and let user to set 
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/services/virtual-viewport-manager.service.ts:44</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/services/virtual-viewport-manager.service.ts:45</a></div>
                                 </td>
                             </tr>
 
@@ -474,7 +474,6 @@ const DEFAULT_RANGE: ListRange &#x3D; { start: 0, end: 0 };
  */
 @Injectable()
 export class VirtualViewportManager implements IFilterPub {
-
     private _viewportRef: CdkVirtualScrollViewport;
     private _currentPageRange: ListRange &#x3D; DEFAULT_RANGE;
     private _pageSize: number;
@@ -484,7 +483,9 @@ export class VirtualViewportManager implements IFilterPub {
      * @param  viewportRef - CDK Viewport reference on which you want to perform observations
      * @returns self (VirtualViewportManager)
      */
-    public setViewport(viewportRef: CdkVirtualScrollViewport): VirtualViewportManager {
+    public setViewport(
+        viewportRef: CdkVirtualScrollViewport
+    ): VirtualViewportManager {
         if (this._viewportRef) {
             throw new Error(&quot;Viewport is already set&quot;);
         }
@@ -520,8 +521,12 @@ export class VirtualViewportManager implements IFilterPub {
         this.updateCurrentPage({ start: 0, end: config.pageSize });
 
         // Note: renderedRangeStream does not emit &quot;first page&quot; which can be a problem
-        const streamParticipants: Observable&lt;ListRange&gt;[] &#x3D; [this._viewportRef.renderedRangeStream];
-        const shouldEmitFirstPage &#x3D; !isUndefined(config.emitFirstPage) ? config.emitFirstPage : true;
+        const streamParticipants: Observable&lt;ListRange&gt;[] &#x3D; [
+            this._viewportRef.renderedRangeStream,
+        ];
+        const shouldEmitFirstPage &#x3D; !isUndefined(config.emitFirstPage)
+            ? config.emitFirstPage
+            : true;
         if (shouldEmitFirstPage) {
             streamParticipants.push(of(this.currentPageRange));
         }
@@ -544,7 +549,9 @@ export class VirtualViewportManager implements IFilterPub {
      * we can prevent default behaviour of emitting firstPageEvent and let user to set first batch of data
      * @returns void
      */
-    public reset(options: IVirtualViewportResetOptions &#x3D; { emitFirstPage: true }): void {
+    public reset(
+        options: IVirtualViewportResetOptions &#x3D; { emitFirstPage: true }
+    ): void {
         if (!this._viewportRef) {
             // Note: If there is no viewportRef or it been invoked
             // prematurely we will suppress that method call;
@@ -556,7 +563,10 @@ export class VirtualViewportManager implements IFilterPub {
         this._viewportRef.scrollToOffset(0);
         // Note: Setting the end value equal to pageSize to avoid ViewportManager
         // incrementing the current page and emitting first page event
-        this._currentPageRange &#x3D; { ...DEFAULT_RANGE, end: options.emitFirstPage ? 0 : this._pageSize };
+        this._currentPageRange &#x3D; {
+            ...DEFAULT_RANGE,
+            end: options.emitFirstPage ? 0 : this._pageSize,
+        };
         // Note: Skipping one tick to let CDK Viewport update his internal properties
         setTimeout(() &#x3D;&gt; {
             // Note: Resetting the viewport to initial state
@@ -566,7 +576,7 @@ export class VirtualViewportManager implements IFilterPub {
     }
 
     private updateCurrentPage(range: ListRange): ListRange {
-        return this._currentPageRange &#x3D; range;
+        return (this._currentPageRange &#x3D; range);
     }
 
     // Note: Temporary fix related to the CDK Viewport bug
@@ -574,18 +584,26 @@ export class VirtualViewportManager implements IFilterPub {
     // To ensure that CDK Viewport got correct parameters
     // we recheck the viewport size if it is equal to 0
     private checkViewportUntilValid(): void {
-        this._viewportRef.elementScrolled().pipe(
-            takeWhile(() &#x3D;&gt; this._viewportRef.getViewportSize() &#x3D;&#x3D;&#x3D; 0),
-            tap(() &#x3D;&gt; this._viewportRef.checkViewportSize())
-        ).subscribe();
+        this._viewportRef
+            .elementScrolled()
+            .pipe(
+                takeWhile(() &#x3D;&gt; this._viewportRef.getViewportSize() &#x3D;&#x3D;&#x3D; 0),
+                tap(() &#x3D;&gt; this._viewportRef.checkViewportSize())
+            )
+            .subscribe();
     }
 
-    protected mapToPageSize(pageSize: number): MonoTypeOperatorFunction&lt;ListRange&gt; {
+    protected mapToPageSize(
+        pageSize: number
+    ): MonoTypeOperatorFunction&lt;ListRange&gt; {
         return (source: Observable&lt;ListRange&gt;) &#x3D;&gt;
             source.pipe(
                 // Note: We have to reduce number of events to only pagination related,
                 // By emitting only when previous page range was scrolled to the end
-                filter((renderedRange: ListRange) &#x3D;&gt; this.currentPageRange.end &lt;&#x3D; renderedRange.end),
+                filter(
+                    (renderedRange: ListRange) &#x3D;&gt;
+                        this.currentPageRange.end &lt;&#x3D; renderedRange.end
+                ),
                 map((range, index) &#x3D;&gt; {
                     // Note: Avoiding incrementation for the first emission
                     if (index &#x3D;&#x3D;&#x3D; 0) {

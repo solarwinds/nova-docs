@@ -185,8 +185,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="41"
-                            class="link-to-prism">src/lib/components/providers/loading-adapter.ts:41</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="46"
+                            class="link-to-prism">src/lib/components/providers/loading-adapter.ts:46</a></div>
                 </td>
             </tr>
 
@@ -226,8 +226,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="46"
-                            class="link-to-prism">src/lib/components/providers/loading-adapter.ts:46</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="51"
+                            class="link-to-prism">src/lib/components/providers/loading-adapter.ts:51</a></div>
                 </td>
             </tr>
 
@@ -293,15 +293,15 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Inject, Injectable, OnDestroy } from &quot;@angular/core&quot;;
-import { EventBus, IEvent } from &quot;@nova-ui/bits&quot;;
 import isEmpty from &quot;lodash/isEmpty&quot;;
 import { Subject } from &quot;rxjs&quot;;
 import { takeUntil } from &quot;rxjs/operators&quot;;
 
+import { EventBus, IEvent } from &quot;@nova-ui/bits&quot;;
+
 import { PizzagnaService } from &quot;../../pizzagna/services/pizzagna.service&quot;;
 import { DATA_SOURCE_BUSY } from &quot;../../services/types&quot;;
 import { IHasComponent, PizzagnaLayer, PIZZAGNA_EVENT_BUS } from &quot;../../types&quot;;
-
 import { IDataSourceBusyPayload } from &quot;./types&quot;;
 
 @Injectable()
@@ -310,25 +310,30 @@ export class LoadingAdapter implements OnDestroy, IHasComponent {
     private destroy$ &#x3D; new Subject();
     private componentId: string;
 
-    constructor(@Inject(PIZZAGNA_EVENT_BUS) private eventBus: EventBus&lt;IEvent&gt;,
-                private pizzagnaService: PizzagnaService) {
-
-        this.eventBus.getStream(DATA_SOURCE_BUSY)
+    constructor(
+        @Inject(PIZZAGNA_EVENT_BUS) private eventBus: EventBus&lt;IEvent&gt;,
+        private pizzagnaService: PizzagnaService
+    ) {
+        this.eventBus
+            .getStream(DATA_SOURCE_BUSY)
             .pipe(takeUntil(this.destroy$))
             .subscribe(({ payload }: IEvent&lt;IDataSourceBusyPayload&gt;) &#x3D;&gt; {
                 if (payload?.componentId) {
-                    if (payload?.busy)  {
+                    if (payload?.busy) {
                         this.loadingMap[payload.componentId] &#x3D; true;
                     } else {
                         delete this.loadingMap[payload.componentId];
                     }
                 }
 
-                this.pizzagnaService.setProperty({
-                    componentId: this.componentId,
-                    propertyPath: [&quot;active&quot;],
-                    pizzagnaKey: PizzagnaLayer.Data,
-                }, !isEmpty(this.loadingMap));
+                this.pizzagnaService.setProperty(
+                    {
+                        componentId: this.componentId,
+                        propertyPath: [&quot;active&quot;],
+                        pizzagnaKey: PizzagnaLayer.Data,
+                    },
+                    !isEmpty(this.loadingMap)
+                );
             });
     }
 

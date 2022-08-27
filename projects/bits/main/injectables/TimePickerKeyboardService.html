@@ -140,8 +140,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="17"
-                            class="link-to-prism">src/lib/time-picker/time-picker-keyboard.service.ts:17</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="18"
+                            class="link-to-prism">src/lib/time-picker/time-picker-keyboard.service.ts:18</a></div>
                 </td>
             </tr>
 
@@ -236,8 +236,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="29"
-                            class="link-to-prism">src/lib/time-picker/time-picker-keyboard.service.ts:29</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="33"
+                            class="link-to-prism">src/lib/time-picker/time-picker-keyboard.service.ts:33</a></div>
                 </td>
             </tr>
 
@@ -311,7 +311,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/lib/time-picker/time-picker-keyboard.service.ts:11</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/lib/time-picker/time-picker-keyboard.service.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -324,11 +324,12 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &quot;@angular/core&quot;;
-import { MenuItemBaseComponent, MenuPopupComponent } from &quot;../menu&quot;;
-import { ActiveDescendantKeyManager } from &quot;@angular/cdk/a11y&quot;;
-import { OverlayComponent } from &quot;../overlay/overlay-component/overlay.component&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ActiveDescendantKeyManager } from &quot;@angular/cdk/a11y&quot;;
+import { Injectable } from &quot;@angular/core&quot;;
+
 import { KEYBOARD_CODE } from &quot;../../constants&quot;;
+import { MenuItemBaseComponent, MenuPopupComponent } from &quot;../menu&quot;;
+import { OverlayComponent } from &quot;../overlay/overlay-component/overlay.component&quot;;
 
 const scrollOption &#x3D; { block: &quot;nearest&quot; } as ScrollIntoViewOptions;
 
@@ -348,12 +349,17 @@ export class TimePickerKeyboardService {
         this.overlay &#x3D; overlay;
         this.popup &#x3D; popup;
         this.menuItems &#x3D; popup.menuItems.toArray();
-        this.keyboardEventsManager &#x3D; new ActiveDescendantKeyManager&lt;MenuItemBaseComponent&gt;(this.menuItems);
+        this.keyboardEventsManager &#x3D;
+            new ActiveDescendantKeyManager&lt;MenuItemBaseComponent&gt;(
+                this.menuItems
+            );
         this.menuTrigger &#x3D; trigger;
     }
 
     public onKeyDown(event: KeyboardEvent): void {
-        this.overlay.showing ? this.handleOpenedMenu(event) : this.handleClosedMenu(event);
+        this.overlay.showing
+            ? this.handleOpenedMenu(event)
+            : this.handleClosedMenu(event);
     }
 
     private handleOpenedMenu(event: KeyboardEvent): void {
@@ -363,7 +369,10 @@ export class TimePickerKeyboardService {
             this.hideMenu();
         }
 
-        if (code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ARROW_DOWN || code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ARROW_UP) {
+        if (
+            code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ARROW_DOWN ||
+            code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ARROW_UP
+        ) {
             this.navigateByArrow(event);
         }
 
@@ -372,22 +381,31 @@ export class TimePickerKeyboardService {
             this.keyboardEventsManager.activeItem?.doAction(event);
         }
 
-        if (code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.SPACE &amp;&amp; document.activeElement &#x3D;&#x3D;&#x3D; this.menuTrigger) {
+        if (
+            code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.SPACE &amp;&amp;
+            document.activeElement &#x3D;&#x3D;&#x3D; this.menuTrigger
+        ) {
             event.preventDefault();
-            this.overlay.toggle()
+            this.overlay.toggle();
         }
     }
 
     private handleClosedMenu(event: KeyboardEvent): void {
         const { code } &#x3D; event;
-        const isIconTrigger &#x3D; document.activeElement &#x3D;&#x3D;&#x3D; this.menuTrigger &amp;&amp; this.isOpenMenuCode(code as KEYBOARD_CODE);
-        const isInputTrigger &#x3D; document.activeElement !&#x3D;&#x3D; this.menuTrigger &amp;&amp; code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ARROW_DOWN;
+        const isIconTrigger &#x3D;
+            document.activeElement &#x3D;&#x3D;&#x3D; this.menuTrigger &amp;&amp;
+            this.isOpenMenuCode(code as KEYBOARD_CODE);
+        const isInputTrigger &#x3D;
+            document.activeElement !&#x3D;&#x3D; this.menuTrigger &amp;&amp;
+            code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ARROW_DOWN;
 
         if (isInputTrigger || isIconTrigger) {
             event.preventDefault();
             this.overlay.show();
             this.keyboardEventsManager.setActiveItem(this.getSelectedIndex());
-            this.keyboardEventsManager.activeItem?.menuItem?.nativeElement?.scrollIntoView({ block: &quot;center&quot; });
+            this.keyboardEventsManager.activeItem?.menuItem?.nativeElement?.scrollIntoView(
+                { block: &quot;center&quot; }
+            );
         }
     }
 
@@ -407,24 +425,33 @@ export class TimePickerKeyboardService {
             return;
         }
 
-        if (code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ARROW_DOWN &amp;&amp; index &#x3D;&#x3D;&#x3D; this.menuItems.length) {
+        if (
+            code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ARROW_DOWN &amp;&amp;
+            index &#x3D;&#x3D;&#x3D; this.menuItems.length
+        ) {
             this.navigateOnFirst();
 
             return;
         }
 
         this.keyboardEventsManager.onKeydown(event);
-        this.keyboardEventsManager.activeItem?.menuItem?.nativeElement?.scrollIntoView(scrollOption);
+        this.keyboardEventsManager.activeItem?.menuItem?.nativeElement?.scrollIntoView(
+            scrollOption
+        );
     }
 
     private navigateOnLast(): void {
         this.keyboardEventsManager.setActiveItem(this.menuItems.length - 1);
-        this.keyboardEventsManager.activeItem?.menuItem.nativeElement.scrollIntoView(scrollOption);
+        this.keyboardEventsManager.activeItem?.menuItem.nativeElement.scrollIntoView(
+            scrollOption
+        );
     }
 
     private navigateOnFirst(): void {
         this.keyboardEventsManager.setActiveItem(0);
-        this.keyboardEventsManager.activeItem?.menuItem.nativeElement.scrollIntoView(scrollOption);
+        this.keyboardEventsManager.activeItem?.menuItem.nativeElement.scrollIntoView(
+            scrollOption
+        );
     }
 
     private getSelectedIndex(): number {
@@ -436,7 +463,7 @@ export class TimePickerKeyboardService {
     }
 
     private isOpenMenuCode(code: KEYBOARD_CODE): boolean {
-        return code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ENTER ||  code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.SPACE;
+        return code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ENTER || code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.SPACE;
     }
 }
 </code></pre>

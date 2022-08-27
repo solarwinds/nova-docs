@@ -80,7 +80,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/lib/services/types.ts:9</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/lib/services/types.ts:10</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -92,8 +92,9 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { StaticProvider } from &quot;@angular/core&quot;;
-import { EventDefinition, IEvent, IEventDefinition } from &quot;@nova-ui/bits&quot;;
 import { BehaviorSubject, ReplaySubject } from &quot;rxjs&quot;;
+
+import { EventDefinition, IEvent, IEventDefinition } from &quot;@nova-ui/bits&quot;;
 
 import { IDataSourceBusyPayload } from &quot;../components/providers/types&quot;;
 
@@ -116,7 +117,8 @@ export interface IPreviewEventPayload {
 export interface IRegistryAddOptions {
     overrideExisting: boolean;
 }
-export interface IAddFormattersOptions extends Pick&lt;IRegistryAddOptions, &quot;overrideExisting&quot;&gt; {}
+export interface IAddFormattersOptions
+    extends Pick&lt;IRegistryAddOptions, &quot;overrideExisting&quot;&gt; {}
 
 export const REFRESH &#x3D; new EventDefinition(&quot;REFRESH&quot;);
 export const SCROLL_NEXT_PAGE &#x3D; new EventDefinition(&quot;SCROLL_NEXT_PAGE&quot;);
@@ -125,28 +127,45 @@ export const WIDGET_EDIT &#x3D; new EventDefinition(&quot;WIDGET_EDIT&quot;);
 export const WIDGET_CREATE &#x3D; new EventDefinition(&quot;WIDGET_CREATE&quot;);
 export const WIDGET_READY &#x3D; new EventDefinition(&quot;WIDGET_READY&quot;);
 export const WIDGET_RESIZE &#x3D; new EventDefinition(&quot;WIDGET_RESIZE&quot;);
-export const WIDGET_POSITION_CHANGE &#x3D; new EventDefinition(&quot;WIDGET_POSITION_CHANGE&quot;);
-export const WIDGET_SEARCH &#x3D; new EventDefinition(&quot;WIDGET_SEARCH&quot;, () &#x3D;&gt; new BehaviorSubject&lt;IEvent&gt;({ payload: &quot;&quot; }));
+export const WIDGET_POSITION_CHANGE &#x3D; new EventDefinition(
+    &quot;WIDGET_POSITION_CHANGE&quot;
+);
+export const WIDGET_SEARCH &#x3D; new EventDefinition(
+    &quot;WIDGET_SEARCH&quot;,
+    () &#x3D;&gt; new BehaviorSubject&lt;IEvent&gt;({ payload: &quot;&quot; })
+);
 export const SET_PROPERTY_VALUE &#x3D; new EventDefinition(&quot;SET_PROPERTY_VALUE&quot;);
 export const SET_TIMEFRAME &#x3D; new EventDefinition(&quot;SET_TIMEFRAME&quot;);
 export const PREVIEW_EVENT &#x3D; new EventDefinition(&quot;PREVIEW_EVENT&quot;);
-export const DATA_SOURCE_BUSY &#x3D; new EventDefinition&lt;IDataSourceBusyPayload&gt;(&quot;DATA_SOURCE_BUSY&quot;);
-export const DASHBOARD_EDIT_MODE &#x3D; new EventDefinition(&quot;DASHBOARD_EDIT_MODE&quot;, () &#x3D;&gt; new ReplaySubject&lt;IEvent&gt;(1));
+export const DATA_SOURCE_BUSY &#x3D; new EventDefinition&lt;IDataSourceBusyPayload&gt;(
+    &quot;DATA_SOURCE_BUSY&quot;
+);
+export const DASHBOARD_EDIT_MODE &#x3D; new EventDefinition(
+    &quot;DASHBOARD_EDIT_MODE&quot;,
+    () &#x3D;&gt; new ReplaySubject&lt;IEvent&gt;(1)
+);
 export const INTERACTION &#x3D; new EventDefinition(&quot;INTERACTION&quot;);
 export const DATA_SOURCE_INVOKED &#x3D; new EventDefinition(&quot;DATA_SOURCE_INVOKED&quot;);
 export const DRILLDOWN &#x3D; new EventDefinition(&quot;DRILLDOWN&quot;);
 
-export const NOVA_DATASOURCE_INTERVAL_REFRESHER &#x3D; &quot;NOVA_DATASOURCE_INTERVAL_REFRESHER&quot;;
+export const NOVA_DATASOURCE_INTERVAL_REFRESHER &#x3D;
+    &quot;NOVA_DATASOURCE_INTERVAL_REFRESHER&quot;;
 export const NOVA_DATASOURCE_ADAPTER &#x3D; &quot;NOVA_DATASOURCE_ADAPTER&quot;;
-export const NOVA_TIMESERIES_DATASOURCE_ADAPTER &#x3D; &quot;NOVA_TIMESERIES_DATASOURCE_ADAPTER&quot;;
+export const NOVA_TIMESERIES_DATASOURCE_ADAPTER &#x3D;
+    &quot;NOVA_TIMESERIES_DATASOURCE_ADAPTER&quot;;
 export const NOVA_KPI_DATASOURCE_ADAPTER &#x3D; &quot;NOVA_KPI_DATASOURCE_ADAPTER&quot;;
-export const NOVA_DRILLDOWN_DATASOURCE_ADAPTER &#x3D; &quot;NOVA_DRILLDOWN_DATASOURCE_ADAPTER&quot;;
+export const NOVA_DRILLDOWN_DATASOURCE_ADAPTER &#x3D;
+    &quot;NOVA_DRILLDOWN_DATASOURCE_ADAPTER&quot;;
 export const NOVA_KPI_COLOR_PRIORITIZER &#x3D; &quot;NOVA_KPI_COLOR_PRIORITIZER&quot;;
-export const NOVA_TITLE_AND_DESCRIPTION_CONVERTER &#x3D; &quot;NOVA_TITLE_AND_DESCRIPTION_CONVERTER&quot;;
-export const NOVA_PROPORTIONAL_WIDGET_CHART_OPTIONS_CONVERTER &#x3D; &quot;NOVA_PROPORTIONAL_WIDGET_CHART_OPTIONS_CONVERTER&quot;;
+export const NOVA_TITLE_AND_DESCRIPTION_CONVERTER &#x3D;
+    &quot;NOVA_TITLE_AND_DESCRIPTION_CONVERTER&quot;;
+export const NOVA_PROPORTIONAL_WIDGET_CHART_OPTIONS_CONVERTER &#x3D;
+    &quot;NOVA_PROPORTIONAL_WIDGET_CHART_OPTIONS_CONVERTER&quot;;
 export const NOVA_KPI_TILES_CONVERTER &#x3D; &quot;NOVA_KPI_TILES_CONVERTER&quot;;
-export const NOVA_TIMESERIES_METADATA_CONVERTER &#x3D; &quot;NOVA_TIMESERIES_METADATA_CONVERTER&quot;;
-export const NOVA_TIMESERIES_SERIES_CONVERTER &#x3D; &quot;NOVA_TIMESERIES_SERIES_CONVERTER&quot;;
+export const NOVA_TIMESERIES_METADATA_CONVERTER &#x3D;
+    &quot;NOVA_TIMESERIES_METADATA_CONVERTER&quot;;
+export const NOVA_TIMESERIES_SERIES_CONVERTER &#x3D;
+    &quot;NOVA_TIMESERIES_SERIES_CONVERTER&quot;;
 export const NOVA_DASHBOARD_EVENT_PROXY &#x3D; &quot;NOVA_DASHBOARD_EVENT_PROXY&quot;;
 export const NOVA_TABLE_COLUMNS_CONVERTER &#x3D; &quot;NOVA_TABLE_COLUMNS_CONVERTER&quot;;
 export const NOVA_TABLE_FILTERS_CONVERTER &#x3D; &quot;NOVA_TABLE_FILTERS_CONVERTER&quot;;
@@ -154,10 +173,13 @@ export const NOVA_TABLE_DATASOURCE_ADAPTER &#x3D; &quot;NOVA_TABLE_DATASOURCE_AD
 export const NOVA_GENERIC_CONVERTER &#x3D; &quot;NOVA_GENERIC_CONVERTER&quot;;
 export const NOVA_GENERIC_ARRAY_CONVERTER &#x3D; &quot;NOVA_GENERIC_ARRAY_CONVERTER&quot;;
 export const NOVA_KPI_SECTION_CONVERTER &#x3D; &quot;NOVA_KPI_SECTION_CONVERTER&quot;;
-export const NOVA_TIMESERIES_TILE_INDICATOR_DATA_CONVERTER &#x3D; &quot;NOVA_TIMESERIES_TILE_INDICATOR_DATA_CONVERTER&quot;;
+export const NOVA_TIMESERIES_TILE_INDICATOR_DATA_CONVERTER &#x3D;
+    &quot;NOVA_TIMESERIES_TILE_INDICATOR_DATA_CONVERTER&quot;;
 export const NOVA_LOADING_ADAPTER &#x3D; &quot;NOVA_LOADING_ADAPTER&quot;;
-export const NOVA_STATUS_CONTENT_FALLBACK_ADAPTER &#x3D; &quot;NOVA_STATUS_CONTENT_FALLBACK_ADAPTER&quot;;
-export const NOVA_KPI_STATUS_CONTENT_FALLBACK_ADAPTER &#x3D; &quot;NOVA_KPI_STATUS_CONTENT_FALLBACK_ADAPTER&quot;;
+export const NOVA_STATUS_CONTENT_FALLBACK_ADAPTER &#x3D;
+    &quot;NOVA_STATUS_CONTENT_FALLBACK_ADAPTER&quot;;
+export const NOVA_KPI_STATUS_CONTENT_FALLBACK_ADAPTER &#x3D;
+    &quot;NOVA_KPI_STATUS_CONTENT_FALLBACK_ADAPTER&quot;;
 export const NOVA_KPI_SCALE_SYNC_BROKER &#x3D; &quot;NOVA_KPI_SCALE_SYNC_BROKER&quot;;
 export const NOVA_URL_INTERACTION_HANDLER &#x3D; &quot;NOVA_URL_INTERACTION_HANDLER&quot;;
 export const NOVA_EVENT_BUS_DEBUGGER &#x3D; &quot;NOVA_EVENT_BUS_DEBUGGER&quot;;
@@ -165,9 +187,11 @@ export const NOVA_PIZZAGNA_BROADCASTER &#x3D; &quot;NOVA_PIZZAGNA_BROADCASTER&qu
 export const NOVA_VIRTUAL_VIEWPORT_MANAGER &#x3D; &quot;NOVA_VIRTUAL_VIEWPORT_MANAGER&quot;;
 export const NOVA_TABLE_FORMATTERS_REGISTRY &#x3D; &quot;NOVA_TABLE_FORMATTERS_REGISTRY&quot;;
 export const NOVA_KPI_FORMATTERS_REGISTRY &#x3D; &quot;NOVA_KPI_FORMATTERS_REGISTRY&quot;;
-export const NOVA_PROPORTIONAL_CONTENT_FORMATTERS_REGISTRY &#x3D; &quot;NOVA_PROPORTIONAL_CONTENT_FORMATTERS_REGISTRY&quot;;
+export const NOVA_PROPORTIONAL_CONTENT_FORMATTERS_REGISTRY &#x3D;
+    &quot;NOVA_PROPORTIONAL_CONTENT_FORMATTERS_REGISTRY&quot;;
 export const NOVA_TEST_REGISTRY &#x3D; &quot;NOVA_TEST_REGISTRY&quot;;
-export const NOVA_CONFIGURATOR_DATA_SOURCE_MANAGER &#x3D; &quot;NOVA_CONFIGURATOR_DATA_SOURCE_MANAGER&quot;;
+export const NOVA_CONFIGURATOR_DATA_SOURCE_MANAGER &#x3D;
+    &quot;NOVA_CONFIGURATOR_DATA_SOURCE_MANAGER&quot;;
 </code></pre>
     </div>
 </div>

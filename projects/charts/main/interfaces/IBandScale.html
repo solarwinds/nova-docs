@@ -121,8 +121,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="156"
-                            class="link-to-prism">src/core/common/scales/types.ts:156</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="161"
+                            class="link-to-prism">src/core/common/scales/types.ts:161</a></div>
                 </td>
             </tr>
 
@@ -154,7 +154,11 @@ export const EMPTY_CONTINUOUS_DOMAIN &#x3D; [0, 0];
 export const NORMALIZED_DOMAIN &#x3D; [0, 1];
 
 /** Signature for domain calculator */
-export type DomainCalculator &#x3D; (chartSeriesSet: IChartSeries&lt;IAccessors&gt;[], scaleId: string, scale: IScale&lt;any&gt;) &#x3D;&gt; any[];
+export type DomainCalculator &#x3D; (
+    chartSeriesSet: IChartSeries&lt;IAccessors&gt;[],
+    scaleId: string,
+    scale: IScale&lt;any&gt;
+) &#x3D;&gt; any[];
 
 /** Signature for a specific domain calculator that rounds domain to the closes tick */
 export interface IDomainWithTicksCalculator extends DomainCalculator {
@@ -162,7 +166,9 @@ export interface IDomainWithTicksCalculator extends DomainCalculator {
 }
 
 /** Type guard for the domain calculator with ticks */
-export function isDomainWithTicksCalculator(obj: any): obj is IDomainWithTicksCalculator {
+export function isDomainWithTicksCalculator(
+    obj: any
+): obj is IDomainWithTicksCalculator {
     return !!obj.domainWithTicks;
 }
 
@@ -296,7 +302,6 @@ export interface IScale&lt;T&gt; {
      */
     reversed(reversed: boolean): this;
 }
-
 
 export interface IBandScale&lt;T&gt; extends IScale&lt;T&gt; {
     bandwidth(): number;

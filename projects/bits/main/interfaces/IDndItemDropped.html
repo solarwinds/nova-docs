@@ -361,7 +361,6 @@ import {
     IRepeatFilter,
 } from &quot;../../services/data-source/public-api&quot;;
 import { LoggerService } from &quot;../../services/log-service&quot;;
-
 import {
     IItemsReorderedEvent,
     IRepeatItem,
@@ -398,7 +397,8 @@ interface IDndItemDropped&lt;T &#x3D; unknown&gt; {
     },
 })
 export class RepeatComponent&lt;T extends IRepeatItem &#x3D; unknown&gt;
-implements OnInit, OnDestroy, AfterViewInit, DoCheck, IFilterPub {
+    implements OnInit, OnDestroy, AfterViewInit, DoCheck, IFilterPub
+{
     /**
      * Turns on/off dragging functionality
      */

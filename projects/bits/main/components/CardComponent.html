@@ -246,9 +246,9 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, HostBinding, Input, OnInit} from &quot;@angular/core&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, HostBinding, Input, OnInit } from &quot;@angular/core&quot;;
 
-import {ILayoutElementDirection} from &quot;../public-api&quot;;
+import { ILayoutElementDirection } from &quot;../public-api&quot;;
 
 // &lt;example-url&gt;./../examples/index.html#/layout&lt;/example-url&gt;
 @Component({
@@ -262,8 +262,12 @@ export class CardComponent implements OnInit {
     @HostBinding(&quot;class.card-direction-row&quot;) directionRow: boolean;
 
     ngOnInit() {
-        this.directionColumn &#x3D; (this.directionColumn &amp;&amp; !this.directionRow) || this.direction &#x3D;&#x3D;&#x3D; &quot;column&quot;;
-        this.directionRow &#x3D; (!this.directionColumn &amp;&amp; this.directionRow) || this.direction &#x3D;&#x3D;&#x3D; &quot;row&quot;;
+        this.directionColumn &#x3D;
+            (this.directionColumn &amp;&amp; !this.directionRow) ||
+            this.direction &#x3D;&#x3D;&#x3D; &quot;column&quot;;
+        this.directionRow &#x3D;
+            (!this.directionColumn &amp;&amp; this.directionRow) ||
+            this.direction &#x3D;&#x3D;&#x3D; &quot;row&quot;;
     }
 }
 </code></pre>

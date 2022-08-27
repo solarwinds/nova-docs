@@ -158,14 +158,31 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from &quot;@angular/core&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+    ChangeDetectionStrategy,
+    ChangeDetectorRef,
+    Component,
+    EventEmitter,
+    Input,
+    OnChanges,
+    OnInit,
+    Output,
+    SimpleChanges,
+} from &quot;@angular/core&quot;;
 import { FormBuilder, FormGroup, Validators } from &quot;@angular/forms&quot;;
 
-import { IProportionalWidgetChartEditorOptions, ProportionalWidgetChartTypes } from &quot;../../../../../components/proportional-widget/types&quot;;
+import {
+    IProportionalWidgetChartEditorOptions,
+    ProportionalWidgetChartTypes,
+} from &quot;../../../../../components/proportional-widget/types&quot;;
 import { IFormatterDefinition } from &quot;../../../../../components/types&quot;;
-import { IHasChangeDetector, IHasForm, IProperties } from &quot;../../../../../types&quot;;
-import { ConfiguratorHeadingService } from &quot;../../../../services/configurator-heading.service&quot;;
+import {
+    IHasChangeDetector,
+    IHasForm,
+    IProperties,
+} from &quot;../../../../../types&quot;;
 import { LegendPlacement } from &quot;../../../../../widget-types/common/widget/legend&quot;;
+import { ConfiguratorHeadingService } from &quot;../../../../services/configurator-heading.service&quot;;
 
 type ChartTypeNamesMap &#x3D; { [key in ProportionalWidgetChartTypes]: string };
 const proportionalWidgetChartTypesNamesMap: ChartTypeNamesMap &#x3D; {
@@ -174,7 +191,10 @@ const proportionalWidgetChartTypesNamesMap: ChartTypeNamesMap &#x3D; {
     [ProportionalWidgetChartTypes.VerticalBarChart]: $localize&#x60;Vertical Bar&#x60;,
     [ProportionalWidgetChartTypes.HorizontalBarChart]: $localize&#x60;Horizontal Bar&#x60;,
 };
-interface IChartOptionViewModel { label: string, value: ProportionalWidgetChartTypes }
+interface IChartOptionViewModel {
+    label: string;
+    value: ProportionalWidgetChartTypes;
+}
 
 @Component({
     selector: &quot;nui-proportional-chart-options-editor-component&quot;,
@@ -182,7 +202,9 @@ interface IChartOptionViewModel { label: string, value: ProportionalWidgetChartT
     styleUrls: [&quot;proportional-chart-options-editor.component.less&quot;],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ProportionalChartOptionsEditorComponent implements IHasChangeDetector, IHasForm, OnInit, OnChanges {
+export class ProportionalChartOptionsEditorComponent
+    implements IHasChangeDetector, IHasForm, OnInit, OnChanges
+{
     static lateLoadKey &#x3D; &quot;ProportionalChartOptionsEditorComponent&quot;;
 
     @Input() chartOptions: IProportionalWidgetChartEditorOptions;
@@ -198,7 +220,8 @@ export class ProportionalChartOptionsEditorComponent implements IHasChangeDetect
 
     public form: FormGroup;
 
-    public chartTypeNamesMap: ChartTypeNamesMap &#x3D; proportionalWidgetChartTypesNamesMap;
+    public chartTypeNamesMap: ChartTypeNamesMap &#x3D;
+        proportionalWidgetChartTypesNamesMap;
     public legendFormatters: IFormatterDefinition[] &#x3D; [];
     public contentFormatters: IFormatterDefinition[] &#x3D; [];
     public formatterHasConfigurationComponent: boolean &#x3D; false;
@@ -213,28 +236,40 @@ export class ProportionalChartOptionsEditorComponent implements IHasChangeDetect
         label: $localize&#x60;Raw&#x60;,
         dataTypes: {
             // @ts-ignore: pe &#x27;null&#x27; is not as signable to type &#x27;string | string[]&#x27;.
-            &quot;value&quot;: null,
+            value: null,
         },
     };
 
-    constructor(public changeDetector: ChangeDetectorRef,
-                public configuratorHeading: ConfiguratorHeadingService,
-                private formBuilder: FormBuilder) {}
+    constructor(
+        public changeDetector: ChangeDetectorRef,
+        public configuratorHeading: ConfiguratorHeadingService,
+        private formBuilder: FormBuilder
+    ) {}
 
     public get chartTypeSelectViewModels(): IChartOptionViewModel[] {
         // Using simple caching helper to prevent triggering values map on every CD cycle
-        if (!this.cachedChartOptionsViewModels || this.cachedChartOptionsViewModels.length !&#x3D;&#x3D; this.chartOptions?.chartTypes?.length) {
-            this.cachedChartOptionsViewModels &#x3D; (this.chartOptions?.chartTypes || []).map(value &#x3D;&gt; ({label: this.chartTypeNamesMap[value], value}));
+        if (
+            !this.cachedChartOptionsViewModels ||
+            this.cachedChartOptionsViewModels.length !&#x3D;&#x3D;
+                this.chartOptions?.chartTypes?.length
+        ) {
+            this.cachedChartOptionsViewModels &#x3D; (
+                this.chartOptions?.chartTypes || []
+            ).map((value) &#x3D;&gt; ({ label: this.chartTypeNamesMap[value], value }));
         }
         return this.cachedChartOptionsViewModels;
     }
 
     public get chartTitle(): string {
-        return this.chartTypeNamesMap[&lt;ProportionalWidgetChartTypes&gt;this.form.controls[&quot;type&quot;].value];
+        return this.chartTypeNamesMap[
+            &lt;ProportionalWidgetChartTypes&gt;this.form.controls[&quot;type&quot;].value
+        ];
     }
 
     public getConfigurationComponent(): string {
-        return this.getCurrentFormatterDefinition()?.configurationComponent || &quot;&quot;;
+        return (
+            this.getCurrentFormatterDefinition()?.configurationComponent || &quot;&quot;
+        );
     }
 
     public getConfigurationComponentProperties() {
@@ -246,8 +281,12 @@ export class ProportionalChartOptionsEditorComponent implements IHasChangeDetect
     }
 
     public getCurrentFormatterDefinition(): IFormatterDefinition | undefined {
-        const currentFormValue &#x3D; this.form.get(&quot;contentFormatter.componentType&quot;)?.value;
-        return this.contentFormatters.find(item &#x3D;&gt; item.componentType &#x3D;&#x3D;&#x3D; currentFormValue);
+        const currentFormValue &#x3D; this.form.get(
+            &quot;contentFormatter.componentType&quot;
+        )?.value;
+        return this.contentFormatters.find(
+            (item) &#x3D;&gt; item.componentType &#x3D;&#x3D;&#x3D; currentFormValue
+        );
     }
 
     public ngOnInit(): void {
@@ -255,7 +294,9 @@ export class ProportionalChartOptionsEditorComponent implements IHasChangeDetect
             type: [this.chartType || &quot;&quot;, Validators.required],
             legendPlacement: this.legendPlacement,
             legendFormatter: this.formBuilder.group({
-                componentType: this.legendFormatterComponentType || this.rawFormatter.componentType,
+                componentType:
+                    this.legendFormatterComponentType ||
+                    this.rawFormatter.componentType,
             }),
             contentFormatter: this.formBuilder.group({
                 componentType: this.contentFormatterComponentType,
@@ -263,8 +304,13 @@ export class ProportionalChartOptionsEditorComponent implements IHasChangeDetect
             }),
         });
 
-        this.legendFormatters &#x3D; [this.rawFormatter, ...(this.chartOptions.legendFormatters || [])];
-        this.contentFormatters &#x3D; [...(this.chartOptions.contentFormatters || [])];
+        this.legendFormatters &#x3D; [
+            this.rawFormatter,
+            ...(this.chartOptions.legendFormatters || []),
+        ];
+        this.contentFormatters &#x3D; [
+            ...(this.chartOptions.contentFormatters || []),
+        ];
 
         this.formReady.emit(this.form);
     }
@@ -274,16 +320,31 @@ export class ProportionalChartOptionsEditorComponent implements IHasChangeDetect
             this.form.get(&quot;type&quot;)?.setValue(changes.chartType.currentValue);
         }
 
-        if (changes.legendPlacement &amp;&amp; !changes.legendPlacement.isFirstChange()) {
-            this.form.get(&quot;legendPlacement&quot;)?.setValue(changes.legendPlacement.currentValue);
+        if (
+            changes.legendPlacement &amp;&amp;
+            !changes.legendPlacement.isFirstChange()
+        ) {
+            this.form
+                .get(&quot;legendPlacement&quot;)
+                ?.setValue(changes.legendPlacement.currentValue);
         }
 
-        if (changes.legendFormatterComponentType &amp;&amp; !changes.legendFormatterComponentType.isFirstChange()) {
-            (this.form.get(&quot;legendFormatter&quot;) as FormGroup).get(&quot;componentType&quot;)?.setValue(this.legendFormatterComponentType);
+        if (
+            changes.legendFormatterComponentType &amp;&amp;
+            !changes.legendFormatterComponentType.isFirstChange()
+        ) {
+            (this.form.get(&quot;legendFormatter&quot;) as FormGroup)
+                .get(&quot;componentType&quot;)
+                ?.setValue(this.legendFormatterComponentType);
         }
 
-        if (changes.contentFormatterComponentType &amp;&amp; !changes.contentFormatterComponentType.isFirstChange()) {
-            (this.form.get(&quot;contentFormatter&quot;) as FormGroup).get(&quot;componentType&quot;)?.setValue(this.contentFormatterComponentType);
+        if (
+            changes.contentFormatterComponentType &amp;&amp;
+            !changes.contentFormatterComponentType.isFirstChange()
+        ) {
+            (this.form.get(&quot;contentFormatter&quot;) as FormGroup)
+                .get(&quot;componentType&quot;)
+                ?.setValue(this.contentFormatterComponentType);
         }
 
         if (this.form) {
@@ -292,7 +353,10 @@ export class ProportionalChartOptionsEditorComponent implements IHasChangeDetect
     }
 
     public onFormReady(payload: FormGroup) {
-        (this.form.get(&quot;contentFormatter&quot;) as FormGroup).setControl(&quot;properties&quot;, payload);
+        (this.form.get(&quot;contentFormatter&quot;) as FormGroup).setControl(
+            &quot;properties&quot;,
+            payload
+        );
     }
 }
 </code></pre>

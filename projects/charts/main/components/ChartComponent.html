@@ -172,7 +172,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/chart/chart.component.ts:36</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/chart/chart.component.ts:51</a></div>
                             </td>
                         </tr>
 
@@ -252,7 +252,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/chart/chart.component.ts:32</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/chart/chart.component.ts:47</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -287,7 +287,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="81" class="link-to-prism">src/chart/chart.component.ts:81</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="106" class="link-to-prism">src/chart/chart.component.ts:106</a></div>
                             </td>
                         </tr>
 
@@ -316,7 +316,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/chart/chart.component.ts:34</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/chart/chart.component.ts:49</a></div>
                             </td>
                         </tr>
 
@@ -345,8 +345,16 @@
 } from &quot;@angular/core&quot;;
 import debounce from &quot;lodash/debounce&quot;;
 
-import { CHART_COMPONENT, CHART_VIEW_STATUS_EVENT, REFRESH_EVENT } from &quot;../constants&quot;;
-import { IChart, IChartComponent, IChartViewStatusEventPayload } from &quot;../core/common/types&quot;;
+import {
+    CHART_COMPONENT,
+    CHART_VIEW_STATUS_EVENT,
+    REFRESH_EVENT,
+} from &quot;../constants&quot;;
+import {
+    IChart,
+    IChartComponent,
+    IChartViewStatusEventPayload,
+} from &quot;../core/common/types&quot;;
 
 @Component({
     selector: &quot;nui-chart&quot;,
@@ -358,19 +366,31 @@ import { IChart, IChartComponent, IChartViewStatusEventPayload } from &quot;../c
         },
     ],
 })
-export class ChartComponent implements OnInit, AfterContentInit, AfterViewInit, OnDestroy, IChartComponent, OnChanges {
-
+export class ChartComponent
+    implements
+        OnInit,
+        AfterContentInit,
+        AfterViewInit,
+        OnDestroy,
+        IChartComponent,
+        OnChanges
+{
     @Input() public chart: IChart;
 
     public resizeObserver?: ResizeObserver;
     private resizeHandler: Function;
     private intersectionObserver: IntersectionObserver;
 
-    constructor(private elRef: ElementRef, private ngZone: NgZone, private cd: ChangeDetectorRef) {
-    }
+    constructor(
+        private elRef: ElementRef,
+        private ngZone: NgZone,
+        private cd: ChangeDetectorRef
+    ) {}
 
     public ngOnInit() {
-        this.intersectionObserver &#x3D; new IntersectionObserver(this.intersectionObserverCallback);
+        this.intersectionObserver &#x3D; new IntersectionObserver(
+            this.intersectionObserverCallback
+        );
         this.intersectionObserver.observe(this.elRef.nativeElement);
     }
 
@@ -389,9 +409,12 @@ export class ChartComponent implements OnInit, AfterContentInit, AfterViewInit, 
     }
 
     public ngAfterContentInit() {
-        this.chart.getEventBus().getStream(REFRESH_EVENT).subscribe(() &#x3D;&gt; {
-            this.chart.updateDimensions();
-        });
+        this.chart
+            .getEventBus()
+            .getStream(REFRESH_EVENT)
+            .subscribe(() &#x3D;&gt; {
+                this.chart.updateDimensions();
+            });
     }
 
     public ngAfterViewInit() {
@@ -400,7 +423,9 @@ export class ChartComponent implements OnInit, AfterContentInit, AfterViewInit, 
             // This was suggested here https://github.com/angular/zone.js/issues/1011
             this.ngZone.run(() &#x3D;&gt; this.resizeHandler());
         });
-        this.ngZone.runOutsideAngular(() &#x3D;&gt; this.resizeObserver?.observe(&lt;Element&gt;(this.elRef.nativeElement)));
+        this.ngZone.runOutsideAngular(() &#x3D;&gt;
+            this.resizeObserver?.observe(&lt;Element&gt;this.elRef.nativeElement)
+        );
     }
 
     public ngOnDestroy() {
@@ -412,13 +437,21 @@ export class ChartComponent implements OnInit, AfterContentInit, AfterViewInit, 
     public redraw &#x3D; () &#x3D;&gt; {
         this.chart.updateDimensions();
         this.cd.detectChanges();
-    }
+    };
 
-    private intersectionObserverCallback &#x3D; (entries: IntersectionObserverEntry[], observer: IntersectionObserver): void &#x3D;&gt; {
+    private intersectionObserverCallback &#x3D; (
+        entries: IntersectionObserverEntry[],
+        observer: IntersectionObserver
+    ): void &#x3D;&gt; {
         // Since we&#x27;re only listening for intersection changes for one target (the chart itself), the &#x27;entries&#x27; argument always has just one element.
-        const data: IChartViewStatusEventPayload &#x3D; { isChartInView: entries[0].isIntersecting };
-        this.chart.getEventBus().getStream(CHART_VIEW_STATUS_EVENT).next({ data });
-    }
+        const data: IChartViewStatusEventPayload &#x3D; {
+            isChartInView: entries[0].isIntersecting,
+        };
+        this.chart
+            .getEventBus()
+            .getStream(CHART_VIEW_STATUS_EVENT)
+            .next({ data });
+    };
 }
 </code></pre>
     </div>

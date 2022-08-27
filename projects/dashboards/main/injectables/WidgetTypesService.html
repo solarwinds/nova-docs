@@ -151,8 +151,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="27"
-                            class="link-to-prism">src/lib/services/widget-types.service.ts:27</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="30"
+                            class="link-to-prism">src/lib/services/widget-types.service.ts:30</a></div>
                 </td>
             </tr>
 
@@ -235,8 +235,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="50"
-                            class="link-to-prism">src/lib/services/widget-types.service.ts:50</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="72"
+                            class="link-to-prism">src/lib/services/widget-types.service.ts:72</a></div>
                 </td>
             </tr>
 
@@ -310,8 +310,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="15"
-                            class="link-to-prism">src/lib/services/widget-types.service.ts:15</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="14"
+                            class="link-to-prism">src/lib/services/widget-types.service.ts:14</a></div>
                 </td>
             </tr>
 
@@ -406,8 +406,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="58"
-                            class="link-to-prism">src/lib/services/widget-types.service.ts:58</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="80"
+                            class="link-to-prism">src/lib/services/widget-types.service.ts:80</a></div>
                 </td>
             </tr>
 
@@ -500,17 +500,20 @@
 import defaultsDeep from &quot;lodash/defaultsDeep&quot;;
 import set from &quot;lodash/set&quot;;
 
-import { PizzagnaLayer } from &quot;../types&quot;;
 import { IWidget, IWidgetTypeDefinition } from &quot;../components/widget/types&quot;;
+import { PizzagnaLayer } from &quot;../types&quot;;
 
 @Injectable()
 export class WidgetTypesService {
     private widgetTypes: Record&lt;string, IWidgetTypeDefinition[]&gt; &#x3D; {};
 
-    constructor() {
-    }
+    constructor() {}
 
-    public registerWidgetType(key: string, version: number, widgetType: IWidgetTypeDefinition): void {
+    public registerWidgetType(
+        key: string,
+        version: number,
+        widgetType: IWidgetTypeDefinition
+    ): void {
         let widgetTypeVersions &#x3D; this.widgetTypes[key];
         if (!widgetTypeVersions) {
             widgetTypeVersions &#x3D; [];
@@ -522,19 +525,38 @@ export class WidgetTypesService {
         widgetTypeVersions[version - 1] &#x3D; widgetType;
     }
 
-    public getWidgetType(type: string, version?: number): IWidgetTypeDefinition {
+    public getWidgetType(
+        type: string,
+        version?: number
+    ): IWidgetTypeDefinition {
         const widgetTypeVersions &#x3D; this.widgetTypes[type];
         if (!widgetTypeVersions || widgetTypeVersions.length &#x3D;&#x3D;&#x3D; 0) {
-            throw new Error(&quot;Type &#x27;&quot; + type + &quot;&#x27; not found in the registry. Available types: &quot; + Object.keys(this.widgetTypes).join(&quot;, &quot;));
+            throw new Error(
+                &quot;Type &#x27;&quot; +
+                    type +
+                    &quot;&#x27; not found in the registry. Available types: &quot; +
+                    Object.keys(this.widgetTypes).join(&quot;, &quot;)
+            );
         }
 
-
-        if (typeof version !&#x3D;&#x3D; &quot;undefined&quot; &amp;&amp; (version &lt;&#x3D; 0 || widgetTypeVersions.length &lt; version)) {
-            throw new Error(&quot;Version &quot; + version + &quot; for widget type &#x27;&quot; + type +
-                &quot;&#x27; not registered. Max available version is &quot; + widgetTypeVersions.length);
+        if (
+            typeof version !&#x3D;&#x3D; &quot;undefined&quot; &amp;&amp;
+            (version &lt;&#x3D; 0 || widgetTypeVersions.length &lt; version)
+        ) {
+            throw new Error(
+                &quot;Version &quot; +
+                    version +
+                    &quot; for widget type &#x27;&quot; +
+                    type +
+                    &quot;&#x27; not registered. Max available version is &quot; +
+                    widgetTypeVersions.length
+            );
         }
 
-        const adjustedVersion &#x3D; (typeof version &#x3D;&#x3D;&#x3D; &quot;undefined&quot;) ? widgetTypeVersions.length : version;
+        const adjustedVersion &#x3D;
+            typeof version &#x3D;&#x3D;&#x3D; &quot;undefined&quot;
+                ? widgetTypeVersions.length
+                : version;
         return widgetTypeVersions[adjustedVersion - 1];
     }
 
@@ -553,9 +575,16 @@ export class WidgetTypesService {
         };
     }
 
-    public setNode(widgetTemplate: IWidgetTypeDefinition, section: &quot;widget&quot; | &quot;configurator&quot;, pathKey: string, value: any): void {
+    public setNode(
+        widgetTemplate: IWidgetTypeDefinition,
+        section: &quot;widget&quot; | &quot;configurator&quot;,
+        pathKey: string,
+        value: any
+    ): void {
         const widgetSection &#x3D; &#x60;${section}.${PizzagnaLayer.Structure}&#x60;;
-        const itemPath &#x3D; &#x60;${widgetTemplate.paths?.[section]?.[pathKey] || pathKey}&#x60;;
+        const itemPath &#x3D; &#x60;${
+            widgetTemplate.paths?.[section]?.[pathKey] || pathKey
+        }&#x60;;
 
         const path &#x3D; &#x60;${widgetSection}.${itemPath}&#x60;;
         set(widgetTemplate, path, value);

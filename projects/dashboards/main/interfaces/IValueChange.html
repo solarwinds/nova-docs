@@ -176,10 +176,14 @@ export interface IValueChange {
  * @param changes
  */
 export function mergeChanges&lt;T&gt;(result: T, ...changes: IValueChange[]): T {
-    const validChanges &#x3D; changes.filter(c &#x3D;&gt; typeof c.previousValue !&#x3D;&#x3D; &quot;undefined&quot; || typeof c.currentValue !&#x3D;&#x3D; &quot;undefined&quot;);
+    const validChanges &#x3D; changes.filter(
+        (c) &#x3D;&gt;
+            typeof c.previousValue !&#x3D;&#x3D; &quot;undefined&quot; ||
+            typeof c.currentValue !&#x3D;&#x3D; &quot;undefined&quot;
+    );
 
     // there were no changes in the provided values, so just return the input object
-    if (!some(validChanges, c &#x3D;&gt; c.currentValue !&#x3D;&#x3D; c.previousValue)) {
+    if (!some(validChanges, (c) &#x3D;&gt; c.currentValue !&#x3D;&#x3D; c.previousValue)) {
         return result;
     }
 
@@ -197,16 +201,33 @@ export function mergeChanges&lt;T&gt;(result: T, ...changes: IValueChange[]): T 
     }
 
     // collect all the keys of all the objects in given changes
-    const keys: string[] &#x3D; union(...validChanges.map(c &#x3D;&gt; typeof c.currentValue &#x3D;&#x3D;&#x3D; &quot;object&quot; ? Object.keys(c.currentValue || {}) : []));
+    const keys: string[] &#x3D; union(
+        ...validChanges.map((c) &#x3D;&gt;
+            typeof c.currentValue &#x3D;&#x3D;&#x3D; &quot;object&quot;
+                ? Object.keys(c.currentValue || {})
+                : []
+        )
+    );
 
     const accTemplate &#x3D; valueType &#x3D;&#x3D;&#x3D; &quot;object[]&quot; ? [] : {};
 
     return keys.reduce((acc: Record&lt;string, any&gt;, key) &#x3D;&gt; {
-        const checkedResult &#x3D; typeof result &#x3D;&#x3D;&#x3D; &quot;undefined&quot; || result &#x3D;&#x3D;&#x3D; null
-        || typeof (&lt;Record&lt;string, any&gt;&gt;result)[key] &#x3D;&#x3D;&#x3D; &quot;undefined&quot; ? undefined : (&lt;Record&lt;string, any&gt;&gt;result)[key];
-        const nestedChanges &#x3D; validChanges.map(c &#x3D;&gt; ({
-            previousValue: typeof c.previousValue &#x3D;&#x3D;&#x3D; &quot;undefined&quot; || c.previousValue &#x3D;&#x3D; null ? undefined : c.previousValue[key],
-            currentValue: typeof c.currentValue &#x3D;&#x3D;&#x3D; &quot;undefined&quot; || c.currentValue &#x3D;&#x3D; null ? undefined : c.currentValue[key],
+        const checkedResult &#x3D;
+            typeof result &#x3D;&#x3D;&#x3D; &quot;undefined&quot; ||
+            result &#x3D;&#x3D;&#x3D; null ||
+            typeof (&lt;Record&lt;string, any&gt;&gt;result)[key] &#x3D;&#x3D;&#x3D; &quot;undefined&quot;
+                ? undefined
+                : (&lt;Record&lt;string, any&gt;&gt;result)[key];
+        const nestedChanges &#x3D; validChanges.map((c) &#x3D;&gt; ({
+            previousValue:
+                typeof c.previousValue &#x3D;&#x3D;&#x3D; &quot;undefined&quot; ||
+                c.previousValue &#x3D;&#x3D; null
+                    ? undefined
+                    : c.previousValue[key],
+            currentValue:
+                typeof c.currentValue &#x3D;&#x3D;&#x3D; &quot;undefined&quot; || c.currentValue &#x3D;&#x3D; null
+                    ? undefined
+                    : c.currentValue[key],
         }));
 
         // recursively execute this method for given property

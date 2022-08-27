@@ -150,7 +150,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/services/data-filter.service.ts:18</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/services/data-filter.service.ts:23</a></div>
                             </td>
                         </tr>
 
@@ -217,8 +217,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="68"
-                            class="link-to-prism">src/services/data-filter.service.ts:68</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="78"
+                            class="link-to-prism">src/services/data-filter.service.ts:78</a></div>
                 </td>
             </tr>
 
@@ -258,8 +258,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="51"
-                            class="link-to-prism">src/services/data-filter.service.ts:51</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="58"
+                            class="link-to-prism">src/services/data-filter.service.ts:58</a></div>
                 </td>
             </tr>
 
@@ -297,8 +297,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="72"
-                            class="link-to-prism">src/services/data-filter.service.ts:72</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="82"
+                            class="link-to-prism">src/services/data-filter.service.ts:82</a></div>
                 </td>
             </tr>
 
@@ -338,8 +338,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="29"
-                            class="link-to-prism">src/services/data-filter.service.ts:29</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="34"
+                            class="link-to-prism">src/services/data-filter.service.ts:34</a></div>
                 </td>
             </tr>
 
@@ -410,8 +410,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="46"
-                            class="link-to-prism">src/services/data-filter.service.ts:46</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="53"
+                            class="link-to-prism">src/services/data-filter.service.ts:53</a></div>
                 </td>
             </tr>
 
@@ -490,7 +490,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/services/data-filter.service.ts:16</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/services/data-filter.service.ts:21</a></div>
                             </td>
                         </tr>
 
@@ -517,7 +517,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/services/data-filter.service.ts:17</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/services/data-filter.service.ts:22</a></div>
                             </td>
                         </tr>
 
@@ -554,7 +554,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/services/data-filter.service.ts:19</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/services/data-filter.service.ts:24</a></div>
                             </td>
                         </tr>
 
@@ -570,11 +570,16 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable, OnDestroy, Optional, SkipSelf } from &quot;@angular/core&quot;;
 import _forEach from &quot;lodash/forEach&quot;;
 import _omit from &quot;lodash/omit&quot;;
-import { Subject, Subscription} from &quot;rxjs&quot;;
+import { Subject, Subscription } from &quot;rxjs&quot;;
 import { takeUntil } from &quot;rxjs/operators&quot;;
 
 import { INovaFilters } from &quot;./data-source/public-api&quot;;
-import { IFilteringParticipant, IFilteringParticipants, IFilterPub, IFilters } from &quot;./public-api&quot;;
+import {
+    IFilteringParticipant,
+    IFilteringParticipants,
+    IFilterPub,
+    IFilters,
+} from &quot;./public-api&quot;;
 
 /**
  * &lt;example-url&gt;./../examples/index.html#/common/data-filter-service&lt;/example-url&gt;
@@ -587,11 +592,11 @@ export class DataFilterService implements IFilterPub, OnDestroy {
     private destroySubscriptions: Subscription[] &#x3D; [];
     constructor(@Optional() @SkipSelf() public parent: DataFilterService) {
         if (this.parent) {
-            this.parent.filteringSubject.pipe(
-                takeUntil(this.onDestroy$)
-            ).subscribe(() &#x3D;&gt; {
-                this.filteringSubject.next();
-            });
+            this.parent.filteringSubject
+                .pipe(takeUntil(this.onDestroy$))
+                .subscribe(() &#x3D;&gt; {
+                    this.filteringSubject.next();
+                });
         }
     }
 
@@ -604,9 +609,11 @@ export class DataFilterService implements IFilterPub, OnDestroy {
         // subscribing to onDestroy of filtering components to remove them from memory when this components are destroyed
         _forEach(this._filters, (node: IFilteringParticipant, key: string) &#x3D;&gt; {
             if (node.componentInstance.onDestroy$) {
-                this.destroySubscriptions.push(node.componentInstance.onDestroy$.subscribe(() &#x3D;&gt; {
-                    this.unregisterFilters([key]);
-                }));
+                this.destroySubscriptions.push(
+                    node.componentInstance.onDestroy$.subscribe(() &#x3D;&gt; {
+                        this.unregisterFilters([key]);
+                    })
+                );
             }
         });
         this.filteringSubject.next();
@@ -626,7 +633,10 @@ export class DataFilterService implements IFilterPub, OnDestroy {
 
         // Merge current filters
         _forEach(this._filters, (node: IFilteringParticipant, key: string) &#x3D;&gt; {
-            const getFilters &#x3D; node &amp;&amp; node.componentInstance &amp;&amp; node.componentInstance.getFilters;
+            const getFilters &#x3D;
+                node &amp;&amp;
+                node.componentInstance &amp;&amp;
+                node.componentInstance.getFilters;
             if (typeof getFilters &#x3D;&#x3D;&#x3D; &quot;function&quot;) {
                 filters[key] &#x3D; node.componentInstance.getFilters();
             }
@@ -641,7 +651,9 @@ export class DataFilterService implements IFilterPub, OnDestroy {
     ngOnDestroy(): void {
         this.onDestroy$.next();
         this.onDestroy$.complete();
-        this.destroySubscriptions.forEach((subscription) &#x3D;&gt; subscription.unsubscribe());
+        this.destroySubscriptions.forEach((subscription) &#x3D;&gt;
+            subscription.unsubscribe()
+        );
     }
 }
 </code></pre>

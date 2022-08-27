@@ -159,13 +159,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/NuiLayoutModule.html" data-type="entity-link">NuiLayoutModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-NuiLayoutModule-6c346bf66660de2af8f3a28c372a016b"' : 'data-target="#xs-components-links-module-NuiLayoutModule-6c346bf66660de2af8f3a28c372a016b"' }>
+                                            'data-target="#components-links-module-NuiLayoutModule-009dac280d6268d3cde52cf15dbdd43c"' : 'data-target="#xs-components-links-module-NuiLayoutModule-009dac280d6268d3cde52cf15dbdd43c"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-NuiLayoutModule-6c346bf66660de2af8f3a28c372a016b"' :
-                                            'id="xs-components-links-module-NuiLayoutModule-6c346bf66660de2af8f3a28c372a016b"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-NuiLayoutModule-009dac280d6268d3cde52cf15dbdd43c"' :
+                                            'id="xs-components-links-module-NuiLayoutModule-009dac280d6268d3cde52cf15dbdd43c"' }>
                                             <li class="link">
                                                 <a href="components/CardComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">CardComponent</a>
@@ -189,13 +189,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/PopupAdapterModule.html" data-type="entity-link">PopupAdapterModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-PopupAdapterModule-6191f9e1c163a5df7805298b0baa72ac"' : 'data-target="#xs-components-links-module-PopupAdapterModule-6191f9e1c163a5df7805298b0baa72ac"' }>
+                                            'data-target="#components-links-module-PopupAdapterModule-efb3e062d281acd92cdb2452e863b86b"' : 'data-target="#xs-components-links-module-PopupAdapterModule-efb3e062d281acd92cdb2452e863b86b"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-PopupAdapterModule-6191f9e1c163a5df7805298b0baa72ac"' :
-                                            'id="xs-components-links-module-PopupAdapterModule-6191f9e1c163a5df7805298b0baa72ac"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-PopupAdapterModule-efb3e062d281acd92cdb2452e863b86b"' :
+                                            'id="xs-components-links-module-PopupAdapterModule-efb3e062d281acd92cdb2452e863b86b"' }>
                                             <li class="link">
                                                 <a href="components/PopupComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">PopupComponent</a>

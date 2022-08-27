@@ -479,10 +479,17 @@ export interface IKpiConfiguration {
     formatters?: IKpiFormattersConfiguration;
 }
 
-export interface IKpiFormattersConfiguration extends Partial&lt;Record&lt;KpiFormatterTypes | string, {
-    formatter: IFormatter;
-}&gt;&gt; {}
-export interface IKpiFormatterProperties extends Partial&lt;Record&lt;KpiFormatterTypes | string, any&gt;&gt; {}
+export interface IKpiFormattersConfiguration
+    extends Partial&lt;
+        Record&lt;
+            KpiFormatterTypes | string,
+            {
+                formatter: IFormatter;
+            }
+        &gt;
+    &gt; {}
+export interface IKpiFormatterProperties
+    extends Partial&lt;Record&lt;KpiFormatterTypes | string, any&gt;&gt; {}
 </code></pre>
     </div>
 </div>

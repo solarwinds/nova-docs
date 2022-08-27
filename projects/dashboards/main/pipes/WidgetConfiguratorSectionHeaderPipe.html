@@ -198,8 +198,14 @@
 export class WidgetConfiguratorSectionHeaderPipe implements PipeTransform {
     private readonly defaultHeaderPrefix &#x3D; $localize&#x60;Value&#x60;;
 
-    transform(headerText: string | undefined, index: number, headerPrefix: string &#x3D; this.defaultHeaderPrefix): string {
-        return &#x60;${headerPrefix} ${index + 1}${headerText ? &quot; - &quot; : &quot;&quot;}${headerText || &quot;&quot;}&#x60;;
+    transform(
+        headerText: string | undefined,
+        index: number,
+        headerPrefix: string &#x3D; this.defaultHeaderPrefix
+    ): string {
+        return &#x60;${headerPrefix} ${index + 1}${headerText ? &quot; - &quot; : &quot;&quot;}${
+            headerText || &quot;&quot;
+        }&#x60;;
     }
 }
 </code></pre>

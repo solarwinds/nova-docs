@@ -136,7 +136,7 @@ Examples would be darken, lighten, reduce opacity, etc.</p>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/core/common/palette/processed-color-provider.ts:9</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/core/common/palette/processed-color-provider.ts:8</a></div>
                             </td>
                         </tr>
 
@@ -211,7 +211,7 @@ Examples would be darken, lighten, reduce opacity, etc.</p>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/core/common/palette/processed-color-provider.ts:15</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/core/common/palette/processed-color-provider.ts:17</a></div>
                             </td>
                         </tr>
 
@@ -249,8 +249,8 @@ Examples would be darken, lighten, reduce opacity, etc.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="30"
-                            class="link-to-prism">src/core/common/palette/processed-color-provider.ts:30</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">src/core/common/palette/processed-color-provider.ts:32</a></div>
                 </td>
             </tr>
 
@@ -283,10 +283,12 @@ Examples would be darken, lighten, reduce opacity, etc.</p>
  * Examples would be darken, lighten, reduce opacity, etc.
  */
 export class ProcessedColorProvider implements IValueProvider&lt;string&gt; {
-
     private processedColors: { [key: string]: string };
 
-    constructor(private sourceProvider: IValueProvider&lt;string&gt;, private fn: (input: string) &#x3D;&gt; string) {
+    constructor(
+        private sourceProvider: IValueProvider&lt;string&gt;,
+        private fn: (input: string) &#x3D;&gt; string
+    ) {
         this.reset();
     }
 
@@ -303,7 +305,7 @@ export class ProcessedColorProvider implements IValueProvider&lt;string&gt; {
             this.processedColors[clr] &#x3D; processedColor;
         }
         return processedColor;
-    }
+    };
 
     public reset(): void {
         this.processedColors &#x3D; {};

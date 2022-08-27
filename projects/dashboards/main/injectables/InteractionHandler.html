@@ -102,7 +102,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/lib/components/providers/interaction/interaction-handler.ts:19</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/lib/components/providers/interaction/interaction-handler.ts:23</a></div>
                             </td>
                         </tr>
 
@@ -169,8 +169,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="25"
-                            class="link-to-prism">src/lib/components/providers/interaction/interaction-handler.ts:25</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">src/lib/components/providers/interaction/interaction-handler.ts:32</a></div>
                 </td>
             </tr>
 
@@ -224,6 +224,7 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Inject, Injectable } from &quot;@angular/core&quot;;
+
 import { EventBus, IEvent } from &quot;@nova-ui/bits&quot;;
 
 import { INTERACTION } from &quot;../../../services/types&quot;;
@@ -239,11 +240,17 @@ export interface IInteractionHandlerProperties extends IProperties {
 }
 
 @Injectable()
-export abstract class InteractionHandler&lt;T extends IInteractionHandlerProperties, P&gt; implements IConfigurable {
-
+export abstract class InteractionHandler&lt;
+    T extends IInteractionHandlerProperties,
+    P
+&gt; implements IConfigurable
+{
     protected properties: T;
 
-    constructor(@Inject(PIZZAGNA_EVENT_BUS) protected readonly eventBus: EventBus&lt;IEvent&gt;) {
+    constructor(
+        @Inject(PIZZAGNA_EVENT_BUS)
+        protected readonly eventBus: EventBus&lt;IEvent&gt;
+    ) {
         this.initializeSubscriptions();
     }
 
@@ -252,19 +259,25 @@ export abstract class InteractionHandler&lt;T extends IInteractionHandlerPropert
     }
 
     protected initializeSubscriptions() {
-        this.eventBus.getStream(INTERACTION).subscribe((event: IEvent&lt;IInteractionPayload&lt;any&gt;&gt;) &#x3D;&gt; {
-            if (!this.properties?.interactionType || this.properties?.interactionType &#x3D;&#x3D;&#x3D; event.payload?.interactionType) {
-                // TODO: ensure that payload is defined
-                // @ts-ignore
-                this.handleInteraction(event.payload);
-            }
-        });
+        this.eventBus
+            .getStream(INTERACTION)
+            .subscribe((event: IEvent&lt;IInteractionPayload&lt;any&gt;&gt;) &#x3D;&gt; {
+                if (
+                    !this.properties?.interactionType ||
+                    this.properties?.interactionType &#x3D;&#x3D;&#x3D;
+                        event.payload?.interactionType
+                ) {
+                    // TODO: ensure that payload is defined
+                    // @ts-ignore
+                    this.handleInteraction(event.payload);
+                }
+            });
     }
 
-    protected abstract handleInteraction(interaction: IInteractionPayload&lt;P&gt;): void;
-
+    protected abstract handleInteraction(
+        interaction: IInteractionPayload&lt;P&gt;
+    ): void;
 }
-
 </code></pre>
     </div>
 

@@ -102,7 +102,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/lib/components/timeseries-widget/timeseries-chart-preset.service.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/lib/components/timeseries-widget/timeseries-chart-preset.service.ts:14</a></div>
                             </td>
                         </tr>
 
@@ -137,7 +137,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/lib/components/timeseries-widget/timeseries-chart-preset.service.ts:15</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/lib/components/timeseries-widget/timeseries-chart-preset.service.ts:14</a></div>
                             </td>
                         </tr>
 
@@ -163,16 +163,25 @@ import { IChartPreset, TimeseriesChartPreset } from &quot;./types&quot;;
     providedIn: &quot;root&quot;,
 })
 export class TimeseriesChartPresetService {
-
     public presets: Record&lt;TimeseriesChartPreset, IChartPreset&gt;;
 
     constructor() {
         this.presets &#x3D; {
-            [TimeseriesChartPreset.Line]: { componentType: LineChartComponent.lateLoadKey },
-            [TimeseriesChartPreset.StackedArea]: { componentType: StackedAreaChartComponent.lateLoadKey },
-            [TimeseriesChartPreset.StackedPercentageArea]: { componentType: StackedPercentageAreaChartComponent.lateLoadKey },
-            [TimeseriesChartPreset.StackedBar]: { componentType: StackedBarChartComponent.lateLoadKey },
-            [TimeseriesChartPreset.StatusBar]: { componentType: StatusBarChartComponent.lateLoadKey },
+            [TimeseriesChartPreset.Line]: {
+                componentType: LineChartComponent.lateLoadKey,
+            },
+            [TimeseriesChartPreset.StackedArea]: {
+                componentType: StackedAreaChartComponent.lateLoadKey,
+            },
+            [TimeseriesChartPreset.StackedPercentageArea]: {
+                componentType: StackedPercentageAreaChartComponent.lateLoadKey,
+            },
+            [TimeseriesChartPreset.StackedBar]: {
+                componentType: StackedBarChartComponent.lateLoadKey,
+            },
+            [TimeseriesChartPreset.StatusBar]: {
+                componentType: StatusBarChartComponent.lateLoadKey,
+            },
         };
     }
 }

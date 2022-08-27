@@ -170,8 +170,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="66"
-                            class="link-to-prism">src/core/grid/types.ts:66</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="71"
+                            class="link-to-prism">src/core/grid/types.ts:71</a></div>
                 </td>
             </tr>
 
@@ -248,8 +248,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="72"
-                            class="link-to-prism">src/core/grid/types.ts:72</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="77"
+                            class="link-to-prism">src/core/grid/types.ts:77</a></div>
                 </td>
             </tr>
 
@@ -295,8 +295,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="94"
-                            class="link-to-prism">src/core/grid/types.ts:94</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="99"
+                            class="link-to-prism">src/core/grid/types.ts:99</a></div>
                 </td>
             </tr>
 
@@ -374,8 +374,8 @@ Note: &#39;autoWidth&#39; must be set to false for this setting to have an effec
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="100"
-                            class="link-to-prism">src/core/grid/types.ts:100</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="105"
+                            class="link-to-prism">src/core/grid/types.ts:105</a></div>
                 </td>
             </tr>
 
@@ -421,8 +421,8 @@ Note: &#39;autoWidth&#39; must be set to false for this setting to have an effec
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="80"
-                            class="link-to-prism">src/core/grid/types.ts:80</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="85"
+                            class="link-to-prism">src/core/grid/types.ts:85</a></div>
                 </td>
             </tr>
 
@@ -500,8 +500,8 @@ Note: &#39;autoWidth&#39; must be set to false for this setting to have an effec
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="86"
-                            class="link-to-prism">src/core/grid/types.ts:86</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="91"
+                            class="link-to-prism">src/core/grid/types.ts:91</a></div>
                 </td>
             </tr>
 
@@ -547,8 +547,8 @@ Note: &#39;autoWidth&#39; must be set to false for this setting to have an effec
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="53"
-                            class="link-to-prism">src/core/grid/types.ts:53</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="58"
+                            class="link-to-prism">src/core/grid/types.ts:58</a></div>
                 </td>
             </tr>
 
@@ -625,8 +625,8 @@ Note: &#39;autoWidth&#39; must be set to false for this setting to have an effec
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="59"
-                            class="link-to-prism">src/core/grid/types.ts:59</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="64"
+                            class="link-to-prism">src/core/grid/types.ts:64</a></div>
                 </td>
             </tr>
 
@@ -847,7 +847,12 @@ import { Subject } from &quot;rxjs&quot;;
 import { EventBus } from &quot;../common/event-bus&quot;;
 import { Lasagna } from &quot;../common/lasagna&quot;;
 import { ScalesIndex } from &quot;../common/scales/types&quot;;
-import { D3Selection, IChart, IChartEvent, IChartPlugin } from &quot;../common/types&quot;;
+import {
+    D3Selection,
+    IChart,
+    IChartEvent,
+    IChartPlugin,
+} from &quot;../common/types&quot;;
 
 /**
  * Interface for defining aspects of the top, right, bottom, and left sides of a grid
@@ -944,8 +949,7 @@ export interface IDimensionConfig {
 /**
  * Interface for defining the SVGElements forming the top, right, bottom, and left borders of an entity
  */
-export interface IBorders extends IAllAround&lt;SVGElement&gt; {
-}
+export interface IBorders extends IAllAround&lt;SVGElement&gt; {}
 
 /**
  * Configuration of grid borders
@@ -968,7 +972,10 @@ export interface ITextOverflowArgs {
 }
 
 /** Type for tick overflow handler */
-export type TextOverflowHandler &#x3D; (textSelection: Selection&lt;BaseType, unknown, null, undefined&gt;, args: ITextOverflowArgs) &#x3D;&gt; void;
+export type TextOverflowHandler &#x3D; (
+    textSelection: Selection&lt;BaseType, unknown, null, undefined&gt;,
+    args: ITextOverflowArgs
+) &#x3D;&gt; void;
 
 /** Interface representing the configuration for tick labels */
 export interface ITickLabelConfig {
@@ -1086,7 +1093,9 @@ export interface IGrid {
      * @returns {IGrid} The grid instance
      */
     target(target: D3Selection&lt;SVGSVGElement&gt;): IGrid;
-    target(target: D3Selection&lt;SVGSVGElement&gt;): D3Selection&lt;SVGSVGElement&gt; | IGrid;
+    target(
+        target: D3Selection&lt;SVGSVGElement&gt;
+    ): D3Selection&lt;SVGSVGElement&gt; | IGrid;
 
     /**
      * getter for the grid configuration

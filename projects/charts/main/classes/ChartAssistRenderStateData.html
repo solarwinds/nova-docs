@@ -146,7 +146,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">src/core/chart-assists/types.ts:58</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="68" class="link-to-prism">src/core/chart-assists/types.ts:68</a></div>
                             </td>
                         </tr>
 
@@ -243,7 +243,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/core/chart-assists/types.ts:61</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="72" class="link-to-prism">src/core/chart-assists/types.ts:72</a></div>
                             </td>
                         </tr>
 
@@ -271,7 +271,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/core/chart-assists/types.ts:60</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="71" class="link-to-prism">src/core/chart-assists/types.ts:71</a></div>
                             </td>
                         </tr>
 
@@ -299,7 +299,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/core/chart-assists/types.ts:59</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="70" class="link-to-prism">src/core/chart-assists/types.ts:70</a></div>
                             </td>
                         </tr>
 
@@ -326,7 +326,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/core/chart-assists/types.ts:62</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="73" class="link-to-prism">src/core/chart-assists/types.ts:73</a></div>
                             </td>
                         </tr>
 
@@ -361,7 +361,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">src/core/chart-assists/types.ts:65</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">src/core/chart-assists/types.ts:76</a></div>
                                 </td>
                             </tr>
 
@@ -373,7 +373,13 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { RenderState } from &quot;../../renderers/types&quot;;
-import { IAccessors, IChart, IChartAssistSeries, IChartSeries, IRenderStateData } from &quot;../common/types&quot;;
+import {
+    IAccessors,
+    IChart,
+    IChartAssistSeries,
+    IChartSeries,
+    IRenderStateData,
+} from &quot;../common/types&quot;;
 
 /**
  * Interface representing the spark chart assist&#x27;s
@@ -405,7 +411,11 @@ export interface IChartAssist {
      *
      * @returns {string} The highlighted value
      */
-    getHighlightedValue(chartSeries: IChartSeries&lt;IAccessors&gt;, scaleKey: string, formatterName?: string): string | number | undefined;
+    getHighlightedValue(
+        chartSeries: IChartSeries&lt;IAccessors&gt;,
+        scaleKey: string,
+        formatterName?: string
+    ): string | number | undefined;
 
     /**
      * Returns visible series that are represented by a legend
@@ -430,19 +440,20 @@ export interface IChartAssistEvent {
  * Legend interaction assist uses this class to present the state that consists of emphasisState+visible as one state
  */
 export class ChartAssistRenderStateData implements IRenderStateData {
-    constructor(public seriesId: string,
-                public series: IChartAssistSeries&lt;IAccessors&gt;,
-                public emphasisState &#x3D; RenderState.default,
-                public visible &#x3D; true) {
-    }
+    constructor(
+        public seriesId: string,
+        public series: IChartAssistSeries&lt;IAccessors&gt;,
+        public emphasisState &#x3D; RenderState.default,
+        public visible &#x3D; true
+    ) {}
 
     get state(): RenderState {
         return this.visible ? this.emphasisState : RenderState.hidden;
     }
 }
 
-export interface IRenderStatesIndex extends Record&lt;string, ChartAssistRenderStateData&gt; {
-}
+export interface IRenderStatesIndex
+    extends Record&lt;string, ChartAssistRenderStateData&gt; {}
 </code></pre>
     </div>
 </div>

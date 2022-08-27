@@ -152,7 +152,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/lib/pizzagna/services/pizzagna.service.ts:17</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/lib/pizzagna/services/pizzagna.service.ts:26</a></div>
                             </td>
                         </tr>
 
@@ -231,8 +231,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="70"
-                            class="link-to-prism">src/lib/pizzagna/services/pizzagna.service.ts:70</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="96"
+                            class="link-to-prism">src/lib/pizzagna/services/pizzagna.service.ts:96</a></div>
                 </td>
             </tr>
 
@@ -315,8 +315,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="51"
-                            class="link-to-prism">src/lib/pizzagna/services/pizzagna.service.ts:51</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="63"
+                            class="link-to-prism">src/lib/pizzagna/services/pizzagna.service.ts:63</a></div>
                 </td>
             </tr>
 
@@ -399,8 +399,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="36"
-                            class="link-to-prism">src/lib/pizzagna/services/pizzagna.service.ts:36</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="45"
+                            class="link-to-prism">src/lib/pizzagna/services/pizzagna.service.ts:45</a></div>
                 </td>
             </tr>
 
@@ -471,8 +471,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="78"
-                            class="link-to-prism">src/lib/pizzagna/services/pizzagna.service.ts:78</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="116"
+                            class="link-to-prism">src/lib/pizzagna/services/pizzagna.service.ts:116</a></div>
                 </td>
             </tr>
 
@@ -543,8 +543,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="44"
-                            class="link-to-prism">src/lib/pizzagna/services/pizzagna.service.ts:44</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="53"
+                            class="link-to-prism">src/lib/pizzagna/services/pizzagna.service.ts:53</a></div>
                 </td>
             </tr>
 
@@ -627,8 +627,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="31"
-                            class="link-to-prism">src/lib/pizzagna/services/pizzagna.service.ts:31</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="40"
+                            class="link-to-prism">src/lib/pizzagna/services/pizzagna.service.ts:40</a></div>
                 </td>
             </tr>
 
@@ -699,8 +699,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="27"
-                            class="link-to-prism">src/lib/pizzagna/services/pizzagna.service.ts:27</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="36"
+                            class="link-to-prism">src/lib/pizzagna/services/pizzagna.service.ts:36</a></div>
                 </td>
             </tr>
 
@@ -773,7 +773,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/lib/pizzagna/services/pizzagna.service.ts:24</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/lib/pizzagna/services/pizzagna.service.ts:33</a></div>
                             </td>
                         </tr>
 
@@ -801,7 +801,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/lib/pizzagna/services/pizzagna.service.ts:23</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/lib/pizzagna/services/pizzagna.service.ts:32</a></div>
                             </td>
                         </tr>
 
@@ -815,15 +815,24 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Inject, Injectable } from &quot;@angular/core&quot;;
-import { EventBus, IEvent, immutableSet } from &quot;@nova-ui/bits&quot;;
 import isArray from &quot;lodash/isArray&quot;;
 import omit from &quot;lodash/omit&quot;;
 import { ReplaySubject } from &quot;rxjs&quot;;
 
-import { ISetPropertyPayload, SET_PROPERTY_VALUE } from &quot;../../services/types&quot;;
-import { IComponentConfiguration, IPizza, IPizzagna, PizzagnaLayer, PIZZAGNA_EVENT_BUS } from &quot;../../types&quot;;
-import { getPizzagnaPropertyPath, IPizzagnaProperty } from &quot;../functions/get-pizzagna-property-path&quot;;
+import { EventBus, IEvent, immutableSet } from &quot;@nova-ui/bits&quot;;
 
+import { ISetPropertyPayload, SET_PROPERTY_VALUE } from &quot;../../services/types&quot;;
+import {
+    IComponentConfiguration,
+    IPizza,
+    IPizzagna,
+    PizzagnaLayer,
+    PIZZAGNA_EVENT_BUS,
+} from &quot;../../types&quot;;
+import {
+    getPizzagnaPropertyPath,
+    IPizzagnaProperty,
+} from &quot;../functions/get-pizzagna-property-path&quot;;
 import { DynamicComponentCreator } from &quot;./dynamic-component-creator.service&quot;;
 
 /**
@@ -831,10 +840,10 @@ import { DynamicComponentCreator } from &quot;./dynamic-component-creator.servic
  */
 @Injectable()
 export class PizzagnaService {
-
-    constructor(@Inject(PIZZAGNA_EVENT_BUS) private eventBus: EventBus&lt;IEvent&gt;,
-                private dynamicComponentCreator: DynamicComponentCreator) {
-    }
+    constructor(
+        @Inject(PIZZAGNA_EVENT_BUS) private eventBus: EventBus&lt;IEvent&gt;,
+        private dynamicComponentCreator: DynamicComponentCreator
+    ) {}
 
     public pizzagna: IPizzagna;
     public pizzaChanged &#x3D; new ReplaySubject&lt;IPizza&gt;(1);
@@ -858,42 +867,71 @@ export class PizzagnaService {
     }
 
     public setProperty(property: IPizzagnaProperty | string, value: any) {
-        const path &#x3D; typeof property &#x3D;&#x3D;&#x3D; &quot;string&quot; ?
-            property : getPizzagnaPropertyPath(property);
-        this.eventBus.getStream(SET_PROPERTY_VALUE)
+        const path &#x3D;
+            typeof property &#x3D;&#x3D;&#x3D; &quot;string&quot;
+                ? property
+                : getPizzagnaPropertyPath(property);
+        this.eventBus
+            .getStream(SET_PROPERTY_VALUE)
             .next({ payload: { path, value } as ISetPropertyPayload });
     }
 
-    public createComponentsFromTemplateWithProperties(parentPath: string, components: any) {
+    public createComponentsFromTemplateWithProperties(
+        parentPath: string,
+        components: any
+    ) {
         const componentIds &#x3D; components.map((c: any) &#x3D;&gt; c.id);
-        let updatedPizzagna: IPizzagna &#x3D; this.dynamicComponentCreator.getPizzagnaUpdatedWithComponents(
-            this.pizzagna, parentPath, componentIds);
+        let updatedPizzagna: IPizzagna &#x3D;
+            this.dynamicComponentCreator.getPizzagnaUpdatedWithComponents(
+                this.pizzagna,
+                parentPath,
+                componentIds
+            );
 
         for (const component of components) {
             for (const childId of Object.keys(component.children)) {
-                updatedPizzagna &#x3D; immutableSet(updatedPizzagna,
-                                               &#x60;${PizzagnaLayer.Data}.${childId}.properties&#x60;, component.children[childId]);
+                updatedPizzagna &#x3D; immutableSet(
+                    updatedPizzagna,
+                    &#x60;${PizzagnaLayer.Data}.${childId}.properties&#x60;,
+                    component.children[childId]
+                );
             }
         }
 
         // this is here to update the pizzagna for other converters that need to access the value immediately
         this.updatePizzagna(updatedPizzagna);
 
-        this.eventBus.getStream(SET_PROPERTY_VALUE)
-            .next({ payload: { path: &quot;&quot;, value: updatedPizzagna } as ISetPropertyPayload });
+        this.eventBus.getStream(SET_PROPERTY_VALUE).next({
+            payload: {
+                path: &quot;&quot;,
+                value: updatedPizzagna,
+            } as ISetPropertyPayload,
+        });
     }
 
-    public createComponentsFromTemplate(parentPath: string, componentIds: string[]) {
-        const updatedPizzagna &#x3D; this.dynamicComponentCreator.getPizzagnaUpdatedWithComponents(this.pizzagna, parentPath, componentIds);
+    public createComponentsFromTemplate(
+        parentPath: string,
+        componentIds: string[]
+    ) {
+        const updatedPizzagna &#x3D;
+            this.dynamicComponentCreator.getPizzagnaUpdatedWithComponents(
+                this.pizzagna,
+                parentPath,
+                componentIds
+            );
         // this is here to update the pizzagna for other converters that need to access the value immediately
         this.updatePizzagna(updatedPizzagna);
-        this.eventBus.getStream(SET_PROPERTY_VALUE)
-            .next({ payload: { path: &quot;&quot;, value: updatedPizzagna } as ISetPropertyPayload });
+        this.eventBus.getStream(SET_PROPERTY_VALUE).next({
+            payload: {
+                path: &quot;&quot;,
+                value: updatedPizzagna,
+            } as ISetPropertyPayload,
+        });
     }
 
     public removeComponents(ids: string | string[]) {
         if (isArray(ids)) {
-            ids.forEach(id &#x3D;&gt; this.removeComponent(id));
+            ids.forEach((id) &#x3D;&gt; this.removeComponent(id));
         } else {
             this.removeComponent(ids);
         }
@@ -902,21 +940,33 @@ export class PizzagnaService {
     private removeComponent(id: string): void {
         const updatedPizzagna: IPizzagna &#x3D; { ...this.pizzagna };
 
-        const componentNodes &#x3D; this.pizzagna[PizzagnaLayer.Structure][id].properties?.nodes;
+        const componentNodes &#x3D;
+            this.pizzagna[PizzagnaLayer.Structure][id].properties?.nodes;
         const componentsToRemove &#x3D; [id, ...componentNodes];
 
-        const layers &#x3D; [PizzagnaLayer.Structure, PizzagnaLayer.Configuration, PizzagnaLayer.Data];
+        const layers &#x3D; [
+            PizzagnaLayer.Structure,
+            PizzagnaLayer.Configuration,
+            PizzagnaLayer.Data,
+        ];
         for (const layer of layers) {
             if (!updatedPizzagna[layer]) {
                 continue;
             }
             for (const component of componentsToRemove) {
-                updatedPizzagna[layer] &#x3D; omit(updatedPizzagna[layer], component);
+                updatedPizzagna[layer] &#x3D; omit(
+                    updatedPizzagna[layer],
+                    component
+                );
             }
         }
 
-        this.eventBus.getStream(SET_PROPERTY_VALUE)
-            .next({ payload: { path: &quot;&quot;, value: updatedPizzagna } as ISetPropertyPayload });
+        this.eventBus.getStream(SET_PROPERTY_VALUE).next({
+            payload: {
+                path: &quot;&quot;,
+                value: updatedPizzagna,
+            } as ISetPropertyPayload,
+        });
         this.updatePizzagna(updatedPizzagna);
     }
 }

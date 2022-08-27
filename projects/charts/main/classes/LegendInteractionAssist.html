@@ -146,7 +146,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="314" class="link-to-prism">src/core/chart-assists/chart-assist.ts:314</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="395" class="link-to-prism">src/core/chart-assists/chart-assist.ts:395</a></div>
                             </td>
                         </tr>
 
@@ -215,7 +215,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="314" class="link-to-prism">src/core/chart-assists/chart-assist.ts:314</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="395" class="link-to-prism">src/core/chart-assists/chart-assist.ts:395</a></div>
                             </td>
                         </tr>
 
@@ -253,8 +253,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="388"
-                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:388</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="472"
+                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:472</a></div>
                 </td>
             </tr>
 
@@ -325,8 +325,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="335"
-                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:335</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="418"
+                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:418</a></div>
                 </td>
             </tr>
 
@@ -366,8 +366,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="339"
-                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:339</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="422"
+                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:422</a></div>
                 </td>
             </tr>
 
@@ -438,8 +438,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="394"
-                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:394</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="483"
+                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:483</a></div>
                 </td>
             </tr>
 
@@ -479,8 +479,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="364"
-                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:364</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="448"
+                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:448</a></div>
                 </td>
             </tr>
 
@@ -570,8 +570,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="378"
-                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:378</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="462"
+                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:462</a></div>
                 </td>
             </tr>
 
@@ -661,8 +661,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="319"
-                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:319</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="399"
+                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:399</a></div>
                 </td>
             </tr>
 
@@ -722,8 +722,8 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import each from &quot;lodash/each&quot;;
 import keyBy from &quot;lodash/keyBy&quot;;
 import values from &quot;lodash/values&quot;;
-import {Observable, of, Subject, Subscription} from &quot;rxjs&quot;;
-import {filter, map, switchMap, takeUntil} from &quot;rxjs/operators&quot;;
+import { Observable, of, Subject, Subscription } from &quot;rxjs&quot;;
+import { filter, map, switchMap, takeUntil } from &quot;rxjs/operators&quot;;
 
 import {
     DESTROY_EVENT,
@@ -731,9 +731,12 @@ import {
     INTERACTION_DATA_POINTS_EVENT,
     MOUSE_ACTIVE_EVENT,
 } from &quot;../../constants&quot;;
-import {RenderState} from &quot;../../renderers/types&quot;;
-import {EventBus} from &quot;../common/event-bus&quot;;
-import {defaultMarkerProvider, defaultPalette} from &quot;../common/palette/default-providers&quot;;
+import { RenderState } from &quot;../../renderers/types&quot;;
+import { EventBus } from &quot;../common/event-bus&quot;;
+import {
+    defaultMarkerProvider,
+    defaultPalette,
+} from &quot;../common/palette/default-providers&quot;;
 import {
     IAccessors,
     IChart,
@@ -749,7 +752,6 @@ import {
     IRenderStateData,
     IValueProvider,
 } from &quot;../common/types&quot;;
-
 import {
     ChartAssistEventType,
     ChartAssistRenderStateData,
@@ -763,7 +765,6 @@ import {
  * It will use the most common settings.
  */
 export class ChartAssist&lt;T &#x3D; IAccessors&gt; implements IChartAssist {
-
     /**
      * Retrieves the display value for a data point on the specified series
      *
@@ -775,20 +776,33 @@ export class ChartAssist&lt;T &#x3D; IAccessors&gt; implements IChartAssist {
      *
      * @returns The display value for a data point
      */
-    public static getLabel(chartSeries: IChartSeries&lt;IAccessors&gt;, dataPoint: any, scaleKey: string, formatterName?: string, dataAccessorKey?: string): any {
+    public static getLabel(
+        chartSeries: IChartSeries&lt;IAccessors&gt;,
+        dataPoint: any,
+        scaleKey: string,
+        formatterName?: string,
+        dataAccessorKey?: string
+    ): any {
         if (!dataPoint || chartSeries.data.length &#x3D;&#x3D;&#x3D; 0) {
             return null;
         }
 
-        const valueAccessor &#x3D; chartSeries.accessors.data?.[dataAccessorKey || scaleKey];
+        const valueAccessor &#x3D;
+            chartSeries.accessors.data?.[dataAccessorKey || scaleKey];
         if (!valueAccessor) {
             return null;
         }
 
-        const adjustedIndex &#x3D; dataPoint.index &lt; 0 ? chartSeries.data.length - 1 : dataPoint.index;
+        const adjustedIndex &#x3D;
+            dataPoint.index &lt; 0 ? chartSeries.data.length - 1 : dataPoint.index;
         const data &#x3D; chartSeries.data[adjustedIndex];
 
-        const rawValue &#x3D; valueAccessor(data, adjustedIndex, chartSeries.data, chartSeries);
+        const rawValue &#x3D; valueAccessor(
+            data,
+            adjustedIndex,
+            chartSeries.data,
+            chartSeries
+        );
         const scale &#x3D; chartSeries.scales[scaleKey];
         if (!scale || !formatterName) {
             return rawValue;
@@ -814,16 +828,22 @@ export class ChartAssist&lt;T &#x3D; IAccessors&gt; implements IChartAssist {
     public chartAssistSubject &#x3D; new Subject&lt;IChartAssistEvent&gt;();
 
     private syncHandlerMap: Record&lt;ChartAssistEventType, any&gt;;
-    private getVisibleSeriesWithLegendBackup: () &#x3D;&gt; IChartAssistSeries&lt;IAccessors&lt;any&gt;&gt;[];
+    private getVisibleSeriesWithLegendBackup: () &#x3D;&gt; IChartAssistSeries&lt;
+        IAccessors&lt;any&gt;
+    &gt;[];
     private syncSubscription: Subscription;
     private legendInteractionAssist: LegendInteractionAssist;
 
     public onEvent: (event: IChartEvent) &#x3D;&gt; void;
 
-    constructor(public chart: IChart,
-                seriesProcessor?: (series: IChartAssistSeries&lt;T&gt;[]) &#x3D;&gt; IChartAssistSeries&lt;T&gt;[],
-                public palette: IChartPalette &#x3D; defaultPalette(),
-                public markers: IValueProvider&lt;IChartMarker&gt; &#x3D; defaultMarkerProvider()) {
+    constructor(
+        public chart: IChart,
+        seriesProcessor?: (
+            series: IChartAssistSeries&lt;T&gt;[]
+        ) &#x3D;&gt; IChartAssistSeries&lt;T&gt;[],
+        public palette: IChartPalette &#x3D; defaultPalette(),
+        public markers: IValueProvider&lt;IChartMarker&gt; &#x3D; defaultMarkerProvider()
+    ) {
         this.configureChartEventSubscriptions(chart.getEventBus());
         if (seriesProcessor) {
             this.seriesProcessor &#x3D; seriesProcessor;
@@ -849,45 +869,71 @@ export class ChartAssist&lt;T &#x3D; IAccessors&gt; implements IChartAssist {
      * otherwise it&#x27;ll return null
      * @param chartSeries
      */
-    public legendLabelData$(chartSeries: IChartSeries&lt;IAccessors&gt;): Observable&lt;any&gt; {
-        const seriesHighlight$ &#x3D; this.chart.getEventBus().getStream(INTERACTION_DATA_POINTS_EVENT).asObservable()
+    public legendLabelData$(
+        chartSeries: IChartSeries&lt;IAccessors&gt;
+    ): Observable&lt;any&gt; {
+        const seriesHighlight$ &#x3D; this.chart
+            .getEventBus()
+            .getStream(INTERACTION_DATA_POINTS_EVENT)
+            .asObservable()
             .pipe(
-                filter(event &#x3D;&gt; event.data.interactionType &#x3D;&#x3D;&#x3D; InteractionType.MouseMove),
-                map(event &#x3D;&gt; event.data.dataPoints[chartSeries.id])
+                filter(
+                    (event) &#x3D;&gt;
+                        event.data.interactionType &#x3D;&#x3D;&#x3D; InteractionType.MouseMove
+                ),
+                map((event) &#x3D;&gt; event.data.dataPoints[chartSeries.id])
             );
 
         // if there is no highlightData, or index is &quot;-1&quot;, we&#x27;ll show the last value from series (if possible)
-        const highlightDataPresentPredicate &#x3D; (highlightData: any) &#x3D;&gt; highlightData &amp;&amp; highlightData.index &gt;&#x3D; 0;
+        const highlightDataPresentPredicate &#x3D; (highlightData: any) &#x3D;&gt;
+            highlightData &amp;&amp; highlightData.index &gt;&#x3D; 0;
 
-        return seriesHighlight$
-            .pipe(
-                switchMap(highlightData &#x3D;&gt; highlightDataPresentPredicate(highlightData)
+        return seriesHighlight$.pipe(
+            switchMap((highlightData) &#x3D;&gt;
+                highlightDataPresentPredicate(highlightData)
                     ? of(highlightData.data)
-                    : of((chartSeries.data &amp;&amp; chartSeries.data.length) ? chartSeries.data[chartSeries.data.length - 1] : null))
-            );
+                    : of(
+                          chartSeries.data &amp;&amp; chartSeries.data.length
+                              ? chartSeries.data[chartSeries.data.length - 1]
+                              : null
+                      )
+            )
+        );
     }
 
-    public seriesProcessor(series: IChartAssistSeries&lt;IAccessors&gt;[]): IChartAssistSeries&lt;IAccessors&gt;[] {
+    public seriesProcessor(
+        series: IChartAssistSeries&lt;IAccessors&gt;[]
+    ): IChartAssistSeries&lt;IAccessors&gt;[] {
         return series;
     }
 
-    public update(inputSeriesSet: IChartAssistSeries&lt;IAccessors&gt;[], updateLegend &#x3D; true): void {
+    public update(
+        inputSeriesSet: IChartAssistSeries&lt;IAccessors&gt;[],
+        updateLegend &#x3D; true
+    ): void {
         this.inputSeriesSet &#x3D; inputSeriesSet;
 
-        const processedSeriesSet &#x3D; this.seriesProcessor(inputSeriesSet.map(series &#x3D;&gt; ({
-            ...series,
-            data: series.data || [],
-        })));
+        const processedSeriesSet &#x3D; this.seriesProcessor(
+            inputSeriesSet.map((series) &#x3D;&gt; ({
+                ...series,
+                data: series.data || [],
+            }))
+        );
 
-        this.legendSeriesSet &#x3D; processedSeriesSet.filter(s &#x3D;&gt; s.showInLegend || typeof s.showInLegend &#x3D;&#x3D;&#x3D; &quot;undefined&quot;);
+        this.legendSeriesSet &#x3D; processedSeriesSet.filter(
+            (s) &#x3D;&gt; s.showInLegend || typeof s.showInLegend &#x3D;&#x3D;&#x3D; &quot;undefined&quot;
+        );
 
         if (updateLegend) {
             this.legendInteractionAssist.update(processedSeriesSet);
         }
         // add render states to the series for use in the chart
-        const seriesSet &#x3D; processedSeriesSet.map(s &#x3D;&gt; Object.assign(
-            { renderState: this.renderStatesIndex[s.id]?.state },
-            s));
+        const seriesSet &#x3D; processedSeriesSet.map((s) &#x3D;&gt;
+            Object.assign(
+                { renderState: this.renderStatesIndex[s.id]?.state },
+                s
+            )
+        );
 
         this.chart.update(seriesSet);
 
@@ -898,8 +944,11 @@ export class ChartAssist&lt;T &#x3D; IAccessors&gt; implements IChartAssist {
         this.legendInteractionAssist.setGroupVisibility(seriesId, visible);
 
         this.update(this.inputSeriesSet, false);
-        this.chartAssistSubject.next({ type: ChartAssistEventType.ToggleSeries, payload: { seriesId, visible } });
-    }
+        this.chartAssistSubject.next({
+            type: ChartAssistEventType.ToggleSeries,
+            payload: { seriesId, visible },
+        });
+    };
 
     /**
      * Resets all visible series to default state
@@ -908,8 +957,11 @@ export class ChartAssist&lt;T &#x3D; IAccessors&gt; implements IChartAssist {
         this.legendInteractionAssist.resetSeries();
 
         this.publishRenderStates();
-        this.chartAssistSubject.next({ type: ChartAssistEventType.ResetVisibleSeries, payload: {} });
-    }
+        this.chartAssistSubject.next({
+            type: ChartAssistEventType.ResetVisibleSeries,
+            payload: {},
+        });
+    };
 
     /**
      * For series that are currently visible, emphasize the given series and deemphasizes all the other ones
@@ -920,42 +972,56 @@ export class ChartAssist&lt;T &#x3D; IAccessors&gt; implements IChartAssist {
         this.legendInteractionAssist.emphasizeSeries(seriesId);
 
         this.publishRenderStates();
-        this.chartAssistSubject.next({ type: ChartAssistEventType.EmphasizeSeries, payload: { seriesId } });
-    }
+        this.chartAssistSubject.next({
+            type: ChartAssistEventType.EmphasizeSeries,
+            payload: { seriesId },
+        });
+    };
 
     public isSeriesHidden(seriesId: string): boolean {
         return this.legendInteractionAssist.isSeriesHidden(seriesId);
     }
 
-    public seriesTrackByFn(index: number, item: IChartAssistSeries&lt;IAccessors&gt;): string {
+    public seriesTrackByFn(
+        index: number,
+        item: IChartAssistSeries&lt;IAccessors&gt;
+    ): string {
         return item.id;
     }
 
     /**
-    * Retrieves the display value for the highlighted data point on the specified series
-    *
-    * @param chartSeries The series containing the highlighted data point to get a label for
-    * @param scaleKey The key for the scale potentially containing a formatter that can be used to format the label
-    * @param formatterName The name of the formatter to use for formatting the label
-    * @param dataAccessorKey The accessor key to use for accessing the data value if the accessor key differs from the scale key
-    *
-    * @returns The display value for the highlighted data point
-    */
-    public getHighlightedValue(chartSeries: IChartSeries&lt;IAccessors&gt;,
-                               scaleKey: string,
-                               formatterName?: string,
-                               dataAccessorKey?: string): string | number | undefined {
-
+     * Retrieves the display value for the highlighted data point on the specified series
+     *
+     * @param chartSeries The series containing the highlighted data point to get a label for
+     * @param scaleKey The key for the scale potentially containing a formatter that can be used to format the label
+     * @param formatterName The name of the formatter to use for formatting the label
+     * @param dataAccessorKey The accessor key to use for accessing the data value if the accessor key differs from the scale key
+     *
+     * @returns The display value for the highlighted data point
+     */
+    public getHighlightedValue(
+        chartSeries: IChartSeries&lt;IAccessors&gt;,
+        scaleKey: string,
+        formatterName?: string,
+        dataAccessorKey?: string
+    ): string | number | undefined {
         if (!this.highlightedDataPoints) {
             return undefined;
         }
 
         const dataPoint &#x3D; this.highlightedDataPoints[chartSeries.id];
-        return ChartAssist.getLabel(chartSeries, dataPoint, scaleKey, formatterName, dataAccessorKey);
+        return ChartAssist.getLabel(
+            chartSeries,
+            dataPoint,
+            scaleKey,
+            formatterName,
+            dataAccessorKey
+        );
     }
 
-    public getVisibleSeriesWithLegend &#x3D; (): IChartAssistSeries&lt;IAccessors&lt;any&gt;&gt;[] &#x3D;&gt;
-        this.legendSeriesSet.filter(s &#x3D;&gt; !this.isSeriesHidden(s.id))
+    public getVisibleSeriesWithLegend &#x3D; (): IChartAssistSeries&lt;
+        IAccessors&lt;any&gt;
+    &gt;[] &#x3D;&gt; this.legendSeriesSet.filter((s) &#x3D;&gt; !this.isSeriesHidden(s.id));
 
     /**
      * Synchronize this chart assist&#x27;s actions with IChartAssistEvents emitted by the specified
@@ -969,14 +1035,21 @@ export class ChartAssist&lt;T &#x3D; IAccessors&gt; implements IChartAssist {
      */
     public syncWithChartAssist(chartAssist: ChartAssist): void {
         this.getVisibleSeriesWithLegendBackup &#x3D; this.getVisibleSeriesWithLegend;
-        this.getVisibleSeriesWithLegend &#x3D; chartAssist.getVisibleSeriesWithLegend;
+        this.getVisibleSeriesWithLegend &#x3D;
+            chartAssist.getVisibleSeriesWithLegend;
 
-        this.syncSubscription &#x3D; chartAssist.chartAssistSubject.pipe(
-            takeUntil(chartAssist.chart.getEventBus().getStream(DESTROY_EVENT))
-        ).subscribe((event: IChartAssistEvent) &#x3D;&gt; {
-            const args &#x3D; Object.keys(event.payload).map(key &#x3D;&gt; event.payload[key]);
-            this.syncHandlerMap[event.type](...args);
-        });
+        this.syncSubscription &#x3D; chartAssist.chartAssistSubject
+            .pipe(
+                takeUntil(
+                    chartAssist.chart.getEventBus().getStream(DESTROY_EVENT)
+                )
+            )
+            .subscribe((event: IChartAssistEvent) &#x3D;&gt; {
+                const args &#x3D; Object.keys(event.payload).map(
+                    (key) &#x3D;&gt; event.payload[key]
+                );
+                this.syncHandlerMap[event.type](...args);
+            });
     }
 
     /**
@@ -993,11 +1066,18 @@ export class ChartAssist&lt;T &#x3D; IAccessors&gt; implements IChartAssist {
         }
     }
 
-    private configureChartEventSubscriptions(eventBus: EventBus&lt;IChartEvent&gt;): void {
+    private configureChartEventSubscriptions(
+        eventBus: EventBus&lt;IChartEvent&gt;
+    ): void {
         const eventHandlers: { [eventName: string]: (data?: any) &#x3D;&gt; void } &#x3D; {
-            [INTERACTION_DATA_POINTS_EVENT]: (data: IInteractionDataPointsEvent) &#x3D;&gt; {
+            [INTERACTION_DATA_POINTS_EVENT]: (
+                data: IInteractionDataPointsEvent
+            ) &#x3D;&gt; {
                 if (data.interactionType &#x3D;&#x3D;&#x3D; InteractionType.MouseMove) {
-                    this.highlightedDataPoints &#x3D; Object.assign({}, data.dataPoints);
+                    this.highlightedDataPoints &#x3D; Object.assign(
+                        {},
+                        data.dataPoints
+                    );
                 }
             },
             [HIGHLIGHT_SERIES_EVENT]: (data: IDataPoint) &#x3D;&gt; {
@@ -1012,7 +1092,7 @@ export class ChartAssist&lt;T &#x3D; IAccessors&gt; implements IChartAssist {
             },
         };
 
-        each(Object.keys(eventHandlers), key &#x3D;&gt; {
+        each(Object.keys(eventHandlers), (key) &#x3D;&gt; {
             eventBus.getStream(key).subscribe((event) &#x3D;&gt; {
                 eventHandlers[key](event.data);
                 if (this.onEvent) {
@@ -1023,33 +1103,36 @@ export class ChartAssist&lt;T &#x3D; IAccessors&gt; implements IChartAssist {
     }
 
     private publishRenderStates(): void {
-        this.chart.setSeriesStates(this.legendInteractionAssist.getSeriesStates());
+        this.chart.setSeriesStates(
+            this.legendInteractionAssist.getSeriesStates()
+        );
     }
 }
 
 export class LegendInteractionAssist {
-
     private seriesGroups: Record&lt;string, string[]&gt; &#x3D; {};
     private seriesIndex: Record&lt;string, IChartAssistSeries&lt;IAccessors&gt;&gt;;
 
     public renderStatesIndex: IRenderStatesIndex &#x3D; {};
 
-    constructor(private chartAssist: ChartAssist) {
-    }
+    constructor(private chartAssist: ChartAssist) {}
 
     public update(seriesSet: IChartAssistSeries&lt;IAccessors&gt;[]): void {
         this.seriesGroups &#x3D; this.getSeriesGroups(seriesSet);
-        this.seriesIndex &#x3D; keyBy(seriesSet, s &#x3D;&gt; s.id);
+        this.seriesIndex &#x3D; keyBy(seriesSet, (s) &#x3D;&gt; s.id);
 
         this.resetSeries();
 
         // override render states
-        for (const series of seriesSet.filter(s &#x3D;&gt; s.renderState)) {
-            this.renderStatesIndex[series.id] &#x3D;
-                new ChartAssistRenderStateData(series.id,
-                                               series,
-                                               series.renderState &#x3D;&#x3D;&#x3D; RenderState.hidden ? RenderState.default : series.renderState,
-                                               series.renderState !&#x3D;&#x3D; RenderState.hidden);
+        for (const series of seriesSet.filter((s) &#x3D;&gt; s.renderState)) {
+            this.renderStatesIndex[series.id] &#x3D; new ChartAssistRenderStateData(
+                series.id,
+                series,
+                series.renderState &#x3D;&#x3D;&#x3D; RenderState.hidden
+                    ? RenderState.default
+                    : series.renderState,
+                series.renderState !&#x3D;&#x3D; RenderState.hidden
+            );
         }
     }
 
@@ -1067,7 +1150,8 @@ export class LegendInteractionAssist {
 
         for (const s of seriesSet) {
             const separatorIndex &#x3D; s.id.indexOf(&quot;__&quot;);
-            const parentId &#x3D; (separatorIndex &gt;&#x3D; 0) ? s.id.substring(0, separatorIndex) : s.id;
+            const parentId &#x3D;
+                separatorIndex &gt;&#x3D; 0 ? s.id.substring(0, separatorIndex) : s.id;
 
             if (!seriesGroups[parentId]) {
                 seriesGroups[parentId] &#x3D; [];
@@ -1108,7 +1192,12 @@ export class LegendInteractionAssist {
 
     public emphasizeSeries(seriesId: string): void {
         for (const group of Object.keys(this.seriesGroups)) {
-            this.setGroupState(group, group &#x3D;&#x3D;&#x3D; seriesId ? RenderState.emphasized : RenderState.deemphasized);
+            this.setGroupState(
+                group,
+                group &#x3D;&#x3D;&#x3D; seriesId
+                    ? RenderState.emphasized
+                    : RenderState.deemphasized
+            );
         }
     }
 
@@ -1130,7 +1219,11 @@ export class LegendInteractionAssist {
         if (renderState) {
             renderState.emphasisState &#x3D; state;
         } else {
-            renderState &#x3D; new ChartAssistRenderStateData(seriesId, this.seriesIndex[seriesId], state);
+            renderState &#x3D; new ChartAssistRenderStateData(
+                seriesId,
+                this.seriesIndex[seriesId],
+                state
+            );
             this.renderStatesIndex[seriesId] &#x3D; renderState;
         }
     }
@@ -1140,11 +1233,15 @@ export class LegendInteractionAssist {
         if (renderState) {
             renderState.visible &#x3D; visible;
         } else {
-            renderState &#x3D; new ChartAssistRenderStateData(seriesId, this.seriesIndex[seriesId], RenderState.default, visible);
+            renderState &#x3D; new ChartAssistRenderStateData(
+                seriesId,
+                this.seriesIndex[seriesId],
+                RenderState.default,
+                visible
+            );
             this.renderStatesIndex[seriesId] &#x3D; renderState;
         }
     }
-
 }
 </code></pre>
     </div>

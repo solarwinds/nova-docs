@@ -106,8 +106,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="15"
-                            class="link-to-prism">src/lib/configurator/pipe/widget-editor-accordion-form-state.pipe.ts:15</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="14"
+                            class="link-to-prism">src/lib/configurator/pipe/widget-editor-accordion-form-state.pipe.ts:14</a></div>
                 </td>
             </tr>
 
@@ -173,20 +173,23 @@ import { hasControlInErrorState } from &quot;../functions/has-control-in-error-s
     pure: false,
 })
 export class WidgetEditorAccordionFormStatePipe implements PipeTransform {
-
-    public transform(form: FormGroup | AbstractControl | null): Observable&lt;AccordionState&gt; {
+    public transform(
+        form: FormGroup | AbstractControl | null
+    ): Observable&lt;AccordionState&gt; {
         if (!form) {
             throw new Error(&quot;Provided form is undefined&quot;);
         }
 
-        return combineLatest([form.statusChanges, form.valueChanges])
-            .pipe(
-                startWith(null),
-                map(() &#x3D;&gt; hasControlInErrorState(form) ? AccordionState.CRITICAL : AccordionState.DEFAULT),
-                distinct()
-            );
+        return combineLatest([form.statusChanges, form.valueChanges]).pipe(
+            startWith(null),
+            map(() &#x3D;&gt;
+                hasControlInErrorState(form)
+                    ? AccordionState.CRITICAL
+                    : AccordionState.DEFAULT
+            ),
+            distinct()
+        );
     }
-
 }
 </code></pre>
     </div>

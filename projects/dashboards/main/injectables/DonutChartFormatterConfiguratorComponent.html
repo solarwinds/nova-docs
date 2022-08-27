@@ -150,7 +150,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/lib/configurator/components/formatters/widget-formatter-configurators/donut-formatter-configurator.component.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/lib/configurator/components/formatters/widget-formatter-configurators/donut-formatter-configurator.component.ts:31</a></div>
                             </td>
                         </tr>
 
@@ -241,8 +241,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="42"
-                            class="link-to-prism">src/lib/configurator/components/formatters/widget-formatter-configurators/donut-formatter-configurator.component.ts:42</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="60"
+                            class="link-to-prism">src/lib/configurator/components/formatters/widget-formatter-configurators/donut-formatter-configurator.component.ts:60</a></div>
                 </td>
             </tr>
 
@@ -282,8 +282,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="21"
-                            class="link-to-prism">src/lib/configurator/components/formatters/widget-formatter-configurators/donut-formatter-configurator.component.ts:21</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="39"
+                            class="link-to-prism">src/lib/configurator/components/formatters/widget-formatter-configurators/donut-formatter-configurator.component.ts:39</a></div>
                 </td>
             </tr>
 
@@ -354,8 +354,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="38"
-                            class="link-to-prism">src/lib/configurator/components/formatters/widget-formatter-configurators/donut-formatter-configurator.component.ts:38</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="56"
+                            class="link-to-prism">src/lib/configurator/components/formatters/widget-formatter-configurators/donut-formatter-configurator.component.ts:56</a></div>
                 </td>
             </tr>
 
@@ -398,7 +398,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/lib/configurator/components/formatters/widget-formatter-configurators/donut-formatter-configurator.component.ts:16</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/lib/configurator/components/formatters/widget-formatter-configurators/donut-formatter-configurator.component.ts:34</a></div>
                             </td>
                         </tr>
 
@@ -426,7 +426,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/lib/configurator/components/formatters/widget-formatter-configurators/donut-formatter-configurator.component.ts:14</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/lib/configurator/components/formatters/widget-formatter-configurators/donut-formatter-configurator.component.ts:31</a></div>
                             </td>
                         </tr>
 
@@ -454,7 +454,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/lib/configurator/components/formatters/widget-formatter-configurators/donut-formatter-configurator.component.ts:18</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/lib/configurator/components/formatters/widget-formatter-configurators/donut-formatter-configurator.component.ts:36</a></div>
                             </td>
                         </tr>
 
@@ -483,7 +483,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/lib/configurator/components/formatters/widget-formatter-configurators/donut-formatter-configurator.component.ts:50</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="68" class="link-to-prism">src/lib/configurator/components/formatters/widget-formatter-configurators/donut-formatter-configurator.component.ts:68</a></div>
                                 </td>
                             </tr>
 
@@ -505,7 +505,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/lib/configurator/components/formatters/widget-formatter-configurators/donut-formatter-configurator.component.ts:57</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="75" class="link-to-prism">src/lib/configurator/components/formatters/widget-formatter-configurators/donut-formatter-configurator.component.ts:75</a></div>
                                 </td>
                             </tr>
                     <tr>
@@ -527,14 +527,31 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ChangeDetectorRef, EventEmitter, Injectable, Input, OnChanges, OnInit, Output, SimpleChanges } from &quot;@angular/core&quot;;
-import { AbstractControl, FormBuilder, FormGroup, Validators } from &quot;@angular/forms&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+    ChangeDetectorRef,
+    EventEmitter,
+    Injectable,
+    Input,
+    OnChanges,
+    OnInit,
+    Output,
+    SimpleChanges,
+} from &quot;@angular/core&quot;;
+import {
+    AbstractControl,
+    FormBuilder,
+    FormGroup,
+    Validators,
+} from &quot;@angular/forms&quot;;
+
 import { LoggerService } from &quot;@nova-ui/bits&quot;;
 
 import { IHasChangeDetector, IHasForm, IProperties } from &quot;../../../../types&quot;;
 
 @Injectable()
-export abstract class DonutChartFormatterConfiguratorComponent implements IHasChangeDetector, IHasForm, OnChanges, OnInit {
+export abstract class DonutChartFormatterConfiguratorComponent
+    implements IHasChangeDetector, IHasForm, OnChanges, OnInit
+{
     @Input() contentFormatterProperties: IProperties;
     @Input() dsOutput: any;
 
@@ -542,10 +559,11 @@ export abstract class DonutChartFormatterConfiguratorComponent implements IHasCh
 
     public form: FormGroup;
 
-    constructor(public changeDetector: ChangeDetectorRef,
-                protected formBuilder: FormBuilder,
-                public logger: LoggerService) {
-    }
+    constructor(
+        public changeDetector: ChangeDetectorRef,
+        protected formBuilder: FormBuilder,
+        public logger: LoggerService
+    ) {}
 
     public ngOnChanges(changes: SimpleChanges) {
         // In case we change the formatter the configurator&#x27;s form gets destroyed.
@@ -555,7 +573,7 @@ export abstract class DonutChartFormatterConfiguratorComponent implements IHasCh
         }
         // In case we have already stored some values in the configuration we want to retreive them
         if (this.contentFormatterProperties) {
-            Object.keys(this.contentFormatterProperties).forEach(p &#x3D;&gt; {
+            Object.keys(this.contentFormatterProperties).forEach((p) &#x3D;&gt; {
                 this.form?.get(p)?.setValue(this.contentFormatterProperties[p]);
             });
         } else {
@@ -586,7 +604,9 @@ export abstract class DonutChartFormatterConfiguratorComponent implements IHasCh
     get properMetric(): string {
         const currentMetric &#x3D; this.contentFormatterProperties?.currentMetric;
         // This verifies whether the current metric still exists in the list of metric received from the datasource
-        const hasMetric &#x3D; this.dsOutput?.result.find((m: any) &#x3D;&gt; m.id &#x3D;&#x3D;&#x3D; currentMetric);
+        const hasMetric &#x3D; this.dsOutput?.result.find(
+            (m: any) &#x3D;&gt; m.id &#x3D;&#x3D;&#x3D; currentMetric
+        );
         // We return current metric if it is still in the list. Otherwise we fallback to the very first item of the
         // list received from the datasource
         return hasMetric ? currentMetric : this.dsOutput?.result[0]?.id;
@@ -597,8 +617,7 @@ export abstract class DonutChartFormatterConfiguratorComponent implements IHasCh
      *
      * @param form
      */
-    protected addCustomFormControls(form: FormGroup): void {
-    }
+    protected addCustomFormControls(form: FormGroup): void {}
 }
 </code></pre>
     </div>

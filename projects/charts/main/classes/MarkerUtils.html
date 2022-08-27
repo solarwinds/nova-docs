@@ -158,7 +158,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/renderers/marker-utils.ts:23</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/renderers/marker-utils.ts:25</a></div>
                             </td>
                         </tr>
 
@@ -198,7 +198,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/renderers/marker-utils.ts:26</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/renderers/marker-utils.ts:28</a></div>
                             </td>
                         </tr>
 
@@ -242,8 +242,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="96"
-                            class="link-to-prism">src/renderers/marker-utils.ts:96</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="118"
+                            class="link-to-prism">src/renderers/marker-utils.ts:118</a></div>
                 </td>
             </tr>
 
@@ -402,8 +402,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="37"
-                            class="link-to-prism">src/renderers/marker-utils.ts:37</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="39"
+                            class="link-to-prism">src/renderers/marker-utils.ts:39</a></div>
                 </td>
             </tr>
 
@@ -549,8 +549,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="157"
-                            class="link-to-prism">src/renderers/marker-utils.ts:157</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="222"
+                            class="link-to-prism">src/renderers/marker-utils.ts:222</a></div>
                 </td>
             </tr>
 
@@ -625,10 +625,14 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { UtilService } from &quot;@nova-ui/bits&quot;;
-import { Subject } from &quot;rxjs&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Subject } from &quot;rxjs&quot;;
 
-import { DATA_POINT_INTERACTION_RESET, INTERACTION_DATA_POINT_EVENT } from &quot;../constants&quot;;
+import { UtilService } from &quot;@nova-ui/bits&quot;;
+
+import {
+    DATA_POINT_INTERACTION_RESET,
+    INTERACTION_DATA_POINT_EVENT,
+} from &quot;../constants&quot;;
 import { isInRange } from &quot;../core/common/scales/helpers/is-in-range&quot;;
 import { IXYScales } from &quot;../core/common/scales/types&quot;;
 import {
@@ -641,11 +645,9 @@ import {
     InteractionType,
     IRendererEventPayload,
 } from &quot;../core/common/types&quot;;
-
 import { DEFAULT_MARKER_INTERACTION_CONFIG } from &quot;./constants&quot;;
 
 export class MarkerUtils {
-
     /** The default class for the marker&#x27;s container */
     public static readonly DEFAULT_MARKER_CONTAINER_CLASS &#x3D; &quot;marker&quot;;
 
@@ -661,12 +663,14 @@ export class MarkerUtils {
      * @param container
      * @param rendererSubject
      */
-    public static manageMarker(dataSeries: IDataSeries&lt;IAccessors&gt;,
-                               scales: IXYScales,
-                               dataPointIndex: number,
-                               container: D3Selection&lt;SVGGElement&gt;,
-                               rendererSubject: Subject&lt;IRendererEventPayload&gt;,
-                               markerInteractionConfig &#x3D; DEFAULT_MARKER_INTERACTION_CONFIG): void {
+    public static manageMarker(
+        dataSeries: IDataSeries&lt;IAccessors&gt;,
+        scales: IXYScales,
+        dataPointIndex: number,
+        container: D3Selection&lt;SVGGElement&gt;,
+        rendererSubject: Subject&lt;IRendererEventPayload&gt;,
+        markerInteractionConfig &#x3D; DEFAULT_MARKER_INTERACTION_CONFIG
+    ): void {
         if (!container) {
             throw new Error(&quot;Container doesn&#x27;t exist!&quot;);
         }
@@ -684,15 +688,33 @@ export class MarkerUtils {
 
         const dataPoint &#x3D; dataSeries.data[dataPointIndex];
 
-        if (!accessors.data?.x || !(accessors.data.y)) {
+        if (!accessors.data?.x || !accessors.data.y) {
             throw new Error(&quot;Color or marker are undefined&quot;);
         }
 
-        const x &#x3D; scales.x.convert(accessors.data.x(dataPoint, dataPointIndex, dataSeries.data, dataSeries));
-        const y &#x3D; scales.y.convert(accessors.data.y(dataPoint, dataPointIndex, dataSeries.data, dataSeries));
+        const x &#x3D; scales.x.convert(
+            accessors.data.x(
+                dataPoint,
+                dataPointIndex,
+                dataSeries.data,
+                dataSeries
+            )
+        );
+        const y &#x3D; scales.y.convert(
+            accessors.data.y(
+                dataPoint,
+                dataPointIndex,
+                dataSeries.data,
+                dataSeries
+            )
+        );
 
-        if (typeof x !&#x3D;&#x3D; &quot;undefined&quot; &amp;&amp; typeof y !&#x3D;&#x3D; &quot;undefined&quot; &amp;&amp;
-            isInRange(scales.x, x) &amp;&amp; isInRange(scales.y, y)) {
+        if (
+            typeof x !&#x3D;&#x3D; &quot;undefined&quot; &amp;&amp;
+            typeof y !&#x3D;&#x3D; &quot;undefined&quot; &amp;&amp;
+            isInRange(scales.x, x) &amp;&amp;
+            isInRange(scales.y, y)
+        ) {
             const seriesId &#x3D; dataSeries.id;
             const dataPointInfo: IDataPoint &#x3D; {
                 index: dataPointIndex,
@@ -720,34 +742,53 @@ export class MarkerUtils {
         }
     }
 
-    public static drawMarker(dataPoint: IDataPoint,
-                             marker: IChartMarker,
-                             color: string,
-                             target: D3Selection&lt;SVGGElement&gt;,
-                             dataPointSubject: Subject&lt;IRendererEventPayload&lt;IInteractionDataPointEvent&gt;&gt;,
-                             className: string &#x3D; MarkerUtils.DEFAULT_MARKER_CONTAINER_CLASS,
-                             markerInteractionConfig &#x3D; DEFAULT_MARKER_INTERACTION_CONFIG) {
-        let markerTarget: D3Selection | D3Selection&lt;SVGGElement&gt; &#x3D; target.select(&#x60;g.${className}&#x60;);
+    public static drawMarker(
+        dataPoint: IDataPoint,
+        marker: IChartMarker,
+        color: string,
+        target: D3Selection&lt;SVGGElement&gt;,
+        dataPointSubject: Subject&lt;
+            IRendererEventPayload&lt;IInteractionDataPointEvent&gt;
+        &gt;,
+        className: string &#x3D; MarkerUtils.DEFAULT_MARKER_CONTAINER_CLASS,
+        markerInteractionConfig &#x3D; DEFAULT_MARKER_INTERACTION_CONFIG
+    ) {
+        let markerTarget: D3Selection | D3Selection&lt;SVGGElement&gt; &#x3D;
+            target.select(&#x60;g.${className}&#x60;);
         const xCoord &#x3D; dataPoint?.position?.x;
         const yCoord &#x3D; dataPoint?.position?.y;
         const attrs &#x3D; {
-            &quot;transform&quot;: &#x60;translate(${xCoord}, ${yCoord})&#x60;,
-            &quot;cursor&quot;: &quot;crosshair&quot;,
+            transform: &#x60;translate(${xCoord}, ${yCoord})&#x60;,
+            cursor: &quot;crosshair&quot;,
         };
 
-        const getPointerEventsClass &#x3D; () &#x3D;&gt; &#x60;${markerInteractionConfig.enabled ? &quot; pointer-events&quot; : &quot;&quot;}&#x60;;
-        const getPointerEventsClickClass &#x3D; () &#x3D;&gt; &#x60;${markerInteractionConfig.enabled &amp;&amp; markerInteractionConfig.clickable ? &quot; pointer-events-click&quot; : &quot;&quot;}&#x60;;
+        const getPointerEventsClass &#x3D; () &#x3D;&gt;
+            &#x60;${markerInteractionConfig.enabled ? &quot; pointer-events&quot; : &quot;&quot;}&#x60;;
+        const getPointerEventsClickClass &#x3D; () &#x3D;&gt;
+            &#x60;${
+                markerInteractionConfig.enabled &amp;&amp;
+                markerInteractionConfig.clickable
+                    ? &quot; pointer-events-click&quot;
+                    : &quot;&quot;
+            }&#x60;;
 
         if (markerTarget.empty()) {
-            markerTarget &#x3D; target.append(&quot;g&quot;)
-                .classed(&#x60;${className}${getPointerEventsClass()}${getPointerEventsClickClass()}&#x60;, true);
+            markerTarget &#x3D; target
+                .append(&quot;g&quot;)
+                .classed(
+                    &#x60;${className}${getPointerEventsClass()}${getPointerEventsClickClass()}&#x60;,
+                    true
+                );
         }
 
         marker.setColor(color);
         markerTarget.attrs(attrs);
 
         markerTarget.on(&quot;mouseenter&quot;, () &#x3D;&gt; {
-            dataPointSubject.next({ eventName: INTERACTION_DATA_POINT_EVENT, data: { interactionType: InteractionType.Hover, dataPoint } });
+            dataPointSubject.next({
+                eventName: INTERACTION_DATA_POINT_EVENT,
+                data: { interactionType: InteractionType.Hover, dataPoint },
+            });
         });
         markerTarget.on(&quot;mouseleave&quot;, () &#x3D;&gt; {
             dataPointSubject.next({
@@ -762,29 +803,55 @@ export class MarkerUtils {
             });
         });
         markerTarget.on(&quot;click&quot;, () &#x3D;&gt; {
-            dataPointSubject.next({ eventName: INTERACTION_DATA_POINT_EVENT, data: { interactionType: InteractionType.Click, dataPoint } });
+            dataPointSubject.next({
+                eventName: INTERACTION_DATA_POINT_EVENT,
+                data: { interactionType: InteractionType.Click, dataPoint },
+            });
         });
 
-        if (!(&lt;D3Selection&lt;SVGGElement&gt;&gt;markerTarget).selectAll(&quot;g &gt; *&quot;).size() &amp;&amp; markerTarget.node()) {
-            markerTarget.node()?.appendChild(UtilService.getSvgFromString(marker.getSvg()));
-            (&lt;D3Selection&lt;SVGGElement&gt;&gt;markerTarget).select(&quot;path&quot;).classed(MarkerUtils.MARKER_PATH_CLASS, true);
+        if (
+            !(&lt;D3Selection&lt;SVGGElement&gt;&gt;markerTarget)
+                .selectAll(&quot;g &gt; *&quot;)
+                .size() &amp;&amp;
+            markerTarget.node()
+        ) {
+            markerTarget
+                .node()
+                ?.appendChild(UtilService.getSvgFromString(marker.getSvg()));
+            (&lt;D3Selection&lt;SVGGElement&gt;&gt;markerTarget)
+                .select(&quot;path&quot;)
+                .classed(MarkerUtils.MARKER_PATH_CLASS, true);
         }
 
-        const path &#x3D; (&lt;D3Selection&lt;SVGGElement&gt;&gt;markerTarget).select(&quot;path&quot;).node() as HTMLElement;
+        const path &#x3D; (&lt;D3Selection&lt;SVGGElement&gt;&gt;markerTarget)
+            .select(&quot;path&quot;)
+            .node() as HTMLElement;
         if (path &amp;&amp; markerInteractionConfig.enabled) {
             // Hack to accommodate existing Firefox hack in MouseInteractiveArea
             const pathRect &#x3D; path.getBoundingClientRect();
             // &#x27;x&#x27; in this case represents the absolute position of the left side of the marker
-            path.setAttribute(&quot;x&quot;, Math.ceil(((dataPoint?.position?.x as number) - pathRect.width / 2)).toString());
+            path.setAttribute(
+                &quot;x&quot;,
+                Math.ceil(
+                    (dataPoint?.position?.x as number) - pathRect.width / 2
+                ).toString()
+            );
             // &#x27;y&#x27; in this case represents the absolute position of the top side of the marker
-            path.setAttribute(&quot;y&quot;, Math.ceil(((dataPoint?.position?.y as number) - pathRect.height / 2)).toString());
+            path.setAttribute(
+                &quot;y&quot;,
+                Math.ceil(
+                    (dataPoint?.position?.y as number) - pathRect.height / 2
+                ).toString()
+            );
         }
     }
 
-    public static removeMarker(target: D3Selection&lt;SVGGElement&gt;, className: string &#x3D; MarkerUtils.DEFAULT_MARKER_CONTAINER_CLASS) {
+    public static removeMarker(
+        target: D3Selection&lt;SVGGElement&gt;,
+        className: string &#x3D; MarkerUtils.DEFAULT_MARKER_CONTAINER_CLASS
+    ) {
         target.select(&#x60;g.${className}&#x60;).remove();
     }
-
 }
 </code></pre>
     </div>

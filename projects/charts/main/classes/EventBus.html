@@ -131,8 +131,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="15"
-                            class="link-to-prism">src/core/common/event-bus.ts:15</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="14"
+                            class="link-to-prism">src/core/common/event-bus.ts:14</a></div>
                 </td>
             </tr>
 
@@ -172,8 +172,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="8"
-                            class="link-to-prism">src/core/common/event-bus.ts:8</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="7"
+                            class="link-to-prism">src/core/common/event-bus.ts:7</a></div>
                 </td>
             </tr>
 
@@ -234,7 +234,6 @@
 import { Subject } from &quot;rxjs&quot;;
 
 export class EventBus&lt;T&gt; {
-
     private streams: { [key: string]: Subject&lt;T&gt; } &#x3D; {};
 
     public getStream(streamId: string): Subject&lt;T&gt; {
@@ -249,7 +248,6 @@ export class EventBus&lt;T&gt; {
             this.streams[key].complete();
         });
     }
-
 }
 </code></pre>
     </div>

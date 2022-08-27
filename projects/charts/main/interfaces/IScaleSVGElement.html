@@ -175,21 +175,45 @@ import isUndefined from &quot;lodash/isUndefined&quot;;
 import uniq from &quot;lodash/uniq&quot;;
 import { takeUntil } from &quot;rxjs/operators&quot;;
 
-import { AXES_STYLE_CHANGE_EVENT, DESTROY_EVENT, IGNORE_INTERACTION_CLASS, SERIES_STATE_CHANGE_EVENT } from &quot;../../constants&quot;;
+import {
+    AXES_STYLE_CHANGE_EVENT,
+    DESTROY_EVENT,
+    IGNORE_INTERACTION_CLASS,
+    SERIES_STATE_CHANGE_EVENT,
+} from &quot;../../constants&quot;;
 import { RenderState } from &quot;../../renderers/types&quot;;
 import { MouseInteractiveArea } from &quot;../common/mouse-interactive-area&quot;;
 import { BandScale } from &quot;../common/scales/band-scale&quot;;
 import { getAutomaticDomainWithTicks } from &quot;../common/scales/domain-calculation/domain-with-ticks&quot;;
 import { LinearScale } from &quot;../common/scales/linear-scale&quot;;
-import { IBandScale, IScale, isDomainWithTicksCalculator, ScalesIndex } from &quot;../common/scales/types&quot;;
-import { D3Selection, IAxesStyleChangeEventPayload, IChart, IChartEvent, IChartPlugin, IRenderStateData } from &quot;../common/types&quot;;
+import {
+    IBandScale,
+    IScale,
+    isDomainWithTicksCalculator,
+    ScalesIndex,
+} from &quot;../common/scales/types&quot;;
+import {
+    D3Selection,
+    IAxesStyleChangeEventPayload,
+    IChart,
+    IChartEvent,
+    IChartPlugin,
+    IRenderStateData,
+} from &quot;../common/types&quot;;
 import { InteractionLabelPlugin } from &quot;../plugins/interaction/interaction-label-plugin&quot;;
 import { InteractionLinePlugin } from &quot;../plugins/interaction/interaction-line-plugin&quot;;
 import { MouseInteractiveAreaPlugin } from &quot;../plugins/mouse-interactive-area-plugin&quot;;
-
 import { XYGridConfig } from &quot;./config/xy-grid-config&quot;;
 import { Grid } from &quot;./grid&quot;;
-import { IAllAround, IAxis, IAxisConfig, IDimensionConfig, IGrid, IXYGridConfig, TextOverflowHandler } from &quot;./types&quot;;
+import {
+    IAllAround,
+    IAxis,
+    IAxisConfig,
+    IDimensionConfig,
+    IGrid,
+    IXYGridConfig,
+    TextOverflowHandler,
+} from &quot;./types&quot;;
 
 /**
  * Locally used interface for passing scales and associated SVG elements
@@ -281,22 +305,35 @@ export class XYGrid extends Grid implements IGrid {
                 if (scaleKey !&#x3D;&#x3D; &quot;x&quot; &amp;&amp; scaleKey !&#x3D;&#x3D; &quot;y&quot;) {
                     return;
                 }
-                this._scales[scaleKey]?.list?.filter((scale) &#x3D;&gt; scale instanceof LinearScale).forEach((scale) &#x3D;&gt; {
-                    if (scale?.id &#x3D;&#x3D;&#x3D; this.leftScaleId) {
-                        config &#x3D; this.config().axis.left;
-                        axisGenerator &#x3D; axisLeft;
-                    } else if (scale?.id &#x3D;&#x3D;&#x3D; this.rightScaleId) {
-                        config &#x3D; this.config().axis.right;
-                        axisGenerator &#x3D; axisRight;
-                    } else if (scale?.id &#x3D;&#x3D;&#x3D; this.bottomScaleId) {
-                        config &#x3D; this.config().axis.bottom;
-                        axisGenerator &#x3D; axisBottom;
-                    }
-                    if (scale.domainCalculator &amp;&amp; !isDomainWithTicksCalculator(scale.domainCalculator) &amp;&amp; config.gridTicks) {
-                        scale.__domainCalculatedWithTicks &#x3D; true;
-                        scale.domainCalculator &#x3D; getAutomaticDomainWithTicks(config, axisGenerator, scale.domainCalculator);
-                    }
-                });
+                this._scales[scaleKey]?.list
+                    ?.filter((scale) &#x3D;&gt; scale instanceof LinearScale)
+                    .forEach((scale) &#x3D;&gt; {
+                        if (scale?.id &#x3D;&#x3D;&#x3D; this.leftScaleId) {
+                            config &#x3D; this.config().axis.left;
+                            axisGenerator &#x3D; axisLeft;
+                        } else if (scale?.id &#x3D;&#x3D;&#x3D; this.rightScaleId) {
+                            config &#x3D; this.config().axis.right;
+                            axisGenerator &#x3D; axisRight;
+                        } else if (scale?.id &#x3D;&#x3D;&#x3D; this.bottomScaleId) {
+                            config &#x3D; this.config().axis.bottom;
+                            axisGenerator &#x3D; axisBottom;
+                        }
+                        if (
+                            scale.domainCalculator &amp;&amp;
+                            !isDomainWithTicksCalculator(
+                                scale.domainCalculator
+                            ) &amp;&amp;
+                            config.gridTicks
+                        ) {
+                            scale.__domainCalculatedWithTicks &#x3D; true;
+                            scale.domainCalculator &#x3D;
+                                getAutomaticDomainWithTicks(
+                                    config,
+                                    axisGenerator,
+                                    scale.domainCalculator
+                                );
+                        }
+                    });
             });
         }
     }
@@ -334,12 +371,18 @@ export class XYGrid extends Grid implements IGrid {
         this.buildAxes(this.gridElementsLayer);
         this.recalculateMargins(this.container);
 
-        const untilDestroy &#x3D; &lt;T&gt;() &#x3D;&gt; takeUntil&lt;T&gt;(this.eventBus.getStream(DESTROY_EVENT));
-        this.eventBus.getStream(SERIES_STATE_CHANGE_EVENT).pipe(untilDestroy()).subscribe((e: IChartEvent) &#x3D;&gt; {
-            const axesStyles &#x3D; this.handleSeriesStateChange(e);
+        const untilDestroy &#x3D; &lt;T&gt;() &#x3D;&gt;
+            takeUntil&lt;T&gt;(this.eventBus.getStream(DESTROY_EVENT));
+        this.eventBus
+            .getStream(SERIES_STATE_CHANGE_EVENT)
+            .pipe(untilDestroy())
+            .subscribe((e: IChartEvent) &#x3D;&gt; {
+                const axesStyles &#x3D; this.handleSeriesStateChange(e);
 
-            this.eventBus.getStream(AXES_STYLE_CHANGE_EVENT).next({ data: axesStyles } as IChartEvent&lt;IAxesStyleChangeEventPayload&gt;);
-        });
+                this.eventBus.getStream(AXES_STYLE_CHANGE_EVENT).next({
+                    data: axesStyles,
+                } as IChartEvent&lt;IAxesStyleChangeEventPayload&gt;);
+            });
 
         return this;
     }
@@ -356,7 +399,10 @@ export class XYGrid extends Grid implements IGrid {
         }
 
         const axes: IScaleSVGElement[] &#x3D; [
-            { scaleId: this.leftScaleId as string, element: this.axisYLeft.group },
+            {
+                scaleId: this.leftScaleId as string,
+                element: this.axisYLeft.group,
+            },
             { scaleId: this.rightScaleId, element: this.axisYRight?.group },
         ];
 
@@ -378,23 +424,36 @@ export class XYGrid extends Grid implements IGrid {
      * @param axes
      * @private
      */
-    private calculateAxesStyles(e: IChartEvent, axes: IScaleSVGElement[]): Record&lt;string, Record&lt;string, any&gt;&gt; {
+    private calculateAxesStyles(
+        e: IChartEvent,
+        axes: IScaleSVGElement[]
+    ): Record&lt;string, Record&lt;string, any&gt;&gt; {
         const renderStates &#x3D; e.data as IRenderStateData[];
 
         const emphasizedSeries &#x3D; renderStates
-            .filter(rs &#x3D;&gt; rs.state &#x3D;&#x3D;&#x3D; RenderState.emphasized &amp;&amp; rs.series)
-            .map(rs &#x3D;&gt; rs.series);
+            .filter((rs) &#x3D;&gt; rs.state &#x3D;&#x3D;&#x3D; RenderState.emphasized &amp;&amp; rs.series)
+            .map((rs) &#x3D;&gt; rs.series);
 
         if (emphasizedSeries.length &gt; 0) {
-            const emphasizedYScales &#x3D; uniq(emphasizedSeries.map(s &#x3D;&gt; s?.scales[&quot;y&quot;] as IScale&lt;any&gt;).filter(s &#x3D;&gt; !!s));
+            const emphasizedYScales &#x3D; uniq(
+                emphasizedSeries
+                    .map((s) &#x3D;&gt; s?.scales[&quot;y&quot;] as IScale&lt;any&gt;)
+                    .filter((s) &#x3D;&gt; !!s)
+            );
             if (emphasizedYScales.length &lt;&#x3D; 0) {
                 return {};
             }
 
             for (const emphasizedYScale of emphasizedYScales) {
-                if (emphasizedYScale.id &#x3D;&#x3D;&#x3D; this.leftScaleId || emphasizedYScale.id &#x3D;&#x3D;&#x3D; this.rightScaleId) {
+                if (
+                    emphasizedYScale.id &#x3D;&#x3D;&#x3D; this.leftScaleId ||
+                    emphasizedYScale.id &#x3D;&#x3D;&#x3D; this.rightScaleId
+                ) {
                     return axes.reduce((acc, next) &#x3D;&gt; {
-                        acc[next.scaleId] &#x3D; { opacity: emphasizedYScale.id &#x3D;&#x3D;&#x3D; next.scaleId ? 1 : 0.1 };
+                        acc[next.scaleId] &#x3D; {
+                            opacity:
+                                emphasizedYScale.id &#x3D;&#x3D;&#x3D; next.scaleId ? 1 : 0.1,
+                        };
                         return acc;
                     }, {} as Record&lt;string, Record&lt;string, any&gt;&gt;);
                 }
@@ -414,8 +473,16 @@ export class XYGrid extends Grid implements IGrid {
 
         const config &#x3D; this.config();
         if (config.interactive) {
-            plugins.push(new MouseInteractiveAreaPlugin(
-                new MouseInteractiveArea(this.getLasagna().getContainer(), this.getInteractiveArea(), config.cursor, config.dimension.margin)));
+            plugins.push(
+                new MouseInteractiveAreaPlugin(
+                    new MouseInteractiveArea(
+                        this.getLasagna().getContainer(),
+                        this.getInteractiveArea(),
+                        config.cursor,
+                        config.dimension.margin
+                    )
+                )
+            );
         }
 
         if (config.interactionPlugins) {
@@ -437,15 +504,19 @@ export class XYGrid extends Grid implements IGrid {
     }
 
     /** @ignore */
-    public drawTicks(config: IAxisConfig, axis: IAxis, scale: IScale&lt;any&gt;, axisGenerator: any) {
+    public drawTicks(
+        config: IAxisConfig,
+        axis: IAxis,
+        scale: IScale&lt;any&gt;,
+        axisGenerator: any
+    ) {
         if (config.visible) {
             const bottomLabelAxis &#x3D; axisGenerator(scale.d3Scale)
                 .ticks(config.approximateTicks)
                 .tickSize(0)
                 .tickFormat(scale.formatters[&quot;tick&quot;]);
 
-            axis.labelGroup
-                .call(bottomLabelAxis);
+            axis.labelGroup.call(bottomLabelAxis);
             let tickAxis;
             if (scale instanceof BandScale) {
                 tickAxis &#x3D; axisGenerator(scale.copyToLinear().d3Scale)
@@ -468,7 +539,13 @@ export class XYGrid extends Grid implements IGrid {
     }
 
     /** @ignore */
-    public drawGrids(config: IAxisConfig, axis: IAxis, axisGenerator: any, scale: IScale&lt;any&gt;, size: number) {
+    public drawGrids(
+        config: IAxisConfig,
+        axis: IAxis,
+        axisGenerator: any,
+        scale: IScale&lt;any&gt;,
+        size: number
+    ) {
         const modifyZeroLines &#x3D; (gridGroupSelection: any) &#x3D;&gt;
             gridGroupSelection
                 .selectAll(&quot;.tick line&quot;)
@@ -497,13 +574,16 @@ export class XYGrid extends Grid implements IGrid {
         const padding &#x3D; dimension.padding;
 
         if (this.scales.x) {
-            each(this.scales.x.list, xScale &#x3D;&gt; {
+            each(this.scales.x.list, (xScale) &#x3D;&gt; {
                 xScale.range([padding.left, dimension.width() - padding.right]);
             });
         }
         if (this.scales.y) {
-            each(this.scales.y.list, yScale &#x3D;&gt; {
-                yScale.range([dimension.height() - padding.bottom, padding.top]);
+            each(this.scales.y.list, (yScale) &#x3D;&gt; {
+                yScale.range([
+                    dimension.height() - padding.bottom,
+                    padding.top,
+                ]);
             });
         }
 
@@ -512,27 +592,45 @@ export class XYGrid extends Grid implements IGrid {
     }
 
     protected updateXAxis() {
-        const xScale &#x3D; this.bottomScaleId ? this.scales[&quot;x&quot;].index[this.bottomScaleId] : undefined;
+        const xScale &#x3D; this.bottomScaleId
+            ? this.scales[&quot;x&quot;].index[this.bottomScaleId]
+            : undefined;
         const axis &#x3D; this.config().axis;
 
         if (!xScale) {
             throw new Error(&quot;xScale is not defined&quot;);
         }
 
-        this.axisX.group.attr(&quot;transform&quot;, &#x60;translate(0, ${this.config().dimension.height()})&#x60;);
+        this.axisX.group.attr(
+            &quot;transform&quot;,
+            &#x60;translate(0, ${this.config().dimension.height()})&#x60;
+        );
         // Additional transform to not overlap with ticks
-        this.axisX.labelGroup.attr(&quot;transform&quot;, &#x60;translate(0, ${axis.bottom.tickSize})&#x60;);
+        this.axisX.labelGroup.attr(
+            &quot;transform&quot;,
+            &#x60;translate(0, ${axis.bottom.tickSize})&#x60;
+        );
 
         this.drawTicks(axis.bottom, this.axisX, xScale, axisBottom);
-        this.drawGrids(axis.bottom, this.gridX, axisTop, xScale, this.config().dimension.height());
+        this.drawGrids(
+            axis.bottom,
+            this.gridX,
+            axisTop,
+            xScale,
+            this.config().dimension.height()
+        );
 
-        this.gridX.tickGroup
-            .attr(&quot;transform&quot;, &#x60;translate(0, ${this.config().dimension.height()})&#x60;);
+        this.gridX.tickGroup.attr(
+            &quot;transform&quot;,
+            &#x60;translate(0, ${this.config().dimension.height()})&#x60;
+        );
     }
 
     protected updateYAxes() {
         const axis &#x3D; this.config().axis;
-        const yLeftScale &#x3D; this.leftScaleId ? this.scales[&quot;y&quot;].index[this.leftScaleId] : undefined;
+        const yLeftScale &#x3D; this.leftScaleId
+            ? this.scales[&quot;y&quot;].index[this.leftScaleId]
+            : undefined;
 
         if (!yLeftScale) {
             throw new Error(&quot;yLeftScale is not defined&quot;);
@@ -554,7 +652,10 @@ export class XYGrid extends Grid implements IGrid {
 
         if (this.rightScaleId) {
             const yRightScale &#x3D; this.scales[&quot;y&quot;].index[this.rightScaleId];
-            const rightScaleLabelX &#x3D; axis.right.padding + this.config().dimension.width() + axis.right.tickSize;
+            const rightScaleLabelX &#x3D;
+                axis.right.padding +
+                this.config().dimension.width() +
+                axis.right.tickSize;
             this.axisYRight.labelGroup.attr(
                 &quot;transform&quot;,
                 &#x60;translate(${rightScaleLabelX}, 0)&#x60;
@@ -576,13 +677,18 @@ export class XYGrid extends Grid implements IGrid {
         this.updateYAxes();
     }
 
-    protected adjustAxisTicks(labelGroup: D3Selection&lt;SVGGElement&gt;, scale: IScale&lt;any&gt;) {
+    protected adjustAxisTicks(
+        labelGroup: D3Selection&lt;SVGGElement&gt;,
+        scale: IScale&lt;any&gt;
+    ) {
         const textOfTicks: HTMLElement[] &#x3D; [];
 
         labelGroup.attr(&quot;cursor&quot;, &quot;default&quot;);
 
         labelGroup.selectAll(&quot;g&quot;).each(function () {
-            select(this).classed(&quot;sw-hidden&quot;, false).classed(&quot;tick-hidden-text&quot;, false);
+            select(this)
+                .classed(&quot;sw-hidden&quot;, false)
+                .classed(&quot;tick-hidden-text&quot;, false);
             textOfTicks.push(&lt;HTMLElement&gt;this);
         });
 
@@ -596,11 +702,18 @@ export class XYGrid extends Grid implements IGrid {
             const groupSelection &#x3D; select(group);
             // zero-out the d3-provided x position of all labels since we&#x27;re manually translating the x position of the entire group;
             // add IGNORE_INTERACTION_CLASS so that mouse events used for displaying the title don&#x27;t propagate from the mouse-interactive-area
-            groupSelection.select(&quot;text&quot;).attr(&quot;x&quot;, 0).classed(IGNORE_INTERACTION_CLASS, true);
+            groupSelection
+                .select(&quot;text&quot;)
+                .attr(&quot;x&quot;, 0)
+                .classed(IGNORE_INTERACTION_CLASS, true);
             groupSelection.classed(&quot;pointer-events&quot;, true);
             if (groupSelection.select(&quot;title&quot;).empty()) {
                 const datum &#x3D; groupSelection.data()[0];
-                const titleText &#x3D; (scale.formatters[&quot;tick&quot;] ? scale.formatters[&quot;tick&quot;](datum) : datum) as string;
+                const titleText &#x3D; (
+                    scale.formatters[&quot;tick&quot;]
+                        ? scale.formatters[&quot;tick&quot;](datum)
+                        : datum
+                ) as string;
                 groupSelection.append(&quot;title&quot;).text(titleText);
             }
         });
@@ -608,10 +721,22 @@ export class XYGrid extends Grid implements IGrid {
         this.handleTickLabelOverflow(labelGroup, scale, allAxisLabels);
     }
 
-    protected handleTickLabelOverflow(labelGroup: D3Selection&lt;SVGGElement&gt;, scale: IScale&lt;any&gt;, axisLabels: HTMLElement[]) {
+    protected handleTickLabelOverflow(
+        labelGroup: D3Selection&lt;SVGGElement&gt;,
+        scale: IScale&lt;any&gt;,
+        axisLabels: HTMLElement[]
+    ) {
         const axisConfig &#x3D; this.config().axis;
-        if (scale.id &#x3D;&#x3D;&#x3D; this.bottomScaleId &amp;&amp; (scale.isContinuous() || !axisConfig.bottom.tickLabel.overflowHandler)) {
-            const textToHide &#x3D; this.getElementsToHide(axisLabels, this._config.dimension.width(), true);
+        if (
+            scale.id &#x3D;&#x3D;&#x3D; this.bottomScaleId &amp;&amp;
+            (scale.isContinuous() ||
+                !axisConfig.bottom.tickLabel.overflowHandler)
+        ) {
+            const textToHide &#x3D; this.getElementsToHide(
+                axisLabels,
+                this._config.dimension.width(),
+                true
+            );
             textToHide.forEach((group: HTMLElement) &#x3D;&gt; {
                 const groupSelection &#x3D; select(group);
                 groupSelection.classed(&quot;tick-hidden-text&quot;, true);
@@ -622,7 +747,11 @@ export class XYGrid extends Grid implements IGrid {
         }
 
         if (scale.id &#x3D;&#x3D;&#x3D; this.rightScaleId || scale.id &#x3D;&#x3D;&#x3D; this.leftScaleId) {
-            const textToHide &#x3D; this.getElementsToHide(axisLabels, this._config.dimension.height(), false);
+            const textToHide &#x3D; this.getElementsToHide(
+                axisLabels,
+                this._config.dimension.height(),
+                false
+            );
             textToHide.forEach((group: HTMLElement) &#x3D;&gt; {
                 select(group).classed(&quot;sw-hidden&quot;, true);
             });
@@ -639,53 +768,73 @@ export class XYGrid extends Grid implements IGrid {
 
         if (scale.id &#x3D;&#x3D;&#x3D; this.bottomScaleId) {
             const maxBottomWidth &#x3D; axisConfig.bottom.tickLabel.maxWidth;
-            const calculatedBottomWidth &#x3D; (scale as any).bandwidth ? (scale as IBandScale&lt;any&gt;).bandwidth() : this.getTickDistance(axisLabels);
+            const calculatedBottomWidth &#x3D; (scale as any).bandwidth
+                ? (scale as IBandScale&lt;any&gt;).bandwidth()
+                : this.getTickDistance(axisLabels);
 
             if (!isUndefined(maxBottomWidth)) {
-                widthLimit &#x3D; calculatedBottomWidth &gt; maxBottomWidth ? maxBottomWidth : calculatedBottomWidth;
+                widthLimit &#x3D;
+                    calculatedBottomWidth &gt; maxBottomWidth
+                        ? maxBottomWidth
+                        : calculatedBottomWidth;
             } else {
                 widthLimit &#x3D; calculatedBottomWidth;
             }
 
             horizontalPadding &#x3D; axisConfig.bottom.tickLabel.horizontalPadding;
             overflowHandler &#x3D; axisConfig.bottom.tickLabel.overflowHandler;
-
         } else if (scale.id &#x3D;&#x3D;&#x3D; this.rightScaleId &amp;&amp; !axisConfig.right.fit) {
-            const calculatedRightWidth &#x3D; margin.right - axisConfig.right.padding - axisConfig.right.tickSize;
+            const calculatedRightWidth &#x3D;
+                margin.right -
+                axisConfig.right.padding -
+                axisConfig.right.tickSize;
 
             if (!isUndefined(maxRightWidth)) {
-                widthLimit &#x3D; calculatedRightWidth &gt; maxRightWidth ? maxRightWidth : calculatedRightWidth;
+                widthLimit &#x3D;
+                    calculatedRightWidth &gt; maxRightWidth
+                        ? maxRightWidth
+                        : calculatedRightWidth;
             } else {
                 widthLimit &#x3D; calculatedRightWidth;
             }
 
             horizontalPadding &#x3D; axisConfig.right.tickLabel.horizontalPadding;
             overflowHandler &#x3D; axisConfig.right.tickLabel.overflowHandler;
-
         } else if (scale.id &#x3D;&#x3D;&#x3D; this.leftScaleId &amp;&amp; !axisConfig.left.fit) {
-            const calculatedLeftWidth &#x3D; margin.left - axisConfig.left.padding - axisConfig.left.tickSize;
+            const calculatedLeftWidth &#x3D;
+                margin.left -
+                axisConfig.left.padding -
+                axisConfig.left.tickSize;
 
             if (!isUndefined(maxLeftWidth)) {
-                widthLimit &#x3D; calculatedLeftWidth &gt; maxLeftWidth ? maxLeftWidth : calculatedLeftWidth;
+                widthLimit &#x3D;
+                    calculatedLeftWidth &gt; maxLeftWidth
+                        ? maxLeftWidth
+                        : calculatedLeftWidth;
             } else {
                 widthLimit &#x3D; calculatedLeftWidth;
             }
 
             horizontalPadding &#x3D; axisConfig.left.tickLabel.horizontalPadding;
             overflowHandler &#x3D; axisConfig.left.tickLabel.overflowHandler;
-
-        } else if (scale.id &#x3D;&#x3D;&#x3D; this.rightScaleId &amp;&amp; axisConfig.right.fit &amp;&amp; !isUndefined(maxRightWidth)) {
+        } else if (
+            scale.id &#x3D;&#x3D;&#x3D; this.rightScaleId &amp;&amp;
+            axisConfig.right.fit &amp;&amp;
+            !isUndefined(maxRightWidth)
+        ) {
             widthLimit &#x3D; maxRightWidth;
             horizontalPadding &#x3D; axisConfig.right.tickLabel.horizontalPadding;
             overflowHandler &#x3D; axisConfig.right.tickLabel.overflowHandler;
             fixRightMargin &#x3D; true;
-
-        } else if (scale.id &#x3D;&#x3D;&#x3D; this.leftScaleId &amp;&amp; axisConfig.left.fit &amp;&amp; !isUndefined(maxLeftWidth)) {
+        } else if (
+            scale.id &#x3D;&#x3D;&#x3D; this.leftScaleId &amp;&amp;
+            axisConfig.left.fit &amp;&amp;
+            !isUndefined(maxLeftWidth)
+        ) {
             widthLimit &#x3D; maxLeftWidth;
             horizontalPadding &#x3D; axisConfig.left.tickLabel.horizontalPadding;
             overflowHandler &#x3D; axisConfig.left.tickLabel.overflowHandler;
             fixLeftMargin &#x3D; true;
-
         } else {
             return;
         }
@@ -698,7 +847,11 @@ export class XYGrid extends Grid implements IGrid {
         let ellipsisWidth &#x3D; 0;
         if (labelGroup.select(&quot;.sample-ellipsis&quot;).empty()) {
             const testText &#x3D; labelGroup.append(&quot;text&quot;);
-            const ellipsis &#x3D; testText.classed(&quot;sample-ellipsis&quot;, true).attr(&quot;opacity&quot;, 0).append(&quot;tspan&quot;).text(&quot;...&quot;);
+            const ellipsis &#x3D; testText
+                .classed(&quot;sample-ellipsis&quot;, true)
+                .attr(&quot;opacity&quot;, 0)
+                .append(&quot;tspan&quot;)
+                .text(&quot;...&quot;);
             ellipsisWidth &#x3D; ellipsis.node()?.getComputedTextLength() || 0;
             testText.remove();
         }
@@ -719,7 +872,13 @@ export class XYGrid extends Grid implements IGrid {
             axisLabels.forEach((group: HTMLElement) &#x3D;&gt; {
                 const groupSelection &#x3D; select(group);
                 // invoke the handler for each text element
-                groupSelection.select(&quot;text&quot;).call(overflowHandler as TextOverflowHandler, { widthLimit, horizontalPadding, ellipsisWidth });
+                groupSelection
+                    .select(&quot;text&quot;)
+                    .call(overflowHandler as TextOverflowHandler, {
+                        widthLimit,
+                        horizontalPadding,
+                        ellipsisWidth,
+                    });
                 // restore pointer events
                 groupSelection.classed(&quot;pointer-events&quot;, true);
             });
@@ -745,7 +904,9 @@ export class XYGrid extends Grid implements IGrid {
     }
 
     protected getOuterWidthDimensionCorrection() {
-        return this.config().axis.bottom.visible ? Grid.TICK_DIMENSION_CORRECTION : 0;
+        return this.config().axis.bottom.visible
+            ? Grid.TICK_DIMENSION_CORRECTION
+            : 0;
     }
 
     private handleMarginUpdate() {
@@ -755,36 +916,49 @@ export class XYGrid extends Grid implements IGrid {
     }
 
     private hasRightYAxis(): boolean {
-        return this.config().axis.right.visible &amp;&amp; this.rightScaleId?.length &gt; 0;
+        return (
+            this.config().axis.right.visible &amp;&amp; this.rightScaleId?.length &gt; 0
+        );
     }
 
     private buildAxes(container: D3Selection) {
         // Grid lines: no sense to have right
-        this.gridY.tickGroup &#x3D; container.append(&quot;g&quot;)
+        this.gridY.tickGroup &#x3D; container
+            .append(&quot;g&quot;)
             .classed(&quot;sw-axis sw-axis-grid sw-axis-gridY&quot;, true);
-        this.gridX.tickGroup &#x3D; container.append(&quot;g&quot;)
+        this.gridX.tickGroup &#x3D; container
+            .append(&quot;g&quot;)
             .classed(&quot;sw-axis sw-axis-grid sw-axis-gridX&quot;, true);
 
         // Axis groups
-        this.axisX.group &#x3D; container.append(&quot;g&quot;)
+        this.axisX.group &#x3D; container
+            .append(&quot;g&quot;)
             .classed(&quot;sw-axis sw-axis-x&quot;, true);
-        this.axisX.tickGroup &#x3D; this.axisX.group.append(&quot;g&quot;)
+        this.axisX.tickGroup &#x3D; this.axisX.group
+            .append(&quot;g&quot;)
             .classed(&quot;sw-axis sw-axis-x sw-axis-x-ticks&quot;, true);
-        this.axisX.labelGroup &#x3D; this.axisX.group.append(&quot;g&quot;)
+        this.axisX.labelGroup &#x3D; this.axisX.group
+            .append(&quot;g&quot;)
             .classed(&quot;sw-axis sw-axis-x sw-axis-x-labels&quot;, true);
 
-        this.axisYLeft.group &#x3D; container.append(&quot;g&quot;)
+        this.axisYLeft.group &#x3D; container
+            .append(&quot;g&quot;)
             .classed(&quot;sw-axis sw-axis-y sw-axis-y-left&quot;, true);
-        this.axisYLeft.tickGroup &#x3D; this.axisYLeft.group.append(&quot;g&quot;)
+        this.axisYLeft.tickGroup &#x3D; this.axisYLeft.group
+            .append(&quot;g&quot;)
             .classed(&quot;sw-axis sw-axis-y sw-axis-y-ticks&quot;, true);
-        this.axisYLeft.labelGroup &#x3D; this.axisYLeft.group.append(&quot;g&quot;)
+        this.axisYLeft.labelGroup &#x3D; this.axisYLeft.group
+            .append(&quot;g&quot;)
             .classed(&quot;sw-axis sw-axis-y sw-axis-y-labels&quot;, true);
 
-        this.axisYRight.group &#x3D; container.append(&quot;g&quot;)
+        this.axisYRight.group &#x3D; container
+            .append(&quot;g&quot;)
             .classed(&quot;sw-axis sw-axis-y sw-axis-y-right&quot;, true);
-        this.axisYRight.tickGroup &#x3D; this.axisYRight.group.append(&quot;g&quot;)
+        this.axisYRight.tickGroup &#x3D; this.axisYRight.group
+            .append(&quot;g&quot;)
             .classed(&quot;sw-axis sw-axis-y sw-axis-y-ticks&quot;, true);
-        this.axisYRight.labelGroup &#x3D; this.axisYRight.group.append(&quot;g&quot;)
+        this.axisYRight.labelGroup &#x3D; this.axisYRight.group
+            .append(&quot;g&quot;)
             .classed(&quot;sw-axis sw-axis-y sw-axis-y-labels&quot;, true);
     }
 
@@ -797,39 +971,65 @@ export class XYGrid extends Grid implements IGrid {
             }
             return textInsideNext;
         }, elementsToFilter[0] &amp;&amp; select(elementsToFilter[0]).text());
-        return elementsToFilter.filter(element &#x3D;&gt; arr.indexOf(element) &#x3D;&#x3D;&#x3D; -1);
+        return elementsToFilter.filter(
+            (element) &#x3D;&gt; arr.indexOf(element) &#x3D;&#x3D;&#x3D; -1
+        );
     }
 
-    private getElementsToHide(elementsToFilter: HTMLElement[], measurement: number, isBottomAxis: boolean) {
+    private getElementsToHide(
+        elementsToFilter: HTMLElement[],
+        measurement: number,
+        isBottomAxis: boolean
+    ) {
         let elementsToDisplay: HTMLElement[];
         const measureType &#x3D; isBottomAxis ? &quot;width&quot; : &quot;height&quot;;
-        const measurementComparison &#x3D; (this.getTextMeasurement(elementsToFilter, measureType) &lt; measurement);
-        const bottomAxisComparison
-            &#x3D; isBottomAxis ? this.getMaxTextWidth(elementsToFilter) &lt; this.getTickDistance(elementsToFilter) : false;
-        const shouldNotFilter &#x3D; isBottomAxis ? measurementComparison &amp;&amp; bottomAxisComparison : measurementComparison;
+        const measurementComparison &#x3D;
+            this.getTextMeasurement(elementsToFilter, measureType) &lt;
+            measurement;
+        const bottomAxisComparison &#x3D; isBottomAxis
+            ? this.getMaxTextWidth(elementsToFilter) &lt;
+              this.getTickDistance(elementsToFilter)
+            : false;
+        const shouldNotFilter &#x3D; isBottomAxis
+            ? measurementComparison &amp;&amp; bottomAxisComparison
+            : measurementComparison;
 
         if (shouldNotFilter) {
             return [];
         }
 
-        elementsToDisplay &#x3D; this.elementsFiltering(elementsToFilter, measurement, measureType);
+        elementsToDisplay &#x3D; this.elementsFiltering(
+            elementsToFilter,
+            measurement,
+            measureType
+        );
 
-        return elementsToFilter.filter(element &#x3D;&gt; elementsToDisplay.indexOf(element) &#x3D;&#x3D;&#x3D; -1);
+        return elementsToFilter.filter(
+            (element) &#x3D;&gt; elementsToDisplay.indexOf(element) &#x3D;&#x3D;&#x3D; -1
+        );
     }
 
-    private elementsFiltering(elementsToFilter: HTMLElement[],
-                              parameter: number,
-                              measureType: string) {
+    private elementsFiltering(
+        elementsToFilter: HTMLElement[],
+        parameter: number,
+        measureType: string
+    ) {
         let elementsToDisplay: HTMLElement[];
         let counter &#x3D; 2;
-        const condition &#x3D; (array: HTMLElement[]) &#x3D;&gt; measureType &#x3D;&#x3D;&#x3D; &quot;width&quot;
-            ? this.getMaxTextWidth(array) &gt; this.getTickDistance(array)
-            : this.getTextMeasurement(array, measureType) &gt; parameter;
+        const condition &#x3D; (array: HTMLElement[]) &#x3D;&gt;
+            measureType &#x3D;&#x3D;&#x3D; &quot;width&quot;
+                ? this.getMaxTextWidth(array) &gt; this.getTickDistance(array)
+                : this.getTextMeasurement(array, measureType) &gt; parameter;
         do {
-            elementsToDisplay &#x3D; elementsToFilter.filter((element: HTMLElement, index: number) &#x3D;&gt; (index % counter) &#x3D;&#x3D;&#x3D; 0);
+            elementsToDisplay &#x3D; elementsToFilter.filter(
+                (element: HTMLElement, index: number) &#x3D;&gt; index % counter &#x3D;&#x3D;&#x3D; 0
+            );
             counter++;
             // Break the loop when we have only 1 tick and its size is bigger than available width/height
-            if (elementsToDisplay.length &#x3D;&#x3D;&#x3D; 1 &amp;&amp; condition(elementsToDisplay)) {
+            if (
+                elementsToDisplay.length &#x3D;&#x3D;&#x3D; 1 &amp;&amp;
+                condition(elementsToDisplay)
+            ) {
                 break;
             }
         } while (condition(elementsToDisplay));
@@ -838,15 +1038,23 @@ export class XYGrid extends Grid implements IGrid {
 
     private getTextMeasurement(array: HTMLElement[], measureType: string) {
         const textPadding &#x3D; measureType &#x3D;&#x3D;&#x3D; &quot;width&quot; ? 5 : 0;
-        return array.reduce((prev: number, next: HTMLElement) &#x3D;&gt;
-            prev + (next.getBoundingClientRect() as any)[measureType] + textPadding, 0);
+        return array.reduce(
+            (prev: number, next: HTMLElement) &#x3D;&gt;
+                prev +
+                (next.getBoundingClientRect() as any)[measureType] +
+                textPadding,
+            0
+        );
     }
 
     private getMaxTextWidth(array: HTMLElement[]) {
         if (array.length &#x3D;&#x3D;&#x3D; 0) {
             return 0;
         }
-        return Math.max.apply(null, array.map((tick: HTMLElement) &#x3D;&gt; tick.getBoundingClientRect().width));
+        return Math.max.apply(
+            null,
+            array.map((tick: HTMLElement) &#x3D;&gt; tick.getBoundingClientRect().width)
+        );
     }
 
     private getTickDistance(array: HTMLElement[]) {
@@ -861,7 +1069,12 @@ export class XYGrid extends Grid implements IGrid {
                 throw new Error(&quot;tick transform is not defined&quot;);
             }
 
-            return parseFloat(transformVal.slice(transformVal.indexOf(&quot;(&quot;) + 1, transformVal.indexOf(&quot;,&quot;)));
+            return parseFloat(
+                transformVal.slice(
+                    transformVal.indexOf(&quot;(&quot;) + 1,
+                    transformVal.indexOf(&quot;,&quot;)
+                )
+            );
         });
 
         arrayOfPositions.reduce((p: number, n: number) &#x3D;&gt; {
@@ -885,15 +1098,33 @@ export class XYGrid extends Grid implements IGrid {
         const oldOuterHeight &#x3D; d.outerHeight();
 
         if (!d.marginLocked?.left &amp;&amp; axis.left.fit &amp;&amp; axis.left.visible) {
-            d.margin.left &#x3D; this.getMaxTextWidth(this.selectAllAxisLabels(this.axisYLeft.labelGroup)) + axis.left.tickSize + axis.left.padding;
+            d.margin.left &#x3D;
+                this.getMaxTextWidth(
+                    this.selectAllAxisLabels(this.axisYLeft.labelGroup)
+                ) +
+                axis.left.tickSize +
+                axis.left.padding;
         }
 
         if (!d.marginLocked?.right &amp;&amp; axis.right.fit &amp;&amp; this.hasRightYAxis()) {
-            d.margin.right &#x3D; this.getMaxTextWidth(this.selectAllAxisLabels(this.axisYRight.labelGroup)) + axis.right.tickSize + axis.right.padding;
+            d.margin.right &#x3D;
+                this.getMaxTextWidth(
+                    this.selectAllAxisLabels(this.axisYRight.labelGroup)
+                ) +
+                axis.right.tickSize +
+                axis.right.padding;
         }
 
-        const bottomScale &#x3D; this.bottomScaleId &amp;&amp; this.scales ? this.scales[&quot;x&quot;]?.index[this.bottomScaleId] : undefined;
-        if (axis.bottom.fit &amp;&amp; axis.bottom.visible &amp;&amp; (bottomScale?.isContinuous() || !axis.bottom.tickLabel.overflowHandler)) {
+        const bottomScale &#x3D;
+            this.bottomScaleId &amp;&amp; this.scales
+                ? this.scales[&quot;x&quot;]?.index[this.bottomScaleId]
+                : undefined;
+        if (
+            axis.bottom.fit &amp;&amp;
+            axis.bottom.visible &amp;&amp;
+            (bottomScale?.isContinuous() ||
+                !axis.bottom.tickLabel.overflowHandler)
+        ) {
             this.fitBottomAxis(d);
         }
 
@@ -922,12 +1153,16 @@ export class XYGrid extends Grid implements IGrid {
         }
         let lastTextWidth: number &#x3D; 0;
         let lastTickScaleValue: number &#x3D; 0;
-        const node &#x3D; this.axisX.labelGroup.select(&quot;.tick:not(.tick-hidden-text):last-child text&quot;).node();
+        const node &#x3D; this.axisX.labelGroup
+            .select(&quot;.tick:not(.tick-hidden-text):last-child text&quot;)
+            .node();
         if (node) {
             lastTextWidth &#x3D; (node as any).getBoundingClientRect().width;
             lastTickScaleValue &#x3D; scale((node as any).innerHTML) ?? 0;
             const topOfRange &#x3D; scale.range()[1];
-            const diff &#x3D; (lastTextWidth / 2) - (Math.abs(topOfRange - lastTickScaleValue) / 2);
+            const diff &#x3D;
+                lastTextWidth / 2 -
+                Math.abs(topOfRange - lastTickScaleValue) / 2;
             d.margin.right &#x3D; diff &gt; 0 ? diff : 0;
         }
     }
@@ -948,19 +1183,30 @@ export class XYGrid extends Grid implements IGrid {
         }
 
         this.reconcileMarginsDebounce &#x3D; setTimeout(() &#x3D;&gt; {
-            if (!this.areMarginsApproximatelyEqual(oldMargin, this._config.dimension.margin)) {
+            if (
+                !this.areMarginsApproximatelyEqual(
+                    oldMargin,
+                    this._config.dimension.margin
+                )
+            ) {
                 this.updateChartDimensionsSubject?.next();
             }
         }, 100);
     }
 
-    private isApproximatelyEqual &#x3D; (first: number, second: number) &#x3D;&gt; Math.abs(first - second) &lt; 0.1;
+    private isApproximatelyEqual &#x3D; (first: number, second: number) &#x3D;&gt;
+        Math.abs(first - second) &lt; 0.1;
 
-    private areMarginsApproximatelyEqual(margin1: IAllAround&lt;number&gt;, margin2: IAllAround&lt;number&gt;): boolean {
-        return this.isApproximatelyEqual(margin1.top, margin2.top) &amp;&amp;
+    private areMarginsApproximatelyEqual(
+        margin1: IAllAround&lt;number&gt;,
+        margin2: IAllAround&lt;number&gt;
+    ): boolean {
+        return (
+            this.isApproximatelyEqual(margin1.top, margin2.top) &amp;&amp;
             this.isApproximatelyEqual(margin1.right, margin2.right) &amp;&amp;
             this.isApproximatelyEqual(margin1.bottom, margin2.bottom) &amp;&amp;
-            this.isApproximatelyEqual(margin1.left, margin2.left);
+            this.isApproximatelyEqual(margin1.left, margin2.left)
+        );
     }
 }
 </code></pre>

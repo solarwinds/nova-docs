@@ -118,7 +118,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/core/common/palette/chart-palette.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/core/common/palette/chart-palette.ts:13</a></div>
                             </td>
                         </tr>
 
@@ -195,7 +195,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/core/common/palette/chart-palette.ts:31</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/core/common/palette/chart-palette.ts:41</a></div>
                                 </td>
                             </tr>
 
@@ -217,7 +217,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/core/common/palette/chart-palette.ts:35</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/core/common/palette/chart-palette.ts:45</a></div>
                                 </td>
                             </tr>
 
@@ -239,7 +239,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/core/common/palette/chart-palette.ts:39</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/core/common/palette/chart-palette.ts:49</a></div>
                                 </td>
                             </tr>
 
@@ -254,7 +254,6 @@
 import isArray from &quot;lodash/isArray&quot;;
 
 import { IChartPalette, IValueProvider } from &quot;../types&quot;;
-
 import { getColorValueByName } from &quot;./color.helper&quot;;
 import { ProcessedColorProvider } from &quot;./processed-color-provider&quot;;
 import { SequentialColorProvider } from &quot;./sequential-color-provider&quot;;
@@ -265,19 +264,30 @@ export class ChartPalette implements IChartPalette {
     private _textColors: TextColorProvider;
     private _backgroundColors: IValueProvider&lt;string&gt;;
 
-    constructor(colors: string[] | IValueProvider&lt;string&gt;, options &#x3D; {backgroundOpacity: 0.15}) {
+    constructor(
+        colors: string[] | IValueProvider&lt;string&gt;,
+        options &#x3D; { backgroundOpacity: 0.15 }
+    ) {
         if (isArray(colors)) {
-            this._standardColors &#x3D; new SequentialColorProvider(&lt;string[]&gt; colors);
+            this._standardColors &#x3D; new SequentialColorProvider(
+                &lt;string[]&gt;colors
+            );
         } else {
-            this._standardColors &#x3D; &lt;IValueProvider&lt;string&gt;&gt; colors;
+            this._standardColors &#x3D; &lt;IValueProvider&lt;string&gt;&gt;colors;
         }
-        this._textColors &#x3D; new TextColorProvider(this.standardColors, {light: &quot;white&quot;, dark: &quot;black&quot;}); // TODO: oops!
-        this._backgroundColors &#x3D; new ProcessedColorProvider(this.standardColors, (c: string) &#x3D;&gt; {
-            const color &#x3D; getColorValueByName(c);
-            const rgbColor &#x3D; rgb(color);
-            rgbColor.opacity &#x3D; options.backgroundOpacity;
-            return rgbColor.toString();
-        });
+        this._textColors &#x3D; new TextColorProvider(this.standardColors, {
+            light: &quot;white&quot;,
+            dark: &quot;black&quot;,
+        }); // TODO: oops!
+        this._backgroundColors &#x3D; new ProcessedColorProvider(
+            this.standardColors,
+            (c: string) &#x3D;&gt; {
+                const color &#x3D; getColorValueByName(c);
+                const rgbColor &#x3D; rgb(color);
+                rgbColor.opacity &#x3D; options.backgroundOpacity;
+                return rgbColor.toString();
+            }
+        );
     }
 
     public get standardColors(): IValueProvider&lt;string&gt; {

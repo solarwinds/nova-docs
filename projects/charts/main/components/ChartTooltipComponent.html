@@ -153,7 +153,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/chart-tooltips/chart-tooltip.component.ts:22</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/chart-tooltips/chart-tooltip.component.ts:25</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -169,7 +169,12 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { animate, style, transition, trigger } from &quot;@angular/animations&quot;;
-import { ChangeDetectionStrategy, Component, Input, TemplateRef } from &quot;@angular/core&quot;;
+import {
+    ChangeDetectionStrategy,
+    Component,
+    Input,
+    TemplateRef,
+} from &quot;@angular/core&quot;;
 
 @Component({
     selector: &quot;nui-chart-tooltip&quot;,
@@ -182,9 +187,7 @@ import { ChangeDetectionStrategy, Component, Input, TemplateRef } from &quot;@an
                 style({ opacity: 0 }),
                 animate(300, style({ opacity: 1 })),
             ]),
-            transition(&quot;:leave&quot;, [
-                animate(300, style({ opacity: 0 })),
-            ]),
+            transition(&quot;:leave&quot;, [animate(300, style({ opacity: 0 }))]),
         ]),
     ],
 })
@@ -204,7 +207,7 @@ export class ChartTooltipComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div>    <div @tooltip class=\'nui-chart-tooltip px-2 py-1 nui-text-small\'>        <ng-container *ngTemplateOutlet=\'template\'></ng-container>    </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div>    <div @tooltip class="nui-chart-tooltip px-2 py-1 nui-text-small">        <ng-container *ngTemplateOutlet="template"></ng-container>    </div></div></div>'
     var COMPONENTS = [{'name': 'BasicLegendTileComponent', 'selector': 'nui-basic-legend-tile'},{'name': 'ChartComponent', 'selector': 'nui-chart'},{'name': 'ChartDonutContentComponent', 'selector': 'nui-chart-donut-content'},{'name': 'ChartMarkerComponent', 'selector': 'nui-chart-marker'},{'name': 'ChartPopoverComponent', 'selector': 'nui-chart-popover'},{'name': 'ChartTooltipComponent', 'selector': 'nui-chart-tooltip'},{'name': 'ChartTooltipsComponent', 'selector': 'nui-chart-tooltips'},{'name': 'LegendComponent', 'selector': 'nui-legend'},{'name': 'LegendSeriesComponent', 'selector': 'nui-legend-series'},{'name': 'RichLegendTileComponent', 'selector': 'nui-rich-legend-tile'}];
     var DIRECTIVES = [{'name': 'ChartCollectionIdDirective', 'selector': '[nuiChartCollectionId]'}];
     var ACTUAL_COMPONENT = {'name': 'ChartTooltipComponent'};

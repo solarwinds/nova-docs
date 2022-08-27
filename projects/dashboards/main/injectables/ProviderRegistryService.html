@@ -125,7 +125,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="88" class="link-to-prism">src/lib/services/provider-registry.service.ts:88</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="102" class="link-to-prism">src/lib/services/provider-registry.service.ts:102</a></div>
                             </td>
                         </tr>
 
@@ -192,8 +192,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="243"
-                            class="link-to-prism">src/lib/services/provider-registry.service.ts:243</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="302"
+                            class="link-to-prism">src/lib/services/provider-registry.service.ts:302</a></div>
                 </td>
             </tr>
 
@@ -264,8 +264,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="252"
-                            class="link-to-prism">src/lib/services/provider-registry.service.ts:252</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="314"
+                            class="link-to-prism">src/lib/services/provider-registry.service.ts:314</a></div>
                 </td>
             </tr>
 
@@ -348,8 +348,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="239"
-                            class="link-to-prism">src/lib/services/provider-registry.service.ts:239</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="294"
+                            class="link-to-prism">src/lib/services/provider-registry.service.ts:294</a></div>
                 </td>
             </tr>
 
@@ -428,7 +428,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="88" class="link-to-prism">src/lib/services/provider-registry.service.ts:88</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="102" class="link-to-prism">src/lib/services/provider-registry.service.ts:102</a></div>
                             </td>
                         </tr>
 
@@ -442,8 +442,19 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { DecimalPipe } from &quot;@angular/common&quot;;
-import { Injectable, Injector, NgZone, Optional, StaticProvider } from &quot;@angular/core&quot;;
-import { LoggerService, TimeframeService, VirtualViewportManager } from &quot;@nova-ui/bits&quot;;
+import {
+    Injectable,
+    Injector,
+    NgZone,
+    Optional,
+    StaticProvider,
+} from &quot;@angular/core&quot;;
+
+import {
+    LoggerService,
+    TimeframeService,
+    VirtualViewportManager,
+} from &quot;@nova-ui/bits&quot;;
 
 import { DataSourceAdapter } from &quot;../components/providers/data-source-adapter&quot;;
 import { DrilldownDataSourceAdapter } from &quot;../components/providers/drilldown-data-source-adapter&quot;;
@@ -478,8 +489,12 @@ import { TimeseriesTileIndicatorDataConverterService } from &quot;../configurato
 import { CONFIGURATOR_CONVERTER } from &quot;../configurator/services/converters/types&quot;;
 import { PreviewService } from &quot;../configurator/services/preview.service&quot;;
 import { PizzagnaService } from &quot;../pizzagna/services/pizzagna.service&quot;;
-import { DASHBOARD_EVENT_BUS, DATA_SOURCE, FORMATTERS_REGISTRY, PIZZAGNA_EVENT_BUS } from &quot;../types&quot;;
-
+import {
+    DASHBOARD_EVENT_BUS,
+    DATA_SOURCE,
+    FORMATTERS_REGISTRY,
+    PIZZAGNA_EVENT_BUS,
+} from &quot;../types&quot;;
 import { EventRegistryService } from &quot;./event-registry.service&quot;;
 import { KpiColorComparatorsRegistryService } from &quot;./kpi-color-comparators-registry.service&quot;;
 import {
@@ -525,7 +540,6 @@ import { UrlInteractionService } from &quot;./url-interaction.service&quot;;
 import { WidgetConfigurationService } from &quot;./widget-configuration.service&quot;;
 import { WidgetToDashboardEventProxyService } from &quot;./widget-to-dashboard-event-proxy.service&quot;;
 
-
 @Injectable({ providedIn: &quot;root&quot; })
 export class ProviderRegistryService {
     public staticProviders: IStaticProviders &#x3D; {};
@@ -548,27 +562,53 @@ export class ProviderRegistryService {
             },
             [NOVA_DATASOURCE_ADAPTER]: {
                 provide: DataSourceAdapter,
-                deps: [PIZZAGNA_EVENT_BUS, [new Optional(), DATA_SOURCE], PizzagnaService],
+                deps: [
+                    PIZZAGNA_EVENT_BUS,
+                    [new Optional(), DATA_SOURCE],
+                    PizzagnaService,
+                ],
             },
             [NOVA_TABLE_DATASOURCE_ADAPTER]: {
                 provide: TableDataSourceAdapter,
-                deps: [PIZZAGNA_EVENT_BUS, [new Optional(), DATA_SOURCE], PizzagnaService, VirtualViewportManager],
+                deps: [
+                    PIZZAGNA_EVENT_BUS,
+                    [new Optional(), DATA_SOURCE],
+                    PizzagnaService,
+                    VirtualViewportManager,
+                ],
             },
             [NOVA_TIMESERIES_DATASOURCE_ADAPTER]: {
                 provide: TimeseriesDataSourceAdapter,
-                deps: [PIZZAGNA_EVENT_BUS, [new Optional(), DATA_SOURCE], PizzagnaService],
+                deps: [
+                    PIZZAGNA_EVENT_BUS,
+                    [new Optional(), DATA_SOURCE],
+                    PizzagnaService,
+                ],
             },
             [NOVA_KPI_DATASOURCE_ADAPTER]: {
                 provide: KpiDataSourceAdapter,
-                deps: [PIZZAGNA_EVENT_BUS, [new Optional(), DATA_SOURCE], PizzagnaService, DecimalPipe],
+                deps: [
+                    PIZZAGNA_EVENT_BUS,
+                    [new Optional(), DATA_SOURCE],
+                    PizzagnaService,
+                    DecimalPipe,
+                ],
             },
             [NOVA_DRILLDOWN_DATASOURCE_ADAPTER]: {
                 provide: DrilldownDataSourceAdapter,
-                deps: [PIZZAGNA_EVENT_BUS, [new Optional(), DATA_SOURCE], PizzagnaService],
+                deps: [
+                    PIZZAGNA_EVENT_BUS,
+                    [new Optional(), DATA_SOURCE],
+                    PizzagnaService,
+                ],
             },
             [NOVA_KPI_COLOR_PRIORITIZER]: {
                 provide: KpiColorPrioritizer,
-                deps: [[new Optional(), DATA_SOURCE], PizzagnaService, KpiColorComparatorsRegistryService],
+                deps: [
+                    [new Optional(), DATA_SOURCE],
+                    PizzagnaService,
+                    KpiColorComparatorsRegistryService,
+                ],
             },
             [NOVA_TITLE_AND_DESCRIPTION_CONVERTER]: {
                 provide: CONFIGURATOR_CONVERTER,
@@ -603,12 +643,22 @@ export class ProviderRegistryService {
             [NOVA_TIMESERIES_TILE_INDICATOR_DATA_CONVERTER]: {
                 provide: CONFIGURATOR_CONVERTER,
                 useClass: TimeseriesTileIndicatorDataConverterService,
-                deps: [PIZZAGNA_EVENT_BUS, PreviewService, PizzagnaService, TimeframeService],
+                deps: [
+                    PIZZAGNA_EVENT_BUS,
+                    PreviewService,
+                    PizzagnaService,
+                    TimeframeService,
+                ],
             },
             [NOVA_TIMESERIES_METADATA_CONVERTER]: {
                 provide: CONFIGURATOR_CONVERTER,
                 useClass: TimeseriesMetadataConverterService,
-                deps: [PIZZAGNA_EVENT_BUS, PreviewService, PizzagnaService, TimeframeService],
+                deps: [
+                    PIZZAGNA_EVENT_BUS,
+                    PreviewService,
+                    PizzagnaService,
+                    TimeframeService,
+                ],
             },
             [NOVA_TIMESERIES_SERIES_CONVERTER]: {
                 provide: CONFIGURATOR_CONVERTER,
@@ -643,7 +693,12 @@ export class ProviderRegistryService {
             },
             [NOVA_URL_INTERACTION_HANDLER]: {
                 provide: UrlInteractionHandler,
-                deps: [PIZZAGNA_EVENT_BUS, &quot;windowObject&quot;, LoggerService, UrlInteractionService],
+                deps: [
+                    PIZZAGNA_EVENT_BUS,
+                    &quot;windowObject&quot;,
+                    LoggerService,
+                    UrlInteractionService,
+                ],
             },
             [NOVA_EVENT_BUS_DEBUGGER]: {
                 provide: EventBusDebugger,
@@ -680,19 +735,29 @@ export class ProviderRegistryService {
     }
 
     public setProviders(providers: IStaticProviders): void {
-        this.staticProviders &#x3D; Object.assign({}, this.staticProviders, providers);
+        this.staticProviders &#x3D; Object.assign(
+            {},
+            this.staticProviders,
+            providers
+        );
     }
 
     public getProvider(providerId: string): StaticProvider {
         const provider &#x3D; this.staticProviders[providerId];
         if (!provider) {
             this.logger.warn(&quot;No provider registered for id&quot;, providerId);
-            this.logger.warn(&quot;Known providers:&quot;, Object.keys(this.staticProviders).join(&quot;, &quot;));
+            this.logger.warn(
+                &quot;Known providers:&quot;,
+                Object.keys(this.staticProviders).join(&quot;, &quot;)
+            );
         }
         return provider;
     }
 
-    public getProviderInstance(provider: StaticProvider, parentInjector: Injector): any {
+    public getProviderInstance(
+        provider: StaticProvider,
+        parentInjector: Injector
+    ): any {
         const injector &#x3D; Injector.create({
             providers: [provider],
             parent: parentInjector,

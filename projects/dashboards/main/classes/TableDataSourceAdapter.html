@@ -136,7 +136,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/lib/components/providers/table-data-source-adapter.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/lib/components/providers/table-data-source-adapter.ts:34</a></div>
                             </td>
                         </tr>
 
@@ -251,7 +251,7 @@
                             </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in         <code><a href="../injectables/DataSourceAdapter.html#source" target="_self" >DataSourceAdapter:24</a></code>
+                                    <div class="io-line">Defined in         <code><a href="../injectables/DataSourceAdapter.html#source" target="_self" >DataSourceAdapter:49</a></code>
 </div>
                             </td>
                         </tr>
@@ -295,7 +295,7 @@
                             </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in         <code><a href="../injectables/DataSourceAdapter.html#source" target="_self" >DataSourceAdapter:23</a></code>
+                                    <div class="io-line">Defined in         <code><a href="../injectables/DataSourceAdapter.html#source" target="_self" >DataSourceAdapter:48</a></code>
 </div>
                             </td>
                         </tr>
@@ -340,7 +340,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../injectables/DataSourceAdapter.html#source" target="_self" >DataSourceAdapter:66</a></code>
+                        <div class="io-line">Defined in         <code><a href="../injectables/DataSourceAdapter.html#source" target="_self" >DataSourceAdapter:97</a></code>
 </div>
                 </td>
             </tr>
@@ -387,7 +387,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../injectables/DataSourceAdapter.html#source" target="_self" >DataSourceAdapter:79</a></code>
+                        <div class="io-line">Defined in         <code><a href="../injectables/DataSourceAdapter.html#source" target="_self" >DataSourceAdapter:114</a></code>
 </div>
                 </td>
             </tr>
@@ -446,25 +446,46 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Inject, Optional } from &quot;@angular/core&quot;;
-import { EventBus, IDataSource, IEvent, IFilteringOutputs, VirtualViewportManager } from &quot;@nova-ui/bits&quot;;
 import { merge, Observable, zip } from &quot;rxjs&quot;;
-import { debounceTime, startWith, switchMap, takeUntil, tap } from &quot;rxjs/operators&quot;;
+import {
+    debounceTime,
+    startWith,
+    switchMap,
+    takeUntil,
+    tap,
+} from &quot;rxjs/operators&quot;;
+
+import {
+    EventBus,
+    IDataSource,
+    IEvent,
+    IFilteringOutputs,
+    VirtualViewportManager,
+} from &quot;@nova-ui/bits&quot;;
 
 import { PizzagnaService } from &quot;../../pizzagna/services/pizzagna.service&quot;;
 import { REFRESH, SCROLL_NEXT_PAGE, WIDGET_READY } from &quot;../../services/types&quot;;
-import { DATA_SOURCE, IProperties, PizzagnaLayer, PIZZAGNA_EVENT_BUS } from &quot;../../types&quot;;
-
+import {
+    DATA_SOURCE,
+    IProperties,
+    PizzagnaLayer,
+    PIZZAGNA_EVENT_BUS,
+} from &quot;../../types&quot;;
 import { DataSourceAdapter } from &quot;./data-source-adapter&quot;;
 
-export class TableDataSourceAdapter&lt;T extends IFilteringOutputs&gt; extends DataSourceAdapter&lt;T&gt; {
+export class TableDataSourceAdapter&lt;
+    T extends IFilteringOutputs
+&gt; extends DataSourceAdapter&lt;T&gt; {
     private dataPath: string;
     private dataFieldsPath: string;
     private totalItemsPath: string;
 
-    constructor(@Inject(PIZZAGNA_EVENT_BUS) eventBus: EventBus&lt;IEvent&gt;,
-                @Inject(DATA_SOURCE) dataSource: IDataSource,
-                                            pizzagnaService: PizzagnaService,
-                @Optional() protected virtualViewport: VirtualViewportManager) {
+    constructor(
+        @Inject(PIZZAGNA_EVENT_BUS) eventBus: EventBus&lt;IEvent&gt;,
+        @Inject(DATA_SOURCE) dataSource: IDataSource,
+        pizzagnaService: PizzagnaService,
+        @Optional() protected virtualViewport: VirtualViewportManager
+    ) {
         super(eventBus, dataSource, pizzagnaService);
     }
 
@@ -472,19 +493,27 @@ export class TableDataSourceAdapter&lt;T extends IFilteringOutputs&gt; extends D
         // Note: We should wait until TableWidget is ready to be able to proceed with reset event
         // We can also listen after SCROLL_NEXT_PAGE instead of WIDGET_READY because right now
         // they are executed simultaneously but we don&#x27;t know how things will change in the future
-        const refresh$: Observable&lt;void&gt; &#x3D; zip(this.eventBus.getStream(WIDGET_READY), this.eventBus.getStream(REFRESH)).pipe(
+        const refresh$: Observable&lt;void&gt; &#x3D; zip(
+            this.eventBus.getStream(WIDGET_READY),
+            this.eventBus.getStream(REFRESH)
+        ).pipe(
             // Note: Using startWith() to re-trigger the REFRESH stream that was triggered at least on time before WIDGET_READY
-            switchMap(() &#x3D;&gt; this.eventBus.getStream(REFRESH).pipe(startWith(undefined))),
-            tap(() &#x3D;&gt; this.virtualViewport.reset({emitFirstPage: false})));
+            switchMap(() &#x3D;&gt;
+                this.eventBus.getStream(REFRESH).pipe(startWith(undefined))
+            ),
+            tap(() &#x3D;&gt; this.virtualViewport.reset({ emitFirstPage: false }))
+        );
 
-        merge(refresh$, this.eventBus.getStream(SCROLL_NEXT_PAGE)).pipe(
-            // Note: While SCROLL_NEXT_PAGE is triggered on TableWidget initialization aka WIDGET_READY
-            // we might encounter REFRESH and SCROLL_NEXT_PAGE triggered at the same time.
-            // Setting a small debounceTime will help us manage simultaneous requests
-            debounceTime(10),
-            tap(() &#x3D;&gt; this.handleRefresh()),
-            takeUntil(this.destroy$)
-        ).subscribe();
+        merge(refresh$, this.eventBus.getStream(SCROLL_NEXT_PAGE))
+            .pipe(
+                // Note: While SCROLL_NEXT_PAGE is triggered on TableWidget initialization aka WIDGET_READY
+                // we might encounter REFRESH and SCROLL_NEXT_PAGE triggered at the same time.
+                // Setting a small debounceTime will help us manage simultaneous requests
+                debounceTime(10),
+                tap(() &#x3D;&gt; this.handleRefresh()),
+                takeUntil(this.destroy$)
+            )
+            .subscribe();
     }
 
     protected updateAdapterProperties(properties: IProperties) {
@@ -498,23 +527,32 @@ export class TableDataSourceAdapter&lt;T extends IFilteringOutputs&gt; extends D
         const items &#x3D; output?.repeat?.itemsSource;
         const dataFields &#x3D; output?.dataFields;
 
-        this.pizzagnaService.setProperty({
-            pizzagnaKey: PizzagnaLayer.Data,
-            componentId: this.componentId,
-            propertyPath: [this.totalItemsPath],
-        }, total);
+        this.pizzagnaService.setProperty(
+            {
+                pizzagnaKey: PizzagnaLayer.Data,
+                componentId: this.componentId,
+                propertyPath: [this.totalItemsPath],
+            },
+            total
+        );
 
-        this.pizzagnaService.setProperty({
-            pizzagnaKey: PizzagnaLayer.Data,
-            componentId: this.componentId,
-            propertyPath: [this.dataPath],
-        }, items);
+        this.pizzagnaService.setProperty(
+            {
+                pizzagnaKey: PizzagnaLayer.Data,
+                componentId: this.componentId,
+                propertyPath: [this.dataPath],
+            },
+            items
+        );
 
-        this.pizzagnaService.setProperty({
-            pizzagnaKey: PizzagnaLayer.Data,
-            componentId: this.componentId,
-            propertyPath: [this.dataFieldsPath],
-        }, dataFields);
+        this.pizzagnaService.setProperty(
+            {
+                pizzagnaKey: PizzagnaLayer.Data,
+                componentId: this.componentId,
+                propertyPath: [this.dataFieldsPath],
+            },
+            dataFields
+        );
     }
 }
 </code></pre>

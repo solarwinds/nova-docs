@@ -111,16 +111,29 @@
 
             <tr>
                 <td class="col-md-3">template</td>
-                <td class="col-md-9"><pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;nui-popup-container&quot; [class.nui-popup--opened]&#x3D;&quot;isOpen&quot; nuiClickInterceptor&gt;
+                <td class="col-md-9"><pre class="line-numbers"><code class="language-html">&lt;div
+    class&#x3D;&quot;nui-popup-container&quot;
+    [class.nui-popup--opened]&#x3D;&quot;isOpen&quot;
+    nuiClickInterceptor
+&gt;
     &lt;div class&#x3D;&quot;nui-popup__content&quot;&gt;
         &lt;ng-content&gt;&lt;/ng-content&gt;
     &lt;/div&gt;
-    &lt;div #popupArea class&#x3D;&quot;nui-popup__area {{contextClass}}&quot;
+    &lt;div
+        #popupArea
+        class&#x3D;&quot;nui-popup__area {{ contextClass }}&quot;
         [style.width]&#x3D;&quot;width&quot;
         [class.nui-popup__area--visible]&#x3D;&quot;visible&quot;
         [class.nui-popup__area--top]&#x3D;&quot;_directionTop &amp;&amp; !appendToBody&quot;
-        [class.nui-popup__area--right]&#x3D;&quot;_directionRight &amp;&amp; !appendToBody&quot;&gt;
-        &lt;div #popupAreaContainer tabindex&#x3D;&quot;-1&quot; class&#x3D;&quot;nui-popup__area--container&quot;&gt;
+        [class.nui-popup__area--right]&#x3D;&quot;
+            _directionRight &amp;&amp; !appendToBody
+        &quot;
+    &gt;
+        &lt;div
+            #popupAreaContainer
+            tabindex&#x3D;&quot;-1&quot;
+            class&#x3D;&quot;nui-popup__area--container&quot;
+        &gt;
             &lt;ng-content select&#x3D;&quot;[popupAreaContent]&quot;&gt;&lt;/ng-content&gt;
         &lt;/div&gt;
     &lt;/div&gt;
@@ -277,7 +290,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="135" class="link-to-prism">src/lib/popup/popup.component.ts:135</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="151" class="link-to-prism">src/lib/popup/popup.component.ts:151</a></div>
                             </td>
                         </tr>
 
@@ -429,7 +442,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="86" class="link-to-prism">src/lib/popup/popup.component.ts:86</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="100" class="link-to-prism">src/lib/popup/popup.component.ts:100</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -461,7 +474,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="108" class="link-to-prism">src/lib/popup/popup.component.ts:108</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="122" class="link-to-prism">src/lib/popup/popup.component.ts:122</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -482,7 +495,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="105" class="link-to-prism">src/lib/popup/popup.component.ts:105</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="119" class="link-to-prism">src/lib/popup/popup.component.ts:119</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -509,7 +522,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="81" class="link-to-prism">src/lib/popup/popup.component.ts:81</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="95" class="link-to-prism">src/lib/popup/popup.component.ts:95</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -536,7 +549,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="100" class="link-to-prism">src/lib/popup/popup.component.ts:100</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="114" class="link-to-prism">src/lib/popup/popup.component.ts:114</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -563,7 +576,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="95" class="link-to-prism">src/lib/popup/popup.component.ts:95</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="109" class="link-to-prism">src/lib/popup/popup.component.ts:109</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -589,7 +602,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="88" class="link-to-prism">src/lib/popup/popup.component.ts:88</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="102" class="link-to-prism">src/lib/popup/popup.component.ts:102</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -610,7 +623,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="90" class="link-to-prism">src/lib/popup/popup.component.ts:90</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="104" class="link-to-prism">src/lib/popup/popup.component.ts:104</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -631,7 +644,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="77" class="link-to-prism">src/lib/popup/popup.component.ts:77</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="91" class="link-to-prism">src/lib/popup/popup.component.ts:91</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -655,7 +668,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="111" class="link-to-prism">src/lib/popup/popup.component.ts:111</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="125" class="link-to-prism">src/lib/popup/popup.component.ts:125</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -692,8 +705,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="232"
-                            class="link-to-prism">src/lib/popup/popup.component.ts:232</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="264"
+                            class="link-to-prism">src/lib/popup/popup.component.ts:264</a></div>
                 </td>
             </tr>
 
@@ -764,8 +777,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="184"
-                            class="link-to-prism">src/lib/popup/popup.component.ts:184</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="204"
+                            class="link-to-prism">src/lib/popup/popup.component.ts:204</a></div>
                 </td>
             </tr>
 
@@ -848,7 +861,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="116" class="link-to-prism">src/lib/popup/popup.component.ts:116</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="130" class="link-to-prism">src/lib/popup/popup.component.ts:130</a></div>
                             </td>
                         </tr>
 
@@ -885,7 +898,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="119" class="link-to-prism">src/lib/popup/popup.component.ts:119</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="133" class="link-to-prism">src/lib/popup/popup.component.ts:133</a></div>
                             </td>
                         </tr>
 
@@ -922,7 +935,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="114" class="link-to-prism">src/lib/popup/popup.component.ts:114</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="128" class="link-to-prism">src/lib/popup/popup.component.ts:128</a></div>
                             </td>
                         </tr>
 
@@ -949,7 +962,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="135" class="link-to-prism">src/lib/popup/popup.component.ts:135</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="151" class="link-to-prism">src/lib/popup/popup.component.ts:151</a></div>
                             </td>
                         </tr>
 
@@ -984,7 +997,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="125" class="link-to-prism">src/lib/popup/popup.component.ts:125</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="139" class="link-to-prism">src/lib/popup/popup.component.ts:139</a></div>
                                 </td>
                             </tr>
 
@@ -1016,13 +1029,12 @@
     ViewEncapsulation,
 } from &quot;@angular/core&quot;;
 import _isUndefined from &quot;lodash/isUndefined&quot;;
-import {Subject, Subscription} from &quot;rxjs&quot;;
+import { Subject, Subscription } from &quot;rxjs&quot;;
 
 import { DOCUMENT_CLICK_EVENT } from &quot;../../constants/event.constants&quot;;
 import { EdgeDetectionService } from &quot;../../services/edge-detection.service&quot;;
 import { EventBusService } from &quot;../../services/event-bus.service&quot;;
 import { LoggerService } from &quot;../../services/log-service&quot;;
-
 import { PopupContainerComponent } from &quot;./popup-container.component&quot;;
 import { PopupContainerService } from &quot;./popup-container.service&quot;;
 import { PopupToggleDirective } from &quot;./popup-toggle.directive&quot;;
@@ -1046,21 +1058,34 @@ import { PopupToggleDirective } from &quot;./popup-toggle.directive&quot;;
 @Component({
     selector: &quot;nui-popup-deprecated&quot;,
     host: {
-        &quot;class&quot;: &quot;nui-popup&quot;,
-        &quot;role&quot;: &quot;dialog&quot;,
+        class: &quot;nui-popup&quot;,
+        role: &quot;dialog&quot;,
         &quot;[attr.aria-label]&quot;: &quot;ariaLabel&quot;,
     },
     template: &#x60;
-        &lt;div class&#x3D;&quot;nui-popup-container&quot; [class.nui-popup--opened]&#x3D;&quot;isOpen&quot; nuiClickInterceptor&gt;
+        &lt;div
+            class&#x3D;&quot;nui-popup-container&quot;
+            [class.nui-popup--opened]&#x3D;&quot;isOpen&quot;
+            nuiClickInterceptor
+        &gt;
             &lt;div class&#x3D;&quot;nui-popup__content&quot;&gt;
                 &lt;ng-content&gt;&lt;/ng-content&gt;
             &lt;/div&gt;
-            &lt;div #popupArea class&#x3D;&quot;nui-popup__area {{contextClass}}&quot;
+            &lt;div
+                #popupArea
+                class&#x3D;&quot;nui-popup__area {{ contextClass }}&quot;
                 [style.width]&#x3D;&quot;width&quot;
                 [class.nui-popup__area--visible]&#x3D;&quot;visible&quot;
                 [class.nui-popup__area--top]&#x3D;&quot;_directionTop &amp;&amp; !appendToBody&quot;
-                [class.nui-popup__area--right]&#x3D;&quot;_directionRight &amp;&amp; !appendToBody&quot;&gt;
-                &lt;div #popupAreaContainer tabindex&#x3D;&quot;-1&quot; class&#x3D;&quot;nui-popup__area--container&quot;&gt;
+                [class.nui-popup__area--right]&#x3D;&quot;
+                    _directionRight &amp;&amp; !appendToBody
+                &quot;
+            &gt;
+                &lt;div
+                    #popupAreaContainer
+                    tabindex&#x3D;&quot;-1&quot;
+                    class&#x3D;&quot;nui-popup__area--container&quot;
+                &gt;
                     &lt;ng-content select&#x3D;&quot;[popupAreaContent]&quot;&gt;&lt;/ng-content&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
@@ -1070,7 +1095,9 @@ import { PopupToggleDirective } from &quot;./popup-toggle.directive&quot;;
     encapsulation: ViewEncapsulation.None,
 })
 /* eslint-disable @angular-eslint/no-host-metadata-property */
-export class PopupDeprecatedComponent implements AfterContentInit, OnDestroy, OnInit {
+export class PopupDeprecatedComponent
+    implements AfterContentInit, OnDestroy, OnInit
+{
     @Input() width: string;
     /**
      * If additional styles should be applied to popup
@@ -1112,14 +1139,16 @@ export class PopupDeprecatedComponent implements AfterContentInit, OnDestroy, On
     @ViewChild(&quot;popupAreaContainer&quot;)
     public popupAreaContainer: ElementRef;
 
-    @ViewChild(&quot;popupArea&quot;, {static: true})
+    @ViewChild(&quot;popupArea&quot;, { static: true })
     public popupAreaContent: ElementRef;
 
     private popupSubscriptions: Subscription[] &#x3D; [];
     private lastEventType: string;
     private _popupInstance?: ComponentRef&lt;PopupContainerComponent&gt;;
 
-    public get popupInstance(): ComponentRef&lt;PopupContainerComponent&gt; | undefined {
+    public get popupInstance():
+        | ComponentRef&lt;PopupContainerComponent&gt;
+        | undefined {
         return this._popupInstance;
     }
     /** @ignore */
@@ -1131,28 +1160,32 @@ export class PopupDeprecatedComponent implements AfterContentInit, OnDestroy, On
      */
     public visible &#x3D; false;
 
-    constructor(private elementRef: ElementRef,
-                private edgeDetector: EdgeDetectionService,
-                private changeDetectorRef: ChangeDetectorRef,
-                private eventBusService: EventBusService,
-                private componentFactoryResolver: ComponentFactoryResolver,
-                private injector: Injector,
-                private appRef: ApplicationRef,
-                private logger: LoggerService,
-                @Optional() private popupContainer: PopupContainerService) {
-
-        this.logger.warn(&quot;&lt;nui-popup-deprecated&gt; is deprecated as of Nova v11. Please use &lt;nui-popup&gt; instead.&quot;);
+    constructor(
+        private elementRef: ElementRef,
+        private edgeDetector: EdgeDetectionService,
+        private changeDetectorRef: ChangeDetectorRef,
+        private eventBusService: EventBusService,
+        private componentFactoryResolver: ComponentFactoryResolver,
+        private injector: Injector,
+        private appRef: ApplicationRef,
+        private logger: LoggerService,
+        @Optional() private popupContainer: PopupContainerService
+    ) {
+        this.logger.warn(
+            &quot;&lt;nui-popup-deprecated&gt; is deprecated as of Nova v11. Please use &lt;nui-popup&gt; instead.&quot;
+        );
     }
     public ngOnInit() {
         if (this.manualOpenControl) {
             this.popupSubscriptions.push(
-                this.manualOpenControl.subscribe(event &#x3D;&gt; {
+                this.manualOpenControl.subscribe((event) &#x3D;&gt; {
                     this.toggleOpened(event);
                 })
             );
         }
         this.popupSubscriptions.push(
-            this.eventBusService.getStream({id: DOCUMENT_CLICK_EVENT})
+            this.eventBusService
+                .getStream({ id: DOCUMENT_CLICK_EVENT })
                 .subscribe((event: MouseEvent) &#x3D;&gt; {
                     if (this.isOpen) {
                         this.closePopup(event);
@@ -1201,13 +1234,25 @@ export class PopupDeprecatedComponent implements AfterContentInit, OnDestroy, On
             this.changeDetectorRef.detach();
             if (this.isOpen) {
                 if (!this._popupInstance &amp;&amp; this.appendToBody) {
-                    const popupContainerFactory &#x3D; this.componentFactoryResolver.resolveComponentFactory(PopupContainerComponent);
-                    this._popupInstance &#x3D; popupContainerFactory.create(this.injector, [[this.popupAreaContent.nativeElement]]);
-                    this._popupInstance.instance.hostElement &#x3D; this.popupToggle.host.nativeElement;
+                    const popupContainerFactory &#x3D;
+                        this.componentFactoryResolver.resolveComponentFactory(
+                            PopupContainerComponent
+                        );
+                    this._popupInstance &#x3D; popupContainerFactory.create(
+                        this.injector,
+                        [[this.popupAreaContent.nativeElement]]
+                    );
+                    this._popupInstance.instance.hostElement &#x3D;
+                        this.popupToggle.host.nativeElement;
                     this.appRef.attachView(this._popupInstance.hostView);
-                    const hostElement &#x3D; (this._popupInstance.hostView as EmbeddedViewRef&lt;any&gt;).rootNodes[0] as HTMLElement;
+                    const hostElement &#x3D; (
+                        this._popupInstance.hostView as EmbeddedViewRef&lt;any&gt;
+                    ).rootNodes[0] as HTMLElement;
                     if (this.popupContainer?.parent) {
-                        hostElement.setAttribute(&quot;parent&quot;, this.popupContainer.parent.constructor.name);
+                        hostElement.setAttribute(
+                            &quot;parent&quot;,
+                            this.popupContainer.parent.constructor.name
+                        );
                     }
                     document.body.appendChild(hostElement);
                 } else {
@@ -1217,7 +1262,7 @@ export class PopupDeprecatedComponent implements AfterContentInit, OnDestroy, On
                 this.visible &#x3D; true;
                 this.changeDetectorRef.detectChanges();
                 this.changeDetectorRef.detach();
-            // If closed, remove popup instance from DOM if there&#x27;s one
+                // If closed, remove popup instance from DOM if there&#x27;s one
             } else if (this._popupInstance &amp;&amp; this.appendToBody) {
                 this.deletePopupInstance();
             }
@@ -1227,8 +1272,12 @@ export class PopupDeprecatedComponent implements AfterContentInit, OnDestroy, On
     }
 
     public closePopup(event?: MouseEvent): void {
-        const isToggle &#x3D; this.popupToggle &amp;&amp; event ? (this.popupToggle.host.nativeElement as HTMLElement)
-            .contains(event.target as HTMLElement) : false;
+        const isToggle &#x3D;
+            this.popupToggle &amp;&amp; event
+                ? (this.popupToggle.host.nativeElement as HTMLElement).contains(
+                      event.target as HTMLElement
+                  )
+                : false;
 
         if (!isToggle) {
             this.deletePopupInstance();
@@ -1249,16 +1298,25 @@ export class PopupDeprecatedComponent implements AfterContentInit, OnDestroy, On
         if (this.popupToggle) {
             parentEl &#x3D; this.popupToggle.host.nativeElement;
         } else {
-            parentEl &#x3D; document.querySelector&lt;HTMLElement&gt;(this.baseElementSelector) ?? undefined;
+            parentEl &#x3D;
+                document.querySelector&lt;HTMLElement&gt;(this.baseElementSelector) ??
+                undefined;
         }
 
         if (!parentEl) {
             return;
         }
 
-        const canBe &#x3D; this.edgeDetector.canBe(&lt;HTMLElement&gt;parentEl, this.popupAreaContent.nativeElement);
-        this._directionTop &#x3D;  _isUndefined(this.directionTop) ? !canBe?.placed.bottom : this.directionTop;
-        this._directionRight &#x3D; _isUndefined(this.directionRight) ? !canBe?.aligned.left : this.directionRight;
+        const canBe &#x3D; this.edgeDetector.canBe(
+            &lt;HTMLElement&gt;parentEl,
+            this.popupAreaContent.nativeElement
+        );
+        this._directionTop &#x3D; _isUndefined(this.directionTop)
+            ? !canBe?.placed.bottom
+            : this.directionTop;
+        this._directionRight &#x3D; _isUndefined(this.directionRight)
+            ? !canBe?.aligned.left
+            : this.directionRight;
     }
 
     private deletePopupInstance() {
@@ -1270,7 +1328,9 @@ export class PopupDeprecatedComponent implements AfterContentInit, OnDestroy, On
     }
 
     public ngOnDestroy(): void {
-        this.popupSubscriptions.forEach(subscription &#x3D;&gt; subscription.unsubscribe());
+        this.popupSubscriptions.forEach((subscription) &#x3D;&gt;
+            subscription.unsubscribe()
+        );
         this.deletePopupInstance();
     }
 }
@@ -1292,7 +1352,7 @@ export class PopupDeprecatedComponent implements AfterContentInit, OnDestroy, On
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="nui-popup-container" [class.nui-popup--opened]="isOpen" nuiClickInterceptor>    <div class="nui-popup__content">        <ng-content></ng-content>    </div>    <div #popupArea class="nui-popup__area {{contextClass}}"        [style.width]="width"        [class.nui-popup__area--visible]="visible"        [class.nui-popup__area--top]="_directionTop && !appendToBody"        [class.nui-popup__area--right]="_directionRight && !appendToBody">        <div #popupAreaContainer tabindex="-1" class="nui-popup__area--container">            <ng-content select="[popupAreaContent]"></ng-content>        </div>    </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div    class="nui-popup-container"    [class.nui-popup--opened]="isOpen"    nuiClickInterceptor>    <div class="nui-popup__content">        <ng-content></ng-content>    </div>    <div        #popupArea        class="nui-popup__area {{ contextClass }}"        [style.width]="width"        [class.nui-popup__area--visible]="visible"        [class.nui-popup__area--top]="_directionTop && !appendToBody"        [class.nui-popup__area--right]="            _directionRight && !appendToBody        "    >        <div            #popupAreaContainer            tabindex="-1"            class="nui-popup__area--container"        >            <ng-content select="[popupAreaContent]"></ng-content>        </div>    </div></div></div>'
     var COMPONENTS = [{'name': 'BreadcrumbComponent', 'selector': 'nui-breadcrumb'},{'name': 'BusyComponent', 'selector': '[nui-busy]'},{'name': 'ButtonComponent', 'selector': '[nui-button]'},{'name': 'CardComponent', 'selector': 'nui-card'},{'name': 'CardGroupComponent', 'selector': 'nui-card-group'},{'name': 'CheckboxComponent', 'selector': 'nui-checkbox'},{'name': 'CheckboxGroupComponent', 'selector': 'nui-checkbox-group'},{'name': 'ChipsComponent', 'selector': 'nui-chips'},{'name': 'ChipsOverflowComponent', 'selector': 'nui-chips-overflow'},{'name': 'ComboboxComponent', 'selector': 'nui-combobox'},{'name': 'ComboboxV2Component', 'selector': 'nui-combobox-v2'},{'name': 'CustomValidationMessageComponent', 'selector': 'nui-custom-validation-message'},{'name': 'DatePickerComponent', 'selector': 'nui-date-picker'},{'name': 'DateTimePickerComponent', 'selector': 'nui-date-time-picker'},{'name': 'DialogComponent', 'selector': 'nui-dialog-window'},{'name': 'ExpanderComponent', 'selector': 'nui-expander'},{'name': 'FormFieldComponent', 'selector': 'nui-form-field'},{'name': 'IconComponent', 'selector': 'nui-icon'},{'name': 'ImageComponent', 'selector': 'nui-image'},{'name': 'MenuComponent', 'selector': 'nui-menu'},{'name': 'MessageComponent', 'selector': 'nui-message'},{'name': 'OverlayComponent', 'selector': 'nui-overlay'},{'name': 'PaginatorComponent', 'selector': 'nui-paginator'},{'name': 'PanelComponent', 'selector': 'nui-panel'},{'name': 'PopoverComponent', 'selector': 'nui-popover'},{'name': 'PopupComponent', 'selector': 'nui-popup'},{'name': 'PopupDeprecatedComponent', 'selector': 'nui-popup-deprecated'},{'name': 'ProgressComponent', 'selector': 'nui-progress'},{'name': 'QuickPickerComponent', 'selector': 'nui-quick-picker'},{'name': 'RadioGroupComponent', 'selector': 'nui-radio-group'},{'name': 'RepeatComponent', 'selector': 'nui-repeat'},{'name': 'SearchComponent', 'selector': 'nui-search'},{'name': 'SelectComponent', 'selector': 'nui-select'},{'name': 'SelectV2Component', 'selector': 'nui-select-v2'},{'name': 'SheetComponent', 'selector': 'nui-sheet'},{'name': 'SheetGroupComponent', 'selector': 'nui-sheet-group'},{'name': 'SorterComponent', 'selector': 'nui-sorter'},{'name': 'SpinnerComponent', 'selector': 'nui-spinner'},{'name': 'SwitchComponent', 'selector': 'nui-switch'},{'name': 'TabHeadingGroupComponent', 'selector': 'nui-tab-heading-group'},{'name': 'TableComponent', 'selector': 'nui-table, table[nui-table]'},{'name': 'TextboxComponent', 'selector': 'nui-textbox'},{'name': 'TextboxNumberComponent', 'selector': 'nui-textbox-number'},{'name': 'TimeFrameBarComponent', 'selector': 'nui-time-frame-bar'},{'name': 'TimeFramePickerComponent', 'selector': 'nui-time-frame-picker'},{'name': 'TimePickerComponent', 'selector': 'nui-time-picker'},{'name': 'ToastComponent', 'selector': 'nui-toast-component'},{'name': 'ToolbarComponent', 'selector': 'nui-toolbar'},{'name': 'WizardComponent', 'selector': 'nui-wizard'},{'name': 'WizardHorizontalComponent', 'selector': 'nui-wizard-horizontal'},{'name': 'WizardStepComponent', 'selector': 'nui-wizard-step'}];
     var DIRECTIVES = [{'name': 'ClickInterceptorDirective', 'selector': '[nuiClickInterceptor]'},{'name': 'DndDropTargetDirective', 'selector': '[cdkDropList][nuiDndDropTarget]'},{'name': 'MarkAsSelectedItemDirective', 'selector': '[nuiMarkAsSelectedItem]'},{'name': 'TableStickyHeaderDirective', 'selector': 'cdk-virtual-scroll-viewport[tableStickyHeader]'},{'name': 'TableVirtualScrollDirective', 'selector': '[tableVirtualScroll]:not([rowCount])'},{'name': 'TableVirtualScrollLinearDirective', 'selector': '[tableVirtualScroll]:not([offset])'},{'name': 'TooltipDirective', 'selector': '[nuiTooltip]'},{'name': 'WizardDirective', 'selector': '[nuiWizard]'},{'name': 'WizardStepFooterDirective', 'selector': '[nuiWizardStepFooter]'},{'name': 'WizardStepLabelDirective', 'selector': '[nuiWizardStepLabel]'}];
     var ACTUAL_COMPONENT = {'name': 'PopupDeprecatedComponent'};

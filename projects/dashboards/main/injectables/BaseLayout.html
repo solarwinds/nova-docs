@@ -142,7 +142,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/lib/components/layouts/base-layout.ts:18</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/lib/components/layouts/base-layout.ts:29</a></div>
                             </td>
                         </tr>
 
@@ -234,8 +234,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="25"
-                            class="link-to-prism">src/lib/components/layouts/base-layout.ts:25</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="37"
+                            class="link-to-prism">src/lib/components/layouts/base-layout.ts:37</a></div>
                 </td>
             </tr>
 
@@ -275,8 +275,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="36"
-                            class="link-to-prism">src/lib/components/layouts/base-layout.ts:36</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="48"
+                            class="link-to-prism">src/lib/components/layouts/base-layout.ts:48</a></div>
                 </td>
             </tr>
 
@@ -316,8 +316,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="27"
-                            class="link-to-prism">src/lib/components/layouts/base-layout.ts:27</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="39"
+                            class="link-to-prism">src/lib/components/layouts/base-layout.ts:39</a></div>
                 </td>
             </tr>
 
@@ -388,8 +388,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="43"
-                            class="link-to-prism">src/lib/components/layouts/base-layout.ts:43</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="55"
+                            class="link-to-prism">src/lib/components/layouts/base-layout.ts:55</a></div>
                 </td>
             </tr>
 
@@ -429,8 +429,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="48"
-                            class="link-to-prism">src/lib/components/layouts/base-layout.ts:48</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="60"
+                            class="link-to-prism">src/lib/components/layouts/base-layout.ts:60</a></div>
                 </td>
             </tr>
 
@@ -516,7 +516,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/lib/components/layouts/base-layout.ts:20</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/lib/components/layouts/base-layout.ts:32</a></div>
                             </td>
                         </tr>
 
@@ -544,7 +544,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/lib/components/layouts/base-layout.ts:12</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/lib/components/layouts/base-layout.ts:23</a></div>
                             </td>
                         </tr>
 
@@ -572,7 +572,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/lib/components/layouts/base-layout.ts:14</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/lib/components/layouts/base-layout.ts:25</a></div>
                             </td>
                         </tr>
 
@@ -585,16 +585,27 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ChangeDetectorRef, DoCheck, Injectable, Input, OnChanges, OnDestroy, SimpleChanges } from &quot;@angular/core&quot;;
-import { LoggerService } from &quot;@nova-ui/bits&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+    ChangeDetectorRef,
+    DoCheck,
+    Injectable,
+    Input,
+    OnChanges,
+    OnDestroy,
+    SimpleChanges,
+} from &quot;@angular/core&quot;;
 import { Subject } from &quot;rxjs&quot;;
+
+import { LoggerService } from &quot;@nova-ui/bits&quot;;
 
 import { IValueChange, mergeChanges } from &quot;../../functions/merge-changes&quot;;
 import { PizzagnaService } from &quot;../../pizzagna/services/pizzagna.service&quot;;
 import { IComponentConfiguration, IHasChangeDetector } from &quot;../../types&quot;;
 
 @Injectable()
-export abstract class BaseLayout implements IHasChangeDetector, OnChanges, DoCheck, OnDestroy {
+export abstract class BaseLayout
+    implements IHasChangeDetector, OnChanges, DoCheck, OnDestroy
+{
     // components config from &#x27;pizza&#x27;
     public nodeComponentsConfigs: IComponentConfiguration[];
     // result config from merging &#x27;nodeComponentsConfig&#x27; and parent &#x27;template&#x27;
@@ -604,10 +615,11 @@ export abstract class BaseLayout implements IHasChangeDetector, OnChanges, DoChe
 
     @Input() public template: Partial&lt;IComponentConfiguration&gt;;
 
-    constructor(public changeDetector: ChangeDetectorRef,
-                protected pizzagnaService: PizzagnaService,
-                protected logger: LoggerService) {
-    }
+    constructor(
+        public changeDetector: ChangeDetectorRef,
+        protected pizzagnaService: PizzagnaService,
+        protected logger: LoggerService
+    ) {}
 
     public abstract getNodes(): string[];
 
@@ -639,12 +651,18 @@ export abstract class BaseLayout implements IHasChangeDetector, OnChanges, DoChe
     private checkNodeConfigs(): boolean {
         const nodes &#x3D; this.getNodes();
 
-        if (!this.nodeComponentsConfigs || nodes.length !&#x3D;&#x3D; this.nodeComponentsConfigs.length) {
+        if (
+            !this.nodeComponentsConfigs ||
+            nodes.length !&#x3D;&#x3D; this.nodeComponentsConfigs.length
+        ) {
             return true;
         }
 
         for (let i &#x3D; 0; i &lt; nodes.length; i++) {
-            if (this.pizzagnaService.getComponent(nodes[i]) !&#x3D;&#x3D; this.nodeComponentsConfigs[i]) {
+            if (
+                this.pizzagnaService.getComponent(nodes[i]) !&#x3D;&#x3D;
+                this.nodeComponentsConfigs[i]
+            ) {
                 return true;
             }
         }
@@ -655,26 +673,35 @@ export abstract class BaseLayout implements IHasChangeDetector, OnChanges, DoChe
     private updateNodeComponentConfigs() {
         const nodes &#x3D; this.getNodes();
 
-        this.nodeComponentsConfigs &#x3D; nodes &amp;&amp; nodes.map(n &#x3D;&gt; {
-            const c &#x3D; this.pizzagnaService.getComponent(n);
-            if (typeof c &#x3D;&#x3D;&#x3D; &quot;undefined&quot;) {
-                throw new Error(&quot;No component with id &#x27;&quot; + n + &quot;&#x27; was defined in the configuration.&quot;);
-            }
-            return c;
-        });
+        this.nodeComponentsConfigs &#x3D;
+            nodes &amp;&amp;
+            nodes.map((n) &#x3D;&gt; {
+                const c &#x3D; this.pizzagnaService.getComponent(n);
+                if (typeof c &#x3D;&#x3D;&#x3D; &quot;undefined&quot;) {
+                    throw new Error(
+                        &quot;No component with id &#x27;&quot; +
+                            n +
+                            &quot;&#x27; was defined in the configuration.&quot;
+                    );
+                }
+                return c;
+            });
     }
 
     private updateNodeConfigs(changes?: SimpleChanges) {
-        this.nodeConfigs &#x3D; mergeChanges(this.nodeConfigs,
-                                        this.getTemplateChangeForNodes(changes),
-                                        this.getNodeComponentsConfigs()
+        this.nodeConfigs &#x3D; mergeChanges(
+            this.nodeConfigs,
+            this.getTemplateChangeForNodes(changes),
+            this.getNodeComponentsConfigs()
         );
     }
 
     private getNodeComponentsConfigs() {
         const nodeComponentsConfigsChanges: IValueChange &#x3D; {
             currentValue: undefined,
-            previousValue: this.nodeComponentsConfigs ? [...this.nodeComponentsConfigs] : undefined,
+            previousValue: this.nodeComponentsConfigs
+                ? [...this.nodeComponentsConfigs]
+                : undefined,
         };
         this.updateNodeComponentConfigs();
         nodeComponentsConfigsChanges.currentValue &#x3D; this.nodeComponentsConfigs;
@@ -689,10 +716,16 @@ export abstract class BaseLayout implements IHasChangeDetector, OnChanges, DoChe
             template &amp;&amp; this.getNodes()?.map(() &#x3D;&gt; template);
 
         return {
-            currentValue: getTemplatePerNode(changesTemplate ? changesTemplate.currentValue : this.template),
+            currentValue: getTemplatePerNode(
+                changesTemplate ? changesTemplate.currentValue : this.template
+            ),
             previousValue: changesNodes
                 ? this.template
-                : getTemplatePerNode(changesTemplate ? changesTemplate.previousValue : this.template),
+                : getTemplatePerNode(
+                      changesTemplate
+                          ? changesTemplate.previousValue
+                          : this.template
+                  ),
         };
     }
 }

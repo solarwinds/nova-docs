@@ -146,9 +146,13 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import sum from &quot;lodash/sum&quot;;
 
-import { IProportionalAggregatorFn, IProportionalDonutContentAggregatorProperties } from &quot;./types&quot;;
+import {
+    IProportionalAggregatorFn,
+    IProportionalDonutContentAggregatorProperties,
+} from &quot;./types&quot;;
 
-export interface IPercentageAggregatorProperties extends IProportionalDonutContentAggregatorProperties {
+export interface IPercentageAggregatorProperties
+    extends IProportionalDonutContentAggregatorProperties {
     /** if &quot;true&quot; it&#x27;ll be 58 not 0.58 */
     base100?: boolean;
 }
@@ -158,26 +162,29 @@ export interface IPercentageAggregatorProperties extends IProportionalDonutConte
  *
  * Receives all the metrics from the donut and gets the active metric percentage.
  */
-export const percentageAggregator: IProportionalAggregatorFn &#x3D; (origin, properties?: IPercentageAggregatorProperties) &#x3D;&gt; {
-    const data &#x3D; origin.map(v &#x3D;&gt; v.data[0]);
+export const percentageAggregator: IProportionalAggregatorFn &#x3D; (
+    origin,
+    properties?: IPercentageAggregatorProperties
+) &#x3D;&gt; {
+    const data &#x3D; origin.map((v) &#x3D;&gt; v.data[0]);
     const { activeMetricId, base100 } &#x3D; properties || {};
 
     const summed &#x3D; sum(data);
 
     let metric &#x3D; data[0];
     if (activeMetricId) {
-        metric &#x3D; origin.find(entry &#x3D;&gt; entry.id &#x3D;&#x3D;&#x3D; activeMetricId)?.data[0];
+        metric &#x3D; origin.find((entry) &#x3D;&gt; entry.id &#x3D;&#x3D;&#x3D; activeMetricId)?.data[0];
 
         if (!metric) {
-            console.warn(&#x60;No metric with id: ${activeMetricId} found. Taking first available.&#x60;);
+            console.warn(
+                &#x60;No metric with id: ${activeMetricId} found. Taking first available.&#x60;
+            );
         }
     }
 
     const percentage &#x3D; metric / summed;
 
-    let finalValue &#x3D; base100
-        ? percentage * 100
-        : percentage;
+    let finalValue &#x3D; base100 ? percentage * 100 : percentage;
     // round to 2 digits on fractional part
     finalValue &#x3D; Math.round(finalValue * 100) / 100;
 

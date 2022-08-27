@@ -103,14 +103,17 @@ interface ICache {
 }
 
 /** @ignore */
-@Injectable({providedIn: &quot;root&quot;})
+@Injectable({ providedIn: &quot;root&quot; })
 export class TransientCacheService implements ITransientCache {
     private cache: ICache &#x3D; {};
 
-    constructor(private utilService: UtilService) {
-    }
+    constructor(private utilService: UtilService) {}
 
-    public put &#x3D; async (key: string, value: any, lifetime: number): Promise&lt;void&gt; &#x3D;&gt; {
+    public put &#x3D; async (
+        key: string,
+        value: any,
+        lifetime: number
+    ): Promise&lt;void&gt; &#x3D;&gt; {
         if (typeof key &#x3D;&#x3D;&#x3D; &quot;undefined&quot; || key &#x3D;&#x3D;&#x3D; null) {
             return Promise.reject(&quot;no key&quot;);
         }
@@ -123,16 +126,16 @@ export class TransientCacheService implements ITransientCache {
             .pipe(
                 map(() &#x3D;&gt; {
                     this.remove(key);
-                }))
+                })
+            )
             .toPromise();
-    }
+    };
 
     public remove &#x3D; (key: string): void &#x3D;&gt; {
         delete this.cache[key];
-    }
+    };
 
-    public get &#x3D; (key: string): any &#x3D;&gt;
-        this.cache[key]
+    public get &#x3D; (key: string): any &#x3D;&gt; this.cache[key];
 
     public removeAll &#x3D; (): void &#x3D;&gt; {
         for (const key in this.cache) {
@@ -140,27 +143,27 @@ export class TransientCacheService implements ITransientCache {
                 this.remove(key);
             }
         }
-    }
+    };
 
     public destroy &#x3D; (): void &#x3D;&gt; {
         this.removeAll();
-    }
+    };
 
-    public entryCount &#x3D; (): number &#x3D;&gt;
-        Object.keys(this.cache).length
+    public entryCount &#x3D; (): number &#x3D;&gt; Object.keys(this.cache).length;
 
     public size &#x3D; (): number &#x3D;&gt; {
         let byteCount &#x3D; 0;
 
         for (const key in this.cache) {
             if (this.cache.hasOwnProperty(key)) {
-                byteCount +&#x3D; this.utilService.sizeof(key)
-                    + this.utilService.sizeof(this.get(key));
+                byteCount +&#x3D;
+                    this.utilService.sizeof(key) +
+                    this.utilService.sizeof(this.get(key));
             }
         }
 
         return byteCount;
-    }
+    };
 }
 </code></pre>
     </div>

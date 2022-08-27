@@ -102,7 +102,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/lib/services/url-interaction.service.ts:7</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/lib/services/url-interaction.service.ts:8</a></div>
                             </td>
                         </tr>
 
@@ -236,17 +236,17 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &quot;@angular/core&quot;;
+
 import { LoggerService } from &quot;@nova-ui/bits&quot;;
 
 @Injectable({
     providedIn: &quot;root&quot;,
 })
 export class UrlInteractionService {
-
     constructor(private logger: LoggerService) {}
 
-    public template(url: string, data: any): string{
-        const regex &#x3D; new RegExp(/\$\{([a-zA-Z0-9.]*)\}/g)
+    public template(url: string, data: any): string {
+        const regex &#x3D; new RegExp(/\$\{([a-zA-Z0-9.]*)\}/g);
         return url.replace(regex, (match, captured) &#x3D;&gt; {
             try {
                 return this.evaluate(captured.split(&quot;.&quot;), data) ?? &quot;&quot;;
@@ -258,7 +258,7 @@ export class UrlInteractionService {
     }
 
     private evaluate(expresion: string[], data: any): string {
-        return expresion.reduce((result, item) &#x3D;&gt; result[item], data)
+        return expresion.reduce((result, item) &#x3D;&gt; result[item], data);
     }
 }
 </code></pre>

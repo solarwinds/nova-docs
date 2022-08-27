@@ -179,7 +179,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/lib/pizzagna/directives/component-portal/component-portal.directive.ts:47</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/lib/pizzagna/directives/component-portal/component-portal.directive.ts:50</a></div>
                             </td>
                         </tr>
 
@@ -283,7 +283,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/lib/pizzagna/directives/component-portal/component-portal.directive.ts:34</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/lib/pizzagna/directives/component-portal/component-portal.directive.ts:37</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -304,7 +304,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/lib/pizzagna/directives/component-portal/component-portal.directive.ts:35</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/lib/pizzagna/directives/component-portal/component-portal.directive.ts:38</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -325,7 +325,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/lib/pizzagna/directives/component-portal/component-portal.directive.ts:38</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/lib/pizzagna/directives/component-portal/component-portal.directive.ts:41</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -346,7 +346,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/lib/pizzagna/directives/component-portal/component-portal.directive.ts:36</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/lib/pizzagna/directives/component-portal/component-portal.directive.ts:39</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -367,7 +367,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/lib/pizzagna/directives/component-portal/component-portal.directive.ts:37</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/lib/pizzagna/directives/component-portal/component-portal.directive.ts:40</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -391,7 +391,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/lib/pizzagna/directives/component-portal/component-portal.directive.ts:40</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/lib/pizzagna/directives/component-portal/component-portal.directive.ts:43</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -428,8 +428,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="103"
-                            class="link-to-prism">src/lib/pizzagna/directives/component-portal/component-portal.directive.ts:103</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="117"
+                            class="link-to-prism">src/lib/pizzagna/directives/component-portal/component-portal.directive.ts:117</a></div>
                 </td>
             </tr>
 
@@ -503,7 +503,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/lib/pizzagna/directives/component-portal/component-portal.directive.ts:42</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/lib/pizzagna/directives/component-portal/component-portal.directive.ts:45</a></div>
                             </td>
                         </tr>
 
@@ -534,12 +534,13 @@ import {
     SimpleChanges,
     StaticProvider,
 } from &quot;@angular/core&quot;;
-import { IEvent, LoggerService } from &quot;@nova-ui/bits&quot;;
 import isArray from &quot;lodash/isArray&quot;;
 import values from &quot;lodash/values&quot;;
 import xor from &quot;lodash/xor&quot;;
 import { ReplaySubject, Subject, Subscription } from &quot;rxjs&quot;;
 import { takeUntil } from &quot;rxjs/operators&quot;;
+
+import { IEvent, LoggerService } from &quot;@nova-ui/bits&quot;;
 
 import { ProviderRegistryService } from &quot;../../../services/provider-registry.service&quot;;
 import { IConfigurable, IProviderConfiguration } from &quot;../../../types&quot;;
@@ -549,7 +550,9 @@ import { ComponentPortalService } from &quot;../../services/component-portal.ser
     selector: &quot;[nuiComponentPortal]&quot;,
     exportAs: &quot;nuiComponentPortal&quot;,
 })
-export class ComponentPortalDirective implements OnInit, AfterViewInit, OnDestroy, OnChanges {
+export class ComponentPortalDirective
+    implements OnInit, AfterViewInit, OnDestroy, OnChanges
+{
     @Input() public componentId: string;
     @Input() public componentType: string | Function;
     @Input() public properties: Record&lt;string, any&gt;;
@@ -565,12 +568,13 @@ export class ComponentPortalDirective implements OnInit, AfterViewInit, OnDestro
     private destroy$ &#x3D; new Subject();
     private changesSubscription?: Subscription;
 
-    constructor(private injector: Injector,
-                private logger: LoggerService,
-                private portalService: ComponentPortalService,
-                private renderer: Renderer2,
-                private providerRegistry: ProviderRegistryService) {
-    }
+    constructor(
+        private injector: Injector,
+        private logger: LoggerService,
+        private portalService: ComponentPortalService,
+        private renderer: Renderer2,
+        private providerRegistry: ProviderRegistryService
+    ) {}
 
     public ngOnInit(): void {
         this.logger.debug(&quot;Portal created:&quot;, this.componentId);
@@ -578,7 +582,7 @@ export class ComponentPortalDirective implements OnInit, AfterViewInit, OnDestro
     }
 
     public ngAfterViewInit(): void {
-        Object.keys(this.providerInstances).forEach(key &#x3D;&gt; {
+        Object.keys(this.providerInstances).forEach((key) &#x3D;&gt; {
             const provider &#x3D; this.providerInstances[key];
             if (provider.ngAfterViewInit) {
                 provider.ngAfterViewInit();
@@ -592,7 +596,10 @@ export class ComponentPortalDirective implements OnInit, AfterViewInit, OnDestro
 
         if (providersChange &amp;&amp; !providersChange.isFirstChange()) {
             if (this.checkForProviderChanges(providersChange)) {
-                this.logger.debug(&quot;Portal recreated (provider change):&quot;, this.componentId);
+                this.logger.debug(
+                    &quot;Portal recreated (provider change):&quot;,
+                    this.componentId
+                );
                 this.recreatePortal();
                 recreated &#x3D; true; // we want to prevent multiple recreations within one ngOnChanges cycle
             } else {
@@ -600,8 +607,15 @@ export class ComponentPortalDirective implements OnInit, AfterViewInit, OnDestro
             }
         }
 
-        if (changes.componentType &amp;&amp; !changes.componentType.isFirstChange() &amp;&amp; !recreated) {
-            this.logger.debug(&quot;Portal recreated (component change):&quot;, this.componentId);
+        if (
+            changes.componentType &amp;&amp;
+            !changes.componentType.isFirstChange() &amp;&amp;
+            !recreated
+        ) {
+            this.logger.debug(
+                &quot;Portal recreated (component change):&quot;,
+                this.componentId
+            );
             this.recreatePortal();
         }
 
@@ -624,19 +638,31 @@ export class ComponentPortalDirective implements OnInit, AfterViewInit, OnDestro
 
         // ctrl+shift+click on a pizzagna to get a dump of its properties
         // this will propagate through the parent components, so it should dump the parent pizzagnas as well
-        this.renderer.listen(componentRef.location.nativeElement, &quot;click&quot;, (event: MouseEvent) &#x3D;&gt; {
-            // event.metaKey is a CMD key for Mac
-            if ((event.ctrlKey || event.metaKey) &amp;&amp; event.shiftKey &amp;&amp; event.button &#x3D;&#x3D;&#x3D; 0) {
-                console.log(&quot;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; PIZZAGNA DUMP &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&quot;);
-                console.log(&quot;componentId:&quot;, this.componentId);
-                console.log(&quot;component:&quot;, this.component);
-                console.log(&quot;componentType:&quot;, this.componentType);
-                console.log(&quot;properties:&quot;, this.properties);
-                console.log(&quot;providers:&quot;, this.providers);
-                console.log(&quot;providerInstances:&quot;, this.providerInstances);
-                console.log(&quot;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&quot;);
+        this.renderer.listen(
+            componentRef.location.nativeElement,
+            &quot;click&quot;,
+            (event: MouseEvent) &#x3D;&gt; {
+                // event.metaKey is a CMD key for Mac
+                if (
+                    (event.ctrlKey || event.metaKey) &amp;&amp;
+                    event.shiftKey &amp;&amp;
+                    event.button &#x3D;&#x3D;&#x3D; 0
+                ) {
+                    console.log(
+                        &quot;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; PIZZAGNA DUMP &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&quot;
+                    );
+                    console.log(&quot;componentId:&quot;, this.componentId);
+                    console.log(&quot;component:&quot;, this.component);
+                    console.log(&quot;componentType:&quot;, this.componentType);
+                    console.log(&quot;properties:&quot;, this.properties);
+                    console.log(&quot;providers:&quot;, this.providers);
+                    console.log(&quot;providerInstances:&quot;, this.providerInstances);
+                    console.log(
+                        &quot;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&quot;
+                    );
+                }
             }
-        });
+        );
 
         for (const key of Object.keys(this.providerInstances)) {
             const provider &#x3D; this.providerInstances[key];
@@ -674,13 +700,18 @@ export class ComponentPortalDirective implements OnInit, AfterViewInit, OnDestro
             injector &#x3D; this.updateProviders(injector);
         }
 
-        this.portal &#x3D; this.portalService.createComponentPortal(this.componentType, injector);
+        this.portal &#x3D; this.portalService.createComponentPortal(
+            this.componentType,
+            injector
+        );
 
         // apply initial property values to the freshly (re)created component
         if (this.properties) {
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
             for (const key of Object.keys(this.properties)) {
-                this.propertiesChanges.next(new SimpleChange(undefined, this.properties, true));
+                this.propertiesChanges.next(
+                    new SimpleChange(undefined, this.properties, true)
+                );
             }
         }
     }
@@ -690,7 +721,9 @@ export class ComponentPortalDirective implements OnInit, AfterViewInit, OnDestro
         const registeredProviders &#x3D; providerKeys.reduce((acc, next) &#x3D;&gt; {
             // for cases when providerId is just empty string, null or undefined (for example adding a tile doesn&#x27;t provide a DS to it)
             if (this.providers[next].providerId) {
-                acc[next] &#x3D; this.providerRegistry.getProvider(this.providers[next].providerId);
+                acc[next] &#x3D; this.providerRegistry.getProvider(
+                    this.providers[next].providerId
+                );
             }
             return acc;
         }, {} as Record&lt;string, StaticProvider&gt;);
@@ -701,20 +734,29 @@ export class ComponentPortalDirective implements OnInit, AfterViewInit, OnDestro
         });
 
         this.providerInstances &#x3D; providerKeys.reduce((acc, next) &#x3D;&gt; {
-            const registeredProvider &#x3D; (registeredProviders[next] as any);
+            const registeredProvider &#x3D; registeredProviders[next] as any;
             const providerConfig &#x3D; this.providers[next];
             if (registeredProvider) {
                 // TODO: Why do we pass null to the injectFlags parameter?
-                // @ts-ignore
-                const injections &#x3D; portalInjector.get(registeredProvider.provide, null, null);
+                const injections &#x3D; portalInjector.get(
+                    registeredProvider.provide,
+                    null,
+                    // @ts-ignore
+                    null
+                );
                 const providerInstance &#x3D; isArray(injections)
-                    ? (injections as any).find((v: any) &#x3D;&gt; v instanceof registeredProvider.useClass)
+                    ? (injections as any).find(
+                          (v: any) &#x3D;&gt; v instanceof registeredProvider.useClass
+                      )
                     : injections;
 
                 if (!providerInstance) {
                     throw new Error(&quot;Provider &#x27;&quot; + next + &quot;&#x27; does not exist.&quot;);
                 }
-                if (providerInstance.updateConfiguration &amp;&amp; providerConfig.properties) {
+                if (
+                    providerInstance.updateConfiguration &amp;&amp;
+                    providerConfig.properties
+                ) {
                     providerInstance.updateConfiguration({
                         providerKey: next,
                         ...(providerConfig.properties || {}),
@@ -724,7 +766,10 @@ export class ComponentPortalDirective implements OnInit, AfterViewInit, OnDestro
 
                 acc[next] &#x3D; providerInstance;
             } else if (providerConfig.providerId) {
-                this.logger.error(&quot;There&#x27;s no registered provider for id&quot;, next);
+                this.logger.error(
+                    &quot;There&#x27;s no registered provider for id&quot;,
+                    next
+                );
             }
             return acc;
         }, this.providerInstances);
@@ -747,16 +792,22 @@ export class ComponentPortalDirective implements OnInit, AfterViewInit, OnDestro
             }
             const providerInstance &#x3D; this.providerInstances[providerKey];
             if (!providerInstance) {
-                throw new Error(&quot;Provider &#x27;&quot; + providerKey + &quot;&#x27; does not exist.&quot;);
+                throw new Error(
+                    &quot;Provider &#x27;&quot; + providerKey + &quot;&#x27; does not exist.&quot;
+                );
             }
 
             const previousValue &#x3D; providersChange.previousValue[providerKey];
             const currentValue &#x3D; providersChange.currentValue[providerKey];
 
-            const previousProperties &#x3D; previousValue &amp;&amp; previousValue.properties;
+            const previousProperties &#x3D;
+                previousValue &amp;&amp; previousValue.properties;
             const currentProperties &#x3D; currentValue &amp;&amp; currentValue.properties;
 
-            if (previousProperties !&#x3D;&#x3D; currentProperties &amp;&amp; providerInstance.updateConfiguration) {
+            if (
+                previousProperties !&#x3D;&#x3D; currentProperties &amp;&amp;
+                providerInstance.updateConfiguration
+            ) {
                 (providerInstance as IConfigurable).updateConfiguration({
                     providerKey,
                     ...currentProperties,
@@ -770,8 +821,11 @@ export class ComponentPortalDirective implements OnInit, AfterViewInit, OnDestro
             return;
         }
 
-        for (const output of this.outputs.filter(o &#x3D;&gt; this.component[o] instanceof EventEmitter)) {
-            this.component[output].pipe(takeUntil(this.destroy$))
+        for (const output of this.outputs.filter(
+            (o) &#x3D;&gt; this.component[o] instanceof EventEmitter
+        )) {
+            this.component[output]
+                .pipe(takeUntil(this.destroy$))
                 .subscribe(($event: any) &#x3D;&gt; {
                     this.output.emit({
                         id: output,
@@ -782,14 +836,25 @@ export class ComponentPortalDirective implements OnInit, AfterViewInit, OnDestro
     }
 
     private checkForProviderChanges(change: SimpleChange): boolean {
-        const previousKeys &#x3D; change.previousValue ? Object.keys(change.previousValue) : [];
-        const currentKeys &#x3D; change.currentValue ? Object.keys(change.currentValue) : [];
-        if (previousKeys.length !&#x3D;&#x3D; currentKeys.length || xor(previousKeys, currentKeys).length &gt; 0) {
+        const previousKeys &#x3D; change.previousValue
+            ? Object.keys(change.previousValue)
+            : [];
+        const currentKeys &#x3D; change.currentValue
+            ? Object.keys(change.currentValue)
+            : [];
+        if (
+            previousKeys.length !&#x3D;&#x3D; currentKeys.length ||
+            xor(previousKeys, currentKeys).length &gt; 0
+        ) {
             return true;
         }
 
-        const previousIds &#x3D; Object.keys(change.previousValue).map((key: string) &#x3D;&gt; change.previousValue[key].providerId);
-        const currentIds &#x3D; Object.keys(change.currentValue).map((key: string) &#x3D;&gt; change.currentValue[key].providerId);
+        const previousIds &#x3D; Object.keys(change.previousValue).map(
+            (key: string) &#x3D;&gt; change.previousValue[key].providerId
+        );
+        const currentIds &#x3D; Object.keys(change.currentValue).map(
+            (key: string) &#x3D;&gt; change.currentValue[key].providerId
+        );
         if (xor(previousIds, currentIds).length &gt; 0) {
             return true;
         }
@@ -837,7 +902,11 @@ export class ComponentPortalDirective implements OnInit, AfterViewInit, OnDestro
                 this.component[key] &#x3D; properties[key];
                 // we&#x27;re simulating angular by calling ngOnChanges manually
                 if (this.component.ngOnChanges) {
-                    changes[key] &#x3D; new SimpleChange(previousValue, properties[key], change.isFirstChange());
+                    changes[key] &#x3D; new SimpleChange(
+                        previousValue,
+                        properties[key],
+                        change.isFirstChange()
+                    );
                 }
             }
         }
@@ -850,12 +919,13 @@ export class ComponentPortalDirective implements OnInit, AfterViewInit, OnDestro
             if (changeDetector) {
                 changeDetector.markForCheck();
             } else {
-                this.logger.warn(&#x60;Property &#x27;changeDetector&#x27; is missing on component &#x27;${this.componentType}&#x27;,&#x60; +
-                    &#x60; so dynamic refresh of given component might not work.&#x60;);
+                this.logger.warn(
+                    &#x60;Property &#x27;changeDetector&#x27; is missing on component &#x27;${this.componentType}&#x27;,&#x60; +
+                        &#x60; so dynamic refresh of given component might not work.&#x60;
+                );
             }
         }
     }
-
 }
 </code></pre>
     </div>

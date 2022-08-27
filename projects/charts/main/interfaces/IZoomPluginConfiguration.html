@@ -140,14 +140,23 @@ import isUndefined from &quot;lodash/isUndefined&quot;;
 import { Subject } from &quot;rxjs&quot;;
 import { takeUntil } from &quot;rxjs/operators&quot;;
 
-import { INTERACTION_COORDINATES_EVENT, INTERACTION_VALUES_ACTIVE_EVENT, SET_DOMAIN_EVENT, STANDARD_RENDER_LAYERS } from &quot;../../constants&quot;;
+import {
+    INTERACTION_COORDINATES_EVENT,
+    INTERACTION_VALUES_ACTIVE_EVENT,
+    SET_DOMAIN_EVENT,
+    STANDARD_RENDER_LAYERS,
+} from &quot;../../constants&quot;;
 import { RenderLayerName } from &quot;../../renderers/types&quot;;
 import { ChartPlugin } from &quot;../common/chart-plugin&quot;;
 import { IScale } from &quot;../common/scales/types&quot;;
-import { D3Selection, IChartEvent, InteractionType, ISetDomainEventPayload } from &quot;../common/types&quot;;
+import {
+    D3Selection,
+    IChartEvent,
+    InteractionType,
+    ISetDomainEventPayload,
+} from &quot;../common/types&quot;;
 import { Grid } from &quot;../grid/grid&quot;;
 import { XYGrid } from &quot;../grid/xy-grid&quot;;
-
 import { IInteractionCoordinatesPayload } from &quot;./types&quot;;
 
 export interface IZoomPluginConfiguration {
@@ -191,7 +200,9 @@ export class ZoomPlugin extends ChartPlugin {
             clipped: true,
         });
 
-        this.chart.getEventBus().getStream(INTERACTION_COORDINATES_EVENT)
+        this.chart
+            .getEventBus()
+            .getStream(INTERACTION_COORDINATES_EVENT)
             .pipe(takeUntil(this.destroy$))
             .subscribe((chartEvent: IChartEvent) &#x3D;&gt; {
                 if (chartEvent.broadcast &amp;&amp; !this.config.enableExternalEvents) {
@@ -210,33 +221,41 @@ export class ZoomPlugin extends ChartPlugin {
             });
 
         this.brush &#x3D; brushX();
-        this.brushElement &#x3D; this.zoomBrushLayer.append(&quot;g&quot;)
+        this.brushElement &#x3D; this.zoomBrushLayer
+            .append(&quot;g&quot;)
             .attr(&quot;class&quot;, &quot;brush&quot;);
 
         // engage pointer capture to confine mouse events to the interactive area
         // (in other words, if the &#x27;mouseup&#x27; is physically triggered outside the interactive area,
         // the pointer capture allows us to still zoom based on that event)
-        this.chart.getGrid().getInteractiveArea()
-            .on(&quot;pointerdown&quot;, () &#x3D;&gt; event.target.setPointerCapture(event.pointerId))
-            .on(&quot;pointerup&quot;, () &#x3D;&gt; event.target.releasePointerCapture(event.pointerId));
+        this.chart
+            .getGrid()
+            .getInteractiveArea()
+            .on(&quot;pointerdown&quot;, () &#x3D;&gt;
+                event.target.setPointerCapture(event.pointerId)
+            )
+            .on(&quot;pointerup&quot;, () &#x3D;&gt;
+                event.target.releasePointerCapture(event.pointerId)
+            );
     }
 
     public updateDimensions(): void {
         const dimension &#x3D; this.grid.config().dimension;
 
         // set the brush area&#x27;s dimensions
-        this.brush.extent([[0, 0], [dimension.width(), dimension.height()]]);
+        this.brush.extent([
+            [0, 0],
+            [dimension.width(), dimension.height()],
+        ]);
 
         // render the brush area after we have dimensions
         this.brush(this.zoomBrushLayer.select(&quot;.brush&quot;));
 
         // prevent the brush from handling its own pointer events
-        this.brushElement.select(&quot;.overlay&quot;)
-            .style(&quot;pointer-events&quot;, &quot;none&quot;);
+        this.brushElement.select(&quot;.overlay&quot;).style(&quot;pointer-events&quot;, &quot;none&quot;);
 
         // remove stroke per mockups
-        this.brushElement.select(&quot;.selection&quot;)
-            .attr(&quot;stroke&quot;, null);
+        this.brushElement.select(&quot;.selection&quot;).attr(&quot;stroke&quot;, null);
     }
 
     public destroy(): void {
@@ -250,9 +269,12 @@ export class ZoomPlugin extends ChartPlugin {
             return;
         }
 
-        this.chart.getEventBus().getStream(INTERACTION_VALUES_ACTIVE_EVENT).next({ data: false });
+        this.chart
+            .getEventBus()
+            .getStream(INTERACTION_VALUES_ACTIVE_EVENT)
+            .next({ data: false });
         this.brushStartX &#x3D; xCoord;
-    }
+    };
 
     private brushMove &#x3D; (xCoord: number) &#x3D;&gt; {
         if (isUndefined(this.brushStartX)) {
@@ -261,7 +283,7 @@ export class ZoomPlugin extends ChartPlugin {
 
         const selection &#x3D; [this.brushStartX, xCoord].sort((a, b) &#x3D;&gt; a - b);
         this.brush.move(this.brushElement, selection as BrushSelection);
-    }
+    };
 
     private brushEnd &#x3D; (xCoord: number) &#x3D;&gt; {
         if (isUndefined(this.brushStartX)) {
@@ -270,7 +292,10 @@ export class ZoomPlugin extends ChartPlugin {
 
         const selection &#x3D; [this.brushStartX, xCoord].sort((a, b) &#x3D;&gt; a - b);
         this.brushStartX &#x3D; undefined;
-        this.chart.getEventBus().getStream(INTERACTION_VALUES_ACTIVE_EVENT).next({ data: true });
+        this.chart
+            .getEventBus()
+            .getStream(INTERACTION_VALUES_ACTIVE_EVENT)
+            .next({ data: true });
 
         // remove the brush
         this.brush.move(this.brushElement, null);
@@ -282,19 +307,29 @@ export class ZoomPlugin extends ChartPlugin {
 
         let widthCorrection &#x3D; 0;
         const gridConfig &#x3D; this.grid.config();
-        if (!gridConfig.disableRenderAreaWidthCorrection &amp;&amp; selection[1] &#x3D;&#x3D;&#x3D; gridConfig.dimension.width() - Grid.RENDER_AREA_WIDTH_CORRECTION) {
+        if (
+            !gridConfig.disableRenderAreaWidthCorrection &amp;&amp;
+            selection[1] &#x3D;&#x3D;&#x3D;
+                gridConfig.dimension.width() - Grid.RENDER_AREA_WIDTH_CORRECTION
+        ) {
             // Width correction to accommodate similar adjustment in grid. This ensures that the right-most column of pixels on the chart is selectable.
             widthCorrection &#x3D; Grid.RENDER_AREA_WIDTH_CORRECTION;
         }
 
-        const data: ISetDomainEventPayload &#x3D; xScales.reduce((result, next: IScale&lt;any&gt;) &#x3D;&gt; {
-            result[next.id] &#x3D; [selection[0], selection[1] as number + widthCorrection].map(x &#x3D;&gt; next.invert(x as number));
-            return result;
-        }, &lt;ISetDomainEventPayload&gt;{});
+        const data: ISetDomainEventPayload &#x3D; xScales.reduce(
+            (result, next: IScale&lt;any&gt;) &#x3D;&gt; {
+                result[next.id] &#x3D; [
+                    selection[0],
+                    (selection[1] as number) + widthCorrection,
+                ].map((x) &#x3D;&gt; next.invert(x as number));
+                return result;
+            },
+            &lt;ISetDomainEventPayload&gt;{}
+        );
 
         // zoom the chart
         this.chart.getEventBus().getStream(SET_DOMAIN_EVENT).next({ data });
-    }
+    };
 }
 </code></pre>
     </div>

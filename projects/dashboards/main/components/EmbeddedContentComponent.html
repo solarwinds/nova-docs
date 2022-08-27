@@ -180,7 +180,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/lib/components/embedded-content/embedded-content.component.ts:37</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/lib/components/embedded-content/embedded-content.component.ts:38</a></div>
                             </td>
                         </tr>
 
@@ -260,7 +260,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/lib/components/embedded-content/embedded-content.component.ts:32</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/lib/components/embedded-content/embedded-content.component.ts:33</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -280,7 +280,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/lib/components/embedded-content/embedded-content.component.ts:35</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/lib/components/embedded-content/embedded-content.component.ts:36</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -301,7 +301,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/lib/components/embedded-content/embedded-content.component.ts:31</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/lib/components/embedded-content/embedded-content.component.ts:32</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -327,7 +327,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/lib/components/embedded-content/embedded-content.component.ts:33</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/lib/components/embedded-content/embedded-content.component.ts:34</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -371,7 +371,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/lib/components/embedded-content/embedded-content.component.ts:37</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/lib/components/embedded-content/embedded-content.component.ts:38</a></div>
                             </td>
                         </tr>
 
@@ -399,7 +399,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/lib/components/embedded-content/embedded-content.component.ts:39</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/lib/components/embedded-content/embedded-content.component.ts:41</a></div>
                             </td>
                         </tr>
 
@@ -432,7 +432,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/lib/components/embedded-content/embedded-content.component.ts:29</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/lib/components/embedded-content/embedded-content.component.ts:30</a></div>
                             </td>
                         </tr>
 
@@ -471,8 +471,9 @@ import { EmbeddedContentMode } from &quot;../types&quot;;
     template: &#x60;&lt;div style&#x3D;&quot;width: 100%; height: 100%&quot; #anchor&gt;&lt;/div&gt;&#x60;,
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-
-export class EmbeddedContentComponent implements IHasChangeDetector, OnInit, OnChanges {
+export class EmbeddedContentComponent
+    implements IHasChangeDetector, OnInit, OnChanges
+{
     public static lateLoadKey &#x3D; &quot;EmbeddedContentComponent&quot;;
 
     @Input() public mode: EmbeddedContentMode;
@@ -483,41 +484,59 @@ export class EmbeddedContentComponent implements IHasChangeDetector, OnInit, OnC
 
     @ViewChild(&quot;anchor&quot;, { static: true }) anchor: ElementRef;
 
-    constructor(public changeDetector: ChangeDetectorRef,
+    constructor(
+        public changeDetector: ChangeDetectorRef,
         @Inject(DOCUMENT) private document: Document,
         private domSanitizer: DomSanitizer
-    ) { }
-
+    ) {}
 
     ngOnInit() {
         this.validateAndApplyEmbeddedContent();
     }
 
     ngOnChanges(changes: SimpleChanges) {
-        if (changes.customEmbeddedContent &amp;&amp; !changes.customEmbeddedContent.firstChange) {
+        if (
+            changes.customEmbeddedContent &amp;&amp;
+            !changes.customEmbeddedContent.firstChange
+        ) {
             this.validateAndApplyEmbeddedContent();
         }
     }
 
     private validateAndApplyEmbeddedContent() {
-        const context &#x3D; this.sanitized &amp;&amp; this.sanitizeContext(this.mode &#x3D;&#x3D;&#x3D; EmbeddedContentMode.URL ? SecurityContext.URL : SecurityContext.HTML);
+        const context &#x3D;
+            this.sanitized &amp;&amp;
+            this.sanitizeContext(
+                this.mode &#x3D;&#x3D;&#x3D; EmbeddedContentMode.URL
+                    ? SecurityContext.URL
+                    : SecurityContext.HTML
+            );
 
         this.anchor.nativeElement.innerHTML &#x3D; &quot;&quot;;
 
         if (this.mode &#x3D;&#x3D;&#x3D; EmbeddedContentMode.URL) {
             const iframe &#x3D; this.document.createElement(&quot;iframe&quot;);
-            iframe.src &#x3D; (this.sanitized ? context : this.customEmbeddedContent) as string;
+            iframe.src &#x3D; (
+                this.sanitized ? context : this.customEmbeddedContent
+            ) as string;
             iframe.width &#x3D; &quot;100%&quot;;
             iframe.height &#x3D; &quot;100%&quot;;
 
             this.anchor.nativeElement.appendChild(iframe);
         } else {
-            this.anchor.nativeElement.innerHTML &#x3D; this.sanitized ? context : this.customEmbeddedContent;
+            this.anchor.nativeElement.innerHTML &#x3D; this.sanitized
+                ? context
+                : this.customEmbeddedContent;
         }
     }
 
-    private sanitizeContext(securityContextValue: SecurityContext): string | null {
-        return this.domSanitizer.sanitize(securityContextValue, this.customEmbeddedContent?.trim());
+    private sanitizeContext(
+        securityContextValue: SecurityContext
+    ): string | null {
+        return this.domSanitizer.sanitize(
+            securityContextValue,
+            this.customEmbeddedContent?.trim()
+        );
     }
 }
 </code></pre>

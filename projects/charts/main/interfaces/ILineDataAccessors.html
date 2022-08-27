@@ -138,8 +138,15 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { defaultColorProvider, defaultMarkerProvider } from &quot;../../core/common/palette/default-providers&quot;;
-import { DataAccessor, IAccessors, SeriesAccessor } from &quot;../../core/common/types&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+    defaultColorProvider,
+    defaultMarkerProvider,
+} from &quot;../../core/common/palette/default-providers&quot;;
+import {
+    DataAccessor,
+    IAccessors,
+    SeriesAccessor,
+} from &quot;../../core/common/types&quot;;
 import { IXYDataAccessors, XYAccessors } from &quot;../accessors/xy-accessors&quot;;
 
 export interface ILineDataAccessors extends IXYDataAccessors {
@@ -177,10 +184,14 @@ export class LineAccessors extends XYAccessors implements ILineAccessors {
     public data: ILineDataAccessors;
     public series: ILineSeriesAccessors;
 
-    constructor(public colorProvider &#x3D; defaultColorProvider(), public markerProvider &#x3D; defaultMarkerProvider()) {
+    constructor(
+        public colorProvider &#x3D; defaultColorProvider(),
+        public markerProvider &#x3D; defaultMarkerProvider()
+    ) {
         super();
 
-        this.data.defined &#x3D; (d: any, i) &#x3D;&gt; d.hasOwnProperty(&quot;defined&quot;) ? d.defined : true;
+        this.data.defined &#x3D; (d: any, i) &#x3D;&gt;
+            d.hasOwnProperty(&quot;defined&quot;) ? d.defined : true;
 
         this.series &#x3D; {
             color: this.colorProvider ? this.colorProvider.get : undefined,

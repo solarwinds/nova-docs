@@ -244,16 +244,18 @@ import { hasControlInErrorState } from &quot;../functions/has-control-in-error-s
 export class FormHeaderIconPipePipe implements PipeTransform {
     public static readonly ERROR_ICON_DEFAULT &#x3D; &quot;status_critical&quot;;
 
-    transform(form: FormGroup | AbstractControl | null, defaultIcon: string,
-              errorIcon: string &#x3D; FormHeaderIconPipePipe.ERROR_ICON_DEFAULT): Observable&lt;string | null&gt; {
+    transform(
+        form: FormGroup | AbstractControl | null,
+        defaultIcon: string,
+        errorIcon: string &#x3D; FormHeaderIconPipePipe.ERROR_ICON_DEFAULT
+    ): Observable&lt;string | null&gt; {
         if (!form) {
             throw new Error(&quot;Provided form is undefined&quot;);
         }
-        return combineLatest([form.statusChanges, form.valueChanges])
-            .pipe(
-                startWith(null),
-                map(() &#x3D;&gt; hasControlInErrorState(form) ? errorIcon : defaultIcon)
-            );
+        return combineLatest([form.statusChanges, form.valueChanges]).pipe(
+            startWith(null),
+            map(() &#x3D;&gt; (hasControlInErrorState(form) ? errorIcon : defaultIcon))
+        );
     }
 }
 </code></pre>

@@ -171,7 +171,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/lib/table/table-virtual-scroll/table-virtual-scroll.directive.ts:29</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/lib/table/table-virtual-scroll/table-virtual-scroll.directive.ts:34</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -203,7 +203,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/lib/table/table-virtual-scroll/table-virtual-scroll.directive.ts:26</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/lib/table/table-virtual-scroll/table-virtual-scroll.directive.ts:31</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -247,8 +247,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="47"
-                            class="link-to-prism">src/lib/table/table-virtual-scroll/table-virtual-scroll.directive.ts:47</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="56"
+                            class="link-to-prism">src/lib/table/table-virtual-scroll/table-virtual-scroll.directive.ts:56</a></div>
                 </td>
             </tr>
 
@@ -318,12 +318,14 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>new TableVirtualScrollLinearStrategy(+this.rowHeight)</code>
+                            <i>Default value : </i><code>new TableVirtualScrollLinearStrategy(
+        +this.rowHeight
+    )</code>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/lib/table/table-virtual-scroll/table-virtual-scroll.directive.ts:33</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/lib/table/table-virtual-scroll/table-virtual-scroll.directive.ts:38</a></div>
                             </td>
                         </tr>
 
@@ -341,26 +343,31 @@
 import { Directive, forwardRef, Input, OnChanges } from &quot;@angular/core&quot;;
 
 import { ComponentChanges } from &quot;../../../types&quot;;
-
-import { TableVirtualScrollLinearStrategy, TableVirtualScrollStrategy } from &quot;./table-virtual-scroll-strategy&quot;;
+import {
+    TableVirtualScrollLinearStrategy,
+    TableVirtualScrollStrategy,
+} from &quot;./table-virtual-scroll-strategy&quot;;
 
 export const DEFAULT_TABLE_HEADER_OFFSET &#x3D; 40;
 export const TABLE_ROW_HEIGHT &#x3D; 24;
 
-export function complexScrollStrategyFactory(scroll: TableVirtualScrollDirective | TableVirtualScrollLinearDirective) {
+export function complexScrollStrategyFactory(
+    scroll: TableVirtualScrollDirective | TableVirtualScrollLinearDirective
+) {
     return scroll.scrollStrategy;
 }
 
 @Directive({
     selector: &quot;[tableVirtualScroll]:not([offset])&quot;,
-    providers: [{
-        provide: VIRTUAL_SCROLL_STRATEGY,
-        useFactory: complexScrollStrategyFactory,
-        deps: [forwardRef(() &#x3D;&gt; TableVirtualScrollLinearDirective)],
-    }],
+    providers: [
+        {
+            provide: VIRTUAL_SCROLL_STRATEGY,
+            useFactory: complexScrollStrategyFactory,
+            deps: [forwardRef(() &#x3D;&gt; TableVirtualScrollLinearDirective)],
+        },
+    ],
 })
 export class TableVirtualScrollLinearDirective implements OnChanges {
-
     /** Height of table row. */
     @Input() rowHeight: number &#x3D; TABLE_ROW_HEIGHT;
 
@@ -369,9 +376,13 @@ export class TableVirtualScrollLinearDirective implements OnChanges {
 
     // Converting parameters to numbers here to avoid inputs become strings in case user sets rowHeight and offset
     // without square brackets in the template
-    public scrollStrategy &#x3D; new TableVirtualScrollLinearStrategy(+this.rowHeight);
+    public scrollStrategy &#x3D; new TableVirtualScrollLinearStrategy(
+        +this.rowHeight
+    );
 
-    public ngOnChanges(changes: ComponentChanges&lt;TableVirtualScrollLinearDirective&gt;) {
+    public ngOnChanges(
+        changes: ComponentChanges&lt;TableVirtualScrollLinearDirective&gt;
+    ) {
         this.scrollStrategy.setRowHeight(+this.rowHeight);
 
         if (changes.rowCount) {
@@ -388,20 +399,20 @@ export class TableVirtualScrollLinearDirective implements OnChanges {
     }
 }
 
-
 /**
  * @deprecated in v11 - Use tableVirtualScroll with &#x27;rowCount&#x27; attribute instead of &#x27;offset&#x27; attribute - Removal: NUI-5796
  */
 @Directive({
     selector: &quot;[tableVirtualScroll]:not([rowCount])&quot;,
-    providers: [{
-        provide: VIRTUAL_SCROLL_STRATEGY,
-        useFactory: complexScrollStrategyFactory,
-        deps: [forwardRef(() &#x3D;&gt; TableVirtualScrollDirective)],
-    }],
+    providers: [
+        {
+            provide: VIRTUAL_SCROLL_STRATEGY,
+            useFactory: complexScrollStrategyFactory,
+            deps: [forwardRef(() &#x3D;&gt; TableVirtualScrollDirective)],
+        },
+    ],
 })
 export class TableVirtualScrollDirective implements OnChanges {
-
     /** Height of table row. */
     @Input() rowHeight: number &#x3D; TABLE_ROW_HEIGHT;
 
@@ -410,7 +421,10 @@ export class TableVirtualScrollDirective implements OnChanges {
 
     // Converting parameters to numbers here to avoid inputs become strings in case user sets rowHeight and offset
     // without square brackets in the template
-    public scrollStrategy &#x3D; new TableVirtualScrollStrategy(+this.rowHeight, +this.offset);
+    public scrollStrategy &#x3D; new TableVirtualScrollStrategy(
+        +this.rowHeight,
+        +this.offset
+    );
 
     public ngOnChanges() {
         this.scrollStrategy.setScrollHeight(+this.rowHeight, +this.offset);

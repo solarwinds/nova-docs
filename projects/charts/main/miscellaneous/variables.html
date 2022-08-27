@@ -795,14 +795,15 @@
                     <tr>
                         <td class="col-md-4">
                             <i>Default value : </i><code>[
-    ...regularShapes
-        .map(s &#x3D;&gt; &#x60;&lt;path class&#x3D;&quot;nui-chart--path__outline&quot; d&#x3D;&quot;${s}&quot;&gt;&lt;/path&gt;&#x60;),
-    ...emptyShapes
-        .map((s, i) &#x3D;&gt;
+    ...regularShapes.map(
+        (s) &#x3D;&gt; &#x60;&lt;path class&#x3D;&quot;nui-chart--path__outline&quot; d&#x3D;&quot;${s}&quot;&gt;&lt;/path&gt;&#x60;
+    ),
+    ...emptyShapes.map(
+        (s, i) &#x3D;&gt;
             &#x60;&lt;path class&#x3D;&quot;nui-chart--path__outline-fill&quot; stroke&#x3D;&quot;none&quot; d&#x3D;&quot;${regularShapes[i]}&quot;&gt;&lt;/path&gt;
             &lt;path class&#x3D;&quot;nui-chart--path__outline&quot; d&#x3D;&quot;${s}&quot;&gt;&lt;/path&gt;&#x60;
-        ),
-].map(s &#x3D;&gt; new SvgMarker(s))</code>
+    ),
+].map((s) &#x3D;&gt; new SvgMarker(s))</code>
                         </td>
                     </tr>
 
@@ -1163,15 +1164,15 @@ It will substitute the default one above in v.12
                     <tr>
                         <td class="col-md-4">
                             <i>Default value : </i><code>[
-        {x: &quot;end&quot;, y: &quot;center&quot;},
-        {x: &quot;end&quot;, y: &quot;bottom&quot;},
-        {x: &quot;center&quot;, y: &quot;bottom&quot;},
-        {x: &quot;start&quot;, y: &quot;bottom&quot;},
-        {x: &quot;start&quot;, y: &quot;center&quot;},
-        {x: &quot;start&quot;, y: &quot;top&quot;},
-        {x: &quot;center&quot;, y: &quot;top&quot;},
-        {x: &quot;end&quot;, y: &quot;top&quot;},
-    ]</code>
+    { x: &quot;end&quot;, y: &quot;center&quot; },
+    { x: &quot;end&quot;, y: &quot;bottom&quot; },
+    { x: &quot;center&quot;, y: &quot;bottom&quot; },
+    { x: &quot;start&quot;, y: &quot;bottom&quot; },
+    { x: &quot;start&quot;, y: &quot;center&quot; },
+    { x: &quot;start&quot;, y: &quot;top&quot; },
+    { x: &quot;center&quot;, y: &quot;top&quot; },
+    { x: &quot;end&quot;, y: &quot;top&quot; },
+]</code>
                         </td>
                     </tr>
 
@@ -1206,10 +1207,10 @@ on the source element for the tooltip position starting with EAST and going cloc
                     <tr>
                         <td class="col-md-4">
                             <i>Default value : </i><code>{
-    &quot;start&quot;: &quot;end&quot;,
-    &quot;end&quot;: &quot;start&quot;,
-    &quot;top&quot;: &quot;bottom&quot;,
-    &quot;bottom&quot;: &quot;top&quot;,
+    start: &quot;end&quot;,
+    end: &quot;start&quot;,
+    top: &quot;bottom&quot;,
+    bottom: &quot;top&quot;,
 }</code>
                         </td>
                     </tr>
@@ -1293,11 +1294,15 @@ on the source element for the tooltip position starting with EAST and going cloc
                     <tr>
                         <td class="col-md-4">
                             <i>Default value : </i><code>(date: Date): string &#x3D;&gt;
-    (timeMinute(date) &lt; date ? formatSecond
-        : timeDay(date) &lt; date ? formatMinute
-            : timeMonth(date) &lt; date ? formatWeek
-                : timeYear(date) &lt; date ? formatMonth
-                    : formatYear)(date)</code>
+    (timeMinute(date) &lt; date
+        ? formatSecond
+        : timeDay(date) &lt; date
+        ? formatMinute
+        : timeMonth(date) &lt; date
+        ? formatWeek
+        : timeYear(date) &lt; date
+        ? formatMonth
+        : formatYear)(date)</code>
                         </td>
                     </tr>
 
@@ -1324,7 +1329,12 @@ on the source element for the tooltip position starting with EAST and going cloc
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>(d: Date) &#x3D;&gt; intlFormat(d, {hour: &quot;numeric&quot;, minute: &quot;2-digit&quot;, second: &quot;2-digit&quot;})</code>
+                            <i>Default value : </i><code>(d: Date) &#x3D;&gt;
+        intlFormat(d, {
+            hour: &quot;numeric&quot;,
+            minute: &quot;2-digit&quot;,
+            second: &quot;2-digit&quot;,
+        })</code>
                         </td>
                     </tr>
 
@@ -1377,9 +1387,9 @@ on the source element for the tooltip position starting with EAST and going cloc
                     <tr>
                         <td class="col-md-4">
                             <i>Default value : </i><code>{
-    markerRadius: StandardGaugeThresholdMarkerRadius.Large,
-    enabled: true,
-}</code>
+        markerRadius: StandardGaugeThresholdMarkerRadius.Large,
+        enabled: true,
+    }</code>
                         </td>
                     </tr>
 
@@ -1416,9 +1426,9 @@ on the source element for the tooltip position starting with EAST and going cloc
                     <tr>
                         <td class="col-md-4">
                             <i>Default value : </i><code>{
-    markerRadius: StandardGaugeThresholdMarkerRadius.Large,
-    enabled: true,
-}</code>
+        markerRadius: StandardGaugeThresholdMarkerRadius.Large,
+        enabled: true,
+    }</code>
                         </td>
                     </tr>
 
@@ -1662,9 +1672,20 @@ on the source element for the tooltip position starting with EAST and going cloc
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>(additionalSeriesFn: () &#x3D;&gt; IChartSeries&lt;any&gt;[], domainCalculator: DomainCalculator) &#x3D;&gt;
-    (chartSeriesSet: IChartSeries&lt;any&gt;[], scaleId: string, scale: IScale&lt;any&gt;) &#x3D;&gt;
-        domainCalculator(additionalSeriesFn().concat(chartSeriesSet), scaleId, scale)</code>
+                            <i>Default value : </i><code>(
+        additionalSeriesFn: () &#x3D;&gt; IChartSeries&lt;any&gt;[],
+        domainCalculator: DomainCalculator
+    ) &#x3D;&gt;
+    (
+        chartSeriesSet: IChartSeries&lt;any&gt;[],
+        scaleId: string,
+        scale: IScale&lt;any&gt;
+    ) &#x3D;&gt;
+        domainCalculator(
+            additionalSeriesFn().concat(chartSeriesSet),
+            scaleId,
+            scale
+        )</code>
                         </td>
                     </tr>
 
@@ -2026,20 +2047,36 @@ on the source element for the tooltip position starting with EAST and going cloc
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>(chartSeriesSet: IChartSeries&lt;IAccessors&gt;[], scaleKey: string, scale: IScale&lt;any&gt;): any[] &#x3D;&gt; {
+                            <i>Default value : </i><code>(
+    chartSeriesSet: IChartSeries&lt;IAccessors&gt;[],
+    scaleKey: string,
+    scale: IScale&lt;any&gt;
+): any[] &#x3D;&gt; {
     const fixedDomains &#x3D; getFixedDomains(chartSeriesSet, scaleKey);
 
-    const domains: any[][] &#x3D; chartSeriesSet.map(cs &#x3D;&gt; {
+    const domains: any[][] &#x3D; chartSeriesSet.map((cs) &#x3D;&gt; {
         // find fixed, continuous scales that are referenced by this series
-        const filterScales &#x3D; Object.keys(fixedDomains).reduce((result, next: string) &#x3D;&gt; {
-            const seriesScale &#x3D; cs.scales[next];
-            if (seriesScale &amp;&amp; seriesScale.isContinuous() &amp;&amp; indexOf(fixedDomains[next], seriesScale) !&#x3D;&#x3D; -1) {
-                result[next] &#x3D; seriesScale;
-            }
-            return result;
-        }, &lt;Record&lt;string, IScale&lt;any&gt;&gt;&gt;{});
+        const filterScales &#x3D; Object.keys(fixedDomains).reduce(
+            (result, next: string) &#x3D;&gt; {
+                const seriesScale &#x3D; cs.scales[next];
+                if (
+                    seriesScale &amp;&amp;
+                    seriesScale.isContinuous() &amp;&amp;
+                    indexOf(fixedDomains[next], seriesScale) !&#x3D;&#x3D; -1
+                ) {
+                    result[next] &#x3D; seriesScale;
+                }
+                return result;
+            },
+            &lt;Record&lt;string, IScale&lt;any&gt;&gt;&gt;{}
+        );
 
-        return cs.renderer.getDomainOfFilteredData(cs, filterScales, scaleKey, cs.scales[scaleKey]);
+        return cs.renderer.getDomainOfFilteredData(
+            cs,
+            filterScales,
+            scaleKey,
+            cs.scales[scaleKey]
+        );
     });
 
     return mergeDomains(domains, scale);
@@ -2072,10 +2109,21 @@ considered data set.</p>
                     <tr>
                         <td class="col-md-4">
                             <i>Default value : </i><code>(interval: [number, number]): DomainCalculator &#x3D;&gt;
-    (chartSeriesSet: IChartSeries&lt;IAccessors&gt;[], scaleId: string, scale: IScale&lt;any&gt;) &#x3D;&gt; {
-        const automaticDomain &#x3D; getAutomaticDomain(chartSeriesSet, scaleId, scale);
+    (
+        chartSeriesSet: IChartSeries&lt;IAccessors&gt;[],
+        scaleId: string,
+        scale: IScale&lt;any&gt;
+    ) &#x3D;&gt; {
+        const automaticDomain &#x3D; getAutomaticDomain(
+            chartSeriesSet,
+            scaleId,
+            scale
+        );
 
-        return [Math.min(automaticDomain[0], interval[0]), Math.max(automaticDomain[1], interval[1])];
+        return [
+            Math.min(automaticDomain[0], interval[0]),
+            Math.max(automaticDomain[1], interval[1]),
+        ];
     }</code>
                         </td>
                     </tr>
@@ -2106,8 +2154,16 @@ considered data set.</p>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>(config: IAxisConfig, axisGenerator: any, domainCalculator: DomainCalculator): IDomainWithTicksCalculator  &#x3D;&gt; {
-    const result: IDomainWithTicksCalculator &#x3D; (chartSeriesSet: IChartSeries&lt;IAccessors&gt;[], scaleKey: string, scale: IScale&lt;any&gt;): any[] &#x3D;&gt; {
+                            <i>Default value : </i><code>(
+    config: IAxisConfig,
+    axisGenerator: any,
+    domainCalculator: DomainCalculator
+): IDomainWithTicksCalculator &#x3D;&gt; {
+    const result: IDomainWithTicksCalculator &#x3D; (
+        chartSeriesSet: IChartSeries&lt;IAccessors&gt;[],
+        scaleKey: string,
+        scale: IScale&lt;any&gt;
+    ): any[] &#x3D;&gt; {
         const mergedDomains &#x3D; domainCalculator(chartSeriesSet, scaleKey, scale);
         const clonedScale &#x3D; cloneDeep(scale);
         domain(clonedScale, mergedDomains);

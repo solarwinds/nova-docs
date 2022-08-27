@@ -80,7 +80,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/lib/table/table.component.ts:55</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/lib/table/table.component.ts:54</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -140,7 +140,6 @@ import { Subscription } from &quot;rxjs&quot;;
 import { IFilteringParticipants, ISelection } from &quot;../../services/public-api&quot;;
 import { ComponentChanges } from &quot;../../types&quot;;
 import { ISortedItem, SorterDirection } from &quot;../sorter/public-api&quot;;
-
 import { TableStateHandlerService } from &quot;./table-state-handler.service&quot;;
 
 // &lt;example-url&gt;./../examples/index.html#/table&lt;/example-url&gt;
@@ -176,7 +175,8 @@ interface TableRowData {
 })
 export class TableComponent&lt;T&gt;
     extends CdkTable&lt;T&gt;
-    implements OnInit, AfterViewInit, AfterContentInit, OnDestroy, OnChanges {
+    implements OnInit, AfterViewInit, AfterContentInit, OnDestroy, OnChanges
+{
     @Input() reorderable &#x3D; false;
     @Input() sortable &#x3D; false;
     @Input() resizable &#x3D; false;
@@ -248,21 +248,21 @@ export class TableComponent&lt;T&gt;
         return !this.sortable
             ? {}
             : {
-                sorter: {
-                    componentInstance: {
-                        // mark this filter to be monitored by our datasource for any changes in order reset other filters(eg: pagination)
-                        // before any new search is performed
-                        detectFilterChanges: true,
-                        getFilters: () &#x3D;&gt; ({
-                            type: &quot;sorter&quot;,
-                            value: {
-                                sortBy: this.sortBy,
-                                direction: this.sortDirection,
-                            },
-                        }),
-                    },
-                },
-            };
+                  sorter: {
+                      componentInstance: {
+                          // mark this filter to be monitored by our datasource for any changes in order reset other filters(eg: pagination)
+                          // before any new search is performed
+                          detectFilterChanges: true,
+                          getFilters: () &#x3D;&gt; ({
+                              type: &quot;sorter&quot;,
+                              value: {
+                                  sortBy: this.sortBy,
+                                  direction: this.sortDirection,
+                              },
+                          }),
+                      },
+                  },
+              };
     }
 
     public getPreselectedItems(items: T[]): T[] {

@@ -161,7 +161,6 @@ import {
     SeriesAccessor,
 } from &quot;../core/common/types&quot;;
 import { GRAYSCALE_FILTER } from &quot;../core/types&quot;;
-
 import { IRenderSeries, RenderLayerName } from &quot;./types&quot;;
 import { XYRenderer } from &quot;./xy-renderer&quot;;
 
@@ -212,7 +211,6 @@ export class SideIndicatorAccessors implements ISideIndicatorAccessors {
  * Renderer for drawing threshold side indicators
  */
 export class SideIndicatorRenderer extends XYRenderer&lt;ISideIndicatorAccessors&gt; {
-
     /** @deprecated As of Nova v9, use RenderLayerName.unclippedData enum value instead. Removal: NUI-5753 */
     public static SIDE_INDICATORS_LAYER &#x3D; &quot;side-indicators&quot;;
 
@@ -229,19 +227,32 @@ export class SideIndicatorRenderer extends XYRenderer&lt;ISideIndicatorAccessors
     }
 
     /** See {@link Renderer#draw} */
-    public draw(renderSeries: IRenderSeries&lt;ISideIndicatorAccessors&gt;, rendererSubject: Subject&lt;IRendererEventPayload&gt;): void {
+    public draw(
+        renderSeries: IRenderSeries&lt;ISideIndicatorAccessors&gt;,
+        rendererSubject: Subject&lt;IRendererEventPayload&gt;
+    ): void {
         const target &#x3D; renderSeries.containers[RenderLayerName.unclippedData];
         const dataSeries &#x3D; renderSeries.dataSeries;
         const scales &#x3D; renderSeries.scales;
         const accessors &#x3D; renderSeries.dataSeries.accessors;
 
         let rect &#x3D; target.select&lt;SVGRectElement&gt;(&quot;rect&quot;);
-        const isActive &#x3D; dataSeries.data.length &gt; 0 ?
-            accessors.data.active(dataSeries.data[0], 0, renderSeries.dataSeries.data, renderSeries.dataSeries) : false;
-        const colorAccessor &#x3D; !isActive &amp;&amp; accessors.series.inactiveColor ? accessors.series.inactiveColor : accessors.series.activeColor;
+        const isActive &#x3D;
+            dataSeries.data.length &gt; 0
+                ? accessors.data.active(
+                      dataSeries.data[0],
+                      0,
+                      renderSeries.dataSeries.data,
+                      renderSeries.dataSeries
+                  )
+                : false;
+        const colorAccessor &#x3D;
+            !isActive &amp;&amp; accessors.series.inactiveColor
+                ? accessors.series.inactiveColor
+                : accessors.series.activeColor;
         if (rect.empty()) {
             rect &#x3D; target.append(&quot;rect&quot;).attrs({
-                &quot;fill&quot;: colorAccessor(dataSeries.id, dataSeries),
+                fill: colorAccessor(dataSeries.id, dataSeries),
             });
 
             if (!isActive &amp;&amp; !accessors.series.inactiveColor) {
@@ -252,29 +263,33 @@ export class SideIndicatorRenderer extends XYRenderer&lt;ISideIndicatorAccessors
         const start &#x3D; accessors.series.start(dataSeries.id, dataSeries);
         const end &#x3D; accessors.series.end(dataSeries.id, dataSeries);
         const top &#x3D; end &#x3D;&#x3D; null ? 0 : scales.y.convert(end);
-        const bottom &#x3D; start &#x3D;&#x3D; null ? scales.y.range()[0] : Math.min(scales.y.range()[0], scales.y.convert(start));
+        const bottom &#x3D;
+            start &#x3D;&#x3D; null
+                ? scales.y.range()[0]
+                : Math.min(scales.y.range()[0], scales.y.convert(start));
         const height &#x3D; bottom - top;
         const width &#x3D; 2;
         rect.attrs({
-            &quot;x&quot;: -width,
-            &quot;y&quot;: top,
-            &quot;height&quot;: height &lt; 0 ? 0 : height,
-            &quot;width&quot;: width,
+            x: -width,
+            y: top,
+            height: height &lt; 0 ? 0 : height,
+            width: width,
         });
     }
 
     /** See {@link Renderer#getDataPointIndex} */
-    public getDataPointIndex(series: IDataSeries&lt;ISideIndicatorAccessors&gt;, values: { [p: string]: any }, scales: Scales) {
+    public getDataPointIndex(
+        series: IDataSeries&lt;ISideIndicatorAccessors&gt;,
+        values: { [p: string]: any },
+        scales: Scales
+    ) {
         return -1;
     }
 
     /** See {@link Renderer#getRequiredLayers} */
     public getRequiredLayers(): ILasagnaLayer[] {
-        return [
-            STANDARD_RENDER_LAYERS[RenderLayerName.unclippedData],
-        ];
+        return [STANDARD_RENDER_LAYERS[RenderLayerName.unclippedData]];
     }
-
 }
 </code></pre>
     </div>

@@ -147,7 +147,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:41</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:55</a></div>
                             </td>
                         </tr>
 
@@ -250,8 +250,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="64"
-                            class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:64</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="85"
+                            class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:85</a></div>
                 </td>
             </tr>
 
@@ -293,8 +293,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="69"
-                            class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:69</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="93"
+                            class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:93</a></div>
                 </td>
             </tr>
 
@@ -336,8 +336,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="54"
-                            class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:54</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="72"
+                            class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:72</a></div>
                 </td>
             </tr>
 
@@ -420,8 +420,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="73"
-                            class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:73</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="97"
+                            class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:97</a></div>
                 </td>
             </tr>
 
@@ -507,7 +507,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:46</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:61</a></div>
                             </td>
                         </tr>
 
@@ -535,7 +535,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:37</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:51</a></div>
                             </td>
                         </tr>
 
@@ -563,7 +563,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:45</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:60</a></div>
                             </td>
                         </tr>
 
@@ -596,7 +596,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:38</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:52</a></div>
                             </td>
                         </tr>
 
@@ -609,7 +609,17 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ChangeDetectorRef, Inject, Injectable, OnChanges, OnDestroy, Optional } from &quot;@angular/core&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+    ChangeDetectorRef,
+    Inject,
+    Injectable,
+    OnChanges,
+    OnDestroy,
+    Optional,
+} from &quot;@angular/core&quot;;
+import { merge } from &quot;rxjs&quot;;
+import { takeUntil } from &quot;rxjs/operators&quot;;
+
 import { EventBus, IDataSource, IEvent } from &quot;@nova-ui/bits&quot;;
 import {
     ChartAssist,
@@ -626,43 +636,54 @@ import {
     INTERACTION_VALUES_EVENT,
     ISetDomainEventPayload,
     IValueProvider,
-    IXYScales, Renderer,
+    IXYScales,
+    Renderer,
     SequentialColorProvider,
     SET_DOMAIN_EVENT,
     ZoomPlugin,
 } from &quot;@nova-ui/charts&quot;;
-import { merge } from &quot;rxjs&quot;;
-import { takeUntil } from &quot;rxjs/operators&quot;;
 
-import { LegendPlacement } from &quot;../../../../widget-types/common/widget/legend&quot;
 import { INTERACTION, SET_TIMEFRAME } from &quot;../../../../services/types&quot;;
-import { DATA_SOURCE, IHasChangeDetector, PIZZAGNA_EVENT_BUS } from &quot;../../../../types&quot;;
+import {
+    DATA_SOURCE,
+    IHasChangeDetector,
+    PIZZAGNA_EVENT_BUS,
+} from &quot;../../../../types&quot;;
+import { LegendPlacement } from &quot;../../../../widget-types/common/widget/legend&quot;;
 import { TimeseriesScalesService } from &quot;../../timeseries-scales.service&quot;;
 import { TimeseriesInteractionType } from &quot;../../types&quot;;
 import { TimeseriesChartComponent } from &quot;../timeseries-chart.component&quot;;
 
 @Injectable()
-export abstract class XYChartComponent extends TimeseriesChartComponent
-    implements OnChanges, OnDestroy, IHasChangeDetector {
-
+export abstract class XYChartComponent
+    extends TimeseriesChartComponent
+    implements OnChanges, OnDestroy, IHasChangeDetector
+{
     public chartAssist: ChartAssist;
     public valueAccessorKey: string &#x3D; &quot;y&quot;;
 
     protected renderer: Renderer&lt;IAccessors&gt;;
     protected accessors: IAccessors;
 
-    constructor(@Inject(PIZZAGNA_EVENT_BUS) protected eventBus: EventBus&lt;IEvent&gt;,
-                @Optional() @Inject(DATA_SOURCE) dataSource: IDataSource,
-                public timeseriesScalesService: TimeseriesScalesService,
-                public changeDetector: ChangeDetectorRef) {
+    constructor(
+        @Inject(PIZZAGNA_EVENT_BUS) protected eventBus: EventBus&lt;IEvent&gt;,
+        @Optional() @Inject(DATA_SOURCE) dataSource: IDataSource,
+        public timeseriesScalesService: TimeseriesScalesService,
+        public changeDetector: ChangeDetectorRef
+    ) {
         super(timeseriesScalesService, dataSource);
     }
 
-    protected abstract createAccessors(colorProvider: IValueProvider&lt;string&gt;): IAccessors;
+    protected abstract createAccessors(
+        colorProvider: IValueProvider&lt;string&gt;
+    ): IAccessors;
 
     protected abstract createChartAssist(palette: ChartPalette): ChartAssist;
 
-    public mapSeriesSet(data: any[], scales: IXYScales): IChartAssistSeries&lt;IAccessors&gt;[] {
+    public mapSeriesSet(
+        data: any[],
+        scales: IXYScales
+    ): IChartAssistSeries&lt;IAccessors&gt;[] {
         return data.map((series: any) &#x3D;&gt; ({
             ...series,
             scales: scales,
@@ -673,7 +694,10 @@ export abstract class XYChartComponent extends TimeseriesChartComponent
 
     /** Checks if legend should be shown. */
     public hasLegend(): boolean {
-        return this.configuration.legendPlacement &amp;&amp; this.configuration.legendPlacement !&#x3D;&#x3D; LegendPlacement.None;
+        return (
+            this.configuration.legendPlacement &amp;&amp;
+            this.configuration.legendPlacement !&#x3D;&#x3D; LegendPlacement.None
+        );
     }
 
     /** Checks if legend should be aligned to right. */
@@ -681,7 +705,10 @@ export abstract class XYChartComponent extends TimeseriesChartComponent
         return this.configuration.legendPlacement &#x3D;&#x3D;&#x3D; LegendPlacement.Right;
     }
 
-    public onPrimaryDescClick(event: MouseEvent, legendSeries: IChartAssistSeries&lt;IAccessors&gt;) {
+    public onPrimaryDescClick(
+        event: MouseEvent,
+        legendSeries: IChartAssistSeries&lt;IAccessors&gt;
+    ) {
         if (!this.seriesInteractive) {
             return;
         }
@@ -697,7 +724,9 @@ export abstract class XYChartComponent extends TimeseriesChartComponent
 
     /** Updates chart data. */
     protected updateChartData(): void {
-        this.chartAssist.update(this.mapSeriesSet(this.widgetData.series, this.scales));
+        this.chartAssist.update(
+            this.mapSeriesSet(this.widgetData.series, this.scales)
+        );
     }
 
     /**
@@ -706,9 +735,11 @@ export abstract class XYChartComponent extends TimeseriesChartComponent
     protected buildChart() {
         this.buildChart$.next();
 
-        const colorProvider &#x3D; (this.configuration.chartColors &amp;&amp; this.configuration.chartColors?.length &gt; 0)
-            ? new SequentialColorProvider(this.configuration.chartColors)
-            : defaultColorProvider();
+        const colorProvider &#x3D;
+            this.configuration.chartColors &amp;&amp;
+            this.configuration.chartColors?.length &gt; 0
+                ? new SequentialColorProvider(this.configuration.chartColors)
+                : defaultColorProvider();
 
         const palette &#x3D; new ChartPalette(colorProvider);
         this.accessors &#x3D; this.createAccessors(palette.standardColors);
@@ -719,7 +750,9 @@ export abstract class XYChartComponent extends TimeseriesChartComponent
             chart.addPlugin(new ZoomPlugin());
         }
 
-        chart.getEventBus().getStream(SET_DOMAIN_EVENT)
+        chart
+            .getEventBus()
+            .getStream(SET_DOMAIN_EVENT)
             .pipe(takeUntil(merge(this.destroy$, this.buildChart$)))
             .subscribe((event) &#x3D;&gt; {
                 const payload &#x3D; &lt;ISetDomainEventPayload&gt;event.data;
@@ -741,7 +774,9 @@ export abstract class XYChartComponent extends TimeseriesChartComponent
      */
     protected setupInteraction() {
         // interaction with chart data points
-        this.chartAssist.chart.getEventBus().getStream(INTERACTION_DATA_POINTS_EVENT)
+        this.chartAssist.chart
+            .getEventBus()
+            .getStream(INTERACTION_DATA_POINTS_EVENT)
             .pipe(takeUntil(merge(this.destroy$, this.buildChart$)))
             .subscribe((values: IChartEvent) &#x3D;&gt; {
                 const payload: IInteractionDataPointsEvent &#x3D; values.data;
@@ -749,14 +784,17 @@ export abstract class XYChartComponent extends TimeseriesChartComponent
                     this.eventBus.getStream(INTERACTION).next({
                         payload: {
                             data: payload.dataPoints as IDataPointsPayload,
-                            interactionType: TimeseriesInteractionType.DataPoints,
+                            interactionType:
+                                TimeseriesInteractionType.DataPoints,
                         },
                     });
                 }
             });
 
         // interaction with values
-        this.chartAssist.chart.getEventBus().getStream(INTERACTION_VALUES_EVENT)
+        this.chartAssist.chart
+            .getEventBus()
+            .getStream(INTERACTION_VALUES_EVENT)
             .pipe(takeUntil(merge(this.destroy$, this.buildChart$)))
             .subscribe((values: IChartEvent) &#x3D;&gt; {
                 const payload: IInteractionValuesPayload &#x3D; values.data;
@@ -770,7 +808,6 @@ export abstract class XYChartComponent extends TimeseriesChartComponent
                 }
             });
     }
-
 }
 </code></pre>
     </div>

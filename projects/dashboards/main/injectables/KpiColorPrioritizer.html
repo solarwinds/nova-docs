@@ -124,7 +124,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/lib/components/providers/kpi-color-prioritizer.ts:23</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/lib/components/providers/kpi-color-prioritizer.ts:22</a></div>
                             </td>
                         </tr>
 
@@ -213,8 +213,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="33"
-                            class="link-to-prism">src/lib/components/providers/kpi-color-prioritizer.ts:33</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">src/lib/components/providers/kpi-color-prioritizer.ts:32</a></div>
                 </td>
             </tr>
 
@@ -254,8 +254,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="46"
-                            class="link-to-prism">src/lib/components/providers/kpi-color-prioritizer.ts:46</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="45"
+                            class="link-to-prism">src/lib/components/providers/kpi-color-prioritizer.ts:45</a></div>
                 </td>
             </tr>
 
@@ -338,8 +338,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="38"
-                            class="link-to-prism">src/lib/components/providers/kpi-color-prioritizer.ts:38</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="37"
+                            class="link-to-prism">src/lib/components/providers/kpi-color-prioritizer.ts:37</a></div>
                 </td>
             </tr>
 
@@ -422,7 +422,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/lib/components/providers/kpi-color-prioritizer.ts:26</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/lib/components/providers/kpi-color-prioritizer.ts:25</a></div>
                             </td>
                         </tr>
 
@@ -436,20 +436,19 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Inject, Injectable, OnDestroy, Optional } from &quot;@angular/core&quot;;
-import { IDataSource } from &quot;@nova-ui/bits&quot;;
 import { Subject, Subscription } from &quot;rxjs&quot;;
 import { takeUntil } from &quot;rxjs/operators&quot;;
+
+import { IDataSource } from &quot;@nova-ui/bits&quot;;
 
 import { PizzagnaService } from &quot;../../pizzagna/services/pizzagna.service&quot;;
 import { KpiColorComparatorsRegistryService } from &quot;../../services/kpi-color-comparators-registry.service&quot;;
 import { DATA_SOURCE, IComparatorsDict, IConfigurable } from &quot;../../types&quot;;
 import { IKpiData } from &quot;../kpi-widget/types&quot;;
-
 import { IDataSourceOutput, IKpiColorRules } from &quot;./types&quot;;
 
 @Injectable()
 export class KpiColorPrioritizer implements IConfigurable, OnDestroy {
-
     protected destroy$ &#x3D; new Subject();
     protected componentId: string;
     protected propertyPath: string &#x3D; &quot;backgroundColor&quot;;
@@ -496,7 +495,8 @@ export class KpiColorPrioritizer implements IConfigurable, OnDestroy {
         this.dsSubscription$ &#x3D; this.dataSource.outputsSubject
             .pipe(takeUntil(this.destroy$))
             .subscribe((event: IDataSourceOutput&lt;IKpiData&gt;) &#x3D;&gt; {
-                this.latestValueFromDS &#x3D; event.result?.value || this.latestValueFromDS;
+                this.latestValueFromDS &#x3D;
+                    event.result?.value || this.latestValueFromDS;
                 this.checkColorConditions();
             });
     }
@@ -516,7 +516,12 @@ export class KpiColorPrioritizer implements IConfigurable, OnDestroy {
         // reverse because last rule has top priority
         const newRules &#x3D; this.rules &amp;&amp; [...this.rules].reverse();
         for (const rule of newRules) {
-            if (this.comparators[rule.comparisonType]?.comparatorFn(this.latestValueFromDS, rule.value)) {
+            if (
+                this.comparators[rule.comparisonType]?.comparatorFn(
+                    this.latestValueFromDS,
+                    rule.value
+                )
+            ) {
                 colorToSet &#x3D; rule.color;
                 break; // exit if the rule matches
             }
@@ -531,10 +536,13 @@ export class KpiColorPrioritizer implements IConfigurable, OnDestroy {
      * @param color - Color to set
      */
     private setColor(color: string | undefined) {
-        this.pizzagnaService.setProperty({
-            componentId: this.componentId,
-            propertyPath: [this.propertyPath],
-        }, color);
+        this.pizzagnaService.setProperty(
+            {
+                componentId: this.componentId,
+                propertyPath: [this.propertyPath],
+            },
+            color
+        );
     }
 }
 </code></pre>

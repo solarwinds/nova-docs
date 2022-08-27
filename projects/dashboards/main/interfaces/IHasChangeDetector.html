@@ -133,24 +133,40 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ChangeDetectorRef, EventEmitter, InjectionToken, Injector, StaticProvider } from &quot;@angular/core&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+    ChangeDetectorRef,
+    EventEmitter,
+    InjectionToken,
+    Injector,
+    StaticProvider,
+} from &quot;@angular/core&quot;;
 import { AbstractControl, FormGroup } from &quot;@angular/forms&quot;;
+
 import { EventBus } from &quot;@nova-ui/bits&quot;;
 
 /**
  * Same as Partial&lt;T&gt; but goes deeper and makes all of its properties and sub-properties Partial&lt;T&gt;.
  */
-export type DeepPartial&lt;T&gt; &#x3D; T extends object ? { [K in keyof T]?: DeepPartial&lt;T[K]&gt; } : T;
+export type DeepPartial&lt;T&gt; &#x3D; T extends object
+    ? { [K in keyof T]?: DeepPartial&lt;T[K]&gt; }
+    : T;
 
-export const PIZZAGNA_EVENT_BUS &#x3D; new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(&quot;PIZZAGNA_EVENT_BUS&quot;);
-export const DASHBOARD_EVENT_BUS &#x3D; new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(&quot;DASHBOARD_EVENT_BUS&quot;);
+export const PIZZAGNA_EVENT_BUS &#x3D; new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(
+    &quot;PIZZAGNA_EVENT_BUS&quot;
+);
+export const DASHBOARD_EVENT_BUS &#x3D; new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(
+    &quot;DASHBOARD_EVENT_BUS&quot;
+);
 export const DATA_SOURCE &#x3D; new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(&quot;DATA_SOURCE&quot;);
-export const FORMATTERS_REGISTRY &#x3D; new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(&quot;FORMATTERS_REGISTRY&quot;);
-export const TEST_REGISTRY &#x3D; new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(&quot;TEST_REGISTRY&quot;);
-export const HEADER_LINK_PROVIDER &#x3D; new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(&quot;HEADER_LINK_PROVIDER&quot;);
-
-
-
+export const FORMATTERS_REGISTRY &#x3D; new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(
+    &quot;FORMATTERS_REGISTRY&quot;
+);
+export const TEST_REGISTRY &#x3D; new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(
+    &quot;TEST_REGISTRY&quot;
+);
+export const HEADER_LINK_PROVIDER &#x3D; new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(
+    &quot;HEADER_LINK_PROVIDER&quot;
+);
 
 export enum WellKnownProviders {
     DataSource &#x3D; &quot;dataSource&quot;,
@@ -183,8 +199,7 @@ export enum WellKnownDataSourceFeatures {
     DisableTableColumnGeneration &#x3D; &quot;disableTableColumnGeneration&quot;,
 }
 
-export interface IProperties extends Record&lt;string, any&gt; {
-}
+export interface IProperties extends Record&lt;string, any&gt; {}
 
 export interface IProviderProperties extends IProperties {
     /** This is property is set by the component portal directive to give providers self-awareness they need to update properties in pizzagna. */
@@ -203,7 +218,8 @@ export interface IProviderConfiguration {
     properties?: IProviderProperties;
 }
 
-export interface IProviderConfigurationForDisplay extends IProviderConfiguration {
+export interface IProviderConfigurationForDisplay
+    extends IProviderConfiguration {
     label: string;
 }
 
@@ -212,15 +228,12 @@ export interface IPortalEnvironment {
     injector?: Injector;
 }
 
-export interface IPizzagnaLayer extends Record&lt;string, DeepPartial&lt;IComponentConfiguration&gt;&gt; {
-}
+export interface IPizzagnaLayer
+    extends Record&lt;string, DeepPartial&lt;IComponentConfiguration&gt;&gt; {}
 
-export interface IPizzagna extends Record&lt;string, IPizzagnaLayer&gt; {
-}
+export interface IPizzagna extends Record&lt;string, IPizzagnaLayer&gt; {}
 
-export interface IPizza extends Record&lt;string, IComponentConfiguration&gt; {
-}
-
+export interface IPizza extends Record&lt;string, IComponentConfiguration&gt; {}
 
 /**
  * Interface for components that can be dynamically refreshed from the outside using the changeDetector
@@ -284,7 +297,10 @@ export interface IBackgroundColorComparator {
     comparatorFn: ComparatorFn;
     label?: string;
 }
-export interface IComparatorsDict extends Partial&lt;Record&lt;ComparatorTypes | string, IBackgroundColorComparator&gt;&gt; {}
+export interface IComparatorsDict
+    extends Partial&lt;
+        Record&lt;ComparatorTypes | string, IBackgroundColorComparator&gt;
+    &gt; {}
 </code></pre>
     </div>
 </div>

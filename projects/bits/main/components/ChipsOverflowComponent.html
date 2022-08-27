@@ -189,7 +189,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/lib/chips/chips-overflow/chips-overflow.component.ts:15</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/lib/chips/chips-overflow/chips-overflow.component.ts:20</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -210,7 +210,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/lib/chips/chips-overflow/chips-overflow.component.ts:14</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/lib/chips/chips-overflow/chips-overflow.component.ts:19</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -234,7 +234,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/lib/chips/chips-overflow/chips-overflow.component.ts:17</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/lib/chips/chips-overflow/chips-overflow.component.ts:22</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -271,8 +271,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="19"
-                            class="link-to-prism">src/lib/chips/chips-overflow/chips-overflow.component.ts:19</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="27"
+                            class="link-to-prism">src/lib/chips/chips-overflow/chips-overflow.component.ts:27</a></div>
                 </td>
             </tr>
 
@@ -325,7 +325,13 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, EventEmitter, Input, Output, ViewEncapsulation } from &quot;@angular/core&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+    Component,
+    EventEmitter,
+    Input,
+    Output,
+    ViewEncapsulation,
+} from &quot;@angular/core&quot;;
 
 import { IChipsGroup, IChipsItem, IChipsItemsSource } from &quot;../public-api&quot;;
 
@@ -337,15 +343,19 @@ import { IChipsGroup, IChipsItem, IChipsItemsSource } from &quot;../public-api&q
     host: { class: &quot;nui-chips-overflow&quot; },
 })
 export class ChipsOverflowComponent {
-
     @Input() overflowSource: IChipsItemsSource;
     @Input() itemsSource: IChipsItemsSource;
 
-    @Output() public chipRemoved &#x3D; new EventEmitter&lt;{ item: IChipsItem, group?: IChipsGroup }&gt;();
+    @Output() public chipRemoved &#x3D; new EventEmitter&lt;{
+        item: IChipsItem;
+        group?: IChipsGroup;
+    }&gt;();
 
-    public onClear(data: { item: IChipsItem, group?: IChipsGroup }) {
+    public onClear(data: { item: IChipsItem; group?: IChipsGroup }) {
         if (data.group) {
-            data.group &#x3D; this.itemsSource.groupedItems?.find(g &#x3D;&gt; g.items.find(item &#x3D;&gt; item &#x3D;&#x3D;&#x3D; data.item));
+            data.group &#x3D; this.itemsSource.groupedItems?.find((g) &#x3D;&gt;
+                g.items.find((item) &#x3D;&gt; item &#x3D;&#x3D;&#x3D; data.item)
+            );
         }
         this.chipRemoved.emit(data);
     }
@@ -363,7 +373,7 @@ export class ChipsOverflowComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><nui-chips [itemsSource]="overflowSource"           [allowRemoveAll]="false"           [overflow]="false"           (chipRemoved)="onClear($event)"           orientation="vertical"></nui-chips></div>'
+        var COMPONENT_TEMPLATE = '<div><nui-chips    [itemsSource]="overflowSource"    [allowRemoveAll]="false"    [overflow]="false"    (chipRemoved)="onClear($event)"    orientation="vertical"></nui-chips></div>'
     var COMPONENTS = [{'name': 'BreadcrumbComponent', 'selector': 'nui-breadcrumb'},{'name': 'BusyComponent', 'selector': '[nui-busy]'},{'name': 'ButtonComponent', 'selector': '[nui-button]'},{'name': 'CardComponent', 'selector': 'nui-card'},{'name': 'CardGroupComponent', 'selector': 'nui-card-group'},{'name': 'CheckboxComponent', 'selector': 'nui-checkbox'},{'name': 'CheckboxGroupComponent', 'selector': 'nui-checkbox-group'},{'name': 'ChipsComponent', 'selector': 'nui-chips'},{'name': 'ChipsOverflowComponent', 'selector': 'nui-chips-overflow'},{'name': 'ComboboxComponent', 'selector': 'nui-combobox'},{'name': 'ComboboxV2Component', 'selector': 'nui-combobox-v2'},{'name': 'CustomValidationMessageComponent', 'selector': 'nui-custom-validation-message'},{'name': 'DatePickerComponent', 'selector': 'nui-date-picker'},{'name': 'DateTimePickerComponent', 'selector': 'nui-date-time-picker'},{'name': 'DialogComponent', 'selector': 'nui-dialog-window'},{'name': 'ExpanderComponent', 'selector': 'nui-expander'},{'name': 'FormFieldComponent', 'selector': 'nui-form-field'},{'name': 'IconComponent', 'selector': 'nui-icon'},{'name': 'ImageComponent', 'selector': 'nui-image'},{'name': 'MenuComponent', 'selector': 'nui-menu'},{'name': 'MessageComponent', 'selector': 'nui-message'},{'name': 'OverlayComponent', 'selector': 'nui-overlay'},{'name': 'PaginatorComponent', 'selector': 'nui-paginator'},{'name': 'PanelComponent', 'selector': 'nui-panel'},{'name': 'PopoverComponent', 'selector': 'nui-popover'},{'name': 'PopupComponent', 'selector': 'nui-popup'},{'name': 'PopupDeprecatedComponent', 'selector': 'nui-popup-deprecated'},{'name': 'ProgressComponent', 'selector': 'nui-progress'},{'name': 'QuickPickerComponent', 'selector': 'nui-quick-picker'},{'name': 'RadioGroupComponent', 'selector': 'nui-radio-group'},{'name': 'RepeatComponent', 'selector': 'nui-repeat'},{'name': 'SearchComponent', 'selector': 'nui-search'},{'name': 'SelectComponent', 'selector': 'nui-select'},{'name': 'SelectV2Component', 'selector': 'nui-select-v2'},{'name': 'SheetComponent', 'selector': 'nui-sheet'},{'name': 'SheetGroupComponent', 'selector': 'nui-sheet-group'},{'name': 'SorterComponent', 'selector': 'nui-sorter'},{'name': 'SpinnerComponent', 'selector': 'nui-spinner'},{'name': 'SwitchComponent', 'selector': 'nui-switch'},{'name': 'TabHeadingGroupComponent', 'selector': 'nui-tab-heading-group'},{'name': 'TableComponent', 'selector': 'nui-table, table[nui-table]'},{'name': 'TextboxComponent', 'selector': 'nui-textbox'},{'name': 'TextboxNumberComponent', 'selector': 'nui-textbox-number'},{'name': 'TimeFrameBarComponent', 'selector': 'nui-time-frame-bar'},{'name': 'TimeFramePickerComponent', 'selector': 'nui-time-frame-picker'},{'name': 'TimePickerComponent', 'selector': 'nui-time-picker'},{'name': 'ToastComponent', 'selector': 'nui-toast-component'},{'name': 'ToolbarComponent', 'selector': 'nui-toolbar'},{'name': 'WizardComponent', 'selector': 'nui-wizard'},{'name': 'WizardHorizontalComponent', 'selector': 'nui-wizard-horizontal'},{'name': 'WizardStepComponent', 'selector': 'nui-wizard-step'}];
     var DIRECTIVES = [{'name': 'ClickInterceptorDirective', 'selector': '[nuiClickInterceptor]'},{'name': 'DndDropTargetDirective', 'selector': '[cdkDropList][nuiDndDropTarget]'},{'name': 'MarkAsSelectedItemDirective', 'selector': '[nuiMarkAsSelectedItem]'},{'name': 'TableStickyHeaderDirective', 'selector': 'cdk-virtual-scroll-viewport[tableStickyHeader]'},{'name': 'TableVirtualScrollDirective', 'selector': '[tableVirtualScroll]:not([rowCount])'},{'name': 'TableVirtualScrollLinearDirective', 'selector': '[tableVirtualScroll]:not([offset])'},{'name': 'TooltipDirective', 'selector': '[nuiTooltip]'},{'name': 'WizardDirective', 'selector': '[nuiWizard]'},{'name': 'WizardStepFooterDirective', 'selector': '[nuiWizardStepFooter]'},{'name': 'WizardStepLabelDirective', 'selector': '[nuiWizardStepLabel]'}];
     var ACTUAL_COMPONENT = {'name': 'ChipsOverflowComponent'};

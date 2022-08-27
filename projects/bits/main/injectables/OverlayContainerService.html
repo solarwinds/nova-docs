@@ -272,7 +272,7 @@ import { OVERLAY_CONTAINER_CLASS, OVERLAY_DEFAULT_PRIORITY } from &quot;./types&
 const PRIORITY_ATTRIBUTE &#x3D; &quot;priority&quot;;
 
 /** @dynamic */
-@Injectable({providedIn: &quot;root&quot;})
+@Injectable({ providedIn: &quot;root&quot; })
 export class OverlayContainerService {
     constructor(@Inject(DOCUMENT) private document: Document) {}
 
@@ -291,16 +291,24 @@ export class OverlayContainerService {
         let elementFromSelector: HTMLElement | undefined &#x3D; undefined;
 
         if (typeof elementOrSelector &#x3D;&#x3D;&#x3D; &quot;string&quot;) {
-            const result: HTMLElement | null &#x3D; this.document.querySelector&lt;HTMLElement&gt;(elementOrSelector);
+            const result: HTMLElement | null &#x3D;
+                this.document.querySelector&lt;HTMLElement&gt;(elementOrSelector);
             elementFromSelector &#x3D; !_isNull(result) ? result : undefined;
 
             if (!elementFromSelector) {
-                throw new Error(&#x60;Specified overlay container &#x27;${elementOrSelector || &quot;body&quot;}&#x27; was not found in the DOM.&#x60;);
+                throw new Error(
+                    &#x60;Specified overlay container &#x27;${
+                        elementOrSelector || &quot;body&quot;
+                    }&#x27; was not found in the DOM.&#x60;
+                );
             }
         }
 
         // according priority to custom container selector provided by user.
-        const targetContainer: HTMLElement &#x3D; elementFromSelector ?? &lt;HTMLElement&gt;elementOrSelector ?? this.document.body;
+        const targetContainer: HTMLElement &#x3D;
+            elementFromSelector ??
+            &lt;HTMLElement&gt;elementOrSelector ??
+            this.document.body;
         const sharedContainer &#x3D; this.createSharedContainer(targetContainer);
 
         let overlayContainer: HTMLElement | undefined;
@@ -312,22 +320,32 @@ export class OverlayContainerService {
         let overlays: NodeListOf&lt;HTMLElement&gt;;
 
         if (targetContainer &#x3D;&#x3D;&#x3D; this.document.body) {
-            overlays &#x3D; this.document.querySelectorAll(&#x60;body &gt; .cdk-overlay-container &gt; .${overlayPriorityClass}&#x60;);
+            overlays &#x3D; this.document.querySelectorAll(
+                &#x60;body &gt; .cdk-overlay-container &gt; .${overlayPriorityClass}&#x60;
+            );
         } else {
-            overlays &#x3D; sharedContainer.querySelectorAll(&#x60;.${overlayPriorityClass}&#x60;);
+            overlays &#x3D; sharedContainer.querySelectorAll(
+                &#x60;.${overlayPriorityClass}&#x60;
+            );
         }
 
         // loop through all our priorities in case we have any
         for (let i &#x3D; 0; i &lt; overlays.length; i++) {
             lastPriorityDomEl &#x3D; overlays[i];
 
-            if (lastPriorityDomEl.getAttribute(PRIORITY_ATTRIBUTE) &#x3D;&#x3D;&#x3D; desiredPriorityClass) {
+            if (
+                lastPriorityDomEl.getAttribute(PRIORITY_ATTRIBUTE) &#x3D;&#x3D;&#x3D;
+                desiredPriorityClass
+            ) {
                 // we already have our priority container
                 overlayContainer &#x3D; lastPriorityDomEl;
             }
 
             // we need to stop if our priority is higher than the desired priority
-            if ((lastPriorityDomEl.getAttribute(PRIORITY_ATTRIBUTE) ?? &quot;&quot;) &gt; desiredPriorityClass) {
+            if (
+                (lastPriorityDomEl.getAttribute(PRIORITY_ATTRIBUTE) ?? &quot;&quot;) &gt;
+                desiredPriorityClass
+            ) {
                 break;
             }
         }
@@ -345,7 +363,8 @@ export class OverlayContainerService {
                 // create our priory element before or after the last priority DOM element
                 // depending on the desired priority
                 overlayContainer &#x3D; lastPriorityDomEl.insertAdjacentElement(
-                    (lastPriorityDomEl.getAttribute(PRIORITY_ATTRIBUTE) ?? &quot;&quot;) &gt; desiredPriorityClass
+                    (lastPriorityDomEl.getAttribute(PRIORITY_ATTRIBUTE) ?? &quot;&quot;) &gt;
+                        desiredPriorityClass
                         ? &quot;beforebegin&quot;
                         : &quot;afterend&quot;,
                     div
@@ -361,15 +380,23 @@ export class OverlayContainerService {
 
         if (targetContainer &#x3D;&#x3D;&#x3D; this.document.body) {
             // create shared container only if it doesn&#x27;t exist already
-            sharedContainer &#x3D; targetContainer.querySelector(&#x60;body &gt; .${OVERLAY_CONTAINER_CLASS}&#x60;) ?? undefined;
+            sharedContainer &#x3D;
+                targetContainer.querySelector(
+                    &#x60;body &gt; .${OVERLAY_CONTAINER_CLASS}&#x60;
+                ) ?? undefined;
         } else {
             // create shared container only if it doesn&#x27;t exist already
-            sharedContainer &#x3D; targetContainer.querySelector(&#x60;.${OVERLAY_CONTAINER_CLASS}&#x60;) ?? undefined;
+            sharedContainer &#x3D;
+                targetContainer.querySelector(&#x60;.${OVERLAY_CONTAINER_CLASS}&#x60;) ??
+                undefined;
         }
 
         if (!sharedContainer) {
             sharedContainer &#x3D; this.document.createElement(&quot;div&quot;);
-            sharedContainer.classList.add(OVERLAY_CONTAINER_CLASS, &quot;cdk-overlay-container&quot;);
+            sharedContainer.classList.add(
+                OVERLAY_CONTAINER_CLASS,
+                &quot;cdk-overlay-container&quot;
+            );
             targetContainer.appendChild(sharedContainer);
         }
 
