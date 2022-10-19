@@ -1,0 +1,1931 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@nova-ui/bits documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">@nova-ui/bits documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Injectables</li>
+  <li>LocalFilteringDataSource</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#example" role="tab" id="example-tab" data-toggle="tab" data-link="example">Overview</a>
+        </li>
+        <li >
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">API</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade " id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/services/data-source/local-filtering-data-source.service.ts</code>
+        </p>
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p><example-url>./../examples/index.html#/common/data-source-service/deprecated-client-side</example-url></p>
+
+            </p>
+
+            <p class="comment">
+                <h3>Extends</h3>
+            </p>
+            <p class="comment">
+                        <code><a href="../injectables/DataSourceService.html" target="_self" >DataSourceService</a></code>
+            </p>
+
+            <p class="comment">
+                <h3>Example</h3>
+            </p>
+            <div class="io-description">
+            </div>
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#dataFieldsConfig">dataFieldsConfig</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#dataSubject">dataSubject</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#outputsSubject">outputsSubject</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#filtersChanged">filtersChanged</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#getFilteredData">getFilteredData</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#setData">setData</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#setSearchProperties">setSearchProperties</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#applyFilters">applyFilters</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#computeFiltersChange">computeFiltersChange</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#connect">connect</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#deregisterComponent">deregisterComponent</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#disconnect">disconnect</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#filterChanged">filterChanged</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#filtersChanged">filtersChanged</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getFilter">getFilter</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Abstract</span>
+                                <a href="#getFilteredData">getFilteredData</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getFilters">getFilters</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#registerComponent">registerComponent</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(searchService: SearchService)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/services/data-source/local-filtering-data-source.service.ts:42</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>searchService</td>
+                                                  
+                                                        <td>
+                                                                    <code>SearchService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filtersChanged"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            filtersChanged
+                        </b>
+                        <a href="#filtersChanged"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>filtersChanged(filters: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, itemsToCompare: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="199"
+                            class="link-to-prism">src/services/data-source/local-filtering-data-source.service.ts:199</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>filters</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>itemsToCompare</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFilteredData"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Async</span>
+                            getFilteredData
+                        </b>
+                        <a href="#getFilteredData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getFilteredData(filters: F)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="56"
+                            class="link-to-prism">src/services/data-source/local-filtering-data-source.service.ts:56</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>filters</td>
+                                    <td>
+                                            <code>F</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/INovaFilteringOutputs.html" target="_self" >Promise&lt;INovaFilteringOutputs&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setData"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            setData
+                        </b>
+                        <a href="#setData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>setData(initialData: T[])</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="48"
+                            class="link-to-prism">src/services/data-source/local-filtering-data-source.service.ts:48</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>initialData</td>
+                                    <td>
+                                            <code>T[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>[]</code>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setSearchProperties"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            setSearchProperties
+                        </b>
+                        <a href="#setSearchProperties"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>setSearchProperties(properties: string[])</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="52"
+                            class="link-to-prism">src/services/data-source/local-filtering-data-source.service.ts:52</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>properties</td>
+                                    <td>
+                                            <code>string[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="applyFilters"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Async</span>
+                            applyFilters
+                        </b>
+                        <a href="#applyFilters"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>applyFilters()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../injectables/DataSourceService.html" target="_self" >DataSourceService</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../injectables/DataSourceService.html#source" target="_self" >DataSourceService:69</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="computeFiltersChange"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            computeFiltersChange
+                        </b>
+                        <a href="#computeFiltersChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>computeFiltersChange(filters: F)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../injectables/DataSourceService.html" target="_self" >DataSourceService</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../injectables/DataSourceService.html#source" target="_self" >DataSourceService:158</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>filters</td>
+                                    <td>
+                                            <code>F</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="connect"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            connect
+                        </b>
+                        <a href="#connect"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>connect(collectionViewer: CollectionViewer)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../injectables/DataSourceService.html" target="_self" >DataSourceService</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../injectables/DataSourceService.html#source" target="_self" >DataSourceService:59</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>collectionViewer</td>
+                                    <td>
+                                            <code>CollectionViewer</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;[] | ReadonlyArray&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deregisterComponent"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            deregisterComponent
+                        </b>
+                        <a href="#deregisterComponent"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>deregisterComponent(componentKey: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../injectables/DataSourceService.html" target="_self" >DataSourceService</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../injectables/DataSourceService.html#source" target="_self" >DataSourceService:53</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>componentKey</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="disconnect"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            disconnect
+                        </b>
+                        <a href="#disconnect"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>disconnect(collectionViewer: CollectionViewer)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../injectables/DataSourceService.html" target="_self" >DataSourceService</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../injectables/DataSourceService.html#source" target="_self" >DataSourceService:65</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>collectionViewer</td>
+                                    <td>
+                                            <code>CollectionViewer</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filterChanged"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            filterChanged
+                        </b>
+                        <a href="#filterChanged"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>filterChanged(filterName, currentFilterValue?: <a href="../interfaces/IFilter.html">IFilter<any></a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../injectables/DataSourceService.html" target="_self" >DataSourceService</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../injectables/DataSourceService.html#source" target="_self" >DataSourceService:129</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>filterName</td>
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>currentFilterValue</td>
+                                    <td>
+                                                <code><a href="../interfaces/IFilter.html" target="_self" >IFilter&lt;any&gt;</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filtersChanged"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            filtersChanged
+                        </b>
+                        <a href="#filtersChanged"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>filtersChanged(filters: F, ...filterNames: ()[])</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../injectables/DataSourceService.html" target="_self" >DataSourceService</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../injectables/DataSourceService.html#source" target="_self" >DataSourceService:144</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>filters</td>
+                                    <td>
+                                            <code>F</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>filterNames</td>
+                                    <td>
+                                            <code>()[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFilter"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            getFilter
+                        </b>
+                        <a href="#getFilter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getFilter(componentName)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../injectables/DataSourceService.html" target="_self" >DataSourceService</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../injectables/DataSourceService.html#source" target="_self" >DataSourceService:77</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>componentName</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>F | undefined</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFilteredData"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Abstract</span>
+                            getFilteredData
+                        </b>
+                        <a href="#getFilteredData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getFilteredData(filters: F)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../injectables/DataSourceService.html" target="_self" >DataSourceService</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../injectables/DataSourceService.html#source" target="_self" >DataSourceService:57</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>filters</td>
+                                    <td>
+                                            <code>F</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Promise&lt;IFilteringOutputs&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFilters"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            getFilters
+                        </b>
+                        <a href="#getFilters"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getFilters()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../injectables/DataSourceService.html" target="_self" >DataSourceService</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../injectables/DataSourceService.html#source" target="_self" >DataSourceService:92</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>F</code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="registerComponent"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            registerComponent
+                        </b>
+                        <a href="#registerComponent"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>registerComponent(components: <a href="../interfaces/IFilteringParticipants.html">IFilteringParticipants</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../injectables/DataSourceService.html" target="_self" >DataSourceService</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../injectables/DataSourceService.html#source" target="_self" >DataSourceService:46</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>components</td>
+                                    <td>
+                                                <code><a href="../interfaces/IFilteringParticipants.html" target="_self" >IFilteringParticipants</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dataFieldsConfig"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            dataFieldsConfig</b>
+                            <a href="#dataFieldsConfig"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/IDataFieldsConfig.html" target="_self" >IDataFieldsConfig</a></code>
+
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Inherited from         <code><a href="../injectables/DataSourceService.html" target="_self" >DataSourceService</a></code>
+</div>
+                                </td>
+                            </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in         <code><a href="../injectables/DataSourceService.html#source" target="_self" >DataSourceService:27</a></code>
+</div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dataSubject"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            dataSubject</b>
+                            <a href="#dataSubject"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>BehaviorSubject&lt;T[]&gt;</code>
+
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Inherited from         <code><a href="../injectables/DataSourceService.html" target="_self" >DataSourceService</a></code>
+</div>
+                                </td>
+                            </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in         <code><a href="../injectables/DataSourceService.html#source" target="_self" >DataSourceService:25</a></code>
+</div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="outputsSubject"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            outputsSubject</b>
+                            <a href="#outputsSubject"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Subject&lt;IFilteringOutputs&gt;</code>
+
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Inherited from         <code><a href="../injectables/DataSourceService.html" target="_self" >DataSourceService</a></code>
+</div>
+                                </td>
+                            </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in         <code><a href="../injectables/DataSourceService.html#source" target="_self" >DataSourceService:26</a></code>
+</div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &quot;@angular/core&quot;;
+import _forEach from &quot;lodash/forEach&quot;;
+import _get from &quot;lodash/get&quot;;
+import _intersection from &quot;lodash/intersection&quot;;
+import _isEqual from &quot;lodash/isEqual&quot;;
+import _orderBy from &quot;lodash/orderBy&quot;;
+
+import { SorterDirection } from &quot;../../lib/sorter/public-api&quot;;
+import { SearchService } from &quot;../search.service&quot;;
+import { DataSourceService } from &quot;./data-source.service&quot;;
+import {
+    IFilter,
+    IFilterGroup,
+    IFilteringOutputs,
+    IFilterItem,
+    IMultiFilterMetadata,
+    INovaFilteringOutputs,
+    INovaFilters,
+} from &quot;./public-api&quot;;
+
+/** @ignore */
+interface ComparisonItems {
+    previousValue: any;
+    currentValue: any;
+}
+
+/**
+ * &lt;example-url&gt;./../examples/index.html#/common/data-source-service/deprecated-client-side&lt;/example-url&gt;
+ * @deprecated in v11 - use ClientSideDataSource instead - Removal: NUI-5796
+ */
+@Injectable()
+export class LocalFilteringDataSource&lt;
+    T,
+    F extends INovaFilters &#x3D; INovaFilters
+&gt; extends DataSourceService&lt;T, F&gt; {
+    protected _allData: T[];
+    protected _allCategoriesResult: IFilteringOutputs &#x3D; {};
+    protected _searchProps: string[] &#x3D; [];
+
+    // cache used to store our previous fetched results while scrolling
+    // and more data is automatically fetched from the backend
+    protected virtualScrollData: T[] &#x3D; [];
+
+    constructor(protected searchService: SearchService) {
+        super();
+    }
+
+    public setData(initialData: T[] &#x3D; []) {
+        this._allData &#x3D; initialData;
+    }
+
+    public setSearchProperties(properties: string[]) {
+        this._searchProps &#x3D; properties;
+    }
+
+    public async getFilteredData(filters: F): Promise&lt;INovaFilteringOutputs&gt; {
+        let nextChunk: T[] &#x3D; this.prepareData();
+
+        // APPLY SEARCH USING CHECKBOX VALUES
+        const searchTerm: string | undefined &#x3D; filters?.search?.value;
+        // APPLY SEARCH
+        if (searchTerm) {
+            nextChunk &#x3D; this.searchHandler(searchTerm);
+        }
+
+        const multiFiltersArr: IFilterGroup&lt;
+            IFilter&lt;string[], IMultiFilterMetadata&gt;
+        &gt;[] &#x3D; this.extractMultiFilters(filters);
+        // APPLY FILTERS with type &#x27;string[]&#x27; if any
+        if (multiFiltersArr?.length) {
+            nextChunk &#x3D; this.multiFilterHandler(nextChunk, multiFiltersArr);
+        }
+
+        const numberOfItems &#x3D; nextChunk.length;
+
+        // RESET PAGINATION if needed
+        const filtersChanged &#x3D; this.filtersChanged(
+            filters,
+            this.setItemsToCompare(
+                filters,
+                nextChunk,
+                searchTerm,
+                multiFiltersArr
+            )
+        );
+
+        if (filtersChanged) {
+            if (filters?.paginator) {
+                const size &#x3D;
+                    filters.paginator.value.end - filters.paginator.value.start;
+                filters.paginator.value.start &#x3D; 0;
+                filters.paginator.value.end &#x3D; size;
+            }
+
+            if (filters.virtualScroll) {
+                // reset virtual scroll items
+                this.virtualScrollData &#x3D; [];
+            }
+        }
+
+        nextChunk &#x3D; &lt;T[]&gt;this.sortingHandler(filters, nextChunk);
+        nextChunk &#x3D; this.paginationHandler(filters, nextChunk);
+        nextChunk &#x3D; this.virtualScrollHandler(filters, nextChunk);
+
+        return {
+            repeat: {
+                itemsSource: nextChunk,
+            },
+            paginator: {
+                total: numberOfItems,
+                reset: filtersChanged,
+            },
+            ...this._allCategoriesResult,
+        };
+    }
+
+    protected prepareData() {
+        return this._allData;
+    }
+
+    protected searchHandler(searchTerm: any) {
+        return this.searchService.search(
+            this._allData,
+            this._searchProps,
+            searchTerm
+        );
+    }
+
+    protected multiFilterHandler(nextChunk: any, multiFiltersArr: any) {
+        const allCategoriesArr: IFilterItem&lt;string[]&gt;[] &#x3D; multiFiltersArr.map(
+            (el: IFilterGroup&lt;IFilter&lt;string[], IMultiFilterMetadata&gt;&gt;) &#x3D;&gt;
+                this.getAllCategories(el)
+        );
+        if (multiFiltersArr.length) {
+            const filteredResult &#x3D; this.searchThru(multiFiltersArr, nextChunk);
+            const selectedFilters &#x3D; this.getSelectedFilters(multiFiltersArr);
+            // if some filters selected and filter result &#x3D; 0, returning empty array
+            if (filteredResult.length || selectedFilters.length) {
+                nextChunk &#x3D; _intersection(...filteredResult);
+            }
+        }
+        // count number of occurrences of every item
+        this._allCategoriesResult &#x3D; this.countAvailableResults(
+            allCategoriesArr,
+            nextChunk
+        );
+        return nextChunk;
+    }
+
+    protected sortingHandler(filters: any, nextChunk: any) {
+        if (
+            _get(filters, &quot;sorter.value.sortBy&quot;) &amp;&amp;
+            _get(filters, &quot;sorter.value.direction&quot;)
+        ) {
+            // Original direction means that sorting is not needed
+            if (filters.sorter.value.direction !&#x3D;&#x3D; SorterDirection.original) {
+                return _orderBy(
+                    nextChunk,
+                    filters.sorter.value.sortBy,
+                    filters.sorter.value.direction
+                );
+            }
+        }
+        return nextChunk;
+    }
+
+    protected paginationHandler(filters: any, nextChunk: any) {
+        if (filters?.paginator) {
+            return nextChunk.slice(
+                filters.paginator.value.start,
+                filters.paginator.value.end
+            );
+        }
+        return nextChunk;
+    }
+
+    protected virtualScrollHandler(filters: any, nextChunk: any) {
+        let data &#x3D; nextChunk;
+        if (filters?.virtualScroll) {
+            data &#x3D; nextChunk.slice(
+                filters.virtualScroll.value.start,
+                filters.virtualScroll.value.end
+            );
+
+            // for virtual scroll we must always append current chunk to the previous ones
+            data &#x3D; this.virtualScrollData &#x3D; this.virtualScrollData.concat(data);
+        }
+
+        return data;
+    }
+
+    /**
+     * @deprecated in v11 - Use filtersChanged instead - Removal: NUI-5796
+     */
+    protected paginationReset(filters: any, itemsToCompare: any) {
+        return this.filtersChanged(filters, itemsToCompare);
+    }
+
+    public filtersChanged(filters: any, itemsToCompare: any) {
+        if (this._previousFilters) {
+            if (this.isValueChanged(itemsToCompare)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    protected setItemsToCompare(
+        filters: F,
+        nextChunk: T[],
+        searchTerm: string | undefined,
+        multiFiltersArr: IFilterGroup&lt;IFilter&lt;string[], IMultiFilterMetadata&gt;&gt;[]
+    ) {
+        // GET FILTERS from previous filtering
+        const previousSortBy &#x3D; _get(
+            this._previousFilters,
+            &quot;sorter.value.sortBy&quot;
+        );
+        const previousDirection &#x3D; _get(
+            this._previousFilters,
+            &quot;sorter.value.direction&quot;
+        );
+        const previousSearchTerm &#x3D; _get(this._previousFilters, &quot;search.value&quot;);
+        const previousMultiFiltersArr &#x3D; this.extractMultiFilters(
+            this._previousFilters
+        );
+
+        const sortBy &#x3D; _get(filters, &quot;sorter.value.sortBy&quot;);
+        const direction &#x3D; _get(filters, &quot;sorter.value.direction&quot;);
+
+        const itemsToCompare: ComparisonItems[] &#x3D; [];
+        itemsToCompare.push({
+            previousValue: previousSortBy,
+            currentValue: sortBy,
+        });
+        itemsToCompare.push({
+            previousValue: previousDirection,
+            currentValue: direction,
+        });
+        itemsToCompare.push({
+            previousValue: previousSearchTerm,
+            currentValue: searchTerm,
+        });
+        itemsToCompare.push({
+            previousValue: previousMultiFiltersArr,
+            currentValue: multiFiltersArr,
+        });
+        return itemsToCompare;
+    }
+
+    protected extractMultiFilters(
+        filters: F
+    ): IFilterGroup&lt;IFilter&lt;string[], IMultiFilterMetadata&gt;&gt;[] {
+        const multiFilterArr: IFilterGroup&lt;
+            IFilter&lt;string[], IMultiFilterMetadata&gt;
+        &gt;[] &#x3D; [];
+        _forEach(filters, (value, key) &#x3D;&gt; {
+            if (value?.type &#x3D;&#x3D;&#x3D; &quot;string[]&quot;) {
+                multiFilterArr.push({ [key]: value } as any);
+            }
+        });
+        return multiFilterArr;
+    }
+
+    private getSelectedFilters(
+        multiFiltersArr: IFilterGroup&lt;IFilter&lt;string[], IMultiFilterMetadata&gt;&gt;[]
+    ): string[] {
+        return multiFiltersArr.reduce(
+            (
+                prev: string[],
+                curr: IFilterGroup&lt;IFilter&lt;string[], IMultiFilterMetadata&gt;&gt;
+            ) &#x3D;&gt; prev.concat(curr[Object.keys(curr)[0]].value),
+            []
+        );
+    }
+
+    private countAvailableResults(
+        allCategoriesArr: IFilterItem&lt;string[]&gt;[],
+        nextChunk: T[]
+    ): IFilterGroup&lt;IFilterItem&lt;number&gt;&gt; {
+        const allCategoriesResult: IFilterGroup&lt;IFilterItem&lt;number&gt;[]&gt;[] &#x3D;
+            allCategoriesArr.map((el, index) &#x3D;&gt; {
+                const key &#x3D; Object.keys(el)[0];
+                const valuesArr: string[] &#x3D; allCategoriesArr[index][key];
+                const resultArr &#x3D; valuesArr.map((element: string) &#x3D;&gt; {
+                    const r: T[] &#x3D; this.searchService.search(
+                        nextChunk,
+                        [key],
+                        element
+                    );
+                    return { [element]: r.length };
+                });
+                return { [key]: resultArr };
+            });
+
+        return (
+            allCategoriesResult
+                // convert array to an object
+                .reduce((prev: any, curr: any) &#x3D;&gt; {
+                    const [prop] &#x3D; Object.keys(curr);
+                    // convert array to an object
+                    const newObj &#x3D; curr[prop].reduce(
+                        (previous: any, current: any) &#x3D;&gt; {
+                            const [property] &#x3D; Object.keys(current);
+                            previous[property] &#x3D; current[property];
+                            return previous;
+                        },
+                        {}
+                    );
+                    prev[prop] &#x3D; newObj;
+                    return prev;
+                }, {})
+        );
+    }
+
+    private searchThru(
+        arrToMap: IFilterGroup&lt;IFilter&lt;string[], IMultiFilterMetadata&gt;&gt;[],
+        arrToSearchIn: T[]
+    ) {
+        // We are filtering out filter groups which doesn&#x27;t have selected filters. If filters are not present,
+        // it means that filtered data with this filters should not participate in intersection
+        return arrToMap
+            .filter((arr) &#x3D;&gt; !!arr[Object.keys(arr)[0]].value.length)
+            .map(
+                (
+                    multiFilter: IFilterGroup&lt;
+                        IFilter&lt;string[], IMultiFilterMetadata&gt;
+                    &gt;
+                ) &#x3D;&gt; {
+                    const [prop] &#x3D; Object.keys(multiFilter);
+                    return (
+                        multiFilter[prop].value // extract value array
+                            // find matches
+                            .map((el: string) &#x3D;&gt;
+                                this.searchService.search(
+                                    arrToSearchIn,
+                                    [prop],
+                                    el
+                                )
+                            )
+                            // flatten returned multidimensional arrays
+                            .reduce(
+                                (prev: T[], curr: T[]) &#x3D;&gt; prev.concat(curr),
+                                []
+                            )
+                    );
+                }
+            );
+    }
+
+    private getAllCategories(
+        multiFilter: IFilterGroup&lt;IFilter&lt;string[], IMultiFilterMetadata&gt;&gt;
+    ) {
+        if (!multiFilter) {
+            return;
+        }
+        const [prop] &#x3D; Object.keys(multiFilter);
+        const { metadata }: IFilter&lt;string[], IMultiFilterMetadata&gt; &#x3D;
+            multiFilter[prop];
+        return { [prop]: metadata?.allCategories };
+    }
+
+    private isValueChanged(valuesArr: ComparisonItems[]) {
+        for (const { previousValue, currentValue } of valuesArr) {
+            if (!_isEqual(previousValue, currentValue)) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade active in" id="c-example">
+            <iframe class="exampleContainer" src="./../examples/index.html#/common/data-source-service/deprecated-client-side">
+                <p>no-iframes</p>
+            </iframe>
+    </div>
+</div>
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'LocalFilteringDataSource.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
